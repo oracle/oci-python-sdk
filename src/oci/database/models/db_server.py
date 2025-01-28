@@ -39,6 +39,14 @@ class DbServer(object):
     #: This constant has a value of "MAINTENANCE_IN_PROGRESS"
     LIFECYCLE_STATE_MAINTENANCE_IN_PROGRESS = "MAINTENANCE_IN_PROGRESS"
 
+    #: A constant which can be used with the compute_model property of a DbServer.
+    #: This constant has a value of "ECPU"
+    COMPUTE_MODEL_ECPU = "ECPU"
+
+    #: A constant which can be used with the compute_model property of a DbServer.
+    #: This constant has a value of "OCPU"
+    COMPUTE_MODEL_OCPU = "OCPU"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DbServer object with values from keyword arguments.
@@ -130,6 +138,12 @@ class DbServer(object):
             The value to assign to the defined_tags property of this DbServer.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param compute_model:
+            The value to assign to the compute_model property of this DbServer.
+            Allowed values for this property are: "ECPU", "OCPU", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type compute_model: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -152,7 +166,8 @@ class DbServer(object):
             'time_created': 'datetime',
             'db_server_patching_details': 'DbServerPatchingDetails',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'compute_model': 'str'
         }
 
         self.attribute_map = {
@@ -176,7 +191,8 @@ class DbServer(object):
             'time_created': 'timeCreated',
             'db_server_patching_details': 'dbServerPatchingDetails',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'compute_model': 'computeModel'
         }
 
         self._id = None
@@ -200,6 +216,7 @@ class DbServer(object):
         self._db_server_patching_details = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._compute_model = None
 
     @property
     def id(self):
@@ -750,6 +767,36 @@ class DbServer(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def compute_model(self):
+        """
+        Gets the compute_model of this DbServer.
+        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+
+        Allowed values for this property are: "ECPU", "OCPU", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The compute_model of this DbServer.
+        :rtype: str
+        """
+        return self._compute_model
+
+    @compute_model.setter
+    def compute_model(self, compute_model):
+        """
+        Sets the compute_model of this DbServer.
+        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+
+
+        :param compute_model: The compute_model of this DbServer.
+        :type: str
+        """
+        allowed_values = ["ECPU", "OCPU"]
+        if not value_allowed_none_or_none_sentinel(compute_model, allowed_values):
+            compute_model = 'UNKNOWN_ENUM_VALUE'
+        self._compute_model = compute_model
 
     def __repr__(self):
         return formatted_flat_dict(self)

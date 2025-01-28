@@ -52,6 +52,18 @@ class MySqlDataSummary(object):
             The value to assign to the max_timer_wait property of this MySqlDataSummary.
         :type max_timer_wait: float
 
+        :param max_controlled_memory:
+            The value to assign to the max_controlled_memory property of this MySqlDataSummary.
+        :type max_controlled_memory: int
+
+        :param max_total_memory:
+            The value to assign to the max_total_memory property of this MySqlDataSummary.
+        :type max_total_memory: int
+
+        :param sum_cpu_time:
+            The value to assign to the sum_cpu_time property of this MySqlDataSummary.
+        :type sum_cpu_time: int
+
         :param sum_lock_time:
             The value to assign to the sum_lock_time property of this MySqlDataSummary.
         :type sum_lock_time: float
@@ -166,6 +178,9 @@ class MySqlDataSummary(object):
             'min_timer_wait': 'float',
             'avg_timer_wait': 'float',
             'max_timer_wait': 'float',
+            'max_controlled_memory': 'int',
+            'max_total_memory': 'int',
+            'sum_cpu_time': 'int',
             'sum_lock_time': 'float',
             'sum_errors': 'float',
             'sum_warnings': 'float',
@@ -203,6 +218,9 @@ class MySqlDataSummary(object):
             'min_timer_wait': 'minTimerWait',
             'avg_timer_wait': 'avgTimerWait',
             'max_timer_wait': 'maxTimerWait',
+            'max_controlled_memory': 'maxControlledMemory',
+            'max_total_memory': 'maxTotalMemory',
+            'sum_cpu_time': 'sumCpuTime',
             'sum_lock_time': 'sumLockTime',
             'sum_errors': 'sumErrors',
             'sum_warnings': 'sumWarnings',
@@ -239,6 +257,9 @@ class MySqlDataSummary(object):
         self._min_timer_wait = None
         self._avg_timer_wait = None
         self._max_timer_wait = None
+        self._max_controlled_memory = None
+        self._max_total_memory = None
+        self._sum_cpu_time = None
         self._sum_lock_time = None
         self._sum_errors = None
         self._sum_warnings = None
@@ -457,6 +478,78 @@ class MySqlDataSummary(object):
         :type: float
         """
         self._max_timer_wait = max_timer_wait
+
+    @property
+    def max_controlled_memory(self):
+        """
+        Gets the max_controlled_memory of this MySqlDataSummary.
+        The maximum amount of controlled memory used by a statement during execution.
+
+
+        :return: The max_controlled_memory of this MySqlDataSummary.
+        :rtype: int
+        """
+        return self._max_controlled_memory
+
+    @max_controlled_memory.setter
+    def max_controlled_memory(self, max_controlled_memory):
+        """
+        Sets the max_controlled_memory of this MySqlDataSummary.
+        The maximum amount of controlled memory used by a statement during execution.
+
+
+        :param max_controlled_memory: The max_controlled_memory of this MySqlDataSummary.
+        :type: int
+        """
+        self._max_controlled_memory = max_controlled_memory
+
+    @property
+    def max_total_memory(self):
+        """
+        Gets the max_total_memory of this MySqlDataSummary.
+        The maximum amount of memory used by a statement during execution.
+
+
+        :return: The max_total_memory of this MySqlDataSummary.
+        :rtype: int
+        """
+        return self._max_total_memory
+
+    @max_total_memory.setter
+    def max_total_memory(self, max_total_memory):
+        """
+        Sets the max_total_memory of this MySqlDataSummary.
+        The maximum amount of memory used by a statement during execution.
+
+
+        :param max_total_memory: The max_total_memory of this MySqlDataSummary.
+        :type: int
+        """
+        self._max_total_memory = max_total_memory
+
+    @property
+    def sum_cpu_time(self):
+        """
+        Gets the sum_cpu_time of this MySqlDataSummary.
+        The total amount of time spent on CPU for this statement.
+
+
+        :return: The sum_cpu_time of this MySqlDataSummary.
+        :rtype: int
+        """
+        return self._sum_cpu_time
+
+    @sum_cpu_time.setter
+    def sum_cpu_time(self, sum_cpu_time):
+        """
+        Sets the sum_cpu_time of this MySqlDataSummary.
+        The total amount of time spent on CPU for this statement.
+
+
+        :param sum_cpu_time: The sum_cpu_time of this MySqlDataSummary.
+        :type: int
+        """
+        self._sum_cpu_time = sum_cpu_time
 
     @property
     def sum_lock_time(self):

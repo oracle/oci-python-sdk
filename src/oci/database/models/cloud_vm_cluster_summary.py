@@ -59,6 +59,14 @@ class CloudVmClusterSummary(object):
     #: This constant has a value of "NORMAL"
     DISK_REDUNDANCY_NORMAL = "NORMAL"
 
+    #: A constant which can be used with the compute_model property of a CloudVmClusterSummary.
+    #: This constant has a value of "ECPU"
+    COMPUTE_MODEL_ECPU = "ECPU"
+
+    #: A constant which can be used with the compute_model property of a CloudVmClusterSummary.
+    #: This constant has a value of "OCPU"
+    COMPUTE_MODEL_OCPU = "OCPU"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CloudVmClusterSummary object with values from keyword arguments.
@@ -274,6 +282,12 @@ class CloudVmClusterSummary(object):
             The value to assign to the cloud_automation_update_details property of this CloudVmClusterSummary.
         :type cloud_automation_update_details: oci.database.models.CloudAutomationUpdateDetails
 
+        :param compute_model:
+            The value to assign to the compute_model property of this CloudVmClusterSummary.
+            Allowed values for this property are: "ECPU", "OCPU", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type compute_model: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -326,7 +340,8 @@ class CloudVmClusterSummary(object):
             'data_collection_options': 'DataCollectionOptions',
             'gi_software_image_id': 'str',
             'file_system_configuration_details': 'list[FileSystemConfigurationDetail]',
-            'cloud_automation_update_details': 'CloudAutomationUpdateDetails'
+            'cloud_automation_update_details': 'CloudAutomationUpdateDetails',
+            'compute_model': 'str'
         }
 
         self.attribute_map = {
@@ -380,7 +395,8 @@ class CloudVmClusterSummary(object):
             'data_collection_options': 'dataCollectionOptions',
             'gi_software_image_id': 'giSoftwareImageId',
             'file_system_configuration_details': 'fileSystemConfigurationDetails',
-            'cloud_automation_update_details': 'cloudAutomationUpdateDetails'
+            'cloud_automation_update_details': 'cloudAutomationUpdateDetails',
+            'compute_model': 'computeModel'
         }
 
         self._id = None
@@ -434,6 +450,7 @@ class CloudVmClusterSummary(object):
         self._gi_software_image_id = None
         self._file_system_configuration_details = None
         self._cloud_automation_update_details = None
+        self._compute_model = None
 
     @property
     def id(self):
@@ -1806,6 +1823,36 @@ class CloudVmClusterSummary(object):
         :type: oci.database.models.CloudAutomationUpdateDetails
         """
         self._cloud_automation_update_details = cloud_automation_update_details
+
+    @property
+    def compute_model(self):
+        """
+        Gets the compute_model of this CloudVmClusterSummary.
+        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+
+        Allowed values for this property are: "ECPU", "OCPU", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The compute_model of this CloudVmClusterSummary.
+        :rtype: str
+        """
+        return self._compute_model
+
+    @compute_model.setter
+    def compute_model(self, compute_model):
+        """
+        Sets the compute_model of this CloudVmClusterSummary.
+        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+
+
+        :param compute_model: The compute_model of this CloudVmClusterSummary.
+        :type: str
+        """
+        allowed_values = ["ECPU", "OCPU"]
+        if not value_allowed_none_or_none_sentinel(compute_model, allowed_values):
+            compute_model = 'UNKNOWN_ENUM_VALUE'
+        self._compute_model = compute_model
 
     def __repr__(self):
         return formatted_flat_dict(self)

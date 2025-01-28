@@ -21,6 +21,14 @@ class FlexComponentSummary(object):
     __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
     """
 
+    #: A constant which can be used with the hardware_type property of a FlexComponentSummary.
+    #: This constant has a value of "COMPUTE"
+    HARDWARE_TYPE_COMPUTE = "COMPUTE"
+
+    #: A constant which can be used with the hardware_type property of a FlexComponentSummary.
+    #: This constant has a value of "CELL"
+    HARDWARE_TYPE_CELL = "CELL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new FlexComponentSummary object with values from keyword arguments.
@@ -42,25 +50,76 @@ class FlexComponentSummary(object):
             The value to assign to the available_db_storage_in_gbs property of this FlexComponentSummary.
         :type available_db_storage_in_gbs: int
 
+        :param runtime_minimum_core_count:
+            The value to assign to the runtime_minimum_core_count property of this FlexComponentSummary.
+        :type runtime_minimum_core_count: int
+
+        :param shape:
+            The value to assign to the shape property of this FlexComponentSummary.
+        :type shape: str
+
+        :param available_memory_in_gbs:
+            The value to assign to the available_memory_in_gbs property of this FlexComponentSummary.
+        :type available_memory_in_gbs: int
+
+        :param available_local_storage_in_gbs:
+            The value to assign to the available_local_storage_in_gbs property of this FlexComponentSummary.
+        :type available_local_storage_in_gbs: int
+
+        :param compute_model:
+            The value to assign to the compute_model property of this FlexComponentSummary.
+        :type compute_model: str
+
+        :param hardware_type:
+            The value to assign to the hardware_type property of this FlexComponentSummary.
+            Allowed values for this property are: "COMPUTE", "CELL", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type hardware_type: str
+
+        :param description_summary:
+            The value to assign to the description_summary property of this FlexComponentSummary.
+        :type description_summary: str
+
         """
         self.swagger_types = {
             'name': 'str',
             'minimum_core_count': 'int',
             'available_core_count': 'int',
-            'available_db_storage_in_gbs': 'int'
+            'available_db_storage_in_gbs': 'int',
+            'runtime_minimum_core_count': 'int',
+            'shape': 'str',
+            'available_memory_in_gbs': 'int',
+            'available_local_storage_in_gbs': 'int',
+            'compute_model': 'str',
+            'hardware_type': 'str',
+            'description_summary': 'str'
         }
 
         self.attribute_map = {
             'name': 'name',
             'minimum_core_count': 'minimumCoreCount',
             'available_core_count': 'availableCoreCount',
-            'available_db_storage_in_gbs': 'availableDbStorageInGBs'
+            'available_db_storage_in_gbs': 'availableDbStorageInGBs',
+            'runtime_minimum_core_count': 'runtimeMinimumCoreCount',
+            'shape': 'shape',
+            'available_memory_in_gbs': 'availableMemoryInGBs',
+            'available_local_storage_in_gbs': 'availableLocalStorageInGBs',
+            'compute_model': 'computeModel',
+            'hardware_type': 'hardwareType',
+            'description_summary': 'descriptionSummary'
         }
 
         self._name = None
         self._minimum_core_count = None
         self._available_core_count = None
         self._available_db_storage_in_gbs = None
+        self._runtime_minimum_core_count = None
+        self._shape = None
+        self._available_memory_in_gbs = None
+        self._available_local_storage_in_gbs = None
+        self._compute_model = None
+        self._hardware_type = None
+        self._description_summary = None
 
     @property
     def name(self):
@@ -157,6 +216,180 @@ class FlexComponentSummary(object):
         :type: int
         """
         self._available_db_storage_in_gbs = available_db_storage_in_gbs
+
+    @property
+    def runtime_minimum_core_count(self):
+        """
+        Gets the runtime_minimum_core_count of this FlexComponentSummary.
+        The runtime minimum number of CPU cores that can be enabled for this Flex Component.
+
+
+        :return: The runtime_minimum_core_count of this FlexComponentSummary.
+        :rtype: int
+        """
+        return self._runtime_minimum_core_count
+
+    @runtime_minimum_core_count.setter
+    def runtime_minimum_core_count(self, runtime_minimum_core_count):
+        """
+        Sets the runtime_minimum_core_count of this FlexComponentSummary.
+        The runtime minimum number of CPU cores that can be enabled for this Flex Component.
+
+
+        :param runtime_minimum_core_count: The runtime_minimum_core_count of this FlexComponentSummary.
+        :type: int
+        """
+        self._runtime_minimum_core_count = runtime_minimum_core_count
+
+    @property
+    def shape(self):
+        """
+        Gets the shape of this FlexComponentSummary.
+        The name of the DB system shape for this Flex Component.
+
+
+        :return: The shape of this FlexComponentSummary.
+        :rtype: str
+        """
+        return self._shape
+
+    @shape.setter
+    def shape(self, shape):
+        """
+        Sets the shape of this FlexComponentSummary.
+        The name of the DB system shape for this Flex Component.
+
+
+        :param shape: The shape of this FlexComponentSummary.
+        :type: str
+        """
+        self._shape = shape
+
+    @property
+    def available_memory_in_gbs(self):
+        """
+        Gets the available_memory_in_gbs of this FlexComponentSummary.
+        The maximum memory size that can be enabled on the DB Server for this Flex Component.
+
+
+        :return: The available_memory_in_gbs of this FlexComponentSummary.
+        :rtype: int
+        """
+        return self._available_memory_in_gbs
+
+    @available_memory_in_gbs.setter
+    def available_memory_in_gbs(self, available_memory_in_gbs):
+        """
+        Sets the available_memory_in_gbs of this FlexComponentSummary.
+        The maximum memory size that can be enabled on the DB Server for this Flex Component.
+
+
+        :param available_memory_in_gbs: The available_memory_in_gbs of this FlexComponentSummary.
+        :type: int
+        """
+        self._available_memory_in_gbs = available_memory_in_gbs
+
+    @property
+    def available_local_storage_in_gbs(self):
+        """
+        Gets the available_local_storage_in_gbs of this FlexComponentSummary.
+        The maximum local storage that can be enabled on the DB Server for this Flex Component.
+
+
+        :return: The available_local_storage_in_gbs of this FlexComponentSummary.
+        :rtype: int
+        """
+        return self._available_local_storage_in_gbs
+
+    @available_local_storage_in_gbs.setter
+    def available_local_storage_in_gbs(self, available_local_storage_in_gbs):
+        """
+        Sets the available_local_storage_in_gbs of this FlexComponentSummary.
+        The maximum local storage that can be enabled on the DB Server for this Flex Component.
+
+
+        :param available_local_storage_in_gbs: The available_local_storage_in_gbs of this FlexComponentSummary.
+        :type: int
+        """
+        self._available_local_storage_in_gbs = available_local_storage_in_gbs
+
+    @property
+    def compute_model(self):
+        """
+        Gets the compute_model of this FlexComponentSummary.
+        The compute model of the DB Server for this Flex Component.
+
+
+        :return: The compute_model of this FlexComponentSummary.
+        :rtype: str
+        """
+        return self._compute_model
+
+    @compute_model.setter
+    def compute_model(self, compute_model):
+        """
+        Sets the compute_model of this FlexComponentSummary.
+        The compute model of the DB Server for this Flex Component.
+
+
+        :param compute_model: The compute_model of this FlexComponentSummary.
+        :type: str
+        """
+        self._compute_model = compute_model
+
+    @property
+    def hardware_type(self):
+        """
+        Gets the hardware_type of this FlexComponentSummary.
+        The hardware type of the DB (Compute) or Storage (Cell) Server for this Flex Component.
+
+        Allowed values for this property are: "COMPUTE", "CELL", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The hardware_type of this FlexComponentSummary.
+        :rtype: str
+        """
+        return self._hardware_type
+
+    @hardware_type.setter
+    def hardware_type(self, hardware_type):
+        """
+        Sets the hardware_type of this FlexComponentSummary.
+        The hardware type of the DB (Compute) or Storage (Cell) Server for this Flex Component.
+
+
+        :param hardware_type: The hardware_type of this FlexComponentSummary.
+        :type: str
+        """
+        allowed_values = ["COMPUTE", "CELL"]
+        if not value_allowed_none_or_none_sentinel(hardware_type, allowed_values):
+            hardware_type = 'UNKNOWN_ENUM_VALUE'
+        self._hardware_type = hardware_type
+
+    @property
+    def description_summary(self):
+        """
+        Gets the description_summary of this FlexComponentSummary.
+        The description summary for this Flex Component.
+
+
+        :return: The description_summary of this FlexComponentSummary.
+        :rtype: str
+        """
+        return self._description_summary
+
+    @description_summary.setter
+    def description_summary(self, description_summary):
+        """
+        Sets the description_summary of this FlexComponentSummary.
+        The description summary for this Flex Component.
+
+
+        :param description_summary: The description_summary of this FlexComponentSummary.
+        :type: str
+        """
+        self._description_summary = description_summary
 
     def __repr__(self):
         return formatted_flat_dict(self)

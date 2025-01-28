@@ -52,6 +52,10 @@ class OrganizationSummary(object):
             The value to assign to the time_updated property of this OrganizationSummary.
         :type time_updated: datetime
 
+        :param system_tags:
+            The value to assign to the system_tags property of this OrganizationSummary.
+        :type system_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -61,7 +65,8 @@ class OrganizationSummary(object):
             'default_ucm_subscription_id': 'str',
             'lifecycle_state': 'str',
             'time_created': 'datetime',
-            'time_updated': 'datetime'
+            'time_updated': 'datetime',
+            'system_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
@@ -72,7 +77,8 @@ class OrganizationSummary(object):
             'default_ucm_subscription_id': 'defaultUcmSubscriptionId',
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
-            'time_updated': 'timeUpdated'
+            'time_updated': 'timeUpdated',
+            'system_tags': 'systemTags'
         }
 
         self._id = None
@@ -83,6 +89,7 @@ class OrganizationSummary(object):
         self._lifecycle_state = None
         self._time_created = None
         self._time_updated = None
+        self._system_tags = None
 
     @property
     def id(self):
@@ -275,6 +282,32 @@ class OrganizationSummary(object):
         :type: datetime
         """
         self._time_updated = time_updated
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this OrganizationSummary.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :return: The system_tags of this OrganizationSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this OrganizationSummary.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :param system_tags: The system_tags of this OrganizationSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -83,6 +83,7 @@ from .change_awr_hub_source_compartment_details import ChangeAwrHubSourceCompart
 from .change_database_insight_compartment_details import ChangeDatabaseInsightCompartmentDetails
 from .change_enterprise_manager_bridge_compartment_details import ChangeEnterpriseManagerBridgeCompartmentDetails
 from .change_exadata_insight_compartment_details import ChangeExadataInsightCompartmentDetails
+from .change_external_mysql_database_insight_connection_details import ChangeExternalMysqlDatabaseInsightConnectionDetails
 from .change_host_insight_compartment_details import ChangeHostInsightCompartmentDetails
 from .change_macs_managed_cloud_database_insight_connection_details import ChangeMacsManagedCloudDatabaseInsightConnectionDetails
 from .change_news_report_compartment_details import ChangeNewsReportCompartmentDetails
@@ -112,6 +113,7 @@ from .create_em_managed_external_exadata_member_entity_details import CreateEmMa
 from .create_em_managed_external_host_insight_details import CreateEmManagedExternalHostInsightDetails
 from .create_enterprise_manager_bridge_details import CreateEnterpriseManagerBridgeDetails
 from .create_exadata_insight_details import CreateExadataInsightDetails
+from .create_external_mysql_database_insight_details import CreateExternalMysqlDatabaseInsightDetails
 from .create_host_insight_details import CreateHostInsightDetails
 from .create_macs_managed_cloud_database_insight_details import CreateMacsManagedCloudDatabaseInsightDetails
 from .create_macs_managed_cloud_exadata_cluster_details import CreateMacsManagedCloudExadataClusterDetails
@@ -183,6 +185,7 @@ from .enable_em_managed_external_database_insight_details import EnableEmManaged
 from .enable_em_managed_external_exadata_insight_details import EnableEmManagedExternalExadataInsightDetails
 from .enable_em_managed_external_host_insight_details import EnableEmManagedExternalHostInsightDetails
 from .enable_exadata_insight_details import EnableExadataInsightDetails
+from .enable_external_mysql_database_insight_details import EnableExternalMysqlDatabaseInsightDetails
 from .enable_host_insight_details import EnableHostInsightDetails
 from .enable_macs_managed_cloud_database_insight_details import EnableMacsManagedCloudDatabaseInsightDetails
 from .enable_macs_managed_cloud_exadata_insight_details import EnableMacsManagedCloudExadataInsightDetails
@@ -221,6 +224,9 @@ from .exadata_insights_data_object_summary import ExadataInsightsDataObjectSumma
 from .exadata_member_collection import ExadataMemberCollection
 from .exadata_member_summary import ExadataMemberSummary
 from .exadata_storage_server_statistics_summary import ExadataStorageServerStatisticsSummary
+from .external_mysql_database_configuration_summary import ExternalMysqlDatabaseConfigurationSummary
+from .external_mysql_database_insight import ExternalMysqlDatabaseInsight
+from .external_mysql_database_insight_summary import ExternalMysqlDatabaseInsightSummary
 from .historical_data_item import HistoricalDataItem
 from .host_allocation import HostAllocation
 from .host_configuration_collection import HostConfigurationCollection
@@ -464,6 +470,7 @@ from .update_em_managed_external_exadata_insight_details import UpdateEmManagedE
 from .update_em_managed_external_host_insight_details import UpdateEmManagedExternalHostInsightDetails
 from .update_enterprise_manager_bridge_details import UpdateEnterpriseManagerBridgeDetails
 from .update_exadata_insight_details import UpdateExadataInsightDetails
+from .update_external_mysql_database_insight_details import UpdateExternalMysqlDatabaseInsightDetails
 from .update_host_insight_details import UpdateHostInsightDetails
 from .update_macs_managed_cloud_database_host_insight_details import UpdateMacsManagedCloudDatabaseHostInsightDetails
 from .update_macs_managed_cloud_database_insight_details import UpdateMacsManagedCloudDatabaseInsightDetails
@@ -576,6 +583,7 @@ opsi_type_mapping = {
     "ChangeDatabaseInsightCompartmentDetails": ChangeDatabaseInsightCompartmentDetails,
     "ChangeEnterpriseManagerBridgeCompartmentDetails": ChangeEnterpriseManagerBridgeCompartmentDetails,
     "ChangeExadataInsightCompartmentDetails": ChangeExadataInsightCompartmentDetails,
+    "ChangeExternalMysqlDatabaseInsightConnectionDetails": ChangeExternalMysqlDatabaseInsightConnectionDetails,
     "ChangeHostInsightCompartmentDetails": ChangeHostInsightCompartmentDetails,
     "ChangeMacsManagedCloudDatabaseInsightConnectionDetails": ChangeMacsManagedCloudDatabaseInsightConnectionDetails,
     "ChangeNewsReportCompartmentDetails": ChangeNewsReportCompartmentDetails,
@@ -605,6 +613,7 @@ opsi_type_mapping = {
     "CreateEmManagedExternalHostInsightDetails": CreateEmManagedExternalHostInsightDetails,
     "CreateEnterpriseManagerBridgeDetails": CreateEnterpriseManagerBridgeDetails,
     "CreateExadataInsightDetails": CreateExadataInsightDetails,
+    "CreateExternalMysqlDatabaseInsightDetails": CreateExternalMysqlDatabaseInsightDetails,
     "CreateHostInsightDetails": CreateHostInsightDetails,
     "CreateMacsManagedCloudDatabaseInsightDetails": CreateMacsManagedCloudDatabaseInsightDetails,
     "CreateMacsManagedCloudExadataClusterDetails": CreateMacsManagedCloudExadataClusterDetails,
@@ -676,6 +685,7 @@ opsi_type_mapping = {
     "EnableEmManagedExternalExadataInsightDetails": EnableEmManagedExternalExadataInsightDetails,
     "EnableEmManagedExternalHostInsightDetails": EnableEmManagedExternalHostInsightDetails,
     "EnableExadataInsightDetails": EnableExadataInsightDetails,
+    "EnableExternalMysqlDatabaseInsightDetails": EnableExternalMysqlDatabaseInsightDetails,
     "EnableHostInsightDetails": EnableHostInsightDetails,
     "EnableMacsManagedCloudDatabaseInsightDetails": EnableMacsManagedCloudDatabaseInsightDetails,
     "EnableMacsManagedCloudExadataInsightDetails": EnableMacsManagedCloudExadataInsightDetails,
@@ -714,6 +724,9 @@ opsi_type_mapping = {
     "ExadataMemberCollection": ExadataMemberCollection,
     "ExadataMemberSummary": ExadataMemberSummary,
     "ExadataStorageServerStatisticsSummary": ExadataStorageServerStatisticsSummary,
+    "ExternalMysqlDatabaseConfigurationSummary": ExternalMysqlDatabaseConfigurationSummary,
+    "ExternalMysqlDatabaseInsight": ExternalMysqlDatabaseInsight,
+    "ExternalMysqlDatabaseInsightSummary": ExternalMysqlDatabaseInsightSummary,
     "HistoricalDataItem": HistoricalDataItem,
     "HostAllocation": HostAllocation,
     "HostConfigurationCollection": HostConfigurationCollection,
@@ -957,6 +970,7 @@ opsi_type_mapping = {
     "UpdateEmManagedExternalHostInsightDetails": UpdateEmManagedExternalHostInsightDetails,
     "UpdateEnterpriseManagerBridgeDetails": UpdateEnterpriseManagerBridgeDetails,
     "UpdateExadataInsightDetails": UpdateExadataInsightDetails,
+    "UpdateExternalMysqlDatabaseInsightDetails": UpdateExternalMysqlDatabaseInsightDetails,
     "UpdateHostInsightDetails": UpdateHostInsightDetails,
     "UpdateMacsManagedCloudDatabaseHostInsightDetails": UpdateMacsManagedCloudDatabaseHostInsightDetails,
     "UpdateMacsManagedCloudDatabaseInsightDetails": UpdateMacsManagedCloudDatabaseInsightDetails,

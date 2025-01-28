@@ -75,6 +75,10 @@ class CloudAssignedSubscriptionSummary(AssignedSubscriptionSummary):
             The value to assign to the defined_tags property of this CloudAssignedSubscriptionSummary.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this CloudAssignedSubscriptionSummary.
+        :type system_tags: dict(str, dict(str, object))
+
         :param subscription_number:
             The value to assign to the subscription_number property of this CloudAssignedSubscriptionSummary.
         :type subscription_number: str
@@ -99,6 +103,7 @@ class CloudAssignedSubscriptionSummary(AssignedSubscriptionSummary):
             'time_updated': 'datetime',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))',
             'subscription_number': 'str',
             'currency_code': 'str',
             'lifecycle_state': 'str'
@@ -113,6 +118,7 @@ class CloudAssignedSubscriptionSummary(AssignedSubscriptionSummary):
             'time_updated': 'timeUpdated',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'system_tags': 'systemTags',
             'subscription_number': 'subscriptionNumber',
             'currency_code': 'currencyCode',
             'lifecycle_state': 'lifecycleState'
@@ -126,6 +132,7 @@ class CloudAssignedSubscriptionSummary(AssignedSubscriptionSummary):
         self._time_updated = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
         self._subscription_number = None
         self._currency_code = None
         self._lifecycle_state = None

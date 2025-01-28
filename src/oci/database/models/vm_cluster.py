@@ -59,6 +59,14 @@ class VmCluster(object):
     #: This constant has a value of "EXASCALE"
     STORAGE_MANAGEMENT_TYPE_EXASCALE = "EXASCALE"
 
+    #: A constant which can be used with the compute_model property of a VmCluster.
+    #: This constant has a value of "ECPU"
+    COMPUTE_MODEL_ECPU = "ECPU"
+
+    #: A constant which can be used with the compute_model property of a VmCluster.
+    #: This constant has a value of "OCPU"
+    COMPUTE_MODEL_OCPU = "OCPU"
+
     def __init__(self, **kwargs):
         """
         Initializes a new VmCluster object with values from keyword arguments.
@@ -202,6 +210,12 @@ class VmCluster(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type storage_management_type: str
 
+        :param compute_model:
+            The value to assign to the compute_model property of this VmCluster.
+            Allowed values for this property are: "ECPU", "OCPU", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type compute_model: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -236,7 +250,8 @@ class VmCluster(object):
             'file_system_configuration_details': 'list[FileSystemConfigurationDetail]',
             'cloud_automation_update_details': 'CloudAutomationUpdateDetails',
             'exascale_db_storage_vault_id': 'str',
-            'storage_management_type': 'str'
+            'storage_management_type': 'str',
+            'compute_model': 'str'
         }
 
         self.attribute_map = {
@@ -272,7 +287,8 @@ class VmCluster(object):
             'file_system_configuration_details': 'fileSystemConfigurationDetails',
             'cloud_automation_update_details': 'cloudAutomationUpdateDetails',
             'exascale_db_storage_vault_id': 'exascaleDbStorageVaultId',
-            'storage_management_type': 'storageManagementType'
+            'storage_management_type': 'storageManagementType',
+            'compute_model': 'computeModel'
         }
 
         self._id = None
@@ -308,6 +324,7 @@ class VmCluster(object):
         self._cloud_automation_update_details = None
         self._exascale_db_storage_vault_id = None
         self._storage_management_type = None
+        self._compute_model = None
 
     @property
     def id(self):
@@ -1158,6 +1175,36 @@ class VmCluster(object):
         if not value_allowed_none_or_none_sentinel(storage_management_type, allowed_values):
             storage_management_type = 'UNKNOWN_ENUM_VALUE'
         self._storage_management_type = storage_management_type
+
+    @property
+    def compute_model(self):
+        """
+        Gets the compute_model of this VmCluster.
+        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+
+        Allowed values for this property are: "ECPU", "OCPU", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The compute_model of this VmCluster.
+        :rtype: str
+        """
+        return self._compute_model
+
+    @compute_model.setter
+    def compute_model(self, compute_model):
+        """
+        Sets the compute_model of this VmCluster.
+        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+
+
+        :param compute_model: The compute_model of this VmCluster.
+        :type: str
+        """
+        allowed_values = ["ECPU", "OCPU"]
+        if not value_allowed_none_or_none_sentinel(compute_model, allowed_values):
+            compute_model = 'UNKNOWN_ENUM_VALUE'
+        self._compute_model = compute_model
 
     def __repr__(self):
         return formatted_flat_dict(self)

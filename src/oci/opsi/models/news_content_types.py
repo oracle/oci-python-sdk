@@ -48,6 +48,10 @@ class NewsContentTypes(object):
             The value to assign to the sql_insights_performance_degradation_resources property of this NewsContentTypes.
         :type sql_insights_performance_degradation_resources: list[oci.opsi.models.NewsSqlInsightsContentTypesResource]
 
+        :param actionable_insights_resources:
+            The value to assign to the actionable_insights_resources property of this NewsContentTypes.
+        :type actionable_insights_resources: list[oci.opsi.models.ActionableInsightsContentTypesResource]
+
         """
         self.swagger_types = {
             'capacity_planning_resources': 'list[NewsContentTypesResource]',
@@ -56,7 +60,8 @@ class NewsContentTypes(object):
             'sql_insights_top_databases_resources': 'list[NewsSqlInsightsContentTypesResource]',
             'sql_insights_top_sql_by_insights_resources': 'list[NewsSqlInsightsContentTypesResource]',
             'sql_insights_top_sql_resources': 'list[NewsSqlInsightsContentTypesResource]',
-            'sql_insights_performance_degradation_resources': 'list[NewsSqlInsightsContentTypesResource]'
+            'sql_insights_performance_degradation_resources': 'list[NewsSqlInsightsContentTypesResource]',
+            'actionable_insights_resources': 'list[ActionableInsightsContentTypesResource]'
         }
 
         self.attribute_map = {
@@ -66,7 +71,8 @@ class NewsContentTypes(object):
             'sql_insights_top_databases_resources': 'sqlInsightsTopDatabasesResources',
             'sql_insights_top_sql_by_insights_resources': 'sqlInsightsTopSqlByInsightsResources',
             'sql_insights_top_sql_resources': 'sqlInsightsTopSqlResources',
-            'sql_insights_performance_degradation_resources': 'sqlInsightsPerformanceDegradationResources'
+            'sql_insights_performance_degradation_resources': 'sqlInsightsPerformanceDegradationResources',
+            'actionable_insights_resources': 'actionableInsightsResources'
         }
 
         self._capacity_planning_resources = None
@@ -76,6 +82,7 @@ class NewsContentTypes(object):
         self._sql_insights_top_sql_by_insights_resources = None
         self._sql_insights_top_sql_resources = None
         self._sql_insights_performance_degradation_resources = None
+        self._actionable_insights_resources = None
 
     @property
     def capacity_planning_resources(self):
@@ -244,6 +251,30 @@ class NewsContentTypes(object):
         :type: list[oci.opsi.models.NewsSqlInsightsContentTypesResource]
         """
         self._sql_insights_performance_degradation_resources = sql_insights_performance_degradation_resources
+
+    @property
+    def actionable_insights_resources(self):
+        """
+        Gets the actionable_insights_resources of this NewsContentTypes.
+        Supported resources for actionable insights content type.
+
+
+        :return: The actionable_insights_resources of this NewsContentTypes.
+        :rtype: list[oci.opsi.models.ActionableInsightsContentTypesResource]
+        """
+        return self._actionable_insights_resources
+
+    @actionable_insights_resources.setter
+    def actionable_insights_resources(self, actionable_insights_resources):
+        """
+        Sets the actionable_insights_resources of this NewsContentTypes.
+        Supported resources for actionable insights content type.
+
+
+        :param actionable_insights_resources: The actionable_insights_resources of this NewsContentTypes.
+        :type: list[oci.opsi.models.ActionableInsightsContentTypesResource]
+        """
+        self._actionable_insights_resources = actionable_insights_resources
 
     def __repr__(self):
         return formatted_flat_dict(self)

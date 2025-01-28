@@ -53,6 +53,10 @@ class CreateChildTenancyDetails(object):
             Allowed values for this property are: "OPTED_IN", "OPTED_OUT"
         :type governance_status: str
 
+        :param subscription_id:
+            The value to assign to the subscription_id property of this CreateChildTenancyDetails.
+        :type subscription_id: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -60,7 +64,8 @@ class CreateChildTenancyDetails(object):
             'home_region': 'str',
             'admin_email': 'str',
             'policy_name': 'str',
-            'governance_status': 'str'
+            'governance_status': 'str',
+            'subscription_id': 'str'
         }
 
         self.attribute_map = {
@@ -69,7 +74,8 @@ class CreateChildTenancyDetails(object):
             'home_region': 'homeRegion',
             'admin_email': 'adminEmail',
             'policy_name': 'policyName',
-            'governance_status': 'governanceStatus'
+            'governance_status': 'governanceStatus',
+            'subscription_id': 'subscriptionId'
         }
 
         self._compartment_id = None
@@ -78,6 +84,7 @@ class CreateChildTenancyDetails(object):
         self._admin_email = None
         self._policy_name = None
         self._governance_status = None
+        self._subscription_id = None
 
     @property
     def compartment_id(self):
@@ -229,6 +236,30 @@ class CreateChildTenancyDetails(object):
                 f"Invalid value for `governance_status`, must be None or one of {allowed_values}"
             )
         self._governance_status = governance_status
+
+    @property
+    def subscription_id(self):
+        """
+        Gets the subscription_id of this CreateChildTenancyDetails.
+        OCID of the subscription that needs to be assigned to the child tenancy.
+
+
+        :return: The subscription_id of this CreateChildTenancyDetails.
+        :rtype: str
+        """
+        return self._subscription_id
+
+    @subscription_id.setter
+    def subscription_id(self, subscription_id):
+        """
+        Sets the subscription_id of this CreateChildTenancyDetails.
+        OCID of the subscription that needs to be assigned to the child tenancy.
+
+
+        :param subscription_id: The subscription_id of this CreateChildTenancyDetails.
+        :type: str
+        """
+        self._subscription_id = subscription_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

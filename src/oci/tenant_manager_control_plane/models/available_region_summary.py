@@ -24,16 +24,23 @@ class AvailableRegionSummary(object):
             The value to assign to the region_name property of this AvailableRegionSummary.
         :type region_name: str
 
+        :param system_tags:
+            The value to assign to the system_tags property of this AvailableRegionSummary.
+        :type system_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
-            'region_name': 'str'
+            'region_name': 'str',
+            'system_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
-            'region_name': 'regionName'
+            'region_name': 'regionName',
+            'system_tags': 'systemTags'
         }
 
         self._region_name = None
+        self._system_tags = None
 
     @property
     def region_name(self):
@@ -58,6 +65,32 @@ class AvailableRegionSummary(object):
         :type: str
         """
         self._region_name = region_name
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this AvailableRegionSummary.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :return: The system_tags of this AvailableRegionSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this AvailableRegionSummary.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :param system_tags: The system_tags of this AvailableRegionSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

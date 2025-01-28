@@ -58,6 +58,10 @@ class SubscriptionLineItemSummary(object):
             The value to assign to the time_ended property of this SubscriptionLineItemSummary.
         :type time_ended: datetime
 
+        :param system_tags:
+            The value to assign to the system_tags property of this SubscriptionLineItemSummary.
+        :type system_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -65,7 +69,8 @@ class SubscriptionLineItemSummary(object):
             'quantity': 'float',
             'billing_model': 'str',
             'time_started': 'datetime',
-            'time_ended': 'datetime'
+            'time_ended': 'datetime',
+            'system_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
@@ -74,7 +79,8 @@ class SubscriptionLineItemSummary(object):
             'quantity': 'quantity',
             'billing_model': 'billingModel',
             'time_started': 'timeStarted',
-            'time_ended': 'timeEnded'
+            'time_ended': 'timeEnded',
+            'system_tags': 'systemTags'
         }
 
         self._id = None
@@ -83,6 +89,7 @@ class SubscriptionLineItemSummary(object):
         self._billing_model = None
         self._time_started = None
         self._time_ended = None
+        self._system_tags = None
 
     @property
     def id(self):
@@ -233,6 +240,32 @@ class SubscriptionLineItemSummary(object):
         :type: datetime
         """
         self._time_ended = time_ended
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this SubscriptionLineItemSummary.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :return: The system_tags of this SubscriptionLineItemSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this SubscriptionLineItemSummary.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :param system_tags: The system_tags of this SubscriptionLineItemSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

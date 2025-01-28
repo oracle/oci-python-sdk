@@ -56,6 +56,10 @@ class UpdateDrProtectionGroupMemberDetails(object):
     MEMBER_TYPE_FILE_SYSTEM = "FILE_SYSTEM"
 
     #: A constant which can be used with the member_type property of a UpdateDrProtectionGroupMemberDetails.
+    #: This constant has a value of "OKE_CLUSTER"
+    MEMBER_TYPE_OKE_CLUSTER = "OKE_CLUSTER"
+
+    #: A constant which can be used with the member_type property of a UpdateDrProtectionGroupMemberDetails.
     #: This constant has a value of "OBJECT_STORAGE_BUCKET"
     MEMBER_TYPE_OBJECT_STORAGE_BUCKET = "OBJECT_STORAGE_BUCKET"
 
@@ -66,6 +70,7 @@ class UpdateDrProtectionGroupMemberDetails(object):
 
         * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberComputeInstanceDetails`
         * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberNetworkLoadBalancerDetails`
+        * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberOkeClusterDetails`
         * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberAutonomousDatabaseDetails`
         * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberFileSystemDetails`
         * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberVolumeGroupDetails`
@@ -84,7 +89,7 @@ class UpdateDrProtectionGroupMemberDetails(object):
 
         :param member_type:
             The value to assign to the member_type property of this UpdateDrProtectionGroupMemberDetails.
-            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OBJECT_STORAGE_BUCKET"
+            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OKE_CLUSTER", "OBJECT_STORAGE_BUCKET"
         :type member_type: str
 
         """
@@ -114,6 +119,9 @@ class UpdateDrProtectionGroupMemberDetails(object):
 
         if type == 'NETWORK_LOAD_BALANCER':
             return 'UpdateDrProtectionGroupMemberNetworkLoadBalancerDetails'
+
+        if type == 'OKE_CLUSTER':
+            return 'UpdateDrProtectionGroupMemberOkeClusterDetails'
 
         if type == 'AUTONOMOUS_DATABASE':
             return 'UpdateDrProtectionGroupMemberAutonomousDatabaseDetails'
@@ -178,7 +186,7 @@ class UpdateDrProtectionGroupMemberDetails(object):
         **[Required]** Gets the member_type of this UpdateDrProtectionGroupMemberDetails.
         The type of the member.
 
-        Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OBJECT_STORAGE_BUCKET"
+        Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OKE_CLUSTER", "OBJECT_STORAGE_BUCKET"
 
 
         :return: The member_type of this UpdateDrProtectionGroupMemberDetails.
@@ -196,7 +204,7 @@ class UpdateDrProtectionGroupMemberDetails(object):
         :param member_type: The member_type of this UpdateDrProtectionGroupMemberDetails.
         :type: str
         """
-        allowed_values = ["COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OBJECT_STORAGE_BUCKET"]
+        allowed_values = ["COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OKE_CLUSTER", "OBJECT_STORAGE_BUCKET"]
         if not value_allowed_none_or_none_sentinel(member_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `member_type`, must be None or one of {allowed_values}"

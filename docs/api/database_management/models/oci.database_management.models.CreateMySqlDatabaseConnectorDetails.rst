@@ -1,0 +1,11 @@
+CreateMySqlDatabaseConnectorDetails
+===================================
+
+.. currentmodule:: oci.database_management.models
+
+.. autoclass:: CreateMySqlDatabaseConnectorDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

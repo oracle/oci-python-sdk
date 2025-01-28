@@ -82,6 +82,7 @@ Database Management
     oci.database_management.models.AwrDbWaitEventCollection
     oci.database_management.models.AwrDbWaitEventSummary
     oci.database_management.models.AwrQueryResult
+    oci.database_management.models.BaseDatabaseHaDetails
     oci.database_management.models.BasicDatabaseConnectionStringDetails
     oci.database_management.models.BasicNamedCredentialContent
     oci.database_management.models.BasicPreferredCredential
@@ -112,8 +113,11 @@ Database Management
     oci.database_management.models.CreateExternalDbSystemMacsConnectorDetails
     oci.database_management.models.CreateExternalExadataInfrastructureDetails
     oci.database_management.models.CreateExternalExadataStorageConnectorDetails
+    oci.database_management.models.CreateExternalMySqlDatabaseConnectorDetails
+    oci.database_management.models.CreateExternalMySqlDatabaseDetails
     oci.database_management.models.CreateJobDetails
     oci.database_management.models.CreateManagedDatabaseGroupDetails
+    oci.database_management.models.CreateMySqlDatabaseConnectorDetails
     oci.database_management.models.CreateNamedCredentialDetails
     oci.database_management.models.CreateSqlJobDetails
     oci.database_management.models.CreateSqlTuningSetDetails
@@ -123,6 +127,8 @@ Database Management
     oci.database_management.models.DataAccessContainerCollection
     oci.database_management.models.DataAccessContainerSummary
     oci.database_management.models.DataPoints
+    oci.database_management.models.DatabaseBackupMetrics
+    oci.database_management.models.DatabaseBackupSummary
     oci.database_management.models.DatabaseConnectionCredentailsByName
     oci.database_management.models.DatabaseConnectionCredentials
     oci.database_management.models.DatabaseConnectionCredentialsByDetails
@@ -135,7 +141,12 @@ Database Management
     oci.database_management.models.DatabaseDiagnosticsAndManagementFeatureDetails
     oci.database_management.models.DatabaseFeatureConfiguration
     oci.database_management.models.DatabaseFeatureDetails
+    oci.database_management.models.DatabaseFleetBackupMetrics
+    oci.database_management.models.DatabaseFleetDataguardMetrics
+    oci.database_management.models.DatabaseFleetHaOverviewMetrics
     oci.database_management.models.DatabaseFleetHealthMetrics
+    oci.database_management.models.DatabaseHaBackupDetails
+    oci.database_management.models.DatabaseHaMetrics
     oci.database_management.models.DatabaseHomeMetricDefinition
     oci.database_management.models.DatabaseHomeMetrics
     oci.database_management.models.DatabaseIOAggregateMetrics
@@ -159,6 +170,7 @@ Database Management
     oci.database_management.models.DatabaseTimeAggregateMetrics
     oci.database_management.models.DatabaseUsageMetrics
     oci.database_management.models.Datafile
+    oci.database_management.models.DataguardMetrics
     oci.database_management.models.DataguardPerformanceMetrics
     oci.database_management.models.DbManagementAnalyticsMetric
     oci.database_management.models.DbManagementPrivateEndpoint
@@ -171,6 +183,7 @@ Database Management
     oci.database_management.models.DisableAutonomousDatabaseManagementFeatureDetails
     oci.database_management.models.DisableDatabaseManagementFeatureDetails
     oci.database_management.models.DisableExternalContainerDatabaseManagementFeatureDetails
+    oci.database_management.models.DisableExternalMysqlAssociatedServiceDetails
     oci.database_management.models.DisableExternalNonContainerDatabaseManagementFeatureDetails
     oci.database_management.models.DisableExternalPluggableDatabaseManagementFeatureDetails
     oci.database_management.models.DisableHighFrequencyAutomaticSpmEvolveAdvisorTaskDetails
@@ -197,15 +210,18 @@ Database Management
     oci.database_management.models.EnableAutonomousDatabaseManagementFeatureDetails
     oci.database_management.models.EnableDatabaseManagementFeatureDetails
     oci.database_management.models.EnableExternalContainerDatabaseManagementFeatureDetails
+    oci.database_management.models.EnableExternalDatabaseManagementDetails
     oci.database_management.models.EnableExternalDbSystemDatabaseManagementDetails
     oci.database_management.models.EnableExternalDbSystemStackMonitoringDetails
     oci.database_management.models.EnableExternalExadataInfrastructureManagementDetails
+    oci.database_management.models.EnableExternalMysqlAssociatedServiceDetails
     oci.database_management.models.EnableExternalNonContainerDatabaseManagementFeatureDetails
     oci.database_management.models.EnableExternalPluggableDatabaseManagementFeatureDetails
     oci.database_management.models.EnableHighFrequencyAutomaticSpmEvolveAdvisorTaskDetails
     oci.database_management.models.EnablePluggableDatabaseManagementFeatureDetails
     oci.database_management.models.EnableSqlPlanBaselinesUsageDetails
     oci.database_management.models.EntityDiscovered
+    oci.database_management.models.ExadataInfrastructureLifecycleStateValues
     oci.database_management.models.ExecutionPlanStatsComparision
     oci.database_management.models.ExternalAsm
     oci.database_management.models.ExternalAsmCollection
@@ -288,6 +304,10 @@ Database Management
     oci.database_management.models.ExternalListenerSummary
     oci.database_management.models.ExternalListenerTcpEndpoint
     oci.database_management.models.ExternalListenerTcpsEndpoint
+    oci.database_management.models.ExternalMySqlDatabase
+    oci.database_management.models.ExternalMySqlDatabaseCollection
+    oci.database_management.models.ExternalMySqlDatabaseConnector
+    oci.database_management.models.ExternalMySqlDatabaseSummary
     oci.database_management.models.ExternalPluggableDatabaseDiagnosticsAndManagementFeatureDetails
     oci.database_management.models.ExternalPluggableDatabaseFeatureDetails
     oci.database_management.models.ExternalPluggableDatabaseLifecycleManagementFeatureDetails
@@ -303,6 +323,7 @@ Database Management
     oci.database_management.models.FleetMetricSummaryDefinition
     oci.database_management.models.FleetStatusByCategory
     oci.database_management.models.FleetSummary
+    oci.database_management.models.HaMetricDefinition
     oci.database_management.models.HeatWaveClusterUsageMetrics
     oci.database_management.models.HeatWaveFleetByCategory
     oci.database_management.models.HeatWaveFleetMetricDefinition
@@ -362,8 +383,10 @@ Database Management
     oci.database_management.models.ModifySnapshotSettingsDetails
     oci.database_management.models.MySqlConfigurationDataCollection
     oci.database_management.models.MySqlConfigurationDataSummary
+    oci.database_management.models.MySqlConnectorCollection
     oci.database_management.models.MySqlDataCollection
     oci.database_management.models.MySqlDataSummary
+    oci.database_management.models.MySqlDatabaseConnectorSummary
     oci.database_management.models.MySqlDatabaseUsageMetrics
     oci.database_management.models.MySqlFleetByCategory
     oci.database_management.models.MySqlFleetMetricDefinition
@@ -471,6 +494,7 @@ Database Management
     oci.database_management.models.SqlTuningTaskSecretCredentialDetails
     oci.database_management.models.SqlTuningTaskSqlDetail
     oci.database_management.models.SqlTuningTaskSqlExecutionPlanStep
+    oci.database_management.models.StandByDatabaseDataguardMetrics
     oci.database_management.models.StartSqlTuningTaskDetails
     oci.database_management.models.StatementsAggregateMetrics
     oci.database_management.models.SystemPrivilegeCollection
@@ -512,9 +536,12 @@ Database Management
     oci.database_management.models.UpdateExternalExadataStorageGridDetails
     oci.database_management.models.UpdateExternalExadataStorageServerDetails
     oci.database_management.models.UpdateExternalListenerDetails
+    oci.database_management.models.UpdateExternalMySqlDatabaseConnectorDetails
+    oci.database_management.models.UpdateExternalMySqlDatabaseDetails
     oci.database_management.models.UpdateJobDetails
     oci.database_management.models.UpdateManagedDatabaseDetails
     oci.database_management.models.UpdateManagedDatabaseGroupDetails
+    oci.database_management.models.UpdateMySqlDatabaseConnectorDetails
     oci.database_management.models.UpdateNamedCredentialDetails
     oci.database_management.models.UpdateNamedPreferredCredentialDetails
     oci.database_management.models.UpdatePreferredCredentialDetails

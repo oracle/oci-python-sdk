@@ -43,6 +43,14 @@ class CloudExadataInfrastructure(object):
     #: This constant has a value of "MAINTENANCE_IN_PROGRESS"
     LIFECYCLE_STATE_MAINTENANCE_IN_PROGRESS = "MAINTENANCE_IN_PROGRESS"
 
+    #: A constant which can be used with the compute_model property of a CloudExadataInfrastructure.
+    #: This constant has a value of "ECPU"
+    COMPUTE_MODEL_ECPU = "ECPU"
+
+    #: A constant which can be used with the compute_model property of a CloudExadataInfrastructure.
+    #: This constant has a value of "OCPU"
+    COMPUTE_MODEL_OCPU = "OCPU"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CloudExadataInfrastructure object with values from keyword arguments.
@@ -198,6 +206,20 @@ class CloudExadataInfrastructure(object):
             The value to assign to the is_scheduling_policy_associated property of this CloudExadataInfrastructure.
         :type is_scheduling_policy_associated: bool
 
+        :param database_server_type:
+            The value to assign to the database_server_type property of this CloudExadataInfrastructure.
+        :type database_server_type: str
+
+        :param storage_server_type:
+            The value to assign to the storage_server_type property of this CloudExadataInfrastructure.
+        :type storage_server_type: str
+
+        :param compute_model:
+            The value to assign to the compute_model property of this CloudExadataInfrastructure.
+            Allowed values for this property are: "ECPU", "OCPU", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type compute_model: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -236,7 +258,10 @@ class CloudExadataInfrastructure(object):
             'monthly_storage_server_version': 'str',
             'monthly_db_server_version': 'str',
             'defined_file_system_configurations': 'list[DefinedFileSystemConfiguration]',
-            'is_scheduling_policy_associated': 'bool'
+            'is_scheduling_policy_associated': 'bool',
+            'database_server_type': 'str',
+            'storage_server_type': 'str',
+            'compute_model': 'str'
         }
 
         self.attribute_map = {
@@ -276,7 +301,10 @@ class CloudExadataInfrastructure(object):
             'monthly_storage_server_version': 'monthlyStorageServerVersion',
             'monthly_db_server_version': 'monthlyDbServerVersion',
             'defined_file_system_configurations': 'definedFileSystemConfigurations',
-            'is_scheduling_policy_associated': 'isSchedulingPolicyAssociated'
+            'is_scheduling_policy_associated': 'isSchedulingPolicyAssociated',
+            'database_server_type': 'databaseServerType',
+            'storage_server_type': 'storageServerType',
+            'compute_model': 'computeModel'
         }
 
         self._id = None
@@ -316,6 +344,9 @@ class CloudExadataInfrastructure(object):
         self._monthly_db_server_version = None
         self._defined_file_system_configurations = None
         self._is_scheduling_policy_associated = None
+        self._database_server_type = None
+        self._storage_server_type = None
+        self._compute_model = None
 
     @property
     def id(self):
@@ -1264,6 +1295,84 @@ class CloudExadataInfrastructure(object):
         :type: bool
         """
         self._is_scheduling_policy_associated = is_scheduling_policy_associated
+
+    @property
+    def database_server_type(self):
+        """
+        Gets the database_server_type of this CloudExadataInfrastructure.
+        The database server type of the Exadata infrastructure.
+
+
+        :return: The database_server_type of this CloudExadataInfrastructure.
+        :rtype: str
+        """
+        return self._database_server_type
+
+    @database_server_type.setter
+    def database_server_type(self, database_server_type):
+        """
+        Sets the database_server_type of this CloudExadataInfrastructure.
+        The database server type of the Exadata infrastructure.
+
+
+        :param database_server_type: The database_server_type of this CloudExadataInfrastructure.
+        :type: str
+        """
+        self._database_server_type = database_server_type
+
+    @property
+    def storage_server_type(self):
+        """
+        Gets the storage_server_type of this CloudExadataInfrastructure.
+        The storage server type of the Exadata infrastructure.
+
+
+        :return: The storage_server_type of this CloudExadataInfrastructure.
+        :rtype: str
+        """
+        return self._storage_server_type
+
+    @storage_server_type.setter
+    def storage_server_type(self, storage_server_type):
+        """
+        Sets the storage_server_type of this CloudExadataInfrastructure.
+        The storage server type of the Exadata infrastructure.
+
+
+        :param storage_server_type: The storage_server_type of this CloudExadataInfrastructure.
+        :type: str
+        """
+        self._storage_server_type = storage_server_type
+
+    @property
+    def compute_model(self):
+        """
+        Gets the compute_model of this CloudExadataInfrastructure.
+        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+
+        Allowed values for this property are: "ECPU", "OCPU", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The compute_model of this CloudExadataInfrastructure.
+        :rtype: str
+        """
+        return self._compute_model
+
+    @compute_model.setter
+    def compute_model(self, compute_model):
+        """
+        Sets the compute_model of this CloudExadataInfrastructure.
+        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+
+
+        :param compute_model: The compute_model of this CloudExadataInfrastructure.
+        :type: str
+        """
+        allowed_values = ["ECPU", "OCPU"]
+        if not value_allowed_none_or_none_sentinel(compute_model, allowed_values):
+            compute_model = 'UNKNOWN_ENUM_VALUE'
+        self._compute_model = compute_model
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -95,6 +95,7 @@ Opsi
     oci.opsi.models.ChangeDatabaseInsightCompartmentDetails
     oci.opsi.models.ChangeEnterpriseManagerBridgeCompartmentDetails
     oci.opsi.models.ChangeExadataInsightCompartmentDetails
+    oci.opsi.models.ChangeExternalMysqlDatabaseInsightConnectionDetails
     oci.opsi.models.ChangeHostInsightCompartmentDetails
     oci.opsi.models.ChangeMacsManagedCloudDatabaseInsightConnectionDetails
     oci.opsi.models.ChangeNewsReportCompartmentDetails
@@ -124,6 +125,7 @@ Opsi
     oci.opsi.models.CreateEmManagedExternalHostInsightDetails
     oci.opsi.models.CreateEnterpriseManagerBridgeDetails
     oci.opsi.models.CreateExadataInsightDetails
+    oci.opsi.models.CreateExternalMysqlDatabaseInsightDetails
     oci.opsi.models.CreateHostInsightDetails
     oci.opsi.models.CreateMacsManagedCloudDatabaseInsightDetails
     oci.opsi.models.CreateMacsManagedCloudExadataClusterDetails
@@ -195,6 +197,7 @@ Opsi
     oci.opsi.models.EnableEmManagedExternalExadataInsightDetails
     oci.opsi.models.EnableEmManagedExternalHostInsightDetails
     oci.opsi.models.EnableExadataInsightDetails
+    oci.opsi.models.EnableExternalMysqlDatabaseInsightDetails
     oci.opsi.models.EnableHostInsightDetails
     oci.opsi.models.EnableMacsManagedCloudDatabaseInsightDetails
     oci.opsi.models.EnableMacsManagedCloudExadataInsightDetails
@@ -233,6 +236,9 @@ Opsi
     oci.opsi.models.ExadataMemberCollection
     oci.opsi.models.ExadataMemberSummary
     oci.opsi.models.ExadataStorageServerStatisticsSummary
+    oci.opsi.models.ExternalMysqlDatabaseConfigurationSummary
+    oci.opsi.models.ExternalMysqlDatabaseInsight
+    oci.opsi.models.ExternalMysqlDatabaseInsightSummary
     oci.opsi.models.HistoricalDataItem
     oci.opsi.models.HostAllocation
     oci.opsi.models.HostConfigurationCollection
@@ -476,6 +482,7 @@ Opsi
     oci.opsi.models.UpdateEmManagedExternalHostInsightDetails
     oci.opsi.models.UpdateEnterpriseManagerBridgeDetails
     oci.opsi.models.UpdateExadataInsightDetails
+    oci.opsi.models.UpdateExternalMysqlDatabaseInsightDetails
     oci.opsi.models.UpdateHostInsightDetails
     oci.opsi.models.UpdateMacsManagedCloudDatabaseHostInsightDetails
     oci.opsi.models.UpdateMacsManagedCloudDatabaseInsightDetails

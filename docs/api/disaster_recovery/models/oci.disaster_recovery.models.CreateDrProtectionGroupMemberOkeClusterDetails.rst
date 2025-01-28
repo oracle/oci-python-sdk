@@ -1,0 +1,11 @@
+CreateDrProtectionGroupMemberOkeClusterDetails
+==============================================
+
+.. currentmodule:: oci.disaster_recovery.models
+
+.. autoclass:: CreateDrProtectionGroupMemberOkeClusterDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

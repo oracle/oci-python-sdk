@@ -68,6 +68,14 @@ class SummarizeExadataInsightResourceUtilizationInsightAggregation(object):
             The value to assign to the time_interval_end property of this SummarizeExadataInsightResourceUtilizationInsightAggregation.
         :type time_interval_end: datetime
 
+        :param high_utilization_threshold:
+            The value to assign to the high_utilization_threshold property of this SummarizeExadataInsightResourceUtilizationInsightAggregation.
+        :type high_utilization_threshold: int
+
+        :param low_utilization_threshold:
+            The value to assign to the low_utilization_threshold property of this SummarizeExadataInsightResourceUtilizationInsightAggregation.
+        :type low_utilization_threshold: int
+
         :param exadata_resource_metric:
             The value to assign to the exadata_resource_metric property of this SummarizeExadataInsightResourceUtilizationInsightAggregation.
             Allowed values for this property are: "CPU", "STORAGE", "IO", "MEMORY", "IOPS", "THROUGHPUT", 'UNKNOWN_ENUM_VALUE'.
@@ -88,6 +96,8 @@ class SummarizeExadataInsightResourceUtilizationInsightAggregation(object):
         self.swagger_types = {
             'time_interval_start': 'datetime',
             'time_interval_end': 'datetime',
+            'high_utilization_threshold': 'int',
+            'low_utilization_threshold': 'int',
             'exadata_resource_metric': 'str',
             'exadata_resource_type': 'str',
             'utilization': 'list[ExadataInsightResourceInsightUtilizationItem]'
@@ -96,6 +106,8 @@ class SummarizeExadataInsightResourceUtilizationInsightAggregation(object):
         self.attribute_map = {
             'time_interval_start': 'timeIntervalStart',
             'time_interval_end': 'timeIntervalEnd',
+            'high_utilization_threshold': 'highUtilizationThreshold',
+            'low_utilization_threshold': 'lowUtilizationThreshold',
             'exadata_resource_metric': 'exadataResourceMetric',
             'exadata_resource_type': 'exadataResourceType',
             'utilization': 'utilization'
@@ -103,6 +115,8 @@ class SummarizeExadataInsightResourceUtilizationInsightAggregation(object):
 
         self._time_interval_start = None
         self._time_interval_end = None
+        self._high_utilization_threshold = None
+        self._low_utilization_threshold = None
         self._exadata_resource_metric = None
         self._exadata_resource_type = None
         self._utilization = None
@@ -154,6 +168,54 @@ class SummarizeExadataInsightResourceUtilizationInsightAggregation(object):
         :type: datetime
         """
         self._time_interval_end = time_interval_end
+
+    @property
+    def high_utilization_threshold(self):
+        """
+        **[Required]** Gets the high_utilization_threshold of this SummarizeExadataInsightResourceUtilizationInsightAggregation.
+        Percent value in which a resource metric is considered highly utilized.
+
+
+        :return: The high_utilization_threshold of this SummarizeExadataInsightResourceUtilizationInsightAggregation.
+        :rtype: int
+        """
+        return self._high_utilization_threshold
+
+    @high_utilization_threshold.setter
+    def high_utilization_threshold(self, high_utilization_threshold):
+        """
+        Sets the high_utilization_threshold of this SummarizeExadataInsightResourceUtilizationInsightAggregation.
+        Percent value in which a resource metric is considered highly utilized.
+
+
+        :param high_utilization_threshold: The high_utilization_threshold of this SummarizeExadataInsightResourceUtilizationInsightAggregation.
+        :type: int
+        """
+        self._high_utilization_threshold = high_utilization_threshold
+
+    @property
+    def low_utilization_threshold(self):
+        """
+        **[Required]** Gets the low_utilization_threshold of this SummarizeExadataInsightResourceUtilizationInsightAggregation.
+        Percent value in which a resource metric is considered lowly utilized.
+
+
+        :return: The low_utilization_threshold of this SummarizeExadataInsightResourceUtilizationInsightAggregation.
+        :rtype: int
+        """
+        return self._low_utilization_threshold
+
+    @low_utilization_threshold.setter
+    def low_utilization_threshold(self, low_utilization_threshold):
+        """
+        Sets the low_utilization_threshold of this SummarizeExadataInsightResourceUtilizationInsightAggregation.
+        Percent value in which a resource metric is considered lowly utilized.
+
+
+        :param low_utilization_threshold: The low_utilization_threshold of this SummarizeExadataInsightResourceUtilizationInsightAggregation.
+        :type: int
+        """
+        self._low_utilization_threshold = low_utilization_threshold
 
     @property
     def exadata_resource_metric(self):

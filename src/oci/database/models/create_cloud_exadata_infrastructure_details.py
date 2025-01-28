@@ -68,6 +68,14 @@ class CreateCloudExadataInfrastructureDetails(object):
             The value to assign to the customer_contacts property of this CreateCloudExadataInfrastructureDetails.
         :type customer_contacts: list[oci.database.models.CustomerContact]
 
+        :param database_server_type:
+            The value to assign to the database_server_type property of this CreateCloudExadataInfrastructureDetails.
+        :type database_server_type: str
+
+        :param storage_server_type:
+            The value to assign to the storage_server_type property of this CreateCloudExadataInfrastructureDetails.
+        :type storage_server_type: str
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -81,7 +89,9 @@ class CreateCloudExadataInfrastructureDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'cluster_placement_group_id': 'str',
             'subscription_id': 'str',
-            'customer_contacts': 'list[CustomerContact]'
+            'customer_contacts': 'list[CustomerContact]',
+            'database_server_type': 'str',
+            'storage_server_type': 'str'
         }
 
         self.attribute_map = {
@@ -96,7 +106,9 @@ class CreateCloudExadataInfrastructureDetails(object):
             'defined_tags': 'definedTags',
             'cluster_placement_group_id': 'clusterPlacementGroupId',
             'subscription_id': 'subscriptionId',
-            'customer_contacts': 'customerContacts'
+            'customer_contacts': 'customerContacts',
+            'database_server_type': 'databaseServerType',
+            'storage_server_type': 'storageServerType'
         }
 
         self._availability_domain = None
@@ -111,6 +123,8 @@ class CreateCloudExadataInfrastructureDetails(object):
         self._cluster_placement_group_id = None
         self._subscription_id = None
         self._customer_contacts = None
+        self._database_server_type = None
+        self._storage_server_type = None
 
     @property
     def availability_domain(self):
@@ -423,6 +437,54 @@ class CreateCloudExadataInfrastructureDetails(object):
         :type: list[oci.database.models.CustomerContact]
         """
         self._customer_contacts = customer_contacts
+
+    @property
+    def database_server_type(self):
+        """
+        Gets the database_server_type of this CreateCloudExadataInfrastructureDetails.
+        The database server type of the Exadata infrastructure.
+
+
+        :return: The database_server_type of this CreateCloudExadataInfrastructureDetails.
+        :rtype: str
+        """
+        return self._database_server_type
+
+    @database_server_type.setter
+    def database_server_type(self, database_server_type):
+        """
+        Sets the database_server_type of this CreateCloudExadataInfrastructureDetails.
+        The database server type of the Exadata infrastructure.
+
+
+        :param database_server_type: The database_server_type of this CreateCloudExadataInfrastructureDetails.
+        :type: str
+        """
+        self._database_server_type = database_server_type
+
+    @property
+    def storage_server_type(self):
+        """
+        Gets the storage_server_type of this CreateCloudExadataInfrastructureDetails.
+        The storage server type of the Exadata infrastructure.
+
+
+        :return: The storage_server_type of this CreateCloudExadataInfrastructureDetails.
+        :rtype: str
+        """
+        return self._storage_server_type
+
+    @storage_server_type.setter
+    def storage_server_type(self, storage_server_type):
+        """
+        Sets the storage_server_type of this CreateCloudExadataInfrastructureDetails.
+        The storage server type of the Exadata infrastructure.
+
+
+        :param storage_server_type: The storage_server_type of this CreateCloudExadataInfrastructureDetails.
+        :type: str
+        """
+        self._storage_server_type = storage_server_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

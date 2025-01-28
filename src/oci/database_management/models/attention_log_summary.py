@@ -31,6 +31,10 @@ class AttentionLogSummary(object):
     #: This constant has a value of "INFO"
     MESSAGE_URGENCY_INFO = "INFO"
 
+    #: A constant which can be used with the message_urgency property of a AttentionLogSummary.
+    #: This constant has a value of "OTHER"
+    MESSAGE_URGENCY_OTHER = "OTHER"
+
     #: A constant which can be used with the message_type property of a AttentionLogSummary.
     #: This constant has a value of "UNKNOWN"
     MESSAGE_TYPE_UNKNOWN = "UNKNOWN"
@@ -55,6 +59,10 @@ class AttentionLogSummary(object):
     #: This constant has a value of "TRACE"
     MESSAGE_TYPE_TRACE = "TRACE"
 
+    #: A constant which can be used with the message_type property of a AttentionLogSummary.
+    #: This constant has a value of "OTHER"
+    MESSAGE_TYPE_OTHER = "OTHER"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AttentionLogSummary object with values from keyword arguments.
@@ -62,13 +70,13 @@ class AttentionLogSummary(object):
 
         :param message_urgency:
             The value to assign to the message_urgency property of this AttentionLogSummary.
-            Allowed values for this property are: "IMMEDIATE", "SOON", "DEFERRABLE", "INFO", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "IMMEDIATE", "SOON", "DEFERRABLE", "INFO", "OTHER", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type message_urgency: str
 
         :param message_type:
             The value to assign to the message_type property of this AttentionLogSummary.
-            Allowed values for this property are: "UNKNOWN", "INCIDENT_ERROR", "ERROR", "WARNING", "NOTIFICATION", "TRACE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "UNKNOWN", "INCIDENT_ERROR", "ERROR", "WARNING", "NOTIFICATION", "TRACE", "OTHER", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type message_type: str
 
@@ -148,7 +156,7 @@ class AttentionLogSummary(object):
         **[Required]** Gets the message_urgency of this AttentionLogSummary.
         The urgency of the attention log.
 
-        Allowed values for this property are: "IMMEDIATE", "SOON", "DEFERRABLE", "INFO", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "IMMEDIATE", "SOON", "DEFERRABLE", "INFO", "OTHER", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -167,7 +175,7 @@ class AttentionLogSummary(object):
         :param message_urgency: The message_urgency of this AttentionLogSummary.
         :type: str
         """
-        allowed_values = ["IMMEDIATE", "SOON", "DEFERRABLE", "INFO"]
+        allowed_values = ["IMMEDIATE", "SOON", "DEFERRABLE", "INFO", "OTHER"]
         if not value_allowed_none_or_none_sentinel(message_urgency, allowed_values):
             message_urgency = 'UNKNOWN_ENUM_VALUE'
         self._message_urgency = message_urgency
@@ -178,7 +186,7 @@ class AttentionLogSummary(object):
         **[Required]** Gets the message_type of this AttentionLogSummary.
         The type of attention log message.
 
-        Allowed values for this property are: "UNKNOWN", "INCIDENT_ERROR", "ERROR", "WARNING", "NOTIFICATION", "TRACE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "UNKNOWN", "INCIDENT_ERROR", "ERROR", "WARNING", "NOTIFICATION", "TRACE", "OTHER", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -197,7 +205,7 @@ class AttentionLogSummary(object):
         :param message_type: The message_type of this AttentionLogSummary.
         :type: str
         """
-        allowed_values = ["UNKNOWN", "INCIDENT_ERROR", "ERROR", "WARNING", "NOTIFICATION", "TRACE"]
+        allowed_values = ["UNKNOWN", "INCIDENT_ERROR", "ERROR", "WARNING", "NOTIFICATION", "TRACE", "OTHER"]
         if not value_allowed_none_or_none_sentinel(message_type, allowed_values):
             message_type = 'UNKNOWN_ENUM_VALUE'
         self._message_type = message_type

@@ -28,6 +28,18 @@ class AwrDbSummary(object):
             The value to assign to the db_name property of this AwrDbSummary.
         :type db_name: str
 
+        :param db_unique_name:
+            The value to assign to the db_unique_name property of this AwrDbSummary.
+        :type db_unique_name: str
+
+        :param src_db_id:
+            The value to assign to the src_db_id property of this AwrDbSummary.
+        :type src_db_id: str
+
+        :param src_db_name:
+            The value to assign to the src_db_name property of this AwrDbSummary.
+        :type src_db_name: str
+
         :param instance_list:
             The value to assign to the instance_list property of this AwrDbSummary.
         :type instance_list: list[int]
@@ -76,6 +88,9 @@ class AwrDbSummary(object):
         self.swagger_types = {
             'awr_db_id': 'str',
             'db_name': 'str',
+            'db_unique_name': 'str',
+            'src_db_id': 'str',
+            'src_db_name': 'str',
             'instance_list': 'list[int]',
             'time_db_startup': 'datetime',
             'time_first_snapshot_begin': 'datetime',
@@ -92,6 +107,9 @@ class AwrDbSummary(object):
         self.attribute_map = {
             'awr_db_id': 'awrDbId',
             'db_name': 'dbName',
+            'db_unique_name': 'dbUniqueName',
+            'src_db_id': 'srcDbId',
+            'src_db_name': 'srcDbName',
             'instance_list': 'instanceList',
             'time_db_startup': 'timeDbStartup',
             'time_first_snapshot_begin': 'timeFirstSnapshotBegin',
@@ -107,6 +125,9 @@ class AwrDbSummary(object):
 
         self._awr_db_id = None
         self._db_name = None
+        self._db_unique_name = None
+        self._src_db_id = None
+        self._src_db_name = None
         self._instance_list = None
         self._time_db_startup = None
         self._time_first_snapshot_begin = None
@@ -174,6 +195,78 @@ class AwrDbSummary(object):
         :type: str
         """
         self._db_name = db_name
+
+    @property
+    def db_unique_name(self):
+        """
+        Gets the db_unique_name of this AwrDbSummary.
+        The unique name of the database.
+
+
+        :return: The db_unique_name of this AwrDbSummary.
+        :rtype: str
+        """
+        return self._db_unique_name
+
+    @db_unique_name.setter
+    def db_unique_name(self, db_unique_name):
+        """
+        Sets the db_unique_name of this AwrDbSummary.
+        The unique name of the database.
+
+
+        :param db_unique_name: The db_unique_name of this AwrDbSummary.
+        :type: str
+        """
+        self._db_unique_name = db_unique_name
+
+    @property
+    def src_db_id(self):
+        """
+        Gets the src_db_id of this AwrDbSummary.
+        The internal ID of the database where the AWR snapshot data was collected.
+
+
+        :return: The src_db_id of this AwrDbSummary.
+        :rtype: str
+        """
+        return self._src_db_id
+
+    @src_db_id.setter
+    def src_db_id(self, src_db_id):
+        """
+        Sets the src_db_id of this AwrDbSummary.
+        The internal ID of the database where the AWR snapshot data was collected.
+
+
+        :param src_db_id: The src_db_id of this AwrDbSummary.
+        :type: str
+        """
+        self._src_db_id = src_db_id
+
+    @property
+    def src_db_name(self):
+        """
+        Gets the src_db_name of this AwrDbSummary.
+        The name of the database where the AWR snapshot data was collected.
+
+
+        :return: The src_db_name of this AwrDbSummary.
+        :rtype: str
+        """
+        return self._src_db_name
+
+    @src_db_name.setter
+    def src_db_name(self, src_db_name):
+        """
+        Sets the src_db_name of this AwrDbSummary.
+        The name of the database where the AWR snapshot data was collected.
+
+
+        :param src_db_name: The src_db_name of this AwrDbSummary.
+        :type: str
+        """
+        self._src_db_name = src_db_name
 
     @property
     def instance_list(self):

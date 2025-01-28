@@ -105,6 +105,14 @@ class CreateExadataInfrastructureDetails(object):
             The value to assign to the network_bonding_mode_details property of this CreateExadataInfrastructureDetails.
         :type network_bonding_mode_details: oci.database.models.NetworkBondingModeDetails
 
+        :param database_server_type:
+            The value to assign to the database_server_type property of this CreateExadataInfrastructureDetails.
+        :type database_server_type: str
+
+        :param storage_server_type:
+            The value to assign to the storage_server_type property of this CreateExadataInfrastructureDetails.
+        :type storage_server_type: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateExadataInfrastructureDetails.
         :type freeform_tags: dict(str, str)
@@ -136,6 +144,8 @@ class CreateExadataInfrastructureDetails(object):
             'ntp_server': 'list[str]',
             'is_cps_offline_report_enabled': 'bool',
             'network_bonding_mode_details': 'NetworkBondingModeDetails',
+            'database_server_type': 'str',
+            'storage_server_type': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -162,6 +172,8 @@ class CreateExadataInfrastructureDetails(object):
             'ntp_server': 'ntpServer',
             'is_cps_offline_report_enabled': 'isCpsOfflineReportEnabled',
             'network_bonding_mode_details': 'networkBondingModeDetails',
+            'database_server_type': 'databaseServerType',
+            'storage_server_type': 'storageServerType',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -187,6 +199,8 @@ class CreateExadataInfrastructureDetails(object):
         self._ntp_server = None
         self._is_cps_offline_report_enabled = None
         self._network_bonding_mode_details = None
+        self._database_server_type = None
+        self._storage_server_type = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -699,6 +713,54 @@ class CreateExadataInfrastructureDetails(object):
         :type: oci.database.models.NetworkBondingModeDetails
         """
         self._network_bonding_mode_details = network_bonding_mode_details
+
+    @property
+    def database_server_type(self):
+        """
+        Gets the database_server_type of this CreateExadataInfrastructureDetails.
+        The database server type of the Exadata infrastructure.
+
+
+        :return: The database_server_type of this CreateExadataInfrastructureDetails.
+        :rtype: str
+        """
+        return self._database_server_type
+
+    @database_server_type.setter
+    def database_server_type(self, database_server_type):
+        """
+        Sets the database_server_type of this CreateExadataInfrastructureDetails.
+        The database server type of the Exadata infrastructure.
+
+
+        :param database_server_type: The database_server_type of this CreateExadataInfrastructureDetails.
+        :type: str
+        """
+        self._database_server_type = database_server_type
+
+    @property
+    def storage_server_type(self):
+        """
+        Gets the storage_server_type of this CreateExadataInfrastructureDetails.
+        The storage server type of the Exadata infrastructure.
+
+
+        :return: The storage_server_type of this CreateExadataInfrastructureDetails.
+        :rtype: str
+        """
+        return self._storage_server_type
+
+    @storage_server_type.setter
+    def storage_server_type(self, storage_server_type):
+        """
+        Sets the storage_server_type of this CreateExadataInfrastructureDetails.
+        The storage server type of the Exadata infrastructure.
+
+
+        :param storage_server_type: The storage_server_type of this CreateExadataInfrastructureDetails.
+        :type: str
+        """
+        self._storage_server_type = storage_server_type
 
     @property
     def freeform_tags(self):

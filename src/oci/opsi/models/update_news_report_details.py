@@ -31,6 +31,14 @@ class UpdateNewsReportDetails(object):
     #: This constant has a value of "WEEKLY"
     NEWS_FREQUENCY_WEEKLY = "WEEKLY"
 
+    #: A constant which can be used with the news_frequency property of a UpdateNewsReportDetails.
+    #: This constant has a value of "DAILY"
+    NEWS_FREQUENCY_DAILY = "DAILY"
+
+    #: A constant which can be used with the news_frequency property of a UpdateNewsReportDetails.
+    #: This constant has a value of "HOURLY"
+    NEWS_FREQUENCY_HOURLY = "HOURLY"
+
     #: A constant which can be used with the locale property of a UpdateNewsReportDetails.
     #: This constant has a value of "EN"
     LOCALE_EN = "EN"
@@ -63,6 +71,18 @@ class UpdateNewsReportDetails(object):
     #: This constant has a value of "SUNDAY"
     DAY_OF_WEEK_SUNDAY = "SUNDAY"
 
+    #: A constant which can be used with the match_rule property of a UpdateNewsReportDetails.
+    #: This constant has a value of "MATCH_ANY"
+    MATCH_RULE_MATCH_ANY = "MATCH_ANY"
+
+    #: A constant which can be used with the match_rule property of a UpdateNewsReportDetails.
+    #: This constant has a value of "MATCH_ALL"
+    MATCH_RULE_MATCH_ALL = "MATCH_ALL"
+
+    #: A constant which can be used with the match_rule property of a UpdateNewsReportDetails.
+    #: This constant has a value of "MATCH_NONE"
+    MATCH_RULE_MATCH_NONE = "MATCH_NONE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateNewsReportDetails object with values from keyword arguments.
@@ -75,7 +95,7 @@ class UpdateNewsReportDetails(object):
 
         :param news_frequency:
             The value to assign to the news_frequency property of this UpdateNewsReportDetails.
-            Allowed values for this property are: "WEEKLY"
+            Allowed values for this property are: "WEEKLY", "DAILY", "HOURLY"
         :type news_frequency: str
 
         :param locale:
@@ -116,6 +136,15 @@ class UpdateNewsReportDetails(object):
             The value to assign to the are_child_compartments_included property of this UpdateNewsReportDetails.
         :type are_child_compartments_included: bool
 
+        :param tag_filters:
+            The value to assign to the tag_filters property of this UpdateNewsReportDetails.
+        :type tag_filters: list[str]
+
+        :param match_rule:
+            The value to assign to the match_rule property of this UpdateNewsReportDetails.
+            Allowed values for this property are: "MATCH_ANY", "MATCH_ALL", "MATCH_NONE"
+        :type match_rule: str
+
         """
         self.swagger_types = {
             'status': 'str',
@@ -128,7 +157,9 @@ class UpdateNewsReportDetails(object):
             'name': 'str',
             'description': 'str',
             'day_of_week': 'str',
-            'are_child_compartments_included': 'bool'
+            'are_child_compartments_included': 'bool',
+            'tag_filters': 'list[str]',
+            'match_rule': 'str'
         }
 
         self.attribute_map = {
@@ -142,7 +173,9 @@ class UpdateNewsReportDetails(object):
             'name': 'name',
             'description': 'description',
             'day_of_week': 'dayOfWeek',
-            'are_child_compartments_included': 'areChildCompartmentsIncluded'
+            'are_child_compartments_included': 'areChildCompartmentsIncluded',
+            'tag_filters': 'tagFilters',
+            'match_rule': 'matchRule'
         }
 
         self._status = None
@@ -156,6 +189,8 @@ class UpdateNewsReportDetails(object):
         self._description = None
         self._day_of_week = None
         self._are_child_compartments_included = None
+        self._tag_filters = None
+        self._match_rule = None
 
     @property
     def status(self):
@@ -194,7 +229,7 @@ class UpdateNewsReportDetails(object):
         Gets the news_frequency of this UpdateNewsReportDetails.
         News report frequency.
 
-        Allowed values for this property are: "WEEKLY"
+        Allowed values for this property are: "WEEKLY", "DAILY", "HOURLY"
 
 
         :return: The news_frequency of this UpdateNewsReportDetails.
@@ -212,7 +247,7 @@ class UpdateNewsReportDetails(object):
         :param news_frequency: The news_frequency of this UpdateNewsReportDetails.
         :type: str
         """
-        allowed_values = ["WEEKLY"]
+        allowed_values = ["WEEKLY", "DAILY", "HOURLY"]
         if not value_allowed_none_or_none_sentinel(news_frequency, allowed_values):
             raise ValueError(
                 f"Invalid value for `news_frequency`, must be None or one of {allowed_values}"
@@ -452,6 +487,65 @@ class UpdateNewsReportDetails(object):
         :type: bool
         """
         self._are_child_compartments_included = are_child_compartments_included
+
+    @property
+    def tag_filters(self):
+        """
+        Gets the tag_filters of this UpdateNewsReportDetails.
+        List of tag filters; each filter composed by a namespace, key, and value.
+        Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'
+        Example for freeform tags - '<TagKey>=<TagValue>'
+
+
+        :return: The tag_filters of this UpdateNewsReportDetails.
+        :rtype: list[str]
+        """
+        return self._tag_filters
+
+    @tag_filters.setter
+    def tag_filters(self, tag_filters):
+        """
+        Sets the tag_filters of this UpdateNewsReportDetails.
+        List of tag filters; each filter composed by a namespace, key, and value.
+        Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'
+        Example for freeform tags - '<TagKey>=<TagValue>'
+
+
+        :param tag_filters: The tag_filters of this UpdateNewsReportDetails.
+        :type: list[str]
+        """
+        self._tag_filters = tag_filters
+
+    @property
+    def match_rule(self):
+        """
+        Gets the match_rule of this UpdateNewsReportDetails.
+        Match rule used for tag filters.
+
+        Allowed values for this property are: "MATCH_ANY", "MATCH_ALL", "MATCH_NONE"
+
+
+        :return: The match_rule of this UpdateNewsReportDetails.
+        :rtype: str
+        """
+        return self._match_rule
+
+    @match_rule.setter
+    def match_rule(self, match_rule):
+        """
+        Sets the match_rule of this UpdateNewsReportDetails.
+        Match rule used for tag filters.
+
+
+        :param match_rule: The match_rule of this UpdateNewsReportDetails.
+        :type: str
+        """
+        allowed_values = ["MATCH_ANY", "MATCH_ALL", "MATCH_NONE"]
+        if not value_allowed_none_or_none_sentinel(match_rule, allowed_values):
+            raise ValueError(
+                f"Invalid value for `match_rule`, must be None or one of {allowed_values}"
+            )
+        self._match_rule = match_rule
 
     def __repr__(self):
         return formatted_flat_dict(self)
