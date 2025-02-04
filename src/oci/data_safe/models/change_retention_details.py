@@ -54,7 +54,7 @@ class ChangeRetentionDetails(object):
         """
         Gets the online_months of this ChangeRetentionDetails.
         Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for
-        immediate reporting and analysis. Minimum: 1; Maximum:12 months
+        immediate reporting and analysis. Minimum: 1; Maximum: 12 months
 
 
         :return: The online_months of this ChangeRetentionDetails.
@@ -67,7 +67,7 @@ class ChangeRetentionDetails(object):
         """
         Sets the online_months of this ChangeRetentionDetails.
         Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for
-        immediate reporting and analysis. Minimum: 1; Maximum:12 months
+        immediate reporting and analysis. Minimum: 1; Maximum: 12 months
 
 
         :param online_months: The online_months of this ChangeRetentionDetails.

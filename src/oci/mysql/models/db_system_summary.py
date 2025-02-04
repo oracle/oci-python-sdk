@@ -128,6 +128,18 @@ class DbSystemSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type database_management: str
 
+        :param database_mode:
+            The value to assign to the database_mode property of this DbSystemSummary.
+        :type database_mode: str
+
+        :param access_mode:
+            The value to assign to the access_mode property of this DbSystemSummary.
+        :type access_mode: str
+
+        :param read_endpoint:
+            The value to assign to the read_endpoint property of this DbSystemSummary.
+        :type read_endpoint: oci.mysql.models.ReadEndpointDetails
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -151,7 +163,10 @@ class DbSystemSummary(object):
             'backup_policy': 'BackupPolicy',
             'shape_name': 'str',
             'crash_recovery': 'str',
-            'database_management': 'str'
+            'database_management': 'str',
+            'database_mode': 'str',
+            'access_mode': 'str',
+            'read_endpoint': 'ReadEndpointDetails'
         }
 
         self.attribute_map = {
@@ -176,7 +191,10 @@ class DbSystemSummary(object):
             'backup_policy': 'backupPolicy',
             'shape_name': 'shapeName',
             'crash_recovery': 'crashRecovery',
-            'database_management': 'databaseManagement'
+            'database_management': 'databaseManagement',
+            'database_mode': 'databaseMode',
+            'access_mode': 'accessMode',
+            'read_endpoint': 'readEndpoint'
         }
 
         self._id = None
@@ -201,6 +219,9 @@ class DbSystemSummary(object):
         self._shape_name = None
         self._crash_recovery = None
         self._database_management = None
+        self._database_mode = None
+        self._access_mode = None
+        self._read_endpoint = None
 
     @property
     def id(self):
@@ -763,6 +784,96 @@ class DbSystemSummary(object):
         if not value_allowed_none_or_none_sentinel(database_management, allowed_values):
             database_management = 'UNKNOWN_ENUM_VALUE'
         self._database_management = database_management
+
+    @property
+    def database_mode(self):
+        """
+        **[Required]** Gets the database_mode of this DbSystemSummary.
+        The database mode indicating the types of statements that are allowed to run in the DB system.
+        This mode applies only to statements run by user connections. Replicated write statements continue
+        to be allowed regardless of the DatabaseMode.
+          - READ_WRITE: allow running read and write statements on the DB system;
+          - READ_ONLY: only allow running read statements on the DB system.
+
+
+        :return: The database_mode of this DbSystemSummary.
+        :rtype: str
+        """
+        return self._database_mode
+
+    @database_mode.setter
+    def database_mode(self, database_mode):
+        """
+        Sets the database_mode of this DbSystemSummary.
+        The database mode indicating the types of statements that are allowed to run in the DB system.
+        This mode applies only to statements run by user connections. Replicated write statements continue
+        to be allowed regardless of the DatabaseMode.
+          - READ_WRITE: allow running read and write statements on the DB system;
+          - READ_ONLY: only allow running read statements on the DB system.
+
+
+        :param database_mode: The database_mode of this DbSystemSummary.
+        :type: str
+        """
+        self._database_mode = database_mode
+
+    @property
+    def access_mode(self):
+        """
+        **[Required]** Gets the access_mode of this DbSystemSummary.
+        The access mode indicating if the database access is unrestricted (to all MySQL user accounts),
+        or restricted (to only certain users with specific privileges):
+         - UNRESTRICTED: the access to the database is not restricted;
+         - RESTRICTED: the access is allowed only to users with specific privileges;
+           RESTRICTED will correspond to setting the MySQL system variable
+           `offline_mode`__ to ON.
+
+        __ https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode
+
+
+        :return: The access_mode of this DbSystemSummary.
+        :rtype: str
+        """
+        return self._access_mode
+
+    @access_mode.setter
+    def access_mode(self, access_mode):
+        """
+        Sets the access_mode of this DbSystemSummary.
+        The access mode indicating if the database access is unrestricted (to all MySQL user accounts),
+        or restricted (to only certain users with specific privileges):
+         - UNRESTRICTED: the access to the database is not restricted;
+         - RESTRICTED: the access is allowed only to users with specific privileges;
+           RESTRICTED will correspond to setting the MySQL system variable
+           `offline_mode`__ to ON.
+
+        __ https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode
+
+
+        :param access_mode: The access_mode of this DbSystemSummary.
+        :type: str
+        """
+        self._access_mode = access_mode
+
+    @property
+    def read_endpoint(self):
+        """
+        Gets the read_endpoint of this DbSystemSummary.
+
+        :return: The read_endpoint of this DbSystemSummary.
+        :rtype: oci.mysql.models.ReadEndpointDetails
+        """
+        return self._read_endpoint
+
+    @read_endpoint.setter
+    def read_endpoint(self, read_endpoint):
+        """
+        Sets the read_endpoint of this DbSystemSummary.
+
+        :param read_endpoint: The read_endpoint of this DbSystemSummary.
+        :type: oci.mysql.models.ReadEndpointDetails
+        """
+        self._read_endpoint = read_endpoint
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -25,9 +25,12 @@ from .change_notebook_session_compartment_details import ChangeNotebookSessionCo
 from .change_pipeline_compartment_details import ChangePipelineCompartmentDetails
 from .change_pipeline_run_compartment_details import ChangePipelineRunCompartmentDetails
 from .change_project_compartment_details import ChangeProjectCompartmentDetails
+from .change_schedule_compartment_details import ChangeScheduleCompartmentDetails
+from .container_summary import ContainerSummary
 from .create_data_science_private_endpoint_details import CreateDataSciencePrivateEndpointDetails
 from .create_job_details import CreateJobDetails
 from .create_job_run_details import CreateJobRunDetails
+from .create_job_run_schedule_action_details import CreateJobRunScheduleActionDetails
 from .create_model_deployment_details import CreateModelDeploymentDetails
 from .create_model_details import CreateModelDetails
 from .create_model_provenance_details import CreateModelProvenanceDetails
@@ -35,7 +38,9 @@ from .create_model_version_set_details import CreateModelVersionSetDetails
 from .create_notebook_session_details import CreateNotebookSessionDetails
 from .create_pipeline_details import CreatePipelineDetails
 from .create_pipeline_run_details import CreatePipelineRunDetails
+from .create_pipeline_run_schedule_action_details import CreatePipelineRunScheduleActionDetails
 from .create_project_details import CreateProjectDetails
+from .create_schedule_details import CreateScheduleDetails
 from .custom_expression_query_scaling_configuration import CustomExpressionQueryScalingConfiguration
 from .custom_metric_expression_rule import CustomMetricExpressionRule
 from .data_science_private_endpoint import DataSciencePrivateEndpoint
@@ -46,9 +51,11 @@ from .export_model_artifact_details import ExportModelArtifactDetails
 from .fast_launch_job_config_summary import FastLaunchJobConfigSummary
 from .file_storage_mount_configuration_details import FileStorageMountConfigurationDetails
 from .fixed_size_scaling_policy import FixedSizeScalingPolicy
+from .generic_job_run_use_case_configuration_details import GenericJobRunUseCaseConfigurationDetails
 from .import_model_artifact_details import ImportModelArtifactDetails
 from .instance_configuration import InstanceConfiguration
 from .instance_pool_model_deployment_system_data import InstancePoolModelDeploymentSystemData
+from .invoke_ml_application_provider_trigger_schedule_action_details import InvokeMlApplicationProviderTriggerScheduleActionDetails
 from .job import Job
 from .job_configuration_details import JobConfigurationDetails
 from .job_environment_configuration_details import JobEnvironmentConfigurationDetails
@@ -57,6 +64,8 @@ from .job_log_configuration_details import JobLogConfigurationDetails
 from .job_run import JobRun
 from .job_run_log_details import JobRunLogDetails
 from .job_run_summary import JobRunSummary
+from .job_run_use_case_configuration_details import JobRunUseCaseConfigurationDetails
+from .job_run_workload_configuration_details import JobRunWorkloadConfigurationDetails
 from .job_shape_config_details import JobShapeConfigDetails
 from .job_shape_summary import JobShapeSummary
 from .job_summary import JobSummary
@@ -66,6 +75,7 @@ from .metadata import Metadata
 from .metric_expression_rule import MetricExpressionRule
 from .model import Model
 from .model_configuration_details import ModelConfigurationDetails
+from .model_deploy_workload_configuration_details import ModelDeployWorkloadConfigurationDetails
 from .model_deployment import ModelDeployment
 from .model_deployment_configuration_details import ModelDeploymentConfigurationDetails
 from .model_deployment_environment_configuration_details import ModelDeploymentEnvironmentConfigurationDetails
@@ -123,10 +133,23 @@ from .retention_operation_details import RetentionOperationDetails
 from .retention_setting import RetentionSetting
 from .scaling_configuration import ScalingConfiguration
 from .scaling_policy import ScalingPolicy
+from .schedule import Schedule
+from .schedule_action import ScheduleAction
+from .schedule_cron_trigger import ScheduleCronTrigger
+from .schedule_http_action import ScheduleHttpAction
+from .schedule_http_action_details import ScheduleHttpActionDetails
+from .schedule_i_cal_trigger import ScheduleICalTrigger
+from .schedule_interval_trigger import ScheduleIntervalTrigger
+from .schedule_log_details import ScheduleLogDetails
+from .schedule_summary import ScheduleSummary
+from .schedule_trigger import ScheduleTrigger
 from .single_model_deployment_configuration_details import SingleModelDeploymentConfigurationDetails
 from .standalone_job_infrastructure_configuration_details import StandaloneJobInfrastructureConfigurationDetails
 from .storage_mount_configuration_details import StorageMountConfigurationDetails
+from .tag_configuration import TagConfiguration
 from .threshold_based_auto_scaling_policy_details import ThresholdBasedAutoScalingPolicyDetails
+from .trigger_ml_application_instance_view_flow_details import TriggerMlApplicationInstanceViewFlowDetails
+from .trigger_parameter import TriggerParameter
 from .update_category_log_details import UpdateCategoryLogDetails
 from .update_data_science_private_endpoint_details import UpdateDataSciencePrivateEndpointDetails
 from .update_default_model_deployment_environment_configuration_details import UpdateDefaultModelDeploymentEnvironmentConfigurationDetails
@@ -144,12 +167,14 @@ from .update_ocir_model_deployment_environment_configuration_details import Upda
 from .update_pipeline_details import UpdatePipelineDetails
 from .update_pipeline_run_details import UpdatePipelineRunDetails
 from .update_project_details import UpdateProjectDetails
+from .update_schedule_details import UpdateScheduleDetails
 from .update_single_model_deployment_configuration_details import UpdateSingleModelDeploymentConfigurationDetails
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
 from .work_request_log_entry import WorkRequestLogEntry
 from .work_request_resource import WorkRequestResource
 from .work_request_summary import WorkRequestSummary
+from .workload_configuration_details import WorkloadConfigurationDetails
 
 # Maps type names to classes for data_science services.
 data_science_type_mapping = {
@@ -172,9 +197,12 @@ data_science_type_mapping = {
     "ChangePipelineCompartmentDetails": ChangePipelineCompartmentDetails,
     "ChangePipelineRunCompartmentDetails": ChangePipelineRunCompartmentDetails,
     "ChangeProjectCompartmentDetails": ChangeProjectCompartmentDetails,
+    "ChangeScheduleCompartmentDetails": ChangeScheduleCompartmentDetails,
+    "ContainerSummary": ContainerSummary,
     "CreateDataSciencePrivateEndpointDetails": CreateDataSciencePrivateEndpointDetails,
     "CreateJobDetails": CreateJobDetails,
     "CreateJobRunDetails": CreateJobRunDetails,
+    "CreateJobRunScheduleActionDetails": CreateJobRunScheduleActionDetails,
     "CreateModelDeploymentDetails": CreateModelDeploymentDetails,
     "CreateModelDetails": CreateModelDetails,
     "CreateModelProvenanceDetails": CreateModelProvenanceDetails,
@@ -182,7 +210,9 @@ data_science_type_mapping = {
     "CreateNotebookSessionDetails": CreateNotebookSessionDetails,
     "CreatePipelineDetails": CreatePipelineDetails,
     "CreatePipelineRunDetails": CreatePipelineRunDetails,
+    "CreatePipelineRunScheduleActionDetails": CreatePipelineRunScheduleActionDetails,
     "CreateProjectDetails": CreateProjectDetails,
+    "CreateScheduleDetails": CreateScheduleDetails,
     "CustomExpressionQueryScalingConfiguration": CustomExpressionQueryScalingConfiguration,
     "CustomMetricExpressionRule": CustomMetricExpressionRule,
     "DataSciencePrivateEndpoint": DataSciencePrivateEndpoint,
@@ -193,9 +223,11 @@ data_science_type_mapping = {
     "FastLaunchJobConfigSummary": FastLaunchJobConfigSummary,
     "FileStorageMountConfigurationDetails": FileStorageMountConfigurationDetails,
     "FixedSizeScalingPolicy": FixedSizeScalingPolicy,
+    "GenericJobRunUseCaseConfigurationDetails": GenericJobRunUseCaseConfigurationDetails,
     "ImportModelArtifactDetails": ImportModelArtifactDetails,
     "InstanceConfiguration": InstanceConfiguration,
     "InstancePoolModelDeploymentSystemData": InstancePoolModelDeploymentSystemData,
+    "InvokeMlApplicationProviderTriggerScheduleActionDetails": InvokeMlApplicationProviderTriggerScheduleActionDetails,
     "Job": Job,
     "JobConfigurationDetails": JobConfigurationDetails,
     "JobEnvironmentConfigurationDetails": JobEnvironmentConfigurationDetails,
@@ -204,6 +236,8 @@ data_science_type_mapping = {
     "JobRun": JobRun,
     "JobRunLogDetails": JobRunLogDetails,
     "JobRunSummary": JobRunSummary,
+    "JobRunUseCaseConfigurationDetails": JobRunUseCaseConfigurationDetails,
+    "JobRunWorkloadConfigurationDetails": JobRunWorkloadConfigurationDetails,
     "JobShapeConfigDetails": JobShapeConfigDetails,
     "JobShapeSummary": JobShapeSummary,
     "JobSummary": JobSummary,
@@ -213,6 +247,7 @@ data_science_type_mapping = {
     "MetricExpressionRule": MetricExpressionRule,
     "Model": Model,
     "ModelConfigurationDetails": ModelConfigurationDetails,
+    "ModelDeployWorkloadConfigurationDetails": ModelDeployWorkloadConfigurationDetails,
     "ModelDeployment": ModelDeployment,
     "ModelDeploymentConfigurationDetails": ModelDeploymentConfigurationDetails,
     "ModelDeploymentEnvironmentConfigurationDetails": ModelDeploymentEnvironmentConfigurationDetails,
@@ -270,10 +305,23 @@ data_science_type_mapping = {
     "RetentionSetting": RetentionSetting,
     "ScalingConfiguration": ScalingConfiguration,
     "ScalingPolicy": ScalingPolicy,
+    "Schedule": Schedule,
+    "ScheduleAction": ScheduleAction,
+    "ScheduleCronTrigger": ScheduleCronTrigger,
+    "ScheduleHttpAction": ScheduleHttpAction,
+    "ScheduleHttpActionDetails": ScheduleHttpActionDetails,
+    "ScheduleICalTrigger": ScheduleICalTrigger,
+    "ScheduleIntervalTrigger": ScheduleIntervalTrigger,
+    "ScheduleLogDetails": ScheduleLogDetails,
+    "ScheduleSummary": ScheduleSummary,
+    "ScheduleTrigger": ScheduleTrigger,
     "SingleModelDeploymentConfigurationDetails": SingleModelDeploymentConfigurationDetails,
     "StandaloneJobInfrastructureConfigurationDetails": StandaloneJobInfrastructureConfigurationDetails,
     "StorageMountConfigurationDetails": StorageMountConfigurationDetails,
+    "TagConfiguration": TagConfiguration,
     "ThresholdBasedAutoScalingPolicyDetails": ThresholdBasedAutoScalingPolicyDetails,
+    "TriggerMlApplicationInstanceViewFlowDetails": TriggerMlApplicationInstanceViewFlowDetails,
+    "TriggerParameter": TriggerParameter,
     "UpdateCategoryLogDetails": UpdateCategoryLogDetails,
     "UpdateDataSciencePrivateEndpointDetails": UpdateDataSciencePrivateEndpointDetails,
     "UpdateDefaultModelDeploymentEnvironmentConfigurationDetails": UpdateDefaultModelDeploymentEnvironmentConfigurationDetails,
@@ -291,10 +339,12 @@ data_science_type_mapping = {
     "UpdatePipelineDetails": UpdatePipelineDetails,
     "UpdatePipelineRunDetails": UpdatePipelineRunDetails,
     "UpdateProjectDetails": UpdateProjectDetails,
+    "UpdateScheduleDetails": UpdateScheduleDetails,
     "UpdateSingleModelDeploymentConfigurationDetails": UpdateSingleModelDeploymentConfigurationDetails,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,
     "WorkRequestLogEntry": WorkRequestLogEntry,
     "WorkRequestResource": WorkRequestResource,
-    "WorkRequestSummary": WorkRequestSummary
+    "WorkRequestSummary": WorkRequestSummary,
+    "WorkloadConfigurationDetails": WorkloadConfigurationDetails
 }

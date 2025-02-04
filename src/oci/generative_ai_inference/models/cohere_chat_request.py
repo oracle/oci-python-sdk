@@ -616,7 +616,7 @@ class CohereChatRequest(BaseChatRequest):
     def seed(self):
         """
         Gets the seed of this CohereChatRequest.
-        If specified, the backend will make a best effort to sample tokens deterministically, such that repeated requests with the same seed and parameters should return the same result. However, determinism cannot be totally guaranteed.
+        If specified, the backend will make a best effort to sample tokens deterministically, so that repeated requests with the same seed and parameters yield the same result. However, determinism cannot be fully guaranteed.
 
 
         :return: The seed of this CohereChatRequest.
@@ -628,7 +628,7 @@ class CohereChatRequest(BaseChatRequest):
     def seed(self, seed):
         """
         Sets the seed of this CohereChatRequest.
-        If specified, the backend will make a best effort to sample tokens deterministically, such that repeated requests with the same seed and parameters should return the same result. However, determinism cannot be totally guaranteed.
+        If specified, the backend will make a best effort to sample tokens deterministically, so that repeated requests with the same seed and parameters yield the same result. However, determinism cannot be fully guaranteed.
 
 
         :param seed: The seed of this CohereChatRequest.

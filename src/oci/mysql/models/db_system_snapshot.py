@@ -152,6 +152,10 @@ class DbSystemSnapshot(object):
             The value to assign to the region property of this DbSystemSnapshot.
         :type region: str
 
+        :param read_endpoint:
+            The value to assign to the read_endpoint property of this DbSystemSnapshot.
+        :type read_endpoint: oci.mysql.models.ReadEndpointDetails
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -181,7 +185,8 @@ class DbSystemSnapshot(object):
             'crash_recovery': 'str',
             'database_management': 'str',
             'secure_connections': 'SecureConnectionDetails',
-            'region': 'str'
+            'region': 'str',
+            'read_endpoint': 'ReadEndpointDetails'
         }
 
         self.attribute_map = {
@@ -212,7 +217,8 @@ class DbSystemSnapshot(object):
             'crash_recovery': 'crashRecovery',
             'database_management': 'databaseManagement',
             'secure_connections': 'secureConnections',
-            'region': 'region'
+            'region': 'region',
+            'read_endpoint': 'readEndpoint'
         }
 
         self._id = None
@@ -243,6 +249,7 @@ class DbSystemSnapshot(object):
         self._database_management = None
         self._secure_connections = None
         self._region = None
+        self._read_endpoint = None
 
     @property
     def id(self):
@@ -941,6 +948,26 @@ class DbSystemSnapshot(object):
         :type: str
         """
         self._region = region
+
+    @property
+    def read_endpoint(self):
+        """
+        Gets the read_endpoint of this DbSystemSnapshot.
+
+        :return: The read_endpoint of this DbSystemSnapshot.
+        :rtype: oci.mysql.models.ReadEndpointDetails
+        """
+        return self._read_endpoint
+
+    @read_endpoint.setter
+    def read_endpoint(self, read_endpoint):
+        """
+        Sets the read_endpoint of this DbSystemSnapshot.
+
+        :param read_endpoint: The read_endpoint of this DbSystemSnapshot.
+        :type: oci.mysql.models.ReadEndpointDetails
+        """
+        self._read_endpoint = read_endpoint
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -27,6 +27,66 @@ class MaskingPolicyHealthReportLogSummary(object):
     #: This constant has a value of "ERROR"
     MESSAGE_TYPE_ERROR = "ERROR"
 
+    #: A constant which can be used with the health_check_type property of a MaskingPolicyHealthReportLogSummary.
+    #: This constant has a value of "INVALID_OBJECT_CHECK"
+    HEALTH_CHECK_TYPE_INVALID_OBJECT_CHECK = "INVALID_OBJECT_CHECK"
+
+    #: A constant which can be used with the health_check_type property of a MaskingPolicyHealthReportLogSummary.
+    #: This constant has a value of "PRIVILEGE_CHECK"
+    HEALTH_CHECK_TYPE_PRIVILEGE_CHECK = "PRIVILEGE_CHECK"
+
+    #: A constant which can be used with the health_check_type property of a MaskingPolicyHealthReportLogSummary.
+    #: This constant has a value of "TABLESPACE_CHECK"
+    HEALTH_CHECK_TYPE_TABLESPACE_CHECK = "TABLESPACE_CHECK"
+
+    #: A constant which can be used with the health_check_type property of a MaskingPolicyHealthReportLogSummary.
+    #: This constant has a value of "DATABASE_OR_SYSTEM_TRIGGERS_CHECK"
+    HEALTH_CHECK_TYPE_DATABASE_OR_SYSTEM_TRIGGERS_CHECK = "DATABASE_OR_SYSTEM_TRIGGERS_CHECK"
+
+    #: A constant which can be used with the health_check_type property of a MaskingPolicyHealthReportLogSummary.
+    #: This constant has a value of "UNDO_TABLESPACE_CHECK"
+    HEALTH_CHECK_TYPE_UNDO_TABLESPACE_CHECK = "UNDO_TABLESPACE_CHECK"
+
+    #: A constant which can be used with the health_check_type property of a MaskingPolicyHealthReportLogSummary.
+    #: This constant has a value of "STATE_STATS_CHECK"
+    HEALTH_CHECK_TYPE_STATE_STATS_CHECK = "STATE_STATS_CHECK"
+
+    #: A constant which can be used with the health_check_type property of a MaskingPolicyHealthReportLogSummary.
+    #: This constant has a value of "OLS_POLICY_CHECK"
+    HEALTH_CHECK_TYPE_OLS_POLICY_CHECK = "OLS_POLICY_CHECK"
+
+    #: A constant which can be used with the health_check_type property of a MaskingPolicyHealthReportLogSummary.
+    #: This constant has a value of "VPD_POLICY_CHECK"
+    HEALTH_CHECK_TYPE_VPD_POLICY_CHECK = "VPD_POLICY_CHECK"
+
+    #: A constant which can be used with the health_check_type property of a MaskingPolicyHealthReportLogSummary.
+    #: This constant has a value of "DV_ENABLE_CHECK"
+    HEALTH_CHECK_TYPE_DV_ENABLE_CHECK = "DV_ENABLE_CHECK"
+
+    #: A constant which can be used with the health_check_type property of a MaskingPolicyHealthReportLogSummary.
+    #: This constant has a value of "DE_COL_SIZE_CHECK"
+    HEALTH_CHECK_TYPE_DE_COL_SIZE_CHECK = "DE_COL_SIZE_CHECK"
+
+    #: A constant which can be used with the health_check_type property of a MaskingPolicyHealthReportLogSummary.
+    #: This constant has a value of "REDACTION_POLICY_CHECK"
+    HEALTH_CHECK_TYPE_REDACTION_POLICY_CHECK = "REDACTION_POLICY_CHECK"
+
+    #: A constant which can be used with the health_check_type property of a MaskingPolicyHealthReportLogSummary.
+    #: This constant has a value of "ACTIVE_MASK_JOB_CHECK"
+    HEALTH_CHECK_TYPE_ACTIVE_MASK_JOB_CHECK = "ACTIVE_MASK_JOB_CHECK"
+
+    #: A constant which can be used with the health_check_type property of a MaskingPolicyHealthReportLogSummary.
+    #: This constant has a value of "TARGET_VALIDATION_CHECK"
+    HEALTH_CHECK_TYPE_TARGET_VALIDATION_CHECK = "TARGET_VALIDATION_CHECK"
+
+    #: A constant which can be used with the health_check_type property of a MaskingPolicyHealthReportLogSummary.
+    #: This constant has a value of "DETERMINISTIC_ENCRYPTION_FORMAT_CHECK"
+    HEALTH_CHECK_TYPE_DETERMINISTIC_ENCRYPTION_FORMAT_CHECK = "DETERMINISTIC_ENCRYPTION_FORMAT_CHECK"
+
+    #: A constant which can be used with the health_check_type property of a MaskingPolicyHealthReportLogSummary.
+    #: This constant has a value of "COLUMN_EXIST_CHECK"
+    HEALTH_CHECK_TYPE_COLUMN_EXIST_CHECK = "COLUMN_EXIST_CHECK"
+
     def __init__(self, **kwargs):
         """
         Initializes a new MaskingPolicyHealthReportLogSummary object with values from keyword arguments.
@@ -54,13 +114,20 @@ class MaskingPolicyHealthReportLogSummary(object):
             The value to assign to the description property of this MaskingPolicyHealthReportLogSummary.
         :type description: str
 
+        :param health_check_type:
+            The value to assign to the health_check_type property of this MaskingPolicyHealthReportLogSummary.
+            Allowed values for this property are: "INVALID_OBJECT_CHECK", "PRIVILEGE_CHECK", "TABLESPACE_CHECK", "DATABASE_OR_SYSTEM_TRIGGERS_CHECK", "UNDO_TABLESPACE_CHECK", "STATE_STATS_CHECK", "OLS_POLICY_CHECK", "VPD_POLICY_CHECK", "DV_ENABLE_CHECK", "DE_COL_SIZE_CHECK", "REDACTION_POLICY_CHECK", "ACTIVE_MASK_JOB_CHECK", "TARGET_VALIDATION_CHECK", "DETERMINISTIC_ENCRYPTION_FORMAT_CHECK", "COLUMN_EXIST_CHECK", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type health_check_type: str
+
         """
         self.swagger_types = {
             'message_type': 'str',
             'timestamp': 'datetime',
             'message': 'str',
             'remediation': 'str',
-            'description': 'str'
+            'description': 'str',
+            'health_check_type': 'str'
         }
 
         self.attribute_map = {
@@ -68,7 +135,8 @@ class MaskingPolicyHealthReportLogSummary(object):
             'timestamp': 'timestamp',
             'message': 'message',
             'remediation': 'remediation',
-            'description': 'description'
+            'description': 'description',
+            'health_check_type': 'healthCheckType'
         }
 
         self._message_type = None
@@ -76,6 +144,7 @@ class MaskingPolicyHealthReportLogSummary(object):
         self._message = None
         self._remediation = None
         self._description = None
+        self._health_check_type = None
 
     @property
     def message_type(self):
@@ -206,6 +275,60 @@ class MaskingPolicyHealthReportLogSummary(object):
         :type: str
         """
         self._description = description
+
+    @property
+    def health_check_type(self):
+        """
+        Gets the health_check_type of this MaskingPolicyHealthReportLogSummary.
+        An enum type entry for each health check in the masking policy. Each enum describes a type of health check.
+        INVALID_OBJECT_CHECK checks if there exist any invalid objects in the masking tables.
+        PRIVILEGE_CHECK checks if the masking user has sufficient privilege to run masking.
+        TABLESPACE_CHECK checks if the user has sufficient default and TEMP tablespace.
+        DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system triggers available.
+        UNDO_TABLESPACE_CHECK checks if the AUTOEXTEND feature is enabled for the undo tablespace. If it's not enabled, it further checks if the undo tablespace has any space remaining
+        STATE_STATS_CHECK checks if all the statistics of the masking table is upto date or not.
+        OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK checks if the masking tables has Oracle Label Security (OLS) or Virtual Private Database (VPD) or Redaction policies enabled.
+        DV_ENABLE_CHECK checks if database has Database Vault(DV) enabled
+        DE_COL_SIZE_CHECK checks if any masking column with DETERMINISTIC ENCRYPTION as masking format has average column size greater than 27 or not.
+        ACTIVE_MASK_JOB_CHECK checks if there is any active masking job running on the target database.
+        DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has deterministic encryption masking format.
+        COLUMN_EXIST_CHECK checks if the masking columns are available in the target database.
+
+        Allowed values for this property are: "INVALID_OBJECT_CHECK", "PRIVILEGE_CHECK", "TABLESPACE_CHECK", "DATABASE_OR_SYSTEM_TRIGGERS_CHECK", "UNDO_TABLESPACE_CHECK", "STATE_STATS_CHECK", "OLS_POLICY_CHECK", "VPD_POLICY_CHECK", "DV_ENABLE_CHECK", "DE_COL_SIZE_CHECK", "REDACTION_POLICY_CHECK", "ACTIVE_MASK_JOB_CHECK", "TARGET_VALIDATION_CHECK", "DETERMINISTIC_ENCRYPTION_FORMAT_CHECK", "COLUMN_EXIST_CHECK", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The health_check_type of this MaskingPolicyHealthReportLogSummary.
+        :rtype: str
+        """
+        return self._health_check_type
+
+    @health_check_type.setter
+    def health_check_type(self, health_check_type):
+        """
+        Sets the health_check_type of this MaskingPolicyHealthReportLogSummary.
+        An enum type entry for each health check in the masking policy. Each enum describes a type of health check.
+        INVALID_OBJECT_CHECK checks if there exist any invalid objects in the masking tables.
+        PRIVILEGE_CHECK checks if the masking user has sufficient privilege to run masking.
+        TABLESPACE_CHECK checks if the user has sufficient default and TEMP tablespace.
+        DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system triggers available.
+        UNDO_TABLESPACE_CHECK checks if the AUTOEXTEND feature is enabled for the undo tablespace. If it's not enabled, it further checks if the undo tablespace has any space remaining
+        STATE_STATS_CHECK checks if all the statistics of the masking table is upto date or not.
+        OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK checks if the masking tables has Oracle Label Security (OLS) or Virtual Private Database (VPD) or Redaction policies enabled.
+        DV_ENABLE_CHECK checks if database has Database Vault(DV) enabled
+        DE_COL_SIZE_CHECK checks if any masking column with DETERMINISTIC ENCRYPTION as masking format has average column size greater than 27 or not.
+        ACTIVE_MASK_JOB_CHECK checks if there is any active masking job running on the target database.
+        DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has deterministic encryption masking format.
+        COLUMN_EXIST_CHECK checks if the masking columns are available in the target database.
+
+
+        :param health_check_type: The health_check_type of this MaskingPolicyHealthReportLogSummary.
+        :type: str
+        """
+        allowed_values = ["INVALID_OBJECT_CHECK", "PRIVILEGE_CHECK", "TABLESPACE_CHECK", "DATABASE_OR_SYSTEM_TRIGGERS_CHECK", "UNDO_TABLESPACE_CHECK", "STATE_STATS_CHECK", "OLS_POLICY_CHECK", "VPD_POLICY_CHECK", "DV_ENABLE_CHECK", "DE_COL_SIZE_CHECK", "REDACTION_POLICY_CHECK", "ACTIVE_MASK_JOB_CHECK", "TARGET_VALIDATION_CHECK", "DETERMINISTIC_ENCRYPTION_FORMAT_CHECK", "COLUMN_EXIST_CHECK"]
+        if not value_allowed_none_or_none_sentinel(health_check_type, allowed_values):
+            health_check_type = 'UNKNOWN_ENUM_VALUE'
+        self._health_check_type = health_check_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ImageUrl(object):
     """
-    Represents a single instance of chat image url.
+    Provide a base64 encoded image.
     """
 
     #: A constant which can be used with the detail property of a ImageUrl.
@@ -60,7 +60,15 @@ class ImageUrl(object):
     def url(self):
         """
         **[Required]** Gets the url of this ImageUrl.
-        The URL of the image.
+        The base64 encoded image data.
+
+        Example for a png image:
+          `{
+            \"type\": \"IMAGE\",
+            \"imageUrl\": {
+              \"url\": \"data:image/png;base64,<base64 encoded image content>\"
+            }
+          }`
 
 
         :return: The url of this ImageUrl.
@@ -72,7 +80,15 @@ class ImageUrl(object):
     def url(self, url):
         """
         Sets the url of this ImageUrl.
-        The URL of the image.
+        The base64 encoded image data.
+
+        Example for a png image:
+          `{
+            \"type\": \"IMAGE\",
+            \"imageUrl\": {
+              \"url\": \"data:image/png;base64,<base64 encoded image content>\"
+            }
+          }`
 
 
         :param url: The url of this ImageUrl.
@@ -84,7 +100,7 @@ class ImageUrl(object):
     def detail(self):
         """
         Gets the detail of this ImageUrl.
-        The level of the detail.
+        The default value is AUTO and only AUTO is supported. This option controls how to convert the base64 encoded image to tokens.
 
         Allowed values for this property are: "AUTO", "HIGH", "LOW", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -99,7 +115,7 @@ class ImageUrl(object):
     def detail(self, detail):
         """
         Sets the detail of this ImageUrl.
-        The level of the detail.
+        The default value is AUTO and only AUTO is supported. This option controls how to convert the base64 encoded image to tokens.
 
 
         :param detail: The detail of this ImageUrl.

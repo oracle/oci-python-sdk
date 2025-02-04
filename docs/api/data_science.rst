@@ -37,9 +37,12 @@ Data Science
     oci.data_science.models.ChangePipelineCompartmentDetails
     oci.data_science.models.ChangePipelineRunCompartmentDetails
     oci.data_science.models.ChangeProjectCompartmentDetails
+    oci.data_science.models.ChangeScheduleCompartmentDetails
+    oci.data_science.models.ContainerSummary
     oci.data_science.models.CreateDataSciencePrivateEndpointDetails
     oci.data_science.models.CreateJobDetails
     oci.data_science.models.CreateJobRunDetails
+    oci.data_science.models.CreateJobRunScheduleActionDetails
     oci.data_science.models.CreateModelDeploymentDetails
     oci.data_science.models.CreateModelDetails
     oci.data_science.models.CreateModelProvenanceDetails
@@ -47,7 +50,9 @@ Data Science
     oci.data_science.models.CreateNotebookSessionDetails
     oci.data_science.models.CreatePipelineDetails
     oci.data_science.models.CreatePipelineRunDetails
+    oci.data_science.models.CreatePipelineRunScheduleActionDetails
     oci.data_science.models.CreateProjectDetails
+    oci.data_science.models.CreateScheduleDetails
     oci.data_science.models.CustomExpressionQueryScalingConfiguration
     oci.data_science.models.CustomMetricExpressionRule
     oci.data_science.models.DataSciencePrivateEndpoint
@@ -58,9 +63,11 @@ Data Science
     oci.data_science.models.FastLaunchJobConfigSummary
     oci.data_science.models.FileStorageMountConfigurationDetails
     oci.data_science.models.FixedSizeScalingPolicy
+    oci.data_science.models.GenericJobRunUseCaseConfigurationDetails
     oci.data_science.models.ImportModelArtifactDetails
     oci.data_science.models.InstanceConfiguration
     oci.data_science.models.InstancePoolModelDeploymentSystemData
+    oci.data_science.models.InvokeMlApplicationProviderTriggerScheduleActionDetails
     oci.data_science.models.Job
     oci.data_science.models.JobConfigurationDetails
     oci.data_science.models.JobEnvironmentConfigurationDetails
@@ -69,6 +76,8 @@ Data Science
     oci.data_science.models.JobRun
     oci.data_science.models.JobRunLogDetails
     oci.data_science.models.JobRunSummary
+    oci.data_science.models.JobRunUseCaseConfigurationDetails
+    oci.data_science.models.JobRunWorkloadConfigurationDetails
     oci.data_science.models.JobShapeConfigDetails
     oci.data_science.models.JobShapeSummary
     oci.data_science.models.JobSummary
@@ -78,6 +87,7 @@ Data Science
     oci.data_science.models.MetricExpressionRule
     oci.data_science.models.Model
     oci.data_science.models.ModelConfigurationDetails
+    oci.data_science.models.ModelDeployWorkloadConfigurationDetails
     oci.data_science.models.ModelDeployment
     oci.data_science.models.ModelDeploymentConfigurationDetails
     oci.data_science.models.ModelDeploymentEnvironmentConfigurationDetails
@@ -135,10 +145,23 @@ Data Science
     oci.data_science.models.RetentionSetting
     oci.data_science.models.ScalingConfiguration
     oci.data_science.models.ScalingPolicy
+    oci.data_science.models.Schedule
+    oci.data_science.models.ScheduleAction
+    oci.data_science.models.ScheduleCronTrigger
+    oci.data_science.models.ScheduleHttpAction
+    oci.data_science.models.ScheduleHttpActionDetails
+    oci.data_science.models.ScheduleICalTrigger
+    oci.data_science.models.ScheduleIntervalTrigger
+    oci.data_science.models.ScheduleLogDetails
+    oci.data_science.models.ScheduleSummary
+    oci.data_science.models.ScheduleTrigger
     oci.data_science.models.SingleModelDeploymentConfigurationDetails
     oci.data_science.models.StandaloneJobInfrastructureConfigurationDetails
     oci.data_science.models.StorageMountConfigurationDetails
+    oci.data_science.models.TagConfiguration
     oci.data_science.models.ThresholdBasedAutoScalingPolicyDetails
+    oci.data_science.models.TriggerMlApplicationInstanceViewFlowDetails
+    oci.data_science.models.TriggerParameter
     oci.data_science.models.UpdateCategoryLogDetails
     oci.data_science.models.UpdateDataSciencePrivateEndpointDetails
     oci.data_science.models.UpdateDefaultModelDeploymentEnvironmentConfigurationDetails
@@ -156,9 +179,11 @@ Data Science
     oci.data_science.models.UpdatePipelineDetails
     oci.data_science.models.UpdatePipelineRunDetails
     oci.data_science.models.UpdateProjectDetails
+    oci.data_science.models.UpdateScheduleDetails
     oci.data_science.models.UpdateSingleModelDeploymentConfigurationDetails
     oci.data_science.models.WorkRequest
     oci.data_science.models.WorkRequestError
     oci.data_science.models.WorkRequestLogEntry
     oci.data_science.models.WorkRequestResource
     oci.data_science.models.WorkRequestSummary
+    oci.data_science.models.WorkloadConfigurationDetails

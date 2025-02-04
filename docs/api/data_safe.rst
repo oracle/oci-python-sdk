@@ -90,6 +90,7 @@ Data Safe
     oci.data_safe.models.ChangeSecurityPolicyDeploymentCompartmentDetails
     oci.data_safe.models.ChangeSensitiveDataModelCompartmentDetails
     oci.data_safe.models.ChangeSensitiveTypeCompartmentDetails
+    oci.data_safe.models.ChangeSensitiveTypesExportCompartmentDetails
     oci.data_safe.models.ChangeSqlCollectionCompartmentDetails
     oci.data_safe.models.ChangeSqlFirewallPolicyCompartmentDetails
     oci.data_safe.models.ChangeTargetAlertPolicyAssociationCompartmentDetails
@@ -104,6 +105,7 @@ Data Safe
     oci.data_safe.models.ColumnSourceFromSdmDetails
     oci.data_safe.models.ColumnSourceFromTargetDetails
     oci.data_safe.models.ColumnSummary
+    oci.data_safe.models.ColumnsInfo
     oci.data_safe.models.CompareSecurityAssessmentDetails
     oci.data_safe.models.CompareUserAssessmentDetails
     oci.data_safe.models.CompatibleFormatsForDataTypes
@@ -112,8 +114,6 @@ Data Safe
     oci.data_safe.models.CreateAlertPolicyDetails
     oci.data_safe.models.CreateAlertPolicyRuleDetails
     oci.data_safe.models.CreateAuditArchiveRetrievalDetails
-    oci.data_safe.models.CreateAuditPolicyDetails
-    oci.data_safe.models.CreateAuditProfileDetails
     oci.data_safe.models.CreateColumnSourceDetails
     oci.data_safe.models.CreateColumnSourceFromSdmDetails
     oci.data_safe.models.CreateColumnSourceFromTargetDetails
@@ -124,6 +124,7 @@ Data Safe
     oci.data_safe.models.CreateMaskingPolicyDetails
     oci.data_safe.models.CreateOnPremConnectorDetails
     oci.data_safe.models.CreatePeerTargetDatabaseDetails
+    oci.data_safe.models.CreateReferentialRelationDetails
     oci.data_safe.models.CreateReportDefinitionDetails
     oci.data_safe.models.CreateSdmMaskingPolicyDifferenceDetails
     oci.data_safe.models.CreateSecurityAssessmentDetails
@@ -132,6 +133,7 @@ Data Safe
     oci.data_safe.models.CreateSensitiveDataModelDetails
     oci.data_safe.models.CreateSensitiveTypeDetails
     oci.data_safe.models.CreateSensitiveTypePatternDetails
+    oci.data_safe.models.CreateSensitiveTypesExportDetails
     oci.data_safe.models.CreateSqlCollectionDetails
     oci.data_safe.models.CreateTargetAlertPolicyAssociationDetails
     oci.data_safe.models.CreateTargetDatabaseDetails
@@ -173,6 +175,7 @@ Data Safe
     oci.data_safe.models.DownloadMaskingReportDetails
     oci.data_safe.models.DownloadSecurityAssessmentReportDetails
     oci.data_safe.models.DownloadSensitiveDataModelDetails
+    oci.data_safe.models.DownloadSensitiveTypesExportDetails
     oci.data_safe.models.DownloadUserAssessmentReportDetails
     oci.data_safe.models.EnableConditions
     oci.data_safe.models.EnableDataSafeConfigurationDetails
@@ -223,11 +226,14 @@ Data Safe
     oci.data_safe.models.MaskingObjectSummary
     oci.data_safe.models.MaskingPolicy
     oci.data_safe.models.MaskingPolicyCollection
+    oci.data_safe.models.MaskingPolicyColumnsInfo
     oci.data_safe.models.MaskingPolicyHealthReport
     oci.data_safe.models.MaskingPolicyHealthReportCollection
     oci.data_safe.models.MaskingPolicyHealthReportLogCollection
     oci.data_safe.models.MaskingPolicyHealthReportLogSummary
     oci.data_safe.models.MaskingPolicyHealthReportSummary
+    oci.data_safe.models.MaskingPolicyReferentialRelationCollection
+    oci.data_safe.models.MaskingPolicyReferentialRelationSummary
     oci.data_safe.models.MaskingPolicySummary
     oci.data_safe.models.MaskingReport
     oci.data_safe.models.MaskingReportCollection
@@ -273,6 +279,9 @@ Data Safe
     oci.data_safe.models.RandomStringFormatEntry
     oci.data_safe.models.RandomSubstitutionFormatEntry
     oci.data_safe.models.References
+    oci.data_safe.models.ReferentialRelation
+    oci.data_safe.models.ReferentialRelationCollection
+    oci.data_safe.models.ReferentialRelationSummary
     oci.data_safe.models.RegularExpressionFormatEntry
     oci.data_safe.models.Report
     oci.data_safe.models.ReportCollection
@@ -337,6 +346,9 @@ Data Safe
     oci.data_safe.models.SensitiveTypeCollection
     oci.data_safe.models.SensitiveTypePattern
     oci.data_safe.models.SensitiveTypeSummary
+    oci.data_safe.models.SensitiveTypesExport
+    oci.data_safe.models.SensitiveTypesExportCollection
+    oci.data_safe.models.SensitiveTypesExportSummary
     oci.data_safe.models.ShuffleFormatEntry
     oci.data_safe.models.SqlCollection
     oci.data_safe.models.SqlCollectionAggregation
@@ -410,6 +422,7 @@ Data Safe
     oci.data_safe.models.UpdateSensitiveDataModelDetails
     oci.data_safe.models.UpdateSensitiveTypeDetails
     oci.data_safe.models.UpdateSensitiveTypePatternDetails
+    oci.data_safe.models.UpdateSensitiveTypesExportDetails
     oci.data_safe.models.UpdateSqlCollectionDetails
     oci.data_safe.models.UpdateSqlFirewallConfigDetails
     oci.data_safe.models.UpdateSqlFirewallPolicyDetails

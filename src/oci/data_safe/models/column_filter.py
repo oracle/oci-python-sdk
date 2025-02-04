@@ -24,6 +24,10 @@ class ColumnFilter(object):
     OPERATOR_EQ = "EQ"
 
     #: A constant which can be used with the operator property of a ColumnFilter.
+    #: This constant has a value of "EQ_CS"
+    OPERATOR_EQ_CS = "EQ_CS"
+
+    #: A constant which can be used with the operator property of a ColumnFilter.
     #: This constant has a value of "GT"
     OPERATOR_GT = "GT"
 
@@ -56,6 +60,10 @@ class ColumnFilter(object):
     OPERATOR_CO = "CO"
 
     #: A constant which can be used with the operator property of a ColumnFilter.
+    #: This constant has a value of "CO_CS"
+    OPERATOR_CO_CS = "CO_CS"
+
+    #: A constant which can be used with the operator property of a ColumnFilter.
     #: This constant has a value of "NOT"
     OPERATOR_NOT = "NOT"
 
@@ -74,7 +82,7 @@ class ColumnFilter(object):
 
         :param operator:
             The value to assign to the operator property of this ColumnFilter.
-            Allowed values for this property are: "IN", "EQ", "GT", "GE", "LT", "LE", "AND", "OR", "NE", "CO", "NOT", "NOT_IN", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "IN", "EQ", "EQ_CS", "GT", "GE", "LT", "LE", "AND", "OR", "NE", "CO", "CO_CS", "NOT", "NOT_IN", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operator: str
 
@@ -143,7 +151,7 @@ class ColumnFilter(object):
         **[Required]** Gets the operator of this ColumnFilter.
         Specifies the type of operator that must be applied for example in, eq etc.
 
-        Allowed values for this property are: "IN", "EQ", "GT", "GE", "LT", "LE", "AND", "OR", "NE", "CO", "NOT", "NOT_IN", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "IN", "EQ", "EQ_CS", "GT", "GE", "LT", "LE", "AND", "OR", "NE", "CO", "CO_CS", "NOT", "NOT_IN", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -162,7 +170,7 @@ class ColumnFilter(object):
         :param operator: The operator of this ColumnFilter.
         :type: str
         """
-        allowed_values = ["IN", "EQ", "GT", "GE", "LT", "LE", "AND", "OR", "NE", "CO", "NOT", "NOT_IN"]
+        allowed_values = ["IN", "EQ", "EQ_CS", "GT", "GE", "LT", "LE", "AND", "OR", "NE", "CO", "CO_CS", "NOT", "NOT_IN"]
         if not value_allowed_none_or_none_sentinel(operator, allowed_values):
             operator = 'UNKNOWN_ENUM_VALUE'
         self._operator = operator

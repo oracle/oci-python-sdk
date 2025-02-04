@@ -78,6 +78,14 @@ class MaskingPolicyHealthReport(object):
             The value to assign to the description property of this MaskingPolicyHealthReport.
         :type description: str
 
+        :param error_count:
+            The value to assign to the error_count property of this MaskingPolicyHealthReport.
+        :type error_count: int
+
+        :param warning_count:
+            The value to assign to the warning_count property of this MaskingPolicyHealthReport.
+        :type warning_count: int
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this MaskingPolicyHealthReport.
         :type freeform_tags: dict(str, str)
@@ -97,6 +105,8 @@ class MaskingPolicyHealthReport(object):
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
             'description': 'str',
+            'error_count': 'int',
+            'warning_count': 'int',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -111,6 +121,8 @@ class MaskingPolicyHealthReport(object):
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
             'description': 'description',
+            'error_count': 'errorCount',
+            'warning_count': 'warningCount',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -124,6 +136,8 @@ class MaskingPolicyHealthReport(object):
         self._time_updated = None
         self._lifecycle_state = None
         self._description = None
+        self._error_count = None
+        self._warning_count = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -358,6 +372,54 @@ class MaskingPolicyHealthReport(object):
         self._description = description
 
     @property
+    def error_count(self):
+        """
+        Gets the error_count of this MaskingPolicyHealthReport.
+        The count of errors in the masking health report.
+
+
+        :return: The error_count of this MaskingPolicyHealthReport.
+        :rtype: int
+        """
+        return self._error_count
+
+    @error_count.setter
+    def error_count(self, error_count):
+        """
+        Sets the error_count of this MaskingPolicyHealthReport.
+        The count of errors in the masking health report.
+
+
+        :param error_count: The error_count of this MaskingPolicyHealthReport.
+        :type: int
+        """
+        self._error_count = error_count
+
+    @property
+    def warning_count(self):
+        """
+        Gets the warning_count of this MaskingPolicyHealthReport.
+        The count of warnings in the masking health report.
+
+
+        :return: The warning_count of this MaskingPolicyHealthReport.
+        :rtype: int
+        """
+        return self._warning_count
+
+    @warning_count.setter
+    def warning_count(self, warning_count):
+        """
+        Sets the warning_count of this MaskingPolicyHealthReport.
+        The count of warnings in the masking health report.
+
+
+        :param warning_count: The warning_count of this MaskingPolicyHealthReport.
+        :type: int
+        """
+        self._warning_count = warning_count
+
+    @property
     def freeform_tags(self):
         """
         **[Required]** Gets the freeform_tags of this MaskingPolicyHealthReport.
@@ -394,7 +456,6 @@ class MaskingPolicyHealthReport(object):
         """
         **[Required]** Gets the defined_tags of this MaskingPolicyHealthReport.
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see `Resource Tags`__
-
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
@@ -410,7 +471,6 @@ class MaskingPolicyHealthReport(object):
         """
         Sets the defined_tags of this MaskingPolicyHealthReport.
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see `Resource Tags`__
-
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm

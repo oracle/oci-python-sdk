@@ -23,7 +23,7 @@ class SystemMessage(Message):
 
         :param role:
             The value to assign to the role property of this SystemMessage.
-            Allowed values for this property are: "SYSTEM", "USER", "ASSISTANT"
+            Allowed values for this property are: "SYSTEM", "USER", "ASSISTANT", "TOOL"
         :type role: str
 
         :param content:

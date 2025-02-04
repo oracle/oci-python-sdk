@@ -1,9 +1,9 @@
-CreateAuditPolicyDetails
-========================
+ReferentialRelationSummary
+==========================
 
 .. currentmodule:: oci.data_safe.models
 
-.. autoclass:: CreateAuditPolicyDetails
+.. autoclass:: ReferentialRelationSummary
     :show-inheritance:
     :special-members: __init__
     :members:

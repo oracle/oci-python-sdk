@@ -425,7 +425,7 @@ class AuditProfileSummary(object):
         """
         **[Required]** Gets the online_months of this AuditProfileSummary.
         Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.
-        Minimum: 1; Maximum:12 months
+        Minimum: 1; Maximum: 12 months
 
 
         :return: The online_months of this AuditProfileSummary.
@@ -438,7 +438,7 @@ class AuditProfileSummary(object):
         """
         Sets the online_months of this AuditProfileSummary.
         Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.
-        Minimum: 1; Maximum:12 months
+        Minimum: 1; Maximum: 12 months
 
 
         :param online_months: The online_months of this AuditProfileSummary.
@@ -565,7 +565,6 @@ class AuditProfileSummary(object):
         """
         Gets the defined_tags of this AuditProfileSummary.
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see `Resource Tags`__
-
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
@@ -581,7 +580,6 @@ class AuditProfileSummary(object):
         """
         Sets the defined_tags of this AuditProfileSummary.
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see `Resource Tags`__
-
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm

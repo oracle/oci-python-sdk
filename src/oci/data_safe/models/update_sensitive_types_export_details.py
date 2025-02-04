@@ -10,46 +10,36 @@ from oci.decorators import init_model_state_from_kwargs
 
 
 @init_model_state_from_kwargs
-class CreateAuditPolicyDetails(object):
+class UpdateSensitiveTypesExportDetails(object):
     """
-    Details for the new audit policy.
+    Details to update a sensitive types export.
     """
 
     def __init__(self, **kwargs):
         """
-        Initializes a new CreateAuditPolicyDetails object with values from keyword arguments.
+        Initializes a new UpdateSensitiveTypesExportDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param display_name:
-            The value to assign to the display_name property of this CreateAuditPolicyDetails.
+            The value to assign to the display_name property of this UpdateSensitiveTypesExportDetails.
         :type display_name: str
 
         :param description:
-            The value to assign to the description property of this CreateAuditPolicyDetails.
+            The value to assign to the description property of this UpdateSensitiveTypesExportDetails.
         :type description: str
 
-        :param compartment_id:
-            The value to assign to the compartment_id property of this CreateAuditPolicyDetails.
-        :type compartment_id: str
-
-        :param target_id:
-            The value to assign to the target_id property of this CreateAuditPolicyDetails.
-        :type target_id: str
-
         :param freeform_tags:
-            The value to assign to the freeform_tags property of this CreateAuditPolicyDetails.
+            The value to assign to the freeform_tags property of this UpdateSensitiveTypesExportDetails.
         :type freeform_tags: dict(str, str)
 
         :param defined_tags:
-            The value to assign to the defined_tags property of this CreateAuditPolicyDetails.
+            The value to assign to the defined_tags property of this UpdateSensitiveTypesExportDetails.
         :type defined_tags: dict(str, dict(str, object))
 
         """
         self.swagger_types = {
             'display_name': 'str',
             'description': 'str',
-            'compartment_id': 'str',
-            'target_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -57,27 +47,23 @@ class CreateAuditPolicyDetails(object):
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
-            'compartment_id': 'compartmentId',
-            'target_id': 'targetId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
 
         self._display_name = None
         self._description = None
-        self._compartment_id = None
-        self._target_id = None
         self._freeform_tags = None
         self._defined_tags = None
 
     @property
     def display_name(self):
         """
-        Gets the display_name of this CreateAuditPolicyDetails.
-        The display name of the audit policy. The name does not have to be unique, and it is changeable.
+        Gets the display_name of this UpdateSensitiveTypesExportDetails.
+        The display name of the sensitive types export. The name does not have to be unique, and it's changeable.
 
 
-        :return: The display_name of this CreateAuditPolicyDetails.
+        :return: The display_name of this UpdateSensitiveTypesExportDetails.
         :rtype: str
         """
         return self._display_name
@@ -85,11 +71,11 @@ class CreateAuditPolicyDetails(object):
     @display_name.setter
     def display_name(self, display_name):
         """
-        Sets the display_name of this CreateAuditPolicyDetails.
-        The display name of the audit policy. The name does not have to be unique, and it is changeable.
+        Sets the display_name of this UpdateSensitiveTypesExportDetails.
+        The display name of the sensitive types export. The name does not have to be unique, and it's changeable.
 
 
-        :param display_name: The display_name of this CreateAuditPolicyDetails.
+        :param display_name: The display_name of this UpdateSensitiveTypesExportDetails.
         :type: str
         """
         self._display_name = display_name
@@ -97,11 +83,11 @@ class CreateAuditPolicyDetails(object):
     @property
     def description(self):
         """
-        Gets the description of this CreateAuditPolicyDetails.
-        The description of the audit policy.
+        Gets the description of this UpdateSensitiveTypesExportDetails.
+        The description of the sensitive types export.
 
 
-        :return: The description of this CreateAuditPolicyDetails.
+        :return: The description of this UpdateSensitiveTypesExportDetails.
         :rtype: str
         """
         return self._description
@@ -109,67 +95,19 @@ class CreateAuditPolicyDetails(object):
     @description.setter
     def description(self, description):
         """
-        Sets the description of this CreateAuditPolicyDetails.
-        The description of the audit policy.
+        Sets the description of this UpdateSensitiveTypesExportDetails.
+        The description of the sensitive types export.
 
 
-        :param description: The description of this CreateAuditPolicyDetails.
+        :param description: The description of this UpdateSensitiveTypesExportDetails.
         :type: str
         """
         self._description = description
 
     @property
-    def compartment_id(self):
-        """
-        **[Required]** Gets the compartment_id of this CreateAuditPolicyDetails.
-        The OCID of the compartment where you want to create the audit policy.
-
-
-        :return: The compartment_id of this CreateAuditPolicyDetails.
-        :rtype: str
-        """
-        return self._compartment_id
-
-    @compartment_id.setter
-    def compartment_id(self, compartment_id):
-        """
-        Sets the compartment_id of this CreateAuditPolicyDetails.
-        The OCID of the compartment where you want to create the audit policy.
-
-
-        :param compartment_id: The compartment_id of this CreateAuditPolicyDetails.
-        :type: str
-        """
-        self._compartment_id = compartment_id
-
-    @property
-    def target_id(self):
-        """
-        **[Required]** Gets the target_id of this CreateAuditPolicyDetails.
-        The OCID of the target for which the audit policy has to be created.
-
-
-        :return: The target_id of this CreateAuditPolicyDetails.
-        :rtype: str
-        """
-        return self._target_id
-
-    @target_id.setter
-    def target_id(self, target_id):
-        """
-        Sets the target_id of this CreateAuditPolicyDetails.
-        The OCID of the target for which the audit policy has to be created.
-
-
-        :param target_id: The target_id of this CreateAuditPolicyDetails.
-        :type: str
-        """
-        self._target_id = target_id
-
-    @property
     def freeform_tags(self):
         """
-        Gets the freeform_tags of this CreateAuditPolicyDetails.
+        Gets the freeform_tags of this UpdateSensitiveTypesExportDetails.
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see `Resource Tags`__
 
         Example: `{\"Department\": \"Finance\"}`
@@ -177,7 +115,7 @@ class CreateAuditPolicyDetails(object):
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
-        :return: The freeform_tags of this CreateAuditPolicyDetails.
+        :return: The freeform_tags of this UpdateSensitiveTypesExportDetails.
         :rtype: dict(str, str)
         """
         return self._freeform_tags
@@ -185,7 +123,7 @@ class CreateAuditPolicyDetails(object):
     @freeform_tags.setter
     def freeform_tags(self, freeform_tags):
         """
-        Sets the freeform_tags of this CreateAuditPolicyDetails.
+        Sets the freeform_tags of this UpdateSensitiveTypesExportDetails.
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see `Resource Tags`__
 
         Example: `{\"Department\": \"Finance\"}`
@@ -193,7 +131,7 @@ class CreateAuditPolicyDetails(object):
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
-        :param freeform_tags: The freeform_tags of this CreateAuditPolicyDetails.
+        :param freeform_tags: The freeform_tags of this UpdateSensitiveTypesExportDetails.
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
@@ -201,15 +139,14 @@ class CreateAuditPolicyDetails(object):
     @property
     def defined_tags(self):
         """
-        Gets the defined_tags of this CreateAuditPolicyDetails.
+        Gets the defined_tags of this UpdateSensitiveTypesExportDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see `Resource Tags`__
-
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
-        :return: The defined_tags of this CreateAuditPolicyDetails.
+        :return: The defined_tags of this UpdateSensitiveTypesExportDetails.
         :rtype: dict(str, dict(str, object))
         """
         return self._defined_tags
@@ -217,15 +154,14 @@ class CreateAuditPolicyDetails(object):
     @defined_tags.setter
     def defined_tags(self, defined_tags):
         """
-        Sets the defined_tags of this CreateAuditPolicyDetails.
+        Sets the defined_tags of this UpdateSensitiveTypesExportDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see `Resource Tags`__
-
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
-        :param defined_tags: The defined_tags of this CreateAuditPolicyDetails.
+        :param defined_tags: The defined_tags of this UpdateSensitiveTypesExportDetails.
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags

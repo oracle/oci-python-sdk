@@ -43,6 +43,10 @@ class EmbedTextDetails(object):
     #: This constant has a value of "CLUSTERING"
     INPUT_TYPE_CLUSTERING = "CLUSTERING"
 
+    #: A constant which can be used with the input_type property of a EmbedTextDetails.
+    #: This constant has a value of "IMAGE"
+    INPUT_TYPE_IMAGE = "IMAGE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new EmbedTextDetails object with values from keyword arguments.
@@ -71,7 +75,7 @@ class EmbedTextDetails(object):
 
         :param input_type:
             The value to assign to the input_type property of this EmbedTextDetails.
-            Allowed values for this property are: "SEARCH_DOCUMENT", "SEARCH_QUERY", "CLASSIFICATION", "CLUSTERING"
+            Allowed values for this property are: "SEARCH_DOCUMENT", "SEARCH_QUERY", "CLASSIFICATION", "CLUSTERING", "IMAGE"
         :type input_type: str
 
         """
@@ -104,7 +108,7 @@ class EmbedTextDetails(object):
     def inputs(self):
         """
         **[Required]** Gets the inputs of this EmbedTextDetails.
-        Provide a list of strings. Each string can be words, a phrase, or a paragraph. The maximum length of each string entry in the list is 512 tokens.
+        Provide a list of strings or one base64 encoded image with `input_type` setting to `IMAGE`. If text embedding, each string can be words, a phrase, or a paragraph. The maximum length of each string entry in the list is 512 tokens.
 
 
         :return: The inputs of this EmbedTextDetails.
@@ -116,7 +120,7 @@ class EmbedTextDetails(object):
     def inputs(self, inputs):
         """
         Sets the inputs of this EmbedTextDetails.
-        Provide a list of strings. Each string can be words, a phrase, or a paragraph. The maximum length of each string entry in the list is 512 tokens.
+        Provide a list of strings or one base64 encoded image with `input_type` setting to `IMAGE`. If text embedding, each string can be words, a phrase, or a paragraph. The maximum length of each string entry in the list is 512 tokens.
 
 
         :param inputs: The inputs of this EmbedTextDetails.
@@ -229,7 +233,7 @@ class EmbedTextDetails(object):
         Gets the input_type of this EmbedTextDetails.
         Specifies the input type.
 
-        Allowed values for this property are: "SEARCH_DOCUMENT", "SEARCH_QUERY", "CLASSIFICATION", "CLUSTERING"
+        Allowed values for this property are: "SEARCH_DOCUMENT", "SEARCH_QUERY", "CLASSIFICATION", "CLUSTERING", "IMAGE"
 
 
         :return: The input_type of this EmbedTextDetails.
@@ -247,7 +251,7 @@ class EmbedTextDetails(object):
         :param input_type: The input_type of this EmbedTextDetails.
         :type: str
         """
-        allowed_values = ["SEARCH_DOCUMENT", "SEARCH_QUERY", "CLASSIFICATION", "CLUSTERING"]
+        allowed_values = ["SEARCH_DOCUMENT", "SEARCH_QUERY", "CLASSIFICATION", "CLUSTERING", "IMAGE"]
         if not value_allowed_none_or_none_sentinel(input_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `input_type`, must be None or one of {allowed_values}"

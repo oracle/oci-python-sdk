@@ -1,9 +1,9 @@
-CreateAuditProfileDetails
-=========================
+ChangeSensitiveTypesExportCompartmentDetails
+============================================
 
 .. currentmodule:: oci.data_safe.models
 
-.. autoclass:: CreateAuditProfileDetails
+.. autoclass:: ChangeSensitiveTypesExportCompartmentDetails
     :show-inheritance:
     :special-members: __init__
     :members:

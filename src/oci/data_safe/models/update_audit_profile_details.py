@@ -91,7 +91,7 @@ class UpdateAuditProfileDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateAuditProfileDetails.
-        The display name of the audit profile. The name does not have to be unique, and it's changeable.
+        The display name of the audit profile. The name does not have to be unique, and it's updatable.
 
 
         :return: The display_name of this UpdateAuditProfileDetails.
@@ -103,7 +103,7 @@ class UpdateAuditProfileDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateAuditProfileDetails.
-        The display name of the audit profile. The name does not have to be unique, and it's changeable.
+        The display name of the audit profile. The name does not have to be unique, and it's updatable.
 
 
         :param display_name: The display_name of this UpdateAuditProfileDetails.
@@ -176,7 +176,6 @@ class UpdateAuditProfileDetails(object):
         """
         Gets the defined_tags of this UpdateAuditProfileDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see `Resource Tags`__
-
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
@@ -192,7 +191,6 @@ class UpdateAuditProfileDetails(object):
         """
         Sets the defined_tags of this UpdateAuditProfileDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see `Resource Tags`__
-
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm

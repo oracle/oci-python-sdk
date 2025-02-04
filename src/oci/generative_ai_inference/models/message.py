@@ -27,6 +27,10 @@ class Message(object):
     #: This constant has a value of "ASSISTANT"
     ROLE_ASSISTANT = "ASSISTANT"
 
+    #: A constant which can be used with the role property of a Message.
+    #: This constant has a value of "TOOL"
+    ROLE_TOOL = "TOOL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Message object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -35,12 +39,13 @@ class Message(object):
         * :class:`~oci.generative_ai_inference.models.SystemMessage`
         * :class:`~oci.generative_ai_inference.models.AssistantMessage`
         * :class:`~oci.generative_ai_inference.models.UserMessage`
+        * :class:`~oci.generative_ai_inference.models.ToolMessage`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param role:
             The value to assign to the role property of this Message.
-            Allowed values for this property are: "SYSTEM", "USER", "ASSISTANT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SYSTEM", "USER", "ASSISTANT", "TOOL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type role: str
 
@@ -78,6 +83,9 @@ class Message(object):
 
         if type == 'USER':
             return 'UserMessage'
+
+        if type == 'TOOL':
+            return 'ToolMessage'
         else:
             return 'Message'
 
@@ -87,7 +95,7 @@ class Message(object):
         **[Required]** Gets the role of this Message.
         Indicates who is writing the current chat message.
 
-        Allowed values for this property are: "SYSTEM", "USER", "ASSISTANT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "SYSTEM", "USER", "ASSISTANT", "TOOL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -106,7 +114,7 @@ class Message(object):
         :param role: The role of this Message.
         :type: str
         """
-        allowed_values = ["SYSTEM", "USER", "ASSISTANT"]
+        allowed_values = ["SYSTEM", "USER", "ASSISTANT", "TOOL"]
         if not value_allowed_none_or_none_sentinel(role, allowed_values):
             role = 'UNKNOWN_ENUM_VALUE'
         self._role = role

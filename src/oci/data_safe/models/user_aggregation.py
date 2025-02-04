@@ -40,7 +40,8 @@ class UserAggregation(object):
     def items(self):
         """
         **[Required]** Gets the items of this UserAggregation.
-        The array of user aggregation data.
+        List containing maps as values.
+        Example: `{\"Operations\": [ {\"CostCenter\": \"42\"} ] }`
 
 
         :return: The items of this UserAggregation.
@@ -52,7 +53,8 @@ class UserAggregation(object):
     def items(self, items):
         """
         Sets the items of this UserAggregation.
-        The array of user aggregation data.
+        List containing maps as values.
+        Example: `{\"Operations\": [ {\"CostCenter\": \"42\"} ] }`
 
 
         :param items: The items of this UserAggregation.
