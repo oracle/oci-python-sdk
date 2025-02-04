@@ -42,6 +42,7 @@ from .create_db_system_source_from_pitr_details import CreateDbSystemSourceFromP
 from .create_db_system_source_import_from_url_details import CreateDbSystemSourceImportFromUrlDetails
 from .create_deletion_policy_details import CreateDeletionPolicyDetails
 from .create_maintenance_details import CreateMaintenanceDetails
+from .create_read_endpoint_details import CreateReadEndpointDetails
 from .create_replica_details import CreateReplicaDetails
 from .customer_contact import CustomerContact
 from .data_storage import DataStorage
@@ -70,6 +71,7 @@ from .maintenance_details import MaintenanceDetails
 from .pem_ca_certificate import PemCaCertificate
 from .pitr_policy import PitrPolicy
 from .point_in_time_recovery_details import PointInTimeRecoveryDetails
+from .read_endpoint_details import ReadEndpointDetails
 from .replica import Replica
 from .replica_overrides import ReplicaOverrides
 from .replica_summary import ReplicaSummary
@@ -89,6 +91,7 @@ from .update_db_system_details import UpdateDbSystemDetails
 from .update_deletion_policy_details import UpdateDeletionPolicyDetails
 from .update_heat_wave_cluster_details import UpdateHeatWaveClusterDetails
 from .update_maintenance_details import UpdateMaintenanceDetails
+from .update_read_endpoint_details import UpdateReadEndpointDetails
 from .update_replica_details import UpdateReplicaDetails
 from .version import Version
 from .version_summary import VersionSummary
@@ -136,6 +139,7 @@ mysql_type_mapping = {
     "CreateDbSystemSourceImportFromUrlDetails": CreateDbSystemSourceImportFromUrlDetails,
     "CreateDeletionPolicyDetails": CreateDeletionPolicyDetails,
     "CreateMaintenanceDetails": CreateMaintenanceDetails,
+    "CreateReadEndpointDetails": CreateReadEndpointDetails,
     "CreateReplicaDetails": CreateReplicaDetails,
     "CustomerContact": CustomerContact,
     "DataStorage": DataStorage,
@@ -164,6 +168,7 @@ mysql_type_mapping = {
     "PemCaCertificate": PemCaCertificate,
     "PitrPolicy": PitrPolicy,
     "PointInTimeRecoveryDetails": PointInTimeRecoveryDetails,
+    "ReadEndpointDetails": ReadEndpointDetails,
     "Replica": Replica,
     "ReplicaOverrides": ReplicaOverrides,
     "ReplicaSummary": ReplicaSummary,
@@ -183,6 +188,7 @@ mysql_type_mapping = {
     "UpdateDeletionPolicyDetails": UpdateDeletionPolicyDetails,
     "UpdateHeatWaveClusterDetails": UpdateHeatWaveClusterDetails,
     "UpdateMaintenanceDetails": UpdateMaintenanceDetails,
+    "UpdateReadEndpointDetails": UpdateReadEndpointDetails,
     "UpdateReplicaDetails": UpdateReplicaDetails,
     "Version": Version,
     "VersionSummary": VersionSummary,

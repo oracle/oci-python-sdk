@@ -78,6 +78,7 @@ from .change_security_policy_compartment_details import ChangeSecurityPolicyComp
 from .change_security_policy_deployment_compartment_details import ChangeSecurityPolicyDeploymentCompartmentDetails
 from .change_sensitive_data_model_compartment_details import ChangeSensitiveDataModelCompartmentDetails
 from .change_sensitive_type_compartment_details import ChangeSensitiveTypeCompartmentDetails
+from .change_sensitive_types_export_compartment_details import ChangeSensitiveTypesExportCompartmentDetails
 from .change_sql_collection_compartment_details import ChangeSqlCollectionCompartmentDetails
 from .change_sql_firewall_policy_compartment_details import ChangeSqlFirewallPolicyCompartmentDetails
 from .change_target_alert_policy_association_compartment_details import ChangeTargetAlertPolicyAssociationCompartmentDetails
@@ -92,6 +93,7 @@ from .column_source_details import ColumnSourceDetails
 from .column_source_from_sdm_details import ColumnSourceFromSdmDetails
 from .column_source_from_target_details import ColumnSourceFromTargetDetails
 from .column_summary import ColumnSummary
+from .columns_info import ColumnsInfo
 from .compare_security_assessment_details import CompareSecurityAssessmentDetails
 from .compare_user_assessment_details import CompareUserAssessmentDetails
 from .compatible_formats_for_data_types import CompatibleFormatsForDataTypes
@@ -100,8 +102,6 @@ from .connection_option import ConnectionOption
 from .create_alert_policy_details import CreateAlertPolicyDetails
 from .create_alert_policy_rule_details import CreateAlertPolicyRuleDetails
 from .create_audit_archive_retrieval_details import CreateAuditArchiveRetrievalDetails
-from .create_audit_policy_details import CreateAuditPolicyDetails
-from .create_audit_profile_details import CreateAuditProfileDetails
 from .create_column_source_details import CreateColumnSourceDetails
 from .create_column_source_from_sdm_details import CreateColumnSourceFromSdmDetails
 from .create_column_source_from_target_details import CreateColumnSourceFromTargetDetails
@@ -112,6 +112,7 @@ from .create_masking_column_details import CreateMaskingColumnDetails
 from .create_masking_policy_details import CreateMaskingPolicyDetails
 from .create_on_prem_connector_details import CreateOnPremConnectorDetails
 from .create_peer_target_database_details import CreatePeerTargetDatabaseDetails
+from .create_referential_relation_details import CreateReferentialRelationDetails
 from .create_report_definition_details import CreateReportDefinitionDetails
 from .create_sdm_masking_policy_difference_details import CreateSdmMaskingPolicyDifferenceDetails
 from .create_security_assessment_details import CreateSecurityAssessmentDetails
@@ -120,6 +121,7 @@ from .create_sensitive_column_details import CreateSensitiveColumnDetails
 from .create_sensitive_data_model_details import CreateSensitiveDataModelDetails
 from .create_sensitive_type_details import CreateSensitiveTypeDetails
 from .create_sensitive_type_pattern_details import CreateSensitiveTypePatternDetails
+from .create_sensitive_types_export_details import CreateSensitiveTypesExportDetails
 from .create_sql_collection_details import CreateSqlCollectionDetails
 from .create_target_alert_policy_association_details import CreateTargetAlertPolicyAssociationDetails
 from .create_target_database_details import CreateTargetDatabaseDetails
@@ -161,6 +163,7 @@ from .download_masking_policy_details import DownloadMaskingPolicyDetails
 from .download_masking_report_details import DownloadMaskingReportDetails
 from .download_security_assessment_report_details import DownloadSecurityAssessmentReportDetails
 from .download_sensitive_data_model_details import DownloadSensitiveDataModelDetails
+from .download_sensitive_types_export_details import DownloadSensitiveTypesExportDetails
 from .download_user_assessment_report_details import DownloadUserAssessmentReportDetails
 from .enable_conditions import EnableConditions
 from .enable_data_safe_configuration_details import EnableDataSafeConfigurationDetails
@@ -211,11 +214,14 @@ from .masking_object_collection import MaskingObjectCollection
 from .masking_object_summary import MaskingObjectSummary
 from .masking_policy import MaskingPolicy
 from .masking_policy_collection import MaskingPolicyCollection
+from .masking_policy_columns_info import MaskingPolicyColumnsInfo
 from .masking_policy_health_report import MaskingPolicyHealthReport
 from .masking_policy_health_report_collection import MaskingPolicyHealthReportCollection
 from .masking_policy_health_report_log_collection import MaskingPolicyHealthReportLogCollection
 from .masking_policy_health_report_log_summary import MaskingPolicyHealthReportLogSummary
 from .masking_policy_health_report_summary import MaskingPolicyHealthReportSummary
+from .masking_policy_referential_relation_collection import MaskingPolicyReferentialRelationCollection
+from .masking_policy_referential_relation_summary import MaskingPolicyReferentialRelationSummary
 from .masking_policy_summary import MaskingPolicySummary
 from .masking_report import MaskingReport
 from .masking_report_collection import MaskingReportCollection
@@ -261,6 +267,9 @@ from .random_number_format_entry import RandomNumberFormatEntry
 from .random_string_format_entry import RandomStringFormatEntry
 from .random_substitution_format_entry import RandomSubstitutionFormatEntry
 from .references import References
+from .referential_relation import ReferentialRelation
+from .referential_relation_collection import ReferentialRelationCollection
+from .referential_relation_summary import ReferentialRelationSummary
 from .regular_expression_format_entry import RegularExpressionFormatEntry
 from .report import Report
 from .report_collection import ReportCollection
@@ -325,6 +334,9 @@ from .sensitive_type import SensitiveType
 from .sensitive_type_collection import SensitiveTypeCollection
 from .sensitive_type_pattern import SensitiveTypePattern
 from .sensitive_type_summary import SensitiveTypeSummary
+from .sensitive_types_export import SensitiveTypesExport
+from .sensitive_types_export_collection import SensitiveTypesExportCollection
+from .sensitive_types_export_summary import SensitiveTypesExportSummary
 from .shuffle_format_entry import ShuffleFormatEntry
 from .sql_collection import SqlCollection
 from .sql_collection_aggregation import SqlCollectionAggregation
@@ -398,6 +410,7 @@ from .update_sensitive_column_details import UpdateSensitiveColumnDetails
 from .update_sensitive_data_model_details import UpdateSensitiveDataModelDetails
 from .update_sensitive_type_details import UpdateSensitiveTypeDetails
 from .update_sensitive_type_pattern_details import UpdateSensitiveTypePatternDetails
+from .update_sensitive_types_export_details import UpdateSensitiveTypesExportDetails
 from .update_sql_collection_details import UpdateSqlCollectionDetails
 from .update_sql_firewall_config_details import UpdateSqlFirewallConfigDetails
 from .update_sql_firewall_policy_details import UpdateSqlFirewallPolicyDetails
@@ -493,6 +506,7 @@ data_safe_type_mapping = {
     "ChangeSecurityPolicyDeploymentCompartmentDetails": ChangeSecurityPolicyDeploymentCompartmentDetails,
     "ChangeSensitiveDataModelCompartmentDetails": ChangeSensitiveDataModelCompartmentDetails,
     "ChangeSensitiveTypeCompartmentDetails": ChangeSensitiveTypeCompartmentDetails,
+    "ChangeSensitiveTypesExportCompartmentDetails": ChangeSensitiveTypesExportCompartmentDetails,
     "ChangeSqlCollectionCompartmentDetails": ChangeSqlCollectionCompartmentDetails,
     "ChangeSqlFirewallPolicyCompartmentDetails": ChangeSqlFirewallPolicyCompartmentDetails,
     "ChangeTargetAlertPolicyAssociationCompartmentDetails": ChangeTargetAlertPolicyAssociationCompartmentDetails,
@@ -507,6 +521,7 @@ data_safe_type_mapping = {
     "ColumnSourceFromSdmDetails": ColumnSourceFromSdmDetails,
     "ColumnSourceFromTargetDetails": ColumnSourceFromTargetDetails,
     "ColumnSummary": ColumnSummary,
+    "ColumnsInfo": ColumnsInfo,
     "CompareSecurityAssessmentDetails": CompareSecurityAssessmentDetails,
     "CompareUserAssessmentDetails": CompareUserAssessmentDetails,
     "CompatibleFormatsForDataTypes": CompatibleFormatsForDataTypes,
@@ -515,8 +530,6 @@ data_safe_type_mapping = {
     "CreateAlertPolicyDetails": CreateAlertPolicyDetails,
     "CreateAlertPolicyRuleDetails": CreateAlertPolicyRuleDetails,
     "CreateAuditArchiveRetrievalDetails": CreateAuditArchiveRetrievalDetails,
-    "CreateAuditPolicyDetails": CreateAuditPolicyDetails,
-    "CreateAuditProfileDetails": CreateAuditProfileDetails,
     "CreateColumnSourceDetails": CreateColumnSourceDetails,
     "CreateColumnSourceFromSdmDetails": CreateColumnSourceFromSdmDetails,
     "CreateColumnSourceFromTargetDetails": CreateColumnSourceFromTargetDetails,
@@ -527,6 +540,7 @@ data_safe_type_mapping = {
     "CreateMaskingPolicyDetails": CreateMaskingPolicyDetails,
     "CreateOnPremConnectorDetails": CreateOnPremConnectorDetails,
     "CreatePeerTargetDatabaseDetails": CreatePeerTargetDatabaseDetails,
+    "CreateReferentialRelationDetails": CreateReferentialRelationDetails,
     "CreateReportDefinitionDetails": CreateReportDefinitionDetails,
     "CreateSdmMaskingPolicyDifferenceDetails": CreateSdmMaskingPolicyDifferenceDetails,
     "CreateSecurityAssessmentDetails": CreateSecurityAssessmentDetails,
@@ -535,6 +549,7 @@ data_safe_type_mapping = {
     "CreateSensitiveDataModelDetails": CreateSensitiveDataModelDetails,
     "CreateSensitiveTypeDetails": CreateSensitiveTypeDetails,
     "CreateSensitiveTypePatternDetails": CreateSensitiveTypePatternDetails,
+    "CreateSensitiveTypesExportDetails": CreateSensitiveTypesExportDetails,
     "CreateSqlCollectionDetails": CreateSqlCollectionDetails,
     "CreateTargetAlertPolicyAssociationDetails": CreateTargetAlertPolicyAssociationDetails,
     "CreateTargetDatabaseDetails": CreateTargetDatabaseDetails,
@@ -576,6 +591,7 @@ data_safe_type_mapping = {
     "DownloadMaskingReportDetails": DownloadMaskingReportDetails,
     "DownloadSecurityAssessmentReportDetails": DownloadSecurityAssessmentReportDetails,
     "DownloadSensitiveDataModelDetails": DownloadSensitiveDataModelDetails,
+    "DownloadSensitiveTypesExportDetails": DownloadSensitiveTypesExportDetails,
     "DownloadUserAssessmentReportDetails": DownloadUserAssessmentReportDetails,
     "EnableConditions": EnableConditions,
     "EnableDataSafeConfigurationDetails": EnableDataSafeConfigurationDetails,
@@ -626,11 +642,14 @@ data_safe_type_mapping = {
     "MaskingObjectSummary": MaskingObjectSummary,
     "MaskingPolicy": MaskingPolicy,
     "MaskingPolicyCollection": MaskingPolicyCollection,
+    "MaskingPolicyColumnsInfo": MaskingPolicyColumnsInfo,
     "MaskingPolicyHealthReport": MaskingPolicyHealthReport,
     "MaskingPolicyHealthReportCollection": MaskingPolicyHealthReportCollection,
     "MaskingPolicyHealthReportLogCollection": MaskingPolicyHealthReportLogCollection,
     "MaskingPolicyHealthReportLogSummary": MaskingPolicyHealthReportLogSummary,
     "MaskingPolicyHealthReportSummary": MaskingPolicyHealthReportSummary,
+    "MaskingPolicyReferentialRelationCollection": MaskingPolicyReferentialRelationCollection,
+    "MaskingPolicyReferentialRelationSummary": MaskingPolicyReferentialRelationSummary,
     "MaskingPolicySummary": MaskingPolicySummary,
     "MaskingReport": MaskingReport,
     "MaskingReportCollection": MaskingReportCollection,
@@ -676,6 +695,9 @@ data_safe_type_mapping = {
     "RandomStringFormatEntry": RandomStringFormatEntry,
     "RandomSubstitutionFormatEntry": RandomSubstitutionFormatEntry,
     "References": References,
+    "ReferentialRelation": ReferentialRelation,
+    "ReferentialRelationCollection": ReferentialRelationCollection,
+    "ReferentialRelationSummary": ReferentialRelationSummary,
     "RegularExpressionFormatEntry": RegularExpressionFormatEntry,
     "Report": Report,
     "ReportCollection": ReportCollection,
@@ -740,6 +762,9 @@ data_safe_type_mapping = {
     "SensitiveTypeCollection": SensitiveTypeCollection,
     "SensitiveTypePattern": SensitiveTypePattern,
     "SensitiveTypeSummary": SensitiveTypeSummary,
+    "SensitiveTypesExport": SensitiveTypesExport,
+    "SensitiveTypesExportCollection": SensitiveTypesExportCollection,
+    "SensitiveTypesExportSummary": SensitiveTypesExportSummary,
     "ShuffleFormatEntry": ShuffleFormatEntry,
     "SqlCollection": SqlCollection,
     "SqlCollectionAggregation": SqlCollectionAggregation,
@@ -813,6 +838,7 @@ data_safe_type_mapping = {
     "UpdateSensitiveDataModelDetails": UpdateSensitiveDataModelDetails,
     "UpdateSensitiveTypeDetails": UpdateSensitiveTypeDetails,
     "UpdateSensitiveTypePatternDetails": UpdateSensitiveTypePatternDetails,
+    "UpdateSensitiveTypesExportDetails": UpdateSensitiveTypesExportDetails,
     "UpdateSqlCollectionDetails": UpdateSqlCollectionDetails,
     "UpdateSqlFirewallConfigDetails": UpdateSqlFirewallConfigDetails,
     "UpdateSqlFirewallPolicyDetails": UpdateSqlFirewallPolicyDetails,

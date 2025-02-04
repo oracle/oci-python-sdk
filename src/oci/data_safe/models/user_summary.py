@@ -13,7 +13,8 @@ from oci.decorators import init_model_state_from_kwargs
 class UserSummary(object):
     """
     The summary of information about the database user. It includes details such as user type, account status,
-    last login time, user creation time, authentication type, user profile, and time and date of the last password change.
+    last login time, user creation time, authentication type, user profile, and time and date of the last password change and
+    the date and time of the expiration of the password.
     It also contains the user category derived from these user details, as well as granted privileges.
     """
 
@@ -148,6 +149,10 @@ class UserSummary(object):
             The value to assign to the time_password_changed property of this UserSummary.
         :type time_password_changed: datetime
 
+        :param time_password_expiry:
+            The value to assign to the time_password_expiry property of this UserSummary.
+        :type time_password_expiry: datetime
+
         :param user_types:
             The value to assign to the user_types property of this UserSummary.
             Allowed values for items in this list are: "ADMIN_PRIVILEGED", "APPLICATION", "PRIVILEGED", "SCHEMA", "NON_PRIVILEGED", 'UNKNOWN_ENUM_VALUE'.
@@ -180,6 +185,7 @@ class UserSummary(object):
             'authentication_type': 'str',
             'user_profile': 'str',
             'time_password_changed': 'datetime',
+            'time_password_expiry': 'datetime',
             'user_types': 'list[str]',
             'admin_roles': 'list[str]',
             'are_all_schemas_accessible': 'bool',
@@ -197,6 +203,7 @@ class UserSummary(object):
             'authentication_type': 'authenticationType',
             'user_profile': 'userProfile',
             'time_password_changed': 'timePasswordChanged',
+            'time_password_expiry': 'timePasswordExpiry',
             'user_types': 'userTypes',
             'admin_roles': 'adminRoles',
             'are_all_schemas_accessible': 'areAllSchemasAccessible',
@@ -213,6 +220,7 @@ class UserSummary(object):
         self._authentication_type = None
         self._user_profile = None
         self._time_password_changed = None
+        self._time_password_expiry = None
         self._user_types = None
         self._admin_roles = None
         self._are_all_schemas_accessible = None
@@ -487,6 +495,34 @@ class UserSummary(object):
         :type: datetime
         """
         self._time_password_changed = time_password_changed
+
+    @property
+    def time_password_expiry(self):
+        """
+        Gets the time_password_expiry of this UserSummary.
+        The date and time the user's password will expire, in the format defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_password_expiry of this UserSummary.
+        :rtype: datetime
+        """
+        return self._time_password_expiry
+
+    @time_password_expiry.setter
+    def time_password_expiry(self, time_password_expiry):
+        """
+        Sets the time_password_expiry of this UserSummary.
+        The date and time the user's password will expire, in the format defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_password_expiry: The time_password_expiry of this UserSummary.
+        :type: datetime
+        """
+        self._time_password_expiry = time_password_expiry
 
     @property
     def user_types(self):

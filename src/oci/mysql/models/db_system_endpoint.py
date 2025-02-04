@@ -47,6 +47,10 @@ class DbSystemEndpoint(object):
     #: This constant has a value of "LOAD_BALANCER"
     RESOURCE_TYPE_LOAD_BALANCER = "LOAD_BALANCER"
 
+    #: A constant which can be used with the resource_type property of a DbSystemEndpoint.
+    #: This constant has a value of "READ_ENDPOINT"
+    RESOURCE_TYPE_READ_ENDPOINT = "READ_ENDPOINT"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DbSystemEndpoint object with values from keyword arguments.
@@ -86,7 +90,7 @@ class DbSystemEndpoint(object):
 
         :param resource_type:
             The value to assign to the resource_type property of this DbSystemEndpoint.
-            Allowed values for this property are: "DBSYSTEM", "READ_REPLICA", "LOAD_BALANCER", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "DBSYSTEM", "READ_REPLICA", "LOAD_BALANCER", "READ_ENDPOINT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type resource_type: str
 
@@ -317,7 +321,7 @@ class DbSystemEndpoint(object):
         Gets the resource_type of this DbSystemEndpoint.
         The type of endpoint that clients and connectors can connect to.
 
-        Allowed values for this property are: "DBSYSTEM", "READ_REPLICA", "LOAD_BALANCER", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "DBSYSTEM", "READ_REPLICA", "LOAD_BALANCER", "READ_ENDPOINT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -336,7 +340,7 @@ class DbSystemEndpoint(object):
         :param resource_type: The resource_type of this DbSystemEndpoint.
         :type: str
         """
-        allowed_values = ["DBSYSTEM", "READ_REPLICA", "LOAD_BALANCER"]
+        allowed_values = ["DBSYSTEM", "READ_REPLICA", "LOAD_BALANCER", "READ_ENDPOINT"]
         if not value_allowed_none_or_none_sentinel(resource_type, allowed_values):
             resource_type = 'UNKNOWN_ENUM_VALUE'
         self._resource_type = resource_type

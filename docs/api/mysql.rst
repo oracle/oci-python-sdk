@@ -64,6 +64,7 @@ Mysql
     oci.mysql.models.CreateDbSystemSourceImportFromUrlDetails
     oci.mysql.models.CreateDeletionPolicyDetails
     oci.mysql.models.CreateMaintenanceDetails
+    oci.mysql.models.CreateReadEndpointDetails
     oci.mysql.models.CreateReplicaDetails
     oci.mysql.models.CustomerContact
     oci.mysql.models.DataStorage
@@ -92,6 +93,7 @@ Mysql
     oci.mysql.models.PemCaCertificate
     oci.mysql.models.PitrPolicy
     oci.mysql.models.PointInTimeRecoveryDetails
+    oci.mysql.models.ReadEndpointDetails
     oci.mysql.models.Replica
     oci.mysql.models.ReplicaOverrides
     oci.mysql.models.ReplicaSummary
@@ -111,6 +113,7 @@ Mysql
     oci.mysql.models.UpdateDeletionPolicyDetails
     oci.mysql.models.UpdateHeatWaveClusterDetails
     oci.mysql.models.UpdateMaintenanceDetails
+    oci.mysql.models.UpdateReadEndpointDetails
     oci.mysql.models.UpdateReplicaDetails
     oci.mysql.models.Version
     oci.mysql.models.VersionSummary

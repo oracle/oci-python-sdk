@@ -70,7 +70,7 @@ class MaskingAnalyticsDimensions(object):
     def policy_id(self):
         """
         Gets the policy_id of this MaskingAnalyticsDimensions.
-        The OCID of the masking policy..
+        The OCID of the masking policy.
 
 
         :return: The policy_id of this MaskingAnalyticsDimensions.
@@ -82,7 +82,7 @@ class MaskingAnalyticsDimensions(object):
     def policy_id(self, policy_id):
         """
         Sets the policy_id of this MaskingAnalyticsDimensions.
-        The OCID of the masking policy..
+        The OCID of the masking policy.
 
 
         :param policy_id: The policy_id of this MaskingAnalyticsDimensions.

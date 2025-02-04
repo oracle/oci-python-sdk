@@ -44,8 +44,12 @@ Generative Ai Inference
     oci.generative_ai_inference.models.CohereToolResult
     oci.generative_ai_inference.models.CohereUserMessage
     oci.generative_ai_inference.models.DedicatedServingMode
+    oci.generative_ai_inference.models.Document
+    oci.generative_ai_inference.models.DocumentRank
     oci.generative_ai_inference.models.EmbedTextDetails
     oci.generative_ai_inference.models.EmbedTextResult
+    oci.generative_ai_inference.models.FunctionCall
+    oci.generative_ai_inference.models.FunctionDefinition
     oci.generative_ai_inference.models.GenerateTextDetails
     oci.generative_ai_inference.models.GenerateTextResult
     oci.generative_ai_inference.models.GeneratedText
@@ -60,6 +64,8 @@ Generative Ai Inference
     oci.generative_ai_inference.models.Logprobs
     oci.generative_ai_inference.models.Message
     oci.generative_ai_inference.models.OnDemandServingMode
+    oci.generative_ai_inference.models.RerankTextDetails
+    oci.generative_ai_inference.models.RerankTextResult
     oci.generative_ai_inference.models.SearchQuery
     oci.generative_ai_inference.models.ServingMode
     oci.generative_ai_inference.models.SummarizeTextDetails
@@ -67,4 +73,12 @@ Generative Ai Inference
     oci.generative_ai_inference.models.SystemMessage
     oci.generative_ai_inference.models.TextContent
     oci.generative_ai_inference.models.TokenLikelihood
+    oci.generative_ai_inference.models.ToolCall
+    oci.generative_ai_inference.models.ToolChoice
+    oci.generative_ai_inference.models.ToolChoiceAuto
+    oci.generative_ai_inference.models.ToolChoiceFunction
+    oci.generative_ai_inference.models.ToolChoiceNone
+    oci.generative_ai_inference.models.ToolChoiceRequired
+    oci.generative_ai_inference.models.ToolDefinition
+    oci.generative_ai_inference.models.ToolMessage
     oci.generative_ai_inference.models.UserMessage

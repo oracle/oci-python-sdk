@@ -48,6 +48,14 @@ class UpdateDbSystemDetails(object):
             The value to assign to the subnet_id property of this UpdateDbSystemDetails.
         :type subnet_id: str
 
+        :param database_mode:
+            The value to assign to the database_mode property of this UpdateDbSystemDetails.
+        :type database_mode: str
+
+        :param access_mode:
+            The value to assign to the access_mode property of this UpdateDbSystemDetails.
+        :type access_mode: str
+
         :param is_highly_available:
             The value to assign to the is_highly_available property of this UpdateDbSystemDetails.
         :type is_highly_available: bool
@@ -142,11 +150,17 @@ class UpdateDbSystemDetails(object):
             The value to assign to the customer_contacts property of this UpdateDbSystemDetails.
         :type customer_contacts: list[oci.mysql.models.CustomerContact]
 
+        :param read_endpoint:
+            The value to assign to the read_endpoint property of this UpdateDbSystemDetails.
+        :type read_endpoint: oci.mysql.models.UpdateReadEndpointDetails
+
         """
         self.swagger_types = {
             'display_name': 'str',
             'description': 'str',
             'subnet_id': 'str',
+            'database_mode': 'str',
+            'access_mode': 'str',
             'is_highly_available': 'bool',
             'availability_domain': 'str',
             'fault_domain': 'str',
@@ -169,13 +183,16 @@ class UpdateDbSystemDetails(object):
             'crash_recovery': 'str',
             'database_management': 'str',
             'secure_connections': 'SecureConnectionDetails',
-            'customer_contacts': 'list[CustomerContact]'
+            'customer_contacts': 'list[CustomerContact]',
+            'read_endpoint': 'UpdateReadEndpointDetails'
         }
 
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
             'subnet_id': 'subnetId',
+            'database_mode': 'databaseMode',
+            'access_mode': 'accessMode',
             'is_highly_available': 'isHighlyAvailable',
             'availability_domain': 'availabilityDomain',
             'fault_domain': 'faultDomain',
@@ -198,12 +215,15 @@ class UpdateDbSystemDetails(object):
             'crash_recovery': 'crashRecovery',
             'database_management': 'databaseManagement',
             'secure_connections': 'secureConnections',
-            'customer_contacts': 'customerContacts'
+            'customer_contacts': 'customerContacts',
+            'read_endpoint': 'readEndpoint'
         }
 
         self._display_name = None
         self._description = None
         self._subnet_id = None
+        self._database_mode = None
+        self._access_mode = None
         self._is_highly_available = None
         self._availability_domain = None
         self._fault_domain = None
@@ -227,6 +247,7 @@ class UpdateDbSystemDetails(object):
         self._database_management = None
         self._secure_connections = None
         self._customer_contacts = None
+        self._read_endpoint = None
 
     @property
     def display_name(self):
@@ -299,6 +320,74 @@ class UpdateDbSystemDetails(object):
         :type: str
         """
         self._subnet_id = subnet_id
+
+    @property
+    def database_mode(self):
+        """
+        Gets the database_mode of this UpdateDbSystemDetails.
+        The database mode indicating the types of statements that will be allowed to run in the DB system.
+        This mode will apply only to statements run by user connections. Replicated write statements will continue
+        to be allowed regardless of the DatabaseMode.
+          - READ_WRITE: allow running read and write statements on the DB system;
+          - READ_ONLY: only allow running read statements on the DB system.
+
+
+        :return: The database_mode of this UpdateDbSystemDetails.
+        :rtype: str
+        """
+        return self._database_mode
+
+    @database_mode.setter
+    def database_mode(self, database_mode):
+        """
+        Sets the database_mode of this UpdateDbSystemDetails.
+        The database mode indicating the types of statements that will be allowed to run in the DB system.
+        This mode will apply only to statements run by user connections. Replicated write statements will continue
+        to be allowed regardless of the DatabaseMode.
+          - READ_WRITE: allow running read and write statements on the DB system;
+          - READ_ONLY: only allow running read statements on the DB system.
+
+
+        :param database_mode: The database_mode of this UpdateDbSystemDetails.
+        :type: str
+        """
+        self._database_mode = database_mode
+
+    @property
+    def access_mode(self):
+        """
+        Gets the access_mode of this UpdateDbSystemDetails.
+        The access mode indicating if the database access will be restricted only to administrators or not:
+         - UNRESTRICTED: the access to the database is not restricted;
+         - RESTRICTED: the access will be allowed only to users with specific privileges;
+           RESTRICTED will correspond to setting the MySQL system variable
+           `offline_mode`__ to ON.
+
+        __ https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode
+
+
+        :return: The access_mode of this UpdateDbSystemDetails.
+        :rtype: str
+        """
+        return self._access_mode
+
+    @access_mode.setter
+    def access_mode(self, access_mode):
+        """
+        Sets the access_mode of this UpdateDbSystemDetails.
+        The access mode indicating if the database access will be restricted only to administrators or not:
+         - UNRESTRICTED: the access to the database is not restricted;
+         - RESTRICTED: the access will be allowed only to users with specific privileges;
+           RESTRICTED will correspond to setting the MySQL system variable
+           `offline_mode`__ to ON.
+
+        __ https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode
+
+
+        :param access_mode: The access_mode of this UpdateDbSystemDetails.
+        :type: str
+        """
+        self._access_mode = access_mode
 
     @property
     def is_highly_available(self):
@@ -939,6 +1028,26 @@ class UpdateDbSystemDetails(object):
         :type: list[oci.mysql.models.CustomerContact]
         """
         self._customer_contacts = customer_contacts
+
+    @property
+    def read_endpoint(self):
+        """
+        Gets the read_endpoint of this UpdateDbSystemDetails.
+
+        :return: The read_endpoint of this UpdateDbSystemDetails.
+        :rtype: oci.mysql.models.UpdateReadEndpointDetails
+        """
+        return self._read_endpoint
+
+    @read_endpoint.setter
+    def read_endpoint(self, read_endpoint):
+        """
+        Sets the read_endpoint of this UpdateDbSystemDetails.
+
+        :param read_endpoint: The read_endpoint of this UpdateDbSystemDetails.
+        :type: oci.mysql.models.UpdateReadEndpointDetails
+        """
+        self._read_endpoint = read_endpoint
 
     def __repr__(self):
         return formatted_flat_dict(self)

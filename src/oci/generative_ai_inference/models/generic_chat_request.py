@@ -38,6 +38,10 @@ class GenericChatRequest(BaseChatRequest):
             The value to assign to the num_generations property of this GenericChatRequest.
         :type num_generations: int
 
+        :param seed:
+            The value to assign to the seed property of this GenericChatRequest.
+        :type seed: int
+
         :param is_echo:
             The value to assign to the is_echo property of this GenericChatRequest.
         :type is_echo: bool
@@ -78,12 +82,21 @@ class GenericChatRequest(BaseChatRequest):
             The value to assign to the logit_bias property of this GenericChatRequest.
         :type logit_bias: object
 
+        :param tool_choice:
+            The value to assign to the tool_choice property of this GenericChatRequest.
+        :type tool_choice: oci.generative_ai_inference.models.ToolChoice
+
+        :param tools:
+            The value to assign to the tools property of this GenericChatRequest.
+        :type tools: list[oci.generative_ai_inference.models.ToolDefinition]
+
         """
         self.swagger_types = {
             'api_format': 'str',
             'messages': 'list[Message]',
             'is_stream': 'bool',
             'num_generations': 'int',
+            'seed': 'int',
             'is_echo': 'bool',
             'top_k': 'int',
             'top_p': 'float',
@@ -93,7 +106,9 @@ class GenericChatRequest(BaseChatRequest):
             'stop': 'list[str]',
             'log_probs': 'int',
             'max_tokens': 'int',
-            'logit_bias': 'object'
+            'logit_bias': 'object',
+            'tool_choice': 'ToolChoice',
+            'tools': 'list[ToolDefinition]'
         }
 
         self.attribute_map = {
@@ -101,6 +116,7 @@ class GenericChatRequest(BaseChatRequest):
             'messages': 'messages',
             'is_stream': 'isStream',
             'num_generations': 'numGenerations',
+            'seed': 'seed',
             'is_echo': 'isEcho',
             'top_k': 'topK',
             'top_p': 'topP',
@@ -110,13 +126,16 @@ class GenericChatRequest(BaseChatRequest):
             'stop': 'stop',
             'log_probs': 'logProbs',
             'max_tokens': 'maxTokens',
-            'logit_bias': 'logitBias'
+            'logit_bias': 'logitBias',
+            'tool_choice': 'toolChoice',
+            'tools': 'tools'
         }
 
         self._api_format = None
         self._messages = None
         self._is_stream = None
         self._num_generations = None
+        self._seed = None
         self._is_echo = None
         self._top_k = None
         self._top_p = None
@@ -127,6 +146,8 @@ class GenericChatRequest(BaseChatRequest):
         self._log_probs = None
         self._max_tokens = None
         self._logit_bias = None
+        self._tool_choice = None
+        self._tools = None
         self._api_format = 'GENERIC'
 
     @property
@@ -200,6 +221,30 @@ class GenericChatRequest(BaseChatRequest):
         :type: int
         """
         self._num_generations = num_generations
+
+    @property
+    def seed(self):
+        """
+        Gets the seed of this GenericChatRequest.
+        If specified, the backend will make a best effort to sample tokens deterministically, so that repeated requests with the same seed and parameters yield the same result. However, determinism cannot be fully guaranteed.
+
+
+        :return: The seed of this GenericChatRequest.
+        :rtype: int
+        """
+        return self._seed
+
+    @seed.setter
+    def seed(self, seed):
+        """
+        Sets the seed of this GenericChatRequest.
+        If specified, the backend will make a best effort to sample tokens deterministically, so that repeated requests with the same seed and parameters yield the same result. However, determinism cannot be fully guaranteed.
+
+
+        :param seed: The seed of this GenericChatRequest.
+        :type: int
+        """
+        self._seed = seed
 
     @property
     def is_echo(self):
@@ -466,6 +511,50 @@ class GenericChatRequest(BaseChatRequest):
         :type: object
         """
         self._logit_bias = logit_bias
+
+    @property
+    def tool_choice(self):
+        """
+        Gets the tool_choice of this GenericChatRequest.
+
+        :return: The tool_choice of this GenericChatRequest.
+        :rtype: oci.generative_ai_inference.models.ToolChoice
+        """
+        return self._tool_choice
+
+    @tool_choice.setter
+    def tool_choice(self, tool_choice):
+        """
+        Sets the tool_choice of this GenericChatRequest.
+
+        :param tool_choice: The tool_choice of this GenericChatRequest.
+        :type: oci.generative_ai_inference.models.ToolChoice
+        """
+        self._tool_choice = tool_choice
+
+    @property
+    def tools(self):
+        """
+        Gets the tools of this GenericChatRequest.
+        A list of tools the model may call. Use this to provide a list of functions the model may generate JSON inputs for. A max of 128 functions are supported.
+
+
+        :return: The tools of this GenericChatRequest.
+        :rtype: list[oci.generative_ai_inference.models.ToolDefinition]
+        """
+        return self._tools
+
+    @tools.setter
+    def tools(self, tools):
+        """
+        Sets the tools of this GenericChatRequest.
+        A list of tools the model may call. Use this to provide a list of functions the model may generate JSON inputs for. A max of 128 functions are supported.
+
+
+        :param tools: The tools of this GenericChatRequest.
+        :type: list[oci.generative_ai_inference.models.ToolDefinition]
+        """
+        self._tools = tools
 
     def __repr__(self):
         return formatted_flat_dict(self)

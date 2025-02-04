@@ -32,8 +32,12 @@ from .cohere_tool_message import CohereToolMessage
 from .cohere_tool_result import CohereToolResult
 from .cohere_user_message import CohereUserMessage
 from .dedicated_serving_mode import DedicatedServingMode
+from .document import Document
+from .document_rank import DocumentRank
 from .embed_text_details import EmbedTextDetails
 from .embed_text_result import EmbedTextResult
+from .function_call import FunctionCall
+from .function_definition import FunctionDefinition
 from .generate_text_details import GenerateTextDetails
 from .generate_text_result import GenerateTextResult
 from .generated_text import GeneratedText
@@ -48,6 +52,8 @@ from .llm_inference_response import LlmInferenceResponse
 from .logprobs import Logprobs
 from .message import Message
 from .on_demand_serving_mode import OnDemandServingMode
+from .rerank_text_details import RerankTextDetails
+from .rerank_text_result import RerankTextResult
 from .search_query import SearchQuery
 from .serving_mode import ServingMode
 from .summarize_text_details import SummarizeTextDetails
@@ -55,6 +61,14 @@ from .summarize_text_result import SummarizeTextResult
 from .system_message import SystemMessage
 from .text_content import TextContent
 from .token_likelihood import TokenLikelihood
+from .tool_call import ToolCall
+from .tool_choice import ToolChoice
+from .tool_choice_auto import ToolChoiceAuto
+from .tool_choice_function import ToolChoiceFunction
+from .tool_choice_none import ToolChoiceNone
+from .tool_choice_required import ToolChoiceRequired
+from .tool_definition import ToolDefinition
+from .tool_message import ToolMessage
 from .user_message import UserMessage
 
 # Maps type names to classes for generative_ai_inference services.
@@ -85,8 +99,12 @@ generative_ai_inference_type_mapping = {
     "CohereToolResult": CohereToolResult,
     "CohereUserMessage": CohereUserMessage,
     "DedicatedServingMode": DedicatedServingMode,
+    "Document": Document,
+    "DocumentRank": DocumentRank,
     "EmbedTextDetails": EmbedTextDetails,
     "EmbedTextResult": EmbedTextResult,
+    "FunctionCall": FunctionCall,
+    "FunctionDefinition": FunctionDefinition,
     "GenerateTextDetails": GenerateTextDetails,
     "GenerateTextResult": GenerateTextResult,
     "GeneratedText": GeneratedText,
@@ -101,6 +119,8 @@ generative_ai_inference_type_mapping = {
     "Logprobs": Logprobs,
     "Message": Message,
     "OnDemandServingMode": OnDemandServingMode,
+    "RerankTextDetails": RerankTextDetails,
+    "RerankTextResult": RerankTextResult,
     "SearchQuery": SearchQuery,
     "ServingMode": ServingMode,
     "SummarizeTextDetails": SummarizeTextDetails,
@@ -108,5 +128,13 @@ generative_ai_inference_type_mapping = {
     "SystemMessage": SystemMessage,
     "TextContent": TextContent,
     "TokenLikelihood": TokenLikelihood,
+    "ToolCall": ToolCall,
+    "ToolChoice": ToolChoice,
+    "ToolChoiceAuto": ToolChoiceAuto,
+    "ToolChoiceFunction": ToolChoiceFunction,
+    "ToolChoiceNone": ToolChoiceNone,
+    "ToolChoiceRequired": ToolChoiceRequired,
+    "ToolDefinition": ToolDefinition,
+    "ToolMessage": ToolMessage,
     "UserMessage": UserMessage
 }

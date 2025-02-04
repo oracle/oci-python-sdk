@@ -204,7 +204,6 @@ class UpdateLibraryMaskingFormatDetails(object):
         """
         Gets the defined_tags of this UpdateLibraryMaskingFormatDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see `Resource Tags`__
-
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
@@ -220,7 +219,6 @@ class UpdateLibraryMaskingFormatDetails(object):
         """
         Sets the defined_tags of this UpdateLibraryMaskingFormatDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see `Resource Tags`__
-
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm

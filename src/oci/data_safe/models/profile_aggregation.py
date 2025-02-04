@@ -55,7 +55,8 @@ class ProfileAggregation(object):
     def items(self):
         """
         **[Required]** Gets the items of this ProfileAggregation.
-        The array of profile aggregation data.
+        List containing maps as values.
+        Example: `{\"Operations\": [ {\"CostCenter\": \"42\"} ] }`
 
 
         :return: The items of this ProfileAggregation.
@@ -67,7 +68,8 @@ class ProfileAggregation(object):
     def items(self, items):
         """
         Sets the items of this ProfileAggregation.
-        The array of profile aggregation data.
+        List containing maps as values.
+        Example: `{\"Operations\": [ {\"CostCenter\": \"42\"} ] }`
 
 
         :param items: The items of this ProfileAggregation.
@@ -112,7 +114,6 @@ class ProfileAggregation(object):
         """
         Gets the defined_tags of this ProfileAggregation.
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see `Resource Tags`__
-
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
@@ -128,7 +129,6 @@ class ProfileAggregation(object):
         """
         Sets the defined_tags of this ProfileAggregation.
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see `Resource Tags`__
-
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
