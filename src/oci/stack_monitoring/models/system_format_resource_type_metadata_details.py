@@ -50,6 +50,10 @@ class SystemFormatResourceTypeMetadataDetails(ResourceTypeMetadataDetails):
             The value to assign to the valid_property_values property of this SystemFormatResourceTypeMetadataDetails.
         :type valid_property_values: dict(str, list[str])
 
+        :param valid_sub_resource_types:
+            The value to assign to the valid_sub_resource_types property of this SystemFormatResourceTypeMetadataDetails.
+        :type valid_sub_resource_types: list[str]
+
         """
         self.swagger_types = {
             'format': 'str',
@@ -58,7 +62,8 @@ class SystemFormatResourceTypeMetadataDetails(ResourceTypeMetadataDetails):
             'valid_properties_for_create': 'list[str]',
             'valid_properties_for_update': 'list[str]',
             'unique_property_sets': 'list[UniquePropertySet]',
-            'valid_property_values': 'dict(str, list[str])'
+            'valid_property_values': 'dict(str, list[str])',
+            'valid_sub_resource_types': 'list[str]'
         }
 
         self.attribute_map = {
@@ -68,7 +73,8 @@ class SystemFormatResourceTypeMetadataDetails(ResourceTypeMetadataDetails):
             'valid_properties_for_create': 'validPropertiesForCreate',
             'valid_properties_for_update': 'validPropertiesForUpdate',
             'unique_property_sets': 'uniquePropertySets',
-            'valid_property_values': 'validPropertyValues'
+            'valid_property_values': 'validPropertyValues',
+            'valid_sub_resource_types': 'validSubResourceTypes'
         }
 
         self._format = None
@@ -78,6 +84,7 @@ class SystemFormatResourceTypeMetadataDetails(ResourceTypeMetadataDetails):
         self._valid_properties_for_update = None
         self._unique_property_sets = None
         self._valid_property_values = None
+        self._valid_sub_resource_types = None
         self._format = 'SYSTEM_FORMAT'
 
     @property
@@ -249,6 +256,34 @@ class SystemFormatResourceTypeMetadataDetails(ResourceTypeMetadataDetails):
         :type: dict(str, list[str])
         """
         self._valid_property_values = valid_property_values
+
+    @property
+    def valid_sub_resource_types(self):
+        """
+        Gets the valid_sub_resource_types of this SystemFormatResourceTypeMetadataDetails.
+        List of valid sub-resource types for a composite resource type.
+        The sub-resource types will be obtained from the valid association pairs corresponding to the composite resource types.
+        It will be empty for non composite resource types
+
+
+        :return: The valid_sub_resource_types of this SystemFormatResourceTypeMetadataDetails.
+        :rtype: list[str]
+        """
+        return self._valid_sub_resource_types
+
+    @valid_sub_resource_types.setter
+    def valid_sub_resource_types(self, valid_sub_resource_types):
+        """
+        Sets the valid_sub_resource_types of this SystemFormatResourceTypeMetadataDetails.
+        List of valid sub-resource types for a composite resource type.
+        The sub-resource types will be obtained from the valid association pairs corresponding to the composite resource types.
+        It will be empty for non composite resource types
+
+
+        :param valid_sub_resource_types: The valid_sub_resource_types of this SystemFormatResourceTypeMetadataDetails.
+        :type: list[str]
+        """
+        self._valid_sub_resource_types = valid_sub_resource_types
 
     def __repr__(self):
         return formatted_flat_dict(self)

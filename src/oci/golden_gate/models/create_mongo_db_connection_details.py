@@ -23,7 +23,7 @@ class CreateMongoDbConnectionDetails(CreateConnectionDetails):
 
         :param connection_type:
             The value to assign to the connection_type property of this CreateMongoDbConnectionDetails.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC"
         :type connection_type: str
 
         :param display_name:
@@ -99,6 +99,30 @@ class CreateMongoDbConnectionDetails(CreateConnectionDetails):
             The value to assign to the database_id property of this CreateMongoDbConnectionDetails.
         :type database_id: str
 
+        :param security_protocol:
+            The value to assign to the security_protocol property of this CreateMongoDbConnectionDetails.
+        :type security_protocol: str
+
+        :param tls_ca_file:
+            The value to assign to the tls_ca_file property of this CreateMongoDbConnectionDetails.
+        :type tls_ca_file: str
+
+        :param tls_certificate_key_file:
+            The value to assign to the tls_certificate_key_file property of this CreateMongoDbConnectionDetails.
+        :type tls_certificate_key_file: str
+
+        :param tls_certificate_key_file_secret_id:
+            The value to assign to the tls_certificate_key_file_secret_id property of this CreateMongoDbConnectionDetails.
+        :type tls_certificate_key_file_secret_id: str
+
+        :param tls_certificate_key_file_password:
+            The value to assign to the tls_certificate_key_file_password property of this CreateMongoDbConnectionDetails.
+        :type tls_certificate_key_file_password: str
+
+        :param tls_certificate_key_file_password_secret_id:
+            The value to assign to the tls_certificate_key_file_password_secret_id property of this CreateMongoDbConnectionDetails.
+        :type tls_certificate_key_file_password_secret_id: str
+
         """
         self.swagger_types = {
             'connection_type': 'str',
@@ -119,7 +143,13 @@ class CreateMongoDbConnectionDetails(CreateConnectionDetails):
             'username': 'str',
             'password': 'str',
             'password_secret_id': 'str',
-            'database_id': 'str'
+            'database_id': 'str',
+            'security_protocol': 'str',
+            'tls_ca_file': 'str',
+            'tls_certificate_key_file': 'str',
+            'tls_certificate_key_file_secret_id': 'str',
+            'tls_certificate_key_file_password': 'str',
+            'tls_certificate_key_file_password_secret_id': 'str'
         }
 
         self.attribute_map = {
@@ -141,7 +171,13 @@ class CreateMongoDbConnectionDetails(CreateConnectionDetails):
             'username': 'username',
             'password': 'password',
             'password_secret_id': 'passwordSecretId',
-            'database_id': 'databaseId'
+            'database_id': 'databaseId',
+            'security_protocol': 'securityProtocol',
+            'tls_ca_file': 'tlsCaFile',
+            'tls_certificate_key_file': 'tlsCertificateKeyFile',
+            'tls_certificate_key_file_secret_id': 'tlsCertificateKeyFileSecretId',
+            'tls_certificate_key_file_password': 'tlsCertificateKeyFilePassword',
+            'tls_certificate_key_file_password_secret_id': 'tlsCertificateKeyFilePasswordSecretId'
         }
 
         self._connection_type = None
@@ -163,6 +199,12 @@ class CreateMongoDbConnectionDetails(CreateConnectionDetails):
         self._password = None
         self._password_secret_id = None
         self._database_id = None
+        self._security_protocol = None
+        self._tls_ca_file = None
+        self._tls_certificate_key_file = None
+        self._tls_certificate_key_file_secret_id = None
+        self._tls_certificate_key_file_password = None
+        self._tls_certificate_key_file_password_secret_id = None
         self._connection_type = 'MONGODB'
 
     @property
@@ -246,6 +288,7 @@ class CreateMongoDbConnectionDetails(CreateConnectionDetails):
         """
         Gets the password of this CreateMongoDbConnectionDetails.
         The password Oracle GoldenGate uses to connect the associated database.
+        Deprecated: This field is deprecated and replaced by \"passwordSecretId\". This field will be removed after February 15 2026.
 
 
         :return: The password of this CreateMongoDbConnectionDetails.
@@ -258,6 +301,7 @@ class CreateMongoDbConnectionDetails(CreateConnectionDetails):
         """
         Sets the password of this CreateMongoDbConnectionDetails.
         The password Oracle GoldenGate uses to connect the associated database.
+        Deprecated: This field is deprecated and replaced by \"passwordSecretId\". This field will be removed after February 15 2026.
 
 
         :param password: The password of this CreateMongoDbConnectionDetails.
@@ -322,6 +366,168 @@ class CreateMongoDbConnectionDetails(CreateConnectionDetails):
         :type: str
         """
         self._database_id = database_id
+
+    @property
+    def security_protocol(self):
+        """
+        Gets the security_protocol of this CreateMongoDbConnectionDetails.
+        Security Type for MongoDB.
+
+
+        :return: The security_protocol of this CreateMongoDbConnectionDetails.
+        :rtype: str
+        """
+        return self._security_protocol
+
+    @security_protocol.setter
+    def security_protocol(self, security_protocol):
+        """
+        Sets the security_protocol of this CreateMongoDbConnectionDetails.
+        Security Type for MongoDB.
+
+
+        :param security_protocol: The security_protocol of this CreateMongoDbConnectionDetails.
+        :type: str
+        """
+        self._security_protocol = security_protocol
+
+    @property
+    def tls_ca_file(self):
+        """
+        Gets the tls_ca_file of this CreateMongoDbConnectionDetails.
+        Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL).
+
+
+        :return: The tls_ca_file of this CreateMongoDbConnectionDetails.
+        :rtype: str
+        """
+        return self._tls_ca_file
+
+    @tls_ca_file.setter
+    def tls_ca_file(self, tls_ca_file):
+        """
+        Sets the tls_ca_file of this CreateMongoDbConnectionDetails.
+        Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL).
+
+
+        :param tls_ca_file: The tls_ca_file of this CreateMongoDbConnectionDetails.
+        :type: str
+        """
+        self._tls_ca_file = tls_ca_file
+
+    @property
+    def tls_certificate_key_file(self):
+        """
+        Gets the tls_certificate_key_file of this CreateMongoDbConnectionDetails.
+        Client Certificate - The base64 encoded content of a .pem file, containing the client public key (for 2-way SSL).
+        Deprecated: This field is deprecated and replaced by \"tlsCertificateKeyFileSecretId\". This field will be removed after February 15 2026.
+
+
+        :return: The tls_certificate_key_file of this CreateMongoDbConnectionDetails.
+        :rtype: str
+        """
+        return self._tls_certificate_key_file
+
+    @tls_certificate_key_file.setter
+    def tls_certificate_key_file(self, tls_certificate_key_file):
+        """
+        Sets the tls_certificate_key_file of this CreateMongoDbConnectionDetails.
+        Client Certificate - The base64 encoded content of a .pem file, containing the client public key (for 2-way SSL).
+        Deprecated: This field is deprecated and replaced by \"tlsCertificateKeyFileSecretId\". This field will be removed after February 15 2026.
+
+
+        :param tls_certificate_key_file: The tls_certificate_key_file of this CreateMongoDbConnectionDetails.
+        :type: str
+        """
+        self._tls_certificate_key_file = tls_certificate_key_file
+
+    @property
+    def tls_certificate_key_file_secret_id(self):
+        """
+        Gets the tls_certificate_key_file_secret_id of this CreateMongoDbConnectionDetails.
+        The `OCID`__ of the Secret that stores the certificate key file of the mtls connection.
+        - The content of a .pem file containing the client private key (for 2-way SSL).
+        Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The tls_certificate_key_file_secret_id of this CreateMongoDbConnectionDetails.
+        :rtype: str
+        """
+        return self._tls_certificate_key_file_secret_id
+
+    @tls_certificate_key_file_secret_id.setter
+    def tls_certificate_key_file_secret_id(self, tls_certificate_key_file_secret_id):
+        """
+        Sets the tls_certificate_key_file_secret_id of this CreateMongoDbConnectionDetails.
+        The `OCID`__ of the Secret that stores the certificate key file of the mtls connection.
+        - The content of a .pem file containing the client private key (for 2-way SSL).
+        Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param tls_certificate_key_file_secret_id: The tls_certificate_key_file_secret_id of this CreateMongoDbConnectionDetails.
+        :type: str
+        """
+        self._tls_certificate_key_file_secret_id = tls_certificate_key_file_secret_id
+
+    @property
+    def tls_certificate_key_file_password(self):
+        """
+        Gets the tls_certificate_key_file_password of this CreateMongoDbConnectionDetails.
+        Client Certificate key file password.
+        Deprecated: This field is deprecated and replaced by \"tlsCertificateKeyFilePasswordSecretId\". This field will be removed after February 15 2026.
+
+
+        :return: The tls_certificate_key_file_password of this CreateMongoDbConnectionDetails.
+        :rtype: str
+        """
+        return self._tls_certificate_key_file_password
+
+    @tls_certificate_key_file_password.setter
+    def tls_certificate_key_file_password(self, tls_certificate_key_file_password):
+        """
+        Sets the tls_certificate_key_file_password of this CreateMongoDbConnectionDetails.
+        Client Certificate key file password.
+        Deprecated: This field is deprecated and replaced by \"tlsCertificateKeyFilePasswordSecretId\". This field will be removed after February 15 2026.
+
+
+        :param tls_certificate_key_file_password: The tls_certificate_key_file_password of this CreateMongoDbConnectionDetails.
+        :type: str
+        """
+        self._tls_certificate_key_file_password = tls_certificate_key_file_password
+
+    @property
+    def tls_certificate_key_file_password_secret_id(self):
+        """
+        Gets the tls_certificate_key_file_password_secret_id of this CreateMongoDbConnectionDetails.
+        The `OCID`__ of the Secret that stores the password of the tls certificate key file.
+        Note: When provided, 'tlsCertificateKeyFilePassword' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The tls_certificate_key_file_password_secret_id of this CreateMongoDbConnectionDetails.
+        :rtype: str
+        """
+        return self._tls_certificate_key_file_password_secret_id
+
+    @tls_certificate_key_file_password_secret_id.setter
+    def tls_certificate_key_file_password_secret_id(self, tls_certificate_key_file_password_secret_id):
+        """
+        Sets the tls_certificate_key_file_password_secret_id of this CreateMongoDbConnectionDetails.
+        The `OCID`__ of the Secret that stores the password of the tls certificate key file.
+        Note: When provided, 'tlsCertificateKeyFilePassword' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param tls_certificate_key_file_password_secret_id: The tls_certificate_key_file_password_secret_id of this CreateMongoDbConnectionDetails.
+        :type: str
+        """
+        self._tls_certificate_key_file_password_secret_id = tls_certificate_key_file_password_secret_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

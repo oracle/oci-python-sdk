@@ -273,6 +273,14 @@ class DbSystemSummary(object):
             The value to assign to the vip_ids property of this DbSystemSummary.
         :type vip_ids: list[str]
 
+        :param scan_ipv6_ids:
+            The value to assign to the scan_ipv6_ids property of this DbSystemSummary.
+        :type scan_ipv6_ids: list[str]
+
+        :param vipv6_ids:
+            The value to assign to the vipv6_ids property of this DbSystemSummary.
+        :type vipv6_ids: list[str]
+
         :param scan_dns_record_id:
             The value to assign to the scan_dns_record_id property of this DbSystemSummary.
         :type scan_dns_record_id: str
@@ -375,6 +383,8 @@ class DbSystemSummary(object):
             'sparse_diskgroup': 'bool',
             'scan_ip_ids': 'list[str]',
             'vip_ids': 'list[str]',
+            'scan_ipv6_ids': 'list[str]',
+            'vipv6_ids': 'list[str]',
             'scan_dns_record_id': 'str',
             'scan_dns_name': 'str',
             'zone_id': 'str',
@@ -428,6 +438,8 @@ class DbSystemSummary(object):
             'sparse_diskgroup': 'sparseDiskgroup',
             'scan_ip_ids': 'scanIpIds',
             'vip_ids': 'vipIds',
+            'scan_ipv6_ids': 'scanIpv6Ids',
+            'vipv6_ids': 'vipv6Ids',
             'scan_dns_record_id': 'scanDnsRecordId',
             'scan_dns_name': 'scanDnsName',
             'zone_id': 'zoneId',
@@ -480,6 +492,8 @@ class DbSystemSummary(object):
         self._sparse_diskgroup = None
         self._scan_ip_ids = None
         self._vip_ids = None
+        self._scan_ipv6_ids = None
+        self._vipv6_ids = None
         self._scan_dns_record_id = None
         self._scan_dns_name = None
         self._zone_id = None
@@ -1367,8 +1381,8 @@ class DbSystemSummary(object):
     def scan_ip_ids(self):
         """
         Gets the scan_ip_ids of this DbSystemSummary.
-        The `OCID`__ of the Single Client Access Name (SCAN) IP addresses associated with the DB system.
-        SCAN IP addresses are typically used for load balancing and are not assigned to any interface.
+        The `OCID`__ of the Single Client Access Name (SCAN) IPv4 addresses associated with the DB system.
+        SCAN IPv4 addresses are typically used for load balancing and are not assigned to any interface.
         Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
 
         **Note:** For a single-node DB system, this list is empty.
@@ -1385,8 +1399,8 @@ class DbSystemSummary(object):
     def scan_ip_ids(self, scan_ip_ids):
         """
         Sets the scan_ip_ids of this DbSystemSummary.
-        The `OCID`__ of the Single Client Access Name (SCAN) IP addresses associated with the DB system.
-        SCAN IP addresses are typically used for load balancing and are not assigned to any interface.
+        The `OCID`__ of the Single Client Access Name (SCAN) IPv4 addresses associated with the DB system.
+        SCAN IPv4 addresses are typically used for load balancing and are not assigned to any interface.
         Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
 
         **Note:** For a single-node DB system, this list is empty.
@@ -1403,9 +1417,9 @@ class DbSystemSummary(object):
     def vip_ids(self):
         """
         Gets the vip_ids of this DbSystemSummary.
-        The `OCID`__ of the virtual IP (VIP) addresses associated with the DB system.
-        The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the DB system to
-        enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+        The `OCID`__ of the virtual IPv4 (VIP) addresses associated with the DB system.
+        The Cluster Ready Services (CRS) creates and maintains one VIPv4 address for each node in the DB system to
+        enable failover. If one node fails, the VIPv4 is reassigned to another active node in the cluster.
 
         **Note:** For a single-node DB system, this list is empty.
 
@@ -1421,9 +1435,9 @@ class DbSystemSummary(object):
     def vip_ids(self, vip_ids):
         """
         Sets the vip_ids of this DbSystemSummary.
-        The `OCID`__ of the virtual IP (VIP) addresses associated with the DB system.
-        The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the DB system to
-        enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+        The `OCID`__ of the virtual IPv4 (VIP) addresses associated with the DB system.
+        The Cluster Ready Services (CRS) creates and maintains one VIPv4 address for each node in the DB system to
+        enable failover. If one node fails, the VIPv4 is reassigned to another active node in the cluster.
 
         **Note:** For a single-node DB system, this list is empty.
 
@@ -1434,6 +1448,78 @@ class DbSystemSummary(object):
         :type: list[str]
         """
         self._vip_ids = vip_ids
+
+    @property
+    def scan_ipv6_ids(self):
+        """
+        Gets the scan_ipv6_ids of this DbSystemSummary.
+        The `OCID`__ of the Single Client Access Name (SCAN) IPv6 addresses associated with the DB system.
+        SCAN IPv6 addresses are typically used for load balancing and are not assigned to any interface.
+        Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+
+        **Note:** For a single-node DB system, this list is empty.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The scan_ipv6_ids of this DbSystemSummary.
+        :rtype: list[str]
+        """
+        return self._scan_ipv6_ids
+
+    @scan_ipv6_ids.setter
+    def scan_ipv6_ids(self, scan_ipv6_ids):
+        """
+        Sets the scan_ipv6_ids of this DbSystemSummary.
+        The `OCID`__ of the Single Client Access Name (SCAN) IPv6 addresses associated with the DB system.
+        SCAN IPv6 addresses are typically used for load balancing and are not assigned to any interface.
+        Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+
+        **Note:** For a single-node DB system, this list is empty.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param scan_ipv6_ids: The scan_ipv6_ids of this DbSystemSummary.
+        :type: list[str]
+        """
+        self._scan_ipv6_ids = scan_ipv6_ids
+
+    @property
+    def vipv6_ids(self):
+        """
+        Gets the vipv6_ids of this DbSystemSummary.
+        The `OCID`__ of the virtual IPv6 (VIP) addresses associated with the DB system.
+        The Cluster Ready Services (CRS) creates and maintains one VIP IpV6 address for each node in the DB system to
+        enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+
+        **Note:** For a single-node DB system, this list is empty.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The vipv6_ids of this DbSystemSummary.
+        :rtype: list[str]
+        """
+        return self._vipv6_ids
+
+    @vipv6_ids.setter
+    def vipv6_ids(self, vipv6_ids):
+        """
+        Sets the vipv6_ids of this DbSystemSummary.
+        The `OCID`__ of the virtual IPv6 (VIP) addresses associated with the DB system.
+        The Cluster Ready Services (CRS) creates and maintains one VIP IpV6 address for each node in the DB system to
+        enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+
+        **Note:** For a single-node DB system, this list is empty.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param vipv6_ids: The vipv6_ids of this DbSystemSummary.
+        :type: list[str]
+        """
+        self._vipv6_ids = vipv6_ids
 
     @property
     def scan_dns_record_id(self):

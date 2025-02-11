@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.144.1 - 2025-02-11
+====================
+
+Added 
+----- 
+* Support for backups and recovery enhancements in autonomous databases in the Database service 
+* Support for IPv6 addresses on system launch in the Database service 
+* Support for enterprise edition GPU infrastructure in the Stack Monitoring service 
+* Support for monitoring templates in the Stack Monitoring service 
+* Support for IPv6 cluster creation in the Kubernetes Engine service 
+* Support for automatic and spoken punctuations in realtime in the AI Speech service 
+* Support for additional connection types for Databricks, Google PubSub and Microsoft Fabric in the GoldenGate service   
+
+====================
 2.144.0 - 2025-02-04
 ====================
 

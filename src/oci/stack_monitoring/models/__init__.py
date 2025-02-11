@@ -6,6 +6,9 @@
 
 from __future__ import absolute_import
 
+from .alarm_condition import AlarmCondition
+from .alarm_condition_collection import AlarmConditionCollection
+from .alarm_condition_summary import AlarmConditionSummary
 from .anomaly_data_point import AnomalyDataPoint
 from .anomaly_metric_data import AnomalyMetricData
 from .associate_monitored_resources_details import AssociateMonitoredResourcesDetails
@@ -24,10 +27,12 @@ from .change_metric_extension_compartment_details import ChangeMetricExtensionCo
 from .change_monitored_resource_compartment_details import ChangeMonitoredResourceCompartmentDetails
 from .change_monitored_resource_task_compartment_details import ChangeMonitoredResourceTaskCompartmentDetails
 from .change_process_set_compartment_details import ChangeProcessSetCompartmentDetails
+from .condition import Condition
 from .config import Config
 from .config_collection import ConfigCollection
 from .config_summary import ConfigSummary
 from .connection_details import ConnectionDetails
+from .create_alarm_condition_details import CreateAlarmConditionDetails
 from .create_auto_promote_config_details import CreateAutoPromoteConfigDetails
 from .create_baselineable_metric_details import CreateBaselineableMetricDetails
 from .create_config_details import CreateConfigDetails
@@ -40,11 +45,15 @@ from .create_metric_extension_details import CreateMetricExtensionDetails
 from .create_monitored_resource_details import CreateMonitoredResourceDetails
 from .create_monitored_resource_task_details import CreateMonitoredResourceTaskDetails
 from .create_monitored_resource_type_details import CreateMonitoredResourceTypeDetails
+from .create_monitoring_template_details import CreateMonitoringTemplateDetails
 from .create_process_set_details import CreateProcessSetDetails
 from .credential_collection import CredentialCollection
 from .credential_details import CredentialDetails
 from .credential_property import CredentialProperty
 from .data_point import DataPoint
+from .defined_alarm_condition import DefinedAlarmCondition
+from .defined_monitoring_template_collection import DefinedMonitoringTemplateCollection
+from .defined_monitoring_template_summary import DefinedMonitoringTemplateSummary
 from .disable_metric_extension_details import DisableMetricExtensionDetails
 from .disassociate_monitored_resources_details import DisassociateMonitoredResourcesDetails
 from .discovery_details import DiscoveryDetails
@@ -73,13 +82,18 @@ from .maintenance_window_collection import MaintenanceWindowCollection
 from .maintenance_window_schedule import MaintenanceWindowSchedule
 from .maintenance_window_summary import MaintenanceWindowSummary
 from .manage_license_details import ManageLicenseDetails
+from .member_reference import MemberReference
 from .metric import Metric
 from .metric_data import MetricData
 from .metric_extension import MetricExtension
 from .metric_extension_collection import MetricExtensionCollection
+from .metric_extension_metric_aggregation_collection import MetricExtensionMetricAggregationCollection
 from .metric_extension_query_properties import MetricExtensionQueryProperties
+from .metric_extension_resource_aggregation import MetricExtensionResourceAggregation
+from .metric_extension_resource_aggregation_collection import MetricExtensionResourceAggregationCollection
 from .metric_extension_summary import MetricExtensionSummary
 from .metric_extension_update_query_properties import MetricExtensionUpdateQueryProperties
+from .metric_extensions_metric_aggregation import MetricExtensionsMetricAggregation
 from .monitored_resource import MonitoredResource
 from .monitored_resource_alias_credential import MonitoredResourceAliasCredential
 from .monitored_resource_alias_source_credential import MonitoredResourceAliasSourceCredential
@@ -102,6 +116,9 @@ from .monitored_resource_type_summary import MonitoredResourceTypeSummary
 from .monitored_resource_types_collection import MonitoredResourceTypesCollection
 from .monitored_resources_count_aggregation import MonitoredResourcesCountAggregation
 from .monitored_resources_count_aggregation_collection import MonitoredResourcesCountAggregationCollection
+from .monitoring_template import MonitoringTemplate
+from .monitoring_template_collection import MonitoringTemplateCollection
+from .monitoring_template_summary import MonitoringTemplateSummary
 from .one_time_maintenance_window_schedule import OneTimeMaintenanceWindowSchedule
 from .os_command_query_properties import OsCommandQueryProperties
 from .os_command_update_query_properties import OsCommandUpdateQueryProperties
@@ -114,6 +131,8 @@ from .process_set_specification_details import ProcessSetSpecificationDetails
 from .process_set_summary import ProcessSetSummary
 from .property_details import PropertyDetails
 from .recurrent_maintenance_window_schedule import RecurrentMaintenanceWindowSchedule
+from .request_summarized_metric_extensions_metrics_details import RequestSummarizedMetricExtensionsMetricsDetails
+from .request_summarized_metric_extensions_resources_details import RequestSummarizedMetricExtensionsResourcesDetails
 from .resource_type_metadata_details import ResourceTypeMetadataDetails
 from .script_file_details import ScriptFileDetails
 from .search_associated_resources_details import SearchAssociatedResourcesDetails
@@ -129,6 +148,7 @@ from .system_format_resource_type_metadata_details import SystemFormatResourceTy
 from .test_metric_extension_data import TestMetricExtensionData
 from .test_metric_extension_details import TestMetricExtensionDetails
 from .unique_property_set import UniquePropertySet
+from .update_alarm_condition_details import UpdateAlarmConditionDetails
 from .update_and_propagate_tags_details import UpdateAndPropagateTagsDetails
 from .update_auto_promote_config_details import UpdateAutoPromoteConfigDetails
 from .update_baselineable_metric_details import UpdateBaselineableMetricDetails
@@ -141,6 +161,7 @@ from .update_metric_extension_details import UpdateMetricExtensionDetails
 from .update_monitored_resource_details import UpdateMonitoredResourceDetails
 from .update_monitored_resource_task_details import UpdateMonitoredResourceTaskDetails
 from .update_monitored_resource_type_details import UpdateMonitoredResourceTypeDetails
+from .update_monitoring_template_details import UpdateMonitoringTemplateDetails
 from .update_process_set_details import UpdateProcessSetDetails
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
@@ -153,6 +174,9 @@ from .work_request_summary_collection import WorkRequestSummaryCollection
 
 # Maps type names to classes for stack_monitoring services.
 stack_monitoring_type_mapping = {
+    "AlarmCondition": AlarmCondition,
+    "AlarmConditionCollection": AlarmConditionCollection,
+    "AlarmConditionSummary": AlarmConditionSummary,
     "AnomalyDataPoint": AnomalyDataPoint,
     "AnomalyMetricData": AnomalyMetricData,
     "AssociateMonitoredResourcesDetails": AssociateMonitoredResourcesDetails,
@@ -171,10 +195,12 @@ stack_monitoring_type_mapping = {
     "ChangeMonitoredResourceCompartmentDetails": ChangeMonitoredResourceCompartmentDetails,
     "ChangeMonitoredResourceTaskCompartmentDetails": ChangeMonitoredResourceTaskCompartmentDetails,
     "ChangeProcessSetCompartmentDetails": ChangeProcessSetCompartmentDetails,
+    "Condition": Condition,
     "Config": Config,
     "ConfigCollection": ConfigCollection,
     "ConfigSummary": ConfigSummary,
     "ConnectionDetails": ConnectionDetails,
+    "CreateAlarmConditionDetails": CreateAlarmConditionDetails,
     "CreateAutoPromoteConfigDetails": CreateAutoPromoteConfigDetails,
     "CreateBaselineableMetricDetails": CreateBaselineableMetricDetails,
     "CreateConfigDetails": CreateConfigDetails,
@@ -187,11 +213,15 @@ stack_monitoring_type_mapping = {
     "CreateMonitoredResourceDetails": CreateMonitoredResourceDetails,
     "CreateMonitoredResourceTaskDetails": CreateMonitoredResourceTaskDetails,
     "CreateMonitoredResourceTypeDetails": CreateMonitoredResourceTypeDetails,
+    "CreateMonitoringTemplateDetails": CreateMonitoringTemplateDetails,
     "CreateProcessSetDetails": CreateProcessSetDetails,
     "CredentialCollection": CredentialCollection,
     "CredentialDetails": CredentialDetails,
     "CredentialProperty": CredentialProperty,
     "DataPoint": DataPoint,
+    "DefinedAlarmCondition": DefinedAlarmCondition,
+    "DefinedMonitoringTemplateCollection": DefinedMonitoringTemplateCollection,
+    "DefinedMonitoringTemplateSummary": DefinedMonitoringTemplateSummary,
     "DisableMetricExtensionDetails": DisableMetricExtensionDetails,
     "DisassociateMonitoredResourcesDetails": DisassociateMonitoredResourcesDetails,
     "DiscoveryDetails": DiscoveryDetails,
@@ -220,13 +250,18 @@ stack_monitoring_type_mapping = {
     "MaintenanceWindowSchedule": MaintenanceWindowSchedule,
     "MaintenanceWindowSummary": MaintenanceWindowSummary,
     "ManageLicenseDetails": ManageLicenseDetails,
+    "MemberReference": MemberReference,
     "Metric": Metric,
     "MetricData": MetricData,
     "MetricExtension": MetricExtension,
     "MetricExtensionCollection": MetricExtensionCollection,
+    "MetricExtensionMetricAggregationCollection": MetricExtensionMetricAggregationCollection,
     "MetricExtensionQueryProperties": MetricExtensionQueryProperties,
+    "MetricExtensionResourceAggregation": MetricExtensionResourceAggregation,
+    "MetricExtensionResourceAggregationCollection": MetricExtensionResourceAggregationCollection,
     "MetricExtensionSummary": MetricExtensionSummary,
     "MetricExtensionUpdateQueryProperties": MetricExtensionUpdateQueryProperties,
+    "MetricExtensionsMetricAggregation": MetricExtensionsMetricAggregation,
     "MonitoredResource": MonitoredResource,
     "MonitoredResourceAliasCredential": MonitoredResourceAliasCredential,
     "MonitoredResourceAliasSourceCredential": MonitoredResourceAliasSourceCredential,
@@ -249,6 +284,9 @@ stack_monitoring_type_mapping = {
     "MonitoredResourceTypesCollection": MonitoredResourceTypesCollection,
     "MonitoredResourcesCountAggregation": MonitoredResourcesCountAggregation,
     "MonitoredResourcesCountAggregationCollection": MonitoredResourcesCountAggregationCollection,
+    "MonitoringTemplate": MonitoringTemplate,
+    "MonitoringTemplateCollection": MonitoringTemplateCollection,
+    "MonitoringTemplateSummary": MonitoringTemplateSummary,
     "OneTimeMaintenanceWindowSchedule": OneTimeMaintenanceWindowSchedule,
     "OsCommandQueryProperties": OsCommandQueryProperties,
     "OsCommandUpdateQueryProperties": OsCommandUpdateQueryProperties,
@@ -261,6 +299,8 @@ stack_monitoring_type_mapping = {
     "ProcessSetSummary": ProcessSetSummary,
     "PropertyDetails": PropertyDetails,
     "RecurrentMaintenanceWindowSchedule": RecurrentMaintenanceWindowSchedule,
+    "RequestSummarizedMetricExtensionsMetricsDetails": RequestSummarizedMetricExtensionsMetricsDetails,
+    "RequestSummarizedMetricExtensionsResourcesDetails": RequestSummarizedMetricExtensionsResourcesDetails,
     "ResourceTypeMetadataDetails": ResourceTypeMetadataDetails,
     "ScriptFileDetails": ScriptFileDetails,
     "SearchAssociatedResourcesDetails": SearchAssociatedResourcesDetails,
@@ -276,6 +316,7 @@ stack_monitoring_type_mapping = {
     "TestMetricExtensionData": TestMetricExtensionData,
     "TestMetricExtensionDetails": TestMetricExtensionDetails,
     "UniquePropertySet": UniquePropertySet,
+    "UpdateAlarmConditionDetails": UpdateAlarmConditionDetails,
     "UpdateAndPropagateTagsDetails": UpdateAndPropagateTagsDetails,
     "UpdateAutoPromoteConfigDetails": UpdateAutoPromoteConfigDetails,
     "UpdateBaselineableMetricDetails": UpdateBaselineableMetricDetails,
@@ -288,6 +329,7 @@ stack_monitoring_type_mapping = {
     "UpdateMonitoredResourceDetails": UpdateMonitoredResourceDetails,
     "UpdateMonitoredResourceTaskDetails": UpdateMonitoredResourceTaskDetails,
     "UpdateMonitoredResourceTypeDetails": UpdateMonitoredResourceTypeDetails,
+    "UpdateMonitoringTemplateDetails": UpdateMonitoringTemplateDetails,
     "UpdateProcessSetDetails": UpdateProcessSetDetails,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,

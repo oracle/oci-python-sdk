@@ -62,6 +62,10 @@ class LdapBindAccountSummary(OutboundConnectorSummary):
             The value to assign to the defined_tags property of this LdapBindAccountSummary.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this LdapBindAccountSummary.
+        :type system_tags: dict(str, dict(str, object))
+
         :param endpoints:
             The value to assign to the endpoints property of this LdapBindAccountSummary.
         :type endpoints: list[oci.file_storage.models.Endpoint]
@@ -82,6 +86,7 @@ class LdapBindAccountSummary(OutboundConnectorSummary):
             'connector_type': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))',
             'endpoints': 'list[Endpoint]',
             'bind_distinguished_name': 'str'
         }
@@ -97,6 +102,7 @@ class LdapBindAccountSummary(OutboundConnectorSummary):
             'connector_type': 'connectorType',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'system_tags': 'systemTags',
             'endpoints': 'endpoints',
             'bind_distinguished_name': 'bindDistinguishedName'
         }
@@ -111,6 +117,7 @@ class LdapBindAccountSummary(OutboundConnectorSummary):
         self._connector_type = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
         self._endpoints = None
         self._bind_distinguished_name = None
         self._connector_type = 'LDAPBIND'

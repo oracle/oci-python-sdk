@@ -56,6 +56,14 @@ class WorkRequestSummary(object):
     OPERATION_TYPE_TEST_METRIC_EXTENSION = "TEST_METRIC_EXTENSION"
 
     #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "APPLY_MONITORING_TEMPLATE"
+    OPERATION_TYPE_APPLY_MONITORING_TEMPLATE = "APPLY_MONITORING_TEMPLATE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "UNAPPLY_MONITORING_TEMPLATE"
+    OPERATION_TYPE_UNAPPLY_MONITORING_TEMPLATE = "UNAPPLY_MONITORING_TEMPLATE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
     #: This constant has a value of "BULK_ADD_RESOURCES"
     OPERATION_TYPE_BULK_ADD_RESOURCES = "BULK_ADD_RESOURCES"
 
@@ -115,6 +123,10 @@ class WorkRequestSummary(object):
     #: This constant has a value of "CANCELED"
     STATUS_CANCELED = "CANCELED"
 
+    #: A constant which can be used with the status property of a WorkRequestSummary.
+    #: This constant has a value of "NEEDS_ATTENTION"
+    STATUS_NEEDS_ATTENTION = "NEEDS_ATTENTION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new WorkRequestSummary object with values from keyword arguments.
@@ -122,13 +134,13 @@ class WorkRequestSummary(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequestSummary.
-            Allowed values for this property are: "CREATE_RESOURCES", "UPDATE_RESOURCES", "DELETE_RESOURCES", "MOVE_RESOURCES", "ENABLE_EXTERNAL_DATABASE", "DISABLE_EXTERNAL_DATABASE", "ADD_SOURCES_TO_AGENT", "ENABLE_METRIC_EXTENSION", "DISABLE_METRIC_EXTENSION", "TEST_METRIC_EXTENSION", "BULK_ADD_RESOURCES", "BULK_DELETE_RESOURCES", "UPDATE_AND_PROPAGATE_TAGS", "IMPORT_RESOURCES", "CREATE_MAINTENANCE_WINDOW", "UPDATE_MAINTENANCE_WINDOW", "DELETE_MAINTENANCE_WINDOW", "STOP_MAINTENANCE_WINDOW", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_RESOURCES", "UPDATE_RESOURCES", "DELETE_RESOURCES", "MOVE_RESOURCES", "ENABLE_EXTERNAL_DATABASE", "DISABLE_EXTERNAL_DATABASE", "ADD_SOURCES_TO_AGENT", "ENABLE_METRIC_EXTENSION", "DISABLE_METRIC_EXTENSION", "TEST_METRIC_EXTENSION", "APPLY_MONITORING_TEMPLATE", "UNAPPLY_MONITORING_TEMPLATE", "BULK_ADD_RESOURCES", "BULK_DELETE_RESOURCES", "UPDATE_AND_PROPAGATE_TAGS", "IMPORT_RESOURCES", "CREATE_MAINTENANCE_WINDOW", "UPDATE_MAINTENANCE_WINDOW", "DELETE_MAINTENANCE_WINDOW", "STOP_MAINTENANCE_WINDOW", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
         :param status:
             The value to assign to the status property of this WorkRequestSummary.
-            Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "WAITING", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "WAITING", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type status: str
 
@@ -201,7 +213,7 @@ class WorkRequestSummary(object):
         **[Required]** Gets the operation_type of this WorkRequestSummary.
         Type of the work request
 
-        Allowed values for this property are: "CREATE_RESOURCES", "UPDATE_RESOURCES", "DELETE_RESOURCES", "MOVE_RESOURCES", "ENABLE_EXTERNAL_DATABASE", "DISABLE_EXTERNAL_DATABASE", "ADD_SOURCES_TO_AGENT", "ENABLE_METRIC_EXTENSION", "DISABLE_METRIC_EXTENSION", "TEST_METRIC_EXTENSION", "BULK_ADD_RESOURCES", "BULK_DELETE_RESOURCES", "UPDATE_AND_PROPAGATE_TAGS", "IMPORT_RESOURCES", "CREATE_MAINTENANCE_WINDOW", "UPDATE_MAINTENANCE_WINDOW", "DELETE_MAINTENANCE_WINDOW", "STOP_MAINTENANCE_WINDOW", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_RESOURCES", "UPDATE_RESOURCES", "DELETE_RESOURCES", "MOVE_RESOURCES", "ENABLE_EXTERNAL_DATABASE", "DISABLE_EXTERNAL_DATABASE", "ADD_SOURCES_TO_AGENT", "ENABLE_METRIC_EXTENSION", "DISABLE_METRIC_EXTENSION", "TEST_METRIC_EXTENSION", "APPLY_MONITORING_TEMPLATE", "UNAPPLY_MONITORING_TEMPLATE", "BULK_ADD_RESOURCES", "BULK_DELETE_RESOURCES", "UPDATE_AND_PROPAGATE_TAGS", "IMPORT_RESOURCES", "CREATE_MAINTENANCE_WINDOW", "UPDATE_MAINTENANCE_WINDOW", "DELETE_MAINTENANCE_WINDOW", "STOP_MAINTENANCE_WINDOW", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -220,7 +232,7 @@ class WorkRequestSummary(object):
         :param operation_type: The operation_type of this WorkRequestSummary.
         :type: str
         """
-        allowed_values = ["CREATE_RESOURCES", "UPDATE_RESOURCES", "DELETE_RESOURCES", "MOVE_RESOURCES", "ENABLE_EXTERNAL_DATABASE", "DISABLE_EXTERNAL_DATABASE", "ADD_SOURCES_TO_AGENT", "ENABLE_METRIC_EXTENSION", "DISABLE_METRIC_EXTENSION", "TEST_METRIC_EXTENSION", "BULK_ADD_RESOURCES", "BULK_DELETE_RESOURCES", "UPDATE_AND_PROPAGATE_TAGS", "IMPORT_RESOURCES", "CREATE_MAINTENANCE_WINDOW", "UPDATE_MAINTENANCE_WINDOW", "DELETE_MAINTENANCE_WINDOW", "STOP_MAINTENANCE_WINDOW"]
+        allowed_values = ["CREATE_RESOURCES", "UPDATE_RESOURCES", "DELETE_RESOURCES", "MOVE_RESOURCES", "ENABLE_EXTERNAL_DATABASE", "DISABLE_EXTERNAL_DATABASE", "ADD_SOURCES_TO_AGENT", "ENABLE_METRIC_EXTENSION", "DISABLE_METRIC_EXTENSION", "TEST_METRIC_EXTENSION", "APPLY_MONITORING_TEMPLATE", "UNAPPLY_MONITORING_TEMPLATE", "BULK_ADD_RESOURCES", "BULK_DELETE_RESOURCES", "UPDATE_AND_PROPAGATE_TAGS", "IMPORT_RESOURCES", "CREATE_MAINTENANCE_WINDOW", "UPDATE_MAINTENANCE_WINDOW", "DELETE_MAINTENANCE_WINDOW", "STOP_MAINTENANCE_WINDOW"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type
@@ -231,7 +243,7 @@ class WorkRequestSummary(object):
         **[Required]** Gets the status of this WorkRequestSummary.
         Status of current work request.
 
-        Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "WAITING", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "WAITING", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -250,7 +262,7 @@ class WorkRequestSummary(object):
         :param status: The status of this WorkRequestSummary.
         :type: str
         """
-        allowed_values = ["ACCEPTED", "IN_PROGRESS", "WAITING", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"]
+        allowed_values = ["ACCEPTED", "IN_PROGRESS", "WAITING", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", "NEEDS_ATTENTION"]
         if not value_allowed_none_or_none_sentinel(status, allowed_values):
             status = 'UNKNOWN_ENUM_VALUE'
         self._status = status

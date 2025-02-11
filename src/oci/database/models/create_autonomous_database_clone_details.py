@@ -23,6 +23,10 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
     #: This constant has a value of "METADATA"
     CLONE_TYPE_METADATA = "METADATA"
 
+    #: A constant which can be used with the clone_type property of a CreateAutonomousDatabaseCloneDetails.
+    #: This constant has a value of "PARTIAL"
+    CLONE_TYPE_PARTIAL = "PARTIAL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateAutonomousDatabaseCloneDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.database.models.CreateAutonomousDatabaseCloneDetails.source` attribute
@@ -256,7 +260,7 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
 
         :param clone_type:
             The value to assign to the clone_type property of this CreateAutonomousDatabaseCloneDetails.
-            Allowed values for this property are: "FULL", "METADATA"
+            Allowed values for this property are: "FULL", "METADATA", "PARTIAL"
         :type clone_type: str
 
         """
@@ -470,7 +474,7 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
         **[Required]** Gets the clone_type of this CreateAutonomousDatabaseCloneDetails.
         The Autonomous Database clone type.
 
-        Allowed values for this property are: "FULL", "METADATA"
+        Allowed values for this property are: "FULL", "METADATA", "PARTIAL"
 
 
         :return: The clone_type of this CreateAutonomousDatabaseCloneDetails.
@@ -488,7 +492,7 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
         :param clone_type: The clone_type of this CreateAutonomousDatabaseCloneDetails.
         :type: str
         """
-        allowed_values = ["FULL", "METADATA"]
+        allowed_values = ["FULL", "METADATA", "PARTIAL"]
         if not value_allowed_none_or_none_sentinel(clone_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `clone_type`, must be None or one of {allowed_values}"

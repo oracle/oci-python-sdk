@@ -23,6 +23,10 @@ class ManageLicenseDetails(object):
     #: This constant has a value of "ENTERPRISE_EDITION"
     LICENSE_ENTERPRISE_EDITION = "ENTERPRISE_EDITION"
 
+    #: A constant which can be used with the license property of a ManageLicenseDetails.
+    #: This constant has a value of "ENTERPRISE_EDITION_FOR_GPU_INFRASTRUCTURE"
+    LICENSE_ENTERPRISE_EDITION_FOR_GPU_INFRASTRUCTURE = "ENTERPRISE_EDITION_FOR_GPU_INFRASTRUCTURE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ManageLicenseDetails object with values from keyword arguments.
@@ -30,7 +34,7 @@ class ManageLicenseDetails(object):
 
         :param license:
             The value to assign to the license property of this ManageLicenseDetails.
-            Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION"
+            Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_FOR_GPU_INFRASTRUCTURE"
         :type license: str
 
         """
@@ -50,7 +54,7 @@ class ManageLicenseDetails(object):
         **[Required]** Gets the license of this ManageLicenseDetails.
         License edition of the monitored resource.
 
-        Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION"
+        Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_FOR_GPU_INFRASTRUCTURE"
 
 
         :return: The license of this ManageLicenseDetails.
@@ -68,7 +72,7 @@ class ManageLicenseDetails(object):
         :param license: The license of this ManageLicenseDetails.
         :type: str
         """
-        allowed_values = ["STANDARD_EDITION", "ENTERPRISE_EDITION"]
+        allowed_values = ["STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_FOR_GPU_INFRASTRUCTURE"]
         if not value_allowed_none_or_none_sentinel(license, allowed_values):
             raise ValueError(
                 f"Invalid value for `license`, must be None or one of {allowed_values}"

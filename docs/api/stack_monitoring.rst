@@ -18,6 +18,9 @@ Stack Monitoring
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.stack_monitoring.models.AlarmCondition
+    oci.stack_monitoring.models.AlarmConditionCollection
+    oci.stack_monitoring.models.AlarmConditionSummary
     oci.stack_monitoring.models.AnomalyDataPoint
     oci.stack_monitoring.models.AnomalyMetricData
     oci.stack_monitoring.models.AssociateMonitoredResourcesDetails
@@ -36,10 +39,12 @@ Stack Monitoring
     oci.stack_monitoring.models.ChangeMonitoredResourceCompartmentDetails
     oci.stack_monitoring.models.ChangeMonitoredResourceTaskCompartmentDetails
     oci.stack_monitoring.models.ChangeProcessSetCompartmentDetails
+    oci.stack_monitoring.models.Condition
     oci.stack_monitoring.models.Config
     oci.stack_monitoring.models.ConfigCollection
     oci.stack_monitoring.models.ConfigSummary
     oci.stack_monitoring.models.ConnectionDetails
+    oci.stack_monitoring.models.CreateAlarmConditionDetails
     oci.stack_monitoring.models.CreateAutoPromoteConfigDetails
     oci.stack_monitoring.models.CreateBaselineableMetricDetails
     oci.stack_monitoring.models.CreateConfigDetails
@@ -52,11 +57,15 @@ Stack Monitoring
     oci.stack_monitoring.models.CreateMonitoredResourceDetails
     oci.stack_monitoring.models.CreateMonitoredResourceTaskDetails
     oci.stack_monitoring.models.CreateMonitoredResourceTypeDetails
+    oci.stack_monitoring.models.CreateMonitoringTemplateDetails
     oci.stack_monitoring.models.CreateProcessSetDetails
     oci.stack_monitoring.models.CredentialCollection
     oci.stack_monitoring.models.CredentialDetails
     oci.stack_monitoring.models.CredentialProperty
     oci.stack_monitoring.models.DataPoint
+    oci.stack_monitoring.models.DefinedAlarmCondition
+    oci.stack_monitoring.models.DefinedMonitoringTemplateCollection
+    oci.stack_monitoring.models.DefinedMonitoringTemplateSummary
     oci.stack_monitoring.models.DisableMetricExtensionDetails
     oci.stack_monitoring.models.DisassociateMonitoredResourcesDetails
     oci.stack_monitoring.models.DiscoveryDetails
@@ -85,13 +94,18 @@ Stack Monitoring
     oci.stack_monitoring.models.MaintenanceWindowSchedule
     oci.stack_monitoring.models.MaintenanceWindowSummary
     oci.stack_monitoring.models.ManageLicenseDetails
+    oci.stack_monitoring.models.MemberReference
     oci.stack_monitoring.models.Metric
     oci.stack_monitoring.models.MetricData
     oci.stack_monitoring.models.MetricExtension
     oci.stack_monitoring.models.MetricExtensionCollection
+    oci.stack_monitoring.models.MetricExtensionMetricAggregationCollection
     oci.stack_monitoring.models.MetricExtensionQueryProperties
+    oci.stack_monitoring.models.MetricExtensionResourceAggregation
+    oci.stack_monitoring.models.MetricExtensionResourceAggregationCollection
     oci.stack_monitoring.models.MetricExtensionSummary
     oci.stack_monitoring.models.MetricExtensionUpdateQueryProperties
+    oci.stack_monitoring.models.MetricExtensionsMetricAggregation
     oci.stack_monitoring.models.MonitoredResource
     oci.stack_monitoring.models.MonitoredResourceAliasCredential
     oci.stack_monitoring.models.MonitoredResourceAliasSourceCredential
@@ -114,6 +128,9 @@ Stack Monitoring
     oci.stack_monitoring.models.MonitoredResourceTypesCollection
     oci.stack_monitoring.models.MonitoredResourcesCountAggregation
     oci.stack_monitoring.models.MonitoredResourcesCountAggregationCollection
+    oci.stack_monitoring.models.MonitoringTemplate
+    oci.stack_monitoring.models.MonitoringTemplateCollection
+    oci.stack_monitoring.models.MonitoringTemplateSummary
     oci.stack_monitoring.models.OneTimeMaintenanceWindowSchedule
     oci.stack_monitoring.models.OsCommandQueryProperties
     oci.stack_monitoring.models.OsCommandUpdateQueryProperties
@@ -126,6 +143,8 @@ Stack Monitoring
     oci.stack_monitoring.models.ProcessSetSummary
     oci.stack_monitoring.models.PropertyDetails
     oci.stack_monitoring.models.RecurrentMaintenanceWindowSchedule
+    oci.stack_monitoring.models.RequestSummarizedMetricExtensionsMetricsDetails
+    oci.stack_monitoring.models.RequestSummarizedMetricExtensionsResourcesDetails
     oci.stack_monitoring.models.ResourceTypeMetadataDetails
     oci.stack_monitoring.models.ScriptFileDetails
     oci.stack_monitoring.models.SearchAssociatedResourcesDetails
@@ -141,6 +160,7 @@ Stack Monitoring
     oci.stack_monitoring.models.TestMetricExtensionData
     oci.stack_monitoring.models.TestMetricExtensionDetails
     oci.stack_monitoring.models.UniquePropertySet
+    oci.stack_monitoring.models.UpdateAlarmConditionDetails
     oci.stack_monitoring.models.UpdateAndPropagateTagsDetails
     oci.stack_monitoring.models.UpdateAutoPromoteConfigDetails
     oci.stack_monitoring.models.UpdateBaselineableMetricDetails
@@ -153,6 +173,7 @@ Stack Monitoring
     oci.stack_monitoring.models.UpdateMonitoredResourceDetails
     oci.stack_monitoring.models.UpdateMonitoredResourceTaskDetails
     oci.stack_monitoring.models.UpdateMonitoredResourceTypeDetails
+    oci.stack_monitoring.models.UpdateMonitoringTemplateDetails
     oci.stack_monitoring.models.UpdateProcessSetDetails
     oci.stack_monitoring.models.WorkRequest
     oci.stack_monitoring.models.WorkRequestError

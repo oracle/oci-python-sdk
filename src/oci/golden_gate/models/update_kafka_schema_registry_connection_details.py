@@ -23,7 +23,7 @@ class UpdateKafkaSchemaRegistryConnectionDetails(UpdateConnectionDetails):
 
         :param connection_type:
             The value to assign to the connection_type property of this UpdateKafkaSchemaRegistryConnectionDetails.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC"
         :type connection_type: str
 
         :param display_name:
@@ -303,6 +303,7 @@ class UpdateKafkaSchemaRegistryConnectionDetails(UpdateConnectionDetails):
         Gets the password of this UpdateKafkaSchemaRegistryConnectionDetails.
         The password to access Schema Registry using basic authentication.
         This value is injected into 'schema.registry.basic.auth.user.info=user:password' configuration property.
+        Deprecated: This field is deprecated and replaced by \"passwordSecretId\". This field will be removed after February 15 2026.
 
 
         :return: The password of this UpdateKafkaSchemaRegistryConnectionDetails.
@@ -316,6 +317,7 @@ class UpdateKafkaSchemaRegistryConnectionDetails(UpdateConnectionDetails):
         Sets the password of this UpdateKafkaSchemaRegistryConnectionDetails.
         The password to access Schema Registry using basic authentication.
         This value is injected into 'schema.registry.basic.auth.user.info=user:password' configuration property.
+        Deprecated: This field is deprecated and replaced by \"passwordSecretId\". This field will be removed after February 15 2026.
 
 
         :param password: The password of this UpdateKafkaSchemaRegistryConnectionDetails.
@@ -364,6 +366,7 @@ class UpdateKafkaSchemaRegistryConnectionDetails(UpdateConnectionDetails):
         """
         Gets the trust_store of this UpdateKafkaSchemaRegistryConnectionDetails.
         The base64 encoded content of the TrustStore file.
+        Deprecated: This field is deprecated and replaced by \"trustStoreSecretId\". This field will be removed after February 15 2026.
 
 
         :return: The trust_store of this UpdateKafkaSchemaRegistryConnectionDetails.
@@ -376,6 +379,7 @@ class UpdateKafkaSchemaRegistryConnectionDetails(UpdateConnectionDetails):
         """
         Sets the trust_store of this UpdateKafkaSchemaRegistryConnectionDetails.
         The base64 encoded content of the TrustStore file.
+        Deprecated: This field is deprecated and replaced by \"trustStoreSecretId\". This field will be removed after February 15 2026.
 
 
         :param trust_store: The trust_store of this UpdateKafkaSchemaRegistryConnectionDetails.
@@ -418,6 +422,7 @@ class UpdateKafkaSchemaRegistryConnectionDetails(UpdateConnectionDetails):
         """
         Gets the trust_store_password of this UpdateKafkaSchemaRegistryConnectionDetails.
         The TrustStore password.
+        Deprecated: This field is deprecated and replaced by \"trustStorePasswordSecretId\". This field will be removed after February 15 2026.
 
 
         :return: The trust_store_password of this UpdateKafkaSchemaRegistryConnectionDetails.
@@ -430,6 +435,7 @@ class UpdateKafkaSchemaRegistryConnectionDetails(UpdateConnectionDetails):
         """
         Sets the trust_store_password of this UpdateKafkaSchemaRegistryConnectionDetails.
         The TrustStore password.
+        Deprecated: This field is deprecated and replaced by \"trustStorePasswordSecretId\". This field will be removed after February 15 2026.
 
 
         :param trust_store_password: The trust_store_password of this UpdateKafkaSchemaRegistryConnectionDetails.
@@ -472,6 +478,7 @@ class UpdateKafkaSchemaRegistryConnectionDetails(UpdateConnectionDetails):
         """
         Gets the key_store of this UpdateKafkaSchemaRegistryConnectionDetails.
         The base64 encoded content of the KeyStore file.
+        Deprecated: This field is deprecated and replaced by \"keyStoreSecretId\". This field will be removed after February 15 2026.
 
 
         :return: The key_store of this UpdateKafkaSchemaRegistryConnectionDetails.
@@ -484,6 +491,7 @@ class UpdateKafkaSchemaRegistryConnectionDetails(UpdateConnectionDetails):
         """
         Sets the key_store of this UpdateKafkaSchemaRegistryConnectionDetails.
         The base64 encoded content of the KeyStore file.
+        Deprecated: This field is deprecated and replaced by \"keyStoreSecretId\". This field will be removed after February 15 2026.
 
 
         :param key_store: The key_store of this UpdateKafkaSchemaRegistryConnectionDetails.
@@ -526,6 +534,7 @@ class UpdateKafkaSchemaRegistryConnectionDetails(UpdateConnectionDetails):
         """
         Gets the key_store_password of this UpdateKafkaSchemaRegistryConnectionDetails.
         The KeyStore password.
+        Deprecated: This field is deprecated and replaced by \"keyStorePasswordSecretId\". This field will be removed after February 15 2026.
 
 
         :return: The key_store_password of this UpdateKafkaSchemaRegistryConnectionDetails.
@@ -538,6 +547,7 @@ class UpdateKafkaSchemaRegistryConnectionDetails(UpdateConnectionDetails):
         """
         Sets the key_store_password of this UpdateKafkaSchemaRegistryConnectionDetails.
         The KeyStore password.
+        Deprecated: This field is deprecated and replaced by \"keyStorePasswordSecretId\". This field will be removed after February 15 2026.
 
 
         :param key_store_password: The key_store_password of this UpdateKafkaSchemaRegistryConnectionDetails.
@@ -581,6 +591,7 @@ class UpdateKafkaSchemaRegistryConnectionDetails(UpdateConnectionDetails):
         Gets the ssl_key_password of this UpdateKafkaSchemaRegistryConnectionDetails.
         The password for the cert inside the KeyStore.
         In case it differs from the KeyStore password, it should be provided.
+        Deprecated: This field is deprecated and replaced by \"sslKeyPasswordSecretId\". This field will be removed after February 15 2026.
 
 
         :return: The ssl_key_password of this UpdateKafkaSchemaRegistryConnectionDetails.
@@ -594,6 +605,7 @@ class UpdateKafkaSchemaRegistryConnectionDetails(UpdateConnectionDetails):
         Sets the ssl_key_password of this UpdateKafkaSchemaRegistryConnectionDetails.
         The password for the cert inside the KeyStore.
         In case it differs from the KeyStore password, it should be provided.
+        Deprecated: This field is deprecated and replaced by \"sslKeyPasswordSecretId\". This field will be removed after February 15 2026.
 
 
         :param ssl_key_password: The ssl_key_password of this UpdateKafkaSchemaRegistryConnectionDetails.

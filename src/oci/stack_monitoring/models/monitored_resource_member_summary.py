@@ -47,6 +47,10 @@ class MonitoredResourceMemberSummary(object):
     #: This constant has a value of "ENTERPRISE_EDITION"
     LICENSE_ENTERPRISE_EDITION = "ENTERPRISE_EDITION"
 
+    #: A constant which can be used with the license property of a MonitoredResourceMemberSummary.
+    #: This constant has a value of "ENTERPRISE_EDITION_FOR_GPU_INFRASTRUCTURE"
+    LICENSE_ENTERPRISE_EDITION_FOR_GPU_INFRASTRUCTURE = "ENTERPRISE_EDITION_FOR_GPU_INFRASTRUCTURE"
+
     #: A constant which can be used with the source_type property of a MonitoredResourceMemberSummary.
     #: This constant has a value of "SM_MGMT_AGENT_MONITORED"
     SOURCE_TYPE_SM_MGMT_AGENT_MONITORED = "SM_MGMT_AGENT_MONITORED"
@@ -132,7 +136,7 @@ class MonitoredResourceMemberSummary(object):
 
         :param license:
             The value to assign to the license property of this MonitoredResourceMemberSummary.
-            Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_FOR_GPU_INFRASTRUCTURE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type license: str
 
@@ -463,7 +467,7 @@ class MonitoredResourceMemberSummary(object):
         Gets the license of this MonitoredResourceMemberSummary.
         License edition of the monitored resource.
 
-        Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_FOR_GPU_INFRASTRUCTURE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -482,7 +486,7 @@ class MonitoredResourceMemberSummary(object):
         :param license: The license of this MonitoredResourceMemberSummary.
         :type: str
         """
-        allowed_values = ["STANDARD_EDITION", "ENTERPRISE_EDITION"]
+        allowed_values = ["STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_FOR_GPU_INFRASTRUCTURE"]
         if not value_allowed_none_or_none_sentinel(license, allowed_values):
             license = 'UNKNOWN_ENUM_VALUE'
         self._license = license

@@ -39,6 +39,18 @@ class RealtimeParameters(object):
     #: This constant has a value of "MEDICAL"
     MODEL_DOMAIN_MEDICAL = "MEDICAL"
 
+    #: A constant which can be used with the punctuation property of a RealtimeParameters.
+    #: This constant has a value of "NONE"
+    PUNCTUATION_NONE = "NONE"
+
+    #: A constant which can be used with the punctuation property of a RealtimeParameters.
+    #: This constant has a value of "SPOKEN"
+    PUNCTUATION_SPOKEN = "SPOKEN"
+
+    #: A constant which can be used with the punctuation property of a RealtimeParameters.
+    #: This constant has a value of "AUTO"
+    PUNCTUATION_AUTO = "AUTO"
+
     def __init__(self, **kwargs):
         """
         Initializes a new RealtimeParameters object with values from keyword arguments.
@@ -82,6 +94,11 @@ class RealtimeParameters(object):
             The value to assign to the customizations property of this RealtimeParameters.
         :type customizations: list[oci.ai_speech.models.CustomizationInference]
 
+        :param punctuation:
+            The value to assign to the punctuation property of this RealtimeParameters.
+            Allowed values for this property are: "NONE", "SPOKEN", "AUTO"
+        :type punctuation: str
+
         """
         self.swagger_types = {
             'encoding': 'str',
@@ -92,7 +109,8 @@ class RealtimeParameters(object):
             'model_domain': 'str',
             'language_code': 'str',
             'should_ignore_invalid_customizations': 'bool',
-            'customizations': 'list[CustomizationInference]'
+            'customizations': 'list[CustomizationInference]',
+            'punctuation': 'str'
         }
 
         self.attribute_map = {
@@ -104,7 +122,8 @@ class RealtimeParameters(object):
             'model_domain': 'modelDomain',
             'language_code': 'languageCode',
             'should_ignore_invalid_customizations': 'shouldIgnoreInvalidCustomizations',
-            'customizations': 'customizations'
+            'customizations': 'customizations',
+            'punctuation': 'punctuation'
         }
 
         self._encoding = None
@@ -116,6 +135,7 @@ class RealtimeParameters(object):
         self._language_code = None
         self._should_ignore_invalid_customizations = None
         self._customizations = None
+        self._punctuation = None
 
     @property
     def encoding(self):
@@ -332,7 +352,7 @@ class RealtimeParameters(object):
         """
         Gets the should_ignore_invalid_customizations of this RealtimeParameters.
         If set to true, the service will not fail connection attempt if it encounters any issues that prevent the loading of all specified user customizations. Any invalid customizations will simply be ignored and connection will continue being established with the default base model and any remaining valid customizations.
-        If set to false,  if the service is unable to load any of the specified customizations, an error detailing why will be returned and the session will end.
+        If set to false, if the service is unable to load any of the specified customizations, an error detailing why will be returned and the session will end.
 
 
         :return: The should_ignore_invalid_customizations of this RealtimeParameters.
@@ -345,7 +365,7 @@ class RealtimeParameters(object):
         """
         Sets the should_ignore_invalid_customizations of this RealtimeParameters.
         If set to true, the service will not fail connection attempt if it encounters any issues that prevent the loading of all specified user customizations. Any invalid customizations will simply be ignored and connection will continue being established with the default base model and any remaining valid customizations.
-        If set to false,  if the service is unable to load any of the specified customizations, an error detailing why will be returned and the session will end.
+        If set to false, if the service is unable to load any of the specified customizations, an error detailing why will be returned and the session will end.
 
 
         :param should_ignore_invalid_customizations: The should_ignore_invalid_customizations of this RealtimeParameters.
@@ -376,6 +396,43 @@ class RealtimeParameters(object):
         :type: list[oci.ai_speech.models.CustomizationInference]
         """
         self._customizations = customizations
+
+    @property
+    def punctuation(self):
+        """
+        Gets the punctuation of this RealtimeParameters.
+        Configure punctuations in the generated transcriptions. Disabled by default.
+        - NONE: No punctuation in the transcription response
+        - SPOKEN: Punctuations in response only when verbally spoken
+        - AUTO: Automatic punctuation in the response, spoken punctuations are disabled
+
+        Allowed values for this property are: "NONE", "SPOKEN", "AUTO"
+
+
+        :return: The punctuation of this RealtimeParameters.
+        :rtype: str
+        """
+        return self._punctuation
+
+    @punctuation.setter
+    def punctuation(self, punctuation):
+        """
+        Sets the punctuation of this RealtimeParameters.
+        Configure punctuations in the generated transcriptions. Disabled by default.
+        - NONE: No punctuation in the transcription response
+        - SPOKEN: Punctuations in response only when verbally spoken
+        - AUTO: Automatic punctuation in the response, spoken punctuations are disabled
+
+
+        :param punctuation: The punctuation of this RealtimeParameters.
+        :type: str
+        """
+        allowed_values = ["NONE", "SPOKEN", "AUTO"]
+        if not value_allowed_none_or_none_sentinel(punctuation, allowed_values):
+            raise ValueError(
+                f"Invalid value for `punctuation`, must be None or one of {allowed_values}"
+            )
+        self._punctuation = punctuation
 
     def __repr__(self):
         return formatted_flat_dict(self)

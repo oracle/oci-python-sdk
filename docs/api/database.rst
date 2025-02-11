@@ -82,7 +82,10 @@ Database
     oci.database.models.AzureKeyDetails
     oci.database.models.Backup
     oci.database.models.BackupDestination
+    oci.database.models.BackupDestinationConfigurationSummary
     oci.database.models.BackupDestinationDetails
+    oci.database.models.BackupDestinationDetailsSummary
+    oci.database.models.BackupDestinationProperties
     oci.database.models.BackupDestinationSummary
     oci.database.models.BackupSummary
     oci.database.models.CancelExecutionWindowDetails
@@ -381,6 +384,7 @@ Database
     oci.database.models.PluggableDatabaseSummary
     oci.database.models.RecommendedScheduledActionSummary
     oci.database.models.RecommendedScheduledActionsCollection
+    oci.database.models.RecoveryApplianceDetails
     oci.database.models.RefreshableCloneCollection
     oci.database.models.RefreshableCloneSummary
     oci.database.models.RegisterAutonomousDatabaseDataSafeDetails

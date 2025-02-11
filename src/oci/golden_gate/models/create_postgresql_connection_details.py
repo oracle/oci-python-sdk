@@ -23,7 +23,7 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
 
         :param connection_type:
             The value to assign to the connection_type property of this CreatePostgresqlConnectionDetails.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC"
         :type connection_type: str
 
         :param display_name:
@@ -372,6 +372,7 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
         Gets the password of this CreatePostgresqlConnectionDetails.
         The password Oracle GoldenGate uses to connect the associated system of the given technology.
         It must conform to the specific security requirements including length, case sensitivity, and so on.
+        Deprecated: This field is deprecated and replaced by \"passwordSecretId\". This field will be removed after February 15 2026.
 
 
         :return: The password of this CreatePostgresqlConnectionDetails.
@@ -385,6 +386,7 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
         Sets the password of this CreatePostgresqlConnectionDetails.
         The password Oracle GoldenGate uses to connect the associated system of the given technology.
         It must conform to the specific security requirements including length, case sensitivity, and so on.
+        Deprecated: This field is deprecated and replaced by \"passwordSecretId\". This field will be removed after February 15 2026.
 
 
         :param password: The password of this CreatePostgresqlConnectionDetails.
@@ -581,6 +583,7 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
         """
         Gets the ssl_key of this CreatePostgresqlConnectionDetails.
         The base64 encoded private key of the PostgreSQL server. The supported file formats are .pem and .crt.
+        Deprecated: This field is deprecated and replaced by \"sslKeySecretId\". This field will be removed after February 15 2026.
 
 
         :return: The ssl_key of this CreatePostgresqlConnectionDetails.
@@ -593,6 +596,7 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
         """
         Sets the ssl_key of this CreatePostgresqlConnectionDetails.
         The base64 encoded private key of the PostgreSQL server. The supported file formats are .pem and .crt.
+        Deprecated: This field is deprecated and replaced by \"sslKeySecretId\". This field will be removed after February 15 2026.
 
 
         :param ssl_key: The ssl_key of this CreatePostgresqlConnectionDetails.

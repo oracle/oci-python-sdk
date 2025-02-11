@@ -89,6 +89,10 @@ class OutboundConnector(object):
             The value to assign to the defined_tags property of this OutboundConnector.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this OutboundConnector.
+        :type system_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -100,7 +104,8 @@ class OutboundConnector(object):
             'connector_type': 'str',
             'locks': 'list[ResourceLock]',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
@@ -113,7 +118,8 @@ class OutboundConnector(object):
             'connector_type': 'connectorType',
             'locks': 'locks',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'system_tags': 'systemTags'
         }
 
         self._availability_domain = None
@@ -126,6 +132,7 @@ class OutboundConnector(object):
         self._locks = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -439,6 +446,32 @@ class OutboundConnector(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this OutboundConnector.
+        System tags for this resource.
+        System tags are applied to resources by internal OCI services.
+
+
+        :return: The system_tags of this OutboundConnector.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this OutboundConnector.
+        System tags for this resource.
+        System tags are applied to resources by internal OCI services.
+
+
+        :param system_tags: The system_tags of this OutboundConnector.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

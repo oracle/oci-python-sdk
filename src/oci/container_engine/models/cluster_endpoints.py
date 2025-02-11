@@ -36,25 +36,32 @@ class ClusterEndpoints(object):
             The value to assign to the vcn_hostname_endpoint property of this ClusterEndpoints.
         :type vcn_hostname_endpoint: str
 
+        :param ipv6_endpoint:
+            The value to assign to the ipv6_endpoint property of this ClusterEndpoints.
+        :type ipv6_endpoint: str
+
         """
         self.swagger_types = {
             'kubernetes': 'str',
             'public_endpoint': 'str',
             'private_endpoint': 'str',
-            'vcn_hostname_endpoint': 'str'
+            'vcn_hostname_endpoint': 'str',
+            'ipv6_endpoint': 'str'
         }
 
         self.attribute_map = {
             'kubernetes': 'kubernetes',
             'public_endpoint': 'publicEndpoint',
             'private_endpoint': 'privateEndpoint',
-            'vcn_hostname_endpoint': 'vcnHostnameEndpoint'
+            'vcn_hostname_endpoint': 'vcnHostnameEndpoint',
+            'ipv6_endpoint': 'ipv6Endpoint'
         }
 
         self._kubernetes = None
         self._public_endpoint = None
         self._private_endpoint = None
         self._vcn_hostname_endpoint = None
+        self._ipv6_endpoint = None
 
     @property
     def kubernetes(self):
@@ -153,6 +160,30 @@ class ClusterEndpoints(object):
         :type: str
         """
         self._vcn_hostname_endpoint = vcn_hostname_endpoint
+
+    @property
+    def ipv6_endpoint(self):
+        """
+        Gets the ipv6_endpoint of this ClusterEndpoints.
+        The IPv6 networking Kubernetes API server endpoint.
+
+
+        :return: The ipv6_endpoint of this ClusterEndpoints.
+        :rtype: str
+        """
+        return self._ipv6_endpoint
+
+    @ipv6_endpoint.setter
+    def ipv6_endpoint(self, ipv6_endpoint):
+        """
+        Sets the ipv6_endpoint of this ClusterEndpoints.
+        The IPv6 networking Kubernetes API server endpoint.
+
+
+        :param ipv6_endpoint: The ipv6_endpoint of this ClusterEndpoints.
+        :type: str
+        """
+        self._ipv6_endpoint = ipv6_endpoint
 
     def __repr__(self):
         return formatted_flat_dict(self)

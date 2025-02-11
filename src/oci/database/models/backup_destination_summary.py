@@ -118,6 +118,18 @@ class BackupDestinationSummary(object):
             The value to assign to the defined_tags property of this BackupDestinationSummary.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param total_storage_size_in_gbs:
+            The value to assign to the total_storage_size_in_gbs property of this BackupDestinationSummary.
+        :type total_storage_size_in_gbs: int
+
+        :param utilized_storage_size_in_gbs:
+            The value to assign to the utilized_storage_size_in_gbs property of this BackupDestinationSummary.
+        :type utilized_storage_size_in_gbs: int
+
+        :param time_at_which_storage_details_are_updated:
+            The value to assign to the time_at_which_storage_details_are_updated property of this BackupDestinationSummary.
+        :type time_at_which_storage_details_are_updated: datetime
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -135,7 +147,10 @@ class BackupDestinationSummary(object):
             'time_created': 'datetime',
             'lifecycle_details': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'total_storage_size_in_gbs': 'int',
+            'utilized_storage_size_in_gbs': 'int',
+            'time_at_which_storage_details_are_updated': 'datetime'
         }
 
         self.attribute_map = {
@@ -154,7 +169,10 @@ class BackupDestinationSummary(object):
             'time_created': 'timeCreated',
             'lifecycle_details': 'lifecycleDetails',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'total_storage_size_in_gbs': 'totalStorageSizeInGBs',
+            'utilized_storage_size_in_gbs': 'utilizedStorageSizeInGBs',
+            'time_at_which_storage_details_are_updated': 'timeAtWhichStorageDetailsAreUpdated'
         }
 
         self._id = None
@@ -173,6 +191,9 @@ class BackupDestinationSummary(object):
         self._lifecycle_details = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._total_storage_size_in_gbs = None
+        self._utilized_storage_size_in_gbs = None
+        self._time_at_which_storage_details_are_updated = None
 
     @property
     def id(self):
@@ -601,6 +622,78 @@ class BackupDestinationSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def total_storage_size_in_gbs(self):
+        """
+        Gets the total_storage_size_in_gbs of this BackupDestinationSummary.
+        The total storage size of the backup destination in GBs, rounded to the nearest integer.
+
+
+        :return: The total_storage_size_in_gbs of this BackupDestinationSummary.
+        :rtype: int
+        """
+        return self._total_storage_size_in_gbs
+
+    @total_storage_size_in_gbs.setter
+    def total_storage_size_in_gbs(self, total_storage_size_in_gbs):
+        """
+        Sets the total_storage_size_in_gbs of this BackupDestinationSummary.
+        The total storage size of the backup destination in GBs, rounded to the nearest integer.
+
+
+        :param total_storage_size_in_gbs: The total_storage_size_in_gbs of this BackupDestinationSummary.
+        :type: int
+        """
+        self._total_storage_size_in_gbs = total_storage_size_in_gbs
+
+    @property
+    def utilized_storage_size_in_gbs(self):
+        """
+        Gets the utilized_storage_size_in_gbs of this BackupDestinationSummary.
+        The total amount of space utilized on the backup destination (in GBs), rounded to the nearest integer.
+
+
+        :return: The utilized_storage_size_in_gbs of this BackupDestinationSummary.
+        :rtype: int
+        """
+        return self._utilized_storage_size_in_gbs
+
+    @utilized_storage_size_in_gbs.setter
+    def utilized_storage_size_in_gbs(self, utilized_storage_size_in_gbs):
+        """
+        Sets the utilized_storage_size_in_gbs of this BackupDestinationSummary.
+        The total amount of space utilized on the backup destination (in GBs), rounded to the nearest integer.
+
+
+        :param utilized_storage_size_in_gbs: The utilized_storage_size_in_gbs of this BackupDestinationSummary.
+        :type: int
+        """
+        self._utilized_storage_size_in_gbs = utilized_storage_size_in_gbs
+
+    @property
+    def time_at_which_storage_details_are_updated(self):
+        """
+        Gets the time_at_which_storage_details_are_updated of this BackupDestinationSummary.
+        The time when the total storage size and the utilized storage size of the backup destination are updated.
+
+
+        :return: The time_at_which_storage_details_are_updated of this BackupDestinationSummary.
+        :rtype: datetime
+        """
+        return self._time_at_which_storage_details_are_updated
+
+    @time_at_which_storage_details_are_updated.setter
+    def time_at_which_storage_details_are_updated(self, time_at_which_storage_details_are_updated):
+        """
+        Sets the time_at_which_storage_details_are_updated of this BackupDestinationSummary.
+        The time when the total storage size and the utilized storage size of the backup destination are updated.
+
+
+        :param time_at_which_storage_details_are_updated: The time_at_which_storage_details_are_updated of this BackupDestinationSummary.
+        :type: datetime
+        """
+        self._time_at_which_storage_details_are_updated = time_at_which_storage_details_are_updated
 
     def __repr__(self):
         return formatted_flat_dict(self)

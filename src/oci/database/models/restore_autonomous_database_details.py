@@ -52,7 +52,7 @@ class RestoreAutonomousDatabaseDetails(object):
     @property
     def timestamp(self):
         """
-        **[Required]** Gets the timestamp of this RestoreAutonomousDatabaseDetails.
+        Gets the timestamp of this RestoreAutonomousDatabaseDetails.
         The time to restore the database to.
 
 

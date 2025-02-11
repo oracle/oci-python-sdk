@@ -23,7 +23,7 @@ class CreateDb2ConnectionDetails(CreateConnectionDetails):
 
         :param connection_type:
             The value to assign to the connection_type property of this CreateDb2ConnectionDetails.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC"
         :type connection_type: str
 
         :param display_name:
@@ -348,6 +348,7 @@ class CreateDb2ConnectionDetails(CreateConnectionDetails):
         """
         Gets the password of this CreateDb2ConnectionDetails.
         The password Oracle GoldenGate uses to connect the associated DB2 database.
+        Deprecated: This field is deprecated and replaced by \"passwordSecretId\". This field will be removed after February 15 2026.
 
 
         :return: The password of this CreateDb2ConnectionDetails.
@@ -360,6 +361,7 @@ class CreateDb2ConnectionDetails(CreateConnectionDetails):
         """
         Sets the password of this CreateDb2ConnectionDetails.
         The password Oracle GoldenGate uses to connect the associated DB2 database.
+        Deprecated: This field is deprecated and replaced by \"passwordSecretId\". This field will be removed after February 15 2026.
 
 
         :param password: The password of this CreateDb2ConnectionDetails.
@@ -454,6 +456,7 @@ class CreateDb2ConnectionDetails(CreateConnectionDetails):
         """
         Gets the ssl_client_keystoredb of this CreateDb2ConnectionDetails.
         The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
+        Deprecated: This field is deprecated and replaced by \"sslClientKeystoredbSecretId\". This field will be removed after February 15 2026.
 
 
         :return: The ssl_client_keystoredb of this CreateDb2ConnectionDetails.
@@ -466,6 +469,7 @@ class CreateDb2ConnectionDetails(CreateConnectionDetails):
         """
         Sets the ssl_client_keystoredb of this CreateDb2ConnectionDetails.
         The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
+        Deprecated: This field is deprecated and replaced by \"sslClientKeystoredbSecretId\". This field will be removed after February 15 2026.
 
 
         :param ssl_client_keystoredb: The ssl_client_keystoredb of this CreateDb2ConnectionDetails.
@@ -510,6 +514,7 @@ class CreateDb2ConnectionDetails(CreateConnectionDetails):
         """
         Gets the ssl_client_keystash of this CreateDb2ConnectionDetails.
         The base64 encoded keystash file which contains the encrypted password to the key database file.
+        Deprecated: This field is deprecated and replaced by \"sslClientKeystashSecretId\". This field will be removed after February 15 2026.
 
 
         :return: The ssl_client_keystash of this CreateDb2ConnectionDetails.
@@ -522,6 +527,7 @@ class CreateDb2ConnectionDetails(CreateConnectionDetails):
         """
         Sets the ssl_client_keystash of this CreateDb2ConnectionDetails.
         The base64 encoded keystash file which contains the encrypted password to the key database file.
+        Deprecated: This field is deprecated and replaced by \"sslClientKeystashSecretId\". This field will be removed after February 15 2026.
 
 
         :param ssl_client_keystash: The ssl_client_keystash of this CreateDb2ConnectionDetails.

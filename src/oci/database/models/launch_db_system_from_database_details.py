@@ -167,6 +167,10 @@ class LaunchDbSystemFromDatabaseDetails(LaunchDbSystemBase):
             The value to assign to the private_ip property of this LaunchDbSystemFromDatabaseDetails.
         :type private_ip: str
 
+        :param private_ip_v6:
+            The value to assign to the private_ip_v6 property of this LaunchDbSystemFromDatabaseDetails.
+        :type private_ip_v6: str
+
         :param data_collection_options:
             The value to assign to the data_collection_options property of this LaunchDbSystemFromDatabaseDetails.
         :type data_collection_options: oci.database.models.DataCollectionOptions
@@ -220,6 +224,7 @@ class LaunchDbSystemFromDatabaseDetails(LaunchDbSystemBase):
             'security_attributes': 'dict(str, dict(str, object))',
             'source': 'str',
             'private_ip': 'str',
+            'private_ip_v6': 'str',
             'data_collection_options': 'DataCollectionOptions',
             'db_home': 'CreateDbHomeFromDatabaseDetails',
             'database_edition': 'str',
@@ -256,6 +261,7 @@ class LaunchDbSystemFromDatabaseDetails(LaunchDbSystemBase):
             'security_attributes': 'securityAttributes',
             'source': 'source',
             'private_ip': 'privateIp',
+            'private_ip_v6': 'privateIpV6',
             'data_collection_options': 'dataCollectionOptions',
             'db_home': 'dbHome',
             'database_edition': 'databaseEdition',
@@ -291,6 +297,7 @@ class LaunchDbSystemFromDatabaseDetails(LaunchDbSystemBase):
         self._security_attributes = None
         self._source = None
         self._private_ip = None
+        self._private_ip_v6 = None
         self._data_collection_options = None
         self._db_home = None
         self._database_edition = None
