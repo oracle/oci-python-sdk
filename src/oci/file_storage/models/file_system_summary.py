@@ -98,6 +98,10 @@ class FileSystemSummary(object):
             The value to assign to the defined_tags property of this FileSystemSummary.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this FileSystemSummary.
+        :type system_tags: dict(str, dict(str, object))
+
         :param kms_key_id:
             The value to assign to the kms_key_id property of this FileSystemSummary.
         :type kms_key_id: str
@@ -136,6 +140,7 @@ class FileSystemSummary(object):
             'locks': 'list[ResourceLock]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))',
             'kms_key_id': 'str',
             'source_details': 'SourceDetails',
             'is_clone_parent': 'bool',
@@ -155,6 +160,7 @@ class FileSystemSummary(object):
             'locks': 'locks',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'system_tags': 'systemTags',
             'kms_key_id': 'kmsKeyId',
             'source_details': 'sourceDetails',
             'is_clone_parent': 'isCloneParent',
@@ -173,6 +179,7 @@ class FileSystemSummary(object):
         self._locks = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
         self._kms_key_id = None
         self._source_details = None
         self._is_clone_parent = None
@@ -479,6 +486,32 @@ class FileSystemSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this FileSystemSummary.
+        System tags for this resource.
+        System tags are applied to resources by internal OCI services.
+
+
+        :return: The system_tags of this FileSystemSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this FileSystemSummary.
+        System tags for this resource.
+        System tags are applied to resources by internal OCI services.
+
+
+        :param system_tags: The system_tags of this FileSystemSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     @property
     def kms_key_id(self):

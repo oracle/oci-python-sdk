@@ -111,6 +111,18 @@ class CreateConnectionDetails(object):
     #: This constant has a value of "GOOGLE_BIGQUERY"
     CONNECTION_TYPE_GOOGLE_BIGQUERY = "GOOGLE_BIGQUERY"
 
+    #: A constant which can be used with the connection_type property of a CreateConnectionDetails.
+    #: This constant has a value of "DATABRICKS"
+    CONNECTION_TYPE_DATABRICKS = "DATABRICKS"
+
+    #: A constant which can be used with the connection_type property of a CreateConnectionDetails.
+    #: This constant has a value of "GOOGLE_PUBSUB"
+    CONNECTION_TYPE_GOOGLE_PUBSUB = "GOOGLE_PUBSUB"
+
+    #: A constant which can be used with the connection_type property of a CreateConnectionDetails.
+    #: This constant has a value of "MICROSOFT_FABRIC"
+    CONNECTION_TYPE_MICROSOFT_FABRIC = "MICROSOFT_FABRIC"
+
     #: A constant which can be used with the routing_method property of a CreateConnectionDetails.
     #: This constant has a value of "SHARED_SERVICE_ENDPOINT"
     ROUTING_METHOD_SHARED_SERVICE_ENDPOINT = "SHARED_SERVICE_ENDPOINT"
@@ -131,33 +143,36 @@ class CreateConnectionDetails(object):
         * :class:`~oci.golden_gate.models.CreatePostgresqlConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateKafkaSchemaRegistryConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateMicrosoftSqlserverConnectionDetails`
-        * :class:`~oci.golden_gate.models.CreateJavaMessageServiceConnectionDetails`
-        * :class:`~oci.golden_gate.models.CreateGoogleBigQueryConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateAmazonKinesisConnectionDetails`
-        * :class:`~oci.golden_gate.models.CreateSnowflakeConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateAzureDataLakeStorageConnectionDetails`
-        * :class:`~oci.golden_gate.models.CreateMongoDbConnectionDetails`
-        * :class:`~oci.golden_gate.models.CreateAmazonS3ConnectionDetails`
+        * :class:`~oci.golden_gate.models.CreateGooglePubSubConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateHdfsConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateOciObjectStorageConnectionDetails`
+        * :class:`~oci.golden_gate.models.CreateRedisConnectionDetails`
+        * :class:`~oci.golden_gate.models.CreateMicrosoftFabricConnectionDetails`
+        * :class:`~oci.golden_gate.models.CreateGoogleCloudStorageConnectionDetails`
+        * :class:`~oci.golden_gate.models.CreateKafkaConnectionDetails`
+        * :class:`~oci.golden_gate.models.CreateOracleNosqlConnectionDetails`
+        * :class:`~oci.golden_gate.models.CreateJavaMessageServiceConnectionDetails`
+        * :class:`~oci.golden_gate.models.CreateGoogleBigQueryConnectionDetails`
+        * :class:`~oci.golden_gate.models.CreateSnowflakeConnectionDetails`
+        * :class:`~oci.golden_gate.models.CreateMongoDbConnectionDetails`
+        * :class:`~oci.golden_gate.models.CreateAmazonS3ConnectionDetails`
+        * :class:`~oci.golden_gate.models.CreateDatabricksConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateDb2ConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateElasticsearchConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateAzureSynapseConnectionDetails`
-        * :class:`~oci.golden_gate.models.CreateRedisConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateMysqlConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateGenericConnectionDetails`
-        * :class:`~oci.golden_gate.models.CreateGoogleCloudStorageConnectionDetails`
-        * :class:`~oci.golden_gate.models.CreateKafkaConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateOracleConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateGoldenGateConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateAmazonRedshiftConnectionDetails`
-        * :class:`~oci.golden_gate.models.CreateOracleNosqlConnectionDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param connection_type:
             The value to assign to the connection_type property of this CreateConnectionDetails.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC"
         :type connection_type: str
 
         :param display_name:
@@ -273,20 +288,44 @@ class CreateConnectionDetails(object):
         if type == 'MICROSOFT_SQLSERVER':
             return 'CreateMicrosoftSqlserverConnectionDetails'
 
+        if type == 'AMAZON_KINESIS':
+            return 'CreateAmazonKinesisConnectionDetails'
+
+        if type == 'AZURE_DATA_LAKE_STORAGE':
+            return 'CreateAzureDataLakeStorageConnectionDetails'
+
+        if type == 'GOOGLE_PUBSUB':
+            return 'CreateGooglePubSubConnectionDetails'
+
+        if type == 'HDFS':
+            return 'CreateHdfsConnectionDetails'
+
+        if type == 'OCI_OBJECT_STORAGE':
+            return 'CreateOciObjectStorageConnectionDetails'
+
+        if type == 'REDIS':
+            return 'CreateRedisConnectionDetails'
+
+        if type == 'MICROSOFT_FABRIC':
+            return 'CreateMicrosoftFabricConnectionDetails'
+
+        if type == 'GOOGLE_CLOUD_STORAGE':
+            return 'CreateGoogleCloudStorageConnectionDetails'
+
+        if type == 'KAFKA':
+            return 'CreateKafkaConnectionDetails'
+
+        if type == 'ORACLE_NOSQL':
+            return 'CreateOracleNosqlConnectionDetails'
+
         if type == 'JAVA_MESSAGE_SERVICE':
             return 'CreateJavaMessageServiceConnectionDetails'
 
         if type == 'GOOGLE_BIGQUERY':
             return 'CreateGoogleBigQueryConnectionDetails'
 
-        if type == 'AMAZON_KINESIS':
-            return 'CreateAmazonKinesisConnectionDetails'
-
         if type == 'SNOWFLAKE':
             return 'CreateSnowflakeConnectionDetails'
-
-        if type == 'AZURE_DATA_LAKE_STORAGE':
-            return 'CreateAzureDataLakeStorageConnectionDetails'
 
         if type == 'MONGODB':
             return 'CreateMongoDbConnectionDetails'
@@ -294,11 +333,8 @@ class CreateConnectionDetails(object):
         if type == 'AMAZON_S3':
             return 'CreateAmazonS3ConnectionDetails'
 
-        if type == 'HDFS':
-            return 'CreateHdfsConnectionDetails'
-
-        if type == 'OCI_OBJECT_STORAGE':
-            return 'CreateOciObjectStorageConnectionDetails'
+        if type == 'DATABRICKS':
+            return 'CreateDatabricksConnectionDetails'
 
         if type == 'DB2':
             return 'CreateDb2ConnectionDetails'
@@ -309,20 +345,11 @@ class CreateConnectionDetails(object):
         if type == 'AZURE_SYNAPSE_ANALYTICS':
             return 'CreateAzureSynapseConnectionDetails'
 
-        if type == 'REDIS':
-            return 'CreateRedisConnectionDetails'
-
         if type == 'MYSQL':
             return 'CreateMysqlConnectionDetails'
 
         if type == 'GENERIC':
             return 'CreateGenericConnectionDetails'
-
-        if type == 'GOOGLE_CLOUD_STORAGE':
-            return 'CreateGoogleCloudStorageConnectionDetails'
-
-        if type == 'KAFKA':
-            return 'CreateKafkaConnectionDetails'
 
         if type == 'ORACLE':
             return 'CreateOracleConnectionDetails'
@@ -332,9 +359,6 @@ class CreateConnectionDetails(object):
 
         if type == 'AMAZON_REDSHIFT':
             return 'CreateAmazonRedshiftConnectionDetails'
-
-        if type == 'ORACLE_NOSQL':
-            return 'CreateOracleNosqlConnectionDetails'
         else:
             return 'CreateConnectionDetails'
 
@@ -344,7 +368,7 @@ class CreateConnectionDetails(object):
         **[Required]** Gets the connection_type of this CreateConnectionDetails.
         The connection type.
 
-        Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
+        Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC"
 
 
         :return: The connection_type of this CreateConnectionDetails.
@@ -362,7 +386,7 @@ class CreateConnectionDetails(object):
         :param connection_type: The connection_type of this CreateConnectionDetails.
         :type: str
         """
-        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"]
+        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC"]
         if not value_allowed_none_or_none_sentinel(connection_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `connection_type`, must be None or one of {allowed_values}"

@@ -300,6 +300,18 @@ class AutonomousContainerDatabaseSummary(object):
             The value to assign to the backup_config property of this AutonomousContainerDatabaseSummary.
         :type backup_config: oci.database.models.AutonomousContainerDatabaseBackupConfig
 
+        :param backup_destination_properties_list:
+            The value to assign to the backup_destination_properties_list property of this AutonomousContainerDatabaseSummary.
+        :type backup_destination_properties_list: list[oci.database.models.BackupDestinationProperties]
+
+        :param associated_backup_configuration_details:
+            The value to assign to the associated_backup_configuration_details property of this AutonomousContainerDatabaseSummary.
+        :type associated_backup_configuration_details: list[oci.database.models.BackupDestinationConfigurationSummary]
+
+        :param recovery_appliance_details:
+            The value to assign to the recovery_appliance_details property of this AutonomousContainerDatabaseSummary.
+        :type recovery_appliance_details: oci.database.models.RecoveryApplianceDetails
+
         :param key_store_id:
             The value to assign to the key_store_id property of this AutonomousContainerDatabaseSummary.
         :type key_store_id: str
@@ -409,6 +421,9 @@ class AutonomousContainerDatabaseSummary(object):
             'availability_domain': 'str',
             'db_version': 'str',
             'backup_config': 'AutonomousContainerDatabaseBackupConfig',
+            'backup_destination_properties_list': 'list[BackupDestinationProperties]',
+            'associated_backup_configuration_details': 'list[BackupDestinationConfigurationSummary]',
+            'recovery_appliance_details': 'RecoveryApplianceDetails',
             'key_store_id': 'str',
             'key_store_wallet_name': 'str',
             'memory_per_oracle_compute_unit_in_gbs': 'int',
@@ -462,6 +477,9 @@ class AutonomousContainerDatabaseSummary(object):
             'availability_domain': 'availabilityDomain',
             'db_version': 'dbVersion',
             'backup_config': 'backupConfig',
+            'backup_destination_properties_list': 'backupDestinationPropertiesList',
+            'associated_backup_configuration_details': 'associatedBackupConfigurationDetails',
+            'recovery_appliance_details': 'recoveryApplianceDetails',
             'key_store_id': 'keyStoreId',
             'key_store_wallet_name': 'keyStoreWalletName',
             'memory_per_oracle_compute_unit_in_gbs': 'memoryPerOracleComputeUnitInGBs',
@@ -514,6 +532,9 @@ class AutonomousContainerDatabaseSummary(object):
         self._availability_domain = None
         self._db_version = None
         self._backup_config = None
+        self._backup_destination_properties_list = None
+        self._associated_backup_configuration_details = None
+        self._recovery_appliance_details = None
         self._key_store_id = None
         self._key_store_wallet_name = None
         self._memory_per_oracle_compute_unit_in_gbs = None
@@ -1391,6 +1412,74 @@ class AutonomousContainerDatabaseSummary(object):
         :type: oci.database.models.AutonomousContainerDatabaseBackupConfig
         """
         self._backup_config = backup_config
+
+    @property
+    def backup_destination_properties_list(self):
+        """
+        Gets the backup_destination_properties_list of this AutonomousContainerDatabaseSummary.
+        This list describes the backup destination properties associated with the Autonomous Container Database (ACD) 's preferred backup destination. The object at a given index is associated with the destination present at the same index in the backup destination details list of the ACD Backup Configuration.
+
+
+        :return: The backup_destination_properties_list of this AutonomousContainerDatabaseSummary.
+        :rtype: list[oci.database.models.BackupDestinationProperties]
+        """
+        return self._backup_destination_properties_list
+
+    @backup_destination_properties_list.setter
+    def backup_destination_properties_list(self, backup_destination_properties_list):
+        """
+        Sets the backup_destination_properties_list of this AutonomousContainerDatabaseSummary.
+        This list describes the backup destination properties associated with the Autonomous Container Database (ACD) 's preferred backup destination. The object at a given index is associated with the destination present at the same index in the backup destination details list of the ACD Backup Configuration.
+
+
+        :param backup_destination_properties_list: The backup_destination_properties_list of this AutonomousContainerDatabaseSummary.
+        :type: list[oci.database.models.BackupDestinationProperties]
+        """
+        self._backup_destination_properties_list = backup_destination_properties_list
+
+    @property
+    def associated_backup_configuration_details(self):
+        """
+        Gets the associated_backup_configuration_details of this AutonomousContainerDatabaseSummary.
+        A backup config object holds information about preferred backup destinations only. This object holds information about the associated backup destinations, such as secondary backup destinations created for local backups or remote replicated backups.
+
+
+        :return: The associated_backup_configuration_details of this AutonomousContainerDatabaseSummary.
+        :rtype: list[oci.database.models.BackupDestinationConfigurationSummary]
+        """
+        return self._associated_backup_configuration_details
+
+    @associated_backup_configuration_details.setter
+    def associated_backup_configuration_details(self, associated_backup_configuration_details):
+        """
+        Sets the associated_backup_configuration_details of this AutonomousContainerDatabaseSummary.
+        A backup config object holds information about preferred backup destinations only. This object holds information about the associated backup destinations, such as secondary backup destinations created for local backups or remote replicated backups.
+
+
+        :param associated_backup_configuration_details: The associated_backup_configuration_details of this AutonomousContainerDatabaseSummary.
+        :type: list[oci.database.models.BackupDestinationConfigurationSummary]
+        """
+        self._associated_backup_configuration_details = associated_backup_configuration_details
+
+    @property
+    def recovery_appliance_details(self):
+        """
+        Gets the recovery_appliance_details of this AutonomousContainerDatabaseSummary.
+
+        :return: The recovery_appliance_details of this AutonomousContainerDatabaseSummary.
+        :rtype: oci.database.models.RecoveryApplianceDetails
+        """
+        return self._recovery_appliance_details
+
+    @recovery_appliance_details.setter
+    def recovery_appliance_details(self, recovery_appliance_details):
+        """
+        Sets the recovery_appliance_details of this AutonomousContainerDatabaseSummary.
+
+        :param recovery_appliance_details: The recovery_appliance_details of this AutonomousContainerDatabaseSummary.
+        :type: oci.database.models.RecoveryApplianceDetails
+        """
+        self._recovery_appliance_details = recovery_appliance_details
 
     @property
     def key_store_id(self):

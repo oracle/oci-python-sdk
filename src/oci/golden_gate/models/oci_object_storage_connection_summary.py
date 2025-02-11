@@ -23,7 +23,7 @@ class OciObjectStorageConnectionSummary(ConnectionSummary):
 
         :param connection_type:
             The value to assign to the connection_type property of this OciObjectStorageConnectionSummary.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC"
         :type connection_type: str
 
         :param id:
@@ -127,6 +127,10 @@ class OciObjectStorageConnectionSummary(ConnectionSummary):
             The value to assign to the private_key_passphrase_secret_id property of this OciObjectStorageConnectionSummary.
         :type private_key_passphrase_secret_id: str
 
+        :param should_use_resource_principal:
+            The value to assign to the should_use_resource_principal property of this OciObjectStorageConnectionSummary.
+        :type should_use_resource_principal: bool
+
         """
         self.swagger_types = {
             'connection_type': 'str',
@@ -154,7 +158,8 @@ class OciObjectStorageConnectionSummary(ConnectionSummary):
             'region': 'str',
             'user_id': 'str',
             'private_key_file_secret_id': 'str',
-            'private_key_passphrase_secret_id': 'str'
+            'private_key_passphrase_secret_id': 'str',
+            'should_use_resource_principal': 'bool'
         }
 
         self.attribute_map = {
@@ -183,7 +188,8 @@ class OciObjectStorageConnectionSummary(ConnectionSummary):
             'region': 'region',
             'user_id': 'userId',
             'private_key_file_secret_id': 'privateKeyFileSecretId',
-            'private_key_passphrase_secret_id': 'privateKeyPassphraseSecretId'
+            'private_key_passphrase_secret_id': 'privateKeyPassphraseSecretId',
+            'should_use_resource_principal': 'shouldUseResourcePrincipal'
         }
 
         self._connection_type = None
@@ -212,6 +218,7 @@ class OciObjectStorageConnectionSummary(ConnectionSummary):
         self._user_id = None
         self._private_key_file_secret_id = None
         self._private_key_passphrase_secret_id = None
+        self._should_use_resource_principal = None
         self._connection_type = 'OCI_OBJECT_STORAGE'
 
     @property
@@ -271,6 +278,7 @@ class OciObjectStorageConnectionSummary(ConnectionSummary):
         """
         Gets the region of this OciObjectStorageConnectionSummary.
         The name of the region. e.g.: us-ashburn-1
+        If the region is not provided, backend will default to the default region.
 
 
         :return: The region of this OciObjectStorageConnectionSummary.
@@ -283,6 +291,7 @@ class OciObjectStorageConnectionSummary(ConnectionSummary):
         """
         Sets the region of this OciObjectStorageConnectionSummary.
         The name of the region. e.g.: us-ashburn-1
+        If the region is not provided, backend will default to the default region.
 
 
         :param region: The region of this OciObjectStorageConnectionSummary.
@@ -296,6 +305,7 @@ class OciObjectStorageConnectionSummary(ConnectionSummary):
         **[Required]** Gets the user_id of this OciObjectStorageConnectionSummary.
         The `OCID`__ of the OCI user who will access the Object Storage.
         The user must have write access to the bucket they want to connect to.
+        If the user is not provided, backend will default to the user who is calling the API endpoint.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -311,6 +321,7 @@ class OciObjectStorageConnectionSummary(ConnectionSummary):
         Sets the user_id of this OciObjectStorageConnectionSummary.
         The `OCID`__ of the OCI user who will access the Object Storage.
         The user must have write access to the bucket they want to connect to.
+        If the user is not provided, backend will default to the user who is calling the API endpoint.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -381,6 +392,30 @@ class OciObjectStorageConnectionSummary(ConnectionSummary):
         :type: str
         """
         self._private_key_passphrase_secret_id = private_key_passphrase_secret_id
+
+    @property
+    def should_use_resource_principal(self):
+        """
+        Gets the should_use_resource_principal of this OciObjectStorageConnectionSummary.
+        Indicates that the user intents to connect to the instance through resource principal.
+
+
+        :return: The should_use_resource_principal of this OciObjectStorageConnectionSummary.
+        :rtype: bool
+        """
+        return self._should_use_resource_principal
+
+    @should_use_resource_principal.setter
+    def should_use_resource_principal(self, should_use_resource_principal):
+        """
+        Sets the should_use_resource_principal of this OciObjectStorageConnectionSummary.
+        Indicates that the user intents to connect to the instance through resource principal.
+
+
+        :param should_use_resource_principal: The should_use_resource_principal of this OciObjectStorageConnectionSummary.
+        :type: bool
+        """
+        self._should_use_resource_principal = should_use_resource_principal
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -99,6 +99,10 @@ class FilesystemSnapshotPolicy(object):
             The value to assign to the defined_tags property of this FilesystemSnapshotPolicy.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this FilesystemSnapshotPolicy.
+        :type system_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -111,7 +115,8 @@ class FilesystemSnapshotPolicy(object):
             'schedules': 'list[SnapshotSchedule]',
             'locks': 'list[ResourceLock]',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
@@ -125,7 +130,8 @@ class FilesystemSnapshotPolicy(object):
             'schedules': 'schedules',
             'locks': 'locks',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'system_tags': 'systemTags'
         }
 
         self._compartment_id = None
@@ -139,6 +145,7 @@ class FilesystemSnapshotPolicy(object):
         self._locks = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
 
     @property
     def compartment_id(self):
@@ -459,6 +466,32 @@ class FilesystemSnapshotPolicy(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this FilesystemSnapshotPolicy.
+        System tags for this resource.
+        System tags are applied to resources by internal OCI services.
+
+
+        :return: The system_tags of this FilesystemSnapshotPolicy.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this FilesystemSnapshotPolicy.
+        System tags for this resource.
+        System tags are applied to resources by internal OCI services.
+
+
+        :param system_tags: The system_tags of this FilesystemSnapshotPolicy.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -23,7 +23,7 @@ class CreateOracleConnectionDetails(CreateConnectionDetails):
 
         :param connection_type:
             The value to assign to the connection_type property of this CreateOracleConnectionDetails.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC"
         :type connection_type: str
 
         :param display_name:
@@ -258,6 +258,7 @@ class CreateOracleConnectionDetails(CreateConnectionDetails):
         Gets the password of this CreateOracleConnectionDetails.
         The password Oracle GoldenGate uses to connect the associated system of the given technology.
         It must conform to the specific security requirements including length, case sensitivity, and so on.
+        Deprecated: This field is deprecated and replaced by \"passwordSecretId\". This field will be removed after February 15 2026.
 
 
         :return: The password of this CreateOracleConnectionDetails.
@@ -271,6 +272,7 @@ class CreateOracleConnectionDetails(CreateConnectionDetails):
         Sets the password of this CreateOracleConnectionDetails.
         The password Oracle GoldenGate uses to connect the associated system of the given technology.
         It must conform to the specific security requirements including length, case sensitivity, and so on.
+        Deprecated: This field is deprecated and replaced by \"passwordSecretId\". This field will be removed after February 15 2026.
 
 
         :param password: The password of this CreateOracleConnectionDetails.
@@ -370,6 +372,7 @@ class CreateOracleConnectionDetails(CreateConnectionDetails):
         Gets the wallet of this CreateOracleConnectionDetails.
         The wallet contents Oracle GoldenGate uses to make connections to a database.
         This attribute is expected to be base64 encoded.
+        Deprecated: This field is deprecated and replaced by \"walletSecretId\". This field will be removed after February 15 2026.
 
 
         :return: The wallet of this CreateOracleConnectionDetails.
@@ -383,6 +386,7 @@ class CreateOracleConnectionDetails(CreateConnectionDetails):
         Sets the wallet of this CreateOracleConnectionDetails.
         The wallet contents Oracle GoldenGate uses to make connections to a database.
         This attribute is expected to be base64 encoded.
+        Deprecated: This field is deprecated and replaced by \"walletSecretId\". This field will be removed after February 15 2026.
 
 
         :param wallet: The wallet of this CreateOracleConnectionDetails.

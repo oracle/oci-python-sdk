@@ -111,6 +111,18 @@ class ConnectionSummary(object):
     #: This constant has a value of "GOOGLE_BIGQUERY"
     CONNECTION_TYPE_GOOGLE_BIGQUERY = "GOOGLE_BIGQUERY"
 
+    #: A constant which can be used with the connection_type property of a ConnectionSummary.
+    #: This constant has a value of "DATABRICKS"
+    CONNECTION_TYPE_DATABRICKS = "DATABRICKS"
+
+    #: A constant which can be used with the connection_type property of a ConnectionSummary.
+    #: This constant has a value of "GOOGLE_PUBSUB"
+    CONNECTION_TYPE_GOOGLE_PUBSUB = "GOOGLE_PUBSUB"
+
+    #: A constant which can be used with the connection_type property of a ConnectionSummary.
+    #: This constant has a value of "MICROSOFT_FABRIC"
+    CONNECTION_TYPE_MICROSOFT_FABRIC = "MICROSOFT_FABRIC"
+
     #: A constant which can be used with the routing_method property of a ConnectionSummary.
     #: This constant has a value of "SHARED_SERVICE_ENDPOINT"
     ROUTING_METHOD_SHARED_SERVICE_ENDPOINT = "SHARED_SERVICE_ENDPOINT"
@@ -128,36 +140,39 @@ class ConnectionSummary(object):
         Initializes a new ConnectionSummary object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
-        * :class:`~oci.golden_gate.models.GoldenGateConnectionSummary`
+        * :class:`~oci.golden_gate.models.MicrosoftFabricConnectionSummary`
         * :class:`~oci.golden_gate.models.KafkaSchemaRegistryConnectionSummary`
-        * :class:`~oci.golden_gate.models.JavaMessageServiceConnectionSummary`
         * :class:`~oci.golden_gate.models.MicrosoftSqlserverConnectionSummary`
         * :class:`~oci.golden_gate.models.OracleNosqlConnectionSummary`
         * :class:`~oci.golden_gate.models.OracleConnectionSummary`
+        * :class:`~oci.golden_gate.models.OciObjectStorageConnectionSummary`
+        * :class:`~oci.golden_gate.models.AzureSynapseConnectionSummary`
+        * :class:`~oci.golden_gate.models.MongoDbConnectionSummary`
+        * :class:`~oci.golden_gate.models.AmazonS3ConnectionSummary`
+        * :class:`~oci.golden_gate.models.MysqlConnectionSummary`
+        * :class:`~oci.golden_gate.models.ElasticsearchConnectionSummary`
+        * :class:`~oci.golden_gate.models.GooglePubSubConnectionSummary`
+        * :class:`~oci.golden_gate.models.GoogleCloudStorageConnectionSummary`
+        * :class:`~oci.golden_gate.models.GoldenGateConnectionSummary`
+        * :class:`~oci.golden_gate.models.JavaMessageServiceConnectionSummary`
         * :class:`~oci.golden_gate.models.SnowflakeConnectionSummary`
         * :class:`~oci.golden_gate.models.AmazonKinesisConnectionSummary`
         * :class:`~oci.golden_gate.models.RedisConnectionSummary`
-        * :class:`~oci.golden_gate.models.OciObjectStorageConnectionSummary`
         * :class:`~oci.golden_gate.models.AzureDataLakeStorageConnectionSummary`
-        * :class:`~oci.golden_gate.models.AzureSynapseConnectionSummary`
-        * :class:`~oci.golden_gate.models.MongoDbConnectionSummary`
         * :class:`~oci.golden_gate.models.GoogleBigQueryConnectionSummary`
-        * :class:`~oci.golden_gate.models.AmazonS3ConnectionSummary`
         * :class:`~oci.golden_gate.models.PostgresqlConnectionSummary`
-        * :class:`~oci.golden_gate.models.MysqlConnectionSummary`
         * :class:`~oci.golden_gate.models.GenericConnectionSummary`
         * :class:`~oci.golden_gate.models.KafkaConnectionSummary`
-        * :class:`~oci.golden_gate.models.ElasticsearchConnectionSummary`
         * :class:`~oci.golden_gate.models.Db2ConnectionSummary`
         * :class:`~oci.golden_gate.models.AmazonRedshiftConnectionSummary`
+        * :class:`~oci.golden_gate.models.DatabricksConnectionSummary`
         * :class:`~oci.golden_gate.models.HdfsConnectionSummary`
-        * :class:`~oci.golden_gate.models.GoogleCloudStorageConnectionSummary`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param connection_type:
             The value to assign to the connection_type property of this ConnectionSummary.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type connection_type: str
 
@@ -315,14 +330,11 @@ class ConnectionSummary(object):
         """
         type = object_dictionary['connectionType']
 
-        if type == 'GOLDENGATE':
-            return 'GoldenGateConnectionSummary'
+        if type == 'MICROSOFT_FABRIC':
+            return 'MicrosoftFabricConnectionSummary'
 
         if type == 'KAFKA_SCHEMA_REGISTRY':
             return 'KafkaSchemaRegistryConnectionSummary'
-
-        if type == 'JAVA_MESSAGE_SERVICE':
-            return 'JavaMessageServiceConnectionSummary'
 
         if type == 'MICROSOFT_SQLSERVER':
             return 'MicrosoftSqlserverConnectionSummary'
@@ -333,6 +345,36 @@ class ConnectionSummary(object):
         if type == 'ORACLE':
             return 'OracleConnectionSummary'
 
+        if type == 'OCI_OBJECT_STORAGE':
+            return 'OciObjectStorageConnectionSummary'
+
+        if type == 'AZURE_SYNAPSE_ANALYTICS':
+            return 'AzureSynapseConnectionSummary'
+
+        if type == 'MONGODB':
+            return 'MongoDbConnectionSummary'
+
+        if type == 'AMAZON_S3':
+            return 'AmazonS3ConnectionSummary'
+
+        if type == 'MYSQL':
+            return 'MysqlConnectionSummary'
+
+        if type == 'ELASTICSEARCH':
+            return 'ElasticsearchConnectionSummary'
+
+        if type == 'GOOGLE_PUBSUB':
+            return 'GooglePubSubConnectionSummary'
+
+        if type == 'GOOGLE_CLOUD_STORAGE':
+            return 'GoogleCloudStorageConnectionSummary'
+
+        if type == 'GOLDENGATE':
+            return 'GoldenGateConnectionSummary'
+
+        if type == 'JAVA_MESSAGE_SERVICE':
+            return 'JavaMessageServiceConnectionSummary'
+
         if type == 'SNOWFLAKE':
             return 'SnowflakeConnectionSummary'
 
@@ -342,29 +384,14 @@ class ConnectionSummary(object):
         if type == 'REDIS':
             return 'RedisConnectionSummary'
 
-        if type == 'OCI_OBJECT_STORAGE':
-            return 'OciObjectStorageConnectionSummary'
-
         if type == 'AZURE_DATA_LAKE_STORAGE':
             return 'AzureDataLakeStorageConnectionSummary'
-
-        if type == 'AZURE_SYNAPSE_ANALYTICS':
-            return 'AzureSynapseConnectionSummary'
-
-        if type == 'MONGODB':
-            return 'MongoDbConnectionSummary'
 
         if type == 'GOOGLE_BIGQUERY':
             return 'GoogleBigQueryConnectionSummary'
 
-        if type == 'AMAZON_S3':
-            return 'AmazonS3ConnectionSummary'
-
         if type == 'POSTGRESQL':
             return 'PostgresqlConnectionSummary'
-
-        if type == 'MYSQL':
-            return 'MysqlConnectionSummary'
 
         if type == 'GENERIC':
             return 'GenericConnectionSummary'
@@ -372,20 +399,17 @@ class ConnectionSummary(object):
         if type == 'KAFKA':
             return 'KafkaConnectionSummary'
 
-        if type == 'ELASTICSEARCH':
-            return 'ElasticsearchConnectionSummary'
-
         if type == 'DB2':
             return 'Db2ConnectionSummary'
 
         if type == 'AMAZON_REDSHIFT':
             return 'AmazonRedshiftConnectionSummary'
 
+        if type == 'DATABRICKS':
+            return 'DatabricksConnectionSummary'
+
         if type == 'HDFS':
             return 'HdfsConnectionSummary'
-
-        if type == 'GOOGLE_CLOUD_STORAGE':
-            return 'GoogleCloudStorageConnectionSummary'
         else:
             return 'ConnectionSummary'
 
@@ -395,7 +419,7 @@ class ConnectionSummary(object):
         **[Required]** Gets the connection_type of this ConnectionSummary.
         The connection type.
 
-        Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -414,7 +438,7 @@ class ConnectionSummary(object):
         :param connection_type: The connection_type of this ConnectionSummary.
         :type: str
         """
-        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"]
+        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC"]
         if not value_allowed_none_or_none_sentinel(connection_type, allowed_values):
             connection_type = 'UNKNOWN_ENUM_VALUE'
         self._connection_type = connection_type

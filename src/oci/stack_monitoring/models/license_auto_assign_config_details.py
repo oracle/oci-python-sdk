@@ -24,6 +24,10 @@ class LicenseAutoAssignConfigDetails(Config):
     #: This constant has a value of "ENTERPRISE_EDITION"
     LICENSE_ENTERPRISE_EDITION = "ENTERPRISE_EDITION"
 
+    #: A constant which can be used with the license property of a LicenseAutoAssignConfigDetails.
+    #: This constant has a value of "ENTERPRISE_EDITION_FOR_GPU_INFRASTRUCTURE"
+    LICENSE_ENTERPRISE_EDITION_FOR_GPU_INFRASTRUCTURE = "ENTERPRISE_EDITION_FOR_GPU_INFRASTRUCTURE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new LicenseAutoAssignConfigDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.stack_monitoring.models.LicenseAutoAssignConfigDetails.config_type` attribute
@@ -76,7 +80,7 @@ class LicenseAutoAssignConfigDetails(Config):
 
         :param license:
             The value to assign to the license property of this LicenseAutoAssignConfigDetails.
-            Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_FOR_GPU_INFRASTRUCTURE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type license: str
 
@@ -128,7 +132,7 @@ class LicenseAutoAssignConfigDetails(Config):
         **[Required]** Gets the license of this LicenseAutoAssignConfigDetails.
         License edition.
 
-        Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_FOR_GPU_INFRASTRUCTURE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -147,7 +151,7 @@ class LicenseAutoAssignConfigDetails(Config):
         :param license: The license of this LicenseAutoAssignConfigDetails.
         :type: str
         """
-        allowed_values = ["STANDARD_EDITION", "ENTERPRISE_EDITION"]
+        allowed_values = ["STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_FOR_GPU_INFRASTRUCTURE"]
         if not value_allowed_none_or_none_sentinel(license, allowed_values):
             license = 'UNKNOWN_ENUM_VALUE'
         self._license = license

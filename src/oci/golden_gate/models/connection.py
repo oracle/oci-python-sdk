@@ -111,6 +111,18 @@ class Connection(object):
     #: This constant has a value of "GOOGLE_BIGQUERY"
     CONNECTION_TYPE_GOOGLE_BIGQUERY = "GOOGLE_BIGQUERY"
 
+    #: A constant which can be used with the connection_type property of a Connection.
+    #: This constant has a value of "DATABRICKS"
+    CONNECTION_TYPE_DATABRICKS = "DATABRICKS"
+
+    #: A constant which can be used with the connection_type property of a Connection.
+    #: This constant has a value of "GOOGLE_PUBSUB"
+    CONNECTION_TYPE_GOOGLE_PUBSUB = "GOOGLE_PUBSUB"
+
+    #: A constant which can be used with the connection_type property of a Connection.
+    #: This constant has a value of "MICROSOFT_FABRIC"
+    CONNECTION_TYPE_MICROSOFT_FABRIC = "MICROSOFT_FABRIC"
+
     #: A constant which can be used with the lifecycle_state property of a Connection.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -154,34 +166,37 @@ class Connection(object):
 
         * :class:`~oci.golden_gate.models.KafkaConnection`
         * :class:`~oci.golden_gate.models.PostgresqlConnection`
-        * :class:`~oci.golden_gate.models.JavaMessageServiceConnection`
         * :class:`~oci.golden_gate.models.Db2Connection`
         * :class:`~oci.golden_gate.models.ElasticsearchConnection`
         * :class:`~oci.golden_gate.models.AmazonRedshiftConnection`
+        * :class:`~oci.golden_gate.models.AmazonS3Connection`
+        * :class:`~oci.golden_gate.models.MongoDbConnection`
+        * :class:`~oci.golden_gate.models.HdfsConnection`
+        * :class:`~oci.golden_gate.models.OciObjectStorageConnection`
+        * :class:`~oci.golden_gate.models.MicrosoftSqlserverConnection`
+        * :class:`~oci.golden_gate.models.GenericConnection`
+        * :class:`~oci.golden_gate.models.AzureSynapseConnection`
+        * :class:`~oci.golden_gate.models.MicrosoftFabricConnection`
+        * :class:`~oci.golden_gate.models.DatabricksConnection`
+        * :class:`~oci.golden_gate.models.JavaMessageServiceConnection`
         * :class:`~oci.golden_gate.models.SnowflakeConnection`
         * :class:`~oci.golden_gate.models.GoldenGateConnection`
         * :class:`~oci.golden_gate.models.MysqlConnection`
-        * :class:`~oci.golden_gate.models.AmazonS3Connection`
         * :class:`~oci.golden_gate.models.GoogleBigQueryConnection`
         * :class:`~oci.golden_gate.models.OracleConnection`
         * :class:`~oci.golden_gate.models.AzureDataLakeStorageConnection`
-        * :class:`~oci.golden_gate.models.MongoDbConnection`
-        * :class:`~oci.golden_gate.models.HdfsConnection`
         * :class:`~oci.golden_gate.models.GoogleCloudStorageConnection`
-        * :class:`~oci.golden_gate.models.OciObjectStorageConnection`
         * :class:`~oci.golden_gate.models.KafkaSchemaRegistryConnection`
-        * :class:`~oci.golden_gate.models.MicrosoftSqlserverConnection`
         * :class:`~oci.golden_gate.models.AmazonKinesisConnection`
-        * :class:`~oci.golden_gate.models.GenericConnection`
         * :class:`~oci.golden_gate.models.OracleNosqlConnection`
-        * :class:`~oci.golden_gate.models.AzureSynapseConnection`
         * :class:`~oci.golden_gate.models.RedisConnection`
+        * :class:`~oci.golden_gate.models.GooglePubSubConnection`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param connection_type:
             The value to assign to the connection_type property of this Connection.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type connection_type: str
 
@@ -347,9 +362,6 @@ class Connection(object):
         if type == 'POSTGRESQL':
             return 'PostgresqlConnection'
 
-        if type == 'JAVA_MESSAGE_SERVICE':
-            return 'JavaMessageServiceConnection'
-
         if type == 'DB2':
             return 'Db2Connection'
 
@@ -358,6 +370,36 @@ class Connection(object):
 
         if type == 'AMAZON_REDSHIFT':
             return 'AmazonRedshiftConnection'
+
+        if type == 'AMAZON_S3':
+            return 'AmazonS3Connection'
+
+        if type == 'MONGODB':
+            return 'MongoDbConnection'
+
+        if type == 'HDFS':
+            return 'HdfsConnection'
+
+        if type == 'OCI_OBJECT_STORAGE':
+            return 'OciObjectStorageConnection'
+
+        if type == 'MICROSOFT_SQLSERVER':
+            return 'MicrosoftSqlserverConnection'
+
+        if type == 'GENERIC':
+            return 'GenericConnection'
+
+        if type == 'AZURE_SYNAPSE_ANALYTICS':
+            return 'AzureSynapseConnection'
+
+        if type == 'MICROSOFT_FABRIC':
+            return 'MicrosoftFabricConnection'
+
+        if type == 'DATABRICKS':
+            return 'DatabricksConnection'
+
+        if type == 'JAVA_MESSAGE_SERVICE':
+            return 'JavaMessageServiceConnection'
 
         if type == 'SNOWFLAKE':
             return 'SnowflakeConnection'
@@ -368,9 +410,6 @@ class Connection(object):
         if type == 'MYSQL':
             return 'MysqlConnection'
 
-        if type == 'AMAZON_S3':
-            return 'AmazonS3Connection'
-
         if type == 'GOOGLE_BIGQUERY':
             return 'GoogleBigQueryConnection'
 
@@ -380,38 +419,23 @@ class Connection(object):
         if type == 'AZURE_DATA_LAKE_STORAGE':
             return 'AzureDataLakeStorageConnection'
 
-        if type == 'MONGODB':
-            return 'MongoDbConnection'
-
-        if type == 'HDFS':
-            return 'HdfsConnection'
-
         if type == 'GOOGLE_CLOUD_STORAGE':
             return 'GoogleCloudStorageConnection'
-
-        if type == 'OCI_OBJECT_STORAGE':
-            return 'OciObjectStorageConnection'
 
         if type == 'KAFKA_SCHEMA_REGISTRY':
             return 'KafkaSchemaRegistryConnection'
 
-        if type == 'MICROSOFT_SQLSERVER':
-            return 'MicrosoftSqlserverConnection'
-
         if type == 'AMAZON_KINESIS':
             return 'AmazonKinesisConnection'
-
-        if type == 'GENERIC':
-            return 'GenericConnection'
 
         if type == 'ORACLE_NOSQL':
             return 'OracleNosqlConnection'
 
-        if type == 'AZURE_SYNAPSE_ANALYTICS':
-            return 'AzureSynapseConnection'
-
         if type == 'REDIS':
             return 'RedisConnection'
+
+        if type == 'GOOGLE_PUBSUB':
+            return 'GooglePubSubConnection'
         else:
             return 'Connection'
 
@@ -421,7 +445,7 @@ class Connection(object):
         **[Required]** Gets the connection_type of this Connection.
         The connection type.
 
-        Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -440,7 +464,7 @@ class Connection(object):
         :param connection_type: The connection_type of this Connection.
         :type: str
         """
-        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"]
+        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC"]
         if not value_allowed_none_or_none_sentinel(connection_type, allowed_values):
             connection_type = 'UNKNOWN_ENUM_VALUE'
         self._connection_type = connection_type

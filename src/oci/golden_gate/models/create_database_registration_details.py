@@ -437,6 +437,7 @@ class CreateDatabaseRegistrationDetails(object):
         **[Required]** Gets the password of this CreateDatabaseRegistrationDetails.
         The password Oracle GoldenGate uses to connect the associated system of the given technology.
         It must conform to the specific security requirements including length, case sensitivity, and so on.
+        Deprecated: This field is deprecated and replaced by \"passwordSecretId\". This field will be removed after February 15 2026.
 
 
         :return: The password of this CreateDatabaseRegistrationDetails.
@@ -450,6 +451,7 @@ class CreateDatabaseRegistrationDetails(object):
         Sets the password of this CreateDatabaseRegistrationDetails.
         The password Oracle GoldenGate uses to connect the associated system of the given technology.
         It must conform to the specific security requirements including length, case sensitivity, and so on.
+        Deprecated: This field is deprecated and replaced by \"passwordSecretId\". This field will be removed after February 15 2026.
 
 
         :param password: The password of this CreateDatabaseRegistrationDetails.
@@ -524,6 +526,7 @@ class CreateDatabaseRegistrationDetails(object):
         Gets the wallet of this CreateDatabaseRegistrationDetails.
         The wallet contents Oracle GoldenGate uses to make connections to a database.
         This attribute is expected to be base64 encoded.
+        Deprecated: This field is deprecated and replaced by \"walletSecretId\". This field will be removed after February 15 2026.
 
 
         :return: The wallet of this CreateDatabaseRegistrationDetails.
@@ -537,6 +540,7 @@ class CreateDatabaseRegistrationDetails(object):
         Sets the wallet of this CreateDatabaseRegistrationDetails.
         The wallet contents Oracle GoldenGate uses to make connections to a database.
         This attribute is expected to be base64 encoded.
+        Deprecated: This field is deprecated and replaced by \"walletSecretId\". This field will be removed after February 15 2026.
 
 
         :param wallet: The wallet of this CreateDatabaseRegistrationDetails.

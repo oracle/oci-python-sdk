@@ -167,6 +167,10 @@ class LaunchDbSystemBase(object):
             The value to assign to the private_ip property of this LaunchDbSystemBase.
         :type private_ip: str
 
+        :param private_ip_v6:
+            The value to assign to the private_ip_v6 property of this LaunchDbSystemBase.
+        :type private_ip_v6: str
+
         :param data_collection_options:
             The value to assign to the data_collection_options property of this LaunchDbSystemBase.
         :type data_collection_options: oci.database.models.DataCollectionOptions
@@ -201,6 +205,7 @@ class LaunchDbSystemBase(object):
             'security_attributes': 'dict(str, dict(str, object))',
             'source': 'str',
             'private_ip': 'str',
+            'private_ip_v6': 'str',
             'data_collection_options': 'DataCollectionOptions'
         }
 
@@ -233,6 +238,7 @@ class LaunchDbSystemBase(object):
             'security_attributes': 'securityAttributes',
             'source': 'source',
             'private_ip': 'privateIp',
+            'private_ip_v6': 'privateIpV6',
             'data_collection_options': 'dataCollectionOptions'
         }
 
@@ -264,6 +270,7 @@ class LaunchDbSystemBase(object):
         self._security_attributes = None
         self._source = None
         self._private_ip = None
+        self._private_ip_v6 = None
         self._data_collection_options = None
 
     @staticmethod
@@ -1147,6 +1154,32 @@ class LaunchDbSystemBase(object):
         :type: str
         """
         self._private_ip = private_ip
+
+    @property
+    def private_ip_v6(self):
+        """
+        Gets the private_ip_v6 of this LaunchDbSystemBase.
+        A private IPv6 address of your choice. Must be an available IP address within the subnet's CIDR.
+        If you don't specify a value and the subnet is dual stack, Oracle automatically assigns a private IPv6 address from the subnet.
+
+
+        :return: The private_ip_v6 of this LaunchDbSystemBase.
+        :rtype: str
+        """
+        return self._private_ip_v6
+
+    @private_ip_v6.setter
+    def private_ip_v6(self, private_ip_v6):
+        """
+        Sets the private_ip_v6 of this LaunchDbSystemBase.
+        A private IPv6 address of your choice. Must be an available IP address within the subnet's CIDR.
+        If you don't specify a value and the subnet is dual stack, Oracle automatically assigns a private IPv6 address from the subnet.
+
+
+        :param private_ip_v6: The private_ip_v6 of this LaunchDbSystemBase.
+        :type: str
+        """
+        self._private_ip_v6 = private_ip_v6
 
     @property
     def data_collection_options(self):

@@ -45,6 +45,7 @@ from .create_certificate_details import CreateCertificateDetails
 from .create_connection_assignment_details import CreateConnectionAssignmentDetails
 from .create_connection_details import CreateConnectionDetails
 from .create_database_registration_details import CreateDatabaseRegistrationDetails
+from .create_databricks_connection_details import CreateDatabricksConnectionDetails
 from .create_db2_connection_details import CreateDb2ConnectionDetails
 from .create_deployment_backup_details import CreateDeploymentBackupDetails
 from .create_deployment_details import CreateDeploymentDetails
@@ -53,12 +54,14 @@ from .create_generic_connection_details import CreateGenericConnectionDetails
 from .create_golden_gate_connection_details import CreateGoldenGateConnectionDetails
 from .create_google_big_query_connection_details import CreateGoogleBigQueryConnectionDetails
 from .create_google_cloud_storage_connection_details import CreateGoogleCloudStorageConnectionDetails
+from .create_google_pub_sub_connection_details import CreateGooglePubSubConnectionDetails
 from .create_hdfs_connection_details import CreateHdfsConnectionDetails
 from .create_java_message_service_connection_details import CreateJavaMessageServiceConnectionDetails
 from .create_kafka_connection_details import CreateKafkaConnectionDetails
 from .create_kafka_schema_registry_connection_details import CreateKafkaSchemaRegistryConnectionDetails
 from .create_maintenance_configuration_details import CreateMaintenanceConfigurationDetails
 from .create_maintenance_window_details import CreateMaintenanceWindowDetails
+from .create_microsoft_fabric_connection_details import CreateMicrosoftFabricConnectionDetails
 from .create_microsoft_sqlserver_connection_details import CreateMicrosoftSqlserverConnectionDetails
 from .create_mongo_db_connection_details import CreateMongoDbConnectionDetails
 from .create_mysql_connection_details import CreateMysqlConnectionDetails
@@ -74,6 +77,8 @@ from .create_zero_etl_pipeline_details import CreateZeroEtlPipelineDetails
 from .database_registration import DatabaseRegistration
 from .database_registration_collection import DatabaseRegistrationCollection
 from .database_registration_summary import DatabaseRegistrationSummary
+from .databricks_connection import DatabricksConnection
+from .databricks_connection_summary import DatabricksConnectionSummary
 from .db2_connection import Db2Connection
 from .db2_connection_summary import Db2ConnectionSummary
 from .default_cancel_deployment_backup_details import DefaultCancelDeploymentBackupDetails
@@ -125,6 +130,8 @@ from .google_big_query_connection import GoogleBigQueryConnection
 from .google_big_query_connection_summary import GoogleBigQueryConnectionSummary
 from .google_cloud_storage_connection import GoogleCloudStorageConnection
 from .google_cloud_storage_connection_summary import GoogleCloudStorageConnectionSummary
+from .google_pub_sub_connection import GooglePubSubConnection
+from .google_pub_sub_connection_summary import GooglePubSubConnectionSummary
 from .group_to_roles_mapping_details import GroupToRolesMappingDetails
 from .hdfs_connection import HdfsConnection
 from .hdfs_connection_summary import HdfsConnectionSummary
@@ -143,6 +150,8 @@ from .maintenance_configuration import MaintenanceConfiguration
 from .maintenance_window import MaintenanceWindow
 from .mapping_rule import MappingRule
 from .message_summary import MessageSummary
+from .microsoft_fabric_connection import MicrosoftFabricConnection
+from .microsoft_fabric_connection_summary import MicrosoftFabricConnectionSummary
 from .microsoft_sqlserver_connection import MicrosoftSqlserverConnection
 from .microsoft_sqlserver_connection_summary import MicrosoftSqlserverConnectionSummary
 from .mongo_db_connection import MongoDbConnection
@@ -210,6 +219,7 @@ from .update_azure_data_lake_storage_connection_details import UpdateAzureDataLa
 from .update_azure_synapse_connection_details import UpdateAzureSynapseConnectionDetails
 from .update_connection_details import UpdateConnectionDetails
 from .update_database_registration_details import UpdateDatabaseRegistrationDetails
+from .update_databricks_connection_details import UpdateDatabricksConnectionDetails
 from .update_db2_connection_details import UpdateDb2ConnectionDetails
 from .update_deployment_backup_details import UpdateDeploymentBackupDetails
 from .update_deployment_details import UpdateDeploymentDetails
@@ -218,6 +228,7 @@ from .update_generic_connection_details import UpdateGenericConnectionDetails
 from .update_golden_gate_connection_details import UpdateGoldenGateConnectionDetails
 from .update_google_big_query_connection_details import UpdateGoogleBigQueryConnectionDetails
 from .update_google_cloud_storage_connection_details import UpdateGoogleCloudStorageConnectionDetails
+from .update_google_pub_sub_connection_details import UpdateGooglePubSubConnectionDetails
 from .update_group_to_roles_mapping_details import UpdateGroupToRolesMappingDetails
 from .update_hdfs_connection_details import UpdateHdfsConnectionDetails
 from .update_java_message_service_connection_details import UpdateJavaMessageServiceConnectionDetails
@@ -225,6 +236,7 @@ from .update_kafka_connection_details import UpdateKafkaConnectionDetails
 from .update_kafka_schema_registry_connection_details import UpdateKafkaSchemaRegistryConnectionDetails
 from .update_maintenance_configuration_details import UpdateMaintenanceConfigurationDetails
 from .update_maintenance_window_details import UpdateMaintenanceWindowDetails
+from .update_microsoft_fabric_connection_details import UpdateMicrosoftFabricConnectionDetails
 from .update_microsoft_sqlserver_connection_details import UpdateMicrosoftSqlserverConnectionDetails
 from .update_mongo_db_connection_details import UpdateMongoDbConnectionDetails
 from .update_mysql_connection_details import UpdateMysqlConnectionDetails
@@ -289,6 +301,7 @@ golden_gate_type_mapping = {
     "CreateConnectionAssignmentDetails": CreateConnectionAssignmentDetails,
     "CreateConnectionDetails": CreateConnectionDetails,
     "CreateDatabaseRegistrationDetails": CreateDatabaseRegistrationDetails,
+    "CreateDatabricksConnectionDetails": CreateDatabricksConnectionDetails,
     "CreateDb2ConnectionDetails": CreateDb2ConnectionDetails,
     "CreateDeploymentBackupDetails": CreateDeploymentBackupDetails,
     "CreateDeploymentDetails": CreateDeploymentDetails,
@@ -297,12 +310,14 @@ golden_gate_type_mapping = {
     "CreateGoldenGateConnectionDetails": CreateGoldenGateConnectionDetails,
     "CreateGoogleBigQueryConnectionDetails": CreateGoogleBigQueryConnectionDetails,
     "CreateGoogleCloudStorageConnectionDetails": CreateGoogleCloudStorageConnectionDetails,
+    "CreateGooglePubSubConnectionDetails": CreateGooglePubSubConnectionDetails,
     "CreateHdfsConnectionDetails": CreateHdfsConnectionDetails,
     "CreateJavaMessageServiceConnectionDetails": CreateJavaMessageServiceConnectionDetails,
     "CreateKafkaConnectionDetails": CreateKafkaConnectionDetails,
     "CreateKafkaSchemaRegistryConnectionDetails": CreateKafkaSchemaRegistryConnectionDetails,
     "CreateMaintenanceConfigurationDetails": CreateMaintenanceConfigurationDetails,
     "CreateMaintenanceWindowDetails": CreateMaintenanceWindowDetails,
+    "CreateMicrosoftFabricConnectionDetails": CreateMicrosoftFabricConnectionDetails,
     "CreateMicrosoftSqlserverConnectionDetails": CreateMicrosoftSqlserverConnectionDetails,
     "CreateMongoDbConnectionDetails": CreateMongoDbConnectionDetails,
     "CreateMysqlConnectionDetails": CreateMysqlConnectionDetails,
@@ -318,6 +333,8 @@ golden_gate_type_mapping = {
     "DatabaseRegistration": DatabaseRegistration,
     "DatabaseRegistrationCollection": DatabaseRegistrationCollection,
     "DatabaseRegistrationSummary": DatabaseRegistrationSummary,
+    "DatabricksConnection": DatabricksConnection,
+    "DatabricksConnectionSummary": DatabricksConnectionSummary,
     "Db2Connection": Db2Connection,
     "Db2ConnectionSummary": Db2ConnectionSummary,
     "DefaultCancelDeploymentBackupDetails": DefaultCancelDeploymentBackupDetails,
@@ -369,6 +386,8 @@ golden_gate_type_mapping = {
     "GoogleBigQueryConnectionSummary": GoogleBigQueryConnectionSummary,
     "GoogleCloudStorageConnection": GoogleCloudStorageConnection,
     "GoogleCloudStorageConnectionSummary": GoogleCloudStorageConnectionSummary,
+    "GooglePubSubConnection": GooglePubSubConnection,
+    "GooglePubSubConnectionSummary": GooglePubSubConnectionSummary,
     "GroupToRolesMappingDetails": GroupToRolesMappingDetails,
     "HdfsConnection": HdfsConnection,
     "HdfsConnectionSummary": HdfsConnectionSummary,
@@ -387,6 +406,8 @@ golden_gate_type_mapping = {
     "MaintenanceWindow": MaintenanceWindow,
     "MappingRule": MappingRule,
     "MessageSummary": MessageSummary,
+    "MicrosoftFabricConnection": MicrosoftFabricConnection,
+    "MicrosoftFabricConnectionSummary": MicrosoftFabricConnectionSummary,
     "MicrosoftSqlserverConnection": MicrosoftSqlserverConnection,
     "MicrosoftSqlserverConnectionSummary": MicrosoftSqlserverConnectionSummary,
     "MongoDbConnection": MongoDbConnection,
@@ -454,6 +475,7 @@ golden_gate_type_mapping = {
     "UpdateAzureSynapseConnectionDetails": UpdateAzureSynapseConnectionDetails,
     "UpdateConnectionDetails": UpdateConnectionDetails,
     "UpdateDatabaseRegistrationDetails": UpdateDatabaseRegistrationDetails,
+    "UpdateDatabricksConnectionDetails": UpdateDatabricksConnectionDetails,
     "UpdateDb2ConnectionDetails": UpdateDb2ConnectionDetails,
     "UpdateDeploymentBackupDetails": UpdateDeploymentBackupDetails,
     "UpdateDeploymentDetails": UpdateDeploymentDetails,
@@ -462,6 +484,7 @@ golden_gate_type_mapping = {
     "UpdateGoldenGateConnectionDetails": UpdateGoldenGateConnectionDetails,
     "UpdateGoogleBigQueryConnectionDetails": UpdateGoogleBigQueryConnectionDetails,
     "UpdateGoogleCloudStorageConnectionDetails": UpdateGoogleCloudStorageConnectionDetails,
+    "UpdateGooglePubSubConnectionDetails": UpdateGooglePubSubConnectionDetails,
     "UpdateGroupToRolesMappingDetails": UpdateGroupToRolesMappingDetails,
     "UpdateHdfsConnectionDetails": UpdateHdfsConnectionDetails,
     "UpdateJavaMessageServiceConnectionDetails": UpdateJavaMessageServiceConnectionDetails,
@@ -469,6 +492,7 @@ golden_gate_type_mapping = {
     "UpdateKafkaSchemaRegistryConnectionDetails": UpdateKafkaSchemaRegistryConnectionDetails,
     "UpdateMaintenanceConfigurationDetails": UpdateMaintenanceConfigurationDetails,
     "UpdateMaintenanceWindowDetails": UpdateMaintenanceWindowDetails,
+    "UpdateMicrosoftFabricConnectionDetails": UpdateMicrosoftFabricConnectionDetails,
     "UpdateMicrosoftSqlserverConnectionDetails": UpdateMicrosoftSqlserverConnectionDetails,
     "UpdateMongoDbConnectionDetails": UpdateMongoDbConnectionDetails,
     "UpdateMysqlConnectionDetails": UpdateMysqlConnectionDetails,

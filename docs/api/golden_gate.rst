@@ -57,6 +57,7 @@ Golden Gate
     oci.golden_gate.models.CreateConnectionAssignmentDetails
     oci.golden_gate.models.CreateConnectionDetails
     oci.golden_gate.models.CreateDatabaseRegistrationDetails
+    oci.golden_gate.models.CreateDatabricksConnectionDetails
     oci.golden_gate.models.CreateDb2ConnectionDetails
     oci.golden_gate.models.CreateDeploymentBackupDetails
     oci.golden_gate.models.CreateDeploymentDetails
@@ -65,12 +66,14 @@ Golden Gate
     oci.golden_gate.models.CreateGoldenGateConnectionDetails
     oci.golden_gate.models.CreateGoogleBigQueryConnectionDetails
     oci.golden_gate.models.CreateGoogleCloudStorageConnectionDetails
+    oci.golden_gate.models.CreateGooglePubSubConnectionDetails
     oci.golden_gate.models.CreateHdfsConnectionDetails
     oci.golden_gate.models.CreateJavaMessageServiceConnectionDetails
     oci.golden_gate.models.CreateKafkaConnectionDetails
     oci.golden_gate.models.CreateKafkaSchemaRegistryConnectionDetails
     oci.golden_gate.models.CreateMaintenanceConfigurationDetails
     oci.golden_gate.models.CreateMaintenanceWindowDetails
+    oci.golden_gate.models.CreateMicrosoftFabricConnectionDetails
     oci.golden_gate.models.CreateMicrosoftSqlserverConnectionDetails
     oci.golden_gate.models.CreateMongoDbConnectionDetails
     oci.golden_gate.models.CreateMysqlConnectionDetails
@@ -86,6 +89,8 @@ Golden Gate
     oci.golden_gate.models.DatabaseRegistration
     oci.golden_gate.models.DatabaseRegistrationCollection
     oci.golden_gate.models.DatabaseRegistrationSummary
+    oci.golden_gate.models.DatabricksConnection
+    oci.golden_gate.models.DatabricksConnectionSummary
     oci.golden_gate.models.Db2Connection
     oci.golden_gate.models.Db2ConnectionSummary
     oci.golden_gate.models.DefaultCancelDeploymentBackupDetails
@@ -137,6 +142,8 @@ Golden Gate
     oci.golden_gate.models.GoogleBigQueryConnectionSummary
     oci.golden_gate.models.GoogleCloudStorageConnection
     oci.golden_gate.models.GoogleCloudStorageConnectionSummary
+    oci.golden_gate.models.GooglePubSubConnection
+    oci.golden_gate.models.GooglePubSubConnectionSummary
     oci.golden_gate.models.GroupToRolesMappingDetails
     oci.golden_gate.models.HdfsConnection
     oci.golden_gate.models.HdfsConnectionSummary
@@ -155,6 +162,8 @@ Golden Gate
     oci.golden_gate.models.MaintenanceWindow
     oci.golden_gate.models.MappingRule
     oci.golden_gate.models.MessageSummary
+    oci.golden_gate.models.MicrosoftFabricConnection
+    oci.golden_gate.models.MicrosoftFabricConnectionSummary
     oci.golden_gate.models.MicrosoftSqlserverConnection
     oci.golden_gate.models.MicrosoftSqlserverConnectionSummary
     oci.golden_gate.models.MongoDbConnection
@@ -222,6 +231,7 @@ Golden Gate
     oci.golden_gate.models.UpdateAzureSynapseConnectionDetails
     oci.golden_gate.models.UpdateConnectionDetails
     oci.golden_gate.models.UpdateDatabaseRegistrationDetails
+    oci.golden_gate.models.UpdateDatabricksConnectionDetails
     oci.golden_gate.models.UpdateDb2ConnectionDetails
     oci.golden_gate.models.UpdateDeploymentBackupDetails
     oci.golden_gate.models.UpdateDeploymentDetails
@@ -230,6 +240,7 @@ Golden Gate
     oci.golden_gate.models.UpdateGoldenGateConnectionDetails
     oci.golden_gate.models.UpdateGoogleBigQueryConnectionDetails
     oci.golden_gate.models.UpdateGoogleCloudStorageConnectionDetails
+    oci.golden_gate.models.UpdateGooglePubSubConnectionDetails
     oci.golden_gate.models.UpdateGroupToRolesMappingDetails
     oci.golden_gate.models.UpdateHdfsConnectionDetails
     oci.golden_gate.models.UpdateJavaMessageServiceConnectionDetails
@@ -237,6 +248,7 @@ Golden Gate
     oci.golden_gate.models.UpdateKafkaSchemaRegistryConnectionDetails
     oci.golden_gate.models.UpdateMaintenanceConfigurationDetails
     oci.golden_gate.models.UpdateMaintenanceWindowDetails
+    oci.golden_gate.models.UpdateMicrosoftFabricConnectionDetails
     oci.golden_gate.models.UpdateMicrosoftSqlserverConnectionDetails
     oci.golden_gate.models.UpdateMongoDbConnectionDetails
     oci.golden_gate.models.UpdateMysqlConnectionDetails

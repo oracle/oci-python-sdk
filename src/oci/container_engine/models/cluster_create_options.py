@@ -15,6 +15,14 @@ class ClusterCreateOptions(object):
     The properties that define extra options for a cluster.
     """
 
+    #: A constant which can be used with the ip_families property of a ClusterCreateOptions.
+    #: This constant has a value of "IPv4"
+    IP_FAMILIES_I_PV4 = "IPv4"
+
+    #: A constant which can be used with the ip_families property of a ClusterCreateOptions.
+    #: This constant has a value of "IPv6"
+    IP_FAMILIES_I_PV6 = "IPv6"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ClusterCreateOptions object with values from keyword arguments.
@@ -23,6 +31,12 @@ class ClusterCreateOptions(object):
         :param service_lb_subnet_ids:
             The value to assign to the service_lb_subnet_ids property of this ClusterCreateOptions.
         :type service_lb_subnet_ids: list[str]
+
+        :param ip_families:
+            The value to assign to the ip_families property of this ClusterCreateOptions.
+            Allowed values for items in this list are: "IPv4", "IPv6", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type ip_families: list[str]
 
         :param kubernetes_network_config:
             The value to assign to the kubernetes_network_config property of this ClusterCreateOptions.
@@ -55,6 +69,7 @@ class ClusterCreateOptions(object):
         """
         self.swagger_types = {
             'service_lb_subnet_ids': 'list[str]',
+            'ip_families': 'list[str]',
             'kubernetes_network_config': 'KubernetesNetworkConfig',
             'add_ons': 'AddOnOptions',
             'admission_controller_options': 'AdmissionControllerOptions',
@@ -66,6 +81,7 @@ class ClusterCreateOptions(object):
 
         self.attribute_map = {
             'service_lb_subnet_ids': 'serviceLbSubnetIds',
+            'ip_families': 'ipFamilies',
             'kubernetes_network_config': 'kubernetesNetworkConfig',
             'add_ons': 'addOns',
             'admission_controller_options': 'admissionControllerOptions',
@@ -76,6 +92,7 @@ class ClusterCreateOptions(object):
         }
 
         self._service_lb_subnet_ids = None
+        self._ip_families = None
         self._kubernetes_network_config = None
         self._add_ons = None
         self._admission_controller_options = None
@@ -107,6 +124,36 @@ class ClusterCreateOptions(object):
         :type: list[str]
         """
         self._service_lb_subnet_ids = service_lb_subnet_ids
+
+    @property
+    def ip_families(self):
+        """
+        Gets the ip_families of this ClusterCreateOptions.
+        IP family to use for single stack or define the order of IP families for dual-stack
+
+        Allowed values for items in this list are: "IPv4", "IPv6", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The ip_families of this ClusterCreateOptions.
+        :rtype: list[str]
+        """
+        return self._ip_families
+
+    @ip_families.setter
+    def ip_families(self, ip_families):
+        """
+        Sets the ip_families of this ClusterCreateOptions.
+        IP family to use for single stack or define the order of IP families for dual-stack
+
+
+        :param ip_families: The ip_families of this ClusterCreateOptions.
+        :type: list[str]
+        """
+        allowed_values = ["IPv4", "IPv6"]
+        if ip_families:
+            ip_families[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in ip_families]
+        self._ip_families = ip_families
 
     @property
     def kubernetes_network_config(self):

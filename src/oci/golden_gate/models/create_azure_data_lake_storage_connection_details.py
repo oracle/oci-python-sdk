@@ -23,7 +23,7 @@ class CreateAzureDataLakeStorageConnectionDetails(CreateConnectionDetails):
 
         :param connection_type:
             The value to assign to the connection_type property of this CreateAzureDataLakeStorageConnectionDetails.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC"
         :type connection_type: str
 
         :param display_name:
@@ -285,6 +285,7 @@ class CreateAzureDataLakeStorageConnectionDetails(CreateConnectionDetails):
         Gets the account_key of this CreateAzureDataLakeStorageConnectionDetails.
         Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'.
         e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
+        Deprecated: This field is deprecated and replaced by \"accountKeySecretId\". This field will be removed after February 15 2026.
 
 
         :return: The account_key of this CreateAzureDataLakeStorageConnectionDetails.
@@ -298,6 +299,7 @@ class CreateAzureDataLakeStorageConnectionDetails(CreateConnectionDetails):
         Sets the account_key of this CreateAzureDataLakeStorageConnectionDetails.
         Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'.
         e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
+        Deprecated: This field is deprecated and replaced by \"accountKeySecretId\". This field will be removed after February 15 2026.
 
 
         :param account_key: The account_key of this CreateAzureDataLakeStorageConnectionDetails.
@@ -342,6 +344,7 @@ class CreateAzureDataLakeStorageConnectionDetails(CreateConnectionDetails):
         Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is
         required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'.
         e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
+        Deprecated: This field is deprecated and replaced by \"sasTokenSecretId\". This field will be removed after February 15 2026.
 
 
         :return: The sas_token of this CreateAzureDataLakeStorageConnectionDetails.
@@ -356,6 +359,7 @@ class CreateAzureDataLakeStorageConnectionDetails(CreateConnectionDetails):
         Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is
         required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'.
         e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
+        Deprecated: This field is deprecated and replaced by \"sasTokenSecretId\". This field will be removed after February 15 2026.
 
 
         :param sas_token: The sas_token of this CreateAzureDataLakeStorageConnectionDetails.
@@ -451,6 +455,7 @@ class CreateAzureDataLakeStorageConnectionDetails(CreateConnectionDetails):
         Gets the client_secret of this CreateAzureDataLakeStorageConnectionDetails.
         Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'.
         e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
+        Deprecated: This field is deprecated and replaced by \"clientSecretSecretId\". This field will be removed after February 15 2026.
 
 
         :return: The client_secret of this CreateAzureDataLakeStorageConnectionDetails.
@@ -464,6 +469,7 @@ class CreateAzureDataLakeStorageConnectionDetails(CreateConnectionDetails):
         Sets the client_secret of this CreateAzureDataLakeStorageConnectionDetails.
         Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'.
         e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
+        Deprecated: This field is deprecated and replaced by \"clientSecretSecretId\". This field will be removed after February 15 2026.
 
 
         :param client_secret: The client_secret of this CreateAzureDataLakeStorageConnectionDetails.

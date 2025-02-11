@@ -23,6 +23,10 @@ class CreateAutonomousDatabaseFromBackupDetails(CreateAutonomousDatabaseBase):
     #: This constant has a value of "METADATA"
     CLONE_TYPE_METADATA = "METADATA"
 
+    #: A constant which can be used with the clone_type property of a CreateAutonomousDatabaseFromBackupDetails.
+    #: This constant has a value of "PARTIAL"
+    CLONE_TYPE_PARTIAL = "PARTIAL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateAutonomousDatabaseFromBackupDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.database.models.CreateAutonomousDatabaseFromBackupDetails.source` attribute
@@ -256,8 +260,12 @@ class CreateAutonomousDatabaseFromBackupDetails(CreateAutonomousDatabaseBase):
 
         :param clone_type:
             The value to assign to the clone_type property of this CreateAutonomousDatabaseFromBackupDetails.
-            Allowed values for this property are: "FULL", "METADATA"
+            Allowed values for this property are: "FULL", "METADATA", "PARTIAL"
         :type clone_type: str
+
+        :param clone_table_space_list:
+            The value to assign to the clone_table_space_list property of this CreateAutonomousDatabaseFromBackupDetails.
+        :type clone_table_space_list: list[int]
 
         """
         self.swagger_types = {
@@ -316,7 +324,8 @@ class CreateAutonomousDatabaseFromBackupDetails(CreateAutonomousDatabaseBase):
             'secret_id': 'str',
             'secret_version_number': 'int',
             'autonomous_database_backup_id': 'str',
-            'clone_type': 'str'
+            'clone_type': 'str',
+            'clone_table_space_list': 'list[int]'
         }
 
         self.attribute_map = {
@@ -375,7 +384,8 @@ class CreateAutonomousDatabaseFromBackupDetails(CreateAutonomousDatabaseBase):
             'secret_id': 'secretId',
             'secret_version_number': 'secretVersionNumber',
             'autonomous_database_backup_id': 'autonomousDatabaseBackupId',
-            'clone_type': 'cloneType'
+            'clone_type': 'cloneType',
+            'clone_table_space_list': 'cloneTableSpaceList'
         }
 
         self._subscription_id = None
@@ -434,6 +444,7 @@ class CreateAutonomousDatabaseFromBackupDetails(CreateAutonomousDatabaseBase):
         self._secret_version_number = None
         self._autonomous_database_backup_id = None
         self._clone_type = None
+        self._clone_table_space_list = None
         self._source = 'BACKUP_FROM_ID'
 
     @property
@@ -470,7 +481,7 @@ class CreateAutonomousDatabaseFromBackupDetails(CreateAutonomousDatabaseBase):
         **[Required]** Gets the clone_type of this CreateAutonomousDatabaseFromBackupDetails.
         The Autonomous Database clone type.
 
-        Allowed values for this property are: "FULL", "METADATA"
+        Allowed values for this property are: "FULL", "METADATA", "PARTIAL"
 
 
         :return: The clone_type of this CreateAutonomousDatabaseFromBackupDetails.
@@ -488,12 +499,36 @@ class CreateAutonomousDatabaseFromBackupDetails(CreateAutonomousDatabaseBase):
         :param clone_type: The clone_type of this CreateAutonomousDatabaseFromBackupDetails.
         :type: str
         """
-        allowed_values = ["FULL", "METADATA"]
+        allowed_values = ["FULL", "METADATA", "PARTIAL"]
         if not value_allowed_none_or_none_sentinel(clone_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `clone_type`, must be None or one of {allowed_values}"
             )
         self._clone_type = clone_type
+
+    @property
+    def clone_table_space_list(self):
+        """
+        Gets the clone_table_space_list of this CreateAutonomousDatabaseFromBackupDetails.
+        A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
+
+
+        :return: The clone_table_space_list of this CreateAutonomousDatabaseFromBackupDetails.
+        :rtype: list[int]
+        """
+        return self._clone_table_space_list
+
+    @clone_table_space_list.setter
+    def clone_table_space_list(self, clone_table_space_list):
+        """
+        Sets the clone_table_space_list of this CreateAutonomousDatabaseFromBackupDetails.
+        A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
+
+
+        :param clone_table_space_list: The clone_table_space_list of this CreateAutonomousDatabaseFromBackupDetails.
+        :type: list[int]
+        """
+        self._clone_table_space_list = clone_table_space_list
 
     def __repr__(self):
         return formatted_flat_dict(self)

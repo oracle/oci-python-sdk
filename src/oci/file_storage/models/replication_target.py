@@ -142,6 +142,10 @@ class ReplicationTarget(object):
             The value to assign to the defined_tags property of this ReplicationTarget.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this ReplicationTarget.
+        :type system_tags: dict(str, dict(str, object))
+
         :param lifecycle_details:
             The value to assign to the lifecycle_details property of this ReplicationTarget.
         :type lifecycle_details: str
@@ -163,6 +167,7 @@ class ReplicationTarget(object):
             'delta_progress': 'int',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))',
             'lifecycle_details': 'str'
         }
 
@@ -182,6 +187,7 @@ class ReplicationTarget(object):
             'delta_progress': 'deltaProgress',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'system_tags': 'systemTags',
             'lifecycle_details': 'lifecycleDetails'
         }
 
@@ -200,6 +206,7 @@ class ReplicationTarget(object):
         self._delta_progress = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
         self._lifecycle_details = None
 
     @property
@@ -641,6 +648,32 @@ class ReplicationTarget(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this ReplicationTarget.
+        System tags for this resource.
+        System tags are applied to resources by internal OCI services.
+
+
+        :return: The system_tags of this ReplicationTarget.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this ReplicationTarget.
+        System tags for this resource.
+        System tags are applied to resources by internal OCI services.
+
+
+        :param system_tags: The system_tags of this ReplicationTarget.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     @property
     def lifecycle_details(self):

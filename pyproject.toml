@@ -49,7 +49,7 @@ version = {attr = "oci.version.__version__"}
 source = ["src"]
 
 [tool.flake8]
-ignore = ["D203","E501","W504"]
+ignore = ["D203","E501","W504","W292"]
 exclude = [
     ".sdk-venv",
     ".git",

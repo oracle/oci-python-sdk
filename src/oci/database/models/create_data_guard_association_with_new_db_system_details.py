@@ -134,6 +134,10 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
             The value to assign to the private_ip property of this CreateDataGuardAssociationWithNewDbSystemDetails.
         :type private_ip: str
 
+        :param private_ip_v6:
+            The value to assign to the private_ip_v6 property of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        :type private_ip_v6: str
+
         :param license_model:
             The value to assign to the license_model property of this CreateDataGuardAssociationWithNewDbSystemDetails.
             Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
@@ -188,6 +192,7 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
             'time_zone': 'str',
             'fault_domains': 'list[str]',
             'private_ip': 'str',
+            'private_ip_v6': 'str',
             'license_model': 'str',
             'db_system_freeform_tags': 'dict(str, str)',
             'db_system_defined_tags': 'dict(str, dict(str, object))',
@@ -221,6 +226,7 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
             'time_zone': 'timeZone',
             'fault_domains': 'faultDomains',
             'private_ip': 'privateIp',
+            'private_ip_v6': 'privateIpV6',
             'license_model': 'licenseModel',
             'db_system_freeform_tags': 'dbSystemFreeformTags',
             'db_system_defined_tags': 'dbSystemDefinedTags',
@@ -253,6 +259,7 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
         self._time_zone = None
         self._fault_domains = None
         self._private_ip = None
+        self._private_ip_v6 = None
         self._license_model = None
         self._db_system_freeform_tags = None
         self._db_system_defined_tags = None
@@ -684,6 +691,32 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
         :type: str
         """
         self._private_ip = private_ip
+
+    @property
+    def private_ip_v6(self):
+        """
+        Gets the private_ip_v6 of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        The IPv6 address from the provided OCI subnet which needs to be assigned to the VNIC. If not provided, it will
+        be auto-assigned with an available IPv6 address from the subnet.
+
+
+        :return: The private_ip_v6 of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        :rtype: str
+        """
+        return self._private_ip_v6
+
+    @private_ip_v6.setter
+    def private_ip_v6(self, private_ip_v6):
+        """
+        Sets the private_ip_v6 of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        The IPv6 address from the provided OCI subnet which needs to be assigned to the VNIC. If not provided, it will
+        be auto-assigned with an available IPv6 address from the subnet.
+
+
+        :param private_ip_v6: The private_ip_v6 of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        :type: str
+        """
+        self._private_ip_v6 = private_ip_v6
 
     @property
     def license_model(self):

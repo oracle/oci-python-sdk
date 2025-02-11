@@ -138,6 +138,10 @@ class MonitoredResourceType(object):
             The value to assign to the time_updated property of this MonitoredResourceType.
         :type time_updated: datetime
 
+        :param additional_namespace_map:
+            The value to assign to the additional_namespace_map property of this MonitoredResourceType.
+        :type additional_namespace_map: dict(str, str)
+
         :param metadata:
             The value to assign to the metadata property of this MonitoredResourceType.
         :type metadata: oci.stack_monitoring.models.ResourceTypeMetadataDetails
@@ -167,6 +171,7 @@ class MonitoredResourceType(object):
             'resource_category': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
+            'additional_namespace_map': 'dict(str, str)',
             'metadata': 'ResourceTypeMetadataDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -185,6 +190,7 @@ class MonitoredResourceType(object):
             'resource_category': 'resourceCategory',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
+            'additional_namespace_map': 'additionalNamespaceMap',
             'metadata': 'metadata',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -202,6 +208,7 @@ class MonitoredResourceType(object):
         self._resource_category = None
         self._time_created = None
         self._time_updated = None
+        self._additional_namespace_map = None
         self._metadata = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -510,6 +517,30 @@ class MonitoredResourceType(object):
         :type: datetime
         """
         self._time_updated = time_updated
+
+    @property
+    def additional_namespace_map(self):
+        """
+        Gets the additional_namespace_map of this MonitoredResourceType.
+        Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
+
+
+        :return: The additional_namespace_map of this MonitoredResourceType.
+        :rtype: dict(str, str)
+        """
+        return self._additional_namespace_map
+
+    @additional_namespace_map.setter
+    def additional_namespace_map(self, additional_namespace_map):
+        """
+        Sets the additional_namespace_map of this MonitoredResourceType.
+        Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
+
+
+        :param additional_namespace_map: The additional_namespace_map of this MonitoredResourceType.
+        :type: dict(str, str)
+        """
+        self._additional_namespace_map = additional_namespace_map
 
     @property
     def metadata(self):

@@ -23,6 +23,10 @@ class CreateLicenseAutoAssignConfigDetails(CreateConfigDetails):
     #: This constant has a value of "ENTERPRISE_EDITION"
     LICENSE_ENTERPRISE_EDITION = "ENTERPRISE_EDITION"
 
+    #: A constant which can be used with the license property of a CreateLicenseAutoAssignConfigDetails.
+    #: This constant has a value of "ENTERPRISE_EDITION_FOR_GPU_INFRASTRUCTURE"
+    LICENSE_ENTERPRISE_EDITION_FOR_GPU_INFRASTRUCTURE = "ENTERPRISE_EDITION_FOR_GPU_INFRASTRUCTURE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateLicenseAutoAssignConfigDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.stack_monitoring.models.CreateLicenseAutoAssignConfigDetails.config_type` attribute
@@ -51,7 +55,7 @@ class CreateLicenseAutoAssignConfigDetails(CreateConfigDetails):
 
         :param license:
             The value to assign to the license property of this CreateLicenseAutoAssignConfigDetails.
-            Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION"
+            Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_FOR_GPU_INFRASTRUCTURE"
         :type license: str
 
         """
@@ -87,7 +91,7 @@ class CreateLicenseAutoAssignConfigDetails(CreateConfigDetails):
         **[Required]** Gets the license of this CreateLicenseAutoAssignConfigDetails.
         License edition.
 
-        Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION"
+        Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_FOR_GPU_INFRASTRUCTURE"
 
 
         :return: The license of this CreateLicenseAutoAssignConfigDetails.
@@ -105,7 +109,7 @@ class CreateLicenseAutoAssignConfigDetails(CreateConfigDetails):
         :param license: The license of this CreateLicenseAutoAssignConfigDetails.
         :type: str
         """
-        allowed_values = ["STANDARD_EDITION", "ENTERPRISE_EDITION"]
+        allowed_values = ["STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_FOR_GPU_INFRASTRUCTURE"]
         if not value_allowed_none_or_none_sentinel(license, allowed_values):
             raise ValueError(
                 f"Invalid value for `license`, must be None or one of {allowed_values}"

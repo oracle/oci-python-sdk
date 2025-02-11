@@ -836,6 +836,10 @@ class AutonomousDatabase(object):
             The value to assign to the cluster_placement_group_id property of this AutonomousDatabase.
         :type cluster_placement_group_id: str
 
+        :param clone_table_space_list:
+            The value to assign to the clone_table_space_list property of this AutonomousDatabase.
+        :type clone_table_space_list: list[int]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -961,7 +965,8 @@ class AutonomousDatabase(object):
             'remote_disaster_recovery_configuration': 'DisasterRecoveryConfiguration',
             'net_services_architecture': 'str',
             'availability_domain': 'str',
-            'cluster_placement_group_id': 'str'
+            'cluster_placement_group_id': 'str',
+            'clone_table_space_list': 'list[int]'
         }
 
         self.attribute_map = {
@@ -1088,7 +1093,8 @@ class AutonomousDatabase(object):
             'remote_disaster_recovery_configuration': 'remoteDisasterRecoveryConfiguration',
             'net_services_architecture': 'netServicesArchitecture',
             'availability_domain': 'availabilityDomain',
-            'cluster_placement_group_id': 'clusterPlacementGroupId'
+            'cluster_placement_group_id': 'clusterPlacementGroupId',
+            'clone_table_space_list': 'cloneTableSpaceList'
         }
 
         self._id = None
@@ -1215,6 +1221,7 @@ class AutonomousDatabase(object):
         self._net_services_architecture = None
         self._availability_domain = None
         self._cluster_placement_group_id = None
+        self._clone_table_space_list = None
 
     @property
     def id(self):
@@ -4595,6 +4602,30 @@ class AutonomousDatabase(object):
         :type: str
         """
         self._cluster_placement_group_id = cluster_placement_group_id
+
+    @property
+    def clone_table_space_list(self):
+        """
+        Gets the clone_table_space_list of this AutonomousDatabase.
+        A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
+
+
+        :return: The clone_table_space_list of this AutonomousDatabase.
+        :rtype: list[int]
+        """
+        return self._clone_table_space_list
+
+    @clone_table_space_list.setter
+    def clone_table_space_list(self, clone_table_space_list):
+        """
+        Sets the clone_table_space_list of this AutonomousDatabase.
+        A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
+
+
+        :param clone_table_space_list: The clone_table_space_list of this AutonomousDatabase.
+        :type: list[int]
+        """
+        self._clone_table_space_list = clone_table_space_list
 
     def __repr__(self):
         return formatted_flat_dict(self)

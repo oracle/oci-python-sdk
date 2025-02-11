@@ -620,7 +620,7 @@ class MetricExtension(object):
     def enabled_on_resources(self):
         """
         Gets the enabled_on_resources of this MetricExtension.
-        List of resource objects on which this metric extension is enabled.
+        List of resource details objects having resourceIds on which this metric extension is enabled.
 
 
         :return: The enabled_on_resources of this MetricExtension.
@@ -632,7 +632,7 @@ class MetricExtension(object):
     def enabled_on_resources(self, enabled_on_resources):
         """
         Sets the enabled_on_resources of this MetricExtension.
-        List of resource objects on which this metric extension is enabled.
+        List of resource details objects having resourceIds on which this metric extension is enabled.
 
 
         :param enabled_on_resources: The enabled_on_resources of this MetricExtension.

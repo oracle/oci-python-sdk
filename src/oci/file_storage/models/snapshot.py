@@ -104,6 +104,10 @@ class Snapshot(object):
             The value to assign to the defined_tags property of this Snapshot.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this Snapshot.
+        :type system_tags: dict(str, dict(str, object))
+
         :param expiration_time:
             The value to assign to the expiration_time property of this Snapshot.
         :type expiration_time: datetime
@@ -127,6 +131,7 @@ class Snapshot(object):
             'locks': 'list[ResourceLock]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))',
             'expiration_time': 'datetime',
             'filesystem_snapshot_policy_id': 'str'
         }
@@ -145,6 +150,7 @@ class Snapshot(object):
             'locks': 'locks',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'system_tags': 'systemTags',
             'expiration_time': 'expirationTime',
             'filesystem_snapshot_policy_id': 'filesystemSnapshotPolicyId'
         }
@@ -162,6 +168,7 @@ class Snapshot(object):
         self._locks = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
         self._expiration_time = None
         self._filesystem_snapshot_policy_id = None
 
@@ -572,6 +579,32 @@ class Snapshot(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this Snapshot.
+        System tags for this resource.
+        System tags are applied to resources by internal OCI services.
+
+
+        :return: The system_tags of this Snapshot.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this Snapshot.
+        System tags for this resource.
+        System tags are applied to resources by internal OCI services.
+
+
+        :param system_tags: The system_tags of this Snapshot.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     @property
     def expiration_time(self):

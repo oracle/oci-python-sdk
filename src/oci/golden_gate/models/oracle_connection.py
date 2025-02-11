@@ -35,6 +35,26 @@ class OracleConnection(Connection):
     #: This constant has a value of "ORACLE_EXADATA_DATABASE_AT_AZURE"
     TECHNOLOGY_TYPE_ORACLE_EXADATA_DATABASE_AT_AZURE = "ORACLE_EXADATA_DATABASE_AT_AZURE"
 
+    #: A constant which can be used with the technology_type property of a OracleConnection.
+    #: This constant has a value of "ORACLE_AUTONOMOUS_DATABASE_AT_AZURE"
+    TECHNOLOGY_TYPE_ORACLE_AUTONOMOUS_DATABASE_AT_AZURE = "ORACLE_AUTONOMOUS_DATABASE_AT_AZURE"
+
+    #: A constant which can be used with the technology_type property of a OracleConnection.
+    #: This constant has a value of "ORACLE_EXADATA_DATABASE_AT_GOOGLE_CLOUD"
+    TECHNOLOGY_TYPE_ORACLE_EXADATA_DATABASE_AT_GOOGLE_CLOUD = "ORACLE_EXADATA_DATABASE_AT_GOOGLE_CLOUD"
+
+    #: A constant which can be used with the technology_type property of a OracleConnection.
+    #: This constant has a value of "ORACLE_AUTONOMOUS_DATABASE_AT_GOOGLE_CLOUD"
+    TECHNOLOGY_TYPE_ORACLE_AUTONOMOUS_DATABASE_AT_GOOGLE_CLOUD = "ORACLE_AUTONOMOUS_DATABASE_AT_GOOGLE_CLOUD"
+
+    #: A constant which can be used with the technology_type property of a OracleConnection.
+    #: This constant has a value of "ORACLE_EXADATA_DATABASE_AT_AWS"
+    TECHNOLOGY_TYPE_ORACLE_EXADATA_DATABASE_AT_AWS = "ORACLE_EXADATA_DATABASE_AT_AWS"
+
+    #: A constant which can be used with the technology_type property of a OracleConnection.
+    #: This constant has a value of "ORACLE_AUTONOMOUS_DATABASE_AT_AWS"
+    TECHNOLOGY_TYPE_ORACLE_AUTONOMOUS_DATABASE_AT_AWS = "ORACLE_AUTONOMOUS_DATABASE_AT_AWS"
+
     #: A constant which can be used with the authentication_mode property of a OracleConnection.
     #: This constant has a value of "TLS"
     AUTHENTICATION_MODE_TLS = "TLS"
@@ -59,7 +79,7 @@ class OracleConnection(Connection):
 
         :param connection_type:
             The value to assign to the connection_type property of this OracleConnection.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type connection_type: str
 
@@ -145,7 +165,7 @@ class OracleConnection(Connection):
 
         :param technology_type:
             The value to assign to the technology_type property of this OracleConnection.
-            Allowed values for this property are: "AMAZON_RDS_ORACLE", "OCI_AUTONOMOUS_DATABASE", "ORACLE_DATABASE", "ORACLE_EXADATA", "ORACLE_EXADATA_DATABASE_AT_AZURE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "AMAZON_RDS_ORACLE", "OCI_AUTONOMOUS_DATABASE", "ORACLE_DATABASE", "ORACLE_EXADATA", "ORACLE_EXADATA_DATABASE_AT_AZURE", "ORACLE_AUTONOMOUS_DATABASE_AT_AZURE", "ORACLE_EXADATA_DATABASE_AT_GOOGLE_CLOUD", "ORACLE_AUTONOMOUS_DATABASE_AT_GOOGLE_CLOUD", "ORACLE_EXADATA_DATABASE_AT_AWS", "ORACLE_AUTONOMOUS_DATABASE_AT_AWS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type technology_type: str
 
@@ -287,7 +307,7 @@ class OracleConnection(Connection):
         **[Required]** Gets the technology_type of this OracleConnection.
         The Oracle technology type.
 
-        Allowed values for this property are: "AMAZON_RDS_ORACLE", "OCI_AUTONOMOUS_DATABASE", "ORACLE_DATABASE", "ORACLE_EXADATA", "ORACLE_EXADATA_DATABASE_AT_AZURE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "AMAZON_RDS_ORACLE", "OCI_AUTONOMOUS_DATABASE", "ORACLE_DATABASE", "ORACLE_EXADATA", "ORACLE_EXADATA_DATABASE_AT_AZURE", "ORACLE_AUTONOMOUS_DATABASE_AT_AZURE", "ORACLE_EXADATA_DATABASE_AT_GOOGLE_CLOUD", "ORACLE_AUTONOMOUS_DATABASE_AT_GOOGLE_CLOUD", "ORACLE_EXADATA_DATABASE_AT_AWS", "ORACLE_AUTONOMOUS_DATABASE_AT_AWS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -306,7 +326,7 @@ class OracleConnection(Connection):
         :param technology_type: The technology_type of this OracleConnection.
         :type: str
         """
-        allowed_values = ["AMAZON_RDS_ORACLE", "OCI_AUTONOMOUS_DATABASE", "ORACLE_DATABASE", "ORACLE_EXADATA", "ORACLE_EXADATA_DATABASE_AT_AZURE"]
+        allowed_values = ["AMAZON_RDS_ORACLE", "OCI_AUTONOMOUS_DATABASE", "ORACLE_DATABASE", "ORACLE_EXADATA", "ORACLE_EXADATA_DATABASE_AT_AZURE", "ORACLE_AUTONOMOUS_DATABASE_AT_AZURE", "ORACLE_EXADATA_DATABASE_AT_GOOGLE_CLOUD", "ORACLE_AUTONOMOUS_DATABASE_AT_GOOGLE_CLOUD", "ORACLE_EXADATA_DATABASE_AT_AWS", "ORACLE_AUTONOMOUS_DATABASE_AT_AWS"]
         if not value_allowed_none_or_none_sentinel(technology_type, allowed_values):
             technology_type = 'UNKNOWN_ENUM_VALUE'
         self._technology_type = technology_type

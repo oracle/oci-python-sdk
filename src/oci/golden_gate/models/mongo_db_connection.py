@@ -27,6 +27,26 @@ class MongoDbConnection(Connection):
     #: This constant has a value of "AZURE_COSMOS_DB_FOR_MONGODB"
     TECHNOLOGY_TYPE_AZURE_COSMOS_DB_FOR_MONGODB = "AZURE_COSMOS_DB_FOR_MONGODB"
 
+    #: A constant which can be used with the technology_type property of a MongoDbConnection.
+    #: This constant has a value of "AMAZON_DOCUMENT_DB"
+    TECHNOLOGY_TYPE_AMAZON_DOCUMENT_DB = "AMAZON_DOCUMENT_DB"
+
+    #: A constant which can be used with the technology_type property of a MongoDbConnection.
+    #: This constant has a value of "ORACLE_JSON_COLLECTION"
+    TECHNOLOGY_TYPE_ORACLE_JSON_COLLECTION = "ORACLE_JSON_COLLECTION"
+
+    #: A constant which can be used with the security_protocol property of a MongoDbConnection.
+    #: This constant has a value of "PLAIN"
+    SECURITY_PROTOCOL_PLAIN = "PLAIN"
+
+    #: A constant which can be used with the security_protocol property of a MongoDbConnection.
+    #: This constant has a value of "TLS"
+    SECURITY_PROTOCOL_TLS = "TLS"
+
+    #: A constant which can be used with the security_protocol property of a MongoDbConnection.
+    #: This constant has a value of "MTLS"
+    SECURITY_PROTOCOL_MTLS = "MTLS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new MongoDbConnection object with values from keyword arguments. The default value of the :py:attr:`~oci.golden_gate.models.MongoDbConnection.connection_type` attribute
@@ -35,7 +55,7 @@ class MongoDbConnection(Connection):
 
         :param connection_type:
             The value to assign to the connection_type property of this MongoDbConnection.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type connection_type: str
 
@@ -121,7 +141,7 @@ class MongoDbConnection(Connection):
 
         :param technology_type:
             The value to assign to the technology_type property of this MongoDbConnection.
-            Allowed values for this property are: "MONGODB", "OCI_AUTONOMOUS_JSON_DATABASE", "AZURE_COSMOS_DB_FOR_MONGODB", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "MONGODB", "OCI_AUTONOMOUS_JSON_DATABASE", "AZURE_COSMOS_DB_FOR_MONGODB", "AMAZON_DOCUMENT_DB", "ORACLE_JSON_COLLECTION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type technology_type: str
 
@@ -137,9 +157,23 @@ class MongoDbConnection(Connection):
             The value to assign to the database_id property of this MongoDbConnection.
         :type database_id: str
 
+        :param security_protocol:
+            The value to assign to the security_protocol property of this MongoDbConnection.
+            Allowed values for this property are: "PLAIN", "TLS", "MTLS", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type security_protocol: str
+
         :param password_secret_id:
             The value to assign to the password_secret_id property of this MongoDbConnection.
         :type password_secret_id: str
+
+        :param tls_certificate_key_file_secret_id:
+            The value to assign to the tls_certificate_key_file_secret_id property of this MongoDbConnection.
+        :type tls_certificate_key_file_secret_id: str
+
+        :param tls_certificate_key_file_password_secret_id:
+            The value to assign to the tls_certificate_key_file_password_secret_id property of this MongoDbConnection.
+        :type tls_certificate_key_file_password_secret_id: str
 
         """
         self.swagger_types = {
@@ -167,7 +201,10 @@ class MongoDbConnection(Connection):
             'connection_string': 'str',
             'username': 'str',
             'database_id': 'str',
-            'password_secret_id': 'str'
+            'security_protocol': 'str',
+            'password_secret_id': 'str',
+            'tls_certificate_key_file_secret_id': 'str',
+            'tls_certificate_key_file_password_secret_id': 'str'
         }
 
         self.attribute_map = {
@@ -195,7 +232,10 @@ class MongoDbConnection(Connection):
             'connection_string': 'connectionString',
             'username': 'username',
             'database_id': 'databaseId',
-            'password_secret_id': 'passwordSecretId'
+            'security_protocol': 'securityProtocol',
+            'password_secret_id': 'passwordSecretId',
+            'tls_certificate_key_file_secret_id': 'tlsCertificateKeyFileSecretId',
+            'tls_certificate_key_file_password_secret_id': 'tlsCertificateKeyFilePasswordSecretId'
         }
 
         self._connection_type = None
@@ -222,7 +262,10 @@ class MongoDbConnection(Connection):
         self._connection_string = None
         self._username = None
         self._database_id = None
+        self._security_protocol = None
         self._password_secret_id = None
+        self._tls_certificate_key_file_secret_id = None
+        self._tls_certificate_key_file_password_secret_id = None
         self._connection_type = 'MONGODB'
 
     @property
@@ -231,7 +274,7 @@ class MongoDbConnection(Connection):
         **[Required]** Gets the technology_type of this MongoDbConnection.
         The MongoDB technology type.
 
-        Allowed values for this property are: "MONGODB", "OCI_AUTONOMOUS_JSON_DATABASE", "AZURE_COSMOS_DB_FOR_MONGODB", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "MONGODB", "OCI_AUTONOMOUS_JSON_DATABASE", "AZURE_COSMOS_DB_FOR_MONGODB", "AMAZON_DOCUMENT_DB", "ORACLE_JSON_COLLECTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -250,7 +293,7 @@ class MongoDbConnection(Connection):
         :param technology_type: The technology_type of this MongoDbConnection.
         :type: str
         """
-        allowed_values = ["MONGODB", "OCI_AUTONOMOUS_JSON_DATABASE", "AZURE_COSMOS_DB_FOR_MONGODB"]
+        allowed_values = ["MONGODB", "OCI_AUTONOMOUS_JSON_DATABASE", "AZURE_COSMOS_DB_FOR_MONGODB", "AMAZON_DOCUMENT_DB", "ORACLE_JSON_COLLECTION"]
         if not value_allowed_none_or_none_sentinel(technology_type, allowed_values):
             technology_type = 'UNKNOWN_ENUM_VALUE'
         self._technology_type = technology_type
@@ -336,6 +379,36 @@ class MongoDbConnection(Connection):
         self._database_id = database_id
 
     @property
+    def security_protocol(self):
+        """
+        Gets the security_protocol of this MongoDbConnection.
+        Security Protocol for MongoDB.
+
+        Allowed values for this property are: "PLAIN", "TLS", "MTLS", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The security_protocol of this MongoDbConnection.
+        :rtype: str
+        """
+        return self._security_protocol
+
+    @security_protocol.setter
+    def security_protocol(self, security_protocol):
+        """
+        Sets the security_protocol of this MongoDbConnection.
+        Security Protocol for MongoDB.
+
+
+        :param security_protocol: The security_protocol of this MongoDbConnection.
+        :type: str
+        """
+        allowed_values = ["PLAIN", "TLS", "MTLS"]
+        if not value_allowed_none_or_none_sentinel(security_protocol, allowed_values):
+            security_protocol = 'UNKNOWN_ENUM_VALUE'
+        self._security_protocol = security_protocol
+
+    @property
     def password_secret_id(self):
         """
         Gets the password_secret_id of this MongoDbConnection.
@@ -364,6 +437,68 @@ class MongoDbConnection(Connection):
         :type: str
         """
         self._password_secret_id = password_secret_id
+
+    @property
+    def tls_certificate_key_file_secret_id(self):
+        """
+        Gets the tls_certificate_key_file_secret_id of this MongoDbConnection.
+        The `OCID`__ of the Secret that stores the certificate key file of the mtls connection.
+        - The content of a .pem file containing the client private key (for 2-way SSL).
+        Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The tls_certificate_key_file_secret_id of this MongoDbConnection.
+        :rtype: str
+        """
+        return self._tls_certificate_key_file_secret_id
+
+    @tls_certificate_key_file_secret_id.setter
+    def tls_certificate_key_file_secret_id(self, tls_certificate_key_file_secret_id):
+        """
+        Sets the tls_certificate_key_file_secret_id of this MongoDbConnection.
+        The `OCID`__ of the Secret that stores the certificate key file of the mtls connection.
+        - The content of a .pem file containing the client private key (for 2-way SSL).
+        Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param tls_certificate_key_file_secret_id: The tls_certificate_key_file_secret_id of this MongoDbConnection.
+        :type: str
+        """
+        self._tls_certificate_key_file_secret_id = tls_certificate_key_file_secret_id
+
+    @property
+    def tls_certificate_key_file_password_secret_id(self):
+        """
+        Gets the tls_certificate_key_file_password_secret_id of this MongoDbConnection.
+        The `OCID`__ of the Secret that stores the password of the tls certificate key file.
+        Note: When provided, 'tlsCertificateKeyFilePassword' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The tls_certificate_key_file_password_secret_id of this MongoDbConnection.
+        :rtype: str
+        """
+        return self._tls_certificate_key_file_password_secret_id
+
+    @tls_certificate_key_file_password_secret_id.setter
+    def tls_certificate_key_file_password_secret_id(self, tls_certificate_key_file_password_secret_id):
+        """
+        Sets the tls_certificate_key_file_password_secret_id of this MongoDbConnection.
+        The `OCID`__ of the Secret that stores the password of the tls certificate key file.
+        Note: When provided, 'tlsCertificateKeyFilePassword' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param tls_certificate_key_file_password_secret_id: The tls_certificate_key_file_password_secret_id of this MongoDbConnection.
+        :type: str
+        """
+        self._tls_certificate_key_file_password_secret_id = tls_certificate_key_file_password_secret_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

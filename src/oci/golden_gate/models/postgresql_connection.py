@@ -43,6 +43,10 @@ class PostgresqlConnection(Connection):
     #: This constant has a value of "GOOGLE_CLOUD_SQL_POSTGRESQL"
     TECHNOLOGY_TYPE_GOOGLE_CLOUD_SQL_POSTGRESQL = "GOOGLE_CLOUD_SQL_POSTGRESQL"
 
+    #: A constant which can be used with the technology_type property of a PostgresqlConnection.
+    #: This constant has a value of "GOOGLE_ALLOY_DB_FOR_POSTGRESQL"
+    TECHNOLOGY_TYPE_GOOGLE_ALLOY_DB_FOR_POSTGRESQL = "GOOGLE_ALLOY_DB_FOR_POSTGRESQL"
+
     #: A constant which can be used with the security_protocol property of a PostgresqlConnection.
     #: This constant has a value of "PLAIN"
     SECURITY_PROTOCOL_PLAIN = "PLAIN"
@@ -79,7 +83,7 @@ class PostgresqlConnection(Connection):
 
         :param connection_type:
             The value to assign to the connection_type property of this PostgresqlConnection.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type connection_type: str
 
@@ -165,7 +169,7 @@ class PostgresqlConnection(Connection):
 
         :param technology_type:
             The value to assign to the technology_type property of this PostgresqlConnection.
-            Allowed values for this property are: "OCI_POSTGRESQL", "POSTGRESQL_SERVER", "AMAZON_AURORA_POSTGRESQL", "AMAZON_RDS_POSTGRESQL", "AZURE_POSTGRESQL", "AZURE_COSMOS_DB_FOR_POSTGRESQL", "GOOGLE_CLOUD_SQL_POSTGRESQL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "OCI_POSTGRESQL", "POSTGRESQL_SERVER", "AMAZON_AURORA_POSTGRESQL", "AMAZON_RDS_POSTGRESQL", "AZURE_POSTGRESQL", "AZURE_COSMOS_DB_FOR_POSTGRESQL", "GOOGLE_CLOUD_SQL_POSTGRESQL", "GOOGLE_ALLOY_DB_FOR_POSTGRESQL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type technology_type: str
 
@@ -328,7 +332,7 @@ class PostgresqlConnection(Connection):
         **[Required]** Gets the technology_type of this PostgresqlConnection.
         The PostgreSQL technology type.
 
-        Allowed values for this property are: "OCI_POSTGRESQL", "POSTGRESQL_SERVER", "AMAZON_AURORA_POSTGRESQL", "AMAZON_RDS_POSTGRESQL", "AZURE_POSTGRESQL", "AZURE_COSMOS_DB_FOR_POSTGRESQL", "GOOGLE_CLOUD_SQL_POSTGRESQL", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "OCI_POSTGRESQL", "POSTGRESQL_SERVER", "AMAZON_AURORA_POSTGRESQL", "AMAZON_RDS_POSTGRESQL", "AZURE_POSTGRESQL", "AZURE_COSMOS_DB_FOR_POSTGRESQL", "GOOGLE_CLOUD_SQL_POSTGRESQL", "GOOGLE_ALLOY_DB_FOR_POSTGRESQL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -347,7 +351,7 @@ class PostgresqlConnection(Connection):
         :param technology_type: The technology_type of this PostgresqlConnection.
         :type: str
         """
-        allowed_values = ["OCI_POSTGRESQL", "POSTGRESQL_SERVER", "AMAZON_AURORA_POSTGRESQL", "AMAZON_RDS_POSTGRESQL", "AZURE_POSTGRESQL", "AZURE_COSMOS_DB_FOR_POSTGRESQL", "GOOGLE_CLOUD_SQL_POSTGRESQL"]
+        allowed_values = ["OCI_POSTGRESQL", "POSTGRESQL_SERVER", "AMAZON_AURORA_POSTGRESQL", "AMAZON_RDS_POSTGRESQL", "AZURE_POSTGRESQL", "AZURE_COSMOS_DB_FOR_POSTGRESQL", "GOOGLE_CLOUD_SQL_POSTGRESQL", "GOOGLE_ALLOY_DB_FOR_POSTGRESQL"]
         if not value_allowed_none_or_none_sentinel(technology_type, allowed_values):
             technology_type = 'UNKNOWN_ENUM_VALUE'
         self._technology_type = technology_type

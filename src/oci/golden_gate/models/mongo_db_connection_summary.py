@@ -23,7 +23,7 @@ class MongoDbConnectionSummary(ConnectionSummary):
 
         :param connection_type:
             The value to assign to the connection_type property of this MongoDbConnectionSummary.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC"
         :type connection_type: str
 
         :param id:
@@ -119,9 +119,21 @@ class MongoDbConnectionSummary(ConnectionSummary):
             The value to assign to the database_id property of this MongoDbConnectionSummary.
         :type database_id: str
 
+        :param security_protocol:
+            The value to assign to the security_protocol property of this MongoDbConnectionSummary.
+        :type security_protocol: str
+
         :param password_secret_id:
             The value to assign to the password_secret_id property of this MongoDbConnectionSummary.
         :type password_secret_id: str
+
+        :param tls_certificate_key_file_secret_id:
+            The value to assign to the tls_certificate_key_file_secret_id property of this MongoDbConnectionSummary.
+        :type tls_certificate_key_file_secret_id: str
+
+        :param tls_certificate_key_file_password_secret_id:
+            The value to assign to the tls_certificate_key_file_password_secret_id property of this MongoDbConnectionSummary.
+        :type tls_certificate_key_file_password_secret_id: str
 
         """
         self.swagger_types = {
@@ -149,7 +161,10 @@ class MongoDbConnectionSummary(ConnectionSummary):
             'connection_string': 'str',
             'username': 'str',
             'database_id': 'str',
-            'password_secret_id': 'str'
+            'security_protocol': 'str',
+            'password_secret_id': 'str',
+            'tls_certificate_key_file_secret_id': 'str',
+            'tls_certificate_key_file_password_secret_id': 'str'
         }
 
         self.attribute_map = {
@@ -177,7 +192,10 @@ class MongoDbConnectionSummary(ConnectionSummary):
             'connection_string': 'connectionString',
             'username': 'username',
             'database_id': 'databaseId',
-            'password_secret_id': 'passwordSecretId'
+            'security_protocol': 'securityProtocol',
+            'password_secret_id': 'passwordSecretId',
+            'tls_certificate_key_file_secret_id': 'tlsCertificateKeyFileSecretId',
+            'tls_certificate_key_file_password_secret_id': 'tlsCertificateKeyFilePasswordSecretId'
         }
 
         self._connection_type = None
@@ -204,7 +222,10 @@ class MongoDbConnectionSummary(ConnectionSummary):
         self._connection_string = None
         self._username = None
         self._database_id = None
+        self._security_protocol = None
         self._password_secret_id = None
+        self._tls_certificate_key_file_secret_id = None
+        self._tls_certificate_key_file_password_secret_id = None
         self._connection_type = 'MONGODB'
 
     @property
@@ -312,6 +333,30 @@ class MongoDbConnectionSummary(ConnectionSummary):
         self._database_id = database_id
 
     @property
+    def security_protocol(self):
+        """
+        Gets the security_protocol of this MongoDbConnectionSummary.
+        Security Type for MongoDB.
+
+
+        :return: The security_protocol of this MongoDbConnectionSummary.
+        :rtype: str
+        """
+        return self._security_protocol
+
+    @security_protocol.setter
+    def security_protocol(self, security_protocol):
+        """
+        Sets the security_protocol of this MongoDbConnectionSummary.
+        Security Type for MongoDB.
+
+
+        :param security_protocol: The security_protocol of this MongoDbConnectionSummary.
+        :type: str
+        """
+        self._security_protocol = security_protocol
+
+    @property
     def password_secret_id(self):
         """
         Gets the password_secret_id of this MongoDbConnectionSummary.
@@ -340,6 +385,68 @@ class MongoDbConnectionSummary(ConnectionSummary):
         :type: str
         """
         self._password_secret_id = password_secret_id
+
+    @property
+    def tls_certificate_key_file_secret_id(self):
+        """
+        Gets the tls_certificate_key_file_secret_id of this MongoDbConnectionSummary.
+        The `OCID`__ of the Secret that stores the certificate key file of the mtls connection.
+        - The content of a .pem file containing the client private key (for 2-way SSL).
+        Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The tls_certificate_key_file_secret_id of this MongoDbConnectionSummary.
+        :rtype: str
+        """
+        return self._tls_certificate_key_file_secret_id
+
+    @tls_certificate_key_file_secret_id.setter
+    def tls_certificate_key_file_secret_id(self, tls_certificate_key_file_secret_id):
+        """
+        Sets the tls_certificate_key_file_secret_id of this MongoDbConnectionSummary.
+        The `OCID`__ of the Secret that stores the certificate key file of the mtls connection.
+        - The content of a .pem file containing the client private key (for 2-way SSL).
+        Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param tls_certificate_key_file_secret_id: The tls_certificate_key_file_secret_id of this MongoDbConnectionSummary.
+        :type: str
+        """
+        self._tls_certificate_key_file_secret_id = tls_certificate_key_file_secret_id
+
+    @property
+    def tls_certificate_key_file_password_secret_id(self):
+        """
+        Gets the tls_certificate_key_file_password_secret_id of this MongoDbConnectionSummary.
+        The `OCID`__ of the Secret that stores the password of the tls certificate key file.
+        Note: When provided, 'tlsCertificateKeyFilePassword' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The tls_certificate_key_file_password_secret_id of this MongoDbConnectionSummary.
+        :rtype: str
+        """
+        return self._tls_certificate_key_file_password_secret_id
+
+    @tls_certificate_key_file_password_secret_id.setter
+    def tls_certificate_key_file_password_secret_id(self, tls_certificate_key_file_password_secret_id):
+        """
+        Sets the tls_certificate_key_file_password_secret_id of this MongoDbConnectionSummary.
+        The `OCID`__ of the Secret that stores the password of the tls certificate key file.
+        Note: When provided, 'tlsCertificateKeyFilePassword' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param tls_certificate_key_file_password_secret_id: The tls_certificate_key_file_password_secret_id of this MongoDbConnectionSummary.
+        :type: str
+        """
+        self._tls_certificate_key_file_password_secret_id = tls_certificate_key_file_password_secret_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

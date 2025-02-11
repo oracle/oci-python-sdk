@@ -82,6 +82,10 @@ class ReplicationSummary(object):
             The value to assign to the defined_tags property of this ReplicationSummary.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this ReplicationSummary.
+        :type system_tags: dict(str, dict(str, object))
+
         :param lifecycle_details:
             The value to assign to the lifecycle_details property of this ReplicationSummary.
         :type lifecycle_details: str
@@ -102,6 +106,7 @@ class ReplicationSummary(object):
             'replication_interval': 'int',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))',
             'lifecycle_details': 'str',
             'recovery_point_time': 'datetime'
         }
@@ -117,6 +122,7 @@ class ReplicationSummary(object):
             'replication_interval': 'replicationInterval',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'system_tags': 'systemTags',
             'lifecycle_details': 'lifecycleDetails',
             'recovery_point_time': 'recoveryPointTime'
         }
@@ -131,6 +137,7 @@ class ReplicationSummary(object):
         self._replication_interval = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
         self._lifecycle_details = None
         self._recovery_point_time = None
 
@@ -421,6 +428,32 @@ class ReplicationSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this ReplicationSummary.
+        System tags for this resource.
+        System tags are applied to resources by internal OCI services.
+
+
+        :return: The system_tags of this ReplicationSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this ReplicationSummary.
+        System tags for this resource.
+        System tags are applied to resources by internal OCI services.
+
+
+        :param system_tags: The system_tags of this ReplicationSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     @property
     def lifecycle_details(self):

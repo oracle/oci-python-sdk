@@ -70,7 +70,10 @@ from .aws_key_details import AwsKeyDetails
 from .azure_key_details import AzureKeyDetails
 from .backup import Backup
 from .backup_destination import BackupDestination
+from .backup_destination_configuration_summary import BackupDestinationConfigurationSummary
 from .backup_destination_details import BackupDestinationDetails
+from .backup_destination_details_summary import BackupDestinationDetailsSummary
+from .backup_destination_properties import BackupDestinationProperties
 from .backup_destination_summary import BackupDestinationSummary
 from .backup_summary import BackupSummary
 from .cancel_execution_window_details import CancelExecutionWindowDetails
@@ -369,6 +372,7 @@ from .pluggable_database_refreshable_clone_config import PluggableDatabaseRefres
 from .pluggable_database_summary import PluggableDatabaseSummary
 from .recommended_scheduled_action_summary import RecommendedScheduledActionSummary
 from .recommended_scheduled_actions_collection import RecommendedScheduledActionsCollection
+from .recovery_appliance_details import RecoveryApplianceDetails
 from .refreshable_clone_collection import RefreshableCloneCollection
 from .refreshable_clone_summary import RefreshableCloneSummary
 from .register_autonomous_database_data_safe_details import RegisterAutonomousDatabaseDataSafeDetails
@@ -543,7 +547,10 @@ database_type_mapping = {
     "AzureKeyDetails": AzureKeyDetails,
     "Backup": Backup,
     "BackupDestination": BackupDestination,
+    "BackupDestinationConfigurationSummary": BackupDestinationConfigurationSummary,
     "BackupDestinationDetails": BackupDestinationDetails,
+    "BackupDestinationDetailsSummary": BackupDestinationDetailsSummary,
+    "BackupDestinationProperties": BackupDestinationProperties,
     "BackupDestinationSummary": BackupDestinationSummary,
     "BackupSummary": BackupSummary,
     "CancelExecutionWindowDetails": CancelExecutionWindowDetails,
@@ -842,6 +849,7 @@ database_type_mapping = {
     "PluggableDatabaseSummary": PluggableDatabaseSummary,
     "RecommendedScheduledActionSummary": RecommendedScheduledActionSummary,
     "RecommendedScheduledActionsCollection": RecommendedScheduledActionsCollection,
+    "RecoveryApplianceDetails": RecoveryApplianceDetails,
     "RefreshableCloneCollection": RefreshableCloneCollection,
     "RefreshableCloneSummary": RefreshableCloneSummary,
     "RegisterAutonomousDatabaseDataSafeDetails": RegisterAutonomousDatabaseDataSafeDetails,

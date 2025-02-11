@@ -23,7 +23,7 @@ class CreateSnowflakeConnectionDetails(CreateConnectionDetails):
 
         :param connection_type:
             The value to assign to the connection_type property of this CreateSnowflakeConnectionDetails.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC"
         :type connection_type: str
 
         :param display_name:
@@ -298,6 +298,7 @@ class CreateSnowflakeConnectionDetails(CreateConnectionDetails):
         """
         Gets the password of this CreateSnowflakeConnectionDetails.
         The password Oracle GoldenGate uses to connect to Snowflake platform.
+        Deprecated: This field is deprecated and replaced by \"passwordSecretId\". This field will be removed after February 15 2026.
 
 
         :return: The password of this CreateSnowflakeConnectionDetails.
@@ -310,6 +311,7 @@ class CreateSnowflakeConnectionDetails(CreateConnectionDetails):
         """
         Sets the password of this CreateSnowflakeConnectionDetails.
         The password Oracle GoldenGate uses to connect to Snowflake platform.
+        Deprecated: This field is deprecated and replaced by \"passwordSecretId\". This field will be removed after February 15 2026.
 
 
         :param password: The password of this CreateSnowflakeConnectionDetails.
@@ -358,6 +360,7 @@ class CreateSnowflakeConnectionDetails(CreateConnectionDetails):
         """
         Gets the private_key_file of this CreateSnowflakeConnectionDetails.
         The base64 encoded content of private key file in PEM format.
+        Deprecated: This field is deprecated and replaced by \"privateKeyFileSecretId\". This field will be removed after February 15 2026.
 
 
         :return: The private_key_file of this CreateSnowflakeConnectionDetails.
@@ -370,6 +373,7 @@ class CreateSnowflakeConnectionDetails(CreateConnectionDetails):
         """
         Sets the private_key_file of this CreateSnowflakeConnectionDetails.
         The base64 encoded content of private key file in PEM format.
+        Deprecated: This field is deprecated and replaced by \"privateKeyFileSecretId\". This field will be removed after February 15 2026.
 
 
         :param private_key_file: The private_key_file of this CreateSnowflakeConnectionDetails.
@@ -414,6 +418,7 @@ class CreateSnowflakeConnectionDetails(CreateConnectionDetails):
         """
         Gets the private_key_passphrase of this CreateSnowflakeConnectionDetails.
         Password if the private key file is encrypted.
+        Deprecated: This field is deprecated and replaced by \"privateKeyPassphraseSecretId\". This field will be removed after February 15 2026.
 
 
         :return: The private_key_passphrase of this CreateSnowflakeConnectionDetails.
@@ -426,6 +431,7 @@ class CreateSnowflakeConnectionDetails(CreateConnectionDetails):
         """
         Sets the private_key_passphrase of this CreateSnowflakeConnectionDetails.
         Password if the private key file is encrypted.
+        Deprecated: This field is deprecated and replaced by \"privateKeyPassphraseSecretId\". This field will be removed after February 15 2026.
 
 
         :param private_key_passphrase: The private_key_passphrase of this CreateSnowflakeConnectionDetails.

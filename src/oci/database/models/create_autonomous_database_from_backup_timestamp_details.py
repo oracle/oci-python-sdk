@@ -23,6 +23,10 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
     #: This constant has a value of "METADATA"
     CLONE_TYPE_METADATA = "METADATA"
 
+    #: A constant which can be used with the clone_type property of a CreateAutonomousDatabaseFromBackupTimestampDetails.
+    #: This constant has a value of "PARTIAL"
+    CLONE_TYPE_PARTIAL = "PARTIAL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateAutonomousDatabaseFromBackupTimestampDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.database.models.CreateAutonomousDatabaseFromBackupTimestampDetails.source` attribute
@@ -260,12 +264,16 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
 
         :param clone_type:
             The value to assign to the clone_type property of this CreateAutonomousDatabaseFromBackupTimestampDetails.
-            Allowed values for this property are: "FULL", "METADATA"
+            Allowed values for this property are: "FULL", "METADATA", "PARTIAL"
         :type clone_type: str
 
         :param use_latest_available_backup_time_stamp:
             The value to assign to the use_latest_available_backup_time_stamp property of this CreateAutonomousDatabaseFromBackupTimestampDetails.
         :type use_latest_available_backup_time_stamp: bool
+
+        :param clone_table_space_list:
+            The value to assign to the clone_table_space_list property of this CreateAutonomousDatabaseFromBackupTimestampDetails.
+        :type clone_table_space_list: list[int]
 
         """
         self.swagger_types = {
@@ -326,7 +334,8 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
             'autonomous_database_id': 'str',
             'timestamp': 'datetime',
             'clone_type': 'str',
-            'use_latest_available_backup_time_stamp': 'bool'
+            'use_latest_available_backup_time_stamp': 'bool',
+            'clone_table_space_list': 'list[int]'
         }
 
         self.attribute_map = {
@@ -387,7 +396,8 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
             'autonomous_database_id': 'autonomousDatabaseId',
             'timestamp': 'timestamp',
             'clone_type': 'cloneType',
-            'use_latest_available_backup_time_stamp': 'useLatestAvailableBackupTimeStamp'
+            'use_latest_available_backup_time_stamp': 'useLatestAvailableBackupTimeStamp',
+            'clone_table_space_list': 'cloneTableSpaceList'
         }
 
         self._subscription_id = None
@@ -448,6 +458,7 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
         self._timestamp = None
         self._clone_type = None
         self._use_latest_available_backup_time_stamp = None
+        self._clone_table_space_list = None
         self._source = 'BACKUP_FROM_TIMESTAMP'
 
     @property
@@ -508,7 +519,7 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
         **[Required]** Gets the clone_type of this CreateAutonomousDatabaseFromBackupTimestampDetails.
         The Autonomous Database clone type.
 
-        Allowed values for this property are: "FULL", "METADATA"
+        Allowed values for this property are: "FULL", "METADATA", "PARTIAL"
 
 
         :return: The clone_type of this CreateAutonomousDatabaseFromBackupTimestampDetails.
@@ -526,7 +537,7 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
         :param clone_type: The clone_type of this CreateAutonomousDatabaseFromBackupTimestampDetails.
         :type: str
         """
-        allowed_values = ["FULL", "METADATA"]
+        allowed_values = ["FULL", "METADATA", "PARTIAL"]
         if not value_allowed_none_or_none_sentinel(clone_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `clone_type`, must be None or one of {allowed_values}"
@@ -556,6 +567,30 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
         :type: bool
         """
         self._use_latest_available_backup_time_stamp = use_latest_available_backup_time_stamp
+
+    @property
+    def clone_table_space_list(self):
+        """
+        Gets the clone_table_space_list of this CreateAutonomousDatabaseFromBackupTimestampDetails.
+        A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
+
+
+        :return: The clone_table_space_list of this CreateAutonomousDatabaseFromBackupTimestampDetails.
+        :rtype: list[int]
+        """
+        return self._clone_table_space_list
+
+    @clone_table_space_list.setter
+    def clone_table_space_list(self, clone_table_space_list):
+        """
+        Sets the clone_table_space_list of this CreateAutonomousDatabaseFromBackupTimestampDetails.
+        A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
+
+
+        :param clone_table_space_list: The clone_table_space_list of this CreateAutonomousDatabaseFromBackupTimestampDetails.
+        :type: list[int]
+        """
+        self._clone_table_space_list = clone_table_space_list
 
     def __repr__(self):
         return formatted_flat_dict(self)

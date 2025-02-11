@@ -23,7 +23,7 @@ class CreateOracleNosqlConnectionDetails(CreateConnectionDetails):
 
         :param connection_type:
             The value to assign to the connection_type property of this CreateOracleNosqlConnectionDetails.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC"
         :type connection_type: str
 
         :param display_name:
@@ -111,6 +111,10 @@ class CreateOracleNosqlConnectionDetails(CreateConnectionDetails):
             The value to assign to the public_key_fingerprint property of this CreateOracleNosqlConnectionDetails.
         :type public_key_fingerprint: str
 
+        :param should_use_resource_principal:
+            The value to assign to the should_use_resource_principal property of this CreateOracleNosqlConnectionDetails.
+        :type should_use_resource_principal: bool
+
         """
         self.swagger_types = {
             'connection_type': 'str',
@@ -134,7 +138,8 @@ class CreateOracleNosqlConnectionDetails(CreateConnectionDetails):
             'private_key_file_secret_id': 'str',
             'private_key_passphrase': 'str',
             'private_key_passphrase_secret_id': 'str',
-            'public_key_fingerprint': 'str'
+            'public_key_fingerprint': 'str',
+            'should_use_resource_principal': 'bool'
         }
 
         self.attribute_map = {
@@ -159,7 +164,8 @@ class CreateOracleNosqlConnectionDetails(CreateConnectionDetails):
             'private_key_file_secret_id': 'privateKeyFileSecretId',
             'private_key_passphrase': 'privateKeyPassphrase',
             'private_key_passphrase_secret_id': 'privateKeyPassphraseSecretId',
-            'public_key_fingerprint': 'publicKeyFingerprint'
+            'public_key_fingerprint': 'publicKeyFingerprint',
+            'should_use_resource_principal': 'shouldUseResourcePrincipal'
         }
 
         self._connection_type = None
@@ -184,6 +190,7 @@ class CreateOracleNosqlConnectionDetails(CreateConnectionDetails):
         self._private_key_passphrase = None
         self._private_key_passphrase_secret_id = None
         self._public_key_fingerprint = None
+        self._should_use_resource_principal = None
         self._connection_type = 'ORACLE_NOSQL'
 
     @property
@@ -243,6 +250,7 @@ class CreateOracleNosqlConnectionDetails(CreateConnectionDetails):
         """
         Gets the region of this CreateOracleNosqlConnectionDetails.
         The name of the region. e.g.: us-ashburn-1
+        If the region is not provided, backend will default to the default region.
 
 
         :return: The region of this CreateOracleNosqlConnectionDetails.
@@ -255,6 +263,7 @@ class CreateOracleNosqlConnectionDetails(CreateConnectionDetails):
         """
         Sets the region of this CreateOracleNosqlConnectionDetails.
         The name of the region. e.g.: us-ashburn-1
+        If the region is not provided, backend will default to the default region.
 
 
         :param region: The region of this CreateOracleNosqlConnectionDetails.
@@ -268,6 +277,7 @@ class CreateOracleNosqlConnectionDetails(CreateConnectionDetails):
         Gets the user_id of this CreateOracleNosqlConnectionDetails.
         The `OCID`__ of the OCI user who will access the Oracle NoSQL database.
         The user must have write access to the table they want to connect to.
+        If the user is not provided, backend will default to the user who is calling the API endpoint.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -283,6 +293,7 @@ class CreateOracleNosqlConnectionDetails(CreateConnectionDetails):
         Sets the user_id of this CreateOracleNosqlConnectionDetails.
         The `OCID`__ of the OCI user who will access the Oracle NoSQL database.
         The user must have write access to the table they want to connect to.
+        If the user is not provided, backend will default to the user who is calling the API endpoint.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -298,6 +309,7 @@ class CreateOracleNosqlConnectionDetails(CreateConnectionDetails):
         Gets the private_key_file of this CreateOracleNosqlConnectionDetails.
         The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint.
         See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        Deprecated: This field is deprecated and replaced by \"privateKeyFileSecretId\". This field will be removed after February 15 2026.
 
 
         :return: The private_key_file of this CreateOracleNosqlConnectionDetails.
@@ -311,6 +323,7 @@ class CreateOracleNosqlConnectionDetails(CreateConnectionDetails):
         Sets the private_key_file of this CreateOracleNosqlConnectionDetails.
         The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint.
         See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        Deprecated: This field is deprecated and replaced by \"privateKeyFileSecretId\". This field will be removed after February 15 2026.
 
 
         :param private_key_file: The private_key_file of this CreateOracleNosqlConnectionDetails.
@@ -355,6 +368,7 @@ class CreateOracleNosqlConnectionDetails(CreateConnectionDetails):
         """
         Gets the private_key_passphrase of this CreateOracleNosqlConnectionDetails.
         The passphrase of the private key.
+        Deprecated: This field is deprecated and replaced by \"privateKeyPassphraseSecretId\". This field will be removed after February 15 2026.
 
 
         :return: The private_key_passphrase of this CreateOracleNosqlConnectionDetails.
@@ -367,6 +381,7 @@ class CreateOracleNosqlConnectionDetails(CreateConnectionDetails):
         """
         Sets the private_key_passphrase of this CreateOracleNosqlConnectionDetails.
         The passphrase of the private key.
+        Deprecated: This field is deprecated and replaced by \"privateKeyPassphraseSecretId\". This field will be removed after February 15 2026.
 
 
         :param private_key_passphrase: The private_key_passphrase of this CreateOracleNosqlConnectionDetails.
@@ -407,7 +422,7 @@ class CreateOracleNosqlConnectionDetails(CreateConnectionDetails):
     @property
     def public_key_fingerprint(self):
         """
-        **[Required]** Gets the public_key_fingerprint of this CreateOracleNosqlConnectionDetails.
+        Gets the public_key_fingerprint of this CreateOracleNosqlConnectionDetails.
         The fingerprint of the API Key of the user specified by the userId.
         See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
 
@@ -429,6 +444,30 @@ class CreateOracleNosqlConnectionDetails(CreateConnectionDetails):
         :type: str
         """
         self._public_key_fingerprint = public_key_fingerprint
+
+    @property
+    def should_use_resource_principal(self):
+        """
+        Gets the should_use_resource_principal of this CreateOracleNosqlConnectionDetails.
+        Indicates that the user intents to connect to the instance through resource principal.
+
+
+        :return: The should_use_resource_principal of this CreateOracleNosqlConnectionDetails.
+        :rtype: bool
+        """
+        return self._should_use_resource_principal
+
+    @should_use_resource_principal.setter
+    def should_use_resource_principal(self, should_use_resource_principal):
+        """
+        Sets the should_use_resource_principal of this CreateOracleNosqlConnectionDetails.
+        Indicates that the user intents to connect to the instance through resource principal.
+
+
+        :param should_use_resource_principal: The should_use_resource_principal of this CreateOracleNosqlConnectionDetails.
+        :type: bool
+        """
+        self._should_use_resource_principal = should_use_resource_principal
 
     def __repr__(self):
         return formatted_flat_dict(self)
