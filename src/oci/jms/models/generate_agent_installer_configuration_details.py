@@ -46,7 +46,7 @@ class GenerateAgentInstallerConfigurationDetails(object):
     def install_key_id(self):
         """
         **[Required]** Gets the install_key_id of this GenerateAgentInstallerConfigurationDetails.
-        The `OCID`__ of the install key for which to generate the configuration file.
+        The `OCID`__ of the management agent install key for which to generate the configuration file.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -60,7 +60,7 @@ class GenerateAgentInstallerConfigurationDetails(object):
     def install_key_id(self, install_key_id):
         """
         Sets the install_key_id of this GenerateAgentInstallerConfigurationDetails.
-        The `OCID`__ of the install key for which to generate the configuration file.
+        The `OCID`__ of the management agent install key for which to generate the configuration file.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

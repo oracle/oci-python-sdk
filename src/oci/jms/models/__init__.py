@@ -55,6 +55,12 @@ from .fleet_agent_os_configuration import FleetAgentOsConfiguration
 from .fleet_collection import FleetCollection
 from .fleet_diagnosis_collection import FleetDiagnosisCollection
 from .fleet_diagnosis_summary import FleetDiagnosisSummary
+from .fleet_error_aggregation import FleetErrorAggregation
+from .fleet_error_aggregation_collection import FleetErrorAggregationCollection
+from .fleet_error_aggregation_summary import FleetErrorAggregationSummary
+from .fleet_error_collection import FleetErrorCollection
+from .fleet_error_details import FleetErrorDetails
+from .fleet_error_summary import FleetErrorSummary
 from .fleet_summary import FleetSummary
 from .generate_agent_deploy_script_details import GenerateAgentDeployScriptDetails
 from .generate_agent_installer_configuration_details import GenerateAgentInstallerConfigurationDetails
@@ -106,6 +112,12 @@ from .performance_tuning_analysis_result import PerformanceTuningAnalysisResult
 from .performance_tuning_analysis_result_collection import PerformanceTuningAnalysisResultCollection
 from .performance_tuning_analysis_result_summary import PerformanceTuningAnalysisResultSummary
 from .plugin import Plugin
+from .plugin_error_aggregation import PluginErrorAggregation
+from .plugin_error_aggregation_collection import PluginErrorAggregationCollection
+from .plugin_error_aggregation_summary import PluginErrorAggregationSummary
+from .plugin_error_collection import PluginErrorCollection
+from .plugin_error_details import PluginErrorDetails
+from .plugin_error_summary import PluginErrorSummary
 from .post_installation_action_settings import PostInstallationActionSettings
 from .principal import Principal
 from .proxies import Proxies
@@ -187,6 +199,12 @@ jms_type_mapping = {
     "FleetCollection": FleetCollection,
     "FleetDiagnosisCollection": FleetDiagnosisCollection,
     "FleetDiagnosisSummary": FleetDiagnosisSummary,
+    "FleetErrorAggregation": FleetErrorAggregation,
+    "FleetErrorAggregationCollection": FleetErrorAggregationCollection,
+    "FleetErrorAggregationSummary": FleetErrorAggregationSummary,
+    "FleetErrorCollection": FleetErrorCollection,
+    "FleetErrorDetails": FleetErrorDetails,
+    "FleetErrorSummary": FleetErrorSummary,
     "FleetSummary": FleetSummary,
     "GenerateAgentDeployScriptDetails": GenerateAgentDeployScriptDetails,
     "GenerateAgentInstallerConfigurationDetails": GenerateAgentInstallerConfigurationDetails,
@@ -238,6 +256,12 @@ jms_type_mapping = {
     "PerformanceTuningAnalysisResultCollection": PerformanceTuningAnalysisResultCollection,
     "PerformanceTuningAnalysisResultSummary": PerformanceTuningAnalysisResultSummary,
     "Plugin": Plugin,
+    "PluginErrorAggregation": PluginErrorAggregation,
+    "PluginErrorAggregationCollection": PluginErrorAggregationCollection,
+    "PluginErrorAggregationSummary": PluginErrorAggregationSummary,
+    "PluginErrorCollection": PluginErrorCollection,
+    "PluginErrorDetails": PluginErrorDetails,
+    "PluginErrorSummary": PluginErrorSummary,
     "PostInstallationActionSettings": PostInstallationActionSettings,
     "Principal": Principal,
     "Proxies": Proxies,

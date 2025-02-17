@@ -126,6 +126,18 @@ class AutonomousDatabaseStandbySummary(object):
             The value to assign to the time_disaster_recovery_role_changed property of this AutonomousDatabaseStandbySummary.
         :type time_disaster_recovery_role_changed: datetime
 
+        :param time_maintenance_begin:
+            The value to assign to the time_maintenance_begin property of this AutonomousDatabaseStandbySummary.
+        :type time_maintenance_begin: datetime
+
+        :param time_maintenance_end:
+            The value to assign to the time_maintenance_end property of this AutonomousDatabaseStandbySummary.
+        :type time_maintenance_end: datetime
+
+        :param maintenance_target_component:
+            The value to assign to the maintenance_target_component property of this AutonomousDatabaseStandbySummary.
+        :type maintenance_target_component: str
+
         :param availability_domain:
             The value to assign to the availability_domain property of this AutonomousDatabaseStandbySummary.
         :type availability_domain: str
@@ -137,6 +149,9 @@ class AutonomousDatabaseStandbySummary(object):
             'lifecycle_details': 'str',
             'time_data_guard_role_changed': 'datetime',
             'time_disaster_recovery_role_changed': 'datetime',
+            'time_maintenance_begin': 'datetime',
+            'time_maintenance_end': 'datetime',
+            'maintenance_target_component': 'str',
             'availability_domain': 'str'
         }
 
@@ -146,6 +161,9 @@ class AutonomousDatabaseStandbySummary(object):
             'lifecycle_details': 'lifecycleDetails',
             'time_data_guard_role_changed': 'timeDataGuardRoleChanged',
             'time_disaster_recovery_role_changed': 'timeDisasterRecoveryRoleChanged',
+            'time_maintenance_begin': 'timeMaintenanceBegin',
+            'time_maintenance_end': 'timeMaintenanceEnd',
+            'maintenance_target_component': 'maintenanceTargetComponent',
             'availability_domain': 'availabilityDomain'
         }
 
@@ -154,6 +172,9 @@ class AutonomousDatabaseStandbySummary(object):
         self._lifecycle_details = None
         self._time_data_guard_role_changed = None
         self._time_disaster_recovery_role_changed = None
+        self._time_maintenance_begin = None
+        self._time_maintenance_end = None
+        self._maintenance_target_component = None
         self._availability_domain = None
 
     @property
@@ -281,6 +302,78 @@ class AutonomousDatabaseStandbySummary(object):
         :type: datetime
         """
         self._time_disaster_recovery_role_changed = time_disaster_recovery_role_changed
+
+    @property
+    def time_maintenance_begin(self):
+        """
+        Gets the time_maintenance_begin of this AutonomousDatabaseStandbySummary.
+        The date and time when maintenance will begin.
+
+
+        :return: The time_maintenance_begin of this AutonomousDatabaseStandbySummary.
+        :rtype: datetime
+        """
+        return self._time_maintenance_begin
+
+    @time_maintenance_begin.setter
+    def time_maintenance_begin(self, time_maintenance_begin):
+        """
+        Sets the time_maintenance_begin of this AutonomousDatabaseStandbySummary.
+        The date and time when maintenance will begin.
+
+
+        :param time_maintenance_begin: The time_maintenance_begin of this AutonomousDatabaseStandbySummary.
+        :type: datetime
+        """
+        self._time_maintenance_begin = time_maintenance_begin
+
+    @property
+    def time_maintenance_end(self):
+        """
+        Gets the time_maintenance_end of this AutonomousDatabaseStandbySummary.
+        The date and time when maintenance will end.
+
+
+        :return: The time_maintenance_end of this AutonomousDatabaseStandbySummary.
+        :rtype: datetime
+        """
+        return self._time_maintenance_end
+
+    @time_maintenance_end.setter
+    def time_maintenance_end(self, time_maintenance_end):
+        """
+        Sets the time_maintenance_end of this AutonomousDatabaseStandbySummary.
+        The date and time when maintenance will end.
+
+
+        :param time_maintenance_end: The time_maintenance_end of this AutonomousDatabaseStandbySummary.
+        :type: datetime
+        """
+        self._time_maintenance_end = time_maintenance_end
+
+    @property
+    def maintenance_target_component(self):
+        """
+        Gets the maintenance_target_component of this AutonomousDatabaseStandbySummary.
+        The component chosen for maintenance.
+
+
+        :return: The maintenance_target_component of this AutonomousDatabaseStandbySummary.
+        :rtype: str
+        """
+        return self._maintenance_target_component
+
+    @maintenance_target_component.setter
+    def maintenance_target_component(self, maintenance_target_component):
+        """
+        Sets the maintenance_target_component of this AutonomousDatabaseStandbySummary.
+        The component chosen for maintenance.
+
+
+        :param maintenance_target_component: The maintenance_target_component of this AutonomousDatabaseStandbySummary.
+        :type: str
+        """
+        self._maintenance_target_component = maintenance_target_component
 
     @property
     def availability_domain(self):

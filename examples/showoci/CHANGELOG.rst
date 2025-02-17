@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+25.02.10 - 25.02.10
+=====================
+* Added announcement details including resources for active announcements
+* Added CSV for IAM Dynamic Groups (for the -iold flag)
+
+=====================
 25.01.13 - 25.01.13
 =====================
 * Added Cloud Advisor Recommendations - run on root compartment only

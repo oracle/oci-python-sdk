@@ -1,5 +1,5 @@
 ##########################################################################
-# Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 #
 # showoci_output.py
@@ -22,7 +22,7 @@ import sys
 
 
 class ShowOCIOutput(object):
-    version = "25.01.13"
+    version = "25.02.10"
 
     ##########################################################################
     # spaces for align
@@ -2282,6 +2282,32 @@ class ShowOCIOutput(object):
             self.__print_error("__print_announcement_main", e)
 
     ##########################################################################
+    # Announcement Active and Detailed
+    ##########################################################################
+    def __print_announcement_detailed(self, announcements):
+
+        try:
+            if not announcements:
+                return
+
+            self.print_header("Announcements Active and Detailed", 2)
+
+            for ann in announcements:
+                print(self.taba + ann['summary'][0:100] + " (" + ann['reference_ticket_number'] + ") - " + ann['announcement_type'] + ", Time: " + ann['time_one_value'][0:16] + " - " + ann['time_two_value'][0:16] + ", Time Created: " + ann['time_created'][0:16] + " (" + ann['lifecycle_state'] + ")")
+                if ann['affected_regions']:
+                    print(self.tabs + "Regions     : " + ann['affected_regions'])
+                if ann['services']:
+                    print(self.tabs + "Services    : " + ann['services'])
+                if ann['affected_resources']:
+                    print(self.tabs + "Resources   : (Not all resources part of this compartment)")
+                    for an in ann['affected_resources']:
+                        print(self.tabs + "              " + an['resource_name'] + " - " + an['region'])
+                print("")
+
+        except Exception as e:
+            self.__print_error("__print_announcement_main", e)
+
+    ##########################################################################
     # Errors
     ##########################################################################
     def __print_errors(self, errors):
@@ -3248,6 +3274,8 @@ class ShowOCIOutput(object):
                     self.__print_data_ai(cdata['data_ai'])
                 if 'apigateways' in cdata:
                     self.__print_api_gateways_main(cdata['apigateways'])
+                if 'announcement_detailed' in cdata:
+                    self.__print_announcement_detailed(cdata['announcement_detailed'])
                 if 'functions' in cdata:
                     self.__print_functions_main(cdata['functions'])
 
@@ -4367,6 +4395,7 @@ class ShowOCICSV(object):
     csv_tags_to_cols = False
     csv_file_header = ""
     csv_announcements = []
+    csv_announcements_detailed = []
     csv_errors = []
     csv_resources = []
     csv_advisor_recommendations = []
@@ -4377,6 +4406,7 @@ class ShowOCICSV(object):
     csv_certificate_ca_bundle = []
     csv_identity_compartments = []
     csv_identity_groups = []
+    csv_identity_dynamic_groups = []
     csv_identity_groups_mapping = []
     csv_identity_users = []
     csv_identity_policies = []
@@ -4566,6 +4596,7 @@ class ShowOCICSV(object):
             self.__print_header("Processing CSV Files", 0)
             self.__export_to_csv_file("all_resources", self.csv_resources)
             self.__export_to_csv_file("announcements", self.csv_announcements)
+            self.__export_to_csv_file("announcements_detailed", self.csv_announcements_detailed)
             self.__export_to_csv_file("errors", self.csv_errors)
 
             self.__export_to_csv_file("advisor_recommendations", self.csv_advisor_recommendations)
@@ -4576,6 +4607,7 @@ class ShowOCICSV(object):
             self.__export_to_csv_file("identity_network_sources", self.csv_identity_network_sources)
             self.__export_to_csv_file("identity_policy", self.csv_identity_policies)
             self.__export_to_csv_file("identity_groups", self.csv_identity_groups)
+            self.__export_to_csv_file("identity_dynamic_groups", self.csv_identity_dynamic_groups)
             self.__export_to_csv_file("identity_groups_mapping", self.csv_identity_groups_mapping)
             self.__export_to_csv_file("identity_tag_namespaces", self.csv_identity_tag_namespaces)
 
@@ -4895,6 +4927,25 @@ class ShowOCICSV(object):
             self.__print_error("__csv_identity_groups", e)
 
     ##########################################################################
+    # CSV Identity Groups
+    ##########################################################################
+
+    def __csv_identity_dynamic_groups(self, groups):
+        try:
+            for group in groups:
+                data = {
+                    'id': group['id'],
+                    'name': group['name'],
+                    'description': group['description'],
+                    'matching_rule': group['matching_rule']
+                }
+
+                self.csv_identity_dynamic_groups.append(data)
+
+        except Exception as e:
+            self.__print_error("__csv_identity_dynamic_groups", e)
+
+    ##########################################################################
     # CSV Identity Groups Mapping
     ##########################################################################
     def __csv_identity_groups_mapping(self, groups_mapping):
@@ -5003,34 +5054,34 @@ class ShowOCICSV(object):
                 self.csv_identity_domains.append(data)
 
                 # Extract the rest of the data
-                if var['users']:
+                if 'users' in var and var['users']:
                     self.__csv_identity_domains_users(var['users'], var['display_name'], var['id'])
 
-                if var['groups']:
+                if 'groups' in var and var['groups']:
                     self.__csv_identity_domains_groups(var['groups'], var['display_name'], var['id'])
 
-                if var['dynamic_groups']:
+                if 'dynamic_groups' in var and var['dynamic_groups']:
                     self.__csv_identity_domains_dynamic_groups(var['dynamic_groups'], var['display_name'], var['id'])
 
-                if var['identity_providers']:
+                if 'identity_providers' in var and var['identity_providers']:
                     self.__csv_identity_domains_idps(var['identity_providers'], var['display_name'], var['id'])
 
-                if var['network_perimeters']:
+                if 'network_perimeters' in var and var['network_perimeters']:
                     self.__csv_identity_domains_network_perimeters(var['network_perimeters'], var['display_name'], var['id'])
 
-                if var['kmsi_setting']:
+                if 'kmsi_setting' in var and var['kmsi_setting']:
                     self.__csv_identity_domains_kmsi_setting(var['kmsi_setting'], var['display_name'], var['id'])
 
-                if var['authentication_factor_settings']:
+                if 'authentication_factor_settings' in var and var['authentication_factor_settings']:
                     self.__csv_identity_domains_auth_factor(var['authentication_factor_settings'], var['display_name'], var['id'])
 
-                if var['password_policies']:
+                if 'password_policies' in var and var['password_policies']:
                     self.__csv_identity_domains_password_policies(var['password_policies'], var['display_name'], var['id'])
 
-                if var['policies']:
+                if 'policies' in var and var['policies']:
                     self.__csv_identity_domains_policies(var['policies'], var['display_name'], var['id'])
 
-                if var['rules']:
+                if 'rules' in var and var['rules']:
                     self.__csv_identity_domains_rules(var['rules'], var['display_name'], var['id'])
 
         except Exception as e:
@@ -5762,6 +5813,46 @@ class ShowOCICSV(object):
             self.__print_error("__csv_announcements", e)
 
     ##########################################################################
+    # CSV Announcement Active and Detailed
+    ##########################################################################
+
+    def __csv_announcements_detailed(self, region_name, announcements):
+        try:
+            for ann in announcements:
+                data = {
+                    'region_name': ann['region_name'],
+                    'compartment': ann['compartment_path'],
+                    'time_created': ann['time_created'],
+                    'type': ann['type'],
+                    'affected_regions': ann['affected_regions'],
+                    'services': ann['services'],
+                    'environment_name': ann['environment_name'],
+                    'lifecycle_state': ann['lifecycle_state'],
+                    'reference_ticket_number': ann['reference_ticket_number'],
+                    'time_one_type': ann['time_one_type'],
+                    'time_one_title': ann['time_one_title'],
+                    'time_one_value': ann['time_one_value'],
+                    'time_two_type': ann['time_two_type'],
+                    'time_two_title': ann['time_two_title'],
+                    'time_two_value': ann['time_two_value'],
+                    'announcement_type': ann['announcement_type'],
+                    'summary': ann['summary'],
+                    'is_banner': ann['is_banner'],
+                    'time_updated': ann['time_updated'],
+                    'platform_type': ann['platform_type'],
+                    'description': ann['description'],
+                    'additional_information': ann['additional_information'],
+                    'affected_resources': str(ann['affected_resources']),
+                    'compartment_id': ann['compartment_id'],
+                    'id': ann['id'],
+                    'chain_id': ann['chain_id']
+                }
+                self.csv_announcements_detailed.append(data)
+
+        except Exception as e:
+            self.__print_error("__csv_announcements_detailed", e)
+
+    ##########################################################################
     # csv Identity Policies
     ##########################################################################
     def __csv_identity_policies(self, policies_data):
@@ -5864,6 +5955,8 @@ class ShowOCICSV(object):
                     self.__csv_identity_users(data['users'])
                 if 'groups' in data:
                     self.__csv_identity_groups(data['groups'])
+                if 'dynamic_groups' in data:
+                    self.__csv_identity_dynamic_groups(data['dynamic_groups'])
                 if 'policies' in data:
                     self.__csv_identity_policies(data['policies'])
                 if 'network_sources' in data:
@@ -10913,6 +11006,8 @@ class ShowOCICSV(object):
                     self.__csv_notifications(region_name, cdata['notifications'])
                 if 'quotas' in cdata:
                     self.__csv_quotas_main(region_name, cdata['quotas'])
+                if 'announcement_detailed' in cdata:
+                    self.__csv_announcements_detailed(region_name, cdata['announcement_detailed'])
                 if 'functions' in cdata:
                     self.__csv_functions(region_name, cdata['functions'])
 

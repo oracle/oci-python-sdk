@@ -46,6 +46,10 @@ class OperatingSystem(object):
             The value to assign to the name property of this OperatingSystem.
         :type name: str
 
+        :param distribution:
+            The value to assign to the distribution property of this OperatingSystem.
+        :type distribution: str
+
         :param version:
             The value to assign to the version property of this OperatingSystem.
         :type version: str
@@ -62,6 +66,7 @@ class OperatingSystem(object):
         self.swagger_types = {
             'family': 'str',
             'name': 'str',
+            'distribution': 'str',
             'version': 'str',
             'architecture': 'str',
             'managed_instance_count': 'int'
@@ -70,6 +75,7 @@ class OperatingSystem(object):
         self.attribute_map = {
             'family': 'family',
             'name': 'name',
+            'distribution': 'distribution',
             'version': 'version',
             'architecture': 'architecture',
             'managed_instance_count': 'managedInstanceCount'
@@ -77,6 +83,7 @@ class OperatingSystem(object):
 
         self._family = None
         self._name = None
+        self._distribution = None
         self._version = None
         self._architecture = None
         self._managed_instance_count = None
@@ -134,6 +141,30 @@ class OperatingSystem(object):
         :type: str
         """
         self._name = name
+
+    @property
+    def distribution(self):
+        """
+        Gets the distribution of this OperatingSystem.
+        The name of the Operating System distribution, such as Oracle Linux 9, Windows 10, or macOS X.
+
+
+        :return: The distribution of this OperatingSystem.
+        :rtype: str
+        """
+        return self._distribution
+
+    @distribution.setter
+    def distribution(self, distribution):
+        """
+        Sets the distribution of this OperatingSystem.
+        The name of the Operating System distribution, such as Oracle Linux 9, Windows 10, or macOS X.
+
+
+        :param distribution: The distribution of this OperatingSystem.
+        :type: str
+        """
+        self._distribution = distribution
 
     @property
     def version(self):

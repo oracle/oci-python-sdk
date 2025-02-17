@@ -71,15 +71,15 @@ class EphemeralResourcePrincipalV21Signer(SecurityTokenSigner):
         config = {}
         if log_requests:
             config["log_requests"] = log_requests
+        # Set Key Supplier
+        self.session_key_supplier = self.construct_session_key_supplier(private_key, private_key_passphrase)
 
         self.base_client = oci.BaseClient("",  # No service
                                           config,
-                                          KeyPairSigner(rp_version, resource_id, tenancy_id, private_key, private_key_passphrase),
+                                          KeyPairSigner(rp_version, resource_id, tenancy_id, self.session_key_supplier.get_key_pair()['private']),
                                           {},  # No type mapping
                                           region_client=False,
                                           service_endpoint=self.resource_principal_token_endpoint)
-        # Set Key Supplier
-        self.session_key_supplier = self.construct_session_key_supplier(private_key, private_key_passphrase)
 
         # Get the Resource Principal Session Token and use it to set up the signer
         self.rpst = self.get_security_token()

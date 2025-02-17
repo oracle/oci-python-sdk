@@ -1,5 +1,5 @@
 ##########################################################################
-# Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 #
 # showoci_data.py
@@ -20,7 +20,7 @@ import sys
 
 
 class ShowOCIData(object):
-    version = "25.01.13"
+    version = "25.02.10"
 
     ############################################
     # ShowOCIService - Service object to query
@@ -419,6 +419,13 @@ class ShowOCIData(object):
                     if value is not None:
                         if len(value) > 0:
                             data['apigateways'] = value
+                            has_data = True
+
+                if self.service.flags.read_announcement:
+                    value = self.__get_announcement_detailed(region_name, compartment)
+                    if value is not None:
+                        if len(value) > 0:
+                            data['announcement_detailed'] = value
                             has_data = True
 
                 # add the data to main Variable
@@ -3469,6 +3476,20 @@ class ShowOCIData(object):
         try:
             database_gg_deployments = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_GG_DEPLOYMENTS, 'region_name', region_name, 'compartment_id', compartment['id'])
             return database_gg_deployments
+
+        except Exception as e:
+            self.__print_error(e)
+            return data
+
+    ##########################################################################
+    # __get_announcement_detailed
+    ##########################################################################
+    def __get_announcement_detailed(self, region_name, compartment):
+
+        data = []
+        try:
+            data = self.service.search_multi_items(self.service.C_ANNOUNCEMENT, self.service.C_ANNOUNCEMENT_DETAILED, 'region_name', region_name, 'compartment_id', compartment['id'])
+            return data
 
         except Exception as e:
             self.__print_error(e)

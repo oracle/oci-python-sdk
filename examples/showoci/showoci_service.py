@@ -1,5 +1,5 @@
 #########################################################################
-# Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 #
 # showoci_service.py
@@ -39,7 +39,7 @@ import threading
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    version = "25.01.13"
+    version = "25.02.10"
     oci_compatible_version = "2.141.1"
     thread_lock = threading.Lock()
     collection_ljust = 40
@@ -212,6 +212,7 @@ class ShowOCIService(object):
     # Announcement services
     C_ANNOUNCEMENT = "announcement"
     C_ANNOUNCEMENT_ANNOUNCEMENT = "announcements"
+    C_ANNOUNCEMENT_DETAILED = "announcements_detailed"
 
     # Limits
     C_LIMITS = "limits"
@@ -781,17 +782,17 @@ class ShowOCIService(object):
 
     ##################################################################################
     # get_date
-    # Example of Date 2022-08-20T23:32:54.491Z -> 2022-08-20 23:32
+    # Example of Date 2022-08-20T23:32:54.491Z -> 2022-08-20 23:32:54
     ##################################################################################
     def get_date(self, val):
         if not val:
             return ''
-        return str(val)[0:16].replace("T", " ")
+        return str(val)[0:19].replace("T", " ")
 
     ##########################################################################
     # get value from service
     ##########################################################################
-    def get_value(self, in_value, trim_date=False):
+    def get_value(self, in_value):
         try:
             out_value = ""
             if in_value:
@@ -801,8 +802,6 @@ class ShowOCIService(object):
                     out_value = ""
                 else:
                     out_value = str(in_value)
-            if trim_date:
-                out_value = out_value[0:16]
             return out_value
 
         except Exception as e:
@@ -917,6 +916,15 @@ class ShowOCIService(object):
         if self.C_ANNOUNCEMENT in self.data:
             if self.C_ANNOUNCEMENT_ANNOUNCEMENT in self.data[self.C_ANNOUNCEMENT]:
                 return self.data[self.C_ANNOUNCEMENT][self.C_ANNOUNCEMENT_ANNOUNCEMENT]
+        return []
+
+    ##########################################################################
+    # return announcement detailed
+    ##########################################################################
+    def get_announcement_detailed(self):
+        if self.C_ANNOUNCEMENT in self.data:
+            if self.C_ANNOUNCEMENT_DETAILED in self.data[self.C_ANNOUNCEMENT]:
+                return self.data[self.C_ANNOUNCEMENT][self.C_ANNOUNCEMENT_DETAILED]
         return []
 
     ##########################################################################
@@ -1738,6 +1746,7 @@ class ShowOCIService(object):
 
             # Get sub regions
             data_subs = []
+            sub_regions = []
             try:
                 sub_regions = identity.list_region_subscriptions(tenancy.id).data
                 data_subs = [str(es.region_name) for es in sub_regions]
@@ -19490,12 +19499,14 @@ class ShowOCIService(object):
 
             # add the key if not exists
             self.__initialize_data_key(self.C_ANNOUNCEMENT, self.C_ANNOUNCEMENT_ANNOUNCEMENT)
+            self.__initialize_data_key(self.C_ANNOUNCEMENT, self.C_ANNOUNCEMENT_DETAILED)
 
             # reference to stream
             announcement = self.data[self.C_ANNOUNCEMENT]
 
             # append the data
             announcement[self.C_ANNOUNCEMENT_ANNOUNCEMENT] += self.__load_announcements(announcement_client, tenancy['id'])
+            announcement[self.C_ANNOUNCEMENT_DETAILED] += self.__load_announcements_active_and_detailed(announcement_client, self.get_compartments())
             print("")
 
         except Exception as e:
@@ -19528,7 +19539,8 @@ class ShowOCIService(object):
                     compartment_id=tenancy_id,
                     should_show_only_latest_in_chain=True,
                     time_one_earliest_time=announce_min_date,
-                    sort_by="timeCreated"
+                    sort_by="timeCreated",
+                    retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
                 ).data
 
             except oci.exceptions.ServiceError as e:
@@ -19582,6 +19594,130 @@ class ShowOCIService(object):
 
         except oci.exceptions.RequestException as e:
 
+            if self.__check_request_error(e):
+                return data
+            else:
+                self.__load_print_error(e)
+                return data
+        except Exception as e:
+            self.__print_error(e)
+            return data
+
+    ##########################################################################
+    # __load_announcements_active_and_detailed
+    # Filter announcement by start of one date and creation date based on days
+    ##########################################################################
+    def __load_announcements_active_and_detailed(self, announcement_client, compartments):
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            errstr = ""
+            header = "Announcement Detailed"
+            print("--> " + header.ljust(self.collection_ljust) + "<-- ", end="")
+
+            if not announcement_client:
+                self.__load_print_thread_exclude(header)
+                return data
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip Paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    continue
+
+                announcements = []
+                try:
+                    announce_min_date = datetime.date.today() - datetime.timedelta(days=self.flags.read_announcement_days)
+                    announcements = oci.pagination.list_call_get_all_results(
+                        announcement_client.list_announcements,
+                        compartment_id=compartment['id'],
+                        should_show_only_latest_in_chain=True,
+                        time_one_earliest_time=announce_min_date,
+                        lifecycle_state="ACTIVE",
+                        sort_by="timeCreated",
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e, compartment):
+                        self.__load_print_auth_warning(to_print=self.flags.skip_threads)
+                        errstr += "a"
+                    else:
+                        self.__load_print_error(e, compartment)
+                        errstr += "e"
+                        continue
+
+                except Exception as e:
+                    self.__load_print_error(e, compartment)
+                    errstr += "e"
+                    continue
+
+                if announcements:
+
+                    # oci.announcements_service.models.AnnouncementsCollection
+                    # oci.announcements_service.models.AnnouncementSummary
+                    for ann in announcements:
+
+                        print(".", end="")
+
+                        # Filter announcement by created date
+                        if ann.time_created and str(ann.time_created) >= str(announce_min_date):
+                            val = {
+                                'id': self.get_value(ann.id),
+                                'type': self.get_value(ann.type),
+                                'lifecycle_state': self.get_value(ann.lifecycle_state),
+                                'reference_ticket_number': self.get_value(ann.reference_ticket_number),
+                                'summary': self.get_value(ann.summary),
+                                'time_one_type': self.get_value(ann.time_one_type),
+                                'time_one_title': self.get_value(ann.time_one_title),
+                                'time_one_value': self.get_value(ann.time_one_value),
+                                'time_two_type': self.get_value(ann.time_two_type),
+                                'time_two_title': self.get_value(ann.time_two_title),
+                                'time_two_value': self.get_value(ann.time_two_value),
+                                'services': str(', '.join(x for x in ann.services)) if ann.services else "",
+                                'affected_regions': str(', '.join(x for x in ann.affected_regions)),
+                                'announcement_type': self.get_value(ann.announcement_type),
+                                'is_banner': self.get_value(ann.is_banner),
+                                'time_created': self.get_date(ann.time_created),
+                                'time_updated': self.get_date(ann.time_updated),
+                                'environment_name': self.get_value(ann.environment_name),
+                                'platform_type': self.get_value(ann.platform_type),
+                                'chain_id': self.get_value(ann.chain_id),
+                                'description': "",
+                                'additional_information': "",
+                                'affected_resources': [],
+                                'compartment_name': str(compartment['name']),
+                                'compartment_path': str(compartment['path']),
+                                'compartment_id': str(compartment['id']),
+                                'region_name': str(self.config['region'])
+                            }
+
+                            # read quota statements
+                            try:
+                                announce = announcement_client.get_announcement(ann.id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
+                                if announce:
+                                    val['additional_information'] = self.get_value(announce.additional_information)
+                                    val['description'] = self.get_value(announce.description)
+                                    for aff in announce.affected_resources:
+                                        val['affected_resources'].append({
+                                            'resource_id': self.get_value(aff.resource_id),
+                                            'resource_name': self.get_value(aff.resource_name),
+                                            'region': self.get_value(aff.region)
+                                        })
+                            except oci.exceptions.ServiceError:
+                                pass
+
+                            # add the data
+                            cnt += 1
+                            data.append(val)
+
+            self.__load_print_thread_cnt(header, cnt, start_time, errstr)
+            return data
+
+        except oci.exceptions.RequestException as e:
             if self.__check_request_error(e):
                 return data
             else:
@@ -19766,19 +19902,19 @@ class ShowOCIDomains(object):
             return []
 
         return [{
-            'value': self.get_value(x.value),
             'ocid': self.get_value(x.ocid),
+            'value': self.get_value(x.value),
             'ref': self.get_value(x.ref)
         } for x in val]
 
     ##################################################################################
     # get_date
-    # Example of Date 2022-08-20T23:32:54.491Z -> 2022-08-20 23:32
+    # Example of Date 2022-08-20T23:32:54.491Z -> 2022-08-20 23:32:54
     ##################################################################################
     def get_date(self, val):
         if not val:
             return ""
-        return str(val)[0:16].replace("T", " ")
+        return str(val)[0:19].replace("T", " ")
 
     ##################################################################################
     # __get_api_keys
@@ -20359,6 +20495,21 @@ class ShowOCIDomains(object):
                         user_value['o_auth2_client_credentials'] = self.__get_o_auth2_client_credentials(identity_domain_client, var.ocid, ext_credential)
                     if ext_credential.db_credentials:
                         user_value['db_credentials'] = self.__get_user_db_credentials(identity_domain_client, var.ocid, ext_credential)
+
+                # If skip credentials bring the data from the user data
+                if ext_credential and self.skip_identity_user_credential:
+                    if ext_credential.api_keys:
+                        user_value['api_keys'] = self.get_value_ocid_ref(ext_credential.api_keys)
+                    if ext_credential.customer_secret_keys:
+                        user_value['customer_secret_keys'] = self.get_value_ocid_ref(ext_credential.customer_secret_keys)
+                    if ext_credential.auth_tokens:
+                        user_value['auth_tokens'] = self.get_value_ocid_ref(ext_credential.auth_tokens)
+                    if ext_credential.smtp_credentials:
+                        user_value['smtp_credentials'] = self.get_value_ocid_ref(ext_credential.smtp_credentials)
+                    if ext_credential.o_auth2_client_credentials:
+                        user_value['o_auth2_client_credentials'] = self.get_value_ocid_ref(ext_credential.o_auth2_client_credentials)
+                    if ext_credential.db_credentials:
+                        user_value['db_credentials'] = self.get_value_ocid_ref(ext_credential.db_credentials)
 
                 data.append(user_value)
 
@@ -21675,6 +21826,8 @@ class ShowOCIDomains(object):
                     ##################################
                     # If no domain URL, skip
                     ##################################
+                    if not domain.url:
+                        print("--> " + self.get_value(domain.display_name) + " - Lite Domain - No IDCS URL, Skipped")
 
                     if domain.url:
 
@@ -21733,9 +21886,10 @@ class ShowOCIDomains(object):
                                 domain_data['conditions'] = next(as_completed([future_conditions])).result()
                                 domain_data['network_perimeters'] = next(as_completed([future_network_perimeter])).result()
 
-                    self.__load_identity_users_to_group_members(domain_data['users'], domain_data['groups'])
-                    self.__load_identity_conditions_to_rules(domain_data['rules'], domain_data['conditions'])
-                    self.__load_identity_rules_to_policies(domain_data['rules'], domain_data['policies'])
+                        self.__load_identity_users_to_group_members(domain_data['users'], domain_data['groups'])
+                        self.__load_identity_conditions_to_rules(domain_data['rules'], domain_data['conditions'])
+                        self.__load_identity_rules_to_policies(domain_data['rules'], domain_data['policies'])
+
                     self.data.append(domain_data)
 
             print('')
