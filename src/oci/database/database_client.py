@@ -33251,6 +33251,9 @@ class DatabaseClient(object):
         :param str page: (optional)
             The pagination token to continue listing from.
 
+        :param bool is_local_adg: (optional)
+            A filter to return the maintenance history results for the local standby Autonomous Database Serverless only.
+
         :param str sort_by: (optional)
             The field to sort by.  You can provide one sort order (`sortOrder`).  Default order for TIME_SCHEDULED and TIME_ENDED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
 
@@ -33310,6 +33313,7 @@ class DatabaseClient(object):
             "maintenance_type",
             "limit",
             "page",
+            "is_local_adg",
             "sort_by",
             "sort_order",
             "lifecycle_state",
@@ -33370,6 +33374,7 @@ class DatabaseClient(object):
             "maintenanceType": kwargs.get("maintenance_type", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
+            "isLocalAdg": kwargs.get("is_local_adg", missing),
             "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),

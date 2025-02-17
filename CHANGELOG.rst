@@ -5,6 +5,27 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.145.0 - 2025-02-18
+====================
+
+Added 
+----- 
+* Support for Customer Onboarding Success(COS) in the Java Management service 
+* Support for filtering performance tuning analysis results in the Java Management service 
+* Support for improved plugin filtering in the Java Management service 
+* Support for operating system distribution information in the Java Management service   
+
+Fixed 
+----- 
+* 
+
+Fixed an issue in RPv2.1 to read private key from a file   
+
+Breaking 
+-------- 
+* put_object failures for 412 status code have been fixed. This might be a breaking change for customers who have defined a custom exception handler for 412 status code (#622)    
+
+====================
 2.144.1 - 2025-02-11
 ====================
 
@@ -70,9 +91,8 @@ Security Module (HSM) in the Database service
 * Support for configurable TCP reset in the Network Load Balancer service   
 
 Breaking 
--------- 
-
-Fixed 413 error for put operation of very large object in object storage service   
+--------
+* Fixed 413 error for put operation of very large object in object storage service
 
 ====================
 2.142.0 - 2025-01-14

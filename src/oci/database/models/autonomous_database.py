@@ -616,6 +616,10 @@ class AutonomousDatabase(object):
             The value to assign to the time_maintenance_end property of this AutonomousDatabase.
         :type time_maintenance_end: datetime
 
+        :param maintenance_target_component:
+            The value to assign to the maintenance_target_component property of this AutonomousDatabase.
+        :type maintenance_target_component: str
+
         :param is_refreshable_clone:
             The value to assign to the is_refreshable_clone property of this AutonomousDatabase.
         :type is_refreshable_clone: bool
@@ -916,6 +920,7 @@ class AutonomousDatabase(object):
             'database_management_status': 'str',
             'time_maintenance_begin': 'datetime',
             'time_maintenance_end': 'datetime',
+            'maintenance_target_component': 'str',
             'is_refreshable_clone': 'bool',
             'time_of_last_refresh': 'datetime',
             'time_of_last_refresh_point': 'datetime',
@@ -1044,6 +1049,7 @@ class AutonomousDatabase(object):
             'database_management_status': 'databaseManagementStatus',
             'time_maintenance_begin': 'timeMaintenanceBegin',
             'time_maintenance_end': 'timeMaintenanceEnd',
+            'maintenance_target_component': 'maintenanceTargetComponent',
             'is_refreshable_clone': 'isRefreshableClone',
             'time_of_last_refresh': 'timeOfLastRefresh',
             'time_of_last_refresh_point': 'timeOfLastRefreshPoint',
@@ -1171,6 +1177,7 @@ class AutonomousDatabase(object):
         self._database_management_status = None
         self._time_maintenance_begin = None
         self._time_maintenance_end = None
+        self._maintenance_target_component = None
         self._is_refreshable_clone = None
         self._time_of_last_refresh = None
         self._time_of_last_refresh_point = None
@@ -3284,6 +3291,30 @@ class AutonomousDatabase(object):
         :type: datetime
         """
         self._time_maintenance_end = time_maintenance_end
+
+    @property
+    def maintenance_target_component(self):
+        """
+        Gets the maintenance_target_component of this AutonomousDatabase.
+        The component chosen for maintenance.
+
+
+        :return: The maintenance_target_component of this AutonomousDatabase.
+        :rtype: str
+        """
+        return self._maintenance_target_component
+
+    @maintenance_target_component.setter
+    def maintenance_target_component(self, maintenance_target_component):
+        """
+        Sets the maintenance_target_component of this AutonomousDatabase.
+        The component chosen for maintenance.
+
+
+        :param maintenance_target_component: The maintenance_target_component of this AutonomousDatabase.
+        :type: str
+        """
+        self._maintenance_target_component = maintenance_target_component
 
     @property
     def is_refreshable_clone(self):

@@ -67,6 +67,12 @@ Jms
     oci.jms.models.FleetCollection
     oci.jms.models.FleetDiagnosisCollection
     oci.jms.models.FleetDiagnosisSummary
+    oci.jms.models.FleetErrorAggregation
+    oci.jms.models.FleetErrorAggregationCollection
+    oci.jms.models.FleetErrorAggregationSummary
+    oci.jms.models.FleetErrorCollection
+    oci.jms.models.FleetErrorDetails
+    oci.jms.models.FleetErrorSummary
     oci.jms.models.FleetSummary
     oci.jms.models.GenerateAgentDeployScriptDetails
     oci.jms.models.GenerateAgentInstallerConfigurationDetails
@@ -118,6 +124,12 @@ Jms
     oci.jms.models.PerformanceTuningAnalysisResultCollection
     oci.jms.models.PerformanceTuningAnalysisResultSummary
     oci.jms.models.Plugin
+    oci.jms.models.PluginErrorAggregation
+    oci.jms.models.PluginErrorAggregationCollection
+    oci.jms.models.PluginErrorAggregationSummary
+    oci.jms.models.PluginErrorCollection
+    oci.jms.models.PluginErrorDetails
+    oci.jms.models.PluginErrorSummary
     oci.jms.models.PostInstallationActionSettings
     oci.jms.models.Principal
     oci.jms.models.Proxies
