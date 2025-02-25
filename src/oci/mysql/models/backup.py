@@ -159,6 +159,10 @@ class Backup(object):
             The value to assign to the defined_tags property of this Backup.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this Backup.
+        :type system_tags: dict(str, dict(str, object))
+
         :param immediate_source_backup_id:
             The value to assign to the immediate_source_backup_id property of this Backup.
         :type immediate_source_backup_id: str
@@ -192,6 +196,7 @@ class Backup(object):
             'shape_name': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))',
             'immediate_source_backup_id': 'str',
             'original_source_backup_id': 'str',
             'time_copy_created': 'datetime'
@@ -217,6 +222,7 @@ class Backup(object):
             'shape_name': 'shapeName',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'system_tags': 'systemTags',
             'immediate_source_backup_id': 'immediateSourceBackupId',
             'original_source_backup_id': 'originalSourceBackupId',
             'time_copy_created': 'timeCopyCreated'
@@ -241,6 +247,7 @@ class Backup(object):
         self._shape_name = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
         self._immediate_source_backup_id = None
         self._original_source_backup_id = None
         self._time_copy_created = None
@@ -718,6 +725,32 @@ class Backup(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this Backup.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :return: The system_tags of this Backup.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this Backup.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :param system_tags: The system_tags of this Backup.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     @property
     def immediate_source_backup_id(self):

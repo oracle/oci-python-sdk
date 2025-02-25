@@ -23,7 +23,6 @@ Container Instances
     oci.container_instances.models.Container
     oci.container_instances.models.ContainerCapabilities
     oci.container_instances.models.ContainerCollection
-    oci.container_instances.models.ContainerCommandHealthCheck
     oci.container_instances.models.ContainerConfigFile
     oci.container_instances.models.ContainerConfigFileVolume
     oci.container_instances.models.ContainerDnsConfig
@@ -43,7 +42,6 @@ Container Instances
     oci.container_instances.models.ContainerVnic
     oci.container_instances.models.ContainerVolume
     oci.container_instances.models.CreateBasicImagePullSecretDetails
-    oci.container_instances.models.CreateContainerCommandHealthCheckDetails
     oci.container_instances.models.CreateContainerConfigFileVolumeDetails
     oci.container_instances.models.CreateContainerDetails
     oci.container_instances.models.CreateContainerDnsConfigDetails

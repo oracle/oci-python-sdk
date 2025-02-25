@@ -206,7 +206,7 @@ class LaunchAttachVolumeDetails(object):
     def type(self):
         """
         **[Required]** Gets the type of this LaunchAttachVolumeDetails.
-        The type of volume. Currently, the only supported value is \"iscsi\".
+        The type of volume attachment. Currently, the only supported values are \"iscsi\" and \"paravirtualized\".
 
 
         :return: The type of this LaunchAttachVolumeDetails.
@@ -218,7 +218,7 @@ class LaunchAttachVolumeDetails(object):
     def type(self, type):
         """
         Sets the type of this LaunchAttachVolumeDetails.
-        The type of volume. Currently, the only supported value is \"iscsi\".
+        The type of volume attachment. Currently, the only supported values are \"iscsi\" and \"paravirtualized\".
 
 
         :param type: The type of this LaunchAttachVolumeDetails.

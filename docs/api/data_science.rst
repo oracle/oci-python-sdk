@@ -120,6 +120,10 @@ Data Science
     oci.data_science.models.PipelineCustomScriptStepDetails
     oci.data_science.models.PipelineCustomScriptStepRun
     oci.data_science.models.PipelineCustomScriptStepUpdateDetails
+    oci.data_science.models.PipelineDataflowConfigurationDetails
+    oci.data_science.models.PipelineDataflowStepDetails
+    oci.data_science.models.PipelineDataflowStepRun
+    oci.data_science.models.PipelineDataflowStepUpdateDetails
     oci.data_science.models.PipelineDefaultConfigurationDetails
     oci.data_science.models.PipelineInfrastructureConfigurationDetails
     oci.data_science.models.PipelineLogConfigurationDetails

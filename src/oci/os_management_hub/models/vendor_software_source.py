@@ -53,7 +53,7 @@ class VendorSoftwareSource(SoftwareSource):
 
         :param software_source_type:
             The value to assign to the software_source_type property of this VendorSoftwareSource.
-            Allowed values for this property are: "VENDOR", "CUSTOM", "VERSIONED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "VENDOR", "CUSTOM", "VERSIONED", "PRIVATE", "THIRD_PARTY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type software_source_type: str
 
@@ -81,13 +81,13 @@ class VendorSoftwareSource(SoftwareSource):
 
         :param arch_type:
             The value to assign to the arch_type property of this VendorSoftwareSource.
-            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type arch_type: str
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this VendorSoftwareSource.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -265,7 +265,7 @@ class VendorSoftwareSource(SoftwareSource):
     def origin_software_source_id(self):
         """
         Gets the origin_software_source_id of this VendorSoftwareSource.
-        This property applies only to replicated vendor software sources. This is the `OCID`__ of the vendor software source in the root compartment.
+        The `OCID`__ of the vendor software source in the root compartment. This property applies only to replicated vendor software sources.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -279,7 +279,7 @@ class VendorSoftwareSource(SoftwareSource):
     def origin_software_source_id(self, origin_software_source_id):
         """
         Sets the origin_software_source_id of this VendorSoftwareSource.
-        This property applies only to replicated vendor software sources. This is the `OCID`__ of the vendor software source in the root compartment.
+        The `OCID`__ of the vendor software source in the root compartment. This property applies only to replicated vendor software sources.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 

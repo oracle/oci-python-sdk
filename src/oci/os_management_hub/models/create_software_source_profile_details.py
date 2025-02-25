@@ -75,6 +75,10 @@ class CreateSoftwareSourceProfileDetails(CreateProfileDetails):
     #: This constant has a value of "SRC"
     ARCH_TYPE_SRC = "SRC"
 
+    #: A constant which can be used with the arch_type property of a CreateSoftwareSourceProfileDetails.
+    #: This constant has a value of "I386"
+    ARCH_TYPE_I386 = "I386"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateSoftwareSourceProfileDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.os_management_hub.models.CreateSoftwareSourceProfileDetails.profile_type` attribute
@@ -130,7 +134,7 @@ class CreateSoftwareSourceProfileDetails(CreateProfileDetails):
 
         :param arch_type:
             The value to assign to the arch_type property of this CreateSoftwareSourceProfileDetails.
-            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC"
+            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386"
         :type arch_type: str
 
         :param software_source_ids:
@@ -253,7 +257,7 @@ class CreateSoftwareSourceProfileDetails(CreateProfileDetails):
         **[Required]** Gets the arch_type of this CreateSoftwareSourceProfileDetails.
         The architecture type.
 
-        Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC"
+        Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386"
 
 
         :return: The arch_type of this CreateSoftwareSourceProfileDetails.
@@ -271,7 +275,7 @@ class CreateSoftwareSourceProfileDetails(CreateProfileDetails):
         :param arch_type: The arch_type of this CreateSoftwareSourceProfileDetails.
         :type: str
         """
-        allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC"]
+        allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386"]
         if not value_allowed_none_or_none_sentinel(arch_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `arch_type`, must be None or one of {allowed_values}"

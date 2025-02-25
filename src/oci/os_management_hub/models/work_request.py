@@ -163,6 +163,14 @@ class WorkRequest(object):
     #: This constant has a value of "UNREGISTER_MANAGED_INSTANCE"
     OPERATION_TYPE_UNREGISTER_MANAGED_INSTANCE = "UNREGISTER_MANAGED_INSTANCE"
 
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "REBOOT"
+    OPERATION_TYPE_REBOOT = "REBOOT"
+
+    #: A constant which can be used with the status property of a WorkRequest.
+    #: This constant has a value of "WAITING"
+    STATUS_WAITING = "WAITING"
+
     #: A constant which can be used with the status property of a WorkRequest.
     #: This constant has a value of "ACCEPTED"
     STATUS_ACCEPTED = "ACCEPTED"
@@ -194,13 +202,13 @@ class WorkRequest(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequest.
-            Allowed values for this property are: "INSTALL_PACKAGES", "REMOVE_PACKAGES", "UPDATE_PACKAGES", "UPDATE_ALL_PACKAGES", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_KERNEL", "UPDATE_KSPLICE_USERSPACE", "ENABLE_MODULE_STREAMS", "DISABLE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "INSTALL_MODULE_PROFILES", "REMOVE_MODULE_PROFILES", "SET_SOFTWARE_SOURCES", "LIST_PACKAGES", "SET_MANAGEMENT_STATION_CONFIG", "SYNC_MANAGEMENT_STATION_MIRROR", "UPDATE_MANAGEMENT_STATION_SOFTWARE", "UPDATE", "MODULE_ACTIONS", "LIFECYCLE_PROMOTION", "CREATE_SOFTWARE_SOURCE", "UPDATE_SOFTWARE_SOURCE", "IMPORT_CONTENT", "SYNC_AGENT_CONFIG", "INSTALL_WINDOWS_UPDATES", "LIST_WINDOWS_UPDATE", "GET_WINDOWS_UPDATE_DETAILS", "INSTALL_ALL_WINDOWS_UPDATES", "INSTALL_SECURITY_WINDOWS_UPDATES", "INSTALL_BUGFIX_WINDOWS_UPDATES", "INSTALL_ENHANCEMENT_WINDOWS_UPDATES", "INSTALL_OTHER_WINDOWS_UPDATES", "REMOVE_CONTENT", "UNREGISTER_MANAGED_INSTANCE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "INSTALL_PACKAGES", "REMOVE_PACKAGES", "UPDATE_PACKAGES", "UPDATE_ALL_PACKAGES", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_KERNEL", "UPDATE_KSPLICE_USERSPACE", "ENABLE_MODULE_STREAMS", "DISABLE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "INSTALL_MODULE_PROFILES", "REMOVE_MODULE_PROFILES", "SET_SOFTWARE_SOURCES", "LIST_PACKAGES", "SET_MANAGEMENT_STATION_CONFIG", "SYNC_MANAGEMENT_STATION_MIRROR", "UPDATE_MANAGEMENT_STATION_SOFTWARE", "UPDATE", "MODULE_ACTIONS", "LIFECYCLE_PROMOTION", "CREATE_SOFTWARE_SOURCE", "UPDATE_SOFTWARE_SOURCE", "IMPORT_CONTENT", "SYNC_AGENT_CONFIG", "INSTALL_WINDOWS_UPDATES", "LIST_WINDOWS_UPDATE", "GET_WINDOWS_UPDATE_DETAILS", "INSTALL_ALL_WINDOWS_UPDATES", "INSTALL_SECURITY_WINDOWS_UPDATES", "INSTALL_BUGFIX_WINDOWS_UPDATES", "INSTALL_ENHANCEMENT_WINDOWS_UPDATES", "INSTALL_OTHER_WINDOWS_UPDATES", "REMOVE_CONTENT", "UNREGISTER_MANAGED_INSTANCE", "REBOOT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
         :param status:
             The value to assign to the status property of this WorkRequest.
-            Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "WAITING", "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type status: str
 
@@ -296,6 +304,10 @@ class WorkRequest(object):
             The value to assign to the retry_of_id property of this WorkRequest.
         :type retry_of_id: str
 
+        :param rerun_of_id:
+            The value to assign to the rerun_of_id property of this WorkRequest.
+        :type rerun_of_id: str
+
         :param retry_intervals:
             The value to assign to the retry_intervals property of this WorkRequest.
         :type retry_intervals: list[int]
@@ -303,6 +315,10 @@ class WorkRequest(object):
         :param is_managed_by_autonomous_linux:
             The value to assign to the is_managed_by_autonomous_linux property of this WorkRequest.
         :type is_managed_by_autonomous_linux: bool
+
+        :param reboot_timeout_in_mins:
+            The value to assign to the reboot_timeout_in_mins property of this WorkRequest.
+        :type reboot_timeout_in_mins: int
 
         """
         self.swagger_types = {
@@ -331,8 +347,10 @@ class WorkRequest(object):
             'event_id': 'str',
             'content_checksum': 'str',
             'retry_of_id': 'str',
+            'rerun_of_id': 'str',
             'retry_intervals': 'list[int]',
-            'is_managed_by_autonomous_linux': 'bool'
+            'is_managed_by_autonomous_linux': 'bool',
+            'reboot_timeout_in_mins': 'int'
         }
 
         self.attribute_map = {
@@ -361,8 +379,10 @@ class WorkRequest(object):
             'event_id': 'eventId',
             'content_checksum': 'contentChecksum',
             'retry_of_id': 'retryOfId',
+            'rerun_of_id': 'rerunOfId',
             'retry_intervals': 'retryIntervals',
-            'is_managed_by_autonomous_linux': 'isManagedByAutonomousLinux'
+            'is_managed_by_autonomous_linux': 'isManagedByAutonomousLinux',
+            'reboot_timeout_in_mins': 'rebootTimeoutInMins'
         }
 
         self._operation_type = None
@@ -390,8 +410,10 @@ class WorkRequest(object):
         self._event_id = None
         self._content_checksum = None
         self._retry_of_id = None
+        self._rerun_of_id = None
         self._retry_intervals = None
         self._is_managed_by_autonomous_linux = None
+        self._reboot_timeout_in_mins = None
 
     @property
     def operation_type(self):
@@ -399,7 +421,7 @@ class WorkRequest(object):
         **[Required]** Gets the operation_type of this WorkRequest.
         Type of the work request.
 
-        Allowed values for this property are: "INSTALL_PACKAGES", "REMOVE_PACKAGES", "UPDATE_PACKAGES", "UPDATE_ALL_PACKAGES", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_KERNEL", "UPDATE_KSPLICE_USERSPACE", "ENABLE_MODULE_STREAMS", "DISABLE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "INSTALL_MODULE_PROFILES", "REMOVE_MODULE_PROFILES", "SET_SOFTWARE_SOURCES", "LIST_PACKAGES", "SET_MANAGEMENT_STATION_CONFIG", "SYNC_MANAGEMENT_STATION_MIRROR", "UPDATE_MANAGEMENT_STATION_SOFTWARE", "UPDATE", "MODULE_ACTIONS", "LIFECYCLE_PROMOTION", "CREATE_SOFTWARE_SOURCE", "UPDATE_SOFTWARE_SOURCE", "IMPORT_CONTENT", "SYNC_AGENT_CONFIG", "INSTALL_WINDOWS_UPDATES", "LIST_WINDOWS_UPDATE", "GET_WINDOWS_UPDATE_DETAILS", "INSTALL_ALL_WINDOWS_UPDATES", "INSTALL_SECURITY_WINDOWS_UPDATES", "INSTALL_BUGFIX_WINDOWS_UPDATES", "INSTALL_ENHANCEMENT_WINDOWS_UPDATES", "INSTALL_OTHER_WINDOWS_UPDATES", "REMOVE_CONTENT", "UNREGISTER_MANAGED_INSTANCE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "INSTALL_PACKAGES", "REMOVE_PACKAGES", "UPDATE_PACKAGES", "UPDATE_ALL_PACKAGES", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_KERNEL", "UPDATE_KSPLICE_USERSPACE", "ENABLE_MODULE_STREAMS", "DISABLE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "INSTALL_MODULE_PROFILES", "REMOVE_MODULE_PROFILES", "SET_SOFTWARE_SOURCES", "LIST_PACKAGES", "SET_MANAGEMENT_STATION_CONFIG", "SYNC_MANAGEMENT_STATION_MIRROR", "UPDATE_MANAGEMENT_STATION_SOFTWARE", "UPDATE", "MODULE_ACTIONS", "LIFECYCLE_PROMOTION", "CREATE_SOFTWARE_SOURCE", "UPDATE_SOFTWARE_SOURCE", "IMPORT_CONTENT", "SYNC_AGENT_CONFIG", "INSTALL_WINDOWS_UPDATES", "LIST_WINDOWS_UPDATE", "GET_WINDOWS_UPDATE_DETAILS", "INSTALL_ALL_WINDOWS_UPDATES", "INSTALL_SECURITY_WINDOWS_UPDATES", "INSTALL_BUGFIX_WINDOWS_UPDATES", "INSTALL_ENHANCEMENT_WINDOWS_UPDATES", "INSTALL_OTHER_WINDOWS_UPDATES", "REMOVE_CONTENT", "UNREGISTER_MANAGED_INSTANCE", "REBOOT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -418,7 +440,7 @@ class WorkRequest(object):
         :param operation_type: The operation_type of this WorkRequest.
         :type: str
         """
-        allowed_values = ["INSTALL_PACKAGES", "REMOVE_PACKAGES", "UPDATE_PACKAGES", "UPDATE_ALL_PACKAGES", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_KERNEL", "UPDATE_KSPLICE_USERSPACE", "ENABLE_MODULE_STREAMS", "DISABLE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "INSTALL_MODULE_PROFILES", "REMOVE_MODULE_PROFILES", "SET_SOFTWARE_SOURCES", "LIST_PACKAGES", "SET_MANAGEMENT_STATION_CONFIG", "SYNC_MANAGEMENT_STATION_MIRROR", "UPDATE_MANAGEMENT_STATION_SOFTWARE", "UPDATE", "MODULE_ACTIONS", "LIFECYCLE_PROMOTION", "CREATE_SOFTWARE_SOURCE", "UPDATE_SOFTWARE_SOURCE", "IMPORT_CONTENT", "SYNC_AGENT_CONFIG", "INSTALL_WINDOWS_UPDATES", "LIST_WINDOWS_UPDATE", "GET_WINDOWS_UPDATE_DETAILS", "INSTALL_ALL_WINDOWS_UPDATES", "INSTALL_SECURITY_WINDOWS_UPDATES", "INSTALL_BUGFIX_WINDOWS_UPDATES", "INSTALL_ENHANCEMENT_WINDOWS_UPDATES", "INSTALL_OTHER_WINDOWS_UPDATES", "REMOVE_CONTENT", "UNREGISTER_MANAGED_INSTANCE"]
+        allowed_values = ["INSTALL_PACKAGES", "REMOVE_PACKAGES", "UPDATE_PACKAGES", "UPDATE_ALL_PACKAGES", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_KERNEL", "UPDATE_KSPLICE_USERSPACE", "ENABLE_MODULE_STREAMS", "DISABLE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "INSTALL_MODULE_PROFILES", "REMOVE_MODULE_PROFILES", "SET_SOFTWARE_SOURCES", "LIST_PACKAGES", "SET_MANAGEMENT_STATION_CONFIG", "SYNC_MANAGEMENT_STATION_MIRROR", "UPDATE_MANAGEMENT_STATION_SOFTWARE", "UPDATE", "MODULE_ACTIONS", "LIFECYCLE_PROMOTION", "CREATE_SOFTWARE_SOURCE", "UPDATE_SOFTWARE_SOURCE", "IMPORT_CONTENT", "SYNC_AGENT_CONFIG", "INSTALL_WINDOWS_UPDATES", "LIST_WINDOWS_UPDATE", "GET_WINDOWS_UPDATE_DETAILS", "INSTALL_ALL_WINDOWS_UPDATES", "INSTALL_SECURITY_WINDOWS_UPDATES", "INSTALL_BUGFIX_WINDOWS_UPDATES", "INSTALL_ENHANCEMENT_WINDOWS_UPDATES", "INSTALL_OTHER_WINDOWS_UPDATES", "REMOVE_CONTENT", "UNREGISTER_MANAGED_INSTANCE", "REBOOT"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type
@@ -429,7 +451,7 @@ class WorkRequest(object):
         **[Required]** Gets the status of this WorkRequest.
         Status of the work request.
 
-        Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "WAITING", "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -448,7 +470,7 @@ class WorkRequest(object):
         :param status: The status of this WorkRequest.
         :type: str
         """
-        allowed_values = ["ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"]
+        allowed_values = ["WAITING", "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"]
         if not value_allowed_none_or_none_sentinel(status, allowed_values):
             status = 'UNKNOWN_ENUM_VALUE'
         self._status = status
@@ -557,7 +579,9 @@ class WorkRequest(object):
     def parent_id(self):
         """
         Gets the parent_id of this WorkRequest.
-        The OCID of the parent work request, if there is any.
+        The `OCID`__ of the parent work request, if there is any.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The parent_id of this WorkRequest.
@@ -569,7 +593,9 @@ class WorkRequest(object):
     def parent_id(self, parent_id):
         """
         Sets the parent_id of this WorkRequest.
-        The OCID of the parent work request, if there is any.
+        The `OCID`__ of the parent work request, if there is any.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param parent_id: The parent_id of this WorkRequest.
@@ -581,7 +607,9 @@ class WorkRequest(object):
     def children_id(self):
         """
         Gets the children_id of this WorkRequest.
-        The list of OCIDs for the child work requests.
+        The list of `OCIDs`__ for the child work requests.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The children_id of this WorkRequest.
@@ -593,7 +621,9 @@ class WorkRequest(object):
     def children_id(self, children_id):
         """
         Sets the children_id of this WorkRequest.
-        The list of OCIDs for the child work requests.
+        The list of `OCIDs`__ for the child work requests.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param children_id: The children_id of this WorkRequest.
@@ -1046,10 +1076,41 @@ class WorkRequest(object):
         self._retry_of_id = retry_of_id
 
     @property
+    def rerun_of_id(self):
+        """
+        Gets the rerun_of_id of this WorkRequest.
+        The `OCID`__ of the original work request that is being rerun.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The rerun_of_id of this WorkRequest.
+        :rtype: str
+        """
+        return self._rerun_of_id
+
+    @rerun_of_id.setter
+    def rerun_of_id(self, rerun_of_id):
+        """
+        Sets the rerun_of_id of this WorkRequest.
+        The `OCID`__ of the original work request that is being rerun.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param rerun_of_id: The rerun_of_id of this WorkRequest.
+        :type: str
+        """
+        self._rerun_of_id = rerun_of_id
+
+    @property
     def retry_intervals(self):
         """
         Gets the retry_intervals of this WorkRequest.
-        Indicates whether this work request is managed by the Autonomous Linux service.
+        The amount of time in minutes to wait until retrying the work request. If set, the service will automatically retry
+        a failed work request after the interval. For example, An interval set to [2,5,10]. If the initial
+        execution of the work request fails, the service waits 2 minutes and then retries. If that fails, the service waits 5 minutes
+        and then retries. If that fails, the service waits 10 minutes and then retries.
 
 
         :return: The retry_intervals of this WorkRequest.
@@ -1061,7 +1122,10 @@ class WorkRequest(object):
     def retry_intervals(self, retry_intervals):
         """
         Sets the retry_intervals of this WorkRequest.
-        Indicates whether this work request is managed by the Autonomous Linux service.
+        The amount of time in minutes to wait until retrying the work request. If set, the service will automatically retry
+        a failed work request after the interval. For example, An interval set to [2,5,10]. If the initial
+        execution of the work request fails, the service waits 2 minutes and then retries. If that fails, the service waits 5 minutes
+        and then retries. If that fails, the service waits 10 minutes and then retries.
 
 
         :param retry_intervals: The retry_intervals of this WorkRequest.
@@ -1092,6 +1156,30 @@ class WorkRequest(object):
         :type: bool
         """
         self._is_managed_by_autonomous_linux = is_managed_by_autonomous_linux
+
+    @property
+    def reboot_timeout_in_mins(self):
+        """
+        Gets the reboot_timeout_in_mins of this WorkRequest.
+        The number of minutes the service waits for the reboot to complete. If the managed instance doesn't reboot within the timeout, the service marks the reboot job as failed.
+
+
+        :return: The reboot_timeout_in_mins of this WorkRequest.
+        :rtype: int
+        """
+        return self._reboot_timeout_in_mins
+
+    @reboot_timeout_in_mins.setter
+    def reboot_timeout_in_mins(self, reboot_timeout_in_mins):
+        """
+        Sets the reboot_timeout_in_mins of this WorkRequest.
+        The number of minutes the service waits for the reboot to complete. If the managed instance doesn't reboot within the timeout, the service marks the reboot job as failed.
+
+
+        :param reboot_timeout_in_mins: The reboot_timeout_in_mins of this WorkRequest.
+        :type: int
+        """
+        self._reboot_timeout_in_mins = reboot_timeout_in_mins
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -55,6 +55,10 @@ class ManagedInstance(object):
     #: This constant has a value of "SRC"
     ARCHITECTURE_SRC = "SRC"
 
+    #: A constant which can be used with the architecture property of a ManagedInstance.
+    #: This constant has a value of "I386"
+    ARCHITECTURE_I386 = "I386"
+
     #: A constant which can be used with the os_family property of a ManagedInstance.
     #: This constant has a value of "ORACLE_LINUX_9"
     OS_FAMILY_ORACLE_LINUX_9 = "ORACLE_LINUX_9"
@@ -115,6 +119,10 @@ class ManagedInstance(object):
     #: This constant has a value of "ONBOARDING"
     STATUS_ONBOARDING = "ONBOARDING"
 
+    #: A constant which can be used with the status property of a ManagedInstance.
+    #: This constant has a value of "REBOOTING"
+    STATUS_REBOOTING = "REBOOTING"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ManagedInstance object with values from keyword arguments.
@@ -172,7 +180,7 @@ class ManagedInstance(object):
 
         :param architecture:
             The value to assign to the architecture property of this ManagedInstance.
-            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type architecture: str
 
@@ -184,13 +192,17 @@ class ManagedInstance(object):
 
         :param status:
             The value to assign to the status property of this ManagedInstance.
-            Allowed values for this property are: "NORMAL", "UNREACHABLE", "ERROR", "WARNING", "REGISTRATION_ERROR", "DELETING", "ONBOARDING", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "NORMAL", "UNREACHABLE", "ERROR", "WARNING", "REGISTRATION_ERROR", "DELETING", "ONBOARDING", "REBOOTING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type status: str
 
         :param profile:
             The value to assign to the profile property of this ManagedInstance.
         :type profile: str
+
+        :param profile_version:
+            The value to assign to the profile_version property of this ManagedInstance.
+        :type profile_version: str
 
         :param is_management_station:
             The value to assign to the is_management_station property of this ManagedInstance.
@@ -280,6 +292,10 @@ class ManagedInstance(object):
             The value to assign to the is_managed_by_autonomous_linux property of this ManagedInstance.
         :type is_managed_by_autonomous_linux: bool
 
+        :param agent_version:
+            The value to assign to the agent_version property of this ManagedInstance.
+        :type agent_version: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -298,6 +314,7 @@ class ManagedInstance(object):
             'os_family': 'str',
             'status': 'str',
             'profile': 'str',
+            'profile_version': 'str',
             'is_management_station': 'bool',
             'primary_management_station_id': 'str',
             'secondary_management_station_id': 'str',
@@ -319,7 +336,8 @@ class ManagedInstance(object):
             'time_updated': 'datetime',
             'notification_topic_id': 'str',
             'autonomous_settings': 'AutonomousSettings',
-            'is_managed_by_autonomous_linux': 'bool'
+            'is_managed_by_autonomous_linux': 'bool',
+            'agent_version': 'str'
         }
 
         self.attribute_map = {
@@ -339,6 +357,7 @@ class ManagedInstance(object):
             'os_family': 'osFamily',
             'status': 'status',
             'profile': 'profile',
+            'profile_version': 'profileVersion',
             'is_management_station': 'isManagementStation',
             'primary_management_station_id': 'primaryManagementStationId',
             'secondary_management_station_id': 'secondaryManagementStationId',
@@ -360,7 +379,8 @@ class ManagedInstance(object):
             'time_updated': 'timeUpdated',
             'notification_topic_id': 'notificationTopicId',
             'autonomous_settings': 'autonomousSettings',
-            'is_managed_by_autonomous_linux': 'isManagedByAutonomousLinux'
+            'is_managed_by_autonomous_linux': 'isManagedByAutonomousLinux',
+            'agent_version': 'agentVersion'
         }
 
         self._id = None
@@ -379,6 +399,7 @@ class ManagedInstance(object):
         self._os_family = None
         self._status = None
         self._profile = None
+        self._profile_version = None
         self._is_management_station = None
         self._primary_management_station_id = None
         self._secondary_management_station_id = None
@@ -401,6 +422,7 @@ class ManagedInstance(object):
         self._notification_topic_id = None
         self._autonomous_settings = None
         self._is_managed_by_autonomous_linux = None
+        self._agent_version = None
 
     @property
     def id(self):
@@ -722,7 +744,7 @@ class ManagedInstance(object):
         Gets the architecture of this ManagedInstance.
         The CPU architecture type of the managed instance.
 
-        Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -741,7 +763,7 @@ class ManagedInstance(object):
         :param architecture: The architecture of this ManagedInstance.
         :type: str
         """
-        allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC"]
+        allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386"]
         if not value_allowed_none_or_none_sentinel(architecture, allowed_values):
             architecture = 'UNKNOWN_ENUM_VALUE'
         self._architecture = architecture
@@ -782,7 +804,7 @@ class ManagedInstance(object):
         **[Required]** Gets the status of this ManagedInstance.
         Current status of the managed instance.
 
-        Allowed values for this property are: "NORMAL", "UNREACHABLE", "ERROR", "WARNING", "REGISTRATION_ERROR", "DELETING", "ONBOARDING", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "NORMAL", "UNREACHABLE", "ERROR", "WARNING", "REGISTRATION_ERROR", "DELETING", "ONBOARDING", "REBOOTING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -801,7 +823,7 @@ class ManagedInstance(object):
         :param status: The status of this ManagedInstance.
         :type: str
         """
-        allowed_values = ["NORMAL", "UNREACHABLE", "ERROR", "WARNING", "REGISTRATION_ERROR", "DELETING", "ONBOARDING"]
+        allowed_values = ["NORMAL", "UNREACHABLE", "ERROR", "WARNING", "REGISTRATION_ERROR", "DELETING", "ONBOARDING", "REBOOTING"]
         if not value_allowed_none_or_none_sentinel(status, allowed_values):
             status = 'UNKNOWN_ENUM_VALUE'
         self._status = status
@@ -829,6 +851,30 @@ class ManagedInstance(object):
         :type: str
         """
         self._profile = profile
+
+    @property
+    def profile_version(self):
+        """
+        Gets the profile_version of this ManagedInstance.
+        The version of the profile that was used to register this instance with the service.
+
+
+        :return: The profile_version of this ManagedInstance.
+        :rtype: str
+        """
+        return self._profile_version
+
+    @profile_version.setter
+    def profile_version(self, profile_version):
+        """
+        Sets the profile_version of this ManagedInstance.
+        The version of the profile that was used to register this instance with the service.
+
+
+        :param profile_version: The profile_version of this ManagedInstance.
+        :type: str
+        """
+        self._profile_version = profile_version
 
     @property
     def is_management_station(self):
@@ -886,7 +932,7 @@ class ManagedInstance(object):
     def secondary_management_station_id(self):
         """
         Gets the secondary_management_station_id of this ManagedInstance.
-        The `OCID`__ of the management station for the instance to use as secondary managment station.
+        The `OCID`__ of the management station for the instance to use as secondary management station.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -900,7 +946,7 @@ class ManagedInstance(object):
     def secondary_management_station_id(self, secondary_management_station_id):
         """
         Sets the secondary_management_station_id of this ManagedInstance.
-        The `OCID`__ of the management station for the instance to use as secondary managment station.
+        The `OCID`__ of the management station for the instance to use as secondary management station.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -1361,6 +1407,30 @@ class ManagedInstance(object):
         :type: bool
         """
         self._is_managed_by_autonomous_linux = is_managed_by_autonomous_linux
+
+    @property
+    def agent_version(self):
+        """
+        Gets the agent_version of this ManagedInstance.
+        The version of osmh-agent running on the managed instance
+
+
+        :return: The agent_version of this ManagedInstance.
+        :rtype: str
+        """
+        return self._agent_version
+
+    @agent_version.setter
+    def agent_version(self, agent_version):
+        """
+        Sets the agent_version of this ManagedInstance.
+        The version of osmh-agent running on the managed instance
+
+
+        :param agent_version: The agent_version of this ManagedInstance.
+        :type: str
+        """
+        self._agent_version = agent_version
 
     def __repr__(self):
         return formatted_flat_dict(self)

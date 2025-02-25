@@ -67,6 +67,10 @@ class CreateManagedInstanceGroupDetails(object):
     #: This constant has a value of "SRC"
     ARCH_TYPE_SRC = "SRC"
 
+    #: A constant which can be used with the arch_type property of a CreateManagedInstanceGroupDetails.
+    #: This constant has a value of "I386"
+    ARCH_TYPE_I386 = "I386"
+
     #: A constant which can be used with the vendor_name property of a CreateManagedInstanceGroupDetails.
     #: This constant has a value of "ORACLE"
     VENDOR_NAME_ORACLE = "ORACLE"
@@ -119,7 +123,7 @@ class CreateManagedInstanceGroupDetails(object):
 
         :param arch_type:
             The value to assign to the arch_type property of this CreateManagedInstanceGroupDetails.
-            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC"
+            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386"
         :type arch_type: str
 
         :param vendor_name:
@@ -316,7 +320,7 @@ class CreateManagedInstanceGroupDetails(object):
         **[Required]** Gets the arch_type of this CreateManagedInstanceGroupDetails.
         The CPU architecture type of the managed instances that will be attached to this group.
 
-        Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC"
+        Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386"
 
 
         :return: The arch_type of this CreateManagedInstanceGroupDetails.
@@ -334,7 +338,7 @@ class CreateManagedInstanceGroupDetails(object):
         :param arch_type: The arch_type of this CreateManagedInstanceGroupDetails.
         :type: str
         """
-        allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC"]
+        allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386"]
         if not value_allowed_none_or_none_sentinel(arch_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `arch_type`, must be None or one of {allowed_values}"

@@ -144,9 +144,9 @@ class LoadBalancer(object):
             The value to assign to the defined_tags property of this LoadBalancer.
         :type defined_tags: dict(str, dict(str, object))
 
-        :param zpr_tags:
-            The value to assign to the zpr_tags property of this LoadBalancer.
-        :type zpr_tags: dict(str, dict(str, object))
+        :param security_attributes:
+            The value to assign to the security_attributes property of this LoadBalancer.
+        :type security_attributes: dict(str, dict(str, object))
 
         :param system_tags:
             The value to assign to the system_tags property of this LoadBalancer.
@@ -184,7 +184,7 @@ class LoadBalancer(object):
             'path_route_sets': 'dict(str, PathRouteSet)',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'zpr_tags': 'dict(str, dict(str, object))',
+            'security_attributes': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
             'rule_sets': 'dict(str, RuleSet)',
             'routing_policies': 'dict(str, RoutingPolicy)'
@@ -213,7 +213,7 @@ class LoadBalancer(object):
             'path_route_sets': 'pathRouteSets',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'zpr_tags': 'zprTags',
+            'security_attributes': 'securityAttributes',
             'system_tags': 'systemTags',
             'rule_sets': 'ruleSets',
             'routing_policies': 'routingPolicies'
@@ -241,7 +241,7 @@ class LoadBalancer(object):
         self._path_route_sets = None
         self._freeform_tags = None
         self._defined_tags = None
-        self._zpr_tags = None
+        self._security_attributes = None
         self._system_tags = None
         self._rule_sets = None
         self._routing_policies = None
@@ -907,32 +907,32 @@ class LoadBalancer(object):
         self._defined_tags = defined_tags
 
     @property
-    def zpr_tags(self):
+    def security_attributes(self):
         """
-        Gets the zpr_tags of this LoadBalancer.
+        Gets the security_attributes of this LoadBalancer.
         Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.
 
         Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\":\"42\",\"mode\":\"audit\", \"usagetype\" : \"zpr\"}}}`
 
 
-        :return: The zpr_tags of this LoadBalancer.
+        :return: The security_attributes of this LoadBalancer.
         :rtype: dict(str, dict(str, object))
         """
-        return self._zpr_tags
+        return self._security_attributes
 
-    @zpr_tags.setter
-    def zpr_tags(self, zpr_tags):
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
         """
-        Sets the zpr_tags of this LoadBalancer.
+        Sets the security_attributes of this LoadBalancer.
         Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.
 
         Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\":\"42\",\"mode\":\"audit\", \"usagetype\" : \"zpr\"}}}`
 
 
-        :param zpr_tags: The zpr_tags of this LoadBalancer.
+        :param security_attributes: The security_attributes of this LoadBalancer.
         :type: dict(str, dict(str, object))
         """
-        self._zpr_tags = zpr_tags
+        self._security_attributes = security_attributes
 
     @property
     def system_tags(self):

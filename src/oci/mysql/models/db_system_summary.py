@@ -108,6 +108,10 @@ class DbSystemSummary(object):
             The value to assign to the defined_tags property of this DbSystemSummary.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this DbSystemSummary.
+        :type system_tags: dict(str, dict(str, object))
+
         :param backup_policy:
             The value to assign to the backup_policy property of this DbSystemSummary.
         :type backup_policy: oci.mysql.models.BackupPolicy
@@ -160,6 +164,7 @@ class DbSystemSummary(object):
             'deletion_policy': 'DeletionPolicyDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))',
             'backup_policy': 'BackupPolicy',
             'shape_name': 'str',
             'crash_recovery': 'str',
@@ -188,6 +193,7 @@ class DbSystemSummary(object):
             'deletion_policy': 'deletionPolicy',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'system_tags': 'systemTags',
             'backup_policy': 'backupPolicy',
             'shape_name': 'shapeName',
             'crash_recovery': 'crashRecovery',
@@ -215,6 +221,7 @@ class DbSystemSummary(object):
         self._deletion_policy = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
         self._backup_policy = None
         self._shape_name = None
         self._crash_recovery = None
@@ -670,6 +677,32 @@ class DbSystemSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this DbSystemSummary.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :return: The system_tags of this DbSystemSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this DbSystemSummary.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :param system_tags: The system_tags of this DbSystemSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     @property
     def backup_policy(self):

@@ -29,6 +29,14 @@ class SoftwareSource(object):
     #: This constant has a value of "VERSIONED"
     SOFTWARE_SOURCE_TYPE_VERSIONED = "VERSIONED"
 
+    #: A constant which can be used with the software_source_type property of a SoftwareSource.
+    #: This constant has a value of "PRIVATE"
+    SOFTWARE_SOURCE_TYPE_PRIVATE = "PRIVATE"
+
+    #: A constant which can be used with the software_source_type property of a SoftwareSource.
+    #: This constant has a value of "THIRD_PARTY"
+    SOFTWARE_SOURCE_TYPE_THIRD_PARTY = "THIRD_PARTY"
+
     #: A constant which can be used with the availability property of a SoftwareSource.
     #: This constant has a value of "AVAILABLE"
     AVAILABILITY_AVAILABLE = "AVAILABLE"
@@ -113,6 +121,10 @@ class SoftwareSource(object):
     #: This constant has a value of "SRC"
     ARCH_TYPE_SRC = "SRC"
 
+    #: A constant which can be used with the arch_type property of a SoftwareSource.
+    #: This constant has a value of "I386"
+    ARCH_TYPE_I386 = "I386"
+
     #: A constant which can be used with the lifecycle_state property of a SoftwareSource.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -141,6 +153,10 @@ class SoftwareSource(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the lifecycle_state property of a SoftwareSource.
+    #: This constant has a value of "NEEDS_ATTENTION"
+    LIFECYCLE_STATE_NEEDS_ATTENTION = "NEEDS_ATTENTION"
+
     #: A constant which can be used with the checksum_type property of a SoftwareSource.
     #: This constant has a value of "SHA1"
     CHECKSUM_TYPE_SHA1 = "SHA1"
@@ -163,8 +179,10 @@ class SoftwareSource(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.os_management_hub.models.VendorSoftwareSource`
+        * :class:`~oci.os_management_hub.models.ThirdPartySoftwareSource`
         * :class:`~oci.os_management_hub.models.CustomSoftwareSource`
         * :class:`~oci.os_management_hub.models.VersionedCustomSoftwareSource`
+        * :class:`~oci.os_management_hub.models.PrivateSoftwareSource`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -190,7 +208,7 @@ class SoftwareSource(object):
 
         :param software_source_type:
             The value to assign to the software_source_type property of this SoftwareSource.
-            Allowed values for this property are: "VENDOR", "CUSTOM", "VERSIONED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "VENDOR", "CUSTOM", "VERSIONED", "PRIVATE", "THIRD_PARTY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type software_source_type: str
 
@@ -218,13 +236,13 @@ class SoftwareSource(object):
 
         :param arch_type:
             The value to assign to the arch_type property of this SoftwareSource.
-            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type arch_type: str
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this SoftwareSource.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -355,11 +373,17 @@ class SoftwareSource(object):
         if type == 'VENDOR':
             return 'VendorSoftwareSource'
 
+        if type == 'THIRD_PARTY':
+            return 'ThirdPartySoftwareSource'
+
         if type == 'CUSTOM':
             return 'CustomSoftwareSource'
 
         if type == 'VERSIONED':
             return 'VersionedCustomSoftwareSource'
+
+        if type == 'PRIVATE':
+            return 'PrivateSoftwareSource'
         else:
             return 'SoftwareSource'
 
@@ -501,7 +525,7 @@ class SoftwareSource(object):
         **[Required]** Gets the software_source_type of this SoftwareSource.
         Type of software source.
 
-        Allowed values for this property are: "VENDOR", "CUSTOM", "VERSIONED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "VENDOR", "CUSTOM", "VERSIONED", "PRIVATE", "THIRD_PARTY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -520,7 +544,7 @@ class SoftwareSource(object):
         :param software_source_type: The software_source_type of this SoftwareSource.
         :type: str
         """
-        allowed_values = ["VENDOR", "CUSTOM", "VERSIONED"]
+        allowed_values = ["VENDOR", "CUSTOM", "VERSIONED", "PRIVATE", "THIRD_PARTY"]
         if not value_allowed_none_or_none_sentinel(software_source_type, allowed_values):
             software_source_type = 'UNKNOWN_ENUM_VALUE'
         self._software_source_type = software_source_type
@@ -613,7 +637,7 @@ class SoftwareSource(object):
     def os_family(self):
         """
         **[Required]** Gets the os_family of this SoftwareSource.
-        The OS family the software source belongs to.
+        The OS family of the software source.
 
         Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -628,7 +652,7 @@ class SoftwareSource(object):
     def os_family(self, os_family):
         """
         Sets the os_family of this SoftwareSource.
-        The OS family the software source belongs to.
+        The OS family of the software source.
 
 
         :param os_family: The os_family of this SoftwareSource.
@@ -645,7 +669,7 @@ class SoftwareSource(object):
         **[Required]** Gets the arch_type of this SoftwareSource.
         The architecture type supported by the software source.
 
-        Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -664,7 +688,7 @@ class SoftwareSource(object):
         :param arch_type: The arch_type of this SoftwareSource.
         :type: str
         """
-        allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC"]
+        allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386"]
         if not value_allowed_none_or_none_sentinel(arch_type, allowed_values):
             arch_type = 'UNKNOWN_ENUM_VALUE'
         self._arch_type = arch_type
@@ -675,7 +699,7 @@ class SoftwareSource(object):
         Gets the lifecycle_state of this SoftwareSource.
         The current state of the software source.
 
-        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -694,7 +718,7 @@ class SoftwareSource(object):
         :param lifecycle_state: The lifecycle_state of this SoftwareSource.
         :type: str
         """
-        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
+        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -781,7 +805,7 @@ class SoftwareSource(object):
     def gpg_key_url(self):
         """
         Gets the gpg_key_url of this SoftwareSource.
-        URL of the GPG key for this software source.
+        URI of the GPG key for this software source.
 
 
         :return: The gpg_key_url of this SoftwareSource.
@@ -793,7 +817,7 @@ class SoftwareSource(object):
     def gpg_key_url(self, gpg_key_url):
         """
         Sets the gpg_key_url of this SoftwareSource.
-        URL of the GPG key for this software source.
+        URI of the GPG key for this software source.
 
 
         :param gpg_key_url: The gpg_key_url of this SoftwareSource.
@@ -853,7 +877,7 @@ class SoftwareSource(object):
     def size(self):
         """
         Gets the size of this SoftwareSource.
-        The size of the software source in gigabytes (GB).
+        The size of the software source in bytes (B).
 
 
         :return: The size of this SoftwareSource.
@@ -865,7 +889,7 @@ class SoftwareSource(object):
     def size(self, size):
         """
         Sets the size of this SoftwareSource.
-        The size of the software source in gigabytes (GB).
+        The size of the software source in bytes (B).
 
 
         :param size: The size of this SoftwareSource.

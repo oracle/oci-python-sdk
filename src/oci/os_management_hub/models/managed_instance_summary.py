@@ -55,6 +55,10 @@ class ManagedInstanceSummary(object):
     #: This constant has a value of "SRC"
     ARCHITECTURE_SRC = "SRC"
 
+    #: A constant which can be used with the architecture property of a ManagedInstanceSummary.
+    #: This constant has a value of "I386"
+    ARCHITECTURE_I386 = "I386"
+
     #: A constant which can be used with the os_family property of a ManagedInstanceSummary.
     #: This constant has a value of "ORACLE_LINUX_9"
     OS_FAMILY_ORACLE_LINUX_9 = "ORACLE_LINUX_9"
@@ -115,6 +119,10 @@ class ManagedInstanceSummary(object):
     #: This constant has a value of "ONBOARDING"
     STATUS_ONBOARDING = "ONBOARDING"
 
+    #: A constant which can be used with the status property of a ManagedInstanceSummary.
+    #: This constant has a value of "REBOOTING"
+    STATUS_REBOOTING = "REBOOTING"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ManagedInstanceSummary object with values from keyword arguments.
@@ -148,7 +156,7 @@ class ManagedInstanceSummary(object):
 
         :param architecture:
             The value to assign to the architecture property of this ManagedInstanceSummary.
-            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type architecture: str
 
@@ -160,7 +168,7 @@ class ManagedInstanceSummary(object):
 
         :param status:
             The value to assign to the status property of this ManagedInstanceSummary.
-            Allowed values for this property are: "NORMAL", "UNREACHABLE", "ERROR", "WARNING", "REGISTRATION_ERROR", "DELETING", "ONBOARDING", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "NORMAL", "UNREACHABLE", "ERROR", "WARNING", "REGISTRATION_ERROR", "DELETING", "ONBOARDING", "REBOOTING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type status: str
 
@@ -200,6 +208,10 @@ class ManagedInstanceSummary(object):
             The value to assign to the is_managed_by_autonomous_linux property of this ManagedInstanceSummary.
         :type is_managed_by_autonomous_linux: bool
 
+        :param agent_version:
+            The value to assign to the agent_version property of this ManagedInstanceSummary.
+        :type agent_version: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -219,7 +231,8 @@ class ManagedInstanceSummary(object):
             'is_management_station': 'bool',
             'notification_topic_id': 'str',
             'autonomous_settings': 'AutonomousSettings',
-            'is_managed_by_autonomous_linux': 'bool'
+            'is_managed_by_autonomous_linux': 'bool',
+            'agent_version': 'str'
         }
 
         self.attribute_map = {
@@ -240,7 +253,8 @@ class ManagedInstanceSummary(object):
             'is_management_station': 'isManagementStation',
             'notification_topic_id': 'notificationTopicId',
             'autonomous_settings': 'autonomousSettings',
-            'is_managed_by_autonomous_linux': 'isManagedByAutonomousLinux'
+            'is_managed_by_autonomous_linux': 'isManagedByAutonomousLinux',
+            'agent_version': 'agentVersion'
         }
 
         self._id = None
@@ -261,6 +275,7 @@ class ManagedInstanceSummary(object):
         self._notification_topic_id = None
         self._autonomous_settings = None
         self._is_managed_by_autonomous_linux = None
+        self._agent_version = None
 
     @property
     def id(self):
@@ -430,7 +445,7 @@ class ManagedInstanceSummary(object):
         Gets the architecture of this ManagedInstanceSummary.
         The CPU architecture type of the managed instance.
 
-        Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -449,7 +464,7 @@ class ManagedInstanceSummary(object):
         :param architecture: The architecture of this ManagedInstanceSummary.
         :type: str
         """
-        allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC"]
+        allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386"]
         if not value_allowed_none_or_none_sentinel(architecture, allowed_values):
             architecture = 'UNKNOWN_ENUM_VALUE'
         self._architecture = architecture
@@ -490,7 +505,7 @@ class ManagedInstanceSummary(object):
         **[Required]** Gets the status of this ManagedInstanceSummary.
         Current status of the managed instance.
 
-        Allowed values for this property are: "NORMAL", "UNREACHABLE", "ERROR", "WARNING", "REGISTRATION_ERROR", "DELETING", "ONBOARDING", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "NORMAL", "UNREACHABLE", "ERROR", "WARNING", "REGISTRATION_ERROR", "DELETING", "ONBOARDING", "REBOOTING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -509,7 +524,7 @@ class ManagedInstanceSummary(object):
         :param status: The status of this ManagedInstanceSummary.
         :type: str
         """
-        allowed_values = ["NORMAL", "UNREACHABLE", "ERROR", "WARNING", "REGISTRATION_ERROR", "DELETING", "ONBOARDING"]
+        allowed_values = ["NORMAL", "UNREACHABLE", "ERROR", "WARNING", "REGISTRATION_ERROR", "DELETING", "ONBOARDING", "REBOOTING"]
         if not value_allowed_none_or_none_sentinel(status, allowed_values):
             status = 'UNKNOWN_ENUM_VALUE'
         self._status = status
@@ -717,6 +732,30 @@ class ManagedInstanceSummary(object):
         :type: bool
         """
         self._is_managed_by_autonomous_linux = is_managed_by_autonomous_linux
+
+    @property
+    def agent_version(self):
+        """
+        Gets the agent_version of this ManagedInstanceSummary.
+        The version of osmh-agent running on the managed instance
+
+
+        :return: The agent_version of this ManagedInstanceSummary.
+        :rtype: str
+        """
+        return self._agent_version
+
+    @agent_version.setter
+    def agent_version(self, agent_version):
+        """
+        Sets the agent_version of this ManagedInstanceSummary.
+        The version of osmh-agent running on the managed instance
+
+
+        :param agent_version: The agent_version of this ManagedInstanceSummary.
+        :type: str
+        """
+        self._agent_version = agent_version
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -27,6 +27,14 @@ class SoftwareSourceDetails(object):
     #: This constant has a value of "VERSIONED"
     SOFTWARE_SOURCE_TYPE_VERSIONED = "VERSIONED"
 
+    #: A constant which can be used with the software_source_type property of a SoftwareSourceDetails.
+    #: This constant has a value of "PRIVATE"
+    SOFTWARE_SOURCE_TYPE_PRIVATE = "PRIVATE"
+
+    #: A constant which can be used with the software_source_type property of a SoftwareSourceDetails.
+    #: This constant has a value of "THIRD_PARTY"
+    SOFTWARE_SOURCE_TYPE_THIRD_PARTY = "THIRD_PARTY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new SoftwareSourceDetails object with values from keyword arguments.
@@ -46,7 +54,7 @@ class SoftwareSourceDetails(object):
 
         :param software_source_type:
             The value to assign to the software_source_type property of this SoftwareSourceDetails.
-            Allowed values for this property are: "VENDOR", "CUSTOM", "VERSIONED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "VENDOR", "CUSTOM", "VERSIONED", "PRIVATE", "THIRD_PARTY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type software_source_type: str
 
@@ -159,7 +167,7 @@ class SoftwareSourceDetails(object):
         Gets the software_source_type of this SoftwareSourceDetails.
         Type of the software source.
 
-        Allowed values for this property are: "VENDOR", "CUSTOM", "VERSIONED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "VENDOR", "CUSTOM", "VERSIONED", "PRIVATE", "THIRD_PARTY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -178,7 +186,7 @@ class SoftwareSourceDetails(object):
         :param software_source_type: The software_source_type of this SoftwareSourceDetails.
         :type: str
         """
-        allowed_values = ["VENDOR", "CUSTOM", "VERSIONED"]
+        allowed_values = ["VENDOR", "CUSTOM", "VERSIONED", "PRIVATE", "THIRD_PARTY"]
         if not value_allowed_none_or_none_sentinel(software_source_type, allowed_values):
             software_source_type = 'UNKNOWN_ENUM_VALUE'
         self._software_source_type = software_source_type

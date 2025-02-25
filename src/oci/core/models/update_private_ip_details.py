@@ -15,6 +15,14 @@ class UpdatePrivateIpDetails(object):
     UpdatePrivateIpDetails model.
     """
 
+    #: A constant which can be used with the lifetime property of a UpdatePrivateIpDetails.
+    #: This constant has a value of "EPHEMERAL"
+    LIFETIME_EPHEMERAL = "EPHEMERAL"
+
+    #: A constant which can be used with the lifetime property of a UpdatePrivateIpDetails.
+    #: This constant has a value of "RESERVED"
+    LIFETIME_RESERVED = "RESERVED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdatePrivateIpDetails object with values from keyword arguments.
@@ -40,6 +48,11 @@ class UpdatePrivateIpDetails(object):
             The value to assign to the vnic_id property of this UpdatePrivateIpDetails.
         :type vnic_id: str
 
+        :param lifetime:
+            The value to assign to the lifetime property of this UpdatePrivateIpDetails.
+            Allowed values for this property are: "EPHEMERAL", "RESERVED"
+        :type lifetime: str
+
         :param route_table_id:
             The value to assign to the route_table_id property of this UpdatePrivateIpDetails.
         :type route_table_id: str
@@ -51,6 +64,7 @@ class UpdatePrivateIpDetails(object):
             'freeform_tags': 'dict(str, str)',
             'hostname_label': 'str',
             'vnic_id': 'str',
+            'lifetime': 'str',
             'route_table_id': 'str'
         }
 
@@ -60,6 +74,7 @@ class UpdatePrivateIpDetails(object):
             'freeform_tags': 'freeformTags',
             'hostname_label': 'hostnameLabel',
             'vnic_id': 'vnicId',
+            'lifetime': 'lifetime',
             'route_table_id': 'routeTableId'
         }
 
@@ -68,6 +83,7 @@ class UpdatePrivateIpDetails(object):
         self._freeform_tags = None
         self._hostname_label = None
         self._vnic_id = None
+        self._lifetime = None
         self._route_table_id = None
 
     @property
@@ -247,12 +263,51 @@ class UpdatePrivateIpDetails(object):
         self._vnic_id = vnic_id
 
     @property
+    def lifetime(self):
+        """
+        Gets the lifetime of this UpdatePrivateIpDetails.
+        Lifetime of the IP address.
+        There are two types of IPv6 IPs:
+         - Ephemeral
+         - Reserved
+
+        Allowed values for this property are: "EPHEMERAL", "RESERVED"
+
+
+        :return: The lifetime of this UpdatePrivateIpDetails.
+        :rtype: str
+        """
+        return self._lifetime
+
+    @lifetime.setter
+    def lifetime(self, lifetime):
+        """
+        Sets the lifetime of this UpdatePrivateIpDetails.
+        Lifetime of the IP address.
+        There are two types of IPv6 IPs:
+         - Ephemeral
+         - Reserved
+
+
+        :param lifetime: The lifetime of this UpdatePrivateIpDetails.
+        :type: str
+        """
+        allowed_values = ["EPHEMERAL", "RESERVED"]
+        if not value_allowed_none_or_none_sentinel(lifetime, allowed_values):
+            raise ValueError(
+                f"Invalid value for `lifetime`, must be None or one of {allowed_values}"
+            )
+        self._lifetime = lifetime
+
+    @property
     def route_table_id(self):
         """
         Gets the route_table_id of this UpdatePrivateIpDetails.
-        The `OCID`__ of the route table the PrivateIp will use.
+        The `OCID`__ of the route table the IP address or VNIC will use. For more information, see
+        `Source Based Routing`__.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing
 
 
         :return: The route_table_id of this UpdatePrivateIpDetails.
@@ -264,9 +319,11 @@ class UpdatePrivateIpDetails(object):
     def route_table_id(self, route_table_id):
         """
         Sets the route_table_id of this UpdatePrivateIpDetails.
-        The `OCID`__ of the route table the PrivateIp will use.
+        The `OCID`__ of the route table the IP address or VNIC will use. For more information, see
+        `Source Based Routing`__.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing
 
 
         :param route_table_id: The route_table_id of this UpdatePrivateIpDetails.

@@ -28,19 +28,26 @@ class InstallPackagesOnManagedInstanceGroupDetails(object):
             The value to assign to the work_request_details property of this InstallPackagesOnManagedInstanceGroupDetails.
         :type work_request_details: oci.os_management_hub.models.WorkRequestDetails
 
+        :param is_latest:
+            The value to assign to the is_latest property of this InstallPackagesOnManagedInstanceGroupDetails.
+        :type is_latest: bool
+
         """
         self.swagger_types = {
             'package_names': 'list[str]',
-            'work_request_details': 'WorkRequestDetails'
+            'work_request_details': 'WorkRequestDetails',
+            'is_latest': 'bool'
         }
 
         self.attribute_map = {
             'package_names': 'packageNames',
-            'work_request_details': 'workRequestDetails'
+            'work_request_details': 'workRequestDetails',
+            'is_latest': 'isLatest'
         }
 
         self._package_names = None
         self._work_request_details = None
+        self._is_latest = None
 
     @property
     def package_names(self):
@@ -85,6 +92,30 @@ class InstallPackagesOnManagedInstanceGroupDetails(object):
         :type: oci.os_management_hub.models.WorkRequestDetails
         """
         self._work_request_details = work_request_details
+
+    @property
+    def is_latest(self):
+        """
+        Gets the is_latest of this InstallPackagesOnManagedInstanceGroupDetails.
+        Indicates whether this is the latest package version.
+
+
+        :return: The is_latest of this InstallPackagesOnManagedInstanceGroupDetails.
+        :rtype: bool
+        """
+        return self._is_latest
+
+    @is_latest.setter
+    def is_latest(self, is_latest):
+        """
+        Sets the is_latest of this InstallPackagesOnManagedInstanceGroupDetails.
+        Indicates whether this is the latest package version.
+
+
+        :param is_latest: The is_latest of this InstallPackagesOnManagedInstanceGroupDetails.
+        :type: bool
+        """
+        self._is_latest = is_latest
 
     def __repr__(self):
         return formatted_flat_dict(self)

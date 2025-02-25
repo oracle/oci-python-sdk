@@ -36,6 +36,10 @@ class UpdateRedisClusterDetails(object):
             The value to assign to the node_memory_in_gbs property of this UpdateRedisClusterDetails.
         :type node_memory_in_gbs: float
 
+        :param software_version:
+            The value to assign to the software_version property of this UpdateRedisClusterDetails.
+        :type software_version: str
+
         :param nsg_ids:
             The value to assign to the nsg_ids property of this UpdateRedisClusterDetails.
         :type nsg_ids: list[str]
@@ -54,6 +58,7 @@ class UpdateRedisClusterDetails(object):
             'display_name': 'str',
             'node_count': 'int',
             'node_memory_in_gbs': 'float',
+            'software_version': 'str',
             'nsg_ids': 'list[str]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -64,6 +69,7 @@ class UpdateRedisClusterDetails(object):
             'display_name': 'displayName',
             'node_count': 'nodeCount',
             'node_memory_in_gbs': 'nodeMemoryInGBs',
+            'software_version': 'softwareVersion',
             'nsg_ids': 'nsgIds',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
@@ -73,6 +79,7 @@ class UpdateRedisClusterDetails(object):
         self._display_name = None
         self._node_count = None
         self._node_memory_in_gbs = None
+        self._software_version = None
         self._nsg_ids = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -172,6 +179,30 @@ class UpdateRedisClusterDetails(object):
         :type: float
         """
         self._node_memory_in_gbs = node_memory_in_gbs
+
+    @property
+    def software_version(self):
+        """
+        Gets the software_version of this UpdateRedisClusterDetails.
+        The OCI Cache engine version that the cluster is running.
+
+
+        :return: The software_version of this UpdateRedisClusterDetails.
+        :rtype: str
+        """
+        return self._software_version
+
+    @software_version.setter
+    def software_version(self, software_version):
+        """
+        Sets the software_version of this UpdateRedisClusterDetails.
+        The OCI Cache engine version that the cluster is running.
+
+
+        :param software_version: The software_version of this UpdateRedisClusterDetails.
+        :type: str
+        """
+        self._software_version = software_version
 
     @property
     def nsg_ids(self):

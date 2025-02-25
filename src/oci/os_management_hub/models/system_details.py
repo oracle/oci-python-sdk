@@ -35,6 +35,10 @@ class SystemDetails(object):
     #: This constant has a value of "SRC"
     ARCHITECTURE_SRC = "SRC"
 
+    #: A constant which can be used with the architecture property of a SystemDetails.
+    #: This constant has a value of "I386"
+    ARCHITECTURE_I386 = "I386"
+
     #: A constant which can be used with the os_family property of a SystemDetails.
     #: This constant has a value of "ORACLE_LINUX_9"
     OS_FAMILY_ORACLE_LINUX_9 = "ORACLE_LINUX_9"
@@ -74,7 +78,7 @@ class SystemDetails(object):
 
         :param architecture:
             The value to assign to the architecture property of this SystemDetails.
-            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type architecture: str
 
@@ -139,7 +143,7 @@ class SystemDetails(object):
         **[Required]** Gets the architecture of this SystemDetails.
         Architecture type.
 
-        Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -158,7 +162,7 @@ class SystemDetails(object):
         :param architecture: The architecture of this SystemDetails.
         :type: str
         """
-        allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC"]
+        allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386"]
         if not value_allowed_none_or_none_sentinel(architecture, allowed_values):
             architecture = 'UNKNOWN_ENUM_VALUE'
         self._architecture = architecture

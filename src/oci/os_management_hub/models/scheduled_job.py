@@ -162,6 +162,10 @@ class ScheduledJob(object):
             The value to assign to the retry_intervals property of this ScheduledJob.
         :type retry_intervals: list[int]
 
+        :param work_request_id:
+            The value to assign to the work_request_id property of this ScheduledJob.
+        :type work_request_id: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -188,7 +192,8 @@ class ScheduledJob(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
             'is_restricted': 'bool',
-            'retry_intervals': 'list[int]'
+            'retry_intervals': 'list[int]',
+            'work_request_id': 'str'
         }
 
         self.attribute_map = {
@@ -216,7 +221,8 @@ class ScheduledJob(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
             'is_restricted': 'isRestricted',
-            'retry_intervals': 'retryIntervals'
+            'retry_intervals': 'retryIntervals',
+            'work_request_id': 'workRequestId'
         }
 
         self._id = None
@@ -244,6 +250,7 @@ class ScheduledJob(object):
         self._system_tags = None
         self._is_restricted = None
         self._retry_intervals = None
+        self._work_request_id = None
 
     @property
     def id(self):
@@ -956,6 +963,34 @@ class ScheduledJob(object):
         :type: list[int]
         """
         self._retry_intervals = retry_intervals
+
+    @property
+    def work_request_id(self):
+        """
+        Gets the work_request_id of this ScheduledJob.
+        The `OCID`__ for the work request that will be rerun.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The work_request_id of this ScheduledJob.
+        :rtype: str
+        """
+        return self._work_request_id
+
+    @work_request_id.setter
+    def work_request_id(self, work_request_id):
+        """
+        Sets the work_request_id of this ScheduledJob.
+        The `OCID`__ for the work request that will be rerun.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param work_request_id: The work_request_id of this ScheduledJob.
+        :type: str
+        """
+        self._work_request_id = work_request_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

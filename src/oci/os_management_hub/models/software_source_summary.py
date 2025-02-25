@@ -29,6 +29,14 @@ class SoftwareSourceSummary(object):
     #: This constant has a value of "VERSIONED"
     SOFTWARE_SOURCE_TYPE_VERSIONED = "VERSIONED"
 
+    #: A constant which can be used with the software_source_type property of a SoftwareSourceSummary.
+    #: This constant has a value of "PRIVATE"
+    SOFTWARE_SOURCE_TYPE_PRIVATE = "PRIVATE"
+
+    #: A constant which can be used with the software_source_type property of a SoftwareSourceSummary.
+    #: This constant has a value of "THIRD_PARTY"
+    SOFTWARE_SOURCE_TYPE_THIRD_PARTY = "THIRD_PARTY"
+
     #: A constant which can be used with the availability property of a SoftwareSourceSummary.
     #: This constant has a value of "AVAILABLE"
     AVAILABILITY_AVAILABLE = "AVAILABLE"
@@ -113,13 +121,19 @@ class SoftwareSourceSummary(object):
     #: This constant has a value of "SRC"
     ARCH_TYPE_SRC = "SRC"
 
+    #: A constant which can be used with the arch_type property of a SoftwareSourceSummary.
+    #: This constant has a value of "I386"
+    ARCH_TYPE_I386 = "I386"
+
     def __init__(self, **kwargs):
         """
         Initializes a new SoftwareSourceSummary object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.os_management_hub.models.PrivateSoftwareSourceSummary`
         * :class:`~oci.os_management_hub.models.VendorSoftwareSourceSummary`
         * :class:`~oci.os_management_hub.models.VersionedCustomSoftwareSourceSummary`
+        * :class:`~oci.os_management_hub.models.ThirdPartySoftwareSourceSummary`
         * :class:`~oci.os_management_hub.models.CustomSoftwareSourceSummary`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
@@ -158,7 +172,7 @@ class SoftwareSourceSummary(object):
 
         :param software_source_type:
             The value to assign to the software_source_type property of this SoftwareSourceSummary.
-            Allowed values for this property are: "VENDOR", "CUSTOM", "VERSIONED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "VENDOR", "CUSTOM", "VERSIONED", "PRIVATE", "THIRD_PARTY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type software_source_type: str
 
@@ -182,7 +196,7 @@ class SoftwareSourceSummary(object):
 
         :param arch_type:
             The value to assign to the arch_type property of this SoftwareSourceSummary.
-            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type arch_type: str
 
@@ -283,11 +297,17 @@ class SoftwareSourceSummary(object):
         """
         type = object_dictionary['softwareSourceType']
 
+        if type == 'PRIVATE':
+            return 'PrivateSoftwareSourceSummary'
+
         if type == 'VENDOR':
             return 'VendorSoftwareSourceSummary'
 
         if type == 'VERSIONED':
             return 'VersionedCustomSoftwareSourceSummary'
+
+        if type == 'THIRD_PARTY':
+            return 'ThirdPartySoftwareSourceSummary'
 
         if type == 'CUSTOM':
             return 'CustomSoftwareSourceSummary'
@@ -508,7 +528,7 @@ class SoftwareSourceSummary(object):
         **[Required]** Gets the software_source_type of this SoftwareSourceSummary.
         Type of software source.
 
-        Allowed values for this property are: "VENDOR", "CUSTOM", "VERSIONED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "VENDOR", "CUSTOM", "VERSIONED", "PRIVATE", "THIRD_PARTY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -527,7 +547,7 @@ class SoftwareSourceSummary(object):
         :param software_source_type: The software_source_type of this SoftwareSourceSummary.
         :type: str
         """
-        allowed_values = ["VENDOR", "CUSTOM", "VERSIONED"]
+        allowed_values = ["VENDOR", "CUSTOM", "VERSIONED", "PRIVATE", "THIRD_PARTY"]
         if not value_allowed_none_or_none_sentinel(software_source_type, allowed_values):
             software_source_type = 'UNKNOWN_ENUM_VALUE'
         self._software_source_type = software_source_type
@@ -596,7 +616,7 @@ class SoftwareSourceSummary(object):
     def os_family(self):
         """
         **[Required]** Gets the os_family of this SoftwareSourceSummary.
-        The OS family the software source belongs to.
+        The OS family of the software source.
 
         Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -611,7 +631,7 @@ class SoftwareSourceSummary(object):
     def os_family(self, os_family):
         """
         Sets the os_family of this SoftwareSourceSummary.
-        The OS family the software source belongs to.
+        The OS family of the software source.
 
 
         :param os_family: The os_family of this SoftwareSourceSummary.
@@ -628,7 +648,7 @@ class SoftwareSourceSummary(object):
         **[Required]** Gets the arch_type of this SoftwareSourceSummary.
         The architecture type supported by the software source.
 
-        Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -647,7 +667,7 @@ class SoftwareSourceSummary(object):
         :param arch_type: The arch_type of this SoftwareSourceSummary.
         :type: str
         """
-        allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC"]
+        allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386"]
         if not value_allowed_none_or_none_sentinel(arch_type, allowed_values):
             arch_type = 'UNKNOWN_ENUM_VALUE'
         self._arch_type = arch_type
@@ -704,7 +724,7 @@ class SoftwareSourceSummary(object):
     def size(self):
         """
         Gets the size of this SoftwareSourceSummary.
-        The size of the software source in gigabytes (GB).
+        The size of the software source in bytes (B).
 
 
         :return: The size of this SoftwareSourceSummary.
@@ -716,7 +736,7 @@ class SoftwareSourceSummary(object):
     def size(self, size):
         """
         Sets the size of this SoftwareSourceSummary.
-        The size of the software source in gigabytes (GB).
+        The size of the software source in bytes (B).
 
 
         :param size: The size of this SoftwareSourceSummary.

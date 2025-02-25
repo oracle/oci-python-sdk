@@ -226,7 +226,7 @@ class UpdateVnicDetails(object):
         Must be unique across all VNICs in the subnet and comply with
         `RFC 952`__ and
         `RFC 1123`__.
-        The value appears in the `:class:`Vnic`` object and also the
+        The value appears in the :class:`Vnic` object and also the
         :class:`PrivateIp` object returned by
         :func:`list_private_ips` and
         :func:`get_private_ip`.
@@ -254,7 +254,7 @@ class UpdateVnicDetails(object):
         Must be unique across all VNICs in the subnet and comply with
         `RFC 952`__ and
         `RFC 1123`__.
-        The value appears in the `:class:`Vnic`` object and also the
+        The value appears in the :class:`Vnic` object and also the
         :class:`PrivateIp` object returned by
         :func:`list_private_ips` and
         :func:`get_private_ip`.
@@ -360,9 +360,11 @@ class UpdateVnicDetails(object):
     def route_table_id(self):
         """
         Gets the route_table_id of this UpdateVnicDetails.
-        The `OCID`__ of the route table the PrivateIp will use.
+        The `OCID`__ of the route table the IP address or VNIC will use. For more information, see
+        `Source Based Routing`__.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing
 
 
         :return: The route_table_id of this UpdateVnicDetails.
@@ -374,9 +376,11 @@ class UpdateVnicDetails(object):
     def route_table_id(self, route_table_id):
         """
         Sets the route_table_id of this UpdateVnicDetails.
-        The `OCID`__ of the route table the PrivateIp will use.
+        The `OCID`__ of the route table the IP address or VNIC will use. For more information, see
+        `Source Based Routing`__.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing
 
 
         :param route_table_id: The route_table_id of this UpdateVnicDetails.

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WindowsStandaloneProfile(Profile):
     """
-    Provides the information for a windows standalone registration profile.
+    Provides the information for a Windows standalone registration profile.
     """
 
     def __init__(self, **kwargs):
@@ -58,16 +58,24 @@ class WindowsStandaloneProfile(Profile):
 
         :param arch_type:
             The value to assign to the arch_type property of this WindowsStandaloneProfile.
-            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC"
+            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386"
         :type arch_type: str
 
         :param time_created:
             The value to assign to the time_created property of this WindowsStandaloneProfile.
         :type time_created: datetime
 
+        :param time_modified:
+            The value to assign to the time_modified property of this WindowsStandaloneProfile.
+        :type time_modified: datetime
+
+        :param profile_version:
+            The value to assign to the profile_version property of this WindowsStandaloneProfile.
+        :type profile_version: str
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this WindowsStandaloneProfile.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
         :type lifecycle_state: str
 
         :param registration_type:
@@ -107,6 +115,8 @@ class WindowsStandaloneProfile(Profile):
             'os_family': 'str',
             'arch_type': 'str',
             'time_created': 'datetime',
+            'time_modified': 'datetime',
+            'profile_version': 'str',
             'lifecycle_state': 'str',
             'registration_type': 'str',
             'is_default_profile': 'bool',
@@ -127,6 +137,8 @@ class WindowsStandaloneProfile(Profile):
             'os_family': 'osFamily',
             'arch_type': 'archType',
             'time_created': 'timeCreated',
+            'time_modified': 'timeModified',
+            'profile_version': 'profileVersion',
             'lifecycle_state': 'lifecycleState',
             'registration_type': 'registrationType',
             'is_default_profile': 'isDefaultProfile',
@@ -146,6 +158,8 @@ class WindowsStandaloneProfile(Profile):
         self._os_family = None
         self._arch_type = None
         self._time_created = None
+        self._time_modified = None
+        self._profile_version = None
         self._lifecycle_state = None
         self._registration_type = None
         self._is_default_profile = None

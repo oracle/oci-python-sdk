@@ -91,6 +91,10 @@ class ManagedInstanceGroup(object):
     #: This constant has a value of "SRC"
     ARCH_TYPE_SRC = "SRC"
 
+    #: A constant which can be used with the arch_type property of a ManagedInstanceGroup.
+    #: This constant has a value of "I386"
+    ARCH_TYPE_I386 = "I386"
+
     #: A constant which can be used with the vendor_name property of a ManagedInstanceGroup.
     #: This constant has a value of "ORACLE"
     VENDOR_NAME_ORACLE = "ORACLE"
@@ -162,7 +166,7 @@ class ManagedInstanceGroup(object):
 
         :param arch_type:
             The value to assign to the arch_type property of this ManagedInstanceGroup.
-            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type arch_type: str
 
@@ -522,7 +526,7 @@ class ManagedInstanceGroup(object):
         Gets the arch_type of this ManagedInstanceGroup.
         The CPU architecture of the instances in the managed instance group.
 
-        Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -541,7 +545,7 @@ class ManagedInstanceGroup(object):
         :param arch_type: The arch_type of this ManagedInstanceGroup.
         :type: str
         """
-        allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC"]
+        allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386"]
         if not value_allowed_none_or_none_sentinel(arch_type, allowed_values):
             arch_type = 'UNKNOWN_ENUM_VALUE'
         self._arch_type = arch_type

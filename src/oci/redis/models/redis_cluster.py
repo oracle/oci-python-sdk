@@ -49,6 +49,10 @@ class RedisCluster(object):
     #: This constant has a value of "REDIS_7_0"
     SOFTWARE_VERSION_REDIS_7_0 = "REDIS_7_0"
 
+    #: A constant which can be used with the software_version property of a RedisCluster.
+    #: This constant has a value of "VALKEY_7_2"
+    SOFTWARE_VERSION_VALKEY_7_2 = "VALKEY_7_2"
+
     #: A constant which can be used with the cluster_mode property of a RedisCluster.
     #: This constant has a value of "SHARDED"
     CLUSTER_MODE_SHARDED = "SHARDED"
@@ -110,7 +114,7 @@ class RedisCluster(object):
 
         :param software_version:
             The value to assign to the software_version property of this RedisCluster.
-            Allowed values for this property are: "V7_0_5", "REDIS_7_0", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "V7_0_5", "REDIS_7_0", "VALKEY_7_2", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type software_version: str
 
@@ -514,7 +518,7 @@ class RedisCluster(object):
         **[Required]** Gets the software_version of this RedisCluster.
         The OCI Cache engine version that the cluster is running.
 
-        Allowed values for this property are: "V7_0_5", "REDIS_7_0", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "V7_0_5", "REDIS_7_0", "VALKEY_7_2", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -533,7 +537,7 @@ class RedisCluster(object):
         :param software_version: The software_version of this RedisCluster.
         :type: str
         """
-        allowed_values = ["V7_0_5", "REDIS_7_0"]
+        allowed_values = ["V7_0_5", "REDIS_7_0", "VALKEY_7_2"]
         if not value_allowed_none_or_none_sentinel(software_version, allowed_values):
             software_version = 'UNKNOWN_ENUM_VALUE'
         self._software_version = software_version

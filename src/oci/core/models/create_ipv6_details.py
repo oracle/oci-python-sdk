@@ -15,6 +15,14 @@ class CreateIpv6Details(object):
     CreateIpv6Details model.
     """
 
+    #: A constant which can be used with the lifetime property of a CreateIpv6Details.
+    #: This constant has a value of "EPHEMERAL"
+    LIFETIME_EPHEMERAL = "EPHEMERAL"
+
+    #: A constant which can be used with the lifetime property of a CreateIpv6Details.
+    #: This constant has a value of "RESERVED"
+    LIFETIME_RESERVED = "RESERVED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateIpv6Details object with values from keyword arguments.
@@ -40,6 +48,15 @@ class CreateIpv6Details(object):
             The value to assign to the vnic_id property of this CreateIpv6Details.
         :type vnic_id: str
 
+        :param subnet_id:
+            The value to assign to the subnet_id property of this CreateIpv6Details.
+        :type subnet_id: str
+
+        :param lifetime:
+            The value to assign to the lifetime property of this CreateIpv6Details.
+            Allowed values for this property are: "EPHEMERAL", "RESERVED"
+        :type lifetime: str
+
         :param route_table_id:
             The value to assign to the route_table_id property of this CreateIpv6Details.
         :type route_table_id: str
@@ -55,6 +72,8 @@ class CreateIpv6Details(object):
             'freeform_tags': 'dict(str, str)',
             'ip_address': 'str',
             'vnic_id': 'str',
+            'subnet_id': 'str',
+            'lifetime': 'str',
             'route_table_id': 'str',
             'ipv6_subnet_cidr': 'str'
         }
@@ -65,6 +84,8 @@ class CreateIpv6Details(object):
             'freeform_tags': 'freeformTags',
             'ip_address': 'ipAddress',
             'vnic_id': 'vnicId',
+            'subnet_id': 'subnetId',
+            'lifetime': 'lifetime',
             'route_table_id': 'routeTableId',
             'ipv6_subnet_cidr': 'ipv6SubnetCidr'
         }
@@ -74,6 +95,8 @@ class CreateIpv6Details(object):
         self._freeform_tags = None
         self._ip_address = None
         self._vnic_id = None
+        self._subnet_id = None
+        self._lifetime = None
         self._route_table_id = None
         self._ipv6_subnet_cidr = None
 
@@ -208,7 +231,7 @@ class CreateIpv6Details(object):
     @property
     def vnic_id(self):
         """
-        **[Required]** Gets the vnic_id of this CreateIpv6Details.
+        Gets the vnic_id of this CreateIpv6Details.
         The `OCID`__ of the VNIC to assign the IPv6 to. The
         IPv6 will be in the VNIC's subnet.
 
@@ -236,12 +259,81 @@ class CreateIpv6Details(object):
         self._vnic_id = vnic_id
 
     @property
+    def subnet_id(self):
+        """
+        Gets the subnet_id of this CreateIpv6Details.
+        The `OCID`__ of the subnet from which the IPv6 is to be drawn. The IP address,
+        *if supplied*, must be valid for the given subnet, only valid for reserved IPs currently.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The subnet_id of this CreateIpv6Details.
+        :rtype: str
+        """
+        return self._subnet_id
+
+    @subnet_id.setter
+    def subnet_id(self, subnet_id):
+        """
+        Sets the subnet_id of this CreateIpv6Details.
+        The `OCID`__ of the subnet from which the IPv6 is to be drawn. The IP address,
+        *if supplied*, must be valid for the given subnet, only valid for reserved IPs currently.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param subnet_id: The subnet_id of this CreateIpv6Details.
+        :type: str
+        """
+        self._subnet_id = subnet_id
+
+    @property
+    def lifetime(self):
+        """
+        Gets the lifetime of this CreateIpv6Details.
+        Lifetime of the IP address.
+        There are two types of IPv6 IPs:
+         - Ephemeral
+         - Reserved
+
+        Allowed values for this property are: "EPHEMERAL", "RESERVED"
+
+
+        :return: The lifetime of this CreateIpv6Details.
+        :rtype: str
+        """
+        return self._lifetime
+
+    @lifetime.setter
+    def lifetime(self, lifetime):
+        """
+        Sets the lifetime of this CreateIpv6Details.
+        Lifetime of the IP address.
+        There are two types of IPv6 IPs:
+         - Ephemeral
+         - Reserved
+
+
+        :param lifetime: The lifetime of this CreateIpv6Details.
+        :type: str
+        """
+        allowed_values = ["EPHEMERAL", "RESERVED"]
+        if not value_allowed_none_or_none_sentinel(lifetime, allowed_values):
+            raise ValueError(
+                f"Invalid value for `lifetime`, must be None or one of {allowed_values}"
+            )
+        self._lifetime = lifetime
+
+    @property
     def route_table_id(self):
         """
         Gets the route_table_id of this CreateIpv6Details.
-        The `OCID`__ of the route table the PrivateIp will use.
+        The `OCID`__ of the route table the IP address or VNIC will use. For more information, see
+        `Source Based Routing`__.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing
 
 
         :return: The route_table_id of this CreateIpv6Details.
@@ -253,9 +345,11 @@ class CreateIpv6Details(object):
     def route_table_id(self, route_table_id):
         """
         Sets the route_table_id of this CreateIpv6Details.
-        The `OCID`__ of the route table the PrivateIp will use.
+        The `OCID`__ of the route table the IP address or VNIC will use. For more information, see
+        `Source Based Routing`__.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing
 
 
         :param route_table_id: The route_table_id of this CreateIpv6Details.

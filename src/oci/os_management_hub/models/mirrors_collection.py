@@ -12,7 +12,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MirrorsCollection(object):
     """
-    List of mirrors associated with a Management Station
+    The set of software source mirrors returned for the
+    :func:`list_mirrors` operation.
     """
 
     def __init__(self, **kwargs):

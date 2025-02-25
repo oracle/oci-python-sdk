@@ -27,6 +27,14 @@ class CreateSoftwareSourceDetails(object):
     #: This constant has a value of "VERSIONED"
     SOFTWARE_SOURCE_TYPE_VERSIONED = "VERSIONED"
 
+    #: A constant which can be used with the software_source_type property of a CreateSoftwareSourceDetails.
+    #: This constant has a value of "PRIVATE"
+    SOFTWARE_SOURCE_TYPE_PRIVATE = "PRIVATE"
+
+    #: A constant which can be used with the software_source_type property of a CreateSoftwareSourceDetails.
+    #: This constant has a value of "THIRD_PARTY"
+    SOFTWARE_SOURCE_TYPE_THIRD_PARTY = "THIRD_PARTY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateSoftwareSourceDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -34,7 +42,9 @@ class CreateSoftwareSourceDetails(object):
 
         * :class:`~oci.os_management_hub.models.CreateCustomSoftwareSourceDetails`
         * :class:`~oci.os_management_hub.models.CreateVendorSoftwareSourceDetails`
+        * :class:`~oci.os_management_hub.models.CreatePrivateSoftwareSourceDetails`
         * :class:`~oci.os_management_hub.models.CreateVersionedCustomSoftwareSourceDetails`
+        * :class:`~oci.os_management_hub.models.CreateThirdPartySoftwareSourceDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -52,7 +62,7 @@ class CreateSoftwareSourceDetails(object):
 
         :param software_source_type:
             The value to assign to the software_source_type property of this CreateSoftwareSourceDetails.
-            Allowed values for this property are: "VENDOR", "CUSTOM", "VERSIONED"
+            Allowed values for this property are: "VENDOR", "CUSTOM", "VERSIONED", "PRIVATE", "THIRD_PARTY"
         :type software_source_type: str
 
         :param freeform_tags:
@@ -103,8 +113,14 @@ class CreateSoftwareSourceDetails(object):
         if type == 'VENDOR':
             return 'CreateVendorSoftwareSourceDetails'
 
+        if type == 'PRIVATE':
+            return 'CreatePrivateSoftwareSourceDetails'
+
         if type == 'VERSIONED':
             return 'CreateVersionedCustomSoftwareSourceDetails'
+
+        if type == 'THIRD_PARTY':
+            return 'CreateThirdPartySoftwareSourceDetails'
         else:
             return 'CreateSoftwareSourceDetails'
 
@@ -190,7 +206,7 @@ class CreateSoftwareSourceDetails(object):
         **[Required]** Gets the software_source_type of this CreateSoftwareSourceDetails.
         Type of software source.
 
-        Allowed values for this property are: "VENDOR", "CUSTOM", "VERSIONED"
+        Allowed values for this property are: "VENDOR", "CUSTOM", "VERSIONED", "PRIVATE", "THIRD_PARTY"
 
 
         :return: The software_source_type of this CreateSoftwareSourceDetails.
@@ -208,7 +224,7 @@ class CreateSoftwareSourceDetails(object):
         :param software_source_type: The software_source_type of this CreateSoftwareSourceDetails.
         :type: str
         """
-        allowed_values = ["VENDOR", "CUSTOM", "VERSIONED"]
+        allowed_values = ["VENDOR", "CUSTOM", "VERSIONED", "PRIVATE", "THIRD_PARTY"]
         if not value_allowed_none_or_none_sentinel(software_source_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `software_source_type`, must be None or one of {allowed_values}"

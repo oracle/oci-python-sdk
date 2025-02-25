@@ -146,7 +146,7 @@ class ReportingManagedInstanceClient(object):
         :param list[str] status: (optional)
             A filter to return only managed instances whose status matches the status provided.
 
-            Allowed values are: "NORMAL", "UNREACHABLE", "ERROR", "WARNING", "REGISTRATION_ERROR", "DELETING", "ONBOARDING"
+            Allowed values are: "NORMAL", "UNREACHABLE", "ERROR", "WARNING", "REGISTRATION_ERROR", "DELETING", "ONBOARDING", "REBOOTING"
 
         :param list[str] display_name: (optional)
             A filter to return resources that match the given display names.
@@ -251,7 +251,7 @@ class ReportingManagedInstanceClient(object):
                 f"get_managed_instance_analytic_content got unknown kwargs: {extra_kwargs!r}")
 
         if 'status' in kwargs:
-            status_allowed_values = ["NORMAL", "UNREACHABLE", "ERROR", "WARNING", "REGISTRATION_ERROR", "DELETING", "ONBOARDING"]
+            status_allowed_values = ["NORMAL", "UNREACHABLE", "ERROR", "WARNING", "REGISTRATION_ERROR", "DELETING", "ONBOARDING", "REBOOTING"]
             for status_item in kwargs['status']:
                 if status_item not in status_allowed_values:
                     raise ValueError(
@@ -536,7 +536,7 @@ class ReportingManagedInstanceClient(object):
         :param oci.os_management_hub.models.list[str] metric_names: (required)
             A filter to return only metrics whose name matches the given metric names.
 
-            Allowed values are: "TOTAL_INSTANCE_COUNT", "INSTANCE_WITH_AVAILABLE_SECURITY_UPDATES_COUNT", "INSTANCE_WITH_AVAILABLE_BUGFIX_UPDATES_COUNT", "NORMAL_INSTANCE_COUNT", "ERROR_INSTANCE_COUNT", "WARNING_INSTANCE_COUNT", "UNREACHABLE_INSTANCE_COUNT", "REGISTRATION_FAILED_INSTANCE_COUNT", "DELETING_INSTANCE_COUNT", "ONBOARDING_INSTANCE_COUNT", "INSTANCE_SECURITY_UPDATES_COUNT", "INSTANCE_BUGFIX_UPDATES_COUNT", "INSTANCE_SECURITY_ADVISORY_COUNT", "INSTANCE_BUGFIX_ADVISORY_COUNT"
+            Allowed values are: "TOTAL_INSTANCE_COUNT", "INSTANCE_WITH_AVAILABLE_SECURITY_UPDATES_COUNT", "INSTANCE_WITH_AVAILABLE_BUGFIX_UPDATES_COUNT", "NORMAL_INSTANCE_COUNT", "ERROR_INSTANCE_COUNT", "WARNING_INSTANCE_COUNT", "UNREACHABLE_INSTANCE_COUNT", "REGISTRATION_FAILED_INSTANCE_COUNT", "DELETING_INSTANCE_COUNT", "ONBOARDING_INSTANCE_COUNT", "INSTANCE_SECURITY_UPDATES_COUNT", "INSTANCE_BUGFIX_UPDATES_COUNT", "INSTANCE_SECURITY_ADVISORY_COUNT", "INSTANCE_BUGFIX_ADVISORY_COUNT", "REBOOTING_INSTANCE_COUNT", "NEEDS_REBOOTING_INSTANCE_COUNT"
 
         :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
@@ -562,7 +562,7 @@ class ReportingManagedInstanceClient(object):
         :param list[str] status: (optional)
             A filter to return only managed instances whose status matches the status provided.
 
-            Allowed values are: "NORMAL", "UNREACHABLE", "ERROR", "WARNING", "REGISTRATION_ERROR", "DELETING", "ONBOARDING"
+            Allowed values are: "NORMAL", "UNREACHABLE", "ERROR", "WARNING", "REGISTRATION_ERROR", "DELETING", "ONBOARDING", "REBOOTING"
 
         :param list[str] location: (optional)
             A filter to return only resources whose location matches the given value.
@@ -669,7 +669,7 @@ class ReportingManagedInstanceClient(object):
             raise ValueError(
                 f"summarize_managed_instance_analytics got unknown kwargs: {extra_kwargs!r}")
 
-        metric_names_allowed_values = ["TOTAL_INSTANCE_COUNT", "INSTANCE_WITH_AVAILABLE_SECURITY_UPDATES_COUNT", "INSTANCE_WITH_AVAILABLE_BUGFIX_UPDATES_COUNT", "NORMAL_INSTANCE_COUNT", "ERROR_INSTANCE_COUNT", "WARNING_INSTANCE_COUNT", "UNREACHABLE_INSTANCE_COUNT", "REGISTRATION_FAILED_INSTANCE_COUNT", "DELETING_INSTANCE_COUNT", "ONBOARDING_INSTANCE_COUNT", "INSTANCE_SECURITY_UPDATES_COUNT", "INSTANCE_BUGFIX_UPDATES_COUNT", "INSTANCE_SECURITY_ADVISORY_COUNT", "INSTANCE_BUGFIX_ADVISORY_COUNT"]
+        metric_names_allowed_values = ["TOTAL_INSTANCE_COUNT", "INSTANCE_WITH_AVAILABLE_SECURITY_UPDATES_COUNT", "INSTANCE_WITH_AVAILABLE_BUGFIX_UPDATES_COUNT", "NORMAL_INSTANCE_COUNT", "ERROR_INSTANCE_COUNT", "WARNING_INSTANCE_COUNT", "UNREACHABLE_INSTANCE_COUNT", "REGISTRATION_FAILED_INSTANCE_COUNT", "DELETING_INSTANCE_COUNT", "ONBOARDING_INSTANCE_COUNT", "INSTANCE_SECURITY_UPDATES_COUNT", "INSTANCE_BUGFIX_UPDATES_COUNT", "INSTANCE_SECURITY_ADVISORY_COUNT", "INSTANCE_BUGFIX_ADVISORY_COUNT", "REBOOTING_INSTANCE_COUNT", "NEEDS_REBOOTING_INSTANCE_COUNT"]
         for metric_names_item in metric_names:
             if metric_names_item not in metric_names_allowed_values:
                 raise ValueError(
@@ -677,7 +677,7 @@ class ReportingManagedInstanceClient(object):
                 )
 
         if 'status' in kwargs:
-            status_allowed_values = ["NORMAL", "UNREACHABLE", "ERROR", "WARNING", "REGISTRATION_ERROR", "DELETING", "ONBOARDING"]
+            status_allowed_values = ["NORMAL", "UNREACHABLE", "ERROR", "WARNING", "REGISTRATION_ERROR", "DELETING", "ONBOARDING", "REBOOTING"]
             for status_item in kwargs['status']:
                 if status_item not in status_allowed_values:
                     raise ValueError(

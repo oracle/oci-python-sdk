@@ -35,6 +35,10 @@ class PackageSummary(object):
     #: This constant has a value of "SRC"
     ARCHITECTURE_SRC = "SRC"
 
+    #: A constant which can be used with the architecture property of a PackageSummary.
+    #: This constant has a value of "I386"
+    ARCHITECTURE_I386 = "I386"
+
     #: A constant which can be used with the package_classification property of a PackageSummary.
     #: This constant has a value of "INSTALLED"
     PACKAGE_CLASSIFICATION_INSTALLED = "INSTALLED"
@@ -76,7 +80,7 @@ class PackageSummary(object):
 
         :param architecture:
             The value to assign to the architecture property of this PackageSummary.
-            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type architecture: str
 
@@ -240,7 +244,7 @@ class PackageSummary(object):
         Gets the architecture of this PackageSummary.
         The architecture for which this package was built.
 
-        Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -259,7 +263,7 @@ class PackageSummary(object):
         :param architecture: The architecture of this PackageSummary.
         :type: str
         """
-        allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC"]
+        allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386"]
         if not value_allowed_none_or_none_sentinel(architecture, allowed_values):
             architecture = 'UNKNOWN_ENUM_VALUE'
         self._architecture = architecture

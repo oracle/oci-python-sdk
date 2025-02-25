@@ -27,7 +27,7 @@ class ContainerHttpHealthCheck(ContainerHealthCheck):
 
         :param health_check_type:
             The value to assign to the health_check_type property of this ContainerHttpHealthCheck.
-            Allowed values for this property are: "HTTP", "TCP", "COMMAND"
+            Allowed values for this property are: "HTTP", "TCP"
         :type health_check_type: str
 
         :param initial_delay_in_seconds:

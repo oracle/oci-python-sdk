@@ -834,9 +834,11 @@ class Vnic(object):
     def route_table_id(self):
         """
         Gets the route_table_id of this Vnic.
-        The `OCID`__ of the route table the PrivateIp will use.
+        The `OCID`__ of the route table the IP address or VNIC will use. For more information, see
+        `Source Based Routing`__.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing
 
 
         :return: The route_table_id of this Vnic.
@@ -848,9 +850,11 @@ class Vnic(object):
     def route_table_id(self, route_table_id):
         """
         Sets the route_table_id of this Vnic.
-        The `OCID`__ of the route table the PrivateIp will use.
+        The `OCID`__ of the route table the IP address or VNIC will use. For more information, see
+        `Source Based Routing`__.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing
 
 
         :param route_table_id: The route_table_id of this Vnic.

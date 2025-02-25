@@ -28,6 +28,14 @@ class CreateByoipRangeDetails(object):
             The value to assign to the compartment_id property of this CreateByoipRangeDetails.
         :type compartment_id: str
 
+        :param ip_anycast_id:
+            The value to assign to the ip_anycast_id property of this CreateByoipRangeDetails.
+        :type ip_anycast_id: str
+
+        :param monitor_ip:
+            The value to assign to the monitor_ip property of this CreateByoipRangeDetails.
+        :type monitor_ip: str
+
         :param ipv6_cidr_block:
             The value to assign to the ipv6_cidr_block property of this CreateByoipRangeDetails.
         :type ipv6_cidr_block: str
@@ -48,6 +56,8 @@ class CreateByoipRangeDetails(object):
         self.swagger_types = {
             'cidr_block': 'str',
             'compartment_id': 'str',
+            'ip_anycast_id': 'str',
+            'monitor_ip': 'str',
             'ipv6_cidr_block': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
@@ -57,6 +67,8 @@ class CreateByoipRangeDetails(object):
         self.attribute_map = {
             'cidr_block': 'cidrBlock',
             'compartment_id': 'compartmentId',
+            'ip_anycast_id': 'ipAnycastId',
+            'monitor_ip': 'monitorIp',
             'ipv6_cidr_block': 'ipv6CidrBlock',
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
@@ -65,6 +77,8 @@ class CreateByoipRangeDetails(object):
 
         self._cidr_block = None
         self._compartment_id = None
+        self._ip_anycast_id = None
+        self._monitor_ip = None
         self._ipv6_cidr_block = None
         self._defined_tags = None
         self._display_name = None
@@ -123,6 +137,58 @@ class CreateByoipRangeDetails(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def ip_anycast_id(self):
+        """
+        Gets the ip_anycast_id of this CreateByoipRangeDetails.
+        The `OCID`__ of the `IpAnycast` resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The ip_anycast_id of this CreateByoipRangeDetails.
+        :rtype: str
+        """
+        return self._ip_anycast_id
+
+    @ip_anycast_id.setter
+    def ip_anycast_id(self, ip_anycast_id):
+        """
+        Sets the ip_anycast_id of this CreateByoipRangeDetails.
+        The `OCID`__ of the `IpAnycast` resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param ip_anycast_id: The ip_anycast_id of this CreateByoipRangeDetails.
+        :type: str
+        """
+        self._ip_anycast_id = ip_anycast_id
+
+    @property
+    def monitor_ip(self):
+        """
+        Gets the monitor_ip of this CreateByoipRangeDetails.
+        The IP address of the CIDR for Prefix Monitoring.
+
+
+        :return: The monitor_ip of this CreateByoipRangeDetails.
+        :rtype: str
+        """
+        return self._monitor_ip
+
+    @monitor_ip.setter
+    def monitor_ip(self, monitor_ip):
+        """
+        Sets the monitor_ip of this CreateByoipRangeDetails.
+        The IP address of the CIDR for Prefix Monitoring.
+
+
+        :param monitor_ip: The monitor_ip of this CreateByoipRangeDetails.
+        :type: str
+        """
+        self._monitor_ip = monitor_ip
 
     @property
     def ipv6_cidr_block(self):

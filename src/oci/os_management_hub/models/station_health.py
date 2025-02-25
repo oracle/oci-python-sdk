@@ -23,6 +23,10 @@ class StationHealth(object):
     #: This constant has a value of "UNHEALTHY"
     STATE_UNHEALTHY = "UNHEALTHY"
 
+    #: A constant which can be used with the state property of a StationHealth.
+    #: This constant has a value of "UNAVAILABLE"
+    STATE_UNAVAILABLE = "UNAVAILABLE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new StationHealth object with values from keyword arguments.
@@ -30,7 +34,7 @@ class StationHealth(object):
 
         :param state:
             The value to assign to the state property of this StationHealth.
-            Allowed values for this property are: "HEALTHY", "UNHEALTHY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "HEALTHY", "UNHEALTHY", "UNAVAILABLE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type state: str
 
@@ -58,7 +62,7 @@ class StationHealth(object):
         **[Required]** Gets the state of this StationHealth.
         Overall health status of the management station.
 
-        Allowed values for this property are: "HEALTHY", "UNHEALTHY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "HEALTHY", "UNHEALTHY", "UNAVAILABLE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -77,7 +81,7 @@ class StationHealth(object):
         :param state: The state of this StationHealth.
         :type: str
         """
-        allowed_values = ["HEALTHY", "UNHEALTHY"]
+        allowed_values = ["HEALTHY", "UNHEALTHY", "UNAVAILABLE"]
         if not value_allowed_none_or_none_sentinel(state, allowed_values):
             state = 'UNKNOWN_ENUM_VALUE'
         self._state = state

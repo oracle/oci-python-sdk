@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateProfileDetails(object):
     """
-    Information for updating a registration profile
+    Provides the information used to update a registration profile.
     """
 
     def __init__(self, **kwargs):

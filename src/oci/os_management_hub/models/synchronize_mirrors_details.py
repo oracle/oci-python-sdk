@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SynchronizeMirrorsDetails(object):
     """
-    Details for syncing selected mirrors
+    Detailed information about software source mirrors to be synced.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,9 @@ class SynchronizeMirrorsDetails(object):
     def software_source_list(self):
         """
         **[Required]** Gets the software_source_list of this SynchronizeMirrorsDetails.
-        List of Software Source OCIDs to synchronize
+        List of software source `OCIDs`__ to synchronize.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The software_source_list of this SynchronizeMirrorsDetails.
@@ -51,7 +53,9 @@ class SynchronizeMirrorsDetails(object):
     def software_source_list(self, software_source_list):
         """
         Sets the software_source_list of this SynchronizeMirrorsDetails.
-        List of Software Source OCIDs to synchronize
+        List of software source `OCIDs`__ to synchronize.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param software_source_list: The software_source_list of this SynchronizeMirrorsDetails.

@@ -27,11 +27,16 @@ class PipelineStepUpdateDetails(object):
     #: This constant has a value of "CONTAINER"
     STEP_TYPE_CONTAINER = "CONTAINER"
 
+    #: A constant which can be used with the step_type property of a PipelineStepUpdateDetails.
+    #: This constant has a value of "DATAFLOW"
+    STEP_TYPE_DATAFLOW = "DATAFLOW"
+
     def __init__(self, **kwargs):
         """
         Initializes a new PipelineStepUpdateDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.data_science.models.PipelineDataflowStepUpdateDetails`
         * :class:`~oci.data_science.models.PipelineMLJobStepUpdateDetails`
         * :class:`~oci.data_science.models.PipelineCustomScriptStepUpdateDetails`
         * :class:`~oci.data_science.models.PipelineContainerStepUpdateDetails`
@@ -40,7 +45,7 @@ class PipelineStepUpdateDetails(object):
 
         :param step_type:
             The value to assign to the step_type property of this PipelineStepUpdateDetails.
-            Allowed values for this property are: "ML_JOB", "CUSTOM_SCRIPT", "CONTAINER"
+            Allowed values for this property are: "ML_JOB", "CUSTOM_SCRIPT", "CONTAINER", "DATAFLOW"
         :type step_type: str
 
         :param step_name:
@@ -83,6 +88,9 @@ class PipelineStepUpdateDetails(object):
         """
         type = object_dictionary['stepType']
 
+        if type == 'DATAFLOW':
+            return 'PipelineDataflowStepUpdateDetails'
+
         if type == 'ML_JOB':
             return 'PipelineMLJobStepUpdateDetails'
 
@@ -100,7 +108,7 @@ class PipelineStepUpdateDetails(object):
         **[Required]** Gets the step_type of this PipelineStepUpdateDetails.
         The type of step.
 
-        Allowed values for this property are: "ML_JOB", "CUSTOM_SCRIPT", "CONTAINER"
+        Allowed values for this property are: "ML_JOB", "CUSTOM_SCRIPT", "CONTAINER", "DATAFLOW"
 
 
         :return: The step_type of this PipelineStepUpdateDetails.
@@ -118,7 +126,7 @@ class PipelineStepUpdateDetails(object):
         :param step_type: The step_type of this PipelineStepUpdateDetails.
         :type: str
         """
-        allowed_values = ["ML_JOB", "CUSTOM_SCRIPT", "CONTAINER"]
+        allowed_values = ["ML_JOB", "CUSTOM_SCRIPT", "CONTAINER", "DATAFLOW"]
         if not value_allowed_none_or_none_sentinel(step_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `step_type`, must be None or one of {allowed_values}"

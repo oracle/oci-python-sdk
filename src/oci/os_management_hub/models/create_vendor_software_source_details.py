@@ -35,7 +35,7 @@ class CreateVendorSoftwareSourceDetails(CreateSoftwareSourceDetails):
 
         :param software_source_type:
             The value to assign to the software_source_type property of this CreateVendorSoftwareSourceDetails.
-            Allowed values for this property are: "VENDOR", "CUSTOM", "VERSIONED"
+            Allowed values for this property are: "VENDOR", "CUSTOM", "VERSIONED", "PRIVATE", "THIRD_PARTY"
         :type software_source_type: str
 
         :param freeform_tags:

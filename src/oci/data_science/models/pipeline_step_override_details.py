@@ -32,22 +32,29 @@ class PipelineStepOverrideDetails(object):
             The value to assign to the step_container_configuration_details property of this PipelineStepOverrideDetails.
         :type step_container_configuration_details: oci.data_science.models.PipelineContainerConfigurationDetails
 
+        :param step_dataflow_configuration_details:
+            The value to assign to the step_dataflow_configuration_details property of this PipelineStepOverrideDetails.
+        :type step_dataflow_configuration_details: oci.data_science.models.PipelineDataflowConfigurationDetails
+
         """
         self.swagger_types = {
             'step_name': 'str',
             'step_configuration_details': 'PipelineStepConfigurationDetails',
-            'step_container_configuration_details': 'PipelineContainerConfigurationDetails'
+            'step_container_configuration_details': 'PipelineContainerConfigurationDetails',
+            'step_dataflow_configuration_details': 'PipelineDataflowConfigurationDetails'
         }
 
         self.attribute_map = {
             'step_name': 'stepName',
             'step_configuration_details': 'stepConfigurationDetails',
-            'step_container_configuration_details': 'stepContainerConfigurationDetails'
+            'step_container_configuration_details': 'stepContainerConfigurationDetails',
+            'step_dataflow_configuration_details': 'stepDataflowConfigurationDetails'
         }
 
         self._step_name = None
         self._step_configuration_details = None
         self._step_container_configuration_details = None
+        self._step_dataflow_configuration_details = None
 
     @property
     def step_name(self):
@@ -112,6 +119,26 @@ class PipelineStepOverrideDetails(object):
         :type: oci.data_science.models.PipelineContainerConfigurationDetails
         """
         self._step_container_configuration_details = step_container_configuration_details
+
+    @property
+    def step_dataflow_configuration_details(self):
+        """
+        Gets the step_dataflow_configuration_details of this PipelineStepOverrideDetails.
+
+        :return: The step_dataflow_configuration_details of this PipelineStepOverrideDetails.
+        :rtype: oci.data_science.models.PipelineDataflowConfigurationDetails
+        """
+        return self._step_dataflow_configuration_details
+
+    @step_dataflow_configuration_details.setter
+    def step_dataflow_configuration_details(self, step_dataflow_configuration_details):
+        """
+        Sets the step_dataflow_configuration_details of this PipelineStepOverrideDetails.
+
+        :param step_dataflow_configuration_details: The step_dataflow_configuration_details of this PipelineStepOverrideDetails.
+        :type: oci.data_science.models.PipelineDataflowConfigurationDetails
+        """
+        self._step_dataflow_configuration_details = step_dataflow_configuration_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

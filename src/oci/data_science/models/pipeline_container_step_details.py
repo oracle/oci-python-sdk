@@ -23,7 +23,7 @@ class PipelineContainerStepDetails(PipelineStepDetails):
 
         :param step_type:
             The value to assign to the step_type property of this PipelineContainerStepDetails.
-            Allowed values for this property are: "ML_JOB", "CUSTOM_SCRIPT", "CONTAINER"
+            Allowed values for this property are: "ML_JOB", "CUSTOM_SCRIPT", "CONTAINER", "DATAFLOW"
         :type step_type: str
 
         :param step_name:
@@ -50,6 +50,10 @@ class PipelineContainerStepDetails(PipelineStepDetails):
             The value to assign to the step_container_configuration_details property of this PipelineContainerStepDetails.
         :type step_container_configuration_details: oci.data_science.models.PipelineContainerConfigurationDetails
 
+        :param step_storage_mount_configuration_details_list:
+            The value to assign to the step_storage_mount_configuration_details_list property of this PipelineContainerStepDetails.
+        :type step_storage_mount_configuration_details_list: list[oci.data_science.models.StorageMountConfigurationDetails]
+
         :param is_artifact_uploaded:
             The value to assign to the is_artifact_uploaded property of this PipelineContainerStepDetails.
         :type is_artifact_uploaded: bool
@@ -63,6 +67,7 @@ class PipelineContainerStepDetails(PipelineStepDetails):
             'step_configuration_details': 'PipelineStepConfigurationDetails',
             'step_infrastructure_configuration_details': 'PipelineInfrastructureConfigurationDetails',
             'step_container_configuration_details': 'PipelineContainerConfigurationDetails',
+            'step_storage_mount_configuration_details_list': 'list[StorageMountConfigurationDetails]',
             'is_artifact_uploaded': 'bool'
         }
 
@@ -74,6 +79,7 @@ class PipelineContainerStepDetails(PipelineStepDetails):
             'step_configuration_details': 'stepConfigurationDetails',
             'step_infrastructure_configuration_details': 'stepInfrastructureConfigurationDetails',
             'step_container_configuration_details': 'stepContainerConfigurationDetails',
+            'step_storage_mount_configuration_details_list': 'stepStorageMountConfigurationDetailsList',
             'is_artifact_uploaded': 'isArtifactUploaded'
         }
 
@@ -84,6 +90,7 @@ class PipelineContainerStepDetails(PipelineStepDetails):
         self._step_configuration_details = None
         self._step_infrastructure_configuration_details = None
         self._step_container_configuration_details = None
+        self._step_storage_mount_configuration_details_list = None
         self._is_artifact_uploaded = None
         self._step_type = 'CONTAINER'
 
@@ -126,6 +133,30 @@ class PipelineContainerStepDetails(PipelineStepDetails):
         :type: oci.data_science.models.PipelineContainerConfigurationDetails
         """
         self._step_container_configuration_details = step_container_configuration_details
+
+    @property
+    def step_storage_mount_configuration_details_list(self):
+        """
+        Gets the step_storage_mount_configuration_details_list of this PipelineContainerStepDetails.
+        The storage mount details to mount to the instance running the pipeline step.
+
+
+        :return: The step_storage_mount_configuration_details_list of this PipelineContainerStepDetails.
+        :rtype: list[oci.data_science.models.StorageMountConfigurationDetails]
+        """
+        return self._step_storage_mount_configuration_details_list
+
+    @step_storage_mount_configuration_details_list.setter
+    def step_storage_mount_configuration_details_list(self, step_storage_mount_configuration_details_list):
+        """
+        Sets the step_storage_mount_configuration_details_list of this PipelineContainerStepDetails.
+        The storage mount details to mount to the instance running the pipeline step.
+
+
+        :param step_storage_mount_configuration_details_list: The step_storage_mount_configuration_details_list of this PipelineContainerStepDetails.
+        :type: list[oci.data_science.models.StorageMountConfigurationDetails]
+        """
+        self._step_storage_mount_configuration_details_list = step_storage_mount_configuration_details_list
 
     @property
     def is_artifact_uploaded(self):

@@ -183,7 +183,7 @@ class UpdateScheduledJobDetails(object):
     def time_next_execution(self):
         """
         Gets the time_next_execution of this UpdateScheduledJobDetails.
-        The desired time of the next execution of this scheduled job (in `RFC 3339`__ format).
+        The time of the next execution of this scheduled job (in `RFC 3339`__ format).
 
         __ https://tools.ietf.org/rfc/rfc3339
 
@@ -197,7 +197,7 @@ class UpdateScheduledJobDetails(object):
     def time_next_execution(self, time_next_execution):
         """
         Sets the time_next_execution of this UpdateScheduledJobDetails.
-        The desired time of the next execution of this scheduled job (in `RFC 3339`__ format).
+        The time of the next execution of this scheduled job (in `RFC 3339`__ format).
 
         __ https://tools.ietf.org/rfc/rfc3339
 
