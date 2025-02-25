@@ -97,6 +97,10 @@ class CreateScheduledJobDetails(object):
             The value to assign to the is_managed_by_autonomous_linux property of this CreateScheduledJobDetails.
         :type is_managed_by_autonomous_linux: bool
 
+        :param work_request_id:
+            The value to assign to the work_request_id property of this CreateScheduledJobDetails.
+        :type work_request_id: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -115,7 +119,8 @@ class CreateScheduledJobDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'retry_intervals': 'list[int]',
-            'is_managed_by_autonomous_linux': 'bool'
+            'is_managed_by_autonomous_linux': 'bool',
+            'work_request_id': 'str'
         }
 
         self.attribute_map = {
@@ -135,7 +140,8 @@ class CreateScheduledJobDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'retry_intervals': 'retryIntervals',
-            'is_managed_by_autonomous_linux': 'isManagedByAutonomousLinux'
+            'is_managed_by_autonomous_linux': 'isManagedByAutonomousLinux',
+            'work_request_id': 'workRequestId'
         }
 
         self._compartment_id = None
@@ -155,6 +161,7 @@ class CreateScheduledJobDetails(object):
         self._defined_tags = None
         self._retry_intervals = None
         self._is_managed_by_autonomous_linux = None
+        self._work_request_id = None
 
     @property
     def compartment_id(self):
@@ -658,6 +665,34 @@ class CreateScheduledJobDetails(object):
         :type: bool
         """
         self._is_managed_by_autonomous_linux = is_managed_by_autonomous_linux
+
+    @property
+    def work_request_id(self):
+        """
+        Gets the work_request_id of this CreateScheduledJobDetails.
+        The `OCID`__ for the work request that will be rerun.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The work_request_id of this CreateScheduledJobDetails.
+        :rtype: str
+        """
+        return self._work_request_id
+
+    @work_request_id.setter
+    def work_request_id(self, work_request_id):
+        """
+        Sets the work_request_id of this CreateScheduledJobDetails.
+        The `OCID`__ for the work request that will be rerun.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param work_request_id: The work_request_id of this CreateScheduledJobDetails.
+        :type: str
+        """
+        self._work_request_id = work_request_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

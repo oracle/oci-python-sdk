@@ -32,6 +32,10 @@ class UpdateManagementStationDetails(object):
             The value to assign to the hostname property of this UpdateManagementStationDetails.
         :type hostname: str
 
+        :param is_auto_config_enabled:
+            The value to assign to the is_auto_config_enabled property of this UpdateManagementStationDetails.
+        :type is_auto_config_enabled: bool
+
         :param proxy:
             The value to assign to the proxy property of this UpdateManagementStationDetails.
         :type proxy: oci.os_management_hub.models.UpdateProxyConfigurationDetails
@@ -53,6 +57,7 @@ class UpdateManagementStationDetails(object):
             'display_name': 'str',
             'description': 'str',
             'hostname': 'str',
+            'is_auto_config_enabled': 'bool',
             'proxy': 'UpdateProxyConfigurationDetails',
             'mirror': 'UpdateMirrorConfigurationDetails',
             'freeform_tags': 'dict(str, str)',
@@ -63,6 +68,7 @@ class UpdateManagementStationDetails(object):
             'display_name': 'displayName',
             'description': 'description',
             'hostname': 'hostname',
+            'is_auto_config_enabled': 'isAutoConfigEnabled',
             'proxy': 'proxy',
             'mirror': 'mirror',
             'freeform_tags': 'freeformTags',
@@ -72,6 +78,7 @@ class UpdateManagementStationDetails(object):
         self._display_name = None
         self._description = None
         self._hostname = None
+        self._is_auto_config_enabled = None
         self._proxy = None
         self._mirror = None
         self._freeform_tags = None
@@ -148,6 +155,30 @@ class UpdateManagementStationDetails(object):
         :type: str
         """
         self._hostname = hostname
+
+    @property
+    def is_auto_config_enabled(self):
+        """
+        Gets the is_auto_config_enabled of this UpdateManagementStationDetails.
+        When enabled, the station setup script automatically runs to configure the firewall and SELinux settings on the station.
+
+
+        :return: The is_auto_config_enabled of this UpdateManagementStationDetails.
+        :rtype: bool
+        """
+        return self._is_auto_config_enabled
+
+    @is_auto_config_enabled.setter
+    def is_auto_config_enabled(self, is_auto_config_enabled):
+        """
+        Sets the is_auto_config_enabled of this UpdateManagementStationDetails.
+        When enabled, the station setup script automatically runs to configure the firewall and SELinux settings on the station.
+
+
+        :param is_auto_config_enabled: The is_auto_config_enabled of this UpdateManagementStationDetails.
+        :type: bool
+        """
+        self._is_auto_config_enabled = is_auto_config_enabled
 
     @property
     def proxy(self):

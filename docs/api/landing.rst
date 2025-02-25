@@ -73,6 +73,7 @@ API Reference
 * :doc:`Database Tools <database_tools/client/oci.database_tools.DatabaseToolsClient>`
 * :doc:`Dataplane <identity_data_plane/client/oci.identity_data_plane.DataplaneClient>`
 * :doc:`Db Backups <mysql/client/oci.mysql.DbBackupsClient>`
+* :doc:`Db Life Cycle Management <dblm/client/oci.dblm.DbLifeCycleManagementClient>`
 * :doc:`Db Management <database_management/client/oci.database_management.DbManagementClient>`
 * :doc:`Db System <mysql/client/oci.mysql.DbSystemClient>`
 * :doc:`Delegate Access Control <delegate_access_control/client/oci.delegate_access_control.DelegateAccessControlClient>`
@@ -320,6 +321,7 @@ API Reference
     database_management
     database_migration
     database_tools
+    dblm
     delegate_access_control
     demand_signal
     desktops

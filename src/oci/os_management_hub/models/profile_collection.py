@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ProfileCollection(object):
     """
-    Results of a registration profile search. Contains both registration profile summary items and other data.
+    The set of registration profiles returned for the :func:`list_profiles` operation.
     """
 
     def __init__(self, **kwargs):

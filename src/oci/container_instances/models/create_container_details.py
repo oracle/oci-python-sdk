@@ -384,7 +384,7 @@ class CreateContainerDetails(object):
         """
         Gets the health_checks of this CreateContainerDetails.
         list of container health checks to check container status and take appropriate action if container status is failed.
-        There are three types of health checks that we currently support HTTP, TCP, and Command.
+        There are two types of health checks that we currently support HTTP and TCP.
 
 
         :return: The health_checks of this CreateContainerDetails.
@@ -397,7 +397,7 @@ class CreateContainerDetails(object):
         """
         Sets the health_checks of this CreateContainerDetails.
         list of container health checks to check container status and take appropriate action if container status is failed.
-        There are three types of health checks that we currently support HTTP, TCP, and Command.
+        There are two types of health checks that we currently support HTTP and TCP.
 
 
         :param health_checks: The health_checks of this CreateContainerDetails.

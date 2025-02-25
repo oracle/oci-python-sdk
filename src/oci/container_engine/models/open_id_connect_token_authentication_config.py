@@ -63,6 +63,10 @@ class OpenIdConnectTokenAuthenticationConfig(object):
             The value to assign to the is_open_id_connect_auth_enabled property of this OpenIdConnectTokenAuthenticationConfig.
         :type is_open_id_connect_auth_enabled: bool
 
+        :param configuration_file:
+            The value to assign to the configuration_file property of this OpenIdConnectTokenAuthenticationConfig.
+        :type configuration_file: str
+
         """
         self.swagger_types = {
             'issuer_url': 'str',
@@ -74,7 +78,8 @@ class OpenIdConnectTokenAuthenticationConfig(object):
             'required_claims': 'list[KeyValue]',
             'ca_certificate': 'str',
             'signing_algorithms': 'list[str]',
-            'is_open_id_connect_auth_enabled': 'bool'
+            'is_open_id_connect_auth_enabled': 'bool',
+            'configuration_file': 'str'
         }
 
         self.attribute_map = {
@@ -87,7 +92,8 @@ class OpenIdConnectTokenAuthenticationConfig(object):
             'required_claims': 'requiredClaims',
             'ca_certificate': 'caCertificate',
             'signing_algorithms': 'signingAlgorithms',
-            'is_open_id_connect_auth_enabled': 'isOpenIdConnectAuthEnabled'
+            'is_open_id_connect_auth_enabled': 'isOpenIdConnectAuthEnabled',
+            'configuration_file': 'configurationFile'
         }
 
         self._issuer_url = None
@@ -100,6 +106,7 @@ class OpenIdConnectTokenAuthenticationConfig(object):
         self._ca_certificate = None
         self._signing_algorithms = None
         self._is_open_id_connect_auth_enabled = None
+        self._configuration_file = None
 
     @property
     def issuer_url(self):
@@ -356,6 +363,34 @@ class OpenIdConnectTokenAuthenticationConfig(object):
         :type: bool
         """
         self._is_open_id_connect_auth_enabled = is_open_id_connect_auth_enabled
+
+    @property
+    def configuration_file(self):
+        """
+        Gets the configuration_file of this OpenIdConnectTokenAuthenticationConfig.
+        A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info `here`__
+
+        __ https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration
+
+
+        :return: The configuration_file of this OpenIdConnectTokenAuthenticationConfig.
+        :rtype: str
+        """
+        return self._configuration_file
+
+    @configuration_file.setter
+    def configuration_file(self, configuration_file):
+        """
+        Sets the configuration_file of this OpenIdConnectTokenAuthenticationConfig.
+        A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info `here`__
+
+        __ https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration
+
+
+        :param configuration_file: The configuration_file of this OpenIdConnectTokenAuthenticationConfig.
+        :type: str
+        """
+        self._configuration_file = configuration_file
 
     def __repr__(self):
         return formatted_flat_dict(self)

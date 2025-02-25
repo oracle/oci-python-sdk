@@ -49,6 +49,14 @@ class Event(object):
     #: This constant has a value of "MANAGEMENT_STATION"
     TYPE_MANAGEMENT_STATION = "MANAGEMENT_STATION"
 
+    #: A constant which can be used with the type property of a Event.
+    #: This constant has a value of "SYSADMIN"
+    TYPE_SYSADMIN = "SYSADMIN"
+
+    #: A constant which can be used with the type property of a Event.
+    #: This constant has a value of "REBOOT"
+    TYPE_REBOOT = "REBOOT"
+
     #: A constant which can be used with the lifecycle_state property of a Event.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -83,6 +91,8 @@ class Event(object):
         * :class:`~oci.os_management_hub.models.ManagementStationEvent`
         * :class:`~oci.os_management_hub.models.SoftwareSourceEvent`
         * :class:`~oci.os_management_hub.models.KernelCrashEvent`
+        * :class:`~oci.os_management_hub.models.SysadminEvent`
+        * :class:`~oci.os_management_hub.models.RebootEvent`
         * :class:`~oci.os_management_hub.models.ExploitAttemptEvent`
         * :class:`~oci.os_management_hub.models.AgentEvent`
         * :class:`~oci.os_management_hub.models.KspliceUpdateEvent`
@@ -95,7 +105,7 @@ class Event(object):
 
         :param type:
             The value to assign to the type property of this Event.
-            Allowed values for this property are: "KERNEL_OOPS", "KERNEL_CRASH", "EXPLOIT_ATTEMPT", "SOFTWARE_UPDATE", "KSPLICE_UPDATE", "SOFTWARE_SOURCE", "AGENT", "MANAGEMENT_STATION", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "KERNEL_OOPS", "KERNEL_CRASH", "EXPLOIT_ATTEMPT", "SOFTWARE_UPDATE", "KSPLICE_UPDATE", "SOFTWARE_SOURCE", "AGENT", "MANAGEMENT_STATION", "SYSADMIN", "REBOOT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -236,6 +246,12 @@ class Event(object):
         if type == 'KERNEL_CRASH':
             return 'KernelCrashEvent'
 
+        if type == 'SYSADMIN':
+            return 'SysadminEvent'
+
+        if type == 'REBOOT':
+            return 'RebootEvent'
+
         if type == 'EXPLOIT_ATTEMPT':
             return 'ExploitAttemptEvent'
 
@@ -288,8 +304,10 @@ class Event(object):
           * `SOFTWARE_SOURCE` - Software source
           * `AGENT` - Agent
           * `MANAGEMENT_STATION` - Management Station
+          * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
+          * `REBOOT` - Reboot
 
-        Allowed values for this property are: "KERNEL_OOPS", "KERNEL_CRASH", "EXPLOIT_ATTEMPT", "SOFTWARE_UPDATE", "KSPLICE_UPDATE", "SOFTWARE_SOURCE", "AGENT", "MANAGEMENT_STATION", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "KERNEL_OOPS", "KERNEL_CRASH", "EXPLOIT_ATTEMPT", "SOFTWARE_UPDATE", "KSPLICE_UPDATE", "SOFTWARE_SOURCE", "AGENT", "MANAGEMENT_STATION", "SYSADMIN", "REBOOT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -311,12 +329,14 @@ class Event(object):
           * `SOFTWARE_SOURCE` - Software source
           * `AGENT` - Agent
           * `MANAGEMENT_STATION` - Management Station
+          * `SYSADMIN` - Used to identify attempts on fixing agent errors on the instance
+          * `REBOOT` - Reboot
 
 
         :param type: The type of this Event.
         :type: str
         """
-        allowed_values = ["KERNEL_OOPS", "KERNEL_CRASH", "EXPLOIT_ATTEMPT", "SOFTWARE_UPDATE", "KSPLICE_UPDATE", "SOFTWARE_SOURCE", "AGENT", "MANAGEMENT_STATION"]
+        allowed_values = ["KERNEL_OOPS", "KERNEL_CRASH", "EXPLOIT_ATTEMPT", "SOFTWARE_UPDATE", "KSPLICE_UPDATE", "SOFTWARE_SOURCE", "AGENT", "MANAGEMENT_STATION", "SYSADMIN", "REBOOT"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type

@@ -23,7 +23,7 @@ class PipelineContainerStepRun(PipelineStepRun):
 
         :param step_type:
             The value to assign to the step_type property of this PipelineContainerStepRun.
-            Allowed values for this property are: "ML_JOB", "CUSTOM_SCRIPT", "CONTAINER"
+            Allowed values for this property are: "ML_JOB", "CUSTOM_SCRIPT", "CONTAINER", "DATAFLOW"
         :type step_type: str
 
         :param time_started:

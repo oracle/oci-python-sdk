@@ -95,6 +95,10 @@ class Profile(object):
     #: This constant has a value of "SRC"
     ARCH_TYPE_SRC = "SRC"
 
+    #: A constant which can be used with the arch_type property of a Profile.
+    #: This constant has a value of "I386"
+    ARCH_TYPE_I386 = "I386"
+
     #: A constant which can be used with the lifecycle_state property of a Profile.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -106,6 +110,10 @@ class Profile(object):
     #: A constant which can be used with the lifecycle_state property of a Profile.
     #: This constant has a value of "ACTIVE"
     LIFECYCLE_STATE_ACTIVE = "ACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a Profile.
+    #: This constant has a value of "INACTIVE"
+    LIFECYCLE_STATE_INACTIVE = "INACTIVE"
 
     #: A constant which can be used with the lifecycle_state property of a Profile.
     #: This constant has a value of "DELETING"
@@ -188,7 +196,7 @@ class Profile(object):
 
         :param arch_type:
             The value to assign to the arch_type property of this Profile.
-            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type arch_type: str
 
@@ -196,9 +204,17 @@ class Profile(object):
             The value to assign to the time_created property of this Profile.
         :type time_created: datetime
 
+        :param time_modified:
+            The value to assign to the time_modified property of this Profile.
+        :type time_modified: datetime
+
+        :param profile_version:
+            The value to assign to the profile_version property of this Profile.
+        :type profile_version: str
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Profile.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -240,6 +256,8 @@ class Profile(object):
             'os_family': 'str',
             'arch_type': 'str',
             'time_created': 'datetime',
+            'time_modified': 'datetime',
+            'profile_version': 'str',
             'lifecycle_state': 'str',
             'registration_type': 'str',
             'is_default_profile': 'bool',
@@ -260,6 +278,8 @@ class Profile(object):
             'os_family': 'osFamily',
             'arch_type': 'archType',
             'time_created': 'timeCreated',
+            'time_modified': 'timeModified',
+            'profile_version': 'profileVersion',
             'lifecycle_state': 'lifecycleState',
             'registration_type': 'registrationType',
             'is_default_profile': 'isDefaultProfile',
@@ -279,6 +299,8 @@ class Profile(object):
         self._os_family = None
         self._arch_type = None
         self._time_created = None
+        self._time_modified = None
+        self._profile_version = None
         self._lifecycle_state = None
         self._registration_type = None
         self._is_default_profile = None
@@ -420,7 +442,8 @@ class Profile(object):
     def management_station_id(self):
         """
         Gets the management_station_id of this Profile.
-        The `OCID`__ of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+        The `OCID`__ of the management station to associate with an
+        instance once registered. Management stations are only used by non-OCI instances.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -434,7 +457,8 @@ class Profile(object):
     def management_station_id(self, management_station_id):
         """
         Sets the management_station_id of this Profile.
-        The `OCID`__ of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+        The `OCID`__ of the management station to associate with an
+        instance once registered. Management stations are only used by non-OCI instances.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -540,7 +564,7 @@ class Profile(object):
         **[Required]** Gets the arch_type of this Profile.
         The architecture type.
 
-        Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -559,7 +583,7 @@ class Profile(object):
         :param arch_type: The arch_type of this Profile.
         :type: str
         """
-        allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC"]
+        allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386"]
         if not value_allowed_none_or_none_sentinel(arch_type, allowed_values):
             arch_type = 'UNKNOWN_ENUM_VALUE'
         self._arch_type = arch_type
@@ -593,12 +617,64 @@ class Profile(object):
         self._time_created = time_created
 
     @property
+    def time_modified(self):
+        """
+        Gets the time_modified of this Profile.
+        The time the registration profile was last modified (in `RFC 3339`__ format).
+
+        __ https://tools.ietf.org/rfc/rfc3339
+
+
+        :return: The time_modified of this Profile.
+        :rtype: datetime
+        """
+        return self._time_modified
+
+    @time_modified.setter
+    def time_modified(self, time_modified):
+        """
+        Sets the time_modified of this Profile.
+        The time the registration profile was last modified (in `RFC 3339`__ format).
+
+        __ https://tools.ietf.org/rfc/rfc3339
+
+
+        :param time_modified: The time_modified of this Profile.
+        :type: datetime
+        """
+        self._time_modified = time_modified
+
+    @property
+    def profile_version(self):
+        """
+        Gets the profile_version of this Profile.
+        The version of the profile. The version is automatically incremented each time the profiled is edited.
+
+
+        :return: The profile_version of this Profile.
+        :rtype: str
+        """
+        return self._profile_version
+
+    @profile_version.setter
+    def profile_version(self, profile_version):
+        """
+        Sets the profile_version of this Profile.
+        The version of the profile. The version is automatically incremented each time the profiled is edited.
+
+
+        :param profile_version: The profile_version of this Profile.
+        :type: str
+        """
+        self._profile_version = profile_version
+
+    @property
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this Profile.
         The current state of the registration profile.
 
-        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -617,7 +693,7 @@ class Profile(object):
         :param lifecycle_state: The lifecycle_state of this Profile.
         :type: str
         """
-        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
+        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

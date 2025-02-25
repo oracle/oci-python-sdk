@@ -27,6 +27,22 @@ class ManagementStationEventData(object):
     #: This constant has a value of "UPDATE_MANAGEMENT_STATION_SOFTWARE"
     OPERATION_TYPE_UPDATE_MANAGEMENT_STATION_SOFTWARE = "UPDATE_MANAGEMENT_STATION_SOFTWARE"
 
+    #: A constant which can be used with the operation_type property of a ManagementStationEventData.
+    #: This constant has a value of "SET_MANAGEMENT_STATION_HEALTH_STATE"
+    OPERATION_TYPE_SET_MANAGEMENT_STATION_HEALTH_STATE = "SET_MANAGEMENT_STATION_HEALTH_STATE"
+
+    #: A constant which can be used with the health_state property of a ManagementStationEventData.
+    #: This constant has a value of "HEALTHY"
+    HEALTH_STATE_HEALTHY = "HEALTHY"
+
+    #: A constant which can be used with the health_state property of a ManagementStationEventData.
+    #: This constant has a value of "UNHEALTHY"
+    HEALTH_STATE_UNHEALTHY = "UNHEALTHY"
+
+    #: A constant which can be used with the health_state property of a ManagementStationEventData.
+    #: This constant has a value of "UNAVAILABLE"
+    HEALTH_STATE_UNAVAILABLE = "UNAVAILABLE"
+
     #: A constant which can be used with the status property of a ManagementStationEventData.
     #: This constant has a value of "SUCCEEDED"
     STATUS_SUCCEEDED = "SUCCEEDED"
@@ -42,9 +58,15 @@ class ManagementStationEventData(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this ManagementStationEventData.
-            Allowed values for this property are: "SET_MANAGEMENT_STATION_CONFIG", "SYNC_MANAGEMENT_STATION_MIRROR", "UPDATE_MANAGEMENT_STATION_SOFTWARE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SET_MANAGEMENT_STATION_CONFIG", "SYNC_MANAGEMENT_STATION_MIRROR", "UPDATE_MANAGEMENT_STATION_SOFTWARE", "SET_MANAGEMENT_STATION_HEALTH_STATE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
+
+        :param health_state:
+            The value to assign to the health_state property of this ManagementStationEventData.
+            Allowed values for this property are: "HEALTHY", "UNHEALTHY", "UNAVAILABLE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type health_state: str
 
         :param status:
             The value to assign to the status property of this ManagementStationEventData.
@@ -59,17 +81,20 @@ class ManagementStationEventData(object):
         """
         self.swagger_types = {
             'operation_type': 'str',
+            'health_state': 'str',
             'status': 'str',
             'additional_details': 'WorkRequestEventDataAdditionalDetails'
         }
 
         self.attribute_map = {
             'operation_type': 'operationType',
+            'health_state': 'healthState',
             'status': 'status',
             'additional_details': 'additionalDetails'
         }
 
         self._operation_type = None
+        self._health_state = None
         self._status = None
         self._additional_details = None
 
@@ -79,7 +104,7 @@ class ManagementStationEventData(object):
         **[Required]** Gets the operation_type of this ManagementStationEventData.
         Type of management station operation.
 
-        Allowed values for this property are: "SET_MANAGEMENT_STATION_CONFIG", "SYNC_MANAGEMENT_STATION_MIRROR", "UPDATE_MANAGEMENT_STATION_SOFTWARE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "SET_MANAGEMENT_STATION_CONFIG", "SYNC_MANAGEMENT_STATION_MIRROR", "UPDATE_MANAGEMENT_STATION_SOFTWARE", "SET_MANAGEMENT_STATION_HEALTH_STATE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -98,10 +123,40 @@ class ManagementStationEventData(object):
         :param operation_type: The operation_type of this ManagementStationEventData.
         :type: str
         """
-        allowed_values = ["SET_MANAGEMENT_STATION_CONFIG", "SYNC_MANAGEMENT_STATION_MIRROR", "UPDATE_MANAGEMENT_STATION_SOFTWARE"]
+        allowed_values = ["SET_MANAGEMENT_STATION_CONFIG", "SYNC_MANAGEMENT_STATION_MIRROR", "UPDATE_MANAGEMENT_STATION_SOFTWARE", "SET_MANAGEMENT_STATION_HEALTH_STATE"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type
+
+    @property
+    def health_state(self):
+        """
+        Gets the health_state of this ManagementStationEventData.
+        Health state of the management station
+
+        Allowed values for this property are: "HEALTHY", "UNHEALTHY", "UNAVAILABLE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The health_state of this ManagementStationEventData.
+        :rtype: str
+        """
+        return self._health_state
+
+    @health_state.setter
+    def health_state(self, health_state):
+        """
+        Sets the health_state of this ManagementStationEventData.
+        Health state of the management station
+
+
+        :param health_state: The health_state of this ManagementStationEventData.
+        :type: str
+        """
+        allowed_values = ["HEALTHY", "UNHEALTHY", "UNAVAILABLE"]
+        if not value_allowed_none_or_none_sentinel(health_state, allowed_values):
+            health_state = 'UNKNOWN_ENUM_VALUE'
+        self._health_state = health_state
 
     @property
     def status(self):

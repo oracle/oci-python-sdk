@@ -210,6 +210,10 @@ class DbSystem(object):
             The value to assign to the defined_tags property of this DbSystem.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this DbSystem.
+        :type system_tags: dict(str, dict(str, object))
+
         :param crash_recovery:
             The value to assign to the crash_recovery property of this DbSystem.
             Allowed values for this property are: "ENABLED", "DISABLED", 'UNKNOWN_ENUM_VALUE'.
@@ -284,6 +288,7 @@ class DbSystem(object):
             'time_updated': 'datetime',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))',
             'crash_recovery': 'str',
             'point_in_time_recovery_details': 'PointInTimeRecoveryDetails',
             'database_management': 'str',
@@ -327,6 +332,7 @@ class DbSystem(object):
             'time_updated': 'timeUpdated',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'system_tags': 'systemTags',
             'crash_recovery': 'crashRecovery',
             'point_in_time_recovery_details': 'pointInTimeRecoveryDetails',
             'database_management': 'databaseManagement',
@@ -369,6 +375,7 @@ class DbSystem(object):
         self._time_updated = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
         self._crash_recovery = None
         self._point_in_time_recovery_details = None
         self._database_management = None
@@ -1173,6 +1180,32 @@ class DbSystem(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this DbSystem.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :return: The system_tags of this DbSystem.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this DbSystem.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :param system_tags: The system_tags of this DbSystem.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     @property
     def crash_recovery(self):

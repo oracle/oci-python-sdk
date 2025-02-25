@@ -15,6 +15,14 @@ class UpdateIpv6Details(object):
     UpdateIpv6Details model.
     """
 
+    #: A constant which can be used with the lifetime property of a UpdateIpv6Details.
+    #: This constant has a value of "EPHEMERAL"
+    LIFETIME_EPHEMERAL = "EPHEMERAL"
+
+    #: A constant which can be used with the lifetime property of a UpdateIpv6Details.
+    #: This constant has a value of "RESERVED"
+    LIFETIME_RESERVED = "RESERVED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateIpv6Details object with values from keyword arguments.
@@ -40,13 +48,19 @@ class UpdateIpv6Details(object):
             The value to assign to the route_table_id property of this UpdateIpv6Details.
         :type route_table_id: str
 
+        :param lifetime:
+            The value to assign to the lifetime property of this UpdateIpv6Details.
+            Allowed values for this property are: "EPHEMERAL", "RESERVED"
+        :type lifetime: str
+
         """
         self.swagger_types = {
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
             'vnic_id': 'str',
-            'route_table_id': 'str'
+            'route_table_id': 'str',
+            'lifetime': 'str'
         }
 
         self.attribute_map = {
@@ -54,7 +68,8 @@ class UpdateIpv6Details(object):
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
             'vnic_id': 'vnicId',
-            'route_table_id': 'routeTableId'
+            'route_table_id': 'routeTableId',
+            'lifetime': 'lifetime'
         }
 
         self._defined_tags = None
@@ -62,6 +77,7 @@ class UpdateIpv6Details(object):
         self._freeform_tags = None
         self._vnic_id = None
         self._route_table_id = None
+        self._lifetime = None
 
     @property
     def defined_tags(self):
@@ -191,9 +207,11 @@ class UpdateIpv6Details(object):
     def route_table_id(self):
         """
         Gets the route_table_id of this UpdateIpv6Details.
-        The `OCID`__ of the route table the PrivateIp will use.
+        The `OCID`__ of the route table the IP address or VNIC will use. For more information, see
+        `Source Based Routing`__.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing
 
 
         :return: The route_table_id of this UpdateIpv6Details.
@@ -205,15 +223,54 @@ class UpdateIpv6Details(object):
     def route_table_id(self, route_table_id):
         """
         Sets the route_table_id of this UpdateIpv6Details.
-        The `OCID`__ of the route table the PrivateIp will use.
+        The `OCID`__ of the route table the IP address or VNIC will use. For more information, see
+        `Source Based Routing`__.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing
 
 
         :param route_table_id: The route_table_id of this UpdateIpv6Details.
         :type: str
         """
         self._route_table_id = route_table_id
+
+    @property
+    def lifetime(self):
+        """
+        Gets the lifetime of this UpdateIpv6Details.
+        Lifetime of the IP address.
+        There are two types of IPv6 IPs:
+         - Ephemeral
+         - Reserved
+
+        Allowed values for this property are: "EPHEMERAL", "RESERVED"
+
+
+        :return: The lifetime of this UpdateIpv6Details.
+        :rtype: str
+        """
+        return self._lifetime
+
+    @lifetime.setter
+    def lifetime(self, lifetime):
+        """
+        Sets the lifetime of this UpdateIpv6Details.
+        Lifetime of the IP address.
+        There are two types of IPv6 IPs:
+         - Ephemeral
+         - Reserved
+
+
+        :param lifetime: The lifetime of this UpdateIpv6Details.
+        :type: str
+        """
+        allowed_values = ["EPHEMERAL", "RESERVED"]
+        if not value_allowed_none_or_none_sentinel(lifetime, allowed_values):
+            raise ValueError(
+                f"Invalid value for `lifetime`, must be None or one of {allowed_values}"
+            )
+        self._lifetime = lifetime
 
     def __repr__(self):
         return formatted_flat_dict(self)

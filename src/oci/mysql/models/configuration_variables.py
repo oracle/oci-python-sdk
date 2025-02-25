@@ -27,6 +27,1258 @@ class ConfigurationVariables(object):
     #: This constant has a value of "RELEASE"
     COMPLETION_TYPE_RELEASE = "RELEASE"
 
+    #: A constant which can be used with the character_set_server property of a ConfigurationVariables.
+    #: This constant has a value of "ARMSCII8"
+    CHARACTER_SET_SERVER_ARMSCII8 = "ARMSCII8"
+
+    #: A constant which can be used with the character_set_server property of a ConfigurationVariables.
+    #: This constant has a value of "ASCII"
+    CHARACTER_SET_SERVER_ASCII = "ASCII"
+
+    #: A constant which can be used with the character_set_server property of a ConfigurationVariables.
+    #: This constant has a value of "BIG5"
+    CHARACTER_SET_SERVER_BIG5 = "BIG5"
+
+    #: A constant which can be used with the character_set_server property of a ConfigurationVariables.
+    #: This constant has a value of "BINARY"
+    CHARACTER_SET_SERVER_BINARY = "BINARY"
+
+    #: A constant which can be used with the character_set_server property of a ConfigurationVariables.
+    #: This constant has a value of "CP1250"
+    CHARACTER_SET_SERVER_CP1250 = "CP1250"
+
+    #: A constant which can be used with the character_set_server property of a ConfigurationVariables.
+    #: This constant has a value of "CP1251"
+    CHARACTER_SET_SERVER_CP1251 = "CP1251"
+
+    #: A constant which can be used with the character_set_server property of a ConfigurationVariables.
+    #: This constant has a value of "CP1256"
+    CHARACTER_SET_SERVER_CP1256 = "CP1256"
+
+    #: A constant which can be used with the character_set_server property of a ConfigurationVariables.
+    #: This constant has a value of "CP1257"
+    CHARACTER_SET_SERVER_CP1257 = "CP1257"
+
+    #: A constant which can be used with the character_set_server property of a ConfigurationVariables.
+    #: This constant has a value of "CP850"
+    CHARACTER_SET_SERVER_CP850 = "CP850"
+
+    #: A constant which can be used with the character_set_server property of a ConfigurationVariables.
+    #: This constant has a value of "CP852"
+    CHARACTER_SET_SERVER_CP852 = "CP852"
+
+    #: A constant which can be used with the character_set_server property of a ConfigurationVariables.
+    #: This constant has a value of "CP866"
+    CHARACTER_SET_SERVER_CP866 = "CP866"
+
+    #: A constant which can be used with the character_set_server property of a ConfigurationVariables.
+    #: This constant has a value of "CP932"
+    CHARACTER_SET_SERVER_CP932 = "CP932"
+
+    #: A constant which can be used with the character_set_server property of a ConfigurationVariables.
+    #: This constant has a value of "DEC8"
+    CHARACTER_SET_SERVER_DEC8 = "DEC8"
+
+    #: A constant which can be used with the character_set_server property of a ConfigurationVariables.
+    #: This constant has a value of "EUCJPMS"
+    CHARACTER_SET_SERVER_EUCJPMS = "EUCJPMS"
+
+    #: A constant which can be used with the character_set_server property of a ConfigurationVariables.
+    #: This constant has a value of "EUCKR"
+    CHARACTER_SET_SERVER_EUCKR = "EUCKR"
+
+    #: A constant which can be used with the character_set_server property of a ConfigurationVariables.
+    #: This constant has a value of "GB18030"
+    CHARACTER_SET_SERVER_GB18030 = "GB18030"
+
+    #: A constant which can be used with the character_set_server property of a ConfigurationVariables.
+    #: This constant has a value of "GB2312"
+    CHARACTER_SET_SERVER_GB2312 = "GB2312"
+
+    #: A constant which can be used with the character_set_server property of a ConfigurationVariables.
+    #: This constant has a value of "GBK"
+    CHARACTER_SET_SERVER_GBK = "GBK"
+
+    #: A constant which can be used with the character_set_server property of a ConfigurationVariables.
+    #: This constant has a value of "GEOSTD8"
+    CHARACTER_SET_SERVER_GEOSTD8 = "GEOSTD8"
+
+    #: A constant which can be used with the character_set_server property of a ConfigurationVariables.
+    #: This constant has a value of "GREEK"
+    CHARACTER_SET_SERVER_GREEK = "GREEK"
+
+    #: A constant which can be used with the character_set_server property of a ConfigurationVariables.
+    #: This constant has a value of "HEBREW"
+    CHARACTER_SET_SERVER_HEBREW = "HEBREW"
+
+    #: A constant which can be used with the character_set_server property of a ConfigurationVariables.
+    #: This constant has a value of "HP8"
+    CHARACTER_SET_SERVER_HP8 = "HP8"
+
+    #: A constant which can be used with the character_set_server property of a ConfigurationVariables.
+    #: This constant has a value of "KEYBCS2"
+    CHARACTER_SET_SERVER_KEYBCS2 = "KEYBCS2"
+
+    #: A constant which can be used with the character_set_server property of a ConfigurationVariables.
+    #: This constant has a value of "KOI8R"
+    CHARACTER_SET_SERVER_KOI8_R = "KOI8R"
+
+    #: A constant which can be used with the character_set_server property of a ConfigurationVariables.
+    #: This constant has a value of "KOI8U"
+    CHARACTER_SET_SERVER_KOI8_U = "KOI8U"
+
+    #: A constant which can be used with the character_set_server property of a ConfigurationVariables.
+    #: This constant has a value of "LATIN1"
+    CHARACTER_SET_SERVER_LATIN1 = "LATIN1"
+
+    #: A constant which can be used with the character_set_server property of a ConfigurationVariables.
+    #: This constant has a value of "LATIN2"
+    CHARACTER_SET_SERVER_LATIN2 = "LATIN2"
+
+    #: A constant which can be used with the character_set_server property of a ConfigurationVariables.
+    #: This constant has a value of "LATIN5"
+    CHARACTER_SET_SERVER_LATIN5 = "LATIN5"
+
+    #: A constant which can be used with the character_set_server property of a ConfigurationVariables.
+    #: This constant has a value of "LATIN7"
+    CHARACTER_SET_SERVER_LATIN7 = "LATIN7"
+
+    #: A constant which can be used with the character_set_server property of a ConfigurationVariables.
+    #: This constant has a value of "MACCE"
+    CHARACTER_SET_SERVER_MACCE = "MACCE"
+
+    #: A constant which can be used with the character_set_server property of a ConfigurationVariables.
+    #: This constant has a value of "MACROMAN"
+    CHARACTER_SET_SERVER_MACROMAN = "MACROMAN"
+
+    #: A constant which can be used with the character_set_server property of a ConfigurationVariables.
+    #: This constant has a value of "SJIS"
+    CHARACTER_SET_SERVER_SJIS = "SJIS"
+
+    #: A constant which can be used with the character_set_server property of a ConfigurationVariables.
+    #: This constant has a value of "SWE7"
+    CHARACTER_SET_SERVER_SWE7 = "SWE7"
+
+    #: A constant which can be used with the character_set_server property of a ConfigurationVariables.
+    #: This constant has a value of "TIS620"
+    CHARACTER_SET_SERVER_TIS620 = "TIS620"
+
+    #: A constant which can be used with the character_set_server property of a ConfigurationVariables.
+    #: This constant has a value of "UCS2"
+    CHARACTER_SET_SERVER_UCS2 = "UCS2"
+
+    #: A constant which can be used with the character_set_server property of a ConfigurationVariables.
+    #: This constant has a value of "UJIS"
+    CHARACTER_SET_SERVER_UJIS = "UJIS"
+
+    #: A constant which can be used with the character_set_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF16"
+    CHARACTER_SET_SERVER_UTF16 = "UTF16"
+
+    #: A constant which can be used with the character_set_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF16LE"
+    CHARACTER_SET_SERVER_UTF16_LE = "UTF16LE"
+
+    #: A constant which can be used with the character_set_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF32"
+    CHARACTER_SET_SERVER_UTF32 = "UTF32"
+
+    #: A constant which can be used with the character_set_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB3"
+    CHARACTER_SET_SERVER_UTF8_MB3 = "UTF8MB3"
+
+    #: A constant which can be used with the character_set_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4"
+    CHARACTER_SET_SERVER_UTF8_MB4 = "UTF8MB4"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "ARMSCII8_GENERAL_CI"
+    COLLATION_SERVER_ARMSCII8_GENERAL_CI = "ARMSCII8_GENERAL_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "ARMSCII8_BIN"
+    COLLATION_SERVER_ARMSCII8_BIN = "ARMSCII8_BIN"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "ASCII_GENERAL_CI"
+    COLLATION_SERVER_ASCII_GENERAL_CI = "ASCII_GENERAL_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "ASCII_BIN"
+    COLLATION_SERVER_ASCII_BIN = "ASCII_BIN"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "BIG5_CHINESE_CI"
+    COLLATION_SERVER_BIG5_CHINESE_CI = "BIG5_CHINESE_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "BIG5_BIN"
+    COLLATION_SERVER_BIG5_BIN = "BIG5_BIN"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "BINARY"
+    COLLATION_SERVER_BINARY = "BINARY"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "CP1250_GENERAL_CI"
+    COLLATION_SERVER_CP1250_GENERAL_CI = "CP1250_GENERAL_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "CP1250_BIN"
+    COLLATION_SERVER_CP1250_BIN = "CP1250_BIN"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "CP1250_CROATIAN_CI"
+    COLLATION_SERVER_CP1250_CROATIAN_CI = "CP1250_CROATIAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "CP1250_CZECH_CS"
+    COLLATION_SERVER_CP1250_CZECH_CS = "CP1250_CZECH_CS"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "CP1250_POLISH_CI"
+    COLLATION_SERVER_CP1250_POLISH_CI = "CP1250_POLISH_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "CP1251_GENERAL_CI"
+    COLLATION_SERVER_CP1251_GENERAL_CI = "CP1251_GENERAL_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "CP1251_BIN"
+    COLLATION_SERVER_CP1251_BIN = "CP1251_BIN"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "CP1251_BULGARIAN_CI"
+    COLLATION_SERVER_CP1251_BULGARIAN_CI = "CP1251_BULGARIAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "CP1251_GENERAL_CS"
+    COLLATION_SERVER_CP1251_GENERAL_CS = "CP1251_GENERAL_CS"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "CP1251_UKRAINIAN_CI"
+    COLLATION_SERVER_CP1251_UKRAINIAN_CI = "CP1251_UKRAINIAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "CP1256_GENERAL_CI"
+    COLLATION_SERVER_CP1256_GENERAL_CI = "CP1256_GENERAL_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "CP1256_BIN"
+    COLLATION_SERVER_CP1256_BIN = "CP1256_BIN"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "CP1257_GENERAL_CI"
+    COLLATION_SERVER_CP1257_GENERAL_CI = "CP1257_GENERAL_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "CP1257_BIN"
+    COLLATION_SERVER_CP1257_BIN = "CP1257_BIN"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "CP1257_LITHUANIAN_CI"
+    COLLATION_SERVER_CP1257_LITHUANIAN_CI = "CP1257_LITHUANIAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "CP850_GENERAL_CI"
+    COLLATION_SERVER_CP850_GENERAL_CI = "CP850_GENERAL_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "CP850_BIN"
+    COLLATION_SERVER_CP850_BIN = "CP850_BIN"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "CP852_GENERAL_CI"
+    COLLATION_SERVER_CP852_GENERAL_CI = "CP852_GENERAL_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "CP852_BIN"
+    COLLATION_SERVER_CP852_BIN = "CP852_BIN"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "CP866_GENERAL_CI"
+    COLLATION_SERVER_CP866_GENERAL_CI = "CP866_GENERAL_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "CP866_BIN"
+    COLLATION_SERVER_CP866_BIN = "CP866_BIN"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "CP932_JAPANESE_CI"
+    COLLATION_SERVER_CP932_JAPANESE_CI = "CP932_JAPANESE_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "CP932_BIN"
+    COLLATION_SERVER_CP932_BIN = "CP932_BIN"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "DEC8_SWEDISH_CI"
+    COLLATION_SERVER_DEC8_SWEDISH_CI = "DEC8_SWEDISH_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "DEC8_BIN"
+    COLLATION_SERVER_DEC8_BIN = "DEC8_BIN"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "EUCJPMS_JAPANESE_CI"
+    COLLATION_SERVER_EUCJPMS_JAPANESE_CI = "EUCJPMS_JAPANESE_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "EUCJPMS_BIN"
+    COLLATION_SERVER_EUCJPMS_BIN = "EUCJPMS_BIN"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "EUCKR_KOREAN_CI"
+    COLLATION_SERVER_EUCKR_KOREAN_CI = "EUCKR_KOREAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "EUCKR_BIN"
+    COLLATION_SERVER_EUCKR_BIN = "EUCKR_BIN"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "GB18030_CHINESE_CI"
+    COLLATION_SERVER_GB18030_CHINESE_CI = "GB18030_CHINESE_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "GB18030_BIN"
+    COLLATION_SERVER_GB18030_BIN = "GB18030_BIN"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "GB18030_UNICODE_520_CI"
+    COLLATION_SERVER_GB18030_UNICODE_520_CI = "GB18030_UNICODE_520_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "GB2312_CHINESE_CI"
+    COLLATION_SERVER_GB2312_CHINESE_CI = "GB2312_CHINESE_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "GB2312_BIN"
+    COLLATION_SERVER_GB2312_BIN = "GB2312_BIN"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "GBK_CHINESE_CI"
+    COLLATION_SERVER_GBK_CHINESE_CI = "GBK_CHINESE_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "GBK_BIN"
+    COLLATION_SERVER_GBK_BIN = "GBK_BIN"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "GEOSTD8_GENERAL_CI"
+    COLLATION_SERVER_GEOSTD8_GENERAL_CI = "GEOSTD8_GENERAL_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "GEOSTD8_BIN"
+    COLLATION_SERVER_GEOSTD8_BIN = "GEOSTD8_BIN"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "GREEK_GENERAL_CI"
+    COLLATION_SERVER_GREEK_GENERAL_CI = "GREEK_GENERAL_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "GREEK_BIN"
+    COLLATION_SERVER_GREEK_BIN = "GREEK_BIN"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "HEBREW_GENERAL_CI"
+    COLLATION_SERVER_HEBREW_GENERAL_CI = "HEBREW_GENERAL_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "HEBREW_BIN"
+    COLLATION_SERVER_HEBREW_BIN = "HEBREW_BIN"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "HP8_ENGLISH_CI"
+    COLLATION_SERVER_HP8_ENGLISH_CI = "HP8_ENGLISH_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "HP8_BIN"
+    COLLATION_SERVER_HP8_BIN = "HP8_BIN"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "KEYBCS2_GENERAL_CI"
+    COLLATION_SERVER_KEYBCS2_GENERAL_CI = "KEYBCS2_GENERAL_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "KEYBCS2_BIN"
+    COLLATION_SERVER_KEYBCS2_BIN = "KEYBCS2_BIN"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "KOI8R_GENERAL_CI"
+    COLLATION_SERVER_KOI8_R_GENERAL_CI = "KOI8R_GENERAL_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "KOI8R_BIN"
+    COLLATION_SERVER_KOI8_R_BIN = "KOI8R_BIN"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "KOI8U_GENERAL_CI"
+    COLLATION_SERVER_KOI8_U_GENERAL_CI = "KOI8U_GENERAL_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "KOI8U_BIN"
+    COLLATION_SERVER_KOI8_U_BIN = "KOI8U_BIN"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "LATIN1_SWEDISH_CI"
+    COLLATION_SERVER_LATIN1_SWEDISH_CI = "LATIN1_SWEDISH_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "LATIN1_BIN"
+    COLLATION_SERVER_LATIN1_BIN = "LATIN1_BIN"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "LATIN1_DANISH_CI"
+    COLLATION_SERVER_LATIN1_DANISH_CI = "LATIN1_DANISH_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "LATIN1_GENERAL_CI"
+    COLLATION_SERVER_LATIN1_GENERAL_CI = "LATIN1_GENERAL_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "LATIN1_GENERAL_CS"
+    COLLATION_SERVER_LATIN1_GENERAL_CS = "LATIN1_GENERAL_CS"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "LATIN1_GERMAN1_CI"
+    COLLATION_SERVER_LATIN1_GERMAN1_CI = "LATIN1_GERMAN1_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "LATIN1_GERMAN2_CI"
+    COLLATION_SERVER_LATIN1_GERMAN2_CI = "LATIN1_GERMAN2_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "LATIN1_SPANISH_CI"
+    COLLATION_SERVER_LATIN1_SPANISH_CI = "LATIN1_SPANISH_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "LATIN2_GENERAL_CI"
+    COLLATION_SERVER_LATIN2_GENERAL_CI = "LATIN2_GENERAL_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "LATIN2_BIN"
+    COLLATION_SERVER_LATIN2_BIN = "LATIN2_BIN"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "LATIN2_CROATIAN_CI"
+    COLLATION_SERVER_LATIN2_CROATIAN_CI = "LATIN2_CROATIAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "LATIN2_CZECH_CS"
+    COLLATION_SERVER_LATIN2_CZECH_CS = "LATIN2_CZECH_CS"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "LATIN2_HUNGARIAN_CI"
+    COLLATION_SERVER_LATIN2_HUNGARIAN_CI = "LATIN2_HUNGARIAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "LATIN5_TURKISH_CI"
+    COLLATION_SERVER_LATIN5_TURKISH_CI = "LATIN5_TURKISH_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "LATIN5_BIN"
+    COLLATION_SERVER_LATIN5_BIN = "LATIN5_BIN"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "LATIN7_GENERAL_CI"
+    COLLATION_SERVER_LATIN7_GENERAL_CI = "LATIN7_GENERAL_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "LATIN7_BIN"
+    COLLATION_SERVER_LATIN7_BIN = "LATIN7_BIN"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "LATIN7_ESTONIAN_CS"
+    COLLATION_SERVER_LATIN7_ESTONIAN_CS = "LATIN7_ESTONIAN_CS"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "LATIN7_GENERAL_CS"
+    COLLATION_SERVER_LATIN7_GENERAL_CS = "LATIN7_GENERAL_CS"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "MACCE_GENERAL_CI"
+    COLLATION_SERVER_MACCE_GENERAL_CI = "MACCE_GENERAL_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "MACCE_BIN"
+    COLLATION_SERVER_MACCE_BIN = "MACCE_BIN"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "MACROMAN_GENERAL_CI"
+    COLLATION_SERVER_MACROMAN_GENERAL_CI = "MACROMAN_GENERAL_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "MACROMAN_BIN"
+    COLLATION_SERVER_MACROMAN_BIN = "MACROMAN_BIN"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "SJIS_JAPANESE_CI"
+    COLLATION_SERVER_SJIS_JAPANESE_CI = "SJIS_JAPANESE_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "SJIS_BIN"
+    COLLATION_SERVER_SJIS_BIN = "SJIS_BIN"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "SWE7_SWEDISH_CI"
+    COLLATION_SERVER_SWE7_SWEDISH_CI = "SWE7_SWEDISH_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "SWE7_BIN"
+    COLLATION_SERVER_SWE7_BIN = "SWE7_BIN"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "TIS620_THAI_CI"
+    COLLATION_SERVER_TIS620_THAI_CI = "TIS620_THAI_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "TIS620_BIN"
+    COLLATION_SERVER_TIS620_BIN = "TIS620_BIN"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UCS2_GENERAL_CI"
+    COLLATION_SERVER_UCS2_GENERAL_CI = "UCS2_GENERAL_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UCS2_BIN"
+    COLLATION_SERVER_UCS2_BIN = "UCS2_BIN"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UCS2_CROATIAN_CI"
+    COLLATION_SERVER_UCS2_CROATIAN_CI = "UCS2_CROATIAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UCS2_CZECH_CI"
+    COLLATION_SERVER_UCS2_CZECH_CI = "UCS2_CZECH_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UCS2_DANISH_CI"
+    COLLATION_SERVER_UCS2_DANISH_CI = "UCS2_DANISH_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UCS2_ESPERANTO_CI"
+    COLLATION_SERVER_UCS2_ESPERANTO_CI = "UCS2_ESPERANTO_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UCS2_ESTONIAN_CI"
+    COLLATION_SERVER_UCS2_ESTONIAN_CI = "UCS2_ESTONIAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UCS2_GENERAL_MYSQL500_CI"
+    COLLATION_SERVER_UCS2_GENERAL_MYSQL500_CI = "UCS2_GENERAL_MYSQL500_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UCS2_GERMAN2_CI"
+    COLLATION_SERVER_UCS2_GERMAN2_CI = "UCS2_GERMAN2_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UCS2_HUNGARIAN_CI"
+    COLLATION_SERVER_UCS2_HUNGARIAN_CI = "UCS2_HUNGARIAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UCS2_ICELANDIC_CI"
+    COLLATION_SERVER_UCS2_ICELANDIC_CI = "UCS2_ICELANDIC_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UCS2_LATVIAN_CI"
+    COLLATION_SERVER_UCS2_LATVIAN_CI = "UCS2_LATVIAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UCS2_LITHUANIAN_CI"
+    COLLATION_SERVER_UCS2_LITHUANIAN_CI = "UCS2_LITHUANIAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UCS2_PERSIAN_CI"
+    COLLATION_SERVER_UCS2_PERSIAN_CI = "UCS2_PERSIAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UCS2_POLISH_CI"
+    COLLATION_SERVER_UCS2_POLISH_CI = "UCS2_POLISH_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UCS2_ROMANIAN_CI"
+    COLLATION_SERVER_UCS2_ROMANIAN_CI = "UCS2_ROMANIAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UCS2_ROMAN_CI"
+    COLLATION_SERVER_UCS2_ROMAN_CI = "UCS2_ROMAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UCS2_SINHALA_CI"
+    COLLATION_SERVER_UCS2_SINHALA_CI = "UCS2_SINHALA_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UCS2_SLOVAK_CI"
+    COLLATION_SERVER_UCS2_SLOVAK_CI = "UCS2_SLOVAK_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UCS2_SLOVENIAN_CI"
+    COLLATION_SERVER_UCS2_SLOVENIAN_CI = "UCS2_SLOVENIAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UCS2_SPANISH2_CI"
+    COLLATION_SERVER_UCS2_SPANISH2_CI = "UCS2_SPANISH2_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UCS2_SPANISH_CI"
+    COLLATION_SERVER_UCS2_SPANISH_CI = "UCS2_SPANISH_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UCS2_SWEDISH_CI"
+    COLLATION_SERVER_UCS2_SWEDISH_CI = "UCS2_SWEDISH_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UCS2_TURKISH_CI"
+    COLLATION_SERVER_UCS2_TURKISH_CI = "UCS2_TURKISH_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UCS2_UNICODE_520_CI"
+    COLLATION_SERVER_UCS2_UNICODE_520_CI = "UCS2_UNICODE_520_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UCS2_UNICODE_CI"
+    COLLATION_SERVER_UCS2_UNICODE_CI = "UCS2_UNICODE_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UCS2_VIETNAMESE_CI"
+    COLLATION_SERVER_UCS2_VIETNAMESE_CI = "UCS2_VIETNAMESE_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UJIS_JAPANESE_CI"
+    COLLATION_SERVER_UJIS_JAPANESE_CI = "UJIS_JAPANESE_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UJIS_BIN"
+    COLLATION_SERVER_UJIS_BIN = "UJIS_BIN"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF16_GENERAL_CI"
+    COLLATION_SERVER_UTF16_GENERAL_CI = "UTF16_GENERAL_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF16_BIN"
+    COLLATION_SERVER_UTF16_BIN = "UTF16_BIN"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF16_CROATIAN_CI"
+    COLLATION_SERVER_UTF16_CROATIAN_CI = "UTF16_CROATIAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF16_CZECH_CI"
+    COLLATION_SERVER_UTF16_CZECH_CI = "UTF16_CZECH_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF16_DANISH_CI"
+    COLLATION_SERVER_UTF16_DANISH_CI = "UTF16_DANISH_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF16_ESPERANTO_CI"
+    COLLATION_SERVER_UTF16_ESPERANTO_CI = "UTF16_ESPERANTO_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF16_ESTONIAN_CI"
+    COLLATION_SERVER_UTF16_ESTONIAN_CI = "UTF16_ESTONIAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF16_GERMAN2_CI"
+    COLLATION_SERVER_UTF16_GERMAN2_CI = "UTF16_GERMAN2_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF16_HUNGARIAN_CI"
+    COLLATION_SERVER_UTF16_HUNGARIAN_CI = "UTF16_HUNGARIAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF16_ICELANDIC_CI"
+    COLLATION_SERVER_UTF16_ICELANDIC_CI = "UTF16_ICELANDIC_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF16_LATVIAN_CI"
+    COLLATION_SERVER_UTF16_LATVIAN_CI = "UTF16_LATVIAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF16_LITHUANIAN_CI"
+    COLLATION_SERVER_UTF16_LITHUANIAN_CI = "UTF16_LITHUANIAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF16_PERSIAN_CI"
+    COLLATION_SERVER_UTF16_PERSIAN_CI = "UTF16_PERSIAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF16_POLISH_CI"
+    COLLATION_SERVER_UTF16_POLISH_CI = "UTF16_POLISH_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF16_ROMANIAN_CI"
+    COLLATION_SERVER_UTF16_ROMANIAN_CI = "UTF16_ROMANIAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF16_ROMAN_CI"
+    COLLATION_SERVER_UTF16_ROMAN_CI = "UTF16_ROMAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF16_SINHALA_CI"
+    COLLATION_SERVER_UTF16_SINHALA_CI = "UTF16_SINHALA_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF16_SLOVAK_CI"
+    COLLATION_SERVER_UTF16_SLOVAK_CI = "UTF16_SLOVAK_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF16_SLOVENIAN_CI"
+    COLLATION_SERVER_UTF16_SLOVENIAN_CI = "UTF16_SLOVENIAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF16_SPANISH2_CI"
+    COLLATION_SERVER_UTF16_SPANISH2_CI = "UTF16_SPANISH2_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF16_SPANISH_CI"
+    COLLATION_SERVER_UTF16_SPANISH_CI = "UTF16_SPANISH_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF16_SWEDISH_CI"
+    COLLATION_SERVER_UTF16_SWEDISH_CI = "UTF16_SWEDISH_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF16_TURKISH_CI"
+    COLLATION_SERVER_UTF16_TURKISH_CI = "UTF16_TURKISH_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF16_UNICODE_520_CI"
+    COLLATION_SERVER_UTF16_UNICODE_520_CI = "UTF16_UNICODE_520_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF16_UNICODE_CI"
+    COLLATION_SERVER_UTF16_UNICODE_CI = "UTF16_UNICODE_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF16_VIETNAMESE_CI"
+    COLLATION_SERVER_UTF16_VIETNAMESE_CI = "UTF16_VIETNAMESE_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF16LE_GENERAL_CI"
+    COLLATION_SERVER_UTF16_LE_GENERAL_CI = "UTF16LE_GENERAL_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF16LE_BIN"
+    COLLATION_SERVER_UTF16_LE_BIN = "UTF16LE_BIN"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF32_GENERAL_CI"
+    COLLATION_SERVER_UTF32_GENERAL_CI = "UTF32_GENERAL_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF32_BIN"
+    COLLATION_SERVER_UTF32_BIN = "UTF32_BIN"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF32_CROATIAN_CI"
+    COLLATION_SERVER_UTF32_CROATIAN_CI = "UTF32_CROATIAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF32_CZECH_CI"
+    COLLATION_SERVER_UTF32_CZECH_CI = "UTF32_CZECH_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF32_DANISH_CI"
+    COLLATION_SERVER_UTF32_DANISH_CI = "UTF32_DANISH_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF32_ESPERANTO_CI"
+    COLLATION_SERVER_UTF32_ESPERANTO_CI = "UTF32_ESPERANTO_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF32_ESTONIAN_CI"
+    COLLATION_SERVER_UTF32_ESTONIAN_CI = "UTF32_ESTONIAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF32_GERMAN2_CI"
+    COLLATION_SERVER_UTF32_GERMAN2_CI = "UTF32_GERMAN2_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF32_HUNGARIAN_CI"
+    COLLATION_SERVER_UTF32_HUNGARIAN_CI = "UTF32_HUNGARIAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF32_ICELANDIC_CI"
+    COLLATION_SERVER_UTF32_ICELANDIC_CI = "UTF32_ICELANDIC_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF32_LATVIAN_CI"
+    COLLATION_SERVER_UTF32_LATVIAN_CI = "UTF32_LATVIAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF32_LITHUANIAN_CI"
+    COLLATION_SERVER_UTF32_LITHUANIAN_CI = "UTF32_LITHUANIAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF32_PERSIAN_CI"
+    COLLATION_SERVER_UTF32_PERSIAN_CI = "UTF32_PERSIAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF32_POLISH_CI"
+    COLLATION_SERVER_UTF32_POLISH_CI = "UTF32_POLISH_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF32_ROMANIAN_CI"
+    COLLATION_SERVER_UTF32_ROMANIAN_CI = "UTF32_ROMANIAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF32_ROMAN_CI"
+    COLLATION_SERVER_UTF32_ROMAN_CI = "UTF32_ROMAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF32_SINHALA_CI"
+    COLLATION_SERVER_UTF32_SINHALA_CI = "UTF32_SINHALA_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF32_SLOVAK_CI"
+    COLLATION_SERVER_UTF32_SLOVAK_CI = "UTF32_SLOVAK_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF32_SLOVENIAN_CI"
+    COLLATION_SERVER_UTF32_SLOVENIAN_CI = "UTF32_SLOVENIAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF32_SPANISH2_CI"
+    COLLATION_SERVER_UTF32_SPANISH2_CI = "UTF32_SPANISH2_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF32_SPANISH_CI"
+    COLLATION_SERVER_UTF32_SPANISH_CI = "UTF32_SPANISH_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF32_SWEDISH_CI"
+    COLLATION_SERVER_UTF32_SWEDISH_CI = "UTF32_SWEDISH_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF32_TURKISH_CI"
+    COLLATION_SERVER_UTF32_TURKISH_CI = "UTF32_TURKISH_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF32_UNICODE_520_CI"
+    COLLATION_SERVER_UTF32_UNICODE_520_CI = "UTF32_UNICODE_520_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF32_UNICODE_CI"
+    COLLATION_SERVER_UTF32_UNICODE_CI = "UTF32_UNICODE_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF32_VIETNAMESE_CI"
+    COLLATION_SERVER_UTF32_VIETNAMESE_CI = "UTF32_VIETNAMESE_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8_GENERAL_CI"
+    COLLATION_SERVER_UTF8_GENERAL_CI = "UTF8_GENERAL_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8_BIN"
+    COLLATION_SERVER_UTF8_BIN = "UTF8_BIN"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8_CROATIAN_CI"
+    COLLATION_SERVER_UTF8_CROATIAN_CI = "UTF8_CROATIAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8_CZECH_CI"
+    COLLATION_SERVER_UTF8_CZECH_CI = "UTF8_CZECH_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8_DANISH_CI"
+    COLLATION_SERVER_UTF8_DANISH_CI = "UTF8_DANISH_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8_ESPERANTO_CI"
+    COLLATION_SERVER_UTF8_ESPERANTO_CI = "UTF8_ESPERANTO_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8_ESTONIAN_CI"
+    COLLATION_SERVER_UTF8_ESTONIAN_CI = "UTF8_ESTONIAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8_GENERAL_MYSQL500_CI"
+    COLLATION_SERVER_UTF8_GENERAL_MYSQL500_CI = "UTF8_GENERAL_MYSQL500_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8_GERMAN2_CI"
+    COLLATION_SERVER_UTF8_GERMAN2_CI = "UTF8_GERMAN2_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8_HUNGARIAN_CI"
+    COLLATION_SERVER_UTF8_HUNGARIAN_CI = "UTF8_HUNGARIAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8_ICELANDIC_CI"
+    COLLATION_SERVER_UTF8_ICELANDIC_CI = "UTF8_ICELANDIC_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8_LATVIAN_CI"
+    COLLATION_SERVER_UTF8_LATVIAN_CI = "UTF8_LATVIAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8_LITHUANIAN_CI"
+    COLLATION_SERVER_UTF8_LITHUANIAN_CI = "UTF8_LITHUANIAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8_PERSIAN_CI"
+    COLLATION_SERVER_UTF8_PERSIAN_CI = "UTF8_PERSIAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8_POLISH_CI"
+    COLLATION_SERVER_UTF8_POLISH_CI = "UTF8_POLISH_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8_ROMANIAN_CI"
+    COLLATION_SERVER_UTF8_ROMANIAN_CI = "UTF8_ROMANIAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8_ROMAN_CI"
+    COLLATION_SERVER_UTF8_ROMAN_CI = "UTF8_ROMAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8_SINHALA_CI"
+    COLLATION_SERVER_UTF8_SINHALA_CI = "UTF8_SINHALA_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8_SLOVAK_CI"
+    COLLATION_SERVER_UTF8_SLOVAK_CI = "UTF8_SLOVAK_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8_SLOVENIAN_CI"
+    COLLATION_SERVER_UTF8_SLOVENIAN_CI = "UTF8_SLOVENIAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8_SPANISH2_CI"
+    COLLATION_SERVER_UTF8_SPANISH2_CI = "UTF8_SPANISH2_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8_SPANISH_CI"
+    COLLATION_SERVER_UTF8_SPANISH_CI = "UTF8_SPANISH_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8_SWEDISH_CI"
+    COLLATION_SERVER_UTF8_SWEDISH_CI = "UTF8_SWEDISH_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8_TOLOWER_CI"
+    COLLATION_SERVER_UTF8_TOLOWER_CI = "UTF8_TOLOWER_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8_TURKISH_CI"
+    COLLATION_SERVER_UTF8_TURKISH_CI = "UTF8_TURKISH_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8_UNICODE_520_CI"
+    COLLATION_SERVER_UTF8_UNICODE_520_CI = "UTF8_UNICODE_520_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8_UNICODE_CI"
+    COLLATION_SERVER_UTF8_UNICODE_CI = "UTF8_UNICODE_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8_VIETNAMESE_CI"
+    COLLATION_SERVER_UTF8_VIETNAMESE_CI = "UTF8_VIETNAMESE_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_0900_AI_CI"
+    COLLATION_SERVER_UTF8_MB4_0900_AI_CI = "UTF8MB4_0900_AI_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_0900_AS_CI"
+    COLLATION_SERVER_UTF8_MB4_0900_AS_CI = "UTF8MB4_0900_AS_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_0900_AS_CS"
+    COLLATION_SERVER_UTF8_MB4_0900_AS_CS = "UTF8MB4_0900_AS_CS"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_0900_BIN"
+    COLLATION_SERVER_UTF8_MB4_0900_BIN = "UTF8MB4_0900_BIN"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_BIN"
+    COLLATION_SERVER_UTF8_MB4_BIN = "UTF8MB4_BIN"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_CROATIAN_CI"
+    COLLATION_SERVER_UTF8_MB4_CROATIAN_CI = "UTF8MB4_CROATIAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_CS_0900_AI_CI"
+    COLLATION_SERVER_UTF8_MB4_CS_0900_AI_CI = "UTF8MB4_CS_0900_AI_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_CS_0900_AS_CS"
+    COLLATION_SERVER_UTF8_MB4_CS_0900_AS_CS = "UTF8MB4_CS_0900_AS_CS"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_CZECH_CI"
+    COLLATION_SERVER_UTF8_MB4_CZECH_CI = "UTF8MB4_CZECH_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_DANISH_CI"
+    COLLATION_SERVER_UTF8_MB4_DANISH_CI = "UTF8MB4_DANISH_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_DA_0900_AI_CI"
+    COLLATION_SERVER_UTF8_MB4_DA_0900_AI_CI = "UTF8MB4_DA_0900_AI_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_DA_0900_AS_CS"
+    COLLATION_SERVER_UTF8_MB4_DA_0900_AS_CS = "UTF8MB4_DA_0900_AS_CS"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_DE_PB_0900_AI_CI"
+    COLLATION_SERVER_UTF8_MB4_DE_PB_0900_AI_CI = "UTF8MB4_DE_PB_0900_AI_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_DE_PB_0900_AS_CS"
+    COLLATION_SERVER_UTF8_MB4_DE_PB_0900_AS_CS = "UTF8MB4_DE_PB_0900_AS_CS"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_EO_0900_AI_CI"
+    COLLATION_SERVER_UTF8_MB4_EO_0900_AI_CI = "UTF8MB4_EO_0900_AI_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_EO_0900_AS_CS"
+    COLLATION_SERVER_UTF8_MB4_EO_0900_AS_CS = "UTF8MB4_EO_0900_AS_CS"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_ESPERANTO_CI"
+    COLLATION_SERVER_UTF8_MB4_ESPERANTO_CI = "UTF8MB4_ESPERANTO_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_ESTONIAN_CI"
+    COLLATION_SERVER_UTF8_MB4_ESTONIAN_CI = "UTF8MB4_ESTONIAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_ES_0900_AI_CI"
+    COLLATION_SERVER_UTF8_MB4_ES_0900_AI_CI = "UTF8MB4_ES_0900_AI_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_ES_0900_AS_CS"
+    COLLATION_SERVER_UTF8_MB4_ES_0900_AS_CS = "UTF8MB4_ES_0900_AS_CS"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_ES_TRAD_0900_AI_CI"
+    COLLATION_SERVER_UTF8_MB4_ES_TRAD_0900_AI_CI = "UTF8MB4_ES_TRAD_0900_AI_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_ES_TRAD_0900_AS_CS"
+    COLLATION_SERVER_UTF8_MB4_ES_TRAD_0900_AS_CS = "UTF8MB4_ES_TRAD_0900_AS_CS"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_ET_0900_AI_CI"
+    COLLATION_SERVER_UTF8_MB4_ET_0900_AI_CI = "UTF8MB4_ET_0900_AI_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_ET_0900_AS_CS"
+    COLLATION_SERVER_UTF8_MB4_ET_0900_AS_CS = "UTF8MB4_ET_0900_AS_CS"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_GENERAL_CI"
+    COLLATION_SERVER_UTF8_MB4_GENERAL_CI = "UTF8MB4_GENERAL_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_GERMAN2_CI"
+    COLLATION_SERVER_UTF8_MB4_GERMAN2_CI = "UTF8MB4_GERMAN2_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_HR_0900_AI_CI"
+    COLLATION_SERVER_UTF8_MB4_HR_0900_AI_CI = "UTF8MB4_HR_0900_AI_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_HR_0900_AS_CS"
+    COLLATION_SERVER_UTF8_MB4_HR_0900_AS_CS = "UTF8MB4_HR_0900_AS_CS"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_HUNGARIAN_CI"
+    COLLATION_SERVER_UTF8_MB4_HUNGARIAN_CI = "UTF8MB4_HUNGARIAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_HU_0900_AI_CI"
+    COLLATION_SERVER_UTF8_MB4_HU_0900_AI_CI = "UTF8MB4_HU_0900_AI_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_HU_0900_AS_CS"
+    COLLATION_SERVER_UTF8_MB4_HU_0900_AS_CS = "UTF8MB4_HU_0900_AS_CS"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_ICELANDIC_CI"
+    COLLATION_SERVER_UTF8_MB4_ICELANDIC_CI = "UTF8MB4_ICELANDIC_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_IS_0900_AI_CI"
+    COLLATION_SERVER_UTF8_MB4_IS_0900_AI_CI = "UTF8MB4_IS_0900_AI_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_IS_0900_AS_CS"
+    COLLATION_SERVER_UTF8_MB4_IS_0900_AS_CS = "UTF8MB4_IS_0900_AS_CS"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_JA_0900_AS_CS"
+    COLLATION_SERVER_UTF8_MB4_JA_0900_AS_CS = "UTF8MB4_JA_0900_AS_CS"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_JA_0900_AS_CS_KS"
+    COLLATION_SERVER_UTF8_MB4_JA_0900_AS_CS_KS = "UTF8MB4_JA_0900_AS_CS_KS"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_LATVIAN_CI"
+    COLLATION_SERVER_UTF8_MB4_LATVIAN_CI = "UTF8MB4_LATVIAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_LA_0900_AI_CI"
+    COLLATION_SERVER_UTF8_MB4_LA_0900_AI_CI = "UTF8MB4_LA_0900_AI_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_LA_0900_AS_CS"
+    COLLATION_SERVER_UTF8_MB4_LA_0900_AS_CS = "UTF8MB4_LA_0900_AS_CS"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_LITHUANIAN_CI"
+    COLLATION_SERVER_UTF8_MB4_LITHUANIAN_CI = "UTF8MB4_LITHUANIAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_LT_0900_AI_CI"
+    COLLATION_SERVER_UTF8_MB4_LT_0900_AI_CI = "UTF8MB4_LT_0900_AI_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_LT_0900_AS_CS"
+    COLLATION_SERVER_UTF8_MB4_LT_0900_AS_CS = "UTF8MB4_LT_0900_AS_CS"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_LV_0900_AI_CI"
+    COLLATION_SERVER_UTF8_MB4_LV_0900_AI_CI = "UTF8MB4_LV_0900_AI_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_LV_0900_AS_CS"
+    COLLATION_SERVER_UTF8_MB4_LV_0900_AS_CS = "UTF8MB4_LV_0900_AS_CS"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_PERSIAN_CI"
+    COLLATION_SERVER_UTF8_MB4_PERSIAN_CI = "UTF8MB4_PERSIAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_PL_0900_AI_CI"
+    COLLATION_SERVER_UTF8_MB4_PL_0900_AI_CI = "UTF8MB4_PL_0900_AI_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_PL_0900_AS_CS"
+    COLLATION_SERVER_UTF8_MB4_PL_0900_AS_CS = "UTF8MB4_PL_0900_AS_CS"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_POLISH_CI"
+    COLLATION_SERVER_UTF8_MB4_POLISH_CI = "UTF8MB4_POLISH_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_ROMANIAN_CI"
+    COLLATION_SERVER_UTF8_MB4_ROMANIAN_CI = "UTF8MB4_ROMANIAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_ROMAN_CI"
+    COLLATION_SERVER_UTF8_MB4_ROMAN_CI = "UTF8MB4_ROMAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_RO_0900_AI_CI"
+    COLLATION_SERVER_UTF8_MB4_RO_0900_AI_CI = "UTF8MB4_RO_0900_AI_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_RO_0900_AS_CS"
+    COLLATION_SERVER_UTF8_MB4_RO_0900_AS_CS = "UTF8MB4_RO_0900_AS_CS"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_RU_0900_AI_CI"
+    COLLATION_SERVER_UTF8_MB4_RU_0900_AI_CI = "UTF8MB4_RU_0900_AI_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_RU_0900_AS_CS"
+    COLLATION_SERVER_UTF8_MB4_RU_0900_AS_CS = "UTF8MB4_RU_0900_AS_CS"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_SINHALA_CI"
+    COLLATION_SERVER_UTF8_MB4_SINHALA_CI = "UTF8MB4_SINHALA_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_SK_0900_AI_CI"
+    COLLATION_SERVER_UTF8_MB4_SK_0900_AI_CI = "UTF8MB4_SK_0900_AI_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_SK_0900_AS_CS"
+    COLLATION_SERVER_UTF8_MB4_SK_0900_AS_CS = "UTF8MB4_SK_0900_AS_CS"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_SLOVAK_CI"
+    COLLATION_SERVER_UTF8_MB4_SLOVAK_CI = "UTF8MB4_SLOVAK_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_SLOVENIAN_CI"
+    COLLATION_SERVER_UTF8_MB4_SLOVENIAN_CI = "UTF8MB4_SLOVENIAN_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_SL_0900_AI_CI"
+    COLLATION_SERVER_UTF8_MB4_SL_0900_AI_CI = "UTF8MB4_SL_0900_AI_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_SL_0900_AS_CS"
+    COLLATION_SERVER_UTF8_MB4_SL_0900_AS_CS = "UTF8MB4_SL_0900_AS_CS"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_SPANISH2_CI"
+    COLLATION_SERVER_UTF8_MB4_SPANISH2_CI = "UTF8MB4_SPANISH2_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_SPANISH_CI"
+    COLLATION_SERVER_UTF8_MB4_SPANISH_CI = "UTF8MB4_SPANISH_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_SV_0900_AI_CI"
+    COLLATION_SERVER_UTF8_MB4_SV_0900_AI_CI = "UTF8MB4_SV_0900_AI_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_SV_0900_AS_CS"
+    COLLATION_SERVER_UTF8_MB4_SV_0900_AS_CS = "UTF8MB4_SV_0900_AS_CS"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_SWEDISH_CI"
+    COLLATION_SERVER_UTF8_MB4_SWEDISH_CI = "UTF8MB4_SWEDISH_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_TR_0900_AI_CI"
+    COLLATION_SERVER_UTF8_MB4_TR_0900_AI_CI = "UTF8MB4_TR_0900_AI_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_TR_0900_AS_CS"
+    COLLATION_SERVER_UTF8_MB4_TR_0900_AS_CS = "UTF8MB4_TR_0900_AS_CS"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_TURKISH_CI"
+    COLLATION_SERVER_UTF8_MB4_TURKISH_CI = "UTF8MB4_TURKISH_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_UNICODE_520_CI"
+    COLLATION_SERVER_UTF8_MB4_UNICODE_520_CI = "UTF8MB4_UNICODE_520_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_UNICODE_CI"
+    COLLATION_SERVER_UTF8_MB4_UNICODE_CI = "UTF8MB4_UNICODE_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_VIETNAMESE_CI"
+    COLLATION_SERVER_UTF8_MB4_VIETNAMESE_CI = "UTF8MB4_VIETNAMESE_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_VI_0900_AI_CI"
+    COLLATION_SERVER_UTF8_MB4_VI_0900_AI_CI = "UTF8MB4_VI_0900_AI_CI"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_VI_0900_AS_CS"
+    COLLATION_SERVER_UTF8_MB4_VI_0900_AS_CS = "UTF8MB4_VI_0900_AS_CS"
+
+    #: A constant which can be used with the collation_server property of a ConfigurationVariables.
+    #: This constant has a value of "UTF8MB4_ZH_0900_AS_CS"
+    COLLATION_SERVER_UTF8_MB4_ZH_0900_AS_CS = "UTF8MB4_ZH_0900_AS_CS"
+
     #: A constant which can be used with the default_authentication_plugin property of a ConfigurationVariables.
     #: This constant has a value of "mysql_native_password"
     DEFAULT_AUTHENTICATION_PLUGIN_MYSQL_NATIVE_PASSWORD = "mysql_native_password"
@@ -87,6 +1339,42 @@ class ConfigurationVariables(object):
     #: This constant has a value of "MINIMAL"
     BINLOG_ROW_METADATA_MINIMAL = "MINIMAL"
 
+    #: A constant which can be used with the explain_format property of a ConfigurationVariables.
+    #: This constant has a value of "TRADITIONAL"
+    EXPLAIN_FORMAT_TRADITIONAL = "TRADITIONAL"
+
+    #: A constant which can be used with the explain_format property of a ConfigurationVariables.
+    #: This constant has a value of "JSON"
+    EXPLAIN_FORMAT_JSON = "JSON"
+
+    #: A constant which can be used with the explain_format property of a ConfigurationVariables.
+    #: This constant has a value of "TREE"
+    EXPLAIN_FORMAT_TREE = "TREE"
+
+    #: A constant which can be used with the innodb_change_buffering property of a ConfigurationVariables.
+    #: This constant has a value of "NONE"
+    INNODB_CHANGE_BUFFERING_NONE = "NONE"
+
+    #: A constant which can be used with the innodb_change_buffering property of a ConfigurationVariables.
+    #: This constant has a value of "INSERTS"
+    INNODB_CHANGE_BUFFERING_INSERTS = "INSERTS"
+
+    #: A constant which can be used with the innodb_change_buffering property of a ConfigurationVariables.
+    #: This constant has a value of "DELETES"
+    INNODB_CHANGE_BUFFERING_DELETES = "DELETES"
+
+    #: A constant which can be used with the innodb_change_buffering property of a ConfigurationVariables.
+    #: This constant has a value of "CHANGES"
+    INNODB_CHANGE_BUFFERING_CHANGES = "CHANGES"
+
+    #: A constant which can be used with the innodb_change_buffering property of a ConfigurationVariables.
+    #: This constant has a value of "PURGES"
+    INNODB_CHANGE_BUFFERING_PURGES = "PURGES"
+
+    #: A constant which can be used with the innodb_change_buffering property of a ConfigurationVariables.
+    #: This constant has a value of "ALL"
+    INNODB_CHANGE_BUFFERING_ALL = "ALL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ConfigurationVariables object with values from keyword arguments.
@@ -101,6 +1389,18 @@ class ConfigurationVariables(object):
         :param big_tables:
             The value to assign to the big_tables property of this ConfigurationVariables.
         :type big_tables: bool
+
+        :param character_set_server:
+            The value to assign to the character_set_server property of this ConfigurationVariables.
+            Allowed values for this property are: "ARMSCII8", "ASCII", "BIG5", "BINARY", "CP1250", "CP1251", "CP1256", "CP1257", "CP850", "CP852", "CP866", "CP932", "DEC8", "EUCJPMS", "EUCKR", "GB18030", "GB2312", "GBK", "GEOSTD8", "GREEK", "HEBREW", "HP8", "KEYBCS2", "KOI8R", "KOI8U", "LATIN1", "LATIN2", "LATIN5", "LATIN7", "MACCE", "MACROMAN", "SJIS", "SWE7", "TIS620", "UCS2", "UJIS", "UTF16", "UTF16LE", "UTF32", "UTF8MB3", "UTF8MB4", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type character_set_server: str
+
+        :param collation_server:
+            The value to assign to the collation_server property of this ConfigurationVariables.
+            Allowed values for this property are: "ARMSCII8_GENERAL_CI", "ARMSCII8_BIN", "ASCII_GENERAL_CI", "ASCII_BIN", "BIG5_CHINESE_CI", "BIG5_BIN", "BINARY", "CP1250_GENERAL_CI", "CP1250_BIN", "CP1250_CROATIAN_CI", "CP1250_CZECH_CS", "CP1250_POLISH_CI", "CP1251_GENERAL_CI", "CP1251_BIN", "CP1251_BULGARIAN_CI", "CP1251_GENERAL_CS", "CP1251_UKRAINIAN_CI", "CP1256_GENERAL_CI", "CP1256_BIN", "CP1257_GENERAL_CI", "CP1257_BIN", "CP1257_LITHUANIAN_CI", "CP850_GENERAL_CI", "CP850_BIN", "CP852_GENERAL_CI", "CP852_BIN", "CP866_GENERAL_CI", "CP866_BIN", "CP932_JAPANESE_CI", "CP932_BIN", "DEC8_SWEDISH_CI", "DEC8_BIN", "EUCJPMS_JAPANESE_CI", "EUCJPMS_BIN", "EUCKR_KOREAN_CI", "EUCKR_BIN", "GB18030_CHINESE_CI", "GB18030_BIN", "GB18030_UNICODE_520_CI", "GB2312_CHINESE_CI", "GB2312_BIN", "GBK_CHINESE_CI", "GBK_BIN", "GEOSTD8_GENERAL_CI", "GEOSTD8_BIN", "GREEK_GENERAL_CI", "GREEK_BIN", "HEBREW_GENERAL_CI", "HEBREW_BIN", "HP8_ENGLISH_CI", "HP8_BIN", "KEYBCS2_GENERAL_CI", "KEYBCS2_BIN", "KOI8R_GENERAL_CI", "KOI8R_BIN", "KOI8U_GENERAL_CI", "KOI8U_BIN", "LATIN1_SWEDISH_CI", "LATIN1_BIN", "LATIN1_DANISH_CI", "LATIN1_GENERAL_CI", "LATIN1_GENERAL_CS", "LATIN1_GERMAN1_CI", "LATIN1_GERMAN2_CI", "LATIN1_SPANISH_CI", "LATIN2_GENERAL_CI", "LATIN2_BIN", "LATIN2_CROATIAN_CI", "LATIN2_CZECH_CS", "LATIN2_HUNGARIAN_CI", "LATIN5_TURKISH_CI", "LATIN5_BIN", "LATIN7_GENERAL_CI", "LATIN7_BIN", "LATIN7_ESTONIAN_CS", "LATIN7_GENERAL_CS", "MACCE_GENERAL_CI", "MACCE_BIN", "MACROMAN_GENERAL_CI", "MACROMAN_BIN", "SJIS_JAPANESE_CI", "SJIS_BIN", "SWE7_SWEDISH_CI", "SWE7_BIN", "TIS620_THAI_CI", "TIS620_BIN", "UCS2_GENERAL_CI", "UCS2_BIN", "UCS2_CROATIAN_CI", "UCS2_CZECH_CI", "UCS2_DANISH_CI", "UCS2_ESPERANTO_CI", "UCS2_ESTONIAN_CI", "UCS2_GENERAL_MYSQL500_CI", "UCS2_GERMAN2_CI", "UCS2_HUNGARIAN_CI", "UCS2_ICELANDIC_CI", "UCS2_LATVIAN_CI", "UCS2_LITHUANIAN_CI", "UCS2_PERSIAN_CI", "UCS2_POLISH_CI", "UCS2_ROMANIAN_CI", "UCS2_ROMAN_CI", "UCS2_SINHALA_CI", "UCS2_SLOVAK_CI", "UCS2_SLOVENIAN_CI", "UCS2_SPANISH2_CI", "UCS2_SPANISH_CI", "UCS2_SWEDISH_CI", "UCS2_TURKISH_CI", "UCS2_UNICODE_520_CI", "UCS2_UNICODE_CI", "UCS2_VIETNAMESE_CI", "UJIS_JAPANESE_CI", "UJIS_BIN", "UTF16_GENERAL_CI", "UTF16_BIN", "UTF16_CROATIAN_CI", "UTF16_CZECH_CI", "UTF16_DANISH_CI", "UTF16_ESPERANTO_CI", "UTF16_ESTONIAN_CI", "UTF16_GERMAN2_CI", "UTF16_HUNGARIAN_CI", "UTF16_ICELANDIC_CI", "UTF16_LATVIAN_CI", "UTF16_LITHUANIAN_CI", "UTF16_PERSIAN_CI", "UTF16_POLISH_CI", "UTF16_ROMANIAN_CI", "UTF16_ROMAN_CI", "UTF16_SINHALA_CI", "UTF16_SLOVAK_CI", "UTF16_SLOVENIAN_CI", "UTF16_SPANISH2_CI", "UTF16_SPANISH_CI", "UTF16_SWEDISH_CI", "UTF16_TURKISH_CI", "UTF16_UNICODE_520_CI", "UTF16_UNICODE_CI", "UTF16_VIETNAMESE_CI", "UTF16LE_GENERAL_CI", "UTF16LE_BIN", "UTF32_GENERAL_CI", "UTF32_BIN", "UTF32_CROATIAN_CI", "UTF32_CZECH_CI", "UTF32_DANISH_CI", "UTF32_ESPERANTO_CI", "UTF32_ESTONIAN_CI", "UTF32_GERMAN2_CI", "UTF32_HUNGARIAN_CI", "UTF32_ICELANDIC_CI", "UTF32_LATVIAN_CI", "UTF32_LITHUANIAN_CI", "UTF32_PERSIAN_CI", "UTF32_POLISH_CI", "UTF32_ROMANIAN_CI", "UTF32_ROMAN_CI", "UTF32_SINHALA_CI", "UTF32_SLOVAK_CI", "UTF32_SLOVENIAN_CI", "UTF32_SPANISH2_CI", "UTF32_SPANISH_CI", "UTF32_SWEDISH_CI", "UTF32_TURKISH_CI", "UTF32_UNICODE_520_CI", "UTF32_UNICODE_CI", "UTF32_VIETNAMESE_CI", "UTF8_GENERAL_CI", "UTF8_BIN", "UTF8_CROATIAN_CI", "UTF8_CZECH_CI", "UTF8_DANISH_CI", "UTF8_ESPERANTO_CI", "UTF8_ESTONIAN_CI", "UTF8_GENERAL_MYSQL500_CI", "UTF8_GERMAN2_CI", "UTF8_HUNGARIAN_CI", "UTF8_ICELANDIC_CI", "UTF8_LATVIAN_CI", "UTF8_LITHUANIAN_CI", "UTF8_PERSIAN_CI", "UTF8_POLISH_CI", "UTF8_ROMANIAN_CI", "UTF8_ROMAN_CI", "UTF8_SINHALA_CI", "UTF8_SLOVAK_CI", "UTF8_SLOVENIAN_CI", "UTF8_SPANISH2_CI", "UTF8_SPANISH_CI", "UTF8_SWEDISH_CI", "UTF8_TOLOWER_CI", "UTF8_TURKISH_CI", "UTF8_UNICODE_520_CI", "UTF8_UNICODE_CI", "UTF8_VIETNAMESE_CI", "UTF8MB4_0900_AI_CI", "UTF8MB4_0900_AS_CI", "UTF8MB4_0900_AS_CS", "UTF8MB4_0900_BIN", "UTF8MB4_BIN", "UTF8MB4_CROATIAN_CI", "UTF8MB4_CS_0900_AI_CI", "UTF8MB4_CS_0900_AS_CS", "UTF8MB4_CZECH_CI", "UTF8MB4_DANISH_CI", "UTF8MB4_DA_0900_AI_CI", "UTF8MB4_DA_0900_AS_CS", "UTF8MB4_DE_PB_0900_AI_CI", "UTF8MB4_DE_PB_0900_AS_CS", "UTF8MB4_EO_0900_AI_CI", "UTF8MB4_EO_0900_AS_CS", "UTF8MB4_ESPERANTO_CI", "UTF8MB4_ESTONIAN_CI", "UTF8MB4_ES_0900_AI_CI", "UTF8MB4_ES_0900_AS_CS", "UTF8MB4_ES_TRAD_0900_AI_CI", "UTF8MB4_ES_TRAD_0900_AS_CS", "UTF8MB4_ET_0900_AI_CI", "UTF8MB4_ET_0900_AS_CS", "UTF8MB4_GENERAL_CI", "UTF8MB4_GERMAN2_CI", "UTF8MB4_HR_0900_AI_CI", "UTF8MB4_HR_0900_AS_CS", "UTF8MB4_HUNGARIAN_CI", "UTF8MB4_HU_0900_AI_CI", "UTF8MB4_HU_0900_AS_CS", "UTF8MB4_ICELANDIC_CI", "UTF8MB4_IS_0900_AI_CI", "UTF8MB4_IS_0900_AS_CS", "UTF8MB4_JA_0900_AS_CS", "UTF8MB4_JA_0900_AS_CS_KS", "UTF8MB4_LATVIAN_CI", "UTF8MB4_LA_0900_AI_CI", "UTF8MB4_LA_0900_AS_CS", "UTF8MB4_LITHUANIAN_CI", "UTF8MB4_LT_0900_AI_CI", "UTF8MB4_LT_0900_AS_CS", "UTF8MB4_LV_0900_AI_CI", "UTF8MB4_LV_0900_AS_CS", "UTF8MB4_PERSIAN_CI", "UTF8MB4_PL_0900_AI_CI", "UTF8MB4_PL_0900_AS_CS", "UTF8MB4_POLISH_CI", "UTF8MB4_ROMANIAN_CI", "UTF8MB4_ROMAN_CI", "UTF8MB4_RO_0900_AI_CI", "UTF8MB4_RO_0900_AS_CS", "UTF8MB4_RU_0900_AI_CI", "UTF8MB4_RU_0900_AS_CS", "UTF8MB4_SINHALA_CI", "UTF8MB4_SK_0900_AI_CI", "UTF8MB4_SK_0900_AS_CS", "UTF8MB4_SLOVAK_CI", "UTF8MB4_SLOVENIAN_CI", "UTF8MB4_SL_0900_AI_CI", "UTF8MB4_SL_0900_AS_CS", "UTF8MB4_SPANISH2_CI", "UTF8MB4_SPANISH_CI", "UTF8MB4_SV_0900_AI_CI", "UTF8MB4_SV_0900_AS_CS", "UTF8MB4_SWEDISH_CI", "UTF8MB4_TR_0900_AI_CI", "UTF8MB4_TR_0900_AS_CS", "UTF8MB4_TURKISH_CI", "UTF8MB4_UNICODE_520_CI", "UTF8MB4_UNICODE_CI", "UTF8MB4_VIETNAMESE_CI", "UTF8MB4_VI_0900_AI_CI", "UTF8MB4_VI_0900_AS_CS", "UTF8MB4_ZH_0900_AS_CS", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type collation_server: str
 
         :param connection_memory_chunk_size:
             The value to assign to the connection_memory_chunk_size property of this ConfigurationVariables.
@@ -151,6 +1451,10 @@ class ConfigurationVariables(object):
             Allowed values for this property are: "EVENTUAL", "BEFORE_ON_PRIMARY_FAILOVER", "BEFORE", "AFTER", "BEFORE_AND_AFTER", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type group_replication_consistency: str
+
+        :param group_concat_max_len:
+            The value to assign to the group_concat_max_len property of this ConfigurationVariables.
+        :type group_concat_max_len: int
 
         :param innodb_ft_enable_stopword:
             The value to assign to the innodb_ft_enable_stopword property of this ConfigurationVariables.
@@ -294,6 +1598,10 @@ class ConfigurationVariables(object):
             The value to assign to the innodb_stats_transient_sample_pages property of this ConfigurationVariables.
         :type innodb_stats_transient_sample_pages: int
 
+        :param innodb_strict_mode:
+            The value to assign to the innodb_strict_mode property of this ConfigurationVariables.
+        :type innodb_strict_mode: bool
+
         :param max_allowed_packet:
             The value to assign to the max_allowed_packet property of this ConfigurationVariables.
         :type max_allowed_packet: int
@@ -418,10 +1726,156 @@ class ConfigurationVariables(object):
             The value to assign to the time_zone property of this ConfigurationVariables.
         :type time_zone: str
 
+        :param block_encryption_mode:
+            The value to assign to the block_encryption_mode property of this ConfigurationVariables.
+        :type block_encryption_mode: str
+
+        :param binlog_group_commit_sync_delay:
+            The value to assign to the binlog_group_commit_sync_delay property of this ConfigurationVariables.
+        :type binlog_group_commit_sync_delay: int
+
+        :param binlog_group_commit_sync_no_delay_count:
+            The value to assign to the binlog_group_commit_sync_no_delay_count property of this ConfigurationVariables.
+        :type binlog_group_commit_sync_no_delay_count: int
+
+        :param replica_net_timeout:
+            The value to assign to the replica_net_timeout property of this ConfigurationVariables.
+        :type replica_net_timeout: int
+
+        :param require_secure_transport:
+            The value to assign to the require_secure_transport property of this ConfigurationVariables.
+        :type require_secure_transport: bool
+
+        :param innodb_redo_log_capacity:
+            The value to assign to the innodb_redo_log_capacity property of this ConfigurationVariables.
+        :type innodb_redo_log_capacity: int
+
+        :param thread_pool_transaction_delay:
+            The value to assign to the thread_pool_transaction_delay property of this ConfigurationVariables.
+        :type thread_pool_transaction_delay: int
+
+        :param thread_pool_query_threads_per_group:
+            The value to assign to the thread_pool_query_threads_per_group property of this ConfigurationVariables.
+        :type thread_pool_query_threads_per_group: int
+
+        :param explain_format:
+            The value to assign to the explain_format property of this ConfigurationVariables.
+            Allowed values for this property are: "TRADITIONAL", "JSON", "TREE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type explain_format: str
+
+        :param explicit_defaults_for_timestamp:
+            The value to assign to the explicit_defaults_for_timestamp property of this ConfigurationVariables.
+        :type explicit_defaults_for_timestamp: bool
+
+        :param sql_generate_invisible_primary_key:
+            The value to assign to the sql_generate_invisible_primary_key property of this ConfigurationVariables.
+        :type sql_generate_invisible_primary_key: bool
+
+        :param temptable_max_ram:
+            The value to assign to the temptable_max_ram property of this ConfigurationVariables.
+        :type temptable_max_ram: int
+
+        :param innodb_change_buffering:
+            The value to assign to the innodb_change_buffering property of this ConfigurationVariables.
+            Allowed values for this property are: "NONE", "INSERTS", "DELETES", "CHANGES", "PURGES", "ALL", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type innodb_change_buffering: str
+
+        :param innodb_adaptive_hash_index:
+            The value to assign to the innodb_adaptive_hash_index property of this ConfigurationVariables.
+        :type innodb_adaptive_hash_index: bool
+
+        :param innodb_undo_log_truncate:
+            The value to assign to the innodb_undo_log_truncate property of this ConfigurationVariables.
+        :type innodb_undo_log_truncate: bool
+
+        :param table_definition_cache:
+            The value to assign to the table_definition_cache property of this ConfigurationVariables.
+        :type table_definition_cache: int
+
+        :param table_open_cache:
+            The value to assign to the table_open_cache property of this ConfigurationVariables.
+        :type table_open_cache: int
+
+        :param relay_log_space_limit:
+            The value to assign to the relay_log_space_limit property of this ConfigurationVariables.
+        :type relay_log_space_limit: int
+
+        :param optimizer_switch:
+            The value to assign to the optimizer_switch property of this ConfigurationVariables.
+        :type optimizer_switch: str
+
+        :param replica_type_conversions:
+            The value to assign to the replica_type_conversions property of this ConfigurationVariables.
+        :type replica_type_conversions: str
+
+        :param replica_parallel_workers:
+            The value to assign to the replica_parallel_workers property of this ConfigurationVariables.
+        :type replica_parallel_workers: int
+
+        :param skip_name_resolve:
+            The value to assign to the skip_name_resolve property of this ConfigurationVariables.
+        :type skip_name_resolve: bool
+
+        :param max_user_connections:
+            The value to assign to the max_user_connections property of this ConfigurationVariables.
+        :type max_user_connections: int
+
+        :param join_buffer_size:
+            The value to assign to the join_buffer_size property of this ConfigurationVariables.
+        :type join_buffer_size: int
+
+        :param max_seeks_for_key:
+            The value to assign to the max_seeks_for_key property of this ConfigurationVariables.
+        :type max_seeks_for_key: int
+
+        :param range_optimizer_max_mem_size:
+            The value to assign to the range_optimizer_max_mem_size property of this ConfigurationVariables.
+        :type range_optimizer_max_mem_size: int
+
+        :param auto_increment_increment:
+            The value to assign to the auto_increment_increment property of this ConfigurationVariables.
+        :type auto_increment_increment: int
+
+        :param auto_increment_offset:
+            The value to assign to the auto_increment_offset property of this ConfigurationVariables.
+        :type auto_increment_offset: int
+
+        :param innodb_autoinc_lock_mode:
+            The value to assign to the innodb_autoinc_lock_mode property of this ConfigurationVariables.
+        :type innodb_autoinc_lock_mode: int
+
+        :param innodb_rollback_on_timeout:
+            The value to assign to the innodb_rollback_on_timeout property of this ConfigurationVariables.
+        :type innodb_rollback_on_timeout: bool
+
+        :param innodb_online_alter_log_max_size:
+            The value to assign to the innodb_online_alter_log_max_size property of this ConfigurationVariables.
+        :type innodb_online_alter_log_max_size: int
+
+        :param innodb_sort_buffer_size:
+            The value to assign to the innodb_sort_buffer_size property of this ConfigurationVariables.
+        :type innodb_sort_buffer_size: int
+
+        :param innodb_numa_interleave:
+            The value to assign to the innodb_numa_interleave property of this ConfigurationVariables.
+        :type innodb_numa_interleave: bool
+
+        :param thread_pool_size:
+            The value to assign to the thread_pool_size property of this ConfigurationVariables.
+        :type thread_pool_size: int
+
+        :param long_query_time:
+            The value to assign to the long_query_time property of this ConfigurationVariables.
+        :type long_query_time: int
+
         """
         self.swagger_types = {
             'completion_type': 'str',
             'big_tables': 'bool',
+            'character_set_server': 'str',
+            'collation_server': 'str',
             'connection_memory_chunk_size': 'int',
             'connection_memory_limit': 'int',
             'default_authentication_plugin': 'str',
@@ -433,6 +1887,7 @@ class ConfigurationVariables(object):
             'autocommit': 'bool',
             'foreign_key_checks': 'bool',
             'group_replication_consistency': 'str',
+            'group_concat_max_len': 'int',
             'innodb_ft_enable_stopword': 'bool',
             'innodb_log_writer_threads': 'bool',
             'local_infile': 'bool',
@@ -468,6 +1923,7 @@ class ConfigurationVariables(object):
             'interactive_timeout': 'int',
             'innodb_stats_persistent_sample_pages': 'int',
             'innodb_stats_transient_sample_pages': 'int',
+            'innodb_strict_mode': 'bool',
             'max_allowed_packet': 'int',
             'max_execution_time': 'int',
             'mysqlx_connect_timeout': 'int',
@@ -498,12 +1954,49 @@ class ConfigurationVariables(object):
             'wait_timeout': 'int',
             'thread_pool_dedicated_listeners': 'bool',
             'thread_pool_max_transactions_limit': 'int',
-            'time_zone': 'str'
+            'time_zone': 'str',
+            'block_encryption_mode': 'str',
+            'binlog_group_commit_sync_delay': 'int',
+            'binlog_group_commit_sync_no_delay_count': 'int',
+            'replica_net_timeout': 'int',
+            'require_secure_transport': 'bool',
+            'innodb_redo_log_capacity': 'int',
+            'thread_pool_transaction_delay': 'int',
+            'thread_pool_query_threads_per_group': 'int',
+            'explain_format': 'str',
+            'explicit_defaults_for_timestamp': 'bool',
+            'sql_generate_invisible_primary_key': 'bool',
+            'temptable_max_ram': 'int',
+            'innodb_change_buffering': 'str',
+            'innodb_adaptive_hash_index': 'bool',
+            'innodb_undo_log_truncate': 'bool',
+            'table_definition_cache': 'int',
+            'table_open_cache': 'int',
+            'relay_log_space_limit': 'int',
+            'optimizer_switch': 'str',
+            'replica_type_conversions': 'str',
+            'replica_parallel_workers': 'int',
+            'skip_name_resolve': 'bool',
+            'max_user_connections': 'int',
+            'join_buffer_size': 'int',
+            'max_seeks_for_key': 'int',
+            'range_optimizer_max_mem_size': 'int',
+            'auto_increment_increment': 'int',
+            'auto_increment_offset': 'int',
+            'innodb_autoinc_lock_mode': 'int',
+            'innodb_rollback_on_timeout': 'bool',
+            'innodb_online_alter_log_max_size': 'int',
+            'innodb_sort_buffer_size': 'int',
+            'innodb_numa_interleave': 'bool',
+            'thread_pool_size': 'int',
+            'long_query_time': 'int'
         }
 
         self.attribute_map = {
             'completion_type': 'completionType',
             'big_tables': 'bigTables',
+            'character_set_server': 'characterSetServer',
+            'collation_server': 'collationServer',
             'connection_memory_chunk_size': 'connectionMemoryChunkSize',
             'connection_memory_limit': 'connectionMemoryLimit',
             'default_authentication_plugin': 'defaultAuthenticationPlugin',
@@ -515,6 +2008,7 @@ class ConfigurationVariables(object):
             'autocommit': 'autocommit',
             'foreign_key_checks': 'foreignKeyChecks',
             'group_replication_consistency': 'groupReplicationConsistency',
+            'group_concat_max_len': 'groupConcatMaxLen',
             'innodb_ft_enable_stopword': 'innodbFtEnableStopword',
             'innodb_log_writer_threads': 'innodbLogWriterThreads',
             'local_infile': 'localInfile',
@@ -550,6 +2044,7 @@ class ConfigurationVariables(object):
             'interactive_timeout': 'interactiveTimeout',
             'innodb_stats_persistent_sample_pages': 'innodbStatsPersistentSamplePages',
             'innodb_stats_transient_sample_pages': 'innodbStatsTransientSamplePages',
+            'innodb_strict_mode': 'innodbStrictMode',
             'max_allowed_packet': 'maxAllowedPacket',
             'max_execution_time': 'maxExecutionTime',
             'mysqlx_connect_timeout': 'mysqlxConnectTimeout',
@@ -580,11 +2075,48 @@ class ConfigurationVariables(object):
             'wait_timeout': 'waitTimeout',
             'thread_pool_dedicated_listeners': 'threadPoolDedicatedListeners',
             'thread_pool_max_transactions_limit': 'threadPoolMaxTransactionsLimit',
-            'time_zone': 'timeZone'
+            'time_zone': 'timeZone',
+            'block_encryption_mode': 'blockEncryptionMode',
+            'binlog_group_commit_sync_delay': 'binlogGroupCommitSyncDelay',
+            'binlog_group_commit_sync_no_delay_count': 'binlogGroupCommitSyncNoDelayCount',
+            'replica_net_timeout': 'replicaNetTimeout',
+            'require_secure_transport': 'requireSecureTransport',
+            'innodb_redo_log_capacity': 'innodbRedoLogCapacity',
+            'thread_pool_transaction_delay': 'threadPoolTransactionDelay',
+            'thread_pool_query_threads_per_group': 'threadPoolQueryThreadsPerGroup',
+            'explain_format': 'explainFormat',
+            'explicit_defaults_for_timestamp': 'explicitDefaultsForTimestamp',
+            'sql_generate_invisible_primary_key': 'sqlGenerateInvisiblePrimaryKey',
+            'temptable_max_ram': 'temptableMaxRam',
+            'innodb_change_buffering': 'innodbChangeBuffering',
+            'innodb_adaptive_hash_index': 'innodbAdaptiveHashIndex',
+            'innodb_undo_log_truncate': 'innodbUndoLogTruncate',
+            'table_definition_cache': 'tableDefinitionCache',
+            'table_open_cache': 'tableOpenCache',
+            'relay_log_space_limit': 'relayLogSpaceLimit',
+            'optimizer_switch': 'optimizerSwitch',
+            'replica_type_conversions': 'replicaTypeConversions',
+            'replica_parallel_workers': 'replicaParallelWorkers',
+            'skip_name_resolve': 'skipNameResolve',
+            'max_user_connections': 'maxUserConnections',
+            'join_buffer_size': 'joinBufferSize',
+            'max_seeks_for_key': 'maxSeeksForKey',
+            'range_optimizer_max_mem_size': 'rangeOptimizerMaxMemSize',
+            'auto_increment_increment': 'autoIncrementIncrement',
+            'auto_increment_offset': 'autoIncrementOffset',
+            'innodb_autoinc_lock_mode': 'innodbAutoincLockMode',
+            'innodb_rollback_on_timeout': 'innodbRollbackOnTimeout',
+            'innodb_online_alter_log_max_size': 'innodbOnlineAlterLogMaxSize',
+            'innodb_sort_buffer_size': 'innodbSortBufferSize',
+            'innodb_numa_interleave': 'innodbNumaInterleave',
+            'thread_pool_size': 'threadPoolSize',
+            'long_query_time': 'longQueryTime'
         }
 
         self._completion_type = None
         self._big_tables = None
+        self._character_set_server = None
+        self._collation_server = None
         self._connection_memory_chunk_size = None
         self._connection_memory_limit = None
         self._default_authentication_plugin = None
@@ -596,6 +2128,7 @@ class ConfigurationVariables(object):
         self._autocommit = None
         self._foreign_key_checks = None
         self._group_replication_consistency = None
+        self._group_concat_max_len = None
         self._innodb_ft_enable_stopword = None
         self._innodb_log_writer_threads = None
         self._local_infile = None
@@ -631,6 +2164,7 @@ class ConfigurationVariables(object):
         self._interactive_timeout = None
         self._innodb_stats_persistent_sample_pages = None
         self._innodb_stats_transient_sample_pages = None
+        self._innodb_strict_mode = None
         self._max_allowed_packet = None
         self._max_execution_time = None
         self._mysqlx_connect_timeout = None
@@ -662,6 +2196,41 @@ class ConfigurationVariables(object):
         self._thread_pool_dedicated_listeners = None
         self._thread_pool_max_transactions_limit = None
         self._time_zone = None
+        self._block_encryption_mode = None
+        self._binlog_group_commit_sync_delay = None
+        self._binlog_group_commit_sync_no_delay_count = None
+        self._replica_net_timeout = None
+        self._require_secure_transport = None
+        self._innodb_redo_log_capacity = None
+        self._thread_pool_transaction_delay = None
+        self._thread_pool_query_threads_per_group = None
+        self._explain_format = None
+        self._explicit_defaults_for_timestamp = None
+        self._sql_generate_invisible_primary_key = None
+        self._temptable_max_ram = None
+        self._innodb_change_buffering = None
+        self._innodb_adaptive_hash_index = None
+        self._innodb_undo_log_truncate = None
+        self._table_definition_cache = None
+        self._table_open_cache = None
+        self._relay_log_space_limit = None
+        self._optimizer_switch = None
+        self._replica_type_conversions = None
+        self._replica_parallel_workers = None
+        self._skip_name_resolve = None
+        self._max_user_connections = None
+        self._join_buffer_size = None
+        self._max_seeks_for_key = None
+        self._range_optimizer_max_mem_size = None
+        self._auto_increment_increment = None
+        self._auto_increment_offset = None
+        self._innodb_autoinc_lock_mode = None
+        self._innodb_rollback_on_timeout = None
+        self._innodb_online_alter_log_max_size = None
+        self._innodb_sort_buffer_size = None
+        self._innodb_numa_interleave = None
+        self._thread_pool_size = None
+        self._long_query_time = None
 
     @property
     def completion_type(self):
@@ -724,6 +2293,82 @@ class ConfigurationVariables(object):
         :type: bool
         """
         self._big_tables = big_tables
+
+    @property
+    def character_set_server(self):
+        """
+        Gets the character_set_server of this ConfigurationVariables.
+        The server's default character set. If you set this variable, you should also set collation_server to specify the collation for the character set.
+
+        characterSetServer corresponds to the MySQL server variable `character_set_server`__.
+
+        __ https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_character_set_server
+
+        Allowed values for this property are: "ARMSCII8", "ASCII", "BIG5", "BINARY", "CP1250", "CP1251", "CP1256", "CP1257", "CP850", "CP852", "CP866", "CP932", "DEC8", "EUCJPMS", "EUCKR", "GB18030", "GB2312", "GBK", "GEOSTD8", "GREEK", "HEBREW", "HP8", "KEYBCS2", "KOI8R", "KOI8U", "LATIN1", "LATIN2", "LATIN5", "LATIN7", "MACCE", "MACROMAN", "SJIS", "SWE7", "TIS620", "UCS2", "UJIS", "UTF16", "UTF16LE", "UTF32", "UTF8MB3", "UTF8MB4", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The character_set_server of this ConfigurationVariables.
+        :rtype: str
+        """
+        return self._character_set_server
+
+    @character_set_server.setter
+    def character_set_server(self, character_set_server):
+        """
+        Sets the character_set_server of this ConfigurationVariables.
+        The server's default character set. If you set this variable, you should also set collation_server to specify the collation for the character set.
+
+        characterSetServer corresponds to the MySQL server variable `character_set_server`__.
+
+        __ https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_character_set_server
+
+
+        :param character_set_server: The character_set_server of this ConfigurationVariables.
+        :type: str
+        """
+        allowed_values = ["ARMSCII8", "ASCII", "BIG5", "BINARY", "CP1250", "CP1251", "CP1256", "CP1257", "CP850", "CP852", "CP866", "CP932", "DEC8", "EUCJPMS", "EUCKR", "GB18030", "GB2312", "GBK", "GEOSTD8", "GREEK", "HEBREW", "HP8", "KEYBCS2", "KOI8R", "KOI8U", "LATIN1", "LATIN2", "LATIN5", "LATIN7", "MACCE", "MACROMAN", "SJIS", "SWE7", "TIS620", "UCS2", "UJIS", "UTF16", "UTF16LE", "UTF32", "UTF8MB3", "UTF8MB4"]
+        if not value_allowed_none_or_none_sentinel(character_set_server, allowed_values):
+            character_set_server = 'UNKNOWN_ENUM_VALUE'
+        self._character_set_server = character_set_server
+
+    @property
+    def collation_server(self):
+        """
+        Gets the collation_server of this ConfigurationVariables.
+        The server's default collation.
+
+        collationServer corresponds to the MySQL server variable `collation_server`__.
+
+        __ https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_collation_server
+
+        Allowed values for this property are: "ARMSCII8_GENERAL_CI", "ARMSCII8_BIN", "ASCII_GENERAL_CI", "ASCII_BIN", "BIG5_CHINESE_CI", "BIG5_BIN", "BINARY", "CP1250_GENERAL_CI", "CP1250_BIN", "CP1250_CROATIAN_CI", "CP1250_CZECH_CS", "CP1250_POLISH_CI", "CP1251_GENERAL_CI", "CP1251_BIN", "CP1251_BULGARIAN_CI", "CP1251_GENERAL_CS", "CP1251_UKRAINIAN_CI", "CP1256_GENERAL_CI", "CP1256_BIN", "CP1257_GENERAL_CI", "CP1257_BIN", "CP1257_LITHUANIAN_CI", "CP850_GENERAL_CI", "CP850_BIN", "CP852_GENERAL_CI", "CP852_BIN", "CP866_GENERAL_CI", "CP866_BIN", "CP932_JAPANESE_CI", "CP932_BIN", "DEC8_SWEDISH_CI", "DEC8_BIN", "EUCJPMS_JAPANESE_CI", "EUCJPMS_BIN", "EUCKR_KOREAN_CI", "EUCKR_BIN", "GB18030_CHINESE_CI", "GB18030_BIN", "GB18030_UNICODE_520_CI", "GB2312_CHINESE_CI", "GB2312_BIN", "GBK_CHINESE_CI", "GBK_BIN", "GEOSTD8_GENERAL_CI", "GEOSTD8_BIN", "GREEK_GENERAL_CI", "GREEK_BIN", "HEBREW_GENERAL_CI", "HEBREW_BIN", "HP8_ENGLISH_CI", "HP8_BIN", "KEYBCS2_GENERAL_CI", "KEYBCS2_BIN", "KOI8R_GENERAL_CI", "KOI8R_BIN", "KOI8U_GENERAL_CI", "KOI8U_BIN", "LATIN1_SWEDISH_CI", "LATIN1_BIN", "LATIN1_DANISH_CI", "LATIN1_GENERAL_CI", "LATIN1_GENERAL_CS", "LATIN1_GERMAN1_CI", "LATIN1_GERMAN2_CI", "LATIN1_SPANISH_CI", "LATIN2_GENERAL_CI", "LATIN2_BIN", "LATIN2_CROATIAN_CI", "LATIN2_CZECH_CS", "LATIN2_HUNGARIAN_CI", "LATIN5_TURKISH_CI", "LATIN5_BIN", "LATIN7_GENERAL_CI", "LATIN7_BIN", "LATIN7_ESTONIAN_CS", "LATIN7_GENERAL_CS", "MACCE_GENERAL_CI", "MACCE_BIN", "MACROMAN_GENERAL_CI", "MACROMAN_BIN", "SJIS_JAPANESE_CI", "SJIS_BIN", "SWE7_SWEDISH_CI", "SWE7_BIN", "TIS620_THAI_CI", "TIS620_BIN", "UCS2_GENERAL_CI", "UCS2_BIN", "UCS2_CROATIAN_CI", "UCS2_CZECH_CI", "UCS2_DANISH_CI", "UCS2_ESPERANTO_CI", "UCS2_ESTONIAN_CI", "UCS2_GENERAL_MYSQL500_CI", "UCS2_GERMAN2_CI", "UCS2_HUNGARIAN_CI", "UCS2_ICELANDIC_CI", "UCS2_LATVIAN_CI", "UCS2_LITHUANIAN_CI", "UCS2_PERSIAN_CI", "UCS2_POLISH_CI", "UCS2_ROMANIAN_CI", "UCS2_ROMAN_CI", "UCS2_SINHALA_CI", "UCS2_SLOVAK_CI", "UCS2_SLOVENIAN_CI", "UCS2_SPANISH2_CI", "UCS2_SPANISH_CI", "UCS2_SWEDISH_CI", "UCS2_TURKISH_CI", "UCS2_UNICODE_520_CI", "UCS2_UNICODE_CI", "UCS2_VIETNAMESE_CI", "UJIS_JAPANESE_CI", "UJIS_BIN", "UTF16_GENERAL_CI", "UTF16_BIN", "UTF16_CROATIAN_CI", "UTF16_CZECH_CI", "UTF16_DANISH_CI", "UTF16_ESPERANTO_CI", "UTF16_ESTONIAN_CI", "UTF16_GERMAN2_CI", "UTF16_HUNGARIAN_CI", "UTF16_ICELANDIC_CI", "UTF16_LATVIAN_CI", "UTF16_LITHUANIAN_CI", "UTF16_PERSIAN_CI", "UTF16_POLISH_CI", "UTF16_ROMANIAN_CI", "UTF16_ROMAN_CI", "UTF16_SINHALA_CI", "UTF16_SLOVAK_CI", "UTF16_SLOVENIAN_CI", "UTF16_SPANISH2_CI", "UTF16_SPANISH_CI", "UTF16_SWEDISH_CI", "UTF16_TURKISH_CI", "UTF16_UNICODE_520_CI", "UTF16_UNICODE_CI", "UTF16_VIETNAMESE_CI", "UTF16LE_GENERAL_CI", "UTF16LE_BIN", "UTF32_GENERAL_CI", "UTF32_BIN", "UTF32_CROATIAN_CI", "UTF32_CZECH_CI", "UTF32_DANISH_CI", "UTF32_ESPERANTO_CI", "UTF32_ESTONIAN_CI", "UTF32_GERMAN2_CI", "UTF32_HUNGARIAN_CI", "UTF32_ICELANDIC_CI", "UTF32_LATVIAN_CI", "UTF32_LITHUANIAN_CI", "UTF32_PERSIAN_CI", "UTF32_POLISH_CI", "UTF32_ROMANIAN_CI", "UTF32_ROMAN_CI", "UTF32_SINHALA_CI", "UTF32_SLOVAK_CI", "UTF32_SLOVENIAN_CI", "UTF32_SPANISH2_CI", "UTF32_SPANISH_CI", "UTF32_SWEDISH_CI", "UTF32_TURKISH_CI", "UTF32_UNICODE_520_CI", "UTF32_UNICODE_CI", "UTF32_VIETNAMESE_CI", "UTF8_GENERAL_CI", "UTF8_BIN", "UTF8_CROATIAN_CI", "UTF8_CZECH_CI", "UTF8_DANISH_CI", "UTF8_ESPERANTO_CI", "UTF8_ESTONIAN_CI", "UTF8_GENERAL_MYSQL500_CI", "UTF8_GERMAN2_CI", "UTF8_HUNGARIAN_CI", "UTF8_ICELANDIC_CI", "UTF8_LATVIAN_CI", "UTF8_LITHUANIAN_CI", "UTF8_PERSIAN_CI", "UTF8_POLISH_CI", "UTF8_ROMANIAN_CI", "UTF8_ROMAN_CI", "UTF8_SINHALA_CI", "UTF8_SLOVAK_CI", "UTF8_SLOVENIAN_CI", "UTF8_SPANISH2_CI", "UTF8_SPANISH_CI", "UTF8_SWEDISH_CI", "UTF8_TOLOWER_CI", "UTF8_TURKISH_CI", "UTF8_UNICODE_520_CI", "UTF8_UNICODE_CI", "UTF8_VIETNAMESE_CI", "UTF8MB4_0900_AI_CI", "UTF8MB4_0900_AS_CI", "UTF8MB4_0900_AS_CS", "UTF8MB4_0900_BIN", "UTF8MB4_BIN", "UTF8MB4_CROATIAN_CI", "UTF8MB4_CS_0900_AI_CI", "UTF8MB4_CS_0900_AS_CS", "UTF8MB4_CZECH_CI", "UTF8MB4_DANISH_CI", "UTF8MB4_DA_0900_AI_CI", "UTF8MB4_DA_0900_AS_CS", "UTF8MB4_DE_PB_0900_AI_CI", "UTF8MB4_DE_PB_0900_AS_CS", "UTF8MB4_EO_0900_AI_CI", "UTF8MB4_EO_0900_AS_CS", "UTF8MB4_ESPERANTO_CI", "UTF8MB4_ESTONIAN_CI", "UTF8MB4_ES_0900_AI_CI", "UTF8MB4_ES_0900_AS_CS", "UTF8MB4_ES_TRAD_0900_AI_CI", "UTF8MB4_ES_TRAD_0900_AS_CS", "UTF8MB4_ET_0900_AI_CI", "UTF8MB4_ET_0900_AS_CS", "UTF8MB4_GENERAL_CI", "UTF8MB4_GERMAN2_CI", "UTF8MB4_HR_0900_AI_CI", "UTF8MB4_HR_0900_AS_CS", "UTF8MB4_HUNGARIAN_CI", "UTF8MB4_HU_0900_AI_CI", "UTF8MB4_HU_0900_AS_CS", "UTF8MB4_ICELANDIC_CI", "UTF8MB4_IS_0900_AI_CI", "UTF8MB4_IS_0900_AS_CS", "UTF8MB4_JA_0900_AS_CS", "UTF8MB4_JA_0900_AS_CS_KS", "UTF8MB4_LATVIAN_CI", "UTF8MB4_LA_0900_AI_CI", "UTF8MB4_LA_0900_AS_CS", "UTF8MB4_LITHUANIAN_CI", "UTF8MB4_LT_0900_AI_CI", "UTF8MB4_LT_0900_AS_CS", "UTF8MB4_LV_0900_AI_CI", "UTF8MB4_LV_0900_AS_CS", "UTF8MB4_PERSIAN_CI", "UTF8MB4_PL_0900_AI_CI", "UTF8MB4_PL_0900_AS_CS", "UTF8MB4_POLISH_CI", "UTF8MB4_ROMANIAN_CI", "UTF8MB4_ROMAN_CI", "UTF8MB4_RO_0900_AI_CI", "UTF8MB4_RO_0900_AS_CS", "UTF8MB4_RU_0900_AI_CI", "UTF8MB4_RU_0900_AS_CS", "UTF8MB4_SINHALA_CI", "UTF8MB4_SK_0900_AI_CI", "UTF8MB4_SK_0900_AS_CS", "UTF8MB4_SLOVAK_CI", "UTF8MB4_SLOVENIAN_CI", "UTF8MB4_SL_0900_AI_CI", "UTF8MB4_SL_0900_AS_CS", "UTF8MB4_SPANISH2_CI", "UTF8MB4_SPANISH_CI", "UTF8MB4_SV_0900_AI_CI", "UTF8MB4_SV_0900_AS_CS", "UTF8MB4_SWEDISH_CI", "UTF8MB4_TR_0900_AI_CI", "UTF8MB4_TR_0900_AS_CS", "UTF8MB4_TURKISH_CI", "UTF8MB4_UNICODE_520_CI", "UTF8MB4_UNICODE_CI", "UTF8MB4_VIETNAMESE_CI", "UTF8MB4_VI_0900_AI_CI", "UTF8MB4_VI_0900_AS_CS", "UTF8MB4_ZH_0900_AS_CS", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The collation_server of this ConfigurationVariables.
+        :rtype: str
+        """
+        return self._collation_server
+
+    @collation_server.setter
+    def collation_server(self, collation_server):
+        """
+        Sets the collation_server of this ConfigurationVariables.
+        The server's default collation.
+
+        collationServer corresponds to the MySQL server variable `collation_server`__.
+
+        __ https://dev.mysql.com/doc/refman/en/server-system-variables.html#sysvar_collation_server
+
+
+        :param collation_server: The collation_server of this ConfigurationVariables.
+        :type: str
+        """
+        allowed_values = ["ARMSCII8_GENERAL_CI", "ARMSCII8_BIN", "ASCII_GENERAL_CI", "ASCII_BIN", "BIG5_CHINESE_CI", "BIG5_BIN", "BINARY", "CP1250_GENERAL_CI", "CP1250_BIN", "CP1250_CROATIAN_CI", "CP1250_CZECH_CS", "CP1250_POLISH_CI", "CP1251_GENERAL_CI", "CP1251_BIN", "CP1251_BULGARIAN_CI", "CP1251_GENERAL_CS", "CP1251_UKRAINIAN_CI", "CP1256_GENERAL_CI", "CP1256_BIN", "CP1257_GENERAL_CI", "CP1257_BIN", "CP1257_LITHUANIAN_CI", "CP850_GENERAL_CI", "CP850_BIN", "CP852_GENERAL_CI", "CP852_BIN", "CP866_GENERAL_CI", "CP866_BIN", "CP932_JAPANESE_CI", "CP932_BIN", "DEC8_SWEDISH_CI", "DEC8_BIN", "EUCJPMS_JAPANESE_CI", "EUCJPMS_BIN", "EUCKR_KOREAN_CI", "EUCKR_BIN", "GB18030_CHINESE_CI", "GB18030_BIN", "GB18030_UNICODE_520_CI", "GB2312_CHINESE_CI", "GB2312_BIN", "GBK_CHINESE_CI", "GBK_BIN", "GEOSTD8_GENERAL_CI", "GEOSTD8_BIN", "GREEK_GENERAL_CI", "GREEK_BIN", "HEBREW_GENERAL_CI", "HEBREW_BIN", "HP8_ENGLISH_CI", "HP8_BIN", "KEYBCS2_GENERAL_CI", "KEYBCS2_BIN", "KOI8R_GENERAL_CI", "KOI8R_BIN", "KOI8U_GENERAL_CI", "KOI8U_BIN", "LATIN1_SWEDISH_CI", "LATIN1_BIN", "LATIN1_DANISH_CI", "LATIN1_GENERAL_CI", "LATIN1_GENERAL_CS", "LATIN1_GERMAN1_CI", "LATIN1_GERMAN2_CI", "LATIN1_SPANISH_CI", "LATIN2_GENERAL_CI", "LATIN2_BIN", "LATIN2_CROATIAN_CI", "LATIN2_CZECH_CS", "LATIN2_HUNGARIAN_CI", "LATIN5_TURKISH_CI", "LATIN5_BIN", "LATIN7_GENERAL_CI", "LATIN7_BIN", "LATIN7_ESTONIAN_CS", "LATIN7_GENERAL_CS", "MACCE_GENERAL_CI", "MACCE_BIN", "MACROMAN_GENERAL_CI", "MACROMAN_BIN", "SJIS_JAPANESE_CI", "SJIS_BIN", "SWE7_SWEDISH_CI", "SWE7_BIN", "TIS620_THAI_CI", "TIS620_BIN", "UCS2_GENERAL_CI", "UCS2_BIN", "UCS2_CROATIAN_CI", "UCS2_CZECH_CI", "UCS2_DANISH_CI", "UCS2_ESPERANTO_CI", "UCS2_ESTONIAN_CI", "UCS2_GENERAL_MYSQL500_CI", "UCS2_GERMAN2_CI", "UCS2_HUNGARIAN_CI", "UCS2_ICELANDIC_CI", "UCS2_LATVIAN_CI", "UCS2_LITHUANIAN_CI", "UCS2_PERSIAN_CI", "UCS2_POLISH_CI", "UCS2_ROMANIAN_CI", "UCS2_ROMAN_CI", "UCS2_SINHALA_CI", "UCS2_SLOVAK_CI", "UCS2_SLOVENIAN_CI", "UCS2_SPANISH2_CI", "UCS2_SPANISH_CI", "UCS2_SWEDISH_CI", "UCS2_TURKISH_CI", "UCS2_UNICODE_520_CI", "UCS2_UNICODE_CI", "UCS2_VIETNAMESE_CI", "UJIS_JAPANESE_CI", "UJIS_BIN", "UTF16_GENERAL_CI", "UTF16_BIN", "UTF16_CROATIAN_CI", "UTF16_CZECH_CI", "UTF16_DANISH_CI", "UTF16_ESPERANTO_CI", "UTF16_ESTONIAN_CI", "UTF16_GERMAN2_CI", "UTF16_HUNGARIAN_CI", "UTF16_ICELANDIC_CI", "UTF16_LATVIAN_CI", "UTF16_LITHUANIAN_CI", "UTF16_PERSIAN_CI", "UTF16_POLISH_CI", "UTF16_ROMANIAN_CI", "UTF16_ROMAN_CI", "UTF16_SINHALA_CI", "UTF16_SLOVAK_CI", "UTF16_SLOVENIAN_CI", "UTF16_SPANISH2_CI", "UTF16_SPANISH_CI", "UTF16_SWEDISH_CI", "UTF16_TURKISH_CI", "UTF16_UNICODE_520_CI", "UTF16_UNICODE_CI", "UTF16_VIETNAMESE_CI", "UTF16LE_GENERAL_CI", "UTF16LE_BIN", "UTF32_GENERAL_CI", "UTF32_BIN", "UTF32_CROATIAN_CI", "UTF32_CZECH_CI", "UTF32_DANISH_CI", "UTF32_ESPERANTO_CI", "UTF32_ESTONIAN_CI", "UTF32_GERMAN2_CI", "UTF32_HUNGARIAN_CI", "UTF32_ICELANDIC_CI", "UTF32_LATVIAN_CI", "UTF32_LITHUANIAN_CI", "UTF32_PERSIAN_CI", "UTF32_POLISH_CI", "UTF32_ROMANIAN_CI", "UTF32_ROMAN_CI", "UTF32_SINHALA_CI", "UTF32_SLOVAK_CI", "UTF32_SLOVENIAN_CI", "UTF32_SPANISH2_CI", "UTF32_SPANISH_CI", "UTF32_SWEDISH_CI", "UTF32_TURKISH_CI", "UTF32_UNICODE_520_CI", "UTF32_UNICODE_CI", "UTF32_VIETNAMESE_CI", "UTF8_GENERAL_CI", "UTF8_BIN", "UTF8_CROATIAN_CI", "UTF8_CZECH_CI", "UTF8_DANISH_CI", "UTF8_ESPERANTO_CI", "UTF8_ESTONIAN_CI", "UTF8_GENERAL_MYSQL500_CI", "UTF8_GERMAN2_CI", "UTF8_HUNGARIAN_CI", "UTF8_ICELANDIC_CI", "UTF8_LATVIAN_CI", "UTF8_LITHUANIAN_CI", "UTF8_PERSIAN_CI", "UTF8_POLISH_CI", "UTF8_ROMANIAN_CI", "UTF8_ROMAN_CI", "UTF8_SINHALA_CI", "UTF8_SLOVAK_CI", "UTF8_SLOVENIAN_CI", "UTF8_SPANISH2_CI", "UTF8_SPANISH_CI", "UTF8_SWEDISH_CI", "UTF8_TOLOWER_CI", "UTF8_TURKISH_CI", "UTF8_UNICODE_520_CI", "UTF8_UNICODE_CI", "UTF8_VIETNAMESE_CI", "UTF8MB4_0900_AI_CI", "UTF8MB4_0900_AS_CI", "UTF8MB4_0900_AS_CS", "UTF8MB4_0900_BIN", "UTF8MB4_BIN", "UTF8MB4_CROATIAN_CI", "UTF8MB4_CS_0900_AI_CI", "UTF8MB4_CS_0900_AS_CS", "UTF8MB4_CZECH_CI", "UTF8MB4_DANISH_CI", "UTF8MB4_DA_0900_AI_CI", "UTF8MB4_DA_0900_AS_CS", "UTF8MB4_DE_PB_0900_AI_CI", "UTF8MB4_DE_PB_0900_AS_CS", "UTF8MB4_EO_0900_AI_CI", "UTF8MB4_EO_0900_AS_CS", "UTF8MB4_ESPERANTO_CI", "UTF8MB4_ESTONIAN_CI", "UTF8MB4_ES_0900_AI_CI", "UTF8MB4_ES_0900_AS_CS", "UTF8MB4_ES_TRAD_0900_AI_CI", "UTF8MB4_ES_TRAD_0900_AS_CS", "UTF8MB4_ET_0900_AI_CI", "UTF8MB4_ET_0900_AS_CS", "UTF8MB4_GENERAL_CI", "UTF8MB4_GERMAN2_CI", "UTF8MB4_HR_0900_AI_CI", "UTF8MB4_HR_0900_AS_CS", "UTF8MB4_HUNGARIAN_CI", "UTF8MB4_HU_0900_AI_CI", "UTF8MB4_HU_0900_AS_CS", "UTF8MB4_ICELANDIC_CI", "UTF8MB4_IS_0900_AI_CI", "UTF8MB4_IS_0900_AS_CS", "UTF8MB4_JA_0900_AS_CS", "UTF8MB4_JA_0900_AS_CS_KS", "UTF8MB4_LATVIAN_CI", "UTF8MB4_LA_0900_AI_CI", "UTF8MB4_LA_0900_AS_CS", "UTF8MB4_LITHUANIAN_CI", "UTF8MB4_LT_0900_AI_CI", "UTF8MB4_LT_0900_AS_CS", "UTF8MB4_LV_0900_AI_CI", "UTF8MB4_LV_0900_AS_CS", "UTF8MB4_PERSIAN_CI", "UTF8MB4_PL_0900_AI_CI", "UTF8MB4_PL_0900_AS_CS", "UTF8MB4_POLISH_CI", "UTF8MB4_ROMANIAN_CI", "UTF8MB4_ROMAN_CI", "UTF8MB4_RO_0900_AI_CI", "UTF8MB4_RO_0900_AS_CS", "UTF8MB4_RU_0900_AI_CI", "UTF8MB4_RU_0900_AS_CS", "UTF8MB4_SINHALA_CI", "UTF8MB4_SK_0900_AI_CI", "UTF8MB4_SK_0900_AS_CS", "UTF8MB4_SLOVAK_CI", "UTF8MB4_SLOVENIAN_CI", "UTF8MB4_SL_0900_AI_CI", "UTF8MB4_SL_0900_AS_CS", "UTF8MB4_SPANISH2_CI", "UTF8MB4_SPANISH_CI", "UTF8MB4_SV_0900_AI_CI", "UTF8MB4_SV_0900_AS_CS", "UTF8MB4_SWEDISH_CI", "UTF8MB4_TR_0900_AI_CI", "UTF8MB4_TR_0900_AS_CS", "UTF8MB4_TURKISH_CI", "UTF8MB4_UNICODE_520_CI", "UTF8MB4_UNICODE_CI", "UTF8MB4_VIETNAMESE_CI", "UTF8MB4_VI_0900_AI_CI", "UTF8MB4_VI_0900_AS_CS", "UTF8MB4_ZH_0900_AS_CS"]
+        if not value_allowed_none_or_none_sentinel(collation_server, allowed_values):
+            collation_server = 'UNKNOWN_ENUM_VALUE'
+        self._collation_server = collation_server
 
     @property
     def connection_memory_chunk_size(self):
@@ -793,7 +2438,18 @@ class ConfigurationVariables(object):
     def default_authentication_plugin(self):
         """
         Gets the default_authentication_plugin of this ConfigurationVariables.
-        (\"default_authentication_plugin\")
+        The default authentication plugin. This must be a plugin that uses internal credentials storage, so these values are permitted:
+        mysql_native_password, sha256_password, caching_sha2_password.
+
+        As of MySQL 8.0.27, which introduces multifactor authentication, default_authentication_plugin is still used,
+        but in conjunction with and at a lower precedence than the authentication_policy system variable.
+        For details, see The Default Authentication Plugin. Because of this diminished role, default_authentication_plugin is deprecated as of MySQL 8.0.27
+        and subject to removal in a future MySQL version.
+
+        defaultAuthenticationPlugin corresponds to the MySQL system variable
+        `default_authentication_plugin`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_default_authentication_plugin
 
         Allowed values for this property are: "mysql_native_password", "sha256_password", "caching_sha2_password", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -808,7 +2464,18 @@ class ConfigurationVariables(object):
     def default_authentication_plugin(self, default_authentication_plugin):
         """
         Sets the default_authentication_plugin of this ConfigurationVariables.
-        (\"default_authentication_plugin\")
+        The default authentication plugin. This must be a plugin that uses internal credentials storage, so these values are permitted:
+        mysql_native_password, sha256_password, caching_sha2_password.
+
+        As of MySQL 8.0.27, which introduces multifactor authentication, default_authentication_plugin is still used,
+        but in conjunction with and at a lower precedence than the authentication_policy system variable.
+        For details, see The Default Authentication Plugin. Because of this diminished role, default_authentication_plugin is deprecated as of MySQL 8.0.27
+        and subject to removal in a future MySQL version.
+
+        defaultAuthenticationPlugin corresponds to the MySQL system variable
+        `default_authentication_plugin`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_default_authentication_plugin
 
 
         :param default_authentication_plugin: The default_authentication_plugin of this ConfigurationVariables.
@@ -1096,6 +2763,38 @@ class ConfigurationVariables(object):
         self._group_replication_consistency = group_replication_consistency
 
     @property
+    def group_concat_max_len(self):
+        """
+        Gets the group_concat_max_len of this ConfigurationVariables.
+        Specifies the maximum permitted result length in bytes for the GROUP_CONCAT() function.
+
+        This is the MySQL variable \"group_concat_max_len\". For more information, please see the `MySQL documentation`__
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_group_concat_max_len
+
+
+        :return: The group_concat_max_len of this ConfigurationVariables.
+        :rtype: int
+        """
+        return self._group_concat_max_len
+
+    @group_concat_max_len.setter
+    def group_concat_max_len(self, group_concat_max_len):
+        """
+        Sets the group_concat_max_len of this ConfigurationVariables.
+        Specifies the maximum permitted result length in bytes for the GROUP_CONCAT() function.
+
+        This is the MySQL variable \"group_concat_max_len\". For more information, please see the `MySQL documentation`__
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_group_concat_max_len
+
+
+        :param group_concat_max_len: The group_concat_max_len of this ConfigurationVariables.
+        :type: int
+        """
+        self._group_concat_max_len = group_concat_max_len
+
+    @property
     def innodb_ft_enable_stopword(self):
         """
         Gets the innodb_ft_enable_stopword of this ConfigurationVariables.
@@ -1155,7 +2854,13 @@ class ConfigurationVariables(object):
     def local_infile(self):
         """
         Gets the local_infile of this ConfigurationVariables.
-        (\"local_infile\")
+        This variable controls server-side LOCAL capability for LOAD DATA statements. Depending on the local_infile setting,
+        the server refuses or permits local data loading by clients that have LOCAL enabled on the client side.
+
+        local_infile corresponds to the MySQL Server system variable
+        `local_infile`__
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_local_infile
 
 
         :return: The local_infile of this ConfigurationVariables.
@@ -1167,7 +2872,13 @@ class ConfigurationVariables(object):
     def local_infile(self, local_infile):
         """
         Sets the local_infile of this ConfigurationVariables.
-        (\"local_infile\")
+        This variable controls server-side LOCAL capability for LOAD DATA statements. Depending on the local_infile setting,
+        the server refuses or permits local data loading by clients that have LOCAL enabled on the client side.
+
+        local_infile corresponds to the MySQL Server system variable
+        `local_infile`__
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_local_infile
 
 
         :param local_infile: The local_infile of this ConfigurationVariables.
@@ -2150,6 +3861,40 @@ class ConfigurationVariables(object):
         self._innodb_stats_transient_sample_pages = innodb_stats_transient_sample_pages
 
     @property
+    def innodb_strict_mode(self):
+        """
+        Gets the innodb_strict_mode of this ConfigurationVariables.
+        When you enable innodbStrictMode, the InnoDB storage engine returns errors instead of warnings for invalid or incompatible table options.
+
+        innodbStrictMode corresponds to the MySQL InnoDB system variable
+        `innodb_strict_mode`__
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_strict_mode
+
+
+        :return: The innodb_strict_mode of this ConfigurationVariables.
+        :rtype: bool
+        """
+        return self._innodb_strict_mode
+
+    @innodb_strict_mode.setter
+    def innodb_strict_mode(self, innodb_strict_mode):
+        """
+        Sets the innodb_strict_mode of this ConfigurationVariables.
+        When you enable innodbStrictMode, the InnoDB storage engine returns errors instead of warnings for invalid or incompatible table options.
+
+        innodbStrictMode corresponds to the MySQL InnoDB system variable
+        `innodb_strict_mode`__
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_strict_mode
+
+
+        :param innodb_strict_mode: The innodb_strict_mode of this ConfigurationVariables.
+        :type: bool
+        """
+        self._innodb_strict_mode = innodb_strict_mode
+
+    @property
     def max_allowed_packet(self):
         """
         Gets the max_allowed_packet of this ConfigurationVariables.
@@ -3028,6 +4773,1352 @@ class ConfigurationVariables(object):
         :type: str
         """
         self._time_zone = time_zone
+
+    @property
+    def block_encryption_mode(self):
+        """
+        Gets the block_encryption_mode of this ConfigurationVariables.
+        This variable controls the block encryption mode for block-based algorithms such as AES. It affects encryption for AES_ENCRYPT() and AES_DECRYPT().
+
+        block_encryption_mode takes a value in aes-keylen-mode format, where keylen is the key length in bits and mode is the encryption mode. The value is not case-sensitive.
+        Permitted keylen values are 128, 192, and 256. Permitted mode values are ECB, CBC, CFB1, CFB8, CFB128, and OFB.
+
+        block_encryption_mode corresponds to the MySQL Server Administration system variable
+        `block_encryption_mode`__
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_block_encryption_mode
+
+
+        :return: The block_encryption_mode of this ConfigurationVariables.
+        :rtype: str
+        """
+        return self._block_encryption_mode
+
+    @block_encryption_mode.setter
+    def block_encryption_mode(self, block_encryption_mode):
+        """
+        Sets the block_encryption_mode of this ConfigurationVariables.
+        This variable controls the block encryption mode for block-based algorithms such as AES. It affects encryption for AES_ENCRYPT() and AES_DECRYPT().
+
+        block_encryption_mode takes a value in aes-keylen-mode format, where keylen is the key length in bits and mode is the encryption mode. The value is not case-sensitive.
+        Permitted keylen values are 128, 192, and 256. Permitted mode values are ECB, CBC, CFB1, CFB8, CFB128, and OFB.
+
+        block_encryption_mode corresponds to the MySQL Server Administration system variable
+        `block_encryption_mode`__
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_block_encryption_mode
+
+
+        :param block_encryption_mode: The block_encryption_mode of this ConfigurationVariables.
+        :type: str
+        """
+        self._block_encryption_mode = block_encryption_mode
+
+    @property
+    def binlog_group_commit_sync_delay(self):
+        """
+        Gets the binlog_group_commit_sync_delay of this ConfigurationVariables.
+        Controls how many microseconds the binary log commit waits before synchronizing the binary log file to disk.
+        There is no delay by default. Setting this variable to a microsecond delay enables more transactions to be synchronized
+        together to disk at once, reducing the overall time to commit a group of transactions because the larger groups required
+        fewer time units per group.
+
+        binlogGroupCommitSyncDelay corresponds to the MySQL Replication system variable
+        `binlog_group_commit_sync_delay`__
+
+        __ https://dev.mysql.com/doc/refman/5.7/en/replication-options-binary-log.html#sysvar_binlog_group_commit_sync_delay
+
+
+        :return: The binlog_group_commit_sync_delay of this ConfigurationVariables.
+        :rtype: int
+        """
+        return self._binlog_group_commit_sync_delay
+
+    @binlog_group_commit_sync_delay.setter
+    def binlog_group_commit_sync_delay(self, binlog_group_commit_sync_delay):
+        """
+        Sets the binlog_group_commit_sync_delay of this ConfigurationVariables.
+        Controls how many microseconds the binary log commit waits before synchronizing the binary log file to disk.
+        There is no delay by default. Setting this variable to a microsecond delay enables more transactions to be synchronized
+        together to disk at once, reducing the overall time to commit a group of transactions because the larger groups required
+        fewer time units per group.
+
+        binlogGroupCommitSyncDelay corresponds to the MySQL Replication system variable
+        `binlog_group_commit_sync_delay`__
+
+        __ https://dev.mysql.com/doc/refman/5.7/en/replication-options-binary-log.html#sysvar_binlog_group_commit_sync_delay
+
+
+        :param binlog_group_commit_sync_delay: The binlog_group_commit_sync_delay of this ConfigurationVariables.
+        :type: int
+        """
+        self._binlog_group_commit_sync_delay = binlog_group_commit_sync_delay
+
+    @property
+    def binlog_group_commit_sync_no_delay_count(self):
+        """
+        Gets the binlog_group_commit_sync_no_delay_count of this ConfigurationVariables.
+        The maximum number of transactions to wait for before aborting the current delay as specified by binlog_group_commit_sync_delay.
+        If binlog_group_commit_sync_delay is set to 0, then this option has no effect.
+
+        binlogGroupCommitSyncNoDelayCount corresponds to the MySQL Replication system variable
+        `binlog_group_commit_sync_no_delay_count`__
+
+        __ https://dev.mysql.com/doc/refman/5.7/en/replication-options-binary-log.html#sysvar_binlog_group_commit_sync_no_delay_count
+
+
+        :return: The binlog_group_commit_sync_no_delay_count of this ConfigurationVariables.
+        :rtype: int
+        """
+        return self._binlog_group_commit_sync_no_delay_count
+
+    @binlog_group_commit_sync_no_delay_count.setter
+    def binlog_group_commit_sync_no_delay_count(self, binlog_group_commit_sync_no_delay_count):
+        """
+        Sets the binlog_group_commit_sync_no_delay_count of this ConfigurationVariables.
+        The maximum number of transactions to wait for before aborting the current delay as specified by binlog_group_commit_sync_delay.
+        If binlog_group_commit_sync_delay is set to 0, then this option has no effect.
+
+        binlogGroupCommitSyncNoDelayCount corresponds to the MySQL Replication system variable
+        `binlog_group_commit_sync_no_delay_count`__
+
+        __ https://dev.mysql.com/doc/refman/5.7/en/replication-options-binary-log.html#sysvar_binlog_group_commit_sync_no_delay_count
+
+
+        :param binlog_group_commit_sync_no_delay_count: The binlog_group_commit_sync_no_delay_count of this ConfigurationVariables.
+        :type: int
+        """
+        self._binlog_group_commit_sync_no_delay_count = binlog_group_commit_sync_no_delay_count
+
+    @property
+    def replica_net_timeout(self):
+        """
+        Gets the replica_net_timeout of this ConfigurationVariables.
+        Specifies the number of seconds to wait for more data or a heartbeat signal from the source before the replica considers the connection broken,
+        aborts the read, and tries to reconnect. Setting this variable has no immediate effect. The state of the variable applies on all subsequent START REPLICA commands.
+
+        replicaNetTimeout corresponds to the MySQL Replica server system variable
+        `replica_net_timeout`__
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_replica_net_timeout
+
+
+        :return: The replica_net_timeout of this ConfigurationVariables.
+        :rtype: int
+        """
+        return self._replica_net_timeout
+
+    @replica_net_timeout.setter
+    def replica_net_timeout(self, replica_net_timeout):
+        """
+        Sets the replica_net_timeout of this ConfigurationVariables.
+        Specifies the number of seconds to wait for more data or a heartbeat signal from the source before the replica considers the connection broken,
+        aborts the read, and tries to reconnect. Setting this variable has no immediate effect. The state of the variable applies on all subsequent START REPLICA commands.
+
+        replicaNetTimeout corresponds to the MySQL Replica server system variable
+        `replica_net_timeout`__
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_replica_net_timeout
+
+
+        :param replica_net_timeout: The replica_net_timeout of this ConfigurationVariables.
+        :type: int
+        """
+        self._replica_net_timeout = replica_net_timeout
+
+    @property
+    def require_secure_transport(self):
+        """
+        Gets the require_secure_transport of this ConfigurationVariables.
+        Whether client connections to the server are required to use some form of secure transport.
+        When this variable is enabled, the server permits only TCP/IP connections encrypted using TLS/SSL, or connections that use a socket file or shared memory.
+        The server rejects nonsecure connection attempts, which fail with an ER_SECURE_TRANSPORT_REQUIRED error.
+
+        require_secure_transport corresponds to the MySQL Server Administration system variable
+        `require_secure_transport`__
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_require_secure_transport
+
+
+        :return: The require_secure_transport of this ConfigurationVariables.
+        :rtype: bool
+        """
+        return self._require_secure_transport
+
+    @require_secure_transport.setter
+    def require_secure_transport(self, require_secure_transport):
+        """
+        Sets the require_secure_transport of this ConfigurationVariables.
+        Whether client connections to the server are required to use some form of secure transport.
+        When this variable is enabled, the server permits only TCP/IP connections encrypted using TLS/SSL, or connections that use a socket file or shared memory.
+        The server rejects nonsecure connection attempts, which fail with an ER_SECURE_TRANSPORT_REQUIRED error.
+
+        require_secure_transport corresponds to the MySQL Server Administration system variable
+        `require_secure_transport`__
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_require_secure_transport
+
+
+        :param require_secure_transport: The require_secure_transport of this ConfigurationVariables.
+        :type: bool
+        """
+        self._require_secure_transport = require_secure_transport
+
+    @property
+    def innodb_redo_log_capacity(self):
+        """
+        Gets the innodb_redo_log_capacity of this ConfigurationVariables.
+        Defines the amount of disk space occupied by redo log files. innodb_redo_log_capacity supercedes the innodb_log_files_in_group and innodb_log_file_size variables,
+        which are both ignored if innodb_redo_log_capacity is defined. If innodb_redo_log_capacity is not defined, and if neither innodb_log_file_size or innodb_log_files_in_group are defined,
+        then the default innodb_redo_log_capacity value is used.
+
+        innodbRedoLogCapacity corresponds to the InnoDB Startup Options and System Variables
+        `innodb_redo_log_capacity`__
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_redo_log_capacity
+
+
+        :return: The innodb_redo_log_capacity of this ConfigurationVariables.
+        :rtype: int
+        """
+        return self._innodb_redo_log_capacity
+
+    @innodb_redo_log_capacity.setter
+    def innodb_redo_log_capacity(self, innodb_redo_log_capacity):
+        """
+        Sets the innodb_redo_log_capacity of this ConfigurationVariables.
+        Defines the amount of disk space occupied by redo log files. innodb_redo_log_capacity supercedes the innodb_log_files_in_group and innodb_log_file_size variables,
+        which are both ignored if innodb_redo_log_capacity is defined. If innodb_redo_log_capacity is not defined, and if neither innodb_log_file_size or innodb_log_files_in_group are defined,
+        then the default innodb_redo_log_capacity value is used.
+
+        innodbRedoLogCapacity corresponds to the InnoDB Startup Options and System Variables
+        `innodb_redo_log_capacity`__
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_redo_log_capacity
+
+
+        :param innodb_redo_log_capacity: The innodb_redo_log_capacity of this ConfigurationVariables.
+        :type: int
+        """
+        self._innodb_redo_log_capacity = innodb_redo_log_capacity
+
+    @property
+    def thread_pool_transaction_delay(self):
+        """
+        Gets the thread_pool_transaction_delay of this ConfigurationVariables.
+        The delay period before executing a new transaction, in milliseconds. The maximum value is 300000 (5 minutes).
+        A transaction delay can be used in cases where parallel transactions affect the performance of other operations due to resource contention.
+        For example, if parallel transactions affect index creation or an online buffer pool resizing operation,
+        you can configure a transaction delay to reduce resource contention while those operations are running.
+
+        threadPoolTransactionDelay corresponds to the MySQL Server system variable
+        `thread_pool_transaction_delay`__
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_pool_transaction_delay
+
+
+        :return: The thread_pool_transaction_delay of this ConfigurationVariables.
+        :rtype: int
+        """
+        return self._thread_pool_transaction_delay
+
+    @thread_pool_transaction_delay.setter
+    def thread_pool_transaction_delay(self, thread_pool_transaction_delay):
+        """
+        Sets the thread_pool_transaction_delay of this ConfigurationVariables.
+        The delay period before executing a new transaction, in milliseconds. The maximum value is 300000 (5 minutes).
+        A transaction delay can be used in cases where parallel transactions affect the performance of other operations due to resource contention.
+        For example, if parallel transactions affect index creation or an online buffer pool resizing operation,
+        you can configure a transaction delay to reduce resource contention while those operations are running.
+
+        threadPoolTransactionDelay corresponds to the MySQL Server system variable
+        `thread_pool_transaction_delay`__
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_pool_transaction_delay
+
+
+        :param thread_pool_transaction_delay: The thread_pool_transaction_delay of this ConfigurationVariables.
+        :type: int
+        """
+        self._thread_pool_transaction_delay = thread_pool_transaction_delay
+
+    @property
+    def thread_pool_query_threads_per_group(self):
+        """
+        Gets the thread_pool_query_threads_per_group of this ConfigurationVariables.
+        The maximum number of query threads permitted in a thread group.
+        The maximum value is 4096, but if thread_pool_max_transactions_limit is set, thread_pool_query_threads_per_group must not exceed that value.
+        The default value of 1 means there is one active query thread in each thread group, which works well for many loads.
+        When you are using the high concurrency thread pool algorithm (thread_pool_algorithm = 1),
+        consider increasing the value if you experience slower response times due to long-running transactions.
+
+        threadPoolQueryThreadsPerGroup corresponds to the MySQL Server system variable
+        `thread_pool_query_threads_per_group`__
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_pool_query_threads_per_group
+
+
+        :return: The thread_pool_query_threads_per_group of this ConfigurationVariables.
+        :rtype: int
+        """
+        return self._thread_pool_query_threads_per_group
+
+    @thread_pool_query_threads_per_group.setter
+    def thread_pool_query_threads_per_group(self, thread_pool_query_threads_per_group):
+        """
+        Sets the thread_pool_query_threads_per_group of this ConfigurationVariables.
+        The maximum number of query threads permitted in a thread group.
+        The maximum value is 4096, but if thread_pool_max_transactions_limit is set, thread_pool_query_threads_per_group must not exceed that value.
+        The default value of 1 means there is one active query thread in each thread group, which works well for many loads.
+        When you are using the high concurrency thread pool algorithm (thread_pool_algorithm = 1),
+        consider increasing the value if you experience slower response times due to long-running transactions.
+
+        threadPoolQueryThreadsPerGroup corresponds to the MySQL Server system variable
+        `thread_pool_query_threads_per_group`__
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_pool_query_threads_per_group
+
+
+        :param thread_pool_query_threads_per_group: The thread_pool_query_threads_per_group of this ConfigurationVariables.
+        :type: int
+        """
+        self._thread_pool_query_threads_per_group = thread_pool_query_threads_per_group
+
+    @property
+    def explain_format(self):
+        """
+        Gets the explain_format of this ConfigurationVariables.
+        This variable determines the default output format used by EXPLAIN in the absence of a FORMAT option when displaying a query execution plan.
+
+        explainFormat corresponds to the MySQL system variable
+        `explain_format`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_explain_format
+
+        Allowed values for this property are: "TRADITIONAL", "JSON", "TREE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The explain_format of this ConfigurationVariables.
+        :rtype: str
+        """
+        return self._explain_format
+
+    @explain_format.setter
+    def explain_format(self, explain_format):
+        """
+        Sets the explain_format of this ConfigurationVariables.
+        This variable determines the default output format used by EXPLAIN in the absence of a FORMAT option when displaying a query execution plan.
+
+        explainFormat corresponds to the MySQL system variable
+        `explain_format`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_explain_format
+
+
+        :param explain_format: The explain_format of this ConfigurationVariables.
+        :type: str
+        """
+        allowed_values = ["TRADITIONAL", "JSON", "TREE"]
+        if not value_allowed_none_or_none_sentinel(explain_format, allowed_values):
+            explain_format = 'UNKNOWN_ENUM_VALUE'
+        self._explain_format = explain_format
+
+    @property
+    def explicit_defaults_for_timestamp(self):
+        """
+        Gets the explicit_defaults_for_timestamp of this ConfigurationVariables.
+        This system variable determines whether the server enables certain nonstandard behaviors for default values and NULL-value handling in TIMESTAMP columns.
+        By default, explicit_defaults_for_timestamp is enabled, which disables the nonstandard behaviors. Disabling explicit_defaults_for_timestamp results in a warning.
+
+        explicit_defaults_for_timestamp corresponds to the MySQL Server Administration system variable
+        `explicit_defaults_for_timestamp`__
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_explicit_defaults_for_timestamp
+
+
+        :return: The explicit_defaults_for_timestamp of this ConfigurationVariables.
+        :rtype: bool
+        """
+        return self._explicit_defaults_for_timestamp
+
+    @explicit_defaults_for_timestamp.setter
+    def explicit_defaults_for_timestamp(self, explicit_defaults_for_timestamp):
+        """
+        Sets the explicit_defaults_for_timestamp of this ConfigurationVariables.
+        This system variable determines whether the server enables certain nonstandard behaviors for default values and NULL-value handling in TIMESTAMP columns.
+        By default, explicit_defaults_for_timestamp is enabled, which disables the nonstandard behaviors. Disabling explicit_defaults_for_timestamp results in a warning.
+
+        explicit_defaults_for_timestamp corresponds to the MySQL Server Administration system variable
+        `explicit_defaults_for_timestamp`__
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_explicit_defaults_for_timestamp
+
+
+        :param explicit_defaults_for_timestamp: The explicit_defaults_for_timestamp of this ConfigurationVariables.
+        :type: bool
+        """
+        self._explicit_defaults_for_timestamp = explicit_defaults_for_timestamp
+
+    @property
+    def sql_generate_invisible_primary_key(self):
+        """
+        Gets the sql_generate_invisible_primary_key of this ConfigurationVariables.
+        Whether GIPK mode is in effect, in which case a MySQL replication source server adds a generated invisible primary key to any InnoDB table that is created without one.
+
+        sqlGenerateInvisiblePrimaryKey corresponds to the MySQL system variable
+        `sql_generate_invisible_primary_key]`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_sql_generate_invisible_primary_key
+
+
+        :return: The sql_generate_invisible_primary_key of this ConfigurationVariables.
+        :rtype: bool
+        """
+        return self._sql_generate_invisible_primary_key
+
+    @sql_generate_invisible_primary_key.setter
+    def sql_generate_invisible_primary_key(self, sql_generate_invisible_primary_key):
+        """
+        Sets the sql_generate_invisible_primary_key of this ConfigurationVariables.
+        Whether GIPK mode is in effect, in which case a MySQL replication source server adds a generated invisible primary key to any InnoDB table that is created without one.
+
+        sqlGenerateInvisiblePrimaryKey corresponds to the MySQL system variable
+        `sql_generate_invisible_primary_key]`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_sql_generate_invisible_primary_key
+
+
+        :param sql_generate_invisible_primary_key: The sql_generate_invisible_primary_key of this ConfigurationVariables.
+        :type: bool
+        """
+        self._sql_generate_invisible_primary_key = sql_generate_invisible_primary_key
+
+    @property
+    def temptable_max_ram(self):
+        """
+        Gets the temptable_max_ram of this ConfigurationVariables.
+        Defines the maximum amount of memory that can be occupied by the TempTable storage engine before it starts storing data on disk.
+        The default value is 1073741824 bytes (1GiB). For more information, see Section 10.4.4, \u201CInternal Temporary Table Use in MySQL\u201D.
+
+        temptableMaxRam corresponds to the MySQL system variable
+        `temptable_max_ram]`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_temptable_max_ram
+
+
+        :return: The temptable_max_ram of this ConfigurationVariables.
+        :rtype: int
+        """
+        return self._temptable_max_ram
+
+    @temptable_max_ram.setter
+    def temptable_max_ram(self, temptable_max_ram):
+        """
+        Sets the temptable_max_ram of this ConfigurationVariables.
+        Defines the maximum amount of memory that can be occupied by the TempTable storage engine before it starts storing data on disk.
+        The default value is 1073741824 bytes (1GiB). For more information, see Section 10.4.4, \u201CInternal Temporary Table Use in MySQL\u201D.
+
+        temptableMaxRam corresponds to the MySQL system variable
+        `temptable_max_ram]`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_temptable_max_ram
+
+
+        :param temptable_max_ram: The temptable_max_ram of this ConfigurationVariables.
+        :type: int
+        """
+        self._temptable_max_ram = temptable_max_ram
+
+    @property
+    def innodb_change_buffering(self):
+        """
+        Gets the innodb_change_buffering of this ConfigurationVariables.
+        Whether InnoDB performs change buffering, an optimization that delays write operations to secondary indexes so that the I/O operations can be performed sequentially.
+        Permitted values are described in the following table. Values may also be specified numerically.
+
+        innodbChangeBuffering corresponds to the MySQL InnoDB Startup Options and System Variables
+        `innodb_change_buffering]`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_change_buffering
+
+        Allowed values for this property are: "NONE", "INSERTS", "DELETES", "CHANGES", "PURGES", "ALL", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The innodb_change_buffering of this ConfigurationVariables.
+        :rtype: str
+        """
+        return self._innodb_change_buffering
+
+    @innodb_change_buffering.setter
+    def innodb_change_buffering(self, innodb_change_buffering):
+        """
+        Sets the innodb_change_buffering of this ConfigurationVariables.
+        Whether InnoDB performs change buffering, an optimization that delays write operations to secondary indexes so that the I/O operations can be performed sequentially.
+        Permitted values are described in the following table. Values may also be specified numerically.
+
+        innodbChangeBuffering corresponds to the MySQL InnoDB Startup Options and System Variables
+        `innodb_change_buffering]`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_change_buffering
+
+
+        :param innodb_change_buffering: The innodb_change_buffering of this ConfigurationVariables.
+        :type: str
+        """
+        allowed_values = ["NONE", "INSERTS", "DELETES", "CHANGES", "PURGES", "ALL"]
+        if not value_allowed_none_or_none_sentinel(innodb_change_buffering, allowed_values):
+            innodb_change_buffering = 'UNKNOWN_ENUM_VALUE'
+        self._innodb_change_buffering = innodb_change_buffering
+
+    @property
+    def innodb_adaptive_hash_index(self):
+        """
+        Gets the innodb_adaptive_hash_index of this ConfigurationVariables.
+        Whether the InnoDB adaptive hash index is enabled or disabled.
+        It may be desirable, depending on your workload, to dynamically enable or disable adaptive hash indexing to improve query performance.
+        Because the adaptive hash index may not be useful for all workloads, conduct benchmarks with it both enabled and disabled, using realistic workloads.
+
+        innodbAdaptiveHashIndex corresponds to the MySQL InnoDB Startup Options and System Variables
+        `innodb_adaptive_hash_index]`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_adaptive_hash_index
+
+
+        :return: The innodb_adaptive_hash_index of this ConfigurationVariables.
+        :rtype: bool
+        """
+        return self._innodb_adaptive_hash_index
+
+    @innodb_adaptive_hash_index.setter
+    def innodb_adaptive_hash_index(self, innodb_adaptive_hash_index):
+        """
+        Sets the innodb_adaptive_hash_index of this ConfigurationVariables.
+        Whether the InnoDB adaptive hash index is enabled or disabled.
+        It may be desirable, depending on your workload, to dynamically enable or disable adaptive hash indexing to improve query performance.
+        Because the adaptive hash index may not be useful for all workloads, conduct benchmarks with it both enabled and disabled, using realistic workloads.
+
+        innodbAdaptiveHashIndex corresponds to the MySQL InnoDB Startup Options and System Variables
+        `innodb_adaptive_hash_index]`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_adaptive_hash_index
+
+
+        :param innodb_adaptive_hash_index: The innodb_adaptive_hash_index of this ConfigurationVariables.
+        :type: bool
+        """
+        self._innodb_adaptive_hash_index = innodb_adaptive_hash_index
+
+    @property
+    def innodb_undo_log_truncate(self):
+        """
+        Gets the innodb_undo_log_truncate of this ConfigurationVariables.
+        When enabled, undo tablespaces that exceed the threshold value defined by innodb_max_undo_log_size are marked for truncation.
+        Only undo tablespaces can be truncated. Truncating undo logs that reside in the system tablespace is not supported.
+        For truncation to occur, there must be at least two undo tablespaces.
+
+        innodbUndoLogTruncate corresponds to the MySQL InnoDB Startup Options and System Variables
+        `innodb_undo_log_truncate]`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_undo_log_truncate
+
+
+        :return: The innodb_undo_log_truncate of this ConfigurationVariables.
+        :rtype: bool
+        """
+        return self._innodb_undo_log_truncate
+
+    @innodb_undo_log_truncate.setter
+    def innodb_undo_log_truncate(self, innodb_undo_log_truncate):
+        """
+        Sets the innodb_undo_log_truncate of this ConfigurationVariables.
+        When enabled, undo tablespaces that exceed the threshold value defined by innodb_max_undo_log_size are marked for truncation.
+        Only undo tablespaces can be truncated. Truncating undo logs that reside in the system tablespace is not supported.
+        For truncation to occur, there must be at least two undo tablespaces.
+
+        innodbUndoLogTruncate corresponds to the MySQL InnoDB Startup Options and System Variables
+        `innodb_undo_log_truncate]`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_undo_log_truncate
+
+
+        :param innodb_undo_log_truncate: The innodb_undo_log_truncate of this ConfigurationVariables.
+        :type: bool
+        """
+        self._innodb_undo_log_truncate = innodb_undo_log_truncate
+
+    @property
+    def table_definition_cache(self):
+        """
+        Gets the table_definition_cache of this ConfigurationVariables.
+        The number of table definitions that can be stored in the table definition cache.
+        If you use a large number of tables, you can create a large table definition cache to speed up opening of tables.
+        The table definition cache takes less space and does not use file descriptors, unlike the normal table cache.
+
+        table_definition_cache corresponds to the MySQL Server Administration system variable
+        `table_definition_cache`__
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_table_definition_cache
+
+
+        :return: The table_definition_cache of this ConfigurationVariables.
+        :rtype: int
+        """
+        return self._table_definition_cache
+
+    @table_definition_cache.setter
+    def table_definition_cache(self, table_definition_cache):
+        """
+        Sets the table_definition_cache of this ConfigurationVariables.
+        The number of table definitions that can be stored in the table definition cache.
+        If you use a large number of tables, you can create a large table definition cache to speed up opening of tables.
+        The table definition cache takes less space and does not use file descriptors, unlike the normal table cache.
+
+        table_definition_cache corresponds to the MySQL Server Administration system variable
+        `table_definition_cache`__
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_table_definition_cache
+
+
+        :param table_definition_cache: The table_definition_cache of this ConfigurationVariables.
+        :type: int
+        """
+        self._table_definition_cache = table_definition_cache
+
+    @property
+    def table_open_cache(self):
+        """
+        Gets the table_open_cache of this ConfigurationVariables.
+        The number of open tables for all threads. Increasing this value increases the number of file descriptors that mysqld requires.
+
+        table_open_cache corresponds to the MySQL Server Administration system variable
+        `table_open_cache`__
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_table_open_cache
+
+
+        :return: The table_open_cache of this ConfigurationVariables.
+        :rtype: int
+        """
+        return self._table_open_cache
+
+    @table_open_cache.setter
+    def table_open_cache(self, table_open_cache):
+        """
+        Sets the table_open_cache of this ConfigurationVariables.
+        The number of open tables for all threads. Increasing this value increases the number of file descriptors that mysqld requires.
+
+        table_open_cache corresponds to the MySQL Server Administration system variable
+        `table_open_cache`__
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_table_open_cache
+
+
+        :param table_open_cache: The table_open_cache of this ConfigurationVariables.
+        :type: int
+        """
+        self._table_open_cache = table_open_cache
+
+    @property
+    def relay_log_space_limit(self):
+        """
+        Gets the relay_log_space_limit of this ConfigurationVariables.
+        The maximum amount of space to use for all relay logs.
+
+        relayLogSpaceLimit corresponds to the MySQL Replica Server Options variable
+        `relay_log_space_limit]`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_relay_log_space_limit
+
+
+        :return: The relay_log_space_limit of this ConfigurationVariables.
+        :rtype: int
+        """
+        return self._relay_log_space_limit
+
+    @relay_log_space_limit.setter
+    def relay_log_space_limit(self, relay_log_space_limit):
+        """
+        Sets the relay_log_space_limit of this ConfigurationVariables.
+        The maximum amount of space to use for all relay logs.
+
+        relayLogSpaceLimit corresponds to the MySQL Replica Server Options variable
+        `relay_log_space_limit]`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_relay_log_space_limit
+
+
+        :param relay_log_space_limit: The relay_log_space_limit of this ConfigurationVariables.
+        :type: int
+        """
+        self._relay_log_space_limit = relay_log_space_limit
+
+    @property
+    def optimizer_switch(self):
+        """
+        Gets the optimizer_switch of this ConfigurationVariables.
+        The optimizer_switch system variable enables control over optimizer behavior.
+        The value of this variable is a set of flags, each of which has a value of on or off to indicate whether the corresponding optimizer behavior is enabled or disabled.
+        This variable has global and session values and can be changed at runtime. The global default can be set at server startup.
+
+        Setting hypergraph_optimizer=on for cloud builds below 9.0.0 will fail.
+
+        optimizerSwitch corresponds to the MySQL Server System variable
+        `optimizer_switch]`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_optimizer_switch
+
+
+        :return: The optimizer_switch of this ConfigurationVariables.
+        :rtype: str
+        """
+        return self._optimizer_switch
+
+    @optimizer_switch.setter
+    def optimizer_switch(self, optimizer_switch):
+        """
+        Sets the optimizer_switch of this ConfigurationVariables.
+        The optimizer_switch system variable enables control over optimizer behavior.
+        The value of this variable is a set of flags, each of which has a value of on or off to indicate whether the corresponding optimizer behavior is enabled or disabled.
+        This variable has global and session values and can be changed at runtime. The global default can be set at server startup.
+
+        Setting hypergraph_optimizer=on for cloud builds below 9.0.0 will fail.
+
+        optimizerSwitch corresponds to the MySQL Server System variable
+        `optimizer_switch]`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_optimizer_switch
+
+
+        :param optimizer_switch: The optimizer_switch of this ConfigurationVariables.
+        :type: str
+        """
+        self._optimizer_switch = optimizer_switch
+
+    @property
+    def replica_type_conversions(self):
+        """
+        Gets the replica_type_conversions of this ConfigurationVariables.
+        From MySQL 8.0.26, use replica_type_conversions in place of slave_type_conversions, which is deprecated from that release.
+        In releases before MySQL 8.0.26, use slave_type_conversions.
+
+        replica_type_conversions controls the type conversion mode in effect on the replica when using row-based replication.
+        Its value is a comma-delimited set of zero or more elements from the list: ALL_LOSSY, ALL_NON_LOSSY, ALL_SIGNED, ALL_UNSIGNED.
+        Set this variable to an empty string to disallow type conversions between the source and the replica.
+        Setting this variable takes effect for all replication channels immediately, including running channels.
+
+        replica_type_conversions corresponds to the MySQL Replica Server Options variable
+        `replica_type_conversions]`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_replica_type_conversions
+
+
+        :return: The replica_type_conversions of this ConfigurationVariables.
+        :rtype: str
+        """
+        return self._replica_type_conversions
+
+    @replica_type_conversions.setter
+    def replica_type_conversions(self, replica_type_conversions):
+        """
+        Sets the replica_type_conversions of this ConfigurationVariables.
+        From MySQL 8.0.26, use replica_type_conversions in place of slave_type_conversions, which is deprecated from that release.
+        In releases before MySQL 8.0.26, use slave_type_conversions.
+
+        replica_type_conversions controls the type conversion mode in effect on the replica when using row-based replication.
+        Its value is a comma-delimited set of zero or more elements from the list: ALL_LOSSY, ALL_NON_LOSSY, ALL_SIGNED, ALL_UNSIGNED.
+        Set this variable to an empty string to disallow type conversions between the source and the replica.
+        Setting this variable takes effect for all replication channels immediately, including running channels.
+
+        replica_type_conversions corresponds to the MySQL Replica Server Options variable
+        `replica_type_conversions]`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_replica_type_conversions
+
+
+        :param replica_type_conversions: The replica_type_conversions of this ConfigurationVariables.
+        :type: str
+        """
+        self._replica_type_conversions = replica_type_conversions
+
+    @property
+    def replica_parallel_workers(self):
+        """
+        Gets the replica_parallel_workers of this ConfigurationVariables.
+        Beginning with MySQL 8.0.26, slave_parallel_workers is deprecated, and you should use replica_parallel_workers instead.
+        (Prior to MySQL 8.0.26, you must use slave_parallel_workers to set the number of applier threads.)
+
+        replicaParallelWorkers corresponds to the MySQL Replica Server Options variable
+        `replica_parallel_workers]`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_replica_parallel_workers
+
+
+        :return: The replica_parallel_workers of this ConfigurationVariables.
+        :rtype: int
+        """
+        return self._replica_parallel_workers
+
+    @replica_parallel_workers.setter
+    def replica_parallel_workers(self, replica_parallel_workers):
+        """
+        Sets the replica_parallel_workers of this ConfigurationVariables.
+        Beginning with MySQL 8.0.26, slave_parallel_workers is deprecated, and you should use replica_parallel_workers instead.
+        (Prior to MySQL 8.0.26, you must use slave_parallel_workers to set the number of applier threads.)
+
+        replicaParallelWorkers corresponds to the MySQL Replica Server Options variable
+        `replica_parallel_workers]`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_replica_parallel_workers
+
+
+        :param replica_parallel_workers: The replica_parallel_workers of this ConfigurationVariables.
+        :type: int
+        """
+        self._replica_parallel_workers = replica_parallel_workers
+
+    @property
+    def skip_name_resolve(self):
+        """
+        Gets the skip_name_resolve of this ConfigurationVariables.
+        Whether to resolve host names when checking client connections. If this variable is OFF, mysqld resolves host names when checking client connections.
+        If it is ON, mysqld uses only IP numbers; in this case, all Host column values in the grant tables must be IP addresses.
+        See Section 7.1.12.3, \u201CDNS Lookups and the Host Cache\u201D.
+
+        skipNameResolve corresponds to the MySQL Server System variable
+        `skip_name_resolve]`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_skip_name_resolve
+
+
+        :return: The skip_name_resolve of this ConfigurationVariables.
+        :rtype: bool
+        """
+        return self._skip_name_resolve
+
+    @skip_name_resolve.setter
+    def skip_name_resolve(self, skip_name_resolve):
+        """
+        Sets the skip_name_resolve of this ConfigurationVariables.
+        Whether to resolve host names when checking client connections. If this variable is OFF, mysqld resolves host names when checking client connections.
+        If it is ON, mysqld uses only IP numbers; in this case, all Host column values in the grant tables must be IP addresses.
+        See Section 7.1.12.3, \u201CDNS Lookups and the Host Cache\u201D.
+
+        skipNameResolve corresponds to the MySQL Server System variable
+        `skip_name_resolve]`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_skip_name_resolve
+
+
+        :param skip_name_resolve: The skip_name_resolve of this ConfigurationVariables.
+        :type: bool
+        """
+        self._skip_name_resolve = skip_name_resolve
+
+    @property
+    def max_user_connections(self):
+        """
+        Gets the max_user_connections of this ConfigurationVariables.
+        The maximum number of simultaneous connections permitted to any given MySQL user account.
+        A value of 0 (the default) means \u201Cno limit.\u201D This variable has a global value that can be set at server startup or runtime.
+        It also has a read-only session value that indicates the effective simultaneous-connection limit that applies to the account associated with the current session.
+
+        maxUserConnections corresponds to the MySQL Server System variable
+        `max_user_connections]`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_user_connections
+
+
+        :return: The max_user_connections of this ConfigurationVariables.
+        :rtype: int
+        """
+        return self._max_user_connections
+
+    @max_user_connections.setter
+    def max_user_connections(self, max_user_connections):
+        """
+        Sets the max_user_connections of this ConfigurationVariables.
+        The maximum number of simultaneous connections permitted to any given MySQL user account.
+        A value of 0 (the default) means \u201Cno limit.\u201D This variable has a global value that can be set at server startup or runtime.
+        It also has a read-only session value that indicates the effective simultaneous-connection limit that applies to the account associated with the current session.
+
+        maxUserConnections corresponds to the MySQL Server System variable
+        `max_user_connections]`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_user_connections
+
+
+        :param max_user_connections: The max_user_connections of this ConfigurationVariables.
+        :type: int
+        """
+        self._max_user_connections = max_user_connections
+
+    @property
+    def join_buffer_size(self):
+        """
+        Gets the join_buffer_size of this ConfigurationVariables.
+        The minimum size of the buffer that is used for plain index scans, range index scans, and joins that do not use indexes and thus perform full table scans.
+        In MySQL 8.0.18 and later, this variable also controls the amount of memory used for hash joins. Normally, the best way to get fast joins is to add indexes.
+        Increase the value of join_buffer_size to get a faster full join when adding indexes is not possible. One join buffer is allocated for each full join between two tables.
+        For a complex join between several tables for which indexes are not used, multiple join buffers might be necessary.
+
+        joinBufferSize corresponds to the MySQL Server System variable
+        `join_buffer_size]`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_join_buffer_size
+
+
+        :return: The join_buffer_size of this ConfigurationVariables.
+        :rtype: int
+        """
+        return self._join_buffer_size
+
+    @join_buffer_size.setter
+    def join_buffer_size(self, join_buffer_size):
+        """
+        Sets the join_buffer_size of this ConfigurationVariables.
+        The minimum size of the buffer that is used for plain index scans, range index scans, and joins that do not use indexes and thus perform full table scans.
+        In MySQL 8.0.18 and later, this variable also controls the amount of memory used for hash joins. Normally, the best way to get fast joins is to add indexes.
+        Increase the value of join_buffer_size to get a faster full join when adding indexes is not possible. One join buffer is allocated for each full join between two tables.
+        For a complex join between several tables for which indexes are not used, multiple join buffers might be necessary.
+
+        joinBufferSize corresponds to the MySQL Server System variable
+        `join_buffer_size]`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_join_buffer_size
+
+
+        :param join_buffer_size: The join_buffer_size of this ConfigurationVariables.
+        :type: int
+        """
+        self._join_buffer_size = join_buffer_size
+
+    @property
+    def max_seeks_for_key(self):
+        """
+        Gets the max_seeks_for_key of this ConfigurationVariables.
+        Limit the assumed maximum number of seeks when looking up rows based on a key.
+        The MySQL optimizer assumes that no more than this number of key seeks are required when searching for matching rows in a table by scanning an index,
+        regardless of the actual cardinality of the index (see Section 15.7.7.22, \u201CSHOW INDEX Statement\u201D).
+        By setting this to a low value (say, 100), you can force MySQL to prefer indexes instead of table scans.
+
+        maxSeeksForKey corresponds to the MySQL Server System variable
+        `max_seeks_for_key]`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_seeks_for_key
+
+
+        :return: The max_seeks_for_key of this ConfigurationVariables.
+        :rtype: int
+        """
+        return self._max_seeks_for_key
+
+    @max_seeks_for_key.setter
+    def max_seeks_for_key(self, max_seeks_for_key):
+        """
+        Sets the max_seeks_for_key of this ConfigurationVariables.
+        Limit the assumed maximum number of seeks when looking up rows based on a key.
+        The MySQL optimizer assumes that no more than this number of key seeks are required when searching for matching rows in a table by scanning an index,
+        regardless of the actual cardinality of the index (see Section 15.7.7.22, \u201CSHOW INDEX Statement\u201D).
+        By setting this to a low value (say, 100), you can force MySQL to prefer indexes instead of table scans.
+
+        maxSeeksForKey corresponds to the MySQL Server System variable
+        `max_seeks_for_key]`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_seeks_for_key
+
+
+        :param max_seeks_for_key: The max_seeks_for_key of this ConfigurationVariables.
+        :type: int
+        """
+        self._max_seeks_for_key = max_seeks_for_key
+
+    @property
+    def range_optimizer_max_mem_size(self):
+        """
+        Gets the range_optimizer_max_mem_size of this ConfigurationVariables.
+        The limit on memory consumption for the range optimizer. A value of 0 means \u201Cno limit.\u201D
+        If an execution plan considered by the optimizer uses the range access method but the optimizer estimates that the amount of memory needed for this method would exceed the limit,
+        it abandons the plan and considers other plans.
+
+        rangeOptimizerMaxMemSize corresponds to the MySQL Server System variable
+        `range_optimizer_max_mem_size]`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_range_optimizer_max_mem_size
+
+
+        :return: The range_optimizer_max_mem_size of this ConfigurationVariables.
+        :rtype: int
+        """
+        return self._range_optimizer_max_mem_size
+
+    @range_optimizer_max_mem_size.setter
+    def range_optimizer_max_mem_size(self, range_optimizer_max_mem_size):
+        """
+        Sets the range_optimizer_max_mem_size of this ConfigurationVariables.
+        The limit on memory consumption for the range optimizer. A value of 0 means \u201Cno limit.\u201D
+        If an execution plan considered by the optimizer uses the range access method but the optimizer estimates that the amount of memory needed for this method would exceed the limit,
+        it abandons the plan and considers other plans.
+
+        rangeOptimizerMaxMemSize corresponds to the MySQL Server System variable
+        `range_optimizer_max_mem_size]`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_range_optimizer_max_mem_size
+
+
+        :param range_optimizer_max_mem_size: The range_optimizer_max_mem_size of this ConfigurationVariables.
+        :type: int
+        """
+        self._range_optimizer_max_mem_size = range_optimizer_max_mem_size
+
+    @property
+    def auto_increment_increment(self):
+        """
+        Gets the auto_increment_increment of this ConfigurationVariables.
+        auto_increment_increment and auto_increment_offset are intended for use with circular (source-to-source) replication,
+        and can be used to control the operation of AUTO_INCREMENT columns. Both variables have global and session values,
+        and each can assume an integer value between 1 and 65,535 inclusive.
+
+        autoIncrementIncrement corresponds to the MySQL Replication Source Options variable
+        `auto_increment_increment]`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/replication-options-source.html#sysvar_auto_increment_increment
+
+
+        :return: The auto_increment_increment of this ConfigurationVariables.
+        :rtype: int
+        """
+        return self._auto_increment_increment
+
+    @auto_increment_increment.setter
+    def auto_increment_increment(self, auto_increment_increment):
+        """
+        Sets the auto_increment_increment of this ConfigurationVariables.
+        auto_increment_increment and auto_increment_offset are intended for use with circular (source-to-source) replication,
+        and can be used to control the operation of AUTO_INCREMENT columns. Both variables have global and session values,
+        and each can assume an integer value between 1 and 65,535 inclusive.
+
+        autoIncrementIncrement corresponds to the MySQL Replication Source Options variable
+        `auto_increment_increment]`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/replication-options-source.html#sysvar_auto_increment_increment
+
+
+        :param auto_increment_increment: The auto_increment_increment of this ConfigurationVariables.
+        :type: int
+        """
+        self._auto_increment_increment = auto_increment_increment
+
+    @property
+    def auto_increment_offset(self):
+        """
+        Gets the auto_increment_offset of this ConfigurationVariables.
+        This variable has a default value of 1. If it is left with its default value,
+        and Group Replication is started on the server in multi-primary mode, it is changed to the server ID.
+
+        autoIncrementOffset corresponds to the MySQL Replication Source Options variable
+        `auto_increment_offset]`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/replication-options-source.html#sysvar_auto_increment_offset
+
+
+        :return: The auto_increment_offset of this ConfigurationVariables.
+        :rtype: int
+        """
+        return self._auto_increment_offset
+
+    @auto_increment_offset.setter
+    def auto_increment_offset(self, auto_increment_offset):
+        """
+        Sets the auto_increment_offset of this ConfigurationVariables.
+        This variable has a default value of 1. If it is left with its default value,
+        and Group Replication is started on the server in multi-primary mode, it is changed to the server ID.
+
+        autoIncrementOffset corresponds to the MySQL Replication Source Options variable
+        `auto_increment_offset]`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/replication-options-source.html#sysvar_auto_increment_offset
+
+
+        :param auto_increment_offset: The auto_increment_offset of this ConfigurationVariables.
+        :type: int
+        """
+        self._auto_increment_offset = auto_increment_offset
+
+    @property
+    def innodb_autoinc_lock_mode(self):
+        """
+        Gets the innodb_autoinc_lock_mode of this ConfigurationVariables.
+        The lock mode to use for generating auto-increment values.
+        Permissible values are 0, 1, or 2, for traditional, consecutive, or interleaved, respectively.
+
+        innodbAutoincLockMode corresponds to the MySQL InnoDB Startup Options and System Variables
+        `innodb_autoinc_lock_mode]`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_autoinc_lock_mode
+
+
+        :return: The innodb_autoinc_lock_mode of this ConfigurationVariables.
+        :rtype: int
+        """
+        return self._innodb_autoinc_lock_mode
+
+    @innodb_autoinc_lock_mode.setter
+    def innodb_autoinc_lock_mode(self, innodb_autoinc_lock_mode):
+        """
+        Sets the innodb_autoinc_lock_mode of this ConfigurationVariables.
+        The lock mode to use for generating auto-increment values.
+        Permissible values are 0, 1, or 2, for traditional, consecutive, or interleaved, respectively.
+
+        innodbAutoincLockMode corresponds to the MySQL InnoDB Startup Options and System Variables
+        `innodb_autoinc_lock_mode]`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_autoinc_lock_mode
+
+
+        :param innodb_autoinc_lock_mode: The innodb_autoinc_lock_mode of this ConfigurationVariables.
+        :type: int
+        """
+        self._innodb_autoinc_lock_mode = innodb_autoinc_lock_mode
+
+    @property
+    def innodb_rollback_on_timeout(self):
+        """
+        Gets the innodb_rollback_on_timeout of this ConfigurationVariables.
+        InnoDB rolls back only the last statement on a transaction timeout by default.
+        If --innodb-rollback-on-timeout is specified, a transaction timeout causes InnoDB to abort and roll back the entire transaction.
+
+        innodbRollbackOnTimeout corresponds to the MySQL InnoDB Startup Options and System Variables
+        `innodb_rollback_on_timeout]`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_rollback_on_timeout
+
+
+        :return: The innodb_rollback_on_timeout of this ConfigurationVariables.
+        :rtype: bool
+        """
+        return self._innodb_rollback_on_timeout
+
+    @innodb_rollback_on_timeout.setter
+    def innodb_rollback_on_timeout(self, innodb_rollback_on_timeout):
+        """
+        Sets the innodb_rollback_on_timeout of this ConfigurationVariables.
+        InnoDB rolls back only the last statement on a transaction timeout by default.
+        If --innodb-rollback-on-timeout is specified, a transaction timeout causes InnoDB to abort and roll back the entire transaction.
+
+        innodbRollbackOnTimeout corresponds to the MySQL InnoDB Startup Options and System Variables
+        `innodb_rollback_on_timeout]`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_rollback_on_timeout
+
+
+        :param innodb_rollback_on_timeout: The innodb_rollback_on_timeout of this ConfigurationVariables.
+        :type: bool
+        """
+        self._innodb_rollback_on_timeout = innodb_rollback_on_timeout
+
+    @property
+    def innodb_online_alter_log_max_size(self):
+        """
+        Gets the innodb_online_alter_log_max_size of this ConfigurationVariables.
+        Specifies an upper limit in bytes on the size of the temporary log files used during online DDL operations for InnoDB tables.
+        There is one such log file for each index being created or table being altered.
+        This log file stores data inserted, updated, or deleted in the table during the DDL operation.
+
+        innodbOnlineAlterLogMaxSize corresponds to the MySQL InnoDB Startup Options and System Variables
+        `innodb_online_alter_log_max_size]`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_online_alter_log_max_size
+
+
+        :return: The innodb_online_alter_log_max_size of this ConfigurationVariables.
+        :rtype: int
+        """
+        return self._innodb_online_alter_log_max_size
+
+    @innodb_online_alter_log_max_size.setter
+    def innodb_online_alter_log_max_size(self, innodb_online_alter_log_max_size):
+        """
+        Sets the innodb_online_alter_log_max_size of this ConfigurationVariables.
+        Specifies an upper limit in bytes on the size of the temporary log files used during online DDL operations for InnoDB tables.
+        There is one such log file for each index being created or table being altered.
+        This log file stores data inserted, updated, or deleted in the table during the DDL operation.
+
+        innodbOnlineAlterLogMaxSize corresponds to the MySQL InnoDB Startup Options and System Variables
+        `innodb_online_alter_log_max_size]`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_online_alter_log_max_size
+
+
+        :param innodb_online_alter_log_max_size: The innodb_online_alter_log_max_size of this ConfigurationVariables.
+        :type: int
+        """
+        self._innodb_online_alter_log_max_size = innodb_online_alter_log_max_size
+
+    @property
+    def innodb_sort_buffer_size(self):
+        """
+        Gets the innodb_sort_buffer_size of this ConfigurationVariables.
+        This variable defines:
+
+        * The sort buffer size for online DDL operations that create or rebuild secondary indexes.
+          However, as of MySQL 8.0.27, this responsibility is subsumed by the innodb_ddl_buffer_size variable.
+
+        * The amount by which the temporary log file is extended when recording concurrent DML during an online DDL operation,
+          and the size of the temporary log file read buffer and write buffer.
+
+        innodbSortBufferSize corresponds to the MySQL InnoDB Startup Options and System Variables
+        `innodb_sort_buffer_size]`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_sort_buffer_size
+
+
+        :return: The innodb_sort_buffer_size of this ConfigurationVariables.
+        :rtype: int
+        """
+        return self._innodb_sort_buffer_size
+
+    @innodb_sort_buffer_size.setter
+    def innodb_sort_buffer_size(self, innodb_sort_buffer_size):
+        """
+        Sets the innodb_sort_buffer_size of this ConfigurationVariables.
+        This variable defines:
+
+        * The sort buffer size for online DDL operations that create or rebuild secondary indexes.
+          However, as of MySQL 8.0.27, this responsibility is subsumed by the innodb_ddl_buffer_size variable.
+
+        * The amount by which the temporary log file is extended when recording concurrent DML during an online DDL operation,
+          and the size of the temporary log file read buffer and write buffer.
+
+        innodbSortBufferSize corresponds to the MySQL InnoDB Startup Options and System Variables
+        `innodb_sort_buffer_size]`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_sort_buffer_size
+
+
+        :param innodb_sort_buffer_size: The innodb_sort_buffer_size of this ConfigurationVariables.
+        :type: int
+        """
+        self._innodb_sort_buffer_size = innodb_sort_buffer_size
+
+    @property
+    def innodb_numa_interleave(self):
+        """
+        Gets the innodb_numa_interleave of this ConfigurationVariables.
+        Enables the NUMA interleave memory policy for allocation of the InnoDB buffer pool.
+        When innodb_numa_interleave is enabled, the NUMA memory policy is set to MPOL_INTERLEAVE for the mysqld process.
+        After the InnoDB buffer pool is allocated, the NUMA memory policy is set back to MPOL_DEFAULT.
+        For the innodb_numa_interleave option to be available, MySQL must be compiled on a NUMA-enabled Linux system.
+
+        innodbNumaInterleave corresponds to the MySQL InnoDB Startup Options and System Variables
+        `innodb_numa_interleave]`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_numa_interleave
+
+
+        :return: The innodb_numa_interleave of this ConfigurationVariables.
+        :rtype: bool
+        """
+        return self._innodb_numa_interleave
+
+    @innodb_numa_interleave.setter
+    def innodb_numa_interleave(self, innodb_numa_interleave):
+        """
+        Sets the innodb_numa_interleave of this ConfigurationVariables.
+        Enables the NUMA interleave memory policy for allocation of the InnoDB buffer pool.
+        When innodb_numa_interleave is enabled, the NUMA memory policy is set to MPOL_INTERLEAVE for the mysqld process.
+        After the InnoDB buffer pool is allocated, the NUMA memory policy is set back to MPOL_DEFAULT.
+        For the innodb_numa_interleave option to be available, MySQL must be compiled on a NUMA-enabled Linux system.
+
+        innodbNumaInterleave corresponds to the MySQL InnoDB Startup Options and System Variables
+        `innodb_numa_interleave]`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_numa_interleave
+
+
+        :param innodb_numa_interleave: The innodb_numa_interleave of this ConfigurationVariables.
+        :type: bool
+        """
+        self._innodb_numa_interleave = innodb_numa_interleave
+
+    @property
+    def thread_pool_size(self):
+        """
+        Gets the thread_pool_size of this ConfigurationVariables.
+        The number of thread groups in the thread pool. This is the most important parameter controlling thread pool performance.
+        It affects how many statements can execute simultaneously. If a value outside the range of permissible values is specified,
+        the thread pool plugin does not load and the server writes a message to the error log.
+
+        threadPoolSize corresponds to the MySQL Server System variable
+        `thread_pool_size]`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_pool_size
+
+
+        :return: The thread_pool_size of this ConfigurationVariables.
+        :rtype: int
+        """
+        return self._thread_pool_size
+
+    @thread_pool_size.setter
+    def thread_pool_size(self, thread_pool_size):
+        """
+        Sets the thread_pool_size of this ConfigurationVariables.
+        The number of thread groups in the thread pool. This is the most important parameter controlling thread pool performance.
+        It affects how many statements can execute simultaneously. If a value outside the range of permissible values is specified,
+        the thread pool plugin does not load and the server writes a message to the error log.
+
+        threadPoolSize corresponds to the MySQL Server System variable
+        `thread_pool_size]`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_pool_size
+
+
+        :param thread_pool_size: The thread_pool_size of this ConfigurationVariables.
+        :type: int
+        """
+        self._thread_pool_size = thread_pool_size
+
+    @property
+    def long_query_time(self):
+        """
+        Gets the long_query_time of this ConfigurationVariables.
+        If a query takes longer than this many seconds, the server increments the Slow_queries status variable.
+        If the slow query log is enabled, the query is logged to the slow query log file.
+        This value is measured in real time, not CPU time,
+        so a query that is under the threshold on a lightly loaded system might be above the threshold on a heavily loaded one.
+
+        longQueryTime corresponds to the MySQL Server System variable
+        `long_query_time]`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_long_query_time
+
+
+        :return: The long_query_time of this ConfigurationVariables.
+        :rtype: int
+        """
+        return self._long_query_time
+
+    @long_query_time.setter
+    def long_query_time(self, long_query_time):
+        """
+        Sets the long_query_time of this ConfigurationVariables.
+        If a query takes longer than this many seconds, the server increments the Slow_queries status variable.
+        If the slow query log is enabled, the query is logged to the slow query log file.
+        This value is measured in real time, not CPU time,
+        so a query that is under the threshold on a lightly loaded system might be above the threshold on a heavily loaded one.
+
+        longQueryTime corresponds to the MySQL Server System variable
+        `long_query_time]`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_long_query_time
+
+
+        :param long_query_time: The long_query_time of this ConfigurationVariables.
+        :type: int
+        """
+        self._long_query_time = long_query_time
 
     def __repr__(self):
         return formatted_flat_dict(self)

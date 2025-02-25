@@ -39,11 +39,16 @@ Os Management Hub
     oci.os_management_hub.models.AddPackagesToSoftwareSourceDetails
     oci.os_management_hub.models.AgentEvent
     oci.os_management_hub.models.AgentEventData
+    oci.os_management_hub.models.AssociateManagedInstancesWithManagementStationDetails
+    oci.os_management_hub.models.AttachLifecycleStageToProfileDetails
+    oci.os_management_hub.models.AttachManagedInstanceGroupToProfileDetails
     oci.os_management_hub.models.AttachManagedInstancesToLifecycleStageDetails
     oci.os_management_hub.models.AttachManagedInstancesToManagedInstanceGroupDetails
+    oci.os_management_hub.models.AttachManagementStationToProfileDetails
     oci.os_management_hub.models.AttachProfileToManagedInstanceDetails
     oci.os_management_hub.models.AttachSoftwareSourcesToManagedInstanceDetails
     oci.os_management_hub.models.AttachSoftwareSourcesToManagedInstanceGroupDetails
+    oci.os_management_hub.models.AttachSoftwareSourcesToProfileDetails
     oci.os_management_hub.models.AutonomousSettings
     oci.os_management_hub.models.AvailablePackageCollection
     oci.os_management_hub.models.AvailablePackageSummary
@@ -68,14 +73,17 @@ Os Management Hub
     oci.os_management_hub.models.CreateManagedInstanceGroupDetails
     oci.os_management_hub.models.CreateManagementStationDetails
     oci.os_management_hub.models.CreateMirrorConfigurationDetails
+    oci.os_management_hub.models.CreatePrivateSoftwareSourceDetails
     oci.os_management_hub.models.CreateProfileDetails
     oci.os_management_hub.models.CreateProxyConfigurationDetails
     oci.os_management_hub.models.CreateScheduledJobDetails
     oci.os_management_hub.models.CreateSoftwareSourceDetails
     oci.os_management_hub.models.CreateSoftwareSourceProfileDetails
     oci.os_management_hub.models.CreateStationProfileDetails
+    oci.os_management_hub.models.CreateThirdPartySoftwareSourceDetails
     oci.os_management_hub.models.CreateVendorSoftwareSourceDetails
     oci.os_management_hub.models.CreateVersionedCustomSoftwareSourceDetails
+    oci.os_management_hub.models.CreateWindowsStandAloneProfileDetails
     oci.os_management_hub.models.CustomSoftwareSource
     oci.os_management_hub.models.CustomSoftwareSourceFilter
     oci.os_management_hub.models.CustomSoftwareSourceSummary
@@ -83,6 +91,7 @@ Os Management Hub
     oci.os_management_hub.models.DetachManagedInstancesFromManagedInstanceGroupDetails
     oci.os_management_hub.models.DetachSoftwareSourcesFromManagedInstanceDetails
     oci.os_management_hub.models.DetachSoftwareSourcesFromManagedInstanceGroupDetails
+    oci.os_management_hub.models.DetachSoftwareSourcesFromProfileDetails
     oci.os_management_hub.models.DisableModuleStreamOnManagedInstanceDetails
     oci.os_management_hub.models.DisableModuleStreamOnManagedInstanceGroupDetails
     oci.os_management_hub.models.EnableModuleStreamOnManagedInstanceDetails
@@ -186,15 +195,27 @@ Os Management Hub
     oci.os_management_hub.models.PackageGroupSummary
     oci.os_management_hub.models.PackageNameSummary
     oci.os_management_hub.models.PackageSummary
+    oci.os_management_hub.models.PeerManagementStation
+    oci.os_management_hub.models.PrivateSoftwareSource
+    oci.os_management_hub.models.PrivateSoftwareSourceSummary
     oci.os_management_hub.models.Profile
     oci.os_management_hub.models.ProfileCollection
     oci.os_management_hub.models.ProfileSummary
+    oci.os_management_hub.models.ProfileVersion
     oci.os_management_hub.models.PromoteSoftwareSourceToLifecycleStageDetails
     oci.os_management_hub.models.ProxyConfiguration
+    oci.os_management_hub.models.RebootEvent
+    oci.os_management_hub.models.RebootEventData
+    oci.os_management_hub.models.RebootLifecycleStageDetails
+    oci.os_management_hub.models.RebootManagedInstanceDetails
+    oci.os_management_hub.models.RebootManagedInstanceGroupDetails
     oci.os_management_hub.models.RemoveModuleStreamProfileFromManagedInstanceDetails
     oci.os_management_hub.models.RemoveModuleStreamProfileFromManagedInstanceGroupDetails
     oci.os_management_hub.models.RemovePackagesFromManagedInstanceDetails
     oci.os_management_hub.models.RemovePackagesFromManagedInstanceGroupDetails
+    oci.os_management_hub.models.RemovePackagesFromSoftwareSourceDetails
+    oci.os_management_hub.models.ReplacePackagesInSoftwareSourceDetails
+    oci.os_management_hub.models.RerunWorkRequestDetails
     oci.os_management_hub.models.ScheduledJob
     oci.os_management_hub.models.ScheduledJobCollection
     oci.os_management_hub.models.ScheduledJobOperation
@@ -226,7 +247,11 @@ Os Management Hub
     oci.os_management_hub.models.SwitchModuleStreamOnManagedInstanceDetails
     oci.os_management_hub.models.SwitchModuleStreamOnManagedInstanceGroupDetails
     oci.os_management_hub.models.SynchronizeMirrorsDetails
+    oci.os_management_hub.models.SysadminEvent
+    oci.os_management_hub.models.SysadminEventData
     oci.os_management_hub.models.SystemDetails
+    oci.os_management_hub.models.ThirdPartySoftwareSource
+    oci.os_management_hub.models.ThirdPartySoftwareSourceSummary
     oci.os_management_hub.models.UpdatableAutonomousSettings
     oci.os_management_hub.models.UpdatablePackageCollection
     oci.os_management_hub.models.UpdatablePackageSummary
@@ -241,10 +266,12 @@ Os Management Hub
     oci.os_management_hub.models.UpdateManagementStationDetails
     oci.os_management_hub.models.UpdateMirrorConfigurationDetails
     oci.os_management_hub.models.UpdatePackagesOnManagedInstanceDetails
+    oci.os_management_hub.models.UpdatePrivateSoftwareSourceDetails
     oci.os_management_hub.models.UpdateProfileDetails
     oci.os_management_hub.models.UpdateProxyConfigurationDetails
     oci.os_management_hub.models.UpdateScheduledJobDetails
     oci.os_management_hub.models.UpdateSoftwareSourceDetails
+    oci.os_management_hub.models.UpdateThirdPartySoftwareSourceDetails
     oci.os_management_hub.models.UpdateVendorSoftwareSourceDetails
     oci.os_management_hub.models.UpdateVersionedCustomSoftwareSourceDetails
     oci.os_management_hub.models.UpdateWorkRequestDetails

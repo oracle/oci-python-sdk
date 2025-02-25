@@ -11,7 +11,6 @@ from .change_container_instance_compartment_details import ChangeContainerInstan
 from .container import Container
 from .container_capabilities import ContainerCapabilities
 from .container_collection import ContainerCollection
-from .container_command_health_check import ContainerCommandHealthCheck
 from .container_config_file import ContainerConfigFile
 from .container_config_file_volume import ContainerConfigFileVolume
 from .container_dns_config import ContainerDnsConfig
@@ -31,7 +30,6 @@ from .container_tcp_health_check import ContainerTcpHealthCheck
 from .container_vnic import ContainerVnic
 from .container_volume import ContainerVolume
 from .create_basic_image_pull_secret_details import CreateBasicImagePullSecretDetails
-from .create_container_command_health_check_details import CreateContainerCommandHealthCheckDetails
 from .create_container_config_file_volume_details import CreateContainerConfigFileVolumeDetails
 from .create_container_details import CreateContainerDetails
 from .create_container_dns_config_details import CreateContainerDnsConfigDetails
@@ -76,7 +74,6 @@ container_instances_type_mapping = {
     "Container": Container,
     "ContainerCapabilities": ContainerCapabilities,
     "ContainerCollection": ContainerCollection,
-    "ContainerCommandHealthCheck": ContainerCommandHealthCheck,
     "ContainerConfigFile": ContainerConfigFile,
     "ContainerConfigFileVolume": ContainerConfigFileVolume,
     "ContainerDnsConfig": ContainerDnsConfig,
@@ -96,7 +93,6 @@ container_instances_type_mapping = {
     "ContainerVnic": ContainerVnic,
     "ContainerVolume": ContainerVolume,
     "CreateBasicImagePullSecretDetails": CreateBasicImagePullSecretDetails,
-    "CreateContainerCommandHealthCheckDetails": CreateContainerCommandHealthCheckDetails,
     "CreateContainerConfigFileVolumeDetails": CreateContainerConfigFileVolumeDetails,
     "CreateContainerDetails": CreateContainerDetails,
     "CreateContainerDnsConfigDetails": CreateContainerDnsConfigDetails,

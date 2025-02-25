@@ -33,6 +33,10 @@ class CreateDkimDetails(object):
             The value to assign to the description property of this CreateDkimDetails.
         :type description: str
 
+        :param private_key:
+            The value to assign to the private_key property of this CreateDkimDetails.
+        :type private_key: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateDkimDetails.
         :type freeform_tags: dict(str, str)
@@ -46,6 +50,7 @@ class CreateDkimDetails(object):
             'name': 'str',
             'email_domain_id': 'str',
             'description': 'str',
+            'private_key': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -54,6 +59,7 @@ class CreateDkimDetails(object):
             'name': 'name',
             'email_domain_id': 'emailDomainId',
             'description': 'description',
+            'private_key': 'privateKey',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -61,6 +67,7 @@ class CreateDkimDetails(object):
         self._name = None
         self._email_domain_id = None
         self._description = None
+        self._private_key = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -159,6 +166,30 @@ class CreateDkimDetails(object):
         :type: str
         """
         self._description = description
+
+    @property
+    def private_key(self):
+        """
+        Gets the private_key of this CreateDkimDetails.
+        The DKIM RSA Private Key in Privacy-Enhanced Mail (PEM) format. It is a text-based representation of the private key used for signing email messages.
+
+
+        :return: The private_key of this CreateDkimDetails.
+        :rtype: str
+        """
+        return self._private_key
+
+    @private_key.setter
+    def private_key(self, private_key):
+        """
+        Sets the private_key of this CreateDkimDetails.
+        The DKIM RSA Private Key in Privacy-Enhanced Mail (PEM) format. It is a text-based representation of the private key used for signing email messages.
+
+
+        :param private_key: The private_key of this CreateDkimDetails.
+        :type: str
+        """
+        self._private_key = private_key
 
     @property
     def freeform_tags(self):

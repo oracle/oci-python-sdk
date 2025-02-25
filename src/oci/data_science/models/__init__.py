@@ -108,6 +108,10 @@ from .pipeline_container_step_update_details import PipelineContainerStepUpdateD
 from .pipeline_custom_script_step_details import PipelineCustomScriptStepDetails
 from .pipeline_custom_script_step_run import PipelineCustomScriptStepRun
 from .pipeline_custom_script_step_update_details import PipelineCustomScriptStepUpdateDetails
+from .pipeline_dataflow_configuration_details import PipelineDataflowConfigurationDetails
+from .pipeline_dataflow_step_details import PipelineDataflowStepDetails
+from .pipeline_dataflow_step_run import PipelineDataflowStepRun
+from .pipeline_dataflow_step_update_details import PipelineDataflowStepUpdateDetails
 from .pipeline_default_configuration_details import PipelineDefaultConfigurationDetails
 from .pipeline_infrastructure_configuration_details import PipelineInfrastructureConfigurationDetails
 from .pipeline_log_configuration_details import PipelineLogConfigurationDetails
@@ -280,6 +284,10 @@ data_science_type_mapping = {
     "PipelineCustomScriptStepDetails": PipelineCustomScriptStepDetails,
     "PipelineCustomScriptStepRun": PipelineCustomScriptStepRun,
     "PipelineCustomScriptStepUpdateDetails": PipelineCustomScriptStepUpdateDetails,
+    "PipelineDataflowConfigurationDetails": PipelineDataflowConfigurationDetails,
+    "PipelineDataflowStepDetails": PipelineDataflowStepDetails,
+    "PipelineDataflowStepRun": PipelineDataflowStepRun,
+    "PipelineDataflowStepUpdateDetails": PipelineDataflowStepUpdateDetails,
     "PipelineDefaultConfigurationDetails": PipelineDefaultConfigurationDetails,
     "PipelineInfrastructureConfigurationDetails": PipelineInfrastructureConfigurationDetails,
     "PipelineLogConfigurationDetails": PipelineLogConfigurationDetails,

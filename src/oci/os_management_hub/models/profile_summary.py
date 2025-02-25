@@ -95,6 +95,10 @@ class ProfileSummary(object):
     #: This constant has a value of "SRC"
     ARCH_TYPE_SRC = "SRC"
 
+    #: A constant which can be used with the arch_type property of a ProfileSummary.
+    #: This constant has a value of "I386"
+    ARCH_TYPE_I386 = "I386"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ProfileSummary object with values from keyword arguments.
@@ -144,7 +148,7 @@ class ProfileSummary(object):
 
         :param arch_type:
             The value to assign to the arch_type property of this ProfileSummary.
-            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type arch_type: str
 
@@ -343,7 +347,8 @@ class ProfileSummary(object):
     def management_station_id(self):
         """
         Gets the management_station_id of this ProfileSummary.
-        The `OCID`__ of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+        The `OCID`__ of the management station to associate with an
+        instance once registered. Management stations are only used with non-OCI instances.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -357,7 +362,8 @@ class ProfileSummary(object):
     def management_station_id(self, management_station_id):
         """
         Sets the management_station_id of this ProfileSummary.
-        The `OCID`__ of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+        The `OCID`__ of the management station to associate with an
+        instance once registered. Management stations are only used with non-OCI instances.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -487,7 +493,7 @@ class ProfileSummary(object):
         Gets the arch_type of this ProfileSummary.
         The architecture type.
 
-        Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -506,7 +512,7 @@ class ProfileSummary(object):
         :param arch_type: The arch_type of this ProfileSummary.
         :type: str
         """
-        allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC"]
+        allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386"]
         if not value_allowed_none_or_none_sentinel(arch_type, allowed_values):
             arch_type = 'UNKNOWN_ENUM_VALUE'
         self._arch_type = arch_type
@@ -515,7 +521,9 @@ class ProfileSummary(object):
     def time_created(self):
         """
         Gets the time_created of this ProfileSummary.
-        The time the the Onboarding was created. An RFC3339 formatted datetime string
+        The time the registration profile was created (in `RFC 3339`__ format).
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :return: The time_created of this ProfileSummary.
@@ -527,7 +535,9 @@ class ProfileSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this ProfileSummary.
-        The time the the Onboarding was created. An RFC3339 formatted datetime string
+        The time the registration profile was created (in `RFC 3339`__ format).
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :param time_created: The time_created of this ProfileSummary.

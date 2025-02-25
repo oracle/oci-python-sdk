@@ -23,10 +23,6 @@ class CreateContainerHealthCheckDetails(object):
     #: This constant has a value of "TCP"
     HEALTH_CHECK_TYPE_TCP = "TCP"
 
-    #: A constant which can be used with the health_check_type property of a CreateContainerHealthCheckDetails.
-    #: This constant has a value of "COMMAND"
-    HEALTH_CHECK_TYPE_COMMAND = "COMMAND"
-
     #: A constant which can be used with the failure_action property of a CreateContainerHealthCheckDetails.
     #: This constant has a value of "KILL"
     FAILURE_ACTION_KILL = "KILL"
@@ -42,7 +38,6 @@ class CreateContainerHealthCheckDetails(object):
 
         * :class:`~oci.container_instances.models.CreateContainerTcpHealthCheckDetails`
         * :class:`~oci.container_instances.models.CreateContainerHttpHealthCheckDetails`
-        * :class:`~oci.container_instances.models.CreateContainerCommandHealthCheckDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -52,7 +47,7 @@ class CreateContainerHealthCheckDetails(object):
 
         :param health_check_type:
             The value to assign to the health_check_type property of this CreateContainerHealthCheckDetails.
-            Allowed values for this property are: "HTTP", "TCP", "COMMAND"
+            Allowed values for this property are: "HTTP", "TCP"
         :type health_check_type: str
 
         :param initial_delay_in_seconds:
@@ -125,9 +120,6 @@ class CreateContainerHealthCheckDetails(object):
 
         if type == 'HTTP':
             return 'CreateContainerHttpHealthCheckDetails'
-
-        if type == 'COMMAND':
-            return 'CreateContainerCommandHealthCheckDetails'
         else:
             return 'CreateContainerHealthCheckDetails'
 
@@ -161,7 +153,7 @@ class CreateContainerHealthCheckDetails(object):
         **[Required]** Gets the health_check_type of this CreateContainerHealthCheckDetails.
         Container health check type.
 
-        Allowed values for this property are: "HTTP", "TCP", "COMMAND"
+        Allowed values for this property are: "HTTP", "TCP"
 
 
         :return: The health_check_type of this CreateContainerHealthCheckDetails.
@@ -179,7 +171,7 @@ class CreateContainerHealthCheckDetails(object):
         :param health_check_type: The health_check_type of this CreateContainerHealthCheckDetails.
         :type: str
         """
-        allowed_values = ["HTTP", "TCP", "COMMAND"]
+        allowed_values = ["HTTP", "TCP"]
         if not value_allowed_none_or_none_sentinel(health_check_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `health_check_type`, must be None or one of {allowed_values}"

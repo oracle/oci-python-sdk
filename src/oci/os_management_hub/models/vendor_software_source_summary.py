@@ -63,7 +63,7 @@ class VendorSoftwareSourceSummary(SoftwareSourceSummary):
 
         :param software_source_type:
             The value to assign to the software_source_type property of this VendorSoftwareSourceSummary.
-            Allowed values for this property are: "VENDOR", "CUSTOM", "VERSIONED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "VENDOR", "CUSTOM", "VERSIONED", "PRIVATE", "THIRD_PARTY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type software_source_type: str
 
@@ -87,7 +87,7 @@ class VendorSoftwareSourceSummary(SoftwareSourceSummary):
 
         :param arch_type:
             The value to assign to the arch_type property of this VendorSoftwareSourceSummary.
-            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type arch_type: str
 

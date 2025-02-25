@@ -24,22 +24,29 @@ class AddPackagesToSoftwareSourceDetails(object):
             The value to assign to the packages property of this AddPackagesToSoftwareSourceDetails.
         :type packages: list[str]
 
+        :param is_continue_on_missing_packages:
+            The value to assign to the is_continue_on_missing_packages property of this AddPackagesToSoftwareSourceDetails.
+        :type is_continue_on_missing_packages: bool
+
         """
         self.swagger_types = {
-            'packages': 'list[str]'
+            'packages': 'list[str]',
+            'is_continue_on_missing_packages': 'bool'
         }
 
         self.attribute_map = {
-            'packages': 'packages'
+            'packages': 'packages',
+            'is_continue_on_missing_packages': 'isContinueOnMissingPackages'
         }
 
         self._packages = None
+        self._is_continue_on_missing_packages = None
 
     @property
     def packages(self):
         """
         **[Required]** Gets the packages of this AddPackagesToSoftwareSourceDetails.
-        List of packages specified by the full package name (NEVRA.rpm).
+        List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
 
 
         :return: The packages of this AddPackagesToSoftwareSourceDetails.
@@ -51,13 +58,37 @@ class AddPackagesToSoftwareSourceDetails(object):
     def packages(self, packages):
         """
         Sets the packages of this AddPackagesToSoftwareSourceDetails.
-        List of packages specified by the full package name (NEVRA.rpm).
+        List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
 
 
         :param packages: The packages of this AddPackagesToSoftwareSourceDetails.
         :type: list[str]
         """
         self._packages = packages
+
+    @property
+    def is_continue_on_missing_packages(self):
+        """
+        Gets the is_continue_on_missing_packages of this AddPackagesToSoftwareSourceDetails.
+        Indicates whether the service should generate a custom software source when the package list contains invalid values. When set to true, the service ignores any invalid packages and generates the custom software source with using the valid packages.
+
+
+        :return: The is_continue_on_missing_packages of this AddPackagesToSoftwareSourceDetails.
+        :rtype: bool
+        """
+        return self._is_continue_on_missing_packages
+
+    @is_continue_on_missing_packages.setter
+    def is_continue_on_missing_packages(self, is_continue_on_missing_packages):
+        """
+        Sets the is_continue_on_missing_packages of this AddPackagesToSoftwareSourceDetails.
+        Indicates whether the service should generate a custom software source when the package list contains invalid values. When set to true, the service ignores any invalid packages and generates the custom software source with using the valid packages.
+
+
+        :param is_continue_on_missing_packages: The is_continue_on_missing_packages of this AddPackagesToSoftwareSourceDetails.
+        :type: bool
+        """
+        self._is_continue_on_missing_packages = is_continue_on_missing_packages
 
     def __repr__(self):
         return formatted_flat_dict(self)

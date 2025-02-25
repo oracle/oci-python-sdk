@@ -38,7 +38,7 @@ class AttachManagedInstancesToLifecycleStageDetails(object):
     @property
     def managed_instance_details(self):
         """
-        Gets the managed_instance_details of this AttachManagedInstancesToLifecycleStageDetails.
+        **[Required]** Gets the managed_instance_details of this AttachManagedInstancesToLifecycleStageDetails.
 
         :return: The managed_instance_details of this AttachManagedInstancesToLifecycleStageDetails.
         :rtype: oci.os_management_hub.models.ManagedInstancesDetails

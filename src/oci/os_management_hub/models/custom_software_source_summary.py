@@ -12,8 +12,20 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CustomSoftwareSourceSummary(SoftwareSourceSummary):
     """
-    Indicates whether the service should create the software source from a list of packages provided by the user.
+    Provides summary information for a custom software source.
     """
+
+    #: A constant which can be used with the software_source_sub_type property of a CustomSoftwareSourceSummary.
+    #: This constant has a value of "FILTER"
+    SOFTWARE_SOURCE_SUB_TYPE_FILTER = "FILTER"
+
+    #: A constant which can be used with the software_source_sub_type property of a CustomSoftwareSourceSummary.
+    #: This constant has a value of "MANIFEST"
+    SOFTWARE_SOURCE_SUB_TYPE_MANIFEST = "MANIFEST"
+
+    #: A constant which can be used with the software_source_sub_type property of a CustomSoftwareSourceSummary.
+    #: This constant has a value of "SNAPSHOT"
+    SOFTWARE_SOURCE_SUB_TYPE_SNAPSHOT = "SNAPSHOT"
 
     def __init__(self, **kwargs):
         """
@@ -55,27 +67,32 @@ class CustomSoftwareSourceSummary(SoftwareSourceSummary):
 
         :param software_source_type:
             The value to assign to the software_source_type property of this CustomSoftwareSourceSummary.
-            Allowed values for this property are: "VENDOR", "CUSTOM", "VERSIONED"
+            Allowed values for this property are: "VENDOR", "CUSTOM", "VERSIONED", "PRIVATE", "THIRD_PARTY", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type software_source_type: str
 
         :param availability:
             The value to assign to the availability property of this CustomSoftwareSourceSummary.
-            Allowed values for this property are: "AVAILABLE", "SELECTED", "RESTRICTED", "UNAVAILABLE"
+            Allowed values for this property are: "AVAILABLE", "SELECTED", "RESTRICTED", "UNAVAILABLE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type availability: str
 
         :param availability_at_oci:
             The value to assign to the availability_at_oci property of this CustomSoftwareSourceSummary.
-            Allowed values for this property are: "AVAILABLE", "SELECTED", "RESTRICTED", "UNAVAILABLE"
+            Allowed values for this property are: "AVAILABLE", "SELECTED", "RESTRICTED", "UNAVAILABLE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type availability_at_oci: str
 
         :param os_family:
             The value to assign to the os_family property of this CustomSoftwareSourceSummary.
-            Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL"
+            Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type os_family: str
 
         :param arch_type:
             The value to assign to the arch_type property of this CustomSoftwareSourceSummary.
-            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC"
+            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type arch_type: str
 
         :param package_count:
@@ -106,6 +123,12 @@ class CustomSoftwareSourceSummary(SoftwareSourceSummary):
             The value to assign to the vendor_software_sources property of this CustomSoftwareSourceSummary.
         :type vendor_software_sources: list[oci.os_management_hub.models.Id]
 
+        :param software_source_sub_type:
+            The value to assign to the software_source_sub_type property of this CustomSoftwareSourceSummary.
+            Allowed values for this property are: "FILTER", "MANIFEST", "SNAPSHOT", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type software_source_sub_type: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -127,7 +150,8 @@ class CustomSoftwareSourceSummary(SoftwareSourceSummary):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
-            'vendor_software_sources': 'list[Id]'
+            'vendor_software_sources': 'list[Id]',
+            'software_source_sub_type': 'str'
         }
 
         self.attribute_map = {
@@ -150,7 +174,8 @@ class CustomSoftwareSourceSummary(SoftwareSourceSummary):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
-            'vendor_software_sources': 'vendorSoftwareSources'
+            'vendor_software_sources': 'vendorSoftwareSources',
+            'software_source_sub_type': 'softwareSourceSubType'
         }
 
         self._id = None
@@ -173,6 +198,7 @@ class CustomSoftwareSourceSummary(SoftwareSourceSummary):
         self._defined_tags = None
         self._system_tags = None
         self._vendor_software_sources = None
+        self._software_source_sub_type = None
         self._software_source_type = 'CUSTOM'
 
     @property
@@ -198,6 +224,36 @@ class CustomSoftwareSourceSummary(SoftwareSourceSummary):
         :type: list[oci.os_management_hub.models.Id]
         """
         self._vendor_software_sources = vendor_software_sources
+
+    @property
+    def software_source_sub_type(self):
+        """
+        Gets the software_source_sub_type of this CustomSoftwareSourceSummary.
+        Identifies how the custom software source was created.
+
+        Allowed values for this property are: "FILTER", "MANIFEST", "SNAPSHOT", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The software_source_sub_type of this CustomSoftwareSourceSummary.
+        :rtype: str
+        """
+        return self._software_source_sub_type
+
+    @software_source_sub_type.setter
+    def software_source_sub_type(self, software_source_sub_type):
+        """
+        Sets the software_source_sub_type of this CustomSoftwareSourceSummary.
+        Identifies how the custom software source was created.
+
+
+        :param software_source_sub_type: The software_source_sub_type of this CustomSoftwareSourceSummary.
+        :type: str
+        """
+        allowed_values = ["FILTER", "MANIFEST", "SNAPSHOT"]
+        if not value_allowed_none_or_none_sentinel(software_source_sub_type, allowed_values):
+            software_source_sub_type = 'UNKNOWN_ENUM_VALUE'
+        self._software_source_sub_type = software_source_sub_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

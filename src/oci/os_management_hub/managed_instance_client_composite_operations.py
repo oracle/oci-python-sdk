@@ -25,6 +25,52 @@ class ManagedInstanceClientCompositeOperations(object):
         """
         self.client = client
 
+    def associate_managed_instances_with_management_station_and_wait_for_state(self, management_station_id, associate_managed_instances_with_management_station_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.os_management_hub.ManagedInstanceClient.associate_managed_instances_with_management_station` and waits for the :py:class:`~oci.os_management_hub.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str management_station_id: (required)
+            The `OCID`__ of the management station.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.os_management_hub.models.AssociateManagedInstancesWithManagementStationDetails associate_managed_instances_with_management_station_details: (required)
+            The managed instances `OCIDs`__ to associate to the management station.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.os_management_hub.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.os_management_hub.ManagedInstanceClient.associate_managed_instances_with_management_station`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.associate_managed_instances_with_management_station(management_station_id, associate_managed_instances_with_management_station_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def attach_software_sources_to_managed_instance_and_wait_for_state(self, managed_instance_id, attach_software_sources_to_managed_instance_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.os_management_hub.ManagedInstanceClient.attach_software_sources_to_managed_instance` and waits for the :py:class:`~oci.os_management_hub.models.WorkRequest`
@@ -486,6 +532,51 @@ class ManagedInstanceClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         operation_result = self.client.manage_module_streams_on_managed_instance(managed_instance_id, manage_module_streams_on_managed_instance_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def reboot_managed_instance_and_wait_for_state(self, managed_instance_id, reboot_managed_instance_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.os_management_hub.ManagedInstanceClient.reboot_managed_instance` and waits for the :py:class:`~oci.os_management_hub.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str managed_instance_id: (required)
+            The `OCID`__ of the managed instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.os_management_hub.models.RebootManagedInstanceDetails reboot_managed_instance_details: (required)
+            The timeout to be set for the reboot job. The timeout is the amount of time in minutes that the service waits for
+            the reboot to complete before marking the job as failed.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.os_management_hub.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.os_management_hub.ManagedInstanceClient.reboot_managed_instance`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.reboot_managed_instance(managed_instance_id, reboot_managed_instance_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
         lowered_wait_for_states = [w.lower() for w in wait_for_states]

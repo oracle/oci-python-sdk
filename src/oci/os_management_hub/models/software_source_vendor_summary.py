@@ -75,6 +75,10 @@ class SoftwareSourceVendorSummary(object):
     #: This constant has a value of "SRC"
     ARCH_TYPES_SRC = "SRC"
 
+    #: A constant which can be used with the arch_types property of a SoftwareSourceVendorSummary.
+    #: This constant has a value of "I386"
+    ARCH_TYPES_I386 = "I386"
+
     def __init__(self, **kwargs):
         """
         Initializes a new SoftwareSourceVendorSummary object with values from keyword arguments.
@@ -94,7 +98,7 @@ class SoftwareSourceVendorSummary(object):
 
         :param arch_types:
             The value to assign to the arch_types property of this SoftwareSourceVendorSummary.
-            Allowed values for items in this list are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for items in this list are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type arch_types: list[str]
 
@@ -181,7 +185,7 @@ class SoftwareSourceVendorSummary(object):
         **[Required]** Gets the arch_types of this SoftwareSourceVendorSummary.
         List of corresponding architecture types.
 
-        Allowed values for items in this list are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for items in this list are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -200,7 +204,7 @@ class SoftwareSourceVendorSummary(object):
         :param arch_types: The arch_types of this SoftwareSourceVendorSummary.
         :type: list[str]
         """
-        allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC"]
+        allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386"]
         if arch_types:
             arch_types[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in arch_types]
         self._arch_types = arch_types

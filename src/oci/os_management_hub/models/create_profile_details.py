@@ -41,6 +41,7 @@ class CreateProfileDetails(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.os_management_hub.models.CreateGroupProfileDetails`
+        * :class:`~oci.os_management_hub.models.CreateWindowsStandAloneProfileDetails`
         * :class:`~oci.os_management_hub.models.CreateStationProfileDetails`
         * :class:`~oci.os_management_hub.models.CreateSoftwareSourceProfileDetails`
         * :class:`~oci.os_management_hub.models.CreateLifecycleProfileDetails`
@@ -130,6 +131,9 @@ class CreateProfileDetails(object):
         if type == 'GROUP':
             return 'CreateGroupProfileDetails'
 
+        if type == 'WINDOWS_STANDALONE':
+            return 'CreateWindowsStandAloneProfileDetails'
+
         if type == 'STATION':
             return 'CreateStationProfileDetails'
 
@@ -145,7 +149,8 @@ class CreateProfileDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this CreateProfileDetails.
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering
+        confidential information.
 
 
         :return: The display_name of this CreateProfileDetails.
@@ -157,7 +162,8 @@ class CreateProfileDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateProfileDetails.
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name. Does not have to be unique and you can change the name later. Avoid entering
+        confidential information.
 
 
         :param display_name: The display_name of this CreateProfileDetails.
@@ -221,7 +227,8 @@ class CreateProfileDetails(object):
     def management_station_id(self):
         """
         Gets the management_station_id of this CreateProfileDetails.
-        The `OCID`__ of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+        description: The `OCID`__ of the management station to associate
+        with an instance once registered. This is required when creating a profile for non-OCI instances.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -235,7 +242,8 @@ class CreateProfileDetails(object):
     def management_station_id(self, management_station_id):
         """
         Sets the management_station_id of this CreateProfileDetails.
-        The `OCID`__ of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+        description: The `OCID`__ of the management station to associate
+        with an instance once registered. This is required when creating a profile for non-OCI instances.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 

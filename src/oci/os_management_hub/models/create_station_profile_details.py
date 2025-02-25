@@ -75,6 +75,10 @@ class CreateStationProfileDetails(CreateProfileDetails):
     #: This constant has a value of "SRC"
     ARCH_TYPE_SRC = "SRC"
 
+    #: A constant which can be used with the arch_type property of a CreateStationProfileDetails.
+    #: This constant has a value of "I386"
+    ARCH_TYPE_I386 = "I386"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateStationProfileDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.os_management_hub.models.CreateStationProfileDetails.profile_type` attribute
@@ -130,7 +134,7 @@ class CreateStationProfileDetails(CreateProfileDetails):
 
         :param arch_type:
             The value to assign to the arch_type property of this CreateStationProfileDetails.
-            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC"
+            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386"
         :type arch_type: str
 
         """
@@ -246,7 +250,7 @@ class CreateStationProfileDetails(CreateProfileDetails):
         Gets the arch_type of this CreateStationProfileDetails.
         The architecture type.
 
-        Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC"
+        Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386"
 
 
         :return: The arch_type of this CreateStationProfileDetails.
@@ -264,7 +268,7 @@ class CreateStationProfileDetails(CreateProfileDetails):
         :param arch_type: The arch_type of this CreateStationProfileDetails.
         :type: str
         """
-        allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC"]
+        allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386"]
         if not value_allowed_none_or_none_sentinel(arch_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `arch_type`, must be None or one of {allowed_values}"

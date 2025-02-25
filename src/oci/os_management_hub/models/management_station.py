@@ -67,6 +67,26 @@ class ManagementStation(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the location property of a ManagementStation.
+    #: This constant has a value of "ON_PREMISE"
+    LOCATION_ON_PREMISE = "ON_PREMISE"
+
+    #: A constant which can be used with the location property of a ManagementStation.
+    #: This constant has a value of "OCI_COMPUTE"
+    LOCATION_OCI_COMPUTE = "OCI_COMPUTE"
+
+    #: A constant which can be used with the location property of a ManagementStation.
+    #: This constant has a value of "AZURE"
+    LOCATION_AZURE = "AZURE"
+
+    #: A constant which can be used with the location property of a ManagementStation.
+    #: This constant has a value of "EC2"
+    LOCATION_EC2 = "EC2"
+
+    #: A constant which can be used with the location property of a ManagementStation.
+    #: This constant has a value of "GCP"
+    LOCATION_GCP = "GCP"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ManagementStation object with values from keyword arguments.
@@ -144,6 +164,40 @@ class ManagementStation(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param is_auto_config_enabled:
+            The value to assign to the is_auto_config_enabled property of this ManagementStation.
+        :type is_auto_config_enabled: bool
+
+        :param peer_management_stations:
+            The value to assign to the peer_management_stations property of this ManagementStation.
+        :type peer_management_stations: list[oci.os_management_hub.models.PeerManagementStation]
+
+        :param location:
+            The value to assign to the location property of this ManagementStation.
+            Allowed values for this property are: "ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2", "GCP", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type location: str
+
+        :param mirror_storage_available_size:
+            The value to assign to the mirror_storage_available_size property of this ManagementStation.
+        :type mirror_storage_available_size: int
+
+        :param mirror_storage_size:
+            The value to assign to the mirror_storage_size property of this ManagementStation.
+        :type mirror_storage_size: int
+
+        :param mirror_size:
+            The value to assign to the mirror_size property of this ManagementStation.
+        :type mirror_size: int
+
+        :param mirror_unique_package_count:
+            The value to assign to the mirror_unique_package_count property of this ManagementStation.
+        :type mirror_unique_package_count: int
+
+        :param mirror_package_count:
+            The value to assign to the mirror_package_count property of this ManagementStation.
+        :type mirror_package_count: int
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ManagementStation.
         :type freeform_tags: dict(str, str)
@@ -175,6 +229,14 @@ class ManagementStation(object):
             'mirror': 'MirrorConfiguration',
             'health': 'StationHealth',
             'lifecycle_state': 'str',
+            'is_auto_config_enabled': 'bool',
+            'peer_management_stations': 'list[PeerManagementStation]',
+            'location': 'str',
+            'mirror_storage_available_size': 'int',
+            'mirror_storage_size': 'int',
+            'mirror_size': 'int',
+            'mirror_unique_package_count': 'int',
+            'mirror_package_count': 'int',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -198,6 +260,14 @@ class ManagementStation(object):
             'mirror': 'mirror',
             'health': 'health',
             'lifecycle_state': 'lifecycleState',
+            'is_auto_config_enabled': 'isAutoConfigEnabled',
+            'peer_management_stations': 'peerManagementStations',
+            'location': 'location',
+            'mirror_storage_available_size': 'mirrorStorageAvailableSize',
+            'mirror_storage_size': 'mirrorStorageSize',
+            'mirror_size': 'mirrorSize',
+            'mirror_unique_package_count': 'mirrorUniquePackageCount',
+            'mirror_package_count': 'mirrorPackageCount',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -220,6 +290,14 @@ class ManagementStation(object):
         self._mirror = None
         self._health = None
         self._lifecycle_state = None
+        self._is_auto_config_enabled = None
+        self._peer_management_stations = None
+        self._location = None
+        self._mirror_storage_available_size = None
+        self._mirror_storage_size = None
+        self._mirror_size = None
+        self._mirror_unique_package_count = None
+        self._mirror_package_count = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -647,6 +725,204 @@ class ManagementStation(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def is_auto_config_enabled(self):
+        """
+        Gets the is_auto_config_enabled of this ManagementStation.
+        When enabled, the station setup script automatically runs to configure the firewall and SELinux settings on the station.
+
+
+        :return: The is_auto_config_enabled of this ManagementStation.
+        :rtype: bool
+        """
+        return self._is_auto_config_enabled
+
+    @is_auto_config_enabled.setter
+    def is_auto_config_enabled(self, is_auto_config_enabled):
+        """
+        Sets the is_auto_config_enabled of this ManagementStation.
+        When enabled, the station setup script automatically runs to configure the firewall and SELinux settings on the station.
+
+
+        :param is_auto_config_enabled: The is_auto_config_enabled of this ManagementStation.
+        :type: bool
+        """
+        self._is_auto_config_enabled = is_auto_config_enabled
+
+    @property
+    def peer_management_stations(self):
+        """
+        **[Required]** Gets the peer_management_stations of this ManagementStation.
+        A list of other management stations that are behind the same load balancer within a high availability configuration. Stations are identified as peers if they have the same hostname and compartment.
+
+
+        :return: The peer_management_stations of this ManagementStation.
+        :rtype: list[oci.os_management_hub.models.PeerManagementStation]
+        """
+        return self._peer_management_stations
+
+    @peer_management_stations.setter
+    def peer_management_stations(self, peer_management_stations):
+        """
+        Sets the peer_management_stations of this ManagementStation.
+        A list of other management stations that are behind the same load balancer within a high availability configuration. Stations are identified as peers if they have the same hostname and compartment.
+
+
+        :param peer_management_stations: The peer_management_stations of this ManagementStation.
+        :type: list[oci.os_management_hub.models.PeerManagementStation]
+        """
+        self._peer_management_stations = peer_management_stations
+
+    @property
+    def location(self):
+        """
+        Gets the location of this ManagementStation.
+        The location of the instance that is acting as the management station.
+
+        Allowed values for this property are: "ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2", "GCP", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The location of this ManagementStation.
+        :rtype: str
+        """
+        return self._location
+
+    @location.setter
+    def location(self, location):
+        """
+        Sets the location of this ManagementStation.
+        The location of the instance that is acting as the management station.
+
+
+        :param location: The location of this ManagementStation.
+        :type: str
+        """
+        allowed_values = ["ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2", "GCP"]
+        if not value_allowed_none_or_none_sentinel(location, allowed_values):
+            location = 'UNKNOWN_ENUM_VALUE'
+        self._location = location
+
+    @property
+    def mirror_storage_available_size(self):
+        """
+        Gets the mirror_storage_available_size of this ManagementStation.
+        Amount of available mirror storage in bytes.
+
+
+        :return: The mirror_storage_available_size of this ManagementStation.
+        :rtype: int
+        """
+        return self._mirror_storage_available_size
+
+    @mirror_storage_available_size.setter
+    def mirror_storage_available_size(self, mirror_storage_available_size):
+        """
+        Sets the mirror_storage_available_size of this ManagementStation.
+        Amount of available mirror storage in bytes.
+
+
+        :param mirror_storage_available_size: The mirror_storage_available_size of this ManagementStation.
+        :type: int
+        """
+        self._mirror_storage_available_size = mirror_storage_available_size
+
+    @property
+    def mirror_storage_size(self):
+        """
+        Gets the mirror_storage_size of this ManagementStation.
+        Total mirror storage size in bytes.
+
+
+        :return: The mirror_storage_size of this ManagementStation.
+        :rtype: int
+        """
+        return self._mirror_storage_size
+
+    @mirror_storage_size.setter
+    def mirror_storage_size(self, mirror_storage_size):
+        """
+        Sets the mirror_storage_size of this ManagementStation.
+        Total mirror storage size in bytes.
+
+
+        :param mirror_storage_size: The mirror_storage_size of this ManagementStation.
+        :type: int
+        """
+        self._mirror_storage_size = mirror_storage_size
+
+    @property
+    def mirror_size(self):
+        """
+        Gets the mirror_size of this ManagementStation.
+        The total size of all software source mirrors in bytes.
+
+
+        :return: The mirror_size of this ManagementStation.
+        :rtype: int
+        """
+        return self._mirror_size
+
+    @mirror_size.setter
+    def mirror_size(self, mirror_size):
+        """
+        Sets the mirror_size of this ManagementStation.
+        The total size of all software source mirrors in bytes.
+
+
+        :param mirror_size: The mirror_size of this ManagementStation.
+        :type: int
+        """
+        self._mirror_size = mirror_size
+
+    @property
+    def mirror_unique_package_count(self):
+        """
+        Gets the mirror_unique_package_count of this ManagementStation.
+        The total number of unique packages within the mirrored software sources on the station. Each package is counted only once, regardless of how many versions it has.
+
+
+        :return: The mirror_unique_package_count of this ManagementStation.
+        :rtype: int
+        """
+        return self._mirror_unique_package_count
+
+    @mirror_unique_package_count.setter
+    def mirror_unique_package_count(self, mirror_unique_package_count):
+        """
+        Sets the mirror_unique_package_count of this ManagementStation.
+        The total number of unique packages within the mirrored software sources on the station. Each package is counted only once, regardless of how many versions it has.
+
+
+        :param mirror_unique_package_count: The mirror_unique_package_count of this ManagementStation.
+        :type: int
+        """
+        self._mirror_unique_package_count = mirror_unique_package_count
+
+    @property
+    def mirror_package_count(self):
+        """
+        Gets the mirror_package_count of this ManagementStation.
+        The total number of all packages within the mirrored software sources.
+
+
+        :return: The mirror_package_count of this ManagementStation.
+        :rtype: int
+        """
+        return self._mirror_package_count
+
+    @mirror_package_count.setter
+    def mirror_package_count(self, mirror_package_count):
+        """
+        Sets the mirror_package_count of this ManagementStation.
+        The total number of all packages within the mirrored software sources.
+
+
+        :param mirror_package_count: The mirror_package_count of this ManagementStation.
+        :type: int
+        """
+        self._mirror_package_count = mirror_package_count
 
     @property
     def freeform_tags(self):

@@ -27,14 +27,24 @@ class UpdateSoftwareSourceDetails(object):
     #: This constant has a value of "VERSIONED"
     SOFTWARE_SOURCE_TYPE_VERSIONED = "VERSIONED"
 
+    #: A constant which can be used with the software_source_type property of a UpdateSoftwareSourceDetails.
+    #: This constant has a value of "PRIVATE"
+    SOFTWARE_SOURCE_TYPE_PRIVATE = "PRIVATE"
+
+    #: A constant which can be used with the software_source_type property of a UpdateSoftwareSourceDetails.
+    #: This constant has a value of "THIRD_PARTY"
+    SOFTWARE_SOURCE_TYPE_THIRD_PARTY = "THIRD_PARTY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateSoftwareSourceDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.os_management_hub.models.UpdateCustomSoftwareSourceDetails`
+        * :class:`~oci.os_management_hub.models.UpdatePrivateSoftwareSourceDetails`
         * :class:`~oci.os_management_hub.models.UpdateVersionedCustomSoftwareSourceDetails`
         * :class:`~oci.os_management_hub.models.UpdateVendorSoftwareSourceDetails`
+        * :class:`~oci.os_management_hub.models.UpdateThirdPartySoftwareSourceDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -52,7 +62,7 @@ class UpdateSoftwareSourceDetails(object):
 
         :param software_source_type:
             The value to assign to the software_source_type property of this UpdateSoftwareSourceDetails.
-            Allowed values for this property are: "VENDOR", "CUSTOM", "VERSIONED"
+            Allowed values for this property are: "VENDOR", "CUSTOM", "VERSIONED", "PRIVATE", "THIRD_PARTY"
         :type software_source_type: str
 
         :param freeform_tags:
@@ -100,11 +110,17 @@ class UpdateSoftwareSourceDetails(object):
         if type == 'CUSTOM':
             return 'UpdateCustomSoftwareSourceDetails'
 
+        if type == 'PRIVATE':
+            return 'UpdatePrivateSoftwareSourceDetails'
+
         if type == 'VERSIONED':
             return 'UpdateVersionedCustomSoftwareSourceDetails'
 
         if type == 'VENDOR':
             return 'UpdateVendorSoftwareSourceDetails'
+
+        if type == 'THIRD_PARTY':
+            return 'UpdateThirdPartySoftwareSourceDetails'
         else:
             return 'UpdateSoftwareSourceDetails'
 
@@ -190,7 +206,7 @@ class UpdateSoftwareSourceDetails(object):
         Gets the software_source_type of this UpdateSoftwareSourceDetails.
         Type of the software source.
 
-        Allowed values for this property are: "VENDOR", "CUSTOM", "VERSIONED"
+        Allowed values for this property are: "VENDOR", "CUSTOM", "VERSIONED", "PRIVATE", "THIRD_PARTY"
 
 
         :return: The software_source_type of this UpdateSoftwareSourceDetails.
@@ -208,7 +224,7 @@ class UpdateSoftwareSourceDetails(object):
         :param software_source_type: The software_source_type of this UpdateSoftwareSourceDetails.
         :type: str
         """
-        allowed_values = ["VENDOR", "CUSTOM", "VERSIONED"]
+        allowed_values = ["VENDOR", "CUSTOM", "VERSIONED", "PRIVATE", "THIRD_PARTY"]
         if not value_allowed_none_or_none_sentinel(software_source_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `software_source_type`, must be None or one of {allowed_values}"

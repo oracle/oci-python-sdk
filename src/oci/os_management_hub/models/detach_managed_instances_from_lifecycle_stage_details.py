@@ -38,7 +38,7 @@ class DetachManagedInstancesFromLifecycleStageDetails(object):
     @property
     def managed_instance_details(self):
         """
-        Gets the managed_instance_details of this DetachManagedInstancesFromLifecycleStageDetails.
+        **[Required]** Gets the managed_instance_details of this DetachManagedInstancesFromLifecycleStageDetails.
 
         :return: The managed_instance_details of this DetachManagedInstancesFromLifecycleStageDetails.
         :rtype: oci.os_management_hub.models.ManagedInstancesDetails

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MirrorSummary(object):
     """
-    Summary of a Mirror
+    Provides summary information for a software source mirror.
     """
 
     #: A constant which can be used with the type property of a MirrorSummary.
@@ -26,6 +26,14 @@ class MirrorSummary(object):
     #: A constant which can be used with the type property of a MirrorSummary.
     #: This constant has a value of "VERSIONED"
     TYPE_VERSIONED = "VERSIONED"
+
+    #: A constant which can be used with the type property of a MirrorSummary.
+    #: This constant has a value of "PRIVATE"
+    TYPE_PRIVATE = "PRIVATE"
+
+    #: A constant which can be used with the type property of a MirrorSummary.
+    #: This constant has a value of "THIRD_PARTY"
+    TYPE_THIRD_PARTY = "THIRD_PARTY"
 
     #: A constant which can be used with the os_family property of a MirrorSummary.
     #: This constant has a value of "ORACLE_LINUX_9"
@@ -79,6 +87,10 @@ class MirrorSummary(object):
     #: This constant has a value of "SRC"
     ARCH_TYPE_SRC = "SRC"
 
+    #: A constant which can be used with the arch_type property of a MirrorSummary.
+    #: This constant has a value of "I386"
+    ARCH_TYPE_I386 = "I386"
+
     #: A constant which can be used with the state property of a MirrorSummary.
     #: This constant has a value of "UNSYNCED"
     STATE_UNSYNCED = "UNSYNCED"
@@ -114,7 +126,7 @@ class MirrorSummary(object):
 
         :param type:
             The value to assign to the type property of this MirrorSummary.
-            Allowed values for this property are: "CUSTOM", "VENDOR", "VERSIONED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CUSTOM", "VENDOR", "VERSIONED", "PRIVATE", "THIRD_PARTY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -126,7 +138,7 @@ class MirrorSummary(object):
 
         :param arch_type:
             The value to assign to the arch_type property of this MirrorSummary.
-            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type arch_type: str
 
@@ -148,6 +160,14 @@ class MirrorSummary(object):
             The value to assign to the log property of this MirrorSummary.
         :type log: str
 
+        :param package_count:
+            The value to assign to the package_count property of this MirrorSummary.
+        :type package_count: int
+
+        :param size:
+            The value to assign to the size property of this MirrorSummary.
+        :type size: int
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -158,7 +178,9 @@ class MirrorSummary(object):
             'state': 'str',
             'percentage': 'int',
             'time_last_synced': 'datetime',
-            'log': 'str'
+            'log': 'str',
+            'package_count': 'int',
+            'size': 'int'
         }
 
         self.attribute_map = {
@@ -170,7 +192,9 @@ class MirrorSummary(object):
             'state': 'state',
             'percentage': 'percentage',
             'time_last_synced': 'timeLastSynced',
-            'log': 'log'
+            'log': 'log',
+            'package_count': 'packageCount',
+            'size': 'size'
         }
 
         self._id = None
@@ -182,12 +206,16 @@ class MirrorSummary(object):
         self._percentage = None
         self._time_last_synced = None
         self._log = None
+        self._package_count = None
+        self._size = None
 
     @property
     def id(self):
         """
         **[Required]** Gets the id of this MirrorSummary.
-        OCID of a software source
+        The `OCID`__ of the software source.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this MirrorSummary.
@@ -199,7 +227,9 @@ class MirrorSummary(object):
     def id(self, id):
         """
         Sets the id of this MirrorSummary.
-        OCID of a software source
+        The `OCID`__ of the software source.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this MirrorSummary.
@@ -211,7 +241,7 @@ class MirrorSummary(object):
     def display_name(self):
         """
         Gets the display_name of this MirrorSummary.
-        Display name of the mirror
+        Display name of the mirror.
 
 
         :return: The display_name of this MirrorSummary.
@@ -223,7 +253,7 @@ class MirrorSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this MirrorSummary.
-        Display name of the mirror
+        Display name of the mirror.
 
 
         :param display_name: The display_name of this MirrorSummary.
@@ -235,9 +265,9 @@ class MirrorSummary(object):
     def type(self):
         """
         Gets the type of this MirrorSummary.
-        Type of the mirror
+        Type of software source.
 
-        Allowed values for this property are: "CUSTOM", "VENDOR", "VERSIONED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CUSTOM", "VENDOR", "VERSIONED", "PRIVATE", "THIRD_PARTY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -250,13 +280,13 @@ class MirrorSummary(object):
     def type(self, type):
         """
         Sets the type of this MirrorSummary.
-        Type of the mirror
+        Type of software source.
 
 
         :param type: The type of this MirrorSummary.
         :type: str
         """
-        allowed_values = ["CUSTOM", "VENDOR", "VERSIONED"]
+        allowed_values = ["CUSTOM", "VENDOR", "VERSIONED", "PRIVATE", "THIRD_PARTY"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type
@@ -265,7 +295,7 @@ class MirrorSummary(object):
     def os_family(self):
         """
         Gets the os_family of this MirrorSummary.
-        The OS family the Software Source belongs to
+        The OS family of the software source.
 
         Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -280,7 +310,7 @@ class MirrorSummary(object):
     def os_family(self, os_family):
         """
         Sets the os_family of this MirrorSummary.
-        The OS family the Software Source belongs to
+        The OS family of the software source.
 
 
         :param os_family: The os_family of this MirrorSummary.
@@ -295,9 +325,9 @@ class MirrorSummary(object):
     def arch_type(self):
         """
         Gets the arch_type of this MirrorSummary.
-        The architecture type supported by the Software Source
+        The architecture type supported by the software source.
 
-        Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -310,13 +340,13 @@ class MirrorSummary(object):
     def arch_type(self, arch_type):
         """
         Sets the arch_type of this MirrorSummary.
-        The architecture type supported by the Software Source
+        The architecture type supported by the software source.
 
 
         :param arch_type: The arch_type of this MirrorSummary.
         :type: str
         """
-        allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC"]
+        allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386"]
         if not value_allowed_none_or_none_sentinel(arch_type, allowed_values):
             arch_type = 'UNKNOWN_ENUM_VALUE'
         self._arch_type = arch_type
@@ -325,7 +355,7 @@ class MirrorSummary(object):
     def state(self):
         """
         **[Required]** Gets the state of this MirrorSummary.
-        Current state of the mirror
+        Current state of the software source mirror.
 
         Allowed values for this property are: "UNSYNCED", "QUEUED", "SYNCING", "SYNCED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -340,7 +370,7 @@ class MirrorSummary(object):
     def state(self, state):
         """
         Sets the state of this MirrorSummary.
-        Current state of the mirror
+        Current state of the software source mirror.
 
 
         :param state: The state of this MirrorSummary.
@@ -355,7 +385,7 @@ class MirrorSummary(object):
     def percentage(self):
         """
         **[Required]** Gets the percentage of this MirrorSummary.
-        A decimal number representing the completness percentage
+        A decimal number representing the percentage of the software source that has been synced.
 
 
         :return: The percentage of this MirrorSummary.
@@ -367,7 +397,7 @@ class MirrorSummary(object):
     def percentage(self, percentage):
         """
         Sets the percentage of this MirrorSummary.
-        A decimal number representing the completness percentage
+        A decimal number representing the percentage of the software source that has been synced.
 
 
         :param percentage: The percentage of this MirrorSummary.
@@ -379,7 +409,9 @@ class MirrorSummary(object):
     def time_last_synced(self):
         """
         **[Required]** Gets the time_last_synced of this MirrorSummary.
-        Timestamp of the last time the mirror was sync
+        Time that the software source was last synced (in `RFC 3339`__ format).
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :return: The time_last_synced of this MirrorSummary.
@@ -391,7 +423,9 @@ class MirrorSummary(object):
     def time_last_synced(self, time_last_synced):
         """
         Sets the time_last_synced of this MirrorSummary.
-        Timestamp of the last time the mirror was sync
+        Time that the software source was last synced (in `RFC 3339`__ format).
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :param time_last_synced: The time_last_synced of this MirrorSummary.
@@ -422,6 +456,54 @@ class MirrorSummary(object):
         :type: str
         """
         self._log = log
+
+    @property
+    def package_count(self):
+        """
+        **[Required]** Gets the package_count of this MirrorSummary.
+        The number of packages within the mirrored software source.
+
+
+        :return: The package_count of this MirrorSummary.
+        :rtype: int
+        """
+        return self._package_count
+
+    @package_count.setter
+    def package_count(self, package_count):
+        """
+        Sets the package_count of this MirrorSummary.
+        The number of packages within the mirrored software source.
+
+
+        :param package_count: The package_count of this MirrorSummary.
+        :type: int
+        """
+        self._package_count = package_count
+
+    @property
+    def size(self):
+        """
+        **[Required]** Gets the size of this MirrorSummary.
+        The size the mirrored software source in bytes.
+
+
+        :return: The size of this MirrorSummary.
+        :rtype: int
+        """
+        return self._size
+
+    @size.setter
+    def size(self, size):
+        """
+        Sets the size of this MirrorSummary.
+        The size the mirrored software source in bytes.
+
+
+        :param size: The size of this MirrorSummary.
+        :type: int
+        """
+        self._size = size
 
     def __repr__(self):
         return formatted_flat_dict(self)

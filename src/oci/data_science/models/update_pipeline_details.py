@@ -40,6 +40,10 @@ class UpdatePipelineDetails(object):
             The value to assign to the log_configuration_details property of this UpdatePipelineDetails.
         :type log_configuration_details: oci.data_science.models.PipelineLogConfigurationDetails
 
+        :param storage_mount_configuration_details_list:
+            The value to assign to the storage_mount_configuration_details_list property of this UpdatePipelineDetails.
+        :type storage_mount_configuration_details_list: list[oci.data_science.models.StorageMountConfigurationDetails]
+
         :param step_details:
             The value to assign to the step_details property of this UpdatePipelineDetails.
         :type step_details: list[oci.data_science.models.PipelineStepUpdateDetails]
@@ -59,6 +63,7 @@ class UpdatePipelineDetails(object):
             'configuration_details': 'PipelineConfigurationDetails',
             'infrastructure_configuration_details': 'PipelineInfrastructureConfigurationDetails',
             'log_configuration_details': 'PipelineLogConfigurationDetails',
+            'storage_mount_configuration_details_list': 'list[StorageMountConfigurationDetails]',
             'step_details': 'list[PipelineStepUpdateDetails]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -70,6 +75,7 @@ class UpdatePipelineDetails(object):
             'configuration_details': 'configurationDetails',
             'infrastructure_configuration_details': 'infrastructureConfigurationDetails',
             'log_configuration_details': 'logConfigurationDetails',
+            'storage_mount_configuration_details_list': 'storageMountConfigurationDetailsList',
             'step_details': 'stepDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
@@ -80,6 +86,7 @@ class UpdatePipelineDetails(object):
         self._configuration_details = None
         self._infrastructure_configuration_details = None
         self._log_configuration_details = None
+        self._storage_mount_configuration_details_list = None
         self._step_details = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -191,6 +198,30 @@ class UpdatePipelineDetails(object):
         :type: oci.data_science.models.PipelineLogConfigurationDetails
         """
         self._log_configuration_details = log_configuration_details
+
+    @property
+    def storage_mount_configuration_details_list(self):
+        """
+        Gets the storage_mount_configuration_details_list of this UpdatePipelineDetails.
+        The storage mount details to mount to the instance running the pipeline step.
+
+
+        :return: The storage_mount_configuration_details_list of this UpdatePipelineDetails.
+        :rtype: list[oci.data_science.models.StorageMountConfigurationDetails]
+        """
+        return self._storage_mount_configuration_details_list
+
+    @storage_mount_configuration_details_list.setter
+    def storage_mount_configuration_details_list(self, storage_mount_configuration_details_list):
+        """
+        Sets the storage_mount_configuration_details_list of this UpdatePipelineDetails.
+        The storage mount details to mount to the instance running the pipeline step.
+
+
+        :param storage_mount_configuration_details_list: The storage_mount_configuration_details_list of this UpdatePipelineDetails.
+        :type: list[oci.data_science.models.StorageMountConfigurationDetails]
+        """
+        self._storage_mount_configuration_details_list = storage_mount_configuration_details_list
 
     @property
     def step_details(self):

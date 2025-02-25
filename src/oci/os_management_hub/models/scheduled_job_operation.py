@@ -103,6 +103,14 @@ class ScheduledJobOperation(object):
     #: This constant has a value of "INSTALL_OTHER_WINDOWS_UPDATES"
     OPERATION_TYPE_INSTALL_OTHER_WINDOWS_UPDATES = "INSTALL_OTHER_WINDOWS_UPDATES"
 
+    #: A constant which can be used with the operation_type property of a ScheduledJobOperation.
+    #: This constant has a value of "REBOOT"
+    OPERATION_TYPE_REBOOT = "REBOOT"
+
+    #: A constant which can be used with the operation_type property of a ScheduledJobOperation.
+    #: This constant has a value of "RERUN_WORK_REQUEST"
+    OPERATION_TYPE_RERUN_WORK_REQUEST = "RERUN_WORK_REQUEST"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ScheduledJobOperation object with values from keyword arguments.
@@ -110,7 +118,7 @@ class ScheduledJobOperation(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this ScheduledJobOperation.
-            Allowed values for this property are: "INSTALL_PACKAGES", "UPDATE_PACKAGES", "REMOVE_PACKAGES", "UPDATE_ALL", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_USERSPACE", "UPDATE_KSPLICE_KERNEL", "MANAGE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "ATTACH_SOFTWARE_SOURCES", "DETACH_SOFTWARE_SOURCES", "SYNC_MANAGEMENT_STATION_MIRROR", "PROMOTE_LIFECYCLE", "INSTALL_WINDOWS_UPDATES", "INSTALL_ALL_WINDOWS_UPDATES", "INSTALL_SECURITY_WINDOWS_UPDATES", "INSTALL_BUGFIX_WINDOWS_UPDATES", "INSTALL_ENHANCEMENT_WINDOWS_UPDATES", "INSTALL_OTHER_WINDOWS_UPDATES", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "INSTALL_PACKAGES", "UPDATE_PACKAGES", "REMOVE_PACKAGES", "UPDATE_ALL", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_USERSPACE", "UPDATE_KSPLICE_KERNEL", "MANAGE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "ATTACH_SOFTWARE_SOURCES", "DETACH_SOFTWARE_SOURCES", "SYNC_MANAGEMENT_STATION_MIRROR", "PROMOTE_LIFECYCLE", "INSTALL_WINDOWS_UPDATES", "INSTALL_ALL_WINDOWS_UPDATES", "INSTALL_SECURITY_WINDOWS_UPDATES", "INSTALL_BUGFIX_WINDOWS_UPDATES", "INSTALL_ENHANCEMENT_WINDOWS_UPDATES", "INSTALL_OTHER_WINDOWS_UPDATES", "REBOOT", "RERUN_WORK_REQUEST", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -134,6 +142,10 @@ class ScheduledJobOperation(object):
             The value to assign to the software_source_ids property of this ScheduledJobOperation.
         :type software_source_ids: list[str]
 
+        :param reboot_timeout_in_mins:
+            The value to assign to the reboot_timeout_in_mins property of this ScheduledJobOperation.
+        :type reboot_timeout_in_mins: int
+
         """
         self.swagger_types = {
             'operation_type': 'str',
@@ -141,7 +153,8 @@ class ScheduledJobOperation(object):
             'windows_update_names': 'list[str]',
             'manage_module_streams_details': 'ManageModuleStreamsInScheduledJobDetails',
             'switch_module_streams_details': 'ModuleStreamDetails',
-            'software_source_ids': 'list[str]'
+            'software_source_ids': 'list[str]',
+            'reboot_timeout_in_mins': 'int'
         }
 
         self.attribute_map = {
@@ -150,7 +163,8 @@ class ScheduledJobOperation(object):
             'windows_update_names': 'windowsUpdateNames',
             'manage_module_streams_details': 'manageModuleStreamsDetails',
             'switch_module_streams_details': 'switchModuleStreamsDetails',
-            'software_source_ids': 'softwareSourceIds'
+            'software_source_ids': 'softwareSourceIds',
+            'reboot_timeout_in_mins': 'rebootTimeoutInMins'
         }
 
         self._operation_type = None
@@ -159,6 +173,7 @@ class ScheduledJobOperation(object):
         self._manage_module_streams_details = None
         self._switch_module_streams_details = None
         self._software_source_ids = None
+        self._reboot_timeout_in_mins = None
 
     @property
     def operation_type(self):
@@ -166,7 +181,7 @@ class ScheduledJobOperation(object):
         **[Required]** Gets the operation_type of this ScheduledJobOperation.
         The type of operation this scheduled job performs.
 
-        Allowed values for this property are: "INSTALL_PACKAGES", "UPDATE_PACKAGES", "REMOVE_PACKAGES", "UPDATE_ALL", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_USERSPACE", "UPDATE_KSPLICE_KERNEL", "MANAGE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "ATTACH_SOFTWARE_SOURCES", "DETACH_SOFTWARE_SOURCES", "SYNC_MANAGEMENT_STATION_MIRROR", "PROMOTE_LIFECYCLE", "INSTALL_WINDOWS_UPDATES", "INSTALL_ALL_WINDOWS_UPDATES", "INSTALL_SECURITY_WINDOWS_UPDATES", "INSTALL_BUGFIX_WINDOWS_UPDATES", "INSTALL_ENHANCEMENT_WINDOWS_UPDATES", "INSTALL_OTHER_WINDOWS_UPDATES", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "INSTALL_PACKAGES", "UPDATE_PACKAGES", "REMOVE_PACKAGES", "UPDATE_ALL", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_USERSPACE", "UPDATE_KSPLICE_KERNEL", "MANAGE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "ATTACH_SOFTWARE_SOURCES", "DETACH_SOFTWARE_SOURCES", "SYNC_MANAGEMENT_STATION_MIRROR", "PROMOTE_LIFECYCLE", "INSTALL_WINDOWS_UPDATES", "INSTALL_ALL_WINDOWS_UPDATES", "INSTALL_SECURITY_WINDOWS_UPDATES", "INSTALL_BUGFIX_WINDOWS_UPDATES", "INSTALL_ENHANCEMENT_WINDOWS_UPDATES", "INSTALL_OTHER_WINDOWS_UPDATES", "REBOOT", "RERUN_WORK_REQUEST", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -185,7 +200,7 @@ class ScheduledJobOperation(object):
         :param operation_type: The operation_type of this ScheduledJobOperation.
         :type: str
         """
-        allowed_values = ["INSTALL_PACKAGES", "UPDATE_PACKAGES", "REMOVE_PACKAGES", "UPDATE_ALL", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_USERSPACE", "UPDATE_KSPLICE_KERNEL", "MANAGE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "ATTACH_SOFTWARE_SOURCES", "DETACH_SOFTWARE_SOURCES", "SYNC_MANAGEMENT_STATION_MIRROR", "PROMOTE_LIFECYCLE", "INSTALL_WINDOWS_UPDATES", "INSTALL_ALL_WINDOWS_UPDATES", "INSTALL_SECURITY_WINDOWS_UPDATES", "INSTALL_BUGFIX_WINDOWS_UPDATES", "INSTALL_ENHANCEMENT_WINDOWS_UPDATES", "INSTALL_OTHER_WINDOWS_UPDATES"]
+        allowed_values = ["INSTALL_PACKAGES", "UPDATE_PACKAGES", "REMOVE_PACKAGES", "UPDATE_ALL", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_USERSPACE", "UPDATE_KSPLICE_KERNEL", "MANAGE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "ATTACH_SOFTWARE_SOURCES", "DETACH_SOFTWARE_SOURCES", "SYNC_MANAGEMENT_STATION_MIRROR", "PROMOTE_LIFECYCLE", "INSTALL_WINDOWS_UPDATES", "INSTALL_ALL_WINDOWS_UPDATES", "INSTALL_SECURITY_WINDOWS_UPDATES", "INSTALL_BUGFIX_WINDOWS_UPDATES", "INSTALL_ENHANCEMENT_WINDOWS_UPDATES", "INSTALL_OTHER_WINDOWS_UPDATES", "REBOOT", "RERUN_WORK_REQUEST"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type
@@ -311,6 +326,32 @@ class ScheduledJobOperation(object):
         :type: list[str]
         """
         self._software_source_ids = software_source_ids
+
+    @property
+    def reboot_timeout_in_mins(self):
+        """
+        Gets the reboot_timeout_in_mins of this ScheduledJobOperation.
+        The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within the
+        timeout, the service marks the reboot job as failed.
+
+
+        :return: The reboot_timeout_in_mins of this ScheduledJobOperation.
+        :rtype: int
+        """
+        return self._reboot_timeout_in_mins
+
+    @reboot_timeout_in_mins.setter
+    def reboot_timeout_in_mins(self, reboot_timeout_in_mins):
+        """
+        Sets the reboot_timeout_in_mins of this ScheduledJobOperation.
+        The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within the
+        timeout, the service marks the reboot job as failed.
+
+
+        :param reboot_timeout_in_mins: The reboot_timeout_in_mins of this ScheduledJobOperation.
+        :type: int
+        """
+        self._reboot_timeout_in_mins = reboot_timeout_in_mins
 
     def __repr__(self):
         return formatted_flat_dict(self)

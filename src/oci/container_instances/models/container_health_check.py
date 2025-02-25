@@ -23,10 +23,6 @@ class ContainerHealthCheck(object):
     #: This constant has a value of "TCP"
     HEALTH_CHECK_TYPE_TCP = "TCP"
 
-    #: A constant which can be used with the health_check_type property of a ContainerHealthCheck.
-    #: This constant has a value of "COMMAND"
-    HEALTH_CHECK_TYPE_COMMAND = "COMMAND"
-
     #: A constant which can be used with the status property of a ContainerHealthCheck.
     #: This constant has a value of "HEALTHY"
     STATUS_HEALTHY = "HEALTHY"
@@ -54,7 +50,6 @@ class ContainerHealthCheck(object):
 
         * :class:`~oci.container_instances.models.ContainerTcpHealthCheck`
         * :class:`~oci.container_instances.models.ContainerHttpHealthCheck`
-        * :class:`~oci.container_instances.models.ContainerCommandHealthCheck`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -64,7 +59,7 @@ class ContainerHealthCheck(object):
 
         :param health_check_type:
             The value to assign to the health_check_type property of this ContainerHealthCheck.
-            Allowed values for this property are: "HTTP", "TCP", "COMMAND", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "HTTP", "TCP", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type health_check_type: str
 
@@ -155,9 +150,6 @@ class ContainerHealthCheck(object):
 
         if type == 'HTTP':
             return 'ContainerHttpHealthCheck'
-
-        if type == 'COMMAND':
-            return 'ContainerCommandHealthCheck'
         else:
             return 'ContainerHealthCheck'
 
@@ -191,7 +183,7 @@ class ContainerHealthCheck(object):
         **[Required]** Gets the health_check_type of this ContainerHealthCheck.
         Container health check type.
 
-        Allowed values for this property are: "HTTP", "TCP", "COMMAND", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "HTTP", "TCP", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -210,7 +202,7 @@ class ContainerHealthCheck(object):
         :param health_check_type: The health_check_type of this ContainerHealthCheck.
         :type: str
         """
-        allowed_values = ["HTTP", "TCP", "COMMAND"]
+        allowed_values = ["HTTP", "TCP"]
         if not value_allowed_none_or_none_sentinel(health_check_type, allowed_values):
             health_check_type = 'UNKNOWN_ENUM_VALUE'
         self._health_check_type = health_check_type

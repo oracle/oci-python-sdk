@@ -47,6 +47,14 @@ class EventSummary(object):
     #: This constant has a value of "MANAGEMENT_STATION"
     TYPE_MANAGEMENT_STATION = "MANAGEMENT_STATION"
 
+    #: A constant which can be used with the type property of a EventSummary.
+    #: This constant has a value of "SYSADMIN"
+    TYPE_SYSADMIN = "SYSADMIN"
+
+    #: A constant which can be used with the type property of a EventSummary.
+    #: This constant has a value of "REBOOT"
+    TYPE_REBOOT = "REBOOT"
+
     def __init__(self, **kwargs):
         """
         Initializes a new EventSummary object with values from keyword arguments.
@@ -66,7 +74,7 @@ class EventSummary(object):
 
         :param type:
             The value to assign to the type property of this EventSummary.
-            Allowed values for this property are: "KERNEL_OOPS", "KERNEL_CRASH", "EXPLOIT_ATTEMPT", "SOFTWARE_UPDATE", "KSPLICE_UPDATE", "SOFTWARE_SOURCE", "AGENT", "MANAGEMENT_STATION", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "KERNEL_OOPS", "KERNEL_CRASH", "EXPLOIT_ATTEMPT", "SOFTWARE_UPDATE", "KSPLICE_UPDATE", "SOFTWARE_SOURCE", "AGENT", "MANAGEMENT_STATION", "SYSADMIN", "REBOOT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -246,7 +254,7 @@ class EventSummary(object):
         **[Required]** Gets the type of this EventSummary.
         Type of event.
 
-        Allowed values for this property are: "KERNEL_OOPS", "KERNEL_CRASH", "EXPLOIT_ATTEMPT", "SOFTWARE_UPDATE", "KSPLICE_UPDATE", "SOFTWARE_SOURCE", "AGENT", "MANAGEMENT_STATION", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "KERNEL_OOPS", "KERNEL_CRASH", "EXPLOIT_ATTEMPT", "SOFTWARE_UPDATE", "KSPLICE_UPDATE", "SOFTWARE_SOURCE", "AGENT", "MANAGEMENT_STATION", "SYSADMIN", "REBOOT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -265,7 +273,7 @@ class EventSummary(object):
         :param type: The type of this EventSummary.
         :type: str
         """
-        allowed_values = ["KERNEL_OOPS", "KERNEL_CRASH", "EXPLOIT_ATTEMPT", "SOFTWARE_UPDATE", "KSPLICE_UPDATE", "SOFTWARE_SOURCE", "AGENT", "MANAGEMENT_STATION"]
+        allowed_values = ["KERNEL_OOPS", "KERNEL_CRASH", "EXPLOIT_ATTEMPT", "SOFTWARE_UPDATE", "KSPLICE_UPDATE", "SOFTWARE_SOURCE", "AGENT", "MANAGEMENT_STATION", "SYSADMIN", "REBOOT"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type

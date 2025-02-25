@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WorkRequestLogEntryCollection(object):
     """
-    Results of a work request log search. Contains both work request log items and other information, such as metadata.
+    The set of work request logs returned for the :func:`list_work_request_logs` operation.
     """
 
     def __init__(self, **kwargs):

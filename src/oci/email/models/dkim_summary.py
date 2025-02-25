@@ -52,6 +52,14 @@ class DkimSummary(object):
             The value to assign to the time_updated property of this DkimSummary.
         :type time_updated: datetime
 
+        :param is_imported:
+            The value to assign to the is_imported property of this DkimSummary.
+        :type is_imported: bool
+
+        :param key_length:
+            The value to assign to the key_length property of this DkimSummary.
+        :type key_length: int
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this DkimSummary.
         :type freeform_tags: dict(str, str)
@@ -74,6 +82,8 @@ class DkimSummary(object):
             'description': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
+            'is_imported': 'bool',
+            'key_length': 'int',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -88,6 +98,8 @@ class DkimSummary(object):
             'description': 'description',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
+            'is_imported': 'isImported',
+            'key_length': 'keyLength',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -101,6 +113,8 @@ class DkimSummary(object):
         self._description = None
         self._time_created = None
         self._time_updated = None
+        self._is_imported = None
+        self._key_length = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -332,6 +346,54 @@ class DkimSummary(object):
         :type: datetime
         """
         self._time_updated = time_updated
+
+    @property
+    def is_imported(self):
+        """
+        Gets the is_imported of this DkimSummary.
+        Indicates whether the DKIM was imported.
+
+
+        :return: The is_imported of this DkimSummary.
+        :rtype: bool
+        """
+        return self._is_imported
+
+    @is_imported.setter
+    def is_imported(self, is_imported):
+        """
+        Sets the is_imported of this DkimSummary.
+        Indicates whether the DKIM was imported.
+
+
+        :param is_imported: The is_imported of this DkimSummary.
+        :type: bool
+        """
+        self._is_imported = is_imported
+
+    @property
+    def key_length(self):
+        """
+        Gets the key_length of this DkimSummary.
+        Length of the RSA key used in the DKIM.
+
+
+        :return: The key_length of this DkimSummary.
+        :rtype: int
+        """
+        return self._key_length
+
+    @key_length.setter
+    def key_length(self, key_length):
+        """
+        Sets the key_length of this DkimSummary.
+        Length of the RSA key used in the DKIM.
+
+
+        :param key_length: The key_length of this DkimSummary.
+        :type: int
+        """
+        self._key_length = key_length
 
     @property
     def freeform_tags(self):

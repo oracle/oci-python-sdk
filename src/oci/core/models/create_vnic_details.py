@@ -411,17 +411,17 @@ class CreateVnicDetails(object):
         Must be unique across all VNICs in the subnet and comply with
         `RFC 952`__ and
         `RFC 1123`__.
-        The value appears in the `:class:`Vnic`` object and also the
-        `:class:`PrivateIp`` object returned by
-        `:func:`list_private_ips`` and
-        `:func:`get_private_ip``.
+        The value appears in the :class:`Vnic` object and also the
+        :class:`PrivateIp` object returned by
+        :func:`list_private_ips` and
+        :func:`get_private_ip`.
 
         For more information, see
         `DNS in Your Virtual Cloud Network`__.
 
         When launching an instance, use this `hostnameLabel` instead
         of the deprecated `hostnameLabel` in
-        `:func:`launch_instance_details``.
+        :func:`launch_instance_details`.
         If you provide both, the values must match.
 
         Example: `bminstance1`
@@ -449,17 +449,17 @@ class CreateVnicDetails(object):
         Must be unique across all VNICs in the subnet and comply with
         `RFC 952`__ and
         `RFC 1123`__.
-        The value appears in the `:class:`Vnic`` object and also the
-        `:class:`PrivateIp`` object returned by
-        `:func:`list_private_ips`` and
-        `:func:`get_private_ip``.
+        The value appears in the :class:`Vnic` object and also the
+        :class:`PrivateIp` object returned by
+        :func:`list_private_ips` and
+        :func:`get_private_ip`.
 
         For more information, see
         `DNS in Your Virtual Cloud Network`__.
 
         When launching an instance, use this `hostnameLabel` instead
         of the deprecated `hostnameLabel` in
-        `:func:`launch_instance_details``.
+        :func:`launch_instance_details`.
         If you provide both, the values must match.
 
         Example: `bminstance1`
@@ -553,10 +553,10 @@ class CreateVnicDetails(object):
         available IP address within the subnet's CIDR. If you don't specify a
         value, Oracle automatically assigns a private IP address from the subnet.
         This is the VNIC's *primary* private IP address. The value appears in
-        the `:class:`Vnic`` object and also the
-        `:class:`PrivateIp`` object returned by
-        `:func:`list_private_ips`` and
-        `:func:`get_private_ip``.
+        the :class:`Vnic` object and also the
+        :class:`PrivateIp` object returned by
+        :func:`list_private_ips` and
+        :func:`get_private_ip`.
 
 
         If you specify a `vlanId`, the `privateIp` cannot be specified.
@@ -578,10 +578,10 @@ class CreateVnicDetails(object):
         available IP address within the subnet's CIDR. If you don't specify a
         value, Oracle automatically assigns a private IP address from the subnet.
         This is the VNIC's *primary* private IP address. The value appears in
-        the `:class:`Vnic`` object and also the
-        `:class:`PrivateIp`` object returned by
-        `:func:`list_private_ips`` and
-        `:func:`get_private_ip``.
+        the :class:`Vnic` object and also the
+        :class:`PrivateIp` object returned by
+        :func:`list_private_ips` and
+        :func:`get_private_ip`.
 
 
         If you specify a `vlanId`, the `privateIp` cannot be specified.

@@ -14,6 +14,7 @@ from oci.base_client import BaseClient
 from oci.config import get_config_value_or_default, validate_config
 from oci.signer import Signer
 from oci.util import Sentinel, get_signer_from_authentication_type, AUTHENTICATION_TYPE_FIELD_NAME
+from oci.util import back_up_body_calculate_stream_content_length, is_content_length_calculable_by_req_util
 from oci.exceptions import InvalidAlloyConfig
 from oci.alloy import OCI_SDK_ENABLED_SERVICES_SET
 from .models import os_management_hub_type_mapping
@@ -121,6 +122,10 @@ class SoftwareSourceClient(object):
         """
         Adds packages to a software source. This operation can only be done for custom and versioned custom software sources that are not created using filters.
         For a versioned custom software source, you can only add packages when the source is created. Once content is added to a versioned custom software source, it is immutable.
+        Packages can be of the format:
+          * name (for example: git). If isLatestContentOnly is true, only the latest version of the package will be added, otherwise all versions of the package will be added.
+          * name-version-release.architecture (for example: git-2.43.5-1.el8_10.x86_64)
+          * name-epoch:version-release.architecture (for example: git-0:2.43.5-1.el8_10.x86_64)
 
 
         :param str software_source_id: (required)
@@ -561,7 +566,7 @@ class SoftwareSourceClient(object):
 
     def create_software_source(self, create_software_source_details, **kwargs):
         """
-        Creates a new versioned or custom software source.
+        Creates a new software source.
 
 
         :param oci.os_management_hub.models.CreateSoftwareSourceDetails create_software_source_details: (required)
@@ -1316,7 +1321,7 @@ class SoftwareSourceClient(object):
 
     def get_software_package_by_name(self, software_package_name, **kwargs):
         """
-        Returns information about the specified software package based on its fully qualified name.
+        Returns information about the specified software package based on its fully qualified name (NVRA or NEVRA).
 
 
         :param str software_package_name: (required)
@@ -1512,6 +1517,106 @@ class SoftwareSourceClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def get_software_source_manifest(self, software_source_id, **kwargs):
+        """
+        Returns an archive containing the list of packages in the software source.
+
+
+        :param str software_source_id: (required)
+            The `OCID`__ of the software source.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type stream
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/osmanagementhub/get_software_source_manifest.py.html>`__ to see an example of how to use get_software_source_manifest API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['softwareSourceId']
+        resource_path = "/softwareSources/{softwareSourceId}/manifest"
+        method = "GET"
+        operation_name = "get_software_source_manifest"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/GetSoftwareSourceManifest"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"get_software_source_manifest got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "softwareSourceId": software_source_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/octet-stream",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def list_all_software_packages(self, **kwargs):
         """
         Lists software packages available through the OS Management Hub service.  Filter the list against a variety of criteria
@@ -1698,6 +1803,176 @@ class SoftwareSourceClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def list_available_software_packages(self, software_source_id, **kwargs):
+        """
+        Lists software packages that are available to be added to a custom software source of type MANIFEST.  Filter the list against a variety of criteria
+        including but not limited to its name.
+
+
+        :param str software_source_id: (required)
+            The `OCID`__ of the software source.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str display_name: (optional)
+            A filter to return resources that match the given user-friendly name.
+
+        :param str display_name_contains: (optional)
+            A filter to return resources that may partially match the given display name.
+
+        :param bool is_latest: (optional)
+            Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.
+            For important details about how pagination works, see `List Pagination`__.
+
+            Example: `50`
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
+            For important details about how pagination works, see `List Pagination`__.
+
+            Example: `3`
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str sort_order: (optional)
+            The sort order to use, either 'ASC' or 'DESC'.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+
+            Allowed values are: "timeCreated", "displayName"
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management_hub.models.SoftwarePackageCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/osmanagementhub/list_available_software_packages.py.html>`__ to see an example of how to use list_available_software_packages API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['softwareSourceId']
+        resource_path = "/softwareSources/{softwareSourceId}/availableSoftwarePackages"
+        method = "GET"
+        operation_name = "list_available_software_packages"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListAvailableSoftwarePackages"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "display_name",
+            "display_name_contains",
+            "is_latest",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"list_available_software_packages got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "softwareSourceId": software_source_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeCreated", "displayName"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
+                )
+
+        query_params = {
+            "displayName": kwargs.get("display_name", missing),
+            "displayNameContains": kwargs.get("display_name_contains", missing),
+            "isLatest": kwargs.get("is_latest", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SoftwarePackageCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SoftwarePackageCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def list_entitlements(self, compartment_id, **kwargs):
         """
         Lists entitlements in the specified tenancy `OCID`__. Filter the list against a variety of criteria including but
@@ -1712,7 +1987,7 @@ class SoftwareSourceClient(object):
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str csi: (optional)
-            A filter to return entitlements that match the given CSI.
+            A filter to return entitlements that match the given customer support identifier (CSI).
 
         :param str vendor_name: (optional)
             A filter to return only resources that match the given vendor name.
@@ -2637,7 +2912,7 @@ class SoftwareSourceClient(object):
         :param list[str] software_source_type: (optional)
             The type of the software source.
 
-            Allowed values are: "VENDOR", "CUSTOM", "VERSIONED"
+            Allowed values are: "VENDOR", "CUSTOM", "VERSIONED", "PRIVATE", "THIRD_PARTY"
 
         :param list[str] os_family: (optional)
             A filter to return only resources that match the given operating system family.
@@ -2647,20 +2922,20 @@ class SoftwareSourceClient(object):
         :param list[str] arch_type: (optional)
             A filter to return only instances whose architecture type matches the given architecture.
 
-            Allowed values are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC"
+            Allowed values are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386"
 
         :param list[str] availability: (optional)
-            The availabilities of the software source in a non-OCI environment for a tenancy.
+            The availability of the software source in a non-OCI environment for a tenancy.
 
             Allowed values are: "AVAILABLE", "SELECTED", "RESTRICTED", "UNAVAILABLE"
 
         :param list[str] availability_at_oci: (optional)
-            The availabilities of the software source in an OCI environment for a tenancy.
+            The availability of the software source in an OCI environment for a tenancy.
 
             Allowed values are: "AVAILABLE", "SELECTED", "RESTRICTED", "UNAVAILABLE"
 
         :param list[str] availability_anywhere: (optional)
-            The availabilities of the software source. Use this query parameter to filter across availabilities in different environments.
+            The availability of the software source. Use this query parameter to filter across availabilities in different environments.
 
             Allowed values are: "AVAILABLE", "SELECTED", "RESTRICTED", "UNAVAILABLE"
 
@@ -2762,7 +3037,7 @@ class SoftwareSourceClient(object):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'software_source_type' in kwargs:
-            software_source_type_allowed_values = ["VENDOR", "CUSTOM", "VERSIONED"]
+            software_source_type_allowed_values = ["VENDOR", "CUSTOM", "VERSIONED", "PRIVATE", "THIRD_PARTY"]
             for software_source_type_item in kwargs['software_source_type']:
                 if software_source_type_item not in software_source_type_allowed_values:
                     raise ValueError(
@@ -2778,7 +3053,7 @@ class SoftwareSourceClient(object):
                     )
 
         if 'arch_type' in kwargs:
-            arch_type_allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC"]
+            arch_type_allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386"]
             for arch_type_item in kwargs['arch_type']:
                 if arch_type_item not in arch_type_allowed_values:
                     raise ValueError(
@@ -3202,7 +3477,7 @@ class SoftwareSourceClient(object):
         :param list[str] software_source_type: (optional)
             The type of the software source.
 
-            Allowed values are: "VENDOR", "CUSTOM", "VERSIONED"
+            Allowed values are: "VENDOR", "CUSTOM", "VERSIONED", "PRIVATE", "THIRD_PARTY"
 
         :param str vendor_name: (optional)
             A filter to return only resources that match the given vendor name.
@@ -3217,25 +3492,28 @@ class SoftwareSourceClient(object):
         :param list[str] arch_type: (optional)
             A filter to return only instances whose architecture type matches the given architecture.
 
-            Allowed values are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC"
+            Allowed values are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386"
 
         :param list[str] availability: (optional)
-            The availabilities of the software source in a non-OCI environment for a tenancy.
+            The availability of the software source in a non-OCI environment for a tenancy.
 
             Allowed values are: "AVAILABLE", "SELECTED", "RESTRICTED", "UNAVAILABLE"
 
         :param list[str] availability_at_oci: (optional)
-            The availabilities of the software source in an OCI environment for a tenancy.
+            The availability of the software source in an OCI environment for a tenancy.
 
             Allowed values are: "AVAILABLE", "SELECTED", "RESTRICTED", "UNAVAILABLE"
 
         :param list[str] availability_anywhere: (optional)
-            The availabilities of the software source. Use this query parameter to filter across availabilities in different environments.
+            The availability of the software source. Use this query parameter to filter across availabilities in different environments.
 
             Allowed values are: "AVAILABLE", "SELECTED", "RESTRICTED", "UNAVAILABLE"
 
         :param bool is_mandatory_for_autonomous_linux: (optional)
             Indicates whether the software source is mandatory for the Autonomous Linux service.
+
+        :param bool is_mirror_sync_allowed: (optional)
+            A filter to return software sources which can be synced to a management station.
 
         :param str display_name: (optional)
             A filter to return resources that match the given user-friendly name.
@@ -3317,6 +3595,7 @@ class SoftwareSourceClient(object):
             "availability_at_oci",
             "availability_anywhere",
             "is_mandatory_for_autonomous_linux",
+            "is_mirror_sync_allowed",
             "display_name",
             "display_name_contains",
             "display_name_not_equal_to",
@@ -3333,7 +3612,7 @@ class SoftwareSourceClient(object):
                 f"list_software_sources got unknown kwargs: {extra_kwargs!r}")
 
         if 'software_source_type' in kwargs:
-            software_source_type_allowed_values = ["VENDOR", "CUSTOM", "VERSIONED"]
+            software_source_type_allowed_values = ["VENDOR", "CUSTOM", "VERSIONED", "PRIVATE", "THIRD_PARTY"]
             for software_source_type_item in kwargs['software_source_type']:
                 if software_source_type_item not in software_source_type_allowed_values:
                     raise ValueError(
@@ -3356,7 +3635,7 @@ class SoftwareSourceClient(object):
                     )
 
         if 'arch_type' in kwargs:
-            arch_type_allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC"]
+            arch_type_allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386"]
             for arch_type_item in kwargs['arch_type']:
                 if arch_type_item not in arch_type_allowed_values:
                     raise ValueError(
@@ -3412,6 +3691,7 @@ class SoftwareSourceClient(object):
             "availabilityAtOci": self.base_client.generate_collection_format_param(kwargs.get("availability_at_oci", missing), 'multi'),
             "availabilityAnywhere": self.base_client.generate_collection_format_param(kwargs.get("availability_anywhere", missing), 'multi'),
             "isMandatoryForAutonomousLinux": kwargs.get("is_mandatory_for_autonomous_linux", missing),
+            "isMirrorSyncAllowed": kwargs.get("is_mirror_sync_allowed", missing),
             "displayName": kwargs.get("display_name", missing),
             "displayNameContains": kwargs.get("display_name_contains", missing),
             "displayNameNotEqualTo": self.base_client.generate_collection_format_param(kwargs.get("display_name_not_equal_to", missing), 'multi'),
@@ -3459,6 +3739,258 @@ class SoftwareSourceClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="SoftwareSourceCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def remove_packages_from_software_source(self, software_source_id, remove_packages_from_software_source_details, **kwargs):
+        """
+        Removes packages from a software source. This operation can only be done for custom software sources that are not created using filters.
+        Packages can be of the format:
+          * name (for example: git). This removes all versions of the package.
+          * name-version-release.architecture (for example: git-2.43.5-1.el8_10.x86_64)
+          * name-epoch:version-release.architecture (for example: git-0:2.43.5-1.el8_10.x86_64)
+
+
+        :param str software_source_id: (required)
+            The `OCID`__ of the software source.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.os_management_hub.models.RemovePackagesFromSoftwareSourceDetails remove_packages_from_software_source_details: (required)
+            A list of packages to be removed from the software source.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/osmanagementhub/remove_packages_from_software_source.py.html>`__ to see an example of how to use remove_packages_from_software_source API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['softwareSourceId']
+        resource_path = "/softwareSources/{softwareSourceId}/actions/removePackages"
+        method = "POST"
+        operation_name = "remove_packages_from_software_source"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/RemovePackagesFromSoftwareSource"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"remove_packages_from_software_source got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "softwareSourceId": software_source_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=remove_packages_from_software_source_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=remove_packages_from_software_source_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def replace_packages_in_software_source(self, software_source_id, replace_packages_in_software_source_details, **kwargs):
+        """
+        Replaces packages in a software source with the provided list of packages. This operation can only be done for custom software sources that are not created using filters.
+        Packages can be of the format:
+         * name (for example: git). If isLatestContentOnly is true, only the latest version of the package will be added, otherwise all versions of the package will be added.
+         * name-version-release.architecture (for example: git-2.43.5-1.el8_10.x86_64)
+         * name-epoch:version-release.architecture (for example: git-0:2.43.5-1.el8_10.x86_64)
+
+
+        :param str software_source_id: (required)
+            The `OCID`__ of the software source.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.os_management_hub.models.ReplacePackagesInSoftwareSourceDetails replace_packages_in_software_source_details: (required)
+            A list of packages that will replace the existing packages in the software source.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/osmanagementhub/replace_packages_in_software_source.py.html>`__ to see an example of how to use replace_packages_in_software_source API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['softwareSourceId']
+        resource_path = "/softwareSources/{softwareSourceId}/actions/replacePackages"
+        method = "POST"
+        operation_name = "replace_packages_in_software_source"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ReplacePackagesInSoftwareSource"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"replace_packages_in_software_source got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "softwareSourceId": software_source_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=replace_packages_in_software_source_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=replace_packages_in_software_source_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
@@ -3809,6 +4341,123 @@ class SoftwareSourceClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def software_source_generate_metadata(self, software_source_id, **kwargs):
+        """
+        Regenerates metadata for the specified custom software source.
+
+
+        :param str software_source_id: (required)
+            The `OCID`__ of the software source.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/osmanagementhub/software_source_generate_metadata.py.html>`__ to see an example of how to use software_source_generate_metadata API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['softwareSourceId']
+        resource_path = "/softwareSources/{softwareSourceId}/actions/generateMetadata"
+        method = "POST"
+        operation_name = "software_source_generate_metadata"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/SoftwareSourceGenerateMetadata"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"software_source_generate_metadata got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "softwareSourceId": software_source_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def update_software_source(self, software_source_id, update_software_source_details, **kwargs):
         """
         Updates the specified software source's details, including but not limited to name, description, and tags.
@@ -3917,6 +4566,158 @@ class SoftwareSourceClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_software_source_details,
+                response_type="SoftwareSource",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def update_software_source_manifest(self, update_software_source_manifest_details, software_source_id, **kwargs):
+        """
+        Updates the package list document for the software source.
+
+
+        :param stream update_software_source_manifest_details: (required)
+            Provides the document used to update the package list of the software source.
+
+        :param str software_source_id: (required)
+            The `OCID`__ of the software source.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+        :param int buffer_limit: (optional)
+            A buffer limit for the stream to be buffered. buffer_limit is used to set the buffer size capacity. Streams will be read until the size of the buffer reaches the buffer_limit.
+            If the stream size is greater than the buffer_limit, a BufferError exception will be thrown.
+
+            The buffer_limit parameter is used when the stream object does not have a `seek`, `tell`, or `fileno` property for the Python Request library to calculate out the content length.
+            If buffer_limit is not passed, then the buffer_limit will be defaulted to 100MB.
+            Large streams can cause the process to freeze, consider passing in content-length for large streams instead.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management_hub.models.SoftwareSource`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/osmanagementhub/update_software_source_manifest.py.html>`__ to see an example of how to use update_software_source_manifest API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['softwareSourceId']
+        resource_path = "/softwareSources/{softwareSourceId}/manifest"
+        method = "PUT"
+        operation_name = "update_software_source_manifest"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/UpdateSoftwareSourceManifest"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "buffer_limit",
+            "opc_request_id",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"update_software_source_manifest got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "softwareSourceId": software_source_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        # If the body parameter is optional we need to assign it to a variable so additional type checking can be performed.
+        try:
+            update_software_source_manifest_details
+        except NameError:
+            update_software_source_manifest_details = kwargs.get("update_software_source_manifest_details", missing)
+
+        if update_software_source_manifest_details is not missing and update_software_source_manifest_details is not None:
+            if (not isinstance(update_software_source_manifest_details, (six.binary_type, six.string_types)) and
+                    not hasattr(update_software_source_manifest_details, "read")):
+                raise TypeError('The body must be a string, bytes, or provide a read() method.')
+
+            if hasattr(update_software_source_manifest_details, 'fileno') and hasattr(update_software_source_manifest_details, 'name') and update_software_source_manifest_details.name != '<stdin>':
+                if requests.utils.super_len(update_software_source_manifest_details) == 0:
+                    header_params['Content-Length'] = '0'
+
+            # If content length is not given and stream object have no 'fileno' and is not a string or bytes, try to calculate content length
+            elif 'Content-Length' not in header_params and not is_content_length_calculable_by_req_util(update_software_source_manifest_details):
+                calculated_obj = back_up_body_calculate_stream_content_length(update_software_source_manifest_details, kwargs.get("buffer_limit"))
+                header_params['Content-Length'] = calculated_obj["content_length"]
+                update_software_source_manifest_details = calculated_obj["byte_content"]
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_software_source_manifest_details,
+                response_type="SoftwareSource",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_software_source_manifest_details,
                 response_type="SoftwareSource",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,

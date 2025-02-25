@@ -35,6 +35,10 @@ class PackageNameSummary(object):
     #: This constant has a value of "SRC"
     ARCHITECTURE_SRC = "SRC"
 
+    #: A constant which can be used with the architecture property of a PackageNameSummary.
+    #: This constant has a value of "I386"
+    ARCHITECTURE_I386 = "I386"
+
     def __init__(self, **kwargs):
         """
         Initializes a new PackageNameSummary object with values from keyword arguments.
@@ -58,7 +62,7 @@ class PackageNameSummary(object):
 
         :param architecture:
             The value to assign to the architecture property of this PackageNameSummary.
-            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type architecture: str
 
@@ -187,7 +191,7 @@ class PackageNameSummary(object):
         Gets the architecture of this PackageNameSummary.
         The CPU architecture type for which this package was built.
 
-        Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -206,7 +210,7 @@ class PackageNameSummary(object):
         :param architecture: The architecture of this PackageNameSummary.
         :type: str
         """
-        allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC"]
+        allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC", "I386"]
         if not value_allowed_none_or_none_sentinel(architecture, allowed_values):
             architecture = 'UNKNOWN_ENUM_VALUE'
         self._architecture = architecture

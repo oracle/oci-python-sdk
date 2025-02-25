@@ -243,7 +243,7 @@ class ManagementStationClient(object):
 
     def create_management_station(self, create_management_station_details, **kwargs):
         """
-        Create a management station. You must provide proxy and mirror configuration information.
+        Creates a management station using the proxy and mirror configuration information provided.
 
 
         :param oci.os_management_hub.models.CreateManagementStationDetails create_management_station_details: (required)
@@ -341,7 +341,9 @@ class ManagementStationClient(object):
 
     def delete_management_station(self, management_station_id, **kwargs):
         """
-        Deletes a management station.
+        Deletes a management station. You can't delete a station if there are resources associated with the station
+        (such as instances using the station or profiles associated with the station). Switch stations and edit profiles
+        as needed before deleting the station.
 
 
         :param str management_station_id: (required)
@@ -355,6 +357,13 @@ class ManagementStationClient(object):
             etag from a previous GET or POST response for that resource.
             The resource will be updated or deleted only if the etag you
             provide matches the resource's current etag value.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -389,6 +398,7 @@ class ManagementStationClient(object):
             "allow_control_chars",
             "retry_strategy",
             "if_match",
+            "opc_retry_token",
             "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -410,6 +420,7 @@ class ManagementStationClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
@@ -423,6 +434,7 @@ class ManagementStationClient(object):
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
                 self.base_client.add_opc_client_retries_header(header_params)
                 retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
             return retry_strategy.make_retrying_call(
@@ -448,7 +460,7 @@ class ManagementStationClient(object):
 
     def get_management_station(self, management_station_id, **kwargs):
         """
-        Gets information about the specified management station.
+        Returns information about the specified management station.
 
 
         :param str management_station_id: (required)
@@ -548,7 +560,8 @@ class ManagementStationClient(object):
 
     def list_management_stations(self, **kwargs):
         """
-        Lists management stations in a compartment.
+        Lists management stations within the specified compartment. Filter the list against a variety of criteria
+        including but not limited to name, status, and location.
 
 
         :param str compartment_id: (optional)
@@ -585,6 +598,16 @@ class ManagementStationClient(object):
             Example: `3`
 
             __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param list[str] location: (optional)
+            A filter to return only resources whose location matches the given value.
+
+            Allowed values are: "ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2", "GCP"
+
+        :param list[str] location_not_equal_to: (optional)
+            A filter to return only resources whose location does not match the given value.
+
+            Allowed values are: "ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2", "GCP"
 
         :param str sort_order: (optional)
             The sort order to use, either 'ASC' or 'DESC'.
@@ -640,6 +663,8 @@ class ManagementStationClient(object):
             "managed_instance_id",
             "limit",
             "page",
+            "location",
+            "location_not_equal_to",
             "sort_order",
             "sort_by",
             "opc_request_id",
@@ -656,6 +681,22 @@ class ManagementStationClient(object):
                 raise ValueError(
                     f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
+
+        if 'location' in kwargs:
+            location_allowed_values = ["ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2", "GCP"]
+            for location_item in kwargs['location']:
+                if location_item not in location_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `location`, must be one of { location_allowed_values }"
+                    )
+
+        if 'location_not_equal_to' in kwargs:
+            location_not_equal_to_allowed_values = ["ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2", "GCP"]
+            for location_not_equal_to_item in kwargs['location_not_equal_to']:
+                if location_not_equal_to_item not in location_not_equal_to_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `location_not_equal_to`, must be one of { location_not_equal_to_allowed_values }"
+                    )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
@@ -679,6 +720,8 @@ class ManagementStationClient(object):
             "managedInstanceId": kwargs.get("managed_instance_id", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
+            "location": self.base_client.generate_collection_format_param(kwargs.get("location", missing), 'multi'),
+            "locationNotEqualTo": self.base_client.generate_collection_format_param(kwargs.get("location_not_equal_to", missing), 'multi'),
             "sortOrder": kwargs.get("sort_order", missing),
             "sortBy": kwargs.get("sort_by", missing),
             "id": kwargs.get("id", missing)
@@ -907,7 +950,7 @@ class ManagementStationClient(object):
 
     def refresh_management_station_config(self, management_station_id, **kwargs):
         """
-        Refreshes the list of software sources mirrored by the management station to support the associated instances.
+        Refreshes the list of software sources mirrored by the management station.
 
 
         :param str management_station_id: (required)
@@ -1024,7 +1067,7 @@ class ManagementStationClient(object):
 
     def synchronize_mirrors(self, management_station_id, synchronize_mirrors_details, **kwargs):
         """
-        Synchronize the specified software sources mirrors on the management station.
+        Synchronize the specified software sources mirrored on the management station.
 
 
         :param str management_station_id: (required)

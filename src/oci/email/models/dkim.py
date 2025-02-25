@@ -102,6 +102,14 @@ class Dkim(object):
             The value to assign to the txt_record_value property of this Dkim.
         :type txt_record_value: str
 
+        :param is_imported:
+            The value to assign to the is_imported property of this Dkim.
+        :type is_imported: bool
+
+        :param key_length:
+            The value to assign to the key_length property of this Dkim.
+        :type key_length: int
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this Dkim.
         :type freeform_tags: dict(str, str)
@@ -128,6 +136,8 @@ class Dkim(object):
             'dns_subdomain_name': 'str',
             'cname_record_value': 'str',
             'txt_record_value': 'str',
+            'is_imported': 'bool',
+            'key_length': 'int',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -146,6 +156,8 @@ class Dkim(object):
             'dns_subdomain_name': 'dnsSubdomainName',
             'cname_record_value': 'cnameRecordValue',
             'txt_record_value': 'txtRecordValue',
+            'is_imported': 'isImported',
+            'key_length': 'keyLength',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -163,6 +175,8 @@ class Dkim(object):
         self._dns_subdomain_name = None
         self._cname_record_value = None
         self._txt_record_value = None
+        self._is_imported = None
+        self._key_length = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -508,6 +522,54 @@ class Dkim(object):
         :type: str
         """
         self._txt_record_value = txt_record_value
+
+    @property
+    def is_imported(self):
+        """
+        Gets the is_imported of this Dkim.
+        Indicates whether the DKIM was imported.
+
+
+        :return: The is_imported of this Dkim.
+        :rtype: bool
+        """
+        return self._is_imported
+
+    @is_imported.setter
+    def is_imported(self, is_imported):
+        """
+        Sets the is_imported of this Dkim.
+        Indicates whether the DKIM was imported.
+
+
+        :param is_imported: The is_imported of this Dkim.
+        :type: bool
+        """
+        self._is_imported = is_imported
+
+    @property
+    def key_length(self):
+        """
+        Gets the key_length of this Dkim.
+        Length of the RSA key used in the DKIM.
+
+
+        :return: The key_length of this Dkim.
+        :rtype: int
+        """
+        return self._key_length
+
+    @key_length.setter
+    def key_length(self, key_length):
+        """
+        Sets the key_length of this Dkim.
+        Length of the RSA key used in the DKIM.
+
+
+        :param key_length: The key_length of this Dkim.
+        :type: int
+        """
+        self._key_length = key_length
 
     @property
     def freeform_tags(self):

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ManagementStationSummary(object):
     """
-    Summary of the Management Station.
+    Provides summary information for a management station.
     """
 
     #: A constant which can be used with the overall_state property of a ManagementStationSummary.
@@ -50,6 +50,30 @@ class ManagementStationSummary(object):
     #: A constant which can be used with the health_state property of a ManagementStationSummary.
     #: This constant has a value of "UNHEALTHY"
     HEALTH_STATE_UNHEALTHY = "UNHEALTHY"
+
+    #: A constant which can be used with the health_state property of a ManagementStationSummary.
+    #: This constant has a value of "UNAVAILABLE"
+    HEALTH_STATE_UNAVAILABLE = "UNAVAILABLE"
+
+    #: A constant which can be used with the location property of a ManagementStationSummary.
+    #: This constant has a value of "ON_PREMISE"
+    LOCATION_ON_PREMISE = "ON_PREMISE"
+
+    #: A constant which can be used with the location property of a ManagementStationSummary.
+    #: This constant has a value of "OCI_COMPUTE"
+    LOCATION_OCI_COMPUTE = "OCI_COMPUTE"
+
+    #: A constant which can be used with the location property of a ManagementStationSummary.
+    #: This constant has a value of "AZURE"
+    LOCATION_AZURE = "AZURE"
+
+    #: A constant which can be used with the location property of a ManagementStationSummary.
+    #: This constant has a value of "EC2"
+    LOCATION_EC2 = "EC2"
+
+    #: A constant which can be used with the location property of a ManagementStationSummary.
+    #: This constant has a value of "GCP"
+    LOCATION_GCP = "GCP"
 
     def __init__(self, **kwargs):
         """
@@ -100,7 +124,7 @@ class ManagementStationSummary(object):
 
         :param health_state:
             The value to assign to the health_state property of this ManagementStationSummary.
-            Allowed values for this property are: "HEALTHY", "UNHEALTHY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "HEALTHY", "UNHEALTHY", "UNAVAILABLE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type health_state: str
 
@@ -115,6 +139,12 @@ class ManagementStationSummary(object):
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this ManagementStationSummary.
         :type lifecycle_state: str
+
+        :param location:
+            The value to assign to the location property of this ManagementStationSummary.
+            Allowed values for this property are: "ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2", "GCP", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type location: str
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ManagementStationSummary.
@@ -144,6 +174,7 @@ class ManagementStationSummary(object):
             'overall_percentage': 'int',
             'mirror_capacity': 'int',
             'lifecycle_state': 'str',
+            'location': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -164,6 +195,7 @@ class ManagementStationSummary(object):
             'overall_percentage': 'overallPercentage',
             'mirror_capacity': 'mirrorCapacity',
             'lifecycle_state': 'lifecycleState',
+            'location': 'location',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -183,6 +215,7 @@ class ManagementStationSummary(object):
         self._overall_percentage = None
         self._mirror_capacity = None
         self._lifecycle_state = None
+        self._location = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -463,7 +496,7 @@ class ManagementStationSummary(object):
         Gets the health_state of this ManagementStationSummary.
         Overall health status of the managment station.
 
-        Allowed values for this property are: "HEALTHY", "UNHEALTHY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "HEALTHY", "UNHEALTHY", "UNAVAILABLE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -482,7 +515,7 @@ class ManagementStationSummary(object):
         :param health_state: The health_state of this ManagementStationSummary.
         :type: str
         """
-        allowed_values = ["HEALTHY", "UNHEALTHY"]
+        allowed_values = ["HEALTHY", "UNHEALTHY", "UNAVAILABLE"]
         if not value_allowed_none_or_none_sentinel(health_state, allowed_values):
             health_state = 'UNKNOWN_ENUM_VALUE'
         self._health_state = health_state
@@ -558,6 +591,36 @@ class ManagementStationSummary(object):
         :type: str
         """
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def location(self):
+        """
+        Gets the location of this ManagementStationSummary.
+        The location of the instance that is acting as the management station.
+
+        Allowed values for this property are: "ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2", "GCP", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The location of this ManagementStationSummary.
+        :rtype: str
+        """
+        return self._location
+
+    @location.setter
+    def location(self, location):
+        """
+        Sets the location of this ManagementStationSummary.
+        The location of the instance that is acting as the management station.
+
+
+        :param location: The location of this ManagementStationSummary.
+        :type: str
+        """
+        allowed_values = ["ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2", "GCP"]
+        if not value_allowed_none_or_none_sentinel(location, allowed_values):
+            location = 'UNKNOWN_ENUM_VALUE'
+        self._location = location
 
     @property
     def freeform_tags(self):

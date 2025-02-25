@@ -36,25 +36,32 @@ class MirrorConfiguration(object):
             The value to assign to the sslcert property of this MirrorConfiguration.
         :type sslcert: str
 
+        :param is_sslverify_enabled:
+            The value to assign to the is_sslverify_enabled property of this MirrorConfiguration.
+        :type is_sslverify_enabled: bool
+
         """
         self.swagger_types = {
             'directory': 'str',
             'port': 'str',
             'sslport': 'str',
-            'sslcert': 'str'
+            'sslcert': 'str',
+            'is_sslverify_enabled': 'bool'
         }
 
         self.attribute_map = {
             'directory': 'directory',
             'port': 'port',
             'sslport': 'sslport',
-            'sslcert': 'sslcert'
+            'sslcert': 'sslcert',
+            'is_sslverify_enabled': 'isSslverifyEnabled'
         }
 
         self._directory = None
         self._port = None
         self._sslport = None
         self._sslcert = None
+        self._is_sslverify_enabled = None
 
     @property
     def directory(self):
@@ -151,6 +158,30 @@ class MirrorConfiguration(object):
         :type: str
         """
         self._sslcert = sslcert
+
+    @property
+    def is_sslverify_enabled(self):
+        """
+        Gets the is_sslverify_enabled of this MirrorConfiguration.
+        When enabled, the SSL certificate is verified whenever an instance installs or updates a package from a software source that is mirrored on the management station.
+
+
+        :return: The is_sslverify_enabled of this MirrorConfiguration.
+        :rtype: bool
+        """
+        return self._is_sslverify_enabled
+
+    @is_sslverify_enabled.setter
+    def is_sslverify_enabled(self, is_sslverify_enabled):
+        """
+        Sets the is_sslverify_enabled of this MirrorConfiguration.
+        When enabled, the SSL certificate is verified whenever an instance installs or updates a package from a software source that is mirrored on the management station.
+
+
+        :param is_sslverify_enabled: The is_sslverify_enabled of this MirrorConfiguration.
+        :type: bool
+        """
+        self._is_sslverify_enabled = is_sslverify_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

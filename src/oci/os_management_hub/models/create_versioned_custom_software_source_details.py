@@ -15,6 +15,18 @@ class CreateVersionedCustomSoftwareSourceDetails(CreateSoftwareSourceDetails):
     Provides the information used to create a versioned custom software source.
     """
 
+    #: A constant which can be used with the software_source_sub_type property of a CreateVersionedCustomSoftwareSourceDetails.
+    #: This constant has a value of "FILTER"
+    SOFTWARE_SOURCE_SUB_TYPE_FILTER = "FILTER"
+
+    #: A constant which can be used with the software_source_sub_type property of a CreateVersionedCustomSoftwareSourceDetails.
+    #: This constant has a value of "MANIFEST"
+    SOFTWARE_SOURCE_SUB_TYPE_MANIFEST = "MANIFEST"
+
+    #: A constant which can be used with the software_source_sub_type property of a CreateVersionedCustomSoftwareSourceDetails.
+    #: This constant has a value of "SNAPSHOT"
+    SOFTWARE_SOURCE_SUB_TYPE_SNAPSHOT = "SNAPSHOT"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateVersionedCustomSoftwareSourceDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.os_management_hub.models.CreateVersionedCustomSoftwareSourceDetails.software_source_type` attribute
@@ -35,7 +47,7 @@ class CreateVersionedCustomSoftwareSourceDetails(CreateSoftwareSourceDetails):
 
         :param software_source_type:
             The value to assign to the software_source_type property of this CreateVersionedCustomSoftwareSourceDetails.
-            Allowed values for this property are: "VENDOR", "CUSTOM", "VERSIONED"
+            Allowed values for this property are: "VENDOR", "CUSTOM", "VERSIONED", "PRIVATE", "THIRD_PARTY"
         :type software_source_type: str
 
         :param freeform_tags:
@@ -74,6 +86,11 @@ class CreateVersionedCustomSoftwareSourceDetails(CreateSoftwareSourceDetails):
             The value to assign to the packages property of this CreateVersionedCustomSoftwareSourceDetails.
         :type packages: list[str]
 
+        :param software_source_sub_type:
+            The value to assign to the software_source_sub_type property of this CreateVersionedCustomSoftwareSourceDetails.
+            Allowed values for this property are: "FILTER", "MANIFEST", "SNAPSHOT"
+        :type software_source_sub_type: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -88,7 +105,8 @@ class CreateVersionedCustomSoftwareSourceDetails(CreateSoftwareSourceDetails):
             'is_auto_resolve_dependencies': 'bool',
             'is_created_from_package_list': 'bool',
             'is_latest_content_only': 'bool',
-            'packages': 'list[str]'
+            'packages': 'list[str]',
+            'software_source_sub_type': 'str'
         }
 
         self.attribute_map = {
@@ -104,7 +122,8 @@ class CreateVersionedCustomSoftwareSourceDetails(CreateSoftwareSourceDetails):
             'is_auto_resolve_dependencies': 'isAutoResolveDependencies',
             'is_created_from_package_list': 'isCreatedFromPackageList',
             'is_latest_content_only': 'isLatestContentOnly',
-            'packages': 'packages'
+            'packages': 'packages',
+            'software_source_sub_type': 'softwareSourceSubType'
         }
 
         self._compartment_id = None
@@ -120,6 +139,7 @@ class CreateVersionedCustomSoftwareSourceDetails(CreateSoftwareSourceDetails):
         self._is_created_from_package_list = None
         self._is_latest_content_only = None
         self._packages = None
+        self._software_source_sub_type = None
         self._software_source_type = 'VERSIONED'
 
     @property
@@ -295,6 +315,37 @@ class CreateVersionedCustomSoftwareSourceDetails(CreateSoftwareSourceDetails):
         :type: list[str]
         """
         self._packages = packages
+
+    @property
+    def software_source_sub_type(self):
+        """
+        Gets the software_source_sub_type of this CreateVersionedCustomSoftwareSourceDetails.
+        The creation type of a software source.
+
+        Allowed values for this property are: "FILTER", "MANIFEST", "SNAPSHOT"
+
+
+        :return: The software_source_sub_type of this CreateVersionedCustomSoftwareSourceDetails.
+        :rtype: str
+        """
+        return self._software_source_sub_type
+
+    @software_source_sub_type.setter
+    def software_source_sub_type(self, software_source_sub_type):
+        """
+        Sets the software_source_sub_type of this CreateVersionedCustomSoftwareSourceDetails.
+        The creation type of a software source.
+
+
+        :param software_source_sub_type: The software_source_sub_type of this CreateVersionedCustomSoftwareSourceDetails.
+        :type: str
+        """
+        allowed_values = ["FILTER", "MANIFEST", "SNAPSHOT"]
+        if not value_allowed_none_or_none_sentinel(software_source_sub_type, allowed_values):
+            raise ValueError(
+                f"Invalid value for `software_source_sub_type`, must be None or one of {allowed_values}"
+            )
+        self._software_source_sub_type = software_source_sub_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

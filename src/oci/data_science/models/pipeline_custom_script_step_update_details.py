@@ -23,7 +23,7 @@ class PipelineCustomScriptStepUpdateDetails(PipelineStepUpdateDetails):
 
         :param step_type:
             The value to assign to the step_type property of this PipelineCustomScriptStepUpdateDetails.
-            Allowed values for this property are: "ML_JOB", "CUSTOM_SCRIPT", "CONTAINER"
+            Allowed values for this property are: "ML_JOB", "CUSTOM_SCRIPT", "CONTAINER", "DATAFLOW"
         :type step_type: str
 
         :param step_name:
@@ -42,13 +42,18 @@ class PipelineCustomScriptStepUpdateDetails(PipelineStepUpdateDetails):
             The value to assign to the step_infrastructure_configuration_details property of this PipelineCustomScriptStepUpdateDetails.
         :type step_infrastructure_configuration_details: oci.data_science.models.PipelineInfrastructureConfigurationDetails
 
+        :param step_storage_mount_configuration_details_list:
+            The value to assign to the step_storage_mount_configuration_details_list property of this PipelineCustomScriptStepUpdateDetails.
+        :type step_storage_mount_configuration_details_list: list[oci.data_science.models.StorageMountConfigurationDetails]
+
         """
         self.swagger_types = {
             'step_type': 'str',
             'step_name': 'str',
             'description': 'str',
             'step_configuration_details': 'PipelineStepConfigurationDetails',
-            'step_infrastructure_configuration_details': 'PipelineInfrastructureConfigurationDetails'
+            'step_infrastructure_configuration_details': 'PipelineInfrastructureConfigurationDetails',
+            'step_storage_mount_configuration_details_list': 'list[StorageMountConfigurationDetails]'
         }
 
         self.attribute_map = {
@@ -56,7 +61,8 @@ class PipelineCustomScriptStepUpdateDetails(PipelineStepUpdateDetails):
             'step_name': 'stepName',
             'description': 'description',
             'step_configuration_details': 'stepConfigurationDetails',
-            'step_infrastructure_configuration_details': 'stepInfrastructureConfigurationDetails'
+            'step_infrastructure_configuration_details': 'stepInfrastructureConfigurationDetails',
+            'step_storage_mount_configuration_details_list': 'stepStorageMountConfigurationDetailsList'
         }
 
         self._step_type = None
@@ -64,6 +70,7 @@ class PipelineCustomScriptStepUpdateDetails(PipelineStepUpdateDetails):
         self._description = None
         self._step_configuration_details = None
         self._step_infrastructure_configuration_details = None
+        self._step_storage_mount_configuration_details_list = None
         self._step_type = 'CUSTOM_SCRIPT'
 
     @property
@@ -85,6 +92,30 @@ class PipelineCustomScriptStepUpdateDetails(PipelineStepUpdateDetails):
         :type: oci.data_science.models.PipelineInfrastructureConfigurationDetails
         """
         self._step_infrastructure_configuration_details = step_infrastructure_configuration_details
+
+    @property
+    def step_storage_mount_configuration_details_list(self):
+        """
+        Gets the step_storage_mount_configuration_details_list of this PipelineCustomScriptStepUpdateDetails.
+        The storage mount details to mount to the instance running the pipeline step.
+
+
+        :return: The step_storage_mount_configuration_details_list of this PipelineCustomScriptStepUpdateDetails.
+        :rtype: list[oci.data_science.models.StorageMountConfigurationDetails]
+        """
+        return self._step_storage_mount_configuration_details_list
+
+    @step_storage_mount_configuration_details_list.setter
+    def step_storage_mount_configuration_details_list(self, step_storage_mount_configuration_details_list):
+        """
+        Sets the step_storage_mount_configuration_details_list of this PipelineCustomScriptStepUpdateDetails.
+        The storage mount details to mount to the instance running the pipeline step.
+
+
+        :param step_storage_mount_configuration_details_list: The step_storage_mount_configuration_details_list of this PipelineCustomScriptStepUpdateDetails.
+        :type: list[oci.data_science.models.StorageMountConfigurationDetails]
+        """
+        self._step_storage_mount_configuration_details_list = step_storage_mount_configuration_details_list
 
     def __repr__(self):
         return formatted_flat_dict(self)
