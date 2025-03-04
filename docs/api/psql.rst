@@ -20,6 +20,9 @@ Psql
 
     oci.psql.models.Backup
     oci.psql.models.BackupCollection
+    oci.psql.models.BackupCopyDetails
+    oci.psql.models.BackupCopyPolicy
+    oci.psql.models.BackupCopyStatusDetails
     oci.psql.models.BackupPolicy
     oci.psql.models.BackupSourceDetails
     oci.psql.models.BackupSummary
@@ -79,6 +82,7 @@ Psql
     oci.psql.models.ShapeMemoryOptions
     oci.psql.models.ShapeOcpuOptions
     oci.psql.models.ShapeSummary
+    oci.psql.models.SourceBackupDetails
     oci.psql.models.SourceDetails
     oci.psql.models.StorageDetails
     oci.psql.models.UpdateBackupDetails

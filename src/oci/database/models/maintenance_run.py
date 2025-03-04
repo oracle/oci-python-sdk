@@ -224,6 +224,10 @@ class MaintenanceRun(object):
             The value to assign to the peer_maintenance_run_id property of this MaintenanceRun.
         :type peer_maintenance_run_id: str
 
+        :param peer_maintenance_run_ids:
+            The value to assign to the peer_maintenance_run_ids property of this MaintenanceRun.
+        :type peer_maintenance_run_ids: list[str]
+
         :param patching_mode:
             The value to assign to the patching_mode property of this MaintenanceRun.
             Allowed values for this property are: "ROLLING", "NONROLLING", 'UNKNOWN_ENUM_VALUE'.
@@ -310,6 +314,7 @@ class MaintenanceRun(object):
             'maintenance_subtype': 'str',
             'is_dst_file_update_enabled': 'bool',
             'peer_maintenance_run_id': 'str',
+            'peer_maintenance_run_ids': 'list[str]',
             'patching_mode': 'str',
             'patch_failure_count': 'int',
             'target_db_server_version': 'str',
@@ -345,6 +350,7 @@ class MaintenanceRun(object):
             'maintenance_subtype': 'maintenanceSubtype',
             'is_dst_file_update_enabled': 'isDstFileUpdateEnabled',
             'peer_maintenance_run_id': 'peerMaintenanceRunId',
+            'peer_maintenance_run_ids': 'peerMaintenanceRunIds',
             'patching_mode': 'patchingMode',
             'patch_failure_count': 'patchFailureCount',
             'target_db_server_version': 'targetDbServerVersion',
@@ -379,6 +385,7 @@ class MaintenanceRun(object):
         self._maintenance_subtype = None
         self._is_dst_file_update_enabled = None
         self._peer_maintenance_run_id = None
+        self._peer_maintenance_run_ids = None
         self._patching_mode = None
         self._patch_failure_count = None
         self._target_db_server_version = None
@@ -807,6 +814,30 @@ class MaintenanceRun(object):
         :type: str
         """
         self._peer_maintenance_run_id = peer_maintenance_run_id
+
+    @property
+    def peer_maintenance_run_ids(self):
+        """
+        Gets the peer_maintenance_run_ids of this MaintenanceRun.
+        The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
+
+
+        :return: The peer_maintenance_run_ids of this MaintenanceRun.
+        :rtype: list[str]
+        """
+        return self._peer_maintenance_run_ids
+
+    @peer_maintenance_run_ids.setter
+    def peer_maintenance_run_ids(self, peer_maintenance_run_ids):
+        """
+        Sets the peer_maintenance_run_ids of this MaintenanceRun.
+        The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
+
+
+        :param peer_maintenance_run_ids: The peer_maintenance_run_ids of this MaintenanceRun.
+        :type: list[str]
+        """
+        self._peer_maintenance_run_ids = peer_maintenance_run_ids
 
     @property
     def patching_mode(self):

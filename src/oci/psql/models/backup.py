@@ -23,6 +23,10 @@ class Backup(object):
     #: This constant has a value of "MANUAL"
     SOURCE_TYPE_MANUAL = "MANUAL"
 
+    #: A constant which can be used with the source_type property of a Backup.
+    #: This constant has a value of "COPIED"
+    SOURCE_TYPE_COPIED = "COPIED"
+
     #: A constant which can be used with the lifecycle_state property of a Backup.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -66,13 +70,17 @@ class Backup(object):
 
         :param source_type:
             The value to assign to the source_type property of this Backup.
-            Allowed values for this property are: "SCHEDULED", "MANUAL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SCHEDULED", "MANUAL", "COPIED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type source_type: str
 
         :param time_created:
             The value to assign to the time_created property of this Backup.
         :type time_created: datetime
+
+        :param time_created_precise:
+            The value to assign to the time_created_precise property of this Backup.
+        :type time_created_precise: datetime
 
         :param time_updated:
             The value to assign to the time_updated property of this Backup.
@@ -104,6 +112,10 @@ class Backup(object):
             The value to assign to the db_system_details property of this Backup.
         :type db_system_details: oci.psql.models.DbSystemDetails
 
+        :param source_backup_details:
+            The value to assign to the source_backup_details property of this Backup.
+        :type source_backup_details: oci.psql.models.SourceBackupDetails
+
         :param last_accepted_request_token:
             The value to assign to the last_accepted_request_token property of this Backup.
         :type last_accepted_request_token: str
@@ -111,6 +123,10 @@ class Backup(object):
         :param last_completed_request_token:
             The value to assign to the last_completed_request_token property of this Backup.
         :type last_completed_request_token: str
+
+        :param copy_status:
+            The value to assign to the copy_status property of this Backup.
+        :type copy_status: list[oci.psql.models.BackupCopyStatusDetails]
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this Backup.
@@ -132,6 +148,7 @@ class Backup(object):
             'compartment_id': 'str',
             'source_type': 'str',
             'time_created': 'datetime',
+            'time_created_precise': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
@@ -139,8 +156,10 @@ class Backup(object):
             'backup_size': 'int',
             'db_system_id': 'str',
             'db_system_details': 'DbSystemDetails',
+            'source_backup_details': 'SourceBackupDetails',
             'last_accepted_request_token': 'str',
             'last_completed_request_token': 'str',
+            'copy_status': 'list[BackupCopyStatusDetails]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -153,6 +172,7 @@ class Backup(object):
             'compartment_id': 'compartmentId',
             'source_type': 'sourceType',
             'time_created': 'timeCreated',
+            'time_created_precise': 'timeCreatedPrecise',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
@@ -160,8 +180,10 @@ class Backup(object):
             'backup_size': 'backupSize',
             'db_system_id': 'dbSystemId',
             'db_system_details': 'dbSystemDetails',
+            'source_backup_details': 'sourceBackupDetails',
             'last_accepted_request_token': 'lastAcceptedRequestToken',
             'last_completed_request_token': 'lastCompletedRequestToken',
+            'copy_status': 'copyStatus',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -173,6 +195,7 @@ class Backup(object):
         self._compartment_id = None
         self._source_type = None
         self._time_created = None
+        self._time_created_precise = None
         self._time_updated = None
         self._lifecycle_state = None
         self._lifecycle_details = None
@@ -180,8 +203,10 @@ class Backup(object):
         self._backup_size = None
         self._db_system_id = None
         self._db_system_details = None
+        self._source_backup_details = None
         self._last_accepted_request_token = None
         self._last_completed_request_token = None
+        self._copy_status = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -294,9 +319,9 @@ class Backup(object):
     def source_type(self):
         """
         Gets the source_type of this Backup.
-        Specifies whether the backup was created manually, or by a management policy.
+        Specifies whether the backup was created manually, taken on schedule defined in the a backup policy, or copied from the remote location.
 
-        Allowed values for this property are: "SCHEDULED", "MANUAL", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "SCHEDULED", "MANUAL", "COPIED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -309,13 +334,13 @@ class Backup(object):
     def source_type(self, source_type):
         """
         Sets the source_type of this Backup.
-        Specifies whether the backup was created manually, or by a management policy.
+        Specifies whether the backup was created manually, taken on schedule defined in the a backup policy, or copied from the remote location.
 
 
         :param source_type: The source_type of this Backup.
         :type: str
         """
-        allowed_values = ["SCHEDULED", "MANUAL"]
+        allowed_values = ["SCHEDULED", "MANUAL", "COPIED"]
         if not value_allowed_none_or_none_sentinel(source_type, allowed_values):
             source_type = 'UNKNOWN_ENUM_VALUE'
         self._source_type = source_type
@@ -353,6 +378,42 @@ class Backup(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def time_created_precise(self):
+        """
+        Gets the time_created_precise of this Backup.
+        The date and time the backup was created.
+        This is the time the actual point-in-time data snapshot was taken,
+        expressed in `RFC 3339`__ timestamp format.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/rfc/rfc3339
+
+
+        :return: The time_created_precise of this Backup.
+        :rtype: datetime
+        """
+        return self._time_created_precise
+
+    @time_created_precise.setter
+    def time_created_precise(self, time_created_precise):
+        """
+        Sets the time_created_precise of this Backup.
+        The date and time the backup was created.
+        This is the time the actual point-in-time data snapshot was taken,
+        expressed in `RFC 3339`__ timestamp format.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/rfc/rfc3339
+
+
+        :param time_created_precise: The time_created_precise of this Backup.
+        :type: datetime
+        """
+        self._time_created_precise = time_created_precise
 
     @property
     def time_updated(self):
@@ -539,6 +600,26 @@ class Backup(object):
         self._db_system_details = db_system_details
 
     @property
+    def source_backup_details(self):
+        """
+        Gets the source_backup_details of this Backup.
+
+        :return: The source_backup_details of this Backup.
+        :rtype: oci.psql.models.SourceBackupDetails
+        """
+        return self._source_backup_details
+
+    @source_backup_details.setter
+    def source_backup_details(self, source_backup_details):
+        """
+        Sets the source_backup_details of this Backup.
+
+        :param source_backup_details: The source_backup_details of this Backup.
+        :type: oci.psql.models.SourceBackupDetails
+        """
+        self._source_backup_details = source_backup_details
+
+    @property
     def last_accepted_request_token(self):
         """
         Gets the last_accepted_request_token of this Backup.
@@ -585,6 +666,30 @@ class Backup(object):
         :type: str
         """
         self._last_completed_request_token = last_completed_request_token
+
+    @property
+    def copy_status(self):
+        """
+        Gets the copy_status of this Backup.
+        List of status for Backup Copy
+
+
+        :return: The copy_status of this Backup.
+        :rtype: list[oci.psql.models.BackupCopyStatusDetails]
+        """
+        return self._copy_status
+
+    @copy_status.setter
+    def copy_status(self, copy_status):
+        """
+        Sets the copy_status of this Backup.
+        List of status for Backup Copy
+
+
+        :param copy_status: The copy_status of this Backup.
+        :type: list[oci.psql.models.BackupCopyStatusDetails]
+        """
+        self._copy_status = copy_status
 
     @property
     def freeform_tags(self):

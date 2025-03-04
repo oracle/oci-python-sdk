@@ -37,6 +37,7 @@ Tenant Manager Control Plane
     :template: autosummary/model_class.rst
 
     oci.tenant_manager_control_plane.models.ActivateOrderDetails
+    oci.tenant_manager_control_plane.models.AdditionalAssignedRegionCollection
     oci.tenant_manager_control_plane.models.AssignedSubscription
     oci.tenant_manager_control_plane.models.AssignedSubscriptionCollection
     oci.tenant_manager_control_plane.models.AssignedSubscriptionLineItemCollection

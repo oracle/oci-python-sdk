@@ -69,6 +69,10 @@ class CreateFileSystemDetails(object):
             The value to assign to the filesystem_snapshot_policy_id property of this CreateFileSystemDetails.
         :type filesystem_snapshot_policy_id: str
 
+        :param are_quota_rules_enabled:
+            The value to assign to the are_quota_rules_enabled property of this CreateFileSystemDetails.
+        :type are_quota_rules_enabled: bool
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -80,7 +84,8 @@ class CreateFileSystemDetails(object):
             'kms_key_id': 'str',
             'source_snapshot_id': 'str',
             'clone_attach_status': 'str',
-            'filesystem_snapshot_policy_id': 'str'
+            'filesystem_snapshot_policy_id': 'str',
+            'are_quota_rules_enabled': 'bool'
         }
 
         self.attribute_map = {
@@ -93,7 +98,8 @@ class CreateFileSystemDetails(object):
             'kms_key_id': 'kmsKeyId',
             'source_snapshot_id': 'sourceSnapshotId',
             'clone_attach_status': 'cloneAttachStatus',
-            'filesystem_snapshot_policy_id': 'filesystemSnapshotPolicyId'
+            'filesystem_snapshot_policy_id': 'filesystemSnapshotPolicyId',
+            'are_quota_rules_enabled': 'areQuotaRulesEnabled'
         }
 
         self._availability_domain = None
@@ -106,6 +112,7 @@ class CreateFileSystemDetails(object):
         self._source_snapshot_id = None
         self._clone_attach_status = None
         self._filesystem_snapshot_policy_id = None
+        self._are_quota_rules_enabled = None
 
     @property
     def availability_domain(self):
@@ -411,6 +418,30 @@ class CreateFileSystemDetails(object):
         :type: str
         """
         self._filesystem_snapshot_policy_id = filesystem_snapshot_policy_id
+
+    @property
+    def are_quota_rules_enabled(self):
+        """
+        Gets the are_quota_rules_enabled of this CreateFileSystemDetails.
+        Specifies the enforcement of quota rules on the file system.
+
+
+        :return: The are_quota_rules_enabled of this CreateFileSystemDetails.
+        :rtype: bool
+        """
+        return self._are_quota_rules_enabled
+
+    @are_quota_rules_enabled.setter
+    def are_quota_rules_enabled(self, are_quota_rules_enabled):
+        """
+        Sets the are_quota_rules_enabled of this CreateFileSystemDetails.
+        Specifies the enforcement of quota rules on the file system.
+
+
+        :param are_quota_rules_enabled: The are_quota_rules_enabled of this CreateFileSystemDetails.
+        :type: bool
+        """
+        self._are_quota_rules_enabled = are_quota_rules_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

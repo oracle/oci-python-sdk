@@ -114,6 +114,14 @@ class ExascaleDbStorageVault(object):
             The value to assign to the additional_flash_cache_in_percent property of this ExascaleDbStorageVault.
         :type additional_flash_cache_in_percent: int
 
+        :param cluster_placement_group_id:
+            The value to assign to the cluster_placement_group_id property of this ExascaleDbStorageVault.
+        :type cluster_placement_group_id: str
+
+        :param subscription_id:
+            The value to assign to the subscription_id property of this ExascaleDbStorageVault.
+        :type subscription_id: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -132,7 +140,9 @@ class ExascaleDbStorageVault(object):
             'exadata_infrastructure_id': 'str',
             'system_tags': 'dict(str, dict(str, object))',
             'high_capacity_database_storage': 'ExascaleDbStorageDetails',
-            'additional_flash_cache_in_percent': 'int'
+            'additional_flash_cache_in_percent': 'int',
+            'cluster_placement_group_id': 'str',
+            'subscription_id': 'str'
         }
 
         self.attribute_map = {
@@ -152,7 +162,9 @@ class ExascaleDbStorageVault(object):
             'exadata_infrastructure_id': 'exadataInfrastructureId',
             'system_tags': 'systemTags',
             'high_capacity_database_storage': 'highCapacityDatabaseStorage',
-            'additional_flash_cache_in_percent': 'additionalFlashCacheInPercent'
+            'additional_flash_cache_in_percent': 'additionalFlashCacheInPercent',
+            'cluster_placement_group_id': 'clusterPlacementGroupId',
+            'subscription_id': 'subscriptionId'
         }
 
         self._id = None
@@ -172,6 +184,8 @@ class ExascaleDbStorageVault(object):
         self._system_tags = None
         self._high_capacity_database_storage = None
         self._additional_flash_cache_in_percent = None
+        self._cluster_placement_group_id = None
+        self._subscription_id = None
 
     @property
     def id(self):
@@ -626,6 +640,62 @@ class ExascaleDbStorageVault(object):
         :type: int
         """
         self._additional_flash_cache_in_percent = additional_flash_cache_in_percent
+
+    @property
+    def cluster_placement_group_id(self):
+        """
+        Gets the cluster_placement_group_id of this ExascaleDbStorageVault.
+        The `OCID`__ of the cluster placement group of the Exadata Infrastructure.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The cluster_placement_group_id of this ExascaleDbStorageVault.
+        :rtype: str
+        """
+        return self._cluster_placement_group_id
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, cluster_placement_group_id):
+        """
+        Sets the cluster_placement_group_id of this ExascaleDbStorageVault.
+        The `OCID`__ of the cluster placement group of the Exadata Infrastructure.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param cluster_placement_group_id: The cluster_placement_group_id of this ExascaleDbStorageVault.
+        :type: str
+        """
+        self._cluster_placement_group_id = cluster_placement_group_id
+
+    @property
+    def subscription_id(self):
+        """
+        Gets the subscription_id of this ExascaleDbStorageVault.
+        The `OCID`__ of the subscription with which resource needs to be associated with.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The subscription_id of this ExascaleDbStorageVault.
+        :rtype: str
+        """
+        return self._subscription_id
+
+    @subscription_id.setter
+    def subscription_id(self, subscription_id):
+        """
+        Sets the subscription_id of this ExascaleDbStorageVault.
+        The `OCID`__ of the subscription with which resource needs to be associated with.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param subscription_id: The subscription_id of this ExascaleDbStorageVault.
+        :type: str
+        """
+        self._subscription_id = subscription_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

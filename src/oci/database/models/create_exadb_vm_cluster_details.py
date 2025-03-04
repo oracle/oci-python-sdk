@@ -141,6 +141,10 @@ class CreateExadbVmClusterDetails(object):
             The value to assign to the data_collection_options property of this CreateExadbVmClusterDetails.
         :type data_collection_options: oci.database.models.DataCollectionOptions
 
+        :param subscription_id:
+            The value to assign to the subscription_id property of this CreateExadbVmClusterDetails.
+        :type subscription_id: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -170,7 +174,8 @@ class CreateExadbVmClusterDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'security_attributes': 'dict(str, dict(str, object))',
-            'data_collection_options': 'DataCollectionOptions'
+            'data_collection_options': 'DataCollectionOptions',
+            'subscription_id': 'str'
         }
 
         self.attribute_map = {
@@ -201,7 +206,8 @@ class CreateExadbVmClusterDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'security_attributes': 'securityAttributes',
-            'data_collection_options': 'dataCollectionOptions'
+            'data_collection_options': 'dataCollectionOptions',
+            'subscription_id': 'subscriptionId'
         }
 
         self._compartment_id = None
@@ -232,6 +238,7 @@ class CreateExadbVmClusterDetails(object):
         self._defined_tags = None
         self._security_attributes = None
         self._data_collection_options = None
+        self._subscription_id = None
 
     @property
     def compartment_id(self):
@@ -824,10 +831,8 @@ class CreateExadbVmClusterDetails(object):
         **[Required]** Gets the grid_image_id of this CreateExadbVmClusterDetails.
         Grid Setup will be done using this grid image id.
 
-        The grid image id can be extracted from
-        1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=<compartmentId>&shape=EXADB_XS&availabilityDomain=<AD name>
-        2. Replace {version} with one of the supported major versions and obtain the supported minor versions using
-        API /20160918/giVersions/{version}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>
+        The grid image ID can be obtained using the API /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>.
+        The list of supported major versions can be obtained using the API /20160918/giVersions?compartmentId=<compartmentId>&shape=ExaDbXS&availabilityDomain=<AD name>
 
 
         :return: The grid_image_id of this CreateExadbVmClusterDetails.
@@ -841,10 +846,8 @@ class CreateExadbVmClusterDetails(object):
         Sets the grid_image_id of this CreateExadbVmClusterDetails.
         Grid Setup will be done using this grid image id.
 
-        The grid image id can be extracted from
-        1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=<compartmentId>&shape=EXADB_XS&availabilityDomain=<AD name>
-        2. Replace {version} with one of the supported major versions and obtain the supported minor versions using
-        API /20160918/giVersions/{version}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>
+        The grid image ID can be obtained using the API /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>.
+        The list of supported major versions can be obtained using the API /20160918/giVersions?compartmentId=<compartmentId>&shape=ExaDbXS&availabilityDomain=<AD name>
 
 
         :param grid_image_id: The grid_image_id of this CreateExadbVmClusterDetails.
@@ -991,6 +994,34 @@ class CreateExadbVmClusterDetails(object):
         :type: oci.database.models.DataCollectionOptions
         """
         self._data_collection_options = data_collection_options
+
+    @property
+    def subscription_id(self):
+        """
+        Gets the subscription_id of this CreateExadbVmClusterDetails.
+        The `OCID`__ of the subscription with which resource needs to be associated with.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The subscription_id of this CreateExadbVmClusterDetails.
+        :rtype: str
+        """
+        return self._subscription_id
+
+    @subscription_id.setter
+    def subscription_id(self, subscription_id):
+        """
+        Sets the subscription_id of this CreateExadbVmClusterDetails.
+        The `OCID`__ of the subscription with which resource needs to be associated with.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param subscription_id: The subscription_id of this CreateExadbVmClusterDetails.
+        :type: str
+        """
+        self._subscription_id = subscription_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

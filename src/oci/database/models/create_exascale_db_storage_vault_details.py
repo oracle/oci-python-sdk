@@ -60,6 +60,14 @@ class CreateExascaleDbStorageVaultDetails(object):
             The value to assign to the exadata_infrastructure_id property of this CreateExascaleDbStorageVaultDetails.
         :type exadata_infrastructure_id: str
 
+        :param cluster_placement_group_id:
+            The value to assign to the cluster_placement_group_id property of this CreateExascaleDbStorageVaultDetails.
+        :type cluster_placement_group_id: str
+
+        :param subscription_id:
+            The value to assign to the subscription_id property of this CreateExascaleDbStorageVaultDetails.
+        :type subscription_id: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -71,7 +79,9 @@ class CreateExascaleDbStorageVaultDetails(object):
             'additional_flash_cache_in_percent': 'int',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'exadata_infrastructure_id': 'str'
+            'exadata_infrastructure_id': 'str',
+            'cluster_placement_group_id': 'str',
+            'subscription_id': 'str'
         }
 
         self.attribute_map = {
@@ -84,7 +94,9 @@ class CreateExascaleDbStorageVaultDetails(object):
             'additional_flash_cache_in_percent': 'additionalFlashCacheInPercent',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'exadata_infrastructure_id': 'exadataInfrastructureId'
+            'exadata_infrastructure_id': 'exadataInfrastructureId',
+            'cluster_placement_group_id': 'clusterPlacementGroupId',
+            'subscription_id': 'subscriptionId'
         }
 
         self._compartment_id = None
@@ -97,6 +109,8 @@ class CreateExascaleDbStorageVaultDetails(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._exadata_infrastructure_id = None
+        self._cluster_placement_group_id = None
+        self._subscription_id = None
 
     @property
     def compartment_id(self):
@@ -361,6 +375,62 @@ class CreateExascaleDbStorageVaultDetails(object):
         :type: str
         """
         self._exadata_infrastructure_id = exadata_infrastructure_id
+
+    @property
+    def cluster_placement_group_id(self):
+        """
+        Gets the cluster_placement_group_id of this CreateExascaleDbStorageVaultDetails.
+        The `OCID`__ of the cluster placement group of the Exadata Infrastructure.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The cluster_placement_group_id of this CreateExascaleDbStorageVaultDetails.
+        :rtype: str
+        """
+        return self._cluster_placement_group_id
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, cluster_placement_group_id):
+        """
+        Sets the cluster_placement_group_id of this CreateExascaleDbStorageVaultDetails.
+        The `OCID`__ of the cluster placement group of the Exadata Infrastructure.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param cluster_placement_group_id: The cluster_placement_group_id of this CreateExascaleDbStorageVaultDetails.
+        :type: str
+        """
+        self._cluster_placement_group_id = cluster_placement_group_id
+
+    @property
+    def subscription_id(self):
+        """
+        Gets the subscription_id of this CreateExascaleDbStorageVaultDetails.
+        The `OCID`__ of the subscription with which resource needs to be associated with.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The subscription_id of this CreateExascaleDbStorageVaultDetails.
+        :rtype: str
+        """
+        return self._subscription_id
+
+    @subscription_id.setter
+    def subscription_id(self, subscription_id):
+        """
+        Sets the subscription_id of this CreateExascaleDbStorageVaultDetails.
+        The `OCID`__ of the subscription with which resource needs to be associated with.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param subscription_id: The subscription_id of this CreateExascaleDbStorageVaultDetails.
+        :type: str
+        """
+        self._subscription_id = subscription_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

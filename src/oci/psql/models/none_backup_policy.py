@@ -30,19 +30,26 @@ class NoneBackupPolicy(BackupPolicy):
             The value to assign to the retention_days property of this NoneBackupPolicy.
         :type retention_days: int
 
+        :param copy_policy:
+            The value to assign to the copy_policy property of this NoneBackupPolicy.
+        :type copy_policy: oci.psql.models.BackupCopyPolicy
+
         """
         self.swagger_types = {
             'kind': 'str',
-            'retention_days': 'int'
+            'retention_days': 'int',
+            'copy_policy': 'BackupCopyPolicy'
         }
 
         self.attribute_map = {
             'kind': 'kind',
-            'retention_days': 'retentionDays'
+            'retention_days': 'retentionDays',
+            'copy_policy': 'copyPolicy'
         }
 
         self._kind = None
         self._retention_days = None
+        self._copy_policy = None
         self._kind = 'NONE'
 
     def __repr__(self):

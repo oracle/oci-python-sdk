@@ -52,6 +52,10 @@ class BackupSummary(object):
             The value to assign to the source_type property of this BackupSummary.
         :type source_type: str
 
+        :param time_created_precise:
+            The value to assign to the time_created_precise property of this BackupSummary.
+        :type time_created_precise: datetime
+
         :param backup_size:
             The value to assign to the backup_size property of this BackupSummary.
         :type backup_size: int
@@ -63,6 +67,10 @@ class BackupSummary(object):
         :param retention_period:
             The value to assign to the retention_period property of this BackupSummary.
         :type retention_period: int
+
+        :param copy_status:
+            The value to assign to the copy_status property of this BackupSummary.
+        :type copy_status: list[oci.psql.models.BackupCopyStatusDetails]
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this BackupSummary.
@@ -86,9 +94,11 @@ class BackupSummary(object):
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'source_type': 'str',
+            'time_created_precise': 'datetime',
             'backup_size': 'int',
             'db_system_id': 'str',
             'retention_period': 'int',
+            'copy_status': 'list[BackupCopyStatusDetails]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -103,9 +113,11 @@ class BackupSummary(object):
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'source_type': 'sourceType',
+            'time_created_precise': 'timeCreatedPrecise',
             'backup_size': 'backupSize',
             'db_system_id': 'dbSystemId',
             'retention_period': 'retentionPeriod',
+            'copy_status': 'copyStatus',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -119,9 +131,11 @@ class BackupSummary(object):
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._source_type = None
+        self._time_created_precise = None
         self._backup_size = None
         self._db_system_id = None
         self._retention_period = None
+        self._copy_status = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -343,6 +357,42 @@ class BackupSummary(object):
         self._source_type = source_type
 
     @property
+    def time_created_precise(self):
+        """
+        Gets the time_created_precise of this BackupSummary.
+        The date and time the backup was created.
+        This is the time the actual point-in-time data snapshot was taken,
+        expressed in `RFC 3339`__ timestamp format.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/rfc/rfc3339
+
+
+        :return: The time_created_precise of this BackupSummary.
+        :rtype: datetime
+        """
+        return self._time_created_precise
+
+    @time_created_precise.setter
+    def time_created_precise(self, time_created_precise):
+        """
+        Sets the time_created_precise of this BackupSummary.
+        The date and time the backup was created.
+        This is the time the actual point-in-time data snapshot was taken,
+        expressed in `RFC 3339`__ timestamp format.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/rfc/rfc3339
+
+
+        :param time_created_precise: The time_created_precise of this BackupSummary.
+        :type: datetime
+        """
+        self._time_created_precise = time_created_precise
+
+    @property
     def backup_size(self):
         """
         Gets the backup_size of this BackupSummary.
@@ -417,6 +467,30 @@ class BackupSummary(object):
         :type: int
         """
         self._retention_period = retention_period
+
+    @property
+    def copy_status(self):
+        """
+        Gets the copy_status of this BackupSummary.
+        List of status for Backup Copy
+
+
+        :return: The copy_status of this BackupSummary.
+        :rtype: list[oci.psql.models.BackupCopyStatusDetails]
+        """
+        return self._copy_status
+
+    @copy_status.setter
+    def copy_status(self, copy_status):
+        """
+        Sets the copy_status of this BackupSummary.
+        List of status for Backup Copy
+
+
+        :param copy_status: The copy_status of this BackupSummary.
+        :type: list[oci.psql.models.BackupCopyStatusDetails]
+        """
+        self._copy_status = copy_status
 
     @property
     def freeform_tags(self):

@@ -8,6 +8,9 @@ from __future__ import absolute_import
 
 from .backup import Backup
 from .backup_collection import BackupCollection
+from .backup_copy_details import BackupCopyDetails
+from .backup_copy_policy import BackupCopyPolicy
+from .backup_copy_status_details import BackupCopyStatusDetails
 from .backup_policy import BackupPolicy
 from .backup_source_details import BackupSourceDetails
 from .backup_summary import BackupSummary
@@ -67,6 +70,7 @@ from .shape_collection import ShapeCollection
 from .shape_memory_options import ShapeMemoryOptions
 from .shape_ocpu_options import ShapeOcpuOptions
 from .shape_summary import ShapeSummary
+from .source_backup_details import SourceBackupDetails
 from .source_details import SourceDetails
 from .storage_details import StorageDetails
 from .update_backup_details import UpdateBackupDetails
@@ -91,6 +95,9 @@ from .work_request_summary_collection import WorkRequestSummaryCollection
 psql_type_mapping = {
     "Backup": Backup,
     "BackupCollection": BackupCollection,
+    "BackupCopyDetails": BackupCopyDetails,
+    "BackupCopyPolicy": BackupCopyPolicy,
+    "BackupCopyStatusDetails": BackupCopyStatusDetails,
     "BackupPolicy": BackupPolicy,
     "BackupSourceDetails": BackupSourceDetails,
     "BackupSummary": BackupSummary,
@@ -150,6 +157,7 @@ psql_type_mapping = {
     "ShapeMemoryOptions": ShapeMemoryOptions,
     "ShapeOcpuOptions": ShapeOcpuOptions,
     "ShapeSummary": ShapeSummary,
+    "SourceBackupDetails": SourceBackupDetails,
     "SourceDetails": SourceDetails,
     "StorageDetails": StorageDetails,
     "UpdateBackupDetails": UpdateBackupDetails,

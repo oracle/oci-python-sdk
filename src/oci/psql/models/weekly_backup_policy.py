@@ -59,6 +59,10 @@ class WeeklyBackupPolicy(BackupPolicy):
             The value to assign to the retention_days property of this WeeklyBackupPolicy.
         :type retention_days: int
 
+        :param copy_policy:
+            The value to assign to the copy_policy property of this WeeklyBackupPolicy.
+        :type copy_policy: oci.psql.models.BackupCopyPolicy
+
         :param days_of_the_week:
             The value to assign to the days_of_the_week property of this WeeklyBackupPolicy.
             Allowed values for items in this list are: "SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", 'UNKNOWN_ENUM_VALUE'.
@@ -73,6 +77,7 @@ class WeeklyBackupPolicy(BackupPolicy):
         self.swagger_types = {
             'kind': 'str',
             'retention_days': 'int',
+            'copy_policy': 'BackupCopyPolicy',
             'days_of_the_week': 'list[str]',
             'backup_start': 'str'
         }
@@ -80,12 +85,14 @@ class WeeklyBackupPolicy(BackupPolicy):
         self.attribute_map = {
             'kind': 'kind',
             'retention_days': 'retentionDays',
+            'copy_policy': 'copyPolicy',
             'days_of_the_week': 'daysOfTheWeek',
             'backup_start': 'backupStart'
         }
 
         self._kind = None
         self._retention_days = None
+        self._copy_policy = None
         self._days_of_the_week = None
         self._backup_start = None
         self._kind = 'WEEKLY'

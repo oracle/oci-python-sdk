@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.147.0 - 2025-03-04
+====================
+
+Added 
+----- 
+* Support for user quotas on file system resources in the File Storage service 
+* Support for long term retention backups in the Autonomous Recovery service 
+* Support for Cross Region Replication(CRR) in the PostgreSQL service 
+* Support for subscriptions and cluster placement groups on exascale infrastructure in the Database service 
+* Support for multiple standby databases for autonomous dataguard associations in the Database service 
+* Support for major version upgrade of clusters in the OpenSearch service 
+* Support for Customer Service Identifier(CSI) number in list assigned subscriptions response in the Organizations service   
+
+Breaking 
+-------- 
+* Operation `create_subscription_mapping_and_wait_for_state` waits on `SubscriptionMapping.lifecycle_state` instead of `WorkRequest` in the Organizations service   
+
+====================
 2.146.0 - 2025-02-25
 ====================
 

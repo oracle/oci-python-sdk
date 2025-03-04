@@ -24,6 +24,7 @@ Database
     oci.database.models.ActionParamValuesCollection
     oci.database.models.ActionParamValuesSummary
     oci.database.models.ActivateExadataInfrastructureDetails
+    oci.database.models.AddStandbyAutonomousContainerDatabaseDetails
     oci.database.models.AddVirtualMachineToCloudVmClusterDetails
     oci.database.models.AddVirtualMachineToVmClusterDetails
     oci.database.models.AppVersionSummary
@@ -33,6 +34,7 @@ Database
     oci.database.models.AutomatedMountDetails
     oci.database.models.AutonomousContainerDatabase
     oci.database.models.AutonomousContainerDatabaseBackupConfig
+    oci.database.models.AutonomousContainerDatabaseDataguard
     oci.database.models.AutonomousContainerDatabaseDataguardAssociation
     oci.database.models.AutonomousContainerDatabaseResourceUsage
     oci.database.models.AutonomousContainerDatabaseSummary
@@ -102,7 +104,9 @@ Database
     oci.database.models.ChangeDisasterRecoveryConfigurationDetails
     oci.database.models.ChangeExadataInfrastructureCompartmentDetails
     oci.database.models.ChangeExadbVmClusterCompartmentDetails
+    oci.database.models.ChangeExadbVmClusterSubscriptionDetails
     oci.database.models.ChangeExascaleDbStorageVaultCompartmentDetails
+    oci.database.models.ChangeExascaleDbStorageVaultSubscriptionDetails
     oci.database.models.ChangeKeyStoreCompartmentDetails
     oci.database.models.ChangeKeyStoreTypeDetails
     oci.database.models.ChangeSchedulingPlanCompartmentDetails
@@ -133,6 +137,7 @@ Database
     oci.database.models.ConsoleHistory
     oci.database.models.ConsoleHistoryCollection
     oci.database.models.ConsoleHistorySummary
+    oci.database.models.ConvertStandbyAutonomousContainerDatabaseDetails
     oci.database.models.ConvertToPdbDetails
     oci.database.models.ConvertToPdbTargetBase
     oci.database.models.ConvertToRegularPluggableDatabaseDetails
@@ -267,6 +272,7 @@ Database
     oci.database.models.DiskPerformanceDetails
     oci.database.models.DownloadOneoffPatch
     oci.database.models.DrScanDetails
+    oci.database.models.EditAutonomousContainerDatabaseDataguardDetails
     oci.database.models.EnableDatabaseManagementDetails
     oci.database.models.EnableExternalContainerDatabaseDatabaseManagementDetails
     oci.database.models.EnableExternalContainerDatabaseStackMonitoringDetails
@@ -441,6 +447,7 @@ Database
     oci.database.models.UpdateAutonomousExadataInfrastructureDetails
     oci.database.models.UpdateAutonomousVmClusterDetails
     oci.database.models.UpdateBackupDestinationDetails
+    oci.database.models.UpdateBackupDetails
     oci.database.models.UpdateCloudAutonomousVmClusterDetails
     oci.database.models.UpdateCloudExadataInfrastructureDetails
     oci.database.models.UpdateCloudVmClusterDetails

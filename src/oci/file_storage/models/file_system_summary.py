@@ -51,6 +51,30 @@ class FileSystemSummary(object):
     #: This constant has a value of "DETACHED"
     CLONE_ATTACH_STATUS_DETACHED = "DETACHED"
 
+    #: A constant which can be used with the quota_enforcement_state property of a FileSystemSummary.
+    #: This constant has a value of "ENABLING"
+    QUOTA_ENFORCEMENT_STATE_ENABLING = "ENABLING"
+
+    #: A constant which can be used with the quota_enforcement_state property of a FileSystemSummary.
+    #: This constant has a value of "ENABLED"
+    QUOTA_ENFORCEMENT_STATE_ENABLED = "ENABLED"
+
+    #: A constant which can be used with the quota_enforcement_state property of a FileSystemSummary.
+    #: This constant has a value of "DISABLING"
+    QUOTA_ENFORCEMENT_STATE_DISABLING = "DISABLING"
+
+    #: A constant which can be used with the quota_enforcement_state property of a FileSystemSummary.
+    #: This constant has a value of "DISABLED"
+    QUOTA_ENFORCEMENT_STATE_DISABLED = "DISABLED"
+
+    #: A constant which can be used with the quota_enforcement_state property of a FileSystemSummary.
+    #: This constant has a value of "SYNCING"
+    QUOTA_ENFORCEMENT_STATE_SYNCING = "SYNCING"
+
+    #: A constant which can be used with the quota_enforcement_state property of a FileSystemSummary.
+    #: This constant has a value of "FAILED"
+    QUOTA_ENFORCEMENT_STATE_FAILED = "FAILED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new FileSystemSummary object with values from keyword arguments.
@@ -102,6 +126,10 @@ class FileSystemSummary(object):
             The value to assign to the system_tags property of this FileSystemSummary.
         :type system_tags: dict(str, dict(str, object))
 
+        :param replication_source_count:
+            The value to assign to the replication_source_count property of this FileSystemSummary.
+        :type replication_source_count: int
+
         :param kms_key_id:
             The value to assign to the kms_key_id property of this FileSystemSummary.
         :type kms_key_id: str
@@ -128,6 +156,12 @@ class FileSystemSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type clone_attach_status: str
 
+        :param quota_enforcement_state:
+            The value to assign to the quota_enforcement_state property of this FileSystemSummary.
+            Allowed values for this property are: "ENABLING", "ENABLED", "DISABLING", "DISABLED", "SYNCING", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type quota_enforcement_state: str
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -141,12 +175,14 @@ class FileSystemSummary(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
+            'replication_source_count': 'int',
             'kms_key_id': 'str',
             'source_details': 'SourceDetails',
             'is_clone_parent': 'bool',
             'is_hydrated': 'bool',
             'lifecycle_details': 'str',
-            'clone_attach_status': 'str'
+            'clone_attach_status': 'str',
+            'quota_enforcement_state': 'str'
         }
 
         self.attribute_map = {
@@ -161,12 +197,14 @@ class FileSystemSummary(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
+            'replication_source_count': 'replicationSourceCount',
             'kms_key_id': 'kmsKeyId',
             'source_details': 'sourceDetails',
             'is_clone_parent': 'isCloneParent',
             'is_hydrated': 'isHydrated',
             'lifecycle_details': 'lifecycleDetails',
-            'clone_attach_status': 'cloneAttachStatus'
+            'clone_attach_status': 'cloneAttachStatus',
+            'quota_enforcement_state': 'quotaEnforcementState'
         }
 
         self._availability_domain = None
@@ -180,12 +218,14 @@ class FileSystemSummary(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._replication_source_count = None
         self._kms_key_id = None
         self._source_details = None
         self._is_clone_parent = None
         self._is_hydrated = None
         self._lifecycle_details = None
         self._clone_attach_status = None
+        self._quota_enforcement_state = None
 
     @property
     def availability_domain(self):
@@ -514,6 +554,30 @@ class FileSystemSummary(object):
         self._system_tags = system_tags
 
     @property
+    def replication_source_count(self):
+        """
+        Gets the replication_source_count of this FileSystemSummary.
+        Specifies the total number of replications for which this file system is a source.
+
+
+        :return: The replication_source_count of this FileSystemSummary.
+        :rtype: int
+        """
+        return self._replication_source_count
+
+    @replication_source_count.setter
+    def replication_source_count(self, replication_source_count):
+        """
+        Sets the replication_source_count of this FileSystemSummary.
+        Specifies the total number of replications for which this file system is a source.
+
+
+        :param replication_source_count: The replication_source_count of this FileSystemSummary.
+        :type: int
+        """
+        self._replication_source_count = replication_source_count
+
+    @property
     def kms_key_id(self):
         """
         Gets the kms_key_id of this FileSystemSummary.
@@ -678,6 +742,36 @@ class FileSystemSummary(object):
         if not value_allowed_none_or_none_sentinel(clone_attach_status, allowed_values):
             clone_attach_status = 'UNKNOWN_ENUM_VALUE'
         self._clone_attach_status = clone_attach_status
+
+    @property
+    def quota_enforcement_state(self):
+        """
+        Gets the quota_enforcement_state of this FileSystemSummary.
+        Displays the state of enforcement of quota rules on the file system.
+
+        Allowed values for this property are: "ENABLING", "ENABLED", "DISABLING", "DISABLED", "SYNCING", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The quota_enforcement_state of this FileSystemSummary.
+        :rtype: str
+        """
+        return self._quota_enforcement_state
+
+    @quota_enforcement_state.setter
+    def quota_enforcement_state(self, quota_enforcement_state):
+        """
+        Sets the quota_enforcement_state of this FileSystemSummary.
+        Displays the state of enforcement of quota rules on the file system.
+
+
+        :param quota_enforcement_state: The quota_enforcement_state of this FileSystemSummary.
+        :type: str
+        """
+        allowed_values = ["ENABLING", "ENABLED", "DISABLING", "DISABLED", "SYNCING", "FAILED"]
+        if not value_allowed_none_or_none_sentinel(quota_enforcement_state, allowed_values):
+            quota_enforcement_state = 'UNKNOWN_ENUM_VALUE'
+        self._quota_enforcement_state = quota_enforcement_state
 
     def __repr__(self):
         return formatted_flat_dict(self)
