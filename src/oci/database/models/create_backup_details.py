@@ -30,19 +30,33 @@ class CreateBackupDetails(object):
             The value to assign to the display_name property of this CreateBackupDetails.
         :type display_name: str
 
+        :param retention_period_in_days:
+            The value to assign to the retention_period_in_days property of this CreateBackupDetails.
+        :type retention_period_in_days: int
+
+        :param retention_period_in_years:
+            The value to assign to the retention_period_in_years property of this CreateBackupDetails.
+        :type retention_period_in_years: int
+
         """
         self.swagger_types = {
             'database_id': 'str',
-            'display_name': 'str'
+            'display_name': 'str',
+            'retention_period_in_days': 'int',
+            'retention_period_in_years': 'int'
         }
 
         self.attribute_map = {
             'database_id': 'databaseId',
-            'display_name': 'displayName'
+            'display_name': 'displayName',
+            'retention_period_in_days': 'retentionPeriodInDays',
+            'retention_period_in_years': 'retentionPeriodInYears'
         }
 
         self._database_id = None
         self._display_name = None
+        self._retention_period_in_days = None
+        self._retention_period_in_years = None
 
     @property
     def database_id(self):
@@ -95,6 +109,54 @@ class CreateBackupDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def retention_period_in_days(self):
+        """
+        Gets the retention_period_in_days of this CreateBackupDetails.
+        The retention period of the long term backup in days.
+
+
+        :return: The retention_period_in_days of this CreateBackupDetails.
+        :rtype: int
+        """
+        return self._retention_period_in_days
+
+    @retention_period_in_days.setter
+    def retention_period_in_days(self, retention_period_in_days):
+        """
+        Sets the retention_period_in_days of this CreateBackupDetails.
+        The retention period of the long term backup in days.
+
+
+        :param retention_period_in_days: The retention_period_in_days of this CreateBackupDetails.
+        :type: int
+        """
+        self._retention_period_in_days = retention_period_in_days
+
+    @property
+    def retention_period_in_years(self):
+        """
+        Gets the retention_period_in_years of this CreateBackupDetails.
+        The retention period of the long term backup in years.
+
+
+        :return: The retention_period_in_years of this CreateBackupDetails.
+        :rtype: int
+        """
+        return self._retention_period_in_years
+
+    @retention_period_in_years.setter
+    def retention_period_in_years(self, retention_period_in_years):
+        """
+        Sets the retention_period_in_years of this CreateBackupDetails.
+        The retention period of the long term backup in years.
+
+
+        :param retention_period_in_years: The retention_period_in_years of this CreateBackupDetails.
+        :type: int
+        """
+        self._retention_period_in_years = retention_period_in_years
 
     def __repr__(self):
         return formatted_flat_dict(self)

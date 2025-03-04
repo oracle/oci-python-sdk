@@ -254,6 +254,14 @@ class ExadbVmCluster(object):
             The value to assign to the memory_size_in_gbs property of this ExadbVmCluster.
         :type memory_size_in_gbs: int
 
+        :param cluster_placement_group_id:
+            The value to assign to the cluster_placement_group_id property of this ExadbVmCluster.
+        :type cluster_placement_group_id: str
+
+        :param subscription_id:
+            The value to assign to the subscription_id property of this ExadbVmCluster.
+        :type subscription_id: str
+
         """
         self.swagger_types = {
             'iorm_config_cache': 'ExadataIormConfig',
@@ -301,7 +309,9 @@ class ExadbVmCluster(object):
             'snapshot_file_system_storage': 'ExadbVmClusterStorageDetails',
             'total_file_system_storage': 'ExadbVmClusterStorageDetails',
             'exascale_db_storage_vault_id': 'str',
-            'memory_size_in_gbs': 'int'
+            'memory_size_in_gbs': 'int',
+            'cluster_placement_group_id': 'str',
+            'subscription_id': 'str'
         }
 
         self.attribute_map = {
@@ -350,7 +360,9 @@ class ExadbVmCluster(object):
             'snapshot_file_system_storage': 'snapshotFileSystemStorage',
             'total_file_system_storage': 'totalFileSystemStorage',
             'exascale_db_storage_vault_id': 'exascaleDbStorageVaultId',
-            'memory_size_in_gbs': 'memorySizeInGBs'
+            'memory_size_in_gbs': 'memorySizeInGBs',
+            'cluster_placement_group_id': 'clusterPlacementGroupId',
+            'subscription_id': 'subscriptionId'
         }
 
         self._iorm_config_cache = None
@@ -399,6 +411,8 @@ class ExadbVmCluster(object):
         self._total_file_system_storage = None
         self._exascale_db_storage_vault_id = None
         self._memory_size_in_gbs = None
+        self._cluster_placement_group_id = None
+        self._subscription_id = None
 
     @property
     def iorm_config_cache(self):
@@ -970,10 +984,8 @@ class ExadbVmCluster(object):
         Gets the grid_image_id of this ExadbVmCluster.
         Grid Setup will be done using this grid image id.
 
-        The grid image id can be extracted from
-        1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=<compartmentId>&shape=EXADB_XS&availabilityDomain=<AD name>
-        2. Replace {version} with one of the supported major versions and obtain the supported minor versions using
-        API /20160918/giVersions/{version}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>
+        The grid image ID can be obtained using the API /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>.
+        The list of supported major versions can be obtained using the API /20160918/giVersions?compartmentId=<compartmentId>&shape=ExaDbXS&availabilityDomain=<AD name>
 
 
         :return: The grid_image_id of this ExadbVmCluster.
@@ -987,10 +999,8 @@ class ExadbVmCluster(object):
         Sets the grid_image_id of this ExadbVmCluster.
         Grid Setup will be done using this grid image id.
 
-        The grid image id can be extracted from
-        1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=<compartmentId>&shape=EXADB_XS&availabilityDomain=<AD name>
-        2. Replace {version} with one of the supported major versions and obtain the supported minor versions using
-        API /20160918/giVersions/{version}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>
+        The grid image ID can be obtained using the API /20160918/giVersions/{majorVersion}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>.
+        The list of supported major versions can be obtained using the API /20160918/giVersions?compartmentId=<compartmentId>&shape=ExaDbXS&availabilityDomain=<AD name>
 
 
         :param grid_image_id: The grid_image_id of this ExadbVmCluster.
@@ -1627,6 +1637,62 @@ class ExadbVmCluster(object):
         :type: int
         """
         self._memory_size_in_gbs = memory_size_in_gbs
+
+    @property
+    def cluster_placement_group_id(self):
+        """
+        Gets the cluster_placement_group_id of this ExadbVmCluster.
+        The `OCID`__ of the cluster placement group of the Exadata Infrastructure.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The cluster_placement_group_id of this ExadbVmCluster.
+        :rtype: str
+        """
+        return self._cluster_placement_group_id
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, cluster_placement_group_id):
+        """
+        Sets the cluster_placement_group_id of this ExadbVmCluster.
+        The `OCID`__ of the cluster placement group of the Exadata Infrastructure.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param cluster_placement_group_id: The cluster_placement_group_id of this ExadbVmCluster.
+        :type: str
+        """
+        self._cluster_placement_group_id = cluster_placement_group_id
+
+    @property
+    def subscription_id(self):
+        """
+        Gets the subscription_id of this ExadbVmCluster.
+        The `OCID`__ of the subscription with which resource needs to be associated with.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The subscription_id of this ExadbVmCluster.
+        :rtype: str
+        """
+        return self._subscription_id
+
+    @subscription_id.setter
+    def subscription_id(self, subscription_id):
+        """
+        Sets the subscription_id of this ExadbVmCluster.
+        The `OCID`__ of the subscription with which resource needs to be associated with.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param subscription_id: The subscription_id of this ExadbVmCluster.
+        :type: str
+        """
+        self._subscription_id = subscription_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

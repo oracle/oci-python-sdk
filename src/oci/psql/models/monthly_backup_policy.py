@@ -30,6 +30,10 @@ class MonthlyBackupPolicy(BackupPolicy):
             The value to assign to the retention_days property of this MonthlyBackupPolicy.
         :type retention_days: int
 
+        :param copy_policy:
+            The value to assign to the copy_policy property of this MonthlyBackupPolicy.
+        :type copy_policy: oci.psql.models.BackupCopyPolicy
+
         :param backup_start:
             The value to assign to the backup_start property of this MonthlyBackupPolicy.
         :type backup_start: str
@@ -42,6 +46,7 @@ class MonthlyBackupPolicy(BackupPolicy):
         self.swagger_types = {
             'kind': 'str',
             'retention_days': 'int',
+            'copy_policy': 'BackupCopyPolicy',
             'backup_start': 'str',
             'days_of_the_month': 'list[int]'
         }
@@ -49,12 +54,14 @@ class MonthlyBackupPolicy(BackupPolicy):
         self.attribute_map = {
             'kind': 'kind',
             'retention_days': 'retentionDays',
+            'copy_policy': 'copyPolicy',
             'backup_start': 'backupStart',
             'days_of_the_month': 'daysOfTheMonth'
         }
 
         self._kind = None
         self._retention_days = None
+        self._copy_policy = None
         self._backup_start = None
         self._days_of_the_month = None
         self._kind = 'MONTHLY'

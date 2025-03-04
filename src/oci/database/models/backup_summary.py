@@ -57,6 +57,10 @@ class BackupSummary(object):
     LIFECYCLE_STATE_RESTORING = "RESTORING"
 
     #: A constant which can be used with the lifecycle_state property of a BackupSummary.
+    #: This constant has a value of "UPDATING"
+    LIFECYCLE_STATE_UPDATING = "UPDATING"
+
+    #: A constant which can be used with the lifecycle_state property of a BackupSummary.
     #: This constant has a value of "CANCELING"
     LIFECYCLE_STATE_CANCELING = "CANCELING"
 
@@ -79,6 +83,14 @@ class BackupSummary(object):
     #: A constant which can be used with the database_edition property of a BackupSummary.
     #: This constant has a value of "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"
     DATABASE_EDITION_ENTERPRISE_EDITION_EXTREME_PERFORMANCE = "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"
+
+    #: A constant which can be used with the backup_destination_type property of a BackupSummary.
+    #: This constant has a value of "OBJECT_STORE"
+    BACKUP_DESTINATION_TYPE_OBJECT_STORE = "OBJECT_STORE"
+
+    #: A constant which can be used with the backup_destination_type property of a BackupSummary.
+    #: This constant has a value of "DBRS"
+    BACKUP_DESTINATION_TYPE_DBRS = "DBRS"
 
     def __init__(self, **kwargs):
         """
@@ -125,7 +137,7 @@ class BackupSummary(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this BackupSummary.
-            Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "RESTORING", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "RESTORING", "UPDATING", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -167,6 +179,32 @@ class BackupSummary(object):
             The value to assign to the key_store_wallet_name property of this BackupSummary.
         :type key_store_wallet_name: str
 
+        :param secondary_kms_key_ids:
+            The value to assign to the secondary_kms_key_ids property of this BackupSummary.
+        :type secondary_kms_key_ids: list[str]
+
+        :param retention_period_in_days:
+            The value to assign to the retention_period_in_days property of this BackupSummary.
+        :type retention_period_in_days: int
+
+        :param retention_period_in_years:
+            The value to assign to the retention_period_in_years property of this BackupSummary.
+        :type retention_period_in_years: int
+
+        :param time_expiry_scheduled:
+            The value to assign to the time_expiry_scheduled property of this BackupSummary.
+        :type time_expiry_scheduled: datetime
+
+        :param is_using_oracle_managed_keys:
+            The value to assign to the is_using_oracle_managed_keys property of this BackupSummary.
+        :type is_using_oracle_managed_keys: bool
+
+        :param backup_destination_type:
+            The value to assign to the backup_destination_type property of this BackupSummary.
+            Allowed values for this property are: "OBJECT_STORE", "DBRS", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type backup_destination_type: str
+
         :param encryption_key_location_details:
             The value to assign to the encryption_key_location_details property of this BackupSummary.
         :type encryption_key_location_details: oci.database.models.EncryptionKeyLocationDetails
@@ -192,6 +230,12 @@ class BackupSummary(object):
             'vault_id': 'str',
             'key_store_id': 'str',
             'key_store_wallet_name': 'str',
+            'secondary_kms_key_ids': 'list[str]',
+            'retention_period_in_days': 'int',
+            'retention_period_in_years': 'int',
+            'time_expiry_scheduled': 'datetime',
+            'is_using_oracle_managed_keys': 'bool',
+            'backup_destination_type': 'str',
             'encryption_key_location_details': 'EncryptionKeyLocationDetails'
         }
 
@@ -215,6 +259,12 @@ class BackupSummary(object):
             'vault_id': 'vaultId',
             'key_store_id': 'keyStoreId',
             'key_store_wallet_name': 'keyStoreWalletName',
+            'secondary_kms_key_ids': 'secondaryKmsKeyIds',
+            'retention_period_in_days': 'retentionPeriodInDays',
+            'retention_period_in_years': 'retentionPeriodInYears',
+            'time_expiry_scheduled': 'timeExpiryScheduled',
+            'is_using_oracle_managed_keys': 'isUsingOracleManagedKeys',
+            'backup_destination_type': 'backupDestinationType',
             'encryption_key_location_details': 'encryptionKeyLocationDetails'
         }
 
@@ -237,6 +287,12 @@ class BackupSummary(object):
         self._vault_id = None
         self._key_store_id = None
         self._key_store_wallet_name = None
+        self._secondary_kms_key_ids = None
+        self._retention_period_in_days = None
+        self._retention_period_in_years = None
+        self._time_expiry_scheduled = None
+        self._is_using_oracle_managed_keys = None
+        self._backup_destination_type = None
         self._encryption_key_location_details = None
 
     @property
@@ -479,7 +535,7 @@ class BackupSummary(object):
         Gets the lifecycle_state of this BackupSummary.
         The current state of the backup.
 
-        Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "RESTORING", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "RESTORING", "UPDATING", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -498,7 +554,7 @@ class BackupSummary(object):
         :param lifecycle_state: The lifecycle_state of this BackupSummary.
         :type: str
         """
-        allowed_values = ["CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "RESTORING", "CANCELING", "CANCELED"]
+        allowed_values = ["CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "RESTORING", "UPDATING", "CANCELING", "CANCELED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -734,6 +790,156 @@ class BackupSummary(object):
         :type: str
         """
         self._key_store_wallet_name = key_store_wallet_name
+
+    @property
+    def secondary_kms_key_ids(self):
+        """
+        Gets the secondary_kms_key_ids of this BackupSummary.
+        List of OCIDs of the key containers used as the secondary encryption key in database transparent data encryption (TDE) operations.
+
+
+        :return: The secondary_kms_key_ids of this BackupSummary.
+        :rtype: list[str]
+        """
+        return self._secondary_kms_key_ids
+
+    @secondary_kms_key_ids.setter
+    def secondary_kms_key_ids(self, secondary_kms_key_ids):
+        """
+        Sets the secondary_kms_key_ids of this BackupSummary.
+        List of OCIDs of the key containers used as the secondary encryption key in database transparent data encryption (TDE) operations.
+
+
+        :param secondary_kms_key_ids: The secondary_kms_key_ids of this BackupSummary.
+        :type: list[str]
+        """
+        self._secondary_kms_key_ids = secondary_kms_key_ids
+
+    @property
+    def retention_period_in_days(self):
+        """
+        Gets the retention_period_in_days of this BackupSummary.
+        The retention period of the long term backup in days.
+
+
+        :return: The retention_period_in_days of this BackupSummary.
+        :rtype: int
+        """
+        return self._retention_period_in_days
+
+    @retention_period_in_days.setter
+    def retention_period_in_days(self, retention_period_in_days):
+        """
+        Sets the retention_period_in_days of this BackupSummary.
+        The retention period of the long term backup in days.
+
+
+        :param retention_period_in_days: The retention_period_in_days of this BackupSummary.
+        :type: int
+        """
+        self._retention_period_in_days = retention_period_in_days
+
+    @property
+    def retention_period_in_years(self):
+        """
+        Gets the retention_period_in_years of this BackupSummary.
+        The retention period of the long term backup in years.
+
+
+        :return: The retention_period_in_years of this BackupSummary.
+        :rtype: int
+        """
+        return self._retention_period_in_years
+
+    @retention_period_in_years.setter
+    def retention_period_in_years(self, retention_period_in_years):
+        """
+        Sets the retention_period_in_years of this BackupSummary.
+        The retention period of the long term backup in years.
+
+
+        :param retention_period_in_years: The retention_period_in_years of this BackupSummary.
+        :type: int
+        """
+        self._retention_period_in_years = retention_period_in_years
+
+    @property
+    def time_expiry_scheduled(self):
+        """
+        Gets the time_expiry_scheduled of this BackupSummary.
+        Expiration time of the long term database backup.
+
+
+        :return: The time_expiry_scheduled of this BackupSummary.
+        :rtype: datetime
+        """
+        return self._time_expiry_scheduled
+
+    @time_expiry_scheduled.setter
+    def time_expiry_scheduled(self, time_expiry_scheduled):
+        """
+        Sets the time_expiry_scheduled of this BackupSummary.
+        Expiration time of the long term database backup.
+
+
+        :param time_expiry_scheduled: The time_expiry_scheduled of this BackupSummary.
+        :type: datetime
+        """
+        self._time_expiry_scheduled = time_expiry_scheduled
+
+    @property
+    def is_using_oracle_managed_keys(self):
+        """
+        Gets the is_using_oracle_managed_keys of this BackupSummary.
+        True if Oracle Managed Keys is required for restore of the backup.
+
+
+        :return: The is_using_oracle_managed_keys of this BackupSummary.
+        :rtype: bool
+        """
+        return self._is_using_oracle_managed_keys
+
+    @is_using_oracle_managed_keys.setter
+    def is_using_oracle_managed_keys(self, is_using_oracle_managed_keys):
+        """
+        Sets the is_using_oracle_managed_keys of this BackupSummary.
+        True if Oracle Managed Keys is required for restore of the backup.
+
+
+        :param is_using_oracle_managed_keys: The is_using_oracle_managed_keys of this BackupSummary.
+        :type: bool
+        """
+        self._is_using_oracle_managed_keys = is_using_oracle_managed_keys
+
+    @property
+    def backup_destination_type(self):
+        """
+        Gets the backup_destination_type of this BackupSummary.
+        Type of the backup destination.
+
+        Allowed values for this property are: "OBJECT_STORE", "DBRS", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The backup_destination_type of this BackupSummary.
+        :rtype: str
+        """
+        return self._backup_destination_type
+
+    @backup_destination_type.setter
+    def backup_destination_type(self, backup_destination_type):
+        """
+        Sets the backup_destination_type of this BackupSummary.
+        Type of the backup destination.
+
+
+        :param backup_destination_type: The backup_destination_type of this BackupSummary.
+        :type: str
+        """
+        allowed_values = ["OBJECT_STORE", "DBRS"]
+        if not value_allowed_none_or_none_sentinel(backup_destination_type, allowed_values):
+            backup_destination_type = 'UNKNOWN_ENUM_VALUE'
+        self._backup_destination_type = backup_destination_type
 
     @property
     def encryption_key_location_details(self):

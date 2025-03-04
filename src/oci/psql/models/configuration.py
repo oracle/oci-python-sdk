@@ -39,6 +39,10 @@ class Configuration(object):
     #: This constant has a value of "CUSTOM"
     CONFIG_TYPE_CUSTOM = "CUSTOM"
 
+    #: A constant which can be used with the config_type property of a Configuration.
+    #: This constant has a value of "COPIED"
+    CONFIG_TYPE_COPIED = "COPIED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Configuration object with values from keyword arguments.
@@ -80,7 +84,7 @@ class Configuration(object):
 
         :param config_type:
             The value to assign to the config_type property of this Configuration.
-            Allowed values for this property are: "DEFAULT", "CUSTOM", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "DEFAULT", "CUSTOM", "COPIED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type config_type: str
 
@@ -393,7 +397,7 @@ class Configuration(object):
         Gets the config_type of this Configuration.
         The type of configuration. Either user-created or a default configuration.
 
-        Allowed values for this property are: "DEFAULT", "CUSTOM", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "DEFAULT", "CUSTOM", "COPIED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -412,7 +416,7 @@ class Configuration(object):
         :param config_type: The config_type of this Configuration.
         :type: str
         """
-        allowed_values = ["DEFAULT", "CUSTOM"]
+        allowed_values = ["DEFAULT", "CUSTOM", "COPIED"]
         if not value_allowed_none_or_none_sentinel(config_type, allowed_values):
             config_type = 'UNKNOWN_ENUM_VALUE'
         self._config_type = config_type

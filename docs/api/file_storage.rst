@@ -32,6 +32,7 @@ File Storage
     oci.file_storage.models.CreateLdapIdmapDetails
     oci.file_storage.models.CreateMountTargetDetails
     oci.file_storage.models.CreateOutboundConnectorDetails
+    oci.file_storage.models.CreateQuotaRuleDetails
     oci.file_storage.models.CreateReplicationDetails
     oci.file_storage.models.CreateSnapshotDetails
     oci.file_storage.models.Endpoint
@@ -53,6 +54,8 @@ File Storage
     oci.file_storage.models.MountTargetSummary
     oci.file_storage.models.OutboundConnector
     oci.file_storage.models.OutboundConnectorSummary
+    oci.file_storage.models.QuotaRule
+    oci.file_storage.models.QuotaRuleSummary
     oci.file_storage.models.Replication
     oci.file_storage.models.ReplicationEstimate
     oci.file_storage.models.ReplicationSummary
@@ -64,6 +67,7 @@ File Storage
     oci.file_storage.models.SnapshotSchedule
     oci.file_storage.models.SnapshotSummary
     oci.file_storage.models.SourceDetails
+    oci.file_storage.models.ToggleQuotaRulesDetails
     oci.file_storage.models.UpdateExportDetails
     oci.file_storage.models.UpdateExportSetDetails
     oci.file_storage.models.UpdateFileSystemDetails
@@ -72,6 +76,7 @@ File Storage
     oci.file_storage.models.UpdateLdapIdmapDetails
     oci.file_storage.models.UpdateMountTargetDetails
     oci.file_storage.models.UpdateOutboundConnectorDetails
+    oci.file_storage.models.UpdateQuotaRuleDetails
     oci.file_storage.models.UpdateReplicationDetails
     oci.file_storage.models.UpdateSnapshotDetails
     oci.file_storage.models.UpgradeShapeMountTargetDetails

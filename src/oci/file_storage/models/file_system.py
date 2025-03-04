@@ -62,6 +62,30 @@ class FileSystem(object):
     #: This constant has a value of "DETACHED"
     CLONE_ATTACH_STATUS_DETACHED = "DETACHED"
 
+    #: A constant which can be used with the quota_enforcement_state property of a FileSystem.
+    #: This constant has a value of "ENABLING"
+    QUOTA_ENFORCEMENT_STATE_ENABLING = "ENABLING"
+
+    #: A constant which can be used with the quota_enforcement_state property of a FileSystem.
+    #: This constant has a value of "ENABLED"
+    QUOTA_ENFORCEMENT_STATE_ENABLED = "ENABLED"
+
+    #: A constant which can be used with the quota_enforcement_state property of a FileSystem.
+    #: This constant has a value of "DISABLING"
+    QUOTA_ENFORCEMENT_STATE_DISABLING = "DISABLING"
+
+    #: A constant which can be used with the quota_enforcement_state property of a FileSystem.
+    #: This constant has a value of "DISABLED"
+    QUOTA_ENFORCEMENT_STATE_DISABLED = "DISABLED"
+
+    #: A constant which can be used with the quota_enforcement_state property of a FileSystem.
+    #: This constant has a value of "SYNCING"
+    QUOTA_ENFORCEMENT_STATE_SYNCING = "SYNCING"
+
+    #: A constant which can be used with the quota_enforcement_state property of a FileSystem.
+    #: This constant has a value of "FAILED"
+    QUOTA_ENFORCEMENT_STATE_FAILED = "FAILED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new FileSystem object with values from keyword arguments.
@@ -155,6 +179,20 @@ class FileSystem(object):
             The value to assign to the filesystem_snapshot_policy_id property of this FileSystem.
         :type filesystem_snapshot_policy_id: str
 
+        :param are_quota_rules_enabled:
+            The value to assign to the are_quota_rules_enabled property of this FileSystem.
+        :type are_quota_rules_enabled: bool
+
+        :param quota_enforcement_state:
+            The value to assign to the quota_enforcement_state property of this FileSystem.
+            Allowed values for this property are: "ENABLING", "ENABLED", "DISABLING", "DISABLED", "SYNCING", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type quota_enforcement_state: str
+
+        :param replication_source_count:
+            The value to assign to the replication_source_count property of this FileSystem.
+        :type replication_source_count: int
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -177,7 +215,10 @@ class FileSystem(object):
             'lifecycle_details': 'str',
             'is_targetable': 'bool',
             'replication_target_id': 'str',
-            'filesystem_snapshot_policy_id': 'str'
+            'filesystem_snapshot_policy_id': 'str',
+            'are_quota_rules_enabled': 'bool',
+            'quota_enforcement_state': 'str',
+            'replication_source_count': 'int'
         }
 
         self.attribute_map = {
@@ -201,7 +242,10 @@ class FileSystem(object):
             'lifecycle_details': 'lifecycleDetails',
             'is_targetable': 'isTargetable',
             'replication_target_id': 'replicationTargetId',
-            'filesystem_snapshot_policy_id': 'filesystemSnapshotPolicyId'
+            'filesystem_snapshot_policy_id': 'filesystemSnapshotPolicyId',
+            'are_quota_rules_enabled': 'areQuotaRulesEnabled',
+            'quota_enforcement_state': 'quotaEnforcementState',
+            'replication_source_count': 'replicationSourceCount'
         }
 
         self._availability_domain = None
@@ -225,6 +269,9 @@ class FileSystem(object):
         self._is_targetable = None
         self._replication_target_id = None
         self._filesystem_snapshot_policy_id = None
+        self._are_quota_rules_enabled = None
+        self._quota_enforcement_state = None
+        self._replication_source_count = None
 
     @property
     def availability_domain(self):
@@ -837,6 +884,84 @@ class FileSystem(object):
         :type: str
         """
         self._filesystem_snapshot_policy_id = filesystem_snapshot_policy_id
+
+    @property
+    def are_quota_rules_enabled(self):
+        """
+        Gets the are_quota_rules_enabled of this FileSystem.
+        Specifies the enforcement of quota rules on the file system.
+
+
+        :return: The are_quota_rules_enabled of this FileSystem.
+        :rtype: bool
+        """
+        return self._are_quota_rules_enabled
+
+    @are_quota_rules_enabled.setter
+    def are_quota_rules_enabled(self, are_quota_rules_enabled):
+        """
+        Sets the are_quota_rules_enabled of this FileSystem.
+        Specifies the enforcement of quota rules on the file system.
+
+
+        :param are_quota_rules_enabled: The are_quota_rules_enabled of this FileSystem.
+        :type: bool
+        """
+        self._are_quota_rules_enabled = are_quota_rules_enabled
+
+    @property
+    def quota_enforcement_state(self):
+        """
+        Gets the quota_enforcement_state of this FileSystem.
+        Displays the state of enforcement of quota rules on the file system.
+
+        Allowed values for this property are: "ENABLING", "ENABLED", "DISABLING", "DISABLED", "SYNCING", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The quota_enforcement_state of this FileSystem.
+        :rtype: str
+        """
+        return self._quota_enforcement_state
+
+    @quota_enforcement_state.setter
+    def quota_enforcement_state(self, quota_enforcement_state):
+        """
+        Sets the quota_enforcement_state of this FileSystem.
+        Displays the state of enforcement of quota rules on the file system.
+
+
+        :param quota_enforcement_state: The quota_enforcement_state of this FileSystem.
+        :type: str
+        """
+        allowed_values = ["ENABLING", "ENABLED", "DISABLING", "DISABLED", "SYNCING", "FAILED"]
+        if not value_allowed_none_or_none_sentinel(quota_enforcement_state, allowed_values):
+            quota_enforcement_state = 'UNKNOWN_ENUM_VALUE'
+        self._quota_enforcement_state = quota_enforcement_state
+
+    @property
+    def replication_source_count(self):
+        """
+        Gets the replication_source_count of this FileSystem.
+        Specifies the total number of replications for which this file system is a source.
+
+
+        :return: The replication_source_count of this FileSystem.
+        :rtype: int
+        """
+        return self._replication_source_count
+
+    @replication_source_count.setter
+    def replication_source_count(self, replication_source_count):
+        """
+        Sets the replication_source_count of this FileSystem.
+        Specifies the total number of replications for which this file system is a source.
+
+
+        :param replication_source_count: The replication_source_count of this FileSystem.
+        :type: int
+        """
+        self._replication_source_count = replication_source_count
 
     def __repr__(self):
         return formatted_flat_dict(self)

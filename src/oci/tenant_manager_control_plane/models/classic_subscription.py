@@ -149,6 +149,10 @@ class ClassicSubscription(Subscription):
             The value to assign to the end_date property of this ClassicSubscription.
         :type end_date: datetime
 
+        :param region_assignments:
+            The value to assign to the region_assignments property of this ClassicSubscription.
+        :type region_assignments: list[str]
+
         """
         self.swagger_types = {
             'entity_version': 'str',
@@ -174,7 +178,8 @@ class ClassicSubscription(Subscription):
             'promotion': 'list[Promotion]',
             'purchase_entitlement_id': 'str',
             'start_date': 'datetime',
-            'end_date': 'datetime'
+            'end_date': 'datetime',
+            'region_assignments': 'list[str]'
         }
 
         self.attribute_map = {
@@ -201,7 +206,8 @@ class ClassicSubscription(Subscription):
             'promotion': 'promotion',
             'purchase_entitlement_id': 'purchaseEntitlementId',
             'start_date': 'startDate',
-            'end_date': 'endDate'
+            'end_date': 'endDate',
+            'region_assignments': 'regionAssignments'
         }
 
         self._entity_version = None
@@ -228,6 +234,7 @@ class ClassicSubscription(Subscription):
         self._purchase_entitlement_id = None
         self._start_date = None
         self._end_date = None
+        self._region_assignments = None
         self._entity_version = 'V1'
 
     @property
@@ -619,6 +626,30 @@ class ClassicSubscription(Subscription):
         :type: datetime
         """
         self._end_date = end_date
+
+    @property
+    def region_assignments(self):
+        """
+        Gets the region_assignments of this ClassicSubscription.
+        This list will contain up to 5 regions where the subscription has a physical presence
+
+
+        :return: The region_assignments of this ClassicSubscription.
+        :rtype: list[str]
+        """
+        return self._region_assignments
+
+    @region_assignments.setter
+    def region_assignments(self, region_assignments):
+        """
+        Sets the region_assignments of this ClassicSubscription.
+        This list will contain up to 5 regions where the subscription has a physical presence
+
+
+        :param region_assignments: The region_assignments of this ClassicSubscription.
+        :type: list[str]
+        """
+        self._region_assignments = region_assignments
 
     def __repr__(self):
         return formatted_flat_dict(self)

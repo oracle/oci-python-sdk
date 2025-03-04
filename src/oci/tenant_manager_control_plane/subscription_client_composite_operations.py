@@ -27,14 +27,14 @@ class SubscriptionClientCompositeOperations(object):
 
     def create_subscription_mapping_and_wait_for_state(self, create_subscription_mapping_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
-        Calls :py:func:`~oci.tenant_manager_control_plane.SubscriptionClient.create_subscription_mapping` and waits for the :py:class:`~oci.tenant_manager_control_plane.models.WorkRequest`
+        Calls :py:func:`~oci.tenant_manager_control_plane.SubscriptionClient.create_subscription_mapping` and waits for the :py:class:`~oci.tenant_manager_control_plane.models.SubscriptionMapping` acted upon
         to enter the given state(s).
 
         :param oci.tenant_manager_control_plane.models.CreateSubscriptionMappingDetails create_subscription_mapping_details: (required)
             Compartment ID and Subscription ID details to create a subscription mapping.
 
         :param list[str] wait_for_states:
-            An array of states to wait on. These should be valid values for :py:attr:`~oci.tenant_manager_control_plane.models.WorkRequest.status`
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.tenant_manager_control_plane.models.SubscriptionMapping.lifecycle_state`
 
         :param dict operation_kwargs:
             A dictionary of keyword arguments to pass to :py:func:`~oci.tenant_manager_control_plane.SubscriptionClient.create_subscription_mapping`
@@ -47,20 +47,23 @@ class SubscriptionClientCompositeOperations(object):
         if not wait_for_states:
             return operation_result
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        if 'opc-work-request-id' not in operation_result.headers:
-            return operation_result
-        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+        subscription_mapping_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_work_request(wait_for_resource_id),
-                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                self.client.get_subscription_mapping(subscription_mapping_id),  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 

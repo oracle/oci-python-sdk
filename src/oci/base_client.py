@@ -50,6 +50,7 @@ enable_expect_header = True
 expect_header_env_var = os.environ.get('OCI_PYSDK_USING_EXPECT_HEADER', True)
 if isinstance(expect_header_env_var, six.string_types) and expect_header_env_var.lower() == "false":
     enable_expect_header = False
+oke_workload_refresh_enabled = os.environ.get('OCI_OKE_WORKLOAD_REFRESH_ENABLED', "True").lower() == "true"
 
 
 def merge_type_mappings(*dictionaries):
@@ -424,7 +425,7 @@ class BaseClient(object):
                 isinstance(self.signer, signers.EphemeralResourcePrincipalSigner) or
                 isinstance(self.signer, signers.EphemeralResourcePrincipalV21Signer) or
                 isinstance(self.signer, signers.NestedResourcePrincipals) or
-                isinstance(self.signer, signers.OkeWorkloadIdentityResourcePrincipalSigner)):
+                (isinstance(self.signer, signers.OkeWorkloadIdentityResourcePrincipalSigner) and oke_workload_refresh_enabled)):
             return True
         else:
             return False

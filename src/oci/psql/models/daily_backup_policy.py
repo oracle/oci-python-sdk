@@ -30,6 +30,10 @@ class DailyBackupPolicy(BackupPolicy):
             The value to assign to the retention_days property of this DailyBackupPolicy.
         :type retention_days: int
 
+        :param copy_policy:
+            The value to assign to the copy_policy property of this DailyBackupPolicy.
+        :type copy_policy: oci.psql.models.BackupCopyPolicy
+
         :param backup_start:
             The value to assign to the backup_start property of this DailyBackupPolicy.
         :type backup_start: str
@@ -38,17 +42,20 @@ class DailyBackupPolicy(BackupPolicy):
         self.swagger_types = {
             'kind': 'str',
             'retention_days': 'int',
+            'copy_policy': 'BackupCopyPolicy',
             'backup_start': 'str'
         }
 
         self.attribute_map = {
             'kind': 'kind',
             'retention_days': 'retentionDays',
+            'copy_policy': 'copyPolicy',
             'backup_start': 'backupStart'
         }
 
         self._kind = None
         self._retention_days = None
+        self._copy_policy = None
         self._backup_start = None
         self._kind = 'DAILY'
 

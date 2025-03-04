@@ -386,6 +386,22 @@ class AutonomousContainerDatabaseSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type net_services_architecture: str
 
+        :param is_multiple_standby:
+            The value to assign to the is_multiple_standby property of this AutonomousContainerDatabaseSummary.
+        :type is_multiple_standby: bool
+
+        :param is_data_guard_enabled:
+            The value to assign to the is_data_guard_enabled property of this AutonomousContainerDatabaseSummary.
+        :type is_data_guard_enabled: bool
+
+        :param dataguard:
+            The value to assign to the dataguard property of this AutonomousContainerDatabaseSummary.
+        :type dataguard: oci.database.models.AutonomousContainerDatabaseDataguard
+
+        :param dataguard_group_members:
+            The value to assign to the dataguard_group_members property of this AutonomousContainerDatabaseSummary.
+        :type dataguard_group_members: list[oci.database.models.AutonomousContainerDatabaseDataguard]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -440,7 +456,11 @@ class AutonomousContainerDatabaseSummary(object):
             'db_split_threshold': 'int',
             'vm_failover_reservation': 'int',
             'distribution_affinity': 'str',
-            'net_services_architecture': 'str'
+            'net_services_architecture': 'str',
+            'is_multiple_standby': 'bool',
+            'is_data_guard_enabled': 'bool',
+            'dataguard': 'AutonomousContainerDatabaseDataguard',
+            'dataguard_group_members': 'list[AutonomousContainerDatabaseDataguard]'
         }
 
         self.attribute_map = {
@@ -496,7 +516,11 @@ class AutonomousContainerDatabaseSummary(object):
             'db_split_threshold': 'dbSplitThreshold',
             'vm_failover_reservation': 'vmFailoverReservation',
             'distribution_affinity': 'distributionAffinity',
-            'net_services_architecture': 'netServicesArchitecture'
+            'net_services_architecture': 'netServicesArchitecture',
+            'is_multiple_standby': 'isMultipleStandby',
+            'is_data_guard_enabled': 'isDataGuardEnabled',
+            'dataguard': 'dataguard',
+            'dataguard_group_members': 'dataguardGroupMembers'
         }
 
         self._id = None
@@ -552,6 +576,10 @@ class AutonomousContainerDatabaseSummary(object):
         self._vm_failover_reservation = None
         self._distribution_affinity = None
         self._net_services_architecture = None
+        self._is_multiple_standby = None
+        self._is_data_guard_enabled = None
+        self._dataguard = None
+        self._dataguard_group_members = None
 
     @property
     def id(self):
@@ -1914,6 +1942,98 @@ class AutonomousContainerDatabaseSummary(object):
         if not value_allowed_none_or_none_sentinel(net_services_architecture, allowed_values):
             net_services_architecture = 'UNKNOWN_ENUM_VALUE'
         self._net_services_architecture = net_services_architecture
+
+    @property
+    def is_multiple_standby(self):
+        """
+        Gets the is_multiple_standby of this AutonomousContainerDatabaseSummary.
+        Whether it is multiple standby Autonomous Dataguard
+
+
+        :return: The is_multiple_standby of this AutonomousContainerDatabaseSummary.
+        :rtype: bool
+        """
+        return self._is_multiple_standby
+
+    @is_multiple_standby.setter
+    def is_multiple_standby(self, is_multiple_standby):
+        """
+        Sets the is_multiple_standby of this AutonomousContainerDatabaseSummary.
+        Whether it is multiple standby Autonomous Dataguard
+
+
+        :param is_multiple_standby: The is_multiple_standby of this AutonomousContainerDatabaseSummary.
+        :type: bool
+        """
+        self._is_multiple_standby = is_multiple_standby
+
+    @property
+    def is_data_guard_enabled(self):
+        """
+        Gets the is_data_guard_enabled of this AutonomousContainerDatabaseSummary.
+        **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+
+
+        :return: The is_data_guard_enabled of this AutonomousContainerDatabaseSummary.
+        :rtype: bool
+        """
+        return self._is_data_guard_enabled
+
+    @is_data_guard_enabled.setter
+    def is_data_guard_enabled(self, is_data_guard_enabled):
+        """
+        Sets the is_data_guard_enabled of this AutonomousContainerDatabaseSummary.
+        **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+
+
+        :param is_data_guard_enabled: The is_data_guard_enabled of this AutonomousContainerDatabaseSummary.
+        :type: bool
+        """
+        self._is_data_guard_enabled = is_data_guard_enabled
+
+    @property
+    def dataguard(self):
+        """
+        Gets the dataguard of this AutonomousContainerDatabaseSummary.
+
+        :return: The dataguard of this AutonomousContainerDatabaseSummary.
+        :rtype: oci.database.models.AutonomousContainerDatabaseDataguard
+        """
+        return self._dataguard
+
+    @dataguard.setter
+    def dataguard(self, dataguard):
+        """
+        Sets the dataguard of this AutonomousContainerDatabaseSummary.
+
+        :param dataguard: The dataguard of this AutonomousContainerDatabaseSummary.
+        :type: oci.database.models.AutonomousContainerDatabaseDataguard
+        """
+        self._dataguard = dataguard
+
+    @property
+    def dataguard_group_members(self):
+        """
+        Gets the dataguard_group_members of this AutonomousContainerDatabaseSummary.
+        Array of Dg associations.
+
+
+        :return: The dataguard_group_members of this AutonomousContainerDatabaseSummary.
+        :rtype: list[oci.database.models.AutonomousContainerDatabaseDataguard]
+        """
+        return self._dataguard_group_members
+
+    @dataguard_group_members.setter
+    def dataguard_group_members(self, dataguard_group_members):
+        """
+        Sets the dataguard_group_members of this AutonomousContainerDatabaseSummary.
+        Array of Dg associations.
+
+
+        :param dataguard_group_members: The dataguard_group_members of this AutonomousContainerDatabaseSummary.
+        :type: list[oci.database.models.AutonomousContainerDatabaseDataguard]
+        """
+        self._dataguard_group_members = dataguard_group_members
 
     def __repr__(self):
         return formatted_flat_dict(self)

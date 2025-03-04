@@ -28,19 +28,26 @@ class DbSystemDetails(object):
             The value to assign to the db_version property of this DbSystemDetails.
         :type db_version: str
 
+        :param config_id:
+            The value to assign to the config_id property of this DbSystemDetails.
+        :type config_id: str
+
         """
         self.swagger_types = {
             'system_type': 'str',
-            'db_version': 'str'
+            'db_version': 'str',
+            'config_id': 'str'
         }
 
         self.attribute_map = {
             'system_type': 'systemType',
-            'db_version': 'dbVersion'
+            'db_version': 'dbVersion',
+            'config_id': 'configId'
         }
 
         self._system_type = None
         self._db_version = None
+        self._config_id = None
 
     @property
     def system_type(self):
@@ -89,6 +96,30 @@ class DbSystemDetails(object):
         :type: str
         """
         self._db_version = db_version
+
+    @property
+    def config_id(self):
+        """
+        Gets the config_id of this DbSystemDetails.
+        OCID of the configuration that was applied on the source dbSystem at the time when backup was taken.
+
+
+        :return: The config_id of this DbSystemDetails.
+        :rtype: str
+        """
+        return self._config_id
+
+    @config_id.setter
+    def config_id(self, config_id):
+        """
+        Sets the config_id of this DbSystemDetails.
+        OCID of the configuration that was applied on the source dbSystem at the time when backup was taken.
+
+
+        :param config_id: The config_id of this DbSystemDetails.
+        :type: str
+        """
+        self._config_id = config_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

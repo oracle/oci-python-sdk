@@ -12,6 +12,7 @@ from .action_order_details import ActionOrderDetails
 from .action_param_values_collection import ActionParamValuesCollection
 from .action_param_values_summary import ActionParamValuesSummary
 from .activate_exadata_infrastructure_details import ActivateExadataInfrastructureDetails
+from .add_standby_autonomous_container_database_details import AddStandbyAutonomousContainerDatabaseDetails
 from .add_virtual_machine_to_cloud_vm_cluster_details import AddVirtualMachineToCloudVmClusterDetails
 from .add_virtual_machine_to_vm_cluster_details import AddVirtualMachineToVmClusterDetails
 from .app_version_summary import AppVersionSummary
@@ -21,6 +22,7 @@ from .associated_database_details import AssociatedDatabaseDetails
 from .automated_mount_details import AutomatedMountDetails
 from .autonomous_container_database import AutonomousContainerDatabase
 from .autonomous_container_database_backup_config import AutonomousContainerDatabaseBackupConfig
+from .autonomous_container_database_dataguard import AutonomousContainerDatabaseDataguard
 from .autonomous_container_database_dataguard_association import AutonomousContainerDatabaseDataguardAssociation
 from .autonomous_container_database_resource_usage import AutonomousContainerDatabaseResourceUsage
 from .autonomous_container_database_summary import AutonomousContainerDatabaseSummary
@@ -90,7 +92,9 @@ from .change_dataguard_role_details import ChangeDataguardRoleDetails
 from .change_disaster_recovery_configuration_details import ChangeDisasterRecoveryConfigurationDetails
 from .change_exadata_infrastructure_compartment_details import ChangeExadataInfrastructureCompartmentDetails
 from .change_exadb_vm_cluster_compartment_details import ChangeExadbVmClusterCompartmentDetails
+from .change_exadb_vm_cluster_subscription_details import ChangeExadbVmClusterSubscriptionDetails
 from .change_exascale_db_storage_vault_compartment_details import ChangeExascaleDbStorageVaultCompartmentDetails
+from .change_exascale_db_storage_vault_subscription_details import ChangeExascaleDbStorageVaultSubscriptionDetails
 from .change_key_store_compartment_details import ChangeKeyStoreCompartmentDetails
 from .change_key_store_type_details import ChangeKeyStoreTypeDetails
 from .change_scheduling_plan_compartment_details import ChangeSchedulingPlanCompartmentDetails
@@ -121,6 +125,7 @@ from .console_connection_summary import ConsoleConnectionSummary
 from .console_history import ConsoleHistory
 from .console_history_collection import ConsoleHistoryCollection
 from .console_history_summary import ConsoleHistorySummary
+from .convert_standby_autonomous_container_database_details import ConvertStandbyAutonomousContainerDatabaseDetails
 from .convert_to_pdb_details import ConvertToPdbDetails
 from .convert_to_pdb_target_base import ConvertToPdbTargetBase
 from .convert_to_regular_pluggable_database_details import ConvertToRegularPluggableDatabaseDetails
@@ -255,6 +260,7 @@ from .disaster_recovery_configuration import DisasterRecoveryConfiguration
 from .disk_performance_details import DiskPerformanceDetails
 from .download_oneoff_patch import DownloadOneoffPatch
 from .dr_scan_details import DrScanDetails
+from .edit_autonomous_container_database_dataguard_details import EditAutonomousContainerDatabaseDataguardDetails
 from .enable_database_management_details import EnableDatabaseManagementDetails
 from .enable_external_container_database_database_management_details import EnableExternalContainerDatabaseDatabaseManagementDetails
 from .enable_external_container_database_stack_monitoring_details import EnableExternalContainerDatabaseStackMonitoringDetails
@@ -429,6 +435,7 @@ from .update_autonomous_database_wallet_details import UpdateAutonomousDatabaseW
 from .update_autonomous_exadata_infrastructure_details import UpdateAutonomousExadataInfrastructureDetails
 from .update_autonomous_vm_cluster_details import UpdateAutonomousVmClusterDetails
 from .update_backup_destination_details import UpdateBackupDestinationDetails
+from .update_backup_details import UpdateBackupDetails
 from .update_cloud_autonomous_vm_cluster_details import UpdateCloudAutonomousVmClusterDetails
 from .update_cloud_exadata_infrastructure_details import UpdateCloudExadataInfrastructureDetails
 from .update_cloud_vm_cluster_details import UpdateCloudVmClusterDetails
@@ -489,6 +496,7 @@ database_type_mapping = {
     "ActionParamValuesCollection": ActionParamValuesCollection,
     "ActionParamValuesSummary": ActionParamValuesSummary,
     "ActivateExadataInfrastructureDetails": ActivateExadataInfrastructureDetails,
+    "AddStandbyAutonomousContainerDatabaseDetails": AddStandbyAutonomousContainerDatabaseDetails,
     "AddVirtualMachineToCloudVmClusterDetails": AddVirtualMachineToCloudVmClusterDetails,
     "AddVirtualMachineToVmClusterDetails": AddVirtualMachineToVmClusterDetails,
     "AppVersionSummary": AppVersionSummary,
@@ -498,6 +506,7 @@ database_type_mapping = {
     "AutomatedMountDetails": AutomatedMountDetails,
     "AutonomousContainerDatabase": AutonomousContainerDatabase,
     "AutonomousContainerDatabaseBackupConfig": AutonomousContainerDatabaseBackupConfig,
+    "AutonomousContainerDatabaseDataguard": AutonomousContainerDatabaseDataguard,
     "AutonomousContainerDatabaseDataguardAssociation": AutonomousContainerDatabaseDataguardAssociation,
     "AutonomousContainerDatabaseResourceUsage": AutonomousContainerDatabaseResourceUsage,
     "AutonomousContainerDatabaseSummary": AutonomousContainerDatabaseSummary,
@@ -567,7 +576,9 @@ database_type_mapping = {
     "ChangeDisasterRecoveryConfigurationDetails": ChangeDisasterRecoveryConfigurationDetails,
     "ChangeExadataInfrastructureCompartmentDetails": ChangeExadataInfrastructureCompartmentDetails,
     "ChangeExadbVmClusterCompartmentDetails": ChangeExadbVmClusterCompartmentDetails,
+    "ChangeExadbVmClusterSubscriptionDetails": ChangeExadbVmClusterSubscriptionDetails,
     "ChangeExascaleDbStorageVaultCompartmentDetails": ChangeExascaleDbStorageVaultCompartmentDetails,
+    "ChangeExascaleDbStorageVaultSubscriptionDetails": ChangeExascaleDbStorageVaultSubscriptionDetails,
     "ChangeKeyStoreCompartmentDetails": ChangeKeyStoreCompartmentDetails,
     "ChangeKeyStoreTypeDetails": ChangeKeyStoreTypeDetails,
     "ChangeSchedulingPlanCompartmentDetails": ChangeSchedulingPlanCompartmentDetails,
@@ -598,6 +609,7 @@ database_type_mapping = {
     "ConsoleHistory": ConsoleHistory,
     "ConsoleHistoryCollection": ConsoleHistoryCollection,
     "ConsoleHistorySummary": ConsoleHistorySummary,
+    "ConvertStandbyAutonomousContainerDatabaseDetails": ConvertStandbyAutonomousContainerDatabaseDetails,
     "ConvertToPdbDetails": ConvertToPdbDetails,
     "ConvertToPdbTargetBase": ConvertToPdbTargetBase,
     "ConvertToRegularPluggableDatabaseDetails": ConvertToRegularPluggableDatabaseDetails,
@@ -732,6 +744,7 @@ database_type_mapping = {
     "DiskPerformanceDetails": DiskPerformanceDetails,
     "DownloadOneoffPatch": DownloadOneoffPatch,
     "DrScanDetails": DrScanDetails,
+    "EditAutonomousContainerDatabaseDataguardDetails": EditAutonomousContainerDatabaseDataguardDetails,
     "EnableDatabaseManagementDetails": EnableDatabaseManagementDetails,
     "EnableExternalContainerDatabaseDatabaseManagementDetails": EnableExternalContainerDatabaseDatabaseManagementDetails,
     "EnableExternalContainerDatabaseStackMonitoringDetails": EnableExternalContainerDatabaseStackMonitoringDetails,
@@ -906,6 +919,7 @@ database_type_mapping = {
     "UpdateAutonomousExadataInfrastructureDetails": UpdateAutonomousExadataInfrastructureDetails,
     "UpdateAutonomousVmClusterDetails": UpdateAutonomousVmClusterDetails,
     "UpdateBackupDestinationDetails": UpdateBackupDestinationDetails,
+    "UpdateBackupDetails": UpdateBackupDetails,
     "UpdateCloudAutonomousVmClusterDetails": UpdateCloudAutonomousVmClusterDetails,
     "UpdateCloudExadataInfrastructureDetails": UpdateCloudExadataInfrastructureDetails,
     "UpdateCloudVmClusterDetails": UpdateCloudVmClusterDetails,

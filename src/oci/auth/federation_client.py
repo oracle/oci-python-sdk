@@ -17,7 +17,23 @@ import pprint
 
 from oci.circuit_breaker import CircuitBreakerStrategy, NoCircuitBreakerStrategy
 from circuitbreaker import CircuitBreakerMonitor
+from oci.version import __version__
+from oci import constants
+import platform
+import os
 import random
+
+APPEND_USER_AGENT_ENV_VAR_NAME = "OCI_SDK_APPEND_USER_AGENT"
+APPEND_USER_AGENT = os.environ.get(APPEND_USER_AGENT_ENV_VAR_NAME)
+USER_INFO = f"Oracle-PythonSDK/{__version__}"
+
+
+def build_user_agent():
+    agent = f'{USER_INFO} (python {platform.python_version()}; {platform.machine()}-{platform.system()})'
+    agent = agent.strip()
+    if APPEND_USER_AGENT:
+        agent = f"{agent} {APPEND_USER_AGENT}"
+    return agent
 
 
 class X509FederationClient(object):
@@ -134,6 +150,7 @@ class X509FederationClient(object):
         self._set_circuit_breaker_strategy(circuit_breaker_strategy=kwargs.get('circuit_breaker_strategy'))
 
         self.requests_session = requests.Session()
+        self.user_agent = build_user_agent()
 
     def _set_circuit_breaker_strategy(self, circuit_breaker_strategy):
         self.circuit_breaker_strategy = circuit_breaker_strategy
@@ -209,8 +226,8 @@ class X509FederationClient(object):
         fingerprint = ":".join("{:02X}".format(ch) for ch in bytearray(certificate.fingerprint(SHA1())))
         signer = AuthTokenRequestSigner(self.tenancy_id, fingerprint, self.leaf_certificate_retriever)
 
-        self.logger.debug("Requesting token from : %s " % (self.federation_endpoint))
-        response = self.requests_session.post(self.federation_endpoint, json=request_payload, auth=signer, verify=self.cert_bundle_verify, timeout=(10, 60))
+        self.logger.debug("Requesting token from : %s " % self.federation_endpoint)
+        response = self.requests_session.post(self.federation_endpoint, json=request_payload, auth=signer, verify=self.cert_bundle_verify, timeout=(10, 60), headers={constants.HEADER_USER_AGENT: self.user_agent})
         self.logger.debug("Receiving token response......\n{}\n".format(pprint.pformat(
             {"status_code": response.status_code, "url": response.url, "header": dict(response.headers.items()),
                 "reason": response.reason}, indent=2)))

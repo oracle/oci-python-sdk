@@ -53,19 +53,26 @@ class BackupPolicy(object):
             The value to assign to the retention_days property of this BackupPolicy.
         :type retention_days: int
 
+        :param copy_policy:
+            The value to assign to the copy_policy property of this BackupPolicy.
+        :type copy_policy: oci.psql.models.BackupCopyPolicy
+
         """
         self.swagger_types = {
             'kind': 'str',
-            'retention_days': 'int'
+            'retention_days': 'int',
+            'copy_policy': 'BackupCopyPolicy'
         }
 
         self.attribute_map = {
             'kind': 'kind',
-            'retention_days': 'retentionDays'
+            'retention_days': 'retentionDays',
+            'copy_policy': 'copyPolicy'
         }
 
         self._kind = None
         self._retention_days = None
+        self._copy_policy = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -142,6 +149,26 @@ class BackupPolicy(object):
         :type: int
         """
         self._retention_days = retention_days
+
+    @property
+    def copy_policy(self):
+        """
+        Gets the copy_policy of this BackupPolicy.
+
+        :return: The copy_policy of this BackupPolicy.
+        :rtype: oci.psql.models.BackupCopyPolicy
+        """
+        return self._copy_policy
+
+    @copy_policy.setter
+    def copy_policy(self, copy_policy):
+        """
+        Sets the copy_policy of this BackupPolicy.
+
+        :param copy_policy: The copy_policy of this BackupPolicy.
+        :type: oci.psql.models.BackupCopyPolicy
+        """
+        self._copy_policy = copy_policy
 
     def __repr__(self):
         return formatted_flat_dict(self)

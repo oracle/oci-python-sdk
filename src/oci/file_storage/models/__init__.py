@@ -20,6 +20,7 @@ from .create_ldap_bind_account_details import CreateLdapBindAccountDetails
 from .create_ldap_idmap_details import CreateLdapIdmapDetails
 from .create_mount_target_details import CreateMountTargetDetails
 from .create_outbound_connector_details import CreateOutboundConnectorDetails
+from .create_quota_rule_details import CreateQuotaRuleDetails
 from .create_replication_details import CreateReplicationDetails
 from .create_snapshot_details import CreateSnapshotDetails
 from .endpoint import Endpoint
@@ -41,6 +42,8 @@ from .mount_target import MountTarget
 from .mount_target_summary import MountTargetSummary
 from .outbound_connector import OutboundConnector
 from .outbound_connector_summary import OutboundConnectorSummary
+from .quota_rule import QuotaRule
+from .quota_rule_summary import QuotaRuleSummary
 from .replication import Replication
 from .replication_estimate import ReplicationEstimate
 from .replication_summary import ReplicationSummary
@@ -52,6 +55,7 @@ from .snapshot import Snapshot
 from .snapshot_schedule import SnapshotSchedule
 from .snapshot_summary import SnapshotSummary
 from .source_details import SourceDetails
+from .toggle_quota_rules_details import ToggleQuotaRulesDetails
 from .update_export_details import UpdateExportDetails
 from .update_export_set_details import UpdateExportSetDetails
 from .update_file_system_details import UpdateFileSystemDetails
@@ -60,6 +64,7 @@ from .update_kerberos_details import UpdateKerberosDetails
 from .update_ldap_idmap_details import UpdateLdapIdmapDetails
 from .update_mount_target_details import UpdateMountTargetDetails
 from .update_outbound_connector_details import UpdateOutboundConnectorDetails
+from .update_quota_rule_details import UpdateQuotaRuleDetails
 from .update_replication_details import UpdateReplicationDetails
 from .update_snapshot_details import UpdateSnapshotDetails
 from .upgrade_shape_mount_target_details import UpgradeShapeMountTargetDetails
@@ -82,6 +87,7 @@ file_storage_type_mapping = {
     "CreateLdapIdmapDetails": CreateLdapIdmapDetails,
     "CreateMountTargetDetails": CreateMountTargetDetails,
     "CreateOutboundConnectorDetails": CreateOutboundConnectorDetails,
+    "CreateQuotaRuleDetails": CreateQuotaRuleDetails,
     "CreateReplicationDetails": CreateReplicationDetails,
     "CreateSnapshotDetails": CreateSnapshotDetails,
     "Endpoint": Endpoint,
@@ -103,6 +109,8 @@ file_storage_type_mapping = {
     "MountTargetSummary": MountTargetSummary,
     "OutboundConnector": OutboundConnector,
     "OutboundConnectorSummary": OutboundConnectorSummary,
+    "QuotaRule": QuotaRule,
+    "QuotaRuleSummary": QuotaRuleSummary,
     "Replication": Replication,
     "ReplicationEstimate": ReplicationEstimate,
     "ReplicationSummary": ReplicationSummary,
@@ -114,6 +122,7 @@ file_storage_type_mapping = {
     "SnapshotSchedule": SnapshotSchedule,
     "SnapshotSummary": SnapshotSummary,
     "SourceDetails": SourceDetails,
+    "ToggleQuotaRulesDetails": ToggleQuotaRulesDetails,
     "UpdateExportDetails": UpdateExportDetails,
     "UpdateExportSetDetails": UpdateExportSetDetails,
     "UpdateFileSystemDetails": UpdateFileSystemDetails,
@@ -122,6 +131,7 @@ file_storage_type_mapping = {
     "UpdateLdapIdmapDetails": UpdateLdapIdmapDetails,
     "UpdateMountTargetDetails": UpdateMountTargetDetails,
     "UpdateOutboundConnectorDetails": UpdateOutboundConnectorDetails,
+    "UpdateQuotaRuleDetails": UpdateQuotaRuleDetails,
     "UpdateReplicationDetails": UpdateReplicationDetails,
     "UpdateSnapshotDetails": UpdateSnapshotDetails,
     "UpgradeShapeMountTargetDetails": UpgradeShapeMountTargetDetails,

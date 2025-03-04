@@ -7,6 +7,7 @@
 from __future__ import absolute_import
 
 from .activate_order_details import ActivateOrderDetails
+from .additional_assigned_region_collection import AdditionalAssignedRegionCollection
 from .assigned_subscription import AssignedSubscription
 from .assigned_subscription_collection import AssignedSubscriptionCollection
 from .assigned_subscription_line_item_collection import AssignedSubscriptionLineItemCollection
@@ -79,6 +80,7 @@ from .work_request_summary import WorkRequestSummary
 # Maps type names to classes for tenant_manager_control_plane services.
 tenant_manager_control_plane_type_mapping = {
     "ActivateOrderDetails": ActivateOrderDetails,
+    "AdditionalAssignedRegionCollection": AdditionalAssignedRegionCollection,
     "AssignedSubscription": AssignedSubscription,
     "AssignedSubscriptionCollection": AssignedSubscriptionCollection,
     "AssignedSubscriptionLineItemCollection": AssignedSubscriptionLineItemCollection,

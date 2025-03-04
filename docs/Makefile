@@ -2,7 +2,7 @@
 #
 
 # You can set these variables from the command line.
-SPHINXOPTS    = -w warnings.txt
+SPHINXOPTS    = -w warnings.txt -j 8
 SPHINXBUILD   = sphinx-build
 PAPER         =
 BUILDDIR      = _build
