@@ -15,6 +15,14 @@ class MaskDataDetails(object):
     Details to mask data.
     """
 
+    #: A constant which can be used with the re_run_from_step property of a MaskDataDetails.
+    #: This constant has a value of "PRE_MASKING_SCRIPT"
+    RE_RUN_FROM_STEP_PRE_MASKING_SCRIPT = "PRE_MASKING_SCRIPT"
+
+    #: A constant which can be used with the re_run_from_step property of a MaskDataDetails.
+    #: This constant has a value of "POST_MASKING_SCRIPT"
+    RE_RUN_FROM_STEP_POST_MASKING_SCRIPT = "POST_MASKING_SCRIPT"
+
     def __init__(self, **kwargs):
         """
         Initializes a new MaskDataDetails object with values from keyword arguments.
@@ -31,6 +39,11 @@ class MaskDataDetails(object):
         :param is_rerun:
             The value to assign to the is_rerun property of this MaskDataDetails.
         :type is_rerun: bool
+
+        :param re_run_from_step:
+            The value to assign to the re_run_from_step property of this MaskDataDetails.
+            Allowed values for this property are: "PRE_MASKING_SCRIPT", "POST_MASKING_SCRIPT"
+        :type re_run_from_step: str
 
         :param tablespace:
             The value to assign to the tablespace property of this MaskDataDetails.
@@ -77,6 +90,7 @@ class MaskDataDetails(object):
             'target_id': 'str',
             'is_decrypt': 'bool',
             'is_rerun': 'bool',
+            're_run_from_step': 'str',
             'tablespace': 'str',
             'is_ignore_errors_enabled': 'bool',
             'seed': 'str',
@@ -93,6 +107,7 @@ class MaskDataDetails(object):
             'target_id': 'targetId',
             'is_decrypt': 'isDecrypt',
             'is_rerun': 'isRerun',
+            're_run_from_step': 'reRunFromStep',
             'tablespace': 'tablespace',
             'is_ignore_errors_enabled': 'isIgnoreErrorsEnabled',
             'seed': 'seed',
@@ -108,6 +123,7 @@ class MaskDataDetails(object):
         self._target_id = None
         self._is_decrypt = None
         self._is_rerun = None
+        self._re_run_from_step = None
         self._tablespace = None
         self._is_ignore_errors_enabled = None
         self._seed = None
@@ -204,6 +220,43 @@ class MaskDataDetails(object):
         :type: bool
         """
         self._is_rerun = is_rerun
+
+    @property
+    def re_run_from_step(self):
+        """
+        Gets the re_run_from_step of this MaskDataDetails.
+        Specifies the step from which masking needs to be rerun. This param will be used only when isRerun attribute is true.
+        If PRE_MASKING_SCRIPT is passed, it will rerun the pre-masking script, followed by masking, and then the post-masking script.
+        If POST_MASKING_SCRIPT is passed, it will rerun only the post-masking script.
+        If this field is not set and isRerun is set to true, then it will default to the last failed step.
+
+        Allowed values for this property are: "PRE_MASKING_SCRIPT", "POST_MASKING_SCRIPT"
+
+
+        :return: The re_run_from_step of this MaskDataDetails.
+        :rtype: str
+        """
+        return self._re_run_from_step
+
+    @re_run_from_step.setter
+    def re_run_from_step(self, re_run_from_step):
+        """
+        Sets the re_run_from_step of this MaskDataDetails.
+        Specifies the step from which masking needs to be rerun. This param will be used only when isRerun attribute is true.
+        If PRE_MASKING_SCRIPT is passed, it will rerun the pre-masking script, followed by masking, and then the post-masking script.
+        If POST_MASKING_SCRIPT is passed, it will rerun only the post-masking script.
+        If this field is not set and isRerun is set to true, then it will default to the last failed step.
+
+
+        :param re_run_from_step: The re_run_from_step of this MaskDataDetails.
+        :type: str
+        """
+        allowed_values = ["PRE_MASKING_SCRIPT", "POST_MASKING_SCRIPT"]
+        if not value_allowed_none_or_none_sentinel(re_run_from_step, allowed_values):
+            raise ValueError(
+                f"Invalid value for `re_run_from_step`, must be None or one of {allowed_values}"
+            )
+        self._re_run_from_step = re_run_from_step
 
     @property
     def tablespace(self):

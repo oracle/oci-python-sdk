@@ -22,7 +22,7 @@ missing = Sentinel("Missing")
 
 class SecurityAttributeClient(object):
     """
-    Use the Security Attributes API to manage security attributes and security attribute namespaces. For more information, see the documentation for [Security Attributes](/iaas/Content/zero-trust-packet-routing/managing-security-attributes.htm) and [Security Attribute Nampespaces](/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
+    Use the Security Attributes API to manage security attributes and security attribute namespaces. For more information, see the documentation for [Security Attributes](/iaas/Content/zero-trust-packet-routing/managing-security-attributes.htm) and [Security Attribute Namespaces](/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -130,9 +130,9 @@ class SecurityAttributeClient(object):
         When all security attributes have been removed, the state changes to DELETED. You cannot restore a deleted security attribute. After the security attribute state
         changes to DELETED, you can use the same security attribute name again.
 
-        After you start this operation, you cannot start either the :func:`delete_security_attribute` or the :func:`cascade_delete_security_attribute_namespace` operation until this process completes.
+        After you start this operation, you cannot start either the :func:`delete_security_attribute` or the :func:`cascading_delete_security_attribute_namespace` operation until this process completes.
 
-        In order to delete security attribute, you must first retire the security attribute. Use :func:`update_security_attribute`
+        In order to delete security attribute, you must first retire the security attribute. Use :func:`update_security_attribute_namespace`
         to retire a security attribute.
 
 
@@ -750,7 +750,7 @@ class SecurityAttributeClient(object):
 
         You must also specify a *description* for the namespace.
         It does not have to be unique, and you can change it with
-        :func:`security_attribute_namespace`.
+        :func:`update_security_attribute_namespace`.
 
 
         :param oci.security_attribute.models.CreateSecurityAttributeNamespaceDetails create_security_attribute_namespace_details: (required)
@@ -861,7 +861,7 @@ class SecurityAttributeClient(object):
         When all attributes have been removed, the state changes to DELETED. You cannot restore a deleted attribute. Once the deleted attribute
         changes its state to DELETED, you can use the same security attribute name again.
 
-        After you start this operation, you cannot start either the :func:`bulk_delete_security_attributes` or the :func:`cascade_delete_tag_namespace` operation until this process completes.
+        After you start this operation, you cannot start either the :func:`bulk_delete_security_attributes` or the :func:`cascading_delete_security_attribute_namespace` operation until this process completes.
 
         To delete a security attribute, you must first retire it. Use :func:`update_security_attribute`
         to retire a security attribute.
@@ -2193,7 +2193,7 @@ class SecurityAttributeClient(object):
         Updating `isRetired` to 'true' retires the namespace and all the security attributes in the namespace. Reactivating a
         namespace (changing `isRetired` from 'true' to 'false') does not reactivate security attributes.
         To reactivate the security attributes, you must reactivate each one individually *after* you reactivate the namespace,
-        using :func:`update_tag`. For more information about retiring security attribute namespaces, see
+        using :func:`update_security_attribute`. For more information about retiring security attribute namespaces, see
         `Managing Security Attribute Namespaces`__.
 
         You can't add a namespace with the same name as a retired namespace in the same tenancy.

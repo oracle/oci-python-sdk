@@ -24,6 +24,14 @@ class CreateVmClusterDetails(object):
     #: This constant has a value of "BRING_YOUR_OWN_LICENSE"
     LICENSE_MODEL_BRING_YOUR_OWN_LICENSE = "BRING_YOUR_OWN_LICENSE"
 
+    #: A constant which can be used with the vm_cluster_type property of a CreateVmClusterDetails.
+    #: This constant has a value of "REGULAR"
+    VM_CLUSTER_TYPE_REGULAR = "REGULAR"
+
+    #: A constant which can be used with the vm_cluster_type property of a CreateVmClusterDetails.
+    #: This constant has a value of "DEVELOPER"
+    VM_CLUSTER_TYPE_DEVELOPER = "DEVELOPER"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateVmClusterDetails object with values from keyword arguments.
@@ -118,6 +126,11 @@ class CreateVmClusterDetails(object):
             The value to assign to the file_system_configuration_details property of this CreateVmClusterDetails.
         :type file_system_configuration_details: list[oci.database.models.FileSystemConfigurationDetail]
 
+        :param vm_cluster_type:
+            The value to assign to the vm_cluster_type property of this CreateVmClusterDetails.
+            Allowed values for this property are: "REGULAR", "DEVELOPER"
+        :type vm_cluster_type: str
+
         :param cloud_automation_update_details:
             The value to assign to the cloud_automation_update_details property of this CreateVmClusterDetails.
         :type cloud_automation_update_details: oci.database.models.CloudAutomationUpdateDetails
@@ -150,6 +163,7 @@ class CreateVmClusterDetails(object):
             'data_collection_options': 'DataCollectionOptions',
             'system_version': 'str',
             'file_system_configuration_details': 'list[FileSystemConfigurationDetail]',
+            'vm_cluster_type': 'str',
             'cloud_automation_update_details': 'CloudAutomationUpdateDetails',
             'exascale_db_storage_vault_id': 'str'
         }
@@ -177,6 +191,7 @@ class CreateVmClusterDetails(object):
             'data_collection_options': 'dataCollectionOptions',
             'system_version': 'systemVersion',
             'file_system_configuration_details': 'fileSystemConfigurationDetails',
+            'vm_cluster_type': 'vmClusterType',
             'cloud_automation_update_details': 'cloudAutomationUpdateDetails',
             'exascale_db_storage_vault_id': 'exascaleDbStorageVaultId'
         }
@@ -203,6 +218,7 @@ class CreateVmClusterDetails(object):
         self._data_collection_options = None
         self._system_version = None
         self._file_system_configuration_details = None
+        self._vm_cluster_type = None
         self._cloud_automation_update_details = None
         self._exascale_db_storage_vault_id = None
 
@@ -768,6 +784,37 @@ class CreateVmClusterDetails(object):
         :type: list[oci.database.models.FileSystemConfigurationDetail]
         """
         self._file_system_configuration_details = file_system_configuration_details
+
+    @property
+    def vm_cluster_type(self):
+        """
+        Gets the vm_cluster_type of this CreateVmClusterDetails.
+        The vmcluster type for the VM cluster/Cloud VM cluster.
+
+        Allowed values for this property are: "REGULAR", "DEVELOPER"
+
+
+        :return: The vm_cluster_type of this CreateVmClusterDetails.
+        :rtype: str
+        """
+        return self._vm_cluster_type
+
+    @vm_cluster_type.setter
+    def vm_cluster_type(self, vm_cluster_type):
+        """
+        Sets the vm_cluster_type of this CreateVmClusterDetails.
+        The vmcluster type for the VM cluster/Cloud VM cluster.
+
+
+        :param vm_cluster_type: The vm_cluster_type of this CreateVmClusterDetails.
+        :type: str
+        """
+        allowed_values = ["REGULAR", "DEVELOPER"]
+        if not value_allowed_none_or_none_sentinel(vm_cluster_type, allowed_values):
+            raise ValueError(
+                f"Invalid value for `vm_cluster_type`, must be None or one of {allowed_values}"
+            )
+        self._vm_cluster_type = vm_cluster_type
 
     @property
     def cloud_automation_update_details(self):

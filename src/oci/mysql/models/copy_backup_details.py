@@ -32,6 +32,10 @@ class CopyBackupDetails(object):
             The value to assign to the display_name property of this CopyBackupDetails.
         :type display_name: str
 
+        :param backup_copy_retention_in_days:
+            The value to assign to the backup_copy_retention_in_days property of this CopyBackupDetails.
+        :type backup_copy_retention_in_days: int
+
         :param source_backup_id:
             The value to assign to the source_backup_id property of this CopyBackupDetails.
         :type source_backup_id: str
@@ -45,6 +49,7 @@ class CopyBackupDetails(object):
             'compartment_id': 'str',
             'description': 'str',
             'display_name': 'str',
+            'backup_copy_retention_in_days': 'int',
             'source_backup_id': 'str',
             'source_region': 'str'
         }
@@ -53,6 +58,7 @@ class CopyBackupDetails(object):
             'compartment_id': 'compartmentId',
             'description': 'description',
             'display_name': 'displayName',
+            'backup_copy_retention_in_days': 'backupCopyRetentionInDays',
             'source_backup_id': 'sourceBackupId',
             'source_region': 'sourceRegion'
         }
@@ -60,6 +66,7 @@ class CopyBackupDetails(object):
         self._compartment_id = None
         self._description = None
         self._display_name = None
+        self._backup_copy_retention_in_days = None
         self._source_backup_id = None
         self._source_region = None
 
@@ -142,6 +149,34 @@ class CopyBackupDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def backup_copy_retention_in_days(self):
+        """
+        Gets the backup_copy_retention_in_days of this CopyBackupDetails.
+        Number of days to retain the copied DB system backup.
+
+        **Note:** The maximum value for an automatic backup is 35, and the maximum value for a manual backup is 365.
+
+
+        :return: The backup_copy_retention_in_days of this CopyBackupDetails.
+        :rtype: int
+        """
+        return self._backup_copy_retention_in_days
+
+    @backup_copy_retention_in_days.setter
+    def backup_copy_retention_in_days(self, backup_copy_retention_in_days):
+        """
+        Sets the backup_copy_retention_in_days of this CopyBackupDetails.
+        Number of days to retain the copied DB system backup.
+
+        **Note:** The maximum value for an automatic backup is 35, and the maximum value for a manual backup is 365.
+
+
+        :param backup_copy_retention_in_days: The backup_copy_retention_in_days of this CopyBackupDetails.
+        :type: int
+        """
+        self._backup_copy_retention_in_days = backup_copy_retention_in_days
 
     @property
     def source_backup_id(self):

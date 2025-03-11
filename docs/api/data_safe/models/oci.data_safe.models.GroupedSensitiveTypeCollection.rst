@@ -1,9 +1,9 @@
-PipelineValidationErrorDetails
+GroupedSensitiveTypeCollection
 ==============================
 
-.. currentmodule:: oci.opensearch.models
+.. currentmodule:: oci.data_safe.models
 
-.. autoclass:: PipelineValidationErrorDetails
+.. autoclass:: GroupedSensitiveTypeCollection
     :show-inheritance:
     :special-members: __init__
     :members:

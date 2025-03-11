@@ -8,8 +8,10 @@ Opensearch
 
     oci.opensearch.OpensearchClusterBackupClient
     oci.opensearch.OpensearchClusterClient
+    oci.opensearch.OpensearchClusterPipelineClient
     oci.opensearch.OpensearchClusterBackupClientCompositeOperations
     oci.opensearch.OpensearchClusterClientCompositeOperations
+    oci.opensearch.OpensearchClusterPipelineClientCompositeOperations
 
 --------
  Models
@@ -34,6 +36,7 @@ Opensearch
     oci.opensearch.models.DeleteBlockVolumesForNamespaceDetails
     oci.opensearch.models.ExportOpensearchClusterBackupDetails
     oci.opensearch.models.ForcePatchClusterDetails
+    oci.opensearch.models.ForcePatchPipelineDetails
     oci.opensearch.models.GetManifestResponse
     oci.opensearch.models.MaintenanceDetails
     oci.opensearch.models.MaintenanceNotificationDetails
@@ -49,12 +52,11 @@ Opensearch
     oci.opensearch.models.OpensearchClusterPipelineCollection
     oci.opensearch.models.OpensearchClusterPipelineSummary
     oci.opensearch.models.OpensearchClusterSummary
-    oci.opensearch.models.OpensearchPipelineValidationResponse
+    oci.opensearch.models.OpensearchPipelineReverseConnectionEndpoint
     oci.opensearch.models.OpensearchVersionsCollection
     oci.opensearch.models.OpensearchVersionsSummary
     oci.opensearch.models.OutboundClusterConfig
     oci.opensearch.models.OutboundClusterSummary
-    oci.opensearch.models.PipelineValidationErrorDetails
     oci.opensearch.models.ReclaimClusterDetails
     oci.opensearch.models.ResizeOpensearchClusterHorizontalDetails
     oci.opensearch.models.ResizeOpensearchClusterVerticalDetails
@@ -70,8 +72,8 @@ Opensearch
     oci.opensearch.models.UpdateOpensearchClusterBackupDetails
     oci.opensearch.models.UpdateOpensearchClusterDetails
     oci.opensearch.models.UpdateOpensearchClusterPipelineDetails
+    oci.opensearch.models.UpdatePipelineStatusDetails
     oci.opensearch.models.UpgradeOpenSearchClusterDetails
-    oci.opensearch.models.ValidateOpensearchPipelineDetails
     oci.opensearch.models.WorkRequest
     oci.opensearch.models.WorkRequestCollection
     oci.opensearch.models.WorkRequestError

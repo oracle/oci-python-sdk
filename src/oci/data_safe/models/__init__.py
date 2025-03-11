@@ -78,6 +78,7 @@ from .change_security_policy_compartment_details import ChangeSecurityPolicyComp
 from .change_security_policy_deployment_compartment_details import ChangeSecurityPolicyDeploymentCompartmentDetails
 from .change_sensitive_data_model_compartment_details import ChangeSensitiveDataModelCompartmentDetails
 from .change_sensitive_type_compartment_details import ChangeSensitiveTypeCompartmentDetails
+from .change_sensitive_type_group_compartment_details import ChangeSensitiveTypeGroupCompartmentDetails
 from .change_sensitive_types_export_compartment_details import ChangeSensitiveTypesExportCompartmentDetails
 from .change_sql_collection_compartment_details import ChangeSqlCollectionCompartmentDetails
 from .change_sql_firewall_policy_compartment_details import ChangeSqlFirewallPolicyCompartmentDetails
@@ -120,6 +121,7 @@ from .create_sensitive_category_details import CreateSensitiveCategoryDetails
 from .create_sensitive_column_details import CreateSensitiveColumnDetails
 from .create_sensitive_data_model_details import CreateSensitiveDataModelDetails
 from .create_sensitive_type_details import CreateSensitiveTypeDetails
+from .create_sensitive_type_group_details import CreateSensitiveTypeGroupDetails
 from .create_sensitive_type_pattern_details import CreateSensitiveTypePatternDetails
 from .create_sensitive_types_export_details import CreateSensitiveTypesExportDetails
 from .create_sql_collection_details import CreateSqlCollectionDetails
@@ -193,6 +195,8 @@ from .generate_sensitive_data_model_for_download_details import GenerateSensitiv
 from .generate_user_assessment_report_details import GenerateUserAssessmentReportDetails
 from .global_settings import GlobalSettings
 from .grant_summary import GrantSummary
+from .grouped_sensitive_type_collection import GroupedSensitiveTypeCollection
+from .grouped_sensitive_type_summary import GroupedSensitiveTypeSummary
 from .initialization_parameter import InitializationParameter
 from .installed_database_details import InstalledDatabaseDetails
 from .library_masking_format import LibraryMaskingFormat
@@ -209,6 +213,8 @@ from .masking_analytics_summary import MaskingAnalyticsSummary
 from .masking_column import MaskingColumn
 from .masking_column_collection import MaskingColumnCollection
 from .masking_column_summary import MaskingColumnSummary
+from .masking_error_collection import MaskingErrorCollection
+from .masking_error_summary import MaskingErrorSummary
 from .masking_format import MaskingFormat
 from .masking_object_collection import MaskingObjectCollection
 from .masking_object_summary import MaskingObjectSummary
@@ -238,6 +244,7 @@ from .ppf_format_entry import PPFFormatEntry
 from .patch_alert_policy_rule_details import PatchAlertPolicyRuleDetails
 from .patch_alerts_details import PatchAlertsDetails
 from .patch_discovery_job_result_details import PatchDiscoveryJobResultDetails
+from .patch_grouped_sensitive_types_details import PatchGroupedSensitiveTypesDetails
 from .patch_insert_instruction import PatchInsertInstruction
 from .patch_instruction import PatchInstruction
 from .patch_masking_columns_details import PatchMaskingColumnsDetails
@@ -319,6 +326,9 @@ from .security_policy_summary import SecurityPolicySummary
 from .selection_details import SelectionDetails
 from .sensitive_category import SensitiveCategory
 from .sensitive_column import SensitiveColumn
+from .sensitive_column_analytics_collection import SensitiveColumnAnalyticsCollection
+from .sensitive_column_analytics_dimensions import SensitiveColumnAnalyticsDimensions
+from .sensitive_column_analytics_summary import SensitiveColumnAnalyticsSummary
 from .sensitive_column_collection import SensitiveColumnCollection
 from .sensitive_column_summary import SensitiveColumnSummary
 from .sensitive_data_model import SensitiveDataModel
@@ -332,6 +342,9 @@ from .sensitive_schema_collection import SensitiveSchemaCollection
 from .sensitive_schema_summary import SensitiveSchemaSummary
 from .sensitive_type import SensitiveType
 from .sensitive_type_collection import SensitiveTypeCollection
+from .sensitive_type_group import SensitiveTypeGroup
+from .sensitive_type_group_collection import SensitiveTypeGroupCollection
+from .sensitive_type_group_summary import SensitiveTypeGroupSummary
 from .sensitive_type_pattern import SensitiveTypePattern
 from .sensitive_type_summary import SensitiveTypeSummary
 from .sensitive_types_export import SensitiveTypesExport
@@ -409,6 +422,7 @@ from .update_sensitive_category_details import UpdateSensitiveCategoryDetails
 from .update_sensitive_column_details import UpdateSensitiveColumnDetails
 from .update_sensitive_data_model_details import UpdateSensitiveDataModelDetails
 from .update_sensitive_type_details import UpdateSensitiveTypeDetails
+from .update_sensitive_type_group_details import UpdateSensitiveTypeGroupDetails
 from .update_sensitive_type_pattern_details import UpdateSensitiveTypePatternDetails
 from .update_sensitive_types_export_details import UpdateSensitiveTypesExportDetails
 from .update_sql_collection_details import UpdateSqlCollectionDetails
@@ -506,6 +520,7 @@ data_safe_type_mapping = {
     "ChangeSecurityPolicyDeploymentCompartmentDetails": ChangeSecurityPolicyDeploymentCompartmentDetails,
     "ChangeSensitiveDataModelCompartmentDetails": ChangeSensitiveDataModelCompartmentDetails,
     "ChangeSensitiveTypeCompartmentDetails": ChangeSensitiveTypeCompartmentDetails,
+    "ChangeSensitiveTypeGroupCompartmentDetails": ChangeSensitiveTypeGroupCompartmentDetails,
     "ChangeSensitiveTypesExportCompartmentDetails": ChangeSensitiveTypesExportCompartmentDetails,
     "ChangeSqlCollectionCompartmentDetails": ChangeSqlCollectionCompartmentDetails,
     "ChangeSqlFirewallPolicyCompartmentDetails": ChangeSqlFirewallPolicyCompartmentDetails,
@@ -548,6 +563,7 @@ data_safe_type_mapping = {
     "CreateSensitiveColumnDetails": CreateSensitiveColumnDetails,
     "CreateSensitiveDataModelDetails": CreateSensitiveDataModelDetails,
     "CreateSensitiveTypeDetails": CreateSensitiveTypeDetails,
+    "CreateSensitiveTypeGroupDetails": CreateSensitiveTypeGroupDetails,
     "CreateSensitiveTypePatternDetails": CreateSensitiveTypePatternDetails,
     "CreateSensitiveTypesExportDetails": CreateSensitiveTypesExportDetails,
     "CreateSqlCollectionDetails": CreateSqlCollectionDetails,
@@ -621,6 +637,8 @@ data_safe_type_mapping = {
     "GenerateUserAssessmentReportDetails": GenerateUserAssessmentReportDetails,
     "GlobalSettings": GlobalSettings,
     "GrantSummary": GrantSummary,
+    "GroupedSensitiveTypeCollection": GroupedSensitiveTypeCollection,
+    "GroupedSensitiveTypeSummary": GroupedSensitiveTypeSummary,
     "InitializationParameter": InitializationParameter,
     "InstalledDatabaseDetails": InstalledDatabaseDetails,
     "LibraryMaskingFormat": LibraryMaskingFormat,
@@ -637,6 +655,8 @@ data_safe_type_mapping = {
     "MaskingColumn": MaskingColumn,
     "MaskingColumnCollection": MaskingColumnCollection,
     "MaskingColumnSummary": MaskingColumnSummary,
+    "MaskingErrorCollection": MaskingErrorCollection,
+    "MaskingErrorSummary": MaskingErrorSummary,
     "MaskingFormat": MaskingFormat,
     "MaskingObjectCollection": MaskingObjectCollection,
     "MaskingObjectSummary": MaskingObjectSummary,
@@ -666,6 +686,7 @@ data_safe_type_mapping = {
     "PatchAlertPolicyRuleDetails": PatchAlertPolicyRuleDetails,
     "PatchAlertsDetails": PatchAlertsDetails,
     "PatchDiscoveryJobResultDetails": PatchDiscoveryJobResultDetails,
+    "PatchGroupedSensitiveTypesDetails": PatchGroupedSensitiveTypesDetails,
     "PatchInsertInstruction": PatchInsertInstruction,
     "PatchInstruction": PatchInstruction,
     "PatchMaskingColumnsDetails": PatchMaskingColumnsDetails,
@@ -747,6 +768,9 @@ data_safe_type_mapping = {
     "SelectionDetails": SelectionDetails,
     "SensitiveCategory": SensitiveCategory,
     "SensitiveColumn": SensitiveColumn,
+    "SensitiveColumnAnalyticsCollection": SensitiveColumnAnalyticsCollection,
+    "SensitiveColumnAnalyticsDimensions": SensitiveColumnAnalyticsDimensions,
+    "SensitiveColumnAnalyticsSummary": SensitiveColumnAnalyticsSummary,
     "SensitiveColumnCollection": SensitiveColumnCollection,
     "SensitiveColumnSummary": SensitiveColumnSummary,
     "SensitiveDataModel": SensitiveDataModel,
@@ -760,6 +784,9 @@ data_safe_type_mapping = {
     "SensitiveSchemaSummary": SensitiveSchemaSummary,
     "SensitiveType": SensitiveType,
     "SensitiveTypeCollection": SensitiveTypeCollection,
+    "SensitiveTypeGroup": SensitiveTypeGroup,
+    "SensitiveTypeGroupCollection": SensitiveTypeGroupCollection,
+    "SensitiveTypeGroupSummary": SensitiveTypeGroupSummary,
     "SensitiveTypePattern": SensitiveTypePattern,
     "SensitiveTypeSummary": SensitiveTypeSummary,
     "SensitiveTypesExport": SensitiveTypesExport,
@@ -837,6 +864,7 @@ data_safe_type_mapping = {
     "UpdateSensitiveColumnDetails": UpdateSensitiveColumnDetails,
     "UpdateSensitiveDataModelDetails": UpdateSensitiveDataModelDetails,
     "UpdateSensitiveTypeDetails": UpdateSensitiveTypeDetails,
+    "UpdateSensitiveTypeGroupDetails": UpdateSensitiveTypeGroupDetails,
     "UpdateSensitiveTypePatternDetails": UpdateSensitiveTypePatternDetails,
     "UpdateSensitiveTypesExportDetails": UpdateSensitiveTypesExportDetails,
     "UpdateSqlCollectionDetails": UpdateSqlCollectionDetails,

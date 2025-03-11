@@ -24,25 +24,25 @@ class CreateOpensearchClusterPipelineDetails(object):
             The value to assign to the display_name property of this CreateOpensearchClusterPipelineDetails.
         :type display_name: str
 
-        :param max_ocpu_count:
-            The value to assign to the max_ocpu_count property of this CreateOpensearchClusterPipelineDetails.
-        :type max_ocpu_count: int
+        :param ocpu_count:
+            The value to assign to the ocpu_count property of this CreateOpensearchClusterPipelineDetails.
+        :type ocpu_count: int
 
-        :param min_ocpu_count:
-            The value to assign to the min_ocpu_count property of this CreateOpensearchClusterPipelineDetails.
-        :type min_ocpu_count: int
+        :param memory_gb:
+            The value to assign to the memory_gb property of this CreateOpensearchClusterPipelineDetails.
+        :type memory_gb: int
 
-        :param max_memory_gb:
-            The value to assign to the max_memory_gb property of this CreateOpensearchClusterPipelineDetails.
-        :type max_memory_gb: int
-
-        :param min_memory_gb:
-            The value to assign to the min_memory_gb property of this CreateOpensearchClusterPipelineDetails.
-        :type min_memory_gb: int
+        :param node_count:
+            The value to assign to the node_count property of this CreateOpensearchClusterPipelineDetails.
+        :type node_count: int
 
         :param pipeline_configuration_body:
             The value to assign to the pipeline_configuration_body property of this CreateOpensearchClusterPipelineDetails.
         :type pipeline_configuration_body: str
+
+        :param data_prepper_configuration_body:
+            The value to assign to the data_prepper_configuration_body property of this CreateOpensearchClusterPipelineDetails.
+        :type data_prepper_configuration_body: str
 
         :param compartment_id:
             The value to assign to the compartment_id property of this CreateOpensearchClusterPipelineDetails.
@@ -64,6 +64,14 @@ class CreateOpensearchClusterPipelineDetails(object):
             The value to assign to the subnet_compartment_id property of this CreateOpensearchClusterPipelineDetails.
         :type subnet_compartment_id: str
 
+        :param nsg_id:
+            The value to assign to the nsg_id property of this CreateOpensearchClusterPipelineDetails.
+        :type nsg_id: str
+
+        :param reverse_connection_endpoints:
+            The value to assign to the reverse_connection_endpoints property of this CreateOpensearchClusterPipelineDetails.
+        :type reverse_connection_endpoints: list[oci.opensearch.models.OpensearchPipelineReverseConnectionEndpoint]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateOpensearchClusterPipelineDetails.
         :type freeform_tags: dict(str, str)
@@ -72,59 +80,58 @@ class CreateOpensearchClusterPipelineDetails(object):
             The value to assign to the defined_tags property of this CreateOpensearchClusterPipelineDetails.
         :type defined_tags: dict(str, dict(str, object))
 
-        :param system_tags:
-            The value to assign to the system_tags property of this CreateOpensearchClusterPipelineDetails.
-        :type system_tags: dict(str, dict(str, object))
-
         """
         self.swagger_types = {
             'display_name': 'str',
-            'max_ocpu_count': 'int',
-            'min_ocpu_count': 'int',
-            'max_memory_gb': 'int',
-            'min_memory_gb': 'int',
+            'ocpu_count': 'int',
+            'memory_gb': 'int',
+            'node_count': 'int',
             'pipeline_configuration_body': 'str',
+            'data_prepper_configuration_body': 'str',
             'compartment_id': 'str',
             'vcn_id': 'str',
             'subnet_id': 'str',
             'vcn_compartment_id': 'str',
             'subnet_compartment_id': 'str',
+            'nsg_id': 'str',
+            'reverse_connection_endpoints': 'list[OpensearchPipelineReverseConnectionEndpoint]',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))',
-            'system_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
             'display_name': 'displayName',
-            'max_ocpu_count': 'maxOcpuCount',
-            'min_ocpu_count': 'minOcpuCount',
-            'max_memory_gb': 'maxMemoryGB',
-            'min_memory_gb': 'minMemoryGB',
+            'ocpu_count': 'ocpuCount',
+            'memory_gb': 'memoryGB',
+            'node_count': 'nodeCount',
             'pipeline_configuration_body': 'pipelineConfigurationBody',
+            'data_prepper_configuration_body': 'dataPrepperConfigurationBody',
             'compartment_id': 'compartmentId',
             'vcn_id': 'vcnId',
             'subnet_id': 'subnetId',
             'vcn_compartment_id': 'vcnCompartmentId',
             'subnet_compartment_id': 'subnetCompartmentId',
+            'nsg_id': 'nsgId',
+            'reverse_connection_endpoints': 'reverseConnectionEndpoints',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags',
-            'system_tags': 'systemTags'
+            'defined_tags': 'definedTags'
         }
 
         self._display_name = None
-        self._max_ocpu_count = None
-        self._min_ocpu_count = None
-        self._max_memory_gb = None
-        self._min_memory_gb = None
+        self._ocpu_count = None
+        self._memory_gb = None
+        self._node_count = None
         self._pipeline_configuration_body = None
+        self._data_prepper_configuration_body = None
         self._compartment_id = None
         self._vcn_id = None
         self._subnet_id = None
         self._vcn_compartment_id = None
         self._subnet_compartment_id = None
+        self._nsg_id = None
+        self._reverse_connection_endpoints = None
         self._freeform_tags = None
         self._defined_tags = None
-        self._system_tags = None
 
     @property
     def display_name(self):
@@ -151,100 +158,76 @@ class CreateOpensearchClusterPipelineDetails(object):
         self._display_name = display_name
 
     @property
-    def max_ocpu_count(self):
+    def ocpu_count(self):
         """
-        **[Required]** Gets the max_ocpu_count of this CreateOpensearchClusterPipelineDetails.
-        The maximum pipeline capacity, in OCPUs.
+        **[Required]** Gets the ocpu_count of this CreateOpensearchClusterPipelineDetails.
+        The number of OCPUs configured for each pipeline node.
 
 
-        :return: The max_ocpu_count of this CreateOpensearchClusterPipelineDetails.
+        :return: The ocpu_count of this CreateOpensearchClusterPipelineDetails.
         :rtype: int
         """
-        return self._max_ocpu_count
+        return self._ocpu_count
 
-    @max_ocpu_count.setter
-    def max_ocpu_count(self, max_ocpu_count):
+    @ocpu_count.setter
+    def ocpu_count(self, ocpu_count):
         """
-        Sets the max_ocpu_count of this CreateOpensearchClusterPipelineDetails.
-        The maximum pipeline capacity, in OCPUs.
+        Sets the ocpu_count of this CreateOpensearchClusterPipelineDetails.
+        The number of OCPUs configured for each pipeline node.
 
 
-        :param max_ocpu_count: The max_ocpu_count of this CreateOpensearchClusterPipelineDetails.
+        :param ocpu_count: The ocpu_count of this CreateOpensearchClusterPipelineDetails.
         :type: int
         """
-        self._max_ocpu_count = max_ocpu_count
+        self._ocpu_count = ocpu_count
 
     @property
-    def min_ocpu_count(self):
+    def memory_gb(self):
         """
-        **[Required]** Gets the min_ocpu_count of this CreateOpensearchClusterPipelineDetails.
-        The minimum pipeline capacity, in OCPUs.
+        **[Required]** Gets the memory_gb of this CreateOpensearchClusterPipelineDetails.
+        The amount of memory in GB, for each pipeline node.
 
 
-        :return: The min_ocpu_count of this CreateOpensearchClusterPipelineDetails.
+        :return: The memory_gb of this CreateOpensearchClusterPipelineDetails.
         :rtype: int
         """
-        return self._min_ocpu_count
+        return self._memory_gb
 
-    @min_ocpu_count.setter
-    def min_ocpu_count(self, min_ocpu_count):
+    @memory_gb.setter
+    def memory_gb(self, memory_gb):
         """
-        Sets the min_ocpu_count of this CreateOpensearchClusterPipelineDetails.
-        The minimum pipeline capacity, in OCPUs.
+        Sets the memory_gb of this CreateOpensearchClusterPipelineDetails.
+        The amount of memory in GB, for each pipeline node.
 
 
-        :param min_ocpu_count: The min_ocpu_count of this CreateOpensearchClusterPipelineDetails.
+        :param memory_gb: The memory_gb of this CreateOpensearchClusterPipelineDetails.
         :type: int
         """
-        self._min_ocpu_count = min_ocpu_count
+        self._memory_gb = memory_gb
 
     @property
-    def max_memory_gb(self):
+    def node_count(self):
         """
-        **[Required]** Gets the max_memory_gb of this CreateOpensearchClusterPipelineDetails.
-        The maximum amount of memory in GB, for the pipeline.
+        **[Required]** Gets the node_count of this CreateOpensearchClusterPipelineDetails.
+        The number of nodes configured for the pipeline.
 
 
-        :return: The max_memory_gb of this CreateOpensearchClusterPipelineDetails.
+        :return: The node_count of this CreateOpensearchClusterPipelineDetails.
         :rtype: int
         """
-        return self._max_memory_gb
+        return self._node_count
 
-    @max_memory_gb.setter
-    def max_memory_gb(self, max_memory_gb):
+    @node_count.setter
+    def node_count(self, node_count):
         """
-        Sets the max_memory_gb of this CreateOpensearchClusterPipelineDetails.
-        The maximum amount of memory in GB, for the pipeline.
+        Sets the node_count of this CreateOpensearchClusterPipelineDetails.
+        The number of nodes configured for the pipeline.
 
 
-        :param max_memory_gb: The max_memory_gb of this CreateOpensearchClusterPipelineDetails.
+        :param node_count: The node_count of this CreateOpensearchClusterPipelineDetails.
         :type: int
         """
-        self._max_memory_gb = max_memory_gb
-
-    @property
-    def min_memory_gb(self):
-        """
-        **[Required]** Gets the min_memory_gb of this CreateOpensearchClusterPipelineDetails.
-        The minimum amount of memory in GB, for the pipeline.
-
-
-        :return: The min_memory_gb of this CreateOpensearchClusterPipelineDetails.
-        :rtype: int
-        """
-        return self._min_memory_gb
-
-    @min_memory_gb.setter
-    def min_memory_gb(self, min_memory_gb):
-        """
-        Sets the min_memory_gb of this CreateOpensearchClusterPipelineDetails.
-        The minimum amount of memory in GB, for the pipeline.
-
-
-        :param min_memory_gb: The min_memory_gb of this CreateOpensearchClusterPipelineDetails.
-        :type: int
-        """
-        self._min_memory_gb = min_memory_gb
+        self._node_count = node_count
 
     @property
     def pipeline_configuration_body(self):
@@ -269,6 +252,30 @@ class CreateOpensearchClusterPipelineDetails(object):
         :type: str
         """
         self._pipeline_configuration_body = pipeline_configuration_body
+
+    @property
+    def data_prepper_configuration_body(self):
+        """
+        **[Required]** Gets the data_prepper_configuration_body of this CreateOpensearchClusterPipelineDetails.
+        The data prepper config in YAML format. The command accepts the data prepper config as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \\.
+
+
+        :return: The data_prepper_configuration_body of this CreateOpensearchClusterPipelineDetails.
+        :rtype: str
+        """
+        return self._data_prepper_configuration_body
+
+    @data_prepper_configuration_body.setter
+    def data_prepper_configuration_body(self, data_prepper_configuration_body):
+        """
+        Sets the data_prepper_configuration_body of this CreateOpensearchClusterPipelineDetails.
+        The data prepper config in YAML format. The command accepts the data prepper config as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \\.
+
+
+        :param data_prepper_configuration_body: The data_prepper_configuration_body of this CreateOpensearchClusterPipelineDetails.
+        :type: str
+        """
+        self._data_prepper_configuration_body = data_prepper_configuration_body
 
     @property
     def compartment_id(self):
@@ -297,7 +304,7 @@ class CreateOpensearchClusterPipelineDetails(object):
     @property
     def vcn_id(self):
         """
-        **[Required]** Gets the vcn_id of this CreateOpensearchClusterPipelineDetails.
+        Gets the vcn_id of this CreateOpensearchClusterPipelineDetails.
         The OCID of the pipeline's VCN.
 
 
@@ -321,7 +328,7 @@ class CreateOpensearchClusterPipelineDetails(object):
     @property
     def subnet_id(self):
         """
-        **[Required]** Gets the subnet_id of this CreateOpensearchClusterPipelineDetails.
+        Gets the subnet_id of this CreateOpensearchClusterPipelineDetails.
         The OCID of the pipeline's subnet.
 
 
@@ -345,7 +352,7 @@ class CreateOpensearchClusterPipelineDetails(object):
     @property
     def vcn_compartment_id(self):
         """
-        **[Required]** Gets the vcn_compartment_id of this CreateOpensearchClusterPipelineDetails.
+        Gets the vcn_compartment_id of this CreateOpensearchClusterPipelineDetails.
         The OCID for the compartment where the pipeline's VCN is located.
 
 
@@ -369,8 +376,8 @@ class CreateOpensearchClusterPipelineDetails(object):
     @property
     def subnet_compartment_id(self):
         """
-        **[Required]** Gets the subnet_compartment_id of this CreateOpensearchClusterPipelineDetails.
-        The OCID for the compartment where the pipwline's subnet is located.
+        Gets the subnet_compartment_id of this CreateOpensearchClusterPipelineDetails.
+        The OCID for the compartment where the pipeline's subnet is located.
 
 
         :return: The subnet_compartment_id of this CreateOpensearchClusterPipelineDetails.
@@ -382,13 +389,61 @@ class CreateOpensearchClusterPipelineDetails(object):
     def subnet_compartment_id(self, subnet_compartment_id):
         """
         Sets the subnet_compartment_id of this CreateOpensearchClusterPipelineDetails.
-        The OCID for the compartment where the pipwline's subnet is located.
+        The OCID for the compartment where the pipeline's subnet is located.
 
 
         :param subnet_compartment_id: The subnet_compartment_id of this CreateOpensearchClusterPipelineDetails.
         :type: str
         """
         self._subnet_compartment_id = subnet_compartment_id
+
+    @property
+    def nsg_id(self):
+        """
+        Gets the nsg_id of this CreateOpensearchClusterPipelineDetails.
+        The OCID of the NSG where the pipeline private endpoint vnic will be attached.
+
+
+        :return: The nsg_id of this CreateOpensearchClusterPipelineDetails.
+        :rtype: str
+        """
+        return self._nsg_id
+
+    @nsg_id.setter
+    def nsg_id(self, nsg_id):
+        """
+        Sets the nsg_id of this CreateOpensearchClusterPipelineDetails.
+        The OCID of the NSG where the pipeline private endpoint vnic will be attached.
+
+
+        :param nsg_id: The nsg_id of this CreateOpensearchClusterPipelineDetails.
+        :type: str
+        """
+        self._nsg_id = nsg_id
+
+    @property
+    def reverse_connection_endpoints(self):
+        """
+        Gets the reverse_connection_endpoints of this CreateOpensearchClusterPipelineDetails.
+        The customer IP and the corresponding fully qualified domain name that the pipeline will connect to.
+
+
+        :return: The reverse_connection_endpoints of this CreateOpensearchClusterPipelineDetails.
+        :rtype: list[oci.opensearch.models.OpensearchPipelineReverseConnectionEndpoint]
+        """
+        return self._reverse_connection_endpoints
+
+    @reverse_connection_endpoints.setter
+    def reverse_connection_endpoints(self, reverse_connection_endpoints):
+        """
+        Sets the reverse_connection_endpoints of this CreateOpensearchClusterPipelineDetails.
+        The customer IP and the corresponding fully qualified domain name that the pipeline will connect to.
+
+
+        :param reverse_connection_endpoints: The reverse_connection_endpoints of this CreateOpensearchClusterPipelineDetails.
+        :type: list[oci.opensearch.models.OpensearchPipelineReverseConnectionEndpoint]
+        """
+        self._reverse_connection_endpoints = reverse_connection_endpoints
 
     @property
     def freeform_tags(self):
@@ -441,32 +496,6 @@ class CreateOpensearchClusterPipelineDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
-
-    @property
-    def system_tags(self):
-        """
-        Gets the system_tags of this CreateOpensearchClusterPipelineDetails.
-        Usage of system tag keys. These predefined keys are scoped to namespaces.
-        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
-
-
-        :return: The system_tags of this CreateOpensearchClusterPipelineDetails.
-        :rtype: dict(str, dict(str, object))
-        """
-        return self._system_tags
-
-    @system_tags.setter
-    def system_tags(self, system_tags):
-        """
-        Sets the system_tags of this CreateOpensearchClusterPipelineDetails.
-        Usage of system tag keys. These predefined keys are scoped to namespaces.
-        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
-
-
-        :param system_tags: The system_tags of this CreateOpensearchClusterPipelineDetails.
-        :type: dict(str, dict(str, object))
-        """
-        self._system_tags = system_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

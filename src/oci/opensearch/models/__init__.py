@@ -20,6 +20,7 @@ from .customer_logging_details import CustomerLoggingDetails
 from .delete_block_volumes_for_namespace_details import DeleteBlockVolumesForNamespaceDetails
 from .export_opensearch_cluster_backup_details import ExportOpensearchClusterBackupDetails
 from .force_patch_cluster_details import ForcePatchClusterDetails
+from .force_patch_pipeline_details import ForcePatchPipelineDetails
 from .get_manifest_response import GetManifestResponse
 from .maintenance_details import MaintenanceDetails
 from .maintenance_notification_details import MaintenanceNotificationDetails
@@ -35,12 +36,11 @@ from .opensearch_cluster_pipeline import OpensearchClusterPipeline
 from .opensearch_cluster_pipeline_collection import OpensearchClusterPipelineCollection
 from .opensearch_cluster_pipeline_summary import OpensearchClusterPipelineSummary
 from .opensearch_cluster_summary import OpensearchClusterSummary
-from .opensearch_pipeline_validation_response import OpensearchPipelineValidationResponse
+from .opensearch_pipeline_reverse_connection_endpoint import OpensearchPipelineReverseConnectionEndpoint
 from .opensearch_versions_collection import OpensearchVersionsCollection
 from .opensearch_versions_summary import OpensearchVersionsSummary
 from .outbound_cluster_config import OutboundClusterConfig
 from .outbound_cluster_summary import OutboundClusterSummary
-from .pipeline_validation_error_details import PipelineValidationErrorDetails
 from .reclaim_cluster_details import ReclaimClusterDetails
 from .resize_opensearch_cluster_horizontal_details import ResizeOpensearchClusterHorizontalDetails
 from .resize_opensearch_cluster_vertical_details import ResizeOpensearchClusterVerticalDetails
@@ -56,8 +56,8 @@ from .update_maintenance_details import UpdateMaintenanceDetails
 from .update_opensearch_cluster_backup_details import UpdateOpensearchClusterBackupDetails
 from .update_opensearch_cluster_details import UpdateOpensearchClusterDetails
 from .update_opensearch_cluster_pipeline_details import UpdateOpensearchClusterPipelineDetails
+from .update_pipeline_status_details import UpdatePipelineStatusDetails
 from .upgrade_open_search_cluster_details import UpgradeOpenSearchClusterDetails
-from .validate_opensearch_pipeline_details import ValidateOpensearchPipelineDetails
 from .work_request import WorkRequest
 from .work_request_collection import WorkRequestCollection
 from .work_request_error import WorkRequestError
@@ -82,6 +82,7 @@ opensearch_type_mapping = {
     "DeleteBlockVolumesForNamespaceDetails": DeleteBlockVolumesForNamespaceDetails,
     "ExportOpensearchClusterBackupDetails": ExportOpensearchClusterBackupDetails,
     "ForcePatchClusterDetails": ForcePatchClusterDetails,
+    "ForcePatchPipelineDetails": ForcePatchPipelineDetails,
     "GetManifestResponse": GetManifestResponse,
     "MaintenanceDetails": MaintenanceDetails,
     "MaintenanceNotificationDetails": MaintenanceNotificationDetails,
@@ -97,12 +98,11 @@ opensearch_type_mapping = {
     "OpensearchClusterPipelineCollection": OpensearchClusterPipelineCollection,
     "OpensearchClusterPipelineSummary": OpensearchClusterPipelineSummary,
     "OpensearchClusterSummary": OpensearchClusterSummary,
-    "OpensearchPipelineValidationResponse": OpensearchPipelineValidationResponse,
+    "OpensearchPipelineReverseConnectionEndpoint": OpensearchPipelineReverseConnectionEndpoint,
     "OpensearchVersionsCollection": OpensearchVersionsCollection,
     "OpensearchVersionsSummary": OpensearchVersionsSummary,
     "OutboundClusterConfig": OutboundClusterConfig,
     "OutboundClusterSummary": OutboundClusterSummary,
-    "PipelineValidationErrorDetails": PipelineValidationErrorDetails,
     "ReclaimClusterDetails": ReclaimClusterDetails,
     "ResizeOpensearchClusterHorizontalDetails": ResizeOpensearchClusterHorizontalDetails,
     "ResizeOpensearchClusterVerticalDetails": ResizeOpensearchClusterVerticalDetails,
@@ -118,8 +118,8 @@ opensearch_type_mapping = {
     "UpdateOpensearchClusterBackupDetails": UpdateOpensearchClusterBackupDetails,
     "UpdateOpensearchClusterDetails": UpdateOpensearchClusterDetails,
     "UpdateOpensearchClusterPipelineDetails": UpdateOpensearchClusterPipelineDetails,
+    "UpdatePipelineStatusDetails": UpdatePipelineStatusDetails,
     "UpgradeOpenSearchClusterDetails": UpgradeOpenSearchClusterDetails,
-    "ValidateOpensearchPipelineDetails": ValidateOpensearchPipelineDetails,
     "WorkRequest": WorkRequest,
     "WorkRequestCollection": WorkRequestCollection,
     "WorkRequestError": WorkRequestError,

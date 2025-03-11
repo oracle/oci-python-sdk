@@ -48,6 +48,7 @@ Mysql
     oci.mysql.models.ConfigurationSummary
     oci.mysql.models.ConfigurationVariables
     oci.mysql.models.CopyBackupDetails
+    oci.mysql.models.CopyPolicy
     oci.mysql.models.CreateBackupDetails
     oci.mysql.models.CreateBackupPolicyDetails
     oci.mysql.models.CreateChannelDetails

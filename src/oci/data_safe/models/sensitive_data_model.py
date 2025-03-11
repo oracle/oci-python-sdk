@@ -99,6 +99,10 @@ class SensitiveDataModel(object):
             The value to assign to the sensitive_type_ids_for_discovery property of this SensitiveDataModel.
         :type sensitive_type_ids_for_discovery: list[str]
 
+        :param sensitive_type_group_ids_for_discovery:
+            The value to assign to the sensitive_type_group_ids_for_discovery property of this SensitiveDataModel.
+        :type sensitive_type_group_ids_for_discovery: list[str]
+
         :param is_sample_data_collection_enabled:
             The value to assign to the is_sample_data_collection_enabled property of this SensitiveDataModel.
         :type is_sample_data_collection_enabled: bool
@@ -141,6 +145,7 @@ class SensitiveDataModel(object):
             'schemas_for_discovery': 'list[str]',
             'tables_for_discovery': 'list[TablesForDiscovery]',
             'sensitive_type_ids_for_discovery': 'list[str]',
+            'sensitive_type_group_ids_for_discovery': 'list[str]',
             'is_sample_data_collection_enabled': 'bool',
             'is_app_defined_relation_discovery_enabled': 'bool',
             'is_include_all_schemas': 'bool',
@@ -163,6 +168,7 @@ class SensitiveDataModel(object):
             'schemas_for_discovery': 'schemasForDiscovery',
             'tables_for_discovery': 'tablesForDiscovery',
             'sensitive_type_ids_for_discovery': 'sensitiveTypeIdsForDiscovery',
+            'sensitive_type_group_ids_for_discovery': 'sensitiveTypeGroupIdsForDiscovery',
             'is_sample_data_collection_enabled': 'isSampleDataCollectionEnabled',
             'is_app_defined_relation_discovery_enabled': 'isAppDefinedRelationDiscoveryEnabled',
             'is_include_all_schemas': 'isIncludeAllSchemas',
@@ -184,6 +190,7 @@ class SensitiveDataModel(object):
         self._schemas_for_discovery = None
         self._tables_for_discovery = None
         self._sensitive_type_ids_for_discovery = None
+        self._sensitive_type_group_ids_for_discovery = None
         self._is_sample_data_collection_enabled = None
         self._is_app_defined_relation_discovery_enabled = None
         self._is_include_all_schemas = None
@@ -501,6 +508,30 @@ class SensitiveDataModel(object):
         :type: list[str]
         """
         self._sensitive_type_ids_for_discovery = sensitive_type_ids_for_discovery
+
+    @property
+    def sensitive_type_group_ids_for_discovery(self):
+        """
+        Gets the sensitive_type_group_ids_for_discovery of this SensitiveDataModel.
+        The OCIDs of the sensitive type groups to be used by data discovery jobs.
+
+
+        :return: The sensitive_type_group_ids_for_discovery of this SensitiveDataModel.
+        :rtype: list[str]
+        """
+        return self._sensitive_type_group_ids_for_discovery
+
+    @sensitive_type_group_ids_for_discovery.setter
+    def sensitive_type_group_ids_for_discovery(self, sensitive_type_group_ids_for_discovery):
+        """
+        Sets the sensitive_type_group_ids_for_discovery of this SensitiveDataModel.
+        The OCIDs of the sensitive type groups to be used by data discovery jobs.
+
+
+        :param sensitive_type_group_ids_for_discovery: The sensitive_type_group_ids_for_discovery of this SensitiveDataModel.
+        :type: list[str]
+        """
+        self._sensitive_type_group_ids_for_discovery = sensitive_type_group_ids_for_discovery
 
     @property
     def is_sample_data_collection_enabled(self):

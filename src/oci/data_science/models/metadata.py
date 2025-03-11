@@ -36,25 +36,39 @@ class Metadata(object):
             The value to assign to the category property of this Metadata.
         :type category: str
 
+        :param keywords:
+            The value to assign to the keywords property of this Metadata.
+        :type keywords: list[str]
+
+        :param has_artifact:
+            The value to assign to the has_artifact property of this Metadata.
+        :type has_artifact: bool
+
         """
         self.swagger_types = {
             'key': 'str',
             'value': 'str',
             'description': 'str',
-            'category': 'str'
+            'category': 'str',
+            'keywords': 'list[str]',
+            'has_artifact': 'bool'
         }
 
         self.attribute_map = {
             'key': 'key',
             'value': 'value',
             'description': 'description',
-            'category': 'category'
+            'category': 'category',
+            'keywords': 'keywords',
+            'has_artifact': 'hasArtifact'
         }
 
         self._key = None
         self._value = None
         self._description = None
         self._category = None
+        self._keywords = None
+        self._has_artifact = None
 
     @property
     def key(self):
@@ -68,6 +82,11 @@ class Metadata(object):
                  * estimatorClass
                  * hyperParameters
                  * testArtifactresults
+                 * fineTuningConfiguration
+                 * deploymentConfiguration
+                 * readme
+                 * license
+                 * evaluationConfiguration
 
 
         :return: The key of this Metadata.
@@ -87,6 +106,11 @@ class Metadata(object):
                  * estimatorClass
                  * hyperParameters
                  * testArtifactresults
+                 * fineTuningConfiguration
+                 * deploymentConfiguration
+                 * readme
+                 * license
+                 * evaluationConfiguration
 
 
         :param key: The key of this Metadata.
@@ -181,6 +205,54 @@ class Metadata(object):
         :type: str
         """
         self._category = category
+
+    @property
+    def keywords(self):
+        """
+        Gets the keywords of this Metadata.
+        list of keywords for searching
+
+
+        :return: The keywords of this Metadata.
+        :rtype: list[str]
+        """
+        return self._keywords
+
+    @keywords.setter
+    def keywords(self, keywords):
+        """
+        Sets the keywords of this Metadata.
+        list of keywords for searching
+
+
+        :param keywords: The keywords of this Metadata.
+        :type: list[str]
+        """
+        self._keywords = keywords
+
+    @property
+    def has_artifact(self):
+        """
+        Gets the has_artifact of this Metadata.
+        Is there any artifact present for the metadata.
+
+
+        :return: The has_artifact of this Metadata.
+        :rtype: bool
+        """
+        return self._has_artifact
+
+    @has_artifact.setter
+    def has_artifact(self, has_artifact):
+        """
+        Sets the has_artifact of this Metadata.
+        Is there any artifact present for the metadata.
+
+
+        :param has_artifact: The has_artifact of this Metadata.
+        :type: bool
+        """
+        self._has_artifact = has_artifact
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -28777,6 +28777,11 @@ class DatabaseClient(object):
         :param str opc_request_id: (optional)
             Unique identifier for the request.
 
+        :param str vm_cluster_type: (optional)
+            A filter to return only cloud vmclusters that match the given cloud vmcluster type exactly.
+
+            Allowed values are: "REGULAR", "DEVELOPER"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -28813,7 +28818,8 @@ class DatabaseClient(object):
             "sort_order",
             "lifecycle_state",
             "display_name",
-            "opc_request_id"
+            "opc_request_id",
+            "vm_cluster_type"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -28841,6 +28847,13 @@ class DatabaseClient(object):
                     f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
+        if 'vm_cluster_type' in kwargs:
+            vm_cluster_type_allowed_values = ["REGULAR", "DEVELOPER"]
+            if kwargs['vm_cluster_type'] not in vm_cluster_type_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `vm_cluster_type`, must be one of { vm_cluster_type_allowed_values }"
+                )
+
         query_params = {
             "compartmentId": compartment_id,
             "cloudExadataInfrastructureId": kwargs.get("cloud_exadata_infrastructure_id", missing),
@@ -28849,7 +28862,8 @@ class DatabaseClient(object):
             "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
-            "displayName": kwargs.get("display_name", missing)
+            "displayName": kwargs.get("display_name", missing),
+            "vmClusterType": kwargs.get("vm_cluster_type", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -29425,6 +29439,11 @@ class DatabaseClient(object):
         :param str patch_set_greater_than_or_equal_to: (optional)
             A filter to return only resources with `patchSet` greater than or equal to given value.
 
+        :param str db_system_id: (optional)
+            The DB system `OCID`__. If provided, filters the results to the set of database versions which are supported for the DB system.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
         :param bool is_upgrade_supported: (optional)
             If provided, filters the results to the set of database versions which are supported for Upgrade.
 
@@ -29466,6 +29485,7 @@ class DatabaseClient(object):
             "image_type",
             "image_shape_family",
             "patch_set_greater_than_or_equal_to",
+            "db_system_id",
             "is_upgrade_supported"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -29519,6 +29539,7 @@ class DatabaseClient(object):
             "imageType": kwargs.get("image_type", missing),
             "imageShapeFamily": kwargs.get("image_shape_family", missing),
             "patchSetGreaterThanOrEqualTo": kwargs.get("patch_set_greater_than_or_equal_to", missing),
+            "dbSystemId": kwargs.get("db_system_id", missing),
             "isUpgradeSupported": kwargs.get("is_upgrade_supported", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
@@ -36379,6 +36400,11 @@ class DatabaseClient(object):
         :param str opc_request_id: (optional)
             Unique identifier for the request.
 
+        :param str vm_cluster_type: (optional)
+            A filter to return only vmclusters that match the given vmcluster type exactly.
+
+            Allowed values are: "REGULAR", "DEVELOPER"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -36415,7 +36441,8 @@ class DatabaseClient(object):
             "sort_order",
             "lifecycle_state",
             "display_name",
-            "opc_request_id"
+            "opc_request_id",
+            "vm_cluster_type"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -36443,6 +36470,13 @@ class DatabaseClient(object):
                     f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
+        if 'vm_cluster_type' in kwargs:
+            vm_cluster_type_allowed_values = ["REGULAR", "DEVELOPER"]
+            if kwargs['vm_cluster_type'] not in vm_cluster_type_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `vm_cluster_type`, must be one of { vm_cluster_type_allowed_values }"
+                )
+
         query_params = {
             "compartmentId": compartment_id,
             "exadataInfrastructureId": kwargs.get("exadata_infrastructure_id", missing),
@@ -36451,7 +36485,8 @@ class DatabaseClient(object):
             "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
-            "displayName": kwargs.get("display_name", missing)
+            "displayName": kwargs.get("display_name", missing),
+            "vmClusterType": kwargs.get("vm_cluster_type", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

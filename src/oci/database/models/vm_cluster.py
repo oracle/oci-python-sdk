@@ -51,6 +51,14 @@ class VmCluster(object):
     #: This constant has a value of "BRING_YOUR_OWN_LICENSE"
     LICENSE_MODEL_BRING_YOUR_OWN_LICENSE = "BRING_YOUR_OWN_LICENSE"
 
+    #: A constant which can be used with the vm_cluster_type property of a VmCluster.
+    #: This constant has a value of "REGULAR"
+    VM_CLUSTER_TYPE_REGULAR = "REGULAR"
+
+    #: A constant which can be used with the vm_cluster_type property of a VmCluster.
+    #: This constant has a value of "DEVELOPER"
+    VM_CLUSTER_TYPE_DEVELOPER = "DEVELOPER"
+
     #: A constant which can be used with the storage_management_type property of a VmCluster.
     #: This constant has a value of "ASM"
     STORAGE_MANAGEMENT_TYPE_ASM = "ASM"
@@ -196,6 +204,12 @@ class VmCluster(object):
             The value to assign to the file_system_configuration_details property of this VmCluster.
         :type file_system_configuration_details: list[oci.database.models.FileSystemConfigurationDetail]
 
+        :param vm_cluster_type:
+            The value to assign to the vm_cluster_type property of this VmCluster.
+            Allowed values for this property are: "REGULAR", "DEVELOPER", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type vm_cluster_type: str
+
         :param cloud_automation_update_details:
             The value to assign to the cloud_automation_update_details property of this VmCluster.
         :type cloud_automation_update_details: oci.database.models.CloudAutomationUpdateDetails
@@ -248,6 +262,7 @@ class VmCluster(object):
             'data_collection_options': 'DataCollectionOptions',
             'gi_software_image_id': 'str',
             'file_system_configuration_details': 'list[FileSystemConfigurationDetail]',
+            'vm_cluster_type': 'str',
             'cloud_automation_update_details': 'CloudAutomationUpdateDetails',
             'exascale_db_storage_vault_id': 'str',
             'storage_management_type': 'str',
@@ -285,6 +300,7 @@ class VmCluster(object):
             'data_collection_options': 'dataCollectionOptions',
             'gi_software_image_id': 'giSoftwareImageId',
             'file_system_configuration_details': 'fileSystemConfigurationDetails',
+            'vm_cluster_type': 'vmClusterType',
             'cloud_automation_update_details': 'cloudAutomationUpdateDetails',
             'exascale_db_storage_vault_id': 'exascaleDbStorageVaultId',
             'storage_management_type': 'storageManagementType',
@@ -321,6 +337,7 @@ class VmCluster(object):
         self._data_collection_options = None
         self._gi_software_image_id = None
         self._file_system_configuration_details = None
+        self._vm_cluster_type = None
         self._cloud_automation_update_details = None
         self._exascale_db_storage_vault_id = None
         self._storage_management_type = None
@@ -1097,6 +1114,36 @@ class VmCluster(object):
         :type: list[oci.database.models.FileSystemConfigurationDetail]
         """
         self._file_system_configuration_details = file_system_configuration_details
+
+    @property
+    def vm_cluster_type(self):
+        """
+        Gets the vm_cluster_type of this VmCluster.
+        The vmcluster type for the VM cluster/Cloud VM cluster.
+
+        Allowed values for this property are: "REGULAR", "DEVELOPER", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The vm_cluster_type of this VmCluster.
+        :rtype: str
+        """
+        return self._vm_cluster_type
+
+    @vm_cluster_type.setter
+    def vm_cluster_type(self, vm_cluster_type):
+        """
+        Sets the vm_cluster_type of this VmCluster.
+        The vmcluster type for the VM cluster/Cloud VM cluster.
+
+
+        :param vm_cluster_type: The vm_cluster_type of this VmCluster.
+        :type: str
+        """
+        allowed_values = ["REGULAR", "DEVELOPER"]
+        if not value_allowed_none_or_none_sentinel(vm_cluster_type, allowed_values):
+            vm_cluster_type = 'UNKNOWN_ENUM_VALUE'
+        self._vm_cluster_type = vm_cluster_type
 
     @property
     def cloud_automation_update_details(self):

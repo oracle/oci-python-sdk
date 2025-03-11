@@ -31,6 +31,14 @@ class ModelVersionSetSummary(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the category property of a ModelVersionSetSummary.
+    #: This constant has a value of "USER"
+    CATEGORY_USER = "USER"
+
+    #: A constant which can be used with the category property of a ModelVersionSetSummary.
+    #: This constant has a value of "SERVICE"
+    CATEGORY_SERVICE = "SERVICE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ModelVersionSetSummary object with values from keyword arguments.
@@ -70,6 +78,12 @@ class ModelVersionSetSummary(object):
             The value to assign to the created_by property of this ModelVersionSetSummary.
         :type created_by: str
 
+        :param category:
+            The value to assign to the category property of this ModelVersionSetSummary.
+            Allowed values for this property are: "USER", "SERVICE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type category: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ModelVersionSetSummary.
         :type freeform_tags: dict(str, str)
@@ -92,6 +106,7 @@ class ModelVersionSetSummary(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'created_by': 'str',
+            'category': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -106,6 +121,7 @@ class ModelVersionSetSummary(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'created_by': 'createdBy',
+            'category': 'category',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -119,6 +135,7 @@ class ModelVersionSetSummary(object):
         self._time_created = None
         self._time_updated = None
         self._created_by = None
+        self._category = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -348,6 +365,36 @@ class ModelVersionSetSummary(object):
         :type: str
         """
         self._created_by = created_by
+
+    @property
+    def category(self):
+        """
+        **[Required]** Gets the category of this ModelVersionSetSummary.
+        The category of the model version set.
+
+        Allowed values for this property are: "USER", "SERVICE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The category of this ModelVersionSetSummary.
+        :rtype: str
+        """
+        return self._category
+
+    @category.setter
+    def category(self, category):
+        """
+        Sets the category of this ModelVersionSetSummary.
+        The category of the model version set.
+
+
+        :param category: The category of this ModelVersionSetSummary.
+        :type: str
+        """
+        allowed_values = ["USER", "SERVICE"]
+        if not value_allowed_none_or_none_sentinel(category, allowed_values):
+            category = 'UNKNOWN_ENUM_VALUE'
+        self._category = category
 
     @property
     def freeform_tags(self):

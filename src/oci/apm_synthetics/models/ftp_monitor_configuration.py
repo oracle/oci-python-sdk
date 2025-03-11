@@ -208,7 +208,7 @@ class FtpMonitorConfiguration(MonitorConfiguration):
     def is_active_mode(self):
         """
         Gets the is_active_mode of this FtpMonitorConfiguration.
-        If enabled, Active mode will be used for the FTP connection.
+        If enabled, Active mode will be used for the FTP connection. Not supported for SFTP protocol.
 
 
         :return: The is_active_mode of this FtpMonitorConfiguration.
@@ -220,7 +220,7 @@ class FtpMonitorConfiguration(MonitorConfiguration):
     def is_active_mode(self, is_active_mode):
         """
         Sets the is_active_mode of this FtpMonitorConfiguration.
-        If enabled, Active mode will be used for the FTP connection.
+        If enabled, Active mode will be used for the FTP connection. Not supported for SFTP protocol.
 
 
         :param is_active_mode: The is_active_mode of this FtpMonitorConfiguration.

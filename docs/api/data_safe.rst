@@ -90,6 +90,7 @@ Data Safe
     oci.data_safe.models.ChangeSecurityPolicyDeploymentCompartmentDetails
     oci.data_safe.models.ChangeSensitiveDataModelCompartmentDetails
     oci.data_safe.models.ChangeSensitiveTypeCompartmentDetails
+    oci.data_safe.models.ChangeSensitiveTypeGroupCompartmentDetails
     oci.data_safe.models.ChangeSensitiveTypesExportCompartmentDetails
     oci.data_safe.models.ChangeSqlCollectionCompartmentDetails
     oci.data_safe.models.ChangeSqlFirewallPolicyCompartmentDetails
@@ -132,6 +133,7 @@ Data Safe
     oci.data_safe.models.CreateSensitiveColumnDetails
     oci.data_safe.models.CreateSensitiveDataModelDetails
     oci.data_safe.models.CreateSensitiveTypeDetails
+    oci.data_safe.models.CreateSensitiveTypeGroupDetails
     oci.data_safe.models.CreateSensitiveTypePatternDetails
     oci.data_safe.models.CreateSensitiveTypesExportDetails
     oci.data_safe.models.CreateSqlCollectionDetails
@@ -205,6 +207,8 @@ Data Safe
     oci.data_safe.models.GenerateUserAssessmentReportDetails
     oci.data_safe.models.GlobalSettings
     oci.data_safe.models.GrantSummary
+    oci.data_safe.models.GroupedSensitiveTypeCollection
+    oci.data_safe.models.GroupedSensitiveTypeSummary
     oci.data_safe.models.InitializationParameter
     oci.data_safe.models.InstalledDatabaseDetails
     oci.data_safe.models.LibraryMaskingFormat
@@ -221,6 +225,8 @@ Data Safe
     oci.data_safe.models.MaskingColumn
     oci.data_safe.models.MaskingColumnCollection
     oci.data_safe.models.MaskingColumnSummary
+    oci.data_safe.models.MaskingErrorCollection
+    oci.data_safe.models.MaskingErrorSummary
     oci.data_safe.models.MaskingFormat
     oci.data_safe.models.MaskingObjectCollection
     oci.data_safe.models.MaskingObjectSummary
@@ -250,6 +256,7 @@ Data Safe
     oci.data_safe.models.PatchAlertPolicyRuleDetails
     oci.data_safe.models.PatchAlertsDetails
     oci.data_safe.models.PatchDiscoveryJobResultDetails
+    oci.data_safe.models.PatchGroupedSensitiveTypesDetails
     oci.data_safe.models.PatchInsertInstruction
     oci.data_safe.models.PatchInstruction
     oci.data_safe.models.PatchMaskingColumnsDetails
@@ -331,6 +338,9 @@ Data Safe
     oci.data_safe.models.SelectionDetails
     oci.data_safe.models.SensitiveCategory
     oci.data_safe.models.SensitiveColumn
+    oci.data_safe.models.SensitiveColumnAnalyticsCollection
+    oci.data_safe.models.SensitiveColumnAnalyticsDimensions
+    oci.data_safe.models.SensitiveColumnAnalyticsSummary
     oci.data_safe.models.SensitiveColumnCollection
     oci.data_safe.models.SensitiveColumnSummary
     oci.data_safe.models.SensitiveDataModel
@@ -344,6 +354,9 @@ Data Safe
     oci.data_safe.models.SensitiveSchemaSummary
     oci.data_safe.models.SensitiveType
     oci.data_safe.models.SensitiveTypeCollection
+    oci.data_safe.models.SensitiveTypeGroup
+    oci.data_safe.models.SensitiveTypeGroupCollection
+    oci.data_safe.models.SensitiveTypeGroupSummary
     oci.data_safe.models.SensitiveTypePattern
     oci.data_safe.models.SensitiveTypeSummary
     oci.data_safe.models.SensitiveTypesExport
@@ -421,6 +434,7 @@ Data Safe
     oci.data_safe.models.UpdateSensitiveColumnDetails
     oci.data_safe.models.UpdateSensitiveDataModelDetails
     oci.data_safe.models.UpdateSensitiveTypeDetails
+    oci.data_safe.models.UpdateSensitiveTypeGroupDetails
     oci.data_safe.models.UpdateSensitiveTypePatternDetails
     oci.data_safe.models.UpdateSensitiveTypesExportDetails
     oci.data_safe.models.UpdateSqlCollectionDetails

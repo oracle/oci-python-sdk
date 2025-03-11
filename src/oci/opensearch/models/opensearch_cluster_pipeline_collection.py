@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class OpensearchClusterPipelineCollection(object):
     """
-    The list of cluster pieplines returned in a cluster pipeline search.
+    The list of cluster pipelines returned in a cluster pipeline search.
     """
 
     def __init__(self, **kwargs):

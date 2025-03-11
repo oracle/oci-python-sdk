@@ -60,6 +60,10 @@ class ApplicationVipSummary(object):
             The value to assign to the ip_address property of this ApplicationVipSummary.
         :type ip_address: str
 
+        :param ipv6_address:
+            The value to assign to the ipv6_address property of this ApplicationVipSummary.
+        :type ipv6_address: str
+
         :param hostname_label:
             The value to assign to the hostname_label property of this ApplicationVipSummary.
         :type hostname_label: str
@@ -93,6 +97,7 @@ class ApplicationVipSummary(object):
             'compartment_id': 'str',
             'subnet_id': 'str',
             'ip_address': 'str',
+            'ipv6_address': 'str',
             'hostname_label': 'str',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
@@ -107,6 +112,7 @@ class ApplicationVipSummary(object):
             'compartment_id': 'compartmentId',
             'subnet_id': 'subnetId',
             'ip_address': 'ipAddress',
+            'ipv6_address': 'ipv6Address',
             'hostname_label': 'hostnameLabel',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
@@ -120,6 +126,7 @@ class ApplicationVipSummary(object):
         self._compartment_id = None
         self._subnet_id = None
         self._ip_address = None
+        self._ipv6_address = None
         self._hostname_label = None
         self._lifecycle_state = None
         self._lifecycle_details = None
@@ -243,7 +250,7 @@ class ApplicationVipSummary(object):
     def ip_address(self):
         """
         Gets the ip_address of this ApplicationVipSummary.
-        The application virtual IP (VIP) address.
+        The application virtual IP (VIP) IPv4 address.
 
 
         :return: The ip_address of this ApplicationVipSummary.
@@ -255,13 +262,37 @@ class ApplicationVipSummary(object):
     def ip_address(self, ip_address):
         """
         Sets the ip_address of this ApplicationVipSummary.
-        The application virtual IP (VIP) address.
+        The application virtual IP (VIP) IPv4 address.
 
 
         :param ip_address: The ip_address of this ApplicationVipSummary.
         :type: str
         """
         self._ip_address = ip_address
+
+    @property
+    def ipv6_address(self):
+        """
+        Gets the ipv6_address of this ApplicationVipSummary.
+        The application virtual IP (VIP) IPv6 address.
+
+
+        :return: The ipv6_address of this ApplicationVipSummary.
+        :rtype: str
+        """
+        return self._ipv6_address
+
+    @ipv6_address.setter
+    def ipv6_address(self, ipv6_address):
+        """
+        Sets the ipv6_address of this ApplicationVipSummary.
+        The application virtual IP (VIP) IPv6 address.
+
+
+        :param ipv6_address: The ipv6_address of this ApplicationVipSummary.
+        :type: str
+        """
+        self._ipv6_address = ipv6_address
 
     @property
     def hostname_label(self):

@@ -11,6 +11,8 @@ from .opensearch_cluster_client import OpensearchClusterClient
 from .opensearch_cluster_client_composite_operations import OpensearchClusterClientCompositeOperations
 from .opensearch_cluster_backup_client import OpensearchClusterBackupClient
 from .opensearch_cluster_backup_client_composite_operations import OpensearchClusterBackupClientCompositeOperations
+from .opensearch_cluster_pipeline_client import OpensearchClusterPipelineClient
+from .opensearch_cluster_pipeline_client_composite_operations import OpensearchClusterPipelineClientCompositeOperations
 from . import models
 
-__all__ = ["OpensearchClusterClient", "OpensearchClusterClientCompositeOperations", "OpensearchClusterBackupClient", "OpensearchClusterBackupClientCompositeOperations", "models"]
+__all__ = ["OpensearchClusterClient", "OpensearchClusterClientCompositeOperations", "OpensearchClusterBackupClient", "OpensearchClusterBackupClientCompositeOperations", "OpensearchClusterPipelineClient", "OpensearchClusterPipelineClientCompositeOperations", "models"]
