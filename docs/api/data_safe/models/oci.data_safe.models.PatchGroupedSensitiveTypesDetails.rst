@@ -1,9 +1,9 @@
-ValidateOpensearchPipelineDetails
+PatchGroupedSensitiveTypesDetails
 =================================
 
-.. currentmodule:: oci.opensearch.models
+.. currentmodule:: oci.data_safe.models
 
-.. autoclass:: ValidateOpensearchPipelineDetails
+.. autoclass:: PatchGroupedSensitiveTypesDetails
     :show-inheritance:
     :special-members: __init__
     :members:

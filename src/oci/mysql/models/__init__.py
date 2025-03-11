@@ -26,6 +26,7 @@ from .configuration import Configuration
 from .configuration_summary import ConfigurationSummary
 from .configuration_variables import ConfigurationVariables
 from .copy_backup_details import CopyBackupDetails
+from .copy_policy import CopyPolicy
 from .create_backup_details import CreateBackupDetails
 from .create_backup_policy_details import CreateBackupPolicyDetails
 from .create_channel_details import CreateChannelDetails
@@ -123,6 +124,7 @@ mysql_type_mapping = {
     "ConfigurationSummary": ConfigurationSummary,
     "ConfigurationVariables": ConfigurationVariables,
     "CopyBackupDetails": CopyBackupDetails,
+    "CopyPolicy": CopyPolicy,
     "CreateBackupDetails": CreateBackupDetails,
     "CreateBackupPolicyDetails": CreateBackupPolicyDetails,
     "CreateChannelDetails": CreateChannelDetails,

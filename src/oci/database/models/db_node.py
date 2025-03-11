@@ -88,6 +88,14 @@ class DbNode(object):
             The value to assign to the backup_ip_id property of this DbNode.
         :type backup_ip_id: str
 
+        :param host_ipv6_id:
+            The value to assign to the host_ipv6_id property of this DbNode.
+        :type host_ipv6_id: str
+
+        :param backup_ipv6_id:
+            The value to assign to the backup_ipv6_id property of this DbNode.
+        :type backup_ipv6_id: str
+
         :param vnic2_id:
             The value to assign to the vnic2_id property of this DbNode.
         :type vnic2_id: str
@@ -176,6 +184,8 @@ class DbNode(object):
             'backup_vnic_id': 'str',
             'host_ip_id': 'str',
             'backup_ip_id': 'str',
+            'host_ipv6_id': 'str',
+            'backup_ipv6_id': 'str',
             'vnic2_id': 'str',
             'backup_vnic2_id': 'str',
             'lifecycle_state': 'str',
@@ -204,6 +214,8 @@ class DbNode(object):
             'backup_vnic_id': 'backupVnicId',
             'host_ip_id': 'hostIpId',
             'backup_ip_id': 'backupIpId',
+            'host_ipv6_id': 'hostIpv6Id',
+            'backup_ipv6_id': 'backupIpv6Id',
             'vnic2_id': 'vnic2Id',
             'backup_vnic2_id': 'backupVnic2Id',
             'lifecycle_state': 'lifecycleState',
@@ -231,6 +243,8 @@ class DbNode(object):
         self._backup_vnic_id = None
         self._host_ip_id = None
         self._backup_ip_id = None
+        self._host_ipv6_id = None
+        self._backup_ipv6_id = None
         self._vnic2_id = None
         self._backup_vnic2_id = None
         self._lifecycle_state = None
@@ -367,8 +381,8 @@ class DbNode(object):
     def host_ip_id(self):
         """
         Gets the host_ip_id of this DbNode.
-        The `OCID`__ of the host IP address associated with the database node. Use this OCID with either the
-        :func:`get_private_ip` or the :func:`get_public_ip_by_private_ip_id` API to get the IP address
+        The `OCID`__ of the host IPv4 address associated with the database node. Use this OCID with either the
+        :func:`get_private_ip` or the :func:`get_public_ip_by_private_ip_id` API to get the IPv4 address
         needed to make a database connection.
 
         **Note:** Applies only to Exadata Cloud Service.
@@ -385,8 +399,8 @@ class DbNode(object):
     def host_ip_id(self, host_ip_id):
         """
         Sets the host_ip_id of this DbNode.
-        The `OCID`__ of the host IP address associated with the database node. Use this OCID with either the
-        :func:`get_private_ip` or the :func:`get_public_ip_by_private_ip_id` API to get the IP address
+        The `OCID`__ of the host IPv4 address associated with the database node. Use this OCID with either the
+        :func:`get_private_ip` or the :func:`get_public_ip_by_private_ip_id` API to get the IPv4 address
         needed to make a database connection.
 
         **Note:** Applies only to Exadata Cloud Service.
@@ -403,8 +417,8 @@ class DbNode(object):
     def backup_ip_id(self):
         """
         Gets the backup_ip_id of this DbNode.
-        The `OCID`__ of the backup IP address associated with the database node. Use this OCID with either the
-        :func:`get_private_ip` or the :func:`get_public_ip_by_private_ip_id` API to get the IP address
+        The `OCID`__ of the backup IPv4 address associated with the database node. Use this OCID with either the
+        :func:`get_private_ip` or the :func:`get_public_ip_by_private_ip_id` API to get the IPv4 address
         needed to make a database connection.
 
         **Note:** Applies only to Exadata Cloud Service.
@@ -421,8 +435,8 @@ class DbNode(object):
     def backup_ip_id(self, backup_ip_id):
         """
         Sets the backup_ip_id of this DbNode.
-        The `OCID`__ of the backup IP address associated with the database node. Use this OCID with either the
-        :func:`get_private_ip` or the :func:`get_public_ip_by_private_ip_id` API to get the IP address
+        The `OCID`__ of the backup IPv4 address associated with the database node. Use this OCID with either the
+        :func:`get_private_ip` or the :func:`get_public_ip_by_private_ip_id` API to get the IPv4 address
         needed to make a database connection.
 
         **Note:** Applies only to Exadata Cloud Service.
@@ -434,6 +448,74 @@ class DbNode(object):
         :type: str
         """
         self._backup_ip_id = backup_ip_id
+
+    @property
+    def host_ipv6_id(self):
+        """
+        Gets the host_ipv6_id of this DbNode.
+        The `OCID`__ of the host IPv6 address associated with the database node. Use this OCID with the
+        :func:`get_ipv6` API to get the IPv6 address needed to make a database connection.
+
+        **Note:** Applies only to Exadata Cloud Service.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The host_ipv6_id of this DbNode.
+        :rtype: str
+        """
+        return self._host_ipv6_id
+
+    @host_ipv6_id.setter
+    def host_ipv6_id(self, host_ipv6_id):
+        """
+        Sets the host_ipv6_id of this DbNode.
+        The `OCID`__ of the host IPv6 address associated with the database node. Use this OCID with the
+        :func:`get_ipv6` API to get the IPv6 address needed to make a database connection.
+
+        **Note:** Applies only to Exadata Cloud Service.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param host_ipv6_id: The host_ipv6_id of this DbNode.
+        :type: str
+        """
+        self._host_ipv6_id = host_ipv6_id
+
+    @property
+    def backup_ipv6_id(self):
+        """
+        Gets the backup_ipv6_id of this DbNode.
+        The `OCID`__ of the backup IPv6 address associated with the database node. Use this OCID with the
+        :func:`get_ipv6` API to get the IPv6 address needed to make a database connection.
+
+        **Note:** Applies only to Exadata Cloud Service.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The backup_ipv6_id of this DbNode.
+        :rtype: str
+        """
+        return self._backup_ipv6_id
+
+    @backup_ipv6_id.setter
+    def backup_ipv6_id(self, backup_ipv6_id):
+        """
+        Sets the backup_ipv6_id of this DbNode.
+        The `OCID`__ of the backup IPv6 address associated with the database node. Use this OCID with the
+        :func:`get_ipv6` API to get the IPv6 address needed to make a database connection.
+
+        **Note:** Applies only to Exadata Cloud Service.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param backup_ipv6_id: The backup_ipv6_id of this DbNode.
+        :type: str
+        """
+        self._backup_ipv6_id = backup_ipv6_id
 
     @property
     def vnic2_id(self):

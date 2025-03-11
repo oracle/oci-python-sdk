@@ -31,6 +31,14 @@ class ModelSummary(object):
     #: This constant has a value of "INACTIVE"
     LIFECYCLE_STATE_INACTIVE = "INACTIVE"
 
+    #: A constant which can be used with the category property of a ModelSummary.
+    #: This constant has a value of "USER"
+    CATEGORY_USER = "USER"
+
+    #: A constant which can be used with the category property of a ModelSummary.
+    #: This constant has a value of "SERVICE"
+    CATEGORY_SERVICE = "SERVICE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ModelSummary object with values from keyword arguments.
@@ -86,6 +94,16 @@ class ModelSummary(object):
             The value to assign to the version_label property of this ModelSummary.
         :type version_label: str
 
+        :param category:
+            The value to assign to the category property of this ModelSummary.
+            Allowed values for this property are: "USER", "SERVICE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type category: str
+
+        :param is_model_by_reference:
+            The value to assign to the is_model_by_reference property of this ModelSummary.
+        :type is_model_by_reference: bool
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ModelSummary.
         :type freeform_tags: dict(str, str)
@@ -108,6 +126,8 @@ class ModelSummary(object):
             'model_version_set_name': 'str',
             'version_id': 'int',
             'version_label': 'str',
+            'category': 'str',
+            'is_model_by_reference': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -125,6 +145,8 @@ class ModelSummary(object):
             'model_version_set_name': 'modelVersionSetName',
             'version_id': 'versionId',
             'version_label': 'versionLabel',
+            'category': 'category',
+            'is_model_by_reference': 'isModelByReference',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -141,6 +163,8 @@ class ModelSummary(object):
         self._model_version_set_name = None
         self._version_id = None
         self._version_label = None
+        self._category = None
+        self._is_model_by_reference = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -459,6 +483,60 @@ class ModelSummary(object):
         :type: str
         """
         self._version_label = version_label
+
+    @property
+    def category(self):
+        """
+        **[Required]** Gets the category of this ModelSummary.
+        The category of the model.
+
+        Allowed values for this property are: "USER", "SERVICE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The category of this ModelSummary.
+        :rtype: str
+        """
+        return self._category
+
+    @category.setter
+    def category(self, category):
+        """
+        Sets the category of this ModelSummary.
+        The category of the model.
+
+
+        :param category: The category of this ModelSummary.
+        :type: str
+        """
+        allowed_values = ["USER", "SERVICE"]
+        if not value_allowed_none_or_none_sentinel(category, allowed_values):
+            category = 'UNKNOWN_ENUM_VALUE'
+        self._category = category
+
+    @property
+    def is_model_by_reference(self):
+        """
+        **[Required]** Gets the is_model_by_reference of this ModelSummary.
+        Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer Tenancy.
+
+
+        :return: The is_model_by_reference of this ModelSummary.
+        :rtype: bool
+        """
+        return self._is_model_by_reference
+
+    @is_model_by_reference.setter
+    def is_model_by_reference(self, is_model_by_reference):
+        """
+        Sets the is_model_by_reference of this ModelSummary.
+        Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer Tenancy.
+
+
+        :param is_model_by_reference: The is_model_by_reference of this ModelSummary.
+        :type: bool
+        """
+        self._is_model_by_reference = is_model_by_reference
 
     @property
     def freeform_tags(self):

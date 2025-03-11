@@ -40,13 +40,18 @@ class CreateApplicationVipDetails(object):
             The value to assign to the ip_address property of this CreateApplicationVipDetails.
         :type ip_address: str
 
+        :param ipv6_address:
+            The value to assign to the ipv6_address property of this CreateApplicationVipDetails.
+        :type ipv6_address: str
+
         """
         self.swagger_types = {
             'hostname_label': 'str',
             'db_node_id': 'str',
             'cloud_vm_cluster_id': 'str',
             'subnet_id': 'str',
-            'ip_address': 'str'
+            'ip_address': 'str',
+            'ipv6_address': 'str'
         }
 
         self.attribute_map = {
@@ -54,7 +59,8 @@ class CreateApplicationVipDetails(object):
             'db_node_id': 'dbNodeId',
             'cloud_vm_cluster_id': 'cloudVmClusterId',
             'subnet_id': 'subnetId',
-            'ip_address': 'ipAddress'
+            'ip_address': 'ipAddress',
+            'ipv6_address': 'ipv6Address'
         }
 
         self._hostname_label = None
@@ -62,6 +68,7 @@ class CreateApplicationVipDetails(object):
         self._cloud_vm_cluster_id = None
         self._subnet_id = None
         self._ip_address = None
+        self._ipv6_address = None
 
     @property
     def hostname_label(self):
@@ -175,7 +182,7 @@ class CreateApplicationVipDetails(object):
     def ip_address(self):
         """
         Gets the ip_address of this CreateApplicationVipDetails.
-        The application virtual IP (VIP) address.
+        The application virtual IP (VIP) IPv4 address.
 
 
         :return: The ip_address of this CreateApplicationVipDetails.
@@ -187,13 +194,37 @@ class CreateApplicationVipDetails(object):
     def ip_address(self, ip_address):
         """
         Sets the ip_address of this CreateApplicationVipDetails.
-        The application virtual IP (VIP) address.
+        The application virtual IP (VIP) IPv4 address.
 
 
         :param ip_address: The ip_address of this CreateApplicationVipDetails.
         :type: str
         """
         self._ip_address = ip_address
+
+    @property
+    def ipv6_address(self):
+        """
+        Gets the ipv6_address of this CreateApplicationVipDetails.
+        The application virtual IP (VIP) IPv6 address.
+
+
+        :return: The ipv6_address of this CreateApplicationVipDetails.
+        :rtype: str
+        """
+        return self._ipv6_address
+
+    @ipv6_address.setter
+    def ipv6_address(self, ipv6_address):
+        """
+        Sets the ipv6_address of this CreateApplicationVipDetails.
+        The application virtual IP (VIP) IPv6 address.
+
+
+        :param ipv6_address: The ipv6_address of this CreateApplicationVipDetails.
+        :type: str
+        """
+        self._ipv6_address = ipv6_address
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -74,6 +74,7 @@ from .managed_egress_standalone_job_infrastructure_configuration_details import 
 from .metadata import Metadata
 from .metric_expression_rule import MetricExpressionRule
 from .model import Model
+from .model_artifact_reference_details import ModelArtifactReferenceDetails
 from .model_configuration_details import ModelConfigurationDetails
 from .model_deploy_workload_configuration_details import ModelDeployWorkloadConfigurationDetails
 from .model_deployment import ModelDeployment
@@ -96,6 +97,7 @@ from .notebook_session_runtime_config_details import NotebookSessionRuntimeConfi
 from .notebook_session_shape_config_details import NotebookSessionShapeConfigDetails
 from .notebook_session_shape_summary import NotebookSessionShapeSummary
 from .notebook_session_summary import NotebookSessionSummary
+from .oss_model_artifact_reference_details import OSSModelArtifactReferenceDetails
 from .object_storage_mount_configuration_details import ObjectStorageMountConfigurationDetails
 from .ocir_container_job_environment_configuration_details import OcirContainerJobEnvironmentConfigurationDetails
 from .ocir_model_deployment_environment_configuration_details import OcirModelDeploymentEnvironmentConfigurationDetails
@@ -133,6 +135,7 @@ from .predefined_expression_threshold_scaling_configuration import PredefinedExp
 from .predefined_metric_expression_rule import PredefinedMetricExpressionRule
 from .project import Project
 from .project_summary import ProjectSummary
+from .register_model_artifact_reference_details import RegisterModelArtifactReferenceDetails
 from .retention_operation_details import RetentionOperationDetails
 from .retention_setting import RetentionSetting
 from .scaling_configuration import ScalingConfiguration
@@ -250,6 +253,7 @@ data_science_type_mapping = {
     "Metadata": Metadata,
     "MetricExpressionRule": MetricExpressionRule,
     "Model": Model,
+    "ModelArtifactReferenceDetails": ModelArtifactReferenceDetails,
     "ModelConfigurationDetails": ModelConfigurationDetails,
     "ModelDeployWorkloadConfigurationDetails": ModelDeployWorkloadConfigurationDetails,
     "ModelDeployment": ModelDeployment,
@@ -272,6 +276,7 @@ data_science_type_mapping = {
     "NotebookSessionShapeConfigDetails": NotebookSessionShapeConfigDetails,
     "NotebookSessionShapeSummary": NotebookSessionShapeSummary,
     "NotebookSessionSummary": NotebookSessionSummary,
+    "OSSModelArtifactReferenceDetails": OSSModelArtifactReferenceDetails,
     "ObjectStorageMountConfigurationDetails": ObjectStorageMountConfigurationDetails,
     "OcirContainerJobEnvironmentConfigurationDetails": OcirContainerJobEnvironmentConfigurationDetails,
     "OcirModelDeploymentEnvironmentConfigurationDetails": OcirModelDeploymentEnvironmentConfigurationDetails,
@@ -309,6 +314,7 @@ data_science_type_mapping = {
     "PredefinedMetricExpressionRule": PredefinedMetricExpressionRule,
     "Project": Project,
     "ProjectSummary": ProjectSummary,
+    "RegisterModelArtifactReferenceDetails": RegisterModelArtifactReferenceDetails,
     "RetentionOperationDetails": RetentionOperationDetails,
     "RetentionSetting": RetentionSetting,
     "ScalingConfiguration": ScalingConfiguration,

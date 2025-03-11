@@ -86,6 +86,7 @@ Data Science
     oci.data_science.models.Metadata
     oci.data_science.models.MetricExpressionRule
     oci.data_science.models.Model
+    oci.data_science.models.ModelArtifactReferenceDetails
     oci.data_science.models.ModelConfigurationDetails
     oci.data_science.models.ModelDeployWorkloadConfigurationDetails
     oci.data_science.models.ModelDeployment
@@ -108,6 +109,7 @@ Data Science
     oci.data_science.models.NotebookSessionShapeConfigDetails
     oci.data_science.models.NotebookSessionShapeSummary
     oci.data_science.models.NotebookSessionSummary
+    oci.data_science.models.OSSModelArtifactReferenceDetails
     oci.data_science.models.ObjectStorageMountConfigurationDetails
     oci.data_science.models.OcirContainerJobEnvironmentConfigurationDetails
     oci.data_science.models.OcirModelDeploymentEnvironmentConfigurationDetails
@@ -145,6 +147,7 @@ Data Science
     oci.data_science.models.PredefinedMetricExpressionRule
     oci.data_science.models.Project
     oci.data_science.models.ProjectSummary
+    oci.data_science.models.RegisterModelArtifactReferenceDetails
     oci.data_science.models.RetentionOperationDetails
     oci.data_science.models.RetentionSetting
     oci.data_science.models.ScalingConfiguration

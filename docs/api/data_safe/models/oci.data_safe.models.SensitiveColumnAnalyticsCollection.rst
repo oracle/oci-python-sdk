@@ -1,0 +1,11 @@
+SensitiveColumnAnalyticsCollection
+==================================
+
+.. currentmodule:: oci.data_safe.models
+
+.. autoclass:: SensitiveColumnAnalyticsCollection
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

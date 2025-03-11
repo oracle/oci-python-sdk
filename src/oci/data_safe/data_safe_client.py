@@ -3859,6 +3859,125 @@ class DataSafeClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def change_sensitive_type_group_compartment(self, sensitive_type_group_id, change_sensitive_type_group_compartment_details, **kwargs):
+        """
+        Moves the sensitive type group to the specified compartment.
+
+
+        :param str sensitive_type_group_id: (required)
+            The OCID of the sensitive type group.
+
+        :param oci.data_safe.models.ChangeSensitiveTypeGroupCompartmentDetails change_sensitive_type_group_compartment_details: (required)
+            Details of the move compartment request.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the if-match parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_sensitive_type_group_compartment.py.html>`__ to see an example of how to use change_sensitive_type_group_compartment API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['sensitiveTypeGroupId']
+        resource_path = "/sensitiveTypeGroups/{sensitiveTypeGroupId}/actions/changeCompartment"
+        method = "POST"
+        operation_name = "change_sensitive_type_group_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypeGroup/ChangeSensitiveTypeGroupCompartment"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"change_sensitive_type_group_compartment got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "sensitiveTypeGroupId": sensitive_type_group_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_sensitive_type_group_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_sensitive_type_group_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def change_sensitive_types_export_compartment(self, sensitive_types_export_id, change_sensitive_types_export_compartment_details, **kwargs):
         """
         Moves the specified sensitive types export into a different compartment.
@@ -6601,6 +6720,103 @@ class DataSafeClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def create_sensitive_type_group(self, create_sensitive_type_group_details, **kwargs):
+        """
+        Creates a new sensitive type group.
+
+
+        :param oci.data_safe.models.CreateSensitiveTypeGroupDetails create_sensitive_type_group_details: (required)
+            Details of the sensitive type group.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_safe.models.SensitiveTypeGroup`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_sensitive_type_group.py.html>`__ to see an example of how to use create_sensitive_type_group API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/sensitiveTypeGroups"
+        method = "POST"
+        operation_name = "create_sensitive_type_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypeGroup/CreateSensitiveTypeGroup"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_retry_token",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"create_sensitive_type_group got unknown kwargs: {extra_kwargs!r}")
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_sensitive_type_group_details,
+                response_type="SensitiveTypeGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_sensitive_type_group_details,
+                response_type="SensitiveTypeGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def create_sensitive_types_export(self, create_sensitive_types_export_details, **kwargs):
         """
         Generates a downloadable file corresponding to the specified list of sensitive types. It's a prerequisite for the
@@ -8374,6 +8590,111 @@ class DataSafeClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def delete_masking_report(self, masking_report_id, **kwargs):
+        """
+        Deletes the specified masking report.
+
+
+        :param str masking_report_id: (required)
+            The OCID of the masking report.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the if-match parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_masking_report.py.html>`__ to see an example of how to use delete_masking_report API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['maskingReportId']
+        resource_path = "/maskingReports/{maskingReportId}"
+        method = "DELETE"
+        operation_name = "delete_masking_report"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingReport/DeleteMaskingReport"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"delete_masking_report got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "maskingReportId": masking_report_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def delete_on_prem_connector(self, on_prem_connector_id, **kwargs):
         """
         Deletes the specified on-premises connector.
@@ -9286,6 +9607,111 @@ class DataSafeClient(object):
 
         path_params = {
             "sensitiveTypeId": sensitive_type_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def delete_sensitive_type_group(self, sensitive_type_group_id, **kwargs):
+        """
+        Deletes the specified sensitive type group.
+
+
+        :param str sensitive_type_group_id: (required)
+            The OCID of the sensitive type group.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the if-match parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_sensitive_type_group.py.html>`__ to see an example of how to use delete_sensitive_type_group API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['sensitiveTypeGroupId']
+        resource_path = "/sensitiveTypeGroups/{sensitiveTypeGroupId}"
+        method = "DELETE"
+        operation_name = "delete_sensitive_type_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypeGroup/DeleteSensitiveTypeGroup"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"delete_sensitive_type_group got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "sensitiveTypeGroupId": sensitive_type_group_id
         }
 
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
@@ -16338,6 +16764,104 @@ class DataSafeClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def get_sensitive_type_group(self, sensitive_type_group_id, **kwargs):
+        """
+        Gets the details of the specified sensitive type group.
+
+
+        :param str sensitive_type_group_id: (required)
+            The OCID of the sensitive type group.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_safe.models.SensitiveTypeGroup`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_sensitive_type_group.py.html>`__ to see an example of how to use get_sensitive_type_group API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['sensitiveTypeGroupId']
+        resource_path = "/sensitiveTypeGroups/{sensitiveTypeGroupId}"
+        method = "GET"
+        operation_name = "get_sensitive_type_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypeGroup/GetSensitiveTypeGroup"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"get_sensitive_type_group got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "sensitiveTypeGroupId": sensitive_type_group_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="SensitiveTypeGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="SensitiveTypeGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def get_sensitive_types_export(self, sensitive_types_export_id, **kwargs):
         """
         Gets the details of the specified sensitive types export by identifier.
@@ -22081,6 +22605,43 @@ class DataSafeClient(object):
         :param str target_id: (optional)
             A filter to return only items related to a specific target OCID.
 
+        :param str scim_query: (optional)
+            The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2
+            of the System for Cross-Domain Identity Management (SCIM) specification, which is available
+            at `RFC3339`__. In SCIM filtering expressions,
+            text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
+            (Numeric and boolean values should not be quoted.)
+
+            **Example:** |
+            scimQuery=(severity eq 'high') and (targetId eq 'target_1')
+            scimQuery=(category eq \"Users\") and (targetId eq \"target_1\")
+            scimQuery=(reference eq 'CIS') and (targetId eq 'target_1')
+
+            Supported fields:
+            severity
+            findingKey
+            reference
+            targetId
+            isTopFinding
+            title
+            category
+            remarks
+            details
+            summary
+            isRiskModified
+
+            __ https://tools.ietf.org/html/draft-ietf-scim-api-12
+
+        :param list[str] field: (optional)
+            Specifies a subset of fields to be returned in the response.
+
+            Allowed values are: "severity", "findingKey", "reference", "targetId", "isTopFinding", "title", "category", "remarks", "details", "summary", "isRiskModified"
+
+        :param str sort_by: (optional)
+            The field to sort by. You can specify only one sort order(sortOrder). The default order for category is alphabetical.
+
+            Allowed values are: "category", "findingKey", "severity"
+
         :param str finding_key: (optional)
             Each finding in security assessment has an associated key (think of key as a finding's name).
             For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
@@ -22124,6 +22685,9 @@ class DataSafeClient(object):
             "compartment_id_in_subtree",
             "access_level",
             "target_id",
+            "scim_query",
+            "field",
+            "sort_by",
             "finding_key"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -22169,6 +22733,21 @@ class DataSafeClient(object):
                     f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
+        if 'field' in kwargs:
+            field_allowed_values = ["severity", "findingKey", "reference", "targetId", "isTopFinding", "title", "category", "remarks", "details", "summary", "isRiskModified"]
+            for field_item in kwargs['field']:
+                if field_item not in field_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `field`, must be one of { field_allowed_values }"
+                    )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["category", "findingKey", "severity"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
+                )
+
         query_params = {
             "isTopFinding": kwargs.get("is_top_finding", missing),
             "severity": kwargs.get("severity", missing),
@@ -22179,6 +22758,9 @@ class DataSafeClient(object):
             "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
             "accessLevel": kwargs.get("access_level", missing),
             "targetId": kwargs.get("target_id", missing),
+            "scimQuery": kwargs.get("scim_query", missing),
+            "field": self.base_client.generate_collection_format_param(kwargs.get("field", missing), 'multi'),
+            "sortBy": kwargs.get("sort_by", missing),
             "findingKey": kwargs.get("finding_key", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
@@ -22631,6 +23213,129 @@ class DataSafeClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="list[GrantSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def list_grouped_sensitive_types(self, sensitive_type_group_id, **kwargs):
+        """
+        Gets the list of sensitive type Ids present in the specified sensitive type group.
+
+
+        :param str sensitive_type_group_id: (required)
+            The OCID of the sensitive type group.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param str sensitive_type_id: (optional)
+            A filter to return only items related to a specific sensitive type OCID.
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_safe.models.GroupedSensitiveTypeCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_grouped_sensitive_types.py.html>`__ to see an example of how to use list_grouped_sensitive_types API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['sensitiveTypeGroupId']
+        resource_path = "/sensitiveTypeGroups/{sensitiveTypeGroupId}/groupedSensitiveTypes"
+        method = "GET"
+        operation_name = "list_grouped_sensitive_types"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypeGroup/ListGroupedSensitiveTypes"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "sensitive_type_id",
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"list_grouped_sensitive_types got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "sensitiveTypeGroupId": sensitive_type_group_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "sensitiveTypeId": kwargs.get("sensitive_type_id", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="GroupedSensitiveTypeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="GroupedSensitiveTypeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
@@ -23443,6 +24148,166 @@ class DataSafeClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="MaskingColumnCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def list_masking_errors(self, masking_report_id, **kwargs):
+        """
+        Gets a list of masking errors in a masking run based on the specified query parameters.
+
+
+        :param str masking_report_id: (required)
+            The OCID of the masking report.
+
+        :param str step_name: (optional)
+            A filter to return only masking errors that match the specified step name.
+
+            Allowed values are: "EXECUTE_MASKING", "PRE_MASKING", "POST_MASKING"
+
+        :param str sort_by: (optional)
+            The field to sort by. The default order will be ascending.
+
+            Allowed values are: "stepName", "timeCreated"
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (ASC) or descending (DESC).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_safe.models.MaskingErrorCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_masking_errors.py.html>`__ to see an example of how to use list_masking_errors API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['maskingReportId']
+        resource_path = "/maskingReports/{maskingReportId}/maskingErrors"
+        method = "GET"
+        operation_name = "list_masking_errors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingErrorSummary/ListMaskingErrors"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "step_name",
+            "sort_by",
+            "limit",
+            "page",
+            "sort_order",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"list_masking_errors got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "maskingReportId": masking_report_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        if 'step_name' in kwargs:
+            step_name_allowed_values = ["EXECUTE_MASKING", "PRE_MASKING", "POST_MASKING"]
+            if kwargs['step_name'] not in step_name_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `step_name`, must be one of { step_name_allowed_values }"
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["stepName", "timeCreated"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
+                )
+
+        query_params = {
+            "stepName": kwargs.get("step_name", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="MaskingErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="MaskingErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
@@ -25862,7 +26727,7 @@ class DataSafeClient(object):
         :param str data_source: (optional)
             Specifies the name of a resource that provides data for the report. For example  alerts, events.
 
-            Allowed values are: "EVENTS", "ALERTS", "VIOLATIONS", "ALLOWED_SQL"
+            Allowed values are: "EVENTS", "ALERTS", "SECURITY_ASSESSMENT", "VIOLATIONS", "ALLOWED_SQL"
 
         :param str lifecycle_state: (optional)
             An optional filter to return only resources that match the specified lifecycle state.
@@ -25943,7 +26808,7 @@ class DataSafeClient(object):
                 )
 
         if 'data_source' in kwargs:
-            data_source_allowed_values = ["EVENTS", "ALERTS", "VIOLATIONS", "ALLOWED_SQL"]
+            data_source_allowed_values = ["EVENTS", "ALERTS", "SECURITY_ASSESSMENT", "VIOLATIONS", "ALLOWED_SQL"]
             if kwargs['data_source'] not in data_source_allowed_values:
                 raise ValueError(
                     f"Invalid value for `data_source`, must be one of { data_source_allowed_values }"
@@ -28316,6 +29181,195 @@ class DataSafeClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def list_sensitive_column_analytics(self, compartment_id, **kwargs):
+        """
+        Gets consolidated sensitive columns analytics data based on the specified query parameters.
+
+        When you perform the ListSensitiveColumnAnalytics operation, if the parameter compartmentIdInSubtree is set to \"true,\" and if the
+        parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has INSPECT
+        permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
+        root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
+        compartmentId, then \"Not Authorized\" is returned.
+
+        To use ListSensitiveColumnAnalytics to get a full list of all compartments and subcompartments in the tenancy from the root compartment,
+        set the parameter compartmentIdInSubtree to true and accessLevel to ACCESSIBLE.
+
+
+        :param str compartment_id: (required)
+            A filter to return only resources that match the specified compartment OCID.
+
+        :param bool compartment_id_in_subtree: (optional)
+            Default is false.
+            When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+
+        :param str access_level: (optional)
+            Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+            Setting this to ACCESSIBLE returns only those compartments for which the
+            user has INSPECT permissions directly or indirectly (permissions can be on a
+            resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+
+            Allowed values are: "RESTRICTED", "ACCESSIBLE"
+
+        :param str target_id: (optional)
+            A filter to return only items related to a specific target OCID.
+
+        :param list[str] sensitive_type_id: (optional)
+            A filter to return only the sensitive columns that are associated with one of the sensitive types identified by the specified OCIDs.
+
+        :param str sensitive_type_group_id: (optional)
+            An optional filter to return only resources that match the specified OCID of the sensitive type group resource.
+
+        :param str sensitive_data_model_id: (optional)
+            A filter to return only the resources that match the specified sensitive data model OCID.
+
+        :param list[str] group_by: (optional)
+            The group by parameter to summarize the sensitive columns.
+
+            Allowed values are: "targetId", "sensitiveTypeId", "sensitiveDataModelId"
+
+        :param list[str] schema_name: (optional)
+            A filter to return only items related to specific schema name.
+
+        :param list[str] object_name: (optional)
+            A filter to return only items related to a specific object name.
+
+        :param list[str] column_name: (optional)
+            A filter to return only a specific column based on column name.
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_safe.models.SensitiveColumnAnalyticsCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sensitive_column_analytics.py.html>`__ to see an example of how to use list_sensitive_column_analytics API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
+        resource_path = "/sensitiveColumnAnalytics"
+        method = "GET"
+        operation_name = "list_sensitive_column_analytics"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModel/ListSensitiveColumnAnalytics"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "compartment_id_in_subtree",
+            "access_level",
+            "target_id",
+            "sensitive_type_id",
+            "sensitive_type_group_id",
+            "sensitive_data_model_id",
+            "group_by",
+            "schema_name",
+            "object_name",
+            "column_name",
+            "limit",
+            "page",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"list_sensitive_column_analytics got unknown kwargs: {extra_kwargs!r}")
+
+        if 'access_level' in kwargs:
+            access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
+            if kwargs['access_level'] not in access_level_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
+                )
+
+        if 'group_by' in kwargs:
+            group_by_allowed_values = ["targetId", "sensitiveTypeId", "sensitiveDataModelId"]
+            for group_by_item in kwargs['group_by']:
+                if group_by_item not in group_by_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `group_by`, must be one of { group_by_allowed_values }"
+                    )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
+            "accessLevel": kwargs.get("access_level", missing),
+            "targetId": kwargs.get("target_id", missing),
+            "sensitiveTypeId": self.base_client.generate_collection_format_param(kwargs.get("sensitive_type_id", missing), 'multi'),
+            "sensitiveTypeGroupId": kwargs.get("sensitive_type_group_id", missing),
+            "sensitiveDataModelId": kwargs.get("sensitive_data_model_id", missing),
+            "groupBy": self.base_client.generate_collection_format_param(kwargs.get("group_by", missing), 'multi'),
+            "schemaName": self.base_client.generate_collection_format_param(kwargs.get("schema_name", missing), 'multi'),
+            "objectName": self.base_client.generate_collection_format_param(kwargs.get("object_name", missing), 'multi'),
+            "columnName": self.base_client.generate_collection_format_param(kwargs.get("column_name", missing), 'multi'),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SensitiveColumnAnalyticsCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SensitiveColumnAnalyticsCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def list_sensitive_columns(self, sensitive_data_model_id, **kwargs):
         """
         Gets a list of sensitive columns present in the specified sensitive data model based on the specified query parameters.
@@ -29286,6 +30340,210 @@ class DataSafeClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="SensitiveSchemaCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def list_sensitive_type_groups(self, compartment_id, **kwargs):
+        """
+        Gets a list of sensitive type groups based on the specified query parameters.
+
+
+        :param str compartment_id: (required)
+            A filter to return only resources that match the specified compartment OCID.
+
+        :param bool compartment_id_in_subtree: (optional)
+            Default is false.
+            When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+
+        :param str access_level: (optional)
+            Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+            Setting this to ACCESSIBLE returns only those compartments for which the
+            user has INSPECT permissions directly or indirectly (permissions can be on a
+            resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+
+            Allowed values are: "RESTRICTED", "ACCESSIBLE"
+
+        :param str display_name: (optional)
+            A filter to return only resources that match the specified display name.
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str lifecycle_state: (optional)
+            A filter to return only the resources that match the specified lifecycle state.
+
+            Allowed values are: "CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED"
+
+        :param str sensitive_type_group_id: (optional)
+            An optional filter to return only resources that match the specified OCID of the sensitive type group resource.
+
+        :param datetime time_created_greater_than_or_equal_to: (optional)
+            A filter to return only the resources that were created after the specified date and time, as defined by `RFC3339`__.
+            Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
+
+            **Example:** 2016-12-19T16:39:57.600Z
+
+            __ https://tools.ietf.org/html/rfc3339
+
+        :param datetime time_created_less_than: (optional)
+            Search for resources that were created before a specific date.
+            Specifying this parameter corresponding `timeCreatedLessThan`
+            parameter will retrieve all resources created before the
+            specified created date, in \"YYYY-MM-ddThh:mmZ\" format with a Z offset, as
+            defined by RFC 3339.
+
+            **Example:** 2016-12-19T16:39:57.600Z
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (ASC) or descending (DESC).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. You can specify only one sorting parameter (sortOrder). The default order for timeCreated is descending.
+            The default order for displayName is ascending.
+
+            Allowed values are: "timeCreated", "displayName"
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_safe.models.SensitiveTypeGroupCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sensitive_type_groups.py.html>`__ to see an example of how to use list_sensitive_type_groups API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
+        resource_path = "/sensitiveTypeGroups"
+        method = "GET"
+        operation_name = "list_sensitive_type_groups"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypeGroupSummary/ListSensitiveTypeGroups"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "compartment_id_in_subtree",
+            "access_level",
+            "display_name",
+            "limit",
+            "page",
+            "lifecycle_state",
+            "sensitive_type_group_id",
+            "time_created_greater_than_or_equal_to",
+            "time_created_less_than",
+            "sort_order",
+            "sort_by",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"list_sensitive_type_groups got unknown kwargs: {extra_kwargs!r}")
+
+        if 'access_level' in kwargs:
+            access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
+            if kwargs['access_level'] not in access_level_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
+                )
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeCreated", "displayName"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
+            "accessLevel": kwargs.get("access_level", missing),
+            "displayName": kwargs.get("display_name", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "sensitiveTypeGroupId": kwargs.get("sensitive_type_group_id", missing),
+            "timeCreatedGreaterThanOrEqualTo": kwargs.get("time_created_greater_than_or_equal_to", missing),
+            "timeCreatedLessThan": kwargs.get("time_created_less_than", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SensitiveTypeGroupCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SensitiveTypeGroupCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
@@ -33500,6 +34758,12 @@ class DataSafeClient(object):
         :param oci.data_safe.models.MaskDataDetails mask_data_details: (required)
             Details to mask data.
 
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+
         :param str opc_request_id: (optional)
             Unique identifier for the request.
 
@@ -33532,6 +34796,7 @@ class DataSafeClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
+            "opc_retry_token",
             "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -33552,6 +34817,7 @@ class DataSafeClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
@@ -33565,6 +34831,7 @@ class DataSafeClient(object):
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
                 self.base_client.add_opc_client_retries_header(header_params)
                 retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
             return retry_strategy.make_retrying_call(
@@ -33939,6 +35206,117 @@ class DataSafeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=patch_discovery_job_result_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def patch_grouped_sensitive_types(self, sensitive_type_group_id, patch_grouped_sensitive_types_details, **kwargs):
+        """
+        Patches one or more sensitive types in a sensitive type group. You can use this operation to add or remove
+        sensitive type ids in a sensitive type group.
+
+
+        :param str sensitive_type_group_id: (required)
+            The OCID of the sensitive type group.
+
+        :param oci.data_safe.models.PatchGroupedSensitiveTypesDetails patch_grouped_sensitive_types_details: (required)
+            Details to patch sensitive type ids in a SensitiveTypeGroup.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the if-match parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/patch_grouped_sensitive_types.py.html>`__ to see an example of how to use patch_grouped_sensitive_types API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['sensitiveTypeGroupId']
+        resource_path = "/sensitiveTypeGroups/{sensitiveTypeGroupId}/groupedSensitiveTypes"
+        method = "PATCH"
+        operation_name = "patch_grouped_sensitive_types"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypeGroup/PatchGroupedSensitiveTypes"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"patch_grouped_sensitive_types got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "sensitiveTypeGroupId": sensitive_type_group_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=patch_grouped_sensitive_types_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=patch_grouped_sensitive_types_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
@@ -39716,6 +41094,116 @@ class DataSafeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_sensitive_type_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def update_sensitive_type_group(self, sensitive_type_group_id, update_sensitive_type_group_details, **kwargs):
+        """
+        Updates one or more attributes of the specified sensitive type group.
+
+
+        :param str sensitive_type_group_id: (required)
+            The OCID of the sensitive type group.
+
+        :param oci.data_safe.models.UpdateSensitiveTypeGroupDetails update_sensitive_type_group_details: (required)
+            Details used to update the sensitive type group.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the if-match parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_sensitive_type_group.py.html>`__ to see an example of how to use update_sensitive_type_group API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['sensitiveTypeGroupId']
+        resource_path = "/sensitiveTypeGroups/{sensitiveTypeGroupId}"
+        method = "PUT"
+        operation_name = "update_sensitive_type_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypeGroup/UpdateSensitiveTypeGroup"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"update_sensitive_type_group got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "sensitiveTypeGroupId": sensitive_type_group_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_sensitive_type_group_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_sensitive_type_group_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,

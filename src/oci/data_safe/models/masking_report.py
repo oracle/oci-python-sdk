@@ -44,6 +44,14 @@ class MaskingReport(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the masking_status property of a MaskingReport.
+    #: This constant has a value of "FAILED"
+    MASKING_STATUS_FAILED = "FAILED"
+
+    #: A constant which can be used with the masking_status property of a MaskingReport.
+    #: This constant has a value of "SUCCESS"
+    MASKING_STATUS_SUCCESS = "SUCCESS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new MaskingReport object with values from keyword arguments.
@@ -127,6 +135,20 @@ class MaskingReport(object):
             The value to assign to the recompile property of this MaskingReport.
         :type recompile: str
 
+        :param masking_status:
+            The value to assign to the masking_status property of this MaskingReport.
+            Allowed values for this property are: "FAILED", "SUCCESS", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type masking_status: str
+
+        :param total_pre_masking_script_errors:
+            The value to assign to the total_pre_masking_script_errors property of this MaskingReport.
+        :type total_pre_masking_script_errors: int
+
+        :param total_post_masking_script_errors:
+            The value to assign to the total_post_masking_script_errors property of this MaskingReport.
+        :type total_post_masking_script_errors: int
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -147,7 +169,10 @@ class MaskingReport(object):
             'is_redo_logging_enabled': 'bool',
             'is_refresh_stats_enabled': 'bool',
             'parallel_degree': 'str',
-            'recompile': 'str'
+            'recompile': 'str',
+            'masking_status': 'str',
+            'total_pre_masking_script_errors': 'int',
+            'total_post_masking_script_errors': 'int'
         }
 
         self.attribute_map = {
@@ -169,7 +194,10 @@ class MaskingReport(object):
             'is_redo_logging_enabled': 'isRedoLoggingEnabled',
             'is_refresh_stats_enabled': 'isRefreshStatsEnabled',
             'parallel_degree': 'parallelDegree',
-            'recompile': 'recompile'
+            'recompile': 'recompile',
+            'masking_status': 'maskingStatus',
+            'total_pre_masking_script_errors': 'totalPreMaskingScriptErrors',
+            'total_post_masking_script_errors': 'totalPostMaskingScriptErrors'
         }
 
         self._id = None
@@ -191,6 +219,9 @@ class MaskingReport(object):
         self._is_refresh_stats_enabled = None
         self._parallel_degree = None
         self._recompile = None
+        self._masking_status = None
+        self._total_pre_masking_script_errors = None
+        self._total_post_masking_script_errors = None
 
     @property
     def id(self):
@@ -665,6 +696,84 @@ class MaskingReport(object):
         :type: str
         """
         self._recompile = recompile
+
+    @property
+    def masking_status(self):
+        """
+        **[Required]** Gets the masking_status of this MaskingReport.
+        The status of the masking job.
+
+        Allowed values for this property are: "FAILED", "SUCCESS", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The masking_status of this MaskingReport.
+        :rtype: str
+        """
+        return self._masking_status
+
+    @masking_status.setter
+    def masking_status(self, masking_status):
+        """
+        Sets the masking_status of this MaskingReport.
+        The status of the masking job.
+
+
+        :param masking_status: The masking_status of this MaskingReport.
+        :type: str
+        """
+        allowed_values = ["FAILED", "SUCCESS"]
+        if not value_allowed_none_or_none_sentinel(masking_status, allowed_values):
+            masking_status = 'UNKNOWN_ENUM_VALUE'
+        self._masking_status = masking_status
+
+    @property
+    def total_pre_masking_script_errors(self):
+        """
+        Gets the total_pre_masking_script_errors of this MaskingReport.
+        The total number of errors in pre-masking script.
+
+
+        :return: The total_pre_masking_script_errors of this MaskingReport.
+        :rtype: int
+        """
+        return self._total_pre_masking_script_errors
+
+    @total_pre_masking_script_errors.setter
+    def total_pre_masking_script_errors(self, total_pre_masking_script_errors):
+        """
+        Sets the total_pre_masking_script_errors of this MaskingReport.
+        The total number of errors in pre-masking script.
+
+
+        :param total_pre_masking_script_errors: The total_pre_masking_script_errors of this MaskingReport.
+        :type: int
+        """
+        self._total_pre_masking_script_errors = total_pre_masking_script_errors
+
+    @property
+    def total_post_masking_script_errors(self):
+        """
+        Gets the total_post_masking_script_errors of this MaskingReport.
+        The total number of errors in post-masking script.
+
+
+        :return: The total_post_masking_script_errors of this MaskingReport.
+        :rtype: int
+        """
+        return self._total_post_masking_script_errors
+
+    @total_post_masking_script_errors.setter
+    def total_post_masking_script_errors(self, total_post_masking_script_errors):
+        """
+        Sets the total_post_masking_script_errors of this MaskingReport.
+        The total number of errors in post-masking script.
+
+
+        :param total_post_masking_script_errors: The total_post_masking_script_errors of this MaskingReport.
+        :type: int
+        """
+        self._total_post_masking_script_errors = total_post_masking_script_errors
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -32,25 +32,41 @@ class OpensearchClusterPipelineSummary(object):
             The value to assign to the compartment_id property of this OpensearchClusterPipelineSummary.
         :type compartment_id: str
 
-        :param max_ocpu_count:
-            The value to assign to the max_ocpu_count property of this OpensearchClusterPipelineSummary.
-        :type max_ocpu_count: int
+        :param vcn_id:
+            The value to assign to the vcn_id property of this OpensearchClusterPipelineSummary.
+        :type vcn_id: str
 
-        :param min_ocpu_count:
-            The value to assign to the min_ocpu_count property of this OpensearchClusterPipelineSummary.
-        :type min_ocpu_count: int
+        :param subnet_id:
+            The value to assign to the subnet_id property of this OpensearchClusterPipelineSummary.
+        :type subnet_id: str
 
-        :param max_memory_gb:
-            The value to assign to the max_memory_gb property of this OpensearchClusterPipelineSummary.
-        :type max_memory_gb: int
+        :param ocpu_count:
+            The value to assign to the ocpu_count property of this OpensearchClusterPipelineSummary.
+        :type ocpu_count: int
 
-        :param min_memory_gb:
-            The value to assign to the min_memory_gb property of this OpensearchClusterPipelineSummary.
-        :type min_memory_gb: int
+        :param memory_gb:
+            The value to assign to the memory_gb property of this OpensearchClusterPipelineSummary.
+        :type memory_gb: int
+
+        :param node_count:
+            The value to assign to the node_count property of this OpensearchClusterPipelineSummary.
+        :type node_count: int
 
         :param pipeline_configuration_body:
             The value to assign to the pipeline_configuration_body property of this OpensearchClusterPipelineSummary.
         :type pipeline_configuration_body: str
+
+        :param data_prepper_configuration_body:
+            The value to assign to the data_prepper_configuration_body property of this OpensearchClusterPipelineSummary.
+        :type data_prepper_configuration_body: str
+
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this OpensearchClusterPipelineSummary.
+        :type lifecycle_state: str
+
+        :param pipeline_mode:
+            The value to assign to the pipeline_mode property of this OpensearchClusterPipelineSummary.
+        :type pipeline_mode: str
 
         :param time_created:
             The value to assign to the time_created property of this OpensearchClusterPipelineSummary.
@@ -59,10 +75,6 @@ class OpensearchClusterPipelineSummary(object):
         :param time_updated:
             The value to assign to the time_updated property of this OpensearchClusterPipelineSummary.
         :type time_updated: datetime
-
-        :param lifecycle_state:
-            The value to assign to the lifecycle_state property of this OpensearchClusterPipelineSummary.
-        :type lifecycle_state: str
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this OpensearchClusterPipelineSummary.
@@ -81,14 +93,17 @@ class OpensearchClusterPipelineSummary(object):
             'id': 'str',
             'display_name': 'str',
             'compartment_id': 'str',
-            'max_ocpu_count': 'int',
-            'min_ocpu_count': 'int',
-            'max_memory_gb': 'int',
-            'min_memory_gb': 'int',
+            'vcn_id': 'str',
+            'subnet_id': 'str',
+            'ocpu_count': 'int',
+            'memory_gb': 'int',
+            'node_count': 'int',
             'pipeline_configuration_body': 'str',
+            'data_prepper_configuration_body': 'str',
+            'lifecycle_state': 'str',
+            'pipeline_mode': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
-            'lifecycle_state': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -98,14 +113,17 @@ class OpensearchClusterPipelineSummary(object):
             'id': 'id',
             'display_name': 'displayName',
             'compartment_id': 'compartmentId',
-            'max_ocpu_count': 'maxOcpuCount',
-            'min_ocpu_count': 'minOcpuCount',
-            'max_memory_gb': 'maxMemoryGB',
-            'min_memory_gb': 'minMemoryGB',
+            'vcn_id': 'vcnId',
+            'subnet_id': 'subnetId',
+            'ocpu_count': 'ocpuCount',
+            'memory_gb': 'memoryGB',
+            'node_count': 'nodeCount',
             'pipeline_configuration_body': 'pipelineConfigurationBody',
+            'data_prepper_configuration_body': 'dataPrepperConfigurationBody',
+            'lifecycle_state': 'lifecycleState',
+            'pipeline_mode': 'pipelineMode',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
-            'lifecycle_state': 'lifecycleState',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -114,14 +132,17 @@ class OpensearchClusterPipelineSummary(object):
         self._id = None
         self._display_name = None
         self._compartment_id = None
-        self._max_ocpu_count = None
-        self._min_ocpu_count = None
-        self._max_memory_gb = None
-        self._min_memory_gb = None
+        self._vcn_id = None
+        self._subnet_id = None
+        self._ocpu_count = None
+        self._memory_gb = None
+        self._node_count = None
         self._pipeline_configuration_body = None
+        self._data_prepper_configuration_body = None
+        self._lifecycle_state = None
+        self._pipeline_mode = None
         self._time_created = None
         self._time_updated = None
-        self._lifecycle_state = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -153,7 +174,7 @@ class OpensearchClusterPipelineSummary(object):
     @property
     def display_name(self):
         """
-        Gets the display_name of this OpensearchClusterPipelineSummary.
+        **[Required]** Gets the display_name of this OpensearchClusterPipelineSummary.
         The name of the cluster pipeline. Avoid entering confidential information.
 
 
@@ -199,100 +220,124 @@ class OpensearchClusterPipelineSummary(object):
         self._compartment_id = compartment_id
 
     @property
-    def max_ocpu_count(self):
+    def vcn_id(self):
         """
-        **[Required]** Gets the max_ocpu_count of this OpensearchClusterPipelineSummary.
-        The maximum pipeline capacity, in OCPUs.
+        Gets the vcn_id of this OpensearchClusterPipelineSummary.
+        The OCID of the pipeline's VCN.
 
 
-        :return: The max_ocpu_count of this OpensearchClusterPipelineSummary.
-        :rtype: int
+        :return: The vcn_id of this OpensearchClusterPipelineSummary.
+        :rtype: str
         """
-        return self._max_ocpu_count
+        return self._vcn_id
 
-    @max_ocpu_count.setter
-    def max_ocpu_count(self, max_ocpu_count):
+    @vcn_id.setter
+    def vcn_id(self, vcn_id):
         """
-        Sets the max_ocpu_count of this OpensearchClusterPipelineSummary.
-        The maximum pipeline capacity, in OCPUs.
+        Sets the vcn_id of this OpensearchClusterPipelineSummary.
+        The OCID of the pipeline's VCN.
 
 
-        :param max_ocpu_count: The max_ocpu_count of this OpensearchClusterPipelineSummary.
-        :type: int
+        :param vcn_id: The vcn_id of this OpensearchClusterPipelineSummary.
+        :type: str
         """
-        self._max_ocpu_count = max_ocpu_count
+        self._vcn_id = vcn_id
 
     @property
-    def min_ocpu_count(self):
+    def subnet_id(self):
         """
-        **[Required]** Gets the min_ocpu_count of this OpensearchClusterPipelineSummary.
-        The maximum pipeline capacity, in OCPUs.
+        Gets the subnet_id of this OpensearchClusterPipelineSummary.
+        The OCID of the pipeline's subnet.
 
 
-        :return: The min_ocpu_count of this OpensearchClusterPipelineSummary.
-        :rtype: int
+        :return: The subnet_id of this OpensearchClusterPipelineSummary.
+        :rtype: str
         """
-        return self._min_ocpu_count
+        return self._subnet_id
 
-    @min_ocpu_count.setter
-    def min_ocpu_count(self, min_ocpu_count):
+    @subnet_id.setter
+    def subnet_id(self, subnet_id):
         """
-        Sets the min_ocpu_count of this OpensearchClusterPipelineSummary.
-        The maximum pipeline capacity, in OCPUs.
+        Sets the subnet_id of this OpensearchClusterPipelineSummary.
+        The OCID of the pipeline's subnet.
 
 
-        :param min_ocpu_count: The min_ocpu_count of this OpensearchClusterPipelineSummary.
-        :type: int
+        :param subnet_id: The subnet_id of this OpensearchClusterPipelineSummary.
+        :type: str
         """
-        self._min_ocpu_count = min_ocpu_count
+        self._subnet_id = subnet_id
 
     @property
-    def max_memory_gb(self):
+    def ocpu_count(self):
         """
-        **[Required]** Gets the max_memory_gb of this OpensearchClusterPipelineSummary.
-        The maximum amount of memory in GB, for the pipeline.
+        **[Required]** Gets the ocpu_count of this OpensearchClusterPipelineSummary.
+        The number of OCPUs configured for each pipeline node.
 
 
-        :return: The max_memory_gb of this OpensearchClusterPipelineSummary.
+        :return: The ocpu_count of this OpensearchClusterPipelineSummary.
         :rtype: int
         """
-        return self._max_memory_gb
+        return self._ocpu_count
 
-    @max_memory_gb.setter
-    def max_memory_gb(self, max_memory_gb):
+    @ocpu_count.setter
+    def ocpu_count(self, ocpu_count):
         """
-        Sets the max_memory_gb of this OpensearchClusterPipelineSummary.
-        The maximum amount of memory in GB, for the pipeline.
+        Sets the ocpu_count of this OpensearchClusterPipelineSummary.
+        The number of OCPUs configured for each pipeline node.
 
 
-        :param max_memory_gb: The max_memory_gb of this OpensearchClusterPipelineSummary.
+        :param ocpu_count: The ocpu_count of this OpensearchClusterPipelineSummary.
         :type: int
         """
-        self._max_memory_gb = max_memory_gb
+        self._ocpu_count = ocpu_count
 
     @property
-    def min_memory_gb(self):
+    def memory_gb(self):
         """
-        **[Required]** Gets the min_memory_gb of this OpensearchClusterPipelineSummary.
-        The minimum amount of memory in GB, for the pipeline.
+        **[Required]** Gets the memory_gb of this OpensearchClusterPipelineSummary.
+        The amount of memory in GB, for each pipeline node.
 
 
-        :return: The min_memory_gb of this OpensearchClusterPipelineSummary.
+        :return: The memory_gb of this OpensearchClusterPipelineSummary.
         :rtype: int
         """
-        return self._min_memory_gb
+        return self._memory_gb
 
-    @min_memory_gb.setter
-    def min_memory_gb(self, min_memory_gb):
+    @memory_gb.setter
+    def memory_gb(self, memory_gb):
         """
-        Sets the min_memory_gb of this OpensearchClusterPipelineSummary.
-        The minimum amount of memory in GB, for the pipeline.
+        Sets the memory_gb of this OpensearchClusterPipelineSummary.
+        The amount of memory in GB, for each pipeline node.
 
 
-        :param min_memory_gb: The min_memory_gb of this OpensearchClusterPipelineSummary.
+        :param memory_gb: The memory_gb of this OpensearchClusterPipelineSummary.
         :type: int
         """
-        self._min_memory_gb = min_memory_gb
+        self._memory_gb = memory_gb
+
+    @property
+    def node_count(self):
+        """
+        **[Required]** Gets the node_count of this OpensearchClusterPipelineSummary.
+        The number of nodes configured for the pipeline.
+
+
+        :return: The node_count of this OpensearchClusterPipelineSummary.
+        :rtype: int
+        """
+        return self._node_count
+
+    @node_count.setter
+    def node_count(self, node_count):
+        """
+        Sets the node_count of this OpensearchClusterPipelineSummary.
+        The number of nodes configured for the pipeline.
+
+
+        :param node_count: The node_count of this OpensearchClusterPipelineSummary.
+        :type: int
+        """
+        self._node_count = node_count
 
     @property
     def pipeline_configuration_body(self):
@@ -317,6 +362,78 @@ class OpensearchClusterPipelineSummary(object):
         :type: str
         """
         self._pipeline_configuration_body = pipeline_configuration_body
+
+    @property
+    def data_prepper_configuration_body(self):
+        """
+        **[Required]** Gets the data_prepper_configuration_body of this OpensearchClusterPipelineSummary.
+        The data prepper config in YAML format. The command accepts the data prepper config as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \\.
+
+
+        :return: The data_prepper_configuration_body of this OpensearchClusterPipelineSummary.
+        :rtype: str
+        """
+        return self._data_prepper_configuration_body
+
+    @data_prepper_configuration_body.setter
+    def data_prepper_configuration_body(self, data_prepper_configuration_body):
+        """
+        Sets the data_prepper_configuration_body of this OpensearchClusterPipelineSummary.
+        The data prepper config in YAML format. The command accepts the data prepper config as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \\.
+
+
+        :param data_prepper_configuration_body: The data_prepper_configuration_body of this OpensearchClusterPipelineSummary.
+        :type: str
+        """
+        self._data_prepper_configuration_body = data_prepper_configuration_body
+
+    @property
+    def lifecycle_state(self):
+        """
+        **[Required]** Gets the lifecycle_state of this OpensearchClusterPipelineSummary.
+        The current state of the cluster pipeline.
+
+
+        :return: The lifecycle_state of this OpensearchClusterPipelineSummary.
+        :rtype: str
+        """
+        return self._lifecycle_state
+
+    @lifecycle_state.setter
+    def lifecycle_state(self, lifecycle_state):
+        """
+        Sets the lifecycle_state of this OpensearchClusterPipelineSummary.
+        The current state of the cluster pipeline.
+
+
+        :param lifecycle_state: The lifecycle_state of this OpensearchClusterPipelineSummary.
+        :type: str
+        """
+        self._lifecycle_state = lifecycle_state
+
+    @property
+    def pipeline_mode(self):
+        """
+        **[Required]** Gets the pipeline_mode of this OpensearchClusterPipelineSummary.
+        The current state of the pipeline.
+
+
+        :return: The pipeline_mode of this OpensearchClusterPipelineSummary.
+        :rtype: str
+        """
+        return self._pipeline_mode
+
+    @pipeline_mode.setter
+    def pipeline_mode(self, pipeline_mode):
+        """
+        Sets the pipeline_mode of this OpensearchClusterPipelineSummary.
+        The current state of the pipeline.
+
+
+        :param pipeline_mode: The pipeline_mode of this OpensearchClusterPipelineSummary.
+        :type: str
+        """
+        self._pipeline_mode = pipeline_mode
 
     @property
     def time_created(self):
@@ -373,30 +490,6 @@ class OpensearchClusterPipelineSummary(object):
         :type: datetime
         """
         self._time_updated = time_updated
-
-    @property
-    def lifecycle_state(self):
-        """
-        **[Required]** Gets the lifecycle_state of this OpensearchClusterPipelineSummary.
-        The current state of the cluster backup.
-
-
-        :return: The lifecycle_state of this OpensearchClusterPipelineSummary.
-        :rtype: str
-        """
-        return self._lifecycle_state
-
-    @lifecycle_state.setter
-    def lifecycle_state(self, lifecycle_state):
-        """
-        Sets the lifecycle_state of this OpensearchClusterPipelineSummary.
-        The current state of the cluster backup.
-
-
-        :param lifecycle_state: The lifecycle_state of this OpensearchClusterPipelineSummary.
-        :type: str
-        """
-        self._lifecycle_state = lifecycle_state
 
     @property
     def freeform_tags(self):

@@ -167,6 +167,7 @@ API Reference
 * :doc:`Opa Instance <opa/client/oci.opa.OpaInstanceClient>`
 * :doc:`Opensearch Cluster <opensearch/client/oci.opensearch.OpensearchClusterClient>`
 * :doc:`Opensearch Cluster Backup <opensearch/client/oci.opensearch.OpensearchClusterBackupClient>`
+* :doc:`Opensearch Cluster Pipeline <opensearch/client/oci.opensearch.OpensearchClusterPipelineClient>`
 * :doc:`Operations Insights <opsi/client/oci.opsi.OperationsInsightsClient>`
 * :doc:`Operator Actions <operator_access_control/client/oci.operator_access_control.OperatorActionsClient>`
 * :doc:`Operator Control <operator_access_control/client/oci.operator_access_control.OperatorControlClient>`

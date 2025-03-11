@@ -1,9 +1,9 @@
-OpensearchPipelineValidationResponse
-====================================
+ForcePatchPipelineDetails
+=========================
 
 .. currentmodule:: oci.opensearch.models
 
-.. autoclass:: OpensearchPipelineValidationResponse
+.. autoclass:: ForcePatchPipelineDetails
     :show-inheritance:
     :special-members: __init__
     :members:

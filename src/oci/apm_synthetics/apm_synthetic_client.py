@@ -22,7 +22,7 @@ missing = Sentinel("Missing")
 
 class ApmSyntheticClient(object):
     """
-    Use the Application Performance Monitoring Synthetic Monitoring API to query synthetic scripts and monitors. For more information, see [Application Performance Monitoring](https://docs.oracle.com/iaas/application-performance-monitoring/index.html).
+    Use the APM Availability Monitoring API to query Scripts, Monitors, Dedicated Vantage Points and On-Premise Vantage Points resources. For more information, see [Application Performance Monitoring](https://docs.oracle.com/iaas/application-performance-monitoring/index.html).
     """
 
     def __init__(self, config, **kwargs):
@@ -164,7 +164,7 @@ class ApmSyntheticClient(object):
         resource_path = "/monitors/{monitorId}/actions/aggregateNetworkData"
         method = "POST"
         operation_name = "aggregate_network_data"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/AggregatedNetworkDataResult/AggregateNetworkData"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -285,7 +285,7 @@ class ApmSyntheticClient(object):
         resource_path = "/dedicatedVantagePoints"
         method = "POST"
         operation_name = "create_dedicated_vantage_point"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/DedicatedVantagePoint/CreateDedicatedVantagePoint"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -394,7 +394,7 @@ class ApmSyntheticClient(object):
         resource_path = "/monitors"
         method = "POST"
         operation_name = "create_monitor"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Monitor/CreateMonitor"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -503,7 +503,7 @@ class ApmSyntheticClient(object):
         resource_path = "/onPremiseVantagePoints"
         method = "POST"
         operation_name = "create_on_premise_vantage_point"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/OnPremiseVantagePoint/CreateOnPremiseVantagePoint"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -612,7 +612,7 @@ class ApmSyntheticClient(object):
         resource_path = "/scripts"
         method = "POST"
         operation_name = "create_script"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Script/CreateScript"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -724,7 +724,7 @@ class ApmSyntheticClient(object):
         resource_path = "/onPremiseVantagePoints/{onPremiseVantagePointId}/workers"
         method = "POST"
         operation_name = "create_worker"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Worker/CreateWorker"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -845,7 +845,7 @@ class ApmSyntheticClient(object):
         resource_path = "/dedicatedVantagePoints/{dedicatedVantagePointId}"
         method = "DELETE"
         operation_name = "delete_dedicated_vantage_point"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/DedicatedVantagePoint/DeleteDedicatedVantagePoint"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -961,7 +961,7 @@ class ApmSyntheticClient(object):
         resource_path = "/monitors/{monitorId}"
         method = "DELETE"
         operation_name = "delete_monitor"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Monitor/DeleteMonitor"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1077,7 +1077,7 @@ class ApmSyntheticClient(object):
         resource_path = "/onPremiseVantagePoints/{onPremiseVantagePointId}"
         method = "DELETE"
         operation_name = "delete_on_premise_vantage_point"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/OnPremiseVantagePoint/DeleteOnPremiseVantagePoint"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1193,7 +1193,7 @@ class ApmSyntheticClient(object):
         resource_path = "/scripts/{scriptId}"
         method = "DELETE"
         operation_name = "delete_script"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Script/DeleteScript"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1312,7 +1312,7 @@ class ApmSyntheticClient(object):
         resource_path = "/onPremiseVantagePoints/{onPremiseVantagePointId}/workers/{workerId}"
         method = "DELETE"
         operation_name = "delete_worker"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Worker/DeleteWorker"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1422,7 +1422,7 @@ class ApmSyntheticClient(object):
         resource_path = "/dedicatedVantagePoints/{dedicatedVantagePointId}"
         method = "GET"
         operation_name = "get_dedicated_vantage_point"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/DedicatedVantagePoint/GetDedicatedVantagePoint"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1531,7 +1531,7 @@ class ApmSyntheticClient(object):
         resource_path = "/monitors/{monitorId}"
         method = "GET"
         operation_name = "get_monitor"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Monitor/GetMonitor"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1652,7 +1652,7 @@ class ApmSyntheticClient(object):
         resource_path = "/monitors/{monitorId}/results/{executionTime}"
         method = "GET"
         operation_name = "get_monitor_result"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/MonitorResult/GetMonitorResult"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1765,7 +1765,7 @@ class ApmSyntheticClient(object):
         resource_path = "/onPremiseVantagePoints/{onPremiseVantagePointId}"
         method = "GET"
         operation_name = "get_on_premise_vantage_point"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/OnPremiseVantagePoint/GetOnPremiseVantagePoint"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1874,7 +1874,7 @@ class ApmSyntheticClient(object):
         resource_path = "/scripts/{scriptId}"
         method = "GET"
         operation_name = "get_script"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Script/GetScript"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1986,7 +1986,7 @@ class ApmSyntheticClient(object):
         resource_path = "/onPremiseVantagePoints/{onPremiseVantagePointId}/workers/{workerId}"
         method = "GET"
         operation_name = "get_worker"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Worker/GetWorker"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2129,7 +2129,7 @@ class ApmSyntheticClient(object):
         resource_path = "/dedicatedVantagePoints"
         method = "GET"
         operation_name = "list_dedicated_vantage_points"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/DedicatedVantagePointCollection/ListDedicatedVantagePoints"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2307,7 +2307,7 @@ class ApmSyntheticClient(object):
         resource_path = "/monitors"
         method = "GET"
         operation_name = "list_monitors"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/MonitorCollection/ListMonitors"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2475,7 +2475,7 @@ class ApmSyntheticClient(object):
         resource_path = "/onPremiseVantagePoints"
         method = "GET"
         operation_name = "list_on_premise_vantage_points"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/OnPremiseVantagePointCollection/ListOnPremiseVantagePoints"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2624,7 +2624,7 @@ class ApmSyntheticClient(object):
         resource_path = "/publicVantagePoints"
         method = "GET"
         operation_name = "list_public_vantage_points"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/PublicVantagePointCollection/ListPublicVantagePoints"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2775,7 +2775,7 @@ class ApmSyntheticClient(object):
         resource_path = "/scripts"
         method = "GET"
         operation_name = "list_scripts"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/ScriptCollection/ListScripts"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2937,7 +2937,7 @@ class ApmSyntheticClient(object):
         resource_path = "/onPremiseVantagePoints/{onPremiseVantagePointId}/workers"
         method = "GET"
         operation_name = "list_workers"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/WorkerCollection/ListWorkers"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3093,7 +3093,7 @@ class ApmSyntheticClient(object):
         resource_path = "/dedicatedVantagePoints/{dedicatedVantagePointId}"
         method = "PUT"
         operation_name = "update_dedicated_vantage_point"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/DedicatedVantagePoint/UpdateDedicatedVantagePoint"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3216,7 +3216,7 @@ class ApmSyntheticClient(object):
         resource_path = "/monitors/{monitorId}"
         method = "PUT"
         operation_name = "update_monitor"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Monitor/UpdateMonitor"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3339,7 +3339,7 @@ class ApmSyntheticClient(object):
         resource_path = "/onPremiseVantagePoints/{onPremiseVantagePointId}"
         method = "PUT"
         operation_name = "update_on_premise_vantage_point"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/OnPremiseVantagePoint/UpdateOnPremiseVantagePoint"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3462,7 +3462,7 @@ class ApmSyntheticClient(object):
         resource_path = "/scripts/{scriptId}"
         method = "PUT"
         operation_name = "update_script"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Script/UpdateScript"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3588,7 +3588,7 @@ class ApmSyntheticClient(object):
         resource_path = "/onPremiseVantagePoints/{onPremiseVantagePointId}/workers/{workerId}"
         method = "PUT"
         operation_name = "update_worker"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Worker/UpdateWorker"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [

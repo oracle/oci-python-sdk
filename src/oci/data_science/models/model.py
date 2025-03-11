@@ -31,6 +31,14 @@ class Model(object):
     #: This constant has a value of "INACTIVE"
     LIFECYCLE_STATE_INACTIVE = "INACTIVE"
 
+    #: A constant which can be used with the category property of a Model.
+    #: This constant has a value of "USER"
+    CATEGORY_USER = "USER"
+
+    #: A constant which can be used with the category property of a Model.
+    #: This constant has a value of "SERVICE"
+    CATEGORY_SERVICE = "SERVICE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Model object with values from keyword arguments.
@@ -114,6 +122,16 @@ class Model(object):
             The value to assign to the version_label property of this Model.
         :type version_label: str
 
+        :param category:
+            The value to assign to the category property of this Model.
+            Allowed values for this property are: "USER", "SERVICE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type category: str
+
+        :param is_model_by_reference:
+            The value to assign to the is_model_by_reference property of this Model.
+        :type is_model_by_reference: bool
+
         :param retention_setting:
             The value to assign to the retention_setting property of this Model.
         :type retention_setting: oci.data_science.models.RetentionSetting
@@ -151,6 +169,8 @@ class Model(object):
             'model_version_set_name': 'str',
             'version_id': 'int',
             'version_label': 'str',
+            'category': 'str',
+            'is_model_by_reference': 'bool',
             'retention_setting': 'RetentionSetting',
             'backup_setting': 'BackupSetting',
             'retention_operation_details': 'RetentionOperationDetails',
@@ -177,6 +197,8 @@ class Model(object):
             'model_version_set_name': 'modelVersionSetName',
             'version_id': 'versionId',
             'version_label': 'versionLabel',
+            'category': 'category',
+            'is_model_by_reference': 'isModelByReference',
             'retention_setting': 'retentionSetting',
             'backup_setting': 'backupSetting',
             'retention_operation_details': 'retentionOperationDetails',
@@ -202,6 +224,8 @@ class Model(object):
         self._model_version_set_name = None
         self._version_id = None
         self._version_label = None
+        self._category = None
+        self._is_model_by_reference = None
         self._retention_setting = None
         self._backup_setting = None
         self._retention_operation_details = None
@@ -702,6 +726,60 @@ class Model(object):
         :type: str
         """
         self._version_label = version_label
+
+    @property
+    def category(self):
+        """
+        **[Required]** Gets the category of this Model.
+        The category of the model.
+
+        Allowed values for this property are: "USER", "SERVICE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The category of this Model.
+        :rtype: str
+        """
+        return self._category
+
+    @category.setter
+    def category(self, category):
+        """
+        Sets the category of this Model.
+        The category of the model.
+
+
+        :param category: The category of this Model.
+        :type: str
+        """
+        allowed_values = ["USER", "SERVICE"]
+        if not value_allowed_none_or_none_sentinel(category, allowed_values):
+            category = 'UNKNOWN_ENUM_VALUE'
+        self._category = category
+
+    @property
+    def is_model_by_reference(self):
+        """
+        **[Required]** Gets the is_model_by_reference of this Model.
+        Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer Tenancy.
+
+
+        :return: The is_model_by_reference of this Model.
+        :rtype: bool
+        """
+        return self._is_model_by_reference
+
+    @is_model_by_reference.setter
+    def is_model_by_reference(self, is_model_by_reference):
+        """
+        Sets the is_model_by_reference of this Model.
+        Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer Tenancy.
+
+
+        :param is_model_by_reference: The is_model_by_reference of this Model.
+        :type: bool
+        """
+        self._is_model_by_reference = is_model_by_reference
 
     @property
     def retention_setting(self):

@@ -24,6 +24,10 @@ class CreateBackupPolicyDetails(object):
             The value to assign to the is_enabled property of this CreateBackupPolicyDetails.
         :type is_enabled: bool
 
+        :param copy_policies:
+            The value to assign to the copy_policies property of this CreateBackupPolicyDetails.
+        :type copy_policies: list[oci.mysql.models.CopyPolicy]
+
         :param window_start_time:
             The value to assign to the window_start_time property of this CreateBackupPolicyDetails.
         :type window_start_time: str
@@ -47,6 +51,7 @@ class CreateBackupPolicyDetails(object):
         """
         self.swagger_types = {
             'is_enabled': 'bool',
+            'copy_policies': 'list[CopyPolicy]',
             'window_start_time': 'str',
             'retention_in_days': 'int',
             'freeform_tags': 'dict(str, str)',
@@ -56,6 +61,7 @@ class CreateBackupPolicyDetails(object):
 
         self.attribute_map = {
             'is_enabled': 'isEnabled',
+            'copy_policies': 'copyPolicies',
             'window_start_time': 'windowStartTime',
             'retention_in_days': 'retentionInDays',
             'freeform_tags': 'freeformTags',
@@ -64,6 +70,7 @@ class CreateBackupPolicyDetails(object):
         }
 
         self._is_enabled = None
+        self._copy_policies = None
         self._window_start_time = None
         self._retention_in_days = None
         self._freeform_tags = None
@@ -93,6 +100,40 @@ class CreateBackupPolicyDetails(object):
         :type: bool
         """
         self._is_enabled = is_enabled
+
+    @property
+    def copy_policies(self):
+        """
+        Gets the copy_policies of this CreateBackupPolicyDetails.
+        List of policies of a DB system to schedule cross-region DB system backup copy.
+
+        The policy includes the name of the destination region to which the DB system backup will be copied, and
+        an optional parameter which specifies the retention period of the copied DB system backup in days.
+
+        **Note:** Currently, only one policy can be specified in the list.
+
+
+        :return: The copy_policies of this CreateBackupPolicyDetails.
+        :rtype: list[oci.mysql.models.CopyPolicy]
+        """
+        return self._copy_policies
+
+    @copy_policies.setter
+    def copy_policies(self, copy_policies):
+        """
+        Sets the copy_policies of this CreateBackupPolicyDetails.
+        List of policies of a DB system to schedule cross-region DB system backup copy.
+
+        The policy includes the name of the destination region to which the DB system backup will be copied, and
+        an optional parameter which specifies the retention period of the copied DB system backup in days.
+
+        **Note:** Currently, only one policy can be specified in the list.
+
+
+        :param copy_policies: The copy_policies of this CreateBackupPolicyDetails.
+        :type: list[oci.mysql.models.CopyPolicy]
+        """
+        self._copy_policies = copy_policies
 
     @property
     def window_start_time(self):
