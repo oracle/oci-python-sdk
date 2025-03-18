@@ -33,12 +33,10 @@ class CustomPropertyCollection(object):
             'count': 'int',
             'items': 'list[CustomPropertySummary]'
         }
-
         self.attribute_map = {
             'count': 'count',
             'items': 'items'
         }
-
         self._count = None
         self._items = None
 

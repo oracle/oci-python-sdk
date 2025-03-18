@@ -50,7 +50,6 @@ class ArtifactImportDetailsObjectStorage(ArtifactImportDetails):
             'destination_object_name': 'str',
             'destination_region': 'str'
         }
-
         self.attribute_map = {
             'artifact_source_type': 'artifactSourceType',
             'namespace': 'namespace',
@@ -58,7 +57,6 @@ class ArtifactImportDetailsObjectStorage(ArtifactImportDetails):
             'destination_object_name': 'destinationObjectName',
             'destination_region': 'destinationRegion'
         }
-
         self._artifact_source_type = None
         self._namespace = None
         self._destination_bucket = None

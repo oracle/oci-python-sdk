@@ -33,12 +33,10 @@ class ConfigValues(object):
             'config_param_values': 'dict(str, ConfigParameterValue)',
             'parent_ref': 'ParentReference'
         }
-
         self.attribute_map = {
             'config_param_values': 'configParamValues',
             'parent_ref': 'parentRef'
         }
-
         self._config_param_values = None
         self._parent_ref = None
 

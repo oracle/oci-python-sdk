@@ -28,11 +28,9 @@ class ExtensionSecurityQuestionsUser(object):
         self.swagger_types = {
             'sec_questions': 'list[UserExtSecQuestions]'
         }
-
         self.attribute_map = {
             'sec_questions': 'secQuestions'
         }
-
         self._sec_questions = None
 
     @property

@@ -71,7 +71,6 @@ class UpdatePipelineDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'recipe_type': 'recipeType',
             'display_name': 'displayName',
@@ -80,7 +79,6 @@ class UpdatePipelineDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._recipe_type = None
         self._display_name = None
         self._description = None

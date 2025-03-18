@@ -28,11 +28,9 @@ class PatchModelDetails(object):
         self.swagger_types = {
             'operations': 'list[PatchModelOperation]'
         }
-
         self.attribute_map = {
             'operations': 'operations'
         }
-
         self._operations = None
 
     @property

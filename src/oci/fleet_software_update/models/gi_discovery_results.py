@@ -35,12 +35,10 @@ class GiDiscoveryResults(GiFleetDiscoveryDetails):
             'strategy': 'str',
             'fsu_discovery_id': 'str'
         }
-
         self.attribute_map = {
             'strategy': 'strategy',
             'fsu_discovery_id': 'fsuDiscoveryId'
         }
-
         self._strategy = None
         self._fsu_discovery_id = None
         self._strategy = 'DISCOVERY_RESULTS'

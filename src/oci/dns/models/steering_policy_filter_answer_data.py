@@ -33,12 +33,10 @@ class SteeringPolicyFilterAnswerData(object):
             'answer_condition': 'str',
             'should_keep': 'bool'
         }
-
         self.attribute_map = {
             'answer_condition': 'answerCondition',
             'should_keep': 'shouldKeep'
         }
-
         self._answer_condition = None
         self._should_keep = None
 

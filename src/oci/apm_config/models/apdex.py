@@ -73,7 +73,6 @@ class Apdex(object):
             'is_apply_to_error_spans': 'bool',
             'display_name': 'str'
         }
-
         self.attribute_map = {
             'filter_text': 'filterText',
             'priority': 'priority',
@@ -83,7 +82,6 @@ class Apdex(object):
             'is_apply_to_error_spans': 'isApplyToErrorSpans',
             'display_name': 'displayName'
         }
-
         self._filter_text = None
         self._priority = None
         self._is_enabled = None

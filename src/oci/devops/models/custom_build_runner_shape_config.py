@@ -40,13 +40,11 @@ class CustomBuildRunnerShapeConfig(BuildRunnerShapeConfig):
             'ocpus': 'int',
             'memory_in_gbs': 'int'
         }
-
         self.attribute_map = {
             'build_runner_type': 'buildRunnerType',
             'ocpus': 'ocpus',
             'memory_in_gbs': 'memoryInGBs'
         }
-
         self._build_runner_type = None
         self._ocpus = None
         self._memory_in_gbs = None

@@ -38,13 +38,11 @@ class OntologyClass(object):
             'parent_names': 'list[str]',
             'synonym_names': 'list[str]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'parent_names': 'parentNames',
             'synonym_names': 'synonymNames'
         }
-
         self._name = None
         self._parent_names = None
         self._synonym_names = None

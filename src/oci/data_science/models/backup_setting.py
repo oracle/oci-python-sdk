@@ -56,13 +56,11 @@ class BackupSetting(object):
             'backup_region': 'str',
             'customer_notification_type': 'str'
         }
-
         self.attribute_map = {
             'is_backup_enabled': 'isBackupEnabled',
             'backup_region': 'backupRegion',
             'customer_notification_type': 'customerNotificationType'
         }
-
         self._is_backup_enabled = None
         self._backup_region = None
         self._customer_notification_type = None

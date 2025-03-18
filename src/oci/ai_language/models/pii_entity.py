@@ -53,7 +53,6 @@ class PiiEntity(object):
             'type': 'str',
             'score': 'float'
         }
-
         self.attribute_map = {
             'id': 'id',
             'offset': 'offset',
@@ -62,7 +61,6 @@ class PiiEntity(object):
             'type': 'type',
             'score': 'score'
         }
-
         self._id = None
         self._offset = None
         self._length = None

@@ -33,12 +33,10 @@ class ChangeTableCompartmentDetails(object):
             'from_compartment_id': 'str',
             'to_compartment_id': 'str'
         }
-
         self.attribute_map = {
             'from_compartment_id': 'fromCompartmentId',
             'to_compartment_id': 'toCompartmentId'
         }
-
         self._from_compartment_id = None
         self._to_compartment_id = None
 

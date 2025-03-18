@@ -80,7 +80,6 @@ class ModifyPluggableDatabaseManagementDetails(object):
             'ssl_secret_id': 'str',
             'role': 'str'
         }
-
         self.attribute_map = {
             'credential_details': 'credentialDetails',
             'private_end_point_id': 'privateEndPointId',
@@ -90,7 +89,6 @@ class ModifyPluggableDatabaseManagementDetails(object):
             'ssl_secret_id': 'sslSecretId',
             'role': 'role'
         }
-
         self._credential_details = None
         self._private_end_point_id = None
         self._service_name = None

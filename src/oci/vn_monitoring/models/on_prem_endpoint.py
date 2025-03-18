@@ -35,12 +35,10 @@ class OnPremEndpoint(Endpoint):
             'type': 'str',
             'address': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'address': 'address'
         }
-
         self._type = None
         self._address = None
         self._type = 'ON_PREM'

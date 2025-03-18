@@ -116,7 +116,6 @@ class ShapePlatformConfigOptions(object):
             'input_output_memory_management_unit_options': 'ShapeInputOutputMemoryManagementUnitEnabledPlatformOptions',
             'percentage_of_cores_enabled_options': 'PercentageOfCoresEnabledOptions'
         }
-
         self.attribute_map = {
             'type': 'type',
             'secure_boot_options': 'secureBootOptions',
@@ -130,7 +129,6 @@ class ShapePlatformConfigOptions(object):
             'input_output_memory_management_unit_options': 'inputOutputMemoryManagementUnitOptions',
             'percentage_of_cores_enabled_options': 'percentageOfCoresEnabledOptions'
         }
-
         self._type = None
         self._secure_boot_options = None
         self._measured_boot_options = None

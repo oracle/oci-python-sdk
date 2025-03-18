@@ -28,11 +28,9 @@ class DashboardCollection(object):
         self.swagger_types = {
             'items': 'list[DashboardSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

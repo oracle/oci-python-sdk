@@ -33,12 +33,10 @@ class Scan(object):
             'fqdn': 'str',
             'port': 'str'
         }
-
         self.attribute_map = {
             'fqdn': 'fqdn',
             'port': 'port'
         }
-
         self._fqdn = None
         self._port = None
 

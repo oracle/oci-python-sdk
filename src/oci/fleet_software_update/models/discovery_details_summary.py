@@ -68,13 +68,11 @@ class DiscoveryDetailsSummary(object):
             'service_type': 'str',
             'criteria': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'service_type': 'serviceType',
             'criteria': 'criteria'
         }
-
         self._type = None
         self._service_type = None
         self._criteria = None

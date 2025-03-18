@@ -28,11 +28,9 @@ class JobProgress(object):
         self.swagger_types = {
             'progress_of_operation': 'int'
         }
-
         self.attribute_map = {
             'progress_of_operation': 'progressOfOperation'
         }
-
         self._progress_of_operation = None
 
     @property

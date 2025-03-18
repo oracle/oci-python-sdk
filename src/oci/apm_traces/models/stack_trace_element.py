@@ -48,7 +48,6 @@ class StackTraceElement(object):
             'class_name': 'str',
             'weightage': 'float'
         }
-
         self.attribute_map = {
             'method_name': 'methodName',
             'file_name': 'fileName',
@@ -56,7 +55,6 @@ class StackTraceElement(object):
             'class_name': 'className',
             'weightage': 'weightage'
         }
-
         self._method_name = None
         self._file_name = None
         self._line_number = None

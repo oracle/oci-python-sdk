@@ -48,7 +48,6 @@ class Screenshot(object):
             'mime_type': 'str',
             'file_extension': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'description': 'description',
@@ -56,7 +55,6 @@ class Screenshot(object):
             'mime_type': 'mimeType',
             'file_extension': 'fileExtension'
         }
-
         self._name = None
         self._description = None
         self._content_url = None

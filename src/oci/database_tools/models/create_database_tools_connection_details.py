@@ -91,7 +91,6 @@ class CreateDatabaseToolsConnectionDetails(object):
             'type': 'str',
             'runtime_support': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'compartment_id': 'compartmentId',
@@ -101,7 +100,6 @@ class CreateDatabaseToolsConnectionDetails(object):
             'type': 'type',
             'runtime_support': 'runtimeSupport'
         }
-
         self._display_name = None
         self._compartment_id = None
         self._defined_tags = None

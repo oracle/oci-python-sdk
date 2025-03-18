@@ -33,12 +33,10 @@ class Resource(object):
             'item': 'Item',
             'region': 'str'
         }
-
         self.attribute_map = {
             'item': 'item',
             'region': 'region'
         }
-
         self._item = None
         self._region = None
 

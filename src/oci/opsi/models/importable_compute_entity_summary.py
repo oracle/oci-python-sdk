@@ -57,14 +57,12 @@ class ImportableComputeEntitySummary(object):
             'compute_display_name': 'str',
             'compartment_id': 'str'
         }
-
         self.attribute_map = {
             'entity_source': 'entitySource',
             'compute_id': 'computeId',
             'compute_display_name': 'computeDisplayName',
             'compartment_id': 'compartmentId'
         }
-
         self._entity_source = None
         self._compute_id = None
         self._compute_display_name = None

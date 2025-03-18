@@ -91,7 +91,6 @@ class WorkRequestResource(object):
             'entity_name': 'str',
             'entity_dependencies': 'list[WorkRequestSubResource]'
         }
-
         self.attribute_map = {
             'entity_type': 'entityType',
             'action_type': 'actionType',
@@ -100,7 +99,6 @@ class WorkRequestResource(object):
             'entity_name': 'entityName',
             'entity_dependencies': 'entityDependencies'
         }
-
         self._entity_type = None
         self._action_type = None
         self._identifier = None

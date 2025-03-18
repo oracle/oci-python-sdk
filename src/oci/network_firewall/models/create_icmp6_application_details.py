@@ -45,14 +45,12 @@ class CreateIcmp6ApplicationDetails(CreateApplicationDetails):
             'icmp_type': 'int',
             'icmp_code': 'int'
         }
-
         self.attribute_map = {
             'name': 'name',
             'type': 'type',
             'icmp_type': 'icmpType',
             'icmp_code': 'icmpCode'
         }
-
         self._name = None
         self._type = None
         self._icmp_type = None

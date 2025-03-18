@@ -86,7 +86,6 @@ class CloudImportableComputeEntitySummary(ImportableComputeEntitySummary):
             'host_name': 'str',
             'platform_type': 'str'
         }
-
         self.attribute_map = {
             'entity_source': 'entitySource',
             'compute_id': 'computeId',
@@ -95,7 +94,6 @@ class CloudImportableComputeEntitySummary(ImportableComputeEntitySummary):
             'host_name': 'hostName',
             'platform_type': 'platformType'
         }
-
         self._entity_source = None
         self._compute_id = None
         self._compute_display_name = None

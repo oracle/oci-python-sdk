@@ -83,7 +83,6 @@ class RepositoryCommitSummary(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'commit_id': 'commitId',
             'commit_message': 'commitMessage',
@@ -98,7 +97,6 @@ class RepositoryCommitSummary(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._commit_id = None
         self._commit_message = None
         self._author_name = None

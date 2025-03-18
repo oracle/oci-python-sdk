@@ -76,7 +76,6 @@ class RemediationRunStageSummary(object):
             'summary': 'str',
             'remediation_run_id': 'str'
         }
-
         self.attribute_map = {
             'status': 'status',
             'time_created': 'timeCreated',
@@ -86,7 +85,6 @@ class RemediationRunStageSummary(object):
             'summary': 'summary',
             'remediation_run_id': 'remediationRunId'
         }
-
         self._status = None
         self._time_created = None
         self._time_started = None

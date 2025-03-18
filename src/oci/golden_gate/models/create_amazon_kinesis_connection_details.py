@@ -111,7 +111,6 @@ class CreateAmazonKinesisConnectionDetails(CreateConnectionDetails):
             'secret_access_key': 'str',
             'secret_access_key_secret_id': 'str'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'display_name': 'displayName',
@@ -131,7 +130,6 @@ class CreateAmazonKinesisConnectionDetails(CreateConnectionDetails):
             'secret_access_key': 'secretAccessKey',
             'secret_access_key_secret_id': 'secretAccessKeySecretId'
         }
-
         self._connection_type = None
         self._display_name = None
         self._description = None

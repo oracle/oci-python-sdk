@@ -33,12 +33,10 @@ class ResponderRuleExecutionDetails(object):
             'condition': 'Condition',
             'configurations': 'list[ResponderConfiguration]'
         }
-
         self.attribute_map = {
             'condition': 'condition',
             'configurations': 'configurations'
         }
-
         self._condition = None
         self._configurations = None
 

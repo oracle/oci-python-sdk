@@ -125,7 +125,6 @@ class TypeListRule(ProjectionRule):
             'rule_type': 'str',
             'types': 'list[object]'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -143,7 +142,6 @@ class TypeListRule(ProjectionRule):
             'rule_type': 'ruleType',
             'types': 'types'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

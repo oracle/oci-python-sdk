@@ -47,13 +47,11 @@ class CreateExternalDbSystemConnectorDetails(object):
             'display_name': 'str',
             'external_db_system_id': 'str'
         }
-
         self.attribute_map = {
             'connector_type': 'connectorType',
             'display_name': 'displayName',
             'external_db_system_id': 'externalDbSystemId'
         }
-
         self._connector_type = None
         self._display_name = None
         self._external_db_system_id = None

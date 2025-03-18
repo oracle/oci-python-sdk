@@ -127,7 +127,6 @@ class CreateBudgetDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'target_compartment_id': 'targetCompartmentId',
@@ -144,7 +143,6 @@ class CreateBudgetDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._compartment_id = None
         self._target_compartment_id = None
         self._display_name = None

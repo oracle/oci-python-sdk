@@ -167,7 +167,6 @@ class MyUserDbCredential(object):
             'expires_on': 'str',
             'user': 'MyUserDbCredentialsUser'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -194,7 +193,6 @@ class MyUserDbCredential(object):
             'expires_on': 'expiresOn',
             'user': 'user'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

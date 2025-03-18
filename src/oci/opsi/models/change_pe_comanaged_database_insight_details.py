@@ -43,14 +43,12 @@ class ChangePeComanagedDatabaseInsightDetails(object):
             'connection_details': 'PeComanagedDatabaseConnectionDetails',
             'opsi_private_endpoint_id': 'str'
         }
-
         self.attribute_map = {
             'service_name': 'serviceName',
             'credential_details': 'credentialDetails',
             'connection_details': 'connectionDetails',
             'opsi_private_endpoint_id': 'opsiPrivateEndpointId'
         }
-
         self._service_name = None
         self._credential_details = None
         self._connection_details = None

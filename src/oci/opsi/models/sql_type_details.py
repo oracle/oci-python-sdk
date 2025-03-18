@@ -50,7 +50,6 @@ class SqlTypeDetails(RelatedObjectTypeDetails):
             'is_sql_text_truncated': 'bool',
             'sql_command': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'sql_id': 'sqlId',
@@ -58,7 +57,6 @@ class SqlTypeDetails(RelatedObjectTypeDetails):
             'is_sql_text_truncated': 'isSqlTextTruncated',
             'sql_command': 'sqlCommand'
         }
-
         self._type = None
         self._sql_id = None
         self._sql_text = None

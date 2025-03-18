@@ -137,7 +137,6 @@ class TermRelationshipSummary(object):
             'time_created': 'datetime',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'display_name': 'displayName',
@@ -156,7 +155,6 @@ class TermRelationshipSummary(object):
             'time_created': 'timeCreated',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._key = None
         self._display_name = None
         self._description = None

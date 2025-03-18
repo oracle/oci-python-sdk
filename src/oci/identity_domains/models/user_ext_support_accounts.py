@@ -60,7 +60,6 @@ class UserExtSupportAccounts(object):
             'ocid': 'str',
             'ref': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'provider': 'provider',
@@ -68,7 +67,6 @@ class UserExtSupportAccounts(object):
             'ocid': 'ocid',
             'ref': '$ref'
         }
-
         self._value = None
         self._provider = None
         self._user_id = None

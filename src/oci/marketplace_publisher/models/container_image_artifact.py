@@ -97,7 +97,6 @@ class ContainerImageArtifact(Artifact):
             'system_tags': 'dict(str, dict(str, object))',
             'container_image': 'ContainerImageDetails'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -114,7 +113,6 @@ class ContainerImageArtifact(Artifact):
             'system_tags': 'systemTags',
             'container_image': 'containerImage'
         }
-
         self._id = None
         self._display_name = None
         self._artifact_type = None

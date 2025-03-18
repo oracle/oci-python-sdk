@@ -138,7 +138,6 @@ class Queue(object):
             'system_tags': 'dict(str, dict(str, object))',
             'channel_consumption_limit': 'int'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -158,7 +157,6 @@ class Queue(object):
             'system_tags': 'systemTags',
             'channel_consumption_limit': 'channelConsumptionLimit'
         }
-
         self._id = None
         self._display_name = None
         self._compartment_id = None

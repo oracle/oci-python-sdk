@@ -28,11 +28,9 @@ class GroupAssociationDetails(object):
         self.swagger_types = {
             'group_list': 'list[str]'
         }
-
         self.attribute_map = {
             'group_list': 'groupList'
         }
-
         self._group_list = None
 
     @property

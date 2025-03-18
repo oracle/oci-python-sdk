@@ -33,12 +33,10 @@ class Pronunciation(object):
             'sounds_like': 'str',
             'audio': 'LocationDetails'
         }
-
         self.attribute_map = {
             'sounds_like': 'soundsLike',
             'audio': 'audio'
         }
-
         self._sounds_like = None
         self._audio = None
 

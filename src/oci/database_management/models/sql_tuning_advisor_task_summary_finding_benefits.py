@@ -43,14 +43,12 @@ class SqlTuningAdvisorTaskSummaryFindingBenefits(object):
             'db_time_after_implemented': 'int',
             'db_time_before_implemented': 'int'
         }
-
         self.attribute_map = {
             'db_time_before_recommended': 'dbTimeBeforeRecommended',
             'db_time_after_recommended': 'dbTimeAfterRecommended',
             'db_time_after_implemented': 'dbTimeAfterImplemented',
             'db_time_before_implemented': 'dbTimeBeforeImplemented'
         }
-
         self._db_time_before_recommended = None
         self._db_time_after_recommended = None
         self._db_time_after_implemented = None

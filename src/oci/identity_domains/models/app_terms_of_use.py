@@ -48,13 +48,11 @@ class AppTermsOfUse(object):
             'ref': 'str',
             'name': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ref': '$ref',
             'name': 'name'
         }
-
         self._value = None
         self._ref = None
         self._name = None

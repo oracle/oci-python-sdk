@@ -28,11 +28,9 @@ class ExtensionMeUser(object):
         self.swagger_types = {
             'current_password': 'str'
         }
-
         self.attribute_map = {
             'current_password': 'currentPassword'
         }
-
         self._current_password = None
 
     @property

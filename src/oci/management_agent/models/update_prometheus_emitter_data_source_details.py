@@ -75,7 +75,6 @@ class UpdatePrometheusEmitterDataSourceDetails(UpdateDataSourceDetails):
             'resource_group': 'str',
             'metric_dimensions': 'list[MetricDimension]'
         }
-
         self.attribute_map = {
             'type': 'type',
             'url': 'url',
@@ -88,7 +87,6 @@ class UpdatePrometheusEmitterDataSourceDetails(UpdateDataSourceDetails):
             'resource_group': 'resourceGroup',
             'metric_dimensions': 'metricDimensions'
         }
-
         self._type = None
         self._url = None
         self._allow_metrics = None

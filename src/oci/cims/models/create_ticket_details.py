@@ -65,7 +65,6 @@ class CreateTicketDetails(object):
             'description': 'str',
             'contextual_data': 'ContextualData'
         }
-
         self.attribute_map = {
             'severity': 'severity',
             'resource_list': 'resourceList',
@@ -73,7 +72,6 @@ class CreateTicketDetails(object):
             'description': 'description',
             'contextual_data': 'contextualData'
         }
-
         self._severity = None
         self._resource_list = None
         self._title = None

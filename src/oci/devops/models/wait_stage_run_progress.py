@@ -60,7 +60,6 @@ class WaitStageRunProgress(BuildPipelineStageRunProgress):
             'status': 'str',
             'build_pipeline_stage_predecessors': 'BuildPipelineStagePredecessorCollection'
         }
-
         self.attribute_map = {
             'stage_display_name': 'stageDisplayName',
             'build_pipeline_stage_type': 'buildPipelineStageType',
@@ -70,7 +69,6 @@ class WaitStageRunProgress(BuildPipelineStageRunProgress):
             'status': 'status',
             'build_pipeline_stage_predecessors': 'buildPipelineStagePredecessors'
         }
-
         self._stage_display_name = None
         self._build_pipeline_stage_type = None
         self._build_pipeline_stage_id = None

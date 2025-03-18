@@ -173,7 +173,6 @@ class AccessRequest(object):
             'requestor_location': 'str',
             'ticket_number': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'lockbox_id': 'lockboxId',
@@ -193,7 +192,6 @@ class AccessRequest(object):
             'requestor_location': 'requestorLocation',
             'ticket_number': 'ticketNumber'
         }
-
         self._id = None
         self._lockbox_id = None
         self._display_name = None

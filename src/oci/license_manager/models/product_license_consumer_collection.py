@@ -28,11 +28,9 @@ class ProductLicenseConsumerCollection(object):
         self.swagger_types = {
             'items': 'list[ProductLicenseConsumerSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

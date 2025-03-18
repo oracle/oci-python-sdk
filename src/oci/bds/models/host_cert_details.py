@@ -38,13 +38,11 @@ class HostCertDetails(object):
             'certificate': 'str',
             'private_key': 'str'
         }
-
         self.attribute_map = {
             'host_name': 'hostName',
             'certificate': 'certificate',
             'private_key': 'privateKey'
         }
-
         self._host_name = None
         self._certificate = None
         self._private_key = None

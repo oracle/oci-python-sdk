@@ -51,7 +51,6 @@ class MonthlyFrequencyDetails(AbstractFrequencyDetails):
             'time': 'Time',
             'days': 'list[int]'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'frequency': 'frequency',
@@ -59,7 +58,6 @@ class MonthlyFrequencyDetails(AbstractFrequencyDetails):
             'time': 'time',
             'days': 'days'
         }
-
         self._model_type = None
         self._frequency = None
         self._interval = None

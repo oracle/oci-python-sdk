@@ -33,12 +33,10 @@ class ReviveWorkflowInstanceDetails(object):
             'workflow_instance_id': 'str',
             'workflow_instance_name': 'str'
         }
-
         self.attribute_map = {
             'workflow_instance_id': 'workflowInstanceId',
             'workflow_instance_name': 'workflowInstanceName'
         }
-
         self._workflow_instance_id = None
         self._workflow_instance_name = None
 

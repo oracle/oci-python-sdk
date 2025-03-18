@@ -160,7 +160,6 @@ class MacsManagedCloudDatabaseHostInsightSummary(HostInsightSummary):
             'root_id': 'str',
             'platform_type': 'str'
         }
-
         self.attribute_map = {
             'entity_source': 'entitySource',
             'id': 'id',
@@ -183,7 +182,6 @@ class MacsManagedCloudDatabaseHostInsightSummary(HostInsightSummary):
             'root_id': 'rootId',
             'platform_type': 'platformType'
         }
-
         self._entity_source = None
         self._id = None
         self._compartment_id = None

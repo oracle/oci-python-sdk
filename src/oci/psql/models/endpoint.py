@@ -38,13 +38,11 @@ class Endpoint(object):
             'ip_address': 'str',
             'port': 'int'
         }
-
         self.attribute_map = {
             'fqdn': 'fqdn',
             'ip_address': 'ipAddress',
             'port': 'port'
         }
-
         self._fqdn = None
         self._ip_address = None
         self._port = None

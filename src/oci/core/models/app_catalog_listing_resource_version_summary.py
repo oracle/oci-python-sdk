@@ -43,14 +43,12 @@ class AppCatalogListingResourceVersionSummary(object):
             'listing_resource_id': 'str',
             'listing_resource_version': 'str'
         }
-
         self.attribute_map = {
             'listing_id': 'listingId',
             'time_published': 'timePublished',
             'listing_resource_id': 'listingResourceId',
             'listing_resource_version': 'listingResourceVersion'
         }
-
         self._listing_id = None
         self._time_published = None
         self._listing_resource_id = None

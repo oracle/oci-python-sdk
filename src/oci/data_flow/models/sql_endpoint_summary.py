@@ -187,7 +187,6 @@ class SqlEndpointSummary(object):
             'spark_advanced_configurations': 'dict(str, str)',
             'network_configuration': 'SqlEndpointNetworkConfiguration'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -216,7 +215,6 @@ class SqlEndpointSummary(object):
             'spark_advanced_configurations': 'sparkAdvancedConfigurations',
             'network_configuration': 'networkConfiguration'
         }
-
         self._id = None
         self._display_name = None
         self._compartment_id = None

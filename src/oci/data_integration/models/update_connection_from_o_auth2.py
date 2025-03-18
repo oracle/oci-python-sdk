@@ -110,7 +110,6 @@ class UpdateConnectionFromOAuth2(UpdateConnectionDetails):
             'scope': 'str',
             'grant_type': 'str'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -129,7 +128,6 @@ class UpdateConnectionFromOAuth2(UpdateConnectionDetails):
             'scope': 'scope',
             'grant_type': 'grantType'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

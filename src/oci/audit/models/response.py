@@ -48,7 +48,6 @@ class Response(object):
             'payload': 'dict(str, object)',
             'message': 'str'
         }
-
         self.attribute_map = {
             'status': 'status',
             'response_time': 'responseTime',
@@ -56,7 +55,6 @@ class Response(object):
             'payload': 'payload',
             'message': 'message'
         }
-
         self._status = None
         self._response_time = None
         self._headers = None

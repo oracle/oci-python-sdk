@@ -38,13 +38,11 @@ class ServiceSummary(object):
             'description': 'str',
             'supported_subscriptions': 'list[str]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'description': 'description',
             'supported_subscriptions': 'supportedSubscriptions'
         }
-
         self._name = None
         self._description = None
         self._supported_subscriptions = None

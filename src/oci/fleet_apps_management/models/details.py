@@ -82,7 +82,6 @@ class Details(object):
             'is_discovery_output_task': 'bool',
             'is_apply_subject_task': 'bool'
         }
-
         self.attribute_map = {
             'execution_details': 'executionDetails',
             'platform': 'platform',
@@ -92,7 +91,6 @@ class Details(object):
             'is_discovery_output_task': 'isDiscoveryOutputTask',
             'is_apply_subject_task': 'isApplySubjectTask'
         }
-
         self._execution_details = None
         self._platform = None
         self._os_type = None

@@ -38,13 +38,11 @@ class CaBundle(object):
             'name': 'str',
             'ca_bundle_pem': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
             'ca_bundle_pem': 'caBundlePem'
         }
-
         self._id = None
         self._name = None
         self._ca_bundle_pem = None

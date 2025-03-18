@@ -57,7 +57,6 @@ class UpdateDedicatedVantagePointDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'status': 'status',
             'dvp_stack_details': 'dvpStackDetails',
@@ -65,7 +64,6 @@ class UpdateDedicatedVantagePointDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._status = None
         self._dvp_stack_details = None
         self._region = None

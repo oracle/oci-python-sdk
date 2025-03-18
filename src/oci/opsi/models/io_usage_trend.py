@@ -53,7 +53,6 @@ class IoUsageTrend(object):
             'disk_iops_written': 'float',
             'disk_iops': 'float'
         }
-
         self.attribute_map = {
             'end_timestamp': 'endTimestamp',
             'disk_bytes_read_in_mbs': 'diskBytesReadInMBs',
@@ -62,7 +61,6 @@ class IoUsageTrend(object):
             'disk_iops_written': 'diskIopsWritten',
             'disk_iops': 'diskIops'
         }
-
         self._end_timestamp = None
         self._disk_bytes_read_in_mbs = None
         self._disk_bytes_written_in_mbs = None

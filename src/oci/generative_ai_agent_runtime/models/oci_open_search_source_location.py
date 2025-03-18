@@ -45,14 +45,12 @@ class OciOpenSearchSourceLocation(SourceLocation):
             'index_name': 'str',
             'url': 'str'
         }
-
         self.attribute_map = {
             'source_location_type': 'sourceLocationType',
             'id': 'id',
             'index_name': 'indexName',
             'url': 'url'
         }
-
         self._source_location_type = None
         self._id = None
         self._index_name = None

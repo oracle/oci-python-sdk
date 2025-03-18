@@ -53,7 +53,6 @@ class Metadata(object):
             'keywords': 'list[str]',
             'has_artifact': 'bool'
         }
-
         self.attribute_map = {
             'key': 'key',
             'value': 'value',
@@ -62,7 +61,6 @@ class Metadata(object):
             'keywords': 'keywords',
             'has_artifact': 'hasArtifact'
         }
-
         self._key = None
         self._value = None
         self._description = None

@@ -35,12 +35,10 @@ class InlineDeployArtifactSource(DeployArtifactSource):
             'deploy_artifact_source_type': 'str',
             'base64_encoded_content': 'str'
         }
-
         self.attribute_map = {
             'deploy_artifact_source_type': 'deployArtifactSourceType',
             'base64_encoded_content': 'base64EncodedContent'
         }
-
         self._deploy_artifact_source_type = None
         self._base64_encoded_content = None
         self._deploy_artifact_source_type = 'INLINE'

@@ -28,11 +28,9 @@ class TableUsageCollection(object):
         self.swagger_types = {
             'items': 'list[TableUsageSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

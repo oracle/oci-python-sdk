@@ -35,12 +35,10 @@ class InstanceAgentCommandOutputViaObjectStorageUriDetails(InstanceAgentCommandO
             'output_type': 'str',
             'output_uri': 'str'
         }
-
         self.attribute_map = {
             'output_type': 'outputType',
             'output_uri': 'outputUri'
         }
-
         self._output_type = None
         self._output_uri = None
         self._output_type = 'OBJECT_STORAGE_URI'

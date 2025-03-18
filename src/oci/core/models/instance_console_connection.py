@@ -100,7 +100,6 @@ class InstanceConsoleConnection(object):
             'service_host_key_fingerprint': 'str',
             'vnc_connection_string': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'connection_string': 'connectionString',
@@ -113,7 +112,6 @@ class InstanceConsoleConnection(object):
             'service_host_key_fingerprint': 'serviceHostKeyFingerprint',
             'vnc_connection_string': 'vncConnectionString'
         }
-
         self._compartment_id = None
         self._connection_string = None
         self._defined_tags = None

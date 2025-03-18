@@ -49,14 +49,12 @@ class MultipartUploadPartSummary(object):
             'size': 'int',
             'part_number': 'int'
         }
-
         self.attribute_map = {
             'etag': 'etag',
             'md5': 'md5',
             'size': 'size',
             'part_number': 'partNumber'
         }
-
         self._etag = None
         self._md5 = None
         self._size = None

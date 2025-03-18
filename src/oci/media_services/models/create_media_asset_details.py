@@ -143,7 +143,6 @@ class CreateMediaAssetDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'locks': 'list[ResourceLock]'
         }
-
         self.attribute_map = {
             'source_media_workflow_id': 'sourceMediaWorkflowId',
             'media_workflow_job_id': 'mediaWorkflowJobId',
@@ -165,7 +164,6 @@ class CreateMediaAssetDetails(object):
             'defined_tags': 'definedTags',
             'locks': 'locks'
         }
-
         self._source_media_workflow_id = None
         self._media_workflow_job_id = None
         self._source_media_workflow_version = None

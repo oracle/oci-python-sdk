@@ -49,13 +49,11 @@ class ResolverRuleDetails(object):
             'qname_cover_conditions': 'list[str]',
             'action': 'str'
         }
-
         self.attribute_map = {
             'client_address_conditions': 'clientAddressConditions',
             'qname_cover_conditions': 'qnameCoverConditions',
             'action': 'action'
         }
-
         self._client_address_conditions = None
         self._qname_cover_conditions = None
         self._action = None

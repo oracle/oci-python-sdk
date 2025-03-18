@@ -67,7 +67,6 @@ class CreateRollbackActionDetails(CreateFsuActionDetails):
             'details': 'RollbackDetails',
             'schedule_details': 'CreateScheduleDetails'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'compartment_id': 'compartmentId',
@@ -78,7 +77,6 @@ class CreateRollbackActionDetails(CreateFsuActionDetails):
             'details': 'details',
             'schedule_details': 'scheduleDetails'
         }
-
         self._display_name = None
         self._compartment_id = None
         self._type = None

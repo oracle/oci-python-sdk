@@ -107,7 +107,6 @@ class RollbackCycleAction(FsuAction):
             'related_fsu_action_id': 'str',
             'progress': 'FsuActionProgressDetails'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -126,7 +125,6 @@ class RollbackCycleAction(FsuAction):
             'related_fsu_action_id': 'relatedFsuActionId',
             'progress': 'progress'
         }
-
         self._id = None
         self._display_name = None
         self._compartment_id = None

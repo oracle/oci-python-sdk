@@ -57,14 +57,12 @@ class MaintenanceDetails(object):
             'end_time': 'datetime',
             'notification_email_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'state': 'state',
             'start_time': 'startTime',
             'end_time': 'endTime',
             'notification_email_ids': 'notificationEmailIds'
         }
-
         self._state = None
         self._start_time = None
         self._end_time = None

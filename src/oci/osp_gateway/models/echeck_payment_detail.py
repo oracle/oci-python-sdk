@@ -80,7 +80,6 @@ class EcheckPaymentDetail(PaymentDetail):
             'account_number': 'str',
             'routing_number': 'str'
         }
-
         self.attribute_map = {
             'time_paid_on': 'timePaidOn',
             'paid_by': 'paidBy',
@@ -91,7 +90,6 @@ class EcheckPaymentDetail(PaymentDetail):
             'account_number': 'accountNumber',
             'routing_number': 'routingNumber'
         }
-
         self._time_paid_on = None
         self._paid_by = None
         self._payment_method = None

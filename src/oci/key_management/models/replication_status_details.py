@@ -28,11 +28,9 @@ class ReplicationStatusDetails(object):
         self.swagger_types = {
             'replica_details': 'list[ReplicaDetails]'
         }
-
         self.attribute_map = {
             'replica_details': 'replicaDetails'
         }
-
         self._replica_details = None
 
     @property

@@ -61,7 +61,6 @@ class AwrDbWaitEventBucketCollection(AwrQueryResult):
             'total_waits': 'int',
             'items': 'list[AwrDbWaitEventBucketSummary]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'version': 'version',
@@ -71,7 +70,6 @@ class AwrDbWaitEventBucketCollection(AwrQueryResult):
             'total_waits': 'totalWaits',
             'items': 'items'
         }
-
         self._name = None
         self._version = None
         self._query_key = None

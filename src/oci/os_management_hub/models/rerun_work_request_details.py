@@ -33,12 +33,10 @@ class RerunWorkRequestDetails(object):
             'managed_instances': 'list[str]',
             'work_request_details': 'WorkRequestDetails'
         }
-
         self.attribute_map = {
             'managed_instances': 'managedInstances',
             'work_request_details': 'workRequestDetails'
         }
-
         self._managed_instances = None
         self._work_request_details = None
 

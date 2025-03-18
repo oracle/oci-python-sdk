@@ -70,7 +70,6 @@ class UnifiedAgentNoneParser(UnifiedAgentParser):
             'timeout_in_milliseconds': 'int',
             'message_key': 'str'
         }
-
         self.attribute_map = {
             'parser_type': 'parserType',
             'field_time_key': 'fieldTimeKey',
@@ -82,7 +81,6 @@ class UnifiedAgentNoneParser(UnifiedAgentParser):
             'timeout_in_milliseconds': 'timeoutInMilliseconds',
             'message_key': 'messageKey'
         }
-
         self._parser_type = None
         self._field_time_key = None
         self._types = None

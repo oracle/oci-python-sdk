@@ -56,13 +56,11 @@ class AutonomousDatabaseFeatureDetails(object):
             'database_connection_details': 'DatabaseConnectionDetails',
             'connector_details': 'ConnectorDetails'
         }
-
         self.attribute_map = {
             'feature': 'feature',
             'database_connection_details': 'databaseConnectionDetails',
             'connector_details': 'connectorDetails'
         }
-
         self._feature = None
         self._database_connection_details = None
         self._connector_details = None

@@ -95,7 +95,6 @@ class DBExternalInstance(DatabaseConfigurationMetricGroup):
             'edition': 'str',
             'startup_time': 'datetime'
         }
-
         self.attribute_map = {
             'metric_name': 'metricName',
             'time_collected': 'timeCollected',
@@ -112,7 +111,6 @@ class DBExternalInstance(DatabaseConfigurationMetricGroup):
             'edition': 'edition',
             'startup_time': 'startupTime'
         }
-
         self._metric_name = None
         self._time_collected = None
         self._instance_name = None

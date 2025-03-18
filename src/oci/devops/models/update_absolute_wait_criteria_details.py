@@ -35,12 +35,10 @@ class UpdateAbsoluteWaitCriteriaDetails(UpdateWaitCriteriaDetails):
             'wait_type': 'str',
             'wait_duration': 'str'
         }
-
         self.attribute_map = {
             'wait_type': 'waitType',
             'wait_duration': 'waitDuration'
         }
-
         self._wait_type = None
         self._wait_duration = None
         self._wait_type = 'ABSOLUTE_WAIT'

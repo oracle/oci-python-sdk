@@ -43,14 +43,12 @@ class IpInventoryVcnOverlapCollection(object):
             'message': 'str',
             'overlap_count': 'int'
         }
-
         self.attribute_map = {
             'last_updated_timestamp': 'lastUpdatedTimestamp',
             'ip_inventory_vcn_overlap_summary': 'ipInventoryVcnOverlapSummary',
             'message': 'message',
             'overlap_count': 'overlapCount'
         }
-
         self._last_updated_timestamp = None
         self._ip_inventory_vcn_overlap_summary = None
         self._message = None

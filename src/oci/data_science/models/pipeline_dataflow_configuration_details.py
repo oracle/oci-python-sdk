@@ -63,7 +63,6 @@ class PipelineDataflowConfigurationDetails(object):
             'warehouse_bucket_uri': 'str',
             'logs_bucket_uri': 'str'
         }
-
         self.attribute_map = {
             'configuration': 'configuration',
             'driver_shape': 'driverShape',
@@ -74,7 +73,6 @@ class PipelineDataflowConfigurationDetails(object):
             'warehouse_bucket_uri': 'warehouseBucketUri',
             'logs_bucket_uri': 'logsBucketUri'
         }
-
         self._configuration = None
         self._driver_shape = None
         self._driver_shape_config_details = None

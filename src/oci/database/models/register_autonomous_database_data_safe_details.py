@@ -28,11 +28,9 @@ class RegisterAutonomousDatabaseDataSafeDetails(object):
         self.swagger_types = {
             'pdb_admin_password': 'str'
         }
-
         self.attribute_map = {
             'pdb_admin_password': 'pdbAdminPassword'
         }
-
         self._pdb_admin_password = None
 
     @property

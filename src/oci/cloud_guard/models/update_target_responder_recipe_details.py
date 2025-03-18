@@ -32,11 +32,9 @@ class UpdateTargetResponderRecipeDetails(object):
         self.swagger_types = {
             'responder_rules': 'list[UpdateTargetRecipeResponderRuleDetails]'
         }
-
         self.attribute_map = {
             'responder_rules': 'responderRules'
         }
-
         self._responder_rules = None
 
     @property

@@ -70,7 +70,6 @@ class CreateJavaLicenseAcceptanceRecordDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'license_type': 'licenseType',
@@ -78,7 +77,6 @@ class CreateJavaLicenseAcceptanceRecordDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._compartment_id = None
         self._license_type = None
         self._license_acceptance_status = None

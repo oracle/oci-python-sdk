@@ -38,11 +38,9 @@ class ModelDeploymentSystemData(object):
         self.swagger_types = {
             'system_infra_type': 'str'
         }
-
         self.attribute_map = {
             'system_infra_type': 'systemInfraType'
         }
-
         self._system_infra_type = None
 
     @staticmethod

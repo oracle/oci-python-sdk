@@ -48,7 +48,6 @@ class ScaledPlatformMeteringPreview(object):
             'extra_storage_metered_units': 'float',
             'storage_metered_units_post_scaling': 'float'
         }
-
         self.attribute_map = {
             'total_ocpu_allocation': 'totalOcpuAllocation',
             'total_ocpu_allocation_post_scaling': 'totalOcpuAllocationPostScaling',
@@ -56,7 +55,6 @@ class ScaledPlatformMeteringPreview(object):
             'extra_storage_metered_units': 'extraStorageMeteredUnits',
             'storage_metered_units_post_scaling': 'storageMeteredUnitsPostScaling'
         }
-
         self._total_ocpu_allocation = None
         self._total_ocpu_allocation_post_scaling = None
         self._storage_metered_units = None

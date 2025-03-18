@@ -28,11 +28,9 @@ class CreateBlockVolumeAttachmentDetails(object):
         self.swagger_types = {
             'volume_attachment_reference_instance_id': 'str'
         }
-
         self.attribute_map = {
             'volume_attachment_reference_instance_id': 'volumeAttachmentReferenceInstanceId'
         }
-
         self._volume_attachment_reference_instance_id = None
 
     @property

@@ -28,11 +28,9 @@ class TopSqlCpuActivity(object):
         self.swagger_types = {
             'activity': 'list[SqlCpuActivity]'
         }
-
         self.attribute_map = {
             'activity': 'activity'
         }
-
         self._activity = None
 
     @property

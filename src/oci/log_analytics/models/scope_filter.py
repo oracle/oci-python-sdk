@@ -33,12 +33,10 @@ class ScopeFilter(object):
             'field_name': 'str',
             'values': 'list[object]'
         }
-
         self.attribute_map = {
             'field_name': 'fieldName',
             'values': 'values'
         }
-
         self._field_name = None
         self._values = None
 

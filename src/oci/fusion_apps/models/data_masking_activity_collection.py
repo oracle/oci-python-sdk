@@ -28,11 +28,9 @@ class DataMaskingActivityCollection(object):
         self.swagger_types = {
             'items': 'list[DataMaskingActivitySummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

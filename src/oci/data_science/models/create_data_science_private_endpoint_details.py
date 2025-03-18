@@ -77,7 +77,6 @@ class CreateDataSciencePrivateEndpointDetails(object):
             'sub_domain': 'str',
             'data_science_resource_type': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'description': 'description',
@@ -89,7 +88,6 @@ class CreateDataSciencePrivateEndpointDetails(object):
             'sub_domain': 'subDomain',
             'data_science_resource_type': 'dataScienceResourceType'
         }
-
         self._compartment_id = None
         self._description = None
         self._display_name = None

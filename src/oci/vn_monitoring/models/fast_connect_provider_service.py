@@ -169,7 +169,6 @@ class FastConnectProviderService(object):
             'required_total_cross_connects': 'int',
             'type': 'str'
         }
-
         self.attribute_map = {
             'description': 'description',
             'id': 'id',
@@ -184,7 +183,6 @@ class FastConnectProviderService(object):
             'required_total_cross_connects': 'requiredTotalCrossConnects',
             'type': 'type'
         }
-
         self._description = None
         self._id = None
         self._private_peering_bgp_management = None

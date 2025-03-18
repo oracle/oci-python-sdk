@@ -33,12 +33,10 @@ class ConfigProvider(object):
             'bindings': 'dict(str, ParameterValue)',
             'child_providers': 'dict(str, ConfigProvider)'
         }
-
         self.attribute_map = {
             'bindings': 'bindings',
             'child_providers': 'childProviders'
         }
-
         self._bindings = None
         self._child_providers = None
 

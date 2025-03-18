@@ -48,7 +48,6 @@ class Currency(object):
             'usd_conversion': 'float',
             'round_decimal_point': 'float'
         }
-
         self.attribute_map = {
             'currency_code': 'currencyCode',
             'currency_symbol': 'currencySymbol',
@@ -56,7 +55,6 @@ class Currency(object):
             'usd_conversion': 'usdConversion',
             'round_decimal_point': 'roundDecimalPoint'
         }
-
         self._currency_code = None
         self._currency_symbol = None
         self._name = None

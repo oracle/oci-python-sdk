@@ -67,7 +67,6 @@ class CreateCaptureFilterDetails(object):
             'vtap_capture_filter_rules': 'list[VtapCaptureFilterRuleDetails]',
             'flow_log_capture_filter_rules': 'list[FlowLogCaptureFilterRuleDetails]'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
@@ -77,7 +76,6 @@ class CreateCaptureFilterDetails(object):
             'vtap_capture_filter_rules': 'vtapCaptureFilterRules',
             'flow_log_capture_filter_rules': 'flowLogCaptureFilterRules'
         }
-
         self._compartment_id = None
         self._defined_tags = None
         self._display_name = None

@@ -62,13 +62,11 @@ class NetworkPerimeterIpAddresses(object):
             'version': 'str',
             'value': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'version': 'version',
             'value': 'value'
         }
-
         self._type = None
         self._version = None
         self._value = None

@@ -34,12 +34,10 @@ class VolumeGroupSourceFromVolumesDetails(VolumeGroupSourceDetails):
             'type': 'str',
             'volume_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'type': 'type',
             'volume_ids': 'volumeIds'
         }
-
         self._type = None
         self._volume_ids = None
         self._type = 'volumeIds'

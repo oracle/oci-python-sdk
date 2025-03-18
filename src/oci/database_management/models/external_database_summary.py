@@ -196,7 +196,6 @@ class ExternalDatabaseSummary(object):
             'database_version': 'str',
             'database_platform_name': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -218,7 +217,6 @@ class ExternalDatabaseSummary(object):
             'database_version': 'databaseVersion',
             'database_platform_name': 'databasePlatformName'
         }
-
         self._id = None
         self._display_name = None
         self._compartment_id = None

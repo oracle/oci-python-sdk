@@ -45,14 +45,12 @@ class OracleWriteAttribute(AbstractWriteAttribute):
             'is_truncate': 'bool',
             'isolation_level': 'str'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'batch_size': 'batchSize',
             'is_truncate': 'isTruncate',
             'isolation_level': 'isolationLevel'
         }
-
         self._model_type = None
         self._batch_size = None
         self._is_truncate = None

@@ -54,7 +54,6 @@ class InventoryResourceSummary(object):
             'region': 'str',
             'compartment_id': 'str'
         }
-
         self.attribute_map = {
             'resource_name': 'resourceName',
             'resource_type': 'resourceType',
@@ -62,7 +61,6 @@ class InventoryResourceSummary(object):
             'region': 'region',
             'compartment_id': 'compartmentId'
         }
-
         self._resource_name = None
         self._resource_type = None
         self._ip_address_collection = None

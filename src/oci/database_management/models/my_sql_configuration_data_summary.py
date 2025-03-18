@@ -150,7 +150,6 @@ class MySqlConfigurationDataSummary(object):
             'possible_values': 'str',
             'supported_versions': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'value': 'value',
@@ -170,7 +169,6 @@ class MySqlConfigurationDataSummary(object):
             'possible_values': 'possibleValues',
             'supported_versions': 'supportedVersions'
         }
-
         self._name = None
         self._value = None
         self._source = None

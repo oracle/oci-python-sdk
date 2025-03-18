@@ -98,7 +98,6 @@ class InstanceShapeConfig(object):
             'local_disk_description': 'str',
             'vcpus': 'int'
         }
-
         self.attribute_map = {
             'ocpus': 'ocpus',
             'memory_in_gbs': 'memoryInGBs',
@@ -113,7 +112,6 @@ class InstanceShapeConfig(object):
             'local_disk_description': 'localDiskDescription',
             'vcpus': 'vcpus'
         }
-
         self._ocpus = None
         self._memory_in_gbs = None
         self._baseline_ocpu_utilization = None

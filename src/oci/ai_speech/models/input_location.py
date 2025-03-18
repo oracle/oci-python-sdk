@@ -43,11 +43,9 @@ class InputLocation(object):
         self.swagger_types = {
             'location_type': 'str'
         }
-
         self.attribute_map = {
             'location_type': 'locationType'
         }
-
         self._location_type = None
 
     @staticmethod

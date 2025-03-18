@@ -60,13 +60,11 @@ class SecurityScoreAggregation(object):
             'security_rating': 'str',
             'security_score': 'int'
         }
-
         self.attribute_map = {
             'dimensions_map': 'dimensionsMap',
             'security_rating': 'securityRating',
             'security_score': 'securityScore'
         }
-
         self._dimensions_map = None
         self._security_rating = None
         self._security_score = None

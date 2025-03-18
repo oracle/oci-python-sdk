@@ -28,11 +28,9 @@ class LogAnalyticsResourceCategoryDetails(object):
         self.swagger_types = {
             'items': 'list[LogAnalyticsResourceCategory]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

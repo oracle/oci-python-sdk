@@ -90,7 +90,6 @@ class LdapBindAccountSummary(OutboundConnectorSummary):
             'endpoints': 'list[Endpoint]',
             'bind_distinguished_name': 'str'
         }
-
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'compartment_id': 'compartmentId',
@@ -106,7 +105,6 @@ class LdapBindAccountSummary(OutboundConnectorSummary):
             'endpoints': 'endpoints',
             'bind_distinguished_name': 'bindDistinguishedName'
         }
-
         self._availability_domain = None
         self._compartment_id = None
         self._id = None

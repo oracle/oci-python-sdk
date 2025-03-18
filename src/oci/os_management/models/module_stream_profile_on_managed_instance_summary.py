@@ -58,7 +58,6 @@ class ModuleStreamProfileOnManagedInstanceSummary(object):
             'status': 'str',
             'time_modified': 'datetime'
         }
-
         self.attribute_map = {
             'module_name': 'moduleName',
             'stream_name': 'streamName',
@@ -66,7 +65,6 @@ class ModuleStreamProfileOnManagedInstanceSummary(object):
             'status': 'status',
             'time_modified': 'timeModified'
         }
-
         self._module_name = None
         self._stream_name = None
         self._profile_name = None

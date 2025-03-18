@@ -38,13 +38,11 @@ class UpdateSnapshotDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'expiration_time': 'datetime'
         }
-
         self.attribute_map = {
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'expiration_time': 'expirationTime'
         }
-
         self._freeform_tags = None
         self._defined_tags = None
         self._expiration_time = None

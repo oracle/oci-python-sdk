@@ -115,7 +115,6 @@ class CustomPropertyGetUsage(object):
             'is_list_type': 'bool',
             'allowed_values': 'list[str]'
         }
-
         self.attribute_map = {
             'key': 'key',
             'display_name': 'displayName',
@@ -132,7 +131,6 @@ class CustomPropertyGetUsage(object):
             'is_list_type': 'isListType',
             'allowed_values': 'allowedValues'
         }
-
         self._key = None
         self._display_name = None
         self._description = None

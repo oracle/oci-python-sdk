@@ -63,7 +63,6 @@ class LaunchAttachVolumeDetails(object):
             'volume_id': 'str',
             'launch_create_volume_details': 'LaunchCreateVolumeDetails'
         }
-
         self.attribute_map = {
             'device': 'device',
             'display_name': 'displayName',
@@ -73,7 +72,6 @@ class LaunchAttachVolumeDetails(object):
             'volume_id': 'volumeId',
             'launch_create_volume_details': 'launchCreateVolumeDetails'
         }
-
         self._device = None
         self._display_name = None
         self._is_read_only = None

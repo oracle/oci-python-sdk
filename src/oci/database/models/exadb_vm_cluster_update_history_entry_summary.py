@@ -114,7 +114,6 @@ class ExadbVmClusterUpdateHistoryEntrySummary(object):
             'time_completed': 'datetime',
             'version': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'update_id': 'updateId',
@@ -126,7 +125,6 @@ class ExadbVmClusterUpdateHistoryEntrySummary(object):
             'time_completed': 'timeCompleted',
             'version': 'version'
         }
-
         self._id = None
         self._update_id = None
         self._update_action = None

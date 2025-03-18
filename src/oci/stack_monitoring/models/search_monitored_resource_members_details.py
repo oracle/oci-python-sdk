@@ -33,12 +33,10 @@ class SearchMonitoredResourceMembersDetails(object):
             'destination_resource_id': 'str',
             'limit_level': 'int'
         }
-
         self.attribute_map = {
             'destination_resource_id': 'destinationResourceId',
             'limit_level': 'limitLevel'
         }
-
         self._destination_resource_id = None
         self._limit_level = None
 

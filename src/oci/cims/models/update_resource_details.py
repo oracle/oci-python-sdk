@@ -28,11 +28,9 @@ class UpdateResourceDetails(object):
         self.swagger_types = {
             'item': 'UpdateItemDetails'
         }
-
         self.attribute_map = {
             'item': 'item'
         }
-
         self._item = None
 
     @property

@@ -33,12 +33,10 @@ class SqlStatisticsTimeSeries(object):
             'name': 'str',
             'values': 'list[float]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'values': 'values'
         }
-
         self._name = None
         self._values = None
 

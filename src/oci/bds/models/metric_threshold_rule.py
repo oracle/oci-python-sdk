@@ -48,13 +48,11 @@ class MetricThresholdRule(object):
             'operator': 'str',
             'value': 'int'
         }
-
         self.attribute_map = {
             'duration_in_minutes': 'durationInMinutes',
             'operator': 'operator',
             'value': 'value'
         }
-
         self._duration_in_minutes = None
         self._operator = None
         self._value = None

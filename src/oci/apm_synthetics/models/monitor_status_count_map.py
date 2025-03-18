@@ -44,14 +44,12 @@ class MonitorStatusCountMap(object):
             'disabled': 'int',
             'invalid': 'int'
         }
-
         self.attribute_map = {
             'total': 'total',
             'enabled': 'enabled',
             'disabled': 'disabled',
             'invalid': 'invalid'
         }
-
         self._total = None
         self._enabled = None
         self._disabled = None

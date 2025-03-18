@@ -80,7 +80,6 @@ class CreateMaintenanceRunDetails(object):
             'compartment_id': 'str',
             'database_software_image_id': 'str'
         }
-
         self.attribute_map = {
             'target_resource_id': 'targetResourceId',
             'is_dst_file_update_enabled': 'isDstFileUpdateEnabled',
@@ -90,7 +89,6 @@ class CreateMaintenanceRunDetails(object):
             'compartment_id': 'compartmentId',
             'database_software_image_id': 'databaseSoftwareImageId'
         }
-
         self._target_resource_id = None
         self._is_dst_file_update_enabled = None
         self._time_scheduled = None

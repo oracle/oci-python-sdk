@@ -60,7 +60,6 @@ class EncryptedCredentials(MonitoredResourceCredential):
             'key_id': 'str',
             'properties': 'list[CredentialProperty]'
         }
-
         self.attribute_map = {
             'source': 'source',
             'name': 'name',
@@ -70,7 +69,6 @@ class EncryptedCredentials(MonitoredResourceCredential):
             'key_id': 'keyId',
             'properties': 'properties'
         }
-
         self._source = None
         self._name = None
         self._type = None

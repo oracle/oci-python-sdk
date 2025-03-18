@@ -28,11 +28,9 @@ class BulkUploadTemplate(object):
         self.swagger_types = {
             'template': 'str'
         }
-
         self.attribute_map = {
             'template': 'template'
         }
-
         self._template = None
 
     @property

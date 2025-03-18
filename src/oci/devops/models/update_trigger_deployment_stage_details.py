@@ -64,7 +64,6 @@ class UpdateTriggerDeploymentStageDetails(UpdateBuildPipelineStageDetails):
             'deploy_pipeline_id': 'str',
             'is_pass_all_parameters_enabled': 'bool'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
@@ -75,7 +74,6 @@ class UpdateTriggerDeploymentStageDetails(UpdateBuildPipelineStageDetails):
             'deploy_pipeline_id': 'deployPipelineId',
             'is_pass_all_parameters_enabled': 'isPassAllParametersEnabled'
         }
-
         self._display_name = None
         self._description = None
         self._build_pipeline_stage_type = None

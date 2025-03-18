@@ -48,7 +48,6 @@ class AwsEc2AssetDetails(object):
             'aws_ec2_cost': 'MonthlyCostSummary',
             'attached_ebs_volumes_cost': 'MonthlyCostSummary'
         }
-
         self.attribute_map = {
             'compute': 'compute',
             'vm': 'vm',
@@ -56,7 +55,6 @@ class AwsEc2AssetDetails(object):
             'aws_ec2_cost': 'awsEc2Cost',
             'attached_ebs_volumes_cost': 'attachedEbsVolumesCost'
         }
-
         self._compute = None
         self._vm = None
         self._aws_ec2 = None

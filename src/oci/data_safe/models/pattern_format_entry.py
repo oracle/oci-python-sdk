@@ -55,13 +55,11 @@ class PatternFormatEntry(FormatEntry):
             'description': 'str',
             'pattern': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'description': 'description',
             'pattern': 'pattern'
         }
-
         self._type = None
         self._description = None
         self._pattern = None

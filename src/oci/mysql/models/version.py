@@ -33,12 +33,10 @@ class Version(object):
             'version': 'str',
             'description': 'str'
         }
-
         self.attribute_map = {
             'version': 'version',
             'description': 'description'
         }
-
         self._version = None
         self._description = None
 

@@ -43,14 +43,12 @@ class CustomPropertySetUsage(object):
             'value': 'str',
             'namespace_name': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'display_name': 'displayName',
             'value': 'value',
             'namespace_name': 'namespaceName'
         }
-
         self._key = None
         self._display_name = None
         self._value = None

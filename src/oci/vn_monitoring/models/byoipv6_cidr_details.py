@@ -37,12 +37,10 @@ class Byoipv6CidrDetails(object):
             'byoipv6_range_id': 'str',
             'ipv6_cidr_block': 'str'
         }
-
         self.attribute_map = {
             'byoipv6_range_id': 'byoipv6RangeId',
             'ipv6_cidr_block': 'ipv6CidrBlock'
         }
-
         self._byoipv6_range_id = None
         self._ipv6_cidr_block = None
 

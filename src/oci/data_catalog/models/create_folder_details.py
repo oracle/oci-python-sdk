@@ -90,7 +90,6 @@ class CreateFolderDetails(object):
             'harvest_status': 'str',
             'type_key': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'business_name': 'businessName',
@@ -103,7 +102,6 @@ class CreateFolderDetails(object):
             'harvest_status': 'harvestStatus',
             'type_key': 'typeKey'
         }
-
         self._display_name = None
         self._business_name = None
         self._description = None

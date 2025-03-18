@@ -176,7 +176,6 @@ class Model(object):
             'retention_operation_details': 'RetentionOperationDetails',
             'backup_operation_details': 'BackupOperationDetails'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -204,7 +203,6 @@ class Model(object):
             'retention_operation_details': 'retentionOperationDetails',
             'backup_operation_details': 'backupOperationDetails'
         }
-
         self._id = None
         self._compartment_id = None
         self._project_id = None

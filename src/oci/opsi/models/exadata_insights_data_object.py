@@ -70,7 +70,6 @@ class ExadataInsightsDataObject(OpsiDataObject):
             'columns_metadata': 'list[DataObjectColumnMetadata]',
             'supported_query_params': 'list[OpsiDataObjectSupportedQueryParam]'
         }
-
         self.attribute_map = {
             'identifier': 'identifier',
             'data_object_type': 'dataObjectType',
@@ -82,7 +81,6 @@ class ExadataInsightsDataObject(OpsiDataObject):
             'columns_metadata': 'columnsMetadata',
             'supported_query_params': 'supportedQueryParams'
         }
-
         self._identifier = None
         self._data_object_type = None
         self._display_name = None

@@ -33,12 +33,10 @@ class DatabaseConnectionDetails(object):
             'connection_string': 'DatabaseConnectionStringDetails',
             'connection_credentials': 'DatabaseConnectionCredentials'
         }
-
         self.attribute_map = {
             'connection_string': 'connectionString',
             'connection_credentials': 'connectionCredentials'
         }
-
         self._connection_string = None
         self._connection_credentials = None
 

@@ -66,7 +66,6 @@ class OutputLink(FlowPortLink):
             'port': 'str',
             'to_links': 'list[str]'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -77,7 +76,6 @@ class OutputLink(FlowPortLink):
             'port': 'port',
             'to_links': 'toLinks'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

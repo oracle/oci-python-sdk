@@ -67,12 +67,10 @@ class RoutingAction(object):
             'action': 'str',
             'action_type': 'str'
         }
-
         self.attribute_map = {
             'action': 'action',
             'action_type': 'actionType'
         }
-
         self._action = None
         self._action_type = None
 

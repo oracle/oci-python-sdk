@@ -61,7 +61,6 @@ class UpdateScheduledTaskDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'schedules': 'list[Schedule]'
         }
-
         self.attribute_map = {
             'kind': 'kind',
             'display_name': 'displayName',
@@ -69,7 +68,6 @@ class UpdateScheduledTaskDetails(object):
             'defined_tags': 'definedTags',
             'schedules': 'schedules'
         }
-
         self._kind = None
         self._display_name = None
         self._freeform_tags = None

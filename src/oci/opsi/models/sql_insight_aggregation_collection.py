@@ -48,7 +48,6 @@ class SqlInsightAggregationCollection(object):
             'items': 'list[SqlInsightAggregation]',
             'thresholds': 'SqlInsightThresholds'
         }
-
         self.attribute_map = {
             'time_interval_start': 'timeIntervalStart',
             'time_interval_end': 'timeIntervalEnd',
@@ -56,7 +55,6 @@ class SqlInsightAggregationCollection(object):
             'items': 'items',
             'thresholds': 'thresholds'
         }
-
         self._time_interval_start = None
         self._time_interval_end = None
         self._inventory = None

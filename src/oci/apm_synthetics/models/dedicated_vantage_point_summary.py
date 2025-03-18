@@ -88,7 +88,6 @@ class DedicatedVantagePointSummary(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'monitor_status_count_map': 'MonitorStatusCountMap'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -102,7 +101,6 @@ class DedicatedVantagePointSummary(object):
             'defined_tags': 'definedTags',
             'monitor_status_count_map': 'monitorStatusCountMap'
         }
-
         self._id = None
         self._display_name = None
         self._name = None

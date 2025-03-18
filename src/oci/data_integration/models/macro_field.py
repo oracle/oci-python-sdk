@@ -90,7 +90,6 @@ class MacroField(TypedObject):
             'use_type': 'ConfiguredType',
             'labels': 'list[str]'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -106,7 +105,6 @@ class MacroField(TypedObject):
             'use_type': 'useType',
             'labels': 'labels'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

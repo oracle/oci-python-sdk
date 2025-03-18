@@ -192,7 +192,6 @@ class Condition(object):
             'evaluate_condition_if': 'str',
             'urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy': 'ConditionExtensionOciconsolesignonpolicyconsentPolicy'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -216,7 +215,6 @@ class Condition(object):
             'evaluate_condition_if': 'evaluateConditionIf',
             'urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:ociconsolesignonpolicyconsent:Policy'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

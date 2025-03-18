@@ -33,12 +33,10 @@ class UpdateTargetRecipeDetectorRuleDetails(object):
             'detector_rule_id': 'str',
             'details': 'UpdateTargetDetectorRuleDetails'
         }
-
         self.attribute_map = {
             'detector_rule_id': 'detectorRuleId',
             'details': 'details'
         }
-
         self._detector_rule_id = None
         self._details = None
 

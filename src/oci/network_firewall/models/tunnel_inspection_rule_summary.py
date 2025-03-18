@@ -70,7 +70,6 @@ class TunnelInspectionRuleSummary(object):
             'priority_order': 'int',
             'parent_resource_id': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'protocol': 'protocol',
@@ -78,7 +77,6 @@ class TunnelInspectionRuleSummary(object):
             'priority_order': 'priorityOrder',
             'parent_resource_id': 'parentResourceId'
         }
-
         self._name = None
         self._protocol = None
         self._action = None

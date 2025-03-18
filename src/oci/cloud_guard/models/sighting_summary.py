@@ -189,7 +189,6 @@ class SightingSummary(object):
             'time_last_occurred': 'datetime',
             'regions': 'list[str]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -212,7 +211,6 @@ class SightingSummary(object):
             'time_last_occurred': 'timeLastOccurred',
             'regions': 'regions'
         }
-
         self._id = None
         self._compartment_id = None
         self._problem_id = None

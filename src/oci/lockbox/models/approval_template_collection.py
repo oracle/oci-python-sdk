@@ -28,11 +28,9 @@ class ApprovalTemplateCollection(object):
         self.swagger_types = {
             'items': 'list[ApprovalTemplateSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

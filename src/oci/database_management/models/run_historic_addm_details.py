@@ -33,12 +33,10 @@ class RunHistoricAddmDetails(object):
             'start_snapshot_id': 'int',
             'end_snapshot_id': 'int'
         }
-
         self.attribute_map = {
             'start_snapshot_id': 'startSnapshotId',
             'end_snapshot_id': 'endSnapshotId'
         }
-
         self._start_snapshot_id = None
         self._end_snapshot_id = None
 

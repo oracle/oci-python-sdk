@@ -68,13 +68,11 @@ class PoolSchedule(object):
             'start_time': 'int',
             'stop_time': 'int'
         }
-
         self.attribute_map = {
             'day_of_week': 'dayOfWeek',
             'start_time': 'startTime',
             'stop_time': 'stopTime'
         }
-
         self._day_of_week = None
         self._start_time = None
         self._stop_time = None

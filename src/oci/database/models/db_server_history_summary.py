@@ -38,13 +38,11 @@ class DbServerHistorySummary(object):
             'display_name': 'str',
             'db_server_patching_details': 'DbServerPatchingDetails'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
             'db_server_patching_details': 'dbServerPatchingDetails'
         }
-
         self._id = None
         self._display_name = None
         self._db_server_patching_details = None

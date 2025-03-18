@@ -53,7 +53,6 @@ class AppCatalogListingResourceVersionAgreements(object):
             'time_retrieved': 'datetime',
             'signature': 'str'
         }
-
         self.attribute_map = {
             'listing_id': 'listingId',
             'listing_resource_version': 'listingResourceVersion',
@@ -62,7 +61,6 @@ class AppCatalogListingResourceVersionAgreements(object):
             'time_retrieved': 'timeRetrieved',
             'signature': 'signature'
         }
-
         self._listing_id = None
         self._listing_resource_version = None
         self._oracle_terms_of_use_link = None

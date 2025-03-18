@@ -38,13 +38,11 @@ class HistoricalMetric(object):
             'aggregation': 'str',
             'value': 'float'
         }
-
         self.attribute_map = {
             'name': 'name',
             'aggregation': 'aggregation',
             'value': 'value'
         }
-
         self._name = None
         self._aggregation = None
         self._value = None

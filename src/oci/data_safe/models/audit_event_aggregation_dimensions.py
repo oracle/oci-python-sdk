@@ -118,7 +118,6 @@ class AuditEventAggregationDimensions(object):
             'audit_type': 'list[str]',
             'event_name': 'list[str]'
         }
-
         self.attribute_map = {
             'audit_event_time': 'auditEventTime',
             'db_user_name': 'dbUserName',
@@ -132,7 +131,6 @@ class AuditEventAggregationDimensions(object):
             'audit_type': 'auditType',
             'event_name': 'eventName'
         }
-
         self._audit_event_time = None
         self._db_user_name = None
         self._target_id = None

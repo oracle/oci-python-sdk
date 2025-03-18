@@ -52,13 +52,11 @@ class MutualTransportLayerSecurity(object):
             'maximum_validity': 'int',
             'mode': 'str'
         }
-
         self.attribute_map = {
             'certificate_id': 'certificateId',
             'maximum_validity': 'maximumValidity',
             'mode': 'mode'
         }
-
         self._certificate_id = None
         self._maximum_validity = None
         self._mode = None

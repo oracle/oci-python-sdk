@@ -73,7 +73,6 @@ class UpdateProjectDetails(object):
             'parent_ref': 'ParentReference',
             'registry_metadata': 'RegistryMetadata'
         }
-
         self.attribute_map = {
             'key': 'key',
             'model_type': 'modelType',
@@ -86,7 +85,6 @@ class UpdateProjectDetails(object):
             'parent_ref': 'parentRef',
             'registry_metadata': 'registryMetadata'
         }
-
         self._key = None
         self._model_type = None
         self._model_version = None

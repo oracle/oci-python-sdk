@@ -45,14 +45,12 @@ class DefaultJobConfigurationDetails(JobConfigurationDetails):
             'command_line_arguments': 'str',
             'maximum_runtime_in_minutes': 'int'
         }
-
         self.attribute_map = {
             'job_type': 'jobType',
             'environment_variables': 'environmentVariables',
             'command_line_arguments': 'commandLineArguments',
             'maximum_runtime_in_minutes': 'maximumRuntimeInMinutes'
         }
-
         self._job_type = None
         self._environment_variables = None
         self._command_line_arguments = None

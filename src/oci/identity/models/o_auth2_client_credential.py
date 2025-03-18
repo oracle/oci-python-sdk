@@ -95,7 +95,6 @@ class OAuth2ClientCredential(object):
             'lifecycle_state': 'str',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'scopes': 'scopes',
             'password': 'password',
@@ -108,7 +107,6 @@ class OAuth2ClientCredential(object):
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated'
         }
-
         self._scopes = None
         self._password = None
         self._user_id = None

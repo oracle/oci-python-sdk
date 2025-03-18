@@ -46,12 +46,10 @@ class UpdateInternalOccCapacityRequestDetails(object):
             'request_state': 'str',
             'lifecycle_details': 'str'
         }
-
         self.attribute_map = {
             'request_state': 'requestState',
             'lifecycle_details': 'lifecycleDetails'
         }
-
         self._request_state = None
         self._lifecycle_details = None
 

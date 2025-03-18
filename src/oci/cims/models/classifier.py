@@ -90,7 +90,6 @@ class Classifier(object):
             'scope': 'str',
             'unit': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -100,7 +99,6 @@ class Classifier(object):
             'scope': 'scope',
             'unit': 'unit'
         }
-
         self._id = None
         self._name = None
         self._label = None

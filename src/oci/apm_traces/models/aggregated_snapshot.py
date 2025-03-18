@@ -33,12 +33,10 @@ class AggregatedSnapshot(object):
             'details': 'list[SnapshotDetail]',
             'aggregated_stack_traces': 'list[AggregatedStackTrace]'
         }
-
         self.attribute_map = {
             'details': 'details',
             'aggregated_stack_traces': 'aggregatedStackTraces'
         }
-
         self._details = None
         self._aggregated_stack_traces = None
 

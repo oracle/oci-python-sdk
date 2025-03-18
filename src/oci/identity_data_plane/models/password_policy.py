@@ -53,7 +53,6 @@ class PasswordPolicy(object):
             'is_special_characters_required': 'bool',
             'is_username_containment_allowed': 'bool'
         }
-
         self.attribute_map = {
             'minimum_password_length': 'minimumPasswordLength',
             'is_uppercase_characters_required': 'isUppercaseCharactersRequired',
@@ -62,7 +61,6 @@ class PasswordPolicy(object):
             'is_special_characters_required': 'isSpecialCharactersRequired',
             'is_username_containment_allowed': 'isUsernameContainmentAllowed'
         }
-
         self._minimum_password_length = None
         self._is_uppercase_characters_required = None
         self._is_lowercase_characters_required = None

@@ -77,7 +77,6 @@ class ExternalScmConfiguration(ScmConfiguration):
             'username': 'str',
             'pat_secret_id': 'str'
         }
-
         self.attribute_map = {
             'scm_type': 'scmType',
             'branch': 'branch',
@@ -88,7 +87,6 @@ class ExternalScmConfiguration(ScmConfiguration):
             'username': 'username',
             'pat_secret_id': 'patSecretId'
         }
-
         self._scm_type = None
         self._branch = None
         self._build_file_location = None

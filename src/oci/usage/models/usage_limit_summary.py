@@ -139,7 +139,6 @@ class UsageLimitSummary(object):
             'max_hard_limit': 'str',
             'sku_part_id': 'str'
         }
-
         self.attribute_map = {
             'time_created': 'timeCreated',
             'entitlement_id': 'entitlementId',
@@ -158,7 +157,6 @@ class UsageLimitSummary(object):
             'max_hard_limit': 'maxHardLimit',
             'sku_part_id': 'skuPartId'
         }
-
         self._time_created = None
         self._entitlement_id = None
         self._id = None

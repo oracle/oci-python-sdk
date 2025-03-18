@@ -126,7 +126,6 @@ class DeployPipelineRedeployment(Deployment):
             'system_tags': 'dict(str, dict(str, object))',
             'previous_deployment_id': 'str'
         }
-
         self.attribute_map = {
             'deploy_pipeline_artifacts': 'deployPipelineArtifacts',
             'deploy_pipeline_environments': 'deployPipelineEnvironments',
@@ -149,7 +148,6 @@ class DeployPipelineRedeployment(Deployment):
             'system_tags': 'systemTags',
             'previous_deployment_id': 'previousDeploymentId'
         }
-
         self._deploy_pipeline_artifacts = None
         self._deploy_pipeline_environments = None
         self._deployment_type = None

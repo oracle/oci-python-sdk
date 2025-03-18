@@ -40,13 +40,11 @@ class PrometheusEmitterDataSourceSummaryItem(DataSourceSummaryItem):
             'type': 'str',
             'name': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'type': 'type',
             'name': 'name'
         }
-
         self._key = None
         self._type = None
         self._name = None

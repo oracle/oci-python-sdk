@@ -28,11 +28,9 @@ class AuditProfileDimensions(object):
         self.swagger_types = {
             'is_paid_usage_enabled': 'bool'
         }
-
         self.attribute_map = {
             'is_paid_usage_enabled': 'isPaidUsageEnabled'
         }
-
         self._is_paid_usage_enabled = None
 
     @property

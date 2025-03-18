@@ -63,7 +63,6 @@ class ApiSpecificationRouteRequestPolicies(object):
             'query_parameter_transformations': 'QueryParameterTransformationPolicy',
             'response_cache_lookup': 'ResponseCacheLookupPolicy'
         }
-
         self.attribute_map = {
             'authorization': 'authorization',
             'cors': 'cors',
@@ -74,7 +73,6 @@ class ApiSpecificationRouteRequestPolicies(object):
             'query_parameter_transformations': 'queryParameterTransformations',
             'response_cache_lookup': 'responseCacheLookup'
         }
-
         self._authorization = None
         self._cors = None
         self._query_parameter_validations = None

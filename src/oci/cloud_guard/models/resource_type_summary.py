@@ -43,14 +43,12 @@ class ResourceTypeSummary(object):
             'rules': 'list[RuleSummary]',
             'locks': 'list[ResourceLock]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'display_name': 'displayName',
             'rules': 'rules',
             'locks': 'locks'
         }
-
         self._name = None
         self._display_name = None
         self._rules = None

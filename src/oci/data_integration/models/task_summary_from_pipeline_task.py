@@ -115,7 +115,6 @@ class TaskSummaryFromPipelineTask(TaskSummary):
             'key_map': 'dict(str, str)',
             'pipeline': 'Pipeline'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -136,7 +135,6 @@ class TaskSummaryFromPipelineTask(TaskSummary):
             'key_map': 'keyMap',
             'pipeline': 'pipeline'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

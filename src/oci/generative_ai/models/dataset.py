@@ -42,11 +42,9 @@ class Dataset(object):
         self.swagger_types = {
             'dataset_type': 'str'
         }
-
         self.attribute_map = {
             'dataset_type': 'datasetType'
         }
-
         self._dataset_type = None
 
     @staticmethod

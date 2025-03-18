@@ -68,7 +68,6 @@ class SubscriptionMappingSummary(object):
             'time_updated': 'datetime',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'id': 'id',
             'subscription_id': 'subscriptionId',
@@ -80,7 +79,6 @@ class SubscriptionMappingSummary(object):
             'time_updated': 'timeUpdated',
             'system_tags': 'systemTags'
         }
-
         self._id = None
         self._subscription_id = None
         self._compartment_id = None

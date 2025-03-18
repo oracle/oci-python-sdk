@@ -55,13 +55,11 @@ class UpdateBulkProblemStatusDetails(object):
             'problem_ids': 'list[str]',
             'comment': 'str'
         }
-
         self.attribute_map = {
             'status': 'status',
             'problem_ids': 'problemIds',
             'comment': 'comment'
         }
-
         self._status = None
         self._problem_ids = None
         self._comment = None

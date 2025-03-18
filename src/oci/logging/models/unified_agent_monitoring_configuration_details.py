@@ -35,12 +35,10 @@ class UnifiedAgentMonitoringConfigurationDetails(UnifiedAgentServiceConfiguratio
             'configuration_type': 'str',
             'application_configurations': 'list[UnifiedAgentMonitoringApplicationConfigurationDetails]'
         }
-
         self.attribute_map = {
             'configuration_type': 'configurationType',
             'application_configurations': 'applicationConfigurations'
         }
-
         self._configuration_type = None
         self._application_configurations = None
         self._configuration_type = 'MONITORING'

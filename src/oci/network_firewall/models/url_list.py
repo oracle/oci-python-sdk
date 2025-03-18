@@ -45,14 +45,12 @@ class UrlList(object):
             'total_urls': 'int',
             'parent_resource_id': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'urls': 'urls',
             'total_urls': 'totalUrls',
             'parent_resource_id': 'parentResourceId'
         }
-
         self._name = None
         self._urls = None
         self._total_urls = None

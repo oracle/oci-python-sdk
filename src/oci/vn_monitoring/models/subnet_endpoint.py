@@ -40,13 +40,11 @@ class SubnetEndpoint(Endpoint):
             'address': 'str',
             'subnet_id': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'address': 'address',
             'subnet_id': 'subnetId'
         }
-
         self._type = None
         self._address = None
         self._subnet_id = None

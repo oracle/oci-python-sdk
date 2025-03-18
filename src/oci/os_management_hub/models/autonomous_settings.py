@@ -33,12 +33,10 @@ class AutonomousSettings(object):
             'is_data_collection_authorized': 'bool',
             'scheduled_job_id': 'str'
         }
-
         self.attribute_map = {
             'is_data_collection_authorized': 'isDataCollectionAuthorized',
             'scheduled_job_id': 'scheduledJobId'
         }
-
         self._is_data_collection_authorized = None
         self._scheduled_job_id = None
 

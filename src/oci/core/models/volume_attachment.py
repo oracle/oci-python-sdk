@@ -167,7 +167,6 @@ class VolumeAttachment(object):
             'iscsi_login_state': 'str',
             'is_volume_created_during_launch': 'bool'
         }
-
         self.attribute_map = {
             'attachment_type': 'attachmentType',
             'availability_domain': 'availabilityDomain',
@@ -186,7 +185,6 @@ class VolumeAttachment(object):
             'iscsi_login_state': 'iscsiLoginState',
             'is_volume_created_during_launch': 'isVolumeCreatedDuringLaunch'
         }
-
         self._attachment_type = None
         self._availability_domain = None
         self._compartment_id = None

@@ -32,11 +32,9 @@ class VerticalScalingScheduleDetails(object):
         self.swagger_types = {
             'schedule_type': 'str'
         }
-
         self.attribute_map = {
             'schedule_type': 'scheduleType'
         }
-
         self._schedule_type = None
 
     @staticmethod

@@ -43,14 +43,12 @@ class AppAdminRoles(object):
             'display': 'str',
             'description': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ref': '$ref',
             'display': 'display',
             'description': 'description'
         }
-
         self._value = None
         self._ref = None
         self._display = None

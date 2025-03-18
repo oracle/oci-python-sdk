@@ -38,13 +38,11 @@ class WorkRequestError(object):
             'message': 'str',
             'time_stamp': 'datetime'
         }
-
         self.attribute_map = {
             'code': 'code',
             'message': 'message',
             'time_stamp': 'timeStamp'
         }
-
         self._code = None
         self._message = None
         self._time_stamp = None

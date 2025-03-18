@@ -38,13 +38,11 @@ class ComputeInstanceVnicMapping(object):
             'destination_subnet_id': 'str',
             'destination_nsg_id_list': 'list[str]'
         }
-
         self.attribute_map = {
             'source_vnic_id': 'sourceVnicId',
             'destination_subnet_id': 'destinationSubnetId',
             'destination_nsg_id_list': 'destinationNsgIdList'
         }
-
         self._source_vnic_id = None
         self._destination_subnet_id = None
         self._destination_nsg_id_list = None

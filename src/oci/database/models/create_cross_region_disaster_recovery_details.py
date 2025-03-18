@@ -333,7 +333,6 @@ class CreateCrossRegionDisasterRecoveryDetails(CreateAutonomousDatabaseBase):
             'remote_disaster_recovery_type': 'str',
             'is_replicate_automatic_backups': 'bool'
         }
-
         self.attribute_map = {
             'subscription_id': 'subscriptionId',
             'compartment_id': 'compartmentId',
@@ -393,7 +392,6 @@ class CreateCrossRegionDisasterRecoveryDetails(CreateAutonomousDatabaseBase):
             'remote_disaster_recovery_type': 'remoteDisasterRecoveryType',
             'is_replicate_automatic_backups': 'isReplicateAutomaticBackups'
         }
-
         self._subscription_id = None
         self._compartment_id = None
         self._character_set = None

@@ -43,14 +43,12 @@ class AppCatalogListingSummary(object):
             'summary': 'str',
             'publisher_name': 'str'
         }
-
         self.attribute_map = {
             'listing_id': 'listingId',
             'display_name': 'displayName',
             'summary': 'summary',
             'publisher_name': 'publisherName'
         }
-
         self._listing_id = None
         self._display_name = None
         self._summary = None

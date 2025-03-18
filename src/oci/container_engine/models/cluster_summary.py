@@ -149,7 +149,6 @@ class ClusterSummary(object):
             'cluster_pod_network_options': 'list[ClusterPodNetworkOptionDetails]',
             'type': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -170,7 +169,6 @@ class ClusterSummary(object):
             'cluster_pod_network_options': 'clusterPodNetworkOptions',
             'type': 'type'
         }
-
         self._id = None
         self._name = None
         self._compartment_id = None

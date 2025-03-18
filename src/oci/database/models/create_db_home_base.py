@@ -99,7 +99,6 @@ class CreateDbHomeBase(object):
             'is_desupported_version': 'bool',
             'is_unified_auditing_enabled': 'bool'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'kms_key_id': 'kmsKeyId',
@@ -111,7 +110,6 @@ class CreateDbHomeBase(object):
             'is_desupported_version': 'isDesupportedVersion',
             'is_unified_auditing_enabled': 'isUnifiedAuditingEnabled'
         }
-
         self._display_name = None
         self._kms_key_id = None
         self._kms_key_version_id = None

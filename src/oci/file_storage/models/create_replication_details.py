@@ -63,7 +63,6 @@ class CreateReplicationDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'locks': 'list[ResourceLock]'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'source_id': 'sourceId',
@@ -74,7 +73,6 @@ class CreateReplicationDetails(object):
             'defined_tags': 'definedTags',
             'locks': 'locks'
         }
-
         self._compartment_id = None
         self._source_id = None
         self._target_id = None

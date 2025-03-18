@@ -38,13 +38,11 @@ class KeyAttribute(object):
             'shape_field': 'ShapeField',
             'attribute': 'ShapeField'
         }
-
         self.attribute_map = {
             'position': 'position',
             'shape_field': 'shapeField',
             'attribute': 'attribute'
         }
-
         self._position = None
         self._shape_field = None
         self._attribute = None

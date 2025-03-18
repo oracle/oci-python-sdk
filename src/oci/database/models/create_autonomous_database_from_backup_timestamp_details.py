@@ -337,7 +337,6 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
             'use_latest_available_backup_time_stamp': 'bool',
             'clone_table_space_list': 'list[int]'
         }
-
         self.attribute_map = {
             'subscription_id': 'subscriptionId',
             'compartment_id': 'compartmentId',
@@ -399,7 +398,6 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
             'use_latest_available_backup_time_stamp': 'useLatestAvailableBackupTimeStamp',
             'clone_table_space_list': 'cloneTableSpaceList'
         }
-
         self._subscription_id = None
         self._compartment_id = None
         self._character_set = None

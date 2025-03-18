@@ -39,12 +39,10 @@ class LogRuleTaskDetails(TaskDetails):
             'kind': 'str',
             'condition': 'str'
         }
-
         self.attribute_map = {
             'kind': 'kind',
             'condition': 'condition'
         }
-
         self._kind = None
         self._condition = None
         self._kind = 'logRule'

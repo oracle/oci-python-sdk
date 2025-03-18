@@ -50,7 +50,6 @@ class CreateSkillCompositeEntityDetails(CreateSkillEntityDetails):
             'actions': 'list[EntityAction]',
             'natural_language_mapping': 'EntityNaturalLanguageMapping'
         }
-
         self.attribute_map = {
             'name': 'name',
             'type': 'type',
@@ -58,7 +57,6 @@ class CreateSkillCompositeEntityDetails(CreateSkillEntityDetails):
             'actions': 'actions',
             'natural_language_mapping': 'naturalLanguageMapping'
         }
-
         self._name = None
         self._type = None
         self._attributes = None

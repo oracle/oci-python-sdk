@@ -77,7 +77,6 @@ class RunLogSummary(object):
             'time_created': 'datetime',
             'type': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'run_id': 'runId',
@@ -86,7 +85,6 @@ class RunLogSummary(object):
             'time_created': 'timeCreated',
             'type': 'type'
         }
-
         self._name = None
         self._run_id = None
         self._size_in_bytes = None

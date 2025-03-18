@@ -33,12 +33,10 @@ class UnifiedAgentCustomSection(object):
             'name': 'str',
             'params': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'name': 'name',
             'params': 'params'
         }
-
         self._name = None
         self._params = None
 

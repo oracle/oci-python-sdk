@@ -53,7 +53,6 @@ class ExtensionUserCredentialsUser(object):
             'api_keys': 'list[UserExtApiKeys]',
             'o_auth2_client_credentials': 'list[UserExtOAuth2ClientCredentials]'
         }
-
         self.attribute_map = {
             'db_credentials': 'dbCredentials',
             'customer_secret_keys': 'customerSecretKeys',
@@ -62,7 +61,6 @@ class ExtensionUserCredentialsUser(object):
             'api_keys': 'apiKeys',
             'o_auth2_client_credentials': 'oAuth2ClientCredentials'
         }
-
         self._db_credentials = None
         self._customer_secret_keys = None
         self._auth_tokens = None

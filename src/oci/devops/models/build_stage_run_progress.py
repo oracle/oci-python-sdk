@@ -117,7 +117,6 @@ class BuildStageRunProgress(BuildPipelineStageRunProgress):
             'exported_variables': 'ExportedVariableCollection',
             'private_access_config': 'NetworkChannel'
         }
-
         self.attribute_map = {
             'stage_display_name': 'stageDisplayName',
             'build_pipeline_stage_type': 'buildPipelineStageType',
@@ -137,7 +136,6 @@ class BuildStageRunProgress(BuildPipelineStageRunProgress):
             'exported_variables': 'exportedVariables',
             'private_access_config': 'privateAccessConfig'
         }
-
         self._stage_display_name = None
         self._build_pipeline_stage_type = None
         self._build_pipeline_stage_id = None

@@ -97,7 +97,6 @@ class CreateAlertPolicyDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'alert_policy_type': 'alertPolicyType',
             'display_name': 'displayName',
@@ -108,7 +107,6 @@ class CreateAlertPolicyDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._alert_policy_type = None
         self._display_name = None
         self._description = None

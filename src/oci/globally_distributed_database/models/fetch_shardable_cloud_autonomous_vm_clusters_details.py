@@ -90,7 +90,6 @@ class FetchShardableCloudAutonomousVmClustersDetails(object):
             'are_depleted_clusters_included': 'bool',
             'regions': 'list[str]'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'lifecycle_state': 'lifecycleState',
@@ -99,7 +98,6 @@ class FetchShardableCloudAutonomousVmClustersDetails(object):
             'are_depleted_clusters_included': 'areDepletedClustersIncluded',
             'regions': 'regions'
         }
-
         self._compartment_id = None
         self._lifecycle_state = None
         self._lifecycle_state_details = None

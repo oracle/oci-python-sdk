@@ -38,13 +38,11 @@ class InstallPatchDetails(object):
             'cluster_admin_password': 'str',
             'patching_config': 'OdhPatchingConfig'
         }
-
         self.attribute_map = {
             'version': 'version',
             'cluster_admin_password': 'clusterAdminPassword',
             'patching_config': 'patchingConfig'
         }
-
         self._version = None
         self._cluster_admin_password = None
         self._patching_config = None

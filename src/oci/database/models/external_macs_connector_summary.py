@@ -102,7 +102,6 @@ class ExternalMacsConnectorSummary(ExternalDatabaseConnectorSummary):
             'connection_credentials': 'DatabaseConnectionCredentials',
             'connector_agent_id': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'freeform_tags': 'freeformTags',
@@ -120,7 +119,6 @@ class ExternalMacsConnectorSummary(ExternalDatabaseConnectorSummary):
             'connection_credentials': 'connectionCredentials',
             'connector_agent_id': 'connectorAgentId'
         }
-
         self._compartment_id = None
         self._freeform_tags = None
         self._defined_tags = None

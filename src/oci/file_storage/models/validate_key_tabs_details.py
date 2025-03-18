@@ -33,12 +33,10 @@ class ValidateKeyTabsDetails(object):
             'mount_target_id': 'str',
             'key_tab_secret_details': 'KeyTabSecretDetails'
         }
-
         self.attribute_map = {
             'mount_target_id': 'mountTargetId',
             'key_tab_secret_details': 'keyTabSecretDetails'
         }
-
         self._mount_target_id = None
         self._key_tab_secret_details = None
 

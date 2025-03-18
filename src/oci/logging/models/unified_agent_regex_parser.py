@@ -75,7 +75,6 @@ class UnifiedAgentRegexParser(UnifiedAgentParser):
             'expression': 'str',
             'time_format': 'str'
         }
-
         self.attribute_map = {
             'parser_type': 'parserType',
             'field_time_key': 'fieldTimeKey',
@@ -88,7 +87,6 @@ class UnifiedAgentRegexParser(UnifiedAgentParser):
             'expression': 'expression',
             'time_format': 'timeFormat'
         }
-
         self._parser_type = None
         self._field_time_key = None
         self._types = None

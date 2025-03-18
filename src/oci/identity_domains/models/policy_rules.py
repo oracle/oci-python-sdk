@@ -43,14 +43,12 @@ class PolicyRules(object):
             'sequence': 'int',
             'name': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ref': '$ref',
             'sequence': 'sequence',
             'name': 'name'
         }
-
         self._value = None
         self._ref = None
         self._sequence = None

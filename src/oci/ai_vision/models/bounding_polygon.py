@@ -28,11 +28,9 @@ class BoundingPolygon(object):
         self.swagger_types = {
             'normalized_vertices': 'list[NormalizedVertex]'
         }
-
         self.attribute_map = {
             'normalized_vertices': 'normalizedVertices'
         }
-
         self._normalized_vertices = None
 
     @property

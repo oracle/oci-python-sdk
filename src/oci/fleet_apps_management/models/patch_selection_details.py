@@ -48,11 +48,9 @@ class PatchSelectionDetails(object):
         self.swagger_types = {
             'selection_type': 'str'
         }
-
         self.attribute_map = {
             'selection_type': 'selectionType'
         }
-
         self._selection_type = None
 
     @staticmethod

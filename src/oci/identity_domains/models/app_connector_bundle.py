@@ -67,7 +67,6 @@ class AppConnectorBundle(object):
             'display': 'str',
             'well_known_id': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'type': 'type',
@@ -75,7 +74,6 @@ class AppConnectorBundle(object):
             'display': 'display',
             'well_known_id': 'wellKnownId'
         }
-
         self._value = None
         self._type = None
         self._ref = None

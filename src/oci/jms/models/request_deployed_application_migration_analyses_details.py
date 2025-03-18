@@ -29,11 +29,9 @@ class RequestDeployedApplicationMigrationAnalysesDetails(object):
         self.swagger_types = {
             'targets': 'list[DeployedApplicationMigrationAnalysesTarget]'
         }
-
         self.attribute_map = {
             'targets': 'targets'
         }
-
         self._targets = None
 
     @property

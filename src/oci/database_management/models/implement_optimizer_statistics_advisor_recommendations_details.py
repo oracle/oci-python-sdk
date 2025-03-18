@@ -33,12 +33,10 @@ class ImplementOptimizerStatisticsAdvisorRecommendationsDetails(object):
             'task_name': 'str',
             'job_details': 'ImplementOptimizerStatisticsAdvisorRecommendationsJob'
         }
-
         self.attribute_map = {
             'task_name': 'taskName',
             'job_details': 'jobDetails'
         }
-
         self._task_name = None
         self._job_details = None
 

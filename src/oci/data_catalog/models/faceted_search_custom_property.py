@@ -38,13 +38,11 @@ class FacetedSearchCustomProperty(object):
             'value': 'str',
             'data_type': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'value': 'value',
             'data_type': 'dataType'
         }
-
         self._name = None
         self._value = None
         self._data_type = None

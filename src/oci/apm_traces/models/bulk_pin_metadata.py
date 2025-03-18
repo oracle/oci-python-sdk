@@ -64,14 +64,12 @@ class BulkPinMetadata(object):
             'attributes_pinned': 'int',
             'synthetic_attributes_pinned': 'int'
         }
-
         self.attribute_map = {
             'operation_status': 'operationStatus',
             'operation_type': 'operationType',
             'attributes_pinned': 'attributesPinned',
             'synthetic_attributes_pinned': 'syntheticAttributesPinned'
         }
-
         self._operation_status = None
         self._operation_type = None
         self._attributes_pinned = None

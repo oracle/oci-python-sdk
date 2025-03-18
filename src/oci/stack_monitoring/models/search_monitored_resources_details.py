@@ -231,7 +231,6 @@ class SearchMonitoredResourcesDetails(object):
             'sort_by': 'str',
             'property_equals': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'compartment_ids': 'compartmentIds',
@@ -256,7 +255,6 @@ class SearchMonitoredResourcesDetails(object):
             'sort_by': 'sortBy',
             'property_equals': 'propertyEquals'
         }
-
         self._compartment_id = None
         self._compartment_ids = None
         self._lifecycle_states = None

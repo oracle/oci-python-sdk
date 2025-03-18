@@ -254,7 +254,6 @@ class Job(object):
             'error_message': 'str',
             'uri': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'display_name': 'displayName',
@@ -282,7 +281,6 @@ class Job(object):
             'error_message': 'errorMessage',
             'uri': 'uri'
         }
-
         self._key = None
         self._display_name = None
         self._description = None

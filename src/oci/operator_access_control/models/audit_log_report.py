@@ -61,14 +61,12 @@ class AuditLogReport(object):
             'audit_report_status': 'str',
             'time_of_report_generation': 'datetime'
         }
-
         self.attribute_map = {
             'report': 'report',
             'process_tree': 'processTree',
             'audit_report_status': 'auditReportStatus',
             'time_of_report_generation': 'timeOfReportGeneration'
         }
-
         self._report = None
         self._process_tree = None
         self._audit_report_status = None

@@ -48,7 +48,6 @@ class ScanDetails(object):
             'scan_listener_port_tcp_ssl': 'int',
             'ips': 'list[str]'
         }
-
         self.attribute_map = {
             'hostname': 'hostname',
             'port': 'port',
@@ -56,7 +55,6 @@ class ScanDetails(object):
             'scan_listener_port_tcp_ssl': 'scanListenerPortTcpSsl',
             'ips': 'ips'
         }
-
         self._hostname = None
         self._port = None
         self._scan_listener_port_tcp = None

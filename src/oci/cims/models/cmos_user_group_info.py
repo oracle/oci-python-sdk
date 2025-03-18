@@ -33,12 +33,10 @@ class CmosUserGroupInfo(object):
             'user_group_id': 'str',
             'user_group_name': 'str'
         }
-
         self.attribute_map = {
             'user_group_id': 'userGroupId',
             'user_group_name': 'userGroupName'
         }
-
         self._user_group_id = None
         self._user_group_name = None
 

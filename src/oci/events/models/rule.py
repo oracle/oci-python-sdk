@@ -116,7 +116,6 @@ class Rule(object):
             'time_created': 'datetime',
             'lifecycle_message': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
@@ -131,7 +130,6 @@ class Rule(object):
             'time_created': 'timeCreated',
             'lifecycle_message': 'lifecycleMessage'
         }
-
         self._display_name = None
         self._description = None
         self._lifecycle_state = None

@@ -317,7 +317,6 @@ class Me(object):
             'urn_ietf_params_scim_schemas_oracle_idcs_extension_capabilities_user': 'ExtensionCapabilitiesUser',
             'urn_ietf_params_scim_schemas_oracle_idcs_extension_db_credentials_user': 'ExtensionDbCredentialsUser'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -370,7 +369,6 @@ class Me(object):
             'urn_ietf_params_scim_schemas_oracle_idcs_extension_capabilities_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:capabilities:User',
             'urn_ietf_params_scim_schemas_oracle_idcs_extension_db_credentials_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:dbCredentials:User'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

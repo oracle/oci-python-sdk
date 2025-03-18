@@ -35,12 +35,10 @@ class TerminatePreemptionAction(PreemptionAction):
             'type': 'str',
             'is_preserve_boot_volume': 'bool'
         }
-
         self.attribute_map = {
             'type': 'type',
             'is_preserve_boot_volume': 'isPreserveBootVolume'
         }
-
         self._type = None
         self._is_preserve_boot_volume = None
         self._type = 'TERMINATE'

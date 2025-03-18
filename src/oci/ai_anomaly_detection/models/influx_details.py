@@ -43,11 +43,9 @@ class InfluxDetails(object):
         self.swagger_types = {
             'influx_version': 'str'
         }
-
         self.attribute_map = {
             'influx_version': 'influxVersion'
         }
-
         self._influx_version = None
 
     @staticmethod

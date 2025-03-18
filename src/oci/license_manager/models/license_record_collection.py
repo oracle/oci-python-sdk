@@ -28,11 +28,9 @@ class LicenseRecordCollection(object):
         self.swagger_types = {
             'items': 'list[LicenseRecordSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

@@ -156,7 +156,6 @@ class ScheduledJobOperation(object):
             'software_source_ids': 'list[str]',
             'reboot_timeout_in_mins': 'int'
         }
-
         self.attribute_map = {
             'operation_type': 'operationType',
             'package_names': 'packageNames',
@@ -166,7 +165,6 @@ class ScheduledJobOperation(object):
             'software_source_ids': 'softwareSourceIds',
             'reboot_timeout_in_mins': 'rebootTimeoutInMins'
         }
-
         self._operation_type = None
         self._package_names = None
         self._windows_update_names = None

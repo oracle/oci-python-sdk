@@ -71,7 +71,6 @@ class UpdateModuleStreamDetails(object):
             'is_default': 'bool',
             'profiles': 'list[UpdateModuleStreamProfileDetails]'
         }
-
         self.attribute_map = {
             'stream_name': 'streamName',
             'status': 'status',
@@ -81,7 +80,6 @@ class UpdateModuleStreamDetails(object):
             'is_default': 'isDefault',
             'profiles': 'profiles'
         }
-
         self._stream_name = None
         self._status = None
         self._time_modified = None

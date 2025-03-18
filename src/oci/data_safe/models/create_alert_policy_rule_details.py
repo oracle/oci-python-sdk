@@ -38,13 +38,11 @@ class CreateAlertPolicyRuleDetails(object):
             'description': 'str',
             'display_name': 'str'
         }
-
         self.attribute_map = {
             'expression': 'expression',
             'description': 'description',
             'display_name': 'displayName'
         }
-
         self._expression = None
         self._description = None
         self._display_name = None

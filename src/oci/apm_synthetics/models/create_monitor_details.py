@@ -177,7 +177,6 @@ class CreateMonitorDetails(object):
             'batch_interval_in_seconds': 'int',
             'is_i_pv6': 'bool'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'monitor_type': 'monitorType',
@@ -199,7 +198,6 @@ class CreateMonitorDetails(object):
             'batch_interval_in_seconds': 'batchIntervalInSeconds',
             'is_i_pv6': 'isIPv6'
         }
-
         self._display_name = None
         self._monitor_type = None
         self._vantage_points = None

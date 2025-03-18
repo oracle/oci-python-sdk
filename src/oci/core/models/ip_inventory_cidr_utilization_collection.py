@@ -48,7 +48,6 @@ class IpInventoryCidrUtilizationCollection(object):
             'message': 'str',
             'compartment_id': 'str'
         }
-
         self.attribute_map = {
             'count': 'count',
             'last_updated_timestamp': 'lastUpdatedTimestamp',
@@ -56,7 +55,6 @@ class IpInventoryCidrUtilizationCollection(object):
             'message': 'message',
             'compartment_id': 'compartmentId'
         }
-
         self._count = None
         self._last_updated_timestamp = None
         self._ip_inventory_cidr_utilization_summary = None

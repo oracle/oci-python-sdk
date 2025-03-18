@@ -57,7 +57,6 @@ class TunnelRouteSummary(object):
             'as_path': 'list[int]',
             'advertiser': 'str'
         }
-
         self.attribute_map = {
             'prefix': 'prefix',
             'age': 'age',
@@ -65,7 +64,6 @@ class TunnelRouteSummary(object):
             'as_path': 'asPath',
             'advertiser': 'advertiser'
         }
-
         self._prefix = None
         self._age = None
         self._is_best_path = None

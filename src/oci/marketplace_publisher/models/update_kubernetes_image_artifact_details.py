@@ -60,7 +60,6 @@ class UpdateKubernetesImageArtifactDetails(UpdateArtifactDetails):
             'helm_chart': 'UpdateHelmChartImageDetails',
             'container_image_artifact_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
@@ -70,7 +69,6 @@ class UpdateKubernetesImageArtifactDetails(UpdateArtifactDetails):
             'helm_chart': 'helmChart',
             'container_image_artifact_ids': 'containerImageArtifactIds'
         }
-
         self._compartment_id = None
         self._display_name = None
         self._artifact_type = None

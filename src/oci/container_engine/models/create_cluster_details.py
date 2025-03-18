@@ -92,7 +92,6 @@ class CreateClusterDetails(object):
             'cluster_pod_network_options': 'list[ClusterPodNetworkOptionDetails]',
             'type': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'compartment_id': 'compartmentId',
@@ -107,7 +106,6 @@ class CreateClusterDetails(object):
             'cluster_pod_network_options': 'clusterPodNetworkOptions',
             'type': 'type'
         }
-
         self._name = None
         self._compartment_id = None
         self._endpoint_config = None

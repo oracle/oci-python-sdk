@@ -88,7 +88,6 @@ class LogAnalyticsAssociationParameter(object):
             'missing_properties': 'list[str]',
             'required_properties': 'list[str]'
         }
-
         self.attribute_map = {
             'agent_id': 'agentId',
             'entity_type': 'entityType',
@@ -102,7 +101,6 @@ class LogAnalyticsAssociationParameter(object):
             'missing_properties': 'missingProperties',
             'required_properties': 'requiredProperties'
         }
-
         self._agent_id = None
         self._entity_type = None
         self._entity_id = None

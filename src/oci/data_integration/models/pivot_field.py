@@ -85,7 +85,6 @@ class PivotField(TypedObject):
             'type': 'BaseType',
             'column_name_pattern': 'str'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -100,7 +99,6 @@ class PivotField(TypedObject):
             'type': 'type',
             'column_name_pattern': 'columnNamePattern'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

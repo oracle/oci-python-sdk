@@ -40,13 +40,11 @@ class DrProtectionGroupMemberDatabase(DrProtectionGroupMember):
             'member_type': 'str',
             'password_vault_secret_id': 'str'
         }
-
         self.attribute_map = {
             'member_id': 'memberId',
             'member_type': 'memberType',
             'password_vault_secret_id': 'passwordVaultSecretId'
         }
-
         self._member_id = None
         self._member_type = None
         self._password_vault_secret_id = None

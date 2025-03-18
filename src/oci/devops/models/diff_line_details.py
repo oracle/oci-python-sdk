@@ -61,14 +61,12 @@ class DiffLineDetails(object):
             'line_content': 'str',
             'conflict_marker': 'str'
         }
-
         self.attribute_map = {
             'base_line': 'baseLine',
             'target_line': 'targetLine',
             'line_content': 'lineContent',
             'conflict_marker': 'conflictMarker'
         }
-
         self._base_line = None
         self._target_line = None
         self._line_content = None

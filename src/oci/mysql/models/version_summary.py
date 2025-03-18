@@ -33,12 +33,10 @@ class VersionSummary(object):
             'version_family': 'str',
             'versions': 'list[Version]'
         }
-
         self.attribute_map = {
             'version_family': 'versionFamily',
             'versions': 'versions'
         }
-
         self._version_family = None
         self._versions = None
 

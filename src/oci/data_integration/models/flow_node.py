@@ -83,7 +83,6 @@ class FlowNode(object):
             'config_provider_delegate': 'ConfigProvider',
             'object_status': 'int'
         }
-
         self.attribute_map = {
             'key': 'key',
             'model_type': 'modelType',
@@ -98,7 +97,6 @@ class FlowNode(object):
             'config_provider_delegate': 'configProviderDelegate',
             'object_status': 'objectStatus'
         }
-
         self._key = None
         self._model_type = None
         self._model_version = None

@@ -48,11 +48,9 @@ class SourceLocation(object):
         self.swagger_types = {
             'source_location_type': 'str'
         }
-
         self.attribute_map = {
             'source_location_type': 'sourceLocationType'
         }
-
         self._source_location_type = None
 
     @staticmethod

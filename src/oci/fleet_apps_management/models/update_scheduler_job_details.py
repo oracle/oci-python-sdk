@@ -38,13 +38,11 @@ class UpdateSchedulerJobDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'time_scheduled': 'timeScheduled',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._time_scheduled = None
         self._freeform_tags = None
         self._defined_tags = None

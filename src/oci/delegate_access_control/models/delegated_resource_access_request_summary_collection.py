@@ -28,11 +28,9 @@ class DelegatedResourceAccessRequestSummaryCollection(object):
         self.swagger_types = {
             'items': 'list[DelegatedResourceAccessRequestSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

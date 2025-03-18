@@ -84,7 +84,6 @@ class PublicIpPool(object):
             'lifecycle_state': 'str',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'cidr_blocks': 'cidrBlocks',
             'compartment_id': 'compartmentId',
@@ -95,7 +94,6 @@ class PublicIpPool(object):
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated'
         }
-
         self._cidr_blocks = None
         self._compartment_id = None
         self._defined_tags = None

@@ -88,7 +88,6 @@ class DeployedApplicationInstallationUsageSummary(object):
             'time_first_seen': 'datetime',
             'time_last_seen': 'datetime'
         }
-
         self.attribute_map = {
             'application_installation_key': 'applicationInstallationKey',
             'application_key': 'applicationKey',
@@ -104,7 +103,6 @@ class DeployedApplicationInstallationUsageSummary(object):
             'time_first_seen': 'timeFirstSeen',
             'time_last_seen': 'timeLastSeen'
         }
-
         self._application_installation_key = None
         self._application_key = None
         self._fleet_id = None

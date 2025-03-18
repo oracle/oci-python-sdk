@@ -120,7 +120,6 @@ class Rule(object):
             'last_execution_status': 'str',
             'time_last_executed': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'description': 'description',
@@ -137,7 +136,6 @@ class Rule(object):
             'last_execution_status': 'lastExecutionStatus',
             'time_last_executed': 'timeLastExecuted'
         }
-
         self._id = None
         self._description = None
         self._compartment_id = None

@@ -38,13 +38,11 @@ class Path(object):
             'return_route': 'TrafficRoute',
             'topology': 'PathTopology'
         }
-
         self.attribute_map = {
             'forward_route': 'forwardRoute',
             'return_route': 'returnRoute',
             'topology': 'topology'
         }
-
         self._forward_route = None
         self._return_route = None
         self._topology = None

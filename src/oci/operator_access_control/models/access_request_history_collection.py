@@ -28,11 +28,9 @@ class AccessRequestHistoryCollection(object):
         self.swagger_types = {
             'items': 'list[AccessRequestHistorySummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

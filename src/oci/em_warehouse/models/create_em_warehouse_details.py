@@ -53,7 +53,6 @@ class CreateEmWarehouseDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'em_bridge_id': 'emBridgeId',
@@ -62,7 +61,6 @@ class CreateEmWarehouseDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._display_name = None
         self._em_bridge_id = None
         self._compartment_id = None

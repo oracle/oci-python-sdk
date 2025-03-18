@@ -43,14 +43,12 @@ class DatabaseIOAggregateMetrics(object):
             'iops_statistics': 'list[MetricStatisticsDefinition]',
             'io_throughput_statistics': 'list[MetricStatisticsDefinition]'
         }
-
         self.attribute_map = {
             'iops': 'iops',
             'io_throughput': 'ioThroughput',
             'iops_statistics': 'iopsStatistics',
             'io_throughput_statistics': 'ioThroughputStatistics'
         }
-
         self._iops = None
         self._io_throughput = None
         self._iops_statistics = None

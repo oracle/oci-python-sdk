@@ -35,12 +35,10 @@ class ForwardToBackendSet(Action):
             'name': 'str',
             'backend_set_name': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'backend_set_name': 'backendSetName'
         }
-
         self._name = None
         self._backend_set_name = None
         self._name = 'FORWARD_TO_BACKENDSET'

@@ -182,7 +182,6 @@ class DbSystemShapeSummary(object):
             'maximum_node_count': 'int',
             'available_core_count_per_node': 'int'
         }
-
         self.attribute_map = {
             'name': 'name',
             'shape_family': 'shapeFamily',
@@ -210,7 +209,6 @@ class DbSystemShapeSummary(object):
             'maximum_node_count': 'maximumNodeCount',
             'available_core_count_per_node': 'availableCoreCountPerNode'
         }
-
         self._name = None
         self._shape_family = None
         self._shape_type = None

@@ -33,12 +33,10 @@ class AnnotationAggregationDimensions(object):
             'label': 'Label',
             'updated_by': 'str'
         }
-
         self.attribute_map = {
             'label': 'label',
             'updated_by': 'updatedBy'
         }
-
         self._label = None
         self._updated_by = None
 

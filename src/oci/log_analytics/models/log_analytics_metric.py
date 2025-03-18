@@ -172,7 +172,6 @@ class LogAnalyticsMetric(object):
             'unit_type': 'str',
             'is_user_customized': 'bool'
         }
-
         self.attribute_map = {
             'aggregation_field': 'aggregationField',
             'bucket_metadata': 'bucketMetadata',
@@ -196,7 +195,6 @@ class LogAnalyticsMetric(object):
             'unit_type': 'unitType',
             'is_user_customized': 'isUserCustomized'
         }
-
         self._aggregation_field = None
         self._bucket_metadata = None
         self._clock_period = None

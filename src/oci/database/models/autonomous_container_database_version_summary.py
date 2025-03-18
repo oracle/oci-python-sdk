@@ -38,13 +38,11 @@ class AutonomousContainerDatabaseVersionSummary(object):
             'details': 'str',
             'supported_apps': 'list[AppVersionSummary]'
         }
-
         self.attribute_map = {
             'version': 'version',
             'details': 'details',
             'supported_apps': 'supportedApps'
         }
-
         self._version = None
         self._details = None
         self._supported_apps = None

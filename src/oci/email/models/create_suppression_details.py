@@ -33,12 +33,10 @@ class CreateSuppressionDetails(object):
             'compartment_id': 'str',
             'email_address': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'email_address': 'emailAddress'
         }
-
         self._compartment_id = None
         self._email_address = None
 

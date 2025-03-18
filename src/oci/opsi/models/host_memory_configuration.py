@@ -60,7 +60,6 @@ class HostMemoryConfiguration(HostConfigurationMetricGroup):
             'huge_page_size_in_kb': 'float',
             'huge_pages_total': 'int'
         }
-
         self.attribute_map = {
             'metric_name': 'metricName',
             'time_collected': 'timeCollected',
@@ -70,7 +69,6 @@ class HostMemoryConfiguration(HostConfigurationMetricGroup):
             'huge_page_size_in_kb': 'hugePageSizeInKB',
             'huge_pages_total': 'hugePagesTotal'
         }
-
         self._metric_name = None
         self._time_collected = None
         self._page_size_in_kb = None

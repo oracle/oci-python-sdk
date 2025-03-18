@@ -47,12 +47,10 @@ class StageOutput(object):
             'output_type': 'str',
             'step_name': 'str'
         }
-
         self.attribute_map = {
             'output_type': 'outputType',
             'step_name': 'stepName'
         }
-
         self._output_type = None
         self._step_name = None
 

@@ -75,7 +75,6 @@ class BasicNamedCredentialContent(NamedCredentialContent):
             'password_secret_id': 'str',
             'password_secret_access_mode': 'str'
         }
-
         self.attribute_map = {
             'credential_type': 'credentialType',
             'user_name': 'userName',
@@ -83,7 +82,6 @@ class BasicNamedCredentialContent(NamedCredentialContent):
             'password_secret_id': 'passwordSecretId',
             'password_secret_access_mode': 'passwordSecretAccessMode'
         }
-
         self._credential_type = None
         self._user_name = None
         self._role = None

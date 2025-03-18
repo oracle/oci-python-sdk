@@ -33,12 +33,10 @@ class ContainerConfiguration(object):
             'is_repository_created_on_first_push': 'bool',
             'namespace': 'str'
         }
-
         self.attribute_map = {
             'is_repository_created_on_first_push': 'isRepositoryCreatedOnFirstPush',
             'namespace': 'namespace'
         }
-
         self._is_repository_created_on_first_push = None
         self._namespace = None
 

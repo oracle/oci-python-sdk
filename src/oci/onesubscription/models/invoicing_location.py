@@ -58,7 +58,6 @@ class InvoicingLocation(object):
             'region': 'str',
             'tca_location_id': 'int'
         }
-
         self.attribute_map = {
             'address1': 'address1',
             'address2': 'address2',
@@ -68,7 +67,6 @@ class InvoicingLocation(object):
             'region': 'region',
             'tca_location_id': 'tcaLocationId'
         }
-
         self._address1 = None
         self._address2 = None
         self._postal_code = None

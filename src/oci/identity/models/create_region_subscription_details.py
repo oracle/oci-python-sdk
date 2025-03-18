@@ -28,11 +28,9 @@ class CreateRegionSubscriptionDetails(object):
         self.swagger_types = {
             'region_key': 'str'
         }
-
         self.attribute_map = {
             'region_key': 'regionKey'
         }
-
         self._region_key = None
 
     @property

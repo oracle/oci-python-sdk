@@ -73,7 +73,6 @@ class HealthEntity(object):
             'assertions': 'list[AssertionDetails]',
             'matched_concepts': 'list[MelConcept]'
         }
-
         self.attribute_map = {
             'offset': 'offset',
             'length': 'length',
@@ -86,7 +85,6 @@ class HealthEntity(object):
             'assertions': 'assertions',
             'matched_concepts': 'matchedConcepts'
         }
-
         self._offset = None
         self._length = None
         self._text = None

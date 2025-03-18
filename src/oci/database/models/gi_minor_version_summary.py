@@ -37,12 +37,10 @@ class GiMinorVersionSummary(object):
             'version': 'str',
             'grid_image_id': 'str'
         }
-
         self.attribute_map = {
             'version': 'version',
             'grid_image_id': 'gridImageId'
         }
-
         self._version = None
         self._grid_image_id = None
 

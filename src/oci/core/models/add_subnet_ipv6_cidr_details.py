@@ -28,11 +28,9 @@ class AddSubnetIpv6CidrDetails(object):
         self.swagger_types = {
             'ipv6_cidr_block': 'str'
         }
-
         self.attribute_map = {
             'ipv6_cidr_block': 'ipv6CidrBlock'
         }
-
         self._ipv6_cidr_block = None
 
     @property

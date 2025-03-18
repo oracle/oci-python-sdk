@@ -77,7 +77,6 @@ class BasicPreferredCredential(PreferredCredential):
             'role': 'str',
             'password_secret_id': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'credential_name': 'credentialName',
@@ -87,7 +86,6 @@ class BasicPreferredCredential(PreferredCredential):
             'role': 'role',
             'password_secret_id': 'passwordSecretId'
         }
-
         self._type = None
         self._credential_name = None
         self._status = None

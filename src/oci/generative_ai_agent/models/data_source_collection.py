@@ -28,11 +28,9 @@ class DataSourceCollection(object):
         self.swagger_types = {
             'items': 'list[DataSourceSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

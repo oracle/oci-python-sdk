@@ -91,7 +91,6 @@ class RequestSummarizedMetricExtensionsResourcesDetails(object):
             'sort_by': 'str',
             'sort_order': 'str'
         }
-
         self.attribute_map = {
             'metric_extension_id': 'metricExtensionId',
             'resource_type': 'resourceType',
@@ -102,7 +101,6 @@ class RequestSummarizedMetricExtensionsResourcesDetails(object):
             'sort_by': 'sortBy',
             'sort_order': 'sortOrder'
         }
-
         self._metric_extension_id = None
         self._resource_type = None
         self._compartment_id = None

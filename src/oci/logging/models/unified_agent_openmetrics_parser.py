@@ -70,7 +70,6 @@ class UnifiedAgentOpenmetricsParser(UnifiedAgentParser):
             'timeout_in_milliseconds': 'int',
             'record_input': 'UnifiedAgentOpenmetricsParserRecord'
         }
-
         self.attribute_map = {
             'parser_type': 'parserType',
             'field_time_key': 'fieldTimeKey',
@@ -82,7 +81,6 @@ class UnifiedAgentOpenmetricsParser(UnifiedAgentParser):
             'timeout_in_milliseconds': 'timeoutInMilliseconds',
             'record_input': 'recordInput'
         }
-
         self._parser_type = None
         self._field_time_key = None
         self._types = None

@@ -38,13 +38,11 @@ class RuntimePipeline(object):
             'runtime_operators': 'list[RuntimeOperator]',
             'parent_runtime_operator_key': 'str'
         }
-
         self.attribute_map = {
             'pipeline': 'pipeline',
             'runtime_operators': 'runtimeOperators',
             'parent_runtime_operator_key': 'parentRuntimeOperatorKey'
         }
-
         self._pipeline = None
         self._runtime_operators = None
         self._parent_runtime_operator_key = None

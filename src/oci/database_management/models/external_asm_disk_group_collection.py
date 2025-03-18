@@ -28,11 +28,9 @@ class ExternalAsmDiskGroupCollection(object):
         self.swagger_types = {
             'items': 'list[ExternalAsmDiskGroupSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

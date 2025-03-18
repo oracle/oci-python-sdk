@@ -38,13 +38,11 @@ class CustomEndpointDetails(object):
             'certificate_secret_id': 'str',
             'certificate_secret_version': 'int'
         }
-
         self.attribute_map = {
             'hostname': 'hostname',
             'certificate_secret_id': 'certificateSecretId',
             'certificate_secret_version': 'certificateSecretVersion'
         }
-
         self._hostname = None
         self._certificate_secret_id = None
         self._certificate_secret_version = None

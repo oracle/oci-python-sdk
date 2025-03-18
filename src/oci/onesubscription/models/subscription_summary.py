@@ -63,7 +63,6 @@ class SubscriptionSummary(object):
             'time_hold_release_eta': 'datetime',
             'subscribed_services': 'list[SubscriptionSubscribedService]'
         }
-
         self.attribute_map = {
             'status': 'status',
             'time_start': 'timeStart',
@@ -74,7 +73,6 @@ class SubscriptionSummary(object):
             'time_hold_release_eta': 'timeHoldReleaseEta',
             'subscribed_services': 'subscribedServices'
         }
-
         self._status = None
         self._time_start = None
         self._time_end = None

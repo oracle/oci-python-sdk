@@ -55,7 +55,6 @@ class PipelineOcirContainerConfigurationDetails(PipelineContainerConfigurationDe
             'image_digest': 'str',
             'image_signature_id': 'str'
         }
-
         self.attribute_map = {
             'container_type': 'containerType',
             'image': 'image',
@@ -64,7 +63,6 @@ class PipelineOcirContainerConfigurationDetails(PipelineContainerConfigurationDe
             'image_digest': 'imageDigest',
             'image_signature_id': 'imageSignatureId'
         }
-
         self._container_type = None
         self._image = None
         self._cmd = None

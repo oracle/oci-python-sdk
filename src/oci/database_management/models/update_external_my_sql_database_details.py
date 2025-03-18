@@ -28,11 +28,9 @@ class UpdateExternalMySqlDatabaseDetails(object):
         self.swagger_types = {
             'db_name': 'str'
         }
-
         self.attribute_map = {
             'db_name': 'dbName'
         }
-
         self._db_name = None
 
     @property

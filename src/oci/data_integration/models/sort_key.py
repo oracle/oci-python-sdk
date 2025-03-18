@@ -28,11 +28,9 @@ class SortKey(object):
         self.swagger_types = {
             'sort_rules': 'list[SortKeyRule]'
         }
-
         self.attribute_map = {
             'sort_rules': 'sortRules'
         }
-
         self._sort_rules = None
 
     @property

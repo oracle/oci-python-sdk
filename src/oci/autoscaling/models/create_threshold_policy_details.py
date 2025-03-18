@@ -52,7 +52,6 @@ class CreateThresholdPolicyDetails(CreateAutoScalingPolicyDetails):
             'is_enabled': 'bool',
             'rules': 'list[CreateConditionDetails]'
         }
-
         self.attribute_map = {
             'capacity': 'capacity',
             'display_name': 'displayName',
@@ -60,7 +59,6 @@ class CreateThresholdPolicyDetails(CreateAutoScalingPolicyDetails):
             'is_enabled': 'isEnabled',
             'rules': 'rules'
         }
-
         self._capacity = None
         self._display_name = None
         self._policy_type = None

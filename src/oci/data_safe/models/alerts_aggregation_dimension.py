@@ -28,11 +28,9 @@ class AlertsAggregationDimension(object):
         self.swagger_types = {
             'group_by': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'group_by': 'groupBy'
         }
-
         self._group_by = None
 
     @property

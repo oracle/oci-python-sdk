@@ -94,7 +94,6 @@ class LogGroup(object):
             'time_created': 'datetime',
             'time_last_modified': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -106,7 +105,6 @@ class LogGroup(object):
             'time_created': 'timeCreated',
             'time_last_modified': 'timeLastModified'
         }
-
         self._id = None
         self._compartment_id = None
         self._display_name = None

@@ -43,14 +43,12 @@ class Configuration(object):
             'time_created': 'datetime',
             'time_updated': 'datetime'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'email_ids': 'emailIds',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated'
         }
-
         self._compartment_id = None
         self._email_ids = None
         self._time_created = None

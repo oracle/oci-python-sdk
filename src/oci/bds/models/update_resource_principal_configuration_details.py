@@ -33,12 +33,10 @@ class UpdateResourcePrincipalConfigurationDetails(object):
             'display_name': 'str',
             'session_token_life_span_duration_in_hours': 'int'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'session_token_life_span_duration_in_hours': 'sessionTokenLifeSpanDurationInHours'
         }
-
         self._display_name = None
         self._session_token_life_span_duration_in_hours = None
 

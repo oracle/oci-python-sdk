@@ -48,7 +48,6 @@ class SqlPlanInsightAggregation(object):
             'inefficient_wait_time_in_sec': 'float',
             'executions_count': 'int'
         }
-
         self.attribute_map = {
             'plan_hash': 'planHash',
             'io_time_in_sec': 'ioTimeInSec',
@@ -56,7 +55,6 @@ class SqlPlanInsightAggregation(object):
             'inefficient_wait_time_in_sec': 'inefficientWaitTimeInSec',
             'executions_count': 'executionsCount'
         }
-
         self._plan_hash = None
         self._io_time_in_sec = None
         self._cpu_time_in_sec = None

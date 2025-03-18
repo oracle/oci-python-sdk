@@ -28,11 +28,9 @@ class ExternalPublicationValidationSummaryCollection(object):
         self.swagger_types = {
             'items': 'list[ExternalPublicationValidationSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

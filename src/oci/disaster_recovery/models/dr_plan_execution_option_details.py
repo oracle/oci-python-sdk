@@ -72,11 +72,9 @@ class DrPlanExecutionOptionDetails(object):
         self.swagger_types = {
             'plan_execution_type': 'str'
         }
-
         self.attribute_map = {
             'plan_execution_type': 'planExecutionType'
         }
-
         self._plan_execution_type = None
 
     @staticmethod

@@ -38,13 +38,11 @@ class ResponderConfiguration(object):
             'name': 'str',
             'value': 'str'
         }
-
         self.attribute_map = {
             'config_key': 'configKey',
             'name': 'name',
             'value': 'value'
         }
-
         self._config_key = None
         self._name = None
         self._value = None

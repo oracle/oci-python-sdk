@@ -126,7 +126,6 @@ class UpdateSnowflakeConnectionDetails(UpdateConnectionDetails):
             'private_key_passphrase': 'str',
             'private_key_passphrase_secret_id': 'str'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'display_name': 'displayName',
@@ -149,7 +148,6 @@ class UpdateSnowflakeConnectionDetails(UpdateConnectionDetails):
             'private_key_passphrase': 'privateKeyPassphrase',
             'private_key_passphrase_secret_id': 'privateKeyPassphraseSecretId'
         }
-
         self._connection_type = None
         self._display_name = None
         self._description = None

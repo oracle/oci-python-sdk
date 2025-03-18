@@ -60,14 +60,12 @@ class BulkApplyRecommendationsDetails(object):
             'status': 'str',
             'time_status_end': 'datetime'
         }
-
         self.attribute_map = {
             'resource_action_ids': 'resourceActionIds',
             'actions': 'actions',
             'status': 'status',
             'time_status_end': 'timeStatusEnd'
         }
-
         self._resource_action_ids = None
         self._actions = None
         self._status = None

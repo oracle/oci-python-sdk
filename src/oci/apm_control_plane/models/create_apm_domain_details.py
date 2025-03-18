@@ -53,7 +53,6 @@ class CreateApmDomainDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'is_free_tier': 'bool'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
@@ -62,7 +61,6 @@ class CreateApmDomainDetails(object):
             'defined_tags': 'definedTags',
             'is_free_tier': 'isFreeTier'
         }
-
         self._display_name = None
         self._description = None
         self._compartment_id = None

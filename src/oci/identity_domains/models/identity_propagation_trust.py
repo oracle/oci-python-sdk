@@ -220,7 +220,6 @@ class IdentityPropagationTrust(object):
             'impersonation_service_users': 'list[IdentityPropagationTrustImpersonationServiceUsers]',
             'keytab': 'IdentityPropagationTrustKeytab'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -254,7 +253,6 @@ class IdentityPropagationTrust(object):
             'impersonation_service_users': 'impersonationServiceUsers',
             'keytab': 'keytab'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

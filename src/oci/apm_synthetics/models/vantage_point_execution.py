@@ -33,12 +33,10 @@ class VantagePointExecution(object):
             'name': 'str',
             'executions': 'list[int]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'executions': 'executions'
         }
-
         self._name = None
         self._executions = None
 

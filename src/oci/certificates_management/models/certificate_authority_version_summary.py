@@ -73,7 +73,6 @@ class CertificateAuthorityVersionSummary(object):
             'stages': 'list[VersionStage]',
             'revocation_status': 'RevocationStatus'
         }
-
         self.attribute_map = {
             'certificate_authority_id': 'certificateAuthorityId',
             'issuer_ca_version_number': 'issuerCaVersionNumber',
@@ -86,7 +85,6 @@ class CertificateAuthorityVersionSummary(object):
             'stages': 'stages',
             'revocation_status': 'revocationStatus'
         }
-
         self._certificate_authority_id = None
         self._issuer_ca_version_number = None
         self._serial_number = None

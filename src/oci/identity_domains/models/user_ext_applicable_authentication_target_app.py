@@ -59,7 +59,6 @@ class UserExtApplicableAuthenticationTargetApp(object):
             'display': 'str',
             'target_request_timeout': 'int'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ref': '$ref',
@@ -67,7 +66,6 @@ class UserExtApplicableAuthenticationTargetApp(object):
             'display': 'display',
             'target_request_timeout': 'targetRequestTimeout'
         }
-
         self._value = None
         self._ref = None
         self._type = None

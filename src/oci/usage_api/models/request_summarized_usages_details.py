@@ -116,7 +116,6 @@ class RequestSummarizedUsagesDetails(object):
             'compartment_depth': 'float',
             'filter': 'Filter'
         }
-
         self.attribute_map = {
             'tenant_id': 'tenantId',
             'time_usage_started': 'timeUsageStarted',
@@ -130,7 +129,6 @@ class RequestSummarizedUsagesDetails(object):
             'compartment_depth': 'compartmentDepth',
             'filter': 'filter'
         }
-
         self._tenant_id = None
         self._time_usage_started = None
         self._time_usage_ended = None

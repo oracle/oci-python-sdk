@@ -58,13 +58,11 @@ class TargetDetails(object):
             'id': 'str',
             'compartment_id': 'str'
         }
-
         self.attribute_map = {
             'entity_type': 'entityType',
             'id': 'id',
             'compartment_id': 'compartmentId'
         }
-
         self._entity_type = None
         self._id = None
         self._compartment_id = None

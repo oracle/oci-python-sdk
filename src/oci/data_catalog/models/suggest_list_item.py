@@ -34,12 +34,10 @@ class SuggestListItem(object):
             'suggestion': 'str',
             'object_count': 'int'
         }
-
         self.attribute_map = {
             'suggestion': 'suggestion',
             'object_count': 'objectCount'
         }
-
         self._suggestion = None
         self._object_count = None
 

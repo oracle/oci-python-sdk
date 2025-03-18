@@ -58,7 +58,6 @@ class ComputeNetworkBlockSummary(object):
             'time_updated': 'datetime',
             'total_compute_bare_metal_host_count': 'int'
         }
-
         self.attribute_map = {
             'compute_capacity_topology_id': 'computeCapacityTopologyId',
             'compute_hpc_island_id': 'computeHpcIslandId',
@@ -68,7 +67,6 @@ class ComputeNetworkBlockSummary(object):
             'time_updated': 'timeUpdated',
             'total_compute_bare_metal_host_count': 'totalComputeBareMetalHostCount'
         }
-
         self._compute_capacity_topology_id = None
         self._compute_hpc_island_id = None
         self._id = None

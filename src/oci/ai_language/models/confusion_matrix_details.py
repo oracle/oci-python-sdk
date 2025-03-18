@@ -28,11 +28,9 @@ class ConfusionMatrixDetails(object):
         self.swagger_types = {
             'matrix': 'dict(str, float)'
         }
-
         self.attribute_map = {
             'matrix': 'matrix'
         }
-
         self._matrix = None
 
     @property

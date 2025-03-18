@@ -129,7 +129,6 @@ class ComputeInstanceGroupCanaryDeployStageSummary(DeployStageSummary):
             'test_load_balancer_config': 'LoadBalancerConfig',
             'production_load_balancer_config': 'LoadBalancerConfig'
         }
-
         self.attribute_map = {
             'id': 'id',
             'description': 'description',
@@ -153,7 +152,6 @@ class ComputeInstanceGroupCanaryDeployStageSummary(DeployStageSummary):
             'test_load_balancer_config': 'testLoadBalancerConfig',
             'production_load_balancer_config': 'productionLoadBalancerConfig'
         }
-
         self._id = None
         self._description = None
         self._display_name = None

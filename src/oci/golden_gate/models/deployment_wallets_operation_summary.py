@@ -85,7 +85,6 @@ class DeploymentWalletsOperationSummary(object):
             'time_started': 'datetime',
             'time_completed': 'datetime'
         }
-
         self.attribute_map = {
             'wallet_operation_id': 'walletOperationId',
             'wallet_secret_id': 'walletSecretId',
@@ -94,7 +93,6 @@ class DeploymentWalletsOperationSummary(object):
             'time_started': 'timeStarted',
             'time_completed': 'timeCompleted'
         }
-
         self._wallet_operation_id = None
         self._wallet_secret_id = None
         self._deployment_wallet_operation_type = None

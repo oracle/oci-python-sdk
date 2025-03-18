@@ -29,11 +29,9 @@ class WorkRequestLogEntryCollection(object):
         self.swagger_types = {
             'items': 'list[WorkRequestLogEntry]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

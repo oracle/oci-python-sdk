@@ -28,11 +28,9 @@ class RemediationRunStageCollection(object):
         self.swagger_types = {
             'items': 'list[RemediationRunStageSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

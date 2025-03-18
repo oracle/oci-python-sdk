@@ -33,12 +33,10 @@ class BatchDetectLanguageKeyPhrasesResult(object):
             'documents': 'list[KeyPhraseDocumentResult]',
             'errors': 'list[DocumentError]'
         }
-
         self.attribute_map = {
             'documents': 'documents',
             'errors': 'errors'
         }
-
         self._documents = None
         self._errors = None
 

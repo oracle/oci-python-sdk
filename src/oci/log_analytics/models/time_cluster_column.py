@@ -117,7 +117,6 @@ class TimeClusterColumn(AbstractColumn):
             'clusters': 'dict(str, TimeStatsCluster)',
             'series': 'list[TimeClusterDataColumn]'
         }
-
         self.attribute_map = {
             'type': 'type',
             'display_name': 'displayName',
@@ -138,7 +137,6 @@ class TimeClusterColumn(AbstractColumn):
             'clusters': 'clusters',
             'series': 'series'
         }
-
         self._type = None
         self._display_name = None
         self._sub_system = None

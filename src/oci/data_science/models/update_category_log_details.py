@@ -33,12 +33,10 @@ class UpdateCategoryLogDetails(object):
             'access': 'LogDetails',
             'predict': 'LogDetails'
         }
-
         self.attribute_map = {
             'access': 'access',
             'predict': 'predict'
         }
-
         self._access = None
         self._predict = None
 

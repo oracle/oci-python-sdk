@@ -186,7 +186,6 @@ class UpdateDbSystemDetails(object):
             'customer_contacts': 'list[CustomerContact]',
             'read_endpoint': 'UpdateReadEndpointDetails'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
@@ -218,7 +217,6 @@ class UpdateDbSystemDetails(object):
             'customer_contacts': 'customerContacts',
             'read_endpoint': 'readEndpoint'
         }
-
         self._display_name = None
         self._description = None
         self._subnet_id = None

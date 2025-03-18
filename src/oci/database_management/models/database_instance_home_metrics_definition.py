@@ -60,7 +60,6 @@ class DatabaseInstanceHomeMetricsDefinition(object):
             'memory_aggregate_metrics': 'MemoryAggregateMetrics',
             'cpu_utilization_aggregate_metrics': 'CpuUtilizationAggregateMetrics'
         }
-
         self.attribute_map = {
             'instance_name': 'instanceName',
             'instance_number': 'instanceNumber',
@@ -70,7 +69,6 @@ class DatabaseInstanceHomeMetricsDefinition(object):
             'memory_aggregate_metrics': 'memoryAggregateMetrics',
             'cpu_utilization_aggregate_metrics': 'cpuUtilizationAggregateMetrics'
         }
-
         self._instance_name = None
         self._instance_number = None
         self._activity_time_series_metrics = None

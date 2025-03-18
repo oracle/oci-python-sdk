@@ -278,7 +278,6 @@ class DocumentJob(object):
             'is_zip_output_enabled': 'bool',
             'lifecycle_details': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -296,7 +295,6 @@ class DocumentJob(object):
             'is_zip_output_enabled': 'isZipOutputEnabled',
             'lifecycle_details': 'lifecycleDetails'
         }
-
         self._id = None
         self._compartment_id = None
         self._display_name = None

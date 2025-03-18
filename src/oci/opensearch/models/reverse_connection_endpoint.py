@@ -33,12 +33,10 @@ class ReverseConnectionEndpoint(object):
             'customer_ip': 'str',
             'nat_ip': 'str'
         }
-
         self.attribute_map = {
             'customer_ip': 'customerIp',
             'nat_ip': 'natIp'
         }
-
         self._customer_ip = None
         self._nat_ip = None
 

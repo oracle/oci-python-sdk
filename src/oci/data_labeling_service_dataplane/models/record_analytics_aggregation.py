@@ -48,7 +48,6 @@ class RecordAnalyticsAggregation(object):
             'compartment_id': 'str',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'count': 'count',
             'dimensions': 'dimensions',
@@ -56,7 +55,6 @@ class RecordAnalyticsAggregation(object):
             'compartment_id': 'compartmentId',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._count = None
         self._dimensions = None
         self._dataset_id = None

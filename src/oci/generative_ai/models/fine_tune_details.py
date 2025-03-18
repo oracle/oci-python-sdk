@@ -38,13 +38,11 @@ class FineTuneDetails(object):
             'dedicated_ai_cluster_id': 'str',
             'training_config': 'TrainingConfig'
         }
-
         self.attribute_map = {
             'training_dataset': 'trainingDataset',
             'dedicated_ai_cluster_id': 'dedicatedAiClusterId',
             'training_config': 'trainingConfig'
         }
-
         self._training_dataset = None
         self._dedicated_ai_cluster_id = None
         self._training_config = None

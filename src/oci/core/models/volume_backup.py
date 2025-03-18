@@ -176,7 +176,6 @@ class VolumeBackup(object):
             'unique_size_in_mbs': 'int',
             'volume_id': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
@@ -198,7 +197,6 @@ class VolumeBackup(object):
             'unique_size_in_mbs': 'uniqueSizeInMbs',
             'volume_id': 'volumeId'
         }
-
         self._compartment_id = None
         self._defined_tags = None
         self._system_tags = None

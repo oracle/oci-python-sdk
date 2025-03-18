@@ -55,7 +55,6 @@ class OsCommandQueryProperties(MetricExtensionQueryProperties):
             'arguments': 'str',
             'starts_with': 'str'
         }
-
         self.attribute_map = {
             'collection_method': 'collectionMethod',
             'command': 'command',
@@ -64,7 +63,6 @@ class OsCommandQueryProperties(MetricExtensionQueryProperties):
             'arguments': 'arguments',
             'starts_with': 'startsWith'
         }
-
         self._collection_method = None
         self._command = None
         self._delimiter = None

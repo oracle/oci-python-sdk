@@ -57,14 +57,12 @@ class OsPatchPackageSummary(object):
             'update_type': 'str',
             'related_cv_es': 'list[str]'
         }
-
         self.attribute_map = {
             'package_name': 'packageName',
             'target_version': 'targetVersion',
             'update_type': 'updateType',
             'related_cv_es': 'relatedCVEs'
         }
-
         self._package_name = None
         self._target_version = None
         self._update_type = None

@@ -76,7 +76,6 @@ class ManagementAgentPluginDetails(object):
             'plugin_status_message': 'str',
             'is_enabled': 'bool'
         }
-
         self.attribute_map = {
             'plugin_id': 'pluginId',
             'plugin_name': 'pluginName',
@@ -86,7 +85,6 @@ class ManagementAgentPluginDetails(object):
             'plugin_status_message': 'pluginStatusMessage',
             'is_enabled': 'isEnabled'
         }
-
         self._plugin_id = None
         self._plugin_name = None
         self._plugin_display_name = None

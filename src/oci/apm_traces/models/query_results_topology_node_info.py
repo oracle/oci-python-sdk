@@ -28,11 +28,9 @@ class QueryResultsTopologyNodeInfo(object):
         self.swagger_types = {
             'node_name': 'str'
         }
-
         self.attribute_map = {
             'node_name': 'nodeName'
         }
-
         self._node_name = None
 
     @property

@@ -94,7 +94,6 @@ class DevopsCodeRepositoryTriggerSummary(TriggerSummary):
             'system_tags': 'dict(str, dict(str, object))',
             'repository_id': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -111,7 +110,6 @@ class DevopsCodeRepositoryTriggerSummary(TriggerSummary):
             'system_tags': 'systemTags',
             'repository_id': 'repositoryId'
         }
-
         self._id = None
         self._display_name = None
         self._description = None

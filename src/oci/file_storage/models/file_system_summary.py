@@ -184,7 +184,6 @@ class FileSystemSummary(object):
             'clone_attach_status': 'str',
             'quota_enforcement_state': 'str'
         }
-
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'metered_bytes': 'meteredBytes',
@@ -206,7 +205,6 @@ class FileSystemSummary(object):
             'clone_attach_status': 'cloneAttachStatus',
             'quota_enforcement_state': 'quotaEnforcementState'
         }
-
         self._availability_domain = None
         self._metered_bytes = None
         self._compartment_id = None

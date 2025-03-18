@@ -35,12 +35,10 @@ class ObjectStorageLocations(InputLocation):
             'source_type': 'str',
             'object_locations': 'list[ObjectLocation]'
         }
-
         self.attribute_map = {
             'source_type': 'sourceType',
             'object_locations': 'objectLocations'
         }
-
         self._source_type = None
         self._object_locations = None
         self._source_type = 'OBJECT_STORAGE_LOCATIONS'

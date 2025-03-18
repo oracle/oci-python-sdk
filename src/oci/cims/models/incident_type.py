@@ -48,7 +48,6 @@ class IncidentType(object):
             'description': 'str',
             'classifier_list': 'list[Classifier]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -56,7 +55,6 @@ class IncidentType(object):
             'description': 'description',
             'classifier_list': 'classifierList'
         }
-
         self._id = None
         self._name = None
         self._label = None

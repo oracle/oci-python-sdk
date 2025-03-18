@@ -40,13 +40,11 @@ class InfluxDetailsV2v0(InfluxDetails):
             'bucket_name': 'str',
             'organization_name': 'str'
         }
-
         self.attribute_map = {
             'influx_version': 'influxVersion',
             'bucket_name': 'bucketName',
             'organization_name': 'organizationName'
         }
-
         self._influx_version = None
         self._bucket_name = None
         self._organization_name = None

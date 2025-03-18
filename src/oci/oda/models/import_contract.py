@@ -28,11 +28,9 @@ class ImportContract(object):
         self.swagger_types = {
             'import_contract': 'list[ResourceTypeImportContract]'
         }
-
         self.attribute_map = {
             'import_contract': 'importContract'
         }
-
         self._import_contract = None
 
     @property

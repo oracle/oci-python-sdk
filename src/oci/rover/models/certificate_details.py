@@ -33,12 +33,10 @@ class CertificateDetails(object):
             'certificate_id': 'str',
             'certificate_name': 'str'
         }
-
         self.attribute_map = {
             'certificate_id': 'certificateId',
             'certificate_name': 'certificateName'
         }
-
         self._certificate_id = None
         self._certificate_name = None
 

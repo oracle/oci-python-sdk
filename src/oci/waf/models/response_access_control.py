@@ -28,11 +28,9 @@ class ResponseAccessControl(object):
         self.swagger_types = {
             'rules': 'list[AccessControlRule]'
         }
-
         self.attribute_map = {
             'rules': 'rules'
         }
-
         self._rules = None
 
     @property

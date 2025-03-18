@@ -33,12 +33,10 @@ class ModifySnapshotSettingsDetails(object):
             'retention': 'int',
             'interval': 'int'
         }
-
         self.attribute_map = {
             'retention': 'retention',
             'interval': 'interval'
         }
-
         self._retention = None
         self._interval = None
 

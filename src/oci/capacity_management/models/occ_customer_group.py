@@ -124,7 +124,6 @@ class OccCustomerGroup(object):
             'system_tags': 'dict(str, dict(str, object))',
             'customers_list': 'list[OccCustomer]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -140,7 +139,6 @@ class OccCustomerGroup(object):
             'system_tags': 'systemTags',
             'customers_list': 'customersList'
         }
-
         self._id = None
         self._compartment_id = None
         self._display_name = None

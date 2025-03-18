@@ -38,13 +38,11 @@ class InstallOsPatchDetails(object):
             'cluster_admin_password': 'str',
             'patching_configs': 'PatchingConfigs'
         }
-
         self.attribute_map = {
             'os_patch_version': 'osPatchVersion',
             'cluster_admin_password': 'clusterAdminPassword',
             'patching_configs': 'patchingConfigs'
         }
-
         self._os_patch_version = None
         self._cluster_admin_password = None
         self._patching_configs = None

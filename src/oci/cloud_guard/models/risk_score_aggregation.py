@@ -33,12 +33,10 @@ class RiskScoreAggregation(object):
             'dimensions_map': 'dict(str, str)',
             'risk_score': 'int'
         }
-
         self.attribute_map = {
             'dimensions_map': 'dimensionsMap',
             'risk_score': 'riskScore'
         }
-
         self._dimensions_map = None
         self._risk_score = None
 

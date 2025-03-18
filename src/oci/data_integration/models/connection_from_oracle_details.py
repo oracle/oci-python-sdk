@@ -106,7 +106,6 @@ class ConnectionFromOracleDetails(ConnectionDetails):
             'password': 'str',
             'password_secret': 'SensitiveAttribute'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -125,7 +124,6 @@ class ConnectionFromOracleDetails(ConnectionDetails):
             'password': 'password',
             'password_secret': 'passwordSecret'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

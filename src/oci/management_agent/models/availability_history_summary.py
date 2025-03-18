@@ -57,14 +57,12 @@ class AvailabilityHistorySummary(object):
             'time_availability_status_started': 'datetime',
             'time_availability_status_ended': 'datetime'
         }
-
         self.attribute_map = {
             'management_agent_id': 'managementAgentId',
             'availability_status': 'availabilityStatus',
             'time_availability_status_started': 'timeAvailabilityStatusStarted',
             'time_availability_status_ended': 'timeAvailabilityStatusEnded'
         }
-
         self._management_agent_id = None
         self._availability_status = None
         self._time_availability_status_started = None

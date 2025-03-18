@@ -83,7 +83,6 @@ class MetricData(object):
             'resolution': 'str',
             'aggregated_datapoints': 'list[AggregatedDatapoint]'
         }
-
         self.attribute_map = {
             'namespace': 'namespace',
             'resource_group': 'resourceGroup',
@@ -94,7 +93,6 @@ class MetricData(object):
             'resolution': 'resolution',
             'aggregated_datapoints': 'aggregatedDatapoints'
         }
-
         self._namespace = None
         self._resource_group = None
         self._compartment_id = None

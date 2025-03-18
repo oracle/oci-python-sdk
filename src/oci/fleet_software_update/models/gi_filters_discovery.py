@@ -35,12 +35,10 @@ class GiFiltersDiscovery(GiFleetDiscoveryDetails):
             'strategy': 'str',
             'filters': 'list[GiFleetDiscoveryFilter]'
         }
-
         self.attribute_map = {
             'strategy': 'strategy',
             'filters': 'filters'
         }
-
         self._strategy = None
         self._filters = None
         self._strategy = 'FILTERS'

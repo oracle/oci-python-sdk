@@ -40,13 +40,11 @@ class UpdateOracleDbLinkDataTransferMediumDetails(UpdateOracleDataTransferMedium
             'object_storage_bucket': 'UpdateObjectStoreBucket',
             'name': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'object_storage_bucket': 'objectStorageBucket',
             'name': 'name'
         }
-
         self._type = None
         self._object_storage_bucket = None
         self._name = None

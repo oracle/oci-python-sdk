@@ -144,7 +144,6 @@ class EmManagedExternalExadataInsight(ExadataInsight):
             'enterprise_manager_bridge_id': 'str',
             'is_auto_sync_enabled': 'bool'
         }
-
         self.attribute_map = {
             'entity_source': 'entitySource',
             'id': 'id',
@@ -170,7 +169,6 @@ class EmManagedExternalExadataInsight(ExadataInsight):
             'enterprise_manager_bridge_id': 'enterpriseManagerBridgeId',
             'is_auto_sync_enabled': 'isAutoSyncEnabled'
         }
-
         self._entity_source = None
         self._id = None
         self._compartment_id = None

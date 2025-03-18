@@ -33,12 +33,10 @@ class KeyRange(object):
             'key': 'ShapeField',
             'range': 'list[str]'
         }
-
         self.attribute_map = {
             'key': 'key',
             'range': 'range'
         }
-
         self._key = None
         self._range = None
 

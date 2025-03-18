@@ -54,7 +54,6 @@ class MonitoringTargetDetails(TargetDetails):
             'metric': 'str',
             'dimensions': 'list[DimensionDetails]'
         }
-
         self.attribute_map = {
             'kind': 'kind',
             'compartment_id': 'compartmentId',
@@ -62,7 +61,6 @@ class MonitoringTargetDetails(TargetDetails):
             'metric': 'metric',
             'dimensions': 'dimensions'
         }
-
         self._kind = None
         self._compartment_id = None
         self._metric_namespace = None

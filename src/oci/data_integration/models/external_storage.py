@@ -61,7 +61,6 @@ class ExternalStorage(ConnectorAttribute):
             'namespace': 'str',
             'bucket': 'str'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'storage_id': 'storageId',
@@ -71,7 +70,6 @@ class ExternalStorage(ConnectorAttribute):
             'namespace': 'namespace',
             'bucket': 'bucket'
         }
-
         self._model_type = None
         self._storage_id = None
         self._storage_name = None

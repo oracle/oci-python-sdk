@@ -98,7 +98,6 @@ class PlatformConfig(object):
             'is_measured_boot_enabled': 'bool',
             'is_memory_encryption_enabled': 'bool'
         }
-
         self.attribute_map = {
             'type': 'type',
             'is_secure_boot_enabled': 'isSecureBootEnabled',
@@ -106,7 +105,6 @@ class PlatformConfig(object):
             'is_measured_boot_enabled': 'isMeasuredBootEnabled',
             'is_memory_encryption_enabled': 'isMemoryEncryptionEnabled'
         }
-
         self._type = None
         self._is_secure_boot_enabled = None
         self._is_trusted_platform_module_enabled = None

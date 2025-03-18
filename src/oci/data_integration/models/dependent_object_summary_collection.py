@@ -28,11 +28,9 @@ class DependentObjectSummaryCollection(object):
         self.swagger_types = {
             'items': 'list[DependentObjectSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

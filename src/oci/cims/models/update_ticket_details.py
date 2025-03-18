@@ -28,11 +28,9 @@ class UpdateTicketDetails(object):
         self.swagger_types = {
             'resource': 'object'
         }
-
         self.attribute_map = {
             'resource': 'resource'
         }
-
         self._resource = None
 
     @property

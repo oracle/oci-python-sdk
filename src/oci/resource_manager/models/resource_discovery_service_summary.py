@@ -45,12 +45,10 @@ class ResourceDiscoveryServiceSummary(object):
             'name': 'str',
             'discovery_scope': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'discovery_scope': 'discoveryScope'
         }
-
         self._name = None
         self._discovery_scope = None
 

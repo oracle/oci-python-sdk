@@ -44,13 +44,11 @@ class LibraryMaskingFormatEntry(FormatEntry):
             'description': 'str',
             'library_masking_format_id': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'description': 'description',
             'library_masking_format_id': 'libraryMaskingFormatId'
         }
-
         self._type = None
         self._description = None
         self._library_masking_format_id = None

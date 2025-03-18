@@ -75,7 +75,6 @@ class DependentParser(object):
             'parser_type': 'str',
             'dependencies': 'list[Dependency]'
         }
-
         self.attribute_map = {
             'parser_name': 'parserName',
             'parser_display_name': 'parserDisplayName',
@@ -84,7 +83,6 @@ class DependentParser(object):
             'parser_type': 'parserType',
             'dependencies': 'dependencies'
         }
-
         self._parser_name = None
         self._parser_display_name = None
         self._parser_id = None

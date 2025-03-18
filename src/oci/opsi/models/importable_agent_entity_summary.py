@@ -52,13 +52,11 @@ class ImportableAgentEntitySummary(object):
             'management_agent_id': 'str',
             'management_agent_display_name': 'str'
         }
-
         self.attribute_map = {
             'entity_source': 'entitySource',
             'management_agent_id': 'managementAgentId',
             'management_agent_display_name': 'managementAgentDisplayName'
         }
-
         self._entity_source = None
         self._management_agent_id = None
         self._management_agent_display_name = None

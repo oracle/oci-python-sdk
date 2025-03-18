@@ -28,11 +28,9 @@ class CertificateBundleVersionCollection(object):
         self.swagger_types = {
             'items': 'list[CertificateBundleVersionSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

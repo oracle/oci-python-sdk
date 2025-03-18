@@ -43,14 +43,12 @@ class Rule(object):
             'resource_compartment_id': 'str',
             'conditions': 'list[Condition]'
         }
-
         self.attribute_map = {
             'basis': 'basis',
             'compartment_id': 'compartmentId',
             'resource_compartment_id': 'resourceCompartmentId',
             'conditions': 'conditions'
         }
-
         self._basis = None
         self._compartment_id = None
         self._resource_compartment_id = None

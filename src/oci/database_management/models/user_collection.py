@@ -28,11 +28,9 @@ class UserCollection(object):
         self.swagger_types = {
             'items': 'list[UserSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

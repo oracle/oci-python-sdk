@@ -58,14 +58,12 @@ class AbstractDataOperationConfig(object):
             'derived_attributes': 'dict(str, str)',
             'call_attribute': 'BipCallAttribute'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'metadata_config_properties': 'metadataConfigProperties',
             'derived_attributes': 'derivedAttributes',
             'call_attribute': 'callAttribute'
         }
-
         self._model_type = None
         self._metadata_config_properties = None
         self._derived_attributes = None

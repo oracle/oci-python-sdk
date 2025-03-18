@@ -38,13 +38,11 @@ class ReorderExecutionActionDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'execution_action_order_list': 'executionActionOrderList',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._execution_action_order_list = None
         self._freeform_tags = None
         self._defined_tags = None

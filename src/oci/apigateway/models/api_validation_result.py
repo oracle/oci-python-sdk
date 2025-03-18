@@ -51,12 +51,10 @@ class ApiValidationResult(object):
             'name': 'str',
             'result': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'result': 'result'
         }
-
         self._name = None
         self._result = None
 

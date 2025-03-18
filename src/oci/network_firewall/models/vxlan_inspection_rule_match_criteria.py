@@ -34,12 +34,10 @@ class VxlanInspectionRuleMatchCriteria(object):
             'source_address': 'list[str]',
             'destination_address': 'list[str]'
         }
-
         self.attribute_map = {
             'source_address': 'sourceAddress',
             'destination_address': 'destinationAddress'
         }
-
         self._source_address = None
         self._destination_address = None
 

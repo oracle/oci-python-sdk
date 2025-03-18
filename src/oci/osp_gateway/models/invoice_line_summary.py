@@ -68,7 +68,6 @@ class InvoiceLineSummary(object):
             'total_price': 'float',
             'currency': 'Currency'
         }
-
         self.attribute_map = {
             'product': 'product',
             'order_no': 'orderNo',
@@ -80,7 +79,6 @@ class InvoiceLineSummary(object):
             'total_price': 'totalPrice',
             'currency': 'currency'
         }
-
         self._product = None
         self._order_no = None
         self._part_number = None

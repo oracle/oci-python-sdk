@@ -28,11 +28,9 @@ class PullRequestCommentCollection(object):
         self.swagger_types = {
             'items': 'list[PullRequestCommentSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

@@ -98,7 +98,6 @@ class DataSafeConfiguration(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'is_enabled': 'isEnabled',
             'url': 'url',
@@ -110,7 +109,6 @@ class DataSafeConfiguration(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._is_enabled = None
         self._url = None
         self._compartment_id = None

@@ -28,11 +28,9 @@ class DeleteMessagesDetails(object):
         self.swagger_types = {
             'entries': 'list[DeleteMessagesDetailsEntry]'
         }
-
         self.attribute_map = {
             'entries': 'entries'
         }
-
         self._entries = None
 
     @property

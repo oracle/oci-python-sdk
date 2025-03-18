@@ -60,7 +60,6 @@ class PdbConversionToNewDatabaseDetails(ConvertToPdbTargetBase):
             'non_cdb_tde_wallet_password': 'str',
             'additional_cdb_params': 'str'
         }
-
         self.attribute_map = {
             'target': 'target',
             'cdb_name': 'cdbName',
@@ -70,7 +69,6 @@ class PdbConversionToNewDatabaseDetails(ConvertToPdbTargetBase):
             'non_cdb_tde_wallet_password': 'nonCdbTdeWalletPassword',
             'additional_cdb_params': 'additionalCdbParams'
         }
-
         self._target = None
         self._cdb_name = None
         self._cdb_admin_password = None

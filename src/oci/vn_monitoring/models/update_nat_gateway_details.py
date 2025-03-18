@@ -48,7 +48,6 @@ class UpdateNatGatewayDetails(object):
             'block_traffic': 'bool',
             'route_table_id': 'str'
         }
-
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
@@ -56,7 +55,6 @@ class UpdateNatGatewayDetails(object):
             'block_traffic': 'blockTraffic',
             'route_table_id': 'routeTableId'
         }
-
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None

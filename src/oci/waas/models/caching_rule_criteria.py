@@ -51,12 +51,10 @@ class CachingRuleCriteria(object):
             'condition': 'str',
             'value': 'str'
         }
-
         self.attribute_map = {
             'condition': 'condition',
             'value': 'value'
         }
-
         self._condition = None
         self._value = None
 

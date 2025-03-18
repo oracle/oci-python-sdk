@@ -59,13 +59,11 @@ class MetadataRemap(object):
             'old_value': 'str',
             'new_value': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'old_value': 'oldValue',
             'new_value': 'newValue'
         }
-
         self._type = None
         self._old_value = None
         self._new_value = None

@@ -60,7 +60,6 @@ class CreateDbHomeDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'is_unified_auditing_enabled': 'bool'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'db_version': 'dbVersion',
@@ -70,7 +69,6 @@ class CreateDbHomeDetails(object):
             'defined_tags': 'definedTags',
             'is_unified_auditing_enabled': 'isUnifiedAuditingEnabled'
         }
-
         self._display_name = None
         self._db_version = None
         self._database_software_image_id = None

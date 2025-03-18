@@ -37,11 +37,9 @@ class GenerateLibraryUrlDetails(object):
         self.swagger_types = {
             'library_type': 'str'
         }
-
         self.attribute_map = {
             'library_type': 'libraryType'
         }
-
         self._library_type = None
 
     @staticmethod

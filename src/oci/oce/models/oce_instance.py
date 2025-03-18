@@ -250,7 +250,6 @@ class OceInstance(object):
             'system_tags': 'dict(str, dict(str, object))',
             'service': 'dict(str, object)'
         }
-
         self.attribute_map = {
             'id': 'id',
             'guid': 'guid',
@@ -280,7 +279,6 @@ class OceInstance(object):
             'system_tags': 'systemTags',
             'service': 'service'
         }
-
         self._id = None
         self._guid = None
         self._description = None

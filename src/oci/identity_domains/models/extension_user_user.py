@@ -224,7 +224,6 @@ class ExtensionUserUser(object):
             'grants': 'list[UserExtGrants]',
             'app_roles': 'list[UserExtAppRoles]'
         }
-
         self.attribute_map = {
             'is_federated_user': 'isFederatedUser',
             'is_authentication_delegated': 'isAuthenticationDelegated',
@@ -252,7 +251,6 @@ class ExtensionUserUser(object):
             'grants': 'grants',
             'app_roles': 'appRoles'
         }
-
         self._is_federated_user = None
         self._is_authentication_delegated = None
         self._status = None

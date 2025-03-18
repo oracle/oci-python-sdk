@@ -28,11 +28,9 @@ class EventTypeDetails(object):
         self.swagger_types = {
             'items': 'list[EventType]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

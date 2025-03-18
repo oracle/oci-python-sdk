@@ -28,11 +28,9 @@ class ConnectionString(object):
         self.swagger_types = {
             'all_connection_strings': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'all_connection_strings': 'allConnectionStrings'
         }
-
         self._all_connection_strings = None
 
     @property

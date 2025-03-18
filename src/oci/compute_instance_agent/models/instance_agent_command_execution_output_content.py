@@ -58,13 +58,11 @@ class InstanceAgentCommandExecutionOutputContent(object):
             'exit_code': 'int',
             'message': 'str'
         }
-
         self.attribute_map = {
             'output_type': 'outputType',
             'exit_code': 'exitCode',
             'message': 'message'
         }
-
         self._output_type = None
         self._exit_code = None
         self._message = None

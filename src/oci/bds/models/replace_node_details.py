@@ -43,14 +43,12 @@ class ReplaceNodeDetails(object):
             'cluster_admin_password': 'str',
             'shape': 'str'
         }
-
         self.attribute_map = {
             'node_host_name': 'nodeHostName',
             'node_backup_id': 'nodeBackupId',
             'cluster_admin_password': 'clusterAdminPassword',
             'shape': 'shape'
         }
-
         self._node_host_name = None
         self._node_backup_id = None
         self._cluster_admin_password = None

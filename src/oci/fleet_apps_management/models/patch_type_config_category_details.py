@@ -31,11 +31,9 @@ class PatchTypeConfigCategoryDetails(ConfigCategoryDetails):
         self.swagger_types = {
             'config_category': 'str'
         }
-
         self.attribute_map = {
             'config_category': 'configCategory'
         }
-
         self._config_category = None
         self._config_category = 'PATCH_TYPE'
 

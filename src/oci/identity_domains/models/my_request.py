@@ -181,7 +181,6 @@ class MyRequest(object):
             'requestor': 'MyRequestRequestor',
             'requesting': 'MyRequestRequesting'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -204,7 +203,6 @@ class MyRequest(object):
             'requestor': 'requestor',
             'requesting': 'requesting'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

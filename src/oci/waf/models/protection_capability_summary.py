@@ -79,7 +79,6 @@ class ProtectionCapabilitySummary(object):
             'collaborative_action_threshold': 'int',
             'collaborative_weights': 'list[CollaborativeCapabilityWeight]'
         }
-
         self.attribute_map = {
             'key': 'key',
             'display_name': 'displayName',
@@ -91,7 +90,6 @@ class ProtectionCapabilitySummary(object):
             'collaborative_action_threshold': 'collaborativeActionThreshold',
             'collaborative_weights': 'collaborativeWeights'
         }
-
         self._key = None
         self._display_name = None
         self._description = None

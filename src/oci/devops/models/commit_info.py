@@ -38,13 +38,11 @@ class CommitInfo(object):
             'repository_branch': 'str',
             'commit_hash': 'str'
         }
-
         self.attribute_map = {
             'repository_url': 'repositoryUrl',
             'repository_branch': 'repositoryBranch',
             'commit_hash': 'commitHash'
         }
-
         self._repository_url = None
         self._repository_branch = None
         self._commit_hash = None

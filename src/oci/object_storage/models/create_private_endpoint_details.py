@@ -73,7 +73,6 @@ class CreatePrivateEndpointDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'name': 'name',
             'compartment_id': 'compartmentId',
@@ -86,7 +85,6 @@ class CreatePrivateEndpointDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._name = None
         self._compartment_id = None
         self._subnet_id = None

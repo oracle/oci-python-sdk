@@ -176,7 +176,6 @@ class DataEntityFromDataStore(DataEntity):
             'is_silent_error': 'bool',
             'supports_incremental': 'bool'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'metadata': 'metadata',
@@ -203,7 +202,6 @@ class DataEntityFromDataStore(DataEntity):
             'is_silent_error': 'isSilentError',
             'supports_incremental': 'supportsIncremental'
         }
-
         self._model_type = None
         self._metadata = None
         self._key = None

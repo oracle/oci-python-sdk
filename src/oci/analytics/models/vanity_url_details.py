@@ -48,7 +48,6 @@ class VanityUrlDetails(object):
             'hosts': 'list[str]',
             'public_certificate': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'description': 'description',
@@ -56,7 +55,6 @@ class VanityUrlDetails(object):
             'hosts': 'hosts',
             'public_certificate': 'publicCertificate'
         }
-
         self._key = None
         self._description = None
         self._urls = None

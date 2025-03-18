@@ -202,7 +202,6 @@ class SelfRegistrationProfile(object):
             'footer_text': 'list[SelfRegistrationProfileFooterText]',
             'consent_text': 'list[SelfRegistrationProfileConsentText]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -238,7 +237,6 @@ class SelfRegistrationProfile(object):
             'footer_text': 'footerText',
             'consent_text': 'consentText'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

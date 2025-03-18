@@ -41,11 +41,9 @@ class StopDbSystemDetails(object):
         self.swagger_types = {
             'shutdown_type': 'str'
         }
-
         self.attribute_map = {
             'shutdown_type': 'shutdownType'
         }
-
         self._shutdown_type = None
 
     @property

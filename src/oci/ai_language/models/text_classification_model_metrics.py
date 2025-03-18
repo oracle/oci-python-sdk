@@ -73,7 +73,6 @@ class TextClassificationModelMetrics(object):
             'weighted_precision': 'float',
             'weighted_recall': 'float'
         }
-
         self.attribute_map = {
             'accuracy': 'accuracy',
             'micro_f1': 'microF1',
@@ -86,7 +85,6 @@ class TextClassificationModelMetrics(object):
             'weighted_precision': 'weightedPrecision',
             'weighted_recall': 'weightedRecall'
         }
-
         self._accuracy = None
         self._micro_f1 = None
         self._micro_precision = None

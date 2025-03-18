@@ -48,7 +48,6 @@ class GpuDevice(object):
             'memory_in_mbs': 'int',
             'manufacturer': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'description': 'description',
@@ -56,7 +55,6 @@ class GpuDevice(object):
             'memory_in_mbs': 'memoryInMBs',
             'manufacturer': 'manufacturer'
         }
-
         self._name = None
         self._description = None
         self._cores_count = None

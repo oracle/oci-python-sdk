@@ -30,11 +30,9 @@ class LocalScriptPrecheckStep(DrPlanUserDefinedStep):
         self.swagger_types = {
             'step_type': 'str'
         }
-
         self.attribute_map = {
             'step_type': 'stepType'
         }
-
         self._step_type = None
         self._step_type = 'RUN_LOCAL_SCRIPT_PRECHECK'
 

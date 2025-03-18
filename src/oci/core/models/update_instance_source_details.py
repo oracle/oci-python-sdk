@@ -38,12 +38,10 @@ class UpdateInstanceSourceDetails(object):
             'source_type': 'str',
             'is_preserve_boot_volume_enabled': 'bool'
         }
-
         self.attribute_map = {
             'source_type': 'sourceType',
             'is_preserve_boot_volume_enabled': 'isPreserveBootVolumeEnabled'
         }
-
         self._source_type = None
         self._is_preserve_boot_volume_enabled = None
 

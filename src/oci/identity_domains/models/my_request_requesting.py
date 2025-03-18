@@ -67,7 +67,6 @@ class MyRequestRequesting(object):
             'description': 'str',
             'type': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ref': '$ref',
@@ -75,7 +74,6 @@ class MyRequestRequesting(object):
             'description': 'description',
             'type': 'type'
         }
-
         self._value = None
         self._ref = None
         self._display = None

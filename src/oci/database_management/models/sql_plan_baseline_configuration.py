@@ -81,7 +81,6 @@ class SqlPlanBaselineConfiguration(object):
             'auto_capture_filters': 'list[AutomaticCaptureFilter]',
             'auto_spm_evolve_task_parameters': 'SpmEvolveTaskParameters'
         }
-
         self.attribute_map = {
             'is_automatic_initial_plan_capture_enabled': 'isAutomaticInitialPlanCaptureEnabled',
             'is_sql_plan_baselines_usage_enabled': 'isSqlPlanBaselinesUsageEnabled',
@@ -94,7 +93,6 @@ class SqlPlanBaselineConfiguration(object):
             'auto_capture_filters': 'autoCaptureFilters',
             'auto_spm_evolve_task_parameters': 'autoSpmEvolveTaskParameters'
         }
-
         self._is_automatic_initial_plan_capture_enabled = None
         self._is_sql_plan_baselines_usage_enabled = None
         self._is_auto_spm_evolve_task_enabled = None

@@ -61,7 +61,6 @@ class PipelineDataflowStepRun(PipelineStepRun):
             'lifecycle_details': 'str',
             'dataflow_run_id': 'str'
         }
-
         self.attribute_map = {
             'step_type': 'stepType',
             'time_started': 'timeStarted',
@@ -71,7 +70,6 @@ class PipelineDataflowStepRun(PipelineStepRun):
             'lifecycle_details': 'lifecycleDetails',
             'dataflow_run_id': 'dataflowRunId'
         }
-
         self._step_type = None
         self._time_started = None
         self._time_finished = None

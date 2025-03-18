@@ -192,7 +192,6 @@ class BrandingSetting(object):
             'login_texts': 'list[BrandingSettingsLoginTexts]',
             'images': 'list[BrandingSettingsImages]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -226,7 +225,6 @@ class BrandingSetting(object):
             'login_texts': 'loginTexts',
             'images': 'images'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

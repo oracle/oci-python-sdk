@@ -100,7 +100,6 @@ class PublishedObject(object):
             'object_status': 'int',
             'identifier': 'str'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -112,7 +111,6 @@ class PublishedObject(object):
             'object_status': 'objectStatus',
             'identifier': 'identifier'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

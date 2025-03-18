@@ -83,12 +83,10 @@ class DataObjectColumnUnit(object):
             'unit_category': 'str',
             'display_name': 'str'
         }
-
         self.attribute_map = {
             'unit_category': 'unitCategory',
             'display_name': 'displayName'
         }
-
         self._unit_category = None
         self._display_name = None
 

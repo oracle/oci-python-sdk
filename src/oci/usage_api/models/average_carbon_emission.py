@@ -33,12 +33,10 @@ class AverageCarbonEmission(object):
             'sku_part_number': 'str',
             'average_carbon_emission': 'float'
         }
-
         self.attribute_map = {
             'sku_part_number': 'skuPartNumber',
             'average_carbon_emission': 'averageCarbonEmission'
         }
-
         self._sku_part_number = None
         self._average_carbon_emission = None
 

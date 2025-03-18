@@ -324,7 +324,6 @@ class CreateCrossRegionAutonomousDatabaseDataGuardDetails(CreateAutonomousDataba
             'secret_version_number': 'int',
             'source_id': 'str'
         }
-
         self.attribute_map = {
             'subscription_id': 'subscriptionId',
             'compartment_id': 'compartmentId',
@@ -382,7 +381,6 @@ class CreateCrossRegionAutonomousDatabaseDataGuardDetails(CreateAutonomousDataba
             'secret_version_number': 'secretVersionNumber',
             'source_id': 'sourceId'
         }
-
         self._subscription_id = None
         self._compartment_id = None
         self._character_set = None

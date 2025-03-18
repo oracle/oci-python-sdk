@@ -48,7 +48,6 @@ class GrokPattern(object):
             'field_time_format': 'str',
             'field_time_zone': 'str'
         }
-
         self.attribute_map = {
             'pattern': 'pattern',
             'name': 'name',
@@ -56,7 +55,6 @@ class GrokPattern(object):
             'field_time_format': 'fieldTimeFormat',
             'field_time_zone': 'fieldTimeZone'
         }
-
         self._pattern = None
         self._name = None
         self._field_time_key = None

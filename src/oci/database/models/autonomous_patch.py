@@ -116,7 +116,6 @@ class AutonomousPatch(object):
             'year': 'str',
             'autonomous_patch_type': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'description': 'description',
@@ -130,7 +129,6 @@ class AutonomousPatch(object):
             'year': 'year',
             'autonomous_patch_type': 'autonomousPatchType'
         }
-
         self._id = None
         self._description = None
         self._type = None

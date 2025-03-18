@@ -40,13 +40,11 @@ class FaceDetectionFeature(ImageFeature):
             'max_results': 'int',
             'should_return_landmarks': 'bool'
         }
-
         self.attribute_map = {
             'feature_type': 'featureType',
             'max_results': 'maxResults',
             'should_return_landmarks': 'shouldReturnLandmarks'
         }
-
         self._feature_type = None
         self._max_results = None
         self._should_return_landmarks = None

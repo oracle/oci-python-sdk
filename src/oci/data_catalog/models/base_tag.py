@@ -102,7 +102,6 @@ class BaseTag(object):
             'created_by_id': 'str',
             'uri': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'name': 'name',
@@ -114,7 +113,6 @@ class BaseTag(object):
             'created_by_id': 'createdById',
             'uri': 'uri'
         }
-
         self._key = None
         self._name = None
         self._term_key = None

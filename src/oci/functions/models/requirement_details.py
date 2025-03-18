@@ -34,12 +34,10 @@ class RequirementDetails(object):
             'min_memory_required_in_mbs': 'int',
             'policies': 'list[PolicyDetails]'
         }
-
         self.attribute_map = {
             'min_memory_required_in_mbs': 'minMemoryRequiredInMBs',
             'policies': 'policies'
         }
-
         self._min_memory_required_in_mbs = None
         self._policies = None
 

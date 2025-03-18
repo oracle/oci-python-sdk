@@ -40,13 +40,11 @@ class NginxCanaryStrategy(OkeCanaryStrategy):
             'namespace': 'str',
             'ingress_name': 'str'
         }
-
         self.attribute_map = {
             'strategy_type': 'strategyType',
             'namespace': 'namespace',
             'ingress_name': 'ingressName'
         }
-
         self._strategy_type = None
         self._namespace = None
         self._ingress_name = None

@@ -55,7 +55,6 @@ class InstanceAgentCommandExecutionOutputViaObjectStorageTupleDetails(InstanceAg
             'namespace_name': 'str',
             'object_name': 'str'
         }
-
         self.attribute_map = {
             'output_type': 'outputType',
             'exit_code': 'exitCode',
@@ -64,7 +63,6 @@ class InstanceAgentCommandExecutionOutputViaObjectStorageTupleDetails(InstanceAg
             'namespace_name': 'namespaceName',
             'object_name': 'objectName'
         }
-
         self._output_type = None
         self._exit_code = None
         self._message = None

@@ -33,12 +33,10 @@ class ResourceInsightCurrentUtilization(object):
             'low': 'list[str]',
             'high': 'list[str]'
         }
-
         self.attribute_map = {
             'low': 'low',
             'high': 'high'
         }
-
         self._low = None
         self._high = None
 

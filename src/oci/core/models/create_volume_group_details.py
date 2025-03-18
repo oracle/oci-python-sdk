@@ -73,7 +73,6 @@ class CreateVolumeGroupDetails(object):
             'cluster_placement_group_id': 'str',
             'xrc_kms_key_id': 'str'
         }
-
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'backup_policy_id': 'backupPolicyId',
@@ -86,7 +85,6 @@ class CreateVolumeGroupDetails(object):
             'cluster_placement_group_id': 'clusterPlacementGroupId',
             'xrc_kms_key_id': 'xrcKmsKeyId'
         }
-
         self._availability_domain = None
         self._backup_policy_id = None
         self._compartment_id = None

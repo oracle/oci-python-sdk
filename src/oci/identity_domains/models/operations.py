@@ -53,13 +53,11 @@ class Operations(object):
             'path': 'str',
             'value': 'object'
         }
-
         self.attribute_map = {
             'op': 'op',
             'path': 'path',
             'value': 'value'
         }
-
         self._op = None
         self._path = None
         self._value = None

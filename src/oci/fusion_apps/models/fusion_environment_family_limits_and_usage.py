@@ -38,13 +38,11 @@ class FusionEnvironmentFamilyLimitsAndUsage(object):
             'test_limit_and_usage': 'LimitAndUsage',
             'development_limit_and_usage': 'LimitAndUsage'
         }
-
         self.attribute_map = {
             'production_limit_and_usage': 'productionLimitAndUsage',
             'test_limit_and_usage': 'testLimitAndUsage',
             'development_limit_and_usage': 'developmentLimitAndUsage'
         }
-
         self._production_limit_and_usage = None
         self._test_limit_and_usage = None
         self._development_limit_and_usage = None

@@ -52,13 +52,11 @@ class SaasAdminUserStatus(object):
             'access_type': 'str',
             'time_saas_admin_user_enabled': 'datetime'
         }
-
         self.attribute_map = {
             'is_enabled': 'isEnabled',
             'access_type': 'accessType',
             'time_saas_admin_user_enabled': 'timeSaasAdminUserEnabled'
         }
-
         self._is_enabled = None
         self._access_type = None
         self._time_saas_admin_user_enabled = None

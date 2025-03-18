@@ -48,7 +48,6 @@ class UpdateProtectionPolicyDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'backup_retention_period_in_days': 'backupRetentionPeriodInDays',
@@ -56,7 +55,6 @@ class UpdateProtectionPolicyDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._display_name = None
         self._backup_retention_period_in_days = None
         self._policy_locked_date_time = None

@@ -53,7 +53,6 @@ class KernelEventData(object):
             'time_first_occurred': 'datetime',
             'additional_details': 'KernelEventAdditionalDetails'
         }
-
         self.attribute_map = {
             'content': 'content',
             'count': 'count',
@@ -62,7 +61,6 @@ class KernelEventData(object):
             'time_first_occurred': 'timeFirstOccurred',
             'additional_details': 'additionalDetails'
         }
-
         self._content = None
         self._count = None
         self._event_fingerprint = None

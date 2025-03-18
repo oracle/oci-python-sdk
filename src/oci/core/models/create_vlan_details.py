@@ -73,7 +73,6 @@ class CreateVlanDetails(object):
             'vcn_id': 'str',
             'vlan_tag': 'int'
         }
-
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'cidr_block': 'cidrBlock',
@@ -86,7 +85,6 @@ class CreateVlanDetails(object):
             'vcn_id': 'vcnId',
             'vlan_tag': 'vlanTag'
         }
-
         self._availability_domain = None
         self._cidr_block = None
         self._compartment_id = None

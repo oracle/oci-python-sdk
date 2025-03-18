@@ -43,14 +43,12 @@ class SubCategories(object):
             'has_sub_category': 'str',
             'sub_categories': 'list[SubComponents]'
         }
-
         self.attribute_map = {
             'service_category': 'serviceCategory',
             'schema': 'schema',
             'has_sub_category': 'hasSubCategory',
             'sub_categories': 'subCategories'
         }
-
         self._service_category = None
         self._schema = None
         self._has_sub_category = None

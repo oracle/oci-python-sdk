@@ -42,12 +42,10 @@ class BackoffRetryPolicy(object):
             'max_retry_duration': 'int',
             'policy_type': 'str'
         }
-
         self.attribute_map = {
             'max_retry_duration': 'maxRetryDuration',
             'policy_type': 'policyType'
         }
-
         self._max_retry_duration = None
         self._policy_type = None
 

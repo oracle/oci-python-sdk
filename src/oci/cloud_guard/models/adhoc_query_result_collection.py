@@ -28,11 +28,9 @@ class AdhocQueryResultCollection(object):
         self.swagger_types = {
             'items': 'list[AdhocQueryResultSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

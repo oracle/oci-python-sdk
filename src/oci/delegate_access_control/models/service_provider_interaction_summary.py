@@ -63,7 +63,6 @@ class ServiceProviderInteractionSummary(object):
             'user_type': 'str',
             'timestamp': 'datetime'
         }
-
         self.attribute_map = {
             'message_identifier': 'messageIdentifier',
             'user_id': 'userId',
@@ -72,7 +71,6 @@ class ServiceProviderInteractionSummary(object):
             'user_type': 'userType',
             'timestamp': 'timestamp'
         }
-
         self._message_identifier = None
         self._user_id = None
         self._user_name = None

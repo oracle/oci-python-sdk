@@ -53,7 +53,6 @@ class UpdateCrossConnectDetails(object):
             'customer_reference_name': 'str',
             'macsec_properties': 'UpdateMacsecProperties'
         }
-
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
@@ -62,7 +61,6 @@ class UpdateCrossConnectDetails(object):
             'customer_reference_name': 'customerReferenceName',
             'macsec_properties': 'macsecProperties'
         }
-
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None

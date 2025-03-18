@@ -37,11 +37,9 @@ class EnableExternalExadataInfrastructureManagementDetails(object):
         self.swagger_types = {
             'license_model': 'str'
         }
-
         self.attribute_map = {
             'license_model': 'licenseModel'
         }
-
         self._license_model = None
 
     @property

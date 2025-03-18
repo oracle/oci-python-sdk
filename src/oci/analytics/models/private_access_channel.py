@@ -68,7 +68,6 @@ class PrivateAccessChannel(object):
             'private_source_scan_hosts': 'list[PrivateSourceScanHost]',
             'network_security_group_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'key': 'key',
             'display_name': 'displayName',
@@ -80,7 +79,6 @@ class PrivateAccessChannel(object):
             'private_source_scan_hosts': 'privateSourceScanHosts',
             'network_security_group_ids': 'networkSecurityGroupIds'
         }
-
         self._key = None
         self._display_name = None
         self._vcn_id = None

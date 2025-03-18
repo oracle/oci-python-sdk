@@ -33,12 +33,10 @@ class MeasuredBootReport(object):
             'is_policy_verification_successful': 'bool',
             'measurements': 'MeasuredBootReportMeasurements'
         }
-
         self.attribute_map = {
             'is_policy_verification_successful': 'isPolicyVerificationSuccessful',
             'measurements': 'measurements'
         }
-
         self._is_policy_verification_successful = None
         self._measurements = None
 

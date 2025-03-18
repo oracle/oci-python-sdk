@@ -114,7 +114,6 @@ class ShellDeployStageSummary(DeployStageSummary):
             'command_spec_deploy_artifact_id': 'str',
             'timeout_in_seconds': 'int'
         }
-
         self.attribute_map = {
             'id': 'id',
             'description': 'description',
@@ -135,7 +134,6 @@ class ShellDeployStageSummary(DeployStageSummary):
             'command_spec_deploy_artifact_id': 'commandSpecDeployArtifactId',
             'timeout_in_seconds': 'timeoutInSeconds'
         }
-
         self._id = None
         self._description = None
         self._display_name = None

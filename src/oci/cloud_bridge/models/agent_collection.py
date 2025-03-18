@@ -28,11 +28,9 @@ class AgentCollection(object):
         self.swagger_types = {
             'items': 'list[AgentSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

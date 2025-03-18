@@ -38,13 +38,11 @@ class UpdateReferenceDetails(object):
             'target_object': 'object',
             'child_references': 'list[ChildReferenceDetail]'
         }
-
         self.attribute_map = {
             'options': 'options',
             'target_object': 'targetObject',
             'child_references': 'childReferences'
         }
-
         self._options = None
         self._target_object = None
         self._child_references = None

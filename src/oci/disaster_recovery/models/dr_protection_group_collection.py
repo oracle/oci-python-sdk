@@ -28,11 +28,9 @@ class DrProtectionGroupCollection(object):
         self.swagger_types = {
             'items': 'list[DrProtectionGroupSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

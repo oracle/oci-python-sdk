@@ -52,13 +52,11 @@ class Group(object):
             'name': 'str',
             'properties': 'ComponentProperties'
         }
-
         self.attribute_map = {
             'type': 'type',
             'name': 'name',
             'properties': 'properties'
         }
-
         self._type = None
         self._name = None
         self._properties = None

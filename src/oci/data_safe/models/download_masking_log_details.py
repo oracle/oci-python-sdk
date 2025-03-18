@@ -33,12 +33,10 @@ class DownloadMaskingLogDetails(object):
             'target_id': 'str',
             'masking_work_request_id': 'str'
         }
-
         self.attribute_map = {
             'target_id': 'targetId',
             'masking_work_request_id': 'maskingWorkRequestId'
         }
-
         self._target_id = None
         self._masking_work_request_id = None
 

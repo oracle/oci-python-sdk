@@ -45,14 +45,12 @@ class OciOpenSearchIndexConfig(IndexConfig):
             'secret_detail': 'SecretDetail',
             'indexes': 'list[Index]'
         }
-
         self.attribute_map = {
             'index_config_type': 'indexConfigType',
             'cluster_id': 'clusterId',
             'secret_detail': 'secretDetail',
             'indexes': 'indexes'
         }
-
         self._index_config_type = None
         self._cluster_id = None
         self._secret_detail = None

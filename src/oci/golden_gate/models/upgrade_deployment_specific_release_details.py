@@ -35,12 +35,10 @@ class UpgradeDeploymentSpecificReleaseDetails(UpgradeDeploymentDetails):
             'type': 'str',
             'ogg_version': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'ogg_version': 'oggVersion'
         }
-
         self._type = None
         self._ogg_version = None
         self._type = 'SPECIFIC_RELEASE'

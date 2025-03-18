@@ -38,13 +38,11 @@ class MetricBasedHorizontalScaleInConfig(object):
             'min_node_count': 'int',
             'step_size': 'int'
         }
-
         self.attribute_map = {
             'metric': 'metric',
             'min_node_count': 'minNodeCount',
             'step_size': 'stepSize'
         }
-
         self._metric = None
         self._min_node_count = None
         self._step_size = None

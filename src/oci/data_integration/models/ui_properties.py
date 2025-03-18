@@ -33,12 +33,10 @@ class UIProperties(object):
             'coordinate_x': 'float',
             'coordinate_y': 'float'
         }
-
         self.attribute_map = {
             'coordinate_x': 'coordinateX',
             'coordinate_y': 'coordinateY'
         }
-
         self._coordinate_x = None
         self._coordinate_y = None
 

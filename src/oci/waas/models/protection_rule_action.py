@@ -51,13 +51,11 @@ class ProtectionRuleAction(object):
             'action': 'str',
             'exclusions': 'list[ProtectionRuleExclusion]'
         }
-
         self.attribute_map = {
             'key': 'key',
             'action': 'action',
             'exclusions': 'exclusions'
         }
-
         self._key = None
         self._action = None
         self._exclusions = None

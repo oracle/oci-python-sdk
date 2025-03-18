@@ -58,7 +58,6 @@ class ExadataInfrastructureUnAllocatedResources(object):
             'exadata_storage_in_tbs': 'float',
             'autonomous_vm_clusters': 'list[AutonomousVmClusterResourceDetails]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -68,7 +67,6 @@ class ExadataInfrastructureUnAllocatedResources(object):
             'exadata_storage_in_tbs': 'exadataStorageInTBs',
             'autonomous_vm_clusters': 'autonomousVmClusters'
         }
-
         self._id = None
         self._display_name = None
         self._local_storage_in_gbs = None

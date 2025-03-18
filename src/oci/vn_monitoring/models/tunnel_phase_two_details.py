@@ -83,7 +83,6 @@ class TunnelPhaseTwoDetails(object):
             'is_pfs_enabled': 'bool',
             'remaining_lifetime_last_retrieved': 'datetime'
         }
-
         self.attribute_map = {
             'is_custom_phase_two_config': 'isCustomPhaseTwoConfig',
             'lifetime': 'lifetime',
@@ -98,7 +97,6 @@ class TunnelPhaseTwoDetails(object):
             'is_pfs_enabled': 'isPfsEnabled',
             'remaining_lifetime_last_retrieved': 'remainingLifetimeLastRetrieved'
         }
-
         self._is_custom_phase_two_config = None
         self._lifetime = None
         self._remaining_lifetime = None

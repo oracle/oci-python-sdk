@@ -126,7 +126,6 @@ class UpdateOracleNosqlConnectionDetails(UpdateConnectionDetails):
             'public_key_fingerprint': 'str',
             'should_use_resource_principal': 'bool'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'display_name': 'displayName',
@@ -149,7 +148,6 @@ class UpdateOracleNosqlConnectionDetails(UpdateConnectionDetails):
             'public_key_fingerprint': 'publicKeyFingerprint',
             'should_use_resource_principal': 'shouldUseResourcePrincipal'
         }
-
         self._connection_type = None
         self._display_name = None
         self._description = None

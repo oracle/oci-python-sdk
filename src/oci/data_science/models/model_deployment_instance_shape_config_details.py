@@ -52,13 +52,11 @@ class ModelDeploymentInstanceShapeConfigDetails(object):
             'memory_in_gbs': 'float',
             'cpu_baseline': 'str'
         }
-
         self.attribute_map = {
             'ocpus': 'ocpus',
             'memory_in_gbs': 'memoryInGBs',
             'cpu_baseline': 'cpuBaseline'
         }
-
         self._ocpus = None
         self._memory_in_gbs = None
         self._cpu_baseline = None

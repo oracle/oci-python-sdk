@@ -100,7 +100,6 @@ class ServiceCategory(object):
             'unit': 'str',
             'limit_id': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'name': 'name',
@@ -112,7 +111,6 @@ class ServiceCategory(object):
             'unit': 'unit',
             'limit_id': 'limitId'
         }
-
         self._key = None
         self._name = None
         self._label = None

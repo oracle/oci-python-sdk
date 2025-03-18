@@ -38,13 +38,11 @@ class KeyValueDetectionOverallMetricsReport(object):
             'mean_average_precision': 'float',
             'confidence_entries': 'list[KeyValueDetectionConfidenceEntry]'
         }
-
         self.attribute_map = {
             'document_count': 'documentCount',
             'mean_average_precision': 'meanAveragePrecision',
             'confidence_entries': 'confidenceEntries'
         }
-
         self._document_count = None
         self._mean_average_precision = None
         self._confidence_entries = None

@@ -88,7 +88,6 @@ class BlockchainPlatformByHostname(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'id': 'id',
             'service_endpoint': 'serviceEndpoint',
@@ -104,7 +103,6 @@ class BlockchainPlatformByHostname(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._id = None
         self._service_endpoint = None
         self._display_name = None

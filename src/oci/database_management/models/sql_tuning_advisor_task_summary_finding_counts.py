@@ -53,7 +53,6 @@ class SqlTuningAdvisorTaskSummaryFindingCounts(object):
             'statistics': 'int',
             'alternate_plan': 'int'
         }
-
         self.attribute_map = {
             'recommended_sql_profile': 'recommendedSqlProfile',
             'implemented_sql_profile': 'implementedSqlProfile',
@@ -62,7 +61,6 @@ class SqlTuningAdvisorTaskSummaryFindingCounts(object):
             'statistics': 'statistics',
             'alternate_plan': 'alternatePlan'
         }
-
         self._recommended_sql_profile = None
         self._implemented_sql_profile = None
         self._index = None

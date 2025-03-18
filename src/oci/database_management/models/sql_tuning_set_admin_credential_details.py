@@ -61,13 +61,11 @@ class SqlTuningSetAdminCredentialDetails(object):
             'username': 'str',
             'role': 'str'
         }
-
         self.attribute_map = {
             'sql_tuning_set_admin_credential_type': 'sqlTuningSetAdminCredentialType',
             'username': 'username',
             'role': 'role'
         }
-
         self._sql_tuning_set_admin_credential_type = None
         self._username = None
         self._role = None

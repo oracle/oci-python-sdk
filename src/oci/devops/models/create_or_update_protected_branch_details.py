@@ -42,12 +42,10 @@ class CreateOrUpdateProtectedBranchDetails(object):
             'branch_name': 'str',
             'protection_levels': 'list[str]'
         }
-
         self.attribute_map = {
             'branch_name': 'branchName',
             'protection_levels': 'protectionLevels'
         }
-
         self._branch_name = None
         self._protection_levels = None
 

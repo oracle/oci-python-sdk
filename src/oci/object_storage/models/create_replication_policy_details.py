@@ -38,13 +38,11 @@ class CreateReplicationPolicyDetails(object):
             'destination_region_name': 'str',
             'destination_bucket_name': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'destination_region_name': 'destinationRegionName',
             'destination_bucket_name': 'destinationBucketName'
         }
-
         self._name = None
         self._destination_region_name = None
         self._destination_bucket_name = None

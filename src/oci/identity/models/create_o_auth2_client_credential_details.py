@@ -38,13 +38,11 @@ class CreateOAuth2ClientCredentialDetails(object):
             'description': 'str',
             'scopes': 'list[FullyQualifiedScope]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'description': 'description',
             'scopes': 'scopes'
         }
-
         self._name = None
         self._description = None
         self._scopes = None

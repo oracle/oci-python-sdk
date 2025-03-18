@@ -50,13 +50,11 @@ class EmbeddedInputDetails(InputDetails):
             'content_type': 'str',
             'content': 'str'
         }
-
         self.attribute_map = {
             'input_type': 'inputType',
             'content_type': 'contentType',
             'content': 'content'
         }
-
         self._input_type = None
         self._content_type = None
         self._content = None

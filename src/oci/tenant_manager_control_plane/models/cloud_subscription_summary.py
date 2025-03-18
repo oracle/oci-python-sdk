@@ -108,7 +108,6 @@ class CloudSubscriptionSummary(SubscriptionSummary):
             'currency_code': 'str',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'entity_version': 'entityVersion',
             'id': 'id',
@@ -123,7 +122,6 @@ class CloudSubscriptionSummary(SubscriptionSummary):
             'currency_code': 'currencyCode',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._entity_version = None
         self._id = None
         self._compartment_id = None

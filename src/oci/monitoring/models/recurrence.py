@@ -40,13 +40,11 @@ class Recurrence(SuppressionCondition):
             'suppression_recurrence': 'str',
             'suppression_duration': 'str'
         }
-
         self.attribute_map = {
             'condition_type': 'conditionType',
             'suppression_recurrence': 'suppressionRecurrence',
             'suppression_duration': 'suppressionDuration'
         }
-
         self._condition_type = None
         self._suppression_recurrence = None
         self._suppression_duration = None

@@ -65,13 +65,11 @@ class UIPasswordInformation(object):
             'time_created': 'datetime',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'user_id': 'userId',
             'time_created': 'timeCreated',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._user_id = None
         self._time_created = None
         self._lifecycle_state = None

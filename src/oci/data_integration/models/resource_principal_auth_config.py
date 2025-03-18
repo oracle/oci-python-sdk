@@ -61,7 +61,6 @@ class ResourcePrincipalAuthConfig(AuthConfig):
             'model_type': 'str',
             'resource_principal_source': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'model_version': 'modelVersion',
@@ -69,7 +68,6 @@ class ResourcePrincipalAuthConfig(AuthConfig):
             'model_type': 'modelType',
             'resource_principal_source': 'resourcePrincipalSource'
         }
-
         self._key = None
         self._model_version = None
         self._parent_ref = None

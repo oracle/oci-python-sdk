@@ -28,11 +28,9 @@ class FailedConnectionsAggregateMetrics(object):
         self.swagger_types = {
             'failed_connections': 'MetricDataPoint'
         }
-
         self.attribute_map = {
             'failed_connections': 'failedConnections'
         }
-
         self._failed_connections = None
 
     @property

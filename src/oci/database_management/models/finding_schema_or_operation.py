@@ -33,12 +33,10 @@ class FindingSchemaOrOperation(object):
             'operations': 'list[str]',
             'schemas': 'list[SchemaDefinition]'
         }
-
         self.attribute_map = {
             'operations': 'operations',
             'schemas': 'schemas'
         }
-
         self._operations = None
         self._schemas = None
 

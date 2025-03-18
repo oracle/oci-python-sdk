@@ -43,12 +43,10 @@ class RateLimitingPolicy(object):
             'rate_in_requests_per_second': 'int',
             'rate_key': 'str'
         }
-
         self.attribute_map = {
             'rate_in_requests_per_second': 'rateInRequestsPerSecond',
             'rate_key': 'rateKey'
         }
-
         self._rate_in_requests_per_second = None
         self._rate_key = None
 

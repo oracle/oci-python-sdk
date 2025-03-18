@@ -38,13 +38,11 @@ class EnableAutonomousDatabaseInsightAdvancedFeaturesDetails(object):
             'connection_details': 'ConnectionDetails',
             'credential_details': 'CredentialDetails'
         }
-
         self.attribute_map = {
             'opsi_private_endpoint_id': 'opsiPrivateEndpointId',
             'connection_details': 'connectionDetails',
             'credential_details': 'credentialDetails'
         }
-
         self._opsi_private_endpoint_id = None
         self._connection_details = None
         self._credential_details = None

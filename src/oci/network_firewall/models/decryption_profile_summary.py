@@ -48,13 +48,11 @@ class DecryptionProfileSummary(object):
             'type': 'str',
             'parent_resource_id': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'type': 'type',
             'parent_resource_id': 'parentResourceId'
         }
-
         self._name = None
         self._type = None
         self._parent_resource_id = None

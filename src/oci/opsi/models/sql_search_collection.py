@@ -48,7 +48,6 @@ class SqlSearchCollection(object):
             'time_interval_end': 'datetime',
             'items': 'list[SqlSearchSummary]'
         }
-
         self.attribute_map = {
             'sql_identifier': 'sqlIdentifier',
             'sql_text': 'sqlText',
@@ -56,7 +55,6 @@ class SqlSearchCollection(object):
             'time_interval_end': 'timeIntervalEnd',
             'items': 'items'
         }
-
         self._sql_identifier = None
         self._sql_text = None
         self._time_interval_start = None

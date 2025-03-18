@@ -28,11 +28,9 @@ class UpdateModuleStreamStateDetails(object):
         self.swagger_types = {
             'modules': 'list[UpdateModuleDetails]'
         }
-
         self.attribute_map = {
             'modules': 'modules'
         }
-
         self._modules = None
 
     @property

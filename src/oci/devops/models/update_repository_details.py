@@ -58,7 +58,6 @@ class UpdateRepositoryDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'name': 'name',
             'description': 'description',
@@ -68,7 +67,6 @@ class UpdateRepositoryDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._name = None
         self._description = None
         self._default_branch = None

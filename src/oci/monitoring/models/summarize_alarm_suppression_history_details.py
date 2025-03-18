@@ -38,13 +38,11 @@ class SummarizeAlarmSuppressionHistoryDetails(object):
             'time_suppress_from_greater_than_or_equal_to': 'datetime',
             'time_suppress_from_less_than': 'datetime'
         }
-
         self.attribute_map = {
             'dimensions': 'dimensions',
             'time_suppress_from_greater_than_or_equal_to': 'timeSuppressFromGreaterThanOrEqualTo',
             'time_suppress_from_less_than': 'timeSuppressFromLessThan'
         }
-
         self._dimensions = None
         self._time_suppress_from_greater_than_or_equal_to = None
         self._time_suppress_from_less_than = None

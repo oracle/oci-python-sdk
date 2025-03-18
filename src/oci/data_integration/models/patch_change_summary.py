@@ -98,7 +98,6 @@ class PatchChangeSummary(object):
             'identifier': 'str',
             'action': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'name': 'name',
@@ -108,7 +107,6 @@ class PatchChangeSummary(object):
             'identifier': 'identifier',
             'action': 'action'
         }
-
         self._key = None
         self._name = None
         self._name_path = None

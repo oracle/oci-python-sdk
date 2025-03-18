@@ -28,11 +28,9 @@ class IngressIpDetails(object):
         self.swagger_types = {
             'ingress_ip': 'str'
         }
-
         self.attribute_map = {
             'ingress_ip': 'ingressIp'
         }
-
         self._ingress_ip = None
 
     @property

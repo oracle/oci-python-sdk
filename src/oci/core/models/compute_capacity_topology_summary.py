@@ -68,7 +68,6 @@ class ComputeCapacityTopologySummary(object):
             'time_created': 'datetime',
             'time_updated': 'datetime'
         }
-
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'compartment_id': 'compartmentId',
@@ -80,7 +79,6 @@ class ComputeCapacityTopologySummary(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated'
         }
-
         self._availability_domain = None
         self._compartment_id = None
         self._defined_tags = None

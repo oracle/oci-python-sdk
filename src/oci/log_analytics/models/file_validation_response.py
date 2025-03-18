@@ -38,13 +38,11 @@ class FileValidationResponse(object):
             'object_location': 'str',
             'files': 'list[UploadFileStatus]'
         }
-
         self.attribute_map = {
             'input_file': 'inputFile',
             'object_location': 'objectLocation',
             'files': 'files'
         }
-
         self._input_file = None
         self._object_location = None
         self._files = None

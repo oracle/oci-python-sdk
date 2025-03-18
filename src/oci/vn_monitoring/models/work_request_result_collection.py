@@ -28,11 +28,9 @@ class WorkRequestResultCollection(object):
         self.swagger_types = {
             'items': 'list[WorkRequestResult]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

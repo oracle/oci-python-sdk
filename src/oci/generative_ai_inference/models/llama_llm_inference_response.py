@@ -40,13 +40,11 @@ class LlamaLlmInferenceResponse(LlmInferenceResponse):
             'created': 'datetime',
             'choices': 'list[Choice]'
         }
-
         self.attribute_map = {
             'runtime_type': 'runtimeType',
             'created': 'created',
             'choices': 'choices'
         }
-
         self._runtime_type = None
         self._created = None
         self._choices = None

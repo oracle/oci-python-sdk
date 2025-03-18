@@ -43,11 +43,9 @@ class AssociatedTaskDetails(object):
         self.swagger_types = {
             'scope': 'str'
         }
-
         self.attribute_map = {
             'scope': 'scope'
         }
-
         self._scope = None
 
     @staticmethod

@@ -276,7 +276,6 @@ class MyDevice(object):
             'authentication_factors': 'list[MyDeviceAuthenticationFactors]',
             'non_compliances': 'list[MyDeviceNonCompliances]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -318,7 +317,6 @@ class MyDevice(object):
             'authentication_factors': 'authenticationFactors',
             'non_compliances': 'nonCompliances'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

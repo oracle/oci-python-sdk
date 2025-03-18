@@ -139,7 +139,6 @@ class StandardTask(ScheduledTask):
             'last_execution_status': 'str',
             'time_last_executed': 'datetime'
         }
-
         self.attribute_map = {
             'kind': 'kind',
             'id': 'id',
@@ -161,7 +160,6 @@ class StandardTask(ScheduledTask):
             'last_execution_status': 'lastExecutionStatus',
             'time_last_executed': 'timeLastExecuted'
         }
-
         self._kind = None
         self._id = None
         self._display_name = None

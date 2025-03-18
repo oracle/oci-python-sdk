@@ -33,12 +33,10 @@ class DatabaseCredentialDetails(object):
             'user_name': 'str',
             'password_secret_id': 'str'
         }
-
         self.attribute_map = {
             'user_name': 'userName',
             'password_secret_id': 'passwordSecretId'
         }
-
         self._user_name = None
         self._password_secret_id = None
 

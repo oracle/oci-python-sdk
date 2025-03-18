@@ -78,7 +78,6 @@ class IdentityConfiguration(object):
             'iam_user_sync_configuration': 'IamUserSyncConfiguration',
             'upst_configuration': 'UpstConfiguration'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -90,7 +89,6 @@ class IdentityConfiguration(object):
             'iam_user_sync_configuration': 'iamUserSyncConfiguration',
             'upst_configuration': 'upstConfiguration'
         }
-
         self._id = None
         self._display_name = None
         self._identity_domain_id = None

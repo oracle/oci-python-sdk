@@ -33,12 +33,10 @@ class CreateFilterGroupDetails(object):
             'name': 'str',
             'filters': 'list[Filter]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'filters': 'filters'
         }
-
         self._name = None
         self._filters = None
 

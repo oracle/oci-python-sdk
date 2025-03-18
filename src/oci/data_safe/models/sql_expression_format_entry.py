@@ -44,13 +44,11 @@ class SQLExpressionFormatEntry(FormatEntry):
             'description': 'str',
             'sql_expression': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'description': 'description',
             'sql_expression': 'sqlExpression'
         }
-
         self._type = None
         self._description = None
         self._sql_expression = None

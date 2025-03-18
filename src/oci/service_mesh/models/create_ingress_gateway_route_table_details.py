@@ -63,7 +63,6 @@ class CreateIngressGatewayRouteTableDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'ingress_gateway_id': 'ingressGatewayId',
             'name': 'name',
@@ -74,7 +73,6 @@ class CreateIngressGatewayRouteTableDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._ingress_gateway_id = None
         self._name = None
         self._description = None

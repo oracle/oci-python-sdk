@@ -85,14 +85,12 @@ class ManagementStationEventData(object):
             'status': 'str',
             'additional_details': 'WorkRequestEventDataAdditionalDetails'
         }
-
         self.attribute_map = {
             'operation_type': 'operationType',
             'health_state': 'healthState',
             'status': 'status',
             'additional_details': 'additionalDetails'
         }
-
         self._operation_type = None
         self._health_state = None
         self._status = None

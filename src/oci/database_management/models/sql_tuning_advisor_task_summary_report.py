@@ -43,14 +43,12 @@ class SqlTuningAdvisorTaskSummaryReport(object):
             'object_stat_findings': 'list[SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary]',
             'index_findings': 'list[SqlTuningAdvisorTaskSummaryReportIndexFindingSummary]'
         }
-
         self.attribute_map = {
             'task_info': 'taskInfo',
             'statistics': 'statistics',
             'object_stat_findings': 'objectStatFindings',
             'index_findings': 'indexFindings'
         }
-
         self._task_info = None
         self._statistics = None
         self._object_stat_findings = None

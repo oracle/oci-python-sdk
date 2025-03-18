@@ -83,7 +83,6 @@ class SecurityRule(object):
             'position': 'RulePosition',
             'parent_resource_id': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'condition': 'condition',
@@ -92,7 +91,6 @@ class SecurityRule(object):
             'position': 'position',
             'parent_resource_id': 'parentResourceId'
         }
-
         self._name = None
         self._condition = None
         self._action = None

@@ -43,14 +43,12 @@ class UpdateLogGroupDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags'
         }
-
         self._display_name = None
         self._description = None
         self._defined_tags = None

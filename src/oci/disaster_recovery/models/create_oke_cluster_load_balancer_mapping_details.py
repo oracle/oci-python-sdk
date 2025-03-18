@@ -33,12 +33,10 @@ class CreateOkeClusterLoadBalancerMappingDetails(object):
             'source_load_balancer_id': 'str',
             'destination_load_balancer_id': 'str'
         }
-
         self.attribute_map = {
             'source_load_balancer_id': 'sourceLoadBalancerId',
             'destination_load_balancer_id': 'destinationLoadBalancerId'
         }
-
         self._source_load_balancer_id = None
         self._destination_load_balancer_id = None
 

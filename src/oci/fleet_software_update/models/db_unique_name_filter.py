@@ -42,13 +42,11 @@ class DbUniqueNameFilter(DbFleetDiscoveryFilter):
             'mode': 'str',
             'names': 'list[str]'
         }
-
         self.attribute_map = {
             'type': 'type',
             'mode': 'mode',
             'names': 'names'
         }
-
         self._type = None
         self._mode = None
         self._names = None

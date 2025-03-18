@@ -33,12 +33,10 @@ class ImageDetails(object):
             'listing_id': 'str',
             'package_version': 'str'
         }
-
         self.attribute_map = {
             'listing_id': 'listingId',
             'package_version': 'packageVersion'
         }
-
         self._listing_id = None
         self._package_version = None
 

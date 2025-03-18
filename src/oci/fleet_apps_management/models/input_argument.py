@@ -53,13 +53,11 @@ class InputArgument(object):
             'name': 'str',
             'description': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'name': 'name',
             'description': 'description'
         }
-
         self._type = None
         self._name = None
         self._description = None

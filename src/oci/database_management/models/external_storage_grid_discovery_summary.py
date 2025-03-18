@@ -88,7 +88,6 @@ class ExternalStorageGridDiscoverySummary(EntityDiscovered):
             'entity_type': 'str',
             'count_of_storage_servers_discovered': 'int'
         }
-
         self.attribute_map = {
             'id': 'id',
             'agent_id': 'agentId',
@@ -103,7 +102,6 @@ class ExternalStorageGridDiscoverySummary(EntityDiscovered):
             'entity_type': 'entityType',
             'count_of_storage_servers_discovered': 'countOfStorageServersDiscovered'
         }
-
         self._id = None
         self._agent_id = None
         self._connector_id = None

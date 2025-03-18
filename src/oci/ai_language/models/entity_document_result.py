@@ -38,13 +38,11 @@ class EntityDocumentResult(object):
             'entities': 'list[HierarchicalEntity]',
             'language_code': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'entities': 'entities',
             'language_code': 'languageCode'
         }
-
         self._key = None
         self._entities = None
         self._language_code = None

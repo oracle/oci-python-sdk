@@ -60,7 +60,6 @@ class CreateNetworkAddressListAddressesDetails(CreateNetworkAddressListDetails):
             'system_tags': 'dict(str, dict(str, object))',
             'addresses': 'list[str]'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'compartment_id': 'compartmentId',
@@ -70,7 +69,6 @@ class CreateNetworkAddressListAddressesDetails(CreateNetworkAddressListDetails):
             'system_tags': 'systemTags',
             'addresses': 'addresses'
         }
-
         self._display_name = None
         self._compartment_id = None
         self._type = None

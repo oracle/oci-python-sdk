@@ -116,7 +116,6 @@ class PdbConversionHistoryEntry(object):
             'time_ended': 'datetime',
             'additional_cdb_params': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'action': 'action',
@@ -130,7 +129,6 @@ class PdbConversionHistoryEntry(object):
             'time_ended': 'timeEnded',
             'additional_cdb_params': 'additionalCdbParams'
         }
-
         self._id = None
         self._action = None
         self._target = None

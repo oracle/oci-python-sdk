@@ -62,7 +62,6 @@ class HttpVirtualServiceTrafficRouteRule(VirtualServiceTrafficRouteRule):
             'is_grpc': 'bool',
             'request_timeout_in_ms': 'int'
         }
-
         self.attribute_map = {
             'type': 'type',
             'destinations': 'destinations',
@@ -71,7 +70,6 @@ class HttpVirtualServiceTrafficRouteRule(VirtualServiceTrafficRouteRule):
             'is_grpc': 'isGrpc',
             'request_timeout_in_ms': 'requestTimeoutInMs'
         }
-
         self._type = None
         self._destinations = None
         self._path = None

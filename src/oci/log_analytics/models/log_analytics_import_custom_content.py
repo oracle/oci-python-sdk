@@ -48,7 +48,6 @@ class LogAnalyticsImportCustomContent(object):
             'change_list': 'LogAnalyticsImportCustomChangeList',
             'content_name': 'str'
         }
-
         self.attribute_map = {
             'parser_names': 'parserNames',
             'source_names': 'sourceNames',
@@ -56,7 +55,6 @@ class LogAnalyticsImportCustomContent(object):
             'change_list': 'changeList',
             'content_name': 'contentName'
         }
-
         self._parser_names = None
         self._source_names = None
         self._field_names = None

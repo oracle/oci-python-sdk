@@ -28,11 +28,9 @@ class FleetCredentialCollection(object):
         self.swagger_types = {
             'items': 'list[FleetCredentialSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

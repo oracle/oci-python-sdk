@@ -81,7 +81,6 @@ class ErratumSummary(object):
             'advisory_type': 'str',
             'related_cves': 'list[str]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'id': 'id',
@@ -92,7 +91,6 @@ class ErratumSummary(object):
             'advisory_type': 'advisoryType',
             'related_cves': 'relatedCves'
         }
-
         self._name = None
         self._id = None
         self._compartment_id = None

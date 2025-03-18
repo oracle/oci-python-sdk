@@ -54,7 +54,6 @@ class CreateLicenseEnterpriseExtensibilityConfigDetails(CreateConfigDetails):
             'defined_tags': 'dict(str, dict(str, object))',
             'is_enabled': 'bool'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'compartment_id': 'compartmentId',
@@ -63,7 +62,6 @@ class CreateLicenseEnterpriseExtensibilityConfigDetails(CreateConfigDetails):
             'defined_tags': 'definedTags',
             'is_enabled': 'isEnabled'
         }
-
         self._display_name = None
         self._compartment_id = None
         self._config_type = None

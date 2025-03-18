@@ -50,7 +50,6 @@ class AwsKeyDetails(AutonomousDatabaseEncryptionKeyDetails):
             'arn_role': 'str',
             'external_id': 'str'
         }
-
         self.attribute_map = {
             'provider': 'provider',
             'service_endpoint_uri': 'serviceEndpointUri',
@@ -58,7 +57,6 @@ class AwsKeyDetails(AutonomousDatabaseEncryptionKeyDetails):
             'arn_role': 'arnRole',
             'external_id': 'externalId'
         }
-
         self._provider = None
         self._service_endpoint_uri = None
         self._key_arn = None

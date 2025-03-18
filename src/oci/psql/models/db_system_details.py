@@ -38,13 +38,11 @@ class DbSystemDetails(object):
             'db_version': 'str',
             'config_id': 'str'
         }
-
         self.attribute_map = {
             'system_type': 'systemType',
             'db_version': 'dbVersion',
             'config_id': 'configId'
         }
-
         self._system_type = None
         self._db_version = None
         self._config_id = None

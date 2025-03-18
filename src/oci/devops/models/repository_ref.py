@@ -68,7 +68,6 @@ class RepositoryRef(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'ref_name': 'refName',
             'ref_type': 'refType',
@@ -77,7 +76,6 @@ class RepositoryRef(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._ref_name = None
         self._ref_type = None
         self._full_ref_name = None

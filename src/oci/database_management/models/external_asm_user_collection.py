@@ -28,11 +28,9 @@ class ExternalAsmUserCollection(object):
         self.swagger_types = {
             'items': 'list[ExternalAsmUserSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

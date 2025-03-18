@@ -62,7 +62,6 @@ class CreateInstanceConfigurationBase(object):
             'freeform_tags': 'dict(str, str)',
             'source': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
@@ -70,7 +69,6 @@ class CreateInstanceConfigurationBase(object):
             'freeform_tags': 'freeformTags',
             'source': 'source'
         }
-
         self._compartment_id = None
         self._defined_tags = None
         self._display_name = None

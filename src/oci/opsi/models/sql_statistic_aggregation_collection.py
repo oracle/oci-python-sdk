@@ -38,13 +38,11 @@ class SqlStatisticAggregationCollection(object):
             'time_interval_end': 'datetime',
             'items': 'list[SqlStatisticAggregation]'
         }
-
         self.attribute_map = {
             'time_interval_start': 'timeIntervalStart',
             'time_interval_end': 'timeIntervalEnd',
             'items': 'items'
         }
-
         self._time_interval_start = None
         self._time_interval_end = None
         self._items = None

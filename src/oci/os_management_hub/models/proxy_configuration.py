@@ -43,14 +43,12 @@ class ProxyConfiguration(object):
             'port': 'str',
             'forward': 'str'
         }
-
         self.attribute_map = {
             'is_enabled': 'isEnabled',
             'hosts': 'hosts',
             'port': 'port',
             'forward': 'forward'
         }
-
         self._is_enabled = None
         self._hosts = None
         self._port = None

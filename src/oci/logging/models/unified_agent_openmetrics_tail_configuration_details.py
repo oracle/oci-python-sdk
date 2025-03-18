@@ -40,13 +40,11 @@ class UnifiedAgentOpenmetricsTailConfigurationDetails(UnifiedAgentMonitoringAppl
             'sources': 'list[UnifiedAgentTailLogSource]',
             'destination': 'UnifiedAgentMonitoringDestination'
         }
-
         self.attribute_map = {
             'source_type': 'sourceType',
             'sources': 'sources',
             'destination': 'destination'
         }
-
         self._source_type = None
         self._sources = None
         self._destination = None

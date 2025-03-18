@@ -68,7 +68,6 @@ class MonitoredResourceCredential(object):
             'description': 'str',
             'credential_type': 'str'
         }
-
         self.attribute_map = {
             'source': 'source',
             'name': 'name',
@@ -76,7 +75,6 @@ class MonitoredResourceCredential(object):
             'description': 'description',
             'credential_type': 'credentialType'
         }
-
         self._source = None
         self._name = None
         self._type = None

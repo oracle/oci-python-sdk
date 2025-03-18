@@ -59,13 +59,11 @@ class Join(PushDownOperation):
             'condition': 'str',
             'policy': 'str'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'condition': 'condition',
             'policy': 'policy'
         }
-
         self._model_type = None
         self._condition = None
         self._policy = None

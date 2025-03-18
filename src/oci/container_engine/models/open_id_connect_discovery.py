@@ -28,11 +28,9 @@ class OpenIdConnectDiscovery(object):
         self.swagger_types = {
             'is_open_id_connect_discovery_enabled': 'bool'
         }
-
         self.attribute_map = {
             'is_open_id_connect_discovery_enabled': 'isOpenIdConnectDiscoveryEnabled'
         }
-
         self._is_open_id_connect_discovery_enabled = None
 
     @property

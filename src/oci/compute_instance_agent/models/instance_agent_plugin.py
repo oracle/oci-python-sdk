@@ -61,14 +61,12 @@ class InstanceAgentPlugin(object):
             'time_last_updated_utc': 'datetime',
             'message': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'status': 'status',
             'time_last_updated_utc': 'timeLastUpdatedUtc',
             'message': 'message'
         }
-
         self._name = None
         self._status = None
         self._time_last_updated_utc = None

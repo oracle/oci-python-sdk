@@ -178,7 +178,6 @@ class AccessRequestExt(object):
             'requestor_location': 'str',
             'ticket_number': 'str'
         }
-
         self.attribute_map = {
             'requestor_user_name': 'requestorUserName',
             'id': 'id',
@@ -199,7 +198,6 @@ class AccessRequestExt(object):
             'requestor_location': 'requestorLocation',
             'ticket_number': 'ticketNumber'
         }
-
         self._requestor_user_name = None
         self._id = None
         self._lockbox_id = None

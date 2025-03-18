@@ -40,13 +40,11 @@ class TextGenerationModelMetrics(ModelMetrics):
             'final_accuracy': 'float',
             'final_loss': 'float'
         }
-
         self.attribute_map = {
             'model_metrics_type': 'modelMetricsType',
             'final_accuracy': 'finalAccuracy',
             'final_loss': 'finalLoss'
         }
-
         self._model_metrics_type = None
         self._final_accuracy = None
         self._final_loss = None

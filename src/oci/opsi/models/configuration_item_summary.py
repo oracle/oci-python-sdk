@@ -38,11 +38,9 @@ class ConfigurationItemSummary(object):
         self.swagger_types = {
             'config_item_type': 'str'
         }
-
         self.attribute_map = {
             'config_item_type': 'configItemType'
         }
-
         self._config_item_type = None
 
     @staticmethod

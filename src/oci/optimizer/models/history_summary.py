@@ -164,7 +164,6 @@ class HistorySummary(object):
             'extended_metadata': 'dict(str, object)',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -184,7 +183,6 @@ class HistorySummary(object):
             'extended_metadata': 'extendedMetadata',
             'time_created': 'timeCreated'
         }
-
         self._id = None
         self._name = None
         self._resource_type = None

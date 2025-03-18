@@ -28,11 +28,9 @@ class LogAnalyticsAssociatedEntityCollection(object):
         self.swagger_types = {
             'items': 'list[LogAnalyticsAssociatedEntity]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

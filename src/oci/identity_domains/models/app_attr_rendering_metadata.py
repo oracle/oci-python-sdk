@@ -122,7 +122,6 @@ class AppAttrRenderingMetadata(object):
             'min_size': 'int',
             'max_size': 'int'
         }
-
         self.attribute_map = {
             'name': 'name',
             'label': 'label',
@@ -140,7 +139,6 @@ class AppAttrRenderingMetadata(object):
             'min_size': 'minSize',
             'max_size': 'maxSize'
         }
-
         self._name = None
         self._label = None
         self._helptext = None

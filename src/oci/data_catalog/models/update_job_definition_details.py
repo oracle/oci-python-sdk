@@ -68,7 +68,6 @@ class UpdateJobDefinitionDetails(object):
             'sample_data_size_in_mbs': 'int',
             'properties': 'dict(str, dict(str, str))'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'is_incremental': 'isIncremental',
@@ -80,7 +79,6 @@ class UpdateJobDefinitionDetails(object):
             'sample_data_size_in_mbs': 'sampleDataSizeInMBs',
             'properties': 'properties'
         }
-
         self._display_name = None
         self._is_incremental = None
         self._data_asset_key = None

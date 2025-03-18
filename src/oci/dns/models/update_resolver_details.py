@@ -50,7 +50,6 @@ class UpdateResolverDetails(object):
             'attached_views': 'list[AttachedViewDetails]',
             'rules': 'list[ResolverRuleDetails]'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
@@ -58,7 +57,6 @@ class UpdateResolverDetails(object):
             'attached_views': 'attachedViews',
             'rules': 'rules'
         }
-
         self._display_name = None
         self._freeform_tags = None
         self._defined_tags = None

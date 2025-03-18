@@ -33,12 +33,10 @@ class PermissionContext(object):
             'permission': 'Permission',
             'variables': 'list[ContextVariable]'
         }
-
         self.attribute_map = {
             'permission': 'permission',
             'variables': 'variables'
         }
-
         self._permission = None
         self._variables = None
 

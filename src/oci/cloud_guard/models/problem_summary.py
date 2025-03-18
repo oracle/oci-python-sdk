@@ -185,7 +185,6 @@ class ProblemSummary(object):
             'target_id': 'str',
             'locks': 'list[ResourceLock]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -206,7 +205,6 @@ class ProblemSummary(object):
             'target_id': 'targetId',
             'locks': 'locks'
         }
-
         self._id = None
         self._compartment_id = None
         self._detector_rule_id = None

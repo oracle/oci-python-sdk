@@ -28,11 +28,9 @@ class GenerateDatasetRecordsDetails(object):
         self.swagger_types = {
             'limit': 'float'
         }
-
         self.attribute_map = {
             'limit': 'limit'
         }
-
         self._limit = None
 
     @property

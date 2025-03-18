@@ -39,13 +39,11 @@ class ConfigureAutomaticCaptureFiltersDetails(object):
             'credentials': 'ManagedDatabaseCredential',
             'database_credential': 'DatabaseCredentialDetails'
         }
-
         self.attribute_map = {
             'auto_capture_filters': 'autoCaptureFilters',
             'credentials': 'credentials',
             'database_credential': 'databaseCredential'
         }
-
         self._auto_capture_filters = None
         self._credentials = None
         self._database_credential = None

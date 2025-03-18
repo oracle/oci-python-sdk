@@ -35,12 +35,10 @@ class AbsoluteTimeStartPolicy(ContinuousQueryStartPolicy):
             'start_policy_type': 'str',
             'query_start_time': 'datetime'
         }
-
         self.attribute_map = {
             'start_policy_type': 'startPolicyType',
             'query_start_time': 'queryStartTime'
         }
-
         self._start_policy_type = None
         self._query_start_time = None
         self._start_policy_type = 'ABSOLUTE_TIME_START_POLICY'

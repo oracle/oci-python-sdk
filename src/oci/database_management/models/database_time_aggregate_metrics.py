@@ -48,7 +48,6 @@ class DatabaseTimeAggregateMetrics(object):
             'user_io_time': 'MetricDataPoint',
             'cluster': 'MetricDataPoint'
         }
-
         self.attribute_map = {
             'cpu_count': 'cpuCount',
             'cpu_time': 'cpuTime',
@@ -56,7 +55,6 @@ class DatabaseTimeAggregateMetrics(object):
             'user_io_time': 'userIoTime',
             'cluster': 'cluster'
         }
-
         self._cpu_count = None
         self._cpu_time = None
         self._wait_time = None

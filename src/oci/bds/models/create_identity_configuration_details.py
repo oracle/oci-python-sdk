@@ -53,7 +53,6 @@ class CreateIdentityConfigurationDetails(object):
             'upst_configuration_details': 'UpstConfigurationDetails',
             'iam_user_sync_configuration_details': 'IamUserSyncConfigurationDetails'
         }
-
         self.attribute_map = {
             'cluster_admin_password': 'clusterAdminPassword',
             'display_name': 'displayName',
@@ -62,7 +61,6 @@ class CreateIdentityConfigurationDetails(object):
             'upst_configuration_details': 'upstConfigurationDetails',
             'iam_user_sync_configuration_details': 'iamUserSyncConfigurationDetails'
         }
-
         self._cluster_admin_password = None
         self._display_name = None
         self._identity_domain_id = None

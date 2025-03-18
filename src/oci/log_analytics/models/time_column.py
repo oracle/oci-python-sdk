@@ -102,7 +102,6 @@ class TimeColumn(AbstractColumn):
             'span': 'str',
             'times': 'list[int]'
         }
-
         self.attribute_map = {
             'type': 'type',
             'display_name': 'displayName',
@@ -120,7 +119,6 @@ class TimeColumn(AbstractColumn):
             'span': 'span',
             'times': 'times'
         }
-
         self._type = None
         self._display_name = None
         self._sub_system = None

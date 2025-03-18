@@ -45,14 +45,12 @@ class OciVcnIpNativeNodePoolPodNetworkOptionDetails(NodePoolPodNetworkOptionDeta
             'pod_nsg_ids': 'list[str]',
             'pod_subnet_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'cni_type': 'cniType',
             'max_pods_per_node': 'maxPodsPerNode',
             'pod_nsg_ids': 'podNsgIds',
             'pod_subnet_ids': 'podSubnetIds'
         }
-
         self._cni_type = None
         self._max_pods_per_node = None
         self._pod_nsg_ids = None

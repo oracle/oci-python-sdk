@@ -33,12 +33,10 @@ class OperationalMetricsRecordInput(object):
             'namespace': 'str',
             'resource_group': 'str'
         }
-
         self.attribute_map = {
             'namespace': 'namespace',
             'resource_group': 'resourceGroup'
         }
-
         self._namespace = None
         self._resource_group = None
 

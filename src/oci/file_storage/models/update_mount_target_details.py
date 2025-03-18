@@ -58,7 +58,6 @@ class UpdateMountTargetDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'idmap_type': 'idmapType',
@@ -68,7 +67,6 @@ class UpdateMountTargetDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._display_name = None
         self._idmap_type = None
         self._ldap_idmap = None

@@ -64,14 +64,12 @@ class BulkUpdateAttributeMetadata(object):
             'attributes_updated': 'int',
             'synthetic_attributes_updated': 'int'
         }
-
         self.attribute_map = {
             'operation_status': 'operationStatus',
             'operation_type': 'operationType',
             'attributes_updated': 'attributesUpdated',
             'synthetic_attributes_updated': 'syntheticAttributesUpdated'
         }
-
         self._operation_status = None
         self._operation_type = None
         self._attributes_updated = None

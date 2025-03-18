@@ -71,14 +71,12 @@ class UpdateDataGuardAssociationDetails(object):
             'transport_type': 'str',
             'is_active_data_guard_enabled': 'bool'
         }
-
         self.attribute_map = {
             'database_admin_password': 'databaseAdminPassword',
             'protection_mode': 'protectionMode',
             'transport_type': 'transportType',
             'is_active_data_guard_enabled': 'isActiveDataGuardEnabled'
         }
-
         self._database_admin_password = None
         self._protection_mode = None
         self._transport_type = None

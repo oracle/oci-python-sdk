@@ -33,12 +33,10 @@ class SoftwareSourceId(object):
             'name': 'str',
             'id': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'id': 'id'
         }
-
         self._name = None
         self._id = None
 

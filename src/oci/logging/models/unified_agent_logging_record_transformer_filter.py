@@ -71,7 +71,6 @@ class UnifiedAgentLoggingRecordTransformerFilter(UnifiedAgentLoggingFilter):
             'keep_keys': 'list[str]',
             'remove_keys': 'list[str]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'filter_type': 'filterType',
@@ -83,7 +82,6 @@ class UnifiedAgentLoggingRecordTransformerFilter(UnifiedAgentLoggingFilter):
             'keep_keys': 'keepKeys',
             'remove_keys': 'removeKeys'
         }
-
         self._name = None
         self._filter_type = None
         self._record_list = None

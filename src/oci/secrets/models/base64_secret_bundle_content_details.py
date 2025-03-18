@@ -35,12 +35,10 @@ class Base64SecretBundleContentDetails(SecretBundleContentDetails):
             'content_type': 'str',
             'content': 'str'
         }
-
         self.attribute_map = {
             'content_type': 'contentType',
             'content': 'content'
         }
-
         self._content_type = None
         self._content = None
         self._content_type = 'BASE64'

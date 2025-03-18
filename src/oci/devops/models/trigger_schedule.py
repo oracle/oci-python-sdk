@@ -47,12 +47,10 @@ class TriggerSchedule(object):
             'schedule_type': 'str',
             'custom_schedule': 'str'
         }
-
         self.attribute_map = {
             'schedule_type': 'scheduleType',
             'custom_schedule': 'customSchedule'
         }
-
         self._schedule_type = None
         self._custom_schedule = None
 

@@ -105,7 +105,6 @@ class HostMemoryUsage(HostPerformanceMetricGroup):
             'huge_pages_reserved': 'int',
             'huge_pages_surplus': 'int'
         }
-
         self.attribute_map = {
             'metric_name': 'metricName',
             'time_collected': 'timeCollected',
@@ -124,7 +123,6 @@ class HostMemoryUsage(HostPerformanceMetricGroup):
             'huge_pages_reserved': 'hugePagesReserved',
             'huge_pages_surplus': 'hugePagesSurplus'
         }
-
         self._metric_name = None
         self._time_collected = None
         self._memory_used_in_gb = None

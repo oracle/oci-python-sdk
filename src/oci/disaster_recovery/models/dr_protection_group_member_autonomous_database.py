@@ -60,14 +60,12 @@ class DrProtectionGroupMemberAutonomousDatabase(DrProtectionGroupMember):
             'autonomous_database_standby_type_for_dr_drills': 'str',
             'password_vault_secret_id': 'str'
         }
-
         self.attribute_map = {
             'member_id': 'memberId',
             'member_type': 'memberType',
             'autonomous_database_standby_type_for_dr_drills': 'autonomousDatabaseStandbyTypeForDrDrills',
             'password_vault_secret_id': 'passwordVaultSecretId'
         }
-
         self._member_id = None
         self._member_type = None
         self._autonomous_database_standby_type_for_dr_drills = None

@@ -40,13 +40,11 @@ class DatabaseUpgradeWithDatabaseSoftwareImageDetails(DatabaseUpgradeSourceBase)
             'options': 'str',
             'database_software_image_id': 'str'
         }
-
         self.attribute_map = {
             'source': 'source',
             'options': 'options',
             'database_software_image_id': 'databaseSoftwareImageId'
         }
-
         self._source = None
         self._options = None
         self._database_software_image_id = None

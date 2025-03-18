@@ -70,7 +70,6 @@ class UpdateBitbucketCloudUsernameAppPasswordConfigurationSourceProviderDetails(
             'username': 'str',
             'secret_id': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
@@ -82,7 +81,6 @@ class UpdateBitbucketCloudUsernameAppPasswordConfigurationSourceProviderDetails(
             'username': 'username',
             'secret_id': 'secretId'
         }
-
         self._display_name = None
         self._description = None
         self._config_source_provider_type = None

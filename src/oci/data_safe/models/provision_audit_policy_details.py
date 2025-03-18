@@ -33,12 +33,10 @@ class ProvisionAuditPolicyDetails(object):
             'is_data_safe_service_account_excluded': 'bool',
             'provision_audit_conditions': 'list[ProvisionAuditConditions]'
         }
-
         self.attribute_map = {
             'is_data_safe_service_account_excluded': 'isDataSafeServiceAccountExcluded',
             'provision_audit_conditions': 'provisionAuditConditions'
         }
-
         self._is_data_safe_service_account_excluded = None
         self._provision_audit_conditions = None
 

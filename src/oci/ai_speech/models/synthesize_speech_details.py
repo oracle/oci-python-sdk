@@ -48,7 +48,6 @@ class SynthesizeSpeechDetails(object):
             'configuration': 'TtsConfiguration',
             'audio_config': 'TtsAudioConfig'
         }
-
         self.attribute_map = {
             'text': 'text',
             'is_stream_enabled': 'isStreamEnabled',
@@ -56,7 +55,6 @@ class SynthesizeSpeechDetails(object):
             'configuration': 'configuration',
             'audio_config': 'audioConfig'
         }
-
         self._text = None
         self._is_stream_enabled = None
         self._compartment_id = None

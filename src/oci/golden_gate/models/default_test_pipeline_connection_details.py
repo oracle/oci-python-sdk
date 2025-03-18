@@ -35,12 +35,10 @@ class DefaultTestPipelineConnectionDetails(TestPipelineConnectionDetails):
             'type': 'str',
             'connection_id': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'connection_id': 'connectionId'
         }
-
         self._type = None
         self._connection_id = None
         self._type = 'DEFAULT'

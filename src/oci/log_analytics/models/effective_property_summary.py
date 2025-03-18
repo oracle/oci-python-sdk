@@ -43,14 +43,12 @@ class EffectivePropertySummary(object):
             'effective_level': 'str',
             'patterns': 'list[PatternOverride]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'value': 'value',
             'effective_level': 'effectiveLevel',
             'patterns': 'patterns'
         }
-
         self._name = None
         self._value = None
         self._effective_level = None

@@ -219,7 +219,6 @@ class DatabaseTableAccessEntrySummary(object):
             'is_access_constrained_by_sql_firewall': 'bool',
             'is_sensitive': 'bool'
         }
-
         self.attribute_map = {
             'key': 'key',
             'grantee': 'grantee',
@@ -244,7 +243,6 @@ class DatabaseTableAccessEntrySummary(object):
             'is_access_constrained_by_sql_firewall': 'isAccessConstrainedBySqlFirewall',
             'is_sensitive': 'isSensitive'
         }
-
         self._key = None
         self._grantee = None
         self._grant_from_role = None

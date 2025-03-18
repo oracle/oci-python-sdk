@@ -153,7 +153,6 @@ class CreateDedicatedShardedDatabase(CreateShardedDatabaseDetails):
             'shard_details': 'list[CreateDedicatedShardDetail]',
             'catalog_details': 'list[CreateDedicatedCatalogDetail]'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'db_deployment_type': 'dbDeploymentType',
@@ -178,7 +177,6 @@ class CreateDedicatedShardedDatabase(CreateShardedDatabaseDetails):
             'shard_details': 'shardDetails',
             'catalog_details': 'catalogDetails'
         }
-
         self._compartment_id = None
         self._db_deployment_type = None
         self._display_name = None

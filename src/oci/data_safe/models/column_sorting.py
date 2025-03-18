@@ -38,13 +38,11 @@ class ColumnSorting(object):
             'is_ascending': 'bool',
             'sorting_order': 'int'
         }
-
         self.attribute_map = {
             'field_name': 'fieldName',
             'is_ascending': 'isAscending',
             'sorting_order': 'sortingOrder'
         }
-
         self._field_name = None
         self._is_ascending = None
         self._sorting_order = None

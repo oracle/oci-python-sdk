@@ -41,13 +41,11 @@ class AllowedSecurityAction(SecurityAction):
             'action_type': 'str',
             'allowed_security_action_details': 'AllowedSecurityActionDetails'
         }
-
         self.attribute_map = {
             'action': 'action',
             'action_type': 'actionType',
             'allowed_security_action_details': 'allowedSecurityActionDetails'
         }
-
         self._action = None
         self._action_type = None
         self._allowed_security_action_details = None

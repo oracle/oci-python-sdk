@@ -43,14 +43,12 @@ class BlockchainPlatformPatchSummary(object):
             'patch_info_url': 'str',
             'time_patch_due': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'service_version': 'serviceVersion',
             'patch_info_url': 'patchInfoUrl',
             'time_patch_due': 'timePatchDue'
         }
-
         self._id = None
         self._service_version = None
         self._patch_info_url = None

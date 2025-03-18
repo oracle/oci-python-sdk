@@ -28,11 +28,9 @@ class ReplacePackagesInSoftwareSourceDetails(object):
         self.swagger_types = {
             'packages': 'list[str]'
         }
-
         self.attribute_map = {
             'packages': 'packages'
         }
-
         self._packages = None
 
     @property

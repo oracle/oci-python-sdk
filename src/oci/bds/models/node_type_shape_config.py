@@ -33,12 +33,10 @@ class NodeTypeShapeConfig(object):
             'node_type': 'str',
             'shape': 'str'
         }
-
         self.attribute_map = {
             'node_type': 'nodeType',
             'shape': 'shape'
         }
-
         self._node_type = None
         self._shape = None
 

@@ -169,7 +169,6 @@ class DataEntityFromDataStoreEntityDetails(DataEntityDetails):
             'is_silent_error': 'bool',
             'supports_incremental': 'bool'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -195,7 +194,6 @@ class DataEntityFromDataStoreEntityDetails(DataEntityDetails):
             'is_silent_error': 'isSilentError',
             'supports_incremental': 'supportsIncremental'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

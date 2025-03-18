@@ -30,11 +30,9 @@ class AttachTargetDetectorRecipeDetails(object):
         self.swagger_types = {
             'detector_recipe_id': 'str'
         }
-
         self.attribute_map = {
             'detector_recipe_id': 'detectorRecipeId'
         }
-
         self._detector_recipe_id = None
 
     @property

@@ -69,14 +69,12 @@ class ModelDeploymentShapeSummary(object):
             'memory_in_gbs': 'int',
             'shape_series': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'core_count': 'coreCount',
             'memory_in_gbs': 'memoryInGBs',
             'shape_series': 'shapeSeries'
         }
-
         self._name = None
         self._core_count = None
         self._memory_in_gbs = None

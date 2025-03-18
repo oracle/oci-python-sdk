@@ -47,12 +47,10 @@ class CreateOrUpdateGitRefDetails(object):
             'ref_name': 'str',
             'ref_type': 'str'
         }
-
         self.attribute_map = {
             'ref_name': 'refName',
             'ref_type': 'refType'
         }
-
         self._ref_name = None
         self._ref_type = None
 

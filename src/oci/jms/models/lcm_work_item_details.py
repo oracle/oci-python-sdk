@@ -41,13 +41,11 @@ class LcmWorkItemDetails(WorkItemDetails):
             'work_item_type': 'str',
             'post_installation_actions': 'PostInstallationActionSettings'
         }
-
         self.attribute_map = {
             'kind': 'kind',
             'work_item_type': 'workItemType',
             'post_installation_actions': 'postInstallationActions'
         }
-
         self._kind = None
         self._work_item_type = None
         self._post_installation_actions = None

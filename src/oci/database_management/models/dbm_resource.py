@@ -162,7 +162,6 @@ class DbmResource(object):
             'additional_details': 'dict(str, str)',
             'resource_type': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -176,7 +175,6 @@ class DbmResource(object):
             'additional_details': 'additionalDetails',
             'resource_type': 'resourceType'
         }
-
         self._id = None
         self._display_name = None
         self._version = None

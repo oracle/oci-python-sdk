@@ -110,7 +110,6 @@ class DataAssetSummaryFromLake(DataAssetSummary):
             'lake_proxy_endpoint': 'str',
             'default_connection': 'ConnectionSummaryFromLake'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -130,7 +129,6 @@ class DataAssetSummaryFromLake(DataAssetSummary):
             'lake_proxy_endpoint': 'lakeProxyEndpoint',
             'default_connection': 'defaultConnection'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

@@ -73,7 +73,6 @@ class DelegatedResourceAccessRequestApprovalDetails(object):
             'approver_id': 'str',
             'approver_additional_message': 'str'
         }
-
         self.attribute_map = {
             'approval_action': 'approvalAction',
             'time_approved_for_access': 'timeApprovedForAccess',
@@ -82,7 +81,6 @@ class DelegatedResourceAccessRequestApprovalDetails(object):
             'approver_id': 'approverId',
             'approver_additional_message': 'approverAdditionalMessage'
         }
-
         self._approval_action = None
         self._time_approved_for_access = None
         self._approval_type = None

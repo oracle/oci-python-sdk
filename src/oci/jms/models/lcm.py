@@ -33,12 +33,10 @@ class Lcm(object):
             'is_enabled': 'bool',
             'post_installation_actions': 'PostInstallationActionSettings'
         }
-
         self.attribute_map = {
             'is_enabled': 'isEnabled',
             'post_installation_actions': 'postInstallationActions'
         }
-
         self._is_enabled = None
         self._post_installation_actions = None
 

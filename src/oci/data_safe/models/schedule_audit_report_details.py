@@ -40,13 +40,11 @@ class ScheduleAuditReportDetails(ReportDetails):
             'row_limit': 'int',
             'record_time_span': 'str'
         }
-
         self.attribute_map = {
             'report_type': 'reportType',
             'row_limit': 'rowLimit',
             'record_time_span': 'recordTimeSpan'
         }
-
         self._report_type = None
         self._row_limit = None
         self._record_time_span = None

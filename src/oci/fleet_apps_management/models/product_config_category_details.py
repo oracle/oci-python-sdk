@@ -56,7 +56,6 @@ class ProductConfigCategoryDetails(ConfigCategoryDetails):
             'compatible_products': 'list[ConfigAssociationDetails]',
             'patch_types': 'list[ConfigAssociationDetails]'
         }
-
         self.attribute_map = {
             'config_category': 'configCategory',
             'versions': 'versions',
@@ -65,7 +64,6 @@ class ProductConfigCategoryDetails(ConfigCategoryDetails):
             'compatible_products': 'compatibleProducts',
             'patch_types': 'patchTypes'
         }
-
         self._config_category = None
         self._versions = None
         self._credentials = None

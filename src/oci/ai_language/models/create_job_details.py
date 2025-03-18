@@ -58,7 +58,6 @@ class CreateJobDetails(object):
             'model_metadata_details': 'list[ModelMetadataDetails]',
             'output_location': 'ObjectPrefixOutputLocation'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
@@ -68,7 +67,6 @@ class CreateJobDetails(object):
             'model_metadata_details': 'modelMetadataDetails',
             'output_location': 'outputLocation'
         }
-
         self._display_name = None
         self._description = None
         self._compartment_id = None

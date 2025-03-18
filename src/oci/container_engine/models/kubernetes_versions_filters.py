@@ -38,13 +38,11 @@ class KubernetesVersionsFilters(object):
             'maximum_version': 'str',
             'exact_kubernetes_versions': 'list[str]'
         }
-
         self.attribute_map = {
             'minimal_version': 'minimalVersion',
             'maximum_version': 'maximumVersion',
             'exact_kubernetes_versions': 'exactKubernetesVersions'
         }
-
         self._minimal_version = None
         self._maximum_version = None
         self._exact_kubernetes_versions = None

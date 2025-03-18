@@ -40,13 +40,11 @@ class TagDefault(object):
             'value': 'str',
             'is_required': 'bool'
         }
-
         self.attribute_map = {
             'tag_name': 'tagName',
             'value': 'value',
             'is_required': 'isRequired'
         }
-
         self._tag_name = None
         self._value = None
         self._is_required = None

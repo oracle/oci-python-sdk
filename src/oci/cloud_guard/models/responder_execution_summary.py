@@ -162,7 +162,6 @@ class ResponderExecutionSummary(object):
             'message': 'str',
             'responder_rule_execution_details': 'ResponderRuleExecutionDetails'
         }
-
         self.attribute_map = {
             'id': 'id',
             'responder_rule_id': 'responderRuleId',
@@ -182,7 +181,6 @@ class ResponderExecutionSummary(object):
             'message': 'message',
             'responder_rule_execution_details': 'responderRuleExecutionDetails'
         }
-
         self._id = None
         self._responder_rule_id = None
         self._responder_rule_type = None

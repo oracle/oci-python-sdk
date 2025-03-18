@@ -33,12 +33,10 @@ class AppCloudControlProperties(object):
             'name': 'str',
             'values': 'list[str]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'values': 'values'
         }
-
         self._name = None
         self._values = None
 

@@ -47,12 +47,10 @@ class ImageUrl(object):
             'url': 'str',
             'detail': 'str'
         }
-
         self.attribute_map = {
             'url': 'url',
             'detail': 'detail'
         }
-
         self._url = None
         self._detail = None
 

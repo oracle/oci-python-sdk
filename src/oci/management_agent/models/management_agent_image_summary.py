@@ -162,7 +162,6 @@ class ManagementAgentImageSummary(object):
             'image_object_storage_details': 'ObjectDetails',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'platform_type': 'platformType',
@@ -176,7 +175,6 @@ class ManagementAgentImageSummary(object):
             'image_object_storage_details': 'imageObjectStorageDetails',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._id = None
         self._platform_type = None
         self._platform_name = None

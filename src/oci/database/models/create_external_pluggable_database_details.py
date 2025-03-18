@@ -53,7 +53,6 @@ class CreateExternalPluggableDatabaseDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'source_id': 'sourceId',
             'external_container_database_id': 'externalContainerDatabaseId',
@@ -62,7 +61,6 @@ class CreateExternalPluggableDatabaseDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._source_id = None
         self._external_container_database_id = None
         self._compartment_id = None

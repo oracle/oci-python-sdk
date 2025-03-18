@@ -39,13 +39,11 @@ class CreateZipUploadConfigSourceDetails(CreateConfigSourceDetails):
             'working_directory': 'str',
             'zip_file_base64_encoded': 'str'
         }
-
         self.attribute_map = {
             'config_source_type': 'configSourceType',
             'working_directory': 'workingDirectory',
             'zip_file_base64_encoded': 'zipFileBase64Encoded'
         }
-
         self._config_source_type = None
         self._working_directory = None
         self._zip_file_base64_encoded = None

@@ -37,11 +37,9 @@ class Eula(object):
         self.swagger_types = {
             'eula_type': 'str'
         }
-
         self.attribute_map = {
             'eula_type': 'eulaType'
         }
-
         self._eula_type = None
 
     @staticmethod

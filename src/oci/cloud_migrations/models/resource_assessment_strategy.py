@@ -72,12 +72,10 @@ class ResourceAssessmentStrategy(object):
             'resource_type': 'str',
             'strategy_type': 'str'
         }
-
         self.attribute_map = {
             'resource_type': 'resourceType',
             'strategy_type': 'strategyType'
         }
-
         self._resource_type = None
         self._strategy_type = None
 

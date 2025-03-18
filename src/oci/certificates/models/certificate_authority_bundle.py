@@ -104,7 +104,6 @@ class CertificateAuthorityBundle(object):
             'stages': 'list[str]',
             'revocation_status': 'RevocationStatus'
         }
-
         self.attribute_map = {
             'certificate_authority_id': 'certificateAuthorityId',
             'certificate_authority_name': 'certificateAuthorityName',
@@ -118,7 +117,6 @@ class CertificateAuthorityBundle(object):
             'stages': 'stages',
             'revocation_status': 'revocationStatus'
         }
-
         self._certificate_authority_id = None
         self._certificate_authority_name = None
         self._serial_number = None

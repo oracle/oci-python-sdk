@@ -50,14 +50,12 @@ class RandomNumberFormatEntry(FormatEntry):
             'start_value': 'int',
             'end_value': 'int'
         }
-
         self.attribute_map = {
             'type': 'type',
             'description': 'description',
             'start_value': 'startValue',
             'end_value': 'endValue'
         }
-
         self._type = None
         self._description = None
         self._start_value = None

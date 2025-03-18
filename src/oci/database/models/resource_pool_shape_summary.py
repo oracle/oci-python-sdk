@@ -28,11 +28,9 @@ class ResourcePoolShapeSummary(object):
         self.swagger_types = {
             'shape': 'int'
         }
-
         self.attribute_map = {
             'shape': 'shape'
         }
-
         self._shape = None
 
     @property

@@ -43,14 +43,12 @@ class PipelineInfrastructureConfigurationDetails(object):
             'subnet_id': 'str',
             'shape_config_details': 'PipelineShapeConfigDetails'
         }
-
         self.attribute_map = {
             'shape_name': 'shapeName',
             'block_storage_size_in_gbs': 'blockStorageSizeInGBs',
             'subnet_id': 'subnetId',
             'shape_config_details': 'shapeConfigDetails'
         }
-
         self._shape_name = None
         self._block_storage_size_in_gbs = None
         self._subnet_id = None

@@ -33,12 +33,10 @@ class StaticEntityValue(object):
             'canonical_name': 'str',
             'natural_language_mapping': 'StaticEntityValueNaturalLanguageMapping'
         }
-
         self.attribute_map = {
             'canonical_name': 'canonicalName',
             'natural_language_mapping': 'naturalLanguageMapping'
         }
-
         self._canonical_name = None
         self._natural_language_mapping = None
 

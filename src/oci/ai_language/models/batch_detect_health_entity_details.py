@@ -58,7 +58,6 @@ class BatchDetectHealthEntityDetails(object):
             'is_detect_relationships': 'bool',
             'profile': 'Profile'
         }
-
         self.attribute_map = {
             'alias': 'alias',
             'endpoint_id': 'endpointId',
@@ -68,7 +67,6 @@ class BatchDetectHealthEntityDetails(object):
             'is_detect_relationships': 'isDetectRelationships',
             'profile': 'profile'
         }
-
         self._alias = None
         self._endpoint_id = None
         self._documents = None

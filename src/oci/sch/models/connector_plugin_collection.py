@@ -28,11 +28,9 @@ class ConnectorPluginCollection(object):
         self.swagger_types = {
             'items': 'list[ConnectorPluginSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

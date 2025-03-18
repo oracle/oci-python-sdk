@@ -38,11 +38,9 @@ class TestStrategy(object):
         self.swagger_types = {
             'strategy_type': 'str'
         }
-
         self.attribute_map = {
             'strategy_type': 'strategyType'
         }
-
         self._strategy_type = None
 
     @staticmethod

@@ -33,12 +33,10 @@ class MySqlFleetSummary(object):
             'aggregated_metrics': 'list[MySqlFleetMetricSummaryDefinition]',
             'inventory': 'list[MySqlFleetByCategory]'
         }
-
         self.attribute_map = {
             'aggregated_metrics': 'aggregatedMetrics',
             'inventory': 'inventory'
         }
-
         self._aggregated_metrics = None
         self._inventory = None
 

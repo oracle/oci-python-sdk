@@ -53,7 +53,6 @@ class CopyBackupDetails(object):
             'source_backup_id': 'str',
             'source_region': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'description': 'description',
@@ -62,7 +61,6 @@ class CopyBackupDetails(object):
             'source_backup_id': 'sourceBackupId',
             'source_region': 'sourceRegion'
         }
-
         self._compartment_id = None
         self._description = None
         self._display_name = None

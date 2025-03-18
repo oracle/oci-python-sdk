@@ -28,11 +28,9 @@ class DatabaseInsights(object):
         self.swagger_types = {
             'database_insights': 'object'
         }
-
         self.attribute_map = {
             'database_insights': 'databaseInsights'
         }
-
         self._database_insights = None
 
     @property

@@ -53,7 +53,6 @@ class CreateComputeCapacityTopologyDetails(object):
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'capacity_source': 'capacitySource',
@@ -62,7 +61,6 @@ class CreateComputeCapacityTopologyDetails(object):
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags'
         }
-
         self._availability_domain = None
         self._capacity_source = None
         self._compartment_id = None

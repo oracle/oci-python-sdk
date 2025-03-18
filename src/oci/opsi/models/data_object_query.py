@@ -52,13 +52,11 @@ class DataObjectQuery(object):
             'bind_params': 'list[DataObjectBindParameter]',
             'query_execution_timeout_in_seconds': 'float'
         }
-
         self.attribute_map = {
             'query_type': 'queryType',
             'bind_params': 'bindParams',
             'query_execution_timeout_in_seconds': 'queryExecutionTimeoutInSeconds'
         }
-
         self._query_type = None
         self._bind_params = None
         self._query_execution_timeout_in_seconds = None

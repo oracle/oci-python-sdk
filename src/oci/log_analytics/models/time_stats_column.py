@@ -107,7 +107,6 @@ class TimeStatsColumn(AbstractColumn):
             'intervals': 'list[int]',
             'series': 'list[TimeStatsDataColumn]'
         }
-
         self.attribute_map = {
             'type': 'type',
             'display_name': 'displayName',
@@ -126,7 +125,6 @@ class TimeStatsColumn(AbstractColumn):
             'intervals': 'intervals',
             'series': 'series'
         }
-
         self._type = None
         self._display_name = None
         self._sub_system = None

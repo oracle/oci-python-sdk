@@ -210,7 +210,6 @@ class DatabaseViewAccessEntry(object):
             'is_access_constrained_by_real_application_security': 'bool',
             'is_access_constrained_by_sql_firewall': 'bool'
         }
-
         self.attribute_map = {
             'key': 'key',
             'grantee': 'grantee',
@@ -233,7 +232,6 @@ class DatabaseViewAccessEntry(object):
             'is_access_constrained_by_real_application_security': 'isAccessConstrainedByRealApplicationSecurity',
             'is_access_constrained_by_sql_firewall': 'isAccessConstrainedBySqlFirewall'
         }
-
         self._key = None
         self._grantee = None
         self._access_type = None

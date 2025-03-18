@@ -130,7 +130,6 @@ class SoftwareSourceProfile(Profile):
             'system_tags': 'dict(str, dict(str, object))',
             'software_sources': 'list[SoftwareSourceDetails]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -153,7 +152,6 @@ class SoftwareSourceProfile(Profile):
             'system_tags': 'systemTags',
             'software_sources': 'softwareSources'
         }
-
         self._id = None
         self._compartment_id = None
         self._display_name = None

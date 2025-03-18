@@ -61,14 +61,12 @@ class IdentityProviderCorrelationPolicy(object):
             'ref': 'str',
             'display': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'value': 'value',
             'ref': '$ref',
             'display': 'display'
         }
-
         self._type = None
         self._value = None
         self._ref = None

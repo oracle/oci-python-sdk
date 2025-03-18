@@ -125,7 +125,6 @@ class VmTargetAssetSummary(TargetAssetSummary):
             'user_spec': 'LaunchInstanceDetails',
             'recommended_spec': 'LaunchInstanceDetails'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -148,7 +147,6 @@ class VmTargetAssetSummary(TargetAssetSummary):
             'user_spec': 'userSpec',
             'recommended_spec': 'recommendedSpec'
         }
-
         self._id = None
         self._display_name = None
         self._lifecycle_state = None

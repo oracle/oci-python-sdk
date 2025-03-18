@@ -63,7 +63,6 @@ class SubmitEmailDetails(object):
             'reply_to': 'list[EmailAddress]',
             'header_fields': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'message_id': 'messageId',
             'sender': 'sender',
@@ -74,7 +73,6 @@ class SubmitEmailDetails(object):
             'reply_to': 'replyTo',
             'header_fields': 'headerFields'
         }
-
         self._message_id = None
         self._sender = None
         self._recipients = None

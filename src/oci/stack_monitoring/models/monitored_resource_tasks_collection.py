@@ -28,11 +28,9 @@ class MonitoredResourceTasksCollection(object):
         self.swagger_types = {
             'items': 'list[MonitoredResourceTaskSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

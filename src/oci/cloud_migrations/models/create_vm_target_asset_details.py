@@ -60,7 +60,6 @@ class CreateVmTargetAssetDetails(CreateTargetAssetDetails):
             'ms_license': 'str',
             'user_spec': 'LaunchInstanceDetails'
         }
-
         self.attribute_map = {
             'migration_plan_id': 'migrationPlanId',
             'type': 'type',
@@ -70,7 +69,6 @@ class CreateVmTargetAssetDetails(CreateTargetAssetDetails):
             'ms_license': 'msLicense',
             'user_spec': 'userSpec'
         }
-
         self._migration_plan_id = None
         self._type = None
         self._is_excluded_from_execution = None

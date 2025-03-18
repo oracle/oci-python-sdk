@@ -38,13 +38,11 @@ class LogLocationBucketDetails(object):
             'namespace': 'str',
             'object_name': 'str'
         }
-
         self.attribute_map = {
             'bucket_name': 'bucketName',
             'namespace': 'namespace',
             'object_name': 'objectName'
         }
-
         self._bucket_name = None
         self._namespace = None
         self._object_name = None

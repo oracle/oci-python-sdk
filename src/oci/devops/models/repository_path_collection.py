@@ -28,11 +28,9 @@ class RepositoryPathCollection(object):
         self.swagger_types = {
             'items': 'list[RepositoryPathSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

@@ -55,7 +55,6 @@ class OpsiConfigurationBasicConfigurationItemSummary(OpsiConfigurationConfigurat
             'applicable_contexts': 'list[str]',
             'metadata': 'ConfigurationItemMetadata'
         }
-
         self.attribute_map = {
             'config_item_type': 'configItemType',
             'name': 'name',
@@ -64,7 +63,6 @@ class OpsiConfigurationBasicConfigurationItemSummary(OpsiConfigurationConfigurat
             'applicable_contexts': 'applicableContexts',
             'metadata': 'metadata'
         }
-
         self._config_item_type = None
         self._name = None
         self._value = None

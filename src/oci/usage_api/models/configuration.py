@@ -33,12 +33,10 @@ class Configuration(object):
             'key': 'str',
             'values': 'list[str]'
         }
-
         self.attribute_map = {
             'key': 'key',
             'values': 'values'
         }
-
         self._key = None
         self._values = None
 

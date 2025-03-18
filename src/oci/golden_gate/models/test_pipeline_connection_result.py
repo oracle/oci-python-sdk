@@ -47,12 +47,10 @@ class TestPipelineConnectionResult(object):
             'result_type': 'str',
             'error': 'TestPipelineConnectionError'
         }
-
         self.attribute_map = {
             'result_type': 'resultType',
             'error': 'error'
         }
-
         self._result_type = None
         self._error = None
 

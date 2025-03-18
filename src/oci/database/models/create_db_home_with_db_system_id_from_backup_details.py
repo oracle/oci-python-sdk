@@ -80,7 +80,6 @@ class CreateDbHomeWithDbSystemIdFromBackupDetails(CreateDbHomeBase):
             'db_system_id': 'str',
             'database': 'CreateDatabaseFromBackupDetails'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'kms_key_id': 'kmsKeyId',
@@ -94,7 +93,6 @@ class CreateDbHomeWithDbSystemIdFromBackupDetails(CreateDbHomeBase):
             'db_system_id': 'dbSystemId',
             'database': 'database'
         }
-
         self._display_name = None
         self._kms_key_id = None
         self._kms_key_version_id = None

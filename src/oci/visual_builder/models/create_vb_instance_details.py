@@ -91,7 +91,6 @@ class CreateVbInstanceDetails(object):
             'consumption_model': 'str',
             'network_endpoint_details': 'NetworkEndpointDetails'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'compartment_id': 'compartmentId',
@@ -105,7 +104,6 @@ class CreateVbInstanceDetails(object):
             'consumption_model': 'consumptionModel',
             'network_endpoint_details': 'networkEndpointDetails'
         }
-
         self._display_name = None
         self._compartment_id = None
         self._freeform_tags = None

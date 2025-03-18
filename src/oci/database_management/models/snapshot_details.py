@@ -28,11 +28,9 @@ class SnapshotDetails(object):
         self.swagger_types = {
             'snapshot_id': 'int'
         }
-
         self.attribute_map = {
             'snapshot_id': 'snapshotId'
         }
-
         self._snapshot_id = None
 
     @property

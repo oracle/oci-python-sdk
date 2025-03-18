@@ -137,7 +137,6 @@ class MacsManagedExternalDatabaseInsightSummary(DatabaseInsightSummary):
             'management_agent_id': 'str',
             'connector_id': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'database_id': 'databaseId',
@@ -162,7 +161,6 @@ class MacsManagedExternalDatabaseInsightSummary(DatabaseInsightSummary):
             'management_agent_id': 'managementAgentId',
             'connector_id': 'connectorId'
         }
-
         self._id = None
         self._database_id = None
         self._compartment_id = None

@@ -65,14 +65,12 @@ class SecurityPolicyEntryStateSummary(object):
             'security_policy_deployment_id': 'str',
             'deployment_status': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'security_policy_entry_id': 'securityPolicyEntryId',
             'security_policy_deployment_id': 'securityPolicyDeploymentId',
             'deployment_status': 'deploymentStatus'
         }
-
         self._id = None
         self._security_policy_entry_id = None
         self._security_policy_deployment_id = None

@@ -43,14 +43,12 @@ class LogAnalyticsSourceMetric(object):
             'source_name': 'str',
             'entity_type': 'str'
         }
-
         self.attribute_map = {
             'is_metric_source_enabled': 'isMetricSourceEnabled',
             'metric_name': 'metricName',
             'source_name': 'sourceName',
             'entity_type': 'entityType'
         }
-
         self._is_metric_source_enabled = None
         self._metric_name = None
         self._source_name = None

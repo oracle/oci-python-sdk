@@ -33,12 +33,10 @@ class PatchSummary(object):
             'version': 'str',
             'time_released': 'datetime'
         }
-
         self.attribute_map = {
             'version': 'version',
             'time_released': 'timeReleased'
         }
-
         self._version = None
         self._time_released = None
 

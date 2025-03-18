@@ -45,14 +45,12 @@ class DataSourceDetailsObjectStorage(DataSourceDetails):
             'bucket_name': 'str',
             'object_name': 'str'
         }
-
         self.attribute_map = {
             'data_source_type': 'dataSourceType',
             'namespace': 'namespace',
             'bucket_name': 'bucketName',
             'object_name': 'objectName'
         }
-
         self._data_source_type = None
         self._namespace = None
         self._bucket_name = None

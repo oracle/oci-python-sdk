@@ -28,11 +28,9 @@ class SenderInvitationCollection(object):
         self.swagger_types = {
             'items': 'list[SenderInvitationSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

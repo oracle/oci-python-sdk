@@ -45,14 +45,12 @@ class DataObjectRateColumnUnit(DataObjectColumnUnit):
             'numerator': 'DataObjectColumnUnit',
             'denominator': 'DataObjectColumnUnit'
         }
-
         self.attribute_map = {
             'unit_category': 'unitCategory',
             'display_name': 'displayName',
             'numerator': 'numerator',
             'denominator': 'denominator'
         }
-
         self._unit_category = None
         self._display_name = None
         self._numerator = None

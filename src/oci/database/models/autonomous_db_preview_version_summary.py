@@ -68,7 +68,6 @@ class AutonomousDbPreviewVersionSummary(object):
             'db_workload': 'str',
             'details': 'str'
         }
-
         self.attribute_map = {
             'version': 'version',
             'time_preview_begin': 'timePreviewBegin',
@@ -76,7 +75,6 @@ class AutonomousDbPreviewVersionSummary(object):
             'db_workload': 'dbWorkload',
             'details': 'details'
         }
-
         self._version = None
         self._time_preview_begin = None
         self._time_preview_end = None

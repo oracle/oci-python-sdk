@@ -55,14 +55,12 @@ class UserExtApiKeys(object):
             'ocid': 'str',
             'ref': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'value': 'value',
             'ocid': 'ocid',
             'ref': '$ref'
         }
-
         self._key = None
         self._value = None
         self._ocid = None

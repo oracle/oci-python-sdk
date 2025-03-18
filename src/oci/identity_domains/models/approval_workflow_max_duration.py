@@ -61,12 +61,10 @@ class ApprovalWorkflowMaxDuration(object):
             'value': 'int',
             'unit': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'unit': 'unit'
         }
-
         self._value = None
         self._unit = None
 

@@ -33,12 +33,10 @@ class DeleteBlockVolumesForNamespaceDetails(object):
             'cluster_id': 'str',
             'namespace': 'str'
         }
-
         self.attribute_map = {
             'cluster_id': 'clusterId',
             'namespace': 'namespace'
         }
-
         self._cluster_id = None
         self._namespace = None
 

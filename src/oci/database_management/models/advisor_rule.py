@@ -38,13 +38,11 @@ class AdvisorRule(object):
             'description': 'str',
             'findings': 'list[RuleFinding]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'description': 'description',
             'findings': 'findings'
         }
-
         self._name = None
         self._description = None
         self._findings = None

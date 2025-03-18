@@ -130,7 +130,6 @@ class OsvcChannel(Channel):
             'authentication_provider_name': 'str',
             'bot_id': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -151,7 +150,6 @@ class OsvcChannel(Channel):
             'authentication_provider_name': 'authenticationProviderName',
             'bot_id': 'botId'
         }
-
         self._id = None
         self._name = None
         self._description = None

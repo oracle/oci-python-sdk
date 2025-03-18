@@ -45,14 +45,12 @@ class ExternalListenerTcpEndpoint(ExternalListenerEndpoint):
             'host': 'str',
             'port': 'int'
         }
-
         self.attribute_map = {
             'protocol': 'protocol',
             'services': 'services',
             'host': 'host',
             'port': 'port'
         }
-
         self._protocol = None
         self._services = None
         self._host = None

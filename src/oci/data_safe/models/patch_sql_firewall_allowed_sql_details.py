@@ -33,12 +33,10 @@ class PatchSqlFirewallAllowedSqlDetails(object):
             'items': 'list[PatchInstruction]',
             'sql_firewall_policy_id': 'str'
         }
-
         self.attribute_map = {
             'items': 'items',
             'sql_firewall_policy_id': 'sqlFirewallPolicyId'
         }
-
         self._items = None
         self._sql_firewall_policy_id = None
 

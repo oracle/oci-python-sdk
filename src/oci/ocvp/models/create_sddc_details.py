@@ -86,7 +86,6 @@ class CreateSddcDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'vmware_software_version': 'vmwareSoftwareVersion',
@@ -99,7 +98,6 @@ class CreateSddcDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._display_name = None
         self._vmware_software_version = None
         self._esxi_software_version = None

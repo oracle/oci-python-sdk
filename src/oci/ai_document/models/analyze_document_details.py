@@ -103,7 +103,6 @@ class AnalyzeDocumentDetails(object):
             'document_type': 'str',
             'ocr_data': 'AnalyzeDocumentResult'
         }
-
         self.attribute_map = {
             'features': 'features',
             'document': 'document',
@@ -113,7 +112,6 @@ class AnalyzeDocumentDetails(object):
             'document_type': 'documentType',
             'ocr_data': 'ocrData'
         }
-
         self._features = None
         self._document = None
         self._compartment_id = None

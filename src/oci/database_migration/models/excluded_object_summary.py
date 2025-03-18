@@ -70,7 +70,6 @@ class ExcludedObjectSummary(object):
             'reason_category': 'str',
             'source_rule': 'str'
         }
-
         self.attribute_map = {
             'owner': 'owner',
             'object': 'object',
@@ -78,7 +77,6 @@ class ExcludedObjectSummary(object):
             'reason_category': 'reasonCategory',
             'source_rule': 'sourceRule'
         }
-
         self._owner = None
         self._object = None
         self._type = None

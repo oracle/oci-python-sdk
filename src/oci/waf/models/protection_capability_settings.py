@@ -53,7 +53,6 @@ class ProtectionCapabilitySettings(object):
             'max_http_request_header_length': 'int',
             'allowed_http_methods': 'list[str]'
         }
-
         self.attribute_map = {
             'max_number_of_arguments': 'maxNumberOfArguments',
             'max_single_argument_length': 'maxSingleArgumentLength',
@@ -62,7 +61,6 @@ class ProtectionCapabilitySettings(object):
             'max_http_request_header_length': 'maxHttpRequestHeaderLength',
             'allowed_http_methods': 'allowedHttpMethods'
         }
-
         self._max_number_of_arguments = None
         self._max_single_argument_length = None
         self._max_total_argument_length = None

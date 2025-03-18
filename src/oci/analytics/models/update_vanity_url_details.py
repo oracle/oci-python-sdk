@@ -43,14 +43,12 @@ class UpdateVanityUrlDetails(object):
             'public_certificate': 'str',
             'ca_certificate': 'str'
         }
-
         self.attribute_map = {
             'passphrase': 'passphrase',
             'private_key': 'privateKey',
             'public_certificate': 'publicCertificate',
             'ca_certificate': 'caCertificate'
         }
-
         self._passphrase = None
         self._private_key = None
         self._public_certificate = None

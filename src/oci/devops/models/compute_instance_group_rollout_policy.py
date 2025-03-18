@@ -48,12 +48,10 @@ class ComputeInstanceGroupRolloutPolicy(object):
             'policy_type': 'str',
             'batch_delay_in_seconds': 'int'
         }
-
         self.attribute_map = {
             'policy_type': 'policyType',
             'batch_delay_in_seconds': 'batchDelayInSeconds'
         }
-
         self._policy_type = None
         self._batch_delay_in_seconds = None
 

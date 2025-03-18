@@ -41,13 +41,11 @@ class AddHttpResponseHeaderAction(HeaderManipulationAction):
             'header': 'str',
             'value': 'str'
         }
-
         self.attribute_map = {
             'action': 'action',
             'header': 'header',
             'value': 'value'
         }
-
         self._action = None
         self._header = None
         self._value = None

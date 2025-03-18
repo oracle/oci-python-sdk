@@ -69,7 +69,6 @@ class PrivateApplicationSummary(object):
             'package_type': 'str',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'lifecycle_state': 'lifecycleState',
             'compartment_id': 'compartmentId',
@@ -80,7 +79,6 @@ class PrivateApplicationSummary(object):
             'package_type': 'packageType',
             'time_created': 'timeCreated'
         }
-
         self._lifecycle_state = None
         self._compartment_id = None
         self._id = None

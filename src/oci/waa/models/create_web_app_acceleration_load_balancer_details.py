@@ -65,7 +65,6 @@ class CreateWebAppAccelerationLoadBalancerDetails(CreateWebAppAccelerationDetail
             'system_tags': 'dict(str, dict(str, object))',
             'load_balancer_id': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'backend_type': 'backendType',
@@ -76,7 +75,6 @@ class CreateWebAppAccelerationLoadBalancerDetails(CreateWebAppAccelerationDetail
             'system_tags': 'systemTags',
             'load_balancer_id': 'loadBalancerId'
         }
-
         self._display_name = None
         self._backend_type = None
         self._compartment_id = None

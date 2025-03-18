@@ -38,13 +38,11 @@ class RateCardTier(object):
             'net_unit_price': 'str',
             'overage_price': 'str'
         }
-
         self.attribute_map = {
             'up_to_quantity': 'upToQuantity',
             'net_unit_price': 'netUnitPrice',
             'overage_price': 'overagePrice'
         }
-
         self._up_to_quantity = None
         self._net_unit_price = None
         self._overage_price = None

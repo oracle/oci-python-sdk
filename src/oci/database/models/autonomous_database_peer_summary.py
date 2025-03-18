@@ -33,12 +33,10 @@ class AutonomousDatabasePeerSummary(object):
             'id': 'str',
             'region': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'region': 'region'
         }
-
         self._id = None
         self._region = None
 

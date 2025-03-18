@@ -28,11 +28,9 @@ class TransferApplianceEncryptionPassphrase(object):
         self.swagger_types = {
             'encryption_passphrase': 'str'
         }
-
         self.attribute_map = {
             'encryption_passphrase': 'encryptionPassphrase'
         }
-
         self._encryption_passphrase = None
 
     @property

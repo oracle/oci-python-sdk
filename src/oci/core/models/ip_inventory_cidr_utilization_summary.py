@@ -38,13 +38,11 @@ class IpInventoryCidrUtilizationSummary(object):
             'utilization': 'float',
             'address_type': 'str'
         }
-
         self.attribute_map = {
             'cidr': 'cidr',
             'utilization': 'utilization',
             'address_type': 'addressType'
         }
-
         self._cidr = None
         self._utilization = None
         self._address_type = None

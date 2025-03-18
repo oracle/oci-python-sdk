@@ -48,7 +48,6 @@ class UpdateIngressGatewayRouteTableDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'description': 'description',
             'priority': 'priority',
@@ -56,7 +55,6 @@ class UpdateIngressGatewayRouteTableDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._description = None
         self._priority = None
         self._route_rules = None

@@ -68,7 +68,6 @@ class ExtensionUserStateUser(object):
             'recovery_locked': 'UserExtRecoveryLocked',
             'locked': 'UserExtLocked'
         }
-
         self.attribute_map = {
             'last_successful_login_date': 'lastSuccessfulLoginDate',
             'previous_successful_login_date': 'previousSuccessfulLoginDate',
@@ -80,7 +79,6 @@ class ExtensionUserStateUser(object):
             'recovery_locked': 'recoveryLocked',
             'locked': 'locked'
         }
-
         self._last_successful_login_date = None
         self._previous_successful_login_date = None
         self._last_failed_login_date = None

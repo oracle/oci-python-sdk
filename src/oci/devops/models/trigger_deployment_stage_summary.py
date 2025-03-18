@@ -109,7 +109,6 @@ class TriggerDeploymentStageSummary(BuildPipelineStageSummary):
             'deploy_pipeline_id': 'str',
             'is_pass_all_parameters_enabled': 'bool'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -129,7 +128,6 @@ class TriggerDeploymentStageSummary(BuildPipelineStageSummary):
             'deploy_pipeline_id': 'deployPipelineId',
             'is_pass_all_parameters_enabled': 'isPassAllParametersEnabled'
         }
-
         self._id = None
         self._display_name = None
         self._project_id = None

@@ -33,12 +33,10 @@ class ProblemAggregation(object):
             'dimensions_map': 'dict(str, str)',
             'count': 'int'
         }
-
         self.attribute_map = {
             'dimensions_map': 'dimensionsMap',
             'count': 'count'
         }
-
         self._dimensions_map = None
         self._count = None
 

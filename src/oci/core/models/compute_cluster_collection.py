@@ -31,11 +31,9 @@ class ComputeClusterCollection(object):
         self.swagger_types = {
             'items': 'list[ComputeClusterSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

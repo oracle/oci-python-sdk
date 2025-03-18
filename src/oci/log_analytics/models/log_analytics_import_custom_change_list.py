@@ -68,7 +68,6 @@ class LogAnalyticsImportCustomChangeList(object):
             'conflict_source_names': 'list[str]',
             'conflict_field_display_names': 'list[str]'
         }
-
         self.attribute_map = {
             'created_parser_names': 'createdParserNames',
             'updated_parser_names': 'updatedParserNames',
@@ -80,7 +79,6 @@ class LogAnalyticsImportCustomChangeList(object):
             'conflict_source_names': 'conflictSourceNames',
             'conflict_field_display_names': 'conflictFieldDisplayNames'
         }
-
         self._created_parser_names = None
         self._updated_parser_names = None
         self._created_source_names = None

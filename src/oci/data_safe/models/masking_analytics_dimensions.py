@@ -33,12 +33,10 @@ class MaskingAnalyticsDimensions(object):
             'target_id': 'str',
             'policy_id': 'str'
         }
-
         self.attribute_map = {
             'target_id': 'targetId',
             'policy_id': 'policyId'
         }
-
         self._target_id = None
         self._policy_id = None
 

@@ -28,11 +28,9 @@ class AttachInstancePoolInstanceDetails(object):
         self.swagger_types = {
             'instance_id': 'str'
         }
-
         self.attribute_map = {
             'instance_id': 'instanceId'
         }
-
         self._instance_id = None
 
     @property

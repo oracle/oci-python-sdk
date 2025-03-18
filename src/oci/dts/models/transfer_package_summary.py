@@ -76,13 +76,11 @@ class TransferPackageSummary(object):
             'lifecycle_state': 'str',
             'creation_time': 'datetime'
         }
-
         self.attribute_map = {
             'label': 'label',
             'lifecycle_state': 'lifecycleState',
             'creation_time': 'creationTime'
         }
-
         self._label = None
         self._lifecycle_state = None
         self._creation_time = None

@@ -28,11 +28,9 @@ class ChangeAvailabilityOfSoftwareSourcesDetails(object):
         self.swagger_types = {
             'software_source_availabilities': 'list[SoftwareSourceAvailability]'
         }
-
         self.attribute_map = {
             'software_source_availabilities': 'softwareSourceAvailabilities'
         }
-
         self._software_source_availabilities = None
 
     @property

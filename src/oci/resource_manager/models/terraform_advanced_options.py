@@ -60,13 +60,11 @@ class TerraformAdvancedOptions(object):
             'parallelism': 'int',
             'detailed_log_level': 'str'
         }
-
         self.attribute_map = {
             'is_refresh_required': 'isRefreshRequired',
             'parallelism': 'parallelism',
             'detailed_log_level': 'detailedLogLevel'
         }
-
         self._is_refresh_required = None
         self._parallelism = None
         self._detailed_log_level = None

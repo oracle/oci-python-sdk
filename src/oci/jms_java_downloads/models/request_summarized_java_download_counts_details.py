@@ -104,7 +104,6 @@ class RequestSummarizedJavaDownloadCountsDetails(object):
             'limit': 'int',
             'page': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'group_as': 'groupAs',
@@ -117,7 +116,6 @@ class RequestSummarizedJavaDownloadCountsDetails(object):
             'limit': 'limit',
             'page': 'page'
         }
-
         self._compartment_id = None
         self._group_as = None
         self._family_version = None

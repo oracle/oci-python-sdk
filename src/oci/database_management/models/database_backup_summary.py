@@ -83,7 +83,6 @@ class DatabaseBackupSummary(object):
             'backup_destination': 'str',
             'backup_size_in_gbs': 'float'
         }
-
         self.attribute_map = {
             'backup_status': 'backupStatus',
             'time_backup_completed': 'timeBackupCompleted',
@@ -92,7 +91,6 @@ class DatabaseBackupSummary(object):
             'backup_destination': 'backupDestination',
             'backup_size_in_gbs': 'backupSizeInGBs'
         }
-
         self._backup_status = None
         self._time_backup_completed = None
         self._backup_duration_in_seconds = None

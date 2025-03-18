@@ -58,7 +58,6 @@ class RetentionRuleSummary(object):
             'time_created': 'datetime',
             'time_modified': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -68,7 +67,6 @@ class RetentionRuleSummary(object):
             'time_created': 'timeCreated',
             'time_modified': 'timeModified'
         }
-
         self._id = None
         self._display_name = None
         self._duration = None

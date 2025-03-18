@@ -58,14 +58,12 @@ class ExtendHttpResponseHeaderValueRule(Rule):
             'prefix': 'str',
             'suffix': 'str'
         }
-
         self.attribute_map = {
             'action': 'action',
             'header': 'header',
             'prefix': 'prefix',
             'suffix': 'suffix'
         }
-
         self._action = None
         self._header = None
         self._prefix = None

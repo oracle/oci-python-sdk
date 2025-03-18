@@ -28,11 +28,9 @@ class ProtectionCapabilityCollection(object):
         self.swagger_types = {
             'items': 'list[ProtectionCapabilitySummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

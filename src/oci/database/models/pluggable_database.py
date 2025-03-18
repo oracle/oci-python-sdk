@@ -185,7 +185,6 @@ class PluggableDatabase(object):
             'refreshable_clone_config': 'PluggableDatabaseRefreshableCloneConfig',
             'pdb_node_level_details': 'list[PluggableDatabaseNodeLevelDetails]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'container_database_id': 'containerDatabaseId',
@@ -205,7 +204,6 @@ class PluggableDatabase(object):
             'refreshable_clone_config': 'refreshableCloneConfig',
             'pdb_node_level_details': 'pdbNodeLevelDetails'
         }
-
         self._id = None
         self._container_database_id = None
         self._pdb_name = None

@@ -52,13 +52,11 @@ class MemberReference(object):
             'type': 'str',
             'composite_type': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'type': 'type',
             'composite_type': 'compositeType'
         }
-
         self._id = None
         self._type = None
         self._composite_type = None

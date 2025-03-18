@@ -39,13 +39,11 @@ class ChangeSpaceBudgetDetails(object):
             'credentials': 'ManagedDatabaseCredential',
             'database_credential': 'DatabaseCredentialDetails'
         }
-
         self.attribute_map = {
             'space_budget_percent': 'spaceBudgetPercent',
             'credentials': 'credentials',
             'database_credential': 'databaseCredential'
         }
-
         self._space_budget_percent = None
         self._credentials = None
         self._database_credential = None

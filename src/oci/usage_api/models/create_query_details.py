@@ -33,12 +33,10 @@ class CreateQueryDetails(object):
             'compartment_id': 'str',
             'query_definition': 'QueryDefinition'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'query_definition': 'queryDefinition'
         }
-
         self._compartment_id = None
         self._query_definition = None
 

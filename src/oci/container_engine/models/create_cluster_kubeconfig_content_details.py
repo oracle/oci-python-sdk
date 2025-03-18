@@ -55,13 +55,11 @@ class CreateClusterKubeconfigContentDetails(object):
             'expiration': 'int',
             'endpoint': 'str'
         }
-
         self.attribute_map = {
             'token_version': 'tokenVersion',
             'expiration': 'expiration',
             'endpoint': 'endpoint'
         }
-
         self._token_version = None
         self._expiration = None
         self._endpoint = None

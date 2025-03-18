@@ -46,14 +46,12 @@ class UnifiedAgentUrlFilter(UnifiedAgentMonitoringFilter):
             'allow_list': 'list[str]',
             'deny_list': 'list[str]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'filter_type': 'filterType',
             'allow_list': 'allowList',
             'deny_list': 'denyList'
         }
-
         self._name = None
         self._filter_type = None
         self._allow_list = None

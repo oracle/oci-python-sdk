@@ -48,13 +48,11 @@ class ConfigValue(object):
             'managed_list_type': 'str',
             'value': 'str'
         }
-
         self.attribute_map = {
             'list_type': 'listType',
             'managed_list_type': 'managedListType',
             'value': 'value'
         }
-
         self._list_type = None
         self._managed_list_type = None
         self._value = None

@@ -86,7 +86,6 @@ class CreateOnDemandHttpProbeDetails(object):
             'path': 'str',
             'headers': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'targets': 'targets',
@@ -98,7 +97,6 @@ class CreateOnDemandHttpProbeDetails(object):
             'path': 'path',
             'headers': 'headers'
         }
-
         self._compartment_id = None
         self._targets = None
         self._vantage_point_names = None

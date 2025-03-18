@@ -135,7 +135,6 @@ class EventSummary(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'id': 'id',
             'event_summary': 'eventSummary',
@@ -152,7 +151,6 @@ class EventSummary(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._id = None
         self._event_summary = None
         self._compartment_id = None

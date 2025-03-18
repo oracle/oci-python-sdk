@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.149.0 - 2025-03-18
+====================
+
+Added 
+----- 
+* Support for Managed Services for Mac service 
+* Support for scheduling customer-initiated backups in the GoldenGate service 
+* Support for GPU memory clusters and fabrics in the Compute service   
+
+Breaking 
+-------- 
+* The properties `ip_anycast_id` and `monitor_ip` were removed from the models `CreateByoipRangeDetails` and `UpdateByoipRangeDetails` in the Compute service   
+
+====================
 2.148.0 - 2025-03-11
 ====================
 

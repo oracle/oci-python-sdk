@@ -101,7 +101,6 @@ class CreateGenericConnectionDetails(CreateConnectionDetails):
             'technology_type': 'str',
             'host': 'str'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'display_name': 'displayName',
@@ -119,7 +118,6 @@ class CreateGenericConnectionDetails(CreateConnectionDetails):
             'technology_type': 'technologyType',
             'host': 'host'
         }
-
         self._connection_type = None
         self._display_name = None
         self._description = None

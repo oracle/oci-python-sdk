@@ -58,7 +58,6 @@ class AddmDbParameterChangeAggregation(object):
             'value': 'str',
             'snapshot_id': 'int'
         }
-
         self.attribute_map = {
             'id': 'id',
             'time_begin': 'timeBegin',
@@ -68,7 +67,6 @@ class AddmDbParameterChangeAggregation(object):
             'value': 'value',
             'snapshot_id': 'snapshotId'
         }
-
         self._id = None
         self._time_begin = None
         self._time_end = None

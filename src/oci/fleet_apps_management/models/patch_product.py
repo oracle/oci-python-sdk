@@ -33,12 +33,10 @@ class PatchProduct(object):
             'platform_configuration_id': 'str',
             'version': 'str'
         }
-
         self.attribute_map = {
             'platform_configuration_id': 'platformConfigurationId',
             'version': 'version'
         }
-
         self._platform_configuration_id = None
         self._version = None
 

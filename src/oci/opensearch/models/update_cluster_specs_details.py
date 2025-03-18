@@ -63,7 +63,6 @@ class UpdateClusterSpecsDetails(object):
             'dashboard_software_version': 'str',
             'cluster_private_endpoint': 'str'
         }
-
         self.attribute_map = {
             'cluster_id': 'clusterId',
             'master_node_host_ocpu_count': 'masterNodeHostOcpuCount',
@@ -74,7 +73,6 @@ class UpdateClusterSpecsDetails(object):
             'dashboard_software_version': 'dashboardSoftwareVersion',
             'cluster_private_endpoint': 'clusterPrivateEndpoint'
         }
-
         self._cluster_id = None
         self._master_node_host_ocpu_count = None
         self._master_node_host_memory_gb = None

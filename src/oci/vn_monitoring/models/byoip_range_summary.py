@@ -78,7 +78,6 @@ class ByoipRangeSummary(object):
             'lifecycle_details': 'str',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'byoip_range_vcn_ipv6_allocations': 'byoipRangeVcnIpv6Allocations',
             'cidr_block': 'cidrBlock',
@@ -92,7 +91,6 @@ class ByoipRangeSummary(object):
             'lifecycle_details': 'lifecycleDetails',
             'time_created': 'timeCreated'
         }
-
         self._byoip_range_vcn_ipv6_allocations = None
         self._cidr_block = None
         self._compartment_id = None

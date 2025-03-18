@@ -56,11 +56,9 @@ class BaseTagDefinitionValidator(object):
         self.swagger_types = {
             'validator_type': 'str'
         }
-
         self.attribute_map = {
             'validator_type': 'validatorType'
         }
-
         self._validator_type = None
 
     @staticmethod

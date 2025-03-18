@@ -43,14 +43,12 @@ class UpdateRouteTableDetails(object):
             'freeform_tags': 'dict(str, str)',
             'route_rules': 'list[RouteRule]'
         }
-
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
             'route_rules': 'routeRules'
         }
-
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None

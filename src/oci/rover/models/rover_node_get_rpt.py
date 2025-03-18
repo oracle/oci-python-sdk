@@ -33,12 +33,10 @@ class RoverNodeGetRpt(object):
             'resource_principal_token': 'str',
             'service_principal_session_token': 'str'
         }
-
         self.attribute_map = {
             'resource_principal_token': 'resourcePrincipalToken',
             'service_principal_session_token': 'servicePrincipalSessionToken'
         }
-
         self._resource_principal_token = None
         self._service_principal_session_token = None
 

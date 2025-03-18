@@ -38,13 +38,11 @@ class AdditionalValidationPolicy(object):
             'audiences': 'list[str]',
             'verify_claims': 'list[JsonWebTokenClaim]'
         }
-
         self.attribute_map = {
             'issuers': 'issuers',
             'audiences': 'audiences',
             'verify_claims': 'verifyClaims'
         }
-
         self._issuers = None
         self._audiences = None
         self._verify_claims = None

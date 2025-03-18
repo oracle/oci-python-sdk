@@ -58,12 +58,10 @@ class DiscoveryDetails(object):
             'type': 'str',
             'service_type': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'service_type': 'serviceType'
         }
-
         self._type = None
         self._service_type = None
 

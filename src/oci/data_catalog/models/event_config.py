@@ -78,7 +78,6 @@ class EventConfig(object):
             'created_by_id': 'str',
             'updated_by_id': 'str'
         }
-
         self.attribute_map = {
             'type_id': 'typeId',
             'type_name': 'typeName',
@@ -90,7 +89,6 @@ class EventConfig(object):
             'created_by_id': 'createdById',
             'updated_by_id': 'updatedById'
         }
-
         self._type_id = None
         self._type_name = None
         self._property_id = None

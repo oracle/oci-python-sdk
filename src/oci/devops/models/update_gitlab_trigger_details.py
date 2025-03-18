@@ -59,7 +59,6 @@ class UpdateGitlabTriggerDetails(UpdateTriggerDetails):
             'defined_tags': 'dict(str, dict(str, object))',
             'connection_id': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
@@ -69,7 +68,6 @@ class UpdateGitlabTriggerDetails(UpdateTriggerDetails):
             'defined_tags': 'definedTags',
             'connection_id': 'connectionId'
         }
-
         self._display_name = None
         self._description = None
         self._trigger_source = None

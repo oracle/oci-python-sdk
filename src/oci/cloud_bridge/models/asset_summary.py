@@ -111,7 +111,6 @@ class AssetSummary(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'inventory_id': 'inventoryId',
@@ -128,7 +127,6 @@ class AssetSummary(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._display_name = None
         self._inventory_id = None
         self._id = None

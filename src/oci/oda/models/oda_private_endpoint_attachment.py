@@ -84,7 +84,6 @@ class OdaPrivateEndpointAttachment(object):
             'time_created': 'datetime',
             'time_updated': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'oda_instance_id': 'odaInstanceId',
@@ -94,7 +93,6 @@ class OdaPrivateEndpointAttachment(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated'
         }
-
         self._id = None
         self._oda_instance_id = None
         self._oda_private_endpoint_id = None

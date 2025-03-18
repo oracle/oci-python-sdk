@@ -63,7 +63,6 @@ class ConfigParams(object):
             'is_overridable': 'bool',
             'description': 'str'
         }
-
         self.attribute_map = {
             'config_key': 'configKey',
             'default_config_value': 'defaultConfigValue',
@@ -74,7 +73,6 @@ class ConfigParams(object):
             'is_overridable': 'isOverridable',
             'description': 'description'
         }
-
         self._config_key = None
         self._default_config_value = None
         self._overriden_config_value = None

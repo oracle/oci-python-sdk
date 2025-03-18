@@ -28,11 +28,9 @@ class FilterGroupDetails(object):
         self.swagger_types = {
             'filters': 'list[Filter]'
         }
-
         self.attribute_map = {
             'filters': 'filters'
         }
-
         self._filters = None
 
     @property

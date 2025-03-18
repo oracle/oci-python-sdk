@@ -108,7 +108,6 @@ class CreateCustomSoftwareSourceDetails(CreateSoftwareSourceDetails):
             'packages': 'list[str]',
             'software_source_sub_type': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
@@ -125,7 +124,6 @@ class CreateCustomSoftwareSourceDetails(CreateSoftwareSourceDetails):
             'packages': 'packages',
             'software_source_sub_type': 'softwareSourceSubType'
         }
-
         self._compartment_id = None
         self._display_name = None
         self._description = None

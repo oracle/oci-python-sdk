@@ -37,11 +37,9 @@ class DatabaseToolsKeyStorePasswordDetails(object):
         self.swagger_types = {
             'value_type': 'str'
         }
-
         self.attribute_map = {
             'value_type': 'valueType'
         }
-
         self._value_type = None
 
     @staticmethod

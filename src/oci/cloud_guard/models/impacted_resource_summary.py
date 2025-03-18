@@ -73,7 +73,6 @@ class ImpactedResourceSummary(object):
             'region': 'str',
             'time_identified': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'resource_id': 'resourceId',
@@ -86,7 +85,6 @@ class ImpactedResourceSummary(object):
             'region': 'region',
             'time_identified': 'timeIdentified'
         }
-
         self._id = None
         self._resource_id = None
         self._problem_id = None

@@ -76,13 +76,11 @@ class ExadataMemberSummary(object):
             'display_name': 'str',
             'entity_type': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'display_name': 'displayName',
             'entity_type': 'entityType'
         }
-
         self._name = None
         self._display_name = None
         self._entity_type = None

@@ -48,7 +48,6 @@ class LogAnalyticsParameter(object):
             'name': 'str',
             'source_id': 'int'
         }
-
         self.attribute_map = {
             'default_value': 'defaultValue',
             'description': 'description',
@@ -56,7 +55,6 @@ class LogAnalyticsParameter(object):
             'name': 'name',
             'source_id': 'sourceId'
         }
-
         self._default_value = None
         self._description = None
         self._is_active = None

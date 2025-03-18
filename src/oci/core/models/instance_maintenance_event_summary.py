@@ -143,7 +143,6 @@ class InstanceMaintenanceEventSummary(object):
             'description': 'str',
             'correlation_token': 'str'
         }
-
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
@@ -168,7 +167,6 @@ class InstanceMaintenanceEventSummary(object):
             'description': 'description',
             'correlation_token': 'correlationToken'
         }
-
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None

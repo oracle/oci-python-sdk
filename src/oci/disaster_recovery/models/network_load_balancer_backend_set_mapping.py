@@ -38,13 +38,11 @@ class NetworkLoadBalancerBackendSetMapping(object):
             'source_backend_set_name': 'str',
             'destination_backend_set_name': 'str'
         }
-
         self.attribute_map = {
             'is_backend_set_for_non_movable': 'isBackendSetForNonMovable',
             'source_backend_set_name': 'sourceBackendSetName',
             'destination_backend_set_name': 'destinationBackendSetName'
         }
-
         self._is_backend_set_for_non_movable = None
         self._source_backend_set_name = None
         self._destination_backend_set_name = None

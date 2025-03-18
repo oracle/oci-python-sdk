@@ -193,7 +193,6 @@ class TaskSchedule(object):
             'last_run_details': 'LastRunDetails',
             'metadata': 'ObjectMetadata'
         }
-
         self.attribute_map = {
             'key': 'key',
             'model_version': 'modelVersion',
@@ -220,7 +219,6 @@ class TaskSchedule(object):
             'last_run_details': 'lastRunDetails',
             'metadata': 'metadata'
         }
-
         self._key = None
         self._model_version = None
         self._model_type = None

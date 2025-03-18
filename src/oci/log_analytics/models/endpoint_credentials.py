@@ -56,13 +56,11 @@ class EndpointCredentials(object):
             'credential_name': 'str',
             'credential_endpoint': 'CredentialEndpoint'
         }
-
         self.attribute_map = {
             'credential_type': 'credentialType',
             'credential_name': 'credentialName',
             'credential_endpoint': 'credentialEndpoint'
         }
-
         self._credential_type = None
         self._credential_name = None
         self._credential_endpoint = None

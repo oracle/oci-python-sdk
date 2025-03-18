@@ -55,7 +55,6 @@ class UpdateStandardTaskDetails(UpdateScheduledTaskDetails):
             'schedules': 'list[Schedule]',
             'action': 'Action'
         }
-
         self.attribute_map = {
             'kind': 'kind',
             'display_name': 'displayName',
@@ -64,7 +63,6 @@ class UpdateStandardTaskDetails(UpdateScheduledTaskDetails):
             'schedules': 'schedules',
             'action': 'action'
         }
-
         self._kind = None
         self._display_name = None
         self._freeform_tags = None

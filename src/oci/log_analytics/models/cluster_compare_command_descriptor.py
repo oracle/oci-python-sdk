@@ -90,7 +90,6 @@ class ClusterCompareCommandDescriptor(AbstractCommandDescriptor):
             'span': 'str',
             'baseline_query': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'display_query_string': 'displayQueryString',
@@ -106,7 +105,6 @@ class ClusterCompareCommandDescriptor(AbstractCommandDescriptor):
             'span': 'span',
             'baseline_query': 'baselineQuery'
         }
-
         self._name = None
         self._display_query_string = None
         self._internal_query_string = None

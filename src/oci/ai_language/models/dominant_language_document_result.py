@@ -33,12 +33,10 @@ class DominantLanguageDocumentResult(object):
             'key': 'str',
             'languages': 'list[DetectedLanguage]'
         }
-
         self.attribute_map = {
             'key': 'key',
             'languages': 'languages'
         }
-
         self._key = None
         self._languages = None
 

@@ -33,12 +33,10 @@ class CreateDbCredentialDetails(object):
             'password': 'str',
             'description': 'str'
         }
-
         self.attribute_map = {
             'password': 'password',
             'description': 'description'
         }
-
         self._password = None
         self._description = None
 

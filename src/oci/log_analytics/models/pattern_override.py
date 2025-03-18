@@ -38,13 +38,11 @@ class PatternOverride(object):
             'value': 'str',
             'effective_level': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'value': 'value',
             'effective_level': 'effectiveLevel'
         }
-
         self._id = None
         self._value = None
         self._effective_level = None

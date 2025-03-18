@@ -91,7 +91,6 @@ class ReadOperationConfig(AbstractDataOperationConfig):
             'incremental_read_config': 'IncrementalReadConfig',
             'object_status': 'int'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'metadata_config_properties': 'metadataConfigProperties',
@@ -107,7 +106,6 @@ class ReadOperationConfig(AbstractDataOperationConfig):
             'incremental_read_config': 'incrementalReadConfig',
             'object_status': 'objectStatus'
         }
-
         self._model_type = None
         self._metadata_config_properties = None
         self._derived_attributes = None

@@ -33,12 +33,10 @@ class PipelineProperties(object):
             'pipeline_identifier': 'str',
             'pipeline_url': 'str'
         }
-
         self.attribute_map = {
             'pipeline_identifier': 'pipelineIdentifier',
             'pipeline_url': 'pipelineUrl'
         }
-
         self._pipeline_identifier = None
         self._pipeline_url = None
 

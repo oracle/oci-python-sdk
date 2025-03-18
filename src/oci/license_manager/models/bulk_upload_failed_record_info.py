@@ -38,13 +38,11 @@ class BulkUploadFailedRecordInfo(object):
             'product_name': 'str',
             'error': 'str'
         }
-
         self.attribute_map = {
             'row_number': 'rowNumber',
             'product_name': 'productName',
             'error': 'error'
         }
-
         self._row_number = None
         self._product_name = None
         self._error = None

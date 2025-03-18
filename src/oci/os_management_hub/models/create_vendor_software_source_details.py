@@ -60,7 +60,6 @@ class CreateVendorSoftwareSourceDetails(CreateSoftwareSourceDetails):
             'defined_tags': 'dict(str, dict(str, object))',
             'origin_software_source_id': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
@@ -70,7 +69,6 @@ class CreateVendorSoftwareSourceDetails(CreateSoftwareSourceDetails):
             'defined_tags': 'definedTags',
             'origin_software_source_id': 'originSoftwareSourceId'
         }
-
         self._compartment_id = None
         self._display_name = None
         self._description = None

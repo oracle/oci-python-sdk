@@ -40,13 +40,11 @@ class OneTimeMaintenanceWindowSchedule(MaintenanceWindowSchedule):
             'time_maintenance_window_start': 'datetime',
             'time_maintenance_window_end': 'datetime'
         }
-
         self.attribute_map = {
             'schedule_type': 'scheduleType',
             'time_maintenance_window_start': 'timeMaintenanceWindowStart',
             'time_maintenance_window_end': 'timeMaintenanceWindowEnd'
         }
-
         self._schedule_type = None
         self._time_maintenance_window_start = None
         self._time_maintenance_window_end = None

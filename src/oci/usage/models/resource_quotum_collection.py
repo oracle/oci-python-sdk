@@ -33,12 +33,10 @@ class ResourceQuotumCollection(object):
             'items': 'list[ResourceQuotumSummary]',
             'is_allowed': 'bool'
         }
-
         self.attribute_map = {
             'items': 'items',
             'is_allowed': 'isAllowed'
         }
-
         self._items = None
         self._is_allowed = None
 

@@ -57,14 +57,12 @@ class LimitValueSummary(object):
             'availability_domain': 'str',
             'value': 'int'
         }
-
         self.attribute_map = {
             'name': 'name',
             'scope_type': 'scopeType',
             'availability_domain': 'availabilityDomain',
             'value': 'value'
         }
-
         self._name = None
         self._scope_type = None
         self._availability_domain = None

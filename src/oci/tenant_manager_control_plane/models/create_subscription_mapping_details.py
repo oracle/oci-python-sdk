@@ -33,12 +33,10 @@ class CreateSubscriptionMappingDetails(object):
             'compartment_id': 'str',
             'subscription_id': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'subscription_id': 'subscriptionId'
         }
-
         self._compartment_id = None
         self._subscription_id = None
 

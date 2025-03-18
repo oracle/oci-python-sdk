@@ -83,7 +83,6 @@ class UpdateSensitiveDataModelDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'target_id': 'targetId',
@@ -98,7 +97,6 @@ class UpdateSensitiveDataModelDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._display_name = None
         self._target_id = None
         self._app_suite_name = None

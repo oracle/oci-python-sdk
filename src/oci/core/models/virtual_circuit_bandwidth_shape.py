@@ -33,12 +33,10 @@ class VirtualCircuitBandwidthShape(object):
             'bandwidth_in_mbps': 'int',
             'name': 'str'
         }
-
         self.attribute_map = {
             'bandwidth_in_mbps': 'bandwidthInMbps',
             'name': 'name'
         }
-
         self._bandwidth_in_mbps = None
         self._name = None
 

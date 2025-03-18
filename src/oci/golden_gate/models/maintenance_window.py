@@ -63,12 +63,10 @@ class MaintenanceWindow(object):
             'day': 'str',
             'start_hour': 'int'
         }
-
         self.attribute_map = {
             'day': 'day',
             'start_hour': 'startHour'
         }
-
         self._day = None
         self._start_hour = None
 

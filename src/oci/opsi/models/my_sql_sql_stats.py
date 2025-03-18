@@ -188,7 +188,6 @@ class MySqlSqlStats(object):
             'time_first_seen': 'datetime',
             'time_last_seen': 'datetime'
         }
-
         self.attribute_map = {
             'digest': 'digest',
             'time_collected': 'timeCollected',
@@ -224,7 +223,6 @@ class MySqlSqlStats(object):
             'time_first_seen': 'timeFirstSeen',
             'time_last_seen': 'timeLastSeen'
         }
-
         self._digest = None
         self._time_collected = None
         self._command_type = None

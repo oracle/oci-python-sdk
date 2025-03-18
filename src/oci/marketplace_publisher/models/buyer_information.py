@@ -43,14 +43,12 @@ class BuyerInformation(object):
             'primary_contact': 'Contact',
             'additional_contacts': 'list[Contact]'
         }
-
         self.attribute_map = {
             'company_name': 'companyName',
             'note_to_buyer': 'noteToBuyer',
             'primary_contact': 'primaryContact',
             'additional_contacts': 'additionalContacts'
         }
-
         self._company_name = None
         self._note_to_buyer = None
         self._primary_contact = None

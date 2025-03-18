@@ -67,14 +67,12 @@ class PatchHistorySummary(object):
             'time_updated': 'datetime',
             'patch_type': 'str'
         }
-
         self.attribute_map = {
             'version': 'version',
             'lifecycle_state': 'lifecycleState',
             'time_updated': 'timeUpdated',
             'patch_type': 'patchType'
         }
-
         self._version = None
         self._lifecycle_state = None
         self._time_updated = None

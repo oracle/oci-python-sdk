@@ -52,12 +52,10 @@ class CreateCertificateConfigDetails(object):
             'config_type': 'str',
             'version_name': 'str'
         }
-
         self.attribute_map = {
             'config_type': 'configType',
             'version_name': 'versionName'
         }
-
         self._config_type = None
         self._version_name = None
 

@@ -33,12 +33,10 @@ class CloudAutomationFreezePeriod(object):
             'freeze_period_start_time': 'str',
             'freeze_period_end_time': 'str'
         }
-
         self.attribute_map = {
             'freeze_period_start_time': 'freezePeriodStartTime',
             'freeze_period_end_time': 'freezePeriodEndTime'
         }
-
         self._freeze_period_start_time = None
         self._freeze_period_end_time = None
 

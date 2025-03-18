@@ -70,7 +70,6 @@ class RepositoryMirrorRecord(object):
             'time_started': 'datetime',
             'time_ended': 'datetime'
         }
-
         self.attribute_map = {
             'mirror_status': 'mirrorStatus',
             'work_request_id': 'workRequestId',
@@ -78,7 +77,6 @@ class RepositoryMirrorRecord(object):
             'time_started': 'timeStarted',
             'time_ended': 'timeEnded'
         }
-
         self._mirror_status = None
         self._work_request_id = None
         self._time_enqueued = None

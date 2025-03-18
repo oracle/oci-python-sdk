@@ -65,7 +65,6 @@ class HeadCommandDescriptor(AbstractCommandDescriptor):
             'is_hidden': 'bool',
             'limit': 'int'
         }
-
         self.attribute_map = {
             'name': 'name',
             'display_query_string': 'displayQueryString',
@@ -76,7 +75,6 @@ class HeadCommandDescriptor(AbstractCommandDescriptor):
             'is_hidden': 'isHidden',
             'limit': 'limit'
         }
-
         self._name = None
         self._display_query_string = None
         self._internal_query_string = None

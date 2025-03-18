@@ -28,11 +28,9 @@ class AccessContextAttributeCollection(object):
         self.swagger_types = {
             'items': 'list[AccessContextAttribute]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

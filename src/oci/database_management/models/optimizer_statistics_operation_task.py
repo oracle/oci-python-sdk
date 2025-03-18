@@ -108,7 +108,6 @@ class OptimizerStatisticsOperationTask(object):
             'time_end': 'datetime',
             'status': 'str'
         }
-
         self.attribute_map = {
             'target': 'target',
             'target_type': 'targetType',
@@ -116,7 +115,6 @@ class OptimizerStatisticsOperationTask(object):
             'time_end': 'timeEnd',
             'status': 'status'
         }
-
         self._target = None
         self._target_type = None
         self._time_start = None

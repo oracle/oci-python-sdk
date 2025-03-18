@@ -78,7 +78,6 @@ class InstanceSummary(object):
             'time_created': 'datetime',
             'load_balancer_backends': 'list[InstancePoolInstanceLoadBalancerBackend]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'availability_domain': 'availabilityDomain',
@@ -92,7 +91,6 @@ class InstanceSummary(object):
             'time_created': 'timeCreated',
             'load_balancer_backends': 'loadBalancerBackends'
         }
-
         self._id = None
         self._availability_domain = None
         self._compartment_id = None

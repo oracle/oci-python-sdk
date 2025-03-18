@@ -35,12 +35,10 @@ class AnyOfRouteAuthorizationPolicy(RouteAuthorizationPolicy):
             'type': 'str',
             'allowed_scope': 'list[str]'
         }
-
         self.attribute_map = {
             'type': 'type',
             'allowed_scope': 'allowedScope'
         }
-
         self._type = None
         self._allowed_scope = None
         self._type = 'ANY_OF'

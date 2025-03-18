@@ -109,7 +109,6 @@ class ComputeInstanceGroupCanaryApprovalDeployStageSummary(DeployStageSummary):
             'compute_instance_group_canary_traffic_shift_deploy_stage_id': 'str',
             'approval_policy': 'ApprovalPolicy'
         }
-
         self.attribute_map = {
             'id': 'id',
             'description': 'description',
@@ -129,7 +128,6 @@ class ComputeInstanceGroupCanaryApprovalDeployStageSummary(DeployStageSummary):
             'compute_instance_group_canary_traffic_shift_deploy_stage_id': 'computeInstanceGroupCanaryTrafficShiftDeployStageId',
             'approval_policy': 'approvalPolicy'
         }
-
         self._id = None
         self._description = None
         self._display_name = None

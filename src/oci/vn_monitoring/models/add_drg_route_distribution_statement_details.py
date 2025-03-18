@@ -43,13 +43,11 @@ class AddDrgRouteDistributionStatementDetails(object):
             'action': 'str',
             'priority': 'int'
         }
-
         self.attribute_map = {
             'match_criteria': 'matchCriteria',
             'action': 'action',
             'priority': 'priority'
         }
-
         self._match_criteria = None
         self._action = None
         self._priority = None

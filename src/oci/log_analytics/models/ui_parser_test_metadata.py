@@ -38,13 +38,11 @@ class UiParserTestMetadata(object):
             'log_file_name': 'str',
             'time_zone': 'datetime'
         }
-
         self.attribute_map = {
             'last_modified_time': 'lastModifiedTime',
             'log_file_name': 'logFileName',
             'time_zone': 'timeZone'
         }
-
         self._last_modified_time = None
         self._log_file_name = None
         self._time_zone = None

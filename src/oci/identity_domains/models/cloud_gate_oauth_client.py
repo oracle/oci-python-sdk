@@ -48,13 +48,11 @@ class CloudGateOauthClient(object):
             'ref': 'str',
             'client_id': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ref': '$ref',
             'client_id': 'clientId'
         }
-
         self._value = None
         self._ref = None
         self._client_id = None

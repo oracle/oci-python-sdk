@@ -38,13 +38,11 @@ class DataObjectQueryTimeFilters(object):
             'time_start': 'datetime',
             'time_end': 'datetime'
         }
-
         self.attribute_map = {
             'time_period': 'timePeriod',
             'time_start': 'timeStart',
             'time_end': 'timeEnd'
         }
-
         self._time_period = None
         self._time_start = None
         self._time_end = None

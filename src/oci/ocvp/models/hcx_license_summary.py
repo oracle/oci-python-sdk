@@ -56,13 +56,11 @@ class HcxLicenseSummary(object):
             'status': 'str',
             'system_name': 'str'
         }
-
         self.attribute_map = {
             'activation_key': 'activationKey',
             'status': 'status',
             'system_name': 'systemName'
         }
-
         self._activation_key = None
         self._status = None
         self._system_name = None

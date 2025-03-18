@@ -67,7 +67,6 @@ class UpdateClusterDetails(object):
             'image_policy_config': 'UpdateImagePolicyConfigDetails',
             'type': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'kubernetes_version': 'kubernetesVersion',
@@ -77,7 +76,6 @@ class UpdateClusterDetails(object):
             'image_policy_config': 'imagePolicyConfig',
             'type': 'type'
         }
-
         self._name = None
         self._kubernetes_version = None
         self._options = None

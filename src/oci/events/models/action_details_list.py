@@ -28,11 +28,9 @@ class ActionDetailsList(object):
         self.swagger_types = {
             'actions': 'list[ActionDetails]'
         }
-
         self.attribute_map = {
             'actions': 'actions'
         }
-
         self._actions = None
 
     @property

@@ -105,7 +105,6 @@ class DataAssetSummaryFromRest(DataAssetSummary):
             'manifest_file_content': 'str',
             'default_connection': 'ConnectionSummary'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -124,7 +123,6 @@ class DataAssetSummaryFromRest(DataAssetSummary):
             'manifest_file_content': 'manifestFileContent',
             'default_connection': 'defaultConnection'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

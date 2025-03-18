@@ -90,7 +90,6 @@ class UpdatePatchDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'description': 'description',
             'patch_type': 'patchType',
@@ -103,7 +102,6 @@ class UpdatePatchDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._description = None
         self._patch_type = None
         self._severity = None

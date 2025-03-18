@@ -40,13 +40,11 @@ class CreateUdpServiceDetails(CreateServiceDetails):
             'type': 'str',
             'port_ranges': 'list[PortRange]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'type': 'type',
             'port_ranges': 'portRanges'
         }
-
         self._name = None
         self._type = None
         self._port_ranges = None

@@ -98,7 +98,6 @@ class ProblemEndpointSummary(object):
             'services': 'list[str]',
             'time_last_detected': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'sighting_id': 'sightingId',
@@ -116,7 +115,6 @@ class ProblemEndpointSummary(object):
             'services': 'services',
             'time_last_detected': 'timeLastDetected'
         }
-
         self._id = None
         self._sighting_id = None
         self._problem_id = None

@@ -92,7 +92,6 @@ class CreateTestChannelResult(CreateChannelResult):
             'secret_key': 'str',
             'webhook_url': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -108,7 +107,6 @@ class CreateTestChannelResult(CreateChannelResult):
             'secret_key': 'secretKey',
             'webhook_url': 'webhookUrl'
         }
-
         self._id = None
         self._name = None
         self._description = None

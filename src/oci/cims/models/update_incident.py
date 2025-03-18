@@ -54,12 +54,10 @@ class UpdateIncident(object):
             'ticket': 'UpdateTicketDetails',
             'problem_type': 'str'
         }
-
         self.attribute_map = {
             'ticket': 'ticket',
             'problem_type': 'problemType'
         }
-
         self._ticket = None
         self._problem_type = None
 

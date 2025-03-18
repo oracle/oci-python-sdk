@@ -33,12 +33,10 @@ class OutboundClusterConfig(object):
             'is_enabled': 'bool',
             'outbound_clusters': 'list[OutboundClusterSummary]'
         }
-
         self.attribute_map = {
             'is_enabled': 'isEnabled',
             'outbound_clusters': 'outboundClusters'
         }
-
         self._is_enabled = None
         self._outbound_clusters = None
 

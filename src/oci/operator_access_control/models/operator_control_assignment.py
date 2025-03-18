@@ -230,7 +230,6 @@ class OperatorControlAssignment(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'id': 'id',
             'operator_control_id': 'operatorControlId',
@@ -263,7 +262,6 @@ class OperatorControlAssignment(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._id = None
         self._operator_control_id = None
         self._resource_id = None

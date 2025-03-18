@@ -45,14 +45,12 @@ class NginxBlueGreenStrategy(OkeBlueGreenStrategy):
             'namespace_b': 'str',
             'ingress_name': 'str'
         }
-
         self.attribute_map = {
             'strategy_type': 'strategyType',
             'namespace_a': 'namespaceA',
             'namespace_b': 'namespaceB',
             'ingress_name': 'ingressName'
         }
-
         self._strategy_type = None
         self._namespace_a = None
         self._namespace_b = None

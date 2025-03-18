@@ -49,7 +49,6 @@ class UpdateGenericRepositoryDetails(UpdateRepositoryDetails):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'repository_type': 'repositoryType',
@@ -57,7 +56,6 @@ class UpdateGenericRepositoryDetails(UpdateRepositoryDetails):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._display_name = None
         self._repository_type = None
         self._description = None

@@ -39,12 +39,10 @@ class MonitoringSourceDetails(SourceDetails):
             'kind': 'str',
             'monitoring_sources': 'list[MonitoringSource]'
         }
-
         self.attribute_map = {
             'kind': 'kind',
             'monitoring_sources': 'monitoringSources'
         }
-
         self._kind = None
         self._monitoring_sources = None
         self._kind = 'monitoring'

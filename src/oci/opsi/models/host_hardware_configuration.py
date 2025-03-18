@@ -40,13 +40,11 @@ class HostHardwareConfiguration(HostConfigurationMetricGroup):
             'time_collected': 'datetime',
             'cpu_architecture': 'str'
         }
-
         self.attribute_map = {
             'metric_name': 'metricName',
             'time_collected': 'timeCollected',
             'cpu_architecture': 'cpuArchitecture'
         }
-
         self._metric_name = None
         self._time_collected = None
         self._cpu_architecture = None

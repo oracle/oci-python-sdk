@@ -28,11 +28,9 @@ class ReferenceSummaryCollection(object):
         self.swagger_types = {
             'items': 'list[ReferenceSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

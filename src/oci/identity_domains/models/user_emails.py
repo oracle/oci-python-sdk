@@ -71,7 +71,6 @@ class UserEmails(object):
             'verified': 'bool',
             'pending_verification_data': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'type': 'type',
@@ -80,7 +79,6 @@ class UserEmails(object):
             'verified': 'verified',
             'pending_verification_data': 'pendingVerificationData'
         }
-
         self._value = None
         self._type = None
         self._primary = None

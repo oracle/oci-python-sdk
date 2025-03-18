@@ -226,7 +226,6 @@ class DatabaseBackupMetrics(object):
             'db_unique_name': 'str',
             'db_role': 'str'
         }
-
         self.attribute_map = {
             'retention_period_in_days': 'retentionPeriodInDays',
             'is_automatic_backup_enabled': 'isAutomaticBackupEnabled',
@@ -246,7 +245,6 @@ class DatabaseBackupMetrics(object):
             'db_unique_name': 'dbUniqueName',
             'db_role': 'dbRole'
         }
-
         self._retention_period_in_days = None
         self._is_automatic_backup_enabled = None
         self._time_series_metrics = None

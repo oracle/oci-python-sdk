@@ -33,12 +33,10 @@ class DatabaseWalletDetails(object):
             'database_wallet': 'str',
             'service_name': 'str'
         }
-
         self.attribute_map = {
             'database_wallet': 'databaseWallet',
             'service_name': 'serviceName'
         }
-
         self._database_wallet = None
         self._service_name = None
 

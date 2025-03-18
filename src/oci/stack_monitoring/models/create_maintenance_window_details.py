@@ -48,7 +48,6 @@ class CreateMaintenanceWindowDetails(object):
             'resources': 'list[CreateMaintenanceWindowResourceDetails]',
             'schedule': 'MaintenanceWindowSchedule'
         }
-
         self.attribute_map = {
             'name': 'name',
             'description': 'description',
@@ -56,7 +55,6 @@ class CreateMaintenanceWindowDetails(object):
             'resources': 'resources',
             'schedule': 'schedule'
         }
-
         self._name = None
         self._description = None
         self._compartment_id = None

@@ -43,14 +43,12 @@ class NetworkUsageTrendAggregation(object):
             'mac_address': 'str',
             'usage_data': 'list[NetworkUsageTrend]'
         }
-
         self.attribute_map = {
             'interface_name': 'interfaceName',
             'ip_address': 'ipAddress',
             'mac_address': 'macAddress',
             'usage_data': 'usageData'
         }
-
         self._interface_name = None
         self._ip_address = None
         self._mac_address = None

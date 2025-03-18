@@ -38,13 +38,11 @@ class ShapeConfigDetails(object):
             'memory_in_gbs': 'int',
             'nvmes': 'int'
         }
-
         self.attribute_map = {
             'ocpus': 'ocpus',
             'memory_in_gbs': 'memoryInGBs',
             'nvmes': 'nvmes'
         }
-
         self._ocpus = None
         self._memory_in_gbs = None
         self._nvmes = None

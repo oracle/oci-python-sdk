@@ -69,7 +69,6 @@ class InventorySubnetSummary(object):
             'compartment_id': 'str',
             'inventory_resource_summary': 'list[InventoryResourceSummary]'
         }
-
         self.attribute_map = {
             'subnet_id': 'subnetId',
             'subnet_name': 'subnetName',
@@ -80,7 +79,6 @@ class InventorySubnetSummary(object):
             'compartment_id': 'compartmentId',
             'inventory_resource_summary': 'inventoryResourceSummary'
         }
-
         self._subnet_id = None
         self._subnet_name = None
         self._resource_type = None

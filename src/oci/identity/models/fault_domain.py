@@ -45,14 +45,12 @@ class FaultDomain(object):
             'compartment_id': 'str',
             'availability_domain': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'id': 'id',
             'compartment_id': 'compartmentId',
             'availability_domain': 'availabilityDomain'
         }
-
         self._name = None
         self._id = None
         self._compartment_id = None

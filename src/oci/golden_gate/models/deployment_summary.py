@@ -338,7 +338,6 @@ class DeploymentSummary(object):
             'is_storage_utilization_limit_exceeded': 'bool',
             'locks': 'list[ResourceLock]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -372,7 +371,6 @@ class DeploymentSummary(object):
             'is_storage_utilization_limit_exceeded': 'isStorageUtilizationLimitExceeded',
             'locks': 'locks'
         }
-
         self._id = None
         self._display_name = None
         self._description = None

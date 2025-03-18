@@ -33,12 +33,10 @@ class SqlTuningSetInput(object):
             'name': 'str',
             'owner': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'owner': 'owner'
         }
-
         self._name = None
         self._owner = None
 

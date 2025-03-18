@@ -43,14 +43,12 @@ class InstancePrivateIpAddress(object):
             'private_dns_name': 'str',
             'private_ip_address': 'str'
         }
-
         self.attribute_map = {
             'association': 'association',
             'is_primary': 'isPrimary',
             'private_dns_name': 'privateDnsName',
             'private_ip_address': 'privateIpAddress'
         }
-
         self._association = None
         self._is_primary = None
         self._private_dns_name = None

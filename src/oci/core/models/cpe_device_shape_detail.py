@@ -44,14 +44,12 @@ class CpeDeviceShapeDetail(object):
             'parameters': 'list[CpeDeviceConfigQuestion]',
             'template': 'str'
         }
-
         self.attribute_map = {
             'cpe_device_shape_id': 'cpeDeviceShapeId',
             'cpe_device_info': 'cpeDeviceInfo',
             'parameters': 'parameters',
             'template': 'template'
         }
-
         self._cpe_device_shape_id = None
         self._cpe_device_info = None
         self._parameters = None

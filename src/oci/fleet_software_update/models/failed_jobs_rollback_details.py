@@ -31,11 +31,9 @@ class FailedJobsRollbackDetails(RollbackDetails):
         self.swagger_types = {
             'strategy': 'str'
         }
-
         self.attribute_map = {
             'strategy': 'strategy'
         }
-
         self._strategy = None
         self._strategy = 'FAILED_JOBS'
 

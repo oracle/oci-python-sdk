@@ -200,7 +200,6 @@ class PhaseStatus(object):
             'is_suspend_available': 'bool',
             'editable_parameter_files': 'list[str]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'status': 'status',
@@ -214,7 +213,6 @@ class PhaseStatus(object):
             'is_suspend_available': 'isSuspendAvailable',
             'editable_parameter_files': 'editableParameterFiles'
         }
-
         self._name = None
         self._status = None
         self._duration_in_ms = None

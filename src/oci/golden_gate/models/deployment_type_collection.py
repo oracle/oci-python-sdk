@@ -28,11 +28,9 @@ class DeploymentTypeCollection(object):
         self.swagger_types = {
             'items': 'list[DeploymentTypeSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

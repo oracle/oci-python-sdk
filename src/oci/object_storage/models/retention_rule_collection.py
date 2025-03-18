@@ -28,11 +28,9 @@ class RetentionRuleCollection(object):
         self.swagger_types = {
             'items': 'list[RetentionRuleSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

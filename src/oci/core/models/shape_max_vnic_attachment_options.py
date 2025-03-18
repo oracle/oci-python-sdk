@@ -40,13 +40,11 @@ class ShapeMaxVnicAttachmentOptions(object):
             'max': 'float',
             'default_per_ocpu': 'float'
         }
-
         self.attribute_map = {
             'min': 'min',
             'max': 'max',
             'default_per_ocpu': 'defaultPerOcpu'
         }
-
         self._min = None
         self._max = None
         self._default_per_ocpu = None

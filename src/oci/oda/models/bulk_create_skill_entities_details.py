@@ -28,11 +28,9 @@ class BulkCreateSkillEntitiesDetails(object):
         self.swagger_types = {
             'items': 'list[CreateSkillEntityDetails]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

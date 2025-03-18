@@ -33,12 +33,10 @@ class ResourceType(object):
             'name': 'str',
             'fields': 'list[QueryableFieldDescription]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'fields': 'fields'
         }
-
         self._name = None
         self._fields = None
 

@@ -35,12 +35,10 @@ class InstancePoolModelDeploymentSystemData(ModelDeploymentSystemData):
             'system_infra_type': 'str',
             'current_instance_count': 'int'
         }
-
         self.attribute_map = {
             'system_infra_type': 'systemInfraType',
             'current_instance_count': 'currentInstanceCount'
         }
-
         self._system_infra_type = None
         self._current_instance_count = None
         self._system_infra_type = 'INSTANCE_POOL'

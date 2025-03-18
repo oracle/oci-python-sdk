@@ -74,7 +74,6 @@ class UpdateComputeInstanceGroupCanaryDeployStageDetails(UpdateDeployStageDetail
             'rollout_policy': 'ComputeInstanceGroupRolloutPolicy',
             'test_load_balancer_config': 'LoadBalancerConfig'
         }
-
         self.attribute_map = {
             'description': 'description',
             'display_name': 'displayName',
@@ -87,7 +86,6 @@ class UpdateComputeInstanceGroupCanaryDeployStageDetails(UpdateDeployStageDetail
             'rollout_policy': 'rolloutPolicy',
             'test_load_balancer_config': 'testLoadBalancerConfig'
         }
-
         self._description = None
         self._display_name = None
         self._deploy_stage_type = None

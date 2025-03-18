@@ -120,7 +120,6 @@ class PublicationSummary(object):
             'freeform_tags': 'dict(str, str)',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'lifecycle_state': 'lifecycleState',
             'compartment_id': 'compartmentId',
@@ -136,7 +135,6 @@ class PublicationSummary(object):
             'freeform_tags': 'freeformTags',
             'system_tags': 'systemTags'
         }
-
         self._lifecycle_state = None
         self._compartment_id = None
         self._id = None

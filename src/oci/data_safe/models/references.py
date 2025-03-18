@@ -43,14 +43,12 @@ class References(object):
             'gdpr': 'str',
             'obp': 'str'
         }
-
         self.attribute_map = {
             'stig': 'stig',
             'cis': 'cis',
             'gdpr': 'gdpr',
             'obp': 'obp'
         }
-
         self._stig = None
         self._cis = None
         self._gdpr = None

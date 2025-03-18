@@ -28,11 +28,9 @@ class StartClusterShapeConfigs(object):
         self.swagger_types = {
             'node_type_shape_configs': 'list[NodeTypeShapeConfig]'
         }
-
         self.attribute_map = {
             'node_type_shape_configs': 'nodeTypeShapeConfigs'
         }
-
         self._node_type_shape_configs = None
 
     @property

@@ -38,13 +38,11 @@ class OpsiDataObjectSupportedQueryParam(object):
             'description': 'str',
             'data_type': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'description': 'description',
             'data_type': 'dataType'
         }
-
         self._name = None
         self._description = None
         self._data_type = None

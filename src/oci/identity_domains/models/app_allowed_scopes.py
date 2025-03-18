@@ -38,13 +38,11 @@ class AppAllowedScopes(object):
             'id_of_defining_app': 'str',
             'read_only': 'bool'
         }
-
         self.attribute_map = {
             'fqs': 'fqs',
             'id_of_defining_app': 'idOfDefiningApp',
             'read_only': 'readOnly'
         }
-
         self._fqs = None
         self._id_of_defining_app = None
         self._read_only = None

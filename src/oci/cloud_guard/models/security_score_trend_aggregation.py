@@ -70,7 +70,6 @@ class SecurityScoreTrendAggregation(object):
             'security_rating': 'str',
             'security_score': 'int'
         }
-
         self.attribute_map = {
             'dimensions_map': 'dimensionsMap',
             'start_timestamp': 'startTimestamp',
@@ -78,7 +77,6 @@ class SecurityScoreTrendAggregation(object):
             'security_rating': 'securityRating',
             'security_score': 'securityScore'
         }
-
         self._dimensions_map = None
         self._start_timestamp = None
         self._duration_in_seconds = None

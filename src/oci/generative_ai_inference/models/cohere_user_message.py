@@ -35,12 +35,10 @@ class CohereUserMessage(CohereMessage):
             'role': 'str',
             'message': 'str'
         }
-
         self.attribute_map = {
             'role': 'role',
             'message': 'message'
         }
-
         self._role = None
         self._message = None
         self._role = 'USER'

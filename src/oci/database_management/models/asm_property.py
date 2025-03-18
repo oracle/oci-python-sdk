@@ -28,11 +28,9 @@ class AsmProperty(object):
         self.swagger_types = {
             'disk_group': 'str'
         }
-
         self.attribute_map = {
             'disk_group': 'diskGroup'
         }
-
         self._disk_group = None
 
     @property

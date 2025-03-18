@@ -375,7 +375,6 @@ class UpdateAutonomousDatabaseDetails(object):
             'encryption_key': 'AutonomousDatabaseEncryptionKeyDetails',
             'is_disconnect_peer': 'bool'
         }
-
         self.attribute_map = {
             'backup_retention_period_in_days': 'backupRetentionPeriodInDays',
             'compute_model': 'computeModel',
@@ -433,7 +432,6 @@ class UpdateAutonomousDatabaseDetails(object):
             'encryption_key': 'encryptionKey',
             'is_disconnect_peer': 'isDisconnectPeer'
         }
-
         self._backup_retention_period_in_days = None
         self._compute_model = None
         self._in_memory_percentage = None

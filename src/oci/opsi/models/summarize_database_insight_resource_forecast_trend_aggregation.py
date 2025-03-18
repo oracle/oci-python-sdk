@@ -160,7 +160,6 @@ class SummarizeDatabaseInsightResourceForecastTrendAggregation(object):
             'historical_data': 'list[HistoricalDataItem]',
             'projected_data': 'list[ProjectedDataItem]'
         }
-
         self.attribute_map = {
             'time_interval_start': 'timeIntervalStart',
             'time_interval_end': 'timeIntervalEnd',
@@ -174,7 +173,6 @@ class SummarizeDatabaseInsightResourceForecastTrendAggregation(object):
             'historical_data': 'historicalData',
             'projected_data': 'projectedData'
         }
-
         self._time_interval_start = None
         self._time_interval_end = None
         self._high_utilization_threshold = None

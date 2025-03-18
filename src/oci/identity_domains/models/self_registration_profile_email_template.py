@@ -46,13 +46,11 @@ class SelfRegistrationProfileEmailTemplate(object):
             'value': 'str',
             'ref': 'str'
         }
-
         self.attribute_map = {
             'display': 'display',
             'value': 'value',
             'ref': '$ref'
         }
-
         self._display = None
         self._value = None
         self._ref = None

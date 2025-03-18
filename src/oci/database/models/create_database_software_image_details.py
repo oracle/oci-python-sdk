@@ -106,7 +106,6 @@ class CreateDatabaseSoftwareImageDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'source_db_home_id': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'database_version': 'databaseVersion',
@@ -120,7 +119,6 @@ class CreateDatabaseSoftwareImageDetails(object):
             'defined_tags': 'definedTags',
             'source_db_home_id': 'sourceDbHomeId'
         }
-
         self._compartment_id = None
         self._database_version = None
         self._display_name = None

@@ -42,11 +42,9 @@ class DiagnosticsCollectionDetails(object):
         self.swagger_types = {
             'log_collection_mode': 'str'
         }
-
         self.attribute_map = {
             'log_collection_mode': 'logCollectionMode'
         }
-
         self._log_collection_mode = None
 
     @property

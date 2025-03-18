@@ -38,13 +38,11 @@ class BrandingSettingsDefaultImages(object):
             'type': 'str',
             'display': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'type': 'type',
             'display': 'display'
         }
-
         self._value = None
         self._type = None
         self._display = None

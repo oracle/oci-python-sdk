@@ -33,12 +33,10 @@ class AddFleetInstallationSitesDetails(object):
             'installation_sites': 'list[NewInstallationSite]',
             'post_installation_actions': 'list[PostInstallationActions]'
         }
-
         self.attribute_map = {
             'installation_sites': 'installationSites',
             'post_installation_actions': 'postInstallationActions'
         }
-
         self._installation_sites = None
         self._post_installation_actions = None
 

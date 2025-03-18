@@ -123,7 +123,6 @@ class IndicatorSummary(object):
             'time_last_seen': 'datetime',
             'geodata': 'GeodataDetails'
         }
-
         self.attribute_map = {
             'id': 'id',
             'type': 'type',
@@ -138,7 +137,6 @@ class IndicatorSummary(object):
             'time_last_seen': 'timeLastSeen',
             'geodata': 'geodata'
         }
-
         self._id = None
         self._type = None
         self._value = None

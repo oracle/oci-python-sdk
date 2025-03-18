@@ -28,11 +28,9 @@ class PurgeCache(object):
         self.swagger_types = {
             'resources': 'list[str]'
         }
-
         self.attribute_map = {
             'resources': 'resources'
         }
-
         self._resources = None
 
     @property

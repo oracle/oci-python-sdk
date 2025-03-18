@@ -58,7 +58,6 @@ class CreateStreamCdnConfigDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'locks': 'list[ResourceLock]'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'distribution_channel_id': 'distributionChannelId',
@@ -68,7 +67,6 @@ class CreateStreamCdnConfigDetails(object):
             'defined_tags': 'definedTags',
             'locks': 'locks'
         }
-
         self._display_name = None
         self._distribution_channel_id = None
         self._is_enabled = None

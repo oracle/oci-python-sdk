@@ -75,7 +75,6 @@ class LoraTrainingConfig(TrainingConfig):
             'lora_alpha': 'int',
             'lora_dropout': 'float'
         }
-
         self.attribute_map = {
             'training_config_type': 'trainingConfigType',
             'total_training_epochs': 'totalTrainingEpochs',
@@ -88,7 +87,6 @@ class LoraTrainingConfig(TrainingConfig):
             'lora_alpha': 'loraAlpha',
             'lora_dropout': 'loraDropout'
         }
-
         self._training_config_type = None
         self._total_training_epochs = None
         self._learning_rate = None

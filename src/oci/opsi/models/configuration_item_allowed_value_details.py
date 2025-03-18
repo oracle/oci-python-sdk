@@ -48,11 +48,9 @@ class ConfigurationItemAllowedValueDetails(object):
         self.swagger_types = {
             'allowed_value_type': 'str'
         }
-
         self.attribute_map = {
             'allowed_value_type': 'allowedValueType'
         }
-
         self._allowed_value_type = None
 
     @staticmethod

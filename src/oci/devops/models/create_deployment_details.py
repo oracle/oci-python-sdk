@@ -55,7 +55,6 @@ class CreateDeploymentDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'deploy_pipeline_id': 'deployPipelineId',
             'deployment_type': 'deploymentType',
@@ -63,7 +62,6 @@ class CreateDeploymentDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._deploy_pipeline_id = None
         self._deployment_type = None
         self._display_name = None

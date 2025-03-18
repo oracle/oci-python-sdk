@@ -38,13 +38,11 @@ class IssueType(object):
             'label': 'str',
             'name': 'str'
         }
-
         self.attribute_map = {
             'issue_type_key': 'issueTypeKey',
             'label': 'label',
             'name': 'name'
         }
-
         self._issue_type_key = None
         self._label = None
         self._name = None

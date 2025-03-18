@@ -28,11 +28,9 @@ class AssociationAuthorizationRequest(object):
         self.swagger_types = {
             'requests': 'list[AuthorizationRequest]'
         }
-
         self.attribute_map = {
             'requests': 'requests'
         }
-
         self._requests = None
 
     @property

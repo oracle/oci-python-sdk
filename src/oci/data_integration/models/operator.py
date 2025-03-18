@@ -207,7 +207,6 @@ class Operator(object):
             'parameters': 'list[Parameter]',
             'op_config_values': 'ConfigValues'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -223,7 +222,6 @@ class Operator(object):
             'parameters': 'parameters',
             'op_config_values': 'opConfigValues'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

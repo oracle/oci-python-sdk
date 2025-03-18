@@ -43,14 +43,12 @@ class SqlPlanCollection(object):
             'database_id': 'str',
             'items': 'list[SqlPlanSummary]'
         }
-
         self.attribute_map = {
             'sql_identifier': 'sqlIdentifier',
             'id': 'id',
             'database_id': 'databaseId',
             'items': 'items'
         }
-
         self._sql_identifier = None
         self._id = None
         self._database_id = None

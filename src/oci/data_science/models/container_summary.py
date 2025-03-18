@@ -130,7 +130,6 @@ class ContainerSummary(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'container_name': 'containerName',
             'display_name': 'displayName',
@@ -146,7 +145,6 @@ class ContainerSummary(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._container_name = None
         self._display_name = None
         self._family_name = None

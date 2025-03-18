@@ -54,12 +54,10 @@ class TablespaceStorageSize(object):
             'size': 'float',
             'unit': 'str'
         }
-
         self.attribute_map = {
             'size': 'size',
             'unit': 'unit'
         }
-
         self._size = None
         self._unit = None
 

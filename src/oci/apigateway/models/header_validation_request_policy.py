@@ -47,12 +47,10 @@ class HeaderValidationRequestPolicy(object):
             'headers': 'list[HeaderValidationItem]',
             'validation_mode': 'str'
         }
-
         self.attribute_map = {
             'headers': 'headers',
             'validation_mode': 'validationMode'
         }
-
         self._headers = None
         self._validation_mode = None
 

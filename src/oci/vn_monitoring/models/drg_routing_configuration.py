@@ -40,13 +40,11 @@ class DrgRoutingConfiguration(ForwardedRoutingConfiguration):
             'drg_route_table_id': 'str',
             'route_rule': 'DrgRouteRule'
         }
-
         self.attribute_map = {
             'type': 'type',
             'drg_route_table_id': 'drgRouteTableId',
             'route_rule': 'routeRule'
         }
-
         self._type = None
         self._drg_route_table_id = None
         self._route_rule = None

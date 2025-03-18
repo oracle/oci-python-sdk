@@ -58,7 +58,6 @@ class SuggestOutput(object):
             'options': 'list[str]',
             'examples': 'list[str]'
         }
-
         self.attribute_map = {
             'position': 'position',
             'commands': 'commands',
@@ -68,7 +67,6 @@ class SuggestOutput(object):
             'options': 'options',
             'examples': 'examples'
         }
-
         self._position = None
         self._commands = None
         self._fields = None

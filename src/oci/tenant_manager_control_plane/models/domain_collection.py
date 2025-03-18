@@ -28,11 +28,9 @@ class DomainCollection(object):
         self.swagger_types = {
             'items': 'list[DomainSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

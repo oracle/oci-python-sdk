@@ -28,11 +28,9 @@ class WarehouseDataObjectCollection(object):
         self.swagger_types = {
             'items': 'list[WarehouseDataObjectSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

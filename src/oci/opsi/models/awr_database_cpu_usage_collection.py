@@ -66,7 +66,6 @@ class AwrDatabaseCpuUsageCollection(AwrQueryResult):
             'host_cpu_count': 'float',
             'items': 'list[AwrDatabaseCpuUsageSummary]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'version': 'version',
@@ -77,7 +76,6 @@ class AwrDatabaseCpuUsageCollection(AwrQueryResult):
             'host_cpu_count': 'hostCpuCount',
             'items': 'items'
         }
-
         self._name = None
         self._version = None
         self._db_query_time_in_secs = None

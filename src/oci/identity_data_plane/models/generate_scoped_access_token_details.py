@@ -33,12 +33,10 @@ class GenerateScopedAccessTokenDetails(object):
             'scope': 'str',
             'public_key': 'str'
         }
-
         self.attribute_map = {
             'scope': 'scope',
             'public_key': 'publicKey'
         }
-
         self._scope = None
         self._public_key = None
 

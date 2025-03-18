@@ -28,11 +28,9 @@ class AddFsuCollectionTargetsDetails(object):
         self.swagger_types = {
             'targets': 'list[TargetEntry]'
         }
-
         self.attribute_map = {
             'targets': 'targets'
         }
-
         self._targets = None
 
     @property

@@ -201,7 +201,6 @@ class Shape(object):
             'resize_compatible_shapes': 'list[str]',
             'recommended_alternatives': 'list[ShapeAlternativeObject]'
         }
-
         self.attribute_map = {
             'baseline_ocpu_utilizations': 'baselineOcpuUtilizations',
             'min_total_baseline_ocpus_required': 'minTotalBaselineOcpusRequired',
@@ -233,7 +232,6 @@ class Shape(object):
             'resize_compatible_shapes': 'resizeCompatibleShapes',
             'recommended_alternatives': 'recommendedAlternatives'
         }
-
         self._baseline_ocpu_utilizations = None
         self._min_total_baseline_ocpus_required = None
         self._shape = None

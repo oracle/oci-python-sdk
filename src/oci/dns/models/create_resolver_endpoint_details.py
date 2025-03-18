@@ -64,7 +64,6 @@ class CreateResolverEndpointDetails(object):
             'is_listening': 'bool',
             'listening_address': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'endpoint_type': 'endpointType',
@@ -73,7 +72,6 @@ class CreateResolverEndpointDetails(object):
             'is_listening': 'isListening',
             'listening_address': 'listeningAddress'
         }
-
         self._name = None
         self._endpoint_type = None
         self._forwarding_address = None

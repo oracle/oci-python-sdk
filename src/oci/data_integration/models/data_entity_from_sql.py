@@ -139,7 +139,6 @@ class DataEntityFromSql(DataEntity):
             'identifier': 'str',
             'sql_query': 'str'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'metadata': 'metadata',
@@ -161,7 +160,6 @@ class DataEntityFromSql(DataEntity):
             'identifier': 'identifier',
             'sql_query': 'sqlQuery'
         }
-
         self._model_type = None
         self._metadata = None
         self._key = None

@@ -38,13 +38,11 @@ class Capabilities(object):
             'is_break_glass_enabled': 'bool',
             'is_byok_enabled': 'bool'
         }
-
         self.attribute_map = {
             'is_data_masking_enabled': 'isDataMaskingEnabled',
             'is_break_glass_enabled': 'isBreakGlassEnabled',
             'is_byok_enabled': 'isByokEnabled'
         }
-
         self._is_data_masking_enabled = None
         self._is_break_glass_enabled = None
         self._is_byok_enabled = None

@@ -28,11 +28,9 @@ class JavaLicenseAcceptanceRecordCollection(object):
         self.swagger_types = {
             'items': 'list[JavaLicenseAcceptanceRecordSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

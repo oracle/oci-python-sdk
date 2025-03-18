@@ -35,12 +35,10 @@ class Hostname(object):
             'name': 'str',
             'hostname': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'hostname': 'hostname'
         }
-
         self._name = None
         self._hostname = None
 

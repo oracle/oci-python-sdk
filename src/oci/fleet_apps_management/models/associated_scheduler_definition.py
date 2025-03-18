@@ -43,14 +43,12 @@ class AssociatedSchedulerDefinition(object):
             'tenancy_id': 'str',
             'is_recurring': 'bool'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
             'tenancy_id': 'tenancyId',
             'is_recurring': 'isRecurring'
         }
-
         self._id = None
         self._display_name = None
         self._tenancy_id = None

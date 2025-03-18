@@ -66,7 +66,6 @@ class ApplyRollbackJobOperationDetails(JobOperationDetails):
             'execution_plan_rollback_job_id': 'str',
             'target_rollback_job_id': 'str'
         }
-
         self.attribute_map = {
             'operation': 'operation',
             'terraform_advanced_options': 'terraformAdvancedOptions',
@@ -74,7 +73,6 @@ class ApplyRollbackJobOperationDetails(JobOperationDetails):
             'execution_plan_rollback_job_id': 'executionPlanRollbackJobId',
             'target_rollback_job_id': 'targetRollbackJobId'
         }
-
         self._operation = None
         self._terraform_advanced_options = None
         self._execution_plan_rollback_strategy = None

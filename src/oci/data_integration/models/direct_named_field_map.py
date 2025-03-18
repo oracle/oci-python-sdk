@@ -90,7 +90,6 @@ class DirectNamedFieldMap(FieldMap):
             'target_field_name': 'str',
             'object_status': 'int'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'description': 'description',
@@ -106,7 +105,6 @@ class DirectNamedFieldMap(FieldMap):
             'target_field_name': 'targetFieldName',
             'object_status': 'objectStatus'
         }
-
         self._model_type = None
         self._description = None
         self._key = None

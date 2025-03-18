@@ -120,7 +120,6 @@ class VolumeGroupReplica(object):
             'member_replicas': 'list[MemberReplica]',
             'time_last_synced': 'datetime'
         }
-
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'compartment_id': 'compartmentId',
@@ -135,7 +134,6 @@ class VolumeGroupReplica(object):
             'member_replicas': 'memberReplicas',
             'time_last_synced': 'timeLastSynced'
         }
-
         self._availability_domain = None
         self._compartment_id = None
         self._defined_tags = None

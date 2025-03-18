@@ -135,7 +135,6 @@ class WorkspaceSummary(object):
             'registry_id': 'str',
             'workspace_properties': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'id': 'id',
             'description': 'description',
@@ -152,7 +151,6 @@ class WorkspaceSummary(object):
             'registry_id': 'registryId',
             'workspace_properties': 'workspaceProperties'
         }
-
         self._id = None
         self._description = None
         self._display_name = None

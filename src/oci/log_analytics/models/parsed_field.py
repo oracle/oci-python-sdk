@@ -33,12 +33,10 @@ class ParsedField(object):
             'log_content': 'str',
             'field_values': 'list[str]'
         }
-
         self.attribute_map = {
             'log_content': 'logContent',
             'field_values': 'fieldValues'
         }
-
         self._log_content = None
         self._field_values = None
 

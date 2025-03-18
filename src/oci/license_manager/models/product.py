@@ -48,13 +48,11 @@ class Product(object):
             'count': 'float',
             'category': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'count': 'count',
             'category': 'category'
         }
-
         self._name = None
         self._count = None
         self._category = None

@@ -43,11 +43,9 @@ class InputJobDetails(object):
         self.swagger_types = {
             'input_type': 'str'
         }
-
         self.attribute_map = {
             'input_type': 'inputType'
         }
-
         self._input_type = None
 
     @staticmethod

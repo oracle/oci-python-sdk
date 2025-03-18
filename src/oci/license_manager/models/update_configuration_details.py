@@ -28,11 +28,9 @@ class UpdateConfigurationDetails(object):
         self.swagger_types = {
             'email_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'email_ids': 'emailIds'
         }
-
         self._email_ids = None
 
     @property

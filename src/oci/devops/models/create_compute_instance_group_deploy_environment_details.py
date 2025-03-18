@@ -59,7 +59,6 @@ class CreateComputeInstanceGroupDeployEnvironmentDetails(CreateDeployEnvironment
             'defined_tags': 'dict(str, dict(str, object))',
             'compute_instance_group_selectors': 'ComputeInstanceGroupSelectorCollection'
         }
-
         self.attribute_map = {
             'description': 'description',
             'display_name': 'displayName',
@@ -69,7 +68,6 @@ class CreateComputeInstanceGroupDeployEnvironmentDetails(CreateDeployEnvironment
             'defined_tags': 'definedTags',
             'compute_instance_group_selectors': 'computeInstanceGroupSelectors'
         }
-
         self._description = None
         self._display_name = None
         self._deploy_environment_type = None

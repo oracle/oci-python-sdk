@@ -38,13 +38,11 @@ class CreateInclusionCriterionDetails(object):
             'type': 'str',
             'association': 'Association'
         }
-
         self.attribute_map = {
             'governance_rule_id': 'governanceRuleId',
             'type': 'type',
             'association': 'association'
         }
-
         self._governance_rule_id = None
         self._type = None
         self._association = None

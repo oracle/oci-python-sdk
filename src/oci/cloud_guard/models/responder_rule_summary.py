@@ -128,7 +128,6 @@ class ResponderRuleSummary(object):
             'lifecycle_state': 'str',
             'lifecycle_details': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -142,7 +141,6 @@ class ResponderRuleSummary(object):
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails'
         }
-
         self._id = None
         self._display_name = None
         self._description = None

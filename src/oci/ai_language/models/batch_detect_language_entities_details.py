@@ -43,14 +43,12 @@ class BatchDetectLanguageEntitiesDetails(object):
             'endpoint_id': 'str',
             'documents': 'list[TextDocument]'
         }
-
         self.attribute_map = {
             'alias': 'alias',
             'compartment_id': 'compartmentId',
             'endpoint_id': 'endpointId',
             'documents': 'documents'
         }
-
         self._alias = None
         self._compartment_id = None
         self._endpoint_id = None

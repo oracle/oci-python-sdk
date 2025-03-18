@@ -60,7 +60,6 @@ class HostNetworkStatistics(HostResourceStatistics):
             'network_read_in_mbs': 'float',
             'network_write_in_mbs': 'float'
         }
-
         self.attribute_map = {
             'usage': 'usage',
             'capacity': 'capacity',
@@ -70,7 +69,6 @@ class HostNetworkStatistics(HostResourceStatistics):
             'network_read_in_mbs': 'networkReadInMBs',
             'network_write_in_mbs': 'networkWriteInMBs'
         }
-
         self._usage = None
         self._capacity = None
         self._utilization_percent = None

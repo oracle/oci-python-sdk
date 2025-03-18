@@ -69,7 +69,6 @@ class CreateSkillParameterDetails(object):
             'type': 'str',
             'value': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'display_name': 'displayName',
@@ -77,7 +76,6 @@ class CreateSkillParameterDetails(object):
             'type': 'type',
             'value': 'value'
         }
-
         self._name = None
         self._display_name = None
         self._description = None

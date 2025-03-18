@@ -42,12 +42,10 @@ class IdentitySettingsPOSIXGid(object):
             'manual_assignment_starts_from': 'int',
             'manual_assignment_ends_at': 'int'
         }
-
         self.attribute_map = {
             'manual_assignment_starts_from': 'manualAssignmentStartsFrom',
             'manual_assignment_ends_at': 'manualAssignmentEndsAt'
         }
-
         self._manual_assignment_starts_from = None
         self._manual_assignment_ends_at = None
 

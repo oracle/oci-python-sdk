@@ -58,7 +58,6 @@ class Geolocation(object):
             'latitude': 'float',
             'longitude': 'float'
         }
-
         self.attribute_map = {
             'geo_key': 'geoKey',
             'admin_div_code': 'adminDivCode',
@@ -68,7 +67,6 @@ class Geolocation(object):
             'latitude': 'latitude',
             'longitude': 'longitude'
         }
-
         self._geo_key = None
         self._admin_div_code = None
         self._city_name = None

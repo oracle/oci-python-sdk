@@ -36,12 +36,10 @@ class CheckAction(Action):
             'type': 'str',
             'name': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'name': 'name'
         }
-
         self._type = None
         self._name = None
         self._type = 'CHECK'

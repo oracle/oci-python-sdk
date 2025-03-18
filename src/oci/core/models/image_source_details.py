@@ -57,14 +57,12 @@ class ImageSourceDetails(object):
             'source_image_type': 'str',
             'source_type': 'str'
         }
-
         self.attribute_map = {
             'operating_system': 'operatingSystem',
             'operating_system_version': 'operatingSystemVersion',
             'source_image_type': 'sourceImageType',
             'source_type': 'sourceType'
         }
-
         self._operating_system = None
         self._operating_system_version = None
         self._source_image_type = None

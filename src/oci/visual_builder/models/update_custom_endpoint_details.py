@@ -33,12 +33,10 @@ class UpdateCustomEndpointDetails(object):
             'hostname': 'str',
             'certificate_secret_id': 'str'
         }
-
         self.attribute_map = {
             'hostname': 'hostname',
             'certificate_secret_id': 'certificateSecretId'
         }
-
         self._hostname = None
         self._certificate_secret_id = None
 

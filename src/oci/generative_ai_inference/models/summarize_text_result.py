@@ -48,7 +48,6 @@ class SummarizeTextResult(object):
             'model_id': 'str',
             'model_version': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'input': 'input',
@@ -56,7 +55,6 @@ class SummarizeTextResult(object):
             'model_id': 'modelId',
             'model_version': 'modelVersion'
         }
-
         self._id = None
         self._input = None
         self._summary = None

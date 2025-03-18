@@ -43,14 +43,12 @@ class CustomizationInference(object):
             'compartment_id': 'str',
             'entities': 'list[CustomizationInferenceEntity]'
         }
-
         self.attribute_map = {
             'customization_id': 'customizationId',
             'customization_alias': 'customizationAlias',
             'compartment_id': 'compartmentId',
             'entities': 'entities'
         }
-
         self._customization_id = None
         self._customization_alias = None
         self._compartment_id = None

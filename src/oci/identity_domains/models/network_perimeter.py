@@ -122,7 +122,6 @@ class NetworkPerimeter(object):
             'description': 'str',
             'ip_addresses': 'list[NetworkPerimeterIpAddresses]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -142,7 +141,6 @@ class NetworkPerimeter(object):
             'description': 'description',
             'ip_addresses': 'ipAddresses'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

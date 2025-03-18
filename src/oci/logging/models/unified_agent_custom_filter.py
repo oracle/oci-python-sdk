@@ -50,7 +50,6 @@ class UnifiedAgentCustomFilter(UnifiedAgentLoggingFilter):
             'params': 'dict(str, str)',
             'custom_sections': 'list[UnifiedAgentCustomSection]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'filter_type': 'filterType',
@@ -58,7 +57,6 @@ class UnifiedAgentCustomFilter(UnifiedAgentLoggingFilter):
             'params': 'params',
             'custom_sections': 'customSections'
         }
-
         self._name = None
         self._filter_type = None
         self._custom_filter_type = None

@@ -83,7 +83,6 @@ class CreateVcnDetails(object):
             'security_attributes': 'dict(str, dict(str, object))',
             'is_ipv6_enabled': 'bool'
         }
-
         self.attribute_map = {
             'cidr_block': 'cidrBlock',
             'cidr_blocks': 'cidrBlocks',
@@ -98,7 +97,6 @@ class CreateVcnDetails(object):
             'security_attributes': 'securityAttributes',
             'is_ipv6_enabled': 'isIpv6Enabled'
         }
-
         self._cidr_block = None
         self._cidr_blocks = None
         self._compartment_id = None

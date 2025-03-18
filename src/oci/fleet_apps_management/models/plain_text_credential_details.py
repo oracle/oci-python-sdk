@@ -35,12 +35,10 @@ class PlainTextCredentialDetails(CredentialDetails):
             'credential_type': 'str',
             'value': 'str'
         }
-
         self.attribute_map = {
             'credential_type': 'credentialType',
             'value': 'value'
         }
-
         self._credential_type = None
         self._value = None
         self._credential_type = 'PLAIN_TEXT'

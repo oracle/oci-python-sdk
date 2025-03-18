@@ -50,7 +50,6 @@ class OracleAtpWriteAttributes(AbstractWriteAttribute):
             'staging_data_asset': 'DataAsset',
             'staging_connection': 'Connection'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'bucket_schema': 'bucketSchema',
@@ -58,7 +57,6 @@ class OracleAtpWriteAttributes(AbstractWriteAttribute):
             'staging_data_asset': 'stagingDataAsset',
             'staging_connection': 'stagingConnection'
         }
-
         self._model_type = None
         self._bucket_schema = None
         self._staging_file_name = None

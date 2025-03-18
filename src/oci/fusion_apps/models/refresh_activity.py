@@ -153,7 +153,6 @@ class RefreshActivity(object):
             'refresh_issue_details_list': 'list[RefreshIssueDetails]',
             'lifecycle_details': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -170,7 +169,6 @@ class RefreshActivity(object):
             'refresh_issue_details_list': 'refreshIssueDetailsList',
             'lifecycle_details': 'lifecycleDetails'
         }
-
         self._id = None
         self._display_name = None
         self._source_fusion_environment_id = None

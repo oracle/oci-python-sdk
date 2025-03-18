@@ -104,7 +104,6 @@ class WaitStageSummary(BuildPipelineStageSummary):
             'system_tags': 'dict(str, dict(str, object))',
             'wait_criteria': 'WaitCriteria'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -123,7 +122,6 @@ class WaitStageSummary(BuildPipelineStageSummary):
             'system_tags': 'systemTags',
             'wait_criteria': 'waitCriteria'
         }
-
         self._id = None
         self._display_name = None
         self._project_id = None

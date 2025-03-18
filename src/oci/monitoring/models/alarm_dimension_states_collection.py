@@ -43,14 +43,12 @@ class AlarmDimensionStatesCollection(object):
             'is_notifications_per_metric_dimension_enabled': 'bool',
             'items': 'list[AlarmDimensionStatesEntry]'
         }
-
         self.attribute_map = {
             'alarm_id': 'alarmId',
             'is_enabled': 'isEnabled',
             'is_notifications_per_metric_dimension_enabled': 'isNotificationsPerMetricDimensionEnabled',
             'items': 'items'
         }
-
         self._alarm_id = None
         self._is_enabled = None
         self._is_notifications_per_metric_dimension_enabled = None

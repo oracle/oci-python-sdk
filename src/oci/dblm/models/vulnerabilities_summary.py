@@ -53,7 +53,6 @@ class VulnerabilitiesSummary(object):
             'info': 'int',
             'low': 'int'
         }
-
         self.attribute_map = {
             'total': 'total',
             'critical': 'critical',
@@ -62,7 +61,6 @@ class VulnerabilitiesSummary(object):
             'info': 'info',
             'low': 'low'
         }
-
         self._total = None
         self._critical = None
         self._high = None

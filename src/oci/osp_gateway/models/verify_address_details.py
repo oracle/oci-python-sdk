@@ -153,7 +153,6 @@ class VerifyAddressDetails(object):
             'state_inscription': 'str',
             'municipal_inscription': 'str'
         }
-
         self.attribute_map = {
             'address_key': 'addressKey',
             'line1': 'line1',
@@ -182,7 +181,6 @@ class VerifyAddressDetails(object):
             'state_inscription': 'stateInscription',
             'municipal_inscription': 'municipalInscription'
         }
-
         self._address_key = None
         self._line1 = None
         self._line2 = None

@@ -123,7 +123,6 @@ class EnterpriseManagerBridge(object):
             'lifecycle_state': 'str',
             'lifecycle_details': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -140,7 +139,6 @@ class EnterpriseManagerBridge(object):
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails'
         }
-
         self._id = None
         self._compartment_id = None
         self._display_name = None

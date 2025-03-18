@@ -28,11 +28,9 @@ class PublicKeyDetails(object):
         self.swagger_types = {
             'public_key_content': 'str'
         }
-
         self.attribute_map = {
             'public_key_content': 'publicKeyContent'
         }
-
         self._public_key_content = None
 
     @property

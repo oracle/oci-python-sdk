@@ -111,7 +111,6 @@ class ExternalAsmServicedDatabase(object):
             'database_sub_type': 'str',
             'is_managed': 'bool'
         }
-
         self.attribute_map = {
             'disk_groups': 'diskGroups',
             'id': 'id',
@@ -122,7 +121,6 @@ class ExternalAsmServicedDatabase(object):
             'database_sub_type': 'databaseSubType',
             'is_managed': 'isManaged'
         }
-
         self._disk_groups = None
         self._id = None
         self._display_name = None

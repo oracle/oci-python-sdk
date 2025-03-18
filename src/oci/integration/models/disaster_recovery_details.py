@@ -52,13 +52,11 @@ class DisasterRecoveryDetails(object):
             'regional_instance_url': 'str',
             'cross_region_integration_instance_details': 'CrossRegionIntegrationInstanceDetails'
         }
-
         self.attribute_map = {
             'role': 'role',
             'regional_instance_url': 'regionalInstanceUrl',
             'cross_region_integration_instance_details': 'crossRegionIntegrationInstanceDetails'
         }
-
         self._role = None
         self._regional_instance_url = None
         self._cross_region_integration_instance_details = None

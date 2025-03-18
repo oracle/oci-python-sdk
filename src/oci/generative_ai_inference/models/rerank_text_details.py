@@ -58,7 +58,6 @@ class RerankTextDetails(object):
             'is_echo': 'bool',
             'max_chunks_per_document': 'int'
         }
-
         self.attribute_map = {
             'input': 'input',
             'compartment_id': 'compartmentId',
@@ -68,7 +67,6 @@ class RerankTextDetails(object):
             'is_echo': 'isEcho',
             'max_chunks_per_document': 'maxChunksPerDocument'
         }
-
         self._input = None
         self._compartment_id = None
         self._serving_mode = None

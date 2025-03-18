@@ -38,13 +38,11 @@ class CreateVolumeBackupPolicyAssignmentDetails(object):
             'policy_id': 'str',
             'xrc_kms_key_id': 'str'
         }
-
         self.attribute_map = {
             'asset_id': 'assetId',
             'policy_id': 'policyId',
             'xrc_kms_key_id': 'xrcKmsKeyId'
         }
-
         self._asset_id = None
         self._policy_id = None
         self._xrc_kms_key_id = None

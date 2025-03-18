@@ -154,7 +154,6 @@ class JobDatabase(object):
             'is_cluster': 'bool',
             'workload_type': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -164,7 +163,6 @@ class JobDatabase(object):
             'is_cluster': 'isCluster',
             'workload_type': 'workloadType'
         }
-
         self._id = None
         self._name = None
         self._database_type = None

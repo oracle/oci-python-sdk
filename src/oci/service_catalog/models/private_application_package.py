@@ -63,7 +63,6 @@ class PrivateApplicationPackage(object):
             'package_type': 'str',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'private_application_id': 'privateApplicationId',
@@ -72,7 +71,6 @@ class PrivateApplicationPackage(object):
             'package_type': 'packageType',
             'time_created': 'timeCreated'
         }
-
         self._id = None
         self._private_application_id = None
         self._display_name = None

@@ -52,7 +52,6 @@ class Metric(object):
             'compartment_id': 'str',
             'dimensions': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'name': 'name',
             'namespace': 'namespace',
@@ -60,7 +59,6 @@ class Metric(object):
             'compartment_id': 'compartmentId',
             'dimensions': 'dimensions'
         }
-
         self._name = None
         self._namespace = None
         self._resource_group = None

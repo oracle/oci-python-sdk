@@ -48,7 +48,6 @@ class IpInventoryCollection(object):
             'inventory_vcn_collection': 'list[InventoryVcnSummary]',
             'message': 'str'
         }
-
         self.attribute_map = {
             'count': 'count',
             'last_updated_timestamp': 'lastUpdatedTimestamp',
@@ -56,7 +55,6 @@ class IpInventoryCollection(object):
             'inventory_vcn_collection': 'inventoryVcnCollection',
             'message': 'message'
         }
-
         self._count = None
         self._last_updated_timestamp = None
         self._compartments_per_tenant = None

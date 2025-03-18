@@ -141,7 +141,6 @@ class DatabasePlanDirective(object):
             'type': 'str',
             'role': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'share': 'share',
@@ -162,7 +161,6 @@ class DatabasePlanDirective(object):
             'type': 'type',
             'role': 'role'
         }
-
         self._name = None
         self._share = None
         self._level = None

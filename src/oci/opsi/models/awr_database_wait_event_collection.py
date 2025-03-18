@@ -51,7 +51,6 @@ class AwrDatabaseWaitEventCollection(AwrQueryResult):
             'awr_result_type': 'str',
             'items': 'list[AwrDatabaseWaitEventSummary]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'version': 'version',
@@ -59,7 +58,6 @@ class AwrDatabaseWaitEventCollection(AwrQueryResult):
             'awr_result_type': 'awrResultType',
             'items': 'items'
         }
-
         self._name = None
         self._version = None
         self._db_query_time_in_secs = None

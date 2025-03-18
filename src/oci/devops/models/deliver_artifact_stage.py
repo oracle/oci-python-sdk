@@ -106,7 +106,6 @@ class DeliverArtifactStage(BuildPipelineStage):
             'system_tags': 'dict(str, dict(str, object))',
             'deliver_artifact_collection': 'DeliverArtifactCollection'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -125,7 +124,6 @@ class DeliverArtifactStage(BuildPipelineStage):
             'system_tags': 'systemTags',
             'deliver_artifact_collection': 'deliverArtifactCollection'
         }
-
         self._id = None
         self._display_name = None
         self._description = None

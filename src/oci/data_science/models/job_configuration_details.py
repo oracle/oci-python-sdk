@@ -38,11 +38,9 @@ class JobConfigurationDetails(object):
         self.swagger_types = {
             'job_type': 'str'
         }
-
         self.attribute_map = {
             'job_type': 'jobType'
         }
-
         self._job_type = None
 
     @staticmethod

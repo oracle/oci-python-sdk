@@ -118,7 +118,6 @@ class UsageCarbonEmissionSummary(object):
             'subscription_id': 'str',
             'tags': 'list[Tag]'
         }
-
         self.attribute_map = {
             'tenant_id': 'tenantId',
             'tenant_name': 'tenantName',
@@ -140,7 +139,6 @@ class UsageCarbonEmissionSummary(object):
             'subscription_id': 'subscriptionId',
             'tags': 'tags'
         }
-
         self._tenant_id = None
         self._tenant_name = None
         self._compartment_id = None

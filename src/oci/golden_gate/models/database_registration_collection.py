@@ -28,11 +28,9 @@ class DatabaseRegistrationCollection(object):
         self.swagger_types = {
             'items': 'list[DatabaseRegistrationSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

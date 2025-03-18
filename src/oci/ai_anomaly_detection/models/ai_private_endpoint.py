@@ -114,7 +114,6 @@ class AiPrivateEndpoint(object):
             'lifecycle_details': 'str',
             'attached_data_assets': 'list[str]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -130,7 +129,6 @@ class AiPrivateEndpoint(object):
             'lifecycle_details': 'lifecycleDetails',
             'attached_data_assets': 'attachedDataAssets'
         }
-
         self._id = None
         self._compartment_id = None
         self._subnet_id = None

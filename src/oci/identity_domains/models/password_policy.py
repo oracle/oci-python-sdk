@@ -306,7 +306,6 @@ class PasswordPolicy(object):
             'groups': 'list[PasswordPolicyGroups]',
             'configured_password_policy_rules': 'list[PasswordPolicyConfiguredPasswordPolicyRules]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -360,7 +359,6 @@ class PasswordPolicy(object):
             'groups': 'groups',
             'configured_password_policy_rules': 'configuredPasswordPolicyRules'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

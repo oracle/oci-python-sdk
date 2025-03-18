@@ -33,12 +33,10 @@ class NormalizedVertex(object):
             'x': 'float',
             'y': 'float'
         }
-
         self.attribute_map = {
             'x': 'x',
             'y': 'y'
         }
-
         self._x = None
         self._y = None
 

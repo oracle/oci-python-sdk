@@ -48,7 +48,6 @@ class UpdateStreamPoolDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'name': 'name',
             'kafka_settings': 'kafkaSettings',
@@ -56,7 +55,6 @@ class UpdateStreamPoolDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._name = None
         self._kafka_settings = None
         self._custom_encryption_key_details = None

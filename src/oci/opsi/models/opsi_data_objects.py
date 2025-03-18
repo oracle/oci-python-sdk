@@ -28,11 +28,9 @@ class OpsiDataObjects(object):
         self.swagger_types = {
             'opsi_data_objects': 'object'
         }
-
         self.attribute_map = {
             'opsi_data_objects': 'opsiDataObjects'
         }
-
         self._opsi_data_objects = None
 
     @property

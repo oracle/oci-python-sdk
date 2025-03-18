@@ -53,7 +53,6 @@ class ImportDeploymentWalletDetails(object):
             'master_encryption_key_id': 'str',
             'description': 'str'
         }
-
         self.attribute_map = {
             'vault_id': 'vaultId',
             'new_wallet_secret_id': 'newWalletSecretId',
@@ -62,7 +61,6 @@ class ImportDeploymentWalletDetails(object):
             'master_encryption_key_id': 'masterEncryptionKeyId',
             'description': 'description'
         }
-
         self._vault_id = None
         self._new_wallet_secret_id = None
         self._wallet_backup_secret_name = None

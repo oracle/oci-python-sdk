@@ -53,7 +53,6 @@ class UpdateVirtualDeploymentDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'description': 'description',
             'service_discovery': 'serviceDiscovery',
@@ -62,7 +61,6 @@ class UpdateVirtualDeploymentDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._description = None
         self._service_discovery = None
         self._listeners = None

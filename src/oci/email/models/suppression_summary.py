@@ -74,7 +74,6 @@ class SuppressionSummary(object):
             'reason': 'str',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'email_address': 'emailAddress',
@@ -82,7 +81,6 @@ class SuppressionSummary(object):
             'reason': 'reason',
             'time_created': 'timeCreated'
         }
-
         self._compartment_id = None
         self._email_address = None
         self._id = None

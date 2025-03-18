@@ -63,7 +63,6 @@ class CreateEkmsPrivateEndpointDetails(object):
             'ca_bundle': 'str',
             'port': 'int'
         }
-
         self.attribute_map = {
             'subnet_id': 'subnetId',
             'compartment_id': 'compartmentId',
@@ -74,7 +73,6 @@ class CreateEkmsPrivateEndpointDetails(object):
             'ca_bundle': 'caBundle',
             'port': 'port'
         }
-
         self._subnet_id = None
         self._compartment_id = None
         self._freeform_tags = None

@@ -105,7 +105,6 @@ class PeComanagedManagedExternalDatabaseConfigurationSummary(DatabaseConfigurati
             'instances': 'list[HostInstanceMap]',
             'exadata_details': 'ExadataDetails'
         }
-
         self.attribute_map = {
             'database_insight_id': 'databaseInsightId',
             'entity_source': 'entitySource',
@@ -124,7 +123,6 @@ class PeComanagedManagedExternalDatabaseConfigurationSummary(DatabaseConfigurati
             'instances': 'instances',
             'exadata_details': 'exadataDetails'
         }
-
         self._database_insight_id = None
         self._entity_source = None
         self._compartment_id = None

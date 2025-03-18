@@ -83,7 +83,6 @@ class MonthlyRewardSummary(object):
             'ineligible_usage_amount': 'float',
             'usage_period_key': 'str'
         }
-
         self.attribute_map = {
             'available_rewards': 'availableRewards',
             'redeemed_rewards': 'redeemedRewards',
@@ -98,7 +97,6 @@ class MonthlyRewardSummary(object):
             'ineligible_usage_amount': 'ineligibleUsageAmount',
             'usage_period_key': 'usagePeriodKey'
         }
-
         self._available_rewards = None
         self._redeemed_rewards = None
         self._earned_rewards = None

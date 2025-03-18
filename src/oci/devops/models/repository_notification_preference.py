@@ -56,13 +56,11 @@ class RepositoryNotificationPreference(object):
             'user_id': 'str',
             'notification_preference': 'str'
         }
-
         self.attribute_map = {
             'repository_id': 'repositoryId',
             'user_id': 'userId',
             'notification_preference': 'notificationPreference'
         }
-
         self._repository_id = None
         self._user_id = None
         self._notification_preference = None

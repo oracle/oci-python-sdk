@@ -97,7 +97,6 @@ class DeploymentEnvironmentSummary(object):
             'memory_per_ocpu_in_gbs': 'int',
             'storage_usage_limit_per_ocpu_in_gbs': 'int'
         }
-
         self.attribute_map = {
             'environment_type': 'environmentType',
             'category': 'category',
@@ -110,7 +109,6 @@ class DeploymentEnvironmentSummary(object):
             'memory_per_ocpu_in_gbs': 'memoryPerOcpuInGBs',
             'storage_usage_limit_per_ocpu_in_gbs': 'storageUsageLimitPerOcpuInGBs'
         }
-
         self._environment_type = None
         self._category = None
         self._display_name = None

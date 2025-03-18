@@ -93,7 +93,6 @@ class AppCatalogListingResourceVersion(object):
             'accessible_ports': 'list[int]',
             'allowed_actions': 'list[str]'
         }
-
         self.attribute_map = {
             'listing_id': 'listingId',
             'time_published': 'timePublished',
@@ -104,7 +103,6 @@ class AppCatalogListingResourceVersion(object):
             'accessible_ports': 'accessiblePorts',
             'allowed_actions': 'allowedActions'
         }
-
         self._listing_id = None
         self._time_published = None
         self._listing_resource_id = None

@@ -63,12 +63,10 @@ class RecoveryServiceSubnetDetails(object):
             'recovery_service_subnet_id': 'str',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'recovery_service_subnet_id': 'recoveryServiceSubnetId',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._recovery_service_subnet_id = None
         self._lifecycle_state = None
 

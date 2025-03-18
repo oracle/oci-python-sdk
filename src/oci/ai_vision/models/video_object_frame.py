@@ -38,13 +38,11 @@ class VideoObjectFrame(object):
             'confidence': 'float',
             'bounding_polygon': 'BoundingPolygon'
         }
-
         self.attribute_map = {
             'time_offset_ms': 'timeOffsetMs',
             'confidence': 'confidence',
             'bounding_polygon': 'boundingPolygon'
         }
-
         self._time_offset_ms = None
         self._confidence = None
         self._bounding_polygon = None

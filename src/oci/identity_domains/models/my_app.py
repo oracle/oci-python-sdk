@@ -157,7 +157,6 @@ class MyApp(object):
             'launch_url': 'str',
             'user_wallet_artifact': 'MyAppUserWalletArtifact'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -184,7 +183,6 @@ class MyApp(object):
             'launch_url': 'launchUrl',
             'user_wallet_artifact': 'userWalletArtifact'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

@@ -54,7 +54,6 @@ class SummarizeMetricsDataDetails(object):
             'end_time': 'datetime',
             'resolution': 'str'
         }
-
         self.attribute_map = {
             'namespace': 'namespace',
             'resource_group': 'resourceGroup',
@@ -63,7 +62,6 @@ class SummarizeMetricsDataDetails(object):
             'end_time': 'endTime',
             'resolution': 'resolution'
         }
-
         self._namespace = None
         self._resource_group = None
         self._query = None

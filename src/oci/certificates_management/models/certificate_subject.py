@@ -108,7 +108,6 @@ class CertificateSubject(object):
             'title': 'str',
             'user_id': 'str'
         }
-
         self.attribute_map = {
             'common_name': 'commonName',
             'country': 'country',
@@ -128,7 +127,6 @@ class CertificateSubject(object):
             'title': 'title',
             'user_id': 'userId'
         }
-
         self._common_name = None
         self._country = None
         self._domain_component = None

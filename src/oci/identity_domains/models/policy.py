@@ -142,7 +142,6 @@ class Policy(object):
             'policy_type': 'PolicyPolicyType',
             'urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy': 'PolicyExtensionOciconsolesignonpolicyconsentPolicy'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -166,7 +165,6 @@ class Policy(object):
             'policy_type': 'policyType',
             'urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:ociconsolesignonpolicyconsent:Policy'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

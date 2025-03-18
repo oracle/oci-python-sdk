@@ -108,7 +108,6 @@ class ServiceGateway(object):
             'time_created': 'datetime',
             'vcn_id': 'str'
         }
-
         self.attribute_map = {
             'block_traffic': 'blockTraffic',
             'compartment_id': 'compartmentId',
@@ -122,7 +121,6 @@ class ServiceGateway(object):
             'time_created': 'timeCreated',
             'vcn_id': 'vcnId'
         }
-
         self._block_traffic = None
         self._compartment_id = None
         self._defined_tags = None

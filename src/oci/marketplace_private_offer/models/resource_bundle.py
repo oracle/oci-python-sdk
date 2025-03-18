@@ -71,14 +71,12 @@ class ResourceBundle(object):
             'unit_of_measurement': 'str',
             'resource_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'type': 'type',
             'quantity': 'quantity',
             'unit_of_measurement': 'unitOfMeasurement',
             'resource_ids': 'resourceIds'
         }
-
         self._type = None
         self._quantity = None
         self._unit_of_measurement = None

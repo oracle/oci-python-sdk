@@ -40,13 +40,11 @@ class OciKeyDetails(AutonomousDatabaseEncryptionKeyDetails):
             'kms_key_id': 'str',
             'vault_id': 'str'
         }
-
         self.attribute_map = {
             'provider': 'provider',
             'kms_key_id': 'kmsKeyId',
             'vault_id': 'vaultId'
         }
-
         self._provider = None
         self._kms_key_id = None
         self._vault_id = None

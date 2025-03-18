@@ -45,14 +45,12 @@ class QueryResultResponse(object):
             'query_result_metadata': 'dict(str, object)',
             'query_result_warnings': 'list[QueryResultWarning]'
         }
-
         self.attribute_map = {
             'query_result_metadata_summary': 'queryResultMetadataSummary',
             'query_result_rows': 'queryResultRows',
             'query_result_metadata': 'queryResultMetadata',
             'query_result_warnings': 'queryResultWarnings'
         }
-
         self._query_result_metadata_summary = None
         self._query_result_rows = None
         self._query_result_metadata = None

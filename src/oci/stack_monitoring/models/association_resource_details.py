@@ -38,13 +38,11 @@ class AssociationResourceDetails(object):
             'type': 'str',
             'compartment_id': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'type': 'type',
             'compartment_id': 'compartmentId'
         }
-
         self._name = None
         self._type = None
         self._compartment_id = None

@@ -65,7 +65,6 @@ class DeleteCommandDescriptor(AbstractCommandDescriptor):
             'is_hidden': 'bool',
             'is_dry_run': 'bool'
         }
-
         self.attribute_map = {
             'name': 'name',
             'display_query_string': 'displayQueryString',
@@ -76,7 +75,6 @@ class DeleteCommandDescriptor(AbstractCommandDescriptor):
             'is_hidden': 'isHidden',
             'is_dry_run': 'isDryRun'
         }
-
         self._name = None
         self._display_query_string = None
         self._internal_query_string = None

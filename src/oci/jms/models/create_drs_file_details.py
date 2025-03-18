@@ -38,13 +38,11 @@ class CreateDrsFileDetails(object):
             'namespace': 'str',
             'drs_file_name': 'str'
         }
-
         self.attribute_map = {
             'bucket_name': 'bucketName',
             'namespace': 'namespace',
             'drs_file_name': 'drsFileName'
         }
-
         self._bucket_name = None
         self._namespace = None
         self._drs_file_name = None

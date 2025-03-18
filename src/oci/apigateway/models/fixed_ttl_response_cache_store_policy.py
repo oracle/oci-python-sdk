@@ -35,12 +35,10 @@ class FixedTTLResponseCacheStorePolicy(ResponseCacheStorePolicy):
             'type': 'str',
             'time_to_live_in_seconds': 'int'
         }
-
         self.attribute_map = {
             'type': 'type',
             'time_to_live_in_seconds': 'timeToLiveInSeconds'
         }
-
         self._type = None
         self._time_to_live_in_seconds = None
         self._type = 'FIXED_TTL_STORE_POLICY'

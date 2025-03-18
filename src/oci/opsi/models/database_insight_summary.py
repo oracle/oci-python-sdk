@@ -202,7 +202,6 @@ class DatabaseInsightSummary(object):
             'lifecycle_details': 'str',
             'database_connection_status_details': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'database_id': 'databaseId',
@@ -224,7 +223,6 @@ class DatabaseInsightSummary(object):
             'lifecycle_details': 'lifecycleDetails',
             'database_connection_status_details': 'databaseConnectionStatusDetails'
         }
-
         self._id = None
         self._database_id = None
         self._compartment_id = None

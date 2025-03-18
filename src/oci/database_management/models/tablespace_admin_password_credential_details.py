@@ -46,14 +46,12 @@ class TablespaceAdminPasswordCredentialDetails(TablespaceAdminCredentialDetails)
             'role': 'str',
             'password': 'str'
         }
-
         self.attribute_map = {
             'tablespace_admin_credential_type': 'tablespaceAdminCredentialType',
             'username': 'username',
             'role': 'role',
             'password': 'password'
         }
-
         self._tablespace_admin_credential_type = None
         self._username = None
         self._role = None

@@ -68,7 +68,6 @@ class CreatePullRequestDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'source_branch': 'sourceBranch',
@@ -80,7 +79,6 @@ class CreatePullRequestDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._display_name = None
         self._source_branch = None
         self._destination_branch = None

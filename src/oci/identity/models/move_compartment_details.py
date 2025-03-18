@@ -28,11 +28,9 @@ class MoveCompartmentDetails(object):
         self.swagger_types = {
             'target_compartment_id': 'str'
         }
-
         self.attribute_map = {
             'target_compartment_id': 'targetCompartmentId'
         }
-
         self._target_compartment_id = None
 
     @property

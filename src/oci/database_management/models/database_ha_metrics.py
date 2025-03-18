@@ -211,7 +211,6 @@ class DatabaseHaMetrics(object):
             'db_unique_name': 'str',
             'db_role': 'str'
         }
-
         self.attribute_map = {
             'is_dataguard_enabled': 'isDataguardEnabled',
             'last_backup_summary': 'lastBackupSummary',
@@ -228,7 +227,6 @@ class DatabaseHaMetrics(object):
             'db_unique_name': 'dbUniqueName',
             'db_role': 'dbRole'
         }
-
         self._is_dataguard_enabled = None
         self._last_backup_summary = None
         self._metrics = None

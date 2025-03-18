@@ -105,7 +105,6 @@ class RuleBasedFieldMap(FieldMap):
             'from_rule_config': 'RuleTypeConfig',
             'to_rule_config': 'RuleTypeConfig'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'description': 'description',
@@ -121,7 +120,6 @@ class RuleBasedFieldMap(FieldMap):
             'from_rule_config': 'fromRuleConfig',
             'to_rule_config': 'toRuleConfig'
         }
-
         self._model_type = None
         self._description = None
         self._key = None

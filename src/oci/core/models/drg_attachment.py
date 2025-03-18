@@ -116,7 +116,6 @@ class DrgAttachment(object):
             'export_drg_route_distribution_id': 'str',
             'is_cross_tenancy': 'bool'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
@@ -133,7 +132,6 @@ class DrgAttachment(object):
             'export_drg_route_distribution_id': 'exportDrgRouteDistributionId',
             'is_cross_tenancy': 'isCrossTenancy'
         }
-
         self._compartment_id = None
         self._display_name = None
         self._drg_id = None

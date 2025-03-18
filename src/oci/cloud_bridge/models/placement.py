@@ -63,7 +63,6 @@ class Placement(object):
             'spread_domain': 'str',
             'tenancy': 'str'
         }
-
         self.attribute_map = {
             'affinity': 'affinity',
             'availability_zone': 'availabilityZone',
@@ -74,7 +73,6 @@ class Placement(object):
             'spread_domain': 'spreadDomain',
             'tenancy': 'tenancy'
         }
-
         self._affinity = None
         self._availability_zone = None
         self._group_name = None

@@ -33,12 +33,10 @@ class ImageOcpuConstraints(object):
             'min': 'int',
             'max': 'int'
         }
-
         self.attribute_map = {
             'min': 'min',
             'max': 'max'
         }
-
         self._min = None
         self._max = None
 

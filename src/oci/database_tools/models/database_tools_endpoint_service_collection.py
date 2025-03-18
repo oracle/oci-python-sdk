@@ -28,11 +28,9 @@ class DatabaseToolsEndpointServiceCollection(object):
         self.swagger_types = {
             'items': 'list[DatabaseToolsEndpointServiceSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

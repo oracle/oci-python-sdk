@@ -95,7 +95,6 @@ class BackupDestinationConfigurationSummary(object):
             'internet_proxy': 'str',
             'dbrs_policy_id': 'str'
         }
-
         self.attribute_map = {
             'recovery_window_in_days': 'recoveryWindowInDays',
             'backup_destination_attach_history': 'backupDestinationAttachHistory',
@@ -108,7 +107,6 @@ class BackupDestinationConfigurationSummary(object):
             'internet_proxy': 'internetProxy',
             'dbrs_policy_id': 'dbrsPolicyId'
         }
-
         self._recovery_window_in_days = None
         self._backup_destination_attach_history = None
         self._space_utilized_in_gbs = None

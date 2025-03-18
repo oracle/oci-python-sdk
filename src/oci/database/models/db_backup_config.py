@@ -206,7 +206,6 @@ class DbBackupConfig(object):
             'backup_destination_details': 'list[BackupDestinationDetails]',
             'backup_deletion_policy': 'str'
         }
-
         self.attribute_map = {
             'auto_backup_enabled': 'autoBackupEnabled',
             'recovery_window_in_days': 'recoveryWindowInDays',
@@ -217,7 +216,6 @@ class DbBackupConfig(object):
             'backup_destination_details': 'backupDestinationDetails',
             'backup_deletion_policy': 'backupDeletionPolicy'
         }
-
         self._auto_backup_enabled = None
         self._recovery_window_in_days = None
         self._auto_backup_window = None

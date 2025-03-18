@@ -38,13 +38,11 @@ class UpdatePlatformConfigurationDetails(object):
             'description': 'str',
             'config_category_details': 'ConfigCategoryDetails'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
             'config_category_details': 'configCategoryDetails'
         }
-
         self._display_name = None
         self._description = None
         self._config_category_details = None

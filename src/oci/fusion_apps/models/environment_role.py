@@ -48,13 +48,11 @@ class EnvironmentRole(object):
             'standby_environment_region': 'str',
             'standby_environment_id': 'str'
         }
-
         self.attribute_map = {
             'current_role': 'currentRole',
             'standby_environment_region': 'standbyEnvironmentRegion',
             'standby_environment_id': 'standbyEnvironmentId'
         }
-
         self._current_role = None
         self._standby_environment_region = None
         self._standby_environment_id = None

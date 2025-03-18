@@ -43,14 +43,12 @@ class ConfigurationDetails(object):
             'compartment_id': 'str',
             'schema': 'Schema'
         }
-
         self.attribute_map = {
             'data_asset': 'dataAsset',
             'connection': 'connection',
             'compartment_id': 'compartmentId',
             'schema': 'schema'
         }
-
         self._data_asset = None
         self._connection = None
         self._compartment_id = None

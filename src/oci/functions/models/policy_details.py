@@ -33,12 +33,10 @@ class PolicyDetails(object):
             'policy': 'str',
             'description': 'str'
         }
-
         self.attribute_map = {
             'policy': 'policy',
             'description': 'description'
         }
-
         self._policy = None
         self._description = None
 

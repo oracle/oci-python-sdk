@@ -43,14 +43,12 @@ class UpdateDigitalAssistantDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'category': 'category',
             'description': 'description',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._category = None
         self._description = None
         self._freeform_tags = None

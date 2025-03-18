@@ -28,11 +28,9 @@ class UsageCarbonEmissionsQueryCollection(object):
         self.swagger_types = {
             'items': 'list[UsageCarbonEmissionsQuerySummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

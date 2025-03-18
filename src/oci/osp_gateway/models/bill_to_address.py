@@ -93,7 +93,6 @@ class BillToAddress(object):
             'postal_code': 'str',
             'province': 'str'
         }
-
         self.attribute_map = {
             'contact_name': 'contactName',
             'company_name': 'companyName',
@@ -110,7 +109,6 @@ class BillToAddress(object):
             'postal_code': 'postalCode',
             'province': 'province'
         }
-
         self._contact_name = None
         self._company_name = None
         self._address_line1 = None

@@ -28,11 +28,9 @@ class BulkReplaceServiceCatalogAssociationsDetails(object):
         self.swagger_types = {
             'items': 'list[CreateServiceCatalogAssociationDetails]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

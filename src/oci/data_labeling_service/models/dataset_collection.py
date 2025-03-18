@@ -28,11 +28,9 @@ class DatasetCollection(object):
         self.swagger_types = {
             'items': 'list[DatasetSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

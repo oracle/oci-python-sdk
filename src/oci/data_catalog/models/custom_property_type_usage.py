@@ -43,14 +43,12 @@ class CustomPropertyTypeUsage(object):
             'count': 'int',
             'is_event_enabled': 'bool'
         }
-
         self.attribute_map = {
             'type_id': 'typeId',
             'type_name': 'typeName',
             'count': 'count',
             'is_event_enabled': 'isEventEnabled'
         }
-
         self._type_id = None
         self._type_name = None
         self._count = None

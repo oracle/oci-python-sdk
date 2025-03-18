@@ -56,7 +56,6 @@ class UpgradeAction(Action):
             'version': 'str',
             'qualifier': 'str'
         }
-
         self.attribute_map = {
             'reference_key': 'referenceKey',
             'action_type': 'actionType',
@@ -65,7 +64,6 @@ class UpgradeAction(Action):
             'version': 'version',
             'qualifier': 'qualifier'
         }
-
         self._reference_key = None
         self._action_type = None
         self._state = None

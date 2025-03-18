@@ -205,7 +205,6 @@ class CreateDocumentJobDetails(object):
             'document_type': 'str',
             'is_zip_output_enabled': 'bool'
         }
-
         self.attribute_map = {
             'input_location': 'inputLocation',
             'features': 'features',
@@ -216,7 +215,6 @@ class CreateDocumentJobDetails(object):
             'document_type': 'documentType',
             'is_zip_output_enabled': 'isZipOutputEnabled'
         }
-
         self._input_location = None
         self._features = None
         self._output_location = None

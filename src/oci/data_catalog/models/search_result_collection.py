@@ -49,7 +49,6 @@ class SearchResultCollection(object):
             'faceted_search_aggregation': 'list[FacetedSearchAggregation]',
             'sortable_fields': 'list[str]'
         }
-
         self.attribute_map = {
             'count': 'count',
             'items': 'items',
@@ -57,7 +56,6 @@ class SearchResultCollection(object):
             'faceted_search_aggregation': 'facetedSearchAggregation',
             'sortable_fields': 'sortableFields'
         }
-
         self._count = None
         self._items = None
         self._query = None

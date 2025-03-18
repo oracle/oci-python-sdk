@@ -75,7 +75,6 @@ class ChannelTargetDbSystem(ChannelTarget):
             'tables_without_primary_key_handling': 'str',
             'delay_in_seconds': 'int'
         }
-
         self.attribute_map = {
             'target_type': 'targetType',
             'db_system_id': 'dbSystemId',
@@ -85,7 +84,6 @@ class ChannelTargetDbSystem(ChannelTarget):
             'tables_without_primary_key_handling': 'tablesWithoutPrimaryKeyHandling',
             'delay_in_seconds': 'delayInSeconds'
         }
-
         self._target_type = None
         self._db_system_id = None
         self._channel_name = None

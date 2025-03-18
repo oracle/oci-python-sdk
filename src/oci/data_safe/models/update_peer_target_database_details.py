@@ -43,14 +43,12 @@ class UpdatePeerTargetDatabaseDetails(object):
             'database_details': 'DatabaseDetails',
             'tls_config': 'TlsConfig'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
             'database_details': 'databaseDetails',
             'tls_config': 'tlsConfig'
         }
-
         self._display_name = None
         self._description = None
         self._database_details = None

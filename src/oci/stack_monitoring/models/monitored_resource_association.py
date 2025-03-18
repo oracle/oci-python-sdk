@@ -97,7 +97,6 @@ class MonitoredResourceAssociation(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'association_type': 'associationType',
             'compartment_id': 'compartmentId',
@@ -112,7 +111,6 @@ class MonitoredResourceAssociation(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._association_type = None
         self._compartment_id = None
         self._tenant_id = None

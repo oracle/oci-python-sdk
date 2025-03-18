@@ -58,7 +58,6 @@ class LogAnalyticsParserFilter(object):
             'parser_id': 'int',
             'version': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'parser': 'parser',
@@ -68,7 +67,6 @@ class LogAnalyticsParserFilter(object):
             'parser_id': 'parserId',
             'version': 'version'
         }
-
         self._id = None
         self._parser = None
         self._agent_version = None

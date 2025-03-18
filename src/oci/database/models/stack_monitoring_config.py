@@ -59,12 +59,10 @@ class StackMonitoringConfig(object):
             'stack_monitoring_status': 'str',
             'stack_monitoring_connector_id': 'str'
         }
-
         self.attribute_map = {
             'stack_monitoring_status': 'stackMonitoringStatus',
             'stack_monitoring_connector_id': 'stackMonitoringConnectorId'
         }
-
         self._stack_monitoring_status = None
         self._stack_monitoring_connector_id = None
 

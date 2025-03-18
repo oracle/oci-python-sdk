@@ -38,13 +38,11 @@ class UpdateConsoleHistoryDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str'
         }
-
         self.attribute_map = {
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'display_name': 'displayName'
         }
-
         self._freeform_tags = None
         self._defined_tags = None
         self._display_name = None

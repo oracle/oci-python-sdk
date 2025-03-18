@@ -48,7 +48,6 @@ class TraceSnapshot(object):
             'trace_snapshot_details': 'list[SnapshotDetail]',
             'span_snapshots': 'list[SpanSnapshot]'
         }
-
         self.attribute_map = {
             'key': 'key',
             'time_started': 'timeStarted',
@@ -56,7 +55,6 @@ class TraceSnapshot(object):
             'trace_snapshot_details': 'traceSnapshotDetails',
             'span_snapshots': 'spanSnapshots'
         }
-
         self._key = None
         self._time_started = None
         self._time_ended = None

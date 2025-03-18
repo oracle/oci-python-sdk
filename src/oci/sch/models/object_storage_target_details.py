@@ -59,7 +59,6 @@ class ObjectStorageTargetDetails(TargetDetails):
             'batch_rollover_size_in_mbs': 'int',
             'batch_rollover_time_in_ms': 'int'
         }
-
         self.attribute_map = {
             'kind': 'kind',
             'namespace': 'namespace',
@@ -68,7 +67,6 @@ class ObjectStorageTargetDetails(TargetDetails):
             'batch_rollover_size_in_mbs': 'batchRolloverSizeInMBs',
             'batch_rollover_time_in_ms': 'batchRolloverTimeInMs'
         }
-
         self._kind = None
         self._namespace = None
         self._bucket_name = None

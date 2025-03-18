@@ -38,13 +38,11 @@ class Sku(object):
             'name': 'str',
             'quantity': 'int'
         }
-
         self.attribute_map = {
             'number': 'number',
             'name': 'name',
             'quantity': 'quantity'
         }
-
         self._number = None
         self._name = None
         self._quantity = None

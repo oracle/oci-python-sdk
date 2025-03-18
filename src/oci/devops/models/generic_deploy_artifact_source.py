@@ -45,14 +45,12 @@ class GenericDeployArtifactSource(DeployArtifactSource):
             'deploy_artifact_path': 'str',
             'deploy_artifact_version': 'str'
         }
-
         self.attribute_map = {
             'deploy_artifact_source_type': 'deployArtifactSourceType',
             'repository_id': 'repositoryId',
             'deploy_artifact_path': 'deployArtifactPath',
             'deploy_artifact_version': 'deployArtifactVersion'
         }
-
         self._deploy_artifact_source_type = None
         self._repository_id = None
         self._deploy_artifact_path = None

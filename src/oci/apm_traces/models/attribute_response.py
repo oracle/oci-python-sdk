@@ -169,7 +169,6 @@ class AttributeResponse(object):
             'attribute_status': 'str',
             'time_updated': 'datetime'
         }
-
         self.attribute_map = {
             'attribute_name': 'attributeName',
             'attribute_type': 'attributeType',
@@ -180,7 +179,6 @@ class AttributeResponse(object):
             'attribute_status': 'attributeStatus',
             'time_updated': 'timeUpdated'
         }
-
         self._attribute_name = None
         self._attribute_type = None
         self._unit = None

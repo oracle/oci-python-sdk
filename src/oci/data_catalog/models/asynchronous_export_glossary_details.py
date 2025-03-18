@@ -28,11 +28,9 @@ class AsynchronousExportGlossaryDetails(object):
         self.swagger_types = {
             'object_storage_target': 'ObjectStorageObjectReference'
         }
-
         self.attribute_map = {
             'object_storage_target': 'objectStorageTarget'
         }
-
         self._object_storage_target = None
 
     @property

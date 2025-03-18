@@ -33,12 +33,10 @@ class AddUserToGroupDetails(object):
             'user_id': 'str',
             'group_id': 'str'
         }
-
         self.attribute_map = {
             'user_id': 'userId',
             'group_id': 'groupId'
         }
-
         self._user_id = None
         self._group_id = None
 

@@ -158,7 +158,6 @@ class IScsiVolumeAttachment(VolumeAttachment):
             'encryption_in_transit_type': 'str',
             'is_agent_auto_iscsi_login_enabled': 'bool'
         }
-
         self.attribute_map = {
             'attachment_type': 'attachmentType',
             'availability_domain': 'availabilityDomain',
@@ -185,7 +184,6 @@ class IScsiVolumeAttachment(VolumeAttachment):
             'encryption_in_transit_type': 'encryptionInTransitType',
             'is_agent_auto_iscsi_login_enabled': 'isAgentAutoIscsiLoginEnabled'
         }
-
         self._attachment_type = None
         self._availability_domain = None
         self._compartment_id = None

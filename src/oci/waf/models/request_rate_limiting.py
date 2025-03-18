@@ -28,11 +28,9 @@ class RequestRateLimiting(object):
         self.swagger_types = {
             'rules': 'list[RequestRateLimitingRule]'
         }
-
         self.attribute_map = {
             'rules': 'rules'
         }
-
         self._rules = None
 
     @property

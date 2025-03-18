@@ -38,13 +38,11 @@ class CreateAttachmentDetails(object):
             'display_name': 'str',
             'type': 'str'
         }
-
         self.attribute_map = {
             'file_base64_encoded': 'fileBase64Encoded',
             'display_name': 'displayName',
             'type': 'type'
         }
-
         self._file_base64_encoded = None
         self._display_name = None
         self._type = None

@@ -33,12 +33,10 @@ class RewardCollection(object):
             'summary': 'RewardDetails',
             'items': 'list[MonthlyRewardSummary]'
         }
-
         self.attribute_map = {
             'summary': 'summary',
             'items': 'items'
         }
-
         self._summary = None
         self._items = None
 

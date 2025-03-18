@@ -66,7 +66,6 @@ class Backend(object):
             'backup': 'bool',
             'offline': 'bool'
         }
-
         self.attribute_map = {
             'name': 'name',
             'ip_address': 'ipAddress',
@@ -77,7 +76,6 @@ class Backend(object):
             'backup': 'backup',
             'offline': 'offline'
         }
-
         self._name = None
         self._ip_address = None
         self._port = None

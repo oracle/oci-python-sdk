@@ -113,7 +113,6 @@ class ContainerInstanceSummary(object):
             'volume_count': 'int',
             'container_restart_policy': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -134,7 +133,6 @@ class ContainerInstanceSummary(object):
             'volume_count': 'volumeCount',
             'container_restart_policy': 'containerRestartPolicy'
         }
-
         self._id = None
         self._display_name = None
         self._compartment_id = None

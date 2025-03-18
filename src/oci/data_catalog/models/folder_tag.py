@@ -107,7 +107,6 @@ class FolderTag(object):
             'created_by_id': 'str',
             'uri': 'str'
         }
-
         self.attribute_map = {
             'folder_key': 'folderKey',
             'key': 'key',
@@ -120,7 +119,6 @@ class FolderTag(object):
             'created_by_id': 'createdById',
             'uri': 'uri'
         }
-
         self._folder_key = None
         self._key = None
         self._name = None

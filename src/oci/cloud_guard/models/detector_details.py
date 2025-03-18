@@ -110,7 +110,6 @@ class DetectorDetails(object):
             'data_source_id': 'str',
             'entities_mappings': 'list[EntitiesMapping]'
         }
-
         self.attribute_map = {
             'is_enabled': 'isEnabled',
             'risk_level': 'riskLevel',
@@ -126,7 +125,6 @@ class DetectorDetails(object):
             'data_source_id': 'dataSourceId',
             'entities_mappings': 'entitiesMappings'
         }
-
         self._is_enabled = None
         self._risk_level = None
         self._configurations = None

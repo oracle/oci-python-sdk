@@ -28,11 +28,9 @@ class MfaTotpToken(object):
         self.swagger_types = {
             'totp_token': 'str'
         }
-
         self.attribute_map = {
             'totp_token': 'totpToken'
         }
-
         self._totp_token = None
 
     @property

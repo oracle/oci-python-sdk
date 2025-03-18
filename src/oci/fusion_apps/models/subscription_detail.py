@@ -28,11 +28,9 @@ class SubscriptionDetail(object):
         self.swagger_types = {
             'subscriptions': 'list[Subscription]'
         }
-
         self.attribute_map = {
             'subscriptions': 'subscriptions'
         }
-
         self._subscriptions = None
 
     @property

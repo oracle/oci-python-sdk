@@ -148,7 +148,6 @@ class Task(object):
             'key_map': 'dict(str, str)',
             'registry_metadata': 'RegistryMetadata'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -169,7 +168,6 @@ class Task(object):
             'key_map': 'keyMap',
             'registry_metadata': 'registryMetadata'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

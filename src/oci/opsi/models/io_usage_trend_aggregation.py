@@ -33,12 +33,10 @@ class IoUsageTrendAggregation(object):
             'mount_point': 'str',
             'usage_data': 'list[IoUsageTrend]'
         }
-
         self.attribute_map = {
             'mount_point': 'mountPoint',
             'usage_data': 'usageData'
         }
-
         self._mount_point = None
         self._usage_data = None
 

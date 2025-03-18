@@ -220,7 +220,6 @@ class FileSystem(object):
             'quota_enforcement_state': 'str',
             'replication_source_count': 'int'
         }
-
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'metered_bytes': 'meteredBytes',
@@ -247,7 +246,6 @@ class FileSystem(object):
             'quota_enforcement_state': 'quotaEnforcementState',
             'replication_source_count': 'replicationSourceCount'
         }
-
         self._availability_domain = None
         self._metered_bytes = None
         self._compartment_id = None

@@ -45,14 +45,12 @@ class UpdateEmManagedExternalExadataInsightDetails(UpdateExadataInsightDetails):
             'defined_tags': 'dict(str, dict(str, object))',
             'is_auto_sync_enabled': 'bool'
         }
-
         self.attribute_map = {
             'entity_source': 'entitySource',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'is_auto_sync_enabled': 'isAutoSyncEnabled'
         }
-
         self._entity_source = None
         self._freeform_tags = None
         self._defined_tags = None

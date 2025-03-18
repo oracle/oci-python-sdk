@@ -77,7 +77,6 @@ class Addresses(object):
             'type': 'str',
             'primary': 'bool'
         }
-
         self.attribute_map = {
             'formatted': 'formatted',
             'street_address': 'streetAddress',
@@ -88,7 +87,6 @@ class Addresses(object):
             'type': 'type',
             'primary': 'primary'
         }
-
         self._formatted = None
         self._street_address = None
         self._locality = None

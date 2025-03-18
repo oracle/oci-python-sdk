@@ -35,12 +35,10 @@ class DataScienceLabelingDataset(Dataset):
             'dataset_type': 'str',
             'dataset_id': 'str'
         }
-
         self.attribute_map = {
             'dataset_type': 'datasetType',
             'dataset_id': 'datasetId'
         }
-
         self._dataset_type = None
         self._dataset_id = None
         self._dataset_type = 'DATA_SCIENCE_LABELING'

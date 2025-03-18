@@ -103,7 +103,6 @@ class CreatePeComanagedDatabaseInsightDetails(CreateDatabaseInsightDetails):
             'deployment_type': 'str',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'entity_source': 'entitySource',
             'compartment_id': 'compartmentId',
@@ -119,7 +118,6 @@ class CreatePeComanagedDatabaseInsightDetails(CreateDatabaseInsightDetails):
             'deployment_type': 'deploymentType',
             'system_tags': 'systemTags'
         }
-
         self._entity_source = None
         self._compartment_id = None
         self._freeform_tags = None

@@ -38,13 +38,11 @@ class OauthMetadata(object):
             'client_app_id': 'str',
             'client_app_secret': 'str'
         }
-
         self.attribute_map = {
             'idcs_account_name_url': 'idcsAccountNameUrl',
             'client_app_id': 'clientAppId',
             'client_app_secret': 'clientAppSecret'
         }
-
         self._idcs_account_name_url = None
         self._client_app_id = None
         self._client_app_secret = None

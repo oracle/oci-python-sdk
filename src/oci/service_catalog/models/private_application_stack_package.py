@@ -65,7 +65,6 @@ class PrivateApplicationStackPackage(PrivateApplicationPackage):
             'content_url': 'str',
             'mime_type': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'private_application_id': 'privateApplicationId',
@@ -76,7 +75,6 @@ class PrivateApplicationStackPackage(PrivateApplicationPackage):
             'content_url': 'contentUrl',
             'mime_type': 'mimeType'
         }
-
         self._id = None
         self._private_application_id = None
         self._display_name = None

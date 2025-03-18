@@ -30,11 +30,9 @@ class PurgeEntireWebAppAccelerationCacheDetails(PurgeWebAppAccelerationCacheDeta
         self.swagger_types = {
             'purge_type': 'str'
         }
-
         self.attribute_map = {
             'purge_type': 'purgeType'
         }
-
         self._purge_type = None
         self._purge_type = 'ENTIRE_CACHE'
 

@@ -109,7 +109,6 @@ class DeployPipelineRedeploymentSummary(DeploymentSummary):
             'system_tags': 'dict(str, dict(str, object))',
             'previous_deployment_id': 'str'
         }
-
         self.attribute_map = {
             'deployment_type': 'deploymentType',
             'id': 'id',
@@ -129,7 +128,6 @@ class DeployPipelineRedeploymentSummary(DeploymentSummary):
             'system_tags': 'systemTags',
             'previous_deployment_id': 'previousDeploymentId'
         }
-
         self._deployment_type = None
         self._id = None
         self._display_name = None

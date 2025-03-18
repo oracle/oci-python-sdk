@@ -38,11 +38,9 @@ class ProcessorConfig(object):
         self.swagger_types = {
             'processor_type': 'str'
         }
-
         self.attribute_map = {
             'processor_type': 'processorType'
         }
-
         self._processor_type = None
 
     @staticmethod

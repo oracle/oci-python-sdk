@@ -161,7 +161,6 @@ class OccAvailabilityCatalog(object):
             'system_tags': 'dict(str, dict(str, object))',
             'details': 'list[OccAvailabilitySummary]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'namespace': 'namespace',
@@ -180,7 +179,6 @@ class OccAvailabilityCatalog(object):
             'system_tags': 'systemTags',
             'details': 'details'
         }
-
         self._id = None
         self._namespace = None
         self._compartment_id = None

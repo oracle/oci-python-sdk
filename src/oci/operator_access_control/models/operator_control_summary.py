@@ -123,7 +123,6 @@ class OperatorControlSummary(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'id': 'id',
             'operator_control_name': 'operatorControlName',
@@ -138,7 +137,6 @@ class OperatorControlSummary(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._id = None
         self._operator_control_name = None
         self._compartment_id = None

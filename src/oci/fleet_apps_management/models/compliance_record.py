@@ -115,7 +115,6 @@ class ComplianceRecord(object):
             'time_updated': 'datetime',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'entity_id': 'entityId',
@@ -130,7 +129,6 @@ class ComplianceRecord(object):
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._id = None
         self._entity_id = None
         self._entity_display_name = None

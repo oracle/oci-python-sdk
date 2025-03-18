@@ -99,7 +99,6 @@ class User(object):
             'contact_email': 'str',
             'problem_type': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'first_name': 'firstName',
@@ -113,7 +112,6 @@ class User(object):
             'contact_email': 'contactEmail',
             'problem_type': 'problemType'
         }
-
         self._key = None
         self._first_name = None
         self._last_name = None

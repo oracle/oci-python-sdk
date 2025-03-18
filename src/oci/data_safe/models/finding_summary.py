@@ -166,7 +166,6 @@ class FindingSummary(object):
             'lifecycle_state': 'str',
             'lifecycle_details': 'str'
         }
-
         self.attribute_map = {
             'severity': 'severity',
             'assessment_id': 'assessmentId',
@@ -188,7 +187,6 @@ class FindingSummary(object):
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails'
         }
-
         self._severity = None
         self._assessment_id = None
         self._target_id = None

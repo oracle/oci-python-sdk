@@ -94,7 +94,6 @@ class UpstConfiguration(object):
             'time_updated': 'datetime',
             'keytab_content': 'str'
         }
-
         self.attribute_map = {
             'vault_id': 'vaultId',
             'master_encryption_key_id': 'masterEncryptionKeyId',
@@ -106,7 +105,6 @@ class UpstConfiguration(object):
             'time_updated': 'timeUpdated',
             'keytab_content': 'keytabContent'
         }
-
         self._vault_id = None
         self._master_encryption_key_id = None
         self._secret_id = None

@@ -55,7 +55,6 @@ class BitbucketCloudConfigSourceRecord(ConfigSourceRecord):
             'workspace_id': 'str',
             'commit_id': 'str'
         }
-
         self.attribute_map = {
             'config_source_record_type': 'configSourceRecordType',
             'configuration_source_provider_id': 'configurationSourceProviderId',
@@ -64,7 +63,6 @@ class BitbucketCloudConfigSourceRecord(ConfigSourceRecord):
             'workspace_id': 'workspaceId',
             'commit_id': 'commitId'
         }
-
         self._config_source_record_type = None
         self._configuration_source_provider_id = None
         self._repository_url = None

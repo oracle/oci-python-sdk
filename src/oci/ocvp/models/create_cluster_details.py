@@ -125,7 +125,6 @@ class CreateClusterDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'sddc_id': 'sddcId',
             'compute_availability_domain': 'computeAvailabilityDomain',
@@ -145,7 +144,6 @@ class CreateClusterDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._sddc_id = None
         self._compute_availability_domain = None
         self._display_name = None

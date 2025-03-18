@@ -78,7 +78,6 @@ class AddmDbRecommendationAggregation(object):
             'frequency_count': 'int',
             'related_object': 'RelatedObjectTypeDetails'
         }
-
         self.attribute_map = {
             'id': 'id',
             'type': 'type',
@@ -92,7 +91,6 @@ class AddmDbRecommendationAggregation(object):
             'frequency_count': 'frequencyCount',
             'related_object': 'relatedObject'
         }
-
         self._id = None
         self._type = None
         self._message = None

@@ -38,13 +38,11 @@ class ChatDetails(object):
             'serving_mode': 'ServingMode',
             'chat_request': 'BaseChatRequest'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'serving_mode': 'servingMode',
             'chat_request': 'chatRequest'
         }
-
         self._compartment_id = None
         self._serving_mode = None
         self._chat_request = None

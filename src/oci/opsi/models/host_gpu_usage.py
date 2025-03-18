@@ -135,7 +135,6 @@ class HostGpuUsage(HostPerformanceMetricGroup):
             'clock_event_sw_thermal_slowdown': 'int',
             'clock_event_sync_boost': 'int'
         }
-
         self.attribute_map = {
             'metric_name': 'metricName',
             'time_collected': 'timeCollected',
@@ -160,7 +159,6 @@ class HostGpuUsage(HostPerformanceMetricGroup):
             'clock_event_sw_thermal_slowdown': 'clockEventSwThermalSlowdown',
             'clock_event_sync_boost': 'clockEventSyncBoost'
         }
-
         self._metric_name = None
         self._time_collected = None
         self._gpu_id = None

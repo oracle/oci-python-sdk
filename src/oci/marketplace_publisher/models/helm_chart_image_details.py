@@ -86,7 +86,6 @@ class HelmChartImageDetails(object):
             'publication_status': 'str',
             'publication_error': 'str'
         }
-
         self.attribute_map = {
             'source_registry_id': 'sourceRegistryId',
             'source_registry_url': 'sourceRegistryUrl',
@@ -96,7 +95,6 @@ class HelmChartImageDetails(object):
             'publication_status': 'publicationStatus',
             'publication_error': 'publicationError'
         }
-
         self._source_registry_id = None
         self._source_registry_url = None
         self._supported_kubernetes_versions = None

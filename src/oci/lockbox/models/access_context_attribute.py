@@ -43,14 +43,12 @@ class AccessContextAttribute(object):
             'default_value': 'str',
             'values': 'list[str]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'description': 'description',
             'default_value': 'defaultValue',
             'values': 'values'
         }
-
         self._name = None
         self._description = None
         self._default_value = None

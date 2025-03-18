@@ -79,7 +79,6 @@ class JavaFamily(object):
             'is_supported_version': 'bool',
             'release_date': 'datetime'
         }
-
         self.attribute_map = {
             'latest_release_artifacts': 'latestReleaseArtifacts',
             'family_version': 'familyVersion',
@@ -91,7 +90,6 @@ class JavaFamily(object):
             'is_supported_version': 'isSupportedVersion',
             'release_date': 'releaseDate'
         }
-
         self._latest_release_artifacts = None
         self._family_version = None
         self._display_name = None

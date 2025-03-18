@@ -52,13 +52,11 @@ class WorkRequestResourceSubTypeDetail(object):
             'sub_type_key': 'str',
             'sub_type_status': 'str'
         }
-
         self.attribute_map = {
             'sub_type': 'subType',
             'sub_type_key': 'subTypeKey',
             'sub_type_status': 'subTypeStatus'
         }
-
         self._sub_type = None
         self._sub_type_key = None
         self._sub_type_status = None

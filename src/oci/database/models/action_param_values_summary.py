@@ -62,7 +62,6 @@ class ActionParamValuesSummary(object):
             'default_value': 'str',
             'is_required': 'bool'
         }
-
         self.attribute_map = {
             'parameter_name': 'parameterName',
             'parameter_type': 'parameterType',
@@ -70,7 +69,6 @@ class ActionParamValuesSummary(object):
             'default_value': 'defaultValue',
             'is_required': 'isRequired'
         }
-
         self._parameter_name = None
         self._parameter_type = None
         self._parameter_values = None

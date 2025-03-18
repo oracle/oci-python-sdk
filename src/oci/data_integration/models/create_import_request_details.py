@@ -58,7 +58,6 @@ class CreateImportRequestDetails(object):
             'are_data_asset_references_included': 'bool',
             'import_conflict_resolution': 'ImportConflictResolution'
         }
-
         self.attribute_map = {
             'bucket_name': 'bucketName',
             'file_name': 'fileName',
@@ -68,7 +67,6 @@ class CreateImportRequestDetails(object):
             'are_data_asset_references_included': 'areDataAssetReferencesIncluded',
             'import_conflict_resolution': 'importConflictResolution'
         }
-
         self._bucket_name = None
         self._file_name = None
         self._object_storage_tenancy_id = None

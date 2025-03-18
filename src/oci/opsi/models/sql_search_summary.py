@@ -58,7 +58,6 @@ class SqlSearchSummary(object):
             'database_type': 'str',
             'database_version': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'database_id': 'databaseId',
@@ -68,7 +67,6 @@ class SqlSearchSummary(object):
             'database_type': 'databaseType',
             'database_version': 'databaseVersion'
         }
-
         self._id = None
         self._database_id = None
         self._compartment_id = None

@@ -116,7 +116,6 @@ class InitialClusterConfiguration(object):
             'capacity_reservation_id': 'str',
             'datastores': 'list[DatastoreInfo]'
         }
-
         self.attribute_map = {
             'vsphere_type': 'vsphereType',
             'compute_availability_domain': 'computeAvailabilityDomain',
@@ -132,7 +131,6 @@ class InitialClusterConfiguration(object):
             'capacity_reservation_id': 'capacityReservationId',
             'datastores': 'datastores'
         }
-
         self._vsphere_type = None
         self._compute_availability_domain = None
         self._display_name = None

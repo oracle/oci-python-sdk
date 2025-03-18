@@ -33,12 +33,10 @@ class BulkUnpinStatus(object):
             'attribute_statuses': 'list[AttributeUnpinResponse]',
             'bulk_unpin_metadata': 'BulkUnpinMetadata'
         }
-
         self.attribute_map = {
             'attribute_statuses': 'attributeStatuses',
             'bulk_unpin_metadata': 'bulkUnpinMetadata'
         }
-
         self._attribute_statuses = None
         self._bulk_unpin_metadata = None
 

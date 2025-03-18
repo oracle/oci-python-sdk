@@ -45,14 +45,12 @@ class LoggingQueryDataSourceSummaryDetails(DataSourceSummaryDetails):
             'data_source_detector_mapping_info': 'list[DataSourceMappingInfo]',
             'region_status_detail': 'list[RegionStatusDetail]'
         }
-
         self.attribute_map = {
             'data_source_feed_provider': 'dataSourceFeedProvider',
             'regions': 'regions',
             'data_source_detector_mapping_info': 'dataSourceDetectorMappingInfo',
             'region_status_detail': 'regionStatusDetail'
         }
-
         self._data_source_feed_provider = None
         self._regions = None
         self._data_source_detector_mapping_info = None

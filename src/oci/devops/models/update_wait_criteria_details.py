@@ -37,11 +37,9 @@ class UpdateWaitCriteriaDetails(object):
         self.swagger_types = {
             'wait_type': 'str'
         }
-
         self.attribute_map = {
             'wait_type': 'waitType'
         }
-
         self._wait_type = None
 
     @staticmethod

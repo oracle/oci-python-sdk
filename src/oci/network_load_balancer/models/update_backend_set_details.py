@@ -83,7 +83,6 @@ class UpdateBackendSetDetails(object):
             'backends': 'list[BackendDetails]',
             'health_checker': 'HealthCheckerDetails'
         }
-
         self.attribute_map = {
             'policy': 'policy',
             'is_preserve_source': 'isPreserveSource',
@@ -95,7 +94,6 @@ class UpdateBackendSetDetails(object):
             'backends': 'backends',
             'health_checker': 'healthChecker'
         }
-
         self._policy = None
         self._is_preserve_source = None
         self._is_fail_open = None

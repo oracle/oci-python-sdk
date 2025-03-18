@@ -33,12 +33,10 @@ class PluginErrorAggregationSummary(object):
             'healthy_plugin_count': 'int',
             'plugin_error_aggregations': 'list[PluginErrorAggregation]'
         }
-
         self.attribute_map = {
             'healthy_plugin_count': 'healthyPluginCount',
             'plugin_error_aggregations': 'pluginErrorAggregations'
         }
-
         self._healthy_plugin_count = None
         self._plugin_error_aggregations = None
 

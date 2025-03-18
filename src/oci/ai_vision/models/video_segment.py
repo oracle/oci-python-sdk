@@ -33,12 +33,10 @@ class VideoSegment(object):
             'start_time_offset_ms': 'int',
             'end_time_offset_ms': 'int'
         }
-
         self.attribute_map = {
             'start_time_offset_ms': 'startTimeOffsetMs',
             'end_time_offset_ms': 'endTimeOffsetMs'
         }
-
         self._start_time_offset_ms = None
         self._end_time_offset_ms = None
 

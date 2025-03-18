@@ -28,11 +28,9 @@ class AuditPolicyCollection(object):
         self.swagger_types = {
             'items': 'list[AuditPolicySummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

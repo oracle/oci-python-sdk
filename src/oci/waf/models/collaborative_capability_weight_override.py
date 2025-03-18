@@ -33,12 +33,10 @@ class CollaborativeCapabilityWeightOverride(object):
             'key': 'str',
             'weight': 'int'
         }
-
         self.attribute_map = {
             'key': 'key',
             'weight': 'weight'
         }
-
         self._key = None
         self._weight = None
 

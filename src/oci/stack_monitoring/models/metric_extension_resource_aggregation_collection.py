@@ -28,11 +28,9 @@ class MetricExtensionResourceAggregationCollection(object):
         self.swagger_types = {
             'items': 'list[MetricExtensionResourceAggregation]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

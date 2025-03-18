@@ -47,13 +47,11 @@ class AlertsUpdateDetails(object):
             'compartment_id': 'str',
             'target_id': 'str'
         }
-
         self.attribute_map = {
             'status': 'status',
             'compartment_id': 'compartmentId',
             'target_id': 'targetId'
         }
-
         self._status = None
         self._compartment_id = None
         self._target_id = None

@@ -159,7 +159,6 @@ class Cluster(object):
             'type': 'str',
             'open_id_connect_discovery_endpoint': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -182,7 +181,6 @@ class Cluster(object):
             'type': 'type',
             'open_id_connect_discovery_endpoint': 'openIdConnectDiscoveryEndpoint'
         }
-
         self._id = None
         self._name = None
         self._compartment_id = None

@@ -43,13 +43,11 @@ class FilterDetails(object):
             'sub_system': 'str',
             'filters': 'list[Filter]'
         }
-
         self.attribute_map = {
             'query_string': 'queryString',
             'sub_system': 'subSystem',
             'filters': 'filters'
         }
-
         self._query_string = None
         self._sub_system = None
         self._filters = None

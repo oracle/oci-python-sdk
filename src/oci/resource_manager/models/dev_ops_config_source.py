@@ -52,7 +52,6 @@ class DevOpsConfigSource(ConfigSource):
             'repository_id': 'str',
             'branch_name': 'str'
         }
-
         self.attribute_map = {
             'config_source_type': 'configSourceType',
             'working_directory': 'workingDirectory',
@@ -60,7 +59,6 @@ class DevOpsConfigSource(ConfigSource):
             'repository_id': 'repositoryId',
             'branch_name': 'branchName'
         }
-
         self._config_source_type = None
         self._working_directory = None
         self._project_id = None

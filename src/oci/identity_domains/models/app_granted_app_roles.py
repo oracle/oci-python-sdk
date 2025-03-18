@@ -78,7 +78,6 @@ class AppGrantedAppRoles(object):
             'legacy_group_name': 'str',
             'read_only': 'bool'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ref': '$ref',
@@ -90,7 +89,6 @@ class AppGrantedAppRoles(object):
             'legacy_group_name': 'legacyGroupName',
             'read_only': 'readOnly'
         }
-
         self._value = None
         self._ref = None
         self._type = None

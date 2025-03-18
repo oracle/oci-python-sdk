@@ -103,7 +103,6 @@ class AddmDbFindingsTimeSeriesSummary(object):
             'impact_percent': 'float',
             'impact_avg_active_sessions': 'float'
         }
-
         self.attribute_map = {
             'id': 'id',
             'task_id': 'taskId',
@@ -122,7 +121,6 @@ class AddmDbFindingsTimeSeriesSummary(object):
             'impact_percent': 'impactPercent',
             'impact_avg_active_sessions': 'impactAvgActiveSessions'
         }
-
         self._id = None
         self._task_id = None
         self._task_name = None

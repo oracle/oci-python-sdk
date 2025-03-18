@@ -39,11 +39,9 @@ class NetworkEndpointDetails(object):
         self.swagger_types = {
             'network_endpoint_type': 'str'
         }
-
         self.attribute_map = {
             'network_endpoint_type': 'networkEndpointType'
         }
-
         self._network_endpoint_type = None
 
     @staticmethod

@@ -91,7 +91,6 @@ class InstanceConfigurationCreateVnicDetails(object):
             'skip_source_dest_check': 'bool',
             'subnet_id': 'str'
         }
-
         self.attribute_map = {
             'assign_ipv6_ip': 'assignIpv6Ip',
             'assign_public_ip': 'assignPublicIp',
@@ -107,7 +106,6 @@ class InstanceConfigurationCreateVnicDetails(object):
             'skip_source_dest_check': 'skipSourceDestCheck',
             'subnet_id': 'subnetId'
         }
-
         self._assign_ipv6_ip = None
         self._assign_public_ip = None
         self._assign_private_dns_record = None

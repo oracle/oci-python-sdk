@@ -44,13 +44,11 @@ class PluginSourceDetails(SourceDetails):
             'plugin_name': 'str',
             'config_map': 'object'
         }
-
         self.attribute_map = {
             'kind': 'kind',
             'plugin_name': 'pluginName',
             'config_map': 'configMap'
         }
-
         self._kind = None
         self._plugin_name = None
         self._config_map = None

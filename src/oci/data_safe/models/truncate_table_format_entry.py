@@ -39,12 +39,10 @@ class TruncateTableFormatEntry(FormatEntry):
             'type': 'str',
             'description': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'description': 'description'
         }
-
         self._type = None
         self._description = None
         self._type = 'TRUNCATE_TABLE'

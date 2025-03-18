@@ -91,14 +91,12 @@ class BulkActivateAttributeDetail(object):
             'unit': 'str',
             'attribute_name_space': 'str'
         }
-
         self.attribute_map = {
             'attribute_name': 'attributeName',
             'attribute_type': 'attributeType',
             'unit': 'unit',
             'attribute_name_space': 'attributeNameSpace'
         }
-
         self._attribute_name = None
         self._attribute_type = None
         self._unit = None

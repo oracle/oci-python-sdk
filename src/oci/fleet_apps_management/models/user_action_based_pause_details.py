@@ -30,11 +30,9 @@ class UserActionBasedPauseDetails(PauseDetails):
         self.swagger_types = {
             'kind': 'str'
         }
-
         self.attribute_map = {
             'kind': 'kind'
         }
-
         self._kind = None
         self._kind = 'USER_ACTION'
 

@@ -35,12 +35,10 @@ class TlsPassthroughVirtualServiceTrafficRouteRuleDetails(VirtualServiceTrafficR
             'type': 'str',
             'destinations': 'list[VirtualDeploymentTrafficRuleTargetDetails]'
         }
-
         self.attribute_map = {
             'type': 'type',
             'destinations': 'destinations'
         }
-
         self._type = None
         self._destinations = None
         self._type = 'TLS_PASSTHROUGH'

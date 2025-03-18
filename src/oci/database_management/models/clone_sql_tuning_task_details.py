@@ -49,7 +49,6 @@ class CloneSqlTuningTaskDetails(object):
             'credential_details': 'SqlTuningTaskCredentialDetails',
             'database_credential': 'DatabaseCredentialDetails'
         }
-
         self.attribute_map = {
             'task_name': 'taskName',
             'original_task_id': 'originalTaskId',
@@ -57,7 +56,6 @@ class CloneSqlTuningTaskDetails(object):
             'credential_details': 'credentialDetails',
             'database_credential': 'databaseCredential'
         }
-
         self._task_name = None
         self._original_task_id = None
         self._task_description = None

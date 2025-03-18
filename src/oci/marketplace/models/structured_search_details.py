@@ -44,13 +44,11 @@ class StructuredSearchDetails(SearchListingsDetails):
             'matching_context_type': 'str',
             'query': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'matching_context_type': 'matchingContextType',
             'query': 'query'
         }
-
         self._type = None
         self._matching_context_type = None
         self._query = None

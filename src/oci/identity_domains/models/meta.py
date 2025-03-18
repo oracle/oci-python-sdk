@@ -58,7 +58,6 @@ class Meta(object):
             'location': 'str',
             'version': 'str'
         }
-
         self.attribute_map = {
             'resource_type': 'resourceType',
             'created': 'created',
@@ -66,7 +65,6 @@ class Meta(object):
             'location': 'location',
             'version': 'version'
         }
-
         self._resource_type = None
         self._created = None
         self._last_modified = None

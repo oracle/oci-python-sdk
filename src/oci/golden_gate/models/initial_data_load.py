@@ -61,12 +61,10 @@ class InitialDataLoad(object):
             'is_initial_load': 'str',
             'action_on_existing_table': 'str'
         }
-
         self.attribute_map = {
             'is_initial_load': 'isInitialLoad',
             'action_on_existing_table': 'actionOnExistingTable'
         }
-
         self._is_initial_load = None
         self._action_on_existing_table = None
 

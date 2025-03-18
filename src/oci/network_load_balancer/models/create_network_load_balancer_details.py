@@ -135,7 +135,6 @@ class CreateNetworkLoadBalancerDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'security_attributes': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
@@ -155,7 +154,6 @@ class CreateNetworkLoadBalancerDetails(object):
             'defined_tags': 'definedTags',
             'security_attributes': 'securityAttributes'
         }
-
         self._compartment_id = None
         self._display_name = None
         self._is_preserve_source_destination = None

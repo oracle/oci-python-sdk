@@ -121,7 +121,6 @@ class OkeDeployStage(DeployStage):
             'namespace': 'str',
             'rollback_policy': 'DeployStageRollbackPolicy'
         }
-
         self.attribute_map = {
             'id': 'id',
             'description': 'description',
@@ -143,7 +142,6 @@ class OkeDeployStage(DeployStage):
             'namespace': 'namespace',
             'rollback_policy': 'rollbackPolicy'
         }
-
         self._id = None
         self._description = None
         self._display_name = None

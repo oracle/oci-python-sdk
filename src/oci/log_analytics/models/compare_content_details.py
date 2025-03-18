@@ -33,12 +33,10 @@ class CompareContentDetails(object):
             'content1': 'str',
             'content2': 'str'
         }
-
         self.attribute_map = {
             'content1': 'content1',
             'content2': 'content2'
         }
-
         self._content1 = None
         self._content2 = None
 

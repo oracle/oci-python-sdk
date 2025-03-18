@@ -35,12 +35,10 @@ class AdbTargetSystemDetails(TargetSystemDetails):
             'target_system_type': 'str',
             'adb_id': 'str'
         }
-
         self.attribute_map = {
             'target_system_type': 'targetSystemType',
             'adb_id': 'adbId'
         }
-
         self._target_system_type = None
         self._adb_id = None
         self._target_system_type = 'ADB'

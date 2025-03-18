@@ -107,7 +107,6 @@ class CreateOccCapacityRequestDetails(object):
             'request_state': 'str',
             'details': 'list[OccCapacityRequestBaseDetails]'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'occ_availability_catalog_id': 'occAvailabilityCatalogId',
@@ -124,7 +123,6 @@ class CreateOccCapacityRequestDetails(object):
             'request_state': 'requestState',
             'details': 'details'
         }
-
         self._compartment_id = None
         self._occ_availability_catalog_id = None
         self._namespace = None

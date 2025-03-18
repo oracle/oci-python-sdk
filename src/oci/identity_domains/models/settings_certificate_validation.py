@@ -84,7 +84,6 @@ class SettingsCertificateValidation(object):
             'ocsp_timeout_duration': 'int',
             'ocsp_signing_certificate_alias': 'str'
         }
-
         self.attribute_map = {
             'crl_enabled': 'crlEnabled',
             'crl_check_on_ocsp_failure_enabled': 'crlCheckOnOCSPFailureEnabled',
@@ -97,7 +96,6 @@ class SettingsCertificateValidation(object):
             'ocsp_timeout_duration': 'ocspTimeoutDuration',
             'ocsp_signing_certificate_alias': 'ocspSigningCertificateAlias'
         }
-
         self._crl_enabled = None
         self._crl_check_on_ocsp_failure_enabled = None
         self._crl_location = None

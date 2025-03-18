@@ -28,11 +28,9 @@ class TargetSummaryCollection(object):
         self.swagger_types = {
             'items': 'list[TargetSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

@@ -143,7 +143,6 @@ class ApplicationSummary(object):
             'time_updated': 'datetime',
             'type': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
@@ -160,7 +159,6 @@ class ApplicationSummary(object):
             'time_updated': 'timeUpdated',
             'type': 'type'
         }
-
         self._compartment_id = None
         self._defined_tags = None
         self._display_name = None

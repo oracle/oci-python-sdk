@@ -59,7 +59,6 @@ class ChangeSqlPlanBaselinesAttributesDetails(object):
             'credentials': 'ManagedDatabaseCredential',
             'database_credential': 'DatabaseCredentialDetails'
         }
-
         self.attribute_map = {
             'sql_handle': 'sqlHandle',
             'plan_name': 'planName',
@@ -69,7 +68,6 @@ class ChangeSqlPlanBaselinesAttributesDetails(object):
             'credentials': 'credentials',
             'database_credential': 'databaseCredential'
         }
-
         self._sql_handle = None
         self._plan_name = None
         self._is_enabled = None

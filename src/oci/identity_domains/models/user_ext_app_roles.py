@@ -86,7 +86,6 @@ class UserExtAppRoles(object):
             'admin_role': 'bool',
             'legacy_group_name': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ref': '$ref',
@@ -97,7 +96,6 @@ class UserExtAppRoles(object):
             'admin_role': 'adminRole',
             'legacy_group_name': 'legacyGroupName'
         }
-
         self._value = None
         self._ref = None
         self._display = None

@@ -56,14 +56,12 @@ class GroupExtPasswordPolicy(object):
             'name': 'str',
             'priority': 'int'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ref': '$ref',
             'name': 'name',
             'priority': 'priority'
         }
-
         self._value = None
         self._ref = None
         self._name = None

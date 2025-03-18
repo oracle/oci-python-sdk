@@ -208,7 +208,6 @@ class LaunchDbSystemBase(object):
             'private_ip_v6': 'str',
             'data_collection_options': 'DataCollectionOptions'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'fault_domains': 'faultDomains',
@@ -241,7 +240,6 @@ class LaunchDbSystemBase(object):
             'private_ip_v6': 'privateIpV6',
             'data_collection_options': 'dataCollectionOptions'
         }
-
         self._compartment_id = None
         self._fault_domains = None
         self._display_name = None

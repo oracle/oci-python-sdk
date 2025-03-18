@@ -28,11 +28,9 @@ class EtlRunCollection(object):
         self.swagger_types = {
             'items': 'list[EtlRunSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

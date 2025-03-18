@@ -171,7 +171,6 @@ class OciObjectStorageConnection(Connection):
             'private_key_passphrase_secret_id': 'str',
             'should_use_resource_principal': 'bool'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'id': 'id',
@@ -201,7 +200,6 @@ class OciObjectStorageConnection(Connection):
             'private_key_passphrase_secret_id': 'privateKeyPassphraseSecretId',
             'should_use_resource_principal': 'shouldUseResourcePrincipal'
         }
-
         self._connection_type = None
         self._id = None
         self._display_name = None

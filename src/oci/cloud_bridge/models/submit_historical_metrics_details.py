@@ -28,11 +28,9 @@ class SubmitHistoricalMetricsDetails(object):
         self.swagger_types = {
             'historical_metrics': 'list[HistoricalMetric]'
         }
-
         self.attribute_map = {
             'historical_metrics': 'historicalMetrics'
         }
-
         self._historical_metrics = None
 
     @property

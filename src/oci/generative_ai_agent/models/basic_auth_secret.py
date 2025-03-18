@@ -35,12 +35,10 @@ class BasicAuthSecret(SecretDetail):
             'type': 'str',
             'vault_secret_id': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'vault_secret_id': 'vaultSecretId'
         }
-
         self._type = None
         self._vault_secret_id = None
         self._type = 'BASIC_AUTH_SECRET'

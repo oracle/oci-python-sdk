@@ -80,7 +80,6 @@ class UpdateCustomSoftwareSourceDetails(UpdateSoftwareSourceDetails):
             'is_auto_resolve_dependencies': 'bool',
             'is_latest_content_only': 'bool'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
@@ -94,7 +93,6 @@ class UpdateCustomSoftwareSourceDetails(UpdateSoftwareSourceDetails):
             'is_auto_resolve_dependencies': 'isAutoResolveDependencies',
             'is_latest_content_only': 'isLatestContentOnly'
         }
-
         self._compartment_id = None
         self._display_name = None
         self._description = None

@@ -45,14 +45,12 @@ class HelmRepositoryDeployArtifactSource(DeployArtifactSource):
             'deploy_artifact_version': 'str',
             'helm_verification_key_source': 'VerificationKeySource'
         }
-
         self.attribute_map = {
             'deploy_artifact_source_type': 'deployArtifactSourceType',
             'chart_url': 'chartUrl',
             'deploy_artifact_version': 'deployArtifactVersion',
             'helm_verification_key_source': 'helmVerificationKeySource'
         }
-
         self._deploy_artifact_source_type = None
         self._chart_url = None
         self._deploy_artifact_version = None

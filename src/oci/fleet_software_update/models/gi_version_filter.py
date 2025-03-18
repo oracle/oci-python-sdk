@@ -41,13 +41,11 @@ class GiVersionFilter(GiFleetDiscoveryFilter):
             'mode': 'str',
             'versions': 'list[str]'
         }
-
         self.attribute_map = {
             'type': 'type',
             'mode': 'mode',
             'versions': 'versions'
         }
-
         self._type = None
         self._mode = None
         self._versions = None

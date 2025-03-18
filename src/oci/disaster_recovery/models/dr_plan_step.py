@@ -531,7 +531,6 @@ class DrPlanStep(object):
             'is_enabled': 'bool',
             'user_defined_step': 'DrPlanUserDefinedStep'
         }
-
         self.attribute_map = {
             'id': 'id',
             'group_id': 'groupId',
@@ -544,7 +543,6 @@ class DrPlanStep(object):
             'is_enabled': 'isEnabled',
             'user_defined_step': 'userDefinedStep'
         }
-
         self._id = None
         self._group_id = None
         self._member_id = None

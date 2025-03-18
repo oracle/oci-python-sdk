@@ -49,7 +49,6 @@ class TextClassificationEvaluationResults(EvaluationResults):
             'confusion_matrix': 'dict(str, ConfusionMatrixDetails)',
             'labels': 'list[str]'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'metrics': 'metrics',
@@ -57,7 +56,6 @@ class TextClassificationEvaluationResults(EvaluationResults):
             'confusion_matrix': 'confusionMatrix',
             'labels': 'labels'
         }
-
         self._model_type = None
         self._metrics = None
         self._class_metrics = None

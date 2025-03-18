@@ -132,7 +132,6 @@ class DatabaseToolsConnectionOracleDatabase(DatabaseToolsConnection):
             'private_endpoint_id': 'str',
             'proxy_client': 'DatabaseToolsConnectionOracleDatabaseProxyClient'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -156,7 +155,6 @@ class DatabaseToolsConnectionOracleDatabase(DatabaseToolsConnection):
             'private_endpoint_id': 'privateEndpointId',
             'proxy_client': 'proxyClient'
         }
-
         self._id = None
         self._display_name = None
         self._compartment_id = None

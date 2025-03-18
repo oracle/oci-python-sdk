@@ -28,11 +28,9 @@ class ResourceTagCheckDetails(object):
         self.swagger_types = {
             'tag_enablement_info': 'list[ResourceTagEnablementInfo]'
         }
-
         self.attribute_map = {
             'tag_enablement_info': 'tagEnablementInfo'
         }
-
         self._tag_enablement_info = None
 
     @property

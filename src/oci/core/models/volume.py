@@ -166,7 +166,6 @@ class Volume(object):
             'block_volume_replicas': 'list[BlockVolumeReplicaInfo]',
             'autotune_policies': 'list[AutotunePolicy]'
         }
-
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'compartment_id': 'compartmentId',
@@ -190,7 +189,6 @@ class Volume(object):
             'block_volume_replicas': 'blockVolumeReplicas',
             'autotune_policies': 'autotunePolicies'
         }
-
         self._availability_domain = None
         self._compartment_id = None
         self._defined_tags = None

@@ -182,7 +182,6 @@ class DatabaseInsight(object):
             'lifecycle_details': 'str',
             'database_connection_status_details': 'str'
         }
-
         self.attribute_map = {
             'entity_source': 'entitySource',
             'id': 'id',
@@ -200,7 +199,6 @@ class DatabaseInsight(object):
             'lifecycle_details': 'lifecycleDetails',
             'database_connection_status_details': 'databaseConnectionStatusDetails'
         }
-
         self._entity_source = None
         self._id = None
         self._compartment_id = None

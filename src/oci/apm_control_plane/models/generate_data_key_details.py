@@ -42,12 +42,10 @@ class GenerateDataKeyDetails(object):
             'name': 'str',
             'type': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'type': 'type'
         }
-
         self._name = None
         self._type = None
 

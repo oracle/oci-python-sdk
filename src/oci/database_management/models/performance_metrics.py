@@ -43,14 +43,12 @@ class PerformanceMetrics(object):
             'metadata': 'object',
             'datapoints': 'list[DataPoints]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'dimensions': 'dimensions',
             'metadata': 'metadata',
             'datapoints': 'datapoints'
         }
-
         self._name = None
         self._dimensions = None
         self._metadata = None

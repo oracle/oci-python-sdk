@@ -43,13 +43,11 @@ class PatchReplaceInstruction(PatchInstruction):
             'selection': 'str',
             'value': 'object'
         }
-
         self.attribute_map = {
             'operation': 'operation',
             'selection': 'selection',
             'value': 'value'
         }
-
         self._operation = None
         self._selection = None
         self._value = None

@@ -51,14 +51,12 @@ class AppBasedOnTemplate(object):
             'last_modified': 'str',
             'well_known_id': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ref': '$ref',
             'last_modified': 'lastModified',
             'well_known_id': 'wellKnownId'
         }
-
         self._value = None
         self._ref = None
         self._last_modified = None

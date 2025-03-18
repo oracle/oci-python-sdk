@@ -65,7 +65,6 @@ class OcirModelDeploymentEnvironmentConfigurationDetails(ModelDeploymentEnvironm
             'health_check_port': 'int',
             'environment_variables': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'environment_configuration_type': 'environmentConfigurationType',
             'image': 'image',
@@ -76,7 +75,6 @@ class OcirModelDeploymentEnvironmentConfigurationDetails(ModelDeploymentEnvironm
             'health_check_port': 'healthCheckPort',
             'environment_variables': 'environmentVariables'
         }
-
         self._environment_configuration_type = None
         self._image = None
         self._image_digest = None

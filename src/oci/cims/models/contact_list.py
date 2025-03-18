@@ -28,11 +28,9 @@ class ContactList(object):
         self.swagger_types = {
             'contact_list': 'list[Contact]'
         }
-
         self.attribute_map = {
             'contact_list': 'contactList'
         }
-
         self._contact_list = None
 
     @property

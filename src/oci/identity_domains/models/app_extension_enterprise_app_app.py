@@ -48,7 +48,6 @@ class AppExtensionEnterpriseAppApp(object):
             'allow_authz_decision_ttl': 'int',
             'deny_authz_decision_ttl': 'int'
         }
-
         self.attribute_map = {
             'app_resources': 'appResources',
             'deny_authz_policy': 'denyAuthzPolicy',
@@ -56,7 +55,6 @@ class AppExtensionEnterpriseAppApp(object):
             'allow_authz_decision_ttl': 'allowAuthzDecisionTTL',
             'deny_authz_decision_ttl': 'denyAuthzDecisionTTL'
         }
-
         self._app_resources = None
         self._deny_authz_policy = None
         self._allow_authz_policy = None

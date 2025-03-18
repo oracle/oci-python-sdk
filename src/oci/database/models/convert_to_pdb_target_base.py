@@ -37,11 +37,9 @@ class ConvertToPdbTargetBase(object):
         self.swagger_types = {
             'target': 'str'
         }
-
         self.attribute_map = {
             'target': 'target'
         }
-
         self._target = None
 
     @staticmethod

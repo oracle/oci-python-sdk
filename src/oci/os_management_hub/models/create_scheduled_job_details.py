@@ -122,7 +122,6 @@ class CreateScheduledJobDetails(object):
             'is_managed_by_autonomous_linux': 'bool',
             'work_request_id': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
@@ -143,7 +142,6 @@ class CreateScheduledJobDetails(object):
             'is_managed_by_autonomous_linux': 'isManagedByAutonomousLinux',
             'work_request_id': 'workRequestId'
         }
-
         self._compartment_id = None
         self._display_name = None
         self._description = None

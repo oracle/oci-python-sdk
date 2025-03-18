@@ -45,12 +45,10 @@ class Duration(object):
             'time_amount': 'int',
             'time_unit': 'str'
         }
-
         self.attribute_map = {
             'time_amount': 'timeAmount',
             'time_unit': 'timeUnit'
         }
-
         self._time_amount = None
         self._time_unit = None
 

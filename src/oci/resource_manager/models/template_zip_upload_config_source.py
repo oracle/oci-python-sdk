@@ -30,11 +30,9 @@ class TemplateZipUploadConfigSource(TemplateConfigSource):
         self.swagger_types = {
             'template_config_source_type': 'str'
         }
-
         self.attribute_map = {
             'template_config_source_type': 'templateConfigSourceType'
         }
-
         self._template_config_source_type = None
         self._template_config_source_type = 'ZIP_UPLOAD'
 

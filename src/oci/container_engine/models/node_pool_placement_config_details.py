@@ -48,7 +48,6 @@ class NodePoolPlacementConfigDetails(object):
             'preemptible_node_config': 'PreemptibleNodeConfigDetails',
             'fault_domains': 'list[str]'
         }
-
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'subnet_id': 'subnetId',
@@ -56,7 +55,6 @@ class NodePoolPlacementConfigDetails(object):
             'preemptible_node_config': 'preemptibleNodeConfig',
             'fault_domains': 'faultDomains'
         }
-
         self._availability_domain = None
         self._subnet_id = None
         self._capacity_reservation_id = None

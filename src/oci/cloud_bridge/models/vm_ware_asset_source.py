@@ -126,7 +126,6 @@ class VmWareAssetSource(AssetSource):
             'are_historical_metrics_collected': 'bool',
             'are_realtime_metrics_collected': 'bool'
         }
-
         self.attribute_map = {
             'type': 'type',
             'id': 'id',
@@ -149,7 +148,6 @@ class VmWareAssetSource(AssetSource):
             'are_historical_metrics_collected': 'areHistoricalMetricsCollected',
             'are_realtime_metrics_collected': 'areRealtimeMetricsCollected'
         }
-
         self._type = None
         self._id = None
         self._compartment_id = None

@@ -115,7 +115,6 @@ class Incident(object):
             'problem_type': 'str',
             'referrer': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'compartment_id': 'compartmentId',
@@ -132,7 +131,6 @@ class Incident(object):
             'problem_type': 'problemType',
             'referrer': 'referrer'
         }
-
         self._key = None
         self._compartment_id = None
         self._contact_list = None

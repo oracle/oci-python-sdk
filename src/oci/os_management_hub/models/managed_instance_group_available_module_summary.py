@@ -33,12 +33,10 @@ class ManagedInstanceGroupAvailableModuleSummary(object):
             'name': 'str',
             'software_source_id': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'software_source_id': 'softwareSourceId'
         }
-
         self._name = None
         self._software_source_id = None
 

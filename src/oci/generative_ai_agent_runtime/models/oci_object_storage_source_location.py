@@ -35,12 +35,10 @@ class OciObjectStorageSourceLocation(SourceLocation):
             'source_location_type': 'str',
             'url': 'str'
         }
-
         self.attribute_map = {
             'source_location_type': 'sourceLocationType',
             'url': 'url'
         }
-
         self._source_location_type = None
         self._url = None
         self._source_location_type = 'OCI_OBJECT_STORAGE'

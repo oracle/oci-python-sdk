@@ -70,7 +70,6 @@ class CreateDrPlanDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'type': 'type',
@@ -79,7 +78,6 @@ class CreateDrPlanDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._display_name = None
         self._type = None
         self._dr_protection_group_id = None

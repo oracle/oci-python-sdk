@@ -62,7 +62,6 @@ class UpdateInstanceMaintenanceEventDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'time_window_start': 'timeWindowStart',
             'alternative_resolution_action': 'alternativeResolutionAction',
@@ -71,7 +70,6 @@ class UpdateInstanceMaintenanceEventDetails(object):
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags'
         }
-
         self._time_window_start = None
         self._alternative_resolution_action = None
         self._can_delete_local_storage = None

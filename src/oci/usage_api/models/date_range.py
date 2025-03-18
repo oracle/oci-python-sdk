@@ -44,11 +44,9 @@ class DateRange(object):
         self.swagger_types = {
             'date_range_type': 'str'
         }
-
         self.attribute_map = {
             'date_range_type': 'dateRangeType'
         }
-
         self._date_range_type = None
 
     @staticmethod

@@ -112,12 +112,10 @@ class WorkItemDetails(object):
             'kind': 'str',
             'work_item_type': 'str'
         }
-
         self.attribute_map = {
             'kind': 'kind',
             'work_item_type': 'workItemType'
         }
-
         self._kind = None
         self._work_item_type = None
 

@@ -260,7 +260,6 @@ class DiscoveryJobSummary(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'id': 'id',
             'resource_type': 'resourceType',
@@ -278,7 +277,6 @@ class DiscoveryJobSummary(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._id = None
         self._resource_type = None
         self._resource_name = None

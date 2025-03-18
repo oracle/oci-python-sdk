@@ -35,12 +35,10 @@ class MonitoringSourceSelectedNamespaceDetails(MonitoringSourceNamespaceDetails)
             'kind': 'str',
             'namespaces': 'list[MonitoringSourceSelectedNamespace]'
         }
-
         self.attribute_map = {
             'kind': 'kind',
             'namespaces': 'namespaces'
         }
-
         self._kind = None
         self._namespaces = None
         self._kind = 'selected'

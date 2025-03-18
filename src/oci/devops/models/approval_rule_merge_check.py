@@ -81,7 +81,6 @@ class ApprovalRuleMergeCheck(MergeCheck):
             'reviewers': 'list[PrincipalDetails]',
             'level': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'rule_name': 'ruleName',
@@ -91,7 +90,6 @@ class ApprovalRuleMergeCheck(MergeCheck):
             'reviewers': 'reviewers',
             'level': 'level'
         }
-
         self._type = None
         self._rule_name = None
         self._status = None

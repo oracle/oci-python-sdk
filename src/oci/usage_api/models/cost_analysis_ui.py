@@ -47,12 +47,10 @@ class CostAnalysisUI(object):
             'graph': 'str',
             'is_cumulative_graph': 'bool'
         }
-
         self.attribute_map = {
             'graph': 'graph',
             'is_cumulative_graph': 'isCumulativeGraph'
         }
-
         self._graph = None
         self._is_cumulative_graph = None
 

@@ -50,7 +50,6 @@ class IcmpApplicationSummary(ApplicationSummary):
             'icmp_type': 'int',
             'icmp_code': 'int'
         }
-
         self.attribute_map = {
             'type': 'type',
             'name': 'name',
@@ -58,7 +57,6 @@ class IcmpApplicationSummary(ApplicationSummary):
             'icmp_type': 'icmpType',
             'icmp_code': 'icmpCode'
         }
-
         self._type = None
         self._name = None
         self._parent_resource_id = None

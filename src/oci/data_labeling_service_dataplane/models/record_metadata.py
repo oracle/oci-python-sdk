@@ -48,11 +48,9 @@ class RecordMetadata(object):
         self.swagger_types = {
             'record_type': 'str'
         }
-
         self.attribute_map = {
             'record_type': 'recordType'
         }
-
         self._record_type = None
 
     @staticmethod

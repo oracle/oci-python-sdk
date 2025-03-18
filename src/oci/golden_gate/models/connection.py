@@ -303,7 +303,6 @@ class Connection(object):
             'routing_method': 'str',
             'does_use_secret_ids': 'bool'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'id': 'id',
@@ -326,7 +325,6 @@ class Connection(object):
             'routing_method': 'routingMethod',
             'does_use_secret_ids': 'doesUseSecretIds'
         }
-
         self._connection_type = None
         self._id = None
         self._display_name = None

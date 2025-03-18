@@ -53,7 +53,6 @@ class RewardDetails(object):
             'total_rewards_available': 'float',
             'redemption_code': 'str'
         }
-
         self.attribute_map = {
             'tenancy_id': 'tenancyId',
             'subscription_id': 'subscriptionId',
@@ -62,7 +61,6 @@ class RewardDetails(object):
             'total_rewards_available': 'totalRewardsAvailable',
             'redemption_code': 'redemptionCode'
         }
-
         self._tenancy_id = None
         self._subscription_id = None
         self._currency = None

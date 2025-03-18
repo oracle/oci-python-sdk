@@ -115,7 +115,6 @@ class Sdk(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'parameters': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'id': 'id',
             'api_id': 'apiId',
@@ -132,7 +131,6 @@ class Sdk(object):
             'defined_tags': 'definedTags',
             'parameters': 'parameters'
         }
-
         self._id = None
         self._api_id = None
         self._compartment_id = None

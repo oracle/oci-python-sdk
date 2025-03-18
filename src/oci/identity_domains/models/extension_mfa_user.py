@@ -146,7 +146,6 @@ class ExtensionMfaUser(object):
             'bypass_codes': 'list[UserExtBypassCodes]',
             'trusted_user_agents': 'list[UserExtTrustedUserAgents]'
         }
-
         self.attribute_map = {
             'preferred_authentication_factor': 'preferredAuthenticationFactor',
             'mfa_status': 'mfaStatus',
@@ -160,7 +159,6 @@ class ExtensionMfaUser(object):
             'bypass_codes': 'bypassCodes',
             'trusted_user_agents': 'trustedUserAgents'
         }
-
         self._preferred_authentication_factor = None
         self._mfa_status = None
         self._preferred_third_party_vendor = None

@@ -72,7 +72,6 @@ class UpdateAlarmConditionDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'namespace': 'namespace',
             'composite_type': 'compositeType',
@@ -83,7 +82,6 @@ class UpdateAlarmConditionDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._namespace = None
         self._composite_type = None
         self._resource_type = None

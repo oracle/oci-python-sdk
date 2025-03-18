@@ -35,12 +35,10 @@ class ConfigurationItemPickAllowedValueDetails(ConfigurationItemAllowedValueDeta
             'allowed_value_type': 'str',
             'possible_values': 'list[str]'
         }
-
         self.attribute_map = {
             'allowed_value_type': 'allowedValueType',
             'possible_values': 'possibleValues'
         }
-
         self._allowed_value_type = None
         self._possible_values = None
         self._allowed_value_type = 'PICK'

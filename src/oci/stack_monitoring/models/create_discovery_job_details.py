@@ -71,7 +71,6 @@ class CreateDiscoveryJobDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'discovery_type': 'discoveryType',
             'discovery_client': 'discoveryClient',
@@ -81,7 +80,6 @@ class CreateDiscoveryJobDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._discovery_type = None
         self._discovery_client = None
         self._compartment_id = None

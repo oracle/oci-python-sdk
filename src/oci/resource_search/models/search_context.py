@@ -28,11 +28,9 @@ class SearchContext(object):
         self.swagger_types = {
             'highlights': 'dict(str, list[str])'
         }
-
         self.attribute_map = {
             'highlights': 'highlights'
         }
-
         self._highlights = None
 
     @property

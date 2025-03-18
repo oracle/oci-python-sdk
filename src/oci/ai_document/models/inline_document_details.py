@@ -35,12 +35,10 @@ class InlineDocumentDetails(DocumentDetails):
             'source': 'str',
             'data': 'str'
         }
-
         self.attribute_map = {
             'source': 'source',
             'data': 'data'
         }
-
         self._source = None
         self._data = None
         self._source = 'INLINE'

@@ -54,7 +54,6 @@ class CreateCertificateDetails(object):
             'ca_certificate': 'str',
             'certificate_name': 'str'
         }
-
         self.attribute_map = {
             'passphrase': 'passphrase',
             'private_key': 'privateKey',
@@ -62,7 +61,6 @@ class CreateCertificateDetails(object):
             'ca_certificate': 'caCertificate',
             'certificate_name': 'certificateName'
         }
-
         self._passphrase = None
         self._private_key = None
         self._public_certificate = None

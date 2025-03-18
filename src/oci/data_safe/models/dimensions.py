@@ -38,13 +38,11 @@ class Dimensions(object):
             'sensitive_data_model_id': 'str',
             'sensitive_type_id': 'str'
         }
-
         self.attribute_map = {
             'target_id': 'targetId',
             'sensitive_data_model_id': 'sensitiveDataModelId',
             'sensitive_type_id': 'sensitiveTypeId'
         }
-
         self._target_id = None
         self._sensitive_data_model_id = None
         self._sensitive_type_id = None

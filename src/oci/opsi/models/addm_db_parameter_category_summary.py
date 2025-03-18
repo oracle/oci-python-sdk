@@ -38,13 +38,11 @@ class AddmDbParameterCategorySummary(object):
             'name': 'str',
             'display_name': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
             'display_name': 'displayName'
         }
-
         self._id = None
         self._name = None
         self._display_name = None

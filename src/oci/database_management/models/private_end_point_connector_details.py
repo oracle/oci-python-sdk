@@ -35,12 +35,10 @@ class PrivateEndPointConnectorDetails(ConnectorDetails):
             'connector_type': 'str',
             'private_end_point_id': 'str'
         }
-
         self.attribute_map = {
             'connector_type': 'connectorType',
             'private_end_point_id': 'privateEndPointId'
         }
-
         self._connector_type = None
         self._private_end_point_id = None
         self._connector_type = 'PE'

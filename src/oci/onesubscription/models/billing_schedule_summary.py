@@ -98,7 +98,6 @@ class BillingScheduleSummary(object):
             'order_number': 'str',
             'product': 'BillingScheduleProduct'
         }
-
         self.attribute_map = {
             'subscribed_service_id': 'subscribedServiceId',
             'time_start': 'timeStart',
@@ -114,7 +113,6 @@ class BillingScheduleSummary(object):
             'order_number': 'orderNumber',
             'product': 'product'
         }
-
         self._subscribed_service_id = None
         self._time_start = None
         self._time_end = None

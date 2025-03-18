@@ -71,7 +71,6 @@ class InfoForNetworkGenDetails(object):
             'domain': 'str',
             'prefix': 'str'
         }
-
         self.attribute_map = {
             'network_type': 'networkType',
             'vlan_id': 'vlanId',
@@ -81,7 +80,6 @@ class InfoForNetworkGenDetails(object):
             'domain': 'domain',
             'prefix': 'prefix'
         }
-
         self._network_type = None
         self._vlan_id = None
         self._cidr = None

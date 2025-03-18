@@ -28,11 +28,9 @@ class KnowledgeBaseCollection(object):
         self.swagger_types = {
             'items': 'list[KnowledgeBaseSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

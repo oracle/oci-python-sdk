@@ -40,13 +40,11 @@ class UnifiedAgentCustomPluginLogSource(UnifiedAgentLoggingSource):
             'source_type': 'str',
             'custom_plugin': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'source_type': 'sourceType',
             'custom_plugin': 'customPlugin'
         }
-
         self._name = None
         self._source_type = None
         self._custom_plugin = None

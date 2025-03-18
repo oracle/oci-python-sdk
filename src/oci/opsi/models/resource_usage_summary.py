@@ -58,7 +58,6 @@ class ResourceUsageSummary(object):
             'usage_change_percent': 'float',
             'total_host_capacity': 'float'
         }
-
         self.attribute_map = {
             'exadata_insight_id': 'exadataInsightId',
             'exadata_display_name': 'exadataDisplayName',
@@ -68,7 +67,6 @@ class ResourceUsageSummary(object):
             'usage_change_percent': 'usageChangePercent',
             'total_host_capacity': 'totalHostCapacity'
         }
-
         self._exadata_insight_id = None
         self._exadata_display_name = None
         self._usage = None

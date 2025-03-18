@@ -55,7 +55,6 @@ class ScriptedBrowserMonitorConfiguration(MonitorConfiguration):
             'is_default_snapshot_enabled': 'bool',
             'network_configuration': 'NetworkConfiguration'
         }
-
         self.attribute_map = {
             'config_type': 'configType',
             'is_failure_retried': 'isFailureRetried',
@@ -64,7 +63,6 @@ class ScriptedBrowserMonitorConfiguration(MonitorConfiguration):
             'is_default_snapshot_enabled': 'isDefaultSnapshotEnabled',
             'network_configuration': 'networkConfiguration'
         }
-
         self._config_type = None
         self._is_failure_retried = None
         self._dns_configuration = None

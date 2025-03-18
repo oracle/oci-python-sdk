@@ -33,12 +33,10 @@ class DatabaseHomeMetrics(object):
             'database_home_metrics': 'DatabaseHomeMetricDefinition',
             'database_instance_home_metrics': 'list[DatabaseInstanceHomeMetricsDefinition]'
         }
-
         self.attribute_map = {
             'database_home_metrics': 'databaseHomeMetrics',
             'database_instance_home_metrics': 'databaseInstanceHomeMetrics'
         }
-
         self._database_home_metrics = None
         self._database_instance_home_metrics = None
 

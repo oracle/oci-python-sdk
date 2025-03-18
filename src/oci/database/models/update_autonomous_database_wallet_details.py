@@ -33,12 +33,10 @@ class UpdateAutonomousDatabaseWalletDetails(object):
             'should_rotate': 'bool',
             'grace_period': 'int'
         }
-
         self.attribute_map = {
             'should_rotate': 'shouldRotate',
             'grace_period': 'gracePeriod'
         }
-
         self._should_rotate = None
         self._grace_period = None
 

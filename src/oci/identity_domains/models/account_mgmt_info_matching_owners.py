@@ -48,7 +48,6 @@ class AccountMgmtInfoMatchingOwners(object):
             'user_name': 'str',
             'email': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ref': '$ref',
@@ -56,7 +55,6 @@ class AccountMgmtInfoMatchingOwners(object):
             'user_name': 'userName',
             'email': 'email'
         }
-
         self._value = None
         self._ref = None
         self._display = None

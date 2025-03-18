@@ -47,13 +47,11 @@ class CreateMacsManagedCloudExadataClusterDetails(object):
             'vmcluster_id': 'str',
             'compartment_id': 'str'
         }
-
         self.attribute_map = {
             'vm_cluster_type': 'vmClusterType',
             'vmcluster_id': 'vmclusterId',
             'compartment_id': 'compartmentId'
         }
-
         self._vm_cluster_type = None
         self._vmcluster_id = None
         self._compartment_id = None

@@ -58,7 +58,6 @@ class MySmtpCredentialUser(object):
             'display': 'str',
             'name': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ocid': 'ocid',
@@ -66,7 +65,6 @@ class MySmtpCredentialUser(object):
             'display': 'display',
             'name': 'name'
         }
-
         self._value = None
         self._ocid = None
         self._ref = None

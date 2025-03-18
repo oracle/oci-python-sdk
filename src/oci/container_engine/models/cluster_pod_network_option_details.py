@@ -43,11 +43,9 @@ class ClusterPodNetworkOptionDetails(object):
         self.swagger_types = {
             'cni_type': 'str'
         }
-
         self.attribute_map = {
             'cni_type': 'cniType'
         }
-
         self._cni_type = None
 
     @staticmethod

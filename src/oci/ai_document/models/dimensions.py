@@ -48,13 +48,11 @@ class Dimensions(object):
             'height': 'float',
             'unit': 'str'
         }
-
         self.attribute_map = {
             'width': 'width',
             'height': 'height',
             'unit': 'unit'
         }
-
         self._width = None
         self._height = None
         self._unit = None

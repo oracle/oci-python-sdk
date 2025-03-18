@@ -38,13 +38,11 @@ class Datapoint(object):
             'value': 'float',
             'count': 'int'
         }
-
         self.attribute_map = {
             'timestamp': 'timestamp',
             'value': 'value',
             'count': 'count'
         }
-
         self._timestamp = None
         self._value = None
         self._count = None

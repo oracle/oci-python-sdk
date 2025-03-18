@@ -72,7 +72,6 @@ class Peer(object):
             'ad': 'str',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'peer_key': 'peerKey',
             'role': 'role',
@@ -82,7 +81,6 @@ class Peer(object):
             'ad': 'ad',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._peer_key = None
         self._role = None
         self._alias = None

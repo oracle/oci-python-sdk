@@ -102,7 +102,6 @@ class CreateDataGuardAssociationDetails(object):
             'peer_db_unique_name': 'str',
             'peer_sid_prefix': 'str'
         }
-
         self.attribute_map = {
             'database_software_image_id': 'databaseSoftwareImageId',
             'database_admin_password': 'databaseAdminPassword',
@@ -114,7 +113,6 @@ class CreateDataGuardAssociationDetails(object):
             'peer_db_unique_name': 'peerDbUniqueName',
             'peer_sid_prefix': 'peerSidPrefix'
         }
-
         self._database_software_image_id = None
         self._database_admin_password = None
         self._source_encryption_key_location_details = None

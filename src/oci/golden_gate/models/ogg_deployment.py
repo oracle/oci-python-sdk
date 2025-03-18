@@ -73,7 +73,6 @@ class OggDeployment(object):
             'password_secret_id': 'str',
             'group_to_roles_mapping': 'GroupToRolesMappingDetails'
         }
-
         self.attribute_map = {
             'deployment_name': 'deploymentName',
             'admin_username': 'adminUsername',
@@ -84,7 +83,6 @@ class OggDeployment(object):
             'password_secret_id': 'passwordSecretId',
             'group_to_roles_mapping': 'groupToRolesMapping'
         }
-
         self._deployment_name = None
         self._admin_username = None
         self._ogg_version = None

@@ -250,7 +250,6 @@ class BaseAnnouncement(object):
             'platform_type': 'str',
             'chain_id': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'type': 'type',
@@ -273,7 +272,6 @@ class BaseAnnouncement(object):
             'platform_type': 'platformType',
             'chain_id': 'chainId'
         }
-
         self._id = None
         self._type = None
         self._reference_ticket_number = None

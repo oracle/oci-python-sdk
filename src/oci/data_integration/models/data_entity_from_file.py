@@ -152,7 +152,6 @@ class DataEntityFromFile(DataEntity):
             'object_status': 'int',
             'identifier': 'str'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'metadata': 'metadata',
@@ -175,7 +174,6 @@ class DataEntityFromFile(DataEntity):
             'object_status': 'objectStatus',
             'identifier': 'identifier'
         }
-
         self._model_type = None
         self._metadata = None
         self._key = None

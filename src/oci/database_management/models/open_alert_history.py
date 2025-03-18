@@ -28,11 +28,9 @@ class OpenAlertHistory(object):
         self.swagger_types = {
             'alerts': 'list[OpenAlertSummary]'
         }
-
         self.attribute_map = {
             'alerts': 'alerts'
         }
-
         self._alerts = None
 
     @property

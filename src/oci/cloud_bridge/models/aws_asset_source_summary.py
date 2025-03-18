@@ -106,7 +106,6 @@ class AwsAssetSourceSummary(AssetSourceSummary):
             'aws_region': 'str',
             'aws_account_key': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'id': 'id',
@@ -125,7 +124,6 @@ class AwsAssetSourceSummary(AssetSourceSummary):
             'aws_region': 'awsRegion',
             'aws_account_key': 'awsAccountKey'
         }
-
         self._type = None
         self._id = None
         self._compartment_id = None

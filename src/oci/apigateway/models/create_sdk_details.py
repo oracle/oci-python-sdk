@@ -53,7 +53,6 @@ class CreateSdkDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'parameters': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'target_language': 'targetLanguage',
@@ -62,7 +61,6 @@ class CreateSdkDetails(object):
             'defined_tags': 'definedTags',
             'parameters': 'parameters'
         }
-
         self._display_name = None
         self._target_language = None
         self._api_id = None

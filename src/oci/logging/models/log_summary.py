@@ -124,7 +124,6 @@ class LogSummary(object):
             'retention_duration': 'int',
             'compartment_id': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'log_group_id': 'logGroupId',
@@ -140,7 +139,6 @@ class LogSummary(object):
             'retention_duration': 'retentionDuration',
             'compartment_id': 'compartmentId'
         }
-
         self._id = None
         self._log_group_id = None
         self._display_name = None

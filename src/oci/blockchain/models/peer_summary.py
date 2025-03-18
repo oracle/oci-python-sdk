@@ -33,12 +33,10 @@ class PeerSummary(object):
             'peer_key': 'str',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'peer_key': 'peerKey',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._peer_key = None
         self._lifecycle_state = None
 

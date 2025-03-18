@@ -38,13 +38,11 @@ class UpdateDrgRouteDistributionStatementDetails(object):
             'match_criteria': 'list[DrgRouteDistributionMatchCriteria]',
             'priority': 'int'
         }
-
         self.attribute_map = {
             'id': 'id',
             'match_criteria': 'matchCriteria',
             'priority': 'priority'
         }
-
         self._id = None
         self._match_criteria = None
         self._priority = None

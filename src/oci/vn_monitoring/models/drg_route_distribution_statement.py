@@ -49,14 +49,12 @@ class DrgRouteDistributionStatement(object):
             'priority': 'int',
             'id': 'str'
         }
-
         self.attribute_map = {
             'match_criteria': 'matchCriteria',
             'action': 'action',
             'priority': 'priority',
             'id': 'id'
         }
-
         self._match_criteria = None
         self._action = None
         self._priority = None

@@ -43,14 +43,12 @@ class UpdateDomainGovernanceDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'subscription_email': 'subscriptionEmail',
             'is_governance_enabled': 'isGovernanceEnabled',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._subscription_email = None
         self._is_governance_enabled = None
         self._freeform_tags = None

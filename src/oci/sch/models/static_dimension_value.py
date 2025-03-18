@@ -35,12 +35,10 @@ class StaticDimensionValue(DimensionValueDetails):
             'kind': 'str',
             'value': 'str'
         }
-
         self.attribute_map = {
             'kind': 'kind',
             'value': 'value'
         }
-
         self._kind = None
         self._value = None
         self._kind = 'static'

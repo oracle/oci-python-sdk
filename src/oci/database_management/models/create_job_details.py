@@ -108,7 +108,6 @@ class CreateJobDetails(object):
             'result_location': 'JobExecutionResultLocation',
             'schedule_details': 'JobScheduleDetails'
         }
-
         self.attribute_map = {
             'name': 'name',
             'description': 'description',
@@ -122,7 +121,6 @@ class CreateJobDetails(object):
             'result_location': 'resultLocation',
             'schedule_details': 'scheduleDetails'
         }
-
         self._name = None
         self._description = None
         self._compartment_id = None

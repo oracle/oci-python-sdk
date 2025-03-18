@@ -141,7 +141,6 @@ class DedicatedCatalogDetails(object):
             'peer_cloud_autonomous_vm_cluster_id': 'str',
             'metadata': 'dict(str, object)'
         }
-
         self.attribute_map = {
             'encryption_key_details': 'encryptionKeyDetails',
             'name': 'name',
@@ -160,7 +159,6 @@ class DedicatedCatalogDetails(object):
             'peer_cloud_autonomous_vm_cluster_id': 'peerCloudAutonomousVmClusterId',
             'metadata': 'metadata'
         }
-
         self._encryption_key_details = None
         self._name = None
         self._compute_count = None

@@ -138,7 +138,6 @@ class TargetAsset(object):
             'time_assessed': 'datetime',
             'migration_asset': 'MigrationAsset'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -156,7 +155,6 @@ class TargetAsset(object):
             'time_assessed': 'timeAssessed',
             'migration_asset': 'migrationAsset'
         }
-
         self._id = None
         self._display_name = None
         self._lifecycle_state = None

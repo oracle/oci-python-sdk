@@ -184,7 +184,6 @@ class Publisher(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'publisher_status': 'publisherStatus',
             'notification_email': 'notificationEmail',
@@ -212,7 +211,6 @@ class Publisher(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._publisher_status = None
         self._notification_email = None
         self._opn_membership = None

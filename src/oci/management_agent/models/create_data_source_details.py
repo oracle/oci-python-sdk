@@ -51,13 +51,11 @@ class CreateDataSourceDetails(object):
             'name': 'str',
             'compartment_id': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'name': 'name',
             'compartment_id': 'compartmentId'
         }
-
         self._type = None
         self._name = None
         self._compartment_id = None

@@ -33,12 +33,10 @@ class AutonomousContainerDatabaseBackupConfig(object):
             'backup_destination_details': 'list[BackupDestinationDetails]',
             'recovery_window_in_days': 'int'
         }
-
         self.attribute_map = {
             'backup_destination_details': 'backupDestinationDetails',
             'recovery_window_in_days': 'recoveryWindowInDays'
         }
-
         self._backup_destination_details = None
         self._recovery_window_in_days = None
 

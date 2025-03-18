@@ -57,7 +57,6 @@ class CreateExternalDatabaseConnectorDetails(object):
             'connector_type': 'str',
             'external_database_id': 'str'
         }
-
         self.attribute_map = {
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -65,7 +64,6 @@ class CreateExternalDatabaseConnectorDetails(object):
             'connector_type': 'connectorType',
             'external_database_id': 'externalDatabaseId'
         }
-
         self._freeform_tags = None
         self._defined_tags = None
         self._display_name = None

@@ -43,11 +43,9 @@ class LogAnalyticsEndpoint(object):
         self.swagger_types = {
             'endpoint_type': 'str'
         }
-
         self.attribute_map = {
             'endpoint_type': 'endpointType'
         }
-
         self._endpoint_type = None
 
     @staticmethod

@@ -32,36 +32,20 @@ class UpdateByoipRangeDetails(object):
             The value to assign to the freeform_tags property of this UpdateByoipRangeDetails.
         :type freeform_tags: dict(str, str)
 
-        :param ip_anycast_id:
-            The value to assign to the ip_anycast_id property of this UpdateByoipRangeDetails.
-        :type ip_anycast_id: str
-
-        :param monitor_ip:
-            The value to assign to the monitor_ip property of this UpdateByoipRangeDetails.
-        :type monitor_ip: str
-
         """
         self.swagger_types = {
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
-            'freeform_tags': 'dict(str, str)',
-            'ip_anycast_id': 'str',
-            'monitor_ip': 'str'
+            'freeform_tags': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
-            'freeform_tags': 'freeformTags',
-            'ip_anycast_id': 'ipAnycastId',
-            'monitor_ip': 'monitorIp'
+            'freeform_tags': 'freeformTags'
         }
-
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
-        self._ip_anycast_id = None
-        self._monitor_ip = None
 
     @property
     def defined_tags(self):
@@ -156,58 +140,6 @@ class UpdateByoipRangeDetails(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
-
-    @property
-    def ip_anycast_id(self):
-        """
-        Gets the ip_anycast_id of this UpdateByoipRangeDetails.
-        The `OCID`__ of the `IpAnycast` resource.
-
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-
-
-        :return: The ip_anycast_id of this UpdateByoipRangeDetails.
-        :rtype: str
-        """
-        return self._ip_anycast_id
-
-    @ip_anycast_id.setter
-    def ip_anycast_id(self, ip_anycast_id):
-        """
-        Sets the ip_anycast_id of this UpdateByoipRangeDetails.
-        The `OCID`__ of the `IpAnycast` resource.
-
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-
-
-        :param ip_anycast_id: The ip_anycast_id of this UpdateByoipRangeDetails.
-        :type: str
-        """
-        self._ip_anycast_id = ip_anycast_id
-
-    @property
-    def monitor_ip(self):
-        """
-        Gets the monitor_ip of this UpdateByoipRangeDetails.
-        The IP address of the CIDR for Prefix Monitoring.
-
-
-        :return: The monitor_ip of this UpdateByoipRangeDetails.
-        :rtype: str
-        """
-        return self._monitor_ip
-
-    @monitor_ip.setter
-    def monitor_ip(self, monitor_ip):
-        """
-        Sets the monitor_ip of this UpdateByoipRangeDetails.
-        The IP address of the CIDR for Prefix Monitoring.
-
-
-        :param monitor_ip: The monitor_ip of this UpdateByoipRangeDetails.
-        :type: str
-        """
-        self._monitor_ip = monitor_ip
 
     def __repr__(self):
         return formatted_flat_dict(self)

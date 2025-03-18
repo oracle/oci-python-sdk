@@ -48,13 +48,11 @@ class DefinedAlarmCondition(object):
             'condition_type': 'str',
             'conditions': 'list[Condition]'
         }
-
         self.attribute_map = {
             'metric_name': 'metricName',
             'condition_type': 'conditionType',
             'conditions': 'conditions'
         }
-
         self._metric_name = None
         self._condition_type = None
         self._conditions = None

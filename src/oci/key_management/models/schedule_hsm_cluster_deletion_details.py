@@ -28,11 +28,9 @@ class ScheduleHsmClusterDeletionDetails(object):
         self.swagger_types = {
             'time_of_deletion': 'datetime'
         }
-
         self.attribute_map = {
             'time_of_deletion': 'timeOfDeletion'
         }
-
         self._time_of_deletion = None
 
     @property

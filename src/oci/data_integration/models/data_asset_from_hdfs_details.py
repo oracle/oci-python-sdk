@@ -120,7 +120,6 @@ class DataAssetFromHdfsDetails(DataAsset):
             'validate_certificate': 'bool',
             'default_connection': 'ConnectionFromHdfsDetails'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -142,7 +141,6 @@ class DataAssetFromHdfsDetails(DataAsset):
             'validate_certificate': 'validateCertificate',
             'default_connection': 'defaultConnection'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

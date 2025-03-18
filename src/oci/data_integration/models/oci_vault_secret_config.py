@@ -35,12 +35,10 @@ class OciVaultSecretConfig(SecretConfig):
             'model_type': 'str',
             'secret_id': 'str'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'secret_id': 'secretId'
         }
-
         self._model_type = None
         self._secret_id = None
         self._model_type = 'OCI_VAULT_SECRET_CONFIG'

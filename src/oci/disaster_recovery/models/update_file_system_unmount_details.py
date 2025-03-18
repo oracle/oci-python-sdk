@@ -28,11 +28,9 @@ class UpdateFileSystemUnmountDetails(object):
         self.swagger_types = {
             'mount_target_id': 'str'
         }
-
         self.attribute_map = {
             'mount_target_id': 'mountTargetId'
         }
-
         self._mount_target_id = None
 
     @property

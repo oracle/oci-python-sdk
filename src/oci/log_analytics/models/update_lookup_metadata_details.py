@@ -48,7 +48,6 @@ class UpdateLookupMetadataDetails(object):
             'max_matches': 'int',
             'categories': 'list[LogAnalyticsCategory]'
         }
-
         self.attribute_map = {
             'default_match_value': 'defaultMatchValue',
             'description': 'description',
@@ -56,7 +55,6 @@ class UpdateLookupMetadataDetails(object):
             'max_matches': 'maxMatches',
             'categories': 'categories'
         }
-
         self._default_match_value = None
         self._description = None
         self._fields = None

@@ -28,11 +28,9 @@ class PublisherDetails(object):
         self.swagger_types = {
             'name': 'str'
         }
-
         self.attribute_map = {
             'name': 'name'
         }
-
         self._name = None
 
     @property

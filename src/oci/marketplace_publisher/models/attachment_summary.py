@@ -63,7 +63,6 @@ class AttachmentSummary(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'id': 'id',
             'offer_id': 'offerId',
@@ -74,7 +73,6 @@ class AttachmentSummary(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._id = None
         self._offer_id = None
         self._mime_type = None

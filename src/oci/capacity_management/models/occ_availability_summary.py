@@ -89,7 +89,6 @@ class OccAvailabilitySummary(object):
             'unit': 'str',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'catalog_id': 'catalogId',
             'namespace': 'namespace',
@@ -104,7 +103,6 @@ class OccAvailabilitySummary(object):
             'unit': 'unit',
             'system_tags': 'systemTags'
         }
-
         self._catalog_id = None
         self._namespace = None
         self._date_final_customer_order = None

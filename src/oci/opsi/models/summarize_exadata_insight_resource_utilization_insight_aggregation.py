@@ -102,7 +102,6 @@ class SummarizeExadataInsightResourceUtilizationInsightAggregation(object):
             'exadata_resource_type': 'str',
             'utilization': 'list[ExadataInsightResourceInsightUtilizationItem]'
         }
-
         self.attribute_map = {
             'time_interval_start': 'timeIntervalStart',
             'time_interval_end': 'timeIntervalEnd',
@@ -112,7 +111,6 @@ class SummarizeExadataInsightResourceUtilizationInsightAggregation(object):
             'exadata_resource_type': 'exadataResourceType',
             'utilization': 'utilization'
         }
-
         self._time_interval_start = None
         self._time_interval_end = None
         self._high_utilization_threshold = None

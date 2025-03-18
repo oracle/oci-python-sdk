@@ -93,7 +93,6 @@ class ApplianceExportJobSummary(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'id': 'id',
             'bucket_name': 'bucketName',
@@ -104,7 +103,6 @@ class ApplianceExportJobSummary(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._id = None
         self._bucket_name = None
         self._display_name = None

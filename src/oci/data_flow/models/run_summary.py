@@ -189,7 +189,6 @@ class RunSummary(object):
             'time_updated': 'datetime',
             'type': 'str'
         }
-
         self.attribute_map = {
             'application_id': 'applicationId',
             'compartment_id': 'compartmentId',
@@ -212,7 +211,6 @@ class RunSummary(object):
             'time_updated': 'timeUpdated',
             'type': 'type'
         }
-
         self._application_id = None
         self._compartment_id = None
         self._data_read_in_bytes = None

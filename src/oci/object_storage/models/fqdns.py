@@ -33,12 +33,10 @@ class Fqdns(object):
             'prefix_fqdns': 'PrefixFqdns',
             'additional_prefixes_fqdns': 'dict(str, PrefixFqdns)'
         }
-
         self.attribute_map = {
             'prefix_fqdns': 'prefixFqdns',
             'additional_prefixes_fqdns': 'additionalPrefixesFqdns'
         }
-
         self._prefix_fqdns = None
         self._additional_prefixes_fqdns = None
 

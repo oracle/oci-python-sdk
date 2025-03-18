@@ -91,7 +91,6 @@ class CloneSkillDetails(CreateSkillDetails):
             'display_name': 'str',
             'version': 'str'
         }
-
         self.attribute_map = {
             'kind': 'kind',
             'category': 'category',
@@ -107,7 +106,6 @@ class CloneSkillDetails(CreateSkillDetails):
             'display_name': 'displayName',
             'version': 'version'
         }
-
         self._kind = None
         self._category = None
         self._description = None

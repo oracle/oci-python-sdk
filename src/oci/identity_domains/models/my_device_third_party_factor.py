@@ -54,14 +54,12 @@ class MyDeviceThirdPartyFactor(object):
             'value': 'str',
             'ref': 'str'
         }
-
         self.attribute_map = {
             'third_party_vendor_name': 'thirdPartyVendorName',
             'third_party_factor_type': 'thirdPartyFactorType',
             'value': 'value',
             'ref': '$ref'
         }
-
         self._third_party_vendor_name = None
         self._third_party_factor_type = None
         self._value = None

@@ -42,12 +42,10 @@ class AuthenticationFactorSettingsIdentityStoreSettings(object):
             'mobile_number_enabled': 'bool',
             'mobile_number_update_enabled': 'bool'
         }
-
         self.attribute_map = {
             'mobile_number_enabled': 'mobileNumberEnabled',
             'mobile_number_update_enabled': 'mobileNumberUpdateEnabled'
         }
-
         self._mobile_number_enabled = None
         self._mobile_number_update_enabled = None
 

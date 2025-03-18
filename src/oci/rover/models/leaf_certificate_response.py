@@ -33,12 +33,10 @@ class LeafCertificateResponse(object):
             'rover_node_id': 'str',
             'leaf_certificate_details': 'LeafCertificateDetails'
         }
-
         self.attribute_map = {
             'rover_node_id': 'roverNodeId',
             'leaf_certificate_details': 'leafCertificateDetails'
         }
-
         self._rover_node_id = None
         self._leaf_certificate_details = None
 

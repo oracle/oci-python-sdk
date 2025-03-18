@@ -40,13 +40,11 @@ class LiteralArgument(Argument):
             'data_type': 'str',
             'value': 'object'
         }
-
         self.attribute_map = {
             'type': 'type',
             'data_type': 'dataType',
             'value': 'value'
         }
-
         self._type = None
         self._data_type = None
         self._value = None

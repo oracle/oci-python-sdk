@@ -80,7 +80,6 @@ class UnifiedAgentGrokParser(UnifiedAgentParser):
             'grok_failure_key': 'str',
             'patterns': 'list[GrokPattern]'
         }
-
         self.attribute_map = {
             'parser_type': 'parserType',
             'field_time_key': 'fieldTimeKey',
@@ -94,7 +93,6 @@ class UnifiedAgentGrokParser(UnifiedAgentParser):
             'grok_failure_key': 'grokFailureKey',
             'patterns': 'patterns'
         }
-
         self._parser_type = None
         self._field_time_key = None
         self._types = None

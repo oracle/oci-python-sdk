@@ -40,13 +40,11 @@ class UpdateEmManagedExternalHostInsightDetails(UpdateHostInsightDetails):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'entity_source': 'entitySource',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._entity_source = None
         self._freeform_tags = None
         self._defined_tags = None

@@ -53,12 +53,10 @@ class DrgAttachmentTypeDrgRouteDistributionMatchCriteria(DrgRouteDistributionMat
             'match_type': 'str',
             'attachment_type': 'str'
         }
-
         self.attribute_map = {
             'match_type': 'matchType',
             'attachment_type': 'attachmentType'
         }
-
         self._match_type = None
         self._attachment_type = None
         self._match_type = 'DRG_ATTACHMENT_TYPE'

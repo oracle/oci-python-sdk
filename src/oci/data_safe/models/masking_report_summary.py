@@ -173,7 +173,6 @@ class MaskingReportSummary(object):
             'total_pre_masking_script_errors': 'int',
             'total_post_masking_script_errors': 'int'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -198,7 +197,6 @@ class MaskingReportSummary(object):
             'total_pre_masking_script_errors': 'totalPreMaskingScriptErrors',
             'total_post_masking_script_errors': 'totalPostMaskingScriptErrors'
         }
-
         self._id = None
         self._compartment_id = None
         self._masking_work_request_id = None

@@ -261,7 +261,6 @@ class JobDefinitionSummary(object):
             'data_asset_key': 'str',
             'glossary_key': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'display_name': 'displayName',
@@ -280,7 +279,6 @@ class JobDefinitionSummary(object):
             'data_asset_key': 'dataAssetKey',
             'glossary_key': 'glossaryKey'
         }
-
         self._key = None
         self._display_name = None
         self._description = None

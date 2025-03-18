@@ -38,13 +38,11 @@ class ExternalClusterVipConfiguration(object):
             'address': 'str',
             'network_number': 'int'
         }
-
         self.attribute_map = {
             'node_name': 'nodeName',
             'address': 'address',
             'network_number': 'networkNumber'
         }
-
         self._node_name = None
         self._address = None
         self._network_number = None

@@ -33,12 +33,10 @@ class AbstractParserTestResultLogLine(object):
             'original_log_line': 'str',
             'pre_processed_log_line': 'str'
         }
-
         self.attribute_map = {
             'original_log_line': 'originalLogLine',
             'pre_processed_log_line': 'preProcessedLogLine'
         }
-
         self._original_log_line = None
         self._pre_processed_log_line = None
 

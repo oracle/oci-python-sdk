@@ -63,7 +63,6 @@ class SqlStatisticsTimeSeriesByPlanAggregationCollection(object):
             'end_timestamps': 'list[datetime]',
             'items': 'list[SqlStatisticsTimeSeriesByPlanAggregation]'
         }
-
         self.attribute_map = {
             'sql_identifier': 'sqlIdentifier',
             'id': 'id',
@@ -74,7 +73,6 @@ class SqlStatisticsTimeSeriesByPlanAggregationCollection(object):
             'end_timestamps': 'endTimestamps',
             'items': 'items'
         }
-
         self._sql_identifier = None
         self._id = None
         self._database_id = None

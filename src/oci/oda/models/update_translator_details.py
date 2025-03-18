@@ -48,7 +48,6 @@ class UpdateTranslatorDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'base_url': 'baseUrl',
             'auth_token': 'authToken',
@@ -56,7 +55,6 @@ class UpdateTranslatorDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._base_url = None
         self._auth_token = None
         self._properties = None

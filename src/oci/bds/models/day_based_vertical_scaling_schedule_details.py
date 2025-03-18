@@ -34,12 +34,10 @@ class DayBasedVerticalScalingScheduleDetails(VerticalScalingScheduleDetails):
             'schedule_type': 'str',
             'time_and_vertical_scaling_config': 'list[TimeAndVerticalScalingConfig]'
         }
-
         self.attribute_map = {
             'schedule_type': 'scheduleType',
             'time_and_vertical_scaling_config': 'timeAndVerticalScalingConfig'
         }
-
         self._schedule_type = None
         self._time_and_vertical_scaling_config = None
         self._schedule_type = 'DAY_BASED'

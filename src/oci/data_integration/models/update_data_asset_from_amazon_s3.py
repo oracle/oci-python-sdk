@@ -85,7 +85,6 @@ class UpdateDataAssetFromAmazonS3(UpdateDataAssetDetails):
             'registry_metadata': 'RegistryMetadata',
             'region': 'str'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -100,7 +99,6 @@ class UpdateDataAssetFromAmazonS3(UpdateDataAssetDetails):
             'registry_metadata': 'registryMetadata',
             'region': 'region'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

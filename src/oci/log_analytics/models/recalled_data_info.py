@@ -33,12 +33,10 @@ class RecalledDataInfo(object):
             'collection_name': 'str',
             'purpose': 'str'
         }
-
         self.attribute_map = {
             'collection_name': 'collectionName',
             'purpose': 'purpose'
         }
-
         self._collection_name = None
         self._purpose = None
 

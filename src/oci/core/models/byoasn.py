@@ -107,7 +107,6 @@ class Byoasn(object):
             'time_updated': 'datetime',
             'byoip_ranges': 'list[ByoasnByoipRange]'
         }
-
         self.attribute_map = {
             'lifecycle_state': 'lifecycleState',
             'defined_tags': 'definedTags',
@@ -122,7 +121,6 @@ class Byoasn(object):
             'time_updated': 'timeUpdated',
             'byoip_ranges': 'byoipRanges'
         }
-
         self._lifecycle_state = None
         self._defined_tags = None
         self._display_name = None

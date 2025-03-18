@@ -43,14 +43,12 @@ class AnnouncementSummary(object):
             'url': 'str',
             'time_released': 'datetime'
         }
-
         self.attribute_map = {
             'key': 'key',
             'summary': 'summary',
             'url': 'url',
             'time_released': 'timeReleased'
         }
-
         self._key = None
         self._summary = None
         self._url = None

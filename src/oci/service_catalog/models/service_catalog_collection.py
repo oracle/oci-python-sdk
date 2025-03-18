@@ -28,11 +28,9 @@ class ServiceCatalogCollection(object):
         self.swagger_types = {
             'items': 'list[ServiceCatalogSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

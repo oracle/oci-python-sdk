@@ -41,13 +41,11 @@ class ProductStackConfigCategoryDetails(ConfigCategoryDetails):
             'products': 'list[ConfigAssociationDetails]',
             'sub_category_details': 'ProductStackSubCategoryDetails'
         }
-
         self.attribute_map = {
             'config_category': 'configCategory',
             'products': 'products',
             'sub_category_details': 'subCategoryDetails'
         }
-
         self._config_category = None
         self._products = None
         self._sub_category_details = None

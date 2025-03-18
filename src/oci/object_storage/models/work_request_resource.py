@@ -78,7 +78,6 @@ class WorkRequestResource(object):
             'entity_uri': 'str',
             'metadata': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'action_type': 'actionType',
             'entity_type': 'entityType',
@@ -86,7 +85,6 @@ class WorkRequestResource(object):
             'entity_uri': 'entityUri',
             'metadata': 'metadata'
         }
-
         self._action_type = None
         self._entity_type = None
         self._identifier = None

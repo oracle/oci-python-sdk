@@ -37,11 +37,9 @@ class ScheduleProtectedDatabaseDeletionDetails(object):
         self.swagger_types = {
             'deletion_schedule': 'str'
         }
-
         self.attribute_map = {
             'deletion_schedule': 'deletionSchedule'
         }
-
         self._deletion_schedule = None
 
     @property

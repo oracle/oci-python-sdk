@@ -68,13 +68,11 @@ class IncrementalFieldClause(object):
             'incremental_field_value': 'dict(str, str)',
             'incremental_comparator': 'str'
         }
-
         self.attribute_map = {
             'incremental_field_name': 'incrementalFieldName',
             'incremental_field_value': 'incrementalFieldValue',
             'incremental_comparator': 'incrementalComparator'
         }
-
         self._incremental_field_name = None
         self._incremental_field_value = None
         self._incremental_comparator = None

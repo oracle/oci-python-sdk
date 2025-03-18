@@ -65,7 +65,6 @@ class ExternalServiceAccessPolicyTarget(AccessPolicyTarget):
             'ports': 'list[int]',
             'protocol': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'hostnames': 'hostnames',
@@ -73,7 +72,6 @@ class ExternalServiceAccessPolicyTarget(AccessPolicyTarget):
             'ports': 'ports',
             'protocol': 'protocol'
         }
-
         self._type = None
         self._hostnames = None
         self._ip_addresses = None

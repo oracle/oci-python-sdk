@@ -44,13 +44,11 @@ class UnsupportedDatabaseObject(object):
             'owner': 'str',
             'object_name': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'owner': 'owner',
             'object_name': 'objectName'
         }
-
         self._type = None
         self._owner = None
         self._object_name = None

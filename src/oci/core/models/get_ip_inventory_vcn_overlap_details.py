@@ -33,12 +33,10 @@ class GetIpInventoryVcnOverlapDetails(object):
             'region_list': 'list[str]',
             'compartment_list': 'list[str]'
         }
-
         self.attribute_map = {
             'region_list': 'regionList',
             'compartment_list': 'compartmentList'
         }
-
         self._region_list = None
         self._compartment_list = None
 

@@ -49,7 +49,6 @@ class UpdateObjectStorageConfigSourceDetails(UpdateConfigSourceDetails):
             'namespace': 'str',
             'bucket_name': 'str'
         }
-
         self.attribute_map = {
             'config_source_type': 'configSourceType',
             'working_directory': 'workingDirectory',
@@ -57,7 +56,6 @@ class UpdateObjectStorageConfigSourceDetails(UpdateConfigSourceDetails):
             'namespace': 'namespace',
             'bucket_name': 'bucketName'
         }
-
         self._config_source_type = None
         self._working_directory = None
         self._region = None

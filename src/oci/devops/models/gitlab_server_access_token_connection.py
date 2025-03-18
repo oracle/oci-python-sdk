@@ -113,7 +113,6 @@ class GitlabServerAccessTokenConnection(Connection):
             'base_url': 'str',
             'tls_verify_config': 'TlsVerifyConfig'
         }
-
         self.attribute_map = {
             'id': 'id',
             'description': 'description',
@@ -133,7 +132,6 @@ class GitlabServerAccessTokenConnection(Connection):
             'base_url': 'baseUrl',
             'tls_verify_config': 'tlsVerifyConfig'
         }
-
         self._id = None
         self._description = None
         self._display_name = None

@@ -38,13 +38,11 @@ class VmwareVCenterProperties(object):
             'vcenter_version': 'str',
             'data_center': 'str'
         }
-
         self.attribute_map = {
             'vcenter_key': 'vcenterKey',
             'vcenter_version': 'vcenterVersion',
             'data_center': 'dataCenter'
         }
-
         self._vcenter_key = None
         self._vcenter_version = None
         self._data_center = None

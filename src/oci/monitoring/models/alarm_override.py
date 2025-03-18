@@ -52,7 +52,6 @@ class AlarmOverride(object):
             'rule_name': 'str',
             'query': 'str'
         }
-
         self.attribute_map = {
             'pending_duration': 'pendingDuration',
             'severity': 'severity',
@@ -60,7 +59,6 @@ class AlarmOverride(object):
             'rule_name': 'ruleName',
             'query': 'query'
         }
-
         self._pending_duration = None
         self._severity = None
         self._body = None

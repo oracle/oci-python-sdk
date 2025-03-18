@@ -45,14 +45,12 @@ class VirtualServiceTrafficRuleTargetDetails(TrafficRuleTargetDetails):
             'port': 'int',
             'weight': 'int'
         }
-
         self.attribute_map = {
             'type': 'type',
             'virtual_service_id': 'virtualServiceId',
             'port': 'port',
             'weight': 'weight'
         }
-
         self._type = None
         self._virtual_service_id = None
         self._port = None

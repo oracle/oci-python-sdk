@@ -58,7 +58,6 @@ class CreateDatabaseFromAnotherDatabaseDetails(object):
             'time_stamp_for_point_in_time_recovery': 'datetime',
             'pluggable_databases': 'list[str]'
         }
-
         self.attribute_map = {
             'database_id': 'databaseId',
             'backup_tde_password': 'backupTDEPassword',
@@ -68,7 +67,6 @@ class CreateDatabaseFromAnotherDatabaseDetails(object):
             'time_stamp_for_point_in_time_recovery': 'timeStampForPointInTimeRecovery',
             'pluggable_databases': 'pluggableDatabases'
         }
-
         self._database_id = None
         self._backup_tde_password = None
         self._admin_password = None

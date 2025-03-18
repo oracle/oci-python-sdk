@@ -40,13 +40,11 @@ class UserMessage(Message):
             'content': 'list[ChatContent]',
             'name': 'str'
         }
-
         self.attribute_map = {
             'role': 'role',
             'content': 'content',
             'name': 'name'
         }
-
         self._role = None
         self._content = None
         self._name = None

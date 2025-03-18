@@ -105,7 +105,6 @@ class ManagedInstanceSummary(object):
             'os_family': 'str',
             'is_reboot_required': 'bool'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'id': 'id',
@@ -118,7 +117,6 @@ class ManagedInstanceSummary(object):
             'os_family': 'osFamily',
             'is_reboot_required': 'isRebootRequired'
         }
-
         self._display_name = None
         self._id = None
         self._last_checkin = None

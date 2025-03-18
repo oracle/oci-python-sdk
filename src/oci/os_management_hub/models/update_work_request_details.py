@@ -77,7 +77,6 @@ class UpdateWorkRequestDetails(object):
             'description': 'str',
             'display_name': 'str'
         }
-
         self.attribute_map = {
             'status': 'status',
             'percent_complete': 'percentComplete',
@@ -85,7 +84,6 @@ class UpdateWorkRequestDetails(object):
             'description': 'description',
             'display_name': 'displayName'
         }
-
         self._status = None
         self._percent_complete = None
         self._time_finished = None

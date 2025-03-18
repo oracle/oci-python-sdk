@@ -33,12 +33,10 @@ class PostMetricDataResponseDetails(object):
             'failed_metrics_count': 'int',
             'failed_metrics': 'list[FailedMetricRecord]'
         }
-
         self.attribute_map = {
             'failed_metrics_count': 'failedMetricsCount',
             'failed_metrics': 'failedMetrics'
         }
-
         self._failed_metrics_count = None
         self._failed_metrics = None
 

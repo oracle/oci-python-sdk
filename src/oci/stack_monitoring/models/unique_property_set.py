@@ -28,11 +28,9 @@ class UniquePropertySet(object):
         self.swagger_types = {
             'properties': 'list[str]'
         }
-
         self.attribute_map = {
             'properties': 'properties'
         }
-
         self._properties = None
 
     @property

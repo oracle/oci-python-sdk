@@ -56,14 +56,12 @@ class BasicDatabaseConnectionStringDetails(DatabaseConnectionStringDetails):
             'port': 'int',
             'protocol': 'str'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'service': 'service',
             'port': 'port',
             'protocol': 'protocol'
         }
-
         self._connection_type = None
         self._service = None
         self._port = None

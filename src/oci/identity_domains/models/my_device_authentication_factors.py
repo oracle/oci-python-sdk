@@ -106,13 +106,11 @@ class MyDeviceAuthenticationFactors(object):
             'status': 'str',
             'public_key': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'status': 'status',
             'public_key': 'publicKey'
         }
-
         self._type = None
         self._status = None
         self._public_key = None

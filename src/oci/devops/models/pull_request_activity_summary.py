@@ -78,7 +78,6 @@ class PullRequestActivitySummary(object):
             'time_occurred': 'datetime',
             'activity_type': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'principal': 'principal',
@@ -86,7 +85,6 @@ class PullRequestActivitySummary(object):
             'time_occurred': 'timeOccurred',
             'activity_type': 'activityType'
         }
-
         self._id = None
         self._principal = None
         self._pull_request_id = None

@@ -78,7 +78,6 @@ class DeployedApplicationUsage(object):
             'time_first_seen': 'datetime',
             'time_last_seen': 'datetime'
         }
-
         self.attribute_map = {
             'application_key': 'applicationKey',
             'fleet_id': 'fleetId',
@@ -92,7 +91,6 @@ class DeployedApplicationUsage(object):
             'time_first_seen': 'timeFirstSeen',
             'time_last_seen': 'timeLastSeen'
         }
-
         self._application_key = None
         self._fleet_id = None
         self._application_name = None

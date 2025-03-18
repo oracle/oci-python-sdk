@@ -104,7 +104,6 @@ class ManualApprovalDeployStageSummary(DeployStageSummary):
             'system_tags': 'dict(str, dict(str, object))',
             'approval_policy': 'ApprovalPolicy'
         }
-
         self.attribute_map = {
             'id': 'id',
             'description': 'description',
@@ -123,7 +122,6 @@ class ManualApprovalDeployStageSummary(DeployStageSummary):
             'system_tags': 'systemTags',
             'approval_policy': 'approvalPolicy'
         }
-
         self._id = None
         self._description = None
         self._display_name = None

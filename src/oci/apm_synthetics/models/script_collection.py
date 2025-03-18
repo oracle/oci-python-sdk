@@ -28,11 +28,9 @@ class ScriptCollection(object):
         self.swagger_types = {
             'items': 'list[ScriptSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

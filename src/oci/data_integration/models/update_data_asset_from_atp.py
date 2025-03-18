@@ -130,7 +130,6 @@ class UpdateDataAssetFromAtp(UpdateDataAssetDetails):
             'autonomous_db_id': 'str',
             'default_connection': 'UpdateConnectionFromAtp'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -154,7 +153,6 @@ class UpdateDataAssetFromAtp(UpdateDataAssetDetails):
             'autonomous_db_id': 'autonomousDbId',
             'default_connection': 'defaultConnection'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

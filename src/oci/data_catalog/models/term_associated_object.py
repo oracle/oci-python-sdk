@@ -38,13 +38,11 @@ class TermAssociatedObject(object):
             'name': 'str',
             'uri': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'name': 'name',
             'uri': 'uri'
         }
-
         self._key = None
         self._name = None
         self._uri = None

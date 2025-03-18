@@ -110,7 +110,6 @@ class KernelOopsEvent(Event):
             'content': 'EventContent',
             'system': 'CrashEventSystemInformation'
         }
-
         self.attribute_map = {
             'id': 'id',
             'instance_id': 'instanceId',
@@ -130,7 +129,6 @@ class KernelOopsEvent(Event):
             'content': 'content',
             'system': 'system'
         }
-
         self._id = None
         self._instance_id = None
         self._compartment_id = None

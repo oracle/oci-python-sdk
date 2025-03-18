@@ -87,14 +87,12 @@ class ExadataIormConfig(object):
             'objective': 'str',
             'db_plans': 'list[DbIormConfig]'
         }
-
         self.attribute_map = {
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'objective': 'objective',
             'db_plans': 'dbPlans'
         }
-
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._objective = None

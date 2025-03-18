@@ -42,11 +42,9 @@ class ServingMode(object):
         self.swagger_types = {
             'serving_type': 'str'
         }
-
         self.attribute_map = {
             'serving_type': 'servingType'
         }
-
         self._serving_type = None
 
     @staticmethod

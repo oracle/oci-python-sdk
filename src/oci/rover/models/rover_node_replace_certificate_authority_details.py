@@ -80,13 +80,11 @@ class RoverNodeReplaceCertificateAuthorityDetails(object):
             'cert_key_algorithm': 'str',
             'cert_signature_algorithm': 'str'
         }
-
         self.attribute_map = {
             'certificate_authority_id': 'certificateAuthorityId',
             'cert_key_algorithm': 'certKeyAlgorithm',
             'cert_signature_algorithm': 'certSignatureAlgorithm'
         }
-
         self._certificate_authority_id = None
         self._cert_key_algorithm = None
         self._cert_signature_algorithm = None

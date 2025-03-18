@@ -38,13 +38,11 @@ class ThreatType(object):
             'name': 'str',
             'attribution': 'list[DataAttribution]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
             'attribution': 'attribution'
         }
-
         self._id = None
         self._name = None
         self._attribution = None

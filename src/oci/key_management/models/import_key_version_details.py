@@ -38,13 +38,11 @@ class ImportKeyVersionDetails(object):
             'freeform_tags': 'dict(str, str)',
             'wrapped_import_key': 'WrappedImportKey'
         }
-
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
             'wrapped_import_key': 'wrappedImportKey'
         }
-
         self._defined_tags = None
         self._freeform_tags = None
         self._wrapped_import_key = None

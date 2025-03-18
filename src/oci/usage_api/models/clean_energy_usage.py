@@ -38,13 +38,11 @@ class CleanEnergyUsage(object):
             'ad': 'str',
             'usage': 'float'
         }
-
         self.attribute_map = {
             'region': 'region',
             'ad': 'ad',
             'usage': 'usage'
         }
-
         self._region = None
         self._ad = None
         self._usage = None

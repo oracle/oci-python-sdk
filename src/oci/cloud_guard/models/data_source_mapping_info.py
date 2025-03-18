@@ -33,12 +33,10 @@ class DataSourceMappingInfo(object):
             'detector_recipe_id': 'str',
             'detector_rule_id': 'str'
         }
-
         self.attribute_map = {
             'detector_recipe_id': 'detectorRecipeId',
             'detector_rule_id': 'detectorRuleId'
         }
-
         self._detector_recipe_id = None
         self._detector_rule_id = None
 

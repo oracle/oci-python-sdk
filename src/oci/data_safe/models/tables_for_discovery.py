@@ -33,12 +33,10 @@ class TablesForDiscovery(object):
             'schema_name': 'str',
             'table_names': 'list[str]'
         }
-
         self.attribute_map = {
             'schema_name': 'schemaName',
             'table_names': 'tableNames'
         }
-
         self._schema_name = None
         self._table_names = None
 

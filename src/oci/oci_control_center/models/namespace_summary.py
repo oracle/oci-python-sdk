@@ -28,11 +28,9 @@ class NamespaceSummary(object):
         self.swagger_types = {
             'namespace_name': 'str'
         }
-
         self.attribute_map = {
             'namespace_name': 'namespaceName'
         }
-
         self._namespace_name = None
 
     @property

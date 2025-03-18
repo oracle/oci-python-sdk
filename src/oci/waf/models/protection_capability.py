@@ -53,7 +53,6 @@ class ProtectionCapability(object):
             'collaborative_action_threshold': 'int',
             'collaborative_weights': 'list[CollaborativeCapabilityWeightOverride]'
         }
-
         self.attribute_map = {
             'key': 'key',
             'version': 'version',
@@ -62,7 +61,6 @@ class ProtectionCapability(object):
             'collaborative_action_threshold': 'collaborativeActionThreshold',
             'collaborative_weights': 'collaborativeWeights'
         }
-
         self._key = None
         self._version = None
         self._exclusions = None

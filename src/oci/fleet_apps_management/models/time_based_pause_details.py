@@ -35,12 +35,10 @@ class TimeBasedPauseDetails(PauseDetails):
             'kind': 'str',
             'duration_in_minutes': 'int'
         }
-
         self.attribute_map = {
             'kind': 'kind',
             'duration_in_minutes': 'durationInMinutes'
         }
-
         self._kind = None
         self._duration_in_minutes = None
         self._kind = 'TIME_BASED'

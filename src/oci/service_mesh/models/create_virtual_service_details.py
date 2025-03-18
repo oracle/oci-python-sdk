@@ -68,7 +68,6 @@ class CreateVirtualServiceDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'mesh_id': 'meshId',
             'name': 'name',
@@ -80,7 +79,6 @@ class CreateVirtualServiceDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._mesh_id = None
         self._name = None
         self._description = None

@@ -33,12 +33,10 @@ class CreateConnectionAssignmentDetails(object):
             'connection_id': 'str',
             'deployment_id': 'str'
         }
-
         self.attribute_map = {
             'connection_id': 'connectionId',
             'deployment_id': 'deploymentId'
         }
-
         self._connection_id = None
         self._deployment_id = None
 

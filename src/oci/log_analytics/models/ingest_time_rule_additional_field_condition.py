@@ -96,13 +96,11 @@ class IngestTimeRuleAdditionalFieldCondition(object):
             'condition_operator': 'str',
             'condition_value': 'str'
         }
-
         self.attribute_map = {
             'condition_field': 'conditionField',
             'condition_operator': 'conditionOperator',
             'condition_value': 'conditionValue'
         }
-
         self._condition_field = None
         self._condition_operator = None
         self._condition_value = None

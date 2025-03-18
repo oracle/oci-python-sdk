@@ -53,7 +53,6 @@ class InstanceConfigurationAttachVolumeDetails(object):
             'is_shareable': 'bool',
             'type': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'is_read_only': 'isReadOnly',
@@ -61,7 +60,6 @@ class InstanceConfigurationAttachVolumeDetails(object):
             'is_shareable': 'isShareable',
             'type': 'type'
         }
-
         self._display_name = None
         self._is_read_only = None
         self._device = None

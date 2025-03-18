@@ -33,12 +33,10 @@ class ShapeOcpuOptions(object):
             'min': 'float',
             'max': 'float'
         }
-
         self.attribute_map = {
             'min': 'min',
             'max': 'max'
         }
-
         self._min = None
         self._max = None
 

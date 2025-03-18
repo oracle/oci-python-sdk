@@ -66,7 +66,6 @@ class NewInstallationSite(object):
             'headless_mode': 'bool',
             'force_install': 'bool'
         }
-
         self.attribute_map = {
             'managed_instance_id': 'managedInstanceId',
             'release_version': 'releaseVersion',
@@ -75,7 +74,6 @@ class NewInstallationSite(object):
             'headless_mode': 'headlessMode',
             'force_install': 'forceInstall'
         }
-
         self._managed_instance_id = None
         self._release_version = None
         self._artifact_content_type = None

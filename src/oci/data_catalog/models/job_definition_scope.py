@@ -53,7 +53,6 @@ class JobDefinitionScope(object):
             'is_sample_data_extracted': 'bool',
             'sample_data_size_in_mbs': 'int'
         }
-
         self.attribute_map = {
             'folder_name': 'folderName',
             'entity_name': 'entityName',
@@ -62,7 +61,6 @@ class JobDefinitionScope(object):
             'is_sample_data_extracted': 'isSampleDataExtracted',
             'sample_data_size_in_mbs': 'sampleDataSizeInMBs'
         }
-
         self._folder_name = None
         self._entity_name = None
         self._folder_name_filter = None

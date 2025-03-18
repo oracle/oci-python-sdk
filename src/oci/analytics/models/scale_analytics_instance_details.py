@@ -28,11 +28,9 @@ class ScaleAnalyticsInstanceDetails(object):
         self.swagger_types = {
             'capacity': 'Capacity'
         }
-
         self.attribute_map = {
             'capacity': 'capacity'
         }
-
         self._capacity = None
 
     @property

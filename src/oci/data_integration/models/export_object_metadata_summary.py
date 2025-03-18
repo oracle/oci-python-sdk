@@ -63,7 +63,6 @@ class ExportObjectMetadataSummary(object):
             'name_path': 'str',
             'time_updated_in_millis': 'int'
         }
-
         self.attribute_map = {
             'key': 'key',
             'name': 'name',
@@ -74,7 +73,6 @@ class ExportObjectMetadataSummary(object):
             'name_path': 'namePath',
             'time_updated_in_millis': 'timeUpdatedInMillis'
         }
-
         self._key = None
         self._name = None
         self._identifier = None

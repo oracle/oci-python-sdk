@@ -53,14 +53,12 @@ class DatabaseConnectionString(object):
             'service': 'str',
             'protocol': 'str'
         }
-
         self.attribute_map = {
             'host_name': 'hostName',
             'port': 'port',
             'service': 'service',
             'protocol': 'protocol'
         }
-
         self._host_name = None
         self._port = None
         self._service = None

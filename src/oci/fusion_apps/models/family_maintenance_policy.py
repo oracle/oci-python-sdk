@@ -54,13 +54,11 @@ class FamilyMaintenancePolicy(object):
             'is_monthly_patching_enabled': 'bool',
             'concurrent_maintenance': 'str'
         }
-
         self.attribute_map = {
             'quarterly_upgrade_begin_times': 'quarterlyUpgradeBeginTimes',
             'is_monthly_patching_enabled': 'isMonthlyPatchingEnabled',
             'concurrent_maintenance': 'concurrentMaintenance'
         }
-
         self._quarterly_upgrade_begin_times = None
         self._is_monthly_patching_enabled = None
         self._concurrent_maintenance = None

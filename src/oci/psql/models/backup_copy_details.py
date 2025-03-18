@@ -38,13 +38,11 @@ class BackupCopyDetails(object):
             'retention_period': 'int',
             'regions': 'list[str]'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'retention_period': 'retentionPeriod',
             'regions': 'regions'
         }
-
         self._compartment_id = None
         self._retention_period = None
         self._regions = None

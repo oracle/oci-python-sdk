@@ -56,13 +56,11 @@ class SecretContentDetails(object):
             'name': 'str',
             'stage': 'str'
         }
-
         self.attribute_map = {
             'content_type': 'contentType',
             'name': 'name',
             'stage': 'stage'
         }
-
         self._content_type = None
         self._name = None
         self._stage = None

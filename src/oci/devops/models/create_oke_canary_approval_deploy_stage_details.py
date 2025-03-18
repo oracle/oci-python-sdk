@@ -69,7 +69,6 @@ class CreateOkeCanaryApprovalDeployStageDetails(CreateDeployStageDetails):
             'oke_canary_traffic_shift_deploy_stage_id': 'str',
             'approval_policy': 'ApprovalPolicy'
         }
-
         self.attribute_map = {
             'description': 'description',
             'display_name': 'displayName',
@@ -81,7 +80,6 @@ class CreateOkeCanaryApprovalDeployStageDetails(CreateDeployStageDetails):
             'oke_canary_traffic_shift_deploy_stage_id': 'okeCanaryTrafficShiftDeployStageId',
             'approval_policy': 'approvalPolicy'
         }
-
         self._description = None
         self._display_name = None
         self._deploy_stage_type = None

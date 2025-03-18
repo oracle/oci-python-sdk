@@ -75,14 +75,12 @@ class LogEntry(object):
             'timestamp': 'datetime',
             'message': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'level': 'level',
             'timestamp': 'timestamp',
             'message': 'message'
         }
-
         self._type = None
         self._level = None
         self._timestamp = None

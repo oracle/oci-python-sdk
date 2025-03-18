@@ -87,7 +87,6 @@ class CreateBastionDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'bastion_type': 'bastionType',
             'name': 'name',
@@ -101,7 +100,6 @@ class CreateBastionDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._bastion_type = None
         self._name = None
         self._compartment_id = None

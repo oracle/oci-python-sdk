@@ -28,11 +28,9 @@ class DbConfigurationOverrideCollection(object):
         self.swagger_types = {
             'items': 'list[ConfigOverrides]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

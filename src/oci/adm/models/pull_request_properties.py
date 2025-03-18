@@ -33,12 +33,10 @@ class PullRequestProperties(object):
             'pull_request_identifier': 'str',
             'pull_request_url': 'str'
         }
-
         self.attribute_map = {
             'pull_request_identifier': 'pullRequestIdentifier',
             'pull_request_url': 'pullRequestUrl'
         }
-
         self._pull_request_identifier = None
         self._pull_request_url = None
 

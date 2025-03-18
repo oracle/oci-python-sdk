@@ -28,11 +28,9 @@ class CurrentRoverBundleDetails(object):
         self.swagger_types = {
             'current_rover_bundle_version': 'str'
         }
-
         self.attribute_map = {
             'current_rover_bundle_version': 'currentRoverBundleVersion'
         }
-
         self._current_rover_bundle_version = None
 
     @property

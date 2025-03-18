@@ -33,12 +33,10 @@ class TranscriptionNormalization(object):
             'is_punctuation_enabled': 'bool',
             'filters': 'list[TranscriptionFilter]'
         }
-
         self.attribute_map = {
             'is_punctuation_enabled': 'isPunctuationEnabled',
             'filters': 'filters'
         }
-
         self._is_punctuation_enabled = None
         self._filters = None
 

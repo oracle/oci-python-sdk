@@ -38,11 +38,9 @@ class ContainerConfig(object):
         self.swagger_types = {
             'container_config_type': 'str'
         }
-
         self.attribute_map = {
             'container_config_type': 'containerConfigType'
         }
-
         self._container_config_type = None
 
     @staticmethod

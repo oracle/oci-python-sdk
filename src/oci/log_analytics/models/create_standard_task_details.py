@@ -80,7 +80,6 @@ class CreateStandardTaskDetails(CreateScheduledTaskDetails):
             'schedules': 'list[Schedule]',
             'action': 'Action'
         }
-
         self.attribute_map = {
             'kind': 'kind',
             'compartment_id': 'compartmentId',
@@ -91,7 +90,6 @@ class CreateStandardTaskDetails(CreateScheduledTaskDetails):
             'schedules': 'schedules',
             'action': 'action'
         }
-
         self._kind = None
         self._compartment_id = None
         self._display_name = None

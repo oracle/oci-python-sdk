@@ -64,7 +64,6 @@ class CreateAutoPromoteConfigDetails(CreateConfigDetails):
             'resource_type': 'str',
             'is_enabled': 'bool'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'compartment_id': 'compartmentId',
@@ -74,7 +73,6 @@ class CreateAutoPromoteConfigDetails(CreateConfigDetails):
             'resource_type': 'resourceType',
             'is_enabled': 'isEnabled'
         }
-
         self._display_name = None
         self._compartment_id = None
         self._config_type = None

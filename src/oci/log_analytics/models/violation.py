@@ -58,7 +58,6 @@ class Violation(object):
             'rule_remediation': 'str',
             'rule_type': 'str'
         }
-
         self.attribute_map = {
             'indexes': 'indexes',
             'rule_description': 'ruleDescription',
@@ -66,7 +65,6 @@ class Violation(object):
             'rule_remediation': 'ruleRemediation',
             'rule_type': 'ruleType'
         }
-
         self._indexes = None
         self._rule_description = None
         self._rule_name = None

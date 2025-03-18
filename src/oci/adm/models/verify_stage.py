@@ -83,7 +83,6 @@ class VerifyStage(RemediationRunStage):
             'pull_request_properties': 'PullRequestProperties',
             'pipeline_properties': 'PipelineProperties'
         }
-
         self.attribute_map = {
             'status': 'status',
             'time_created': 'timeCreated',
@@ -97,7 +96,6 @@ class VerifyStage(RemediationRunStage):
             'pull_request_properties': 'pullRequestProperties',
             'pipeline_properties': 'pipelineProperties'
         }
-
         self._status = None
         self._time_created = None
         self._time_started = None

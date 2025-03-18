@@ -59,7 +59,6 @@ class CreateSingleDeployStageRedeploymentDetails(CreateDeploymentDetails):
             'previous_deployment_id': 'str',
             'deploy_stage_id': 'str'
         }
-
         self.attribute_map = {
             'deploy_pipeline_id': 'deployPipelineId',
             'deployment_type': 'deploymentType',
@@ -69,7 +68,6 @@ class CreateSingleDeployStageRedeploymentDetails(CreateDeploymentDetails):
             'previous_deployment_id': 'previousDeploymentId',
             'deploy_stage_id': 'deployStageId'
         }
-
         self._deploy_pipeline_id = None
         self._deployment_type = None
         self._display_name = None

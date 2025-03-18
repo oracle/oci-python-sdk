@@ -33,12 +33,10 @@ class DimensionDetails(object):
             'name': 'str',
             'dimension_value': 'DimensionValueDetails'
         }
-
         self.attribute_map = {
             'name': 'name',
             'dimension_value': 'dimensionValue'
         }
-
         self._name = None
         self._dimension_value = None
 

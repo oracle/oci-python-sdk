@@ -35,12 +35,10 @@ class CertificatesCertificateAuthority(CaBundle):
             'type': 'str',
             'certificate_authority_id': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'certificate_authority_id': 'certificateAuthorityId'
         }
-
         self._type = None
         self._certificate_authority_id = None
         self._type = 'CERTIFICATE_AUTHORITY'

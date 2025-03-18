@@ -28,11 +28,9 @@ class SetHeaderPolicy(object):
         self.swagger_types = {
             'items': 'list[SetHeaderPolicyItem]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

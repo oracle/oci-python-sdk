@@ -45,14 +45,12 @@ class IpsecTunnelDrgAttachmentNetworkDetails(DrgAttachmentNetworkDetails):
             'ipsec_connection_id': 'str',
             'transport_attachment_id': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'id': 'id',
             'ipsec_connection_id': 'ipsecConnectionId',
             'transport_attachment_id': 'transportAttachmentId'
         }
-
         self._type = None
         self._id = None
         self._ipsec_connection_id = None

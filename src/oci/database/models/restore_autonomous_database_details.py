@@ -38,13 +38,11 @@ class RestoreAutonomousDatabaseDetails(object):
             'database_scn': 'str',
             'latest': 'bool'
         }
-
         self.attribute_map = {
             'timestamp': 'timestamp',
             'database_scn': 'databaseSCN',
             'latest': 'latest'
         }
-
         self._timestamp = None
         self._database_scn = None
         self._latest = None

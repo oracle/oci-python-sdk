@@ -38,13 +38,11 @@ class CalculateAuditVolumeAvailableDetails(object):
             'trail_locations': 'list[str]',
             'database_unique_name': 'str'
         }
-
         self.attribute_map = {
             'audit_collection_start_time': 'auditCollectionStartTime',
             'trail_locations': 'trailLocations',
             'database_unique_name': 'databaseUniqueName'
         }
-
         self._audit_collection_start_time = None
         self._trail_locations = None
         self._database_unique_name = None

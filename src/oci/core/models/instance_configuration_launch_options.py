@@ -122,7 +122,6 @@ class InstanceConfigurationLaunchOptions(object):
             'is_pv_encryption_in_transit_enabled': 'bool',
             'is_consistent_volume_naming_enabled': 'bool'
         }
-
         self.attribute_map = {
             'boot_volume_type': 'bootVolumeType',
             'firmware': 'firmware',
@@ -131,7 +130,6 @@ class InstanceConfigurationLaunchOptions(object):
             'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled',
             'is_consistent_volume_naming_enabled': 'isConsistentVolumeNamingEnabled'
         }
-
         self._boot_volume_type = None
         self._firmware = None
         self._network_type = None

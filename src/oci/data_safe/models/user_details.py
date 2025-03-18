@@ -62,7 +62,6 @@ class UserDetails(object):
             'is_user_predefined_by_oracle': 'bool',
             'authentication_type': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'status': 'status',
@@ -71,7 +70,6 @@ class UserDetails(object):
             'is_user_predefined_by_oracle': 'isUserPredefinedByOracle',
             'authentication_type': 'authenticationType'
         }
-
         self._name = None
         self._status = None
         self._profile = None

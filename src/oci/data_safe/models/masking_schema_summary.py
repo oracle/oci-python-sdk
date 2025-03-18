@@ -28,11 +28,9 @@ class MaskingSchemaSummary(object):
         self.swagger_types = {
             'schema_name': 'str'
         }
-
         self.attribute_map = {
             'schema_name': 'schemaName'
         }
-
         self._schema_name = None
 
     @property

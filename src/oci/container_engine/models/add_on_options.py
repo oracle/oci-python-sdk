@@ -33,12 +33,10 @@ class AddOnOptions(object):
             'is_kubernetes_dashboard_enabled': 'bool',
             'is_tiller_enabled': 'bool'
         }
-
         self.attribute_map = {
             'is_kubernetes_dashboard_enabled': 'isKubernetesDashboardEnabled',
             'is_tiller_enabled': 'isTillerEnabled'
         }
-
         self._is_kubernetes_dashboard_enabled = None
         self._is_tiller_enabled = None
 

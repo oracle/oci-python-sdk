@@ -73,7 +73,6 @@ class UpdateTaskRunDetails(object):
             'task_schedule_key': 'str',
             'registry_metadata': 'RegistryMetadata'
         }
-
         self.attribute_map = {
             'key': 'key',
             'status': 'status',
@@ -85,7 +84,6 @@ class UpdateTaskRunDetails(object):
             'task_schedule_key': 'taskScheduleKey',
             'registry_metadata': 'registryMetadata'
         }
-
         self._key = None
         self._status = None
         self._model_type = None

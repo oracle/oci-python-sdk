@@ -45,14 +45,12 @@ class HostResourceAllocation(HostConfigurationMetricGroup):
             'total_cpus': 'int',
             'total_memory_in_gb': 'float'
         }
-
         self.attribute_map = {
             'metric_name': 'metricName',
             'time_collected': 'timeCollected',
             'total_cpus': 'totalCpus',
             'total_memory_in_gb': 'totalMemoryInGB'
         }
-
         self._metric_name = None
         self._time_collected = None
         self._total_cpus = None

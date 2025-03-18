@@ -33,12 +33,10 @@ class ResourceTypeImportContract(object):
             'resource_type': 'str',
             'parameters': 'list[ParameterDefinition]'
         }
-
         self.attribute_map = {
             'resource_type': 'resourceType',
             'parameters': 'parameters'
         }
-
         self._resource_type = None
         self._parameters = None
 

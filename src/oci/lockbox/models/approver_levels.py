@@ -38,13 +38,11 @@ class ApproverLevels(object):
             'level2': 'ApproverInfo',
             'level3': 'ApproverInfo'
         }
-
         self.attribute_map = {
             'level1': 'level1',
             'level2': 'level2',
             'level3': 'level3'
         }
-
         self._level1 = None
         self._level2 = None
         self._level3 = None

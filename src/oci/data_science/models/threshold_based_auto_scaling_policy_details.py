@@ -52,7 +52,6 @@ class ThresholdBasedAutoScalingPolicyDetails(AutoScalingPolicyDetails):
             'minimum_instance_count': 'int',
             'initial_instance_count': 'int'
         }
-
         self.attribute_map = {
             'auto_scaling_policy_type': 'autoScalingPolicyType',
             'rules': 'rules',
@@ -60,7 +59,6 @@ class ThresholdBasedAutoScalingPolicyDetails(AutoScalingPolicyDetails):
             'minimum_instance_count': 'minimumInstanceCount',
             'initial_instance_count': 'initialInstanceCount'
         }
-
         self._auto_scaling_policy_type = None
         self._rules = None
         self._maximum_instance_count = None

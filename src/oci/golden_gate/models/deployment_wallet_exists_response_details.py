@@ -28,11 +28,9 @@ class DeploymentWalletExistsResponseDetails(object):
         self.swagger_types = {
             'is_ogg_wallet_exists': 'bool'
         }
-
         self.attribute_map = {
             'is_ogg_wallet_exists': 'isOggWalletExists'
         }
-
         self._is_ogg_wallet_exists = None
 
     @property

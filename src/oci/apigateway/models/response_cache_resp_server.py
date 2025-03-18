@@ -33,12 +33,10 @@ class ResponseCacheRespServer(object):
             'host': 'str',
             'port': 'int'
         }
-
         self.attribute_map = {
             'host': 'host',
             'port': 'port'
         }
-
         self._host = None
         self._port = None
 

@@ -52,13 +52,11 @@ class ProcessRecommendationDetails(object):
             'recommendation_status': 'str',
             'properties': 'dict(str, dict(str, str))'
         }
-
         self.attribute_map = {
             'recommendation_key': 'recommendationKey',
             'recommendation_status': 'recommendationStatus',
             'properties': 'properties'
         }
-
         self._recommendation_key = None
         self._recommendation_status = None
         self._properties = None

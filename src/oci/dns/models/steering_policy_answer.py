@@ -51,7 +51,6 @@ class SteeringPolicyAnswer(object):
             'pool': 'str',
             'is_disabled': 'bool'
         }
-
         self.attribute_map = {
             'name': 'name',
             'rtype': 'rtype',
@@ -59,7 +58,6 @@ class SteeringPolicyAnswer(object):
             'pool': 'pool',
             'is_disabled': 'isDisabled'
         }
-
         self._name = None
         self._rtype = None
         self._rdata = None

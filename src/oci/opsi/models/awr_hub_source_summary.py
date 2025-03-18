@@ -248,7 +248,6 @@ class AwrHubSourceSummary(object):
             'lifecycle_state': 'str',
             'status': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'awr_hub_id': 'awrHubId',
@@ -274,7 +273,6 @@ class AwrHubSourceSummary(object):
             'lifecycle_state': 'lifecycleState',
             'status': 'status'
         }
-
         self._name = None
         self._awr_hub_id = None
         self._compartment_id = None

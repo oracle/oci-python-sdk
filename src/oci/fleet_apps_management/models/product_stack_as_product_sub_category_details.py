@@ -51,7 +51,6 @@ class ProductStackAsProductSubCategoryDetails(ProductStackSubCategoryDetails):
             'components': 'list[str]',
             'patch_types': 'list[ConfigAssociationDetails]'
         }
-
         self.attribute_map = {
             'sub_category': 'subCategory',
             'versions': 'versions',
@@ -59,7 +58,6 @@ class ProductStackAsProductSubCategoryDetails(ProductStackSubCategoryDetails):
             'components': 'components',
             'patch_types': 'patchTypes'
         }
-
         self._sub_category = None
         self._versions = None
         self._credentials = None

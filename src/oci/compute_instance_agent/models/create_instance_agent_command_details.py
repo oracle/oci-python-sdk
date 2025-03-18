@@ -48,7 +48,6 @@ class CreateInstanceAgentCommandDetails(object):
             'target': 'InstanceAgentCommandTarget',
             'content': 'InstanceAgentCommandContent'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'execution_time_out_in_seconds': 'executionTimeOutInSeconds',
@@ -56,7 +55,6 @@ class CreateInstanceAgentCommandDetails(object):
             'target': 'target',
             'content': 'content'
         }
-
         self._compartment_id = None
         self._execution_time_out_in_seconds = None
         self._display_name = None

@@ -48,7 +48,6 @@ class UpdateMigrationPlanDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'strategies': 'strategies',
@@ -56,7 +55,6 @@ class UpdateMigrationPlanDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._display_name = None
         self._strategies = None
         self._target_environments = None

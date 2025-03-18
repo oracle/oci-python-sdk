@@ -52,14 +52,12 @@ class UpdateOccCapacityRequestDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'request_state': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'request_state': 'requestState'
         }
-
         self._display_name = None
         self._freeform_tags = None
         self._defined_tags = None

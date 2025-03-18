@@ -55,7 +55,6 @@ class DbCredentialSummary(object):
             'time_expires': 'datetime',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'user_id': 'userId',
@@ -64,7 +63,6 @@ class DbCredentialSummary(object):
             'time_expires': 'timeExpires',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._id = None
         self._user_id = None
         self._description = None

@@ -70,7 +70,6 @@ class CreateAndroidChannelDetails(CreateChannelDetails):
             'is_client_authentication_enabled': 'bool',
             'bot_id': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'description': 'description',
@@ -82,7 +81,6 @@ class CreateAndroidChannelDetails(CreateChannelDetails):
             'is_client_authentication_enabled': 'isClientAuthenticationEnabled',
             'bot_id': 'botId'
         }
-
         self._name = None
         self._description = None
         self._type = None

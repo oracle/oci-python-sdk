@@ -40,13 +40,11 @@ class OciDatabaseConfig(IndexConfig):
             'database_connection': 'DatabaseConnection',
             'database_functions': 'list[DatabaseFunction]'
         }
-
         self.attribute_map = {
             'index_config_type': 'indexConfigType',
             'database_connection': 'databaseConnection',
             'database_functions': 'databaseFunctions'
         }
-
         self._index_config_type = None
         self._database_connection = None
         self._database_functions = None

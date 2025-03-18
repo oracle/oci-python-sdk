@@ -51,13 +51,11 @@ class AppOutboundAssertionAttributes(object):
             'ref': 'str',
             'direction': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ref': '$ref',
             'direction': 'direction'
         }
-
         self._value = None
         self._ref = None
         self._direction = None

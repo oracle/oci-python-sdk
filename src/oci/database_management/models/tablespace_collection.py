@@ -28,11 +28,9 @@ class TablespaceCollection(object):
         self.swagger_types = {
             'items': 'list[TablespaceSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

@@ -40,13 +40,11 @@ class EntityListDataset(CustomizationDatasetDetails):
             'reference_examples': 'list[str]',
             'entity_list': 'list[EntityList]'
         }
-
         self.attribute_map = {
             'dataset_type': 'datasetType',
             'reference_examples': 'referenceExamples',
             'entity_list': 'entityList'
         }
-
         self._dataset_type = None
         self._reference_examples = None
         self._entity_list = None

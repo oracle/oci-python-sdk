@@ -33,12 +33,10 @@ class UpdateNetworkDetails(object):
             'nsg_ids': 'list[str]',
             'is_reader_endpoint_enabled': 'bool'
         }
-
         self.attribute_map = {
             'nsg_ids': 'nsgIds',
             'is_reader_endpoint_enabled': 'isReaderEndpointEnabled'
         }
-
         self._nsg_ids = None
         self._is_reader_endpoint_enabled = None
 

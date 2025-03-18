@@ -55,7 +55,6 @@ class UpdateVmTargetAssetDetails(UpdateTargetAssetDetails):
             'ms_license': 'str',
             'user_spec': 'LaunchInstanceDetails'
         }
-
         self.attribute_map = {
             'type': 'type',
             'is_excluded_from_execution': 'isExcludedFromExecution',
@@ -64,7 +63,6 @@ class UpdateVmTargetAssetDetails(UpdateTargetAssetDetails):
             'ms_license': 'msLicense',
             'user_spec': 'userSpec'
         }
-
         self._type = None
         self._is_excluded_from_execution = None
         self._preferred_shape_type = None

@@ -39,13 +39,11 @@ class LogEntry(object):
             'id': 'str',
             'time': 'datetime'
         }
-
         self.attribute_map = {
             'data': 'data',
             'id': 'id',
             'time': 'time'
         }
-
         self._data = None
         self._id = None
         self._time = None

@@ -49,13 +49,11 @@ class ControlAccessUsingHttpMethodsRule(Rule):
             'allowed_methods': 'list[str]',
             'status_code': 'int'
         }
-
         self.attribute_map = {
             'action': 'action',
             'allowed_methods': 'allowedMethods',
             'status_code': 'statusCode'
         }
-
         self._action = None
         self._allowed_methods = None
         self._status_code = None

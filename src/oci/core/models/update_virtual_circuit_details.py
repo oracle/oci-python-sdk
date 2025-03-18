@@ -147,7 +147,6 @@ class UpdateVirtualCircuitDetails(object):
             'reference_comment': 'str',
             'ip_mtu': 'str'
         }
-
         self.attribute_map = {
             'bandwidth_shape_name': 'bandwidthShapeName',
             'cross_connect_mappings': 'crossConnectMappings',
@@ -166,7 +165,6 @@ class UpdateVirtualCircuitDetails(object):
             'reference_comment': 'referenceComment',
             'ip_mtu': 'ipMtu'
         }
-
         self._bandwidth_shape_name = None
         self._cross_connect_mappings = None
         self._routing_policy = None

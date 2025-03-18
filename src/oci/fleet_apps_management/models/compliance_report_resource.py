@@ -86,7 +86,6 @@ class ComplianceReportResource(object):
             'compliance_state': 'str',
             'products': 'list[ComplianceReportProduct]'
         }
-
         self.attribute_map = {
             'resource_id': 'resourceId',
             'resource_name': 'resourceName',
@@ -98,7 +97,6 @@ class ComplianceReportResource(object):
             'compliance_state': 'complianceState',
             'products': 'products'
         }
-
         self._resource_id = None
         self._resource_name = None
         self._resource_type = None

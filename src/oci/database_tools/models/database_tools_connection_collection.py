@@ -28,11 +28,9 @@ class DatabaseToolsConnectionCollection(object):
         self.swagger_types = {
             'items': 'list[DatabaseToolsConnectionSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

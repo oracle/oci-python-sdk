@@ -52,7 +52,6 @@ class DbVersionSummary(object):
             'is_preview_db_version': 'bool',
             'is_upgrade_supported': 'bool'
         }
-
         self.attribute_map = {
             'version': 'version',
             'is_latest_for_major_version': 'isLatestForMajorVersion',
@@ -60,7 +59,6 @@ class DbVersionSummary(object):
             'is_preview_db_version': 'isPreviewDbVersion',
             'is_upgrade_supported': 'isUpgradeSupported'
         }
-
         self._version = None
         self._is_latest_for_major_version = None
         self._supports_pdb = None

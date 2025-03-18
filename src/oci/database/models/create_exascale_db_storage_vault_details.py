@@ -83,7 +83,6 @@ class CreateExascaleDbStorageVaultDetails(object):
             'cluster_placement_group_id': 'str',
             'subscription_id': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
@@ -98,7 +97,6 @@ class CreateExascaleDbStorageVaultDetails(object):
             'cluster_placement_group_id': 'clusterPlacementGroupId',
             'subscription_id': 'subscriptionId'
         }
-
         self._compartment_id = None
         self._display_name = None
         self._description = None

@@ -187,7 +187,6 @@ class SqlEndpoint(object):
             'banner_message': 'str',
             'network_configuration': 'SqlEndpointNetworkConfiguration'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -216,7 +215,6 @@ class SqlEndpoint(object):
             'banner_message': 'bannerMessage',
             'network_configuration': 'networkConfiguration'
         }
-
         self._id = None
         self._display_name = None
         self._compartment_id = None

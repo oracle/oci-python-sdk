@@ -103,7 +103,6 @@ class SightingEndpointSummary(object):
             'time_first_occurred': 'datetime',
             'time_last_occurred': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'sighting_id': 'sightingId',
@@ -122,7 +121,6 @@ class SightingEndpointSummary(object):
             'time_first_occurred': 'timeFirstOccurred',
             'time_last_occurred': 'timeLastOccurred'
         }
-
         self._id = None
         self._sighting_id = None
         self._problem_id = None

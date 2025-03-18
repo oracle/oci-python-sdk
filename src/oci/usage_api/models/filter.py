@@ -57,14 +57,12 @@ class Filter(object):
             'tags': 'list[Tag]',
             'filters': 'list[Filter]'
         }
-
         self.attribute_map = {
             'operator': 'operator',
             'dimensions': 'dimensions',
             'tags': 'tags',
             'filters': 'filters'
         }
-
         self._operator = None
         self._dimensions = None
         self._tags = None

@@ -34,12 +34,10 @@ class ListenerRuleSummary(object):
             'rule': 'Rule',
             'rule_set_name': 'str'
         }
-
         self.attribute_map = {
             'rule': 'rule',
             'rule_set_name': 'ruleSetName'
         }
-
         self._rule = None
         self._rule_set_name = None
 

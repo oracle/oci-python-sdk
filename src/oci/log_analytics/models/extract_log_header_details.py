@@ -33,12 +33,10 @@ class ExtractLogHeaderDetails(object):
             'log_key': 'str',
             'header_values': 'list[str]'
         }
-
         self.attribute_map = {
             'log_key': 'logKey',
             'header_values': 'headerValues'
         }
-
         self._log_key = None
         self._header_values = None
 

@@ -35,12 +35,10 @@ class CreatePipelineRunScheduleActionDetails(ScheduleHttpActionDetails):
             'http_action_type': 'str',
             'create_pipeline_run_details': 'CreatePipelineRunDetails'
         }
-
         self.attribute_map = {
             'http_action_type': 'httpActionType',
             'create_pipeline_run_details': 'createPipelineRunDetails'
         }
-
         self._http_action_type = None
         self._create_pipeline_run_details = None
         self._http_action_type = 'CREATE_PIPELINE_RUN'

@@ -63,7 +63,6 @@ class UpdateBootVolumeDetails(object):
             'boot_volume_replicas': 'list[BootVolumeReplicaDetails]',
             'autotune_policies': 'list[AutotunePolicy]'
         }
-
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
@@ -74,7 +73,6 @@ class UpdateBootVolumeDetails(object):
             'boot_volume_replicas': 'bootVolumeReplicas',
             'autotune_policies': 'autotunePolicies'
         }
-
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None

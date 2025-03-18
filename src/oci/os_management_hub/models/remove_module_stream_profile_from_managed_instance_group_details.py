@@ -48,7 +48,6 @@ class RemoveModuleStreamProfileFromManagedInstanceGroupDetails(object):
             'software_source_id': 'str',
             'work_request_details': 'WorkRequestDetails'
         }
-
         self.attribute_map = {
             'module_name': 'moduleName',
             'stream_name': 'streamName',
@@ -56,7 +55,6 @@ class RemoveModuleStreamProfileFromManagedInstanceGroupDetails(object):
             'software_source_id': 'softwareSourceId',
             'work_request_details': 'workRequestDetails'
         }
-
         self._module_name = None
         self._stream_name = None
         self._profile_name = None

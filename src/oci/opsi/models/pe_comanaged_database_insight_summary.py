@@ -142,7 +142,6 @@ class PeComanagedDatabaseInsightSummary(DatabaseInsightSummary):
             'parent_id': 'str',
             'root_id': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'database_id': 'databaseId',
@@ -168,7 +167,6 @@ class PeComanagedDatabaseInsightSummary(DatabaseInsightSummary):
             'parent_id': 'parentId',
             'root_id': 'rootId'
         }
-
         self._id = None
         self._database_id = None
         self._compartment_id = None

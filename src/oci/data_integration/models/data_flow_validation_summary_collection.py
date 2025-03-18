@@ -28,11 +28,9 @@ class DataFlowValidationSummaryCollection(object):
         self.swagger_types = {
             'items': 'list[DataFlowValidationSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

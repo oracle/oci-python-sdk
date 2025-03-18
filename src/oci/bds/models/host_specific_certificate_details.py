@@ -48,13 +48,11 @@ class HostSpecificCertificateDetails(object):
             'certificate_type': 'str',
             'time_expiry': 'datetime'
         }
-
         self.attribute_map = {
             'host_name': 'hostName',
             'certificate_type': 'certificateType',
             'time_expiry': 'timeExpiry'
         }
-
         self._host_name = None
         self._certificate_type = None
         self._time_expiry = None

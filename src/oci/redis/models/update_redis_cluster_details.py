@@ -63,7 +63,6 @@ class UpdateRedisClusterDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'shard_count': 'shardCount',
             'display_name': 'displayName',
@@ -74,7 +73,6 @@ class UpdateRedisClusterDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._shard_count = None
         self._display_name = None
         self._node_count = None

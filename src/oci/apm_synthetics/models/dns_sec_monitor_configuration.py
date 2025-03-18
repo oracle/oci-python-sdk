@@ -109,7 +109,6 @@ class DnsSecMonitorConfiguration(MonitorConfiguration):
             'record_type': 'str',
             'verify_response_content': 'str'
         }
-
         self.attribute_map = {
             'config_type': 'configType',
             'is_failure_retried': 'isFailureRetried',
@@ -117,7 +116,6 @@ class DnsSecMonitorConfiguration(MonitorConfiguration):
             'record_type': 'recordType',
             'verify_response_content': 'verifyResponseContent'
         }
-
         self._config_type = None
         self._is_failure_retried = None
         self._dns_configuration = None

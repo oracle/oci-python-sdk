@@ -58,7 +58,6 @@ class ProfileLevelSummary(object):
             'time_created': 'datetime',
             'time_updated': 'datetime'
         }
-
         self.attribute_map = {
             'name': 'name',
             'recommendation_name': 'recommendationName',
@@ -68,7 +67,6 @@ class ProfileLevelSummary(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated'
         }
-
         self._name = None
         self._recommendation_name = None
         self._metrics = None

@@ -50,7 +50,6 @@ class RecurrentMaintenanceWindowSchedule(MaintenanceWindowSchedule):
             'maintenance_window_recurrences': 'str',
             'maintenance_window_duration': 'str'
         }
-
         self.attribute_map = {
             'schedule_type': 'scheduleType',
             'time_maintenance_window_start': 'timeMaintenanceWindowStart',
@@ -58,7 +57,6 @@ class RecurrentMaintenanceWindowSchedule(MaintenanceWindowSchedule):
             'maintenance_window_recurrences': 'maintenanceWindowRecurrences',
             'maintenance_window_duration': 'maintenanceWindowDuration'
         }
-
         self._schedule_type = None
         self._time_maintenance_window_start = None
         self._time_maintenance_window_end = None

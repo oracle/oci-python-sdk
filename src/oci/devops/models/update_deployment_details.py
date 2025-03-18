@@ -50,14 +50,12 @@ class UpdateDeploymentDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'deployment_type': 'deploymentType',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._deployment_type = None
         self._display_name = None
         self._freeform_tags = None

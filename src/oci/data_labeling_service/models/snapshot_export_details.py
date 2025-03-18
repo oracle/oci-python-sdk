@@ -37,11 +37,9 @@ class SnapshotExportDetails(object):
         self.swagger_types = {
             'export_type': 'str'
         }
-
         self.attribute_map = {
             'export_type': 'exportType'
         }
-
         self._export_type = None
 
     @staticmethod

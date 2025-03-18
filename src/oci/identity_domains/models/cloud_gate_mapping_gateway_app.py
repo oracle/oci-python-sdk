@@ -48,13 +48,11 @@ class CloudGateMappingGatewayApp(object):
             'value': 'str',
             'ref': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'value': 'value',
             'ref': '$ref'
         }
-
         self._name = None
         self._value = None
         self._ref = None

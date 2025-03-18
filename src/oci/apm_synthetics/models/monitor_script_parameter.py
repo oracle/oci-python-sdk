@@ -33,12 +33,10 @@ class MonitorScriptParameter(object):
             'param_name': 'str',
             'param_value': 'str'
         }
-
         self.attribute_map = {
             'param_name': 'paramName',
             'param_value': 'paramValue'
         }
-
         self._param_name = None
         self._param_value = None
 

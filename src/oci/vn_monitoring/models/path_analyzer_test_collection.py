@@ -28,11 +28,9 @@ class PathAnalyzerTestCollection(object):
         self.swagger_types = {
             'items': 'list[PathAnalyzerTestSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

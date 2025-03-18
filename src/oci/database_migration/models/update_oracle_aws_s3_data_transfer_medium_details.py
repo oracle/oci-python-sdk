@@ -56,7 +56,6 @@ class UpdateOracleAwsS3DataTransferMediumDetails(UpdateOracleDataTransferMediumD
             'secret_access_key': 'str',
             'object_storage_bucket': 'ObjectStoreBucket'
         }
-
         self.attribute_map = {
             'type': 'type',
             'name': 'name',
@@ -65,7 +64,6 @@ class UpdateOracleAwsS3DataTransferMediumDetails(UpdateOracleDataTransferMediumD
             'secret_access_key': 'secretAccessKey',
             'object_storage_bucket': 'objectStorageBucket'
         }
-
         self._type = None
         self._name = None
         self._region = None

@@ -79,7 +79,6 @@ class UpdateFunctionDeployStageDetails(UpdateDeployStageDetails):
             'max_memory_in_mbs': 'int',
             'function_timeout_in_seconds': 'int'
         }
-
         self.attribute_map = {
             'description': 'description',
             'display_name': 'displayName',
@@ -93,7 +92,6 @@ class UpdateFunctionDeployStageDetails(UpdateDeployStageDetails):
             'max_memory_in_mbs': 'maxMemoryInMBs',
             'function_timeout_in_seconds': 'functionTimeoutInSeconds'
         }
-
         self._description = None
         self._display_name = None
         self._deploy_stage_type = None

@@ -52,14 +52,12 @@ class CreateOccCustomerDetails(object):
             'description': 'str',
             'status': 'str'
         }
-
         self.attribute_map = {
             'tenancy_id': 'tenancyId',
             'display_name': 'displayName',
             'description': 'description',
             'status': 'status'
         }
-
         self._tenancy_id = None
         self._display_name = None
         self._description = None

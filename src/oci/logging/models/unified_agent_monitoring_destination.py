@@ -33,12 +33,10 @@ class UnifiedAgentMonitoringDestination(object):
             'compartment_id': 'str',
             'metrics_namespace': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'metrics_namespace': 'metricsNamespace'
         }
-
         self._compartment_id = None
         self._metrics_namespace = None
 

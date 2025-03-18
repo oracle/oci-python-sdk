@@ -45,14 +45,12 @@ class GenericEntity(Entity):
             'labels': 'list[Label]',
             'extended_metadata': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'entity_type': 'entityType',
             'document_entity_metadata': 'documentEntityMetadata',
             'labels': 'labels',
             'extended_metadata': 'extendedMetadata'
         }
-
         self._entity_type = None
         self._document_entity_metadata = None
         self._labels = None

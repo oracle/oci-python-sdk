@@ -38,13 +38,11 @@ class StoragePerformanceDetails(object):
             'balanced_disk_performance': 'DiskPerformanceDetails',
             'high_disk_performance': 'DiskPerformanceDetails'
         }
-
         self.attribute_map = {
             'size_in_gbs': 'sizeInGBs',
             'balanced_disk_performance': 'balancedDiskPerformance',
             'high_disk_performance': 'highDiskPerformance'
         }
-
         self._size_in_gbs = None
         self._balanced_disk_performance = None
         self._high_disk_performance = None

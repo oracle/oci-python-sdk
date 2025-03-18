@@ -28,11 +28,9 @@ class TargetAlertPolicyAssociationCollection(object):
         self.swagger_types = {
             'items': 'list[TargetAlertPolicyAssociationSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

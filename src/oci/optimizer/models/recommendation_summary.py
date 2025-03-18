@@ -181,7 +181,6 @@ class RecommendationSummary(object):
             'supported_levels': 'SupportedLevels',
             'extended_metadata': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -200,7 +199,6 @@ class RecommendationSummary(object):
             'supported_levels': 'supportedLevels',
             'extended_metadata': 'extendedMetadata'
         }
-
         self._id = None
         self._compartment_id = None
         self._category_id = None

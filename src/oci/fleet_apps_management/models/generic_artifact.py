@@ -28,11 +28,9 @@ class GenericArtifact(object):
         self.swagger_types = {
             'content': 'ContentDetails'
         }
-
         self.attribute_map = {
             'content': 'content'
         }
-
         self._content = None
 
     @property

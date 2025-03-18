@@ -53,7 +53,6 @@ class FleetErrorSummary(object):
             'time_first_seen': 'datetime',
             'time_last_seen': 'datetime'
         }
-
         self.attribute_map = {
             'fleet_id': 'fleetId',
             'fleet_name': 'fleetName',
@@ -62,7 +61,6 @@ class FleetErrorSummary(object):
             'time_first_seen': 'timeFirstSeen',
             'time_last_seen': 'timeLastSeen'
         }
-
         self._fleet_id = None
         self._fleet_name = None
         self._compartment_id = None

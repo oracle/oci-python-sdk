@@ -63,7 +63,6 @@ class CreatePatternDetails(object):
             'check_failure_limit': 'int',
             'properties': 'dict(str, dict(str, str))'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
@@ -74,7 +73,6 @@ class CreatePatternDetails(object):
             'check_failure_limit': 'checkFailureLimit',
             'properties': 'properties'
         }
-
         self._display_name = None
         self._description = None
         self._expression = None

@@ -34,11 +34,9 @@ class TrimHorizonStreamingCursor(StreamingCursorDetails):
         self.swagger_types = {
             'kind': 'str'
         }
-
         self.attribute_map = {
             'kind': 'kind'
         }
-
         self._kind = None
         self._kind = 'TRIM_HORIZON'
 

@@ -34,12 +34,10 @@ class CreateTargetResponderRecipeDetails(object):
             'responder_recipe_id': 'str',
             'responder_rules': 'list[UpdateTargetRecipeResponderRuleDetails]'
         }
-
         self.attribute_map = {
             'responder_recipe_id': 'responderRecipeId',
             'responder_rules': 'responderRules'
         }
-
         self._responder_recipe_id = None
         self._responder_rules = None
 

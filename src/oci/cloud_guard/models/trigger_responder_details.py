@@ -33,12 +33,10 @@ class TriggerResponderDetails(object):
             'responder_rule_id': 'str',
             'configurations': 'list[ResponderConfiguration]'
         }
-
         self.attribute_map = {
             'responder_rule_id': 'responderRuleId',
             'configurations': 'configurations'
         }
-
         self._responder_rule_id = None
         self._configurations = None
 

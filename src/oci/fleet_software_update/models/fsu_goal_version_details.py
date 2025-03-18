@@ -63,13 +63,11 @@ class FsuGoalVersionDetails(object):
             'home_policy': 'str',
             'new_home_prefix': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'home_policy': 'homePolicy',
             'new_home_prefix': 'newHomePrefix'
         }
-
         self._type = None
         self._home_policy = None
         self._new_home_prefix = None

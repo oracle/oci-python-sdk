@@ -28,11 +28,9 @@ class RequestSummarizedApplicationsDetails(object):
         self.swagger_types = {
             'idcs_open_id': 'str'
         }
-
         self.attribute_map = {
             'idcs_open_id': 'idcsOpenId'
         }
-
         self._idcs_open_id = None
 
     @property

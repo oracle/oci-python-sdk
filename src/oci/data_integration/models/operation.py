@@ -47,12 +47,10 @@ class Operation(object):
             'model_type': 'str',
             'metadata': 'ObjectMetadata'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'metadata': 'metadata'
         }
-
         self._model_type = None
         self._metadata = None
 

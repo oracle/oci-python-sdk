@@ -83,7 +83,6 @@ class ResourceProfileSummary(object):
             'time_last_occurred': 'datetime',
             'problems_count': 'int'
         }
-
         self.attribute_map = {
             'sightings_count': 'sightingsCount',
             'id': 'id',
@@ -98,7 +97,6 @@ class ResourceProfileSummary(object):
             'time_last_occurred': 'timeLastOccurred',
             'problems_count': 'problemsCount'
         }
-
         self._sightings_count = None
         self._id = None
         self._resource_id = None

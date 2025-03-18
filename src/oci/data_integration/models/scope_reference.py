@@ -60,13 +60,11 @@ class ScopeReference(object):
             'reference_type': 'str',
             'ref_object_name': 'str'
         }
-
         self.attribute_map = {
             'reference_object': 'referenceObject',
             'reference_type': 'referenceType',
             'ref_object_name': 'refObjectName'
         }
-
         self._reference_object = None
         self._reference_type = None
         self._ref_object_name = None

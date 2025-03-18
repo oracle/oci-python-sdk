@@ -67,7 +67,6 @@ class CreateClusterNetworkDetails(object):
             'placement_configuration': 'ClusterNetworkPlacementConfigurationDetails',
             'cluster_configuration': 'ClusterConfigurationDetails'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
@@ -77,7 +76,6 @@ class CreateClusterNetworkDetails(object):
             'placement_configuration': 'placementConfiguration',
             'cluster_configuration': 'clusterConfiguration'
         }
-
         self._compartment_id = None
         self._defined_tags = None
         self._display_name = None

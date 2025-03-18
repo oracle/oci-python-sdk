@@ -33,12 +33,10 @@ class CaBundleResponse(object):
             'rover_node_id': 'str',
             'ca_details': 'CaDetails'
         }
-
         self.attribute_map = {
             'rover_node_id': 'roverNodeId',
             'ca_details': 'caDetails'
         }
-
         self._rover_node_id = None
         self._ca_details = None
 

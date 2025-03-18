@@ -30,11 +30,9 @@ class NoContentValidation(ContentValidation):
         self.swagger_types = {
             'validation_type': 'str'
         }
-
         self.attribute_map = {
             'validation_type': 'validationType'
         }
-
         self._validation_type = None
         self._validation_type = 'NONE'
 

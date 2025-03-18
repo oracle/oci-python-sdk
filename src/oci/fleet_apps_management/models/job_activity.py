@@ -113,7 +113,6 @@ class JobActivity(object):
             'description': 'str',
             'resource_level_executions': 'list[EntityExecutionDetails]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'status': 'status',
@@ -124,7 +123,6 @@ class JobActivity(object):
             'description': 'description',
             'resource_level_executions': 'resourceLevelExecutions'
         }
-
         self._id = None
         self._status = None
         self._time_started = None

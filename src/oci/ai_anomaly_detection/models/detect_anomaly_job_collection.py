@@ -28,11 +28,9 @@ class DetectAnomalyJobCollection(object):
         self.swagger_types = {
             'items': 'list[DetectAnomalyJobSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

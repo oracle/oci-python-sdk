@@ -179,7 +179,6 @@ class UpsertLogAnalyticsParserDetails(object):
             'categories': 'list[LogAnalyticsCategory]',
             'is_position_aware': 'bool'
         }
-
         self.attribute_map = {
             'content': 'content',
             'description': 'description',
@@ -209,7 +208,6 @@ class UpsertLogAnalyticsParserDetails(object):
             'categories': 'categories',
             'is_position_aware': 'isPositionAware'
         }
-
         self._content = None
         self._description = None
         self._display_name = None

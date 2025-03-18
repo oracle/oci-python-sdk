@@ -40,13 +40,11 @@ class StaticDateRange(DateRange):
             'time_usage_started': 'datetime',
             'time_usage_ended': 'datetime'
         }
-
         self.attribute_map = {
             'date_range_type': 'dateRangeType',
             'time_usage_started': 'timeUsageStarted',
             'time_usage_ended': 'timeUsageEnded'
         }
-
         self._date_range_type = None
         self._time_usage_started = None
         self._time_usage_ended = None

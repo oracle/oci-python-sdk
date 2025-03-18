@@ -50,12 +50,10 @@ class UpdateResourceActionDetails(object):
             'status': 'str',
             'time_status_end': 'datetime'
         }
-
         self.attribute_map = {
             'status': 'status',
             'time_status_end': 'timeStatusEnd'
         }
-
         self._status = None
         self._time_status_end = None
 

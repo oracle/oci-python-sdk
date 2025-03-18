@@ -35,12 +35,10 @@ class ComputeInstanceGroupFailurePolicyByPercentage(ComputeInstanceGroupFailureP
             'policy_type': 'str',
             'failure_percentage': 'int'
         }
-
         self.attribute_map = {
             'policy_type': 'policyType',
             'failure_percentage': 'failurePercentage'
         }
-
         self._policy_type = None
         self._failure_percentage = None
         self._policy_type = 'COMPUTE_INSTANCE_GROUP_FAILURE_POLICY_BY_PERCENTAGE'

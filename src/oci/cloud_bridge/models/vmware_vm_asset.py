@@ -116,7 +116,6 @@ class VmwareVmAsset(Asset):
             'vmware_vm': 'VmwareVmProperties',
             'vmware_v_center': 'VmwareVCenterProperties'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'inventory_id': 'inventoryId',
@@ -137,7 +136,6 @@ class VmwareVmAsset(Asset):
             'vmware_vm': 'vmwareVm',
             'vmware_v_center': 'vmwareVCenter'
         }
-
         self._display_name = None
         self._inventory_id = None
         self._id = None

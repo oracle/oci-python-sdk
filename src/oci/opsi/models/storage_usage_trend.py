@@ -38,13 +38,11 @@ class StorageUsageTrend(object):
             'file_system_usage_in_gbs': 'float',
             'file_system_avail_in_percent': 'float'
         }
-
         self.attribute_map = {
             'end_timestamp': 'endTimestamp',
             'file_system_usage_in_gbs': 'fileSystemUsageInGBs',
             'file_system_avail_in_percent': 'fileSystemAvailInPercent'
         }
-
         self._end_timestamp = None
         self._file_system_usage_in_gbs = None
         self._file_system_avail_in_percent = None

@@ -175,7 +175,6 @@ class VendorSoftwareSource(SoftwareSource):
             'origin_software_source_id': 'str',
             'is_mandatory_for_autonomous_linux': 'bool'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -203,7 +202,6 @@ class VendorSoftwareSource(SoftwareSource):
             'origin_software_source_id': 'originSoftwareSourceId',
             'is_mandatory_for_autonomous_linux': 'isMandatoryForAutonomousLinux'
         }
-
         self._id = None
         self._compartment_id = None
         self._display_name = None

@@ -43,12 +43,10 @@ class FleetErrorAggregation(object):
             'reason': 'str',
             'count': 'int'
         }
-
         self.attribute_map = {
             'reason': 'reason',
             'count': 'count'
         }
-
         self._reason = None
         self._count = None
 

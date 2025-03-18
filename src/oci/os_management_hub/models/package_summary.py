@@ -104,7 +104,6 @@ class PackageSummary(object):
             'software_sources': 'list[SoftwareSourceDetails]',
             'package_classification': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'name': 'name',
@@ -114,7 +113,6 @@ class PackageSummary(object):
             'software_sources': 'softwareSources',
             'package_classification': 'packageClassification'
         }
-
         self._display_name = None
         self._name = None
         self._type = None

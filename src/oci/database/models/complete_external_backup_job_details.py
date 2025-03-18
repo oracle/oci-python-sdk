@@ -53,7 +53,6 @@ class CompleteExternalBackupJobDetails(object):
             'data_size': 'int',
             'redo_size': 'int'
         }
-
         self.attribute_map = {
             'tde_wallet_path': 'tdeWalletPath',
             'cf_backup_handle': 'cfBackupHandle',
@@ -62,7 +61,6 @@ class CompleteExternalBackupJobDetails(object):
             'data_size': 'dataSize',
             'redo_size': 'redoSize'
         }
-
         self._tde_wallet_path = None
         self._cf_backup_handle = None
         self._spf_backup_handle = None

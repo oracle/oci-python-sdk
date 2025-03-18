@@ -58,7 +58,6 @@ class SqlPlanInsightAggregationCollection(object):
             'insights': 'list[SqlPlanInsights]',
             'items': 'list[SqlPlanInsightAggregation]'
         }
-
         self.attribute_map = {
             'sql_identifier': 'sqlIdentifier',
             'id': 'id',
@@ -68,7 +67,6 @@ class SqlPlanInsightAggregationCollection(object):
             'insights': 'insights',
             'items': 'items'
         }
-
         self._sql_identifier = None
         self._id = None
         self._database_id = None

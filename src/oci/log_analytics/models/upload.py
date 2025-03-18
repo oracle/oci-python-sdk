@@ -58,7 +58,6 @@ class Upload(object):
             'time_latest_log_entry': 'datetime',
             'warnings_count': 'int'
         }
-
         self.attribute_map = {
             'reference': 'reference',
             'name': 'name',
@@ -68,7 +67,6 @@ class Upload(object):
             'time_latest_log_entry': 'timeLatestLogEntry',
             'warnings_count': 'warningsCount'
         }
-
         self._reference = None
         self._name = None
         self._time_created = None

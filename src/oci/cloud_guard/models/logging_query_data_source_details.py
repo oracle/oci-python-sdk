@@ -104,7 +104,6 @@ class LoggingQueryDataSourceDetails(DataSourceDetails):
             'additional_entities_count': 'int',
             'logging_query_details': 'LoggingQueryDetails'
         }
-
         self.attribute_map = {
             'data_source_feed_provider': 'dataSourceFeedProvider',
             'regions': 'regions',
@@ -117,7 +116,6 @@ class LoggingQueryDataSourceDetails(DataSourceDetails):
             'additional_entities_count': 'additionalEntitiesCount',
             'logging_query_details': 'loggingQueryDetails'
         }
-
         self._data_source_feed_provider = None
         self._regions = None
         self._query = None

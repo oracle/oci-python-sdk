@@ -57,7 +57,6 @@ class ConfirmationResult(object):
             'message': 'str',
             'subscription_id': 'str'
         }
-
         self.attribute_map = {
             'topic_name': 'topicName',
             'topic_id': 'topicId',
@@ -66,7 +65,6 @@ class ConfirmationResult(object):
             'message': 'message',
             'subscription_id': 'subscriptionId'
         }
-
         self._topic_name = None
         self._topic_id = None
         self._endpoint = None

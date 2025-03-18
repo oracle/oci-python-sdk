@@ -97,7 +97,6 @@ class ImportedPackage(object):
             'status_message': 'str',
             'parameter_values': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'oda_instance_id': 'odaInstanceId',
             'current_package_id': 'currentPackageId',
@@ -112,7 +111,6 @@ class ImportedPackage(object):
             'status_message': 'statusMessage',
             'parameter_values': 'parameterValues'
         }
-
         self._oda_instance_id = None
         self._current_package_id = None
         self._name = None

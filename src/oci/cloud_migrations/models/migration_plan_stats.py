@@ -38,13 +38,11 @@ class MigrationPlanStats(object):
             'time_updated': 'datetime',
             'vm_count': 'int'
         }
-
         self.attribute_map = {
             'total_estimated_cost': 'totalEstimatedCost',
             'time_updated': 'timeUpdated',
             'vm_count': 'vmCount'
         }
-
         self._total_estimated_cost = None
         self._time_updated = None
         self._vm_count = None

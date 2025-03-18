@@ -46,13 +46,11 @@ class AppThreeLeggedOAuthCredential(object):
             'refresh_token': 'str',
             'access_token_expiry': 'str'
         }
-
         self.attribute_map = {
             'access_token': 'accessToken',
             'refresh_token': 'refreshToken',
             'access_token_expiry': 'accessTokenExpiry'
         }
-
         self._access_token = None
         self._refresh_token = None
         self._access_token_expiry = None

@@ -159,7 +159,6 @@ class MyTrustedUserAgent(object):
             'trusted_factors': 'list[MyTrustedUserAgentTrustedFactors]',
             'user': 'MyTrustedUserAgentUser'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -184,7 +183,6 @@ class MyTrustedUserAgent(object):
             'trusted_factors': 'trustedFactors',
             'user': 'user'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

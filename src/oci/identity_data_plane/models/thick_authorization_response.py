@@ -48,7 +48,6 @@ class ThickAuthorizationResponse(object):
             'group_membership_cache_duration': 'str',
             'flush_all_caches': 'bool'
         }
-
         self.attribute_map = {
             'policy': 'policy',
             'policy_cache_duration': 'policyCacheDuration',
@@ -56,7 +55,6 @@ class ThickAuthorizationResponse(object):
             'group_membership_cache_duration': 'groupMembershipCacheDuration',
             'flush_all_caches': 'flushAllCaches'
         }
-
         self._policy = None
         self._policy_cache_duration = None
         self._groups = None

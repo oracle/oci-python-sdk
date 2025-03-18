@@ -53,7 +53,6 @@ class SoftwarePackageFile(object):
             'checksum_type': 'str',
             'size_in_bytes': 'int'
         }
-
         self.attribute_map = {
             'path': 'path',
             'type': 'type',
@@ -62,7 +61,6 @@ class SoftwarePackageFile(object):
             'checksum_type': 'checksumType',
             'size_in_bytes': 'sizeInBytes'
         }
-
         self._path = None
         self._type = None
         self._time_modified = None

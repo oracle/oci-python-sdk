@@ -76,7 +76,6 @@ class CreateContainerVnicDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'hostname_label': 'hostnameLabel',
@@ -88,7 +87,6 @@ class CreateContainerVnicDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._display_name = None
         self._hostname_label = None
         self._is_public_ip_assigned = None

@@ -53,14 +53,12 @@ class ConnectionDetails(object):
             'port': 'int',
             'service_name': 'str'
         }
-
         self.attribute_map = {
             'host_name': 'hostName',
             'protocol': 'protocol',
             'port': 'port',
             'service_name': 'serviceName'
         }
-
         self._host_name = None
         self._protocol = None
         self._port = None

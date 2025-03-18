@@ -50,7 +50,6 @@ class CreateMdsMySqlDatabaseInsightDetails(CreateDatabaseInsightDetails):
             'defined_tags': 'dict(str, dict(str, object))',
             'database_id': 'str'
         }
-
         self.attribute_map = {
             'entity_source': 'entitySource',
             'compartment_id': 'compartmentId',
@@ -58,7 +57,6 @@ class CreateMdsMySqlDatabaseInsightDetails(CreateDatabaseInsightDetails):
             'defined_tags': 'definedTags',
             'database_id': 'databaseId'
         }
-
         self._entity_source = None
         self._compartment_id = None
         self._freeform_tags = None

@@ -88,13 +88,11 @@ class ActivityResourceTarget(object):
             'status': 'str',
             'description': 'str'
         }
-
         self.attribute_map = {
             'target_name': 'targetName',
             'status': 'status',
             'description': 'description'
         }
-
         self._target_name = None
         self._status = None
         self._description = None

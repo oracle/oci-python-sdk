@@ -60,7 +60,6 @@ class VcnTopology(Topology):
             'time_created': 'datetime',
             'vcn_id': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'entities': 'entities',
@@ -69,7 +68,6 @@ class VcnTopology(Topology):
             'time_created': 'timeCreated',
             'vcn_id': 'vcnId'
         }
-
         self._type = None
         self._entities = None
         self._relationships = None

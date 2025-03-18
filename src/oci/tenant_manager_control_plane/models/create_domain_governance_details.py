@@ -58,7 +58,6 @@ class CreateDomainGovernanceDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'domain_id': 'domainId',
@@ -68,7 +67,6 @@ class CreateDomainGovernanceDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._compartment_id = None
         self._domain_id = None
         self._subscription_email = None

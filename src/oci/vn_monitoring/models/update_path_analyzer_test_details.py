@@ -63,7 +63,6 @@ class UpdatePathAnalyzerTestDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'protocol': 'protocol',
@@ -74,7 +73,6 @@ class UpdatePathAnalyzerTestDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._display_name = None
         self._protocol = None
         self._source_endpoint = None

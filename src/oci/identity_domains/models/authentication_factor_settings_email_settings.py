@@ -44,12 +44,10 @@ class AuthenticationFactorSettingsEmailSettings(object):
             'email_link_enabled': 'bool',
             'email_link_custom_url': 'str'
         }
-
         self.attribute_map = {
             'email_link_enabled': 'emailLinkEnabled',
             'email_link_custom_url': 'emailLinkCustomUrl'
         }
-
         self._email_link_enabled = None
         self._email_link_custom_url = None
 

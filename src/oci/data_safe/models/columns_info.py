@@ -59,7 +59,6 @@ class ColumnsInfo(object):
             'column_group': 'list[str]',
             'sensitive_type_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'schema_name': 'schemaName',
             'object_type': 'objectType',
@@ -68,7 +67,6 @@ class ColumnsInfo(object):
             'column_group': 'columnGroup',
             'sensitive_type_ids': 'sensitiveTypeIds'
         }
-
         self._schema_name = None
         self._object_type = None
         self._object_name = None

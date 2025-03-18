@@ -28,11 +28,9 @@ class ManagedInstanceGroupInstalledPackageCollection(object):
         self.swagger_types = {
             'items': 'list[ManagedInstanceGroupInstalledPackageSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

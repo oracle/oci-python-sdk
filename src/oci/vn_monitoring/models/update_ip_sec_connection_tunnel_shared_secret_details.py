@@ -28,11 +28,9 @@ class UpdateIPSecConnectionTunnelSharedSecretDetails(object):
         self.swagger_types = {
             'shared_secret': 'str'
         }
-
         self.attribute_map = {
             'shared_secret': 'sharedSecret'
         }
-
         self._shared_secret = None
 
     @property

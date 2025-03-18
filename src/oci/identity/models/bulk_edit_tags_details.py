@@ -38,13 +38,11 @@ class BulkEditTagsDetails(object):
             'resources': 'list[BulkEditResource]',
             'bulk_edit_operations': 'list[BulkEditOperationDetails]'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'resources': 'resources',
             'bulk_edit_operations': 'bulkEditOperations'
         }
-
         self._compartment_id = None
         self._resources = None
         self._bulk_edit_operations = None

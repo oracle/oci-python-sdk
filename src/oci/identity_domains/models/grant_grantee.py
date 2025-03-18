@@ -71,14 +71,12 @@ class GrantGrantee(object):
             'type': 'str',
             'display': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ref': '$ref',
             'type': 'type',
             'display': 'display'
         }
-
         self._value = None
         self._ref = None
         self._type = None

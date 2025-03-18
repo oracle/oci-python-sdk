@@ -87,7 +87,6 @@ class ExadataExaccConfigurationSummary(ExadataConfigurationSummary):
             'management_agent_id': 'str',
             'parent_id': 'str'
         }
-
         self.attribute_map = {
             'exadata_insight_id': 'exadataInsightId',
             'entity_source': 'entitySource',
@@ -102,7 +101,6 @@ class ExadataExaccConfigurationSummary(ExadataConfigurationSummary):
             'management_agent_id': 'managementAgentId',
             'parent_id': 'parentId'
         }
-
         self._exadata_insight_id = None
         self._entity_source = None
         self._compartment_id = None

@@ -31,11 +31,9 @@ class Configuration(object):
         self.swagger_types = {
             'retention_period_days': 'int'
         }
-
         self.attribute_map = {
             'retention_period_days': 'retentionPeriodDays'
         }
-
         self._retention_period_days = None
 
     @property

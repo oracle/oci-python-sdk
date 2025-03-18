@@ -54,13 +54,11 @@ class AutoActivateToggleStatus(object):
             'state': 'str',
             'data_key': 'str'
         }
-
         self.attribute_map = {
             'status': 'status',
             'state': 'state',
             'data_key': 'dataKey'
         }
-
         self._status = None
         self._state = None
         self._data_key = None

@@ -72,7 +72,6 @@ class CreateExternalExadataInfrastructureDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'discovery_key': 'discoveryKey',
             'license_model': 'licenseModel',
@@ -83,7 +82,6 @@ class CreateExternalExadataInfrastructureDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._discovery_key = None
         self._license_model = None
         self._compartment_id = None

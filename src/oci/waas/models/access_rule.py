@@ -167,7 +167,6 @@ class AccessRule(object):
             'captcha_submit_label': 'str',
             'response_header_manipulation': 'list[HeaderManipulationAction]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'criteria': 'criteria',
@@ -186,7 +185,6 @@ class AccessRule(object):
             'captcha_submit_label': 'captchaSubmitLabel',
             'response_header_manipulation': 'responseHeaderManipulation'
         }
-
         self._name = None
         self._criteria = None
         self._action = None

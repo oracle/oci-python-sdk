@@ -111,7 +111,6 @@ class ComputeInstanceGroupCanaryTrafficShiftDeployStage(DeployStage):
             'compute_instance_group_canary_deploy_stage_id': 'str',
             'rollout_policy': 'LoadBalancerTrafficShiftRolloutPolicy'
         }
-
         self.attribute_map = {
             'id': 'id',
             'description': 'description',
@@ -131,7 +130,6 @@ class ComputeInstanceGroupCanaryTrafficShiftDeployStage(DeployStage):
             'compute_instance_group_canary_deploy_stage_id': 'computeInstanceGroupCanaryDeployStageId',
             'rollout_policy': 'rolloutPolicy'
         }
-
         self._id = None
         self._description = None
         self._display_name = None

@@ -38,13 +38,11 @@ class CreateComputeCapacityReportDetails(object):
             'availability_domain': 'str',
             'shape_availabilities': 'list[CreateCapacityReportShapeAvailabilityDetails]'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'availability_domain': 'availabilityDomain',
             'shape_availabilities': 'shapeAvailabilities'
         }
-
         self._compartment_id = None
         self._availability_domain = None
         self._shape_availabilities = None

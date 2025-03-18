@@ -141,7 +141,6 @@ class AmazonS3ConnectionSummary(ConnectionSummary):
             'access_key_id': 'str',
             'secret_access_key_secret_id': 'str'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'id': 'id',
@@ -167,7 +166,6 @@ class AmazonS3ConnectionSummary(ConnectionSummary):
             'access_key_id': 'accessKeyId',
             'secret_access_key_secret_id': 'secretAccessKeySecretId'
         }
-
         self._connection_type = None
         self._id = None
         self._display_name = None

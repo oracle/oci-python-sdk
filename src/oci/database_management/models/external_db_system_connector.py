@@ -127,7 +127,6 @@ class ExternalDbSystemConnector(object):
             'time_created': 'datetime',
             'time_updated': 'datetime'
         }
-
         self.attribute_map = {
             'connector_type': 'connectorType',
             'id': 'id',
@@ -142,7 +141,6 @@ class ExternalDbSystemConnector(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated'
         }
-
         self._connector_type = None
         self._id = None
         self._display_name = None

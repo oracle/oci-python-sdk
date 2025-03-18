@@ -45,14 +45,12 @@ class ScheduleICalTrigger(ScheduleTrigger):
             'time_end': 'datetime',
             'recurrence': 'str'
         }
-
         self.attribute_map = {
             'trigger_type': 'triggerType',
             'time_start': 'timeStart',
             'time_end': 'timeEnd',
             'recurrence': 'recurrence'
         }
-
         self._trigger_type = None
         self._time_start = None
         self._time_end = None

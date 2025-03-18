@@ -45,14 +45,12 @@ class StockResponseBackend(ApiSpecificationRouteBackend):
             'status': 'int',
             'headers': 'list[HeaderFieldSpecification]'
         }
-
         self.attribute_map = {
             'type': 'type',
             'body': 'body',
             'status': 'status',
             'headers': 'headers'
         }
-
         self._type = None
         self._body = None
         self._status = None

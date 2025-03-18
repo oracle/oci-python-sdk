@@ -105,7 +105,6 @@ class ConnectionFromBICCDetails(ConnectionDetails):
             'password_secret': 'SensitiveAttribute',
             'default_external_storage': 'ExternalStorage'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -124,7 +123,6 @@ class ConnectionFromBICCDetails(ConnectionDetails):
             'password_secret': 'passwordSecret',
             'default_external_storage': 'defaultExternalStorage'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

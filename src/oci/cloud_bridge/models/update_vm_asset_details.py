@@ -50,7 +50,6 @@ class UpdateVmAssetDetails(UpdateAssetDetails):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'asset_type': 'assetType',
@@ -58,7 +57,6 @@ class UpdateVmAssetDetails(UpdateAssetDetails):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._display_name = None
         self._asset_type = None
         self._asset_source_ids = None

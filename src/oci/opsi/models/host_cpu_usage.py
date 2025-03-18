@@ -80,7 +80,6 @@ class HostCpuUsage(HostPerformanceMetricGroup):
             'cpu_load5min': 'float',
             'cpu_load15min': 'float'
         }
-
         self.attribute_map = {
             'metric_name': 'metricName',
             'time_collected': 'timeCollected',
@@ -94,7 +93,6 @@ class HostCpuUsage(HostPerformanceMetricGroup):
             'cpu_load5min': 'cpuLoad5min',
             'cpu_load15min': 'cpuLoad15min'
         }
-
         self._metric_name = None
         self._time_collected = None
         self._cpu_user_mode_in_percent = None

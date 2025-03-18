@@ -28,11 +28,9 @@ class EstimatePurgeDataSizeResult(object):
         self.swagger_types = {
             'purge_data_size_in_bytes': 'int'
         }
-
         self.attribute_map = {
             'purge_data_size_in_bytes': 'purgeDataSizeInBytes'
         }
-
         self._purge_data_size_in_bytes = None
 
     @property

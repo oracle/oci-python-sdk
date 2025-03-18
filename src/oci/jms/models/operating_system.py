@@ -71,7 +71,6 @@ class OperatingSystem(object):
             'architecture': 'str',
             'managed_instance_count': 'int'
         }
-
         self.attribute_map = {
             'family': 'family',
             'name': 'name',
@@ -80,7 +79,6 @@ class OperatingSystem(object):
             'architecture': 'architecture',
             'managed_instance_count': 'managedInstanceCount'
         }
-
         self._family = None
         self._name = None
         self._distribution = None

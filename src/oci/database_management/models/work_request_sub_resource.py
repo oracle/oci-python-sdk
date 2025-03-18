@@ -91,7 +91,6 @@ class WorkRequestSubResource(object):
             'entity_uri': 'str',
             'description': 'str'
         }
-
         self.attribute_map = {
             'entity_name': 'entityName',
             'entity_type': 'entityType',
@@ -100,7 +99,6 @@ class WorkRequestSubResource(object):
             'entity_uri': 'entityUri',
             'description': 'description'
         }
-
         self._entity_name = None
         self._entity_type = None
         self._action_type = None

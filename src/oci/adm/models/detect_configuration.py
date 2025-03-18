@@ -80,7 +80,6 @@ class DetectConfiguration(object):
             'max_permissible_cvss_v3_score': 'float',
             'max_permissible_severity': 'str'
         }
-
         self.attribute_map = {
             'exclusions': 'exclusions',
             'upgrade_policy': 'upgradePolicy',
@@ -88,7 +87,6 @@ class DetectConfiguration(object):
             'max_permissible_cvss_v3_score': 'maxPermissibleCvssV3Score',
             'max_permissible_severity': 'maxPermissibleSeverity'
         }
-
         self._exclusions = None
         self._upgrade_policy = None
         self._max_permissible_cvss_v2_score = None

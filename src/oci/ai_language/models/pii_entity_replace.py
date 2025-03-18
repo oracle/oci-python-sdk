@@ -45,14 +45,12 @@ class PiiEntityReplace(PiiEntityMasking):
             'should_detect': 'bool',
             'replace_with': 'str'
         }
-
         self.attribute_map = {
             'mode': 'mode',
             'exclude': 'exclude',
             'should_detect': 'shouldDetect',
             'replace_with': 'replaceWith'
         }
-
         self._mode = None
         self._exclude = None
         self._should_detect = None

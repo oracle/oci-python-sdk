@@ -48,7 +48,6 @@ class AddmDbSqlStatementSummary(object):
             'is_sql_text_truncated': 'bool',
             'sql_command': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'sql_identifier': 'sqlIdentifier',
@@ -56,7 +55,6 @@ class AddmDbSqlStatementSummary(object):
             'is_sql_text_truncated': 'isSqlTextTruncated',
             'sql_command': 'sqlCommand'
         }
-
         self._id = None
         self._sql_identifier = None
         self._sql_text = None

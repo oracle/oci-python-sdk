@@ -38,13 +38,11 @@ class DisableModuleStreamOnManagedInstanceDetails(object):
             'stream_name': 'str',
             'work_request_details': 'WorkRequestDetails'
         }
-
         self.attribute_map = {
             'module_name': 'moduleName',
             'stream_name': 'streamName',
             'work_request_details': 'workRequestDetails'
         }
-
         self._module_name = None
         self._stream_name = None
         self._work_request_details = None

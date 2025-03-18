@@ -67,7 +67,6 @@ class UpgradeOpenSearchClusterDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'original_cluster_display_name': 'originalClusterDisplayName',
             'desired_software_version': 'desiredSoftwareVersion',
@@ -77,7 +76,6 @@ class UpgradeOpenSearchClusterDetails(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._original_cluster_display_name = None
         self._desired_software_version = None
         self._upgrade_type = None

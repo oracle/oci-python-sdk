@@ -115,7 +115,6 @@ class ExpressionOperator(Operator):
             'trigger_rule': 'str',
             'config_provider_delegate': 'ConfigProvider'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -133,7 +132,6 @@ class ExpressionOperator(Operator):
             'trigger_rule': 'triggerRule',
             'config_provider_delegate': 'configProviderDelegate'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

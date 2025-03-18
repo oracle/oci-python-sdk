@@ -33,12 +33,10 @@ class ResourceTagEnablementInfo(object):
             'resource_id': 'str',
             'is_tagging_possible': 'bool'
         }
-
         self.attribute_map = {
             'resource_id': 'resourceId',
             'is_tagging_possible': 'isTaggingPossible'
         }
-
         self._resource_id = None
         self._is_tagging_possible = None
 

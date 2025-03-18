@@ -103,7 +103,6 @@ class ScaledBlockchainPlatformPreview(object):
             'metering_preview': 'ScaledPlatformMeteringPreview',
             'scale_payload': 'ScaleBlockchainPlatformDetails'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -122,7 +121,6 @@ class ScaledBlockchainPlatformPreview(object):
             'metering_preview': 'meteringPreview',
             'scale_payload': 'scalePayload'
         }
-
         self._id = None
         self._display_name = None
         self._compartment_id = None

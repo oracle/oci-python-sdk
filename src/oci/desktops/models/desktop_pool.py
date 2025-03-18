@@ -207,7 +207,6 @@ class DesktopPool(object):
             'nsg_ids': 'list[str]',
             'private_access_details': 'DesktopPoolPrivateAccessDetails'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -238,7 +237,6 @@ class DesktopPool(object):
             'nsg_ids': 'nsgIds',
             'private_access_details': 'privateAccessDetails'
         }
-
         self._id = None
         self._compartment_id = None
         self._display_name = None

@@ -63,7 +63,6 @@ class CreateTargetAlertPolicyAssociationDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'policy_id': 'policyId',
             'target_id': 'targetId',
@@ -74,7 +73,6 @@ class CreateTargetAlertPolicyAssociationDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._policy_id = None
         self._target_id = None
         self._display_name = None

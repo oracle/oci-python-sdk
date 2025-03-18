@@ -28,11 +28,9 @@ class ManagementAgentPluginAggregationCollection(object):
         self.swagger_types = {
             'items': 'list[ManagementAgentPluginAggregation]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

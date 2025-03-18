@@ -33,12 +33,10 @@ class PeerInformation(object):
             'asn': 'int',
             'ip': 'str'
         }
-
         self.attribute_map = {
             'asn': 'asn',
             'ip': 'ip'
         }
-
         self._asn = None
         self._ip = None
 

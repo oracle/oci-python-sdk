@@ -28,11 +28,9 @@ class ProxyDetails(object):
         self.swagger_types = {
             'proxy_image': 'str'
         }
-
         self.attribute_map = {
             'proxy_image': 'proxyImage'
         }
-
         self._proxy_image = None
 
     @property

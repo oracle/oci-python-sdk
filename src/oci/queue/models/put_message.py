@@ -33,12 +33,10 @@ class PutMessage(object):
             'id': 'int',
             'expire_after': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'expire_after': 'expireAfter'
         }
-
         self._id = None
         self._expire_after = None
 

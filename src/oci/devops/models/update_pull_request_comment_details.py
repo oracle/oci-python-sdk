@@ -28,11 +28,9 @@ class UpdatePullRequestCommentDetails(object):
         self.swagger_types = {
             'data': 'str'
         }
-
         self.attribute_map = {
             'data': 'data'
         }
-
         self._data = None
 
     @property

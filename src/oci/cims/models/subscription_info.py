@@ -33,12 +33,10 @@ class SubscriptionInfo(object):
             'csi': 'str',
             'subscription_type': 'str'
         }
-
         self.attribute_map = {
             'csi': 'csi',
             'subscription_type': 'subscriptionType'
         }
-
         self._csi = None
         self._subscription_type = None
 

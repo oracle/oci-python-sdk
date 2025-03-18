@@ -347,7 +347,6 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
             'time_of_auto_refresh_start': 'datetime',
             'open_mode': 'str'
         }
-
         self.attribute_map = {
             'subscription_id': 'subscriptionId',
             'compartment_id': 'compartmentId',
@@ -410,7 +409,6 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
             'time_of_auto_refresh_start': 'timeOfAutoRefreshStart',
             'open_mode': 'openMode'
         }
-
         self._subscription_id = None
         self._compartment_id = None
         self._character_set = None

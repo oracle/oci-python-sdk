@@ -43,14 +43,12 @@ class AuditConditions(object):
             'is_data_safe_service_account_audited': 'bool',
             'enable_conditions': 'list[EnableConditions]'
         }
-
         self.attribute_map = {
             'audit_policy_name': 'auditPolicyName',
             'is_priv_users_managed_by_data_safe': 'isPrivUsersManagedByDataSafe',
             'is_data_safe_service_account_audited': 'isDataSafeServiceAccountAudited',
             'enable_conditions': 'enableConditions'
         }
-
         self._audit_policy_name = None
         self._is_priv_users_managed_by_data_safe = None
         self._is_data_safe_service_account_audited = None

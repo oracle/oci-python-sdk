@@ -55,7 +55,6 @@ class CreateTsigKeyDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'algorithm': 'algorithm',
             'name': 'name',
@@ -64,7 +63,6 @@ class CreateTsigKeyDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._algorithm = None
         self._name = None
         self._compartment_id = None

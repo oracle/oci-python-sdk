@@ -33,12 +33,10 @@ class HostInstanceMap(object):
             'host_name': 'str',
             'instance_name': 'str'
         }
-
         self.attribute_map = {
             'host_name': 'hostName',
             'instance_name': 'instanceName'
         }
-
         self._host_name = None
         self._instance_name = None
 

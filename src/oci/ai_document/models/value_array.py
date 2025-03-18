@@ -55,7 +55,6 @@ class ValueArray(FieldValue):
             'word_indexes': 'list[int]',
             'items': 'list[DocumentField]'
         }
-
         self.attribute_map = {
             'value_type': 'valueType',
             'text': 'text',
@@ -64,7 +63,6 @@ class ValueArray(FieldValue):
             'word_indexes': 'wordIndexes',
             'items': 'items'
         }
-
         self._value_type = None
         self._text = None
         self._confidence = None

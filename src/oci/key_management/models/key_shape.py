@@ -66,13 +66,11 @@ class KeyShape(object):
             'length': 'int',
             'curve_id': 'str'
         }
-
         self.attribute_map = {
             'algorithm': 'algorithm',
             'length': 'length',
             'curve_id': 'curveId'
         }
-
         self._algorithm = None
         self._length = None
         self._curve_id = None

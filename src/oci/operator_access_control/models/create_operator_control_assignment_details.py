@@ -135,7 +135,6 @@ class CreateOperatorControlAssignmentDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'operator_control_id': 'operatorControlId',
             'resource_id': 'resourceId',
@@ -156,7 +155,6 @@ class CreateOperatorControlAssignmentDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._operator_control_id = None
         self._resource_id = None
         self._resource_name = None

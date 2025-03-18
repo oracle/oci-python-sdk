@@ -72,7 +72,6 @@ class CreateOccCustomerGroupDetails(object):
             'status': 'str',
             'customers_list': 'list[CreateOccCustomerDetails]'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
@@ -83,7 +82,6 @@ class CreateOccCustomerGroupDetails(object):
             'status': 'status',
             'customers_list': 'customersList'
         }
-
         self._compartment_id = None
         self._display_name = None
         self._description = None

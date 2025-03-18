@@ -48,14 +48,12 @@ class DefaultDrgRouteTables(object):
             'virtual_circuit': 'str',
             'remote_peering_connection': 'str'
         }
-
         self.attribute_map = {
             'vcn': 'vcn',
             'ipsec_tunnel': 'ipsecTunnel',
             'virtual_circuit': 'virtualCircuit',
             'remote_peering_connection': 'remotePeeringConnection'
         }
-
         self._vcn = None
         self._ipsec_tunnel = None
         self._virtual_circuit = None

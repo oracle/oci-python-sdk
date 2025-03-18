@@ -87,7 +87,6 @@ class UpdateMaintenanceRunDetails(object):
             'target_db_server_version': 'str',
             'target_storage_server_version': 'str'
         }
-
         self.attribute_map = {
             'is_enabled': 'isEnabled',
             'time_scheduled': 'timeScheduled',
@@ -101,7 +100,6 @@ class UpdateMaintenanceRunDetails(object):
             'target_db_server_version': 'targetDbServerVersion',
             'target_storage_server_version': 'targetStorageServerVersion'
         }
-
         self._is_enabled = None
         self._time_scheduled = None
         self._is_patch_now_enabled = None

@@ -67,7 +67,6 @@ class UpdateOpsiConfigurationDetails(object):
             'system_tags': 'dict(str, dict(str, object))',
             'config_items': 'list[UpdateConfigurationItemDetails]'
         }
-
         self.attribute_map = {
             'opsi_config_type': 'opsiConfigType',
             'display_name': 'displayName',
@@ -77,7 +76,6 @@ class UpdateOpsiConfigurationDetails(object):
             'system_tags': 'systemTags',
             'config_items': 'configItems'
         }
-
         self._opsi_config_type = None
         self._display_name = None
         self._description = None

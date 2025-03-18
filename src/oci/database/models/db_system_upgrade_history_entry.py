@@ -116,7 +116,6 @@ class DbSystemUpgradeHistoryEntry(object):
             'time_started': 'datetime',
             'time_ended': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'action': 'action',
@@ -130,7 +129,6 @@ class DbSystemUpgradeHistoryEntry(object):
             'time_started': 'timeStarted',
             'time_ended': 'timeEnded'
         }
-
         self._id = None
         self._action = None
         self._new_gi_version = None

@@ -116,7 +116,6 @@ class DrgRouteDistribution(object):
             'time_created': 'datetime',
             'distribution_type': 'str'
         }
-
         self.attribute_map = {
             'drg_id': 'drgId',
             'compartment_id': 'compartmentId',
@@ -128,7 +127,6 @@ class DrgRouteDistribution(object):
             'time_created': 'timeCreated',
             'distribution_type': 'distributionType'
         }
-
         self._drg_id = None
         self._compartment_id = None
         self._defined_tags = None

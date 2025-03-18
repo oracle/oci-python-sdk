@@ -33,12 +33,10 @@ class AuditPolicyAggregationItems(object):
             'dimensions': 'AuditPolicyDimensions',
             'count': 'int'
         }
-
         self.attribute_map = {
             'dimensions': 'dimensions',
             'count': 'count'
         }
-
         self._dimensions = None
         self._count = None
 

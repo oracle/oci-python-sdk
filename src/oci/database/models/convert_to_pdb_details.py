@@ -50,12 +50,10 @@ class ConvertToPdbDetails(object):
             'action': 'str',
             'convert_to_pdb_target_details': 'ConvertToPdbTargetBase'
         }
-
         self.attribute_map = {
             'action': 'action',
             'convert_to_pdb_target_details': 'convertToPdbTargetDetails'
         }
-
         self._action = None
         self._convert_to_pdb_target_details = None
 

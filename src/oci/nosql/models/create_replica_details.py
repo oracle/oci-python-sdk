@@ -43,14 +43,12 @@ class CreateReplicaDetails(object):
             'max_read_units': 'int',
             'max_write_units': 'int'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'region': 'region',
             'max_read_units': 'maxReadUnits',
             'max_write_units': 'maxWriteUnits'
         }
-
         self._compartment_id = None
         self._region = None
         self._max_read_units = None

@@ -117,7 +117,6 @@ class UpdateIPSecConnectionTunnelDetails(object):
             'dpd_config': 'DpdConfig',
             'encryption_domain_config': 'UpdateIPSecTunnelEncryptionDomainDetails'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'routing': 'routing',
@@ -130,7 +129,6 @@ class UpdateIPSecConnectionTunnelDetails(object):
             'dpd_config': 'dpdConfig',
             'encryption_domain_config': 'encryptionDomainConfig'
         }
-
         self._display_name = None
         self._routing = None
         self._ike_version = None

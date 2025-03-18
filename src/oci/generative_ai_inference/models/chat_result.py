@@ -38,13 +38,11 @@ class ChatResult(object):
             'model_version': 'str',
             'chat_response': 'BaseChatResponse'
         }
-
         self.attribute_map = {
             'model_id': 'modelId',
             'model_version': 'modelVersion',
             'chat_response': 'chatResponse'
         }
-
         self._model_id = None
         self._model_version = None
         self._chat_response = None

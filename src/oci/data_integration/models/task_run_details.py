@@ -198,7 +198,6 @@ class TaskRunDetails(object):
             'inputs': 'dict(str, ParameterValue)',
             'metadata': 'ObjectMetadata'
         }
-
         self.attribute_map = {
             'key': 'key',
             'model_type': 'modelType',
@@ -222,7 +221,6 @@ class TaskRunDetails(object):
             'inputs': 'inputs',
             'metadata': 'metadata'
         }
-
         self._key = None
         self._model_type = None
         self._model_version = None

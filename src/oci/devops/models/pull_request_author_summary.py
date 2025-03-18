@@ -28,11 +28,9 @@ class PullRequestAuthorSummary(object):
         self.swagger_types = {
             'principal_details': 'PrincipalDetails'
         }
-
         self.attribute_map = {
             'principal_details': 'principalDetails'
         }
-
         self._principal_details = None
 
     @property

@@ -43,14 +43,12 @@ class MetricsAggregationRange(object):
             'range_start_time_in_epoch_seconds': 'int',
             'range_end_time_in_epoch_seconds': 'int'
         }
-
         self.attribute_map = {
             'header': 'header',
             'metrics': 'metrics',
             'range_start_time_in_epoch_seconds': 'rangeStartTimeInEpochSeconds',
             'range_end_time_in_epoch_seconds': 'rangeEndTimeInEpochSeconds'
         }
-
         self._header = None
         self._metrics = None
         self._range_start_time_in_epoch_seconds = None

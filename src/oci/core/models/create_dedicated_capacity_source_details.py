@@ -34,12 +34,10 @@ class CreateDedicatedCapacitySourceDetails(CreateCapacitySourceDetails):
             'capacity_type': 'str',
             'compartment_id': 'str'
         }
-
         self.attribute_map = {
             'capacity_type': 'capacityType',
             'compartment_id': 'compartmentId'
         }
-
         self._capacity_type = None
         self._compartment_id = None
         self._capacity_type = 'DEDICATED'

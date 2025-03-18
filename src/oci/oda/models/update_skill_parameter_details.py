@@ -38,13 +38,11 @@ class UpdateSkillParameterDetails(object):
             'description': 'str',
             'value': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
             'value': 'value'
         }
-
         self._display_name = None
         self._description = None
         self._value = None

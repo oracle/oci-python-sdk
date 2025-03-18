@@ -44,14 +44,12 @@ class ParseConnectionDetails(object):
             'wallet_secret_id': 'str',
             'wallet_secret_name': 'str'
         }
-
         self.attribute_map = {
             'connection_detail': 'connectionDetail',
             'connection_payload': 'connectionPayload',
             'wallet_secret_id': 'walletSecretId',
             'wallet_secret_name': 'walletSecretName'
         }
-
         self._connection_detail = None
         self._connection_payload = None
         self._wallet_secret_id = None

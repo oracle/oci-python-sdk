@@ -55,7 +55,6 @@ class ContainerInstanceConfig(ContainerConfig):
             'shape_config': 'ShapeConfig',
             'network_channel': 'NetworkChannel'
         }
-
         self.attribute_map = {
             'container_config_type': 'containerConfigType',
             'compartment_id': 'compartmentId',
@@ -64,7 +63,6 @@ class ContainerInstanceConfig(ContainerConfig):
             'shape_config': 'shapeConfig',
             'network_channel': 'networkChannel'
         }
-
         self._container_config_type = None
         self._compartment_id = None
         self._availability_domain = None

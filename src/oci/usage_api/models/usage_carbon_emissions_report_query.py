@@ -90,7 +90,6 @@ class UsageCarbonEmissionsReportQuery(object):
             'filter': 'Filter',
             'date_range_name': 'str'
         }
-
         self.attribute_map = {
             'tenant_id': 'tenantId',
             'time_usage_started': 'timeUsageStarted',
@@ -102,7 +101,6 @@ class UsageCarbonEmissionsReportQuery(object):
             'filter': 'filter',
             'date_range_name': 'dateRangeName'
         }
-
         self._tenant_id = None
         self._time_usage_started = None
         self._time_usage_ended = None

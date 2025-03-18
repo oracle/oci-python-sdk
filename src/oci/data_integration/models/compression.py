@@ -58,11 +58,9 @@ class Compression(object):
         self.swagger_types = {
             'codec': 'str'
         }
-
         self.attribute_map = {
             'codec': 'codec'
         }
-
         self._codec = None
 
     @property

@@ -33,12 +33,10 @@ class MessageDetails(object):
             'title': 'str',
             'body': 'str'
         }
-
         self.attribute_map = {
             'title': 'title',
             'body': 'body'
         }
-
         self._title = None
         self._body = None
 

@@ -53,7 +53,6 @@ class MonitoredInstanceSummary(object):
             'lifecycle_state': 'str',
             'monitoring_state': 'str'
         }
-
         self.attribute_map = {
             'instance_id': 'instanceId',
             'compartment_id': 'compartmentId',
@@ -62,7 +61,6 @@ class MonitoredInstanceSummary(object):
             'lifecycle_state': 'lifecycleState',
             'monitoring_state': 'monitoringState'
         }
-
         self._instance_id = None
         self._compartment_id = None
         self._display_name = None

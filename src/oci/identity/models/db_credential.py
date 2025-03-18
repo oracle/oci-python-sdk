@@ -72,7 +72,6 @@ class DbCredential(object):
             'lifecycle_state': 'str',
             'lifecycle_details': 'int'
         }
-
         self.attribute_map = {
             'id': 'id',
             'user_id': 'userId',
@@ -81,7 +80,6 @@ class DbCredential(object):
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails'
         }
-
         self._id = None
         self._user_id = None
         self._time_created = None

@@ -56,13 +56,11 @@ class SshKeyGenerationContext(SecretGenerationContext):
             'secret_template': 'str',
             'generation_template': 'str'
         }
-
         self.attribute_map = {
             'generation_type': 'generationType',
             'secret_template': 'secretTemplate',
             'generation_template': 'generationTemplate'
         }
-
         self._generation_type = None
         self._secret_template = None
         self._generation_template = None

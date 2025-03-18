@@ -43,14 +43,12 @@ class AssociateMonitoredResourcesDetails(object):
             'source_resource_id': 'str',
             'destination_resource_id': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'association_type': 'associationType',
             'source_resource_id': 'sourceResourceId',
             'destination_resource_id': 'destinationResourceId'
         }
-
         self._compartment_id = None
         self._association_type = None
         self._source_resource_id = None

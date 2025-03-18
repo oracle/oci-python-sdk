@@ -28,11 +28,9 @@ class PrimaryDbInstanceDetails(object):
         self.swagger_types = {
             'db_instance_id': 'str'
         }
-
         self.attribute_map = {
             'db_instance_id': 'dbInstanceId'
         }
-
         self._db_instance_id = None
 
     @property

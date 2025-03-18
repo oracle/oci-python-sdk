@@ -48,7 +48,6 @@ class DataStorage(object):
             'is_auto_expand_storage_enabled': 'bool',
             'max_storage_size_in_gbs': 'int'
         }
-
         self.attribute_map = {
             'allocated_storage_size_in_gbs': 'allocatedStorageSizeInGBs',
             'data_storage_size_in_gbs': 'dataStorageSizeInGBs',
@@ -56,7 +55,6 @@ class DataStorage(object):
             'is_auto_expand_storage_enabled': 'isAutoExpandStorageEnabled',
             'max_storage_size_in_gbs': 'maxStorageSizeInGBs'
         }
-
         self._allocated_storage_size_in_gbs = None
         self._data_storage_size_in_gbs = None
         self._data_storage_size_limit_in_gbs = None

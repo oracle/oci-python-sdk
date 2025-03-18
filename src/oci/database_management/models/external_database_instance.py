@@ -38,13 +38,11 @@ class ExternalDatabaseInstance(object):
             'instance_name': 'str',
             'host_name': 'str'
         }
-
         self.attribute_map = {
             'instance_number': 'instanceNumber',
             'instance_name': 'instanceName',
             'host_name': 'hostName'
         }
-
         self._instance_number = None
         self._instance_name = None
         self._host_name = None

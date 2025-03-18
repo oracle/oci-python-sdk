@@ -306,7 +306,6 @@ class PricingModel(object):
             'rate': 'float',
             'international_market_price': 'InternationalMarketPrice'
         }
-
         self.attribute_map = {
             'type': 'type',
             'pay_go_strategy': 'payGoStrategy',
@@ -314,7 +313,6 @@ class PricingModel(object):
             'rate': 'rate',
             'international_market_price': 'internationalMarketPrice'
         }
-
         self._type = None
         self._pay_go_strategy = None
         self._currency = None

@@ -120,7 +120,6 @@ class UnifiedAgentSyslogParser(UnifiedAgentParser):
             'is_support_colonless_ident': 'bool',
             'syslog_parser_type': 'str'
         }
-
         self.attribute_map = {
             'parser_type': 'parserType',
             'field_time_key': 'fieldTimeKey',
@@ -137,7 +136,6 @@ class UnifiedAgentSyslogParser(UnifiedAgentParser):
             'is_support_colonless_ident': 'isSupportColonlessIdent',
             'syslog_parser_type': 'syslogParserType'
         }
-
         self._parser_type = None
         self._field_time_key = None
         self._types = None

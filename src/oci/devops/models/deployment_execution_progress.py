@@ -38,13 +38,11 @@ class DeploymentExecutionProgress(object):
             'time_finished': 'datetime',
             'deploy_stage_execution_progress': 'dict(str, DeployStageExecutionProgress)'
         }
-
         self.attribute_map = {
             'time_started': 'timeStarted',
             'time_finished': 'timeFinished',
             'deploy_stage_execution_progress': 'deployStageExecutionProgress'
         }
-
         self._time_started = None
         self._time_finished = None
         self._deploy_stage_execution_progress = None

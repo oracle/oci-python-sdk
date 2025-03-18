@@ -42,11 +42,9 @@ class MountTypeDetails(object):
         self.swagger_types = {
             'mount_type': 'str'
         }
-
         self.attribute_map = {
             'mount_type': 'mountType'
         }
-
         self._mount_type = None
 
     @staticmethod

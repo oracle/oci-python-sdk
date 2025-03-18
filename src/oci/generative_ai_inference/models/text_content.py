@@ -35,12 +35,10 @@ class TextContent(ChatContent):
             'type': 'str',
             'text': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'text': 'text'
         }
-
         self._type = None
         self._text = None
         self._type = 'TEXT'

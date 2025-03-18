@@ -48,7 +48,6 @@ class Plugin(object):
             'last_update_time': 'datetime',
             'message': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'version': 'version',
@@ -56,7 +55,6 @@ class Plugin(object):
             'last_update_time': 'lastUpdateTime',
             'message': 'message'
         }
-
         self._name = None
         self._version = None
         self._status = None

@@ -43,14 +43,12 @@ class Metric(object):
             'unit': 'str',
             'description': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'value_source': 'valueSource',
             'unit': 'unit',
             'description': 'description'
         }
-
         self._name = None
         self._value_source = None
         self._unit = None

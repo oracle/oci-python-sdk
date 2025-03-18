@@ -43,11 +43,9 @@ class ExecutionDetails(object):
         self.swagger_types = {
             'execution_type': 'str'
         }
-
         self.attribute_map = {
             'execution_type': 'executionType'
         }
-
         self._execution_type = None
 
     @staticmethod

@@ -53,12 +53,10 @@ class SecretGenerationContext(object):
             'generation_type': 'str',
             'secret_template': 'str'
         }
-
         self.attribute_map = {
             'generation_type': 'generationType',
             'secret_template': 'secretTemplate'
         }
-
         self._generation_type = None
         self._secret_template = None
 

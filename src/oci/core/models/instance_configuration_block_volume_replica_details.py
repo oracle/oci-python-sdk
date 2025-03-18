@@ -33,12 +33,10 @@ class InstanceConfigurationBlockVolumeReplicaDetails(object):
             'display_name': 'str',
             'availability_domain': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'availability_domain': 'availabilityDomain'
         }
-
         self._display_name = None
         self._availability_domain = None
 

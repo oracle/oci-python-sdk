@@ -48,7 +48,6 @@ class UpdateComputeCapacityReservationDetails(object):
             'is_default_reservation': 'bool',
             'instance_reservation_configs': 'list[InstanceReservationConfigDetails]'
         }
-
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
@@ -56,7 +55,6 @@ class UpdateComputeCapacityReservationDetails(object):
             'is_default_reservation': 'isDefaultReservation',
             'instance_reservation_configs': 'instanceReservationConfigs'
         }
-
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None

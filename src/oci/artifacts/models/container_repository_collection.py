@@ -53,7 +53,6 @@ class ContainerRepositoryCollection(object):
             'remaining_items_count': 'int',
             'repository_count': 'int'
         }
-
         self.attribute_map = {
             'layer_count': 'layerCount',
             'layers_size_in_bytes': 'layersSizeInBytes',
@@ -62,7 +61,6 @@ class ContainerRepositoryCollection(object):
             'remaining_items_count': 'remainingItemsCount',
             'repository_count': 'repositoryCount'
         }
-
         self._layer_count = None
         self._layers_size_in_bytes = None
         self._image_count = None

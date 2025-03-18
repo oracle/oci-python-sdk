@@ -43,14 +43,12 @@ class UpdateDrgDetails(object):
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'default_drg_route_tables': 'defaultDrgRouteTables',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags'
         }
-
         self._defined_tags = None
         self._default_drg_route_tables = None
         self._display_name = None

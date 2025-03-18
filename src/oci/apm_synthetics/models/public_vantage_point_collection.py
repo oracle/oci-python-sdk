@@ -28,11 +28,9 @@ class PublicVantagePointCollection(object):
         self.swagger_types = {
             'items': 'list[PublicVantagePointSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

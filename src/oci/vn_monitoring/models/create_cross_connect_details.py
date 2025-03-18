@@ -78,7 +78,6 @@ class CreateCrossConnectDetails(object):
             'customer_reference_name': 'str',
             'macsec_properties': 'CreateMacsecProperties'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'cross_connect_group_id': 'crossConnectGroupId',
@@ -92,7 +91,6 @@ class CreateCrossConnectDetails(object):
             'customer_reference_name': 'customerReferenceName',
             'macsec_properties': 'macsecProperties'
         }
-
         self._compartment_id = None
         self._cross_connect_group_id = None
         self._defined_tags = None

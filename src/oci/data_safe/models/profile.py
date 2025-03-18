@@ -161,7 +161,6 @@ class Profile(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'user_assessment_id': 'userAssessmentId',
             'compartment_id': 'compartmentId',
@@ -191,7 +190,6 @@ class Profile(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._user_assessment_id = None
         self._compartment_id = None
         self._target_id = None

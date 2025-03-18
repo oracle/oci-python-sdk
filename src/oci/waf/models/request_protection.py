@@ -38,13 +38,11 @@ class RequestProtection(object):
             'body_inspection_size_limit_in_bytes': 'int',
             'body_inspection_size_limit_exceeded_action_name': 'str'
         }
-
         self.attribute_map = {
             'rules': 'rules',
             'body_inspection_size_limit_in_bytes': 'bodyInspectionSizeLimitInBytes',
             'body_inspection_size_limit_exceeded_action_name': 'bodyInspectionSizeLimitExceededActionName'
         }
-
         self._rules = None
         self._body_inspection_size_limit_in_bytes = None
         self._body_inspection_size_limit_exceeded_action_name = None

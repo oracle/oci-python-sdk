@@ -128,7 +128,6 @@ class Trace(object):
             'span_summary': 'TraceSpanSummary',
             'spans': 'list[Span]'
         }
-
         self.attribute_map = {
             'key': 'key',
             'root_span_operation_name': 'rootSpanOperationName',
@@ -150,7 +149,6 @@ class Trace(object):
             'span_summary': 'spanSummary',
             'spans': 'spans'
         }
-
         self._key = None
         self._root_span_operation_name = None
         self._time_earliest_span_started = None

@@ -28,11 +28,9 @@ class UpdateRefreshActivityDetails(object):
         self.swagger_types = {
             'time_scheduled_start': 'datetime'
         }
-
         self.attribute_map = {
             'time_scheduled_start': 'timeScheduledStart'
         }
-
         self._time_scheduled_start = None
 
     @property

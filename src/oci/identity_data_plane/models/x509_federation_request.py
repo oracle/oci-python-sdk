@@ -38,13 +38,11 @@ class X509FederationRequest(object):
             'public_key': 'str',
             'intermediate_certificates': 'list[str]'
         }
-
         self.attribute_map = {
             'certificate': 'certificate',
             'public_key': 'publicKey',
             'intermediate_certificates': 'intermediateCertificates'
         }
-
         self._certificate = None
         self._public_key = None
         self._intermediate_certificates = None

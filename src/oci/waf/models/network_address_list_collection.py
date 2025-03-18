@@ -28,11 +28,9 @@ class NetworkAddressListCollection(object):
         self.swagger_types = {
             'items': 'list[NetworkAddressListSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

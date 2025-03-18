@@ -113,7 +113,6 @@ class OtherPaymentDetail(PaymentDetail):
             'last_digits': 'str',
             'time_expiration': 'datetime'
         }
-
         self.attribute_map = {
             'time_paid_on': 'timePaidOn',
             'paid_by': 'paidBy',
@@ -125,7 +124,6 @@ class OtherPaymentDetail(PaymentDetail):
             'last_digits': 'lastDigits',
             'time_expiration': 'timeExpiration'
         }
-
         self._time_paid_on = None
         self._paid_by = None
         self._payment_method = None

@@ -90,7 +90,6 @@ class OAuth2ClientCredentialSummary(object):
             'lifecycle_state': 'str',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'scopes': 'scopes',
             'user_id': 'userId',
@@ -102,7 +101,6 @@ class OAuth2ClientCredentialSummary(object):
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated'
         }
-
         self._scopes = None
         self._user_id = None
         self._expires_on = None

@@ -61,14 +61,12 @@ class BuildStageRunStep(object):
             'time_started': 'datetime',
             'time_finished': 'datetime'
         }
-
         self.attribute_map = {
             'name': 'name',
             'state': 'state',
             'time_started': 'timeStarted',
             'time_finished': 'timeFinished'
         }
-
         self._name = None
         self._state = None
         self._time_started = None

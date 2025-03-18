@@ -64,7 +64,6 @@ class CreateComputeInstanceGroupBlueGreenTrafficShiftDeployStageDetails(CreateDe
             'defined_tags': 'dict(str, dict(str, object))',
             'compute_instance_group_blue_green_deployment_deploy_stage_id': 'str'
         }
-
         self.attribute_map = {
             'description': 'description',
             'display_name': 'displayName',
@@ -75,7 +74,6 @@ class CreateComputeInstanceGroupBlueGreenTrafficShiftDeployStageDetails(CreateDe
             'defined_tags': 'definedTags',
             'compute_instance_group_blue_green_deployment_deploy_stage_id': 'computeInstanceGroupBlueGreenDeploymentDeployStageId'
         }
-
         self._description = None
         self._display_name = None
         self._deploy_stage_type = None

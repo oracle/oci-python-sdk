@@ -41,13 +41,11 @@ class TunnelConfig(object):
             'shared_secret': 'str',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'ip_address': 'ipAddress',
             'shared_secret': 'sharedSecret',
             'time_created': 'timeCreated'
         }
-
         self._ip_address = None
         self._shared_secret = None
         self._time_created = None

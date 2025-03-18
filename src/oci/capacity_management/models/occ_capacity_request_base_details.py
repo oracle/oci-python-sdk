@@ -78,7 +78,6 @@ class OccCapacityRequestBaseDetails(object):
             'resource_name': 'str',
             'demand_quantity': 'int'
         }
-
         self.attribute_map = {
             'resource_type': 'resourceType',
             'workload_type': 'workloadType',
@@ -92,7 +91,6 @@ class OccCapacityRequestBaseDetails(object):
             'resource_name': 'resourceName',
             'demand_quantity': 'demandQuantity'
         }
-
         self._resource_type = None
         self._workload_type = None
         self._source_workload_type = None

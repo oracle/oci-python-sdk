@@ -78,7 +78,6 @@ class SqlBucket(object):
             'other_wait_time_in_sec': 'float',
             'total_time_in_sec': 'float'
         }
-
         self.attribute_map = {
             'version': 'version',
             'database_type': 'databaseType',
@@ -92,7 +91,6 @@ class SqlBucket(object):
             'other_wait_time_in_sec': 'otherWaitTimeInSec',
             'total_time_in_sec': 'totalTimeInSec'
         }
-
         self._version = None
         self._database_type = None
         self._time_collected = None

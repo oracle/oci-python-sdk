@@ -38,13 +38,11 @@ class MySqlGgsDeploymentDetails(object):
             'replicat': 'Replicat',
             'acceptable_lag': 'int'
         }
-
         self.attribute_map = {
             'ggs_deployment': 'ggsDeployment',
             'replicat': 'replicat',
             'acceptable_lag': 'acceptableLag'
         }
-
         self._ggs_deployment = None
         self._replicat = None
         self._acceptable_lag = None

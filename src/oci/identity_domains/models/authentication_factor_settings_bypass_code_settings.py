@@ -62,7 +62,6 @@ class AuthenticationFactorSettingsBypassCodeSettings(object):
             'help_desk_code_expiry_in_mins': 'int',
             'help_desk_max_usage': 'int'
         }
-
         self.attribute_map = {
             'self_service_generation_enabled': 'selfServiceGenerationEnabled',
             'help_desk_generation_enabled': 'helpDeskGenerationEnabled',
@@ -71,7 +70,6 @@ class AuthenticationFactorSettingsBypassCodeSettings(object):
             'help_desk_code_expiry_in_mins': 'helpDeskCodeExpiryInMins',
             'help_desk_max_usage': 'helpDeskMaxUsage'
         }
-
         self._self_service_generation_enabled = None
         self._help_desk_generation_enabled = None
         self._length = None

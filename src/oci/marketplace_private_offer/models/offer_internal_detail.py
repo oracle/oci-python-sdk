@@ -33,12 +33,10 @@ class OfferInternalDetail(object):
             'custom_fields': 'list[CustomField]',
             'internal_notes': 'str'
         }
-
         self.attribute_map = {
             'custom_fields': 'customFields',
             'internal_notes': 'internalNotes'
         }
-
         self._custom_fields = None
         self._internal_notes = None
 

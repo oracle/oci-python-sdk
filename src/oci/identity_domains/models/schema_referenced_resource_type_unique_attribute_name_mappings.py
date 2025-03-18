@@ -33,12 +33,10 @@ class SchemaReferencedResourceTypeUniqueAttributeNameMappings(object):
             'resource_type_attribute_name': 'str',
             'maps_from_column_name': 'str'
         }
-
         self.attribute_map = {
             'resource_type_attribute_name': 'resourceTypeAttributeName',
             'maps_from_column_name': 'mapsFromColumnName'
         }
-
         self._resource_type_attribute_name = None
         self._maps_from_column_name = None
 

@@ -28,11 +28,9 @@ class FsuDiscoverySummaryCollection(object):
         self.swagger_types = {
             'items': 'list[FsuDiscoverySummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

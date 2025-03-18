@@ -140,7 +140,6 @@ class GlossaryTreeElement(object):
             'associated_object_count': 'int',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'child_terms': 'childTerms',
             'key': 'key',
@@ -156,7 +155,6 @@ class GlossaryTreeElement(object):
             'associated_object_count': 'associatedObjectCount',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._child_terms = None
         self._key = None
         self._display_name = None

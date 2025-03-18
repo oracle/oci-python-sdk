@@ -58,7 +58,6 @@ class UpdateGatewayDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'ca_bundles': 'list[CaBundle]'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'network_security_group_ids': 'networkSecurityGroupIds',
@@ -68,7 +67,6 @@ class UpdateGatewayDetails(object):
             'defined_tags': 'definedTags',
             'ca_bundles': 'caBundles'
         }
-
         self._display_name = None
         self._network_security_group_ids = None
         self._certificate_id = None

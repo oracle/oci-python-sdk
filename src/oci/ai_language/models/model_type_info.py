@@ -33,12 +33,10 @@ class ModelTypeInfo(object):
             'versions': 'list[str]',
             'capabilities': 'dict(str, Capabilities)'
         }
-
         self.attribute_map = {
             'versions': 'versions',
             'capabilities': 'capabilities'
         }
-
         self._versions = None
         self._capabilities = None
 

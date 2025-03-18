@@ -91,7 +91,6 @@ class UpdateMySqlMigrationDetails(UpdateMigrationDetails):
             'hub_details': 'UpdateGoldenGateHubDetails',
             'ggs_details': 'UpdateMySqlGgsDeploymentDetails'
         }
-
         self.attribute_map = {
             'description': 'description',
             'database_combination': 'databaseCombination',
@@ -107,7 +106,6 @@ class UpdateMySqlMigrationDetails(UpdateMigrationDetails):
             'hub_details': 'hubDetails',
             'ggs_details': 'ggsDetails'
         }
-
         self._description = None
         self._database_combination = None
         self._type = None

@@ -157,7 +157,6 @@ class EmManagedExternalDatabaseInsightSummary(DatabaseInsightSummary):
             'enterprise_manager_bridge_id': 'str',
             'exadata_insight_id': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'database_id': 'databaseId',
@@ -186,7 +185,6 @@ class EmManagedExternalDatabaseInsightSummary(DatabaseInsightSummary):
             'enterprise_manager_bridge_id': 'enterpriseManagerBridgeId',
             'exadata_insight_id': 'exadataInsightId'
         }
-
         self._id = None
         self._database_id = None
         self._compartment_id = None

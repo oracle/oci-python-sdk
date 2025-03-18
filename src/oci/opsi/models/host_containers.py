@@ -65,7 +65,6 @@ class HostContainers(HostConfigurationMetricGroup):
             'container_image_digest': 'str',
             'container_ports': 'str'
         }
-
         self.attribute_map = {
             'metric_name': 'metricName',
             'time_collected': 'timeCollected',
@@ -76,7 +75,6 @@ class HostContainers(HostConfigurationMetricGroup):
             'container_image_digest': 'containerImageDigest',
             'container_ports': 'containerPorts'
         }
-
         self._metric_name = None
         self._time_collected = None
         self._container_id = None

@@ -81,7 +81,6 @@ class CreateContainerHttpHealthCheckDetails(CreateContainerHealthCheckDetails):
             'port': 'int',
             'headers': 'list[HealthCheckHttpHeader]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'health_check_type': 'healthCheckType',
@@ -95,7 +94,6 @@ class CreateContainerHttpHealthCheckDetails(CreateContainerHealthCheckDetails):
             'port': 'port',
             'headers': 'headers'
         }
-
         self._name = None
         self._health_check_type = None
         self._initial_delay_in_seconds = None

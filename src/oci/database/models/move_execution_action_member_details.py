@@ -48,7 +48,6 @@ class MoveExecutionActionMemberDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'source_execution_action_id': 'sourceExecutionActionId',
             'execution_action_member_id': 'executionActionMemberId',
@@ -56,7 +55,6 @@ class MoveExecutionActionMemberDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._source_execution_action_id = None
         self._execution_action_member_id = None
         self._execution_action_member_count = None

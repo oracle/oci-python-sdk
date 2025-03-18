@@ -68,7 +68,6 @@ class UpdateProfileDetails(object):
             'target_tags': 'TargetTags',
             'name': 'str'
         }
-
         self.attribute_map = {
             'description': 'description',
             'aggregation_interval_in_days': 'aggregationIntervalInDays',
@@ -80,7 +79,6 @@ class UpdateProfileDetails(object):
             'target_tags': 'targetTags',
             'name': 'name'
         }
-
         self._description = None
         self._aggregation_interval_in_days = None
         self._defined_tags = None

@@ -73,7 +73,6 @@ class JavaServerUsage(object):
             'time_first_seen': 'datetime',
             'time_last_seen': 'datetime'
         }
-
         self.attribute_map = {
             'server_key': 'serverKey',
             'fleet_id': 'fleetId',
@@ -86,7 +85,6 @@ class JavaServerUsage(object):
             'time_first_seen': 'timeFirstSeen',
             'time_last_seen': 'timeLastSeen'
         }
-
         self._server_key = None
         self._fleet_id = None
         self._server_name = None

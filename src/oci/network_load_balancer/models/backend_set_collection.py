@@ -28,11 +28,9 @@ class BackendSetCollection(object):
         self.swagger_types = {
             'items': 'list[BackendSetSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

@@ -43,14 +43,12 @@ class LicenseMetric(object):
             'total_license_included_instance_count': 'int',
             'license_record_expiring_soon_count': 'int'
         }
-
         self.attribute_map = {
             'total_product_license_count': 'totalProductLicenseCount',
             'total_byol_instance_count': 'totalByolInstanceCount',
             'total_license_included_instance_count': 'totalLicenseIncludedInstanceCount',
             'license_record_expiring_soon_count': 'licenseRecordExpiringSoonCount'
         }
-
         self._total_product_license_count = None
         self._total_byol_instance_count = None
         self._total_license_included_instance_count = None

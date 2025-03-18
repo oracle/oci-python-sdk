@@ -28,11 +28,9 @@ class ComputeCapacityTopologyCollection(object):
         self.swagger_types = {
             'items': 'list[ComputeCapacityTopologySummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

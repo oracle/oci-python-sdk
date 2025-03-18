@@ -28,11 +28,9 @@ class SecurityScoreTrendAggregationCollection(object):
         self.swagger_types = {
             'items': 'list[SecurityScoreTrendAggregation]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

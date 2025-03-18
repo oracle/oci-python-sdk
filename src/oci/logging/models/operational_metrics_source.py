@@ -44,13 +44,11 @@ class OperationalMetricsSource(object):
             'metrics': 'list[str]',
             'record_input': 'OperationalMetricsRecordInput'
         }
-
         self.attribute_map = {
             'type': 'type',
             'metrics': 'metrics',
             'record_input': 'recordInput'
         }
-
         self._type = None
         self._metrics = None
         self._record_input = None

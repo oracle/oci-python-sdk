@@ -78,7 +78,6 @@ class JsChallenge(object):
             'criteria': 'list[AccessRuleCriteria]',
             'is_nat_enabled': 'bool'
         }
-
         self.attribute_map = {
             'is_enabled': 'isEnabled',
             'action': 'action',
@@ -90,7 +89,6 @@ class JsChallenge(object):
             'criteria': 'criteria',
             'is_nat_enabled': 'isNatEnabled'
         }
-
         self._is_enabled = None
         self._action = None
         self._failure_threshold = None

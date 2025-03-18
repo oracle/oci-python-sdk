@@ -38,13 +38,11 @@ class SecurityQuestionQuestionText(object):
             'locale': 'str',
             'default': 'bool'
         }
-
         self.attribute_map = {
             'value': 'value',
             'locale': 'locale',
             'default': 'default'
         }
-
         self._value = None
         self._locale = None
         self._default = None

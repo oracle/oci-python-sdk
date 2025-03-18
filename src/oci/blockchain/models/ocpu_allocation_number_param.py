@@ -28,11 +28,9 @@ class OcpuAllocationNumberParam(object):
         self.swagger_types = {
             'ocpu_allocation_number': 'float'
         }
-
         self.attribute_map = {
             'ocpu_allocation_number': 'ocpuAllocationNumber'
         }
-
         self._ocpu_allocation_number = None
 
     @property

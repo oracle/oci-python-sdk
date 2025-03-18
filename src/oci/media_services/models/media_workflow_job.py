@@ -152,7 +152,6 @@ class MediaWorkflowJob(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'media_workflow_configuration_ids': 'mediaWorkflowConfigurationIds',
             'media_workflow_id': 'mediaWorkflowId',
@@ -174,7 +173,6 @@ class MediaWorkflowJob(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._media_workflow_configuration_ids = None
         self._media_workflow_id = None
         self._id = None

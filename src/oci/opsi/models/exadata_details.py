@@ -38,13 +38,11 @@ class ExadataDetails(object):
             'name': 'str',
             'vmcluster_names': 'list[str]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
             'vmcluster_names': 'vmclusterNames'
         }
-
         self._id = None
         self._name = None
         self._vmcluster_names = None

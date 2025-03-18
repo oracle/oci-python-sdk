@@ -28,11 +28,9 @@ class WorkSubmissionKey(object):
         self.swagger_types = {
             'work_submission_key': 'str'
         }
-
         self.attribute_map = {
             'work_submission_key': 'workSubmissionKey'
         }
-
         self._work_submission_key = None
 
     @property

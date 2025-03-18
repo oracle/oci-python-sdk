@@ -42,11 +42,9 @@ class DocumentDetails(object):
         self.swagger_types = {
             'source': 'str'
         }
-
         self.attribute_map = {
             'source': 'source'
         }
-
         self._source = None
 
     @staticmethod

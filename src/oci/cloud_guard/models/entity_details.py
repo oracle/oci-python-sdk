@@ -38,13 +38,11 @@ class EntityDetails(object):
             'value': 'str',
             'type': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'value': 'value',
             'type': 'type'
         }
-
         self._display_name = None
         self._value = None
         self._type = None

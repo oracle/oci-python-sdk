@@ -28,11 +28,9 @@ class AvailableShapesCollection(object):
         self.swagger_types = {
             'items': 'list[AvailableShapeSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

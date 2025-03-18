@@ -35,12 +35,10 @@ class ZipUploadConfigSource(ConfigSource):
             'config_source_type': 'str',
             'working_directory': 'str'
         }
-
         self.attribute_map = {
             'config_source_type': 'configSourceType',
             'working_directory': 'workingDirectory'
         }
-
         self._config_source_type = None
         self._working_directory = None
         self._config_source_type = 'ZIP_UPLOAD'

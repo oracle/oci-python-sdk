@@ -63,14 +63,12 @@ class MappedSecret(object):
             'type': 'str',
             'parent_resource_id': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'source': 'source',
             'type': 'type',
             'parent_resource_id': 'parentResourceId'
         }
-
         self._name = None
         self._source = None
         self._type = None

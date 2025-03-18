@@ -116,7 +116,6 @@ class RollbackCycleFsuJobSummary(FsuJobSummary):
             'fsu_cycle_id': 'str',
             'target_id': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -137,7 +136,6 @@ class RollbackCycleFsuJobSummary(FsuJobSummary):
             'fsu_cycle_id': 'fsuCycleId',
             'target_id': 'targetId'
         }
-
         self._id = None
         self._display_name = None
         self._type = None

@@ -85,7 +85,6 @@ class CreateContainerImageSignatureDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'image_id': 'imageId',
@@ -97,7 +96,6 @@ class CreateContainerImageSignatureDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._compartment_id = None
         self._image_id = None
         self._kms_key_id = None

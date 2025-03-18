@@ -73,7 +73,6 @@ class DeviceFingerprintChallenge(object):
             'max_address_count_expiration_in_seconds': 'int',
             'challenge_settings': 'BlockChallengeSettings'
         }
-
         self.attribute_map = {
             'is_enabled': 'isEnabled',
             'action': 'action',
@@ -84,7 +83,6 @@ class DeviceFingerprintChallenge(object):
             'max_address_count_expiration_in_seconds': 'maxAddressCountExpirationInSeconds',
             'challenge_settings': 'challengeSettings'
         }
-
         self._is_enabled = None
         self._action = None
         self._failure_threshold = None

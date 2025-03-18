@@ -116,7 +116,6 @@ class Erratum(object):
             'software_sources': 'list[Id]',
             'packages': 'list[SoftwarePackageSummary]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'id': 'id',
@@ -134,7 +133,6 @@ class Erratum(object):
             'software_sources': 'softwareSources',
             'packages': 'packages'
         }
-
         self._name = None
         self._id = None
         self._compartment_id = None

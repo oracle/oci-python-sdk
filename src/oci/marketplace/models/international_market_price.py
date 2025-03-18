@@ -264,13 +264,11 @@ class InternationalMarketPrice(object):
             'currency_symbol': 'str',
             'rate': 'float'
         }
-
         self.attribute_map = {
             'currency_code': 'currencyCode',
             'currency_symbol': 'currencySymbol',
             'rate': 'rate'
         }
-
         self._currency_code = None
         self._currency_symbol = None
         self._rate = None

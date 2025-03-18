@@ -44,14 +44,12 @@ class ContainerInstanceShapeConfig(object):
             'processor_description': 'str',
             'networking_bandwidth_in_gbps': 'float'
         }
-
         self.attribute_map = {
             'ocpus': 'ocpus',
             'memory_in_gbs': 'memoryInGBs',
             'processor_description': 'processorDescription',
             'networking_bandwidth_in_gbps': 'networkingBandwidthInGbps'
         }
-
         self._ocpus = None
         self._memory_in_gbs = None
         self._processor_description = None

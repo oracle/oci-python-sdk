@@ -38,13 +38,11 @@ class UpdateOkeClusterVirtualNodePoolConfigurationDetails(object):
             'minimum': 'int',
             'maximum': 'int'
         }
-
         self.attribute_map = {
             'id': 'id',
             'minimum': 'minimum',
             'maximum': 'maximum'
         }
-
         self._id = None
         self._minimum = None
         self._maximum = None

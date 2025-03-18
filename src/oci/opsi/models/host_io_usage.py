@@ -65,7 +65,6 @@ class HostIoUsage(HostPerformanceMetricGroup):
             'disk_iops_written': 'float',
             'disk_iops': 'float'
         }
-
         self.attribute_map = {
             'metric_name': 'metricName',
             'time_collected': 'timeCollected',
@@ -76,7 +75,6 @@ class HostIoUsage(HostPerformanceMetricGroup):
             'disk_iops_written': 'diskIopsWritten',
             'disk_iops': 'diskIops'
         }
-
         self._metric_name = None
         self._time_collected = None
         self._mount_point = None

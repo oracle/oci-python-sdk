@@ -79,7 +79,6 @@ class CreateInvokeFunctionDeployStageDetails(CreateDeployStageDetails):
             'is_async': 'bool',
             'is_validation_enabled': 'bool'
         }
-
         self.attribute_map = {
             'description': 'description',
             'display_name': 'displayName',
@@ -93,7 +92,6 @@ class CreateInvokeFunctionDeployStageDetails(CreateDeployStageDetails):
             'is_async': 'isAsync',
             'is_validation_enabled': 'isValidationEnabled'
         }
-
         self._description = None
         self._display_name = None
         self._deploy_stage_type = None

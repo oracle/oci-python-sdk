@@ -82,7 +82,6 @@ class CreateOggDeploymentDetails(object):
             'ogg_version': 'str',
             'group_to_roles_mapping': 'GroupToRolesMappingDetails'
         }
-
         self.attribute_map = {
             'deployment_name': 'deploymentName',
             'credential_store': 'credentialStore',
@@ -95,7 +94,6 @@ class CreateOggDeploymentDetails(object):
             'ogg_version': 'oggVersion',
             'group_to_roles_mapping': 'groupToRolesMapping'
         }
-
         self._deployment_name = None
         self._credential_store = None
         self._identity_domain_id = None

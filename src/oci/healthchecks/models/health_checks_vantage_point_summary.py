@@ -48,7 +48,6 @@ class HealthChecksVantagePointSummary(object):
             'geo': 'Geolocation',
             'routing': 'list[Routing]'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'provider_name': 'providerName',
@@ -56,7 +55,6 @@ class HealthChecksVantagePointSummary(object):
             'geo': 'geo',
             'routing': 'routing'
         }
-
         self._display_name = None
         self._provider_name = None
         self._name = None

@@ -74,13 +74,11 @@ class DatabaseManagementConfig(object):
             'connector_id': 'str',
             'license_model': 'str'
         }
-
         self.attribute_map = {
             'database_management_status': 'databaseManagementStatus',
             'connector_id': 'connectorId',
             'license_model': 'licenseModel'
         }
-
         self._database_management_status = None
         self._connector_id = None
         self._license_model = None

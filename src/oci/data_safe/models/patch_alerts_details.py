@@ -33,12 +33,10 @@ class PatchAlertsDetails(object):
             'items': 'list[PatchInstruction]',
             'compartment_id': 'str'
         }
-
         self.attribute_map = {
             'items': 'items',
             'compartment_id': 'compartmentId'
         }
-
         self._items = None
         self._compartment_id = None
 

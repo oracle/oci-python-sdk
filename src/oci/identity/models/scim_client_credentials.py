@@ -33,12 +33,10 @@ class ScimClientCredentials(object):
             'client_id': 'str',
             'client_secret': 'str'
         }
-
         self.attribute_map = {
             'client_id': 'clientId',
             'client_secret': 'clientSecret'
         }
-
         self._client_id = None
         self._client_secret = None
 

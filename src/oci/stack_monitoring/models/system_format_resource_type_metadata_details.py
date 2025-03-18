@@ -65,7 +65,6 @@ class SystemFormatResourceTypeMetadataDetails(ResourceTypeMetadataDetails):
             'valid_property_values': 'dict(str, list[str])',
             'valid_sub_resource_types': 'list[str]'
         }
-
         self.attribute_map = {
             'format': 'format',
             'required_properties': 'requiredProperties',
@@ -76,7 +75,6 @@ class SystemFormatResourceTypeMetadataDetails(ResourceTypeMetadataDetails):
             'valid_property_values': 'validPropertyValues',
             'valid_sub_resource_types': 'validSubResourceTypes'
         }
-
         self._format = None
         self._required_properties = None
         self._agent_properties = None

@@ -28,11 +28,9 @@ class ExportRequestSummaryCollection(object):
         self.swagger_types = {
             'items': 'list[ExportRequestSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

@@ -106,7 +106,6 @@ class DiscoveredExternalCluster(DiscoveredExternalDbSystemComponent):
             'ocr_file_location': 'str',
             'cluster_instances': 'list[DiscoveredExternalClusterInstance]'
         }
-
         self.attribute_map = {
             'component_id': 'componentId',
             'display_name': 'displayName',
@@ -125,7 +124,6 @@ class DiscoveredExternalCluster(DiscoveredExternalDbSystemComponent):
             'ocr_file_location': 'ocrFileLocation',
             'cluster_instances': 'clusterInstances'
         }
-
         self._component_id = None
         self._display_name = None
         self._component_name = None

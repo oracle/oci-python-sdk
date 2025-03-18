@@ -48,7 +48,6 @@ class StatusSummary(object):
             'status': 'str',
             'total_chunks': 'int'
         }
-
         self.attribute_map = {
             'chunks_processed': 'chunksProcessed',
             'failure_details': 'failureDetails',
@@ -56,7 +55,6 @@ class StatusSummary(object):
             'status': 'status',
             'total_chunks': 'totalChunks'
         }
-
         self._chunks_processed = None
         self._failure_details = None
         self._filename = None

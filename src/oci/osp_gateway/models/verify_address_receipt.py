@@ -82,13 +82,11 @@ class VerifyAddressReceipt(object):
             'quality': 'str',
             'verification_code': 'str'
         }
-
         self.attribute_map = {
             'address': 'address',
             'quality': 'quality',
             'verification_code': 'verificationCode'
         }
-
         self._address = None
         self._quality = None
         self._verification_code = None

@@ -161,7 +161,6 @@ class SecretSummary(object):
             'secret_generation_context': 'SecretGenerationContext',
             'is_auto_generation_enabled': 'bool'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
@@ -184,7 +183,6 @@ class SecretSummary(object):
             'secret_generation_context': 'secretGenerationContext',
             'is_auto_generation_enabled': 'isAutoGenerationEnabled'
         }
-
         self._compartment_id = None
         self._defined_tags = None
         self._description = None

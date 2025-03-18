@@ -28,11 +28,9 @@ class NetworkLoadBalancerCollection(object):
         self.swagger_types = {
             'items': 'list[NetworkLoadBalancerSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

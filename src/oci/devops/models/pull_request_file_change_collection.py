@@ -28,11 +28,9 @@ class PullRequestFileChangeCollection(object):
         self.swagger_types = {
             'items': 'list[PullRequestFileChangeSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

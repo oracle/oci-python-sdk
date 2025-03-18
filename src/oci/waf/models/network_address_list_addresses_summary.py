@@ -85,7 +85,6 @@ class NetworkAddressListAddressesSummary(NetworkAddressListSummary):
             'system_tags': 'dict(str, dict(str, object))',
             'addresses': 'list[str]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -100,7 +99,6 @@ class NetworkAddressListAddressesSummary(NetworkAddressListSummary):
             'system_tags': 'systemTags',
             'addresses': 'addresses'
         }
-
         self._id = None
         self._display_name = None
         self._compartment_id = None

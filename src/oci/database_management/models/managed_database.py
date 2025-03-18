@@ -283,7 +283,6 @@ class ManagedDatabase(object):
             'dbmgmt_feature_configs': 'list[DatabaseFeatureConfiguration]',
             'database_platform_name': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -314,7 +313,6 @@ class ManagedDatabase(object):
             'dbmgmt_feature_configs': 'dbmgmtFeatureConfigs',
             'database_platform_name': 'databasePlatformName'
         }
-
         self._id = None
         self._compartment_id = None
         self._name = None

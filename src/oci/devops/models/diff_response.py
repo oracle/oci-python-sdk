@@ -63,7 +63,6 @@ class DiffResponse(object):
             'deleted_lines_count': 'int',
             'changes': 'list[DiffResponseEntry]'
         }
-
         self.attribute_map = {
             'are_all_changes_included': 'areAllChangesIncluded',
             'change_type_count': 'changeTypeCount',
@@ -74,7 +73,6 @@ class DiffResponse(object):
             'deleted_lines_count': 'deletedLinesCount',
             'changes': 'changes'
         }
-
         self._are_all_changes_included = None
         self._change_type_count = None
         self._common_commit = None

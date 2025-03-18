@@ -33,12 +33,10 @@ class ActivateBdsMetastoreConfigurationDetails(object):
             'bds_api_key_passphrase': 'str',
             'cluster_admin_password': 'str'
         }
-
         self.attribute_map = {
             'bds_api_key_passphrase': 'bdsApiKeyPassphrase',
             'cluster_admin_password': 'clusterAdminPassword'
         }
-
         self._bds_api_key_passphrase = None
         self._cluster_admin_password = None
 

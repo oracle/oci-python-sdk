@@ -52,14 +52,12 @@ class IdentitySettingsMyProfile(object):
             'allow_end_users_to_update_their_security_settings': 'bool',
             'allow_end_users_to_manage_their_capabilities': 'bool'
         }
-
         self.attribute_map = {
             'allow_end_users_to_change_their_password': 'allowEndUsersToChangeTheirPassword',
             'allow_end_users_to_link_their_support_account': 'allowEndUsersToLinkTheirSupportAccount',
             'allow_end_users_to_update_their_security_settings': 'allowEndUsersToUpdateTheirSecuritySettings',
             'allow_end_users_to_manage_their_capabilities': 'allowEndUsersToManageTheirCapabilities'
         }
-
         self._allow_end_users_to_change_their_password = None
         self._allow_end_users_to_link_their_support_account = None
         self._allow_end_users_to_update_their_security_settings = None

@@ -33,12 +33,10 @@ class AddPublicIpPoolCapacityDetails(object):
             'byoip_range_id': 'str',
             'cidr_block': 'str'
         }
-
         self.attribute_map = {
             'byoip_range_id': 'byoipRangeId',
             'cidr_block': 'cidrBlock'
         }
-
         self._byoip_range_id = None
         self._cidr_block = None
 

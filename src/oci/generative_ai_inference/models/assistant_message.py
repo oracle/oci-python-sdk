@@ -45,14 +45,12 @@ class AssistantMessage(Message):
             'name': 'str',
             'tool_calls': 'list[ToolCall]'
         }
-
         self.attribute_map = {
             'role': 'role',
             'content': 'content',
             'name': 'name',
             'tool_calls': 'toolCalls'
         }
-
         self._role = None
         self._content = None
         self._name = None

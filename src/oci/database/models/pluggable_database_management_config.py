@@ -62,11 +62,9 @@ class PluggableDatabaseManagementConfig(object):
         self.swagger_types = {
             'management_status': 'str'
         }
-
         self.attribute_map = {
             'management_status': 'managementStatus'
         }
-
         self._management_status = None
 
     @property

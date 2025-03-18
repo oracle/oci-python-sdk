@@ -48,7 +48,6 @@ class Anomaly(object):
             'imputed_value': 'float',
             'anomaly_score': 'float'
         }
-
         self.attribute_map = {
             'signal_name': 'signalName',
             'actual_value': 'actualValue',
@@ -56,7 +55,6 @@ class Anomaly(object):
             'imputed_value': 'imputedValue',
             'anomaly_score': 'anomalyScore'
         }
-
         self._signal_name = None
         self._actual_value = None
         self._estimated_value = None

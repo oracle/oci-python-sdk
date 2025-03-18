@@ -153,7 +153,6 @@ class CustomSoftwareSourceSummary(SoftwareSourceSummary):
             'vendor_software_sources': 'list[Id]',
             'software_source_sub_type': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -177,7 +176,6 @@ class CustomSoftwareSourceSummary(SoftwareSourceSummary):
             'vendor_software_sources': 'vendorSoftwareSources',
             'software_source_sub_type': 'softwareSourceSubType'
         }
-
         self._id = None
         self._compartment_id = None
         self._display_name = None

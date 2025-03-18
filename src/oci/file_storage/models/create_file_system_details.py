@@ -87,7 +87,6 @@ class CreateFileSystemDetails(object):
             'filesystem_snapshot_policy_id': 'str',
             'are_quota_rules_enabled': 'bool'
         }
-
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'compartment_id': 'compartmentId',
@@ -101,7 +100,6 @@ class CreateFileSystemDetails(object):
             'filesystem_snapshot_policy_id': 'filesystemSnapshotPolicyId',
             'are_quota_rules_enabled': 'areQuotaRulesEnabled'
         }
-
         self._availability_domain = None
         self._compartment_id = None
         self._display_name = None

@@ -58,7 +58,6 @@ class HsmPartitionSummary(object):
             'time_created': 'datetime',
             'time_updated': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'hsm_cluster_id': 'hsmClusterId',
@@ -68,7 +67,6 @@ class HsmPartitionSummary(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated'
         }
-
         self._id = None
         self._hsm_cluster_id = None
         self._lifecycle_state = None

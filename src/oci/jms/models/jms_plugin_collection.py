@@ -28,11 +28,9 @@ class JmsPluginCollection(object):
         self.swagger_types = {
             'items': 'list[JmsPluginSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

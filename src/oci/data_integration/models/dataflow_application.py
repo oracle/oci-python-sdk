@@ -38,13 +38,11 @@ class DataflowApplication(object):
             'compartment_id': 'str',
             'config_values': 'ConfigValues'
         }
-
         self.attribute_map = {
             'application_id': 'applicationId',
             'compartment_id': 'compartmentId',
             'config_values': 'configValues'
         }
-
         self._application_id = None
         self._compartment_id = None
         self._config_values = None

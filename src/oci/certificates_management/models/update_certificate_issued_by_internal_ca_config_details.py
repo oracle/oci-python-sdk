@@ -46,14 +46,12 @@ class UpdateCertificateIssuedByInternalCaConfigDetails(UpdateCertificateConfigDe
             'stage': 'str',
             'validity': 'Validity'
         }
-
         self.attribute_map = {
             'config_type': 'configType',
             'version_name': 'versionName',
             'stage': 'stage',
             'validity': 'validity'
         }
-
         self._config_type = None
         self._version_name = None
         self._stage = None

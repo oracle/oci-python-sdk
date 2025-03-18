@@ -28,11 +28,9 @@ class CreateMaintenanceDetails(object):
         self.swagger_types = {
             'window_start_time': 'str'
         }
-
         self.attribute_map = {
             'window_start_time': 'windowStartTime'
         }
-
         self._window_start_time = None
 
     @property

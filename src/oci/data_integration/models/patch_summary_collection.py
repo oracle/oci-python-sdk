@@ -28,11 +28,9 @@ class PatchSummaryCollection(object):
         self.swagger_types = {
             'items': 'list[PatchSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

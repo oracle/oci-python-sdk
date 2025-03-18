@@ -87,7 +87,6 @@ class ExadataExacsConfigurationSummary(ExadataConfigurationSummary):
             'opsi_private_endpoint_id': 'str',
             'parent_id': 'str'
         }
-
         self.attribute_map = {
             'exadata_insight_id': 'exadataInsightId',
             'entity_source': 'entitySource',
@@ -102,7 +101,6 @@ class ExadataExacsConfigurationSummary(ExadataConfigurationSummary):
             'opsi_private_endpoint_id': 'opsiPrivateEndpointId',
             'parent_id': 'parentId'
         }
-
         self._exadata_insight_id = None
         self._entity_source = None
         self._compartment_id = None

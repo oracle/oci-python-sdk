@@ -100,7 +100,6 @@ class UnifiedJSONParser(UnifiedAgentParser):
             'parse_nested': 'bool',
             'separator': 'str'
         }
-
         self.attribute_map = {
             'parser_type': 'parserType',
             'field_time_key': 'fieldTimeKey',
@@ -115,7 +114,6 @@ class UnifiedJSONParser(UnifiedAgentParser):
             'parse_nested': 'parseNested',
             'separator': 'separator'
         }
-
         self._parser_type = None
         self._field_time_key = None
         self._types = None

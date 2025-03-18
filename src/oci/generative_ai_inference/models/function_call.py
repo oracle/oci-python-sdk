@@ -45,14 +45,12 @@ class FunctionCall(ToolCall):
             'name': 'str',
             'arguments': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'type': 'type',
             'name': 'name',
             'arguments': 'arguments'
         }
-
         self._id = None
         self._type = None
         self._name = None

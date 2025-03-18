@@ -42,12 +42,10 @@ class DpdConfig(object):
             'dpd_mode': 'str',
             'dpd_timeout_in_sec': 'int'
         }
-
         self.attribute_map = {
             'dpd_mode': 'dpdMode',
             'dpd_timeout_in_sec': 'dpdTimeoutInSec'
         }
-
         self._dpd_mode = None
         self._dpd_timeout_in_sec = None
 

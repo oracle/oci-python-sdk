@@ -100,7 +100,6 @@ class CreatePatchFsuCycle(CreateFsuCycleDetails):
             'max_drain_timeout_in_seconds': 'int',
             'is_keep_placement': 'bool'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'compartment_id': 'compartmentId',
@@ -118,7 +117,6 @@ class CreatePatchFsuCycle(CreateFsuCycleDetails):
             'max_drain_timeout_in_seconds': 'maxDrainTimeoutInSeconds',
             'is_keep_placement': 'isKeepPlacement'
         }
-
         self._display_name = None
         self._compartment_id = None
         self._type = None

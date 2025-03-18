@@ -114,7 +114,6 @@ class MonthlyRuleFrequencyDetails(AbstractFrequencyDetails):
             'time': 'Time',
             'day_of_week': 'str'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'frequency': 'frequency',
@@ -123,7 +122,6 @@ class MonthlyRuleFrequencyDetails(AbstractFrequencyDetails):
             'time': 'time',
             'day_of_week': 'dayOfWeek'
         }
-
         self._model_type = None
         self._frequency = None
         self._week_of_month = None

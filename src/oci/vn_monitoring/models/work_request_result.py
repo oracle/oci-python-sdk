@@ -38,11 +38,9 @@ class WorkRequestResult(object):
         self.swagger_types = {
             'result_type': 'str'
         }
-
         self.attribute_map = {
             'result_type': 'resultType'
         }
-
         self._result_type = None
 
     @staticmethod

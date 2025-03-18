@@ -28,11 +28,9 @@ class ServiceAttachmentCollection(object):
         self.swagger_types = {
             'items': 'list[ServiceAttachmentSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

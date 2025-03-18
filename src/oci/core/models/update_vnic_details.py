@@ -63,7 +63,6 @@ class UpdateVnicDetails(object):
             'skip_source_dest_check': 'bool',
             'route_table_id': 'str'
         }
-
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
@@ -74,7 +73,6 @@ class UpdateVnicDetails(object):
             'skip_source_dest_check': 'skipSourceDestCheck',
             'route_table_id': 'routeTableId'
         }
-
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None

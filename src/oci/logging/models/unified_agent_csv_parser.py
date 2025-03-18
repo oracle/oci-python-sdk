@@ -75,7 +75,6 @@ class UnifiedAgentCsvParser(UnifiedAgentParser):
             'delimiter': 'str',
             'keys': 'list[str]'
         }
-
         self.attribute_map = {
             'parser_type': 'parserType',
             'field_time_key': 'fieldTimeKey',
@@ -88,7 +87,6 @@ class UnifiedAgentCsvParser(UnifiedAgentParser):
             'delimiter': 'delimiter',
             'keys': 'keys'
         }
-
         self._parser_type = None
         self._field_time_key = None
         self._types = None

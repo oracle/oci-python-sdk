@@ -38,13 +38,11 @@ class Outcome(object):
             'error': 'str',
             'exit_code': 'str'
         }
-
         self.attribute_map = {
             'output': 'output',
             'error': 'error',
             'exit_code': 'exitCode'
         }
-
         self._output = None
         self._error = None
         self._exit_code = None

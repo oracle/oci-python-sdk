@@ -89,7 +89,6 @@ class VoiceSummary(object):
             'words_per_minute': 'int',
             'is_default_voice': 'bool'
         }
-
         self.attribute_map = {
             'voice_id': 'voiceId',
             'display_name': 'displayName',
@@ -102,7 +101,6 @@ class VoiceSummary(object):
             'words_per_minute': 'wordsPerMinute',
             'is_default_voice': 'isDefaultVoice'
         }
-
         self._voice_id = None
         self._display_name = None
         self._description = None

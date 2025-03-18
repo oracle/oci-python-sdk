@@ -33,12 +33,10 @@ class Device(object):
             'name': 'str',
             'is_available': 'bool'
         }
-
         self.attribute_map = {
             'name': 'name',
             'is_available': 'isAvailable'
         }
-
         self._name = None
         self._is_available = None
 

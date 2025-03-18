@@ -47,13 +47,11 @@ class ShuffleFormatEntry(FormatEntry):
             'description': 'str',
             'grouping_columns': 'list[str]'
         }
-
         self.attribute_map = {
             'type': 'type',
             'description': 'description',
             'grouping_columns': 'groupingColumns'
         }
-
         self._type = None
         self._description = None
         self._grouping_columns = None

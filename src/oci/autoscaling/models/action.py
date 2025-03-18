@@ -39,12 +39,10 @@ class Action(object):
             'type': 'str',
             'value': 'int'
         }
-
         self.attribute_map = {
             'type': 'type',
             'value': 'value'
         }
-
         self._type = None
         self._value = None
 

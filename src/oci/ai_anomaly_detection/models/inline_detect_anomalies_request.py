@@ -52,7 +52,6 @@ class InlineDetectAnomaliesRequest(DetectAnomaliesDetails):
             'signal_names': 'list[str]',
             'data': 'list[DataItem]'
         }
-
         self.attribute_map = {
             'model_id': 'modelId',
             'request_type': 'requestType',
@@ -60,7 +59,6 @@ class InlineDetectAnomaliesRequest(DetectAnomaliesDetails):
             'signal_names': 'signalNames',
             'data': 'data'
         }
-
         self._model_id = None
         self._request_type = None
         self._sensitivity = None

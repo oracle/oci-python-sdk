@@ -61,12 +61,10 @@ class ComplianceRecordDimension(object):
             'compliance_state': 'str',
             'compliance_level': 'str'
         }
-
         self.attribute_map = {
             'compliance_state': 'complianceState',
             'compliance_level': 'complianceLevel'
         }
-
         self._compliance_state = None
         self._compliance_level = None
 

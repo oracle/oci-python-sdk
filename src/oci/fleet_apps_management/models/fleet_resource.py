@@ -159,7 +159,6 @@ class FleetResource(object):
             'lifecycle_details': 'str',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'id': 'id',
             'tenancy_id': 'tenancyId',
@@ -182,7 +181,6 @@ class FleetResource(object):
             'lifecycle_details': 'lifecycleDetails',
             'system_tags': 'systemTags'
         }
-
         self._id = None
         self._tenancy_id = None
         self._resource_region = None

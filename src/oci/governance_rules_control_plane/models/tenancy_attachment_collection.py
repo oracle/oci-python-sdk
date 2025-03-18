@@ -28,11 +28,9 @@ class TenancyAttachmentCollection(object):
         self.swagger_types = {
             'items': 'list[TenancyAttachmentSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

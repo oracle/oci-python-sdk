@@ -105,7 +105,6 @@ class UpdateEntityDetails(object):
             'custom_property_members': 'list[CustomPropertySetUsage]',
             'properties': 'dict(str, dict(str, str))'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'business_name': 'businessName',
@@ -121,7 +120,6 @@ class UpdateEntityDetails(object):
             'custom_property_members': 'customPropertyMembers',
             'properties': 'properties'
         }
-
         self._display_name = None
         self._business_name = None
         self._description = None

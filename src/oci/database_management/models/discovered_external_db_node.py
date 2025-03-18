@@ -86,7 +86,6 @@ class DiscoveredExternalDbNode(DiscoveredExternalDbSystemComponent):
             'memory_size_in_gbs': 'float',
             'connector': 'ExternalDbSystemDiscoveryConnector'
         }
-
         self.attribute_map = {
             'component_id': 'componentId',
             'display_name': 'displayName',
@@ -101,7 +100,6 @@ class DiscoveredExternalDbNode(DiscoveredExternalDbSystemComponent):
             'memory_size_in_gbs': 'memorySizeInGBs',
             'connector': 'connector'
         }
-
         self._component_id = None
         self._display_name = None
         self._component_name = None

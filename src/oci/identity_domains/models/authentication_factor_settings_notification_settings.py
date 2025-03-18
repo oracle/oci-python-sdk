@@ -39,11 +39,9 @@ class AuthenticationFactorSettingsNotificationSettings(object):
         self.swagger_types = {
             'pull_enabled': 'bool'
         }
-
         self.attribute_map = {
             'pull_enabled': 'pullEnabled'
         }
-
         self._pull_enabled = None
 
     @property

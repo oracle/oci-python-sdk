@@ -167,7 +167,6 @@ class Glossary(object):
             'latest_import_job_execution_status': 'str',
             'uri': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'display_name': 'displayName',
@@ -187,7 +186,6 @@ class Glossary(object):
             'latest_import_job_execution_status': 'latestImportJobExecutionStatus',
             'uri': 'uri'
         }
-
         self._key = None
         self._display_name = None
         self._description = None

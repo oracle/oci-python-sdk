@@ -38,12 +38,10 @@ class ClusterConfigDetails(object):
             'hpc_island_id': 'str',
             'network_block_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'hpc_island_id': 'hpcIslandId',
             'network_block_ids': 'networkBlockIds'
         }
-
         self._hpc_island_id = None
         self._network_block_ids = None
 

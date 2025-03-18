@@ -179,7 +179,6 @@ class CreateTablespaceDetails(object):
             'segment_management': 'str',
             'is_default': 'bool'
         }
-
         self.attribute_map = {
             'credential_details': 'credentialDetails',
             'database_credential': 'databaseCredential',
@@ -204,7 +203,6 @@ class CreateTablespaceDetails(object):
             'segment_management': 'segmentManagement',
             'is_default': 'isDefault'
         }
-
         self._credential_details = None
         self._database_credential = None
         self._name = None

@@ -199,7 +199,6 @@ class Sighting(object):
             'additional_details': 'dict(str, str)',
             'locks': 'list[ResourceLock]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'description': 'description',
@@ -224,7 +223,6 @@ class Sighting(object):
             'additional_details': 'additionalDetails',
             'locks': 'locks'
         }
-
         self._id = None
         self._description = None
         self._problem_id = None

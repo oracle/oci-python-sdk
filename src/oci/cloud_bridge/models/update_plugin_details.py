@@ -28,11 +28,9 @@ class UpdatePluginDetails(object):
         self.swagger_types = {
             'desired_state': 'str'
         }
-
         self.attribute_map = {
             'desired_state': 'desiredState'
         }
-
         self._desired_state = None
 
     @property

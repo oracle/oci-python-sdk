@@ -47,13 +47,11 @@ class CreateSourceApplicationInfo(object):
             'application_key': 'str',
             'copy_type': 'str'
         }
-
         self.attribute_map = {
             'workspace_id': 'workspaceId',
             'application_key': 'applicationKey',
             'copy_type': 'copyType'
         }
-
         self._workspace_id = None
         self._application_key = None
         self._copy_type = None

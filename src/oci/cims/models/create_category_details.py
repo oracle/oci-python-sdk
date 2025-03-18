@@ -28,11 +28,9 @@ class CreateCategoryDetails(object):
         self.swagger_types = {
             'category_key': 'str'
         }
-
         self.attribute_map = {
             'category_key': 'categoryKey'
         }
-
         self._category_key = None
 
     @property

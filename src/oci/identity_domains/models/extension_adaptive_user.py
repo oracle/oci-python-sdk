@@ -47,12 +47,10 @@ class ExtensionAdaptiveUser(object):
             'risk_level': 'str',
             'risk_scores': 'list[UserExtRiskScores]'
         }
-
         self.attribute_map = {
             'risk_level': 'riskLevel',
             'risk_scores': 'riskScores'
         }
-
         self._risk_level = None
         self._risk_scores = None
 

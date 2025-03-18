@@ -63,7 +63,6 @@ class CreateDeployArtifactDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'description': 'description',
             'display_name': 'displayName',
@@ -74,7 +73,6 @@ class CreateDeployArtifactDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._description = None
         self._display_name = None
         self._deploy_artifact_type = None

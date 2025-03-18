@@ -47,12 +47,10 @@ class QueryParameterValidationRequestPolicy(object):
             'parameters': 'list[QueryParameterValidationItem]',
             'validation_mode': 'str'
         }
-
         self.attribute_map = {
             'parameters': 'parameters',
             'validation_mode': 'validationMode'
         }
-
         self._parameters = None
         self._validation_mode = None
 

@@ -33,12 +33,10 @@ class BitbucketServerFilterAttributes(object):
             'head_ref': 'str',
             'base_ref': 'str'
         }
-
         self.attribute_map = {
             'head_ref': 'headRef',
             'base_ref': 'baseRef'
         }
-
         self._head_ref = None
         self._base_ref = None
 

@@ -35,12 +35,10 @@ class CohereResponseJsonFormat(CohereResponseFormat):
             'type': 'str',
             'schema': 'object'
         }
-
         self.attribute_map = {
             'type': 'type',
             'schema': 'schema'
         }
-
         self._type = None
         self._schema = None
         self._type = 'JSON_OBJECT'

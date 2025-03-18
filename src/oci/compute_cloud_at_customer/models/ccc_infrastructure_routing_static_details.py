@@ -33,12 +33,10 @@ class CccInfrastructureRoutingStaticDetails(object):
             'uplink_vlan': 'int',
             'uplink_hsrp_group': 'int'
         }
-
         self.attribute_map = {
             'uplink_vlan': 'uplinkVlan',
             'uplink_hsrp_group': 'uplinkHsrpGroup'
         }
-
         self._uplink_vlan = None
         self._uplink_hsrp_group = None
 

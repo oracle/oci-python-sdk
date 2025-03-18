@@ -61,7 +61,6 @@ class ScheduleReportDetails(object):
             'compartment_id': 'str',
             'report_details': 'ReportDetails'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'schedule': 'schedule',
@@ -69,7 +68,6 @@ class ScheduleReportDetails(object):
             'compartment_id': 'compartmentId',
             'report_details': 'reportDetails'
         }
-
         self._display_name = None
         self._schedule = None
         self._mime_type = None

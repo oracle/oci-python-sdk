@@ -66,7 +66,6 @@ class CustomAuthenticationPolicy(AuthenticationPolicy):
             'cache_key': 'list[str]',
             'validation_failure_policy': 'ValidationFailurePolicy'
         }
-
         self.attribute_map = {
             'is_anonymous_access_allowed': 'isAnonymousAccessAllowed',
             'type': 'type',
@@ -77,7 +76,6 @@ class CustomAuthenticationPolicy(AuthenticationPolicy):
             'cache_key': 'cacheKey',
             'validation_failure_policy': 'validationFailurePolicy'
         }
-
         self._is_anonymous_access_allowed = None
         self._type = None
         self._function_id = None

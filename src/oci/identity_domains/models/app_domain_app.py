@@ -49,13 +49,11 @@ class AppDomainApp(object):
             'ref': 'str',
             'display': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ref': '$ref',
             'display': 'display'
         }
-
         self._value = None
         self._ref = None
         self._display = None

@@ -68,7 +68,6 @@ class InvoicingAddress(object):
             'tca_cust_acct_site_id': 'int',
             'tca_party_site_number': 'str'
         }
-
         self.attribute_map = {
             'location': 'location',
             'name': 'name',
@@ -80,7 +79,6 @@ class InvoicingAddress(object):
             'tca_cust_acct_site_id': 'tcaCustAcctSiteId',
             'tca_party_site_number': 'tcaPartySiteNumber'
         }
-
         self._location = None
         self._name = None
         self._phone = None

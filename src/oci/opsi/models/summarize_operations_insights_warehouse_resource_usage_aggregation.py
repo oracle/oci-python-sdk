@@ -69,14 +69,12 @@ class SummarizeOperationsInsightsWarehouseResourceUsageAggregation(object):
             'storage_used_in_gbs': 'float',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'cpu_used': 'cpuUsed',
             'storage_used_in_gbs': 'storageUsedInGBs',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._id = None
         self._cpu_used = None
         self._storage_used_in_gbs = None

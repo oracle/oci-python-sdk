@@ -29,11 +29,9 @@ class CreatePluggableDatabaseRefreshableCloneDetails(object):
         self.swagger_types = {
             'is_refreshable_clone': 'bool'
         }
-
         self.attribute_map = {
             'is_refreshable_clone': 'isRefreshableClone'
         }
-
         self._is_refreshable_clone = None
 
     @property

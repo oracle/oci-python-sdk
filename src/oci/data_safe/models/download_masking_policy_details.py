@@ -33,11 +33,9 @@ class DownloadMaskingPolicyDetails(object):
         self.swagger_types = {
             'policy_format': 'str'
         }
-
         self.attribute_map = {
             'policy_format': 'policyFormat'
         }
-
         self._policy_format = None
 
     @property

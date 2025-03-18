@@ -33,12 +33,10 @@ class InputParameter(object):
             'step_name': 'str',
             'arguments': 'list[TaskArgument]'
         }
-
         self.attribute_map = {
             'step_name': 'stepName',
             'arguments': 'arguments'
         }
-
         self._step_name = None
         self._arguments = None
 

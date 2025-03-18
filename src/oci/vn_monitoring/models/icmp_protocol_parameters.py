@@ -42,13 +42,11 @@ class IcmpProtocolParameters(ProtocolParameters):
             'icmp_code': 'int',
             'icmp_type': 'int'
         }
-
         self.attribute_map = {
             'type': 'type',
             'icmp_code': 'icmpCode',
             'icmp_type': 'icmpType'
         }
-
         self._type = None
         self._icmp_code = None
         self._icmp_type = None

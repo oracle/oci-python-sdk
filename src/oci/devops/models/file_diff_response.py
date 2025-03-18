@@ -63,7 +63,6 @@ class FileDiffResponse(object):
             'is_binary': 'bool',
             'changes': 'list[DiffChunk]'
         }
-
         self.attribute_map = {
             'old_path': 'oldPath',
             'new_path': 'newPath',
@@ -74,7 +73,6 @@ class FileDiffResponse(object):
             'is_binary': 'isBinary',
             'changes': 'changes'
         }
-
         self._old_path = None
         self._new_path = None
         self._old_id = None

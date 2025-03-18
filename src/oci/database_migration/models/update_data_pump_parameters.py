@@ -80,7 +80,6 @@ class UpdateDataPumpParameters(object):
             'import_parallelism_degree': 'int',
             'export_parallelism_degree': 'int'
         }
-
         self.attribute_map = {
             'is_cluster': 'isCluster',
             'estimate': 'estimate',
@@ -89,7 +88,6 @@ class UpdateDataPumpParameters(object):
             'import_parallelism_degree': 'importParallelismDegree',
             'export_parallelism_degree': 'exportParallelismDegree'
         }
-
         self._is_cluster = None
         self._estimate = None
         self._table_exists_action = None

@@ -162,7 +162,6 @@ class ReplicaSummary(object):
             'configuration_id': 'str',
             'replica_overrides': 'ReplicaOverrides'
         }
-
         self.attribute_map = {
             'id': 'id',
             'db_system_id': 'dbSystemId',
@@ -186,7 +185,6 @@ class ReplicaSummary(object):
             'configuration_id': 'configurationId',
             'replica_overrides': 'replicaOverrides'
         }
-
         self._id = None
         self._db_system_id = None
         self._compartment_id = None

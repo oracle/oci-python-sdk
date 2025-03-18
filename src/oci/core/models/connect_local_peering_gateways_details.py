@@ -28,11 +28,9 @@ class ConnectLocalPeeringGatewaysDetails(object):
         self.swagger_types = {
             'peer_id': 'str'
         }
-
         self.attribute_map = {
             'peer_id': 'peerId'
         }
-
         self._peer_id = None
 
     @property

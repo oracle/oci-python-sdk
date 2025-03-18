@@ -78,7 +78,6 @@ class CreateScheduleDetails(object):
             'is_daylight_adjustment_enabled': 'bool',
             'registry_metadata': 'RegistryMetadata'
         }
-
         self.attribute_map = {
             'key': 'key',
             'model_version': 'modelVersion',
@@ -92,7 +91,6 @@ class CreateScheduleDetails(object):
             'is_daylight_adjustment_enabled': 'isDaylightAdjustmentEnabled',
             'registry_metadata': 'registryMetadata'
         }
-
         self._key = None
         self._model_version = None
         self._name = None

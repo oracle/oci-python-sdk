@@ -28,11 +28,9 @@ class AssociationCollection(object):
         self.swagger_types = {
             'items': 'list[AssociationSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

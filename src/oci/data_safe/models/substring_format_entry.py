@@ -50,14 +50,12 @@ class SubstringFormatEntry(FormatEntry):
             'start_position': 'int',
             'length': 'int'
         }
-
         self.attribute_map = {
             'type': 'type',
             'description': 'description',
             'start_position': 'startPosition',
             'length': 'length'
         }
-
         self._type = None
         self._description = None
         self._start_position = None

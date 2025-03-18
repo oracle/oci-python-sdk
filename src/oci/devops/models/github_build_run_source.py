@@ -40,13 +40,11 @@ class GithubBuildRunSource(BuildRunSource):
             'trigger_id': 'str',
             'trigger_info': 'TriggerInfo'
         }
-
         self.attribute_map = {
             'source_type': 'sourceType',
             'trigger_id': 'triggerId',
             'trigger_info': 'triggerInfo'
         }
-
         self._source_type = None
         self._trigger_id = None
         self._trigger_info = None

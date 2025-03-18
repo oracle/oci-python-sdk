@@ -34,12 +34,10 @@ class NetworkConfiguration(object):
             'subnet_id': 'str',
             'nsg_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'subnet_id': 'subnetId',
             'nsg_ids': 'nsgIds'
         }
-
         self._subnet_id = None
         self._nsg_ids = None
 

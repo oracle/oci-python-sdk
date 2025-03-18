@@ -103,7 +103,6 @@ class LogAnalyticsSourceExtendedFieldDefinition(object):
             'source_id': 'int',
             'time_updated': 'datetime'
         }
-
         self.attribute_map = {
             'field': 'field',
             'display_regular_expression': 'displayRegularExpression',
@@ -122,7 +121,6 @@ class LogAnalyticsSourceExtendedFieldDefinition(object):
             'source_id': 'sourceId',
             'time_updated': 'timeUpdated'
         }
-
         self._field = None
         self._display_regular_expression = None
         self._extended_fields = None

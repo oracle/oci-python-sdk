@@ -55,13 +55,11 @@ class UpdateObjectStorageTierDetails(object):
             'storage_tier': 'str',
             'version_id': 'str'
         }
-
         self.attribute_map = {
             'object_name': 'objectName',
             'storage_tier': 'storageTier',
             'version_id': 'versionId'
         }
-
         self._object_name = None
         self._storage_tier = None
         self._version_id = None

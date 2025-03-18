@@ -34,12 +34,10 @@ class VolumeGroupSourceFromVolumeGroupBackupDetails(VolumeGroupSourceDetails):
             'type': 'str',
             'volume_group_backup_id': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'volume_group_backup_id': 'volumeGroupBackupId'
         }
-
         self._type = None
         self._volume_group_backup_id = None
         self._type = 'volumeGroupBackupId'

@@ -28,11 +28,9 @@ class IngestAddmReportsResponseDetails(object):
         self.swagger_types = {
             'message': 'str'
         }
-
         self.attribute_map = {
             'message': 'message'
         }
-
         self._message = None
 
     @property

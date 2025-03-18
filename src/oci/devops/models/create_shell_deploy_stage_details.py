@@ -74,7 +74,6 @@ class CreateShellDeployStageDetails(CreateDeployStageDetails):
             'command_spec_deploy_artifact_id': 'str',
             'timeout_in_seconds': 'int'
         }
-
         self.attribute_map = {
             'description': 'description',
             'display_name': 'displayName',
@@ -87,7 +86,6 @@ class CreateShellDeployStageDetails(CreateDeployStageDetails):
             'command_spec_deploy_artifact_id': 'commandSpecDeployArtifactId',
             'timeout_in_seconds': 'timeoutInSeconds'
         }
-
         self._description = None
         self._display_name = None
         self._deploy_stage_type = None

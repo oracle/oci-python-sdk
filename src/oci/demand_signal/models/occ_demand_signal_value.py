@@ -38,13 +38,11 @@ class OccDemandSignalValue(object):
             'value': 'float',
             'comments': 'str'
         }
-
         self.attribute_map = {
             'time_expected': 'timeExpected',
             'value': 'value',
             'comments': 'comments'
         }
-
         self._time_expected = None
         self._value = None
         self._comments = None

@@ -48,7 +48,6 @@ class CreateClusterNetworkInstancePoolDetails(object):
             'instance_configuration_id': 'str',
             'size': 'int'
         }
-
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
@@ -56,7 +55,6 @@ class CreateClusterNetworkInstancePoolDetails(object):
             'instance_configuration_id': 'instanceConfigurationId',
             'size': 'size'
         }
-
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None

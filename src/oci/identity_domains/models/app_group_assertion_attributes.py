@@ -57,14 +57,12 @@ class AppGroupAssertionAttributes(object):
             'condition': 'str',
             'group_name': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'format': 'format',
             'condition': 'condition',
             'group_name': 'groupName'
         }
-
         self._name = None
         self._format = None
         self._condition = None

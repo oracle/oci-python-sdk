@@ -75,7 +75,6 @@ class CreateTermDetails(object):
             'workflow_status': 'str',
             'custom_property_members': 'list[CustomPropertySetUsage]'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
@@ -85,7 +84,6 @@ class CreateTermDetails(object):
             'workflow_status': 'workflowStatus',
             'custom_property_members': 'customPropertyMembers'
         }
-
         self._display_name = None
         self._description = None
         self._is_allowed_to_have_child_terms = None

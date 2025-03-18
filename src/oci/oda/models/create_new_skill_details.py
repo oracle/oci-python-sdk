@@ -91,7 +91,6 @@ class CreateNewSkillDetails(CreateSkillDetails):
             'version': 'str',
             'native_language_tags': 'list[str]'
         }
-
         self.attribute_map = {
             'kind': 'kind',
             'category': 'category',
@@ -107,7 +106,6 @@ class CreateNewSkillDetails(CreateSkillDetails):
             'version': 'version',
             'native_language_tags': 'nativeLanguageTags'
         }
-
         self._kind = None
         self._category = None
         self._description = None

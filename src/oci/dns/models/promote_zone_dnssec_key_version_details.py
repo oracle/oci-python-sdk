@@ -28,11 +28,9 @@ class PromoteZoneDnssecKeyVersionDetails(object):
         self.swagger_types = {
             'dnssec_key_version_uuid': 'str'
         }
-
         self.attribute_map = {
             'dnssec_key_version_uuid': 'dnssecKeyVersionUuid'
         }
-
         self._dnssec_key_version_uuid = None
 
     @property

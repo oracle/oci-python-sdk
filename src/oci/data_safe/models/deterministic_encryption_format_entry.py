@@ -49,13 +49,11 @@ class DeterministicEncryptionFormatEntry(FormatEntry):
             'description': 'str',
             'regular_expression': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'description': 'description',
             'regular_expression': 'regularExpression'
         }
-
         self._type = None
         self._description = None
         self._regular_expression = None

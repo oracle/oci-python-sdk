@@ -48,7 +48,6 @@ class Order(object):
             'order_state': 'str',
             'subscriptions': 'list[SubscriptionInfo]'
         }
-
         self.attribute_map = {
             'order_number': 'orderNumber',
             'data_center_region': 'dataCenterRegion',
@@ -56,7 +55,6 @@ class Order(object):
             'order_state': 'orderState',
             'subscriptions': 'subscriptions'
         }
-
         self._order_number = None
         self._data_center_region = None
         self._admin_email = None

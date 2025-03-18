@@ -90,7 +90,6 @@ class ExternalAsmDiskGroupSummary(object):
             'used_size_in_mbs': 'int',
             'used_percent': 'float'
         }
-
         self.attribute_map = {
             'name': 'name',
             'mounting_instance_count': 'mountingInstanceCount',
@@ -102,7 +101,6 @@ class ExternalAsmDiskGroupSummary(object):
             'used_size_in_mbs': 'usedSizeInMBs',
             'used_percent': 'usedPercent'
         }
-
         self._name = None
         self._mounting_instance_count = None
         self._dismounting_instance_count = None

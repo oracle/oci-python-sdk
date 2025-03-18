@@ -50,7 +50,6 @@ class HostFilesystemConfiguration(HostConfigurationMetricGroup):
             'mount_point': 'str',
             'file_system_size_in_gb': 'float'
         }
-
         self.attribute_map = {
             'metric_name': 'metricName',
             'time_collected': 'timeCollected',
@@ -58,7 +57,6 @@ class HostFilesystemConfiguration(HostConfigurationMetricGroup):
             'mount_point': 'mountPoint',
             'file_system_size_in_gb': 'fileSystemSizeInGB'
         }
-
         self._metric_name = None
         self._time_collected = None
         self._file_system_name = None

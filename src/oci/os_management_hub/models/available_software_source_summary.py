@@ -40,13 +40,11 @@ class AvailableSoftwareSourceSummary(object):
             'compartment_id': 'str',
             'display_name': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
             'display_name': 'displayName'
         }
-
         self._id = None
         self._compartment_id = None
         self._display_name = None

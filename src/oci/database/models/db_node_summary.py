@@ -212,7 +212,6 @@ class DbNodeSummary(object):
             'total_cpu_core_count': 'int',
             'db_server_id': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'db_system_id': 'dbSystemId',
@@ -242,7 +241,6 @@ class DbNodeSummary(object):
             'total_cpu_core_count': 'totalCpuCoreCount',
             'db_server_id': 'dbServerId'
         }
-
         self._id = None
         self._db_system_id = None
         self._vnic_id = None

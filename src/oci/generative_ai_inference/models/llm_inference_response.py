@@ -43,11 +43,9 @@ class LlmInferenceResponse(object):
         self.swagger_types = {
             'runtime_type': 'str'
         }
-
         self.attribute_map = {
             'runtime_type': 'runtimeType'
         }
-
         self._runtime_type = None
 
     @staticmethod

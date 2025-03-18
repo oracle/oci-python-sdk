@@ -33,12 +33,10 @@ class CreateMySqlGgsDeploymentDetails(object):
             'replicat': 'CreateReplicat',
             'acceptable_lag': 'int'
         }
-
         self.attribute_map = {
             'replicat': 'replicat',
             'acceptable_lag': 'acceptableLag'
         }
-
         self._replicat = None
         self._acceptable_lag = None
 

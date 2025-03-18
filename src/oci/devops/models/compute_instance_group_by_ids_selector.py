@@ -35,12 +35,10 @@ class ComputeInstanceGroupByIdsSelector(ComputeInstanceGroupSelector):
             'selector_type': 'str',
             'compute_instance_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'selector_type': 'selectorType',
             'compute_instance_ids': 'computeInstanceIds'
         }
-
         self._selector_type = None
         self._compute_instance_ids = None
         self._selector_type = 'INSTANCE_IDS'

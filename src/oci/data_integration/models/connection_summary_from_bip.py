@@ -105,7 +105,6 @@ class ConnectionSummaryFromBIP(ConnectionSummary):
             'username': 'str',
             'password_secret': 'SensitiveAttribute'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -124,7 +123,6 @@ class ConnectionSummaryFromBIP(ConnectionSummary):
             'username': 'username',
             'password_secret': 'passwordSecret'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

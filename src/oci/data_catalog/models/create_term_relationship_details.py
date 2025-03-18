@@ -38,13 +38,11 @@ class CreateTermRelationshipDetails(object):
             'description': 'str',
             'related_term_key': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
             'related_term_key': 'relatedTermKey'
         }
-
         self._display_name = None
         self._description = None
         self._related_term_key = None

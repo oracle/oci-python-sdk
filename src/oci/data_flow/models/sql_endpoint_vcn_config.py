@@ -55,7 +55,6 @@ class SqlEndpointVcnConfig(SqlEndpointNetworkConfiguration):
             'nsg_ids': 'list[str]',
             'private_endpoint_ip': 'str'
         }
-
         self.attribute_map = {
             'network_type': 'networkType',
             'vcn_id': 'vcnId',
@@ -64,7 +63,6 @@ class SqlEndpointVcnConfig(SqlEndpointNetworkConfiguration):
             'nsg_ids': 'nsgIds',
             'private_endpoint_ip': 'privateEndpointIp'
         }
-
         self._network_type = None
         self._vcn_id = None
         self._subnet_id = None

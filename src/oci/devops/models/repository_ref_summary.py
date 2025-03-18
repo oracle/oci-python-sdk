@@ -63,7 +63,6 @@ class RepositoryRefSummary(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'ref_name': 'refName',
             'ref_type': 'refType',
@@ -73,7 +72,6 @@ class RepositoryRefSummary(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._ref_name = None
         self._ref_type = None
         self._full_ref_name = None

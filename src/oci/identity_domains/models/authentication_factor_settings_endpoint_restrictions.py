@@ -57,7 +57,6 @@ class AuthenticationFactorSettingsEndpointRestrictions(object):
             'trusted_endpoints_enabled': 'bool',
             'max_incorrect_attempts': 'int'
         }
-
         self.attribute_map = {
             'max_enrolled_devices': 'maxEnrolledDevices',
             'max_trusted_endpoints': 'maxTrustedEndpoints',
@@ -65,7 +64,6 @@ class AuthenticationFactorSettingsEndpointRestrictions(object):
             'trusted_endpoints_enabled': 'trustedEndpointsEnabled',
             'max_incorrect_attempts': 'maxIncorrectAttempts'
         }
-
         self._max_enrolled_devices = None
         self._max_trusted_endpoints = None
         self._max_endpoint_trust_duration_in_days = None

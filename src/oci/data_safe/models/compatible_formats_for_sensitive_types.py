@@ -28,11 +28,9 @@ class CompatibleFormatsForSensitiveTypes(object):
         self.swagger_types = {
             'formats_for_sensitive_type': 'list[FormatsForSensitiveType]'
         }
-
         self.attribute_map = {
             'formats_for_sensitive_type': 'formatsForSensitiveType'
         }
-
         self._formats_for_sensitive_type = None
 
     @property

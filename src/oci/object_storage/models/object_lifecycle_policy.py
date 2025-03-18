@@ -33,12 +33,10 @@ class ObjectLifecyclePolicy(object):
             'time_created': 'datetime',
             'items': 'list[ObjectLifecycleRule]'
         }
-
         self.attribute_map = {
             'time_created': 'timeCreated',
             'items': 'items'
         }
-
         self._time_created = None
         self._items = None
 

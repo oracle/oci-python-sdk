@@ -38,13 +38,11 @@ class ManagementDashboardImportDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'dashboards': 'dashboards',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._dashboards = None
         self._freeform_tags = None
         self._defined_tags = None

@@ -96,7 +96,6 @@ class ConnectionFromJdbcDetails(ConnectionDetails):
             'metadata': 'ObjectMetadata',
             'username': 'str'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -113,7 +112,6 @@ class ConnectionFromJdbcDetails(ConnectionDetails):
             'metadata': 'metadata',
             'username': 'username'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

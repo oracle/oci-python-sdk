@@ -34,12 +34,10 @@ class ScriptParameterInfo(object):
             'script_parameter': 'ScriptParameter',
             'is_overwritten': 'bool'
         }
-
         self.attribute_map = {
             'script_parameter': 'scriptParameter',
             'is_overwritten': 'isOverwritten'
         }
-
         self._script_parameter = None
         self._is_overwritten = None
 

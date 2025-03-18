@@ -73,7 +73,6 @@ class ModelTrainingResults(object):
             'signal_details': 'list[PerSignalDetails]',
             'row_reduction_details': 'RowReductionDetails'
         }
-
         self.attribute_map = {
             'fap': 'fap',
             'multivariate_fap': 'multivariateFap',
@@ -84,7 +83,6 @@ class ModelTrainingResults(object):
             'signal_details': 'signalDetails',
             'row_reduction_details': 'rowReductionDetails'
         }
-
         self._fap = None
         self._multivariate_fap = None
         self._algorithm = None

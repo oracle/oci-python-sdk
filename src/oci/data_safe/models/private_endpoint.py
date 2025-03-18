@@ -35,12 +35,10 @@ class PrivateEndpoint(ConnectionOption):
             'connection_type': 'str',
             'datasafe_private_endpoint_id': 'str'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'datasafe_private_endpoint_id': 'datasafePrivateEndpointId'
         }
-
         self._connection_type = None
         self._datasafe_private_endpoint_id = None
         self._connection_type = 'PRIVATE_ENDPOINT'

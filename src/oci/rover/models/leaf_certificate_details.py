@@ -33,12 +33,10 @@ class LeafCertificateDetails(object):
             'certificate_id': 'str',
             'certificate_pem': 'str'
         }
-
         self.attribute_map = {
             'certificate_id': 'certificateId',
             'certificate_pem': 'certificatePem'
         }
-
         self._certificate_id = None
         self._certificate_pem = None
 

@@ -59,12 +59,10 @@ class OperationsInsightsConfig(object):
             'operations_insights_status': 'str',
             'operations_insights_connector_id': 'str'
         }
-
         self.attribute_map = {
             'operations_insights_status': 'operationsInsightsStatus',
             'operations_insights_connector_id': 'operationsInsightsConnectorId'
         }
-
         self._operations_insights_status = None
         self._operations_insights_connector_id = None
 

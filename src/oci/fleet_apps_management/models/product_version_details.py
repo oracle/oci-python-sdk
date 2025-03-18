@@ -35,12 +35,10 @@ class ProductVersionDetails(object):
             'version': 'str',
             'is_applicable_for_all_higher_versions': 'bool'
         }
-
         self.attribute_map = {
             'version': 'version',
             'is_applicable_for_all_higher_versions': 'isApplicableForAllHigherVersions'
         }
-
         self._version = None
         self._is_applicable_for_all_higher_versions = None
 

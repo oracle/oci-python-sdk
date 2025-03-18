@@ -53,7 +53,6 @@ class VolumeBackupPolicyAssignment(object):
             'time_created': 'datetime',
             'xrc_kms_key_id': 'str'
         }
-
         self.attribute_map = {
             'asset_id': 'assetId',
             'id': 'id',
@@ -61,7 +60,6 @@ class VolumeBackupPolicyAssignment(object):
             'time_created': 'timeCreated',
             'xrc_kms_key_id': 'xrcKmsKeyId'
         }
-
         self._asset_id = None
         self._id = None
         self._policy_id = None

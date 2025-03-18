@@ -74,7 +74,6 @@ class PullRequestLifecycleActivitySummary(PullRequestActivitySummary):
             'activity_type': 'str',
             'state': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'principal': 'principal',
@@ -83,7 +82,6 @@ class PullRequestLifecycleActivitySummary(PullRequestActivitySummary):
             'activity_type': 'activityType',
             'state': 'state'
         }
-
         self._id = None
         self._principal = None
         self._pull_request_id = None

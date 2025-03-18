@@ -37,11 +37,9 @@ class UpdateExternalDbSystemConnectorDetails(object):
         self.swagger_types = {
             'connector_type': 'str'
         }
-
         self.attribute_map = {
             'connector_type': 'connectorType'
         }
-
         self._connector_type = None
 
     @staticmethod

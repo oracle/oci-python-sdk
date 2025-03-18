@@ -30,11 +30,9 @@ class ProductStackGenericSubCategoryDetails(ProductStackSubCategoryDetails):
         self.swagger_types = {
             'sub_category': 'str'
         }
-
         self.attribute_map = {
             'sub_category': 'subCategory'
         }
-
         self._sub_category = None
         self._sub_category = 'PRODUCT_STACK_GENERIC'
 

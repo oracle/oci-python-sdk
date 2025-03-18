@@ -48,13 +48,11 @@ class ConnectionValidationResult(object):
             'time_validated': 'datetime',
             'message': 'str'
         }
-
         self.attribute_map = {
             'result': 'result',
             'time_validated': 'timeValidated',
             'message': 'message'
         }
-
         self._result = None
         self._time_validated = None
         self._message = None

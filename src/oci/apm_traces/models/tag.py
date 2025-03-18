@@ -33,12 +33,10 @@ class Tag(object):
             'tag_name': 'str',
             'tag_value': 'str'
         }
-
         self.attribute_map = {
             'tag_name': 'tagName',
             'tag_value': 'tagValue'
         }
-
         self._tag_name = None
         self._tag_value = None
 

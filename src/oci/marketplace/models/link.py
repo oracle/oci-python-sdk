@@ -55,12 +55,10 @@ class Link(object):
             'rel': 'str',
             'href': 'str'
         }
-
         self.attribute_map = {
             'rel': 'rel',
             'href': 'href'
         }
-
         self._rel = None
         self._href = None
 

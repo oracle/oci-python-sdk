@@ -53,12 +53,10 @@ class PatchLevelSelectionDetails(PatchSelectionDetails):
             'selection_type': 'str',
             'patch_level': 'str'
         }
-
         self.attribute_map = {
             'selection_type': 'selectionType',
             'patch_level': 'patchLevel'
         }
-
         self._selection_type = None
         self._patch_level = None
         self._selection_type = 'PATCH_LEVEL'

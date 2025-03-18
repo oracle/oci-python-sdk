@@ -60,11 +60,9 @@ class VerifyConfiguration(object):
         self.swagger_types = {
             'build_service_type': 'str'
         }
-
         self.attribute_map = {
             'build_service_type': 'buildServiceType'
         }
-
         self._build_service_type = None
 
     @staticmethod

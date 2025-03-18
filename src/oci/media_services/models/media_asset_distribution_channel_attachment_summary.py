@@ -81,7 +81,6 @@ class MediaAssetDistributionChannelAttachmentSummary(object):
             'media_workflow_job_id': 'str',
             'locks': 'list[ResourceLock]'
         }
-
         self.attribute_map = {
             'media_asset_id': 'mediaAssetId',
             'display_name': 'displayName',
@@ -92,7 +91,6 @@ class MediaAssetDistributionChannelAttachmentSummary(object):
             'media_workflow_job_id': 'mediaWorkflowJobId',
             'locks': 'locks'
         }
-
         self._media_asset_id = None
         self._display_name = None
         self._distribution_channel_id = None

@@ -33,12 +33,10 @@ class TopProcessesUsageTrendAggregation(object):
             'command': 'str',
             'usage_data': 'list[TopProcessesUsageTrend]'
         }
-
         self.attribute_map = {
             'command': 'command',
             'usage_data': 'usageData'
         }
-
         self._command = None
         self._usage_data = None
 

@@ -55,7 +55,6 @@ class UpdateAwsEbsAssetDetails(UpdateAssetDetails):
             'defined_tags': 'dict(str, dict(str, object))',
             'aws_ebs': 'AwsEbsProperties'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'asset_type': 'assetType',
@@ -64,7 +63,6 @@ class UpdateAwsEbsAssetDetails(UpdateAssetDetails):
             'defined_tags': 'definedTags',
             'aws_ebs': 'awsEbs'
         }
-
         self._display_name = None
         self._asset_type = None
         self._asset_source_ids = None

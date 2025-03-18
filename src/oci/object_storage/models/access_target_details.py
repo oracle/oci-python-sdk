@@ -38,13 +38,11 @@ class AccessTargetDetails(object):
             'compartment_id': 'str',
             'bucket': 'str'
         }
-
         self.attribute_map = {
             'namespace': 'namespace',
             'compartment_id': 'compartmentId',
             'bucket': 'bucket'
         }
-
         self._namespace = None
         self._compartment_id = None
         self._bucket = None

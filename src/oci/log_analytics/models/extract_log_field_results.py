@@ -28,11 +28,9 @@ class ExtractLogFieldResults(object):
         self.swagger_types = {
             'paths': 'list[str]'
         }
-
         self.attribute_map = {
             'paths': 'paths'
         }
-
         self._paths = None
 
     @property

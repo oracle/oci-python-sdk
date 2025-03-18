@@ -85,7 +85,6 @@ class AutonomousDatabaseConfigurationSummary(DatabaseConfigurationSummary):
             'processor_count': 'int',
             'database_id': 'str'
         }
-
         self.attribute_map = {
             'database_insight_id': 'databaseInsightId',
             'entity_source': 'entitySource',
@@ -100,7 +99,6 @@ class AutonomousDatabaseConfigurationSummary(DatabaseConfigurationSummary):
             'processor_count': 'processorCount',
             'database_id': 'databaseId'
         }
-
         self._database_insight_id = None
         self._entity_source = None
         self._compartment_id = None

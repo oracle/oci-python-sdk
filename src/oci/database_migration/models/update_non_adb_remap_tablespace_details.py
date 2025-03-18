@@ -35,12 +35,10 @@ class UpdateNonADBRemapTablespaceDetails(UpdateTargetTypeTablespaceDetails):
             'target_type': 'str',
             'remap_target': 'str'
         }
-
         self.attribute_map = {
             'target_type': 'targetType',
             'remap_target': 'remapTarget'
         }
-
         self._target_type = None
         self._remap_target = None
         self._target_type = 'NON_ADB_REMAP'

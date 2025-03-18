@@ -38,13 +38,11 @@ class CreateRefreshActivityDetails(object):
             'is_data_masking_opted': 'bool',
             'time_scheduled_start': 'datetime'
         }
-
         self.attribute_map = {
             'source_fusion_environment_id': 'sourceFusionEnvironmentId',
             'is_data_masking_opted': 'isDataMaskingOpted',
             'time_scheduled_start': 'timeScheduledStart'
         }
-
         self._source_fusion_environment_id = None
         self._is_data_masking_opted = None
         self._time_scheduled_start = None

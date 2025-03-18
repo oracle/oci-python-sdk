@@ -48,13 +48,11 @@ class ApprovalAction(object):
             'action': 'str',
             'reason': 'str'
         }
-
         self.attribute_map = {
             'subject_id': 'subjectId',
             'action': 'action',
             'reason': 'reason'
         }
-
         self._subject_id = None
         self._action = None
         self._reason = None

@@ -33,12 +33,10 @@ class SettingsDefaultCompanyNames(object):
             'value': 'str',
             'locale': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'locale': 'locale'
         }
-
         self._value = None
         self._locale = None
 

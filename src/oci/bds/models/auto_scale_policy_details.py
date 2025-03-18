@@ -90,13 +90,11 @@ class AutoScalePolicyDetails(object):
             'trigger_type': 'str',
             'action_type': 'str'
         }
-
         self.attribute_map = {
             'policy_type': 'policyType',
             'trigger_type': 'triggerType',
             'action_type': 'actionType'
         }
-
         self._policy_type = None
         self._trigger_type = None
         self._action_type = None

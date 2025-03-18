@@ -103,7 +103,6 @@ class SoftwarePackageSummary(object):
             'software_sources': 'list[SoftwareSourceDetails]',
             'os_families': 'list[OsFamily]'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'name': 'name',
@@ -116,7 +115,6 @@ class SoftwarePackageSummary(object):
             'software_sources': 'softwareSources',
             'os_families': 'osFamilies'
         }
-
         self._display_name = None
         self._name = None
         self._type = None

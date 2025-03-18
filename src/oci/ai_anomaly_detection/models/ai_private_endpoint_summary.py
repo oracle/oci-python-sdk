@@ -83,7 +83,6 @@ class AiPrivateEndpointSummary(object):
             'system_tags': 'dict(str, object)',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'subnet_id': 'subnetId',
@@ -98,7 +97,6 @@ class AiPrivateEndpointSummary(object):
             'system_tags': 'systemTags',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._id = None
         self._subnet_id = None
         self._dns_zones = None

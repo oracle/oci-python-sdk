@@ -243,7 +243,6 @@ class Application(object):
             'max_duration_in_minutes': 'int',
             'idle_timeout_in_minutes': 'int'
         }
-
         self.attribute_map = {
             'application_log_config': 'applicationLogConfig',
             'archive_uri': 'archiveUri',
@@ -280,7 +279,6 @@ class Application(object):
             'max_duration_in_minutes': 'maxDurationInMinutes',
             'idle_timeout_in_minutes': 'idleTimeoutInMinutes'
         }
-
         self._application_log_config = None
         self._archive_uri = None
         self._arguments = None

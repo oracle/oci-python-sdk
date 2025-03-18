@@ -33,12 +33,10 @@ class BulkMoveResourcesDetails(object):
             'resources': 'list[BulkActionResource]',
             'target_compartment_id': 'str'
         }
-
         self.attribute_map = {
             'resources': 'resources',
             'target_compartment_id': 'targetCompartmentId'
         }
-
         self._resources = None
         self._target_compartment_id = None
 

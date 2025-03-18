@@ -35,12 +35,10 @@ class UpdateColumnSourceTargetDetails(UpdateColumnSourceDetails):
             'column_source': 'str',
             'target_id': 'str'
         }
-
         self.attribute_map = {
             'column_source': 'columnSource',
             'target_id': 'targetId'
         }
-
         self._column_source = None
         self._target_id = None
         self._column_source = 'TARGET'

@@ -33,12 +33,10 @@ class WorkRequestLogEntry(object):
             'message': 'str',
             'timestamp': 'datetime'
         }
-
         self.attribute_map = {
             'message': 'message',
             'timestamp': 'timestamp'
         }
-
         self._message = None
         self._timestamp = None
 

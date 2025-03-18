@@ -60,7 +60,6 @@ class CreateDatabaseFromDbSystemDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'admin_password': 'adminPassword',
             'db_name': 'dbName',
@@ -70,7 +69,6 @@ class CreateDatabaseFromDbSystemDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._admin_password = None
         self._db_name = None
         self._db_domain = None

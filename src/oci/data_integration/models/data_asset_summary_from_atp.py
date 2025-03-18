@@ -110,7 +110,6 @@ class DataAssetSummaryFromAtp(DataAssetSummary):
             'driver_class': 'str',
             'default_connection': 'ConnectionSummaryFromAtp'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -130,7 +129,6 @@ class DataAssetSummaryFromAtp(DataAssetSummary):
             'driver_class': 'driverClass',
             'default_connection': 'defaultConnection'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

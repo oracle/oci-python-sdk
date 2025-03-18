@@ -115,7 +115,6 @@ class ServiceCloudChannel(Channel):
             'user_name': 'str',
             'client_type': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -133,7 +132,6 @@ class ServiceCloudChannel(Channel):
             'user_name': 'userName',
             'client_type': 'clientType'
         }
-
         self._id = None
         self._name = None
         self._description = None

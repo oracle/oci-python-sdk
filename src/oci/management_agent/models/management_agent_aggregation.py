@@ -33,12 +33,10 @@ class ManagementAgentAggregation(object):
             'dimensions': 'ManagementAgentAggregationDimensions',
             'count': 'int'
         }
-
         self.attribute_map = {
             'dimensions': 'dimensions',
             'count': 'count'
         }
-
         self._dimensions = None
         self._count = None
 

@@ -73,12 +73,10 @@ class FieldMap(object):
             'model_type': 'str',
             'description': 'str'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'description': 'description'
         }
-
         self._model_type = None
         self._description = None
 

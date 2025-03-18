@@ -33,12 +33,10 @@ class BatchDetectLanguageEntitiesResult(object):
             'documents': 'list[EntityDocumentResult]',
             'errors': 'list[DocumentError]'
         }
-
         self.attribute_map = {
             'documents': 'documents',
             'errors': 'errors'
         }
-
         self._documents = None
         self._errors = None
 

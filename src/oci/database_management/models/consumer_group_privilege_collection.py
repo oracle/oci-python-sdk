@@ -28,11 +28,9 @@ class ConsumerGroupPrivilegeCollection(object):
         self.swagger_types = {
             'items': 'list[ConsumerGroupPrivilegeSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

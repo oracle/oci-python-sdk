@@ -41,11 +41,9 @@ class AutoScalingPolicyDetails(object):
         self.swagger_types = {
             'auto_scaling_policy_type': 'str'
         }
-
         self.attribute_map = {
             'auto_scaling_policy_type': 'autoScalingPolicyType'
         }
-
         self._auto_scaling_policy_type = None
 
     @staticmethod

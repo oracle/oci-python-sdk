@@ -101,7 +101,6 @@ class UpdateOracleMigrationDetails(UpdateMigrationDetails):
             'advanced_parameters': 'list[MigrationParameterDetails]',
             'source_container_database_connection_id': 'str'
         }
-
         self.attribute_map = {
             'description': 'description',
             'database_combination': 'databaseCombination',
@@ -119,7 +118,6 @@ class UpdateOracleMigrationDetails(UpdateMigrationDetails):
             'advanced_parameters': 'advancedParameters',
             'source_container_database_connection_id': 'sourceContainerDatabaseConnectionId'
         }
-
         self._description = None
         self._database_combination = None
         self._type = None

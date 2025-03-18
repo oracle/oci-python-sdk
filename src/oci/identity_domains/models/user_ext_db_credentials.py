@@ -50,13 +50,11 @@ class UserExtDbCredentials(object):
             'ref': 'str',
             'ocid': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ref': '$ref',
             'ocid': 'ocid'
         }
-
         self._value = None
         self._ref = None
         self._ocid = None

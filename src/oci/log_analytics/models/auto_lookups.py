@@ -33,12 +33,10 @@ class AutoLookups(object):
             'canonical_link': 'str',
             'total_count': 'int'
         }
-
         self.attribute_map = {
             'canonical_link': 'canonicalLink',
             'total_count': 'totalCount'
         }
-
         self._canonical_link = None
         self._total_count = None
 

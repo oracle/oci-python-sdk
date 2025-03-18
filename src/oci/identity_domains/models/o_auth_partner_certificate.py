@@ -157,7 +157,6 @@ class OAuthPartnerCertificate(object):
             'x509_base64_certificate': 'str',
             'cert_end_date': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -184,7 +183,6 @@ class OAuthPartnerCertificate(object):
             'x509_base64_certificate': 'x509Base64Certificate',
             'cert_end_date': 'certEndDate'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

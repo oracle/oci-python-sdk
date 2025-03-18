@@ -43,14 +43,12 @@ class SummarizeHostInsightIoUsageTrendAggregationCollection(object):
             'item_duration_in_ms': 'int',
             'items': 'list[IoUsageTrendAggregation]'
         }
-
         self.attribute_map = {
             'time_interval_start': 'timeIntervalStart',
             'time_interval_end': 'timeIntervalEnd',
             'item_duration_in_ms': 'itemDurationInMs',
             'items': 'items'
         }
-
         self._time_interval_start = None
         self._time_interval_end = None
         self._item_duration_in_ms = None

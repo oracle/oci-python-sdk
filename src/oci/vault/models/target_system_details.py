@@ -43,11 +43,9 @@ class TargetSystemDetails(object):
         self.swagger_types = {
             'target_system_type': 'str'
         }
-
         self.attribute_map = {
             'target_system_type': 'targetSystemType'
         }
-
         self._target_system_type = None
 
     @staticmethod

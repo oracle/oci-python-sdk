@@ -122,7 +122,6 @@ class CreateDatabaseRegistrationDetails(object):
             'key_id': 'str',
             'secret_compartment_id': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
@@ -143,7 +142,6 @@ class CreateDatabaseRegistrationDetails(object):
             'key_id': 'keyId',
             'secret_compartment_id': 'secretCompartmentId'
         }
-
         self._display_name = None
         self._description = None
         self._compartment_id = None

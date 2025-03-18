@@ -75,12 +75,10 @@ class SteeringPolicyRule(object):
             'description': 'str',
             'rule_type': 'str'
         }
-
         self.attribute_map = {
             'description': 'description',
             'rule_type': 'ruleType'
         }
-
         self._description = None
         self._rule_type = None
 

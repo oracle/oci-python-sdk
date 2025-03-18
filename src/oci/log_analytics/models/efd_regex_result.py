@@ -73,7 +73,6 @@ class EfdRegexResult(object):
             'is_valid_regex_syntax': 'bool',
             'violations': 'list[Violation]'
         }
-
         self.attribute_map = {
             'base_field_name': 'baseFieldName',
             'id': 'id',
@@ -86,7 +85,6 @@ class EfdRegexResult(object):
             'is_valid_regex_syntax': 'isValidRegexSyntax',
             'violations': 'violations'
         }
-
         self._base_field_name = None
         self._id = None
         self._match_result = None

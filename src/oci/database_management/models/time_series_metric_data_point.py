@@ -43,14 +43,12 @@ class TimeSeriesMetricDataPoint(object):
             'unit': 'str',
             'dimensions': 'list[MetricDimensionDefinition]'
         }
-
         self.attribute_map = {
             'timestamp': 'timestamp',
             'value': 'value',
             'unit': 'unit',
             'dimensions': 'dimensions'
         }
-
         self._timestamp = None
         self._value = None
         self._unit = None

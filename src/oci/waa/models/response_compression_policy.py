@@ -34,11 +34,9 @@ class ResponseCompressionPolicy(object):
         self.swagger_types = {
             'gzip_compression': 'GzipCompressionPolicy'
         }
-
         self.attribute_map = {
             'gzip_compression': 'gzipCompression'
         }
-
         self._gzip_compression = None
 
     @property

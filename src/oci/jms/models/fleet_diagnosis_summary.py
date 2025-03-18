@@ -79,14 +79,12 @@ class FleetDiagnosisSummary(object):
             'resource_state': 'str',
             'resource_diagnosis': 'str'
         }
-
         self.attribute_map = {
             'resource_type': 'resourceType',
             'resource_id': 'resourceId',
             'resource_state': 'resourceState',
             'resource_diagnosis': 'resourceDiagnosis'
         }
-
         self._resource_type = None
         self._resource_id = None
         self._resource_state = None

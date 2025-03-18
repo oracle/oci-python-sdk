@@ -104,13 +104,11 @@ class ManagedInstanceAnalyticSummary(object):
             'dimensions': 'dict(str, str)',
             'count': 'int'
         }
-
         self.attribute_map = {
             'name': 'name',
             'dimensions': 'dimensions',
             'count': 'count'
         }
-
         self._name = None
         self._dimensions = None
         self._count = None

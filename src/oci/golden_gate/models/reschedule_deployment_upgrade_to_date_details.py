@@ -35,12 +35,10 @@ class RescheduleDeploymentUpgradeToDateDetails(RescheduleDeploymentUpgradeDetail
             'type': 'str',
             'time_schedule': 'datetime'
         }
-
         self.attribute_map = {
             'type': 'type',
             'time_schedule': 'timeSchedule'
         }
-
         self._type = None
         self._time_schedule = None
         self._type = 'RESCHEDULE_TO_DATE'

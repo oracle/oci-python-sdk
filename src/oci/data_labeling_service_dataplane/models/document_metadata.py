@@ -35,12 +35,10 @@ class DocumentMetadata(RecordMetadata):
             'record_type': 'str',
             'job_id': 'str'
         }
-
         self.attribute_map = {
             'record_type': 'recordType',
             'job_id': 'jobId'
         }
-
         self._record_type = None
         self._job_id = None
         self._record_type = 'DOCUMENT_METADATA'

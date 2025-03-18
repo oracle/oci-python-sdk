@@ -122,7 +122,6 @@ class ConnectionFromOAuth2Details(ConnectionDetails):
             'scope': 'str',
             'grant_type': 'str'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -143,7 +142,6 @@ class ConnectionFromOAuth2Details(ConnectionDetails):
             'scope': 'scope',
             'grant_type': 'grantType'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

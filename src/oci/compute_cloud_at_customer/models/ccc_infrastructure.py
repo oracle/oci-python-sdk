@@ -169,7 +169,6 @@ class CccInfrastructure(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'id': 'id',
             'short_name': 'shortName',
@@ -193,7 +192,6 @@ class CccInfrastructure(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._id = None
         self._short_name = None
         self._display_name = None

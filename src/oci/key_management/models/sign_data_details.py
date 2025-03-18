@@ -107,7 +107,6 @@ class SignDataDetails(object):
             'signing_algorithm': 'str',
             'logging_context': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'message': 'message',
             'key_id': 'keyId',
@@ -116,7 +115,6 @@ class SignDataDetails(object):
             'signing_algorithm': 'signingAlgorithm',
             'logging_context': 'loggingContext'
         }
-
         self._message = None
         self._key_id = None
         self._key_version_id = None

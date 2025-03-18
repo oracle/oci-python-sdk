@@ -48,7 +48,6 @@ class AddKafkaDetails(object):
             'block_volume_size_in_gbs': 'int',
             'cluster_admin_password': 'str'
         }
-
         self.attribute_map = {
             'shape': 'shape',
             'number_of_kafka_nodes': 'numberOfKafkaNodes',
@@ -56,7 +55,6 @@ class AddKafkaDetails(object):
             'block_volume_size_in_gbs': 'blockVolumeSizeInGBs',
             'cluster_admin_password': 'clusterAdminPassword'
         }
-
         self._shape = None
         self._number_of_kafka_nodes = None
         self._shape_config = None

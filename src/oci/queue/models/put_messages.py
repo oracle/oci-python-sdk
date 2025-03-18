@@ -28,11 +28,9 @@ class PutMessages(object):
         self.swagger_types = {
             'messages': 'list[PutMessage]'
         }
-
         self.attribute_map = {
             'messages': 'messages'
         }
-
         self._messages = None
 
     @property

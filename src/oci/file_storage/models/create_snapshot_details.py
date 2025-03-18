@@ -53,7 +53,6 @@ class CreateSnapshotDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'locks': 'list[ResourceLock]'
         }
-
         self.attribute_map = {
             'file_system_id': 'fileSystemId',
             'name': 'name',
@@ -62,7 +61,6 @@ class CreateSnapshotDetails(object):
             'defined_tags': 'definedTags',
             'locks': 'locks'
         }
-
         self._file_system_id = None
         self._name = None
         self._expiration_time = None

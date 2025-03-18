@@ -65,7 +65,6 @@ class CreateApplicationChannelDetails(CreateChannelDetails):
             'outbound_url': 'str',
             'is_authenticated_user_id': 'bool'
         }
-
         self.attribute_map = {
             'name': 'name',
             'description': 'description',
@@ -76,7 +75,6 @@ class CreateApplicationChannelDetails(CreateChannelDetails):
             'outbound_url': 'outboundUrl',
             'is_authenticated_user_id': 'isAuthenticatedUserId'
         }
-
         self._name = None
         self._description = None
         self._type = None

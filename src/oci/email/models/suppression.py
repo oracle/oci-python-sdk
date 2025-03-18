@@ -94,7 +94,6 @@ class Suppression(object):
             'error_detail': 'str',
             'error_source': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'email_address': 'emailAddress',
@@ -106,7 +105,6 @@ class Suppression(object):
             'error_detail': 'errorDetail',
             'error_source': 'errorSource'
         }
-
         self._compartment_id = None
         self._email_address = None
         self._id = None

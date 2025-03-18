@@ -53,7 +53,6 @@ class ComplianceDetailPolicy(object):
             'grace_period': 'str',
             'patch_selection': 'PatchSelectionDetails'
         }
-
         self.attribute_map = {
             'compliance_policy_id': 'compliancePolicyId',
             'compliance_policy_display_name': 'compliancePolicyDisplayName',
@@ -62,7 +61,6 @@ class ComplianceDetailPolicy(object):
             'grace_period': 'gracePeriod',
             'patch_selection': 'patchSelection'
         }
-
         self._compliance_policy_id = None
         self._compliance_policy_display_name = None
         self._compliance_policy_rule_id = None

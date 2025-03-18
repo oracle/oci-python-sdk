@@ -33,12 +33,10 @@ class ContentModerationConfig(object):
             'should_enable_on_input': 'bool',
             'should_enable_on_output': 'bool'
         }
-
         self.attribute_map = {
             'should_enable_on_input': 'shouldEnableOnInput',
             'should_enable_on_output': 'shouldEnableOnOutput'
         }
-
         self._should_enable_on_input = None
         self._should_enable_on_output = None
 

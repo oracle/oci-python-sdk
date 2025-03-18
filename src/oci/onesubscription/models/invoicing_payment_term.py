@@ -63,7 +63,6 @@ class InvoicingPaymentTerm(object):
             'time_updated': 'datetime',
             'updated_by': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'value': 'value',
@@ -74,7 +73,6 @@ class InvoicingPaymentTerm(object):
             'time_updated': 'timeUpdated',
             'updated_by': 'updatedBy'
         }
-
         self._name = None
         self._value = None
         self._description = None

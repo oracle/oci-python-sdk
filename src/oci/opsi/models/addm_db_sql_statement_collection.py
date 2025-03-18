@@ -43,14 +43,12 @@ class AddmDbSqlStatementCollection(object):
             'database_details_items': 'list[DatabaseDetails]',
             'items': 'list[AddmDbSqlStatementSummary]'
         }
-
         self.attribute_map = {
             'time_interval_start': 'timeIntervalStart',
             'time_interval_end': 'timeIntervalEnd',
             'database_details_items': 'databaseDetailsItems',
             'items': 'items'
         }
-
         self._time_interval_start = None
         self._time_interval_end = None
         self._database_details_items = None

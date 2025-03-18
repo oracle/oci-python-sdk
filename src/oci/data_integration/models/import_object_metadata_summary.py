@@ -95,7 +95,6 @@ class ImportObjectMetadataSummary(object):
             'time_updated_in_millis': 'int',
             'resolution_action': 'str'
         }
-
         self.attribute_map = {
             'old_key': 'oldKey',
             'new_key': 'newKey',
@@ -108,7 +107,6 @@ class ImportObjectMetadataSummary(object):
             'time_updated_in_millis': 'timeUpdatedInMillis',
             'resolution_action': 'resolutionAction'
         }
-
         self._old_key = None
         self._new_key = None
         self._name = None

@@ -35,12 +35,10 @@ class TextBasedEula(Eula):
             'eula_type': 'str',
             'license_text': 'str'
         }
-
         self.attribute_map = {
             'eula_type': 'eulaType',
             'license_text': 'licenseText'
         }
-
         self._eula_type = None
         self._license_text = None
         self._eula_type = 'TEXT'

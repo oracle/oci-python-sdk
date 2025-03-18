@@ -88,7 +88,6 @@ class CreateSecretDetails(object):
             'secret_generation_context': 'SecretGenerationContext',
             'enable_auto_generation': 'bool'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
@@ -104,7 +103,6 @@ class CreateSecretDetails(object):
             'secret_generation_context': 'secretGenerationContext',
             'enable_auto_generation': 'enableAutoGeneration'
         }
-
         self._compartment_id = None
         self._defined_tags = None
         self._description = None

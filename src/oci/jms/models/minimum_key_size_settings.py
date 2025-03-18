@@ -38,13 +38,11 @@ class MinimumKeySizeSettings(object):
             'jar': 'list[KeySizeAlgorithm]',
             'certpath': 'list[KeySizeAlgorithm]'
         }
-
         self.attribute_map = {
             'tls': 'tls',
             'jar': 'jar',
             'certpath': 'certpath'
         }
-
         self._tls = None
         self._jar = None
         self._certpath = None

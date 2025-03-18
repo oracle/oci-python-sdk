@@ -48,7 +48,6 @@ class ClusterEndpoints(object):
             'vcn_hostname_endpoint': 'str',
             'ipv6_endpoint': 'str'
         }
-
         self.attribute_map = {
             'kubernetes': 'kubernetes',
             'public_endpoint': 'publicEndpoint',
@@ -56,7 +55,6 @@ class ClusterEndpoints(object):
             'vcn_hostname_endpoint': 'vcnHostnameEndpoint',
             'ipv6_endpoint': 'ipv6Endpoint'
         }
-
         self._kubernetes = None
         self._public_endpoint = None
         self._private_endpoint = None

@@ -33,12 +33,10 @@ class HistoricalDataItem(object):
             'end_timestamp': 'datetime',
             'usage': 'float'
         }
-
         self.attribute_map = {
             'end_timestamp': 'endTimestamp',
             'usage': 'usage'
         }
-
         self._end_timestamp = None
         self._usage = None
 

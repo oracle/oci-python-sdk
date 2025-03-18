@@ -38,13 +38,11 @@ class IdentityInfoDetails(object):
             'apm_short_id': 'str',
             'collector_end_point': 'str'
         }
-
         self.attribute_map = {
             'region_name': 'regionName',
             'apm_short_id': 'apmShortId',
             'collector_end_point': 'collectorEndPoint'
         }
-
         self._region_name = None
         self._apm_short_id = None
         self._collector_end_point = None

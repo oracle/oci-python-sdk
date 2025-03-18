@@ -98,7 +98,6 @@ class UpdateNodePoolDetails(object):
             'node_eviction_node_pool_settings': 'NodeEvictionNodePoolSettings',
             'node_pool_cycling_details': 'NodePoolCyclingDetails'
         }
-
         self.attribute_map = {
             'name': 'name',
             'kubernetes_version': 'kubernetesVersion',
@@ -116,7 +115,6 @@ class UpdateNodePoolDetails(object):
             'node_eviction_node_pool_settings': 'nodeEvictionNodePoolSettings',
             'node_pool_cycling_details': 'nodePoolCyclingDetails'
         }
-
         self._name = None
         self._kubernetes_version = None
         self._initial_node_labels = None

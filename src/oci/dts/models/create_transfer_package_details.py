@@ -38,13 +38,11 @@ class CreateTransferPackageDetails(object):
             'return_package_delivery_tracking_number': 'str',
             'package_delivery_vendor': 'str'
         }
-
         self.attribute_map = {
             'original_package_delivery_tracking_number': 'originalPackageDeliveryTrackingNumber',
             'return_package_delivery_tracking_number': 'returnPackageDeliveryTrackingNumber',
             'package_delivery_vendor': 'packageDeliveryVendor'
         }
-
         self._original_package_delivery_tracking_number = None
         self._return_package_delivery_tracking_number = None
         self._package_delivery_vendor = None

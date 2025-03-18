@@ -43,12 +43,10 @@ class AutoScalePolicyMetricRule(object):
             'metric_type': 'str',
             'threshold': 'MetricThresholdRule'
         }
-
         self.attribute_map = {
             'metric_type': 'metricType',
             'threshold': 'threshold'
         }
-
         self._metric_type = None
         self._threshold = None
 

@@ -33,12 +33,10 @@ class ManagementPolicyDetails(object):
             'maintenance_window_start': 'str',
             'backup_policy': 'BackupPolicy'
         }
-
         self.attribute_map = {
             'maintenance_window_start': 'maintenanceWindowStart',
             'backup_policy': 'backupPolicy'
         }
-
         self._maintenance_window_start = None
         self._backup_policy = None
 

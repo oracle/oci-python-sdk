@@ -90,7 +90,6 @@ class AutoPromoteConfigSummary(ConfigSummary):
             'resource_type': 'str',
             'is_enabled': 'bool'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -105,7 +104,6 @@ class AutoPromoteConfigSummary(ConfigSummary):
             'resource_type': 'resourceType',
             'is_enabled': 'isEnabled'
         }
-
         self._id = None
         self._compartment_id = None
         self._display_name = None

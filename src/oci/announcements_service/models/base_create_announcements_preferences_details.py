@@ -67,7 +67,6 @@ class BaseCreateAnnouncementsPreferencesDetails(object):
             'preference_type': 'str',
             'preferred_time_zone': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'is_unsubscribed': 'isUnsubscribed',
@@ -75,7 +74,6 @@ class BaseCreateAnnouncementsPreferencesDetails(object):
             'preference_type': 'preferenceType',
             'preferred_time_zone': 'preferredTimeZone'
         }
-
         self._type = None
         self._is_unsubscribed = None
         self._compartment_id = None

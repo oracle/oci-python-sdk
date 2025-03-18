@@ -143,7 +143,6 @@ class SqlTuningSet(object):
             'all_sql_statements_fetched': 'str',
             'sql_list': 'list[SqlInSqlTuningSet]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'owner': 'owner',
@@ -158,7 +157,6 @@ class SqlTuningSet(object):
             'all_sql_statements_fetched': 'allSqlStatementsFetched',
             'sql_list': 'sqlList'
         }
-
         self._id = None
         self._owner = None
         self._name = None

@@ -73,7 +73,6 @@ class CreatePreauthenticatedRequestDetails(object):
             'access_type': 'str',
             'time_expires': 'datetime'
         }
-
         self.attribute_map = {
             'name': 'name',
             'bucket_listing_action': 'bucketListingAction',
@@ -81,7 +80,6 @@ class CreatePreauthenticatedRequestDetails(object):
             'access_type': 'accessType',
             'time_expires': 'timeExpires'
         }
-
         self._name = None
         self._bucket_listing_action = None
         self._object_name = None

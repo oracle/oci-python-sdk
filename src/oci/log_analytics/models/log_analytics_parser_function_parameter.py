@@ -58,7 +58,6 @@ class LogAnalyticsParserFunctionParameter(object):
             'parser_name': 'str',
             'parser_meta_plugin_parameter': 'LogAnalyticsParserMetaPluginParameter'
         }
-
         self.attribute_map = {
             'parser_function_id': 'parserFunctionId',
             'parser_function_parameter_name': 'parserFunctionParameterName',
@@ -68,7 +67,6 @@ class LogAnalyticsParserFunctionParameter(object):
             'parser_name': 'parserName',
             'parser_meta_plugin_parameter': 'parserMetaPluginParameter'
         }
-
         self._parser_function_id = None
         self._parser_function_parameter_name = None
         self._parser_function_parameter_id = None

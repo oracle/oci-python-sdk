@@ -128,7 +128,6 @@ class MigrationAssetSummary(object):
             'replication_schedule_id': 'str',
             'tenancy_id': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'type': 'type',
@@ -150,7 +149,6 @@ class MigrationAssetSummary(object):
             'replication_schedule_id': 'replicationScheduleId',
             'tenancy_id': 'tenancyId'
         }
-
         self._id = None
         self._type = None
         self._display_name = None

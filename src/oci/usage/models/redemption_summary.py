@@ -73,7 +73,6 @@ class RedemptionSummary(object):
             'fx_rate': 'float',
             'time_invoiced': 'datetime'
         }
-
         self.attribute_map = {
             'time_redeemed': 'timeRedeemed',
             'redemption_email': 'redemptionEmail',
@@ -86,7 +85,6 @@ class RedemptionSummary(object):
             'fx_rate': 'fxRate',
             'time_invoiced': 'timeInvoiced'
         }
-
         self._time_redeemed = None
         self._redemption_email = None
         self._redemption_code = None

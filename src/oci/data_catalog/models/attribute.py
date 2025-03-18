@@ -247,7 +247,6 @@ class Attribute(object):
             'properties': 'dict(str, dict(str, str))',
             'associated_rule_types': 'list[str]'
         }
-
         self.attribute_map = {
             'key': 'key',
             'display_name': 'displayName',
@@ -285,7 +284,6 @@ class Attribute(object):
             'properties': 'properties',
             'associated_rule_types': 'associatedRuleTypes'
         }
-
         self._key = None
         self._display_name = None
         self._business_name = None

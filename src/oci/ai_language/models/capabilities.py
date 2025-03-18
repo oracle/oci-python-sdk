@@ -28,11 +28,9 @@ class Capabilities(object):
         self.swagger_types = {
             'capability': 'dict(str, Capability)'
         }
-
         self.attribute_map = {
             'capability': 'capability'
         }
-
         self._capability = None
 
     @property

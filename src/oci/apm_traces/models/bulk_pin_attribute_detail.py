@@ -42,12 +42,10 @@ class BulkPinAttributeDetail(object):
             'attribute_name': 'str',
             'attribute_name_space': 'str'
         }
-
         self.attribute_map = {
             'attribute_name': 'attributeName',
             'attribute_name_space': 'attributeNameSpace'
         }
-
         self._attribute_name = None
         self._attribute_name_space = None
 

@@ -309,7 +309,6 @@ class Run(object):
             'max_duration_in_minutes': 'int',
             'idle_timeout_in_minutes': 'int'
         }
-
         self.attribute_map = {
             'archive_uri': 'archiveUri',
             'arguments': 'arguments',
@@ -356,7 +355,6 @@ class Run(object):
             'max_duration_in_minutes': 'maxDurationInMinutes',
             'idle_timeout_in_minutes': 'idleTimeoutInMinutes'
         }
-
         self._archive_uri = None
         self._arguments = None
         self._application_id = None

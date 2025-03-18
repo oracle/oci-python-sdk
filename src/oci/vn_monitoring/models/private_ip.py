@@ -124,7 +124,6 @@ class PrivateIp(object):
             'time_created': 'datetime',
             'vnic_id': 'str'
         }
-
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'compartment_id': 'compartmentId',
@@ -140,7 +139,6 @@ class PrivateIp(object):
             'time_created': 'timeCreated',
             'vnic_id': 'vnicId'
         }
-
         self._availability_domain = None
         self._compartment_id = None
         self._defined_tags = None

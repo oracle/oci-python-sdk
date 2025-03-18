@@ -33,12 +33,10 @@ class UpdateDesktopPoolDesktopSessionLifecycleActions(object):
             'inactivity': 'InactivityConfig',
             'disconnect': 'DisconnectConfig'
         }
-
         self.attribute_map = {
             'inactivity': 'inactivity',
             'disconnect': 'disconnect'
         }
-
         self._inactivity = None
         self._disconnect = None
 

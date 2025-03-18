@@ -88,7 +88,6 @@ class ResourceSummary(object):
             'identity_context': 'dict(str, object)',
             'additional_details': 'dict(str, object)'
         }
-
         self.attribute_map = {
             'resource_type': 'resourceType',
             'identifier': 'identifier',
@@ -104,7 +103,6 @@ class ResourceSummary(object):
             'identity_context': 'identityContext',
             'additional_details': 'additionalDetails'
         }
-
         self._resource_type = None
         self._identifier = None
         self._compartment_id = None

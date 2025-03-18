@@ -86,7 +86,6 @@ class UpdateHdfsConnectionDetails(UpdateConnectionDetails):
             'does_use_secret_ids': 'bool',
             'core_site_xml': 'str'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'display_name': 'displayName',
@@ -101,7 +100,6 @@ class UpdateHdfsConnectionDetails(UpdateConnectionDetails):
             'does_use_secret_ids': 'doesUseSecretIds',
             'core_site_xml': 'coreSiteXml'
         }
-
         self._connection_type = None
         self._display_name = None
         self._description = None

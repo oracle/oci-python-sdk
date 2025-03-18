@@ -33,12 +33,10 @@ class Format(object):
             'value': 'str',
             'example': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'example': 'example'
         }
-
         self._value = None
         self._example = None
 

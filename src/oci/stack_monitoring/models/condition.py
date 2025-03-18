@@ -63,7 +63,6 @@ class Condition(object):
             'should_append_url': 'bool',
             'trigger_delay': 'str'
         }
-
         self.attribute_map = {
             'severity': 'severity',
             'query': 'query',
@@ -72,7 +71,6 @@ class Condition(object):
             'should_append_url': 'shouldAppendUrl',
             'trigger_delay': 'triggerDelay'
         }
-
         self._severity = None
         self._query = None
         self._body = None

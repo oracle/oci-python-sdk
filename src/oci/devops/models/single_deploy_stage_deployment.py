@@ -126,7 +126,6 @@ class SingleDeployStageDeployment(Deployment):
             'system_tags': 'dict(str, dict(str, object))',
             'deploy_stage_id': 'str'
         }
-
         self.attribute_map = {
             'deploy_pipeline_artifacts': 'deployPipelineArtifacts',
             'deploy_pipeline_environments': 'deployPipelineEnvironments',
@@ -149,7 +148,6 @@ class SingleDeployStageDeployment(Deployment):
             'system_tags': 'systemTags',
             'deploy_stage_id': 'deployStageId'
         }
-
         self._deploy_pipeline_artifacts = None
         self._deploy_pipeline_environments = None
         self._deployment_type = None

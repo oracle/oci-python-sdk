@@ -58,7 +58,6 @@ class UpdateApplicationDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'image_policy_config': 'ImagePolicyConfig'
         }
-
         self.attribute_map = {
             'config': 'config',
             'network_security_group_ids': 'networkSecurityGroupIds',
@@ -68,7 +67,6 @@ class UpdateApplicationDetails(object):
             'defined_tags': 'definedTags',
             'image_policy_config': 'imagePolicyConfig'
         }
-
         self._config = None
         self._network_security_group_ids = None
         self._syslog_url = None

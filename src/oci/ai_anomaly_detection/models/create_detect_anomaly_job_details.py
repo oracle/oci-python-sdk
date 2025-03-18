@@ -64,7 +64,6 @@ class CreateDetectAnomalyJobDetails(object):
             'input_details': 'InputDetails',
             'output_details': 'OutputDetails'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'description': 'description',
@@ -75,7 +74,6 @@ class CreateDetectAnomalyJobDetails(object):
             'input_details': 'inputDetails',
             'output_details': 'outputDetails'
         }
-
         self._compartment_id = None
         self._description = None
         self._display_name = None

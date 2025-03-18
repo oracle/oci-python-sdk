@@ -71,7 +71,6 @@ class PipelineInitializationStep(object):
             'time_finished': 'datetime',
             'messages': 'list[StepMessage]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'status': 'status',
@@ -80,7 +79,6 @@ class PipelineInitializationStep(object):
             'time_finished': 'timeFinished',
             'messages': 'messages'
         }
-
         self._name = None
         self._status = None
         self._percent_complete = None

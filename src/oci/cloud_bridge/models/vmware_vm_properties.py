@@ -78,7 +78,6 @@ class VmwareVmProperties(object):
             'fault_tolerance_bandwidth': 'int',
             'fault_tolerance_secondary_latency': 'int'
         }
-
         self.attribute_map = {
             'cluster': 'cluster',
             'customer_fields': 'customerFields',
@@ -92,7 +91,6 @@ class VmwareVmProperties(object):
             'fault_tolerance_bandwidth': 'faultToleranceBandwidth',
             'fault_tolerance_secondary_latency': 'faultToleranceSecondaryLatency'
         }
-
         self._cluster = None
         self._customer_fields = None
         self._customer_tags = None

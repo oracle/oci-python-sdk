@@ -74,11 +74,9 @@ class SecurityFeatureAnalyticsDimensions(object):
         self.swagger_types = {
             'security_feature': 'str'
         }
-
         self.attribute_map = {
             'security_feature': 'securityFeature'
         }
-
         self._security_feature = None
 
     @property

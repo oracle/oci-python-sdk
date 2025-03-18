@@ -181,7 +181,6 @@ class Key(object):
             'auto_key_rotation_details': 'AutoKeyRotationDetails',
             'external_key_reference_details': 'ExternalKeyReferenceDetails'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'current_key_version': 'currentKeyVersion',
@@ -202,7 +201,6 @@ class Key(object):
             'auto_key_rotation_details': 'autoKeyRotationDetails',
             'external_key_reference_details': 'externalKeyReferenceDetails'
         }
-
         self._compartment_id = None
         self._current_key_version = None
         self._defined_tags = None

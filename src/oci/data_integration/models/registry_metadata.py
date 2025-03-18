@@ -48,7 +48,6 @@ class RegistryMetadata(object):
             'key': 'str',
             'is_favorite': 'bool'
         }
-
         self.attribute_map = {
             'aggregator_key': 'aggregatorKey',
             'labels': 'labels',
@@ -56,7 +55,6 @@ class RegistryMetadata(object):
             'key': 'key',
             'is_favorite': 'isFavorite'
         }
-
         self._aggregator_key = None
         self._labels = None
         self._registry_version = None

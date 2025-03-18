@@ -71,14 +71,12 @@ class UpdateSecurityRuleDetails(object):
             'inspection': 'str',
             'position': 'RulePosition'
         }
-
         self.attribute_map = {
             'condition': 'condition',
             'action': 'action',
             'inspection': 'inspection',
             'position': 'position'
         }
-
         self._condition = None
         self._action = None
         self._inspection = None

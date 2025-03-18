@@ -48,7 +48,6 @@ class AuthServiceUser(object):
             'name': 'str',
             'display_name': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'tenant_id': 'tenantId',
@@ -56,7 +55,6 @@ class AuthServiceUser(object):
             'name': 'name',
             'display_name': 'displayName'
         }
-
         self._compartment_id = None
         self._tenant_id = None
         self._id = None

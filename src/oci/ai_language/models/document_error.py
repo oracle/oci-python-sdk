@@ -33,12 +33,10 @@ class DocumentError(object):
             'key': 'str',
             'error': 'ErrorDetails'
         }
-
         self.attribute_map = {
             'key': 'key',
             'error': 'error'
         }
-
         self._key = None
         self._error = None
 

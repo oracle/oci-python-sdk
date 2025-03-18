@@ -66,7 +66,6 @@ class IdcsLastModifiedBy(object):
             'display': 'str',
             'ocid': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ref': '$ref',
@@ -74,7 +73,6 @@ class IdcsLastModifiedBy(object):
             'display': 'display',
             'ocid': 'ocid'
         }
-
         self._value = None
         self._ref = None
         self._type = None

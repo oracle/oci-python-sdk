@@ -103,7 +103,6 @@ class BackendSetSummary(object):
             'backends': 'list[Backend]',
             'health_checker': 'HealthChecker'
         }
-
         self.attribute_map = {
             'name': 'name',
             'policy': 'policy',
@@ -116,7 +115,6 @@ class BackendSetSummary(object):
             'backends': 'backends',
             'health_checker': 'healthChecker'
         }
-
         self._name = None
         self._policy = None
         self._is_preserve_source = None

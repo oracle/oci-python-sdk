@@ -161,7 +161,6 @@ class ZoneSummary(object):
             'is_protected': 'bool',
             'dnssec_config': 'DnssecConfig'
         }
-
         self.attribute_map = {
             'name': 'name',
             'zone_type': 'zoneType',
@@ -180,7 +179,6 @@ class ZoneSummary(object):
             'is_protected': 'isProtected',
             'dnssec_config': 'dnssecConfig'
         }
-
         self._name = None
         self._zone_type = None
         self._compartment_id = None

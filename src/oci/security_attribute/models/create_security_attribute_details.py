@@ -38,13 +38,11 @@ class CreateSecurityAttributeDetails(object):
             'description': 'str',
             'validator': 'BaseSecurityAttributeValidator'
         }
-
         self.attribute_map = {
             'name': 'name',
             'description': 'description',
             'validator': 'validator'
         }
-
         self._name = None
         self._description = None
         self._validator = None

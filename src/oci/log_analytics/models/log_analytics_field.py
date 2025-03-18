@@ -128,7 +128,6 @@ class LogAnalyticsField(object):
             'is_table_eligible': 'bool',
             'unit_type': 'str'
         }
-
         self.attribute_map = {
             'cee_alias': 'ceeAlias',
             'data_type': 'dataType',
@@ -152,7 +151,6 @@ class LogAnalyticsField(object):
             'is_table_eligible': 'isTableEligible',
             'unit_type': 'unitType'
         }
-
         self._cee_alias = None
         self._data_type = None
         self._regular_expression = None

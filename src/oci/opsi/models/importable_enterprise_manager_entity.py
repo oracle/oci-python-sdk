@@ -48,7 +48,6 @@ class ImportableEnterpriseManagerEntity(object):
             'enterprise_manager_entity_identifier': 'str',
             'opsi_entity_type': 'str'
         }
-
         self.attribute_map = {
             'enterprise_manager_identifier': 'enterpriseManagerIdentifier',
             'enterprise_manager_entity_name': 'enterpriseManagerEntityName',
@@ -56,7 +55,6 @@ class ImportableEnterpriseManagerEntity(object):
             'enterprise_manager_entity_identifier': 'enterpriseManagerEntityIdentifier',
             'opsi_entity_type': 'opsiEntityType'
         }
-
         self._enterprise_manager_identifier = None
         self._enterprise_manager_entity_name = None
         self._enterprise_manager_entity_type = None

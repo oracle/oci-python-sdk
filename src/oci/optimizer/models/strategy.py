@@ -38,13 +38,11 @@ class Strategy(object):
             'is_default': 'bool',
             'parameters_definition': 'list[StrategyParameter]'
         }
-
         self.attribute_map = {
             'strategy_name': 'strategyName',
             'is_default': 'isDefault',
             'parameters_definition': 'parametersDefinition'
         }
-
         self._strategy_name = None
         self._is_default = None
         self._parameters_definition = None

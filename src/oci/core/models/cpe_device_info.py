@@ -33,12 +33,10 @@ class CpeDeviceInfo(object):
             'vendor': 'str',
             'platform_software_version': 'str'
         }
-
         self.attribute_map = {
             'vendor': 'vendor',
             'platform_software_version': 'platformSoftwareVersion'
         }
-
         self._vendor = None
         self._platform_software_version = None
 

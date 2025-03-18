@@ -100,7 +100,6 @@ class DrgRouteTable(object):
             'import_drg_route_distribution_id': 'str',
             'is_ecmp_enabled': 'bool'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -113,7 +112,6 @@ class DrgRouteTable(object):
             'import_drg_route_distribution_id': 'importDrgRouteDistributionId',
             'is_ecmp_enabled': 'isEcmpEnabled'
         }
-
         self._id = None
         self._compartment_id = None
         self._drg_id = None

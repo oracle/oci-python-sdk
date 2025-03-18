@@ -30,11 +30,9 @@ class GenerateLogReaderComponentLibraryUrlDetails(GenerateLibraryUrlDetails):
         self.swagger_types = {
             'library_type': 'str'
         }
-
         self.attribute_map = {
             'library_type': 'libraryType'
         }
-
         self._library_type = None
         self._library_type = 'LOG_READER_COMPONENT'
 

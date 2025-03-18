@@ -154,7 +154,6 @@ class DiscoveryDetails(object):
             'credentials': 'CredentialCollection',
             'tags': 'PropertyDetails'
         }
-
         self.attribute_map = {
             'agent_id': 'agentId',
             'resource_type': 'resourceType',
@@ -164,7 +163,6 @@ class DiscoveryDetails(object):
             'credentials': 'credentials',
             'tags': 'tags'
         }
-
         self._agent_id = None
         self._resource_type = None
         self._resource_name = None

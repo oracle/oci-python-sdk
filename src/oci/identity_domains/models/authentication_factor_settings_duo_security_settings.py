@@ -73,7 +73,6 @@ class AuthenticationFactorSettingsDuoSecuritySettings(object):
             'api_hostname': 'str',
             'user_mapping_attribute': 'str'
         }
-
         self.attribute_map = {
             'integration_key': 'integrationKey',
             'secret_key': 'secretKey',
@@ -81,7 +80,6 @@ class AuthenticationFactorSettingsDuoSecuritySettings(object):
             'api_hostname': 'apiHostname',
             'user_mapping_attribute': 'userMappingAttribute'
         }
-
         self._integration_key = None
         self._secret_key = None
         self._attestation_key = None

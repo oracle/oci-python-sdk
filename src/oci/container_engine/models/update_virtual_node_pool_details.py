@@ -73,7 +73,6 @@ class UpdateVirtualNodePoolDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'virtual_node_tags': 'VirtualNodeTags'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'initial_virtual_node_labels': 'initialVirtualNodeLabels',
@@ -86,7 +85,6 @@ class UpdateVirtualNodePoolDetails(object):
             'defined_tags': 'definedTags',
             'virtual_node_tags': 'virtualNodeTags'
         }
-
         self._display_name = None
         self._initial_virtual_node_labels = None
         self._taints = None

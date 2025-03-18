@@ -28,11 +28,9 @@ class UpgradeBlockchainPlatformDetails(object):
         self.swagger_types = {
             'patch_id': 'str'
         }
-
         self.attribute_map = {
             'patch_id': 'patchId'
         }
-
         self._patch_id = None
 
     @property

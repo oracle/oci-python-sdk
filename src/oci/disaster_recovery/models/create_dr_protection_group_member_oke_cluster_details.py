@@ -80,7 +80,6 @@ class CreateDrProtectionGroupMemberOkeClusterDetails(CreateDrProtectionGroupMemb
             'managed_node_pool_configs': 'list[CreateOkeClusterManagedNodePoolConfigurationDetails]',
             'virtual_node_pool_configs': 'list[CreateOkeClusterVirtualNodePoolConfigurationDetails]'
         }
-
         self.attribute_map = {
             'member_id': 'memberId',
             'member_type': 'memberType',
@@ -94,7 +93,6 @@ class CreateDrProtectionGroupMemberOkeClusterDetails(CreateDrProtectionGroupMemb
             'managed_node_pool_configs': 'managedNodePoolConfigs',
             'virtual_node_pool_configs': 'virtualNodePoolConfigs'
         }
-
         self._member_id = None
         self._member_type = None
         self._peer_cluster_id = None

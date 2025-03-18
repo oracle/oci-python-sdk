@@ -53,7 +53,6 @@ class UpdatePublicationDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'name': 'name',
             'short_description': 'shortDescription',
@@ -62,7 +61,6 @@ class UpdatePublicationDetails(object):
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags'
         }
-
         self._name = None
         self._short_description = None
         self._long_description = None

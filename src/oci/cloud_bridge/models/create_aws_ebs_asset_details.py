@@ -75,7 +75,6 @@ class CreateAwsEbsAssetDetails(CreateAssetDetails):
             'defined_tags': 'dict(str, dict(str, object))',
             'aws_ebs': 'AwsEbsProperties'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'inventory_id': 'inventoryId',
@@ -88,7 +87,6 @@ class CreateAwsEbsAssetDetails(CreateAssetDetails):
             'defined_tags': 'definedTags',
             'aws_ebs': 'awsEbs'
         }
-
         self._display_name = None
         self._inventory_id = None
         self._compartment_id = None

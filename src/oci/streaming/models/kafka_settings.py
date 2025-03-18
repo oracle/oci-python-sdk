@@ -43,14 +43,12 @@ class KafkaSettings(object):
             'log_retention_hours': 'int',
             'num_partitions': 'int'
         }
-
         self.attribute_map = {
             'bootstrap_servers': 'bootstrapServers',
             'auto_create_topics_enable': 'autoCreateTopicsEnable',
             'log_retention_hours': 'logRetentionHours',
             'num_partitions': 'numPartitions'
         }
-
         self._bootstrap_servers = None
         self._auto_create_topics_enable = None
         self._log_retention_hours = None

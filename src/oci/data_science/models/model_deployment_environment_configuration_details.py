@@ -43,11 +43,9 @@ class ModelDeploymentEnvironmentConfigurationDetails(object):
         self.swagger_types = {
             'environment_configuration_type': 'str'
         }
-
         self.attribute_map = {
             'environment_configuration_type': 'environmentConfigurationType'
         }
-
         self._environment_configuration_type = None
 
     @staticmethod

@@ -53,7 +53,6 @@ class Entity(object):
             'is_pii': 'bool',
             'score': 'float'
         }
-
         self.attribute_map = {
             'offset': 'offset',
             'length': 'length',
@@ -62,7 +61,6 @@ class Entity(object):
             'is_pii': 'isPii',
             'score': 'score'
         }
-
         self._offset = None
         self._length = None
         self._text = None

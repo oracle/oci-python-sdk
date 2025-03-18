@@ -146,7 +146,6 @@ class CreateOracleConnectionDetails(CreateConnectionDetails):
             'private_ip': 'str',
             'database_id': 'str'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'display_name': 'displayName',
@@ -173,7 +172,6 @@ class CreateOracleConnectionDetails(CreateConnectionDetails):
             'private_ip': 'privateIp',
             'database_id': 'databaseId'
         }
-
         self._connection_type = None
         self._display_name = None
         self._description = None

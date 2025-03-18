@@ -43,14 +43,12 @@ class DeleteRowResult(object):
             'existing_value': 'dict(str, object)',
             'usage': 'RequestUsage'
         }
-
         self.attribute_map = {
             'is_success': 'isSuccess',
             'existing_version': 'existingVersion',
             'existing_value': 'existingValue',
             'usage': 'usage'
         }
-
         self._is_success = None
         self._existing_version = None
         self._existing_value = None

@@ -48,7 +48,6 @@ class CreateBdsMetastoreConfigurationDetails(object):
             'bds_api_key_passphrase': 'str',
             'cluster_admin_password': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'metastore_id': 'metastoreId',
@@ -56,7 +55,6 @@ class CreateBdsMetastoreConfigurationDetails(object):
             'bds_api_key_passphrase': 'bdsApiKeyPassphrase',
             'cluster_admin_password': 'clusterAdminPassword'
         }
-
         self._display_name = None
         self._metastore_id = None
         self._bds_api_key_id = None

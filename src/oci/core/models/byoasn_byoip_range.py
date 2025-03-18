@@ -43,14 +43,12 @@ class ByoasnByoipRange(object):
             'byoip_range_id': 'str',
             'as_path_prepend_length': 'int'
         }
-
         self.attribute_map = {
             'cidr_block': 'cidrBlock',
             'ipv6_cidr_block': 'ipv6CidrBlock',
             'byoip_range_id': 'byoipRangeId',
             'as_path_prepend_length': 'asPathPrependLength'
         }
-
         self._cidr_block = None
         self._ipv6_cidr_block = None
         self._byoip_range_id = None

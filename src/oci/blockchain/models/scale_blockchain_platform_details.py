@@ -72,7 +72,6 @@ class ScaleBlockchainPlatformDetails(object):
             'remove_osns': 'list[str]',
             'remove_peers': 'list[str]'
         }
-
         self.attribute_map = {
             'add_osns': 'addOsns',
             'add_replicas': 'addReplicas',
@@ -83,7 +82,6 @@ class ScaleBlockchainPlatformDetails(object):
             'remove_osns': 'removeOsns',
             'remove_peers': 'removePeers'
         }
-
         self._add_osns = None
         self._add_replicas = None
         self._add_peers = None

@@ -57,13 +57,11 @@ class PiiEntityMasking(object):
             'exclude': 'list[str]',
             'should_detect': 'bool'
         }
-
         self.attribute_map = {
             'mode': 'mode',
             'exclude': 'exclude',
             'should_detect': 'shouldDetect'
         }
-
         self._mode = None
         self._exclude = None
         self._should_detect = None

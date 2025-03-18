@@ -38,11 +38,9 @@ class TlsVerifyConfig(object):
         self.swagger_types = {
             'tls_verify_mode': 'str'
         }
-
         self.attribute_map = {
             'tls_verify_mode': 'tlsVerifyMode'
         }
-
         self._tls_verify_mode = None
 
     @staticmethod

@@ -82,7 +82,6 @@ class CreateAutonomousContainerDatabaseDataguardAssociationDetails(object):
             'fast_start_fail_over_lag_limit_in_seconds': 'int',
             'standby_maintenance_buffer_in_days': 'int'
         }
-
         self.attribute_map = {
             'peer_autonomous_container_database_display_name': 'peerAutonomousContainerDatabaseDisplayName',
             'peer_autonomous_container_database_compartment_id': 'peerAutonomousContainerDatabaseCompartmentId',
@@ -95,7 +94,6 @@ class CreateAutonomousContainerDatabaseDataguardAssociationDetails(object):
             'fast_start_fail_over_lag_limit_in_seconds': 'fastStartFailOverLagLimitInSeconds',
             'standby_maintenance_buffer_in_days': 'standbyMaintenanceBufferInDays'
         }
-
         self._peer_autonomous_container_database_display_name = None
         self._peer_autonomous_container_database_compartment_id = None
         self._peer_cloud_autonomous_vm_cluster_id = None

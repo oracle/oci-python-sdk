@@ -33,12 +33,10 @@ class VmcoreDetails(object):
             'backtrace': 'str',
             'component': 'str'
         }
-
         self.attribute_map = {
             'backtrace': 'backtrace',
             'component': 'component'
         }
-
         self._backtrace = None
         self._component = None
 

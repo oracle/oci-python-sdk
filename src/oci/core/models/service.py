@@ -50,14 +50,12 @@ class Service(object):
             'id': 'str',
             'name': 'str'
         }
-
         self.attribute_map = {
             'cidr_block': 'cidrBlock',
             'description': 'description',
             'id': 'id',
             'name': 'name'
         }
-
         self._cidr_block = None
         self._description = None
         self._id = None

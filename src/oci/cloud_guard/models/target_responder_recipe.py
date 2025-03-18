@@ -101,7 +101,6 @@ class TargetResponderRecipe(object):
             'effective_responder_rules': 'list[TargetResponderRecipeResponderRule]',
             'locks': 'list[ResourceLock]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'responder_recipe_id': 'responderRecipeId',
@@ -115,7 +114,6 @@ class TargetResponderRecipe(object):
             'effective_responder_rules': 'effectiveResponderRules',
             'locks': 'locks'
         }
-
         self._id = None
         self._responder_recipe_id = None
         self._compartment_id = None

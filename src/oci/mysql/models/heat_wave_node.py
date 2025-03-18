@@ -73,14 +73,12 @@ class HeatWaveNode(object):
             'time_created': 'datetime',
             'time_updated': 'datetime'
         }
-
         self.attribute_map = {
             'node_id': 'nodeId',
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated'
         }
-
         self._node_id = None
         self._lifecycle_state = None
         self._time_created = None

@@ -60,7 +60,6 @@ class CreateNFSBackupDestinationDetails(CreateBackupDestinationDetails):
             'local_mount_point_path': 'str',
             'mount_type_details': 'MountTypeDetails'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'compartment_id': 'compartmentId',
@@ -70,7 +69,6 @@ class CreateNFSBackupDestinationDetails(CreateBackupDestinationDetails):
             'local_mount_point_path': 'localMountPointPath',
             'mount_type_details': 'mountTypeDetails'
         }
-
         self._display_name = None
         self._compartment_id = None
         self._type = None

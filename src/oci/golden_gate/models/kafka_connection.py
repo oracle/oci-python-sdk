@@ -231,7 +231,6 @@ class KafkaConnection(Connection):
             'consumer_properties': 'str',
             'producer_properties': 'str'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'id': 'id',
@@ -267,7 +266,6 @@ class KafkaConnection(Connection):
             'consumer_properties': 'consumerProperties',
             'producer_properties': 'producerProperties'
         }
-
         self._connection_type = None
         self._id = None
         self._display_name = None

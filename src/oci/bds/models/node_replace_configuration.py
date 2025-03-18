@@ -104,7 +104,6 @@ class NodeReplaceConfiguration(object):
             'metric_type': 'str',
             'duration_in_minutes': 'int'
         }
-
         self.attribute_map = {
             'id': 'id',
             'bds_instance_id': 'bdsInstanceId',
@@ -116,7 +115,6 @@ class NodeReplaceConfiguration(object):
             'metric_type': 'metricType',
             'duration_in_minutes': 'durationInMinutes'
         }
-
         self._id = None
         self._bds_instance_id = None
         self._display_name = None

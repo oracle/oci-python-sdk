@@ -58,13 +58,11 @@ class ConsumerGroupPrivilegeSummary(object):
             'grant_option': 'str',
             'initial_group': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'grant_option': 'grantOption',
             'initial_group': 'initialGroup'
         }
-
         self._name = None
         self._grant_option = None
         self._initial_group = None

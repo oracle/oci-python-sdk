@@ -109,7 +109,6 @@ class EntityAttribute(object):
             'temporal_preference': 'str',
             'entity_name': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'type': 'type',
@@ -120,7 +119,6 @@ class EntityAttribute(object):
             'temporal_preference': 'temporalPreference',
             'entity_name': 'entityName'
         }
-
         self._name = None
         self._type = None
         self._natural_language_mapping = None

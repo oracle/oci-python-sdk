@@ -38,13 +38,11 @@ class DeployArtifactOverrideArgument(object):
             'name': 'str',
             'value': 'str'
         }
-
         self.attribute_map = {
             'deploy_artifact_id': 'deployArtifactId',
             'name': 'name',
             'value': 'value'
         }
-
         self._deploy_artifact_id = None
         self._name = None
         self._value = None

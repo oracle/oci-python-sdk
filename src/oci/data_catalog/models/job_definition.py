@@ -296,7 +296,6 @@ class JobDefinition(object):
             'schedule_type': 'str',
             'properties': 'dict(str, dict(str, str))'
         }
-
         self.attribute_map = {
             'key': 'key',
             'display_name': 'displayName',
@@ -322,7 +321,6 @@ class JobDefinition(object):
             'schedule_type': 'scheduleType',
             'properties': 'properties'
         }
-
         self._key = None
         self._display_name = None
         self._catalog_id = None

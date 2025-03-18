@@ -58,7 +58,6 @@ class OracleDatabaseObjectSummary(object):
             'type': 'str',
             'is_omit_excluded_table_from_replication': 'bool'
         }
-
         self.attribute_map = {
             'object_status': 'objectStatus',
             'owner': 'owner',
@@ -66,7 +65,6 @@ class OracleDatabaseObjectSummary(object):
             'type': 'type',
             'is_omit_excluded_table_from_replication': 'isOmitExcludedTableFromReplication'
         }
-
         self._object_status = None
         self._owner = None
         self._object_name = None

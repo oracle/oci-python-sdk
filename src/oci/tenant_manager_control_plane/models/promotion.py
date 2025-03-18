@@ -77,7 +77,6 @@ class Promotion(object):
             'time_started': 'datetime',
             'time_expired': 'datetime'
         }
-
         self.attribute_map = {
             'duration': 'duration',
             'duration_unit': 'durationUnit',
@@ -88,7 +87,6 @@ class Promotion(object):
             'time_started': 'timeStarted',
             'time_expired': 'timeExpired'
         }
-
         self._duration = None
         self._duration_unit = None
         self._amount = None

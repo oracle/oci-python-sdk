@@ -28,11 +28,9 @@ class QueryableFieldCollection(object):
         self.swagger_types = {
             'items': 'list[QueryableFieldSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

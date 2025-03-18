@@ -56,14 +56,12 @@ class PredefinedMetricExpressionRule(MetricExpressionRule):
             'scale_in_configuration': 'PredefinedExpressionThresholdScalingConfiguration',
             'scale_out_configuration': 'PredefinedExpressionThresholdScalingConfiguration'
         }
-
         self.attribute_map = {
             'metric_expression_rule_type': 'metricExpressionRuleType',
             'metric_type': 'metricType',
             'scale_in_configuration': 'scaleInConfiguration',
             'scale_out_configuration': 'scaleOutConfiguration'
         }
-
         self._metric_expression_rule_type = None
         self._metric_type = None
         self._scale_in_configuration = None

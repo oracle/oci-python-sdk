@@ -30,11 +30,9 @@ class ImageDatasetFormatDetails(DatasetFormatDetails):
         self.swagger_types = {
             'format_type': 'str'
         }
-
         self.attribute_map = {
             'format_type': 'formatType'
         }
-
         self._format_type = None
         self._format_type = 'IMAGE'
 

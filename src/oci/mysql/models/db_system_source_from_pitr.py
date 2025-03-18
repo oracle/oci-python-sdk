@@ -43,13 +43,11 @@ class DbSystemSourceFromPitr(DbSystemSource):
             'db_system_id': 'str',
             'recovery_point': 'datetime'
         }
-
         self.attribute_map = {
             'source_type': 'sourceType',
             'db_system_id': 'dbSystemId',
             'recovery_point': 'recoveryPoint'
         }
-
         self._source_type = None
         self._db_system_id = None
         self._recovery_point = None

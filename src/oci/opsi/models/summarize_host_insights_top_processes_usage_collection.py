@@ -33,12 +33,10 @@ class SummarizeHostInsightsTopProcessesUsageCollection(object):
             'timestamp': 'datetime',
             'items': 'list[TopProcessesUsage]'
         }
-
         self.attribute_map = {
             'timestamp': 'timestamp',
             'items': 'items'
         }
-
         self._timestamp = None
         self._items = None
 

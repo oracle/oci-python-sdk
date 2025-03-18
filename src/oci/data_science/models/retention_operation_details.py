@@ -81,7 +81,6 @@ class RetentionOperationDetails(object):
             'delete_state_details': 'str',
             'time_deletion_scheduled': 'datetime'
         }
-
         self.attribute_map = {
             'archive_state': 'archiveState',
             'archive_state_details': 'archiveStateDetails',
@@ -90,7 +89,6 @@ class RetentionOperationDetails(object):
             'delete_state_details': 'deleteStateDetails',
             'time_deletion_scheduled': 'timeDeletionScheduled'
         }
-
         self._archive_state = None
         self._archive_state_details = None
         self._time_archival_scheduled = None

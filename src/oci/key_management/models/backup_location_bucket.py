@@ -45,14 +45,12 @@ class BackupLocationBucket(BackupLocation):
             'bucket_name': 'str',
             'object_name': 'str'
         }
-
         self.attribute_map = {
             'destination': 'destination',
             'namespace': 'namespace',
             'bucket_name': 'bucketName',
             'object_name': 'objectName'
         }
-
         self._destination = None
         self._namespace = None
         self._bucket_name = None

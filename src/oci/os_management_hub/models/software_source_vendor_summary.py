@@ -108,13 +108,11 @@ class SoftwareSourceVendorSummary(object):
             'os_families': 'list[str]',
             'arch_types': 'list[str]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'os_families': 'osFamilies',
             'arch_types': 'archTypes'
         }
-
         self._name = None
         self._os_families = None
         self._arch_types = None

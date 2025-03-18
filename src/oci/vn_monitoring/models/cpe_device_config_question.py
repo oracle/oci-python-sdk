@@ -41,13 +41,11 @@ class CpeDeviceConfigQuestion(object):
             'display_name': 'str',
             'explanation': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'display_name': 'displayName',
             'explanation': 'explanation'
         }
-
         self._key = None
         self._display_name = None
         self._explanation = None

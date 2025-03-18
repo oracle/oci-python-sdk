@@ -89,7 +89,6 @@ class UpdateServiceCloudChannelDetails(UpdateChannelDetails):
             'password': 'str',
             'client_type': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'description': 'description',
@@ -103,7 +102,6 @@ class UpdateServiceCloudChannelDetails(UpdateChannelDetails):
             'password': 'password',
             'client_type': 'clientType'
         }
-
         self._name = None
         self._description = None
         self._type = None

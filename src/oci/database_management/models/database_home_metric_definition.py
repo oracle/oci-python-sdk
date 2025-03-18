@@ -63,7 +63,6 @@ class DatabaseHomeMetricDefinition(object):
             'statements_aggregate_metrics': 'StatementsAggregateMetrics',
             'failed_connections_aggregate_metrics': 'FailedConnectionsAggregateMetrics'
         }
-
         self.attribute_map = {
             'activity_time_series_metrics': 'activityTimeSeriesMetrics',
             'db_time_aggregate_metrics': 'dbTimeAggregateMetrics',
@@ -74,7 +73,6 @@ class DatabaseHomeMetricDefinition(object):
             'statements_aggregate_metrics': 'statementsAggregateMetrics',
             'failed_connections_aggregate_metrics': 'failedConnectionsAggregateMetrics'
         }
-
         self._activity_time_series_metrics = None
         self._db_time_aggregate_metrics = None
         self._io_aggregate_metrics = None

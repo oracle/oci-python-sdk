@@ -64,14 +64,12 @@ class CreatePublicationPackage(object):
             'operating_system': 'OperatingSystem',
             'eula': 'list[Eula]'
         }
-
         self.attribute_map = {
             'package_version': 'packageVersion',
             'package_type': 'packageType',
             'operating_system': 'operatingSystem',
             'eula': 'eula'
         }
-
         self._package_version = None
         self._package_type = None
         self._operating_system = None

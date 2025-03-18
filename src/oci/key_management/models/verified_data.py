@@ -28,11 +28,9 @@ class VerifiedData(object):
         self.swagger_types = {
             'is_signature_valid': 'bool'
         }
-
         self.attribute_map = {
             'is_signature_valid': 'isSignatureValid'
         }
-
         self._is_signature_valid = None
 
     @property

@@ -38,13 +38,11 @@ class CancelExecutionWindowDetails(object):
             'window_duration_in_mins_of_new_window': 'int',
             'is_enforced_duration_of_new_window': 'bool'
         }
-
         self.attribute_map = {
             'time_scheduled_of_new_window': 'timeScheduledOfNewWindow',
             'window_duration_in_mins_of_new_window': 'windowDurationInMinsOfNewWindow',
             'is_enforced_duration_of_new_window': 'isEnforcedDurationOfNewWindow'
         }
-
         self._time_scheduled_of_new_window = None
         self._window_duration_in_mins_of_new_window = None
         self._is_enforced_duration_of_new_window = None

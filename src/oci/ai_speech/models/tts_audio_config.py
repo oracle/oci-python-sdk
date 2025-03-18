@@ -38,11 +38,9 @@ class TtsAudioConfig(object):
         self.swagger_types = {
             'config_type': 'str'
         }
-
         self.attribute_map = {
             'config_type': 'configType'
         }
-
         self._config_type = None
 
     @staticmethod

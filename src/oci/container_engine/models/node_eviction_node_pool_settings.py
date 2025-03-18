@@ -33,12 +33,10 @@ class NodeEvictionNodePoolSettings(object):
             'eviction_grace_duration': 'str',
             'is_force_delete_after_grace_duration': 'bool'
         }
-
         self.attribute_map = {
             'eviction_grace_duration': 'evictionGraceDuration',
             'is_force_delete_after_grace_duration': 'isForceDeleteAfterGraceDuration'
         }
-
         self._eviction_grace_duration = None
         self._is_force_delete_after_grace_duration = None
 

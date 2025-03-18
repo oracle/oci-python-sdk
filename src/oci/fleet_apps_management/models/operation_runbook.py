@@ -33,12 +33,10 @@ class OperationRunbook(object):
             'id': 'str',
             'input_parameters': 'list[InputParameter]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'input_parameters': 'inputParameters'
         }
-
         self._id = None
         self._input_parameters = None
 

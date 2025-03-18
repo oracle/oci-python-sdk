@@ -82,7 +82,6 @@ class PreferredCredentialSummary(object):
             'password_secret_id': 'str',
             'named_credential_id': 'str'
         }
-
         self.attribute_map = {
             'credential_name': 'credentialName',
             'status': 'status',
@@ -92,7 +91,6 @@ class PreferredCredentialSummary(object):
             'password_secret_id': 'passwordSecretId',
             'named_credential_id': 'namedCredentialId'
         }
-
         self._credential_name = None
         self._status = None
         self._is_accessible = None

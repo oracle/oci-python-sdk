@@ -38,13 +38,11 @@ class CertificatePublicKeyInfo(object):
             'exponent': 'int',
             'key_size': 'int'
         }
-
         self.attribute_map = {
             'algorithm': 'algorithm',
             'exponent': 'exponent',
             'key_size': 'keySize'
         }
-
         self._algorithm = None
         self._exponent = None
         self._key_size = None

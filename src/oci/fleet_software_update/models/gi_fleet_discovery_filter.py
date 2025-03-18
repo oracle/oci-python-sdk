@@ -73,12 +73,10 @@ class GiFleetDiscoveryFilter(object):
             'type': 'str',
             'mode': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'mode': 'mode'
         }
-
         self._type = None
         self._mode = None
 

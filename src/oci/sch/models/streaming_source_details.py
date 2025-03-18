@@ -44,13 +44,11 @@ class StreamingSourceDetails(SourceDetails):
             'stream_id': 'str',
             'cursor': 'StreamingCursorDetails'
         }
-
         self.attribute_map = {
             'kind': 'kind',
             'stream_id': 'streamId',
             'cursor': 'cursor'
         }
-
         self._kind = None
         self._stream_id = None
         self._cursor = None

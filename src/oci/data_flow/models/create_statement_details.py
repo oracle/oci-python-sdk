@@ -28,11 +28,9 @@ class CreateStatementDetails(object):
         self.swagger_types = {
             'code': 'str'
         }
-
         self.attribute_map = {
             'code': 'code'
         }
-
         self._code = None
 
     @property

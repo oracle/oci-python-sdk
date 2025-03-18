@@ -64,13 +64,11 @@ class UpdateMacsecProperties(object):
             'primary_key': 'UpdateMacsecKey',
             'encryption_cipher': 'str'
         }
-
         self.attribute_map = {
             'state': 'state',
             'primary_key': 'primaryKey',
             'encryption_cipher': 'encryptionCipher'
         }
-
         self._state = None
         self._primary_key = None
         self._encryption_cipher = None

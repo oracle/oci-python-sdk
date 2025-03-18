@@ -97,7 +97,6 @@ class UpdateOpensearchClusterDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'software_version': 'softwareVersion',
@@ -112,7 +111,6 @@ class UpdateOpensearchClusterDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._display_name = None
         self._software_version = None
         self._security_mode = None

@@ -57,14 +57,12 @@ class InstanceDetails(object):
             'host_name': 'str',
             'status': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
             'host_name': 'hostName',
             'status': 'status'
         }
-
         self._id = None
         self._name = None
         self._host_name = None

@@ -62,14 +62,12 @@ class RuleConditionGroup(object):
             'type': 'str',
             'name': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ref': '$ref',
             'type': 'type',
             'name': 'name'
         }
-
         self._value = None
         self._ref = None
         self._type = None

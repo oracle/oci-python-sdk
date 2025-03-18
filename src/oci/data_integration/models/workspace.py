@@ -160,7 +160,6 @@ class Workspace(object):
             'registry_id': 'str',
             'workspace_properties': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'vcn_id': 'vcnId',
             'subnet_id': 'subnetId',
@@ -182,7 +181,6 @@ class Workspace(object):
             'registry_id': 'registryId',
             'workspace_properties': 'workspaceProperties'
         }
-
         self._vcn_id = None
         self._subnet_id = None
         self._dns_server_ip = None

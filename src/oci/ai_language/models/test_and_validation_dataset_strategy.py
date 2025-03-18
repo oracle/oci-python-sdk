@@ -40,13 +40,11 @@ class TestAndValidationDatasetStrategy(TestStrategy):
             'testing_dataset': 'DatasetDetails',
             'validation_dataset': 'DatasetDetails'
         }
-
         self.attribute_map = {
             'strategy_type': 'strategyType',
             'testing_dataset': 'testingDataset',
             'validation_dataset': 'validationDataset'
         }
-
         self._strategy_type = None
         self._testing_dataset = None
         self._validation_dataset = None

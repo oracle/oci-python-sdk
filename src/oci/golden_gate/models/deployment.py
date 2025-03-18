@@ -354,6 +354,18 @@ class Deployment(object):
             The value to assign to the time_ogg_version_supported_until property of this Deployment.
         :type time_ogg_version_supported_until: datetime
 
+        :param backup_schedule:
+            The value to assign to the backup_schedule property of this Deployment.
+        :type backup_schedule: oci.golden_gate.models.BackupSchedule
+
+        :param time_last_backup_scheduled:
+            The value to assign to the time_last_backup_scheduled property of this Deployment.
+        :type time_last_backup_scheduled: datetime
+
+        :param time_next_backup_scheduled:
+            The value to assign to the time_next_backup_scheduled property of this Deployment.
+        :type time_next_backup_scheduled: datetime
+
         :param ingress_ips:
             The value to assign to the ingress_ips property of this Deployment.
         :type ingress_ips: list[oci.golden_gate.models.IngressIpDetails]
@@ -402,9 +414,11 @@ class Deployment(object):
             'next_maintenance_description': 'str',
             'maintenance_configuration': 'MaintenanceConfiguration',
             'time_ogg_version_supported_until': 'datetime',
+            'backup_schedule': 'BackupSchedule',
+            'time_last_backup_scheduled': 'datetime',
+            'time_next_backup_scheduled': 'datetime',
             'ingress_ips': 'list[IngressIpDetails]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -448,9 +462,11 @@ class Deployment(object):
             'next_maintenance_description': 'nextMaintenanceDescription',
             'maintenance_configuration': 'maintenanceConfiguration',
             'time_ogg_version_supported_until': 'timeOggVersionSupportedUntil',
+            'backup_schedule': 'backupSchedule',
+            'time_last_backup_scheduled': 'timeLastBackupScheduled',
+            'time_next_backup_scheduled': 'timeNextBackupScheduled',
             'ingress_ips': 'ingressIps'
         }
-
         self._id = None
         self._display_name = None
         self._description = None
@@ -493,6 +509,9 @@ class Deployment(object):
         self._next_maintenance_description = None
         self._maintenance_configuration = None
         self._time_ogg_version_supported_until = None
+        self._backup_schedule = None
+        self._time_last_backup_scheduled = None
+        self._time_next_backup_scheduled = None
         self._ingress_ips = None
 
     @property
@@ -1636,6 +1655,86 @@ class Deployment(object):
         :type: datetime
         """
         self._time_ogg_version_supported_until = time_ogg_version_supported_until
+
+    @property
+    def backup_schedule(self):
+        """
+        Gets the backup_schedule of this Deployment.
+
+        :return: The backup_schedule of this Deployment.
+        :rtype: oci.golden_gate.models.BackupSchedule
+        """
+        return self._backup_schedule
+
+    @backup_schedule.setter
+    def backup_schedule(self, backup_schedule):
+        """
+        Sets the backup_schedule of this Deployment.
+
+        :param backup_schedule: The backup_schedule of this Deployment.
+        :type: oci.golden_gate.models.BackupSchedule
+        """
+        self._backup_schedule = backup_schedule
+
+    @property
+    def time_last_backup_scheduled(self):
+        """
+        Gets the time_last_backup_scheduled of this Deployment.
+        The timestamp of last deployment backup scheduled. The format is defined by
+        `RFC3339`__, such as `2024-10-25T18:19:29.600Z`.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_last_backup_scheduled of this Deployment.
+        :rtype: datetime
+        """
+        return self._time_last_backup_scheduled
+
+    @time_last_backup_scheduled.setter
+    def time_last_backup_scheduled(self, time_last_backup_scheduled):
+        """
+        Sets the time_last_backup_scheduled of this Deployment.
+        The timestamp of last deployment backup scheduled. The format is defined by
+        `RFC3339`__, such as `2024-10-25T18:19:29.600Z`.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_last_backup_scheduled: The time_last_backup_scheduled of this Deployment.
+        :type: datetime
+        """
+        self._time_last_backup_scheduled = time_last_backup_scheduled
+
+    @property
+    def time_next_backup_scheduled(self):
+        """
+        Gets the time_next_backup_scheduled of this Deployment.
+        The timestamp of next deployment backup scheduled. The format is defined by
+        `RFC3339`__, such as `2024-10-26T20:19:29.600Z`.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_next_backup_scheduled of this Deployment.
+        :rtype: datetime
+        """
+        return self._time_next_backup_scheduled
+
+    @time_next_backup_scheduled.setter
+    def time_next_backup_scheduled(self, time_next_backup_scheduled):
+        """
+        Sets the time_next_backup_scheduled of this Deployment.
+        The timestamp of next deployment backup scheduled. The format is defined by
+        `RFC3339`__, such as `2024-10-26T20:19:29.600Z`.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_next_backup_scheduled: The time_next_backup_scheduled of this Deployment.
+        :type: datetime
+        """
+        self._time_next_backup_scheduled = time_next_backup_scheduled
 
     @property
     def ingress_ips(self):

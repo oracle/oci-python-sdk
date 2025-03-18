@@ -96,7 +96,6 @@ class DataGuardGroupMember(object):
             'transport_type': 'str',
             'is_active_data_guard_enabled': 'bool'
         }
-
         self.attribute_map = {
             'db_system_id': 'dbSystemId',
             'database_id': 'databaseId',
@@ -108,7 +107,6 @@ class DataGuardGroupMember(object):
             'transport_type': 'transportType',
             'is_active_data_guard_enabled': 'isActiveDataGuardEnabled'
         }
-
         self._db_system_id = None
         self._database_id = None
         self._role = None

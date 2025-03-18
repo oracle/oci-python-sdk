@@ -28,11 +28,9 @@ class ProtectedDatabaseCollection(object):
         self.swagger_types = {
             'items': 'list[ProtectedDatabaseSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

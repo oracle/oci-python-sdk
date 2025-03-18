@@ -66,7 +66,6 @@ class UpdateZeroEtlPipelineDetails(UpdatePipelineDetails):
             'process_options': 'ProcessOptions',
             'mapping_rules': 'list[MappingRule]'
         }
-
         self.attribute_map = {
             'recipe_type': 'recipeType',
             'display_name': 'displayName',
@@ -77,7 +76,6 @@ class UpdateZeroEtlPipelineDetails(UpdatePipelineDetails):
             'process_options': 'processOptions',
             'mapping_rules': 'mappingRules'
         }
-
         self._recipe_type = None
         self._display_name = None
         self._description = None

@@ -55,7 +55,6 @@ class DataSourceDetailsInflux(DataSourceDetails):
             'measurement_name': 'str',
             'url': 'str'
         }
-
         self.attribute_map = {
             'data_source_type': 'dataSourceType',
             'version_specific_details': 'versionSpecificDetails',
@@ -64,7 +63,6 @@ class DataSourceDetailsInflux(DataSourceDetails):
             'measurement_name': 'measurementName',
             'url': 'url'
         }
-
         self._data_source_type = None
         self._version_specific_details = None
         self._user_name = None

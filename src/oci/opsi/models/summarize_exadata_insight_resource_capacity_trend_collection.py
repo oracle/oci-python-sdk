@@ -124,7 +124,6 @@ class SummarizeExadataInsightResourceCapacityTrendCollection(object):
             'usage_unit': 'str',
             'items': 'list[ExadataInsightResourceCapacityTrendSummary]'
         }
-
         self.attribute_map = {
             'exadata_insight_id': 'exadataInsightId',
             'exadata_resource_type': 'exadataResourceType',
@@ -134,7 +133,6 @@ class SummarizeExadataInsightResourceCapacityTrendCollection(object):
             'usage_unit': 'usageUnit',
             'items': 'items'
         }
-
         self._exadata_insight_id = None
         self._exadata_resource_type = None
         self._exadata_resource_metric = None

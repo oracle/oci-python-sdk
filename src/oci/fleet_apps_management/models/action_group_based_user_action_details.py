@@ -41,13 +41,11 @@ class ActionGroupBasedUserActionDetails(UserActionDetails):
             'action': 'str',
             'action_group_id': 'str'
         }
-
         self.attribute_map = {
             'level': 'level',
             'action': 'action',
             'action_group_id': 'actionGroupId'
         }
-
         self._level = None
         self._action = None
         self._action_group_id = None

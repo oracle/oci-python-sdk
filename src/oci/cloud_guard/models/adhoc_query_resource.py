@@ -38,13 +38,11 @@ class AdhocQueryResource(object):
             'resource_ids': 'list[str]',
             'resource_type': 'str'
         }
-
         self.attribute_map = {
             'region': 'region',
             'resource_ids': 'resourceIds',
             'resource_type': 'resourceType'
         }
-
         self._region = None
         self._resource_ids = None
         self._resource_type = None

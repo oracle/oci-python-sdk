@@ -76,7 +76,6 @@ class GenerateReportDetails(object):
             'time_greater_than': 'datetime',
             'row_limit': 'int'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'target_ids': 'targetIds',
@@ -87,7 +86,6 @@ class GenerateReportDetails(object):
             'time_greater_than': 'timeGreaterThan',
             'row_limit': 'rowLimit'
         }
-
         self._display_name = None
         self._target_ids = None
         self._description = None

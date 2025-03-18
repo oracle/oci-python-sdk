@@ -38,13 +38,11 @@ class ExadataInsightResourceCapacityTrendSummary(object):
             'name': 'str',
             'capacity_data': 'list[ExadataInsightResourceCapacityTrendAggregation]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
             'capacity_data': 'capacityData'
         }
-
         self._id = None
         self._name = None
         self._capacity_data = None

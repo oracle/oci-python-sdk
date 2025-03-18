@@ -57,7 +57,6 @@ class UpdateApprovalTemplateDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'approver_levels': 'approverLevels',
             'display_name': 'displayName',
@@ -65,7 +64,6 @@ class UpdateApprovalTemplateDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._approver_levels = None
         self._display_name = None
         self._auto_approval_state = None

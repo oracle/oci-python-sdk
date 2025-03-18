@@ -47,13 +47,11 @@ class CreateVaultImagePullSecretDetails(CreateImagePullSecretDetails):
             'registry_endpoint': 'str',
             'secret_id': 'str'
         }
-
         self.attribute_map = {
             'secret_type': 'secretType',
             'registry_endpoint': 'registryEndpoint',
             'secret_id': 'secretId'
         }
-
         self._secret_type = None
         self._registry_endpoint = None
         self._secret_id = None

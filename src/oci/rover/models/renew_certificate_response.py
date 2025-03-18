@@ -33,12 +33,10 @@ class RenewCertificateResponse(object):
             'rover_node_id': 'str',
             'certificate_details': 'CertificateDetails'
         }
-
         self.attribute_map = {
             'rover_node_id': 'roverNodeId',
             'certificate_details': 'certificateDetails'
         }
-
         self._rover_node_id = None
         self._certificate_details = None
 

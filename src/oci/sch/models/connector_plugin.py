@@ -109,7 +109,6 @@ class ConnectorPlugin(object):
             'display_name': 'str',
             'schema': 'str'
         }
-
         self.attribute_map = {
             'kind': 'kind',
             'name': 'name',
@@ -119,7 +118,6 @@ class ConnectorPlugin(object):
             'display_name': 'displayName',
             'schema': 'schema'
         }
-
         self._kind = None
         self._name = None
         self._time_created = None

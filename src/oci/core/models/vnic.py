@@ -165,7 +165,6 @@ class Vnic(object):
             'ipv6_addresses': 'list[str]',
             'route_table_id': 'str'
         }
-
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'compartment_id': 'compartmentId',
@@ -188,7 +187,6 @@ class Vnic(object):
             'ipv6_addresses': 'ipv6Addresses',
             'route_table_id': 'routeTableId'
         }
-
         self._availability_domain = None
         self._compartment_id = None
         self._defined_tags = None

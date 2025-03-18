@@ -123,7 +123,6 @@ class LogAnalyticsSourceLabelCondition(object):
             'label_name': 'str',
             'is_inline_label_existing_in_database': 'bool'
         }
-
         self.attribute_map = {
             'condition_string': 'conditionString',
             'condition_block': 'conditionBlock',
@@ -146,7 +145,6 @@ class LogAnalyticsSourceLabelCondition(object):
             'label_name': 'labelName',
             'is_inline_label_existing_in_database': 'isInlineLabelExistingInDatabase'
         }
-
         self._condition_string = None
         self._condition_block = None
         self._message = None

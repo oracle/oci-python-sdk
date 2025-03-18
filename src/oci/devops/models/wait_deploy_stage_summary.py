@@ -104,7 +104,6 @@ class WaitDeployStageSummary(DeployStageSummary):
             'system_tags': 'dict(str, dict(str, object))',
             'wait_criteria': 'WaitCriteriaSummary'
         }
-
         self.attribute_map = {
             'id': 'id',
             'description': 'description',
@@ -123,7 +122,6 @@ class WaitDeployStageSummary(DeployStageSummary):
             'system_tags': 'systemTags',
             'wait_criteria': 'waitCriteria'
         }
-
         self._id = None
         self._description = None
         self._display_name = None

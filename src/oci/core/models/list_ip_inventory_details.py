@@ -114,7 +114,6 @@ class ListIpInventoryDetails(object):
             'pagination_offset': 'int',
             'pagination_limit': 'int'
         }
-
         self.attribute_map = {
             'region_list': 'regionList',
             'compartment_list': 'compartmentList',
@@ -129,7 +128,6 @@ class ListIpInventoryDetails(object):
             'pagination_offset': 'paginationOffset',
             'pagination_limit': 'paginationLimit'
         }
-
         self._region_list = None
         self._compartment_list = None
         self._override_filters = None

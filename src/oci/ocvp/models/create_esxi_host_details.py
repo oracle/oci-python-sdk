@@ -117,7 +117,6 @@ class CreateEsxiHostDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'cluster_id': 'clusterId',
             'display_name': 'displayName',
@@ -132,7 +131,6 @@ class CreateEsxiHostDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._cluster_id = None
         self._display_name = None
         self._billing_donor_host_id = None

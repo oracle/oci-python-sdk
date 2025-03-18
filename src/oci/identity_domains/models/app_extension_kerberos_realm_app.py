@@ -58,7 +58,6 @@ class AppExtensionKerberosRealmApp(object):
             'max_ticket_life': 'int',
             'max_renewable_age': 'int'
         }
-
         self.attribute_map = {
             'realm_name': 'realmName',
             'master_key': 'masterKey',
@@ -68,7 +67,6 @@ class AppExtensionKerberosRealmApp(object):
             'max_ticket_life': 'maxTicketLife',
             'max_renewable_age': 'maxRenewableAge'
         }
-
         self._realm_name = None
         self._master_key = None
         self._default_encryption_salt_type = None

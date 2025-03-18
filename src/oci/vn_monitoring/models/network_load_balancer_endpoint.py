@@ -35,12 +35,10 @@ class NetworkLoadBalancerEndpoint(Endpoint):
             'type': 'str',
             'network_load_balancer_id': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'network_load_balancer_id': 'networkLoadBalancerId'
         }
-
         self._type = None
         self._network_load_balancer_id = None
         self._type = 'NETWORK_LOAD_BALANCER'

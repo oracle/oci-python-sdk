@@ -28,11 +28,9 @@ class AssociatedDatabaseCollection(object):
         self.swagger_types = {
             'items': 'list[AssociatedDatabaseSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

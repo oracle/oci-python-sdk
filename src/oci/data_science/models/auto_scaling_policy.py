@@ -45,14 +45,12 @@ class AutoScalingPolicy(ScalingPolicy):
             'is_enabled': 'bool',
             'auto_scaling_policies': 'list[AutoScalingPolicyDetails]'
         }
-
         self.attribute_map = {
             'policy_type': 'policyType',
             'cool_down_in_seconds': 'coolDownInSeconds',
             'is_enabled': 'isEnabled',
             'auto_scaling_policies': 'autoScalingPolicies'
         }
-
         self._policy_type = None
         self._cool_down_in_seconds = None
         self._is_enabled = None

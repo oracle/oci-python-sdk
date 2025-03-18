@@ -28,11 +28,9 @@ class QueryResultsGroupedBySummary(object):
         self.swagger_types = {
             'query_results_grouped_by_column': 'str'
         }
-
         self.attribute_map = {
             'query_results_grouped_by_column': 'queryResultsGroupedByColumn'
         }
-
         self._query_results_grouped_by_column = None
 
     @property

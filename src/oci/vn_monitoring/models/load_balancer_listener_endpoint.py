@@ -40,13 +40,11 @@ class LoadBalancerListenerEndpoint(Endpoint):
             'listener_id': 'str',
             'load_balancer_id': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'listener_id': 'listenerId',
             'load_balancer_id': 'loadBalancerId'
         }
-
         self._type = None
         self._listener_id = None
         self._load_balancer_id = None

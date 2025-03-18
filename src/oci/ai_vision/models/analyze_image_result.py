@@ -73,7 +73,6 @@ class AnalyzeImageResult(object):
             'face_detection_model_version': 'str',
             'errors': 'list[ProcessingError]'
         }
-
         self.attribute_map = {
             'image_objects': 'imageObjects',
             'labels': 'labels',
@@ -86,7 +85,6 @@ class AnalyzeImageResult(object):
             'face_detection_model_version': 'faceDetectionModelVersion',
             'errors': 'errors'
         }
-
         self._image_objects = None
         self._labels = None
         self._ontology_classes = None

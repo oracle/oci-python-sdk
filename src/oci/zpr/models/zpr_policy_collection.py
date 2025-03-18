@@ -28,11 +28,9 @@ class ZprPolicyCollection(object):
         self.swagger_types = {
             'items': 'list[ZprPolicySummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

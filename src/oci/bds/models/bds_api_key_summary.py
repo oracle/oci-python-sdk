@@ -48,7 +48,6 @@ class BdsApiKeySummary(object):
             'default_region': 'str',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'key_alias': 'keyAlias',
@@ -56,7 +55,6 @@ class BdsApiKeySummary(object):
             'default_region': 'defaultRegion',
             'time_created': 'timeCreated'
         }
-
         self._id = None
         self._key_alias = None
         self._lifecycle_state = None

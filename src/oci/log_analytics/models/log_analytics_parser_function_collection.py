@@ -28,11 +28,9 @@ class LogAnalyticsParserFunctionCollection(object):
         self.swagger_types = {
             'items': 'list[LogAnalyticsParserFunction]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

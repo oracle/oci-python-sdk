@@ -48,7 +48,6 @@ class SdkLanguageTypes(object):
             'description': 'str',
             'parameters': 'list[SdkLanguageOptionalParameters]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'display_name': 'displayName',
@@ -56,7 +55,6 @@ class SdkLanguageTypes(object):
             'description': 'description',
             'parameters': 'parameters'
         }
-
         self._name = None
         self._display_name = None
         self._version = None

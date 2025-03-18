@@ -40,13 +40,11 @@ class UpdateSingleModelDeploymentConfigurationDetails(UpdateModelDeploymentConfi
             'model_configuration_details': 'UpdateModelConfigurationDetails',
             'environment_configuration_details': 'UpdateModelDeploymentEnvironmentConfigurationDetails'
         }
-
         self.attribute_map = {
             'deployment_type': 'deploymentType',
             'model_configuration_details': 'modelConfigurationDetails',
             'environment_configuration_details': 'environmentConfigurationDetails'
         }
-
         self._deployment_type = None
         self._model_configuration_details = None
         self._environment_configuration_details = None

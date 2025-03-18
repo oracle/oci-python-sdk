@@ -86,7 +86,6 @@ class SettingsTenantCustomClaims(object):
             'token_type': 'str',
             'scopes': 'list[str]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'value': 'value',
@@ -96,7 +95,6 @@ class SettingsTenantCustomClaims(object):
             'token_type': 'tokenType',
             'scopes': 'scopes'
         }
-
         self._name = None
         self._value = None
         self._mode = None

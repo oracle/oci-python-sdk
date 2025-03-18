@@ -38,13 +38,11 @@ class CursorCacheStatementSummary(object):
             'schema': 'str',
             'sql_text': 'str'
         }
-
         self.attribute_map = {
             'sql_id': 'sqlId',
             'schema': 'schema',
             'sql_text': 'sqlText'
         }
-
         self._sql_id = None
         self._schema = None
         self._sql_text = None

@@ -28,11 +28,9 @@ class MultipleTransferAppliances(object):
         self.swagger_types = {
             'transfer_appliance_objects': 'list[TransferApplianceSummary]'
         }
-
         self.attribute_map = {
             'transfer_appliance_objects': 'transferApplianceObjects'
         }
-
         self._transfer_appliance_objects = None
 
     @property

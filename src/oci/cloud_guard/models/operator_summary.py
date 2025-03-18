@@ -68,7 +68,6 @@ class OperatorSummary(object):
             'operators': 'list[ConditionOperator]',
             'multi_list_types': 'list[str]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'display_name': 'displayName',
@@ -78,7 +77,6 @@ class OperatorSummary(object):
             'operators': 'operators',
             'multi_list_types': 'multiListTypes'
         }
-
         self._name = None
         self._display_name = None
         self._datatype = None

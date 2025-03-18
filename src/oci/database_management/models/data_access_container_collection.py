@@ -28,11 +28,9 @@ class DataAccessContainerCollection(object):
         self.swagger_types = {
             'items': 'list[DataAccessContainerSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

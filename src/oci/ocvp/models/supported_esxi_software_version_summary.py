@@ -39,13 +39,11 @@ class SupportedEsxiSoftwareVersionSummary(object):
             'description': 'str',
             'supported_host_shape_names': 'list[str]'
         }
-
         self.attribute_map = {
             'version': 'version',
             'description': 'description',
             'supported_host_shape_names': 'supportedHostShapeNames'
         }
-
         self._version = None
         self._description = None
         self._supported_host_shape_names = None

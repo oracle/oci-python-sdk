@@ -77,7 +77,6 @@ class CreateMediaWorkflowJobDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'locks': 'list[ResourceLock]'
         }
-
         self.attribute_map = {
             'workflow_identifier_type': 'workflowIdentifierType',
             'media_workflow_configuration_ids': 'mediaWorkflowConfigurationIds',
@@ -88,7 +87,6 @@ class CreateMediaWorkflowJobDetails(object):
             'defined_tags': 'definedTags',
             'locks': 'locks'
         }
-
         self._workflow_identifier_type = None
         self._media_workflow_configuration_ids = None
         self._compartment_id = None

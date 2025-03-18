@@ -126,7 +126,6 @@ class MigrationParameterSummary(object):
             'name': 'str',
             'data_type': 'str'
         }
-
         self.attribute_map = {
             'database_combination': 'databaseCombination',
             'display_name': 'displayName',
@@ -142,7 +141,6 @@ class MigrationParameterSummary(object):
             'name': 'name',
             'data_type': 'dataType'
         }
-
         self._database_combination = None
         self._display_name = None
         self._doc_url_link = None

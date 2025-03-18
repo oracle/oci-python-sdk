@@ -143,7 +143,6 @@ class ScheduledJobSummary(object):
             'retry_intervals': 'list[int]',
             'work_request_id': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -168,7 +167,6 @@ class ScheduledJobSummary(object):
             'retry_intervals': 'retryIntervals',
             'work_request_id': 'workRequestId'
         }
-
         self._id = None
         self._display_name = None
         self._compartment_id = None

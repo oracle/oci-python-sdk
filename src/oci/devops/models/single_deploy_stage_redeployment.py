@@ -131,7 +131,6 @@ class SingleDeployStageRedeployment(Deployment):
             'previous_deployment_id': 'str',
             'deploy_stage_id': 'str'
         }
-
         self.attribute_map = {
             'deploy_pipeline_artifacts': 'deployPipelineArtifacts',
             'deploy_pipeline_environments': 'deployPipelineEnvironments',
@@ -155,7 +154,6 @@ class SingleDeployStageRedeployment(Deployment):
             'previous_deployment_id': 'previousDeploymentId',
             'deploy_stage_id': 'deployStageId'
         }
-
         self._deploy_pipeline_artifacts = None
         self._deploy_pipeline_environments = None
         self._deployment_type = None

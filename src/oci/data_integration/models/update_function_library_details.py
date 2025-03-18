@@ -63,7 +63,6 @@ class UpdateFunctionLibraryDetails(object):
             'object_version': 'int',
             'registry_metadata': 'RegistryMetadata'
         }
-
         self.attribute_map = {
             'name': 'name',
             'description': 'description',
@@ -74,7 +73,6 @@ class UpdateFunctionLibraryDetails(object):
             'object_version': 'objectVersion',
             'registry_metadata': 'registryMetadata'
         }
-
         self._name = None
         self._description = None
         self._category_name = None

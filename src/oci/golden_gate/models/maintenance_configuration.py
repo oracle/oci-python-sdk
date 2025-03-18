@@ -48,7 +48,6 @@ class MaintenanceConfiguration(object):
             'major_release_upgrade_period_in_days': 'int',
             'security_patch_upgrade_period_in_days': 'int'
         }
-
         self.attribute_map = {
             'is_interim_release_auto_upgrade_enabled': 'isInterimReleaseAutoUpgradeEnabled',
             'interim_release_upgrade_period_in_days': 'interimReleaseUpgradePeriodInDays',
@@ -56,7 +55,6 @@ class MaintenanceConfiguration(object):
             'major_release_upgrade_period_in_days': 'majorReleaseUpgradePeriodInDays',
             'security_patch_upgrade_period_in_days': 'securityPatchUpgradePeriodInDays'
         }
-
         self._is_interim_release_auto_upgrade_enabled = None
         self._interim_release_upgrade_period_in_days = None
         self._bundle_release_upgrade_period_in_days = None

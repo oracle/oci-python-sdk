@@ -99,7 +99,6 @@ class AssociationSummary(object):
             'compartment_id': 'str',
             'association_type': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -110,7 +109,6 @@ class AssociationSummary(object):
             'compartment_id': 'compartmentId',
             'association_type': 'associationType'
         }
-
         self._id = None
         self._name = None
         self._time_created = None

@@ -82,7 +82,6 @@ class WorkerMonitorList(object):
             'is_run_now': 'bool',
             'time_assigned': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -90,7 +89,6 @@ class WorkerMonitorList(object):
             'is_run_now': 'isRunNow',
             'time_assigned': 'timeAssigned'
         }
-
         self._id = None
         self._display_name = None
         self._monitor_type = None

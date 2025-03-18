@@ -53,7 +53,6 @@ class PatchRecommendationsDetailsSummary(object):
             'has_fix_for_cve': 'bool',
             'time_released': 'datetime'
         }
-
         self.attribute_map = {
             'patch_name': 'patchName',
             'abstract_text': 'abstractText',
@@ -62,7 +61,6 @@ class PatchRecommendationsDetailsSummary(object):
             'has_fix_for_cve': 'hasFixForCve',
             'time_released': 'timeReleased'
         }
-
         self._patch_name = None
         self._abstract_text = None
         self._classification_name = None

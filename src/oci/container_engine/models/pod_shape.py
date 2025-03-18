@@ -48,7 +48,6 @@ class PodShape(object):
             'memory_options': 'list[ShapeMemoryOptions]',
             'network_bandwidth_options': 'list[ShapeNetworkBandwidthOptions]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'processor_description': 'processorDescription',
@@ -56,7 +55,6 @@ class PodShape(object):
             'memory_options': 'memoryOptions',
             'network_bandwidth_options': 'networkBandwidthOptions'
         }
-
         self._name = None
         self._processor_description = None
         self._ocpu_options = None

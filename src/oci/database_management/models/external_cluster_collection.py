@@ -28,11 +28,9 @@ class ExternalClusterCollection(object):
         self.swagger_types = {
             'items': 'list[ExternalClusterSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

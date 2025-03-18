@@ -33,12 +33,10 @@ class TargetResource(object):
             'resource_id': 'str',
             'resource_display_name': 'str'
         }
-
         self.attribute_map = {
             'resource_id': 'resourceId',
             'resource_display_name': 'resourceDisplayName'
         }
-
         self._resource_id = None
         self._resource_display_name = None
 

@@ -28,11 +28,9 @@ class SwitchOverDataGuardDetails(object):
         self.swagger_types = {
             'database_admin_password': 'str'
         }
-
         self.attribute_map = {
             'database_admin_password': 'databaseAdminPassword'
         }
-
         self._database_admin_password = None
 
     @property

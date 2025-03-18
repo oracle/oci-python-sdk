@@ -33,12 +33,10 @@ class PeComanagedDatabaseHostDetails(object):
             'host_ip': 'str',
             'port': 'int'
         }
-
         self.attribute_map = {
             'host_ip': 'hostIp',
             'port': 'port'
         }
-
         self._host_ip = None
         self._port = None
 

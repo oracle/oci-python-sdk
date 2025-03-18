@@ -28,11 +28,9 @@ class UserAssessmentBaseLineDetails(object):
         self.swagger_types = {
             'assessment_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'assessment_ids': 'assessmentIds'
         }
-
         self._assessment_ids = None
 
     @property

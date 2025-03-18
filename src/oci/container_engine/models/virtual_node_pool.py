@@ -148,7 +148,6 @@ class VirtualNodePool(object):
             'system_tags': 'dict(str, dict(str, object))',
             'virtual_node_tags': 'VirtualNodeTags'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -170,7 +169,6 @@ class VirtualNodePool(object):
             'system_tags': 'systemTags',
             'virtual_node_tags': 'virtualNodeTags'
         }
-
         self._id = None
         self._compartment_id = None
         self._cluster_id = None

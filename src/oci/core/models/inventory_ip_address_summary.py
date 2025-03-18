@@ -43,14 +43,12 @@ class InventoryIpAddressSummary(object):
             'vnic_name': 'str',
             'dns_host_name': 'str'
         }
-
         self.attribute_map = {
             'ip_address': 'ipAddress',
             'vnic_id': 'vnicId',
             'vnic_name': 'vnicName',
             'dns_host_name': 'dnsHostName'
         }
-
         self._ip_address = None
         self._vnic_id = None
         self._vnic_name = None

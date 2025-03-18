@@ -28,11 +28,9 @@ class ReviewAccessRequestDetails(object):
         self.swagger_types = {
             'approver_comment': 'str'
         }
-
         self.attribute_map = {
             'approver_comment': 'approverComment'
         }
-
         self._approver_comment = None
 
     @property

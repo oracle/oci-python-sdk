@@ -236,7 +236,6 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
             'license_model': 'str',
             'maintenance_window_details': 'MaintenanceWindow'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'fault_domains': 'faultDomains',
@@ -274,7 +273,6 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
             'license_model': 'licenseModel',
             'maintenance_window_details': 'maintenanceWindowDetails'
         }
-
         self._compartment_id = None
         self._fault_domains = None
         self._display_name = None

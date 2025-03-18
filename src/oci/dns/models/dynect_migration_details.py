@@ -43,14 +43,12 @@ class DynectMigrationDetails(object):
             'password': 'str',
             'http_redirect_replacements': 'dict(str, list[MigrationReplacement])'
         }
-
         self.attribute_map = {
             'customer_name': 'customerName',
             'username': 'username',
             'password': 'password',
             'http_redirect_replacements': 'httpRedirectReplacements'
         }
-
         self._customer_name = None
         self._username = None
         self._password = None

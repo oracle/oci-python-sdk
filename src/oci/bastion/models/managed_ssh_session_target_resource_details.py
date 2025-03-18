@@ -55,7 +55,6 @@ class ManagedSshSessionTargetResourceDetails(TargetResourceDetails):
             'target_resource_display_name': 'str',
             'target_resource_port': 'int'
         }
-
         self.attribute_map = {
             'session_type': 'sessionType',
             'target_resource_operating_system_user_name': 'targetResourceOperatingSystemUserName',
@@ -64,7 +63,6 @@ class ManagedSshSessionTargetResourceDetails(TargetResourceDetails):
             'target_resource_display_name': 'targetResourceDisplayName',
             'target_resource_port': 'targetResourcePort'
         }
-
         self._session_type = None
         self._target_resource_operating_system_user_name = None
         self._target_resource_id = None

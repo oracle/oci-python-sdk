@@ -68,7 +68,6 @@ class ComputeImageCapabilitySchemaSummary(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -80,7 +79,6 @@ class ComputeImageCapabilitySchemaSummary(object):
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags'
         }
-
         self._id = None
         self._compartment_id = None
         self._compute_global_image_capability_schema_version_name = None

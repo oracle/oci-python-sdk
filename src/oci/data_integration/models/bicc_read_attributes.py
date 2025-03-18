@@ -66,7 +66,6 @@ class BiccReadAttributes(AbstractReadAttribute):
             'initial_extract_date': 'datetime',
             'last_extract_date': 'datetime'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'fetch_size': 'fetchSize',
@@ -75,7 +74,6 @@ class BiccReadAttributes(AbstractReadAttribute):
             'initial_extract_date': 'initialExtractDate',
             'last_extract_date': 'lastExtractDate'
         }
-
         self._model_type = None
         self._fetch_size = None
         self._extract_strategy = None

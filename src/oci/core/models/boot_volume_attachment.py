@@ -109,7 +109,6 @@ class BootVolumeAttachment(object):
             'is_pv_encryption_in_transit_enabled': 'bool',
             'encryption_in_transit_type': 'str'
         }
-
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'boot_volume_id': 'bootVolumeId',
@@ -123,7 +122,6 @@ class BootVolumeAttachment(object):
             'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled',
             'encryption_in_transit_type': 'encryptionInTransitType'
         }
-
         self._availability_domain = None
         self._boot_volume_id = None
         self._compartment_id = None

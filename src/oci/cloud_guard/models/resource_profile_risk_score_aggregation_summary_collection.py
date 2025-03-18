@@ -28,11 +28,9 @@ class ResourceProfileRiskScoreAggregationSummaryCollection(object):
         self.swagger_types = {
             'items': 'list[ResourceProfileRiskScoreAggregationSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

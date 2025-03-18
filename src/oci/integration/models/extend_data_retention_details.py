@@ -41,11 +41,9 @@ class ExtendDataRetentionDetails(object):
         self.swagger_types = {
             'data_retention_period': 'str'
         }
-
         self.attribute_map = {
             'data_retention_period': 'dataRetentionPeriod'
         }
-
         self._data_retention_period = None
 
     @property

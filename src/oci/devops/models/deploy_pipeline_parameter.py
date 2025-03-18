@@ -38,13 +38,11 @@ class DeployPipelineParameter(object):
             'default_value': 'str',
             'description': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'default_value': 'defaultValue',
             'description': 'description'
         }
-
         self._name = None
         self._default_value = None
         self._description = None

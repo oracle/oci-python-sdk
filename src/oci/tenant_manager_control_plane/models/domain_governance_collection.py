@@ -28,11 +28,9 @@ class DomainGovernanceCollection(object):
         self.swagger_types = {
             'items': 'list[DomainGovernanceSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

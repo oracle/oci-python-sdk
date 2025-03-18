@@ -43,14 +43,12 @@ class ResourceProfileRiskScoreAggregationSummary(object):
             'risk_threshold': 'int',
             'items': 'list[ResourceRiskScoreAggregation]'
         }
-
         self.attribute_map = {
             'resource_profile_id': 'resourceProfileId',
             'resource_profile_display_name': 'resourceProfileDisplayName',
             'risk_threshold': 'riskThreshold',
             'items': 'items'
         }
-
         self._resource_profile_id = None
         self._resource_profile_display_name = None
         self._risk_threshold = None

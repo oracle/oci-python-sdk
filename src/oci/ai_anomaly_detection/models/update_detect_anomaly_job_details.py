@@ -33,12 +33,10 @@ class UpdateDetectAnomalyJobDetails(object):
             'description': 'str',
             'display_name': 'str'
         }
-
         self.attribute_map = {
             'description': 'description',
             'display_name': 'displayName'
         }
-
         self._description = None
         self._display_name = None
 

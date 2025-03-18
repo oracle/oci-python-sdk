@@ -57,12 +57,10 @@ class DynamicHttpResponseBody(HttpResponseBody):
             'type': 'str',
             'template': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'template': 'template'
         }
-
         self._type = None
         self._template = None
         self._type = 'DYNAMIC'

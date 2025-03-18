@@ -80,7 +80,6 @@ class CreateMultipartUploadDetails(object):
             'storage_tier': 'str',
             'metadata': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'object': 'object',
             'content_type': 'contentType',
@@ -91,7 +90,6 @@ class CreateMultipartUploadDetails(object):
             'storage_tier': 'storageTier',
             'metadata': 'metadata'
         }
-
         self._object = None
         self._content_type = None
         self._content_language = None

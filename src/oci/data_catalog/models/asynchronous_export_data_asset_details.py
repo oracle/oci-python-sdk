@@ -33,12 +33,10 @@ class AsynchronousExportDataAssetDetails(object):
             'export_scope': 'list[DataAssetExportScope]',
             'object_storage_target': 'ObjectStorageObjectReference'
         }
-
         self.attribute_map = {
             'export_scope': 'exportScope',
             'object_storage_target': 'objectStorageTarget'
         }
-
         self._export_scope = None
         self._object_storage_target = None
 

@@ -75,7 +75,6 @@ class CertificateSummary(object):
             'time_valid_to': 'datetime',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'key': 'key',
             'lifecycle_state': 'lifecycleState',
@@ -84,7 +83,6 @@ class CertificateSummary(object):
             'time_valid_to': 'timeValidTo',
             'time_created': 'timeCreated'
         }
-
         self._key = None
         self._lifecycle_state = None
         self._subject = None

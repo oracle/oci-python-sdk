@@ -38,13 +38,11 @@ class UploadData(object):
             'content_url': 'str',
             'mime_type': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'content_url': 'contentUrl',
             'mime_type': 'mimeType'
         }
-
         self._display_name = None
         self._content_url = None
         self._mime_type = None

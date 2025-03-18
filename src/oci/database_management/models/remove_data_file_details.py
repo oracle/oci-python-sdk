@@ -53,14 +53,12 @@ class RemoveDataFileDetails(object):
             'file_type': 'str',
             'data_file': 'str'
         }
-
         self.attribute_map = {
             'credential_details': 'credentialDetails',
             'database_credential': 'databaseCredential',
             'file_type': 'fileType',
             'data_file': 'dataFile'
         }
-
         self._credential_details = None
         self._database_credential = None
         self._file_type = None

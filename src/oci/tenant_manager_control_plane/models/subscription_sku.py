@@ -73,7 +73,6 @@ class SubscriptionSku(object):
             'start_date': 'datetime',
             'end_date': 'datetime'
         }
-
         self.attribute_map = {
             'sku': 'sku',
             'quantity': 'quantity',
@@ -86,7 +85,6 @@ class SubscriptionSku(object):
             'start_date': 'startDate',
             'end_date': 'endDate'
         }
-
         self._sku = None
         self._quantity = None
         self._description = None

@@ -35,12 +35,10 @@ class MacsConnectorDetails(ConnectorDetails):
             'connector_type': 'str',
             'management_agent_id': 'str'
         }
-
         self.attribute_map = {
             'connector_type': 'connectorType',
             'management_agent_id': 'managementAgentId'
         }
-
         self._connector_type = None
         self._management_agent_id = None
         self._connector_type = 'MACS'

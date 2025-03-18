@@ -81,7 +81,6 @@ class WeeklyBackupPolicy(BackupPolicy):
             'days_of_the_week': 'list[str]',
             'backup_start': 'str'
         }
-
         self.attribute_map = {
             'kind': 'kind',
             'retention_days': 'retentionDays',
@@ -89,7 +88,6 @@ class WeeklyBackupPolicy(BackupPolicy):
             'days_of_the_week': 'daysOfTheWeek',
             'backup_start': 'backupStart'
         }
-
         self._kind = None
         self._retention_days = None
         self._copy_policy = None

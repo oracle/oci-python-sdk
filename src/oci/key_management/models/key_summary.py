@@ -165,7 +165,6 @@ class KeySummary(object):
             'external_key_reference_details': 'ExternalKeyReferenceDetails',
             'is_auto_rotation_enabled': 'bool'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
@@ -180,7 +179,6 @@ class KeySummary(object):
             'external_key_reference_details': 'externalKeyReferenceDetails',
             'is_auto_rotation_enabled': 'isAutoRotationEnabled'
         }
-
         self._compartment_id = None
         self._defined_tags = None
         self._display_name = None

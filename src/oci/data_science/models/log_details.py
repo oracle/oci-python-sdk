@@ -33,12 +33,10 @@ class LogDetails(object):
             'log_id': 'str',
             'log_group_id': 'str'
         }
-
         self.attribute_map = {
             'log_id': 'logId',
             'log_group_id': 'logGroupId'
         }
-
         self._log_id = None
         self._log_group_id = None
 

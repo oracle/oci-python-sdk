@@ -57,7 +57,6 @@ class CreateNewDatabaseDetails(CreateDatabaseBase):
             'kms_key_version_id': 'str',
             'database': 'CreateDatabaseDetails'
         }
-
         self.attribute_map = {
             'db_home_id': 'dbHomeId',
             'db_version': 'dbVersion',
@@ -66,7 +65,6 @@ class CreateNewDatabaseDetails(CreateDatabaseBase):
             'kms_key_version_id': 'kmsKeyVersionId',
             'database': 'database'
         }
-
         self._db_home_id = None
         self._db_version = None
         self._source = None

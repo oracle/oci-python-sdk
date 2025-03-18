@@ -38,13 +38,11 @@ class PatchResponseMessage(object):
             'model_id': 'str',
             'compartment_id': 'str'
         }
-
         self.attribute_map = {
             'message': 'message',
             'model_id': 'modelId',
             'compartment_id': 'compartmentId'
         }
-
         self._message = None
         self._model_id = None
         self._compartment_id = None

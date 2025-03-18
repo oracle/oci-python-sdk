@@ -57,7 +57,6 @@ class CreateCustomProtectionRuleDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
@@ -66,7 +65,6 @@ class CreateCustomProtectionRuleDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._compartment_id = None
         self._display_name = None
         self._description = None

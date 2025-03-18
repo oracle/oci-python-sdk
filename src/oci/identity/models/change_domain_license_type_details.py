@@ -28,11 +28,9 @@ class ChangeDomainLicenseTypeDetails(object):
         self.swagger_types = {
             'license_type': 'str'
         }
-
         self.attribute_map = {
             'license_type': 'licenseType'
         }
-
         self._license_type = None
 
     @property

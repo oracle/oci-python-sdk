@@ -35,12 +35,10 @@ class ClassificationMultiLabelModeDetails(ClassificationType):
             'classification_mode': 'str',
             'version': 'str'
         }
-
         self.attribute_map = {
             'classification_mode': 'classificationMode',
             'version': 'version'
         }
-
         self._classification_mode = None
         self._version = None
         self._classification_mode = 'MULTI_LABEL'

@@ -93,7 +93,6 @@ class DesktopPoolDesktopSummary(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'lifecycle_state': 'lifecycleState',
             'instance_id': 'instanceId',
@@ -104,7 +103,6 @@ class DesktopPoolDesktopSummary(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._lifecycle_state = None
         self._instance_id = None
         self._user_name = None

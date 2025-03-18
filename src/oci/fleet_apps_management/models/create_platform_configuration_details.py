@@ -43,14 +43,12 @@ class CreatePlatformConfigurationDetails(object):
             'description': 'str',
             'config_category_details': 'ConfigCategoryDetails'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
             'description': 'description',
             'config_category_details': 'configCategoryDetails'
         }
-
         self._compartment_id = None
         self._display_name = None
         self._description = None

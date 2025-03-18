@@ -90,7 +90,6 @@ class EkmsPrivateEndpointSummary(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'subnet_id': 'subnetId',
@@ -102,7 +101,6 @@ class EkmsPrivateEndpointSummary(object):
             'defined_tags': 'definedTags',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._id = None
         self._subnet_id = None
         self._compartment_id = None

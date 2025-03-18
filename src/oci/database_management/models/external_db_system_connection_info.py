@@ -43,11 +43,9 @@ class ExternalDbSystemConnectionInfo(object):
         self.swagger_types = {
             'component_type': 'str'
         }
-
         self.attribute_map = {
             'component_type': 'componentType'
         }
-
         self._component_type = None
 
     @staticmethod

@@ -38,12 +38,10 @@ class UpdateRoutingPolicyDetails(object):
             'condition_language_version': 'str',
             'rules': 'list[RoutingRule]'
         }
-
         self.attribute_map = {
             'condition_language_version': 'conditionLanguageVersion',
             'rules': 'rules'
         }
-
         self._condition_language_version = None
         self._rules = None
 

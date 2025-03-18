@@ -28,11 +28,9 @@ class ManageSettingsDetails(object):
         self.swagger_types = {
             'discovery_frequency': 'str'
         }
-
         self.attribute_map = {
             'discovery_frequency': 'discoveryFrequency'
         }
-
         self._discovery_frequency = None
 
     @property

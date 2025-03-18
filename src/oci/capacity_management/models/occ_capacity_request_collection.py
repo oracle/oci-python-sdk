@@ -28,11 +28,9 @@ class OccCapacityRequestCollection(object):
         self.swagger_types = {
             'items': 'list[OccCapacityRequestSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

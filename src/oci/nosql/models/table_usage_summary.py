@@ -71,7 +71,6 @@ class TableUsageSummary(object):
             'max_shard_size_usage_in_percent': 'int',
             'time_started': 'datetime'
         }
-
         self.attribute_map = {
             'seconds_in_period': 'secondsInPeriod',
             'read_units': 'readUnits',
@@ -83,7 +82,6 @@ class TableUsageSummary(object):
             'max_shard_size_usage_in_percent': 'maxShardSizeUsageInPercent',
             'time_started': 'timeStarted'
         }
-
         self._seconds_in_period = None
         self._read_units = None
         self._write_units = None

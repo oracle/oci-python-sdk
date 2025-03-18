@@ -52,13 +52,11 @@ class DatabaseToolsKeyStoreMySqlSummary(object):
             'key_store_content': 'DatabaseToolsKeyStoreContentMySqlSummary',
             'key_store_password': 'DatabaseToolsKeyStorePasswordMySqlSummary'
         }
-
         self.attribute_map = {
             'key_store_type': 'keyStoreType',
             'key_store_content': 'keyStoreContent',
             'key_store_password': 'keyStorePassword'
         }
-
         self._key_store_type = None
         self._key_store_content = None
         self._key_store_password = None

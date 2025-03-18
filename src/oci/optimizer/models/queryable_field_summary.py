@@ -60,13 +60,11 @@ class QueryableFieldSummary(object):
             'field_name': 'str',
             'object_properties': 'list[QueryableFieldSummary]'
         }
-
         self.attribute_map = {
             'field_type': 'fieldType',
             'field_name': 'fieldName',
             'object_properties': 'objectProperties'
         }
-
         self._field_type = None
         self._field_name = None
         self._object_properties = None

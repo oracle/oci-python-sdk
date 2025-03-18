@@ -53,7 +53,6 @@ class UpdateCertificateDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'certificate_rules': 'list[CertificateRule]'
         }
-
         self.attribute_map = {
             'description': 'description',
             'current_version_number': 'currentVersionNumber',
@@ -62,7 +61,6 @@ class UpdateCertificateDetails(object):
             'defined_tags': 'definedTags',
             'certificate_rules': 'certificateRules'
         }
-
         self._description = None
         self._current_version_number = None
         self._certificate_config = None

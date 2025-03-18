@@ -59,12 +59,10 @@ class CreationSource(object):
             'type': 'str',
             'details': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'details': 'details'
         }
-
         self._type = None
         self._details = None
 

@@ -28,11 +28,9 @@ class ClusterPlacementGroupCollection(object):
         self.swagger_types = {
             'items': 'list[ClusterPlacementGroupSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

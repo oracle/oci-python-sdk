@@ -43,14 +43,12 @@ class HeatWaveFleetMetricSummaryDefinition(object):
             'dimensions': 'list[MetricDimensionDefinition]',
             'unit': 'str'
         }
-
         self.attribute_map = {
             'metric_name': 'metricName',
             'metric_value': 'metricValue',
             'dimensions': 'dimensions',
             'unit': 'unit'
         }
-
         self._metric_name = None
         self._metric_value = None
         self._dimensions = None

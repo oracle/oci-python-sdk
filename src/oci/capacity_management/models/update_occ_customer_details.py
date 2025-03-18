@@ -47,13 +47,11 @@ class UpdateOccCustomerDetails(object):
             'description': 'str',
             'status': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
             'status': 'status'
         }
-
         self._display_name = None
         self._description = None
         self._status = None

@@ -61,7 +61,6 @@ class UpdateDhcpDetails(object):
             'options': 'list[DhcpOption]',
             'domain_name_type': 'str'
         }
-
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
@@ -69,7 +68,6 @@ class UpdateDhcpDetails(object):
             'options': 'options',
             'domain_name_type': 'domainNameType'
         }
-
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None

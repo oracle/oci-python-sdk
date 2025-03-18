@@ -78,7 +78,6 @@ class AddmDbFindingAggregation(object):
             'frequency_count': 'int',
             'recommendation_count': 'int'
         }
-
         self.attribute_map = {
             'id': 'id',
             'finding_id': 'findingId',
@@ -92,7 +91,6 @@ class AddmDbFindingAggregation(object):
             'frequency_count': 'frequencyCount',
             'recommendation_count': 'recommendationCount'
         }
-
         self._id = None
         self._finding_id = None
         self._category_name = None

@@ -60,11 +60,9 @@ class CreatePluggableDatabaseCreationTypeDetails(object):
         self.swagger_types = {
             'creation_type': 'str'
         }
-
         self.attribute_map = {
             'creation_type': 'creationType'
         }
-
         self._creation_type = None
 
     @staticmethod

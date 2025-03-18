@@ -155,6 +155,10 @@ class CreateDeploymentDetails(object):
             The value to assign to the maintenance_configuration property of this CreateDeploymentDetails.
         :type maintenance_configuration: oci.golden_gate.models.CreateMaintenanceConfigurationDetails
 
+        :param backup_schedule:
+            The value to assign to the backup_schedule property of this CreateDeploymentDetails.
+        :type backup_schedule: oci.golden_gate.models.CreateBackupScheduleDetails
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -176,9 +180,9 @@ class CreateDeploymentDetails(object):
             'deployment_type': 'str',
             'ogg_data': 'CreateOggDeploymentDetails',
             'maintenance_window': 'CreateMaintenanceWindowDetails',
-            'maintenance_configuration': 'CreateMaintenanceConfigurationDetails'
+            'maintenance_configuration': 'CreateMaintenanceConfigurationDetails',
+            'backup_schedule': 'CreateBackupScheduleDetails'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'license_model': 'licenseModel',
@@ -199,9 +203,9 @@ class CreateDeploymentDetails(object):
             'deployment_type': 'deploymentType',
             'ogg_data': 'oggData',
             'maintenance_window': 'maintenanceWindow',
-            'maintenance_configuration': 'maintenanceConfiguration'
+            'maintenance_configuration': 'maintenanceConfiguration',
+            'backup_schedule': 'backupSchedule'
         }
-
         self._display_name = None
         self._license_model = None
         self._environment_type = None
@@ -222,6 +226,7 @@ class CreateDeploymentDetails(object):
         self._ogg_data = None
         self._maintenance_window = None
         self._maintenance_configuration = None
+        self._backup_schedule = None
 
     @property
     def display_name(self):
@@ -749,6 +754,26 @@ class CreateDeploymentDetails(object):
         :type: oci.golden_gate.models.CreateMaintenanceConfigurationDetails
         """
         self._maintenance_configuration = maintenance_configuration
+
+    @property
+    def backup_schedule(self):
+        """
+        Gets the backup_schedule of this CreateDeploymentDetails.
+
+        :return: The backup_schedule of this CreateDeploymentDetails.
+        :rtype: oci.golden_gate.models.CreateBackupScheduleDetails
+        """
+        return self._backup_schedule
+
+    @backup_schedule.setter
+    def backup_schedule(self, backup_schedule):
+        """
+        Sets the backup_schedule of this CreateDeploymentDetails.
+
+        :param backup_schedule: The backup_schedule of this CreateDeploymentDetails.
+        :type: oci.golden_gate.models.CreateBackupScheduleDetails
+        """
+        self._backup_schedule = backup_schedule
 
     def __repr__(self):
         return formatted_flat_dict(self)

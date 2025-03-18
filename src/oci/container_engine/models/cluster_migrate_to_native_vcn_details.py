@@ -33,12 +33,10 @@ class ClusterMigrateToNativeVcnDetails(object):
             'endpoint_config': 'ClusterEndpointConfig',
             'decommission_delay_duration': 'str'
         }
-
         self.attribute_map = {
             'endpoint_config': 'endpointConfig',
             'decommission_delay_duration': 'decommissionDelayDuration'
         }
-
         self._endpoint_config = None
         self._decommission_delay_duration = None
 

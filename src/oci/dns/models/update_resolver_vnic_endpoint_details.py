@@ -37,12 +37,10 @@ class UpdateResolverVnicEndpointDetails(UpdateResolverEndpointDetails):
             'endpoint_type': 'str',
             'nsg_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'endpoint_type': 'endpointType',
             'nsg_ids': 'nsgIds'
         }
-
         self._endpoint_type = None
         self._nsg_ids = None
         self._endpoint_type = 'VNIC'

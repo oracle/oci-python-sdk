@@ -38,11 +38,9 @@ class EntryDetails(object):
         self.swagger_types = {
             'entry_type': 'str'
         }
-
         self.attribute_map = {
             'entry_type': 'entryType'
         }
-
         self._entry_type = None
 
     @staticmethod

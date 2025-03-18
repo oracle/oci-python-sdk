@@ -80,7 +80,6 @@ class CreateRedisClusterDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'cluster_mode': 'clusterMode',
             'shard_count': 'shardCount',
@@ -94,7 +93,6 @@ class CreateRedisClusterDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._cluster_mode = None
         self._shard_count = None
         self._display_name = None

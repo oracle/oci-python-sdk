@@ -96,7 +96,6 @@ class DatabaseParametersCollection(object):
             'database_version': 'str',
             'items': 'list[DatabaseParameterSummary]'
         }
-
         self.attribute_map = {
             'database_name': 'databaseName',
             'database_type': 'databaseType',
@@ -104,7 +103,6 @@ class DatabaseParametersCollection(object):
             'database_version': 'databaseVersion',
             'items': 'items'
         }
-
         self._database_name = None
         self._database_type = None
         self._database_sub_type = None

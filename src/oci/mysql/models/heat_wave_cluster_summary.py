@@ -53,7 +53,6 @@ class HeatWaveClusterSummary(object):
             'time_created': 'datetime',
             'time_updated': 'datetime'
         }
-
         self.attribute_map = {
             'shape_name': 'shapeName',
             'cluster_size': 'clusterSize',
@@ -62,7 +61,6 @@ class HeatWaveClusterSummary(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated'
         }
-
         self._shape_name = None
         self._cluster_size = None
         self._is_lakehouse_enabled = None

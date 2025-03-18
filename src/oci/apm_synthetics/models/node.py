@@ -95,7 +95,6 @@ class Node(object):
             'avg_packet_loss_percent': 'float',
             'type': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ip_address': 'ipAddress',
@@ -108,7 +107,6 @@ class Node(object):
             'avg_packet_loss_percent': 'avgPacketLossPercent',
             'type': 'type'
         }
-
         self._id = None
         self._ip_address = None
         self._display_name = None

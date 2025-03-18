@@ -28,11 +28,9 @@ class UpdateQueryDetails(object):
         self.swagger_types = {
             'query_definition': 'QueryDefinition'
         }
-
         self.attribute_map = {
             'query_definition': 'queryDefinition'
         }
-
         self._query_definition = None
 
     @property

@@ -28,11 +28,9 @@ class AttachLifecycleStageToProfileDetails(object):
         self.swagger_types = {
             'lifecycle_stage_id': 'str'
         }
-
         self.attribute_map = {
             'lifecycle_stage_id': 'lifecycleStageId'
         }
-
         self._lifecycle_stage_id = None
 
     @property

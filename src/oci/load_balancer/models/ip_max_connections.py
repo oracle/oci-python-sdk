@@ -33,12 +33,10 @@ class IpMaxConnections(object):
             'ip_addresses': 'list[str]',
             'max_connections': 'int'
         }
-
         self.attribute_map = {
             'ip_addresses': 'ipAddresses',
             'max_connections': 'maxConnections'
         }
-
         self._ip_addresses = None
         self._max_connections = None
 

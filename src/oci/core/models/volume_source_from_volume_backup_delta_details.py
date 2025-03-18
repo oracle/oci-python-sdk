@@ -44,14 +44,12 @@ class VolumeSourceFromVolumeBackupDeltaDetails(VolumeSourceDetails):
             'second_backup_id': 'str',
             'change_block_size_in_bytes': 'int'
         }
-
         self.attribute_map = {
             'type': 'type',
             'first_backup_id': 'firstBackupId',
             'second_backup_id': 'secondBackupId',
             'change_block_size_in_bytes': 'changeBlockSizeInBytes'
         }
-
         self._type = None
         self._first_backup_id = None
         self._second_backup_id = None

@@ -83,7 +83,6 @@ class RequestAuthenticationDetails(object):
             'auth_request_method': 'str',
             'auth_request_post_body': 'str'
         }
-
         self.attribute_map = {
             'oauth_scheme': 'oauthScheme',
             'auth_user_name': 'authUserName',
@@ -94,7 +93,6 @@ class RequestAuthenticationDetails(object):
             'auth_request_method': 'authRequestMethod',
             'auth_request_post_body': 'authRequestPostBody'
         }
-
         self._oauth_scheme = None
         self._auth_user_name = None
         self._auth_user_password = None

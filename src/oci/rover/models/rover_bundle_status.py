@@ -84,7 +84,6 @@ class RoverBundleStatus(object):
             'bundle_name': 'str',
             'error_message': 'str'
         }
-
         self.attribute_map = {
             'status': 'status',
             'percent_complete': 'percentComplete',
@@ -94,7 +93,6 @@ class RoverBundleStatus(object):
             'bundle_name': 'bundleName',
             'error_message': 'errorMessage'
         }
-
         self._status = None
         self._percent_complete = None
         self._time_accepted = None

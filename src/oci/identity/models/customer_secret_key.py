@@ -94,7 +94,6 @@ class CustomerSecretKey(object):
             'lifecycle_state': 'str',
             'inactive_status': 'int'
         }
-
         self.attribute_map = {
             'key': 'key',
             'id': 'id',
@@ -105,7 +104,6 @@ class CustomerSecretKey(object):
             'lifecycle_state': 'lifecycleState',
             'inactive_status': 'inactiveStatus'
         }
-
         self._key = None
         self._id = None
         self._user_id = None

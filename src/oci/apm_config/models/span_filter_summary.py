@@ -90,7 +90,6 @@ class SpanFilterSummary(ConfigSummary):
             'in_use_by': 'list[SpanFilterReference]',
             'description': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'config_type': 'configType',
@@ -106,7 +105,6 @@ class SpanFilterSummary(ConfigSummary):
             'in_use_by': 'inUseBy',
             'description': 'description'
         }
-
         self._id = None
         self._config_type = None
         self._time_created = None

@@ -48,7 +48,6 @@ class GenerateKeyDetails(object):
             'key_shape': 'KeyShape',
             'logging_context': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'associated_data': 'associatedData',
             'include_plaintext_key': 'includePlaintextKey',
@@ -56,7 +55,6 @@ class GenerateKeyDetails(object):
             'key_shape': 'keyShape',
             'logging_context': 'loggingContext'
         }
-
         self._associated_data = None
         self._include_plaintext_key = None
         self._key_id = None

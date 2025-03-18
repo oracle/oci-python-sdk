@@ -235,7 +235,6 @@ class JobExecution(object):
             'uri': 'str',
             'properties': 'dict(str, dict(str, str))'
         }
-
         self.attribute_map = {
             'key': 'key',
             'job_key': 'jobKey',
@@ -258,7 +257,6 @@ class JobExecution(object):
             'uri': 'uri',
             'properties': 'properties'
         }
-
         self._key = None
         self._job_key = None
         self._job_type = None

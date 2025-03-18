@@ -117,7 +117,6 @@ class ExternalMysqlDatabaseInsight(DatabaseInsight):
             'database_name': 'str',
             'database_display_name': 'str'
         }
-
         self.attribute_map = {
             'entity_source': 'entitySource',
             'id': 'id',
@@ -138,7 +137,6 @@ class ExternalMysqlDatabaseInsight(DatabaseInsight):
             'database_name': 'databaseName',
             'database_display_name': 'databaseDisplayName'
         }
-
         self._entity_source = None
         self._id = None
         self._compartment_id = None

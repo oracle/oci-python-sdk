@@ -38,11 +38,9 @@ class OpsiConfigurations(object):
         self.swagger_types = {
             'opsi_configurations': 'object'
         }
-
         self.attribute_map = {
             'opsi_configurations': 'opsiConfigurations'
         }
-
         self._opsi_configurations = None
 
     @property

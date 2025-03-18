@@ -28,11 +28,9 @@ class SqlFirewallPolicyCollection(object):
         self.swagger_types = {
             'items': 'list[SqlFirewallPolicySummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

@@ -48,7 +48,6 @@ class UpdateCaptureFilterDetails(object):
             'flow_log_capture_filter_rules': 'list[FlowLogCaptureFilterRuleDetails]',
             'freeform_tags': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
@@ -56,7 +55,6 @@ class UpdateCaptureFilterDetails(object):
             'flow_log_capture_filter_rules': 'flowLogCaptureFilterRules',
             'freeform_tags': 'freeformTags'
         }
-
         self._defined_tags = None
         self._display_name = None
         self._vtap_capture_filter_rules = None

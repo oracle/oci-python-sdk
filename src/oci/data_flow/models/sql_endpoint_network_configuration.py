@@ -43,11 +43,9 @@ class SqlEndpointNetworkConfiguration(object):
         self.swagger_types = {
             'network_type': 'str'
         }
-
         self.attribute_map = {
             'network_type': 'networkType'
         }
-
         self._network_type = None
 
     @staticmethod

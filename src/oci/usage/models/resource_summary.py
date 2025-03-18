@@ -88,7 +88,6 @@ class ResourceSummary(object):
             'child_resources': 'list[str]',
             'skus': 'list[SkuProducts]'
         }
-
         self.attribute_map = {
             'daily_unit_display_name': 'dailyUnitDisplayName',
             'hourly_unit_display_name': 'hourlyUnitDisplayName',
@@ -102,7 +101,6 @@ class ResourceSummary(object):
             'child_resources': 'childResources',
             'skus': 'skus'
         }
-
         self._daily_unit_display_name = None
         self._hourly_unit_display_name = None
         self._raw_unit_display_name = None

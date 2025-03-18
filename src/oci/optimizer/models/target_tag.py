@@ -57,14 +57,12 @@ class TargetTag(object):
             'tag_value_type': 'str',
             'tag_values': 'list[str]'
         }
-
         self.attribute_map = {
             'tag_namespace_name': 'tagNamespaceName',
             'tag_definition_name': 'tagDefinitionName',
             'tag_value_type': 'tagValueType',
             'tag_values': 'tagValues'
         }
-
         self._tag_namespace_name = None
         self._tag_definition_name = None
         self._tag_value_type = None

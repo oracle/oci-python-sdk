@@ -109,7 +109,6 @@ class CreateExternalBackupJobDetails(object):
             'database_mode': 'str',
             'database_edition': 'str'
         }
-
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'compartment_id': 'compartmentId',
@@ -124,7 +123,6 @@ class CreateExternalBackupJobDetails(object):
             'database_mode': 'databaseMode',
             'database_edition': 'databaseEdition'
         }
-
         self._availability_domain = None
         self._compartment_id = None
         self._display_name = None

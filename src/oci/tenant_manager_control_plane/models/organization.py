@@ -89,7 +89,6 @@ class Organization(object):
             'time_created': 'datetime',
             'time_updated': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -100,7 +99,6 @@ class Organization(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated'
         }
-
         self._id = None
         self._display_name = None
         self._compartment_id = None

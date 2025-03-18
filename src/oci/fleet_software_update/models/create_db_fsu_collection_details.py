@@ -91,7 +91,6 @@ class CreateDbFsuCollectionDetails(CreateFsuCollectionDetails):
             'source_major_version': 'str',
             'fleet_discovery': 'DbFleetDiscoveryDetails'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'type': 'type',
@@ -102,7 +101,6 @@ class CreateDbFsuCollectionDetails(CreateFsuCollectionDetails):
             'source_major_version': 'sourceMajorVersion',
             'fleet_discovery': 'fleetDiscovery'
         }
-
         self._display_name = None
         self._type = None
         self._service_type = None

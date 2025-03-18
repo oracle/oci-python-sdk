@@ -65,7 +65,6 @@ class UpdateBitbucketServerAccessTokenConnectionDetails(UpdateConnectionDetails)
             'base_url': 'str',
             'tls_verify_config': 'TlsVerifyConfig'
         }
-
         self.attribute_map = {
             'description': 'description',
             'display_name': 'displayName',
@@ -76,7 +75,6 @@ class UpdateBitbucketServerAccessTokenConnectionDetails(UpdateConnectionDetails)
             'base_url': 'baseUrl',
             'tls_verify_config': 'tlsVerifyConfig'
         }
-
         self._description = None
         self._display_name = None
         self._connection_type = None

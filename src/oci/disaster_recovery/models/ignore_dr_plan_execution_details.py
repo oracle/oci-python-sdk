@@ -33,12 +33,10 @@ class IgnoreDrPlanExecutionDetails(object):
             'group_id': 'str',
             'step_id': 'str'
         }
-
         self.attribute_map = {
             'group_id': 'groupId',
             'step_id': 'stepId'
         }
-
         self._group_id = None
         self._step_id = None
 

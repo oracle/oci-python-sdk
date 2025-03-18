@@ -138,7 +138,6 @@ class ZeroEtlPipeline(Pipeline):
             'process_options': 'ProcessOptions',
             'time_last_recorded': 'datetime'
         }
-
         self.attribute_map = {
             'recipe_type': 'recipeType',
             'id': 'id',
@@ -163,7 +162,6 @@ class ZeroEtlPipeline(Pipeline):
             'process_options': 'processOptions',
             'time_last_recorded': 'timeLastRecorded'
         }
-
         self._recipe_type = None
         self._id = None
         self._display_name = None

@@ -143,7 +143,6 @@ class Vcn(object):
             'time_created': 'datetime',
             'vcn_domain_name': 'str'
         }
-
         self.attribute_map = {
             'byoipv6_cidr_blocks': 'byoipv6CidrBlocks',
             'ipv6_private_cidr_blocks': 'ipv6PrivateCidrBlocks',
@@ -164,7 +163,6 @@ class Vcn(object):
             'time_created': 'timeCreated',
             'vcn_domain_name': 'vcnDomainName'
         }
-
         self._byoipv6_cidr_blocks = None
         self._ipv6_private_cidr_blocks = None
         self._cidr_block = None

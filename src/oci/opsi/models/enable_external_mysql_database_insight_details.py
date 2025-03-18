@@ -35,12 +35,10 @@ class EnableExternalMysqlDatabaseInsightDetails(EnableDatabaseInsightDetails):
             'entity_source': 'str',
             'database_connector_id': 'str'
         }
-
         self.attribute_map = {
             'entity_source': 'entitySource',
             'database_connector_id': 'databaseConnectorId'
         }
-
         self._entity_source = None
         self._database_connector_id = None
         self._entity_source = 'EXTERNAL_MYSQL_DATABASE_SYSTEM'

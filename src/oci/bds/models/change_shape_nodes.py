@@ -93,7 +93,6 @@ class ChangeShapeNodes(object):
             'kafka_broker': 'str',
             'kafka_broker_shape_config': 'ShapeConfigDetails'
         }
-
         self.attribute_map = {
             'worker': 'worker',
             'worker_shape_config': 'workerShapeConfig',
@@ -110,7 +109,6 @@ class ChangeShapeNodes(object):
             'kafka_broker': 'kafkaBroker',
             'kafka_broker_shape_config': 'kafkaBrokerShapeConfig'
         }
-
         self._worker = None
         self._worker_shape_config = None
         self._compute_only_worker = None

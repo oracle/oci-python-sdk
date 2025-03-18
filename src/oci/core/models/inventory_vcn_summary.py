@@ -69,7 +69,6 @@ class InventoryVcnSummary(object):
             'compartment_id': 'str',
             'inventory_subnetcollection': 'list[InventorySubnetSummary]'
         }
-
         self.attribute_map = {
             'vcn_id': 'vcnId',
             'vcn_name': 'vcnName',
@@ -80,7 +79,6 @@ class InventoryVcnSummary(object):
             'compartment_id': 'compartmentId',
             'inventory_subnetcollection': 'inventorySubnetcollection'
         }
-
         self._vcn_id = None
         self._vcn_name = None
         self._resource_type = None

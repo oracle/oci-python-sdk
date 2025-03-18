@@ -58,7 +58,6 @@ class DeleteLogAnalyticsAssociation(object):
             'host': 'str',
             'log_group_id': 'str'
         }
-
         self.attribute_map = {
             'agent_id': 'agentId',
             'source_name': 'sourceName',
@@ -68,7 +67,6 @@ class DeleteLogAnalyticsAssociation(object):
             'host': 'host',
             'log_group_id': 'logGroupId'
         }
-
         self._agent_id = None
         self._source_name = None
         self._source_type_name = None

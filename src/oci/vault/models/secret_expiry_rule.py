@@ -45,14 +45,12 @@ class SecretExpiryRule(SecretRule):
             'time_of_absolute_expiry': 'datetime',
             'is_secret_content_retrieval_blocked_on_expiry': 'bool'
         }
-
         self.attribute_map = {
             'rule_type': 'ruleType',
             'secret_version_expiry_interval': 'secretVersionExpiryInterval',
             'time_of_absolute_expiry': 'timeOfAbsoluteExpiry',
             'is_secret_content_retrieval_blocked_on_expiry': 'isSecretContentRetrievalBlockedOnExpiry'
         }
-
         self._rule_type = None
         self._secret_version_expiry_interval = None
         self._time_of_absolute_expiry = None

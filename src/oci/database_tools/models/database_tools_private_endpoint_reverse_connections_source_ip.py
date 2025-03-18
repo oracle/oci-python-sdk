@@ -28,11 +28,9 @@ class DatabaseToolsPrivateEndpointReverseConnectionsSourceIp(object):
         self.swagger_types = {
             'source_ip': 'str'
         }
-
         self.attribute_map = {
             'source_ip': 'sourceIp'
         }
-
         self._source_ip = None
 
     @property

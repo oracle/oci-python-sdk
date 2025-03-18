@@ -33,12 +33,10 @@ class PullRequestCommentLikeCollection(object):
             'users': 'list[PrincipalDetails]',
             'total_likes': 'int'
         }
-
         self.attribute_map = {
             'users': 'users',
             'total_likes': 'totalLikes'
         }
-
         self._users = None
         self._total_likes = None
 

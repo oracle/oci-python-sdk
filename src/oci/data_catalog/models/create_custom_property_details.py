@@ -109,7 +109,6 @@ class CreateCustomPropertyDetails(object):
             'allowed_values': 'list[str]',
             'properties': 'dict(str, dict(str, str))'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
@@ -125,7 +124,6 @@ class CreateCustomPropertyDetails(object):
             'allowed_values': 'allowedValues',
             'properties': 'properties'
         }
-
         self._display_name = None
         self._description = None
         self._data_type = None

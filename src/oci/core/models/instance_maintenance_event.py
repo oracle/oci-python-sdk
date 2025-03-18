@@ -260,7 +260,6 @@ class InstanceMaintenanceEvent(object):
             'can_delete_local_storage': 'bool',
             'additional_details': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'defined_tags': 'definedTags',
@@ -288,7 +287,6 @@ class InstanceMaintenanceEvent(object):
             'can_delete_local_storage': 'canDeleteLocalStorage',
             'additional_details': 'additionalDetails'
         }
-
         self._display_name = None
         self._defined_tags = None
         self._freeform_tags = None

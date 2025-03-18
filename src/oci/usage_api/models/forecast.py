@@ -44,13 +44,11 @@ class Forecast(object):
             'time_forecast_started': 'datetime',
             'time_forecast_ended': 'datetime'
         }
-
         self.attribute_map = {
             'forecast_type': 'forecastType',
             'time_forecast_started': 'timeForecastStarted',
             'time_forecast_ended': 'timeForecastEnded'
         }
-
         self._forecast_type = None
         self._time_forecast_started = None
         self._time_forecast_ended = None

@@ -113,7 +113,6 @@ class ResourceProfileEndpointSummary(object):
             'time_first_occurred': 'datetime',
             'time_last_occurred': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'resource_profile_id': 'resourceProfileId',
@@ -134,7 +133,6 @@ class ResourceProfileEndpointSummary(object):
             'time_first_occurred': 'timeFirstOccurred',
             'time_last_occurred': 'timeLastOccurred'
         }
-
         self._id = None
         self._resource_profile_id = None
         self._problem_id = None

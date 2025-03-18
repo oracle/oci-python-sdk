@@ -56,13 +56,11 @@ class ServiceEnvironmentEndPointOverview(object):
             'url': 'str',
             'description': 'str'
         }
-
         self.attribute_map = {
             'environment_type': 'environmentType',
             'url': 'url',
             'description': 'description'
         }
-
         self._environment_type = None
         self._url = None
         self._description = None

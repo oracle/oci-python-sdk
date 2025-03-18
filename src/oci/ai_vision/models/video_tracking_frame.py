@@ -43,14 +43,12 @@ class VideoTrackingFrame(object):
             'bounding_polygon': 'BoundingPolygon',
             'properties': 'list[ObjectProperty]'
         }
-
         self.attribute_map = {
             'time_offset_ms': 'timeOffsetMs',
             'confidence': 'confidence',
             'bounding_polygon': 'boundingPolygon',
             'properties': 'properties'
         }
-
         self._time_offset_ms = None
         self._confidence = None
         self._bounding_polygon = None

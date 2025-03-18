@@ -56,14 +56,12 @@ class CompositeCondition(Condition):
             'composite_operator': 'str',
             'right_operand': 'Condition'
         }
-
         self.attribute_map = {
             'kind': 'kind',
             'left_operand': 'leftOperand',
             'composite_operator': 'compositeOperator',
             'right_operand': 'rightOperand'
         }
-
         self._kind = None
         self._left_operand = None
         self._composite_operator = None

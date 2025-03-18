@@ -48,7 +48,6 @@ class MirrorSyncStatus(object):
             'synced': 'int',
             'failed': 'int'
         }
-
         self.attribute_map = {
             'unsynced': 'unsynced',
             'queued': 'queued',
@@ -56,7 +55,6 @@ class MirrorSyncStatus(object):
             'synced': 'synced',
             'failed': 'failed'
         }
-
         self._unsynced = None
         self._queued = None
         self._syncing = None

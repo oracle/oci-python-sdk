@@ -48,7 +48,6 @@ class PullRequestAttachment(object):
             'time_created': 'datetime',
             'created_by': 'PrincipalDetails'
         }
-
         self.attribute_map = {
             'id': 'id',
             'pull_request_id': 'pullRequestId',
@@ -56,7 +55,6 @@ class PullRequestAttachment(object):
             'time_created': 'timeCreated',
             'created_by': 'createdBy'
         }
-
         self._id = None
         self._pull_request_id = None
         self._file_name = None

@@ -40,13 +40,11 @@ class TriggerBuildPipelineAction(TriggerAction):
             'filter': 'Filter',
             'build_pipeline_id': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'filter': 'filter',
             'build_pipeline_id': 'buildPipelineId'
         }
-
         self._type = None
         self._filter = None
         self._build_pipeline_id = None

@@ -43,11 +43,9 @@ class WorkloadConfigurationDetails(object):
         self.swagger_types = {
             'workload_type': 'str'
         }
-
         self.attribute_map = {
             'workload_type': 'workloadType'
         }
-
         self._workload_type = None
 
     @staticmethod

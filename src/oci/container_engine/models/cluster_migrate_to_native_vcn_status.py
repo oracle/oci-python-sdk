@@ -55,12 +55,10 @@ class ClusterMigrateToNativeVcnStatus(object):
             'time_decommission_scheduled': 'datetime',
             'state': 'str'
         }
-
         self.attribute_map = {
             'time_decommission_scheduled': 'timeDecommissionScheduled',
             'state': 'state'
         }
-
         self._time_decommission_scheduled = None
         self._state = None
 

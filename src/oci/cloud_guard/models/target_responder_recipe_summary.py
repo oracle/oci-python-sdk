@@ -118,7 +118,6 @@ class TargetResponderRecipeSummary(object):
             'lifecycle_details': 'str',
             'locks': 'list[ResourceLock]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -132,7 +131,6 @@ class TargetResponderRecipeSummary(object):
             'lifecycle_details': 'lifecycleDetails',
             'locks': 'locks'
         }
-
         self._id = None
         self._compartment_id = None
         self._responder_recipe_id = None

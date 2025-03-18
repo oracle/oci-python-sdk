@@ -66,7 +66,6 @@ class VxlanInspectionRule(TunnelInspectionRule):
             'condition': 'VxlanInspectionRuleMatchCriteria',
             'profile': 'VxlanInspectionRuleProfile'
         }
-
         self.attribute_map = {
             'name': 'name',
             'protocol': 'protocol',
@@ -77,7 +76,6 @@ class VxlanInspectionRule(TunnelInspectionRule):
             'condition': 'condition',
             'profile': 'profile'
         }
-
         self._name = None
         self._protocol = None
         self._action = None

@@ -28,11 +28,9 @@ class AnnotationFormatCollection(object):
         self.swagger_types = {
             'items': 'list[AnnotationFormatSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

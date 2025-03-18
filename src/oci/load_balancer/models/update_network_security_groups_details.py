@@ -31,11 +31,9 @@ class UpdateNetworkSecurityGroupsDetails(object):
         self.swagger_types = {
             'network_security_group_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'network_security_group_ids': 'networkSecurityGroupIds'
         }
-
         self._network_security_group_ids = None
 
     @property

@@ -38,13 +38,11 @@ class ContainerDnsConfig(object):
             'searches': 'list[str]',
             'options': 'list[str]'
         }
-
         self.attribute_map = {
             'nameservers': 'nameservers',
             'searches': 'searches',
             'options': 'options'
         }
-
         self._nameservers = None
         self._searches = None
         self._options = None

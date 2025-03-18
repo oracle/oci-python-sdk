@@ -53,7 +53,6 @@ class LogAnalyticsEmBridgeSummaryReport(object):
             'deleted_em_bridge_count': 'int',
             'total_em_bridge_count': 'int'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'active_em_bridge_count': 'activeEmBridgeCount',
@@ -62,7 +61,6 @@ class LogAnalyticsEmBridgeSummaryReport(object):
             'deleted_em_bridge_count': 'deletedEmBridgeCount',
             'total_em_bridge_count': 'totalEmBridgeCount'
         }
-
         self._compartment_id = None
         self._active_em_bridge_count = None
         self._creating_em_bridge_count = None

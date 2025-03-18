@@ -35,12 +35,10 @@ class Sort(PushDownOperation):
             'model_type': 'str',
             'sort_clauses': 'list[SortClause]'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'sort_clauses': 'sortClauses'
         }
-
         self._model_type = None
         self._sort_clauses = None
         self._model_type = 'SORT'

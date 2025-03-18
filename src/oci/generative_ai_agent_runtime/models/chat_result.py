@@ -33,12 +33,10 @@ class ChatResult(object):
             'message': 'Message',
             'traces': 'list[Trace]'
         }
-
         self.attribute_map = {
             'message': 'message',
             'traces': 'traces'
         }
-
         self._message = None
         self._traces = None
 

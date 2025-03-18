@@ -43,14 +43,12 @@ class Routing(object):
             'prefix': 'str',
             'weight': 'int'
         }
-
         self.attribute_map = {
             'as_label': 'asLabel',
             'asn': 'asn',
             'prefix': 'prefix',
             'weight': 'weight'
         }
-
         self._as_label = None
         self._asn = None
         self._prefix = None

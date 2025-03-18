@@ -109,7 +109,6 @@ class GithubTriggerCreateResult(TriggerCreateResult):
             'trigger_url': 'str',
             'connection_id': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -129,7 +128,6 @@ class GithubTriggerCreateResult(TriggerCreateResult):
             'trigger_url': 'triggerUrl',
             'connection_id': 'connectionId'
         }
-
         self._id = None
         self._display_name = None
         self._description = None

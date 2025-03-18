@@ -85,7 +85,6 @@ class UpdateTwilioChannelDetails(UpdateChannelDetails):
             'original_connectors_url': 'str',
             'bot_id': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'description': 'description',
@@ -100,7 +99,6 @@ class UpdateTwilioChannelDetails(UpdateChannelDetails):
             'original_connectors_url': 'originalConnectorsUrl',
             'bot_id': 'botId'
         }
-
         self._name = None
         self._description = None
         self._type = None

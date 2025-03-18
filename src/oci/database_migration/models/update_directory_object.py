@@ -36,12 +36,10 @@ class UpdateDirectoryObject(object):
             'name': 'str',
             'path': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'path': 'path'
         }
-
         self._name = None
         self._path = None
 

@@ -127,7 +127,6 @@ class DatabaseToolsConnectionPostgresql(DatabaseToolsConnection):
             'key_stores': 'list[DatabaseToolsKeyStorePostgresql]',
             'private_endpoint_id': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -150,7 +149,6 @@ class DatabaseToolsConnectionPostgresql(DatabaseToolsConnection):
             'key_stores': 'keyStores',
             'private_endpoint_id': 'privateEndpointId'
         }
-
         self._id = None
         self._display_name = None
         self._compartment_id = None

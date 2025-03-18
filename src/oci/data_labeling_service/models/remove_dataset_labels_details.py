@@ -28,11 +28,9 @@ class RemoveDatasetLabelsDetails(object):
         self.swagger_types = {
             'label_set': 'LabelSet'
         }
-
         self.attribute_map = {
             'label_set': 'labelSet'
         }
-
         self._label_set = None
 
     @property

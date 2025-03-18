@@ -38,13 +38,11 @@ class UpdateFindingDetails(object):
             'justification': 'str',
             'time_valid_until': 'datetime'
         }
-
         self.attribute_map = {
             'severity': 'severity',
             'justification': 'justification',
             'time_valid_until': 'timeValidUntil'
         }
-
         self._severity = None
         self._justification = None
         self._time_valid_until = None

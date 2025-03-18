@@ -68,14 +68,12 @@ class PreferredCredential(object):
             'status': 'str',
             'is_accessible': 'bool'
         }
-
         self.attribute_map = {
             'type': 'type',
             'credential_name': 'credentialName',
             'status': 'status',
             'is_accessible': 'isAccessible'
         }
-
         self._type = None
         self._credential_name = None
         self._status = None

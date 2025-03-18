@@ -35,12 +35,10 @@ class CreateEmManagedExternalExadataMemberEntityDetails(object):
             'enterprise_manager_entity_identifier': 'str',
             'compartment_id': 'str'
         }
-
         self.attribute_map = {
             'enterprise_manager_entity_identifier': 'enterpriseManagerEntityIdentifier',
             'compartment_id': 'compartmentId'
         }
-
         self._enterprise_manager_entity_identifier = None
         self._compartment_id = None
 

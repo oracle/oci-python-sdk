@@ -43,14 +43,12 @@ class QueryOpsiDataObjectDataDetails(object):
             'query': 'DataObjectQuery',
             'resource_filters': 'ResourceFilters'
         }
-
         self.attribute_map = {
             'data_object_identifier': 'dataObjectIdentifier',
             'data_objects': 'dataObjects',
             'query': 'query',
             'resource_filters': 'resourceFilters'
         }
-
         self._data_object_identifier = None
         self._data_objects = None
         self._query = None

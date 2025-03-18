@@ -86,7 +86,6 @@ class AttributeUnpinResponse(object):
             'attribute_status': 'str',
             'time_updated': 'datetime'
         }
-
         self.attribute_map = {
             'attribute_name': 'attributeName',
             'operation_type': 'operationType',
@@ -94,7 +93,6 @@ class AttributeUnpinResponse(object):
             'attribute_status': 'attributeStatus',
             'time_updated': 'timeUpdated'
         }
-
         self._attribute_name = None
         self._operation_type = None
         self._attribute_name_space = None

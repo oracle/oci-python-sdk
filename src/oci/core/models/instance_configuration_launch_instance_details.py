@@ -189,7 +189,6 @@ class InstanceConfigurationLaunchInstanceDetails(object):
             'preemptible_instance_config': 'PreemptibleInstanceConfigDetails',
             'licensing_configs': 'list[LaunchInstanceLicensingConfig]'
         }
-
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'capacity_reservation_id': 'capacityReservationId',
@@ -219,7 +218,6 @@ class InstanceConfigurationLaunchInstanceDetails(object):
             'preemptible_instance_config': 'preemptibleInstanceConfig',
             'licensing_configs': 'licensingConfigs'
         }
-
         self._availability_domain = None
         self._capacity_reservation_id = None
         self._compartment_id = None

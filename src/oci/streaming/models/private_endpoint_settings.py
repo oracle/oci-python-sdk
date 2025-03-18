@@ -38,13 +38,11 @@ class PrivateEndpointSettings(object):
             'private_endpoint_ip': 'str',
             'nsg_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'subnet_id': 'subnetId',
             'private_endpoint_ip': 'privateEndpointIp',
             'nsg_ids': 'nsgIds'
         }
-
         self._subnet_id = None
         self._private_endpoint_ip = None
         self._nsg_ids = None

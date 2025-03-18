@@ -40,13 +40,11 @@ class ComputeInstanceGroupLinearRolloutPolicyByCount(ComputeInstanceGroupRollout
             'batch_delay_in_seconds': 'int',
             'batch_count': 'int'
         }
-
         self.attribute_map = {
             'policy_type': 'policyType',
             'batch_delay_in_seconds': 'batchDelayInSeconds',
             'batch_count': 'batchCount'
         }
-
         self._policy_type = None
         self._batch_delay_in_seconds = None
         self._batch_count = None

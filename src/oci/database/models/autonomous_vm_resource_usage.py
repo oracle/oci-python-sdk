@@ -63,7 +63,6 @@ class AutonomousVmResourceUsage(object):
             'reserved_cpus': 'float',
             'autonomous_container_database_usage': 'list[AvmAcdResourceStats]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -74,7 +73,6 @@ class AutonomousVmResourceUsage(object):
             'reserved_cpus': 'reservedCpus',
             'autonomous_container_database_usage': 'autonomousContainerDatabaseUsage'
         }
-
         self._id = None
         self._display_name = None
         self._used_cpus = None

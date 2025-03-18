@@ -28,11 +28,9 @@ class UpdateCustomTableDetails(object):
         self.swagger_types = {
             'saved_custom_table': 'SavedCustomTable'
         }
-
         self.attribute_map = {
             'saved_custom_table': 'savedCustomTable'
         }
-
         self._saved_custom_table = None
 
     @property

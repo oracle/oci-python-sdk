@@ -33,12 +33,10 @@ class JsonText(object):
             'model_type': 'str',
             'config_values': 'ConfigValues'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'config_values': 'configValues'
         }
-
         self._model_type = None
         self._config_values = None
 

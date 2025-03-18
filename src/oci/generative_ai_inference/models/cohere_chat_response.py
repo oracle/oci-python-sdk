@@ -107,7 +107,6 @@ class CohereChatResponse(BaseChatResponse):
             'tool_calls': 'list[CohereToolCall]',
             'prompt': 'str'
         }
-
         self.attribute_map = {
             'api_format': 'apiFormat',
             'text': 'text',
@@ -121,7 +120,6 @@ class CohereChatResponse(BaseChatResponse):
             'tool_calls': 'toolCalls',
             'prompt': 'prompt'
         }
-
         self._api_format = None
         self._text = None
         self._chat_history = None

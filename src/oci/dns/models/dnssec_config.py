@@ -35,12 +35,10 @@ class DnssecConfig(object):
             'ksk_dnssec_key_versions': 'list[KskDnssecKeyVersion]',
             'zsk_dnssec_key_versions': 'list[ZskDnssecKeyVersion]'
         }
-
         self.attribute_map = {
             'ksk_dnssec_key_versions': 'kskDnssecKeyVersions',
             'zsk_dnssec_key_versions': 'zskDnssecKeyVersions'
         }
-
         self._ksk_dnssec_key_versions = None
         self._zsk_dnssec_key_versions = None
 

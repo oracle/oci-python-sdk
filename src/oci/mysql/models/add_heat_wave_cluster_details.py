@@ -38,13 +38,11 @@ class AddHeatWaveClusterDetails(object):
             'cluster_size': 'int',
             'is_lakehouse_enabled': 'bool'
         }
-
         self.attribute_map = {
             'shape_name': 'shapeName',
             'cluster_size': 'clusterSize',
             'is_lakehouse_enabled': 'isLakehouseEnabled'
         }
-
         self._shape_name = None
         self._cluster_size = None
         self._is_lakehouse_enabled = None

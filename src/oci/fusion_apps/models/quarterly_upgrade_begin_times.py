@@ -43,12 +43,10 @@ class QuarterlyUpgradeBeginTimes(object):
             'override_type': 'str',
             'begin_times_value': 'str'
         }
-
         self.attribute_map = {
             'override_type': 'overrideType',
             'begin_times_value': 'beginTimesValue'
         }
-
         self._override_type = None
         self._begin_times_value = None
 

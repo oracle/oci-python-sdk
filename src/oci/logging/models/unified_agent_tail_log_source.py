@@ -51,7 +51,6 @@ class UnifiedAgentTailLogSource(UnifiedAgentLoggingSource):
             'parser': 'UnifiedAgentParser',
             'advanced_options': 'UnifiedAgentTailSourceAdvancedOptions'
         }
-
         self.attribute_map = {
             'name': 'name',
             'source_type': 'sourceType',
@@ -59,7 +58,6 @@ class UnifiedAgentTailLogSource(UnifiedAgentLoggingSource):
             'parser': 'parser',
             'advanced_options': 'advancedOptions'
         }
-
         self._name = None
         self._source_type = None
         self._paths = None

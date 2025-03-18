@@ -128,7 +128,6 @@ class AutonomousDatabaseSoftwareImage(object):
             'image_shape_family': 'str',
             'dst_file_version': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -144,7 +143,6 @@ class AutonomousDatabaseSoftwareImage(object):
             'image_shape_family': 'imageShapeFamily',
             'dst_file_version': 'dstFileVersion'
         }
-
         self._id = None
         self._compartment_id = None
         self._database_version = None

@@ -201,7 +201,6 @@ class SensitiveColumn(object):
             'db_defined_child_column_keys': 'list[str]',
             'column_groups': 'list[str]'
         }
-
         self.attribute_map = {
             'key': 'key',
             'sensitive_data_model_id': 'sensitiveDataModelId',
@@ -226,7 +225,6 @@ class SensitiveColumn(object):
             'db_defined_child_column_keys': 'dbDefinedChildColumnKeys',
             'column_groups': 'columnGroups'
         }
-
         self._key = None
         self._sensitive_data_model_id = None
         self._time_created = None

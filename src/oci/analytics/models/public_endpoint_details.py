@@ -52,14 +52,12 @@ class PublicEndpointDetails(NetworkEndpointDetails):
             'whitelisted_vcns': 'list[VirtualCloudNetwork]',
             'whitelisted_services': 'list[str]'
         }
-
         self.attribute_map = {
             'network_endpoint_type': 'networkEndpointType',
             'whitelisted_ips': 'whitelistedIps',
             'whitelisted_vcns': 'whitelistedVcns',
             'whitelisted_services': 'whitelistedServices'
         }
-
         self._network_endpoint_type = None
         self._whitelisted_ips = None
         self._whitelisted_vcns = None

@@ -33,12 +33,10 @@ class TriggerInfo(object):
             'display_name': 'str',
             'actions': 'list[TriggerAction]'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'actions': 'actions'
         }
-
         self._display_name = None
         self._actions = None
 

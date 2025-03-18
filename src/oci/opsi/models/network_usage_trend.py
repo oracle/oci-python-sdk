@@ -43,14 +43,12 @@ class NetworkUsageTrend(object):
             'all_network_write_in_mbps': 'float',
             'all_network_io_in_mbps': 'float'
         }
-
         self.attribute_map = {
             'end_timestamp': 'endTimestamp',
             'all_network_read_in_mbps': 'allNetworkReadInMbps',
             'all_network_write_in_mbps': 'allNetworkWriteInMbps',
             'all_network_io_in_mbps': 'allNetworkIoInMbps'
         }
-
         self._end_timestamp = None
         self._all_network_read_in_mbps = None
         self._all_network_write_in_mbps = None

@@ -83,7 +83,6 @@ class CreateDataGuardAssociationToExistingDbSystemDetails(CreateDataGuardAssocia
             'peer_db_system_id': 'str',
             'peer_db_home_id': 'str'
         }
-
         self.attribute_map = {
             'database_software_image_id': 'databaseSoftwareImageId',
             'database_admin_password': 'databaseAdminPassword',
@@ -97,7 +96,6 @@ class CreateDataGuardAssociationToExistingDbSystemDetails(CreateDataGuardAssocia
             'peer_db_system_id': 'peerDbSystemId',
             'peer_db_home_id': 'peerDbHomeId'
         }
-
         self._database_software_image_id = None
         self._database_admin_password = None
         self._source_encryption_key_location_details = None

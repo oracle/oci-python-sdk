@@ -58,7 +58,6 @@ class CreateExternalExadataStorageConnectorDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'storage_server_id': 'storageServerId',
             'agent_id': 'agentId',
@@ -68,7 +67,6 @@ class CreateExternalExadataStorageConnectorDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._storage_server_id = None
         self._agent_id = None
         self._connector_name = None

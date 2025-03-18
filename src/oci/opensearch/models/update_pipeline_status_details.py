@@ -33,12 +33,10 @@ class UpdatePipelineStatusDetails(object):
             'pipeline_id': 'str',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'pipeline_id': 'pipelineId',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._pipeline_id = None
         self._lifecycle_state = None
 

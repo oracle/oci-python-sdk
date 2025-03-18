@@ -80,7 +80,6 @@ class BucketCommandDescriptor(AbstractCommandDescriptor):
             'ranges': 'list[BucketRange]',
             'default_value': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'display_query_string': 'displayQueryString',
@@ -94,7 +93,6 @@ class BucketCommandDescriptor(AbstractCommandDescriptor):
             'ranges': 'ranges',
             'default_value': 'defaultValue'
         }
-
         self._name = None
         self._display_query_string = None
         self._internal_query_string = None

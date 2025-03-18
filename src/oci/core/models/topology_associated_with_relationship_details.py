@@ -28,11 +28,9 @@ class TopologyAssociatedWithRelationshipDetails(object):
         self.swagger_types = {
             'via': 'list[str]'
         }
-
         self.attribute_map = {
             'via': 'via'
         }
-
         self._via = None
 
     @property

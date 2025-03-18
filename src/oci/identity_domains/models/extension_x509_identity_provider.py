@@ -134,7 +134,6 @@ class ExtensionX509IdentityProvider(object):
             'eku_validation_enabled': 'bool',
             'eku_values': 'list[str]'
         }
-
         self.attribute_map = {
             'cert_match_attribute': 'certMatchAttribute',
             'user_match_attribute': 'userMatchAttribute',
@@ -154,7 +153,6 @@ class ExtensionX509IdentityProvider(object):
             'eku_validation_enabled': 'ekuValidationEnabled',
             'eku_values': 'ekuValues'
         }
-
         self._cert_match_attribute = None
         self._user_match_attribute = None
         self._other_cert_match_attribute = None

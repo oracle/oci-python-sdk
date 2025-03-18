@@ -43,12 +43,10 @@ class ToolCall(object):
             'id': 'str',
             'type': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'type': 'type'
         }
-
         self._id = None
         self._type = None
 

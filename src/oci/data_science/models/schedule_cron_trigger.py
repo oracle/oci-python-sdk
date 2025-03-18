@@ -45,14 +45,12 @@ class ScheduleCronTrigger(ScheduleTrigger):
             'time_end': 'datetime',
             'cron_expression': 'str'
         }
-
         self.attribute_map = {
             'trigger_type': 'triggerType',
             'time_start': 'timeStart',
             'time_end': 'timeEnd',
             'cron_expression': 'cronExpression'
         }
-
         self._trigger_type = None
         self._time_start = None
         self._time_end = None

@@ -137,7 +137,6 @@ class MdsMySqlDatabaseInsight(DatabaseInsight):
             'is_heat_wave_cluster_attached': 'bool',
             'db_additional_details': 'object'
         }
-
         self.attribute_map = {
             'entity_source': 'entitySource',
             'id': 'id',
@@ -162,7 +161,6 @@ class MdsMySqlDatabaseInsight(DatabaseInsight):
             'is_heat_wave_cluster_attached': 'isHeatWaveClusterAttached',
             'db_additional_details': 'dbAdditionalDetails'
         }
-
         self._entity_source = None
         self._id = None
         self._compartment_id = None

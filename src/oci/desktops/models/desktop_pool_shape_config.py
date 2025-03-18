@@ -52,13 +52,11 @@ class DesktopPoolShapeConfig(object):
             'memory_in_gbs': 'int',
             'baseline_ocpu_utilization': 'str'
         }
-
         self.attribute_map = {
             'ocpus': 'ocpus',
             'memory_in_gbs': 'memoryInGBs',
             'baseline_ocpu_utilization': 'baselineOcpuUtilization'
         }
-
         self._ocpus = None
         self._memory_in_gbs = None
         self._baseline_ocpu_utilization = None

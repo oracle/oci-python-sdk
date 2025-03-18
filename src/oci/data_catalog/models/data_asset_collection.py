@@ -33,12 +33,10 @@ class DataAssetCollection(object):
             'count': 'int',
             'items': 'list[DataAssetSummary]'
         }
-
         self.attribute_map = {
             'count': 'count',
             'items': 'items'
         }
-
         self._count = None
         self._items = None
 

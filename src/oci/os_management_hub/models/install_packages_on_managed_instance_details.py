@@ -33,12 +33,10 @@ class InstallPackagesOnManagedInstanceDetails(object):
             'package_names': 'list[str]',
             'work_request_details': 'WorkRequestDetails'
         }
-
         self.attribute_map = {
             'package_names': 'packageNames',
             'work_request_details': 'workRequestDetails'
         }
-
         self._package_names = None
         self._work_request_details = None
 

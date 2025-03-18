@@ -43,14 +43,12 @@ class ResourceConfiguration(object):
             'executor_shape': 'str',
             'total_executors': 'int'
         }
-
         self.attribute_map = {
             'spark_version': 'sparkVersion',
             'driver_shape': 'driverShape',
             'executor_shape': 'executorShape',
             'total_executors': 'totalExecutors'
         }
-
         self._spark_version = None
         self._driver_shape = None
         self._executor_shape = None

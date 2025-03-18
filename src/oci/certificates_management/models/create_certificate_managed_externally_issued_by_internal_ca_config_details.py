@@ -50,7 +50,6 @@ class CreateCertificateManagedExternallyIssuedByInternalCaConfigDetails(CreateCe
             'validity': 'Validity',
             'csr_pem': 'str'
         }
-
         self.attribute_map = {
             'config_type': 'configType',
             'version_name': 'versionName',
@@ -58,7 +57,6 @@ class CreateCertificateManagedExternallyIssuedByInternalCaConfigDetails(CreateCe
             'validity': 'validity',
             'csr_pem': 'csrPem'
         }
-
         self._config_type = None
         self._version_name = None
         self._issuer_certificate_authority_id = None

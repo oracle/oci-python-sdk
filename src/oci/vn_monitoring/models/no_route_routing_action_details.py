@@ -38,13 +38,11 @@ class NoRouteRoutingActionDetails(object):
             'evaluated_vcn_route_table_id': 'str',
             'evaluated_drg_route_table_id': 'str'
         }
-
         self.attribute_map = {
             'is_restricted_or_partial': 'isRestrictedOrPartial',
             'evaluated_vcn_route_table_id': 'evaluatedVcnRouteTableId',
             'evaluated_drg_route_table_id': 'evaluatedDrgRouteTableId'
         }
-
         self._is_restricted_or_partial = None
         self._evaluated_vcn_route_table_id = None
         self._evaluated_drg_route_table_id = None

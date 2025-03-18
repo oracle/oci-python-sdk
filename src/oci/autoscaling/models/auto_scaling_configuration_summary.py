@@ -68,7 +68,6 @@ class AutoScalingConfigurationSummary(object):
             'freeform_tags': 'dict(str, str)',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
@@ -80,7 +79,6 @@ class AutoScalingConfigurationSummary(object):
             'freeform_tags': 'freeformTags',
             'time_created': 'timeCreated'
         }
-
         self._compartment_id = None
         self._display_name = None
         self._id = None

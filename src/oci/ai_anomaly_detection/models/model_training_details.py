@@ -58,7 +58,6 @@ class ModelTrainingDetails(object):
             'window_size': 'int',
             'data_asset_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'algorithm_hint': 'algorithmHint',
             'target_fap': 'targetFap',
@@ -66,7 +65,6 @@ class ModelTrainingDetails(object):
             'window_size': 'windowSize',
             'data_asset_ids': 'dataAssetIds'
         }
-
         self._algorithm_hint = None
         self._target_fap = None
         self._training_fraction = None

@@ -28,11 +28,9 @@ class AnomalyDetectResult(object):
         self.swagger_types = {
             'detection_results': 'list[DetectionResultItem]'
         }
-
         self.attribute_map = {
             'detection_results': 'detectionResults'
         }
-
         self._detection_results = None
 
     @property

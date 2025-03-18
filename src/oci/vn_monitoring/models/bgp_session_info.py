@@ -81,7 +81,6 @@ class BgpSessionInfo(object):
             'bgp_state': 'str',
             'bgp_ipv6_state': 'str'
         }
-
         self.attribute_map = {
             'oracle_interface_ip': 'oracleInterfaceIp',
             'customer_interface_ip': 'customerInterfaceIp',
@@ -92,7 +91,6 @@ class BgpSessionInfo(object):
             'bgp_state': 'bgpState',
             'bgp_ipv6_state': 'bgpIpv6State'
         }
-
         self._oracle_interface_ip = None
         self._customer_interface_ip = None
         self._oracle_interface_ipv6 = None

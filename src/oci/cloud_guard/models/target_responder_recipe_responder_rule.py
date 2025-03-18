@@ -146,7 +146,6 @@ class TargetResponderRecipeResponderRule(object):
             'lifecycle_state': 'str',
             'lifecycle_details': 'str'
         }
-
         self.attribute_map = {
             'responder_rule_id': 'responderRuleId',
             'display_name': 'displayName',
@@ -161,7 +160,6 @@ class TargetResponderRecipeResponderRule(object):
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails'
         }
-
         self._responder_rule_id = None
         self._display_name = None
         self._description = None

@@ -28,11 +28,9 @@ class ExtractDetailsCollection(object):
         self.swagger_types = {
             'items': 'list[ExtractDetailsSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

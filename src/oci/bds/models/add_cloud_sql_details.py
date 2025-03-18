@@ -43,14 +43,12 @@ class AddCloudSqlDetails(object):
             'block_volume_size_in_gbs': 'int',
             'cluster_admin_password': 'str'
         }
-
         self.attribute_map = {
             'shape': 'shape',
             'shape_config': 'shapeConfig',
             'block_volume_size_in_gbs': 'blockVolumeSizeInGBs',
             'cluster_admin_password': 'clusterAdminPassword'
         }
-
         self._shape = None
         self._shape_config = None
         self._block_volume_size_in_gbs = None

@@ -78,7 +78,6 @@ class AwsEbsProperties(object):
             'volume_key': 'str',
             'volume_type': 'str'
         }
-
         self.attribute_map = {
             'attachments': 'attachments',
             'availability_zone': 'availabilityZone',
@@ -92,7 +91,6 @@ class AwsEbsProperties(object):
             'volume_key': 'volumeKey',
             'volume_type': 'volumeType'
         }
-
         self._attachments = None
         self._availability_zone = None
         self._is_encrypted = None

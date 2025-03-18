@@ -28,11 +28,9 @@ class AuthenticateClientDetails(object):
         self.swagger_types = {
             'request_headers': 'dict(str, list[str])'
         }
-
         self.attribute_map = {
             'request_headers': 'requestHeaders'
         }
-
         self._request_headers = None
 
     @property

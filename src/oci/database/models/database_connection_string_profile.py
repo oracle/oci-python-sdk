@@ -144,7 +144,6 @@ class DatabaseConnectionStringProfile(object):
             'syntax_format': 'str',
             'is_regional': 'bool'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'value': 'value',
@@ -156,7 +155,6 @@ class DatabaseConnectionStringProfile(object):
             'syntax_format': 'syntaxFormat',
             'is_regional': 'isRegional'
         }
-
         self._display_name = None
         self._value = None
         self._consumer_group = None

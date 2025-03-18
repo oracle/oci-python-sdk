@@ -33,12 +33,10 @@ class UpdateManagementAgentInstallKeyDetails(object):
             'is_key_active': 'bool',
             'display_name': 'str'
         }
-
         self.attribute_map = {
             'is_key_active': 'isKeyActive',
             'display_name': 'displayName'
         }
-
         self._is_key_active = None
         self._display_name = None
 

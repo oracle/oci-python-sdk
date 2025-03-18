@@ -53,7 +53,6 @@ class ConfigParameterValue(object):
             'parameter_value': 'str',
             'root_object_value': 'object'
         }
-
         self.attribute_map = {
             'string_value': 'stringValue',
             'int_value': 'intValue',
@@ -62,7 +61,6 @@ class ConfigParameterValue(object):
             'parameter_value': 'parameterValue',
             'root_object_value': 'rootObjectValue'
         }
-
         self._string_value = None
         self._int_value = None
         self._object_value = None

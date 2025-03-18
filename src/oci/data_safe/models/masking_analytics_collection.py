@@ -28,11 +28,9 @@ class MaskingAnalyticsCollection(object):
         self.swagger_types = {
             'items': 'list[MaskingAnalyticsSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

@@ -41,13 +41,11 @@ class FixedStringFormatEntry(FormatEntry):
             'description': 'str',
             'fixed_string': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'description': 'description',
             'fixed_string': 'fixedString'
         }
-
         self._type = None
         self._description = None
         self._fixed_string = None

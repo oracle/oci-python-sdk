@@ -43,14 +43,12 @@ class OracleGgsDeploymentDetails(object):
             'replicat': 'Replicat',
             'acceptable_lag': 'int'
         }
-
         self.attribute_map = {
             'ggs_deployment': 'ggsDeployment',
             'extract': 'extract',
             'replicat': 'replicat',
             'acceptable_lag': 'acceptableLag'
         }
-
         self._ggs_deployment = None
         self._extract = None
         self._replicat = None

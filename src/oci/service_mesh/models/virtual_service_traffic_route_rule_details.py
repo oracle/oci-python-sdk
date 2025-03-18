@@ -52,12 +52,10 @@ class VirtualServiceTrafficRouteRuleDetails(object):
             'type': 'str',
             'destinations': 'list[VirtualDeploymentTrafficRuleTargetDetails]'
         }
-
         self.attribute_map = {
             'type': 'type',
             'destinations': 'destinations'
         }
-
         self._type = None
         self._destinations = None
 

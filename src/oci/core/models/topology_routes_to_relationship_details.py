@@ -53,14 +53,12 @@ class TopologyRoutesToRelationshipDetails(object):
             'route_table_id': 'str',
             'route_type': 'str'
         }
-
         self.attribute_map = {
             'destination_type': 'destinationType',
             'destination': 'destination',
             'route_table_id': 'routeTableId',
             'route_type': 'routeType'
         }
-
         self._destination_type = None
         self._destination = None
         self._route_table_id = None

@@ -86,7 +86,6 @@ class UpdateGenericConnectionDetails(UpdateConnectionDetails):
             'does_use_secret_ids': 'bool',
             'host': 'str'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'display_name': 'displayName',
@@ -101,7 +100,6 @@ class UpdateGenericConnectionDetails(UpdateConnectionDetails):
             'does_use_secret_ids': 'doesUseSecretIds',
             'host': 'host'
         }
-
         self._connection_type = None
         self._display_name = None
         self._description = None

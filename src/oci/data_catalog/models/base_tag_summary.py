@@ -102,7 +102,6 @@ class BaseTagSummary(object):
             'glossary_key': 'str',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'time_created': 'timeCreated',
@@ -114,7 +113,6 @@ class BaseTagSummary(object):
             'glossary_key': 'glossaryKey',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._key = None
         self._time_created = None
         self._name = None

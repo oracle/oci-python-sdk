@@ -277,7 +277,6 @@ class ConnectionSummary(object):
             'locks': 'list[ResourceLock]',
             'does_use_secret_ids': 'bool'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'id': 'id',
@@ -300,7 +299,6 @@ class ConnectionSummary(object):
             'locks': 'locks',
             'does_use_secret_ids': 'doesUseSecretIds'
         }
-
         self._connection_type = None
         self._id = None
         self._display_name = None

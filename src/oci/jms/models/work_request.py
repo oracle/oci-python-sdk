@@ -198,7 +198,6 @@ class WorkRequest(object):
             'total_task_count': 'int',
             'completed_task_count': 'int'
         }
-
         self.attribute_map = {
             'operation_type': 'operationType',
             'status': 'status',
@@ -214,7 +213,6 @@ class WorkRequest(object):
             'total_task_count': 'totalTaskCount',
             'completed_task_count': 'completedTaskCount'
         }
-
         self._operation_type = None
         self._status = None
         self._id = None

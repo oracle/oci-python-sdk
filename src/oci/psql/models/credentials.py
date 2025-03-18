@@ -34,12 +34,10 @@ class Credentials(object):
             'username': 'str',
             'password_details': 'PasswordDetails'
         }
-
         self.attribute_map = {
             'username': 'username',
             'password_details': 'passwordDetails'
         }
-
         self._username = None
         self._password_details = None
 

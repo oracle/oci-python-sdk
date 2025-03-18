@@ -43,14 +43,12 @@ class ResponderExecutionTrendAggregation(object):
             'duration_in_seconds': 'int',
             'count': 'int'
         }
-
         self.attribute_map = {
             'dimensions_map': 'dimensionsMap',
             'start_timestamp': 'startTimestamp',
             'duration_in_seconds': 'durationInSeconds',
             'count': 'count'
         }
-
         self._dimensions_map = None
         self._start_timestamp = None
         self._duration_in_seconds = None

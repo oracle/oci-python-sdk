@@ -83,7 +83,6 @@ class HostCpuRecommendations(HostInsightHostRecommendations):
             'unused_instance': 'str',
             'is_abandoned_instance': 'bool'
         }
-
         self.attribute_map = {
             'metric_recommendation_name': 'metricRecommendationName',
             'burstable': 'burstable',
@@ -91,7 +90,6 @@ class HostCpuRecommendations(HostInsightHostRecommendations):
             'unused_instance': 'unusedInstance',
             'is_abandoned_instance': 'isAbandonedInstance'
         }
-
         self._metric_recommendation_name = None
         self._burstable = None
         self._shape = None

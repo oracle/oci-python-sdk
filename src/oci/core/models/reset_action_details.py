@@ -34,12 +34,10 @@ class ResetActionDetails(InstancePowerActionDetails):
             'action_type': 'str',
             'allow_dense_reboot_migration': 'bool'
         }
-
         self.attribute_map = {
             'action_type': 'actionType',
             'allow_dense_reboot_migration': 'allowDenseRebootMigration'
         }
-
         self._action_type = None
         self._allow_dense_reboot_migration = None
         self._action_type = 'reset'

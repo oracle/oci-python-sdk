@@ -70,7 +70,6 @@ class Contact(object):
             'contact_phone': 'str',
             'contact_type': 'str'
         }
-
         self.attribute_map = {
             'contact_name': 'contactName',
             'contact_email': 'contactEmail',
@@ -78,7 +77,6 @@ class Contact(object):
             'contact_phone': 'contactPhone',
             'contact_type': 'contactType'
         }
-
         self._contact_name = None
         self._contact_email = None
         self._email = None

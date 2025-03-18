@@ -111,7 +111,6 @@ class HealthCheck(object):
             'healthy_threshold': 'int',
             'unhealthy_threshold': 'int'
         }
-
         self.attribute_map = {
             'is_enabled': 'isEnabled',
             'method': 'method',
@@ -125,7 +124,6 @@ class HealthCheck(object):
             'healthy_threshold': 'healthyThreshold',
             'unhealthy_threshold': 'unhealthyThreshold'
         }
-
         self._is_enabled = None
         self._method = None
         self._path = None

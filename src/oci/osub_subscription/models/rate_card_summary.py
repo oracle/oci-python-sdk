@@ -68,7 +68,6 @@ class RateCardSummary(object):
             'currency': 'Currency',
             'rate_card_tiers': 'list[RateCardTier]'
         }
-
         self.attribute_map = {
             'product': 'product',
             'time_start': 'timeStart',
@@ -80,7 +79,6 @@ class RateCardSummary(object):
             'currency': 'currency',
             'rate_card_tiers': 'rateCardTiers'
         }
-
         self._product = None
         self._time_start = None
         self._time_end = None

@@ -35,12 +35,10 @@ class SelfMountDetails(MountTypeDetails):
             'mount_type': 'str',
             'local_mount_point_path': 'str'
         }
-
         self.attribute_map = {
             'mount_type': 'mountType',
             'local_mount_point_path': 'localMountPointPath'
         }
-
         self._mount_type = None
         self._local_mount_point_path = None
         self._mount_type = 'SELF_MOUNT'

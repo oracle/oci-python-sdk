@@ -66,7 +66,6 @@ class ApprovalActivitySummary(PullRequestActivitySummary):
             'activity_type': 'str',
             'status': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'principal': 'principal',
@@ -75,7 +74,6 @@ class ApprovalActivitySummary(PullRequestActivitySummary):
             'activity_type': 'activityType',
             'status': 'status'
         }
-
         self._id = None
         self._principal = None
         self._pull_request_id = None

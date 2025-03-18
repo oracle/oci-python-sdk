@@ -68,7 +68,6 @@ class ByoasnSummary(object):
             'lifecycle_state': 'str',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'asn': 'asn',
             'compartment_id': 'compartmentId',
@@ -80,7 +79,6 @@ class ByoasnSummary(object):
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated'
         }
-
         self._asn = None
         self._compartment_id = None
         self._display_name = None

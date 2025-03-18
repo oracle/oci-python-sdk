@@ -33,12 +33,10 @@ class PatternDetails(object):
             'inclusion_patterns': 'list[str]',
             'exclusion_patterns': 'list[str]'
         }
-
         self.attribute_map = {
             'inclusion_patterns': 'inclusionPatterns',
             'exclusion_patterns': 'exclusionPatterns'
         }
-
         self._inclusion_patterns = None
         self._exclusion_patterns = None
 

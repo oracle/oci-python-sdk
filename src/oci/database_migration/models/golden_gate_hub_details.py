@@ -63,7 +63,6 @@ class GoldenGateHubDetails(object):
             'replicat': 'Replicat',
             'acceptable_lag': 'int'
         }
-
         self.attribute_map = {
             'rest_admin_credentials': 'restAdminCredentials',
             'url': 'url',
@@ -74,7 +73,6 @@ class GoldenGateHubDetails(object):
             'replicat': 'replicat',
             'acceptable_lag': 'acceptableLag'
         }
-
         self._rest_admin_credentials = None
         self._url = None
         self._compute_id = None

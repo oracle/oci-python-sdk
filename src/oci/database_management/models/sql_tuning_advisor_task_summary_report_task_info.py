@@ -85,7 +85,6 @@ class SqlTuningAdvisorTaskSummaryReportTaskInfo(object):
             'time_ended': 'datetime',
             'running_time': 'int'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -96,7 +95,6 @@ class SqlTuningAdvisorTaskSummaryReportTaskInfo(object):
             'time_ended': 'timeEnded',
             'running_time': 'runningTime'
         }
-
         self._id = None
         self._name = None
         self._description = None

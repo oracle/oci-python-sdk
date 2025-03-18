@@ -40,13 +40,11 @@ class VaultSecretPasswordDetails(PasswordDetails):
             'secret_id': 'str',
             'secret_version': 'str'
         }
-
         self.attribute_map = {
             'password_type': 'passwordType',
             'secret_id': 'secretId',
             'secret_version': 'secretVersion'
         }
-
         self._password_type = None
         self._secret_id = None
         self._secret_version = None

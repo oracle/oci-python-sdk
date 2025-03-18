@@ -48,7 +48,6 @@ class UpdateBastionDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'max_session_ttl_in_seconds': 'maxSessionTtlInSeconds',
             'static_jump_host_ip_addresses': 'staticJumpHostIpAddresses',
@@ -56,7 +55,6 @@ class UpdateBastionDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._max_session_ttl_in_seconds = None
         self._static_jump_host_ip_addresses = None
         self._client_cidr_block_allow_list = None

@@ -52,13 +52,11 @@ class CccInfrastructureRoutingDynamicDetails(object):
             'oracle_asn': 'int',
             'bgp_topology': 'str'
         }
-
         self.attribute_map = {
             'peer_information': 'peerInformation',
             'oracle_asn': 'oracleAsn',
             'bgp_topology': 'bgpTopology'
         }
-
         self._peer_information = None
         self._oracle_asn = None
         self._bgp_topology = None

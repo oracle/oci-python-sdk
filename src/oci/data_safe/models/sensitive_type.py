@@ -153,7 +153,6 @@ class SensitiveType(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'id': 'id',
             'entity_type': 'entityType',
@@ -171,7 +170,6 @@ class SensitiveType(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._id = None
         self._entity_type = None
         self._display_name = None

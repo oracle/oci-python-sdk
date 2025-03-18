@@ -229,7 +229,6 @@ class TaskSummaryFromRestTask(TaskSummary):
             'cancel_rest_call_config': 'CancelRestCallConfig',
             'poll_rest_call_config': 'PollRestCallConfig'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -261,7 +260,6 @@ class TaskSummaryFromRestTask(TaskSummary):
             'cancel_rest_call_config': 'cancelRestCallConfig',
             'poll_rest_call_config': 'pollRestCallConfig'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

@@ -28,11 +28,9 @@ class AddAgentDependencyDetails(object):
         self.swagger_types = {
             'agent_dependency_id': 'str'
         }
-
         self.attribute_map = {
             'agent_dependency_id': 'agentDependencyId'
         }
-
         self._agent_dependency_id = None
 
     @property

@@ -72,7 +72,6 @@ class ValidateDatabaseToolsConnectionResult(object):
             'cause': 'str',
             'action': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'code': 'code',
@@ -80,7 +79,6 @@ class ValidateDatabaseToolsConnectionResult(object):
             'cause': 'cause',
             'action': 'action'
         }
-
         self._type = None
         self._code = None
         self._message = None

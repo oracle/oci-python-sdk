@@ -40,13 +40,11 @@ class CustomMetricExpressionRule(MetricExpressionRule):
             'scale_in_configuration': 'CustomExpressionQueryScalingConfiguration',
             'scale_out_configuration': 'CustomExpressionQueryScalingConfiguration'
         }
-
         self.attribute_map = {
             'metric_expression_rule_type': 'metricExpressionRuleType',
             'scale_in_configuration': 'scaleInConfiguration',
             'scale_out_configuration': 'scaleOutConfiguration'
         }
-
         self._metric_expression_rule_type = None
         self._scale_in_configuration = None
         self._scale_out_configuration = None

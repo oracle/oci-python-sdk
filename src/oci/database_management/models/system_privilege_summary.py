@@ -73,14 +73,12 @@ class SystemPrivilegeSummary(object):
             'common': 'str',
             'inherited': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'admin_option': 'adminOption',
             'common': 'common',
             'inherited': 'inherited'
         }
-
         self._name = None
         self._admin_option = None
         self._common = None

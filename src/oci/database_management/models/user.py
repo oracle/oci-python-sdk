@@ -303,7 +303,6 @@ class User(object):
             'external_shared': 'str',
             'time_password_changed': 'datetime'
         }
-
         self.attribute_map = {
             'name': 'name',
             'status': 'status',
@@ -330,7 +329,6 @@ class User(object):
             'external_shared': 'externalShared',
             'time_password_changed': 'timePasswordChanged'
         }
-
         self._name = None
         self._status = None
         self._time_locked = None

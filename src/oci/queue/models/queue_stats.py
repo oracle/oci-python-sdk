@@ -38,13 +38,11 @@ class QueueStats(object):
             'dlq': 'Stats',
             'channel_id': 'str'
         }
-
         self.attribute_map = {
             'queue': 'queue',
             'dlq': 'dlq',
             'channel_id': 'channelId'
         }
-
         self._queue = None
         self._dlq = None
         self._channel_id = None

@@ -81,7 +81,6 @@ class HostImportableAgentEntitySummary(ImportableAgentEntitySummary):
             'host_name': 'str',
             'platform_type': 'str'
         }
-
         self.attribute_map = {
             'entity_source': 'entitySource',
             'management_agent_id': 'managementAgentId',
@@ -89,7 +88,6 @@ class HostImportableAgentEntitySummary(ImportableAgentEntitySummary):
             'host_name': 'hostName',
             'platform_type': 'platformType'
         }
-
         self._entity_source = None
         self._management_agent_id = None
         self._management_agent_display_name = None

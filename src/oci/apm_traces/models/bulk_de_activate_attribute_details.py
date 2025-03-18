@@ -28,11 +28,9 @@ class BulkDeActivateAttributeDetails(object):
         self.swagger_types = {
             'attribute_details': 'list[BulkDeActivateAttributeDetail]'
         }
-
         self.attribute_map = {
             'attribute_details': 'attributeDetails'
         }
-
         self._attribute_details = None
 
     @property

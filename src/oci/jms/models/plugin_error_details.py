@@ -52,13 +52,11 @@ class PluginErrorDetails(object):
             'details': 'str',
             'time_last_seen': 'datetime'
         }
-
         self.attribute_map = {
             'reason': 'reason',
             'details': 'details',
             'time_last_seen': 'timeLastSeen'
         }
-
         self._reason = None
         self._details = None
         self._time_last_seen = None

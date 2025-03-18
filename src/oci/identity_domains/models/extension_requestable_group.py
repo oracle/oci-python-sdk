@@ -28,11 +28,9 @@ class ExtensionRequestableGroup(object):
         self.swagger_types = {
             'requestable': 'bool'
         }
-
         self.attribute_map = {
             'requestable': 'requestable'
         }
-
         self._requestable = None
 
     @property

@@ -46,12 +46,10 @@ class UpdateGroupDetails(object):
             'type': 'str',
             'time': 'datetime'
         }
-
         self.attribute_map = {
             'type': 'type',
             'time': 'time'
         }
-
         self._type = None
         self._time = None
 

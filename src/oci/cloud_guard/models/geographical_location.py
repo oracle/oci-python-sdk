@@ -33,12 +33,10 @@ class GeographicalLocation(object):
             'latitude': 'float',
             'longitude': 'float'
         }
-
         self.attribute_map = {
             'latitude': 'latitude',
             'longitude': 'longitude'
         }
-
         self._latitude = None
         self._longitude = None
 

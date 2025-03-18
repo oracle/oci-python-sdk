@@ -68,7 +68,6 @@ class UpdateSubnetDetails(object):
             'ipv6_cidr_block': 'str',
             'ipv6_cidr_blocks': 'list[str]'
         }
-
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'dhcp_options_id': 'dhcpOptionsId',
@@ -80,7 +79,6 @@ class UpdateSubnetDetails(object):
             'ipv6_cidr_block': 'ipv6CidrBlock',
             'ipv6_cidr_blocks': 'ipv6CidrBlocks'
         }
-
         self._defined_tags = None
         self._dhcp_options_id = None
         self._display_name = None

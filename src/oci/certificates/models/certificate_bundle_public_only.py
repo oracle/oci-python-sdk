@@ -86,7 +86,6 @@ class CertificateBundlePublicOnly(CertificateBundle):
             'stages': 'list[str]',
             'revocation_status': 'RevocationStatus'
         }
-
         self.attribute_map = {
             'certificate_bundle_type': 'certificateBundleType',
             'certificate_id': 'certificateId',
@@ -101,7 +100,6 @@ class CertificateBundlePublicOnly(CertificateBundle):
             'stages': 'stages',
             'revocation_status': 'revocationStatus'
         }
-
         self._certificate_bundle_type = None
         self._certificate_id = None
         self._certificate_name = None

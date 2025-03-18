@@ -28,11 +28,9 @@ class IngestHostMetricsDetails(object):
         self.swagger_types = {
             'items': 'list[HostPerformanceMetricGroup]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

@@ -33,12 +33,10 @@ class AssociationDetails(object):
             'source_resource_id': 'str',
             'association_type': 'str'
         }
-
         self.attribute_map = {
             'source_resource_id': 'sourceResourceId',
             'association_type': 'associationType'
         }
-
         self._source_resource_id = None
         self._association_type = None
 

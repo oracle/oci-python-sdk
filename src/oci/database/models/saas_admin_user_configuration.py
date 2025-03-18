@@ -71,7 +71,6 @@ class SaasAdminUserConfiguration(object):
             'access_type': 'str',
             'time_saas_admin_user_enabled': 'datetime'
         }
-
         self.attribute_map = {
             'password': 'password',
             'secret_id': 'secretId',
@@ -81,7 +80,6 @@ class SaasAdminUserConfiguration(object):
             'access_type': 'accessType',
             'time_saas_admin_user_enabled': 'timeSaasAdminUserEnabled'
         }
-
         self._password = None
         self._secret_id = None
         self._secret_version_number = None

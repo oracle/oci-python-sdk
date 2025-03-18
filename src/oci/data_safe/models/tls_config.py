@@ -64,7 +64,6 @@ class TlsConfig(object):
             'trust_store_content': 'str',
             'key_store_content': 'str'
         }
-
         self.attribute_map = {
             'status': 'status',
             'certificate_store_type': 'certificateStoreType',
@@ -72,7 +71,6 @@ class TlsConfig(object):
             'trust_store_content': 'trustStoreContent',
             'key_store_content': 'keyStoreContent'
         }
-
         self._status = None
         self._certificate_store_type = None
         self._store_password = None

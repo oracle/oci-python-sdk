@@ -95,7 +95,6 @@ class PerformanceMetricsData(object):
             'db_role': 'str',
             'metrics': 'list[PerformanceMetrics]'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'resource_id': 'resourceId',
@@ -108,7 +107,6 @@ class PerformanceMetricsData(object):
             'db_role': 'dbRole',
             'metrics': 'metrics'
         }
-
         self._compartment_id = None
         self._resource_id = None
         self._primary_db_id = None

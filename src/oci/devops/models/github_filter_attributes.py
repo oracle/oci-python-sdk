@@ -38,13 +38,11 @@ class GithubFilterAttributes(object):
             'base_ref': 'str',
             'file_filter': 'FileFilter'
         }
-
         self.attribute_map = {
             'head_ref': 'headRef',
             'base_ref': 'baseRef',
             'file_filter': 'fileFilter'
         }
-
         self._head_ref = None
         self._base_ref = None
         self._file_filter = None

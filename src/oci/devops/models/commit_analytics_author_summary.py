@@ -33,12 +33,10 @@ class CommitAnalyticsAuthorSummary(object):
             'author_name': 'str',
             'author_email': 'str'
         }
-
         self.attribute_map = {
             'author_name': 'authorName',
             'author_email': 'authorEmail'
         }
-
         self._author_name = None
         self._author_email = None
 

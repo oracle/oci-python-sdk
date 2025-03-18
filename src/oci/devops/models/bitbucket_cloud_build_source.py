@@ -50,7 +50,6 @@ class BitbucketCloudBuildSource(BuildSource):
             'branch': 'str',
             'connection_id': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'connection_type': 'connectionType',
@@ -58,7 +57,6 @@ class BitbucketCloudBuildSource(BuildSource):
             'branch': 'branch',
             'connection_id': 'connectionId'
         }
-
         self._name = None
         self._connection_type = None
         self._repository_url = None

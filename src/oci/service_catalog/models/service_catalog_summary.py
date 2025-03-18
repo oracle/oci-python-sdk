@@ -48,7 +48,6 @@ class ServiceCatalogSummary(object):
             'display_name': 'str',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
@@ -56,7 +55,6 @@ class ServiceCatalogSummary(object):
             'display_name': 'displayName',
             'time_created': 'timeCreated'
         }
-
         self._id = None
         self._lifecycle_state = None
         self._compartment_id = None

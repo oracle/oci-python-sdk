@@ -33,12 +33,10 @@ class CommonPrincipal(object):
             'tenant': 'Tenant',
             'user': 'User'
         }
-
         self.attribute_map = {
             'tenant': 'tenant',
             'user': 'user'
         }
-
         self._tenant = None
         self._user = None
 

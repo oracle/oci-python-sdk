@@ -47,13 +47,11 @@ class CreateTargetAssetDetails(object):
             'type': 'str',
             'is_excluded_from_execution': 'bool'
         }
-
         self.attribute_map = {
             'migration_plan_id': 'migrationPlanId',
             'type': 'type',
             'is_excluded_from_execution': 'isExcludedFromExecution'
         }
-
         self._migration_plan_id = None
         self._type = None
         self._is_excluded_from_execution = None

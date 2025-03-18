@@ -67,7 +67,6 @@ class OsPatchDetails(object):
             'release_date': 'datetime',
             'patch_type': 'str'
         }
-
         self.attribute_map = {
             'os_patch_version': 'osPatchVersion',
             'min_bds_version': 'minBdsVersion',
@@ -76,7 +75,6 @@ class OsPatchDetails(object):
             'release_date': 'releaseDate',
             'patch_type': 'patchType'
         }
-
         self._os_patch_version = None
         self._min_bds_version = None
         self._min_compatible_odh_version_map = None

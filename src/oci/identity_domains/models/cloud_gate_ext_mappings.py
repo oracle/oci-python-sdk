@@ -78,7 +78,6 @@ class CloudGateExtMappings(object):
             'policy_name': 'str',
             'upstream_server_group_id': 'str'
         }
-
         self.attribute_map = {
             'mapping_id': 'mappingId',
             'resource_prefix': 'resourcePrefix',
@@ -92,7 +91,6 @@ class CloudGateExtMappings(object):
             'policy_name': 'policyName',
             'upstream_server_group_id': 'upstreamServerGroupId'
         }
-
         self._mapping_id = None
         self._resource_prefix = None
         self._proxy_pass = None

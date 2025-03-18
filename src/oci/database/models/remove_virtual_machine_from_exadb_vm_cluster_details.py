@@ -28,11 +28,9 @@ class RemoveVirtualMachineFromExadbVmClusterDetails(object):
         self.swagger_types = {
             'db_nodes': 'list[DbNodeDetails]'
         }
-
         self.attribute_map = {
             'db_nodes': 'dbNodes'
         }
-
         self._db_nodes = None
 
     @property

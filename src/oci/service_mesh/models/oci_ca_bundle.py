@@ -35,12 +35,10 @@ class OciCaBundle(CaBundle):
             'type': 'str',
             'ca_bundle_id': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'ca_bundle_id': 'caBundleId'
         }
-
         self._type = None
         self._ca_bundle_id = None
         self._type = 'OCI_CERTIFICATES'

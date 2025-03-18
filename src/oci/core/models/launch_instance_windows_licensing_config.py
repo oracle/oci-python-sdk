@@ -36,12 +36,10 @@ class LaunchInstanceWindowsLicensingConfig(LaunchInstanceLicensingConfig):
             'type': 'str',
             'license_type': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'license_type': 'licenseType'
         }
-
         self._type = None
         self._license_type = None
         self._type = 'WINDOWS'

@@ -58,7 +58,6 @@ class CreateDedicatedVmHostDetails(object):
             'fault_domain': 'str',
             'freeform_tags': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'compartment_id': 'compartmentId',
@@ -68,7 +67,6 @@ class CreateDedicatedVmHostDetails(object):
             'fault_domain': 'faultDomain',
             'freeform_tags': 'freeformTags'
         }
-
         self._availability_domain = None
         self._compartment_id = None
         self._dedicated_vm_host_shape = None

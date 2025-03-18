@@ -28,11 +28,9 @@ class TypedObjectWrapper(object):
         self.swagger_types = {
             'typed_object': 'TypedObject'
         }
-
         self.attribute_map = {
             'typed_object': 'typedObject'
         }
-
         self._typed_object = None
 
     @property

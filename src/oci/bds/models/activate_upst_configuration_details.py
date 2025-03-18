@@ -38,13 +38,11 @@ class ActivateUpstConfigurationDetails(object):
             'vault_id': 'str',
             'master_encryption_key_id': 'str'
         }
-
         self.attribute_map = {
             'cluster_admin_password': 'clusterAdminPassword',
             'vault_id': 'vaultId',
             'master_encryption_key_id': 'masterEncryptionKeyId'
         }
-
         self._cluster_admin_password = None
         self._vault_id = None
         self._master_encryption_key_id = None

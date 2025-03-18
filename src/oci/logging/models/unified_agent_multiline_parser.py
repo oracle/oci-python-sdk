@@ -75,7 +75,6 @@ class UnifiedAgentMultilineParser(UnifiedAgentParser):
             'format_firstline': 'str',
             'format': 'list[str]'
         }
-
         self.attribute_map = {
             'parser_type': 'parserType',
             'field_time_key': 'fieldTimeKey',
@@ -88,7 +87,6 @@ class UnifiedAgentMultilineParser(UnifiedAgentParser):
             'format_firstline': 'formatFirstline',
             'format': 'format'
         }
-
         self._parser_type = None
         self._field_time_key = None
         self._types = None

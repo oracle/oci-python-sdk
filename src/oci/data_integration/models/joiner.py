@@ -119,7 +119,6 @@ class Joiner(Operator):
             'join_type': 'str',
             'join_condition': 'Expression'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -137,7 +136,6 @@ class Joiner(Operator):
             'join_type': 'joinType',
             'join_condition': 'joinCondition'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

@@ -45,14 +45,12 @@ class ValueListEntity(Entity):
             'type': 'str',
             'values': 'list[StaticEntityValue]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
             'type': 'type',
             'values': 'values'
         }
-
         self._id = None
         self._name = None
         self._type = None

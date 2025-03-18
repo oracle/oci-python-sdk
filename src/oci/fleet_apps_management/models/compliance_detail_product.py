@@ -38,13 +38,11 @@ class ComplianceDetailProduct(object):
             'product_name': 'str',
             'product_version': 'str'
         }
-
         self.attribute_map = {
             'product_stack': 'productStack',
             'product_name': 'productName',
             'product_version': 'productVersion'
         }
-
         self._product_stack = None
         self._product_name = None
         self._product_version = None

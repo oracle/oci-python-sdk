@@ -35,12 +35,10 @@ class TestNamedPreferredCredentialDetails(TestPreferredCredentialDetails):
             'type': 'str',
             'named_credential_id': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'named_credential_id': 'namedCredentialId'
         }
-
         self._type = None
         self._named_credential_id = None
         self._type = 'NAMED_CREDENTIAL'

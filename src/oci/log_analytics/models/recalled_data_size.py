@@ -43,14 +43,12 @@ class RecalledDataSize(object):
             'recalled_data_in_bytes': 'int',
             'not_recalled_data_in_bytes': 'int'
         }
-
         self.attribute_map = {
             'time_data_started': 'timeDataStarted',
             'time_data_ended': 'timeDataEnded',
             'recalled_data_in_bytes': 'recalledDataInBytes',
             'not_recalled_data_in_bytes': 'notRecalledDataInBytes'
         }
-
         self._time_data_started = None
         self._time_data_ended = None
         self._recalled_data_in_bytes = None

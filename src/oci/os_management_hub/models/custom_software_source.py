@@ -209,7 +209,6 @@ class CustomSoftwareSource(SoftwareSource):
             'software_source_sub_type': 'str',
             'time_metadata_updated': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -243,7 +242,6 @@ class CustomSoftwareSource(SoftwareSource):
             'software_source_sub_type': 'softwareSourceSubType',
             'time_metadata_updated': 'timeMetadataUpdated'
         }
-
         self._id = None
         self._compartment_id = None
         self._display_name = None

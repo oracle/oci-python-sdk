@@ -173,7 +173,6 @@ class DbSystemSummary(object):
             'access_mode': 'str',
             'read_endpoint': 'ReadEndpointDetails'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -202,7 +201,6 @@ class DbSystemSummary(object):
             'access_mode': 'accessMode',
             'read_endpoint': 'readEndpoint'
         }
-
         self._id = None
         self._display_name = None
         self._description = None

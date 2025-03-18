@@ -58,7 +58,6 @@ class ExternalBackupJob(object):
             'user_name': 'str',
             'swift_password': 'str'
         }
-
         self.attribute_map = {
             'backup_id': 'backupId',
             'provisioning': 'provisioning',
@@ -68,7 +67,6 @@ class ExternalBackupJob(object):
             'user_name': 'userName',
             'swift_password': 'swiftPassword'
         }
-
         self._backup_id = None
         self._provisioning = None
         self._swift_path = None

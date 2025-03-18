@@ -58,7 +58,6 @@ class Schedule(object):
             'recurrences': 'str',
             'duration': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'execution_startdate': 'executionStartdate',
@@ -66,7 +65,6 @@ class Schedule(object):
             'recurrences': 'recurrences',
             'duration': 'duration'
         }
-
         self._type = None
         self._execution_startdate = None
         self._maintenance_window_id = None

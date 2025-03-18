@@ -33,12 +33,10 @@ class CreateRuleSetDetails(object):
             'name': 'str',
             'items': 'list[Rule]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'items': 'items'
         }
-
         self._name = None
         self._items = None
 

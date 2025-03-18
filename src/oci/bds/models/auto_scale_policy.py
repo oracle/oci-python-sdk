@@ -47,12 +47,10 @@ class AutoScalePolicy(object):
             'policy_type': 'str',
             'rules': 'list[AutoScalePolicyRule]'
         }
-
         self.attribute_map = {
             'policy_type': 'policyType',
             'rules': 'rules'
         }
-
         self._policy_type = None
         self._rules = None
 

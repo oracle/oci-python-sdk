@@ -55,7 +55,6 @@ class CreateAccessRequestDetails(object):
             'access_duration': 'str',
             'ticket_number': 'str'
         }
-
         self.attribute_map = {
             'lockbox_id': 'lockboxId',
             'display_name': 'displayName',
@@ -64,7 +63,6 @@ class CreateAccessRequestDetails(object):
             'access_duration': 'accessDuration',
             'ticket_number': 'ticketNumber'
         }
-
         self._lockbox_id = None
         self._display_name = None
         self._description = None

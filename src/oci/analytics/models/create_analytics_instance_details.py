@@ -155,7 +155,6 @@ class CreateAnalyticsInstanceDetails(object):
             'admin_user': 'str',
             'feature_bundle': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'description': 'description',
@@ -174,7 +173,6 @@ class CreateAnalyticsInstanceDetails(object):
             'admin_user': 'adminUser',
             'feature_bundle': 'featureBundle'
         }
-
         self._name = None
         self._description = None
         self._compartment_id = None

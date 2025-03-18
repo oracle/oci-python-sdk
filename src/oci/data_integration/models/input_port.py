@@ -90,7 +90,6 @@ class InputPort(TypedObject):
             'port_type': 'str',
             'fields': 'list[TypedObject]'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -103,7 +102,6 @@ class InputPort(TypedObject):
             'port_type': 'portType',
             'fields': 'fields'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

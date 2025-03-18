@@ -33,12 +33,10 @@ class AwrDatabaseCpuUsageSummary(object):
             'timestamp': 'datetime',
             'avg_usage_in_secs': 'float'
         }
-
         self.attribute_map = {
             'timestamp': 'timestamp',
             'avg_usage_in_secs': 'avgUsageInSecs'
         }
-
         self._timestamp = None
         self._avg_usage_in_secs = None
 

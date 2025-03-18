@@ -73,12 +73,10 @@ class TagMetadata(object):
             'tag_type': 'str',
             'tag_unit': 'str'
         }
-
         self.attribute_map = {
             'tag_type': 'tagType',
             'tag_unit': 'tagUnit'
         }
-
         self._tag_type = None
         self._tag_unit = None
 

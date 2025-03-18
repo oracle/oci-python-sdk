@@ -65,7 +65,6 @@ class UpdateEsxiHostDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'next_commitment': 'nextCommitment',
@@ -73,7 +72,6 @@ class UpdateEsxiHostDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._display_name = None
         self._next_commitment = None
         self._billing_donor_host_id = None

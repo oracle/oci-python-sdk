@@ -80,7 +80,6 @@ class UpdateDatabaseToolsConnectionPostgresqlDetails(UpdateDatabaseToolsConnecti
             'key_stores': 'list[DatabaseToolsKeyStorePostgresqlDetails]',
             'private_endpoint_id': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'defined_tags': 'definedTags',
@@ -94,7 +93,6 @@ class UpdateDatabaseToolsConnectionPostgresqlDetails(UpdateDatabaseToolsConnecti
             'key_stores': 'keyStores',
             'private_endpoint_id': 'privateEndpointId'
         }
-
         self._display_name = None
         self._defined_tags = None
         self._freeform_tags = None

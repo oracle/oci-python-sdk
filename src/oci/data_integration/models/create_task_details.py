@@ -132,7 +132,6 @@ class CreateTaskDetails(object):
             'is_concurrent_allowed': 'bool',
             'registry_metadata': 'RegistryMetadata'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -150,7 +149,6 @@ class CreateTaskDetails(object):
             'is_concurrent_allowed': 'isConcurrentAllowed',
             'registry_metadata': 'registryMetadata'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

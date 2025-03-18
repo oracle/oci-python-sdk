@@ -110,7 +110,6 @@ class OptimizerStatisticsCollectionOperationSummary(object):
             'timed_out_count': 'int',
             'total_objects_count': 'int'
         }
-
         self.attribute_map = {
             'id': 'id',
             'operation_name': 'operationName',
@@ -126,7 +125,6 @@ class OptimizerStatisticsCollectionOperationSummary(object):
             'timed_out_count': 'timedOutCount',
             'total_objects_count': 'totalObjectsCount'
         }
-
         self._id = None
         self._operation_name = None
         self._target = None

@@ -88,7 +88,6 @@ class UpdateSqlEndpointDetails(object):
             'lake_id': 'str',
             'spark_advanced_configurations': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
@@ -104,7 +103,6 @@ class UpdateSqlEndpointDetails(object):
             'lake_id': 'lakeId',
             'spark_advanced_configurations': 'sparkAdvancedConfigurations'
         }
-
         self._defined_tags = None
         self._freeform_tags = None
         self._display_name = None

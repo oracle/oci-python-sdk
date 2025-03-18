@@ -43,14 +43,12 @@ class UpdateAiPrivateEndpointDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str'
         }
-
         self.attribute_map = {
             'dns_zones': 'dnsZones',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'display_name': 'displayName'
         }
-
         self._dns_zones = None
         self._freeform_tags = None
         self._defined_tags = None

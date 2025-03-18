@@ -71,7 +71,6 @@ class KubernetesClusterDataSource(DataSource):
             'namespace': 'str',
             'is_daemon_set': 'bool'
         }
-
         self.attribute_map = {
             'key': 'key',
             'type': 'type',
@@ -83,7 +82,6 @@ class KubernetesClusterDataSource(DataSource):
             'namespace': 'namespace',
             'is_daemon_set': 'isDaemonSet'
         }
-
         self._key = None
         self._type = None
         self._name = None

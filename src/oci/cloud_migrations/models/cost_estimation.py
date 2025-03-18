@@ -58,7 +58,6 @@ class CostEstimation(object):
             'total_estimation_per_month_by_subscription': 'float',
             'subscription_id': 'str'
         }
-
         self.attribute_map = {
             'compute': 'compute',
             'storage': 'storage',
@@ -68,7 +67,6 @@ class CostEstimation(object):
             'total_estimation_per_month_by_subscription': 'totalEstimationPerMonthBySubscription',
             'subscription_id': 'subscriptionId'
         }
-
         self._compute = None
         self._storage = None
         self._os_image = None

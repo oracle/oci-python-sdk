@@ -51,13 +51,11 @@ class AddBlockStorageDetails(object):
             'block_volume_size_in_gbs': 'int',
             'node_type': 'str'
         }
-
         self.attribute_map = {
             'cluster_admin_password': 'clusterAdminPassword',
             'block_volume_size_in_gbs': 'blockVolumeSizeInGBs',
             'node_type': 'nodeType'
         }
-
         self._cluster_admin_password = None
         self._block_volume_size_in_gbs = None
         self._node_type = None

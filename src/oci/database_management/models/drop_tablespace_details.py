@@ -49,7 +49,6 @@ class DropTablespaceDetails(object):
             'is_dropping_data_files': 'bool',
             'is_cascade_constraints': 'bool'
         }
-
         self.attribute_map = {
             'credential_details': 'credentialDetails',
             'database_credential': 'databaseCredential',
@@ -57,7 +56,6 @@ class DropTablespaceDetails(object):
             'is_dropping_data_files': 'isDroppingDataFiles',
             'is_cascade_constraints': 'isCascadeConstraints'
         }
-
         self._credential_details = None
         self._database_credential = None
         self._is_including_contents = None

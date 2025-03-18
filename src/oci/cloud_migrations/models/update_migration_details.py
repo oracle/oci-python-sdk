@@ -48,7 +48,6 @@ class UpdateMigrationDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'replication_schedule_id': 'replicationScheduleId',
@@ -56,7 +55,6 @@ class UpdateMigrationDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._display_name = None
         self._replication_schedule_id = None
         self._is_completed = None

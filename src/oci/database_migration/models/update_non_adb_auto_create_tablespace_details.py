@@ -67,7 +67,6 @@ class UpdateNonADBAutoCreateTablespaceDetails(UpdateTargetTypeTablespaceDetails)
             'extend_size_in_mbs': 'int',
             'block_size_in_kbs': 'str'
         }
-
         self.attribute_map = {
             'target_type': 'targetType',
             'is_auto_create': 'isAutoCreate',
@@ -75,7 +74,6 @@ class UpdateNonADBAutoCreateTablespaceDetails(UpdateTargetTypeTablespaceDetails)
             'extend_size_in_mbs': 'extendSizeInMBs',
             'block_size_in_kbs': 'blockSizeInKBs'
         }
-
         self._target_type = None
         self._is_auto_create = None
         self._is_big_file = None

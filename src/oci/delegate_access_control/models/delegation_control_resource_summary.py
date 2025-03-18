@@ -71,12 +71,10 @@ class DelegationControlResourceSummary(object):
             'id': 'str',
             'resource_status': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'resource_status': 'resourceStatus'
         }
-
         self._id = None
         self._resource_status = None
 

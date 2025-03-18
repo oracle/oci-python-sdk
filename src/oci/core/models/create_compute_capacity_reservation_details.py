@@ -58,7 +58,6 @@ class CreateComputeCapacityReservationDetails(object):
             'is_default_reservation': 'bool',
             'instance_reservation_configs': 'list[InstanceReservationConfigDetails]'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
@@ -68,7 +67,6 @@ class CreateComputeCapacityReservationDetails(object):
             'is_default_reservation': 'isDefaultReservation',
             'instance_reservation_configs': 'instanceReservationConfigs'
         }
-
         self._compartment_id = None
         self._defined_tags = None
         self._display_name = None

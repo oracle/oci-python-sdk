@@ -48,7 +48,6 @@ class RegexMatchResult(object):
             'step_count': 'int',
             'sub_regexes_match_info': 'dict(str, MatchInfo)'
         }
-
         self.attribute_map = {
             'matched_log_entry_end_index': 'matchedLogEntryEndIndex',
             'regex_score': 'regexScore',
@@ -56,7 +55,6 @@ class RegexMatchResult(object):
             'step_count': 'stepCount',
             'sub_regexes_match_info': 'subRegexesMatchInfo'
         }
-
         self._matched_log_entry_end_index = None
         self._regex_score = None
         self._regex_steps_info = None

@@ -38,13 +38,11 @@ class AuthenticationPolicy(object):
             'compartment_id': 'str',
             'network_policy': 'NetworkPolicy'
         }
-
         self.attribute_map = {
             'password_policy': 'passwordPolicy',
             'compartment_id': 'compartmentId',
             'network_policy': 'networkPolicy'
         }
-
         self._password_policy = None
         self._compartment_id = None
         self._network_policy = None

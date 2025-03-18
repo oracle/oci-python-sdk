@@ -28,11 +28,9 @@ class ConfigureExascaleExadataInfrastructureDetails(object):
         self.swagger_types = {
             'total_storage_in_gbs': 'int'
         }
-
         self.attribute_map = {
             'total_storage_in_gbs': 'totalStorageInGBs'
         }
-
         self._total_storage_in_gbs = None
 
     @property

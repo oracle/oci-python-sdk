@@ -53,7 +53,6 @@ class InstallablePackageSummary(object):
             'architecture': 'str',
             'software_sources': 'list[SoftwareSourceId]'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'name': 'name',
@@ -62,7 +61,6 @@ class InstallablePackageSummary(object):
             'architecture': 'architecture',
             'software_sources': 'softwareSources'
         }
-
         self._display_name = None
         self._name = None
         self._type = None

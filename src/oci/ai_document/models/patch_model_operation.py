@@ -51,13 +51,11 @@ class PatchModelOperation(object):
             'value': 'str',
             'operation': 'str'
         }
-
         self.attribute_map = {
             'path': 'path',
             'value': 'value',
             'operation': 'operation'
         }
-
         self._path = None
         self._value = None
         self._operation = None

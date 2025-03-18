@@ -33,12 +33,10 @@ class ModifyPeerDetails(object):
             'peer_name': 'str',
             'ocpu_allocation_param': 'OcpuAllocationNumberParam'
         }
-
         self.attribute_map = {
             'peer_name': 'peerName',
             'ocpu_allocation_param': 'ocpuAllocationParam'
         }
-
         self._peer_name = None
         self._ocpu_allocation_param = None
 

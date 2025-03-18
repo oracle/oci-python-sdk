@@ -59,12 +59,10 @@ class CustomEncryptionKey(object):
             'kms_key_id': 'str',
             'key_state': 'str'
         }
-
         self.attribute_map = {
             'kms_key_id': 'kmsKeyId',
             'key_state': 'keyState'
         }
-
         self._kms_key_id = None
         self._key_state = None
 

@@ -56,7 +56,6 @@ class CreateWlpAgentDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'agent_version': 'agentVersion',
@@ -65,7 +64,6 @@ class CreateWlpAgentDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._compartment_id = None
         self._agent_version = None
         self._certificate_signed_request = None

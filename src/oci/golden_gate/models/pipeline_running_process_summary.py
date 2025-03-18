@@ -72,7 +72,6 @@ class PipelineRunningProcessSummary(object):
             'last_record_lag_in_seconds': 'float',
             'time_last_processed': 'datetime'
         }
-
         self.attribute_map = {
             'name': 'name',
             'process_type': 'processType',
@@ -80,7 +79,6 @@ class PipelineRunningProcessSummary(object):
             'last_record_lag_in_seconds': 'lastRecordLagInSeconds',
             'time_last_processed': 'timeLastProcessed'
         }
-
         self._name = None
         self._process_type = None
         self._status = None

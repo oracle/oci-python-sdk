@@ -28,11 +28,9 @@ class MaskingReportCollection(object):
         self.swagger_types = {
             'items': 'list[MaskingReportSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

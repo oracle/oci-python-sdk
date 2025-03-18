@@ -30,11 +30,9 @@ class FlannelOverlayClusterPodNetworkOptionDetails(ClusterPodNetworkOptionDetail
         self.swagger_types = {
             'cni_type': 'str'
         }
-
         self.attribute_map = {
             'cni_type': 'cniType'
         }
-
         self._cni_type = None
         self._cni_type = 'FLANNEL_OVERLAY'
 

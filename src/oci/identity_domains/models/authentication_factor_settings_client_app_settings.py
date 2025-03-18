@@ -131,7 +131,6 @@ class AuthenticationFactorSettingsClientAppSettings(object):
             'shared_secret_encoding': 'str',
             'unlock_on_app_foreground_enabled': 'bool'
         }
-
         self.attribute_map = {
             'min_pin_length': 'minPinLength',
             'max_failures_before_warning': 'maxFailuresBeforeWarning',
@@ -149,7 +148,6 @@ class AuthenticationFactorSettingsClientAppSettings(object):
             'shared_secret_encoding': 'sharedSecretEncoding',
             'unlock_on_app_foreground_enabled': 'unlockOnAppForegroundEnabled'
         }
-
         self._min_pin_length = None
         self._max_failures_before_warning = None
         self._max_failures_before_lockout = None

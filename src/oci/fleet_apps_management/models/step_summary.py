@@ -118,7 +118,6 @@ class StepSummary(object):
             'description': 'str',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'task_record_id': 'taskRecordId',
             'step_name': 'stepName',
@@ -130,7 +129,6 @@ class StepSummary(object):
             'description': 'description',
             'system_tags': 'systemTags'
         }
-
         self._task_record_id = None
         self._step_name = None
         self._sequence = None

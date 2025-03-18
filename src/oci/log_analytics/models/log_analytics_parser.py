@@ -225,7 +225,6 @@ class LogAnalyticsParser(object):
             'dependent_sources': 'list[DependentSource]',
             'dependent_parsers': 'list[DependentParser]'
         }
-
         self.attribute_map = {
             'content': 'content',
             'description': 'description',
@@ -264,7 +263,6 @@ class LogAnalyticsParser(object):
             'dependent_sources': 'dependentSources',
             'dependent_parsers': 'dependentParsers'
         }
-
         self._content = None
         self._description = None
         self._display_name = None

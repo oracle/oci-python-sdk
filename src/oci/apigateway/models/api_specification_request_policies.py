@@ -53,7 +53,6 @@ class ApiSpecificationRequestPolicies(object):
             'usage_plans': 'UsagePlansPolicy',
             'dynamic_authentication': 'DynamicAuthenticationPolicy'
         }
-
         self.attribute_map = {
             'authentication': 'authentication',
             'rate_limiting': 'rateLimiting',
@@ -62,7 +61,6 @@ class ApiSpecificationRequestPolicies(object):
             'usage_plans': 'usagePlans',
             'dynamic_authentication': 'dynamicAuthentication'
         }
-
         self._authentication = None
         self._rate_limiting = None
         self._cors = None

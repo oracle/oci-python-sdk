@@ -89,7 +89,6 @@ class TenancyAttachment(object):
             'time_updated': 'datetime',
             'time_last_attempted': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -100,7 +99,6 @@ class TenancyAttachment(object):
             'time_updated': 'timeUpdated',
             'time_last_attempted': 'timeLastAttempted'
         }
-
         self._id = None
         self._compartment_id = None
         self._governance_rule_id = None

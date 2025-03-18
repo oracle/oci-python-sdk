@@ -28,11 +28,9 @@ class FolderSummaryCollection(object):
         self.swagger_types = {
             'items': 'list[FolderSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

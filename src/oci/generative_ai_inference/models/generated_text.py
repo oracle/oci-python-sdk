@@ -48,7 +48,6 @@ class GeneratedText(object):
             'finish_reason': 'str',
             'token_likelihoods': 'list[TokenLikelihood]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'text': 'text',
@@ -56,7 +55,6 @@ class GeneratedText(object):
             'finish_reason': 'finishReason',
             'token_likelihoods': 'tokenLikelihoods'
         }
-
         self._id = None
         self._text = None
         self._likelihood = None

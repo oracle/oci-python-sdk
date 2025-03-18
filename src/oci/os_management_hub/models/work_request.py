@@ -352,7 +352,6 @@ class WorkRequest(object):
             'is_managed_by_autonomous_linux': 'bool',
             'reboot_timeout_in_mins': 'int'
         }
-
         self.attribute_map = {
             'operation_type': 'operationType',
             'status': 'status',
@@ -384,7 +383,6 @@ class WorkRequest(object):
             'is_managed_by_autonomous_linux': 'isManagedByAutonomousLinux',
             'reboot_timeout_in_mins': 'rebootTimeoutInMins'
         }
-
         self._operation_type = None
         self._status = None
         self._id = None

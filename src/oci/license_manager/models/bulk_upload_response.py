@@ -63,7 +63,6 @@ class BulkUploadResponse(object):
             'failed_license_record_info': 'list[BulkUploadFailedRecordInfo]',
             'message': 'str'
         }
-
         self.attribute_map = {
             'total_supported_records': 'totalSupportedRecords',
             'total_supported_records_saved': 'totalSupportedRecordsSaved',
@@ -74,7 +73,6 @@ class BulkUploadResponse(object):
             'failed_license_record_info': 'failedLicenseRecordInfo',
             'message': 'message'
         }
-
         self._total_supported_records = None
         self._total_supported_records_saved = None
         self._total_supported_duplicate_records = None

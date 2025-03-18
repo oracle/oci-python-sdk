@@ -43,14 +43,12 @@ class DefinedFileSystemConfiguration(object):
             'is_resizable': 'bool',
             'is_backup_partition': 'bool'
         }
-
         self.attribute_map = {
             'mount_point': 'mountPoint',
             'min_size_gb': 'minSizeGb',
             'is_resizable': 'isResizable',
             'is_backup_partition': 'isBackupPartition'
         }
-
         self._mount_point = None
         self._min_size_gb = None
         self._is_resizable = None

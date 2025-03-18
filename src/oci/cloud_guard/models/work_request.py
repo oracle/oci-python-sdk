@@ -121,7 +121,6 @@ class WorkRequest(object):
             'time_finished': 'datetime',
             'locks': 'list[ResourceLock]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -134,7 +133,6 @@ class WorkRequest(object):
             'time_finished': 'timeFinished',
             'locks': 'locks'
         }
-
         self._id = None
         self._compartment_id = None
         self._operation_type = None

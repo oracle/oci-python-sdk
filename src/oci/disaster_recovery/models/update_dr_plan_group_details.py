@@ -65,7 +65,6 @@ class UpdateDrPlanGroupDetails(object):
             'is_pause_enabled': 'bool',
             'steps': 'list[UpdateDrPlanStepDetails]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -73,7 +72,6 @@ class UpdateDrPlanGroupDetails(object):
             'is_pause_enabled': 'isPauseEnabled',
             'steps': 'steps'
         }
-
         self._id = None
         self._display_name = None
         self._type = None

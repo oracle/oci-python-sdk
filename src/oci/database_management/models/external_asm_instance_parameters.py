@@ -53,7 +53,6 @@ class ExternalAsmInstanceParameters(object):
             'rebalance_power': 'int',
             'preferred_read_failure_groups': 'list[str]'
         }
-
         self.attribute_map = {
             'asm_instance_id': 'asmInstanceId',
             'asm_instance_display_name': 'asmInstanceDisplayName',
@@ -62,7 +61,6 @@ class ExternalAsmInstanceParameters(object):
             'rebalance_power': 'rebalancePower',
             'preferred_read_failure_groups': 'preferredReadFailureGroups'
         }
-
         self._asm_instance_id = None
         self._asm_instance_display_name = None
         self._disk_discovery_path = None

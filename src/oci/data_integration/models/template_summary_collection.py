@@ -28,11 +28,9 @@ class TemplateSummaryCollection(object):
         self.swagger_types = {
             'items': 'list[TemplateSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

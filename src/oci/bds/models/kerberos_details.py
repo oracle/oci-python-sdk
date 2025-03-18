@@ -33,12 +33,10 @@ class KerberosDetails(object):
             'principal_name': 'str',
             'keytab_file': 'str'
         }
-
         self.attribute_map = {
             'principal_name': 'principalName',
             'keytab_file': 'keytabFile'
         }
-
         self._principal_name = None
         self._keytab_file = None
 

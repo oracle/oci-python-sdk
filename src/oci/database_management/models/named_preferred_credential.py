@@ -51,7 +51,6 @@ class NamedPreferredCredential(PreferredCredential):
             'is_accessible': 'bool',
             'named_credential_id': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'credential_name': 'credentialName',
@@ -59,7 +58,6 @@ class NamedPreferredCredential(PreferredCredential):
             'is_accessible': 'isAccessible',
             'named_credential_id': 'namedCredentialId'
         }
-
         self._type = None
         self._credential_name = None
         self._status = None

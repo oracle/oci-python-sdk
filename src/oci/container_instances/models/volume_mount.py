@@ -48,7 +48,6 @@ class VolumeMount(object):
             'is_read_only': 'bool',
             'partition': 'int'
         }
-
         self.attribute_map = {
             'mount_path': 'mountPath',
             'volume_name': 'volumeName',
@@ -56,7 +55,6 @@ class VolumeMount(object):
             'is_read_only': 'isReadOnly',
             'partition': 'partition'
         }
-
         self._mount_path = None
         self._volume_name = None
         self._sub_path = None

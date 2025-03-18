@@ -33,12 +33,10 @@ class QueryResultCollection(object):
             'items': 'list[dict(str, object)]',
             'usage': 'RequestUsage'
         }
-
         self.attribute_map = {
             'items': 'items',
             'usage': 'usage'
         }
-
         self._items = None
         self._usage = None
 

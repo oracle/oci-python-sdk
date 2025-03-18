@@ -35,12 +35,10 @@ class PersistedGetPathAnalysisDetails(GetPathAnalysisDetails):
             'type': 'str',
             'path_analyzer_test_id': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'path_analyzer_test_id': 'pathAnalyzerTestId'
         }
-
         self._type = None
         self._path_analyzer_test_id = None
         self._type = 'PERSISTED_QUERY'

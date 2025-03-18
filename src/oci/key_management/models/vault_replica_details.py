@@ -28,11 +28,9 @@ class VaultReplicaDetails(object):
         self.swagger_types = {
             'replication_id': 'str'
         }
-
         self.attribute_map = {
             'replication_id': 'replicationId'
         }
-
         self._replication_id = None
 
     @property

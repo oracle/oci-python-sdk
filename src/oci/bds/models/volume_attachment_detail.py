@@ -33,12 +33,10 @@ class VolumeAttachmentDetail(object):
             'volume_attachment_id': 'str',
             'volume_size_in_gbs': 'int'
         }
-
         self.attribute_map = {
             'volume_attachment_id': 'volumeAttachmentId',
             'volume_size_in_gbs': 'volumeSizeInGBs'
         }
-
         self._volume_attachment_id = None
         self._volume_size_in_gbs = None
 

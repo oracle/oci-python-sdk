@@ -33,12 +33,10 @@ class InstanceAgentFeatures(object):
             'is_monitoring_supported': 'bool',
             'is_management_supported': 'bool'
         }
-
         self.attribute_map = {
             'is_monitoring_supported': 'isMonitoringSupported',
             'is_management_supported': 'isManagementSupported'
         }
-
         self._is_monitoring_supported = None
         self._is_management_supported = None
 

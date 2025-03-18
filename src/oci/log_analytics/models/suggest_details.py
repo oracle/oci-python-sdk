@@ -48,14 +48,12 @@ class SuggestDetails(object):
             'query_string': 'str',
             'sub_system': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'compartment_id_in_subtree': 'compartmentIdInSubtree',
             'query_string': 'queryString',
             'sub_system': 'subSystem'
         }
-
         self._compartment_id = None
         self._compartment_id_in_subtree = None
         self._query_string = None

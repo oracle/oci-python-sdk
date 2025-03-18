@@ -140,7 +140,6 @@ class ScheduledTaskSummary(object):
             'last_execution_status': 'str',
             'time_last_executed': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'task_type': 'taskType',
@@ -158,7 +157,6 @@ class ScheduledTaskSummary(object):
             'last_execution_status': 'lastExecutionStatus',
             'time_last_executed': 'timeLastExecuted'
         }
-
         self._id = None
         self._task_type = None
         self._target_service = None

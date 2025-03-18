@@ -625,7 +625,6 @@ class SchemaAttributes(object):
             'idcs_requires_write_for_access_flows': 'bool',
             'idcs_requires_immediate_read_after_write_for_access_flows': 'bool'
         }
-
         self.attribute_map = {
             'name': 'name',
             'idcs_display_name_message_id': 'idcsDisplayNameMessageId',
@@ -708,7 +707,6 @@ class SchemaAttributes(object):
             'idcs_requires_write_for_access_flows': 'idcsRequiresWriteForAccessFlows',
             'idcs_requires_immediate_read_after_write_for_access_flows': 'idcsRequiresImmediateReadAfterWriteForAccessFlows'
         }
-
         self._name = None
         self._idcs_display_name_message_id = None
         self._idcs_rtsa_hide_attribute = None

@@ -28,11 +28,9 @@ class AssociationSummaryReport(object):
         self.swagger_types = {
             'association_count': 'int'
         }
-
         self.attribute_map = {
             'association_count': 'associationCount'
         }
-
         self._association_count = None
 
     @property

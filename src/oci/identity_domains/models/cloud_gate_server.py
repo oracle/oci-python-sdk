@@ -142,7 +142,6 @@ class CloudGateServer(object):
             'nginx_settings': 'str',
             'cloud_gate': 'CloudGateServerCloudGate'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -166,7 +165,6 @@ class CloudGateServer(object):
             'nginx_settings': 'nginxSettings',
             'cloud_gate': 'cloudGate'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

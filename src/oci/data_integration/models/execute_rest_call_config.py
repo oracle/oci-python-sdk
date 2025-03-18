@@ -60,13 +60,11 @@ class ExecuteRestCallConfig(object):
             'request_headers': 'dict(str, str)',
             'config_values': 'ConfigValues'
         }
-
         self.attribute_map = {
             'method_type': 'methodType',
             'request_headers': 'requestHeaders',
             'config_values': 'configValues'
         }
-
         self._method_type = None
         self._request_headers = None
         self._config_values = None

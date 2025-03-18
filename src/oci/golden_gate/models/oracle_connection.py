@@ -237,7 +237,6 @@ class OracleConnection(Connection):
             'password_secret_id': 'str',
             'wallet_secret_id': 'str'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'id': 'id',
@@ -269,7 +268,6 @@ class OracleConnection(Connection):
             'password_secret_id': 'passwordSecretId',
             'wallet_secret_id': 'walletSecretId'
         }
-
         self._connection_type = None
         self._id = None
         self._display_name = None

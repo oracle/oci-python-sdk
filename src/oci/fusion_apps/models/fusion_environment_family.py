@@ -116,7 +116,6 @@ class FusionEnvironmentFamily(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'time_last_subscription_update': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -132,7 +131,6 @@ class FusionEnvironmentFamily(object):
             'defined_tags': 'definedTags',
             'time_last_subscription_update': 'timeLastSubscriptionUpdate'
         }
-
         self._id = None
         self._display_name = None
         self._family_maintenance_policy = None

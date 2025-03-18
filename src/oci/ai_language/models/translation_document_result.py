@@ -43,14 +43,12 @@ class TranslationDocumentResult(object):
             'source_language_code': 'str',
             'target_language_code': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'translated_text': 'translatedText',
             'source_language_code': 'sourceLanguageCode',
             'target_language_code': 'targetLanguageCode'
         }
-
         self._key = None
         self._translated_text = None
         self._source_language_code = None

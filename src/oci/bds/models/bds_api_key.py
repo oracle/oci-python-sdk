@@ -95,7 +95,6 @@ class BdsApiKey(object):
             'lifecycle_state': 'str',
             'domain_ocid': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'user_id': 'userId',
@@ -108,7 +107,6 @@ class BdsApiKey(object):
             'lifecycle_state': 'lifecycleState',
             'domain_ocid': 'domainOcid'
         }
-
         self._id = None
         self._user_id = None
         self._key_alias = None

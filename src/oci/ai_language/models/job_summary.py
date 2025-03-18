@@ -103,7 +103,6 @@ class JobSummary(object):
             'time_started': 'datetime',
             'time_completed': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -122,7 +121,6 @@ class JobSummary(object):
             'time_started': 'timeStarted',
             'time_completed': 'timeCompleted'
         }
-
         self._id = None
         self._display_name = None
         self._description = None

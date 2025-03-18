@@ -34,11 +34,9 @@ class CompatibleFormatsForDataTypes(object):
         self.swagger_types = {
             'formats_for_data_type': 'list[FormatsForDataType]'
         }
-
         self.attribute_map = {
             'formats_for_data_type': 'formatsForDataType'
         }
-
         self._formats_for_data_type = None
 
     @property

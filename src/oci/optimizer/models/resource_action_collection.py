@@ -28,11 +28,9 @@ class ResourceActionCollection(object):
         self.swagger_types = {
             'items': 'list[ResourceActionSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

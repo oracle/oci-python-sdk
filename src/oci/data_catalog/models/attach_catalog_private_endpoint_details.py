@@ -28,11 +28,9 @@ class AttachCatalogPrivateEndpointDetails(object):
         self.swagger_types = {
             'catalog_private_endpoint_id': 'str'
         }
-
         self.attribute_map = {
             'catalog_private_endpoint_id': 'catalogPrivateEndpointId'
         }
-
         self._catalog_private_endpoint_id = None
 
     @property

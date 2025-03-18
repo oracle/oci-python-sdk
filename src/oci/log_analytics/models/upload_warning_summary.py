@@ -43,14 +43,12 @@ class UploadWarningSummary(object):
             'time_started': 'datetime',
             'error_message': 'str'
         }
-
         self.attribute_map = {
             'reference': 'reference',
             'status': 'status',
             'time_started': 'timeStarted',
             'error_message': 'errorMessage'
         }
-
         self._reference = None
         self._status = None
         self._time_started = None

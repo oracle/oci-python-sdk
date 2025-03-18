@@ -368,7 +368,6 @@ class CloudVmClusterSummary(object):
             'vm_cluster_type': 'str',
             'compute_model': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -426,7 +425,6 @@ class CloudVmClusterSummary(object):
             'vm_cluster_type': 'vmClusterType',
             'compute_model': 'computeModel'
         }
-
         self._id = None
         self._compartment_id = None
         self._subscription_id = None

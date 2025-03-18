@@ -172,7 +172,6 @@ class VbInstance(object):
             'management_vcn_id': 'str',
             'network_endpoint_details': 'NetworkEndpointDetails'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -196,7 +195,6 @@ class VbInstance(object):
             'management_vcn_id': 'managementVcnId',
             'network_endpoint_details': 'networkEndpointDetails'
         }
-
         self._id = None
         self._display_name = None
         self._compartment_id = None

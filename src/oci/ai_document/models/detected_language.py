@@ -33,12 +33,10 @@ class DetectedLanguage(object):
             'language': 'str',
             'confidence': 'float'
         }
-
         self.attribute_map = {
             'language': 'language',
             'confidence': 'confidence'
         }
-
         self._language = None
         self._confidence = None
 

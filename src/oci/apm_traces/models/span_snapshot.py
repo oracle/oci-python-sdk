@@ -58,7 +58,6 @@ class SpanSnapshot(object):
             'thread_snapshots': 'list[ThreadSnapshot]',
             'children': 'list[SpanSnapshot]'
         }
-
         self.attribute_map = {
             'key': 'key',
             'span_name': 'spanName',
@@ -68,7 +67,6 @@ class SpanSnapshot(object):
             'thread_snapshots': 'threadSnapshots',
             'children': 'children'
         }
-
         self._key = None
         self._span_name = None
         self._time_started = None

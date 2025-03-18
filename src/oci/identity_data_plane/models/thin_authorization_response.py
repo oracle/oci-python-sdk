@@ -33,12 +33,10 @@ class ThinAuthorizationResponse(object):
             'authorization_request': 'AuthorizationRequest',
             'decision_cache_duration': 'str'
         }
-
         self.attribute_map = {
             'authorization_request': 'authorizationRequest',
             'decision_cache_duration': 'decisionCacheDuration'
         }
-
         self._authorization_request = None
         self._decision_cache_duration = None
 

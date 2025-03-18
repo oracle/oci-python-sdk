@@ -33,12 +33,10 @@ class ConnectionAliasSummary(object):
             'alias_name': 'str',
             'alias_details': 'str'
         }
-
         self.attribute_map = {
             'alias_name': 'aliasName',
             'alias_details': 'aliasDetails'
         }
-
         self._alias_name = None
         self._alias_details = None
 

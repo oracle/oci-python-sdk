@@ -106,7 +106,6 @@ class ExternalListenerServicedDatabase(object):
             'database_sub_type': 'str',
             'is_managed': 'bool'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -116,7 +115,6 @@ class ExternalListenerServicedDatabase(object):
             'database_sub_type': 'databaseSubType',
             'is_managed': 'isManaged'
         }
-
         self._id = None
         self._display_name = None
         self._db_unique_name = None

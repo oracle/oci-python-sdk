@@ -63,12 +63,10 @@ class MaintenancePolicy(object):
             'monthly_patching_override': 'str',
             'environment_maintenance_override': 'str'
         }
-
         self.attribute_map = {
             'monthly_patching_override': 'monthlyPatchingOverride',
             'environment_maintenance_override': 'environmentMaintenanceOverride'
         }
-
         self._monthly_patching_override = None
         self._environment_maintenance_override = None
 

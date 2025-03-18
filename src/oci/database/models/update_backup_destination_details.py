@@ -73,7 +73,6 @@ class UpdateBackupDestinationDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'vpc_users': 'vpcUsers',
             'connection_string': 'connectionString',
@@ -84,7 +83,6 @@ class UpdateBackupDestinationDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._vpc_users = None
         self._connection_string = None
         self._local_mount_point_path = None

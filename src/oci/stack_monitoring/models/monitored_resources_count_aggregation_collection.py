@@ -28,11 +28,9 @@ class MonitoredResourcesCountAggregationCollection(object):
         self.swagger_types = {
             'items': 'list[MonitoredResourcesCountAggregation]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

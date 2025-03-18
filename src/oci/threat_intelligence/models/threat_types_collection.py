@@ -28,11 +28,9 @@ class ThreatTypesCollection(object):
         self.swagger_types = {
             'items': 'list[ThreatTypeSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

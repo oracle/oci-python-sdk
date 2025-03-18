@@ -28,11 +28,9 @@ class TaskRunLineageSummaryCollection(object):
         self.swagger_types = {
             'items': 'list[TaskRunLineageSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

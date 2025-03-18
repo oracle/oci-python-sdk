@@ -142,7 +142,6 @@ class ExtensionFidoAuthenticationFactorSettings(object):
             'exclude_credentials': 'bool',
             'domain_validation_level': 'int'
         }
-
         self.attribute_map = {
             'attestation': 'attestation',
             'authenticator_selection_attachment': 'authenticatorSelectionAttachment',
@@ -154,7 +153,6 @@ class ExtensionFidoAuthenticationFactorSettings(object):
             'exclude_credentials': 'excludeCredentials',
             'domain_validation_level': 'domainValidationLevel'
         }
-
         self._attestation = None
         self._authenticator_selection_attachment = None
         self._authenticator_selection_user_verification = None

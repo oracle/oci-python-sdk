@@ -268,7 +268,6 @@ class VmCluster(object):
             'storage_management_type': 'str',
             'compute_model': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -306,7 +305,6 @@ class VmCluster(object):
             'storage_management_type': 'storageManagementType',
             'compute_model': 'computeModel'
         }
-
         self._id = None
         self._compartment_id = None
         self._last_patch_history_entry_id = None

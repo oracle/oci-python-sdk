@@ -33,12 +33,10 @@ class BulkUpdateNotesStatus(object):
             'attribute_statuses': 'list[AttributeUpdateNotesResponse]',
             'bulk_update_notes_metadata': 'BulkUpdateNotesMetadata'
         }
-
         self.attribute_map = {
             'attribute_statuses': 'attributeStatuses',
             'bulk_update_notes_metadata': 'bulkUpdateNotesMetadata'
         }
-
         self._attribute_statuses = None
         self._bulk_update_notes_metadata = None
 

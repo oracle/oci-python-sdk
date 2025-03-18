@@ -33,12 +33,10 @@ class SqlResponseTimeDistributionAggregation(object):
             'bucket_id': 'str',
             'executions_count': 'int'
         }
-
         self.attribute_map = {
             'bucket_id': 'bucketId',
             'executions_count': 'executionsCount'
         }
-
         self._bucket_id = None
         self._executions_count = None
 

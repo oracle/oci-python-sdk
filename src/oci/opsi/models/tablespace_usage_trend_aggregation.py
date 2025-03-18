@@ -38,13 +38,11 @@ class TablespaceUsageTrendAggregation(object):
             'tablespace_type': 'str',
             'usage_data': 'list[TablespaceUsageTrend]'
         }
-
         self.attribute_map = {
             'tablespace_name': 'tablespaceName',
             'tablespace_type': 'tablespaceType',
             'usage_data': 'usageData'
         }
-
         self._tablespace_name = None
         self._tablespace_type = None
         self._usage_data = None

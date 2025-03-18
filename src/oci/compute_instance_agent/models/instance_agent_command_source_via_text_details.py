@@ -40,13 +40,11 @@ class InstanceAgentCommandSourceViaTextDetails(InstanceAgentCommandSourceDetails
             'text': 'str',
             'text_sha256': 'str'
         }
-
         self.attribute_map = {
             'source_type': 'sourceType',
             'text': 'text',
             'text_sha256': 'textSha256'
         }
-
         self._source_type = None
         self._text = None
         self._text_sha256 = None

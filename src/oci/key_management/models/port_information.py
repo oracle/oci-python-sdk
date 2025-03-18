@@ -43,12 +43,10 @@ class PortInformation(object):
             'port_number': 'int',
             'port_type': 'str'
         }
-
         self.attribute_map = {
             'port_number': 'portNumber',
             'port_type': 'portType'
         }
-
         self._port_number = None
         self._port_type = None
 

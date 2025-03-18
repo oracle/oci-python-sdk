@@ -28,11 +28,9 @@ class TableStatisticsCollection(object):
         self.swagger_types = {
             'items': 'list[TableStatisticSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

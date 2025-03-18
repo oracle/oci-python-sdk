@@ -38,13 +38,11 @@ class SqlCollectionLogDimensions(object):
             'client_os_user_name': 'str',
             'client_program': 'str'
         }
-
         self.attribute_map = {
             'client_ip': 'clientIp',
             'client_os_user_name': 'clientOsUserName',
             'client_program': 'clientProgram'
         }
-
         self._client_ip = None
         self._client_os_user_name = None
         self._client_program = None

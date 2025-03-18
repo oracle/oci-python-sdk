@@ -107,7 +107,6 @@ class WrappingKey(object):
             'time_created': 'datetime',
             'vault_id': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'id': 'id',
@@ -116,7 +115,6 @@ class WrappingKey(object):
             'time_created': 'timeCreated',
             'vault_id': 'vaultId'
         }
-
         self._compartment_id = None
         self._id = None
         self._lifecycle_state = None

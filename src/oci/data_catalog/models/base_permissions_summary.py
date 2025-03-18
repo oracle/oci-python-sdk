@@ -28,11 +28,9 @@ class BasePermissionsSummary(object):
         self.swagger_types = {
             'user_permissions': 'list[str]'
         }
-
         self.attribute_map = {
             'user_permissions': 'userPermissions'
         }
-
         self._user_permissions = None
 
     @property

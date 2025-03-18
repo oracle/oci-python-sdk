@@ -283,7 +283,6 @@ class WorkRequest(object):
             'time_started': 'datetime',
             'time_finished': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -298,7 +297,6 @@ class WorkRequest(object):
             'time_started': 'timeStarted',
             'time_finished': 'timeFinished'
         }
-
         self._id = None
         self._compartment_id = None
         self._oda_instance_id = None

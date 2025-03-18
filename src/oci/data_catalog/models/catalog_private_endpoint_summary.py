@@ -127,7 +127,6 @@ class CatalogPrivateEndpointSummary(object):
             'attached_catalogs': 'list[str]',
             'locks': 'list[ResourceLock]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'subnet_id': 'subnetId',
@@ -144,7 +143,6 @@ class CatalogPrivateEndpointSummary(object):
             'attached_catalogs': 'attachedCatalogs',
             'locks': 'locks'
         }
-
         self._id = None
         self._subnet_id = None
         self._dns_zones = None

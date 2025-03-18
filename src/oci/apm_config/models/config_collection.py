@@ -28,11 +28,9 @@ class ConfigCollection(object):
         self.swagger_types = {
             'items': 'list[ConfigSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

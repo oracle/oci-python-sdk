@@ -53,7 +53,6 @@ class TableCollection(object):
             'max_on_demand_capacity_tables': 'int',
             'available_replication_regions': 'list[str]'
         }
-
         self.attribute_map = {
             'items': 'items',
             'max_auto_reclaimable_tables': 'maxAutoReclaimableTables',
@@ -62,7 +61,6 @@ class TableCollection(object):
             'max_on_demand_capacity_tables': 'maxOnDemandCapacityTables',
             'available_replication_regions': 'availableReplicationRegions'
         }
-
         self._items = None
         self._max_auto_reclaimable_tables = None
         self._auto_reclaimable_tables = None

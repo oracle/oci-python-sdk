@@ -56,13 +56,11 @@ class SecureAccessControlRule(object):
             'value': 'str',
             'vcn_ips': 'str'
         }
-
         self.attribute_map = {
             'ip_notation': 'ipNotation',
             'value': 'value',
             'vcn_ips': 'vcnIps'
         }
-
         self._ip_notation = None
         self._value = None
         self._vcn_ips = None

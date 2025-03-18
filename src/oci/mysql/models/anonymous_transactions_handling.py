@@ -49,11 +49,9 @@ class AnonymousTransactionsHandling(object):
         self.swagger_types = {
             'policy': 'str'
         }
-
         self.attribute_map = {
             'policy': 'policy'
         }
-
         self._policy = None
 
     @staticmethod

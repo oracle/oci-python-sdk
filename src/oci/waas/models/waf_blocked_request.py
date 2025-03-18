@@ -77,14 +77,12 @@ class WafBlockedRequest(object):
             'waf_feature': 'str',
             'count': 'int'
         }
-
         self.attribute_map = {
             'time_observed': 'timeObserved',
             'time_range_in_seconds': 'timeRangeInSeconds',
             'waf_feature': 'wafFeature',
             'count': 'count'
         }
-
         self._time_observed = None
         self._time_range_in_seconds = None
         self._waf_feature = None

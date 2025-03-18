@@ -33,12 +33,10 @@ class SchemaDefinition(object):
             'name': 'str',
             'objects': 'list[str]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'objects': 'objects'
         }
-
         self._name = None
         self._objects = None
 

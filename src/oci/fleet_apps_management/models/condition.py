@@ -38,13 +38,11 @@ class Condition(object):
             'attr_key': 'str',
             'attr_value': 'str'
         }
-
         self.attribute_map = {
             'attr_group': 'attrGroup',
             'attr_key': 'attrKey',
             'attr_value': 'attrValue'
         }
-
         self._attr_group = None
         self._attr_key = None
         self._attr_value = None

@@ -89,14 +89,12 @@ class SignedData(object):
             'signature': 'str',
             'signing_algorithm': 'str'
         }
-
         self.attribute_map = {
             'key_id': 'keyId',
             'key_version_id': 'keyVersionId',
             'signature': 'signature',
             'signing_algorithm': 'signingAlgorithm'
         }
-
         self._key_id = None
         self._key_version_id = None
         self._signature = None

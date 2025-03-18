@@ -33,12 +33,10 @@ class CreateTransferApplianceDetails(object):
             'customer_shipping_address': 'ShippingAddress',
             'minimum_storage_capacity_in_terabytes': 'int'
         }
-
         self.attribute_map = {
             'customer_shipping_address': 'customerShippingAddress',
             'minimum_storage_capacity_in_terabytes': 'minimumStorageCapacityInTerabytes'
         }
-
         self._customer_shipping_address = None
         self._minimum_storage_capacity_in_terabytes = None
 

@@ -35,12 +35,10 @@ class FunctionTargetSystemDetails(TargetSystemDetails):
             'target_system_type': 'str',
             'function_id': 'str'
         }
-
         self.attribute_map = {
             'target_system_type': 'targetSystemType',
             'function_id': 'functionId'
         }
-
         self._target_system_type = None
         self._function_id = None
         self._target_system_type = 'FUNCTION'

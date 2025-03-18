@@ -28,11 +28,9 @@ class ExternalAsmInstanceCollection(object):
         self.swagger_types = {
             'items': 'list[ExternalAsmInstanceSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

@@ -78,7 +78,6 @@ class LineageObject(object):
             'type_key': 'str',
             'properties': 'dict(str, dict(str, str))'
         }
-
         self.attribute_map = {
             'object_key': 'objectKey',
             'display_name': 'displayName',
@@ -92,7 +91,6 @@ class LineageObject(object):
             'type_key': 'typeKey',
             'properties': 'properties'
         }
-
         self._object_key = None
         self._display_name = None
         self._description = None

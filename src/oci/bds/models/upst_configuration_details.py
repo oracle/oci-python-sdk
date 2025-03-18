@@ -33,12 +33,10 @@ class UpstConfigurationDetails(object):
             'vault_id': 'str',
             'master_encryption_key_id': 'str'
         }
-
         self.attribute_map = {
             'vault_id': 'vaultId',
             'master_encryption_key_id': 'masterEncryptionKeyId'
         }
-
         self._vault_id = None
         self._master_encryption_key_id = None
 

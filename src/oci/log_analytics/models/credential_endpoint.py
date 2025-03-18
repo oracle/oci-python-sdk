@@ -58,7 +58,6 @@ class CredentialEndpoint(object):
             'response': 'EndpointResponse',
             'proxy': 'EndpointProxy'
         }
-
         self.attribute_map = {
             'name': 'name',
             'description': 'description',
@@ -68,7 +67,6 @@ class CredentialEndpoint(object):
             'response': 'response',
             'proxy': 'proxy'
         }
-
         self._name = None
         self._description = None
         self._model = None

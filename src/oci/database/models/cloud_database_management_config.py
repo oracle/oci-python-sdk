@@ -77,12 +77,10 @@ class CloudDatabaseManagementConfig(object):
             'management_status': 'str',
             'management_type': 'str'
         }
-
         self.attribute_map = {
             'management_status': 'managementStatus',
             'management_type': 'managementType'
         }
-
         self._management_status = None
         self._management_type = None
 

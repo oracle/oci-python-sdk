@@ -43,14 +43,12 @@ class BootVolumeReplicaInfo(object):
             'availability_domain': 'str',
             'kms_key_id': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'boot_volume_replica_id': 'bootVolumeReplicaId',
             'availability_domain': 'availabilityDomain',
             'kms_key_id': 'kmsKeyId'
         }
-
         self._display_name = None
         self._boot_volume_replica_id = None
         self._availability_domain = None

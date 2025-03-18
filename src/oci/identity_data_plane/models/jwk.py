@@ -53,7 +53,6 @@ class JWK(object):
             'alg': 'str',
             'kty': 'str'
         }
-
         self.attribute_map = {
             'n': 'n',
             'e': 'e',
@@ -62,7 +61,6 @@ class JWK(object):
             'alg': 'alg',
             'kty': 'kty'
         }
-
         self._n = None
         self._e = None
         self._kid = None

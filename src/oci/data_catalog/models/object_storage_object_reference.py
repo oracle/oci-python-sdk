@@ -38,13 +38,11 @@ class ObjectStorageObjectReference(object):
             'bucket_name': 'str',
             'object_name': 'str'
         }
-
         self.attribute_map = {
             'namespace_name': 'namespaceName',
             'bucket_name': 'bucketName',
             'object_name': 'objectName'
         }
-
         self._namespace_name = None
         self._bucket_name = None
         self._object_name = None

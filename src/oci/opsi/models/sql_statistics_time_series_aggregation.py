@@ -33,12 +33,10 @@ class SqlStatisticsTimeSeriesAggregation(object):
             'database_details': 'DatabaseDetails',
             'statistics': 'list[SqlStatisticsTimeSeries]'
         }
-
         self.attribute_map = {
             'database_details': 'databaseDetails',
             'statistics': 'statistics'
         }
-
         self._database_details = None
         self._statistics = None
 

@@ -83,7 +83,6 @@ class UpdateOperatorControlAssignmentDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'time_assignment_from': 'timeAssignmentFrom',
             'time_assignment_to': 'timeAssignmentTo',
@@ -98,7 +97,6 @@ class UpdateOperatorControlAssignmentDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._time_assignment_from = None
         self._time_assignment_to = None
         self._is_enforced_always = None

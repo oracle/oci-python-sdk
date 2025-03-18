@@ -63,7 +63,6 @@ class SenderSummary(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'email_address': 'emailAddress',
@@ -74,7 +73,6 @@ class SenderSummary(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._compartment_id = None
         self._email_address = None
         self._id = None

@@ -43,14 +43,12 @@ class DocumentClassificationConfidenceEntry(object):
             'recall': 'float',
             'f1_score': 'float'
         }
-
         self.attribute_map = {
             'threshold': 'threshold',
             'precision': 'precision',
             'recall': 'recall',
             'f1_score': 'f1Score'
         }
-
         self._threshold = None
         self._precision = None
         self._recall = None

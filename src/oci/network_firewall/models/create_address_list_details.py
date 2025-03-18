@@ -47,13 +47,11 @@ class CreateAddressListDetails(object):
             'type': 'str',
             'addresses': 'list[str]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'type': 'type',
             'addresses': 'addresses'
         }
-
         self._name = None
         self._type = None
         self._addresses = None

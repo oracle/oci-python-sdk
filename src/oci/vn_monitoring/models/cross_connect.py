@@ -141,7 +141,6 @@ class CrossConnect(object):
             'oci_physical_device_name': 'str',
             'oci_logical_device_name': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'cross_connect_group_id': 'crossConnectGroupId',
@@ -159,7 +158,6 @@ class CrossConnect(object):
             'oci_physical_device_name': 'ociPhysicalDeviceName',
             'oci_logical_device_name': 'ociLogicalDeviceName'
         }
-
         self._compartment_id = None
         self._cross_connect_group_id = None
         self._defined_tags = None

@@ -43,14 +43,12 @@ class JavaRuntimeId(object):
             'distribution': 'str',
             'jre_key': 'str'
         }
-
         self.attribute_map = {
             'version': 'version',
             'vendor': 'vendor',
             'distribution': 'distribution',
             'jre_key': 'jreKey'
         }
-
         self._version = None
         self._vendor = None
         self._distribution = None

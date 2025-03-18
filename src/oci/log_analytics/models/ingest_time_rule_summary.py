@@ -104,7 +104,6 @@ class IngestTimeRuleSummary(object):
             'field_name': 'str',
             'field_value': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'description': 'description',
@@ -120,7 +119,6 @@ class IngestTimeRuleSummary(object):
             'field_name': 'fieldName',
             'field_value': 'fieldValue'
         }
-
         self._id = None
         self._description = None
         self._compartment_id = None

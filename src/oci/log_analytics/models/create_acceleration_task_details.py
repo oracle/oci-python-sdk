@@ -57,7 +57,6 @@ class CreateAccelerationTaskDetails(CreateScheduledTaskDetails):
             'defined_tags': 'dict(str, dict(str, object))',
             'saved_search_id': 'str'
         }
-
         self.attribute_map = {
             'kind': 'kind',
             'compartment_id': 'compartmentId',
@@ -66,7 +65,6 @@ class CreateAccelerationTaskDetails(CreateScheduledTaskDetails):
             'defined_tags': 'definedTags',
             'saved_search_id': 'savedSearchId'
         }
-
         self._kind = None
         self._compartment_id = None
         self._display_name = None

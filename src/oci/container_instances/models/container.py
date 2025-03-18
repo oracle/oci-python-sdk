@@ -186,7 +186,6 @@ class Container(object):
             'container_restart_attempt_count': 'int',
             'security_context': 'SecurityContext'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -215,7 +214,6 @@ class Container(object):
             'container_restart_attempt_count': 'containerRestartAttemptCount',
             'security_context': 'securityContext'
         }
-
         self._id = None
         self._display_name = None
         self._compartment_id = None

@@ -522,7 +522,6 @@ class TablespaceSummary(object):
             'is_default': 'bool',
             'datafiles': 'list[Datafile]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'type': 'type',
@@ -564,7 +563,6 @@ class TablespaceSummary(object):
             'is_default': 'isDefault',
             'datafiles': 'datafiles'
         }
-
         self._name = None
         self._type = None
         self._status = None

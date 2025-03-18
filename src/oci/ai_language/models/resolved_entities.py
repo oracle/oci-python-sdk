@@ -28,11 +28,9 @@ class ResolvedEntities(object):
         self.swagger_types = {
             'details': 'list[ResolvedEntity]'
         }
-
         self.attribute_map = {
             'details': 'details'
         }
-
         self._details = None
 
     @property

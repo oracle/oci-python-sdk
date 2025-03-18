@@ -35,12 +35,10 @@ class CohereToolMessage(CohereMessage):
             'role': 'str',
             'tool_results': 'list[CohereToolResult]'
         }
-
         self.attribute_map = {
             'role': 'role',
             'tool_results': 'toolResults'
         }
-
         self._role = None
         self._tool_results = None
         self._role = 'TOOL'

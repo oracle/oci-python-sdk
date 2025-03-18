@@ -38,13 +38,11 @@ class HeatWaveFleetByCategory(object):
             'value': 'str',
             'count': 'int'
         }
-
         self.attribute_map = {
             'name': 'name',
             'value': 'value',
             'count': 'count'
         }
-
         self._name = None
         self._value = None
         self._count = None

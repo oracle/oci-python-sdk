@@ -52,14 +52,12 @@ class RotateCloudAutonomousVmClusterOrdsCertsDetails(object):
             'certificate_authority_id': 'str',
             'ca_bundle_id': 'str'
         }
-
         self.attribute_map = {
             'certificate_generation_type': 'certificateGenerationType',
             'certificate_id': 'certificateId',
             'certificate_authority_id': 'certificateAuthorityId',
             'ca_bundle_id': 'caBundleId'
         }
-
         self._certificate_generation_type = None
         self._certificate_id = None
         self._certificate_authority_id = None

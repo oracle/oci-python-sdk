@@ -199,7 +199,6 @@ class JobExecutionSummary(object):
             'time_created': 'datetime',
             'time_completed': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -218,7 +217,6 @@ class JobExecutionSummary(object):
             'time_created': 'timeCreated',
             'time_completed': 'timeCompleted'
         }
-
         self._id = None
         self._name = None
         self._compartment_id = None

@@ -50,12 +50,10 @@ class BulkEditOperationDetails(object):
             'operation_type': 'str',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'operation_type': 'operationType',
             'defined_tags': 'definedTags'
         }
-
         self._operation_type = None
         self._defined_tags = None
 

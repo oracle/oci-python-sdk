@@ -38,13 +38,11 @@ class AllowedPhaseTwoParameters(object):
             'authentication_algorithms': 'list[str]',
             'pfs_dh_groups': 'list[str]'
         }
-
         self.attribute_map = {
             'encryption_algorithms': 'encryptionAlgorithms',
             'authentication_algorithms': 'authenticationAlgorithms',
             'pfs_dh_groups': 'pfsDhGroups'
         }
-
         self._encryption_algorithms = None
         self._authentication_algorithms = None
         self._pfs_dh_groups = None

@@ -115,7 +115,6 @@ class DifferenceColumn(object):
             'sync_status': 'str',
             'time_last_synced': 'datetime'
         }
-
         self.attribute_map = {
             'key': 'key',
             'difference_type': 'differenceType',
@@ -129,7 +128,6 @@ class DifferenceColumn(object):
             'sync_status': 'syncStatus',
             'time_last_synced': 'timeLastSynced'
         }
-
         self._key = None
         self._difference_type = None
         self._sensitive_columnkey = None

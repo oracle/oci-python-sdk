@@ -65,14 +65,12 @@ class ResourceRiskScoreAggregation(object):
             'risk_score': 'float',
             'risk_level': 'str'
         }
-
         self.attribute_map = {
             'tactics': 'tactics',
             'score_timestamp': 'scoreTimestamp',
             'risk_score': 'riskScore',
             'risk_level': 'riskLevel'
         }
-
         self._tactics = None
         self._score_timestamp = None
         self._risk_score = None

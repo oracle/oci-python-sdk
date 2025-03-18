@@ -28,11 +28,9 @@ class PrevalidateShardedDatabaseResult(object):
         self.swagger_types = {
             'validation_result': 'dict(str, object)'
         }
-
         self.attribute_map = {
             'validation_result': 'validationResult'
         }
-
         self._validation_result = None
 
     @property

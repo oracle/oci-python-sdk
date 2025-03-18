@@ -33,12 +33,10 @@ class QueryResultsOrderedBySummary(object):
             'query_results_ordered_by': 'str',
             'query_results_sort_order': 'str'
         }
-
         self.attribute_map = {
             'query_results_ordered_by': 'queryResultsOrderedBy',
             'query_results_sort_order': 'queryResultsSortOrder'
         }
-
         self._query_results_ordered_by = None
         self._query_results_sort_order = None
 

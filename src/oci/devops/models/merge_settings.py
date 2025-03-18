@@ -63,12 +63,10 @@ class MergeSettings(object):
             'default_merge_strategy': 'str',
             'allowed_merge_strategies': 'list[MergeStrategy]'
         }
-
         self.attribute_map = {
             'default_merge_strategy': 'defaultMergeStrategy',
             'allowed_merge_strategies': 'allowedMergeStrategies'
         }
-
         self._default_merge_strategy = None
         self._allowed_merge_strategies = None
 

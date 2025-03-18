@@ -107,7 +107,6 @@ class ProductLicenseConsumerSummary(object):
             'are_all_options_available': 'bool',
             'missing_products': 'list[Product]'
         }
-
         self.attribute_map = {
             'resource_id': 'resourceId',
             'resource_name': 'resourceName',
@@ -122,7 +121,6 @@ class ProductLicenseConsumerSummary(object):
             'are_all_options_available': 'areAllOptionsAvailable',
             'missing_products': 'missingProducts'
         }
-
         self._resource_id = None
         self._resource_name = None
         self._product_name = None

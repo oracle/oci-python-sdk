@@ -48,7 +48,6 @@ class InstanceNetworkInterfaceAssociation(object):
             'public_dns_name': 'str',
             'public_ip': 'str'
         }
-
         self.attribute_map = {
             'carrier_ip': 'carrierIp',
             'customer_owned_ip': 'customerOwnedIp',
@@ -56,7 +55,6 @@ class InstanceNetworkInterfaceAssociation(object):
             'public_dns_name': 'publicDnsName',
             'public_ip': 'publicIp'
         }
-
         self._carrier_ip = None
         self._customer_owned_ip = None
         self._ip_owner_key = None

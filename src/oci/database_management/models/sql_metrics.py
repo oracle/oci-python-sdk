@@ -53,7 +53,6 @@ class SqlMetrics(object):
             'direct_writes': 'int',
             'executions': 'int'
         }
-
         self.attribute_map = {
             'cpu_time': 'cpuTime',
             'elapsed_time': 'elapsedTime',
@@ -62,7 +61,6 @@ class SqlMetrics(object):
             'direct_writes': 'directWrites',
             'executions': 'executions'
         }
-
         self._cpu_time = None
         self._elapsed_time = None
         self._buffer_gets = None

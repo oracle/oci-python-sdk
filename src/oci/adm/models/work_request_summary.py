@@ -155,7 +155,6 @@ class WorkRequestSummary(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'operation_type': 'operationType',
             'status': 'status',
@@ -170,7 +169,6 @@ class WorkRequestSummary(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._operation_type = None
         self._status = None
         self._id = None

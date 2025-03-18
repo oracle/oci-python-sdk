@@ -70,7 +70,6 @@ class NamedEntityMap(FieldMap):
             'target_entity': 'str',
             'object_status': 'int'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'description': 'description',
@@ -82,7 +81,6 @@ class NamedEntityMap(FieldMap):
             'target_entity': 'targetEntity',
             'object_status': 'objectStatus'
         }
-
         self._model_type = None
         self._description = None
         self._key = None

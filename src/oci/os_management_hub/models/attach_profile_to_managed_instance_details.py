@@ -28,11 +28,9 @@ class AttachProfileToManagedInstanceDetails(object):
         self.swagger_types = {
             'profile_id': 'str'
         }
-
         self.attribute_map = {
             'profile_id': 'profileId'
         }
-
         self._profile_id = None
 
     @property

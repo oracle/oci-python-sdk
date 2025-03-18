@@ -48,13 +48,11 @@ class SqlTuningTaskPlanStats(object):
             'plan_stats': 'dict(str, float)',
             'plan_status': 'str'
         }
-
         self.attribute_map = {
             'plan_type': 'planType',
             'plan_stats': 'planStats',
             'plan_status': 'planStatus'
         }
-
         self._plan_type = None
         self._plan_stats = None
         self._plan_status = None

@@ -38,13 +38,11 @@ class TestMacsManagedCloudDatabaseInsightConnectionDetails(object):
             'connection_details': 'ConnectionDetails',
             'connection_credential_details': 'CredentialDetails'
         }
-
         self.attribute_map = {
             'management_agent_id': 'managementAgentId',
             'connection_details': 'connectionDetails',
             'connection_credential_details': 'connectionCredentialDetails'
         }
-
         self._management_agent_id = None
         self._connection_details = None
         self._connection_credential_details = None

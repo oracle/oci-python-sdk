@@ -62,7 +62,6 @@ class CredentialByVault(CredentialDetails):
             'wallet_secret_id': 'str',
             'role': 'str'
         }
-
         self.attribute_map = {
             'credential_source_name': 'credentialSourceName',
             'credential_type': 'credentialType',
@@ -71,7 +70,6 @@ class CredentialByVault(CredentialDetails):
             'wallet_secret_id': 'walletSecretId',
             'role': 'role'
         }
-
         self._credential_source_name = None
         self._credential_type = None
         self._user_name = None

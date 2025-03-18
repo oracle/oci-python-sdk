@@ -33,12 +33,10 @@ class ArchivingConfiguration(object):
             'active_storage_duration': 'str',
             'archival_storage_duration': 'str'
         }
-
         self.attribute_map = {
             'active_storage_duration': 'activeStorageDuration',
             'archival_storage_duration': 'archivalStorageDuration'
         }
-
         self._active_storage_duration = None
         self._archival_storage_duration = None
 

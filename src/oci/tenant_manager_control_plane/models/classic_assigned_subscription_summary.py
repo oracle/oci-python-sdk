@@ -159,7 +159,6 @@ class ClassicAssignedSubscriptionSummary(AssignedSubscriptionSummary):
             'csi_number': 'str',
             'managed_by': 'str'
         }
-
         self.attribute_map = {
             'entity_version': 'entityVersion',
             'id': 'id',
@@ -179,7 +178,6 @@ class ClassicAssignedSubscriptionSummary(AssignedSubscriptionSummary):
             'csi_number': 'csiNumber',
             'managed_by': 'managedBy'
         }
-
         self._entity_version = None
         self._id = None
         self._compartment_id = None

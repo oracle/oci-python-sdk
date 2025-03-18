@@ -28,11 +28,9 @@ class OccAvailabilityCatalogCollection(object):
         self.swagger_types = {
             'items': 'list[OccAvailabilityCatalogSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

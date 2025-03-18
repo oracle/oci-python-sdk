@@ -28,11 +28,9 @@ class CountStatistic(object):
         self.swagger_types = {
             'object_type_count_list': 'list[CountStatisticSummary]'
         }
-
         self.attribute_map = {
             'object_type_count_list': 'objectTypeCountList'
         }
-
         self._object_type_count_list = None
 
     @property

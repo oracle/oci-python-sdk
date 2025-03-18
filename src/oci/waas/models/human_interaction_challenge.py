@@ -83,7 +83,6 @@ class HumanInteractionChallenge(object):
             'challenge_settings': 'BlockChallengeSettings',
             'is_nat_enabled': 'bool'
         }
-
         self.attribute_map = {
             'is_enabled': 'isEnabled',
             'action': 'action',
@@ -96,7 +95,6 @@ class HumanInteractionChallenge(object):
             'challenge_settings': 'challengeSettings',
             'is_nat_enabled': 'isNatEnabled'
         }
-
         self._is_enabled = None
         self._action = None
         self._failure_threshold = None

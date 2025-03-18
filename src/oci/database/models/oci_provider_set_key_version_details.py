@@ -35,12 +35,10 @@ class OciProviderSetKeyVersionDetails(SetKeyVersionDetails):
             'provider': 'str',
             'kms_key_version_id': 'str'
         }
-
         self.attribute_map = {
             'provider': 'provider',
             'kms_key_version_id': 'kmsKeyVersionId'
         }
-
         self._provider = None
         self._kms_key_version_id = None
         self._provider = 'OCI'

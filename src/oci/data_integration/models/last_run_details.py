@@ -73,7 +73,6 @@ class LastRunDetails(object):
             'identifier': 'str',
             'last_run_time_millis': 'int'
         }
-
         self.attribute_map = {
             'key': 'key',
             'model_version': 'modelVersion',
@@ -86,7 +85,6 @@ class LastRunDetails(object):
             'identifier': 'identifier',
             'last_run_time_millis': 'lastRunTimeMillis'
         }
-
         self._key = None
         self._model_version = None
         self._model_type = None

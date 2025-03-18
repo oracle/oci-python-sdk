@@ -50,7 +50,6 @@ class ReturnHttpResponseAction(Action):
             'headers': 'list[ResponseHeader]',
             'body': 'HttpResponseBody'
         }
-
         self.attribute_map = {
             'type': 'type',
             'name': 'name',
@@ -58,7 +57,6 @@ class ReturnHttpResponseAction(Action):
             'headers': 'headers',
             'body': 'body'
         }
-
         self._type = None
         self._name = None
         self._code = None

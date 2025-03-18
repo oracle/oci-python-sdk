@@ -28,11 +28,9 @@ class Cursor(object):
         self.swagger_types = {
             'value': 'str'
         }
-
         self.attribute_map = {
             'value': 'value'
         }
-
         self._value = None
 
     @property

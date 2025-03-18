@@ -111,7 +111,6 @@ class TriggerDeploymentStage(BuildPipelineStage):
             'deploy_pipeline_id': 'str',
             'is_pass_all_parameters_enabled': 'bool'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -131,7 +130,6 @@ class TriggerDeploymentStage(BuildPipelineStage):
             'deploy_pipeline_id': 'deployPipelineId',
             'is_pass_all_parameters_enabled': 'isPassAllParametersEnabled'
         }
-
         self._id = None
         self._display_name = None
         self._description = None

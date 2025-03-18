@@ -28,11 +28,9 @@ class CustomTableCollection(object):
         self.swagger_types = {
             'items': 'list[CustomTableSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

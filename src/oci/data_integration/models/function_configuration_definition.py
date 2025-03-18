@@ -59,7 +59,6 @@ class FunctionConfigurationDefinition(object):
             'is_contained': 'bool',
             'config_param_defs': 'dict(str, ConfigParameterDefinition)'
         }
-
         self.attribute_map = {
             'key': 'key',
             'model_type': 'modelType',
@@ -68,7 +67,6 @@ class FunctionConfigurationDefinition(object):
             'is_contained': 'isContained',
             'config_param_defs': 'configParamDefs'
         }
-
         self._key = None
         self._model_type = None
         self._model_version = None

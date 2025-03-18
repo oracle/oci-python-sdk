@@ -33,12 +33,10 @@ class MaintenanceWindowSchedule(object):
             'time_started': 'datetime',
             'time_ended': 'datetime'
         }
-
         self.attribute_map = {
             'time_started': 'timeStarted',
             'time_ended': 'timeEnded'
         }
-
         self._time_started = None
         self._time_ended = None
 

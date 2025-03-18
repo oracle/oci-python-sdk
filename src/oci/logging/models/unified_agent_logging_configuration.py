@@ -45,14 +45,12 @@ class UnifiedAgentLoggingConfiguration(UnifiedAgentServiceConfigurationDetails):
             'filter': 'list[UnifiedAgentLoggingFilter]',
             'destination': 'UnifiedAgentLoggingDestination'
         }
-
         self.attribute_map = {
             'configuration_type': 'configurationType',
             'sources': 'sources',
             'filter': 'filter',
             'destination': 'destination'
         }
-
         self._configuration_type = None
         self._sources = None
         self._filter = None

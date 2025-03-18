@@ -38,13 +38,11 @@ class SpanLogCollection(object):
             'event_name': 'str',
             'span_logs': 'list[SpanLog]'
         }
-
         self.attribute_map = {
             'time_created': 'timeCreated',
             'event_name': 'eventName',
             'span_logs': 'spanLogs'
         }
-
         self._time_created = None
         self._event_name = None
         self._span_logs = None

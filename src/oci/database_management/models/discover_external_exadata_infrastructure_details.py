@@ -52,14 +52,12 @@ class DiscoverExternalExadataInfrastructureDetails(object):
             'db_system_ids': 'list[str]',
             'exadata_infrastructure_id': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'discovery_type': 'discoveryType',
             'db_system_ids': 'dbSystemIds',
             'exadata_infrastructure_id': 'exadataInfrastructureId'
         }
-
         self._compartment_id = None
         self._discovery_type = None
         self._db_system_ids = None

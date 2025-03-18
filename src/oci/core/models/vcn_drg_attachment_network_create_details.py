@@ -45,14 +45,12 @@ class VcnDrgAttachmentNetworkCreateDetails(DrgAttachmentNetworkCreateDetails):
             'route_table_id': 'str',
             'vcn_route_type': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'id': 'id',
             'route_table_id': 'routeTableId',
             'vcn_route_type': 'vcnRouteType'
         }
-
         self._type = None
         self._id = None
         self._route_table_id = None

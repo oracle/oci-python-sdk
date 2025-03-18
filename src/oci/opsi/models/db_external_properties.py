@@ -85,7 +85,6 @@ class DBExternalProperties(DatabaseConfigurationMetricGroup):
             'switchover_status': 'str',
             'created': 'datetime'
         }
-
         self.attribute_map = {
             'metric_name': 'metricName',
             'time_collected': 'timeCollected',
@@ -100,7 +99,6 @@ class DBExternalProperties(DatabaseConfigurationMetricGroup):
             'switchover_status': 'switchoverStatus',
             'created': 'created'
         }
-
         self._metric_name = None
         self._time_collected = None
         self._name = None

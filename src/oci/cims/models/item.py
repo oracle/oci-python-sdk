@@ -60,7 +60,6 @@ class Item(object):
             'sub_category': 'SubCategory',
             'issue_type': 'IssueType'
         }
-
         self.attribute_map = {
             'item_key': 'itemKey',
             'name': 'name',
@@ -69,7 +68,6 @@ class Item(object):
             'sub_category': 'subCategory',
             'issue_type': 'issueType'
         }
-
         self._item_key = None
         self._name = None
         self._type = None

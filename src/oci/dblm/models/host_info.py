@@ -33,12 +33,10 @@ class HostInfo(object):
             'host_name': 'str',
             'host_cores': 'int'
         }
-
         self.attribute_map = {
             'host_name': 'hostName',
             'host_cores': 'hostCores'
         }
-
         self._host_name = None
         self._host_cores = None
 

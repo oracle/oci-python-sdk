@@ -48,7 +48,6 @@ class User(object):
             'is_mfa_activated': 'bool',
             'is_mfa_verified': 'bool'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -56,7 +55,6 @@ class User(object):
             'is_mfa_activated': 'isMfaActivated',
             'is_mfa_verified': 'isMfaVerified'
         }
-
         self._id = None
         self._name = None
         self._is_otp = None

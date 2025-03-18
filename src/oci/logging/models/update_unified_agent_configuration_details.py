@@ -58,7 +58,6 @@ class UpdateUnifiedAgentConfigurationDetails(object):
             'service_configuration': 'UnifiedAgentServiceConfigurationDetails',
             'group_association': 'GroupAssociationDetails'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'is_enabled': 'isEnabled',
@@ -68,7 +67,6 @@ class UpdateUnifiedAgentConfigurationDetails(object):
             'service_configuration': 'serviceConfiguration',
             'group_association': 'groupAssociation'
         }
-
         self._display_name = None
         self._is_enabled = None
         self._defined_tags = None

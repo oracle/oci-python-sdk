@@ -189,7 +189,6 @@ class Secret(object):
             'secret_generation_context': 'SecretGenerationContext',
             'is_auto_generation_enabled': 'bool'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'current_version_number': 'currentVersionNumber',
@@ -214,7 +213,6 @@ class Secret(object):
             'secret_generation_context': 'secretGenerationContext',
             'is_auto_generation_enabled': 'isAutoGenerationEnabled'
         }
-
         self._compartment_id = None
         self._current_version_number = None
         self._defined_tags = None

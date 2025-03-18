@@ -81,14 +81,12 @@ class DynamicResourceGroupGrants(object):
             'app_id': 'str',
             'grant_mechanism': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ref': '$ref',
             'app_id': 'appId',
             'grant_mechanism': 'grantMechanism'
         }
-
         self._value = None
         self._ref = None
         self._app_id = None

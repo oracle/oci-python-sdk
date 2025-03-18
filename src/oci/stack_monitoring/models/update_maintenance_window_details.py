@@ -38,13 +38,11 @@ class UpdateMaintenanceWindowDetails(object):
             'resources': 'list[CreateMaintenanceWindowResourceDetails]',
             'schedule': 'MaintenanceWindowSchedule'
         }
-
         self.attribute_map = {
             'description': 'description',
             'resources': 'resources',
             'schedule': 'schedule'
         }
-
         self._description = None
         self._resources = None
         self._schedule = None

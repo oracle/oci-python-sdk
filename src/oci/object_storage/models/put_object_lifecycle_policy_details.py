@@ -28,11 +28,9 @@ class PutObjectLifecyclePolicyDetails(object):
         self.swagger_types = {
             'items': 'list[ObjectLifecycleRule]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

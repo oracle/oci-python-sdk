@@ -45,14 +45,12 @@ class CreateBasicImagePullSecretDetails(CreateImagePullSecretDetails):
             'username': 'str',
             'password': 'str'
         }
-
         self.attribute_map = {
             'secret_type': 'secretType',
             'registry_endpoint': 'registryEndpoint',
             'username': 'username',
             'password': 'password'
         }
-
         self._secret_type = None
         self._registry_endpoint = None
         self._username = None

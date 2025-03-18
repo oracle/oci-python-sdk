@@ -95,7 +95,6 @@ class ConditionalOutputPort(TypedObject):
             'fields': 'list[TypedObject]',
             'split_condition': 'Expression'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -109,7 +108,6 @@ class ConditionalOutputPort(TypedObject):
             'fields': 'fields',
             'split_condition': 'splitCondition'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

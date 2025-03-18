@@ -139,7 +139,6 @@ class DnsServerMonitorConfiguration(MonitorConfiguration):
             'verify_response_content': 'str',
             'is_query_recursive': 'bool'
         }
-
         self.attribute_map = {
             'config_type': 'configType',
             'is_failure_retried': 'isFailureRetried',
@@ -151,7 +150,6 @@ class DnsServerMonitorConfiguration(MonitorConfiguration):
             'verify_response_content': 'verifyResponseContent',
             'is_query_recursive': 'isQueryRecursive'
         }
-
         self._config_type = None
         self._is_failure_retried = None
         self._dns_configuration = None

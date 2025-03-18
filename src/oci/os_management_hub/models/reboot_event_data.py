@@ -51,12 +51,10 @@ class RebootEventData(object):
             'reboot_status': 'str',
             'additional_details': 'WorkRequestEventDataAdditionalDetails'
         }
-
         self.attribute_map = {
             'reboot_status': 'rebootStatus',
             'additional_details': 'additionalDetails'
         }
-
         self._reboot_status = None
         self._additional_details = None
 

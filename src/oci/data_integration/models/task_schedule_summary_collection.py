@@ -28,11 +28,9 @@ class TaskScheduleSummaryCollection(object):
         self.swagger_types = {
             'items': 'list[TaskScheduleSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

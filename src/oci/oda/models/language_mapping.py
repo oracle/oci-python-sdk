@@ -38,13 +38,11 @@ class LanguageMapping(object):
             'primary_name': 'str',
             'names': 'list[NameMapping]'
         }
-
         self.attribute_map = {
             'language_tag': 'languageTag',
             'primary_name': 'primaryName',
             'names': 'names'
         }
-
         self._language_tag = None
         self._primary_name = None
         self._names = None

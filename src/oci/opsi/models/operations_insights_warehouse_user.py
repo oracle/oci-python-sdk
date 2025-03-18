@@ -124,7 +124,6 @@ class OperationsInsightsWarehouseUser(object):
             'lifecycle_state': 'str',
             'lifecycle_details': 'str'
         }
-
         self.attribute_map = {
             'operations_insights_warehouse_id': 'operationsInsightsWarehouseId',
             'id': 'id',
@@ -142,7 +141,6 @@ class OperationsInsightsWarehouseUser(object):
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails'
         }
-
         self._operations_insights_warehouse_id = None
         self._id = None
         self._compartment_id = None

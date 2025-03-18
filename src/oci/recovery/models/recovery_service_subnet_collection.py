@@ -28,11 +28,9 @@ class RecoveryServiceSubnetCollection(object):
         self.swagger_types = {
             'items': 'list[RecoveryServiceSubnetSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

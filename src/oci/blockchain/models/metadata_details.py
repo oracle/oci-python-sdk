@@ -38,13 +38,11 @@ class MetadataDetails(object):
             'param_value': 'str',
             'is_json_value': 'bool'
         }
-
         self.attribute_map = {
             'param_name': 'paramName',
             'param_value': 'paramValue',
             'is_json_value': 'isJsonValue'
         }
-
         self._param_name = None
         self._param_value = None
         self._is_json_value = None

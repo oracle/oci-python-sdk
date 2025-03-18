@@ -29,11 +29,9 @@ class RoutingPolicyDetails(object):
         self.swagger_types = {
             'rules': 'list[RoutingRule]'
         }
-
         self.attribute_map = {
             'rules': 'rules'
         }
-
         self._rules = None
 
     @property

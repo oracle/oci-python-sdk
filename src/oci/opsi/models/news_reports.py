@@ -28,11 +28,9 @@ class NewsReports(object):
         self.swagger_types = {
             'news_reports': 'object'
         }
-
         self.attribute_map = {
             'news_reports': 'newsReports'
         }
-
         self._news_reports = None
 
     @property

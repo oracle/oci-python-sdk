@@ -35,12 +35,10 @@ class StopDrillPrecheckExecutionOptions(DrPlanExecutionOptions):
             'plan_execution_type': 'str',
             'are_warnings_ignored': 'bool'
         }
-
         self.attribute_map = {
             'plan_execution_type': 'planExecutionType',
             'are_warnings_ignored': 'areWarningsIgnored'
         }
-
         self._plan_execution_type = None
         self._are_warnings_ignored = None
         self._plan_execution_type = 'STOP_DRILL_PRECHECK'

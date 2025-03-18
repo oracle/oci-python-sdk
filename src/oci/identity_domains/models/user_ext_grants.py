@@ -91,7 +91,6 @@ class UserExtGrants(object):
             'grant_mechanism': 'str',
             'grantor_id': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ref': '$ref',
@@ -99,7 +98,6 @@ class UserExtGrants(object):
             'grant_mechanism': 'grantMechanism',
             'grantor_id': 'grantorId'
         }
-
         self._value = None
         self._ref = None
         self._app_id = None

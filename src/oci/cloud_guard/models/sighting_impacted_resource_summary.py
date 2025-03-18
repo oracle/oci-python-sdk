@@ -88,7 +88,6 @@ class SightingImpactedResourceSummary(object):
             'time_first_occurred': 'datetime',
             'time_last_occurred': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'resource_id': 'resourceId',
@@ -104,7 +103,6 @@ class SightingImpactedResourceSummary(object):
             'time_first_occurred': 'timeFirstOccurred',
             'time_last_occurred': 'timeLastOccurred'
         }
-
         self._id = None
         self._resource_id = None
         self._sighting_id = None

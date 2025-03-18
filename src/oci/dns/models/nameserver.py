@@ -28,11 +28,9 @@ class Nameserver(object):
         self.swagger_types = {
             'hostname': 'str'
         }
-
         self.attribute_map = {
             'hostname': 'hostname'
         }
-
         self._hostname = None
 
     @property

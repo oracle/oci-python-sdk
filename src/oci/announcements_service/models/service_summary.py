@@ -90,7 +90,6 @@ class ServiceSummary(BaseService):
             'time_updated': 'datetime',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'id': 'id',
@@ -105,7 +104,6 @@ class ServiceSummary(BaseService):
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._type = None
         self._id = None
         self._service_name = None

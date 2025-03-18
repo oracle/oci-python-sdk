@@ -40,13 +40,11 @@ class ContainerConfigFileVolume(ContainerVolume):
             'volume_type': 'str',
             'configs': 'list[ContainerConfigFile]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'volume_type': 'volumeType',
             'configs': 'configs'
         }
-
         self._name = None
         self._volume_type = None
         self._configs = None

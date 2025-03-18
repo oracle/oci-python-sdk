@@ -50,7 +50,6 @@ class ObjectStorageGenericArtifactLocationDetails(GenericArtifactLocationDetails
             'object_name': 'str',
             'region': 'str'
         }
-
         self.attribute_map = {
             'storage_type': 'storageType',
             'namespace': 'namespace',
@@ -58,7 +57,6 @@ class ObjectStorageGenericArtifactLocationDetails(GenericArtifactLocationDetails
             'object_name': 'objectName',
             'region': 'region'
         }
-
         self._storage_type = None
         self._namespace = None
         self._bucket_name = None

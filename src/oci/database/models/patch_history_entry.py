@@ -101,7 +101,6 @@ class PatchHistoryEntry(object):
             'time_ended': 'datetime',
             'patch_type': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'patch_id': 'patchId',
@@ -112,7 +111,6 @@ class PatchHistoryEntry(object):
             'time_ended': 'timeEnded',
             'patch_type': 'patchType'
         }
-
         self._id = None
         self._patch_id = None
         self._action = None

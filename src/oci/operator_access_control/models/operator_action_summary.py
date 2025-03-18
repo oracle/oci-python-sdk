@@ -90,7 +90,6 @@ class OperatorActionSummary(object):
             'lifecycle_state': 'str',
             'description': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -100,7 +99,6 @@ class OperatorActionSummary(object):
             'lifecycle_state': 'lifecycleState',
             'description': 'description'
         }
-
         self._id = None
         self._name = None
         self._component = None

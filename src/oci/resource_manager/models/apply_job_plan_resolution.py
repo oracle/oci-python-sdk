@@ -38,13 +38,11 @@ class ApplyJobPlanResolution(object):
             'is_use_latest_job_id': 'bool',
             'is_auto_approved': 'bool'
         }
-
         self.attribute_map = {
             'plan_job_id': 'planJobId',
             'is_use_latest_job_id': 'isUseLatestJobId',
             'is_auto_approved': 'isAutoApproved'
         }
-
         self._plan_job_id = None
         self._is_use_latest_job_id = None
         self._is_auto_approved = None

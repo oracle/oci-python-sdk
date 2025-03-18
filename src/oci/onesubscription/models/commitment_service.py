@@ -53,7 +53,6 @@ class CommitmentService(object):
             'line_net_amount': 'str',
             'funded_allocation_value': 'str'
         }
-
         self.attribute_map = {
             'time_start': 'timeStart',
             'time_end': 'timeEnd',
@@ -62,7 +61,6 @@ class CommitmentService(object):
             'line_net_amount': 'lineNetAmount',
             'funded_allocation_value': 'fundedAllocationValue'
         }
-
         self._time_start = None
         self._time_end = None
         self._quantity = None

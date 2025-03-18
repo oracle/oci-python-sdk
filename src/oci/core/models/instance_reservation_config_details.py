@@ -53,7 +53,6 @@ class InstanceReservationConfigDetails(object):
             'reserved_count': 'int',
             'cluster_placement_group_id': 'str'
         }
-
         self.attribute_map = {
             'instance_shape': 'instanceShape',
             'instance_shape_config': 'instanceShapeConfig',
@@ -62,7 +61,6 @@ class InstanceReservationConfigDetails(object):
             'reserved_count': 'reservedCount',
             'cluster_placement_group_id': 'clusterPlacementGroupId'
         }
-
         self._instance_shape = None
         self._instance_shape_config = None
         self._fault_domain = None

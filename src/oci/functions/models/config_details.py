@@ -38,13 +38,11 @@ class ConfigDetails(object):
             'description': 'str',
             'is_optional': 'bool'
         }
-
         self.attribute_map = {
             'key': 'key',
             'description': 'description',
             'is_optional': 'isOptional'
         }
-
         self._key = None
         self._description = None
         self._is_optional = None

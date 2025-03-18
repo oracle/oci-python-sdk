@@ -38,13 +38,11 @@ class ExtractLogHeaderResults(object):
             'xml_paths': 'list[str]',
             'header_paths': 'list[str]'
         }
-
         self.attribute_map = {
             'json_paths': 'jsonPaths',
             'xml_paths': 'xmlPaths',
             'header_paths': 'headerPaths'
         }
-
         self._json_paths = None
         self._xml_paths = None
         self._header_paths = None

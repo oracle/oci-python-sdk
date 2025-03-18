@@ -60,7 +60,6 @@ class HostGpuProcesses(HostPerformanceMetricGroup):
             'elapsed_time': 'float',
             'gpu_memory_usage': 'float'
         }
-
         self.attribute_map = {
             'metric_name': 'metricName',
             'time_collected': 'timeCollected',
@@ -70,7 +69,6 @@ class HostGpuProcesses(HostPerformanceMetricGroup):
             'elapsed_time': 'elapsedTime',
             'gpu_memory_usage': 'gpuMemoryUsage'
         }
-
         self._metric_name = None
         self._time_collected = None
         self._gpu_id = None

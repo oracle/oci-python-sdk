@@ -161,7 +161,6 @@ class UpdateAlarmDetails(object):
             'evaluation_slack_duration': 'str',
             'alarm_summary': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'compartment_id': 'compartmentId',
@@ -189,7 +188,6 @@ class UpdateAlarmDetails(object):
             'evaluation_slack_duration': 'evaluationSlackDuration',
             'alarm_summary': 'alarmSummary'
         }
-
         self._display_name = None
         self._compartment_id = None
         self._metric_compartment_id = None

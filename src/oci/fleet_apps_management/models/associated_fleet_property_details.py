@@ -58,7 +58,6 @@ class AssociatedFleetPropertyDetails(object):
             'value': 'str',
             'is_required': 'bool'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
@@ -66,7 +65,6 @@ class AssociatedFleetPropertyDetails(object):
             'value': 'value',
             'is_required': 'isRequired'
         }
-
         self._compartment_id = None
         self._display_name = None
         self._fleet_property_type = None

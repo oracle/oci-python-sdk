@@ -48,7 +48,6 @@ class VolumeAttachment(object):
             'status': 'str',
             'volume_key': 'str'
         }
-
         self.attribute_map = {
             'is_delete_on_termination': 'isDeleteOnTermination',
             'device': 'device',
@@ -56,7 +55,6 @@ class VolumeAttachment(object):
             'status': 'status',
             'volume_key': 'volumeKey'
         }
-
         self._is_delete_on_termination = None
         self._device = None
         self._instance_key = None

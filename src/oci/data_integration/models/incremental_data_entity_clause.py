@@ -68,13 +68,11 @@ class IncrementalDataEntityClause(object):
             'incremental_data_entity_value': 'dict(str, str)',
             'incremental_comparator': 'str'
         }
-
         self.attribute_map = {
             'incremental_data_entity_name': 'incrementalDataEntityName',
             'incremental_data_entity_value': 'incrementalDataEntityValue',
             'incremental_comparator': 'incrementalComparator'
         }
-
         self._incremental_data_entity_name = None
         self._incremental_data_entity_value = None
         self._incremental_comparator = None

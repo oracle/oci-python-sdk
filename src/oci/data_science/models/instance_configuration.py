@@ -43,14 +43,12 @@ class InstanceConfiguration(object):
             'subnet_id': 'str',
             'private_endpoint_id': 'str'
         }
-
         self.attribute_map = {
             'instance_shape_name': 'instanceShapeName',
             'model_deployment_instance_shape_config_details': 'modelDeploymentInstanceShapeConfigDetails',
             'subnet_id': 'subnetId',
             'private_endpoint_id': 'privateEndpointId'
         }
-
         self._instance_shape_name = None
         self._model_deployment_instance_shape_config_details = None
         self._subnet_id = None

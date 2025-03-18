@@ -29,6 +29,7 @@ Golden Gate
     oci.golden_gate.models.AzureDataLakeStorageConnectionSummary
     oci.golden_gate.models.AzureSynapseConnection
     oci.golden_gate.models.AzureSynapseConnectionSummary
+    oci.golden_gate.models.BackupSchedule
     oci.golden_gate.models.CancelDeploymentBackupDetails
     oci.golden_gate.models.CancelDeploymentUpgradeDetails
     oci.golden_gate.models.CancelSnoozeDeploymentUpgradeDetails
@@ -53,6 +54,7 @@ Golden Gate
     oci.golden_gate.models.CreateAmazonS3ConnectionDetails
     oci.golden_gate.models.CreateAzureDataLakeStorageConnectionDetails
     oci.golden_gate.models.CreateAzureSynapseConnectionDetails
+    oci.golden_gate.models.CreateBackupScheduleDetails
     oci.golden_gate.models.CreateCertificateDetails
     oci.golden_gate.models.CreateConnectionAssignmentDetails
     oci.golden_gate.models.CreateConnectionDetails
@@ -229,6 +231,7 @@ Golden Gate
     oci.golden_gate.models.UpdateAmazonS3ConnectionDetails
     oci.golden_gate.models.UpdateAzureDataLakeStorageConnectionDetails
     oci.golden_gate.models.UpdateAzureSynapseConnectionDetails
+    oci.golden_gate.models.UpdateBackupScheduleDetails
     oci.golden_gate.models.UpdateConnectionDetails
     oci.golden_gate.models.UpdateDatabaseRegistrationDetails
     oci.golden_gate.models.UpdateDatabricksConnectionDetails

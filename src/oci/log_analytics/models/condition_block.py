@@ -73,7 +73,6 @@ class ConditionBlock(object):
             'label_condition_values': 'list[str]',
             'condition_blocks': 'list[ConditionBlock]'
         }
-
         self.attribute_map = {
             'condition_blocks_operator': 'conditionBlocksOperator',
             'field_name': 'fieldName',
@@ -82,7 +81,6 @@ class ConditionBlock(object):
             'label_condition_values': 'labelConditionValues',
             'condition_blocks': 'conditionBlocks'
         }
-
         self._condition_blocks_operator = None
         self._field_name = None
         self._label_condition_operator = None

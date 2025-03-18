@@ -168,7 +168,6 @@ class MigrationAsset(object):
             'depended_on_by': 'list[str]',
             'depends_on': 'list[str]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'type': 'type',
@@ -192,7 +191,6 @@ class MigrationAsset(object):
             'depended_on_by': 'dependedOnBy',
             'depends_on': 'dependsOn'
         }
-
         self._id = None
         self._type = None
         self._display_name = None

@@ -45,14 +45,12 @@ class DrProtectionGroupMemberFileSystem(DrProtectionGroupMember):
             'destination_availability_domain': 'str',
             'export_mappings': 'list[FileSystemExportMapping]'
         }
-
         self.attribute_map = {
             'member_id': 'memberId',
             'member_type': 'memberType',
             'destination_availability_domain': 'destinationAvailabilityDomain',
             'export_mappings': 'exportMappings'
         }
-
         self._member_id = None
         self._member_type = None
         self._destination_availability_domain = None

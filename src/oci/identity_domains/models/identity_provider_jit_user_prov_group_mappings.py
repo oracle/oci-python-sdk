@@ -38,13 +38,11 @@ class IdentityProviderJitUserProvGroupMappings(object):
             'ref': 'str',
             'idp_group': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ref': '$ref',
             'idp_group': 'idpGroup'
         }
-
         self._value = None
         self._ref = None
         self._idp_group = None

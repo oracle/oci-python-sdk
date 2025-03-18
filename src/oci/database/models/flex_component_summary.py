@@ -94,7 +94,6 @@ class FlexComponentSummary(object):
             'hardware_type': 'str',
             'description_summary': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'minimum_core_count': 'minimumCoreCount',
@@ -108,7 +107,6 @@ class FlexComponentSummary(object):
             'hardware_type': 'hardwareType',
             'description_summary': 'descriptionSummary'
         }
-
         self._name = None
         self._minimum_core_count = None
         self._available_core_count = None

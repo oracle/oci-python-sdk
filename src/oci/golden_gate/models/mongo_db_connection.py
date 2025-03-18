@@ -206,7 +206,6 @@ class MongoDbConnection(Connection):
             'tls_certificate_key_file_secret_id': 'str',
             'tls_certificate_key_file_password_secret_id': 'str'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'id': 'id',
@@ -237,7 +236,6 @@ class MongoDbConnection(Connection):
             'tls_certificate_key_file_secret_id': 'tlsCertificateKeyFileSecretId',
             'tls_certificate_key_file_password_secret_id': 'tlsCertificateKeyFilePasswordSecretId'
         }
-
         self._connection_type = None
         self._id = None
         self._display_name = None

@@ -38,13 +38,11 @@ class ComplianceDetailTarget(object):
             'target_name': 'str',
             'version': 'str'
         }
-
         self.attribute_map = {
             'target_id': 'targetId',
             'target_name': 'targetName',
             'version': 'version'
         }
-
         self._target_id = None
         self._target_name = None
         self._version = None

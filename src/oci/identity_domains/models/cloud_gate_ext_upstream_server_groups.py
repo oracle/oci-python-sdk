@@ -48,7 +48,6 @@ class CloudGateExtUpstreamServerGroups(object):
             'ssl': 'bool',
             'display_name': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ref': '$ref',
@@ -56,7 +55,6 @@ class CloudGateExtUpstreamServerGroups(object):
             'ssl': 'ssl',
             'display_name': 'displayName'
         }
-
         self._value = None
         self._ref = None
         self._nginx_settings = None

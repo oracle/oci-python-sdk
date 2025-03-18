@@ -58,7 +58,6 @@ class ProtectedBranchSummary(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'branch_name': 'branchName',
             'protection_levels': 'protectionLevels',
@@ -66,7 +65,6 @@ class ProtectedBranchSummary(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._branch_name = None
         self._protection_levels = None
         self._freeform_tags = None

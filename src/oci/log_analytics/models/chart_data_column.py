@@ -105,7 +105,6 @@ class ChartDataColumn(AbstractColumn):
             'data_items': 'list[object]',
             'filtered_data_items': 'list[object]'
         }
-
         self.attribute_map = {
             'type': 'type',
             'display_name': 'displayName',
@@ -123,7 +122,6 @@ class ChartDataColumn(AbstractColumn):
             'data_items': 'dataItems',
             'filtered_data_items': 'filteredDataItems'
         }
-
         self._type = None
         self._display_name = None
         self._sub_system = None

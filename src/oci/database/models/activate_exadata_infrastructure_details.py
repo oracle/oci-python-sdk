@@ -28,11 +28,9 @@ class ActivateExadataInfrastructureDetails(object):
         self.swagger_types = {
             'activation_file': 'str'
         }
-
         self.attribute_map = {
             'activation_file': 'activationFile'
         }
-
         self._activation_file = None
 
     @property

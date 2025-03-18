@@ -38,13 +38,11 @@ class ModuleSpecDetails(object):
             'stream': 'str',
             'profile': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'stream': 'stream',
             'profile': 'profile'
         }
-
         self._name = None
         self._stream = None
         self._profile = None

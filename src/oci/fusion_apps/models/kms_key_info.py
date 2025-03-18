@@ -75,7 +75,6 @@ class KmsKeyInfo(object):
             'scheduled_lifecycle_state': 'str',
             'scheduled_key_status': 'str'
         }
-
         self.attribute_map = {
             'active_key_id': 'activeKeyId',
             'active_key_version': 'activeKeyVersion',
@@ -85,7 +84,6 @@ class KmsKeyInfo(object):
             'scheduled_lifecycle_state': 'scheduledLifecycleState',
             'scheduled_key_status': 'scheduledKeyStatus'
         }
-
         self._active_key_id = None
         self._active_key_version = None
         self._scheduled_key_id = None

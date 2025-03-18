@@ -33,12 +33,10 @@ class TenancyInformation(object):
             'customer_support_key': 'str',
             'tenancy_id': 'str'
         }
-
         self.attribute_map = {
             'customer_support_key': 'customerSupportKey',
             'tenancy_id': 'tenancyId'
         }
-
         self._customer_support_key = None
         self._tenancy_id = None
 

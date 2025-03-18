@@ -85,7 +85,6 @@ class UpdateDatabaseToolsConnectionOracleDatabaseDetails(UpdateDatabaseToolsConn
             'private_endpoint_id': 'str',
             'proxy_client': 'DatabaseToolsConnectionOracleDatabaseProxyClientDetails'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'defined_tags': 'definedTags',
@@ -100,7 +99,6 @@ class UpdateDatabaseToolsConnectionOracleDatabaseDetails(UpdateDatabaseToolsConn
             'private_endpoint_id': 'privateEndpointId',
             'proxy_client': 'proxyClient'
         }
-
         self._display_name = None
         self._defined_tags = None
         self._freeform_tags = None

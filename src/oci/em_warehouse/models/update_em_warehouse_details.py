@@ -43,14 +43,12 @@ class UpdateEmWarehouseDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'em_bridge_id': 'emBridgeId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._compartment_id = None
         self._em_bridge_id = None
         self._freeform_tags = None

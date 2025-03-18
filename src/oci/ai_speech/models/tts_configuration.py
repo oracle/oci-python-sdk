@@ -37,11 +37,9 @@ class TtsConfiguration(object):
         self.swagger_types = {
             'model_family': 'str'
         }
-
         self.attribute_map = {
             'model_family': 'modelFamily'
         }
-
         self._model_family = None
 
     @staticmethod

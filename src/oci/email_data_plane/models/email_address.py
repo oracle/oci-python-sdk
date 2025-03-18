@@ -33,12 +33,10 @@ class EmailAddress(object):
             'email': 'str',
             'name': 'str'
         }
-
         self.attribute_map = {
             'email': 'email',
             'name': 'name'
         }
-
         self._email = None
         self._name = None
 

@@ -193,7 +193,6 @@ class Subscription(object):
             'lifecycle_details': 'str',
             'skus': 'list[SubscriptionSku]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'classic_subscription_id': 'classicSubscriptionId',
@@ -202,7 +201,6 @@ class Subscription(object):
             'lifecycle_details': 'lifecycleDetails',
             'skus': 'skus'
         }
-
         self._id = None
         self._classic_subscription_id = None
         self._service_name = None

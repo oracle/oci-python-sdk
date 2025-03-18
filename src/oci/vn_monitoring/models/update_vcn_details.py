@@ -38,13 +38,11 @@ class UpdateVcnDetails(object):
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags'
         }
-
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None

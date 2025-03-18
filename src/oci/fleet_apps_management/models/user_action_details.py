@@ -57,12 +57,10 @@ class UserActionDetails(object):
             'level': 'str',
             'action': 'str'
         }
-
         self.attribute_map = {
             'level': 'level',
             'action': 'action'
         }
-
         self._level = None
         self._action = None
 

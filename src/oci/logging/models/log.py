@@ -129,7 +129,6 @@ class Log(object):
             'retention_duration': 'int',
             'compartment_id': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'tenancy_id': 'tenancyId',
@@ -146,7 +145,6 @@ class Log(object):
             'retention_duration': 'retentionDuration',
             'compartment_id': 'compartmentId'
         }
-
         self._id = None
         self._tenancy_id = None
         self._log_group_id = None

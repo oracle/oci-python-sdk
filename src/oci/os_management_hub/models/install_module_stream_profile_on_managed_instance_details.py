@@ -43,14 +43,12 @@ class InstallModuleStreamProfileOnManagedInstanceDetails(object):
             'profile_name': 'str',
             'work_request_details': 'WorkRequestDetails'
         }
-
         self.attribute_map = {
             'module_name': 'moduleName',
             'stream_name': 'streamName',
             'profile_name': 'profileName',
             'work_request_details': 'workRequestDetails'
         }
-
         self._module_name = None
         self._stream_name = None
         self._profile_name = None

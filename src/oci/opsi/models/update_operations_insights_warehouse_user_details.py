@@ -53,7 +53,6 @@ class UpdateOperationsInsightsWarehouseUserDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'connection_password': 'connectionPassword',
             'is_awr_data_access': 'isAwrDataAccess',
@@ -62,7 +61,6 @@ class UpdateOperationsInsightsWarehouseUserDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._connection_password = None
         self._is_awr_data_access = None
         self._is_em_data_access = None

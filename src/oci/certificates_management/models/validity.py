@@ -33,12 +33,10 @@ class Validity(object):
             'time_of_validity_not_before': 'datetime',
             'time_of_validity_not_after': 'datetime'
         }
-
         self.attribute_map = {
             'time_of_validity_not_before': 'timeOfValidityNotBefore',
             'time_of_validity_not_after': 'timeOfValidityNotAfter'
         }
-
         self._time_of_validity_not_before = None
         self._time_of_validity_not_after = None
 

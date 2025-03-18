@@ -33,12 +33,10 @@ class SetOriginAsnDetails(object):
             'byoasn_id': 'str',
             'as_path_prepend_length': 'int'
         }
-
         self.attribute_map = {
             'byoasn_id': 'byoasnId',
             'as_path_prepend_length': 'asPathPrependLength'
         }
-
         self._byoasn_id = None
         self._as_path_prepend_length = None
 

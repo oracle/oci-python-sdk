@@ -40,13 +40,11 @@ class BooleanImageCapabilitySchemaDescriptor(ImageCapabilitySchemaDescriptor):
             'source': 'str',
             'default_value': 'bool'
         }
-
         self.attribute_map = {
             'descriptor_type': 'descriptorType',
             'source': 'source',
             'default_value': 'defaultValue'
         }
-
         self._descriptor_type = None
         self._source = None
         self._default_value = None

@@ -38,13 +38,11 @@ class BackupPolicy(object):
             'retention_in_days': 'int',
             'frequency_in_hours': 'int'
         }
-
         self.attribute_map = {
             'is_enabled': 'isEnabled',
             'retention_in_days': 'retentionInDays',
             'frequency_in_hours': 'frequencyInHours'
         }
-
         self._is_enabled = None
         self._retention_in_days = None
         self._frequency_in_hours = None

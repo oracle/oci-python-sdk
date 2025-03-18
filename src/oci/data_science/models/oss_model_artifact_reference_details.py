@@ -45,14 +45,12 @@ class OSSModelArtifactReferenceDetails(ModelArtifactReferenceDetails):
             'bucket_name': 'str',
             'prefix': 'str'
         }
-
         self.attribute_map = {
             'model_artifact_reference_type': 'modelArtifactReferenceType',
             'namespace': 'namespace',
             'bucket_name': 'bucketName',
             'prefix': 'prefix'
         }
-
         self._model_artifact_reference_type = None
         self._namespace = None
         self._bucket_name = None

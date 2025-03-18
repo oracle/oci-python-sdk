@@ -28,11 +28,9 @@ class SecurityPolicyEntryStateCollection(object):
         self.swagger_types = {
             'items': 'list[SecurityPolicyEntryStateSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

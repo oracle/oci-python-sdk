@@ -35,12 +35,10 @@ class OciTlsCertificate(TlsCertificate):
             'type': 'str',
             'certificate_id': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'certificate_id': 'certificateId'
         }
-
         self._type = None
         self._certificate_id = None
         self._type = 'OCI_CERTIFICATES'

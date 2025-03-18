@@ -38,13 +38,11 @@ class CreateCopyObjectRequestDetails(object):
             'object_keys': 'list[str]',
             'copy_conflict_resolution': 'CopyConflictResolution'
         }
-
         self.attribute_map = {
             'source_workspace_id': 'sourceWorkspaceId',
             'object_keys': 'objectKeys',
             'copy_conflict_resolution': 'copyConflictResolution'
         }
-
         self._source_workspace_id = None
         self._object_keys = None
         self._copy_conflict_resolution = None

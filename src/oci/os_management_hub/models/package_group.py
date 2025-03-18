@@ -82,7 +82,6 @@ class PackageGroup(object):
             'display_order': 'int',
             'packages': 'list[str]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -94,7 +93,6 @@ class PackageGroup(object):
             'display_order': 'displayOrder',
             'packages': 'packages'
         }
-
         self._id = None
         self._name = None
         self._repositories = None

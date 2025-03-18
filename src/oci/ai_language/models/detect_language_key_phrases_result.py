@@ -28,11 +28,9 @@ class DetectLanguageKeyPhrasesResult(object):
         self.swagger_types = {
             'key_phrases': 'list[KeyPhrase]'
         }
-
         self.attribute_map = {
             'key_phrases': 'keyPhrases'
         }
-
         self._key_phrases = None
 
     @property

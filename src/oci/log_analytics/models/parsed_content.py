@@ -53,7 +53,6 @@ class ParsedContent(object):
             'sample_size': 'int',
             'match_status': 'str'
         }
-
         self.attribute_map = {
             'field_names': 'fieldNames',
             'field_display_names': 'fieldDisplayNames',
@@ -62,7 +61,6 @@ class ParsedContent(object):
             'sample_size': 'sampleSize',
             'match_status': 'matchStatus'
         }
-
         self._field_names = None
         self._field_display_names = None
         self._parsed_field_values = None

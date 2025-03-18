@@ -100,7 +100,6 @@ class CreateVmWareAssetSourceDetails(CreateAssetSourceDetails):
             'are_historical_metrics_collected': 'bool',
             'are_realtime_metrics_collected': 'bool'
         }
-
         self.attribute_map = {
             'type': 'type',
             'display_name': 'displayName',
@@ -118,7 +117,6 @@ class CreateVmWareAssetSourceDetails(CreateAssetSourceDetails):
             'are_historical_metrics_collected': 'areHistoricalMetricsCollected',
             'are_realtime_metrics_collected': 'areRealtimeMetricsCollected'
         }
-
         self._type = None
         self._display_name = None
         self._compartment_id = None

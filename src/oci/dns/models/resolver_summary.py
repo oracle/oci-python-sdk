@@ -115,7 +115,6 @@ class ResolverSummary(object):
             'default_view_id': 'str',
             'is_protected': 'bool'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'attached_vcn_id': 'attachedVcnId',
@@ -130,7 +129,6 @@ class ResolverSummary(object):
             'default_view_id': 'defaultViewId',
             'is_protected': 'isProtected'
         }
-
         self._compartment_id = None
         self._attached_vcn_id = None
         self._display_name = None

@@ -34,12 +34,10 @@ class HeatWaveClusterSchemaMemoryEstimate(object):
             'schema_name': 'str',
             'per_table_estimates': 'list[HeatWaveClusterTableMemoryEstimate]'
         }
-
         self.attribute_map = {
             'schema_name': 'schemaName',
             'per_table_estimates': 'perTableEstimates'
         }
-
         self._schema_name = None
         self._per_table_estimates = None
 

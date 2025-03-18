@@ -28,11 +28,9 @@ class DelegationSubscriptionSummaryCollection(object):
         self.swagger_types = {
             'items': 'list[DelegationSubscriptionSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

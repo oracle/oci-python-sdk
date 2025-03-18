@@ -33,12 +33,10 @@ class ComputeCapacityReservationInstanceShapeSummary(object):
             'availability_domain': 'str',
             'instance_shape': 'str'
         }
-
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'instance_shape': 'instanceShape'
         }
-
         self._availability_domain = None
         self._instance_shape = None
 

@@ -39,12 +39,10 @@ class LogTypeEndpoint(LogAnalyticsEndpoint):
             'endpoint_type': 'str',
             'log_endpoint': 'LogEndpoint'
         }
-
         self.attribute_map = {
             'endpoint_type': 'endpointType',
             'log_endpoint': 'logEndpoint'
         }
-
         self._endpoint_type = None
         self._log_endpoint = None
         self._endpoint_type = 'LOG'

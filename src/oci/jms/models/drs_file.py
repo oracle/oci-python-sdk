@@ -66,7 +66,6 @@ class DrsFile(object):
             'checksum_value': 'str',
             'is_default': 'bool'
         }
-
         self.attribute_map = {
             'bucket_name': 'bucketName',
             'namespace': 'namespace',
@@ -76,7 +75,6 @@ class DrsFile(object):
             'checksum_value': 'checksumValue',
             'is_default': 'isDefault'
         }
-
         self._bucket_name = None
         self._namespace = None
         self._drs_file_name = None

@@ -180,7 +180,6 @@ class CreateTaskScheduleDetails(object):
             'expected_duration_unit': 'str',
             'registry_metadata': 'RegistryMetadata'
         }
-
         self.attribute_map = {
             'key': 'key',
             'model_version': 'modelVersion',
@@ -205,7 +204,6 @@ class CreateTaskScheduleDetails(object):
             'expected_duration_unit': 'expectedDurationUnit',
             'registry_metadata': 'registryMetadata'
         }
-
         self._key = None
         self._model_version = None
         self._parent_ref = None

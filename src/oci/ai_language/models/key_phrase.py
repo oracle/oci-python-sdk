@@ -33,12 +33,10 @@ class KeyPhrase(object):
             'text': 'str',
             'score': 'float'
         }
-
         self.attribute_map = {
             'text': 'text',
             'score': 'score'
         }
-
         self._text = None
         self._score = None
 

@@ -46,14 +46,12 @@ class HourlyFrequencyDetails(AbstractFrequencyDetails):
             'interval': 'int',
             'time': 'Time'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'frequency': 'frequency',
             'interval': 'interval',
             'time': 'time'
         }
-
         self._model_type = None
         self._frequency = None
         self._interval = None

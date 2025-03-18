@@ -67,7 +67,6 @@ class CreateChildTenancyDetails(object):
             'governance_status': 'str',
             'subscription_id': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'tenancy_name': 'tenancyName',
@@ -77,7 +76,6 @@ class CreateChildTenancyDetails(object):
             'governance_status': 'governanceStatus',
             'subscription_id': 'subscriptionId'
         }
-
         self._compartment_id = None
         self._tenancy_name = None
         self._home_region = None

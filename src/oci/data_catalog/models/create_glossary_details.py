@@ -65,7 +65,6 @@ class CreateGlossaryDetails(object):
             'owner': 'str',
             'custom_property_members': 'list[CustomPropertySetUsage]'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
@@ -73,7 +72,6 @@ class CreateGlossaryDetails(object):
             'owner': 'owner',
             'custom_property_members': 'customPropertyMembers'
         }
-
         self._display_name = None
         self._description = None
         self._workflow_status = None

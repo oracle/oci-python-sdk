@@ -45,14 +45,12 @@ class HostEntities(HostConfigurationMetricGroup):
             'entity_name': 'str',
             'entity_type': 'str'
         }
-
         self.attribute_map = {
             'metric_name': 'metricName',
             'time_collected': 'timeCollected',
             'entity_name': 'entityName',
             'entity_type': 'entityType'
         }
-
         self._metric_name = None
         self._time_collected = None
         self._entity_name = None

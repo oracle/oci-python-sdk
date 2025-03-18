@@ -28,11 +28,9 @@ class ErratumCollection(object):
         self.swagger_types = {
             'items': 'list[ErratumSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

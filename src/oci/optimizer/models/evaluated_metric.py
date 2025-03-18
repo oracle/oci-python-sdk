@@ -43,14 +43,12 @@ class EvaluatedMetric(object):
             'threshold': 'float',
             'target': 'float'
         }
-
         self.attribute_map = {
             'name': 'name',
             'statistic': 'statistic',
             'threshold': 'threshold',
             'target': 'target'
         }
-
         self._name = None
         self._statistic = None
         self._threshold = None

@@ -134,7 +134,6 @@ class VaultSummary(object):
             'vault_type': 'str',
             'external_key_manager_metadata_summary': 'ExternalKeyManagerMetadataSummary'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'crypto_endpoint': 'cryptoEndpoint',
@@ -148,7 +147,6 @@ class VaultSummary(object):
             'vault_type': 'vaultType',
             'external_key_manager_metadata_summary': 'externalKeyManagerMetadataSummary'
         }
-
         self._compartment_id = None
         self._crypto_endpoint = None
         self._defined_tags = None

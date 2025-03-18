@@ -48,7 +48,6 @@ class SelfRegistrationProfileUserAttributes(object):
             'deletable': 'bool',
             'metadata': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'fully_qualified_attribute_name': 'fullyQualifiedAttributeName',
@@ -56,7 +55,6 @@ class SelfRegistrationProfileUserAttributes(object):
             'deletable': 'deletable',
             'metadata': 'metadata'
         }
-
         self._value = None
         self._fully_qualified_attribute_name = None
         self._seq_number = None

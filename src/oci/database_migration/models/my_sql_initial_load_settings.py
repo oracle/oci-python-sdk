@@ -96,7 +96,6 @@ class MySqlInitialLoadSettings(object):
             'handle_grant_errors': 'str',
             'job_mode': 'str'
         }
-
         self.attribute_map = {
             'is_consistent': 'isConsistent',
             'is_tz_utc': 'isTzUtc',
@@ -106,7 +105,6 @@ class MySqlInitialLoadSettings(object):
             'handle_grant_errors': 'handleGrantErrors',
             'job_mode': 'jobMode'
         }
-
         self._is_consistent = None
         self._is_tz_utc = None
         self._compatibility = None

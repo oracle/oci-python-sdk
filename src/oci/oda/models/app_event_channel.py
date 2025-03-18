@@ -97,7 +97,6 @@ class AppEventChannel(Channel):
             'event_sink_bot_ids': 'list[str]',
             'webhook_url': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -114,7 +113,6 @@ class AppEventChannel(Channel):
             'event_sink_bot_ids': 'eventSinkBotIds',
             'webhook_url': 'webhookUrl'
         }
-
         self._id = None
         self._name = None
         self._description = None

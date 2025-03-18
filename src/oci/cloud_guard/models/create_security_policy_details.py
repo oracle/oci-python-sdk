@@ -63,7 +63,6 @@ class CreateSecurityPolicyDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'friendly_name': 'friendlyName',
             'display_name': 'displayName',
@@ -74,7 +73,6 @@ class CreateSecurityPolicyDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._friendly_name = None
         self._display_name = None
         self._description = None

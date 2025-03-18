@@ -104,7 +104,6 @@ class ConnectorPluginSummary(object):
             'lifecycle_state': 'str',
             'display_name': 'str'
         }
-
         self.attribute_map = {
             'kind': 'kind',
             'name': 'name',
@@ -113,7 +112,6 @@ class ConnectorPluginSummary(object):
             'lifecycle_state': 'lifecycleState',
             'display_name': 'displayName'
         }
-
         self._kind = None
         self._name = None
         self._time_created = None

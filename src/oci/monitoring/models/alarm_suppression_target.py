@@ -43,11 +43,9 @@ class AlarmSuppressionTarget(object):
         self.swagger_types = {
             'target_type': 'str'
         }
-
         self.attribute_map = {
             'target_type': 'targetType'
         }
-
         self._target_type = None
 
     @staticmethod

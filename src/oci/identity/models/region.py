@@ -42,12 +42,10 @@ class Region(object):
             'key': 'str',
             'name': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'name': 'name'
         }
-
         self._key = None
         self._name = None
 

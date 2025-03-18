@@ -28,11 +28,9 @@ class UpdateDatabaseParametersResult(object):
         self.swagger_types = {
             'status': 'dict(str, DatabaseParameterUpdateStatus)'
         }
-
         self.attribute_map = {
             'status': 'status'
         }
-
         self._status = None
 
     @property

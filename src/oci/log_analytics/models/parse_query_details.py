@@ -38,12 +38,10 @@ class ParseQueryDetails(object):
             'query_string': 'str',
             'sub_system': 'str'
         }
-
         self.attribute_map = {
             'query_string': 'queryString',
             'sub_system': 'subSystem'
         }
-
         self._query_string = None
         self._sub_system = None
 

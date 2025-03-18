@@ -168,7 +168,6 @@ class DataAssetSummary(object):
             'parent_ref': 'ParentReference',
             'metadata': 'ObjectMetadata'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -184,7 +183,6 @@ class DataAssetSummary(object):
             'parent_ref': 'parentRef',
             'metadata': 'metadata'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

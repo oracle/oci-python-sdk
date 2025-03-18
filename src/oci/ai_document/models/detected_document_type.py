@@ -33,12 +33,10 @@ class DetectedDocumentType(object):
             'document_type': 'str',
             'confidence': 'float'
         }
-
         self.attribute_map = {
             'document_type': 'documentType',
             'confidence': 'confidence'
         }
-
         self._document_type = None
         self._confidence = None
 

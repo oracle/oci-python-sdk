@@ -68,7 +68,6 @@ class UpsertLogAnalyticsAssociation(object):
             'log_group_id': 'str',
             'association_properties': 'list[AssociationProperty]'
         }
-
         self.attribute_map = {
             'agent_id': 'agentId',
             'source_name': 'sourceName',
@@ -80,7 +79,6 @@ class UpsertLogAnalyticsAssociation(object):
             'log_group_id': 'logGroupId',
             'association_properties': 'associationProperties'
         }
-
         self._agent_id = None
         self._source_name = None
         self._source_type_name = None

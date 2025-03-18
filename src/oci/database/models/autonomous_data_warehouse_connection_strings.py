@@ -43,14 +43,12 @@ class AutonomousDataWarehouseConnectionStrings(object):
             'low': 'str',
             'all_connection_strings': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'high': 'high',
             'medium': 'medium',
             'low': 'low',
             'all_connection_strings': 'allConnectionStrings'
         }
-
         self._high = None
         self._medium = None
         self._low = None

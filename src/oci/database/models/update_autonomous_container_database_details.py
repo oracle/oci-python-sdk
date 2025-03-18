@@ -86,7 +86,6 @@ class UpdateAutonomousContainerDatabaseDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'backup_config': 'AutonomousContainerDatabaseBackupConfig'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'patch_model': 'patchModel',
@@ -98,7 +97,6 @@ class UpdateAutonomousContainerDatabaseDetails(object):
             'defined_tags': 'definedTags',
             'backup_config': 'backupConfig'
         }
-
         self._display_name = None
         self._patch_model = None
         self._maintenance_window_details = None

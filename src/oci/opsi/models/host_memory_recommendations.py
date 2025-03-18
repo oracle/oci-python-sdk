@@ -60,14 +60,12 @@ class HostMemoryRecommendations(HostInsightHostRecommendations):
             'is_abandoned_instance': 'bool',
             'memory_optimization': 'str'
         }
-
         self.attribute_map = {
             'metric_recommendation_name': 'metricRecommendationName',
             'unused_instance': 'unusedInstance',
             'is_abandoned_instance': 'isAbandonedInstance',
             'memory_optimization': 'memoryOptimization'
         }
-
         self._metric_recommendation_name = None
         self._unused_instance = None
         self._is_abandoned_instance = None

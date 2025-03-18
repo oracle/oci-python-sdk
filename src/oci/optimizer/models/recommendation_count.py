@@ -55,12 +55,10 @@ class RecommendationCount(object):
             'importance': 'str',
             'count': 'int'
         }
-
         self.attribute_map = {
             'importance': 'importance',
             'count': 'count'
         }
-
         self._importance = None
         self._count = None
 

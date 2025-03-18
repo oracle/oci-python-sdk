@@ -33,12 +33,10 @@ class VsphereLicense(object):
             'license_type': 'str',
             'license_key': 'str'
         }
-
         self.attribute_map = {
             'license_type': 'licenseType',
             'license_key': 'licenseKey'
         }
-
         self._license_type = None
         self._license_key = None
 

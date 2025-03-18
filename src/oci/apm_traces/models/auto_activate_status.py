@@ -43,12 +43,10 @@ class AutoActivateStatus(object):
             'state': 'str',
             'data_key': 'str'
         }
-
         self.attribute_map = {
             'state': 'state',
             'data_key': 'dataKey'
         }
-
         self._state = None
         self._data_key = None
 

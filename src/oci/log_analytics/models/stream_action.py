@@ -45,14 +45,12 @@ class StreamAction(Action):
             'metric_extraction': 'MetricExtraction',
             'saved_search_duration': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'saved_search_id': 'savedSearchId',
             'metric_extraction': 'metricExtraction',
             'saved_search_duration': 'savedSearchDuration'
         }
-
         self._type = None
         self._saved_search_id = None
         self._metric_extraction = None

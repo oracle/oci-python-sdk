@@ -56,7 +56,6 @@ class PipelineCustomScriptStepRun(PipelineStepRun):
             'lifecycle_state': 'str',
             'lifecycle_details': 'str'
         }
-
         self.attribute_map = {
             'step_type': 'stepType',
             'time_started': 'timeStarted',
@@ -65,7 +64,6 @@ class PipelineCustomScriptStepRun(PipelineStepRun):
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails'
         }
-
         self._step_type = None
         self._time_started = None
         self._time_finished = None

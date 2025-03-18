@@ -152,7 +152,6 @@ class Group(object):
             'urn_ietf_params_scim_schemas_oracle_idcs_extension_dynamic_group': 'ExtensionDynamicGroup',
             'urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags': 'ExtensionOCITags'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -178,7 +177,6 @@ class Group(object):
             'urn_ietf_params_scim_schemas_oracle_idcs_extension_dynamic_group': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:dynamic:Group',
             'urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:OCITags'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

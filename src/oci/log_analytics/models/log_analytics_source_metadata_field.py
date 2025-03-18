@@ -48,7 +48,6 @@ class LogAnalyticsSourceMetadataField(object):
             'key': 'str',
             'source_name': 'str'
         }
-
         self.attribute_map = {
             'field_name': 'fieldName',
             'is_enabled': 'isEnabled',
@@ -56,7 +55,6 @@ class LogAnalyticsSourceMetadataField(object):
             'key': 'key',
             'source_name': 'sourceName'
         }
-
         self._field_name = None
         self._is_enabled = None
         self._is_system = None

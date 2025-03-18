@@ -160,7 +160,6 @@ class TypedObject(object):
             'name': 'str',
             'description': 'str'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -171,7 +170,6 @@ class TypedObject(object):
             'name': 'name',
             'description': 'description'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

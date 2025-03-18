@@ -33,12 +33,10 @@ class SteeringPolicyPriorityAnswerData(object):
             'answer_condition': 'str',
             'value': 'int'
         }
-
         self.attribute_map = {
             'answer_condition': 'answerCondition',
             'value': 'value'
         }
-
         self._answer_condition = None
         self._value = None
 

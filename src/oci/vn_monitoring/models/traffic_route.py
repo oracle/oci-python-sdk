@@ -52,13 +52,11 @@ class TrafficRoute(object):
             'nodes': 'list[TrafficNode]',
             'route_analysis_description': 'str'
         }
-
         self.attribute_map = {
             'reachability_status': 'reachabilityStatus',
             'nodes': 'nodes',
             'route_analysis_description': 'routeAnalysisDescription'
         }
-
         self._reachability_status = None
         self._nodes = None
         self._route_analysis_description = None

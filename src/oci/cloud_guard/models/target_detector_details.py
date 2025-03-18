@@ -90,7 +90,6 @@ class TargetDetectorDetails(object):
             'target_types': 'list[str]',
             'sighting_types': 'list[SightingType]'
         }
-
         self.attribute_map = {
             'is_enabled': 'isEnabled',
             'risk_level': 'riskLevel',
@@ -102,7 +101,6 @@ class TargetDetectorDetails(object):
             'target_types': 'targetTypes',
             'sighting_types': 'sightingTypes'
         }
-
         self._is_enabled = None
         self._risk_level = None
         self._configurations = None

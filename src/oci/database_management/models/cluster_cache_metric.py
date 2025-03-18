@@ -29,11 +29,9 @@ class ClusterCacheMetric(object):
         self.swagger_types = {
             'cluster_cache_metrics': 'list[TimeSeriesMetricDefinition]'
         }
-
         self.attribute_map = {
             'cluster_cache_metrics': 'clusterCacheMetrics'
         }
-
         self._cluster_cache_metrics = None
 
     @property

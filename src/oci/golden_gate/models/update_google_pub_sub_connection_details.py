@@ -91,7 +91,6 @@ class UpdateGooglePubSubConnectionDetails(UpdateConnectionDetails):
             'service_account_key_file': 'str',
             'service_account_key_file_secret_id': 'str'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'display_name': 'displayName',
@@ -107,7 +106,6 @@ class UpdateGooglePubSubConnectionDetails(UpdateConnectionDetails):
             'service_account_key_file': 'serviceAccountKeyFile',
             'service_account_key_file_secret_id': 'serviceAccountKeyFileSecretId'
         }
-
         self._connection_type = None
         self._display_name = None
         self._description = None

@@ -45,14 +45,12 @@ class ObjectStorageSnapshotExportDetails(SnapshotExportDetails):
             'bucket': 'str',
             'prefix': 'str'
         }
-
         self.attribute_map = {
             'export_type': 'exportType',
             'namespace': 'namespace',
             'bucket': 'bucket',
             'prefix': 'prefix'
         }
-
         self._export_type = None
         self._namespace = None
         self._bucket = None

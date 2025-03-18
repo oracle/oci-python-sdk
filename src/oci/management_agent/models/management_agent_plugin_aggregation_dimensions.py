@@ -33,12 +33,10 @@ class ManagementAgentPluginAggregationDimensions(object):
             'plugin_name': 'str',
             'plugin_display_name': 'str'
         }
-
         self.attribute_map = {
             'plugin_name': 'pluginName',
             'plugin_display_name': 'pluginDisplayName'
         }
-
         self._plugin_name = None
         self._plugin_display_name = None
 

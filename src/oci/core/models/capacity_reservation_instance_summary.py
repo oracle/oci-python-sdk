@@ -58,7 +58,6 @@ class CapacityReservationInstanceSummary(object):
             'shape_config': 'InstanceReservationShapeConfigDetails',
             'shape': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'availability_domain': 'availabilityDomain',
@@ -68,7 +67,6 @@ class CapacityReservationInstanceSummary(object):
             'shape_config': 'shapeConfig',
             'shape': 'shape'
         }
-
         self._id = None
         self._availability_domain = None
         self._compartment_id = None

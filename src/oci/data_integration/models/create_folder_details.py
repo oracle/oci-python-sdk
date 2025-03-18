@@ -63,7 +63,6 @@ class CreateFolderDetails(object):
             'identifier': 'str',
             'registry_metadata': 'RegistryMetadata'
         }
-
         self.attribute_map = {
             'key': 'key',
             'model_version': 'modelVersion',
@@ -74,7 +73,6 @@ class CreateFolderDetails(object):
             'identifier': 'identifier',
             'registry_metadata': 'registryMetadata'
         }
-
         self._key = None
         self._model_version = None
         self._name = None

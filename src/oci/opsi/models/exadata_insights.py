@@ -28,11 +28,9 @@ class ExadataInsights(object):
         self.swagger_types = {
             'exadata_insights': 'object'
         }
-
         self.attribute_map = {
             'exadata_insights': 'exadataInsights'
         }
-
         self._exadata_insights = None
 
     @property

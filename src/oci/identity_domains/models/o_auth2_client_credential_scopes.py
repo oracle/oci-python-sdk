@@ -33,12 +33,10 @@ class OAuth2ClientCredentialScopes(object):
             'audience': 'str',
             'scope': 'str'
         }
-
         self.attribute_map = {
             'audience': 'audience',
             'scope': 'scope'
         }
-
         self._audience = None
         self._scope = None
 

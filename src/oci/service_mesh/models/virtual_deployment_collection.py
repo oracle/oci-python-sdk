@@ -28,11 +28,9 @@ class VirtualDeploymentCollection(object):
         self.swagger_types = {
             'items': 'list[VirtualDeploymentSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

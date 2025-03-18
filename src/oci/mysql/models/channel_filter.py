@@ -63,12 +63,10 @@ class ChannelFilter(object):
             'type': 'str',
             'value': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'value': 'value'
         }
-
         self._type = None
         self._value = None
 

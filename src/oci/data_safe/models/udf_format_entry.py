@@ -44,13 +44,11 @@ class UDFFormatEntry(FormatEntry):
             'description': 'str',
             'user_defined_function': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'description': 'description',
             'user_defined_function': 'userDefinedFunction'
         }
-
         self._type = None
         self._description = None
         self._user_defined_function = None

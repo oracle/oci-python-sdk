@@ -180,7 +180,6 @@ class Subscription(object):
             'time_plan_upgrade': 'datetime',
             'time_personal_to_corporate_conv': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'subscription_plan_number': 'subscriptionPlanNumber',
@@ -204,7 +203,6 @@ class Subscription(object):
             'time_plan_upgrade': 'timePlanUpgrade',
             'time_personal_to_corporate_conv': 'timePersonalToCorporateConv'
         }
-
         self._id = None
         self._subscription_plan_number = None
         self._plan_type = None

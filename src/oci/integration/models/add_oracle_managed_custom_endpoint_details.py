@@ -43,13 +43,11 @@ class AddOracleManagedCustomEndpointDetails(object):
             'dns_type': 'str',
             'dns_zone_name': 'str'
         }
-
         self.attribute_map = {
             'hostname': 'hostname',
             'dns_type': 'dnsType',
             'dns_zone_name': 'dnsZoneName'
         }
-
         self._hostname = None
         self._dns_type = None
         self._dns_zone_name = None

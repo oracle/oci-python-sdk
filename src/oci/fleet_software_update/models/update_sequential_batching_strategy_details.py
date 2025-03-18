@@ -35,12 +35,10 @@ class UpdateSequentialBatchingStrategyDetails(UpdateBatchingStrategyDetails):
             'type': 'str',
             'is_force_rolling': 'bool'
         }
-
         self.attribute_map = {
             'type': 'type',
             'is_force_rolling': 'isForceRolling'
         }
-
         self._type = None
         self._is_force_rolling = None
         self._type = 'SEQUENTIAL'

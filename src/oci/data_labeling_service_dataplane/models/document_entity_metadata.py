@@ -28,11 +28,9 @@ class DocumentEntityMetadata(object):
         self.swagger_types = {
             'page_number': 'float'
         }
-
         self.attribute_map = {
             'page_number': 'pageNumber'
         }
-
         self._page_number = None
 
     @property

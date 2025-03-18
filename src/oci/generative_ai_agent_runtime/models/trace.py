@@ -53,12 +53,10 @@ class Trace(object):
             'time_created': 'datetime',
             'trace_type': 'str'
         }
-
         self.attribute_map = {
             'time_created': 'timeCreated',
             'trace_type': 'traceType'
         }
-
         self._time_created = None
         self._trace_type = None
 

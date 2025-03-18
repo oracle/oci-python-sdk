@@ -40,13 +40,11 @@ class CreateOrUpdateGitBranchDetails(CreateOrUpdateGitRefDetails):
             'ref_type': 'str',
             'commit_id': 'str'
         }
-
         self.attribute_map = {
             'ref_name': 'refName',
             'ref_type': 'refType',
             'commit_id': 'commitId'
         }
-
         self._ref_name = None
         self._ref_type = None
         self._commit_id = None

@@ -43,14 +43,12 @@ class VideoTrackedObject(object):
             'properties': 'VideoTrackedObjectProperties',
             'segments': 'list[VideoTrackedObjectSegment]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'object_id': 'objectId',
             'properties': 'properties',
             'segments': 'segments'
         }
-
         self._name = None
         self._object_id = None
         self._properties = None

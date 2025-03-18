@@ -38,13 +38,11 @@ class Tenant(object):
             'name': 'str',
             'service_namespace': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
             'service_namespace': 'serviceNamespace'
         }
-
         self._id = None
         self._name = None
         self._service_namespace = None

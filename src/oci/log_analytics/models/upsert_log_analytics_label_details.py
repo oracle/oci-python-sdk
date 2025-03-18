@@ -104,7 +104,6 @@ class UpsertLogAnalyticsLabelDetails(object):
             'recommendation': 'str',
             'type': 'str'
         }
-
         self.attribute_map = {
             'aliases': 'aliases',
             'suggest_type': 'suggestType',
@@ -118,7 +117,6 @@ class UpsertLogAnalyticsLabelDetails(object):
             'recommendation': 'recommendation',
             'type': 'type'
         }
-
         self._aliases = None
         self._suggest_type = None
         self._description = None

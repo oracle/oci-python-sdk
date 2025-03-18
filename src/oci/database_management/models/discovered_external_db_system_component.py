@@ -139,7 +139,6 @@ class DiscoveredExternalDbSystemComponent(object):
             'status': 'str',
             'associated_components': 'list[AssociatedComponent]'
         }
-
         self.attribute_map = {
             'component_id': 'componentId',
             'display_name': 'displayName',
@@ -150,7 +149,6 @@ class DiscoveredExternalDbSystemComponent(object):
             'status': 'status',
             'associated_components': 'associatedComponents'
         }
-
         self._component_id = None
         self._display_name = None
         self._component_name = None

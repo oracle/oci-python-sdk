@@ -51,7 +51,6 @@ class ObjectStorageBucketContentDetails(ContentDetails):
             'object_name': 'str',
             'checksum': 'str'
         }
-
         self.attribute_map = {
             'source_type': 'sourceType',
             'namespace_name': 'namespaceName',
@@ -59,7 +58,6 @@ class ObjectStorageBucketContentDetails(ContentDetails):
             'object_name': 'objectName',
             'checksum': 'checksum'
         }
-
         self._source_type = None
         self._namespace_name = None
         self._bucket_name = None

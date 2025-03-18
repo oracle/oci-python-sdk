@@ -73,7 +73,6 @@ class AppObjectClasses(object):
             'is_account_object_class': 'bool',
             'type': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ref': '$ref',
@@ -82,7 +81,6 @@ class AppObjectClasses(object):
             'is_account_object_class': 'isAccountObjectClass',
             'type': 'type'
         }
-
         self._value = None
         self._ref = None
         self._display = None

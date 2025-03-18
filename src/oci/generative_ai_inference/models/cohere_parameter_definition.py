@@ -38,13 +38,11 @@ class CohereParameterDefinition(object):
             'type': 'str',
             'is_required': 'bool'
         }
-
         self.attribute_map = {
             'description': 'description',
             'type': 'type',
             'is_required': 'isRequired'
         }
-
         self._description = None
         self._type = None
         self._is_required = None

@@ -40,13 +40,11 @@ class RealtimeMessageAckAudio(RealtimeMessage):
             'session_id': 'str',
             'details': 'RealtimeMessageAckAudioDetails'
         }
-
         self.attribute_map = {
             'event': 'event',
             'session_id': 'sessionId',
             'details': 'details'
         }
-
         self._event = None
         self._session_id = None
         self._details = None

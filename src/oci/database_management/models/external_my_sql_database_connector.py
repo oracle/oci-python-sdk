@@ -193,7 +193,6 @@ class ExternalMySqlDatabaseConnector(object):
             'ssl_secret_id': 'str',
             'ssl_secret_name': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'compartment_id': 'compartmentId',
@@ -216,7 +215,6 @@ class ExternalMySqlDatabaseConnector(object):
             'ssl_secret_id': 'sslSecretId',
             'ssl_secret_name': 'sslSecretName'
         }
-
         self._name = None
         self._compartment_id = None
         self._associated_services = None

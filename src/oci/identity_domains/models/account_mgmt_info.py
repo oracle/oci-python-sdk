@@ -239,7 +239,6 @@ class AccountMgmtInfo(object):
             'app': 'AccountMgmtInfoApp',
             'owner': 'AccountMgmtInfoOwner'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -276,7 +275,6 @@ class AccountMgmtInfo(object):
             'app': 'app',
             'owner': 'owner'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

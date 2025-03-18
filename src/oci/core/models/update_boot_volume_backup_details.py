@@ -43,14 +43,12 @@ class UpdateBootVolumeBackupDetails(object):
             'freeform_tags': 'dict(str, str)',
             'kms_key_id': 'str'
         }
-
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
             'kms_key_id': 'kmsKeyId'
         }
-
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None

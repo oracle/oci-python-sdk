@@ -79,7 +79,6 @@ class UpdateWebhookChannelDetails(UpdateChannelDetails):
             'payload_version': 'str',
             'bot_id': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'description': 'description',
@@ -91,7 +90,6 @@ class UpdateWebhookChannelDetails(UpdateChannelDetails):
             'payload_version': 'payloadVersion',
             'bot_id': 'botId'
         }
-
         self._name = None
         self._description = None
         self._type = None

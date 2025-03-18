@@ -88,7 +88,6 @@ class DedicatedVantagePoint(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -102,7 +101,6 @@ class DedicatedVantagePoint(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._id = None
         self._display_name = None
         self._name = None

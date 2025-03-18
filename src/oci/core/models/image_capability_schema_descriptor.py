@@ -49,12 +49,10 @@ class ImageCapabilitySchemaDescriptor(object):
             'descriptor_type': 'str',
             'source': 'str'
         }
-
         self.attribute_map = {
             'descriptor_type': 'descriptorType',
             'source': 'source'
         }
-
         self._descriptor_type = None
         self._source = None
 

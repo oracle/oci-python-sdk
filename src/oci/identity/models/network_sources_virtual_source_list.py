@@ -33,12 +33,10 @@ class NetworkSourcesVirtualSourceList(object):
             'vcn_id': 'str',
             'ip_ranges': 'list[str]'
         }
-
         self.attribute_map = {
             'vcn_id': 'vcnId',
             'ip_ranges': 'ipRanges'
         }
-
         self._vcn_id = None
         self._ip_ranges = None
 

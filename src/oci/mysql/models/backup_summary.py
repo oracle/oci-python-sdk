@@ -135,7 +135,6 @@ class BackupSummary(object):
             'time_copy_created': 'datetime',
             'db_system_snapshot_summary': 'DbSystemSnapshotSummary'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -159,7 +158,6 @@ class BackupSummary(object):
             'time_copy_created': 'timeCopyCreated',
             'db_system_snapshot_summary': 'dbSystemSnapshotSummary'
         }
-
         self._id = None
         self._display_name = None
         self._description = None

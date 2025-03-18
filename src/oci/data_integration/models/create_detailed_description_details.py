@@ -33,12 +33,10 @@ class CreateDetailedDescriptionDetails(object):
             'logo': 'str',
             'detailed_description': 'str'
         }
-
         self.attribute_map = {
             'logo': 'logo',
             'detailed_description': 'detailedDescription'
         }
-
         self._logo = None
         self._detailed_description = None
 

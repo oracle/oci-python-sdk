@@ -68,7 +68,6 @@ class PluginErrorSummary(object):
             'time_last_seen': 'datetime',
             'time_first_seen': 'datetime'
         }
-
         self.attribute_map = {
             'managed_instance_id': 'managedInstanceId',
             'agent_type': 'agentType',
@@ -78,7 +77,6 @@ class PluginErrorSummary(object):
             'time_last_seen': 'timeLastSeen',
             'time_first_seen': 'timeFirstSeen'
         }
-
         self._managed_instance_id = None
         self._agent_type = None
         self._host_name = None

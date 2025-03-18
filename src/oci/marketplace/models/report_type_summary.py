@@ -43,14 +43,12 @@ class ReportTypeSummary(object):
             'description': 'str',
             'columns': 'list[str]'
         }
-
         self.attribute_map = {
             'report_type': 'reportType',
             'name': 'name',
             'description': 'description',
             'columns': 'columns'
         }
-
         self._report_type = None
         self._name = None
         self._description = None

@@ -65,7 +65,6 @@ class OracleCloneMigrationDetails(CloneMigrationDetails):
             'defined_tags': 'dict(str, dict(str, object))',
             'source_container_database_connection_id': 'str'
         }
-
         self.attribute_map = {
             'database_combination': 'databaseCombination',
             'display_name': 'displayName',
@@ -76,7 +75,6 @@ class OracleCloneMigrationDetails(CloneMigrationDetails):
             'defined_tags': 'definedTags',
             'source_container_database_connection_id': 'sourceContainerDatabaseConnectionId'
         }
-
         self._database_combination = None
         self._display_name = None
         self._compartment_id = None

@@ -28,11 +28,9 @@ class MultipleTransferDevices(object):
         self.swagger_types = {
             'transfer_device_objects': 'list[TransferDeviceSummary]'
         }
-
         self.attribute_map = {
             'transfer_device_objects': 'transferDeviceObjects'
         }
-
         self._transfer_device_objects = None
 
     @property

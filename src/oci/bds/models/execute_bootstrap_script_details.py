@@ -33,12 +33,10 @@ class ExecuteBootstrapScriptDetails(object):
             'cluster_admin_password': 'str',
             'bootstrap_script_url': 'str'
         }
-
         self.attribute_map = {
             'cluster_admin_password': 'clusterAdminPassword',
             'bootstrap_script_url': 'bootstrapScriptUrl'
         }
-
         self._cluster_admin_password = None
         self._bootstrap_script_url = None
 

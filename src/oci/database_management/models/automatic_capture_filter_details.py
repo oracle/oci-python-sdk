@@ -56,13 +56,11 @@ class AutomaticCaptureFilterDetails(object):
             'values_to_include': 'list[str]',
             'values_to_exclude': 'list[str]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'values_to_include': 'valuesToInclude',
             'values_to_exclude': 'valuesToExclude'
         }
-
         self._name = None
         self._values_to_include = None
         self._values_to_exclude = None

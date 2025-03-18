@@ -70,7 +70,6 @@ class OkeCanaryDeployStageExecutionProgress(DeployStageExecutionProgress):
             'deploy_stage_execution_progress_details': 'list[DeployStageExecutionProgressDetails]',
             'namespace': 'str'
         }
-
         self.attribute_map = {
             'deploy_stage_display_name': 'deployStageDisplayName',
             'deploy_stage_type': 'deployStageType',
@@ -82,7 +81,6 @@ class OkeCanaryDeployStageExecutionProgress(DeployStageExecutionProgress):
             'deploy_stage_execution_progress_details': 'deployStageExecutionProgressDetails',
             'namespace': 'namespace'
         }
-
         self._deploy_stage_display_name = None
         self._deploy_stage_type = None
         self._deploy_stage_id = None

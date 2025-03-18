@@ -43,14 +43,12 @@ class MeRoles(object):
             'type': 'str',
             'primary': 'bool'
         }
-
         self.attribute_map = {
             'value': 'value',
             'display': 'display',
             'type': 'type',
             'primary': 'primary'
         }
-
         self._value = None
         self._display = None
         self._type = None

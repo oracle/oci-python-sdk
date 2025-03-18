@@ -28,11 +28,9 @@ class AggregateNetworkDataDetails(object):
         self.swagger_types = {
             'vantage_point_execution_times': 'list[VantagePointExecution]'
         }
-
         self.attribute_map = {
             'vantage_point_execution_times': 'vantagePointExecutionTimes'
         }
-
         self._vantage_point_execution_times = None
 
     @property

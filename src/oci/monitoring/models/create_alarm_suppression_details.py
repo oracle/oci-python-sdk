@@ -73,7 +73,6 @@ class CreateAlarmSuppressionDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'suppression_conditions': 'list[SuppressionCondition]'
         }
-
         self.attribute_map = {
             'alarm_suppression_target': 'alarmSuppressionTarget',
             'level': 'level',
@@ -86,7 +85,6 @@ class CreateAlarmSuppressionDetails(object):
             'defined_tags': 'definedTags',
             'suppression_conditions': 'suppressionConditions'
         }
-
         self._alarm_suppression_target = None
         self._level = None
         self._display_name = None

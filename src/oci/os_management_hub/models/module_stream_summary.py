@@ -48,7 +48,6 @@ class ModuleStreamSummary(object):
             'is_latest': 'bool',
             'software_source_id': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'module_name': 'moduleName',
@@ -56,7 +55,6 @@ class ModuleStreamSummary(object):
             'is_latest': 'isLatest',
             'software_source_id': 'softwareSourceId'
         }
-
         self._name = None
         self._module_name = None
         self._profiles = None

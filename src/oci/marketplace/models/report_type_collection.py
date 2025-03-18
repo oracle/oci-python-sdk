@@ -28,11 +28,9 @@ class ReportTypeCollection(object):
         self.swagger_types = {
             'items': 'list[ReportTypeSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

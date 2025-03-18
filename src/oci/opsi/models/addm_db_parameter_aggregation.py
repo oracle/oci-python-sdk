@@ -73,7 +73,6 @@ class AddmDbParameterAggregation(object):
             'value_modified': 'str',
             'is_high_impact': 'bool'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -86,7 +85,6 @@ class AddmDbParameterAggregation(object):
             'value_modified': 'valueModified',
             'is_high_impact': 'isHighImpact'
         }
-
         self._id = None
         self._name = None
         self._inst_num = None

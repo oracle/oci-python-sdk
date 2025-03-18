@@ -154,7 +154,6 @@ class AuditSpecification(object):
             'is_created': 'bool',
             'enabled_entities': 'str'
         }
-
         self.attribute_map = {
             'audit_policy_name': 'auditPolicyName',
             'database_policy_names': 'databasePolicyNames',
@@ -168,7 +167,6 @@ class AuditSpecification(object):
             'is_created': 'isCreated',
             'enabled_entities': 'enabledEntities'
         }
-
         self._audit_policy_name = None
         self._database_policy_names = None
         self._audit_policy_category = None

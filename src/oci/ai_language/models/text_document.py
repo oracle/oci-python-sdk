@@ -38,13 +38,11 @@ class TextDocument(object):
             'text': 'str',
             'language_code': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'text': 'text',
             'language_code': 'languageCode'
         }
-
         self._key = None
         self._text = None
         self._language_code = None

@@ -135,7 +135,6 @@ class CreateOracleConnectionDetails(CreateConnectionDetails):
             'ssh_user': 'str',
             'ssh_sudo_location': 'str'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'display_name': 'displayName',
@@ -160,7 +159,6 @@ class CreateOracleConnectionDetails(CreateConnectionDetails):
             'ssh_user': 'sshUser',
             'ssh_sudo_location': 'sshSudoLocation'
         }
-
         self._connection_type = None
         self._display_name = None
         self._description = None

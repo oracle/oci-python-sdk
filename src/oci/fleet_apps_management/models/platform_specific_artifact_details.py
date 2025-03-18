@@ -35,12 +35,10 @@ class PlatformSpecificArtifactDetails(ArtifactDetails):
             'category': 'str',
             'artifacts': 'list[PlatformSpecificArtifact]'
         }
-
         self.attribute_map = {
             'category': 'category',
             'artifacts': 'artifacts'
         }
-
         self._category = None
         self._artifacts = None
         self._category = 'PLATFORM_SPECIFIC'

@@ -68,7 +68,6 @@ class RepositoryCommit(object):
             'time_created': 'datetime',
             'tree_id': 'str'
         }
-
         self.attribute_map = {
             'commit_id': 'commitId',
             'commit_message': 'commitMessage',
@@ -80,7 +79,6 @@ class RepositoryCommit(object):
             'time_created': 'timeCreated',
             'tree_id': 'treeId'
         }
-
         self._commit_id = None
         self._commit_message = None
         self._author_name = None

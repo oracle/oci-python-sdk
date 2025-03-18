@@ -78,7 +78,6 @@ class AlarmSuppressionHistoryItem(object):
             'time_effective_until': 'datetime',
             'suppression_conditions': 'list[SuppressionCondition]'
         }
-
         self.attribute_map = {
             'suppression_id': 'suppressionId',
             'alarm_suppression_target': 'alarmSuppressionTarget',
@@ -90,7 +89,6 @@ class AlarmSuppressionHistoryItem(object):
             'time_effective_until': 'timeEffectiveUntil',
             'suppression_conditions': 'suppressionConditions'
         }
-
         self._suppression_id = None
         self._alarm_suppression_target = None
         self._level = None

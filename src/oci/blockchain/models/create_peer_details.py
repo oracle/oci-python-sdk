@@ -43,14 +43,12 @@ class CreatePeerDetails(object):
             'ocpu_allocation_param': 'OcpuAllocationNumberParam',
             'ad': 'str'
         }
-
         self.attribute_map = {
             'role': 'role',
             'alias': 'alias',
             'ocpu_allocation_param': 'ocpuAllocationParam',
             'ad': 'ad'
         }
-
         self._role = None
         self._alias = None
         self._ocpu_allocation_param = None

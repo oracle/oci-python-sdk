@@ -61,14 +61,12 @@ class InstancePoolInstanceLoadBalancerBackend(object):
             'backend_name': 'str',
             'backend_health_status': 'str'
         }
-
         self.attribute_map = {
             'load_balancer_id': 'loadBalancerId',
             'backend_set_name': 'backendSetName',
             'backend_name': 'backendName',
             'backend_health_status': 'backendHealthStatus'
         }
-
         self._load_balancer_id = None
         self._backend_set_name = None
         self._backend_name = None

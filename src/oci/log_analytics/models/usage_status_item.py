@@ -43,14 +43,12 @@ class UsageStatusItem(object):
             'current_usage': 'int',
             'max_available': 'int'
         }
-
         self.attribute_map = {
             'data_type': 'dataType',
             'is_multi_valued': 'isMultiValued',
             'current_usage': 'currentUsage',
             'max_available': 'maxAvailable'
         }
-
         self._data_type = None
         self._is_multi_valued = None
         self._current_usage = None

@@ -48,7 +48,6 @@ class IdcsInfoDetails(object):
             'idcs_app_name': 'str',
             'instance_primary_audience_url': 'str'
         }
-
         self.attribute_map = {
             'idcs_app_location_url': 'idcsAppLocationUrl',
             'idcs_app_display_name': 'idcsAppDisplayName',
@@ -56,7 +55,6 @@ class IdcsInfoDetails(object):
             'idcs_app_name': 'idcsAppName',
             'instance_primary_audience_url': 'instancePrimaryAudienceUrl'
         }
-
         self._idcs_app_location_url = None
         self._idcs_app_display_name = None
         self._idcs_app_id = None

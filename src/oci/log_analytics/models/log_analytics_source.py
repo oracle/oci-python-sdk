@@ -218,7 +218,6 @@ class LogAnalyticsSource(object):
             'endpoints': 'list[LogAnalyticsEndpoint]',
             'source_properties': 'list[LogAnalyticsProperty]'
         }
-
         self.attribute_map = {
             'label_conditions': 'labelConditions',
             'association_count': 'associationCount',
@@ -260,7 +259,6 @@ class LogAnalyticsSource(object):
             'endpoints': 'endpoints',
             'source_properties': 'sourceProperties'
         }
-
         self._label_conditions = None
         self._association_count = None
         self._association_entity = None

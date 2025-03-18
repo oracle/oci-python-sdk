@@ -52,13 +52,11 @@ class PullRequestNotificationPreference(object):
             'user_id': 'str',
             'notification_preference': 'str'
         }
-
         self.attribute_map = {
             'pull_request_id': 'pullRequestId',
             'user_id': 'userId',
             'notification_preference': 'notificationPreference'
         }
-
         self._pull_request_id = None
         self._user_id = None
         self._notification_preference = None

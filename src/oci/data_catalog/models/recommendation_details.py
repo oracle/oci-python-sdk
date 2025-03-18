@@ -134,7 +134,6 @@ class RecommendationDetails(object):
             'target_object_type': 'str',
             'properties': 'dict(str, dict(str, str))'
         }
-
         self.attribute_map = {
             'recommendation_key': 'recommendationKey',
             'recommendation_type': 'recommendationType',
@@ -148,7 +147,6 @@ class RecommendationDetails(object):
             'target_object_type': 'targetObjectType',
             'properties': 'properties'
         }
-
         self._recommendation_key = None
         self._recommendation_type = None
         self._recommendation_status = None

@@ -48,7 +48,6 @@ class UpdateMetricExtensionDetails(object):
             'metric_list': 'list[Metric]',
             'query_properties': 'MetricExtensionUpdateQueryProperties'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
@@ -56,7 +55,6 @@ class UpdateMetricExtensionDetails(object):
             'metric_list': 'metricList',
             'query_properties': 'queryProperties'
         }
-
         self._display_name = None
         self._description = None
         self._collection_recurrences = None

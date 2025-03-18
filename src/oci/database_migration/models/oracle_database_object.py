@@ -43,14 +43,12 @@ class OracleDatabaseObject(object):
             'type': 'str',
             'is_omit_excluded_table_from_replication': 'bool'
         }
-
         self.attribute_map = {
             'owner': 'owner',
             'object_name': 'objectName',
             'type': 'type',
             'is_omit_excluded_table_from_replication': 'isOmitExcludedTableFromReplication'
         }
-
         self._owner = None
         self._object_name = None
         self._type = None

@@ -146,7 +146,6 @@ class IPSecConnection(object):
             'time_created': 'datetime',
             'transport_type': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'cpe_id': 'cpeId',
@@ -162,7 +161,6 @@ class IPSecConnection(object):
             'time_created': 'timeCreated',
             'transport_type': 'transportType'
         }
-
         self._compartment_id = None
         self._cpe_id = None
         self._defined_tags = None

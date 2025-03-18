@@ -43,14 +43,12 @@ class SupportContact(object):
             'email': 'str',
             'subject': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'phone': 'phone',
             'email': 'email',
             'subject': 'subject'
         }
-
         self._name = None
         self._phone = None
         self._email = None

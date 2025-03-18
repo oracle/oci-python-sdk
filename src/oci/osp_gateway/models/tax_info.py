@@ -53,7 +53,6 @@ class TaxInfo(object):
             'tax_cnpj': 'str',
             'giro': 'str'
         }
-
         self.attribute_map = {
             'tax_payer_id': 'taxPayerId',
             'tax_reg_number': 'taxRegNumber',
@@ -62,7 +61,6 @@ class TaxInfo(object):
             'tax_cnpj': 'taxCnpj',
             'giro': 'giro'
         }
-
         self._tax_payer_id = None
         self._tax_reg_number = None
         self._no_tax_reason_code = None

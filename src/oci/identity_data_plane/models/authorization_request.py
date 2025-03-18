@@ -53,7 +53,6 @@ class AuthorizationRequest(object):
             'context': 'list[PermissionContext]',
             'policy_hash': 'str'
         }
-
         self.attribute_map = {
             'request_id': 'requestId',
             'user_principal': 'userPrincipal',
@@ -62,7 +61,6 @@ class AuthorizationRequest(object):
             'context': 'context',
             'policy_hash': 'policyHash'
         }
-
         self._request_id = None
         self._user_principal = None
         self._svc_principal = None

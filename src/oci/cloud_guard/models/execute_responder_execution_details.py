@@ -28,11 +28,9 @@ class ExecuteResponderExecutionDetails(object):
         self.swagger_types = {
             'configurations': 'list[ResponderConfiguration]'
         }
-
         self.attribute_map = {
             'configurations': 'configurations'
         }
-
         self._configurations = None
 
     @property

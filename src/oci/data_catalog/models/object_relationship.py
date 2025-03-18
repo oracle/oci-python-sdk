@@ -73,7 +73,6 @@ class ObjectRelationship(object):
             'parent_key': 'str',
             'parent_path': 'str'
         }
-
         self.attribute_map = {
             'relationship_type': 'relationshipType',
             'key': 'key',
@@ -86,7 +85,6 @@ class ObjectRelationship(object):
             'parent_key': 'parentKey',
             'parent_path': 'parentPath'
         }
-
         self._relationship_type = None
         self._key = None
         self._name = None

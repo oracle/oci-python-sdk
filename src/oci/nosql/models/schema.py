@@ -48,7 +48,6 @@ class Schema(object):
             'ttl': 'int',
             'identity': 'Identity'
         }
-
         self.attribute_map = {
             'columns': 'columns',
             'primary_key': 'primaryKey',
@@ -56,7 +55,6 @@ class Schema(object):
             'ttl': 'ttl',
             'identity': 'identity'
         }
-
         self._columns = None
         self._primary_key = None
         self._shard_key = None

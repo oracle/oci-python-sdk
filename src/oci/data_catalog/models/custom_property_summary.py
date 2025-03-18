@@ -194,7 +194,6 @@ class CustomPropertySummary(object):
             'is_event_enabled': 'bool',
             'events': 'list[EventConfig]'
         }
-
         self.attribute_map = {
             'key': 'key',
             'display_name': 'displayName',
@@ -220,7 +219,6 @@ class CustomPropertySummary(object):
             'is_event_enabled': 'isEventEnabled',
             'events': 'events'
         }
-
         self._key = None
         self._display_name = None
         self._description = None

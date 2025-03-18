@@ -28,11 +28,9 @@ class TransferAppliancePublicKey(object):
         self.swagger_types = {
             'public_key': 'str'
         }
-
         self.attribute_map = {
             'public_key': 'publicKey'
         }
-
         self._public_key = None
 
     @property

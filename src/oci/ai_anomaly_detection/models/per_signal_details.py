@@ -82,7 +82,6 @@ class PerSignalDetails(object):
             'status': 'str',
             'details': 'str'
         }
-
         self.attribute_map = {
             'signal_name': 'signalName',
             'mvi_ratio': 'mviRatio',
@@ -94,7 +93,6 @@ class PerSignalDetails(object):
             'status': 'status',
             'details': 'details'
         }
-
         self._signal_name = None
         self._mvi_ratio = None
         self._is_quantized = None

@@ -58,7 +58,6 @@ class CreateProjectDetails(object):
             'key': 'str',
             'registry_metadata': 'RegistryMetadata'
         }
-
         self.attribute_map = {
             'model_version': 'modelVersion',
             'name': 'name',
@@ -68,7 +67,6 @@ class CreateProjectDetails(object):
             'key': 'key',
             'registry_metadata': 'registryMetadata'
         }
-
         self._model_version = None
         self._name = None
         self._description = None

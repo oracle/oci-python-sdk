@@ -33,12 +33,10 @@ class SetAutoUpgradableConfigDetails(object):
             'compartment_id': 'str',
             'is_agent_auto_upgradable': 'bool'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'is_agent_auto_upgradable': 'isAgentAutoUpgradable'
         }
-
         self._compartment_id = None
         self._is_agent_auto_upgradable = None
 

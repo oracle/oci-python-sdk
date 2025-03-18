@@ -43,14 +43,12 @@ class CreateConfigurationDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'zpr_status': 'zprStatus',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._compartment_id = None
         self._zpr_status = None
         self._freeform_tags = None

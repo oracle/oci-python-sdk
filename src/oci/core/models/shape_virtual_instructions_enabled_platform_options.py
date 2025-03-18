@@ -33,12 +33,10 @@ class ShapeVirtualInstructionsEnabledPlatformOptions(object):
             'allowed_values': 'list[bool]',
             'is_default_enabled': 'bool'
         }
-
         self.attribute_map = {
             'allowed_values': 'allowedValues',
             'is_default_enabled': 'isDefaultEnabled'
         }
-
         self._allowed_values = None
         self._is_default_enabled = None
 

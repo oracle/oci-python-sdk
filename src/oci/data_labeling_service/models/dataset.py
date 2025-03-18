@@ -159,7 +159,6 @@ class Dataset(object):
             'system_tags': 'dict(str, dict(str, object))',
             'additional_properties': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -182,7 +181,6 @@ class Dataset(object):
             'system_tags': 'systemTags',
             'additional_properties': 'additionalProperties'
         }
-
         self._id = None
         self._display_name = None
         self._compartment_id = None

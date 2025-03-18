@@ -28,11 +28,9 @@ class SchedulingPlanCollection(object):
         self.swagger_types = {
             'items': 'list[SchedulingPlanSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

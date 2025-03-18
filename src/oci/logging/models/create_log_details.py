@@ -67,7 +67,6 @@ class CreateLogDetails(object):
             'configuration': 'Configuration',
             'retention_duration': 'int'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'log_type': 'logType',
@@ -77,7 +76,6 @@ class CreateLogDetails(object):
             'configuration': 'configuration',
             'retention_duration': 'retentionDuration'
         }
-
         self._display_name = None
         self._log_type = None
         self._is_enabled = None

@@ -58,7 +58,6 @@ class UpdateDecryptionRuleDetails(object):
             'secret': 'str',
             'position': 'RulePosition'
         }
-
         self.attribute_map = {
             'condition': 'condition',
             'action': 'action',
@@ -66,7 +65,6 @@ class UpdateDecryptionRuleDetails(object):
             'secret': 'secret',
             'position': 'position'
         }
-
         self._condition = None
         self._action = None
         self._decryption_profile = None

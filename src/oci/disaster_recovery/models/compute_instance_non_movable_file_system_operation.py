@@ -38,13 +38,11 @@ class ComputeInstanceNonMovableFileSystemOperation(object):
             'mount_point': 'str',
             'mount_target_id': 'str'
         }
-
         self.attribute_map = {
             'export_path': 'exportPath',
             'mount_point': 'mountPoint',
             'mount_target_id': 'mountTargetId'
         }
-
         self._export_path = None
         self._mount_point = None
         self._mount_target_id = None

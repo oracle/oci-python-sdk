@@ -41,13 +41,11 @@ class UpdateComputeClusterDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags'
         }
-
         self._display_name = None
         self._defined_tags = None
         self._freeform_tags = None

@@ -88,7 +88,6 @@ class PullRequestFileChangeSummary(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'change_type': 'changeType',
             'object_type': 'objectType',
@@ -104,7 +103,6 @@ class PullRequestFileChangeSummary(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._change_type = None
         self._object_type = None
         self._commit_id = None

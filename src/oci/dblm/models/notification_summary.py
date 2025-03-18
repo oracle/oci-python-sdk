@@ -57,14 +57,12 @@ class NotificationSummary(object):
             'id': 'str',
             'time_published': 'datetime'
         }
-
         self.attribute_map = {
             'notification_type': 'notificationType',
             'notification_text': 'notificationText',
             'id': 'id',
             'time_published': 'timePublished'
         }
-
         self._notification_type = None
         self._notification_text = None
         self._id = None

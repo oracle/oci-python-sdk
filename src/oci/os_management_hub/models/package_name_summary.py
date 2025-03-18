@@ -74,7 +74,6 @@ class PackageNameSummary(object):
             'version': 'str',
             'architecture': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'name': 'name',
@@ -82,7 +81,6 @@ class PackageNameSummary(object):
             'version': 'version',
             'architecture': 'architecture'
         }
-
         self._display_name = None
         self._name = None
         self._type = None

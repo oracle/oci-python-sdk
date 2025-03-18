@@ -33,12 +33,10 @@ class DataAssetPermissionsSummary(object):
             'data_asset_key': 'str',
             'user_permissions': 'list[str]'
         }
-
         self.attribute_map = {
             'data_asset_key': 'dataAssetKey',
             'user_permissions': 'userPermissions'
         }
-
         self._data_asset_key = None
         self._user_permissions = None
 

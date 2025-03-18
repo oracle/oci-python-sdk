@@ -62,7 +62,6 @@ class SearchSoftwareSourcePackageGroupsDetails(object):
             'name_contains': 'str',
             'group_type': 'str'
         }
-
         self.attribute_map = {
             'software_source_ids': 'softwareSourceIds',
             'sort_order': 'sortOrder',
@@ -70,7 +69,6 @@ class SearchSoftwareSourcePackageGroupsDetails(object):
             'name_contains': 'nameContains',
             'group_type': 'groupType'
         }
-
         self._software_source_ids = None
         self._sort_order = None
         self._sort_by = None

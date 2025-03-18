@@ -71,7 +71,6 @@ class SourceConnectorPlugin(ConnectorPlugin):
             'schema': 'str',
             'max_retention': 'str'
         }
-
         self.attribute_map = {
             'kind': 'kind',
             'name': 'name',
@@ -82,7 +81,6 @@ class SourceConnectorPlugin(ConnectorPlugin):
             'schema': 'schema',
             'max_retention': 'maxRetention'
         }
-
         self._kind = None
         self._name = None
         self._time_created = None

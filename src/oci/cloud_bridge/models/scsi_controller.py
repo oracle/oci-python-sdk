@@ -38,13 +38,11 @@ class ScsiController(object):
             'unit_number': 'int',
             'shared_bus': 'str'
         }
-
         self.attribute_map = {
             'label': 'label',
             'unit_number': 'unitNumber',
             'shared_bus': 'sharedBus'
         }
-
         self._label = None
         self._unit_number = None
         self._shared_bus = None

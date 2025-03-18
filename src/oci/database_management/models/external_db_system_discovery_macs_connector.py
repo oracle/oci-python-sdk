@@ -64,7 +64,6 @@ class ExternalDbSystemDiscoveryMacsConnector(ExternalDbSystemDiscoveryConnector)
             'agent_id': 'str',
             'connection_info': 'ExternalDbSystemConnectionInfo'
         }
-
         self.attribute_map = {
             'connector_type': 'connectorType',
             'display_name': 'displayName',
@@ -74,7 +73,6 @@ class ExternalDbSystemDiscoveryMacsConnector(ExternalDbSystemDiscoveryConnector)
             'agent_id': 'agentId',
             'connection_info': 'connectionInfo'
         }
-
         self._connector_type = None
         self._display_name = None
         self._connection_status = None

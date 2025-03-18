@@ -33,12 +33,10 @@ class SqlDetails(object):
             'script_file_name': 'str',
             'content': 'str'
         }
-
         self.attribute_map = {
             'script_file_name': 'scriptFileName',
             'content': 'content'
         }
-
         self._script_file_name = None
         self._content = None
 

@@ -38,13 +38,11 @@ class DatabaseConnectionStrings(object):
             'cdb_ip_default': 'str',
             'all_connection_strings': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'cdb_default': 'cdbDefault',
             'cdb_ip_default': 'cdbIpDefault',
             'all_connection_strings': 'allConnectionStrings'
         }
-
         self._cdb_default = None
         self._cdb_ip_default = None
         self._all_connection_strings = None

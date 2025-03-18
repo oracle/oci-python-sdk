@@ -81,7 +81,6 @@ class UserGroupMembership(object):
             'lifecycle_state': 'str',
             'inactive_status': 'int'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -91,7 +90,6 @@ class UserGroupMembership(object):
             'lifecycle_state': 'lifecycleState',
             'inactive_status': 'inactiveStatus'
         }
-
         self._id = None
         self._compartment_id = None
         self._group_id = None

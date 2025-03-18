@@ -38,13 +38,11 @@ class UpdateScheduledActionDetails(object):
             'action_members': 'list[ActionMember]',
             'scheduling_window_id': 'str'
         }
-
         self.attribute_map = {
             'action_params': 'actionParams',
             'action_members': 'actionMembers',
             'scheduling_window_id': 'schedulingWindowId'
         }
-
         self._action_params = None
         self._action_members = None
         self._scheduling_window_id = None

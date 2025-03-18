@@ -47,13 +47,11 @@ class GenerateAutonomousDatabaseWalletDetails(object):
             'password': 'str',
             'is_regional': 'bool'
         }
-
         self.attribute_map = {
             'generate_type': 'generateType',
             'password': 'password',
             'is_regional': 'isRegional'
         }
-
         self._generate_type = None
         self._password = None
         self._is_regional = None

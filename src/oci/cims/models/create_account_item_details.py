@@ -52,7 +52,6 @@ class CreateAccountItemDetails(CreateItemDetails):
             'issue_type': 'CreateIssueTypeDetails',
             'name': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'category': 'category',
@@ -60,7 +59,6 @@ class CreateAccountItemDetails(CreateItemDetails):
             'issue_type': 'issueType',
             'name': 'name'
         }
-
         self._type = None
         self._category = None
         self._sub_category = None

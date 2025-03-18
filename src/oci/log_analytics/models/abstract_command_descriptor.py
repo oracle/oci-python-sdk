@@ -338,7 +338,6 @@ class AbstractCommandDescriptor(object):
             'declared_fields': 'list[AbstractField]',
             'is_hidden': 'bool'
         }
-
         self.attribute_map = {
             'name': 'name',
             'display_query_string': 'displayQueryString',
@@ -348,7 +347,6 @@ class AbstractCommandDescriptor(object):
             'declared_fields': 'declaredFields',
             'is_hidden': 'isHidden'
         }
-
         self._name = None
         self._display_query_string = None
         self._internal_query_string = None

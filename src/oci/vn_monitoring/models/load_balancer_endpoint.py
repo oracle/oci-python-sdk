@@ -35,12 +35,10 @@ class LoadBalancerEndpoint(Endpoint):
             'type': 'str',
             'load_balancer_id': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'load_balancer_id': 'loadBalancerId'
         }
-
         self._type = None
         self._load_balancer_id = None
         self._type = 'LOAD_BALANCER'

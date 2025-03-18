@@ -38,13 +38,11 @@ class TraceServiceSummary(object):
             'total_spans': 'int',
             'error_spans': 'int'
         }
-
         self.attribute_map = {
             'span_service_name': 'spanServiceName',
             'total_spans': 'totalSpans',
             'error_spans': 'errorSpans'
         }
-
         self._span_service_name = None
         self._total_spans = None
         self._error_spans = None

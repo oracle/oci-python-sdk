@@ -51,13 +51,11 @@ class ContainerEmptyDirVolume(ContainerVolume):
             'volume_type': 'str',
             'backing_store': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'volume_type': 'volumeType',
             'backing_store': 'backingStore'
         }
-
         self._name = None
         self._volume_type = None
         self._backing_store = None

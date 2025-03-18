@@ -53,14 +53,12 @@ class Configuration(object):
             'service_configurations': 'list[ServiceConfiguration]',
             'self_manage_resources': 'bool'
         }
-
         self.attribute_map = {
             'reporting_region': 'reportingRegion',
             'status': 'status',
             'service_configurations': 'serviceConfigurations',
             'self_manage_resources': 'selfManageResources'
         }
-
         self._reporting_region = None
         self._status = None
         self._service_configurations = None

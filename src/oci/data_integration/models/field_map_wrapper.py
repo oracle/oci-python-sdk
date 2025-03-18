@@ -28,11 +28,9 @@ class FieldMapWrapper(object):
         self.swagger_types = {
             'field_map': 'FieldMap'
         }
-
         self.attribute_map = {
             'field_map': 'fieldMap'
         }
-
         self._field_map = None
 
     @property

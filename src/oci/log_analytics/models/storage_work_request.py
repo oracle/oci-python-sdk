@@ -237,7 +237,6 @@ class StorageWorkRequest(object):
             'is_recall_new_data_only': 'bool',
             'is_use_recommended_data_set': 'bool'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -266,7 +265,6 @@ class StorageWorkRequest(object):
             'is_recall_new_data_only': 'isRecallNewDataOnly',
             'is_use_recommended_data_set': 'isUseRecommendedDataSet'
         }
-
         self._id = None
         self._compartment_id = None
         self._time_started = None

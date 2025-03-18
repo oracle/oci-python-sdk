@@ -68,7 +68,6 @@ class CreateExternalMacsConnectorDetails(CreateExternalDatabaseConnectorDetails)
             'connection_credentials': 'DatabaseConnectionCredentials',
             'connector_agent_id': 'str'
         }
-
         self.attribute_map = {
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -79,7 +78,6 @@ class CreateExternalMacsConnectorDetails(CreateExternalDatabaseConnectorDetails)
             'connection_credentials': 'connectionCredentials',
             'connector_agent_id': 'connectorAgentId'
         }
-
         self._freeform_tags = None
         self._defined_tags = None
         self._display_name = None

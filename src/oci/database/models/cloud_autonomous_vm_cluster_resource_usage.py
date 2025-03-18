@@ -123,7 +123,6 @@ class CloudAutonomousVmClusterResourceUsage(object):
             'non_provisionable_autonomous_container_databases': 'int',
             'autonomous_vm_resource_usage': 'list[AutonomousVmResourceUsage]'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'id': 'id',
@@ -146,7 +145,6 @@ class CloudAutonomousVmClusterResourceUsage(object):
             'non_provisionable_autonomous_container_databases': 'nonProvisionableAutonomousContainerDatabases',
             'autonomous_vm_resource_usage': 'autonomousVmResourceUsage'
         }
-
         self._display_name = None
         self._id = None
         self._autonomous_data_storage_size_in_tbs = None

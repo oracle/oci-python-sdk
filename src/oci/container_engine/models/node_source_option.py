@@ -43,12 +43,10 @@ class NodeSourceOption(object):
             'source_type': 'str',
             'source_name': 'str'
         }
-
         self.attribute_map = {
             'source_type': 'sourceType',
             'source_name': 'sourceName'
         }
-
         self._source_type = None
         self._source_name = None
 

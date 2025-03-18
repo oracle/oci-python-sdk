@@ -103,7 +103,6 @@ class AdhocQueryResultSummary(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'host_id': 'hostId',
             'state': 'state',
@@ -116,7 +115,6 @@ class AdhocQueryResultSummary(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._host_id = None
         self._state = None
         self._region = None

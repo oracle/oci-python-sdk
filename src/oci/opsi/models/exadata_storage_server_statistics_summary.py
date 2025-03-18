@@ -40,13 +40,11 @@ class ExadataStorageServerStatisticsSummary(ExadataInsightResourceStatisticsAggr
             'resource_details': 'StorageServerDetails',
             'current_statistics': 'ExadataInsightResourceStatistics'
         }
-
         self.attribute_map = {
             'exadata_resource_type': 'exadataResourceType',
             'resource_details': 'resourceDetails',
             'current_statistics': 'currentStatistics'
         }
-
         self._exadata_resource_type = None
         self._resource_details = None
         self._current_statistics = None

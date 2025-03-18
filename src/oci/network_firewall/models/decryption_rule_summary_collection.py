@@ -28,11 +28,9 @@ class DecryptionRuleSummaryCollection(object):
         self.swagger_types = {
             'items': 'list[DecryptionRuleSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

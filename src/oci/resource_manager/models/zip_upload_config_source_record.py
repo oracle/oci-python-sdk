@@ -30,11 +30,9 @@ class ZipUploadConfigSourceRecord(ConfigSourceRecord):
         self.swagger_types = {
             'config_source_record_type': 'str'
         }
-
         self.attribute_map = {
             'config_source_record_type': 'configSourceRecordType'
         }
-
         self._config_source_record_type = None
         self._config_source_record_type = 'ZIP_UPLOAD'
 

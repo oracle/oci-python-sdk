@@ -55,7 +55,6 @@ class IntelVmPlatformConfig(PlatformConfig):
             'is_memory_encryption_enabled': 'bool',
             'is_symmetric_multi_threading_enabled': 'bool'
         }
-
         self.attribute_map = {
             'type': 'type',
             'is_secure_boot_enabled': 'isSecureBootEnabled',
@@ -64,7 +63,6 @@ class IntelVmPlatformConfig(PlatformConfig):
             'is_memory_encryption_enabled': 'isMemoryEncryptionEnabled',
             'is_symmetric_multi_threading_enabled': 'isSymmetricMultiThreadingEnabled'
         }
-
         self._type = None
         self._is_secure_boot_enabled = None
         self._is_trusted_platform_module_enabled = None

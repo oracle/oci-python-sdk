@@ -33,12 +33,10 @@ class DynamicRoutingTypeRoutingBackend(object):
             'key': 'DynamicSelectionKey',
             'backend': 'ApiSpecificationRouteBackend'
         }
-
         self.attribute_map = {
             'key': 'key',
             'backend': 'backend'
         }
-
         self._key = None
         self._backend = None
 

@@ -43,14 +43,12 @@ class ModuleStreamProfileSummary(object):
             'name': 'str',
             'is_default': 'bool'
         }
-
         self.attribute_map = {
             'module_name': 'moduleName',
             'stream_name': 'streamName',
             'name': 'name',
             'is_default': 'isDefault'
         }
-
         self._module_name = None
         self._stream_name = None
         self._name = None

@@ -48,7 +48,6 @@ class ExtensionPosixUser(object):
             'home_directory': 'str',
             'login_shell': 'str'
         }
-
         self.attribute_map = {
             'uid_number': 'uidNumber',
             'gid_number': 'gidNumber',
@@ -56,7 +55,6 @@ class ExtensionPosixUser(object):
             'home_directory': 'homeDirectory',
             'login_shell': 'loginShell'
         }
-
         self._uid_number = None
         self._gid_number = None
         self._gecos = None

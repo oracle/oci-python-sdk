@@ -48,7 +48,6 @@ class AnomalyDataPoint(object):
             'timestamp': 'datetime',
             'value': 'float'
         }
-
         self.attribute_map = {
             'anomaly': 'anomaly',
             'low': 'low',
@@ -56,7 +55,6 @@ class AnomalyDataPoint(object):
             'timestamp': 'timestamp',
             'value': 'value'
         }
-
         self._anomaly = None
         self._low = None
         self._high = None

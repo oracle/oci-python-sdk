@@ -40,13 +40,11 @@ class ComputeInstanceGroupLinearRolloutPolicyByPercentage(ComputeInstanceGroupRo
             'batch_delay_in_seconds': 'int',
             'batch_percentage': 'int'
         }
-
         self.attribute_map = {
             'policy_type': 'policyType',
             'batch_delay_in_seconds': 'batchDelayInSeconds',
             'batch_percentage': 'batchPercentage'
         }
-
         self._policy_type = None
         self._batch_delay_in_seconds = None
         self._batch_percentage = None

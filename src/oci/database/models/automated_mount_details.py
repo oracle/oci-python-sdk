@@ -40,13 +40,11 @@ class AutomatedMountDetails(MountTypeDetails):
             'nfs_server': 'list[str]',
             'nfs_server_export': 'str'
         }
-
         self.attribute_map = {
             'mount_type': 'mountType',
             'nfs_server': 'nfsServer',
             'nfs_server_export': 'nfsServerExport'
         }
-
         self._mount_type = None
         self._nfs_server = None
         self._nfs_server_export = None

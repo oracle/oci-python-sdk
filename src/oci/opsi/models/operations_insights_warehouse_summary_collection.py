@@ -28,11 +28,9 @@ class OperationsInsightsWarehouseSummaryCollection(object):
         self.swagger_types = {
             'items': 'list[OperationsInsightsWarehouseSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

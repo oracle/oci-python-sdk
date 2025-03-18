@@ -38,13 +38,11 @@ class RequestRoverBundleDetails(object):
             'destination_bucket_name': 'str',
             'bundle_version': 'str'
         }
-
         self.attribute_map = {
             'destination_compartment_id': 'destinationCompartmentId',
             'destination_bucket_name': 'destinationBucketName',
             'bundle_version': 'bundleVersion'
         }
-
         self._destination_compartment_id = None
         self._destination_bucket_name = None
         self._bundle_version = None

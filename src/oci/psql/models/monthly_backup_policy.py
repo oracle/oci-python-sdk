@@ -50,7 +50,6 @@ class MonthlyBackupPolicy(BackupPolicy):
             'backup_start': 'str',
             'days_of_the_month': 'list[int]'
         }
-
         self.attribute_map = {
             'kind': 'kind',
             'retention_days': 'retentionDays',
@@ -58,7 +57,6 @@ class MonthlyBackupPolicy(BackupPolicy):
             'backup_start': 'backupStart',
             'days_of_the_month': 'daysOfTheMonth'
         }
-
         self._kind = None
         self._retention_days = None
         self._copy_policy = None

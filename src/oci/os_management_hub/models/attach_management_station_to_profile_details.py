@@ -28,11 +28,9 @@ class AttachManagementStationToProfileDetails(object):
         self.swagger_types = {
             'management_station_id': 'str'
         }
-
         self.attribute_map = {
             'management_station_id': 'managementStationId'
         }
-
         self._management_station_id = None
 
     @property

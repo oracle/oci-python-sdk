@@ -35,12 +35,10 @@ class OnPremiseConnector(ConnectionOption):
             'connection_type': 'str',
             'on_prem_connector_id': 'str'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'on_prem_connector_id': 'onPremConnectorId'
         }
-
         self._connection_type = None
         self._on_prem_connector_id = None
         self._connection_type = 'ONPREM_CONNECTOR'

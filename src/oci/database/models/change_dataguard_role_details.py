@@ -68,13 +68,11 @@ class ChangeDataguardRoleDetails(object):
             'autonomous_container_database_dataguard_association_id': 'str',
             'connection_strings_type': 'str'
         }
-
         self.attribute_map = {
             'role': 'role',
             'autonomous_container_database_dataguard_association_id': 'autonomousContainerDatabaseDataguardAssociationId',
             'connection_strings_type': 'connectionStringsType'
         }
-
         self._role = None
         self._autonomous_container_database_dataguard_association_id = None
         self._connection_strings_type = None

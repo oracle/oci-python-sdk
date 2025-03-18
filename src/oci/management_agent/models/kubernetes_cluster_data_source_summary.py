@@ -45,14 +45,12 @@ class KubernetesClusterDataSourceSummary(DataSourceSummary):
             'name': 'str',
             'is_daemon_set': 'bool'
         }
-
         self.attribute_map = {
             'key': 'key',
             'type': 'type',
             'name': 'name',
             'is_daemon_set': 'isDaemonSet'
         }
-
         self._key = None
         self._type = None
         self._name = None

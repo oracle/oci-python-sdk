@@ -52,14 +52,12 @@ class StructuredType(object):
             'type_system_name': 'str',
             'config_definition': 'ConfigDefinition'
         }
-
         self.attribute_map = {
             'schema': 'schema',
             'dt_type': 'dtType',
             'type_system_name': 'typeSystemName',
             'config_definition': 'configDefinition'
         }
-
         self._schema = None
         self._dt_type = None
         self._type_system_name = None

@@ -63,14 +63,12 @@ class InfrastructureTargetVersionSummary(object):
             'target_resource_type': 'str',
             'target_resource_id': 'str'
         }
-
         self.attribute_map = {
             'target_db_version_history_entry': 'targetDbVersionHistoryEntry',
             'target_storage_version_history_entry': 'targetStorageVersionHistoryEntry',
             'target_resource_type': 'targetResourceType',
             'target_resource_id': 'targetResourceId'
         }
-
         self._target_db_version_history_entry = None
         self._target_storage_version_history_entry = None
         self._target_resource_type = None

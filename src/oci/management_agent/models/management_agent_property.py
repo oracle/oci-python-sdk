@@ -48,13 +48,11 @@ class ManagementAgentProperty(object):
             'values': 'list[str]',
             'units': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'values': 'values',
             'units': 'units'
         }
-
         self._name = None
         self._values = None
         self._units = None

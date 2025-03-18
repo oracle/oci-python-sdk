@@ -100,7 +100,6 @@ class CrossConnectMappingDetails(object):
             'ipv6_bgp_status': 'str',
             'oci_logical_device_name': 'str'
         }
-
         self.attribute_map = {
             'bgp_md5_auth_key': 'bgpMd5AuthKey',
             'cross_connect_or_cross_connect_group_id': 'crossConnectOrCrossConnectGroupId',
@@ -113,7 +112,6 @@ class CrossConnectMappingDetails(object):
             'ipv6_bgp_status': 'ipv6BgpStatus',
             'oci_logical_device_name': 'ociLogicalDeviceName'
         }
-
         self._bgp_md5_auth_key = None
         self._cross_connect_or_cross_connect_group_id = None
         self._customer_bgp_peering_ip = None

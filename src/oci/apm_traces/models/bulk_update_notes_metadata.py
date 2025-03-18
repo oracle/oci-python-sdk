@@ -64,14 +64,12 @@ class BulkUpdateNotesMetadata(object):
             'attributes_notes_updated': 'int',
             'synthetic_attributes_pinned': 'int'
         }
-
         self.attribute_map = {
             'operation_status': 'operationStatus',
             'operation_type': 'operationType',
             'attributes_notes_updated': 'attributesNotesUpdated',
             'synthetic_attributes_pinned': 'syntheticAttributesPinned'
         }
-
         self._operation_status = None
         self._operation_type = None
         self._attributes_notes_updated = None

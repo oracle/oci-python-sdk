@@ -159,7 +159,6 @@ class User(object):
             'last_successful_login_time': 'datetime',
             'previous_successful_login_time': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -180,7 +179,6 @@ class User(object):
             'last_successful_login_time': 'lastSuccessfulLoginTime',
             'previous_successful_login_time': 'previousSuccessfulLoginTime'
         }
-
         self._id = None
         self._compartment_id = None
         self._name = None

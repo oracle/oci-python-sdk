@@ -52,13 +52,11 @@ class BackupOperationDetails(object):
             'backup_state': 'str',
             'backup_state_details': 'str'
         }
-
         self.attribute_map = {
             'time_last_backup': 'timeLastBackup',
             'backup_state': 'backupState',
             'backup_state_details': 'backupStateDetails'
         }
-
         self._time_last_backup = None
         self._backup_state = None
         self._backup_state_details = None

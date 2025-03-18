@@ -102,7 +102,6 @@ class CompositeState(object):
             'registry_metadata': 'RegistryMetadata',
             'metadata': 'ObjectMetadata'
         }
-
         self.attribute_map = {
             'composite_state_aggregator': 'compositeStateAggregator',
             'key': 'key',
@@ -118,7 +117,6 @@ class CompositeState(object):
             'registry_metadata': 'registryMetadata',
             'metadata': 'metadata'
         }
-
         self._composite_state_aggregator = None
         self._key = None
         self._model_type = None

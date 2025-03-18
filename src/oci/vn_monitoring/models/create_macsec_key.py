@@ -35,12 +35,10 @@ class CreateMacsecKey(object):
             'connectivity_association_name_secret_id': 'str',
             'connectivity_association_key_secret_id': 'str'
         }
-
         self.attribute_map = {
             'connectivity_association_name_secret_id': 'connectivityAssociationNameSecretId',
             'connectivity_association_key_secret_id': 'connectivityAssociationKeySecretId'
         }
-
         self._connectivity_association_name_secret_id = None
         self._connectivity_association_key_secret_id = None
 

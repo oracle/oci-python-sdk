@@ -73,7 +73,6 @@ class RateCardSummary(object):
             'currency': 'SubscriptionCurrency',
             'rate_card_tiers': 'list[RateCardTier]'
         }
-
         self.attribute_map = {
             'subscribed_service_id': 'subscribedServiceId',
             'product': 'product',
@@ -86,7 +85,6 @@ class RateCardSummary(object):
             'currency': 'currency',
             'rate_card_tiers': 'rateCardTiers'
         }
-
         self._subscribed_service_id = None
         self._product = None
         self._time_start = None

@@ -35,12 +35,10 @@ class IngressGatewayAccessPolicyTargetDetails(AccessPolicyTargetDetails):
             'type': 'str',
             'ingress_gateway_id': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'ingress_gateway_id': 'ingressGatewayId'
         }
-
         self._type = None
         self._ingress_gateway_id = None
         self._type = 'INGRESS_GATEWAY'

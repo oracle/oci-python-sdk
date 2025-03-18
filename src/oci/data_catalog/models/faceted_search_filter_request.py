@@ -33,12 +33,10 @@ class FacetedSearchFilterRequest(object):
             'search_date_filters': 'list[FacetedSearchDateFilterRequest]',
             'search_string_filters': 'list[FacetedSearchStringFilterRequest]'
         }
-
         self.attribute_map = {
             'search_date_filters': 'searchDateFilters',
             'search_string_filters': 'searchStringFilters'
         }
-
         self._search_date_filters = None
         self._search_string_filters = None
 

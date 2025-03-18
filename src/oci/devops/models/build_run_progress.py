@@ -38,13 +38,11 @@ class BuildRunProgress(object):
             'time_finished': 'datetime',
             'build_pipeline_stage_run_progress': 'dict(str, BuildPipelineStageRunProgress)'
         }
-
         self.attribute_map = {
             'time_started': 'timeStarted',
             'time_finished': 'timeFinished',
             'build_pipeline_stage_run_progress': 'buildPipelineStageRunProgress'
         }
-
         self._time_started = None
         self._time_finished = None
         self._build_pipeline_stage_run_progress = None

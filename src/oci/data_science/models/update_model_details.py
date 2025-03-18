@@ -73,7 +73,6 @@ class UpdateModelDetails(object):
             'retention_setting': 'RetentionSetting',
             'backup_setting': 'BackupSetting'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
@@ -86,7 +85,6 @@ class UpdateModelDetails(object):
             'retention_setting': 'retentionSetting',
             'backup_setting': 'backupSetting'
         }
-
         self._display_name = None
         self._description = None
         self._freeform_tags = None

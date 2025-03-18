@@ -72,7 +72,6 @@ class CreateOdaInstanceDetails(object):
             'is_role_based_access': 'bool',
             'identity_domain': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
@@ -83,7 +82,6 @@ class CreateOdaInstanceDetails(object):
             'is_role_based_access': 'isRoleBasedAccess',
             'identity_domain': 'identityDomain'
         }
-
         self._display_name = None
         self._description = None
         self._compartment_id = None

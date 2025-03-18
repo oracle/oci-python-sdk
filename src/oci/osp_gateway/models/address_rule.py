@@ -43,14 +43,12 @@ class AddressRule(object):
             'contact': 'ContactTypeRule',
             'tax': 'TaxTypeRule'
         }
-
         self.attribute_map = {
             'country_code': 'countryCode',
             'address': 'address',
             'contact': 'contact',
             'tax': 'tax'
         }
-
         self._country_code = None
         self._address = None
         self._contact = None

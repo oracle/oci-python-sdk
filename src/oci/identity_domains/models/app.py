@@ -692,7 +692,6 @@ class App(object):
             'urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags': 'ExtensionOCITags',
             'urn_ietf_params_scim_schemas_oracle_idcs_extension_multicloud_service_app_app': 'AppExtensionMulticloudServiceAppApp'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -812,7 +811,6 @@ class App(object):
             'urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:OCITags',
             'urn_ietf_params_scim_schemas_oracle_idcs_extension_multicloud_service_app_app': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:multicloudServiceApp:App'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

@@ -33,12 +33,10 @@ class SyncRepositoryDetails(object):
             'source_branch': 'str',
             'destination_branch': 'str'
         }
-
         self.attribute_map = {
             'source_branch': 'sourceBranch',
             'destination_branch': 'destinationBranch'
         }
-
         self._source_branch = None
         self._destination_branch = None
 

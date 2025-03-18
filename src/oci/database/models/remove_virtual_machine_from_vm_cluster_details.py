@@ -28,11 +28,9 @@ class RemoveVirtualMachineFromVmClusterDetails(object):
         self.swagger_types = {
             'db_servers': 'list[DbServerDetails]'
         }
-
         self.attribute_map = {
             'db_servers': 'dbServers'
         }
-
         self._db_servers = None
 
     @property

@@ -53,7 +53,6 @@ class UpdateNetworkSourceDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'description': 'description',
             'public_source_list': 'publicSourceList',
@@ -62,7 +61,6 @@ class UpdateNetworkSourceDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._description = None
         self._public_source_list = None
         self._virtual_source_list = None

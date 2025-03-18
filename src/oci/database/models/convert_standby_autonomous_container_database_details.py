@@ -63,12 +63,10 @@ class ConvertStandbyAutonomousContainerDatabaseDetails(object):
             'role': 'str',
             'connection_strings_type': 'str'
         }
-
         self.attribute_map = {
             'role': 'role',
             'connection_strings_type': 'connectionStringsType'
         }
-
         self._role = None
         self._connection_strings_type = None
 

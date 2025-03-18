@@ -40,13 +40,11 @@ class InvokeMlApplicationProviderTriggerScheduleActionDetails(ScheduleHttpAction
             'ml_application_instance_view_id': 'str',
             'trigger_ml_application_instance_view_flow_details': 'TriggerMlApplicationInstanceViewFlowDetails'
         }
-
         self.attribute_map = {
             'http_action_type': 'httpActionType',
             'ml_application_instance_view_id': 'mlApplicationInstanceViewId',
             'trigger_ml_application_instance_view_flow_details': 'triggerMlApplicationInstanceViewFlowDetails'
         }
-
         self._http_action_type = None
         self._ml_application_instance_view_id = None
         self._trigger_ml_application_instance_view_flow_details = None

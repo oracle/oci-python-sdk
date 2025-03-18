@@ -28,11 +28,9 @@ class PaymentGateway(object):
         self.swagger_types = {
             'merchant_defined_data': 'MerchantDefinedData'
         }
-
         self.attribute_map = {
             'merchant_defined_data': 'merchantDefinedData'
         }
-
         self._merchant_defined_data = None
 
     @property

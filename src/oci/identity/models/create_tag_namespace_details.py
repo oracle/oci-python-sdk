@@ -53,7 +53,6 @@ class CreateTagNamespaceDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'locks': 'list[AddLockDetails]'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'name': 'name',
@@ -62,7 +61,6 @@ class CreateTagNamespaceDetails(object):
             'defined_tags': 'definedTags',
             'locks': 'locks'
         }
-
         self._compartment_id = None
         self._name = None
         self._description = None

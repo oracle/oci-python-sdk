@@ -28,11 +28,9 @@ class ManagedDatabaseCollection(object):
         self.swagger_types = {
             'items': 'list[ManagedDatabaseSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

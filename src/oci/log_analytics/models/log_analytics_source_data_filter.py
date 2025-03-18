@@ -111,7 +111,6 @@ class LogAnalyticsSourceDataFilter(object):
             'source_id': 'int',
             'filter_type': 'str'
         }
-
         self.attribute_map = {
             'description': 'description',
             'display_name': 'displayName',
@@ -128,7 +127,6 @@ class LogAnalyticsSourceDataFilter(object):
             'source_id': 'sourceId',
             'filter_type': 'filterType'
         }
-
         self._description = None
         self._display_name = None
         self._edit_version = None

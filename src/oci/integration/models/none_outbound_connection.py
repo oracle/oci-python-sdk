@@ -30,11 +30,9 @@ class NoneOutboundConnection(OutboundConnection):
         self.swagger_types = {
             'outbound_connection_type': 'str'
         }
-
         self.attribute_map = {
             'outbound_connection_type': 'outboundConnectionType'
         }
-
         self._outbound_connection_type = None
         self._outbound_connection_type = 'NONE'
 

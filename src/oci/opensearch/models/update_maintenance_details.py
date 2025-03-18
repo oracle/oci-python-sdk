@@ -28,11 +28,9 @@ class UpdateMaintenanceDetails(object):
         self.swagger_types = {
             'notification_email_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'notification_email_ids': 'notificationEmailIds'
         }
-
         self._notification_email_ids = None
 
     @property

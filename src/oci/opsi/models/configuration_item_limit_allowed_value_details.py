@@ -40,13 +40,11 @@ class ConfigurationItemLimitAllowedValueDetails(ConfigurationItemAllowedValueDet
             'min_value': 'str',
             'max_value': 'str'
         }
-
         self.attribute_map = {
             'allowed_value_type': 'allowedValueType',
             'min_value': 'minValue',
             'max_value': 'maxValue'
         }
-
         self._allowed_value_type = None
         self._min_value = None
         self._max_value = None

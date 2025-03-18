@@ -38,13 +38,11 @@ class AllowedDomainLicenseTypeSummary(object):
             'license_type': 'str',
             'description': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'license_type': 'licenseType',
             'description': 'description'
         }
-
         self._name = None
         self._license_type = None
         self._description = None

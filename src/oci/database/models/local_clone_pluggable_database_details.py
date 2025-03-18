@@ -46,14 +46,12 @@ class LocalClonePluggableDatabaseDetails(object):
             'target_tde_wallet_password': 'str',
             'should_pdb_admin_account_be_locked': 'bool'
         }
-
         self.attribute_map = {
             'cloned_pdb_name': 'clonedPdbName',
             'pdb_admin_password': 'pdbAdminPassword',
             'target_tde_wallet_password': 'targetTdeWalletPassword',
             'should_pdb_admin_account_be_locked': 'shouldPdbAdminAccountBeLocked'
         }
-
         self._cloned_pdb_name = None
         self._pdb_admin_password = None
         self._target_tde_wallet_password = None

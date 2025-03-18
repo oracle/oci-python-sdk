@@ -33,12 +33,10 @@ class ThreatTypeSummary(object):
             'id': 'str',
             'name': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name'
         }
-
         self._id = None
         self._name = None
 

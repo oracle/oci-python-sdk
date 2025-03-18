@@ -33,12 +33,10 @@ class LimitAndUsage(object):
             'limit': 'int',
             'usage': 'int'
         }
-
         self.attribute_map = {
             'limit': 'limit',
             'usage': 'usage'
         }
-
         self._limit = None
         self._usage = None
 

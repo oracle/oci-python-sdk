@@ -91,7 +91,6 @@ class AssociatedLocalTaskDetails(AssociatedTaskDetails):
             'is_apply_subject_task': 'bool',
             'name': 'str'
         }
-
         self.attribute_map = {
             'scope': 'scope',
             'execution_details': 'executionDetails',
@@ -104,7 +103,6 @@ class AssociatedLocalTaskDetails(AssociatedTaskDetails):
             'is_apply_subject_task': 'isApplySubjectTask',
             'name': 'name'
         }
-
         self._scope = None
         self._execution_details = None
         self._description = None

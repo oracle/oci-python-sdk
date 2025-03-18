@@ -48,12 +48,10 @@ class AbstractCallAttribute(object):
             'model_type': 'str',
             'fetch_size': 'int'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'fetch_size': 'fetchSize'
         }
-
         self._model_type = None
         self._fetch_size = None
 

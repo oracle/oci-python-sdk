@@ -137,14 +137,12 @@ class TransferApplianceSummary(object):
             'serial_number': 'str',
             'creation_time': 'datetime'
         }
-
         self.attribute_map = {
             'label': 'label',
             'lifecycle_state': 'lifecycleState',
             'serial_number': 'serialNumber',
             'creation_time': 'creationTime'
         }
-
         self._label = None
         self._lifecycle_state = None
         self._serial_number = None

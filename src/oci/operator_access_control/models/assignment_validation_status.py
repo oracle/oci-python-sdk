@@ -77,7 +77,6 @@ class AssignmentValidationStatus(object):
             'time_of_validation_start': 'datetime',
             'time_of_validation_finish': 'datetime'
         }
-
         self.attribute_map = {
             'execution_id': 'executionId',
             'user_id': 'userId',
@@ -88,7 +87,6 @@ class AssignmentValidationStatus(object):
             'time_of_validation_start': 'timeOfValidationStart',
             'time_of_validation_finish': 'timeOfValidationFinish'
         }
-
         self._execution_id = None
         self._user_id = None
         self._access_request_id = None

@@ -43,14 +43,12 @@ class ConnectionDetails(object):
             'instance_endpoints': 'list[DbInstanceEndpoint]',
             'reader_endpoint': 'Endpoint'
         }
-
         self.attribute_map = {
             'ca_certificate': 'caCertificate',
             'primary_db_endpoint': 'primaryDbEndpoint',
             'instance_endpoints': 'instanceEndpoints',
             'reader_endpoint': 'readerEndpoint'
         }
-
         self._ca_certificate = None
         self._primary_db_endpoint = None
         self._instance_endpoints = None

@@ -48,14 +48,12 @@ class UpdateExternalDbSystemMacsConnectorDetails(UpdateExternalDbSystemConnector
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'connector_type': 'connectorType',
             'connection_info': 'connectionInfo',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._connector_type = None
         self._connection_info = None
         self._freeform_tags = None

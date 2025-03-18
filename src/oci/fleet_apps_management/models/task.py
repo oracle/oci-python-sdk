@@ -54,7 +54,6 @@ class Task(object):
             'step_properties': 'ComponentProperties',
             'output_variable_mappings': 'list[OutputVariableMapping]'
         }
-
         self.attribute_map = {
             'step_name': 'stepName',
             'association_type': 'associationType',
@@ -62,7 +61,6 @@ class Task(object):
             'step_properties': 'stepProperties',
             'output_variable_mappings': 'outputVariableMappings'
         }
-
         self._step_name = None
         self._association_type = None
         self._task_record_details = None

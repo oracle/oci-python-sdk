@@ -35,12 +35,10 @@ class ObjectListInlineInputLocation(InputLocation):
             'location_type': 'str',
             'object_locations': 'list[ObjectLocation]'
         }
-
         self.attribute_map = {
             'location_type': 'locationType',
             'object_locations': 'objectLocations'
         }
-
         self._location_type = None
         self._object_locations = None
         self._location_type = 'OBJECT_LIST_INLINE_INPUT_LOCATION'

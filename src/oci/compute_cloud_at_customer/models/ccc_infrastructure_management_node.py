@@ -33,12 +33,10 @@ class CccInfrastructureManagementNode(object):
             'ip': 'str',
             'hostname': 'str'
         }
-
         self.attribute_map = {
             'ip': 'ip',
             'hostname': 'hostname'
         }
-
         self._ip = None
         self._hostname = None
 

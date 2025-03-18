@@ -135,7 +135,6 @@ class TypedNamePatternRule(ProjectionRule):
             'pattern': 'str',
             'names': 'list[str]'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -155,7 +154,6 @@ class TypedNamePatternRule(ProjectionRule):
             'pattern': 'pattern',
             'names': 'names'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

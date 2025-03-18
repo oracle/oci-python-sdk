@@ -51,12 +51,10 @@ class Threshold(object):
             'operator': 'str',
             'value': 'int'
         }
-
         self.attribute_map = {
             'operator': 'operator',
             'value': 'value'
         }
-
         self._operator = None
         self._value = None
 

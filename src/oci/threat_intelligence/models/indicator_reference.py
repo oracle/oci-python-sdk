@@ -35,12 +35,10 @@ class IndicatorReference(EntityReference):
             'type': 'str',
             'indicator_id': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'indicator_id': 'indicatorId'
         }
-
         self._type = None
         self._indicator_id = None
         self._type = 'INDICATOR'

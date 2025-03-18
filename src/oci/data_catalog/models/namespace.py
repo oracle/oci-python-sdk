@@ -102,7 +102,6 @@ class Namespace(object):
             'created_by_id': 'str',
             'updated_by_id': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'display_name': 'displayName',
@@ -114,7 +113,6 @@ class Namespace(object):
             'created_by_id': 'createdById',
             'updated_by_id': 'updatedById'
         }
-
         self._key = None
         self._display_name = None
         self._description = None

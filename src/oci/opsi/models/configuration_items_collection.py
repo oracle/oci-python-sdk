@@ -43,12 +43,10 @@ class ConfigurationItemsCollection(object):
             'opsi_config_type': 'str',
             'config_items': 'list[ConfigurationItemSummary]'
         }
-
         self.attribute_map = {
             'opsi_config_type': 'opsiConfigType',
             'config_items': 'configItems'
         }
-
         self._opsi_config_type = None
         self._config_items = None
 

@@ -48,13 +48,11 @@ class TablespaceAdminStatus(object):
             'error_code': 'int',
             'error_message': 'str'
         }
-
         self.attribute_map = {
             'status': 'status',
             'error_code': 'errorCode',
             'error_message': 'errorMessage'
         }
-
         self._status = None
         self._error_code = None
         self._error_message = None

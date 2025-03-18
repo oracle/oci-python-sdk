@@ -33,12 +33,10 @@ class OsPatchSummary(object):
             'os_patch_version': 'str',
             'release_date': 'datetime'
         }
-
         self.attribute_map = {
             'os_patch_version': 'osPatchVersion',
             'release_date': 'releaseDate'
         }
-
         self._os_patch_version = None
         self._release_date = None
 

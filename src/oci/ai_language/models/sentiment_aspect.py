@@ -48,7 +48,6 @@ class SentimentAspect(object):
             'sentiment': 'str',
             'scores': 'dict(str, float)'
         }
-
         self.attribute_map = {
             'offset': 'offset',
             'length': 'length',
@@ -56,7 +55,6 @@ class SentimentAspect(object):
             'sentiment': 'sentiment',
             'scores': 'scores'
         }
-
         self._offset = None
         self._length = None
         self._text = None

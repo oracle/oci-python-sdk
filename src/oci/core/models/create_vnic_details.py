@@ -98,7 +98,6 @@ class CreateVnicDetails(object):
             'subnet_id': 'str',
             'vlan_id': 'str'
         }
-
         self.attribute_map = {
             'assign_ipv6_ip': 'assignIpv6Ip',
             'assign_public_ip': 'assignPublicIp',
@@ -115,7 +114,6 @@ class CreateVnicDetails(object):
             'subnet_id': 'subnetId',
             'vlan_id': 'vlanId'
         }
-
         self._assign_ipv6_ip = None
         self._assign_public_ip = None
         self._assign_private_dns_record = None

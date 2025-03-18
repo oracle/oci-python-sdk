@@ -35,12 +35,10 @@ class WorkflowTaskComponent(WorkflowComponent):
             'type': 'str',
             'step_name': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'step_name': 'stepName'
         }
-
         self._type = None
         self._step_name = None
         self._type = 'TASK'

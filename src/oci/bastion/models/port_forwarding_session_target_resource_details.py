@@ -55,7 +55,6 @@ class PortForwardingSessionTargetResourceDetails(TargetResourceDetails):
             'target_resource_fqdn': 'str',
             'target_resource_port': 'int'
         }
-
         self.attribute_map = {
             'session_type': 'sessionType',
             'target_resource_id': 'targetResourceId',
@@ -64,7 +63,6 @@ class PortForwardingSessionTargetResourceDetails(TargetResourceDetails):
             'target_resource_fqdn': 'targetResourceFqdn',
             'target_resource_port': 'targetResourcePort'
         }
-
         self._session_type = None
         self._target_resource_id = None
         self._target_resource_private_ip_address = None

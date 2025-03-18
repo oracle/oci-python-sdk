@@ -79,7 +79,6 @@ class SSLConfigurationDetails(object):
             'cipher_suite_name': 'str',
             'server_order_preference': 'str'
         }
-
         self.attribute_map = {
             'verify_depth': 'verifyDepth',
             'verify_peer_certificate': 'verifyPeerCertificate',
@@ -91,7 +90,6 @@ class SSLConfigurationDetails(object):
             'cipher_suite_name': 'cipherSuiteName',
             'server_order_preference': 'serverOrderPreference'
         }
-
         self._verify_depth = None
         self._verify_peer_certificate = None
         self._has_session_resumption = None

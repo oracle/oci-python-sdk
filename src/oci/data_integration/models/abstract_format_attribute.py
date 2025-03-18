@@ -54,12 +54,10 @@ class AbstractFormatAttribute(object):
             'model_type': 'str',
             'is_file_pattern': 'bool'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'is_file_pattern': 'isFilePattern'
         }
-
         self._model_type = None
         self._is_file_pattern = None
 

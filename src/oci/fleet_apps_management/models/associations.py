@@ -48,7 +48,6 @@ class Associations(object):
             'rollback_workflow_details': 'RollbackWorkflowDetails',
             'version': 'str'
         }
-
         self.attribute_map = {
             'tasks': 'tasks',
             'groups': 'groups',
@@ -56,7 +55,6 @@ class Associations(object):
             'rollback_workflow_details': 'rollbackWorkflowDetails',
             'version': 'version'
         }
-
         self._tasks = None
         self._groups = None
         self._execution_workflow_details = None

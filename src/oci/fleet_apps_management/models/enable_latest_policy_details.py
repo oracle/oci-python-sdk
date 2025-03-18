@@ -28,11 +28,9 @@ class EnableLatestPolicyDetails(object):
         self.swagger_types = {
             'can_latest_fams_policies_be_enabled': 'bool'
         }
-
         self.attribute_map = {
             'can_latest_fams_policies_be_enabled': 'canLatestFamsPoliciesBeEnabled'
         }
-
         self._can_latest_fams_policies_be_enabled = None
 
     @property

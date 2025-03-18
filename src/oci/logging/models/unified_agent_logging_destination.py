@@ -33,12 +33,10 @@ class UnifiedAgentLoggingDestination(object):
             'log_object_id': 'str',
             'operational_metrics_configuration': 'OperationalMetricsConfiguration'
         }
-
         self.attribute_map = {
             'log_object_id': 'logObjectId',
             'operational_metrics_configuration': 'operationalMetricsConfiguration'
         }
-
         self._log_object_id = None
         self._operational_metrics_configuration = None
 

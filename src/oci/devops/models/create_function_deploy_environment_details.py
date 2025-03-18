@@ -59,7 +59,6 @@ class CreateFunctionDeployEnvironmentDetails(CreateDeployEnvironmentDetails):
             'defined_tags': 'dict(str, dict(str, object))',
             'function_id': 'str'
         }
-
         self.attribute_map = {
             'description': 'description',
             'display_name': 'displayName',
@@ -69,7 +68,6 @@ class CreateFunctionDeployEnvironmentDetails(CreateDeployEnvironmentDetails):
             'defined_tags': 'definedTags',
             'function_id': 'functionId'
         }
-
         self._description = None
         self._display_name = None
         self._deploy_environment_type = None

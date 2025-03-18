@@ -53,13 +53,11 @@ class TestConnectionAssignmentResult(object):
             'error': 'TestConnectionAssignmentError',
             'errors': 'list[TestConnectionAssignmentError]'
         }
-
         self.attribute_map = {
             'result_type': 'resultType',
             'error': 'error',
             'errors': 'errors'
         }
-
         self._result_type = None
         self._error = None
         self._errors = None

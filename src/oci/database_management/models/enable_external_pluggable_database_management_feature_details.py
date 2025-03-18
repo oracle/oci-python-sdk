@@ -28,11 +28,9 @@ class EnableExternalPluggableDatabaseManagementFeatureDetails(object):
         self.swagger_types = {
             'feature_details': 'ExternalPluggableDatabaseFeatureDetails'
         }
-
         self.attribute_map = {
             'feature_details': 'featureDetails'
         }
-
         self._feature_details = None
 
     @property

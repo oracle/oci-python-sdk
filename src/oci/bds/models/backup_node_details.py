@@ -33,12 +33,10 @@ class BackupNodeDetails(object):
             'level_type_details': 'LevelTypeDetails',
             'backup_type': 'str'
         }
-
         self.attribute_map = {
             'level_type_details': 'levelTypeDetails',
             'backup_type': 'backupType'
         }
-
         self._level_type_details = None
         self._backup_type = None
 

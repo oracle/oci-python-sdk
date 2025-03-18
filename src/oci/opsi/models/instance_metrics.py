@@ -58,7 +58,6 @@ class InstanceMetrics(object):
             'utilization_percent': 'float',
             'usage_change_percent': 'float'
         }
-
         self.attribute_map = {
             'host_name': 'hostName',
             'instance_name': 'instanceName',
@@ -68,7 +67,6 @@ class InstanceMetrics(object):
             'utilization_percent': 'utilizationPercent',
             'usage_change_percent': 'usageChangePercent'
         }
-
         self._host_name = None
         self._instance_name = None
         self._usage = None

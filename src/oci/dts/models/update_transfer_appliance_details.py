@@ -86,7 +86,6 @@ class UpdateTransferApplianceDetails(object):
             'pickup_window_end_time': 'datetime',
             'minimum_storage_capacity_in_terabytes': 'int'
         }
-
         self.attribute_map = {
             'lifecycle_state': 'lifecycleState',
             'customer_shipping_address': 'customerShippingAddress',
@@ -95,7 +94,6 @@ class UpdateTransferApplianceDetails(object):
             'pickup_window_end_time': 'pickupWindowEndTime',
             'minimum_storage_capacity_in_terabytes': 'minimumStorageCapacityInTerabytes'
         }
-
         self._lifecycle_state = None
         self._customer_shipping_address = None
         self._expected_return_date = None

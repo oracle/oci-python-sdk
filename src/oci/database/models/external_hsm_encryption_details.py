@@ -35,12 +35,10 @@ class ExternalHsmEncryptionDetails(EncryptionKeyLocationDetails):
             'provider_type': 'str',
             'hsm_password': 'str'
         }
-
         self.attribute_map = {
             'provider_type': 'providerType',
             'hsm_password': 'hsmPassword'
         }
-
         self._provider_type = None
         self._hsm_password = None
         self._provider_type = 'EXTERNAL'

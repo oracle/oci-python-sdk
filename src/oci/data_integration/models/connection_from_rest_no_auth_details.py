@@ -90,7 +90,6 @@ class ConnectionFromRestNoAuthDetails(ConnectionDetails):
             'is_default': 'bool',
             'metadata': 'ObjectMetadata'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -106,7 +105,6 @@ class ConnectionFromRestNoAuthDetails(ConnectionDetails):
             'is_default': 'isDefault',
             'metadata': 'metadata'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

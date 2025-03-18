@@ -38,13 +38,11 @@ class UpdateNamespaceDetails(object):
             'description': 'str',
             'is_service_defined': 'bool'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
             'is_service_defined': 'isServiceDefined'
         }
-
         self._display_name = None
         self._description = None
         self._is_service_defined = None

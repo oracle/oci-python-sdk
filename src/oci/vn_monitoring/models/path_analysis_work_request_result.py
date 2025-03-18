@@ -40,13 +40,11 @@ class PathAnalysisWorkRequestResult(WorkRequestResult):
             'paths': 'list[Path]',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'result_type': 'resultType',
             'paths': 'paths',
             'time_created': 'timeCreated'
         }
-
         self._result_type = None
         self._paths = None
         self._time_created = None

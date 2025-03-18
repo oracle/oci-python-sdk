@@ -48,7 +48,6 @@ class CreateIPSecTunnelBgpSessionDetails(object):
             'customer_interface_ipv6': 'str',
             'customer_bgp_asn': 'str'
         }
-
         self.attribute_map = {
             'oracle_interface_ip': 'oracleInterfaceIp',
             'customer_interface_ip': 'customerInterfaceIp',
@@ -56,7 +55,6 @@ class CreateIPSecTunnelBgpSessionDetails(object):
             'customer_interface_ipv6': 'customerInterfaceIpv6',
             'customer_bgp_asn': 'customerBgpAsn'
         }
-
         self._oracle_interface_ip = None
         self._customer_interface_ip = None
         self._oracle_interface_ipv6 = None

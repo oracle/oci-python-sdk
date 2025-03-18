@@ -70,7 +70,6 @@ class AddWorkerNodesDetails(object):
             'block_volume_size_in_gbs': 'int',
             'shape_config': 'ShapeConfigDetails'
         }
-
         self.attribute_map = {
             'cluster_admin_password': 'clusterAdminPassword',
             'number_of_worker_nodes': 'numberOfWorkerNodes',
@@ -79,7 +78,6 @@ class AddWorkerNodesDetails(object):
             'block_volume_size_in_gbs': 'blockVolumeSizeInGBs',
             'shape_config': 'shapeConfig'
         }
-
         self._cluster_admin_password = None
         self._number_of_worker_nodes = None
         self._node_type = None

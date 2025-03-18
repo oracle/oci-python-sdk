@@ -210,7 +210,6 @@ class SqlPlanBaselineSummary(object):
             'auto_purge': 'str',
             'adaptive': 'str'
         }
-
         self.attribute_map = {
             'plan_name': 'planName',
             'sql_handle': 'sqlHandle',
@@ -226,7 +225,6 @@ class SqlPlanBaselineSummary(object):
             'auto_purge': 'autoPurge',
             'adaptive': 'adaptive'
         }
-
         self._plan_name = None
         self._sql_handle = None
         self._sql_text = None

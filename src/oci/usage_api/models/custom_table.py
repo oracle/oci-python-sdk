@@ -43,14 +43,12 @@ class CustomTable(object):
             'compartment_id': 'str',
             'saved_custom_table': 'SavedCustomTable'
         }
-
         self.attribute_map = {
             'id': 'id',
             'saved_report_id': 'savedReportId',
             'compartment_id': 'compartmentId',
             'saved_custom_table': 'savedCustomTable'
         }
-
         self._id = None
         self._saved_report_id = None
         self._compartment_id = None

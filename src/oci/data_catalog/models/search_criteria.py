@@ -48,7 +48,6 @@ class SearchCriteria(object):
             'sort': 'list[FacetedSearchSortRequest]',
             'filters': 'FacetedSearchFilterRequest'
         }
-
         self.attribute_map = {
             'query': 'query',
             'faceted_query': 'facetedQuery',
@@ -56,7 +55,6 @@ class SearchCriteria(object):
             'sort': 'sort',
             'filters': 'filters'
         }
-
         self._query = None
         self._faceted_query = None
         self._dimensions = None

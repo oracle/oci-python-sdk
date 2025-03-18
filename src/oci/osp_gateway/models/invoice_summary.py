@@ -205,7 +205,6 @@ class InvoiceSummary(object):
             'party_name': 'str',
             'subscription_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'invoice_id': 'invoiceId',
             'invoice_number': 'invoiceNumber',
@@ -234,7 +233,6 @@ class InvoiceSummary(object):
             'party_name': 'partyName',
             'subscription_ids': 'subscriptionIds'
         }
-
         self._invoice_id = None
         self._invoice_number = None
         self._internal_invoice_id = None

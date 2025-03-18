@@ -49,7 +49,6 @@ class ResourceAvailability(object):
             'fractional_availability': 'float',
             'effective_quota_value': 'float'
         }
-
         self.attribute_map = {
             'used': 'used',
             'available': 'available',
@@ -57,7 +56,6 @@ class ResourceAvailability(object):
             'fractional_availability': 'fractionalAvailability',
             'effective_quota_value': 'effectiveQuotaValue'
         }
-
         self._used = None
         self._available = None
         self._fractional_usage = None

@@ -30,11 +30,9 @@ class InstanceAgentCommandOutputViaTextDetails(InstanceAgentCommandOutputDetails
         self.swagger_types = {
             'output_type': 'str'
         }
-
         self.attribute_map = {
             'output_type': 'outputType'
         }
-
         self._output_type = None
         self._output_type = 'TEXT'
 

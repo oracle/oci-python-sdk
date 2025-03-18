@@ -59,7 +59,6 @@ class UpdateOkeClusterDeployEnvironmentDetails(UpdateDeployEnvironmentDetails):
             'cluster_id': 'str',
             'network_channel': 'NetworkChannel'
         }
-
         self.attribute_map = {
             'description': 'description',
             'display_name': 'displayName',
@@ -69,7 +68,6 @@ class UpdateOkeClusterDeployEnvironmentDetails(UpdateDeployEnvironmentDetails):
             'cluster_id': 'clusterId',
             'network_channel': 'networkChannel'
         }
-
         self._description = None
         self._display_name = None
         self._deploy_environment_type = None

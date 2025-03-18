@@ -38,13 +38,11 @@ class ClientCredentialsResponse(object):
             'token_type': 'str',
             'expires_in': 'str'
         }
-
         self.attribute_map = {
             'access_token': 'access_token',
             'token_type': 'token_type',
             'expires_in': 'expires_in'
         }
-
         self._access_token = None
         self._token_type = None
         self._expires_in = None

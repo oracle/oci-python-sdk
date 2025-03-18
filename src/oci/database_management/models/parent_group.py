@@ -38,13 +38,11 @@ class ParentGroup(object):
             'name': 'str',
             'compartment_id': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
             'compartment_id': 'compartmentId'
         }
-
         self._id = None
         self._name = None
         self._compartment_id = None

@@ -100,7 +100,6 @@ class WorkRequestSummary(object):
             'time_started': 'datetime',
             'time_finished': 'datetime'
         }
-
         self.attribute_map = {
             'operation_type': 'operationType',
             'compartment_id': 'compartmentId',
@@ -112,7 +111,6 @@ class WorkRequestSummary(object):
             'time_started': 'timeStarted',
             'time_finished': 'timeFinished'
         }
-
         self._operation_type = None
         self._compartment_id = None
         self._id = None

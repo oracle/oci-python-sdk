@@ -109,7 +109,6 @@ class ExternalMySqlDatabaseSummary(object):
             'lifecycle_state': 'str',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'external_database_id': 'externalDatabaseId',
@@ -120,7 +119,6 @@ class ExternalMySqlDatabaseSummary(object):
             'lifecycle_state': 'lifecycleState',
             'system_tags': 'systemTags'
         }
-
         self._compartment_id = None
         self._external_database_id = None
         self._connector_id = None

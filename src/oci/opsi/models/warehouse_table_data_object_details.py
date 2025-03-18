@@ -35,12 +35,10 @@ class WarehouseTableDataObjectDetails(WarehouseDataObjectDetails):
             'data_object_type': 'str',
             'columns_metadata': 'list[DataObjectColumnMetadata]'
         }
-
         self.attribute_map = {
             'data_object_type': 'dataObjectType',
             'columns_metadata': 'columnsMetadata'
         }
-
         self._data_object_type = None
         self._columns_metadata = None
         self._data_object_type = 'TABLE'

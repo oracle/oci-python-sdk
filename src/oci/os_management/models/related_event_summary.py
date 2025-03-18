@@ -38,13 +38,11 @@ class RelatedEventSummary(object):
             'instance_id': 'str',
             'timestamp': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'instance_id': 'instanceId',
             'timestamp': 'timestamp'
         }
-
         self._id = None
         self._instance_id = None
         self._timestamp = None

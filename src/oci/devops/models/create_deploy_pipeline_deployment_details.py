@@ -64,7 +64,6 @@ class CreateDeployPipelineDeploymentDetails(CreateDeploymentDetails):
             'deploy_stage_override_arguments': 'DeployStageOverrideArgumentCollection',
             'deploy_artifact_override_arguments': 'DeployArtifactOverrideArgumentCollection'
         }
-
         self.attribute_map = {
             'deploy_pipeline_id': 'deployPipelineId',
             'deployment_type': 'deploymentType',
@@ -75,7 +74,6 @@ class CreateDeployPipelineDeploymentDetails(CreateDeploymentDetails):
             'deploy_stage_override_arguments': 'deployStageOverrideArguments',
             'deploy_artifact_override_arguments': 'deployArtifactOverrideArguments'
         }
-
         self._deploy_pipeline_id = None
         self._deployment_type = None
         self._display_name = None

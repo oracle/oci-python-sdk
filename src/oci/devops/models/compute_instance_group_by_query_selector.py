@@ -40,13 +40,11 @@ class ComputeInstanceGroupByQuerySelector(ComputeInstanceGroupSelector):
             'region': 'str',
             'query': 'str'
         }
-
         self.attribute_map = {
             'selector_type': 'selectorType',
             'region': 'region',
             'query': 'query'
         }
-
         self._selector_type = None
         self._region = None
         self._query = None

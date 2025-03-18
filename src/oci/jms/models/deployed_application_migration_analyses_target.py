@@ -49,7 +49,6 @@ class DeployedApplicationMigrationAnalysesTarget(object):
             'target_jdk_version': 'str',
             'exclude_package_prefixes': 'list[str]'
         }
-
         self.attribute_map = {
             'managed_instance_id': 'managedInstanceId',
             'deployed_application_installation_key': 'deployedApplicationInstallationKey',
@@ -57,7 +56,6 @@ class DeployedApplicationMigrationAnalysesTarget(object):
             'target_jdk_version': 'targetJdkVersion',
             'exclude_package_prefixes': 'excludePackagePrefixes'
         }
-
         self._managed_instance_id = None
         self._deployed_application_installation_key = None
         self._source_jdk_version = None

@@ -48,13 +48,11 @@ class ProcessOptions(object):
             'replicate_schema_change': 'ReplicateSchemaChange',
             'should_restart_on_failure': 'str'
         }
-
         self.attribute_map = {
             'initial_data_load': 'initialDataLoad',
             'replicate_schema_change': 'replicateSchemaChange',
             'should_restart_on_failure': 'shouldRestartOnFailure'
         }
-
         self._initial_data_load = None
         self._replicate_schema_change = None
         self._should_restart_on_failure = None

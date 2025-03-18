@@ -44,14 +44,12 @@ class DropSqlPlanBaselinesDetails(object):
             'credentials': 'ManagedDatabaseCredential',
             'database_credential': 'DatabaseCredentialDetails'
         }
-
         self.attribute_map = {
             'sql_handle': 'sqlHandle',
             'plan_name': 'planName',
             'credentials': 'credentials',
             'database_credential': 'databaseCredential'
         }
-
         self._sql_handle = None
         self._plan_name = None
         self._credentials = None

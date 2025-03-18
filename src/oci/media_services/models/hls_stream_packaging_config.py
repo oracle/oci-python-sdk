@@ -96,7 +96,6 @@ class HlsStreamPackagingConfig(StreamPackagingConfig):
             'system_tags': 'dict(str, dict(str, object))',
             'locks': 'list[ResourceLock]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -113,7 +112,6 @@ class HlsStreamPackagingConfig(StreamPackagingConfig):
             'system_tags': 'systemTags',
             'locks': 'locks'
         }
-
         self._id = None
         self._compartment_id = None
         self._distribution_channel_id = None

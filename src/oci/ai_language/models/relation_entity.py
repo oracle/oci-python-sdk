@@ -48,7 +48,6 @@ class RelationEntity(object):
             'type': 'str',
             'score': 'float'
         }
-
         self.attribute_map = {
             'id': 'id',
             'subject_id': 'subjectId',
@@ -56,7 +55,6 @@ class RelationEntity(object):
             'type': 'type',
             'score': 'score'
         }
-
         self._id = None
         self._subject_id = None
         self._object_id = None

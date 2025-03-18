@@ -34,12 +34,10 @@ class InputConfiguration(object):
             'document_types': 'list[str]',
             'configuration': 'dict(str, DocumentsConfiguration)'
         }
-
         self.attribute_map = {
             'document_types': 'documentTypes',
             'configuration': 'configuration'
         }
-
         self._document_types = None
         self._configuration = None
 

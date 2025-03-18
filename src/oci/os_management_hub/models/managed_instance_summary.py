@@ -234,7 +234,6 @@ class ManagedInstanceSummary(object):
             'is_managed_by_autonomous_linux': 'bool',
             'agent_version': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -256,7 +255,6 @@ class ManagedInstanceSummary(object):
             'is_managed_by_autonomous_linux': 'isManagedByAutonomousLinux',
             'agent_version': 'agentVersion'
         }
-
         self._id = None
         self._display_name = None
         self._description = None

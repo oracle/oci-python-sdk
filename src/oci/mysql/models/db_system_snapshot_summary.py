@@ -38,13 +38,11 @@ class DbSystemSnapshotSummary(object):
             'id': 'str',
             'region': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'id': 'id',
             'region': 'region'
         }
-
         self._display_name = None
         self._id = None
         self._region = None

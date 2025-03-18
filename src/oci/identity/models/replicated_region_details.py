@@ -65,14 +65,12 @@ class ReplicatedRegionDetails(object):
             'regional_url': 'str',
             'state': 'str'
         }
-
         self.attribute_map = {
             'region': 'region',
             'url': 'url',
             'regional_url': 'regionalUrl',
             'state': 'state'
         }
-
         self._region = None
         self._url = None
         self._regional_url = None

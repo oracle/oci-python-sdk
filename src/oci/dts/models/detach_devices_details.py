@@ -28,11 +28,9 @@ class DetachDevicesDetails(object):
         self.swagger_types = {
             'device_labels': 'list[str]'
         }
-
         self.attribute_map = {
             'device_labels': 'deviceLabels'
         }
-
         self._device_labels = None
 
     @property

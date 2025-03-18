@@ -53,7 +53,6 @@ class ResourceSummary(object):
             'clean_resources_count': 'int',
             'error_resources_count': 'int'
         }
-
         self.attribute_map = {
             'total_resources_count': 'totalResourcesCount',
             'registered_resources_count': 'registeredResourcesCount',
@@ -62,7 +61,6 @@ class ResourceSummary(object):
             'clean_resources_count': 'cleanResourcesCount',
             'error_resources_count': 'errorResourcesCount'
         }
-
         self._total_resources_count = None
         self._registered_resources_count = None
         self._not_registered_resources_count = None

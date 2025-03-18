@@ -155,7 +155,6 @@ class MacsManagedExternalHostInsight(HostInsight):
             'platform_type': 'str',
             'platform_version': 'str'
         }
-
         self.attribute_map = {
             'entity_source': 'entitySource',
             'id': 'id',
@@ -177,7 +176,6 @@ class MacsManagedExternalHostInsight(HostInsight):
             'platform_type': 'platformType',
             'platform_version': 'platformVersion'
         }
-
         self._entity_source = None
         self._id = None
         self._compartment_id = None

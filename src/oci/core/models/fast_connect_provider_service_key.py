@@ -39,13 +39,11 @@ class FastConnectProviderServiceKey(object):
             'bandwidth_shape_name': 'str',
             'peering_location': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'bandwidth_shape_name': 'bandwidthShapeName',
             'peering_location': 'peeringLocation'
         }
-
         self._name = None
         self._bandwidth_shape_name = None
         self._peering_location = None

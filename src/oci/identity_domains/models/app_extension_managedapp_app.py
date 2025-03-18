@@ -143,7 +143,6 @@ class AppExtensionManagedappApp(object):
             'flat_file_bundle_configuration_properties': 'list[AppFlatFileBundleConfigurationProperties]',
             'three_legged_o_auth_credential': 'AppThreeLeggedOAuthCredential'
         }
-
         self.attribute_map = {
             'connected': 'connected',
             'can_be_authoritative': 'canBeAuthoritative',
@@ -170,7 +169,6 @@ class AppExtensionManagedappApp(object):
             'flat_file_bundle_configuration_properties': 'flatFileBundleConfigurationProperties',
             'three_legged_o_auth_credential': 'threeLeggedOAuthCredential'
         }
-
         self._connected = None
         self._can_be_authoritative = None
         self._is_authoritative = None

@@ -124,7 +124,6 @@ class CreateTaskFromSQLTask(CreateTaskDetails):
             'sql_script_type': 'str',
             'operation': 'object'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -145,7 +144,6 @@ class CreateTaskFromSQLTask(CreateTaskDetails):
             'sql_script_type': 'sqlScriptType',
             'operation': 'operation'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

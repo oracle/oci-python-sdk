@@ -48,7 +48,6 @@ class Entitlement(object):
             'quota': 'Quota',
             'targets': 'list[EntitlementTarget]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'description': 'description',
@@ -56,7 +55,6 @@ class Entitlement(object):
             'quota': 'quota',
             'targets': 'targets'
         }
-
         self._name = None
         self._description = None
         self._rate_limit = None

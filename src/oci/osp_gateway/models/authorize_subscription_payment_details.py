@@ -38,13 +38,11 @@ class AuthorizeSubscriptionPaymentDetails(object):
             'language_code': 'str',
             'email': 'str'
         }
-
         self.attribute_map = {
             'subscription': 'subscription',
             'language_code': 'languageCode',
             'email': 'email'
         }
-
         self._subscription = None
         self._language_code = None
         self._email = None

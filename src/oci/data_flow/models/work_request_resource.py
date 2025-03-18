@@ -75,7 +75,6 @@ class WorkRequestResource(object):
             'resource_uri': 'str',
             'work_requestid': 'str'
         }
-
         self.attribute_map = {
             'action_type': 'actionType',
             'id': 'id',
@@ -84,7 +83,6 @@ class WorkRequestResource(object):
             'resource_uri': 'resourceUri',
             'work_requestid': 'workRequestid'
         }
-
         self._action_type = None
         self._id = None
         self._resource_id = None

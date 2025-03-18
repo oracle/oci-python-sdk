@@ -37,11 +37,9 @@ class CreateReplicat(object):
         self.swagger_types = {
             'performance_profile': 'str'
         }
-
         self.attribute_map = {
             'performance_profile': 'performanceProfile'
         }
-
         self._performance_profile = None
 
     @property

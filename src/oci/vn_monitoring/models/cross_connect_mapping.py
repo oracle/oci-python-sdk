@@ -86,7 +86,6 @@ class CrossConnectMapping(object):
             'oracle_bgp_peering_ipv6': 'str',
             'vlan': 'int'
         }
-
         self.attribute_map = {
             'bgp_md5_auth_key': 'bgpMd5AuthKey',
             'cross_connect_or_cross_connect_group_id': 'crossConnectOrCrossConnectGroupId',
@@ -96,7 +95,6 @@ class CrossConnectMapping(object):
             'oracle_bgp_peering_ipv6': 'oracleBgpPeeringIpv6',
             'vlan': 'vlan'
         }
-
         self._bgp_md5_auth_key = None
         self._cross_connect_or_cross_connect_group_id = None
         self._customer_bgp_peering_ip = None

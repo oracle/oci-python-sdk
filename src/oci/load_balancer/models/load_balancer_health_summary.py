@@ -51,12 +51,10 @@ class LoadBalancerHealthSummary(object):
             'load_balancer_id': 'str',
             'status': 'str'
         }
-
         self.attribute_map = {
             'load_balancer_id': 'loadBalancerId',
             'status': 'status'
         }
-
         self._load_balancer_id = None
         self._status = None
 

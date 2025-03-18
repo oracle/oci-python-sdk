@@ -33,12 +33,10 @@ class AnnouncementsCollection(object):
             'items': 'list[AnnouncementSummary]',
             'user_statuses': 'list[AnnouncementUserStatusDetails]'
         }
-
         self.attribute_map = {
             'items': 'items',
             'user_statuses': 'userStatuses'
         }
-
         self._items = None
         self._user_statuses = None
 

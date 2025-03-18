@@ -138,13 +138,11 @@ class MigrationPhaseSummary(object):
             'recommended_action': 'str',
             'supported_actions': 'list[OdmsPhaseActions]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'recommended_action': 'recommendedAction',
             'supported_actions': 'supportedActions'
         }
-
         self._name = None
         self._recommended_action = None
         self._supported_actions = None

@@ -38,13 +38,11 @@ class SourceSummaryReport(object):
             'auto_association_source_count': 'int',
             'oob_count': 'int'
         }
-
         self.attribute_map = {
             'non_oob_count': 'nonOobCount',
             'auto_association_source_count': 'autoAssociationSourceCount',
             'oob_count': 'oobCount'
         }
-
         self._non_oob_count = None
         self._auto_association_source_count = None
         self._oob_count = None

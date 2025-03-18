@@ -66,7 +66,6 @@ class BackendSummary(object):
             'is_backup': 'bool',
             'is_offline': 'bool'
         }
-
         self.attribute_map = {
             'name': 'name',
             'ip_address': 'ipAddress',
@@ -77,7 +76,6 @@ class BackendSummary(object):
             'is_backup': 'isBackup',
             'is_offline': 'isOffline'
         }
-
         self._name = None
         self._ip_address = None
         self._target_id = None

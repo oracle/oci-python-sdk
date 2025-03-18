@@ -45,14 +45,12 @@ class UpdateGroupToRolesMappingDetails(object):
             'operator_group_id': 'str',
             'user_group_id': 'str'
         }
-
         self.attribute_map = {
             'security_group_id': 'securityGroupId',
             'administrator_group_id': 'administratorGroupId',
             'operator_group_id': 'operatorGroupId',
             'user_group_id': 'userGroupId'
         }
-
         self._security_group_id = None
         self._administrator_group_id = None
         self._operator_group_id = None

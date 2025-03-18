@@ -38,13 +38,11 @@ class DataCollectionOptions(object):
             'is_health_monitoring_enabled': 'bool',
             'is_incident_logs_enabled': 'bool'
         }
-
         self.attribute_map = {
             'is_diagnostics_events_enabled': 'isDiagnosticsEventsEnabled',
             'is_health_monitoring_enabled': 'isHealthMonitoringEnabled',
             'is_incident_logs_enabled': 'isIncidentLogsEnabled'
         }
-
         self._is_diagnostics_events_enabled = None
         self._is_health_monitoring_enabled = None
         self._is_incident_logs_enabled = None

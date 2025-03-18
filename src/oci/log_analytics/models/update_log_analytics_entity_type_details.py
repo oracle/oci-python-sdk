@@ -33,12 +33,10 @@ class UpdateLogAnalyticsEntityTypeDetails(object):
             'category': 'str',
             'properties': 'list[EntityTypeProperty]'
         }
-
         self.attribute_map = {
             'category': 'category',
             'properties': 'properties'
         }
-
         self._category = None
         self._properties = None
 

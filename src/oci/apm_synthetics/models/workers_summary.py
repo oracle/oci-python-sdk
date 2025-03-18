@@ -53,7 +53,6 @@ class WorkersSummary(object):
             'min_version': 'str',
             'available_capabilities': 'list[AvailableCapability]'
         }
-
         self.attribute_map = {
             'total': 'total',
             'available': 'available',
@@ -62,7 +61,6 @@ class WorkersSummary(object):
             'min_version': 'minVersion',
             'available_capabilities': 'availableCapabilities'
         }
-
         self._total = None
         self._available = None
         self._used = None

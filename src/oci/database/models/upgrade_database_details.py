@@ -46,12 +46,10 @@ class UpgradeDatabaseDetails(object):
             'action': 'str',
             'database_upgrade_source_details': 'DatabaseUpgradeSourceBase'
         }
-
         self.attribute_map = {
             'action': 'action',
             'database_upgrade_source_details': 'databaseUpgradeSourceDetails'
         }
-
         self._action = None
         self._database_upgrade_source_details = None
 

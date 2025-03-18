@@ -74,7 +74,6 @@ class CreateOracleInitialLoadSettings(object):
             'job_mode': 'str',
             'metadata_remaps': 'list[MetadataRemap]'
         }
-
         self.attribute_map = {
             'data_pump_parameters': 'dataPumpParameters',
             'tablespace_details': 'tablespaceDetails',
@@ -83,7 +82,6 @@ class CreateOracleInitialLoadSettings(object):
             'job_mode': 'jobMode',
             'metadata_remaps': 'metadataRemaps'
         }
-
         self._data_pump_parameters = None
         self._tablespace_details = None
         self._export_directory_object = None

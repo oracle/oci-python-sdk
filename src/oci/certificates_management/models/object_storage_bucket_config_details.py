@@ -38,13 +38,11 @@ class ObjectStorageBucketConfigDetails(object):
             'object_storage_bucket_name': 'str',
             'object_storage_object_name_format': 'str'
         }
-
         self.attribute_map = {
             'object_storage_namespace': 'objectStorageNamespace',
             'object_storage_bucket_name': 'objectStorageBucketName',
             'object_storage_object_name_format': 'objectStorageObjectNameFormat'
         }
-
         self._object_storage_namespace = None
         self._object_storage_bucket_name = None
         self._object_storage_object_name_format = None

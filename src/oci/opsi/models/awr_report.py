@@ -43,12 +43,10 @@ class AwrReport(object):
             'content': 'str',
             'format': 'str'
         }
-
         self.attribute_map = {
             'content': 'content',
             'format': 'format'
         }
-
         self._content = None
         self._format = None
 

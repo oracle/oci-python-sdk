@@ -58,7 +58,6 @@ class AssociatedResourceSummary(object):
             'region': 'str',
             'resource_address': 'str'
         }
-
         self.attribute_map = {
             'resource_id': 'resourceId',
             'resource_name': 'resourceName',
@@ -68,7 +67,6 @@ class AssociatedResourceSummary(object):
             'region': 'region',
             'resource_address': 'resourceAddress'
         }
-
         self._resource_id = None
         self._resource_name = None
         self._resource_type = None

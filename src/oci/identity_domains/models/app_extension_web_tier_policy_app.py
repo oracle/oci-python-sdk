@@ -48,13 +48,11 @@ class AppExtensionWebTierPolicyApp(object):
             'web_tier_policy_az_control': 'str',
             'resource_ref': 'bool'
         }
-
         self.attribute_map = {
             'web_tier_policy_json': 'webTierPolicyJson',
             'web_tier_policy_az_control': 'webTierPolicyAZControl',
             'resource_ref': 'resourceRef'
         }
-
         self._web_tier_policy_json = None
         self._web_tier_policy_az_control = None
         self._resource_ref = None

@@ -63,7 +63,6 @@ class SectionStatistics(object):
             'privileges_and_roles_findings_count': 'int',
             'user_accounts_findings_count': 'int'
         }
-
         self.attribute_map = {
             'targets_count': 'targetsCount',
             'auditing_findings_count': 'auditingFindingsCount',
@@ -74,7 +73,6 @@ class SectionStatistics(object):
             'privileges_and_roles_findings_count': 'privilegesAndRolesFindingsCount',
             'user_accounts_findings_count': 'userAccountsFindingsCount'
         }
-
         self._targets_count = None
         self._auditing_findings_count = None
         self._authorization_control_findings_count = None

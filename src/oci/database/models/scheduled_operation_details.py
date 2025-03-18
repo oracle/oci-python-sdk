@@ -38,13 +38,11 @@ class ScheduledOperationDetails(object):
             'scheduled_start_time': 'str',
             'scheduled_stop_time': 'str'
         }
-
         self.attribute_map = {
             'day_of_week': 'dayOfWeek',
             'scheduled_start_time': 'scheduledStartTime',
             'scheduled_stop_time': 'scheduledStopTime'
         }
-
         self._day_of_week = None
         self._scheduled_start_time = None
         self._scheduled_stop_time = None

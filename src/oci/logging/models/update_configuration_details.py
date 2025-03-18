@@ -33,12 +33,10 @@ class UpdateConfigurationDetails(object):
             'source': 'SourceUpdateDetails',
             'archiving': 'Archiving'
         }
-
         self.attribute_map = {
             'source': 'source',
             'archiving': 'archiving'
         }
-
         self._source = None
         self._archiving = None
 

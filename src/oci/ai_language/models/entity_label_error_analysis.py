@@ -38,13 +38,11 @@ class EntityLabelErrorAnalysis(object):
             'offset': 'int',
             'length': 'int'
         }
-
         self.attribute_map = {
             'type': 'type',
             'offset': 'offset',
             'length': 'length'
         }
-
         self._type = None
         self._offset = None
         self._length = None

@@ -33,12 +33,10 @@ class ReplaceCertificateAuthorityResponse(object):
             'rover_node_id': 'str',
             'replace_ca_details': 'ReplaceCaDetails'
         }
-
         self.attribute_map = {
             'rover_node_id': 'roverNodeId',
             'replace_ca_details': 'replaceCaDetails'
         }
-
         self._rover_node_id = None
         self._replace_ca_details = None
 

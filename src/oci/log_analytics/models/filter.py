@@ -111,13 +111,11 @@ class Filter(object):
             'values': 'list[object]',
             'operator': 'str'
         }
-
         self.attribute_map = {
             'field_name': 'fieldName',
             'values': 'values',
             'operator': 'operator'
         }
-
         self._field_name = None
         self._values = None
         self._operator = None

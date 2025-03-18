@@ -28,11 +28,9 @@ class ImportGlossaryDetails(object):
         self.swagger_types = {
             'glossary_file_contents': 'str'
         }
-
         self.attribute_map = {
             'glossary_file_contents': 'glossaryFileContents'
         }
-
         self._glossary_file_contents = None
 
     @property

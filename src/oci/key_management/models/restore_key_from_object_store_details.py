@@ -28,11 +28,9 @@ class RestoreKeyFromObjectStoreDetails(object):
         self.swagger_types = {
             'backup_location': 'BackupLocation'
         }
-
         self.attribute_map = {
             'backup_location': 'backupLocation'
         }
-
         self._backup_location = None
 
     @property

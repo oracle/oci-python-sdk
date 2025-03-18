@@ -28,11 +28,9 @@ class CompartmentInternal(object):
         self.swagger_types = {
             'id': 'str'
         }
-
         self.attribute_map = {
             'id': 'id'
         }
-
         self._id = None
 
     @property

@@ -28,11 +28,9 @@ class RecalledDataCollection(object):
         self.swagger_types = {
             'items': 'list[RecalledData]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

@@ -168,7 +168,6 @@ class JmsPluginSummary(object):
             'freeform_tags': 'dict(str, str)',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'id': 'id',
             'agent_id': 'agentId',
@@ -188,7 +187,6 @@ class JmsPluginSummary(object):
             'freeform_tags': 'freeformTags',
             'system_tags': 'systemTags'
         }
-
         self._id = None
         self._agent_id = None
         self._agent_type = None

@@ -55,14 +55,12 @@ class CreateAutoScalingPolicyDetails(object):
             'policy_type': 'str',
             'is_enabled': 'bool'
         }
-
         self.attribute_map = {
             'capacity': 'capacity',
             'display_name': 'displayName',
             'policy_type': 'policyType',
             'is_enabled': 'isEnabled'
         }
-
         self._capacity = None
         self._display_name = None
         self._policy_type = None

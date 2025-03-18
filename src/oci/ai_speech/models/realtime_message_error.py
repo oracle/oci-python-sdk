@@ -45,14 +45,12 @@ class RealtimeMessageError(RealtimeMessage):
             'code': 'int',
             'message': 'str'
         }
-
         self.attribute_map = {
             'event': 'event',
             'session_id': 'sessionId',
             'code': 'code',
             'message': 'message'
         }
-
         self._event = None
         self._session_id = None
         self._code = None

@@ -39,13 +39,11 @@ class ApplyJobOperationDetailsSummary(JobOperationDetailsSummary):
             'execution_plan_strategy': 'str',
             'execution_plan_job_id': 'str'
         }
-
         self.attribute_map = {
             'operation': 'operation',
             'execution_plan_strategy': 'executionPlanStrategy',
             'execution_plan_job_id': 'executionPlanJobId'
         }
-
         self._operation = None
         self._execution_plan_strategy = None
         self._execution_plan_job_id = None

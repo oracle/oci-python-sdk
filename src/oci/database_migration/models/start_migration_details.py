@@ -121,11 +121,9 @@ class StartMigrationDetails(object):
         self.swagger_types = {
             'wait_after': 'str'
         }
-
         self.attribute_map = {
             'wait_after': 'waitAfter'
         }
-
         self._wait_after = None
 
     @property

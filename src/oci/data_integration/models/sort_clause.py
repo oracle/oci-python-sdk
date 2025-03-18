@@ -43,12 +43,10 @@ class SortClause(object):
             'field': 'ShapeField',
             'order': 'str'
         }
-
         self.attribute_map = {
             'field': 'field',
             'order': 'order'
         }
-
         self._field = None
         self._order = None
 

@@ -103,7 +103,6 @@ class DataFlow(object):
             'typed_object_map': 'dict(str, TypedObjectWrapper)',
             'target_field_map_summary': 'dict(str, FieldMapWrapper)'
         }
-
         self.attribute_map = {
             'key': 'key',
             'model_type': 'modelType',
@@ -122,7 +121,6 @@ class DataFlow(object):
             'typed_object_map': 'typedObjectMap',
             'target_field_map_summary': 'targetFieldMapSummary'
         }
-
         self._key = None
         self._model_type = None
         self._model_version = None

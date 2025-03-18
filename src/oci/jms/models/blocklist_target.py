@@ -38,13 +38,11 @@ class BlocklistTarget(object):
             'managed_instance_id': 'str',
             'installation_key': 'str'
         }
-
         self.attribute_map = {
             'fleet_id': 'fleetId',
             'managed_instance_id': 'managedInstanceId',
             'installation_key': 'installationKey'
         }
-
         self._fleet_id = None
         self._managed_instance_id = None
         self._installation_key = None

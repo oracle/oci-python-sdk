@@ -40,13 +40,11 @@ class ConfigureAutonomousDatabaseVaultKeyDetails(object):
             'vault_id': 'str',
             'is_using_oracle_managed_keys': 'bool'
         }
-
         self.attribute_map = {
             'kms_key_id': 'kmsKeyId',
             'vault_id': 'vaultId',
             'is_using_oracle_managed_keys': 'isUsingOracleManagedKeys'
         }
-
         self._kms_key_id = None
         self._vault_id = None
         self._is_using_oracle_managed_keys = None

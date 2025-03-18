@@ -38,13 +38,11 @@ class RestoreObjectsDetails(object):
             'hours': 'int',
             'version_id': 'str'
         }
-
         self.attribute_map = {
             'object_name': 'objectName',
             'hours': 'hours',
             'version_id': 'versionId'
         }
-
         self._object_name = None
         self._hours = None
         self._version_id = None

@@ -33,12 +33,10 @@ class Diarization(object):
             'is_diarization_enabled': 'bool',
             'number_of_speakers': 'int'
         }
-
         self.attribute_map = {
             'is_diarization_enabled': 'isDiarizationEnabled',
             'number_of_speakers': 'numberOfSpeakers'
         }
-
         self._is_diarization_enabled = None
         self._number_of_speakers = None
 

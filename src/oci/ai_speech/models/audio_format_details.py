@@ -43,14 +43,12 @@ class AudioFormatDetails(object):
             'encoding': 'str',
             'sample_rate_in_hz': 'int'
         }
-
         self.attribute_map = {
             'format': 'format',
             'number_of_channels': 'numberOfChannels',
             'encoding': 'encoding',
             'sample_rate_in_hz': 'sampleRateInHz'
         }
-
         self._format = None
         self._number_of_channels = None
         self._encoding = None

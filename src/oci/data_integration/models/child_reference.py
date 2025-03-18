@@ -106,7 +106,6 @@ class ChildReference(object):
             'aggregator_key': 'str',
             'used_by': 'list[ReferenceUsedBy]'
         }
-
         self.attribute_map = {
             'key': 'key',
             'name': 'name',
@@ -118,7 +117,6 @@ class ChildReference(object):
             'aggregator_key': 'aggregatorKey',
             'used_by': 'usedBy'
         }
-
         self._key = None
         self._name = None
         self._identifier = None

@@ -41,13 +41,11 @@ class AutonomousDatabaseDetails(DatabaseDetails):
             'infrastructure_type': 'str',
             'autonomous_database_id': 'str'
         }
-
         self.attribute_map = {
             'database_type': 'databaseType',
             'infrastructure_type': 'infrastructureType',
             'autonomous_database_id': 'autonomousDatabaseId'
         }
-
         self._database_type = None
         self._infrastructure_type = None
         self._autonomous_database_id = None

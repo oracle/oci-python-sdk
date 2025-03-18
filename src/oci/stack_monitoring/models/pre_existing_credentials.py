@@ -50,7 +50,6 @@ class PreExistingCredentials(MonitoredResourceCredential):
             'description': 'str',
             'credential_type': 'str'
         }
-
         self.attribute_map = {
             'source': 'source',
             'name': 'name',
@@ -58,7 +57,6 @@ class PreExistingCredentials(MonitoredResourceCredential):
             'description': 'description',
             'credential_type': 'credentialType'
         }
-
         self._source = None
         self._name = None
         self._type = None

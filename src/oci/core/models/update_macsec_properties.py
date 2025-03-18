@@ -69,14 +69,12 @@ class UpdateMacsecProperties(object):
             'encryption_cipher': 'str',
             'is_unprotected_traffic_allowed': 'bool'
         }
-
         self.attribute_map = {
             'state': 'state',
             'primary_key': 'primaryKey',
             'encryption_cipher': 'encryptionCipher',
             'is_unprotected_traffic_allowed': 'isUnprotectedTrafficAllowed'
         }
-
         self._state = None
         self._primary_key = None
         self._encryption_cipher = None

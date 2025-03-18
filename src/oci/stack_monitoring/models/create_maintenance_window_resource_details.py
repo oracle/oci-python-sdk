@@ -33,12 +33,10 @@ class CreateMaintenanceWindowResourceDetails(object):
             'resource_id': 'str',
             'are_members_included': 'bool'
         }
-
         self.attribute_map = {
             'resource_id': 'resourceId',
             'are_members_included': 'areMembersIncluded'
         }
-
         self._resource_id = None
         self._are_members_included = None
 

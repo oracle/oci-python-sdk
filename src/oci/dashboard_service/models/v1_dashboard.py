@@ -98,7 +98,6 @@ class V1Dashboard(Dashboard):
             'config': 'object',
             'widgets': 'list[object]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'dashboard_group_id': 'dashboardGroupId',
@@ -115,7 +114,6 @@ class V1Dashboard(Dashboard):
             'config': 'config',
             'widgets': 'widgets'
         }
-
         self._id = None
         self._dashboard_group_id = None
         self._display_name = None

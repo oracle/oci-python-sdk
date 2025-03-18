@@ -33,12 +33,10 @@ class SteeringPolicyPriorityRuleCase(object):
             'case_condition': 'str',
             'answer_data': 'list[SteeringPolicyPriorityAnswerData]'
         }
-
         self.attribute_map = {
             'case_condition': 'caseCondition',
             'answer_data': 'answerData'
         }
-
         self._case_condition = None
         self._answer_data = None
 

@@ -38,11 +38,9 @@ class Rule(object):
         self.swagger_types = {
             'action': 'str'
         }
-
         self.attribute_map = {
             'action': 'action'
         }
-
         self._action = None
 
     @staticmethod

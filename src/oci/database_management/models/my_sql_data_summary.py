@@ -208,7 +208,6 @@ class MySqlDataSummary(object):
             'heat_wave_offloaded': 'float',
             'heat_wave_out_of_memory': 'float'
         }
-
         self.attribute_map = {
             'schema_name': 'schemaName',
             'digest': 'digest',
@@ -248,7 +247,6 @@ class MySqlDataSummary(object):
             'heat_wave_offloaded': 'heatWaveOffloaded',
             'heat_wave_out_of_memory': 'heatWaveOutOfMemory'
         }
-
         self._schema_name = None
         self._digest = None
         self._digest_text = None

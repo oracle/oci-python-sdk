@@ -57,7 +57,6 @@ class ReleaseRecalledDataDetails(object):
             'data_type': 'str',
             'collection_id': 'int'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'time_data_ended': 'timeDataEnded',
@@ -65,7 +64,6 @@ class ReleaseRecalledDataDetails(object):
             'data_type': 'dataType',
             'collection_id': 'collectionId'
         }
-
         self._compartment_id = None
         self._time_data_ended = None
         self._time_data_started = None

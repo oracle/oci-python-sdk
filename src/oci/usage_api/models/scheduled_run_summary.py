@@ -53,7 +53,6 @@ class ScheduledRunSummary(object):
             'lifecycle_state': 'str',
             'lifecycle_details': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'schedule_id': 'scheduleId',
@@ -62,7 +61,6 @@ class ScheduledRunSummary(object):
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails'
         }
-
         self._id = None
         self._schedule_id = None
         self._time_created = None

@@ -82,7 +82,6 @@ class UpdatePingMonitorDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'targets': 'targets',
             'vantage_point_names': 'vantagePointNames',
@@ -95,7 +94,6 @@ class UpdatePingMonitorDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._targets = None
         self._vantage_point_names = None
         self._port = None

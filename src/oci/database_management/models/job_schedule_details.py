@@ -65,14 +65,12 @@ class JobScheduleDetails(object):
             'interval_type': 'str',
             'interval_value': 'str'
         }
-
         self.attribute_map = {
             'start_time': 'startTime',
             'end_time': 'endTime',
             'interval_type': 'intervalType',
             'interval_value': 'intervalValue'
         }
-
         self._start_time = None
         self._end_time = None
         self._interval_type = None

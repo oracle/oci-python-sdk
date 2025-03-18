@@ -115,7 +115,6 @@ class EkmsPrivateEndpoint(object):
             'ca_bundle': 'str',
             'private_endpoint_ip': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -132,7 +131,6 @@ class EkmsPrivateEndpoint(object):
             'ca_bundle': 'caBundle',
             'private_endpoint_ip': 'privateEndpointIp'
         }
-
         self._id = None
         self._compartment_id = None
         self._subnet_id = None

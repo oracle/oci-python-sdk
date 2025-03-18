@@ -50,7 +50,6 @@ class InstanceAgentCommandExecutionOutputViaTextDetails(InstanceAgentCommandExec
             'text': 'str',
             'text_sha256': 'str'
         }
-
         self.attribute_map = {
             'output_type': 'outputType',
             'exit_code': 'exitCode',
@@ -58,7 +57,6 @@ class InstanceAgentCommandExecutionOutputViaTextDetails(InstanceAgentCommandExec
             'text': 'text',
             'text_sha256': 'textSha256'
         }
-
         self._output_type = None
         self._exit_code = None
         self._message = None

@@ -83,7 +83,6 @@ class OccOverviewSummary(object):
             'capacity_requests_blob': 'str',
             'unit': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'period_value': 'periodValue',
@@ -98,7 +97,6 @@ class OccOverviewSummary(object):
             'capacity_requests_blob': 'capacityRequestsBlob',
             'unit': 'unit'
         }
-
         self._compartment_id = None
         self._period_value = None
         self._resource_name = None

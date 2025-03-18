@@ -99,7 +99,6 @@ class CertificateBundleVersionSummary(object):
             'stages': 'list[str]',
             'revocation_status': 'RevocationStatus'
         }
-
         self.attribute_map = {
             'certificate_id': 'certificateId',
             'serial_number': 'serialNumber',
@@ -112,7 +111,6 @@ class CertificateBundleVersionSummary(object):
             'stages': 'stages',
             'revocation_status': 'revocationStatus'
         }
-
         self._certificate_id = None
         self._serial_number = None
         self._version_name = None

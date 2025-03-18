@@ -85,7 +85,6 @@ class DerivedField(TypedObject):
             'is_use_inferred_type': 'bool',
             'labels': 'list[str]'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -100,7 +99,6 @@ class DerivedField(TypedObject):
             'is_use_inferred_type': 'isUseInferredType',
             'labels': 'labels'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

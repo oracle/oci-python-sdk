@@ -58,7 +58,6 @@ class EstimateRecallDataSizeResult(object):
             'core_group_count_limit': 'int',
             'size_limit_in_bytes': 'int'
         }
-
         self.attribute_map = {
             'time_data_ended': 'timeDataEnded',
             'time_data_started': 'timeDataStarted',
@@ -68,7 +67,6 @@ class EstimateRecallDataSizeResult(object):
             'core_group_count_limit': 'coreGroupCountLimit',
             'size_limit_in_bytes': 'sizeLimitInBytes'
         }
-
         self._time_data_ended = None
         self._time_data_started = None
         self._size_in_bytes = None

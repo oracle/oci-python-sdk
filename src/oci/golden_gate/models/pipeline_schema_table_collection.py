@@ -38,13 +38,11 @@ class PipelineSchemaTableCollection(object):
             'target_schema_name': 'str',
             'items': 'list[PipelineSchemaTableSummary]'
         }
-
         self.attribute_map = {
             'source_schema_name': 'sourceSchemaName',
             'target_schema_name': 'targetSchemaName',
             'items': 'items'
         }
-
         self._source_schema_name = None
         self._target_schema_name = None
         self._items = None

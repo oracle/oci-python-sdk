@@ -43,12 +43,10 @@ class DvpStackDetails(object):
             'dvp_stack_type': 'str',
             'dvp_version': 'str'
         }
-
         self.attribute_map = {
             'dvp_stack_type': 'dvpStackType',
             'dvp_version': 'dvpVersion'
         }
-
         self._dvp_stack_type = None
         self._dvp_version = None
 

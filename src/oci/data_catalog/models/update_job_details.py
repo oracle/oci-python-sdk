@@ -53,7 +53,6 @@ class UpdateJobDetails(object):
             'time_schedule_end': 'datetime',
             'connection_key': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
@@ -62,7 +61,6 @@ class UpdateJobDetails(object):
             'time_schedule_end': 'timeScheduleEnd',
             'connection_key': 'connectionKey'
         }
-
         self._display_name = None
         self._description = None
         self._schedule_cron_expression = None

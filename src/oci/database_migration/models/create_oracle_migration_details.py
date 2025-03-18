@@ -121,7 +121,6 @@ class CreateOracleMigrationDetails(CreateMigrationDetails):
             'include_objects': 'list[OracleDatabaseObject]',
             'bulk_include_exclude_data': 'str'
         }
-
         self.attribute_map = {
             'description': 'description',
             'compartment_id': 'compartmentId',
@@ -143,7 +142,6 @@ class CreateOracleMigrationDetails(CreateMigrationDetails):
             'include_objects': 'includeObjects',
             'bulk_include_exclude_data': 'bulkIncludeExcludeData'
         }
-
         self._description = None
         self._compartment_id = None
         self._database_combination = None

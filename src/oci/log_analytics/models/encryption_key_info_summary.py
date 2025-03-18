@@ -62,13 +62,11 @@ class EncryptionKeyInfoSummary(object):
             'key_id': 'str',
             'key_type': 'str'
         }
-
         self.attribute_map = {
             'key_source': 'keySource',
             'key_id': 'keyId',
             'key_type': 'keyType'
         }
-
         self._key_source = None
         self._key_id = None
         self._key_type = None

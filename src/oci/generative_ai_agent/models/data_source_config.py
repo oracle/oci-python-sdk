@@ -43,12 +43,10 @@ class DataSourceConfig(object):
             'should_enable_multi_modality': 'bool',
             'data_source_config_type': 'str'
         }
-
         self.attribute_map = {
             'should_enable_multi_modality': 'shouldEnableMultiModality',
             'data_source_config_type': 'dataSourceConfigType'
         }
-
         self._should_enable_multi_modality = None
         self._data_source_config_type = None
 

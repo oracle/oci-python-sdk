@@ -38,13 +38,11 @@ class FieldSummaryReport(object):
             'oob_count': 'int',
             'usage_details': 'list[UsageStatusItem]'
         }
-
         self.attribute_map = {
             'non_oob_count': 'nonOobCount',
             'oob_count': 'oobCount',
             'usage_details': 'usageDetails'
         }
-
         self._non_oob_count = None
         self._oob_count = None
         self._usage_details = None

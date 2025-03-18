@@ -66,7 +66,6 @@ class DiscoveryJobLogSummary(object):
             'time_created': 'datetime',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'id': 'id',
             'log_type': 'logType',
@@ -74,7 +73,6 @@ class DiscoveryJobLogSummary(object):
             'time_created': 'timeCreated',
             'system_tags': 'systemTags'
         }
-
         self._id = None
         self._log_type = None
         self._log_message = None

@@ -70,7 +70,6 @@ class VmTargetEnvironment(TargetEnvironment):
             'ms_license': 'str',
             'preferred_shape_type': 'str'
         }
-
         self.attribute_map = {
             'target_compartment_id': 'targetCompartmentId',
             'target_environment_type': 'targetEnvironmentType',
@@ -82,7 +81,6 @@ class VmTargetEnvironment(TargetEnvironment):
             'ms_license': 'msLicense',
             'preferred_shape_type': 'preferredShapeType'
         }
-
         self._target_compartment_id = None
         self._target_environment_type = None
         self._availability_domain = None

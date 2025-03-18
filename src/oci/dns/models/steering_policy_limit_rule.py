@@ -45,14 +45,12 @@ class SteeringPolicyLimitRule(SteeringPolicyRule):
             'cases': 'list[SteeringPolicyLimitRuleCase]',
             'default_count': 'int'
         }
-
         self.attribute_map = {
             'description': 'description',
             'rule_type': 'ruleType',
             'cases': 'cases',
             'default_count': 'defaultCount'
         }
-
         self._description = None
         self._rule_type = None
         self._cases = None

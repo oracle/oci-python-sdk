@@ -68,7 +68,6 @@ class CachingRule(object):
             'client_caching_duration': 'str',
             'criteria': 'list[CachingRuleCriteria]'
         }
-
         self.attribute_map = {
             'key': 'key',
             'name': 'name',
@@ -78,7 +77,6 @@ class CachingRule(object):
             'client_caching_duration': 'clientCachingDuration',
             'criteria': 'criteria'
         }
-
         self._key = None
         self._name = None
         self._action = None

@@ -38,13 +38,11 @@ class ValidateEndpointResult(object):
             'status_description': 'str',
             'validation_results': 'list[EndpointResult]'
         }
-
         self.attribute_map = {
             'status': 'status',
             'status_description': 'statusDescription',
             'validation_results': 'validationResults'
         }
-
         self._status = None
         self._status_description = None
         self._validation_results = None

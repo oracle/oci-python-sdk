@@ -56,13 +56,11 @@ class DhcpDnsOption(DhcpOption):
             'custom_dns_servers': 'list[str]',
             'server_type': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'custom_dns_servers': 'customDnsServers',
             'server_type': 'serverType'
         }
-
         self._type = None
         self._custom_dns_servers = None
         self._server_type = None

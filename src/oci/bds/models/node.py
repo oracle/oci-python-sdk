@@ -224,7 +224,6 @@ class Node(object):
             'time_replaced': 'datetime',
             'node_backup_id': 'str'
         }
-
         self.attribute_map = {
             'instance_id': 'instanceId',
             'display_name': 'displayName',
@@ -252,7 +251,6 @@ class Node(object):
             'time_replaced': 'timeReplaced',
             'node_backup_id': 'nodeBackupId'
         }
-
         self._instance_id = None
         self._display_name = None
         self._lifecycle_state = None

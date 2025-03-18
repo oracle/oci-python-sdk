@@ -147,7 +147,6 @@ class AutonomousDatabaseInsight(DatabaseInsight):
             'connection_details': 'ConnectionDetails',
             'credential_details': 'CredentialDetails'
         }
-
         self.attribute_map = {
             'entity_source': 'entitySource',
             'id': 'id',
@@ -174,7 +173,6 @@ class AutonomousDatabaseInsight(DatabaseInsight):
             'connection_details': 'connectionDetails',
             'credential_details': 'credentialDetails'
         }
-
         self._entity_source = None
         self._id = None
         self._compartment_id = None

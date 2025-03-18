@@ -95,7 +95,6 @@ class SwiftPassword(object):
             'lifecycle_state': 'str',
             'inactive_status': 'int'
         }
-
         self.attribute_map = {
             'password': 'password',
             'id': 'id',
@@ -106,7 +105,6 @@ class SwiftPassword(object):
             'lifecycle_state': 'lifecycleState',
             'inactive_status': 'inactiveStatus'
         }
-
         self._password = None
         self._id = None
         self._user_id = None

@@ -53,7 +53,6 @@ class OdaPrivateEndpointScanProxySummary(object):
             'lifecycle_state': 'str',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'scan_listener_type': 'scanListenerType',
@@ -62,7 +61,6 @@ class OdaPrivateEndpointScanProxySummary(object):
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated'
         }
-
         self._id = None
         self._scan_listener_type = None
         self._protocol = None

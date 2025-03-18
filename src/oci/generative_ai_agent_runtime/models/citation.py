@@ -48,7 +48,6 @@ class Citation(object):
             'doc_id': 'str',
             'page_numbers': 'list[int]'
         }
-
         self.attribute_map = {
             'source_text': 'sourceText',
             'source_location': 'sourceLocation',
@@ -56,7 +55,6 @@ class Citation(object):
             'doc_id': 'docId',
             'page_numbers': 'pageNumbers'
         }
-
         self._source_text = None
         self._source_location = None
         self._title = None

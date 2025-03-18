@@ -43,11 +43,9 @@ class StreamPackagingConfigEncryption(object):
         self.swagger_types = {
             'algorithm': 'str'
         }
-
         self.attribute_map = {
             'algorithm': 'algorithm'
         }
-
         self._algorithm = None
 
     @staticmethod

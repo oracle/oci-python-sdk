@@ -70,7 +70,6 @@ class HighlightRowsCommandDescriptor(AbstractCommandDescriptor):
             'color': 'str',
             'keywords': 'list[str]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'display_query_string': 'displayQueryString',
@@ -82,7 +81,6 @@ class HighlightRowsCommandDescriptor(AbstractCommandDescriptor):
             'color': 'color',
             'keywords': 'keywords'
         }
-
         self._name = None
         self._display_query_string = None
         self._internal_query_string = None

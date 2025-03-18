@@ -109,7 +109,6 @@ class Saml2IdentityProvider(IdentityProvider):
             'redirect_url': 'str',
             'freeform_attributes': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -128,7 +127,6 @@ class Saml2IdentityProvider(IdentityProvider):
             'redirect_url': 'redirectUrl',
             'freeform_attributes': 'freeformAttributes'
         }
-
         self._id = None
         self._compartment_id = None
         self._name = None

@@ -63,13 +63,11 @@ class BackupPolicy(object):
             'retention_days': 'int',
             'copy_policy': 'BackupCopyPolicy'
         }
-
         self.attribute_map = {
             'kind': 'kind',
             'retention_days': 'retentionDays',
             'copy_policy': 'copyPolicy'
         }
-
         self._kind = None
         self._retention_days = None
         self._copy_policy = None

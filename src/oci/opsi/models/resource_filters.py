@@ -69,7 +69,6 @@ class ResourceFilters(object):
             'compartment_id_in_subtree': 'bool',
             'resource_status': 'list[str]'
         }
-
         self.attribute_map = {
             'defined_tag_equals': 'definedTagEquals',
             'freeform_tag_equals': 'freeformTagEquals',
@@ -78,7 +77,6 @@ class ResourceFilters(object):
             'compartment_id_in_subtree': 'compartmentIdInSubtree',
             'resource_status': 'resourceStatus'
         }
-
         self._defined_tag_equals = None
         self._freeform_tag_equals = None
         self._defined_tag_exists = None

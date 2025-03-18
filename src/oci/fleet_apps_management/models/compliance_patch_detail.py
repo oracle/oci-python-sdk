@@ -76,7 +76,6 @@ class CompliancePatchDetail(object):
             'severity': 'str',
             'product': 'ComplianceDetailProduct'
         }
-
         self.attribute_map = {
             'patch_id': 'patchId',
             'patch_name': 'patchName',
@@ -86,7 +85,6 @@ class CompliancePatchDetail(object):
             'severity': 'severity',
             'product': 'product'
         }
-
         self._patch_id = None
         self._patch_name = None
         self._patch_description = None

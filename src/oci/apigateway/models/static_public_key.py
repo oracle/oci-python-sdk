@@ -48,12 +48,10 @@ class StaticPublicKey(object):
             'kid': 'str',
             'format': 'str'
         }
-
         self.attribute_map = {
             'kid': 'kid',
             'format': 'format'
         }
-
         self._kid = None
         self._format = None
 

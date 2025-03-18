@@ -65,7 +65,6 @@ class CreateEmManagedExternalHostInsightDetails(CreateHostInsightDetails):
             'enterprise_manager_entity_identifier': 'str',
             'exadata_insight_id': 'str'
         }
-
         self.attribute_map = {
             'entity_source': 'entitySource',
             'compartment_id': 'compartmentId',
@@ -76,7 +75,6 @@ class CreateEmManagedExternalHostInsightDetails(CreateHostInsightDetails):
             'enterprise_manager_entity_identifier': 'enterpriseManagerEntityIdentifier',
             'exadata_insight_id': 'exadataInsightId'
         }
-
         self._entity_source = None
         self._compartment_id = None
         self._freeform_tags = None

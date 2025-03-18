@@ -156,7 +156,6 @@ class JavaReleaseSummary(object):
             'mos_patches': 'list[PatchDetail]',
             'days_under_security_baseline': 'int'
         }
-
         self.attribute_map = {
             'release_version': 'releaseVersion',
             'family_version': 'familyVersion',
@@ -172,7 +171,6 @@ class JavaReleaseSummary(object):
             'mos_patches': 'mosPatches',
             'days_under_security_baseline': 'daysUnderSecurityBaseline'
         }
-
         self._release_version = None
         self._family_version = None
         self._parent_release_version = None

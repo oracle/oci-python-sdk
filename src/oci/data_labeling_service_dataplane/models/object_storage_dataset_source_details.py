@@ -45,14 +45,12 @@ class ObjectStorageDatasetSourceDetails(DatasetSourceDetails):
             'bucket': 'str',
             'prefix': 'str'
         }
-
         self.attribute_map = {
             'source_type': 'sourceType',
             'namespace': 'namespace',
             'bucket': 'bucket',
             'prefix': 'prefix'
         }
-
         self._source_type = None
         self._namespace = None
         self._bucket = None

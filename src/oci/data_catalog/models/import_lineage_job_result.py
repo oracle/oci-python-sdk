@@ -78,7 +78,6 @@ class ImportLineageJobResult(object):
             'import_job_execution_key': 'str',
             'import_job_execution_status': 'str'
         }
-
         self.attribute_map = {
             'data_asset_key': 'dataAssetKey',
             'import_job_definition_key': 'importJobDefinitionKey',
@@ -86,7 +85,6 @@ class ImportLineageJobResult(object):
             'import_job_execution_key': 'importJobExecutionKey',
             'import_job_execution_status': 'importJobExecutionStatus'
         }
-
         self._data_asset_key = None
         self._import_job_definition_key = None
         self._import_job_key = None

@@ -43,14 +43,12 @@ class MySqlFleetMetricSummaryDefinition(object):
             'metric_name': 'str',
             'unit': 'str'
         }
-
         self.attribute_map = {
             'metric_value': 'metricValue',
             'dimensions': 'dimensions',
             'metric_name': 'metricName',
             'unit': 'unit'
         }
-
         self._metric_value = None
         self._dimensions = None
         self._metric_name = None

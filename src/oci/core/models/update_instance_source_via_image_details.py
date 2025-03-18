@@ -49,7 +49,6 @@ class UpdateInstanceSourceViaImageDetails(UpdateInstanceSourceDetails):
             'image_id': 'str',
             'kms_key_id': 'str'
         }
-
         self.attribute_map = {
             'source_type': 'sourceType',
             'is_preserve_boot_volume_enabled': 'isPreserveBootVolumeEnabled',
@@ -57,7 +56,6 @@ class UpdateInstanceSourceViaImageDetails(UpdateInstanceSourceDetails):
             'image_id': 'imageId',
             'kms_key_id': 'kmsKeyId'
         }
-
         self._source_type = None
         self._is_preserve_boot_volume_enabled = None
         self._boot_volume_size_in_gbs = None

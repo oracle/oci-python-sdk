@@ -48,7 +48,6 @@ class LogAnalyticsCategory(object):
             'type': 'str',
             'is_system': 'bool'
         }
-
         self.attribute_map = {
             'name': 'name',
             'description': 'description',
@@ -56,7 +55,6 @@ class LogAnalyticsCategory(object):
             'type': 'type',
             'is_system': 'isSystem'
         }
-
         self._name = None
         self._description = None
         self._display_name = None

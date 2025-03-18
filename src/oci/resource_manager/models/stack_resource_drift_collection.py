@@ -28,11 +28,9 @@ class StackResourceDriftCollection(object):
         self.swagger_types = {
             'items': 'list[StackResourceDriftSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

@@ -33,12 +33,10 @@ class KernelVmCoreInformation(object):
             'component': 'str',
             'backtrace': 'str'
         }
-
         self.attribute_map = {
             'component': 'component',
             'backtrace': 'backtrace'
         }
-
         self._component = None
         self._backtrace = None
 

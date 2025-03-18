@@ -60,7 +60,6 @@ class UpdateVbsAccessTokenConnectionDetails(UpdateConnectionDetails):
             'access_token': 'str',
             'base_url': 'str'
         }
-
         self.attribute_map = {
             'description': 'description',
             'display_name': 'displayName',
@@ -70,7 +69,6 @@ class UpdateVbsAccessTokenConnectionDetails(UpdateConnectionDetails):
             'access_token': 'accessToken',
             'base_url': 'baseUrl'
         }
-
         self._description = None
         self._display_name = None
         self._connection_type = None

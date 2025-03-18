@@ -113,7 +113,6 @@ class CreateAttributeDetails(object):
             'type_key': 'str',
             'properties': 'dict(str, dict(str, str))'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'business_name': 'businessName',
@@ -134,7 +133,6 @@ class CreateAttributeDetails(object):
             'type_key': 'typeKey',
             'properties': 'properties'
         }
-
         self._display_name = None
         self._business_name = None
         self._description = None

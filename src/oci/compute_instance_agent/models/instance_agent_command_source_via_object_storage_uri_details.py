@@ -35,12 +35,10 @@ class InstanceAgentCommandSourceViaObjectStorageUriDetails(InstanceAgentCommandS
             'source_type': 'str',
             'source_uri': 'str'
         }
-
         self.attribute_map = {
             'source_type': 'sourceType',
             'source_uri': 'sourceUri'
         }
-
         self._source_type = None
         self._source_uri = None
         self._source_type = 'OBJECT_STORAGE_URI'

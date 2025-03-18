@@ -117,7 +117,6 @@ class MePasswordChanger(object):
             'password': 'str',
             'old_password': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -136,7 +135,6 @@ class MePasswordChanger(object):
             'password': 'password',
             'old_password': 'oldPassword'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

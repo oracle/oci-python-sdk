@@ -33,12 +33,10 @@ class ConfigurationItemUnitDetails(object):
             'unit': 'str',
             'display_name': 'str'
         }
-
         self.attribute_map = {
             'unit': 'unit',
             'display_name': 'displayName'
         }
-
         self._unit = None
         self._display_name = None
 

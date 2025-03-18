@@ -33,12 +33,10 @@ class ChangeExascaleDbStorageVaultSubscriptionDetails(object):
             'subscription_id': 'str',
             'is_default': 'bool'
         }
-
         self.attribute_map = {
             'subscription_id': 'subscriptionId',
             'is_default': 'isDefault'
         }
-
         self._subscription_id = None
         self._is_default = None
 

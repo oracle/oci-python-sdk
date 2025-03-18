@@ -41,13 +41,11 @@ class NoRouteRoutingAction(RoutingAction):
             'action_type': 'str',
             'no_route_routing_action_details': 'NoRouteRoutingActionDetails'
         }
-
         self.attribute_map = {
             'action': 'action',
             'action_type': 'actionType',
             'no_route_routing_action_details': 'noRouteRoutingActionDetails'
         }
-
         self._action = None
         self._action_type = None
         self._no_route_routing_action_details = None

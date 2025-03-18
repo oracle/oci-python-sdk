@@ -93,7 +93,6 @@ class CreatePipelineDetails(object):
             'variables': 'list[Variable]',
             'registry_metadata': 'RegistryMetadata'
         }
-
         self.attribute_map = {
             'key': 'key',
             'model_version': 'modelVersion',
@@ -110,7 +109,6 @@ class CreatePipelineDetails(object):
             'variables': 'variables',
             'registry_metadata': 'registryMetadata'
         }
-
         self._key = None
         self._model_version = None
         self._parent_ref = None

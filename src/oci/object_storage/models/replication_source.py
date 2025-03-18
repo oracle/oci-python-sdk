@@ -38,13 +38,11 @@ class ReplicationSource(object):
             'source_region_name': 'str',
             'source_bucket_name': 'str'
         }
-
         self.attribute_map = {
             'policy_name': 'policyName',
             'source_region_name': 'sourceRegionName',
             'source_bucket_name': 'sourceBucketName'
         }
-
         self._policy_name = None
         self._source_region_name = None
         self._source_bucket_name = None

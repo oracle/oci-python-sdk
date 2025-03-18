@@ -55,7 +55,6 @@ class IngestTimeRuleMetricExtractionAction(IngestTimeRuleAction):
             'resource_group': 'str',
             'dimensions': 'list[str]'
         }
-
         self.attribute_map = {
             'type': 'type',
             'compartment_id': 'compartmentId',
@@ -64,7 +63,6 @@ class IngestTimeRuleMetricExtractionAction(IngestTimeRuleAction):
             'resource_group': 'resourceGroup',
             'dimensions': 'dimensions'
         }
-
         self._type = None
         self._compartment_id = None
         self._namespace = None

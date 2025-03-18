@@ -43,14 +43,12 @@ class DisableModuleStreamOnManagedInstanceGroupDetails(object):
             'software_source_id': 'str',
             'work_request_details': 'WorkRequestDetails'
         }
-
         self.attribute_map = {
             'module_name': 'moduleName',
             'stream_name': 'streamName',
             'software_source_id': 'softwareSourceId',
             'work_request_details': 'workRequestDetails'
         }
-
         self._module_name = None
         self._stream_name = None
         self._software_source_id = None

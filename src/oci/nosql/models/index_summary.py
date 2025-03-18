@@ -43,14 +43,12 @@ class IndexSummary(object):
             'lifecycle_state': 'str',
             'lifecycle_details': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'keys': 'keys',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails'
         }
-
         self._name = None
         self._keys = None
         self._lifecycle_state = None

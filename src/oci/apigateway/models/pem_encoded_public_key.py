@@ -40,13 +40,11 @@ class PemEncodedPublicKey(StaticPublicKey):
             'format': 'str',
             'key': 'str'
         }
-
         self.attribute_map = {
             'kid': 'kid',
             'format': 'format',
             'key': 'key'
         }
-
         self._kid = None
         self._format = None
         self._key = None

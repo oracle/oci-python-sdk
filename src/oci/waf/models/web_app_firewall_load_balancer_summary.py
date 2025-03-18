@@ -90,7 +90,6 @@ class WebAppFirewallLoadBalancerSummary(WebAppFirewallSummary):
             'system_tags': 'dict(str, dict(str, object))',
             'load_balancer_id': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -106,7 +105,6 @@ class WebAppFirewallLoadBalancerSummary(WebAppFirewallSummary):
             'system_tags': 'systemTags',
             'load_balancer_id': 'loadBalancerId'
         }
-
         self._id = None
         self._display_name = None
         self._compartment_id = None

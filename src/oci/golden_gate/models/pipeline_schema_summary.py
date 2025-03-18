@@ -35,12 +35,10 @@ class PipelineSchemaSummary(object):
             'source_schema_name': 'str',
             'target_schema_name': 'str'
         }
-
         self.attribute_map = {
             'source_schema_name': 'sourceSchemaName',
             'target_schema_name': 'targetSchemaName'
         }
-
         self._source_schema_name = None
         self._target_schema_name = None
 

@@ -107,7 +107,6 @@ class RecalledData(object):
             'time_recalled_data_started': 'datetime',
             'time_recalled_data_ended': 'datetime'
         }
-
         self.attribute_map = {
             'time_data_ended': 'timeDataEnded',
             'time_data_started': 'timeDataStarted',
@@ -124,7 +123,6 @@ class RecalledData(object):
             'time_recalled_data_started': 'timeRecalledDataStarted',
             'time_recalled_data_ended': 'timeRecalledDataEnded'
         }
-
         self._time_data_ended = None
         self._time_data_started = None
         self._time_started = None

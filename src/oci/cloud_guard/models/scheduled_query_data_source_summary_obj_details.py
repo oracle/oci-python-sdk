@@ -50,7 +50,6 @@ class ScheduledQueryDataSourceSummaryObjDetails(DataSourceSummaryDetails):
             'interval_in_seconds': 'int',
             'region_status_detail': 'list[RegionStatusDetail]'
         }
-
         self.attribute_map = {
             'data_source_feed_provider': 'dataSourceFeedProvider',
             'description': 'description',
@@ -58,7 +57,6 @@ class ScheduledQueryDataSourceSummaryObjDetails(DataSourceSummaryDetails):
             'interval_in_seconds': 'intervalInSeconds',
             'region_status_detail': 'regionStatusDetail'
         }
-
         self._data_source_feed_provider = None
         self._description = None
         self._scheduled_query_scope_details = None

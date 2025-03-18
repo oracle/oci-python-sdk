@@ -95,7 +95,6 @@ class ZskDnssecKeyVersion(object):
             'successor_dnssec_key_version_uuid': 'str',
             'key_tag': 'int'
         }
-
         self.attribute_map = {
             'uuid': 'uuid',
             'algorithm': 'algorithm',
@@ -111,7 +110,6 @@ class ZskDnssecKeyVersion(object):
             'successor_dnssec_key_version_uuid': 'successorDnssecKeyVersionUuid',
             'key_tag': 'keyTag'
         }
-
         self._uuid = None
         self._algorithm = None
         self._length_in_bytes = None

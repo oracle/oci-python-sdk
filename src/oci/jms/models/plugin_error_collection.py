@@ -28,11 +28,9 @@ class PluginErrorCollection(object):
         self.swagger_types = {
             'items': 'list[PluginErrorSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

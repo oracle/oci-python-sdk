@@ -66,7 +66,6 @@ class WindowsUpdateSummary(object):
             'installable': 'str',
             'is_reboot_required_for_installation': 'bool'
         }
-
         self.attribute_map = {
             'name': 'name',
             'update_id': 'updateId',
@@ -74,7 +73,6 @@ class WindowsUpdateSummary(object):
             'installable': 'installable',
             'is_reboot_required_for_installation': 'isRebootRequiredForInstallation'
         }
-
         self._name = None
         self._update_id = None
         self._update_type = None

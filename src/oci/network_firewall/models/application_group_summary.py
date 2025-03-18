@@ -38,13 +38,11 @@ class ApplicationGroupSummary(object):
             'total_apps': 'int',
             'parent_resource_id': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'total_apps': 'totalApps',
             'parent_resource_id': 'parentResourceId'
         }
-
         self._name = None
         self._total_apps = None
         self._parent_resource_id = None

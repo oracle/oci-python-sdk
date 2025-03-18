@@ -72,7 +72,6 @@ class CreateStreamPackagingConfigDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'locks': 'list[ResourceLock]'
         }
-
         self.attribute_map = {
             'distribution_channel_id': 'distributionChannelId',
             'display_name': 'displayName',
@@ -83,7 +82,6 @@ class CreateStreamPackagingConfigDetails(object):
             'defined_tags': 'definedTags',
             'locks': 'locks'
         }
-
         self._distribution_channel_id = None
         self._display_name = None
         self._stream_packaging_format = None

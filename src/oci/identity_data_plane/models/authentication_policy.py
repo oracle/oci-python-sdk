@@ -33,12 +33,10 @@ class AuthenticationPolicy(object):
             'password_policy': 'PasswordPolicy',
             'compartment_id': 'str'
         }
-
         self.attribute_map = {
             'password_policy': 'passwordPolicy',
             'compartment_id': 'compartmentId'
         }
-
         self._password_policy = None
         self._compartment_id = None
 

@@ -48,7 +48,6 @@ class FsuActionProgressDetails(object):
             'waiting_targets': 'int',
             'total_targets': 'int'
         }
-
         self.attribute_map = {
             'in_progress_targets': 'inProgressTargets',
             'completed_targets': 'completedTargets',
@@ -56,7 +55,6 @@ class FsuActionProgressDetails(object):
             'waiting_targets': 'waitingTargets',
             'total_targets': 'totalTargets'
         }
-
         self._in_progress_targets = None
         self._completed_targets = None
         self._failed_targets = None

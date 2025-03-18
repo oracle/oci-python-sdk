@@ -158,7 +158,6 @@ class VersionedCustomSoftwareSourceSummary(SoftwareSourceSummary):
             'software_source_version': 'str',
             'software_source_sub_type': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -183,7 +182,6 @@ class VersionedCustomSoftwareSourceSummary(SoftwareSourceSummary):
             'software_source_version': 'softwareSourceVersion',
             'software_source_sub_type': 'softwareSourceSubType'
         }
-
         self._id = None
         self._compartment_id = None
         self._display_name = None

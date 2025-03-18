@@ -33,12 +33,10 @@ class UpdateOkeBackupLocationDetails(object):
             'namespace': 'str',
             'bucket': 'str'
         }
-
         self.attribute_map = {
             'namespace': 'namespace',
             'bucket': 'bucket'
         }
-
         self._namespace = None
         self._bucket = None
 

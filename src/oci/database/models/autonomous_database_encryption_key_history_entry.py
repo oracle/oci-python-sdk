@@ -33,12 +33,10 @@ class AutonomousDatabaseEncryptionKeyHistoryEntry(object):
             'encryption_key': 'AutonomousDatabaseEncryptionKeyDetails',
             'time_activated': 'datetime'
         }
-
         self.attribute_map = {
             'encryption_key': 'encryptionKey',
             'time_activated': 'timeActivated'
         }
-
         self._encryption_key = None
         self._time_activated = None
 

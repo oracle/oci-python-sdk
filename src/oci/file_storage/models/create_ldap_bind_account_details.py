@@ -79,7 +79,6 @@ class CreateLdapBindAccountDetails(CreateOutboundConnectorDetails):
             'password_secret_id': 'str',
             'password_secret_version': 'int'
         }
-
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'compartment_id': 'compartmentId',
@@ -93,7 +92,6 @@ class CreateLdapBindAccountDetails(CreateOutboundConnectorDetails):
             'password_secret_id': 'passwordSecretId',
             'password_secret_version': 'passwordSecretVersion'
         }
-
         self._availability_domain = None
         self._compartment_id = None
         self._display_name = None

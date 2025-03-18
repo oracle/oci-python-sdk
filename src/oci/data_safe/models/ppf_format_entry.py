@@ -49,13 +49,11 @@ class PPFFormatEntry(FormatEntry):
             'description': 'str',
             'post_processing_function': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'description': 'description',
             'post_processing_function': 'postProcessingFunction'
         }
-
         self._type = None
         self._description = None
         self._post_processing_function = None

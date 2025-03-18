@@ -117,7 +117,6 @@ class LogAnalyticsLookup(object):
             'time_updated': 'datetime',
             'categories': 'list[LogAnalyticsCategory]'
         }
-
         self.attribute_map = {
             'active_edit_version': 'activeEditVersion',
             'canonical_link': 'canonicalLink',
@@ -136,7 +135,6 @@ class LogAnalyticsLookup(object):
             'time_updated': 'timeUpdated',
             'categories': 'categories'
         }
-
         self._active_edit_version = None
         self._canonical_link = None
         self._description = None

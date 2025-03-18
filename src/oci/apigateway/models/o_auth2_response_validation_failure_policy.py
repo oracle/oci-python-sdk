@@ -87,7 +87,6 @@ class OAuth2ResponseValidationFailurePolicy(ValidationFailurePolicy):
             'fallback_redirect_path': 'str',
             'logout_path': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'client_details': 'clientDetails',
@@ -101,7 +100,6 @@ class OAuth2ResponseValidationFailurePolicy(ValidationFailurePolicy):
             'fallback_redirect_path': 'fallbackRedirectPath',
             'logout_path': 'logoutPath'
         }
-
         self._type = None
         self._client_details = None
         self._source_uri_details = None

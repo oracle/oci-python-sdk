@@ -73,7 +73,6 @@ class UpdateAgentDependencyDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'dependency_name': 'dependencyName',
@@ -86,7 +85,6 @@ class UpdateAgentDependencyDetails(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._display_name = None
         self._dependency_name = None
         self._dependency_version = None

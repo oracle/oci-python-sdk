@@ -33,12 +33,10 @@ class SnapshotDetail(object):
             'key': 'str',
             'value': 'object'
         }
-
         self.attribute_map = {
             'key': 'key',
             'value': 'value'
         }
-
         self._key = None
         self._value = None
 

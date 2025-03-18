@@ -96,7 +96,6 @@ class FunctionDeployEnvironment(DeployEnvironment):
             'system_tags': 'dict(str, dict(str, object))',
             'function_id': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'description': 'description',
@@ -113,7 +112,6 @@ class FunctionDeployEnvironment(DeployEnvironment):
             'system_tags': 'systemTags',
             'function_id': 'functionId'
         }
-
         self._id = None
         self._description = None
         self._display_name = None

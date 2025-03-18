@@ -52,14 +52,12 @@ class BenchmarkDetails(object):
             'test1_cluster_id': 'str',
             'test2_cluster_id': 'str'
         }
-
         self.attribute_map = {
             'perf_test_length': 'perfTestLength',
             'control_cluster_id': 'controlClusterId',
             'test1_cluster_id': 'test1ClusterId',
             'test2_cluster_id': 'test2ClusterId'
         }
-
         self._perf_test_length = None
         self._control_cluster_id = None
         self._test1_cluster_id = None

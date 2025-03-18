@@ -52,14 +52,12 @@ class GenerateSessionTokenDetails(object):
             'packaging_config_id': 'str',
             'asset_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'time_expires': 'timeExpires',
             'scopes': 'scopes',
             'packaging_config_id': 'packagingConfigId',
             'asset_ids': 'assetIds'
         }
-
         self._time_expires = None
         self._scopes = None
         self._packaging_config_id = None

@@ -60,7 +60,6 @@ class UpdateBitbucketCloudAppPasswordConnectionDetails(UpdateConnectionDetails):
             'username': 'str',
             'app_password': 'str'
         }
-
         self.attribute_map = {
             'description': 'description',
             'display_name': 'displayName',
@@ -70,7 +69,6 @@ class UpdateBitbucketCloudAppPasswordConnectionDetails(UpdateConnectionDetails):
             'username': 'username',
             'app_password': 'appPassword'
         }
-
         self._description = None
         self._display_name = None
         self._connection_type = None

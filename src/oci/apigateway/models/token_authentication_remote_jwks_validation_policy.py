@@ -52,7 +52,6 @@ class TokenAuthenticationRemoteJWKSValidationPolicy(TokenAuthenticationValidatio
             'is_ssl_verify_disabled': 'bool',
             'max_cache_duration_in_hours': 'int'
         }
-
         self.attribute_map = {
             'type': 'type',
             'additional_validation_policy': 'additionalValidationPolicy',
@@ -60,7 +59,6 @@ class TokenAuthenticationRemoteJWKSValidationPolicy(TokenAuthenticationValidatio
             'is_ssl_verify_disabled': 'isSslVerifyDisabled',
             'max_cache_duration_in_hours': 'maxCacheDurationInHours'
         }
-
         self._type = None
         self._additional_validation_policy = None
         self._uri = None

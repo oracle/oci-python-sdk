@@ -60,7 +60,6 @@ class PipelineDataflowStepDetails(PipelineStepDetails):
             'application_id': 'str',
             'step_dataflow_configuration_details': 'PipelineDataflowConfigurationDetails'
         }
-
         self.attribute_map = {
             'step_type': 'stepType',
             'step_name': 'stepName',
@@ -70,7 +69,6 @@ class PipelineDataflowStepDetails(PipelineStepDetails):
             'application_id': 'applicationId',
             'step_dataflow_configuration_details': 'stepDataflowConfigurationDetails'
         }
-
         self._step_type = None
         self._step_name = None
         self._description = None

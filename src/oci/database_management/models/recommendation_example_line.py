@@ -33,12 +33,10 @@ class RecommendationExampleLine(object):
             'operation': 'str',
             'comment': 'str'
         }
-
         self.attribute_map = {
             'operation': 'operation',
             'comment': 'comment'
         }
-
         self._operation = None
         self._comment = None
 

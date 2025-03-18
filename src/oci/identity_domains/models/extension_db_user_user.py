@@ -48,7 +48,6 @@ class ExtensionDbUserUser(object):
             'instance_level_schema': 'str',
             'db_global_roles': 'list[str]'
         }
-
         self.attribute_map = {
             'is_db_user': 'isDbUser',
             'password_verifiers': 'passwordVerifiers',
@@ -56,7 +55,6 @@ class ExtensionDbUserUser(object):
             'instance_level_schema': 'instanceLevelSchema',
             'db_global_roles': 'dbGlobalRoles'
         }
-
         self._is_db_user = None
         self._password_verifiers = None
         self._domain_level_schema = None

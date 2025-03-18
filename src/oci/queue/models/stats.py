@@ -38,13 +38,11 @@ class Stats(object):
             'in_flight_messages': 'int',
             'size_in_bytes': 'int'
         }
-
         self.attribute_map = {
             'visible_messages': 'visibleMessages',
             'in_flight_messages': 'inFlightMessages',
             'size_in_bytes': 'sizeInBytes'
         }
-
         self._visible_messages = None
         self._in_flight_messages = None
         self._size_in_bytes = None

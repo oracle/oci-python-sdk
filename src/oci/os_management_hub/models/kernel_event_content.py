@@ -68,14 +68,12 @@ class KernelEventContent(EventContent):
             'content_location': 'str',
             'size': 'int'
         }
-
         self.attribute_map = {
             'type': 'type',
             'content_availability': 'contentAvailability',
             'content_location': 'contentLocation',
             'size': 'size'
         }
-
         self._type = None
         self._content_availability = None
         self._content_location = None

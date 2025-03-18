@@ -38,11 +38,9 @@ class SuppressionCondition(object):
         self.swagger_types = {
             'condition_type': 'str'
         }
-
         self.attribute_map = {
             'condition_type': 'conditionType'
         }
-
         self._condition_type = None
 
     @staticmethod

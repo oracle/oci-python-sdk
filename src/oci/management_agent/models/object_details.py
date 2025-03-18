@@ -48,7 +48,6 @@ class ObjectDetails(object):
             'object_url': 'str',
             'checksum': 'str'
         }
-
         self.attribute_map = {
             'object_namespace': 'objectNamespace',
             'object_bucket': 'objectBucket',
@@ -56,7 +55,6 @@ class ObjectDetails(object):
             'object_url': 'objectUrl',
             'checksum': 'checksum'
         }
-
         self._object_namespace = None
         self._object_bucket = None
         self._object_name = None

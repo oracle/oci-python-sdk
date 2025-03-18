@@ -31,11 +31,9 @@ class ErrorOnAnonymousHandling(AnonymousTransactionsHandling):
         self.swagger_types = {
             'policy': 'str'
         }
-
         self.attribute_map = {
             'policy': 'policy'
         }
-
         self._policy = None
         self._policy = 'ERROR_ON_ANONYMOUS'
 

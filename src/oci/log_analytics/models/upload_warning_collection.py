@@ -28,11 +28,9 @@ class UploadWarningCollection(object):
         self.swagger_types = {
             'items': 'list[UploadWarningSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

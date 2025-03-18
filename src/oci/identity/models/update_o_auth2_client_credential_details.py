@@ -38,13 +38,11 @@ class UpdateOAuth2ClientCredentialDetails(object):
             'scopes': 'list[FullyQualifiedScope]',
             'is_reset_password': 'bool'
         }
-
         self.attribute_map = {
             'description': 'description',
             'scopes': 'scopes',
             'is_reset_password': 'isResetPassword'
         }
-
         self._description = None
         self._scopes = None
         self._is_reset_password = None

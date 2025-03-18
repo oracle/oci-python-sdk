@@ -78,7 +78,6 @@ class SecurityRuleSummary(object):
             'priority_order': 'int',
             'parent_resource_id': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'action': 'action',
@@ -86,7 +85,6 @@ class SecurityRuleSummary(object):
             'priority_order': 'priorityOrder',
             'parent_resource_id': 'parentResourceId'
         }
-
         self._name = None
         self._action = None
         self._inspection = None

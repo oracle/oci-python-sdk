@@ -132,7 +132,6 @@ class SecurityQuestion(object):
             'type': 'str',
             'question_text': 'list[SecurityQuestionQuestionText]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -152,7 +151,6 @@ class SecurityQuestion(object):
             'type': 'type',
             'question_text': 'questionText'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

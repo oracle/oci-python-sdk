@@ -78,7 +78,6 @@ class IdentityProvider(object):
             'force_authentication': 'bool',
             'authn_context_class_refs': 'list[str]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -91,7 +90,6 @@ class IdentityProvider(object):
             'force_authentication': 'forceAuthentication',
             'authn_context_class_refs': 'authnContextClassRefs'
         }
-
         self._id = None
         self._name = None
         self._tenant_name = None

@@ -121,7 +121,6 @@ class DhcpOptions(object):
             'vcn_id': 'str',
             'domain_name_type': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
@@ -134,7 +133,6 @@ class DhcpOptions(object):
             'vcn_id': 'vcnId',
             'domain_name_type': 'domainNameType'
         }
-
         self._compartment_id = None
         self._defined_tags = None
         self._display_name = None

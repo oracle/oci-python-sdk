@@ -88,7 +88,6 @@ class StartSqlTuningTaskDetails(object):
             'time_started': 'datetime',
             'time_ended': 'datetime'
         }
-
         self.attribute_map = {
             'task_name': 'taskName',
             'task_description': 'taskDescription',
@@ -102,7 +101,6 @@ class StartSqlTuningTaskDetails(object):
             'time_started': 'timeStarted',
             'time_ended': 'timeEnded'
         }
-
         self._task_name = None
         self._task_description = None
         self._credential_details = None

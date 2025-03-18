@@ -70,7 +70,6 @@ class ResizeOpensearchClusterVerticalDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'master_node_host_ocpu_count': 'masterNodeHostOcpuCount',
             'master_node_host_memory_gb': 'masterNodeHostMemoryGB',
@@ -82,7 +81,6 @@ class ResizeOpensearchClusterVerticalDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._master_node_host_ocpu_count = None
         self._master_node_host_memory_gb = None
         self._data_node_host_ocpu_count = None

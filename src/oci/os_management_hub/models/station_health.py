@@ -47,12 +47,10 @@ class StationHealth(object):
             'state': 'str',
             'description': 'str'
         }
-
         self.attribute_map = {
             'state': 'state',
             'description': 'description'
         }
-
         self._state = None
         self._description = None
 

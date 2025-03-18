@@ -134,7 +134,6 @@ class EmManagedExternalExadataInsightSummary(ExadataInsightSummary):
             'enterprise_manager_entity_display_name': 'str',
             'enterprise_manager_bridge_id': 'str'
         }
-
         self.attribute_map = {
             'entity_source': 'entitySource',
             'id': 'id',
@@ -158,7 +157,6 @@ class EmManagedExternalExadataInsightSummary(ExadataInsightSummary):
             'enterprise_manager_entity_display_name': 'enterpriseManagerEntityDisplayName',
             'enterprise_manager_bridge_id': 'enterpriseManagerBridgeId'
         }
-
         self._entity_source = None
         self._id = None
         self._compartment_id = None

@@ -28,11 +28,9 @@ class ShardedDatabaseCollection(object):
         self.swagger_types = {
             'items': 'list[ShardedDatabaseSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

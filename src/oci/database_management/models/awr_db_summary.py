@@ -103,7 +103,6 @@ class AwrDbSummary(object):
             'db_version': 'str',
             'snapshot_timezone': 'str'
         }
-
         self.attribute_map = {
             'awr_db_id': 'awrDbId',
             'db_name': 'dbName',
@@ -122,7 +121,6 @@ class AwrDbSummary(object):
             'db_version': 'dbVersion',
             'snapshot_timezone': 'snapshotTimezone'
         }
-
         self._awr_db_id = None
         self._db_name = None
         self._db_unique_name = None

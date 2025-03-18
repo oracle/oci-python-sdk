@@ -93,7 +93,6 @@ class OdaInstanceAttachmentSummary(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'id': 'id',
             'instance_id': 'instanceId',
@@ -108,7 +107,6 @@ class OdaInstanceAttachmentSummary(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._id = None
         self._instance_id = None
         self._attach_to_id = None

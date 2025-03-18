@@ -61,14 +61,12 @@ class DbServerPatchingDetails(object):
             'time_patching_started': 'datetime',
             'time_patching_ended': 'datetime'
         }
-
         self.attribute_map = {
             'estimated_patch_duration': 'estimatedPatchDuration',
             'patching_status': 'patchingStatus',
             'time_patching_started': 'timePatchingStarted',
             'time_patching_ended': 'timePatchingEnded'
         }
-
         self._estimated_patch_duration = None
         self._patching_status = None
         self._time_patching_started = None

@@ -28,11 +28,9 @@ class VoiceCollection(object):
         self.swagger_types = {
             'items': 'list[VoiceSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

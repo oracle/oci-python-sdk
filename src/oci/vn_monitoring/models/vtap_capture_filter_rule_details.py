@@ -81,7 +81,6 @@ class VtapCaptureFilterRuleDetails(object):
             'tcp_options': 'TcpOptions',
             'udp_options': 'UdpOptions'
         }
-
         self.attribute_map = {
             'traffic_direction': 'trafficDirection',
             'rule_action': 'ruleAction',
@@ -92,7 +91,6 @@ class VtapCaptureFilterRuleDetails(object):
             'tcp_options': 'tcpOptions',
             'udp_options': 'udpOptions'
         }
-
         self._traffic_direction = None
         self._rule_action = None
         self._source_cidr = None

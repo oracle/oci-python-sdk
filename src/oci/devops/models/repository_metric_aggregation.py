@@ -28,11 +28,9 @@ class RepositoryMetricAggregation(object):
         self.swagger_types = {
             'items': 'list[RepositoryMetricSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

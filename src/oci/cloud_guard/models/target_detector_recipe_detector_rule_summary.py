@@ -213,7 +213,6 @@ class TargetDetectorRecipeDetectorRuleSummary(object):
             'entities_mappings': 'list[EntitiesMapping]',
             'locks': 'list[ResourceLock]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -232,7 +231,6 @@ class TargetDetectorRecipeDetectorRuleSummary(object):
             'entities_mappings': 'entitiesMappings',
             'locks': 'locks'
         }
-
         self._id = None
         self._display_name = None
         self._description = None

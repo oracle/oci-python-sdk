@@ -49,7 +49,6 @@ class CreateApplyJobOperationDetails(CreateJobOperationDetails):
             'execution_plan_strategy': 'str',
             'execution_plan_job_id': 'str'
         }
-
         self.attribute_map = {
             'operation': 'operation',
             'is_provider_upgrade_required': 'isProviderUpgradeRequired',
@@ -57,7 +56,6 @@ class CreateApplyJobOperationDetails(CreateJobOperationDetails):
             'execution_plan_strategy': 'executionPlanStrategy',
             'execution_plan_job_id': 'executionPlanJobId'
         }
-
         self._operation = None
         self._is_provider_upgrade_required = None
         self._terraform_advanced_options = None

@@ -63,7 +63,6 @@ class AbstractParserTestResultLogEntry(object):
             'match_status': 'str',
             'match_status_description': 'str'
         }
-
         self.attribute_map = {
             'extra_info_attributes': 'extraInfoAttributes',
             'field_map': 'fieldMap',
@@ -74,7 +73,6 @@ class AbstractParserTestResultLogEntry(object):
             'match_status': 'matchStatus',
             'match_status_description': 'matchStatusDescription'
         }
-
         self._extra_info_attributes = None
         self._field_map = None
         self._field_name_value_map = None

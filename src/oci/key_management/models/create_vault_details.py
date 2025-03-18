@@ -66,7 +66,6 @@ class CreateVaultDetails(object):
             'external_key_manager_metadata': 'ExternalKeyManagerMetadata',
             'vault_type': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
@@ -75,7 +74,6 @@ class CreateVaultDetails(object):
             'external_key_manager_metadata': 'externalKeyManagerMetadata',
             'vault_type': 'vaultType'
         }
-
         self._compartment_id = None
         self._defined_tags = None
         self._display_name = None

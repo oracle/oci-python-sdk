@@ -40,13 +40,11 @@ class VcnRoutingConfiguration(ForwardedRoutingConfiguration):
             'vcn_route_table_id': 'str',
             'route_rule': 'RouteRule'
         }
-
         self.attribute_map = {
             'type': 'type',
             'vcn_route_table_id': 'vcnRouteTableId',
             'route_rule': 'routeRule'
         }
-
         self._type = None
         self._vcn_route_table_id = None
         self._route_rule = None

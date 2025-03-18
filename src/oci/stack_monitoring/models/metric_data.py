@@ -38,13 +38,11 @@ class MetricData(object):
             'training_data_points': 'list[DataPoint]',
             'evaluation_data_points': 'list[DataPoint]'
         }
-
         self.attribute_map = {
             'dimensions': 'dimensions',
             'training_data_points': 'trainingDataPoints',
             'evaluation_data_points': 'evaluationDataPoints'
         }
-
         self._dimensions = None
         self._training_data_points = None
         self._evaluation_data_points = None

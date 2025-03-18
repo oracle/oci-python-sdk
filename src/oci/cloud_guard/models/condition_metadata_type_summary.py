@@ -73,14 +73,12 @@ class ConditionMetadataTypeSummary(object):
             'lifecycle_state': 'str',
             'locks': 'list[ResourceLock]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'description': 'description',
             'lifecycle_state': 'lifecycleState',
             'locks': 'locks'
         }
-
         self._id = None
         self._description = None
         self._lifecycle_state = None

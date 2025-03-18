@@ -28,11 +28,9 @@ class ApplyNetworkFirewallPolicyDetails(object):
         self.swagger_types = {
             'firewalls': 'list[str]'
         }
-
         self.attribute_map = {
             'firewalls': 'firewalls'
         }
-
         self._firewalls = None
 
     @property

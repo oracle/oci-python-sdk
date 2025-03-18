@@ -38,11 +38,9 @@ class NamedCredentialContent(object):
         self.swagger_types = {
             'credential_type': 'str'
         }
-
         self.attribute_map = {
             'credential_type': 'credentialType'
         }
-
         self._credential_type = None
 
     @staticmethod

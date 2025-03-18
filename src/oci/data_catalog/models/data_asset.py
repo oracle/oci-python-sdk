@@ -144,7 +144,6 @@ class DataAsset(object):
             'data_selector_patterns': 'list[PatternSummary]',
             'properties': 'dict(str, dict(str, str))'
         }
-
         self.attribute_map = {
             'key': 'key',
             'display_name': 'displayName',
@@ -164,7 +163,6 @@ class DataAsset(object):
             'data_selector_patterns': 'dataSelectorPatterns',
             'properties': 'properties'
         }
-
         self._key = None
         self._display_name = None
         self._description = None

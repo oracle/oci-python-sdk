@@ -43,14 +43,12 @@ class NetworkDetails(object):
             'nsg_ids': 'list[str]',
             'is_reader_endpoint_enabled': 'bool'
         }
-
         self.attribute_map = {
             'subnet_id': 'subnetId',
             'primary_db_endpoint_private_ip': 'primaryDbEndpointPrivateIp',
             'nsg_ids': 'nsgIds',
             'is_reader_endpoint_enabled': 'isReaderEndpointEnabled'
         }
-
         self._subnet_id = None
         self._primary_db_endpoint_private_ip = None
         self._nsg_ids = None

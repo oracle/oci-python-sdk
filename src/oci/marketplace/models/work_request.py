@@ -102,7 +102,6 @@ class WorkRequest(object):
             'listing_id': 'str',
             'package_version': 'str'
         }
-
         self.attribute_map = {
             'operation_type': 'operationType',
             'status': 'status',
@@ -116,7 +115,6 @@ class WorkRequest(object):
             'listing_id': 'listingId',
             'package_version': 'packageVersion'
         }
-
         self._operation_type = None
         self._status = None
         self._id = None

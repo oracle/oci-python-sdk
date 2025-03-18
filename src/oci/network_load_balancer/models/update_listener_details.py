@@ -97,7 +97,6 @@ class UpdateListenerDetails(object):
             'udp_idle_timeout': 'int',
             'l3_ip_idle_timeout': 'int'
         }
-
         self.attribute_map = {
             'default_backend_set_name': 'defaultBackendSetName',
             'port': 'port',
@@ -108,7 +107,6 @@ class UpdateListenerDetails(object):
             'udp_idle_timeout': 'udpIdleTimeout',
             'l3_ip_idle_timeout': 'l3IpIdleTimeout'
         }
-
         self._default_backend_set_name = None
         self._port = None
         self._protocol = None

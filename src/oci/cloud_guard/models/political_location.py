@@ -38,13 +38,11 @@ class PoliticalLocation(object):
             'state': 'str',
             'country': 'str'
         }
-
         self.attribute_map = {
             'city': 'city',
             'state': 'state',
             'country': 'country'
         }
-
         self._city = None
         self._state = None
         self._country = None

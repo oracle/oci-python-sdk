@@ -33,12 +33,10 @@ class AssociatedOccHandoverResourceBlock(object):
             'occ_handover_resource_block_id': 'str',
             'handover_quantity': 'int'
         }
-
         self.attribute_map = {
             'occ_handover_resource_block_id': 'occHandoverResourceBlockId',
             'handover_quantity': 'handoverQuantity'
         }
-
         self._occ_handover_resource_block_id = None
         self._handover_quantity = None
 

@@ -28,11 +28,9 @@ class ImportLineageDetails(object):
         self.swagger_types = {
             'lineage_payload': 'str'
         }
-
         self.attribute_map = {
             'lineage_payload': 'lineagePayload'
         }
-
         self._lineage_payload = None
 
     @property

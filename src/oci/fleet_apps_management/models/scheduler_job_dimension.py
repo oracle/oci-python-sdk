@@ -28,11 +28,9 @@ class SchedulerJobDimension(object):
         self.swagger_types = {
             'lifecycle_details': 'str'
         }
-
         self.attribute_map = {
             'lifecycle_details': 'lifecycleDetails'
         }
-
         self._lifecycle_details = None
 
     @property

@@ -28,11 +28,9 @@ class CreateIssueTypeDetails(object):
         self.swagger_types = {
             'issue_type_key': 'str'
         }
-
         self.attribute_map = {
             'issue_type_key': 'issueTypeKey'
         }
-
         self._issue_type_key = None
 
     @property

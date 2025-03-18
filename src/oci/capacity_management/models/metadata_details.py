@@ -38,11 +38,9 @@ class MetadataDetails(object):
         self.swagger_types = {
             'format_version': 'str'
         }
-
         self.attribute_map = {
             'format_version': 'formatVersion'
         }
-
         self._format_version = None
 
     @property

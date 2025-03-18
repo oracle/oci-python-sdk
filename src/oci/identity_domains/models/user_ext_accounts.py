@@ -58,7 +58,6 @@ class UserExtAccounts(object):
             'name': 'str',
             'active': 'bool'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ref': '$ref',
@@ -66,7 +65,6 @@ class UserExtAccounts(object):
             'name': 'name',
             'active': 'active'
         }
-
         self._value = None
         self._ref = None
         self._app_id = None

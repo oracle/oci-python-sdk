@@ -182,7 +182,6 @@ class ServiceEnvironmentSummary(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'id': 'id',
             'subscription_id': 'subscriptionId',
@@ -194,7 +193,6 @@ class ServiceEnvironmentSummary(object):
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags'
         }
-
         self._id = None
         self._subscription_id = None
         self._status = None

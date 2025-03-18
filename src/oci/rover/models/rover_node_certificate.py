@@ -28,11 +28,9 @@ class RoverNodeCertificate(object):
         self.swagger_types = {
             'certificate': 'str'
         }
-
         self.attribute_map = {
             'certificate': 'certificate'
         }
-
         self._certificate = None
 
     @property

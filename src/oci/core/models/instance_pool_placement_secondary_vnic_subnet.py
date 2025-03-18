@@ -43,14 +43,12 @@ class InstancePoolPlacementSecondaryVnicSubnet(object):
             'ipv6_address_ipv6_subnet_cidr_pair_details': 'list[InstancePoolPlacementIpv6AddressIpv6SubnetCidrDetails]',
             'subnet_id': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'is_assign_ipv6_ip': 'isAssignIpv6Ip',
             'ipv6_address_ipv6_subnet_cidr_pair_details': 'ipv6AddressIpv6SubnetCidrPairDetails',
             'subnet_id': 'subnetId'
         }
-
         self._display_name = None
         self._is_assign_ipv6_ip = None
         self._ipv6_address_ipv6_subnet_cidr_pair_details = None

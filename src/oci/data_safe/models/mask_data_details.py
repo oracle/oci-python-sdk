@@ -102,7 +102,6 @@ class MaskDataDetails(object):
             'parallel_degree': 'str',
             'recompile': 'str'
         }
-
         self.attribute_map = {
             'target_id': 'targetId',
             'is_decrypt': 'isDecrypt',
@@ -119,7 +118,6 @@ class MaskDataDetails(object):
             'parallel_degree': 'parallelDegree',
             'recompile': 'recompile'
         }
-
         self._target_id = None
         self._is_decrypt = None
         self._is_rerun = None

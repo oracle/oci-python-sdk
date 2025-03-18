@@ -115,7 +115,6 @@ class ExternalDbSystemMacsConnector(ExternalDbSystemConnector):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'connector_type': 'connectorType',
             'id': 'id',
@@ -135,7 +134,6 @@ class ExternalDbSystemMacsConnector(ExternalDbSystemConnector):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._connector_type = None
         self._id = None
         self._display_name = None

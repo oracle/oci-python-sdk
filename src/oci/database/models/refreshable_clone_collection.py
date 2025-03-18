@@ -28,11 +28,9 @@ class RefreshableCloneCollection(object):
         self.swagger_types = {
             'items': 'list[RefreshableCloneSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

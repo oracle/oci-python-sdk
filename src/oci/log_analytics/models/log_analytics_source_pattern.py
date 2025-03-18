@@ -123,7 +123,6 @@ class LogAnalyticsSourcePattern(object):
             'entity_type': 'list[str]',
             'pattern_properties': 'list[LogAnalyticsProperty]'
         }
-
         self.attribute_map = {
             'converted_text': 'convertedText',
             'db_parser_id': 'dbParserId',
@@ -146,7 +145,6 @@ class LogAnalyticsSourcePattern(object):
             'entity_type': 'entityType',
             'pattern_properties': 'patternProperties'
         }
-
         self._converted_text = None
         self._db_parser_id = None
         self._db_pattern_date_time_columns = None

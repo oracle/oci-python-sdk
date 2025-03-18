@@ -129,7 +129,6 @@ class GiCollection(FsuCollection):
             'source_major_version': 'str',
             'fleet_discovery': 'GiFleetDiscoveryDetails'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -149,7 +148,6 @@ class GiCollection(FsuCollection):
             'source_major_version': 'sourceMajorVersion',
             'fleet_discovery': 'fleetDiscovery'
         }
-
         self._id = None
         self._display_name = None
         self._type = None

@@ -28,11 +28,9 @@ class PreemptibleNodeConfigDetails(object):
         self.swagger_types = {
             'preemption_action': 'PreemptionAction'
         }
-
         self.attribute_map = {
             'preemption_action': 'preemptionAction'
         }
-
         self._preemption_action = None
 
     @property

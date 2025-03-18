@@ -73,7 +73,6 @@ class UpdateUserDefinedFunctionDetails(object):
             'object_status': 'int',
             'registry_metadata': 'RegistryMetadata'
         }
-
         self.attribute_map = {
             'parent_ref': 'parentRef',
             'name': 'name',
@@ -86,7 +85,6 @@ class UpdateUserDefinedFunctionDetails(object):
             'object_status': 'objectStatus',
             'registry_metadata': 'registryMetadata'
         }
-
         self._parent_ref = None
         self._name = None
         self._identifier = None

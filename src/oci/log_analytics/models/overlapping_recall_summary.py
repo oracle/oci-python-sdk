@@ -87,7 +87,6 @@ class OverlappingRecallSummary(object):
             'collection_id': 'int',
             'recall_id': 'int'
         }
-
         self.attribute_map = {
             'time_data_started': 'timeDataStarted',
             'time_data_ended': 'timeDataEnded',
@@ -100,7 +99,6 @@ class OverlappingRecallSummary(object):
             'collection_id': 'collectionId',
             'recall_id': 'recallId'
         }
-
         self._time_data_started = None
         self._time_data_ended = None
         self._time_started = None

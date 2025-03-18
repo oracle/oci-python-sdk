@@ -28,11 +28,9 @@ class RuntimeOperatorSummaryCollection(object):
         self.swagger_types = {
             'items': 'list[RuntimeOperatorSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

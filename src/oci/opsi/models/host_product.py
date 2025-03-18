@@ -50,7 +50,6 @@ class HostProduct(HostConfigurationMetricGroup):
             'name': 'str',
             'version': 'str'
         }
-
         self.attribute_map = {
             'metric_name': 'metricName',
             'time_collected': 'timeCollected',
@@ -58,7 +57,6 @@ class HostProduct(HostConfigurationMetricGroup):
             'name': 'name',
             'version': 'version'
         }
-
         self._metric_name = None
         self._time_collected = None
         self._vendor = None

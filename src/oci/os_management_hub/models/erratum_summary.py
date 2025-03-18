@@ -118,7 +118,6 @@ class ErratumSummary(object):
             'advisory_severity': 'str',
             'advisory_type': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'synopsis': 'synopsis',
@@ -130,7 +129,6 @@ class ErratumSummary(object):
             'advisory_severity': 'advisorySeverity',
             'advisory_type': 'advisoryType'
         }
-
         self._name = None
         self._synopsis = None
         self._time_issued = None

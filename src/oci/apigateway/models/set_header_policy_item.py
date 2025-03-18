@@ -53,13 +53,11 @@ class SetHeaderPolicyItem(object):
             'values': 'list[str]',
             'if_exists': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'values': 'values',
             'if_exists': 'ifExists'
         }
-
         self._name = None
         self._values = None
         self._if_exists = None

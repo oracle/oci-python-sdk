@@ -38,13 +38,11 @@ class PrivateSourceScanHost(object):
             'scan_port': 'int',
             'description': 'str'
         }
-
         self.attribute_map = {
             'scan_hostname': 'scanHostname',
             'scan_port': 'scanPort',
             'description': 'description'
         }
-
         self._scan_hostname = None
         self._scan_port = None
         self._description = None

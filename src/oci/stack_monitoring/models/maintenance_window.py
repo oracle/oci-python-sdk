@@ -119,7 +119,6 @@ class MaintenanceWindow(object):
             'time_created': 'datetime',
             'time_updated': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -133,7 +132,6 @@ class MaintenanceWindow(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated'
         }
-
         self._id = None
         self._name = None
         self._description = None

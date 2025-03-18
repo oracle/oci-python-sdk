@@ -33,12 +33,10 @@ class RequestTargetDiscoveryDetails(object):
             'is_applicable_to_all_resources': 'bool',
             'resource_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'is_applicable_to_all_resources': 'isApplicableToAllResources',
             'resource_ids': 'resourceIds'
         }
-
         self._is_applicable_to_all_resources = None
         self._resource_ids = None
 

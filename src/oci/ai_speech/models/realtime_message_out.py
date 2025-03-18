@@ -37,11 +37,9 @@ class RealtimeMessageOut(object):
         self.swagger_types = {
             'event': 'str'
         }
-
         self.attribute_map = {
             'event': 'event'
         }
-
         self._event = None
 
     @staticmethod

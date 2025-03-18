@@ -181,7 +181,6 @@ class Zone(object):
             'nameservers': 'list[Nameserver]',
             'zone_transfer_servers': 'list[ZoneTransferServer]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'zone_type': 'zoneType',
@@ -204,7 +203,6 @@ class Zone(object):
             'nameservers': 'nameservers',
             'zone_transfer_servers': 'zoneTransferServers'
         }
-
         self._name = None
         self._zone_type = None
         self._compartment_id = None

@@ -40,13 +40,11 @@ class InfluxDetailsV1v8(InfluxDetails):
             'database_name': 'str',
             'retention_policy_name': 'str'
         }
-
         self.attribute_map = {
             'influx_version': 'influxVersion',
             'database_name': 'databaseName',
             'retention_policy_name': 'retentionPolicyName'
         }
-
         self._influx_version = None
         self._database_name = None
         self._retention_policy_name = None

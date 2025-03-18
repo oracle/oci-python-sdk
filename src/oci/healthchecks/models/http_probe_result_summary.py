@@ -182,7 +182,6 @@ class HttpProbeResultSummary(object):
             'duration': 'float',
             'encoded_body_size': 'int'
         }
-
         self.attribute_map = {
             'key': 'key',
             'probe_configuration_id': 'probeConfigurationId',
@@ -209,7 +208,6 @@ class HttpProbeResultSummary(object):
             'duration': 'duration',
             'encoded_body_size': 'encodedBodySize'
         }
-
         self._key = None
         self._probe_configuration_id = None
         self._start_time = None

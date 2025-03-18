@@ -38,13 +38,11 @@ class UpdateOracleGgsDeploymentDetails(object):
             'replicat': 'UpdateReplicat',
             'acceptable_lag': 'int'
         }
-
         self.attribute_map = {
             'extract': 'extract',
             'replicat': 'replicat',
             'acceptable_lag': 'acceptableLag'
         }
-
         self._extract = None
         self._replicat = None
         self._acceptable_lag = None

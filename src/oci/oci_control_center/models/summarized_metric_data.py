@@ -48,7 +48,6 @@ class SummarizedMetricData(object):
             'aggregation_method': 'str',
             'aggregated_value': 'float'
         }
-
         self.attribute_map = {
             'sample_time': 'sampleTime',
             'resolution': 'resolution',
@@ -56,7 +55,6 @@ class SummarizedMetricData(object):
             'aggregation_method': 'aggregationMethod',
             'aggregated_value': 'aggregatedValue'
         }
-
         self._sample_time = None
         self._resolution = None
         self._dimensions = None

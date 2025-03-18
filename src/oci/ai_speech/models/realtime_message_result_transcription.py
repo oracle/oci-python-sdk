@@ -58,7 +58,6 @@ class RealtimeMessageResultTranscription(object):
             'trailing_silence': 'int',
             'tokens': 'list[RealtimeMessageResultTranscriptionToken]'
         }
-
         self.attribute_map = {
             'transcription': 'transcription',
             'is_final': 'isFinal',
@@ -68,7 +67,6 @@ class RealtimeMessageResultTranscription(object):
             'trailing_silence': 'trailingSilence',
             'tokens': 'tokens'
         }
-
         self._transcription = None
         self._is_final = None
         self._start_time_in_ms = None

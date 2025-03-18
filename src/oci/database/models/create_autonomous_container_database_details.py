@@ -257,7 +257,6 @@ class CreateAutonomousContainerDatabaseDetails(object):
             'distribution_affinity': 'str',
             'net_services_architecture': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'db_unique_name': 'dbUniqueName',
@@ -296,7 +295,6 @@ class CreateAutonomousContainerDatabaseDetails(object):
             'distribution_affinity': 'distributionAffinity',
             'net_services_architecture': 'netServicesArchitecture'
         }
-
         self._display_name = None
         self._db_unique_name = None
         self._db_name = None

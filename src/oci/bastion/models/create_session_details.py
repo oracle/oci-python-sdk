@@ -58,7 +58,6 @@ class CreateSessionDetails(object):
             'key_details': 'PublicKeyDetails',
             'session_ttl_in_seconds': 'int'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'bastion_id': 'bastionId',
@@ -67,7 +66,6 @@ class CreateSessionDetails(object):
             'key_details': 'keyDetails',
             'session_ttl_in_seconds': 'sessionTtlInSeconds'
         }
-
         self._display_name = None
         self._bastion_id = None
         self._target_resource_details = None

@@ -44,13 +44,11 @@ class ConnectionConfiguration(object):
             'backend_tcp_proxy_protocol_version': 'int',
             'backend_tcp_proxy_protocol_options': 'list[str]'
         }
-
         self.attribute_map = {
             'idle_timeout': 'idleTimeout',
             'backend_tcp_proxy_protocol_version': 'backendTcpProxyProtocolVersion',
             'backend_tcp_proxy_protocol_options': 'backendTcpProxyProtocolOptions'
         }
-
         self._idle_timeout = None
         self._backend_tcp_proxy_protocol_version = None
         self._backend_tcp_proxy_protocol_options = None

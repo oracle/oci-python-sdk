@@ -38,13 +38,11 @@ class CreateLogAnalyticsEntityTypeDetails(object):
             'category': 'str',
             'properties': 'list[EntityTypeProperty]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'category': 'category',
             'properties': 'properties'
         }
-
         self._name = None
         self._category = None
         self._properties = None

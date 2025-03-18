@@ -78,7 +78,6 @@ class MeGroups(object):
             'membership_ocid': 'str',
             'date_added': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ocid': 'ocid',
@@ -90,7 +89,6 @@ class MeGroups(object):
             'membership_ocid': 'membershipOcid',
             'date_added': 'dateAdded'
         }
-
         self._value = None
         self._ocid = None
         self._ref = None

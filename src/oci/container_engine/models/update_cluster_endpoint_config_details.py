@@ -33,12 +33,10 @@ class UpdateClusterEndpointConfigDetails(object):
             'nsg_ids': 'list[str]',
             'is_public_ip_enabled': 'bool'
         }
-
         self.attribute_map = {
             'nsg_ids': 'nsgIds',
             'is_public_ip_enabled': 'isPublicIpEnabled'
         }
-
         self._nsg_ids = None
         self._is_public_ip_enabled = None
 

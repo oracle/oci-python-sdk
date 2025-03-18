@@ -60,7 +60,6 @@ class SettingsCloudGateCorsSettings(object):
             'cloud_gate_cors_max_age': 'int',
             'cloud_gate_cors_exposed_headers': 'list[str]'
         }
-
         self.attribute_map = {
             'cloud_gate_cors_allow_null_origin': 'cloudGateCorsAllowNullOrigin',
             'cloud_gate_cors_enabled': 'cloudGateCorsEnabled',
@@ -68,7 +67,6 @@ class SettingsCloudGateCorsSettings(object):
             'cloud_gate_cors_max_age': 'cloudGateCorsMaxAge',
             'cloud_gate_cors_exposed_headers': 'cloudGateCorsExposedHeaders'
         }
-
         self._cloud_gate_cors_allow_null_origin = None
         self._cloud_gate_cors_enabled = None
         self._cloud_gate_cors_allowed_origins = None

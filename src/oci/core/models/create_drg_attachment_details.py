@@ -63,7 +63,6 @@ class CreateDrgAttachmentDetails(object):
             'route_table_id': 'str',
             'vcn_id': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'drg_id': 'drgId',
@@ -74,7 +73,6 @@ class CreateDrgAttachmentDetails(object):
             'route_table_id': 'routeTableId',
             'vcn_id': 'vcnId'
         }
-
         self._display_name = None
         self._drg_id = None
         self._drg_route_table_id = None

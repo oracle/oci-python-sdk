@@ -38,13 +38,11 @@ class ThreadSnapshot(object):
             'thread_snapshot_details': 'list[SnapshotDetail]',
             'stack_trace': 'list[StackTraceElement]'
         }
-
         self.attribute_map = {
             'time_stamp': 'timeStamp',
             'thread_snapshot_details': 'threadSnapshotDetails',
             'stack_trace': 'stackTrace'
         }
-
         self._time_stamp = None
         self._thread_snapshot_details = None
         self._stack_trace = None

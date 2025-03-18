@@ -112,7 +112,6 @@ class RealtimeParameters(object):
             'customizations': 'list[CustomizationInference]',
             'punctuation': 'str'
         }
-
         self.attribute_map = {
             'encoding': 'encoding',
             'is_ack_enabled': 'isAckEnabled',
@@ -125,7 +124,6 @@ class RealtimeParameters(object):
             'customizations': 'customizations',
             'punctuation': 'punctuation'
         }
-
         self._encoding = None
         self._is_ack_enabled = None
         self._partial_silence_threshold_in_ms = None

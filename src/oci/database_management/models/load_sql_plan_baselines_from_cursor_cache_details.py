@@ -104,7 +104,6 @@ class LoadSqlPlanBaselinesFromCursorCacheDetails(object):
             'credentials': 'ManagedDatabaseCredential',
             'database_credential': 'DatabaseCredentialDetails'
         }
-
         self.attribute_map = {
             'job_name': 'jobName',
             'job_description': 'jobDescription',
@@ -119,7 +118,6 @@ class LoadSqlPlanBaselinesFromCursorCacheDetails(object):
             'credentials': 'credentials',
             'database_credential': 'databaseCredential'
         }
-
         self._job_name = None
         self._job_description = None
         self._sql_id = None

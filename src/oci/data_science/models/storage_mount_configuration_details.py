@@ -53,13 +53,11 @@ class StorageMountConfigurationDetails(object):
             'destination_directory_name': 'str',
             'destination_path': 'str'
         }
-
         self.attribute_map = {
             'storage_type': 'storageType',
             'destination_directory_name': 'destinationDirectoryName',
             'destination_path': 'destinationPath'
         }
-
         self._storage_type = None
         self._destination_directory_name = None
         self._destination_path = None

@@ -47,13 +47,11 @@ class UpdateAutonomousContainerDatabaseDataGuardAssociationDetails(object):
             'protection_mode': 'str',
             'fast_start_fail_over_lag_limit_in_seconds': 'int'
         }
-
         self.attribute_map = {
             'is_automatic_failover_enabled': 'isAutomaticFailoverEnabled',
             'protection_mode': 'protectionMode',
             'fast_start_fail_over_lag_limit_in_seconds': 'fastStartFailOverLagLimitInSeconds'
         }
-
         self._is_automatic_failover_enabled = None
         self._protection_mode = None
         self._fast_start_fail_over_lag_limit_in_seconds = None

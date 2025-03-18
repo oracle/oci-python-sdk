@@ -52,12 +52,10 @@ class ResourcePowerAction(ResourceAction):
             'action_type': 'str',
             'action': 'str'
         }
-
         self.attribute_map = {
             'action_type': 'actionType',
             'action': 'action'
         }
-
         self._action_type = None
         self._action = None
         self._action_type = 'power'

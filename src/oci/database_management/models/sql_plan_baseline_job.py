@@ -63,14 +63,12 @@ class SqlPlanBaselineJob(object):
             'status': 'str',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'name': 'name',
             'type': 'type',
             'status': 'status',
             'time_created': 'timeCreated'
         }
-
         self._name = None
         self._type = None
         self._status = None

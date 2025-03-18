@@ -57,11 +57,9 @@ class ExadataInfrastructureLifecycleStateValues(object):
         self.swagger_types = {
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'lifecycle_state': 'lifecycleState'
         }
-
         self._lifecycle_state = None
 
     @property

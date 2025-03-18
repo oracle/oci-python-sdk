@@ -33,12 +33,10 @@ class BulkEditTagsResourceType(object):
             'resource_type': 'str',
             'metadata_keys': 'list[str]'
         }
-
         self.attribute_map = {
             'resource_type': 'resourceType',
             'metadata_keys': 'metadataKeys'
         }
-
         self._resource_type = None
         self._metadata_keys = None
 

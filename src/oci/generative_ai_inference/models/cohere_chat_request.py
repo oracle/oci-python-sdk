@@ -163,7 +163,6 @@ class CohereChatRequest(BaseChatRequest):
             'is_raw_prompting': 'bool',
             'citation_quality': 'str'
         }
-
         self.attribute_map = {
             'api_format': 'apiFormat',
             'message': 'message',
@@ -190,7 +189,6 @@ class CohereChatRequest(BaseChatRequest):
             'is_raw_prompting': 'isRawPrompting',
             'citation_quality': 'citationQuality'
         }
-
         self._api_format = None
         self._message = None
         self._chat_history = None

@@ -48,7 +48,6 @@ class SecurityPolicyCollection(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'items': 'items',
             'locks': 'locks',
@@ -56,7 +55,6 @@ class SecurityPolicyCollection(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._items = None
         self._locks = None
         self._freeform_tags = None

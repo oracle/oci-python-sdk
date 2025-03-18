@@ -38,11 +38,9 @@ class CaCertificate(object):
         self.swagger_types = {
             'certificate_type': 'str'
         }
-
         self.attribute_map = {
             'certificate_type': 'certificateType'
         }
-
         self._certificate_type = None
 
     @staticmethod

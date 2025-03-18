@@ -71,12 +71,10 @@ class ConditionOperator(object):
             'name': 'str',
             'display_name': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'display_name': 'displayName'
         }
-
         self._name = None
         self._display_name = None
 

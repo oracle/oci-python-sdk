@@ -28,11 +28,9 @@ class ManageJobExecutionDetails(object):
         self.swagger_types = {
             'action_details': 'UserActionDetails'
         }
-
         self.attribute_map = {
             'action_details': 'actionDetails'
         }
-
         self._action_details = None
 
     @property

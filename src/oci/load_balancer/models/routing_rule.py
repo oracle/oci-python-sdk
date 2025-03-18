@@ -39,13 +39,11 @@ class RoutingRule(object):
             'condition': 'str',
             'actions': 'list[Action]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'condition': 'condition',
             'actions': 'actions'
         }
-
         self._name = None
         self._condition = None
         self._actions = None

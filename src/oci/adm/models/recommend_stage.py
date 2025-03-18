@@ -83,7 +83,6 @@ class RecommendStage(RemediationRunStage):
             'recommended_updates_count': 'int',
             'pull_request_properties': 'PullRequestProperties'
         }
-
         self.attribute_map = {
             'status': 'status',
             'time_created': 'timeCreated',
@@ -97,7 +96,6 @@ class RecommendStage(RemediationRunStage):
             'recommended_updates_count': 'recommendedUpdatesCount',
             'pull_request_properties': 'pullRequestProperties'
         }
-
         self._status = None
         self._time_created = None
         self._time_started = None

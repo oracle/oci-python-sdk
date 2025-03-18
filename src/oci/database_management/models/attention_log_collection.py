@@ -33,12 +33,10 @@ class AttentionLogCollection(object):
             'managed_database_id': 'str',
             'items': 'list[AttentionLogSummary]'
         }
-
         self.attribute_map = {
             'managed_database_id': 'managedDatabaseId',
             'items': 'items'
         }
-
         self._managed_database_id = None
         self._items = None
 

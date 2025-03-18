@@ -56,14 +56,12 @@ class RedirectRule(Rule):
             'conditions': 'list[RuleCondition]',
             'redirect_uri': 'RedirectUri'
         }
-
         self.attribute_map = {
             'action': 'action',
             'response_code': 'responseCode',
             'conditions': 'conditions',
             'redirect_uri': 'redirectUri'
         }
-
         self._action = None
         self._response_code = None
         self._conditions = None

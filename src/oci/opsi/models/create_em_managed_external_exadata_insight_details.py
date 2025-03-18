@@ -70,7 +70,6 @@ class CreateEmManagedExternalExadataInsightDetails(CreateExadataInsightDetails):
             'member_entity_details': 'list[CreateEmManagedExternalExadataMemberEntityDetails]',
             'is_auto_sync_enabled': 'bool'
         }
-
         self.attribute_map = {
             'entity_source': 'entitySource',
             'compartment_id': 'compartmentId',
@@ -82,7 +81,6 @@ class CreateEmManagedExternalExadataInsightDetails(CreateExadataInsightDetails):
             'member_entity_details': 'memberEntityDetails',
             'is_auto_sync_enabled': 'isAutoSyncEnabled'
         }
-
         self._entity_source = None
         self._compartment_id = None
         self._freeform_tags = None

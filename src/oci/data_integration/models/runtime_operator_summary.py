@@ -265,7 +265,6 @@ class RuntimeOperatorSummary(object):
             'operator_type': 'str',
             'metrics': 'dict(str, float)'
         }
-
         self.attribute_map = {
             'key': 'key',
             'task_run_key': 'taskRunKey',
@@ -290,7 +289,6 @@ class RuntimeOperatorSummary(object):
             'operator_type': 'operatorType',
             'metrics': 'metrics'
         }
-
         self._key = None
         self._task_run_key = None
         self._start_time_in_millis = None

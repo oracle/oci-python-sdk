@@ -86,7 +86,6 @@ class StackResourceDriftSummary(object):
             'expected_properties': 'dict(str, str)',
             'time_drift_checked': 'datetime'
         }
-
         self.attribute_map = {
             'stack_id': 'stackId',
             'compartment_id': 'compartmentId',
@@ -98,7 +97,6 @@ class StackResourceDriftSummary(object):
             'expected_properties': 'expectedProperties',
             'time_drift_checked': 'timeDriftChecked'
         }
-
         self._stack_id = None
         self._compartment_id = None
         self._resource_name = None

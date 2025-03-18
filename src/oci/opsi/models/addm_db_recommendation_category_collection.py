@@ -33,12 +33,10 @@ class AddmDbRecommendationCategoryCollection(object):
             'database_details_items': 'list[DatabaseDetails]',
             'items': 'list[AddmDbRecommendationCategorySummary]'
         }
-
         self.attribute_map = {
             'database_details_items': 'databaseDetailsItems',
             'items': 'items'
         }
-
         self._database_details_items = None
         self._items = None
 

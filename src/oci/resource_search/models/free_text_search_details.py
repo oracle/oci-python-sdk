@@ -40,13 +40,11 @@ class FreeTextSearchDetails(SearchDetails):
             'matching_context_type': 'str',
             'text': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'matching_context_type': 'matchingContextType',
             'text': 'text'
         }
-
         self._type = None
         self._matching_context_type = None
         self._text = None

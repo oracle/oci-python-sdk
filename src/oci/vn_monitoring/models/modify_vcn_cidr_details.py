@@ -33,12 +33,10 @@ class ModifyVcnCidrDetails(object):
             'original_cidr_block': 'str',
             'new_cidr_block': 'str'
         }
-
         self.attribute_map = {
             'original_cidr_block': 'originalCidrBlock',
             'new_cidr_block': 'newCidrBlock'
         }
-
         self._original_cidr_block = None
         self._new_cidr_block = None
 

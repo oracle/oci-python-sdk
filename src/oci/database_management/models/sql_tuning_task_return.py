@@ -28,11 +28,9 @@ class SqlTuningTaskReturn(object):
         self.swagger_types = {
             'sql_tuning_task_id': 'int'
         }
-
         self.attribute_map = {
             'sql_tuning_task_id': 'sqlTuningTaskId'
         }
-
         self._sql_tuning_task_id = None
 
     @property

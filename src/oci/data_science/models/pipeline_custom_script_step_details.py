@@ -65,7 +65,6 @@ class PipelineCustomScriptStepDetails(PipelineStepDetails):
             'step_storage_mount_configuration_details_list': 'list[StorageMountConfigurationDetails]',
             'is_artifact_uploaded': 'bool'
         }
-
         self.attribute_map = {
             'step_type': 'stepType',
             'step_name': 'stepName',
@@ -76,7 +75,6 @@ class PipelineCustomScriptStepDetails(PipelineStepDetails):
             'step_storage_mount_configuration_details_list': 'stepStorageMountConfigurationDetailsList',
             'is_artifact_uploaded': 'isArtifactUploaded'
         }
-
         self._step_type = None
         self._step_name = None
         self._description = None

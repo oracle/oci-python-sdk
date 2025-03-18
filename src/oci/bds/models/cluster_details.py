@@ -98,7 +98,6 @@ class ClusterDetails(object):
             'odh_version': 'str',
             'jupyter_hub_url': 'str'
         }
-
         self.attribute_map = {
             'bda_version': 'bdaVersion',
             'bdm_version': 'bdmVersion',
@@ -116,7 +115,6 @@ class ClusterDetails(object):
             'odh_version': 'odhVersion',
             'jupyter_hub_url': 'jupyterHubUrl'
         }
-
         self._bda_version = None
         self._bdm_version = None
         self._bds_version = None

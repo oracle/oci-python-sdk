@@ -118,7 +118,6 @@ class JavaMigrationAnalysisResultSummary(object):
             'object_list': 'list[str]',
             'metadata': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'work_request_id': 'workRequestId',
@@ -138,7 +137,6 @@ class JavaMigrationAnalysisResultSummary(object):
             'object_list': 'objectList',
             'metadata': 'metadata'
         }
-
         self._id = None
         self._work_request_id = None
         self._fleet_id = None

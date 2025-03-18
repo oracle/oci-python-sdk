@@ -52,13 +52,11 @@ class Entity(object):
             'name': 'str',
             'type': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
             'type': 'type'
         }
-
         self._id = None
         self._name = None
         self._type = None

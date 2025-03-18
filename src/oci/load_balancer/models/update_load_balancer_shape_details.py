@@ -33,12 +33,10 @@ class UpdateLoadBalancerShapeDetails(object):
             'shape_name': 'str',
             'shape_details': 'ShapeDetails'
         }
-
         self.attribute_map = {
             'shape_name': 'shapeName',
             'shape_details': 'shapeDetails'
         }
-
         self._shape_name = None
         self._shape_details = None
 

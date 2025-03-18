@@ -70,7 +70,6 @@ class UpdateDatabaseToolsConnectionGenericJdbcDetails(UpdateDatabaseToolsConnect
             'advanced_properties': 'dict(str, str)',
             'key_stores': 'list[DatabaseToolsKeyStoreGenericJdbcDetails]'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'defined_tags': 'definedTags',
@@ -82,7 +81,6 @@ class UpdateDatabaseToolsConnectionGenericJdbcDetails(UpdateDatabaseToolsConnect
             'advanced_properties': 'advancedProperties',
             'key_stores': 'keyStores'
         }
-
         self._display_name = None
         self._defined_tags = None
         self._freeform_tags = None

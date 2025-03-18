@@ -182,7 +182,6 @@ class ExternalNonContainerDatabaseSummary(object):
             'database_management_config': 'DatabaseManagementConfig',
             'stack_monitoring_config': 'StackMonitoringConfig'
         }
-
         self.attribute_map = {
             'operations_insights_config': 'operationsInsightsConfig',
             'compartment_id': 'compartmentId',
@@ -205,7 +204,6 @@ class ExternalNonContainerDatabaseSummary(object):
             'database_management_config': 'databaseManagementConfig',
             'stack_monitoring_config': 'stackMonitoringConfig'
         }
-
         self._operations_insights_config = None
         self._compartment_id = None
         self._freeform_tags = None

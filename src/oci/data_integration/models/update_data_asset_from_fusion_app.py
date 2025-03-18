@@ -85,7 +85,6 @@ class UpdateDataAssetFromFusionApp(UpdateDataAssetDetails):
             'registry_metadata': 'RegistryMetadata',
             'service_url': 'str'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -100,7 +99,6 @@ class UpdateDataAssetFromFusionApp(UpdateDataAssetDetails):
             'registry_metadata': 'registryMetadata',
             'service_url': 'serviceUrl'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

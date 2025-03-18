@@ -53,7 +53,6 @@ class SightingType(object):
             'tactic': 'str',
             'techniques': 'list[str]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -62,7 +61,6 @@ class SightingType(object):
             'tactic': 'tactic',
             'techniques': 'techniques'
         }
-
         self._id = None
         self._display_name = None
         self._description = None

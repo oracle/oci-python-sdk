@@ -28,11 +28,9 @@ class UnifiedAgentTailSourceAdvancedOptions(object):
         self.swagger_types = {
             'is_read_from_head': 'bool'
         }
-
         self.attribute_map = {
             'is_read_from_head': 'isReadFromHead'
         }
-
         self._is_read_from_head = None
 
     @property

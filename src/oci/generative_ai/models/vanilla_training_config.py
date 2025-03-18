@@ -65,7 +65,6 @@ class VanillaTrainingConfig(TrainingConfig):
             'log_model_metrics_interval_in_steps': 'int',
             'num_of_last_layers': 'int'
         }
-
         self.attribute_map = {
             'training_config_type': 'trainingConfigType',
             'total_training_epochs': 'totalTrainingEpochs',
@@ -76,7 +75,6 @@ class VanillaTrainingConfig(TrainingConfig):
             'log_model_metrics_interval_in_steps': 'logModelMetricsIntervalInSteps',
             'num_of_last_layers': 'numOfLastLayers'
         }
-
         self._training_config_type = None
         self._total_training_epochs = None
         self._learning_rate = None

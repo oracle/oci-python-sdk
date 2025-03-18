@@ -28,11 +28,9 @@ class VbsFilterExclusionAttributes(object):
         self.swagger_types = {
             'file_filter': 'FileFilter'
         }
-
         self.attribute_map = {
             'file_filter': 'fileFilter'
         }
-
         self._file_filter = None
 
     @property

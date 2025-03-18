@@ -41,13 +41,11 @@ class UpdateMetricBasedVerticalScalingPolicyDetails(UpdateAutoScalePolicyDetails
             'scale_up_config': 'MetricBasedVerticalScaleUpConfig',
             'scale_down_config': 'MetricBasedVerticalScaleDownConfig'
         }
-
         self.attribute_map = {
             'policy_type': 'policyType',
             'scale_up_config': 'scaleUpConfig',
             'scale_down_config': 'scaleDownConfig'
         }
-
         self._policy_type = None
         self._scale_up_config = None
         self._scale_down_config = None

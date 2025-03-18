@@ -28,11 +28,9 @@ class VideoTrackedObjectProperties(object):
         self.swagger_types = {
             'axle_count': 'int'
         }
-
         self.attribute_map = {
             'axle_count': 'axleCount'
         }
-
         self._axle_count = None
 
     @property

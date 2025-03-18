@@ -53,7 +53,6 @@ class ImplementOptimizerStatisticsAdvisorRecommendationsJob(object):
             'credentials': 'ManagedDatabaseCredential',
             'database_credential': 'DatabaseCredentialDetails'
         }
-
         self.attribute_map = {
             'name': 'name',
             'description': 'description',
@@ -62,7 +61,6 @@ class ImplementOptimizerStatisticsAdvisorRecommendationsJob(object):
             'credentials': 'credentials',
             'database_credential': 'databaseCredential'
         }
-
         self._name = None
         self._description = None
         self._compartment_id = None

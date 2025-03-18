@@ -90,12 +90,10 @@ class AbstractFrequencyDetails(object):
             'model_type': 'str',
             'frequency': 'str'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'frequency': 'frequency'
         }
-
         self._model_type = None
         self._frequency = None
 

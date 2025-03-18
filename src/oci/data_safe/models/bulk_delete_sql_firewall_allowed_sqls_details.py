@@ -33,12 +33,10 @@ class BulkDeleteSqlFirewallAllowedSqlsDetails(object):
             'sql_firewall_policy_id': 'str',
             'selection': 'SelectionDetails'
         }
-
         self.attribute_map = {
             'sql_firewall_policy_id': 'sqlFirewallPolicyId',
             'selection': 'selection'
         }
-
         self._sql_firewall_policy_id = None
         self._selection = None
 

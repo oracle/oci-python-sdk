@@ -80,7 +80,6 @@ class UpdateAnalyticsInstanceDetails(object):
             'freeform_tags': 'dict(str, str)',
             'update_channel': 'str'
         }
-
         self.attribute_map = {
             'description': 'description',
             'email_notification': 'emailNotification',
@@ -89,7 +88,6 @@ class UpdateAnalyticsInstanceDetails(object):
             'freeform_tags': 'freeformTags',
             'update_channel': 'updateChannel'
         }
-
         self._description = None
         self._email_notification = None
         self._license_type = None

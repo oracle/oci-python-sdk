@@ -178,7 +178,6 @@ class UpsertLogAnalyticsSourceDetails(object):
             'endpoints': 'list[LogAnalyticsEndpoint]',
             'source_properties': 'list[LogAnalyticsProperty]'
         }
-
         self.attribute_map = {
             'label_conditions': 'labelConditions',
             'data_filter_definitions': 'dataFilterDefinitions',
@@ -212,7 +211,6 @@ class UpsertLogAnalyticsSourceDetails(object):
             'endpoints': 'endpoints',
             'source_properties': 'sourceProperties'
         }
-
         self._label_conditions = None
         self._data_filter_definitions = None
         self._database_credential = None

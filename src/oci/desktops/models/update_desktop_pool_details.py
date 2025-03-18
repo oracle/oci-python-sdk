@@ -83,7 +83,6 @@ class UpdateDesktopPoolDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'session_lifecycle_actions': 'UpdateDesktopPoolDesktopSessionLifecycleActions'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
@@ -98,7 +97,6 @@ class UpdateDesktopPoolDetails(object):
             'defined_tags': 'definedTags',
             'session_lifecycle_actions': 'sessionLifecycleActions'
         }
-
         self._display_name = None
         self._description = None
         self._maximum_size = None

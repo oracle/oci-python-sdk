@@ -30,11 +30,9 @@ class DowntimeBasedOdhPatchingConfig(OdhPatchingConfig):
         self.swagger_types = {
             'patching_config_strategy': 'str'
         }
-
         self.attribute_map = {
             'patching_config_strategy': 'patchingConfigStrategy'
         }
-
         self._patching_config_strategy = None
         self._patching_config_strategy = 'DOWNTIME_BASED'
 

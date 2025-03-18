@@ -28,11 +28,9 @@ class AutonomousDatabaseSoftwareImageCollection(object):
         self.swagger_types = {
             'items': 'list[AutonomousDatabaseSoftwareImageSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

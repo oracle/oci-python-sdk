@@ -58,7 +58,6 @@ class SqlText(object):
             'force_matching_signature': 'str',
             'sql_full_text': 'str'
         }
-
         self.attribute_map = {
             'version': 'version',
             'sql_identifier': 'sqlIdentifier',
@@ -68,7 +67,6 @@ class SqlText(object):
             'force_matching_signature': 'forceMatchingSignature',
             'sql_full_text': 'sqlFullText'
         }
-
         self._version = None
         self._sql_identifier = None
         self._time_collected = None

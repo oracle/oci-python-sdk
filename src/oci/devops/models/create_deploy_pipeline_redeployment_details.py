@@ -54,7 +54,6 @@ class CreateDeployPipelineRedeploymentDetails(CreateDeploymentDetails):
             'defined_tags': 'dict(str, dict(str, object))',
             'previous_deployment_id': 'str'
         }
-
         self.attribute_map = {
             'deploy_pipeline_id': 'deployPipelineId',
             'deployment_type': 'deploymentType',
@@ -63,7 +62,6 @@ class CreateDeployPipelineRedeploymentDetails(CreateDeploymentDetails):
             'defined_tags': 'definedTags',
             'previous_deployment_id': 'previousDeploymentId'
         }
-
         self._deploy_pipeline_id = None
         self._deployment_type = None
         self._display_name = None

@@ -60,7 +60,6 @@ class DeterministicSubstitutionFormatEntry(FormatEntry):
             'table_name': 'str',
             'column_name': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'description': 'description',
@@ -68,7 +67,6 @@ class DeterministicSubstitutionFormatEntry(FormatEntry):
             'table_name': 'tableName',
             'column_name': 'columnName'
         }
-
         self._type = None
         self._description = None
         self._schema_name = None

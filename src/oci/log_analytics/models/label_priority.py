@@ -46,11 +46,9 @@ class LabelPriority(object):
         self.swagger_types = {
             'priority': 'str'
         }
-
         self.attribute_map = {
             'priority': 'priority'
         }
-
         self._priority = None
 
     @property

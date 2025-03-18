@@ -33,12 +33,10 @@ class StatementsAggregateMetrics(object):
             'queued_statements': 'MetricDataPoint',
             'running_statements': 'MetricDataPoint'
         }
-
         self.attribute_map = {
             'queued_statements': 'queuedStatements',
             'running_statements': 'runningStatements'
         }
-
         self._queued_statements = None
         self._running_statements = None
 

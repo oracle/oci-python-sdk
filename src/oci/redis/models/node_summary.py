@@ -48,7 +48,6 @@ class NodeSummary(object):
             'redis_cluster_id': 'str',
             'shard_number': 'int'
         }
-
         self.attribute_map = {
             'private_endpoint_fqdn': 'privateEndpointFqdn',
             'private_endpoint_ip_address': 'privateEndpointIpAddress',
@@ -56,7 +55,6 @@ class NodeSummary(object):
             'redis_cluster_id': 'redisClusterId',
             'shard_number': 'shardNumber'
         }
-
         self._private_endpoint_fqdn = None
         self._private_endpoint_ip_address = None
         self._display_name = None

@@ -33,12 +33,10 @@ class GgsDeployment(object):
             'deployment_id': 'str',
             'ggs_admin_credentials_secret_id': 'str'
         }
-
         self.attribute_map = {
             'deployment_id': 'deploymentId',
             'ggs_admin_credentials_secret_id': 'ggsAdminCredentialsSecretId'
         }
-
         self._deployment_id = None
         self._ggs_admin_credentials_secret_id = None
 

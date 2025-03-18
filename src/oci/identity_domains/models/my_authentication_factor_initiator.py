@@ -220,7 +220,6 @@ class MyAuthenticationFactorInitiator(object):
             'additional_attributes': 'list[MyAuthenticationFactorInitiatorAdditionalAttributes]',
             'is_acc_rec_enabled': 'bool'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -246,7 +245,6 @@ class MyAuthenticationFactorInitiator(object):
             'additional_attributes': 'additionalAttributes',
             'is_acc_rec_enabled': 'isAccRecEnabled'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

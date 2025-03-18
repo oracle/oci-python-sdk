@@ -92,7 +92,6 @@ class AppGrants(object):
             'grantee_type': 'str',
             'grant_mechanism': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ref': '$ref',
@@ -100,7 +99,6 @@ class AppGrants(object):
             'grantee_type': 'granteeType',
             'grant_mechanism': 'grantMechanism'
         }
-
         self._value = None
         self._ref = None
         self._grantee_id = None

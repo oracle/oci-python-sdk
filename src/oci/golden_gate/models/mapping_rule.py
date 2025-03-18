@@ -50,13 +50,11 @@ class MappingRule(object):
             'source': 'str',
             'target': 'str'
         }
-
         self.attribute_map = {
             'mapping_type': 'mappingType',
             'source': 'source',
             'target': 'target'
         }
-
         self._mapping_type = None
         self._source = None
         self._target = None

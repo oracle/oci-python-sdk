@@ -40,13 +40,11 @@ class CronExecutionSchedule(ExecutionSchedule):
             'timezone': 'str',
             'expression': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'timezone': 'timezone',
             'expression': 'expression'
         }
-
         self._type = None
         self._timezone = None
         self._expression = None

@@ -97,7 +97,6 @@ class LimitItem(Item):
             'limit_status': 'str',
             'customer_message': 'str'
         }
-
         self.attribute_map = {
             'item_key': 'itemKey',
             'name': 'name',
@@ -111,7 +110,6 @@ class LimitItem(Item):
             'limit_status': 'limitStatus',
             'customer_message': 'customerMessage'
         }
-
         self._item_key = None
         self._name = None
         self._type = None

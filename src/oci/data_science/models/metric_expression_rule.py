@@ -43,11 +43,9 @@ class MetricExpressionRule(object):
         self.swagger_types = {
             'metric_expression_rule_type': 'str'
         }
-
         self.attribute_map = {
             'metric_expression_rule_type': 'metricExpressionRuleType'
         }
-
         self._metric_expression_rule_type = None
 
     @staticmethod

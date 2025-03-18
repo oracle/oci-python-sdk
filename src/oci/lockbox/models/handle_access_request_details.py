@@ -50,12 +50,10 @@ class HandleAccessRequestDetails(object):
             'action': 'str',
             'message': 'str'
         }
-
         self.attribute_map = {
             'action': 'action',
             'message': 'message'
         }
-
         self._action = None
         self._message = None
 

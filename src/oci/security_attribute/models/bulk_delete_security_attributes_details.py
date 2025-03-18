@@ -28,11 +28,9 @@ class BulkDeleteSecurityAttributesDetails(object):
         self.swagger_types = {
             'security_attribute_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'security_attribute_ids': 'securityAttributeIds'
         }
-
         self._security_attribute_ids = None
 
     @property

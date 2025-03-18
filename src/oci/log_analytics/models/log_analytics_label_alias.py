@@ -71,7 +71,6 @@ class LogAnalyticsLabelAlias(object):
             'name': 'str',
             'priority': 'str'
         }
-
         self.attribute_map = {
             'alias': 'alias',
             'alias_display_name': 'aliasDisplayName',
@@ -80,7 +79,6 @@ class LogAnalyticsLabelAlias(object):
             'name': 'name',
             'priority': 'priority'
         }
-
         self._alias = None
         self._alias_display_name = None
         self._is_system = None

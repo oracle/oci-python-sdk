@@ -50,12 +50,10 @@ class UpdateProblemStatusDetails(object):
             'status': 'str',
             'comment': 'str'
         }
-
         self.attribute_map = {
             'status': 'status',
             'comment': 'comment'
         }
-
         self._status = None
         self._comment = None
 

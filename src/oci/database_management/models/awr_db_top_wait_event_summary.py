@@ -38,13 +38,11 @@ class AwrDbTopWaitEventSummary(object):
             'waits_per_sec': 'float',
             'avg_wait_time_per_sec': 'float'
         }
-
         self.attribute_map = {
             'name': 'name',
             'waits_per_sec': 'waitsPerSec',
             'avg_wait_time_per_sec': 'avgWaitTimePerSec'
         }
-
         self._name = None
         self._waits_per_sec = None
         self._avg_wait_time_per_sec = None

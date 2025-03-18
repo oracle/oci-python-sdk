@@ -48,7 +48,6 @@ class AddonVersionConfiguration(object):
             'display_name': 'str',
             'description': 'str'
         }
-
         self.attribute_map = {
             'is_required': 'isRequired',
             'key': 'key',
@@ -56,7 +55,6 @@ class AddonVersionConfiguration(object):
             'display_name': 'displayName',
             'description': 'description'
         }
-
         self._is_required = None
         self._key = None
         self._value = None

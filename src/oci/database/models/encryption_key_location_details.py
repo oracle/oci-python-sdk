@@ -38,11 +38,9 @@ class EncryptionKeyLocationDetails(object):
         self.swagger_types = {
             'provider_type': 'str'
         }
-
         self.attribute_map = {
             'provider_type': 'providerType'
         }
-
         self._provider_type = None
 
     @staticmethod

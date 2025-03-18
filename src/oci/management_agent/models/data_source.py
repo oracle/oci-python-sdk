@@ -107,7 +107,6 @@ class DataSource(object):
             'time_created': 'datetime',
             'time_updated': 'datetime'
         }
-
         self.attribute_map = {
             'key': 'key',
             'type': 'type',
@@ -117,7 +116,6 @@ class DataSource(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated'
         }
-
         self._key = None
         self._type = None
         self._name = None

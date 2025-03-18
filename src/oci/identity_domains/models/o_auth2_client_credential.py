@@ -157,7 +157,6 @@ class OAuth2ClientCredential(object):
             'user': 'OAuth2ClientCredentialUser',
             'urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user': 'ExtensionSelfChangeUser'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -182,7 +181,6 @@ class OAuth2ClientCredential(object):
             'user': 'user',
             'urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:selfChange:User'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

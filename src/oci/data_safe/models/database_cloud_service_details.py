@@ -56,7 +56,6 @@ class DatabaseCloudServiceDetails(DatabaseDetails):
             'listener_port': 'int',
             'service_name': 'str'
         }
-
         self.attribute_map = {
             'database_type': 'databaseType',
             'infrastructure_type': 'infrastructureType',
@@ -65,7 +64,6 @@ class DatabaseCloudServiceDetails(DatabaseDetails):
             'listener_port': 'listenerPort',
             'service_name': 'serviceName'
         }
-
         self._database_type = None
         self._infrastructure_type = None
         self._vm_cluster_id = None

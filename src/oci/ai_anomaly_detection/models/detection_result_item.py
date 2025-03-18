@@ -43,14 +43,12 @@ class DetectionResultItem(object):
             'score': 'float',
             'anomalies': 'list[Anomaly]'
         }
-
         self.attribute_map = {
             'timestamp': 'timestamp',
             'row_index': 'rowIndex',
             'score': 'score',
             'anomalies': 'anomalies'
         }
-
         self._timestamp = None
         self._row_index = None
         self._score = None

@@ -33,12 +33,10 @@ class StateChange(object):
             'previous': 'dict(str, object)',
             'current': 'dict(str, object)'
         }
-
         self.attribute_map = {
             'previous': 'previous',
             'current': 'current'
         }
-
         self._previous = None
         self._current = None
 

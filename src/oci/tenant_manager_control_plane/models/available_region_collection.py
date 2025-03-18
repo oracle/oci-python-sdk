@@ -28,11 +28,9 @@ class AvailableRegionCollection(object):
         self.swagger_types = {
             'items': 'list[AvailableRegionSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

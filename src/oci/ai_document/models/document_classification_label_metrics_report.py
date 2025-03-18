@@ -38,13 +38,11 @@ class DocumentClassificationLabelMetricsReport(object):
             'mean_average_precision': 'float',
             'confidence_entries': 'list[DocumentClassificationConfidenceEntry]'
         }
-
         self.attribute_map = {
             'label': 'label',
             'mean_average_precision': 'meanAveragePrecision',
             'confidence_entries': 'confidenceEntries'
         }
-
         self._label = None
         self._mean_average_precision = None
         self._confidence_entries = None

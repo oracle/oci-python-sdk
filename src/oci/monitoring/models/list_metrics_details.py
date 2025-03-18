@@ -83,7 +83,6 @@ class ListMetricsDetails(object):
             'sort_by': 'str',
             'sort_order': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'namespace': 'namespace',
@@ -93,7 +92,6 @@ class ListMetricsDetails(object):
             'sort_by': 'sortBy',
             'sort_order': 'sortOrder'
         }
-
         self._name = None
         self._namespace = None
         self._resource_group = None

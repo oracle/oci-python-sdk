@@ -43,14 +43,12 @@ class ExtensionDbcsGroup(object):
             'domain_level_schema': 'str',
             'instance_level_schema': 'str'
         }
-
         self.attribute_map = {
             'instance_level_schema_names': 'instanceLevelSchemaNames',
             'domain_level_schema_names': 'domainLevelSchemaNames',
             'domain_level_schema': 'domainLevelSchema',
             'instance_level_schema': 'instanceLevelSchema'
         }
-
         self._instance_level_schema_names = None
         self._domain_level_schema_names = None
         self._domain_level_schema = None

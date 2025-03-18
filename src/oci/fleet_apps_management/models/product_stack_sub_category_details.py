@@ -43,11 +43,9 @@ class ProductStackSubCategoryDetails(object):
         self.swagger_types = {
             'sub_category': 'str'
         }
-
         self.attribute_map = {
             'sub_category': 'subCategory'
         }
-
         self._sub_category = None
 
     @staticmethod

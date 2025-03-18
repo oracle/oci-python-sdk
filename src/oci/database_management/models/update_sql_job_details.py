@@ -105,7 +105,6 @@ class UpdateSqlJobDetails(UpdateJobDetails):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'description': 'description',
             'job_type': 'jobType',
@@ -124,7 +123,6 @@ class UpdateSqlJobDetails(UpdateJobDetails):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._description = None
         self._job_type = None
         self._timeout = None

@@ -73,7 +73,6 @@ class LogAnalyticsParserFunction(object):
             'parser_function_priority': 'int',
             'parser_function_parameters': 'list[LogAnalyticsParserFunctionParameter]'
         }
-
         self.attribute_map = {
             'parser_meta_plugin': 'parserMetaPlugin',
             'parser_function_id': 'parserFunctionId',
@@ -86,7 +85,6 @@ class LogAnalyticsParserFunction(object):
             'parser_function_priority': 'parserFunctionPriority',
             'parser_function_parameters': 'parserFunctionParameters'
         }
-
         self._parser_meta_plugin = None
         self._parser_function_id = None
         self._parser_function_name = None

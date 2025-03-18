@@ -170,7 +170,6 @@ class Datafile(object):
             'used_percent_available': 'float',
             'used_percent_allocated': 'float'
         }
-
         self.attribute_map = {
             'name': 'name',
             'status': 'status',
@@ -188,7 +187,6 @@ class Datafile(object):
             'used_percent_available': 'usedPercentAvailable',
             'used_percent_allocated': 'usedPercentAllocated'
         }
-
         self._name = None
         self._status = None
         self._online_status = None

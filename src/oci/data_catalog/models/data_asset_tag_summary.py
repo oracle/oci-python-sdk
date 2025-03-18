@@ -107,7 +107,6 @@ class DataAssetTagSummary(object):
             'glossary_key': 'str',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'data_asset_key': 'dataAssetKey',
             'key': 'key',
@@ -120,7 +119,6 @@ class DataAssetTagSummary(object):
             'glossary_key': 'glossaryKey',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._data_asset_key = None
         self._key = None
         self._time_created = None

@@ -124,7 +124,6 @@ class ImageJob(object):
             'lifecycle_details': 'str',
             'is_zip_output_enabled': 'bool'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -140,7 +139,6 @@ class ImageJob(object):
             'lifecycle_details': 'lifecycleDetails',
             'is_zip_output_enabled': 'isZipOutputEnabled'
         }
-
         self._id = None
         self._compartment_id = None
         self._display_name = None

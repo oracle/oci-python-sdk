@@ -45,14 +45,12 @@ class UpdateMessagesResultEntry(object):
             'error_code': 'int',
             'error_message': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'visible_after': 'visibleAfter',
             'error_code': 'errorCode',
             'error_message': 'errorMessage'
         }
-
         self._id = None
         self._visible_after = None
         self._error_code = None

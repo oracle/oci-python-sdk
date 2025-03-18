@@ -48,13 +48,11 @@ class UserExtManager(object):
             'ref': 'str',
             'display_name': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ref': '$ref',
             'display_name': 'displayName'
         }
-
         self._value = None
         self._ref = None
         self._display_name = None

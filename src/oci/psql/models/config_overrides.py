@@ -33,12 +33,10 @@ class ConfigOverrides(object):
             'config_key': 'str',
             'overriden_config_value': 'str'
         }
-
         self.attribute_map = {
             'config_key': 'configKey',
             'overriden_config_value': 'overridenConfigValue'
         }
-
         self._config_key = None
         self._overriden_config_value = None
 

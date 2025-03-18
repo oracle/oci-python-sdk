@@ -58,7 +58,6 @@ class CloneFsuCycleDetails(object):
             'stage_action_schedule': 'CreateScheduleDetails',
             'apply_action_schedule': 'CreateScheduleDetails'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'compartment_id': 'compartmentId',
@@ -68,7 +67,6 @@ class CloneFsuCycleDetails(object):
             'stage_action_schedule': 'stageActionSchedule',
             'apply_action_schedule': 'applyActionSchedule'
         }
-
         self._display_name = None
         self._compartment_id = None
         self._fsu_collection_id = None

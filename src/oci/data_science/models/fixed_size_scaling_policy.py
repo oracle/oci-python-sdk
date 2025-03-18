@@ -35,12 +35,10 @@ class FixedSizeScalingPolicy(ScalingPolicy):
             'policy_type': 'str',
             'instance_count': 'int'
         }
-
         self.attribute_map = {
             'policy_type': 'policyType',
             'instance_count': 'instanceCount'
         }
-
         self._policy_type = None
         self._instance_count = None
         self._policy_type = 'FIXED_SIZE'

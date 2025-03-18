@@ -53,7 +53,6 @@ class UpdateLogDetails(object):
             'retention_duration': 'int',
             'configuration': 'UpdateConfigurationDetails'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'is_enabled': 'isEnabled',
@@ -62,7 +61,6 @@ class UpdateLogDetails(object):
             'retention_duration': 'retentionDuration',
             'configuration': 'configuration'
         }
-
         self._display_name = None
         self._is_enabled = None
         self._defined_tags = None

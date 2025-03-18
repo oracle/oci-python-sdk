@@ -138,7 +138,6 @@ class PrivateEndpoint(object):
             'time_created': 'datetime',
             'time_updated': 'datetime'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
@@ -158,7 +157,6 @@ class PrivateEndpoint(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated'
         }
-
         self._compartment_id = None
         self._defined_tags = None
         self._description = None

@@ -55,7 +55,6 @@ class SchemaObjectTypeDetails(RelatedObjectTypeDetails):
             'sub_object_name': 'str',
             'object_type': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'object_id': 'objectId',
@@ -64,7 +63,6 @@ class SchemaObjectTypeDetails(RelatedObjectTypeDetails):
             'sub_object_name': 'subObjectName',
             'object_type': 'objectType'
         }
-
         self._type = None
         self._object_id = None
         self._owner = None

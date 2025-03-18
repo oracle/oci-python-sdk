@@ -37,11 +37,9 @@ class LaunchCreateVolumeDetails(object):
         self.swagger_types = {
             'volume_creation_type': 'str'
         }
-
         self.attribute_map = {
             'volume_creation_type': 'volumeCreationType'
         }
-
         self._volume_creation_type = None
 
     @staticmethod

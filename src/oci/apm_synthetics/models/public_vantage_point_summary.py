@@ -38,13 +38,11 @@ class PublicVantagePointSummary(object):
             'name': 'str',
             'geo': 'GeoSummary'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'name': 'name',
             'geo': 'geo'
         }
-
         self._display_name = None
         self._name = None
         self._geo = None

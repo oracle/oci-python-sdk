@@ -75,7 +75,6 @@ class AdvisorReport(object):
             'number_of_warnings': 'int',
             'number_of_informational_results': 'int'
         }
-
         self.attribute_map = {
             'report_location_details': 'reportLocationDetails',
             'result': 'result',
@@ -84,7 +83,6 @@ class AdvisorReport(object):
             'number_of_warnings': 'numberOfWarnings',
             'number_of_informational_results': 'numberOfInformationalResults'
         }
-
         self._report_location_details = None
         self._result = None
         self._number_of_fatal = None

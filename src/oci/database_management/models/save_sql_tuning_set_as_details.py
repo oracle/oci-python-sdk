@@ -300,7 +300,6 @@ class SaveSqlTuningSetAsDetails(object):
             'is_ignore_null': 'bool',
             'commit_rows': 'int'
         }
-
         self.attribute_map = {
             'credential_details': 'credentialDetails',
             'database_credential': 'databaseCredential',
@@ -327,7 +326,6 @@ class SaveSqlTuningSetAsDetails(object):
             'is_ignore_null': 'isIgnoreNull',
             'commit_rows': 'commitRows'
         }
-
         self._credential_details = None
         self._database_credential = None
         self._show_sql_only = None

@@ -34,11 +34,9 @@ class ChangePrivateEndpointOutboundConnectionDetails(object):
         self.swagger_types = {
             'private_endpoint_outbound_connection': 'OutboundConnection'
         }
-
         self.attribute_map = {
             'private_endpoint_outbound_connection': 'privateEndpointOutboundConnection'
         }
-
         self._private_endpoint_outbound_connection = None
 
     @property

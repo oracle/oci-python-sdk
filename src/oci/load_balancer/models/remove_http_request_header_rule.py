@@ -39,12 +39,10 @@ class RemoveHttpRequestHeaderRule(Rule):
             'action': 'str',
             'header': 'str'
         }
-
         self.attribute_map = {
             'action': 'action',
             'header': 'header'
         }
-
         self._action = None
         self._header = None
         self._action = 'REMOVE_HTTP_REQUEST_HEADER'

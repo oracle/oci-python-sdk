@@ -33,12 +33,10 @@ class GroupIdentifier(object):
             'group_key': 'str',
             'group_name': 'str'
         }
-
         self.attribute_map = {
             'group_key': 'groupKey',
             'group_name': 'groupName'
         }
-
         self._group_key = None
         self._group_name = None
 

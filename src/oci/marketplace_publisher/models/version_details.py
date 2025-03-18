@@ -38,13 +38,11 @@ class VersionDetails(object):
             'description': 'str',
             'release_date': 'str'
         }
-
         self.attribute_map = {
             'number': 'number',
             'description': 'description',
             'release_date': 'releaseDate'
         }
-
         self._number = None
         self._description = None
         self._release_date = None

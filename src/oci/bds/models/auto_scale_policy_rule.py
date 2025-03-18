@@ -43,12 +43,10 @@ class AutoScalePolicyRule(object):
             'action': 'str',
             'metric': 'AutoScalePolicyMetricRule'
         }
-
         self.attribute_map = {
             'action': 'action',
             'metric': 'metric'
         }
-
         self._action = None
         self._metric = None
 

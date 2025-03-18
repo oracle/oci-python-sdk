@@ -59,13 +59,11 @@ class PathMatchCondition(RuleCondition):
             'attribute_value': 'str',
             'operator': 'str'
         }
-
         self.attribute_map = {
             'attribute_name': 'attributeName',
             'attribute_value': 'attributeValue',
             'operator': 'operator'
         }
-
         self._attribute_name = None
         self._attribute_value = None
         self._operator = None

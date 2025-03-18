@@ -33,12 +33,10 @@ class CreateCertificateDetails(object):
             'key': 'str',
             'certificate_content': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'certificate_content': 'certificateContent'
         }
-
         self._key = None
         self._certificate_content = None
 

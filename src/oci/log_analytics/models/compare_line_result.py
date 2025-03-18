@@ -48,7 +48,6 @@ class CompareLineResult(object):
             'left_indices': 'str',
             'right_indices': 'str'
         }
-
         self.attribute_map = {
             'left_content': 'leftContent',
             'right_content': 'rightContent',
@@ -56,7 +55,6 @@ class CompareLineResult(object):
             'left_indices': 'leftIndices',
             'right_indices': 'rightIndices'
         }
-
         self._left_content = None
         self._right_content = None
         self._diff_type = None

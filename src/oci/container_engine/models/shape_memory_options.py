@@ -48,7 +48,6 @@ class ShapeMemoryOptions(object):
             'min_per_ocpu_in_gbs': 'float',
             'max_per_ocpu_in_gbs': 'float'
         }
-
         self.attribute_map = {
             'min_in_gbs': 'minInGBs',
             'max_in_gbs': 'maxInGBs',
@@ -56,7 +55,6 @@ class ShapeMemoryOptions(object):
             'min_per_ocpu_in_gbs': 'minPerOcpuInGBs',
             'max_per_ocpu_in_gbs': 'maxPerOcpuInGBs'
         }
-
         self._min_in_gbs = None
         self._max_in_gbs = None
         self._default_per_ocpu_in_gbs = None

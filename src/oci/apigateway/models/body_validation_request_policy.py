@@ -52,13 +52,11 @@ class BodyValidationRequestPolicy(object):
             'content': 'dict(str, ContentValidation)',
             'validation_mode': 'str'
         }
-
         self.attribute_map = {
             'required': 'required',
             'content': 'content',
             'validation_mode': 'validationMode'
         }
-
         self._required = None
         self._content = None
         self._validation_mode = None

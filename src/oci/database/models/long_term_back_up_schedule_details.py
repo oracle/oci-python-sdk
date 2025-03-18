@@ -61,14 +61,12 @@ class LongTermBackUpScheduleDetails(object):
             'retention_period_in_days': 'int',
             'is_disabled': 'bool'
         }
-
         self.attribute_map = {
             'repeat_cadence': 'repeatCadence',
             'time_of_backup': 'timeOfBackup',
             'retention_period_in_days': 'retentionPeriodInDays',
             'is_disabled': 'isDisabled'
         }
-
         self._repeat_cadence = None
         self._time_of_backup = None
         self._retention_period_in_days = None

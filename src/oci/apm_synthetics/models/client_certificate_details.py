@@ -33,12 +33,10 @@ class ClientCertificateDetails(object):
             'client_certificate': 'ClientCertificate',
             'private_key': 'PrivateKey'
         }
-
         self.attribute_map = {
             'client_certificate': 'clientCertificate',
             'private_key': 'privateKey'
         }
-
         self._client_certificate = None
         self._private_key = None
 

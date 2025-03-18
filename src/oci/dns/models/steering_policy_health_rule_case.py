@@ -28,11 +28,9 @@ class SteeringPolicyHealthRuleCase(object):
         self.swagger_types = {
             'case_condition': 'str'
         }
-
         self.attribute_map = {
             'case_condition': 'caseCondition'
         }
-
         self._case_condition = None
 
     @property

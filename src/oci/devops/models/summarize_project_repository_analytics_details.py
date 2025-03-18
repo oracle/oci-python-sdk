@@ -120,7 +120,6 @@ class SummarizeProjectRepositoryAnalyticsDetails(object):
             'end_time': 'datetime',
             'group_by': 'str'
         }
-
         self.attribute_map = {
             'author_email': 'authorEmail',
             'repository_metrics': 'repositoryMetrics',
@@ -129,7 +128,6 @@ class SummarizeProjectRepositoryAnalyticsDetails(object):
             'end_time': 'endTime',
             'group_by': 'groupBy'
         }
-
         self._author_email = None
         self._repository_metrics = None
         self._aggregation_duration = None

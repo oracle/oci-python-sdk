@@ -59,13 +59,11 @@ class InstallAllWindowsUpdatesOnManagedInstancesInCompartmentDetails(object):
             'windows_update_types': 'list[str]',
             'work_request_details': 'WorkRequestDetails'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'windows_update_types': 'windowsUpdateTypes',
             'work_request_details': 'workRequestDetails'
         }
-
         self._compartment_id = None
         self._windows_update_types = None
         self._work_request_details = None

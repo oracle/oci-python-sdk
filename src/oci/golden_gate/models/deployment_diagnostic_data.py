@@ -67,7 +67,6 @@ class DeploymentDiagnosticData(object):
             'time_diagnostic_start': 'datetime',
             'time_diagnostic_end': 'datetime'
         }
-
         self.attribute_map = {
             'namespace_name': 'namespaceName',
             'bucket_name': 'bucketName',
@@ -76,7 +75,6 @@ class DeploymentDiagnosticData(object):
             'time_diagnostic_start': 'timeDiagnosticStart',
             'time_diagnostic_end': 'timeDiagnosticEnd'
         }
-
         self._namespace_name = None
         self._bucket_name = None
         self._object_name = None

@@ -389,7 +389,6 @@ class ExadataInfrastructure(object):
             'storage_server_type': 'str',
             'compute_model': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -446,7 +445,6 @@ class ExadataInfrastructure(object):
             'storage_server_type': 'storageServerType',
             'compute_model': 'computeModel'
         }
-
         self._id = None
         self._compartment_id = None
         self._lifecycle_state = None

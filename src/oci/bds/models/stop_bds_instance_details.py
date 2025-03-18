@@ -33,12 +33,10 @@ class StopBdsInstanceDetails(object):
             'is_force_stop_jobs': 'bool',
             'cluster_admin_password': 'str'
         }
-
         self.attribute_map = {
             'is_force_stop_jobs': 'isForceStopJobs',
             'cluster_admin_password': 'clusterAdminPassword'
         }
-
         self._is_force_stop_jobs = None
         self._cluster_admin_password = None
 

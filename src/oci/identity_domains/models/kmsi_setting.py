@@ -142,7 +142,6 @@ class KmsiSetting(object):
             'tou_prompt_disabled': 'bool',
             'last_enabled_on': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -166,7 +165,6 @@ class KmsiSetting(object):
             'tou_prompt_disabled': 'touPromptDisabled',
             'last_enabled_on': 'lastEnabledOn'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

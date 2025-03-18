@@ -63,7 +63,6 @@ class CreateUnifiedAgentConfigurationDetails(object):
             'description': 'str',
             'group_association': 'GroupAssociationDetails'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'is_enabled': 'isEnabled',
@@ -74,7 +73,6 @@ class CreateUnifiedAgentConfigurationDetails(object):
             'description': 'description',
             'group_association': 'groupAssociation'
         }
-
         self._display_name = None
         self._is_enabled = None
         self._service_configuration = None

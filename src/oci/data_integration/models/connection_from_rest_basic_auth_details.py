@@ -105,7 +105,6 @@ class ConnectionFromRestBasicAuthDetails(ConnectionDetails):
             'password_secret': 'SensitiveAttribute',
             'auth_header': 'str'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -124,7 +123,6 @@ class ConnectionFromRestBasicAuthDetails(ConnectionDetails):
             'password_secret': 'passwordSecret',
             'auth_header': 'authHeader'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

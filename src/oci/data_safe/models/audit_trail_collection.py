@@ -28,11 +28,9 @@ class AuditTrailCollection(object):
         self.swagger_types = {
             'items': 'list[AuditTrailSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

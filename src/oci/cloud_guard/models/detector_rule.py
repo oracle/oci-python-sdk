@@ -208,7 +208,6 @@ class DetectorRule(object):
             'lifecycle_details': 'str',
             'locks': 'list[ResourceLock]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -226,7 +225,6 @@ class DetectorRule(object):
             'lifecycle_details': 'lifecycleDetails',
             'locks': 'locks'
         }
-
         self._id = None
         self._display_name = None
         self._description = None

@@ -54,7 +54,6 @@ class NamedEntityRecognitionEvaluationResult(EvaluationResultSummary):
             'true_entities': 'list[EntityLabelErrorAnalysis]',
             'predicted_entities': 'list[EntityLabelErrorAnalysis]'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'freeform_tags': 'freeformTags',
@@ -63,7 +62,6 @@ class NamedEntityRecognitionEvaluationResult(EvaluationResultSummary):
             'true_entities': 'trueEntities',
             'predicted_entities': 'predictedEntities'
         }
-
         self._model_type = None
         self._freeform_tags = None
         self._defined_tags = None

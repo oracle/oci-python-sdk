@@ -78,7 +78,6 @@ class ProfileDetails(object):
             'password_reuse_max': 'str',
             'password_verify_function': 'str'
         }
-
         self.attribute_map = {
             'num_users': 'numUsers',
             'connect_time': 'connectTime',
@@ -92,7 +91,6 @@ class ProfileDetails(object):
             'password_reuse_max': 'passwordReuseMax',
             'password_verify_function': 'passwordVerifyFunction'
         }
-
         self._num_users = None
         self._connect_time = None
         self._failed_login_attempts = None

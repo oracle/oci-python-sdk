@@ -33,12 +33,10 @@ class SchedulerJobAggregation(object):
             'count': 'int',
             'dimensions': 'SchedulerJobDimension'
         }
-
         self.attribute_map = {
             'count': 'count',
             'dimensions': 'dimensions'
         }
-
         self._count = None
         self._dimensions = None
 

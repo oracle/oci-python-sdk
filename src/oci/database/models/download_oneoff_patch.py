@@ -38,13 +38,11 @@ class DownloadOneoffPatch(object):
             'time_created': 'datetime',
             'time_expires': 'datetime'
         }
-
         self.attribute_map = {
             'access_uri': 'accessUri',
             'time_created': 'timeCreated',
             'time_expires': 'timeExpires'
         }
-
         self._access_uri = None
         self._time_created = None
         self._time_expires = None

@@ -54,7 +54,6 @@ class UpdateScheduledPolicyDetails(UpdateAutoScalingPolicyDetails):
             'execution_schedule': 'ExecutionSchedule',
             'resource_action': 'ResourceAction'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'capacity': 'capacity',
@@ -63,7 +62,6 @@ class UpdateScheduledPolicyDetails(UpdateAutoScalingPolicyDetails):
             'execution_schedule': 'executionSchedule',
             'resource_action': 'resourceAction'
         }
-
         self._display_name = None
         self._capacity = None
         self._policy_type = None

@@ -176,7 +176,6 @@ class ExternalContainerDatabaseSummary(object):
             'database_management_config': 'DatabaseManagementConfig',
             'stack_monitoring_config': 'StackMonitoringConfig'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'freeform_tags': 'freeformTags',
@@ -198,7 +197,6 @@ class ExternalContainerDatabaseSummary(object):
             'database_management_config': 'databaseManagementConfig',
             'stack_monitoring_config': 'stackMonitoringConfig'
         }
-
         self._compartment_id = None
         self._freeform_tags = None
         self._defined_tags = None

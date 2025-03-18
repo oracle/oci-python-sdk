@@ -28,11 +28,9 @@ class QueryOptions(object):
         self.swagger_types = {
             'is_bi_directional_analysis': 'bool'
         }
-
         self.attribute_map = {
             'is_bi_directional_analysis': 'isBiDirectionalAnalysis'
         }
-
         self._is_bi_directional_analysis = None
 
     @property

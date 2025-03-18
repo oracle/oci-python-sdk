@@ -105,7 +105,6 @@ class HostGpuConfiguration(HostConfigurationMetricGroup):
             'cuda_version': 'str',
             'driver_version': 'str'
         }
-
         self.attribute_map = {
             'metric_name': 'metricName',
             'time_collected': 'timeCollected',
@@ -124,7 +123,6 @@ class HostGpuConfiguration(HostConfigurationMetricGroup):
             'cuda_version': 'cudaVersion',
             'driver_version': 'driverVersion'
         }
-
         self._metric_name = None
         self._time_collected = None
         self._gpu_id = None

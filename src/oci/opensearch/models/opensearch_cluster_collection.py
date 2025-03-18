@@ -28,11 +28,9 @@ class OpensearchClusterCollection(object):
         self.swagger_types = {
             'items': 'list[OpensearchClusterSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

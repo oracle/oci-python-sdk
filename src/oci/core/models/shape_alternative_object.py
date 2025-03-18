@@ -28,11 +28,9 @@ class ShapeAlternativeObject(object):
         self.swagger_types = {
             'shape_name': 'str'
         }
-
         self.attribute_map = {
             'shape_name': 'shapeName'
         }
-
         self._shape_name = None
 
     @property

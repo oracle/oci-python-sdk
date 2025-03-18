@@ -43,14 +43,12 @@ class CreateListingRevisionNoteDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'listing_revision_id': 'listingRevisionId',
             'note_details': 'noteDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._listing_revision_id = None
         self._note_details = None
         self._freeform_tags = None

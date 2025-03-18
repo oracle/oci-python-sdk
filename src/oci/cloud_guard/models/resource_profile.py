@@ -135,7 +135,6 @@ class ResourceProfile(object):
             'tactics': 'list[TacticSummary]',
             'locks': 'list[ResourceLock]'
         }
-
         self.attribute_map = {
             'sightings_count': 'sightingsCount',
             'id': 'id',
@@ -156,7 +155,6 @@ class ResourceProfile(object):
             'tactics': 'tactics',
             'locks': 'locks'
         }
-
         self._sightings_count = None
         self._id = None
         self._resource_id = None

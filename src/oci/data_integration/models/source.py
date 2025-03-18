@@ -125,7 +125,6 @@ class Source(Operator):
             'fixed_data_shape': 'Shape',
             'read_operation_config': 'ReadOperationConfig'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -148,7 +147,6 @@ class Source(Operator):
             'fixed_data_shape': 'fixedDataShape',
             'read_operation_config': 'readOperationConfig'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

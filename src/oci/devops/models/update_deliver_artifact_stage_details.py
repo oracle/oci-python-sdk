@@ -59,7 +59,6 @@ class UpdateDeliverArtifactStageDetails(UpdateBuildPipelineStageDetails):
             'defined_tags': 'dict(str, dict(str, object))',
             'deliver_artifact_collection': 'DeliverArtifactCollection'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
@@ -69,7 +68,6 @@ class UpdateDeliverArtifactStageDetails(UpdateBuildPipelineStageDetails):
             'defined_tags': 'definedTags',
             'deliver_artifact_collection': 'deliverArtifactCollection'
         }
-
         self._display_name = None
         self._description = None
         self._build_pipeline_stage_type = None

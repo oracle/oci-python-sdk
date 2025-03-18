@@ -53,13 +53,11 @@ class PaymentOption(object):
             'wallet_transaction_id': 'str',
             'payment_method': 'str'
         }
-
         self.attribute_map = {
             'wallet_instrument_id': 'walletInstrumentId',
             'wallet_transaction_id': 'walletTransactionId',
             'payment_method': 'paymentMethod'
         }
-
         self._wallet_instrument_id = None
         self._wallet_transaction_id = None
         self._payment_method = None

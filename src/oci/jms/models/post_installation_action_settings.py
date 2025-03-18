@@ -91,7 +91,6 @@ class PostInstallationActionSettings(object):
             'global_logging_level': 'str',
             'proxies': 'Proxies'
         }
-
         self.attribute_map = {
             'disabled_tls_versions': 'disabledTlsVersions',
             'should_replace_certificates_operating_system': 'shouldReplaceCertificatesOperatingSystem',
@@ -100,7 +99,6 @@ class PostInstallationActionSettings(object):
             'global_logging_level': 'globalLoggingLevel',
             'proxies': 'proxies'
         }
-
         self._disabled_tls_versions = None
         self._should_replace_certificates_operating_system = None
         self._minimum_key_size_settings = None

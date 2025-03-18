@@ -28,11 +28,9 @@ class FileFilter(object):
         self.swagger_types = {
             'file_paths': 'list[str]'
         }
-
         self.attribute_map = {
             'file_paths': 'filePaths'
         }
-
         self._file_paths = None
 
     @property

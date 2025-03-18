@@ -28,11 +28,9 @@ class DimensionValue(object):
         self.swagger_types = {
             'dimension_value': 'str'
         }
-
         self.attribute_map = {
             'dimension_value': 'dimensionValue'
         }
-
         self._dimension_value = None
 
     @property

@@ -43,14 +43,12 @@ class NodePoolOptions(object):
             'images': 'list[str]',
             'sources': 'list[NodeSourceOption]'
         }
-
         self.attribute_map = {
             'kubernetes_versions': 'kubernetesVersions',
             'shapes': 'shapes',
             'images': 'images',
             'sources': 'sources'
         }
-
         self._kubernetes_versions = None
         self._shapes = None
         self._images = None

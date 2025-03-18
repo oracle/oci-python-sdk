@@ -65,7 +65,6 @@ class MultiSearchCommandDescriptor(AbstractCommandDescriptor):
             'is_hidden': 'bool',
             'sub_queries': 'list[ParseQueryOutput]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'display_query_string': 'displayQueryString',
@@ -76,7 +75,6 @@ class MultiSearchCommandDescriptor(AbstractCommandDescriptor):
             'is_hidden': 'isHidden',
             'sub_queries': 'subQueries'
         }
-
         self._name = None
         self._display_query_string = None
         self._internal_query_string = None

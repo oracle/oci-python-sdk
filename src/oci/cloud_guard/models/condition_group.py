@@ -33,12 +33,10 @@ class ConditionGroup(object):
             'compartment_id': 'str',
             'condition': 'Condition'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'condition': 'condition'
         }
-
         self._compartment_id = None
         self._condition = None
 

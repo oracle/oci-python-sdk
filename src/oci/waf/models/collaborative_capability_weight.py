@@ -38,13 +38,11 @@ class CollaborativeCapabilityWeight(object):
             'display_name': 'str',
             'weight': 'int'
         }
-
         self.attribute_map = {
             'key': 'key',
             'display_name': 'displayName',
             'weight': 'weight'
         }
-
         self._key = None
         self._display_name = None
         self._weight = None

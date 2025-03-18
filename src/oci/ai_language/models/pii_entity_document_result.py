@@ -43,14 +43,12 @@ class PiiEntityDocumentResult(object):
             'masked_text': 'str',
             'language_code': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'entities': 'entities',
             'masked_text': 'maskedText',
             'language_code': 'languageCode'
         }
-
         self._key = None
         self._entities = None
         self._masked_text = None

@@ -28,11 +28,9 @@ class SkipBulkResponderExecutionDetails(object):
         self.swagger_types = {
             'responder_execution_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'responder_execution_ids': 'responderExecutionIds'
         }
-
         self._responder_execution_ids = None
 
     @property

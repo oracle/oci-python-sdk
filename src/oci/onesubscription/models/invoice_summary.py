@@ -118,7 +118,6 @@ class InvoiceSummary(object):
             'updated_by': 'str',
             'invoice_lines': 'list[InvoiceLineSummary]'
         }
-
         self.attribute_map = {
             'spm_invoice_number': 'spmInvoiceNumber',
             'ar_invoices': 'arInvoices',
@@ -140,7 +139,6 @@ class InvoiceSummary(object):
             'updated_by': 'updatedBy',
             'invoice_lines': 'invoiceLines'
         }
-
         self._spm_invoice_number = None
         self._ar_invoices = None
         self._bill_to_customer = None

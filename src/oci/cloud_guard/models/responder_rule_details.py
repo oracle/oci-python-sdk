@@ -53,14 +53,12 @@ class ResponderRuleDetails(object):
             'is_enabled': 'bool',
             'mode': 'str'
         }
-
         self.attribute_map = {
             'condition': 'condition',
             'configurations': 'configurations',
             'is_enabled': 'isEnabled',
             'mode': 'mode'
         }
-
         self._condition = None
         self._configurations = None
         self._is_enabled = None

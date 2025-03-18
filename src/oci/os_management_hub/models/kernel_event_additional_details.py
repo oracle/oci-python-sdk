@@ -28,11 +28,9 @@ class KernelEventAdditionalDetails(object):
         self.swagger_types = {
             'vmcore': 'VmcoreDetails'
         }
-
         self.attribute_map = {
             'vmcore': 'vmcore'
         }
-
         self._vmcore = None
 
     @property

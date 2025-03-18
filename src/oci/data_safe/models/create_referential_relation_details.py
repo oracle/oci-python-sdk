@@ -54,14 +54,12 @@ class CreateReferentialRelationDetails(object):
             'child': 'ColumnsInfo',
             'is_sensitive': 'bool'
         }
-
         self.attribute_map = {
             'relation_type': 'relationType',
             'parent': 'parent',
             'child': 'child',
             'is_sensitive': 'isSensitive'
         }
-
         self._relation_type = None
         self._parent = None
         self._child = None

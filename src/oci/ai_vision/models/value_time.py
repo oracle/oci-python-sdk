@@ -55,7 +55,6 @@ class ValueTime(FieldValue):
             'word_indexes': 'list[int]',
             'value': 'datetime'
         }
-
         self.attribute_map = {
             'value_type': 'valueType',
             'text': 'text',
@@ -64,7 +63,6 @@ class ValueTime(FieldValue):
             'word_indexes': 'wordIndexes',
             'value': 'value'
         }
-
         self._value_type = None
         self._text = None
         self._confidence = None

@@ -38,13 +38,11 @@ class ExportAccessRequestsDetails(object):
             'time_created_after': 'datetime',
             'time_created_before': 'datetime'
         }
-
         self.attribute_map = {
             'lockbox_id': 'lockboxId',
             'time_created_after': 'timeCreatedAfter',
             'time_created_before': 'timeCreatedBefore'
         }
-
         self._lockbox_id = None
         self._time_created_after = None
         self._time_created_before = None

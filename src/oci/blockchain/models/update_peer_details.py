@@ -28,11 +28,9 @@ class UpdatePeerDetails(object):
         self.swagger_types = {
             'ocpu_allocation_param': 'OcpuAllocationNumberParam'
         }
-
         self.attribute_map = {
             'ocpu_allocation_param': 'ocpuAllocationParam'
         }
-
         self._ocpu_allocation_param = None
 
     @property

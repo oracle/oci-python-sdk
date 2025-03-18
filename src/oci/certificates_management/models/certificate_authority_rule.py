@@ -38,11 +38,9 @@ class CertificateAuthorityRule(object):
         self.swagger_types = {
             'rule_type': 'str'
         }
-
         self.attribute_map = {
             'rule_type': 'ruleType'
         }
-
         self._rule_type = None
 
     @staticmethod

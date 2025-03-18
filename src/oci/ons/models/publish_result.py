@@ -33,12 +33,10 @@ class PublishResult(object):
             'message_id': 'str',
             'time_stamp': 'datetime'
         }
-
         self.attribute_map = {
             'message_id': 'messageId',
             'time_stamp': 'timeStamp'
         }
-
         self._message_id = None
         self._time_stamp = None
 

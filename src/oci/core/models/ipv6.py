@@ -135,7 +135,6 @@ class Ipv6(object):
             'lifetime': 'str',
             'route_table_id': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
@@ -151,7 +150,6 @@ class Ipv6(object):
             'lifetime': 'lifetime',
             'route_table_id': 'routeTableId'
         }
-
         self._compartment_id = None
         self._defined_tags = None
         self._display_name = None

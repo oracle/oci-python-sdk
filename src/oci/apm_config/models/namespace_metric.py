@@ -48,13 +48,11 @@ class NamespaceMetric(object):
             'type': 'str',
             'unit': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'type': 'type',
             'unit': 'unit'
         }
-
         self._name = None
         self._type = None
         self._unit = None

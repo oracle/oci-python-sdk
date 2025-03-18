@@ -91,13 +91,11 @@ class DataObjectDataSizeColumnUnit(DataObjectColumnUnit):
             'display_name': 'str',
             'unit': 'str'
         }
-
         self.attribute_map = {
             'unit_category': 'unitCategory',
             'display_name': 'displayName',
             'unit': 'unit'
         }
-
         self._unit_category = None
         self._display_name = None
         self._unit = None

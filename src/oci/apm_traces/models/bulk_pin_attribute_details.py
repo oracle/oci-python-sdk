@@ -28,11 +28,9 @@ class BulkPinAttributeDetails(object):
         self.swagger_types = {
             'attribute_details': 'list[BulkPinAttributeDetail]'
         }
-
         self.attribute_map = {
             'attribute_details': 'attributeDetails'
         }
-
         self._attribute_details = None
 
     @property

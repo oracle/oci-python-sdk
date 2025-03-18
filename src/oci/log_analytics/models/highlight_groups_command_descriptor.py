@@ -90,7 +90,6 @@ class HighlightGroupsCommandDescriptor(AbstractCommandDescriptor):
             'keywords': 'list[str]',
             'sub_queries': 'list[ParseQueryOutput]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'display_query_string': 'displayQueryString',
@@ -106,7 +105,6 @@ class HighlightGroupsCommandDescriptor(AbstractCommandDescriptor):
             'keywords': 'keywords',
             'sub_queries': 'subQueries'
         }
-
         self._name = None
         self._display_query_string = None
         self._internal_query_string = None

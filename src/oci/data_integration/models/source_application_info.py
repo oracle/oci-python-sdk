@@ -43,14 +43,12 @@ class SourceApplicationInfo(object):
             'application_version': 'str',
             'last_patch_key': 'str'
         }
-
         self.attribute_map = {
             'workspace_id': 'workspaceId',
             'application_key': 'applicationKey',
             'application_version': 'applicationVersion',
             'last_patch_key': 'lastPatchKey'
         }
-
         self._workspace_id = None
         self._application_key = None
         self._application_version = None

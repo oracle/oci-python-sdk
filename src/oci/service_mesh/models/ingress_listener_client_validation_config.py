@@ -33,12 +33,10 @@ class IngressListenerClientValidationConfig(object):
             'trusted_ca_bundle': 'CaBundle',
             'subject_alternate_names': 'list[str]'
         }
-
         self.attribute_map = {
             'trusted_ca_bundle': 'trustedCaBundle',
             'subject_alternate_names': 'subjectAlternateNames'
         }
-
         self._trusted_ca_bundle = None
         self._subject_alternate_names = None
 

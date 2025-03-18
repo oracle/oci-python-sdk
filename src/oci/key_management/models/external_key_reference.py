@@ -28,11 +28,9 @@ class ExternalKeyReference(object):
         self.swagger_types = {
             'external_key_id': 'str'
         }
-
         self.attribute_map = {
             'external_key_id': 'externalKeyId'
         }
-
         self._external_key_id = None
 
     @property

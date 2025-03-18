@@ -61,7 +61,6 @@ class RequestRateLimitingRule(WebAppFirewallPolicyRule):
             'action_name': 'str',
             'configurations': 'list[RequestRateLimitingConfiguration]'
         }
-
         self.attribute_map = {
             'type': 'type',
             'name': 'name',
@@ -70,7 +69,6 @@ class RequestRateLimitingRule(WebAppFirewallPolicyRule):
             'action_name': 'actionName',
             'configurations': 'configurations'
         }
-
         self._type = None
         self._name = None
         self._condition_language = None

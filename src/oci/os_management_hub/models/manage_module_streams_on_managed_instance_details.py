@@ -53,7 +53,6 @@ class ManageModuleStreamsOnManagedInstanceDetails(object):
             'remove': 'list[ModuleStreamProfileDetails]',
             'work_request_details': 'WorkRequestDetails'
         }
-
         self.attribute_map = {
             'is_dry_run': 'isDryRun',
             'enable': 'enable',
@@ -62,7 +61,6 @@ class ManageModuleStreamsOnManagedInstanceDetails(object):
             'remove': 'remove',
             'work_request_details': 'workRequestDetails'
         }
-
         self._is_dry_run = None
         self._enable = None
         self._disable = None

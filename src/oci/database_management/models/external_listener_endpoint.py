@@ -53,12 +53,10 @@ class ExternalListenerEndpoint(object):
             'protocol': 'str',
             'services': 'list[str]'
         }
-
         self.attribute_map = {
             'protocol': 'protocol',
             'services': 'services'
         }
-
         self._protocol = None
         self._services = None
 

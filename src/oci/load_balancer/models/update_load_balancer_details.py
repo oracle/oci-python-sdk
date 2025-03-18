@@ -60,7 +60,6 @@ class UpdateLoadBalancerDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'security_attributes': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'is_delete_protection_enabled': 'isDeleteProtectionEnabled',
@@ -70,7 +69,6 @@ class UpdateLoadBalancerDetails(object):
             'defined_tags': 'definedTags',
             'security_attributes': 'securityAttributes'
         }
-
         self._display_name = None
         self._is_delete_protection_enabled = None
         self._is_request_id_enabled = None

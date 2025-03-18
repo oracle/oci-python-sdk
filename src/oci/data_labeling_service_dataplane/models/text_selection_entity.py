@@ -45,14 +45,12 @@ class TextSelectionEntity(Entity):
             'text_span': 'TextSpan',
             'extended_metadata': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'entity_type': 'entityType',
             'labels': 'labels',
             'text_span': 'textSpan',
             'extended_metadata': 'extendedMetadata'
         }
-
         self._entity_type = None
         self._labels = None
         self._text_span = None

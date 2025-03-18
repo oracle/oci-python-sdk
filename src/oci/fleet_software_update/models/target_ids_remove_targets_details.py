@@ -35,12 +35,10 @@ class TargetIdsRemoveTargetsDetails(RemoveFsuCollectionTargetsDetails):
             'removal_strategy': 'str',
             'targets': 'list[TargetEntry]'
         }
-
         self.attribute_map = {
             'removal_strategy': 'removalStrategy',
             'targets': 'targets'
         }
-
         self._removal_strategy = None
         self._targets = None
         self._removal_strategy = 'TARGET_IDS'

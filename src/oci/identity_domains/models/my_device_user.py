@@ -55,14 +55,12 @@ class MyDeviceUser(object):
             'display': 'str',
             'ocid': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ref': '$ref',
             'display': 'display',
             'ocid': 'ocid'
         }
-
         self._value = None
         self._ref = None
         self._display = None

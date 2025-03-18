@@ -28,11 +28,9 @@ class GenerateComplianceReportDetails(object):
         self.swagger_types = {
             'are_details_required': 'str'
         }
-
         self.attribute_map = {
             'are_details_required': 'areDetailsRequired'
         }
-
         self._are_details_required = None
 
     @property

@@ -43,14 +43,12 @@ class GoodBot(object):
             'is_enabled': 'bool',
             'description': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'name': 'name',
             'is_enabled': 'isEnabled',
             'description': 'description'
         }
-
         self._key = None
         self._name = None
         self._is_enabled = None

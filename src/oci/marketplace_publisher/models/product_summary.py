@@ -53,7 +53,6 @@ class ProductSummary(object):
             'time_created': 'datetime',
             'time_updated': 'datetime'
         }
-
         self.attribute_map = {
             'name': 'name',
             'code': 'code',
@@ -62,7 +61,6 @@ class ProductSummary(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated'
         }
-
         self._name = None
         self._code = None
         self._product_group = None

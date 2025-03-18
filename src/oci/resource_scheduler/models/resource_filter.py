@@ -58,11 +58,9 @@ class ResourceFilter(object):
         self.swagger_types = {
             'attribute': 'str'
         }
-
         self.attribute_map = {
             'attribute': 'attribute'
         }
-
         self._attribute = None
 
     @staticmethod

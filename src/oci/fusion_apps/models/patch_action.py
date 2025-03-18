@@ -87,7 +87,6 @@ class PatchAction(Action):
             'category': 'str',
             'artifact': 'str'
         }
-
         self.attribute_map = {
             'reference_key': 'referenceKey',
             'action_type': 'actionType',
@@ -97,7 +96,6 @@ class PatchAction(Action):
             'category': 'category',
             'artifact': 'artifact'
         }
-
         self._reference_key = None
         self._action_type = None
         self._state = None

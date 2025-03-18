@@ -28,11 +28,9 @@ class ValidateOperatorAssignmentDetails(object):
         self.swagger_types = {
             'action_name': 'str'
         }
-
         self.attribute_map = {
             'action_name': 'actionName'
         }
-
         self._action_name = None
 
     @property

@@ -33,12 +33,10 @@ class OsnSummary(object):
             'osn_key': 'str',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'osn_key': 'osnKey',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._osn_key = None
         self._lifecycle_state = None
 

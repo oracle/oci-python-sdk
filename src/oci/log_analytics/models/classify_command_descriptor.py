@@ -75,7 +75,6 @@ class ClassifyCommandDescriptor(AbstractCommandDescriptor):
             'bottom_count': 'int',
             'correlate': 'list[FieldsAddRemoveField]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'display_query_string': 'displayQueryString',
@@ -88,7 +87,6 @@ class ClassifyCommandDescriptor(AbstractCommandDescriptor):
             'bottom_count': 'bottomCount',
             'correlate': 'correlate'
         }
-
         self._name = None
         self._display_query_string = None
         self._internal_query_string = None

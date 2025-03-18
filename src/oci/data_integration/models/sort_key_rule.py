@@ -33,12 +33,10 @@ class SortKeyRule(object):
             'wrapped_rule': 'ProjectionRule',
             'is_ascending': 'bool'
         }
-
         self.attribute_map = {
             'wrapped_rule': 'wrappedRule',
             'is_ascending': 'isAscending'
         }
-
         self._wrapped_rule = None
         self._is_ascending = None
 

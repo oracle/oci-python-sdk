@@ -48,12 +48,10 @@ class HostDumpTransferDetails(object):
             'wallet_location': 'str',
             'kind': 'str'
         }
-
         self.attribute_map = {
             'wallet_location': 'walletLocation',
             'kind': 'kind'
         }
-
         self._wallet_location = None
         self._kind = None
 

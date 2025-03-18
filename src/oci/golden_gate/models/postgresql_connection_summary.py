@@ -186,7 +186,6 @@ class PostgresqlConnectionSummary(ConnectionSummary):
             'password_secret_id': 'str',
             'ssl_key_secret_id': 'str'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'id': 'id',
@@ -221,7 +220,6 @@ class PostgresqlConnectionSummary(ConnectionSummary):
             'password_secret_id': 'passwordSecretId',
             'ssl_key_secret_id': 'sslKeySecretId'
         }
-
         self._connection_type = None
         self._id = None
         self._display_name = None

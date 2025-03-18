@@ -39,13 +39,11 @@ class CreateConsoleConnectionDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'public_key': 'publicKey',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._public_key = None
         self._freeform_tags = None
         self._defined_tags = None

@@ -100,7 +100,6 @@ class GithubAccessTokenConnectionSummary(ConnectionSummary):
             'system_tags': 'dict(str, dict(str, object))',
             'access_token': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -118,7 +117,6 @@ class GithubAccessTokenConnectionSummary(ConnectionSummary):
             'system_tags': 'systemTags',
             'access_token': 'accessToken'
         }
-
         self._id = None
         self._display_name = None
         self._description = None

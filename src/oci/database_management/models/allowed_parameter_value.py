@@ -38,13 +38,11 @@ class AllowedParameterValue(object):
             'value': 'str',
             'is_default': 'bool'
         }
-
         self.attribute_map = {
             'ordinal': 'ordinal',
             'value': 'value',
             'is_default': 'isDefault'
         }
-
         self._ordinal = None
         self._value = None
         self._is_default = None

@@ -33,12 +33,10 @@ class RulePosition(object):
             'before_rule': 'str',
             'after_rule': 'str'
         }
-
         self.attribute_map = {
             'before_rule': 'beforeRule',
             'after_rule': 'afterRule'
         }
-
         self._before_rule = None
         self._after_rule = None
 

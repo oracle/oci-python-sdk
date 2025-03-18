@@ -84,7 +84,6 @@ class DetailedDescription(object):
             'logo': 'str',
             'detailed_description': 'str'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -98,7 +97,6 @@ class DetailedDescription(object):
             'logo': 'logo',
             'detailed_description': 'detailedDescription'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

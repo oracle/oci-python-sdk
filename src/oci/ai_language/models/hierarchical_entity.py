@@ -58,7 +58,6 @@ class HierarchicalEntity(object):
             'sub_type': 'str',
             'score': 'float'
         }
-
         self.attribute_map = {
             'meta_info': 'metaInfo',
             'offset': 'offset',
@@ -68,7 +67,6 @@ class HierarchicalEntity(object):
             'sub_type': 'subType',
             'score': 'score'
         }
-
         self._meta_info = None
         self._offset = None
         self._length = None

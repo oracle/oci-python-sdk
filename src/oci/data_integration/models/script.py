@@ -48,7 +48,6 @@ class Script(object):
             'parent_ref': 'ParentReference',
             'object_status': 'int'
         }
-
         self.attribute_map = {
             'key': 'key',
             'model_type': 'modelType',
@@ -56,7 +55,6 @@ class Script(object):
             'parent_ref': 'parentRef',
             'object_status': 'objectStatus'
         }
-
         self._key = None
         self._model_type = None
         self._model_version = None

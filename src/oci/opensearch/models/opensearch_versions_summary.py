@@ -28,11 +28,9 @@ class OpensearchVersionsSummary(object):
         self.swagger_types = {
             'version': 'str'
         }
-
         self.attribute_map = {
             'version': 'version'
         }
-
         self._version = None
 
     @property

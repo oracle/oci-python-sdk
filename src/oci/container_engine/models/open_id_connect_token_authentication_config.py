@@ -81,7 +81,6 @@ class OpenIdConnectTokenAuthenticationConfig(object):
             'is_open_id_connect_auth_enabled': 'bool',
             'configuration_file': 'str'
         }
-
         self.attribute_map = {
             'issuer_url': 'issuerUrl',
             'client_id': 'clientId',
@@ -95,7 +94,6 @@ class OpenIdConnectTokenAuthenticationConfig(object):
             'is_open_id_connect_auth_enabled': 'isOpenIdConnectAuthEnabled',
             'configuration_file': 'configurationFile'
         }
-
         self._issuer_url = None
         self._client_id = None
         self._username_claim = None

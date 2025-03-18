@@ -48,7 +48,6 @@ class UpdateFileSystemDetails(object):
             'kms_key_id': 'str',
             'filesystem_snapshot_policy_id': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
@@ -56,7 +55,6 @@ class UpdateFileSystemDetails(object):
             'kms_key_id': 'kmsKeyId',
             'filesystem_snapshot_policy_id': 'filesystemSnapshotPolicyId'
         }
-
         self._display_name = None
         self._freeform_tags = None
         self._defined_tags = None

@@ -33,12 +33,10 @@ class BulkActionResourceType(object):
             'name': 'str',
             'metadata_keys': 'list[str]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'metadata_keys': 'metadataKeys'
         }
-
         self._name = None
         self._metadata_keys = None
 

@@ -60,7 +60,6 @@ class PaypalPaymentOption(PaymentOption):
             'last_name': 'str',
             'ext_billing_agreement_id': 'str'
         }
-
         self.attribute_map = {
             'wallet_instrument_id': 'walletInstrumentId',
             'wallet_transaction_id': 'walletTransactionId',
@@ -70,7 +69,6 @@ class PaypalPaymentOption(PaymentOption):
             'last_name': 'lastName',
             'ext_billing_agreement_id': 'extBillingAgreementId'
         }
-
         self._wallet_instrument_id = None
         self._wallet_transaction_id = None
         self._payment_method = None

@@ -40,13 +40,11 @@ class ErrorTrace(Trace):
             'trace_type': 'str',
             'error_message': 'str'
         }
-
         self.attribute_map = {
             'time_created': 'timeCreated',
             'trace_type': 'traceType',
             'error_message': 'errorMessage'
         }
-
         self._time_created = None
         self._trace_type = None
         self._error_message = None

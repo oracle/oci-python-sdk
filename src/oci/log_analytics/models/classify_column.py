@@ -127,7 +127,6 @@ class ClassifyColumn(AbstractColumn):
             'classify_correlate_columns': 'list[AbstractColumn]',
             'classify_correlate_result': 'list[dict(str, object)]'
         }
-
         self.attribute_map = {
             'type': 'type',
             'display_name': 'displayName',
@@ -150,7 +149,6 @@ class ClassifyColumn(AbstractColumn):
             'classify_correlate_columns': 'classifyCorrelateColumns',
             'classify_correlate_result': 'classifyCorrelateResult'
         }
-
         self._type = None
         self._display_name = None
         self._sub_system = None

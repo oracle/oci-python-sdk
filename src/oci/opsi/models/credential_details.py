@@ -53,12 +53,10 @@ class CredentialDetails(object):
             'credential_source_name': 'str',
             'credential_type': 'str'
         }
-
         self.attribute_map = {
             'credential_source_name': 'credentialSourceName',
             'credential_type': 'credentialType'
         }
-
         self._credential_source_name = None
         self._credential_type = None
 

@@ -43,14 +43,12 @@ class ResourceRiskScoreAggregationCollection(object):
             'risk_threshold': 'int',
             'items': 'list[ResourceRiskScoreAggregation]'
         }
-
         self.attribute_map = {
             'filter_type': 'filterType',
             'filter_id': 'filterId',
             'risk_threshold': 'riskThreshold',
             'items': 'items'
         }
-
         self._filter_type = None
         self._filter_id = None
         self._risk_threshold = None

@@ -48,7 +48,6 @@ class MetricBasedVerticalScaleUpConfig(object):
             'ocpu_step_size': 'int',
             'memory_step_size': 'int'
         }
-
         self.attribute_map = {
             'metric': 'metric',
             'max_ocpus_per_node': 'maxOcpusPerNode',
@@ -56,7 +55,6 @@ class MetricBasedVerticalScaleUpConfig(object):
             'ocpu_step_size': 'ocpuStepSize',
             'memory_step_size': 'memoryStepSize'
         }
-
         self._metric = None
         self._max_ocpus_per_node = None
         self._max_memory_per_node = None

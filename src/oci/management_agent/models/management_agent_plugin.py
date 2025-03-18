@@ -113,7 +113,6 @@ class ManagementAgentPlugin(object):
             'is_console_deployable': 'bool',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -124,7 +123,6 @@ class ManagementAgentPlugin(object):
             'is_console_deployable': 'isConsoleDeployable',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._id = None
         self._name = None
         self._version = None

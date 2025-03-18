@@ -83,14 +83,12 @@ class FlattenProjectionPreferences(object):
             'ignore_null_values': 'str',
             'retain_parent_name_lineage': 'str'
         }
-
         self.attribute_map = {
             'create_array_index': 'createArrayIndex',
             'retain_all_attributes': 'retainAllAttributes',
             'ignore_null_values': 'ignoreNullValues',
             'retain_parent_name_lineage': 'retainParentNameLineage'
         }
-
         self._create_array_index = None
         self._retain_all_attributes = None
         self._ignore_null_values = None

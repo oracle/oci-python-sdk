@@ -112,7 +112,6 @@ class ManagementAgentInstallKeySummary(object):
             'compartment_id': 'str',
             'is_unlimited': 'bool'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -126,7 +125,6 @@ class ManagementAgentInstallKeySummary(object):
             'compartment_id': 'compartmentId',
             'is_unlimited': 'isUnlimited'
         }
-
         self._id = None
         self._display_name = None
         self._created_by_principal_id = None

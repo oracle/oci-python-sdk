@@ -33,12 +33,10 @@ class VsphereUpgradeObject(object):
             'download_link': 'str',
             'link_description': 'str'
         }
-
         self.attribute_map = {
             'download_link': 'downloadLink',
             'link_description': 'linkDescription'
         }
-
         self._download_link = None
         self._link_description = None
 

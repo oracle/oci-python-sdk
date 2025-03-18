@@ -58,7 +58,6 @@ class CloudExadataInfrastructureUnallocatedResources(object):
             'exadata_storage_in_tbs': 'float',
             'cloud_autonomous_vm_clusters': 'list[CloudAutonomousVmClusterResourceDetails]'
         }
-
         self.attribute_map = {
             'cloud_exadata_infrastructure_id': 'cloudExadataInfrastructureId',
             'cloud_exadata_infrastructure_display_name': 'cloudExadataInfrastructureDisplayName',
@@ -68,7 +67,6 @@ class CloudExadataInfrastructureUnallocatedResources(object):
             'exadata_storage_in_tbs': 'exadataStorageInTBs',
             'cloud_autonomous_vm_clusters': 'cloudAutonomousVmClusters'
         }
-
         self._cloud_exadata_infrastructure_id = None
         self._cloud_exadata_infrastructure_display_name = None
         self._local_storage_in_gbs = None

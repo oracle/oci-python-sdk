@@ -38,13 +38,11 @@ class MySqlDatabaseObject(object):
             'object_name': 'str',
             'type': 'str'
         }
-
         self.attribute_map = {
             'schema': 'schema',
             'object_name': 'objectName',
             'type': 'type'
         }
-
         self._schema = None
         self._object_name = None
         self._type = None

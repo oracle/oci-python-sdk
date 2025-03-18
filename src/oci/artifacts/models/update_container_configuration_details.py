@@ -28,11 +28,9 @@ class UpdateContainerConfigurationDetails(object):
         self.swagger_types = {
             'is_repository_created_on_first_push': 'bool'
         }
-
         self.attribute_map = {
             'is_repository_created_on_first_push': 'isRepositoryCreatedOnFirstPush'
         }
-
         self._is_repository_created_on_first_push = None
 
     @property

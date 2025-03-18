@@ -45,14 +45,12 @@ class DatabaseToolsConnectionOracleDatabaseProxyClientUserNameDetails(DatabaseTo
             'user_password': 'DatabaseToolsUserPasswordDetails',
             'roles': 'list[str]'
         }
-
         self.attribute_map = {
             'proxy_authentication_type': 'proxyAuthenticationType',
             'user_name': 'userName',
             'user_password': 'userPassword',
             'roles': 'roles'
         }
-
         self._proxy_authentication_type = None
         self._user_name = None
         self._user_password = None

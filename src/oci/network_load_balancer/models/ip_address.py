@@ -53,14 +53,12 @@ class IpAddress(object):
             'ip_version': 'str',
             'reserved_ip': 'ReservedIP'
         }
-
         self.attribute_map = {
             'ip_address': 'ipAddress',
             'is_public': 'isPublic',
             'ip_version': 'ipVersion',
             'reserved_ip': 'reservedIp'
         }
-
         self._ip_address = None
         self._is_public = None
         self._ip_version = None

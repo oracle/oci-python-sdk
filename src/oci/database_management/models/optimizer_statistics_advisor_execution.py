@@ -96,7 +96,6 @@ class OptimizerStatisticsAdvisorExecution(object):
             'error_message': 'str',
             'findings': 'int'
         }
-
         self.attribute_map = {
             'database': 'database',
             'report': 'report',
@@ -109,7 +108,6 @@ class OptimizerStatisticsAdvisorExecution(object):
             'error_message': 'errorMessage',
             'findings': 'findings'
         }
-
         self._database = None
         self._report = None
         self._task_name = None

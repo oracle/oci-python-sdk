@@ -78,7 +78,6 @@ class InclusionCriterion(object):
             'time_created': 'datetime',
             'time_updated': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'governance_rule_id': 'governanceRuleId',
@@ -88,7 +87,6 @@ class InclusionCriterion(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated'
         }
-
         self._id = None
         self._governance_rule_id = None
         self._type = None

@@ -38,13 +38,11 @@ class VideoObjectSegment(object):
             'confidence': 'float',
             'frames': 'list[VideoObjectFrame]'
         }
-
         self.attribute_map = {
             'video_segment': 'videoSegment',
             'confidence': 'confidence',
             'frames': 'frames'
         }
-
         self._video_segment = None
         self._confidence = None
         self._frames = None

@@ -93,7 +93,6 @@ class AutoScalingConfiguration(object):
             'policy': 'AutoScalePolicy',
             'policy_details': 'AutoScalePolicyDetails'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -104,7 +103,6 @@ class AutoScalingConfiguration(object):
             'policy': 'policy',
             'policy_details': 'policyDetails'
         }
-
         self._id = None
         self._display_name = None
         self._node_type = None

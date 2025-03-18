@@ -61,14 +61,12 @@ class SpanFilterReference(object):
             'options_group': 'str',
             'display_name': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'config_type': 'configType',
             'options_group': 'optionsGroup',
             'display_name': 'displayName'
         }
-
         self._id = None
         self._config_type = None
         self._options_group = None

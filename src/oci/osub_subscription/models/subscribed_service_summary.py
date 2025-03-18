@@ -133,7 +133,6 @@ class SubscribedServiceSummary(object):
             'time_end': 'datetime',
             'commitment_services': 'list[Commitment]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'product': 'product',
@@ -158,7 +157,6 @@ class SubscribedServiceSummary(object):
             'time_end': 'timeEnd',
             'commitment_services': 'commitmentServices'
         }
-
         self._id = None
         self._product = None
         self._quantity = None

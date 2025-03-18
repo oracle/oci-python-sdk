@@ -33,12 +33,10 @@ class InstanceState(object):
             'code': 'int',
             'name': 'str'
         }
-
         self.attribute_map = {
             'code': 'code',
             'name': 'name'
         }
-
         self._code = None
         self._name = None
 

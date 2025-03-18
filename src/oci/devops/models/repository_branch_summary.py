@@ -64,7 +64,6 @@ class RepositoryBranchSummary(RepositoryRefSummary):
             'system_tags': 'dict(str, dict(str, object))',
             'commit_id': 'str'
         }
-
         self.attribute_map = {
             'ref_name': 'refName',
             'ref_type': 'refType',
@@ -75,7 +74,6 @@ class RepositoryBranchSummary(RepositoryRefSummary):
             'system_tags': 'systemTags',
             'commit_id': 'commitId'
         }
-
         self._ref_name = None
         self._ref_type = None
         self._full_ref_name = None

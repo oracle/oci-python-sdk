@@ -65,7 +65,6 @@ class CreateOpsiUxConfigurationDetails(CreateOpsiConfigurationDetails):
             'system_tags': 'dict(str, dict(str, object))',
             'config_items': 'list[CreateConfigurationItemDetails]'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'opsi_config_type': 'opsiConfigType',
@@ -76,7 +75,6 @@ class CreateOpsiUxConfigurationDetails(CreateOpsiConfigurationDetails):
             'system_tags': 'systemTags',
             'config_items': 'configItems'
         }
-
         self._compartment_id = None
         self._opsi_config_type = None
         self._display_name = None

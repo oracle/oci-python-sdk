@@ -33,12 +33,10 @@ class ApiSpecificationRouteResponsePolicies(object):
             'header_transformations': 'HeaderTransformationPolicy',
             'response_cache_store': 'ResponseCacheStorePolicy'
         }
-
         self.attribute_map = {
             'header_transformations': 'headerTransformations',
             'response_cache_store': 'responseCacheStore'
         }
-
         self._header_transformations = None
         self._response_cache_store = None
 

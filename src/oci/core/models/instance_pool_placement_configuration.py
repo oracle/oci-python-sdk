@@ -48,7 +48,6 @@ class InstancePoolPlacementConfiguration(object):
             'primary_vnic_subnets': 'InstancePoolPlacementPrimarySubnet',
             'secondary_vnic_subnets': 'list[InstancePoolPlacementSecondaryVnicSubnet]'
         }
-
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'primary_subnet_id': 'primarySubnetId',
@@ -56,7 +55,6 @@ class InstancePoolPlacementConfiguration(object):
             'primary_vnic_subnets': 'primaryVnicSubnets',
             'secondary_vnic_subnets': 'secondaryVnicSubnets'
         }
-
         self._availability_domain = None
         self._primary_subnet_id = None
         self._fault_domains = None

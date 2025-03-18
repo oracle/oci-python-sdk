@@ -84,7 +84,6 @@ class JsonWebKey(StaticPublicKey):
             'n': 'str',
             'e': 'str'
         }
-
         self.attribute_map = {
             'kid': 'kid',
             'format': 'format',
@@ -95,7 +94,6 @@ class JsonWebKey(StaticPublicKey):
             'n': 'n',
             'e': 'e'
         }
-
         self._kid = None
         self._format = None
         self._kty = None

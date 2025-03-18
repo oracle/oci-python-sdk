@@ -45,14 +45,12 @@ class ObjectStorageLocation(ResultLocation):
             'namespace': 'str',
             'bucket_name': 'str'
         }
-
         self.attribute_map = {
             'location_type': 'locationType',
             'region': 'region',
             'namespace': 'namespace',
             'bucket_name': 'bucketName'
         }
-
         self._location_type = None
         self._region = None
         self._namespace = None

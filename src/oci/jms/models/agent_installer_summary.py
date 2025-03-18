@@ -115,7 +115,6 @@ class AgentInstallerSummary(object):
             'java_version': 'str',
             'agent_installer_version': 'str'
         }
-
         self.attribute_map = {
             'agent_installer_id': 'agentInstallerId',
             'agent_installer_description': 'agentInstallerDescription',
@@ -128,7 +127,6 @@ class AgentInstallerSummary(object):
             'java_version': 'javaVersion',
             'agent_installer_version': 'agentInstallerVersion'
         }
-
         self._agent_installer_id = None
         self._agent_installer_description = None
         self._approximate_file_size_in_bytes = None

@@ -50,7 +50,6 @@ class CreateImagePublicationPackage(CreatePublicationPackage):
             'eula': 'list[Eula]',
             'image_id': 'str'
         }
-
         self.attribute_map = {
             'package_version': 'packageVersion',
             'package_type': 'packageType',
@@ -58,7 +57,6 @@ class CreateImagePublicationPackage(CreatePublicationPackage):
             'eula': 'eula',
             'image_id': 'imageId'
         }
-
         self._package_version = None
         self._package_type = None
         self._operating_system = None

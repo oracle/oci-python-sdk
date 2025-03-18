@@ -38,13 +38,11 @@ class DeniedSecurityActionDetails(object):
             'evaluated_security_list_ids': 'list[str]',
             'evaluated_nsg_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'is_restricted_or_partial': 'isRestrictedOrPartial',
             'evaluated_security_list_ids': 'evaluatedSecurityListIds',
             'evaluated_nsg_ids': 'evaluatedNsgIds'
         }
-
         self._is_restricted_or_partial = None
         self._evaluated_security_list_ids = None
         self._evaluated_nsg_ids = None

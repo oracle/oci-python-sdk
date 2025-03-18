@@ -33,12 +33,10 @@ class BulkDeActivationStatus(object):
             'attribute_statuses': 'list[AttributeResponse]',
             'bulk_de_activation_metadata': 'BulkDeActivationMetadata'
         }
-
         self.attribute_map = {
             'attribute_statuses': 'attributeStatuses',
             'bulk_de_activation_metadata': 'bulkDeActivationMetadata'
         }
-
         self._attribute_statuses = None
         self._bulk_de_activation_metadata = None
 

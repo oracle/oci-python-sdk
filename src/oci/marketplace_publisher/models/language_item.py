@@ -33,12 +33,10 @@ class LanguageItem(object):
             'name': 'str',
             'code': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'code': 'code'
         }
-
         self._name = None
         self._code = None
 

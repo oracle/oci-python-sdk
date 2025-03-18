@@ -45,14 +45,12 @@ class CohereLlmInferenceResponse(LlmInferenceResponse):
             'time_created': 'datetime',
             'prompt': 'str'
         }
-
         self.attribute_map = {
             'runtime_type': 'runtimeType',
             'generated_texts': 'generatedTexts',
             'time_created': 'timeCreated',
             'prompt': 'prompt'
         }
-
         self._runtime_type = None
         self._generated_texts = None
         self._time_created = None

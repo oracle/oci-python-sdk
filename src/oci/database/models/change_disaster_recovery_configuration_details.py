@@ -52,14 +52,12 @@ class ChangeDisasterRecoveryConfigurationDetails(object):
             'is_snapshot_standby': 'bool',
             'is_replicate_automatic_backups': 'bool'
         }
-
         self.attribute_map = {
             'disaster_recovery_type': 'disasterRecoveryType',
             'time_snapshot_standby_enabled_till': 'timeSnapshotStandbyEnabledTill',
             'is_snapshot_standby': 'isSnapshotStandby',
             'is_replicate_automatic_backups': 'isReplicateAutomaticBackups'
         }
-
         self._disaster_recovery_type = None
         self._time_snapshot_standby_enabled_till = None
         self._is_snapshot_standby = None

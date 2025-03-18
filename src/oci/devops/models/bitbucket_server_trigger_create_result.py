@@ -104,7 +104,6 @@ class BitbucketServerTriggerCreateResult(TriggerCreateResult):
             'secret': 'str',
             'trigger_url': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -123,7 +122,6 @@ class BitbucketServerTriggerCreateResult(TriggerCreateResult):
             'secret': 'secret',
             'trigger_url': 'triggerUrl'
         }
-
         self._id = None
         self._display_name = None
         self._description = None

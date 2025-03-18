@@ -51,13 +51,11 @@ class CreateMappedSecretDetails(object):
             'source': 'str',
             'type': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'source': 'source',
             'type': 'type'
         }
-
         self._name = None
         self._source = None
         self._type = None

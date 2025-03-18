@@ -45,11 +45,9 @@ class SetFeatureBundleDetails(object):
         self.swagger_types = {
             'feature_bundle': 'str'
         }
-
         self.attribute_map = {
             'feature_bundle': 'featureBundle'
         }
-
         self._feature_bundle = None
 
     @property

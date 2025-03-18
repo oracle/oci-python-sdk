@@ -48,13 +48,11 @@ class ExternalExadataStorageConnectorStatus(object):
             'status': 'str',
             'error_message': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'status': 'status',
             'error_message': 'errorMessage'
         }
-
         self._id = None
         self._status = None
         self._error_message = None

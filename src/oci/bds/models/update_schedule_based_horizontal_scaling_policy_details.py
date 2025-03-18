@@ -41,13 +41,11 @@ class UpdateScheduleBasedHorizontalScalingPolicyDetails(UpdateAutoScalePolicyDet
             'timezone': 'str',
             'schedule_details': 'list[HorizontalScalingScheduleDetails]'
         }
-
         self.attribute_map = {
             'policy_type': 'policyType',
             'timezone': 'timezone',
             'schedule_details': 'scheduleDetails'
         }
-
         self._policy_type = None
         self._timezone = None
         self._schedule_details = None

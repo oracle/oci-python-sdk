@@ -33,12 +33,10 @@ class DedicatedVmHostInstanceShapeSummary(object):
             'availability_domain': 'str',
             'instance_shape_name': 'str'
         }
-
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'instance_shape_name': 'instanceShapeName'
         }
-
         self._availability_domain = None
         self._instance_shape_name = None
 

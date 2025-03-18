@@ -88,7 +88,6 @@ class DiscoveredExternalPluggableDatabase(DiscoveredExternalDbSystemComponent):
             'guid': 'str',
             'connector': 'ExternalDbSystemDiscoveryConnector'
         }
-
         self.attribute_map = {
             'component_id': 'componentId',
             'display_name': 'displayName',
@@ -103,7 +102,6 @@ class DiscoveredExternalPluggableDatabase(DiscoveredExternalDbSystemComponent):
             'guid': 'guid',
             'connector': 'connector'
         }
-
         self._component_id = None
         self._display_name = None
         self._component_name = None

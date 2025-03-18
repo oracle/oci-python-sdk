@@ -48,7 +48,6 @@ class SqlCollectionLogAggregation(object):
             'count': 'int',
             'dimensions': 'SqlCollectionLogDimensions'
         }
-
         self.attribute_map = {
             'metric_name': 'metricName',
             'time_started': 'timeStarted',
@@ -56,7 +55,6 @@ class SqlCollectionLogAggregation(object):
             'count': 'count',
             'dimensions': 'dimensions'
         }
-
         self._metric_name = None
         self._time_started = None
         self._time_ended = None

@@ -121,7 +121,6 @@ class InvokeFunctionDeployStage(DeployStage):
             'is_async': 'bool',
             'is_validation_enabled': 'bool'
         }
-
         self.attribute_map = {
             'id': 'id',
             'description': 'description',
@@ -143,7 +142,6 @@ class InvokeFunctionDeployStage(DeployStage):
             'is_async': 'isAsync',
             'is_validation_enabled': 'isValidationEnabled'
         }
-
         self._id = None
         self._description = None
         self._display_name = None

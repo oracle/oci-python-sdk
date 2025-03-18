@@ -33,12 +33,10 @@ class ContainerImageCollection(object):
             'items': 'list[ContainerImageSummary]',
             'remaining_items_count': 'int'
         }
-
         self.attribute_map = {
             'items': 'items',
             'remaining_items_count': 'remainingItemsCount'
         }
-
         self._items = None
         self._remaining_items_count = None
 

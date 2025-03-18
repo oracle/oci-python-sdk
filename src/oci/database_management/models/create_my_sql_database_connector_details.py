@@ -89,7 +89,6 @@ class CreateMySqlDatabaseConnectorDetails(object):
             'credential_type': 'str',
             'ssl_secret_id': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'macs_agent_id': 'macsAgentId',
@@ -100,7 +99,6 @@ class CreateMySqlDatabaseConnectorDetails(object):
             'credential_type': 'credentialType',
             'ssl_secret_id': 'sslSecretId'
         }
-
         self._display_name = None
         self._macs_agent_id = None
         self._host_name = None

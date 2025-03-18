@@ -33,12 +33,10 @@ class PutLogsDetails(object):
             'specversion': 'str',
             'log_entry_batches': 'list[LogEntryBatch]'
         }
-
         self.attribute_map = {
             'specversion': 'specversion',
             'log_entry_batches': 'logEntryBatches'
         }
-
         self._specversion = None
         self._log_entry_batches = None
 

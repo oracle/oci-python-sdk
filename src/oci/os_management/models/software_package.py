@@ -88,7 +88,6 @@ class SoftwarePackage(object):
             'files': 'list[SoftwarePackageFile]',
             'software_sources': 'list[SoftwareSourceId]'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'name': 'name',
@@ -104,7 +103,6 @@ class SoftwarePackage(object):
             'files': 'files',
             'software_sources': 'softwareSources'
         }
-
         self._display_name = None
         self._name = None
         self._type = None

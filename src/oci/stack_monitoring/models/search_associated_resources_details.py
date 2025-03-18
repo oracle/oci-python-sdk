@@ -48,7 +48,6 @@ class SearchAssociatedResourcesDetails(object):
             'limit_level': 'int',
             'association_types': 'list[str]'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'resource_type': 'resourceType',
@@ -56,7 +55,6 @@ class SearchAssociatedResourcesDetails(object):
             'limit_level': 'limitLevel',
             'association_types': 'associationTypes'
         }
-
         self._compartment_id = None
         self._resource_type = None
         self._resource_id = None

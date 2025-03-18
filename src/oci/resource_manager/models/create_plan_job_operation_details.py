@@ -39,13 +39,11 @@ class CreatePlanJobOperationDetails(CreateJobOperationDetails):
             'is_provider_upgrade_required': 'bool',
             'terraform_advanced_options': 'TerraformAdvancedOptions'
         }
-
         self.attribute_map = {
             'operation': 'operation',
             'is_provider_upgrade_required': 'isProviderUpgradeRequired',
             'terraform_advanced_options': 'terraformAdvancedOptions'
         }
-
         self._operation = None
         self._is_provider_upgrade_required = None
         self._terraform_advanced_options = None

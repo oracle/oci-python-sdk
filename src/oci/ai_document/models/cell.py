@@ -53,7 +53,6 @@ class Cell(object):
             'bounding_polygon': 'BoundingPolygon',
             'word_indexes': 'list[int]'
         }
-
         self.attribute_map = {
             'text': 'text',
             'row_index': 'rowIndex',
@@ -62,7 +61,6 @@ class Cell(object):
             'bounding_polygon': 'boundingPolygon',
             'word_indexes': 'wordIndexes'
         }
-
         self._text = None
         self._row_index = None
         self._column_index = None

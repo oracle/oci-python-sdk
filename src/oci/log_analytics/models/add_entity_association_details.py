@@ -28,11 +28,9 @@ class AddEntityAssociationDetails(object):
         self.swagger_types = {
             'association_entities': 'list[str]'
         }
-
         self.attribute_map = {
             'association_entities': 'associationEntities'
         }
-
         self._association_entities = None
 
     @property

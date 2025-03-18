@@ -89,7 +89,6 @@ class CreateLoadBalancerTrafficShiftDeployStageDetails(CreateDeployStageDetails)
             'load_balancer_config': 'LoadBalancerConfig',
             'rollback_policy': 'DeployStageRollbackPolicy'
         }
-
         self.attribute_map = {
             'description': 'description',
             'display_name': 'displayName',
@@ -105,7 +104,6 @@ class CreateLoadBalancerTrafficShiftDeployStageDetails(CreateDeployStageDetails)
             'load_balancer_config': 'loadBalancerConfig',
             'rollback_policy': 'rollbackPolicy'
         }
-
         self._description = None
         self._display_name = None
         self._deploy_stage_type = None

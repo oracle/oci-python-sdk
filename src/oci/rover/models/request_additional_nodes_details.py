@@ -28,11 +28,9 @@ class RequestAdditionalNodesDetails(object):
         self.swagger_types = {
             'number_of_additional_nodes': 'int'
         }
-
         self.attribute_map = {
             'number_of_additional_nodes': 'numberOfAdditionalNodes'
         }
-
         self._number_of_additional_nodes = None
 
     @property

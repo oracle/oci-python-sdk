@@ -28,11 +28,9 @@ class CertificateCollection(object):
         self.swagger_types = {
             'items': 'list[CertificateSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

@@ -46,14 +46,12 @@ class AssignManualUuidHandling(AnonymousTransactionsHandling):
             'last_configured_log_offset': 'int',
             'uuid': 'str'
         }
-
         self.attribute_map = {
             'policy': 'policy',
             'last_configured_log_filename': 'lastConfiguredLogFilename',
             'last_configured_log_offset': 'lastConfiguredLogOffset',
             'uuid': 'uuid'
         }
-
         self._policy = None
         self._last_configured_log_filename = None
         self._last_configured_log_offset = None

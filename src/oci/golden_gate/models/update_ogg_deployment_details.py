@@ -72,7 +72,6 @@ class UpdateOggDeploymentDetails(object):
             'key': 'str',
             'group_to_roles_mapping': 'UpdateGroupToRolesMappingDetails'
         }
-
         self.attribute_map = {
             'credential_store': 'credentialStore',
             'identity_domain_id': 'identityDomainId',
@@ -83,7 +82,6 @@ class UpdateOggDeploymentDetails(object):
             'key': 'key',
             'group_to_roles_mapping': 'groupToRolesMapping'
         }
-
         self._credential_store = None
         self._identity_domain_id = None
         self._password_secret_id = None

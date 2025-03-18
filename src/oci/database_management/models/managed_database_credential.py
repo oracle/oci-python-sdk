@@ -61,13 +61,11 @@ class ManagedDatabaseCredential(object):
             'username': 'str',
             'role': 'str'
         }
-
         self.attribute_map = {
             'credential_type': 'credentialType',
             'username': 'username',
             'role': 'role'
         }
-
         self._credential_type = None
         self._username = None
         self._role = None

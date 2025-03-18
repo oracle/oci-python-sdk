@@ -87,7 +87,6 @@ class SteeringPolicyAttachmentSummary(object):
             'time_created': 'datetime',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'steering_policy_id': 'steeringPolicyId',
             'zone_id': 'zoneId',
@@ -100,7 +99,6 @@ class SteeringPolicyAttachmentSummary(object):
             'time_created': 'timeCreated',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._steering_policy_id = None
         self._zone_id = None
         self._domain_name = None

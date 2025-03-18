@@ -48,7 +48,6 @@ class StorageLocation(object):
             'bucket_name': 'str',
             'object_name': 'str'
         }
-
         self.attribute_map = {
             'region_id': 'regionId',
             'compartment_id': 'compartmentId',
@@ -56,7 +55,6 @@ class StorageLocation(object):
             'bucket_name': 'bucketName',
             'object_name': 'objectName'
         }
-
         self._region_id = None
         self._compartment_id = None
         self._namespace_name = None

@@ -53,7 +53,6 @@ class CreateAiPrivateEndpointDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str'
         }
-
         self.attribute_map = {
             'dns_zones': 'dnsZones',
             'subnet_id': 'subnetId',
@@ -62,7 +61,6 @@ class CreateAiPrivateEndpointDetails(object):
             'defined_tags': 'definedTags',
             'display_name': 'displayName'
         }
-
         self._dns_zones = None
         self._subnet_id = None
         self._compartment_id = None

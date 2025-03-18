@@ -53,7 +53,6 @@ class InteractionSummary(object):
             'user_type': 'str',
             'time_of_conversation': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'user_id': 'userId',
@@ -62,7 +61,6 @@ class InteractionSummary(object):
             'user_type': 'userType',
             'time_of_conversation': 'timeOfConversation'
         }
-
         self._id = None
         self._user_id = None
         self._user_name = None

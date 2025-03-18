@@ -60,7 +60,6 @@ class UpdateDatabaseDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'db_backup_config': 'dbBackupConfig',
             'db_home_id': 'dbHomeId',
@@ -70,7 +69,6 @@ class UpdateDatabaseDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._db_backup_config = None
         self._db_home_id = None
         self._new_admin_password = None

@@ -29,11 +29,9 @@ class UploadSignedCertificateAndGenerateWalletDetails(object):
         self.swagger_types = {
             'ca_signed_certificate': 'str'
         }
-
         self.attribute_map = {
             'ca_signed_certificate': 'caSignedCertificate'
         }
-
         self._ca_signed_certificate = None
 
     @property

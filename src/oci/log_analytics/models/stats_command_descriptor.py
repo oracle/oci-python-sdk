@@ -70,7 +70,6 @@ class StatsCommandDescriptor(AbstractCommandDescriptor):
             'group_by_fields': 'list[AbstractField]',
             'functions': 'list[FunctionField]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'display_query_string': 'displayQueryString',
@@ -82,7 +81,6 @@ class StatsCommandDescriptor(AbstractCommandDescriptor):
             'group_by_fields': 'groupByFields',
             'functions': 'functions'
         }
-
         self._name = None
         self._display_query_string = None
         self._internal_query_string = None

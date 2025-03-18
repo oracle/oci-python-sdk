@@ -33,12 +33,10 @@ class CreateExternalMySqlDatabaseConnectorDetails(object):
             'compartment_id': 'str',
             'connector_details': 'CreateMySqlDatabaseConnectorDetails'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'connector_details': 'connectorDetails'
         }
-
         self._compartment_id = None
         self._connector_details = None
 

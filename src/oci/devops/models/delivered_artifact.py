@@ -53,13 +53,11 @@ class DeliveredArtifact(object):
             'output_artifact_name': 'str',
             'artifact_type': 'str'
         }
-
         self.attribute_map = {
             'deploy_artifact_id': 'deployArtifactId',
             'output_artifact_name': 'outputArtifactName',
             'artifact_type': 'artifactType'
         }
-
         self._deploy_artifact_id = None
         self._output_artifact_name = None
         self._artifact_type = None

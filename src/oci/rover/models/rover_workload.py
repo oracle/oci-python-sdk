@@ -73,7 +73,6 @@ class RoverWorkload(object):
             'workload_type': 'str',
             'work_request_id': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'compartment_id': 'compartmentId',
@@ -86,7 +85,6 @@ class RoverWorkload(object):
             'workload_type': 'workloadType',
             'work_request_id': 'workRequestId'
         }
-
         self._name = None
         self._compartment_id = None
         self._id = None

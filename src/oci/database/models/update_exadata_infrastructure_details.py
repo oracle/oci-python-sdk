@@ -154,7 +154,6 @@ class UpdateExadataInfrastructureDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'cloud_control_plane_server1': 'cloudControlPlaneServer1',
             'cloud_control_plane_server2': 'cloudControlPlaneServer2',
@@ -178,7 +177,6 @@ class UpdateExadataInfrastructureDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._cloud_control_plane_server1 = None
         self._cloud_control_plane_server2 = None
         self._netmask = None

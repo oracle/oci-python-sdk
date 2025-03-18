@@ -73,14 +73,12 @@ class SqlFirewallConfig(object):
             'exclude_job': 'str',
             'time_status_updated': 'datetime'
         }
-
         self.attribute_map = {
             'status': 'status',
             'violation_log_auto_purge': 'violationLogAutoPurge',
             'exclude_job': 'excludeJob',
             'time_status_updated': 'timeStatusUpdated'
         }
-
         self._status = None
         self._violation_log_auto_purge = None
         self._exclude_job = None

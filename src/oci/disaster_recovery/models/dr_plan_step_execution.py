@@ -553,7 +553,6 @@ class DrPlanStepExecution(object):
             'time_ended': 'datetime',
             'execution_duration_in_sec': 'int'
         }
-
         self.attribute_map = {
             'step_id': 'stepId',
             'type': 'type',
@@ -566,7 +565,6 @@ class DrPlanStepExecution(object):
             'time_ended': 'timeEnded',
             'execution_duration_in_sec': 'executionDurationInSec'
         }
-
         self._step_id = None
         self._type = None
         self._group_id = None

@@ -76,7 +76,6 @@ class CreateScheduledActionDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'compartment_id': 'str'
         }
-
         self.attribute_map = {
             'action_type': 'actionType',
             'action_params': 'actionParams',
@@ -87,7 +86,6 @@ class CreateScheduledActionDetails(object):
             'defined_tags': 'definedTags',
             'compartment_id': 'compartmentId'
         }
-
         self._action_type = None
         self._action_params = None
         self._action_members = None

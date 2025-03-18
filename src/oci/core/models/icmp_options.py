@@ -45,12 +45,10 @@ class IcmpOptions(object):
             'code': 'int',
             'type': 'int'
         }
-
         self.attribute_map = {
             'code': 'code',
             'type': 'type'
         }
-
         self._code = None
         self._type = None
 

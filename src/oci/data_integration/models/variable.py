@@ -88,7 +88,6 @@ class Variable(object):
             'default_value': 'object',
             'root_object_default_value': 'RootObject'
         }
-
         self.attribute_map = {
             'key': 'key',
             'model_version': 'modelVersion',
@@ -104,7 +103,6 @@ class Variable(object):
             'default_value': 'defaultValue',
             'root_object_default_value': 'rootObjectDefaultValue'
         }
-
         self._key = None
         self._model_version = None
         self._model_type = None

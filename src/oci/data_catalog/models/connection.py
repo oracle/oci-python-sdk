@@ -137,7 +137,6 @@ class Connection(object):
             'type_key': 'str',
             'uri': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'description': 'description',
@@ -156,7 +155,6 @@ class Connection(object):
             'type_key': 'typeKey',
             'uri': 'uri'
         }
-
         self._key = None
         self._description = None
         self._display_name = None

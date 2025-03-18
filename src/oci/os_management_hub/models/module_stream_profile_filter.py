@@ -53,14 +53,12 @@ class ModuleStreamProfileFilter(object):
             'stream_name': 'str',
             'filter_type': 'str'
         }
-
         self.attribute_map = {
             'module_name': 'moduleName',
             'profile_name': 'profileName',
             'stream_name': 'streamName',
             'filter_type': 'filterType'
         }
-
         self._module_name = None
         self._profile_name = None
         self._stream_name = None

@@ -37,12 +37,10 @@ class ObjectVersionCollection(object):
             'items': 'list[ObjectVersionSummary]',
             'prefixes': 'list[str]'
         }
-
         self.attribute_map = {
             'items': 'items',
             'prefixes': 'prefixes'
         }
-
         self._items = None
         self._prefixes = None
 

@@ -76,7 +76,6 @@ class UpdateWebAppFirewallPolicyDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'actions': 'actions',
@@ -89,7 +88,6 @@ class UpdateWebAppFirewallPolicyDetails(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._display_name = None
         self._actions = None
         self._request_access_control = None

@@ -50,7 +50,6 @@ class ObjectStorageSourceDetails(SourceDetails):
             'offset': 'float',
             'length': 'float'
         }
-
         self.attribute_map = {
             'source_type': 'sourceType',
             'relative_path': 'relativePath',
@@ -58,7 +57,6 @@ class ObjectStorageSourceDetails(SourceDetails):
             'offset': 'offset',
             'length': 'length'
         }
-
         self._source_type = None
         self._relative_path = None
         self._path = None

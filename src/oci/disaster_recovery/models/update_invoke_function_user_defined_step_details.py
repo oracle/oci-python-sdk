@@ -40,13 +40,11 @@ class UpdateInvokeFunctionUserDefinedStepDetails(UpdateDrPlanUserDefinedStepDeta
             'function_id': 'str',
             'request_body': 'str'
         }
-
         self.attribute_map = {
             'step_type': 'stepType',
             'function_id': 'functionId',
             'request_body': 'requestBody'
         }
-
         self._step_type = None
         self._function_id = None
         self._request_body = None

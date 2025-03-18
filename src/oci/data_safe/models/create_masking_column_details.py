@@ -92,7 +92,6 @@ class CreateMaskingColumnDetails(object):
             'is_masking_enabled': 'bool',
             'masking_formats': 'list[MaskingFormat]'
         }
-
         self.attribute_map = {
             'schema_name': 'schemaName',
             'object_name': 'objectName',
@@ -103,7 +102,6 @@ class CreateMaskingColumnDetails(object):
             'is_masking_enabled': 'isMaskingEnabled',
             'masking_formats': 'maskingFormats'
         }
-
         self._schema_name = None
         self._object_name = None
         self._object_type = None

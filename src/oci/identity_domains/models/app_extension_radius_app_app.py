@@ -103,7 +103,6 @@ class AppExtensionRadiusAppApp(object):
             'password_and_otp_together': 'bool',
             'group_membership_to_return': 'list[AppGroupMembershipToReturn]'
         }
-
         self.attribute_map = {
             'client_ip': 'clientIP',
             'port': 'port',
@@ -122,7 +121,6 @@ class AppExtensionRadiusAppApp(object):
             'password_and_otp_together': 'passwordAndOtpTogether',
             'group_membership_to_return': 'groupMembershipToReturn'
         }
-
         self._client_ip = None
         self._port = None
         self._secret_key = None

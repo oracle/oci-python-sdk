@@ -40,13 +40,11 @@ class LoadBalancerConfig(object):
             'listener_name': 'str',
             'backend_port': 'int'
         }
-
         self.attribute_map = {
             'load_balancer_id': 'loadBalancerId',
             'listener_name': 'listenerName',
             'backend_port': 'backendPort'
         }
-
         self._load_balancer_id = None
         self._listener_name = None
         self._backend_port = None

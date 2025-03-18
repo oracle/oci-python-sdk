@@ -33,12 +33,10 @@ class ChildReferenceDetail(object):
             'key': 'str',
             'target_object': 'object'
         }
-
         self.attribute_map = {
             'key': 'key',
             'target_object': 'targetObject'
         }
-
         self._key = None
         self._target_object = None
 

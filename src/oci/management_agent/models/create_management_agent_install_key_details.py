@@ -48,7 +48,6 @@ class CreateManagementAgentInstallKeyDetails(object):
             'compartment_id': 'str',
             'is_unlimited': 'bool'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'allowed_key_install_count': 'allowedKeyInstallCount',
@@ -56,7 +55,6 @@ class CreateManagementAgentInstallKeyDetails(object):
             'compartment_id': 'compartmentId',
             'is_unlimited': 'isUnlimited'
         }
-
         self._display_name = None
         self._allowed_key_install_count = None
         self._time_expires = None

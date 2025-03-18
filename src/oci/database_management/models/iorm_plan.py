@@ -78,13 +78,11 @@ class IormPlan(object):
             'plan_objective': 'str',
             'db_plan': 'DatabasePlan'
         }
-
         self.attribute_map = {
             'plan_status': 'planStatus',
             'plan_objective': 'planObjective',
             'db_plan': 'dbPlan'
         }
-
         self._plan_status = None
         self._plan_objective = None
         self._db_plan = None

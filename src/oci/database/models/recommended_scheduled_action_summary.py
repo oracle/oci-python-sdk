@@ -72,7 +72,6 @@ class RecommendedScheduledActionSummary(object):
             'action_members': 'list[ActionMember]',
             'action_params': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'action_order': 'actionOrder',
             'action_type': 'actionType',
@@ -82,7 +81,6 @@ class RecommendedScheduledActionSummary(object):
             'action_members': 'actionMembers',
             'action_params': 'actionParams'
         }
-
         self._action_order = None
         self._action_type = None
         self._display_name = None

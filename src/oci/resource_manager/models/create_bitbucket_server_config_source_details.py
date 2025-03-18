@@ -59,7 +59,6 @@ class CreateBitbucketServerConfigSourceDetails(CreateConfigSourceDetails):
             'project_id': 'str',
             'repository_id': 'str'
         }
-
         self.attribute_map = {
             'config_source_type': 'configSourceType',
             'working_directory': 'workingDirectory',
@@ -69,7 +68,6 @@ class CreateBitbucketServerConfigSourceDetails(CreateConfigSourceDetails):
             'project_id': 'projectId',
             'repository_id': 'repositoryId'
         }
-
         self._config_source_type = None
         self._working_directory = None
         self._configuration_source_provider_id = None

@@ -83,7 +83,6 @@ class ServiceProviderActionSummary(object):
             'lifecycle_state': 'str',
             'description': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -94,7 +93,6 @@ class ServiceProviderActionSummary(object):
             'lifecycle_state': 'lifecycleState',
             'description': 'description'
         }
-
         self._id = None
         self._name = None
         self._customer_display_name = None

@@ -43,14 +43,12 @@ class HeatWaveFleetMetrics(object):
             'fleet_clusters': 'list[HeatWaveClusterUsageMetrics]',
             'fleet_summary': 'list[HeatWaveFleetSummary]'
         }
-
         self.attribute_map = {
             'start_time': 'startTime',
             'end_time': 'endTime',
             'fleet_clusters': 'fleetClusters',
             'fleet_summary': 'fleetSummary'
         }
-
         self._start_time = None
         self._end_time = None
         self._fleet_clusters = None

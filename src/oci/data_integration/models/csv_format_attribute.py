@@ -65,7 +65,6 @@ class CsvFormatAttribute(AbstractFormatAttribute):
             'has_header': 'bool',
             'timestamp_format': 'str'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'is_file_pattern': 'isFilePattern',
@@ -76,7 +75,6 @@ class CsvFormatAttribute(AbstractFormatAttribute):
             'has_header': 'hasHeader',
             'timestamp_format': 'timestampFormat'
         }
-
         self._model_type = None
         self._is_file_pattern = None
         self._encoding = None

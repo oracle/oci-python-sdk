@@ -61,14 +61,12 @@ class RegionSubscription(object):
             'status': 'str',
             'is_home_region': 'bool'
         }
-
         self.attribute_map = {
             'region_key': 'regionKey',
             'region_name': 'regionName',
             'status': 'status',
             'is_home_region': 'isHomeRegion'
         }
-
         self._region_key = None
         self._region_name = None
         self._status = None

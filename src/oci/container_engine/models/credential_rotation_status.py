@@ -70,13 +70,11 @@ class CredentialRotationStatus(object):
             'status': 'str',
             'status_details': 'str'
         }
-
         self.attribute_map = {
             'time_auto_completion_scheduled': 'timeAutoCompletionScheduled',
             'status': 'status',
             'status_details': 'statusDetails'
         }
-
         self._time_auto_completion_scheduled = None
         self._status = None
         self._status_details = None

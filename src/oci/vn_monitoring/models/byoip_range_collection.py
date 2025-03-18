@@ -28,11 +28,9 @@ class ByoipRangeCollection(object):
         self.swagger_types = {
             'items': 'list[ByoipRangeSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

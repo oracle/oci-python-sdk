@@ -58,7 +58,6 @@ class UpdateExternalMacsConnectorDetails(UpdateExternalDatabaseConnectorDetails)
             'connection_string': 'DatabaseConnectionString',
             'connection_credentials': 'DatabaseConnectionCredentials'
         }
-
         self.attribute_map = {
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -67,7 +66,6 @@ class UpdateExternalMacsConnectorDetails(UpdateExternalDatabaseConnectorDetails)
             'connection_string': 'connectionString',
             'connection_credentials': 'connectionCredentials'
         }
-
         self._freeform_tags = None
         self._defined_tags = None
         self._display_name = None

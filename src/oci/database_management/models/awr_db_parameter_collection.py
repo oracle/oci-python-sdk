@@ -56,7 +56,6 @@ class AwrDbParameterCollection(AwrQueryResult):
             'awr_result_type': 'str',
             'items': 'list[AwrDbParameterSummary]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'version': 'version',
@@ -65,7 +64,6 @@ class AwrDbParameterCollection(AwrQueryResult):
             'awr_result_type': 'awrResultType',
             'items': 'items'
         }
-
         self._name = None
         self._version = None
         self._query_key = None

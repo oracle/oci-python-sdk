@@ -52,14 +52,12 @@ class AttachBootVolumeDetails(object):
             'instance_id': 'str',
             'encryption_in_transit_type': 'str'
         }
-
         self.attribute_map = {
             'boot_volume_id': 'bootVolumeId',
             'display_name': 'displayName',
             'instance_id': 'instanceId',
             'encryption_in_transit_type': 'encryptionInTransitType'
         }
-
         self._boot_volume_id = None
         self._display_name = None
         self._instance_id = None

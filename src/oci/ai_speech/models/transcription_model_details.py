@@ -319,14 +319,12 @@ class TranscriptionModelDetails(object):
             'language_code': 'str',
             'transcription_settings': 'TranscriptionSettings'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'domain': 'domain',
             'language_code': 'languageCode',
             'transcription_settings': 'transcriptionSettings'
         }
-
         self._model_type = None
         self._domain = None
         self._language_code = None

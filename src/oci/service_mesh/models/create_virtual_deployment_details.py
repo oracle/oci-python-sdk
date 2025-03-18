@@ -68,7 +68,6 @@ class CreateVirtualDeploymentDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'virtual_service_id': 'virtualServiceId',
             'name': 'name',
@@ -80,7 +79,6 @@ class CreateVirtualDeploymentDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._virtual_service_id = None
         self._name = None
         self._description = None

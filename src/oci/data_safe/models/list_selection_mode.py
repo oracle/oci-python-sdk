@@ -35,12 +35,10 @@ class ListSelectionMode(SelectionDetails):
             'selection_mode': 'str',
             'items': 'list[str]'
         }
-
         self.attribute_map = {
             'selection_mode': 'selectionMode',
             'items': 'items'
         }
-
         self._selection_mode = None
         self._items = None
         self._selection_mode = 'LIST'

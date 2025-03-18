@@ -68,7 +68,6 @@ class MonitoredResourceAssociationSummary(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'association_type': 'associationType',
             'source_resource_id': 'sourceResourceId',
@@ -80,7 +79,6 @@ class MonitoredResourceAssociationSummary(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._association_type = None
         self._source_resource_id = None
         self._destination_resource_id = None

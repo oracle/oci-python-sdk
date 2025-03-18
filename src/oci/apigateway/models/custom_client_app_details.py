@@ -45,14 +45,12 @@ class CustomClientAppDetails(ClientAppDetails):
             'client_secret_id': 'str',
             'client_secret_version_number': 'int'
         }
-
         self.attribute_map = {
             'type': 'type',
             'client_id': 'clientId',
             'client_secret_id': 'clientSecretId',
             'client_secret_version_number': 'clientSecretVersionNumber'
         }
-
         self._type = None
         self._client_id = None
         self._client_secret_id = None

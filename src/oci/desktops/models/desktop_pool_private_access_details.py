@@ -48,7 +48,6 @@ class DesktopPoolPrivateAccessDetails(object):
             'nsg_ids': 'list[str]',
             'private_ip': 'str'
         }
-
         self.attribute_map = {
             'vcn_id': 'vcnId',
             'endpoint_fqdn': 'endpointFqdn',
@@ -56,7 +55,6 @@ class DesktopPoolPrivateAccessDetails(object):
             'nsg_ids': 'nsgIds',
             'private_ip': 'privateIp'
         }
-
         self._vcn_id = None
         self._endpoint_fqdn = None
         self._subnet_id = None

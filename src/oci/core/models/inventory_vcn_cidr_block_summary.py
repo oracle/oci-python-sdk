@@ -33,12 +33,10 @@ class InventoryVcnCidrBlockSummary(object):
             'ip_cidr_block': 'str',
             'utilization': 'float'
         }
-
         self.attribute_map = {
             'ip_cidr_block': 'ipCidrBlock',
             'utilization': 'utilization'
         }
-
         self._ip_cidr_block = None
         self._utilization = None
 

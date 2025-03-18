@@ -43,13 +43,11 @@ class BulkCreateSqlFirewallAllowedSqlsDetails(object):
             'log_type': 'str',
             'selection': 'SelectionDetails'
         }
-
         self.attribute_map = {
             'sql_firewall_policy_id': 'sqlFirewallPolicyId',
             'log_type': 'logType',
             'selection': 'selection'
         }
-
         self._sql_firewall_policy_id = None
         self._log_type = None
         self._selection = None

@@ -28,11 +28,9 @@ class ListingRevisionAttachmentCollection(object):
         self.swagger_types = {
             'items': 'list[ListingRevisionAttachmentSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

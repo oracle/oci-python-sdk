@@ -36,12 +36,10 @@ class InlineInputJobDetails(InputJobDetails):
             'input_type': 'str',
             'message': 'str'
         }
-
         self.attribute_map = {
             'input_type': 'inputType',
             'message': 'message'
         }
-
         self._input_type = None
         self._message = None
         self._input_type = 'INLINE'

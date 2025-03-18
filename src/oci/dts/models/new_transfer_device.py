@@ -64,7 +64,6 @@ class NewTransferDevice(object):
             'transfer_job_id': 'str',
             'creation_time': 'datetime'
         }
-
         self.attribute_map = {
             'label': 'label',
             'serial_number': 'serialNumber',
@@ -74,7 +73,6 @@ class NewTransferDevice(object):
             'transfer_job_id': 'transferJobId',
             'creation_time': 'creationTime'
         }
-
         self._label = None
         self._serial_number = None
         self._iscsi_iqn = None

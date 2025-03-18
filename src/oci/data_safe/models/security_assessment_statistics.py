@@ -68,7 +68,6 @@ class SecurityAssessmentStatistics(object):
             '_pass': 'SectionStatistics',
             'deferred': 'SectionStatistics'
         }
-
         self.attribute_map = {
             'targets_count': 'targetsCount',
             'high_risk': 'highRisk',
@@ -79,7 +78,6 @@ class SecurityAssessmentStatistics(object):
             '_pass': 'pass',
             'deferred': 'deferred'
         }
-
         self._targets_count = None
         self._high_risk = None
         self._medium_risk = None

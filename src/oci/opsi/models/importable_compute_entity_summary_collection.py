@@ -28,11 +28,9 @@ class ImportableComputeEntitySummaryCollection(object):
         self.swagger_types = {
             'items': 'list[ImportableComputeEntitySummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

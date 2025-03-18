@@ -39,12 +39,10 @@ class StreamingTargetDetails(TargetDetails):
             'kind': 'str',
             'stream_id': 'str'
         }
-
         self.attribute_map = {
             'kind': 'kind',
             'stream_id': 'streamId'
         }
-
         self._kind = None
         self._stream_id = None
         self._kind = 'streaming'

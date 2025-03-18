@@ -45,14 +45,12 @@ class SteeringPolicyWeightedRule(SteeringPolicyRule):
             'cases': 'list[SteeringPolicyWeightedRuleCase]',
             'default_answer_data': 'list[SteeringPolicyWeightedAnswerData]'
         }
-
         self.attribute_map = {
             'description': 'description',
             'rule_type': 'ruleType',
             'cases': 'cases',
             'default_answer_data': 'defaultAnswerData'
         }
-
         self._description = None
         self._rule_type = None
         self._cases = None

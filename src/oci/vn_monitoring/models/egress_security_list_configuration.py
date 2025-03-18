@@ -40,13 +40,11 @@ class EgressSecurityListConfiguration(AllowedSecurityConfiguration):
             'security_list_id': 'str',
             'security_rule': 'EgressSecurityRule'
         }
-
         self.attribute_map = {
             'type': 'type',
             'security_list_id': 'securityListId',
             'security_rule': 'securityRule'
         }
-
         self._type = None
         self._security_list_id = None
         self._security_rule = None

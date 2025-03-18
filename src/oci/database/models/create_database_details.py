@@ -124,7 +124,6 @@ class CreateDatabaseDetails(object):
             'key_store_id': 'str',
             'encryption_key_location_details': 'EncryptionKeyLocationDetails'
         }
-
         self.attribute_map = {
             'db_name': 'dbName',
             'db_unique_name': 'dbUniqueName',
@@ -145,7 +144,6 @@ class CreateDatabaseDetails(object):
             'key_store_id': 'keyStoreId',
             'encryption_key_location_details': 'encryptionKeyLocationDetails'
         }
-
         self._db_name = None
         self._db_unique_name = None
         self._database_software_image_id = None

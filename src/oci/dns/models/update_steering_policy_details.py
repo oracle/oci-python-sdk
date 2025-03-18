@@ -92,7 +92,6 @@ class UpdateSteeringPolicyDetails(object):
             'answers': 'list[SteeringPolicyAnswer]',
             'rules': 'list[SteeringPolicyRule]'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'ttl': 'ttl',
@@ -103,7 +102,6 @@ class UpdateSteeringPolicyDetails(object):
             'answers': 'answers',
             'rules': 'rules'
         }
-
         self._display_name = None
         self._ttl = None
         self._health_check_monitor_id = None

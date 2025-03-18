@@ -33,12 +33,10 @@ class CreateOdaPrivateEndpointAttachmentDetails(object):
             'oda_instance_id': 'str',
             'oda_private_endpoint_id': 'str'
         }
-
         self.attribute_map = {
             'oda_instance_id': 'odaInstanceId',
             'oda_private_endpoint_id': 'odaPrivateEndpointId'
         }
-
         self._oda_instance_id = None
         self._oda_private_endpoint_id = None
 

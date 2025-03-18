@@ -83,14 +83,12 @@ class ExecuteMergePullRequestDetails(MergePullRequestDetails):
             'merge_strategy': 'str',
             'post_merge_action': 'str'
         }
-
         self.attribute_map = {
             'action_type': 'actionType',
             'commit_message': 'commitMessage',
             'merge_strategy': 'mergeStrategy',
             'post_merge_action': 'postMergeAction'
         }
-
         self._action_type = None
         self._commit_message = None
         self._merge_strategy = None

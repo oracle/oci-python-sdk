@@ -344,7 +344,6 @@ class VirtualCircuit(object):
             'ip_mtu': 'str',
             'virtual_circuit_redundancy_metadata': 'VirtualCircuitRedundancyMetadata'
         }
-
         self.attribute_map = {
             'bandwidth_shape_name': 'bandwidthShapeName',
             'bgp_management': 'bgpManagement',
@@ -379,7 +378,6 @@ class VirtualCircuit(object):
             'ip_mtu': 'ipMtu',
             'virtual_circuit_redundancy_metadata': 'virtualCircuitRedundancyMetadata'
         }
-
         self._bandwidth_shape_name = None
         self._bgp_management = None
         self._bgp_session_state = None

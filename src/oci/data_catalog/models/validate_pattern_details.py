@@ -43,14 +43,12 @@ class ValidatePatternDetails(object):
             'check_file_path_list': 'list[str]',
             'check_failure_limit': 'int'
         }
-
         self.attribute_map = {
             'expression': 'expression',
             'file_path_prefix': 'filePathPrefix',
             'check_file_path_list': 'checkFilePathList',
             'check_failure_limit': 'checkFailureLimit'
         }
-
         self._expression = None
         self._file_path_prefix = None
         self._check_file_path_list = None

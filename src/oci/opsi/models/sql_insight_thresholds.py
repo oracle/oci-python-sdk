@@ -58,7 +58,6 @@ class SqlInsightThresholds(object):
             'increase_in_inefficient_wait_in_pct': 'int',
             'improved_in_pct': 'int'
         }
-
         self.attribute_map = {
             'degradation_in_pct': 'degradationInPct',
             'variability': 'variability',
@@ -68,7 +67,6 @@ class SqlInsightThresholds(object):
             'increase_in_inefficient_wait_in_pct': 'increaseInInefficientWaitInPct',
             'improved_in_pct': 'improvedInPct'
         }
-
         self._degradation_in_pct = None
         self._variability = None
         self._inefficiency_in_pct = None

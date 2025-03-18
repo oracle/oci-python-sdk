@@ -33,12 +33,10 @@ class IncrementalReadConfig(object):
             'last_extracted_field_date': 'list[IncrementalFieldClause]',
             'last_extracted_data_entity_date': 'list[IncrementalDataEntityClause]'
         }
-
         self.attribute_map = {
             'last_extracted_field_date': 'lastExtractedFieldDate',
             'last_extracted_data_entity_date': 'lastExtractedDataEntityDate'
         }
-
         self._last_extracted_field_date = None
         self._last_extracted_data_entity_date = None
 

@@ -99,7 +99,6 @@ class PhaseOneConfigDetails(object):
             'diffie_helman_group': 'str',
             'lifetime_in_seconds': 'int'
         }
-
         self.attribute_map = {
             'is_custom_phase_one_config': 'isCustomPhaseOneConfig',
             'authentication_algorithm': 'authenticationAlgorithm',
@@ -107,7 +106,6 @@ class PhaseOneConfigDetails(object):
             'diffie_helman_group': 'diffieHelmanGroup',
             'lifetime_in_seconds': 'lifetimeInSeconds'
         }
-
         self._is_custom_phase_one_config = None
         self._authentication_algorithm = None
         self._encryption_algorithm = None

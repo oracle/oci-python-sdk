@@ -38,13 +38,11 @@ class MetricDataPoint(object):
             'unit': 'str',
             'dimensions': 'list[MetricDimensionDefinition]'
         }
-
         self.attribute_map = {
             'value': 'value',
             'unit': 'unit',
             'dimensions': 'dimensions'
         }
-
         self._value = None
         self._unit = None
         self._dimensions = None

@@ -70,7 +70,6 @@ class SoftwareSourceDetails(object):
             'software_source_type': 'str',
             'is_mandatory_for_autonomous_linux': 'bool'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -78,7 +77,6 @@ class SoftwareSourceDetails(object):
             'software_source_type': 'softwareSourceType',
             'is_mandatory_for_autonomous_linux': 'isMandatoryForAutonomousLinux'
         }
-
         self._id = None
         self._display_name = None
         self._description = None

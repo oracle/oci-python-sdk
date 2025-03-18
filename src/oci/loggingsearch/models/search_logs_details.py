@@ -43,14 +43,12 @@ class SearchLogsDetails(object):
             'search_query': 'str',
             'is_return_field_info': 'bool'
         }
-
         self.attribute_map = {
             'time_start': 'timeStart',
             'time_end': 'timeEnd',
             'search_query': 'searchQuery',
             'is_return_field_info': 'isReturnFieldInfo'
         }
-
         self._time_start = None
         self._time_end = None
         self._search_query = None

@@ -38,13 +38,11 @@ class WafRequest(object):
             'time_range_in_seconds': 'int',
             'count': 'int'
         }
-
         self.attribute_map = {
             'time_observed': 'timeObserved',
             'time_range_in_seconds': 'timeRangeInSeconds',
             'count': 'count'
         }
-
         self._time_observed = None
         self._time_range_in_seconds = None
         self._count = None

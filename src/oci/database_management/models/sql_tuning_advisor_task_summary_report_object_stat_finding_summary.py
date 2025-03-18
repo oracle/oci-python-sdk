@@ -63,7 +63,6 @@ class SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary(object):
             'problem_type': 'str',
             'reference_count': 'int'
         }
-
         self.attribute_map = {
             'object_hash_value': 'objectHashValue',
             'object_name': 'objectName',
@@ -72,7 +71,6 @@ class SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary(object):
             'problem_type': 'problemType',
             'reference_count': 'referenceCount'
         }
-
         self._object_hash_value = None
         self._object_name = None
         self._object_type = None

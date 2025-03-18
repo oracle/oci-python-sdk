@@ -43,12 +43,10 @@ class TriggerAction(object):
             'type': 'str',
             'filter': 'Filter'
         }
-
         self.attribute_map = {
             'type': 'type',
             'filter': 'filter'
         }
-
         self._type = None
         self._filter = None
 

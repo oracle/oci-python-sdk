@@ -63,7 +63,6 @@ class Disk(object):
             'persistent_mode': 'str',
             'is_cbt_enabled': 'bool'
         }
-
         self.attribute_map = {
             'name': 'name',
             'boot_order': 'bootOrder',
@@ -74,7 +73,6 @@ class Disk(object):
             'persistent_mode': 'persistentMode',
             'is_cbt_enabled': 'isCbtEnabled'
         }
-
         self._name = None
         self._boot_order = None
         self._uuid = None

@@ -38,11 +38,9 @@ class SecurityContext(object):
         self.swagger_types = {
             'security_context_type': 'str'
         }
-
         self.attribute_map = {
             'security_context_type': 'securityContextType'
         }
-
         self._security_context_type = None
 
     @staticmethod

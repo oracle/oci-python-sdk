@@ -245,7 +245,6 @@ class MysqlConnection(Connection):
             'additional_attributes': 'list[NameValuePair]',
             'db_system_id': 'str'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'id': 'id',
@@ -279,7 +278,6 @@ class MysqlConnection(Connection):
             'additional_attributes': 'additionalAttributes',
             'db_system_id': 'dbSystemId'
         }
-
         self._connection_type = None
         self._id = None
         self._display_name = None

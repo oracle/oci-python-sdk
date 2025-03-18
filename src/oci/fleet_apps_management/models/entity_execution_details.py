@@ -113,7 +113,6 @@ class EntityExecutionDetails(object):
             'time_started': 'datetime',
             'time_ended': 'datetime'
         }
-
         self.attribute_map = {
             'resource_id': 'resourceId',
             'resource_display_name': 'resourceDisplayName',
@@ -124,7 +123,6 @@ class EntityExecutionDetails(object):
             'time_started': 'timeStarted',
             'time_ended': 'timeEnded'
         }
-
         self._resource_id = None
         self._resource_display_name = None
         self._description = None

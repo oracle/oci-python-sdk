@@ -33,12 +33,10 @@ class CustomTableSummary(object):
             'id': 'str',
             'saved_custom_table': 'SavedCustomTable'
         }
-
         self.attribute_map = {
             'id': 'id',
             'saved_custom_table': 'savedCustomTable'
         }
-
         self._id = None
         self._saved_custom_table = None
 

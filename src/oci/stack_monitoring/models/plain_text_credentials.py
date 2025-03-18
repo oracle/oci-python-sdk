@@ -55,7 +55,6 @@ class PlainTextCredentials(MonitoredResourceCredential):
             'credential_type': 'str',
             'properties': 'list[CredentialProperty]'
         }
-
         self.attribute_map = {
             'source': 'source',
             'name': 'name',
@@ -64,7 +63,6 @@ class PlainTextCredentials(MonitoredResourceCredential):
             'credential_type': 'credentialType',
             'properties': 'properties'
         }
-
         self._source = None
         self._name = None
         self._type = None

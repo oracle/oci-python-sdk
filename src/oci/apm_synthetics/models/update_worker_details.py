@@ -57,7 +57,6 @@ class UpdateWorkerDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'configuration_details': 'configurationDetails',
             'status': 'status',
@@ -65,7 +64,6 @@ class UpdateWorkerDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._configuration_details = None
         self._status = None
         self._priority = None

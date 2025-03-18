@@ -68,7 +68,6 @@ class InstanceAgentCommand(object):
             'target': 'InstanceAgentCommandTarget',
             'content': 'InstanceAgentCommandContent'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -80,7 +79,6 @@ class InstanceAgentCommand(object):
             'target': 'target',
             'content': 'content'
         }
-
         self._id = None
         self._compartment_id = None
         self._display_name = None

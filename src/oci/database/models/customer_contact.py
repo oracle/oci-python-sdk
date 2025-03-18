@@ -28,11 +28,9 @@ class CustomerContact(object):
         self.swagger_types = {
             'email': 'str'
         }
-
         self.attribute_map = {
             'email': 'email'
         }
-
         self._email = None
 
     @property

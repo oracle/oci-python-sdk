@@ -45,14 +45,12 @@ class RetrievalTrace(Trace):
             'retrieval_input': 'str',
             'citations': 'list[Citation]'
         }
-
         self.attribute_map = {
             'time_created': 'timeCreated',
             'trace_type': 'traceType',
             'retrieval_input': 'retrievalInput',
             'citations': 'citations'
         }
-
         self._time_created = None
         self._trace_type = None
         self._retrieval_input = None

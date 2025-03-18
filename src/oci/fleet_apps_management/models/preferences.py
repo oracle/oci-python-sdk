@@ -38,13 +38,11 @@ class Preferences(object):
             'on_job_failure': 'bool',
             'on_topology_modification': 'bool'
         }
-
         self.attribute_map = {
             'on_upcoming_schedule': 'onUpcomingSchedule',
             'on_job_failure': 'onJobFailure',
             'on_topology_modification': 'onTopologyModification'
         }
-
         self._on_upcoming_schedule = None
         self._on_job_failure = None
         self._on_topology_modification = None

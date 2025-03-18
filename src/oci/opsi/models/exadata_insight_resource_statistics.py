@@ -53,7 +53,6 @@ class ExadataInsightResourceStatistics(object):
             'usage_change_percent': 'float',
             'instance_metrics': 'list[InstanceMetrics]'
         }
-
         self.attribute_map = {
             'usage': 'usage',
             'capacity': 'capacity',
@@ -62,7 +61,6 @@ class ExadataInsightResourceStatistics(object):
             'usage_change_percent': 'usageChangePercent',
             'instance_metrics': 'instanceMetrics'
         }
-
         self._usage = None
         self._capacity = None
         self._total_host_capacity = None

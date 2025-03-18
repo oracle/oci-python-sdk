@@ -43,14 +43,12 @@ class IdentityPropagationTrustImpersonationServiceUsers(object):
             'ref': 'str',
             'rule': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ocid': 'ocid',
             'ref': '$ref',
             'rule': 'rule'
         }
-
         self._value = None
         self._ocid = None
         self._ref = None

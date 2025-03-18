@@ -41,13 +41,11 @@ class DeniedSecurityAction(SecurityAction):
             'action_type': 'str',
             'denied_security_action_details': 'DeniedSecurityActionDetails'
         }
-
         self.attribute_map = {
             'action': 'action',
             'action_type': 'actionType',
             'denied_security_action_details': 'deniedSecurityActionDetails'
         }
-
         self._action = None
         self._action_type = None
         self._denied_security_action_details = None

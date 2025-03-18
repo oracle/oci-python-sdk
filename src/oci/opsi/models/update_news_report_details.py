@@ -161,7 +161,6 @@ class UpdateNewsReportDetails(object):
             'tag_filters': 'list[str]',
             'match_rule': 'str'
         }
-
         self.attribute_map = {
             'status': 'status',
             'news_frequency': 'newsFrequency',
@@ -177,7 +176,6 @@ class UpdateNewsReportDetails(object):
             'tag_filters': 'tagFilters',
             'match_rule': 'matchRule'
         }
-
         self._status = None
         self._news_frequency = None
         self._locale = None

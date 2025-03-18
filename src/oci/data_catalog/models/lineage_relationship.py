@@ -38,13 +38,11 @@ class LineageRelationship(object):
             'to_object_key': 'str',
             'relationship_type': 'str'
         }
-
         self.attribute_map = {
             'from_object_key': 'fromObjectKey',
             'to_object_key': 'toObjectKey',
             'relationship_type': 'relationshipType'
         }
-
         self._from_object_key = None
         self._to_object_key = None
         self._relationship_type = None

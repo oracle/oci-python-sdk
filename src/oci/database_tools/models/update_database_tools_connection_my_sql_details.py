@@ -80,7 +80,6 @@ class UpdateDatabaseToolsConnectionMySqlDetails(UpdateDatabaseToolsConnectionDet
             'key_stores': 'list[DatabaseToolsKeyStoreMySqlDetails]',
             'private_endpoint_id': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'defined_tags': 'definedTags',
@@ -94,7 +93,6 @@ class UpdateDatabaseToolsConnectionMySqlDetails(UpdateDatabaseToolsConnectionDet
             'key_stores': 'keyStores',
             'private_endpoint_id': 'privateEndpointId'
         }
-
         self._display_name = None
         self._defined_tags = None
         self._freeform_tags = None

@@ -28,11 +28,9 @@ class ScheduleDowngradeShapeMountTargetDetails(object):
         self.swagger_types = {
             'requested_throughput': 'int'
         }
-
         self.attribute_map = {
             'requested_throughput': 'requestedThroughput'
         }
-
         self._requested_throughput = None
 
     @property

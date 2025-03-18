@@ -104,7 +104,6 @@ class EtlRunSummary(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'data_read_in_bytes': 'dataReadInBytes',
@@ -118,7 +117,6 @@ class EtlRunSummary(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._compartment_id = None
         self._data_read_in_bytes = None
         self._data_written = None

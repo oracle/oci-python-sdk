@@ -38,13 +38,11 @@ class ChatDetails(object):
             'should_stream': 'bool',
             'session_id': 'str'
         }
-
         self.attribute_map = {
             'user_message': 'userMessage',
             'should_stream': 'shouldStream',
             'session_id': 'sessionId'
         }
-
         self._user_message = None
         self._should_stream = None
         self._session_id = None

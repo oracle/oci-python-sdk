@@ -38,13 +38,11 @@ class MonitoredResourceAliasSourceCredential(object):
             'name': 'str',
             'service': 'str'
         }
-
         self.attribute_map = {
             'source': 'source',
             'name': 'name',
             'service': 'service'
         }
-
         self._source = None
         self._name = None
         self._service = None

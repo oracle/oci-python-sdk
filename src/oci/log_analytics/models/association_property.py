@@ -38,13 +38,11 @@ class AssociationProperty(object):
             'value': 'str',
             'patterns': 'list[PatternOverride]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'value': 'value',
             'patterns': 'patterns'
         }
-
         self._name = None
         self._value = None
         self._patterns = None

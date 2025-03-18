@@ -71,7 +71,6 @@ class Shape(TypedObject):
             'description': 'str',
             'type': 'BaseType'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -83,7 +82,6 @@ class Shape(TypedObject):
             'description': 'description',
             'type': 'type'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

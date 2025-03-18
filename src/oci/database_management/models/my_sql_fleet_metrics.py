@@ -43,14 +43,12 @@ class MySqlFleetMetrics(object):
             'fleet_databases': 'list[MySqlDatabaseUsageMetrics]',
             'fleet_summary': 'list[MySqlFleetSummary]'
         }
-
         self.attribute_map = {
             'start_time': 'startTime',
             'end_time': 'endTime',
             'fleet_databases': 'fleetDatabases',
             'fleet_summary': 'fleetSummary'
         }
-
         self._start_time = None
         self._end_time = None
         self._fleet_databases = None

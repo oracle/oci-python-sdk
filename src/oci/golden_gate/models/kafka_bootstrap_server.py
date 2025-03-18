@@ -38,13 +38,11 @@ class KafkaBootstrapServer(object):
             'port': 'int',
             'private_ip': 'str'
         }
-
         self.attribute_map = {
             'host': 'host',
             'port': 'port',
             'private_ip': 'privateIp'
         }
-
         self._host = None
         self._port = None
         self._private_ip = None

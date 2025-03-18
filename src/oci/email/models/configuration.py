@@ -38,13 +38,11 @@ class Configuration(object):
             'http_submit_endpoint': 'str',
             'smtp_submit_endpoint': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'http_submit_endpoint': 'httpSubmitEndpoint',
             'smtp_submit_endpoint': 'smtpSubmitEndpoint'
         }
-
         self._compartment_id = None
         self._http_submit_endpoint = None
         self._smtp_submit_endpoint = None

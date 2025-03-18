@@ -50,7 +50,6 @@ class ScriptBasedExecutionDetails(ExecutionDetails):
             'command': 'str',
             'credentials': 'list[ConfigAssociationDetails]'
         }
-
         self.attribute_map = {
             'execution_type': 'executionType',
             'variables': 'variables',
@@ -58,7 +57,6 @@ class ScriptBasedExecutionDetails(ExecutionDetails):
             'command': 'command',
             'credentials': 'credentials'
         }
-
         self._execution_type = None
         self._variables = None
         self._content = None

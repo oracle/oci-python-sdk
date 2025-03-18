@@ -47,12 +47,10 @@ class JavaDownloadCountAggregationCollection(object):
             'aggregation_type': 'str',
             'items': 'list[JavaDownloadCountAggregation]'
         }
-
         self.attribute_map = {
             'aggregation_type': 'aggregationType',
             'items': 'items'
         }
-
         self._aggregation_type = None
         self._items = None
 

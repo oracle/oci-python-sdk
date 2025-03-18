@@ -33,12 +33,10 @@ class DesktopNetworkConfiguration(object):
             'vcn_id': 'str',
             'subnet_id': 'str'
         }
-
         self.attribute_map = {
             'vcn_id': 'vcnId',
             'subnet_id': 'subnetId'
         }
-
         self._vcn_id = None
         self._subnet_id = None
 

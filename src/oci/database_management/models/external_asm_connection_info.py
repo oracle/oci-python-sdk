@@ -40,13 +40,11 @@ class ExternalAsmConnectionInfo(ExternalDbSystemConnectionInfo):
             'connection_string': 'AsmConnectionString',
             'connection_credentials': 'AsmConnectionCredentials'
         }
-
         self.attribute_map = {
             'component_type': 'componentType',
             'connection_string': 'connectionString',
             'connection_credentials': 'connectionCredentials'
         }
-
         self._component_type = None
         self._connection_string = None
         self._connection_credentials = None

@@ -58,7 +58,6 @@ class CreateAppCatalogSubscriptionDetails(object):
             'time_retrieved': 'datetime',
             'signature': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'listing_id': 'listingId',
@@ -68,7 +67,6 @@ class CreateAppCatalogSubscriptionDetails(object):
             'time_retrieved': 'timeRetrieved',
             'signature': 'signature'
         }
-
         self._compartment_id = None
         self._listing_id = None
         self._listing_resource_version = None

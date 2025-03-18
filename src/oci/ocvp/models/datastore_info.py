@@ -43,12 +43,10 @@ class DatastoreInfo(object):
             'block_volume_ids': 'list[str]',
             'datastore_type': 'str'
         }
-
         self.attribute_map = {
             'block_volume_ids': 'blockVolumeIds',
             'datastore_type': 'datastoreType'
         }
-
         self._block_volume_ids = None
         self._datastore_type = None
 

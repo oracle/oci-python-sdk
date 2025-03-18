@@ -33,12 +33,10 @@ class GranularMaintenanceHistoryDetails(object):
             'execution_window': 'ExecutionWindow',
             'execution_actions': 'list[ExecutionAction]'
         }
-
         self.attribute_map = {
             'execution_window': 'executionWindow',
             'execution_actions': 'executionActions'
         }
-
         self._execution_window = None
         self._execution_actions = None
 

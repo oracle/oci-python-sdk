@@ -127,7 +127,6 @@ class SecurityQuestionSetting(object):
             'max_field_length': 'int',
             'num_questions_to_ans': 'int'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -148,7 +147,6 @@ class SecurityQuestionSetting(object):
             'max_field_length': 'maxFieldLength',
             'num_questions_to_ans': 'numQuestionsToAns'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

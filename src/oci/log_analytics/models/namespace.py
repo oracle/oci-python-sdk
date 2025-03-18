@@ -48,7 +48,6 @@ class Namespace(object):
             'is_log_set_enabled': 'bool',
             'is_data_ever_ingested': 'bool'
         }
-
         self.attribute_map = {
             'namespace_name': 'namespaceName',
             'compartment_id': 'compartmentId',
@@ -56,7 +55,6 @@ class Namespace(object):
             'is_log_set_enabled': 'isLogSetEnabled',
             'is_data_ever_ingested': 'isDataEverIngested'
         }
-
         self._namespace_name = None
         self._compartment_id = None
         self._is_onboarded = None

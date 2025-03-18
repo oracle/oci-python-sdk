@@ -63,7 +63,6 @@ class MaskingPolicyReferentialRelationSummary(object):
             'child': 'MaskingPolicyColumnsInfo',
             'masking_format': 'list[str]'
         }
-
         self.attribute_map = {
             'masking_policy_id': 'maskingPolicyId',
             'relation_type': 'relationType',
@@ -71,7 +70,6 @@ class MaskingPolicyReferentialRelationSummary(object):
             'child': 'child',
             'masking_format': 'maskingFormat'
         }
-
         self._masking_policy_id = None
         self._relation_type = None
         self._parent = None

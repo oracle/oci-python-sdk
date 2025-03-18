@@ -28,11 +28,9 @@ class MultipleTransferPackages(object):
         self.swagger_types = {
             'transfer_package_objects': 'list[TransferPackageSummary]'
         }
-
         self.attribute_map = {
             'transfer_package_objects': 'transferPackageObjects'
         }
-
         self._transfer_package_objects = None
 
     @property

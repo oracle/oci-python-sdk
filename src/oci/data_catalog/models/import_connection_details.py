@@ -33,12 +33,10 @@ class ImportConnectionDetails(object):
             'connection_detail': 'CreateConnectionDetails',
             'connection_payload': 'str'
         }
-
         self.attribute_map = {
             'connection_detail': 'connectionDetail',
             'connection_payload': 'connectionPayload'
         }
-
         self._connection_detail = None
         self._connection_payload = None
 

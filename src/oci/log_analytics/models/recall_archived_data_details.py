@@ -77,7 +77,6 @@ class RecallArchivedDataDetails(object):
             'is_recall_new_data_only': 'bool',
             'is_use_recommended_data_set': 'bool'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'time_data_ended': 'timeDataEnded',
@@ -89,7 +88,6 @@ class RecallArchivedDataDetails(object):
             'is_recall_new_data_only': 'isRecallNewDataOnly',
             'is_use_recommended_data_set': 'isUseRecommendedDataSet'
         }
-
         self._compartment_id = None
         self._time_data_ended = None
         self._time_data_started = None

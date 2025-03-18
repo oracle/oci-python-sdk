@@ -84,7 +84,6 @@ class Index(object):
             'lifecycle_state': 'str',
             'lifecycle_details': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'compartment_id': 'compartmentId',
@@ -94,7 +93,6 @@ class Index(object):
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails'
         }
-
         self._name = None
         self._compartment_id = None
         self._table_name = None

@@ -134,7 +134,6 @@ class BuildStageSummary(BuildPipelineStageSummary):
             'build_runner_shape_config': 'BuildRunnerShapeConfig',
             'private_access_config': 'NetworkChannel'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -159,7 +158,6 @@ class BuildStageSummary(BuildPipelineStageSummary):
             'build_runner_shape_config': 'buildRunnerShapeConfig',
             'private_access_config': 'privateAccessConfig'
         }
-
         self._id = None
         self._display_name = None
         self._project_id = None

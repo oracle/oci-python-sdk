@@ -133,7 +133,6 @@ class Pattern(object):
             'check_failure_limit': 'int',
             'properties': 'dict(str, dict(str, str))'
         }
-
         self.attribute_map = {
             'key': 'key',
             'display_name': 'displayName',
@@ -151,7 +150,6 @@ class Pattern(object):
             'check_failure_limit': 'checkFailureLimit',
             'properties': 'properties'
         }
-
         self._key = None
         self._display_name = None
         self._description = None

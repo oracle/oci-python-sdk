@@ -38,11 +38,9 @@ class JobEnvironmentConfigurationDetails(object):
         self.swagger_types = {
             'job_environment_type': 'str'
         }
-
         self.attribute_map = {
             'job_environment_type': 'jobEnvironmentType'
         }
-
         self._job_environment_type = None
 
     @staticmethod

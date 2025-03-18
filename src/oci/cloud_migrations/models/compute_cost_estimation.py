@@ -78,7 +78,6 @@ class ComputeCostEstimation(object):
             'memory_amount_gb': 'float',
             'gpu_count': 'float'
         }
-
         self.attribute_map = {
             'ocpu_per_hour': 'ocpuPerHour',
             'ocpu_per_hour_by_subscription': 'ocpuPerHourBySubscription',
@@ -92,7 +91,6 @@ class ComputeCostEstimation(object):
             'memory_amount_gb': 'memoryAmountGb',
             'gpu_count': 'gpuCount'
         }
-
         self._ocpu_per_hour = None
         self._ocpu_per_hour_by_subscription = None
         self._memory_gb_per_hour = None

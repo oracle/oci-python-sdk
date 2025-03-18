@@ -45,14 +45,12 @@ class VideoFaceDetectionFeature(VideoFeature):
             'is_landmark_required': 'bool',
             'min_confidence': 'float'
         }
-
         self.attribute_map = {
             'feature_type': 'featureType',
             'max_results': 'maxResults',
             'is_landmark_required': 'isLandmarkRequired',
             'min_confidence': 'minConfidence'
         }
-
         self._feature_type = None
         self._max_results = None
         self._is_landmark_required = None

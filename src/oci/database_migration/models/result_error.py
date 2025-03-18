@@ -43,14 +43,12 @@ class ResultError(object):
             'issue': 'str',
             'action': 'str'
         }
-
         self.attribute_map = {
             'code': 'code',
             'message': 'message',
             'issue': 'issue',
             'action': 'action'
         }
-
         self._code = None
         self._message = None
         self._issue = None

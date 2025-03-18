@@ -28,11 +28,9 @@ class UpdateSessionDetails(object):
         self.swagger_types = {
             'display_name': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName'
         }
-
         self._display_name = None
 
     @property

@@ -57,11 +57,9 @@ class UpdateVolumeAttachmentDetails(object):
         self.swagger_types = {
             'iscsi_login_state': 'str'
         }
-
         self.attribute_map = {
             'iscsi_login_state': 'iscsiLoginState'
         }
-
         self._iscsi_login_state = None
 
     @property

@@ -58,7 +58,6 @@ class CertificateIssuerName(object):
             'common_name': 'str',
             'email_address': 'str'
         }
-
         self.attribute_map = {
             'country': 'country',
             'state_province': 'stateProvince',
@@ -68,7 +67,6 @@ class CertificateIssuerName(object):
             'common_name': 'commonName',
             'email_address': 'emailAddress'
         }
-
         self._country = None
         self._state_province = None
         self._locality = None

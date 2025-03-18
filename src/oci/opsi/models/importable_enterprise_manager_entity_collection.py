@@ -28,11 +28,9 @@ class ImportableEnterpriseManagerEntityCollection(object):
         self.swagger_types = {
             'items': 'list[ImportableEnterpriseManagerEntity]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

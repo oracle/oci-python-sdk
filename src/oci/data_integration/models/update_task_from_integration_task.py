@@ -110,7 +110,6 @@ class UpdateTaskFromIntegrationTask(UpdateTaskDetails):
             'registry_metadata': 'RegistryMetadata',
             'data_flow': 'DataFlow'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -130,7 +129,6 @@ class UpdateTaskFromIntegrationTask(UpdateTaskDetails):
             'registry_metadata': 'registryMetadata',
             'data_flow': 'dataFlow'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

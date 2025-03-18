@@ -167,7 +167,6 @@ class AppRole(object):
             'app': 'AppRoleApp',
             'members': 'list[AppRoleMembers]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -196,7 +195,6 @@ class AppRole(object):
             'app': 'app',
             'members': 'members'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

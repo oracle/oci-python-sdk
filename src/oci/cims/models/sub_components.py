@@ -33,12 +33,10 @@ class SubComponents(object):
             'sub_category': 'dict(str, str)',
             'schema': 'str'
         }
-
         self.attribute_map = {
             'sub_category': 'subCategory',
             'schema': 'schema'
         }
-
         self._sub_category = None
         self._schema = None
 

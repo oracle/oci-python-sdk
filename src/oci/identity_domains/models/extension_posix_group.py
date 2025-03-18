@@ -28,11 +28,9 @@ class ExtensionPosixGroup(object):
         self.swagger_types = {
             'gid_number': 'int'
         }
-
         self.attribute_map = {
             'gid_number': 'gidNumber'
         }
-
         self._gid_number = None
 
     @property

@@ -58,11 +58,9 @@ class DeployArtifactSource(object):
         self.swagger_types = {
             'deploy_artifact_source_type': 'str'
         }
-
         self.attribute_map = {
             'deploy_artifact_source_type': 'deployArtifactSourceType'
         }
-
         self._deploy_artifact_source_type = None
 
     @staticmethod

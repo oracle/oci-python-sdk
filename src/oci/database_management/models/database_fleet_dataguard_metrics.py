@@ -28,11 +28,9 @@ class DatabaseFleetDataguardMetrics(object):
         self.swagger_types = {
             'dataguard_metrics': 'list[DataguardMetrics]'
         }
-
         self.attribute_map = {
             'dataguard_metrics': 'dataguardMetrics'
         }
-
         self._dataguard_metrics = None
 
     @property

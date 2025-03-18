@@ -167,7 +167,6 @@ class Subnet(object):
             'virtual_router_ip': 'str',
             'virtual_router_mac': 'str'
         }
-
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'cidr_block': 'cidrBlock',
@@ -192,7 +191,6 @@ class Subnet(object):
             'virtual_router_ip': 'virtualRouterIp',
             'virtual_router_mac': 'virtualRouterMac'
         }
-
         self._availability_domain = None
         self._cidr_block = None
         self._compartment_id = None

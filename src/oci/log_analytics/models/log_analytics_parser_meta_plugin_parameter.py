@@ -53,7 +53,6 @@ class LogAnalyticsParserMetaPluginParameter(object):
             'plugin_name': 'str',
             'type': 'str'
         }
-
         self.attribute_map = {
             'description': 'description',
             'name': 'name',
@@ -62,7 +61,6 @@ class LogAnalyticsParserMetaPluginParameter(object):
             'plugin_name': 'pluginName',
             'type': 'type'
         }
-
         self._description = None
         self._name = None
         self._is_mandatory = None

@@ -125,7 +125,6 @@ class VolumeGroup(object):
             'is_hydrated': 'bool',
             'volume_group_replicas': 'list[VolumeGroupReplicaInfo]'
         }
-
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'compartment_id': 'compartmentId',
@@ -142,7 +141,6 @@ class VolumeGroup(object):
             'is_hydrated': 'isHydrated',
             'volume_group_replicas': 'volumeGroupReplicas'
         }
-
         self._availability_domain = None
         self._compartment_id = None
         self._defined_tags = None

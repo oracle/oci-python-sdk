@@ -28,11 +28,9 @@ class Permission(object):
         self.swagger_types = {
             'p': 'str'
         }
-
         self.attribute_map = {
             'p': 'p'
         }
-
         self._p = None
 
     @property

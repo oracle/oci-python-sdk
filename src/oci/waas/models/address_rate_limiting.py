@@ -43,14 +43,12 @@ class AddressRateLimiting(object):
             'max_delayed_count_per_address': 'int',
             'block_response_code': 'int'
         }
-
         self.attribute_map = {
             'is_enabled': 'isEnabled',
             'allowed_rate_per_address': 'allowedRatePerAddress',
             'max_delayed_count_per_address': 'maxDelayedCountPerAddress',
             'block_response_code': 'blockResponseCode'
         }
-
         self._is_enabled = None
         self._allowed_rate_per_address = None
         self._max_delayed_count_per_address = None

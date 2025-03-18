@@ -63,7 +63,6 @@ class AppCatalogListing(object):
             'publisher_name': 'str',
             'summary': 'str'
         }
-
         self.attribute_map = {
             'contact_url': 'contactUrl',
             'description': 'description',
@@ -74,7 +73,6 @@ class AppCatalogListing(object):
             'publisher_name': 'publisherName',
             'summary': 'summary'
         }
-
         self._contact_url = None
         self._description = None
         self._listing_id = None

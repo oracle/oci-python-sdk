@@ -60,7 +60,6 @@ class ValidateDatabaseToolsConnectionPostgresqlResult(ValidateDatabaseToolsConne
             'database_name': 'str',
             'database_version': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'code': 'code',
@@ -70,7 +69,6 @@ class ValidateDatabaseToolsConnectionPostgresqlResult(ValidateDatabaseToolsConne
             'database_name': 'databaseName',
             'database_version': 'databaseVersion'
         }
-
         self._type = None
         self._code = None
         self._message = None

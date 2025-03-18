@@ -51,7 +51,6 @@ class AwrDatabaseCollection(AwrQueryResult):
             'awr_result_type': 'str',
             'items': 'list[AwrDatabaseSummary]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'version': 'version',
@@ -59,7 +58,6 @@ class AwrDatabaseCollection(AwrQueryResult):
             'awr_result_type': 'awrResultType',
             'items': 'items'
         }
-
         self._name = None
         self._version = None
         self._db_query_time_in_secs = None

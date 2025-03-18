@@ -34,12 +34,10 @@ class CpeDeviceShapeSummary(object):
             'id': 'str',
             'cpe_device_info': 'CpeDeviceInfo'
         }
-
         self.attribute_map = {
             'id': 'id',
             'cpe_device_info': 'cpeDeviceInfo'
         }
-
         self._id = None
         self._cpe_device_info = None
 

@@ -76,7 +76,6 @@ class TypedExpression(TypedObject):
             'expression': 'str',
             'type': 'str'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -89,7 +88,6 @@ class TypedExpression(TypedObject):
             'expression': 'expression',
             'type': 'type'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

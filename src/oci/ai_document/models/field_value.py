@@ -88,7 +88,6 @@ class FieldValue(object):
             'bounding_polygon': 'BoundingPolygon',
             'word_indexes': 'list[int]'
         }
-
         self.attribute_map = {
             'value_type': 'valueType',
             'text': 'text',
@@ -96,7 +95,6 @@ class FieldValue(object):
             'bounding_polygon': 'boundingPolygon',
             'word_indexes': 'wordIndexes'
         }
-
         self._value_type = None
         self._text = None
         self._confidence = None

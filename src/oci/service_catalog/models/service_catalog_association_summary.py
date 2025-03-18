@@ -48,7 +48,6 @@ class ServiceCatalogAssociationSummary(object):
             'entity_type': 'str',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'service_catalog_id': 'serviceCatalogId',
@@ -56,7 +55,6 @@ class ServiceCatalogAssociationSummary(object):
             'entity_type': 'entityType',
             'time_created': 'timeCreated'
         }
-
         self._id = None
         self._service_catalog_id = None
         self._entity_id = None

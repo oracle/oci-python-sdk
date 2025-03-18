@@ -153,7 +153,6 @@ class LogAnalyticsWarning(object):
             'type_name': 'str',
             'severity': 'int'
         }
-
         self.attribute_map = {
             'agent_id': 'agentId',
             'host_name': 'hostName',
@@ -182,7 +181,6 @@ class LogAnalyticsWarning(object):
             'type_name': 'typeName',
             'severity': 'severity'
         }
-
         self._agent_id = None
         self._host_name = None
         self._rule_display_name = None

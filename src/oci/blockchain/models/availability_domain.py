@@ -42,11 +42,9 @@ class AvailabilityDomain(object):
         self.swagger_types = {
             'ads': 'str'
         }
-
         self.attribute_map = {
             'ads': 'ads'
         }
-
         self._ads = None
 
     @property

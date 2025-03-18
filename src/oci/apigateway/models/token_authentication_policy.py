@@ -66,7 +66,6 @@ class TokenAuthenticationPolicy(AuthenticationPolicy):
             'validation_policy': 'TokenAuthenticationValidationPolicy',
             'validation_failure_policy': 'ValidationFailurePolicy'
         }
-
         self.attribute_map = {
             'is_anonymous_access_allowed': 'isAnonymousAccessAllowed',
             'type': 'type',
@@ -77,7 +76,6 @@ class TokenAuthenticationPolicy(AuthenticationPolicy):
             'validation_policy': 'validationPolicy',
             'validation_failure_policy': 'validationFailurePolicy'
         }
-
         self._is_anonymous_access_allowed = None
         self._type = None
         self._token_header = None

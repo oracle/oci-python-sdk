@@ -94,7 +94,6 @@ class CreateStandbyDetails(object):
             'protection_mode': 'str',
             'transport_type': 'str'
         }
-
         self.attribute_map = {
             'source_database_id': 'sourceDatabaseId',
             'database_admin_password': 'databaseAdminPassword',
@@ -106,7 +105,6 @@ class CreateStandbyDetails(object):
             'protection_mode': 'protectionMode',
             'transport_type': 'transportType'
         }
-
         self._source_database_id = None
         self._database_admin_password = None
         self._source_tde_wallet_password = None

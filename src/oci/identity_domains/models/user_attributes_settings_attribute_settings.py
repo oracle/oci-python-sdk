@@ -38,13 +38,11 @@ class UserAttributesSettingsAttributeSettings(object):
             'end_user_mutability': 'str',
             'end_user_mutability_canonical_values': 'list[str]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'end_user_mutability': 'endUserMutability',
             'end_user_mutability_canonical_values': 'endUserMutabilityCanonicalValues'
         }
-
         self._name = None
         self._end_user_mutability = None
         self._end_user_mutability_canonical_values = None

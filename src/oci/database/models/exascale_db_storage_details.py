@@ -33,12 +33,10 @@ class ExascaleDbStorageDetails(object):
             'total_size_in_gbs': 'int',
             'available_size_in_gbs': 'int'
         }
-
         self.attribute_map = {
             'total_size_in_gbs': 'totalSizeInGbs',
             'available_size_in_gbs': 'availableSizeInGbs'
         }
-
         self._total_size_in_gbs = None
         self._available_size_in_gbs = None
 

@@ -88,7 +88,6 @@ class AddonOptionSummary(object):
             'system_tags': 'dict(str, dict(str, object))',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'name': 'name',
             'addon_schema_version': 'addonSchemaVersion',
@@ -102,7 +101,6 @@ class AddonOptionSummary(object):
             'system_tags': 'systemTags',
             'time_created': 'timeCreated'
         }
-
         self._name = None
         self._addon_schema_version = None
         self._addon_group = None

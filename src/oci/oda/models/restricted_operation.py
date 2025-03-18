@@ -33,12 +33,10 @@ class RestrictedOperation(object):
             'operation_name': 'str',
             'restricting_service': 'str'
         }
-
         self.attribute_map = {
             'operation_name': 'operationName',
             'restricting_service': 'restrictingService'
         }
-
         self._operation_name = None
         self._restricting_service = None
 

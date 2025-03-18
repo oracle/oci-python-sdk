@@ -33,12 +33,10 @@ class DerivedKeyResponse(object):
             'signing_key': 'str',
             'principal': 'CommonPrincipal'
         }
-
         self.attribute_map = {
             'signing_key': 'signingKey',
             'principal': 'principal'
         }
-
         self._signing_key = None
         self._principal = None
 

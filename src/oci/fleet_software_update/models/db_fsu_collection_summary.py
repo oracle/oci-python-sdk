@@ -136,7 +136,6 @@ class DbFsuCollectionSummary(FsuCollectionSummary):
             'system_tags': 'dict(str, dict(str, object))',
             'source_major_version': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -155,7 +154,6 @@ class DbFsuCollectionSummary(FsuCollectionSummary):
             'system_tags': 'systemTags',
             'source_major_version': 'sourceMajorVersion'
         }
-
         self._id = None
         self._display_name = None
         self._type = None

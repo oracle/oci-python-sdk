@@ -53,7 +53,6 @@ class SubscriptionSummary(object):
             'service_name': 'str',
             'subscribed_services': 'list[SubscribedServiceSummary]'
         }
-
         self.attribute_map = {
             'status': 'status',
             'time_start': 'timeStart',
@@ -62,7 +61,6 @@ class SubscriptionSummary(object):
             'service_name': 'serviceName',
             'subscribed_services': 'subscribedServices'
         }
-
         self._status = None
         self._time_start = None
         self._time_end = None

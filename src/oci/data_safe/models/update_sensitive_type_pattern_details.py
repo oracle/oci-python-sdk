@@ -85,7 +85,6 @@ class UpdateSensitiveTypePatternDetails(UpdateSensitiveTypeDetails):
             'search_type': 'str',
             'default_masking_format_id': 'str'
         }
-
         self.attribute_map = {
             'entity_type': 'entityType',
             'display_name': 'displayName',
@@ -100,7 +99,6 @@ class UpdateSensitiveTypePatternDetails(UpdateSensitiveTypeDetails):
             'search_type': 'searchType',
             'default_masking_format_id': 'defaultMaskingFormatId'
         }
-
         self._entity_type = None
         self._display_name = None
         self._short_name = None

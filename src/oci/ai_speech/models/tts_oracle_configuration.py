@@ -40,13 +40,11 @@ class TtsOracleConfiguration(TtsConfiguration):
             'model_details': 'TtsOracleModelDetails',
             'speech_settings': 'TtsOracleSpeechSettings'
         }
-
         self.attribute_map = {
             'model_family': 'modelFamily',
             'model_details': 'modelDetails',
             'speech_settings': 'speechSettings'
         }
-
         self._model_family = None
         self._model_details = None
         self._speech_settings = None

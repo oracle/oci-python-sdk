@@ -151,7 +151,6 @@ class QueryWorkRequest(object):
             'display_query_string': 'str',
             'internal_query_string': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -170,7 +169,6 @@ class QueryWorkRequest(object):
             'display_query_string': 'displayQueryString',
             'internal_query_string': 'internalQueryString'
         }
-
         self._id = None
         self._compartment_id = None
         self._time_started = None

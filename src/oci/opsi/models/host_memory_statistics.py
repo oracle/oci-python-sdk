@@ -85,7 +85,6 @@ class HostMemoryStatistics(HostResourceStatistics):
             'huge_pages_reserved': 'int',
             'load': 'SummaryStatistics'
         }
-
         self.attribute_map = {
             'usage': 'usage',
             'capacity': 'capacity',
@@ -100,7 +99,6 @@ class HostMemoryStatistics(HostResourceStatistics):
             'huge_pages_reserved': 'hugePagesReserved',
             'load': 'load'
         }
-
         self._usage = None
         self._capacity = None
         self._utilization_percent = None

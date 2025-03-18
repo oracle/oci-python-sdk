@@ -43,14 +43,12 @@ class UpdateLocalPeeringGatewayDetails(object):
             'freeform_tags': 'dict(str, str)',
             'route_table_id': 'str'
         }
-
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
             'route_table_id': 'routeTableId'
         }
-
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None

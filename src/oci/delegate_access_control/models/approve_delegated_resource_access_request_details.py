@@ -38,13 +38,11 @@ class ApproveDelegatedResourceAccessRequestDetails(object):
             'additional_message': 'str',
             'time_approved_for_access': 'datetime'
         }
-
         self.attribute_map = {
             'approver_comment': 'approverComment',
             'additional_message': 'additionalMessage',
             'time_approved_for_access': 'timeApprovedForAccess'
         }
-
         self._approver_comment = None
         self._additional_message = None
         self._time_approved_for_access = None

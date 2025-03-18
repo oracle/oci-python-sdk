@@ -153,7 +153,6 @@ class DatabaseToolsConnectionSummary(object):
             'type': 'str',
             'runtime_support': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -169,7 +168,6 @@ class DatabaseToolsConnectionSummary(object):
             'type': 'type',
             'runtime_support': 'runtimeSupport'
         }
-
         self._id = None
         self._display_name = None
         self._compartment_id = None

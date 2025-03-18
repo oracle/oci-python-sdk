@@ -53,7 +53,6 @@ class MetricError(object):
             'subject': 'str',
             'level': 'str'
         }
-
         self.attribute_map = {
             'time_generated': 'timeGenerated',
             'error_type': 'errorType',
@@ -62,7 +61,6 @@ class MetricError(object):
             'subject': 'subject',
             'level': 'level'
         }
-
         self._time_generated = None
         self._error_type = None
         self._content_type = None

@@ -28,11 +28,9 @@ class DbSystemCollection(object):
         self.swagger_types = {
             'items': 'list[DbSystemSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

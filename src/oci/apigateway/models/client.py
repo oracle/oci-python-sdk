@@ -33,12 +33,10 @@ class Client(object):
             'name': 'str',
             'token': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'token': 'token'
         }
-
         self._name = None
         self._token = None
 

@@ -47,12 +47,10 @@ class SddcPassword(object):
             'password_type': 'str',
             'value': 'str'
         }
-
         self.attribute_map = {
             'password_type': 'passwordType',
             'value': 'value'
         }
-
         self._password_type = None
         self._value = None
 

@@ -28,11 +28,9 @@ class LogAnalyticsMetaSourceTypeCollection(object):
         self.swagger_types = {
             'items': 'list[LogAnalyticsMetaSourceType]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

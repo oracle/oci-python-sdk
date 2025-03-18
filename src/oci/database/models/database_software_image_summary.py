@@ -179,7 +179,6 @@ class DatabaseSoftwareImageSummary(object):
             'ls_inventory': 'str',
             'is_upgrade_supported': 'bool'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -199,7 +198,6 @@ class DatabaseSoftwareImageSummary(object):
             'ls_inventory': 'lsInventory',
             'is_upgrade_supported': 'isUpgradeSupported'
         }
-
         self._id = None
         self._compartment_id = None
         self._database_version = None

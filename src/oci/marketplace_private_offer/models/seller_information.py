@@ -33,12 +33,10 @@ class SellerInformation(object):
             'primary_contact': 'Contact',
             'additional_contacts': 'list[Contact]'
         }
-
         self.attribute_map = {
             'primary_contact': 'primaryContact',
             'additional_contacts': 'additionalContacts'
         }
-
         self._primary_contact = None
         self._additional_contacts = None
 

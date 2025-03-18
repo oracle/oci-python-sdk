@@ -104,7 +104,6 @@ class AuthenticationFactorSettingsTotpSettings(object):
             'email_otp_validity_duration_in_mins': 'int',
             'email_passcode_length': 'int'
         }
-
         self.attribute_map = {
             'hashing_algorithm': 'hashingAlgorithm',
             'passcode_length': 'passcodeLength',
@@ -117,7 +116,6 @@ class AuthenticationFactorSettingsTotpSettings(object):
             'email_otp_validity_duration_in_mins': 'emailOtpValidityDurationInMins',
             'email_passcode_length': 'emailPasscodeLength'
         }
-
         self._hashing_algorithm = None
         self._passcode_length = None
         self._key_refresh_interval_in_days = None

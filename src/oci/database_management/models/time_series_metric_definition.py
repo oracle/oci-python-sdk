@@ -34,12 +34,10 @@ class TimeSeriesMetricDefinition(object):
             'metric_name': 'str',
             'datapoints': 'list[TimeSeriesMetricDataPoint]'
         }
-
         self.attribute_map = {
             'metric_name': 'metricName',
             'datapoints': 'datapoints'
         }
-
         self._metric_name = None
         self._datapoints = None
 

@@ -43,14 +43,12 @@ class ContextualData(object):
             'schema_version': 'str',
             'payload': 'str'
         }
-
         self.attribute_map = {
             'client_id': 'clientId',
             'schema_name': 'schemaName',
             'schema_version': 'schemaVersion',
             'payload': 'payload'
         }
-
         self._client_id = None
         self._schema_name = None
         self._schema_version = None

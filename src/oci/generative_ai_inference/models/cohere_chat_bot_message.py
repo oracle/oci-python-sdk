@@ -40,13 +40,11 @@ class CohereChatBotMessage(CohereMessage):
             'message': 'str',
             'tool_calls': 'list[CohereToolCall]'
         }
-
         self.attribute_map = {
             'role': 'role',
             'message': 'message',
             'tool_calls': 'toolCalls'
         }
-
         self._role = None
         self._message = None
         self._tool_calls = None

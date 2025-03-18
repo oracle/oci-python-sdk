@@ -65,7 +65,6 @@ class UpdateBitbucketServerAccessTokenConfigurationSourceProviderDetails(UpdateC
             'secret_id': 'str',
             'api_endpoint': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
@@ -76,7 +75,6 @@ class UpdateBitbucketServerAccessTokenConfigurationSourceProviderDetails(UpdateC
             'secret_id': 'secretId',
             'api_endpoint': 'apiEndpoint'
         }
-
         self._display_name = None
         self._description = None
         self._config_source_provider_type = None

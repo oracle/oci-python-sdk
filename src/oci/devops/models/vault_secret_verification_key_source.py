@@ -35,12 +35,10 @@ class VaultSecretVerificationKeySource(VerificationKeySource):
             'verification_key_source_type': 'str',
             'vault_secret_id': 'str'
         }
-
         self.attribute_map = {
             'verification_key_source_type': 'verificationKeySourceType',
             'vault_secret_id': 'vaultSecretId'
         }
-
         self._verification_key_source_type = None
         self._vault_secret_id = None
         self._verification_key_source_type = 'VAULT_SECRET'

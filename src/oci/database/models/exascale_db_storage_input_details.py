@@ -28,11 +28,9 @@ class ExascaleDbStorageInputDetails(object):
         self.swagger_types = {
             'total_size_in_gbs': 'int'
         }
-
         self.attribute_map = {
             'total_size_in_gbs': 'totalSizeInGbs'
         }
-
         self._total_size_in_gbs = None
 
     @property

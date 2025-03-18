@@ -33,12 +33,10 @@ class CatalogPermissionsSummary(object):
             'catalog_id': 'str',
             'user_permissions': 'list[str]'
         }
-
         self.attribute_map = {
             'catalog_id': 'catalogId',
             'user_permissions': 'userPermissions'
         }
-
         self._catalog_id = None
         self._user_permissions = None
 

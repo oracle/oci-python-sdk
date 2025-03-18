@@ -111,7 +111,6 @@ class ConnectionFromObjectStorageDetails(ConnectionDetails):
             'finger_print': 'str',
             'pass_phrase': 'str'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -131,7 +130,6 @@ class ConnectionFromObjectStorageDetails(ConnectionDetails):
             'finger_print': 'fingerPrint',
             'pass_phrase': 'passPhrase'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

@@ -86,7 +86,6 @@ class AutoScalingConfiguration(object):
             'max_resource_count': 'int',
             'min_resource_count': 'int'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
@@ -101,7 +100,6 @@ class AutoScalingConfiguration(object):
             'max_resource_count': 'maxResourceCount',
             'min_resource_count': 'minResourceCount'
         }
-
         self._compartment_id = None
         self._defined_tags = None
         self._display_name = None

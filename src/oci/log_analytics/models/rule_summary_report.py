@@ -38,13 +38,11 @@ class RuleSummaryReport(object):
             'ingest_time_rules_count': 'int',
             'saved_search_rules_count': 'int'
         }
-
         self.attribute_map = {
             'total_count': 'totalCount',
             'ingest_time_rules_count': 'ingestTimeRulesCount',
             'saved_search_rules_count': 'savedSearchRulesCount'
         }
-
         self._total_count = None
         self._ingest_time_rules_count = None
         self._saved_search_rules_count = None

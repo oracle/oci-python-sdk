@@ -60,7 +60,6 @@ class PrimaryKey(UniqueKey):
             'attribute_refs': 'list[KeyAttribute]',
             'object_status': 'int'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -70,7 +69,6 @@ class PrimaryKey(UniqueKey):
             'attribute_refs': 'attributeRefs',
             'object_status': 'objectStatus'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

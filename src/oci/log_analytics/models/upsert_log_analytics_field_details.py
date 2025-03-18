@@ -48,7 +48,6 @@ class UpsertLogAnalyticsFieldDetails(object):
             'display_name': 'str',
             'name': 'str'
         }
-
         self.attribute_map = {
             'data_type': 'dataType',
             'is_multi_valued': 'isMultiValued',
@@ -56,7 +55,6 @@ class UpsertLogAnalyticsFieldDetails(object):
             'display_name': 'displayName',
             'name': 'name'
         }
-
         self._data_type = None
         self._is_multi_valued = None
         self._description = None

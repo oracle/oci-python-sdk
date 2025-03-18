@@ -53,14 +53,12 @@ class ApplicationSummary(object):
             'version': 'str',
             'state': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'project_id': 'projectId',
             'version': 'version',
             'state': 'state'
         }
-
         self._id = None
         self._project_id = None
         self._version = None

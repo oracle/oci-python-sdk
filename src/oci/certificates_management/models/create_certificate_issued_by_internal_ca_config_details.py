@@ -129,7 +129,6 @@ class CreateCertificateIssuedByInternalCaConfigDetails(CreateCertificateConfigDe
             'key_algorithm': 'str',
             'signature_algorithm': 'str'
         }
-
         self.attribute_map = {
             'config_type': 'configType',
             'version_name': 'versionName',
@@ -141,7 +140,6 @@ class CreateCertificateIssuedByInternalCaConfigDetails(CreateCertificateConfigDe
             'key_algorithm': 'keyAlgorithm',
             'signature_algorithm': 'signatureAlgorithm'
         }
-
         self._config_type = None
         self._version_name = None
         self._certificate_profile_type = None

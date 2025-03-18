@@ -38,13 +38,11 @@ class SqlPlanInsights(object):
             'value': 'int',
             'category': 'str'
         }
-
         self.attribute_map = {
             'text': 'text',
             'value': 'value',
             'category': 'category'
         }
-
         self._text = None
         self._value = None
         self._category = None

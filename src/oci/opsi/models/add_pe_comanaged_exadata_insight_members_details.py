@@ -35,12 +35,10 @@ class AddPeComanagedExadataInsightMembersDetails(AddExadataInsightMembersDetails
             'entity_source': 'str',
             'member_entity_details': 'list[CreatePeComanagedExadataVmclusterDetails]'
         }
-
         self.attribute_map = {
             'entity_source': 'entitySource',
             'member_entity_details': 'memberEntityDetails'
         }
-
         self._entity_source = None
         self._member_entity_details = None
         self._entity_source = 'PE_COMANAGED_EXADATA'

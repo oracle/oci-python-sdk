@@ -68,7 +68,6 @@ class DataSourceEventSummary(object):
             'comments': 'str',
             'event_info': 'DataSourceEventInfo'
         }
-
         self.attribute_map = {
             'region': 'region',
             'event_date': 'eventDate',
@@ -78,7 +77,6 @@ class DataSourceEventSummary(object):
             'comments': 'comments',
             'event_info': 'eventInfo'
         }
-
         self._region = None
         self._event_date = None
         self._data_source_id = None

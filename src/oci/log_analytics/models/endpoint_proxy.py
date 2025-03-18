@@ -52,13 +52,11 @@ class EndpointProxy(object):
             'credential_name': 'str',
             'credential_type': 'str'
         }
-
         self.attribute_map = {
             'url': 'url',
             'credential_name': 'credentialName',
             'credential_type': 'credentialType'
         }
-
         self._url = None
         self._credential_name = None
         self._credential_type = None

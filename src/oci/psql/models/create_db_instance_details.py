@@ -38,13 +38,11 @@ class CreateDbInstanceDetails(object):
             'description': 'str',
             'private_ip': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
             'private_ip': 'privateIp'
         }
-
         self._display_name = None
         self._description = None
         self._private_ip = None

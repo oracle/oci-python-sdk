@@ -28,11 +28,9 @@ class UpdateGovernanceInstanceConfigurationDetails(object):
         self.swagger_types = {
             'sender_info': 'UpdateSenderConfig'
         }
-
         self.attribute_map = {
             'sender_info': 'senderInfo'
         }
-
         self._sender_info = None
 
     @property

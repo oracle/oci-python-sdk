@@ -33,12 +33,10 @@ class UpdateBackupDetails(object):
             'retention_period_in_days': 'int',
             'retention_period_in_years': 'int'
         }
-
         self.attribute_map = {
             'retention_period_in_days': 'retentionPeriodInDays',
             'retention_period_in_years': 'retentionPeriodInYears'
         }
-
         self._retention_period_in_days = None
         self._retention_period_in_years = None
 

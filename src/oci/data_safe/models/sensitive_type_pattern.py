@@ -140,7 +140,6 @@ class SensitiveTypePattern(SensitiveType):
             'search_type': 'str',
             'default_masking_format_id': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'entity_type': 'entityType',
@@ -163,7 +162,6 @@ class SensitiveTypePattern(SensitiveType):
             'search_type': 'searchType',
             'default_masking_format_id': 'defaultMaskingFormatId'
         }
-
         self._id = None
         self._entity_type = None
         self._display_name = None

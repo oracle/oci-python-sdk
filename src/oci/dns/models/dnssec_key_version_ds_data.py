@@ -39,12 +39,10 @@ class DnssecKeyVersionDsData(object):
             'rdata': 'str',
             'digest_type': 'str'
         }
-
         self.attribute_map = {
             'rdata': 'rdata',
             'digest_type': 'digestType'
         }
-
         self._rdata = None
         self._digest_type = None
 

@@ -33,12 +33,10 @@ class JobRunLogDetails(object):
             'log_group_id': 'str',
             'log_id': 'str'
         }
-
         self.attribute_map = {
             'log_group_id': 'logGroupId',
             'log_id': 'logId'
         }
-
         self._log_group_id = None
         self._log_id = None
 

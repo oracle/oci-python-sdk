@@ -33,12 +33,10 @@ class PutMessagesDetailsEntry(object):
             'content': 'str',
             'metadata': 'MessageMetadata'
         }
-
         self.attribute_map = {
             'content': 'content',
             'metadata': 'metadata'
         }
-
         self._content = None
         self._metadata = None
 

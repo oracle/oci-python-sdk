@@ -43,14 +43,12 @@ class LogAnalyticsEntitySummaryReport(object):
             'entities_with_management_agent_count': 'int',
             'compartment_id': 'str'
         }
-
         self.attribute_map = {
             'active_entities_count': 'activeEntitiesCount',
             'entities_with_has_logs_collected_count': 'entitiesWithHasLogsCollectedCount',
             'entities_with_management_agent_count': 'entitiesWithManagementAgentCount',
             'compartment_id': 'compartmentId'
         }
-
         self._active_entities_count = None
         self._entities_with_has_logs_collected_count = None
         self._entities_with_management_agent_count = None

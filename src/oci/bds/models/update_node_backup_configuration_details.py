@@ -53,7 +53,6 @@ class UpdateNodeBackupConfigurationDetails(object):
             'number_of_backups_to_retain': 'int',
             'backup_type': 'str'
         }
-
         self.attribute_map = {
             'level_type_details': 'levelTypeDetails',
             'display_name': 'displayName',
@@ -62,7 +61,6 @@ class UpdateNodeBackupConfigurationDetails(object):
             'number_of_backups_to_retain': 'numberOfBackupsToRetain',
             'backup_type': 'backupType'
         }
-
         self._level_type_details = None
         self._display_name = None
         self._timezone = None

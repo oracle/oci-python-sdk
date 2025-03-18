@@ -28,11 +28,9 @@ class ContainerInstanceShapeCollection(object):
         self.swagger_types = {
             'items': 'list[ContainerInstanceShapeSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

@@ -28,11 +28,9 @@ class DetachManagedInstancesFromManagedInstanceGroupDetails(object):
         self.swagger_types = {
             'managed_instances': 'list[str]'
         }
-
         self.attribute_map = {
             'managed_instances': 'managedInstances'
         }
-
         self._managed_instances = None
 
     @property

@@ -35,12 +35,10 @@ class AmdVmUpdateInstancePlatformConfig(UpdateInstancePlatformConfig):
             'type': 'str',
             'is_symmetric_multi_threading_enabled': 'bool'
         }
-
         self.attribute_map = {
             'type': 'type',
             'is_symmetric_multi_threading_enabled': 'isSymmetricMultiThreadingEnabled'
         }
-
         self._type = None
         self._is_symmetric_multi_threading_enabled = None
         self._type = 'AMD_VM'

@@ -105,7 +105,6 @@ class PublishedObjectSummary(object):
             'identifier': 'str',
             'metadata': 'ObjectMetadata'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -118,7 +117,6 @@ class PublishedObjectSummary(object):
             'identifier': 'identifier',
             'metadata': 'metadata'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

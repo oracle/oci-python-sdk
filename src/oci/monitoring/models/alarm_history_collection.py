@@ -38,13 +38,11 @@ class AlarmHistoryCollection(object):
             'is_enabled': 'bool',
             'entries': 'list[AlarmHistoryEntry]'
         }
-
         self.attribute_map = {
             'alarm_id': 'alarmId',
             'is_enabled': 'isEnabled',
             'entries': 'entries'
         }
-
         self._alarm_id = None
         self._is_enabled = None
         self._entries = None

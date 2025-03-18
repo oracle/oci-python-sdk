@@ -38,11 +38,9 @@ class Filter(object):
         self.swagger_types = {
             'trigger_source': 'str'
         }
-
         self.attribute_map = {
             'trigger_source': 'triggerSource'
         }
-
         self._trigger_source = None
 
     @staticmethod

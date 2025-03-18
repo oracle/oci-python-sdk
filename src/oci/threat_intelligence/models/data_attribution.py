@@ -48,7 +48,6 @@ class DataAttribution(object):
             'time_first_seen': 'datetime',
             'time_last_seen': 'datetime'
         }
-
         self.attribute_map = {
             'confidence': 'confidence',
             'source': 'source',
@@ -56,7 +55,6 @@ class DataAttribution(object):
             'time_first_seen': 'timeFirstSeen',
             'time_last_seen': 'timeLastSeen'
         }
-
         self._confidence = None
         self._source = None
         self._visibility = None

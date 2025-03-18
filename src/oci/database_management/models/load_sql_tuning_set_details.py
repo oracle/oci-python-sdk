@@ -313,7 +313,6 @@ class LoadSqlTuningSetDetails(object):
             'end_snapshot': 'int',
             'baseline_name': 'str'
         }
-
         self.attribute_map = {
             'credential_details': 'credentialDetails',
             'database_credential': 'databaseCredential',
@@ -343,7 +342,6 @@ class LoadSqlTuningSetDetails(object):
             'end_snapshot': 'endSnapshot',
             'baseline_name': 'baselineName'
         }
-
         self._credential_details = None
         self._database_credential = None
         self._show_sql_only = None

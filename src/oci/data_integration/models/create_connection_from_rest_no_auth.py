@@ -75,7 +75,6 @@ class CreateConnectionFromRestNoAuth(CreateConnectionDetails):
             'connection_properties': 'list[ConnectionProperty]',
             'registry_metadata': 'RegistryMetadata'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -88,7 +87,6 @@ class CreateConnectionFromRestNoAuth(CreateConnectionDetails):
             'connection_properties': 'connectionProperties',
             'registry_metadata': 'registryMetadata'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

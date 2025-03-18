@@ -34,12 +34,10 @@ class PlanJobOperationDetails(JobOperationDetails):
             'operation': 'str',
             'terraform_advanced_options': 'TerraformAdvancedOptions'
         }
-
         self.attribute_map = {
             'operation': 'operation',
             'terraform_advanced_options': 'terraformAdvancedOptions'
         }
-
         self._operation = None
         self._terraform_advanced_options = None
         self._operation = 'PLAN'

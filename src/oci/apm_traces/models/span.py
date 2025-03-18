@@ -103,7 +103,6 @@ class Span(object):
             'is_error': 'bool',
             'source_name': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'parent_span_key': 'parentSpanKey',
@@ -120,7 +119,6 @@ class Span(object):
             'is_error': 'isError',
             'source_name': 'sourceName'
         }
-
         self._key = None
         self._parent_span_key = None
         self._trace_key = None

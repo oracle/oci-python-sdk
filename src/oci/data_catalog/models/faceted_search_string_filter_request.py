@@ -33,12 +33,10 @@ class FacetedSearchStringFilterRequest(object):
             'field': 'str',
             'values': 'list[str]'
         }
-
         self.attribute_map = {
             'field': 'field',
             'values': 'values'
         }
-
         self._field = None
         self._values = None
 

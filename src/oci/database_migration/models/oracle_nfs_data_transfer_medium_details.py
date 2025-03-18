@@ -50,7 +50,6 @@ class OracleNfsDataTransferMediumDetails(OracleDataTransferMediumDetails):
             'target': 'HostDumpTransferDetails',
             'shared_storage_mount_target_id': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'object_storage_bucket': 'objectStorageBucket',
@@ -58,7 +57,6 @@ class OracleNfsDataTransferMediumDetails(OracleDataTransferMediumDetails):
             'target': 'target',
             'shared_storage_mount_target_id': 'sharedStorageMountTargetId'
         }
-
         self._type = None
         self._object_storage_bucket = None
         self._source = None

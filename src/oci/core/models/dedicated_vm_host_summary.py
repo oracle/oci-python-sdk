@@ -109,7 +109,6 @@ class DedicatedVmHostSummary(object):
             'total_memory_in_gbs': 'float',
             'remaining_memory_in_gbs': 'float'
         }
-
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'compartment_id': 'compartmentId',
@@ -124,7 +123,6 @@ class DedicatedVmHostSummary(object):
             'total_memory_in_gbs': 'totalMemoryInGBs',
             'remaining_memory_in_gbs': 'remainingMemoryInGBs'
         }
-
         self._availability_domain = None
         self._compartment_id = None
         self._dedicated_vm_host_shape = None

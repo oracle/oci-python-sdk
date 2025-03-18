@@ -115,12 +115,10 @@ class BlocklistEntry(object):
             'operation': 'str',
             'reason': 'str'
         }
-
         self.attribute_map = {
             'operation': 'operation',
             'reason': 'reason'
         }
-
         self._operation = None
         self._reason = None
 

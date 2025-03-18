@@ -33,12 +33,10 @@ class DetectStackDriftDetails(object):
             'resource_addresses': 'list[str]',
             'is_provider_upgrade_required': 'bool'
         }
-
         self.attribute_map = {
             'resource_addresses': 'resourceAddresses',
             'is_provider_upgrade_required': 'isProviderUpgradeRequired'
         }
-
         self._resource_addresses = None
         self._is_provider_upgrade_required = None
 

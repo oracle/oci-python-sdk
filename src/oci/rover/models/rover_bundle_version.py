@@ -38,13 +38,11 @@ class RoverBundleVersion(object):
             'compartment_id': 'str',
             'bundle_name': 'str'
         }
-
         self.attribute_map = {
             'bundle_version': 'bundleVersion',
             'compartment_id': 'compartmentId',
             'bundle_name': 'bundleName'
         }
-
         self._bundle_version = None
         self._compartment_id = None
         self._bundle_name = None

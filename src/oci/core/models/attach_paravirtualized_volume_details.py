@@ -64,7 +64,6 @@ class AttachParavirtualizedVolumeDetails(AttachVolumeDetails):
             'volume_id': 'str',
             'is_pv_encryption_in_transit_enabled': 'bool'
         }
-
         self.attribute_map = {
             'device': 'device',
             'display_name': 'displayName',
@@ -75,7 +74,6 @@ class AttachParavirtualizedVolumeDetails(AttachVolumeDetails):
             'volume_id': 'volumeId',
             'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled'
         }
-
         self._device = None
         self._display_name = None
         self._instance_id = None

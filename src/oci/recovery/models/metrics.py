@@ -63,7 +63,6 @@ class Metrics(object):
             'current_retention_period_in_seconds': 'float',
             'minimum_recovery_needed_in_days': 'float'
         }
-
         self.attribute_map = {
             'backup_space_used_in_gbs': 'backupSpaceUsedInGBs',
             'backup_space_estimate_in_gbs': 'backupSpaceEstimateInGBs',
@@ -74,7 +73,6 @@ class Metrics(object):
             'current_retention_period_in_seconds': 'currentRetentionPeriodInSeconds',
             'minimum_recovery_needed_in_days': 'minimumRecoveryNeededInDays'
         }
-
         self._backup_space_used_in_gbs = None
         self._backup_space_estimate_in_gbs = None
         self._unprotected_window_in_seconds = None

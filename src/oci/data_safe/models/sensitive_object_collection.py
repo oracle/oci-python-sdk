@@ -28,11 +28,9 @@ class SensitiveObjectCollection(object):
         self.swagger_types = {
             'items': 'list[SensitiveObjectSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

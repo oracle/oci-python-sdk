@@ -53,7 +53,6 @@ class UpdateClusterNetworkInstancePoolDetails(object):
             'size': 'int',
             'instance_configuration_id': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'defined_tags': 'definedTags',
@@ -62,7 +61,6 @@ class UpdateClusterNetworkInstancePoolDetails(object):
             'size': 'size',
             'instance_configuration_id': 'instanceConfigurationId'
         }
-
         self._id = None
         self._defined_tags = None
         self._display_name = None

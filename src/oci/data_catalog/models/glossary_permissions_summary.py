@@ -33,12 +33,10 @@ class GlossaryPermissionsSummary(object):
             'glossary_key': 'str',
             'user_permissions': 'list[str]'
         }
-
         self.attribute_map = {
             'glossary_key': 'glossaryKey',
             'user_permissions': 'userPermissions'
         }
-
         self._glossary_key = None
         self._user_permissions = None
 

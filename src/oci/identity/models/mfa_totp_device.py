@@ -92,7 +92,6 @@ class MfaTotpDevice(object):
             'inactive_status': 'int',
             'is_activated': 'bool'
         }
-
         self.attribute_map = {
             'id': 'id',
             'seed': 'seed',
@@ -103,7 +102,6 @@ class MfaTotpDevice(object):
             'inactive_status': 'inactiveStatus',
             'is_activated': 'isActivated'
         }
-
         self._id = None
         self._seed = None
         self._user_id = None

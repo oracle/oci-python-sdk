@@ -44,12 +44,10 @@ class GroupExtInstanceLevelSchemaNames(object):
             'db_instance_id': 'str',
             'schema_name': 'str'
         }
-
         self.attribute_map = {
             'db_instance_id': 'dbInstanceId',
             'schema_name': 'schemaName'
         }
-
         self._db_instance_id = None
         self._schema_name = None
 

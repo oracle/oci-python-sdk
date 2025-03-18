@@ -56,7 +56,6 @@ class CreateRollbackCycleApplyActionDetails(CreateFsuActionDetails):
             'defined_tags': 'dict(str, dict(str, object))',
             'fsu_cycle_id': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'compartment_id': 'compartmentId',
@@ -65,7 +64,6 @@ class CreateRollbackCycleApplyActionDetails(CreateFsuActionDetails):
             'defined_tags': 'definedTags',
             'fsu_cycle_id': 'fsuCycleId'
         }
-
         self._display_name = None
         self._compartment_id = None
         self._type = None

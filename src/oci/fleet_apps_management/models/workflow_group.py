@@ -48,13 +48,11 @@ class WorkflowGroup(object):
             'type': 'str',
             'steps': 'list[WorkflowComponent]'
         }
-
         self.attribute_map = {
             'group_name': 'groupName',
             'type': 'type',
             'steps': 'steps'
         }
-
         self._group_name = None
         self._type = None
         self._steps = None

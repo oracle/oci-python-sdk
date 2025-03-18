@@ -83,7 +83,6 @@ class JobMetricSummary(object):
             'value': 'str',
             'batch_key': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'description': 'description',
@@ -98,7 +97,6 @@ class JobMetricSummary(object):
             'value': 'value',
             'batch_key': 'batchKey'
         }
-
         self._key = None
         self._description = None
         self._job_execution_key = None

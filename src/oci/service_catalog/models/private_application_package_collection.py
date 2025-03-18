@@ -28,11 +28,9 @@ class PrivateApplicationPackageCollection(object):
         self.swagger_types = {
             'items': 'list[PrivateApplicationPackageSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

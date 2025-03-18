@@ -37,12 +37,10 @@ class CommitMultipartUploadPartDetails(object):
             'part_num': 'int',
             'etag': 'str'
         }
-
         self.attribute_map = {
             'part_num': 'partNum',
             'etag': 'etag'
         }
-
         self._part_num = None
         self._etag = None
 

@@ -43,14 +43,12 @@ class SqlTuningAdvisorTaskSummaryReportStatementCounts(object):
             'finding_count': 'int',
             'error_count': 'int'
         }
-
         self.attribute_map = {
             'distinct_sql': 'distinctSql',
             'total_sql': 'totalSql',
             'finding_count': 'findingCount',
             'error_count': 'errorCount'
         }
-
         self._distinct_sql = None
         self._total_sql = None
         self._finding_count = None

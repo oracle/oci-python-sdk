@@ -50,7 +50,6 @@ class UpdateApdexRulesDetails(UpdateConfigDetails):
             'rules': 'list[Apdex]',
             'display_name': 'str'
         }
-
         self.attribute_map = {
             'config_type': 'configType',
             'freeform_tags': 'freeformTags',
@@ -58,7 +57,6 @@ class UpdateApdexRulesDetails(UpdateConfigDetails):
             'rules': 'rules',
             'display_name': 'displayName'
         }
-
         self._config_type = None
         self._freeform_tags = None
         self._defined_tags = None

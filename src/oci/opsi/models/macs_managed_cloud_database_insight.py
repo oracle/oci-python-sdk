@@ -152,7 +152,6 @@ class MacsManagedCloudDatabaseInsight(DatabaseInsight):
             'parent_id': 'str',
             'root_id': 'str'
         }
-
         self.attribute_map = {
             'entity_source': 'entitySource',
             'id': 'id',
@@ -180,7 +179,6 @@ class MacsManagedCloudDatabaseInsight(DatabaseInsight):
             'parent_id': 'parentId',
             'root_id': 'rootId'
         }
-
         self._entity_source = None
         self._id = None
         self._compartment_id = None

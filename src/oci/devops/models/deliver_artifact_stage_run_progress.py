@@ -65,7 +65,6 @@ class DeliverArtifactStageRunProgress(BuildPipelineStageRunProgress):
             'build_pipeline_stage_predecessors': 'BuildPipelineStagePredecessorCollection',
             'delivered_artifacts': 'DeliveredArtifactCollection'
         }
-
         self.attribute_map = {
             'stage_display_name': 'stageDisplayName',
             'build_pipeline_stage_type': 'buildPipelineStageType',
@@ -76,7 +75,6 @@ class DeliverArtifactStageRunProgress(BuildPipelineStageRunProgress):
             'build_pipeline_stage_predecessors': 'buildPipelineStagePredecessors',
             'delivered_artifacts': 'deliveredArtifacts'
         }
-
         self._stage_display_name = None
         self._build_pipeline_stage_type = None
         self._build_pipeline_stage_id = None

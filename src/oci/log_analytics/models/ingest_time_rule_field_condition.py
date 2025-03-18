@@ -57,7 +57,6 @@ class IngestTimeRuleFieldCondition(IngestTimeRuleCondition):
             'field_value': 'str',
             'additional_conditions': 'list[IngestTimeRuleAdditionalFieldCondition]'
         }
-
         self.attribute_map = {
             'kind': 'kind',
             'field_name': 'fieldName',
@@ -65,7 +64,6 @@ class IngestTimeRuleFieldCondition(IngestTimeRuleCondition):
             'field_value': 'fieldValue',
             'additional_conditions': 'additionalConditions'
         }
-
         self._kind = None
         self._field_name = None
         self._field_operator = None

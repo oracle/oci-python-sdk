@@ -28,11 +28,9 @@ class BulkDeleteResourcesDetails(object):
         self.swagger_types = {
             'resources': 'list[BulkActionResource]'
         }
-
         self.attribute_map = {
             'resources': 'resources'
         }
-
         self._resources = None
 
     @property

@@ -57,14 +57,12 @@ class RepositoryObject(object):
             'sha': 'str',
             'is_binary': 'bool'
         }
-
         self.attribute_map = {
             'type': 'type',
             'size_in_bytes': 'sizeInBytes',
             'sha': 'sha',
             'is_binary': 'isBinary'
         }
-
         self._type = None
         self._size_in_bytes = None
         self._sha = None

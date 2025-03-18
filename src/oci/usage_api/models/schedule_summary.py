@@ -73,7 +73,6 @@ class ScheduleSummary(object):
             'system_tags': 'dict(str, dict(str, object))',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -86,7 +85,6 @@ class ScheduleSummary(object):
             'system_tags': 'systemTags',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._id = None
         self._name = None
         self._description = None

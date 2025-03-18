@@ -38,13 +38,11 @@ class UrlListSummary(object):
             'total_urls': 'int',
             'parent_resource_id': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'total_urls': 'totalUrls',
             'parent_resource_id': 'parentResourceId'
         }
-
         self._name = None
         self._total_urls = None
         self._parent_resource_id = None

@@ -54,7 +54,6 @@ class InstanceConfigurationInstanceSourceViaImageDetails(InstanceConfigurationIn
             'boot_volume_vpus_per_gb': 'int',
             'instance_source_image_filter_details': 'InstanceConfigurationInstanceSourceImageFilterDetails'
         }
-
         self.attribute_map = {
             'source_type': 'sourceType',
             'boot_volume_size_in_gbs': 'bootVolumeSizeInGBs',
@@ -63,7 +62,6 @@ class InstanceConfigurationInstanceSourceViaImageDetails(InstanceConfigurationIn
             'boot_volume_vpus_per_gb': 'bootVolumeVpusPerGB',
             'instance_source_image_filter_details': 'instanceSourceImageFilterDetails'
         }
-
         self._source_type = None
         self._boot_volume_size_in_gbs = None
         self._image_id = None

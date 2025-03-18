@@ -28,11 +28,9 @@ class AuditArchiveRetrievalCollection(object):
         self.swagger_types = {
             'items': 'list[AuditArchiveRetrievalSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

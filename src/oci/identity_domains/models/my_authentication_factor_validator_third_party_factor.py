@@ -48,13 +48,11 @@ class MyAuthenticationFactorValidatorThirdPartyFactor(object):
             'third_party_factor_type': 'str',
             'third_party_factor_id': 'str'
         }
-
         self.attribute_map = {
             'third_party_vendor_name': 'thirdPartyVendorName',
             'third_party_factor_type': 'thirdPartyFactorType',
             'third_party_factor_id': 'thirdPartyFactorId'
         }
-
         self._third_party_vendor_name = None
         self._third_party_factor_type = None
         self._third_party_factor_id = None

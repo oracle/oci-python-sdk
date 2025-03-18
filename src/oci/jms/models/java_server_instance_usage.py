@@ -140,7 +140,6 @@ class JavaServerInstanceUsage(object):
             'time_first_seen': 'datetime',
             'time_last_seen': 'datetime'
         }
-
         self.attribute_map = {
             'server_instance_key': 'serverInstanceKey',
             'fleet_id': 'fleetId',
@@ -162,7 +161,6 @@ class JavaServerInstanceUsage(object):
             'time_first_seen': 'timeFirstSeen',
             'time_last_seen': 'timeLastSeen'
         }
-
         self._server_instance_key = None
         self._fleet_id = None
         self._server_instance_name = None

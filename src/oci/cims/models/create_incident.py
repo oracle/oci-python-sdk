@@ -79,7 +79,6 @@ class CreateIncident(object):
             'contacts': 'list[Contact]',
             'referrer': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'ticket': 'ticket',
@@ -89,7 +88,6 @@ class CreateIncident(object):
             'contacts': 'contacts',
             'referrer': 'referrer'
         }
-
         self._compartment_id = None
         self._ticket = None
         self._csi = None

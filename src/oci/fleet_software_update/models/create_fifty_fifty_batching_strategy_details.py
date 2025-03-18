@@ -40,13 +40,11 @@ class CreateFiftyFiftyBatchingStrategyDetails(CreateBatchingStrategyDetails):
             'is_wait_for_batch_resume': 'bool',
             'is_force_rolling': 'bool'
         }
-
         self.attribute_map = {
             'type': 'type',
             'is_wait_for_batch_resume': 'isWaitForBatchResume',
             'is_force_rolling': 'isForceRolling'
         }
-
         self._type = None
         self._is_wait_for_batch_resume = None
         self._is_force_rolling = None

@@ -36,12 +36,10 @@ class PatchNameSelectionDetails(PatchSelectionDetails):
             'selection_type': 'str',
             'patch_name': 'str'
         }
-
         self.attribute_map = {
             'selection_type': 'selectionType',
             'patch_name': 'patchName'
         }
-
         self._selection_type = None
         self._patch_name = None
         self._selection_type = 'PATCH_NAME'

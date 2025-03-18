@@ -43,12 +43,10 @@ class ReplicaDetails(object):
             'region': 'str',
             'status': 'str'
         }
-
         self.attribute_map = {
             'region': 'region',
             'status': 'status'
         }
-
         self._region = None
         self._status = None
 

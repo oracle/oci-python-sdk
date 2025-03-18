@@ -47,12 +47,10 @@ class Extract(object):
             'performance_profile': 'str',
             'long_trans_duration': 'int'
         }
-
         self.attribute_map = {
             'performance_profile': 'performanceProfile',
             'long_trans_duration': 'longTransDuration'
         }
-
         self._performance_profile = None
         self._long_trans_duration = None
 

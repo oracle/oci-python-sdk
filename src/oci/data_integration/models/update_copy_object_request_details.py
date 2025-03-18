@@ -33,11 +33,9 @@ class UpdateCopyObjectRequestDetails(object):
         self.swagger_types = {
             'status': 'str'
         }
-
         self.attribute_map = {
             'status': 'status'
         }
-
         self._status = None
 
     @property

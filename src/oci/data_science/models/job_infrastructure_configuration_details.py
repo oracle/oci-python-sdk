@@ -43,11 +43,9 @@ class JobInfrastructureConfigurationDetails(object):
         self.swagger_types = {
             'job_infrastructure_type': 'str'
         }
-
         self.attribute_map = {
             'job_infrastructure_type': 'jobInfrastructureType'
         }
-
         self._job_infrastructure_type = None
 
     @staticmethod

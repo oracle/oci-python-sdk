@@ -216,7 +216,6 @@ class DataguardMetrics(object):
             'db_unique_name': 'str',
             'db_role': 'str'
         }
-
         self.attribute_map = {
             'fast_start_fail_over': 'fastStartFailOver',
             'protection_mode': 'protectionMode',
@@ -234,7 +233,6 @@ class DataguardMetrics(object):
             'db_unique_name': 'dbUniqueName',
             'db_role': 'dbRole'
         }
-
         self._fast_start_fail_over = None
         self._protection_mode = None
         self._metrics = None

@@ -68,7 +68,6 @@ class UpdateVbInstanceDetails(object):
             'alternate_custom_endpoints': 'list[UpdateCustomEndpointDetails]',
             'network_endpoint_details': 'UpdateNetworkEndpointDetails'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
@@ -80,7 +79,6 @@ class UpdateVbInstanceDetails(object):
             'alternate_custom_endpoints': 'alternateCustomEndpoints',
             'network_endpoint_details': 'networkEndpointDetails'
         }
-
         self._display_name = None
         self._freeform_tags = None
         self._defined_tags = None

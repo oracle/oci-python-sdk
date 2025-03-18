@@ -127,7 +127,6 @@ class MdsMySqlDatabaseInsightSummary(DatabaseInsightSummary):
             'database_connection_status_details': 'str',
             'database_resource_type': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'database_id': 'databaseId',
@@ -150,7 +149,6 @@ class MdsMySqlDatabaseInsightSummary(DatabaseInsightSummary):
             'database_connection_status_details': 'databaseConnectionStatusDetails',
             'database_resource_type': 'databaseResourceType'
         }
-
         self._id = None
         self._database_id = None
         self._compartment_id = None

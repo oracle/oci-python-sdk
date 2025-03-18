@@ -48,12 +48,10 @@ class UnifiedAgentMonitoringFilter(object):
             'name': 'str',
             'filter_type': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'filter_type': 'filterType'
         }
-
         self._name = None
         self._filter_type = None
 

@@ -44,12 +44,10 @@ class GroupExtDomainLevelSchemaNames(object):
             'domain_name': 'str',
             'schema_name': 'str'
         }
-
         self.attribute_map = {
             'domain_name': 'domainName',
             'schema_name': 'schemaName'
         }
-
         self._domain_name = None
         self._schema_name = None
 
