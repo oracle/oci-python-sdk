@@ -53,7 +53,6 @@ class CreatePrivateAccessChannelDetails(object):
             'private_source_scan_hosts': 'list[PrivateSourceScanHost]',
             'network_security_group_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'vcn_id': 'vcnId',
@@ -62,7 +61,6 @@ class CreatePrivateAccessChannelDetails(object):
             'private_source_scan_hosts': 'privateSourceScanHosts',
             'network_security_group_ids': 'networkSecurityGroupIds'
         }
-
         self._display_name = None
         self._vcn_id = None
         self._subnet_id = None

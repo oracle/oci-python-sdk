@@ -38,13 +38,11 @@ class ExtensionOCITags(object):
             'defined_tags': 'list[DefinedTags]',
             'tag_slug': 'object'
         }
-
         self.attribute_map = {
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'tag_slug': 'tagSlug'
         }
-
         self._freeform_tags = None
         self._defined_tags = None
         self._tag_slug = None

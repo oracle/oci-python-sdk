@@ -28,11 +28,9 @@ class VideoFace(object):
         self.swagger_types = {
             'segments': 'list[VideoFaceSegment]'
         }
-
         self.attribute_map = {
             'segments': 'segments'
         }
-
         self._segments = None
 
     @property

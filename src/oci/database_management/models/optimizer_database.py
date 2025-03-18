@@ -136,7 +136,6 @@ class OptimizerDatabase(object):
             'db_version': 'str',
             'compartment_id': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -146,7 +145,6 @@ class OptimizerDatabase(object):
             'db_version': 'dbVersion',
             'compartment_id': 'compartmentId'
         }
-
         self._id = None
         self._name = None
         self._db_type = None

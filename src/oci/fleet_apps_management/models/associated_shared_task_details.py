@@ -36,12 +36,10 @@ class AssociatedSharedTaskDetails(AssociatedTaskDetails):
             'scope': 'str',
             'task_record_id': 'str'
         }
-
         self.attribute_map = {
             'scope': 'scope',
             'task_record_id': 'taskRecordId'
         }
-
         self._scope = None
         self._task_record_id = None
         self._scope = 'SHARED'

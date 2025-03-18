@@ -58,7 +58,6 @@ class CreateDedicatedCatalogDetail(object):
             'cloud_autonomous_vm_cluster_id': 'str',
             'peer_cloud_autonomous_vm_cluster_id': 'str'
         }
-
         self.attribute_map = {
             'encryption_key_details': 'encryptionKeyDetails',
             'admin_password': 'adminPassword',
@@ -68,7 +67,6 @@ class CreateDedicatedCatalogDetail(object):
             'cloud_autonomous_vm_cluster_id': 'cloudAutonomousVmClusterId',
             'peer_cloud_autonomous_vm_cluster_id': 'peerCloudAutonomousVmClusterId'
         }
-
         self._encryption_key_details = None
         self._admin_password = None
         self._compute_count = None

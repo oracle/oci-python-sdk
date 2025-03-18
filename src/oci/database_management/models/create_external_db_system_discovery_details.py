@@ -48,7 +48,6 @@ class CreateExternalDbSystemDiscoveryDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'agent_id': 'agentId',
@@ -56,7 +55,6 @@ class CreateExternalDbSystemDiscoveryDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._display_name = None
         self._agent_id = None
         self._compartment_id = None

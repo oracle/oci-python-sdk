@@ -53,7 +53,6 @@ class WafTrafficDatum(object):
             'waas_policy_id': 'str',
             'traffic_in_bytes': 'int'
         }
-
         self.attribute_map = {
             'time_observed': 'timeObserved',
             'time_range_in_seconds': 'timeRangeInSeconds',
@@ -62,7 +61,6 @@ class WafTrafficDatum(object):
             'waas_policy_id': 'waasPolicyId',
             'traffic_in_bytes': 'trafficInBytes'
         }
-
         self._time_observed = None
         self._time_range_in_seconds = None
         self._tenancy_id = None

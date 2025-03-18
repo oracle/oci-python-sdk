@@ -73,7 +73,6 @@ class CreateProfileDetails(object):
             'target_compartments': 'TargetCompartments',
             'target_tags': 'TargetTags'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'name': 'name',
@@ -86,7 +85,6 @@ class CreateProfileDetails(object):
             'target_compartments': 'targetCompartments',
             'target_tags': 'targetTags'
         }
-
         self._compartment_id = None
         self._name = None
         self._description = None

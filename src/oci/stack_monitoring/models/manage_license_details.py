@@ -41,11 +41,9 @@ class ManageLicenseDetails(object):
         self.swagger_types = {
             'license': 'str'
         }
-
         self.attribute_map = {
             'license': 'license'
         }
-
         self._license = None
 
     @property

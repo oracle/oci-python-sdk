@@ -33,12 +33,10 @@ class TerraformVersionSummary(object):
             'name': 'str',
             'is_default': 'bool'
         }
-
         self.attribute_map = {
             'name': 'name',
             'is_default': 'isDefault'
         }
-
         self._name = None
         self._is_default = None
 

@@ -68,7 +68,6 @@ class TrailFileSummary(object):
             'producer': 'str',
             'consumers': 'list[str]'
         }
-
         self.attribute_map = {
             'trail_file_id': 'trailFileId',
             'display_name': 'displayName',
@@ -80,7 +79,6 @@ class TrailFileSummary(object):
             'producer': 'producer',
             'consumers': 'consumers'
         }
-
         self._trail_file_id = None
         self._display_name = None
         self._size_in_bytes = None

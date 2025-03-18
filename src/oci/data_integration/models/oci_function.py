@@ -103,7 +103,6 @@ class OciFunction(object):
             'payload_format': 'str',
             'fn_config_def': 'FunctionConfigurationDefinition'
         }
-
         self.attribute_map = {
             'function_id': 'functionId',
             'region_id': 'regionId',
@@ -118,7 +117,6 @@ class OciFunction(object):
             'payload_format': 'payloadFormat',
             'fn_config_def': 'fnConfigDef'
         }
-
         self._function_id = None
         self._region_id = None
         self._fn_config_definition = None

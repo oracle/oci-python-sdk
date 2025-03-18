@@ -64,14 +64,12 @@ class GroupExtOwners(object):
             'display': 'str',
             'type': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ref': '$ref',
             'display': 'display',
             'type': 'type'
         }
-
         self._value = None
         self._ref = None
         self._display = None

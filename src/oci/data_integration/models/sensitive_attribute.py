@@ -33,12 +33,10 @@ class SensitiveAttribute(object):
             'secret_config': 'SecretConfig',
             'value': 'str'
         }
-
         self.attribute_map = {
             'secret_config': 'secretConfig',
             'value': 'value'
         }
-
         self._secret_config = None
         self._value = None
 

@@ -57,14 +57,12 @@ class SearchSoftwareSourceModuleStreamsDetails(object):
             'module_name': 'str',
             'sort_by': 'str'
         }
-
         self.attribute_map = {
             'software_source_ids': 'softwareSourceIds',
             'sort_order': 'sortOrder',
             'module_name': 'moduleName',
             'sort_by': 'sortBy'
         }
-
         self._software_source_ids = None
         self._sort_order = None
         self._module_name = None

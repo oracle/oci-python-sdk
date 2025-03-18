@@ -33,12 +33,10 @@ class BasicAuthenticationDetails(object):
             'username': 'str',
             'password': 'Password'
         }
-
         self.attribute_map = {
             'username': 'username',
             'password': 'password'
         }
-
         self._username = None
         self._password = None
 

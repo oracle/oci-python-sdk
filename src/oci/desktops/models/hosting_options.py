@@ -33,12 +33,10 @@ class HostingOptions(object):
             'image': 'DesktopImage',
             'connect_address': 'str'
         }
-
         self.attribute_map = {
             'image': 'image',
             'connect_address': 'connectAddress'
         }
-
         self._image = None
         self._connect_address = None
 

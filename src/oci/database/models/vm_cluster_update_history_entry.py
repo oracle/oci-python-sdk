@@ -105,7 +105,6 @@ class VmClusterUpdateHistoryEntry(object):
             'time_started': 'datetime',
             'time_completed': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'update_id': 'updateId',
@@ -116,7 +115,6 @@ class VmClusterUpdateHistoryEntry(object):
             'time_started': 'timeStarted',
             'time_completed': 'timeCompleted'
         }
-
         self._id = None
         self._update_id = None
         self._update_action = None

@@ -126,7 +126,6 @@ class Domain(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'id': 'id',
             'domain_name': 'domainName',
@@ -140,7 +139,6 @@ class Domain(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._id = None
         self._domain_name = None
         self._owner_id = None

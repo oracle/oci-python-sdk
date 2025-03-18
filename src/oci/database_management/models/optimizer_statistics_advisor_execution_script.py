@@ -28,11 +28,9 @@ class OptimizerStatisticsAdvisorExecutionScript(object):
         self.swagger_types = {
             'script': 'str'
         }
-
         self.attribute_map = {
             'script': 'script'
         }
-
         self._script = None
 
     @property

@@ -53,7 +53,6 @@ class SavedCustomTable(object):
             'compartment_depth': 'float',
             'version': 'float'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'row_group_by': 'rowGroupBy',
@@ -62,7 +61,6 @@ class SavedCustomTable(object):
             'compartment_depth': 'compartmentDepth',
             'version': 'version'
         }
-
         self._display_name = None
         self._row_group_by = None
         self._column_group_by = None

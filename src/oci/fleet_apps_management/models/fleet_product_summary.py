@@ -48,7 +48,6 @@ class FleetProductSummary(object):
             'resource': 'TargetResource',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
@@ -56,7 +55,6 @@ class FleetProductSummary(object):
             'resource': 'resource',
             'system_tags': 'systemTags'
         }
-
         self._compartment_id = None
         self._display_name = None
         self._target_count = None

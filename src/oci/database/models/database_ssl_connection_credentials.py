@@ -70,7 +70,6 @@ class DatabaseSslConnectionCredentials(DatabaseConnectionCredentials):
             'role': 'str',
             'ssl_secret_id': 'str'
         }
-
         self.attribute_map = {
             'credential_type': 'credentialType',
             'credential_name': 'credentialName',
@@ -79,7 +78,6 @@ class DatabaseSslConnectionCredentials(DatabaseConnectionCredentials):
             'role': 'role',
             'ssl_secret_id': 'sslSecretId'
         }
-
         self._credential_type = None
         self._credential_name = None
         self._username = None

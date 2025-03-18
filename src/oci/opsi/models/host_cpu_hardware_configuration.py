@@ -85,7 +85,6 @@ class HostCpuHardwareConfiguration(HostConfigurationMetricGroup):
             'threads_per_socket': 'int',
             'hyper_threading_enabled': 'str'
         }
-
         self.attribute_map = {
             'metric_name': 'metricName',
             'time_collected': 'timeCollected',
@@ -100,7 +99,6 @@ class HostCpuHardwareConfiguration(HostConfigurationMetricGroup):
             'threads_per_socket': 'threadsPerSocket',
             'hyper_threading_enabled': 'hyperThreadingEnabled'
         }
-
         self._metric_name = None
         self._time_collected = None
         self._total_sockets = None

@@ -67,12 +67,10 @@ class ExportImageDetails(object):
             'destination_type': 'str',
             'export_format': 'str'
         }
-
         self.attribute_map = {
             'destination_type': 'destinationType',
             'export_format': 'exportFormat'
         }
-
         self._destination_type = None
         self._export_format = None
 

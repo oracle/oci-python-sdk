@@ -50,13 +50,11 @@ class UpdateTargetResponderRuleDetails(object):
             'configurations': 'list[ResponderConfiguration]',
             'mode': 'str'
         }
-
         self.attribute_map = {
             'condition': 'condition',
             'configurations': 'configurations',
             'mode': 'mode'
         }
-
         self._condition = None
         self._configurations = None
         self._mode = None

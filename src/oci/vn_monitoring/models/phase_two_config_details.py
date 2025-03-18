@@ -112,7 +112,6 @@ class PhaseTwoConfigDetails(object):
             'is_pfs_enabled': 'bool',
             'pfs_dh_group': 'str'
         }
-
         self.attribute_map = {
             'is_custom_phase_two_config': 'isCustomPhaseTwoConfig',
             'authentication_algorithm': 'authenticationAlgorithm',
@@ -121,7 +120,6 @@ class PhaseTwoConfigDetails(object):
             'is_pfs_enabled': 'isPfsEnabled',
             'pfs_dh_group': 'pfsDhGroup'
         }
-
         self._is_custom_phase_two_config = None
         self._authentication_algorithm = None
         self._encryption_algorithm = None

@@ -45,14 +45,12 @@ class ObjectStorageDataset(Dataset):
             'bucket_name': 'str',
             'object_name': 'str'
         }
-
         self.attribute_map = {
             'dataset_type': 'datasetType',
             'namespace_name': 'namespaceName',
             'bucket_name': 'bucketName',
             'object_name': 'objectName'
         }
-
         self._dataset_type = None
         self._namespace_name = None
         self._bucket_name = None

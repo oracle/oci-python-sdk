@@ -28,11 +28,9 @@ class ExecutionWorkflowDetails(object):
         self.swagger_types = {
             'workflow': 'list[WorkflowGroup]'
         }
-
         self.attribute_map = {
             'workflow': 'workflow'
         }
-
         self._workflow = None
 
     @property

@@ -28,11 +28,9 @@ class MarketCollection(object):
         self.swagger_types = {
             'items': 'list[MarketSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

@@ -33,12 +33,10 @@ class BuildRunProgressSummary(object):
             'time_started': 'datetime',
             'time_finished': 'datetime'
         }
-
         self.attribute_map = {
             'time_started': 'timeStarted',
             'time_finished': 'timeFinished'
         }
-
         self._time_started = None
         self._time_finished = None
 

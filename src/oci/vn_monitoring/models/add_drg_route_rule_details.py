@@ -43,13 +43,11 @@ class AddDrgRouteRuleDetails(object):
             'destination': 'str',
             'next_hop_drg_attachment_id': 'str'
         }
-
         self.attribute_map = {
             'destination_type': 'destinationType',
             'destination': 'destination',
             'next_hop_drg_attachment_id': 'nextHopDrgAttachmentId'
         }
-
         self._destination_type = None
         self._destination = None
         self._next_hop_drg_attachment_id = None

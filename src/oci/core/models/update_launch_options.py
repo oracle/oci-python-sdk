@@ -56,13 +56,11 @@ class UpdateLaunchOptions(object):
             'network_type': 'str',
             'is_pv_encryption_in_transit_enabled': 'bool'
         }
-
         self.attribute_map = {
             'boot_volume_type': 'bootVolumeType',
             'network_type': 'networkType',
             'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled'
         }
-
         self._boot_volume_type = None
         self._network_type = None
         self._is_pv_encryption_in_transit_enabled = None

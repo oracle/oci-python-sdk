@@ -33,12 +33,10 @@ class SubCategory(object):
             'sub_category_key': 'str',
             'name': 'str'
         }
-
         self.attribute_map = {
             'sub_category_key': 'subCategoryKey',
             'name': 'name'
         }
-
         self._sub_category_key = None
         self._name = None
 

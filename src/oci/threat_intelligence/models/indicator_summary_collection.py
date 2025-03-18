@@ -28,11 +28,9 @@ class IndicatorSummaryCollection(object):
         self.swagger_types = {
             'items': 'list[IndicatorSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

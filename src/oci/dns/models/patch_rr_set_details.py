@@ -28,11 +28,9 @@ class PatchRRSetDetails(object):
         self.swagger_types = {
             'items': 'list[RecordOperation]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

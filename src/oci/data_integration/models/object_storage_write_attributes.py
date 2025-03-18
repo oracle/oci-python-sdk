@@ -35,12 +35,10 @@ class ObjectStorageWriteAttributes(AbstractWriteAttribute):
             'model_type': 'str',
             'write_to_single_file': 'bool'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'write_to_single_file': 'writeToSingleFile'
         }
-
         self._model_type = None
         self._write_to_single_file = None
         self._model_type = 'OBJECT_STORAGE_WRITE_ATTRIBUTE'

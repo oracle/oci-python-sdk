@@ -52,13 +52,11 @@ class MessageSummary(object):
             'deployment_message': 'str',
             'deployment_message_status': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'deployment_message': 'deploymentMessage',
             'deployment_message_status': 'deploymentMessageStatus'
         }
-
         self._id = None
         self._deployment_message = None
         self._deployment_message_status = None

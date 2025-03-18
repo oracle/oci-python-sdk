@@ -30,11 +30,9 @@ class NoDeployStageRollbackPolicy(DeployStageRollbackPolicy):
         self.swagger_types = {
             'policy_type': 'str'
         }
-
         self.attribute_map = {
             'policy_type': 'policyType'
         }
-
         self._policy_type = None
         self._policy_type = 'NO_STAGE_ROLLBACK_POLICY'
 

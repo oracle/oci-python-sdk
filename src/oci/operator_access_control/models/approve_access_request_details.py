@@ -43,14 +43,12 @@ class ApproveAccessRequestDetails(object):
             'additional_message': 'str',
             'time_of_user_creation': 'datetime'
         }
-
         self.attribute_map = {
             'approver_comment': 'approverComment',
             'audit_type': 'auditType',
             'additional_message': 'additionalMessage',
             'time_of_user_creation': 'timeOfUserCreation'
         }
-
         self._approver_comment = None
         self._audit_type = None
         self._additional_message = None

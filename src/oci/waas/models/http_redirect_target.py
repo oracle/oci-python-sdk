@@ -58,7 +58,6 @@ class HttpRedirectTarget(object):
             'path': 'str',
             'query': 'str'
         }
-
         self.attribute_map = {
             'protocol': 'protocol',
             'host': 'host',
@@ -66,7 +65,6 @@ class HttpRedirectTarget(object):
             'path': 'path',
             'query': 'query'
         }
-
         self._protocol = None
         self._host = None
         self._port = None

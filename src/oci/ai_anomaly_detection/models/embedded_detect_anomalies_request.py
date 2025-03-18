@@ -60,7 +60,6 @@ class EmbeddedDetectAnomaliesRequest(DetectAnomaliesDetails):
             'content_type': 'str',
             'content': 'str'
         }
-
         self.attribute_map = {
             'model_id': 'modelId',
             'request_type': 'requestType',
@@ -68,7 +67,6 @@ class EmbeddedDetectAnomaliesRequest(DetectAnomaliesDetails):
             'content_type': 'contentType',
             'content': 'content'
         }
-
         self._model_id = None
         self._request_type = None
         self._sensitivity = None

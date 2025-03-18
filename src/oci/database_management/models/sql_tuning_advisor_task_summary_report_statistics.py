@@ -38,13 +38,11 @@ class SqlTuningAdvisorTaskSummaryReportStatistics(object):
             'finding_counts': 'SqlTuningAdvisorTaskSummaryFindingCounts',
             'finding_benefits': 'SqlTuningAdvisorTaskSummaryFindingBenefits'
         }
-
         self.attribute_map = {
             'statement_counts': 'statementCounts',
             'finding_counts': 'findingCounts',
             'finding_benefits': 'findingBenefits'
         }
-
         self._statement_counts = None
         self._finding_counts = None
         self._finding_benefits = None

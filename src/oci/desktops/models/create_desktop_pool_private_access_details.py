@@ -38,13 +38,11 @@ class CreateDesktopPoolPrivateAccessDetails(object):
             'nsg_ids': 'list[str]',
             'private_ip': 'str'
         }
-
         self.attribute_map = {
             'subnet_id': 'subnetId',
             'nsg_ids': 'nsgIds',
             'private_ip': 'privateIp'
         }
-
         self._subnet_id = None
         self._nsg_ids = None
         self._private_ip = None

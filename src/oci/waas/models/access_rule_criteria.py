@@ -124,13 +124,11 @@ class AccessRuleCriteria(object):
             'value': 'str',
             'is_case_sensitive': 'bool'
         }
-
         self.attribute_map = {
             'condition': 'condition',
             'value': 'value',
             'is_case_sensitive': 'isCaseSensitive'
         }
-
         self._condition = None
         self._value = None
         self._is_case_sensitive = None

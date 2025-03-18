@@ -113,7 +113,6 @@ class CreateBucketDetails(object):
             'versioning': 'str',
             'auto_tiering': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'compartment_id': 'compartmentId',
@@ -127,7 +126,6 @@ class CreateBucketDetails(object):
             'versioning': 'versioning',
             'auto_tiering': 'autoTiering'
         }
-
         self._name = None
         self._compartment_id = None
         self._metadata = None

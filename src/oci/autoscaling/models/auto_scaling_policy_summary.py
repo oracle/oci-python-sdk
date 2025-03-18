@@ -43,14 +43,12 @@ class AutoScalingPolicySummary(object):
             'policy_type': 'str',
             'is_enabled': 'bool'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
             'policy_type': 'policyType',
             'is_enabled': 'isEnabled'
         }
-
         self._id = None
         self._display_name = None
         self._policy_type = None

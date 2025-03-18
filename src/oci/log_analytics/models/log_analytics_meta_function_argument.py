@@ -93,7 +93,6 @@ class LogAnalyticsMetaFunctionArgument(object):
             'argument_value': 'str',
             'argument_reference': 'str'
         }
-
         self.attribute_map = {
             'is_override_output_fields': 'isOverrideOutputFields',
             'argument_display_name': 'argumentDisplayName',
@@ -110,7 +109,6 @@ class LogAnalyticsMetaFunctionArgument(object):
             'argument_value': 'argumentValue',
             'argument_reference': 'argumentReference'
         }
-
         self._is_override_output_fields = None
         self._argument_display_name = None
         self._argument_example = None

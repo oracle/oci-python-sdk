@@ -70,7 +70,6 @@ class ReferencedDataObjectFromProcedure(ReferencedDataObject):
             'external_key': 'str',
             'key': 'str'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'model_version': 'modelVersion',
@@ -82,7 +81,6 @@ class ReferencedDataObjectFromProcedure(ReferencedDataObject):
             'external_key': 'externalKey',
             'key': 'key'
         }
-
         self._model_type = None
         self._model_version = None
         self._parent_ref = None

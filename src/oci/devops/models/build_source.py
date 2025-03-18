@@ -83,14 +83,12 @@ class BuildSource(object):
             'repository_url': 'str',
             'branch': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'connection_type': 'connectionType',
             'repository_url': 'repositoryUrl',
             'branch': 'branch'
         }
-
         self._name = None
         self._connection_type = None
         self._repository_url = None

@@ -35,12 +35,10 @@ class TextDatasetFormatDetails(DatasetFormatDetails):
             'format_type': 'str',
             'text_file_type_metadata': 'TextFileTypeMetadata'
         }
-
         self.attribute_map = {
             'format_type': 'formatType',
             'text_file_type_metadata': 'textFileTypeMetadata'
         }
-
         self._format_type = None
         self._text_file_type_metadata = None
         self._format_type = 'TEXT'

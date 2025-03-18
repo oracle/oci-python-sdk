@@ -88,7 +88,6 @@ class ScheduleSummary(object):
             'is_daylight_adjustment_enabled': 'bool',
             'metadata': 'ObjectMetadata'
         }
-
         self.attribute_map = {
             'key': 'key',
             'model_version': 'modelVersion',
@@ -104,7 +103,6 @@ class ScheduleSummary(object):
             'is_daylight_adjustment_enabled': 'isDaylightAdjustmentEnabled',
             'metadata': 'metadata'
         }
-
         self._key = None
         self._model_version = None
         self._model_type = None

@@ -59,7 +59,6 @@ class AutonomousExadataInfrastructureShapeSummary(object):
             'minimum_node_count': 'int',
             'maximum_node_count': 'int'
         }
-
         self.attribute_map = {
             'name': 'name',
             'available_core_count': 'availableCoreCount',
@@ -68,7 +67,6 @@ class AutonomousExadataInfrastructureShapeSummary(object):
             'minimum_node_count': 'minimumNodeCount',
             'maximum_node_count': 'maximumNodeCount'
         }
-
         self._name = None
         self._available_core_count = None
         self._minimum_core_count = None

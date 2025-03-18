@@ -63,7 +63,6 @@ class Page(object):
             'tables': 'list[Table]',
             'document_fields': 'list[DocumentField]'
         }
-
         self.attribute_map = {
             'page_number': 'pageNumber',
             'dimensions': 'dimensions',
@@ -74,7 +73,6 @@ class Page(object):
             'tables': 'tables',
             'document_fields': 'documentFields'
         }
-
         self._page_number = None
         self._dimensions = None
         self._detected_document_types = None

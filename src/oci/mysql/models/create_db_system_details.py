@@ -196,7 +196,6 @@ class CreateDbSystemDetails(object):
             'customer_contacts': 'list[CustomerContact]',
             'read_endpoint': 'CreateReadEndpointDetails'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
@@ -230,7 +229,6 @@ class CreateDbSystemDetails(object):
             'customer_contacts': 'customerContacts',
             'read_endpoint': 'readEndpoint'
         }
-
         self._display_name = None
         self._description = None
         self._compartment_id = None

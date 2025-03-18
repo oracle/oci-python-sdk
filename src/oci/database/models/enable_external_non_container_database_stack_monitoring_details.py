@@ -28,11 +28,9 @@ class EnableExternalNonContainerDatabaseStackMonitoringDetails(object):
         self.swagger_types = {
             'external_database_connector_id': 'str'
         }
-
         self.attribute_map = {
             'external_database_connector_id': 'externalDatabaseConnectorId'
         }
-
         self._external_database_connector_id = None
 
     @property

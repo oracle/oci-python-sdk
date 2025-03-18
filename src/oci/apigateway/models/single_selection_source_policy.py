@@ -35,12 +35,10 @@ class SingleSelectionSourcePolicy(SelectionSourcePolicy):
             'type': 'str',
             'selector': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'selector': 'selector'
         }
-
         self._type = None
         self._selector = None
         self._type = 'SINGLE'

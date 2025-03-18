@@ -185,7 +185,6 @@ class ContainerInstance(object):
             'image_pull_secrets': 'list[ImagePullSecret]',
             'container_restart_policy': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -211,7 +210,6 @@ class ContainerInstance(object):
             'image_pull_secrets': 'imagePullSecrets',
             'container_restart_policy': 'containerRestartPolicy'
         }
-
         self._id = None
         self._display_name = None
         self._compartment_id = None

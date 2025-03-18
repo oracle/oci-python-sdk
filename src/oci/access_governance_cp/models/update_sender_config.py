@@ -43,14 +43,12 @@ class UpdateSenderConfig(object):
             'is_inbox_configured': 'bool',
             'is_resend_notification_email': 'bool'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'email': 'email',
             'is_inbox_configured': 'isInboxConfigured',
             'is_resend_notification_email': 'isResendNotificationEmail'
         }
-
         self._display_name = None
         self._email = None
         self._is_inbox_configured = None

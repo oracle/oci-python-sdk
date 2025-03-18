@@ -28,11 +28,9 @@ class BulkEditTagsResourceTypeCollection(object):
         self.swagger_types = {
             'items': 'list[BulkEditTagsResourceType]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

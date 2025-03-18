@@ -53,7 +53,6 @@ class PlacementDetails(object):
             'room': 'str',
             'block': 'str'
         }
-
         self.attribute_map = {
             'region': 'region',
             'availability_domain': 'availabilityDomain',
@@ -62,7 +61,6 @@ class PlacementDetails(object):
             'room': 'room',
             'block': 'block'
         }
-
         self._region = None
         self._availability_domain = None
         self._workload_type = None

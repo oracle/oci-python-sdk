@@ -43,13 +43,11 @@ class EnableExternalMysqlAssociatedServiceDetails(object):
             'connector_id': 'str',
             'service_name': 'str'
         }
-
         self.attribute_map = {
             'service_resource_id': 'serviceResourceId',
             'connector_id': 'connectorId',
             'service_name': 'serviceName'
         }
-
         self._service_resource_id = None
         self._connector_id = None
         self._service_name = None

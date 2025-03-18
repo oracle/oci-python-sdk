@@ -157,7 +157,6 @@ class CreateSoftwareSourceProfileDetails(CreateProfileDetails):
             'arch_type': 'str',
             'software_source_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'compartment_id': 'compartmentId',
@@ -173,7 +172,6 @@ class CreateSoftwareSourceProfileDetails(CreateProfileDetails):
             'arch_type': 'archType',
             'software_source_ids': 'softwareSourceIds'
         }
-
         self._display_name = None
         self._compartment_id = None
         self._description = None

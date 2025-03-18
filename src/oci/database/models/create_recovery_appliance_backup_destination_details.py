@@ -60,7 +60,6 @@ class CreateRecoveryApplianceBackupDestinationDetails(CreateBackupDestinationDet
             'connection_string': 'str',
             'vpc_users': 'list[str]'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'compartment_id': 'compartmentId',
@@ -70,7 +69,6 @@ class CreateRecoveryApplianceBackupDestinationDetails(CreateBackupDestinationDet
             'connection_string': 'connectionString',
             'vpc_users': 'vpcUsers'
         }
-
         self._display_name = None
         self._compartment_id = None
         self._type = None

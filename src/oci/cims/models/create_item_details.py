@@ -54,7 +54,6 @@ class CreateItemDetails(object):
             'issue_type': 'CreateIssueTypeDetails',
             'name': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'category': 'category',
@@ -62,7 +61,6 @@ class CreateItemDetails(object):
             'issue_type': 'issueType',
             'name': 'name'
         }
-
         self._type = None
         self._category = None
         self._sub_category = None

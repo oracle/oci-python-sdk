@@ -35,12 +35,10 @@ class GenericArtifactDetails(ArtifactDetails):
             'category': 'str',
             'artifact': 'GenericArtifact'
         }
-
         self.attribute_map = {
             'category': 'category',
             'artifact': 'artifact'
         }
-
         self._category = None
         self._artifact = None
         self._category = 'GENERIC'

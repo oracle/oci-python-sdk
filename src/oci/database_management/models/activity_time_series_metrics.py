@@ -53,7 +53,6 @@ class ActivityTimeSeriesMetrics(object):
             'cpu_count': 'MetricDataPoint',
             'cluster': 'MetricDataPoint'
         }
-
         self.attribute_map = {
             'timestamp': 'timestamp',
             'cpu_time': 'cpuTime',
@@ -62,7 +61,6 @@ class ActivityTimeSeriesMetrics(object):
             'cpu_count': 'cpuCount',
             'cluster': 'cluster'
         }
-
         self._timestamp = None
         self._cpu_time = None
         self._wait_time = None

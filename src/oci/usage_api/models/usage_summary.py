@@ -178,7 +178,6 @@ class UsageSummary(object):
             'is_forecast': 'bool',
             'tags': 'list[Tag]'
         }
-
         self.attribute_map = {
             'tenant_id': 'tenantId',
             'tenant_name': 'tenantName',
@@ -212,7 +211,6 @@ class UsageSummary(object):
             'is_forecast': 'isForecast',
             'tags': 'tags'
         }
-
         self._tenant_id = None
         self._tenant_name = None
         self._compartment_id = None

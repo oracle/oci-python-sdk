@@ -45,14 +45,12 @@ class RunObjectStoreScriptUserDefinedStep(DrPlanUserDefinedStep):
             'run_on_instance_region': 'str',
             'object_storage_script_location': 'ObjectStorageScriptLocation'
         }
-
         self.attribute_map = {
             'step_type': 'stepType',
             'run_on_instance_id': 'runOnInstanceId',
             'run_on_instance_region': 'runOnInstanceRegion',
             'object_storage_script_location': 'objectStorageScriptLocation'
         }
-
         self._step_type = None
         self._run_on_instance_id = None
         self._run_on_instance_region = None

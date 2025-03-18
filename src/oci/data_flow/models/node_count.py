@@ -33,12 +33,10 @@ class NodeCount(object):
             'logical_shape': 'str',
             'count': 'int'
         }
-
         self.attribute_map = {
             'logical_shape': 'logicalShape',
             'count': 'count'
         }
-
         self._logical_shape = None
         self._count = None
 

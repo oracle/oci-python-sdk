@@ -43,14 +43,12 @@ class UpdateComputeImageCapabilitySchemaDetails(object):
             'schema_data': 'dict(str, ImageCapabilitySchemaDescriptor)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
             'schema_data': 'schemaData',
             'defined_tags': 'definedTags'
         }
-
         self._display_name = None
         self._freeform_tags = None
         self._schema_data = None

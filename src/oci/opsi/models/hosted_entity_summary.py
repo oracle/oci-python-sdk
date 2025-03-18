@@ -38,13 +38,11 @@ class HostedEntitySummary(object):
             'entity_name': 'str',
             'entity_type': 'str'
         }
-
         self.attribute_map = {
             'entity_identifier': 'entityIdentifier',
             'entity_name': 'entityName',
             'entity_type': 'entityType'
         }
-
         self._entity_identifier = None
         self._entity_name = None
         self._entity_type = None

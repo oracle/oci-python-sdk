@@ -33,12 +33,10 @@ class UpdateManagedInstanceDetails(object):
             'notification_topic_id': 'str',
             'is_data_collection_authorized': 'bool'
         }
-
         self.attribute_map = {
             'notification_topic_id': 'notificationTopicId',
             'is_data_collection_authorized': 'isDataCollectionAuthorized'
         }
-
         self._notification_topic_id = None
         self._is_data_collection_authorized = None
 

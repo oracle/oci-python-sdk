@@ -107,7 +107,6 @@ class ExadataDatabaseMachineConfigurationSummary(ExadataConfigurationSummary):
             'enterprise_manager_oms_ver': 'str',
             'enterprise_manager_entity_type': 'str'
         }
-
         self.attribute_map = {
             'exadata_insight_id': 'exadataInsightId',
             'entity_source': 'entitySource',
@@ -126,7 +125,6 @@ class ExadataDatabaseMachineConfigurationSummary(ExadataConfigurationSummary):
             'enterprise_manager_oms_ver': 'enterpriseManagerOmsVer',
             'enterprise_manager_entity_type': 'enterpriseManagerEntityType'
         }
-
         self._exadata_insight_id = None
         self._entity_source = None
         self._compartment_id = None

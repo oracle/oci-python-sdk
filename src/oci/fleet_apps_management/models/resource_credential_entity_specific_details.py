@@ -35,12 +35,10 @@ class ResourceCredentialEntitySpecificDetails(CredentialEntitySpecificDetails):
             'credential_level': 'str',
             'resource_id': 'str'
         }
-
         self.attribute_map = {
             'credential_level': 'credentialLevel',
             'resource_id': 'resourceId'
         }
-
         self._credential_level = None
         self._resource_id = None
         self._credential_level = 'RESOURCE'

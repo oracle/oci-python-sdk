@@ -38,13 +38,11 @@ class UpdateSchedulingWindowDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'window_preference': 'windowPreference',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._window_preference = None
         self._freeform_tags = None
         self._defined_tags = None

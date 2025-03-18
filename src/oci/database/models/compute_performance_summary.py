@@ -48,7 +48,6 @@ class ComputePerformanceSummary(object):
             'network_iops': 'float',
             'network_throughput_in_mbps': 'float'
         }
-
         self.attribute_map = {
             'cpu_core_count': 'cpuCoreCount',
             'memory_in_gbs': 'memoryInGBs',
@@ -56,7 +55,6 @@ class ComputePerformanceSummary(object):
             'network_iops': 'networkIops',
             'network_throughput_in_mbps': 'networkThroughputInMbps'
         }
-
         self._cpu_core_count = None
         self._memory_in_gbs = None
         self._network_bandwidth_in_gbps = None

@@ -139,7 +139,6 @@ class ExportRequest(object):
             'referenced_items': 'str',
             'name': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'object_keys': 'objectKeys',
@@ -160,7 +159,6 @@ class ExportRequest(object):
             'referenced_items': 'referencedItems',
             'name': 'name'
         }
-
         self._key = None
         self._object_keys = None
         self._bucket_name = None

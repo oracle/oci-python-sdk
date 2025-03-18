@@ -38,13 +38,11 @@ class UpdateSecurityAttributeDetails(object):
             'is_retired': 'bool',
             'validator': 'BaseSecurityAttributeValidator'
         }
-
         self.attribute_map = {
             'description': 'description',
             'is_retired': 'isRetired',
             'validator': 'validator'
         }
-
         self._description = None
         self._is_retired = None
         self._validator = None

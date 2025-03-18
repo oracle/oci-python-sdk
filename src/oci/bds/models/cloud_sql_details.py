@@ -48,7 +48,6 @@ class CloudSqlDetails(object):
             'ip_address': 'str',
             'kerberos_details': 'list[KerberosDetails]'
         }
-
         self.attribute_map = {
             'shape': 'shape',
             'block_volume_size_in_gbs': 'blockVolumeSizeInGBs',
@@ -56,7 +55,6 @@ class CloudSqlDetails(object):
             'ip_address': 'ipAddress',
             'kerberos_details': 'kerberosDetails'
         }
-
         self._shape = None
         self._block_volume_size_in_gbs = None
         self._is_kerberos_mapped_to_database_users = None

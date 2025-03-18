@@ -58,7 +58,6 @@ class StatementOutput(object):
             'error_value': 'str',
             'traceback': 'list[str]'
         }
-
         self.attribute_map = {
             'data': 'data',
             'status': 'status',
@@ -66,7 +65,6 @@ class StatementOutput(object):
             'error_value': 'errorValue',
             'traceback': 'traceback'
         }
-
         self._data = None
         self._status = None
         self._error_name = None

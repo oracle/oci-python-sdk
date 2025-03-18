@@ -33,12 +33,10 @@ class CpuUtilizationAggregateMetrics(object):
             'cpu_utilization': 'MetricDataPoint',
             'cpu_statistics': 'MetricStatisticsDefinition'
         }
-
         self.attribute_map = {
             'cpu_utilization': 'cpuUtilization',
             'cpu_statistics': 'cpuStatistics'
         }
-
         self._cpu_utilization = None
         self._cpu_statistics = None
 

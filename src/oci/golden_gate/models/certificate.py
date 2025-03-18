@@ -145,7 +145,6 @@ class Certificate(object):
             'lifecycle_state': 'str',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'key': 'key',
             'deployment_id': 'deploymentId',
@@ -168,7 +167,6 @@ class Certificate(object):
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated'
         }
-
         self._key = None
         self._deployment_id = None
         self._certificate_content = None

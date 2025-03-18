@@ -28,11 +28,9 @@ class InvoiceCollection(object):
         self.swagger_types = {
             'items': 'list[InvoiceSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

@@ -89,7 +89,6 @@ class AddressListSummary(object):
             'lifecycle_state': 'str',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -100,7 +99,6 @@ class AddressListSummary(object):
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated'
         }
-
         self._id = None
         self._compartment_id = None
         self._display_name = None

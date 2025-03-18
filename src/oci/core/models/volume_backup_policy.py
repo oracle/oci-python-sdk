@@ -68,7 +68,6 @@ class VolumeBackupPolicy(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'id': 'id',
@@ -79,7 +78,6 @@ class VolumeBackupPolicy(object):
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags'
         }
-
         self._display_name = None
         self._id = None
         self._schedules = None

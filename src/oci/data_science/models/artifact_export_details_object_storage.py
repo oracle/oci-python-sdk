@@ -50,7 +50,6 @@ class ArtifactExportDetailsObjectStorage(ArtifactExportDetails):
             'source_object_name': 'str',
             'source_region': 'str'
         }
-
         self.attribute_map = {
             'artifact_source_type': 'artifactSourceType',
             'namespace': 'namespace',
@@ -58,7 +57,6 @@ class ArtifactExportDetailsObjectStorage(ArtifactExportDetails):
             'source_object_name': 'sourceObjectName',
             'source_region': 'sourceRegion'
         }
-
         self._artifact_source_type = None
         self._namespace = None
         self._source_bucket = None

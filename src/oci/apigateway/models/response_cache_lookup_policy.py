@@ -48,13 +48,11 @@ class ResponseCacheLookupPolicy(object):
             'is_enabled': 'bool',
             'is_private_caching_enabled': 'bool'
         }
-
         self.attribute_map = {
             'type': 'type',
             'is_enabled': 'isEnabled',
             'is_private_caching_enabled': 'isPrivateCachingEnabled'
         }
-
         self._type = None
         self._is_enabled = None
         self._is_private_caching_enabled = None

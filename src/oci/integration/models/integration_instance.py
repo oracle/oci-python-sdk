@@ -258,7 +258,6 @@ class IntegrationInstance(object):
             'disaster_recovery_details': 'DisasterRecoveryDetails',
             'data_retention_period': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -290,7 +289,6 @@ class IntegrationInstance(object):
             'disaster_recovery_details': 'disasterRecoveryDetails',
             'data_retention_period': 'dataRetentionPeriod'
         }
-
         self._id = None
         self._display_name = None
         self._compartment_id = None

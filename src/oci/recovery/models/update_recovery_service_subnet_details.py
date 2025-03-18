@@ -48,7 +48,6 @@ class UpdateRecoveryServiceSubnetDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'subnets': 'subnets',
@@ -56,7 +55,6 @@ class UpdateRecoveryServiceSubnetDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._display_name = None
         self._subnets = None
         self._nsg_ids = None

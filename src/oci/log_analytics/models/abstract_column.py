@@ -192,7 +192,6 @@ class AbstractColumn(object):
             'original_display_name': 'str',
             'internal_name': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'display_name': 'displayName',
@@ -208,7 +207,6 @@ class AbstractColumn(object):
             'original_display_name': 'originalDisplayName',
             'internal_name': 'internalName'
         }
-
         self._type = None
         self._display_name = None
         self._sub_system = None

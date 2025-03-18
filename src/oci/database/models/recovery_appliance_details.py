@@ -38,13 +38,11 @@ class RecoveryApplianceDetails(object):
             'recovery_window_in_days': 'int',
             'time_recovery_appliance_details_updated': 'datetime'
         }
-
         self.attribute_map = {
             'allocated_storage_size_in_gbs': 'allocatedStorageSizeInGBs',
             'recovery_window_in_days': 'recoveryWindowInDays',
             'time_recovery_appliance_details_updated': 'timeRecoveryApplianceDetailsUpdated'
         }
-
         self._allocated_storage_size_in_gbs = None
         self._recovery_window_in_days = None
         self._time_recovery_appliance_details_updated = None

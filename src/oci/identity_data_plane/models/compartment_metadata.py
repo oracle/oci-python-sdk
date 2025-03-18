@@ -46,12 +46,10 @@ class CompartmentMetadata(object):
             'compartment_id': 'str',
             'access_level': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'access_level': 'accessLevel'
         }
-
         self._compartment_id = None
         self._access_level = None
 

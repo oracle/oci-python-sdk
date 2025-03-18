@@ -60,7 +60,6 @@ class VisibleTrafficNode(TrafficNode):
             'entity_id': 'str',
             'transformation_description': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'egress_traffic': 'egressTraffic',
@@ -70,7 +69,6 @@ class VisibleTrafficNode(TrafficNode):
             'entity_id': 'entityId',
             'transformation_description': 'transformationDescription'
         }
-
         self._type = None
         self._egress_traffic = None
         self._next_hop_routing_action = None

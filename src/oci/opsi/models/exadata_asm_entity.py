@@ -50,7 +50,6 @@ class ExadataAsmEntity(DatabaseConfigurationMetricGroup):
             'cluster_name': 'str',
             'software_version': 'str'
         }
-
         self.attribute_map = {
             'metric_name': 'metricName',
             'time_collected': 'timeCollected',
@@ -58,7 +57,6 @@ class ExadataAsmEntity(DatabaseConfigurationMetricGroup):
             'cluster_name': 'clusterName',
             'software_version': 'softwareVersion'
         }
-
         self._metric_name = None
         self._time_collected = None
         self._instance_name = None

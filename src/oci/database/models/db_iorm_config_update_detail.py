@@ -33,12 +33,10 @@ class DbIormConfigUpdateDetail(object):
             'db_name': 'str',
             'share': 'int'
         }
-
         self.attribute_map = {
             'db_name': 'dbName',
             'share': 'share'
         }
-
         self._db_name = None
         self._share = None
 

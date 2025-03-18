@@ -93,7 +93,6 @@ class CreateMountTargetDetails(object):
             'locks': 'list[ResourceLock]',
             'requested_throughput': 'int'
         }
-
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'compartment_id': 'compartmentId',
@@ -110,7 +109,6 @@ class CreateMountTargetDetails(object):
             'locks': 'locks',
             'requested_throughput': 'requestedThroughput'
         }
-
         self._availability_domain = None
         self._compartment_id = None
         self._display_name = None

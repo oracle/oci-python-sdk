@@ -28,11 +28,9 @@ class PeerDatabaseMetrics(object):
         self.swagger_types = {
             'peer_db_metrics': 'list[DatabaseUsageMetrics]'
         }
-
         self.attribute_map = {
             'peer_db_metrics': 'peerDbMetrics'
         }
-
         self._peer_db_metrics = None
 
     @property

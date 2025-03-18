@@ -83,7 +83,6 @@ class TypeSystem(object):
             'identifier': 'str',
             'types': 'list[DataType]'
         }
-
         self.attribute_map = {
             'key': 'key',
             'model_type': 'modelType',
@@ -98,7 +97,6 @@ class TypeSystem(object):
             'identifier': 'identifier',
             'types': 'types'
         }
-
         self._key = None
         self._model_type = None
         self._model_version = None

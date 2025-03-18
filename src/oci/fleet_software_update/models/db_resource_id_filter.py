@@ -93,7 +93,6 @@ class DbResourceIdFilter(DbFleetDiscoveryFilter):
             'identifiers': 'list[str]',
             'operator': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'mode': 'mode',
@@ -101,7 +100,6 @@ class DbResourceIdFilter(DbFleetDiscoveryFilter):
             'identifiers': 'identifiers',
             'operator': 'operator'
         }
-
         self._type = None
         self._mode = None
         self._entity_type = None

@@ -120,7 +120,6 @@ class ReportSummary(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'id': 'id',
@@ -134,7 +133,6 @@ class ReportSummary(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._display_name = None
         self._id = None
         self._report_definition_id = None

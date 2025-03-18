@@ -48,7 +48,6 @@ class Column(object):
             'is_hidden': 'bool',
             'display_order': 'int'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'field_name': 'fieldName',
@@ -56,7 +55,6 @@ class Column(object):
             'is_hidden': 'isHidden',
             'display_order': 'displayOrder'
         }
-
         self._display_name = None
         self._field_name = None
         self._data_type = None

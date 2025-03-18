@@ -71,7 +71,6 @@ class ComplianceReportTarget(object):
             'installed_patches': 'list[ComplianceReportPatchDetail]',
             'recommended_patches': 'list[ComplianceReportPatchDetail]'
         }
-
         self.attribute_map = {
             'target_id': 'targetId',
             'target_name': 'targetName',
@@ -80,7 +79,6 @@ class ComplianceReportTarget(object):
             'installed_patches': 'installedPatches',
             'recommended_patches': 'recommendedPatches'
         }
-
         self._target_id = None
         self._target_name = None
         self._version = None

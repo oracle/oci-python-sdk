@@ -66,7 +66,6 @@ class CreateExportRequestDetails(object):
             'are_references_included': 'bool',
             'filters': 'list[str]'
         }
-
         self.attribute_map = {
             'bucket_name': 'bucketName',
             'file_name': 'fileName',
@@ -77,7 +76,6 @@ class CreateExportRequestDetails(object):
             'are_references_included': 'areReferencesIncluded',
             'filters': 'filters'
         }
-
         self._bucket_name = None
         self._file_name = None
         self._object_storage_tenancy_id = None

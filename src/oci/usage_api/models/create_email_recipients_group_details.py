@@ -33,12 +33,10 @@ class CreateEmailRecipientsGroupDetails(object):
             'compartment_id': 'str',
             'recipients_list': 'list[EmailRecipient]'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'recipients_list': 'recipientsList'
         }
-
         self._compartment_id = None
         self._recipients_list = None
 

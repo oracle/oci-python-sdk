@@ -457,7 +457,6 @@ class SchemaSubAttributes(object):
             'idcs_sanitize': 'bool',
             'idcs_exclude_from_upgrade_patch': 'bool'
         }
-
         self.attribute_map = {
             'name': 'name',
             'idcs_requires_immediate_read_after_write_for_access_flows': 'idcsRequiresImmediateReadAfterWriteForAccessFlows',
@@ -522,7 +521,6 @@ class SchemaSubAttributes(object):
             'idcs_sanitize': 'idcsSanitize',
             'idcs_exclude_from_upgrade_patch': 'idcsExcludeFromUpgradePatch'
         }
-
         self._name = None
         self._idcs_requires_immediate_read_after_write_for_access_flows = None
         self._idcs_requires_write_for_access_flows = None

@@ -43,14 +43,12 @@ class EntitlementSummary(object):
             'rate_limit': 'RateLimit',
             'quota': 'Quota'
         }
-
         self.attribute_map = {
             'name': 'name',
             'description': 'description',
             'rate_limit': 'rateLimit',
             'quota': 'quota'
         }
-
         self._name = None
         self._description = None
         self._rate_limit = None

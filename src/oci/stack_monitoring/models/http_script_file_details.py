@@ -33,12 +33,10 @@ class HttpScriptFileDetails(object):
             'name': 'str',
             'content': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'content': 'content'
         }
-
         self._name = None
         self._content = None
 

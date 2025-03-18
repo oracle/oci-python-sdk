@@ -174,7 +174,6 @@ class AutonomousContainerDatabaseDataguard(object):
             'redo_transport_mode': 'str',
             'automatic_failover_target': 'str'
         }
-
         self.attribute_map = {
             'autonomous_container_database_id': 'autonomousContainerDatabaseId',
             'role': 'role',
@@ -194,7 +193,6 @@ class AutonomousContainerDatabaseDataguard(object):
             'redo_transport_mode': 'redoTransportMode',
             'automatic_failover_target': 'automaticFailoverTarget'
         }
-
         self._autonomous_container_database_id = None
         self._role = None
         self._lifecycle_state = None

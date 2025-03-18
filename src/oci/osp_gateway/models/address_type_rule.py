@@ -47,12 +47,10 @@ class AddressTypeRule(object):
             'third_party_validation': 'str',
             'fields': 'list[Field]'
         }
-
         self.attribute_map = {
             'third_party_validation': 'thirdPartyValidation',
             'fields': 'fields'
         }
-
         self._third_party_validation = None
         self._fields = None
 

@@ -33,12 +33,10 @@ class Level(object):
             'name': 'str',
             'constraints': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'constraints': 'constraints'
         }
-
         self._name = None
         self._constraints = None
 

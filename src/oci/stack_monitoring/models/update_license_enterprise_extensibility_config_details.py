@@ -49,7 +49,6 @@ class UpdateLicenseEnterpriseExtensibilityConfigDetails(UpdateConfigDetails):
             'defined_tags': 'dict(str, dict(str, object))',
             'is_enabled': 'bool'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'config_type': 'configType',
@@ -57,7 +56,6 @@ class UpdateLicenseEnterpriseExtensibilityConfigDetails(UpdateConfigDetails):
             'defined_tags': 'definedTags',
             'is_enabled': 'isEnabled'
         }
-
         self._display_name = None
         self._config_type = None
         self._freeform_tags = None

@@ -68,7 +68,6 @@ class GeodataDetails(object):
             'longitude': 'str',
             'label': 'str'
         }
-
         self.attribute_map = {
             'routed_prefix': 'routedPrefix',
             'origin': 'origin',
@@ -80,7 +79,6 @@ class GeodataDetails(object):
             'longitude': 'longitude',
             'label': 'label'
         }
-
         self._routed_prefix = None
         self._origin = None
         self._geo_id = None

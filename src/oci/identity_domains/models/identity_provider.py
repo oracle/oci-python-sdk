@@ -418,7 +418,6 @@ class IdentityProvider(object):
             'urn_ietf_params_scim_schemas_oracle_idcs_extension_social_identity_provider': 'ExtensionSocialIdentityProvider',
             'urn_ietf_params_scim_schemas_oracle_idcs_extension_x509_identity_provider': 'ExtensionX509IdentityProvider'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -480,7 +479,6 @@ class IdentityProvider(object):
             'urn_ietf_params_scim_schemas_oracle_idcs_extension_social_identity_provider': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:social:IdentityProvider',
             'urn_ietf_params_scim_schemas_oracle_idcs_extension_x509_identity_provider': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:x509:IdentityProvider'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

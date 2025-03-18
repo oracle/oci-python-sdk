@@ -49,7 +49,6 @@ class InstanceSourceViaImageDetails(InstanceSourceDetails):
             'kms_key_id': 'str',
             'boot_volume_vpus_per_gb': 'int'
         }
-
         self.attribute_map = {
             'source_type': 'sourceType',
             'boot_volume_size_in_gbs': 'bootVolumeSizeInGBs',
@@ -57,7 +56,6 @@ class InstanceSourceViaImageDetails(InstanceSourceDetails):
             'kms_key_id': 'kmsKeyId',
             'boot_volume_vpus_per_gb': 'bootVolumeVpusPerGB'
         }
-
         self._source_type = None
         self._boot_volume_size_in_gbs = None
         self._image_id = None

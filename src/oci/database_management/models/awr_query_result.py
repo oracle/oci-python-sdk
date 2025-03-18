@@ -118,7 +118,6 @@ class AwrQueryResult(object):
             'db_query_time_in_secs': 'float',
             'awr_result_type': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'version': 'version',
@@ -126,7 +125,6 @@ class AwrQueryResult(object):
             'db_query_time_in_secs': 'dbQueryTimeInSecs',
             'awr_result_type': 'awrResultType'
         }
-
         self._name = None
         self._version = None
         self._query_key = None

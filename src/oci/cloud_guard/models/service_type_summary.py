@@ -33,12 +33,10 @@ class ServiceTypeSummary(object):
             'name': 'str',
             'resource_types': 'list[ResourceTypeSummary]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'resource_types': 'resourceTypes'
         }
-
         self._name = None
         self._resource_types = None
 

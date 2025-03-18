@@ -135,7 +135,6 @@ class Snapshot(object):
             'expiration_time': 'datetime',
             'filesystem_snapshot_policy_id': 'str'
         }
-
         self.attribute_map = {
             'file_system_id': 'fileSystemId',
             'id': 'id',
@@ -154,7 +153,6 @@ class Snapshot(object):
             'expiration_time': 'expirationTime',
             'filesystem_snapshot_policy_id': 'filesystemSnapshotPolicyId'
         }
-
         self._file_system_id = None
         self._id = None
         self._lifecycle_state = None

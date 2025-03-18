@@ -53,13 +53,11 @@ class ScalingConfiguration(object):
             'pending_duration': 'str',
             'instance_count_adjustment': 'int'
         }
-
         self.attribute_map = {
             'scaling_configuration_type': 'scalingConfigurationType',
             'pending_duration': 'pendingDuration',
             'instance_count_adjustment': 'instanceCountAdjustment'
         }
-
         self._scaling_configuration_type = None
         self._pending_duration = None
         self._instance_count_adjustment = None

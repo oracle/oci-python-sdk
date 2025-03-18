@@ -28,11 +28,9 @@ class MeshMutualTransportLayerSecurity(object):
         self.swagger_types = {
             'minimum': 'str'
         }
-
         self.attribute_map = {
             'minimum': 'minimum'
         }
-
         self._minimum = None
 
     @property

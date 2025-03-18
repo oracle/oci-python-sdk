@@ -45,14 +45,12 @@ class CreateBackupDetails(object):
             'retention_period_in_days': 'int',
             'retention_period_in_years': 'int'
         }
-
         self.attribute_map = {
             'database_id': 'databaseId',
             'display_name': 'displayName',
             'retention_period_in_days': 'retentionPeriodInDays',
             'retention_period_in_years': 'retentionPeriodInYears'
         }
-
         self._database_id = None
         self._display_name = None
         self._retention_period_in_days = None

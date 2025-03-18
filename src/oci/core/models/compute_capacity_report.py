@@ -48,14 +48,12 @@ class ComputeCapacityReport(object):
             'shape_availabilities': 'list[CapacityReportShapeAvailability]',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'availability_domain': 'availabilityDomain',
             'shape_availabilities': 'shapeAvailabilities',
             'time_created': 'timeCreated'
         }
-
         self._compartment_id = None
         self._availability_domain = None
         self._shape_availabilities = None

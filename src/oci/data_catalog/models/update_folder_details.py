@@ -85,7 +85,6 @@ class UpdateFolderDetails(object):
             'harvest_status': 'str',
             'last_job_key': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'business_name': 'businessName',
@@ -97,7 +96,6 @@ class UpdateFolderDetails(object):
             'harvest_status': 'harvestStatus',
             'last_job_key': 'lastJobKey'
         }
-
         self._display_name = None
         self._business_name = None
         self._description = None

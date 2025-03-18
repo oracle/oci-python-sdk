@@ -43,14 +43,12 @@ class UpdateRunDetails(object):
             'max_duration_in_minutes': 'int',
             'idle_timeout_in_minutes': 'int'
         }
-
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
             'max_duration_in_minutes': 'maxDurationInMinutes',
             'idle_timeout_in_minutes': 'idleTimeoutInMinutes'
         }
-
         self._defined_tags = None
         self._freeform_tags = None
         self._max_duration_in_minutes = None

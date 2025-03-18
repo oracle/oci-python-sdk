@@ -73,7 +73,6 @@ class CreatePrivateEndpointDetails(object):
             'scan_details': 'list[Scan]',
             'subnet_id': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
@@ -86,7 +85,6 @@ class CreatePrivateEndpointDetails(object):
             'scan_details': 'scanDetails',
             'subnet_id': 'subnetId'
         }
-
         self._compartment_id = None
         self._defined_tags = None
         self._description = None

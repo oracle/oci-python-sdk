@@ -88,7 +88,6 @@ class AddDataFilesDetails(object):
             'auto_extend_max_size': 'TablespaceStorageSize',
             'is_max_size_unlimited': 'bool'
         }
-
         self.attribute_map = {
             'credential_details': 'credentialDetails',
             'database_credential': 'databaseCredential',
@@ -102,7 +101,6 @@ class AddDataFilesDetails(object):
             'auto_extend_max_size': 'autoExtendMaxSize',
             'is_max_size_unlimited': 'isMaxSizeUnlimited'
         }
-
         self._credential_details = None
         self._database_credential = None
         self._file_type = None

@@ -105,7 +105,6 @@ class SqlTuningAdvisorTaskSummary(object):
             'total_sql_statements': 'int',
             'recommendation_count': 'int'
         }
-
         self.attribute_map = {
             'sql_tuning_advisor_task_id': 'sqlTuningAdvisorTaskId',
             'instance_id': 'instanceId',
@@ -120,7 +119,6 @@ class SqlTuningAdvisorTaskSummary(object):
             'total_sql_statements': 'totalSqlStatements',
             'recommendation_count': 'recommendationCount'
         }
-
         self._sql_tuning_advisor_task_id = None
         self._instance_id = None
         self._name = None

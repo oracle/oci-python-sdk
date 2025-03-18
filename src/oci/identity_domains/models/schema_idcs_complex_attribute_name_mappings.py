@@ -38,13 +38,11 @@ class SchemaIdcsComplexAttributeNameMappings(object):
             'maps_to': 'str',
             'idcs_rtsa_hide_attribute': 'bool'
         }
-
         self.attribute_map = {
             'name': 'name',
             'maps_to': 'mapsTo',
             'idcs_rtsa_hide_attribute': 'idcsRtsaHideAttribute'
         }
-
         self._name = None
         self._maps_to = None
         self._idcs_rtsa_hide_attribute = None

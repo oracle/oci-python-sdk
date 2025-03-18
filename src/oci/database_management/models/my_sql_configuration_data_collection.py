@@ -28,11 +28,9 @@ class MySqlConfigurationDataCollection(object):
         self.swagger_types = {
             'items': 'list[MySqlConfigurationDataSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

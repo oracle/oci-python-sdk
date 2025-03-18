@@ -58,7 +58,6 @@ class ShapeSummary(object):
             'shape_ocpu_options': 'ShapeOcpuOptions',
             'shape_memory_options': 'ShapeMemoryOptions'
         }
-
         self.attribute_map = {
             'id': 'id',
             'shape': 'shape',
@@ -68,7 +67,6 @@ class ShapeSummary(object):
             'shape_ocpu_options': 'shapeOcpuOptions',
             'shape_memory_options': 'shapeMemoryOptions'
         }
-
         self._id = None
         self._shape = None
         self._is_flexible = None

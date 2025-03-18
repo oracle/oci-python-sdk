@@ -68,7 +68,6 @@ class SecurityAssessmentComparisonPerTarget(object):
             'privileges_and_roles': 'list[Diffs]',
             'user_accounts': 'list[Diffs]'
         }
-
         self.attribute_map = {
             'baseline_target_id': 'baselineTargetId',
             'current_target_id': 'currentTargetId',
@@ -80,7 +79,6 @@ class SecurityAssessmentComparisonPerTarget(object):
             'privileges_and_roles': 'privilegesAndRoles',
             'user_accounts': 'userAccounts'
         }
-
         self._baseline_target_id = None
         self._current_target_id = None
         self._auditing = None

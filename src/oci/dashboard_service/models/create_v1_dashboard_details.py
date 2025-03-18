@@ -66,7 +66,6 @@ class CreateV1DashboardDetails(CreateDashboardDetails):
             'config': 'object',
             'widgets': 'list[object]'
         }
-
         self.attribute_map = {
             'dashboard_group_id': 'dashboardGroupId',
             'display_name': 'displayName',
@@ -77,7 +76,6 @@ class CreateV1DashboardDetails(CreateDashboardDetails):
             'config': 'config',
             'widgets': 'widgets'
         }
-
         self._dashboard_group_id = None
         self._display_name = None
         self._description = None

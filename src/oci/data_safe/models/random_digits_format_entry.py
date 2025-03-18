@@ -51,14 +51,12 @@ class RandomDigitsFormatEntry(FormatEntry):
             'start_length': 'int',
             'end_length': 'int'
         }
-
         self.attribute_map = {
             'type': 'type',
             'description': 'description',
             'start_length': 'startLength',
             'end_length': 'endLength'
         }
-
         self._type = None
         self._description = None
         self._start_length = None

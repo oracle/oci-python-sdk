@@ -73,7 +73,6 @@ class SecurityAttributeSummary(object):
             'lifecycle_state': 'str',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'security_attribute_namespace_id': 'securityAttributeNamespaceId',
@@ -86,7 +85,6 @@ class SecurityAttributeSummary(object):
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated'
         }
-
         self._compartment_id = None
         self._security_attribute_namespace_id = None
         self._security_attribute_namespace_name = None

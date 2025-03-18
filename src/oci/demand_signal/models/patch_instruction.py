@@ -73,12 +73,10 @@ class PatchInstruction(object):
             'operation': 'str',
             'selection': 'str'
         }
-
         self.attribute_map = {
             'operation': 'operation',
             'selection': 'selection'
         }
-
         self._operation = None
         self._selection = None
 

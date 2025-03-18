@@ -58,7 +58,6 @@ class UpdateChannelDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'source': 'source',
             'target': 'target',
@@ -68,7 +67,6 @@ class UpdateChannelDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._source = None
         self._target = None
         self._display_name = None

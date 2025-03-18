@@ -63,7 +63,6 @@ class TrafficNode(object):
             'egress_security_action': 'SecurityAction',
             'ingress_security_action': 'SecurityAction'
         }
-
         self.attribute_map = {
             'type': 'type',
             'egress_traffic': 'egressTraffic',
@@ -71,7 +70,6 @@ class TrafficNode(object):
             'egress_security_action': 'egressSecurityAction',
             'ingress_security_action': 'ingressSecurityAction'
         }
-
         self._type = None
         self._egress_traffic = None
         self._next_hop_routing_action = None

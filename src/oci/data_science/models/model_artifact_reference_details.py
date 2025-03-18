@@ -37,11 +37,9 @@ class ModelArtifactReferenceDetails(object):
         self.swagger_types = {
             'model_artifact_reference_type': 'str'
         }
-
         self.attribute_map = {
             'model_artifact_reference_type': 'modelArtifactReferenceType'
         }
-
         self._model_artifact_reference_type = None
 
     @staticmethod

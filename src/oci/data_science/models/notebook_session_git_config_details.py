@@ -28,11 +28,9 @@ class NotebookSessionGitConfigDetails(object):
         self.swagger_types = {
             'notebook_session_git_repo_config_collection': 'list[NotebookSessionGitRepoConfigDetails]'
         }
-
         self.attribute_map = {
             'notebook_session_git_repo_config_collection': 'notebookSessionGitRepoConfigCollection'
         }
-
         self._notebook_session_git_repo_config_collection = None
 
     @property

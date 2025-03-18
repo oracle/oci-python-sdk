@@ -100,7 +100,6 @@ class TransferDeviceSummary(object):
             'creation_time': 'datetime',
             'upload_status_log_uri': 'str'
         }
-
         self.attribute_map = {
             'serial_number': 'serialNumber',
             'iscsi_iqn': 'iscsiIQN',
@@ -110,7 +109,6 @@ class TransferDeviceSummary(object):
             'creation_time': 'creationTime',
             'upload_status_log_uri': 'uploadStatusLogUri'
         }
-
         self._serial_number = None
         self._iscsi_iqn = None
         self._label = None

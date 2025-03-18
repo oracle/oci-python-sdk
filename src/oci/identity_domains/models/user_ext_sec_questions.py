@@ -52,14 +52,12 @@ class UserExtSecQuestions(object):
             'answer': 'str',
             'hint_text': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ref': '$ref',
             'answer': 'answer',
             'hint_text': 'hintText'
         }
-
         self._value = None
         self._ref = None
         self._answer = None

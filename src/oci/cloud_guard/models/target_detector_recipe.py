@@ -190,7 +190,6 @@ class TargetDetectorRecipe(object):
             'detector_recipe_type': 'str',
             'source_data_retention': 'int'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -208,7 +207,6 @@ class TargetDetectorRecipe(object):
             'detector_recipe_type': 'detectorRecipeType',
             'source_data_retention': 'sourceDataRetention'
         }
-
         self._id = None
         self._display_name = None
         self._description = None

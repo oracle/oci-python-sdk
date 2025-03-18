@@ -28,11 +28,9 @@ class PdbMetrics(object):
         self.swagger_types = {
             'database_usage_metrics': 'list[DatabaseUsageMetrics]'
         }
-
         self.attribute_map = {
             'database_usage_metrics': 'databaseUsageMetrics'
         }
-
         self._database_usage_metrics = None
 
     @property

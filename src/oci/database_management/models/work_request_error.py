@@ -53,7 +53,6 @@ class WorkRequestError(object):
             'is_retryable': 'bool',
             'timestamp': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'work_request_id': 'workRequestId',
@@ -62,7 +61,6 @@ class WorkRequestError(object):
             'is_retryable': 'isRetryable',
             'timestamp': 'timestamp'
         }
-
         self._id = None
         self._work_request_id = None
         self._code = None

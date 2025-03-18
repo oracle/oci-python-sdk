@@ -38,11 +38,9 @@ class PeerRole(object):
         self.swagger_types = {
             'role': 'str'
         }
-
         self.attribute_map = {
             'role': 'role'
         }
-
         self._role = None
 
     @property

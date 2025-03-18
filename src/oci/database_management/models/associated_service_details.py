@@ -33,12 +33,10 @@ class AssociatedServiceDetails(object):
             'is_enabled': 'bool',
             'metadata': 'str'
         }
-
         self.attribute_map = {
             'is_enabled': 'isEnabled',
             'metadata': 'metadata'
         }
-
         self._is_enabled = None
         self._metadata = None
 

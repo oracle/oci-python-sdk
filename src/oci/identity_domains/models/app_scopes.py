@@ -53,7 +53,6 @@ class AppScopes(object):
             'requires_consent': 'bool',
             'read_only': 'bool'
         }
-
         self.attribute_map = {
             'value': 'value',
             'fqs': 'fqs',
@@ -62,7 +61,6 @@ class AppScopes(object):
             'requires_consent': 'requiresConsent',
             'read_only': 'readOnly'
         }
-
         self._value = None
         self._fqs = None
         self._description = None

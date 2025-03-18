@@ -40,13 +40,11 @@ class DocumentClassificationFeature(DocumentFeature):
             'max_results': 'int',
             'model_id': 'str'
         }
-
         self.attribute_map = {
             'feature_type': 'featureType',
             'max_results': 'maxResults',
             'model_id': 'modelId'
         }
-
         self._feature_type = None
         self._max_results = None
         self._model_id = None

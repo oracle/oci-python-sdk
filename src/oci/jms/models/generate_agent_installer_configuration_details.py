@@ -33,12 +33,10 @@ class GenerateAgentInstallerConfigurationDetails(object):
             'install_key_id': 'str',
             'fleet_id': 'str'
         }
-
         self.attribute_map = {
             'install_key_id': 'installKeyId',
             'fleet_id': 'fleetId'
         }
-
         self._install_key_id = None
         self._fleet_id = None
 

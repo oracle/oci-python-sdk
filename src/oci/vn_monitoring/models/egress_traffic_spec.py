@@ -43,14 +43,12 @@ class EgressTrafficSpec(object):
             'destination_address': 'str',
             'traffic_protocol_parameters': 'TrafficProtocolParameters'
         }
-
         self.attribute_map = {
             'protocol': 'protocol',
             'source_address': 'sourceAddress',
             'destination_address': 'destinationAddress',
             'traffic_protocol_parameters': 'trafficProtocolParameters'
         }
-
         self._protocol = None
         self._source_address = None
         self._destination_address = None

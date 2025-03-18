@@ -28,11 +28,9 @@ class FleetCollection(object):
         self.swagger_types = {
             'items': 'list[FleetSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

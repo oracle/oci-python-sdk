@@ -50,7 +50,6 @@ class FileStorageMountConfigurationDetails(StorageMountConfigurationDetails):
             'mount_target_id': 'str',
             'export_id': 'str'
         }
-
         self.attribute_map = {
             'storage_type': 'storageType',
             'destination_directory_name': 'destinationDirectoryName',
@@ -58,7 +57,6 @@ class FileStorageMountConfigurationDetails(StorageMountConfigurationDetails):
             'mount_target_id': 'mountTargetId',
             'export_id': 'exportId'
         }
-
         self._storage_type = None
         self._destination_directory_name = None
         self._destination_path = None

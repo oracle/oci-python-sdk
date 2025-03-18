@@ -189,7 +189,6 @@ class CreateRunDetails(object):
             'max_duration_in_minutes': 'int',
             'idle_timeout_in_minutes': 'int'
         }
-
         self.attribute_map = {
             'application_log_config': 'applicationLogConfig',
             'application_id': 'applicationId',
@@ -216,7 +215,6 @@ class CreateRunDetails(object):
             'max_duration_in_minutes': 'maxDurationInMinutes',
             'idle_timeout_in_minutes': 'idleTimeoutInMinutes'
         }
-
         self._application_log_config = None
         self._application_id = None
         self._archive_uri = None

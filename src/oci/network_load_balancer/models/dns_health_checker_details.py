@@ -82,7 +82,6 @@ class DnsHealthCheckerDetails(object):
             'query_type': 'str',
             'rcodes': 'list[DnsHealthCheckRCodes]'
         }
-
         self.attribute_map = {
             'transport_protocol': 'transportProtocol',
             'domain_name': 'domainName',
@@ -90,7 +89,6 @@ class DnsHealthCheckerDetails(object):
             'query_type': 'queryType',
             'rcodes': 'rcodes'
         }
-
         self._transport_protocol = None
         self._domain_name = None
         self._query_class = None

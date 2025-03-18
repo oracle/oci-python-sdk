@@ -138,7 +138,6 @@ class ActionGroupDetails(object):
             'time_ended': 'datetime',
             'runbook_id': 'str'
         }
-
         self.attribute_map = {
             'resource_id': 'resourceId',
             'name': 'name',
@@ -152,7 +151,6 @@ class ActionGroupDetails(object):
             'time_ended': 'timeEnded',
             'runbook_id': 'runbookId'
         }
-
         self._resource_id = None
         self._name = None
         self._type = None

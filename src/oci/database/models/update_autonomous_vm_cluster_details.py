@@ -67,7 +67,6 @@ class UpdateAutonomousVmClusterDetails(object):
             'cpu_core_count_per_node': 'int',
             'total_container_databases': 'int'
         }
-
         self.attribute_map = {
             'maintenance_window_details': 'maintenanceWindowDetails',
             'license_model': 'licenseModel',
@@ -77,7 +76,6 @@ class UpdateAutonomousVmClusterDetails(object):
             'cpu_core_count_per_node': 'cpuCoreCountPerNode',
             'total_container_databases': 'totalContainerDatabases'
         }
-
         self._maintenance_window_details = None
         self._license_model = None
         self._freeform_tags = None

@@ -70,12 +70,10 @@ class DrgRedundancyStatus(object):
             'id': 'str',
             'status': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'status': 'status'
         }
-
         self._id = None
         self._status = None
 

@@ -48,7 +48,6 @@ class EventType(object):
             'is_system': 'bool',
             'time_updated': 'datetime'
         }
-
         self.attribute_map = {
             'event_type_name': 'eventTypeName',
             'spec_version': 'specVersion',
@@ -56,7 +55,6 @@ class EventType(object):
             'is_system': 'isSystem',
             'time_updated': 'timeUpdated'
         }
-
         self._event_type_name = None
         self._spec_version = None
         self._is_enabled = None

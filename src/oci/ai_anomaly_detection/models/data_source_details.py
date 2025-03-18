@@ -48,11 +48,9 @@ class DataSourceDetails(object):
         self.swagger_types = {
             'data_source_type': 'str'
         }
-
         self.attribute_map = {
             'data_source_type': 'dataSourceType'
         }
-
         self._data_source_type = None
 
     @staticmethod

@@ -38,13 +38,11 @@ class PlacementConfiguration(object):
             'fault_domain': 'list[str]',
             'subnet_id': 'str'
         }
-
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'fault_domain': 'faultDomain',
             'subnet_id': 'subnetId'
         }
-
         self._availability_domain = None
         self._fault_domain = None
         self._subnet_id = None

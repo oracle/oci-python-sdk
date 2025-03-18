@@ -53,7 +53,6 @@ class Message(object):
             'offset': 'int',
             'timestamp': 'datetime'
         }
-
         self.attribute_map = {
             'stream': 'stream',
             'partition': 'partition',
@@ -62,7 +61,6 @@ class Message(object):
             'offset': 'offset',
             'timestamp': 'timestamp'
         }
-
         self._stream = None
         self._partition = None
         self._key = None

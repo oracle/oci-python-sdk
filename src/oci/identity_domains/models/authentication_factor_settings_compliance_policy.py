@@ -56,13 +56,11 @@ class AuthenticationFactorSettingsCompliancePolicy(object):
             'action': 'str',
             'value': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'action': 'action',
             'value': 'value'
         }
-
         self._name = None
         self._action = None
         self._value = None

@@ -28,11 +28,9 @@ class RefreshIssueDetails(object):
         self.swagger_types = {
             'refresh_issues': 'str'
         }
-
         self.attribute_map = {
             'refresh_issues': 'refreshIssues'
         }
-
         self._refresh_issues = None
 
     @property

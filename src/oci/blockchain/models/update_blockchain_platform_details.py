@@ -58,7 +58,6 @@ class UpdateBlockchainPlatformDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'description': 'description',
             'storage_size_in_tbs': 'storageSizeInTBs',
@@ -68,7 +67,6 @@ class UpdateBlockchainPlatformDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._description = None
         self._storage_size_in_tbs = None
         self._replicas = None

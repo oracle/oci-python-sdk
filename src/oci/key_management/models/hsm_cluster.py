@@ -119,7 +119,6 @@ class HsmCluster(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -132,7 +131,6 @@ class HsmCluster(object):
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags'
         }
-
         self._id = None
         self._compartment_id = None
         self._display_name = None

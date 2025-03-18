@@ -127,7 +127,6 @@ class DiscoveryJobResultSummary(object):
             'is_result_applied': 'bool',
             'discovery_job_id': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'discovery_type': 'discoveryType',
@@ -146,7 +145,6 @@ class DiscoveryJobResultSummary(object):
             'is_result_applied': 'isResultApplied',
             'discovery_job_id': 'discoveryJobId'
         }
-
         self._key = None
         self._discovery_type = None
         self._sensitive_columnkey = None

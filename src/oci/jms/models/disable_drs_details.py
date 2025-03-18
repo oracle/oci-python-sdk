@@ -29,11 +29,9 @@ class DisableDrsDetails(object):
         self.swagger_types = {
             'manage_drs_details': 'ManageDrsDetails'
         }
-
         self.attribute_map = {
             'manage_drs_details': 'manageDrsDetails'
         }
-
         self._manage_drs_details = None
 
     @property

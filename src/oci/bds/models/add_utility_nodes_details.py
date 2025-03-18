@@ -48,7 +48,6 @@ class AddUtilityNodesDetails(object):
             'block_volume_size_in_gbs': 'int',
             'shape_config': 'ShapeConfigDetails'
         }
-
         self.attribute_map = {
             'cluster_admin_password': 'clusterAdminPassword',
             'number_of_utility_nodes': 'numberOfUtilityNodes',
@@ -56,7 +55,6 @@ class AddUtilityNodesDetails(object):
             'block_volume_size_in_gbs': 'blockVolumeSizeInGBs',
             'shape_config': 'shapeConfig'
         }
-
         self._cluster_admin_password = None
         self._number_of_utility_nodes = None
         self._shape = None

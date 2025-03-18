@@ -48,7 +48,6 @@ class SenderConfig(object):
             'time_verify_response_expiry': 'datetime',
             'is_inbox_configured': 'bool'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'email': 'email',
@@ -56,7 +55,6 @@ class SenderConfig(object):
             'time_verify_response_expiry': 'timeVerifyResponseExpiry',
             'is_inbox_configured': 'isInboxConfigured'
         }
-
         self._display_name = None
         self._email = None
         self._is_verified = None

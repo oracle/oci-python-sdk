@@ -28,11 +28,9 @@ class SessionToken(object):
         self.swagger_types = {
             'token': 'str'
         }
-
         self.attribute_map = {
             'token': 'token'
         }
-
         self._token = None
 
     @property

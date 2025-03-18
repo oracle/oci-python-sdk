@@ -220,7 +220,6 @@ class CreateTaskFromRestTask(CreateTaskDetails):
             'poll_rest_call_config': 'PollRestCallConfig',
             'typed_expressions': 'list[TypedExpression]'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -251,7 +250,6 @@ class CreateTaskFromRestTask(CreateTaskDetails):
             'poll_rest_call_config': 'pollRestCallConfig',
             'typed_expressions': 'typedExpressions'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

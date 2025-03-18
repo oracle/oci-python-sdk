@@ -52,13 +52,11 @@ class CopyConflictResolution(object):
             'duplicate_suffix': 'str',
             'request_type': 'str'
         }
-
         self.attribute_map = {
             'duplicate_prefix': 'duplicatePrefix',
             'duplicate_suffix': 'duplicateSuffix',
             'request_type': 'requestType'
         }
-
         self._duplicate_prefix = None
         self._duplicate_suffix = None
         self._request_type = None

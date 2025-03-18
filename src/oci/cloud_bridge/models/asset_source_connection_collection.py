@@ -28,11 +28,9 @@ class AssetSourceConnectionCollection(object):
         self.swagger_types = {
             'items': 'list[AssetSourceConnection]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

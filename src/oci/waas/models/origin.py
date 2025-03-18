@@ -43,14 +43,12 @@ class Origin(object):
             'https_port': 'int',
             'custom_headers': 'list[Header]'
         }
-
         self.attribute_map = {
             'uri': 'uri',
             'http_port': 'httpPort',
             'https_port': 'httpsPort',
             'custom_headers': 'customHeaders'
         }
-
         self._uri = None
         self._http_port = None
         self._https_port = None

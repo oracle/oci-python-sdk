@@ -55,7 +55,6 @@ class ExadataInsightsDataObjectSummary(OpsiDataObjectSummary):
             'name': 'str',
             'group_names': 'list[str]'
         }
-
         self.attribute_map = {
             'identifier': 'identifier',
             'data_object_type': 'dataObjectType',
@@ -64,7 +63,6 @@ class ExadataInsightsDataObjectSummary(OpsiDataObjectSummary):
             'name': 'name',
             'group_names': 'groupNames'
         }
-
         self._identifier = None
         self._data_object_type = None
         self._display_name = None

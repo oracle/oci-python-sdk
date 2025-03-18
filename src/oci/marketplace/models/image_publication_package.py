@@ -75,7 +75,6 @@ class ImagePublicationPackage(PublicationPackage):
             'app_catalog_listing_resource_version': 'str',
             'image_id': 'str'
         }
-
         self.attribute_map = {
             'description': 'description',
             'listing_id': 'listingId',
@@ -88,7 +87,6 @@ class ImagePublicationPackage(PublicationPackage):
             'app_catalog_listing_resource_version': 'appCatalogListingResourceVersion',
             'image_id': 'imageId'
         }
-
         self._description = None
         self._listing_id = None
         self._version = None

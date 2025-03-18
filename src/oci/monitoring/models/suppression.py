@@ -44,13 +44,11 @@ class Suppression(object):
             'time_suppress_from': 'datetime',
             'time_suppress_until': 'datetime'
         }
-
         self.attribute_map = {
             'description': 'description',
             'time_suppress_from': 'timeSuppressFrom',
             'time_suppress_until': 'timeSuppressUntil'
         }
-
         self._description = None
         self._time_suppress_from = None
         self._time_suppress_until = None

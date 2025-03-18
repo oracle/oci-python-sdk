@@ -43,14 +43,12 @@ class SqlStatisticAggregation(object):
             'category': 'list[str]',
             'statistics': 'SqlStatistics'
         }
-
         self.attribute_map = {
             'sql_identifier': 'sqlIdentifier',
             'database_details': 'databaseDetails',
             'category': 'category',
             'statistics': 'statistics'
         }
-
         self._sql_identifier = None
         self._database_details = None
         self._category = None

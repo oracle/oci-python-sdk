@@ -61,7 +61,6 @@ class UpdateV1DashboardDetails(UpdateDashboardDetails):
             'config': 'object',
             'widgets': 'list[object]'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
@@ -71,7 +70,6 @@ class UpdateV1DashboardDetails(UpdateDashboardDetails):
             'config': 'config',
             'widgets': 'widgets'
         }
-
         self._display_name = None
         self._description = None
         self._schema_version = None

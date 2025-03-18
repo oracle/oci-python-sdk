@@ -38,13 +38,11 @@ class RuleSummary(object):
             'description': 'str',
             'parameters': 'list[OperatorSummary]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'description': 'description',
             'parameters': 'parameters'
         }
-
         self._id = None
         self._description = None
         self._parameters = None

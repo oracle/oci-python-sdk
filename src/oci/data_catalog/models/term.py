@@ -167,7 +167,6 @@ class Term(object):
             'associated_objects': 'list[TermAssociatedObject]',
             'custom_property_members': 'list[CustomPropertyGetUsage]'
         }
-
         self.attribute_map = {
             'key': 'key',
             'display_name': 'displayName',
@@ -188,7 +187,6 @@ class Term(object):
             'associated_objects': 'associatedObjects',
             'custom_property_members': 'customPropertyMembers'
         }
-
         self._key = None
         self._display_name = None
         self._description = None

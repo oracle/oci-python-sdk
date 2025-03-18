@@ -38,13 +38,11 @@ class StorageUsage(object):
             'archived_data_size_in_bytes': 'int',
             'recalled_archived_data_size_in_bytes': 'int'
         }
-
         self.attribute_map = {
             'active_data_size_in_bytes': 'activeDataSizeInBytes',
             'archived_data_size_in_bytes': 'archivedDataSizeInBytes',
             'recalled_archived_data_size_in_bytes': 'recalledArchivedDataSizeInBytes'
         }
-
         self._active_data_size_in_bytes = None
         self._archived_data_size_in_bytes = None
         self._recalled_archived_data_size_in_bytes = None

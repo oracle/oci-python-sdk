@@ -83,7 +83,6 @@ class PingProbe(object):
             'timeout_in_seconds': 'int',
             'protocol': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'results_url': 'resultsUrl',
@@ -96,7 +95,6 @@ class PingProbe(object):
             'timeout_in_seconds': 'timeoutInSeconds',
             'protocol': 'protocol'
         }
-
         self._id = None
         self._results_url = None
         self._home_region = None

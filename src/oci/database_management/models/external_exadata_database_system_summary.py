@@ -103,7 +103,6 @@ class ExternalExadataDatabaseSystemSummary(DbmResource):
             'compartment_id': 'str',
             'license_model': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -119,7 +118,6 @@ class ExternalExadataDatabaseSystemSummary(DbmResource):
             'compartment_id': 'compartmentId',
             'license_model': 'licenseModel'
         }
-
         self._id = None
         self._display_name = None
         self._version = None

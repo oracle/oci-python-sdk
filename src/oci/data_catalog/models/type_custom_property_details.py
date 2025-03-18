@@ -33,12 +33,10 @@ class TypeCustomPropertyDetails(object):
             'custom_property_ids': 'list[str]',
             'is_event_enabled': 'bool'
         }
-
         self.attribute_map = {
             'custom_property_ids': 'customPropertyIds',
             'is_event_enabled': 'isEventEnabled'
         }
-
         self._custom_property_ids = None
         self._is_event_enabled = None
 

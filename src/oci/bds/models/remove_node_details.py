@@ -38,13 +38,11 @@ class RemoveNodeDetails(object):
             'is_force_remove_enabled': 'bool',
             'node_id': 'str'
         }
-
         self.attribute_map = {
             'cluster_admin_password': 'clusterAdminPassword',
             'is_force_remove_enabled': 'isForceRemoveEnabled',
             'node_id': 'nodeId'
         }
-
         self._cluster_admin_password = None
         self._is_force_remove_enabled = None
         self._node_id = None

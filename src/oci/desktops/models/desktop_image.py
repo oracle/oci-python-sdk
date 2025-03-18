@@ -38,13 +38,11 @@ class DesktopImage(object):
             'image_name': 'str',
             'operating_system': 'str'
         }
-
         self.attribute_map = {
             'image_id': 'imageId',
             'image_name': 'imageName',
             'operating_system': 'operatingSystem'
         }
-
         self._image_id = None
         self._image_name = None
         self._operating_system = None

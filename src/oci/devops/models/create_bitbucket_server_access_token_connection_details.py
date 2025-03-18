@@ -70,7 +70,6 @@ class CreateBitbucketServerAccessTokenConnectionDetails(CreateConnectionDetails)
             'base_url': 'str',
             'tls_verify_config': 'TlsVerifyConfig'
         }
-
         self.attribute_map = {
             'description': 'description',
             'display_name': 'displayName',
@@ -82,7 +81,6 @@ class CreateBitbucketServerAccessTokenConnectionDetails(CreateConnectionDetails)
             'base_url': 'baseUrl',
             'tls_verify_config': 'tlsVerifyConfig'
         }
-
         self._description = None
         self._display_name = None
         self._project_id = None

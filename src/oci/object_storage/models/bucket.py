@@ -185,7 +185,6 @@ class Bucket(object):
             'versioning': 'str',
             'auto_tiering': 'str'
         }
-
         self.attribute_map = {
             'namespace': 'namespace',
             'name': 'name',
@@ -209,7 +208,6 @@ class Bucket(object):
             'versioning': 'versioning',
             'auto_tiering': 'autoTiering'
         }
-
         self._namespace = None
         self._name = None
         self._compartment_id = None

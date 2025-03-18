@@ -33,12 +33,10 @@ class CreateTransferDeviceDetails(object):
             'serial_number': 'str',
             'iscsi_iqn': 'str'
         }
-
         self.attribute_map = {
             'serial_number': 'serialNumber',
             'iscsi_iqn': 'iscsiIQN'
         }
-
         self._serial_number = None
         self._iscsi_iqn = None
 

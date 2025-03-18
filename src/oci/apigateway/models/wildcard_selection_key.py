@@ -45,14 +45,12 @@ class WildcardSelectionKey(DynamicSelectionKey):
             'name': 'str',
             'expression': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'is_default': 'isDefault',
             'name': 'name',
             'expression': 'expression'
         }
-
         self._type = None
         self._is_default = None
         self._name = None

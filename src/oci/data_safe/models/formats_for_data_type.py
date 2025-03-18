@@ -33,12 +33,10 @@ class FormatsForDataType(object):
             'data_type': 'str',
             'masking_formats': 'list[FormatSummary]'
         }
-
         self.attribute_map = {
             'data_type': 'dataType',
             'masking_formats': 'maskingFormats'
         }
-
         self._data_type = None
         self._masking_formats = None
 

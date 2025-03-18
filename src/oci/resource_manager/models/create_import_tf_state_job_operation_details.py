@@ -39,13 +39,11 @@ class CreateImportTfStateJobOperationDetails(CreateJobOperationDetails):
             'is_provider_upgrade_required': 'bool',
             'tf_state_base64_encoded': 'str'
         }
-
         self.attribute_map = {
             'operation': 'operation',
             'is_provider_upgrade_required': 'isProviderUpgradeRequired',
             'tf_state_base64_encoded': 'tfStateBase64Encoded'
         }
-
         self._operation = None
         self._is_provider_upgrade_required = None
         self._tf_state_base64_encoded = None

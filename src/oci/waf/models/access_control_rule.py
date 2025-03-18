@@ -57,7 +57,6 @@ class AccessControlRule(WebAppFirewallPolicyRule):
             'condition': 'str',
             'action_name': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'name': 'name',
@@ -65,7 +64,6 @@ class AccessControlRule(WebAppFirewallPolicyRule):
             'condition': 'condition',
             'action_name': 'actionName'
         }
-
         self._type = None
         self._name = None
         self._condition_language = None

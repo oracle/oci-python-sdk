@@ -53,13 +53,11 @@ class TableStatisticSummary(object):
             'count': 'int',
             'percentage': 'float'
         }
-
         self.attribute_map = {
             'type': 'type',
             'count': 'count',
             'percentage': 'percentage'
         }
-
         self._type = None
         self._count = None
         self._percentage = None

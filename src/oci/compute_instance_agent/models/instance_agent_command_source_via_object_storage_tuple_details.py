@@ -45,14 +45,12 @@ class InstanceAgentCommandSourceViaObjectStorageTupleDetails(InstanceAgentComman
             'namespace_name': 'str',
             'object_name': 'str'
         }
-
         self.attribute_map = {
             'source_type': 'sourceType',
             'bucket_name': 'bucketName',
             'namespace_name': 'namespaceName',
             'object_name': 'objectName'
         }
-
         self._source_type = None
         self._bucket_name = None
         self._namespace_name = None

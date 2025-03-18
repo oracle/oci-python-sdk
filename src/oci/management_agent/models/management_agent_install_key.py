@@ -122,7 +122,6 @@ class ManagementAgentInstallKey(object):
             'time_updated': 'datetime',
             'is_unlimited': 'bool'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -138,7 +137,6 @@ class ManagementAgentInstallKey(object):
             'time_updated': 'timeUpdated',
             'is_unlimited': 'isUnlimited'
         }
-
         self._id = None
         self._display_name = None
         self._key = None

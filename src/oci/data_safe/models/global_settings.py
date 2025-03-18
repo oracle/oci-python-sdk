@@ -38,13 +38,11 @@ class GlobalSettings(object):
             'online_retention_period': 'int',
             'offline_retention_period': 'int'
         }
-
         self.attribute_map = {
             'is_paid_usage': 'isPaidUsage',
             'online_retention_period': 'onlineRetentionPeriod',
             'offline_retention_period': 'offlineRetentionPeriod'
         }
-
         self._is_paid_usage = None
         self._online_retention_period = None
         self._offline_retention_period = None

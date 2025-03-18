@@ -33,12 +33,10 @@ class SqlStatisticsTimeSeriesByPlanAggregation(object):
             'plan_hash': 'int',
             'statistics': 'list[SqlStatisticsTimeSeries]'
         }
-
         self.attribute_map = {
             'plan_hash': 'planHash',
             'statistics': 'statistics'
         }
-
         self._plan_hash = None
         self._statistics = None
 

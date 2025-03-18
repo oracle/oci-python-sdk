@@ -120,7 +120,6 @@ class OptimizerStatisticsCollectionOperation(object):
             'timed_out_count': 'int',
             'total_objects_count': 'int'
         }
-
         self.attribute_map = {
             'database': 'database',
             'tasks': 'tasks',
@@ -138,7 +137,6 @@ class OptimizerStatisticsCollectionOperation(object):
             'timed_out_count': 'timedOutCount',
             'total_objects_count': 'totalObjectsCount'
         }
-
         self._database = None
         self._tasks = None
         self._id = None

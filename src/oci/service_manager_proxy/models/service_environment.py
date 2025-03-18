@@ -174,7 +174,6 @@ class ServiceEnvironment(object):
             'console_url': 'str',
             'service_environment_endpoints': 'list[ServiceEnvironmentEndPointOverview]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'subscription_id': 'subscriptionId',
@@ -184,7 +183,6 @@ class ServiceEnvironment(object):
             'console_url': 'consoleUrl',
             'service_environment_endpoints': 'serviceEnvironmentEndpoints'
         }
-
         self._id = None
         self._subscription_id = None
         self._status = None

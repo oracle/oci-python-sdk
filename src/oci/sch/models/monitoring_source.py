@@ -33,12 +33,10 @@ class MonitoringSource(object):
             'compartment_id': 'str',
             'namespace_details': 'MonitoringSourceNamespaceDetails'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'namespace_details': 'namespaceDetails'
         }
-
         self._compartment_id = None
         self._namespace_details = None
 

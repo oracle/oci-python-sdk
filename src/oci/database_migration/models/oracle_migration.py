@@ -154,7 +154,6 @@ class OracleMigration(Migration):
             'source_container_database_connection_id': 'str',
             'advanced_parameters': 'list[MigrationParameterDetails]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'description': 'description',
@@ -182,7 +181,6 @@ class OracleMigration(Migration):
             'source_container_database_connection_id': 'sourceContainerDatabaseConnectionId',
             'advanced_parameters': 'advancedParameters'
         }
-
         self._id = None
         self._description = None
         self._database_combination = None

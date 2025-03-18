@@ -95,7 +95,6 @@ class ExternalMysqlDatabaseConfigurationSummary(DatabaseConfigurationSummary):
             'agent_id': 'str',
             'database_connector_id': 'str'
         }
-
         self.attribute_map = {
             'database_insight_id': 'databaseInsightId',
             'entity_source': 'entitySource',
@@ -112,7 +111,6 @@ class ExternalMysqlDatabaseConfigurationSummary(DatabaseConfigurationSummary):
             'agent_id': 'agentId',
             'database_connector_id': 'databaseConnectorId'
         }
-
         self._database_insight_id = None
         self._entity_source = None
         self._compartment_id = None

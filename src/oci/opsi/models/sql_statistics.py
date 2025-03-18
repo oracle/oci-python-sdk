@@ -118,7 +118,6 @@ class SqlStatistics(object):
             'change_in_executions_per_hour_in_pct': 'float',
             'change_in_inefficiency_in_pct': 'float'
         }
-
         self.attribute_map = {
             'database_time_in_sec': 'databaseTimeInSec',
             'executions_per_hour': 'executionsPerHour',
@@ -140,7 +139,6 @@ class SqlStatistics(object):
             'change_in_executions_per_hour_in_pct': 'changeInExecutionsPerHourInPct',
             'change_in_inefficiency_in_pct': 'changeInInefficiencyInPct'
         }
-
         self._database_time_in_sec = None
         self._executions_per_hour = None
         self._executions_count = None

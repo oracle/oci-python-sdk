@@ -46,14 +46,12 @@ class CustomExpressionQueryScalingConfiguration(ScalingConfiguration):
             'instance_count_adjustment': 'int',
             'query': 'str'
         }
-
         self.attribute_map = {
             'scaling_configuration_type': 'scalingConfigurationType',
             'pending_duration': 'pendingDuration',
             'instance_count_adjustment': 'instanceCountAdjustment',
             'query': 'query'
         }
-
         self._scaling_configuration_type = None
         self._pending_duration = None
         self._instance_count_adjustment = None

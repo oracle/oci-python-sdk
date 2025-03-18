@@ -37,12 +37,10 @@ class CommitMultipartUploadDetails(object):
             'parts_to_commit': 'list[CommitMultipartUploadPartDetails]',
             'parts_to_exclude': 'list[int]'
         }
-
         self.attribute_map = {
             'parts_to_commit': 'partsToCommit',
             'parts_to_exclude': 'partsToExclude'
         }
-
         self._parts_to_commit = None
         self._parts_to_exclude = None
 

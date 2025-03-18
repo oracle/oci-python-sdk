@@ -80,7 +80,6 @@ class SpmEvolveTaskParameters(object):
             'are_plans_auto_accepted': 'bool',
             'allowed_time_limit': 'int'
         }
-
         self.attribute_map = {
             'alternate_plan_sources': 'alternatePlanSources',
             'alternate_plan_baselines': 'alternatePlanBaselines',
@@ -88,7 +87,6 @@ class SpmEvolveTaskParameters(object):
             'are_plans_auto_accepted': 'arePlansAutoAccepted',
             'allowed_time_limit': 'allowedTimeLimit'
         }
-
         self._alternate_plan_sources = None
         self._alternate_plan_baselines = None
         self._alternate_plan_limit = None

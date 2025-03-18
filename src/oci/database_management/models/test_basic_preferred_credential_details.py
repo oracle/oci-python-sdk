@@ -58,14 +58,12 @@ class TestBasicPreferredCredentialDetails(TestPreferredCredentialDetails):
             'role': 'str',
             'password_secret_id': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'user_name': 'userName',
             'role': 'role',
             'password_secret_id': 'passwordSecretId'
         }
-
         self._type = None
         self._user_name = None
         self._role = None

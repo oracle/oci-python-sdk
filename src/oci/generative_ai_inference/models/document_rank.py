@@ -38,13 +38,11 @@ class DocumentRank(object):
             'relevance_score': 'float',
             'document': 'Document'
         }
-
         self.attribute_map = {
             'index': 'index',
             'relevance_score': 'relevanceScore',
             'document': 'document'
         }
-
         self._index = None
         self._relevance_score = None
         self._document = None

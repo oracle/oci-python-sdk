@@ -28,11 +28,9 @@ class ScheduledJobCollection(object):
         self.swagger_types = {
             'items': 'list[ScheduledJobSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

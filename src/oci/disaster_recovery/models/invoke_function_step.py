@@ -45,14 +45,12 @@ class InvokeFunctionStep(DrPlanUserDefinedStep):
             'function_region': 'str',
             'request_body': 'str'
         }
-
         self.attribute_map = {
             'step_type': 'stepType',
             'function_id': 'functionId',
             'function_region': 'functionRegion',
             'request_body': 'requestBody'
         }
-
         self._step_type = None
         self._function_id = None
         self._function_region = None

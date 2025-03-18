@@ -110,7 +110,6 @@ class GenericChatRequest(BaseChatRequest):
             'tool_choice': 'ToolChoice',
             'tools': 'list[ToolDefinition]'
         }
-
         self.attribute_map = {
             'api_format': 'apiFormat',
             'messages': 'messages',
@@ -130,7 +129,6 @@ class GenericChatRequest(BaseChatRequest):
             'tool_choice': 'toolChoice',
             'tools': 'tools'
         }
-
         self._api_format = None
         self._messages = None
         self._is_stream = None

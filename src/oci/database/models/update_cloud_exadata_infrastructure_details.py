@@ -58,7 +58,6 @@ class UpdateCloudExadataInfrastructureDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'customer_contacts': 'list[CustomerContact]'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'maintenance_window': 'maintenanceWindow',
@@ -68,7 +67,6 @@ class UpdateCloudExadataInfrastructureDetails(object):
             'defined_tags': 'definedTags',
             'customer_contacts': 'customerContacts'
         }
-
         self._display_name = None
         self._maintenance_window = None
         self._compute_count = None

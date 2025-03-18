@@ -38,13 +38,11 @@ class Whitelist(object):
             'addresses': 'list[str]',
             'address_lists': 'list[str]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'addresses': 'addresses',
             'address_lists': 'addressLists'
         }
-
         self._name = None
         self._addresses = None
         self._address_lists = None

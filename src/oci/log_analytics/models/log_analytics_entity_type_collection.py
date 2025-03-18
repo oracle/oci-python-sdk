@@ -28,11 +28,9 @@ class LogAnalyticsEntityTypeCollection(object):
         self.swagger_types = {
             'items': 'list[LogAnalyticsEntityTypeSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

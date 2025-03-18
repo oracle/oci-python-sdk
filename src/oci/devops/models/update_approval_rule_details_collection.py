@@ -28,11 +28,9 @@ class UpdateApprovalRuleDetailsCollection(object):
         self.swagger_types = {
             'items': 'list[UpdateApprovalRuleDetails]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

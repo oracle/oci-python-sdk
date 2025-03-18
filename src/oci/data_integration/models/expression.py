@@ -58,7 +58,6 @@ class Expression(object):
             'config_values': 'ConfigValues',
             'object_status': 'int'
         }
-
         self.attribute_map = {
             'key': 'key',
             'model_type': 'modelType',
@@ -68,7 +67,6 @@ class Expression(object):
             'config_values': 'configValues',
             'object_status': 'objectStatus'
         }
-
         self._key = None
         self._model_type = None
         self._model_version = None

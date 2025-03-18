@@ -144,7 +144,6 @@ class FleetSummary(object):
             'freeform_tags': 'dict(str, str)',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -165,7 +164,6 @@ class FleetSummary(object):
             'freeform_tags': 'freeformTags',
             'system_tags': 'systemTags'
         }
-
         self._id = None
         self._display_name = None
         self._description = None

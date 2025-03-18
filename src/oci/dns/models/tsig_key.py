@@ -105,7 +105,6 @@ class TsigKey(object):
             'lifecycle_state': 'str',
             'time_updated': 'datetime'
         }
-
         self.attribute_map = {
             'algorithm': 'algorithm',
             'name': 'name',
@@ -119,7 +118,6 @@ class TsigKey(object):
             'lifecycle_state': 'lifecycleState',
             'time_updated': 'timeUpdated'
         }
-
         self._algorithm = None
         self._name = None
         self._compartment_id = None

@@ -50,7 +50,6 @@ class ModelMetadataDetails(object):
             'language_code': 'str',
             'configuration': 'dict(str, ConfigurationDetails)'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'model_id': 'modelId',
@@ -58,7 +57,6 @@ class ModelMetadataDetails(object):
             'language_code': 'languageCode',
             'configuration': 'configuration'
         }
-
         self._model_type = None
         self._model_id = None
         self._endpoint_id = None

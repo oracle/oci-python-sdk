@@ -38,12 +38,10 @@ class AssetSourceCredentials(object):
             'type': 'str',
             'secret_id': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'secret_id': 'secretId'
         }
-
         self._type = None
         self._secret_id = None
 

@@ -28,11 +28,9 @@ class ConfigureOutboundClusterDetails(object):
         self.swagger_types = {
             'inbound_cluster_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'inbound_cluster_ids': 'inboundClusterIds'
         }
-
         self._inbound_cluster_ids = None
 
     @property

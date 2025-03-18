@@ -33,12 +33,10 @@ class UpdateTagDefaultDetails(object):
             'value': 'str',
             'is_required': 'bool'
         }
-
         self.attribute_map = {
             'value': 'value',
             'is_required': 'isRequired'
         }
-
         self._value = None
         self._is_required = None
 

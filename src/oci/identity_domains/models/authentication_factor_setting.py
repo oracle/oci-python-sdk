@@ -269,7 +269,6 @@ class AuthenticationFactorSetting(object):
             'urn_ietf_params_scim_schemas_oracle_idcs_extension_third_party_authentication_factor_settings': 'ExtensionThirdPartyAuthenticationFactorSettings',
             'urn_ietf_params_scim_schemas_oracle_idcs_extension_fido_authentication_factor_settings': 'ExtensionFidoAuthenticationFactorSettings'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -310,7 +309,6 @@ class AuthenticationFactorSetting(object):
             'urn_ietf_params_scim_schemas_oracle_idcs_extension_third_party_authentication_factor_settings': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:thirdParty:AuthenticationFactorSettings',
             'urn_ietf_params_scim_schemas_oracle_idcs_extension_fido_authentication_factor_settings': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:fido:AuthenticationFactorSettings'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

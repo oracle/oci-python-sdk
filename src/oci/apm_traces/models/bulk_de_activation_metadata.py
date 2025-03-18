@@ -94,7 +94,6 @@ class BulkDeActivationMetadata(object):
             'available_synthetic_string_attributes': 'int',
             'available_synthetic_numeric_attributes': 'int'
         }
-
         self.attribute_map = {
             'operation_status': 'operationStatus',
             'operation_type': 'operationType',
@@ -105,7 +104,6 @@ class BulkDeActivationMetadata(object):
             'available_synthetic_string_attributes': 'availableSyntheticStringAttributes',
             'available_synthetic_numeric_attributes': 'availableSyntheticNumericAttributes'
         }
-
         self._operation_status = None
         self._operation_type = None
         self._attributes_de_activated = None

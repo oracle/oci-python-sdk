@@ -50,7 +50,6 @@ class PipelineDataflowStepUpdateDetails(PipelineStepUpdateDetails):
             'step_configuration_details': 'PipelineStepConfigurationDetails',
             'step_dataflow_configuration_details': 'PipelineDataflowConfigurationDetails'
         }
-
         self.attribute_map = {
             'step_type': 'stepType',
             'step_name': 'stepName',
@@ -58,7 +57,6 @@ class PipelineDataflowStepUpdateDetails(PipelineStepUpdateDetails):
             'step_configuration_details': 'stepConfigurationDetails',
             'step_dataflow_configuration_details': 'stepDataflowConfigurationDetails'
         }
-
         self._step_type = None
         self._step_name = None
         self._description = None

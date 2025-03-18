@@ -35,12 +35,10 @@ class CreateJobRunScheduleActionDetails(ScheduleHttpActionDetails):
             'http_action_type': 'str',
             'create_job_run_details': 'CreateJobRunDetails'
         }
-
         self.attribute_map = {
             'http_action_type': 'httpActionType',
             'create_job_run_details': 'createJobRunDetails'
         }
-
         self._http_action_type = None
         self._create_job_run_details = None
         self._http_action_type = 'CREATE_JOB_RUN'

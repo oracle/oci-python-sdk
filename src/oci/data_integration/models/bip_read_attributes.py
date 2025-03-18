@@ -70,7 +70,6 @@ class BipReadAttributes(AbstractReadAttribute):
             'staging_connection': 'ConnectionSummaryFromObjectStorage',
             'bucket_schema': 'Schema'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'fetch_size': 'fetchSize',
@@ -82,7 +81,6 @@ class BipReadAttributes(AbstractReadAttribute):
             'staging_connection': 'stagingConnection',
             'bucket_schema': 'bucketSchema'
         }
-
         self._model_type = None
         self._fetch_size = None
         self._row_limit = None

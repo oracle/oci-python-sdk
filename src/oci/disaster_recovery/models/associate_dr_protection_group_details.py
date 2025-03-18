@@ -51,13 +51,11 @@ class AssociateDrProtectionGroupDetails(object):
             'peer_region': 'str',
             'role': 'str'
         }
-
         self.attribute_map = {
             'peer_id': 'peerId',
             'peer_region': 'peerRegion',
             'role': 'role'
         }
-
         self._peer_id = None
         self._peer_region = None
         self._role = None

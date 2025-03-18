@@ -62,7 +62,6 @@ class DatabaseFleetHealthMetrics(object):
             'fleet_summary': 'FleetSummary',
             'fleet_databases': 'list[DatabaseUsageMetrics]'
         }
-
         self.attribute_map = {
             'compare_baseline_time': 'compareBaselineTime',
             'compare_target_time': 'compareTargetTime',
@@ -70,7 +69,6 @@ class DatabaseFleetHealthMetrics(object):
             'fleet_summary': 'fleetSummary',
             'fleet_databases': 'fleetDatabases'
         }
-
         self._compare_baseline_time = None
         self._compare_target_time = None
         self._compare_type = None

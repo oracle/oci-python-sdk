@@ -126,7 +126,6 @@ class Attachment(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'id': 'id',
             'seller_compartment_id': 'sellerCompartmentId',
@@ -140,7 +139,6 @@ class Attachment(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._id = None
         self._seller_compartment_id = None
         self._offer_id = None

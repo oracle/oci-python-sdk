@@ -43,11 +43,9 @@ class ModelMetrics(object):
         self.swagger_types = {
             'model_metrics_type': 'str'
         }
-
         self.attribute_map = {
             'model_metrics_type': 'modelMetricsType'
         }
-
         self._model_metrics_type = None
 
     @staticmethod

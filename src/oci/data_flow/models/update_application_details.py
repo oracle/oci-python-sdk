@@ -170,7 +170,6 @@ class UpdateApplicationDetails(object):
             'max_duration_in_minutes': 'int',
             'idle_timeout_in_minutes': 'int'
         }
-
         self.attribute_map = {
             'class_name': 'className',
             'file_uri': 'fileUri',
@@ -199,7 +198,6 @@ class UpdateApplicationDetails(object):
             'max_duration_in_minutes': 'maxDurationInMinutes',
             'idle_timeout_in_minutes': 'idleTimeoutInMinutes'
         }
-
         self._class_name = None
         self._file_uri = None
         self._spark_version = None

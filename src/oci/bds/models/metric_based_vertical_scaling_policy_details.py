@@ -54,7 +54,6 @@ class MetricBasedVerticalScalingPolicyDetails(AutoScalePolicyDetails):
             'scale_up_config': 'MetricBasedVerticalScaleUpConfig',
             'scale_down_config': 'MetricBasedVerticalScaleDownConfig'
         }
-
         self.attribute_map = {
             'policy_type': 'policyType',
             'trigger_type': 'triggerType',
@@ -62,7 +61,6 @@ class MetricBasedVerticalScalingPolicyDetails(AutoScalePolicyDetails):
             'scale_up_config': 'scaleUpConfig',
             'scale_down_config': 'scaleDownConfig'
         }
-
         self._policy_type = None
         self._trigger_type = None
         self._action_type = None

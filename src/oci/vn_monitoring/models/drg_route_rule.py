@@ -108,7 +108,6 @@ class DrgRouteRule(object):
             'route_provenance': 'str',
             'attributes': 'object'
         }
-
         self.attribute_map = {
             'destination': 'destination',
             'destination_type': 'destinationType',
@@ -120,7 +119,6 @@ class DrgRouteRule(object):
             'route_provenance': 'routeProvenance',
             'attributes': 'attributes'
         }
-
         self._destination = None
         self._destination_type = None
         self._next_hop_drg_attachment_id = None

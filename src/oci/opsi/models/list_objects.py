@@ -38,13 +38,11 @@ class ListObjects(object):
             'next_start_with': 'str',
             'objects': 'list[ObjectSummary]'
         }
-
         self.attribute_map = {
             'prefixes': 'prefixes',
             'next_start_with': 'nextStartWith',
             'objects': 'objects'
         }
-
         self._prefixes = None
         self._next_start_with = None
         self._objects = None

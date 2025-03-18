@@ -75,7 +75,6 @@ class CreateBitbucketCloudUsernameAppPasswordConfigurationSourceProviderDetails(
             'username': 'str',
             'secret_id': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
@@ -88,7 +87,6 @@ class CreateBitbucketCloudUsernameAppPasswordConfigurationSourceProviderDetails(
             'username': 'username',
             'secret_id': 'secretId'
         }
-
         self._compartment_id = None
         self._display_name = None
         self._description = None

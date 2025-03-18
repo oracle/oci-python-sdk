@@ -59,13 +59,11 @@ class DomainReplicationStates(object):
             'state': 'str',
             'replica_region': 'str'
         }
-
         self.attribute_map = {
             'domain_id': 'domainId',
             'state': 'state',
             'replica_region': 'replicaRegion'
         }
-
         self._domain_id = None
         self._state = None
         self._replica_region = None

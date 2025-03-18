@@ -56,13 +56,11 @@ class VcnDnsResolverAssociation(object):
             'dns_resolver_id': 'str',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'vcn_id': 'vcnId',
             'dns_resolver_id': 'dnsResolverId',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._vcn_id = None
         self._dns_resolver_id = None
         self._lifecycle_state = None

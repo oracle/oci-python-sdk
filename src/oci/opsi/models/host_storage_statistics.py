@@ -55,7 +55,6 @@ class HostStorageStatistics(HostResourceStatistics):
             'resource_name': 'str',
             'filesystem_available_in_percent': 'float'
         }
-
         self.attribute_map = {
             'usage': 'usage',
             'capacity': 'capacity',
@@ -64,7 +63,6 @@ class HostStorageStatistics(HostResourceStatistics):
             'resource_name': 'resourceName',
             'filesystem_available_in_percent': 'filesystemAvailableInPercent'
         }
-
         self._usage = None
         self._capacity = None
         self._utilization_percent = None

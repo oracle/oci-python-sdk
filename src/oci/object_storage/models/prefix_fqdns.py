@@ -38,13 +38,11 @@ class PrefixFqdns(object):
             's3_compatibility_api_fqdn': 'str',
             'swift_api_fqdn': 'str'
         }
-
         self.attribute_map = {
             'object_storage_api_fqdn': 'objectStorageApiFqdn',
             's3_compatibility_api_fqdn': 's3CompatibilityApiFqdn',
             'swift_api_fqdn': 'swiftApiFqdn'
         }
-
         self._object_storage_api_fqdn = None
         self._s3_compatibility_api_fqdn = None
         self._swift_api_fqdn = None

@@ -108,7 +108,6 @@ class ExternalStorageServerDiscoverySummary(EntityDiscovered):
             'memory_gb': 'float',
             'connector_name': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'agent_id': 'agentId',
@@ -127,7 +126,6 @@ class ExternalStorageServerDiscoverySummary(EntityDiscovered):
             'memory_gb': 'memoryGB',
             'connector_name': 'connectorName'
         }
-
         self._id = None
         self._agent_id = None
         self._connector_id = None

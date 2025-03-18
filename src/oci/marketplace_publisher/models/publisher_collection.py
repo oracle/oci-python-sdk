@@ -28,11 +28,9 @@ class PublisherCollection(object):
         self.swagger_types = {
             'items': 'list[PublisherSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

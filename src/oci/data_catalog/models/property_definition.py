@@ -43,14 +43,12 @@ class PropertyDefinition(object):
             'is_required': 'bool',
             'is_updatable': 'bool'
         }
-
         self.attribute_map = {
             'name': 'name',
             'type': 'type',
             'is_required': 'isRequired',
             'is_updatable': 'isUpdatable'
         }
-
         self._name = None
         self._type = None
         self._is_required = None

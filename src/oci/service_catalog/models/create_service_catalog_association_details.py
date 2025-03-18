@@ -38,13 +38,11 @@ class CreateServiceCatalogAssociationDetails(object):
             'entity_id': 'str',
             'entity_type': 'str'
         }
-
         self.attribute_map = {
             'service_catalog_id': 'serviceCatalogId',
             'entity_id': 'entityId',
             'entity_type': 'entityType'
         }
-
         self._service_catalog_id = None
         self._entity_id = None
         self._entity_type = None

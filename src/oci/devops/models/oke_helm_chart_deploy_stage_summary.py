@@ -219,7 +219,6 @@ class OkeHelmChartDeployStageSummary(DeployStageSummary):
             'should_not_wait': 'bool',
             'is_debug_enabled': 'bool'
         }
-
         self.attribute_map = {
             'id': 'id',
             'description': 'description',
@@ -259,7 +258,6 @@ class OkeHelmChartDeployStageSummary(DeployStageSummary):
             'should_not_wait': 'shouldNotWait',
             'is_debug_enabled': 'isDebugEnabled'
         }
-
         self._id = None
         self._description = None
         self._display_name = None

@@ -33,12 +33,10 @@ class AppProtectableSecondaryAudiences(object):
             'value': 'str',
             'read_only': 'bool'
         }
-
         self.attribute_map = {
             'value': 'value',
             'read_only': 'readOnly'
         }
-
         self._value = None
         self._read_only = None
 

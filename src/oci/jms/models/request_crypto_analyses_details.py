@@ -39,13 +39,11 @@ class RequestCryptoAnalysesDetails(object):
             'recording_duration_in_minutes': 'int',
             'waiting_period_in_minutes': 'int'
         }
-
         self.attribute_map = {
             'targets': 'targets',
             'recording_duration_in_minutes': 'recordingDurationInMinutes',
             'waiting_period_in_minutes': 'waitingPeriodInMinutes'
         }
-
         self._targets = None
         self._recording_duration_in_minutes = None
         self._waiting_period_in_minutes = None

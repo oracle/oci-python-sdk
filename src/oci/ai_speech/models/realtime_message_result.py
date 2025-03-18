@@ -40,13 +40,11 @@ class RealtimeMessageResult(RealtimeMessage):
             'session_id': 'str',
             'transcriptions': 'list[RealtimeMessageResultTranscription]'
         }
-
         self.attribute_map = {
             'event': 'event',
             'session_id': 'sessionId',
             'transcriptions': 'transcriptions'
         }
-
         self._event = None
         self._session_id = None
         self._transcriptions = None

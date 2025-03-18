@@ -28,11 +28,9 @@ class TestMetricExtensionDetails(object):
         self.swagger_types = {
             'resource_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'resource_ids': 'resourceIds'
         }
-
         self._resource_ids = None
 
     @property

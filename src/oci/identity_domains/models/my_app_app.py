@@ -97,7 +97,6 @@ class MyAppApp(object):
             'is_opc_service': 'bool',
             'service_type_urn': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ref': '$ref',
@@ -113,7 +112,6 @@ class MyAppApp(object):
             'is_opc_service': 'isOPCService',
             'service_type_urn': 'serviceTypeURN'
         }
-
         self._value = None
         self._ref = None
         self._display = None

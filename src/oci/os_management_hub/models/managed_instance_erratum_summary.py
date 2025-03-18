@@ -71,7 +71,6 @@ class ManagedInstanceErratumSummary(object):
             'related_cves': 'list[str]',
             'packages': 'list[PackageNameSummary]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'advisory_type': 'advisoryType',
@@ -80,7 +79,6 @@ class ManagedInstanceErratumSummary(object):
             'related_cves': 'relatedCves',
             'packages': 'packages'
         }
-
         self._name = None
         self._advisory_type = None
         self._time_issued = None

@@ -59,7 +59,6 @@ class CreateVideoAttachmentDetails(CreateListingRevisionAttachmentDetails):
             'defined_tags': 'dict(str, dict(str, object))',
             'video_attachment_details': 'CreateVideoDetails'
         }
-
         self.attribute_map = {
             'listing_revision_id': 'listingRevisionId',
             'display_name': 'displayName',
@@ -69,7 +68,6 @@ class CreateVideoAttachmentDetails(CreateListingRevisionAttachmentDetails):
             'defined_tags': 'definedTags',
             'video_attachment_details': 'videoAttachmentDetails'
         }
-
         self._listing_revision_id = None
         self._display_name = None
         self._description = None

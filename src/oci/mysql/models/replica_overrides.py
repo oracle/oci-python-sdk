@@ -41,13 +41,11 @@ class ReplicaOverrides(object):
             'shape_name': 'str',
             'configuration_id': 'str'
         }
-
         self.attribute_map = {
             'mysql_version': 'mysqlVersion',
             'shape_name': 'shapeName',
             'configuration_id': 'configurationId'
         }
-
         self._mysql_version = None
         self._shape_name = None
         self._configuration_id = None

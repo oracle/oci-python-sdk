@@ -43,14 +43,12 @@ class AllowedIkeIPSecParameters(object):
             'default_phase_one_parameters': 'DefaultPhaseOneParameters',
             'default_phase_two_parameters': 'DefaultPhaseTwoParameters'
         }
-
         self.attribute_map = {
             'allowed_phase_one_parameters': 'allowedPhaseOneParameters',
             'allowed_phase_two_parameters': 'allowedPhaseTwoParameters',
             'default_phase_one_parameters': 'defaultPhaseOneParameters',
             'default_phase_two_parameters': 'defaultPhaseTwoParameters'
         }
-
         self._allowed_phase_one_parameters = None
         self._allowed_phase_two_parameters = None
         self._default_phase_one_parameters = None

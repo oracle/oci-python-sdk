@@ -66,7 +66,6 @@ class ScriptedRestMonitorConfiguration(MonitorConfiguration):
             'verify_response_codes': 'list[str]',
             'network_configuration': 'NetworkConfiguration'
         }
-
         self.attribute_map = {
             'config_type': 'configType',
             'is_failure_retried': 'isFailureRetried',
@@ -75,7 +74,6 @@ class ScriptedRestMonitorConfiguration(MonitorConfiguration):
             'verify_response_codes': 'verifyResponseCodes',
             'network_configuration': 'networkConfiguration'
         }
-
         self._config_type = None
         self._is_failure_retried = None
         self._dns_configuration = None

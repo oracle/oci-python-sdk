@@ -58,7 +58,6 @@ class AttachmentDetails(object):
             'target_instance_url': 'str',
             'target_service_type': 'str'
         }
-
         self.attribute_map = {
             'target_role': 'targetRole',
             'is_implicit': 'isImplicit',
@@ -66,7 +65,6 @@ class AttachmentDetails(object):
             'target_instance_url': 'targetInstanceUrl',
             'target_service_type': 'targetServiceType'
         }
-
         self._target_role = None
         self._is_implicit = None
         self._target_id = None

@@ -48,7 +48,6 @@ class UpdateExternalExadataStorageConnectorDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'connector_name': 'connectorName',
             'connection_uri': 'connectionUri',
@@ -56,7 +55,6 @@ class UpdateExternalExadataStorageConnectorDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._connector_name = None
         self._connection_uri = None
         self._credential_info = None

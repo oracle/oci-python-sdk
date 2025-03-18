@@ -110,7 +110,6 @@ class Plugin(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'name': 'name',
             'agent_id': 'agentId',
@@ -124,7 +123,6 @@ class Plugin(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._name = None
         self._agent_id = None
         self._plugin_version = None

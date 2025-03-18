@@ -33,12 +33,10 @@ class AnomalyMetricData(object):
             'dimensions': 'dict(str, str)',
             'data_points': 'list[AnomalyDataPoint]'
         }
-
         self.attribute_map = {
             'dimensions': 'dimensions',
             'data_points': 'dataPoints'
         }
-
         self._dimensions = None
         self._data_points = None
 

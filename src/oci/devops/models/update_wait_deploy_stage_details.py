@@ -59,7 +59,6 @@ class UpdateWaitDeployStageDetails(UpdateDeployStageDetails):
             'defined_tags': 'dict(str, dict(str, object))',
             'wait_criteria': 'WaitCriteria'
         }
-
         self.attribute_map = {
             'description': 'description',
             'display_name': 'displayName',
@@ -69,7 +68,6 @@ class UpdateWaitDeployStageDetails(UpdateDeployStageDetails):
             'defined_tags': 'definedTags',
             'wait_criteria': 'waitCriteria'
         }
-
         self._description = None
         self._display_name = None
         self._deploy_stage_type = None

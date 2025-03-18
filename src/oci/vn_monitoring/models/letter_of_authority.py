@@ -68,7 +68,6 @@ class LetterOfAuthority(object):
             'time_expires': 'datetime',
             'time_issued': 'datetime'
         }
-
         self.attribute_map = {
             'authorized_entity_name': 'authorizedEntityName',
             'circuit_type': 'circuitType',
@@ -78,7 +77,6 @@ class LetterOfAuthority(object):
             'time_expires': 'timeExpires',
             'time_issued': 'timeIssued'
         }
-
         self._authorized_entity_name = None
         self._circuit_type = None
         self._cross_connect_id = None

@@ -28,11 +28,9 @@ class MigrationObjectTypeSummaryCollection(object):
         self.swagger_types = {
             'items': 'list[MigrationObjectTypeSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

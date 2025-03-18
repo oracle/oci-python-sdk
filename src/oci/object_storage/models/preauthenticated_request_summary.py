@@ -84,7 +84,6 @@ class PreauthenticatedRequestSummary(object):
             'time_expires': 'datetime',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -94,7 +93,6 @@ class PreauthenticatedRequestSummary(object):
             'time_expires': 'timeExpires',
             'time_created': 'timeCreated'
         }
-
         self._id = None
         self._name = None
         self._object_name = None

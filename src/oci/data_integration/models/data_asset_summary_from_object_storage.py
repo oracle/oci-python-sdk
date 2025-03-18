@@ -116,7 +116,6 @@ class DataAssetSummaryFromObjectStorage(DataAssetSummary):
             'namespace': 'str',
             'default_connection': 'ConnectionSummaryFromObjectStorage'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -137,7 +136,6 @@ class DataAssetSummaryFromObjectStorage(DataAssetSummary):
             'namespace': 'namespace',
             'default_connection': 'defaultConnection'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

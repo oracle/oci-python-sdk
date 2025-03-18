@@ -33,12 +33,10 @@ class ShapeDetails(object):
             'minimum_bandwidth_in_mbps': 'int',
             'maximum_bandwidth_in_mbps': 'int'
         }
-
         self.attribute_map = {
             'minimum_bandwidth_in_mbps': 'minimumBandwidthInMbps',
             'maximum_bandwidth_in_mbps': 'maximumBandwidthInMbps'
         }
-
         self._minimum_bandwidth_in_mbps = None
         self._maximum_bandwidth_in_mbps = None
 

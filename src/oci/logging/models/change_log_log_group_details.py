@@ -28,11 +28,9 @@ class ChangeLogLogGroupDetails(object):
         self.swagger_types = {
             'target_log_group_id': 'str'
         }
-
         self.attribute_map = {
             'target_log_group_id': 'targetLogGroupId'
         }
-
         self._target_log_group_id = None
 
     @property

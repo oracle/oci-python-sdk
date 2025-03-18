@@ -28,11 +28,9 @@ class OnboardingPolicyCollection(object):
         self.swagger_types = {
             'items': 'list[OnboardingPolicySummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

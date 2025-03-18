@@ -59,12 +59,10 @@ class HealthCheckResult(object):
             'timestamp': 'datetime',
             'health_check_status': 'str'
         }
-
         self.attribute_map = {
             'timestamp': 'timestamp',
             'health_check_status': 'healthCheckStatus'
         }
-
         self._timestamp = None
         self._health_check_status = None
 

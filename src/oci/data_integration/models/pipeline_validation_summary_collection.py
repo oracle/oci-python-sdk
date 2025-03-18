@@ -28,11 +28,9 @@ class PipelineValidationSummaryCollection(object):
         self.swagger_types = {
             'items': 'list[PipelineValidationSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

@@ -89,7 +89,6 @@ class CreateComputeInstanceGroupCanaryDeployStageDetails(CreateDeployStageDetail
             'test_load_balancer_config': 'LoadBalancerConfig',
             'production_load_balancer_config': 'LoadBalancerConfig'
         }
-
         self.attribute_map = {
             'description': 'description',
             'display_name': 'displayName',
@@ -105,7 +104,6 @@ class CreateComputeInstanceGroupCanaryDeployStageDetails(CreateDeployStageDetail
             'test_load_balancer_config': 'testLoadBalancerConfig',
             'production_load_balancer_config': 'productionLoadBalancerConfig'
         }
-
         self._description = None
         self._display_name = None
         self._deploy_stage_type = None

@@ -38,13 +38,11 @@ class AppAllowedTags(object):
             'value': 'str',
             'read_only': 'bool'
         }
-
         self.attribute_map = {
             'key': 'key',
             'value': 'value',
             'read_only': 'readOnly'
         }
-
         self._key = None
         self._value = None
         self._read_only = None

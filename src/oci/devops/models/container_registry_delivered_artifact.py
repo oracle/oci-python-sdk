@@ -50,7 +50,6 @@ class ContainerRegistryDeliveredArtifact(DeliveredArtifact):
             'delivered_artifact_hash': 'str',
             'image_uri': 'str'
         }
-
         self.attribute_map = {
             'deploy_artifact_id': 'deployArtifactId',
             'output_artifact_name': 'outputArtifactName',
@@ -58,7 +57,6 @@ class ContainerRegistryDeliveredArtifact(DeliveredArtifact):
             'delivered_artifact_hash': 'deliveredArtifactHash',
             'image_uri': 'imageUri'
         }
-
         self._deploy_artifact_id = None
         self._output_artifact_name = None
         self._artifact_type = None

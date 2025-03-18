@@ -57,13 +57,11 @@ class ActionDetails(object):
             'is_enabled': 'bool',
             'description': 'str'
         }
-
         self.attribute_map = {
             'action_type': 'actionType',
             'is_enabled': 'isEnabled',
             'description': 'description'
         }
-
         self._action_type = None
         self._is_enabled = None
         self._description = None

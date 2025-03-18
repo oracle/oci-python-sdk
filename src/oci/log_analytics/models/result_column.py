@@ -76,13 +76,11 @@ class ResultColumn(object):
             'display_name': 'str',
             'value_type': 'str'
         }
-
         self.attribute_map = {
             'internal_name': 'internalName',
             'display_name': 'displayName',
             'value_type': 'valueType'
         }
-
         self._internal_name = None
         self._display_name = None
         self._value_type = None

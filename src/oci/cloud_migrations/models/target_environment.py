@@ -43,12 +43,10 @@ class TargetEnvironment(object):
             'target_compartment_id': 'str',
             'target_environment_type': 'str'
         }
-
         self.attribute_map = {
             'target_compartment_id': 'targetCompartmentId',
             'target_environment_type': 'targetEnvironmentType'
         }
-
         self._target_compartment_id = None
         self._target_environment_type = None
 

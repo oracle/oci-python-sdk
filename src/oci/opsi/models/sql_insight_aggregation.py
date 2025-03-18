@@ -38,13 +38,11 @@ class SqlInsightAggregation(object):
             'values': 'list[int]',
             'category': 'str'
         }
-
         self.attribute_map = {
             'text': 'text',
             'values': 'values',
             'category': 'category'
         }
-
         self._text = None
         self._values = None
         self._category = None

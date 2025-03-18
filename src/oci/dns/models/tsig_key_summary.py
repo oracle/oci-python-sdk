@@ -94,7 +94,6 @@ class TsigKeySummary(object):
             'time_created': 'datetime',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'algorithm': 'algorithm',
             'name': 'name',
@@ -106,7 +105,6 @@ class TsigKeySummary(object):
             'time_created': 'timeCreated',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._algorithm = None
         self._name = None
         self._compartment_id = None

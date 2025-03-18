@@ -44,13 +44,11 @@ class Certificate(object):
             'public_certificate': 'str',
             'ca_certificate': 'str'
         }
-
         self.attribute_map = {
             'certificate_name': 'certificateName',
             'public_certificate': 'publicCertificate',
             'ca_certificate': 'caCertificate'
         }
-
         self._certificate_name = None
         self._public_certificate = None
         self._ca_certificate = None

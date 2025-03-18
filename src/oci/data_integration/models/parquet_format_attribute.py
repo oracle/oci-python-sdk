@@ -40,13 +40,11 @@ class ParquetFormatAttribute(AbstractFormatAttribute):
             'is_file_pattern': 'bool',
             'compression': 'str'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'is_file_pattern': 'isFilePattern',
             'compression': 'compression'
         }
-
         self._model_type = None
         self._is_file_pattern = None
         self._compression = None

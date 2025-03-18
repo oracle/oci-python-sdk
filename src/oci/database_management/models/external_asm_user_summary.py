@@ -38,13 +38,11 @@ class ExternalAsmUserSummary(object):
             'privileges': 'list[str]',
             'asm_id': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'privileges': 'privileges',
             'asm_id': 'asmId'
         }
-
         self._name = None
         self._privileges = None
         self._asm_id = None

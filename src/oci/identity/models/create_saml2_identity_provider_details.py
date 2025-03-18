@@ -76,7 +76,6 @@ class CreateSaml2IdentityProviderDetails(CreateIdentityProviderDetails):
             'metadata': 'str',
             'freeform_attributes': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'name': 'name',
@@ -89,7 +88,6 @@ class CreateSaml2IdentityProviderDetails(CreateIdentityProviderDetails):
             'metadata': 'metadata',
             'freeform_attributes': 'freeformAttributes'
         }
-
         self._compartment_id = None
         self._name = None
         self._description = None

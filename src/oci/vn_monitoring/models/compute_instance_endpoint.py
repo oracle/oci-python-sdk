@@ -45,14 +45,12 @@ class ComputeInstanceEndpoint(Endpoint):
             'instance_id': 'str',
             'vnic_id': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'address': 'address',
             'instance_id': 'instanceId',
             'vnic_id': 'vnicId'
         }
-
         self._type = None
         self._address = None
         self._instance_id = None

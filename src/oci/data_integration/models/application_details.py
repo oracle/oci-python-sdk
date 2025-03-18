@@ -123,7 +123,6 @@ class ApplicationDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'model_type': 'modelType',
@@ -141,7 +140,6 @@ class ApplicationDetails(object):
             'defined_tags': 'definedTags',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._key = None
         self._model_type = None
         self._model_version = None

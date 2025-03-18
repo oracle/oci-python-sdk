@@ -38,13 +38,11 @@ class CertificateExtensions(object):
             'is_critical': 'bool',
             'value': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'is_critical': 'isCritical',
             'value': 'value'
         }
-
         self._name = None
         self._is_critical = None
         self._value = None

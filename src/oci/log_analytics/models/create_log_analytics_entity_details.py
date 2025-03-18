@@ -88,7 +88,6 @@ class CreateLogAnalyticsEntityDetails(object):
             'time_last_discovered': 'datetime',
             'metadata': 'LogAnalyticsMetadataDetails'
         }
-
         self.attribute_map = {
             'name': 'name',
             'compartment_id': 'compartmentId',
@@ -104,7 +103,6 @@ class CreateLogAnalyticsEntityDetails(object):
             'time_last_discovered': 'timeLastDiscovered',
             'metadata': 'metadata'
         }
-
         self._name = None
         self._compartment_id = None
         self._entity_type_name = None

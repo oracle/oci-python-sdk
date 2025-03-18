@@ -50,7 +50,6 @@ class HostNetworkConfiguration(HostConfigurationMetricGroup):
             'ip_address': 'str',
             'mac_address': 'str'
         }
-
         self.attribute_map = {
             'metric_name': 'metricName',
             'time_collected': 'timeCollected',
@@ -58,7 +57,6 @@ class HostNetworkConfiguration(HostConfigurationMetricGroup):
             'ip_address': 'ipAddress',
             'mac_address': 'macAddress'
         }
-
         self._metric_name = None
         self._time_collected = None
         self._interface_name = None

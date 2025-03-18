@@ -127,7 +127,6 @@ class ConnectionSummaryFromOAuth2(ConnectionSummary):
             'scope': 'str',
             'grant_type': 'str'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -149,7 +148,6 @@ class ConnectionSummaryFromOAuth2(ConnectionSummary):
             'scope': 'scope',
             'grant_type': 'grantType'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

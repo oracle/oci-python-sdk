@@ -74,7 +74,6 @@ class CustomEndpointDetails(object):
             'certificate_secret_version': 'int',
             'alias': 'str'
         }
-
         self.attribute_map = {
             'hostname': 'hostname',
             'managed_type': 'managedType',
@@ -84,7 +83,6 @@ class CustomEndpointDetails(object):
             'certificate_secret_version': 'certificateSecretVersion',
             'alias': 'alias'
         }
-
         self._hostname = None
         self._managed_type = None
         self._dns_zone_name = None

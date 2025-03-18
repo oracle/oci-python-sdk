@@ -28,11 +28,9 @@ class ProblemAggregationCollection(object):
         self.swagger_types = {
             'items': 'list[ProblemAggregation]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

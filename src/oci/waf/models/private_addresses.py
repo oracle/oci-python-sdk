@@ -33,12 +33,10 @@ class PrivateAddresses(object):
             'vcn_id': 'str',
             'addresses': 'str'
         }
-
         self.attribute_map = {
             'vcn_id': 'vcnId',
             'addresses': 'addresses'
         }
-
         self._vcn_id = None
         self._addresses = None
 

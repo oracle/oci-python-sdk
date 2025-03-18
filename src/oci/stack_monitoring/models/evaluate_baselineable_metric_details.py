@@ -33,12 +33,10 @@ class EvaluateBaselineableMetricDetails(object):
             'resource_id': 'str',
             'items': 'list[MetricData]'
         }
-
         self.attribute_map = {
             'resource_id': 'resourceId',
             'items': 'items'
         }
-
         self._resource_id = None
         self._items = None
 

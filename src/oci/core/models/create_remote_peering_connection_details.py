@@ -48,7 +48,6 @@ class CreateRemotePeeringConnectionDetails(object):
             'drg_id': 'str',
             'freeform_tags': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
@@ -56,7 +55,6 @@ class CreateRemotePeeringConnectionDetails(object):
             'drg_id': 'drgId',
             'freeform_tags': 'freeformTags'
         }
-
         self._compartment_id = None
         self._defined_tags = None
         self._display_name = None

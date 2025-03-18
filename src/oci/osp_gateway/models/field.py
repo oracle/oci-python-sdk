@@ -48,7 +48,6 @@ class Field(object):
             'label': 'Label',
             'language': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'is_required': 'isRequired',
@@ -56,7 +55,6 @@ class Field(object):
             'label': 'label',
             'language': 'language'
         }
-
         self._name = None
         self._is_required = None
         self._format = None

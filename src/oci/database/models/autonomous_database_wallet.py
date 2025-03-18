@@ -43,12 +43,10 @@ class AutonomousDatabaseWallet(object):
             'lifecycle_state': 'str',
             'time_rotated': 'datetime'
         }
-
         self.attribute_map = {
             'lifecycle_state': 'lifecycleState',
             'time_rotated': 'timeRotated'
         }
-
         self._lifecycle_state = None
         self._time_rotated = None
 

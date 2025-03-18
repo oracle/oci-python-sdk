@@ -33,12 +33,10 @@ class Resource(object):
             'id': 'str',
             'metadata': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'id': 'id',
             'metadata': 'metadata'
         }
-
         self._id = None
         self._metadata = None
 

@@ -53,7 +53,6 @@ class AvailableAuditVolumeSummary(object):
             'month_in_consideration': 'datetime',
             'volume': 'int'
         }
-
         self.attribute_map = {
             'audit_profile_id': 'auditProfileId',
             'audit_trail_id': 'auditTrailId',
@@ -62,7 +61,6 @@ class AvailableAuditVolumeSummary(object):
             'month_in_consideration': 'monthInConsideration',
             'volume': 'volume'
         }
-
         self._audit_profile_id = None
         self._audit_trail_id = None
         self._database_unique_name = None

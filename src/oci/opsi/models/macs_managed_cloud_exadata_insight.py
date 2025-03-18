@@ -139,7 +139,6 @@ class MacsManagedCloudExadataInsight(ExadataInsight):
             'exadata_infra_resource_type': 'str',
             'exadata_shape': 'str'
         }
-
         self.attribute_map = {
             'entity_source': 'entitySource',
             'id': 'id',
@@ -161,7 +160,6 @@ class MacsManagedCloudExadataInsight(ExadataInsight):
             'exadata_infra_resource_type': 'exadataInfraResourceType',
             'exadata_shape': 'exadataShape'
         }
-
         self._entity_source = None
         self._id = None
         self._compartment_id = None

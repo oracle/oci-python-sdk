@@ -33,12 +33,10 @@ class AwrDatabaseWaitEventBucketSummary(object):
             'category': 'str',
             'percentage': 'float'
         }
-
         self.attribute_map = {
             'category': 'category',
             'percentage': 'percentage'
         }
-
         self._category = None
         self._percentage = None
 

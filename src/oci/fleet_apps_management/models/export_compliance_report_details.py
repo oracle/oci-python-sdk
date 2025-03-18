@@ -70,7 +70,6 @@ class ExportComplianceReportDetails(object):
             'product_name': 'str',
             'compliance_state': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'entity_id': 'entityId',
@@ -79,7 +78,6 @@ class ExportComplianceReportDetails(object):
             'product_name': 'productName',
             'compliance_state': 'complianceState'
         }
-
         self._compartment_id = None
         self._entity_id = None
         self._resource_id = None

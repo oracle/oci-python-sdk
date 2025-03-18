@@ -34,12 +34,10 @@ class TaskVariable(object):
             'input_variables': 'list[InputArgument]',
             'output_variables': 'list[str]'
         }
-
         self.attribute_map = {
             'input_variables': 'inputVariables',
             'output_variables': 'outputVariables'
         }
-
         self._input_variables = None
         self._output_variables = None
 

@@ -62,7 +62,6 @@ class UpdateNetworkAddressListDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'type': 'type',
@@ -70,7 +69,6 @@ class UpdateNetworkAddressListDetails(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._display_name = None
         self._type = None
         self._freeform_tags = None

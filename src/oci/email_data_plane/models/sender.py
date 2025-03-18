@@ -33,12 +33,10 @@ class Sender(object):
             'sender_address': 'EmailAddress',
             'compartment_id': 'str'
         }
-
         self.attribute_map = {
             'sender_address': 'senderAddress',
             'compartment_id': 'compartmentId'
         }
-
         self._sender_address = None
         self._compartment_id = None
 

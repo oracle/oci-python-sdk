@@ -128,7 +128,6 @@ class MySupportAccount(object):
             'user_id': 'str',
             'user': 'MySupportAccountUser'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -148,7 +147,6 @@ class MySupportAccount(object):
             'user_id': 'userId',
             'user': 'user'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

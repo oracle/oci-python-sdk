@@ -34,12 +34,10 @@ class ComputeInstanceOptions(InstanceConfigurationInstanceDetails):
             'instance_type': 'str',
             'options': 'list[ComputeInstanceDetails]'
         }
-
         self.attribute_map = {
             'instance_type': 'instanceType',
             'options': 'options'
         }
-
         self._instance_type = None
         self._options = None
         self._instance_type = 'instance_options'

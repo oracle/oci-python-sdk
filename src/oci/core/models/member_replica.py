@@ -47,12 +47,10 @@ class MemberReplica(object):
             'volume_replica_id': 'str',
             'membership_state': 'str'
         }
-
         self.attribute_map = {
             'volume_replica_id': 'volumeReplicaId',
             'membership_state': 'membershipState'
         }
-
         self._volume_replica_id = None
         self._membership_state = None
 

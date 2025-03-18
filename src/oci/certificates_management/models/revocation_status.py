@@ -67,12 +67,10 @@ class RevocationStatus(object):
             'time_of_revocation': 'datetime',
             'revocation_reason': 'str'
         }
-
         self.attribute_map = {
             'time_of_revocation': 'timeOfRevocation',
             'revocation_reason': 'revocationReason'
         }
-
         self._time_of_revocation = None
         self._revocation_reason = None
 

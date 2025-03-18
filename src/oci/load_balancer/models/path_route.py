@@ -40,13 +40,11 @@ class PathRoute(object):
             'path_match_type': 'PathMatchType',
             'backend_set_name': 'str'
         }
-
         self.attribute_map = {
             'path': 'path',
             'path_match_type': 'pathMatchType',
             'backend_set_name': 'backendSetName'
         }
-
         self._path = None
         self._path_match_type = None
         self._backend_set_name = None

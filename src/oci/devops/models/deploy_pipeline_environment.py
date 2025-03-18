@@ -38,13 +38,11 @@ class DeployPipelineEnvironment(object):
             'display_name': 'str',
             'deploy_pipeline_stages': 'DeployPipelineStageCollection'
         }
-
         self.attribute_map = {
             'deploy_environment_id': 'deployEnvironmentId',
             'display_name': 'displayName',
             'deploy_pipeline_stages': 'deployPipelineStages'
         }
-
         self._deploy_environment_id = None
         self._display_name = None
         self._deploy_pipeline_stages = None

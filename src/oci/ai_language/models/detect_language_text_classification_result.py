@@ -28,11 +28,9 @@ class DetectLanguageTextClassificationResult(object):
         self.swagger_types = {
             'text_classification': 'list[TextClassification]'
         }
-
         self.attribute_map = {
             'text_classification': 'textClassification'
         }
-
         self._text_classification = None
 
     @property

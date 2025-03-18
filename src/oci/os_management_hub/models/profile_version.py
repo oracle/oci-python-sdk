@@ -233,7 +233,6 @@ class ProfileVersion(object):
             'is_default_profile': 'bool',
             'is_service_provided_profile': 'bool'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -256,7 +255,6 @@ class ProfileVersion(object):
             'is_default_profile': 'isDefaultProfile',
             'is_service_provided_profile': 'isServiceProvidedProfile'
         }
-
         self._id = None
         self._compartment_id = None
         self._display_name = None

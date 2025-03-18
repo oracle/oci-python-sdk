@@ -60,14 +60,12 @@ class DatabasePasswordCredentialDetails(DatabaseCredentialDetails):
             'username': 'str',
             'role': 'str'
         }
-
         self.attribute_map = {
             'credential_type': 'credentialType',
             'password': 'password',
             'username': 'username',
             'role': 'role'
         }
-
         self._credential_type = None
         self._password = None
         self._username = None

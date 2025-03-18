@@ -93,7 +93,6 @@ class UpdatePipelineDetails(object):
             'variables': 'list[Variable]',
             'registry_metadata': 'RegistryMetadata'
         }
-
         self.attribute_map = {
             'key': 'key',
             'model_type': 'modelType',
@@ -110,7 +109,6 @@ class UpdatePipelineDetails(object):
             'variables': 'variables',
             'registry_metadata': 'registryMetadata'
         }
-
         self._key = None
         self._model_type = None
         self._model_version = None

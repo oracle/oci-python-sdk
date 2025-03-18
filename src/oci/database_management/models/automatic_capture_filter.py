@@ -67,7 +67,6 @@ class AutomaticCaptureFilter(object):
             'time_last_modified': 'datetime',
             'modified_by': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'values_to_include': 'valuesToInclude',
@@ -75,7 +74,6 @@ class AutomaticCaptureFilter(object):
             'time_last_modified': 'timeLastModified',
             'modified_by': 'modifiedBy'
         }
-
         self._name = None
         self._values_to_include = None
         self._values_to_exclude = None

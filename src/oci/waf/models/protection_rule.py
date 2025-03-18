@@ -71,7 +71,6 @@ class ProtectionRule(WebAppFirewallPolicyRule):
             'protection_capability_settings': 'ProtectionCapabilitySettings',
             'is_body_inspection_enabled': 'bool'
         }
-
         self.attribute_map = {
             'type': 'type',
             'name': 'name',
@@ -82,7 +81,6 @@ class ProtectionRule(WebAppFirewallPolicyRule):
             'protection_capability_settings': 'protectionCapabilitySettings',
             'is_body_inspection_enabled': 'isBodyInspectionEnabled'
         }
-
         self._type = None
         self._name = None
         self._condition_language = None

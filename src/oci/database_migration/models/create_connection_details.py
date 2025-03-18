@@ -107,7 +107,6 @@ class CreateConnectionDetails(object):
             'replication_username': 'str',
             'replication_password': 'str'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'display_name': 'displayName',
@@ -124,7 +123,6 @@ class CreateConnectionDetails(object):
             'replication_username': 'replicationUsername',
             'replication_password': 'replicationPassword'
         }
-
         self._connection_type = None
         self._display_name = None
         self._description = None

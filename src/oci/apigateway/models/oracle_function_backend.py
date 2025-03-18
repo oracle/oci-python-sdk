@@ -35,12 +35,10 @@ class OracleFunctionBackend(ApiSpecificationRouteBackend):
             'type': 'str',
             'function_id': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'function_id': 'functionId'
         }
-
         self._type = None
         self._function_id = None
         self._type = 'ORACLE_FUNCTIONS_BACKEND'

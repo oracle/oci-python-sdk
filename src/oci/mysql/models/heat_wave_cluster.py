@@ -98,7 +98,6 @@ class HeatWaveCluster(object):
             'time_created': 'datetime',
             'time_updated': 'datetime'
         }
-
         self.attribute_map = {
             'db_system_id': 'dbSystemId',
             'shape_name': 'shapeName',
@@ -110,7 +109,6 @@ class HeatWaveCluster(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated'
         }
-
         self._db_system_id = None
         self._shape_name = None
         self._cluster_size = None

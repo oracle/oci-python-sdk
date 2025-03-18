@@ -71,7 +71,6 @@ class StrategyParameter(object):
             'default_value': 'object',
             'possible_values': 'list[object]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'type': 'type',
@@ -80,7 +79,6 @@ class StrategyParameter(object):
             'default_value': 'defaultValue',
             'possible_values': 'possibleValues'
         }
-
         self._name = None
         self._type = None
         self._description = None

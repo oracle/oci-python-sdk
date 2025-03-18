@@ -43,14 +43,12 @@ class UpdatePublicIpDetails(object):
             'freeform_tags': 'dict(str, str)',
             'private_ip_id': 'str'
         }
-
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
             'private_ip_id': 'privateIpId'
         }
-
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None

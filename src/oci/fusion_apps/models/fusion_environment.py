@@ -217,7 +217,6 @@ class FusionEnvironment(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'is_suspended': 'bool'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -250,7 +249,6 @@ class FusionEnvironment(object):
             'defined_tags': 'definedTags',
             'is_suspended': 'isSuspended'
         }
-
         self._id = None
         self._display_name = None
         self._maintenance_policy = None

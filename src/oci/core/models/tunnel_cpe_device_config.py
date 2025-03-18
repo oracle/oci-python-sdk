@@ -38,11 +38,9 @@ class TunnelCpeDeviceConfig(object):
         self.swagger_types = {
             'tunnel_cpe_device_config_parameter': 'list[CpeDeviceConfigAnswer]'
         }
-
         self.attribute_map = {
             'tunnel_cpe_device_config_parameter': 'tunnelCpeDeviceConfigParameter'
         }
-
         self._tunnel_cpe_device_config_parameter = None
 
     @property

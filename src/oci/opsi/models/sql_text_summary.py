@@ -48,7 +48,6 @@ class SqlTextSummary(object):
             'compartment_id': 'str',
             'sql_text': 'str'
         }
-
         self.attribute_map = {
             'sql_identifier': 'sqlIdentifier',
             'id': 'id',
@@ -56,7 +55,6 @@ class SqlTextSummary(object):
             'compartment_id': 'compartmentId',
             'sql_text': 'sqlText'
         }
-
         self._sql_identifier = None
         self._id = None
         self._database_id = None

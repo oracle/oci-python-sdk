@@ -41,13 +41,11 @@ class CustomFrequencyDetails(AbstractFrequencyDetails):
             'frequency': 'str',
             'custom_expression': 'str'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'frequency': 'frequency',
             'custom_expression': 'customExpression'
         }
-
         self._model_type = None
         self._frequency = None
         self._custom_expression = None

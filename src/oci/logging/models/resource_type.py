@@ -33,12 +33,10 @@ class ResourceType(object):
             'name': 'str',
             'categories': 'list[Category]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'categories': 'categories'
         }
-
         self._name = None
         self._categories = None
 

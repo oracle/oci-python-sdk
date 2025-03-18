@@ -33,12 +33,10 @@ class DiffSection(object):
             'type': 'str',
             'lines': 'list[DiffLineDetails]'
         }
-
         self.attribute_map = {
             'type': 'type',
             'lines': 'lines'
         }
-
         self._type = None
         self._lines = None
 

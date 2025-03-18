@@ -38,13 +38,11 @@ class UpdateStreamDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'stream_pool_id': 'streamPoolId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._stream_pool_id = None
         self._freeform_tags = None
         self._defined_tags = None

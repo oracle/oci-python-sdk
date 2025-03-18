@@ -35,12 +35,10 @@ class ApiBasedExecutionDetails(ExecutionDetails):
             'execution_type': 'str',
             'endpoint': 'str'
         }
-
         self.attribute_map = {
             'execution_type': 'executionType',
             'endpoint': 'endpoint'
         }
-
         self._execution_type = None
         self._endpoint = None
         self._execution_type = 'API'

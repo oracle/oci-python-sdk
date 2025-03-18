@@ -77,14 +77,12 @@ class QueryableFieldDescription(object):
             'is_array': 'bool',
             'object_properties': 'list[QueryableFieldDescription]'
         }
-
         self.attribute_map = {
             'field_type': 'fieldType',
             'field_name': 'fieldName',
             'is_array': 'isArray',
             'object_properties': 'objectProperties'
         }
-
         self._field_type = None
         self._field_name = None
         self._is_array = None

@@ -55,7 +55,6 @@ class PiiEntityMask(PiiEntityMasking):
             'leave_characters_unmasked': 'int',
             'is_unmasked_from_end': 'bool'
         }
-
         self.attribute_map = {
             'mode': 'mode',
             'exclude': 'exclude',
@@ -64,7 +63,6 @@ class PiiEntityMask(PiiEntityMasking):
             'leave_characters_unmasked': 'leaveCharactersUnmasked',
             'is_unmasked_from_end': 'isUnmaskedFromEnd'
         }
-
         self._mode = None
         self._exclude = None
         self._should_detect = None

@@ -121,7 +121,6 @@ class AwsEc2Asset(Asset):
             'aws_ec2_cost': 'MonthlyCostSummary',
             'attached_ebs_volumes_cost': 'MonthlyCostSummary'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'inventory_id': 'inventoryId',
@@ -143,7 +142,6 @@ class AwsEc2Asset(Asset):
             'aws_ec2_cost': 'awsEc2Cost',
             'attached_ebs_volumes_cost': 'attachedEbsVolumesCost'
         }
-
         self._display_name = None
         self._inventory_id = None
         self._id = None

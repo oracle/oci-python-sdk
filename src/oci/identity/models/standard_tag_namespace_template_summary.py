@@ -38,13 +38,11 @@ class StandardTagNamespaceTemplateSummary(object):
             'standard_tag_namespace_name': 'str',
             'status': 'str'
         }
-
         self.attribute_map = {
             'description': 'description',
             'standard_tag_namespace_name': 'standardTagNamespaceName',
             'status': 'status'
         }
-
         self._description = None
         self._standard_tag_namespace_name = None
         self._status = None

@@ -78,14 +78,12 @@ class WeeklyFrequencyDetails(AbstractFrequencyDetails):
             'time': 'Time',
             'days': 'list[str]'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'frequency': 'frequency',
             'time': 'time',
             'days': 'days'
         }
-
         self._model_type = None
         self._frequency = None
         self._time = None

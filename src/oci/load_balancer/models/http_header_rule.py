@@ -44,13 +44,11 @@ class HttpHeaderRule(Rule):
             'are_invalid_characters_allowed': 'bool',
             'http_large_header_size_in_kb': 'int'
         }
-
         self.attribute_map = {
             'action': 'action',
             'are_invalid_characters_allowed': 'areInvalidCharactersAllowed',
             'http_large_header_size_in_kb': 'httpLargeHeaderSizeInKB'
         }
-
         self._action = None
         self._are_invalid_characters_allowed = None
         self._http_large_header_size_in_kb = None

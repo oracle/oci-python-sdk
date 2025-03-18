@@ -48,11 +48,9 @@ class RuleCondition(object):
         self.swagger_types = {
             'attribute_name': 'str'
         }
-
         self.attribute_map = {
             'attribute_name': 'attributeName'
         }
-
         self._attribute_name = None
 
     @staticmethod

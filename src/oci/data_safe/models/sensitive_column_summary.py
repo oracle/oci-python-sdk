@@ -184,7 +184,6 @@ class SensitiveColumnSummary(object):
             'estimated_data_value_count': 'int',
             'sample_data_values': 'list[str]'
         }
-
         self.attribute_map = {
             'key': 'key',
             'sensitive_data_model_id': 'sensitiveDataModelId',
@@ -206,7 +205,6 @@ class SensitiveColumnSummary(object):
             'estimated_data_value_count': 'estimatedDataValueCount',
             'sample_data_values': 'sampleDataValues'
         }
-
         self._key = None
         self._sensitive_data_model_id = None
         self._lifecycle_state = None

@@ -28,11 +28,9 @@ class EmWarehouseCollection(object):
         self.swagger_types = {
             'items': 'list[EmWarehouseSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

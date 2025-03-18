@@ -72,7 +72,6 @@ class ImportInventoryViaAssetsDetails(ImportInventoryDetails):
             'data': 'str',
             'asset_type': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'resource_type': 'resourceType',
@@ -81,7 +80,6 @@ class ImportInventoryViaAssetsDetails(ImportInventoryDetails):
             'data': 'data',
             'asset_type': 'assetType'
         }
-
         self._compartment_id = None
         self._resource_type = None
         self._freeform_tags = None

@@ -28,11 +28,9 @@ class OdaInstanceAttachmentCollection(object):
         self.swagger_types = {
             'items': 'list[OdaInstanceAttachmentSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

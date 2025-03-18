@@ -63,7 +63,6 @@ class JavaDownloadCountAggregation(object):
             'package_type': 'str',
             'package_type_detail': 'str'
         }
-
         self.attribute_map = {
             'download_count': 'downloadCount',
             'family_version': 'familyVersion',
@@ -74,7 +73,6 @@ class JavaDownloadCountAggregation(object):
             'package_type': 'packageType',
             'package_type_detail': 'packageTypeDetail'
         }
-
         self._download_count = None
         self._family_version = None
         self._family_display_name = None

@@ -34,12 +34,10 @@ class OutputVariableMapping(object):
             'name': 'str',
             'output_variable_details': 'OutputVariableDetails'
         }
-
         self.attribute_map = {
             'name': 'name',
             'output_variable_details': 'outputVariableDetails'
         }
-
         self._name = None
         self._output_variable_details = None
 

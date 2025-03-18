@@ -38,13 +38,11 @@ class CheckResourceTaggingDetails(object):
             'fleet_display_name': 'str',
             'resource_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'fleet_display_name': 'fleetDisplayName',
             'resource_ids': 'resourceIds'
         }
-
         self._compartment_id = None
         self._fleet_display_name = None
         self._resource_ids = None

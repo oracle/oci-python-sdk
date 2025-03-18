@@ -132,7 +132,6 @@ class Catalog(object):
             'attached_catalog_private_endpoints': 'list[str]',
             'locks': 'list[ResourceLock]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -150,7 +149,6 @@ class Catalog(object):
             'attached_catalog_private_endpoints': 'attachedCatalogPrivateEndpoints',
             'locks': 'locks'
         }
-
         self._id = None
         self._display_name = None
         self._compartment_id = None

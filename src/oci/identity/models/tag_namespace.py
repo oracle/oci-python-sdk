@@ -97,7 +97,6 @@ class TagNamespace(object):
             'time_created': 'datetime',
             'locks': 'list[ResourceLock]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -110,7 +109,6 @@ class TagNamespace(object):
             'time_created': 'timeCreated',
             'locks': 'locks'
         }
-
         self._id = None
         self._compartment_id = None
         self._name = None

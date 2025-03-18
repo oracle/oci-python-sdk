@@ -57,14 +57,12 @@ class ChangeDatabaseParametersDetails(object):
             'scope': 'str',
             'parameters': 'list[ChangeDatabaseParameterDetails]'
         }
-
         self.attribute_map = {
             'credentials': 'credentials',
             'database_credential': 'databaseCredential',
             'scope': 'scope',
             'parameters': 'parameters'
         }
-
         self._credentials = None
         self._database_credential = None
         self._scope = None

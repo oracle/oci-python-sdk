@@ -48,7 +48,6 @@ class CreateByoasnDetails(object):
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'asn': 'asn',
             'compartment_id': 'compartmentId',
@@ -56,7 +55,6 @@ class CreateByoasnDetails(object):
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags'
         }
-
         self._asn = None
         self._compartment_id = None
         self._defined_tags = None

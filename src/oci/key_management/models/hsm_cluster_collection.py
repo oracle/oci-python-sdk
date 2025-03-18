@@ -28,11 +28,9 @@ class HsmClusterCollection(object):
         self.swagger_types = {
             'items': 'list[HsmClusterSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

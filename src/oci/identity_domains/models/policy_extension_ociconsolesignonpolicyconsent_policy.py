@@ -38,13 +38,11 @@ class PolicyExtensionOciconsolesignonpolicyconsentPolicy(object):
             'justification': 'str',
             'reason': 'str'
         }
-
         self.attribute_map = {
             'consent': 'consent',
             'justification': 'justification',
             'reason': 'reason'
         }
-
         self._consent = None
         self._justification = None
         self._reason = None

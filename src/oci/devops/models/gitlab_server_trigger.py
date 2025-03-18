@@ -101,7 +101,6 @@ class GitlabServerTrigger(Trigger):
             'system_tags': 'dict(str, dict(str, object))',
             'trigger_url': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -119,7 +118,6 @@ class GitlabServerTrigger(Trigger):
             'system_tags': 'systemTags',
             'trigger_url': 'triggerUrl'
         }
-
         self._id = None
         self._display_name = None
         self._description = None

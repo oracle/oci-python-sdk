@@ -40,13 +40,11 @@ class AssetMetadataEntryDetails(IngestStreamDistributionChannelDetails):
             'media_asset_id': 'str',
             'compartment_id': 'str'
         }
-
         self.attribute_map = {
             'ingest_payload_type': 'ingestPayloadType',
             'media_asset_id': 'mediaAssetId',
             'compartment_id': 'compartmentId'
         }
-
         self._ingest_payload_type = None
         self._media_asset_id = None
         self._compartment_id = None

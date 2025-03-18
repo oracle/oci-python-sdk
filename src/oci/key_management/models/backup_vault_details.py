@@ -33,12 +33,10 @@ class BackupVaultDetails(object):
             'backup_location': 'BackupLocation',
             'is_include_keys': 'bool'
         }
-
         self.attribute_map = {
             'backup_location': 'backupLocation',
             'is_include_keys': 'isIncludeKeys'
         }
-
         self._backup_location = None
         self._is_include_keys = None
 

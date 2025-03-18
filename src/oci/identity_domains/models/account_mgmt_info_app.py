@@ -127,7 +127,6 @@ class AccountMgmtInfoApp(object):
             'is_o_auth_resource': 'bool',
             'audience': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ref': '$ref',
@@ -149,7 +148,6 @@ class AccountMgmtInfoApp(object):
             'is_o_auth_resource': 'isOAuthResource',
             'audience': 'audience'
         }
-
         self._value = None
         self._ref = None
         self._display = None

@@ -28,11 +28,9 @@ class AlertAnalyticsCollection(object):
         self.swagger_types = {
             'items': 'list[AlertAggregationItems]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

@@ -38,13 +38,11 @@ class CreateResourcePrincipalConfigurationDetails(object):
             'cluster_admin_password': 'str',
             'session_token_life_span_duration_in_hours': 'int'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'cluster_admin_password': 'clusterAdminPassword',
             'session_token_life_span_duration_in_hours': 'sessionTokenLifeSpanDurationInHours'
         }
-
         self._display_name = None
         self._cluster_admin_password = None
         self._session_token_life_span_duration_in_hours = None

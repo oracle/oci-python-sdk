@@ -88,7 +88,6 @@ class AdhocQueryRegionalDetails(object):
             'succeeded_count': 'str',
             'expired_count': 'str'
         }
-
         self.attribute_map = {
             'region': 'region',
             'regional_status': 'regionalStatus',
@@ -98,7 +97,6 @@ class AdhocQueryRegionalDetails(object):
             'succeeded_count': 'succeededCount',
             'expired_count': 'expiredCount'
         }
-
         self._region = None
         self._regional_status = None
         self._regional_error = None

@@ -113,7 +113,6 @@ class Tag(object):
             'is_cost_tracking': 'bool',
             'validator': 'BaseTagDefinitionValidator'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'tag_namespace_id': 'tagNamespaceId',
@@ -129,7 +128,6 @@ class Tag(object):
             'is_cost_tracking': 'isCostTracking',
             'validator': 'validator'
         }
-
         self._compartment_id = None
         self._tag_namespace_id = None
         self._tag_namespace_name = None

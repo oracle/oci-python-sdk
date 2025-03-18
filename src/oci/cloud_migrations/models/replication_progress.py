@@ -87,7 +87,6 @@ class ReplicationProgress(object):
             'last_replication_status': 'str',
             'last_replication_error': 'str'
         }
-
         self.attribute_map = {
             'percentage': 'percentage',
             'status': 'status',
@@ -98,7 +97,6 @@ class ReplicationProgress(object):
             'last_replication_status': 'lastReplicationStatus',
             'last_replication_error': 'lastReplicationError'
         }
-
         self._percentage = None
         self._status = None
         self._time_started = None

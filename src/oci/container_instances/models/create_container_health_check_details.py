@@ -86,7 +86,6 @@ class CreateContainerHealthCheckDetails(object):
             'timeout_in_seconds': 'int',
             'failure_action': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'health_check_type': 'healthCheckType',
@@ -97,7 +96,6 @@ class CreateContainerHealthCheckDetails(object):
             'timeout_in_seconds': 'timeoutInSeconds',
             'failure_action': 'failureAction'
         }
-
         self._name = None
         self._health_check_type = None
         self._initial_delay_in_seconds = None

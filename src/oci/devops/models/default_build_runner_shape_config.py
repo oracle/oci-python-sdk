@@ -30,11 +30,9 @@ class DefaultBuildRunnerShapeConfig(BuildRunnerShapeConfig):
         self.swagger_types = {
             'build_runner_type': 'str'
         }
-
         self.attribute_map = {
             'build_runner_type': 'buildRunnerType'
         }
-
         self._build_runner_type = None
         self._build_runner_type = 'DEFAULT'
 

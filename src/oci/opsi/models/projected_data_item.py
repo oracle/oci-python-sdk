@@ -44,14 +44,12 @@ class ProjectedDataItem(object):
             'high_value': 'float',
             'low_value': 'float'
         }
-
         self.attribute_map = {
             'end_timestamp': 'endTimestamp',
             'usage': 'usage',
             'high_value': 'highValue',
             'low_value': 'lowValue'
         }
-
         self._end_timestamp = None
         self._usage = None
         self._high_value = None

@@ -105,7 +105,6 @@ class FindingAnalyticsDimensions(object):
             'severity': 'str',
             'target_id': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'top_finding_category': 'topFindingCategory',
@@ -114,7 +113,6 @@ class FindingAnalyticsDimensions(object):
             'severity': 'severity',
             'target_id': 'targetId'
         }
-
         self._key = None
         self._top_finding_category = None
         self._title = None

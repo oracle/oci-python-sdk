@@ -33,12 +33,10 @@ class OutputVariableDetails(object):
             'step_name': 'str',
             'output_variable_name': 'str'
         }
-
         self.attribute_map = {
             'step_name': 'stepName',
             'output_variable_name': 'outputVariableName'
         }
-
         self._step_name = None
         self._output_variable_name = None
 

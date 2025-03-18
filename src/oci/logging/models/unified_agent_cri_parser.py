@@ -75,7 +75,6 @@ class UnifiedAgentCriParser(UnifiedAgentParser):
             'is_merge_cri_fields': 'bool',
             'nested_parser': 'UnifiedJSONParser'
         }
-
         self.attribute_map = {
             'parser_type': 'parserType',
             'field_time_key': 'fieldTimeKey',
@@ -88,7 +87,6 @@ class UnifiedAgentCriParser(UnifiedAgentParser):
             'is_merge_cri_fields': 'isMergeCriFields',
             'nested_parser': 'nestedParser'
         }
-
         self._parser_type = None
         self._field_time_key = None
         self._types = None

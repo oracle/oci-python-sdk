@@ -33,12 +33,10 @@ class GrepFilterDenyRule(object):
             'key': 'str',
             'pattern': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'pattern': 'pattern'
         }
-
         self._key = None
         self._pattern = None
 

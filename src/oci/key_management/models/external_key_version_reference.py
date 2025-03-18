@@ -28,11 +28,9 @@ class ExternalKeyVersionReference(object):
         self.swagger_types = {
             'external_key_version_id': 'str'
         }
-
         self.attribute_map = {
             'external_key_version_id': 'externalKeyVersionId'
         }
-
         self._external_key_version_id = None
 
     @property

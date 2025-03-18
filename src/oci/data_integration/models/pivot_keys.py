@@ -58,7 +58,6 @@ class PivotKeys(object):
             'parent_ref': 'ParentReference',
             'object_status': 'int'
         }
-
         self.attribute_map = {
             'pivot_axis': 'pivotAxis',
             'pivot_key_value_map': 'pivotKeyValueMap',
@@ -68,7 +67,6 @@ class PivotKeys(object):
             'parent_ref': 'parentRef',
             'object_status': 'objectStatus'
         }
-
         self._pivot_axis = None
         self._pivot_key_value_map = None
         self._key = None

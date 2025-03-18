@@ -43,11 +43,9 @@ class BuildRunnerShapeConfig(object):
         self.swagger_types = {
             'build_runner_type': 'str'
         }
-
         self.attribute_map = {
             'build_runner_type': 'buildRunnerType'
         }
-
         self._build_runner_type = None
 
     @staticmethod

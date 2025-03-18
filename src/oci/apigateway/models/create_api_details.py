@@ -48,7 +48,6 @@ class CreateApiDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'content': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'compartment_id': 'compartmentId',
@@ -56,7 +55,6 @@ class CreateApiDetails(object):
             'defined_tags': 'definedTags',
             'content': 'content'
         }
-
         self._display_name = None
         self._compartment_id = None
         self._freeform_tags = None

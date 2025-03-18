@@ -60,7 +60,6 @@ class ResourceLock(object):
             'message': 'str',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'type': 'type',
             'compartment_id': 'compartmentId',
@@ -68,7 +67,6 @@ class ResourceLock(object):
             'message': 'message',
             'time_created': 'timeCreated'
         }
-
         self._type = None
         self._compartment_id = None
         self._related_resource_id = None

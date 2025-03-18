@@ -28,11 +28,9 @@ class HostInsights(object):
         self.swagger_types = {
             'host_insights': 'object'
         }
-
         self.attribute_map = {
             'host_insights': 'hostInsights'
         }
-
         self._host_insights = None
 
     @property

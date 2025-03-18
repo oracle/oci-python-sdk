@@ -73,7 +73,6 @@ class FleetAgentConfiguration(object):
             'mac_os_configuration': 'FleetAgentOsConfiguration',
             'time_last_modified': 'datetime'
         }
-
         self.attribute_map = {
             'jre_scan_frequency_in_minutes': 'jreScanFrequencyInMinutes',
             'java_usage_tracker_processing_frequency_in_minutes': 'javaUsageTrackerProcessingFrequencyInMinutes',
@@ -86,7 +85,6 @@ class FleetAgentConfiguration(object):
             'mac_os_configuration': 'macOsConfiguration',
             'time_last_modified': 'timeLastModified'
         }
-
         self._jre_scan_frequency_in_minutes = None
         self._java_usage_tracker_processing_frequency_in_minutes = None
         self._work_request_validity_period_in_days = None

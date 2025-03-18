@@ -43,14 +43,12 @@ class EstimatedPatchingTime(object):
             'estimated_storage_server_patching_time': 'int',
             'estimated_network_switches_patching_time': 'int'
         }
-
         self.attribute_map = {
             'total_estimated_patching_time': 'totalEstimatedPatchingTime',
             'estimated_db_server_patching_time': 'estimatedDbServerPatchingTime',
             'estimated_storage_server_patching_time': 'estimatedStorageServerPatchingTime',
             'estimated_network_switches_patching_time': 'estimatedNetworkSwitchesPatchingTime'
         }
-
         self._total_estimated_patching_time = None
         self._estimated_db_server_patching_time = None
         self._estimated_storage_server_patching_time = None

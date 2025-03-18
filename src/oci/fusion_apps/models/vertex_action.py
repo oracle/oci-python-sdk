@@ -51,7 +51,6 @@ class VertexAction(Action):
             'description': 'str',
             'artifact': 'str'
         }
-
         self.attribute_map = {
             'reference_key': 'referenceKey',
             'action_type': 'actionType',
@@ -59,7 +58,6 @@ class VertexAction(Action):
             'description': 'description',
             'artifact': 'artifact'
         }
-
         self._reference_key = None
         self._action_type = None
         self._state = None

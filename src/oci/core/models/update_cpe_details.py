@@ -43,14 +43,12 @@ class UpdateCpeDetails(object):
             'freeform_tags': 'dict(str, str)',
             'cpe_device_shape_id': 'str'
         }
-
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
             'cpe_device_shape_id': 'cpeDeviceShapeId'
         }
-
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None

@@ -43,11 +43,9 @@ class ComputeInstanceGroupSelector(object):
         self.swagger_types = {
             'selector_type': 'str'
         }
-
         self.attribute_map = {
             'selector_type': 'selectorType'
         }
-
         self._selector_type = None
 
     @staticmethod

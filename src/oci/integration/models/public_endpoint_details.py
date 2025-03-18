@@ -45,14 +45,12 @@ class PublicEndpointDetails(NetworkEndpointDetails):
             'allowlisted_http_vcns': 'list[VirtualCloudNetwork]',
             'is_integration_vcn_allowlisted': 'bool'
         }
-
         self.attribute_map = {
             'network_endpoint_type': 'networkEndpointType',
             'allowlisted_http_ips': 'allowlistedHttpIps',
             'allowlisted_http_vcns': 'allowlistedHttpVcns',
             'is_integration_vcn_allowlisted': 'isIntegrationVcnAllowlisted'
         }
-
         self._network_endpoint_type = None
         self._allowlisted_http_ips = None
         self._allowlisted_http_vcns = None

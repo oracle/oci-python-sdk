@@ -33,12 +33,10 @@ class CreateContainerImageDetails(object):
             'source_registry_id': 'str',
             'source_registry_url': 'str'
         }
-
         self.attribute_map = {
             'source_registry_id': 'sourceRegistryId',
             'source_registry_url': 'sourceRegistryUrl'
         }
-
         self._source_registry_id = None
         self._source_registry_url = None
 

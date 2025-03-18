@@ -39,13 +39,11 @@ class ScriptParameter(object):
             'param_value': 'str',
             'is_secret': 'bool'
         }
-
         self.attribute_map = {
             'param_name': 'paramName',
             'param_value': 'paramValue',
             'is_secret': 'isSecret'
         }
-
         self._param_name = None
         self._param_value = None
         self._is_secret = None

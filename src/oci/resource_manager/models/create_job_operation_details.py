@@ -42,12 +42,10 @@ class CreateJobOperationDetails(object):
             'operation': 'str',
             'is_provider_upgrade_required': 'bool'
         }
-
         self.attribute_map = {
             'operation': 'operation',
             'is_provider_upgrade_required': 'isProviderUpgradeRequired'
         }
-
         self._operation = None
         self._is_provider_upgrade_required = None
 

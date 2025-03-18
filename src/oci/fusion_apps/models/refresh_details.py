@@ -38,13 +38,11 @@ class RefreshDetails(object):
             'time_finished': 'datetime',
             'time_of_restoration_point': 'datetime'
         }
-
         self.attribute_map = {
             'source_fusion_environment_id': 'sourceFusionEnvironmentId',
             'time_finished': 'timeFinished',
             'time_of_restoration_point': 'timeOfRestorationPoint'
         }
-
         self._source_fusion_environment_id = None
         self._time_finished = None
         self._time_of_restoration_point = None

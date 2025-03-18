@@ -52,14 +52,12 @@ class UpdateModuleStreamProfileDetails(object):
             'is_default': 'bool',
             'time_modified': 'datetime'
         }
-
         self.attribute_map = {
             'profile_name': 'profileName',
             'status': 'status',
             'is_default': 'isDefault',
             'time_modified': 'timeModified'
         }
-
         self._profile_name = None
         self._status = None
         self._is_default = None

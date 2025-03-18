@@ -39,13 +39,11 @@ class CreateStackTemplateConfigSourceDetails(CreateConfigSourceDetails):
             'working_directory': 'str',
             'template_id': 'str'
         }
-
         self.attribute_map = {
             'config_source_type': 'configSourceType',
             'working_directory': 'workingDirectory',
             'template_id': 'templateId'
         }
-
         self._config_source_type = None
         self._working_directory = None
         self._template_id = None

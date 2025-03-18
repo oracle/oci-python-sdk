@@ -33,12 +33,10 @@ class OkeClusterNetworkLoadBalancerMapping(object):
             'source_network_load_balancer_id': 'str',
             'destination_network_load_balancer_id': 'str'
         }
-
         self.attribute_map = {
             'source_network_load_balancer_id': 'sourceNetworkLoadBalancerId',
             'destination_network_load_balancer_id': 'destinationNetworkLoadBalancerId'
         }
-
         self._source_network_load_balancer_id = None
         self._destination_network_load_balancer_id = None
 

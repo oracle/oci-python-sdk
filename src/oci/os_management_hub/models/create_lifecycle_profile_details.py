@@ -75,7 +75,6 @@ class CreateLifecycleProfileDetails(CreateProfileDetails):
             'defined_tags': 'dict(str, dict(str, object))',
             'lifecycle_stage_id': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'compartment_id': 'compartmentId',
@@ -88,7 +87,6 @@ class CreateLifecycleProfileDetails(CreateProfileDetails):
             'defined_tags': 'definedTags',
             'lifecycle_stage_id': 'lifecycleStageId'
         }
-
         self._display_name = None
         self._compartment_id = None
         self._description = None

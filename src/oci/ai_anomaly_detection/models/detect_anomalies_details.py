@@ -53,13 +53,11 @@ class DetectAnomaliesDetails(object):
             'request_type': 'str',
             'sensitivity': 'float'
         }
-
         self.attribute_map = {
             'model_id': 'modelId',
             'request_type': 'requestType',
             'sensitivity': 'sensitivity'
         }
-
         self._model_id = None
         self._request_type = None
         self._sensitivity = None

@@ -100,7 +100,6 @@ class FlowLogCaptureFilterRuleDetails(object):
             'flow_log_type': 'str',
             'rule_action': 'str'
         }
-
         self.attribute_map = {
             'is_enabled': 'isEnabled',
             'priority': 'priority',
@@ -114,7 +113,6 @@ class FlowLogCaptureFilterRuleDetails(object):
             'flow_log_type': 'flowLogType',
             'rule_action': 'ruleAction'
         }
-
         self._is_enabled = None
         self._priority = None
         self._sampling_rate = None

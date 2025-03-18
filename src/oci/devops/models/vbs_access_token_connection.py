@@ -107,7 +107,6 @@ class VbsAccessTokenConnection(Connection):
             'access_token': 'str',
             'base_url': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'description': 'description',
@@ -126,7 +125,6 @@ class VbsAccessTokenConnection(Connection):
             'access_token': 'accessToken',
             'base_url': 'baseUrl'
         }
-
         self._id = None
         self._description = None
         self._display_name = None

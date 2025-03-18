@@ -35,12 +35,10 @@ class TtsOracleTts2NaturalModelDetails(TtsOracleModelDetails):
             'model_name': 'str',
             'voice_id': 'str'
         }
-
         self.attribute_map = {
             'model_name': 'modelName',
             'voice_id': 'voiceId'
         }
-
         self._model_name = None
         self._voice_id = None
         self._model_name = 'TTS_2_NATURAL'

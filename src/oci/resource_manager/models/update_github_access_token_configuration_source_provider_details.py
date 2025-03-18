@@ -65,7 +65,6 @@ class UpdateGithubAccessTokenConfigurationSourceProviderDetails(UpdateConfigurat
             'api_endpoint': 'str',
             'access_token': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
@@ -76,7 +75,6 @@ class UpdateGithubAccessTokenConfigurationSourceProviderDetails(UpdateConfigurat
             'api_endpoint': 'apiEndpoint',
             'access_token': 'accessToken'
         }
-
         self._display_name = None
         self._description = None
         self._config_source_provider_type = None

@@ -28,11 +28,9 @@ class OriginGroup(object):
         self.swagger_types = {
             'origins': 'list[OriginGroupOrigins]'
         }
-
         self.attribute_map = {
             'origins': 'origins'
         }
-
         self._origins = None
 
     @property

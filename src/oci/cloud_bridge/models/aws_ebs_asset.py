@@ -101,7 +101,6 @@ class AwsEbsAsset(Asset):
             'system_tags': 'dict(str, dict(str, object))',
             'aws_ebs': 'AwsEbsProperties'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'inventory_id': 'inventoryId',
@@ -119,7 +118,6 @@ class AwsEbsAsset(Asset):
             'system_tags': 'systemTags',
             'aws_ebs': 'awsEbs'
         }
-
         self._display_name = None
         self._inventory_id = None
         self._id = None

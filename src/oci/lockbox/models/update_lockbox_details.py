@@ -48,7 +48,6 @@ class UpdateLockboxDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'approval_template_id': 'approvalTemplateId',
@@ -56,7 +55,6 @@ class UpdateLockboxDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._display_name = None
         self._approval_template_id = None
         self._max_access_duration = None

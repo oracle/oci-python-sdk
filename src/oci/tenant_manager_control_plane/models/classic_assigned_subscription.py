@@ -199,7 +199,6 @@ class ClassicAssignedSubscription(AssignedSubscription):
             'end_date': 'datetime',
             'managed_by': 'str'
         }
-
         self.attribute_map = {
             'entity_version': 'entityVersion',
             'id': 'id',
@@ -227,7 +226,6 @@ class ClassicAssignedSubscription(AssignedSubscription):
             'end_date': 'endDate',
             'managed_by': 'managedBy'
         }
-
         self._entity_version = None
         self._id = None
         self._compartment_id = None

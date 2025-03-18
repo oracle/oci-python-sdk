@@ -33,12 +33,10 @@ class ParentReference(object):
             'parent': 'str',
             'root_doc_id': 'str'
         }
-
         self.attribute_map = {
             'parent': 'parent',
             'root_doc_id': 'rootDocId'
         }
-
         self._parent = None
         self._root_doc_id = None
 

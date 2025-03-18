@@ -33,12 +33,10 @@ class VideoText(object):
             'text': 'str',
             'segments': 'list[VideoTextSegment]'
         }
-
         self.attribute_map = {
             'text': 'text',
             'segments': 'segments'
         }
-
         self._text = None
         self._segments = None
 

@@ -28,11 +28,9 @@ class ServiceConnectorCollection(object):
         self.swagger_types = {
             'items': 'list[ServiceConnectorSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

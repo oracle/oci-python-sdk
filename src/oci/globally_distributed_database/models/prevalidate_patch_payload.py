@@ -40,13 +40,11 @@ class PrevalidatePatchPayload(PrevalidatePayload):
             'prevalidate_payload': 'PatchShardedDatabaseDetails',
             'sharded_database_id': 'str'
         }
-
         self.attribute_map = {
             'operation': 'operation',
             'prevalidate_payload': 'prevalidatePayload',
             'sharded_database_id': 'shardedDatabaseId'
         }
-
         self._operation = None
         self._prevalidate_payload = None
         self._sharded_database_id = None

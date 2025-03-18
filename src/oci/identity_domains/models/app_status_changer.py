@@ -107,7 +107,6 @@ class AppStatusChanger(object):
             'tenancy_ocid': 'str',
             'active': 'bool'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -124,7 +123,6 @@ class AppStatusChanger(object):
             'tenancy_ocid': 'tenancyOcid',
             'active': 'active'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

@@ -58,12 +58,10 @@ class Message(object):
             'role': 'str',
             'content': 'list[ChatContent]'
         }
-
         self.attribute_map = {
             'role': 'role',
             'content': 'content'
         }
-
         self._role = None
         self._content = None
 

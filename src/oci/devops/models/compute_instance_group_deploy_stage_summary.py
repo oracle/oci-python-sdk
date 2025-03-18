@@ -134,7 +134,6 @@ class ComputeInstanceGroupDeployStageSummary(DeployStageSummary):
             'failure_policy': 'ComputeInstanceGroupFailurePolicy',
             'load_balancer_config': 'LoadBalancerConfig'
         }
-
         self.attribute_map = {
             'id': 'id',
             'description': 'description',
@@ -159,7 +158,6 @@ class ComputeInstanceGroupDeployStageSummary(DeployStageSummary):
             'failure_policy': 'failurePolicy',
             'load_balancer_config': 'loadBalancerConfig'
         }
-
         self._id = None
         self._description = None
         self._display_name = None

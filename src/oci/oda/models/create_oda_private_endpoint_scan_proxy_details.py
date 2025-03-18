@@ -38,13 +38,11 @@ class CreateOdaPrivateEndpointScanProxyDetails(object):
             'protocol': 'str',
             'scan_listener_infos': 'list[ScanListenerInfo]'
         }
-
         self.attribute_map = {
             'scan_listener_type': 'scanListenerType',
             'protocol': 'protocol',
             'scan_listener_infos': 'scanListenerInfos'
         }
-
         self._scan_listener_type = None
         self._protocol = None
         self._scan_listener_infos = None

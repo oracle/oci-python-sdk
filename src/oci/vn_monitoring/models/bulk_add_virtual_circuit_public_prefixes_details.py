@@ -28,11 +28,9 @@ class BulkAddVirtualCircuitPublicPrefixesDetails(object):
         self.swagger_types = {
             'public_prefixes': 'list[CreateVirtualCircuitPublicPrefixDetails]'
         }
-
         self.attribute_map = {
             'public_prefixes': 'publicPrefixes'
         }
-
         self._public_prefixes = None
 
     @property

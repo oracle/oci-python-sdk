@@ -47,13 +47,11 @@ class ApproveDeploymentDetails(object):
             'reason': 'str',
             'action': 'str'
         }
-
         self.attribute_map = {
             'deploy_stage_id': 'deployStageId',
             'reason': 'reason',
             'action': 'action'
         }
-
         self._deploy_stage_id = None
         self._reason = None
         self._action = None

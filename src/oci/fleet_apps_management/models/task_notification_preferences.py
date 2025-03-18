@@ -38,13 +38,11 @@ class TaskNotificationPreferences(object):
             'should_notify_on_task_failure': 'bool',
             'should_notify_on_task_success': 'bool'
         }
-
         self.attribute_map = {
             'should_notify_on_pause': 'shouldNotifyOnPause',
             'should_notify_on_task_failure': 'shouldNotifyOnTaskFailure',
             'should_notify_on_task_success': 'shouldNotifyOnTaskSuccess'
         }
-
         self._should_notify_on_pause = None
         self._should_notify_on_task_failure = None
         self._should_notify_on_task_success = None

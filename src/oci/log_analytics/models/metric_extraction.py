@@ -44,14 +44,12 @@ class MetricExtraction(object):
             'metric_name': 'str',
             'resource_group': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'namespace': 'namespace',
             'metric_name': 'metricName',
             'resource_group': 'resourceGroup'
         }
-
         self._compartment_id = None
         self._namespace = None
         self._metric_name = None

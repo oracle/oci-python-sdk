@@ -98,7 +98,6 @@ class PatternSummary(object):
             'file_path_prefix': 'str',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'display_name': 'displayName',
@@ -109,7 +108,6 @@ class PatternSummary(object):
             'file_path_prefix': 'filePathPrefix',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._key = None
         self._display_name = None
         self._description = None

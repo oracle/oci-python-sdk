@@ -28,11 +28,9 @@ class CreateVideoDetails(object):
         self.swagger_types = {
             'content_url': 'str'
         }
-
         self.attribute_map = {
             'content_url': 'contentUrl'
         }
-
         self._content_url = None
 
     @property

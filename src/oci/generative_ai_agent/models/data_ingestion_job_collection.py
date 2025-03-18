@@ -28,11 +28,9 @@ class DataIngestionJobCollection(object):
         self.swagger_types = {
             'items': 'list[DataIngestionJobSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

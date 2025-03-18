@@ -45,14 +45,12 @@ class VideoObjectDetectionFeature(VideoFeature):
             'max_results': 'int',
             'model_id': 'str'
         }
-
         self.attribute_map = {
             'feature_type': 'featureType',
             'min_confidence': 'minConfidence',
             'max_results': 'maxResults',
             'model_id': 'modelId'
         }
-
         self._feature_type = None
         self._min_confidence = None
         self._max_results = None

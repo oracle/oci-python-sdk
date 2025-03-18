@@ -118,7 +118,6 @@ class OrganizationTenancySummary(object):
             'governance_status': 'str',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'tenancy_id': 'tenancyId',
             'name': 'name',
@@ -130,7 +129,6 @@ class OrganizationTenancySummary(object):
             'governance_status': 'governanceStatus',
             'system_tags': 'systemTags'
         }
-
         self._tenancy_id = None
         self._name = None
         self._lifecycle_state = None

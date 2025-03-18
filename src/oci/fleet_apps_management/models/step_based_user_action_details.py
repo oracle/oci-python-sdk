@@ -56,7 +56,6 @@ class StepBasedUserActionDetails(UserActionDetails):
             'target_id': 'str',
             'step_name': 'str'
         }
-
         self.attribute_map = {
             'level': 'level',
             'action': 'action',
@@ -65,7 +64,6 @@ class StepBasedUserActionDetails(UserActionDetails):
             'target_id': 'targetId',
             'step_name': 'stepName'
         }
-
         self._level = None
         self._action = None
         self._action_group_id = None

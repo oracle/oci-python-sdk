@@ -58,14 +58,12 @@ class ScmConfiguration(object):
             'build_file_location': 'str',
             'is_automerge_enabled': 'bool'
         }
-
         self.attribute_map = {
             'scm_type': 'scmType',
             'branch': 'branch',
             'build_file_location': 'buildFileLocation',
             'is_automerge_enabled': 'isAutomergeEnabled'
         }
-
         self._scm_type = None
         self._branch = None
         self._build_file_location = None

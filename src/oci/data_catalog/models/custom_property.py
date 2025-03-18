@@ -204,7 +204,6 @@ class CustomProperty(object):
             'events': 'list[EventConfig]',
             'properties': 'dict(str, dict(str, str))'
         }
-
         self.attribute_map = {
             'key': 'key',
             'display_name': 'displayName',
@@ -232,7 +231,6 @@ class CustomProperty(object):
             'events': 'events',
             'properties': 'properties'
         }
-
         self._key = None
         self._display_name = None
         self._data_type = None

@@ -73,7 +73,6 @@ class LogAnalyticsParserField(object):
             'parser': 'LogAnalyticsParser',
             'structured_column_info': 'str'
         }
-
         self.attribute_map = {
             'field': 'field',
             'parser_field_id': 'parserFieldId',
@@ -86,7 +85,6 @@ class LogAnalyticsParserField(object):
             'parser': 'parser',
             'structured_column_info': 'structuredColumnInfo'
         }
-
         self._field = None
         self._parser_field_id = None
         self._parser_field_expression = None

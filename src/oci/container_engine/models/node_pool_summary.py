@@ -172,7 +172,6 @@ class NodePoolSummary(object):
             'node_eviction_node_pool_settings': 'NodeEvictionNodePoolSettings',
             'node_pool_cycling_details': 'NodePoolCyclingDetails'
         }
-
         self.attribute_map = {
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
@@ -198,7 +197,6 @@ class NodePoolSummary(object):
             'node_eviction_node_pool_settings': 'nodeEvictionNodePoolSettings',
             'node_pool_cycling_details': 'nodePoolCyclingDetails'
         }
-
         self._id = None
         self._lifecycle_state = None
         self._lifecycle_details = None

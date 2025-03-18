@@ -43,14 +43,12 @@ class ApprovalRule(object):
             'reviewers': 'list[PrincipalDetails]',
             'min_approvals_count': 'int'
         }
-
         self.attribute_map = {
             'name': 'name',
             'destination_branch': 'destinationBranch',
             'reviewers': 'reviewers',
             'min_approvals_count': 'minApprovalsCount'
         }
-
         self._name = None
         self._destination_branch = None
         self._reviewers = None

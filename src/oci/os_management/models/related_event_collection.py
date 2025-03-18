@@ -28,11 +28,9 @@ class RelatedEventCollection(object):
         self.swagger_types = {
             'items': 'list[RelatedEventSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

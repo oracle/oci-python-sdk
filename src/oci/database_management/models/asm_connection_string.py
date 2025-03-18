@@ -49,14 +49,12 @@ class AsmConnectionString(object):
             'service': 'str',
             'protocol': 'str'
         }
-
         self.attribute_map = {
             'hosts': 'hosts',
             'port': 'port',
             'service': 'service',
             'protocol': 'protocol'
         }
-
         self._hosts = None
         self._port = None
         self._service = None

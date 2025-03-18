@@ -28,11 +28,9 @@ class ExtensionThirdPartyAuthenticationFactorSettings(object):
         self.swagger_types = {
             'duo_security_settings': 'AuthenticationFactorSettingsDuoSecuritySettings'
         }
-
         self.attribute_map = {
             'duo_security_settings': 'duoSecuritySettings'
         }
-
         self._duo_security_settings = None
 
     @property

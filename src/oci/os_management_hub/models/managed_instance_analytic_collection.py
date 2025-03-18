@@ -28,11 +28,9 @@ class ManagedInstanceAnalyticCollection(object):
         self.swagger_types = {
             'items': 'list[ManagedInstanceAnalyticSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

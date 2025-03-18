@@ -38,13 +38,11 @@ class SchemaLocalizedCanonicalValues(object):
             'canonical_value': 'list[str]',
             'locale': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'canonical_value': 'canonicalValue',
             'locale': 'locale'
         }
-
         self._value = None
         self._canonical_value = None
         self._locale = None

@@ -38,13 +38,11 @@ class NodePoolCyclingDetails(object):
             'maximum_surge': 'str',
             'is_node_cycling_enabled': 'bool'
         }
-
         self.attribute_map = {
             'maximum_unavailable': 'maximumUnavailable',
             'maximum_surge': 'maximumSurge',
             'is_node_cycling_enabled': 'isNodeCyclingEnabled'
         }
-
         self._maximum_unavailable = None
         self._maximum_surge = None
         self._is_node_cycling_enabled = None

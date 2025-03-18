@@ -131,7 +131,6 @@ class LogAnalyticsAssociation(object):
             'log_group_compartment': 'str',
             'association_properties': 'list[AssociationProperty]'
         }
-
         self.attribute_map = {
             'failure_message': 'failureMessage',
             'agent_id': 'agentId',
@@ -152,7 +151,6 @@ class LogAnalyticsAssociation(object):
             'log_group_compartment': 'logGroupCompartment',
             'association_properties': 'associationProperties'
         }
-
         self._failure_message = None
         self._agent_id = None
         self._time_last_attempted = None

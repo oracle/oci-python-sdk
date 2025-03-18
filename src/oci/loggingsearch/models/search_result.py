@@ -28,11 +28,9 @@ class SearchResult(object):
         self.swagger_types = {
             'data': 'object'
         }
-
         self.attribute_map = {
             'data': 'data'
         }
-
         self._data = None
 
     @property

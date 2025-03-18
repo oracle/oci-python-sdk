@@ -93,7 +93,6 @@ class BillingScheduleSummary(object):
             'order_number': 'str',
             'product': 'Product'
         }
-
         self.attribute_map = {
             'time_start': 'timeStart',
             'time_end': 'timeEnd',
@@ -108,7 +107,6 @@ class BillingScheduleSummary(object):
             'order_number': 'orderNumber',
             'product': 'product'
         }
-
         self._time_start = None
         self._time_end = None
         self._time_invoicing = None

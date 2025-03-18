@@ -57,14 +57,12 @@ class JobInBind(object):
             'values': 'list[str]',
             'array_type_name': 'str'
         }
-
         self.attribute_map = {
             'position': 'position',
             'data_type': 'dataType',
             'values': 'values',
             'array_type_name': 'arrayTypeName'
         }
-
         self._position = None
         self._data_type = None
         self._values = None

@@ -62,7 +62,6 @@ class UpdateLicenseAutoAssignConfigDetails(UpdateConfigDetails):
             'defined_tags': 'dict(str, dict(str, object))',
             'license': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'config_type': 'configType',
@@ -70,7 +69,6 @@ class UpdateLicenseAutoAssignConfigDetails(UpdateConfigDetails):
             'defined_tags': 'definedTags',
             'license': 'license'
         }
-
         self._display_name = None
         self._config_type = None
         self._freeform_tags = None

@@ -28,11 +28,9 @@ class DbManagementPrivateEndpointCollection(object):
         self.swagger_types = {
             'items': 'list[DbManagementPrivateEndpointSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

@@ -45,14 +45,12 @@ class HostAllocation(DatabaseConfigurationMetricGroup):
             'resource_name': 'str',
             'resource_value': 'int'
         }
-
         self.attribute_map = {
             'metric_name': 'metricName',
             'time_collected': 'timeCollected',
             'resource_name': 'resourceName',
             'resource_value': 'resourceValue'
         }
-
         self._metric_name = None
         self._time_collected = None
         self._resource_name = None

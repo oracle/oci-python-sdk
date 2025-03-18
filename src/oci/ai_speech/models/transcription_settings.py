@@ -28,11 +28,9 @@ class TranscriptionSettings(object):
         self.swagger_types = {
             'diarization': 'Diarization'
         }
-
         self.attribute_map = {
             'diarization': 'diarization'
         }
-
         self._diarization = None
 
     @property

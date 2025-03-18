@@ -28,11 +28,9 @@ class JavaServerUsageCollection(object):
         self.swagger_types = {
             'items': 'list[JavaServerUsage]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

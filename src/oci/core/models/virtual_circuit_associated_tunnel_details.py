@@ -44,13 +44,11 @@ class VirtualCircuitAssociatedTunnelDetails(object):
             'ipsec_connection_id': 'str',
             'tunnel_id': 'str'
         }
-
         self.attribute_map = {
             'tunnel_type': 'tunnelType',
             'ipsec_connection_id': 'ipsecConnectionId',
             'tunnel_id': 'tunnelId'
         }
-
         self._tunnel_type = None
         self._ipsec_connection_id = None
         self._tunnel_id = None

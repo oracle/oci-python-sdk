@@ -138,7 +138,6 @@ class CreateManagementDashboardDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'dashboard_id': 'dashboardId',
             'provider_id': 'providerId',
@@ -164,7 +163,6 @@ class CreateManagementDashboardDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._dashboard_id = None
         self._provider_id = None
         self._provider_name = None

@@ -38,13 +38,11 @@ class NetworkSecurityGroupVnic(object):
             'time_associated': 'datetime',
             'vnic_id': 'str'
         }
-
         self.attribute_map = {
             'resource_id': 'resourceId',
             'time_associated': 'timeAssociated',
             'vnic_id': 'vnicId'
         }
-
         self._resource_id = None
         self._time_associated = None
         self._vnic_id = None

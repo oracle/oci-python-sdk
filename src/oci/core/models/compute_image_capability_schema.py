@@ -74,7 +74,6 @@ class ComputeImageCapabilitySchema(object):
             'schema_data': 'dict(str, ImageCapabilitySchemaDescriptor)',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -87,7 +86,6 @@ class ComputeImageCapabilitySchema(object):
             'schema_data': 'schemaData',
             'time_created': 'timeCreated'
         }
-
         self._id = None
         self._compartment_id = None
         self._compute_global_image_capability_schema_id = None

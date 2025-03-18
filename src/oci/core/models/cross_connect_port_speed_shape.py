@@ -33,12 +33,10 @@ class CrossConnectPortSpeedShape(object):
             'name': 'str',
             'port_speed_in_gbps': 'int'
         }
-
         self.attribute_map = {
             'name': 'name',
             'port_speed_in_gbps': 'portSpeedInGbps'
         }
-
         self._name = None
         self._port_speed_in_gbps = None
 

@@ -45,14 +45,12 @@ class CreateFaaSActionDetails(ActionDetails):
             'description': 'str',
             'function_id': 'str'
         }
-
         self.attribute_map = {
             'action_type': 'actionType',
             'is_enabled': 'isEnabled',
             'description': 'description',
             'function_id': 'functionId'
         }
-
         self._action_type = None
         self._is_enabled = None
         self._description = None

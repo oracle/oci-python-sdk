@@ -32,11 +32,9 @@ class NoneScheduleDetails(UpdateScheduleDetails):
         self.swagger_types = {
             'type': 'str'
         }
-
         self.attribute_map = {
             'type': 'type'
         }
-
         self._type = None
         self._type = 'NONE'
 

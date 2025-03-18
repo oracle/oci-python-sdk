@@ -49,13 +49,11 @@ class UserExtSocialAccounts(object):
             'display': 'str',
             'ref': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'display': 'display',
             'ref': '$ref'
         }
-
         self._value = None
         self._display = None
         self._ref = None

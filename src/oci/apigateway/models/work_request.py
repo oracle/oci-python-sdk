@@ -180,7 +180,6 @@ class WorkRequest(object):
             'time_started': 'datetime',
             'time_finished': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'operation_type': 'operationType',
@@ -192,7 +191,6 @@ class WorkRequest(object):
             'time_started': 'timeStarted',
             'time_finished': 'timeFinished'
         }
-
         self._id = None
         self._operation_type = None
         self._status = None

@@ -35,12 +35,10 @@ class ExternalConnectorDetails(ConnectorDetails):
             'connector_type': 'str',
             'database_connector_id': 'str'
         }
-
         self.attribute_map = {
             'connector_type': 'connectorType',
             'database_connector_id': 'databaseConnectorId'
         }
-
         self._connector_type = None
         self._database_connector_id = None
         self._connector_type = 'EXTERNAL'

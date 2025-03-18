@@ -35,12 +35,10 @@ class InsightTypeLoggingQueryDetails(LoggingQueryDetails):
             'logging_query_type': 'str',
             'key_entities_count': 'int'
         }
-
         self.attribute_map = {
             'logging_query_type': 'loggingQueryType',
             'key_entities_count': 'keyEntitiesCount'
         }
-
         self._logging_query_type = None
         self._key_entities_count = None
         self._logging_query_type = 'INSIGHT'

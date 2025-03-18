@@ -68,7 +68,6 @@ class FlattenDetails(object):
             'parent_ref': 'ParentReference',
             'object_status': 'int'
         }
-
         self.attribute_map = {
             'flatten_projection_preferences': 'flattenProjectionPreferences',
             'flatten_attribute_root': 'flattenAttributeRoot',
@@ -80,7 +79,6 @@ class FlattenDetails(object):
             'parent_ref': 'parentRef',
             'object_status': 'objectStatus'
         }
-
         self._flatten_projection_preferences = None
         self._flatten_attribute_root = None
         self._flatten_attribute_path = None

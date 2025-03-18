@@ -53,14 +53,12 @@ class HydratedVolume(object):
             'volume_type': 'str',
             'unmodified_volume_id': 'str'
         }
-
         self.attribute_map = {
             'uuid': 'uuid',
             'volume_id': 'volumeId',
             'volume_type': 'volumeType',
             'unmodified_volume_id': 'unmodifiedVolumeId'
         }
-
         self._uuid = None
         self._volume_id = None
         self._volume_type = None

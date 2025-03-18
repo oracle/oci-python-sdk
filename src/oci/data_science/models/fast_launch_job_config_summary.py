@@ -93,7 +93,6 @@ class FastLaunchJobConfigSummary(object):
             'shape_series': 'str',
             'managed_egress_support': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'shape_name': 'shapeName',
@@ -102,7 +101,6 @@ class FastLaunchJobConfigSummary(object):
             'shape_series': 'shapeSeries',
             'managed_egress_support': 'managedEgressSupport'
         }
-
         self._name = None
         self._shape_name = None
         self._core_count = None

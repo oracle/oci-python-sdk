@@ -116,7 +116,6 @@ class LogAnalyticsLabel(object):
             'type': 'str',
             'is_user_deleted': 'bool'
         }
-
         self.attribute_map = {
             'aliases': 'aliases',
             'count_usage_in_source': 'countUsageInSource',
@@ -132,7 +131,6 @@ class LogAnalyticsLabel(object):
             'type': 'type',
             'is_user_deleted': 'isUserDeleted'
         }
-
         self._aliases = None
         self._count_usage_in_source = None
         self._suggest_type = None

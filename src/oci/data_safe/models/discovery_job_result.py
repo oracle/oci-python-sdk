@@ -182,7 +182,6 @@ class DiscoveryJobResult(object):
             'discovery_job_id': 'str',
             'modified_attributes': 'ModifiedAttributes'
         }
-
         self.attribute_map = {
             'key': 'key',
             'discovery_type': 'discoveryType',
@@ -205,7 +204,6 @@ class DiscoveryJobResult(object):
             'discovery_job_id': 'discoveryJobId',
             'modified_attributes': 'modifiedAttributes'
         }
-
         self._key = None
         self._discovery_type = None
         self._sensitive_columnkey = None

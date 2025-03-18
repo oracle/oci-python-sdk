@@ -43,12 +43,10 @@ class InstanceAvailabilityConfig(object):
             'is_live_migration_preferred': 'bool',
             'recovery_action': 'str'
         }
-
         self.attribute_map = {
             'is_live_migration_preferred': 'isLiveMigrationPreferred',
             'recovery_action': 'recoveryAction'
         }
-
         self._is_live_migration_preferred = None
         self._recovery_action = None
 

@@ -65,7 +65,6 @@ class BadUserStateAuthenticateUserResult(object):
             'resolved_user_id': 'str',
             'user_state': 'str'
         }
-
         self.attribute_map = {
             'tenant_input': 'tenantInput',
             'user_input': 'userInput',
@@ -73,7 +72,6 @@ class BadUserStateAuthenticateUserResult(object):
             'resolved_user_id': 'resolvedUserId',
             'user_state': 'userState'
         }
-
         self._tenant_input = None
         self._user_input = None
         self._resolved_tenant_id = None

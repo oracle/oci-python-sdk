@@ -38,13 +38,11 @@ class UnifiedAgentOpenmetricsParserRecord(object):
             'resource_group': 'str',
             'dimensions': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'namespace': 'namespace',
             'resource_group': 'resourceGroup',
             'dimensions': 'dimensions'
         }
-
         self._namespace = None
         self._resource_group = None
         self._dimensions = None

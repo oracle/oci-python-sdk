@@ -43,14 +43,12 @@ class Face(object):
             'quality_score': 'float',
             'landmarks': 'list[Landmark]'
         }
-
         self.attribute_map = {
             'confidence': 'confidence',
             'bounding_polygon': 'boundingPolygon',
             'quality_score': 'qualityScore',
             'landmarks': 'landmarks'
         }
-
         self._confidence = None
         self._bounding_polygon = None
         self._quality_score = None

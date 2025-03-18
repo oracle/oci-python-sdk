@@ -42,11 +42,9 @@ class ValidationRequestPolicy(object):
         self.swagger_types = {
             'validation_mode': 'str'
         }
-
         self.attribute_map = {
             'validation_mode': 'validationMode'
         }
-
         self._validation_mode = None
 
     @property

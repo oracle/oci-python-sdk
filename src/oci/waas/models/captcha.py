@@ -60,7 +60,6 @@ class Captcha(object):
             'failure_message': 'str',
             'submit_label': 'str'
         }
-
         self.attribute_map = {
             'url': 'url',
             'session_expiration_in_seconds': 'sessionExpirationInSeconds',
@@ -70,7 +69,6 @@ class Captcha(object):
             'failure_message': 'failureMessage',
             'submit_label': 'submitLabel'
         }
-
         self._url = None
         self._session_expiration_in_seconds = None
         self._title = None

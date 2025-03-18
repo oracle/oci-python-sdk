@@ -45,14 +45,12 @@ class QuotaTemplate(Template):
             'description': 'str',
             'statements': 'list[str]'
         }
-
         self.attribute_map = {
             'type': 'type',
             'display_name': 'displayName',
             'description': 'description',
             'statements': 'statements'
         }
-
         self._type = None
         self._display_name = None
         self._description = None

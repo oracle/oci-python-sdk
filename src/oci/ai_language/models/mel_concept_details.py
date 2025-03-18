@@ -43,14 +43,12 @@ class MelConceptDetails(object):
             'score': 'float',
             'attributes': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
             'score': 'score',
             'attributes': 'attributes'
         }
-
         self._id = None
         self._name = None
         self._score = None

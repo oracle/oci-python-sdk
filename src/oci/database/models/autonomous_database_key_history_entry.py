@@ -45,14 +45,12 @@ class AutonomousDatabaseKeyHistoryEntry(object):
             'vault_id': 'str',
             'time_activated': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'kms_key_version_id': 'kmsKeyVersionId',
             'vault_id': 'vaultId',
             'time_activated': 'timeActivated'
         }
-
         self._id = None
         self._kms_key_version_id = None
         self._vault_id = None

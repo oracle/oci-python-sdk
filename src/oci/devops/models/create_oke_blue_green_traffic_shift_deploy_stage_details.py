@@ -64,7 +64,6 @@ class CreateOkeBlueGreenTrafficShiftDeployStageDetails(CreateDeployStageDetails)
             'defined_tags': 'dict(str, dict(str, object))',
             'oke_blue_green_deploy_stage_id': 'str'
         }
-
         self.attribute_map = {
             'description': 'description',
             'display_name': 'displayName',
@@ -75,7 +74,6 @@ class CreateOkeBlueGreenTrafficShiftDeployStageDetails(CreateDeployStageDetails)
             'defined_tags': 'definedTags',
             'oke_blue_green_deploy_stage_id': 'okeBlueGreenDeployStageId'
         }
-
         self._description = None
         self._display_name = None
         self._deploy_stage_type = None

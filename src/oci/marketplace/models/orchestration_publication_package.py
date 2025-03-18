@@ -70,7 +70,6 @@ class OrchestrationPublicationPackage(PublicationPackage):
             'resource_link': 'str',
             'variables': 'list[OrchestrationVariable]'
         }
-
         self.attribute_map = {
             'description': 'description',
             'listing_id': 'listingId',
@@ -82,7 +81,6 @@ class OrchestrationPublicationPackage(PublicationPackage):
             'resource_link': 'resourceLink',
             'variables': 'variables'
         }
-
         self._description = None
         self._listing_id = None
         self._version = None

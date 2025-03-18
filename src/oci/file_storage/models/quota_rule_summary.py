@@ -100,7 +100,6 @@ class QuotaRuleSummary(object):
             'time_updated': 'datetime',
             'are_violators_only': 'bool'
         }
-
         self.attribute_map = {
             'id': 'id',
             'file_system_id': 'fileSystemId',
@@ -114,7 +113,6 @@ class QuotaRuleSummary(object):
             'time_updated': 'timeUpdated',
             'are_violators_only': 'areViolatorsOnly'
         }
-
         self._id = None
         self._file_system_id = None
         self._principal_type = None

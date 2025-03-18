@@ -28,11 +28,9 @@ class AdminCredentials(object):
         self.swagger_types = {
             'username': 'str'
         }
-
         self.attribute_map = {
             'username': 'username'
         }
-
         self._username = None
 
     @property

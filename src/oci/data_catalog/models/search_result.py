@@ -219,7 +219,6 @@ class SearchResult(object):
             'custom_properties': 'list[FacetedSearchCustomProperty]',
             'properties': 'dict(str, dict(str, str))'
         }
-
         self.attribute_map = {
             'key': 'key',
             'name': 'name',
@@ -254,7 +253,6 @@ class SearchResult(object):
             'custom_properties': 'customProperties',
             'properties': 'properties'
         }
-
         self._key = None
         self._name = None
         self._description = None

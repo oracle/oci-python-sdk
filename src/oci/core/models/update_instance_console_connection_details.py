@@ -33,12 +33,10 @@ class UpdateInstanceConsoleConnectionDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags'
         }
-
         self._defined_tags = None
         self._freeform_tags = None
 

@@ -33,12 +33,10 @@ class AddPackagesToSoftwareSourceDetails(object):
             'packages': 'list[str]',
             'is_continue_on_missing_packages': 'bool'
         }
-
         self.attribute_map = {
             'packages': 'packages',
             'is_continue_on_missing_packages': 'isContinueOnMissingPackages'
         }
-
         self._packages = None
         self._is_continue_on_missing_packages = None
 

@@ -96,7 +96,6 @@ class MetricGroupSummary(ConfigSummary):
             'dimensions': 'list[Dimension]',
             'metrics': 'list[Metric]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'config_type': 'configType',
@@ -113,7 +112,6 @@ class MetricGroupSummary(ConfigSummary):
             'dimensions': 'dimensions',
             'metrics': 'metrics'
         }
-
         self._id = None
         self._config_type = None
         self._time_created = None

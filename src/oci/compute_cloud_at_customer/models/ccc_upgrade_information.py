@@ -44,14 +44,12 @@ class CccUpgradeInformation(object):
             'scheduled_upgrade_duration': 'str',
             'is_active': 'bool'
         }
-
         self.attribute_map = {
             'current_version': 'currentVersion',
             'time_of_scheduled_upgrade': 'timeOfScheduledUpgrade',
             'scheduled_upgrade_duration': 'scheduledUpgradeDuration',
             'is_active': 'isActive'
         }
-
         self._current_version = None
         self._time_of_scheduled_upgrade = None
         self._scheduled_upgrade_duration = None

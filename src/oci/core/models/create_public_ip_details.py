@@ -67,7 +67,6 @@ class CreatePublicIpDetails(object):
             'private_ip_id': 'str',
             'public_ip_pool_id': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
@@ -77,7 +76,6 @@ class CreatePublicIpDetails(object):
             'private_ip_id': 'privateIpId',
             'public_ip_pool_id': 'publicIpPoolId'
         }
-
         self._compartment_id = None
         self._defined_tags = None
         self._display_name = None

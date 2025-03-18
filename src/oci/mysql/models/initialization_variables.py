@@ -38,11 +38,9 @@ class InitializationVariables(object):
         self.swagger_types = {
             'lower_case_table_names': 'str'
         }
-
         self.attribute_map = {
             'lower_case_table_names': 'lowerCaseTableNames'
         }
-
         self._lower_case_table_names = None
 
     @property

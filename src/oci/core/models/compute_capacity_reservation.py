@@ -114,7 +114,6 @@ class ComputeCapacityReservation(object):
             'time_created': 'datetime',
             'used_instance_count': 'int'
         }
-
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'compartment_id': 'compartmentId',
@@ -130,7 +129,6 @@ class ComputeCapacityReservation(object):
             'time_created': 'timeCreated',
             'used_instance_count': 'usedInstanceCount'
         }
-
         self._availability_domain = None
         self._compartment_id = None
         self._defined_tags = None

@@ -191,7 +191,6 @@ class ExternalPluggableDatabase(object):
             'database_management_config': 'DatabaseManagementConfig',
             'stack_monitoring_config': 'StackMonitoringConfig'
         }
-
         self.attribute_map = {
             'source_id': 'sourceId',
             'external_container_database_id': 'externalContainerDatabaseId',
@@ -216,7 +215,6 @@ class ExternalPluggableDatabase(object):
             'database_management_config': 'databaseManagementConfig',
             'stack_monitoring_config': 'stackMonitoringConfig'
         }
-
         self._source_id = None
         self._external_container_database_id = None
         self._operations_insights_config = None

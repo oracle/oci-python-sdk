@@ -28,11 +28,9 @@ class DiscoveryScheduleCollection(object):
         self.swagger_types = {
             'items': 'list[DiscoveryScheduleSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

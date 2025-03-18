@@ -38,13 +38,11 @@ class PatchRecommendationSummary(object):
             'up_to_date': 'int',
             'patch_available': 'int'
         }
-
         self.attribute_map = {
             'total': 'total',
             'up_to_date': 'upToDate',
             'patch_available': 'patchAvailable'
         }
-
         self._total = None
         self._up_to_date = None
         self._patch_available = None

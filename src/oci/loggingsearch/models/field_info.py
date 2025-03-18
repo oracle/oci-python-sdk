@@ -51,12 +51,10 @@ class FieldInfo(object):
             'field_name': 'str',
             'field_type': 'str'
         }
-
         self.attribute_map = {
             'field_name': 'fieldName',
             'field_type': 'fieldType'
         }
-
         self._field_name = None
         self._field_type = None
 

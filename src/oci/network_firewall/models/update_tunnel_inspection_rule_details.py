@@ -58,13 +58,11 @@ class UpdateTunnelInspectionRuleDetails(object):
             'protocol': 'str',
             'position': 'RulePosition'
         }
-
         self.attribute_map = {
             'action': 'action',
             'protocol': 'protocol',
             'position': 'position'
         }
-
         self._action = None
         self._protocol = None
         self._position = None

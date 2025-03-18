@@ -65,7 +65,6 @@ class FieldSummaryCommandDescriptor(AbstractCommandDescriptor):
             'is_hidden': 'bool',
             'max_values': 'int'
         }
-
         self.attribute_map = {
             'name': 'name',
             'display_query_string': 'displayQueryString',
@@ -76,7 +75,6 @@ class FieldSummaryCommandDescriptor(AbstractCommandDescriptor):
             'is_hidden': 'isHidden',
             'max_values': 'maxValues'
         }
-
         self._name = None
         self._display_query_string = None
         self._internal_query_string = None

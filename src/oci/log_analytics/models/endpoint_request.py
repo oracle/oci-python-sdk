@@ -63,7 +63,6 @@ class EndpointRequest(object):
             'headers': 'list[NameValuePair]',
             'form_parameters': 'list[NameValuePair]'
         }
-
         self.attribute_map = {
             'method': 'method',
             'url': 'url',
@@ -72,7 +71,6 @@ class EndpointRequest(object):
             'headers': 'headers',
             'form_parameters': 'formParameters'
         }
-
         self._method = None
         self._url = None
         self._content_type = None

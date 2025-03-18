@@ -63,7 +63,6 @@ class NewsContentTypes(object):
             'sql_insights_performance_degradation_resources': 'list[NewsSqlInsightsContentTypesResource]',
             'actionable_insights_resources': 'list[ActionableInsightsContentTypesResource]'
         }
-
         self.attribute_map = {
             'capacity_planning_resources': 'capacityPlanningResources',
             'sql_insights_fleet_analysis_resources': 'sqlInsightsFleetAnalysisResources',
@@ -74,7 +73,6 @@ class NewsContentTypes(object):
             'sql_insights_performance_degradation_resources': 'sqlInsightsPerformanceDegradationResources',
             'actionable_insights_resources': 'actionableInsightsResources'
         }
-
         self._capacity_planning_resources = None
         self._sql_insights_fleet_analysis_resources = None
         self._sql_insights_plan_changes_resources = None

@@ -38,11 +38,9 @@ class PipelineContainerConfigurationDetails(object):
         self.swagger_types = {
             'container_type': 'str'
         }
-
         self.attribute_map = {
             'container_type': 'containerType'
         }
-
         self._container_type = None
 
     @staticmethod

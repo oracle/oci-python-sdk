@@ -43,11 +43,9 @@ class ClassificationType(object):
         self.swagger_types = {
             'classification_mode': 'str'
         }
-
         self.attribute_map = {
             'classification_mode': 'classificationMode'
         }
-
         self._classification_mode = None
 
     @staticmethod

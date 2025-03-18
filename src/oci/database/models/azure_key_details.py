@@ -40,13 +40,11 @@ class AzureKeyDetails(AutonomousDatabaseEncryptionKeyDetails):
             'vault_uri': 'str',
             'key_name': 'str'
         }
-
         self.attribute_map = {
             'provider': 'provider',
             'vault_uri': 'vaultUri',
             'key_name': 'keyName'
         }
-
         self._provider = None
         self._vault_uri = None
         self._key_name = None

@@ -38,13 +38,11 @@ class CreateCapacityReportShapeAvailabilityDetails(object):
             'instance_shape': 'str',
             'instance_shape_config': 'CapacityReportInstanceShapeConfig'
         }
-
         self.attribute_map = {
             'fault_domain': 'faultDomain',
             'instance_shape': 'instanceShape',
             'instance_shape_config': 'instanceShapeConfig'
         }
-
         self._fault_domain = None
         self._instance_shape = None
         self._instance_shape_config = None

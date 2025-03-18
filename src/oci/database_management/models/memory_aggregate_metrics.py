@@ -28,11 +28,9 @@ class MemoryAggregateMetrics(object):
         self.swagger_types = {
             'memory_usage': 'list[MetricDataPoint]'
         }
-
         self.attribute_map = {
             'memory_usage': 'memoryUsage'
         }
-
         self._memory_usage = None
 
     @property

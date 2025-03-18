@@ -119,7 +119,6 @@ class SummarizeExadataInsightResourceUsageCollection(object):
             'usage_unit': 'str',
             'items': 'list[ResourceUsageSummary]'
         }
-
         self.attribute_map = {
             'time_interval_start': 'timeIntervalStart',
             'time_interval_end': 'timeIntervalEnd',
@@ -128,7 +127,6 @@ class SummarizeExadataInsightResourceUsageCollection(object):
             'usage_unit': 'usageUnit',
             'items': 'items'
         }
-
         self._time_interval_start = None
         self._time_interval_end = None
         self._exadata_resource_metric = None

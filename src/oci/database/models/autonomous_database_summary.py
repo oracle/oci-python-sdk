@@ -975,7 +975,6 @@ class AutonomousDatabaseSummary(object):
             'cluster_placement_group_id': 'str',
             'clone_table_space_list': 'list[int]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -1104,7 +1103,6 @@ class AutonomousDatabaseSummary(object):
             'cluster_placement_group_id': 'clusterPlacementGroupId',
             'clone_table_space_list': 'cloneTableSpaceList'
         }
-
         self._id = None
         self._compartment_id = None
         self._subscription_id = None

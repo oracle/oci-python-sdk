@@ -65,7 +65,6 @@ class UpgradeDbSystemDetails(object):
             'new_os_version': 'str',
             'is_snapshot_retention_days_force_updated': 'bool'
         }
-
         self.attribute_map = {
             'action': 'action',
             'snapshot_retention_period_in_days': 'snapshotRetentionPeriodInDays',
@@ -73,7 +72,6 @@ class UpgradeDbSystemDetails(object):
             'new_os_version': 'newOsVersion',
             'is_snapshot_retention_days_force_updated': 'isSnapshotRetentionDaysForceUpdated'
         }
-
         self._action = None
         self._snapshot_retention_period_in_days = None
         self._new_gi_version = None

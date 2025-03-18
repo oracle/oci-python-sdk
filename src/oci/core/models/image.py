@@ -173,7 +173,6 @@ class Image(object):
             'billable_size_in_gbs': 'int',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'base_image_id': 'baseImageId',
             'compartment_id': 'compartmentId',
@@ -193,7 +192,6 @@ class Image(object):
             'billable_size_in_gbs': 'billableSizeInGBs',
             'time_created': 'timeCreated'
         }
-
         self._base_image_id = None
         self._compartment_id = None
         self._create_image_allowed = None

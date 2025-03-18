@@ -53,7 +53,6 @@ class BatchDetectLanguagePiiEntitiesDetails(object):
             'masking': 'dict(str, PiiEntityMasking)',
             'profile': 'Profile'
         }
-
         self.attribute_map = {
             'alias': 'alias',
             'endpoint_id': 'endpointId',
@@ -62,7 +61,6 @@ class BatchDetectLanguagePiiEntitiesDetails(object):
             'masking': 'masking',
             'profile': 'profile'
         }
-
         self._alias = None
         self._endpoint_id = None
         self._compartment_id = None

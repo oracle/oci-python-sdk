@@ -33,12 +33,10 @@ class ClusterOptions(object):
             'kubernetes_versions': 'list[str]',
             'cluster_pod_network_options': 'list[ClusterPodNetworkOptionDetails]'
         }
-
         self.attribute_map = {
             'kubernetes_versions': 'kubernetesVersions',
             'cluster_pod_network_options': 'clusterPodNetworkOptions'
         }
-
         self._kubernetes_versions = None
         self._cluster_pod_network_options = None
 

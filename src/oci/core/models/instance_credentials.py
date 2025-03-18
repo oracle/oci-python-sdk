@@ -33,12 +33,10 @@ class InstanceCredentials(object):
             'password': 'str',
             'username': 'str'
         }
-
         self.attribute_map = {
             'password': 'password',
             'username': 'username'
         }
-
         self._password = None
         self._username = None
 

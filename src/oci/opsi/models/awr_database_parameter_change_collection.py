@@ -51,7 +51,6 @@ class AwrDatabaseParameterChangeCollection(AwrQueryResult):
             'awr_result_type': 'str',
             'items': 'list[AwrDatabaseParameterChangeSummary]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'version': 'version',
@@ -59,7 +58,6 @@ class AwrDatabaseParameterChangeCollection(AwrQueryResult):
             'awr_result_type': 'awrResultType',
             'items': 'items'
         }
-
         self._name = None
         self._version = None
         self._db_query_time_in_secs = None

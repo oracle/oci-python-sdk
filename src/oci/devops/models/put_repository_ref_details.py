@@ -42,11 +42,9 @@ class PutRepositoryRefDetails(object):
         self.swagger_types = {
             'ref_type': 'str'
         }
-
         self.attribute_map = {
             'ref_type': 'refType'
         }
-
         self._ref_type = None
 
     @staticmethod

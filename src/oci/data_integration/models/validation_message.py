@@ -38,13 +38,11 @@ class ValidationMessage(object):
             'message_key': 'str',
             'validation_message': 'str'
         }
-
         self.attribute_map = {
             'level': 'level',
             'message_key': 'messageKey',
             'validation_message': 'validationMessage'
         }
-
         self._level = None
         self._message_key = None
         self._validation_message = None

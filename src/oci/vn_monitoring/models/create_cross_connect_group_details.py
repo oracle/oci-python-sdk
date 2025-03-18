@@ -53,7 +53,6 @@ class CreateCrossConnectGroupDetails(object):
             'freeform_tags': 'dict(str, str)',
             'macsec_properties': 'CreateMacsecProperties'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
@@ -62,7 +61,6 @@ class CreateCrossConnectGroupDetails(object):
             'freeform_tags': 'freeformTags',
             'macsec_properties': 'macsecProperties'
         }
-
         self._compartment_id = None
         self._defined_tags = None
         self._display_name = None

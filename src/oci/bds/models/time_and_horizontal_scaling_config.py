@@ -33,12 +33,10 @@ class TimeAndHorizontalScalingConfig(object):
             'time_recurrence': 'str',
             'target_node_count': 'int'
         }
-
         self.attribute_map = {
             'time_recurrence': 'timeRecurrence',
             'target_node_count': 'targetNodeCount'
         }
-
         self._time_recurrence = None
         self._target_node_count = None
 

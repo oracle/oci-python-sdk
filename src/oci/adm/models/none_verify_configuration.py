@@ -30,11 +30,9 @@ class NoneVerifyConfiguration(VerifyConfiguration):
         self.swagger_types = {
             'build_service_type': 'str'
         }
-
         self.attribute_map = {
             'build_service_type': 'buildServiceType'
         }
-
         self._build_service_type = None
         self._build_service_type = 'NONE'
 

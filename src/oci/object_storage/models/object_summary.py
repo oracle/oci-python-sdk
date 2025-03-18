@@ -95,7 +95,6 @@ class ObjectSummary(object):
             'archival_state': 'str',
             'time_modified': 'datetime'
         }
-
         self.attribute_map = {
             'name': 'name',
             'size': 'size',
@@ -106,7 +105,6 @@ class ObjectSummary(object):
             'archival_state': 'archivalState',
             'time_modified': 'timeModified'
         }
-
         self._name = None
         self._size = None
         self._md5 = None

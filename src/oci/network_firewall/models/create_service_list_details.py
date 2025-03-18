@@ -33,12 +33,10 @@ class CreateServiceListDetails(object):
             'name': 'str',
             'services': 'list[str]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'services': 'services'
         }
-
         self._name = None
         self._services = None
 

@@ -176,7 +176,6 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
             'private_ip': 'str',
             'db_system_id': 'str'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'display_name': 'displayName',
@@ -209,7 +208,6 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
             'private_ip': 'privateIp',
             'db_system_id': 'dbSystemId'
         }
-
         self._connection_type = None
         self._display_name = None
         self._description = None

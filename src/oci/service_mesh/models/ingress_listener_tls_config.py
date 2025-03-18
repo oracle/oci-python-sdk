@@ -56,13 +56,11 @@ class IngressListenerTlsConfig(object):
             'server_certificate': 'TlsCertificate',
             'client_validation': 'IngressListenerClientValidationConfig'
         }
-
         self.attribute_map = {
             'mode': 'mode',
             'server_certificate': 'serverCertificate',
             'client_validation': 'clientValidation'
         }
-
         self._mode = None
         self._server_certificate = None
         self._client_validation = None

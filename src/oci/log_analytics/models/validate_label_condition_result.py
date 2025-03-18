@@ -53,7 +53,6 @@ class ValidateLabelConditionResult(object):
             'status_description': 'str',
             'evaluation_result': 'bool'
         }
-
         self.attribute_map = {
             'condition_string': 'conditionString',
             'condition_block': 'conditionBlock',
@@ -62,7 +61,6 @@ class ValidateLabelConditionResult(object):
             'status_description': 'statusDescription',
             'evaluation_result': 'evaluationResult'
         }
-
         self._condition_string = None
         self._condition_block = None
         self._field_values = None

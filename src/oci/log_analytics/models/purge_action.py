@@ -66,7 +66,6 @@ class PurgeAction(Action):
             'purge_compartment_id': 'str',
             'compartment_id_in_subtree': 'bool'
         }
-
         self.attribute_map = {
             'type': 'type',
             'query_string': 'queryString',
@@ -75,7 +74,6 @@ class PurgeAction(Action):
             'purge_compartment_id': 'purgeCompartmentId',
             'compartment_id_in_subtree': 'compartmentIdInSubtree'
         }
-
         self._type = None
         self._query_string = None
         self._data_type = None

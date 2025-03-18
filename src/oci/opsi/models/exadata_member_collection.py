@@ -105,7 +105,6 @@ class ExadataMemberCollection(object):
             'exadata_rack_type': 'str',
             'items': 'list[ExadataMemberSummary]'
         }
-
         self.attribute_map = {
             'exadata_insight_id': 'exadataInsightId',
             'exadata_name': 'exadataName',
@@ -114,7 +113,6 @@ class ExadataMemberCollection(object):
             'exadata_rack_type': 'exadataRackType',
             'items': 'items'
         }
-
         self._exadata_insight_id = None
         self._exadata_name = None
         self._exadata_display_name = None

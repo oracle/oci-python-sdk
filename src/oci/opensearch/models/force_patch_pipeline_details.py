@@ -33,12 +33,10 @@ class ForcePatchPipelineDetails(object):
             'pipeline_id': 'str',
             'flex_shape': 'str'
         }
-
         self.attribute_map = {
             'pipeline_id': 'pipelineId',
             'flex_shape': 'flexShape'
         }
-
         self._pipeline_id = None
         self._flex_shape = None
 

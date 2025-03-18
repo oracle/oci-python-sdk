@@ -62,7 +62,6 @@ class ComponentProperties(object):
             'pause_details': 'PauseDetails',
             'notification_preferences': 'TaskNotificationPreferences'
         }
-
         self.attribute_map = {
             'run_on': 'runOn',
             'condition': 'condition',
@@ -70,7 +69,6 @@ class ComponentProperties(object):
             'pause_details': 'pauseDetails',
             'notification_preferences': 'notificationPreferences'
         }
-
         self._run_on = None
         self._condition = None
         self._action_on_failure = None

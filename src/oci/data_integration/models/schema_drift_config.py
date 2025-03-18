@@ -85,14 +85,12 @@ class SchemaDriftConfig(object):
             'data_type_change_handling': 'str',
             'is_validation_warning_if_allowed': 'bool'
         }
-
         self.attribute_map = {
             'extra_column_handling': 'extraColumnHandling',
             'missing_column_handling': 'missingColumnHandling',
             'data_type_change_handling': 'dataTypeChangeHandling',
             'is_validation_warning_if_allowed': 'isValidationWarningIfAllowed'
         }
-
         self._extra_column_handling = None
         self._missing_column_handling = None
         self._data_type_change_handling = None

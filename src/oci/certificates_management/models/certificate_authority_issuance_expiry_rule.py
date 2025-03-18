@@ -41,13 +41,11 @@ class CertificateAuthorityIssuanceExpiryRule(CertificateAuthorityRule):
             'leaf_certificate_max_validity_duration': 'str',
             'certificate_authority_max_validity_duration': 'str'
         }
-
         self.attribute_map = {
             'rule_type': 'ruleType',
             'leaf_certificate_max_validity_duration': 'leafCertificateMaxValidityDuration',
             'certificate_authority_max_validity_duration': 'certificateAuthorityMaxValidityDuration'
         }
-
         self._rule_type = None
         self._leaf_certificate_max_validity_duration = None
         self._certificate_authority_max_validity_duration = None

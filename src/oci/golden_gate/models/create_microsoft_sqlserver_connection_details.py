@@ -151,7 +151,6 @@ class CreateMicrosoftSqlserverConnectionDetails(CreateConnectionDetails):
             'should_validate_server_certificate': 'bool',
             'private_ip': 'str'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'display_name': 'displayName',
@@ -179,7 +178,6 @@ class CreateMicrosoftSqlserverConnectionDetails(CreateConnectionDetails):
             'should_validate_server_certificate': 'shouldValidateServerCertificate',
             'private_ip': 'privateIp'
         }
-
         self._connection_type = None
         self._display_name = None
         self._description = None

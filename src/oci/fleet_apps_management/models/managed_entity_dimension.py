@@ -38,11 +38,9 @@ class ManagedEntityDimension(object):
         self.swagger_types = {
             'entity': 'str'
         }
-
         self.attribute_map = {
             'entity': 'entity'
         }
-
         self._entity = None
 
     @property

@@ -58,7 +58,6 @@ class Table(object):
             'confidence': 'float',
             'bounding_polygon': 'BoundingPolygon'
         }
-
         self.attribute_map = {
             'row_count': 'rowCount',
             'column_count': 'columnCount',
@@ -68,7 +67,6 @@ class Table(object):
             'confidence': 'confidence',
             'bounding_polygon': 'boundingPolygon'
         }
-
         self._row_count = None
         self._column_count = None
         self._header_rows = None

@@ -68,7 +68,6 @@ class ResourceQuotumSummary(object):
             'is_dependency': 'bool',
             'affected_resource': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'is_allowed': 'isAllowed',
@@ -80,7 +79,6 @@ class ResourceQuotumSummary(object):
             'is_dependency': 'isDependency',
             'affected_resource': 'affectedResource'
         }
-
         self._name = None
         self._is_allowed = None
         self._limit = None

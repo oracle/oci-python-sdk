@@ -85,7 +85,6 @@ class RepositoryMirrorRecordSummary(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'mirror_status': 'mirrorStatus',
             'work_request_id': 'workRequestId',
@@ -96,7 +95,6 @@ class RepositoryMirrorRecordSummary(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._mirror_status = None
         self._work_request_id = None
         self._time_enqueued = None

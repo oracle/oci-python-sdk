@@ -55,7 +55,6 @@ class HTTPBackend(ApiSpecificationRouteBackend):
             'send_timeout_in_seconds': 'float',
             'is_ssl_verify_disabled': 'bool'
         }
-
         self.attribute_map = {
             'type': 'type',
             'url': 'url',
@@ -64,7 +63,6 @@ class HTTPBackend(ApiSpecificationRouteBackend):
             'send_timeout_in_seconds': 'sendTimeoutInSeconds',
             'is_ssl_verify_disabled': 'isSslVerifyDisabled'
         }
-
         self._type = None
         self._url = None
         self._connect_timeout_in_seconds = None

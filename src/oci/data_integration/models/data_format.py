@@ -64,13 +64,11 @@ class DataFormat(object):
             'type': 'str',
             'compression_config': 'Compression'
         }
-
         self.attribute_map = {
             'format_attribute': 'formatAttribute',
             'type': 'type',
             'compression_config': 'compressionConfig'
         }
-
         self._format_attribute = None
         self._type = None
         self._compression_config = None

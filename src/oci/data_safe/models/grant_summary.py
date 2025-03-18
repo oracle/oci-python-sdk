@@ -84,7 +84,6 @@ class GrantSummary(object):
             'privilege_category': 'str',
             'depth_level': 'int'
         }
-
         self.attribute_map = {
             'key': 'key',
             'grant_name': 'grantName',
@@ -92,7 +91,6 @@ class GrantSummary(object):
             'privilege_category': 'privilegeCategory',
             'depth_level': 'depthLevel'
         }
-
         self._key = None
         self._grant_name = None
         self._privilege_type = None

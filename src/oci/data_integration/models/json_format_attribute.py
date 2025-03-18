@@ -45,14 +45,12 @@ class JsonFormatAttribute(AbstractFormatAttribute):
             'encoding': 'str',
             'sample_entity_data': 'str'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'is_file_pattern': 'isFilePattern',
             'encoding': 'encoding',
             'sample_entity_data': 'sampleEntityData'
         }
-
         self._model_type = None
         self._is_file_pattern = None
         self._encoding = None

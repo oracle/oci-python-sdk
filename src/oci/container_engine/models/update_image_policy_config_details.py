@@ -33,12 +33,10 @@ class UpdateImagePolicyConfigDetails(object):
             'is_policy_enabled': 'bool',
             'key_details': 'list[KeyDetails]'
         }
-
         self.attribute_map = {
             'is_policy_enabled': 'isPolicyEnabled',
             'key_details': 'keyDetails'
         }
-
         self._is_policy_enabled = None
         self._key_details = None
 

@@ -28,11 +28,9 @@ class StartCredentialRotationDetails(object):
         self.swagger_types = {
             'auto_completion_delay_duration': 'str'
         }
-
         self.attribute_map = {
             'auto_completion_delay_duration': 'autoCompletionDelayDuration'
         }
-
         self._auto_completion_delay_duration = None
 
     @property

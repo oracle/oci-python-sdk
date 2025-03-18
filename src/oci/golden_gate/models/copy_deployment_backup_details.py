@@ -43,14 +43,12 @@ class CopyDeploymentBackupDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'namespace_name': 'namespaceName',
             'bucket_name': 'bucketName',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._namespace_name = None
         self._bucket_name = None
         self._freeform_tags = None

@@ -93,7 +93,6 @@ class IngestTimeRule(object):
             'conditions': 'IngestTimeRuleCondition',
             'actions': 'list[IngestTimeRuleAction]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -108,7 +107,6 @@ class IngestTimeRule(object):
             'conditions': 'conditions',
             'actions': 'actions'
         }
-
         self._id = None
         self._compartment_id = None
         self._description = None

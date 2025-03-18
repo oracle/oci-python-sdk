@@ -28,11 +28,9 @@ class RestartNodeDetails(object):
         self.swagger_types = {
             'node_id': 'str'
         }
-
         self.attribute_map = {
             'node_id': 'nodeId'
         }
-
         self._node_id = None
 
     @property

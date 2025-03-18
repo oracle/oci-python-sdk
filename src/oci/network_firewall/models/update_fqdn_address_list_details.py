@@ -35,12 +35,10 @@ class UpdateFqdnAddressListDetails(UpdateAddressListDetails):
             'type': 'str',
             'addresses': 'list[str]'
         }
-
         self.attribute_map = {
             'type': 'type',
             'addresses': 'addresses'
         }
-
         self._type = None
         self._addresses = None
         self._type = 'FQDN'

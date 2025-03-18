@@ -79,7 +79,6 @@ class UserExtDevices(object):
             'authentication_method': 'str',
             'third_party_vendor_name': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ref': '$ref',
@@ -91,7 +90,6 @@ class UserExtDevices(object):
             'authentication_method': 'authenticationMethod',
             'third_party_vendor_name': 'thirdPartyVendorName'
         }
-
         self._value = None
         self._ref = None
         self._display = None

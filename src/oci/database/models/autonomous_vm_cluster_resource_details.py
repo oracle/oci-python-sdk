@@ -33,12 +33,10 @@ class AutonomousVmClusterResourceDetails(object):
             'id': 'str',
             'un_allocated_adb_storage_in_tbs': 'float'
         }
-
         self.attribute_map = {
             'id': 'id',
             'un_allocated_adb_storage_in_tbs': 'unAllocatedAdbStorageInTBs'
         }
-
         self._id = None
         self._un_allocated_adb_storage_in_tbs = None
 

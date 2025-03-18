@@ -78,7 +78,6 @@ class DetectStage(RemediationRunStage):
             'next_stage_type': 'str',
             'audit_id': 'str'
         }
-
         self.attribute_map = {
             'status': 'status',
             'time_created': 'timeCreated',
@@ -91,7 +90,6 @@ class DetectStage(RemediationRunStage):
             'next_stage_type': 'nextStageType',
             'audit_id': 'auditId'
         }
-
         self._status = None
         self._time_created = None
         self._time_started = None

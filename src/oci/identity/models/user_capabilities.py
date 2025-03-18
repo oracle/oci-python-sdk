@@ -58,7 +58,6 @@ class UserCapabilities(object):
             'can_use_customer_secret_keys': 'bool',
             'can_use_o_auth2_client_credentials': 'bool'
         }
-
         self.attribute_map = {
             'can_use_console_password': 'canUseConsolePassword',
             'can_use_api_keys': 'canUseApiKeys',
@@ -68,7 +67,6 @@ class UserCapabilities(object):
             'can_use_customer_secret_keys': 'canUseCustomerSecretKeys',
             'can_use_o_auth2_client_credentials': 'canUseOAuth2ClientCredentials'
         }
-
         self._can_use_console_password = None
         self._can_use_api_keys = None
         self._can_use_auth_tokens = None

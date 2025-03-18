@@ -42,12 +42,10 @@ class UpdateTargetAssetDetails(object):
             'type': 'str',
             'is_excluded_from_execution': 'bool'
         }
-
         self.attribute_map = {
             'type': 'type',
             'is_excluded_from_execution': 'isExcludedFromExecution'
         }
-
         self._type = None
         self._is_excluded_from_execution = None
 

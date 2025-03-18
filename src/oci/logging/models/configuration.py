@@ -38,13 +38,11 @@ class Configuration(object):
             'source': 'Source',
             'archiving': 'Archiving'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'source': 'source',
             'archiving': 'archiving'
         }
-
         self._compartment_id = None
         self._source = None
         self._archiving = None

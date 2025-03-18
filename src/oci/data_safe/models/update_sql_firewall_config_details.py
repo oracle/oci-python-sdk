@@ -65,13 +65,11 @@ class UpdateSqlFirewallConfigDetails(object):
             'violation_log_auto_purge': 'str',
             'exclude_job': 'str'
         }
-
         self.attribute_map = {
             'status': 'status',
             'violation_log_auto_purge': 'violationLogAutoPurge',
             'exclude_job': 'excludeJob'
         }
-
         self._status = None
         self._violation_log_auto_purge = None
         self._exclude_job = None

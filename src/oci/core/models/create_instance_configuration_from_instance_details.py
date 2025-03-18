@@ -55,7 +55,6 @@ class CreateInstanceConfigurationFromInstanceDetails(CreateInstanceConfiguration
             'source': 'str',
             'instance_id': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
@@ -64,7 +63,6 @@ class CreateInstanceConfigurationFromInstanceDetails(CreateInstanceConfiguration
             'source': 'source',
             'instance_id': 'instanceId'
         }
-
         self._compartment_id = None
         self._defined_tags = None
         self._display_name = None

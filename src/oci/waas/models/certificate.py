@@ -145,7 +145,6 @@ class Certificate(object):
             'is_trust_verification_disabled': 'bool',
             'certificate_data': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -167,7 +166,6 @@ class Certificate(object):
             'is_trust_verification_disabled': 'isTrustVerificationDisabled',
             'certificate_data': 'certificateData'
         }
-
         self._id = None
         self._compartment_id = None
         self._display_name = None

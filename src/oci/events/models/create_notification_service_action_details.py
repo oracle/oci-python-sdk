@@ -45,14 +45,12 @@ class CreateNotificationServiceActionDetails(ActionDetails):
             'description': 'str',
             'topic_id': 'str'
         }
-
         self.attribute_map = {
             'action_type': 'actionType',
             'is_enabled': 'isEnabled',
             'description': 'description',
             'topic_id': 'topicId'
         }
-
         self._action_type = None
         self._is_enabled = None
         self._description = None

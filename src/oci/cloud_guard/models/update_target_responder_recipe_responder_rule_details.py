@@ -28,11 +28,9 @@ class UpdateTargetResponderRecipeResponderRuleDetails(object):
         self.swagger_types = {
             'details': 'UpdateTargetResponderRuleDetails'
         }
-
         self.attribute_map = {
             'details': 'details'
         }
-
         self._details = None
 
     @property

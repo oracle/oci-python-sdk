@@ -48,7 +48,6 @@ class ParserTestResult(object):
             'lines': 'list[AbstractParserTestResultLogLine]',
             'named_capture_groups': 'list[str]'
         }
-
         self.attribute_map = {
             'additional_info': 'additionalInfo',
             'entries': 'entries',
@@ -56,7 +55,6 @@ class ParserTestResult(object):
             'lines': 'lines',
             'named_capture_groups': 'namedCaptureGroups'
         }
-
         self._additional_info = None
         self._entries = None
         self._example_content = None

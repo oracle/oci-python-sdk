@@ -33,12 +33,10 @@ class ForcePatchClusterDetails(object):
             'cluster_id': 'str',
             'flex_shape': 'str'
         }
-
         self.attribute_map = {
             'cluster_id': 'clusterId',
             'flex_shape': 'flexShape'
         }
-
         self._cluster_id = None
         self._flex_shape = None
 

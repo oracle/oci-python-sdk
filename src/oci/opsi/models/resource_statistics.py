@@ -73,7 +73,6 @@ class ResourceStatistics(object):
             'is_heat_wave_cluster_attached': 'bool',
             'is_highly_available': 'bool'
         }
-
         self.attribute_map = {
             'usage': 'usage',
             'capacity': 'capacity',
@@ -86,7 +85,6 @@ class ResourceStatistics(object):
             'is_heat_wave_cluster_attached': 'isHeatWaveClusterAttached',
             'is_highly_available': 'isHighlyAvailable'
         }
-
         self._usage = None
         self._capacity = None
         self._base_capacity = None

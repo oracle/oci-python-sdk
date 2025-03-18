@@ -33,12 +33,10 @@ class LogAnalyticsEntityTopologyLink(object):
             'source_entity_id': 'str',
             'destination_entity_id': 'str'
         }
-
         self.attribute_map = {
             'source_entity_id': 'sourceEntityId',
             'destination_entity_id': 'destinationEntityId'
         }
-
         self._source_entity_id = None
         self._destination_entity_id = None
 

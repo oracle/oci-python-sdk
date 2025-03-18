@@ -38,13 +38,11 @@ class WorkflowMonitor(object):
             'resource_name': 'str',
             'workflow_steps': 'list[WorkflowStep]'
         }
-
         self.attribute_map = {
             'workflow_name': 'workflowName',
             'resource_name': 'resourceName',
             'workflow_steps': 'workflowSteps'
         }
-
         self._workflow_name = None
         self._resource_name = None
         self._workflow_steps = None

@@ -38,13 +38,11 @@ class PreDeployedLanguageModels(object):
             'compartment_id': 'str',
             'description': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
             'description': 'description'
         }
-
         self._id = None
         self._compartment_id = None
         self._description = None

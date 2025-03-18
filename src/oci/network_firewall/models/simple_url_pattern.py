@@ -43,12 +43,10 @@ class SimpleUrlPattern(UrlPattern):
             'type': 'str',
             'pattern': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'pattern': 'pattern'
         }
-
         self._type = None
         self._pattern = None
         self._type = 'SIMPLE'

@@ -94,7 +94,6 @@ class EnableDatabaseManagementDetails(object):
             'ssl_secret_id': 'str',
             'role': 'str'
         }
-
         self.attribute_map = {
             'credential_details': 'credentialDetails',
             'private_end_point_id': 'privateEndPointId',
@@ -105,7 +104,6 @@ class EnableDatabaseManagementDetails(object):
             'ssl_secret_id': 'sslSecretId',
             'role': 'role'
         }
-
         self._credential_details = None
         self._private_end_point_id = None
         self._management_type = None

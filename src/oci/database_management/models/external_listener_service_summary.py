@@ -38,13 +38,11 @@ class ExternalListenerServiceSummary(object):
             'listener_id': 'str',
             'managed_database_id': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'listener_id': 'listenerId',
             'managed_database_id': 'managedDatabaseId'
         }
-
         self._name = None
         self._listener_id = None
         self._managed_database_id = None

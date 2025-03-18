@@ -41,13 +41,11 @@ class FixedNumberFormatEntry(FormatEntry):
             'description': 'str',
             'fixed_number': 'float'
         }
-
         self.attribute_map = {
             'type': 'type',
             'description': 'description',
             'fixed_number': 'fixedNumber'
         }
-
         self._type = None
         self._description = None
         self._fixed_number = None

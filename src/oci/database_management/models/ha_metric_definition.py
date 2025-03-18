@@ -48,7 +48,6 @@ class HaMetricDefinition(object):
             'timestamp': 'datetime',
             'value': 'float'
         }
-
         self.attribute_map = {
             'metric_name': 'metricName',
             'metadata': 'metadata',
@@ -56,7 +55,6 @@ class HaMetricDefinition(object):
             'timestamp': 'timestamp',
             'value': 'value'
         }
-
         self._metric_name = None
         self._metadata = None
         self._dimensions = None

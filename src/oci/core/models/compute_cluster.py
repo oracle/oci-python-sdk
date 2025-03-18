@@ -83,7 +83,6 @@ class ComputeCluster(object):
             'lifecycle_state': 'str',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'compartment_id': 'compartmentId',
@@ -94,7 +93,6 @@ class ComputeCluster(object):
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated'
         }
-
         self._availability_domain = None
         self._compartment_id = None
         self._display_name = None

@@ -50,7 +50,6 @@ class OciService(Source):
             'category': 'str',
             'parameters': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'source_type': 'sourceType',
             'service': 'service',
@@ -58,7 +57,6 @@ class OciService(Source):
             'category': 'category',
             'parameters': 'parameters'
         }
-
         self._source_type = None
         self._service = None
         self._resource = None

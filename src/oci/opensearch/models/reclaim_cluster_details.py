@@ -33,12 +33,10 @@ class ReclaimClusterDetails(object):
             'tenant_id': 'str',
             'is_reclamation_run': 'bool'
         }
-
         self.attribute_map = {
             'tenant_id': 'tenantId',
             'is_reclamation_run': 'isReclamationRun'
         }
-
         self._tenant_id = None
         self._is_reclamation_run = None
 

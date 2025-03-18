@@ -46,14 +46,12 @@ class VersionFsuTargetDetails(FsuGoalVersionDetails):
             'new_home_prefix': 'str',
             'version': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'home_policy': 'homePolicy',
             'new_home_prefix': 'newHomePrefix',
             'version': 'version'
         }
-
         self._type = None
         self._home_policy = None
         self._new_home_prefix = None

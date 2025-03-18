@@ -100,7 +100,6 @@ class CreateDataAssetFromHdfs(CreateDataAssetDetails):
             'validate_certificate': 'bool',
             'default_connection': 'CreateConnectionFromHdfs'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -118,7 +117,6 @@ class CreateDataAssetFromHdfs(CreateDataAssetDetails):
             'validate_certificate': 'validateCertificate',
             'default_connection': 'defaultConnection'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

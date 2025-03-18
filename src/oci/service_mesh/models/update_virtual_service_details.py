@@ -53,7 +53,6 @@ class UpdateVirtualServiceDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'description': 'description',
             'default_routing_policy': 'defaultRoutingPolicy',
@@ -62,7 +61,6 @@ class UpdateVirtualServiceDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._description = None
         self._default_routing_policy = None
         self._hosts = None

@@ -53,7 +53,6 @@ class Column(object):
             'is_as_uuid': 'bool',
             'is_generated': 'bool'
         }
-
         self.attribute_map = {
             'name': 'name',
             'type': 'type',
@@ -62,7 +61,6 @@ class Column(object):
             'is_as_uuid': 'isAsUuid',
             'is_generated': 'isGenerated'
         }
-
         self._name = None
         self._type = None
         self._is_nullable = None

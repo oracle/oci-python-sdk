@@ -76,13 +76,11 @@ class ReplicateSchemaChange(object):
             'action_on_ddl_error': 'str',
             'action_on_dml_error': 'str'
         }
-
         self.attribute_map = {
             'can_replicate_schema_change': 'canReplicateSchemaChange',
             'action_on_ddl_error': 'actionOnDdlError',
             'action_on_dml_error': 'actionOnDmlError'
         }
-
         self._can_replicate_schema_change = None
         self._action_on_ddl_error = None
         self._action_on_dml_error = None

@@ -38,13 +38,11 @@ class SelfRegistrationProfileHeaderText(object):
             'value': 'str',
             'default': 'bool'
         }
-
         self.attribute_map = {
             'locale': 'locale',
             'value': 'value',
             'default': 'default'
         }
-
         self._locale = None
         self._value = None
         self._default = None

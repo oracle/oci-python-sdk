@@ -109,7 +109,6 @@ class SingleDeployStageDeploymentSummary(DeploymentSummary):
             'system_tags': 'dict(str, dict(str, object))',
             'deploy_stage_id': 'str'
         }
-
         self.attribute_map = {
             'deployment_type': 'deploymentType',
             'id': 'id',
@@ -129,7 +128,6 @@ class SingleDeployStageDeploymentSummary(DeploymentSummary):
             'system_tags': 'systemTags',
             'deploy_stage_id': 'deployStageId'
         }
-
         self._deployment_type = None
         self._id = None
         self._display_name = None

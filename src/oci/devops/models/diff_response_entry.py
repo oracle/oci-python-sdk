@@ -78,7 +78,6 @@ class DiffResponseEntry(object):
             'deleted_lines_count': 'int',
             'are_conflicts_in_file': 'bool'
         }
-
         self.attribute_map = {
             'change_type': 'changeType',
             'object_type': 'objectType',
@@ -92,7 +91,6 @@ class DiffResponseEntry(object):
             'deleted_lines_count': 'deletedLinesCount',
             'are_conflicts_in_file': 'areConflictsInFile'
         }
-
         self._change_type = None
         self._object_type = None
         self._commit_id = None

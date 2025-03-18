@@ -54,12 +54,10 @@ class ExadataIormConfigUpdateDetails(object):
             'objective': 'str',
             'db_plans': 'list[DbIormConfigUpdateDetail]'
         }
-
         self.attribute_map = {
             'objective': 'objective',
             'db_plans': 'dbPlans'
         }
-
         self._objective = None
         self._db_plans = None
 

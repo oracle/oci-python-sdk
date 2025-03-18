@@ -376,7 +376,6 @@ class Setting(object):
             'login_texts': 'list[SettingsLoginTexts]',
             'images': 'list[SettingsImages]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -440,7 +439,6 @@ class Setting(object):
             'login_texts': 'loginTexts',
             'images': 'images'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

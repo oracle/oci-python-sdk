@@ -120,7 +120,6 @@ class NetworkSecurityGroup(object):
             'time_created': 'datetime',
             'vcn_id': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
@@ -131,7 +130,6 @@ class NetworkSecurityGroup(object):
             'time_created': 'timeCreated',
             'vcn_id': 'vcnId'
         }
-
         self._compartment_id = None
         self._defined_tags = None
         self._display_name = None

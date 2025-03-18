@@ -33,12 +33,10 @@ class DesktopAvailabilityPolicy(object):
             'start_schedule': 'DesktopSchedule',
             'stop_schedule': 'DesktopSchedule'
         }
-
         self.attribute_map = {
             'start_schedule': 'startSchedule',
             'stop_schedule': 'stopSchedule'
         }
-
         self._start_schedule = None
         self._stop_schedule = None
 

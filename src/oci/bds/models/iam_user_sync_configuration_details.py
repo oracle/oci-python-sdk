@@ -28,11 +28,9 @@ class IamUserSyncConfigurationDetails(object):
         self.swagger_types = {
             'is_posix_attributes_addition_required': 'bool'
         }
-
         self.attribute_map = {
             'is_posix_attributes_addition_required': 'isPosixAttributesAdditionRequired'
         }
-
         self._is_posix_attributes_addition_required = None
 
     @property

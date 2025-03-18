@@ -38,13 +38,11 @@ class ModuleSummary(object):
             'streams': 'list[str]',
             'software_source_id': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'streams': 'streams',
             'software_source_id': 'softwareSourceId'
         }
-
         self._name = None
         self._streams = None
         self._software_source_id = None

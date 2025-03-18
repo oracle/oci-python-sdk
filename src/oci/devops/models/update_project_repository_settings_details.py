@@ -33,12 +33,10 @@ class UpdateProjectRepositorySettingsDetails(object):
             'merge_settings': 'MergeSettings',
             'approval_rules': 'UpdateApprovalRuleDetailsCollection'
         }
-
         self.attribute_map = {
             'merge_settings': 'mergeSettings',
             'approval_rules': 'approvalRules'
         }
-
         self._merge_settings = None
         self._approval_rules = None
 

@@ -54,7 +54,6 @@ class UpdateRelatedDocumentAttachmentDetails(UpdateListingRevisionAttachmentDeta
             'defined_tags': 'dict(str, dict(str, object))',
             'document_category': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
@@ -63,7 +62,6 @@ class UpdateRelatedDocumentAttachmentDetails(UpdateListingRevisionAttachmentDeta
             'defined_tags': 'definedTags',
             'document_category': 'documentCategory'
         }
-
         self._display_name = None
         self._description = None
         self._attachment_type = None

@@ -77,7 +77,6 @@ class PrivateEndpointSummary(object):
             'etag': 'str',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'namespace': 'namespace',
@@ -90,7 +89,6 @@ class PrivateEndpointSummary(object):
             'etag': 'etag',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._name = None
         self._namespace = None
         self._compartment_id = None

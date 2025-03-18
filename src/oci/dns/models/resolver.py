@@ -130,7 +130,6 @@ class Resolver(object):
             'attached_views': 'list[AttachedView]',
             'rules': 'list[ResolverRule]'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'attached_vcn_id': 'attachedVcnId',
@@ -148,7 +147,6 @@ class Resolver(object):
             'attached_views': 'attachedViews',
             'rules': 'rules'
         }
-
         self._compartment_id = None
         self._attached_vcn_id = None
         self._display_name = None

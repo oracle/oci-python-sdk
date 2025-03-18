@@ -28,11 +28,9 @@ class SqlTuningTaskSqlDetail(object):
         self.swagger_types = {
             'sql_id': 'str'
         }
-
         self.attribute_map = {
             'sql_id': 'sqlId'
         }
-
         self._sql_id = None
 
     @property

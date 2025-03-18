@@ -28,11 +28,9 @@ class UpdateMessagesDetails(object):
         self.swagger_types = {
             'entries': 'list[UpdateMessagesDetailsEntry]'
         }
-
         self.attribute_map = {
             'entries': 'entries'
         }
-
         self._entries = None
 
     @property

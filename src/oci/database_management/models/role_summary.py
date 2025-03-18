@@ -103,7 +103,6 @@ class RoleSummary(object):
             'common': 'str',
             'inherited': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'admin_option': 'adminOption',
@@ -112,7 +111,6 @@ class RoleSummary(object):
             'common': 'common',
             'inherited': 'inherited'
         }
-
         self._name = None
         self._admin_option = None
         self._delegate_option = None

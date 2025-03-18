@@ -66,12 +66,10 @@ class ProtectionRuleExclusion(object):
             'target': 'str',
             'exclusions': 'list[str]'
         }
-
         self.attribute_map = {
             'target': 'target',
             'exclusions': 'exclusions'
         }
-
         self._target = None
         self._exclusions = None
 

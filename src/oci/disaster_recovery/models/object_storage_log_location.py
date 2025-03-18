@@ -38,13 +38,11 @@ class ObjectStorageLogLocation(object):
             'bucket': 'str',
             'object': 'str'
         }
-
         self.attribute_map = {
             'namespace': 'namespace',
             'bucket': 'bucket',
             'object': 'object'
         }
-
         self._namespace = None
         self._bucket = None
         self._object = None

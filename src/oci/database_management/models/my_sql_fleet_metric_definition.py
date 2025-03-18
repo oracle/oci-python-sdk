@@ -53,7 +53,6 @@ class MySqlFleetMetricDefinition(object):
             'dimensions': 'list[MetricDimensionDefinition]',
             'unit': 'str'
         }
-
         self.attribute_map = {
             'metric_value': 'metricValue',
             'metric_value_double': 'metricValueDouble',
@@ -62,7 +61,6 @@ class MySqlFleetMetricDefinition(object):
             'dimensions': 'dimensions',
             'unit': 'unit'
         }
-
         self._metric_value = None
         self._metric_value_double = None
         self._metric_name = None

@@ -58,7 +58,6 @@ class UpdateDrgAttachmentDetails(object):
             'export_drg_route_distribution_id': 'str',
             'route_table_id': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'drg_route_table_id': 'drgRouteTableId',
@@ -68,7 +67,6 @@ class UpdateDrgAttachmentDetails(object):
             'export_drg_route_distribution_id': 'exportDrgRouteDistributionId',
             'route_table_id': 'routeTableId'
         }
-
         self._display_name = None
         self._drg_route_table_id = None
         self._network_details = None

@@ -38,11 +38,9 @@ class MergeChecks(object):
         self.swagger_types = {
             'last_build_succeeded': 'str'
         }
-
         self.attribute_map = {
             'last_build_succeeded': 'lastBuildSucceeded'
         }
-
         self._last_build_succeeded = None
 
     @property

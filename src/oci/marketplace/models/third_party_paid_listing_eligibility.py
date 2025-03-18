@@ -80,13 +80,11 @@ class ThirdPartyPaidListingEligibility(object):
             'is_paid_listing_throttled': 'bool',
             'eligibility_reason': 'str'
         }
-
         self.attribute_map = {
             'is_paid_listing_eligible': 'isPaidListingEligible',
             'is_paid_listing_throttled': 'isPaidListingThrottled',
             'eligibility_reason': 'eligibilityReason'
         }
-
         self._is_paid_listing_eligible = None
         self._is_paid_listing_throttled = None
         self._eligibility_reason = None

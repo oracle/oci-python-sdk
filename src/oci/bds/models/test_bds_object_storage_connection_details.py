@@ -38,13 +38,11 @@ class TestBdsObjectStorageConnectionDetails(object):
             'passphrase': 'str',
             'object_storage_region': 'str'
         }
-
         self.attribute_map = {
             'object_storage_uri': 'objectStorageUri',
             'passphrase': 'passphrase',
             'object_storage_region': 'objectStorageRegion'
         }
-
         self._object_storage_uri = None
         self._passphrase = None
         self._object_storage_region = None

@@ -35,12 +35,10 @@ class Query(PushDownOperation):
             'model_type': 'str',
             'query': 'str'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'query': 'query'
         }
-
         self._model_type = None
         self._query = None
         self._model_type = 'QUERY'

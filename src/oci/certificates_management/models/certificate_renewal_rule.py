@@ -40,13 +40,11 @@ class CertificateRenewalRule(CertificateRule):
             'renewal_interval': 'str',
             'advance_renewal_period': 'str'
         }
-
         self.attribute_map = {
             'rule_type': 'ruleType',
             'renewal_interval': 'renewalInterval',
             'advance_renewal_period': 'advanceRenewalPeriod'
         }
-
         self._rule_type = None
         self._renewal_interval = None
         self._advance_renewal_period = None

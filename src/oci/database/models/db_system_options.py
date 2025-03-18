@@ -38,11 +38,9 @@ class DbSystemOptions(object):
         self.swagger_types = {
             'storage_management': 'str'
         }
-
         self.attribute_map = {
             'storage_management': 'storageManagement'
         }
-
         self._storage_management = None
 
     @property

@@ -33,12 +33,10 @@ class QuerySummary(object):
             'id': 'str',
             'query_definition': 'QueryDefinition'
         }
-
         self.attribute_map = {
             'id': 'id',
             'query_definition': 'queryDefinition'
         }
-
         self._id = None
         self._query_definition = None
 

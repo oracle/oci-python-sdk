@@ -33,12 +33,10 @@ class Label(object):
             'name': 'str',
             'confidence': 'float'
         }
-
         self.attribute_map = {
             'name': 'name',
             'confidence': 'confidence'
         }
-
         self._name = None
         self._confidence = None
 

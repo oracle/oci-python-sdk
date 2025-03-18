@@ -40,13 +40,11 @@ class OracleMigrationObjectCollection(MigrationObjectCollection):
             'items': 'list[OracleDatabaseObjectSummary]',
             'bulk_include_exclude_data': 'str'
         }
-
         self.attribute_map = {
             'database_combination': 'databaseCombination',
             'items': 'items',
             'bulk_include_exclude_data': 'bulkIncludeExcludeData'
         }
-
         self._database_combination = None
         self._items = None
         self._bulk_include_exclude_data = None

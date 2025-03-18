@@ -53,7 +53,6 @@ class UpdateTagDetails(object):
             'is_cost_tracking': 'bool',
             'validator': 'BaseTagDefinitionValidator'
         }
-
         self.attribute_map = {
             'description': 'description',
             'is_retired': 'isRetired',
@@ -62,7 +61,6 @@ class UpdateTagDetails(object):
             'is_cost_tracking': 'isCostTracking',
             'validator': 'validator'
         }
-
         self._description = None
         self._is_retired = None
         self._freeform_tags = None

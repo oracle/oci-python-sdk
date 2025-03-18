@@ -283,7 +283,6 @@ class Instance(object):
             'instance_configuration_id': 'str',
             'licensing_configs': 'list[LicensingConfig]'
         }
-
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'capacity_reservation_id': 'capacityReservationId',
@@ -320,7 +319,6 @@ class Instance(object):
             'instance_configuration_id': 'instanceConfigurationId',
             'licensing_configs': 'licensingConfigs'
         }
-
         self._availability_domain = None
         self._capacity_reservation_id = None
         self._compartment_id = None

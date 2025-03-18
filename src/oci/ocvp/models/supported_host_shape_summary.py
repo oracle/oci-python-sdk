@@ -179,7 +179,6 @@ class SupportedHostShapeSummary(object):
             'is_support_shielded_instances': 'bool',
             'is_support_monthly_commitment': 'bool'
         }
-
         self.attribute_map = {
             'name': 'name',
             'supported_operations': 'supportedOperations',
@@ -192,7 +191,6 @@ class SupportedHostShapeSummary(object):
             'is_support_shielded_instances': 'isSupportShieldedInstances',
             'is_support_monthly_commitment': 'isSupportMonthlyCommitment'
         }
-
         self._name = None
         self._supported_operations = None
         self._shape_family = None

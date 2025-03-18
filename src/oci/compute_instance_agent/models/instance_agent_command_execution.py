@@ -116,7 +116,6 @@ class InstanceAgentCommandExecution(object):
             'display_name': 'str',
             'content': 'InstanceAgentCommandExecutionOutputContent'
         }
-
         self.attribute_map = {
             'instance_agent_command_id': 'instanceAgentCommandId',
             'instance_id': 'instanceId',
@@ -128,7 +127,6 @@ class InstanceAgentCommandExecution(object):
             'display_name': 'displayName',
             'content': 'content'
         }
-
         self._instance_agent_command_id = None
         self._instance_id = None
         self._delivery_state = None

@@ -33,12 +33,10 @@ class AvailabilityConfiguration(object):
             'max_allowed_failures_per_interval': 'int',
             'min_allowed_runs_per_interval': 'int'
         }
-
         self.attribute_map = {
             'max_allowed_failures_per_interval': 'maxAllowedFailuresPerInterval',
             'min_allowed_runs_per_interval': 'minAllowedRunsPerInterval'
         }
-
         self._max_allowed_failures_per_interval = None
         self._min_allowed_runs_per_interval = None
 

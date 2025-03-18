@@ -53,7 +53,6 @@ class CreateVanityUrlDetails(object):
             'public_certificate': 'str',
             'ca_certificate': 'str'
         }
-
         self.attribute_map = {
             'description': 'description',
             'hosts': 'hosts',
@@ -62,7 +61,6 @@ class CreateVanityUrlDetails(object):
             'public_certificate': 'publicCertificate',
             'ca_certificate': 'caCertificate'
         }
-
         self._description = None
         self._hosts = None
         self._passphrase = None

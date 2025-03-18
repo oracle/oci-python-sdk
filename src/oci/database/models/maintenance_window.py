@@ -98,7 +98,6 @@ class MaintenanceWindow(object):
             'lead_time_in_weeks': 'int',
             'skip_ru': 'list[bool]'
         }
-
         self.attribute_map = {
             'preference': 'preference',
             'patching_mode': 'patchingMode',
@@ -112,7 +111,6 @@ class MaintenanceWindow(object):
             'lead_time_in_weeks': 'leadTimeInWeeks',
             'skip_ru': 'skipRu'
         }
-
         self._preference = None
         self._patching_mode = None
         self._is_custom_action_timeout_enabled = None

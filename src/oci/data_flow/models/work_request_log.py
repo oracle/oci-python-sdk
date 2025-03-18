@@ -43,14 +43,12 @@ class WorkRequestLog(object):
             'timestamp': 'datetime',
             'work_requestid': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'message': 'message',
             'timestamp': 'timestamp',
             'work_requestid': 'workRequestid'
         }
-
         self._id = None
         self._message = None
         self._timestamp = None

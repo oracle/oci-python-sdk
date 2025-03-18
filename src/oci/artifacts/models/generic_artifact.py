@@ -97,7 +97,6 @@ class GenericArtifact(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -112,7 +111,6 @@ class GenericArtifact(object):
             'defined_tags': 'definedTags',
             'time_created': 'timeCreated'
         }
-
         self._id = None
         self._display_name = None
         self._compartment_id = None

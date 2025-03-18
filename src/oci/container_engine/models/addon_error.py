@@ -38,13 +38,11 @@ class AddonError(object):
             'message': 'str',
             'status': 'str'
         }
-
         self.attribute_map = {
             'code': 'code',
             'message': 'message',
             'status': 'status'
         }
-
         self._code = None
         self._message = None
         self._status = None

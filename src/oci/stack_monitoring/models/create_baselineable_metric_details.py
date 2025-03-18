@@ -53,7 +53,6 @@ class CreateBaselineableMetricDetails(object):
             'resource_group': 'str',
             'resource_type': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'name': 'name',
@@ -62,7 +61,6 @@ class CreateBaselineableMetricDetails(object):
             'resource_group': 'resourceGroup',
             'resource_type': 'resourceType'
         }
-
         self._compartment_id = None
         self._name = None
         self._column = None

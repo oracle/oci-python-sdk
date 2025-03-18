@@ -33,12 +33,10 @@ class WorkloadType(object):
             'atp': 'float',
             'adw': 'float'
         }
-
         self.attribute_map = {
             'atp': 'atp',
             'adw': 'adw'
         }
-
         self._atp = None
         self._adw = None
 

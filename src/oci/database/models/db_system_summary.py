@@ -402,7 +402,6 @@ class DbSystemSummary(object):
             'point_in_time_data_disk_clone_timestamp': 'datetime',
             'data_collection_options': 'DataCollectionOptions'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -457,7 +456,6 @@ class DbSystemSummary(object):
             'point_in_time_data_disk_clone_timestamp': 'pointInTimeDataDiskCloneTimestamp',
             'data_collection_options': 'dataCollectionOptions'
         }
-
         self._id = None
         self._compartment_id = None
         self._display_name = None

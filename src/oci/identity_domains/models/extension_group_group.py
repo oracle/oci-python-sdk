@@ -84,7 +84,6 @@ class ExtensionGroupGroup(object):
             'owners': 'list[GroupExtOwners]',
             'app_roles': 'list[GroupExtAppRoles]'
         }
-
         self.attribute_map = {
             'description': 'description',
             'creation_mechanism': 'creationMechanism',
@@ -94,7 +93,6 @@ class ExtensionGroupGroup(object):
             'owners': 'owners',
             'app_roles': 'appRoles'
         }
-
         self._description = None
         self._creation_mechanism = None
         self._password_policy = None

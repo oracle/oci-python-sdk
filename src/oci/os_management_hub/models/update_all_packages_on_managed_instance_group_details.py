@@ -62,12 +62,10 @@ class UpdateAllPackagesOnManagedInstanceGroupDetails(object):
             'update_types': 'list[str]',
             'work_request_details': 'WorkRequestDetails'
         }
-
         self.attribute_map = {
             'update_types': 'updateTypes',
             'work_request_details': 'workRequestDetails'
         }
-
         self._update_types = None
         self._work_request_details = None
 

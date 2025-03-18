@@ -53,13 +53,11 @@ class DynamicSelectionKey(object):
             'is_default': 'bool',
             'name': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'is_default': 'isDefault',
             'name': 'name'
         }
-
         self._type = None
         self._is_default = None
         self._name = None

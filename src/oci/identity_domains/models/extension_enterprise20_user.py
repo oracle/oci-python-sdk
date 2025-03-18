@@ -53,7 +53,6 @@ class ExtensionEnterprise20User(object):
             'department': 'str',
             'manager': 'UserExtManager'
         }
-
         self.attribute_map = {
             'employee_number': 'employeeNumber',
             'cost_center': 'costCenter',
@@ -62,7 +61,6 @@ class ExtensionEnterprise20User(object):
             'department': 'department',
             'manager': 'manager'
         }
-
         self._employee_number = None
         self._cost_center = None
         self._organization = None

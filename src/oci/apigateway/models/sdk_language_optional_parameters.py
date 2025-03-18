@@ -76,7 +76,6 @@ class SdkLanguageOptionalParameters(object):
             'input_type': 'str',
             'allowed_values': 'list[SdkLanguageOptionalParametersAllowedValue]'
         }
-
         self.attribute_map = {
             'param_name': 'paramName',
             'display_name': 'displayName',
@@ -86,7 +85,6 @@ class SdkLanguageOptionalParameters(object):
             'input_type': 'inputType',
             'allowed_values': 'allowedValues'
         }
-
         self._param_name = None
         self._display_name = None
         self._description = None

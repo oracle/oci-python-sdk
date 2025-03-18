@@ -72,7 +72,6 @@ class ObjectLifecycleRule(object):
             'is_enabled': 'bool',
             'object_name_filter': 'ObjectNameFilter'
         }
-
         self.attribute_map = {
             'name': 'name',
             'target': 'target',
@@ -82,7 +81,6 @@ class ObjectLifecycleRule(object):
             'is_enabled': 'isEnabled',
             'object_name_filter': 'objectNameFilter'
         }
-
         self._name = None
         self._target = None
         self._action = None

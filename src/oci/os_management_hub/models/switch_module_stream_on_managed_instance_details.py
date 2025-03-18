@@ -43,14 +43,12 @@ class SwitchModuleStreamOnManagedInstanceDetails(object):
             'stream_name': 'str',
             'software_source_id': 'str'
         }
-
         self.attribute_map = {
             'work_request_details': 'workRequestDetails',
             'module_name': 'moduleName',
             'stream_name': 'streamName',
             'software_source_id': 'softwareSourceId'
         }
-
         self._work_request_details = None
         self._module_name = None
         self._stream_name = None

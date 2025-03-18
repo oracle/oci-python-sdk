@@ -40,13 +40,11 @@ class TextClassificationModelDetails(ModelDetails):
             'model_type': 'str',
             'classification_mode': 'ClassificationType'
         }
-
         self.attribute_map = {
             'language_code': 'languageCode',
             'model_type': 'modelType',
             'classification_mode': 'classificationMode'
         }
-
         self._language_code = None
         self._model_type = None
         self._classification_mode = None

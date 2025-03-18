@@ -93,7 +93,6 @@ class CreateModelDetails(object):
             'retention_setting': 'RetentionSetting',
             'backup_setting': 'BackupSetting'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'project_id': 'projectId',
@@ -110,7 +109,6 @@ class CreateModelDetails(object):
             'retention_setting': 'retentionSetting',
             'backup_setting': 'backupSetting'
         }
-
         self._compartment_id = None
         self._project_id = None
         self._display_name = None

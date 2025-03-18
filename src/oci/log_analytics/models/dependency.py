@@ -39,13 +39,11 @@ class Dependency(object):
             'reference_type': 'str',
             'reference_id': 'int'
         }
-
         self.attribute_map = {
             'type': 'type',
             'reference_type': 'referenceType',
             'reference_id': 'referenceId'
         }
-
         self._type = None
         self._reference_type = None
         self._reference_id = None

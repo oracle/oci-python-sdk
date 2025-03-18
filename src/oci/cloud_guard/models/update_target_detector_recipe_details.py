@@ -38,13 +38,11 @@ class UpdateTargetDetectorRecipeDetails(object):
             'is_validation_only_query': 'bool',
             'detector_rules': 'list[UpdateTargetRecipeDetectorRuleDetails]'
         }
-
         self.attribute_map = {
             'detector_recipe_id': 'detectorRecipeId',
             'is_validation_only_query': 'isValidationOnlyQuery',
             'detector_rules': 'detectorRules'
         }
-
         self._detector_recipe_id = None
         self._is_validation_only_query = None
         self._detector_rules = None

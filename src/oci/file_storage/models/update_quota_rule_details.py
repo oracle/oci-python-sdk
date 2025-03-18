@@ -33,12 +33,10 @@ class UpdateQuotaRuleDetails(object):
             'display_name': 'str',
             'quota_limit_in_gigabytes': 'int'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'quota_limit_in_gigabytes': 'quotaLimitInGigabytes'
         }
-
         self._display_name = None
         self._quota_limit_in_gigabytes = None
 

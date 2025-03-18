@@ -57,7 +57,6 @@ class RealtimeMessageResultTranscriptionToken(object):
             'confidence': 'float',
             'type': 'str'
         }
-
         self.attribute_map = {
             'token': 'token',
             'start_time_in_ms': 'startTimeInMs',
@@ -65,7 +64,6 @@ class RealtimeMessageResultTranscriptionToken(object):
             'confidence': 'confidence',
             'type': 'type'
         }
-
         self._token = None
         self._start_time_in_ms = None
         self._end_time_in_ms = None

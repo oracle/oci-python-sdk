@@ -43,14 +43,12 @@ class UpdateProjectDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'description': 'description',
             'notification_config': 'notificationConfig',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._description = None
         self._notification_config = None
         self._freeform_tags = None

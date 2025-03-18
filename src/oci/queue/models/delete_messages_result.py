@@ -38,13 +38,11 @@ class DeleteMessagesResult(object):
             'client_failures': 'int',
             'entries': 'list[DeleteMessagesResultEntry]'
         }
-
         self.attribute_map = {
             'server_failures': 'serverFailures',
             'client_failures': 'clientFailures',
             'entries': 'entries'
         }
-
         self._server_failures = None
         self._client_failures = None
         self._entries = None

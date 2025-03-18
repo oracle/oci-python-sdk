@@ -74,7 +74,6 @@ class RouteRule(object):
             'description': 'str',
             'route_type': 'str'
         }
-
         self.attribute_map = {
             'cidr_block': 'cidrBlock',
             'destination': 'destination',
@@ -83,7 +82,6 @@ class RouteRule(object):
             'description': 'description',
             'route_type': 'routeType'
         }
-
         self._cidr_block = None
         self._destination = None
         self._destination_type = None

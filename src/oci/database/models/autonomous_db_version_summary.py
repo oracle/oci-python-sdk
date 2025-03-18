@@ -81,7 +81,6 @@ class AutonomousDbVersionSummary(object):
             'is_default_for_free': 'bool',
             'is_default_for_paid': 'bool'
         }
-
         self.attribute_map = {
             'version': 'version',
             'db_workload': 'dbWorkload',
@@ -92,7 +91,6 @@ class AutonomousDbVersionSummary(object):
             'is_default_for_free': 'isDefaultForFree',
             'is_default_for_paid': 'isDefaultForPaid'
         }
-
         self._version = None
         self._db_workload = None
         self._is_dedicated = None

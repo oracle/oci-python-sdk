@@ -28,11 +28,9 @@ class ContainerVnic(object):
         self.swagger_types = {
             'vnic_id': 'str'
         }
-
         self.attribute_map = {
             'vnic_id': 'vnicId'
         }
-
         self._vnic_id = None
 
     @property

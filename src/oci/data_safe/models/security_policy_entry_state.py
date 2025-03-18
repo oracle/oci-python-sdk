@@ -70,7 +70,6 @@ class SecurityPolicyEntryState(object):
             'deployment_status': 'str',
             'entry_details': 'EntryDetails'
         }
-
         self.attribute_map = {
             'id': 'id',
             'security_policy_entry_id': 'securityPolicyEntryId',
@@ -78,7 +77,6 @@ class SecurityPolicyEntryState(object):
             'deployment_status': 'deploymentStatus',
             'entry_details': 'entryDetails'
         }
-
         self._id = None
         self._security_policy_entry_id = None
         self._security_policy_deployment_id = None

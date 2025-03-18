@@ -242,7 +242,6 @@ class WorkRequestSummary(object):
             'status': 'str',
             'resources': 'list[WorkRequestResource]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -252,7 +251,6 @@ class WorkRequestSummary(object):
             'status': 'status',
             'resources': 'resources'
         }
-
         self._id = None
         self._compartment_id = None
         self._oda_instance_id = None

@@ -88,7 +88,6 @@ class HttpMonitorSummary(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'protocol': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'results_url': 'resultsUrl',
@@ -102,7 +101,6 @@ class HttpMonitorSummary(object):
             'defined_tags': 'definedTags',
             'protocol': 'protocol'
         }
-
         self._id = None
         self._results_url = None
         self._home_region = None

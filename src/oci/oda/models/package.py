@@ -98,7 +98,6 @@ class Package(object):
             'import_contract': 'ImportContract',
             'default_parameter_values': 'DefaultParameterValues'
         }
-
         self.attribute_map = {
             'id': 'id',
             'publisher_id': 'publisherId',
@@ -116,7 +115,6 @@ class Package(object):
             'import_contract': 'importContract',
             'default_parameter_values': 'defaultParameterValues'
         }
-
         self._id = None
         self._publisher_id = None
         self._name = None

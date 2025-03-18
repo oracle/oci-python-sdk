@@ -33,12 +33,10 @@ class Properties(object):
             'num_retries': 'int',
             'timeout_in_seconds': 'int'
         }
-
         self.attribute_map = {
             'num_retries': 'numRetries',
             'timeout_in_seconds': 'timeoutInSeconds'
         }
-
         self._num_retries = None
         self._timeout_in_seconds = None
 

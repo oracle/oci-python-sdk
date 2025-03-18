@@ -140,7 +140,6 @@ class ProblemHistorySummary(object):
             'comment': 'str',
             'locks': 'list[ResourceLock]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'problem_id': 'problemId',
@@ -154,7 +153,6 @@ class ProblemHistorySummary(object):
             'comment': 'comment',
             'locks': 'locks'
         }
-
         self._id = None
         self._problem_id = None
         self._actor_type = None

@@ -43,14 +43,12 @@ class TcpConnection(object):
             'connect_duration': 'float',
             'secure_connect_duration': 'float'
         }
-
         self.attribute_map = {
             'address': 'address',
             'port': 'port',
             'connect_duration': 'connectDuration',
             'secure_connect_duration': 'secureConnectDuration'
         }
-
         self._address = None
         self._port = None
         self._connect_duration = None

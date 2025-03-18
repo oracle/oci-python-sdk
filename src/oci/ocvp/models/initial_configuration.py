@@ -28,11 +28,9 @@ class InitialConfiguration(object):
         self.swagger_types = {
             'initial_cluster_configurations': 'list[InitialClusterConfiguration]'
         }
-
         self.attribute_map = {
             'initial_cluster_configurations': 'initialClusterConfigurations'
         }
-
         self._initial_cluster_configurations = None
 
     @property

@@ -60,13 +60,11 @@ class MyTrustedUserAgentTrustedFactors(object):
             'category': 'str',
             'creation_time': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'category': 'category',
             'creation_time': 'creationTime'
         }
-
         self._type = None
         self._category = None
         self._creation_time = None

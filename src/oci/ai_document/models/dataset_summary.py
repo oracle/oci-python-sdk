@@ -38,13 +38,11 @@ class DatasetSummary(object):
             'validation_sample_count': 'int',
             'test_sample_count': 'int'
         }
-
         self.attribute_map = {
             'training_sample_count': 'trainingSampleCount',
             'validation_sample_count': 'validationSampleCount',
             'test_sample_count': 'testSampleCount'
         }
-
         self._training_sample_count = None
         self._validation_sample_count = None
         self._test_sample_count = None

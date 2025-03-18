@@ -38,13 +38,11 @@ class LogAnalyticsMetadata(object):
             'value': 'str',
             'type': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'value': 'value',
             'type': 'type'
         }
-
         self._name = None
         self._value = None
         self._type = None

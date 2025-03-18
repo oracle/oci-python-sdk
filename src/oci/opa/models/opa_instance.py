@@ -195,7 +195,6 @@ class OpaInstance(object):
             'system_tags': 'dict(str, dict(str, object))',
             'attachments': 'list[AttachmentDetails]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -218,7 +217,6 @@ class OpaInstance(object):
             'system_tags': 'systemTags',
             'attachments': 'attachments'
         }
-
         self._id = None
         self._display_name = None
         self._description = None

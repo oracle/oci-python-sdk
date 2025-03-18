@@ -96,7 +96,6 @@ class BackendSetDetails(object):
             'backends': 'list[Backend]',
             'health_checker': 'HealthChecker'
         }
-
         self.attribute_map = {
             'policy': 'policy',
             'ip_version': 'ipVersion',
@@ -108,7 +107,6 @@ class BackendSetDetails(object):
             'backends': 'backends',
             'health_checker': 'healthChecker'
         }
-
         self._policy = None
         self._ip_version = None
         self._is_preserve_source = None

@@ -42,12 +42,10 @@ class GenerateDiscoveryReportForDownloadDetails(object):
             'discovery_job_id': 'str',
             'report_format': 'str'
         }
-
         self.attribute_map = {
             'discovery_job_id': 'discoveryJobId',
             'report_format': 'reportFormat'
         }
-
         self._discovery_job_id = None
         self._report_format = None
 

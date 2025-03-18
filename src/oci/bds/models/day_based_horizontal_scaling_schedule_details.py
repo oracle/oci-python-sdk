@@ -34,12 +34,10 @@ class DayBasedHorizontalScalingScheduleDetails(HorizontalScalingScheduleDetails)
             'schedule_type': 'str',
             'time_and_horizontal_scaling_config': 'list[TimeAndHorizontalScalingConfig]'
         }
-
         self.attribute_map = {
             'schedule_type': 'scheduleType',
             'time_and_horizontal_scaling_config': 'timeAndHorizontalScalingConfig'
         }
-
         self._schedule_type = None
         self._time_and_horizontal_scaling_config = None
         self._schedule_type = 'DAY_BASED'

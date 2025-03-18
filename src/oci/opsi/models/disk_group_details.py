@@ -33,12 +33,10 @@ class DiskGroupDetails(object):
             'diskgroup_name': 'str',
             'asm_name': 'str'
         }
-
         self.attribute_map = {
             'diskgroup_name': 'diskgroupName',
             'asm_name': 'asmName'
         }
-
         self._diskgroup_name = None
         self._asm_name = None
 

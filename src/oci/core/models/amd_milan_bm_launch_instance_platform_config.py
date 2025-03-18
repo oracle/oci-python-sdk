@@ -103,7 +103,6 @@ class AmdMilanBmLaunchInstancePlatformConfig(LaunchInstancePlatformConfig):
             'percentage_of_cores_enabled': 'int',
             'config_map': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'type': 'type',
             'is_secure_boot_enabled': 'isSecureBootEnabled',
@@ -118,7 +117,6 @@ class AmdMilanBmLaunchInstancePlatformConfig(LaunchInstancePlatformConfig):
             'percentage_of_cores_enabled': 'percentageOfCoresEnabled',
             'config_map': 'configMap'
         }
-
         self._type = None
         self._is_secure_boot_enabled = None
         self._is_trusted_platform_module_enabled = None

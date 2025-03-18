@@ -33,12 +33,10 @@ class ExecutionPlanStatsComparision(object):
             'original': 'SqlTuningTaskPlanStats',
             'modified': 'SqlTuningTaskPlanStats'
         }
-
         self.attribute_map = {
             'original': 'original',
             'modified': 'modified'
         }
-
         self._original = None
         self._modified = None
 

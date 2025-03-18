@@ -53,7 +53,6 @@ class InstanceNetworkInterfaceAttachment(object):
             'network_card_index': 'int',
             'status': 'str'
         }
-
         self.attribute_map = {
             'attachment_key': 'attachmentKey',
             'time_attach': 'timeAttach',
@@ -62,7 +61,6 @@ class InstanceNetworkInterfaceAttachment(object):
             'network_card_index': 'networkCardIndex',
             'status': 'status'
         }
-
         self._attachment_key = None
         self._time_attach = None
         self._is_delete_on_termination = None

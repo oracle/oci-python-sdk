@@ -39,13 +39,11 @@ class ExternalDownstream(object):
             'port': 'int',
             'tsig_key_id': 'str'
         }
-
         self.attribute_map = {
             'address': 'address',
             'port': 'port',
             'tsig_key_id': 'tsigKeyId'
         }
-
         self._address = None
         self._port = None
         self._tsig_key_id = None

@@ -32,11 +32,9 @@ class ResourceAction(object):
         self.swagger_types = {
             'action_type': 'str'
         }
-
         self.attribute_map = {
             'action_type': 'actionType'
         }
-
         self._action_type = None
 
     @staticmethod

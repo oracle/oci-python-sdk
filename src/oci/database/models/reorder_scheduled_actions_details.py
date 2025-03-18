@@ -33,12 +33,10 @@ class ReorderScheduledActionsDetails(object):
             'scheduling_window_id': 'str',
             'scheduled_action_id_orders': 'list[ActionOrderDetails]'
         }
-
         self.attribute_map = {
             'scheduling_window_id': 'schedulingWindowId',
             'scheduled_action_id_orders': 'scheduledActionIdOrders'
         }
-
         self._scheduling_window_id = None
         self._scheduled_action_id_orders = None
 

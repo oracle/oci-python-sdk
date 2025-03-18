@@ -64,7 +64,6 @@ class UpdateFleetAdvancedFeatureConfigurationDetails(object):
             'performance_tuning_analysis': 'PerformanceTuningAnalysis',
             'java_migration_analysis': 'JavaMigrationAnalysis'
         }
-
         self.attribute_map = {
             'analytic_namespace': 'analyticNamespace',
             'analytic_bucket_name': 'analyticBucketName',
@@ -75,7 +74,6 @@ class UpdateFleetAdvancedFeatureConfigurationDetails(object):
             'performance_tuning_analysis': 'performanceTuningAnalysis',
             'java_migration_analysis': 'javaMigrationAnalysis'
         }
-
         self._analytic_namespace = None
         self._analytic_bucket_name = None
         self._lcm = None

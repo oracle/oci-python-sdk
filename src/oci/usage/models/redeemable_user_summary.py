@@ -38,13 +38,11 @@ class RedeemableUserSummary(object):
             'first_name': 'str',
             'last_name': 'str'
         }
-
         self.attribute_map = {
             'email_id': 'emailId',
             'first_name': 'firstName',
             'last_name': 'lastName'
         }
-
         self._email_id = None
         self._first_name = None
         self._last_name = None

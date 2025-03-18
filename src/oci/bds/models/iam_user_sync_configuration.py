@@ -69,14 +69,12 @@ class IamUserSyncConfiguration(object):
             'time_created': 'datetime',
             'time_updated': 'datetime'
         }
-
         self.attribute_map = {
             'is_posix_attributes_addition_required': 'isPosixAttributesAdditionRequired',
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated'
         }
-
         self._is_posix_attributes_addition_required = None
         self._lifecycle_state = None
         self._time_created = None

@@ -61,13 +61,11 @@ class SqlTuningTaskCredentialDetails(object):
             'username': 'str',
             'role': 'str'
         }
-
         self.attribute_map = {
             'sql_tuning_task_credential_type': 'sqlTuningTaskCredentialType',
             'username': 'username',
             'role': 'role'
         }
-
         self._sql_tuning_task_credential_type = None
         self._username = None
         self._role = None

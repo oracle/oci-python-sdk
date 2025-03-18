@@ -28,11 +28,9 @@ class UpdateUsageCarbonEmissionsQueryDetails(object):
         self.swagger_types = {
             'query_definition': 'UsageCarbonEmissionsQueryDefinition'
         }
-
         self.attribute_map = {
             'query_definition': 'queryDefinition'
         }
-
         self._query_definition = None
 
     @property

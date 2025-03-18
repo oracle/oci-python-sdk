@@ -48,7 +48,6 @@ class ProductSummary(object):
             'earned_rewards': 'float',
             'is_eligible_to_earn_rewards': 'bool'
         }
-
         self.attribute_map = {
             'product_number': 'productNumber',
             'product_name': 'productName',
@@ -56,7 +55,6 @@ class ProductSummary(object):
             'earned_rewards': 'earnedRewards',
             'is_eligible_to_earn_rewards': 'isEligibleToEarnRewards'
         }
-
         self._product_number = None
         self._product_name = None
         self._usage_amount = None

@@ -63,7 +63,6 @@ class TopUtilizedResourceSummary(object):
             'total_units': 'float',
             'unit_type': 'str'
         }
-
         self.attribute_map = {
             'resource_id': 'resourceId',
             'resource_name': 'resourceName',
@@ -72,7 +71,6 @@ class TopUtilizedResourceSummary(object):
             'total_units': 'totalUnits',
             'unit_type': 'unitType'
         }
-
         self._resource_id = None
         self._resource_name = None
         self._resource_compartment_id = None

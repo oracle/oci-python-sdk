@@ -188,7 +188,6 @@ class DbSystemSnapshot(object):
             'region': 'str',
             'read_endpoint': 'ReadEndpointDetails'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -220,7 +219,6 @@ class DbSystemSnapshot(object):
             'region': 'region',
             'read_endpoint': 'readEndpoint'
         }
-
         self._id = None
         self._display_name = None
         self._description = None

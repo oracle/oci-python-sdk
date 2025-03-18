@@ -33,12 +33,10 @@ class IngressGatewayMutualTransportLayerSecurity(object):
             'certificate_id': 'str',
             'maximum_validity': 'int'
         }
-
         self.attribute_map = {
             'certificate_id': 'certificateId',
             'maximum_validity': 'maximumValidity'
         }
-
         self._certificate_id = None
         self._maximum_validity = None
 

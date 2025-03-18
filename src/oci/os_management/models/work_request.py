@@ -180,7 +180,6 @@ class WorkRequest(object):
             'parent_id': 'str',
             'children_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'operation_type': 'operationType',
             'status': 'status',
@@ -198,7 +197,6 @@ class WorkRequest(object):
             'parent_id': 'parentId',
             'children_ids': 'childrenIds'
         }
-
         self._operation_type = None
         self._status = None
         self._id = None

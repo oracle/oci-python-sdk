@@ -163,7 +163,6 @@ class AppBundleConfigurationProperties(object):
             'required': 'bool',
             'confidential': 'bool'
         }
-
         self.attribute_map = {
             'name': 'name',
             'display_name': 'displayName',
@@ -174,7 +173,6 @@ class AppBundleConfigurationProperties(object):
             'required': 'required',
             'confidential': 'confidential'
         }
-
         self._name = None
         self._display_name = None
         self._icf_type = None

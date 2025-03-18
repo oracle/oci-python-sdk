@@ -60,7 +60,6 @@ class RepositoryTag(RepositoryRef):
             'defined_tags': 'dict(str, dict(str, object))',
             'object_id': 'str'
         }
-
         self.attribute_map = {
             'ref_name': 'refName',
             'ref_type': 'refType',
@@ -70,7 +69,6 @@ class RepositoryTag(RepositoryRef):
             'defined_tags': 'definedTags',
             'object_id': 'objectId'
         }
-
         self._ref_name = None
         self._ref_type = None
         self._full_ref_name = None

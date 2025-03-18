@@ -118,7 +118,6 @@ class ResponderActivitySummary(object):
             'time_created': 'datetime',
             'message': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'problem_id': 'problemId',
@@ -130,7 +129,6 @@ class ResponderActivitySummary(object):
             'time_created': 'timeCreated',
             'message': 'message'
         }
-
         self._id = None
         self._problem_id = None
         self._responder_rule_id = None

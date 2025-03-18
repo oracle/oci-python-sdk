@@ -28,11 +28,9 @@ class UpdateClusterHardenedImageDetails(object):
         self.swagger_types = {
             'cluster_id': 'str'
         }
-
         self.attribute_map = {
             'cluster_id': 'clusterId'
         }
-
         self._cluster_id = None
 
     @property

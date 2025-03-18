@@ -32,11 +32,9 @@ class DatabasePlan(object):
         self.swagger_types = {
             'items': 'list[DatabasePlanDirective]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

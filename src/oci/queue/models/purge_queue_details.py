@@ -46,12 +46,10 @@ class PurgeQueueDetails(object):
             'purge_type': 'str',
             'channel_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'purge_type': 'purgeType',
             'channel_ids': 'channelIds'
         }
-
         self._purge_type = None
         self._channel_ids = None
 

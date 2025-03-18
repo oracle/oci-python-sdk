@@ -35,12 +35,10 @@ class DbSystemSourceFromBackup(DbSystemSource):
             'source_type': 'str',
             'backup_id': 'str'
         }
-
         self.attribute_map = {
             'source_type': 'sourceType',
             'backup_id': 'backupId'
         }
-
         self._source_type = None
         self._backup_id = None
         self._source_type = 'BACKUP'

@@ -43,14 +43,12 @@ class ModuleStreamProfileDetails(object):
             'profile_name': 'str',
             'software_source_id': 'str'
         }
-
         self.attribute_map = {
             'module_name': 'moduleName',
             'stream_name': 'streamName',
             'profile_name': 'profileName',
             'software_source_id': 'softwareSourceId'
         }
-
         self._module_name = None
         self._stream_name = None
         self._profile_name = None

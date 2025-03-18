@@ -74,7 +74,6 @@ class JavaFamilySummary(object):
             'is_supported_version': 'bool',
             'release_date': 'datetime'
         }
-
         self.attribute_map = {
             'family_version': 'familyVersion',
             'display_name': 'displayName',
@@ -85,7 +84,6 @@ class JavaFamilySummary(object):
             'is_supported_version': 'isSupportedVersion',
             'release_date': 'releaseDate'
         }
-
         self._family_version = None
         self._display_name = None
         self._support_type = None

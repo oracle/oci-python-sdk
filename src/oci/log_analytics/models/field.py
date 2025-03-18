@@ -81,7 +81,6 @@ class Field(AbstractField):
             'filter_query_string': 'str',
             'unit_type': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'display_name': 'displayName',
@@ -95,7 +94,6 @@ class Field(AbstractField):
             'filter_query_string': 'filterQueryString',
             'unit_type': 'unitType'
         }
-
         self._name = None
         self._display_name = None
         self._is_declared = None

@@ -38,13 +38,11 @@ class AnnouncementUserStatusDetails(object):
             'user_id': 'str',
             'time_acknowledged': 'datetime'
         }
-
         self.attribute_map = {
             'user_status_announcement_id': 'userStatusAnnouncementId',
             'user_id': 'userId',
             'time_acknowledged': 'timeAcknowledged'
         }
-
         self._user_status_announcement_id = None
         self._user_id = None
         self._time_acknowledged = None

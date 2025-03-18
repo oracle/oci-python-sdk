@@ -35,12 +35,10 @@ class ImagePngStatementOutputData(StatementOutputData):
             'type': 'str',
             'value': 'stream'
         }
-
         self.attribute_map = {
             'type': 'type',
             'value': 'value'
         }
-
         self._type = None
         self._value = None
         self._type = 'IMAGE_PNG'

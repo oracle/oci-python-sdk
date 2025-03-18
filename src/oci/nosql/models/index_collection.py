@@ -28,11 +28,9 @@ class IndexCollection(object):
         self.swagger_types = {
             'items': 'list[IndexSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

@@ -38,13 +38,11 @@ class CustomizationInferenceEntity(object):
             'customization_id': 'str',
             'customization_alias': 'str'
         }
-
         self.attribute_map = {
             'entity_type': 'entityType',
             'customization_id': 'customizationId',
             'customization_alias': 'customizationAlias'
         }
-
         self._entity_type = None
         self._customization_id = None
         self._customization_alias = None

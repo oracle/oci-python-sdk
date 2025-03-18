@@ -28,11 +28,9 @@ class SourcePipelineConnectionDetails(object):
         self.swagger_types = {
             'connection_id': 'str'
         }
-
         self.attribute_map = {
             'connection_id': 'connectionId'
         }
-
         self._connection_id = None
 
     @property

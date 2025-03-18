@@ -59,7 +59,6 @@ class RecipeSummary(object):
             'supported_source_technology_types': 'list[TechnologyType]',
             'supported_target_technology_types': 'list[TechnologyType]'
         }
-
         self.attribute_map = {
             'recipe_type': 'recipeType',
             'name': 'name',
@@ -68,7 +67,6 @@ class RecipeSummary(object):
             'supported_source_technology_types': 'supportedSourceTechnologyTypes',
             'supported_target_technology_types': 'supportedTargetTechnologyTypes'
         }
-
         self._recipe_type = None
         self._name = None
         self._display_name = None

@@ -28,11 +28,9 @@ class UpdateMessageDetails(object):
         self.swagger_types = {
             'visibility_in_seconds': 'int'
         }
-
         self.attribute_map = {
             'visibility_in_seconds': 'visibilityInSeconds'
         }
-
         self._visibility_in_seconds = None
 
     @property

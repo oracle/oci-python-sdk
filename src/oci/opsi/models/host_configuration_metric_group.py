@@ -87,12 +87,10 @@ class HostConfigurationMetricGroup(object):
             'metric_name': 'str',
             'time_collected': 'datetime'
         }
-
         self.attribute_map = {
             'metric_name': 'metricName',
             'time_collected': 'timeCollected'
         }
-
         self._metric_name = None
         self._time_collected = None
 

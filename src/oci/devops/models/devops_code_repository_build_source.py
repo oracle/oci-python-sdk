@@ -50,7 +50,6 @@ class DevopsCodeRepositoryBuildSource(BuildSource):
             'branch': 'str',
             'repository_id': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'connection_type': 'connectionType',
@@ -58,7 +57,6 @@ class DevopsCodeRepositoryBuildSource(BuildSource):
             'branch': 'branch',
             'repository_id': 'repositoryId'
         }
-
         self._name = None
         self._connection_type = None
         self._repository_url = None

@@ -33,12 +33,10 @@ class ConnectRemotePeeringConnectionsDetails(object):
             'peer_id': 'str',
             'peer_region_name': 'str'
         }
-
         self.attribute_map = {
             'peer_id': 'peerId',
             'peer_region_name': 'peerRegionName'
         }
-
         self._peer_id = None
         self._peer_region_name = None
 

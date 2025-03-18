@@ -92,7 +92,6 @@ class AppExtensionFormFillAppApp(object):
             'sync_from_template': 'bool',
             'form_fill_url_match': 'list[AppFormFillUrlMatch]'
         }
-
         self.attribute_map = {
             'form_type': 'formType',
             'form_credential_sharing_group_id': 'formCredentialSharingGroupID',
@@ -104,7 +103,6 @@ class AppExtensionFormFillAppApp(object):
             'sync_from_template': 'syncFromTemplate',
             'form_fill_url_match': 'formFillUrlMatch'
         }
-
         self._form_type = None
         self._form_credential_sharing_group_id = None
         self._reveal_password_on_form = None

@@ -174,7 +174,6 @@ class VolumeGroupBackup(object):
             'volume_group_id': 'str',
             'source_volume_group_backup_id': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
@@ -195,7 +194,6 @@ class VolumeGroupBackup(object):
             'volume_group_id': 'volumeGroupId',
             'source_volume_group_backup_id': 'sourceVolumeGroupBackupId'
         }
-
         self._compartment_id = None
         self._defined_tags = None
         self._display_name = None

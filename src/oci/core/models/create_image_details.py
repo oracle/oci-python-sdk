@@ -75,7 +75,6 @@ class CreateImageDetails(object):
             'instance_id': 'str',
             'launch_mode': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
@@ -85,7 +84,6 @@ class CreateImageDetails(object):
             'instance_id': 'instanceId',
             'launch_mode': 'launchMode'
         }
-
         self._compartment_id = None
         self._defined_tags = None
         self._display_name = None

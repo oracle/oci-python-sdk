@@ -193,7 +193,6 @@ class DetectorRecipe(object):
             'system_tags': 'dict(str, dict(str, object))',
             'target_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -214,7 +213,6 @@ class DetectorRecipe(object):
             'system_tags': 'systemTags',
             'target_ids': 'targetIds'
         }
-
         self._id = None
         self._display_name = None
         self._description = None

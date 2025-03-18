@@ -48,7 +48,6 @@ class UpdateDataSciencePrivateEndpointDetails(object):
             'display_name': 'str',
             'nsg_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -56,7 +55,6 @@ class UpdateDataSciencePrivateEndpointDetails(object):
             'display_name': 'displayName',
             'nsg_ids': 'nsgIds'
         }
-
         self._freeform_tags = None
         self._defined_tags = None
         self._description = None

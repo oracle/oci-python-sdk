@@ -35,12 +35,10 @@ class JobRunWorkloadConfigurationDetails(WorkloadConfigurationDetails):
             'workload_type': 'str',
             'use_case_configuration': 'JobRunUseCaseConfigurationDetails'
         }
-
         self.attribute_map = {
             'workload_type': 'workloadType',
             'use_case_configuration': 'useCaseConfiguration'
         }
-
         self._workload_type = None
         self._use_case_configuration = None
         self._workload_type = 'JOB_RUN'

@@ -48,7 +48,6 @@ class ResourceInventory(object):
             'installation_count': 'int',
             'application_count': 'int'
         }
-
         self.attribute_map = {
             'active_fleet_count': 'activeFleetCount',
             'managed_instance_count': 'managedInstanceCount',
@@ -56,7 +55,6 @@ class ResourceInventory(object):
             'installation_count': 'installationCount',
             'application_count': 'applicationCount'
         }
-
         self._active_fleet_count = None
         self._managed_instance_count = None
         self._jre_count = None

@@ -68,7 +68,6 @@ class Proxies(object):
             'socks_proxy_host': 'str',
             'socks_proxy_port': 'int'
         }
-
         self.attribute_map = {
             'use_system_proxies': 'useSystemProxies',
             'http_proxy_host': 'httpProxyHost',
@@ -80,7 +79,6 @@ class Proxies(object):
             'socks_proxy_host': 'socksProxyHost',
             'socks_proxy_port': 'socksProxyPort'
         }
-
         self._use_system_proxies = None
         self._http_proxy_host = None
         self._http_proxy_port = None

@@ -150,13 +150,11 @@ class MigrationJobProgressResource(object):
             'current_phase': 'str',
             'phases': 'list[PhaseStatus]'
         }
-
         self.attribute_map = {
             'current_status': 'currentStatus',
             'current_phase': 'currentPhase',
             'phases': 'phases'
         }
-
         self._current_status = None
         self._current_phase = None
         self._phases = None

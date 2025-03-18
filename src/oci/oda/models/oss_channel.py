@@ -127,7 +127,6 @@ class OSSChannel(Channel):
             'user_name': 'str',
             'stream_pool_id': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -150,7 +149,6 @@ class OSSChannel(Channel):
             'user_name': 'userName',
             'stream_pool_id': 'streamPoolId'
         }
-
         self._id = None
         self._name = None
         self._description = None

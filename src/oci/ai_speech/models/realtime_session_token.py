@@ -48,7 +48,6 @@ class RealtimeSessionToken(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'token': 'token',
             'session_id': 'sessionId',
@@ -56,7 +55,6 @@ class RealtimeSessionToken(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._token = None
         self._session_id = None
         self._compartment_id = None

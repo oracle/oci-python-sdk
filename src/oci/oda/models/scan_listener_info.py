@@ -38,13 +38,11 @@ class ScanListenerInfo(object):
             'scan_listener_ip': 'str',
             'scan_listener_port': 'int'
         }
-
         self.attribute_map = {
             'scan_listener_fqdn': 'scanListenerFqdn',
             'scan_listener_ip': 'scanListenerIp',
             'scan_listener_port': 'scanListenerPort'
         }
-
         self._scan_listener_fqdn = None
         self._scan_listener_ip = None
         self._scan_listener_port = None

@@ -28,11 +28,9 @@ class StatementCollection(object):
         self.swagger_types = {
             'items': 'list[StatementSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

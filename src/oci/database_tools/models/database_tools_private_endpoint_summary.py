@@ -158,7 +158,6 @@ class DatabaseToolsPrivateEndpointSummary(object):
             'nsg_ids': 'list[str]',
             'reverse_connection_configuration': 'DatabaseToolsPrivateEndpointReverseConnectionConfiguration'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
@@ -182,7 +181,6 @@ class DatabaseToolsPrivateEndpointSummary(object):
             'nsg_ids': 'nsgIds',
             'reverse_connection_configuration': 'reverseConnectionConfiguration'
         }
-
         self._compartment_id = None
         self._defined_tags = None
         self._freeform_tags = None

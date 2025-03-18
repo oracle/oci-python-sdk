@@ -50,7 +50,6 @@ class ResolverForwardRuleDetails(ResolverRuleDetails):
             'destination_addresses': 'list[str]',
             'source_endpoint_name': 'str'
         }
-
         self.attribute_map = {
             'client_address_conditions': 'clientAddressConditions',
             'qname_cover_conditions': 'qnameCoverConditions',
@@ -58,7 +57,6 @@ class ResolverForwardRuleDetails(ResolverRuleDetails):
             'destination_addresses': 'destinationAddresses',
             'source_endpoint_name': 'sourceEndpointName'
         }
-
         self._client_address_conditions = None
         self._qname_cover_conditions = None
         self._action = None

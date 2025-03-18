@@ -106,7 +106,6 @@ class GsmDetails(object):
             'supporting_resource_id': 'str',
             'metadata': 'dict(str, object)'
         }
-
         self.attribute_map = {
             'name': 'name',
             'compute_count': 'computeCount',
@@ -118,7 +117,6 @@ class GsmDetails(object):
             'supporting_resource_id': 'supportingResourceId',
             'metadata': 'metadata'
         }
-
         self._name = None
         self._compute_count = None
         self._data_storage_size_in_gbs = None

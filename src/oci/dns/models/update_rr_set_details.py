@@ -28,11 +28,9 @@ class UpdateRRSetDetails(object):
         self.swagger_types = {
             'items': 'list[RecordDetails]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

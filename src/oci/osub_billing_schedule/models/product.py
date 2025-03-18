@@ -33,12 +33,10 @@ class Product(object):
             'part_number': 'str',
             'name': 'str'
         }
-
         self.attribute_map = {
             'part_number': 'partNumber',
             'name': 'name'
         }
-
         self._part_number = None
         self._name = None
 

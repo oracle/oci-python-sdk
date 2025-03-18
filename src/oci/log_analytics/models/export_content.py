@@ -38,13 +38,11 @@ class ExportContent(object):
             'parser_names': 'list[str]',
             'source_names': 'list[str]'
         }
-
         self.attribute_map = {
             'field_names': 'fieldNames',
             'parser_names': 'parserNames',
             'source_names': 'sourceNames'
         }
-
         self._field_names = None
         self._parser_names = None
         self._source_names = None

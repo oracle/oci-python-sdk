@@ -29,11 +29,9 @@ class RequestJavaMigrationAnalysesDetails(object):
         self.swagger_types = {
             'targets': 'list[JavaMigrationAnalysisTarget]'
         }
-
         self.attribute_map = {
             'targets': 'targets'
         }
-
         self._targets = None
 
     @property

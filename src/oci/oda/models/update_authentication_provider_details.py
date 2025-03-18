@@ -83,7 +83,6 @@ class UpdateAuthenticationProviderDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'token_endpoint_url': 'tokenEndpointUrl',
             'authorization_endpoint_url': 'authorizationEndpointUrl',
@@ -98,7 +97,6 @@ class UpdateAuthenticationProviderDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._token_endpoint_url = None
         self._authorization_endpoint_url = None
         self._short_authorization_code_request_url = None

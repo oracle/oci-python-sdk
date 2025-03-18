@@ -73,7 +73,6 @@ class TagSummary(object):
             'time_created': 'datetime',
             'is_cost_tracking': 'bool'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'id': 'id',
@@ -86,7 +85,6 @@ class TagSummary(object):
             'time_created': 'timeCreated',
             'is_cost_tracking': 'isCostTracking'
         }
-
         self._compartment_id = None
         self._id = None
         self._name = None

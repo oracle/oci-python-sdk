@@ -142,7 +142,6 @@ class DelegatedResourceAccessRequestHistorySummary(object):
             'comment': 'str',
             'timestamp': 'datetime'
         }
-
         self.attribute_map = {
             'lifecycle_state': 'lifecycleState',
             'request_status': 'requestStatus',
@@ -150,7 +149,6 @@ class DelegatedResourceAccessRequestHistorySummary(object):
             'comment': 'comment',
             'timestamp': 'timestamp'
         }
-
         self._lifecycle_state = None
         self._request_status = None
         self._user_id = None

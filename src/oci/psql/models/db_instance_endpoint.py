@@ -33,12 +33,10 @@ class DbInstanceEndpoint(object):
             'db_instance_id': 'str',
             'endpoint': 'Endpoint'
         }
-
         self.attribute_map = {
             'db_instance_id': 'dbInstanceId',
             'endpoint': 'endpoint'
         }
-
         self._db_instance_id = None
         self._endpoint = None
 

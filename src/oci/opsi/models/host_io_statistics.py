@@ -65,7 +65,6 @@ class HostIoStatistics(HostResourceStatistics):
             'disk_write_in_mbs': 'float',
             'disk_iops': 'float'
         }
-
         self.attribute_map = {
             'usage': 'usage',
             'capacity': 'capacity',
@@ -76,7 +75,6 @@ class HostIoStatistics(HostResourceStatistics):
             'disk_write_in_mbs': 'diskWriteInMBs',
             'disk_iops': 'diskIops'
         }
-
         self._usage = None
         self._capacity = None
         self._utilization_percent = None

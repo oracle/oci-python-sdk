@@ -66,14 +66,12 @@ class GithubFilter(Filter):
             'include': 'GithubFilterAttributes',
             'exclude': 'GithubFilterExclusionAttributes'
         }
-
         self.attribute_map = {
             'trigger_source': 'triggerSource',
             'events': 'events',
             'include': 'include',
             'exclude': 'exclude'
         }
-
         self._trigger_source = None
         self._events = None
         self._include = None

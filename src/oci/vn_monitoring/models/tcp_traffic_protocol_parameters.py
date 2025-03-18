@@ -40,13 +40,11 @@ class TcpTrafficProtocolParameters(TrafficProtocolParameters):
             'source_port': 'int',
             'destination_port': 'int'
         }
-
         self.attribute_map = {
             'type': 'type',
             'source_port': 'sourcePort',
             'destination_port': 'destinationPort'
         }
-
         self._type = None
         self._source_port = None
         self._destination_port = None

@@ -38,13 +38,11 @@ class Services(object):
             'schema': 'str',
             'service_categories': 'list[SubCategories]'
         }
-
         self.attribute_map = {
             'service': 'service',
             'schema': 'schema',
             'service_categories': 'serviceCategories'
         }
-
         self._service = None
         self._schema = None
         self._service_categories = None

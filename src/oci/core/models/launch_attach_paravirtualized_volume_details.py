@@ -64,7 +64,6 @@ class LaunchAttachParavirtualizedVolumeDetails(LaunchAttachVolumeDetails):
             'launch_create_volume_details': 'LaunchCreateVolumeDetails',
             'is_pv_encryption_in_transit_enabled': 'bool'
         }
-
         self.attribute_map = {
             'device': 'device',
             'display_name': 'displayName',
@@ -75,7 +74,6 @@ class LaunchAttachParavirtualizedVolumeDetails(LaunchAttachVolumeDetails):
             'launch_create_volume_details': 'launchCreateVolumeDetails',
             'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled'
         }
-
         self._device = None
         self._display_name = None
         self._is_read_only = None

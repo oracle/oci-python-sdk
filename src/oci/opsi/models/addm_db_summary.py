@@ -73,7 +73,6 @@ class AddmDbSummary(object):
             'most_frequent_category_name': 'str',
             'most_frequent_category_display_name': 'str'
         }
-
         self.attribute_map = {
             'database_details': 'databaseDetails',
             'number_of_findings': 'numberOfFindings',
@@ -86,7 +85,6 @@ class AddmDbSummary(object):
             'most_frequent_category_name': 'mostFrequentCategoryName',
             'most_frequent_category_display_name': 'mostFrequentCategoryDisplayName'
         }
-
         self._database_details = None
         self._number_of_findings = None
         self._number_of_addm_tasks = None

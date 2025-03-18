@@ -60,7 +60,6 @@ class ReviewerActivitySummary(PullRequestActivitySummary):
             'reviewers_added': 'list[PrincipalDetails]',
             'reviewers_removed': 'list[PrincipalDetails]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'principal': 'principal',
@@ -70,7 +69,6 @@ class ReviewerActivitySummary(PullRequestActivitySummary):
             'reviewers_added': 'reviewersAdded',
             'reviewers_removed': 'reviewersRemoved'
         }
-
         self._id = None
         self._principal = None
         self._pull_request_id = None

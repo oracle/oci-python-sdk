@@ -144,7 +144,6 @@ class CreateLoadBalancerDetails(object):
             'security_attributes': 'dict(str, dict(str, object))',
             'rule_sets': 'dict(str, RuleSetDetails)'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
@@ -169,7 +168,6 @@ class CreateLoadBalancerDetails(object):
             'security_attributes': 'securityAttributes',
             'rule_sets': 'ruleSets'
         }
-
         self._compartment_id = None
         self._display_name = None
         self._shape_name = None

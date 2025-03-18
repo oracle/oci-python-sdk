@@ -66,7 +66,6 @@ class DatabaseConnectionCredentialsByDetails(DatabaseConnectionCredentials):
             'password': 'str',
             'role': 'str'
         }
-
         self.attribute_map = {
             'credential_type': 'credentialType',
             'credential_name': 'credentialName',
@@ -74,7 +73,6 @@ class DatabaseConnectionCredentialsByDetails(DatabaseConnectionCredentials):
             'password': 'password',
             'role': 'role'
         }
-
         self._credential_type = None
         self._credential_name = None
         self._username = None

@@ -83,7 +83,6 @@ class ShippingAddress(object):
             'phone_number': 'str',
             'email': 'str'
         }
-
         self.attribute_map = {
             'addressee': 'addressee',
             'care_of': 'careOf',
@@ -98,7 +97,6 @@ class ShippingAddress(object):
             'phone_number': 'phoneNumber',
             'email': 'email'
         }
-
         self._addressee = None
         self._care_of = None
         self._address1 = None

@@ -48,7 +48,6 @@ class AsynchronousExportResult(object):
             'job_execution_key': 'str',
             'source_key': 'str'
         }
-
         self.attribute_map = {
             'job_definition_name': 'jobDefinitionName',
             'job_definition_key': 'jobDefinitionKey',
@@ -56,7 +55,6 @@ class AsynchronousExportResult(object):
             'job_execution_key': 'jobExecutionKey',
             'source_key': 'sourceKey'
         }
-
         self._job_definition_name = None
         self._job_definition_key = None
         self._job_key = None

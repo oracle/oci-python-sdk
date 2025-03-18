@@ -60,7 +60,6 @@ class AdhocGetPathAnalysisDetails(GetPathAnalysisDetails):
             'protocol_parameters': 'ProtocolParameters',
             'query_options': 'QueryOptions'
         }
-
         self.attribute_map = {
             'type': 'type',
             'compartment_id': 'compartmentId',
@@ -70,7 +69,6 @@ class AdhocGetPathAnalysisDetails(GetPathAnalysisDetails):
             'protocol_parameters': 'protocolParameters',
             'query_options': 'queryOptions'
         }
-
         self._type = None
         self._compartment_id = None
         self._protocol = None

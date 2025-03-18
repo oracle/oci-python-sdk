@@ -33,12 +33,10 @@ class StartBdsInstanceDetails(object):
             'cluster_admin_password': 'str',
             'start_cluster_shape_configs': 'StartClusterShapeConfigs'
         }
-
         self.attribute_map = {
             'cluster_admin_password': 'clusterAdminPassword',
             'start_cluster_shape_configs': 'startClusterShapeConfigs'
         }
-
         self._cluster_admin_password = None
         self._start_cluster_shape_configs = None
 

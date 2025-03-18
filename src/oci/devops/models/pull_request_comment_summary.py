@@ -103,7 +103,6 @@ class PullRequestCommentSummary(object):
             'context_status': 'str',
             'comment_context': 'list[DiffLineDetails]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'pull_request_id': 'pullRequestId',
@@ -122,7 +121,6 @@ class PullRequestCommentSummary(object):
             'context_status': 'contextStatus',
             'comment_context': 'commentContext'
         }
-
         self._id = None
         self._pull_request_id = None
         self._data = None

@@ -65,7 +65,6 @@ class CreateAppEventChannelDetails(CreateChannelDetails):
             'outbound_url': 'str',
             'event_sink_bot_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'description': 'description',
@@ -76,7 +75,6 @@ class CreateAppEventChannelDetails(CreateChannelDetails):
             'outbound_url': 'outboundUrl',
             'event_sink_bot_ids': 'eventSinkBotIds'
         }
-
         self._name = None
         self._description = None
         self._type = None

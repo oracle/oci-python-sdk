@@ -33,12 +33,10 @@ class TextClassification(object):
             'label': 'str',
             'score': 'float'
         }
-
         self.attribute_map = {
             'label': 'label',
             'score': 'score'
         }
-
         self._label = None
         self._score = None
 

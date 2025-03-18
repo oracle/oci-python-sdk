@@ -38,13 +38,11 @@ class OCPUs(object):
             'consumed_cpu': 'float',
             'by_workload_type': 'WorkloadType'
         }
-
         self.attribute_map = {
             'total_cpu': 'totalCpu',
             'consumed_cpu': 'consumedCpu',
             'by_workload_type': 'byWorkloadType'
         }
-
         self._total_cpu = None
         self._consumed_cpu = None
         self._by_workload_type = None

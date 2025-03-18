@@ -242,7 +242,6 @@ class AppExtensionSamlServiceProviderApp(object):
             'user_assertion_attributes': 'list[AppUserAssertionAttributes]',
             'group_assertion_attributes': 'list[AppGroupAssertionAttributes]'
         }
-
         self.attribute_map = {
             'metadata': 'metadata',
             'partner_provider_id': 'partnerProviderId',
@@ -272,7 +271,6 @@ class AppExtensionSamlServiceProviderApp(object):
             'user_assertion_attributes': 'userAssertionAttributes',
             'group_assertion_attributes': 'groupAssertionAttributes'
         }
-
         self._metadata = None
         self._partner_provider_id = None
         self._partner_provider_pattern = None

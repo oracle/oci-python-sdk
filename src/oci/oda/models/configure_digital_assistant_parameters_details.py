@@ -28,11 +28,9 @@ class ConfigureDigitalAssistantParametersDetails(object):
         self.swagger_types = {
             'parameters': 'list[DigitalAssistantParameterValue]'
         }
-
         self.attribute_map = {
             'parameters': 'parameters'
         }
-
         self._parameters = None
 
     @property

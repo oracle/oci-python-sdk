@@ -111,7 +111,6 @@ class ImportOciTelemetryResourcesTaskDetails(MonitoredResourceTaskDetails):
             'availability_proxy_metrics': 'list[str]',
             'availability_proxy_metric_collection_interval': 'int'
         }
-
         self.attribute_map = {
             'type': 'type',
             'source': 'source',
@@ -129,7 +128,6 @@ class ImportOciTelemetryResourcesTaskDetails(MonitoredResourceTaskDetails):
             'availability_proxy_metrics': 'availabilityProxyMetrics',
             'availability_proxy_metric_collection_interval': 'availabilityProxyMetricCollectionInterval'
         }
-
         self._type = None
         self._source = None
         self._namespace = None

@@ -81,14 +81,12 @@ class Quota(object):
             'reset_policy': 'str',
             'operation_on_breach': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'unit': 'unit',
             'reset_policy': 'resetPolicy',
             'operation_on_breach': 'operationOnBreach'
         }
-
         self._value = None
         self._unit = None
         self._reset_policy = None

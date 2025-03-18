@@ -44,14 +44,12 @@ class SuggestResults(object):
             'input_text': 'str',
             'items': 'list[SuggestListItem]'
         }
-
         self.attribute_map = {
             'total_count': 'totalCount',
             'search_latency_in_ms': 'searchLatencyInMs',
             'input_text': 'inputText',
             'items': 'items'
         }
-
         self._total_count = None
         self._search_latency_in_ms = None
         self._input_text = None

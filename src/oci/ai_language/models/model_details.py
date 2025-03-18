@@ -108,12 +108,10 @@ class ModelDetails(object):
             'language_code': 'str',
             'model_type': 'str'
         }
-
         self.attribute_map = {
             'language_code': 'languageCode',
             'model_type': 'modelType'
         }
-
         self._language_code = None
         self._model_type = None
 

@@ -154,7 +154,6 @@ class ManagementSavedSearchForImportDetails(object):
             'features_config': 'object',
             'drilldown_config': 'list[object]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -178,7 +177,6 @@ class ManagementSavedSearchForImportDetails(object):
             'features_config': 'featuresConfig',
             'drilldown_config': 'drilldownConfig'
         }
-
         self._id = None
         self._display_name = None
         self._provider_id = None

@@ -52,14 +52,12 @@ class UpdateExternalDatabaseConnectorDetails(object):
             'display_name': 'str',
             'connector_type': 'str'
         }
-
         self.attribute_map = {
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'connector_type': 'connectorType'
         }
-
         self._freeform_tags = None
         self._defined_tags = None
         self._display_name = None

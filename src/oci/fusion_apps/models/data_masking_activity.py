@@ -70,7 +70,6 @@ class DataMaskingActivity(object):
             'time_masking_start': 'datetime',
             'time_masking_finish': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'fusion_environment_id': 'fusionEnvironmentId',
@@ -78,7 +77,6 @@ class DataMaskingActivity(object):
             'time_masking_start': 'timeMaskingStart',
             'time_masking_finish': 'timeMaskingFinish'
         }
-
         self._id = None
         self._fusion_environment_id = None
         self._lifecycle_state = None

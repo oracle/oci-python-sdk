@@ -28,11 +28,9 @@ class ServiceIdRequestDetails(object):
         self.swagger_types = {
             'service_id': 'str'
         }
-
         self.attribute_map = {
             'service_id': 'serviceId'
         }
-
         self._service_id = None
 
     @property

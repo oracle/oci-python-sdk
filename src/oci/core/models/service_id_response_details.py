@@ -33,12 +33,10 @@ class ServiceIdResponseDetails(object):
             'service_id': 'str',
             'service_name': 'str'
         }
-
         self.attribute_map = {
             'service_id': 'serviceId',
             'service_name': 'serviceName'
         }
-
         self._service_id = None
         self._service_name = None
 

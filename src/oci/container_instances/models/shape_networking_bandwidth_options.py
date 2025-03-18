@@ -38,13 +38,11 @@ class ShapeNetworkingBandwidthOptions(object):
             'max_in_gbps': 'float',
             'default_per_ocpu_in_gbps': 'float'
         }
-
         self.attribute_map = {
             'min_in_gbps': 'minInGbps',
             'max_in_gbps': 'maxInGbps',
             'default_per_ocpu_in_gbps': 'defaultPerOcpuInGbps'
         }
-
         self._min_in_gbps = None
         self._max_in_gbps = None
         self._default_per_ocpu_in_gbps = None

@@ -35,12 +35,10 @@ class ObjectStorageDataset(DatasetDetails):
             'dataset_type': 'str',
             'location_details': 'LocationDetails'
         }
-
         self.attribute_map = {
             'dataset_type': 'datasetType',
             'location_details': 'locationDetails'
         }
-
         self._dataset_type = None
         self._location_details = None
         self._dataset_type = 'OBJECT_STORAGE'

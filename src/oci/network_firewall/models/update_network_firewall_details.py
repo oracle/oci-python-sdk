@@ -48,7 +48,6 @@ class UpdateNetworkFirewallDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'network_firewall_policy_id': 'networkFirewallPolicyId',
@@ -56,7 +55,6 @@ class UpdateNetworkFirewallDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._display_name = None
         self._network_firewall_policy_id = None
         self._network_security_group_ids = None

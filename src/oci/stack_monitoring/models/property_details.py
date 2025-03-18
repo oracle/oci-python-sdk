@@ -28,11 +28,9 @@ class PropertyDetails(object):
         self.swagger_types = {
             'properties_map': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'properties_map': 'propertiesMap'
         }
-
         self._properties_map = None
 
     @property

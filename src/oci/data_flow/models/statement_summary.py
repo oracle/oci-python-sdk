@@ -74,7 +74,6 @@ class StatementSummary(object):
             'time_created': 'datetime',
             'time_completed': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
@@ -82,7 +81,6 @@ class StatementSummary(object):
             'time_created': 'timeCreated',
             'time_completed': 'timeCompleted'
         }
-
         self._id = None
         self._lifecycle_state = None
         self._run_id = None

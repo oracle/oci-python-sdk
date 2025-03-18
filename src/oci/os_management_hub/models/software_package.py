@@ -128,7 +128,6 @@ class SoftwarePackage(object):
             'is_latest': 'bool',
             'os_families': 'list[OsFamily]'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'name': 'name',
@@ -146,7 +145,6 @@ class SoftwarePackage(object):
             'is_latest': 'isLatest',
             'os_families': 'osFamilies'
         }
-
         self._display_name = None
         self._name = None
         self._type = None

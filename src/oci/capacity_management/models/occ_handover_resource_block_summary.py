@@ -74,7 +74,6 @@ class OccHandoverResourceBlockSummary(object):
             'associated_capacity_requests': 'list[AssociatedCapacityRequestDetails]',
             'placement_details': 'PlacementDetails'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -86,7 +85,6 @@ class OccHandoverResourceBlockSummary(object):
             'associated_capacity_requests': 'associatedCapacityRequests',
             'placement_details': 'placementDetails'
         }
-
         self._id = None
         self._compartment_id = None
         self._namespace = None

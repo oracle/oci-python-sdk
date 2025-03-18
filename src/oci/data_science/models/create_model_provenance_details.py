@@ -53,7 +53,6 @@ class CreateModelProvenanceDetails(object):
             'training_script': 'str',
             'training_id': 'str'
         }
-
         self.attribute_map = {
             'repository_url': 'repositoryUrl',
             'git_branch': 'gitBranch',
@@ -62,7 +61,6 @@ class CreateModelProvenanceDetails(object):
             'training_script': 'trainingScript',
             'training_id': 'trainingId'
         }
-
         self._repository_url = None
         self._git_branch = None
         self._git_commit = None

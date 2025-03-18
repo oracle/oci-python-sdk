@@ -33,12 +33,10 @@ class CreateEntitlementDetails(object):
             'compartment_id': 'str',
             'csi': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'csi': 'csi'
         }
-
         self._compartment_id = None
         self._csi = None
 

@@ -44,13 +44,11 @@ class Action(object):
             'description': 'str',
             'url': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'description': 'description',
             'url': 'url'
         }
-
         self._type = None
         self._description = None
         self._url = None

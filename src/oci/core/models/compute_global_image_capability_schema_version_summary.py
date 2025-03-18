@@ -43,14 +43,12 @@ class ComputeGlobalImageCapabilitySchemaVersionSummary(object):
             'display_name': 'str',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'name': 'name',
             'compute_global_image_capability_schema_id': 'computeGlobalImageCapabilitySchemaId',
             'display_name': 'displayName',
             'time_created': 'timeCreated'
         }
-
         self._name = None
         self._compute_global_image_capability_schema_id = None
         self._display_name = None

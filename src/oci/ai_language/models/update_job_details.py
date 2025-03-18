@@ -33,12 +33,10 @@ class UpdateJobDetails(object):
             'display_name': 'str',
             'description': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description'
         }
-
         self._display_name = None
         self._description = None
 

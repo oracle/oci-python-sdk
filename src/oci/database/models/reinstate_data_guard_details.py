@@ -33,12 +33,10 @@ class ReinstateDataGuardDetails(object):
             'database_admin_password': 'str',
             'source_database_id': 'str'
         }
-
         self.attribute_map = {
             'database_admin_password': 'databaseAdminPassword',
             'source_database_id': 'sourceDatabaseId'
         }
-
         self._database_admin_password = None
         self._source_database_id = None
 

@@ -38,13 +38,11 @@ class KeyPhraseDocumentResult(object):
             'key_phrases': 'list[KeyPhrase]',
             'language_code': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'key_phrases': 'keyPhrases',
             'language_code': 'languageCode'
         }
-
         self._key = None
         self._key_phrases = None
         self._language_code = None

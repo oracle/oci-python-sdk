@@ -59,7 +59,6 @@ class ThresholdPolicy(AutoScalingPolicy):
             'is_enabled': 'bool',
             'rules': 'list[Condition]'
         }
-
         self.attribute_map = {
             'capacity': 'capacity',
             'id': 'id',
@@ -69,7 +68,6 @@ class ThresholdPolicy(AutoScalingPolicy):
             'is_enabled': 'isEnabled',
             'rules': 'rules'
         }
-
         self._capacity = None
         self._id = None
         self._display_name = None

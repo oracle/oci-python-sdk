@@ -28,11 +28,9 @@ class TranscriptionJobCollection(object):
         self.swagger_types = {
             'items': 'list[TranscriptionJobSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

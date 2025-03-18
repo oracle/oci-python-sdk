@@ -157,12 +157,10 @@ class ContainerCapabilities(object):
             'add_capabilities': 'list[str]',
             'drop_capabilities': 'list[str]'
         }
-
         self.attribute_map = {
             'add_capabilities': 'addCapabilities',
             'drop_capabilities': 'dropCapabilities'
         }
-
         self._add_capabilities = None
         self._drop_capabilities = None
 

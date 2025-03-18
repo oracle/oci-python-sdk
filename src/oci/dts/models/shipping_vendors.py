@@ -28,11 +28,9 @@ class ShippingVendors(object):
         self.swagger_types = {
             'vendors': 'list[str]'
         }
-
         self.attribute_map = {
             'vendors': 'vendors'
         }
-
         self._vendors = None
 
     @property

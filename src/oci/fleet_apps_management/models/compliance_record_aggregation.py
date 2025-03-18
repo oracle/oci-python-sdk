@@ -33,12 +33,10 @@ class ComplianceRecordAggregation(object):
             'count': 'int',
             'dimensions': 'ComplianceRecordDimension'
         }
-
         self.attribute_map = {
             'count': 'count',
             'dimensions': 'dimensions'
         }
-
         self._count = None
         self._dimensions = None
 

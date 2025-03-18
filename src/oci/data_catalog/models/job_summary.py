@@ -234,7 +234,6 @@ class JobSummary(object):
             'error_message': 'str',
             'executions': 'list[JobExecutionSummary]'
         }
-
         self.attribute_map = {
             'key': 'key',
             'uri': 'uri',
@@ -260,7 +259,6 @@ class JobSummary(object):
             'error_message': 'errorMessage',
             'executions': 'executions'
         }
-
         self._key = None
         self._uri = None
         self._display_name = None

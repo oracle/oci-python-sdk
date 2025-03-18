@@ -28,11 +28,9 @@ class CreateDataMaskingActivityDetails(object):
         self.swagger_types = {
             'is_resume_data_masking': 'bool'
         }
-
         self.attribute_map = {
             'is_resume_data_masking': 'isResumeDataMasking'
         }
-
         self._is_resume_data_masking = None
 
     @property

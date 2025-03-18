@@ -58,7 +58,6 @@ class CreateReplicaDetails(object):
             'is_delete_protected': 'bool',
             'replica_overrides': 'ReplicaOverrides'
         }
-
         self.attribute_map = {
             'db_system_id': 'dbSystemId',
             'display_name': 'displayName',
@@ -68,7 +67,6 @@ class CreateReplicaDetails(object):
             'is_delete_protected': 'isDeleteProtected',
             'replica_overrides': 'replicaOverrides'
         }
-
         self._db_system_id = None
         self._display_name = None
         self._description = None

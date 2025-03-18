@@ -35,12 +35,10 @@ class DefinedTagsResourceFilter(ResourceFilter):
             'attribute': 'str',
             'value': 'list[DefinedTagFilterValue]'
         }
-
         self.attribute_map = {
             'attribute': 'attribute',
             'value': 'value'
         }
-
         self._attribute = None
         self._value = None
         self._attribute = 'DEFINED_TAGS'

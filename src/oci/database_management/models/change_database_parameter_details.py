@@ -38,13 +38,11 @@ class ChangeDatabaseParameterDetails(object):
             'value': 'str',
             'update_comment': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'value': 'value',
             'update_comment': 'updateComment'
         }
-
         self._name = None
         self._value = None
         self._update_comment = None

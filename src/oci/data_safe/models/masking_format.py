@@ -46,13 +46,11 @@ class MaskingFormat(object):
             'description': 'str',
             'format_entries': 'list[FormatEntry]'
         }
-
         self.attribute_map = {
             'condition': 'condition',
             'description': 'description',
             'format_entries': 'formatEntries'
         }
-
         self._condition = None
         self._description = None
         self._format_entries = None

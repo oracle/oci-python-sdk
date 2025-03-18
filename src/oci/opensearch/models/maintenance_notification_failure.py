@@ -43,14 +43,12 @@ class MaintenanceNotificationFailure(object):
             'error_code': 'str',
             'error_description': 'str'
         }
-
         self.attribute_map = {
             'cluster_ids': 'clusterIds',
             'tenant_id': 'tenantId',
             'error_code': 'errorCode',
             'error_description': 'errorDescription'
         }
-
         self._cluster_ids = None
         self._tenant_id = None
         self._error_code = None

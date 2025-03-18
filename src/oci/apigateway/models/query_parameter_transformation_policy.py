@@ -38,13 +38,11 @@ class QueryParameterTransformationPolicy(object):
             'rename_query_parameters': 'RenameQueryParameterPolicy',
             'filter_query_parameters': 'FilterQueryParameterPolicy'
         }
-
         self.attribute_map = {
             'set_query_parameters': 'setQueryParameters',
             'rename_query_parameters': 'renameQueryParameters',
             'filter_query_parameters': 'filterQueryParameters'
         }
-
         self._set_query_parameters = None
         self._rename_query_parameters = None
         self._filter_query_parameters = None

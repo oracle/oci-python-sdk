@@ -83,7 +83,6 @@ class DiscoveredExternalAsmInstance(DiscoveredExternalDbSystemComponent):
             'instance_name': 'str',
             'adr_home_directory': 'str'
         }
-
         self.attribute_map = {
             'component_id': 'componentId',
             'display_name': 'displayName',
@@ -97,7 +96,6 @@ class DiscoveredExternalAsmInstance(DiscoveredExternalDbSystemComponent):
             'instance_name': 'instanceName',
             'adr_home_directory': 'adrHomeDirectory'
         }
-
         self._component_id = None
         self._display_name = None
         self._component_name = None

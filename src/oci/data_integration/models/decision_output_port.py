@@ -109,7 +109,6 @@ class DecisionOutputPort(TypedObject):
             'fields': 'list[TypedObject]',
             'decision_output_port_type': 'str'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -123,7 +122,6 @@ class DecisionOutputPort(TypedObject):
             'fields': 'fields',
             'decision_output_port_type': 'decisionOutputPortType'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

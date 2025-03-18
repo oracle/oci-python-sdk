@@ -35,12 +35,10 @@ class DnsServiceDiscoveryConfiguration(ServiceDiscoveryConfiguration):
             'type': 'str',
             'hostname': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'hostname': 'hostname'
         }
-
         self._type = None
         self._hostname = None
         self._type = 'DNS'

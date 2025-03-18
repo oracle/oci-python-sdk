@@ -33,12 +33,10 @@ class TimeStatsCluster(object):
             'group_by_facets': 'list[dict(str, object)]',
             'count': 'int'
         }
-
         self.attribute_map = {
             'group_by_facets': 'groupByFacets',
             'count': 'count'
         }
-
         self._group_by_facets = None
         self._count = None
 

@@ -78,7 +78,6 @@ class ClusterCreateOptions(object):
             'open_id_connect_token_authentication_config': 'OpenIdConnectTokenAuthenticationConfig',
             'open_id_connect_discovery': 'OpenIdConnectDiscovery'
         }
-
         self.attribute_map = {
             'service_lb_subnet_ids': 'serviceLbSubnetIds',
             'ip_families': 'ipFamilies',
@@ -90,7 +89,6 @@ class ClusterCreateOptions(object):
             'open_id_connect_token_authentication_config': 'openIdConnectTokenAuthenticationConfig',
             'open_id_connect_discovery': 'openIdConnectDiscovery'
         }
-
         self._service_lb_subnet_ids = None
         self._ip_families = None
         self._kubernetes_network_config = None

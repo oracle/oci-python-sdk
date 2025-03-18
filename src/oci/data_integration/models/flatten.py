@@ -105,7 +105,6 @@ class Flatten(Operator):
             'flatten_field': 'DynamicProxyField',
             'materialized_flatten_field': 'MaterializedDynamicField'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -124,7 +123,6 @@ class Flatten(Operator):
             'flatten_field': 'flattenField',
             'materialized_flatten_field': 'materializedFlattenField'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

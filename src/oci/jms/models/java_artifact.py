@@ -102,7 +102,6 @@ class JavaArtifact(object):
             'script_download_url': 'str',
             'script_checksum_url': 'str'
         }
-
         self.attribute_map = {
             'artifact_id': 'artifactId',
             'artifact_description': 'artifactDescription',
@@ -118,7 +117,6 @@ class JavaArtifact(object):
             'script_download_url': 'scriptDownloadUrl',
             'script_checksum_url': 'scriptChecksumUrl'
         }
-
         self._artifact_id = None
         self._artifact_description = None
         self._artifact_content_type = None

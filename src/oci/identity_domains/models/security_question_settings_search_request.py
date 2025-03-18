@@ -59,13 +59,11 @@ class SecurityQuestionSettingsSearchRequest(object):
             'attributes': 'list[str]',
             'attribute_sets': 'list[str]'
         }
-
         self.attribute_map = {
             'schemas': 'schemas',
             'attributes': 'attributes',
             'attribute_sets': 'attributeSets'
         }
-
         self._schemas = None
         self._attributes = None
         self._attribute_sets = None

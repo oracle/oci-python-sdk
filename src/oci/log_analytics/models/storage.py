@@ -33,12 +33,10 @@ class Storage(object):
             'is_archiving_enabled': 'bool',
             'archiving_configuration': 'ArchivingConfiguration'
         }
-
         self.attribute_map = {
             'is_archiving_enabled': 'isArchivingEnabled',
             'archiving_configuration': 'archivingConfiguration'
         }
-
         self._is_archiving_enabled = None
         self._archiving_configuration = None
 

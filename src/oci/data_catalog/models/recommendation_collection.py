@@ -33,12 +33,10 @@ class RecommendationCollection(object):
             'count': 'int',
             'items': 'list[RecommendationDetails]'
         }
-
         self.attribute_map = {
             'count': 'count',
             'items': 'items'
         }
-
         self._count = None
         self._items = None
 

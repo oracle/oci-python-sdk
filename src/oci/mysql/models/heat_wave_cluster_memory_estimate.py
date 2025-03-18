@@ -76,7 +76,6 @@ class HeatWaveClusterMemoryEstimate(object):
             'time_updated': 'datetime',
             'table_schemas': 'list[HeatWaveClusterSchemaMemoryEstimate]'
         }
-
         self.attribute_map = {
             'db_system_id': 'dbSystemId',
             'status': 'status',
@@ -84,7 +83,6 @@ class HeatWaveClusterMemoryEstimate(object):
             'time_updated': 'timeUpdated',
             'table_schemas': 'tableSchemas'
         }
-
         self._db_system_id = None
         self._status = None
         self._time_created = None

@@ -28,11 +28,9 @@ class QueryWarehouseDataObjectDataDetails(object):
         self.swagger_types = {
             'query': 'DataObjectQuery'
         }
-
         self.attribute_map = {
             'query': 'query'
         }
-
         self._query = None
 
     @property

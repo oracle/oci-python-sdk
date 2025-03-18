@@ -77,7 +77,6 @@ class UpdateScheduledJobDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'retry_intervals': 'list[int]'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
@@ -89,7 +88,6 @@ class UpdateScheduledJobDetails(object):
             'defined_tags': 'definedTags',
             'retry_intervals': 'retryIntervals'
         }
-
         self._display_name = None
         self._description = None
         self._schedule_type = None

@@ -45,14 +45,12 @@ class PropertyOverride(object):
             'property_name': 'str',
             'property_value': 'str'
         }
-
         self.attribute_map = {
             'match_type': 'matchType',
             'match_value': 'matchValue',
             'property_name': 'propertyName',
             'property_value': 'propertyValue'
         }
-
         self._match_type = None
         self._match_value = None
         self._property_name = None

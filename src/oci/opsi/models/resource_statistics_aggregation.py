@@ -33,12 +33,10 @@ class ResourceStatisticsAggregation(object):
             'database_details': 'DatabaseDetails',
             'current_statistics': 'ResourceStatistics'
         }
-
         self.attribute_map = {
             'database_details': 'databaseDetails',
             'current_statistics': 'currentStatistics'
         }
-
         self._database_details = None
         self._current_statistics = None
 

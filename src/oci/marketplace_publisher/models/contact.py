@@ -38,13 +38,11 @@ class Contact(object):
             'last_name': 'str',
             'email': 'str'
         }
-
         self.attribute_map = {
             'first_name': 'firstName',
             'last_name': 'lastName',
             'email': 'email'
         }
-
         self._first_name = None
         self._last_name = None
         self._email = None

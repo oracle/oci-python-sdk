@@ -42,12 +42,10 @@ class GenerateMaskingReportForDownloadDetails(object):
             'report_id': 'str',
             'report_format': 'str'
         }
-
         self.attribute_map = {
             'report_id': 'reportId',
             'report_format': 'reportFormat'
         }
-
         self._report_id = None
         self._report_format = None
 

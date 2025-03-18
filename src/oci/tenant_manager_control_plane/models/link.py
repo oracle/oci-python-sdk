@@ -84,7 +84,6 @@ class Link(object):
             'time_updated': 'datetime',
             'time_terminated': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'parent_tenancy_id': 'parentTenancyId',
@@ -94,7 +93,6 @@ class Link(object):
             'time_updated': 'timeUpdated',
             'time_terminated': 'timeTerminated'
         }
-
         self._id = None
         self._parent_tenancy_id = None
         self._child_tenancy_id = None

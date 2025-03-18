@@ -38,13 +38,11 @@ class CustomSoftwareSourceFilter(object):
             'module_stream_profile_filters': 'list[ModuleStreamProfileFilter]',
             'package_group_filters': 'list[PackageGroupFilter]'
         }
-
         self.attribute_map = {
             'package_filters': 'packageFilters',
             'module_stream_profile_filters': 'moduleStreamProfileFilters',
             'package_group_filters': 'packageGroupFilters'
         }
-
         self._package_filters = None
         self._module_stream_profile_filters = None
         self._package_group_filters = None

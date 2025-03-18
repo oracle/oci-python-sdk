@@ -28,11 +28,9 @@ class UpdateStorageDetails(object):
         self.swagger_types = {
             'archiving_configuration': 'ArchivingConfiguration'
         }
-
         self.attribute_map = {
             'archiving_configuration': 'archivingConfiguration'
         }
-
         self._archiving_configuration = None
 
     @property

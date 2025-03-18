@@ -75,7 +75,6 @@ class CreateGroupProfileDetails(CreateProfileDetails):
             'defined_tags': 'dict(str, dict(str, object))',
             'managed_instance_group_id': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'compartment_id': 'compartmentId',
@@ -88,7 +87,6 @@ class CreateGroupProfileDetails(CreateProfileDetails):
             'defined_tags': 'definedTags',
             'managed_instance_group_id': 'managedInstanceGroupId'
         }
-
         self._display_name = None
         self._compartment_id = None
         self._description = None

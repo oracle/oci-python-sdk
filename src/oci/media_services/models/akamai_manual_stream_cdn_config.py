@@ -98,7 +98,6 @@ class AkamaiManualStreamCdnConfig(StreamCdnConfigSection):
             'edge_token_key': 'str',
             'edge_token_salt': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'origin_auth_sign_type': 'originAuthSignType',
@@ -113,7 +112,6 @@ class AkamaiManualStreamCdnConfig(StreamCdnConfigSection):
             'edge_token_key': 'edgeTokenKey',
             'edge_token_salt': 'edgeTokenSalt'
         }
-
         self._type = None
         self._origin_auth_sign_type = None
         self._origin_auth_sign_encryption = None

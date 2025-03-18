@@ -28,11 +28,9 @@ class SourceMappingResponse(object):
         self.swagger_types = {
             'parsed_response': 'list[ParsedContent]'
         }
-
         self.attribute_map = {
             'parsed_response': 'parsedResponse'
         }
-
         self._parsed_response = None
 
     @property

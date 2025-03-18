@@ -33,12 +33,10 @@ class SpanLog(object):
             'log_key': 'str',
             'log_value': 'str'
         }
-
         self.attribute_map = {
             'log_key': 'logKey',
             'log_value': 'logValue'
         }
-
         self._log_key = None
         self._log_value = None
 

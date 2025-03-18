@@ -47,13 +47,11 @@ class UpdateJavaLicenseAcceptanceRecordDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'license_acceptance_status': 'licenseAcceptanceStatus',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._license_acceptance_status = None
         self._freeform_tags = None
         self._defined_tags = None

@@ -43,14 +43,12 @@ class CreateIndexDetails(object):
             'keys': 'list[IndexKey]',
             'is_if_not_exists': 'bool'
         }
-
         self.attribute_map = {
             'name': 'name',
             'compartment_id': 'compartmentId',
             'keys': 'keys',
             'is_if_not_exists': 'isIfNotExists'
         }
-
         self._name = None
         self._compartment_id = None
         self._keys = None

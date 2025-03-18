@@ -53,7 +53,6 @@ class CreateByoipRangeDetails(object):
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'cidr_block': 'cidrBlock',
             'compartment_id': 'compartmentId',
@@ -62,7 +61,6 @@ class CreateByoipRangeDetails(object):
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags'
         }
-
         self._cidr_block = None
         self._compartment_id = None
         self._ipv6_cidr_block = None

@@ -40,13 +40,11 @@ class OAuth2LogoutBackend(ApiSpecificationRouteBackend):
             'allowed_post_logout_uris': 'list[str]',
             'post_logout_state': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'allowed_post_logout_uris': 'allowedPostLogoutUris',
             'post_logout_state': 'postLogoutState'
         }
-
         self._type = None
         self._allowed_post_logout_uris = None
         self._post_logout_state = None

@@ -40,13 +40,11 @@ class CreateOracleDbLinkDataTransferMediumDetails(CreateOracleDataTransferMedium
             'object_storage_bucket': 'CreateObjectStoreBucket',
             'name': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'object_storage_bucket': 'objectStorageBucket',
             'name': 'name'
         }
-
         self._type = None
         self._object_storage_bucket = None
         self._name = None

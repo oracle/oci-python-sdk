@@ -48,7 +48,6 @@ class UpdateAutoScalingConfigurationDetails(object):
             'is_enabled': 'bool',
             'cool_down_in_seconds': 'int'
         }
-
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
@@ -56,7 +55,6 @@ class UpdateAutoScalingConfigurationDetails(object):
             'is_enabled': 'isEnabled',
             'cool_down_in_seconds': 'coolDownInSeconds'
         }
-
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None

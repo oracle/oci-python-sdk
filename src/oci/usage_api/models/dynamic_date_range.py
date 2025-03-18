@@ -86,12 +86,10 @@ class DynamicDateRange(DateRange):
             'date_range_type': 'str',
             'dynamic_date_range_type': 'str'
         }
-
         self.attribute_map = {
             'date_range_type': 'dateRangeType',
             'dynamic_date_range_type': 'dynamicDateRangeType'
         }
-
         self._date_range_type = None
         self._dynamic_date_range_type = None
         self._date_range_type = 'DYNAMIC'

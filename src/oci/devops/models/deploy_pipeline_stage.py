@@ -33,12 +33,10 @@ class DeployPipelineStage(object):
             'deploy_stage_id': 'str',
             'display_name': 'str'
         }
-
         self.attribute_map = {
             'deploy_stage_id': 'deployStageId',
             'display_name': 'displayName'
         }
-
         self._deploy_stage_id = None
         self._display_name = None
 

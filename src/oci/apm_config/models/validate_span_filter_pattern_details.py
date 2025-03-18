@@ -28,11 +28,9 @@ class ValidateSpanFilterPatternDetails(object):
         self.swagger_types = {
             'filter_text': 'str'
         }
-
         self.attribute_map = {
             'filter_text': 'filterText'
         }
-
         self._filter_text = None
 
     @property

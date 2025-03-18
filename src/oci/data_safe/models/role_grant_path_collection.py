@@ -28,11 +28,9 @@ class RoleGrantPathCollection(object):
         self.swagger_types = {
             'items': 'list[RoleGrantPathSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

@@ -33,12 +33,10 @@ class HostInsightResourceStatisticsAggregation(object):
             'host_details': 'HostDetails',
             'current_statistics': 'HostResourceStatistics'
         }
-
         self.attribute_map = {
             'host_details': 'hostDetails',
             'current_statistics': 'currentStatistics'
         }
-
         self._host_details = None
         self._current_statistics = None
 

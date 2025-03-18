@@ -28,11 +28,9 @@ class ApiValidations(object):
         self.swagger_types = {
             'validations': 'list[ApiValidationDetails]'
         }
-
         self.attribute_map = {
             'validations': 'validations'
         }
-
         self._validations = None
 
     @property

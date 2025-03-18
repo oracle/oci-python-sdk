@@ -29,11 +29,9 @@ class Ipam(object):
         self.swagger_types = {
             'placeholder': 'str'
         }
-
         self.attribute_map = {
             'placeholder': 'placeholder'
         }
-
         self._placeholder = None
 
     @property

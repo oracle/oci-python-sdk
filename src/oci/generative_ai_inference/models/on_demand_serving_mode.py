@@ -35,12 +35,10 @@ class OnDemandServingMode(ServingMode):
             'serving_type': 'str',
             'model_id': 'str'
         }
-
         self.attribute_map = {
             'serving_type': 'servingType',
             'model_id': 'modelId'
         }
-
         self._serving_type = None
         self._model_id = None
         self._serving_type = 'ON_DEMAND'

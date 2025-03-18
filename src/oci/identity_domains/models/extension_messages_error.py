@@ -34,12 +34,10 @@ class ExtensionMessagesError(object):
             'message_id': 'str',
             'additional_data': 'object'
         }
-
         self.attribute_map = {
             'message_id': 'messageId',
             'additional_data': 'additionalData'
         }
-
         self._message_id = None
         self._additional_data = None
 

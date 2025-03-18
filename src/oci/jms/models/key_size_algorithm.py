@@ -51,12 +51,10 @@ class KeySizeAlgorithm(object):
             'name': 'str',
             'key_size': 'int'
         }
-
         self.attribute_map = {
             'name': 'name',
             'key_size': 'keySize'
         }
-
         self._name = None
         self._key_size = None
 

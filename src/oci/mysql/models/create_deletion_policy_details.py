@@ -56,13 +56,11 @@ class CreateDeletionPolicyDetails(object):
             'final_backup': 'str',
             'is_delete_protected': 'bool'
         }
-
         self.attribute_map = {
             'automatic_backup_retention': 'automaticBackupRetention',
             'final_backup': 'finalBackup',
             'is_delete_protected': 'isDeleteProtected'
         }
-
         self._automatic_backup_retention = None
         self._final_backup = None
         self._is_delete_protected = None

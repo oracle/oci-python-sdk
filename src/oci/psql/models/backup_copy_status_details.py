@@ -61,14 +61,12 @@ class BackupCopyStatusDetails(object):
             'backup_id': 'str',
             'region': 'str'
         }
-
         self.attribute_map = {
             'state': 'state',
             'state_details': 'stateDetails',
             'backup_id': 'backupId',
             'region': 'region'
         }
-
         self._state = None
         self._state_details = None
         self._backup_id = None

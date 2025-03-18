@@ -51,6 +51,18 @@ class DeploymentBackup(object):
     #: This constant has a value of "DATA_TRANSFORMS"
     DEPLOYMENT_TYPE_DATA_TRANSFORMS = "DATA_TRANSFORMS"
 
+    #: A constant which can be used with the backup_source_type property of a DeploymentBackup.
+    #: This constant has a value of "MANUAL"
+    BACKUP_SOURCE_TYPE_MANUAL = "MANUAL"
+
+    #: A constant which can be used with the backup_source_type property of a DeploymentBackup.
+    #: This constant has a value of "AUTOMATIC"
+    BACKUP_SOURCE_TYPE_AUTOMATIC = "AUTOMATIC"
+
+    #: A constant which can be used with the backup_source_type property of a DeploymentBackup.
+    #: This constant has a value of "SCHEDULED"
+    BACKUP_SOURCE_TYPE_SCHEDULED = "SCHEDULED"
+
     #: A constant which can be used with the lifecycle_state property of a DeploymentBackup.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -142,6 +154,12 @@ class DeploymentBackup(object):
             The value to assign to the is_automatic property of this DeploymentBackup.
         :type is_automatic: bool
 
+        :param backup_source_type:
+            The value to assign to the backup_source_type property of this DeploymentBackup.
+            Allowed values for this property are: "MANUAL", "AUTOMATIC", "SCHEDULED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type backup_source_type: str
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this DeploymentBackup.
             Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED", "WAITING", 'UNKNOWN_ENUM_VALUE'.
@@ -222,6 +240,7 @@ class DeploymentBackup(object):
             'compartment_id': 'str',
             'display_name': 'str',
             'is_automatic': 'bool',
+            'backup_source_type': 'str',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'time_of_backup': 'datetime',
@@ -240,7 +259,6 @@ class DeploymentBackup(object):
             'is_metadata_only': 'bool',
             'locks': 'list[ResourceLock]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'deployment_id': 'deploymentId',
@@ -248,6 +266,7 @@ class DeploymentBackup(object):
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
             'is_automatic': 'isAutomatic',
+            'backup_source_type': 'backupSourceType',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'time_of_backup': 'timeOfBackup',
@@ -266,13 +285,13 @@ class DeploymentBackup(object):
             'is_metadata_only': 'isMetadataOnly',
             'locks': 'locks'
         }
-
         self._id = None
         self._deployment_id = None
         self._deployment_type = None
         self._compartment_id = None
         self._display_name = None
         self._is_automatic = None
+        self._backup_source_type = None
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._time_of_backup = None
@@ -456,6 +475,36 @@ class DeploymentBackup(object):
         :type: bool
         """
         self._is_automatic = is_automatic
+
+    @property
+    def backup_source_type(self):
+        """
+        Gets the backup_source_type of this DeploymentBackup.
+        Possible deployment backup source types.
+
+        Allowed values for this property are: "MANUAL", "AUTOMATIC", "SCHEDULED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The backup_source_type of this DeploymentBackup.
+        :rtype: str
+        """
+        return self._backup_source_type
+
+    @backup_source_type.setter
+    def backup_source_type(self, backup_source_type):
+        """
+        Sets the backup_source_type of this DeploymentBackup.
+        Possible deployment backup source types.
+
+
+        :param backup_source_type: The backup_source_type of this DeploymentBackup.
+        :type: str
+        """
+        allowed_values = ["MANUAL", "AUTOMATIC", "SCHEDULED"]
+        if not value_allowed_none_or_none_sentinel(backup_source_type, allowed_values):
+            backup_source_type = 'UNKNOWN_ENUM_VALUE'
+        self._backup_source_type = backup_source_type
 
     @property
     def lifecycle_state(self):

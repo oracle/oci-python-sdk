@@ -172,7 +172,6 @@ class CreateVirtualCircuitDetails(object):
             'type': 'str',
             'ip_mtu': 'str'
         }
-
         self.attribute_map = {
             'bandwidth_shape_name': 'bandwidthShapeName',
             'compartment_id': 'compartmentId',
@@ -196,7 +195,6 @@ class CreateVirtualCircuitDetails(object):
             'type': 'type',
             'ip_mtu': 'ipMtu'
         }
-
         self._bandwidth_shape_name = None
         self._compartment_id = None
         self._cross_connect_mappings = None

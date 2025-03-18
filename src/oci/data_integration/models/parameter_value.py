@@ -33,12 +33,10 @@ class ParameterValue(object):
             'simple_value': 'object',
             'root_object_value': 'object'
         }
-
         self.attribute_map = {
             'simple_value': 'simpleValue',
             'root_object_value': 'rootObjectValue'
         }
-
         self._simple_value = None
         self._root_object_value = None
 

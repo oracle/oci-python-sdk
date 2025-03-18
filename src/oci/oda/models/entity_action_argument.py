@@ -86,7 +86,6 @@ class EntityActionArgument(object):
             'is_multi_value': 'bool',
             'entity_name': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'type': 'type',
@@ -95,7 +94,6 @@ class EntityActionArgument(object):
             'is_multi_value': 'isMultiValue',
             'entity_name': 'entityName'
         }
-
         self._name = None
         self._type = None
         self._meta_type = None

@@ -40,13 +40,11 @@ class OcirDeployArtifactSource(DeployArtifactSource):
             'image_uri': 'str',
             'image_digest': 'str'
         }
-
         self.attribute_map = {
             'deploy_artifact_source_type': 'deployArtifactSourceType',
             'image_uri': 'imageUri',
             'image_digest': 'imageDigest'
         }
-
         self._deploy_artifact_source_type = None
         self._image_uri = None
         self._image_digest = None

@@ -38,13 +38,11 @@ class ExtractDetailsSummary(object):
             'password': 'str',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'par_url': 'parUrl',
             'password': 'password',
             'time_created': 'timeCreated'
         }
-
         self._par_url = None
         self._password = None
         self._time_created = None

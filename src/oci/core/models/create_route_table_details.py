@@ -53,7 +53,6 @@ class CreateRouteTableDetails(object):
             'route_rules': 'list[RouteRule]',
             'vcn_id': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
@@ -62,7 +61,6 @@ class CreateRouteTableDetails(object):
             'route_rules': 'routeRules',
             'vcn_id': 'vcnId'
         }
-
         self._compartment_id = None
         self._defined_tags = None
         self._display_name = None

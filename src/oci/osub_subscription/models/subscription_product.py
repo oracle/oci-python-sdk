@@ -43,14 +43,12 @@ class SubscriptionProduct(object):
             'unit_of_measure': 'str',
             'provisioning_group': 'str'
         }
-
         self.attribute_map = {
             'part_number': 'partNumber',
             'name': 'name',
             'unit_of_measure': 'unitOfMeasure',
             'provisioning_group': 'provisioningGroup'
         }
-
         self._part_number = None
         self._name = None
         self._unit_of_measure = None

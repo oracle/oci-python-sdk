@@ -28,11 +28,9 @@ class FusionEnvironmentFamilyCollection(object):
         self.swagger_types = {
             'items': 'list[FusionEnvironmentFamilySummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

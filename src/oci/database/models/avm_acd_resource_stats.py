@@ -58,7 +58,6 @@ class AvmAcdResourceStats(object):
             'reserved_cpus': 'float',
             'reclaimable_cpus': 'float'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -68,7 +67,6 @@ class AvmAcdResourceStats(object):
             'reserved_cpus': 'reservedCpus',
             'reclaimable_cpus': 'reclaimableCpus'
         }
-
         self._id = None
         self._display_name = None
         self._provisioned_cpus = None

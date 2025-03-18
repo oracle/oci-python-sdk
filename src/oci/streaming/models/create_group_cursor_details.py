@@ -66,7 +66,6 @@ class CreateGroupCursorDetails(object):
             'timeout_in_ms': 'int',
             'commit_on_get': 'bool'
         }
-
         self.attribute_map = {
             'type': 'type',
             'time': 'time',
@@ -75,7 +74,6 @@ class CreateGroupCursorDetails(object):
             'timeout_in_ms': 'timeoutInMs',
             'commit_on_get': 'commitOnGet'
         }
-
         self._type = None
         self._time = None
         self._group_name = None

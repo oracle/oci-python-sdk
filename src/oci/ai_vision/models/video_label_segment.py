@@ -33,12 +33,10 @@ class VideoLabelSegment(object):
             'video_segment': 'VideoSegment',
             'confidence': 'float'
         }
-
         self.attribute_map = {
             'video_segment': 'videoSegment',
             'confidence': 'confidence'
         }
-
         self._video_segment = None
         self._confidence = None
 

@@ -148,7 +148,6 @@ class UpdateManagementSavedSearchDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'provider_id': 'providerId',
@@ -171,7 +170,6 @@ class UpdateManagementSavedSearchDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._display_name = None
         self._provider_id = None
         self._provider_version = None

@@ -59,7 +59,6 @@ class UpdateOkeCanaryDeployStageDetails(UpdateDeployStageDetails):
             'defined_tags': 'dict(str, dict(str, object))',
             'kubernetes_manifest_deploy_artifact_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'description': 'description',
             'display_name': 'displayName',
@@ -69,7 +68,6 @@ class UpdateOkeCanaryDeployStageDetails(UpdateDeployStageDetails):
             'defined_tags': 'definedTags',
             'kubernetes_manifest_deploy_artifact_ids': 'kubernetesManifestDeployArtifactIds'
         }
-
         self._description = None
         self._display_name = None
         self._deploy_stage_type = None

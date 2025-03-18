@@ -38,13 +38,11 @@ class DeployPluginsDetails(object):
             'agent_compartment_id': 'str',
             'agent_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'plugin_ids': 'pluginIds',
             'agent_compartment_id': 'agentCompartmentId',
             'agent_ids': 'agentIds'
         }
-
         self._plugin_ids = None
         self._agent_compartment_id = None
         self._agent_ids = None

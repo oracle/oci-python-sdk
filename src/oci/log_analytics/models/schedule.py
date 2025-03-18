@@ -67,13 +67,11 @@ class Schedule(object):
             'misfire_policy': 'str',
             'time_of_first_execution': 'datetime'
         }
-
         self.attribute_map = {
             'type': 'type',
             'misfire_policy': 'misfirePolicy',
             'time_of_first_execution': 'timeOfFirstExecution'
         }
-
         self._type = None
         self._misfire_policy = None
         self._time_of_first_execution = None

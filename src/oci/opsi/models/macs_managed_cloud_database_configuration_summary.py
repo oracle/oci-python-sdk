@@ -100,7 +100,6 @@ class MacsManagedCloudDatabaseConfigurationSummary(DatabaseConfigurationSummary)
             'parent_id': 'str',
             'exadata_details': 'ExadataDetails'
         }
-
         self.attribute_map = {
             'database_insight_id': 'databaseInsightId',
             'entity_source': 'entitySource',
@@ -118,7 +117,6 @@ class MacsManagedCloudDatabaseConfigurationSummary(DatabaseConfigurationSummary)
             'parent_id': 'parentId',
             'exadata_details': 'exadataDetails'
         }
-
         self._database_insight_id = None
         self._entity_source = None
         self._compartment_id = None

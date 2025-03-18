@@ -83,11 +83,9 @@ class Endpoint(object):
         self.swagger_types = {
             'type': 'str'
         }
-
         self.attribute_map = {
             'type': 'type'
         }
-
         self._type = None
 
     @staticmethod

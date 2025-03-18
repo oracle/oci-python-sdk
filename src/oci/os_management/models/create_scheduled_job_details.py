@@ -208,7 +208,6 @@ class CreateScheduledJobDetails(object):
             'update_names': 'list[str]',
             'os_family': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
@@ -227,7 +226,6 @@ class CreateScheduledJobDetails(object):
             'update_names': 'updateNames',
             'os_family': 'osFamily'
         }
-
         self._compartment_id = None
         self._display_name = None
         self._description = None

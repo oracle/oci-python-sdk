@@ -110,7 +110,6 @@ class DbSystemEndpoint(object):
             'resource_type': 'str',
             'resource_id': 'str'
         }
-
         self.attribute_map = {
             'hostname': 'hostname',
             'ip_address': 'ipAddress',
@@ -122,7 +121,6 @@ class DbSystemEndpoint(object):
             'resource_type': 'resourceType',
             'resource_id': 'resourceId'
         }
-
         self._hostname = None
         self._ip_address = None
         self._port = None

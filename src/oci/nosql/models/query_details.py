@@ -68,7 +68,6 @@ class QueryDetails(object):
             'variables': 'dict(str, object)',
             'timeout_in_ms': 'int'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'statement': 'statement',
@@ -78,7 +77,6 @@ class QueryDetails(object):
             'variables': 'variables',
             'timeout_in_ms': 'timeoutInMs'
         }
-
         self._compartment_id = None
         self._statement = None
         self._is_prepared = None

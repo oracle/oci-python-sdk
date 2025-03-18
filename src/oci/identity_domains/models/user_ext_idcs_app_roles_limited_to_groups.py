@@ -59,7 +59,6 @@ class UserExtIdcsAppRolesLimitedToGroups(object):
             'display': 'str',
             'ocid': 'str'
         }
-
         self.attribute_map = {
             'idcs_app_role_id': 'idcsAppRoleId',
             'value': 'value',
@@ -67,7 +66,6 @@ class UserExtIdcsAppRolesLimitedToGroups(object):
             'display': 'display',
             'ocid': 'ocid'
         }
-
         self._idcs_app_role_id = None
         self._value = None
         self._ref = None

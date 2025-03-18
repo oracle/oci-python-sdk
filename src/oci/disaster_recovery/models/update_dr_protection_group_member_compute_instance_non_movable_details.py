@@ -50,7 +50,6 @@ class UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails(UpdateDrProt
             'file_system_operations': 'list[UpdateComputeInstanceNonMovableFileSystemOperationDetails]',
             'block_volume_operations': 'list[UpdateComputeInstanceNonMovableBlockVolumeOperationDetails]'
         }
-
         self.attribute_map = {
             'member_id': 'memberId',
             'member_type': 'memberType',
@@ -58,7 +57,6 @@ class UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails(UpdateDrProt
             'file_system_operations': 'fileSystemOperations',
             'block_volume_operations': 'blockVolumeOperations'
         }
-
         self._member_id = None
         self._member_type = None
         self._is_start_stop_enabled = None

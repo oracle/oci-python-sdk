@@ -43,14 +43,12 @@ class CaptureConsoleHistoryDetails(object):
             'freeform_tags': 'dict(str, str)',
             'instance_id': 'str'
         }
-
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
             'instance_id': 'instanceId'
         }
-
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None

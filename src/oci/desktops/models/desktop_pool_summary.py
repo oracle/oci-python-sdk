@@ -103,7 +103,6 @@ class DesktopPoolSummary(object):
             'compartment_id': 'str',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -116,7 +115,6 @@ class DesktopPoolSummary(object):
             'compartment_id': 'compartmentId',
             'time_created': 'timeCreated'
         }
-
         self._id = None
         self._display_name = None
         self._lifecycle_state = None

@@ -28,11 +28,9 @@ class CancelBuildRunDetails(object):
         self.swagger_types = {
             'reason': 'str'
         }
-
         self.attribute_map = {
             'reason': 'reason'
         }
-
         self._reason = None
 
     @property

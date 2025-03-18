@@ -71,7 +71,6 @@ class AwrDbCpuUsageCollection(AwrQueryResult):
             'num_cpus': 'float',
             'items': 'list[AwrDbCpuUsageSummary]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'version': 'version',
@@ -83,7 +82,6 @@ class AwrDbCpuUsageCollection(AwrQueryResult):
             'num_cpus': 'numCpus',
             'items': 'items'
         }
-
         self._name = None
         self._version = None
         self._query_key = None

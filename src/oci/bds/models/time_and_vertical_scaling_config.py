@@ -43,14 +43,12 @@ class TimeAndVerticalScalingConfig(object):
             'target_ocpus_per_node': 'int',
             'target_memory_per_node': 'int'
         }
-
         self.attribute_map = {
             'time_recurrence': 'timeRecurrence',
             'target_shape': 'targetShape',
             'target_ocpus_per_node': 'targetOcpusPerNode',
             'target_memory_per_node': 'targetMemoryPerNode'
         }
-
         self._time_recurrence = None
         self._target_shape = None
         self._target_ocpus_per_node = None

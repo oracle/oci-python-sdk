@@ -38,13 +38,11 @@ class Claim(object):
             'value': 'str',
             'issuer': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'value': 'value',
             'issuer': 'issuer'
         }
-
         self._key = None
         self._value = None
         self._issuer = None

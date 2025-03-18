@@ -33,12 +33,10 @@ class HeatWaveFleetSummary(object):
             'aggregated_metrics': 'list[HeatWaveFleetMetricSummaryDefinition]',
             'inventory': 'list[HeatWaveFleetByCategory]'
         }
-
         self.attribute_map = {
             'aggregated_metrics': 'aggregatedMetrics',
             'inventory': 'inventory'
         }
-
         self._aggregated_metrics = None
         self._inventory = None
 

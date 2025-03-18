@@ -28,11 +28,9 @@ class ImportModelArtifactDetails(object):
         self.swagger_types = {
             'artifact_import_details': 'ArtifactImportDetails'
         }
-
         self.attribute_map = {
             'artifact_import_details': 'artifactImportDetails'
         }
-
         self._artifact_import_details = None
 
     @property

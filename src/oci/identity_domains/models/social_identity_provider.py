@@ -247,7 +247,6 @@ class SocialIdentityProvider(object):
             'refresh_token_url': 'str',
             'relay_idp_param_mappings': 'list[SocialIdentityProviderRelayIdpParamMappings]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -290,7 +289,6 @@ class SocialIdentityProvider(object):
             'refresh_token_url': 'refreshTokenUrl',
             'relay_idp_param_mappings': 'relayIdpParamMappings'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

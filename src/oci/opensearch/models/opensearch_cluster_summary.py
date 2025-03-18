@@ -117,7 +117,6 @@ class OpensearchClusterSummary(object):
             'backup_policy': 'BackupPolicy',
             'outbound_cluster_config': 'OutboundClusterConfig'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -136,7 +135,6 @@ class OpensearchClusterSummary(object):
             'backup_policy': 'backupPolicy',
             'outbound_cluster_config': 'outboundClusterConfig'
         }
-
         self._id = None
         self._display_name = None
         self._compartment_id = None

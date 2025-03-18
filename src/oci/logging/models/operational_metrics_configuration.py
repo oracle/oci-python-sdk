@@ -33,12 +33,10 @@ class OperationalMetricsConfiguration(object):
             'source': 'OperationalMetricsSource',
             'destination': 'OperationalMetricsDestination'
         }
-
         self.attribute_map = {
             'source': 'source',
             'destination': 'destination'
         }
-
         self._source = None
         self._destination = None
 

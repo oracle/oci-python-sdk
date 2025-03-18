@@ -28,11 +28,9 @@ class MeshCollection(object):
         self.swagger_types = {
             'items': 'list[MeshSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

@@ -45,14 +45,12 @@ class ObjectListDataset(LocationDetails):
             'namespace_name': 'str',
             'object_names': 'list[str]'
         }
-
         self.attribute_map = {
             'location_type': 'locationType',
             'bucket_name': 'bucketName',
             'namespace_name': 'namespaceName',
             'object_names': 'objectNames'
         }
-
         self._location_type = None
         self._bucket_name = None
         self._namespace_name = None

@@ -48,7 +48,6 @@ class CreateNodeReplaceConfigurationDetails(object):
             'metric_type': 'str',
             'duration_in_minutes': 'int'
         }
-
         self.attribute_map = {
             'level_type_details': 'levelTypeDetails',
             'display_name': 'displayName',
@@ -56,7 +55,6 @@ class CreateNodeReplaceConfigurationDetails(object):
             'metric_type': 'metricType',
             'duration_in_minutes': 'durationInMinutes'
         }
-
         self._level_type_details = None
         self._display_name = None
         self._cluster_admin_password = None

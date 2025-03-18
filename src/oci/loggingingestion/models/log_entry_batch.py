@@ -48,7 +48,6 @@ class LogEntryBatch(object):
             'subject': 'str',
             'defaultlogentrytime': 'datetime'
         }
-
         self.attribute_map = {
             'entries': 'entries',
             'source': 'source',
@@ -56,7 +55,6 @@ class LogEntryBatch(object):
             'subject': 'subject',
             'defaultlogentrytime': 'defaultlogentrytime'
         }
-
         self._entries = None
         self._source = None
         self._type = None

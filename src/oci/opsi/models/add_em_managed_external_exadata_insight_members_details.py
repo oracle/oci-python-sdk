@@ -35,12 +35,10 @@ class AddEmManagedExternalExadataInsightMembersDetails(AddExadataInsightMembersD
             'entity_source': 'str',
             'member_entity_details': 'list[CreateEmManagedExternalExadataMemberEntityDetails]'
         }
-
         self.attribute_map = {
             'entity_source': 'entitySource',
             'member_entity_details': 'memberEntityDetails'
         }
-
         self._entity_source = None
         self._member_entity_details = None
         self._entity_source = 'EM_MANAGED_EXTERNAL_EXADATA'

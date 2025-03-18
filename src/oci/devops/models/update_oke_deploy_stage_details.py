@@ -74,7 +74,6 @@ class UpdateOkeDeployStageDetails(UpdateDeployStageDetails):
             'namespace': 'str',
             'rollback_policy': 'DeployStageRollbackPolicy'
         }
-
         self.attribute_map = {
             'description': 'description',
             'display_name': 'displayName',
@@ -87,7 +86,6 @@ class UpdateOkeDeployStageDetails(UpdateDeployStageDetails):
             'namespace': 'namespace',
             'rollback_policy': 'rollbackPolicy'
         }
-
         self._description = None
         self._display_name = None
         self._deploy_stage_type = None

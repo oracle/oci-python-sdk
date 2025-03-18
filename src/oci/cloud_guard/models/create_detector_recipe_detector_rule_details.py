@@ -28,11 +28,9 @@ class CreateDetectorRecipeDetectorRuleDetails(object):
         self.swagger_types = {
             'details': 'CreateDetectorRuleDetails'
         }
-
         self.attribute_map = {
             'details': 'details'
         }
-
         self._details = None
 
     @property

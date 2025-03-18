@@ -29,11 +29,9 @@ class ImportTfStateJobOperationDetails(JobOperationDetails):
         self.swagger_types = {
             'operation': 'str'
         }
-
         self.attribute_map = {
             'operation': 'operation'
         }
-
         self._operation = None
         self._operation = 'IMPORT_TF_STATE'
 

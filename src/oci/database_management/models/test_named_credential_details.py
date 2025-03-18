@@ -30,11 +30,9 @@ class TestNamedCredentialDetails(object):
         self.swagger_types = {
             'managed_database_id': 'str'
         }
-
         self.attribute_map = {
             'managed_database_id': 'managedDatabaseId'
         }
-
         self._managed_database_id = None
 
     @property

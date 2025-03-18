@@ -56,7 +56,6 @@ class DeployedApplicationWorkItemDetails(WorkItemDetails):
             'deployed_application_name': 'str',
             'deployed_application_installation_path': 'str'
         }
-
         self.attribute_map = {
             'kind': 'kind',
             'work_item_type': 'workItemType',
@@ -65,7 +64,6 @@ class DeployedApplicationWorkItemDetails(WorkItemDetails):
             'deployed_application_name': 'deployedApplicationName',
             'deployed_application_installation_path': 'deployedApplicationInstallationPath'
         }
-
         self._kind = None
         self._work_item_type = None
         self._deployed_application_key = None

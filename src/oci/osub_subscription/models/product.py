@@ -53,7 +53,6 @@ class Product(object):
             'product_category': 'str',
             'ucm_rate_card_part_type': 'str'
         }
-
         self.attribute_map = {
             'part_number': 'partNumber',
             'name': 'name',
@@ -62,7 +61,6 @@ class Product(object):
             'product_category': 'productCategory',
             'ucm_rate_card_part_type': 'ucmRateCardPartType'
         }
-
         self._part_number = None
         self._name = None
         self._unit_of_measure = None

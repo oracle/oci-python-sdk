@@ -40,13 +40,11 @@ class UnifiedAgentWindowsEventSource(UnifiedAgentLoggingSource):
             'source_type': 'str',
             'channels': 'list[str]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'source_type': 'sourceType',
             'channels': 'channels'
         }
-
         self._name = None
         self._source_type = None
         self._channels = None

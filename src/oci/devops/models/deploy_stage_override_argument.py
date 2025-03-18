@@ -38,13 +38,11 @@ class DeployStageOverrideArgument(object):
             'name': 'str',
             'value': 'str'
         }
-
         self.attribute_map = {
             'deploy_stage_id': 'deployStageId',
             'name': 'name',
             'value': 'value'
         }
-
         self._deploy_stage_id = None
         self._name = None
         self._value = None

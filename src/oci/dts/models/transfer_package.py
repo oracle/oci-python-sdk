@@ -106,7 +106,6 @@ class TransferPackage(object):
             'transfer_site_shipping_address': 'str',
             'attached_transfer_device_labels': 'list[str]'
         }
-
         self.attribute_map = {
             'label': 'label',
             'lifecycle_state': 'lifecycleState',
@@ -118,7 +117,6 @@ class TransferPackage(object):
             'transfer_site_shipping_address': 'transferSiteShippingAddress',
             'attached_transfer_device_labels': 'attachedTransferDeviceLabels'
         }
-
         self._label = None
         self._lifecycle_state = None
         self._transfer_job_id = None

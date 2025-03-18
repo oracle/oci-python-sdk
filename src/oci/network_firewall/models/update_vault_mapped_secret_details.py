@@ -45,14 +45,12 @@ class UpdateVaultMappedSecretDetails(UpdateMappedSecretDetails):
             'vault_secret_id': 'str',
             'version_number': 'int'
         }
-
         self.attribute_map = {
             'source': 'source',
             'type': 'type',
             'vault_secret_id': 'vaultSecretId',
             'version_number': 'versionNumber'
         }
-
         self._source = None
         self._type = None
         self._vault_secret_id = None

@@ -129,7 +129,6 @@ class ManagedInstanceUsage(object):
             'time_first_seen': 'datetime',
             'time_last_seen': 'datetime'
         }
-
         self.attribute_map = {
             'managed_instance_id': 'managedInstanceId',
             'managed_instance_type': 'managedInstanceType',
@@ -147,7 +146,6 @@ class ManagedInstanceUsage(object):
             'time_first_seen': 'timeFirstSeen',
             'time_last_seen': 'timeLastSeen'
         }
-
         self._managed_instance_id = None
         self._managed_instance_type = None
         self._hostname = None

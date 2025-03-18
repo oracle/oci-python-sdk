@@ -78,7 +78,6 @@ class DiffSummary(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'old_path': 'oldPath',
             'new_path': 'newPath',
@@ -92,7 +91,6 @@ class DiffSummary(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._old_path = None
         self._new_path = None
         self._old_id = None

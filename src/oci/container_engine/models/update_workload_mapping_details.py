@@ -38,13 +38,11 @@ class UpdateWorkloadMappingDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'mapped_compartment_id': 'mappedCompartmentId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._mapped_compartment_id = None
         self._freeform_tags = None
         self._defined_tags = None

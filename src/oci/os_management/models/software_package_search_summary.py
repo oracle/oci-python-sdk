@@ -86,7 +86,6 @@ class SoftwarePackageSearchSummary(object):
             'errata': 'list[Id]',
             'software_sources': 'list[SoftwareSourceId]'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'name': 'name',
@@ -98,7 +97,6 @@ class SoftwarePackageSearchSummary(object):
             'errata': 'errata',
             'software_sources': 'softwareSources'
         }
-
         self._display_name = None
         self._name = None
         self._type = None

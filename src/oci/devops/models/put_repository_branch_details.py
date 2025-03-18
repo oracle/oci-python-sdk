@@ -35,12 +35,10 @@ class PutRepositoryBranchDetails(PutRepositoryRefDetails):
             'ref_type': 'str',
             'commit_id': 'str'
         }
-
         self.attribute_map = {
             'ref_type': 'refType',
             'commit_id': 'commitId'
         }
-
         self._ref_type = None
         self._commit_id = None
         self._ref_type = 'BRANCH'

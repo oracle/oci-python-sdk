@@ -28,11 +28,9 @@ class DetectLanguageKeyPhrasesDetails(object):
         self.swagger_types = {
             'text': 'str'
         }
-
         self.attribute_map = {
             'text': 'text'
         }
-
         self._text = None
 
     @property

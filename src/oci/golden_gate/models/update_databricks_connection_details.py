@@ -121,7 +121,6 @@ class UpdateDatabricksConnectionDetails(UpdateConnectionDetails):
             'client_secret_secret_id': 'str',
             'storage_credential_name': 'str'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'display_name': 'displayName',
@@ -143,7 +142,6 @@ class UpdateDatabricksConnectionDetails(UpdateConnectionDetails):
             'client_secret_secret_id': 'clientSecretSecretId',
             'storage_credential_name': 'storageCredentialName'
         }
-
         self._connection_type = None
         self._display_name = None
         self._description = None

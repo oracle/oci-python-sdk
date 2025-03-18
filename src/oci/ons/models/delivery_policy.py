@@ -28,11 +28,9 @@ class DeliveryPolicy(object):
         self.swagger_types = {
             'backoff_retry_policy': 'BackoffRetryPolicy'
         }
-
         self.attribute_map = {
             'backoff_retry_policy': 'backoffRetryPolicy'
         }
-
         self._backoff_retry_policy = None
 
     @property

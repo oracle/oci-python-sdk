@@ -40,13 +40,11 @@ class RealtimeMessageAuthenticationToken(RealtimeMessageAuthentication):
             'compartment_id': 'str',
             'token': 'str'
         }
-
         self.attribute_map = {
             'authentication_type': 'authenticationType',
             'compartment_id': 'compartmentId',
             'token': 'token'
         }
-
         self._authentication_type = None
         self._compartment_id = None
         self._token = None

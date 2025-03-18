@@ -40,13 +40,11 @@ class VaultSecretCredentialDetails(CredentialDetails):
             'secret_id': 'str',
             'secret_version': 'str'
         }
-
         self.attribute_map = {
             'credential_type': 'credentialType',
             'secret_id': 'secretId',
             'secret_version': 'secretVersion'
         }
-
         self._credential_type = None
         self._secret_id = None
         self._secret_version = None

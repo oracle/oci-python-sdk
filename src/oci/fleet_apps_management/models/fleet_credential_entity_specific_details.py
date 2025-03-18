@@ -35,12 +35,10 @@ class FleetCredentialEntitySpecificDetails(CredentialEntitySpecificDetails):
             'credential_level': 'str',
             'variables': 'list[Variable]'
         }
-
         self.attribute_map = {
             'credential_level': 'credentialLevel',
             'variables': 'variables'
         }
-
         self._credential_level = None
         self._variables = None
         self._credential_level = 'FLEET'

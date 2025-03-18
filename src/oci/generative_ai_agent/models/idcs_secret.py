@@ -50,7 +50,6 @@ class IdcsSecret(SecretDetail):
             'vault_secret_id': 'str',
             'scope_url': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'idcs_url': 'idcsUrl',
@@ -58,7 +57,6 @@ class IdcsSecret(SecretDetail):
             'vault_secret_id': 'vaultSecretId',
             'scope_url': 'scopeUrl'
         }
-
         self._type = None
         self._idcs_url = None
         self._client_id = None

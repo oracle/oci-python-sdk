@@ -53,14 +53,12 @@ class AuthDetails(object):
             'parent_ref': 'ParentReference',
             'model_type': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'model_version': 'modelVersion',
             'parent_ref': 'parentRef',
             'model_type': 'modelType'
         }
-
         self._key = None
         self._model_version = None
         self._parent_ref = None

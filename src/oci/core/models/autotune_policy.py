@@ -43,11 +43,9 @@ class AutotunePolicy(object):
         self.swagger_types = {
             'autotune_type': 'str'
         }
-
         self.attribute_map = {
             'autotune_type': 'autotuneType'
         }
-
         self._autotune_type = None
 
     @staticmethod

@@ -43,14 +43,12 @@ class TaxSummary(object):
             'country': 'str',
             'url': 'str'
         }
-
         self.attribute_map = {
             'code': 'code',
             'name': 'name',
             'country': 'country',
             'url': 'url'
         }
-
         self._code = None
         self._name = None
         self._country = None

@@ -28,11 +28,9 @@ class IngressGatewayMutualTransportLayerSecurityDetails(object):
         self.swagger_types = {
             'maximum_validity': 'int'
         }
-
         self.attribute_map = {
             'maximum_validity': 'maximumValidity'
         }
-
         self._maximum_validity = None
 
     @property

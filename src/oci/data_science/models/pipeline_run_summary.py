@@ -132,7 +132,6 @@ class PipelineRunSummary(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'id': 'id',
             'time_accepted': 'timeAccepted',
@@ -150,7 +149,6 @@ class PipelineRunSummary(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._id = None
         self._time_accepted = None
         self._time_started = None

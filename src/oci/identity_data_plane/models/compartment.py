@@ -58,7 +58,6 @@ class Compartment(object):
             'status': 'EntityStatus',
             'property_map': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -68,7 +67,6 @@ class Compartment(object):
             'status': 'status',
             'property_map': 'propertyMap'
         }
-
         self._id = None
         self._name = None
         self._display_name = None

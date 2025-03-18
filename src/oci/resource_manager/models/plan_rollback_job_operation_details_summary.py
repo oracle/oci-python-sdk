@@ -37,12 +37,10 @@ class PlanRollbackJobOperationDetailsSummary(JobOperationDetailsSummary):
             'operation': 'str',
             'target_rollback_job_id': 'str'
         }
-
         self.attribute_map = {
             'operation': 'operation',
             'target_rollback_job_id': 'targetRollbackJobId'
         }
-
         self._operation = None
         self._target_rollback_job_id = None
         self._operation = 'PLAN_ROLLBACK'

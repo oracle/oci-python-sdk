@@ -69,14 +69,12 @@ class AuditTrailDimensions(object):
             'status': 'str',
             'target_id': 'str'
         }
-
         self.attribute_map = {
             'location': 'location',
             'lifecycle_state': 'lifecycleState',
             'status': 'status',
             'target_id': 'targetId'
         }
-
         self._location = None
         self._lifecycle_state = None
         self._status = None

@@ -40,13 +40,11 @@ class PrivateEndpointOutboundConnection(OutboundConnection):
             'subnet_id': 'str',
             'nsg_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'outbound_connection_type': 'outboundConnectionType',
             'subnet_id': 'subnetId',
             'nsg_ids': 'nsgIds'
         }
-
         self._outbound_connection_type = None
         self._subnet_id = None
         self._nsg_ids = None

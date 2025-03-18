@@ -95,6 +95,8 @@ from .change_cluster_network_compartment_details import ChangeClusterNetworkComp
 from .change_compute_capacity_reservation_compartment_details import ChangeComputeCapacityReservationCompartmentDetails
 from .change_compute_capacity_topology_compartment_details import ChangeComputeCapacityTopologyCompartmentDetails
 from .change_compute_cluster_compartment_details import ChangeComputeClusterCompartmentDetails
+from .change_compute_gpu_memory_cluster_compartment_details import ChangeComputeGpuMemoryClusterCompartmentDetails
+from .change_compute_gpu_memory_fabric_compartment_details import ChangeComputeGpuMemoryFabricCompartmentDetails
 from .change_compute_image_capability_schema_compartment_details import ChangeComputeImageCapabilitySchemaCompartmentDetails
 from .change_cpe_compartment_details import ChangeCpeCompartmentDetails
 from .change_cross_connect_compartment_details import ChangeCrossConnectCompartmentDetails
@@ -149,6 +151,14 @@ from .compute_global_image_capability_schema import ComputeGlobalImageCapability
 from .compute_global_image_capability_schema_summary import ComputeGlobalImageCapabilitySchemaSummary
 from .compute_global_image_capability_schema_version import ComputeGlobalImageCapabilitySchemaVersion
 from .compute_global_image_capability_schema_version_summary import ComputeGlobalImageCapabilitySchemaVersionSummary
+from .compute_gpu_memory_cluster import ComputeGpuMemoryCluster
+from .compute_gpu_memory_cluster_collection import ComputeGpuMemoryClusterCollection
+from .compute_gpu_memory_cluster_instance_collection import ComputeGpuMemoryClusterInstanceCollection
+from .compute_gpu_memory_cluster_instance_summary import ComputeGpuMemoryClusterInstanceSummary
+from .compute_gpu_memory_cluster_summary import ComputeGpuMemoryClusterSummary
+from .compute_gpu_memory_fabric import ComputeGpuMemoryFabric
+from .compute_gpu_memory_fabric_collection import ComputeGpuMemoryFabricCollection
+from .compute_gpu_memory_fabric_summary import ComputeGpuMemoryFabricSummary
 from .compute_hpc_island import ComputeHpcIsland
 from .compute_hpc_island_collection import ComputeHpcIslandCollection
 from .compute_hpc_island_summary import ComputeHpcIslandSummary
@@ -185,6 +195,7 @@ from .create_compute_capacity_report_details import CreateComputeCapacityReportD
 from .create_compute_capacity_reservation_details import CreateComputeCapacityReservationDetails
 from .create_compute_capacity_topology_details import CreateComputeCapacityTopologyDetails
 from .create_compute_cluster_details import CreateComputeClusterDetails
+from .create_compute_gpu_memory_cluster_details import CreateComputeGpuMemoryClusterDetails
 from .create_compute_image_capability_schema_details import CreateComputeImageCapabilitySchemaDetails
 from .create_cpe_details import CreateCpeDetails
 from .create_cross_connect_details import CreateCrossConnectDetails
@@ -517,6 +528,8 @@ from .update_cluster_network_instance_pool_details import UpdateClusterNetworkIn
 from .update_compute_capacity_reservation_details import UpdateComputeCapacityReservationDetails
 from .update_compute_capacity_topology_details import UpdateComputeCapacityTopologyDetails
 from .update_compute_cluster_details import UpdateComputeClusterDetails
+from .update_compute_gpu_memory_cluster_details import UpdateComputeGpuMemoryClusterDetails
+from .update_compute_gpu_memory_fabric_details import UpdateComputeGpuMemoryFabricDetails
 from .update_compute_image_capability_schema_details import UpdateComputeImageCapabilitySchemaDetails
 from .update_console_history_details import UpdateConsoleHistoryDetails
 from .update_cpe_details import UpdateCpeDetails
@@ -718,6 +731,8 @@ core_type_mapping = {
     "ChangeComputeCapacityReservationCompartmentDetails": ChangeComputeCapacityReservationCompartmentDetails,
     "ChangeComputeCapacityTopologyCompartmentDetails": ChangeComputeCapacityTopologyCompartmentDetails,
     "ChangeComputeClusterCompartmentDetails": ChangeComputeClusterCompartmentDetails,
+    "ChangeComputeGpuMemoryClusterCompartmentDetails": ChangeComputeGpuMemoryClusterCompartmentDetails,
+    "ChangeComputeGpuMemoryFabricCompartmentDetails": ChangeComputeGpuMemoryFabricCompartmentDetails,
     "ChangeComputeImageCapabilitySchemaCompartmentDetails": ChangeComputeImageCapabilitySchemaCompartmentDetails,
     "ChangeCpeCompartmentDetails": ChangeCpeCompartmentDetails,
     "ChangeCrossConnectCompartmentDetails": ChangeCrossConnectCompartmentDetails,
@@ -772,6 +787,14 @@ core_type_mapping = {
     "ComputeGlobalImageCapabilitySchemaSummary": ComputeGlobalImageCapabilitySchemaSummary,
     "ComputeGlobalImageCapabilitySchemaVersion": ComputeGlobalImageCapabilitySchemaVersion,
     "ComputeGlobalImageCapabilitySchemaVersionSummary": ComputeGlobalImageCapabilitySchemaVersionSummary,
+    "ComputeGpuMemoryCluster": ComputeGpuMemoryCluster,
+    "ComputeGpuMemoryClusterCollection": ComputeGpuMemoryClusterCollection,
+    "ComputeGpuMemoryClusterInstanceCollection": ComputeGpuMemoryClusterInstanceCollection,
+    "ComputeGpuMemoryClusterInstanceSummary": ComputeGpuMemoryClusterInstanceSummary,
+    "ComputeGpuMemoryClusterSummary": ComputeGpuMemoryClusterSummary,
+    "ComputeGpuMemoryFabric": ComputeGpuMemoryFabric,
+    "ComputeGpuMemoryFabricCollection": ComputeGpuMemoryFabricCollection,
+    "ComputeGpuMemoryFabricSummary": ComputeGpuMemoryFabricSummary,
     "ComputeHpcIsland": ComputeHpcIsland,
     "ComputeHpcIslandCollection": ComputeHpcIslandCollection,
     "ComputeHpcIslandSummary": ComputeHpcIslandSummary,
@@ -808,6 +831,7 @@ core_type_mapping = {
     "CreateComputeCapacityReservationDetails": CreateComputeCapacityReservationDetails,
     "CreateComputeCapacityTopologyDetails": CreateComputeCapacityTopologyDetails,
     "CreateComputeClusterDetails": CreateComputeClusterDetails,
+    "CreateComputeGpuMemoryClusterDetails": CreateComputeGpuMemoryClusterDetails,
     "CreateComputeImageCapabilitySchemaDetails": CreateComputeImageCapabilitySchemaDetails,
     "CreateCpeDetails": CreateCpeDetails,
     "CreateCrossConnectDetails": CreateCrossConnectDetails,
@@ -1140,6 +1164,8 @@ core_type_mapping = {
     "UpdateComputeCapacityReservationDetails": UpdateComputeCapacityReservationDetails,
     "UpdateComputeCapacityTopologyDetails": UpdateComputeCapacityTopologyDetails,
     "UpdateComputeClusterDetails": UpdateComputeClusterDetails,
+    "UpdateComputeGpuMemoryClusterDetails": UpdateComputeGpuMemoryClusterDetails,
+    "UpdateComputeGpuMemoryFabricDetails": UpdateComputeGpuMemoryFabricDetails,
     "UpdateComputeImageCapabilitySchemaDetails": UpdateComputeImageCapabilitySchemaDetails,
     "UpdateConsoleHistoryDetails": UpdateConsoleHistoryDetails,
     "UpdateCpeDetails": UpdateCpeDetails,

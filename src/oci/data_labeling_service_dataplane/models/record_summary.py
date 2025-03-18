@@ -78,7 +78,6 @@ class RecordSummary(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -92,7 +91,6 @@ class RecordSummary(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._id = None
         self._name = None
         self._time_created = None

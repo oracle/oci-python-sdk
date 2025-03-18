@@ -119,7 +119,6 @@ class CopyObjectRequestSummary(object):
             'referenced_items': 'list[CopyObjectMetadataSummary]',
             'name': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'source_workspace_id': 'sourceWorkspaceId',
@@ -136,7 +135,6 @@ class CopyObjectRequestSummary(object):
             'referenced_items': 'referencedItems',
             'name': 'name'
         }
-
         self._key = None
         self._source_workspace_id = None
         self._object_keys = None

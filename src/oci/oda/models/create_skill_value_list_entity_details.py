@@ -40,13 +40,11 @@ class CreateSkillValueListEntityDetails(CreateSkillEntityDetails):
             'type': 'str',
             'values': 'list[StaticEntityValue]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'type': 'type',
             'values': 'values'
         }
-
         self._name = None
         self._type = None
         self._values = None

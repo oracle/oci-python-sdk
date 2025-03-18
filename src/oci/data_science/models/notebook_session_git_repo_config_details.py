@@ -28,11 +28,9 @@ class NotebookSessionGitRepoConfigDetails(object):
         self.swagger_types = {
             'url': 'str'
         }
-
         self.attribute_map = {
             'url': 'url'
         }
-
         self._url = None
 
     @property

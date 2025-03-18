@@ -28,11 +28,9 @@ class DocumentsConfiguration(object):
         self.swagger_types = {
             'config': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'config': 'config'
         }
-
         self._config = None
 
     @property

@@ -33,12 +33,10 @@ class AvailableCapability(object):
             'capability': 'str',
             'count': 'int'
         }
-
         self.attribute_map = {
             'capability': 'capability',
             'count': 'count'
         }
-
         self._capability = None
         self._count = None
 

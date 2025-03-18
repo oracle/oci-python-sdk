@@ -75,7 +75,6 @@ class ConditionalInputLink(FlowPortLink):
             'field_map': 'FieldMap',
             'condition': 'Expression'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -88,7 +87,6 @@ class ConditionalInputLink(FlowPortLink):
             'field_map': 'fieldMap',
             'condition': 'condition'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

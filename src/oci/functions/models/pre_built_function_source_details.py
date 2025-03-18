@@ -35,12 +35,10 @@ class PreBuiltFunctionSourceDetails(FunctionSourceDetails):
             'source_type': 'str',
             'pbf_listing_id': 'str'
         }
-
         self.attribute_map = {
             'source_type': 'sourceType',
             'pbf_listing_id': 'pbfListingId'
         }
-
         self._source_type = None
         self._pbf_listing_id = None
         self._source_type = 'PRE_BUILT_FUNCTIONS'

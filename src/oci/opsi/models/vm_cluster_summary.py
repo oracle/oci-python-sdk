@@ -43,14 +43,12 @@ class VmClusterSummary(object):
             'cpu_allocated': 'int',
             'db_nodes_count': 'int'
         }
-
         self.attribute_map = {
             'vmcluster_name': 'vmclusterName',
             'memory_allocated_in_gbs': 'memoryAllocatedInGBs',
             'cpu_allocated': 'cpuAllocated',
             'db_nodes_count': 'dbNodesCount'
         }
-
         self._vmcluster_name = None
         self._memory_allocated_in_gbs = None
         self._cpu_allocated = None

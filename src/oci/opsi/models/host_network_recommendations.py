@@ -55,13 +55,11 @@ class HostNetworkRecommendations(HostInsightHostRecommendations):
             'unused_instance': 'str',
             'is_abandoned_instance': 'bool'
         }
-
         self.attribute_map = {
             'metric_recommendation_name': 'metricRecommendationName',
             'unused_instance': 'unusedInstance',
             'is_abandoned_instance': 'isAbandonedInstance'
         }
-
         self._metric_recommendation_name = None
         self._unused_instance = None
         self._is_abandoned_instance = None

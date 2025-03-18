@@ -38,13 +38,11 @@ class CreateConnectionValidationDetails(object):
             'connection': 'CreateConnectionDetails',
             'registry_metadata': 'RegistryMetadata'
         }
-
         self.attribute_map = {
             'data_asset': 'dataAsset',
             'connection': 'connection',
             'registry_metadata': 'registryMetadata'
         }
-
         self._data_asset = None
         self._connection = None
         self._registry_metadata = None

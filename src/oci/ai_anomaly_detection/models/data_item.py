@@ -33,12 +33,10 @@ class DataItem(object):
             'timestamp': 'datetime',
             'values': 'list[float]'
         }
-
         self.attribute_map = {
             'timestamp': 'timestamp',
             'values': 'values'
         }
-
         self._timestamp = None
         self._values = None
 

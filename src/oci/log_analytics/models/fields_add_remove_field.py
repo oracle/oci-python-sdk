@@ -98,7 +98,6 @@ class FieldsAddRemoveField(AbstractField):
             'unit_type': 'str',
             'operation': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'display_name': 'displayName',
@@ -113,7 +112,6 @@ class FieldsAddRemoveField(AbstractField):
             'unit_type': 'unitType',
             'operation': 'operation'
         }
-
         self._name = None
         self._display_name = None
         self._is_declared = None

@@ -68,13 +68,11 @@ class Detector(object):
             'description': 'str',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'description': 'description',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._id = None
         self._description = None
         self._lifecycle_state = None

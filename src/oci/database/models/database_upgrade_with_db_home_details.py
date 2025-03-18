@@ -40,13 +40,11 @@ class DatabaseUpgradeWithDbHomeDetails(DatabaseUpgradeSourceBase):
             'options': 'str',
             'db_home_id': 'str'
         }
-
         self.attribute_map = {
             'source': 'source',
             'options': 'options',
             'db_home_id': 'dbHomeId'
         }
-
         self._source = None
         self._options = None
         self._db_home_id = None

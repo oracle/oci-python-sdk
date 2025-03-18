@@ -33,12 +33,10 @@ class InvoicingOrganization(object):
             'name': 'str',
             'number': 'float'
         }
-
         self.attribute_map = {
             'name': 'name',
             'number': 'number'
         }
-
         self._name = None
         self._number = None
 

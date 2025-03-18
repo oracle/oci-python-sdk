@@ -75,7 +75,6 @@ class TriggerDeploymentPipelineStageRunProgress(BuildPipelineStageRunProgress):
             'artifact_override_parameters': 'DeployArtifactOverrideArgumentCollection',
             'deployment_id': 'str'
         }
-
         self.attribute_map = {
             'stage_display_name': 'stageDisplayName',
             'build_pipeline_stage_type': 'buildPipelineStageType',
@@ -88,7 +87,6 @@ class TriggerDeploymentPipelineStageRunProgress(BuildPipelineStageRunProgress):
             'artifact_override_parameters': 'artifactOverrideParameters',
             'deployment_id': 'deploymentId'
         }
-
         self._stage_display_name = None
         self._build_pipeline_stage_type = None
         self._build_pipeline_stage_id = None

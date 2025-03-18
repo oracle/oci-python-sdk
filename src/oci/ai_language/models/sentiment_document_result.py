@@ -53,7 +53,6 @@ class SentimentDocumentResult(object):
             'sentences': 'list[SentimentSentence]',
             'language_code': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'document_sentiment': 'documentSentiment',
@@ -62,7 +61,6 @@ class SentimentDocumentResult(object):
             'sentences': 'sentences',
             'language_code': 'languageCode'
         }
-
         self._key = None
         self._document_sentiment = None
         self._document_scores = None

@@ -100,7 +100,6 @@ class PipelineSummary(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'id': 'id',
             'time_created': 'timeCreated',
@@ -114,7 +113,6 @@ class PipelineSummary(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._id = None
         self._time_created = None
         self._time_updated = None

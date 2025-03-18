@@ -48,11 +48,9 @@ class ScheduleHttpActionDetails(object):
         self.swagger_types = {
             'http_action_type': 'str'
         }
-
         self.attribute_map = {
             'http_action_type': 'httpActionType'
         }
-
         self._http_action_type = None
 
     @staticmethod

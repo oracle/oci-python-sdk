@@ -28,11 +28,9 @@ class DeploymentUpgradeCollection(object):
         self.swagger_types = {
             'items': 'list[DeploymentUpgradeSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

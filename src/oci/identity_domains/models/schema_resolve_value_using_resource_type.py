@@ -33,12 +33,10 @@ class SchemaResolveValueUsingResourceType(object):
             'value_to_be_resolved': 'str',
             'resolve_by': 'str'
         }
-
         self.attribute_map = {
             'value_to_be_resolved': 'valueToBeResolved',
             'resolve_by': 'resolveBy'
         }
-
         self._value_to_be_resolved = None
         self._resolve_by = None
 

@@ -28,11 +28,9 @@ class UpdateTargetDetectorRecipeDetectorRuleDetails(object):
         self.swagger_types = {
             'details': 'UpdateTargetDetectorRuleDetails'
         }
-
         self.attribute_map = {
             'details': 'details'
         }
-
         self._details = None
 
     @property

@@ -44,12 +44,10 @@ class FilterQueryParameterPolicy(object):
             'type': 'str',
             'items': 'list[FilterQueryParameterPolicyItem]'
         }
-
         self.attribute_map = {
             'type': 'type',
             'items': 'items'
         }
-
         self._type = None
         self._items = None
 

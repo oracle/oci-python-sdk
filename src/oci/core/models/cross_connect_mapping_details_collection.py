@@ -28,11 +28,9 @@ class CrossConnectMappingDetailsCollection(object):
         self.swagger_types = {
             'items': 'list[CrossConnectMappingDetails]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

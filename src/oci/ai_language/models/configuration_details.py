@@ -28,11 +28,9 @@ class ConfigurationDetails(object):
         self.swagger_types = {
             'configuration_map': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'configuration_map': 'configurationMap'
         }
-
         self._configuration_map = None
 
     @property

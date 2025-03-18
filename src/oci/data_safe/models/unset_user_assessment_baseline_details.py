@@ -28,11 +28,9 @@ class UnsetUserAssessmentBaselineDetails(object):
         self.swagger_types = {
             'target_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'target_ids': 'targetIds'
         }
-
         self._target_ids = None
 
     @property

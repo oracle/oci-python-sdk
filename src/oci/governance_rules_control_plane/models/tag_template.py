@@ -50,7 +50,6 @@ class TagTemplate(Template):
             'tags': 'list[Tag]',
             'tag_defaults': 'list[TagDefault]'
         }
-
         self.attribute_map = {
             'type': 'type',
             'name': 'name',
@@ -58,7 +57,6 @@ class TagTemplate(Template):
             'tags': 'tags',
             'tag_defaults': 'tagDefaults'
         }
-
         self._type = None
         self._name = None
         self._description = None

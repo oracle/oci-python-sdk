@@ -55,7 +55,6 @@ class CreateExternalMysqlDatabaseInsightDetails(CreateDatabaseInsightDetails):
             'database_id': 'str',
             'database_connector_id': 'str'
         }
-
         self.attribute_map = {
             'entity_source': 'entitySource',
             'compartment_id': 'compartmentId',
@@ -64,7 +63,6 @@ class CreateExternalMysqlDatabaseInsightDetails(CreateDatabaseInsightDetails):
             'database_id': 'databaseId',
             'database_connector_id': 'databaseConnectorId'
         }
-
         self._entity_source = None
         self._compartment_id = None
         self._freeform_tags = None

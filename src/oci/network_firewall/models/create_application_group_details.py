@@ -33,12 +33,10 @@ class CreateApplicationGroupDetails(object):
             'name': 'str',
             'apps': 'list[str]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'apps': 'apps'
         }
-
         self._name = None
         self._apps = None
 

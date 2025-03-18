@@ -53,7 +53,6 @@ class CreateLocalPeeringGatewayDetails(object):
             'route_table_id': 'str',
             'vcn_id': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
@@ -62,7 +61,6 @@ class CreateLocalPeeringGatewayDetails(object):
             'route_table_id': 'routeTableId',
             'vcn_id': 'vcnId'
         }
-
         self._compartment_id = None
         self._defined_tags = None
         self._display_name = None

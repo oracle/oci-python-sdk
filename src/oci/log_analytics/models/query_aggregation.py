@@ -73,7 +73,6 @@ class QueryAggregation(object):
             'query_execution_time_in_ms': 'int',
             'percent_complete': 'int'
         }
-
         self.attribute_map = {
             'total_count': 'totalCount',
             'total_matched_count': 'totalMatchedCount',
@@ -86,7 +85,6 @@ class QueryAggregation(object):
             'query_execution_time_in_ms': 'queryExecutionTimeInMs',
             'percent_complete': 'percentComplete'
         }
-
         self._total_count = None
         self._total_matched_count = None
         self._are_partial_results = None

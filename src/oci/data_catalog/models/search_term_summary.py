@@ -53,7 +53,6 @@ class SearchTermSummary(object):
             'parent_term_key': 'str',
             'parent_term_name': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'display_name': 'displayName',
@@ -62,7 +61,6 @@ class SearchTermSummary(object):
             'parent_term_key': 'parentTermKey',
             'parent_term_name': 'parentTermName'
         }
-
         self._key = None
         self._display_name = None
         self._glossary_key = None

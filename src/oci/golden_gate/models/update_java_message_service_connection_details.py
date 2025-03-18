@@ -206,7 +206,6 @@ class UpdateJavaMessageServiceConnectionDetails(UpdateConnectionDetails):
             'ssl_key_password_secret_id': 'str',
             'private_ip': 'str'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'display_name': 'displayName',
@@ -245,7 +244,6 @@ class UpdateJavaMessageServiceConnectionDetails(UpdateConnectionDetails):
             'ssl_key_password_secret_id': 'sslKeyPasswordSecretId',
             'private_ip': 'privateIp'
         }
-
         self._connection_type = None
         self._display_name = None
         self._description = None

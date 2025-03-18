@@ -78,7 +78,6 @@ class ReferencedDataObject(object):
             'object_status': 'int',
             'external_key': 'str'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'model_version': 'modelVersion',
@@ -89,7 +88,6 @@ class ReferencedDataObject(object):
             'object_status': 'objectStatus',
             'external_key': 'externalKey'
         }
-
         self._model_type = None
         self._model_version = None
         self._parent_ref = None

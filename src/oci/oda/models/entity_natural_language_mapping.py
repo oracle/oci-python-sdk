@@ -28,11 +28,9 @@ class EntityNaturalLanguageMapping(object):
         self.swagger_types = {
             'languages': 'list[LanguageMapping]'
         }
-
         self.attribute_map = {
             'languages': 'languages'
         }
-
         self._languages = None
 
     @property

@@ -35,12 +35,10 @@ class DocumentKeyValueExtractionFeature(DocumentFeature):
             'feature_type': 'str',
             'model_id': 'str'
         }
-
         self.attribute_map = {
             'feature_type': 'featureType',
             'model_id': 'modelId'
         }
-
         self._feature_type = None
         self._model_id = None
         self._feature_type = 'KEY_VALUE_EXTRACTION'

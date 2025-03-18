@@ -117,7 +117,6 @@ class CreateMonitoredResourceTypeDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'name': 'name',
             'display_name': 'displayName',
@@ -130,7 +129,6 @@ class CreateMonitoredResourceTypeDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._name = None
         self._display_name = None
         self._description = None

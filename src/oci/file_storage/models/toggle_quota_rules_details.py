@@ -28,11 +28,9 @@ class ToggleQuotaRulesDetails(object):
         self.swagger_types = {
             'are_quota_rules_enabled': 'bool'
         }
-
         self.attribute_map = {
             'are_quota_rules_enabled': 'areQuotaRulesEnabled'
         }
-
         self._are_quota_rules_enabled = None
 
     @property

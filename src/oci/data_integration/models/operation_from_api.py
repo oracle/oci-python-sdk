@@ -85,7 +85,6 @@ class OperationFromApi(Operation):
             'object_status': 'int',
             'operation_attributes': 'GenericRestApiAttributes'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'metadata': 'metadata',
@@ -100,7 +99,6 @@ class OperationFromApi(Operation):
             'object_status': 'objectStatus',
             'operation_attributes': 'operationAttributes'
         }
-
         self._model_type = None
         self._metadata = None
         self._key = None

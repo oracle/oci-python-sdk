@@ -38,12 +38,10 @@ class CreateStartTimeScheduleDetails(CreateScheduleDetails):
             'type': 'str',
             'time_to_start': 'datetime'
         }
-
         self.attribute_map = {
             'type': 'type',
             'time_to_start': 'timeToStart'
         }
-
         self._type = None
         self._time_to_start = None
         self._type = 'START_TIME'

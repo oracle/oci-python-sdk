@@ -49,11 +49,9 @@ class AddAutoScalePolicyDetails(object):
         self.swagger_types = {
             'policy_type': 'str'
         }
-
         self.attribute_map = {
             'policy_type': 'policyType'
         }
-
         self._policy_type = None
 
     @staticmethod

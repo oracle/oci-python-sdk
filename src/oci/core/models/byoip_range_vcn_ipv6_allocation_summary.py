@@ -43,14 +43,12 @@ class ByoipRangeVcnIpv6AllocationSummary(object):
             'ipv6_cidr_block': 'str',
             'vcn_id': 'str'
         }
-
         self.attribute_map = {
             'byoip_range_id': 'byoipRangeId',
             'compartment_id': 'compartmentId',
             'ipv6_cidr_block': 'ipv6CidrBlock',
             'vcn_id': 'vcnId'
         }
-
         self._byoip_range_id = None
         self._compartment_id = None
         self._ipv6_cidr_block = None

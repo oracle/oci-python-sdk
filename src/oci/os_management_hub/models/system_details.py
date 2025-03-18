@@ -118,7 +118,6 @@ class SystemDetails(object):
             'os_kernel_version': 'str',
             'os_system_version': 'str'
         }
-
         self.attribute_map = {
             'architecture': 'architecture',
             'ksplice_effective_kernel_version': 'kspliceEffectiveKernelVersion',
@@ -128,7 +127,6 @@ class SystemDetails(object):
             'os_kernel_version': 'osKernelVersion',
             'os_system_version': 'osSystemVersion'
         }
-
         self._architecture = None
         self._ksplice_effective_kernel_version = None
         self._os_family = None

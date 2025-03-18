@@ -28,11 +28,9 @@ class LabelNames(object):
         self.swagger_types = {
             'label_names': 'list[str]'
         }
-
         self.attribute_map = {
             'label_names': 'labelNames'
         }
-
         self._label_names = None
 
     @property

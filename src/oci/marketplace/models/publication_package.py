@@ -81,7 +81,6 @@ class PublicationPackage(object):
             'time_created': 'datetime',
             'operating_system': 'OperatingSystem'
         }
-
         self.attribute_map = {
             'description': 'description',
             'listing_id': 'listingId',
@@ -91,7 +90,6 @@ class PublicationPackage(object):
             'time_created': 'timeCreated',
             'operating_system': 'operatingSystem'
         }
-
         self._description = None
         self._listing_id = None
         self._version = None

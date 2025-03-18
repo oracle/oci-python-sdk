@@ -111,7 +111,6 @@ class SummarizeDatabaseInsightResourceCapacityTrendAggregationCollection(object)
             'item_duration_in_ms': 'int',
             'capacity_data': 'list[ResourceCapacityTrendAggregation]'
         }
-
         self.attribute_map = {
             'time_interval_start': 'timeIntervalStart',
             'time_interval_end': 'timeIntervalEnd',
@@ -122,7 +121,6 @@ class SummarizeDatabaseInsightResourceCapacityTrendAggregationCollection(object)
             'item_duration_in_ms': 'itemDurationInMs',
             'capacity_data': 'capacityData'
         }
-
         self._time_interval_start = None
         self._time_interval_end = None
         self._high_utilization_threshold = None

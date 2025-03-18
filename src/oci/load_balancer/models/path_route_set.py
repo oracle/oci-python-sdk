@@ -38,12 +38,10 @@ class PathRouteSet(object):
             'name': 'str',
             'path_routes': 'list[PathRoute]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'path_routes': 'pathRoutes'
         }
-
         self._name = None
         self._path_routes = None
 

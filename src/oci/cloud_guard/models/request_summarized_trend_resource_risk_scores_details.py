@@ -42,12 +42,10 @@ class RequestSummarizedTrendResourceRiskScoresDetails(object):
             'filter': 'str',
             'filter_id': 'str'
         }
-
         self.attribute_map = {
             'filter': 'filter',
             'filter_id': 'filterId'
         }
-
         self._filter = None
         self._filter_id = None
 

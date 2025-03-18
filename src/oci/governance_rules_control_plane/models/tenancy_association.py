@@ -34,12 +34,10 @@ class TenancyAssociation(Association):
             'type': 'str',
             'tenancy_id': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'tenancy_id': 'tenancyId'
         }
-
         self._type = None
         self._tenancy_id = None
         self._type = 'TENANCY'

@@ -38,13 +38,11 @@ class ApiSpecification(object):
             'logging_policies': 'ApiSpecificationLoggingPolicies',
             'routes': 'list[ApiSpecificationRoute]'
         }
-
         self.attribute_map = {
             'request_policies': 'requestPolicies',
             'logging_policies': 'loggingPolicies',
             'routes': 'routes'
         }
-
         self._request_policies = None
         self._logging_policies = None
         self._routes = None

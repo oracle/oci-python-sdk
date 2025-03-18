@@ -28,11 +28,9 @@ class SubscriptionLineItemCollection(object):
         self.swagger_types = {
             'items': 'list[SubscriptionLineItemSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

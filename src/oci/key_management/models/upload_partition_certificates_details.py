@@ -33,12 +33,10 @@ class UploadPartitionCertificatesDetails(object):
             'partition_certificate': 'str',
             'partition_owner_certificate': 'str'
         }
-
         self.attribute_map = {
             'partition_certificate': 'partitionCertificate',
             'partition_owner_certificate': 'partitionOwnerCertificate'
         }
-
         self._partition_certificate = None
         self._partition_owner_certificate = None
 

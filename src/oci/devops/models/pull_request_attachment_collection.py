@@ -28,11 +28,9 @@ class PullRequestAttachmentCollection(object):
         self.swagger_types = {
             'items': 'list[PullRequestAttachmentSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

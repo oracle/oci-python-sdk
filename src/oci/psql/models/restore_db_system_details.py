@@ -33,12 +33,10 @@ class RestoreDbSystemDetails(object):
             'backup_id': 'str',
             'ad': 'str'
         }
-
         self.attribute_map = {
             'backup_id': 'backupId',
             'ad': 'ad'
         }
-
         self._backup_id = None
         self._ad = None
 

@@ -75,7 +75,6 @@ class AlertPolicyRule(object):
             'display_name': 'str',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'key': 'key',
             'description': 'description',
@@ -84,7 +83,6 @@ class AlertPolicyRule(object):
             'display_name': 'displayName',
             'time_created': 'timeCreated'
         }
-
         self._key = None
         self._description = None
         self._expression = None

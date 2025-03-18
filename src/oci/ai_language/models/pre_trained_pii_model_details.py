@@ -40,13 +40,11 @@ class PreTrainedPiiModelDetails(ModelDetails):
             'model_type': 'str',
             'version': 'str'
         }
-
         self.attribute_map = {
             'language_code': 'languageCode',
             'model_type': 'modelType',
             'version': 'version'
         }
-
         self._language_code = None
         self._model_type = None
         self._version = None

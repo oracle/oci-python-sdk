@@ -68,7 +68,6 @@ class HealthCheckerDetails(object):
             'response_body_regex': 'str',
             'is_force_plain_text': 'bool'
         }
-
         self.attribute_map = {
             'protocol': 'protocol',
             'url_path': 'urlPath',
@@ -80,7 +79,6 @@ class HealthCheckerDetails(object):
             'response_body_regex': 'responseBodyRegex',
             'is_force_plain_text': 'isForcePlainText'
         }
-
         self._protocol = None
         self._url_path = None
         self._port = None

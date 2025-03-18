@@ -33,12 +33,10 @@ class UpdateIdpGroupMappingDetails(object):
             'idp_group_name': 'str',
             'group_id': 'str'
         }
-
         self.attribute_map = {
             'idp_group_name': 'idpGroupName',
             'group_id': 'groupId'
         }
-
         self._idp_group_name = None
         self._group_id = None
 

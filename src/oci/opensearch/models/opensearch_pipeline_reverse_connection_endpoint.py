@@ -33,12 +33,10 @@ class OpensearchPipelineReverseConnectionEndpoint(object):
             'customer_fqdn': 'str',
             'customer_ip': 'str'
         }
-
         self.attribute_map = {
             'customer_fqdn': 'customerFqdn',
             'customer_ip': 'customerIp'
         }
-
         self._customer_fqdn = None
         self._customer_ip = None
 

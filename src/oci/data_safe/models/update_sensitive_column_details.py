@@ -80,7 +80,6 @@ class UpdateSensitiveColumnDetails(object):
             'app_defined_child_column_keys': 'list[str]',
             'db_defined_child_column_keys': 'list[str]'
         }
-
         self.attribute_map = {
             'data_type': 'dataType',
             'status': 'status',
@@ -90,7 +89,6 @@ class UpdateSensitiveColumnDetails(object):
             'app_defined_child_column_keys': 'appDefinedChildColumnKeys',
             'db_defined_child_column_keys': 'dbDefinedChildColumnKeys'
         }
-
         self._data_type = None
         self._status = None
         self._sensitive_type_id = None

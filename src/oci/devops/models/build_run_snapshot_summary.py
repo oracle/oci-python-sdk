@@ -63,7 +63,6 @@ class BuildRunSnapshotSummary(object):
             'time_created': 'datetime',
             'time_updated': 'datetime'
         }
-
         self.attribute_map = {
             'build_pipeline_id': 'buildPipelineId',
             'commit_id': 'commitId',
@@ -74,7 +73,6 @@ class BuildRunSnapshotSummary(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated'
         }
-
         self._build_pipeline_id = None
         self._commit_id = None
         self._build_run_id = None

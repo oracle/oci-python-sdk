@@ -205,7 +205,6 @@ class MonitorSummary(object):
             'created_by': 'str',
             'last_updated_by': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -232,7 +231,6 @@ class MonitorSummary(object):
             'created_by': 'createdBy',
             'last_updated_by': 'lastUpdatedBy'
         }
-
         self._id = None
         self._display_name = None
         self._monitor_type = None

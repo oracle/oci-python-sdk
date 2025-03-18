@@ -54,7 +54,6 @@ class ApplicationDependencyRecommendationSummary(object):
             'recommended_gav': 'str',
             'recommended_purl': 'str'
         }
-
         self.attribute_map = {
             'gav': 'gav',
             'purl': 'purl',
@@ -63,7 +62,6 @@ class ApplicationDependencyRecommendationSummary(object):
             'recommended_gav': 'recommendedGav',
             'recommended_purl': 'recommendedPurl'
         }
-
         self._gav = None
         self._purl = None
         self._node_id = None

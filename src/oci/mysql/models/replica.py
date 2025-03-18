@@ -167,7 +167,6 @@ class Replica(object):
             'configuration_id': 'str',
             'replica_overrides': 'ReplicaOverrides'
         }
-
         self.attribute_map = {
             'secure_connections': 'secureConnections',
             'id': 'id',
@@ -192,7 +191,6 @@ class Replica(object):
             'configuration_id': 'configurationId',
             'replica_overrides': 'replicaOverrides'
         }
-
         self._secure_connections = None
         self._id = None
         self._db_system_id = None

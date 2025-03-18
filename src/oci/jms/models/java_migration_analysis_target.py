@@ -49,7 +49,6 @@ class JavaMigrationAnalysisTarget(object):
             'target_jdk_version': 'str',
             'exclude_package_prefixes': 'list[str]'
         }
-
         self.attribute_map = {
             'managed_instance_id': 'managedInstanceId',
             'application_installation_key': 'applicationInstallationKey',
@@ -57,7 +56,6 @@ class JavaMigrationAnalysisTarget(object):
             'target_jdk_version': 'targetJdkVersion',
             'exclude_package_prefixes': 'excludePackagePrefixes'
         }
-
         self._managed_instance_id = None
         self._application_installation_key = None
         self._source_jdk_version = None

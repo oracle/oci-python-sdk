@@ -30,11 +30,9 @@ class UpdateSSLCipherSuiteDetails(object):
         self.swagger_types = {
             'ciphers': 'list[str]'
         }
-
         self.attribute_map = {
             'ciphers': 'ciphers'
         }
-
         self._ciphers = None
 
     @property

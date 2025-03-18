@@ -38,13 +38,11 @@ class BucketRange(object):
             'upper': 'float',
             'alias': 'str'
         }
-
         self.attribute_map = {
             'lower': 'lower',
             'upper': 'upper',
             'alias': 'alias'
         }
-
         self._lower = None
         self._upper = None
         self._alias = None

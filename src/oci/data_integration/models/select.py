@@ -40,13 +40,11 @@ class Select(PushDownOperation):
             'is_distinct': 'bool',
             'select_columns': 'list[ShapeField]'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'is_distinct': 'isDistinct',
             'select_columns': 'selectColumns'
         }
-
         self._model_type = None
         self._is_distinct = None
         self._select_columns = None

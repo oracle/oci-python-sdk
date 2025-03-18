@@ -53,7 +53,6 @@ class ChildPdb(object):
             'recovery_status': 'str',
             'last_changed_by': 'str'
         }
-
         self.attribute_map = {
             'pdb_id': 'pdbId',
             'name': 'name',
@@ -62,7 +61,6 @@ class ChildPdb(object):
             'recovery_status': 'recoveryStatus',
             'last_changed_by': 'lastChangedBy'
         }
-
         self._pdb_id = None
         self._name = None
         self._open_mode = None

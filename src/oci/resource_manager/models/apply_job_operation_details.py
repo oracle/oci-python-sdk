@@ -58,14 +58,12 @@ class ApplyJobOperationDetails(JobOperationDetails):
             'execution_plan_strategy': 'str',
             'execution_plan_job_id': 'str'
         }
-
         self.attribute_map = {
             'operation': 'operation',
             'terraform_advanced_options': 'terraformAdvancedOptions',
             'execution_plan_strategy': 'executionPlanStrategy',
             'execution_plan_job_id': 'executionPlanJobId'
         }
-
         self._operation = None
         self._terraform_advanced_options = None
         self._execution_plan_strategy = None

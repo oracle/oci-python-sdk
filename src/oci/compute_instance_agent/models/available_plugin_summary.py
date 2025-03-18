@@ -43,14 +43,12 @@ class AvailablePluginSummary(object):
             'is_supported': 'bool',
             'is_enabled_by_default': 'bool'
         }
-
         self.attribute_map = {
             'name': 'name',
             'summary': 'summary',
             'is_supported': 'isSupported',
             'is_enabled_by_default': 'isEnabledByDefault'
         }
-
         self._name = None
         self._summary = None
         self._is_supported = None

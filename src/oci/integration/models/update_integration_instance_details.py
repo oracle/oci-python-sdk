@@ -100,7 +100,6 @@ class UpdateIntegrationInstanceDetails(object):
             'custom_endpoint': 'UpdateCustomEndpointDetails',
             'alternate_custom_endpoints': 'list[UpdateCustomEndpointDetails]'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'integration_instance_type': 'integrationInstanceType',
@@ -113,7 +112,6 @@ class UpdateIntegrationInstanceDetails(object):
             'custom_endpoint': 'customEndpoint',
             'alternate_custom_endpoints': 'alternateCustomEndpoints'
         }
-
         self._display_name = None
         self._integration_instance_type = None
         self._freeform_tags = None

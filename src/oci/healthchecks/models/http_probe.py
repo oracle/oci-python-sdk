@@ -108,7 +108,6 @@ class HttpProbe(object):
             'path': 'str',
             'headers': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'id': 'id',
             'results_url': 'resultsUrl',
@@ -124,7 +123,6 @@ class HttpProbe(object):
             'path': 'path',
             'headers': 'headers'
         }
-
         self._id = None
         self._results_url = None
         self._home_region = None

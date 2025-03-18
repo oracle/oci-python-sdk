@@ -28,11 +28,9 @@ class AdmissionControllerOptions(object):
         self.swagger_types = {
             'is_pod_security_policy_enabled': 'bool'
         }
-
         self.attribute_map = {
             'is_pod_security_policy_enabled': 'isPodSecurityPolicyEnabled'
         }
-
         self._is_pod_security_policy_enabled = None
 
     @property

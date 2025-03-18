@@ -51,12 +51,10 @@ class NetworkLoadBalancerHealthSummary(object):
             'network_load_balancer_id': 'str',
             'status': 'str'
         }
-
         self.attribute_map = {
             'network_load_balancer_id': 'networkLoadBalancerId',
             'status': 'status'
         }
-
         self._network_load_balancer_id = None
         self._status = None
 

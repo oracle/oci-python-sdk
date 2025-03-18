@@ -60,13 +60,11 @@ class EventContent(object):
             'instance_path': 'str',
             'size': 'int'
         }
-
         self.attribute_map = {
             'content_availability': 'contentAvailability',
             'instance_path': 'instancePath',
             'size': 'size'
         }
-
         self._content_availability = None
         self._instance_path = None
         self._size = None

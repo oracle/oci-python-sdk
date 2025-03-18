@@ -91,7 +91,6 @@ class SearchMonitoredResourceAssociationsDetails(object):
             'sort_by': 'str',
             'sort_order': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'source_resource_id': 'sourceResourceId',
@@ -104,7 +103,6 @@ class SearchMonitoredResourceAssociationsDetails(object):
             'sort_by': 'sortBy',
             'sort_order': 'sortOrder'
         }
-
         self._compartment_id = None
         self._source_resource_id = None
         self._source_resource_name = None

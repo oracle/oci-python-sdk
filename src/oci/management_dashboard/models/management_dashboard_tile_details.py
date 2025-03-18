@@ -98,7 +98,6 @@ class ManagementDashboardTileDetails(object):
             'drilldown_config': 'object',
             'parameters_map': 'object'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'saved_search_id': 'savedSearchId',
@@ -113,7 +112,6 @@ class ManagementDashboardTileDetails(object):
             'drilldown_config': 'drilldownConfig',
             'parameters_map': 'parametersMap'
         }
-
         self._display_name = None
         self._saved_search_id = None
         self._row = None

@@ -38,13 +38,11 @@ class AuthenticationRequest(object):
             'password': 'str',
             'tenant_name': 'str'
         }
-
         self.attribute_map = {
             'user_name': 'userName',
             'password': 'password',
             'tenant_name': 'tenantName'
         }
-
         self._user_name = None
         self._password = None
         self._tenant_name = None

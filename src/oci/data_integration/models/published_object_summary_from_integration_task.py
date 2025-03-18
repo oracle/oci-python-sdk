@@ -105,7 +105,6 @@ class PublishedObjectSummaryFromIntegrationTask(PublishedObjectSummary):
             'config_provider_delegate': 'ConfigProvider',
             'data_flow': 'DataFlow'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -124,7 +123,6 @@ class PublishedObjectSummaryFromIntegrationTask(PublishedObjectSummary):
             'config_provider_delegate': 'configProviderDelegate',
             'data_flow': 'dataFlow'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

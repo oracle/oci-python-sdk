@@ -43,14 +43,12 @@ class CreateRemediationRunDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'remediation_recipe_id': 'remediationRecipeId',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._remediation_recipe_id = None
         self._display_name = None
         self._freeform_tags = None

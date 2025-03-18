@@ -38,12 +38,10 @@ class EnumSecurityAttributeValidator(BaseSecurityAttributeValidator):
             'validator_type': 'str',
             'values': 'list[str]'
         }
-
         self.attribute_map = {
             'validator_type': 'validatorType',
             'values': 'values'
         }
-
         self._validator_type = None
         self._values = None
         self._validator_type = 'ENUM'

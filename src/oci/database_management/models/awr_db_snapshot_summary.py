@@ -58,7 +58,6 @@ class AwrDbSnapshotSummary(object):
             'snapshot_id': 'int',
             'error_count': 'int'
         }
-
         self.attribute_map = {
             'awr_db_id': 'awrDbId',
             'instance_number': 'instanceNumber',
@@ -68,7 +67,6 @@ class AwrDbSnapshotSummary(object):
             'snapshot_id': 'snapshotId',
             'error_count': 'errorCount'
         }
-
         self._awr_db_id = None
         self._instance_number = None
         self._time_db_startup = None

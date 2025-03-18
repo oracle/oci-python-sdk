@@ -53,7 +53,6 @@ class ResolvedEntity(object):
             'type': 'str',
             'value': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'id': 'id',
             'offset': 'offset',
@@ -62,7 +61,6 @@ class ResolvedEntity(object):
             'type': 'type',
             'value': 'value'
         }
-
         self._id = None
         self._offset = None
         self._length = None

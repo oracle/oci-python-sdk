@@ -38,13 +38,11 @@ class FacetedSearchDateFilterRequest(object):
             'time_after': 'datetime',
             'time_before': 'datetime'
         }
-
         self.attribute_map = {
             'field_name': 'fieldName',
             'time_after': 'timeAfter',
             'time_before': 'timeBefore'
         }
-
         self._field_name = None
         self._time_after = None
         self._time_before = None

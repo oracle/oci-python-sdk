@@ -53,7 +53,6 @@ class UpdateServiceGatewayDetails(object):
             'route_table_id': 'str',
             'services': 'list[ServiceIdRequestDetails]'
         }
-
         self.attribute_map = {
             'block_traffic': 'blockTraffic',
             'defined_tags': 'definedTags',
@@ -62,7 +61,6 @@ class UpdateServiceGatewayDetails(object):
             'route_table_id': 'routeTableId',
             'services': 'services'
         }
-
         self._block_traffic = None
         self._defined_tags = None
         self._display_name = None

@@ -28,11 +28,9 @@ class ChangeKeyStoreTypeDetails(object):
         self.swagger_types = {
             'key_store_id': 'str'
         }
-
         self.attribute_map = {
             'key_store_id': 'keyStoreId'
         }
-
         self._key_store_id = None
 
     @property

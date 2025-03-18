@@ -43,14 +43,12 @@ class Condition(object):
             'id': 'str',
             'metric': 'Metric'
         }
-
         self.attribute_map = {
             'action': 'action',
             'display_name': 'displayName',
             'id': 'id',
             'metric': 'metric'
         }
-
         self._action = None
         self._display_name = None
         self._id = None

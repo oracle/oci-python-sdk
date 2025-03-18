@@ -33,12 +33,10 @@ class UpdatedMessage(object):
             'id': 'int',
             'visible_after': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'visible_after': 'visibleAfter'
         }
-
         self._id = None
         self._visible_after = None
 

@@ -49,13 +49,11 @@ class CloudGateMappingUpstreamServerGroup(object):
             'ref': 'str',
             'ssl': 'bool'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ref': '$ref',
             'ssl': 'ssl'
         }
-
         self._value = None
         self._ref = None
         self._ssl = None

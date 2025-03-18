@@ -75,7 +75,6 @@ class UpdateCompliancePolicyRuleDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'product_version': 'productVersion',
             'patch_type': 'patchType',
@@ -85,7 +84,6 @@ class UpdateCompliancePolicyRuleDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._product_version = None
         self._patch_type = None
         self._severity = None

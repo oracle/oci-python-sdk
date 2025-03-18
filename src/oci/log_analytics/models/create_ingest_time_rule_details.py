@@ -58,7 +58,6 @@ class CreateIngestTimeRuleDetails(object):
             'conditions': 'IngestTimeRuleCondition',
             'actions': 'list[IngestTimeRuleAction]'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'description': 'description',
@@ -68,7 +67,6 @@ class CreateIngestTimeRuleDetails(object):
             'conditions': 'conditions',
             'actions': 'actions'
         }
-
         self._compartment_id = None
         self._description = None
         self._freeform_tags = None

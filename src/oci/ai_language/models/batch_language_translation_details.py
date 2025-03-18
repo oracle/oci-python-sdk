@@ -53,7 +53,6 @@ class BatchLanguageTranslationDetails(object):
             'target_language_code': 'str',
             'documents': 'list[TextDocument]'
         }
-
         self.attribute_map = {
             'alias': 'alias',
             'endpoint_id': 'endpointId',
@@ -62,7 +61,6 @@ class BatchLanguageTranslationDetails(object):
             'target_language_code': 'targetLanguageCode',
             'documents': 'documents'
         }
-
         self._alias = None
         self._endpoint_id = None
         self._no_translate = None

@@ -28,11 +28,9 @@ class StageZoneDnssecKeyVersionDetails(object):
         self.swagger_types = {
             'predecessor_dnssec_key_version_uuid': 'str'
         }
-
         self.attribute_map = {
             'predecessor_dnssec_key_version_uuid': 'predecessorDnssecKeyVersionUuid'
         }
-
         self._predecessor_dnssec_key_version_uuid = None
 
     @property

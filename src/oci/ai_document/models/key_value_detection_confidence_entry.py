@@ -48,7 +48,6 @@ class KeyValueDetectionConfidenceEntry(object):
             'f1_score': 'float',
             'accuracy': 'float'
         }
-
         self.attribute_map = {
             'threshold': 'threshold',
             'precision': 'precision',
@@ -56,7 +55,6 @@ class KeyValueDetectionConfidenceEntry(object):
             'f1_score': 'f1Score',
             'accuracy': 'accuracy'
         }
-
         self._threshold = None
         self._precision = None
         self._recall = None

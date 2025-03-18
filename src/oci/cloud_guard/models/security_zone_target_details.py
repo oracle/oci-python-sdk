@@ -45,14 +45,12 @@ class SecurityZoneTargetDetails(TargetDetails):
             'security_zone_display_name': 'str',
             'target_security_zone_recipes': 'list[SecurityRecipe]'
         }
-
         self.attribute_map = {
             'target_resource_type': 'targetResourceType',
             'security_zone_id': 'securityZoneId',
             'security_zone_display_name': 'securityZoneDisplayName',
             'target_security_zone_recipes': 'targetSecurityZoneRecipes'
         }
-
         self._target_resource_type = None
         self._security_zone_id = None
         self._security_zone_display_name = None

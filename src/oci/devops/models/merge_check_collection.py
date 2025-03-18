@@ -33,12 +33,10 @@ class MergeCheckCollection(object):
             'items': 'list[MergeCheck]',
             'time_validated': 'datetime'
         }
-
         self.attribute_map = {
             'items': 'items',
             'time_validated': 'timeValidated'
         }
-
         self._items = None
         self._time_validated = None
 

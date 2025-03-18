@@ -106,7 +106,6 @@ class LogAnalyticsConfigWorkRequestSummary(object):
             'time_accepted': 'datetime',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -116,7 +115,6 @@ class LogAnalyticsConfigWorkRequestSummary(object):
             'time_accepted': 'timeAccepted',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._id = None
         self._compartment_id = None
         self._operation_type = None

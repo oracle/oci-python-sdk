@@ -65,7 +65,6 @@ class CreateTableCommandDescriptor(AbstractCommandDescriptor):
             'is_hidden': 'bool',
             'table_name': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'display_query_string': 'displayQueryString',
@@ -76,7 +75,6 @@ class CreateTableCommandDescriptor(AbstractCommandDescriptor):
             'is_hidden': 'isHidden',
             'table_name': 'tableName'
         }
-
         self._name = None
         self._display_query_string = None
         self._internal_query_string = None

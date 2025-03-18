@@ -33,12 +33,10 @@ class AwrDbCpuUsageSummary(object):
             'timestamp': 'datetime',
             'avg_value': 'float'
         }
-
         self.attribute_map = {
             'timestamp': 'timestamp',
             'avg_value': 'avgValue'
         }
-
         self._timestamp = None
         self._avg_value = None
 

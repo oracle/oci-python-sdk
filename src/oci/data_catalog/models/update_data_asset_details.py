@@ -43,14 +43,12 @@ class UpdateDataAssetDetails(object):
             'custom_property_members': 'list[CustomPropertySetUsage]',
             'properties': 'dict(str, dict(str, str))'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
             'custom_property_members': 'customPropertyMembers',
             'properties': 'properties'
         }
-
         self._display_name = None
         self._description = None
         self._custom_property_members = None

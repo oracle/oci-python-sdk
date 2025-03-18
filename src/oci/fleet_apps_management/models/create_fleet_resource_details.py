@@ -48,7 +48,6 @@ class CreateFleetResourceDetails(object):
             'resource_region': 'str',
             'resource_type': 'str'
         }
-
         self.attribute_map = {
             'resource_id': 'resourceId',
             'tenancy_id': 'tenancyId',
@@ -56,7 +55,6 @@ class CreateFleetResourceDetails(object):
             'resource_region': 'resourceRegion',
             'resource_type': 'resourceType'
         }
-
         self._resource_id = None
         self._tenancy_id = None
         self._compartment_id = None

@@ -48,7 +48,6 @@ class UpdateExecutionActionDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'execution_window_id': 'executionWindowId',
             'action_params': 'actionParams',
@@ -56,7 +55,6 @@ class UpdateExecutionActionDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._execution_window_id = None
         self._action_params = None
         self._action_members = None

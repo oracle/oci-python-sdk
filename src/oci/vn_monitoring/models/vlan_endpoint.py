@@ -40,13 +40,11 @@ class VlanEndpoint(Endpoint):
             'address': 'str',
             'vlan_id': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'address': 'address',
             'vlan_id': 'vlanId'
         }
-
         self._type = None
         self._address = None
         self._vlan_id = None

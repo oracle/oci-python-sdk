@@ -38,13 +38,11 @@ class PeerTargetDatabaseCollection(object):
             'target_database_id': 'str',
             'items': 'list[PeerTargetDatabaseSummary]'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'target_database_id': 'targetDatabaseId',
             'items': 'items'
         }
-
         self._compartment_id = None
         self._target_database_id = None
         self._items = None

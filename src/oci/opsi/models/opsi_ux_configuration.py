@@ -91,7 +91,6 @@ class OpsiUxConfiguration(OpsiConfiguration):
             'lifecycle_details': 'str',
             'config_items': 'list[OpsiConfigurationConfigurationItemSummary]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -107,7 +106,6 @@ class OpsiUxConfiguration(OpsiConfiguration):
             'lifecycle_details': 'lifecycleDetails',
             'config_items': 'configItems'
         }
-
         self._id = None
         self._compartment_id = None
         self._opsi_config_type = None

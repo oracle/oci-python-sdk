@@ -231,7 +231,6 @@ class LaunchDbSystemFromBackupDetails(LaunchDbSystemBase):
             'disk_redundancy': 'str',
             'license_model': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'fault_domains': 'faultDomains',
@@ -268,7 +267,6 @@ class LaunchDbSystemFromBackupDetails(LaunchDbSystemBase):
             'disk_redundancy': 'diskRedundancy',
             'license_model': 'licenseModel'
         }
-
         self._compartment_id = None
         self._fault_domains = None
         self._display_name = None

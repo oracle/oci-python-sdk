@@ -43,14 +43,12 @@ class AttachVnicDetails(object):
             'instance_id': 'str',
             'nic_index': 'int'
         }
-
         self.attribute_map = {
             'create_vnic_details': 'createVnicDetails',
             'display_name': 'displayName',
             'instance_id': 'instanceId',
             'nic_index': 'nicIndex'
         }
-
         self._create_vnic_details = None
         self._display_name = None
         self._instance_id = None

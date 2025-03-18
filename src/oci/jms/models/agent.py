@@ -80,7 +80,6 @@ class Agent(object):
             'java_security_status': 'str',
             'plugins': 'list[Plugin]'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'type': 'type',
@@ -88,7 +87,6 @@ class Agent(object):
             'java_security_status': 'javaSecurityStatus',
             'plugins': 'plugins'
         }
-
         self._display_name = None
         self._type = None
         self._java_version = None

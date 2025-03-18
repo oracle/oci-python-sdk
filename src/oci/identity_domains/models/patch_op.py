@@ -35,12 +35,10 @@ class PatchOp(object):
             'schemas': 'list[str]',
             'operations': 'list[Operations]'
         }
-
         self.attribute_map = {
             'schemas': 'schemas',
             'operations': 'Operations'
         }
-
         self._schemas = None
         self._operations = None
 

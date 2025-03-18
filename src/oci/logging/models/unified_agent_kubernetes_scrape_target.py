@@ -61,14 +61,12 @@ class UnifiedAgentKubernetesScrapeTarget(object):
             'service_name': 'str',
             'resource_group': 'str'
         }
-
         self.attribute_map = {
             'resource_type': 'resourceType',
             'k8s_namespace': 'k8sNamespace',
             'service_name': 'serviceName',
             'resource_group': 'resourceGroup'
         }
-
         self._resource_type = None
         self._k8s_namespace = None
         self._service_name = None

@@ -120,7 +120,6 @@ class EmManagedExternalDatabaseConfigurationSummary(DatabaseConfigurationSummary
             'enterprise_manager_oms_ver': 'str',
             'enterprise_manager_entity_type': 'str'
         }
-
         self.attribute_map = {
             'database_insight_id': 'databaseInsightId',
             'entity_source': 'entitySource',
@@ -142,7 +141,6 @@ class EmManagedExternalDatabaseConfigurationSummary(DatabaseConfigurationSummary
             'enterprise_manager_oms_ver': 'enterpriseManagerOmsVer',
             'enterprise_manager_entity_type': 'enterpriseManagerEntityType'
         }
-
         self._database_insight_id = None
         self._entity_source = None
         self._compartment_id = None

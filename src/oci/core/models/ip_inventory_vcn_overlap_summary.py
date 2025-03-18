@@ -43,14 +43,12 @@ class IpInventoryVcnOverlapSummary(object):
             'overlapping_cidr': 'str',
             'cidr': 'str'
         }
-
         self.attribute_map = {
             'overlapping_vcn_id': 'overlappingVcnId',
             'overlapping_vcn_name': 'overlappingVcnName',
             'overlapping_cidr': 'overlappingCidr',
             'cidr': 'cidr'
         }
-
         self._overlapping_vcn_id = None
         self._overlapping_vcn_name = None
         self._overlapping_cidr = None

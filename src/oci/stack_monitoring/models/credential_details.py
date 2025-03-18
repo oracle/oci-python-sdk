@@ -38,13 +38,11 @@ class CredentialDetails(object):
             'credential_type': 'str',
             'properties': 'PropertyDetails'
         }
-
         self.attribute_map = {
             'credential_name': 'credentialName',
             'credential_type': 'credentialType',
             'properties': 'properties'
         }
-
         self._credential_name = None
         self._credential_type = None
         self._properties = None

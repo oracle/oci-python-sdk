@@ -70,7 +70,6 @@ class UpdateCortanaChannelDetails(UpdateChannelDetails):
             'msa_app_password': 'str',
             'bot_id': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'description': 'description',
@@ -82,7 +81,6 @@ class UpdateCortanaChannelDetails(UpdateChannelDetails):
             'msa_app_password': 'msaAppPassword',
             'bot_id': 'botId'
         }
-
         self._name = None
         self._description = None
         self._type = None

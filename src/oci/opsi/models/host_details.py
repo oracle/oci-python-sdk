@@ -83,7 +83,6 @@ class HostDetails(object):
             'platform_type': 'str',
             'agent_identifier': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -92,7 +91,6 @@ class HostDetails(object):
             'platform_type': 'platformType',
             'agent_identifier': 'agentIdentifier'
         }
-
         self._id = None
         self._compartment_id = None
         self._host_name = None

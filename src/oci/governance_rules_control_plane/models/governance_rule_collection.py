@@ -28,11 +28,9 @@ class GovernanceRuleCollection(object):
         self.swagger_types = {
             'items': 'list[GovernanceRuleSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

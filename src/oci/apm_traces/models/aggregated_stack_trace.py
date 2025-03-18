@@ -33,12 +33,10 @@ class AggregatedStackTrace(object):
             'stack_trace_element': 'StackTraceElement',
             'children': 'list[AggregatedStackTrace]'
         }
-
         self.attribute_map = {
             'stack_trace_element': 'stackTraceElement',
             'children': 'children'
         }
-
         self._stack_trace_element = None
         self._children = None
 

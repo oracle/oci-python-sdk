@@ -127,7 +127,6 @@ class UpdateCloudVmClusterDetails(object):
             'file_system_configuration_details': 'list[FileSystemConfigurationDetail]',
             'cloud_automation_update_details': 'CloudAutomationUpdateDetails'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'cpu_core_count': 'cpuCoreCount',
@@ -149,7 +148,6 @@ class UpdateCloudVmClusterDetails(object):
             'file_system_configuration_details': 'fileSystemConfigurationDetails',
             'cloud_automation_update_details': 'cloudAutomationUpdateDetails'
         }
-
         self._display_name = None
         self._cpu_core_count = None
         self._ocpu_count = None

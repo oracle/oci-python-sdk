@@ -28,11 +28,9 @@ class UpdateBootVolumeKmsKeyDetails(object):
         self.swagger_types = {
             'kms_key_id': 'str'
         }
-
         self.attribute_map = {
             'kms_key_id': 'kmsKeyId'
         }
-
         self._kms_key_id = None
 
     @property

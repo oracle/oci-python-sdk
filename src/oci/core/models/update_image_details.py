@@ -48,7 +48,6 @@ class UpdateImageDetails(object):
             'operating_system': 'str',
             'operating_system_version': 'str'
         }
-
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
@@ -56,7 +55,6 @@ class UpdateImageDetails(object):
             'operating_system': 'operatingSystem',
             'operating_system_version': 'operatingSystemVersion'
         }
-
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None

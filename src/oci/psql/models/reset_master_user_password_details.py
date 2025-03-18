@@ -29,11 +29,9 @@ class ResetMasterUserPasswordDetails(object):
         self.swagger_types = {
             'password_details': 'PasswordDetails'
         }
-
         self.attribute_map = {
             'password_details': 'passwordDetails'
         }
-
         self._password_details = None
 
     @property

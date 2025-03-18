@@ -94,7 +94,6 @@ class InstallationUsage(object):
             'time_first_seen': 'datetime',
             'time_last_seen': 'datetime'
         }
-
         self.attribute_map = {
             'installation_key': 'installationKey',
             'jre_vendor': 'jreVendor',
@@ -111,7 +110,6 @@ class InstallationUsage(object):
             'time_first_seen': 'timeFirstSeen',
             'time_last_seen': 'timeLastSeen'
         }
-
         self._installation_key = None
         self._jre_vendor = None
         self._jre_distribution = None

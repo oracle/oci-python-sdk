@@ -33,12 +33,10 @@ class GenerateArtifactDownloadUrlDetails(object):
             'compartment_id': 'str',
             'artifact_id': 'int'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'artifact_id': 'artifactId'
         }
-
         self._compartment_id = None
         self._artifact_id = None
 

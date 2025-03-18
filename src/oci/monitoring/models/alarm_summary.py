@@ -162,7 +162,6 @@ class AlarmSummary(object):
             'alarm_summary': 'str',
             'resource_group': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -186,7 +185,6 @@ class AlarmSummary(object):
             'alarm_summary': 'alarmSummary',
             'resource_group': 'resourceGroup'
         }
-
         self._id = None
         self._display_name = None
         self._compartment_id = None

@@ -201,7 +201,6 @@ class Backup(object):
             'original_source_backup_id': 'str',
             'time_copy_created': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -227,7 +226,6 @@ class Backup(object):
             'original_source_backup_id': 'originalSourceBackupId',
             'time_copy_created': 'timeCopyCreated'
         }
-
         self._id = None
         self._display_name = None
         self._description = None

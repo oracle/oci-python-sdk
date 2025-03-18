@@ -87,7 +87,6 @@ class HsmPartition(object):
             'time_updated': 'datetime',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -96,7 +95,6 @@ class HsmPartition(object):
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._id = None
         self._compartment_id = None
         self._port_information = None

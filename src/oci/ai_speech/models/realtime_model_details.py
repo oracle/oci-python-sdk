@@ -42,12 +42,10 @@ class RealtimeModelDetails(object):
             'domain': 'str',
             'language_code': 'str'
         }
-
         self.attribute_map = {
             'domain': 'domain',
             'language_code': 'languageCode'
         }
-
         self._domain = None
         self._language_code = None
 

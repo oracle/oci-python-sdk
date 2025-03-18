@@ -53,14 +53,12 @@ class MySqlDatabaseObjectSummary(object):
             'object_name': 'str',
             'type': 'str'
         }
-
         self.attribute_map = {
             'object_status': 'objectStatus',
             'schema': 'schema',
             'object_name': 'objectName',
             'type': 'type'
         }
-
         self._object_status = None
         self._schema = None
         self._object_name = None

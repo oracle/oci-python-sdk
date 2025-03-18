@@ -35,12 +35,10 @@ class PasswordInText(Password):
             'password_type': 'str',
             'password': 'str'
         }
-
         self.attribute_map = {
             'password_type': 'passwordType',
             'password': 'password'
         }
-
         self._password_type = None
         self._password = None
         self._password_type = 'IN_TEXT'

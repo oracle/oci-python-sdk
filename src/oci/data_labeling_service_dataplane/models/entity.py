@@ -53,11 +53,9 @@ class Entity(object):
         self.swagger_types = {
             'entity_type': 'str'
         }
-
         self.attribute_map = {
             'entity_type': 'entityType'
         }
-
         self._entity_type = None
 
     @staticmethod

@@ -28,11 +28,9 @@ class TimeAvailableForRefresh(object):
         self.swagger_types = {
             'time_available_for_refresh': 'datetime'
         }
-
         self.attribute_map = {
             'time_available_for_refresh': 'timeAvailableForRefresh'
         }
-
         self._time_available_for_refresh = None
 
     @property

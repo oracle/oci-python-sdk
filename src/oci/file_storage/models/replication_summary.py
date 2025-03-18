@@ -110,7 +110,6 @@ class ReplicationSummary(object):
             'lifecycle_details': 'str',
             'recovery_point_time': 'datetime'
         }
-
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'compartment_id': 'compartmentId',
@@ -126,7 +125,6 @@ class ReplicationSummary(object):
             'lifecycle_details': 'lifecycleDetails',
             'recovery_point_time': 'recoveryPointTime'
         }
-
         self._availability_domain = None
         self._compartment_id = None
         self._id = None

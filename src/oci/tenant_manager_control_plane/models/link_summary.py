@@ -89,7 +89,6 @@ class LinkSummary(object):
             'time_terminated': 'datetime',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'id': 'id',
             'parent_tenancy_id': 'parentTenancyId',
@@ -100,7 +99,6 @@ class LinkSummary(object):
             'time_terminated': 'timeTerminated',
             'system_tags': 'systemTags'
         }
-
         self._id = None
         self._parent_tenancy_id = None
         self._child_tenancy_id = None

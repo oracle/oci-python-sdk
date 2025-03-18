@@ -33,12 +33,10 @@ class SensitiveDataModelSensitiveTypeSummary(object):
             'sensitive_type_id': 'str',
             'count': 'int'
         }
-
         self.attribute_map = {
             'sensitive_type_id': 'sensitiveTypeId',
             'count': 'count'
         }
-
         self._sensitive_type_id = None
         self._count = None
 

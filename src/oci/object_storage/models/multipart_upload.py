@@ -78,7 +78,6 @@ class MultipartUpload(object):
             'time_created': 'datetime',
             'storage_tier': 'str'
         }
-
         self.attribute_map = {
             'namespace': 'namespace',
             'bucket': 'bucket',
@@ -87,7 +86,6 @@ class MultipartUpload(object):
             'time_created': 'timeCreated',
             'storage_tier': 'storageTier'
         }
-
         self._namespace = None
         self._bucket = None
         self._object = None

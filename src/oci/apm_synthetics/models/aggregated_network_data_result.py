@@ -28,11 +28,9 @@ class AggregatedNetworkDataResult(object):
         self.swagger_types = {
             'aggregated_network_data': 'AggregatedNetworkData'
         }
-
         self.attribute_map = {
             'aggregated_network_data': 'aggregatedNetworkData'
         }
-
         self._aggregated_network_data = None
 
     @property

@@ -113,7 +113,6 @@ class OracleMigrationSummary(MigrationSummary):
             'system_tags': 'dict(str, dict(str, object))',
             'source_container_database_connection_id': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'database_combination': 'databaseCombination',
@@ -133,7 +132,6 @@ class OracleMigrationSummary(MigrationSummary):
             'system_tags': 'systemTags',
             'source_container_database_connection_id': 'sourceContainerDatabaseConnectionId'
         }
-
         self._id = None
         self._database_combination = None
         self._display_name = None

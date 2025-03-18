@@ -28,11 +28,9 @@ class IngestMySqlSqlStatsDetails(object):
         self.swagger_types = {
             'items': 'list[MySqlSqlStats]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

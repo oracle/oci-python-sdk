@@ -63,7 +63,6 @@ class InvoicingUser(object):
             'tca_cust_accnt_site_id': 'int',
             'tca_party_id': 'int'
         }
-
         self.attribute_map = {
             'name': 'name',
             'user_name': 'userName',
@@ -74,7 +73,6 @@ class InvoicingUser(object):
             'tca_cust_accnt_site_id': 'tcaCustAccntSiteId',
             'tca_party_id': 'tcaPartyId'
         }
-
         self._name = None
         self._user_name = None
         self._first_name = None

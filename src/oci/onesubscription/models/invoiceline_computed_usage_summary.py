@@ -109,7 +109,6 @@ class InvoicelineComputedUsageSummary(object):
             'cost': 'float',
             'cost_rounded': 'float'
         }
-
         self.attribute_map = {
             'parent_product': 'parentProduct',
             'product': 'product',
@@ -120,7 +119,6 @@ class InvoicelineComputedUsageSummary(object):
             'cost': 'cost',
             'cost_rounded': 'costRounded'
         }
-
         self._parent_product = None
         self._product = None
         self._quantity = None

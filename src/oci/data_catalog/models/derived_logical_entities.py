@@ -38,13 +38,11 @@ class DerivedLogicalEntities(object):
             'realized_expression': 'str',
             'files_in_logical_grouping': 'list[str]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'realized_expression': 'realizedExpression',
             'files_in_logical_grouping': 'filesInLogicalGrouping'
         }
-
         self._name = None
         self._realized_expression = None
         self._files_in_logical_grouping = None

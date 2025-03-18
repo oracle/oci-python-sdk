@@ -322,7 +322,6 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
             'source_id': 'str',
             'clone_type': 'str'
         }
-
         self.attribute_map = {
             'subscription_id': 'subscriptionId',
             'compartment_id': 'compartmentId',
@@ -381,7 +380,6 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
             'source_id': 'sourceId',
             'clone_type': 'cloneType'
         }
-
         self._subscription_id = None
         self._compartment_id = None
         self._character_set = None

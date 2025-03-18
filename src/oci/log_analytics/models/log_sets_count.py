@@ -28,11 +28,9 @@ class LogSetsCount(object):
         self.swagger_types = {
             'count': 'int'
         }
-
         self.attribute_map = {
             'count': 'count'
         }
-
         self._count = None
 
     @property

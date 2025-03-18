@@ -33,12 +33,10 @@ class CryptoEventAnalysis(object):
             'is_enabled': 'bool',
             'summarized_events_log': 'SummarizedEventsLog'
         }
-
         self.attribute_map = {
             'is_enabled': 'isEnabled',
             'summarized_events_log': 'summarizedEventsLog'
         }
-
         self._is_enabled = None
         self._summarized_events_log = None
 

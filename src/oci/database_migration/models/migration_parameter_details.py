@@ -56,13 +56,11 @@ class MigrationParameterDetails(object):
             'name': 'str',
             'data_type': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'name': 'name',
             'data_type': 'dataType'
         }
-
         self._value = None
         self._name = None
         self._data_type = None

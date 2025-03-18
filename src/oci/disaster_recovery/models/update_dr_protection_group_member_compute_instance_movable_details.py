@@ -65,7 +65,6 @@ class UpdateDrProtectionGroupMemberComputeInstanceMovableDetails(UpdateDrProtect
             'destination_dedicated_vm_host_id': 'str',
             'file_system_operations': 'list[UpdateComputeInstanceMovableFileSystemOperationDetails]'
         }
-
         self.attribute_map = {
             'member_id': 'memberId',
             'member_type': 'memberType',
@@ -76,7 +75,6 @@ class UpdateDrProtectionGroupMemberComputeInstanceMovableDetails(UpdateDrProtect
             'destination_dedicated_vm_host_id': 'destinationDedicatedVmHostId',
             'file_system_operations': 'fileSystemOperations'
         }
-
         self._member_id = None
         self._member_type = None
         self._is_retain_fault_domain = None

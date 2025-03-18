@@ -38,13 +38,11 @@ class Region(object):
             'code': 'str',
             'countries': 'list[Item]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'code': 'code',
             'countries': 'countries'
         }
-
         self._name = None
         self._code = None
         self._countries = None

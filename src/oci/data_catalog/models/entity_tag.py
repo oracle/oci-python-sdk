@@ -107,7 +107,6 @@ class EntityTag(object):
             'created_by_id': 'str',
             'uri': 'str'
         }
-
         self.attribute_map = {
             'entity_key': 'entityKey',
             'key': 'key',
@@ -120,7 +119,6 @@ class EntityTag(object):
             'created_by_id': 'createdById',
             'uri': 'uri'
         }
-
         self._entity_key = None
         self._key = None
         self._name = None

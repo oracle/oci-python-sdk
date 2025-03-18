@@ -28,11 +28,9 @@ class AccessibleCompartmentResponse(object):
         self.swagger_types = {
             'compartments_metadata': 'list[CompartmentMetadata]'
         }
-
         self.attribute_map = {
             'compartments_metadata': 'compartmentsMetadata'
         }
-
         self._compartments_metadata = None
 
     @property

@@ -30,11 +30,9 @@ class CreateDbSystemSourceFromNoneDetails(CreateDbSystemSourceDetails):
         self.swagger_types = {
             'source_type': 'str'
         }
-
         self.attribute_map = {
             'source_type': 'sourceType'
         }
-
         self._source_type = None
         self._source_type = 'NONE'
 

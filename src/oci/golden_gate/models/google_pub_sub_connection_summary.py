@@ -136,7 +136,6 @@ class GooglePubSubConnectionSummary(ConnectionSummary):
             'technology_type': 'str',
             'service_account_key_file_secret_id': 'str'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'id': 'id',
@@ -161,7 +160,6 @@ class GooglePubSubConnectionSummary(ConnectionSummary):
             'technology_type': 'technologyType',
             'service_account_key_file_secret_id': 'serviceAccountKeyFileSecretId'
         }
-
         self._connection_type = None
         self._id = None
         self._display_name = None

@@ -43,11 +43,9 @@ class ConnectionOption(object):
         self.swagger_types = {
             'connection_type': 'str'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType'
         }
-
         self._connection_type = None
 
     @staticmethod

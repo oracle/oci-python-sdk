@@ -76,7 +76,6 @@ class ConfiguredType(BaseType):
             'config_values': 'ConfigValues',
             'config_definition': 'ConfigDefinition'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -89,7 +88,6 @@ class ConfiguredType(BaseType):
             'config_values': 'configValues',
             'config_definition': 'configDefinition'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

@@ -63,7 +63,6 @@ class CreateFilesystemSnapshotPolicyDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'locks': 'list[ResourceLock]'
         }
-
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'compartment_id': 'compartmentId',
@@ -74,7 +73,6 @@ class CreateFilesystemSnapshotPolicyDetails(object):
             'defined_tags': 'definedTags',
             'locks': 'locks'
         }
-
         self._availability_domain = None
         self._compartment_id = None
         self._display_name = None

@@ -38,13 +38,11 @@ class Profile(object):
             'document_type': 'str',
             'speciality': 'str'
         }
-
         self.attribute_map = {
             'domain': 'domain',
             'document_type': 'documentType',
             'speciality': 'speciality'
         }
-
         self._domain = None
         self._document_type = None
         self._speciality = None

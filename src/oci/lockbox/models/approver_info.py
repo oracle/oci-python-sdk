@@ -48,13 +48,11 @@ class ApproverInfo(object):
             'approver_id': 'str',
             'domain_id': 'str'
         }
-
         self.attribute_map = {
             'approver_type': 'approverType',
             'approver_id': 'approverId',
             'domain_id': 'domainId'
         }
-
         self._approver_type = None
         self._approver_id = None
         self._domain_id = None

@@ -33,12 +33,10 @@ class HostResourceCapacityTrendAggregation(object):
             'end_timestamp': 'datetime',
             'capacity': 'float'
         }
-
         self.attribute_map = {
             'end_timestamp': 'endTimestamp',
             'capacity': 'capacity'
         }
-
         self._end_timestamp = None
         self._capacity = None
 

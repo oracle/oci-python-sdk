@@ -67,7 +67,6 @@ class AutoKeyRotationDetails(object):
             'last_rotation_status': 'str',
             'last_rotation_message': 'str'
         }
-
         self.attribute_map = {
             'rotation_interval_in_days': 'rotationIntervalInDays',
             'time_of_schedule_start': 'timeOfScheduleStart',
@@ -76,7 +75,6 @@ class AutoKeyRotationDetails(object):
             'last_rotation_status': 'lastRotationStatus',
             'last_rotation_message': 'lastRotationMessage'
         }
-
         self._rotation_interval_in_days = None
         self._time_of_schedule_start = None
         self._time_of_next_rotation = None

@@ -33,12 +33,10 @@ class SourceDetails(object):
             'parent_file_system_id': 'str',
             'source_snapshot_id': 'str'
         }
-
         self.attribute_map = {
             'parent_file_system_id': 'parentFileSystemId',
             'source_snapshot_id': 'sourceSnapshotId'
         }
-
         self._parent_file_system_id = None
         self._source_snapshot_id = None
 

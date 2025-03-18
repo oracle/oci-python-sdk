@@ -58,7 +58,6 @@ class CreateJobDetails(object):
             'connection_key': 'str',
             'job_definition_key': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
@@ -68,7 +67,6 @@ class CreateJobDetails(object):
             'connection_key': 'connectionKey',
             'job_definition_key': 'jobDefinitionKey'
         }
-
         self._display_name = None
         self._description = None
         self._schedule_cron_expression = None

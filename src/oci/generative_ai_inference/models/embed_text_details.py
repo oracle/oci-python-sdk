@@ -87,7 +87,6 @@ class EmbedTextDetails(object):
             'truncate': 'str',
             'input_type': 'str'
         }
-
         self.attribute_map = {
             'inputs': 'inputs',
             'serving_mode': 'servingMode',
@@ -96,7 +95,6 @@ class EmbedTextDetails(object):
             'truncate': 'truncate',
             'input_type': 'inputType'
         }
-
         self._inputs = None
         self._serving_mode = None
         self._compartment_id = None

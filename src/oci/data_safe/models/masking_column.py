@@ -142,7 +142,6 @@ class MaskingColumn(object):
             'data_type': 'str',
             'masking_formats': 'list[MaskingFormat]'
         }
-
         self.attribute_map = {
             'key': 'key',
             'masking_policy_id': 'maskingPolicyId',
@@ -161,7 +160,6 @@ class MaskingColumn(object):
             'data_type': 'dataType',
             'masking_formats': 'maskingFormats'
         }
-
         self._key = None
         self._masking_policy_id = None
         self._lifecycle_state = None

@@ -55,13 +55,11 @@ class GenerateAgentDeployScriptDetails(object):
             'os_family': 'str',
             'is_user_name_enabled': 'bool'
         }
-
         self.attribute_map = {
             'install_key_id': 'installKeyId',
             'os_family': 'osFamily',
             'is_user_name_enabled': 'isUserNameEnabled'
         }
-
         self._install_key_id = None
         self._os_family = None
         self._is_user_name_enabled = None

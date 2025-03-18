@@ -54,13 +54,11 @@ class Application(object):
             'name': 'str',
             'parent_resource_id': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'name': 'name',
             'parent_resource_id': 'parentResourceId'
         }
-
         self._type = None
         self._name = None
         self._parent_resource_id = None

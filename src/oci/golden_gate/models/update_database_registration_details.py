@@ -87,7 +87,6 @@ class UpdateDatabaseRegistrationDetails(object):
             'wallet': 'str',
             'alias_name': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
@@ -101,7 +100,6 @@ class UpdateDatabaseRegistrationDetails(object):
             'wallet': 'wallet',
             'alias_name': 'aliasName'
         }
-
         self._display_name = None
         self._description = None
         self._freeform_tags = None

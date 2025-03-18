@@ -34,12 +34,10 @@ class UdpOptions(object):
             'destination_port_range': 'PortRange',
             'source_port_range': 'PortRange'
         }
-
         self.attribute_map = {
             'destination_port_range': 'destinationPortRange',
             'source_port_range': 'sourcePortRange'
         }
-
         self._destination_port_range = None
         self._source_port_range = None
 

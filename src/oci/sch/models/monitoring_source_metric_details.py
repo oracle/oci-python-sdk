@@ -38,11 +38,9 @@ class MonitoringSourceMetricDetails(object):
         self.swagger_types = {
             'kind': 'str'
         }
-
         self.attribute_map = {
             'kind': 'kind'
         }
-
         self._kind = None
 
     @staticmethod

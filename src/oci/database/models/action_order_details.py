@@ -33,12 +33,10 @@ class ActionOrderDetails(object):
             'action_order': 'int',
             'action_resource_id': 'str'
         }
-
         self.attribute_map = {
             'action_order': 'actionOrder',
             'action_resource_id': 'actionResourceId'
         }
-
         self._action_order = None
         self._action_resource_id = None
 

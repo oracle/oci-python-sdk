@@ -48,7 +48,6 @@ class MySqlSqlText(object):
             'command_type': 'str',
             'digest_text': 'str'
         }
-
         self.attribute_map = {
             'schema_name': 'schemaName',
             'digest': 'digest',
@@ -56,7 +55,6 @@ class MySqlSqlText(object):
             'command_type': 'commandType',
             'digest_text': 'digestText'
         }
-
         self._schema_name = None
         self._digest = None
         self._time_collected = None

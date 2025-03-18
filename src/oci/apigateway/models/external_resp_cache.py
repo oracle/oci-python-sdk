@@ -70,7 +70,6 @@ class ExternalRespCache(ResponseCacheDetails):
             'read_timeout_in_ms': 'int',
             'send_timeout_in_ms': 'int'
         }
-
         self.attribute_map = {
             'type': 'type',
             'servers': 'servers',
@@ -82,7 +81,6 @@ class ExternalRespCache(ResponseCacheDetails):
             'read_timeout_in_ms': 'readTimeoutInMs',
             'send_timeout_in_ms': 'sendTimeoutInMs'
         }
-
         self._type = None
         self._servers = None
         self._authentication_secret_id = None

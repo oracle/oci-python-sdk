@@ -35,12 +35,10 @@ class StaticPublicKeySet(PublicKeySet):
             'type': 'str',
             'keys': 'list[StaticPublicKey]'
         }
-
         self.attribute_map = {
             'type': 'type',
             'keys': 'keys'
         }
-
         self._type = None
         self._keys = None
         self._type = 'STATIC_KEYS'

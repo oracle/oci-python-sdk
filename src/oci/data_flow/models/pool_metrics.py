@@ -53,7 +53,6 @@ class PoolMetrics(object):
             'active_runs_count': 'int',
             'actively_used_node_count': 'list[NodeCount]'
         }
-
         self.attribute_map = {
             'time_last_started': 'timeLastStarted',
             'time_last_stopped': 'timeLastStopped',
@@ -62,7 +61,6 @@ class PoolMetrics(object):
             'active_runs_count': 'activeRunsCount',
             'actively_used_node_count': 'activelyUsedNodeCount'
         }
-
         self._time_last_started = None
         self._time_last_stopped = None
         self._time_last_used = None

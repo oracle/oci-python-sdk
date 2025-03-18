@@ -45,14 +45,12 @@ class DrProtectionGroupMemberObjectStorageBucket(DrProtectionGroupMember):
             'namespace_name': 'str',
             'bucket_name': 'str'
         }
-
         self.attribute_map = {
             'member_id': 'memberId',
             'member_type': 'memberType',
             'namespace_name': 'namespaceName',
             'bucket_name': 'bucketName'
         }
-
         self._member_id = None
         self._member_type = None
         self._namespace_name = None

@@ -48,7 +48,6 @@ class CreateFusionEnvironmentAdminUserDetails(object):
             'first_name': 'str',
             'last_name': 'str'
         }
-
         self.attribute_map = {
             'username': 'username',
             'password': 'password',
@@ -56,7 +55,6 @@ class CreateFusionEnvironmentAdminUserDetails(object):
             'first_name': 'firstName',
             'last_name': 'lastName'
         }
-
         self._username = None
         self._password = None
         self._email_address = None

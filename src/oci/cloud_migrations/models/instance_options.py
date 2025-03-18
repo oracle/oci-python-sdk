@@ -28,11 +28,9 @@ class InstanceOptions(object):
         self.swagger_types = {
             'are_legacy_imds_endpoints_disabled': 'bool'
         }
-
         self.attribute_map = {
             'are_legacy_imds_endpoints_disabled': 'areLegacyImdsEndpointsDisabled'
         }
-
         self._are_legacy_imds_endpoints_disabled = None
 
     @property

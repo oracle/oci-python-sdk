@@ -55,7 +55,6 @@ class CreateMacsManagedCloudExadataInsightDetails(CreateExadataInsightDetails):
             'exadata_infra_id': 'str',
             'member_vm_cluster_details': 'list[CreateMacsManagedCloudExadataVmclusterDetails]'
         }
-
         self.attribute_map = {
             'entity_source': 'entitySource',
             'compartment_id': 'compartmentId',
@@ -64,7 +63,6 @@ class CreateMacsManagedCloudExadataInsightDetails(CreateExadataInsightDetails):
             'exadata_infra_id': 'exadataInfraId',
             'member_vm_cluster_details': 'memberVmClusterDetails'
         }
-
         self._entity_source = None
         self._compartment_id = None
         self._freeform_tags = None

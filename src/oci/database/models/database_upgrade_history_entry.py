@@ -135,7 +135,6 @@ class DatabaseUpgradeHistoryEntry(object):
             'time_ended': 'datetime',
             'options': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'action': 'action',
@@ -150,7 +149,6 @@ class DatabaseUpgradeHistoryEntry(object):
             'time_ended': 'timeEnded',
             'options': 'options'
         }
-
         self._id = None
         self._action = None
         self._source = None

@@ -85,7 +85,6 @@ class NetworkAddressListVcnAddressesSummary(NetworkAddressListSummary):
             'system_tags': 'dict(str, dict(str, object))',
             'vcn_addresses': 'list[PrivateAddresses]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -100,7 +99,6 @@ class NetworkAddressListVcnAddressesSummary(NetworkAddressListSummary):
             'system_tags': 'systemTags',
             'vcn_addresses': 'vcnAddresses'
         }
-
         self._id = None
         self._display_name = None
         self._compartment_id = None

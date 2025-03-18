@@ -104,7 +104,6 @@ class UpdateBucketDetails(object):
             'versioning': 'str',
             'auto_tiering': 'str'
         }
-
         self.attribute_map = {
             'namespace': 'namespace',
             'compartment_id': 'compartmentId',
@@ -118,7 +117,6 @@ class UpdateBucketDetails(object):
             'versioning': 'versioning',
             'auto_tiering': 'autoTiering'
         }
-
         self._namespace = None
         self._compartment_id = None
         self._name = None

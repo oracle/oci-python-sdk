@@ -48,7 +48,6 @@ class ValidatePatternResult(object):
             'file_path_prefix': 'str',
             'derived_logical_entities': 'list[DerivedLogicalEntities]'
         }
-
         self.attribute_map = {
             'message': 'message',
             'status': 'status',
@@ -56,7 +55,6 @@ class ValidatePatternResult(object):
             'file_path_prefix': 'filePathPrefix',
             'derived_logical_entities': 'derivedLogicalEntities'
         }
-
         self._message = None
         self._status = None
         self._expression = None

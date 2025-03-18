@@ -108,7 +108,6 @@ class ObjectPrivilegeSummary(object):
             'common': 'str',
             'inherited': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'schema_type': 'schemaType',
@@ -120,7 +119,6 @@ class ObjectPrivilegeSummary(object):
             'common': 'common',
             'inherited': 'inherited'
         }
-
         self._name = None
         self._schema_type = None
         self._owner = None

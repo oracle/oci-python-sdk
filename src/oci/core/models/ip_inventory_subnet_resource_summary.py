@@ -119,7 +119,6 @@ class IpInventorySubnetResourceSummary(object):
             'address_type': 'str',
             'assigned_time': 'datetime'
         }
-
         self.attribute_map = {
             'ip_id': 'ipId',
             'ip_address': 'ipAddress',
@@ -134,7 +133,6 @@ class IpInventorySubnetResourceSummary(object):
             'address_type': 'addressType',
             'assigned_time': 'assignedTime'
         }
-
         self._ip_id = None
         self._ip_address = None
         self._ip_address_lifetime = None

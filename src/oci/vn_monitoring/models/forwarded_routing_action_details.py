@@ -33,12 +33,10 @@ class ForwardedRoutingActionDetails(object):
             'is_restricted_or_partial': 'bool',
             'forwarded_routing_configuration': 'ForwardedRoutingConfiguration'
         }
-
         self.attribute_map = {
             'is_restricted_or_partial': 'isRestrictedOrPartial',
             'forwarded_routing_configuration': 'forwardedRoutingConfiguration'
         }
-
         self._is_restricted_or_partial = None
         self._forwarded_routing_configuration = None
 

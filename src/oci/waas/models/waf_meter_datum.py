@@ -73,7 +73,6 @@ class WafMeterDatum(object):
             'traffic_in_bytes': 'int',
             'tag_slug': 'str'
         }
-
         self.attribute_map = {
             'time_observed': 'timeObserved',
             'time_range_in_seconds': 'timeRangeInSeconds',
@@ -86,7 +85,6 @@ class WafMeterDatum(object):
             'traffic_in_bytes': 'trafficInBytes',
             'tag_slug': 'tagSlug'
         }
-
         self._time_observed = None
         self._time_range_in_seconds = None
         self._tenancy_id = None

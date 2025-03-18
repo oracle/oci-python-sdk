@@ -44,12 +44,10 @@ class UserExtRecoveryLocked(object):
             'on': 'bool',
             'lock_date': 'str'
         }
-
         self.attribute_map = {
             'on': 'on',
             'lock_date': 'lockDate'
         }
-
         self._on = None
         self._lock_date = None
 

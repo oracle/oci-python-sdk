@@ -105,7 +105,6 @@ class ObjectVersionSummary(object):
             'version_id': 'str',
             'is_delete_marker': 'bool'
         }
-
         self.attribute_map = {
             'name': 'name',
             'size': 'size',
@@ -118,7 +117,6 @@ class ObjectVersionSummary(object):
             'version_id': 'versionId',
             'is_delete_marker': 'isDeleteMarker'
         }
-
         self._name = None
         self._size = None
         self._md5 = None

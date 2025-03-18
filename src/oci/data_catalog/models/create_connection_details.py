@@ -58,7 +58,6 @@ class CreateConnectionDetails(object):
             'enc_properties': 'dict(str, dict(str, str))',
             'is_default': 'bool'
         }
-
         self.attribute_map = {
             'description': 'description',
             'display_name': 'displayName',
@@ -68,7 +67,6 @@ class CreateConnectionDetails(object):
             'enc_properties': 'encProperties',
             'is_default': 'isDefault'
         }
-
         self._description = None
         self._display_name = None
         self._type_key = None

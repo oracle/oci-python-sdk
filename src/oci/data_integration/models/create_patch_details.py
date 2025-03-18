@@ -81,7 +81,6 @@ class CreatePatchDetails(object):
             'object_keys': 'list[str]',
             'registry_metadata': 'RegistryMetadata'
         }
-
         self.attribute_map = {
             'key': 'key',
             'model_version': 'modelVersion',
@@ -93,7 +92,6 @@ class CreatePatchDetails(object):
             'object_keys': 'objectKeys',
             'registry_metadata': 'registryMetadata'
         }
-
         self._key = None
         self._model_version = None
         self._name = None

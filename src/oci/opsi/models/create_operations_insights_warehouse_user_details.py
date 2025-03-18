@@ -68,7 +68,6 @@ class CreateOperationsInsightsWarehouseUserDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'operations_insights_warehouse_id': 'operationsInsightsWarehouseId',
             'compartment_id': 'compartmentId',
@@ -80,7 +79,6 @@ class CreateOperationsInsightsWarehouseUserDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._operations_insights_warehouse_id = None
         self._compartment_id = None
         self._name = None

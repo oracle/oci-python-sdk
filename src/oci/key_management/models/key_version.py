@@ -145,7 +145,6 @@ class KeyVersion(object):
             'external_key_reference_details': 'ExternalKeyReferenceDetails',
             'is_auto_rotated': 'bool'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'id': 'id',
@@ -162,7 +161,6 @@ class KeyVersion(object):
             'external_key_reference_details': 'externalKeyReferenceDetails',
             'is_auto_rotated': 'isAutoRotated'
         }
-
         self._compartment_id = None
         self._id = None
         self._key_id = None

@@ -49,7 +49,6 @@ class SecurityRuleMatchCriteria(object):
             'service': 'list[str]',
             'url': 'list[str]'
         }
-
         self.attribute_map = {
             'source_address': 'sourceAddress',
             'destination_address': 'destinationAddress',
@@ -57,7 +56,6 @@ class SecurityRuleMatchCriteria(object):
             'service': 'service',
             'url': 'url'
         }
-
         self._source_address = None
         self._destination_address = None
         self._application = None

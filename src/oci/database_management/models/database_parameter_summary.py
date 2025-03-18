@@ -202,7 +202,6 @@ class DatabaseParameterSummary(object):
             'is_specified': 'bool',
             'allowed_values': 'list[AllowedParameterValue]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'type': 'type',
@@ -228,7 +227,6 @@ class DatabaseParameterSummary(object):
             'is_specified': 'isSpecified',
             'allowed_values': 'allowedValues'
         }
-
         self._name = None
         self._type = None
         self._value = None

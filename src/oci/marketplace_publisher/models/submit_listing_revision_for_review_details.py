@@ -33,12 +33,10 @@ class SubmitListingRevisionForReviewDetails(object):
             'note_details': 'str',
             'are_internal_tenancy_launch_allowed': 'bool'
         }
-
         self.attribute_map = {
             'note_details': 'noteDetails',
             'are_internal_tenancy_launch_allowed': 'areInternalTenancyLaunchAllowed'
         }
-
         self._note_details = None
         self._are_internal_tenancy_launch_allowed = None
 

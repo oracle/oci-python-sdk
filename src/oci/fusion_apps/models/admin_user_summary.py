@@ -43,14 +43,12 @@ class AdminUserSummary(object):
             'first_name': 'str',
             'last_name': 'str'
         }
-
         self.attribute_map = {
             'username': 'username',
             'email_address': 'emailAddress',
             'first_name': 'firstName',
             'last_name': 'lastName'
         }
-
         self._username = None
         self._email_address = None
         self._first_name = None

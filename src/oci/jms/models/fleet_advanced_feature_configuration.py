@@ -68,7 +68,6 @@ class FleetAdvancedFeatureConfiguration(object):
             'java_migration_analysis': 'JavaMigrationAnalysis',
             'time_last_modified': 'datetime'
         }
-
         self.attribute_map = {
             'analytic_namespace': 'analyticNamespace',
             'analytic_bucket_name': 'analyticBucketName',
@@ -80,7 +79,6 @@ class FleetAdvancedFeatureConfiguration(object):
             'java_migration_analysis': 'javaMigrationAnalysis',
             'time_last_modified': 'timeLastModified'
         }
-
         self._analytic_namespace = None
         self._analytic_bucket_name = None
         self._lcm = None

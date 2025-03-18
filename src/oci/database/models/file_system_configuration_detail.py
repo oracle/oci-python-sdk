@@ -33,12 +33,10 @@ class FileSystemConfigurationDetail(object):
             'mount_point': 'str',
             'file_system_size_gb': 'int'
         }
-
         self.attribute_map = {
             'mount_point': 'mountPoint',
             'file_system_size_gb': 'fileSystemSizeGb'
         }
-
         self._mount_point = None
         self._file_system_size_gb = None
 

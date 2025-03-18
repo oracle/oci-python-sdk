@@ -182,7 +182,6 @@ class MirrorSummary(object):
             'package_count': 'int',
             'size': 'int'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -196,7 +195,6 @@ class MirrorSummary(object):
             'package_count': 'packageCount',
             'size': 'size'
         }
-
         self._id = None
         self._display_name = None
         self._type = None

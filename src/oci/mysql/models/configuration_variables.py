@@ -1991,7 +1991,6 @@ class ConfigurationVariables(object):
             'thread_pool_size': 'int',
             'long_query_time': 'int'
         }
-
         self.attribute_map = {
             'completion_type': 'completionType',
             'big_tables': 'bigTables',
@@ -2112,7 +2111,6 @@ class ConfigurationVariables(object):
             'thread_pool_size': 'threadPoolSize',
             'long_query_time': 'longQueryTime'
         }
-
         self._completion_type = None
         self._big_tables = None
         self._character_set_server = None

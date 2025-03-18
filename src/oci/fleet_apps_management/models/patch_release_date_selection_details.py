@@ -36,12 +36,10 @@ class PatchReleaseDateSelectionDetails(PatchSelectionDetails):
             'selection_type': 'str',
             'days_since_release': 'int'
         }
-
         self.attribute_map = {
             'selection_type': 'selectionType',
             'days_since_release': 'daysSinceRelease'
         }
-
         self._selection_type = None
         self._days_since_release = None
         self._selection_type = 'PATCH_RELEASE_DATE'

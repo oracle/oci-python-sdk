@@ -65,7 +65,6 @@ class CreateZoneBaseDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'migration_source': 'migrationSource',
             'name': 'name',
@@ -73,7 +72,6 @@ class CreateZoneBaseDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._migration_source = None
         self._name = None
         self._compartment_id = None

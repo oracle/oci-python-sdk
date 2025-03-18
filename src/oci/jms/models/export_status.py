@@ -69,14 +69,12 @@ class ExportStatus(object):
             'time_next_run': 'datetime',
             'latest_run_status': 'str'
         }
-
         self.attribute_map = {
             'fleet_id': 'fleetId',
             'time_last_run': 'timeLastRun',
             'time_next_run': 'timeNextRun',
             'latest_run_status': 'latestRunStatus'
         }
-
         self._fleet_id = None
         self._time_last_run = None
         self._time_next_run = None

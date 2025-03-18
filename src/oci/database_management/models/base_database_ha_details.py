@@ -196,7 +196,6 @@ class BaseDatabaseHaDetails(object):
             'db_unique_name': 'str',
             'db_role': 'str'
         }
-
         self.attribute_map = {
             'db_id': 'dbId',
             'compartment_id': 'compartmentId',
@@ -210,7 +209,6 @@ class BaseDatabaseHaDetails(object):
             'db_unique_name': 'dbUniqueName',
             'db_role': 'dbRole'
         }
-
         self._db_id = None
         self._compartment_id = None
         self._database_type = None

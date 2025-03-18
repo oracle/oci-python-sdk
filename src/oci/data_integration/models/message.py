@@ -52,13 +52,11 @@ class Message(object):
             'code': 'str',
             'message': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'code': 'code',
             'message': 'message'
         }
-
         self._type = None
         self._code = None
         self._message = None

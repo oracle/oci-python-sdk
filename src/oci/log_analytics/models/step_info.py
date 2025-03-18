@@ -38,13 +38,11 @@ class StepInfo(object):
             'regex_engine_class_name': 'str',
             'step_count': 'int'
         }
-
         self.attribute_map = {
             'input_sequence_current_match': 'inputSequenceCurrentMatch',
             'regex_engine_class_name': 'regexEngineClassName',
             'step_count': 'stepCount'
         }
-
         self._input_sequence_current_match = None
         self._regex_engine_class_name = None
         self._step_count = None

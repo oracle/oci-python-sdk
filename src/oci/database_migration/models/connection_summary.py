@@ -123,7 +123,6 @@ class ConnectionSummary(object):
             'ingress_ips': 'list[IngressIpDetails]',
             'nsg_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'id': 'id',
@@ -143,7 +142,6 @@ class ConnectionSummary(object):
             'ingress_ips': 'ingressIps',
             'nsg_ids': 'nsgIds'
         }
-
         self._connection_type = None
         self._id = None
         self._display_name = None

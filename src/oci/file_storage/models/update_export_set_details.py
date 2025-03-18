@@ -38,13 +38,11 @@ class UpdateExportSetDetails(object):
             'max_fs_stat_bytes': 'int',
             'max_fs_stat_files': 'int'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'max_fs_stat_bytes': 'maxFsStatBytes',
             'max_fs_stat_files': 'maxFsStatFiles'
         }
-
         self._display_name = None
         self._max_fs_stat_bytes = None
         self._max_fs_stat_files = None

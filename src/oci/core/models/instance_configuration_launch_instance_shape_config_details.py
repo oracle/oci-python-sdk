@@ -70,7 +70,6 @@ class InstanceConfigurationLaunchInstanceShapeConfigDetails(object):
             'baseline_ocpu_utilization': 'str',
             'nvmes': 'int'
         }
-
         self.attribute_map = {
             'ocpus': 'ocpus',
             'vcpus': 'vcpus',
@@ -78,7 +77,6 @@ class InstanceConfigurationLaunchInstanceShapeConfigDetails(object):
             'baseline_ocpu_utilization': 'baselineOcpuUtilization',
             'nvmes': 'nvmes'
         }
-
         self._ocpus = None
         self._vcpus = None
         self._memory_in_gbs = None

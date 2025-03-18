@@ -152,7 +152,6 @@ class IdentitySetting(object):
             'posix_gid': 'IdentitySettingsPOSIXGid',
             'tokens': 'list[IdentitySettingsTokens]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -178,7 +177,6 @@ class IdentitySetting(object):
             'posix_gid': 'POSIXGid',
             'tokens': 'tokens'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

@@ -43,11 +43,9 @@ class WarehouseDataObjectDetails(object):
         self.swagger_types = {
             'data_object_type': 'str'
         }
-
         self.attribute_map = {
             'data_object_type': 'dataObjectType'
         }
-
         self._data_object_type = None
 
     @staticmethod

@@ -197,7 +197,6 @@ class OdaInstanceSummary(object):
             'imported_package_names': 'list[str]',
             'attachment_types': 'list[str]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -216,7 +215,6 @@ class OdaInstanceSummary(object):
             'imported_package_names': 'importedPackageNames',
             'attachment_types': 'attachmentTypes'
         }
-
         self._id = None
         self._display_name = None
         self._description = None

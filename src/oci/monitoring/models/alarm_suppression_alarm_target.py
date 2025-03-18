@@ -35,12 +35,10 @@ class AlarmSuppressionAlarmTarget(AlarmSuppressionTarget):
             'target_type': 'str',
             'alarm_id': 'str'
         }
-
         self.attribute_map = {
             'target_type': 'targetType',
             'alarm_id': 'alarmId'
         }
-
         self._target_type = None
         self._alarm_id = None
         self._target_type = 'ALARM'

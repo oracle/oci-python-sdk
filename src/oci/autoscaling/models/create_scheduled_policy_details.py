@@ -56,7 +56,6 @@ class CreateScheduledPolicyDetails(CreateAutoScalingPolicyDetails):
             'execution_schedule': 'ExecutionSchedule',
             'resource_action': 'ResourceAction'
         }
-
         self.attribute_map = {
             'capacity': 'capacity',
             'display_name': 'displayName',
@@ -65,7 +64,6 @@ class CreateScheduledPolicyDetails(CreateAutoScalingPolicyDetails):
             'execution_schedule': 'executionSchedule',
             'resource_action': 'resourceAction'
         }
-
         self._capacity = None
         self._display_name = None
         self._policy_type = None

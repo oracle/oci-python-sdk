@@ -52,13 +52,11 @@ class JavaLicenseSummary(object):
             'license_type': 'str',
             'license_url': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'license_type': 'licenseType',
             'license_url': 'licenseUrl'
         }
-
         self._display_name = None
         self._license_type = None
         self._license_url = None

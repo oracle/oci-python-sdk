@@ -48,7 +48,6 @@ class ExportDeploymentWalletDetails(object):
             'secret_compartment_id': 'str',
             'description': 'str'
         }
-
         self.attribute_map = {
             'vault_id': 'vaultId',
             'master_encryption_key_id': 'masterEncryptionKeyId',
@@ -56,7 +55,6 @@ class ExportDeploymentWalletDetails(object):
             'secret_compartment_id': 'secretCompartmentId',
             'description': 'description'
         }
-
         self._vault_id = None
         self._master_encryption_key_id = None
         self._secret_name = None

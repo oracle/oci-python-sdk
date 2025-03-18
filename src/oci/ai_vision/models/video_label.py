@@ -33,12 +33,10 @@ class VideoLabel(object):
             'name': 'str',
             'segments': 'list[VideoLabelSegment]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'segments': 'segments'
         }
-
         self._name = None
         self._segments = None
 

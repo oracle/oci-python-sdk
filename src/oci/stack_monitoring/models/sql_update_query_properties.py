@@ -59,7 +59,6 @@ class SqlUpdateQueryProperties(MetricExtensionUpdateQueryProperties):
             'in_param_details': 'list[SqlInParamDetails]',
             'out_param_details': 'SqlOutParamDetails'
         }
-
         self.attribute_map = {
             'collection_method': 'collectionMethod',
             'sql_type': 'sqlType',
@@ -67,7 +66,6 @@ class SqlUpdateQueryProperties(MetricExtensionUpdateQueryProperties):
             'in_param_details': 'inParamDetails',
             'out_param_details': 'outParamDetails'
         }
-
         self._collection_method = None
         self._sql_type = None
         self._sql_details = None

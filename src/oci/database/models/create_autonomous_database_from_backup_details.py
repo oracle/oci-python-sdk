@@ -327,7 +327,6 @@ class CreateAutonomousDatabaseFromBackupDetails(CreateAutonomousDatabaseBase):
             'clone_type': 'str',
             'clone_table_space_list': 'list[int]'
         }
-
         self.attribute_map = {
             'subscription_id': 'subscriptionId',
             'compartment_id': 'compartmentId',
@@ -387,7 +386,6 @@ class CreateAutonomousDatabaseFromBackupDetails(CreateAutonomousDatabaseBase):
             'clone_type': 'cloneType',
             'clone_table_space_list': 'cloneTableSpaceList'
         }
-
         self._subscription_id = None
         self._compartment_id = None
         self._character_set = None

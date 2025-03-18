@@ -66,7 +66,6 @@ class AddonVersions(object):
             'kubernetes_version_filters': 'KubernetesVersionsFilters',
             'configurations': 'list[AddonVersionConfiguration]'
         }
-
         self.attribute_map = {
             'status': 'status',
             'version_number': 'versionNumber',
@@ -74,7 +73,6 @@ class AddonVersions(object):
             'kubernetes_version_filters': 'kubernetesVersionFilters',
             'configurations': 'configurations'
         }
-
         self._status = None
         self._version_number = None
         self._description = None

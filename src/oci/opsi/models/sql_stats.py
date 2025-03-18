@@ -353,7 +353,6 @@ class SqlStats(object):
             'wt_harmonic_sum': 'int',
             'total_sql_count': 'int'
         }
-
         self.attribute_map = {
             'sql_identifier': 'sqlIdentifier',
             'plan_hash_value': 'planHashValue',
@@ -422,7 +421,6 @@ class SqlStats(object):
             'wt_harmonic_sum': 'wtHarmonicSum',
             'total_sql_count': 'totalSqlCount'
         }
-
         self._sql_identifier = None
         self._plan_hash_value = None
         self._time_collected = None

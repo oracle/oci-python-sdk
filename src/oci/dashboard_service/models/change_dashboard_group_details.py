@@ -28,11 +28,9 @@ class ChangeDashboardGroupDetails(object):
         self.swagger_types = {
             'dashboard_group_id': 'str'
         }
-
         self.attribute_map = {
             'dashboard_group_id': 'dashboardGroupId'
         }
-
         self._dashboard_group_id = None
 
     @property

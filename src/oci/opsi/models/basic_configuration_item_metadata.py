@@ -55,7 +55,6 @@ class BasicConfigurationItemMetadata(ConfigurationItemMetadata):
             'unit_details': 'ConfigurationItemUnitDetails',
             'value_input_details': 'ConfigurationItemAllowedValueDetails'
         }
-
         self.attribute_map = {
             'config_item_type': 'configItemType',
             'display_name': 'displayName',
@@ -64,7 +63,6 @@ class BasicConfigurationItemMetadata(ConfigurationItemMetadata):
             'unit_details': 'unitDetails',
             'value_input_details': 'valueInputDetails'
         }
-
         self._config_item_type = None
         self._display_name = None
         self._description = None

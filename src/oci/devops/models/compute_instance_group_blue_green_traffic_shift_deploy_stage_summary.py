@@ -104,7 +104,6 @@ class ComputeInstanceGroupBlueGreenTrafficShiftDeployStageSummary(DeployStageSum
             'system_tags': 'dict(str, dict(str, object))',
             'compute_instance_group_blue_green_deployment_deploy_stage_id': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'description': 'description',
@@ -123,7 +122,6 @@ class ComputeInstanceGroupBlueGreenTrafficShiftDeployStageSummary(DeployStageSum
             'system_tags': 'systemTags',
             'compute_instance_group_blue_green_deployment_deploy_stage_id': 'computeInstanceGroupBlueGreenDeploymentDeployStageId'
         }
-
         self._id = None
         self._description = None
         self._display_name = None

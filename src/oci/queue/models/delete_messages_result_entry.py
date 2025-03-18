@@ -35,12 +35,10 @@ class DeleteMessagesResultEntry(object):
             'error_code': 'int',
             'error_message': 'str'
         }
-
         self.attribute_map = {
             'error_code': 'errorCode',
             'error_message': 'errorMessage'
         }
-
         self._error_code = None
         self._error_message = None
 

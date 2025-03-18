@@ -43,14 +43,12 @@ class RestoreDatabaseDetails(object):
             'latest': 'bool',
             'pluggable_database_name': 'str'
         }
-
         self.attribute_map = {
             'database_scn': 'databaseSCN',
             'timestamp': 'timestamp',
             'latest': 'latest',
             'pluggable_database_name': 'pluggableDatabaseName'
         }
-
         self._database_scn = None
         self._timestamp = None
         self._latest = None

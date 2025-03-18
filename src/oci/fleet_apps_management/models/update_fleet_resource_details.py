@@ -33,12 +33,10 @@ class UpdateFleetResourceDetails(object):
             'tenancy_id': 'str',
             'compartment_id': 'str'
         }
-
         self.attribute_map = {
             'tenancy_id': 'tenancyId',
             'compartment_id': 'compartmentId'
         }
-
         self._tenancy_id = None
         self._compartment_id = None
 

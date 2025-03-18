@@ -68,7 +68,6 @@ class SubscribedServiceBusinessPartner(object):
             'tca_party_id': 'int',
             'tca_customer_account_id': 'int'
         }
-
         self.attribute_map = {
             'name': 'name',
             'name_phonetic': 'namePhonetic',
@@ -80,7 +79,6 @@ class SubscribedServiceBusinessPartner(object):
             'tca_party_id': 'tcaPartyId',
             'tca_customer_account_id': 'tcaCustomerAccountId'
         }
-
         self._name = None
         self._name_phonetic = None
         self._tca_cust_account_number = None

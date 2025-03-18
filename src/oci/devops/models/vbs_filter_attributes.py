@@ -43,14 +43,12 @@ class VbsFilterAttributes(object):
             'repository_name': 'str',
             'file_filter': 'FileFilter'
         }
-
         self.attribute_map = {
             'head_ref': 'headRef',
             'base_ref': 'baseRef',
             'repository_name': 'repositoryName',
             'file_filter': 'fileFilter'
         }
-
         self._head_ref = None
         self._base_ref = None
         self._repository_name = None

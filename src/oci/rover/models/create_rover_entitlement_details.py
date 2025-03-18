@@ -103,7 +103,6 @@ class CreateRoverEntitlementDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
@@ -117,7 +116,6 @@ class CreateRoverEntitlementDetails(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._compartment_id = None
         self._display_name = None
         self._requestor_name = None

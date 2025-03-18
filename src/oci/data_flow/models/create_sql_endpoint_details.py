@@ -108,7 +108,6 @@ class CreateSqlEndpointDetails(object):
             'spark_advanced_configurations': 'dict(str, str)',
             'network_configuration': 'SqlEndpointNetworkConfiguration'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
@@ -128,7 +127,6 @@ class CreateSqlEndpointDetails(object):
             'spark_advanced_configurations': 'sparkAdvancedConfigurations',
             'network_configuration': 'networkConfiguration'
         }
-
         self._compartment_id = None
         self._display_name = None
         self._description = None

@@ -33,12 +33,10 @@ class OdaInstanceOwner(object):
             'owner_service_name': 'str',
             'owner_service_tenancy': 'str'
         }
-
         self.attribute_map = {
             'owner_service_name': 'ownerServiceName',
             'owner_service_tenancy': 'ownerServiceTenancy'
         }
-
         self._owner_service_name = None
         self._owner_service_tenancy = None
 

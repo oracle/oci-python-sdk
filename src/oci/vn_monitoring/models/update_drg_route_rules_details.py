@@ -28,11 +28,9 @@ class UpdateDrgRouteRulesDetails(object):
         self.swagger_types = {
             'route_rules': 'list[UpdateDrgRouteRuleDetails]'
         }
-
         self.attribute_map = {
             'route_rules': 'routeRules'
         }
-
         self._route_rules = None
 
     @property

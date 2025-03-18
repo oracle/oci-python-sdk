@@ -57,14 +57,12 @@ class StepMessage(object):
             'timestamp': 'datetime',
             'severity': 'str'
         }
-
         self.attribute_map = {
             'message': 'message',
             'code': 'code',
             'timestamp': 'timestamp',
             'severity': 'severity'
         }
-
         self._message = None
         self._code = None
         self._timestamp = None

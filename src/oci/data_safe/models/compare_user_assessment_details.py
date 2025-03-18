@@ -28,11 +28,9 @@ class CompareUserAssessmentDetails(object):
         self.swagger_types = {
             'comparison_user_assessment_id': 'str'
         }
-
         self.attribute_map = {
             'comparison_user_assessment_id': 'comparisonUserAssessmentId'
         }
-
         self._comparison_user_assessment_id = None
 
     @property

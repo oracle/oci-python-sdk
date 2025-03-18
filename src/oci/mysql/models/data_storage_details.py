@@ -33,12 +33,10 @@ class DataStorageDetails(object):
             'is_auto_expand_storage_enabled': 'bool',
             'max_storage_size_in_gbs': 'int'
         }
-
         self.attribute_map = {
             'is_auto_expand_storage_enabled': 'isAutoExpandStorageEnabled',
             'max_storage_size_in_gbs': 'maxStorageSizeInGBs'
         }
-
         self._is_auto_expand_storage_enabled = None
         self._max_storage_size_in_gbs = None
 

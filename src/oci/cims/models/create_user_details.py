@@ -84,7 +84,6 @@ class CreateUserDetails(object):
             'organization_name': 'str',
             'problem_type': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'first_name': 'firstName',
@@ -95,7 +94,6 @@ class CreateUserDetails(object):
             'organization_name': 'organizationName',
             'problem_type': 'problemType'
         }
-
         self._compartment_id = None
         self._first_name = None
         self._last_name = None

@@ -28,11 +28,9 @@ class DeleteProtectedBranchDetails(object):
         self.swagger_types = {
             'branch_name': 'str'
         }
-
         self.attribute_map = {
             'branch_name': 'branchName'
         }
-
         self._branch_name = None
 
     @property

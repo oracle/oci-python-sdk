@@ -59,7 +59,6 @@ class UpdateManualApprovalDeployStageDetails(UpdateDeployStageDetails):
             'defined_tags': 'dict(str, dict(str, object))',
             'approval_policy': 'ApprovalPolicy'
         }
-
         self.attribute_map = {
             'description': 'description',
             'display_name': 'displayName',
@@ -69,7 +68,6 @@ class UpdateManualApprovalDeployStageDetails(UpdateDeployStageDetails):
             'defined_tags': 'definedTags',
             'approval_policy': 'approvalPolicy'
         }
-
         self._description = None
         self._display_name = None
         self._deploy_stage_type = None

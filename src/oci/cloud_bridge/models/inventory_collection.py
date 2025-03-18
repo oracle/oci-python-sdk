@@ -28,11 +28,9 @@ class InventoryCollection(object):
         self.swagger_types = {
             'items': 'list[InventorySummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

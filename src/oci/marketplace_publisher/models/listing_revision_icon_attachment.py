@@ -33,12 +33,10 @@ class ListingRevisionIconAttachment(object):
             'content_url': 'str',
             'mime_type': 'str'
         }
-
         self.attribute_map = {
             'content_url': 'contentUrl',
             'mime_type': 'mimeType'
         }
-
         self._content_url = None
         self._mime_type = None
 

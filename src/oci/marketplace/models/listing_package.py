@@ -93,7 +93,6 @@ class ListingPackage(object):
             'operating_system': 'OperatingSystem',
             'regions': 'list[Region]'
         }
-
         self.attribute_map = {
             'description': 'description',
             'listing_id': 'listingId',
@@ -105,7 +104,6 @@ class ListingPackage(object):
             'operating_system': 'operatingSystem',
             'regions': 'regions'
         }
-
         self._description = None
         self._listing_id = None
         self._version = None

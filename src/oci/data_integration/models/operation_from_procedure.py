@@ -80,7 +80,6 @@ class OperationFromProcedure(Operation):
             'resource_name': 'str',
             'object_status': 'int'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'metadata': 'metadata',
@@ -94,7 +93,6 @@ class OperationFromProcedure(Operation):
             'resource_name': 'resourceName',
             'object_status': 'objectStatus'
         }
-
         self._model_type = None
         self._metadata = None
         self._key = None

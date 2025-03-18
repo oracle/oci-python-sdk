@@ -43,14 +43,12 @@ class DiskStatistics(object):
             'disk_usage_in_gbs': 'float',
             'disk_size_in_gbs': 'float'
         }
-
         self.attribute_map = {
             'disk_name': 'diskName',
             'disk_unallocated_in_gbs': 'diskUnallocatedInGBs',
             'disk_usage_in_gbs': 'diskUsageInGBs',
             'disk_size_in_gbs': 'diskSizeInGBs'
         }
-
         self._disk_name = None
         self._disk_unallocated_in_gbs = None
         self._disk_usage_in_gbs = None

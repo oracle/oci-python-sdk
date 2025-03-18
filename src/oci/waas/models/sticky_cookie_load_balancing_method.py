@@ -45,14 +45,12 @@ class StickyCookieLoadBalancingMethod(LoadBalancingMethod):
             'domain': 'str',
             'expiration_time_in_seconds': 'int'
         }
-
         self.attribute_map = {
             'method': 'method',
             'name': 'name',
             'domain': 'domain',
             'expiration_time_in_seconds': 'expirationTimeInSeconds'
         }
-
         self._method = None
         self._name = None
         self._domain = None

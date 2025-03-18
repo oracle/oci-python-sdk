@@ -38,13 +38,11 @@ class Category(object):
             'display_name': 'str',
             'parameters': 'list[Parameter]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'display_name': 'displayName',
             'parameters': 'parameters'
         }
-
         self._name = None
         self._display_name = None
         self._parameters = None

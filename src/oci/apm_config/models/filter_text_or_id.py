@@ -36,12 +36,10 @@ class FilterTextOrId(object):
             'filter_id': 'str',
             'filter_text': 'str'
         }
-
         self.attribute_map = {
             'filter_id': 'filterId',
             'filter_text': 'filterText'
         }
-
         self._filter_id = None
         self._filter_text = None
 

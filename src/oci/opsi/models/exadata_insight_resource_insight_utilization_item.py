@@ -53,7 +53,6 @@ class ExadataInsightResourceInsightUtilizationItem(object):
             'days_to_reach_high_utilization': 'int',
             'days_to_reach_low_utilization': 'int'
         }
-
         self.attribute_map = {
             'exadata_insight_id': 'exadataInsightId',
             'exadata_display_name': 'exadataDisplayName',
@@ -62,7 +61,6 @@ class ExadataInsightResourceInsightUtilizationItem(object):
             'days_to_reach_high_utilization': 'daysToReachHighUtilization',
             'days_to_reach_low_utilization': 'daysToReachLowUtilization'
         }
-
         self._exadata_insight_id = None
         self._exadata_display_name = None
         self._current_utilization = None

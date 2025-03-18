@@ -28,11 +28,9 @@ class PublishRunbookDetails(object):
         self.swagger_types = {
             'runbook_id': 'str'
         }
-
         self.attribute_map = {
             'runbook_id': 'runbookId'
         }
-
         self._runbook_id = None
 
     @property

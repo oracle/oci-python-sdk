@@ -198,7 +198,6 @@ class Folder(object):
             'uri': 'str',
             'object_storage_url': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'display_name': 'displayName',
@@ -225,7 +224,6 @@ class Folder(object):
             'uri': 'uri',
             'object_storage_url': 'objectStorageUrl'
         }
-
         self._key = None
         self._display_name = None
         self._business_name = None

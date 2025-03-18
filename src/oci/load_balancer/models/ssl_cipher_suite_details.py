@@ -276,12 +276,10 @@ class SSLCipherSuiteDetails(object):
             'name': 'str',
             'ciphers': 'list[str]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'ciphers': 'ciphers'
         }
-
         self._name = None
         self._ciphers = None
 

@@ -48,7 +48,6 @@ class SubscriptionInfo(object):
             'end_date': 'datetime',
             'skus': 'list[Sku]'
         }
-
         self.attribute_map = {
             'spm_subscription_id': 'spmSubscriptionId',
             'service': 'service',
@@ -56,7 +55,6 @@ class SubscriptionInfo(object):
             'end_date': 'endDate',
             'skus': 'skus'
         }
-
         self._spm_subscription_id = None
         self._service = None
         self._start_date = None

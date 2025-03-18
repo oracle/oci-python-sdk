@@ -82,7 +82,6 @@ class EnforcedGovernanceRuleSummary(object):
             'time_created': 'datetime',
             'time_updated': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -92,7 +91,6 @@ class EnforcedGovernanceRuleSummary(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated'
         }
-
         self._id = None
         self._compartment_id = None
         self._governance_rule_display_name = None

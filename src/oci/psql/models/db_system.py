@@ -183,7 +183,6 @@ class DbSystem(object):
             'management_policy': 'ManagementPolicy',
             'source': 'SourceDetails'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -210,7 +209,6 @@ class DbSystem(object):
             'management_policy': 'managementPolicy',
             'source': 'source'
         }
-
         self._id = None
         self._display_name = None
         self._description = None

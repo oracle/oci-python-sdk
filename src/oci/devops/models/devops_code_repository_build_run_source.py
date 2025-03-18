@@ -45,14 +45,12 @@ class DevopsCodeRepositoryBuildRunSource(BuildRunSource):
             'trigger_info': 'TriggerInfo',
             'repository_id': 'str'
         }
-
         self.attribute_map = {
             'source_type': 'sourceType',
             'trigger_id': 'triggerId',
             'trigger_info': 'triggerInfo',
             'repository_id': 'repositoryId'
         }
-
         self._source_type = None
         self._trigger_id = None
         self._trigger_info = None

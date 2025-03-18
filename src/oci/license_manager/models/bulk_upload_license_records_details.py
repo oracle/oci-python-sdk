@@ -38,13 +38,11 @@ class BulkUploadLicenseRecordsDetails(object):
             'file_name': 'str',
             'file_content': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'file_name': 'fileName',
             'file_content': 'fileContent'
         }
-
         self._compartment_id = None
         self._file_name = None
         self._file_content = None

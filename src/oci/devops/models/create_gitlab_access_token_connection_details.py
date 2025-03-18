@@ -60,7 +60,6 @@ class CreateGitlabAccessTokenConnectionDetails(CreateConnectionDetails):
             'defined_tags': 'dict(str, dict(str, object))',
             'access_token': 'str'
         }
-
         self.attribute_map = {
             'description': 'description',
             'display_name': 'displayName',
@@ -70,7 +69,6 @@ class CreateGitlabAccessTokenConnectionDetails(CreateConnectionDetails):
             'defined_tags': 'definedTags',
             'access_token': 'accessToken'
         }
-
         self._description = None
         self._display_name = None
         self._project_id = None

@@ -207,7 +207,6 @@ class DatabaseRegistration(object):
             'secret_compartment_id': 'str',
             'secret_id': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -234,7 +233,6 @@ class DatabaseRegistration(object):
             'secret_compartment_id': 'secretCompartmentId',
             'secret_id': 'secretId'
         }
-
         self._id = None
         self._display_name = None
         self._description = None

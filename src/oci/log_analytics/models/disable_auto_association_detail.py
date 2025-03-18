@@ -28,11 +28,9 @@ class DisableAutoAssociationDetail(object):
         self.swagger_types = {
             'delete_existing_associations': 'bool'
         }
-
         self.attribute_map = {
             'delete_existing_associations': 'deleteExistingAssociations'
         }
-
         self._delete_existing_associations = None
 
     @property

@@ -73,14 +73,12 @@ class DatabaseTool(object):
             'compute_count': 'float',
             'max_idle_time_in_minutes': 'int'
         }
-
         self.attribute_map = {
             'name': 'name',
             'is_enabled': 'isEnabled',
             'compute_count': 'computeCount',
             'max_idle_time_in_minutes': 'maxIdleTimeInMinutes'
         }
-
         self._name = None
         self._is_enabled = None
         self._compute_count = None

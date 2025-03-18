@@ -64,7 +64,6 @@ class ApprovalWorkflowAssignmentAssignedTo(object):
             'display': 'str',
             'description': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ocid': 'ocid',
@@ -72,7 +71,6 @@ class ApprovalWorkflowAssignmentAssignedTo(object):
             'display': 'display',
             'description': 'description'
         }
-
         self._value = None
         self._ocid = None
         self._type = None

@@ -28,11 +28,9 @@ class PublishedObjectSummaryCollection(object):
         self.swagger_types = {
             'items': 'list[PublishedObjectSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

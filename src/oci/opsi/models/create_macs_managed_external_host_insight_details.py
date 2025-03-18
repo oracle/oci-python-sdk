@@ -50,7 +50,6 @@ class CreateMacsManagedExternalHostInsightDetails(CreateHostInsightDetails):
             'defined_tags': 'dict(str, dict(str, object))',
             'management_agent_id': 'str'
         }
-
         self.attribute_map = {
             'entity_source': 'entitySource',
             'compartment_id': 'compartmentId',
@@ -58,7 +57,6 @@ class CreateMacsManagedExternalHostInsightDetails(CreateHostInsightDetails):
             'defined_tags': 'definedTags',
             'management_agent_id': 'managementAgentId'
         }
-
         self._entity_source = None
         self._compartment_id = None
         self._freeform_tags = None

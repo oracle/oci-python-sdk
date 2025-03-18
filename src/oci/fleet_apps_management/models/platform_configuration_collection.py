@@ -28,11 +28,9 @@ class PlatformConfigurationCollection(object):
         self.swagger_types = {
             'items': 'list[PlatformConfigurationSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

@@ -88,7 +88,6 @@ class ActivityLog(object):
             'message': 'str',
             'time_updated': 'datetime'
         }
-
         self.attribute_map = {
             'user_id': 'userId',
             'user_level': 'userLevel',
@@ -96,7 +95,6 @@ class ActivityLog(object):
             'message': 'message',
             'time_updated': 'timeUpdated'
         }
-
         self._user_id = None
         self._user_level = None
         self._action = None

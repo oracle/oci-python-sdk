@@ -210,7 +210,6 @@ class ComputedUsage(object):
             'product': 'ComputedUsageProduct',
             'unit_of_measure': 'str'
         }
-
         self.attribute_map = {
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
@@ -238,7 +237,6 @@ class ComputedUsage(object):
             'product': 'product',
             'unit_of_measure': 'unitOfMeasure'
         }
-
         self._time_created = None
         self._time_updated = None
         self._parent_subscribed_service_id = None

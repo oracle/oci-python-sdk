@@ -63,7 +63,6 @@ class PackageGroupSummary(object):
             'group_type': 'str',
             'display_order': 'int'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -74,7 +73,6 @@ class PackageGroupSummary(object):
             'group_type': 'groupType',
             'display_order': 'displayOrder'
         }
-
         self._id = None
         self._name = None
         self._description = None

@@ -127,7 +127,6 @@ class ApprovalWorkflowAssignment(object):
             'approval_workflow': 'ApprovalWorkflowAssignmentApprovalWorkflow',
             'assigned_to': 'ApprovalWorkflowAssignmentAssignedTo'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -146,7 +145,6 @@ class ApprovalWorkflowAssignment(object):
             'approval_workflow': 'approvalWorkflow',
             'assigned_to': 'assignedTo'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

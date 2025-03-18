@@ -28,11 +28,9 @@ class RemoveNetworkSecurityGroupSecurityRulesDetails(object):
         self.swagger_types = {
             'security_rule_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'security_rule_ids': 'securityRuleIds'
         }
-
         self._security_rule_ids = None
 
     @property

@@ -82,7 +82,6 @@ class AddStandbyAutonomousContainerDatabaseDetails(object):
             'protection_mode': 'str',
             'standby_maintenance_buffer_in_days': 'int'
         }
-
         self.attribute_map = {
             'fast_start_fail_over_lag_limit_in_seconds': 'fastStartFailOverLagLimitInSeconds',
             'is_automatic_failover_enabled': 'isAutomaticFailoverEnabled',
@@ -95,7 +94,6 @@ class AddStandbyAutonomousContainerDatabaseDetails(object):
             'protection_mode': 'protectionMode',
             'standby_maintenance_buffer_in_days': 'standbyMaintenanceBufferInDays'
         }
-
         self._fast_start_fail_over_lag_limit_in_seconds = None
         self._is_automatic_failover_enabled = None
         self._peer_autonomous_container_database_backup_config = None

@@ -54,7 +54,6 @@ class CreateLinuxSecurityContextDetails(CreateSecurityContextDetails):
             'is_root_file_system_readonly': 'bool',
             'capabilities': 'ContainerCapabilities'
         }
-
         self.attribute_map = {
             'security_context_type': 'securityContextType',
             'run_as_user': 'runAsUser',
@@ -63,7 +62,6 @@ class CreateLinuxSecurityContextDetails(CreateSecurityContextDetails):
             'is_root_file_system_readonly': 'isRootFileSystemReadonly',
             'capabilities': 'capabilities'
         }
-
         self._security_context_type = None
         self._run_as_user = None
         self._run_as_group = None

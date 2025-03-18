@@ -33,12 +33,10 @@ class ResourceTypeDefaultParameterValues(object):
             'resource_type': 'str',
             'parameter_values': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'resource_type': 'resourceType',
             'parameter_values': 'parameterValues'
         }
-
         self._resource_type = None
         self._parameter_values = None
 

@@ -45,14 +45,12 @@ class InstanceAgentCommandExecutionOutputViaObjectStorageUriDetails(InstanceAgen
             'message': 'str',
             'output_uri': 'str'
         }
-
         self.attribute_map = {
             'output_type': 'outputType',
             'exit_code': 'exitCode',
             'message': 'message',
             'output_uri': 'outputUri'
         }
-
         self._output_type = None
         self._exit_code = None
         self._message = None

@@ -47,12 +47,10 @@ class PdbStatusDetails(object):
             'status': 'str',
             'count': 'int'
         }
-
         self.attribute_map = {
             'status': 'status',
             'count': 'count'
         }
-
         self._status = None
         self._count = None
 

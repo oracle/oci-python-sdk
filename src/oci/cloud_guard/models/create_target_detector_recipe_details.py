@@ -33,12 +33,10 @@ class CreateTargetDetectorRecipeDetails(object):
             'detector_recipe_id': 'str',
             'detector_rules': 'list[UpdateTargetRecipeDetectorRuleDetails]'
         }
-
         self.attribute_map = {
             'detector_recipe_id': 'detectorRecipeId',
             'detector_rules': 'detectorRules'
         }
-
         self._detector_recipe_id = None
         self._detector_rules = None
 

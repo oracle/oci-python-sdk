@@ -65,14 +65,12 @@ class UpdatePropertyDetails(object):
             'value_type': 'str',
             'values': 'list[str]'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'selection': 'selection',
             'value_type': 'valueType',
             'values': 'values'
         }
-
         self._display_name = None
         self._selection = None
         self._value_type = None

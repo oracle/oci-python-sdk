@@ -81,7 +81,6 @@ class CreateZeroEtlPipelineDetails(CreatePipelineDetails):
             'target_connection_details': 'TargetPipelineConnectionDetails',
             'process_options': 'ProcessOptions'
         }
-
         self.attribute_map = {
             'recipe_type': 'recipeType',
             'display_name': 'displayName',
@@ -95,7 +94,6 @@ class CreateZeroEtlPipelineDetails(CreatePipelineDetails):
             'target_connection_details': 'targetConnectionDetails',
             'process_options': 'processOptions'
         }
-
         self._recipe_type = None
         self._display_name = None
         self._description = None

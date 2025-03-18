@@ -60,7 +60,6 @@ class GenericDeliveredArtifact(DeliveredArtifact):
             'path': 'str',
             'version': 'str'
         }
-
         self.attribute_map = {
             'deploy_artifact_id': 'deployArtifactId',
             'output_artifact_name': 'outputArtifactName',
@@ -70,7 +69,6 @@ class GenericDeliveredArtifact(DeliveredArtifact):
             'path': 'path',
             'version': 'version'
         }
-
         self._deploy_artifact_id = None
         self._output_artifact_name = None
         self._artifact_type = None

@@ -35,12 +35,10 @@ class ScimQuerySelectionMode(SelectionDetails):
             'selection_mode': 'str',
             'scim_query': 'str'
         }
-
         self.attribute_map = {
             'selection_mode': 'selectionMode',
             'scim_query': 'scimQuery'
         }
-
         self._selection_mode = None
         self._scim_query = None
         self._selection_mode = 'SCIM_QUERY'

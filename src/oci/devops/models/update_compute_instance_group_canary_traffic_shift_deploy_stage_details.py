@@ -59,7 +59,6 @@ class UpdateComputeInstanceGroupCanaryTrafficShiftDeployStageDetails(UpdateDeplo
             'defined_tags': 'dict(str, dict(str, object))',
             'rollout_policy': 'LoadBalancerTrafficShiftRolloutPolicy'
         }
-
         self.attribute_map = {
             'description': 'description',
             'display_name': 'displayName',
@@ -69,7 +68,6 @@ class UpdateComputeInstanceGroupCanaryTrafficShiftDeployStageDetails(UpdateDeplo
             'defined_tags': 'definedTags',
             'rollout_policy': 'rolloutPolicy'
         }
-
         self._description = None
         self._display_name = None
         self._deploy_stage_type = None

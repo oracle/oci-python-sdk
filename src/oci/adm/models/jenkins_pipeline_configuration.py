@@ -55,7 +55,6 @@ class JenkinsPipelineConfiguration(VerifyConfiguration):
             'job_name': 'str',
             'additional_parameters': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'build_service_type': 'buildServiceType',
             'username': 'username',
@@ -64,7 +63,6 @@ class JenkinsPipelineConfiguration(VerifyConfiguration):
             'job_name': 'jobName',
             'additional_parameters': 'additionalParameters'
         }
-
         self._build_service_type = None
         self._username = None
         self._pat_secret_id = None

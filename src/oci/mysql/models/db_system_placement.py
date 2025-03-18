@@ -33,12 +33,10 @@ class DbSystemPlacement(object):
             'availability_domain': 'str',
             'fault_domain': 'str'
         }
-
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'fault_domain': 'faultDomain'
         }
-
         self._availability_domain = None
         self._fault_domain = None
 

@@ -96,7 +96,6 @@ class SqlMonitorConfiguration(MonitorConfiguration):
             'connection_string': 'str',
             'database_wallet_details': 'DatabaseWalletDetails'
         }
-
         self.attribute_map = {
             'config_type': 'configType',
             'is_failure_retried': 'isFailureRetried',
@@ -109,7 +108,6 @@ class SqlMonitorConfiguration(MonitorConfiguration):
             'connection_string': 'connectionString',
             'database_wallet_details': 'databaseWalletDetails'
         }
-
         self._config_type = None
         self._is_failure_retried = None
         self._dns_configuration = None

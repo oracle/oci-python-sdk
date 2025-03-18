@@ -45,14 +45,12 @@ class Logprobs(object):
             'tokens': 'list[str]',
             'top_logprobs': 'list[dict(str, str)]'
         }
-
         self.attribute_map = {
             'text_offset': 'textOffset',
             'token_logprobs': 'tokenLogprobs',
             'tokens': 'tokens',
             'top_logprobs': 'topLogprobs'
         }
-
         self._text_offset = None
         self._token_logprobs = None
         self._tokens = None

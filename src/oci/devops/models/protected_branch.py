@@ -53,14 +53,12 @@ class ProtectedBranch(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'branch_name': 'branchName',
             'protection_levels': 'protectionLevels',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._branch_name = None
         self._protection_levels = None
         self._freeform_tags = None

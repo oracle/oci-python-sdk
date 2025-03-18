@@ -33,12 +33,10 @@ class FilterGroupMembershipDetails(object):
             'principal': 'Principal',
             'group_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'principal': 'principal',
             'group_ids': 'groupIds'
         }
-
         self._principal = None
         self._group_ids = None
 

@@ -28,11 +28,9 @@ class TopUtilizedResourceCollection(object):
         self.swagger_types = {
             'items': 'list[TopUtilizedResourceSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

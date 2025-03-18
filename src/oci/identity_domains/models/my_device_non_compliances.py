@@ -56,13 +56,11 @@ class MyDeviceNonCompliances(object):
             'value': 'str',
             'action': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'value': 'value',
             'action': 'action'
         }
-
         self._name = None
         self._value = None
         self._action = None

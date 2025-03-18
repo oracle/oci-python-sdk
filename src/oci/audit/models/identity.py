@@ -73,7 +73,6 @@ class Identity(object):
             'user_agent': 'str',
             'console_session_id': 'str'
         }
-
         self.attribute_map = {
             'principal_name': 'principalName',
             'principal_id': 'principalId',
@@ -86,7 +85,6 @@ class Identity(object):
             'user_agent': 'userAgent',
             'console_session_id': 'consoleSessionId'
         }
-
         self._principal_name = None
         self._principal_id = None
         self._auth_type = None

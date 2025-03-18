@@ -35,12 +35,10 @@ class UpdateUdpServiceDetails(UpdateServiceDetails):
             'type': 'str',
             'port_ranges': 'list[PortRange]'
         }
-
         self.attribute_map = {
             'type': 'type',
             'port_ranges': 'portRanges'
         }
-
         self._type = None
         self._port_ranges = None
         self._type = 'UDP_SERVICE'

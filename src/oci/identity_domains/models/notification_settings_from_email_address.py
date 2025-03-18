@@ -72,14 +72,12 @@ class NotificationSettingsFromEmailAddress(object):
             'validate': 'str',
             'display_name': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'validation_status': 'validationStatus',
             'validate': 'validate',
             'display_name': 'displayName'
         }
-
         self._value = None
         self._validation_status = None
         self._validate = None

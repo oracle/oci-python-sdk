@@ -148,7 +148,6 @@ class Erratum(object):
             'os_families': 'list[OsFamily]',
             'advisory_severity': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'synopsis': 'synopsis',
@@ -166,7 +165,6 @@ class Erratum(object):
             'os_families': 'osFamilies',
             'advisory_severity': 'advisorySeverity'
         }
-
         self._name = None
         self._synopsis = None
         self._time_issued = None

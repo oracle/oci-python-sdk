@@ -33,12 +33,10 @@ class ShapeConfig(object):
             'ocpus': 'float',
             'memory_in_gbs': 'float'
         }
-
         self.attribute_map = {
             'ocpus': 'ocpus',
             'memory_in_gbs': 'memoryInGBs'
         }
-
         self._ocpus = None
         self._memory_in_gbs = None
 

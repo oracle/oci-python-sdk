@@ -106,7 +106,6 @@ class ColumnFilter(object):
             'is_enabled': 'bool',
             'is_hidden': 'bool'
         }
-
         self.attribute_map = {
             'field_name': 'fieldName',
             'operator': 'operator',
@@ -114,7 +113,6 @@ class ColumnFilter(object):
             'is_enabled': 'isEnabled',
             'is_hidden': 'isHidden'
         }
-
         self._field_name = None
         self._operator = None
         self._expressions = None

@@ -33,12 +33,10 @@ class FleetErrorAggregationSummary(object):
             'healthy_fleet_count': 'int',
             'fleet_error_aggregations': 'list[FleetErrorAggregation]'
         }
-
         self.attribute_map = {
             'healthy_fleet_count': 'healthyFleetCount',
             'fleet_error_aggregations': 'fleetErrorAggregations'
         }
-
         self._healthy_fleet_count = None
         self._fleet_error_aggregations = None
 

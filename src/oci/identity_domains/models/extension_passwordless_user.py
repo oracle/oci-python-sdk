@@ -84,13 +84,11 @@ class ExtensionPasswordlessUser(object):
             'factor_method': 'str',
             'factor_identifier': 'UserExtFactorIdentifier'
         }
-
         self.attribute_map = {
             'factor_type': 'factorType',
             'factor_method': 'factorMethod',
             'factor_identifier': 'factorIdentifier'
         }
-
         self._factor_type = None
         self._factor_method = None
         self._factor_identifier = None

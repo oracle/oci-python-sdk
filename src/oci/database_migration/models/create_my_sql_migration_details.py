@@ -111,7 +111,6 @@ class CreateMySqlMigrationDetails(CreateMigrationDetails):
             'hub_details': 'CreateGoldenGateHubDetails',
             'ggs_details': 'CreateMySqlGgsDeploymentDetails'
         }
-
         self.attribute_map = {
             'description': 'description',
             'compartment_id': 'compartmentId',
@@ -131,7 +130,6 @@ class CreateMySqlMigrationDetails(CreateMigrationDetails):
             'hub_details': 'hubDetails',
             'ggs_details': 'ggsDetails'
         }
-
         self._description = None
         self._compartment_id = None
         self._database_combination = None

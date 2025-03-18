@@ -28,11 +28,9 @@ class ExtendedFieldsValidationResult(object):
         self.swagger_types = {
             'items': 'list[EfdRegexResult]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

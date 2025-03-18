@@ -35,12 +35,10 @@ class DocumentLanguageClassificationFeature(DocumentFeature):
             'feature_type': 'str',
             'max_results': 'int'
         }
-
         self.attribute_map = {
             'feature_type': 'featureType',
             'max_results': 'maxResults'
         }
-
         self._feature_type = None
         self._max_results = None
         self._feature_type = 'LANGUAGE_CLASSIFICATION'

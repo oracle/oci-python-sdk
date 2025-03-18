@@ -33,12 +33,10 @@ class KeyStoreAssociatedDatabaseDetails(object):
             'id': 'str',
             'db_name': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'db_name': 'dbName'
         }
-
         self._id = None
         self._db_name = None
 

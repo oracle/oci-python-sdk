@@ -38,13 +38,11 @@ class IndexKey(object):
             'json_path': 'str',
             'json_field_type': 'str'
         }
-
         self.attribute_map = {
             'column_name': 'columnName',
             'json_path': 'jsonPath',
             'json_field_type': 'jsonFieldType'
         }
-
         self._column_name = None
         self._json_path = None
         self._json_field_type = None

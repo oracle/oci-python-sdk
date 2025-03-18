@@ -28,11 +28,9 @@ class MaskingErrorCollection(object):
         self.swagger_types = {
             'items': 'list[MaskingErrorSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

@@ -72,7 +72,6 @@ class Topology(object):
             'limited_entities': 'list[str]',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'type': 'type',
             'entities': 'entities',
@@ -80,7 +79,6 @@ class Topology(object):
             'limited_entities': 'limitedEntities',
             'time_created': 'timeCreated'
         }
-
         self._type = None
         self._entities = None
         self._relationships = None

@@ -38,13 +38,11 @@ class PaySubscriptionReceipt(object):
             'api_token': 'str',
             'user_token': 'str'
         }
-
         self.attribute_map = {
             'header_id': 'headerId',
             'api_token': 'apiToken',
             'user_token': 'userToken'
         }
-
         self._header_id = None
         self._api_token = None
         self._user_token = None

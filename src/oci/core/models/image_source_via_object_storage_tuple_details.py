@@ -60,7 +60,6 @@ class ImageSourceViaObjectStorageTupleDetails(ImageSourceDetails):
             'namespace_name': 'str',
             'object_name': 'str'
         }
-
         self.attribute_map = {
             'operating_system': 'operatingSystem',
             'operating_system_version': 'operatingSystemVersion',
@@ -70,7 +69,6 @@ class ImageSourceViaObjectStorageTupleDetails(ImageSourceDetails):
             'namespace_name': 'namespaceName',
             'object_name': 'objectName'
         }
-
         self._operating_system = None
         self._operating_system_version = None
         self._source_image_type = None

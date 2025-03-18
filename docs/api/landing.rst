@@ -136,6 +136,8 @@ API Reference
 * :doc:`Log Search <loggingsearch/client/oci.loggingsearch.LogSearchClient>`
 * :doc:`Logging <loggingingestion/client/oci.loggingingestion.LoggingClient>`
 * :doc:`Logging Management <logging/client/oci.logging.LoggingManagementClient>`
+* :doc:`Mac Device <mngdmac/client/oci.mngdmac.MacDeviceClient>`
+* :doc:`Mac Order <mngdmac/client/oci.mngdmac.MacOrderClient>`
 * :doc:`Managed Instance <os_management_hub/client/oci.os_management_hub.ManagedInstanceClient>`
 * :doc:`Managed Instance Group <os_management_hub/client/oci.os_management_hub.ManagedInstanceGroupClient>`
 * :doc:`Managed My Sql Databases <database_management/client/oci.database_management.ManagedMySqlDatabasesClient>`
@@ -369,6 +371,7 @@ API Reference
     marketplace_private_offer
     marketplace_publisher
     media_services
+    mngdmac
     monitoring
     mysql
     network_firewall

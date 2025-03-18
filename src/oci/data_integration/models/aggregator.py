@@ -100,7 +100,6 @@ class Aggregator(Operator):
             'group_by_columns': 'DynamicProxyField',
             'materialized_group_by_columns': 'MaterializedDynamicField'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -118,7 +117,6 @@ class Aggregator(Operator):
             'group_by_columns': 'groupByColumns',
             'materialized_group_by_columns': 'materializedGroupByColumns'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

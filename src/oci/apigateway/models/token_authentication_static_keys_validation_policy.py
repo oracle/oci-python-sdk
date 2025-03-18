@@ -40,13 +40,11 @@ class TokenAuthenticationStaticKeysValidationPolicy(TokenAuthenticationValidatio
             'additional_validation_policy': 'AdditionalValidationPolicy',
             'keys': 'list[StaticPublicKey]'
         }
-
         self.attribute_map = {
             'type': 'type',
             'additional_validation_policy': 'additionalValidationPolicy',
             'keys': 'keys'
         }
-
         self._type = None
         self._additional_validation_policy = None
         self._keys = None

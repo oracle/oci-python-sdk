@@ -43,13 +43,11 @@ class SSECustomerKeyDetails(object):
             'key': 'str',
             'key_sha256': 'str'
         }
-
         self.attribute_map = {
             'algorithm': 'algorithm',
             'key': 'key',
             'key_sha256': 'keySha256'
         }
-
         self._algorithm = None
         self._key = None
         self._key_sha256 = None

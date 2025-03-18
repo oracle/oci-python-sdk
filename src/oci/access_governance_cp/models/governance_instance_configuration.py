@@ -28,11 +28,9 @@ class GovernanceInstanceConfiguration(object):
         self.swagger_types = {
             'sender_info': 'SenderConfig'
         }
-
         self.attribute_map = {
             'sender_info': 'senderInfo'
         }
-
         self._sender_info = None
 
     @property

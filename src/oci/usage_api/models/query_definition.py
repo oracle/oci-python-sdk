@@ -43,14 +43,12 @@ class QueryDefinition(object):
             'cost_analysis_ui': 'CostAnalysisUI',
             'version': 'float'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'report_query': 'reportQuery',
             'cost_analysis_ui': 'costAnalysisUI',
             'version': 'version'
         }
-
         self._display_name = None
         self._report_query = None
         self._cost_analysis_ui = None

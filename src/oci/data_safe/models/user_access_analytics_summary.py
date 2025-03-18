@@ -33,12 +33,10 @@ class UserAccessAnalyticsSummary(object):
             'count': 'int',
             'user_name': 'str'
         }
-
         self.attribute_map = {
             'count': 'count',
             'user_name': 'userName'
         }
-
         self._count = None
         self._user_name = None
 

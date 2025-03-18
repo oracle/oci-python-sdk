@@ -90,7 +90,6 @@ class ManagementAgentAggregationDimensions(object):
             'has_plugins': 'bool',
             'install_type': 'str'
         }
-
         self.attribute_map = {
             'availability_status': 'availabilityStatus',
             'platform_type': 'platformType',
@@ -98,7 +97,6 @@ class ManagementAgentAggregationDimensions(object):
             'has_plugins': 'hasPlugins',
             'install_type': 'installType'
         }
-
         self._availability_status = None
         self._platform_type = None
         self._version = None

@@ -38,13 +38,11 @@ class ContainerVersion(object):
             'time_created': 'datetime',
             'version': 'str'
         }
-
         self.attribute_map = {
             'created_by': 'createdBy',
             'time_created': 'timeCreated',
             'version': 'version'
         }
-
         self._created_by = None
         self._time_created = None
         self._version = None

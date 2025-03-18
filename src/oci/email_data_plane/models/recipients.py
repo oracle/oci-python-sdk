@@ -39,13 +39,11 @@ class Recipients(object):
             'cc': 'list[EmailAddress]',
             'bcc': 'list[EmailAddress]'
         }
-
         self.attribute_map = {
             'to': 'to',
             'cc': 'cc',
             'bcc': 'bcc'
         }
-
         self._to = None
         self._cc = None
         self._bcc = None

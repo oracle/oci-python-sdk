@@ -28,11 +28,9 @@ class TimezoneCollection(object):
         self.swagger_types = {
             'items': 'list[str]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

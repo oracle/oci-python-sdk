@@ -43,12 +43,10 @@ class IdentityPropagationTrustKeytab(object):
             'secret_ocid': 'str',
             'secret_version': 'int'
         }
-
         self.attribute_map = {
             'secret_ocid': 'secretOcid',
             'secret_version': 'secretVersion'
         }
-
         self._secret_ocid = None
         self._secret_version = None
 

@@ -58,7 +58,6 @@ class ComputeGlobalImageCapabilitySchema(object):
             'freeform_tags': 'dict(str, str)',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -68,7 +67,6 @@ class ComputeGlobalImageCapabilitySchema(object):
             'freeform_tags': 'freeformTags',
             'time_created': 'timeCreated'
         }
-
         self._id = None
         self._compartment_id = None
         self._current_version_name = None

@@ -33,12 +33,10 @@ class RecordAggregationDimensions(object):
             'is_labeled': 'bool',
             'annotation_label_contains': 'str'
         }
-
         self.attribute_map = {
             'is_labeled': 'isLabeled',
             'annotation_label_contains': 'annotationLabelContains'
         }
-
         self._is_labeled = None
         self._annotation_label_contains = None
 

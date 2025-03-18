@@ -90,7 +90,6 @@ class TopUtilizedProductLicenseSummary(object):
             'is_unlimited': 'bool',
             'status': 'str'
         }
-
         self.attribute_map = {
             'product_license_id': 'productLicenseId',
             'product_type': 'productType',
@@ -100,7 +99,6 @@ class TopUtilizedProductLicenseSummary(object):
             'is_unlimited': 'isUnlimited',
             'status': 'status'
         }
-
         self._product_license_id = None
         self._product_type = None
         self._unit_type = None

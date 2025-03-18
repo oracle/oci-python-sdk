@@ -28,11 +28,9 @@ class ExtensionTermsOfUseUser(object):
         self.swagger_types = {
             'terms_of_use_consents': 'list[UserExtTermsOfUseConsents]'
         }
-
         self.attribute_map = {
             'terms_of_use_consents': 'termsOfUseConsents'
         }
-
         self._terms_of_use_consents = None
 
     @property

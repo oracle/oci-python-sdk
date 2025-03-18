@@ -74,13 +74,11 @@ class SoftwareSourceAvailability(object):
             'availability': 'str',
             'availability_at_oci': 'str'
         }
-
         self.attribute_map = {
             'software_source_id': 'softwareSourceId',
             'availability': 'availability',
             'availability_at_oci': 'availabilityAtOci'
         }
-
         self._software_source_id = None
         self._availability = None
         self._availability_at_oci = None

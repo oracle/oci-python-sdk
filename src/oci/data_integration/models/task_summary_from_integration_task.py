@@ -115,7 +115,6 @@ class TaskSummaryFromIntegrationTask(TaskSummary):
             'key_map': 'dict(str, str)',
             'data_flow': 'DataFlow'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -136,7 +135,6 @@ class TaskSummaryFromIntegrationTask(TaskSummary):
             'key_map': 'keyMap',
             'data_flow': 'dataFlow'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

@@ -61,14 +61,12 @@ class GroupExtSyncedFromApp(object):
             'ref': 'str',
             'display': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'type': 'type',
             'ref': '$ref',
             'display': 'display'
         }
-
         self._value = None
         self._type = None
         self._ref = None

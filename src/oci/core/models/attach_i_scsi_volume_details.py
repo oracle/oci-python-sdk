@@ -83,7 +83,6 @@ class AttachIScsiVolumeDetails(AttachVolumeDetails):
             'encryption_in_transit_type': 'str',
             'is_agent_auto_iscsi_login_enabled': 'bool'
         }
-
         self.attribute_map = {
             'device': 'device',
             'display_name': 'displayName',
@@ -96,7 +95,6 @@ class AttachIScsiVolumeDetails(AttachVolumeDetails):
             'encryption_in_transit_type': 'encryptionInTransitType',
             'is_agent_auto_iscsi_login_enabled': 'isAgentAutoIscsiLoginEnabled'
         }
-
         self._device = None
         self._display_name = None
         self._instance_id = None

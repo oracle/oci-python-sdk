@@ -28,11 +28,9 @@ class CreateConfigProvider(object):
         self.swagger_types = {
             'bindings': 'dict(str, ParameterValue)'
         }
-
         self.attribute_map = {
             'bindings': 'bindings'
         }
-
         self._bindings = None
 
     @property

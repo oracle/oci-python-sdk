@@ -58,7 +58,6 @@ class ServiceSummary(object):
             'id': 'str',
             'resource_types': 'list[ResourceType]'
         }
-
         self.attribute_map = {
             'tenant_id': 'tenantId',
             'namespace': 'namespace',
@@ -68,7 +67,6 @@ class ServiceSummary(object):
             'id': 'id',
             'resource_types': 'resourceTypes'
         }
-
         self._tenant_id = None
         self._namespace = None
         self._service_principal_name = None

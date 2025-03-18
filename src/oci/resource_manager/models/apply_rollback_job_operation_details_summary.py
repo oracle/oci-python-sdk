@@ -47,14 +47,12 @@ class ApplyRollbackJobOperationDetailsSummary(JobOperationDetailsSummary):
             'execution_plan_rollback_job_id': 'str',
             'target_rollback_job_id': 'str'
         }
-
         self.attribute_map = {
             'operation': 'operation',
             'execution_plan_rollback_strategy': 'executionPlanRollbackStrategy',
             'execution_plan_rollback_job_id': 'executionPlanRollbackJobId',
             'target_rollback_job_id': 'targetRollbackJobId'
         }
-
         self._operation = None
         self._execution_plan_rollback_strategy = None
         self._execution_plan_rollback_job_id = None

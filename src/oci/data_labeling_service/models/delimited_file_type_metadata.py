@@ -55,7 +55,6 @@ class DelimitedFileTypeMetadata(TextFileTypeMetadata):
             'line_delimiter': 'str',
             'escape_character': 'str'
         }
-
         self.attribute_map = {
             'format_type': 'formatType',
             'column_name': 'columnName',
@@ -64,7 +63,6 @@ class DelimitedFileTypeMetadata(TextFileTypeMetadata):
             'line_delimiter': 'lineDelimiter',
             'escape_character': 'escapeCharacter'
         }
-
         self._format_type = None
         self._column_name = None
         self._column_index = None

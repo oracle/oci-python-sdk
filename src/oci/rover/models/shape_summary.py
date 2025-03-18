@@ -88,7 +88,6 @@ class ShapeSummary(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'gpu_description': 'gpuDescription',
             'gpus': 'gpus',
@@ -104,7 +103,6 @@ class ShapeSummary(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._gpu_description = None
         self._gpus = None
         self._memory_in_gbs = None

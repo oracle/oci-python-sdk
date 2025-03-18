@@ -33,12 +33,10 @@ class ApplicationTraceConfig(object):
             'is_enabled': 'bool',
             'domain_id': 'str'
         }
-
         self.attribute_map = {
             'is_enabled': 'isEnabled',
             'domain_id': 'domainId'
         }
-
         self._is_enabled = None
         self._domain_id = None
 

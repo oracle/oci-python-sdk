@@ -64,14 +64,12 @@ class CreateCursorDetails(object):
             'offset': 'int',
             'time': 'datetime'
         }
-
         self.attribute_map = {
             'partition': 'partition',
             'type': 'type',
             'offset': 'offset',
             'time': 'time'
         }
-
         self._partition = None
         self._type = None
         self._offset = None

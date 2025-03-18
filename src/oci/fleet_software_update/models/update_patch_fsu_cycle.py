@@ -80,7 +80,6 @@ class UpdatePatchFsuCycle(UpdateFsuCycleDetails):
             'max_drain_timeout_in_seconds': 'int',
             'is_keep_placement': 'bool'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'type': 'type',
@@ -94,7 +93,6 @@ class UpdatePatchFsuCycle(UpdateFsuCycleDetails):
             'max_drain_timeout_in_seconds': 'maxDrainTimeoutInSeconds',
             'is_keep_placement': 'isKeepPlacement'
         }
-
         self._display_name = None
         self._type = None
         self._goal_version_details = None

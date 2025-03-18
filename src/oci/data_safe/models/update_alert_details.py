@@ -52,14 +52,12 @@ class UpdateAlertDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'comment': 'comment',
             'status': 'status',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._comment = None
         self._status = None
         self._freeform_tags = None

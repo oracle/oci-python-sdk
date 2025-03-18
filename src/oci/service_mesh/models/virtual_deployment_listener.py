@@ -65,14 +65,12 @@ class VirtualDeploymentListener(object):
             'request_timeout_in_ms': 'int',
             'idle_timeout_in_ms': 'int'
         }
-
         self.attribute_map = {
             'protocol': 'protocol',
             'port': 'port',
             'request_timeout_in_ms': 'requestTimeoutInMs',
             'idle_timeout_in_ms': 'idleTimeoutInMs'
         }
-
         self._protocol = None
         self._port = None
         self._request_timeout_in_ms = None

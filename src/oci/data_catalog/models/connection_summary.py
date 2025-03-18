@@ -107,7 +107,6 @@ class ConnectionSummary(object):
             'is_default': 'bool',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'key': 'key',
             'description': 'description',
@@ -120,7 +119,6 @@ class ConnectionSummary(object):
             'is_default': 'isDefault',
             'time_created': 'timeCreated'
         }
-
         self._key = None
         self._description = None
         self._display_name = None

@@ -45,14 +45,12 @@ class FunctionDefinition(ToolDefinition):
             'description': 'str',
             'parameters': 'object'
         }
-
         self.attribute_map = {
             'type': 'type',
             'name': 'name',
             'description': 'description',
             'parameters': 'parameters'
         }
-
         self._type = None
         self._name = None
         self._description = None

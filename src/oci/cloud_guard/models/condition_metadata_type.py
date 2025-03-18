@@ -38,13 +38,11 @@ class ConditionMetadataType(object):
             'service_types': 'list[ServiceTypeSummary]',
             'locks': 'list[ResourceLock]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'service_types': 'serviceTypes',
             'locks': 'locks'
         }
-
         self._name = None
         self._service_types = None
         self._locks = None

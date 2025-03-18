@@ -169,7 +169,6 @@ class EntitySummary(object):
             'lifecycle_details': 'str',
             'properties': 'dict(str, dict(str, str))'
         }
-
         self.attribute_map = {
             'key': 'key',
             'display_name': 'displayName',
@@ -194,7 +193,6 @@ class EntitySummary(object):
             'lifecycle_details': 'lifecycleDetails',
             'properties': 'properties'
         }
-
         self._key = None
         self._display_name = None
         self._business_name = None

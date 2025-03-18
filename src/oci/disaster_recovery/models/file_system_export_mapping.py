@@ -33,12 +33,10 @@ class FileSystemExportMapping(object):
             'export_id': 'str',
             'destination_mount_target_id': 'str'
         }
-
         self.attribute_map = {
             'export_id': 'exportId',
             'destination_mount_target_id': 'destinationMountTargetId'
         }
-
         self._export_id = None
         self._destination_mount_target_id = None
 

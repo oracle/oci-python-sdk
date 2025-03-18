@@ -28,11 +28,9 @@ class RoverNodeEncryptionKey(object):
         self.swagger_types = {
             'encryption_key': 'str'
         }
-
         self.attribute_map = {
             'encryption_key': 'encryptionKey'
         }
-
         self._encryption_key = None
 
     @property

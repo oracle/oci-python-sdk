@@ -83,7 +83,6 @@ class WafConfigDetails(object):
             'protection_settings': 'ProtectionSettings',
             'whitelists': 'list[Whitelist]'
         }
-
         self.attribute_map = {
             'access_rules': 'accessRules',
             'address_rate_limiting': 'addressRateLimiting',
@@ -98,7 +97,6 @@ class WafConfigDetails(object):
             'protection_settings': 'protectionSettings',
             'whitelists': 'whitelists'
         }
-
         self._access_rules = None
         self._address_rate_limiting = None
         self._captchas = None

@@ -52,13 +52,11 @@ class ForkSyncStatusSummary(object):
             'repository_id': 'str',
             'branch_name': 'str'
         }
-
         self.attribute_map = {
             'sync_status': 'syncStatus',
             'repository_id': 'repositoryId',
             'branch_name': 'branchName'
         }
-
         self._sync_status = None
         self._repository_id = None
         self._branch_name = None

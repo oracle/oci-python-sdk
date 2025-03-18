@@ -48,7 +48,6 @@ class QueryResultRowTypeSummary(object):
             'expression': 'str',
             'query_result_row_type_summaries': 'list[QueryResultRowTypeSummary]'
         }
-
         self.attribute_map = {
             'data_type': 'dataType',
             'unit': 'unit',
@@ -56,7 +55,6 @@ class QueryResultRowTypeSummary(object):
             'expression': 'expression',
             'query_result_row_type_summaries': 'queryResultRowTypeSummaries'
         }
-
         self._data_type = None
         self._unit = None
         self._display_name = None

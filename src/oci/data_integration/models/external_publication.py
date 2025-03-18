@@ -127,7 +127,6 @@ class ExternalPublication(object):
             'metadata': 'ObjectMetadata',
             'key_map': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'application_id': 'applicationId',
             'application_compartment_id': 'applicationCompartmentId',
@@ -148,7 +147,6 @@ class ExternalPublication(object):
             'metadata': 'metadata',
             'key_map': 'keyMap'
         }
-
         self._application_id = None
         self._application_compartment_id = None
         self._display_name = None

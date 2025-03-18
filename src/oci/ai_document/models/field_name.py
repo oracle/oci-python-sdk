@@ -43,14 +43,12 @@ class FieldName(object):
             'bounding_polygon': 'BoundingPolygon',
             'word_indexes': 'list[int]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'confidence': 'confidence',
             'bounding_polygon': 'boundingPolygon',
             'word_indexes': 'wordIndexes'
         }
-
         self._name = None
         self._confidence = None
         self._bounding_polygon = None

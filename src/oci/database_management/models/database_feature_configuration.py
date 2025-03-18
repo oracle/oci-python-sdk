@@ -105,14 +105,12 @@ class DatabaseFeatureConfiguration(object):
             'connector_details': 'ConnectorDetails',
             'database_connection_details': 'DatabaseConnectionDetails'
         }
-
         self.attribute_map = {
             'feature': 'feature',
             'feature_status': 'featureStatus',
             'connector_details': 'connectorDetails',
             'database_connection_details': 'databaseConnectionDetails'
         }
-
         self._feature = None
         self._feature_status = None
         self._connector_details = None

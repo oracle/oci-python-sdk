@@ -58,7 +58,6 @@ class OccCustomer(object):
             'description': 'str',
             'status': 'str'
         }
-
         self.attribute_map = {
             'occ_customer_group_id': 'occCustomerGroupId',
             'tenancy_id': 'tenancyId',
@@ -66,7 +65,6 @@ class OccCustomer(object):
             'description': 'description',
             'status': 'status'
         }
-
         self._occ_customer_group_id = None
         self._tenancy_id = None
         self._display_name = None

@@ -53,14 +53,12 @@ class PackageFilter(object):
             'package_version': 'str',
             'filter_type': 'str'
         }
-
         self.attribute_map = {
             'package_name': 'packageName',
             'package_name_pattern': 'packageNamePattern',
             'package_version': 'packageVersion',
             'filter_type': 'filterType'
         }
-
         self._package_name = None
         self._package_name_pattern = None
         self._package_version = None

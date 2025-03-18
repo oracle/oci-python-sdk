@@ -116,7 +116,6 @@ class CreateAmazonRedshiftConnectionDetails(CreateConnectionDetails):
             'password': 'str',
             'password_secret_id': 'str'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'display_name': 'displayName',
@@ -137,7 +136,6 @@ class CreateAmazonRedshiftConnectionDetails(CreateConnectionDetails):
             'password': 'password',
             'password_secret_id': 'passwordSecretId'
         }
-
         self._connection_type = None
         self._display_name = None
         self._description = None

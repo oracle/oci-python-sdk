@@ -53,7 +53,6 @@ class RoverBundleRequestSummary(object):
             'work_request_id': 'str',
             'time_task_created': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'destination_compartment_id': 'destinationCompartmentId',
@@ -62,7 +61,6 @@ class RoverBundleRequestSummary(object):
             'work_request_id': 'workRequestId',
             'time_task_created': 'timeTaskCreated'
         }
-
         self._id = None
         self._destination_compartment_id = None
         self._destination_bucket_name = None

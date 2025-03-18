@@ -126,7 +126,6 @@ class InstallationSiteSummary(object):
             'blocklist': 'list[BlocklistEntry]',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'installation_key': 'installationKey',
             'managed_instance_id': 'managedInstanceId',
@@ -139,7 +138,6 @@ class InstallationSiteSummary(object):
             'blocklist': 'blocklist',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._installation_key = None
         self._managed_instance_id = None
         self._jre = None

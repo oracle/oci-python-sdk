@@ -28,11 +28,9 @@ class GetManifestResponse(object):
         self.swagger_types = {
             'serialized_manifest': 'str'
         }
-
         self.attribute_map = {
             'serialized_manifest': 'serializedManifest'
         }
-
         self._serialized_manifest = None
 
     @property

@@ -38,12 +38,10 @@ class InstanceConfigurationPerformanceBasedAutotunePolicy(InstanceConfigurationA
             'autotune_type': 'str',
             'max_vpus_per_gb': 'int'
         }
-
         self.attribute_map = {
             'autotune_type': 'autotuneType',
             'max_vpus_per_gb': 'maxVpusPerGB'
         }
-
         self._autotune_type = None
         self._max_vpus_per_gb = None
         self._autotune_type = 'PERFORMANCE_BASED'

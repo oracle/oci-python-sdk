@@ -28,11 +28,9 @@ class DeploymentMessageCollection(object):
         self.swagger_types = {
             'items': 'list[MessageSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

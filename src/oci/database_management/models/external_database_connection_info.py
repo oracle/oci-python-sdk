@@ -46,14 +46,12 @@ class ExternalDatabaseConnectionInfo(ExternalDbSystemConnectionInfo):
             'connection_credentials': 'DatabaseConnectionCredentials',
             'database_credential': 'DatabaseCredentialDetails'
         }
-
         self.attribute_map = {
             'component_type': 'componentType',
             'connection_string': 'connectionString',
             'connection_credentials': 'connectionCredentials',
             'database_credential': 'databaseCredential'
         }
-
         self._component_type = None
         self._connection_string = None
         self._connection_credentials = None

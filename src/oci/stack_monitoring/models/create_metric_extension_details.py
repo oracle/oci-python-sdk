@@ -63,7 +63,6 @@ class CreateMetricExtensionDetails(object):
             'metric_list': 'list[Metric]',
             'query_properties': 'MetricExtensionQueryProperties'
         }
-
         self.attribute_map = {
             'name': 'name',
             'display_name': 'displayName',
@@ -74,7 +73,6 @@ class CreateMetricExtensionDetails(object):
             'metric_list': 'metricList',
             'query_properties': 'queryProperties'
         }
-
         self._name = None
         self._display_name = None
         self._resource_type = None

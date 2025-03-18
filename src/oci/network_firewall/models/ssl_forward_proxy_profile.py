@@ -85,7 +85,6 @@ class SslForwardProxyProfile(DecryptionProfile):
             'is_auto_include_alt_name': 'bool',
             'is_out_of_capacity_blocked': 'bool'
         }
-
         self.attribute_map = {
             'type': 'type',
             'name': 'name',
@@ -100,7 +99,6 @@ class SslForwardProxyProfile(DecryptionProfile):
             'is_auto_include_alt_name': 'isAutoIncludeAltName',
             'is_out_of_capacity_blocked': 'isOutOfCapacityBlocked'
         }
-
         self._type = None
         self._name = None
         self._parent_resource_id = None

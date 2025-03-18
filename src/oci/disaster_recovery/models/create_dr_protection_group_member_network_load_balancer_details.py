@@ -45,14 +45,12 @@ class CreateDrProtectionGroupMemberNetworkLoadBalancerDetails(CreateDrProtection
             'destination_network_load_balancer_id': 'str',
             'backend_set_mappings': 'list[NetworkLoadBalancerBackendSetMappingDetails]'
         }
-
         self.attribute_map = {
             'member_id': 'memberId',
             'member_type': 'memberType',
             'destination_network_load_balancer_id': 'destinationNetworkLoadBalancerId',
             'backend_set_mappings': 'backendSetMappings'
         }
-
         self._member_id = None
         self._member_type = None
         self._destination_network_load_balancer_id = None

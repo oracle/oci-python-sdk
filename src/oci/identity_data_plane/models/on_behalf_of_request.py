@@ -43,14 +43,12 @@ class OnBehalfOfRequest(object):
             'obo_token': 'str',
             'expiration': 'str'
         }
-
         self.attribute_map = {
             'request_headers': 'requestHeaders',
             'target_service_name': 'targetServiceName',
             'obo_token': 'oboToken',
             'expiration': 'expiration'
         }
-
         self._request_headers = None
         self._target_service_name = None
         self._obo_token = None

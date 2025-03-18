@@ -53,7 +53,6 @@ class UpdateBdsInstanceDetails(object):
             'kms_key_id': 'str',
             'network_config': 'NetworkConfig'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'bootstrap_script_url': 'bootstrapScriptUrl',
@@ -62,7 +61,6 @@ class UpdateBdsInstanceDetails(object):
             'kms_key_id': 'kmsKeyId',
             'network_config': 'networkConfig'
         }
-
         self._display_name = None
         self._bootstrap_script_url = None
         self._freeform_tags = None

@@ -68,7 +68,6 @@ class CredentialAuthenticatorInfo(object):
             'service': 'str',
             'client_id': 'str'
         }
-
         self.attribute_map = {
             'raw_credential': 'rawCredential',
             'user_id': 'userId',
@@ -80,7 +79,6 @@ class CredentialAuthenticatorInfo(object):
             'service': 'service',
             'client_id': 'clientId'
         }
-
         self._raw_credential = None
         self._user_id = None
         self._tenant_id = None

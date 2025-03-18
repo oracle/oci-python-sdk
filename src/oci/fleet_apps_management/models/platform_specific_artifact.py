@@ -58,13 +58,11 @@ class PlatformSpecificArtifact(object):
             'os_type': 'str',
             'architecture': 'str'
         }
-
         self.attribute_map = {
             'content': 'content',
             'os_type': 'osType',
             'architecture': 'architecture'
         }
-
         self._content = None
         self._os_type = None
         self._architecture = None

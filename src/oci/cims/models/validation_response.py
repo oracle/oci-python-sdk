@@ -33,12 +33,10 @@ class ValidationResponse(object):
             'is_valid_user': 'bool',
             'write_permitted_user_group_infos': 'list[CmosUserGroupInfo]'
         }
-
         self.attribute_map = {
             'is_valid_user': 'isValidUser',
             'write_permitted_user_group_infos': 'writePermittedUserGroupInfos'
         }
-
         self._is_valid_user = None
         self._write_permitted_user_group_infos = None
 

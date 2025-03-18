@@ -33,12 +33,10 @@ class FolderTagCollection(object):
             'count': 'int',
             'items': 'list[FolderTagSummary]'
         }
-
         self.attribute_map = {
             'count': 'count',
             'items': 'items'
         }
-
         self._count = None
         self._items = None
 

@@ -137,7 +137,6 @@ class ExternalMysqlDatabaseInsightSummary(DatabaseInsightSummary):
             'database_resource_type': 'str',
             'database_connector_id': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'database_id': 'databaseId',
@@ -162,7 +161,6 @@ class ExternalMysqlDatabaseInsightSummary(DatabaseInsightSummary):
             'database_resource_type': 'databaseResourceType',
             'database_connector_id': 'databaseConnectorId'
         }
-
         self._id = None
         self._database_id = None
         self._compartment_id = None

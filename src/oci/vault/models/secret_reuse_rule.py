@@ -35,12 +35,10 @@ class SecretReuseRule(SecretRule):
             'rule_type': 'str',
             'is_enforced_on_deleted_secret_versions': 'bool'
         }
-
         self.attribute_map = {
             'rule_type': 'ruleType',
             'is_enforced_on_deleted_secret_versions': 'isEnforcedOnDeletedSecretVersions'
         }
-
         self._rule_type = None
         self._is_enforced_on_deleted_secret_versions = None
         self._rule_type = 'SECRET_REUSE_RULE'

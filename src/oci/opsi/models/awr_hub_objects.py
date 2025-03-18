@@ -28,11 +28,9 @@ class AwrHubObjects(object):
         self.swagger_types = {
             'awr_snapshots': 'object'
         }
-
         self.attribute_map = {
             'awr_snapshots': 'awrSnapshots'
         }
-
         self._awr_snapshots = None
 
     @property

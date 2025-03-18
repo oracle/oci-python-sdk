@@ -142,7 +142,6 @@ class GlossarySummary(object):
             'latest_import_job_execution_key': 'str',
             'latest_import_job_execution_status': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'display_name': 'displayName',
@@ -157,7 +156,6 @@ class GlossarySummary(object):
             'latest_import_job_execution_key': 'latestImportJobExecutionKey',
             'latest_import_job_execution_status': 'latestImportJobExecutionStatus'
         }
-
         self._key = None
         self._display_name = None
         self._catalog_id = None

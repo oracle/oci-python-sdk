@@ -28,11 +28,9 @@ class UploadCollection(object):
         self.swagger_types = {
             'items': 'list[UploadSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

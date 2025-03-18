@@ -54,7 +54,6 @@ class CreateScreenShotAttachmentDetails(CreateListingRevisionAttachmentDetails):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'listing_revision_id': 'listingRevisionId',
             'display_name': 'displayName',
@@ -63,7 +62,6 @@ class CreateScreenShotAttachmentDetails(CreateListingRevisionAttachmentDetails):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._listing_revision_id = None
         self._display_name = None
         self._description = None

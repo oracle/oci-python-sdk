@@ -58,7 +58,6 @@ class MetricDataDetails(object):
             'metadata': 'dict(str, str)',
             'datapoints': 'list[Datapoint]'
         }
-
         self.attribute_map = {
             'namespace': 'namespace',
             'resource_group': 'resourceGroup',
@@ -68,7 +67,6 @@ class MetricDataDetails(object):
             'metadata': 'metadata',
             'datapoints': 'datapoints'
         }
-
         self._namespace = None
         self._resource_group = None
         self._compartment_id = None

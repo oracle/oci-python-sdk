@@ -28,11 +28,9 @@ class TranslatorCollection(object):
         self.swagger_types = {
             'items': 'list[TranslatorSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

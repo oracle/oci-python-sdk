@@ -172,7 +172,6 @@ class AssociatedMonitoredResource(object):
             'resource_category': 'str',
             'association': 'object'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -188,7 +187,6 @@ class AssociatedMonitoredResource(object):
             'resource_category': 'resourceCategory',
             'association': 'association'
         }
-
         self._id = None
         self._name = None
         self._display_name = None

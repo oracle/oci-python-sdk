@@ -33,12 +33,10 @@ class ImportPreAnnotatedDataDetails(object):
             'import_format': 'ImportFormat',
             'import_metadata_path': 'ImportMetadataPath'
         }
-
         self.attribute_map = {
             'import_format': 'importFormat',
             'import_metadata_path': 'importMetadataPath'
         }
-
         self._import_format = None
         self._import_metadata_path = None
 

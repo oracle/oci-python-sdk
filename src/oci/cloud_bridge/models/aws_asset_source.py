@@ -136,7 +136,6 @@ class AwsAssetSource(AssetSource):
             'are_realtime_metrics_collected': 'bool',
             'is_cost_information_collected': 'bool'
         }
-
         self.attribute_map = {
             'type': 'type',
             'id': 'id',
@@ -161,7 +160,6 @@ class AwsAssetSource(AssetSource):
             'are_realtime_metrics_collected': 'areRealtimeMetricsCollected',
             'is_cost_information_collected': 'isCostInformationCollected'
         }
-
         self._type = None
         self._id = None
         self._compartment_id = None

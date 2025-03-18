@@ -33,12 +33,10 @@ class CreateOsnDetails(object):
             'ad': 'str',
             'ocpu_allocation_param': 'OcpuAllocationNumberParam'
         }
-
         self.attribute_map = {
             'ad': 'ad',
             'ocpu_allocation_param': 'ocpuAllocationParam'
         }
-
         self._ad = None
         self._ocpu_allocation_param = None
 

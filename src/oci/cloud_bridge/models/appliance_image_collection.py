@@ -28,11 +28,9 @@ class ApplianceImageCollection(object):
         self.swagger_types = {
             'items': 'list[ApplianceImageSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

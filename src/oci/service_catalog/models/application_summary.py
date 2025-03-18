@@ -88,7 +88,6 @@ class ApplicationSummary(object):
             'pricing_type': 'str',
             'package_type': 'str'
         }
-
         self.attribute_map = {
             'entity_id': 'entityId',
             'entity_type': 'entityType',
@@ -100,7 +99,6 @@ class ApplicationSummary(object):
             'pricing_type': 'pricingType',
             'package_type': 'packageType'
         }
-
         self._entity_id = None
         self._entity_type = None
         self._display_name = None

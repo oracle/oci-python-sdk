@@ -88,7 +88,6 @@ class OptimizerStatisticsCollectionAggregationSummary(object):
             'unknown': 'int',
             'total': 'int'
         }
-
         self.attribute_map = {
             'group_by': 'groupBy',
             'time_start': 'timeStart',
@@ -102,7 +101,6 @@ class OptimizerStatisticsCollectionAggregationSummary(object):
             'unknown': 'unknown',
             'total': 'total'
         }
-
         self._group_by = None
         self._time_start = None
         self._time_end = None

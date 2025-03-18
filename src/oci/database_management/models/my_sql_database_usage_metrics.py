@@ -97,7 +97,6 @@ class MySqlDatabaseUsageMetrics(object):
             'heat_wave_node_count': 'int',
             'metrics': 'list[MySqlFleetMetricDefinition]'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'database_name': 'databaseName',
@@ -112,7 +111,6 @@ class MySqlDatabaseUsageMetrics(object):
             'heat_wave_node_count': 'heatWaveNodeCount',
             'metrics': 'metrics'
         }
-
         self._compartment_id = None
         self._database_name = None
         self._database_type = None

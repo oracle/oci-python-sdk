@@ -28,11 +28,9 @@ class RotateAutonomousContainerDatabaseEncryptionKeyDetails(object):
         self.swagger_types = {
             'key_version_id': 'str'
         }
-
         self.attribute_map = {
             'key_version_id': 'keyVersionId'
         }
-
         self._key_version_id = None
 
     @property

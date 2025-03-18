@@ -46,14 +46,12 @@ class CreateSteeringPolicyAttachmentDetails(object):
             'domain_name': 'str',
             'display_name': 'str'
         }
-
         self.attribute_map = {
             'steering_policy_id': 'steeringPolicyId',
             'zone_id': 'zoneId',
             'domain_name': 'domainName',
             'display_name': 'displayName'
         }
-
         self._steering_policy_id = None
         self._zone_id = None
         self._domain_name = None

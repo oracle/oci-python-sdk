@@ -35,12 +35,10 @@ class VirtualServiceAccessPolicyTarget(AccessPolicyTarget):
             'type': 'str',
             'virtual_service_id': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'virtual_service_id': 'virtualServiceId'
         }
-
         self._type = None
         self._virtual_service_id = None
         self._type = 'VIRTUAL_SERVICE'

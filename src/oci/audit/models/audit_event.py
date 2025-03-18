@@ -65,7 +65,6 @@ class AuditEvent(object):
             'content_type': 'str',
             'data': 'Data'
         }
-
         self.attribute_map = {
             'event_type': 'eventType',
             'cloud_events_version': 'cloudEventsVersion',
@@ -76,7 +75,6 @@ class AuditEvent(object):
             'content_type': 'contentType',
             'data': 'data'
         }
-
         self._event_type = None
         self._cloud_events_version = None
         self._event_type_version = None

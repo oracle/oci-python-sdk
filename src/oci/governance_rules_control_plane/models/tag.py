@@ -43,14 +43,12 @@ class Tag(object):
             'is_cost_tracking': 'bool',
             'validator': 'BaseTagDefinitionValidator'
         }
-
         self.attribute_map = {
             'name': 'name',
             'description': 'description',
             'is_cost_tracking': 'isCostTracking',
             'validator': 'validator'
         }
-
         self._name = None
         self._description = None
         self._is_cost_tracking = None

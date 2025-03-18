@@ -28,11 +28,9 @@ class CreateSwiftPasswordDetails(object):
         self.swagger_types = {
             'description': 'str'
         }
-
         self.attribute_map = {
             'description': 'description'
         }
-
         self._description = None
 
     @property

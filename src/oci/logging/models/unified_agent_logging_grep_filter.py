@@ -46,14 +46,12 @@ class UnifiedAgentLoggingGrepFilter(UnifiedAgentLoggingFilter):
             'allow_list': 'list[GrepFilterAllowRule]',
             'deny_list': 'list[GrepFilterDenyRule]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'filter_type': 'filterType',
             'allow_list': 'allowList',
             'deny_list': 'denyList'
         }
-
         self._name = None
         self._filter_type = None
         self._allow_list = None

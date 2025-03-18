@@ -113,7 +113,6 @@ class LogAnalyticsSourceFunction(object):
             'lookup_table': 'str',
             'source_id': 'int'
         }
-
         self.attribute_map = {
             'arguments': 'arguments',
             'is_enabled': 'isEnabled',
@@ -132,7 +131,6 @@ class LogAnalyticsSourceFunction(object):
             'lookup_table': 'lookupTable',
             'source_id': 'sourceId'
         }
-
         self._arguments = None
         self._is_enabled = None
         self._function = None

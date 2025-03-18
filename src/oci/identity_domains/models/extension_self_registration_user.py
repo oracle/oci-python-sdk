@@ -38,13 +38,11 @@ class ExtensionSelfRegistrationUser(object):
             'user_token': 'str',
             'self_registration_profile': 'UserExtSelfRegistrationProfile'
         }
-
         self.attribute_map = {
             'consent_granted': 'consentGranted',
             'user_token': 'userToken',
             'self_registration_profile': 'selfRegistrationProfile'
         }
-
         self._consent_granted = None
         self._user_token = None
         self._self_registration_profile = None

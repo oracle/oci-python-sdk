@@ -28,11 +28,9 @@ class EnableAutoAssociationDetail(object):
         self.swagger_types = {
             'log_group_id': 'str'
         }
-
         self.attribute_map = {
             'log_group_id': 'logGroupId'
         }
-
         self._log_group_id = None
 
     @property

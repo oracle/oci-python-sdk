@@ -38,13 +38,11 @@ class InstanceConfigurationBlockVolumeDetails(object):
             'create_details': 'InstanceConfigurationCreateVolumeDetails',
             'volume_id': 'str'
         }
-
         self.attribute_map = {
             'attach_details': 'attachDetails',
             'create_details': 'createDetails',
             'volume_id': 'volumeId'
         }
-
         self._attach_details = None
         self._create_details = None
         self._volume_id = None

@@ -28,11 +28,9 @@ class ScaleStorageDetails(object):
         self.swagger_types = {
             'storage_size_in_tbs': 'int'
         }
-
         self.attribute_map = {
             'storage_size_in_tbs': 'storageSizeInTBs'
         }
-
         self._storage_size_in_tbs = None
 
     @property

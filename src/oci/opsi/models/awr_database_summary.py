@@ -83,7 +83,6 @@ class AwrDatabaseSummary(object):
             'db_version': 'str',
             'snapshot_timezone': 'str'
         }
-
         self.attribute_map = {
             'awr_source_database_identifier': 'awrSourceDatabaseIdentifier',
             'db_name': 'dbName',
@@ -98,7 +97,6 @@ class AwrDatabaseSummary(object):
             'db_version': 'dbVersion',
             'snapshot_timezone': 'snapshotTimezone'
         }
-
         self._awr_source_database_identifier = None
         self._db_name = None
         self._instance_list = None

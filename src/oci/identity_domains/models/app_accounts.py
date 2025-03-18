@@ -48,7 +48,6 @@ class AppAccounts(object):
             'name': 'str',
             'active': 'bool'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ref': '$ref',
@@ -56,7 +55,6 @@ class AppAccounts(object):
             'name': 'name',
             'active': 'active'
         }
-
         self._value = None
         self._ref = None
         self._owner_id = None

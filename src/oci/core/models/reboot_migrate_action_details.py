@@ -39,13 +39,11 @@ class RebootMigrateActionDetails(InstancePowerActionDetails):
             'delete_local_storage': 'bool',
             'time_scheduled': 'datetime'
         }
-
         self.attribute_map = {
             'action_type': 'actionType',
             'delete_local_storage': 'deleteLocalStorage',
             'time_scheduled': 'timeScheduled'
         }
-
         self._action_type = None
         self._delete_local_storage = None
         self._time_scheduled = None

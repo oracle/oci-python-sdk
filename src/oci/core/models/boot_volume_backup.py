@@ -171,7 +171,6 @@ class BootVolumeBackup(object):
             'type': 'str',
             'unique_size_in_gbs': 'int'
         }
-
         self.attribute_map = {
             'boot_volume_id': 'bootVolumeId',
             'compartment_id': 'compartmentId',
@@ -192,7 +191,6 @@ class BootVolumeBackup(object):
             'type': 'type',
             'unique_size_in_gbs': 'uniqueSizeInGBs'
         }
-
         self._boot_volume_id = None
         self._compartment_id = None
         self._defined_tags = None

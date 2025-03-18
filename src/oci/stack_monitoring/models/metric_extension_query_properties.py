@@ -53,11 +53,9 @@ class MetricExtensionQueryProperties(object):
         self.swagger_types = {
             'collection_method': 'str'
         }
-
         self.attribute_map = {
             'collection_method': 'collectionMethod'
         }
-
         self._collection_method = None
 
     @staticmethod

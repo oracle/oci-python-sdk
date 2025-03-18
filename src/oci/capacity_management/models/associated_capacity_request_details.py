@@ -33,12 +33,10 @@ class AssociatedCapacityRequestDetails(object):
             'occ_capacity_request_id': 'str',
             'handover_quantity': 'int'
         }
-
         self.attribute_map = {
             'occ_capacity_request_id': 'occCapacityRequestId',
             'handover_quantity': 'handoverQuantity'
         }
-
         self._occ_capacity_request_id = None
         self._handover_quantity = None
 

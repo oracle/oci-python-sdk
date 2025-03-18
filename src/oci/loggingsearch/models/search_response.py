@@ -38,13 +38,11 @@ class SearchResponse(object):
             'fields': 'list[FieldInfo]',
             'summary': 'SearchResultSummary'
         }
-
         self.attribute_map = {
             'results': 'results',
             'fields': 'fields',
             'summary': 'summary'
         }
-
         self._results = None
         self._fields = None
         self._summary = None

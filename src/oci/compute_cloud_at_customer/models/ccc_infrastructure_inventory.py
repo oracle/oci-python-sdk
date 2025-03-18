@@ -50,7 +50,6 @@ class CccInfrastructureInventory(object):
             'capacity_storage_tray_count': 'int',
             'performance_storage_tray_count': 'int'
         }
-
         self.attribute_map = {
             'serial_number': 'serialNumber',
             'management_node_count': 'managementNodeCount',
@@ -58,7 +57,6 @@ class CccInfrastructureInventory(object):
             'capacity_storage_tray_count': 'capacityStorageTrayCount',
             'performance_storage_tray_count': 'performanceStorageTrayCount'
         }
-
         self._serial_number = None
         self._management_node_count = None
         self._compute_node_count = None

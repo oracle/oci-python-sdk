@@ -45,14 +45,12 @@ class UpdateSslInboundInspectionProfileDetails(UpdateDecryptionProfileDetails):
             'is_unsupported_cipher_blocked': 'bool',
             'is_out_of_capacity_blocked': 'bool'
         }
-
         self.attribute_map = {
             'type': 'type',
             'is_unsupported_version_blocked': 'isUnsupportedVersionBlocked',
             'is_unsupported_cipher_blocked': 'isUnsupportedCipherBlocked',
             'is_out_of_capacity_blocked': 'isOutOfCapacityBlocked'
         }
-
         self._type = None
         self._is_unsupported_version_blocked = None
         self._is_unsupported_cipher_blocked = None

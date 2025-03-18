@@ -57,7 +57,6 @@ class UpdateJobDetails(object):
             'result_location': 'JobExecutionResultLocation',
             'schedule_details': 'JobScheduleDetails'
         }
-
         self.attribute_map = {
             'description': 'description',
             'job_type': 'jobType',
@@ -65,7 +64,6 @@ class UpdateJobDetails(object):
             'result_location': 'resultLocation',
             'schedule_details': 'scheduleDetails'
         }
-
         self._description = None
         self._job_type = None
         self._timeout = None

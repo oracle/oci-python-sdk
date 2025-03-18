@@ -28,11 +28,9 @@ class InstanceMaintenanceReboot(object):
         self.swagger_types = {
             'time_maintenance_reboot_due_max': 'datetime'
         }
-
         self.attribute_map = {
             'time_maintenance_reboot_due_max': 'timeMaintenanceRebootDueMax'
         }
-
         self._time_maintenance_reboot_due_max = None
 
     @property

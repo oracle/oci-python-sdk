@@ -28,11 +28,9 @@ class EnableReplicationToRegionDetails(object):
         self.swagger_types = {
             'replica_region': 'str'
         }
-
         self.attribute_map = {
             'replica_region': 'replicaRegion'
         }
-
         self._replica_region = None
 
     @property

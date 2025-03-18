@@ -33,12 +33,10 @@ class CreateContainerResourceConfigDetails(object):
             'vcpus_limit': 'float',
             'memory_limit_in_gbs': 'float'
         }
-
         self.attribute_map = {
             'vcpus_limit': 'vcpusLimit',
             'memory_limit_in_gbs': 'memoryLimitInGBs'
         }
-
         self._vcpus_limit = None
         self._memory_limit_in_gbs = None
 

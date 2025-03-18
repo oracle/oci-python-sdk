@@ -44,14 +44,12 @@ class CreateCccScheduleEvent(object):
             'schedule_event_duration': 'str',
             'schedule_event_recurrences': 'str'
         }
-
         self.attribute_map = {
             'description': 'description',
             'time_start': 'timeStart',
             'schedule_event_duration': 'scheduleEventDuration',
             'schedule_event_recurrences': 'scheduleEventRecurrences'
         }
-
         self._description = None
         self._time_start = None
         self._schedule_event_duration = None

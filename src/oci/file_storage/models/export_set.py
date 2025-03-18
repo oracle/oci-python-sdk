@@ -87,7 +87,6 @@ class ExportSet(object):
             'time_created': 'datetime',
             'vcn_id': 'str'
         }
-
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'compartment_id': 'compartmentId',
@@ -99,7 +98,6 @@ class ExportSet(object):
             'time_created': 'timeCreated',
             'vcn_id': 'vcnId'
         }
-
         self._availability_domain = None
         self._compartment_id = None
         self._display_name = None

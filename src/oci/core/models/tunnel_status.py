@@ -61,14 +61,12 @@ class TunnelStatus(object):
             'time_created': 'datetime',
             'time_state_modified': 'datetime'
         }
-
         self.attribute_map = {
             'ip_address': 'ipAddress',
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'time_state_modified': 'timeStateModified'
         }
-
         self._ip_address = None
         self._lifecycle_state = None
         self._time_created = None

@@ -63,7 +63,6 @@ class LogAnalyticsPatternFilter(object):
             'version': 'str',
             'source': 'LogAnalyticsSource'
         }
-
         self.attribute_map = {
             'pattern': 'pattern',
             'agent_version': 'agentVersion',
@@ -74,7 +73,6 @@ class LogAnalyticsPatternFilter(object):
             'version': 'version',
             'source': 'source'
         }
-
         self._pattern = None
         self._agent_version = None
         self._is_in_use = None

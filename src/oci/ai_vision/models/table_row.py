@@ -28,11 +28,9 @@ class TableRow(object):
         self.swagger_types = {
             'cells': 'list[Cell]'
         }
-
         self.attribute_map = {
             'cells': 'cells'
         }
-
         self._cells = None
 
     @property

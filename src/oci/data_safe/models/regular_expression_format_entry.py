@@ -50,14 +50,12 @@ class RegularExpressionFormatEntry(FormatEntry):
             'regular_expression': 'str',
             'replace_with': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'description': 'description',
             'regular_expression': 'regularExpression',
             'replace_with': 'replaceWith'
         }
-
         self._type = None
         self._description = None
         self._regular_expression = None

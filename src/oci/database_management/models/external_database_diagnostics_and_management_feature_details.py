@@ -49,13 +49,11 @@ class ExternalDatabaseDiagnosticsAndManagementFeatureDetails(ExternalDatabaseFea
             'connector_details': 'ConnectorDetails',
             'license_model': 'str'
         }
-
         self.attribute_map = {
             'feature': 'feature',
             'connector_details': 'connectorDetails',
             'license_model': 'licenseModel'
         }
-
         self._feature = None
         self._connector_details = None
         self._license_model = None

@@ -28,11 +28,9 @@ class IngestAddmReportsDetails(object):
         self.swagger_types = {
             'items': 'list[AddmReport]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

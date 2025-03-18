@@ -185,7 +185,6 @@ class ScheduledJobSummary(object):
             'os_family': 'str',
             'is_restricted': 'bool'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -202,7 +201,6 @@ class ScheduledJobSummary(object):
             'os_family': 'osFamily',
             'is_restricted': 'isRestricted'
         }
-
         self._id = None
         self._display_name = None
         self._compartment_id = None

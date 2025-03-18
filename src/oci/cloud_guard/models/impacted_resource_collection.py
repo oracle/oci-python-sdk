@@ -33,12 +33,10 @@ class ImpactedResourceCollection(object):
             'items': 'list[ImpactedResourceSummary]',
             'locks': 'list[ResourceLock]'
         }
-
         self.attribute_map = {
             'items': 'items',
             'locks': 'locks'
         }
-
         self._items = None
         self._locks = None
 

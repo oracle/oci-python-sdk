@@ -115,7 +115,6 @@ class DataAssetFromJdbc(DataAsset):
             'data_asset_type': 'str',
             'default_connection': 'ConnectionFromJdbcDetails'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -136,7 +135,6 @@ class DataAssetFromJdbc(DataAsset):
             'data_asset_type': 'dataAssetType',
             'default_connection': 'defaultConnection'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

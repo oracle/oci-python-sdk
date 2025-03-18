@@ -37,11 +37,9 @@ class SetKeyVersionDetails(object):
         self.swagger_types = {
             'provider': 'str'
         }
-
         self.attribute_map = {
             'provider': 'provider'
         }
-
         self._provider = None
 
     @staticmethod

@@ -215,7 +215,6 @@ class Listing(object):
             'listing_type': 'str',
             'supported_operating_systems': 'list[OperatingSystem]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -248,7 +247,6 @@ class Listing(object):
             'listing_type': 'listingType',
             'supported_operating_systems': 'supportedOperatingSystems'
         }
-
         self._id = None
         self._name = None
         self._version = None

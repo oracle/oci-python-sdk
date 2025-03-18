@@ -41,13 +41,11 @@ class BackupSourceDetails(SourceDetails):
             'backup_id': 'str',
             'is_having_restore_config_overrides': 'bool'
         }
-
         self.attribute_map = {
             'source_type': 'sourceType',
             'backup_id': 'backupId',
             'is_having_restore_config_overrides': 'isHavingRestoreConfigOverrides'
         }
-
         self._source_type = None
         self._backup_id = None
         self._is_having_restore_config_overrides = None

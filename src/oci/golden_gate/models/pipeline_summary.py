@@ -160,7 +160,6 @@ class PipelineSummary(object):
             'time_created': 'datetime',
             'time_updated': 'datetime'
         }
-
         self.attribute_map = {
             'recipe_type': 'recipeType',
             'id': 'id',
@@ -182,7 +181,6 @@ class PipelineSummary(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated'
         }
-
         self._recipe_type = None
         self._id = None
         self._display_name = None

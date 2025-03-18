@@ -150,7 +150,6 @@ class WorkRequestSummary(object):
             'time_accepted': 'datetime',
             'os_family': 'str'
         }
-
         self.attribute_map = {
             'operation_type': 'operationType',
             'status': 'status',
@@ -162,7 +161,6 @@ class WorkRequestSummary(object):
             'time_accepted': 'timeAccepted',
             'os_family': 'osFamily'
         }
-
         self._operation_type = None
         self._status = None
         self._id = None

@@ -53,7 +53,6 @@ class IPSecConnectionTunnelErrorDetails(object):
             'oci_resources_link': 'str',
             'timestamp': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'error_code': 'errorCode',
@@ -62,7 +61,6 @@ class IPSecConnectionTunnelErrorDetails(object):
             'oci_resources_link': 'ociResourcesLink',
             'timestamp': 'timestamp'
         }
-
         self._id = None
         self._error_code = None
         self._error_description = None

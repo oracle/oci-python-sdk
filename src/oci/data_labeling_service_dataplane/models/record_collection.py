@@ -28,11 +28,9 @@ class RecordCollection(object):
         self.swagger_types = {
             'items': 'list[RecordSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

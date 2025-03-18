@@ -44,14 +44,12 @@ class OciOptimizedStorageDetails(StorageDetails):
             'availability_domain': 'str',
             'iops': 'int'
         }
-
         self.attribute_map = {
             'system_type': 'systemType',
             'is_regionally_durable': 'isRegionallyDurable',
             'availability_domain': 'availabilityDomain',
             'iops': 'iops'
         }
-
         self._system_type = None
         self._is_regionally_durable = None
         self._availability_domain = None

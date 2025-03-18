@@ -48,7 +48,6 @@ class AwrDbMetricSummary(object):
             'min_value': 'float',
             'max_value': 'float'
         }
-
         self.attribute_map = {
             'name': 'name',
             'timestamp': 'timestamp',
@@ -56,7 +55,6 @@ class AwrDbMetricSummary(object):
             'min_value': 'minValue',
             'max_value': 'maxValue'
         }
-
         self._name = None
         self._timestamp = None
         self._avg_value = None

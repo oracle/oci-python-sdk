@@ -28,11 +28,9 @@ class InstancePoolPlacementIpv6AddressIpv6SubnetCidrDetails(object):
         self.swagger_types = {
             'ipv6_subnet_cidr': 'str'
         }
-
         self.attribute_map = {
             'ipv6_subnet_cidr': 'ipv6SubnetCidr'
         }
-
         self._ipv6_subnet_cidr = None
 
     @property

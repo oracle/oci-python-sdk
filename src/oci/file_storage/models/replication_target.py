@@ -170,7 +170,6 @@ class ReplicationTarget(object):
             'system_tags': 'dict(str, dict(str, object))',
             'lifecycle_details': 'str'
         }
-
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'compartment_id': 'compartmentId',
@@ -190,7 +189,6 @@ class ReplicationTarget(object):
             'system_tags': 'systemTags',
             'lifecycle_details': 'lifecycleDetails'
         }
-
         self._availability_domain = None
         self._compartment_id = None
         self._id = None

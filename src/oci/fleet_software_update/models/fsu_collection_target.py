@@ -67,7 +67,6 @@ class FsuCollectionTarget(object):
             'active_fsu_cycle_id': 'str',
             'progress': 'TargetProgressSummary'
         }
-
         self.attribute_map = {
             'target': 'target',
             'current_version': 'currentVersion',
@@ -76,7 +75,6 @@ class FsuCollectionTarget(object):
             'active_fsu_cycle_id': 'activeFsuCycleId',
             'progress': 'progress'
         }
-
         self._target = None
         self._current_version = None
         self._status = None

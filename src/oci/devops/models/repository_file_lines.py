@@ -28,11 +28,9 @@ class RepositoryFileLines(object):
         self.swagger_types = {
             'lines': 'list[FileLineDetails]'
         }
-
         self.attribute_map = {
             'lines': 'lines'
         }
-
         self._lines = None
 
     @property

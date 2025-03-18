@@ -39,13 +39,11 @@ class MeasuredBootEntry(object):
             'value': 'str',
             'hash_algorithm': 'str'
         }
-
         self.attribute_map = {
             'pcr_index': 'pcrIndex',
             'value': 'value',
             'hash_algorithm': 'hashAlgorithm'
         }
-
         self._pcr_index = None
         self._value = None
         self._hash_algorithm = None

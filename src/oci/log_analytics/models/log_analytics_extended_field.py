@@ -58,7 +58,6 @@ class LogAnalyticsExtendedField(object):
             'saved_regular_expression_name': 'str',
             'extended_field_id': 'int'
         }
-
         self.attribute_map = {
             'field': 'field',
             'extended_field_definition': 'extendedFieldDefinition',
@@ -68,7 +67,6 @@ class LogAnalyticsExtendedField(object):
             'saved_regular_expression_name': 'savedRegularExpressionName',
             'extended_field_id': 'extendedFieldId'
         }
-
         self._field = None
         self._extended_field_definition = None
         self._extended_field_definition_id = None

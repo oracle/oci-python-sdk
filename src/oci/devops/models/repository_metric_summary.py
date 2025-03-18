@@ -99,7 +99,6 @@ class RepositoryMetricSummary(object):
             'count': 'float',
             'sum': 'float'
         }
-
         self.attribute_map = {
             'metric_name': 'metricName',
             'duration_in_seconds': 'durationInSeconds',
@@ -108,7 +107,6 @@ class RepositoryMetricSummary(object):
             'count': 'count',
             'sum': 'sum'
         }
-
         self._metric_name = None
         self._duration_in_seconds = None
         self._dimensions = None

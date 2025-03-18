@@ -40,13 +40,11 @@ class DomainBasedOdhPatchingConfig(OdhPatchingConfig):
             'wait_time_between_domain_in_seconds': 'int',
             'tolerance_threshold_per_domain': 'int'
         }
-
         self.attribute_map = {
             'patching_config_strategy': 'patchingConfigStrategy',
             'wait_time_between_domain_in_seconds': 'waitTimeBetweenDomainInSeconds',
             'tolerance_threshold_per_domain': 'toleranceThresholdPerDomain'
         }
-
         self._patching_config_strategy = None
         self._wait_time_between_domain_in_seconds = None
         self._tolerance_threshold_per_domain = None

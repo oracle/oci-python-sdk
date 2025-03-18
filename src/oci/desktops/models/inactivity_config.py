@@ -43,12 +43,10 @@ class InactivityConfig(object):
             'action': 'str',
             'grace_period_in_minutes': 'int'
         }
-
         self.attribute_map = {
             'action': 'action',
             'grace_period_in_minutes': 'gracePeriodInMinutes'
         }
-
         self._action = None
         self._grace_period_in_minutes = None
 

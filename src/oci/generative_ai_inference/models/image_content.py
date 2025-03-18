@@ -35,12 +35,10 @@ class ImageContent(ChatContent):
             'type': 'str',
             'image_url': 'ImageUrl'
         }
-
         self.attribute_map = {
             'type': 'type',
             'image_url': 'imageUrl'
         }
-
         self._type = None
         self._image_url = None
         self._type = 'IMAGE'

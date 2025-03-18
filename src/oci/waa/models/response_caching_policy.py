@@ -28,11 +28,9 @@ class ResponseCachingPolicy(object):
         self.swagger_types = {
             'is_response_header_based_caching_enabled': 'bool'
         }
-
         self.attribute_map = {
             'is_response_header_based_caching_enabled': 'isResponseHeaderBasedCachingEnabled'
         }
-
         self._is_response_header_based_caching_enabled = None
 
     @property

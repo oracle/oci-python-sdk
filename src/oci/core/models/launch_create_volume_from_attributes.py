@@ -55,7 +55,6 @@ class LaunchCreateVolumeFromAttributes(LaunchCreateVolumeDetails):
             'vpus_per_gb': 'int',
             'size_in_gbs': 'int'
         }
-
         self.attribute_map = {
             'volume_creation_type': 'volumeCreationType',
             'compartment_id': 'compartmentId',
@@ -64,7 +63,6 @@ class LaunchCreateVolumeFromAttributes(LaunchCreateVolumeDetails):
             'vpus_per_gb': 'vpusPerGB',
             'size_in_gbs': 'sizeInGBs'
         }
-
         self._volume_creation_type = None
         self._compartment_id = None
         self._display_name = None

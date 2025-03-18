@@ -78,7 +78,6 @@ class ResourceInfo(object):
             'db_platform_type': 'str',
             'license_type': 'str'
         }
-
         self.attribute_map = {
             'resource_compartment_id': 'resourceCompartmentId',
             'resource_name': 'resourceName',
@@ -92,7 +91,6 @@ class ResourceInfo(object):
             'db_platform_type': 'dbPlatformType',
             'license_type': 'licenseType'
         }
-
         self._resource_compartment_id = None
         self._resource_name = None
         self._resource_id = None

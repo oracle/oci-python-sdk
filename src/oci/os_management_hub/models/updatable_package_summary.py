@@ -101,7 +101,6 @@ class UpdatablePackageSummary(PackageSummary):
             'errata': 'list[str]',
             'related_cves': 'list[str]'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'name': 'name',
@@ -115,7 +114,6 @@ class UpdatablePackageSummary(PackageSummary):
             'errata': 'errata',
             'related_cves': 'relatedCves'
         }
-
         self._display_name = None
         self._name = None
         self._type = None

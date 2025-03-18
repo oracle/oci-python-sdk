@@ -28,11 +28,9 @@ class UpdateTargetDetectorRuleDetails(object):
         self.swagger_types = {
             'condition_groups': 'list[ConditionGroup]'
         }
-
         self.attribute_map = {
             'condition_groups': 'conditionGroups'
         }
-
         self._condition_groups = None
 
     @property

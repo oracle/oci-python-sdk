@@ -30,11 +30,9 @@ class AttachTargetResponderRecipeDetails(object):
         self.swagger_types = {
             'responder_recipe_id': 'str'
         }
-
         self.attribute_map = {
             'responder_recipe_id': 'responderRecipeId'
         }
-
         self._responder_recipe_id = None
 
     @property

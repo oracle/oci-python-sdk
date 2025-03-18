@@ -132,7 +132,6 @@ class DrPlanGroupExecution(object):
             'execution_duration_in_sec': 'int',
             'step_executions': 'list[DrPlanStepExecution]'
         }
-
         self.attribute_map = {
             'group_id': 'groupId',
             'type': 'type',
@@ -144,7 +143,6 @@ class DrPlanGroupExecution(object):
             'execution_duration_in_sec': 'executionDurationInSec',
             'step_executions': 'stepExecutions'
         }
-
         self._group_id = None
         self._type = None
         self._display_name = None

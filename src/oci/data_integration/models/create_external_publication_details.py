@@ -53,7 +53,6 @@ class CreateExternalPublicationDetails(object):
             'resource_configuration': 'ResourceConfiguration',
             'configuration_details': 'ConfigurationDetails'
         }
-
         self.attribute_map = {
             'application_id': 'applicationId',
             'application_compartment_id': 'applicationCompartmentId',
@@ -62,7 +61,6 @@ class CreateExternalPublicationDetails(object):
             'resource_configuration': 'resourceConfiguration',
             'configuration_details': 'configurationDetails'
         }
-
         self._application_id = None
         self._application_compartment_id = None
         self._display_name = None

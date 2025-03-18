@@ -88,7 +88,6 @@ class SqlFirewallViolationAggregationDimensions(object):
             'violation_action': 'list[str]',
             'sql_level': 'list[str]'
         }
-
         self.attribute_map = {
             'operation_time': 'operationTime',
             'db_user_name': 'dbUserName',
@@ -102,7 +101,6 @@ class SqlFirewallViolationAggregationDimensions(object):
             'violation_action': 'violationAction',
             'sql_level': 'sqlLevel'
         }
-
         self._operation_time = None
         self._db_user_name = None
         self._target_id = None

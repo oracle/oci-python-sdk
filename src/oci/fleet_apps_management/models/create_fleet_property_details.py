@@ -38,13 +38,11 @@ class CreateFleetPropertyDetails(object):
             'value': 'str',
             'property_id': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'value': 'value',
             'property_id': 'propertyId'
         }
-
         self._compartment_id = None
         self._value = None
         self._property_id = None

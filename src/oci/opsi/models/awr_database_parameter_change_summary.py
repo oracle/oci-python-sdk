@@ -63,7 +63,6 @@ class AwrDatabaseParameterChangeSummary(object):
             'value_modified': 'str',
             'is_default': 'bool'
         }
-
         self.attribute_map = {
             'time_begin': 'timeBegin',
             'time_end': 'timeEnd',
@@ -74,7 +73,6 @@ class AwrDatabaseParameterChangeSummary(object):
             'value_modified': 'valueModified',
             'is_default': 'isDefault'
         }
-
         self._time_begin = None
         self._time_end = None
         self._instance_number = None

@@ -63,7 +63,6 @@ class ExportedKeyData(object):
             'encrypted_key': 'str',
             'algorithm': 'str'
         }
-
         self.attribute_map = {
             'key_version_id': 'keyVersionId',
             'key_id': 'keyId',
@@ -72,7 +71,6 @@ class ExportedKeyData(object):
             'encrypted_key': 'encryptedKey',
             'algorithm': 'algorithm'
         }
-
         self._key_version_id = None
         self._key_id = None
         self._time_created = None

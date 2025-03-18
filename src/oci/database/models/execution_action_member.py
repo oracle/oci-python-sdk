@@ -48,7 +48,6 @@ class ExecutionActionMember(object):
             'estimated_time_in_mins': 'int',
             'total_time_taken_in_mins': 'int'
         }
-
         self.attribute_map = {
             'member_order': 'memberOrder',
             'member_id': 'memberId',
@@ -56,7 +55,6 @@ class ExecutionActionMember(object):
             'estimated_time_in_mins': 'estimatedTimeInMins',
             'total_time_taken_in_mins': 'totalTimeTakenInMins'
         }
-
         self._member_order = None
         self._member_id = None
         self._status = None

@@ -50,13 +50,11 @@ class UserExtCustomerSecretKeys(object):
             'ocid': 'str',
             'ref': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ocid': 'ocid',
             'ref': '$ref'
         }
-
         self._value = None
         self._ocid = None
         self._ref = None

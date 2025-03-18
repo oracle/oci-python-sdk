@@ -39,13 +39,11 @@ class DropSqlTuningTaskDetails(object):
             'credential_details': 'SqlTuningTaskCredentialDetails',
             'database_credential': 'DatabaseCredentialDetails'
         }
-
         self.attribute_map = {
             'task_id': 'taskId',
             'credential_details': 'credentialDetails',
             'database_credential': 'databaseCredential'
         }
-
         self._task_id = None
         self._credential_details = None
         self._database_credential = None

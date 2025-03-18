@@ -33,12 +33,10 @@ class CreateUrlListDetails(object):
             'name': 'str',
             'urls': 'list[UrlPattern]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'urls': 'urls'
         }
-
         self._name = None
         self._urls = None
 

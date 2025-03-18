@@ -38,13 +38,11 @@ class UpdateMigrationAssetDetails(object):
             'replication_schedule_id': 'str',
             'depends_on': 'list[str]'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'replication_schedule_id': 'replicationScheduleId',
             'depends_on': 'dependsOn'
         }
-
         self._display_name = None
         self._replication_schedule_id = None
         self._depends_on = None

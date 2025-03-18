@@ -68,7 +68,6 @@ class AutoScalingPolicy(object):
             'time_created': 'datetime',
             'is_enabled': 'bool'
         }
-
         self.attribute_map = {
             'capacity': 'capacity',
             'id': 'id',
@@ -77,7 +76,6 @@ class AutoScalingPolicy(object):
             'time_created': 'timeCreated',
             'is_enabled': 'isEnabled'
         }
-
         self._capacity = None
         self._id = None
         self._display_name = None

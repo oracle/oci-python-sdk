@@ -33,12 +33,10 @@ class AutonomousDatabaseApex(object):
             'apex_version': 'str',
             'ords_version': 'str'
         }
-
         self.attribute_map = {
             'apex_version': 'apexVersion',
             'ords_version': 'ordsVersion'
         }
-
         self._apex_version = None
         self._ords_version = None
 

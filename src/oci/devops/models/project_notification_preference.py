@@ -52,13 +52,11 @@ class ProjectNotificationPreference(object):
             'user_id': 'str',
             'notification_preference': 'str'
         }
-
         self.attribute_map = {
             'project_id': 'projectId',
             'user_id': 'userId',
             'notification_preference': 'notificationPreference'
         }
-
         self._project_id = None
         self._user_id = None
         self._notification_preference = None

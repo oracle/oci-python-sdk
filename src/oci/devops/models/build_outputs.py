@@ -43,14 +43,12 @@ class BuildOutputs(object):
             'artifact_override_parameters': 'DeployArtifactOverrideArgumentCollection',
             'vulnerability_audit_summary_collection': 'VulnerabilityAuditSummaryCollection'
         }
-
         self.attribute_map = {
             'exported_variables': 'exportedVariables',
             'delivered_artifacts': 'deliveredArtifacts',
             'artifact_override_parameters': 'artifactOverrideParameters',
             'vulnerability_audit_summary_collection': 'vulnerabilityAuditSummaryCollection'
         }
-
         self._exported_variables = None
         self._delivered_artifacts = None
         self._artifact_override_parameters = None

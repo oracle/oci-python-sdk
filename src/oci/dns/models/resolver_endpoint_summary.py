@@ -116,7 +116,6 @@ class ResolverEndpointSummary(object):
             'lifecycle_state': 'str',
             '_self': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'endpoint_type': 'endpointType',
@@ -130,7 +129,6 @@ class ResolverEndpointSummary(object):
             'lifecycle_state': 'lifecycleState',
             '_self': 'self'
         }
-
         self._name = None
         self._endpoint_type = None
         self._forwarding_address = None

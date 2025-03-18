@@ -30,11 +30,9 @@ class UpdateAutonomousDatabaseBackupDetails(object):
         self.swagger_types = {
             'retention_period_in_days': 'int'
         }
-
         self.attribute_map = {
             'retention_period_in_days': 'retentionPeriodInDays'
         }
-
         self._retention_period_in_days = None
 
     @property

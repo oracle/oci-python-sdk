@@ -33,12 +33,10 @@ class CalculateAuditVolumeCollectedDetails(object):
             'time_from_month': 'datetime',
             'time_to_month': 'datetime'
         }
-
         self.attribute_map = {
             'time_from_month': 'timeFromMonth',
             'time_to_month': 'timeToMonth'
         }
-
         self._time_from_month = None
         self._time_to_month = None
 

@@ -48,7 +48,6 @@ class MetricBasedVerticalScaleDownConfig(object):
             'ocpu_step_size': 'int',
             'memory_step_size': 'int'
         }
-
         self.attribute_map = {
             'metric': 'metric',
             'min_ocpus_per_node': 'minOcpusPerNode',
@@ -56,7 +55,6 @@ class MetricBasedVerticalScaleDownConfig(object):
             'ocpu_step_size': 'ocpuStepSize',
             'memory_step_size': 'memoryStepSize'
         }
-
         self._metric = None
         self._min_ocpus_per_node = None
         self._min_memory_per_node = None

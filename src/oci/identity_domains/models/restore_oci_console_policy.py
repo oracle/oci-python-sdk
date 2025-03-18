@@ -112,7 +112,6 @@ class RestoreOciConsolePolicy(object):
             'consent': 'bool',
             'reason': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -130,7 +129,6 @@ class RestoreOciConsolePolicy(object):
             'consent': 'consent',
             'reason': 'reason'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

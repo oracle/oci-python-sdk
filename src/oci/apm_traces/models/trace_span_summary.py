@@ -103,7 +103,6 @@ class TraceSpanSummary(object):
             'trace_error_code': 'str',
             'service_summaries': 'list[TraceServiceSummary]'
         }
-
         self.attribute_map = {
             'key': 'key',
             'root_span_operation_name': 'rootSpanOperationName',
@@ -122,7 +121,6 @@ class TraceSpanSummary(object):
             'trace_error_code': 'traceErrorCode',
             'service_summaries': 'serviceSummaries'
         }
-
         self._key = None
         self._root_span_operation_name = None
         self._time_earliest_span_started = None

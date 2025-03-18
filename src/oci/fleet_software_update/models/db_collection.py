@@ -141,7 +141,6 @@ class DbCollection(FsuCollection):
             'source_major_version': 'str',
             'fleet_discovery': 'DbFleetDiscoveryDetails'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -161,7 +160,6 @@ class DbCollection(FsuCollection):
             'source_major_version': 'sourceMajorVersion',
             'fleet_discovery': 'fleetDiscovery'
         }
-
         self._id = None
         self._display_name = None
         self._type = None

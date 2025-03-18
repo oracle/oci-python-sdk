@@ -38,13 +38,11 @@ class Nvdimm(object):
             'unit_number': 'int',
             'controller_key': 'int'
         }
-
         self.attribute_map = {
             'label': 'label',
             'unit_number': 'unitNumber',
             'controller_key': 'controllerKey'
         }
-
         self._label = None
         self._unit_number = None
         self._controller_key = None

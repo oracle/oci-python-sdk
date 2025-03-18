@@ -70,7 +70,6 @@ class CreateMediaWorkflowJobByNameDetails(CreateMediaWorkflowJobDetails):
             'locks': 'list[ResourceLock]',
             'media_workflow_name': 'str'
         }
-
         self.attribute_map = {
             'workflow_identifier_type': 'workflowIdentifierType',
             'media_workflow_configuration_ids': 'mediaWorkflowConfigurationIds',
@@ -82,7 +81,6 @@ class CreateMediaWorkflowJobByNameDetails(CreateMediaWorkflowJobDetails):
             'locks': 'locks',
             'media_workflow_name': 'mediaWorkflowName'
         }
-
         self._workflow_identifier_type = None
         self._media_workflow_configuration_ids = None
         self._compartment_id = None

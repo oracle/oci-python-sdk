@@ -38,13 +38,11 @@ class KeyTabSecretDetails(object):
             'current_key_tab_secret_version': 'int',
             'backup_key_tab_secret_version': 'int'
         }
-
         self.attribute_map = {
             'key_tab_secret_id': 'keyTabSecretId',
             'current_key_tab_secret_version': 'currentKeyTabSecretVersion',
             'backup_key_tab_secret_version': 'backupKeyTabSecretVersion'
         }
-
         self._key_tab_secret_id = None
         self._current_key_tab_secret_version = None
         self._backup_key_tab_secret_version = None

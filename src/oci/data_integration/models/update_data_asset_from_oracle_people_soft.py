@@ -120,7 +120,6 @@ class UpdateDataAssetFromOraclePeopleSoft(UpdateDataAssetDetails):
             'wallet_password_secret': 'SensitiveAttribute',
             'default_connection': 'UpdateConnectionFromOraclePeopleSoft'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -142,7 +141,6 @@ class UpdateDataAssetFromOraclePeopleSoft(UpdateDataAssetDetails):
             'wallet_password_secret': 'walletPasswordSecret',
             'default_connection': 'defaultConnection'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

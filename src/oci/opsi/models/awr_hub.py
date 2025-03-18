@@ -119,7 +119,6 @@ class AwrHub(object):
             'lifecycle_details': 'str',
             'hub_dst_timezone_version': 'str'
         }
-
         self.attribute_map = {
             'operations_insights_warehouse_id': 'operationsInsightsWarehouseId',
             'id': 'id',
@@ -136,7 +135,6 @@ class AwrHub(object):
             'lifecycle_details': 'lifecycleDetails',
             'hub_dst_timezone_version': 'hubDstTimezoneVersion'
         }
-
         self._operations_insights_warehouse_id = None
         self._id = None
         self._compartment_id = None

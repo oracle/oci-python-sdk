@@ -52,12 +52,10 @@ class DatabaseUpgradeSourceBase(object):
             'source': 'str',
             'options': 'str'
         }
-
         self.attribute_map = {
             'source': 'source',
             'options': 'options'
         }
-
         self._source = None
         self._options = None
 

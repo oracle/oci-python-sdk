@@ -38,13 +38,11 @@ class VmProperties(object):
             'hypervisor_version': 'str',
             'hypervisor_host': 'str'
         }
-
         self.attribute_map = {
             'hypervisor_vendor': 'hypervisorVendor',
             'hypervisor_version': 'hypervisorVersion',
             'hypervisor_host': 'hypervisorHost'
         }
-
         self._hypervisor_vendor = None
         self._hypervisor_version = None
         self._hypervisor_host = None

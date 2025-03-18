@@ -67,7 +67,6 @@ class AutonomousDatabaseConnectionUrls(object):
             'ords_url': 'str',
             'database_transforms_url': 'str'
         }
-
         self.attribute_map = {
             'sql_dev_web_url': 'sqlDevWebUrl',
             'apex_url': 'apexUrl',
@@ -78,7 +77,6 @@ class AutonomousDatabaseConnectionUrls(object):
             'ords_url': 'ordsUrl',
             'database_transforms_url': 'databaseTransformsUrl'
         }
-
         self._sql_dev_web_url = None
         self._apex_url = None
         self._machine_learning_user_management_url = None

@@ -35,12 +35,10 @@ class FilterPush(PushDownOperation):
             'model_type': 'str',
             'filter_condition': 'str'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'filter_condition': 'filterCondition'
         }
-
         self._model_type = None
         self._filter_condition = None
         self._model_type = 'FILTER'

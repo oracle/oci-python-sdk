@@ -33,12 +33,10 @@ class UpdateFamilyMaintenancePolicyDetails(object):
             'is_monthly_patching_enabled': 'bool',
             'concurrent_maintenance': 'str'
         }
-
         self.attribute_map = {
             'is_monthly_patching_enabled': 'isMonthlyPatchingEnabled',
             'concurrent_maintenance': 'concurrentMaintenance'
         }
-
         self._is_monthly_patching_enabled = None
         self._concurrent_maintenance = None
 

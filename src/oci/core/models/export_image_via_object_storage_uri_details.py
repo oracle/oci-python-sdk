@@ -40,13 +40,11 @@ class ExportImageViaObjectStorageUriDetails(ExportImageDetails):
             'export_format': 'str',
             'destination_uri': 'str'
         }
-
         self.attribute_map = {
             'destination_type': 'destinationType',
             'export_format': 'exportFormat',
             'destination_uri': 'destinationUri'
         }
-
         self._destination_type = None
         self._export_format = None
         self._destination_uri = None

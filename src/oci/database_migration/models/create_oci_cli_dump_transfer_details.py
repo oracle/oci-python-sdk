@@ -40,13 +40,11 @@ class CreateOciCliDumpTransferDetails(CreateHostDumpTransferDetails):
             'kind': 'str',
             'oci_home': 'str'
         }
-
         self.attribute_map = {
             'wallet_location': 'walletLocation',
             'kind': 'kind',
             'oci_home': 'ociHome'
         }
-
         self._wallet_location = None
         self._kind = None
         self._oci_home = None

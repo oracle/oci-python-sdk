@@ -233,7 +233,6 @@ class Backup(object):
             'backup_destination_type': 'str',
             'encryption_key_location_details': 'EncryptionKeyLocationDetails'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -262,7 +261,6 @@ class Backup(object):
             'backup_destination_type': 'backupDestinationType',
             'encryption_key_location_details': 'encryptionKeyLocationDetails'
         }
-
         self._id = None
         self._compartment_id = None
         self._database_id = None

@@ -48,7 +48,6 @@ class DedicatedVmHostInstanceSummary(object):
             'shape': 'str',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'compartment_id': 'compartmentId',
@@ -56,7 +55,6 @@ class DedicatedVmHostInstanceSummary(object):
             'shape': 'shape',
             'time_created': 'timeCreated'
         }
-
         self._availability_domain = None
         self._compartment_id = None
         self._instance_id = None

@@ -38,11 +38,9 @@ class ServiceConfiguration(object):
         self.swagger_types = {
             'service_configuration_type': 'str'
         }
-
         self.attribute_map = {
             'service_configuration_type': 'serviceConfigurationType'
         }
-
         self._service_configuration_type = None
 
     @staticmethod

@@ -40,13 +40,11 @@ class GenericChatResponse(BaseChatResponse):
             'time_created': 'datetime',
             'choices': 'list[ChatChoice]'
         }
-
         self.attribute_map = {
             'api_format': 'apiFormat',
             'time_created': 'timeCreated',
             'choices': 'choices'
         }
-
         self._api_format = None
         self._time_created = None
         self._choices = None

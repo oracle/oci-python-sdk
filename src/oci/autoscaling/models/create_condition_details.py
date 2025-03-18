@@ -38,13 +38,11 @@ class CreateConditionDetails(object):
             'display_name': 'str',
             'metric': 'Metric'
         }
-
         self.attribute_map = {
             'action': 'action',
             'display_name': 'displayName',
             'metric': 'metric'
         }
-
         self._action = None
         self._display_name = None
         self._metric = None

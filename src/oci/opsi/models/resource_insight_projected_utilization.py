@@ -33,12 +33,10 @@ class ResourceInsightProjectedUtilization(object):
             'low': 'list[ResourceInsightProjectedUtilizationItem]',
             'high': 'list[ResourceInsightProjectedUtilizationItem]'
         }
-
         self.attribute_map = {
             'low': 'low',
             'high': 'high'
         }
-
         self._low = None
         self._high = None
 

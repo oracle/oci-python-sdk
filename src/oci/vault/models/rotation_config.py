@@ -38,13 +38,11 @@ class RotationConfig(object):
             'target_system_details': 'TargetSystemDetails',
             'is_scheduled_rotation_enabled': 'bool'
         }
-
         self.attribute_map = {
             'rotation_interval': 'rotationInterval',
             'target_system_details': 'targetSystemDetails',
             'is_scheduled_rotation_enabled': 'isScheduledRotationEnabled'
         }
-
         self._rotation_interval = None
         self._target_system_details = None
         self._is_scheduled_rotation_enabled = None

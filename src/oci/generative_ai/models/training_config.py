@@ -78,7 +78,6 @@ class TrainingConfig(object):
             'early_stopping_threshold': 'float',
             'log_model_metrics_interval_in_steps': 'int'
         }
-
         self.attribute_map = {
             'training_config_type': 'trainingConfigType',
             'total_training_epochs': 'totalTrainingEpochs',
@@ -88,7 +87,6 @@ class TrainingConfig(object):
             'early_stopping_threshold': 'earlyStoppingThreshold',
             'log_model_metrics_interval_in_steps': 'logModelMetricsIntervalInSteps'
         }
-
         self._training_config_type = None
         self._total_training_epochs = None
         self._learning_rate = None

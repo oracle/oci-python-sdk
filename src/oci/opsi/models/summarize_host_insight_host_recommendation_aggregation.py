@@ -109,7 +109,6 @@ class SummarizeHostInsightHostRecommendationAggregation(object):
             'time_interval_end': 'datetime',
             'details': 'HostInsightHostRecommendations'
         }
-
         self.attribute_map = {
             'resource_metric': 'resourceMetric',
             'usage_unit': 'usageUnit',
@@ -118,7 +117,6 @@ class SummarizeHostInsightHostRecommendationAggregation(object):
             'time_interval_end': 'timeIntervalEnd',
             'details': 'details'
         }
-
         self._resource_metric = None
         self._usage_unit = None
         self._item_duration_in_ms = None

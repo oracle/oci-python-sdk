@@ -48,7 +48,6 @@ class VideoFaceFrame(object):
             'bounding_polygon': 'BoundingPolygon',
             'landmarks': 'list[Landmark]'
         }
-
         self.attribute_map = {
             'time_offset_ms': 'timeOffsetMs',
             'confidence': 'confidence',
@@ -56,7 +55,6 @@ class VideoFaceFrame(object):
             'bounding_polygon': 'boundingPolygon',
             'landmarks': 'landmarks'
         }
-
         self._time_offset_ms = None
         self._confidence = None
         self._quality_score = None

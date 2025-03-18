@@ -146,7 +146,6 @@ class UpdateDb2ConnectionDetails(UpdateConnectionDetails):
             'ssl_client_keystash_secret_id': 'str',
             'ssl_server_certificate': 'str'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'display_name': 'displayName',
@@ -173,7 +172,6 @@ class UpdateDb2ConnectionDetails(UpdateConnectionDetails):
             'ssl_client_keystash_secret_id': 'sslClientKeystashSecretId',
             'ssl_server_certificate': 'sslServerCertificate'
         }
-
         self._connection_type = None
         self._display_name = None
         self._description = None

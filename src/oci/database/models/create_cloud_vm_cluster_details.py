@@ -216,7 +216,6 @@ class CreateCloudVmClusterDetails(object):
             'cloud_automation_update_details': 'CloudAutomationUpdateDetails',
             'vm_cluster_type': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'subscription_id': 'subscriptionId',
@@ -254,7 +253,6 @@ class CreateCloudVmClusterDetails(object):
             'cloud_automation_update_details': 'cloudAutomationUpdateDetails',
             'vm_cluster_type': 'vmClusterType'
         }
-
         self._compartment_id = None
         self._subscription_id = None
         self._subnet_id = None

@@ -102,7 +102,6 @@ class CreateApplicationChannelResult(CreateChannelResult):
             'is_authenticated_user_id': 'bool',
             'webhook_url': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -120,7 +119,6 @@ class CreateApplicationChannelResult(CreateChannelResult):
             'is_authenticated_user_id': 'isAuthenticatedUserId',
             'webhook_url': 'webhookUrl'
         }
-
         self._id = None
         self._name = None
         self._description = None

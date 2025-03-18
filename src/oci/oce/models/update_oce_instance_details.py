@@ -111,7 +111,6 @@ class UpdateOceInstanceDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'description': 'description',
             'waf_primary_domain': 'wafPrimaryDomain',
@@ -123,7 +122,6 @@ class UpdateOceInstanceDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._description = None
         self._waf_primary_domain = None
         self._instance_license_type = None

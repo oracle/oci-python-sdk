@@ -38,13 +38,11 @@ class BulkUploadValidationErrorInfo(object):
             'product_name': 'str',
             'row_error': 'list[BulkUploadCellInfo]'
         }
-
         self.attribute_map = {
             'row_number': 'rowNumber',
             'product_name': 'productName',
             'row_error': 'rowError'
         }
-
         self._row_number = None
         self._product_name = None
         self._row_error = None

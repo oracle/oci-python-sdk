@@ -87,7 +87,6 @@ class TestChannel(Channel):
             'defined_tags': 'dict(str, dict(str, object))',
             'webhook_url': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -102,7 +101,6 @@ class TestChannel(Channel):
             'defined_tags': 'definedTags',
             'webhook_url': 'webhookUrl'
         }
-
         self._id = None
         self._name = None
         self._description = None

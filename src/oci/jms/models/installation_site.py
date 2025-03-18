@@ -119,7 +119,6 @@ class InstallationSite(object):
             'managed_instance_type': 'str',
             'hostname': 'str'
         }
-
         self.attribute_map = {
             'installation_key': 'installationKey',
             'managed_instance_id': 'managedInstanceId',
@@ -133,7 +132,6 @@ class InstallationSite(object):
             'managed_instance_type': 'managedInstanceType',
             'hostname': 'hostname'
         }
-
         self._installation_key = None
         self._managed_instance_id = None
         self._jre = None

@@ -144,7 +144,6 @@ class ClusterSummary(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compute_availability_domain': 'computeAvailabilityDomain',
@@ -164,7 +163,6 @@ class ClusterSummary(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._id = None
         self._compute_availability_domain = None
         self._sddc_id = None

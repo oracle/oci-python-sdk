@@ -63,7 +63,6 @@ class DependentSource(object):
             'entity_types': 'list[LogAnalyticsSourceEntityType]',
             'dependencies': 'list[Dependency]'
         }
-
         self.attribute_map = {
             'source_name': 'sourceName',
             'source_display_name': 'sourceDisplayName',
@@ -74,7 +73,6 @@ class DependentSource(object):
             'entity_types': 'entityTypes',
             'dependencies': 'dependencies'
         }
-
         self._source_name = None
         self._source_display_name = None
         self._source_id = None

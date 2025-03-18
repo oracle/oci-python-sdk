@@ -38,13 +38,11 @@ class ImageObject(object):
             'confidence': 'float',
             'bounding_polygon': 'BoundingPolygon'
         }
-
         self.attribute_map = {
             'name': 'name',
             'confidence': 'confidence',
             'bounding_polygon': 'boundingPolygon'
         }
-
         self._name = None
         self._confidence = None
         self._bounding_polygon = None

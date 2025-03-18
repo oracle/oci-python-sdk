@@ -48,7 +48,6 @@ class EndpointResult(object):
             'violations': 'list[Violation]',
             'log_endpoints': 'list[str]'
         }
-
         self.attribute_map = {
             'endpoint_name': 'endpointName',
             'url': 'url',
@@ -56,7 +55,6 @@ class EndpointResult(object):
             'violations': 'violations',
             'log_endpoints': 'logEndpoints'
         }
-
         self._endpoint_name = None
         self._url = None
         self._status = None

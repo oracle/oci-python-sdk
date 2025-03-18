@@ -161,7 +161,6 @@ class CreateDesktopPoolDetails(object):
             'nsg_ids': 'list[str]',
             'private_access_details': 'CreateDesktopPoolPrivateAccessDetails'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
@@ -189,7 +188,6 @@ class CreateDesktopPoolDetails(object):
             'nsg_ids': 'nsgIds',
             'private_access_details': 'privateAccessDetails'
         }
-
         self._compartment_id = None
         self._display_name = None
         self._description = None

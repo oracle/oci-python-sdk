@@ -78,7 +78,6 @@ class HostResourceStatistics(object):
             'usage_change_percent': 'float',
             'resource_name': 'str'
         }
-
         self.attribute_map = {
             'usage': 'usage',
             'capacity': 'capacity',
@@ -86,7 +85,6 @@ class HostResourceStatistics(object):
             'usage_change_percent': 'usageChangePercent',
             'resource_name': 'resourceName'
         }
-
         self._usage = None
         self._capacity = None
         self._utilization_percent = None

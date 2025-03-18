@@ -40,13 +40,11 @@ class CreatePluggableDatabaseFromLocalCloneDetails(CreatePluggableDatabaseCreati
             'source_pluggable_database_id': 'str',
             'is_thin_clone': 'bool'
         }
-
         self.attribute_map = {
             'creation_type': 'creationType',
             'source_pluggable_database_id': 'sourcePluggableDatabaseId',
             'is_thin_clone': 'isThinClone'
         }
-
         self._creation_type = None
         self._source_pluggable_database_id = None
         self._is_thin_clone = None

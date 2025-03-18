@@ -86,7 +86,6 @@ class CreatePublicationDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'listing_type': 'listingType',
             'name': 'name',
@@ -99,7 +98,6 @@ class CreatePublicationDetails(object):
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags'
         }
-
         self._listing_type = None
         self._name = None
         self._short_description = None

@@ -33,12 +33,10 @@ class EstimateReleaseDataSizeDetails(object):
             'time_data_started': 'datetime',
             'time_data_ended': 'datetime'
         }
-
         self.attribute_map = {
             'time_data_started': 'timeDataStarted',
             'time_data_ended': 'timeDataEnded'
         }
-
         self._time_data_started = None
         self._time_data_ended = None
 

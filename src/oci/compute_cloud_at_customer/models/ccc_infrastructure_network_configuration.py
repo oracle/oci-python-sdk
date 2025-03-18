@@ -123,7 +123,6 @@ class CccInfrastructureNetworkConfiguration(object):
             'infrastructure_routing_static': 'CccInfrastructureRoutingStaticDetails',
             'infrastructure_routing_dynamic': 'CccInfrastructureRoutingDynamicDetails'
         }
-
         self.attribute_map = {
             'management_nodes': 'managementNodes',
             'uplink_port_speed_in_gbps': 'uplinkPortSpeedInGbps',
@@ -141,7 +140,6 @@ class CccInfrastructureNetworkConfiguration(object):
             'infrastructure_routing_static': 'infrastructureRoutingStatic',
             'infrastructure_routing_dynamic': 'infrastructureRoutingDynamic'
         }
-
         self._management_nodes = None
         self._uplink_port_speed_in_gbps = None
         self._uplink_port_count = None

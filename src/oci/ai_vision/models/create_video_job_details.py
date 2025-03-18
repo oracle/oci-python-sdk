@@ -58,7 +58,6 @@ class CreateVideoJobDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'input_location': 'inputLocation',
             'features': 'features',
@@ -68,7 +67,6 @@ class CreateVideoJobDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._input_location = None
         self._features = None
         self._output_location = None

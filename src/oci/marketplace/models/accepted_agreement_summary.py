@@ -58,7 +58,6 @@ class AcceptedAgreementSummary(object):
             'agreement_id': 'str',
             'time_accepted': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -68,7 +67,6 @@ class AcceptedAgreementSummary(object):
             'agreement_id': 'agreementId',
             'time_accepted': 'timeAccepted'
         }
-
         self._id = None
         self._display_name = None
         self._compartment_id = None

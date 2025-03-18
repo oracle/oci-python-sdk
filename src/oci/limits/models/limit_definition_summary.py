@@ -92,7 +92,6 @@ class LimitDefinitionSummary(object):
             'supported_subscriptions': 'list[str]',
             'supported_quota_families': 'list[str]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'service_name': 'serviceName',
@@ -106,7 +105,6 @@ class LimitDefinitionSummary(object):
             'supported_subscriptions': 'supportedSubscriptions',
             'supported_quota_families': 'supportedQuotaFamilies'
         }
-
         self._name = None
         self._service_name = None
         self._description = None

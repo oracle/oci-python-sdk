@@ -81,7 +81,6 @@ class NetworkConfiguration(object):
             'provisioning_vlan_id': 'str',
             'hcx_vlan_id': 'str'
         }
-
         self.attribute_map = {
             'provisioning_subnet_id': 'provisioningSubnetId',
             'vsphere_vlan_id': 'vsphereVlanId',
@@ -95,7 +94,6 @@ class NetworkConfiguration(object):
             'provisioning_vlan_id': 'provisioningVlanId',
             'hcx_vlan_id': 'hcxVlanId'
         }
-
         self._provisioning_subnet_id = None
         self._vsphere_vlan_id = None
         self._vmotion_vlan_id = None

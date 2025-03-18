@@ -208,7 +208,6 @@ class WorkRequestSummary(object):
             'time_finished': 'datetime',
             'resources': 'list[WorkRequestResource]'
         }
-
         self.attribute_map = {
             'operation_type': 'operationType',
             'status': 'status',
@@ -220,7 +219,6 @@ class WorkRequestSummary(object):
             'time_finished': 'timeFinished',
             'resources': 'resources'
         }
-
         self._operation_type = None
         self._status = None
         self._id = None

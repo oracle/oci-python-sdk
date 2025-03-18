@@ -50,12 +50,10 @@ class VirtualCircuitPublicPrefix(object):
             'cidr_block': 'str',
             'verification_state': 'str'
         }
-
         self.attribute_map = {
             'cidr_block': 'cidrBlock',
             'verification_state': 'verificationState'
         }
-
         self._cidr_block = None
         self._verification_state = None
 

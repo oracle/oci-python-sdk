@@ -33,12 +33,10 @@ class UpdateMessagesDetailsEntry(object):
             'receipt': 'str',
             'visibility_in_seconds': 'int'
         }
-
         self.attribute_map = {
             'receipt': 'receipt',
             'visibility_in_seconds': 'visibilityInSeconds'
         }
-
         self._receipt = None
         self._visibility_in_seconds = None
 

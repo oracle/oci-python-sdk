@@ -280,7 +280,6 @@ class DeploymentUpgrade(object):
             'is_reschedule_allowed': 'bool',
             'time_schedule_max': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -312,7 +311,6 @@ class DeploymentUpgrade(object):
             'is_reschedule_allowed': 'isRescheduleAllowed',
             'time_schedule_max': 'timeScheduleMax'
         }
-
         self._id = None
         self._display_name = None
         self._description = None

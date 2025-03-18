@@ -100,7 +100,6 @@ class MdsMysqlDatabaseConfigurationSummary(DatabaseConfigurationSummary):
             'is_highly_available': 'bool',
             'shape_name': 'str'
         }
-
         self.attribute_map = {
             'database_insight_id': 'databaseInsightId',
             'entity_source': 'entitySource',
@@ -118,7 +117,6 @@ class MdsMysqlDatabaseConfigurationSummary(DatabaseConfigurationSummary):
             'is_highly_available': 'isHighlyAvailable',
             'shape_name': 'shapeName'
         }
-
         self._database_insight_id = None
         self._entity_source = None
         self._compartment_id = None

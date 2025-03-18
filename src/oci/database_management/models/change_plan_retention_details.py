@@ -39,13 +39,11 @@ class ChangePlanRetentionDetails(object):
             'credentials': 'ManagedDatabaseCredential',
             'database_credential': 'DatabaseCredentialDetails'
         }
-
         self.attribute_map = {
             'retention_weeks': 'retentionWeeks',
             'credentials': 'credentials',
             'database_credential': 'databaseCredential'
         }
-
         self._retention_weeks = None
         self._credentials = None
         self._database_credential = None

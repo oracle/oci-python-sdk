@@ -33,12 +33,10 @@ class DiskPerformanceDetails(object):
             'disk_iops': 'float',
             'disk_throughput_in_mbps': 'float'
         }
-
         self.attribute_map = {
             'disk_iops': 'diskIops',
             'disk_throughput_in_mbps': 'diskThroughputInMbps'
         }
-
         self._disk_iops = None
         self._disk_throughput_in_mbps = None
 

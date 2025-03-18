@@ -75,7 +75,6 @@ class OutputField(TypedObject):
             'type': 'BaseType',
             'labels': 'list[str]'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -88,7 +87,6 @@ class OutputField(TypedObject):
             'type': 'type',
             'labels': 'labels'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

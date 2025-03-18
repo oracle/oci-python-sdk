@@ -41,13 +41,11 @@ class AsIsResourceAssessmentStrategy(ResourceAssessmentStrategy):
             'strategy_type': 'str',
             'adjustment_multiplier': 'float'
         }
-
         self.attribute_map = {
             'resource_type': 'resourceType',
             'strategy_type': 'strategyType',
             'adjustment_multiplier': 'adjustmentMultiplier'
         }
-
         self._resource_type = None
         self._strategy_type = None
         self._adjustment_multiplier = None

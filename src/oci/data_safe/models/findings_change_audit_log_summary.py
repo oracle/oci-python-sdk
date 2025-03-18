@@ -88,7 +88,6 @@ class FindingsChangeAuditLogSummary(object):
             'time_valid_until': 'datetime',
             'modified_by': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'finding_key': 'findingKey',
@@ -104,7 +103,6 @@ class FindingsChangeAuditLogSummary(object):
             'time_valid_until': 'timeValidUntil',
             'modified_by': 'modifiedBy'
         }
-
         self._key = None
         self._finding_key = None
         self._finding_title = None

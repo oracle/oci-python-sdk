@@ -39,13 +39,11 @@ class RuleAttribute(object):
             'display_name': 'str',
             'position': 'int'
         }
-
         self.attribute_map = {
             'key': 'key',
             'display_name': 'displayName',
             'position': 'position'
         }
-
         self._key = None
         self._display_name = None
         self._position = None

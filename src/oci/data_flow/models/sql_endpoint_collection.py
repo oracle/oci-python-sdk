@@ -28,11 +28,9 @@ class SqlEndpointCollection(object):
         self.swagger_types = {
             'items': 'list[SqlEndpointSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

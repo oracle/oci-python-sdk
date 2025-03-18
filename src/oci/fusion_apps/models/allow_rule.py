@@ -49,13 +49,11 @@ class AllowRule(Rule):
             'conditions': 'list[RuleCondition]',
             'description': 'str'
         }
-
         self.attribute_map = {
             'action': 'action',
             'conditions': 'conditions',
             'description': 'description'
         }
-
         self._action = None
         self._conditions = None
         self._description = None

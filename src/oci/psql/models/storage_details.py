@@ -42,13 +42,11 @@ class StorageDetails(object):
             'is_regionally_durable': 'bool',
             'availability_domain': 'str'
         }
-
         self.attribute_map = {
             'system_type': 'systemType',
             'is_regionally_durable': 'isRegionallyDurable',
             'availability_domain': 'availabilityDomain'
         }
-
         self._system_type = None
         self._is_regionally_durable = None
         self._availability_domain = None

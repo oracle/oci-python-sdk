@@ -28,11 +28,9 @@ class UpdatableAutonomousSettings(object):
         self.swagger_types = {
             'is_data_collection_authorized': 'bool'
         }
-
         self.attribute_map = {
             'is_data_collection_authorized': 'isDataCollectionAuthorized'
         }
-
         self._is_data_collection_authorized = None
 
     @property

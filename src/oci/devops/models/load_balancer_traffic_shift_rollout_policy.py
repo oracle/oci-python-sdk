@@ -38,13 +38,11 @@ class LoadBalancerTrafficShiftRolloutPolicy(object):
             'batch_delay_in_seconds': 'int',
             'ramp_limit_percent': 'float'
         }
-
         self.attribute_map = {
             'batch_count': 'batchCount',
             'batch_delay_in_seconds': 'batchDelayInSeconds',
             'ramp_limit_percent': 'rampLimitPercent'
         }
-
         self._batch_count = None
         self._batch_delay_in_seconds = None
         self._ramp_limit_percent = None

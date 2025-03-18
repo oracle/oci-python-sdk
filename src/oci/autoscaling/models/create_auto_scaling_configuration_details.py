@@ -63,7 +63,6 @@ class CreateAutoScalingConfigurationDetails(object):
             'policies': 'list[CreateAutoScalingPolicyDetails]',
             'resource': 'Resource'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
@@ -74,7 +73,6 @@ class CreateAutoScalingConfigurationDetails(object):
             'policies': 'policies',
             'resource': 'resource'
         }
-
         self._compartment_id = None
         self._defined_tags = None
         self._display_name = None

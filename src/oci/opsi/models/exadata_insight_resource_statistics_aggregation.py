@@ -53,11 +53,9 @@ class ExadataInsightResourceStatisticsAggregation(object):
         self.swagger_types = {
             'exadata_resource_type': 'str'
         }
-
         self.attribute_map = {
             'exadata_resource_type': 'exadataResourceType'
         }
-
         self._exadata_resource_type = None
 
     @staticmethod

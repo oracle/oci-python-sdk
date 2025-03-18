@@ -106,7 +106,6 @@ class VmAsset(Asset):
             'compute': 'ComputeProperties',
             'vm': 'VmProperties'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'inventory_id': 'inventoryId',
@@ -125,7 +124,6 @@ class VmAsset(Asset):
             'compute': 'compute',
             'vm': 'vm'
         }
-
         self._display_name = None
         self._inventory_id = None
         self._id = None

@@ -84,7 +84,6 @@ class ManagedInstanceGroupAvailablePackageSummary(object):
             'software_sources': 'list[SoftwareSourceDetails]',
             'is_latest': 'bool'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'name': 'name',
@@ -94,7 +93,6 @@ class ManagedInstanceGroupAvailablePackageSummary(object):
             'software_sources': 'softwareSources',
             'is_latest': 'isLatest'
         }
-
         self._display_name = None
         self._name = None
         self._type = None

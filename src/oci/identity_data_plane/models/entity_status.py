@@ -33,12 +33,10 @@ class EntityStatus(object):
             'status': 'str',
             'inactive_bit_mask': 'int'
         }
-
         self.attribute_map = {
             'status': 'status',
             'inactive_bit_mask': 'inactiveBitMask'
         }
-
         self._status = None
         self._inactive_bit_mask = None
 

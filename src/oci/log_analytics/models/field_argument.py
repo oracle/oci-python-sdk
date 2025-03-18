@@ -35,12 +35,10 @@ class FieldArgument(Argument):
             'type': 'str',
             'value': 'AbstractField'
         }
-
         self.attribute_map = {
             'type': 'type',
             'value': 'value'
         }
-
         self._type = None
         self._value = None
         self._type = 'FIELD'

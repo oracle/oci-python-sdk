@@ -48,7 +48,6 @@ class CreateFleetCredentialDetails(object):
             'user': 'CredentialDetails',
             'password': 'CredentialDetails'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'compartment_id': 'compartmentId',
@@ -56,7 +55,6 @@ class CreateFleetCredentialDetails(object):
             'user': 'user',
             'password': 'password'
         }
-
         self._display_name = None
         self._compartment_id = None
         self._entity_specifics = None

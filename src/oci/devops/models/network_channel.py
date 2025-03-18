@@ -44,11 +44,9 @@ class NetworkChannel(object):
         self.swagger_types = {
             'network_channel_type': 'str'
         }
-
         self.attribute_map = {
             'network_channel_type': 'networkChannelType'
         }
-
         self._network_channel_type = None
 
     @staticmethod

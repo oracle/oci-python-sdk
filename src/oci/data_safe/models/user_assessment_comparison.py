@@ -52,13 +52,11 @@ class UserAssessmentComparison(object):
             'time_created': 'datetime',
             'summary': 'list[object]'
         }
-
         self.attribute_map = {
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'summary': 'summary'
         }
-
         self._lifecycle_state = None
         self._time_created = None
         self._summary = None

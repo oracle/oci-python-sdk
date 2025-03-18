@@ -125,7 +125,6 @@ class OracleConnectionSummary(ConnectionSummary):
             'connection_string': 'str',
             'database_id': 'str'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'id': 'id',
@@ -148,7 +147,6 @@ class OracleConnectionSummary(ConnectionSummary):
             'connection_string': 'connectionString',
             'database_id': 'databaseId'
         }
-
         self._connection_type = None
         self._id = None
         self._display_name = None

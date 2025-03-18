@@ -33,12 +33,10 @@ class UpdateAddonDetails(object):
             'version': 'str',
             'configurations': 'list[AddonConfiguration]'
         }
-
         self.attribute_map = {
             'version': 'version',
             'configurations': 'configurations'
         }
-
         self._version = None
         self._configurations = None
 

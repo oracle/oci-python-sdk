@@ -78,7 +78,6 @@ class FlowPortLink(object):
             'description': 'str',
             'port': 'str'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -88,7 +87,6 @@ class FlowPortLink(object):
             'description': 'description',
             'port': 'port'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

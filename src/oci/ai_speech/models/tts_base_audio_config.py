@@ -35,12 +35,10 @@ class TtsBaseAudioConfig(TtsAudioConfig):
             'config_type': 'str',
             'save_path': 'str'
         }
-
         self.attribute_map = {
             'config_type': 'configType',
             'save_path': 'savePath'
         }
-
         self._config_type = None
         self._save_path = None
         self._config_type = 'BASE_AUDIO_CONFIG'

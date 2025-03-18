@@ -35,12 +35,10 @@ class CreateDbSystemSourceImportFromUrlDetails(CreateDbSystemSourceDetails):
             'source_type': 'str',
             'source_url': 'str'
         }
-
         self.attribute_map = {
             'source_type': 'sourceType',
             'source_url': 'sourceUrl'
         }
-
         self._source_type = None
         self._source_url = None
         self._source_type = 'IMPORTURL'

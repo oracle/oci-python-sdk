@@ -49,11 +49,9 @@ class FetchProtectedDatabaseConfigurationDetails(object):
         self.swagger_types = {
             'configuration_type': 'str'
         }
-
         self.attribute_map = {
             'configuration_type': 'configurationType'
         }
-
         self._configuration_type = None
 
     @property

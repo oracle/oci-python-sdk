@@ -33,12 +33,10 @@ class Header(object):
             'header_name': 'str',
             'header_value': 'str'
         }
-
         self.attribute_map = {
             'header_name': 'headerName',
             'header_value': 'headerValue'
         }
-
         self._header_name = None
         self._header_value = None
 

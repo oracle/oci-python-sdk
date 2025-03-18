@@ -33,12 +33,10 @@ class CopyPolicy(object):
             'copy_to_region': 'str',
             'backup_copy_retention_in_days': 'int'
         }
-
         self.attribute_map = {
             'copy_to_region': 'copyToRegion',
             'backup_copy_retention_in_days': 'backupCopyRetentionInDays'
         }
-
         self._copy_to_region = None
         self._backup_copy_retention_in_days = None
 

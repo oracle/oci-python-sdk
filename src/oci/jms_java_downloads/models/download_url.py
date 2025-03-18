@@ -43,12 +43,10 @@ class DownloadUrl(object):
             'download_url': 'str',
             'download_url_type': 'str'
         }
-
         self.attribute_map = {
             'download_url': 'downloadUrl',
             'download_url_type': 'downloadUrlType'
         }
-
         self._download_url = None
         self._download_url_type = None
 

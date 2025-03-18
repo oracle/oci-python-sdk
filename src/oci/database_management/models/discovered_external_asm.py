@@ -91,7 +91,6 @@ class DiscoveredExternalAsm(DiscoveredExternalDbSystemComponent):
             'asm_instances': 'list[DiscoveredExternalAsmInstance]',
             'connector': 'ExternalDbSystemDiscoveryConnector'
         }
-
         self.attribute_map = {
             'component_id': 'componentId',
             'display_name': 'displayName',
@@ -107,7 +106,6 @@ class DiscoveredExternalAsm(DiscoveredExternalDbSystemComponent):
             'asm_instances': 'asmInstances',
             'connector': 'connector'
         }
-
         self._component_id = None
         self._display_name = None
         self._component_name = None

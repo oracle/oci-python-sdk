@@ -53,7 +53,6 @@ class FleetMetricSummaryDefinition(object):
             'percentage_change': 'float',
             'dimensions': 'list[MetricDimensionDefinition]'
         }
-
         self.attribute_map = {
             'metric_name': 'metricName',
             'baseline_value': 'baselineValue',
@@ -62,7 +61,6 @@ class FleetMetricSummaryDefinition(object):
             'percentage_change': 'percentageChange',
             'dimensions': 'dimensions'
         }
-
         self._metric_name = None
         self._baseline_value = None
         self._target_value = None

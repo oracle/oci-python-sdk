@@ -129,7 +129,6 @@ class ImportRequest(object):
             'imported_objects': 'list[ImportObjectMetadataSummary]',
             'name': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'bucket_name': 'bucketName',
@@ -148,7 +147,6 @@ class ImportRequest(object):
             'imported_objects': 'importedObjects',
             'name': 'name'
         }
-
         self._key = None
         self._bucket_name = None
         self._file_name = None

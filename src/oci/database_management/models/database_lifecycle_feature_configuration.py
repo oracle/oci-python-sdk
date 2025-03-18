@@ -63,7 +63,6 @@ class DatabaseLifecycleFeatureConfiguration(DatabaseFeatureConfiguration):
             'database_connection_details': 'DatabaseConnectionDetails',
             'license_model': 'str'
         }
-
         self.attribute_map = {
             'feature': 'feature',
             'feature_status': 'featureStatus',
@@ -71,7 +70,6 @@ class DatabaseLifecycleFeatureConfiguration(DatabaseFeatureConfiguration):
             'database_connection_details': 'databaseConnectionDetails',
             'license_model': 'licenseModel'
         }
-
         self._feature = None
         self._feature_status = None
         self._connector_details = None

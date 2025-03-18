@@ -53,7 +53,6 @@ class CreatePullRequestCommentDetails(object):
             'file_type': 'str',
             'line_number': 'int'
         }
-
         self.attribute_map = {
             'data': 'data',
             'parent_id': 'parentId',
@@ -62,7 +61,6 @@ class CreatePullRequestCommentDetails(object):
             'file_type': 'fileType',
             'line_number': 'lineNumber'
         }
-
         self._data = None
         self._parent_id = None
         self._file_path = None

@@ -67,7 +67,6 @@ class CreateOdaInstanceAttachmentDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'attach_to_id': 'attachToId',
             'attachment_type': 'attachmentType',
@@ -77,7 +76,6 @@ class CreateOdaInstanceAttachmentDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._attach_to_id = None
         self._attachment_type = None
         self._attachment_metadata = None

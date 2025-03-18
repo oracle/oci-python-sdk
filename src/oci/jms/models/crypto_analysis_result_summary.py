@@ -128,7 +128,6 @@ class CryptoAnalysisResultSummary(object):
             'bucket_name': 'str',
             'object_name': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'work_request_id': 'workRequestId',
@@ -150,7 +149,6 @@ class CryptoAnalysisResultSummary(object):
             'bucket_name': 'bucketName',
             'object_name': 'objectName'
         }
-
         self._id = None
         self._work_request_id = None
         self._aggregation_mode = None

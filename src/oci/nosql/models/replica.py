@@ -81,7 +81,6 @@ class Replica(object):
             'lifecycle_state': 'str',
             'lifecycle_details': 'str'
         }
-
         self.attribute_map = {
             'region': 'region',
             'table_id': 'tableId',
@@ -90,7 +89,6 @@ class Replica(object):
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails'
         }
-
         self._region = None
         self._table_id = None
         self._max_write_units = None

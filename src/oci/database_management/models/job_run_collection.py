@@ -28,11 +28,9 @@ class JobRunCollection(object):
         self.swagger_types = {
             'items': 'list[JobRunSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

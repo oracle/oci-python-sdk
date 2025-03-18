@@ -28,11 +28,9 @@ class GenericRestApiAttributes(object):
         self.swagger_types = {
             'server_url': 'str'
         }
-
         self.attribute_map = {
             'server_url': 'serverUrl'
         }
-
         self._server_url = None
 
     @property

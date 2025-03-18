@@ -54,7 +54,6 @@ class HeatWaveClusterTableMemoryEstimate(object):
             'analytical_footprint_in_mbs': 'int',
             'error_comment': 'str'
         }
-
         self.attribute_map = {
             'table_name': 'tableName',
             'to_load_column_count': 'toLoadColumnCount',
@@ -63,7 +62,6 @@ class HeatWaveClusterTableMemoryEstimate(object):
             'analytical_footprint_in_mbs': 'analyticalFootprintInMbs',
             'error_comment': 'errorComment'
         }
-
         self._table_name = None
         self._to_load_column_count = None
         self._varlen_column_count = None

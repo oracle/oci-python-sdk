@@ -123,7 +123,6 @@ class OperationsInsightsPrivateEndpointSummary(object):
             'lifecycle_details': 'str',
             'private_endpoint_status_details': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -140,7 +139,6 @@ class OperationsInsightsPrivateEndpointSummary(object):
             'lifecycle_details': 'lifecycleDetails',
             'private_endpoint_status_details': 'privateEndpointStatusDetails'
         }
-
         self._id = None
         self._display_name = None
         self._compartment_id = None

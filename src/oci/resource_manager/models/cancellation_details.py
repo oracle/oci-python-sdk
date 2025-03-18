@@ -28,11 +28,9 @@ class CancellationDetails(object):
         self.swagger_types = {
             'is_forced': 'bool'
         }
-
         self.attribute_map = {
             'is_forced': 'isForced'
         }
-
         self._is_forced = None
 
     @property

@@ -110,7 +110,6 @@ class IncidentSummary(object):
             'warn_message': 'str',
             'problem_type': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'compartment_id': 'compartmentId',
@@ -126,7 +125,6 @@ class IncidentSummary(object):
             'warn_message': 'warnMessage',
             'problem_type': 'problemType'
         }
-
         self._key = None
         self._compartment_id = None
         self._contact_list = None

@@ -33,12 +33,10 @@ class CreateTagDetails(object):
             'name': 'str',
             'term_key': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'term_key': 'termKey'
         }
-
         self._name = None
         self._term_key = None
 

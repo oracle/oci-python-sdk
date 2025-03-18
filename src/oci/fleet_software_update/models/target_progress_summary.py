@@ -51,12 +51,10 @@ class TargetProgressSummary(object):
             'operation_type': 'str',
             'progress_of_operation': 'int'
         }
-
         self.attribute_map = {
             'operation_type': 'operationType',
             'progress_of_operation': 'progressOfOperation'
         }
-
         self._operation_type = None
         self._progress_of_operation = None
 

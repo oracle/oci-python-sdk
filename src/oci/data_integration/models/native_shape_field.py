@@ -58,7 +58,6 @@ class NativeShapeField(object):
             'default_value_string': 'str',
             'is_mandatory': 'bool'
         }
-
         self.attribute_map = {
             'name': 'name',
             'model_type': 'modelType',
@@ -68,7 +67,6 @@ class NativeShapeField(object):
             'default_value_string': 'defaultValueString',
             'is_mandatory': 'isMandatory'
         }
-
         self._name = None
         self._model_type = None
         self._type = None

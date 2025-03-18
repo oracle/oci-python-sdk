@@ -33,12 +33,10 @@ class AutoAssociationState(object):
             'is_enabled': 'bool',
             'log_group_id': 'str'
         }
-
         self.attribute_map = {
             'is_enabled': 'isEnabled',
             'log_group_id': 'logGroupId'
         }
-
         self._is_enabled = None
         self._log_group_id = None
 

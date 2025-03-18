@@ -103,7 +103,6 @@ class PbfListingVersion(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'id': 'id',
             'pbf_listing_id': 'pbfListingId',
@@ -119,7 +118,6 @@ class PbfListingVersion(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._id = None
         self._pbf_listing_id = None
         self._name = None

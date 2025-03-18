@@ -28,11 +28,9 @@ class JobOutputsCollection(object):
         self.swagger_types = {
             'items': 'list[JobOutputSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

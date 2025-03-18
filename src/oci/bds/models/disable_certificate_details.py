@@ -33,12 +33,10 @@ class DisableCertificateDetails(object):
             'cluster_admin_password': 'str',
             'services': 'list[Service]'
         }
-
         self.attribute_map = {
             'cluster_admin_password': 'clusterAdminPassword',
             'services': 'services'
         }
-
         self._cluster_admin_password = None
         self._services = None
 

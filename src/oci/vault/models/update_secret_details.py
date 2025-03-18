@@ -73,7 +73,6 @@ class UpdateSecretDetails(object):
             'secret_generation_context': 'SecretGenerationContext',
             'enable_auto_generation': 'bool'
         }
-
         self.attribute_map = {
             'current_version_number': 'currentVersionNumber',
             'defined_tags': 'definedTags',
@@ -86,7 +85,6 @@ class UpdateSecretDetails(object):
             'secret_generation_context': 'secretGenerationContext',
             'enable_auto_generation': 'enableAutoGeneration'
         }
-
         self._current_version_number = None
         self._defined_tags = None
         self._description = None

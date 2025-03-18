@@ -38,13 +38,11 @@ class CreateHelmChartImageDetails(object):
             'source_registry_url': 'str',
             'supported_kubernetes_versions': 'list[str]'
         }
-
         self.attribute_map = {
             'source_registry_id': 'sourceRegistryId',
             'source_registry_url': 'sourceRegistryUrl',
             'supported_kubernetes_versions': 'supportedKubernetesVersions'
         }
-
         self._source_registry_id = None
         self._source_registry_url = None
         self._supported_kubernetes_versions = None

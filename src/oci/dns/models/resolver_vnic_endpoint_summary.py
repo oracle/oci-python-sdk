@@ -89,7 +89,6 @@ class ResolverVnicEndpointSummary(ResolverEndpointSummary):
             '_self': 'str',
             'subnet_id': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'endpoint_type': 'endpointType',
@@ -104,7 +103,6 @@ class ResolverVnicEndpointSummary(ResolverEndpointSummary):
             '_self': 'self',
             'subnet_id': 'subnetId'
         }
-
         self._name = None
         self._endpoint_type = None
         self._forwarding_address = None

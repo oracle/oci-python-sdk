@@ -112,7 +112,6 @@ class ChartColumn(AbstractColumn):
             'total_interval_counts': 'list[int]',
             'series': 'list[ChartDataColumn]'
         }
-
         self.attribute_map = {
             'type': 'type',
             'display_name': 'displayName',
@@ -132,7 +131,6 @@ class ChartColumn(AbstractColumn):
             'total_interval_counts': 'totalIntervalCounts',
             'series': 'series'
         }
-
         self._type = None
         self._display_name = None
         self._sub_system = None

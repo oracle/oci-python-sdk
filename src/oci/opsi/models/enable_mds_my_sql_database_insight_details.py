@@ -30,11 +30,9 @@ class EnableMdsMySqlDatabaseInsightDetails(EnableDatabaseInsightDetails):
         self.swagger_types = {
             'entity_source': 'str'
         }
-
         self.attribute_map = {
             'entity_source': 'entitySource'
         }
-
         self._entity_source = None
         self._entity_source = 'MDS_MYSQL_DATABASE_SYSTEM'
 

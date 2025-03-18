@@ -126,7 +126,6 @@ class Session(object):
             'lifecycle_details': 'str',
             'session_ttl_in_seconds': 'int'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -144,7 +143,6 @@ class Session(object):
             'lifecycle_details': 'lifecycleDetails',
             'session_ttl_in_seconds': 'sessionTtlInSeconds'
         }
-
         self._id = None
         self._display_name = None
         self._bastion_id = None

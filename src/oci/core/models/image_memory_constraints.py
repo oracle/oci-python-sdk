@@ -33,12 +33,10 @@ class ImageMemoryConstraints(object):
             'min_in_gbs': 'int',
             'max_in_gbs': 'int'
         }
-
         self.attribute_map = {
             'min_in_gbs': 'minInGBs',
             'max_in_gbs': 'maxInGBs'
         }
-
         self._min_in_gbs = None
         self._max_in_gbs = None
 

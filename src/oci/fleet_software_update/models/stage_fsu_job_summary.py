@@ -121,7 +121,6 @@ class StageFsuJobSummary(FsuJobSummary):
             'target_id': 'str',
             'schedule': 'ScheduleDetails'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -143,7 +142,6 @@ class StageFsuJobSummary(FsuJobSummary):
             'target_id': 'targetId',
             'schedule': 'schedule'
         }
-
         self._id = None
         self._display_name = None
         self._type = None

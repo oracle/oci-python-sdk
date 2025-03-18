@@ -38,13 +38,11 @@ class ServiceListSummary(object):
             'total_services': 'int',
             'parent_resource_id': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'total_services': 'totalServices',
             'parent_resource_id': 'parentResourceId'
         }
-
         self._name = None
         self._total_services = None
         self._parent_resource_id = None

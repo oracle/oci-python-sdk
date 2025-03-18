@@ -28,11 +28,9 @@ class MaskingPolicyReferentialRelationCollection(object):
         self.swagger_types = {
             'items': 'list[MaskingPolicyReferentialRelationSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

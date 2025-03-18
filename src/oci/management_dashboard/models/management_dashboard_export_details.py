@@ -28,11 +28,9 @@ class ManagementDashboardExportDetails(object):
         self.swagger_types = {
             'dashboards': 'list[ManagementDashboardForImportExportDetails]'
         }
-
         self.attribute_map = {
             'dashboards': 'dashboards'
         }
-
         self._dashboards = None
 
     @property

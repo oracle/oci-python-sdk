@@ -33,12 +33,10 @@ class AvailableRegionSummary(object):
             'region_name': 'str',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'region_name': 'regionName',
             'system_tags': 'systemTags'
         }
-
         self._region_name = None
         self._system_tags = None
 

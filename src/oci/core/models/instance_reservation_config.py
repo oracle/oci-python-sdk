@@ -58,7 +58,6 @@ class InstanceReservationConfig(object):
             'used_count': 'int',
             'cluster_placement_group_id': 'str'
         }
-
         self.attribute_map = {
             'fault_domain': 'faultDomain',
             'cluster_config': 'clusterConfig',
@@ -68,7 +67,6 @@ class InstanceReservationConfig(object):
             'used_count': 'usedCount',
             'cluster_placement_group_id': 'clusterPlacementGroupId'
         }
-
         self._fault_domain = None
         self._cluster_config = None
         self._instance_shape = None

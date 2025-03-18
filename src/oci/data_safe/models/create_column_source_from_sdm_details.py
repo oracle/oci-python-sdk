@@ -35,12 +35,10 @@ class CreateColumnSourceFromSdmDetails(CreateColumnSourceDetails):
             'column_source': 'str',
             'sensitive_data_model_id': 'str'
         }
-
         self.attribute_map = {
             'column_source': 'columnSource',
             'sensitive_data_model_id': 'sensitiveDataModelId'
         }
-
         self._column_source = None
         self._sensitive_data_model_id = None
         self._column_source = 'SENSITIVE_DATA_MODEL'

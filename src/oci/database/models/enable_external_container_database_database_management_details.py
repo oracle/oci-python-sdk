@@ -42,12 +42,10 @@ class EnableExternalContainerDatabaseDatabaseManagementDetails(object):
             'license_model': 'str',
             'external_database_connector_id': 'str'
         }
-
         self.attribute_map = {
             'license_model': 'licenseModel',
             'external_database_connector_id': 'externalDatabaseConnectorId'
         }
-
         self._license_model = None
         self._external_database_connector_id = None
 

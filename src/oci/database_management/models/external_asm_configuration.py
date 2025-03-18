@@ -28,11 +28,9 @@ class ExternalAsmConfiguration(object):
         self.swagger_types = {
             'init_parameters': 'list[ExternalAsmInstanceParameters]'
         }
-
         self.attribute_map = {
             'init_parameters': 'initParameters'
         }
-
         self._init_parameters = None
 
     @property

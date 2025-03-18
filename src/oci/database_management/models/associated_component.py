@@ -94,13 +94,11 @@ class AssociatedComponent(object):
             'component_type': 'str',
             'association_type': 'str'
         }
-
         self.attribute_map = {
             'component_id': 'componentId',
             'component_type': 'componentType',
             'association_type': 'associationType'
         }
-
         self._component_id = None
         self._component_type = None
         self._association_type = None

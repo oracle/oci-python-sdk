@@ -28,11 +28,9 @@ class NetworkPolicy(object):
         self.swagger_types = {
             'network_source_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'network_source_ids': 'networkSourceIds'
         }
-
         self._network_source_ids = None
 
     @property

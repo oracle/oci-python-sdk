@@ -43,14 +43,12 @@ class PipelineStepOverrideDetails(object):
             'step_container_configuration_details': 'PipelineContainerConfigurationDetails',
             'step_dataflow_configuration_details': 'PipelineDataflowConfigurationDetails'
         }
-
         self.attribute_map = {
             'step_name': 'stepName',
             'step_configuration_details': 'stepConfigurationDetails',
             'step_container_configuration_details': 'stepContainerConfigurationDetails',
             'step_dataflow_configuration_details': 'stepDataflowConfigurationDetails'
         }
-
         self._step_name = None
         self._step_configuration_details = None
         self._step_container_configuration_details = None

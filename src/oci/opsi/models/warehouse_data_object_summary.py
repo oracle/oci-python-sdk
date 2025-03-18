@@ -53,14 +53,12 @@ class WarehouseDataObjectSummary(object):
             'owner': 'str',
             'details': 'WarehouseDataObjectDetails'
         }
-
         self.attribute_map = {
             'data_object_type': 'dataObjectType',
             'name': 'name',
             'owner': 'owner',
             'details': 'details'
         }
-
         self._data_object_type = None
         self._name = None
         self._owner = None

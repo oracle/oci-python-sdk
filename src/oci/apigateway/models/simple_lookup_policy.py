@@ -45,14 +45,12 @@ class SimpleLookupPolicy(ResponseCacheLookupPolicy):
             'is_private_caching_enabled': 'bool',
             'cache_key_additions': 'list[str]'
         }
-
         self.attribute_map = {
             'type': 'type',
             'is_enabled': 'isEnabled',
             'is_private_caching_enabled': 'isPrivateCachingEnabled',
             'cache_key_additions': 'cacheKeyAdditions'
         }
-
         self._type = None
         self._is_enabled = None
         self._is_private_caching_enabled = None

@@ -112,7 +112,6 @@ class UploadFileSummary(object):
             'log_group_name': 'str',
             'failure_details': 'str'
         }
-
         self.attribute_map = {
             'reference': 'reference',
             'name': 'name',
@@ -130,7 +129,6 @@ class UploadFileSummary(object):
             'log_group_name': 'logGroupName',
             'failure_details': 'failureDetails'
         }
-
         self._reference = None
         self._name = None
         self._status = None

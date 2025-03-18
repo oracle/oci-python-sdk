@@ -38,13 +38,11 @@ class Query(object):
             'compartment_id': 'str',
             'query_definition': 'QueryDefinition'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
             'query_definition': 'queryDefinition'
         }
-
         self._id = None
         self._compartment_id = None
         self._query_definition = None

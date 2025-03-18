@@ -181,7 +181,6 @@ class SnowflakeConnection(Connection):
             'private_key_file_secret_id': 'str',
             'private_key_passphrase_secret_id': 'str'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'id': 'id',
@@ -211,7 +210,6 @@ class SnowflakeConnection(Connection):
             'private_key_file_secret_id': 'privateKeyFileSecretId',
             'private_key_passphrase_secret_id': 'privateKeyPassphraseSecretId'
         }
-
         self._connection_type = None
         self._id = None
         self._display_name = None

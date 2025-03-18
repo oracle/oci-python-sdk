@@ -111,7 +111,6 @@ class AlarmStatusSummary(object):
             'status': 'str',
             'suppression': 'Suppression'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -122,7 +121,6 @@ class AlarmStatusSummary(object):
             'status': 'status',
             'suppression': 'suppression'
         }
-
         self._id = None
         self._display_name = None
         self._severity = None

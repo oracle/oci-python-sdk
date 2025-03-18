@@ -94,7 +94,6 @@ class CreateComputeInstanceGroupDeployStageDetails(CreateDeployStageDetails):
             'failure_policy': 'ComputeInstanceGroupFailurePolicy',
             'load_balancer_config': 'LoadBalancerConfig'
         }
-
         self.attribute_map = {
             'description': 'description',
             'display_name': 'displayName',
@@ -111,7 +110,6 @@ class CreateComputeInstanceGroupDeployStageDetails(CreateDeployStageDetails):
             'failure_policy': 'failurePolicy',
             'load_balancer_config': 'loadBalancerConfig'
         }
-
         self._description = None
         self._display_name = None
         self._deploy_stage_type = None

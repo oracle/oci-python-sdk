@@ -38,13 +38,11 @@ class DomainReplication(object):
             'txn_seq_number': 'float',
             'domain_replication_states': 'list[DomainReplicationStates]'
         }
-
         self.attribute_map = {
             'opc_water_mark': 'opcWaterMark',
             'txn_seq_number': 'txnSeqNumber',
             'domain_replication_states': 'domainReplicationStates'
         }
-
         self._opc_water_mark = None
         self._txn_seq_number = None
         self._domain_replication_states = None

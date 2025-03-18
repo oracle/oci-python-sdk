@@ -53,7 +53,6 @@ class ProblemEntitySummary(object):
             'result_url': 'str',
             'entity_details': 'list[EntityDetails]'
         }
-
         self.attribute_map = {
             'regions': 'regions',
             'time_first_detected': 'timeFirstDetected',
@@ -62,7 +61,6 @@ class ProblemEntitySummary(object):
             'result_url': 'resultUrl',
             'entity_details': 'entityDetails'
         }
-
         self._regions = None
         self._time_first_detected = None
         self._problem_id = None

@@ -43,12 +43,10 @@ class Capacity(object):
             'capacity_type': 'str',
             'capacity_value': 'int'
         }
-
         self.attribute_map = {
             'capacity_type': 'capacityType',
             'capacity_value': 'capacityValue'
         }
-
         self._capacity_type = None
         self._capacity_value = None
 

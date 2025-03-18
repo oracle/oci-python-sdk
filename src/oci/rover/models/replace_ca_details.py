@@ -87,14 +87,12 @@ class ReplaceCaDetails(object):
             'cert_key_algorithm': 'str',
             'cert_signature_algorithm': 'str'
         }
-
         self.attribute_map = {
             'ca_bundle_pem': 'caBundlePem',
             'certificate_max_validity_duration': 'certificateMaxValidityDuration',
             'cert_key_algorithm': 'certKeyAlgorithm',
             'cert_signature_algorithm': 'certSignatureAlgorithm'
         }
-
         self._ca_bundle_pem = None
         self._certificate_max_validity_duration = None
         self._cert_key_algorithm = None

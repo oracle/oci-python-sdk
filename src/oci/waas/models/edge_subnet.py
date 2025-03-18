@@ -38,13 +38,11 @@ class EdgeSubnet(object):
             'time_modified': 'datetime',
             'region': 'str'
         }
-
         self.attribute_map = {
             'cidr': 'cidr',
             'time_modified': 'timeModified',
             'region': 'region'
         }
-
         self._cidr = None
         self._time_modified = None
         self._region = None

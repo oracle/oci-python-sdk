@@ -48,11 +48,9 @@ class IndexConfig(object):
         self.swagger_types = {
             'index_config_type': 'str'
         }
-
         self.attribute_map = {
             'index_config_type': 'indexConfigType'
         }
-
         self._index_config_type = None
 
     @staticmethod

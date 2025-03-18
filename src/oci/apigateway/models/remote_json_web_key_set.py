@@ -47,14 +47,12 @@ class RemoteJsonWebKeySet(PublicKeySet):
             'is_ssl_verify_disabled': 'bool',
             'max_cache_duration_in_hours': 'int'
         }
-
         self.attribute_map = {
             'type': 'type',
             'uri': 'uri',
             'is_ssl_verify_disabled': 'isSslVerifyDisabled',
             'max_cache_duration_in_hours': 'maxCacheDurationInHours'
         }
-
         self._type = None
         self._uri = None
         self._is_ssl_verify_disabled = None

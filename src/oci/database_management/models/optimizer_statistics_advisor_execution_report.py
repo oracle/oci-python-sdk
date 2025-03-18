@@ -34,12 +34,10 @@ class OptimizerStatisticsAdvisorExecutionReport(object):
             'summary': 'str',
             'rules': 'list[AdvisorRule]'
         }
-
         self.attribute_map = {
             'summary': 'summary',
             'rules': 'rules'
         }
-
         self._summary = None
         self._rules = None
 

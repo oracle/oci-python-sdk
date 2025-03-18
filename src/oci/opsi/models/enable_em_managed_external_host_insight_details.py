@@ -30,11 +30,9 @@ class EnableEmManagedExternalHostInsightDetails(EnableHostInsightDetails):
         self.swagger_types = {
             'entity_source': 'str'
         }
-
         self.attribute_map = {
             'entity_source': 'entitySource'
         }
-
         self._entity_source = None
         self._entity_source = 'EM_MANAGED_EXTERNAL_HOST'
 

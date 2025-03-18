@@ -55,13 +55,11 @@ class UpdateDetails(object):
             'update_action': 'str',
             'gi_software_image_id': 'str'
         }
-
         self.attribute_map = {
             'update_id': 'updateId',
             'update_action': 'updateAction',
             'gi_software_image_id': 'giSoftwareImageId'
         }
-
         self._update_id = None
         self._update_action = None
         self._gi_software_image_id = None

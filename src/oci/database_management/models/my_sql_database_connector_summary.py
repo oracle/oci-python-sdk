@@ -183,7 +183,6 @@ class MySqlDatabaseConnectorSummary(object):
             'system_tags': 'dict(str, dict(str, object))',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'compartment_id': 'compartmentId',
@@ -204,7 +203,6 @@ class MySqlDatabaseConnectorSummary(object):
             'system_tags': 'systemTags',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._name = None
         self._compartment_id = None
         self._associated_services = None

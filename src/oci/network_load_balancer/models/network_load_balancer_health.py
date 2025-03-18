@@ -69,7 +69,6 @@ class NetworkLoadBalancerHealth(object):
             'unknown_state_backend_set_names': 'list[str]',
             'total_backend_set_count': 'int'
         }
-
         self.attribute_map = {
             'status': 'status',
             'warning_state_backend_set_names': 'warningStateBackendSetNames',
@@ -77,7 +76,6 @@ class NetworkLoadBalancerHealth(object):
             'unknown_state_backend_set_names': 'unknownStateBackendSetNames',
             'total_backend_set_count': 'totalBackendSetCount'
         }
-
         self._status = None
         self._warning_state_backend_set_names = None
         self._critical_state_backend_set_names = None

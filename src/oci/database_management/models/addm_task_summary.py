@@ -115,7 +115,6 @@ class AddmTaskSummary(object):
             'end_snapshot_id': 'int',
             'findings': 'int'
         }
-
         self.attribute_map = {
             'task_name': 'taskName',
             'task_id': 'taskId',
@@ -130,7 +129,6 @@ class AddmTaskSummary(object):
             'end_snapshot_id': 'endSnapshotId',
             'findings': 'findings'
         }
-
         self._task_name = None
         self._task_id = None
         self._description = None

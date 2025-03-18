@@ -51,12 +51,10 @@ class ShapeNumaNodesPerSocketPlatformOptions(object):
             'service_allowed_values': 'list[str]',
             'default_value': 'str'
         }
-
         self.attribute_map = {
             'service_allowed_values': 'allowedValues',
             'default_value': 'defaultValue'
         }
-
         self._service_allowed_values = None
         self._default_value = None
 

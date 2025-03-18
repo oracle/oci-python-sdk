@@ -48,11 +48,9 @@ class DatasetFormatDetails(object):
         self.swagger_types = {
             'format_type': 'str'
         }
-
         self.attribute_map = {
             'format_type': 'formatType'
         }
-
         self._format_type = None
 
     @staticmethod

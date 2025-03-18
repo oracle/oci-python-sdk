@@ -55,7 +55,6 @@ class UpdateContainerImageArtifactDetails(UpdateArtifactDetails):
             'defined_tags': 'dict(str, dict(str, object))',
             'container_image': 'UpdateContainerImageDetails'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
@@ -64,7 +63,6 @@ class UpdateContainerImageArtifactDetails(UpdateArtifactDetails):
             'defined_tags': 'definedTags',
             'container_image': 'containerImage'
         }
-
         self._compartment_id = None
         self._display_name = None
         self._artifact_type = None

@@ -38,13 +38,11 @@ class DocumentationLink(object):
             'url': 'str',
             'document_category': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'url': 'url',
             'document_category': 'documentCategory'
         }
-
         self._name = None
         self._url = None
         self._document_category = None

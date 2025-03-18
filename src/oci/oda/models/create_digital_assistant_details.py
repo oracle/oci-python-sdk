@@ -96,7 +96,6 @@ class CreateDigitalAssistantDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'kind': 'kind',
             'category': 'category',
@@ -107,7 +106,6 @@ class CreateDigitalAssistantDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._kind = None
         self._category = None
         self._description = None

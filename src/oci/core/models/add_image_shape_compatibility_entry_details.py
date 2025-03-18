@@ -33,12 +33,10 @@ class AddImageShapeCompatibilityEntryDetails(object):
             'memory_constraints': 'ImageMemoryConstraints',
             'ocpu_constraints': 'ImageOcpuConstraints'
         }
-
         self.attribute_map = {
             'memory_constraints': 'memoryConstraints',
             'ocpu_constraints': 'ocpuConstraints'
         }
-
         self._memory_constraints = None
         self._ocpu_constraints = None
 

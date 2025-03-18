@@ -28,11 +28,9 @@ class NamespaceMetricCollection(object):
         self.swagger_types = {
             'items': 'list[NamespaceMetric]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

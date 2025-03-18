@@ -181,7 +181,6 @@ class SnapshotSchedule(object):
             'day_of_month': 'int',
             'month': 'str'
         }
-
         self.attribute_map = {
             'schedule_prefix': 'schedulePrefix',
             'time_schedule_start': 'timeScheduleStart',
@@ -193,7 +192,6 @@ class SnapshotSchedule(object):
             'day_of_month': 'dayOfMonth',
             'month': 'month'
         }
-
         self._schedule_prefix = None
         self._time_schedule_start = None
         self._period = None

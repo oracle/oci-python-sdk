@@ -53,7 +53,6 @@ class SqlResponseTimeDistributionAggregationCollection(object):
             'time_interval_end': 'datetime',
             'items': 'list[SqlResponseTimeDistributionAggregation]'
         }
-
         self.attribute_map = {
             'sql_identifier': 'sqlIdentifier',
             'id': 'id',
@@ -62,7 +61,6 @@ class SqlResponseTimeDistributionAggregationCollection(object):
             'time_interval_end': 'timeIntervalEnd',
             'items': 'items'
         }
-
         self._sql_identifier = None
         self._id = None
         self._database_id = None

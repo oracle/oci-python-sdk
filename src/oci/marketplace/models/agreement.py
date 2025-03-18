@@ -63,7 +63,6 @@ class Agreement(object):
             'author': 'str',
             'prompt': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'content_url': 'contentUrl',
@@ -72,7 +71,6 @@ class Agreement(object):
             'author': 'author',
             'prompt': 'prompt'
         }
-
         self._id = None
         self._content_url = None
         self._signature = None

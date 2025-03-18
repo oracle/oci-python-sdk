@@ -40,13 +40,11 @@ class OciObjectStorageDataSourceConfig(DataSourceConfig):
             'data_source_config_type': 'str',
             'object_storage_prefixes': 'list[ObjectStoragePrefix]'
         }
-
         self.attribute_map = {
             'should_enable_multi_modality': 'shouldEnableMultiModality',
             'data_source_config_type': 'dataSourceConfigType',
             'object_storage_prefixes': 'objectStoragePrefixes'
         }
-
         self._should_enable_multi_modality = None
         self._data_source_config_type = None
         self._object_storage_prefixes = None

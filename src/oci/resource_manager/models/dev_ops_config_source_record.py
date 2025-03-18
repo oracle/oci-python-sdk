@@ -52,7 +52,6 @@ class DevOpsConfigSourceRecord(ConfigSourceRecord):
             'branch_name': 'str',
             'commit_id': 'str'
         }
-
         self.attribute_map = {
             'config_source_record_type': 'configSourceRecordType',
             'project_id': 'projectId',
@@ -60,7 +59,6 @@ class DevOpsConfigSourceRecord(ConfigSourceRecord):
             'branch_name': 'branchName',
             'commit_id': 'commitId'
         }
-
         self._config_source_record_type = None
         self._project_id = None
         self._repository_id = None

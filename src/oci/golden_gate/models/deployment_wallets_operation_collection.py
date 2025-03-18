@@ -28,11 +28,9 @@ class DeploymentWalletsOperationCollection(object):
         self.swagger_types = {
             'items': 'list[DeploymentWalletsOperationSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

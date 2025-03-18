@@ -53,14 +53,12 @@ class EmailRecipient(object):
             'email_id': 'str',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'first_name': 'firstName',
             'last_name': 'lastName',
             'email_id': 'emailId',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._first_name = None
         self._last_name = None
         self._email_id = None

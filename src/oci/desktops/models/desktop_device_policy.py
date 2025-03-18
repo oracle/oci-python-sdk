@@ -108,7 +108,6 @@ class DesktopDevicePolicy(object):
             'is_keyboard_enabled': 'bool',
             'is_display_enabled': 'bool'
         }
-
         self.attribute_map = {
             'clipboard_mode': 'clipboardMode',
             'audio_mode': 'audioMode',
@@ -118,7 +117,6 @@ class DesktopDevicePolicy(object):
             'is_keyboard_enabled': 'isKeyboardEnabled',
             'is_display_enabled': 'isDisplayEnabled'
         }
-
         self._clipboard_mode = None
         self._audio_mode = None
         self._cdm_mode = None

@@ -42,13 +42,11 @@ class AvailabilityDomain(object):
             'id': 'str',
             'compartment_id': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'id': 'id',
             'compartment_id': 'compartmentId'
         }
-
         self._name = None
         self._id = None
         self._compartment_id = None

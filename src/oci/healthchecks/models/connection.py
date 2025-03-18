@@ -33,12 +33,10 @@ class Connection(object):
             'address': 'str',
             'port': 'int'
         }
-
         self.attribute_map = {
             'address': 'address',
             'port': 'port'
         }
-
         self._address = None
         self._port = None
 

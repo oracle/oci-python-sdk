@@ -43,14 +43,12 @@ class IndexSchema(object):
             'title_key': 'str',
             'embedding_body_key': 'str'
         }
-
         self.attribute_map = {
             'body_key': 'bodyKey',
             'url_key': 'urlKey',
             'title_key': 'titleKey',
             'embedding_body_key': 'embeddingBodyKey'
         }
-
         self._body_key = None
         self._url_key = None
         self._title_key = None

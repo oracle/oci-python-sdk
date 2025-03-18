@@ -114,7 +114,6 @@ class PreauthenticatedRequest(object):
             'time_created': 'datetime',
             'full_path': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -126,7 +125,6 @@ class PreauthenticatedRequest(object):
             'time_created': 'timeCreated',
             'full_path': 'fullPath'
         }
-
         self._id = None
         self._name = None
         self._access_uri = None

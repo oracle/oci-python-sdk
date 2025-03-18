@@ -148,7 +148,6 @@ class Execution(object):
             'resource_id': 'str',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'id': 'id',
             'task_record_id': 'taskRecordId',
@@ -166,7 +165,6 @@ class Execution(object):
             'resource_id': 'resourceId',
             'system_tags': 'systemTags'
         }
-
         self._id = None
         self._task_record_id = None
         self._step_name = None

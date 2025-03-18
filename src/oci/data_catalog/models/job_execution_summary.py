@@ -185,7 +185,6 @@ class JobExecutionSummary(object):
             'time_ended': 'datetime',
             'uri': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'job_key': 'jobKey',
@@ -198,7 +197,6 @@ class JobExecutionSummary(object):
             'time_ended': 'timeEnded',
             'uri': 'uri'
         }
-
         self._key = None
         self._job_key = None
         self._job_type = None

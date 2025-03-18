@@ -53,7 +53,6 @@ class LogAnalyticsAssociatedEntity(object):
             'on_host': 'str',
             'association_count': 'int'
         }
-
         self.attribute_map = {
             'entity_id': 'entityId',
             'entity_name': 'entityName',
@@ -62,7 +61,6 @@ class LogAnalyticsAssociatedEntity(object):
             'on_host': 'onHost',
             'association_count': 'associationCount'
         }
-
         self._entity_id = None
         self._entity_name = None
         self._entity_type = None

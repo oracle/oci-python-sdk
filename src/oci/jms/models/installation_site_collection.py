@@ -28,11 +28,9 @@ class InstallationSiteCollection(object):
         self.swagger_types = {
             'items': 'list[InstallationSiteSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

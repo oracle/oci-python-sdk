@@ -28,11 +28,9 @@ class ExportModelArtifactDetails(object):
         self.swagger_types = {
             'artifact_export_details': 'ArtifactExportDetails'
         }
-
         self.attribute_map = {
             'artifact_export_details': 'artifactExportDetails'
         }
-
         self._artifact_export_details = None
 
     @property

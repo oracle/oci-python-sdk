@@ -92,7 +92,6 @@ class WorkItemSummary(object):
             'retry_count': 'int',
             'time_last_updated': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'work_request_id': 'workRequestId',
@@ -102,7 +101,6 @@ class WorkItemSummary(object):
             'retry_count': 'retryCount',
             'time_last_updated': 'timeLastUpdated'
         }
-
         self._id = None
         self._work_request_id = None
         self._installation_site = None

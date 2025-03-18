@@ -99,7 +99,6 @@ class StreamSummary(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'name': 'name',
             'id': 'id',
@@ -112,7 +111,6 @@ class StreamSummary(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._name = None
         self._id = None
         self._partitions = None

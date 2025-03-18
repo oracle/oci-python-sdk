@@ -45,14 +45,12 @@ class ObjectStorageImportMetadataPath(ImportMetadataPath):
             'bucket': 'str',
             'path': 'str'
         }
-
         self.attribute_map = {
             'source_type': 'sourceType',
             'namespace': 'namespace',
             'bucket': 'bucket',
             'path': 'path'
         }
-
         self._source_type = None
         self._namespace = None
         self._bucket = None

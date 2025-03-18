@@ -33,12 +33,10 @@ class CloudAutomationApplyUpdateTimePreference(object):
             'apply_update_preferred_start_time': 'str',
             'apply_update_preferred_end_time': 'str'
         }
-
         self.attribute_map = {
             'apply_update_preferred_start_time': 'applyUpdatePreferredStartTime',
             'apply_update_preferred_end_time': 'applyUpdatePreferredEndTime'
         }
-
         self._apply_update_preferred_start_time = None
         self._apply_update_preferred_end_time = None
 

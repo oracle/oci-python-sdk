@@ -57,12 +57,10 @@ class RealtimeMessage(object):
             'event': 'str',
             'session_id': 'str'
         }
-
         self.attribute_map = {
             'event': 'event',
             'session_id': 'sessionId'
         }
-
         self._event = None
         self._session_id = None
 

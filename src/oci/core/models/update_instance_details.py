@@ -132,7 +132,6 @@ class UpdateInstanceDetails(object):
             'platform_config': 'UpdateInstancePlatformConfig',
             'licensing_configs': 'list[UpdateInstanceLicensingConfig]'
         }
-
         self.attribute_map = {
             'capacity_reservation_id': 'capacityReservationId',
             'defined_tags': 'definedTags',
@@ -155,7 +154,6 @@ class UpdateInstanceDetails(object):
             'platform_config': 'platformConfig',
             'licensing_configs': 'licensingConfigs'
         }
-
         self._capacity_reservation_id = None
         self._defined_tags = None
         self._security_attributes = None

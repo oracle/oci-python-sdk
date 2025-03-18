@@ -28,11 +28,9 @@ class RemediationRecipeCollection(object):
         self.swagger_types = {
             'items': 'list[RemediationRecipeSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

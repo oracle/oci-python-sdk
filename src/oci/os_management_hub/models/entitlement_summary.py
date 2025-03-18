@@ -38,13 +38,11 @@ class EntitlementSummary(object):
             'csi': 'str',
             'vendor_name': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'csi': 'csi',
             'vendor_name': 'vendorName'
         }
-
         self._compartment_id = None
         self._csi = None
         self._vendor_name = None

@@ -28,11 +28,9 @@ class ResponseProtection(object):
         self.swagger_types = {
             'rules': 'list[ProtectionRule]'
         }
-
         self.attribute_map = {
             'rules': 'rules'
         }
-
         self._rules = None
 
     @property

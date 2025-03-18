@@ -60,7 +60,6 @@ class AddressList(object):
             'total_addresses': 'int',
             'parent_resource_id': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'type': 'type',
@@ -68,7 +67,6 @@ class AddressList(object):
             'total_addresses': 'totalAddresses',
             'parent_resource_id': 'parentResourceId'
         }
-
         self._name = None
         self._type = None
         self._addresses = None

@@ -28,11 +28,9 @@ class CategoryCollection(object):
         self.swagger_types = {
             'items': 'list[CategorySummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

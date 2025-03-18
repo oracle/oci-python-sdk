@@ -332,7 +332,6 @@ class MaintenanceRun(object):
             'total_time_taken_in_mins': 'int',
             'database_software_image_id': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -368,7 +367,6 @@ class MaintenanceRun(object):
             'total_time_taken_in_mins': 'totalTimeTakenInMins',
             'database_software_image_id': 'databaseSoftwareImageId'
         }
-
         self._id = None
         self._compartment_id = None
         self._display_name = None

@@ -48,7 +48,6 @@ class ContainerInstanceShapeSummary(object):
             'memory_options': 'ShapeMemoryOptions',
             'networking_bandwidth_options': 'ShapeNetworkingBandwidthOptions'
         }
-
         self.attribute_map = {
             'name': 'name',
             'processor_description': 'processorDescription',
@@ -56,7 +55,6 @@ class ContainerInstanceShapeSummary(object):
             'memory_options': 'memoryOptions',
             'networking_bandwidth_options': 'networkingBandwidthOptions'
         }
-
         self._name = None
         self._processor_description = None
         self._ocpu_options = None

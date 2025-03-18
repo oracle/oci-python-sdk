@@ -55,7 +55,6 @@ class CommentActivitySummary(PullRequestActivitySummary):
             'activity_type': 'str',
             'comment_id': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'principal': 'principal',
@@ -64,7 +63,6 @@ class CommentActivitySummary(PullRequestActivitySummary):
             'activity_type': 'activityType',
             'comment_id': 'commentId'
         }
-
         self._id = None
         self._principal = None
         self._pull_request_id = None

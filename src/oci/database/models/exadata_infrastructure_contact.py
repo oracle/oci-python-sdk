@@ -48,7 +48,6 @@ class ExadataInfrastructureContact(object):
             'is_primary': 'bool',
             'is_contact_mos_validated': 'bool'
         }
-
         self.attribute_map = {
             'name': 'name',
             'phone_number': 'phoneNumber',
@@ -56,7 +55,6 @@ class ExadataInfrastructureContact(object):
             'is_primary': 'isPrimary',
             'is_contact_mos_validated': 'isContactMosValidated'
         }
-
         self._name = None
         self._phone_number = None
         self._email = None

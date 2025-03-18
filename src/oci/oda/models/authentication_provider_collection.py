@@ -28,11 +28,9 @@ class AuthenticationProviderCollection(object):
         self.swagger_types = {
             'items': 'list[AuthenticationProviderSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

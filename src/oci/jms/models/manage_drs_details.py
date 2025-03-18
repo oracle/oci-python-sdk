@@ -29,11 +29,9 @@ class ManageDrsDetails(object):
         self.swagger_types = {
             'targets': 'list[DrsTarget]'
         }
-
         self.attribute_map = {
             'targets': 'targets'
         }
-
         self._targets = None
 
     @property

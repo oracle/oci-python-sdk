@@ -28,11 +28,9 @@ class SourceUpdateDetails(object):
         self.swagger_types = {
             'parameters': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'parameters': 'parameters'
         }
-
         self._parameters = None
 
     @property

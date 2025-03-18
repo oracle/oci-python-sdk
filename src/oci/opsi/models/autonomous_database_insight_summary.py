@@ -132,7 +132,6 @@ class AutonomousDatabaseInsightSummary(DatabaseInsightSummary):
             'database_resource_type': 'str',
             'is_advanced_features_enabled': 'bool'
         }
-
         self.attribute_map = {
             'id': 'id',
             'database_id': 'databaseId',
@@ -156,7 +155,6 @@ class AutonomousDatabaseInsightSummary(DatabaseInsightSummary):
             'database_resource_type': 'databaseResourceType',
             'is_advanced_features_enabled': 'isAdvancedFeaturesEnabled'
         }
-
         self._id = None
         self._database_id = None
         self._compartment_id = None

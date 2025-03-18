@@ -70,7 +70,6 @@ class CreateGithubAccessTokenConfigurationSourceProviderDetails(CreateConfigurat
             'api_endpoint': 'str',
             'access_token': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
@@ -82,7 +81,6 @@ class CreateGithubAccessTokenConfigurationSourceProviderDetails(CreateConfigurat
             'api_endpoint': 'apiEndpoint',
             'access_token': 'accessToken'
         }
-
         self._compartment_id = None
         self._display_name = None
         self._description = None

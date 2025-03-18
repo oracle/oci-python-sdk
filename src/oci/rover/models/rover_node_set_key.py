@@ -28,11 +28,9 @@ class RoverNodeSetKey(object):
         self.swagger_types = {
             'is_successful': 'bool'
         }
-
         self.attribute_map = {
             'is_successful': 'isSuccessful'
         }
-
         self._is_successful = None
 
     @property

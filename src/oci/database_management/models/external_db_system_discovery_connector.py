@@ -58,7 +58,6 @@ class ExternalDbSystemDiscoveryConnector(object):
             'connection_failure_message': 'str',
             'time_connection_status_last_updated': 'datetime'
         }
-
         self.attribute_map = {
             'connector_type': 'connectorType',
             'display_name': 'displayName',
@@ -66,7 +65,6 @@ class ExternalDbSystemDiscoveryConnector(object):
             'connection_failure_message': 'connectionFailureMessage',
             'time_connection_status_last_updated': 'timeConnectionStatusLastUpdated'
         }
-
         self._connector_type = None
         self._display_name = None
         self._connection_status = None

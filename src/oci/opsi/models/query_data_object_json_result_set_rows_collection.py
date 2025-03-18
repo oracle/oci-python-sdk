@@ -45,14 +45,12 @@ class QueryDataObjectJsonResultSetRowsCollection(QueryDataObjectResultSetRowsCol
             'items_metadata': 'list[QueryDataObjectResultSetColumnMetadata]',
             'query_execution_time_in_seconds': 'float'
         }
-
         self.attribute_map = {
             'format': 'format',
             'items': 'items',
             'items_metadata': 'itemsMetadata',
             'query_execution_time_in_seconds': 'queryExecutionTimeInSeconds'
         }
-
         self._format = None
         self._items = None
         self._items_metadata = None

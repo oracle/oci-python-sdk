@@ -217,7 +217,6 @@ class TransferAppliance(object):
             'pickup_window_end_time': 'datetime',
             'minimum_storage_capacity_in_terabytes': 'int'
         }
-
         self.attribute_map = {
             'label': 'label',
             'lifecycle_state': 'lifecycleState',
@@ -240,7 +239,6 @@ class TransferAppliance(object):
             'pickup_window_end_time': 'pickupWindowEndTime',
             'minimum_storage_capacity_in_terabytes': 'minimumStorageCapacityInTerabytes'
         }
-
         self._label = None
         self._lifecycle_state = None
         self._transfer_job_id = None

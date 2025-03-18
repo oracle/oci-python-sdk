@@ -52,13 +52,11 @@ class IngressGatewayListener(object):
             'port': 'int',
             'tls': 'IngressListenerTlsConfig'
         }
-
         self.attribute_map = {
             'protocol': 'protocol',
             'port': 'port',
             'tls': 'tls'
         }
-
         self._protocol = None
         self._port = None
         self._tls = None

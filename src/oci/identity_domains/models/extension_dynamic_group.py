@@ -43,12 +43,10 @@ class ExtensionDynamicGroup(object):
             'membership_type': 'str',
             'membership_rule': 'str'
         }
-
         self.attribute_map = {
             'membership_type': 'membershipType',
             'membership_rule': 'membershipRule'
         }
-
         self._membership_type = None
         self._membership_rule = None
 

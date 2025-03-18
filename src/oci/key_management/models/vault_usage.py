@@ -43,14 +43,12 @@ class VaultUsage(object):
             'software_key_count': 'int',
             'software_key_version_count': 'int'
         }
-
         self.attribute_map = {
             'key_count': 'keyCount',
             'key_version_count': 'keyVersionCount',
             'software_key_count': 'softwareKeyCount',
             'software_key_version_count': 'softwareKeyVersionCount'
         }
-
         self._key_count = None
         self._key_version_count = None
         self._software_key_count = None

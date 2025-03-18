@@ -188,7 +188,6 @@ class AwsEc2Properties(object):
             'virtualization_type': 'str',
             'vpc_key': 'str'
         }
-
         self.attribute_map = {
             'architecture': 'architecture',
             'boot_mode': 'bootMode',
@@ -224,7 +223,6 @@ class AwsEc2Properties(object):
             'virtualization_type': 'virtualizationType',
             'vpc_key': 'vpcKey'
         }
-
         self._architecture = None
         self._boot_mode = None
         self._capacity_reservation_key = None

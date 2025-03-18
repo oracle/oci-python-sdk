@@ -43,14 +43,12 @@ class AppVersionSummary(object):
             'supported_app_name': 'str',
             'is_certified': 'bool'
         }
-
         self.attribute_map = {
             'release_date': 'releaseDate',
             'end_of_support': 'endOfSupport',
             'supported_app_name': 'supportedAppName',
             'is_certified': 'isCertified'
         }
-
         self._release_date = None
         self._end_of_support = None
         self._supported_app_name = None

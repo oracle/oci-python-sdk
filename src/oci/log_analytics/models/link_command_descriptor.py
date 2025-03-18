@@ -75,7 +75,6 @@ class LinkCommandDescriptor(AbstractCommandDescriptor):
             'should_include_trends': 'bool',
             'span': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'display_query_string': 'displayQueryString',
@@ -88,7 +87,6 @@ class LinkCommandDescriptor(AbstractCommandDescriptor):
             'should_include_trends': 'shouldIncludeTrends',
             'span': 'span'
         }
-
         self._name = None
         self._display_query_string = None
         self._internal_query_string = None

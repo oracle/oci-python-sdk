@@ -63,7 +63,6 @@ class CreateDatabaseFromBackupDetails(object):
             'sid_prefix': 'str',
             'pluggable_databases': 'list[str]'
         }
-
         self.attribute_map = {
             'backup_id': 'backupId',
             'backup_tde_password': 'backupTDEPassword',
@@ -74,7 +73,6 @@ class CreateDatabaseFromBackupDetails(object):
             'sid_prefix': 'sidPrefix',
             'pluggable_databases': 'pluggableDatabases'
         }
-
         self._backup_id = None
         self._backup_tde_password = None
         self._source_encryption_key_location_details = None

@@ -43,14 +43,12 @@ class PoolConfig(object):
             'min': 'int',
             'max': 'int'
         }
-
         self.attribute_map = {
             'shape': 'shape',
             'shape_config': 'shapeConfig',
             'min': 'min',
             'max': 'max'
         }
-
         self._shape = None
         self._shape_config = None
         self._min = None

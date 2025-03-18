@@ -62,7 +62,6 @@ class SecurityAssessmentComparison(object):
             'time_created': 'datetime',
             'targets': 'list[SecurityAssessmentComparisonPerTarget]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'baseline_id': 'baselineId',
@@ -70,7 +69,6 @@ class SecurityAssessmentComparison(object):
             'time_created': 'timeCreated',
             'targets': 'targets'
         }
-
         self._id = None
         self._baseline_id = None
         self._lifecycle_state = None

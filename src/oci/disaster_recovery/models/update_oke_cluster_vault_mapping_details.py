@@ -33,12 +33,10 @@ class UpdateOkeClusterVaultMappingDetails(object):
             'source_vault_id': 'str',
             'destination_vault_id': 'str'
         }
-
         self.attribute_map = {
             'source_vault_id': 'sourceVaultId',
             'destination_vault_id': 'destinationVaultId'
         }
-
         self._source_vault_id = None
         self._destination_vault_id = None
 

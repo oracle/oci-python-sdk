@@ -28,11 +28,9 @@ class ScanLibraryUsageDetails(object):
         self.swagger_types = {
             'managed_instance_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'managed_instance_ids': 'managedInstanceIds'
         }
-
         self._managed_instance_ids = None
 
     @property

@@ -154,7 +154,6 @@ class AutonomousDatabaseStandbySummary(object):
             'maintenance_target_component': 'str',
             'availability_domain': 'str'
         }
-
         self.attribute_map = {
             'lag_time_in_seconds': 'lagTimeInSeconds',
             'lifecycle_state': 'lifecycleState',
@@ -166,7 +165,6 @@ class AutonomousDatabaseStandbySummary(object):
             'maintenance_target_component': 'maintenanceTargetComponent',
             'availability_domain': 'availabilityDomain'
         }
-
         self._lag_time_in_seconds = None
         self._lifecycle_state = None
         self._lifecycle_details = None

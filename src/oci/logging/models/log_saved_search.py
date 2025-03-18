@@ -99,7 +99,6 @@ class LogSavedSearch(object):
             'freeform_tags': 'dict(str, str)',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -112,7 +111,6 @@ class LogSavedSearch(object):
             'freeform_tags': 'freeformTags',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._id = None
         self._compartment_id = None
         self._name = None

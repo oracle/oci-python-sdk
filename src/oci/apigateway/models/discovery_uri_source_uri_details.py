@@ -35,12 +35,10 @@ class DiscoveryUriSourceUriDetails(SourceUriDetails):
             'type': 'str',
             'uri': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'uri': 'uri'
         }
-
         self._type = None
         self._uri = None
         self._type = 'DISCOVERY_URI'

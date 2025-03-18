@@ -40,13 +40,11 @@ class UpdateBasicConfigurationItemDetails(UpdateConfigurationItemDetails):
             'name': 'str',
             'value': 'str'
         }
-
         self.attribute_map = {
             'config_item_type': 'configItemType',
             'name': 'name',
             'value': 'value'
         }
-
         self._config_item_type = None
         self._name = None
         self._value = None

@@ -90,7 +90,6 @@ class CreateDataAssetFromRest(CreateDataAssetDetails):
             'manifest_file_content': 'str',
             'default_connection': 'CreateConnectionDetails'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -106,7 +105,6 @@ class CreateDataAssetFromRest(CreateDataAssetDetails):
             'manifest_file_content': 'manifestFileContent',
             'default_connection': 'defaultConnection'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

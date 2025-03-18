@@ -95,7 +95,6 @@ class ComputedUsageAggregatedSummary(object):
             'pricing_model': 'str',
             'aggregated_computed_usages': 'list[ComputedUsageAggregation]'
         }
-
         self.attribute_map = {
             'subscription_id': 'subscriptionId',
             'parent_subscribed_service_id': 'parentSubscribedServiceId',
@@ -108,7 +107,6 @@ class ComputedUsageAggregatedSummary(object):
             'pricing_model': 'pricingModel',
             'aggregated_computed_usages': 'aggregatedComputedUsages'
         }
-
         self._subscription_id = None
         self._parent_subscribed_service_id = None
         self._parent_product = None

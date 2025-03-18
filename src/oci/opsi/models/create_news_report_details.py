@@ -166,7 +166,6 @@ class CreateNewsReportDetails(object):
             'tag_filters': 'list[str]',
             'match_rule': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'news_frequency': 'newsFrequency',
@@ -183,7 +182,6 @@ class CreateNewsReportDetails(object):
             'tag_filters': 'tagFilters',
             'match_rule': 'matchRule'
         }
-
         self._name = None
         self._news_frequency = None
         self._description = None

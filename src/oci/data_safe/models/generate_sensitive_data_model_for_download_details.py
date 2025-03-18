@@ -33,11 +33,9 @@ class GenerateSensitiveDataModelForDownloadDetails(object):
         self.swagger_types = {
             'data_model_format': 'str'
         }
-
         self.attribute_map = {
             'data_model_format': 'dataModelFormat'
         }
-
         self._data_model_format = None
 
     @property

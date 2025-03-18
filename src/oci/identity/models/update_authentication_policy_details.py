@@ -33,12 +33,10 @@ class UpdateAuthenticationPolicyDetails(object):
             'password_policy': 'PasswordPolicy',
             'network_policy': 'NetworkPolicy'
         }
-
         self.attribute_map = {
             'password_policy': 'passwordPolicy',
             'network_policy': 'networkPolicy'
         }
-
         self._password_policy = None
         self._network_policy = None
 

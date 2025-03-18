@@ -53,11 +53,9 @@ class HostInsightHostRecommendations(object):
         self.swagger_types = {
             'metric_recommendation_name': 'str'
         }
-
         self.attribute_map = {
             'metric_recommendation_name': 'metricRecommendationName'
         }
-
         self._metric_recommendation_name = None
 
     @staticmethod

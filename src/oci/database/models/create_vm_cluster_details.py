@@ -167,7 +167,6 @@ class CreateVmClusterDetails(object):
             'cloud_automation_update_details': 'CloudAutomationUpdateDetails',
             'exascale_db_storage_vault_id': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
@@ -195,7 +194,6 @@ class CreateVmClusterDetails(object):
             'cloud_automation_update_details': 'cloudAutomationUpdateDetails',
             'exascale_db_storage_vault_id': 'exascaleDbStorageVaultId'
         }
-
         self._compartment_id = None
         self._display_name = None
         self._exadata_infrastructure_id = None

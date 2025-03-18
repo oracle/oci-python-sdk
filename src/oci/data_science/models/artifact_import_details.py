@@ -37,11 +37,9 @@ class ArtifactImportDetails(object):
         self.swagger_types = {
             'artifact_source_type': 'str'
         }
-
         self.attribute_map = {
             'artifact_source_type': 'artifactSourceType'
         }
-
         self._artifact_source_type = None
 
     @staticmethod

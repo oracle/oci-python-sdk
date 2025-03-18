@@ -58,7 +58,6 @@ class AppRoleApp(object):
             'name': 'str',
             'service_instance_identifier': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ref': '$ref',
@@ -66,7 +65,6 @@ class AppRoleApp(object):
             'name': 'name',
             'service_instance_identifier': 'serviceInstanceIdentifier'
         }
-
         self._value = None
         self._ref = None
         self._display = None

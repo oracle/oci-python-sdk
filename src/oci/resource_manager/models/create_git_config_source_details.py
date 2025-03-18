@@ -49,7 +49,6 @@ class CreateGitConfigSourceDetails(CreateConfigSourceDetails):
             'repository_url': 'str',
             'branch_name': 'str'
         }
-
         self.attribute_map = {
             'config_source_type': 'configSourceType',
             'working_directory': 'workingDirectory',
@@ -57,7 +56,6 @@ class CreateGitConfigSourceDetails(CreateConfigSourceDetails):
             'repository_url': 'repositoryUrl',
             'branch_name': 'branchName'
         }
-
         self._config_source_type = None
         self._working_directory = None
         self._configuration_source_provider_id = None

@@ -93,7 +93,6 @@ class Data(object):
             'state_change': 'StateChange',
             'additional_details': 'dict(str, object)'
         }
-
         self.attribute_map = {
             'event_grouping_id': 'eventGroupingId',
             'event_name': 'eventName',
@@ -110,7 +109,6 @@ class Data(object):
             'state_change': 'stateChange',
             'additional_details': 'additionalDetails'
         }
-
         self._event_grouping_id = None
         self._event_name = None
         self._compartment_id = None

@@ -78,7 +78,6 @@ class MediaWorkflowJobSummary(object):
             'system_tags': 'dict(str, dict(str, object))',
             'locks': 'list[ResourceLock]'
         }
-
         self.attribute_map = {
             'media_workflow_id': 'mediaWorkflowId',
             'id': 'id',
@@ -92,7 +91,6 @@ class MediaWorkflowJobSummary(object):
             'system_tags': 'systemTags',
             'locks': 'locks'
         }
-
         self._media_workflow_id = None
         self._id = None
         self._display_name = None

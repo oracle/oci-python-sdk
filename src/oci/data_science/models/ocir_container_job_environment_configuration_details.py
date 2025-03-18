@@ -55,7 +55,6 @@ class OcirContainerJobEnvironmentConfigurationDetails(JobEnvironmentConfiguratio
             'image_digest': 'str',
             'image_signature_id': 'str'
         }
-
         self.attribute_map = {
             'job_environment_type': 'jobEnvironmentType',
             'image': 'image',
@@ -64,7 +63,6 @@ class OcirContainerJobEnvironmentConfigurationDetails(JobEnvironmentConfiguratio
             'image_digest': 'imageDigest',
             'image_signature_id': 'imageSignatureId'
         }
-
         self._job_environment_type = None
         self._image = None
         self._cmd = None

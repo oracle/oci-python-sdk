@@ -41,13 +41,11 @@ class UpdateMetricBasedHorizontalScalingPolicyDetails(UpdateAutoScalePolicyDetai
             'scale_out_config': 'MetricBasedHorizontalScaleOutConfig',
             'scale_in_config': 'MetricBasedHorizontalScaleInConfig'
         }
-
         self.attribute_map = {
             'policy_type': 'policyType',
             'scale_out_config': 'scaleOutConfig',
             'scale_in_config': 'scaleInConfig'
         }
-
         self._policy_type = None
         self._scale_out_config = None
         self._scale_in_config = None

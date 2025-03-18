@@ -58,7 +58,6 @@ class LogAnalyticsMetaFunction(object):
             'java_class_name': 'str',
             'name': 'str'
         }
-
         self.attribute_map = {
             'meta_function_argument': 'metaFunctionArgument',
             'component': 'component',
@@ -68,7 +67,6 @@ class LogAnalyticsMetaFunction(object):
             'java_class_name': 'javaClassName',
             'name': 'name'
         }
-
         self._meta_function_argument = None
         self._component = None
         self._description = None

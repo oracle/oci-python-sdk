@@ -48,7 +48,6 @@ class RecallCount(object):
             'recall_pending': 'int',
             'recall_limit': 'int'
         }
-
         self.attribute_map = {
             'recall_count': 'recallCount',
             'recall_succeeded': 'recallSucceeded',
@@ -56,7 +55,6 @@ class RecallCount(object):
             'recall_pending': 'recallPending',
             'recall_limit': 'recallLimit'
         }
-
         self._recall_count = None
         self._recall_succeeded = None
         self._recall_failed = None

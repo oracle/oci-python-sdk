@@ -73,7 +73,6 @@ class ReplicationPolicy(object):
             'status': 'str',
             'status_message': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -84,7 +83,6 @@ class ReplicationPolicy(object):
             'status': 'status',
             'status_message': 'statusMessage'
         }
-
         self._id = None
         self._name = None
         self._destination_region_name = None

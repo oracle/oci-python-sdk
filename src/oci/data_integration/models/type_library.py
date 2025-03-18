@@ -73,7 +73,6 @@ class TypeLibrary(object):
             'object_status': 'int',
             'identifier': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'model_type': 'modelType',
@@ -86,7 +85,6 @@ class TypeLibrary(object):
             'object_status': 'objectStatus',
             'identifier': 'identifier'
         }
-
         self._key = None
         self._model_type = None
         self._model_version = None

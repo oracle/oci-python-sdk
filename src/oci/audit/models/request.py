@@ -48,7 +48,6 @@ class Request(object):
             'parameters': 'dict(str, list[str])',
             'headers': 'dict(str, list[str])'
         }
-
         self.attribute_map = {
             'id': 'id',
             'path': 'path',
@@ -56,7 +55,6 @@ class Request(object):
             'parameters': 'parameters',
             'headers': 'headers'
         }
-
         self._id = None
         self._path = None
         self._action = None

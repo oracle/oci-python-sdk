@@ -33,12 +33,10 @@ class ResourceInsightProjectedUtilizationItem(object):
             'id': 'str',
             'days_to_reach': 'int'
         }
-
         self.attribute_map = {
             'id': 'id',
             'days_to_reach': 'daysToReach'
         }
-
         self._id = None
         self._days_to_reach = None
 

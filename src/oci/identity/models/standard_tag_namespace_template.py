@@ -43,14 +43,12 @@ class StandardTagNamespaceTemplate(object):
             'tag_definition_templates': 'list[StandardTagDefinitionTemplate]',
             'status': 'str'
         }
-
         self.attribute_map = {
             'description': 'description',
             'standard_tag_namespace_name': 'standardTagNamespaceName',
             'tag_definition_templates': 'tagDefinitionTemplates',
             'status': 'status'
         }
-
         self._description = None
         self._standard_tag_namespace_name = None
         self._tag_definition_templates = None

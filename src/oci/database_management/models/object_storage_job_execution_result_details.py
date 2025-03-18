@@ -51,7 +51,6 @@ class ObjectStorageJobExecutionResultDetails(JobExecutionResultDetails):
             'object_name': 'str',
             'row_count': 'int'
         }
-
         self.attribute_map = {
             'type': 'type',
             'namespace_name': 'namespaceName',
@@ -59,7 +58,6 @@ class ObjectStorageJobExecutionResultDetails(JobExecutionResultDetails):
             'object_name': 'objectName',
             'row_count': 'rowCount'
         }
-
         self._type = None
         self._namespace_name = None
         self._bucket_name = None

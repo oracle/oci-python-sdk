@@ -378,7 +378,6 @@ class DbSystem(object):
             'point_in_time_data_disk_clone_timestamp': 'datetime',
             'data_collection_options': 'DataCollectionOptions'
         }
-
         self.attribute_map = {
             'iorm_config_cache': 'iormConfigCache',
             'id': 'id',
@@ -434,7 +433,6 @@ class DbSystem(object):
             'point_in_time_data_disk_clone_timestamp': 'pointInTimeDataDiskCloneTimestamp',
             'data_collection_options': 'dataCollectionOptions'
         }
-
         self._iorm_config_cache = None
         self._id = None
         self._compartment_id = None

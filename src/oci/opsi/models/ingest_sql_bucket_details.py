@@ -28,11 +28,9 @@ class IngestSqlBucketDetails(object):
         self.swagger_types = {
             'items': 'list[SqlBucket]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

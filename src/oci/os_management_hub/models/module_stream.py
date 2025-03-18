@@ -94,7 +94,6 @@ class ModuleStream(object):
             'packages': 'list[str]',
             'is_latest': 'bool'
         }
-
         self.attribute_map = {
             'module_name': 'moduleName',
             'name': 'name',
@@ -106,7 +105,6 @@ class ModuleStream(object):
             'packages': 'packages',
             'is_latest': 'isLatest'
         }
-
         self._module_name = None
         self._name = None
         self._is_default = None

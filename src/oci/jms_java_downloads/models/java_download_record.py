@@ -73,7 +73,6 @@ class JavaDownloadRecord(object):
             'time_downloaded': 'datetime',
             'download_type': 'str'
         }
-
         self.attribute_map = {
             'family_version': 'familyVersion',
             'family_display_name': 'familyDisplayName',
@@ -86,7 +85,6 @@ class JavaDownloadRecord(object):
             'time_downloaded': 'timeDownloaded',
             'download_type': 'downloadType'
         }
-
         self._family_version = None
         self._family_display_name = None
         self._release_version = None

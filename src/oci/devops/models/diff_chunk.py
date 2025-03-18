@@ -48,7 +48,6 @@ class DiffChunk(object):
             'target_span': 'int',
             'diff_sections': 'list[DiffSection]'
         }
-
         self.attribute_map = {
             'base_line': 'baseLine',
             'base_span': 'baseSpan',
@@ -56,7 +55,6 @@ class DiffChunk(object):
             'target_span': 'targetSpan',
             'diff_sections': 'diffSections'
         }
-
         self._base_line = None
         self._base_span = None
         self._target_line = None

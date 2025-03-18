@@ -61,11 +61,9 @@ class RevokeCertificateVersionDetails(object):
         self.swagger_types = {
             'revocation_reason': 'str'
         }
-
         self.attribute_map = {
             'revocation_reason': 'revocationReason'
         }
-
         self._revocation_reason = None
 
     @property

@@ -183,7 +183,6 @@ class Connection(object):
             'secret_id': 'str',
             'private_endpoint_id': 'str'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'id': 'id',
@@ -209,7 +208,6 @@ class Connection(object):
             'secret_id': 'secretId',
             'private_endpoint_id': 'privateEndpointId'
         }
-
         self._connection_type = None
         self._id = None
         self._display_name = None

@@ -28,11 +28,9 @@ class SqlTuningAdvisorTaskSqlExecutionPlan(object):
         self.swagger_types = {
             'plan': 'list[SqlTuningTaskSqlExecutionPlanStep]'
         }
-
         self.attribute_map = {
             'plan': 'plan'
         }
-
         self._plan = None
 
     @property

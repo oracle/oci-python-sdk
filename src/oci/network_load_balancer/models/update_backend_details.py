@@ -43,14 +43,12 @@ class UpdateBackendDetails(object):
             'is_drain': 'bool',
             'is_offline': 'bool'
         }
-
         self.attribute_map = {
             'weight': 'weight',
             'is_backup': 'isBackup',
             'is_drain': 'isDrain',
             'is_offline': 'isOffline'
         }
-
         self._weight = None
         self._is_backup = None
         self._is_drain = None

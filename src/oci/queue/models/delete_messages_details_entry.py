@@ -28,11 +28,9 @@ class DeleteMessagesDetailsEntry(object):
         self.swagger_types = {
             'receipt': 'str'
         }
-
         self.attribute_map = {
             'receipt': 'receipt'
         }
-
         self._receipt = None
 
     @property

@@ -28,11 +28,9 @@ class ComplianceRecordAggregationCollection(object):
         self.swagger_types = {
             'items': 'list[ComplianceRecordAggregation]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

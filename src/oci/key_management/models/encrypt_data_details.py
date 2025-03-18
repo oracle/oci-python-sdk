@@ -66,7 +66,6 @@ class EncryptDataDetails(object):
             'key_version_id': 'str',
             'encryption_algorithm': 'str'
         }
-
         self.attribute_map = {
             'associated_data': 'associatedData',
             'key_id': 'keyId',
@@ -75,7 +74,6 @@ class EncryptDataDetails(object):
             'key_version_id': 'keyVersionId',
             'encryption_algorithm': 'encryptionAlgorithm'
         }
-
         self._associated_data = None
         self._key_id = None
         self._logging_context = None

@@ -33,12 +33,10 @@ class PortRange(object):
             'minimum_port': 'int',
             'maximum_port': 'int'
         }
-
         self.attribute_map = {
             'minimum_port': 'minimumPort',
             'maximum_port': 'maximumPort'
         }
-
         self._minimum_port = None
         self._maximum_port = None
 

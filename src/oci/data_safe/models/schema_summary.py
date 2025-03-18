@@ -33,12 +33,10 @@ class SchemaSummary(object):
             'schema_name': 'str',
             'is_oracle_maintained': 'bool'
         }
-
         self.attribute_map = {
             'schema_name': 'schemaName',
             'is_oracle_maintained': 'isOracleMaintained'
         }
-
         self._schema_name = None
         self._is_oracle_maintained = None
 

@@ -39,13 +39,11 @@ class UpdateWlpAgentDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'certificate_signed_request': 'certificateSignedRequest',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._certificate_signed_request = None
         self._freeform_tags = None
         self._defined_tags = None

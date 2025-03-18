@@ -48,7 +48,6 @@ class AggregatorSummary(object):
             'identifier': 'str',
             'description': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'key': 'key',
@@ -56,7 +55,6 @@ class AggregatorSummary(object):
             'identifier': 'identifier',
             'description': 'description'
         }
-
         self._type = None
         self._key = None
         self._name = None

@@ -55,7 +55,6 @@ class JobLogSummary(object):
             'severity': 'str',
             'log_message': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'job_execution_key': 'jobExecutionKey',
@@ -64,7 +63,6 @@ class JobLogSummary(object):
             'severity': 'severity',
             'log_message': 'logMessage'
         }
-
         self._key = None
         self._job_execution_key = None
         self._uri = None

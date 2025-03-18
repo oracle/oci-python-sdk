@@ -43,12 +43,10 @@ class InstanceAgentPluginConfigDetails(object):
             'name': 'str',
             'desired_state': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'desired_state': 'desiredState'
         }
-
         self._name = None
         self._desired_state = None
 

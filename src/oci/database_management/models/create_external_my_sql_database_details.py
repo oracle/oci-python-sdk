@@ -33,12 +33,10 @@ class CreateExternalMySqlDatabaseDetails(object):
             'compartment_id': 'str',
             'db_name': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'db_name': 'dbName'
         }
-
         self._compartment_id = None
         self._db_name = None
 

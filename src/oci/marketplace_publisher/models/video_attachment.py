@@ -91,7 +91,6 @@ class VideoAttachment(ListingRevisionAttachment):
             'system_tags': 'dict(str, dict(str, object))',
             'content_url': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -107,7 +106,6 @@ class VideoAttachment(ListingRevisionAttachment):
             'system_tags': 'systemTags',
             'content_url': 'contentUrl'
         }
-
         self._id = None
         self._compartment_id = None
         self._listing_revision_id = None

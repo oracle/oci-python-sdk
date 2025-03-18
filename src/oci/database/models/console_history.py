@@ -94,7 +94,6 @@ class ConsoleHistory(object):
             'lifecycle_details': 'str',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -106,7 +105,6 @@ class ConsoleHistory(object):
             'lifecycle_details': 'lifecycleDetails',
             'time_created': 'timeCreated'
         }
-
         self._id = None
         self._compartment_id = None
         self._db_node_id = None

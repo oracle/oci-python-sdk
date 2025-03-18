@@ -32,11 +32,9 @@ class UpdateTargetDefaultsAutoCreateTablespaceDetails(UpdateTargetTypeTablespace
         self.swagger_types = {
             'target_type': 'str'
         }
-
         self.attribute_map = {
             'target_type': 'targetType'
         }
-
         self._target_type = None
         self._target_type = 'TARGET_DEFAULTS_AUTOCREATE'
 

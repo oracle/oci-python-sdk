@@ -50,11 +50,9 @@ class TargetDetails(object):
         self.swagger_types = {
             'target_resource_type': 'str'
         }
-
         self.attribute_map = {
             'target_resource_type': 'targetResourceType'
         }
-
         self._target_resource_type = None
 
     @staticmethod

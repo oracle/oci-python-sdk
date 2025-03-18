@@ -61,14 +61,12 @@ class PatchMoveInstruction(PatchInstruction):
             '_from': 'str',
             'position': 'str'
         }
-
         self.attribute_map = {
             'operation': 'operation',
             'selection': 'selection',
             '_from': 'from',
             'position': 'position'
         }
-
         self._operation = None
         self._selection = None
         self.__from = None

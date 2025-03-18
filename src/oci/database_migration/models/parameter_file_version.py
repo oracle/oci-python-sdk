@@ -68,7 +68,6 @@ class ParameterFileVersion(object):
             'time_created': 'datetime',
             'content': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'description': 'description',
@@ -78,7 +77,6 @@ class ParameterFileVersion(object):
             'time_created': 'timeCreated',
             'content': 'content'
         }
-
         self._name = None
         self._description = None
         self._is_current = None

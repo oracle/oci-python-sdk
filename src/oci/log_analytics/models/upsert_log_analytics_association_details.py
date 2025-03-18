@@ -33,12 +33,10 @@ class UpsertLogAnalyticsAssociationDetails(object):
             'compartment_id': 'str',
             'items': 'list[UpsertLogAnalyticsAssociation]'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'items': 'items'
         }
-
         self._compartment_id = None
         self._items = None
 

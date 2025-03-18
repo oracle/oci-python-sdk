@@ -68,13 +68,11 @@ class AuditPolicyDimensions(object):
             'audit_policy_name': 'str',
             'target_id': 'str'
         }
-
         self.attribute_map = {
             'audit_policy_category': 'auditPolicyCategory',
             'audit_policy_name': 'auditPolicyName',
             'target_id': 'targetId'
         }
-
         self._audit_policy_category = None
         self._audit_policy_name = None
         self._target_id = None

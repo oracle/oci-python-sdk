@@ -75,7 +75,6 @@ class CreatePluggableDatabaseDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'pdb_name': 'pdbName',
             'container_database_id': 'containerDatabaseId',
@@ -88,7 +87,6 @@ class CreatePluggableDatabaseDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._pdb_name = None
         self._container_database_id = None
         self._pdb_admin_password = None

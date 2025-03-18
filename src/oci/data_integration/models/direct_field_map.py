@@ -80,7 +80,6 @@ class DirectFieldMap(FieldMap):
             'target_scope_reference': 'ScopeReference',
             'object_status': 'int'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'description': 'description',
@@ -94,7 +93,6 @@ class DirectFieldMap(FieldMap):
             'target_scope_reference': 'targetScopeReference',
             'object_status': 'objectStatus'
         }
-
         self._model_type = None
         self._description = None
         self._key = None

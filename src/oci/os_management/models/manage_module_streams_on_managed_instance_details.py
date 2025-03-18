@@ -48,7 +48,6 @@ class ManageModuleStreamsOnManagedInstanceDetails(object):
             'install': 'list[ModuleStreamProfileDetails]',
             'remove': 'list[ModuleStreamProfileDetails]'
         }
-
         self.attribute_map = {
             'is_dry_run': 'isDryRun',
             'enable': 'enable',
@@ -56,7 +55,6 @@ class ManageModuleStreamsOnManagedInstanceDetails(object):
             'install': 'install',
             'remove': 'remove'
         }
-
         self._is_dry_run = None
         self._enable = None
         self._disable = None

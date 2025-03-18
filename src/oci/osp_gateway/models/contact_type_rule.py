@@ -28,11 +28,9 @@ class ContactTypeRule(object):
         self.swagger_types = {
             'fields': 'list[Field]'
         }
-
         self.attribute_map = {
             'fields': 'fields'
         }
-
         self._fields = None
 
     @property

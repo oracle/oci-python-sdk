@@ -39,13 +39,11 @@ class ConfigureAutomaticSpmEvolveAdvisorTaskDetails(object):
             'credentials': 'ManagedDatabaseCredential',
             'database_credential': 'DatabaseCredentialDetails'
         }
-
         self.attribute_map = {
             'task_parameters': 'taskParameters',
             'credentials': 'credentials',
             'database_credential': 'databaseCredential'
         }
-
         self._task_parameters = None
         self._credentials = None
         self._database_credential = None

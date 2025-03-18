@@ -28,11 +28,9 @@ class AddressListSummaryCollection(object):
         self.swagger_types = {
             'items': 'list[AddressListSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

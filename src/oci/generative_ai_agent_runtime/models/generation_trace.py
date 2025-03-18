@@ -40,13 +40,11 @@ class GenerationTrace(Trace):
             'trace_type': 'str',
             'generation': 'str'
         }
-
         self.attribute_map = {
             'time_created': 'timeCreated',
             'trace_type': 'traceType',
             'generation': 'generation'
         }
-
         self._time_created = None
         self._trace_type = None
         self._generation = None

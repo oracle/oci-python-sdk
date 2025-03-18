@@ -143,7 +143,6 @@ class MetricExtension(object):
             'enabled_on_resources_count': 'int',
             'resource_uri': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -166,7 +165,6 @@ class MetricExtension(object):
             'enabled_on_resources_count': 'enabledOnResourcesCount',
             'resource_uri': 'resourceUri'
         }
-
         self._id = None
         self._name = None
         self._display_name = None

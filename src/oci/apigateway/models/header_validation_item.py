@@ -33,12 +33,10 @@ class HeaderValidationItem(object):
             'required': 'bool',
             'name': 'str'
         }
-
         self.attribute_map = {
             'required': 'required',
             'name': 'name'
         }
-
         self._required = None
         self._name = None
 

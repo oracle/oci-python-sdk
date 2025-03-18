@@ -38,11 +38,9 @@ class SecretBundleContentDetails(object):
         self.swagger_types = {
             'content_type': 'str'
         }
-
         self.attribute_map = {
             'content_type': 'contentType'
         }
-
         self._content_type = None
 
     @staticmethod

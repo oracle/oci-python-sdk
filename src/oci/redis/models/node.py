@@ -38,13 +38,11 @@ class Node(object):
             'private_endpoint_ip_address': 'str',
             'display_name': 'str'
         }
-
         self.attribute_map = {
             'private_endpoint_fqdn': 'privateEndpointFqdn',
             'private_endpoint_ip_address': 'privateEndpointIpAddress',
             'display_name': 'displayName'
         }
-
         self._private_endpoint_fqdn = None
         self._private_endpoint_ip_address = None
         self._display_name = None

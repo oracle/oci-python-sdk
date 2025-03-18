@@ -94,7 +94,6 @@ class Config(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'id': 'id',
             'config_type': 'configType',
@@ -106,7 +105,6 @@ class Config(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._id = None
         self._config_type = None
         self._time_created = None

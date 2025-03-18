@@ -33,12 +33,10 @@ class FolderCollection(object):
             'count': 'int',
             'items': 'list[FolderSummary]'
         }
-
         self.attribute_map = {
             'count': 'count',
             'items': 'items'
         }
-
         self._count = None
         self._items = None
 

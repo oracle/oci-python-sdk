@@ -42,12 +42,10 @@ class WrappedImportKey(object):
             'key_material': 'str',
             'wrapping_algorithm': 'str'
         }
-
         self.attribute_map = {
             'key_material': 'keyMaterial',
             'wrapping_algorithm': 'wrappingAlgorithm'
         }
-
         self._key_material = None
         self._wrapping_algorithm = None
 

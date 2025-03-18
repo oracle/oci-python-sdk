@@ -94,7 +94,6 @@ class BitbucketCloudTriggerSummary(TriggerSummary):
             'system_tags': 'dict(str, dict(str, object))',
             'connection_id': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -111,7 +110,6 @@ class BitbucketCloudTriggerSummary(TriggerSummary):
             'system_tags': 'systemTags',
             'connection_id': 'connectionId'
         }
-
         self._id = None
         self._display_name = None
         self._description = None

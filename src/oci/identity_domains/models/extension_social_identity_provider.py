@@ -138,7 +138,6 @@ class ExtensionSocialIdentityProvider(object):
             'client_credential_in_payload': 'bool',
             'id_attribute': 'str'
         }
-
         self.attribute_map = {
             'account_linking_enabled': 'accountLinkingEnabled',
             'auto_redirect_enabled': 'autoRedirectEnabled',
@@ -162,7 +161,6 @@ class ExtensionSocialIdentityProvider(object):
             'client_credential_in_payload': 'clientCredentialInPayload',
             'id_attribute': 'idAttribute'
         }
-
         self._account_linking_enabled = None
         self._auto_redirect_enabled = None
         self._social_jit_provisioning_enabled = None

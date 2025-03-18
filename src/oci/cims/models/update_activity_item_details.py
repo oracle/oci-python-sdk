@@ -60,13 +60,11 @@ class UpdateActivityItemDetails(UpdateItemDetails):
             'comments': 'str',
             'activity_type': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'comments': 'comments',
             'activity_type': 'activityType'
         }
-
         self._type = None
         self._comments = None
         self._activity_type = None

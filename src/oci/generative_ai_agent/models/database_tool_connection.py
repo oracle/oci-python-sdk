@@ -35,12 +35,10 @@ class DatabaseToolConnection(DatabaseConnection):
             'connection_type': 'str',
             'connection_id': 'str'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'connection_id': 'connectionId'
         }
-
         self._connection_type = None
         self._connection_id = None
         self._connection_type = 'DATABASE_TOOL_CONNECTION'

@@ -48,7 +48,6 @@ class UpdateClusterOptionsDetails(object):
             'open_id_connect_token_authentication_config': 'OpenIdConnectTokenAuthenticationConfig',
             'open_id_connect_discovery': 'OpenIdConnectDiscovery'
         }
-
         self.attribute_map = {
             'admission_controller_options': 'admissionControllerOptions',
             'persistent_volume_config': 'persistentVolumeConfig',
@@ -56,7 +55,6 @@ class UpdateClusterOptionsDetails(object):
             'open_id_connect_token_authentication_config': 'openIdConnectTokenAuthenticationConfig',
             'open_id_connect_discovery': 'openIdConnectDiscovery'
         }
-
         self._admission_controller_options = None
         self._persistent_volume_config = None
         self._service_lb_config = None

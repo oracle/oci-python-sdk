@@ -117,7 +117,6 @@ class DatabaseToolsConnectionGenericJdbcSummary(DatabaseToolsConnectionSummary):
             'advanced_properties': 'dict(str, str)',
             'key_stores': 'list[DatabaseToolsKeyStoreGenericJdbcSummary]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -138,7 +137,6 @@ class DatabaseToolsConnectionGenericJdbcSummary(DatabaseToolsConnectionSummary):
             'advanced_properties': 'advancedProperties',
             'key_stores': 'keyStores'
         }
-
         self._id = None
         self._display_name = None
         self._compartment_id = None

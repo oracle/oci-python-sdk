@@ -56,7 +56,6 @@ class VaultMappedSecret(MappedSecret):
             'vault_secret_id': 'str',
             'version_number': 'int'
         }
-
         self.attribute_map = {
             'name': 'name',
             'source': 'source',
@@ -65,7 +64,6 @@ class VaultMappedSecret(MappedSecret):
             'vault_secret_id': 'vaultSecretId',
             'version_number': 'versionNumber'
         }
-
         self._name = None
         self._source = None
         self._type = None

@@ -44,12 +44,10 @@ class FilterHeaderPolicy(object):
             'type': 'str',
             'items': 'list[FilterHeaderPolicyItem]'
         }
-
         self.attribute_map = {
             'type': 'type',
             'items': 'items'
         }
-
         self._type = None
         self._items = None
 

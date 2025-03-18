@@ -33,12 +33,10 @@ class AppExtensionDbcsApp(object):
             'domain_name': 'str',
             'domain_app': 'AppDomainApp'
         }
-
         self.attribute_map = {
             'domain_name': 'domainName',
             'domain_app': 'domainApp'
         }
-
         self._domain_name = None
         self._domain_app = None
 

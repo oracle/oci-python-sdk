@@ -199,7 +199,6 @@ class OccCapacityRequest(object):
             'system_tags': 'dict(str, dict(str, object))',
             'details': 'list[OccCapacityRequestBaseDetails]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -222,7 +221,6 @@ class OccCapacityRequest(object):
             'system_tags': 'systemTags',
             'details': 'details'
         }
-
         self._id = None
         self._compartment_id = None
         self._occ_availability_catalog_id = None

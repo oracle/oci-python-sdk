@@ -57,14 +57,12 @@ class EncryptedData(object):
             'key_version_id': 'str',
             'encryption_algorithm': 'str'
         }
-
         self.attribute_map = {
             'ciphertext': 'ciphertext',
             'key_id': 'keyId',
             'key_version_id': 'keyVersionId',
             'encryption_algorithm': 'encryptionAlgorithm'
         }
-
         self._ciphertext = None
         self._key_id = None
         self._key_version_id = None

@@ -68,7 +68,6 @@ class CreateRepositoryDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'name': 'name',
             'project_id': 'projectId',
@@ -80,7 +79,6 @@ class CreateRepositoryDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._name = None
         self._project_id = None
         self._parent_repository_id = None

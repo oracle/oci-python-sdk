@@ -28,11 +28,9 @@ class ReplaceHostDetails(object):
         self.swagger_types = {
             'esxi_software_version': 'str'
         }
-
         self.attribute_map = {
             'esxi_software_version': 'esxiSoftwareVersion'
         }
-
         self._esxi_software_version = None
 
     @property

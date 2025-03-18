@@ -33,12 +33,10 @@ class StartAuditTrailDetails(object):
             'audit_collection_start_time': 'datetime',
             'is_auto_purge_enabled': 'bool'
         }
-
         self.attribute_map = {
             'audit_collection_start_time': 'auditCollectionStartTime',
             'is_auto_purge_enabled': 'isAutoPurgeEnabled'
         }
-
         self._audit_collection_start_time = None
         self._is_auto_purge_enabled = None
 

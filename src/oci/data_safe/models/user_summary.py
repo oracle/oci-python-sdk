@@ -191,7 +191,6 @@ class UserSummary(object):
             'are_all_schemas_accessible': 'bool',
             'schema_list': 'list[str]'
         }
-
         self.attribute_map = {
             'key': 'key',
             'user_name': 'userName',
@@ -209,7 +208,6 @@ class UserSummary(object):
             'are_all_schemas_accessible': 'areAllSchemasAccessible',
             'schema_list': 'schemaList'
         }
-
         self._key = None
         self._user_name = None
         self._user_category = None

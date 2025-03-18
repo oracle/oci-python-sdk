@@ -55,14 +55,12 @@ class GiDefinedTagsFilter(GiFleetDiscoveryFilter):
             'tags': 'list[DefinedTagFilterEntry]',
             'operator': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'mode': 'mode',
             'tags': 'tags',
             'operator': 'operator'
         }
-
         self._type = None
         self._mode = None
         self._tags = None

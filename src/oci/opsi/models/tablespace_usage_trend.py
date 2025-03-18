@@ -38,13 +38,11 @@ class TablespaceUsageTrend(object):
             'usage': 'float',
             'capacity': 'float'
         }
-
         self.attribute_map = {
             'end_timestamp': 'endTimestamp',
             'usage': 'usage',
             'capacity': 'capacity'
         }
-
         self._end_timestamp = None
         self._usage = None
         self._capacity = None

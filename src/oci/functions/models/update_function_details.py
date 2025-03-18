@@ -68,7 +68,6 @@ class UpdateFunctionDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'image': 'image',
             'image_digest': 'imageDigest',
@@ -80,7 +79,6 @@ class UpdateFunctionDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._image = None
         self._image_digest = None
         self._memory_in_mbs = None

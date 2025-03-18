@@ -40,13 +40,11 @@ class DedicatedAiClusterHostingCapacity(DedicatedAiClusterCapacity):
             'total_endpoint_capacity': 'int',
             'used_endpoint_capacity': 'int'
         }
-
         self.attribute_map = {
             'capacity_type': 'capacityType',
             'total_endpoint_capacity': 'totalEndpointCapacity',
             'used_endpoint_capacity': 'usedEndpointCapacity'
         }
-
         self._capacity_type = None
         self._total_endpoint_capacity = None
         self._used_endpoint_capacity = None

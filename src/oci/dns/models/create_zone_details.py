@@ -109,7 +109,6 @@ class CreateZoneDetails(CreateZoneBaseDetails):
             'external_downstreams': 'list[ExternalDownstream]',
             'dnssec_state': 'str'
         }
-
         self.attribute_map = {
             'migration_source': 'migrationSource',
             'name': 'name',
@@ -123,7 +122,6 @@ class CreateZoneDetails(CreateZoneBaseDetails):
             'external_downstreams': 'externalDownstreams',
             'dnssec_state': 'dnssecState'
         }
-
         self._migration_source = None
         self._name = None
         self._compartment_id = None

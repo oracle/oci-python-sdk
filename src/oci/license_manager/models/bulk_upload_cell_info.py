@@ -33,12 +33,10 @@ class BulkUploadCellInfo(object):
             'column_index': 'str',
             'error_info': 'str'
         }
-
         self.attribute_map = {
             'column_index': 'columnIndex',
             'error_info': 'errorInfo'
         }
-
         self._column_index = None
         self._error_info = None
 

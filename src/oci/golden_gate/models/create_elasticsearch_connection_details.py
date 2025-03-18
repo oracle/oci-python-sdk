@@ -131,7 +131,6 @@ class CreateElasticsearchConnectionDetails(CreateConnectionDetails):
             'password_secret_id': 'str',
             'fingerprint': 'str'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'display_name': 'displayName',
@@ -155,7 +154,6 @@ class CreateElasticsearchConnectionDetails(CreateConnectionDetails):
             'password_secret_id': 'passwordSecretId',
             'fingerprint': 'fingerprint'
         }
-
         self._connection_type = None
         self._display_name = None
         self._description = None

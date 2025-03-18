@@ -40,13 +40,11 @@ class KeyRangePartitionConfig(PartitionConfig):
             'partition_number': 'int',
             'key_range': 'KeyRange'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'partition_number': 'partitionNumber',
             'key_range': 'keyRange'
         }
-
         self._model_type = None
         self._partition_number = None
         self._key_range = None

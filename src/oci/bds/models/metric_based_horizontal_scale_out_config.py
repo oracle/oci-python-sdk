@@ -38,13 +38,11 @@ class MetricBasedHorizontalScaleOutConfig(object):
             'max_node_count': 'int',
             'step_size': 'int'
         }
-
         self.attribute_map = {
             'metric': 'metric',
             'max_node_count': 'maxNodeCount',
             'step_size': 'stepSize'
         }
-
         self._metric = None
         self._max_node_count = None
         self._step_size = None

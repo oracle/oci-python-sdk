@@ -83,7 +83,6 @@ class LBCookieSessionPersistenceConfigurationDetails(object):
             'is_secure': 'bool',
             'is_http_only': 'bool'
         }
-
         self.attribute_map = {
             'cookie_name': 'cookieName',
             'disable_fallback': 'disableFallback',
@@ -93,7 +92,6 @@ class LBCookieSessionPersistenceConfigurationDetails(object):
             'is_secure': 'isSecure',
             'is_http_only': 'isHttpOnly'
         }
-
         self._cookie_name = None
         self._disable_fallback = None
         self._domain = None

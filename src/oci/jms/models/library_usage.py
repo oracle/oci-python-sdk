@@ -98,7 +98,6 @@ class LibraryUsage(object):
             'time_last_seen': 'datetime',
             'time_last_cve_refreshed': 'datetime'
         }
-
         self.attribute_map = {
             'library_key': 'libraryKey',
             'fleet_id': 'fleetId',
@@ -116,7 +115,6 @@ class LibraryUsage(object):
             'time_last_seen': 'timeLastSeen',
             'time_last_cve_refreshed': 'timeLastCveRefreshed'
         }
-
         self._library_key = None
         self._fleet_id = None
         self._library_name = None

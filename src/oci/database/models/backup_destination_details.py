@@ -75,7 +75,6 @@ class BackupDestinationDetails(object):
             'internet_proxy': 'str',
             'dbrs_policy_id': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'id': 'id',
@@ -84,7 +83,6 @@ class BackupDestinationDetails(object):
             'internet_proxy': 'internetProxy',
             'dbrs_policy_id': 'dbrsPolicyId'
         }
-
         self._type = None
         self._id = None
         self._vpc_user = None

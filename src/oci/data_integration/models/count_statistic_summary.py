@@ -71,12 +71,10 @@ class CountStatisticSummary(object):
             'object_type': 'str',
             'object_count': 'int'
         }
-
         self.attribute_map = {
             'object_type': 'objectType',
             'object_count': 'objectCount'
         }
-
         self._object_type = None
         self._object_count = None
 

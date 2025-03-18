@@ -33,12 +33,10 @@ class BdsClusterVersionSummary(object):
             'bds_version': 'str',
             'odh_version': 'str'
         }
-
         self.attribute_map = {
             'bds_version': 'bdsVersion',
             'odh_version': 'odhVersion'
         }
-
         self._bds_version = None
         self._odh_version = None
 

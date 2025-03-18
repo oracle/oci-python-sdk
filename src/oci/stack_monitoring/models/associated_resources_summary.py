@@ -172,7 +172,6 @@ class AssociatedResourcesSummary(object):
             'resource_category': 'str',
             'associated_resources': 'list[AssociatedMonitoredResource]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -188,7 +187,6 @@ class AssociatedResourcesSummary(object):
             'resource_category': 'resourceCategory',
             'associated_resources': 'associatedResources'
         }
-
         self._id = None
         self._name = None
         self._display_name = None

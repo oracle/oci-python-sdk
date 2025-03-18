@@ -30,11 +30,9 @@ class WarningReferenceDetails(object):
         self.swagger_types = {
             'warning_references': 'list[str]'
         }
-
         self.attribute_map = {
             'warning_references': 'warningReferences'
         }
-
         self._warning_references = None
 
     @property

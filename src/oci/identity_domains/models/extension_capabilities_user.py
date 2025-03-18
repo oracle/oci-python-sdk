@@ -63,7 +63,6 @@ class ExtensionCapabilitiesUser(object):
             'can_use_db_credentials': 'bool',
             'can_use_console': 'bool'
         }
-
         self.attribute_map = {
             'can_use_api_keys': 'canUseApiKeys',
             'can_use_auth_tokens': 'canUseAuthTokens',
@@ -74,7 +73,6 @@ class ExtensionCapabilitiesUser(object):
             'can_use_db_credentials': 'canUseDbCredentials',
             'can_use_console': 'canUseConsole'
         }
-
         self._can_use_api_keys = None
         self._can_use_auth_tokens = None
         self._can_use_console_password = None

@@ -156,7 +156,6 @@ class CreateIntegrationInstanceDetails(object):
             'shape': 'str',
             'domain_id': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'compartment_id': 'compartmentId',
@@ -176,7 +175,6 @@ class CreateIntegrationInstanceDetails(object):
             'shape': 'shape',
             'domain_id': 'domainId'
         }
-
         self._display_name = None
         self._compartment_id = None
         self._integration_instance_type = None

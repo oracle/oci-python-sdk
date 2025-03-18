@@ -62,14 +62,12 @@ class GiDiscoveryDetails(DiscoveryDetails):
             'source_major_version': 'str',
             'criteria': 'GiFleetDiscoveryDetails'
         }
-
         self.attribute_map = {
             'type': 'type',
             'service_type': 'serviceType',
             'source_major_version': 'sourceMajorVersion',
             'criteria': 'criteria'
         }
-
         self._type = None
         self._service_type = None
         self._source_major_version = None

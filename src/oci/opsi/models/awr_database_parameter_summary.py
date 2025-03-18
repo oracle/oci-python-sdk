@@ -58,7 +58,6 @@ class AwrDatabaseParameterSummary(object):
             'value_modified': 'str',
             'is_default': 'bool'
         }
-
         self.attribute_map = {
             'name': 'name',
             'instance_number': 'instanceNumber',
@@ -68,7 +67,6 @@ class AwrDatabaseParameterSummary(object):
             'value_modified': 'valueModified',
             'is_default': 'isDefault'
         }
-
         self._name = None
         self._instance_number = None
         self._begin_value = None

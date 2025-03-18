@@ -28,11 +28,9 @@ class ChangeAnalyticsInstanceNetworkEndpointDetails(object):
         self.swagger_types = {
             'network_endpoint_details': 'NetworkEndpointDetails'
         }
-
         self.attribute_map = {
             'network_endpoint_details': 'networkEndpointDetails'
         }
-
         self._network_endpoint_details = None
 
     @property

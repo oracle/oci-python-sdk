@@ -38,13 +38,11 @@ class CohereTool(object):
             'description': 'str',
             'parameter_definitions': 'dict(str, CohereParameterDefinition)'
         }
-
         self.attribute_map = {
             'name': 'name',
             'description': 'description',
             'parameter_definitions': 'parameterDefinitions'
         }
-
         self._name = None
         self._description = None
         self._parameter_definitions = None

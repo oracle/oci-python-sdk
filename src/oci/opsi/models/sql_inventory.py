@@ -38,13 +38,11 @@ class SqlInventory(object):
             'total_databases': 'int',
             'sqls_analyzed': 'int'
         }
-
         self.attribute_map = {
             'total_sqls': 'totalSqls',
             'total_databases': 'totalDatabases',
             'sqls_analyzed': 'sqlsAnalyzed'
         }
-
         self._total_sqls = None
         self._total_databases = None
         self._sqls_analyzed = None

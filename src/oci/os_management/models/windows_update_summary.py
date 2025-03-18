@@ -80,7 +80,6 @@ class WindowsUpdateSummary(object):
             'installable': 'str',
             'is_reboot_required_for_installation': 'bool'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'name': 'name',
@@ -88,7 +87,6 @@ class WindowsUpdateSummary(object):
             'installable': 'installable',
             'is_reboot_required_for_installation': 'isRebootRequiredForInstallation'
         }
-
         self._display_name = None
         self._name = None
         self._update_type = None

@@ -33,12 +33,10 @@ class MessageContent(object):
             'text': 'str',
             'citations': 'list[Citation]'
         }
-
         self.attribute_map = {
             'text': 'text',
             'citations': 'citations'
         }
-
         self._text = None
         self._citations = None
 

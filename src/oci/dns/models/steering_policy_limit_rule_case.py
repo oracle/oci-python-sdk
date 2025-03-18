@@ -33,12 +33,10 @@ class SteeringPolicyLimitRuleCase(object):
             'case_condition': 'str',
             'count': 'int'
         }
-
         self.attribute_map = {
             'case_condition': 'caseCondition',
             'count': 'count'
         }
-
         self._case_condition = None
         self._count = None
 

@@ -120,7 +120,6 @@ class HistoricAddmResult(object):
             'end_snapshot_id': 'int',
             'findings': 'int'
         }
-
         self.attribute_map = {
             'is_newly_created': 'isNewlyCreated',
             'task_name': 'taskName',
@@ -136,7 +135,6 @@ class HistoricAddmResult(object):
             'end_snapshot_id': 'endSnapshotId',
             'findings': 'findings'
         }
-
         self._is_newly_created = None
         self._task_name = None
         self._task_id = None

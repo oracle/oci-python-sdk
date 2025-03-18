@@ -67,7 +67,6 @@ class CreateLimitItemDetails(CreateItemDetails):
             'current_usage': 'int',
             'requested_limit': 'int'
         }
-
         self.attribute_map = {
             'type': 'type',
             'category': 'category',
@@ -78,7 +77,6 @@ class CreateLimitItemDetails(CreateItemDetails):
             'current_usage': 'currentUsage',
             'requested_limit': 'requestedLimit'
         }
-
         self._type = None
         self._category = None
         self._sub_category = None

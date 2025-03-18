@@ -83,7 +83,6 @@ class UpdateNetworkLoadBalancerDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'security_attributes': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'is_preserve_source_destination': 'isPreserveSourceDestination',
@@ -95,7 +94,6 @@ class UpdateNetworkLoadBalancerDetails(object):
             'defined_tags': 'definedTags',
             'security_attributes': 'securityAttributes'
         }
-
         self._display_name = None
         self._is_preserve_source_destination = None
         self._is_symmetric_hash_enabled = None

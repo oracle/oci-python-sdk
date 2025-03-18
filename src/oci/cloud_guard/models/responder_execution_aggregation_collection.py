@@ -28,11 +28,9 @@ class ResponderExecutionAggregationCollection(object):
         self.swagger_types = {
             'items': 'list[ResponderExecutionAggregation]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

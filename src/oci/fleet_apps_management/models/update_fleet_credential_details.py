@@ -43,14 +43,12 @@ class UpdateFleetCredentialDetails(object):
             'user': 'CredentialDetails',
             'password': 'CredentialDetails'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'entity_specifics': 'entitySpecifics',
             'user': 'user',
             'password': 'password'
         }
-
         self._display_name = None
         self._entity_specifics = None
         self._user = None

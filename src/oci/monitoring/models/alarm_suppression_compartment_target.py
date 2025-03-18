@@ -40,13 +40,11 @@ class AlarmSuppressionCompartmentTarget(AlarmSuppressionTarget):
             'compartment_id': 'str',
             'compartment_id_in_subtree': 'bool'
         }
-
         self.attribute_map = {
             'target_type': 'targetType',
             'compartment_id': 'compartmentId',
             'compartment_id_in_subtree': 'compartmentIdInSubtree'
         }
-
         self._target_type = None
         self._compartment_id = None
         self._compartment_id_in_subtree = None

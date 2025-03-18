@@ -43,14 +43,12 @@ class UpdateInstanceAgentConfigDetails(object):
             'are_all_plugins_disabled': 'bool',
             'plugins_config': 'list[InstanceAgentPluginConfigDetails]'
         }
-
         self.attribute_map = {
             'is_monitoring_disabled': 'isMonitoringDisabled',
             'is_management_disabled': 'isManagementDisabled',
             'are_all_plugins_disabled': 'areAllPluginsDisabled',
             'plugins_config': 'pluginsConfig'
         }
-
         self._is_monitoring_disabled = None
         self._is_management_disabled = None
         self._are_all_plugins_disabled = None

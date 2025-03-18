@@ -48,7 +48,6 @@ class SubscriptionSku(object):
             'quantity': 'int',
             'description': 'str'
         }
-
         self.attribute_map = {
             'sku': 'sku',
             'license_part_description': 'licensePartDescription',
@@ -56,7 +55,6 @@ class SubscriptionSku(object):
             'quantity': 'quantity',
             'description': 'description'
         }
-
         self._sku = None
         self._license_part_description = None
         self._metric_name = None

@@ -70,7 +70,6 @@ class WorkRequestResource(object):
             'entity_uri': 'str',
             'sub_type_details': 'list[WorkRequestResourceSubTypeDetail]'
         }
-
         self.attribute_map = {
             'entity_type': 'entityType',
             'action_type': 'actionType',
@@ -78,7 +77,6 @@ class WorkRequestResource(object):
             'entity_uri': 'entityUri',
             'sub_type_details': 'subTypeDetails'
         }
-
         self._entity_type = None
         self._action_type = None
         self._identifier = None

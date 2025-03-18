@@ -125,7 +125,6 @@ class UserSummary(object):
             'time_locked': 'datetime',
             'profile': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'status': 'status',
@@ -136,7 +135,6 @@ class UserSummary(object):
             'time_locked': 'timeLocked',
             'profile': 'profile'
         }
-
         self._name = None
         self._status = None
         self._time_expiring = None

@@ -210,7 +210,6 @@ class LogAnalyticsParserSummary(object):
             'is_namespace_aware': 'bool',
             'is_position_aware': 'bool'
         }
-
         self.attribute_map = {
             'content': 'content',
             'description': 'description',
@@ -246,7 +245,6 @@ class LogAnalyticsParserSummary(object):
             'is_namespace_aware': 'isNamespaceAware',
             'is_position_aware': 'isPositionAware'
         }
-
         self._content = None
         self._description = None
         self._display_name = None

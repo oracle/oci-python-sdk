@@ -101,7 +101,6 @@ class SummarizeDatabaseInsightResourceUsageTrendAggregationCollection(object):
             'item_duration_in_ms': 'int',
             'usage_data': 'list[ResourceUsageTrendAggregation]'
         }
-
         self.attribute_map = {
             'time_interval_start': 'timeIntervalStart',
             'time_interval_end': 'timeIntervalEnd',
@@ -110,7 +109,6 @@ class SummarizeDatabaseInsightResourceUsageTrendAggregationCollection(object):
             'item_duration_in_ms': 'itemDurationInMs',
             'usage_data': 'usageData'
         }
-
         self._time_interval_start = None
         self._time_interval_end = None
         self._resource_metric = None

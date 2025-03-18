@@ -28,11 +28,9 @@ class PbfListingsCollection(object):
         self.swagger_types = {
             'items': 'list[PbfListingSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

@@ -55,7 +55,6 @@ class UpdateNetworkAddressListVcnAddressesDetails(UpdateNetworkAddressListDetail
             'system_tags': 'dict(str, dict(str, object))',
             'vcn_addresses': 'list[PrivateAddresses]'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'type': 'type',
@@ -64,7 +63,6 @@ class UpdateNetworkAddressListVcnAddressesDetails(UpdateNetworkAddressListDetail
             'system_tags': 'systemTags',
             'vcn_addresses': 'vcnAddresses'
         }
-
         self._display_name = None
         self._type = None
         self._freeform_tags = None

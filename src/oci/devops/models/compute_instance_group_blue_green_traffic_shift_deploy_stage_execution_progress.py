@@ -70,7 +70,6 @@ class ComputeInstanceGroupBlueGreenTrafficShiftDeployStageExecutionProgress(Depl
             'deploy_stage_execution_progress_details': 'list[DeployStageExecutionProgressDetails]',
             'environment_id': 'str'
         }
-
         self.attribute_map = {
             'deploy_stage_display_name': 'deployStageDisplayName',
             'deploy_stage_type': 'deployStageType',
@@ -82,7 +81,6 @@ class ComputeInstanceGroupBlueGreenTrafficShiftDeployStageExecutionProgress(Depl
             'deploy_stage_execution_progress_details': 'deployStageExecutionProgressDetails',
             'environment_id': 'environmentId'
         }
-
         self._deploy_stage_display_name = None
         self._deploy_stage_type = None
         self._deploy_stage_id = None

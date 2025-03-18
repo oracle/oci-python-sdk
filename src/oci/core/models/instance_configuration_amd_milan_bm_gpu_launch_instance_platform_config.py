@@ -100,7 +100,6 @@ class InstanceConfigurationAmdMilanBmGpuLaunchInstancePlatformConfig(InstanceCon
             'is_input_output_memory_management_unit_enabled': 'bool',
             'config_map': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'type': 'type',
             'is_secure_boot_enabled': 'isSecureBootEnabled',
@@ -114,7 +113,6 @@ class InstanceConfigurationAmdMilanBmGpuLaunchInstancePlatformConfig(InstanceCon
             'is_input_output_memory_management_unit_enabled': 'isInputOutputMemoryManagementUnitEnabled',
             'config_map': 'configMap'
         }
-
         self._type = None
         self._is_secure_boot_enabled = None
         self._is_trusted_platform_module_enabled = None

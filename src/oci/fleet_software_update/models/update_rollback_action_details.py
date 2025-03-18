@@ -50,7 +50,6 @@ class UpdateRollbackActionDetails(UpdateFsuActionDetails):
             'defined_tags': 'dict(str, dict(str, object))',
             'schedule_details': 'UpdateScheduleDetails'
         }
-
         self.attribute_map = {
             'type': 'type',
             'display_name': 'displayName',
@@ -58,7 +57,6 @@ class UpdateRollbackActionDetails(UpdateFsuActionDetails):
             'defined_tags': 'definedTags',
             'schedule_details': 'scheduleDetails'
         }
-
         self._type = None
         self._display_name = None
         self._freeform_tags = None

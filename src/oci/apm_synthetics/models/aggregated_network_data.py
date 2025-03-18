@@ -62,7 +62,6 @@ class AggregatedNetworkData(object):
             'links': 'dict(str, Link)',
             'error_details': 'str'
         }
-
         self.attribute_map = {
             'result_state': 'resultState',
             'vantage_point_nodes': 'vantagePointNodes',
@@ -70,7 +69,6 @@ class AggregatedNetworkData(object):
             'links': 'links',
             'error_details': 'errorDetails'
         }
-
         self._result_state = None
         self._vantage_point_nodes = None
         self._nodes_by_level = None

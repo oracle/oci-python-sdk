@@ -28,11 +28,9 @@ class AutonomousDatabaseManualRefreshDetails(object):
         self.swagger_types = {
             'time_refresh_cutoff': 'datetime'
         }
-
         self.attribute_map = {
             'time_refresh_cutoff': 'timeRefreshCutoff'
         }
-
         self._time_refresh_cutoff = None
 
     @property

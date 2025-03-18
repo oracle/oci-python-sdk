@@ -105,7 +105,6 @@ class DigitalAssistantParameter(object):
             'value': 'str',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'display_name': 'displayName',
@@ -114,7 +113,6 @@ class DigitalAssistantParameter(object):
             'value': 'value',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._name = None
         self._display_name = None
         self._description = None

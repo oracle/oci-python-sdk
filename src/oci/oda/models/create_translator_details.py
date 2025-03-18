@@ -62,7 +62,6 @@ class CreateTranslatorDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'type': 'type',
             'base_url': 'baseUrl',
@@ -71,7 +70,6 @@ class CreateTranslatorDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._type = None
         self._base_url = None
         self._auth_token = None

@@ -82,7 +82,6 @@ class RecordOperation(object):
             'ttl': 'int',
             'operation': 'str'
         }
-
         self.attribute_map = {
             'domain': 'domain',
             'record_hash': 'recordHash',
@@ -93,7 +92,6 @@ class RecordOperation(object):
             'ttl': 'ttl',
             'operation': 'operation'
         }
-
         self._domain = None
         self._record_hash = None
         self._is_protected = None

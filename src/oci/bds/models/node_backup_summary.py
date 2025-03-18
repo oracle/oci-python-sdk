@@ -63,7 +63,6 @@ class NodeBackupSummary(object):
             'lifecycle_state': 'str',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -74,7 +73,6 @@ class NodeBackupSummary(object):
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated'
         }
-
         self._id = None
         self._display_name = None
         self._node_instance_id = None

@@ -121,7 +121,6 @@ class CategorySummary(object):
             'time_updated': 'datetime',
             'extended_metadata': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -136,7 +135,6 @@ class CategorySummary(object):
             'time_updated': 'timeUpdated',
             'extended_metadata': 'extendedMetadata'
         }
-
         self._id = None
         self._compartment_id = None
         self._compartment_name = None

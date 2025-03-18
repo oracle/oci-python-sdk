@@ -102,7 +102,6 @@ class InstancePoolInstance(object):
             'time_created': 'datetime',
             'load_balancer_backends': 'list[InstancePoolInstanceLoadBalancerBackend]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'instance_pool_id': 'instancePoolId',
@@ -118,7 +117,6 @@ class InstancePoolInstance(object):
             'time_created': 'timeCreated',
             'load_balancer_backends': 'loadBalancerBackends'
         }
-
         self._id = None
         self._instance_pool_id = None
         self._availability_domain = None

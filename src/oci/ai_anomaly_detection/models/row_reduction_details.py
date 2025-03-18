@@ -48,13 +48,11 @@ class RowReductionDetails(object):
             'reduction_percentage': 'float',
             'reduction_method': 'str'
         }
-
         self.attribute_map = {
             'is_reduction_enabled': 'isReductionEnabled',
             'reduction_percentage': 'reductionPercentage',
             'reduction_method': 'reductionMethod'
         }
-
         self._is_reduction_enabled = None
         self._reduction_percentage = None
         self._reduction_method = None

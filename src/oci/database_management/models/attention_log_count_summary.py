@@ -79,12 +79,10 @@ class AttentionLogCountSummary(object):
             'category': 'str',
             'count': 'int'
         }
-
         self.attribute_map = {
             'category': 'category',
             'count': 'count'
         }
-
         self._category = None
         self._count = None
 

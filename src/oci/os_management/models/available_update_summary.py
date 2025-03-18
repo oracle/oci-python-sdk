@@ -91,7 +91,6 @@ class AvailableUpdateSummary(object):
             'related_cves': 'list[str]',
             'software_sources': 'list[SoftwareSourceId]'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'name': 'name',
@@ -104,7 +103,6 @@ class AvailableUpdateSummary(object):
             'related_cves': 'relatedCves',
             'software_sources': 'softwareSources'
         }
-
         self._display_name = None
         self._name = None
         self._update_type = None

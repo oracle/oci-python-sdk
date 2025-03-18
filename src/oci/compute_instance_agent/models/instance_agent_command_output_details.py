@@ -48,11 +48,9 @@ class InstanceAgentCommandOutputDetails(object):
         self.swagger_types = {
             'output_type': 'str'
         }
-
         self.attribute_map = {
             'output_type': 'outputType'
         }
-
         self._output_type = None
 
     @staticmethod

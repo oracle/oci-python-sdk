@@ -33,12 +33,10 @@ class ComplianceReportProduct(object):
             'product_name': 'str',
             'targets': 'list[ComplianceReportTarget]'
         }
-
         self.attribute_map = {
             'product_name': 'productName',
             'targets': 'targets'
         }
-
         self._product_name = None
         self._targets = None
 

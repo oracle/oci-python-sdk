@@ -48,7 +48,6 @@ class UpdateSecurityListDetails(object):
             'freeform_tags': 'dict(str, str)',
             'ingress_security_rules': 'list[IngressSecurityRule]'
         }
-
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
@@ -56,7 +55,6 @@ class UpdateSecurityListDetails(object):
             'freeform_tags': 'freeformTags',
             'ingress_security_rules': 'ingressSecurityRules'
         }
-
         self._defined_tags = None
         self._display_name = None
         self._egress_security_rules = None

@@ -37,11 +37,9 @@ class PurgeWebAppAccelerationCacheDetails(object):
         self.swagger_types = {
             'purge_type': 'str'
         }
-
         self.attribute_map = {
             'purge_type': 'purgeType'
         }
-
         self._purge_type = None
 
     @staticmethod

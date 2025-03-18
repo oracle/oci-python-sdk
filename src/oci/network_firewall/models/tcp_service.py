@@ -45,14 +45,12 @@ class TcpService(Service):
             'parent_resource_id': 'str',
             'port_ranges': 'list[PortRange]'
         }
-
         self.attribute_map = {
             'type': 'type',
             'name': 'name',
             'parent_resource_id': 'parentResourceId',
             'port_ranges': 'portRanges'
         }
-
         self._type = None
         self._name = None
         self._parent_resource_id = None

@@ -117,7 +117,6 @@ class CreateTaskValidationDetails(object):
             'config_provider_delegate': 'ConfigProvider',
             'metadata': 'ObjectMetadata'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -135,7 +134,6 @@ class CreateTaskValidationDetails(object):
             'config_provider_delegate': 'configProviderDelegate',
             'metadata': 'metadata'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

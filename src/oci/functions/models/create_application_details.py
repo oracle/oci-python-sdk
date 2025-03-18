@@ -91,7 +91,6 @@ class CreateApplicationDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'image_policy_config': 'ImagePolicyConfig'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
@@ -105,7 +104,6 @@ class CreateApplicationDetails(object):
             'defined_tags': 'definedTags',
             'image_policy_config': 'imagePolicyConfig'
         }
-
         self._compartment_id = None
         self._display_name = None
         self._config = None

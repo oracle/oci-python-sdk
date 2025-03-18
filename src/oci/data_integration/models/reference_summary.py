@@ -135,7 +135,6 @@ class ReferenceSummary(object):
             'used_by': 'list[ReferenceUsedBy]',
             'child_references': 'list[ChildReference]'
         }
-
         self.attribute_map = {
             'key': 'key',
             'name': 'name',
@@ -148,7 +147,6 @@ class ReferenceSummary(object):
             'used_by': 'usedBy',
             'child_references': 'childReferences'
         }
-
         self._key = None
         self._name = None
         self._identifier = None

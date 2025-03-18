@@ -43,14 +43,12 @@ class EnrichedEntity(object):
             'model_type': 'str',
             'parent_ref': 'ParentReference'
         }
-
         self.attribute_map = {
             'entity': 'entity',
             'data_format': 'dataFormat',
             'model_type': 'modelType',
             'parent_ref': 'parentRef'
         }
-
         self._entity = None
         self._data_format = None
         self._model_type = None

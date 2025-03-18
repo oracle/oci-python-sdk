@@ -53,7 +53,6 @@ class UpdateVnicDetails(object):
             'nsg_ids': 'list[str]',
             'skip_source_dest_check': 'bool'
         }
-
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
@@ -62,7 +61,6 @@ class UpdateVnicDetails(object):
             'nsg_ids': 'nsgIds',
             'skip_source_dest_check': 'skipSourceDestCheck'
         }
-
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None

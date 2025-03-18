@@ -330,7 +330,6 @@ class MyAuthenticationFactorValidator(object):
             'third_party_factor': 'MyAuthenticationFactorValidatorThirdPartyFactor',
             'additional_attributes': 'list[MyAuthenticationFactorValidatorAdditionalAttributes]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -372,7 +371,6 @@ class MyAuthenticationFactorValidator(object):
             'third_party_factor': 'thirdPartyFactor',
             'additional_attributes': 'additionalAttributes'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

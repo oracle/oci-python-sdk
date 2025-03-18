@@ -38,13 +38,11 @@ class InstanceConfigurationAttachVnicDetails(object):
             'display_name': 'str',
             'nic_index': 'int'
         }
-
         self.attribute_map = {
             'create_vnic_details': 'createVnicDetails',
             'display_name': 'displayName',
             'nic_index': 'nicIndex'
         }
-
         self._create_vnic_details = None
         self._display_name = None
         self._nic_index = None

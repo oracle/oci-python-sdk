@@ -205,7 +205,6 @@ class Grant(object):
             'app': 'GrantApp',
             'entitlement': 'GrantEntitlement'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -230,7 +229,6 @@ class Grant(object):
             'app': 'app',
             'entitlement': 'entitlement'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

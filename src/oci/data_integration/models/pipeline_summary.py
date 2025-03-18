@@ -93,7 +93,6 @@ class PipelineSummary(object):
             'variables': 'list[Variable]',
             'metadata': 'ObjectMetadata'
         }
-
         self.attribute_map = {
             'key': 'key',
             'model_version': 'modelVersion',
@@ -110,7 +109,6 @@ class PipelineSummary(object):
             'variables': 'variables',
             'metadata': 'metadata'
         }
-
         self._key = None
         self._model_version = None
         self._parent_ref = None

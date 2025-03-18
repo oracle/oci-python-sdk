@@ -28,11 +28,9 @@ class LogSavedSearchSummaryCollection(object):
         self.swagger_types = {
             'items': 'list[LogSavedSearchSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

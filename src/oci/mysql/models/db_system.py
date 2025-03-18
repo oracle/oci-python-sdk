@@ -298,7 +298,6 @@ class DbSystem(object):
             'customer_contacts': 'list[CustomerContact]',
             'read_endpoint': 'ReadEndpointDetails'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -342,7 +341,6 @@ class DbSystem(object):
             'customer_contacts': 'customerContacts',
             'read_endpoint': 'readEndpoint'
         }
-
         self._id = None
         self._display_name = None
         self._description = None

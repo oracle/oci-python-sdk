@@ -33,12 +33,10 @@ class MerchantDefinedData(object):
             'promo_type': 'str',
             'cloud_account_name': 'str'
         }
-
         self.attribute_map = {
             'promo_type': 'promoType',
             'cloud_account_name': 'cloudAccountName'
         }
-
         self._promo_type = None
         self._cloud_account_name = None
 

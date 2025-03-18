@@ -28,11 +28,9 @@ class EnterpriseManagerBridges(object):
         self.swagger_types = {
             'enterprise_manager_bridges': 'object'
         }
-
         self.attribute_map = {
             'enterprise_manager_bridges': 'enterpriseManagerBridges'
         }
-
         self._enterprise_manager_bridges = None
 
     @property

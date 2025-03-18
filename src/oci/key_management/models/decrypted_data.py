@@ -62,7 +62,6 @@ class DecryptedData(object):
             'key_version_id': 'str',
             'encryption_algorithm': 'str'
         }
-
         self.attribute_map = {
             'plaintext': 'plaintext',
             'plaintext_checksum': 'plaintextChecksum',
@@ -70,7 +69,6 @@ class DecryptedData(object):
             'key_version_id': 'keyVersionId',
             'encryption_algorithm': 'encryptionAlgorithm'
         }
-
         self._plaintext = None
         self._plaintext_checksum = None
         self._key_id = None

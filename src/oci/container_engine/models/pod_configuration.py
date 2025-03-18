@@ -38,13 +38,11 @@ class PodConfiguration(object):
             'nsg_ids': 'list[str]',
             'shape': 'str'
         }
-
         self.attribute_map = {
             'subnet_id': 'subnetId',
             'nsg_ids': 'nsgIds',
             'shape': 'shape'
         }
-
         self._subnet_id = None
         self._nsg_ids = None
         self._shape = None

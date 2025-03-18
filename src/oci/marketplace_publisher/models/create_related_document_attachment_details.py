@@ -59,7 +59,6 @@ class CreateRelatedDocumentAttachmentDetails(CreateListingRevisionAttachmentDeta
             'defined_tags': 'dict(str, dict(str, object))',
             'document_category': 'str'
         }
-
         self.attribute_map = {
             'listing_revision_id': 'listingRevisionId',
             'display_name': 'displayName',
@@ -69,7 +68,6 @@ class CreateRelatedDocumentAttachmentDetails(CreateListingRevisionAttachmentDeta
             'defined_tags': 'definedTags',
             'document_category': 'documentCategory'
         }
-
         self._listing_revision_id = None
         self._display_name = None
         self._description = None

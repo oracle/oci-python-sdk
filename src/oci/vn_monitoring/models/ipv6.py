@@ -99,7 +99,6 @@ class Ipv6(object):
             'time_created': 'datetime',
             'vnic_id': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
@@ -112,7 +111,6 @@ class Ipv6(object):
             'time_created': 'timeCreated',
             'vnic_id': 'vnicId'
         }
-
         self._compartment_id = None
         self._defined_tags = None
         self._display_name = None

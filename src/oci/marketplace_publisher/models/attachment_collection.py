@@ -28,11 +28,9 @@ class AttachmentCollection(object):
         self.swagger_types = {
             'items': 'list[AttachmentSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

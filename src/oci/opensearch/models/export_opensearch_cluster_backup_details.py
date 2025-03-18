@@ -68,7 +68,6 @@ class ExportOpensearchClusterBackupDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'object_storage_namespace': 'objectStorageNamespace',
@@ -80,7 +79,6 @@ class ExportOpensearchClusterBackupDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._compartment_id = None
         self._object_storage_namespace = None
         self._object_storage_bucket_name = None

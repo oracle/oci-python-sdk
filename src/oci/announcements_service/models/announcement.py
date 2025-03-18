@@ -149,7 +149,6 @@ class Announcement(BaseAnnouncement):
             'additional_information': 'str',
             'affected_resources': 'list[AffectedResource]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'type': 'type',
@@ -175,7 +174,6 @@ class Announcement(BaseAnnouncement):
             'additional_information': 'additionalInformation',
             'affected_resources': 'affectedResources'
         }
-
         self._id = None
         self._type = None
         self._reference_ticket_number = None

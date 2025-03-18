@@ -33,12 +33,10 @@ class TextSpan(object):
             'offset': 'float',
             'length': 'float'
         }
-
         self.attribute_map = {
             'offset': 'offset',
             'length': 'length'
         }
-
         self._offset = None
         self._length = None
 

@@ -40,13 +40,11 @@ class CreatePrivateApplicationStackPackage(CreatePrivateApplicationPackage):
             'version': 'str',
             'zip_file_base64_encoded': 'str'
         }
-
         self.attribute_map = {
             'package_type': 'packageType',
             'version': 'version',
             'zip_file_base64_encoded': 'zipFileBase64Encoded'
         }
-
         self._package_type = None
         self._version = None
         self._zip_file_base64_encoded = None

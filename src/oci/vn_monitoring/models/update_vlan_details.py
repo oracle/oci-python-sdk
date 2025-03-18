@@ -53,7 +53,6 @@ class UpdateVlanDetails(object):
             'route_table_id': 'str',
             'cidr_block': 'str'
         }
-
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
@@ -62,7 +61,6 @@ class UpdateVlanDetails(object):
             'route_table_id': 'routeTableId',
             'cidr_block': 'cidrBlock'
         }
-
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None

@@ -33,12 +33,10 @@ class AddmTasksCollection(object):
             'items': 'list[AddmTaskSummary]',
             'managed_database_id': 'str'
         }
-
         self.attribute_map = {
             'items': 'items',
             'managed_database_id': 'managedDatabaseId'
         }
-
         self._items = None
         self._managed_database_id = None
 

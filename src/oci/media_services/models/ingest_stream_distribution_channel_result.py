@@ -28,11 +28,9 @@ class IngestStreamDistributionChannelResult(object):
         self.swagger_types = {
             'media_workflow_job_id': 'str'
         }
-
         self.attribute_map = {
             'media_workflow_job_id': 'mediaWorkflowJobId'
         }
-
         self._media_workflow_job_id = None
 
     @property

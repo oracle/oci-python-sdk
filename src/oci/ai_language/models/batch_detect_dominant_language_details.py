@@ -53,7 +53,6 @@ class BatchDetectDominantLanguageDetails(object):
             'compartment_id': 'str',
             'documents': 'list[DominantLanguageDocument]'
         }
-
         self.attribute_map = {
             'alias': 'alias',
             'should_ignore_transliteration': 'shouldIgnoreTransliteration',
@@ -62,7 +61,6 @@ class BatchDetectDominantLanguageDetails(object):
             'compartment_id': 'compartmentId',
             'documents': 'documents'
         }
-
         self._alias = None
         self._should_ignore_transliteration = None
         self._chars_to_consider = None

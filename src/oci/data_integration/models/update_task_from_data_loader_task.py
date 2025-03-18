@@ -125,7 +125,6 @@ class UpdateTaskFromDataLoaderTask(UpdateTaskDetails):
             'is_single_load': 'bool',
             'parallel_load_limit': 'int'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -148,7 +147,6 @@ class UpdateTaskFromDataLoaderTask(UpdateTaskDetails):
             'is_single_load': 'isSingleLoad',
             'parallel_load_limit': 'parallelLoadLimit'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

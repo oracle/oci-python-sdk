@@ -63,7 +63,6 @@ class TopProcessesUsageTrend(object):
             'physical_memory_in_mbs': 'float',
             'max_process_count': 'int'
         }
-
         self.attribute_map = {
             'end_timestamp': 'endTimestamp',
             'container_id': 'containerId',
@@ -74,7 +73,6 @@ class TopProcessesUsageTrend(object):
             'physical_memory_in_mbs': 'physicalMemoryInMBs',
             'max_process_count': 'maxProcessCount'
         }
-
         self._end_timestamp = None
         self._container_id = None
         self._cpu_usage = None

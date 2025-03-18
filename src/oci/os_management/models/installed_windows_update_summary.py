@@ -56,13 +56,11 @@ class InstalledWindowsUpdateSummary(object):
             'name': 'str',
             'update_type': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'name': 'name',
             'update_type': 'updateType'
         }
-
         self._display_name = None
         self._name = None
         self._update_type = None

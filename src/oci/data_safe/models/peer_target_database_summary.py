@@ -102,7 +102,6 @@ class PeerTargetDatabaseSummary(object):
             'lifecycle_state': 'str',
             'lifecycle_details': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
@@ -114,7 +113,6 @@ class PeerTargetDatabaseSummary(object):
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails'
         }
-
         self._display_name = None
         self._description = None
         self._key = None

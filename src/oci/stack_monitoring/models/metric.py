@@ -91,7 +91,6 @@ class Metric(object):
             'metric_category': 'str',
             'unit': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'display_name': 'displayName',
@@ -102,7 +101,6 @@ class Metric(object):
             'metric_category': 'metricCategory',
             'unit': 'unit'
         }
-
         self._name = None
         self._display_name = None
         self._is_dimension = None

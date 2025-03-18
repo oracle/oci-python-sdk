@@ -48,7 +48,6 @@ class UpdateModelConfigurationDetails(object):
             'bandwidth_mbps': 'int',
             'maximum_bandwidth_mbps': 'int'
         }
-
         self.attribute_map = {
             'model_id': 'modelId',
             'instance_configuration': 'instanceConfiguration',
@@ -56,7 +55,6 @@ class UpdateModelConfigurationDetails(object):
             'bandwidth_mbps': 'bandwidthMbps',
             'maximum_bandwidth_mbps': 'maximumBandwidthMbps'
         }
-
         self._model_id = None
         self._instance_configuration = None
         self._scaling_policy = None

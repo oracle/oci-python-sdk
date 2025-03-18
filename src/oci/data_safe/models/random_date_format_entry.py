@@ -49,14 +49,12 @@ class RandomDateFormatEntry(FormatEntry):
             'start_date': 'datetime',
             'end_date': 'datetime'
         }
-
         self.attribute_map = {
             'type': 'type',
             'description': 'description',
             'start_date': 'startDate',
             'end_date': 'endDate'
         }
-
         self._type = None
         self._description = None
         self._start_date = None

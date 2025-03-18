@@ -56,13 +56,11 @@ class RetentionSetting(object):
             'delete_after_days': 'int',
             'customer_notification_type': 'str'
         }
-
         self.attribute_map = {
             'archive_after_days': 'archiveAfterDays',
             'delete_after_days': 'deleteAfterDays',
             'customer_notification_type': 'customerNotificationType'
         }
-
         self._archive_after_days = None
         self._delete_after_days = None
         self._customer_notification_type = None

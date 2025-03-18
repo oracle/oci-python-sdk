@@ -163,7 +163,6 @@ class FetchSqlTuningSetDetails(object):
             'ranking_measure2': 'str',
             'ranking_measure3': 'str'
         }
-
         self.attribute_map = {
             'credential_details': 'credentialDetails',
             'database_credential': 'databaseCredential',
@@ -177,7 +176,6 @@ class FetchSqlTuningSetDetails(object):
             'ranking_measure2': 'rankingMeasure2',
             'ranking_measure3': 'rankingMeasure3'
         }
-
         self._credential_details = None
         self._database_credential = None
         self._owner = None

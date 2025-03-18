@@ -45,14 +45,12 @@ class EnumIntegerImageCapabilityDescriptor(ImageCapabilitySchemaDescriptor):
             'values': 'list[int]',
             'default_value': 'int'
         }
-
         self.attribute_map = {
             'descriptor_type': 'descriptorType',
             'source': 'source',
             'values': 'values',
             'default_value': 'defaultValue'
         }
-
         self._descriptor_type = None
         self._source = None
         self._values = None

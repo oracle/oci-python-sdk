@@ -28,11 +28,9 @@ class LogAnalyticsLabelOperatorCollection(object):
         self.swagger_types = {
             'items': 'list[LogAnalyticsLabelOperator]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

@@ -106,7 +106,6 @@ class Split(Operator):
             'op_config_values': 'ConfigValues',
             'data_routing_strategy': 'str'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -123,7 +122,6 @@ class Split(Operator):
             'op_config_values': 'opConfigValues',
             'data_routing_strategy': 'dataRoutingStrategy'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

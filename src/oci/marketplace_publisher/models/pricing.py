@@ -44,13 +44,11 @@ class Pricing(object):
             'total_amount': 'int',
             'billing_cycle': 'str'
         }
-
         self.attribute_map = {
             'currency_type': 'currencyType',
             'total_amount': 'totalAmount',
             'billing_cycle': 'billingCycle'
         }
-
         self._currency_type = None
         self._total_amount = None
         self._billing_cycle = None

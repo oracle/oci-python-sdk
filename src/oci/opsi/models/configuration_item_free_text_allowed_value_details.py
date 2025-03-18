@@ -30,11 +30,9 @@ class ConfigurationItemFreeTextAllowedValueDetails(ConfigurationItemAllowedValue
         self.swagger_types = {
             'allowed_value_type': 'str'
         }
-
         self.attribute_map = {
             'allowed_value_type': 'allowedValueType'
         }
-
         self._allowed_value_type = None
         self._allowed_value_type = 'FREE_TEXT'
 

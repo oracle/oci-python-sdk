@@ -68,7 +68,6 @@ class AwrSourceSummary(object):
             'time_last_snapshot_generated': 'datetime',
             'hours_since_last_import': 'float'
         }
-
         self.attribute_map = {
             'awr_hub_id': 'awrHubId',
             'name': 'name',
@@ -80,7 +79,6 @@ class AwrSourceSummary(object):
             'time_last_snapshot_generated': 'timeLastSnapshotGenerated',
             'hours_since_last_import': 'hoursSinceLastImport'
         }
-
         self._awr_hub_id = None
         self._name = None
         self._awr_source_database_id = None

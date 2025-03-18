@@ -33,12 +33,10 @@ class RebootManagedInstanceGroupDetails(object):
             'reboot_timeout_in_mins': 'int',
             'work_request_details': 'WorkRequestDetails'
         }
-
         self.attribute_map = {
             'reboot_timeout_in_mins': 'rebootTimeoutInMins',
             'work_request_details': 'workRequestDetails'
         }
-
         self._reboot_timeout_in_mins = None
         self._work_request_details = None
 

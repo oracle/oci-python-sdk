@@ -88,7 +88,6 @@ class UserDefinedFunctionDetails(object):
             'object_status': 'int',
             'registry_metadata': 'RegistryMetadata'
         }
-
         self.attribute_map = {
             'key': 'key',
             'model_type': 'modelType',
@@ -103,7 +102,6 @@ class UserDefinedFunctionDetails(object):
             'object_status': 'objectStatus',
             'registry_metadata': 'registryMetadata'
         }
-
         self._key = None
         self._model_type = None
         self._model_version = None

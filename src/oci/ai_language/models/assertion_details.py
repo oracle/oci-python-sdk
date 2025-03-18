@@ -43,14 +43,12 @@ class AssertionDetails(object):
             'value': 'str',
             'score': 'float'
         }
-
         self.attribute_map = {
             'id': 'id',
             'type': 'type',
             'value': 'value',
             'score': 'score'
         }
-
         self._id = None
         self._type = None
         self._value = None

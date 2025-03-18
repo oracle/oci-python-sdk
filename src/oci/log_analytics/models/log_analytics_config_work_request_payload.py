@@ -43,14 +43,12 @@ class LogAnalyticsConfigWorkRequestPayload(object):
             'lookup_reference': 'int',
             'lookup_reference_string': 'str'
         }
-
         self.attribute_map = {
             'source_name': 'sourceName',
             'entity_id': 'entityId',
             'lookup_reference': 'lookupReference',
             'lookup_reference_string': 'lookupReferenceString'
         }
-
         self._source_name = None
         self._entity_id = None
         self._lookup_reference = None

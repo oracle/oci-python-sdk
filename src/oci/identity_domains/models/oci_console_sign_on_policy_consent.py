@@ -157,7 +157,6 @@ class OciConsoleSignOnPolicyConsent(object):
             'time_consent_signed': 'str',
             'notification_recipients': 'list[str]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -182,7 +181,6 @@ class OciConsoleSignOnPolicyConsent(object):
             'time_consent_signed': 'timeConsentSigned',
             'notification_recipients': 'notificationRecipients'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

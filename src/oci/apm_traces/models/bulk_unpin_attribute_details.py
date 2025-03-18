@@ -28,11 +28,9 @@ class BulkUnpinAttributeDetails(object):
         self.swagger_types = {
             'attribute_details': 'list[BulkUnpinAttributeDetail]'
         }
-
         self.attribute_map = {
             'attribute_details': 'attributeDetails'
         }
-
         self._attribute_details = None
 
     @property

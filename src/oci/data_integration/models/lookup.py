@@ -133,7 +133,6 @@ class Lookup(Operator):
             'multi_match_strategy': 'str',
             'null_fill_values': 'dict(str, object)'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -153,7 +152,6 @@ class Lookup(Operator):
             'multi_match_strategy': 'multiMatchStrategy',
             'null_fill_values': 'nullFillValues'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

@@ -43,11 +43,9 @@ class ArtifactDetails(object):
         self.swagger_types = {
             'category': 'str'
         }
-
         self.attribute_map = {
             'category': 'category'
         }
-
         self._category = None
 
     @staticmethod

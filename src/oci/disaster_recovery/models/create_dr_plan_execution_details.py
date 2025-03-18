@@ -48,7 +48,6 @@ class CreateDrPlanExecutionDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'plan_id': 'planId',
@@ -56,7 +55,6 @@ class CreateDrPlanExecutionDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._display_name = None
         self._plan_id = None
         self._execution_options = None

@@ -373,7 +373,6 @@ class CloudVmCluster(object):
             'vm_cluster_type': 'str',
             'compute_model': 'str'
         }
-
         self.attribute_map = {
             'iorm_config_cache': 'iormConfigCache',
             'id': 'id',
@@ -432,7 +431,6 @@ class CloudVmCluster(object):
             'vm_cluster_type': 'vmClusterType',
             'compute_model': 'computeModel'
         }
-
         self._iorm_config_cache = None
         self._id = None
         self._compartment_id = None

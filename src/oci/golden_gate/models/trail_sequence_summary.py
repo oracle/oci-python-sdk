@@ -43,14 +43,12 @@ class TrailSequenceSummary(object):
             'size_in_bytes': 'int',
             'time_last_updated': 'datetime'
         }
-
         self.attribute_map = {
             'sequence_id': 'sequenceId',
             'display_name': 'displayName',
             'size_in_bytes': 'sizeInBytes',
             'time_last_updated': 'timeLastUpdated'
         }
-
         self._sequence_id = None
         self._display_name = None
         self._size_in_bytes = None

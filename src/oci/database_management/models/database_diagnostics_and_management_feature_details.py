@@ -59,7 +59,6 @@ class DatabaseDiagnosticsAndManagementFeatureDetails(DatabaseFeatureDetails):
             'management_type': 'str',
             'is_auto_enable_pluggable_database': 'bool'
         }
-
         self.attribute_map = {
             'feature': 'feature',
             'database_connection_details': 'databaseConnectionDetails',
@@ -67,7 +66,6 @@ class DatabaseDiagnosticsAndManagementFeatureDetails(DatabaseFeatureDetails):
             'management_type': 'managementType',
             'is_auto_enable_pluggable_database': 'isAutoEnablePluggableDatabase'
         }
-
         self._feature = None
         self._database_connection_details = None
         self._connector_details = None

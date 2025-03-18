@@ -33,12 +33,10 @@ class FailedMetricRecord(object):
             'message': 'str',
             'metric_data': 'MetricDataDetails'
         }
-
         self.attribute_map = {
             'message': 'message',
             'metric_data': 'metricData'
         }
-
         self._message = None
         self._metric_data = None
 

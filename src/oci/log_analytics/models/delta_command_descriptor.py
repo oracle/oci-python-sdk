@@ -65,7 +65,6 @@ class DeltaCommandDescriptor(AbstractCommandDescriptor):
             'is_hidden': 'bool',
             'step': 'int'
         }
-
         self.attribute_map = {
             'name': 'name',
             'display_query_string': 'displayQueryString',
@@ -76,7 +75,6 @@ class DeltaCommandDescriptor(AbstractCommandDescriptor):
             'is_hidden': 'isHidden',
             'step': 'step'
         }
-
         self._name = None
         self._display_query_string = None
         self._internal_query_string = None

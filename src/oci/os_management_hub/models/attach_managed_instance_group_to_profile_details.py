@@ -28,11 +28,9 @@ class AttachManagedInstanceGroupToProfileDetails(object):
         self.swagger_types = {
             'managed_instance_group_id': 'str'
         }
-
         self.attribute_map = {
             'managed_instance_group_id': 'managedInstanceGroupId'
         }
-
         self._managed_instance_group_id = None
 
     @property

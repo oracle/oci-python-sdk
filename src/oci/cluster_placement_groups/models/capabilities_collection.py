@@ -28,11 +28,9 @@ class CapabilitiesCollection(object):
         self.swagger_types = {
             'items': 'list[CapabilityDetails]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

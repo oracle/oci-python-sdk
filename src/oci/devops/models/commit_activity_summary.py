@@ -60,7 +60,6 @@ class CommitActivitySummary(PullRequestActivitySummary):
             'commits_added': 'list[RepositoryCommit]',
             'commits_removed': 'list[RepositoryCommit]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'principal': 'principal',
@@ -70,7 +69,6 @@ class CommitActivitySummary(PullRequestActivitySummary):
             'commits_added': 'commitsAdded',
             'commits_removed': 'commitsRemoved'
         }
-
         self._id = None
         self._principal = None
         self._pull_request_id = None

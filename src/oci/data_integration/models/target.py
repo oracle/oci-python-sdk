@@ -177,7 +177,6 @@ class Target(Operator):
             'write_operation_config': 'WriteOperationConfig',
             'load_order': 'int'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -205,7 +204,6 @@ class Target(Operator):
             'write_operation_config': 'writeOperationConfig',
             'load_order': 'loadOrder'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

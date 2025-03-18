@@ -43,14 +43,12 @@ class RepositoryAuthorSummary(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'author_name': 'authorName',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._author_name = None
         self._freeform_tags = None
         self._defined_tags = None

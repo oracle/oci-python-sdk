@@ -35,12 +35,10 @@ class ObjectListFileInputLocation(InputLocation):
             'location_type': 'str',
             'object_location': 'ObjectLocation'
         }
-
         self.attribute_map = {
             'location_type': 'locationType',
             'object_location': 'objectLocation'
         }
-
         self._location_type = None
         self._object_location = None
         self._location_type = 'OBJECT_LIST_FILE_INPUT_LOCATION'

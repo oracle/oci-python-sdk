@@ -62,7 +62,6 @@ class UpdateIpv6Details(object):
             'route_table_id': 'str',
             'lifetime': 'str'
         }
-
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
@@ -71,7 +70,6 @@ class UpdateIpv6Details(object):
             'route_table_id': 'routeTableId',
             'lifetime': 'lifetime'
         }
-
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None

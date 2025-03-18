@@ -42,12 +42,10 @@ class RestartDbInstanceInDbSystemDetails(object):
             'db_instance_id': 'str',
             'restart_type': 'str'
         }
-
         self.attribute_map = {
             'db_instance_id': 'dbInstanceId',
             'restart_type': 'restartType'
         }
-
         self._db_instance_id = None
         self._restart_type = None
 

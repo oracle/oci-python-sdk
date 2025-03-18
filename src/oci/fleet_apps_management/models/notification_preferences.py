@@ -38,13 +38,11 @@ class NotificationPreferences(object):
             'compartment_id': 'str',
             'preferences': 'Preferences'
         }
-
         self.attribute_map = {
             'topic_id': 'topicId',
             'compartment_id': 'compartmentId',
             'preferences': 'preferences'
         }
-
         self._topic_id = None
         self._compartment_id = None
         self._preferences = None

@@ -76,7 +76,6 @@ class HttpUpdateQueryProperties(MetricExtensionUpdateQueryProperties):
             'protocol_type': 'str',
             'script_details': 'UpdateHttpScriptFileDetails'
         }
-
         self.attribute_map = {
             'collection_method': 'collectionMethod',
             'url': 'url',
@@ -84,7 +83,6 @@ class HttpUpdateQueryProperties(MetricExtensionUpdateQueryProperties):
             'protocol_type': 'protocolType',
             'script_details': 'scriptDetails'
         }
-
         self._collection_method = None
         self._url = None
         self._response_content_type = None

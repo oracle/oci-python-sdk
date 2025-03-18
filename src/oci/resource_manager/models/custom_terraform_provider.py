@@ -45,13 +45,11 @@ class CustomTerraformProvider(object):
             'namespace': 'str',
             'bucket_name': 'str'
         }
-
         self.attribute_map = {
             'region': 'region',
             'namespace': 'namespace',
             'bucket_name': 'bucketName'
         }
-
         self._region = None
         self._namespace = None
         self._bucket_name = None

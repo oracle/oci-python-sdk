@@ -33,12 +33,10 @@ class ManagedInstanceGroupInstalledPackageSummary(object):
             'name': 'str',
             'architecture': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'architecture': 'architecture'
         }
-
         self._name = None
         self._architecture = None
 

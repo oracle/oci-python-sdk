@@ -93,7 +93,6 @@ class CreateCloudExadataInfrastructureDetails(object):
             'database_server_type': 'str',
             'storage_server_type': 'str'
         }
-
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'compartment_id': 'compartmentId',
@@ -110,7 +109,6 @@ class CreateCloudExadataInfrastructureDetails(object):
             'database_server_type': 'databaseServerType',
             'storage_server_type': 'storageServerType'
         }
-
         self._availability_domain = None
         self._compartment_id = None
         self._display_name = None

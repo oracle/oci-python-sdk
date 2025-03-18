@@ -33,12 +33,10 @@ class ChangeShapeDetails(object):
             'cluster_admin_password': 'str',
             'nodes': 'ChangeShapeNodes'
         }
-
         self.attribute_map = {
             'cluster_admin_password': 'clusterAdminPassword',
             'nodes': 'nodes'
         }
-
         self._cluster_admin_password = None
         self._nodes = None
 

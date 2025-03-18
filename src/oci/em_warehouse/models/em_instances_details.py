@@ -43,14 +43,12 @@ class EmInstancesDetails(object):
             'em_host': 'str',
             'em_discoverer_url': 'str'
         }
-
         self.attribute_map = {
             'em_id': 'emId',
             'targets_count': 'targetsCount',
             'em_host': 'emHost',
             'em_discoverer_url': 'emDiscovererUrl'
         }
-
         self._em_id = None
         self._targets_count = None
         self._em_host = None

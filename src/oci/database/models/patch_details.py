@@ -49,13 +49,11 @@ class PatchDetails(object):
             'database_software_image_id': 'str',
             'action': 'str'
         }
-
         self.attribute_map = {
             'patch_id': 'patchId',
             'database_software_image_id': 'databaseSoftwareImageId',
             'action': 'action'
         }
-
         self._patch_id = None
         self._database_software_image_id = None
         self._action = None

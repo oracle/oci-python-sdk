@@ -47,14 +47,12 @@ class JfrAttachmentTarget(object):
             'application_installation_key': 'str',
             'jre_key': 'str'
         }
-
         self.attribute_map = {
             'managed_instance_id': 'managedInstanceId',
             'application_key': 'applicationKey',
             'application_installation_key': 'applicationInstallationKey',
             'jre_key': 'jreKey'
         }
-
         self._managed_instance_id = None
         self._application_key = None
         self._application_installation_key = None

@@ -69,7 +69,6 @@ class CreateQuotaRuleDetails(object):
             'display_name': 'str',
             'quota_limit_in_gigabytes': 'int'
         }
-
         self.attribute_map = {
             'principal_type': 'principalType',
             'principal_id': 'principalId',
@@ -77,7 +76,6 @@ class CreateQuotaRuleDetails(object):
             'display_name': 'displayName',
             'quota_limit_in_gigabytes': 'quotaLimitInGigabytes'
         }
-
         self._principal_type = None
         self._principal_id = None
         self._is_hard_quota = None

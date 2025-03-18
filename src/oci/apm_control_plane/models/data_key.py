@@ -47,13 +47,11 @@ class DataKey(object):
             'name': 'str',
             'type': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'name': 'name',
             'type': 'type'
         }
-
         self._value = None
         self._name = None
         self._type = None

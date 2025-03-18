@@ -120,7 +120,6 @@ class DataAssetFromObjectStorageDetails(DataAsset):
             'namespace': 'str',
             'default_connection': 'ConnectionFromObjectStorageDetails'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -142,7 +141,6 @@ class DataAssetFromObjectStorageDetails(DataAsset):
             'namespace': 'namespace',
             'default_connection': 'defaultConnection'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

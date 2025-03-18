@@ -127,7 +127,6 @@ class CreateProtectedDatabaseDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'db_unique_name': 'dbUniqueName',
@@ -145,7 +144,6 @@ class CreateProtectedDatabaseDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._display_name = None
         self._db_unique_name = None
         self._database_size = None

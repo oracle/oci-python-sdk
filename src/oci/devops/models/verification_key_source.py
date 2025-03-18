@@ -48,11 +48,9 @@ class VerificationKeySource(object):
         self.swagger_types = {
             'verification_key_source_type': 'str'
         }
-
         self.attribute_map = {
             'verification_key_source_type': 'verificationKeySourceType'
         }
-
         self._verification_key_source_type = None
 
     @staticmethod

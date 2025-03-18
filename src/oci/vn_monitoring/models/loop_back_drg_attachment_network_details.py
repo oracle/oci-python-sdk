@@ -40,13 +40,11 @@ class LoopBackDrgAttachmentNetworkDetails(DrgAttachmentNetworkDetails):
             'id': 'str',
             'ids': 'list[str]'
         }
-
         self.attribute_map = {
             'type': 'type',
             'id': 'id',
             'ids': 'ids'
         }
-
         self._type = None
         self._id = None
         self._ids = None

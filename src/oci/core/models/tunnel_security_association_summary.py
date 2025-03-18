@@ -74,7 +74,6 @@ class TunnelSecurityAssociationSummary(object):
             'tunnel_sa_error_info': 'str',
             'time': 'str'
         }
-
         self.attribute_map = {
             'cpe_subnet': 'cpeSubnet',
             'oracle_subnet': 'oracleSubnet',
@@ -82,7 +81,6 @@ class TunnelSecurityAssociationSummary(object):
             'tunnel_sa_error_info': 'tunnelSaErrorInfo',
             'time': 'time'
         }
-
         self._cpe_subnet = None
         self._oracle_subnet = None
         self._tunnel_sa_status = None

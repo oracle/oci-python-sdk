@@ -48,7 +48,6 @@ class CreateProcessorJobDetails(object):
             'display_name': 'str',
             'processor_config': 'ProcessorConfig'
         }
-
         self.attribute_map = {
             'input_location': 'inputLocation',
             'output_location': 'outputLocation',
@@ -56,7 +55,6 @@ class CreateProcessorJobDetails(object):
             'display_name': 'displayName',
             'processor_config': 'processorConfig'
         }
-
         self._input_location = None
         self._output_location = None
         self._compartment_id = None

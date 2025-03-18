@@ -142,7 +142,6 @@ class MyCustomerSecretKey(object):
             'access_key': 'str',
             'user': 'MyCustomerSecretKeyUser'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -164,7 +163,6 @@ class MyCustomerSecretKey(object):
             'access_key': 'accessKey',
             'user': 'user'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

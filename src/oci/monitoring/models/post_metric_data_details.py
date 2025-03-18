@@ -42,12 +42,10 @@ class PostMetricDataDetails(object):
             'metric_data': 'list[MetricDataDetails]',
             'batch_atomicity': 'str'
         }
-
         self.attribute_map = {
             'metric_data': 'metricData',
             'batch_atomicity': 'batchAtomicity'
         }
-
         self._metric_data = None
         self._batch_atomicity = None
 

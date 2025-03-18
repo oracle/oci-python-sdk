@@ -28,11 +28,9 @@ class ExtensionKerberosUserUser(object):
         self.swagger_types = {
             'realm_users': 'list[UserExtRealmUsers]'
         }
-
         self.attribute_map = {
             'realm_users': 'realmUsers'
         }
-
         self._realm_users = None
 
     @property

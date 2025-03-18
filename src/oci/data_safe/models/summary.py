@@ -53,7 +53,6 @@ class Summary(object):
             'count_of': 'str',
             'scim_filter': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'is_hidden': 'isHidden',
@@ -62,7 +61,6 @@ class Summary(object):
             'count_of': 'countOf',
             'scim_filter': 'scimFilter'
         }
-
         self._name = None
         self._is_hidden = None
         self._display_order = None

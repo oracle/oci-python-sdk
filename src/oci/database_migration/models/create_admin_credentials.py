@@ -33,12 +33,10 @@ class CreateAdminCredentials(object):
             'username': 'str',
             'password': 'str'
         }
-
         self.attribute_map = {
             'username': 'username',
             'password': 'password'
         }
-
         self._username = None
         self._password = None
 

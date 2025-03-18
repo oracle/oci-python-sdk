@@ -63,7 +63,6 @@ class MeName(object):
             'honorific_prefix': 'str',
             'honorific_suffix': 'str'
         }
-
         self.attribute_map = {
             'formatted': 'formatted',
             'family_name': 'familyName',
@@ -72,7 +71,6 @@ class MeName(object):
             'honorific_prefix': 'honorificPrefix',
             'honorific_suffix': 'honorificSuffix'
         }
-
         self._formatted = None
         self._family_name = None
         self._given_name = None

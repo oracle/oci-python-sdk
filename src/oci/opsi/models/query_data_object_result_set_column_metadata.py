@@ -56,13 +56,11 @@ class QueryDataObjectResultSetColumnMetadata(object):
             'data_type': 'str',
             'data_type_name': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'data_type': 'dataType',
             'data_type_name': 'dataTypeName'
         }
-
         self._name = None
         self._data_type = None
         self._data_type_name = None

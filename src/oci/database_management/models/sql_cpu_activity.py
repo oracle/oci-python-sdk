@@ -38,13 +38,11 @@ class SqlCpuActivity(object):
             'sql_id': 'str',
             'cpu_activity': 'float'
         }
-
         self.attribute_map = {
             'database_name': 'databaseName',
             'sql_id': 'sqlId',
             'cpu_activity': 'cpuActivity'
         }
-
         self._database_name = None
         self._sql_id = None
         self._cpu_activity = None

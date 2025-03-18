@@ -66,7 +66,6 @@ class ScheduleIntervalTrigger(ScheduleTrigger):
             'interval': 'int',
             'is_random_start_time': 'bool'
         }
-
         self.attribute_map = {
             'trigger_type': 'triggerType',
             'time_start': 'timeStart',
@@ -75,7 +74,6 @@ class ScheduleIntervalTrigger(ScheduleTrigger):
             'interval': 'interval',
             'is_random_start_time': 'isRandomStartTime'
         }
-
         self._trigger_type = None
         self._time_start = None
         self._time_end = None

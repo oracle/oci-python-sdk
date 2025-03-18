@@ -34,12 +34,10 @@ class OccHandoverResourceBlockDetailSummary(object):
             'occ_resource_handover_block_id': 'str',
             'details': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'occ_resource_handover_block_id': 'occResourceHandoverBlockId',
             'details': 'details'
         }
-
         self._occ_resource_handover_block_id = None
         self._details = None
 

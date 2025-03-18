@@ -33,12 +33,10 @@ class AttachSoftwareSourcesToManagedInstanceGroupDetails(object):
             'software_sources': 'list[str]',
             'work_request_details': 'WorkRequestDetails'
         }
-
         self.attribute_map = {
             'software_sources': 'softwareSources',
             'work_request_details': 'workRequestDetails'
         }
-
         self._software_sources = None
         self._work_request_details = None
 

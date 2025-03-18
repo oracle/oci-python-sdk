@@ -116,7 +116,6 @@ class UpdateGoldenGateConnectionDetails(UpdateConnectionDetails):
             'password_secret_id': 'str',
             'private_ip': 'str'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'display_name': 'displayName',
@@ -137,7 +136,6 @@ class UpdateGoldenGateConnectionDetails(UpdateConnectionDetails):
             'password_secret_id': 'passwordSecretId',
             'private_ip': 'privateIp'
         }
-
         self._connection_type = None
         self._display_name = None
         self._description = None

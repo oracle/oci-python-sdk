@@ -38,13 +38,11 @@ class UpdateComputeInstanceNonMovableBlockVolumeOperationDetails(object):
             'attachment_details': 'UpdateBlockVolumeAttachmentDetails',
             'mount_details': 'UpdateBlockVolumeMountDetails'
         }
-
         self.attribute_map = {
             'block_volume_id': 'blockVolumeId',
             'attachment_details': 'attachmentDetails',
             'mount_details': 'mountDetails'
         }
-
         self._block_volume_id = None
         self._attachment_details = None
         self._mount_details = None

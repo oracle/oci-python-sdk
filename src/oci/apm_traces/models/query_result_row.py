@@ -35,12 +35,10 @@ class QueryResultRow(object):
             'query_result_row_data': 'dict(str, object)',
             'query_result_row_metadata': 'dict(str, object)'
         }
-
         self.attribute_map = {
             'query_result_row_data': 'queryResultRowData',
             'query_result_row_metadata': 'queryResultRowMetadata'
         }
-
         self._query_result_row_data = None
         self._query_result_row_metadata = None
 

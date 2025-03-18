@@ -38,13 +38,11 @@ class ServiceDefinition(object):
             'display_name': 'str',
             'short_display_name': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'display_name': 'displayName',
             'short_display_name': 'shortDisplayName'
         }
-
         self._type = None
         self._display_name = None
         self._short_display_name = None

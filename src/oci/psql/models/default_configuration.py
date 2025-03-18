@@ -105,7 +105,6 @@ class DefaultConfiguration(object):
             'instance_memory_size_in_gbs': 'int',
             'configuration_details': 'DefaultConfigurationDetails'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -120,7 +119,6 @@ class DefaultConfiguration(object):
             'instance_memory_size_in_gbs': 'instanceMemorySizeInGBs',
             'configuration_details': 'configurationDetails'
         }
-
         self._id = None
         self._display_name = None
         self._description = None

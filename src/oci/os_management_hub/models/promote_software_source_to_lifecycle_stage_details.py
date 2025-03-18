@@ -28,11 +28,9 @@ class PromoteSoftwareSourceToLifecycleStageDetails(object):
         self.swagger_types = {
             'work_request_details': 'WorkRequestDetails'
         }
-
         self.attribute_map = {
             'work_request_details': 'workRequestDetails'
         }
-
         self._work_request_details = None
 
     @property

@@ -33,12 +33,10 @@ class DominantLanguageDocument(object):
             'key': 'str',
             'text': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'text': 'text'
         }
-
         self._key = None
         self._text = None
 

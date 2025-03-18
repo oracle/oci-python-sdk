@@ -73,7 +73,6 @@ class CreateOccAvailabilityCatalogDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'occ_customer_group_id': 'occCustomerGroupId',
             'namespace': 'namespace',
@@ -85,7 +84,6 @@ class CreateOccAvailabilityCatalogDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._occ_customer_group_id = None
         self._namespace = None
         self._compartment_id = None

@@ -33,12 +33,10 @@ class PatternCollection(object):
             'count': 'int',
             'items': 'list[PatternSummary]'
         }
-
         self.attribute_map = {
             'count': 'count',
             'items': 'items'
         }
-
         self._count = None
         self._items = None
 

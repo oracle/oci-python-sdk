@@ -37,11 +37,9 @@ class ReportDetails(object):
         self.swagger_types = {
             'report_type': 'str'
         }
-
         self.attribute_map = {
             'report_type': 'reportType'
         }
-
         self._report_type = None
 
     @staticmethod

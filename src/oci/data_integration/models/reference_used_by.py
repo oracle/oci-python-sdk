@@ -38,13 +38,11 @@ class ReferenceUsedBy(object):
             'name': 'str',
             'name_path': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'name': 'name',
             'name_path': 'namePath'
         }
-
         self._key = None
         self._name = None
         self._name_path = None

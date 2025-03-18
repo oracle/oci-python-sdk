@@ -80,7 +80,6 @@ class WorkRequestSummary(object):
             'percent_complete': 'int',
             'status': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -90,7 +89,6 @@ class WorkRequestSummary(object):
             'percent_complete': 'percentComplete',
             'status': 'status'
         }
-
         self._id = None
         self._compartment_id = None
         self._time_started = None

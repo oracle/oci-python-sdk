@@ -114,7 +114,6 @@ class AppExtensionOpcServiceApp(object):
             'next_synchronization_mode': 'str',
             'enabling_next_fed_sync_modes': 'bool'
         }
-
         self.attribute_map = {
             'service_instance_identifier': 'serviceInstanceIdentifier',
             'region': 'region',
@@ -124,7 +123,6 @@ class AppExtensionOpcServiceApp(object):
             'next_synchronization_mode': 'nextSynchronizationMode',
             'enabling_next_fed_sync_modes': 'enablingNextFedSyncModes'
         }
-
         self._service_instance_identifier = None
         self._region = None
         self._current_federation_mode = None

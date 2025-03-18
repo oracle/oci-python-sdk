@@ -38,13 +38,11 @@ class ConvertToRegularPluggableDatabaseDetails(object):
             'container_database_admin_password': 'str',
             'tde_wallet_password': 'str'
         }
-
         self.attribute_map = {
             'should_create_pdb_backup': 'shouldCreatePdbBackup',
             'container_database_admin_password': 'containerDatabaseAdminPassword',
             'tde_wallet_password': 'tdeWalletPassword'
         }
-
         self._should_create_pdb_backup = None
         self._container_database_admin_password = None
         self._tde_wallet_password = None

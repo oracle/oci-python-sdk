@@ -43,14 +43,12 @@ class VideoMetadata(object):
             'frame_width': 'int',
             'frame_height': 'int'
         }
-
         self.attribute_map = {
             'frame_count': 'frameCount',
             'frame_rate': 'frameRate',
             'frame_width': 'frameWidth',
             'frame_height': 'frameHeight'
         }
-
         self._frame_count = None
         self._frame_rate = None
         self._frame_width = None

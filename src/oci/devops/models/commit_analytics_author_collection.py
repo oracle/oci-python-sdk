@@ -28,11 +28,9 @@ class CommitAnalyticsAuthorCollection(object):
         self.swagger_types = {
             'items': 'list[CommitAnalyticsAuthorSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

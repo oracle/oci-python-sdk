@@ -65,7 +65,6 @@ class BulkApplyResourceAction(object):
             'parameters': 'dict(str, object)',
             'strategy_name': 'str'
         }
-
         self.attribute_map = {
             'resource_action_id': 'resourceActionId',
             'status': 'status',
@@ -73,7 +72,6 @@ class BulkApplyResourceAction(object):
             'parameters': 'parameters',
             'strategy_name': 'strategyName'
         }
-
         self._resource_action_id = None
         self._status = None
         self._time_status_end = None

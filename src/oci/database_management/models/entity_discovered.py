@@ -126,7 +126,6 @@ class EntityDiscovered(object):
             'discover_error_msg': 'str',
             'entity_type': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'agent_id': 'agentId',
@@ -140,7 +139,6 @@ class EntityDiscovered(object):
             'discover_error_msg': 'discoverErrorMsg',
             'entity_type': 'entityType'
         }
-
         self._id = None
         self._agent_id = None
         self._connector_id = None

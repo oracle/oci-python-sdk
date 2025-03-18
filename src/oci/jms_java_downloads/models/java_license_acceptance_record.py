@@ -137,7 +137,6 @@ class JavaLicenseAcceptanceRecord(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'id': 'id',
             'license_acceptance_status': 'licenseAcceptanceStatus',
@@ -152,7 +151,6 @@ class JavaLicenseAcceptanceRecord(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._id = None
         self._license_acceptance_status = None
         self._compartment_id = None

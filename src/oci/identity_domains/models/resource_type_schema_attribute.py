@@ -579,7 +579,6 @@ class ResourceTypeSchemaAttribute(object):
             'idcs_ref_resource_attribute': 'str',
             'idcs_attribute_cacheable': 'bool'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -652,7 +651,6 @@ class ResourceTypeSchemaAttribute(object):
             'idcs_ref_resource_attribute': 'idcsRefResourceAttribute',
             'idcs_attribute_cacheable': 'idcsAttributeCacheable'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

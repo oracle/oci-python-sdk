@@ -33,12 +33,10 @@ class MonthlyCostSummary(object):
             'amount': 'float',
             'currency_code': 'str'
         }
-
         self.attribute_map = {
             'amount': 'amount',
             'currency_code': 'currencyCode'
         }
-
         self._amount = None
         self._currency_code = None
 

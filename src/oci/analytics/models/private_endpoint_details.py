@@ -45,14 +45,12 @@ class PrivateEndpointDetails(NetworkEndpointDetails):
             'subnet_id': 'str',
             'network_security_group_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'network_endpoint_type': 'networkEndpointType',
             'vcn_id': 'vcnId',
             'subnet_id': 'subnetId',
             'network_security_group_ids': 'networkSecurityGroupIds'
         }
-
         self._network_endpoint_type = None
         self._vcn_id = None
         self._subnet_id = None

@@ -38,13 +38,11 @@ class UpdateProductLicenseDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'images': 'images',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._images = None
         self._freeform_tags = None
         self._defined_tags = None

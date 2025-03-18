@@ -58,13 +58,11 @@ class ScheduleTrigger(object):
             'time_start': 'datetime',
             'time_end': 'datetime'
         }
-
         self.attribute_map = {
             'trigger_type': 'triggerType',
             'time_start': 'timeStart',
             'time_end': 'timeEnd'
         }
-
         self._trigger_type = None
         self._time_start = None
         self._time_end = None

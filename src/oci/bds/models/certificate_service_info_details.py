@@ -28,11 +28,9 @@ class CertificateServiceInfoDetails(object):
         self.swagger_types = {
             'services': 'list[Service]'
         }
-
         self.attribute_map = {
             'services': 'services'
         }
-
         self._services = None
 
     @property

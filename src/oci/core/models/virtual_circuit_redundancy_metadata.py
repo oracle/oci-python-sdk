@@ -90,13 +90,11 @@ class VirtualCircuitRedundancyMetadata(object):
             'ipv4bgp_session_redundancy_status': 'str',
             'ipv6bgp_session_redundancy_status': 'str'
         }
-
         self.attribute_map = {
             'configured_redundancy_level': 'configuredRedundancyLevel',
             'ipv4bgp_session_redundancy_status': 'ipv4bgpSessionRedundancyStatus',
             'ipv6bgp_session_redundancy_status': 'ipv6bgpSessionRedundancyStatus'
         }
-
         self._configured_redundancy_level = None
         self._ipv4bgp_session_redundancy_status = None
         self._ipv6bgp_session_redundancy_status = None

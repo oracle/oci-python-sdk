@@ -118,7 +118,6 @@ class CreateApplicationDetails(object):
             'source_application_info': 'CreateSourceApplicationInfo',
             'registry_metadata': 'RegistryMetadata'
         }
-
         self.attribute_map = {
             'key': 'key',
             'model_version': 'modelVersion',
@@ -134,7 +133,6 @@ class CreateApplicationDetails(object):
             'source_application_info': 'sourceApplicationInfo',
             'registry_metadata': 'registryMetadata'
         }
-
         self._key = None
         self._model_version = None
         self._model_type = None

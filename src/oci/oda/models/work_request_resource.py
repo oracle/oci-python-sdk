@@ -161,7 +161,6 @@ class WorkRequestResource(object):
             'status_message': 'str',
             'resource_uri': 'str'
         }
-
         self.attribute_map = {
             'resource_action': 'resourceAction',
             'resource_type': 'resourceType',
@@ -170,7 +169,6 @@ class WorkRequestResource(object):
             'status_message': 'statusMessage',
             'resource_uri': 'resourceUri'
         }
-
         self._resource_action = None
         self._resource_type = None
         self._resource_id = None

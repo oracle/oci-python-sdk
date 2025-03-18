@@ -38,13 +38,11 @@ class TimeRange(object):
             'time_end': 'datetime',
             'time_zone': 'str'
         }
-
         self.attribute_map = {
             'time_start': 'timeStart',
             'time_end': 'timeEnd',
             'time_zone': 'timeZone'
         }
-
         self._time_start = None
         self._time_end = None
         self._time_zone = None

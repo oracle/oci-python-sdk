@@ -35,12 +35,10 @@ class PutRepositoryTagDetails(PutRepositoryRefDetails):
             'ref_type': 'str',
             'object_id': 'str'
         }
-
         self.attribute_map = {
             'ref_type': 'refType',
             'object_id': 'objectId'
         }
-
         self._ref_type = None
         self._object_id = None
         self._ref_type = 'TAG'

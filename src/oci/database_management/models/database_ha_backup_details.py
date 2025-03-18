@@ -226,7 +226,6 @@ class DatabaseHaBackupDetails(object):
             'db_unique_name': 'str',
             'db_role': 'str'
         }
-
         self.attribute_map = {
             'flash_back_on': 'flashBackOn',
             'flash_back_time': 'flashBackTime',
@@ -246,7 +245,6 @@ class DatabaseHaBackupDetails(object):
             'db_unique_name': 'dbUniqueName',
             'db_role': 'dbRole'
         }
-
         self._flash_back_on = None
         self._flash_back_time = None
         self._recovery_window_goal_in_days = None

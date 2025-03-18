@@ -65,7 +65,6 @@ class AttachVolumeDetails(object):
             'type': 'str',
             'volume_id': 'str'
         }
-
         self.attribute_map = {
             'device': 'device',
             'display_name': 'displayName',
@@ -75,7 +74,6 @@ class AttachVolumeDetails(object):
             'type': 'type',
             'volume_id': 'volumeId'
         }
-
         self._device = None
         self._display_name = None
         self._instance_id = None

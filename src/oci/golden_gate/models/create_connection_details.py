@@ -240,7 +240,6 @@ class CreateConnectionDetails(object):
             'routing_method': 'str',
             'does_use_secret_ids': 'bool'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'display_name': 'displayName',
@@ -256,7 +255,6 @@ class CreateConnectionDetails(object):
             'routing_method': 'routingMethod',
             'does_use_secret_ids': 'doesUseSecretIds'
         }
-
         self._connection_type = None
         self._display_name = None
         self._description = None

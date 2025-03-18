@@ -33,12 +33,10 @@ class DnsConfiguration(object):
             'is_override_dns': 'bool',
             'override_dns_ip': 'str'
         }
-
         self.attribute_map = {
             'is_override_dns': 'isOverrideDns',
             'override_dns_ip': 'overrideDnsIp'
         }
-
         self._is_override_dns = None
         self._override_dns_ip = None
 

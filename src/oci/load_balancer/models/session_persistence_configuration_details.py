@@ -54,12 +54,10 @@ class SessionPersistenceConfigurationDetails(object):
             'cookie_name': 'str',
             'disable_fallback': 'bool'
         }
-
         self.attribute_map = {
             'cookie_name': 'cookieName',
             'disable_fallback': 'disableFallback'
         }
-
         self._cookie_name = None
         self._disable_fallback = None
 

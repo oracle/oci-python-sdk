@@ -33,11 +33,9 @@ class EvaluationResults(object):
         self.swagger_types = {
             'model_type': 'str'
         }
-
         self.attribute_map = {
             'model_type': 'modelType'
         }
-
         self._model_type = None
 
     @staticmethod

@@ -45,14 +45,12 @@ class ObjectStoreOutputDetails(OutputDetails):
             'bucket_name': 'str',
             'prefix': 'str'
         }
-
         self.attribute_map = {
             'output_type': 'outputType',
             'namespace_name': 'namespaceName',
             'bucket_name': 'bucketName',
             'prefix': 'prefix'
         }
-
         self._output_type = None
         self._namespace_name = None
         self._bucket_name = None

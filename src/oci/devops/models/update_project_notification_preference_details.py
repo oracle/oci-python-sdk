@@ -28,11 +28,9 @@ class UpdateProjectNotificationPreferenceDetails(object):
         self.swagger_types = {
             'notification_preference': 'str'
         }
-
         self.attribute_map = {
             'notification_preference': 'notificationPreference'
         }
-
         self._notification_preference = None
 
     @property

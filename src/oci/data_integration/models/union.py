@@ -111,7 +111,6 @@ class Union(Operator):
             'union_type': 'str',
             'is_all': 'bool'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -129,7 +128,6 @@ class Union(Operator):
             'union_type': 'unionType',
             'is_all': 'isAll'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

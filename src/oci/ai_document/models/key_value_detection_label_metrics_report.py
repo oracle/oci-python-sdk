@@ -43,14 +43,12 @@ class KeyValueDetectionLabelMetricsReport(object):
             'mean_average_precision': 'float',
             'confidence_entries': 'list[KeyValueDetectionConfidenceEntry]'
         }
-
         self.attribute_map = {
             'label': 'label',
             'document_count': 'documentCount',
             'mean_average_precision': 'meanAveragePrecision',
             'confidence_entries': 'confidenceEntries'
         }
-
         self._label = None
         self._document_count = None
         self._mean_average_precision = None

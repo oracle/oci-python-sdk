@@ -101,7 +101,6 @@ class VmWareAssetSourceSummary(AssetSourceSummary):
             'system_tags': 'dict(str, dict(str, object))',
             'vcenter_endpoint': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'id': 'id',
@@ -119,7 +118,6 @@ class VmWareAssetSourceSummary(AssetSourceSummary):
             'system_tags': 'systemTags',
             'vcenter_endpoint': 'vcenterEndpoint'
         }
-
         self._type = None
         self._id = None
         self._compartment_id = None

@@ -81,7 +81,6 @@ class UnifiedAgentParserFilter(UnifiedAgentLoggingFilter):
             'hash_value_field': 'str',
             'emit_invalid_record_to_error': 'bool'
         }
-
         self.attribute_map = {
             'name': 'name',
             'filter_type': 'filterType',
@@ -95,7 +94,6 @@ class UnifiedAgentParserFilter(UnifiedAgentLoggingFilter):
             'hash_value_field': 'hashValueField',
             'emit_invalid_record_to_error': 'emitInvalidRecordToError'
         }
-
         self._name = None
         self._filter_type = None
         self._parser = None

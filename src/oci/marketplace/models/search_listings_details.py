@@ -56,12 +56,10 @@ class SearchListingsDetails(object):
             'type': 'str',
             'matching_context_type': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'matching_context_type': 'matchingContextType'
         }
-
         self._type = None
         self._matching_context_type = None
 

@@ -88,7 +88,6 @@ class AddmDbRecommendationsTimeSeriesSummary(object):
             'max_benefit_avg_active_sessions': 'float',
             'related_object': 'RelatedObjectTypeDetails'
         }
-
         self.attribute_map = {
             'id': 'id',
             'task_id': 'taskId',
@@ -104,7 +103,6 @@ class AddmDbRecommendationsTimeSeriesSummary(object):
             'max_benefit_avg_active_sessions': 'maxBenefitAvgActiveSessions',
             'related_object': 'relatedObject'
         }
-
         self._id = None
         self._task_id = None
         self._task_name = None

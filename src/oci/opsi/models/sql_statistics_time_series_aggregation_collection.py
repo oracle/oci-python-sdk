@@ -53,7 +53,6 @@ class SqlStatisticsTimeSeriesAggregationCollection(object):
             'end_timestamps': 'list[datetime]',
             'items': 'list[SqlStatisticsTimeSeriesAggregation]'
         }
-
         self.attribute_map = {
             'sql_identifier': 'sqlIdentifier',
             'time_interval_start': 'timeIntervalStart',
@@ -62,7 +61,6 @@ class SqlStatisticsTimeSeriesAggregationCollection(object):
             'end_timestamps': 'endTimestamps',
             'items': 'items'
         }
-
         self._sql_identifier = None
         self._time_interval_start = None
         self._time_interval_end = None

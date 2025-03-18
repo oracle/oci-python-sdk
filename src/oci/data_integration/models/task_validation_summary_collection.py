@@ -28,11 +28,9 @@ class TaskValidationSummaryCollection(object):
         self.swagger_types = {
             'items': 'list[TaskValidationSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

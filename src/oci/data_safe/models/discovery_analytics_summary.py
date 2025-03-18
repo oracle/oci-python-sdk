@@ -68,13 +68,11 @@ class DiscoveryAnalyticsSummary(object):
             'dimensions': 'Dimensions',
             'count': 'int'
         }
-
         self.attribute_map = {
             'metric_name': 'metricName',
             'dimensions': 'dimensions',
             'count': 'count'
         }
-
         self._metric_name = None
         self._dimensions = None
         self._count = None

@@ -62,7 +62,6 @@ class CreatePluggableDatabaseFromRemoteCloneDetails(CreatePluggableDatabaseCreat
             'refreshable_clone_details': 'CreatePluggableDatabaseRefreshableCloneDetails',
             'is_thin_clone': 'bool'
         }
-
         self.attribute_map = {
             'creation_type': 'creationType',
             'dblink_username': 'dblinkUsername',
@@ -72,7 +71,6 @@ class CreatePluggableDatabaseFromRemoteCloneDetails(CreatePluggableDatabaseCreat
             'refreshable_clone_details': 'refreshableCloneDetails',
             'is_thin_clone': 'isThinClone'
         }
-
         self._creation_type = None
         self._dblink_username = None
         self._dblink_user_password = None

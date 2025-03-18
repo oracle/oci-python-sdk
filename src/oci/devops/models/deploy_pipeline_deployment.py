@@ -121,7 +121,6 @@ class DeployPipelineDeployment(Deployment):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'deploy_pipeline_artifacts': 'deployPipelineArtifacts',
             'deploy_pipeline_environments': 'deployPipelineEnvironments',
@@ -143,7 +142,6 @@ class DeployPipelineDeployment(Deployment):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._deploy_pipeline_artifacts = None
         self._deploy_pipeline_environments = None
         self._deployment_type = None

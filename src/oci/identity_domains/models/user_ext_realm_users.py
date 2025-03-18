@@ -52,14 +52,12 @@ class UserExtRealmUsers(object):
             'principal_name': 'str',
             'realm_name': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ref': '$ref',
             'principal_name': 'principalName',
             'realm_name': 'realmName'
         }
-
         self._value = None
         self._ref = None
         self._principal_name = None

@@ -43,14 +43,12 @@ class AssociatedFleetResourceDetails(object):
             'compartment_id': 'str',
             'tenancy_id': 'str'
         }
-
         self.attribute_map = {
             'resource_id': 'resourceId',
             'fleet_resource_type': 'fleetResourceType',
             'compartment_id': 'compartmentId',
             'tenancy_id': 'tenancyId'
         }
-
         self._resource_id = None
         self._fleet_resource_type = None
         self._compartment_id = None

@@ -62,7 +62,6 @@ class UpdateTransferJobDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'lifecycle_state': 'lifecycleState',
             'display_name': 'displayName',
@@ -70,7 +69,6 @@ class UpdateTransferJobDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._lifecycle_state = None
         self._display_name = None
         self._device_type = None

@@ -40,13 +40,11 @@ class OciDevOpsBuildConfiguration(VerifyConfiguration):
             'pipeline_id': 'str',
             'additional_parameters': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'build_service_type': 'buildServiceType',
             'pipeline_id': 'pipelineId',
             'additional_parameters': 'additionalParameters'
         }
-
         self._build_service_type = None
         self._pipeline_id = None
         self._additional_parameters = None

@@ -43,14 +43,12 @@ class TestMetricExtensionData(object):
             'test_run_namespace_name': 'str',
             'test_run_resource_group_name': 'str'
         }
-
         self.attribute_map = {
             'test_run_id': 'testRunId',
             'test_run_metric_suffix': 'testRunMetricSuffix',
             'test_run_namespace_name': 'testRunNamespaceName',
             'test_run_resource_group_name': 'testRunResourceGroupName'
         }
-
         self._test_run_id = None
         self._test_run_metric_suffix = None
         self._test_run_namespace_name = None

@@ -33,12 +33,10 @@ class ByoipAllocatedRangeSummary(object):
             'cidr_block': 'str',
             'public_ip_pool_id': 'str'
         }
-
         self.attribute_map = {
             'cidr_block': 'cidrBlock',
             'public_ip_pool_id': 'publicIpPoolId'
         }
-
         self._cidr_block = None
         self._public_ip_pool_id = None
 

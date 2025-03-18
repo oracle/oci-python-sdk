@@ -43,14 +43,12 @@ class RoleGrantPathSummary(object):
             'granted_role': 'str',
             'depth_level': 'int'
         }
-
         self.attribute_map = {
             'key': 'key',
             'grantee': 'grantee',
             'granted_role': 'grantedRole',
             'depth_level': 'depthLevel'
         }
-
         self._key = None
         self._grantee = None
         self._granted_role = None

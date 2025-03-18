@@ -43,12 +43,10 @@ class RollbackWorkflowDetails(object):
             'scope': 'str',
             'workflow': 'list[WorkflowGroup]'
         }
-
         self.attribute_map = {
             'scope': 'scope',
             'workflow': 'workflow'
         }
-
         self._scope = None
         self._workflow = None
 

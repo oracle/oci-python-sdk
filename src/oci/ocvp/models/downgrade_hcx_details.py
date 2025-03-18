@@ -29,11 +29,9 @@ class DowngradeHcxDetails(object):
         self.swagger_types = {
             'reserving_hcx_on_premise_license_keys': 'list[str]'
         }
-
         self.attribute_map = {
             'reserving_hcx_on_premise_license_keys': 'reservingHcxOnPremiseLicenseKeys'
         }
-
         self._reserving_hcx_on_premise_license_keys = None
 
     @property

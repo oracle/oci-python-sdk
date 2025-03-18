@@ -63,7 +63,6 @@ class IncidentResourceType(object):
             'service': 'dict(str, str)',
             'services': 'list[Services]'
         }
-
         self.attribute_map = {
             'resource_type_key': 'resourceTypeKey',
             'name': 'name',
@@ -74,7 +73,6 @@ class IncidentResourceType(object):
             'service': 'service',
             'services': 'services'
         }
-
         self._resource_type_key = None
         self._name = None
         self._label = None

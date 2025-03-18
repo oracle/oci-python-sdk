@@ -28,11 +28,9 @@ class GetPublicIpByPrivateIpIdDetails(object):
         self.swagger_types = {
             'private_ip_id': 'str'
         }
-
         self.attribute_map = {
             'private_ip_id': 'privateIpId'
         }
-
         self._private_ip_id = None
 
     @property

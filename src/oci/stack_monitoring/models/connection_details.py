@@ -68,7 +68,6 @@ class ConnectionDetails(object):
             'db_id': 'str',
             'ssl_secret_id': 'str'
         }
-
         self.attribute_map = {
             'protocol': 'protocol',
             'port': 'port',
@@ -78,7 +77,6 @@ class ConnectionDetails(object):
             'db_id': 'dbId',
             'ssl_secret_id': 'sslSecretId'
         }
-
         self._protocol = None
         self._port = None
         self._connector_id = None

@@ -122,7 +122,6 @@ class MyApiKey(object):
             'key': 'str',
             'user': 'MyApiKeyUser'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -142,7 +141,6 @@ class MyApiKey(object):
             'key': 'key',
             'user': 'user'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

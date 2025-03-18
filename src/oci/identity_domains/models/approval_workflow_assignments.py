@@ -48,7 +48,6 @@ class ApprovalWorkflowAssignments(object):
             'start_index': 'int',
             'items_per_page': 'int'
         }
-
         self.attribute_map = {
             'schemas': 'schemas',
             'total_results': 'totalResults',
@@ -56,7 +55,6 @@ class ApprovalWorkflowAssignments(object):
             'start_index': 'startIndex',
             'items_per_page': 'itemsPerPage'
         }
-
         self._schemas = None
         self._total_results = None
         self._resources = None

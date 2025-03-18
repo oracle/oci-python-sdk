@@ -33,12 +33,10 @@ class PrivateKey(object):
             'file_name': 'str',
             'content': 'str'
         }
-
         self.attribute_map = {
             'file_name': 'fileName',
             'content': 'content'
         }
-
         self._file_name = None
         self._content = None
 

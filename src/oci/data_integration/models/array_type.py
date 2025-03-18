@@ -65,7 +65,6 @@ class ArrayType(BaseType):
             'description': 'str',
             'element_type': 'str'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -76,7 +75,6 @@ class ArrayType(BaseType):
             'description': 'description',
             'element_type': 'elementType'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

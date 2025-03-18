@@ -34,12 +34,10 @@ class InstanceConfigurationInstanceSourceViaBootVolumeDetails(InstanceConfigurat
             'source_type': 'str',
             'boot_volume_id': 'str'
         }
-
         self.attribute_map = {
             'source_type': 'sourceType',
             'boot_volume_id': 'bootVolumeId'
         }
-
         self._source_type = None
         self._boot_volume_id = None
         self._source_type = 'bootVolume'

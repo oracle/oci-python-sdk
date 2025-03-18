@@ -115,7 +115,6 @@ class ParameterDefinition(object):
             'ui_placement_hint': 'str',
             'resource_type_metadata': 'object'
         }
-
         self.attribute_map = {
             'name': 'name',
             'type': 'type',
@@ -130,7 +129,6 @@ class ParameterDefinition(object):
             'ui_placement_hint': 'uiPlacementHint',
             'resource_type_metadata': 'resourceTypeMetadata'
         }
-
         self._name = None
         self._type = None
         self._description = None

@@ -52,7 +52,6 @@ class CreatePluggableDatabaseFromRelocateDetails(CreatePluggableDatabaseCreation
             'source_pluggable_database_id': 'str',
             'source_container_database_admin_password': 'str'
         }
-
         self.attribute_map = {
             'creation_type': 'creationType',
             'dblink_username': 'dblinkUsername',
@@ -60,7 +59,6 @@ class CreatePluggableDatabaseFromRelocateDetails(CreatePluggableDatabaseCreation
             'source_pluggable_database_id': 'sourcePluggableDatabaseId',
             'source_container_database_admin_password': 'sourceContainerDatabaseAdminPassword'
         }
-
         self._creation_type = None
         self._dblink_username = None
         self._dblink_user_password = None

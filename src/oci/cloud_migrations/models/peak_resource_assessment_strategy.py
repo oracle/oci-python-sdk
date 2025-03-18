@@ -81,7 +81,6 @@ class PeakResourceAssessmentStrategy(ResourceAssessmentStrategy):
             'metric_type': 'str',
             'metric_time_window': 'str'
         }
-
         self.attribute_map = {
             'resource_type': 'resourceType',
             'strategy_type': 'strategyType',
@@ -89,7 +88,6 @@ class PeakResourceAssessmentStrategy(ResourceAssessmentStrategy):
             'metric_type': 'metricType',
             'metric_time_window': 'metricTimeWindow'
         }
-
         self._resource_type = None
         self._strategy_type = None
         self._adjustment_multiplier = None

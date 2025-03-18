@@ -33,12 +33,10 @@ class DeliverArtifact(object):
             'artifact_name': 'str',
             'artifact_id': 'str'
         }
-
         self.attribute_map = {
             'artifact_name': 'artifactName',
             'artifact_id': 'artifactId'
         }
-
         self._artifact_name = None
         self._artifact_id = None
 

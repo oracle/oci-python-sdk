@@ -35,12 +35,10 @@ class VideoTextDetectionFeature(VideoFeature):
             'feature_type': 'str',
             'min_confidence': 'float'
         }
-
         self.attribute_map = {
             'feature_type': 'featureType',
             'min_confidence': 'minConfidence'
         }
-
         self._feature_type = None
         self._min_confidence = None
         self._feature_type = 'TEXT_DETECTION'

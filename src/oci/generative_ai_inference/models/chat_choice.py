@@ -43,14 +43,12 @@ class ChatChoice(object):
             'finish_reason': 'str',
             'logprobs': 'Logprobs'
         }
-
         self.attribute_map = {
             'index': 'index',
             'message': 'message',
             'finish_reason': 'finishReason',
             'logprobs': 'logprobs'
         }
-
         self._index = None
         self._message = None
         self._finish_reason = None

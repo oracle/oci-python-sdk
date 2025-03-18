@@ -46,14 +46,12 @@ class ManagedDatabaseSecretCredential(ManagedDatabaseCredential):
             'role': 'str',
             'password_secret_id': 'str'
         }
-
         self.attribute_map = {
             'credential_type': 'credentialType',
             'username': 'username',
             'role': 'role',
             'password_secret_id': 'passwordSecretId'
         }
-
         self._credential_type = None
         self._username = None
         self._role = None

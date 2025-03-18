@@ -80,7 +80,6 @@ class GithubAccessTokenConfigurationSourceProviderSummary(ConfigurationSourcePro
             'defined_tags': 'dict(str, dict(str, object))',
             'api_endpoint': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -94,7 +93,6 @@ class GithubAccessTokenConfigurationSourceProviderSummary(ConfigurationSourcePro
             'defined_tags': 'definedTags',
             'api_endpoint': 'apiEndpoint'
         }
-
         self._id = None
         self._compartment_id = None
         self._display_name = None

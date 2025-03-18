@@ -88,7 +88,6 @@ class ExternalExadataStorageGridSummary(DbmResource):
             'resource_type': 'str',
             'server_count': 'float'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -103,7 +102,6 @@ class ExternalExadataStorageGridSummary(DbmResource):
             'resource_type': 'resourceType',
             'server_count': 'serverCount'
         }
-
         self._id = None
         self._display_name = None
         self._version = None

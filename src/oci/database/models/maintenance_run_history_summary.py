@@ -48,7 +48,6 @@ class MaintenanceRunHistorySummary(object):
             'current_execution_window': 'str',
             'granular_maintenance_history': 'list[GranularMaintenanceHistoryDetails]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'maintenance_run_details': 'maintenanceRunDetails',
@@ -56,7 +55,6 @@ class MaintenanceRunHistorySummary(object):
             'current_execution_window': 'currentExecutionWindow',
             'granular_maintenance_history': 'granularMaintenanceHistory'
         }
-
         self._id = None
         self._maintenance_run_details = None
         self._db_servers_history_details = None

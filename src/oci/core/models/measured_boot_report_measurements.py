@@ -33,12 +33,10 @@ class MeasuredBootReportMeasurements(object):
             'policy': 'list[MeasuredBootEntry]',
             'actual': 'list[MeasuredBootEntry]'
         }
-
         self.attribute_map = {
             'policy': 'policy',
             'actual': 'actual'
         }
-
         self._policy = None
         self._actual = None
 

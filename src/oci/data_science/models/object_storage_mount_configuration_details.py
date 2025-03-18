@@ -55,7 +55,6 @@ class ObjectStorageMountConfigurationDetails(StorageMountConfigurationDetails):
             'bucket': 'str',
             'prefix': 'str'
         }
-
         self.attribute_map = {
             'storage_type': 'storageType',
             'destination_directory_name': 'destinationDirectoryName',
@@ -64,7 +63,6 @@ class ObjectStorageMountConfigurationDetails(StorageMountConfigurationDetails):
             'bucket': 'bucket',
             'prefix': 'prefix'
         }
-
         self._storage_type = None
         self._destination_directory_name = None
         self._destination_path = None

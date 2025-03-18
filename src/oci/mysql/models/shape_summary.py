@@ -58,14 +58,12 @@ class ShapeSummary(object):
             'memory_size_in_gbs': 'int',
             'is_supported_for': 'list[str]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'cpu_core_count': 'cpuCoreCount',
             'memory_size_in_gbs': 'memorySizeInGBs',
             'is_supported_for': 'isSupportedFor'
         }
-
         self._name = None
         self._cpu_core_count = None
         self._memory_size_in_gbs = None

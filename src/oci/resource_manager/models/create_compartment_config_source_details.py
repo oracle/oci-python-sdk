@@ -49,7 +49,6 @@ class CreateCompartmentConfigSourceDetails(CreateConfigSourceDetails):
             'region': 'str',
             'services_to_discover': 'list[str]'
         }
-
         self.attribute_map = {
             'config_source_type': 'configSourceType',
             'working_directory': 'workingDirectory',
@@ -57,7 +56,6 @@ class CreateCompartmentConfigSourceDetails(CreateConfigSourceDetails):
             'region': 'region',
             'services_to_discover': 'servicesToDiscover'
         }
-
         self._config_source_type = None
         self._working_directory = None
         self._compartment_id = None

@@ -90,7 +90,6 @@ class QuotaRule(object):
             'time_created': 'datetime',
             'time_updated': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'file_system_id': 'fileSystemId',
@@ -102,7 +101,6 @@ class QuotaRule(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated'
         }
-
         self._id = None
         self._file_system_id = None
         self._principal_type = None

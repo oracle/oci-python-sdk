@@ -66,7 +66,6 @@ class SourceConnectorPluginSummary(ConnectorPluginSummary):
             'display_name': 'str',
             'max_retention': 'str'
         }
-
         self.attribute_map = {
             'kind': 'kind',
             'name': 'name',
@@ -76,7 +75,6 @@ class SourceConnectorPluginSummary(ConnectorPluginSummary):
             'display_name': 'displayName',
             'max_retention': 'maxRetention'
         }
-
         self._kind = None
         self._name = None
         self._time_created = None

@@ -71,12 +71,10 @@ class DatabaseDetails(object):
             'database_type': 'str',
             'infrastructure_type': 'str'
         }
-
         self.attribute_map = {
             'database_type': 'databaseType',
             'infrastructure_type': 'infrastructureType'
         }
-
         self._database_type = None
         self._infrastructure_type = None
 

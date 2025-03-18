@@ -35,12 +35,10 @@ class ComputeInstanceGroupFailurePolicyByCount(ComputeInstanceGroupFailurePolicy
             'policy_type': 'str',
             'failure_count': 'int'
         }
-
         self.attribute_map = {
             'policy_type': 'policyType',
             'failure_count': 'failureCount'
         }
-
         self._policy_type = None
         self._failure_count = None
         self._policy_type = 'COMPUTE_INSTANCE_GROUP_FAILURE_POLICY_BY_COUNT'

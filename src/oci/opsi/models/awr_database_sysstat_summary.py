@@ -53,7 +53,6 @@ class AwrDatabaseSysstatSummary(object):
             'avg_value': 'float',
             'current_value': 'float'
         }
-
         self.attribute_map = {
             'name': 'name',
             'category': 'category',
@@ -62,7 +61,6 @@ class AwrDatabaseSysstatSummary(object):
             'avg_value': 'avgValue',
             'current_value': 'currentValue'
         }
-
         self._name = None
         self._category = None
         self._time_begin = None

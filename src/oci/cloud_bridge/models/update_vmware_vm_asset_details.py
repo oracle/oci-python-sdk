@@ -70,7 +70,6 @@ class UpdateVmwareVmAssetDetails(UpdateAssetDetails):
             'vmware_vm': 'VmwareVmProperties',
             'vmware_v_center': 'VmwareVCenterProperties'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'asset_type': 'assetType',
@@ -82,7 +81,6 @@ class UpdateVmwareVmAssetDetails(UpdateAssetDetails):
             'vmware_vm': 'vmwareVm',
             'vmware_v_center': 'vmwareVCenter'
         }
-
         self._display_name = None
         self._asset_type = None
         self._asset_source_ids = None

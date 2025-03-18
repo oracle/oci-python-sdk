@@ -74,7 +74,6 @@ class MaintenanceNotificationDetails(object):
             'start_time': 'str',
             'end_time': 'str'
         }
-
         self.attribute_map = {
             'jira_ticket': 'jiraTicket',
             'maintenance_notification_type': 'maintenanceNotificationType',
@@ -83,7 +82,6 @@ class MaintenanceNotificationDetails(object):
             'start_time': 'startTime',
             'end_time': 'endTime'
         }
-
         self._jira_ticket = None
         self._maintenance_notification_type = None
         self._tenant_ids = None

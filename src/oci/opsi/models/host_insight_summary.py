@@ -177,7 +177,6 @@ class HostInsightSummary(object):
             'lifecycle_state': 'str',
             'lifecycle_details': 'str'
         }
-
         self.attribute_map = {
             'entity_source': 'entitySource',
             'id': 'id',
@@ -196,7 +195,6 @@ class HostInsightSummary(object):
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails'
         }
-
         self._entity_source = None
         self._id = None
         self._compartment_id = None

@@ -35,12 +35,10 @@ class DocumentTextExtractionFeature(DocumentFeature):
             'feature_type': 'str',
             'generate_searchable_pdf': 'bool'
         }
-
         self.attribute_map = {
             'feature_type': 'featureType',
             'generate_searchable_pdf': 'generateSearchablePdf'
         }
-
         self._feature_type = None
         self._generate_searchable_pdf = None
         self._feature_type = 'TEXT_EXTRACTION'

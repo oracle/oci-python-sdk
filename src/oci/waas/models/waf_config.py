@@ -98,7 +98,6 @@ class WafConfig(object):
             'threat_feeds': 'list[ThreatFeed]',
             'whitelists': 'list[Whitelist]'
         }
-
         self.attribute_map = {
             'access_rules': 'accessRules',
             'address_rate_limiting': 'addressRateLimiting',
@@ -116,7 +115,6 @@ class WafConfig(object):
             'threat_feeds': 'threatFeeds',
             'whitelists': 'whitelists'
         }
-
         self._access_rules = None
         self._address_rate_limiting = None
         self._captchas = None

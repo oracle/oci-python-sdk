@@ -30,11 +30,9 @@ class OracleManagedKeyDetails(AutonomousDatabaseEncryptionKeyDetails):
         self.swagger_types = {
             'provider': 'str'
         }
-
         self.attribute_map = {
             'provider': 'provider'
         }
-
         self._provider = None
         self._provider = 'ORACLE_MANAGED'
 

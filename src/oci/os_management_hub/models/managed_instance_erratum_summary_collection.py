@@ -28,11 +28,9 @@ class ManagedInstanceErratumSummaryCollection(object):
         self.swagger_types = {
             'items': 'list[ManagedInstanceErratumSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

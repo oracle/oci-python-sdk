@@ -113,6 +113,8 @@ Core Services
     oci.core.models.ChangeComputeCapacityReservationCompartmentDetails
     oci.core.models.ChangeComputeCapacityTopologyCompartmentDetails
     oci.core.models.ChangeComputeClusterCompartmentDetails
+    oci.core.models.ChangeComputeGpuMemoryClusterCompartmentDetails
+    oci.core.models.ChangeComputeGpuMemoryFabricCompartmentDetails
     oci.core.models.ChangeComputeImageCapabilitySchemaCompartmentDetails
     oci.core.models.ChangeCpeCompartmentDetails
     oci.core.models.ChangeCrossConnectCompartmentDetails
@@ -167,6 +169,14 @@ Core Services
     oci.core.models.ComputeGlobalImageCapabilitySchemaSummary
     oci.core.models.ComputeGlobalImageCapabilitySchemaVersion
     oci.core.models.ComputeGlobalImageCapabilitySchemaVersionSummary
+    oci.core.models.ComputeGpuMemoryCluster
+    oci.core.models.ComputeGpuMemoryClusterCollection
+    oci.core.models.ComputeGpuMemoryClusterInstanceCollection
+    oci.core.models.ComputeGpuMemoryClusterInstanceSummary
+    oci.core.models.ComputeGpuMemoryClusterSummary
+    oci.core.models.ComputeGpuMemoryFabric
+    oci.core.models.ComputeGpuMemoryFabricCollection
+    oci.core.models.ComputeGpuMemoryFabricSummary
     oci.core.models.ComputeHpcIsland
     oci.core.models.ComputeHpcIslandCollection
     oci.core.models.ComputeHpcIslandSummary
@@ -203,6 +213,7 @@ Core Services
     oci.core.models.CreateComputeCapacityReservationDetails
     oci.core.models.CreateComputeCapacityTopologyDetails
     oci.core.models.CreateComputeClusterDetails
+    oci.core.models.CreateComputeGpuMemoryClusterDetails
     oci.core.models.CreateComputeImageCapabilitySchemaDetails
     oci.core.models.CreateCpeDetails
     oci.core.models.CreateCrossConnectDetails
@@ -535,6 +546,8 @@ Core Services
     oci.core.models.UpdateComputeCapacityReservationDetails
     oci.core.models.UpdateComputeCapacityTopologyDetails
     oci.core.models.UpdateComputeClusterDetails
+    oci.core.models.UpdateComputeGpuMemoryClusterDetails
+    oci.core.models.UpdateComputeGpuMemoryFabricDetails
     oci.core.models.UpdateComputeImageCapabilitySchemaDetails
     oci.core.models.UpdateConsoleHistoryDetails
     oci.core.models.UpdateCpeDetails

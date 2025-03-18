@@ -53,7 +53,6 @@ class Nic(object):
             'network_name': 'str',
             'ip_addresses': 'list[str]'
         }
-
         self.attribute_map = {
             'label': 'label',
             'switch_name': 'switchName',
@@ -62,7 +61,6 @@ class Nic(object):
             'network_name': 'networkName',
             'ip_addresses': 'ipAddresses'
         }
-
         self._label = None
         self._switch_name = None
         self._mac_address = None

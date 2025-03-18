@@ -115,7 +115,6 @@ class QueryWorkRequestSummary(object):
             'status': 'str',
             'operation_type': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -128,7 +127,6 @@ class QueryWorkRequestSummary(object):
             'status': 'status',
             'operation_type': 'operationType'
         }
-
         self._id = None
         self._compartment_id = None
         self._time_started = None

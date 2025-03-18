@@ -48,7 +48,6 @@ class ImageResponse(object):
             'listing_id': 'str',
             'package_version': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'listing_name': 'listingName',
@@ -56,7 +55,6 @@ class ImageResponse(object):
             'listing_id': 'listingId',
             'package_version': 'packageVersion'
         }
-
         self._id = None
         self._listing_name = None
         self._publisher = None

@@ -48,7 +48,6 @@ class UpdateRowResult(object):
             'generated_value': 'str',
             'usage': 'RequestUsage'
         }
-
         self.attribute_map = {
             'version': 'version',
             'existing_version': 'existingVersion',
@@ -56,7 +55,6 @@ class UpdateRowResult(object):
             'generated_value': 'generatedValue',
             'usage': 'usage'
         }
-
         self._version = None
         self._existing_version = None
         self._existing_value = None

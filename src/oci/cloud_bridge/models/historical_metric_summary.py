@@ -48,7 +48,6 @@ class HistoricalMetricSummary(object):
             'time_created': 'datetime',
             'time_updated': 'datetime'
         }
-
         self.attribute_map = {
             'name': 'name',
             'aggregation': 'aggregation',
@@ -56,7 +55,6 @@ class HistoricalMetricSummary(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated'
         }
-
         self._name = None
         self._aggregation = None
         self._value = None

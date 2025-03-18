@@ -105,7 +105,6 @@ class DataAssetFromFusionApp(DataAsset):
             'service_url': 'str',
             'default_connection': 'ConnectionDetails'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -124,7 +123,6 @@ class DataAssetFromFusionApp(DataAsset):
             'service_url': 'serviceUrl',
             'default_connection': 'defaultConnection'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

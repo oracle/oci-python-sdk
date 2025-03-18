@@ -45,14 +45,12 @@ class KeyValueDetectionModelMetrics(ModelMetrics):
             'label_metrics_report': 'list[KeyValueDetectionLabelMetricsReport]',
             'overall_metrics_report': 'KeyValueDetectionOverallMetricsReport'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'dataset_summary': 'datasetSummary',
             'label_metrics_report': 'labelMetricsReport',
             'overall_metrics_report': 'overallMetricsReport'
         }
-
         self._model_type = None
         self._dataset_summary = None
         self._label_metrics_report = None

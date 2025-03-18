@@ -58,7 +58,6 @@ class AwrDbWaitEventSummary(object):
             'avg_wait_time_per_wait': 'float',
             'snapshot_id': 'int'
         }
-
         self.attribute_map = {
             'name': 'name',
             'time_begin': 'timeBegin',
@@ -68,7 +67,6 @@ class AwrDbWaitEventSummary(object):
             'avg_wait_time_per_wait': 'avgWaitTimePerWait',
             'snapshot_id': 'snapshotId'
         }
-
         self._name = None
         self._time_begin = None
         self._time_end = None

@@ -42,13 +42,11 @@ class InlineInputDetails(InputDetails):
             'signal_names': 'list[str]',
             'data': 'list[DataItem]'
         }
-
         self.attribute_map = {
             'input_type': 'inputType',
             'signal_names': 'signalNames',
             'data': 'data'
         }
-
         self._input_type = None
         self._signal_names = None
         self._data = None

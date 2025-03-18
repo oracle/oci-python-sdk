@@ -67,7 +67,6 @@ class VmNetworkDetails(object):
             'domain_name': 'str',
             'nodes': 'list[NodeDetails]'
         }
-
         self.attribute_map = {
             'vlan_id': 'vlanId',
             'network_type': 'networkType',
@@ -76,7 +75,6 @@ class VmNetworkDetails(object):
             'domain_name': 'domainName',
             'nodes': 'nodes'
         }
-
         self._vlan_id = None
         self._network_type = None
         self._netmask = None

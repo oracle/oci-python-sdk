@@ -75,7 +75,6 @@ class CreateRootCaByGeneratingInternallyConfigDetails(CreateCertificateAuthority
             'signing_algorithm': 'str',
             'subject': 'CertificateSubject'
         }
-
         self.attribute_map = {
             'config_type': 'configType',
             'version_name': 'versionName',
@@ -83,7 +82,6 @@ class CreateRootCaByGeneratingInternallyConfigDetails(CreateCertificateAuthority
             'signing_algorithm': 'signingAlgorithm',
             'subject': 'subject'
         }
-
         self._config_type = None
         self._version_name = None
         self._validity = None

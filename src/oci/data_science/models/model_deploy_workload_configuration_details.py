@@ -50,7 +50,6 @@ class ModelDeployWorkloadConfigurationDetails(WorkloadConfigurationDetails):
             'health_check_port': 'int',
             'additional_configurations': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'workload_type': 'workloadType',
             'cmd': 'cmd',
@@ -58,7 +57,6 @@ class ModelDeployWorkloadConfigurationDetails(WorkloadConfigurationDetails):
             'health_check_port': 'healthCheckPort',
             'additional_configurations': 'additionalConfigurations'
         }
-
         self._workload_type = None
         self._cmd = None
         self._server_port = None

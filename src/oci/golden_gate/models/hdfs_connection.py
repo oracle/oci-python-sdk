@@ -141,7 +141,6 @@ class HdfsConnection(Connection):
             'does_use_secret_ids': 'bool',
             'technology_type': 'str'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'id': 'id',
@@ -165,7 +164,6 @@ class HdfsConnection(Connection):
             'does_use_secret_ids': 'doesUseSecretIds',
             'technology_type': 'technologyType'
         }
-
         self._connection_type = None
         self._id = None
         self._display_name = None

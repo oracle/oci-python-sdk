@@ -28,11 +28,9 @@ class FleetErrorCollection(object):
         self.swagger_types = {
             'items': 'list[FleetErrorSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

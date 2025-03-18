@@ -47,13 +47,11 @@ class HelmCommandSpecArtifactSource(DeployArtifactSource):
             'base64_encoded_content': 'str',
             'helm_artifact_source_type': 'str'
         }
-
         self.attribute_map = {
             'deploy_artifact_source_type': 'deployArtifactSourceType',
             'base64_encoded_content': 'base64EncodedContent',
             'helm_artifact_source_type': 'helmArtifactSourceType'
         }
-
         self._deploy_artifact_source_type = None
         self._base64_encoded_content = None
         self._helm_artifact_source_type = None

@@ -53,14 +53,12 @@ class EmailRecipientsGroup(object):
             'recipients_list': 'list[EmailRecipient]',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
             'recipients_list': 'recipientsList',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._id = None
         self._compartment_id = None
         self._recipients_list = None

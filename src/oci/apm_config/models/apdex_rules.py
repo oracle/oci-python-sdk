@@ -81,7 +81,6 @@ class ApdexRules(Config):
             'display_name': 'str',
             'rules': 'list[Apdex]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'config_type': 'configType',
@@ -95,7 +94,6 @@ class ApdexRules(Config):
             'display_name': 'displayName',
             'rules': 'rules'
         }
-
         self._id = None
         self._config_type = None
         self._time_created = None

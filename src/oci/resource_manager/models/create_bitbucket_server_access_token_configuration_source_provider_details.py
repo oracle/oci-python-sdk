@@ -70,7 +70,6 @@ class CreateBitbucketServerAccessTokenConfigurationSourceProviderDetails(CreateC
             'secret_id': 'str',
             'api_endpoint': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
@@ -82,7 +81,6 @@ class CreateBitbucketServerAccessTokenConfigurationSourceProviderDetails(CreateC
             'secret_id': 'secretId',
             'api_endpoint': 'apiEndpoint'
         }
-
         self._compartment_id = None
         self._display_name = None
         self._description = None

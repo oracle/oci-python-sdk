@@ -48,7 +48,6 @@ class JobOutputSummary(object):
             'is_sensitive': 'bool',
             'description': 'str'
         }
-
         self.attribute_map = {
             'output_name': 'outputName',
             'output_type': 'outputType',
@@ -56,7 +55,6 @@ class JobOutputSummary(object):
             'is_sensitive': 'isSensitive',
             'description': 'description'
         }
-
         self._output_name = None
         self._output_type = None
         self._output_value = None

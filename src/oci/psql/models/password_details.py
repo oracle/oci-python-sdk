@@ -43,11 +43,9 @@ class PasswordDetails(object):
         self.swagger_types = {
             'password_type': 'str'
         }
-
         self.attribute_map = {
             'password_type': 'passwordType'
         }
-
         self._password_type = None
 
     @staticmethod

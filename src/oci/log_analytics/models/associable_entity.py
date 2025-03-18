@@ -73,7 +73,6 @@ class AssociableEntity(object):
             'eligibility_status': 'str',
             'ineligibility_details': 'str'
         }
-
         self.attribute_map = {
             'entity_id': 'entityId',
             'entity_name': 'entityName',
@@ -84,7 +83,6 @@ class AssociableEntity(object):
             'eligibility_status': 'eligibilityStatus',
             'ineligibility_details': 'ineligibilityDetails'
         }
-
         self._entity_id = None
         self._entity_name = None
         self._entity_type_name = None

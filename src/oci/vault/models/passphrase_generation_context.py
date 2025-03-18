@@ -57,14 +57,12 @@ class PassphraseGenerationContext(SecretGenerationContext):
             'generation_template': 'str',
             'passphrase_length': 'int'
         }
-
         self.attribute_map = {
             'generation_type': 'generationType',
             'secret_template': 'secretTemplate',
             'generation_template': 'generationTemplate',
             'passphrase_length': 'passphraseLength'
         }
-
         self._generation_type = None
         self._secret_template = None
         self._generation_template = None

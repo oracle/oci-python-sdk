@@ -55,7 +55,6 @@ class PaypalPaymentDetail(PaymentDetail):
             'paypal_id': 'str',
             'paypal_reference': 'str'
         }
-
         self.attribute_map = {
             'time_paid_on': 'timePaidOn',
             'paid_by': 'paidBy',
@@ -64,7 +63,6 @@ class PaypalPaymentDetail(PaymentDetail):
             'paypal_id': 'paypalId',
             'paypal_reference': 'paypalReference'
         }
-
         self._time_paid_on = None
         self._paid_by = None
         self._payment_method = None

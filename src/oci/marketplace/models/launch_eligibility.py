@@ -113,14 +113,12 @@ class LaunchEligibility(object):
             'meters': 'str',
             'ineligibility_reason': 'str'
         }
-
         self.attribute_map = {
             'image_id': 'imageId',
             'is_launch_allowed': 'isLaunchAllowed',
             'meters': 'meters',
             'ineligibility_reason': 'ineligibilityReason'
         }
-
         self._image_id = None
         self._is_launch_allowed = None
         self._meters = None

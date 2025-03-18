@@ -72,7 +72,6 @@ class SubscriptionLineItemSummary(object):
             'time_ended': 'datetime',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'id': 'id',
             'product_code': 'productCode',
@@ -82,7 +81,6 @@ class SubscriptionLineItemSummary(object):
             'time_ended': 'timeEnded',
             'system_tags': 'systemTags'
         }
-
         self._id = None
         self._product_code = None
         self._quantity = None

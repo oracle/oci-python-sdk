@@ -140,7 +140,6 @@ class ProtectionSettings(object):
             'allowed_http_methods': 'list[str]',
             'media_types': 'list[str]'
         }
-
         self.attribute_map = {
             'block_action': 'blockAction',
             'block_response_code': 'blockResponseCode',
@@ -156,7 +155,6 @@ class ProtectionSettings(object):
             'allowed_http_methods': 'allowedHttpMethods',
             'media_types': 'mediaTypes'
         }
-
         self._block_action = None
         self._block_response_code = None
         self._block_error_page_message = None

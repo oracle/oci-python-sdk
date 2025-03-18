@@ -28,11 +28,9 @@ class HsmPartitionCollection(object):
         self.swagger_types = {
             'items': 'list[HsmPartitionSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

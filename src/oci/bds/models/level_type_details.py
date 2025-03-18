@@ -43,11 +43,9 @@ class LevelTypeDetails(object):
         self.swagger_types = {
             'level_type': 'str'
         }
-
         self.attribute_map = {
             'level_type': 'levelType'
         }
-
         self._level_type = None
 
     @staticmethod

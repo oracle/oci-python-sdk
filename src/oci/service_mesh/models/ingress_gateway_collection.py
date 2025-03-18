@@ -28,11 +28,9 @@ class IngressGatewayCollection(object):
         self.swagger_types = {
             'items': 'list[IngressGatewaySummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

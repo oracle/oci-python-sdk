@@ -113,7 +113,6 @@ class AddSecurityRuleDetails(object):
             'tcp_options': 'TcpOptions',
             'udp_options': 'UdpOptions'
         }
-
         self.attribute_map = {
             'description': 'description',
             'destination': 'destination',
@@ -127,7 +126,6 @@ class AddSecurityRuleDetails(object):
             'tcp_options': 'tcpOptions',
             'udp_options': 'udpOptions'
         }
-
         self._description = None
         self._destination = None
         self._destination_type = None

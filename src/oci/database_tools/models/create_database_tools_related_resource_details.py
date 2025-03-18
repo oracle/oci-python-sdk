@@ -46,12 +46,10 @@ class CreateDatabaseToolsRelatedResourceDetails(object):
             'entity_type': 'str',
             'identifier': 'str'
         }
-
         self.attribute_map = {
             'entity_type': 'entityType',
             'identifier': 'identifier'
         }
-
         self._entity_type = None
         self._identifier = None
 

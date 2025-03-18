@@ -33,12 +33,10 @@ class ImageText(object):
             'words': 'list[Word]',
             'lines': 'list[Line]'
         }
-
         self.attribute_map = {
             'words': 'words',
             'lines': 'lines'
         }
-
         self._words = None
         self._lines = None
 

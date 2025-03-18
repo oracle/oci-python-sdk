@@ -33,12 +33,10 @@ class ExportPackageDetails(object):
             'compartment_id': 'str',
             'container_repository_path': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'container_repository_path': 'containerRepositoryPath'
         }
-
         self._compartment_id = None
         self._container_repository_path = None
 

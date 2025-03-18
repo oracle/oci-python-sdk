@@ -154,7 +154,6 @@ class ListingSummary(object):
             'supported_operating_systems': 'list[OperatingSystem]',
             'listing_type': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -172,7 +171,6 @@ class ListingSummary(object):
             'supported_operating_systems': 'supportedOperatingSystems',
             'listing_type': 'listingType'
         }
-
         self._id = None
         self._name = None
         self._short_description = None

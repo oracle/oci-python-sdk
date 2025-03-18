@@ -65,7 +65,6 @@ class FlattenTypeHandler(DynamicTypeHandler):
             'config_values': 'ConfigValues',
             'object_status': 'int'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -76,7 +75,6 @@ class FlattenTypeHandler(DynamicTypeHandler):
             'config_values': 'configValues',
             'object_status': 'objectStatus'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

@@ -80,7 +80,6 @@ class CreateAutonomousDatabaseInsightDetails(CreateDatabaseInsightDetails):
             'opsi_private_endpoint_id': 'str',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'entity_source': 'entitySource',
             'compartment_id': 'compartmentId',
@@ -94,7 +93,6 @@ class CreateAutonomousDatabaseInsightDetails(CreateDatabaseInsightDetails):
             'opsi_private_endpoint_id': 'opsiPrivateEndpointId',
             'system_tags': 'systemTags'
         }
-
         self._entity_source = None
         self._compartment_id = None
         self._freeform_tags = None

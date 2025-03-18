@@ -55,7 +55,6 @@ class OkvKeyDetails(AutonomousDatabaseEncryptionKeyDetails):
             'certificate_directory_name': 'str',
             'certificate_id': 'str'
         }
-
         self.attribute_map = {
             'provider': 'provider',
             'okv_uri': 'okvUri',
@@ -64,7 +63,6 @@ class OkvKeyDetails(AutonomousDatabaseEncryptionKeyDetails):
             'certificate_directory_name': 'certificateDirectoryName',
             'certificate_id': 'certificateId'
         }
-
         self._provider = None
         self._okv_uri = None
         self._okv_kms_key = None

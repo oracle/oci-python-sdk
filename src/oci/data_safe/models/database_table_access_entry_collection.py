@@ -28,11 +28,9 @@ class DatabaseTableAccessEntryCollection(object):
         self.swagger_types = {
             'items': 'list[DatabaseTableAccessEntrySummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

@@ -105,7 +105,6 @@ class CreateConnectionFromOAuth2(CreateConnectionDetails):
             'scope': 'str',
             'grant_type': 'str'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -123,7 +122,6 @@ class CreateConnectionFromOAuth2(CreateConnectionDetails):
             'scope': 'scope',
             'grant_type': 'grantType'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

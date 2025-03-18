@@ -73,7 +73,6 @@ class ActionGroup(object):
             'target_id': 'str',
             'subjects': 'list[str]'
         }
-
         self.attribute_map = {
             'resource_id': 'resourceId',
             'type': 'type',
@@ -84,7 +83,6 @@ class ActionGroup(object):
             'target_id': 'targetId',
             'subjects': 'subjects'
         }
-
         self._resource_id = None
         self._type = None
         self._application_type = None

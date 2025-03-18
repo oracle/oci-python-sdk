@@ -96,7 +96,6 @@ class CreateDatabaseToolsConnectionMySqlDetails(CreateDatabaseToolsConnectionDet
             'key_stores': 'list[DatabaseToolsKeyStoreMySqlDetails]',
             'private_endpoint_id': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'compartment_id': 'compartmentId',
@@ -113,7 +112,6 @@ class CreateDatabaseToolsConnectionMySqlDetails(CreateDatabaseToolsConnectionDet
             'key_stores': 'keyStores',
             'private_endpoint_id': 'privateEndpointId'
         }
-
         self._display_name = None
         self._compartment_id = None
         self._defined_tags = None

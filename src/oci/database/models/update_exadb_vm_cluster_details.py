@@ -129,7 +129,6 @@ class UpdateExadbVmClusterDetails(object):
             'grid_image_id': 'str',
             'update_action': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'total_e_cpu_count': 'totalECpuCount',
@@ -148,7 +147,6 @@ class UpdateExadbVmClusterDetails(object):
             'grid_image_id': 'gridImageId',
             'update_action': 'updateAction'
         }
-
         self._display_name = None
         self._total_e_cpu_count = None
         self._enabled_e_cpu_count = None

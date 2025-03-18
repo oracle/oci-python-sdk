@@ -84,7 +84,6 @@ class UserExtRiskScores(object):
             'risk_level': 'str',
             'last_update_timestamp': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ref': '$ref',
@@ -94,7 +93,6 @@ class UserExtRiskScores(object):
             'risk_level': 'riskLevel',
             'last_update_timestamp': 'lastUpdateTimestamp'
         }
-
         self._value = None
         self._ref = None
         self._source = None

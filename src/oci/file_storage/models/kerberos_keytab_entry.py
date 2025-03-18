@@ -56,13 +56,11 @@ class KerberosKeytabEntry(object):
             'encryption_type': 'str',
             'key_version_number': 'int'
         }
-
         self.attribute_map = {
             'principal': 'principal',
             'encryption_type': 'encryptionType',
             'key_version_number': 'keyVersionNumber'
         }
-
         self._principal = None
         self._encryption_type = None
         self._key_version_number = None

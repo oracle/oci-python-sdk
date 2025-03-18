@@ -33,12 +33,10 @@ class RuleCollection(object):
             'count': 'int',
             'items': 'list[RuleSummary]'
         }
-
         self.attribute_map = {
             'count': 'count',
             'items': 'items'
         }
-
         self._count = None
         self._items = None
 

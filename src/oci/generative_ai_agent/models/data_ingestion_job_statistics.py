@@ -38,13 +38,11 @@ class DataIngestionJobStatistics(object):
             'number_of_ingested_files': 'int',
             'duration_in_seconds': 'int'
         }
-
         self.attribute_map = {
             'number_of_failed_files': 'numberOfFailedFiles',
             'number_of_ingested_files': 'numberOfIngestedFiles',
             'duration_in_seconds': 'durationInSeconds'
         }
-
         self._number_of_failed_files = None
         self._number_of_ingested_files = None
         self._duration_in_seconds = None

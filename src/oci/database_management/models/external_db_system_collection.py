@@ -28,11 +28,9 @@ class ExternalDbSystemCollection(object):
         self.swagger_types = {
             'items': 'list[ExternalDbSystemSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

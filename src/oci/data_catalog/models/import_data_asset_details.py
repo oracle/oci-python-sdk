@@ -28,11 +28,9 @@ class ImportDataAssetDetails(object):
         self.swagger_types = {
             'import_file_contents': 'str'
         }
-
         self.attribute_map = {
             'import_file_contents': 'importFileContents'
         }
-
         self._import_file_contents = None
 
     @property

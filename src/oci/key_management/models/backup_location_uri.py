@@ -35,12 +35,10 @@ class BackupLocationURI(BackupLocation):
             'destination': 'str',
             'uri': 'str'
         }
-
         self.attribute_map = {
             'destination': 'destination',
             'uri': 'uri'
         }
-
         self._destination = None
         self._uri = None
         self._destination = 'PRE_AUTHENTICATED_REQUEST_URI'

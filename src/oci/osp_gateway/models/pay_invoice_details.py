@@ -38,13 +38,11 @@ class PayInvoiceDetails(object):
             'return_url': 'str',
             'email': 'str'
         }
-
         self.attribute_map = {
             'language_code': 'languageCode',
             'return_url': 'returnUrl',
             'email': 'email'
         }
-
         self._language_code = None
         self._return_url = None
         self._email = None

@@ -48,7 +48,6 @@ class Country(object):
             'language_id': 'float',
             'ascii3_country_code': 'str'
         }
-
         self.attribute_map = {
             'country_id': 'countryId',
             'country_code': 'countryCode',
@@ -56,7 +55,6 @@ class Country(object):
             'language_id': 'languageId',
             'ascii3_country_code': 'ascii3CountryCode'
         }
-
         self._country_id = None
         self._country_code = None
         self._country_name = None

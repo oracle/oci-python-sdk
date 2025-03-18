@@ -33,12 +33,10 @@ class UpdateClusterStatusDetails(object):
             'cluster_id': 'str',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'cluster_id': 'clusterId',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._cluster_id = None
         self._lifecycle_state = None
 

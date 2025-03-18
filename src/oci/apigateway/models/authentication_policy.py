@@ -53,12 +53,10 @@ class AuthenticationPolicy(object):
             'is_anonymous_access_allowed': 'bool',
             'type': 'str'
         }
-
         self.attribute_map = {
             'is_anonymous_access_allowed': 'isAnonymousAccessAllowed',
             'type': 'type'
         }
-
         self._is_anonymous_access_allowed = None
         self._type = None
 

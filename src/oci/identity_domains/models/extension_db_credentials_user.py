@@ -33,12 +33,10 @@ class ExtensionDbCredentialsUser(object):
             'db_user_name': 'str',
             'db_login_attempts': 'int'
         }
-
         self.attribute_map = {
             'db_user_name': 'dbUserName',
             'db_login_attempts': 'dbLoginAttempts'
         }
-
         self._db_user_name = None
         self._db_login_attempts = None
 

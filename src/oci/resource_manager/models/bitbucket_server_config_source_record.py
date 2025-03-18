@@ -50,7 +50,6 @@ class BitbucketServerConfigSourceRecord(ConfigSourceRecord):
             'branch_name': 'str',
             'commit_id': 'str'
         }
-
         self.attribute_map = {
             'config_source_record_type': 'configSourceRecordType',
             'configuration_source_provider_id': 'configurationSourceProviderId',
@@ -58,7 +57,6 @@ class BitbucketServerConfigSourceRecord(ConfigSourceRecord):
             'branch_name': 'branchName',
             'commit_id': 'commitId'
         }
-
         self._config_source_record_type = None
         self._configuration_source_provider_id = None
         self._repository_url = None

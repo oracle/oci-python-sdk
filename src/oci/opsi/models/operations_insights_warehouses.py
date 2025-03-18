@@ -28,11 +28,9 @@ class OperationsInsightsWarehouses(object):
         self.swagger_types = {
             'operations_insights_warehouses': 'object'
         }
-
         self.attribute_map = {
             'operations_insights_warehouses': 'operationsInsightsWarehouses'
         }
-
         self._operations_insights_warehouses = None
 
     @property

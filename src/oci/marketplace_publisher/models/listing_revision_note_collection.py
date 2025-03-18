@@ -28,11 +28,9 @@ class ListingRevisionNoteCollection(object):
         self.swagger_types = {
             'items': 'list[ListingRevisionNoteSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

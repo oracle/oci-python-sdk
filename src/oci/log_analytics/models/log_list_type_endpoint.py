@@ -45,13 +45,11 @@ class LogListTypeEndpoint(LogAnalyticsEndpoint):
             'list_endpoint': 'LogListEndpoint',
             'log_endpoints': 'list[LogEndpoint]'
         }
-
         self.attribute_map = {
             'endpoint_type': 'endpointType',
             'list_endpoint': 'listEndpoint',
             'log_endpoints': 'logEndpoints'
         }
-
         self._endpoint_type = None
         self._list_endpoint = None
         self._log_endpoints = None

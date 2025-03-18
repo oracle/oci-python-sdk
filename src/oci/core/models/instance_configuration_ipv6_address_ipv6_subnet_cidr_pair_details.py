@@ -33,12 +33,10 @@ class InstanceConfigurationIpv6AddressIpv6SubnetCidrPairDetails(object):
             'ipv6_subnet_cidr': 'str',
             'ipv6_address': 'str'
         }
-
         self.attribute_map = {
             'ipv6_subnet_cidr': 'ipv6SubnetCidr',
             'ipv6_address': 'ipv6Address'
         }
-
         self._ipv6_subnet_cidr = None
         self._ipv6_address = None
 

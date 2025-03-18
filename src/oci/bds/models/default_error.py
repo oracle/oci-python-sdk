@@ -33,12 +33,10 @@ class DefaultError(object):
             'code': 'str',
             'message': 'str'
         }
-
         self.attribute_map = {
             'code': 'code',
             'message': 'message'
         }
-
         self._code = None
         self._message = None
 

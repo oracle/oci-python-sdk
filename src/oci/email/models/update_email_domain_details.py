@@ -43,14 +43,12 @@ class UpdateEmailDomainDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'domain_verification_id': 'domainVerificationId',
             'description': 'description',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._domain_verification_id = None
         self._description = None
         self._freeform_tags = None

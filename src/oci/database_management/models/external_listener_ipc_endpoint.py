@@ -40,13 +40,11 @@ class ExternalListenerIpcEndpoint(ExternalListenerEndpoint):
             'services': 'list[str]',
             'key': 'str'
         }
-
         self.attribute_map = {
             'protocol': 'protocol',
             'services': 'services',
             'key': 'key'
         }
-
         self._protocol = None
         self._services = None
         self._key = None

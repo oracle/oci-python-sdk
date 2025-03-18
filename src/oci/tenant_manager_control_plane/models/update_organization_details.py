@@ -28,11 +28,9 @@ class UpdateOrganizationDetails(object):
         self.swagger_types = {
             'default_ucm_subscription_id': 'str'
         }
-
         self.attribute_map = {
             'default_ucm_subscription_id': 'defaultUcmSubscriptionId'
         }
-
         self._default_ucm_subscription_id = None
 
     @property

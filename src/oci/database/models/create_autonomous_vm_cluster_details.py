@@ -136,7 +136,6 @@ class CreateAutonomousVmClusterDetails(object):
             'scan_listener_port_non_tls': 'int',
             'is_mtls_enabled': 'bool'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
@@ -158,7 +157,6 @@ class CreateAutonomousVmClusterDetails(object):
             'scan_listener_port_non_tls': 'scanListenerPortNonTls',
             'is_mtls_enabled': 'isMtlsEnabled'
         }
-
         self._compartment_id = None
         self._display_name = None
         self._exadata_infrastructure_id = None

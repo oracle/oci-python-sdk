@@ -53,7 +53,6 @@ class RequestSummarizedMetricDataDetails(object):
             'start_time': 'datetime',
             'end_time': 'datetime'
         }
-
         self.attribute_map = {
             'namespace_name': 'namespaceName',
             'metric_name': 'metricName',
@@ -62,7 +61,6 @@ class RequestSummarizedMetricDataDetails(object):
             'start_time': 'startTime',
             'end_time': 'endTime'
         }
-
         self._namespace_name = None
         self._metric_name = None
         self._compartment_id = None

@@ -57,13 +57,11 @@ class BitbucketServerFilter(Filter):
             'events': 'list[str]',
             'include': 'BitbucketServerFilterAttributes'
         }
-
         self.attribute_map = {
             'trigger_source': 'triggerSource',
             'events': 'events',
             'include': 'include'
         }
-
         self._trigger_source = None
         self._events = None
         self._include = None

@@ -43,14 +43,12 @@ class AttachLoadBalancerDetails(object):
             'port': 'int',
             'vnic_selection': 'str'
         }
-
         self.attribute_map = {
             'load_balancer_id': 'loadBalancerId',
             'backend_set_name': 'backendSetName',
             'port': 'port',
             'vnic_selection': 'vnicSelection'
         }
-
         self._load_balancer_id = None
         self._backend_set_name = None
         self._port = None

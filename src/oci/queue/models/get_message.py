@@ -63,7 +63,6 @@ class GetMessage(object):
             'created_at': 'datetime',
             'metadata': 'MessageMetadata'
         }
-
         self.attribute_map = {
             'id': 'id',
             'content': 'content',
@@ -74,7 +73,6 @@ class GetMessage(object):
             'created_at': 'createdAt',
             'metadata': 'metadata'
         }
-
         self._id = None
         self._content = None
         self._receipt = None

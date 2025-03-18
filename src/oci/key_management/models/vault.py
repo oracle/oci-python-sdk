@@ -164,7 +164,6 @@ class Vault(object):
             'is_vault_replicable': 'bool',
             'external_key_manager_metadata_summary': 'ExternalKeyManagerMetadataSummary'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'crypto_endpoint': 'cryptoEndpoint',
@@ -184,7 +183,6 @@ class Vault(object):
             'is_vault_replicable': 'isVaultReplicable',
             'external_key_manager_metadata_summary': 'externalKeyManagerMetadataSummary'
         }
-
         self._compartment_id = None
         self._crypto_endpoint = None
         self._defined_tags = None

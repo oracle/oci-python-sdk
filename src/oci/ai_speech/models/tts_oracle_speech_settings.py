@@ -78,14 +78,12 @@ class TtsOracleSpeechSettings(object):
             'output_format': 'str',
             'speech_mark_types': 'list[str]'
         }
-
         self.attribute_map = {
             'text_type': 'textType',
             'sample_rate_in_hz': 'sampleRateInHz',
             'output_format': 'outputFormat',
             'speech_mark_types': 'speechMarkTypes'
         }
-
         self._text_type = None
         self._sample_rate_in_hz = None
         self._output_format = None

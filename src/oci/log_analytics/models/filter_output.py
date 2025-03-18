@@ -38,13 +38,11 @@ class FilterOutput(object):
             'internal_query_string': 'str',
             'response_time_in_ms': 'int'
         }
-
         self.attribute_map = {
             'display_query_string': 'displayQueryString',
             'internal_query_string': 'internalQueryString',
             'response_time_in_ms': 'responseTimeInMs'
         }
-
         self._display_query_string = None
         self._internal_query_string = None
         self._response_time_in_ms = None

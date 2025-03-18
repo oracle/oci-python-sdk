@@ -93,7 +93,6 @@ class GrantSearchRequest(object):
             'start_index': 'int',
             'count': 'int'
         }
-
         self.attribute_map = {
             'schemas': 'schemas',
             'attributes': 'attributes',
@@ -104,7 +103,6 @@ class GrantSearchRequest(object):
             'start_index': 'startIndex',
             'count': 'count'
         }
-
         self._schemas = None
         self._attributes = None
         self._attribute_sets = None

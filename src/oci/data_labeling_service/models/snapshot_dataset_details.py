@@ -43,14 +43,12 @@ class SnapshotDatasetDetails(object):
             'export_details': 'ObjectStorageSnapshotExportDetails',
             'export_format': 'ExportFormat'
         }
-
         self.attribute_map = {
             'are_annotations_included': 'areAnnotationsIncluded',
             'are_unannotated_records_included': 'areUnannotatedRecordsIncluded',
             'export_details': 'exportDetails',
             'export_format': 'exportFormat'
         }
-
         self._are_annotations_included = None
         self._are_unannotated_records_included = None
         self._export_details = None

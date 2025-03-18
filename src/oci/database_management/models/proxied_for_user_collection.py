@@ -28,11 +28,9 @@ class ProxiedForUserCollection(object):
         self.swagger_types = {
             'items': 'list[ProxiedForUserSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

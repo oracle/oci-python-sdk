@@ -122,7 +122,6 @@ class ApprovalWorkflow(object):
             'max_duration': 'ApprovalWorkflowMaxDuration',
             'approval_workflow_steps': 'list[ApprovalWorkflowApprovalWorkflowSteps]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -142,7 +141,6 @@ class ApprovalWorkflow(object):
             'max_duration': 'maxDuration',
             'approval_workflow_steps': 'approvalWorkflowSteps'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

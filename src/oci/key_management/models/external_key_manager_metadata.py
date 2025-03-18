@@ -38,13 +38,11 @@ class ExternalKeyManagerMetadata(object):
             'external_vault_endpoint_url': 'str',
             'private_endpoint_id': 'str'
         }
-
         self.attribute_map = {
             'oauth_metadata': 'oauthMetadata',
             'external_vault_endpoint_url': 'externalVaultEndpointUrl',
             'private_endpoint_id': 'privateEndpointId'
         }
-
         self._oauth_metadata = None
         self._external_vault_endpoint_url = None
         self._private_endpoint_id = None

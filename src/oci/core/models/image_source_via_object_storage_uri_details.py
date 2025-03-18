@@ -50,7 +50,6 @@ class ImageSourceViaObjectStorageUriDetails(ImageSourceDetails):
             'source_type': 'str',
             'source_uri': 'str'
         }
-
         self.attribute_map = {
             'operating_system': 'operatingSystem',
             'operating_system_version': 'operatingSystemVersion',
@@ -58,7 +57,6 @@ class ImageSourceViaObjectStorageUriDetails(ImageSourceDetails):
             'source_type': 'sourceType',
             'source_uri': 'sourceUri'
         }
-
         self._operating_system = None
         self._operating_system_version = None
         self._source_image_type = None

@@ -62,7 +62,6 @@ class CreateBackendDetails(object):
             'drain': 'bool',
             'offline': 'bool'
         }
-
         self.attribute_map = {
             'ip_address': 'ipAddress',
             'port': 'port',
@@ -72,7 +71,6 @@ class CreateBackendDetails(object):
             'drain': 'drain',
             'offline': 'offline'
         }
-
         self._ip_address = None
         self._port = None
         self._weight = None

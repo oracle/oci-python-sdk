@@ -53,7 +53,6 @@ class InstanceAgentCommandSummary(object):
             'time_updated': 'datetime',
             'is_canceled': 'bool'
         }
-
         self.attribute_map = {
             'instance_agent_command_id': 'instanceAgentCommandId',
             'display_name': 'displayName',
@@ -62,7 +61,6 @@ class InstanceAgentCommandSummary(object):
             'time_updated': 'timeUpdated',
             'is_canceled': 'isCanceled'
         }
-
         self._instance_agent_command_id = None
         self._display_name = None
         self._compartment_id = None

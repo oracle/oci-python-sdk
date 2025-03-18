@@ -38,13 +38,11 @@ class MirrorRepositoryConfig(object):
             'repository_url': 'str',
             'trigger_schedule': 'TriggerSchedule'
         }
-
         self.attribute_map = {
             'connector_id': 'connectorId',
             'repository_url': 'repositoryUrl',
             'trigger_schedule': 'triggerSchedule'
         }
-
         self._connector_id = None
         self._repository_url = None
         self._trigger_schedule = None

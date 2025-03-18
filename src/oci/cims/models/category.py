@@ -33,12 +33,10 @@ class Category(object):
             'category_key': 'str',
             'name': 'str'
         }
-
         self.attribute_map = {
             'category_key': 'categoryKey',
             'name': 'name'
         }
-
         self._category_key = None
         self._name = None
 

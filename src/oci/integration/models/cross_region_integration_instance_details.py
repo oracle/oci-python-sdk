@@ -57,14 +57,12 @@ class CrossRegionIntegrationInstanceDetails(object):
             'region': 'str',
             'time_role_changed': 'datetime'
         }
-
         self.attribute_map = {
             'role': 'role',
             'id': 'id',
             'region': 'region',
             'time_role_changed': 'timeRoleChanged'
         }
-
         self._role = None
         self._id = None
         self._region = None

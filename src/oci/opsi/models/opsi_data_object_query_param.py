@@ -33,12 +33,10 @@ class OpsiDataObjectQueryParam(object):
             'name': 'str',
             'value': 'object'
         }
-
         self.attribute_map = {
             'name': 'name',
             'value': 'value'
         }
-
         self._name = None
         self._value = None
 

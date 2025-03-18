@@ -33,12 +33,10 @@ class UpdateSubscriptionDetails(object):
             'subscription': 'Subscription',
             'email': 'str'
         }
-
         self.attribute_map = {
             'subscription': 'subscription',
             'email': 'email'
         }
-
         self._subscription = None
         self._email = None
 

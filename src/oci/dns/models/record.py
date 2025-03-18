@@ -61,7 +61,6 @@ class Record(object):
             'rtype': 'str',
             'ttl': 'int'
         }
-
         self.attribute_map = {
             'domain': 'domain',
             'record_hash': 'recordHash',
@@ -71,7 +70,6 @@ class Record(object):
             'rtype': 'rtype',
             'ttl': 'ttl'
         }
-
         self._domain = None
         self._record_hash = None
         self._is_protected = None

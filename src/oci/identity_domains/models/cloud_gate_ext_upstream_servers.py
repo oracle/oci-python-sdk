@@ -58,7 +58,6 @@ class CloudGateExtUpstreamServers(object):
             'group_id': 'str',
             'display_name': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ref': '$ref',
@@ -68,7 +67,6 @@ class CloudGateExtUpstreamServers(object):
             'group_id': 'groupId',
             'display_name': 'displayName'
         }
-
         self._value = None
         self._ref = None
         self._host_name = None

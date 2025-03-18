@@ -28,11 +28,9 @@ class UpdateStateDetails(object):
         self.swagger_types = {
             'blocked': 'bool'
         }
-
         self.attribute_map = {
             'blocked': 'blocked'
         }
-
         self._blocked = None
 
     @property

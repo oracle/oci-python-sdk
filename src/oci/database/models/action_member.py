@@ -38,13 +38,11 @@ class ActionMember(object):
             'member_id': 'str',
             'estimated_time_in_mins': 'int'
         }
-
         self.attribute_map = {
             'member_order': 'memberOrder',
             'member_id': 'memberId',
             'estimated_time_in_mins': 'estimatedTimeInMins'
         }
-
         self._member_order = None
         self._member_id = None
         self._estimated_time_in_mins = None

@@ -54,7 +54,6 @@ class MetricBasedHorizontalScalingPolicyDetails(AutoScalePolicyDetails):
             'scale_out_config': 'MetricBasedHorizontalScaleOutConfig',
             'scale_in_config': 'MetricBasedHorizontalScaleInConfig'
         }
-
         self.attribute_map = {
             'policy_type': 'policyType',
             'trigger_type': 'triggerType',
@@ -62,7 +61,6 @@ class MetricBasedHorizontalScalingPolicyDetails(AutoScalePolicyDetails):
             'scale_out_config': 'scaleOutConfig',
             'scale_in_config': 'scaleInConfig'
         }
-
         self._policy_type = None
         self._trigger_type = None
         self._action_type = None

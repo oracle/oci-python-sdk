@@ -53,7 +53,6 @@ class ExternalPublicationValidationSummary(object):
             'validation_messages': 'dict(str, list[ValidationMessage])',
             'key': 'str'
         }
-
         self.attribute_map = {
             'total_message_count': 'totalMessageCount',
             'error_message_count': 'errorMessageCount',
@@ -62,7 +61,6 @@ class ExternalPublicationValidationSummary(object):
             'validation_messages': 'validationMessages',
             'key': 'key'
         }
-
         self._total_message_count = None
         self._error_message_count = None
         self._warn_message_count = None

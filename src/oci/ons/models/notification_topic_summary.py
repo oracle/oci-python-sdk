@@ -92,7 +92,6 @@ class NotificationTopicSummary(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'api_endpoint': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'topic_id': 'topicId',
@@ -106,7 +105,6 @@ class NotificationTopicSummary(object):
             'defined_tags': 'definedTags',
             'api_endpoint': 'apiEndpoint'
         }
-
         self._name = None
         self._topic_id = None
         self._short_topic_id = None

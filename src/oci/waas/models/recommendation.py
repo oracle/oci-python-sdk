@@ -55,7 +55,6 @@ class Recommendation(object):
             'labels': 'list[str]',
             'recommended_action': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'mod_security_rule_ids': 'modSecurityRuleIds',
@@ -64,7 +63,6 @@ class Recommendation(object):
             'labels': 'labels',
             'recommended_action': 'recommendedAction'
         }
-
         self._key = None
         self._mod_security_rule_ids = None
         self._name = None

@@ -62,7 +62,6 @@ class CreateBootVolumeBackupDetails(object):
             'type': 'str',
             'kms_key_id': 'str'
         }
-
         self.attribute_map = {
             'boot_volume_id': 'bootVolumeId',
             'defined_tags': 'definedTags',
@@ -71,7 +70,6 @@ class CreateBootVolumeBackupDetails(object):
             'type': 'type',
             'kms_key_id': 'kmsKeyId'
         }
-
         self._boot_volume_id = None
         self._defined_tags = None
         self._display_name = None

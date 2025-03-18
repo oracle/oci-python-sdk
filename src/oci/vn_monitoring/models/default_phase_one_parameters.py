@@ -38,13 +38,11 @@ class DefaultPhaseOneParameters(object):
             'default_authentication_algorithms': 'list[str]',
             'default_dh_groups': 'list[str]'
         }
-
         self.attribute_map = {
             'default_encryption_algorithms': 'defaultEncryptionAlgorithms',
             'default_authentication_algorithms': 'defaultAuthenticationAlgorithms',
             'default_dh_groups': 'defaultDhGroups'
         }
-
         self._default_encryption_algorithms = None
         self._default_authentication_algorithms = None
         self._default_dh_groups = None

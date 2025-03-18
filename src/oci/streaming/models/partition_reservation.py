@@ -43,14 +43,12 @@ class PartitionReservation(object):
             'reserved_instance': 'str',
             'time_reserved_until': 'datetime'
         }
-
         self.attribute_map = {
             'partition': 'partition',
             'committed_offset': 'committedOffset',
             'reserved_instance': 'reservedInstance',
             'time_reserved_until': 'timeReservedUntil'
         }
-
         self._partition = None
         self._committed_offset = None
         self._reserved_instance = None

@@ -68,7 +68,6 @@ class UpdateFleetAgentConfigurationDetails(object):
             'windows_configuration': 'FleetAgentOsConfiguration',
             'mac_os_configuration': 'FleetAgentOsConfiguration'
         }
-
         self.attribute_map = {
             'jre_scan_frequency_in_minutes': 'jreScanFrequencyInMinutes',
             'java_usage_tracker_processing_frequency_in_minutes': 'javaUsageTrackerProcessingFrequencyInMinutes',
@@ -80,7 +79,6 @@ class UpdateFleetAgentConfigurationDetails(object):
             'windows_configuration': 'windowsConfiguration',
             'mac_os_configuration': 'macOsConfiguration'
         }
-
         self._jre_scan_frequency_in_minutes = None
         self._java_usage_tracker_processing_frequency_in_minutes = None
         self._work_request_validity_period_in_days = None

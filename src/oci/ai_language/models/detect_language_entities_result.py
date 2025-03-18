@@ -28,11 +28,9 @@ class DetectLanguageEntitiesResult(object):
         self.swagger_types = {
             'entities': 'list[Entity]'
         }
-
         self.attribute_map = {
             'entities': 'entities'
         }
-
         self._entities = None
 
     @property

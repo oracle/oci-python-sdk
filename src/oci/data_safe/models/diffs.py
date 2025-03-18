@@ -83,7 +83,6 @@ class Diffs(object):
             'modified_items': 'list[str]',
             'severity': 'str'
         }
-
         self.attribute_map = {
             'current': 'current',
             'baseline': 'baseline',
@@ -92,7 +91,6 @@ class Diffs(object):
             'modified_items': 'modifiedItems',
             'severity': 'severity'
         }
-
         self._current = None
         self._baseline = None
         self._removed_items = None

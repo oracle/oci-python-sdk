@@ -186,7 +186,6 @@ class DedicatedShardedDatabaseSummary(ShardedDatabaseSummary):
             'total_cpu_count': 'int',
             'total_data_storage_size_in_gbs': 'float'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -217,7 +216,6 @@ class DedicatedShardedDatabaseSummary(ShardedDatabaseSummary):
             'total_cpu_count': 'totalCpuCount',
             'total_data_storage_size_in_gbs': 'totalDataStorageSizeInGbs'
         }
-
         self._id = None
         self._compartment_id = None
         self._db_deployment_type = None

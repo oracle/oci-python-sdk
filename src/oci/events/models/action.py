@@ -103,7 +103,6 @@ class Action(object):
             'is_enabled': 'bool',
             'description': 'str'
         }
-
         self.attribute_map = {
             'action_type': 'actionType',
             'id': 'id',
@@ -112,7 +111,6 @@ class Action(object):
             'is_enabled': 'isEnabled',
             'description': 'description'
         }
-
         self._action_type = None
         self._id = None
         self._lifecycle_message = None

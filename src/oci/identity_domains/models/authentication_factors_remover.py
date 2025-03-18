@@ -135,7 +135,6 @@ class AuthenticationFactorsRemover(object):
             'type': 'str',
             'token': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -154,7 +153,6 @@ class AuthenticationFactorsRemover(object):
             'type': 'type',
             'token': 'token'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

@@ -120,7 +120,6 @@ class UpdateTaskFromOCIDataflowTask(UpdateTaskDetails):
             'driver_shape_details': 'ShapeDetails',
             'executor_shape_details': 'ShapeDetails'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -142,7 +141,6 @@ class UpdateTaskFromOCIDataflowTask(UpdateTaskDetails):
             'driver_shape_details': 'driverShapeDetails',
             'executor_shape_details': 'executorShapeDetails'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

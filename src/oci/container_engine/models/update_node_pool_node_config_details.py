@@ -63,7 +63,6 @@ class UpdateNodePoolNodeConfigDetails(object):
             'placement_configs': 'list[NodePoolPlacementConfigDetails]',
             'node_pool_pod_network_option_details': 'NodePoolPodNetworkOptionDetails'
         }
-
         self.attribute_map = {
             'size': 'size',
             'nsg_ids': 'nsgIds',
@@ -74,7 +73,6 @@ class UpdateNodePoolNodeConfigDetails(object):
             'placement_configs': 'placementConfigs',
             'node_pool_pod_network_option_details': 'nodePoolPodNetworkOptionDetails'
         }
-
         self._size = None
         self._nsg_ids = None
         self._kms_key_id = None

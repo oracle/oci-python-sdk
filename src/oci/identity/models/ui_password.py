@@ -75,7 +75,6 @@ class UIPassword(object):
             'lifecycle_state': 'str',
             'inactive_status': 'int'
         }
-
         self.attribute_map = {
             'password': 'password',
             'user_id': 'userId',
@@ -83,7 +82,6 @@ class UIPassword(object):
             'lifecycle_state': 'lifecycleState',
             'inactive_status': 'inactiveStatus'
         }
-
         self._password = None
         self._user_id = None
         self._time_created = None

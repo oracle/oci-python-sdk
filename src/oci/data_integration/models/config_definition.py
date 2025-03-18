@@ -63,7 +63,6 @@ class ConfigDefinition(object):
             'object_status': 'int',
             'config_parameter_definitions': 'dict(str, ConfigParameterDefinition)'
         }
-
         self.attribute_map = {
             'key': 'key',
             'model_type': 'modelType',
@@ -74,7 +73,6 @@ class ConfigDefinition(object):
             'object_status': 'objectStatus',
             'config_parameter_definitions': 'configParameterDefinitions'
         }
-
         self._key = None
         self._model_type = None
         self._model_version = None

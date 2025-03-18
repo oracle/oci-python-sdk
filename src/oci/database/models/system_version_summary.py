@@ -38,13 +38,11 @@ class SystemVersionSummary(object):
             'gi_version': 'str',
             'system_versions': 'list[str]'
         }
-
         self.attribute_map = {
             'shape': 'shape',
             'gi_version': 'giVersion',
             'system_versions': 'systemVersions'
         }
-
         self._shape = None
         self._gi_version = None
         self._system_versions = None

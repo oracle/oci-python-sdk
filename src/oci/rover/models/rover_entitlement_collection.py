@@ -28,11 +28,9 @@ class RoverEntitlementCollection(object):
         self.swagger_types = {
             'items': 'list[RoverEntitlementSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

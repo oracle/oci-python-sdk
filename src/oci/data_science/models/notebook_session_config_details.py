@@ -48,7 +48,6 @@ class NotebookSessionConfigDetails(object):
             'private_endpoint_id': 'str',
             'notebook_session_shape_config_details': 'NotebookSessionShapeConfigDetails'
         }
-
         self.attribute_map = {
             'shape': 'shape',
             'block_storage_size_in_gbs': 'blockStorageSizeInGBs',
@@ -56,7 +55,6 @@ class NotebookSessionConfigDetails(object):
             'private_endpoint_id': 'privateEndpointId',
             'notebook_session_shape_config_details': 'notebookSessionShapeConfigDetails'
         }
-
         self._shape = None
         self._block_storage_size_in_gbs = None
         self._subnet_id = None

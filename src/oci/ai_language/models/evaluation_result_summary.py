@@ -43,13 +43,11 @@ class EvaluationResultSummary(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._model_type = None
         self._freeform_tags = None
         self._defined_tags = None

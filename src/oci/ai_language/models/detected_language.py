@@ -38,13 +38,11 @@ class DetectedLanguage(object):
             'code': 'str',
             'score': 'float'
         }
-
         self.attribute_map = {
             'name': 'name',
             'code': 'code',
             'score': 'score'
         }
-
         self._name = None
         self._code = None
         self._score = None

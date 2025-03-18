@@ -112,7 +112,6 @@ class ContainerHealthCheck(object):
             'status_details': 'str',
             'failure_action': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'health_check_type': 'healthCheckType',
@@ -125,7 +124,6 @@ class ContainerHealthCheck(object):
             'status_details': 'statusDetails',
             'failure_action': 'failureAction'
         }
-
         self._name = None
         self._health_check_type = None
         self._initial_delay_in_seconds = None

@@ -134,7 +134,6 @@ class DbHome(object):
             'database_software_image_id': 'str',
             'is_unified_auditing_enabled': 'bool'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -154,7 +153,6 @@ class DbHome(object):
             'database_software_image_id': 'databaseSoftwareImageId',
             'is_unified_auditing_enabled': 'isUnifiedAuditingEnabled'
         }
-
         self._id = None
         self._compartment_id = None
         self._display_name = None

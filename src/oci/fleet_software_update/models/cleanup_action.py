@@ -112,7 +112,6 @@ class CleanupAction(FsuAction):
             'schedule_details': 'ScheduleDetails',
             'progress': 'FsuActionProgressDetails'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -132,7 +131,6 @@ class CleanupAction(FsuAction):
             'schedule_details': 'scheduleDetails',
             'progress': 'progress'
         }
-
         self._id = None
         self._display_name = None
         self._compartment_id = None

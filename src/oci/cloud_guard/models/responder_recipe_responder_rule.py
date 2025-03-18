@@ -156,7 +156,6 @@ class ResponderRecipeResponderRule(object):
             'lifecycle_details': 'str',
             'locks': 'list[ResourceLock]'
         }
-
         self.attribute_map = {
             'responder_rule_id': 'responderRuleId',
             'display_name': 'displayName',
@@ -172,7 +171,6 @@ class ResponderRecipeResponderRule(object):
             'lifecycle_details': 'lifecycleDetails',
             'locks': 'locks'
         }
-
         self._responder_rule_id = None
         self._display_name = None
         self._description = None

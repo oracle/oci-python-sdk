@@ -48,7 +48,6 @@ class CreateBdsApiKeyDetails(object):
             'key_alias': 'str',
             'domain_ocid': 'str'
         }
-
         self.attribute_map = {
             'user_id': 'userId',
             'passphrase': 'passphrase',
@@ -56,7 +55,6 @@ class CreateBdsApiKeyDetails(object):
             'key_alias': 'keyAlias',
             'domain_ocid': 'domainOcid'
         }
-
         self._user_id = None
         self._passphrase = None
         self._default_region = None

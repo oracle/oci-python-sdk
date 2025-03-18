@@ -43,14 +43,12 @@ class ZoneTransferServer(object):
             'is_transfer_source': 'bool',
             'is_transfer_destination': 'bool'
         }
-
         self.attribute_map = {
             'address': 'address',
             'port': 'port',
             'is_transfer_source': 'isTransferSource',
             'is_transfer_destination': 'isTransferDestination'
         }
-
         self._address = None
         self._port = None
         self._is_transfer_source = None

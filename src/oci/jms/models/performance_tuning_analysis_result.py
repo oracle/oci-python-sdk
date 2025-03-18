@@ -118,7 +118,6 @@ class PerformanceTuningAnalysisResult(object):
             'time_started': 'datetime',
             'time_finished': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'work_request_id': 'workRequestId',
@@ -138,7 +137,6 @@ class PerformanceTuningAnalysisResult(object):
             'time_started': 'timeStarted',
             'time_finished': 'timeFinished'
         }
-
         self._id = None
         self._work_request_id = None
         self._fleet_id = None

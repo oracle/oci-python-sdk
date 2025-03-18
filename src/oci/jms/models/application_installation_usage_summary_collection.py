@@ -28,11 +28,9 @@ class ApplicationInstallationUsageSummaryCollection(object):
         self.swagger_types = {
             'items': 'list[ApplicationInstallationUsageSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

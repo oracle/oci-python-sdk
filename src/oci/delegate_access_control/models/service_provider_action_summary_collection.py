@@ -28,11 +28,9 @@ class ServiceProviderActionSummaryCollection(object):
         self.swagger_types = {
             'items': 'list[ServiceProviderActionSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

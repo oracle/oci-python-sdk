@@ -38,11 +38,9 @@ class ApprovalPolicy(object):
         self.swagger_types = {
             'approval_policy_type': 'str'
         }
-
         self.attribute_map = {
             'approval_policy_type': 'approvalPolicyType'
         }
-
         self._approval_policy_type = None
 
     @staticmethod

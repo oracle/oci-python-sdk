@@ -159,7 +159,6 @@ class PrivateIp(object):
             'lifetime': 'str',
             'route_table_id': 'str'
         }
-
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'compartment_id': 'compartmentId',
@@ -178,7 +177,6 @@ class PrivateIp(object):
             'lifetime': 'lifetime',
             'route_table_id': 'routeTableId'
         }
-
         self._availability_domain = None
         self._compartment_id = None
         self._defined_tags = None

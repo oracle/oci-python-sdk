@@ -68,7 +68,6 @@ class JobLog(object):
             'log_message': 'str',
             'uri': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'job_execution_key': 'jobExecutionKey',
@@ -80,7 +79,6 @@ class JobLog(object):
             'log_message': 'logMessage',
             'uri': 'uri'
         }
-
         self._key = None
         self._job_execution_key = None
         self._created_by_id = None

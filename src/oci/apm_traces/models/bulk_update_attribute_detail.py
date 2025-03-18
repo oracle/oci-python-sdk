@@ -76,13 +76,11 @@ class BulkUpdateAttributeDetail(object):
             'unit': 'str',
             'attribute_name_space': 'str'
         }
-
         self.attribute_map = {
             'attribute_name': 'attributeName',
             'unit': 'unit',
             'attribute_name_space': 'attributeNameSpace'
         }
-
         self._attribute_name = None
         self._unit = None
         self._attribute_name_space = None

@@ -185,7 +185,6 @@ class ManagedInstance(object):
             'scheduled_job_count': 'int',
             'work_request_count': 'int'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'id': 'id',
@@ -214,7 +213,6 @@ class ManagedInstance(object):
             'scheduled_job_count': 'scheduledJobCount',
             'work_request_count': 'workRequestCount'
         }
-
         self._display_name = None
         self._id = None
         self._description = None

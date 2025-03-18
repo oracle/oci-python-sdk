@@ -71,14 +71,12 @@ class OpenAlertSummary(object):
             'time_start_at': 'datetime',
             'message': 'str'
         }
-
         self.attribute_map = {
             'severity': 'severity',
             'type': 'type',
             'time_start_at': 'timeStartAt',
             'message': 'message'
         }
-
         self._severity = None
         self._type = None
         self._time_start_at = None

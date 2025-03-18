@@ -33,12 +33,10 @@ class NotebookSessionRuntimeConfigDetails(object):
             'custom_environment_variables': 'dict(str, str)',
             'notebook_session_git_config_details': 'NotebookSessionGitConfigDetails'
         }
-
         self.attribute_map = {
             'custom_environment_variables': 'customEnvironmentVariables',
             'notebook_session_git_config_details': 'notebookSessionGitConfigDetails'
         }
-
         self._custom_environment_variables = None
         self._notebook_session_git_config_details = None
 

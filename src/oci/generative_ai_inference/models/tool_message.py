@@ -40,13 +40,11 @@ class ToolMessage(Message):
             'content': 'list[ChatContent]',
             'tool_call_id': 'str'
         }
-
         self.attribute_map = {
             'role': 'role',
             'content': 'content',
             'tool_call_id': 'toolCallId'
         }
-
         self._role = None
         self._content = None
         self._tool_call_id = None

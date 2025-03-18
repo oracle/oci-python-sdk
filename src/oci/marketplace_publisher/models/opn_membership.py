@@ -62,7 +62,6 @@ class OpnMembership(object):
             'opn_number': 'str',
             'opn_membership_type': 'str'
         }
-
         self.attribute_map = {
             'time_start': 'timeStart',
             'time_end': 'timeEnd',
@@ -70,7 +69,6 @@ class OpnMembership(object):
             'opn_number': 'opnNumber',
             'opn_membership_type': 'opnMembershipType'
         }
-
         self._time_start = None
         self._time_end = None
         self._opn_status = None

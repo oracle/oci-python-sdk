@@ -38,13 +38,11 @@ class DefinedTagFilterValue(object):
             'tag_key': 'str',
             'value': 'str'
         }
-
         self.attribute_map = {
             'namespace': 'namespace',
             'tag_key': 'tagKey',
             'value': 'value'
         }
-
         self._namespace = None
         self._tag_key = None
         self._value = None

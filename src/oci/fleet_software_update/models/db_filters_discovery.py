@@ -35,12 +35,10 @@ class DbFiltersDiscovery(DbFleetDiscoveryDetails):
             'strategy': 'str',
             'filters': 'list[DbFleetDiscoveryFilter]'
         }
-
         self.attribute_map = {
             'strategy': 'strategy',
             'filters': 'filters'
         }
-
         self._strategy = None
         self._filters = None
         self._strategy = 'FILTERS'

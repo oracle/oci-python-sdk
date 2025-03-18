@@ -48,11 +48,9 @@ class TargetResourceDetails(object):
         self.swagger_types = {
             'session_type': 'str'
         }
-
         self.attribute_map = {
             'session_type': 'sessionType'
         }
-
         self._session_type = None
 
     @staticmethod

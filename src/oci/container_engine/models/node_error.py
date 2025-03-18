@@ -43,14 +43,12 @@ class NodeError(object):
             'status': 'str',
             'opc_request_id': 'str'
         }
-
         self.attribute_map = {
             'code': 'code',
             'message': 'message',
             'status': 'status',
             'opc_request_id': 'opc-request-id'
         }
-
         self._code = None
         self._message = None
         self._status = None

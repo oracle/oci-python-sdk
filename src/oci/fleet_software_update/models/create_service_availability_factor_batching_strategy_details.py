@@ -40,13 +40,11 @@ class CreateServiceAvailabilityFactorBatchingStrategyDetails(CreateBatchingStrat
             'percentage': 'int',
             'is_force_rolling': 'bool'
         }
-
         self.attribute_map = {
             'type': 'type',
             'percentage': 'percentage',
             'is_force_rolling': 'isForceRolling'
         }
-
         self._type = None
         self._percentage = None
         self._is_force_rolling = None

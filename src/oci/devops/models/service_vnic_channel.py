@@ -40,13 +40,11 @@ class ServiceVnicChannel(NetworkChannel):
             'subnet_id': 'str',
             'nsg_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'network_channel_type': 'networkChannelType',
             'subnet_id': 'subnetId',
             'nsg_ids': 'nsgIds'
         }
-
         self._network_channel_type = None
         self._subnet_id = None
         self._nsg_ids = None

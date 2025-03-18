@@ -33,12 +33,10 @@ class KubernetesNetworkConfig(object):
             'pods_cidr': 'str',
             'services_cidr': 'str'
         }
-
         self.attribute_map = {
             'pods_cidr': 'podsCidr',
             'services_cidr': 'servicesCidr'
         }
-
         self._pods_cidr = None
         self._services_cidr = None
 

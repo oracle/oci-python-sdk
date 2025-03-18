@@ -58,7 +58,6 @@ class GenerateHealthReportDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'check_type': 'checkType',
             'target_id': 'targetId',
@@ -67,7 +66,6 @@ class GenerateHealthReportDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._check_type = None
         self._target_id = None
         self._compartment_id = None

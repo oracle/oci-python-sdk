@@ -53,7 +53,6 @@ class DbManagementAnalyticsMetric(object):
             'start_timestamp_in_epoch_seconds': 'int',
             'mean': 'float'
         }
-
         self.attribute_map = {
             'metric_name': 'metricName',
             'duration_in_seconds': 'durationInSeconds',
@@ -62,7 +61,6 @@ class DbManagementAnalyticsMetric(object):
             'start_timestamp_in_epoch_seconds': 'startTimestampInEpochSeconds',
             'mean': 'mean'
         }
-
         self._metric_name = None
         self._duration_in_seconds = None
         self._metadata = None

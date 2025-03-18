@@ -35,12 +35,10 @@ class JmesPathDimensionValue(DimensionValueDetails):
             'kind': 'str',
             'path': 'str'
         }
-
         self.attribute_map = {
             'kind': 'kind',
             'path': 'path'
         }
-
         self._kind = None
         self._path = None
         self._kind = 'jmesPath'

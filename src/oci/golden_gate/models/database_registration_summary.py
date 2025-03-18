@@ -182,7 +182,6 @@ class DatabaseRegistrationSummary(object):
             'alias_name': 'str',
             'secret_id': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -204,7 +203,6 @@ class DatabaseRegistrationSummary(object):
             'alias_name': 'aliasName',
             'secret_id': 'secretId'
         }
-
         self._id = None
         self._display_name = None
         self._description = None

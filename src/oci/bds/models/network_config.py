@@ -33,12 +33,10 @@ class NetworkConfig(object):
             'is_nat_gateway_required': 'bool',
             'cidr_block': 'str'
         }
-
         self.attribute_map = {
             'is_nat_gateway_required': 'isNatGatewayRequired',
             'cidr_block': 'cidrBlock'
         }
-
         self._is_nat_gateway_required = None
         self._cidr_block = None
 

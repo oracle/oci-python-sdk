@@ -64,14 +64,12 @@ class BulkUnpinMetadata(object):
             'attributes_unpinned': 'int',
             'synthetic_attributes_unpinned': 'int'
         }
-
         self.attribute_map = {
             'operation_status': 'operationStatus',
             'operation_type': 'operationType',
             'attributes_unpinned': 'attributesUnpinned',
             'synthetic_attributes_unpinned': 'syntheticAttributesUnpinned'
         }
-
         self._operation_status = None
         self._operation_type = None
         self._attributes_unpinned = None

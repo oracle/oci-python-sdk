@@ -33,12 +33,10 @@ class DbSystemComputePerformanceSummary(object):
             'shape': 'str',
             'compute_performance_list': 'list[ComputePerformanceSummary]'
         }
-
         self.attribute_map = {
             'shape': 'shape',
             'compute_performance_list': 'computePerformanceList'
         }
-
         self._shape = None
         self._compute_performance_list = None
 

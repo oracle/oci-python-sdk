@@ -140,7 +140,6 @@ class DataAssetFromOracleDetails(DataAsset):
             'wallet_password_secret': 'SensitiveAttribute',
             'default_connection': 'ConnectionFromOracleDetails'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -166,7 +165,6 @@ class DataAssetFromOracleDetails(DataAsset):
             'wallet_password_secret': 'walletPasswordSecret',
             'default_connection': 'defaultConnection'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

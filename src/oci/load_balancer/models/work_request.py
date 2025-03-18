@@ -91,7 +91,6 @@ class WorkRequest(object):
             'time_finished': 'datetime',
             'error_details': 'list[WorkRequestError]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'load_balancer_id': 'loadBalancerId',
@@ -103,7 +102,6 @@ class WorkRequest(object):
             'time_finished': 'timeFinished',
             'error_details': 'errorDetails'
         }
-
         self._id = None
         self._load_balancer_id = None
         self._type = None

@@ -52,7 +52,6 @@ class CloudVmClusterTargetSummary(TargetDetails):
             'infrastructure_id': 'str',
             'software_image_id': 'str'
         }
-
         self.attribute_map = {
             'entity_type': 'entityType',
             'id': 'id',
@@ -60,7 +59,6 @@ class CloudVmClusterTargetSummary(TargetDetails):
             'infrastructure_id': 'infrastructureId',
             'software_image_id': 'softwareImageId'
         }
-
         self._entity_type = None
         self._id = None
         self._compartment_id = None

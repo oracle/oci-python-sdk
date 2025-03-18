@@ -182,7 +182,6 @@ class MonitoredResourceMemberSummary(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'resource_id': 'resourceId',
             'resource_name': 'resourceName',
@@ -200,7 +199,6 @@ class MonitoredResourceMemberSummary(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._resource_id = None
         self._resource_name = None
         self._resource_display_name = None

@@ -105,7 +105,6 @@ class Pivot(Operator):
             'materialized_group_by_columns': 'MaterializedDynamicField',
             'pivot_keys': 'PivotKeys'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -124,7 +123,6 @@ class Pivot(Operator):
             'materialized_group_by_columns': 'materializedGroupByColumns',
             'pivot_keys': 'pivotKeys'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

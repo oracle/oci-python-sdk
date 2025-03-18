@@ -113,7 +113,6 @@ class ExascaleDbStorageVaultSummary(object):
             'cluster_placement_group_id': 'str',
             'subscription_id': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -134,7 +133,6 @@ class ExascaleDbStorageVaultSummary(object):
             'cluster_placement_group_id': 'clusterPlacementGroupId',
             'subscription_id': 'subscriptionId'
         }
-
         self._id = None
         self._compartment_id = None
         self._availability_domain = None

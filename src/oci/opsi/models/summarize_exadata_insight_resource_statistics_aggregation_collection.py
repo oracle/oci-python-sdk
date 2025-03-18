@@ -106,7 +106,6 @@ class SummarizeExadataInsightResourceStatisticsAggregationCollection(object):
             'exadata_insight_id': 'str',
             'exadata_display_name': 'str'
         }
-
         self.attribute_map = {
             'time_interval_start': 'timeIntervalStart',
             'time_interval_end': 'timeIntervalEnd',
@@ -116,7 +115,6 @@ class SummarizeExadataInsightResourceStatisticsAggregationCollection(object):
             'exadata_insight_id': 'exadataInsightId',
             'exadata_display_name': 'exadataDisplayName'
         }
-
         self._time_interval_start = None
         self._time_interval_end = None
         self._items = None

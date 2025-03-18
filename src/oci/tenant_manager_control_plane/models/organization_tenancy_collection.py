@@ -28,11 +28,9 @@ class OrganizationTenancyCollection(object):
         self.swagger_types = {
             'items': 'list[OrganizationTenancySummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

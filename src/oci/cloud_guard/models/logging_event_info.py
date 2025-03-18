@@ -50,7 +50,6 @@ class LoggingEventInfo(DataSourceEventInfo):
             'operator': 'str',
             'log_result': 'str'
         }
-
         self.attribute_map = {
             'data_source_feed_provider': 'dataSourceFeedProvider',
             'observed_value': 'observedValue',
@@ -58,7 +57,6 @@ class LoggingEventInfo(DataSourceEventInfo):
             'operator': 'operator',
             'log_result': 'logResult'
         }
-
         self._data_source_feed_provider = None
         self._observed_value = None
         self._trigger_value = None

@@ -38,13 +38,11 @@ class GeneratedKey(object):
             'plaintext': 'str',
             'plaintext_checksum': 'str'
         }
-
         self.attribute_map = {
             'ciphertext': 'ciphertext',
             'plaintext': 'plaintext',
             'plaintext_checksum': 'plaintextChecksum'
         }
-
         self._ciphertext = None
         self._plaintext = None
         self._plaintext_checksum = None

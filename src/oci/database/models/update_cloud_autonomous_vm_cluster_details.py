@@ -87,7 +87,6 @@ class UpdateCloudAutonomousVmClusterDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'security_attributes': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'description': 'description',
             'display_name': 'displayName',
@@ -101,7 +100,6 @@ class UpdateCloudAutonomousVmClusterDetails(object):
             'defined_tags': 'definedTags',
             'security_attributes': 'securityAttributes'
         }
-
         self._description = None
         self._display_name = None
         self._maintenance_window_details = None

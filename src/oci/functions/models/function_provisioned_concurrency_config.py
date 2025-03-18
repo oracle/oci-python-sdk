@@ -43,11 +43,9 @@ class FunctionProvisionedConcurrencyConfig(object):
         self.swagger_types = {
             'strategy': 'str'
         }
-
         self.attribute_map = {
             'strategy': 'strategy'
         }
-
         self._strategy = None
 
     @staticmethod

@@ -33,12 +33,10 @@ class SqlInParamDetails(object):
             'in_param_position': 'int',
             'in_param_value': 'str'
         }
-
         self.attribute_map = {
             'in_param_position': 'inParamPosition',
             'in_param_value': 'inParamValue'
         }
-
         self._in_param_position = None
         self._in_param_value = None
 

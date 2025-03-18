@@ -121,7 +121,6 @@ class CohereLlmInferenceRequest(LlmInferenceRequest):
             'return_likelihoods': 'str',
             'truncate': 'str'
         }
-
         self.attribute_map = {
             'runtime_type': 'runtimeType',
             'prompt': 'prompt',
@@ -138,7 +137,6 @@ class CohereLlmInferenceRequest(LlmInferenceRequest):
             'return_likelihoods': 'returnLikelihoods',
             'truncate': 'truncate'
         }
-
         self._runtime_type = None
         self._prompt = None
         self._is_stream = None

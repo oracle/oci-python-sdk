@@ -60,7 +60,6 @@ class CreateOptionsDetails(CreateConfigDetails):
             'group': 'str',
             'description': 'str'
         }
-
         self.attribute_map = {
             'config_type': 'configType',
             'freeform_tags': 'freeformTags',
@@ -70,7 +69,6 @@ class CreateOptionsDetails(CreateConfigDetails):
             'group': 'group',
             'description': 'description'
         }
-
         self._config_type = None
         self._freeform_tags = None
         self._defined_tags = None

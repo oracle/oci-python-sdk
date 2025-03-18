@@ -147,7 +147,6 @@ class Gateway(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'ca_bundles': 'list[CaBundle]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -167,7 +166,6 @@ class Gateway(object):
             'defined_tags': 'definedTags',
             'ca_bundles': 'caBundles'
         }
-
         self._id = None
         self._display_name = None
         self._compartment_id = None

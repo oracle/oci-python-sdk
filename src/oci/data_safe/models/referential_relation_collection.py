@@ -28,11 +28,9 @@ class ReferentialRelationCollection(object):
         self.swagger_types = {
             'items': 'list[ReferentialRelationSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

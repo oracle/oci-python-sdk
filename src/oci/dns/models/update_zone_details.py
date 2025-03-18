@@ -59,7 +59,6 @@ class UpdateZoneDetails(object):
             'external_masters': 'list[ExternalMaster]',
             'external_downstreams': 'list[ExternalDownstream]'
         }
-
         self.attribute_map = {
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -67,7 +66,6 @@ class UpdateZoneDetails(object):
             'external_masters': 'externalMasters',
             'external_downstreams': 'externalDownstreams'
         }
-
         self._freeform_tags = None
         self._defined_tags = None
         self._dnssec_state = None

@@ -38,13 +38,11 @@ class ManagementStationDetails(object):
             'secondary_management_station_id': 'str',
             'work_request_details': 'WorkRequestDetails'
         }
-
         self.attribute_map = {
             'primary_management_station_id': 'primaryManagementStationId',
             'secondary_management_station_id': 'secondaryManagementStationId',
             'work_request_details': 'workRequestDetails'
         }
-
         self._primary_management_station_id = None
         self._secondary_management_station_id = None
         self._work_request_details = None

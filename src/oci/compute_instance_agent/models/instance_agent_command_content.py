@@ -33,12 +33,10 @@ class InstanceAgentCommandContent(object):
             'source': 'InstanceAgentCommandSourceDetails',
             'output': 'InstanceAgentCommandOutputDetails'
         }
-
         self.attribute_map = {
             'source': 'source',
             'output': 'output'
         }
-
         self._source = None
         self._output = None
 

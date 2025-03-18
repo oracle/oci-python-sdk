@@ -38,13 +38,11 @@ class DetachInstancePoolInstanceDetails(object):
             'is_decrement_size': 'bool',
             'is_auto_terminate': 'bool'
         }
-
         self.attribute_map = {
             'instance_id': 'instanceId',
             'is_decrement_size': 'isDecrementSize',
             'is_auto_terminate': 'isAutoTerminate'
         }
-
         self._instance_id = None
         self._is_decrement_size = None
         self._is_auto_terminate = None

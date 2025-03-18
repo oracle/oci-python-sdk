@@ -36,12 +36,10 @@ class DataAssetExportScope(object):
             'object_key': 'str',
             'export_type_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'object_key': 'objectKey',
             'export_type_ids': 'exportTypeIds'
         }
-
         self._object_key = None
         self._export_type_ids = None
 

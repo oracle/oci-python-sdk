@@ -33,12 +33,10 @@ class FormatsForSensitiveType(object):
             'sensitive_type_id': 'str',
             'masking_formats': 'list[FormatSummary]'
         }
-
         self.attribute_map = {
             'sensitive_type_id': 'sensitiveTypeId',
             'masking_formats': 'maskingFormats'
         }
-
         self._sensitive_type_id = None
         self._masking_formats = None
 

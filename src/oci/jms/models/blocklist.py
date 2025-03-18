@@ -125,14 +125,12 @@ class Blocklist(object):
             'operation': 'str',
             'reason': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'target': 'target',
             'operation': 'operation',
             'reason': 'reason'
         }
-
         self._key = None
         self._target = None
         self._operation = None

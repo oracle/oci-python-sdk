@@ -91,7 +91,6 @@ class CreditCardPaymentOption(PaymentOption):
             'name_on_card': 'str',
             'time_expiration': 'datetime'
         }
-
         self.attribute_map = {
             'wallet_instrument_id': 'walletInstrumentId',
             'wallet_transaction_id': 'walletTransactionId',
@@ -101,7 +100,6 @@ class CreditCardPaymentOption(PaymentOption):
             'name_on_card': 'nameOnCard',
             'time_expiration': 'timeExpiration'
         }
-
         self._wallet_instrument_id = None
         self._wallet_transaction_id = None
         self._payment_method = None

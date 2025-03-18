@@ -100,7 +100,6 @@ class MacsManagedExternalDatabaseConfigurationSummary(DatabaseConfigurationSumma
             'connector_id': 'str',
             'instances': 'list[HostInstanceMap]'
         }
-
         self.attribute_map = {
             'database_insight_id': 'databaseInsightId',
             'entity_source': 'entitySource',
@@ -118,7 +117,6 @@ class MacsManagedExternalDatabaseConfigurationSummary(DatabaseConfigurationSumma
             'connector_id': 'connectorId',
             'instances': 'instances'
         }
-
         self._database_insight_id = None
         self._entity_source = None
         self._compartment_id = None

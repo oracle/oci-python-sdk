@@ -43,12 +43,10 @@ class PackageGroupFilter(object):
             'package_groups': 'list[str]',
             'filter_type': 'str'
         }
-
         self.attribute_map = {
             'package_groups': 'packageGroups',
             'filter_type': 'filterType'
         }
-
         self._package_groups = None
         self._filter_type = None
 

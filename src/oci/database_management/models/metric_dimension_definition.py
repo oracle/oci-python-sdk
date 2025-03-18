@@ -33,12 +33,10 @@ class MetricDimensionDefinition(object):
             'dimension_name': 'str',
             'dimension_value': 'str'
         }
-
         self.attribute_map = {
             'dimension_name': 'dimensionName',
             'dimension_value': 'dimensionValue'
         }
-
         self._dimension_name = None
         self._dimension_value = None
 

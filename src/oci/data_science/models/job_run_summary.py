@@ -122,7 +122,6 @@ class JobRunSummary(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'id': 'id',
             'time_accepted': 'timeAccepted',
@@ -138,7 +137,6 @@ class JobRunSummary(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._id = None
         self._time_accepted = None
         self._time_started = None

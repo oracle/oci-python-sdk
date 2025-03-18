@@ -30,11 +30,9 @@ class NoneProvisionedConcurrencyConfig(FunctionProvisionedConcurrencyConfig):
         self.swagger_types = {
             'strategy': 'str'
         }
-
         self.attribute_map = {
             'strategy': 'strategy'
         }
-
         self._strategy = None
         self._strategy = 'NONE'
 

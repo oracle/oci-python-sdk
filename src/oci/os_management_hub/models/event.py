@@ -186,7 +186,6 @@ class Event(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'id': 'id',
             'type': 'type',
@@ -205,7 +204,6 @@ class Event(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._id = None
         self._type = None
         self._event_summary = None

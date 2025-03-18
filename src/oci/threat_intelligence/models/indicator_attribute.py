@@ -38,13 +38,11 @@ class IndicatorAttribute(object):
             'value': 'str',
             'attribution': 'list[DataAttribution]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'value': 'value',
             'attribution': 'attribution'
         }
-
         self._name = None
         self._value = None
         self._attribution = None

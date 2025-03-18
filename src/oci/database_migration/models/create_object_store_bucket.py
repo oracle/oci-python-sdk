@@ -34,12 +34,10 @@ class CreateObjectStoreBucket(object):
             'namespace_name': 'str',
             'bucket_name': 'str'
         }
-
         self.attribute_map = {
             'namespace_name': 'namespaceName',
             'bucket_name': 'bucketName'
         }
-
         self._namespace_name = None
         self._bucket_name = None
 

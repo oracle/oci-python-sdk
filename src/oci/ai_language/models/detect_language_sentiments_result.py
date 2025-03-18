@@ -28,11 +28,9 @@ class DetectLanguageSentimentsResult(object):
         self.swagger_types = {
             'aspects': 'list[SentimentAspect]'
         }
-
         self.attribute_map = {
             'aspects': 'aspects'
         }
-
         self._aspects = None
 
     @property

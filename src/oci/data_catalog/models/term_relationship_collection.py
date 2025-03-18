@@ -33,12 +33,10 @@ class TermRelationshipCollection(object):
             'count': 'int',
             'items': 'list[TermRelationshipSummary]'
         }
-
         self.attribute_map = {
             'count': 'count',
             'items': 'items'
         }
-
         self._count = None
         self._items = None
 

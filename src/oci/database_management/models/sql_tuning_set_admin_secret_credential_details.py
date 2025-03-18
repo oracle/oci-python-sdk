@@ -46,14 +46,12 @@ class SqlTuningSetAdminSecretCredentialDetails(SqlTuningSetAdminCredentialDetail
             'role': 'str',
             'secret_id': 'str'
         }
-
         self.attribute_map = {
             'sql_tuning_set_admin_credential_type': 'sqlTuningSetAdminCredentialType',
             'username': 'username',
             'role': 'role',
             'secret_id': 'secretId'
         }
-
         self._sql_tuning_set_admin_credential_type = None
         self._username = None
         self._role = None

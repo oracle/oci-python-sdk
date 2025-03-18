@@ -37,12 +37,10 @@ class DhcpSearchDomainOption(DhcpOption):
             'type': 'str',
             'search_domain_names': 'list[str]'
         }
-
         self.attribute_map = {
             'type': 'type',
             'search_domain_names': 'searchDomainNames'
         }
-
         self._type = None
         self._search_domain_names = None
         self._type = 'SearchDomain'

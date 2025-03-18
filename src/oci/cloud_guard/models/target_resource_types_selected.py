@@ -54,12 +54,10 @@ class TargetResourceTypesSelected(TargetSelected):
             'kind': 'str',
             'values': 'list[str]'
         }
-
         self.attribute_map = {
             'kind': 'kind',
             'values': 'values'
         }
-
         self._kind = None
         self._values = None
         self._kind = 'TARGETTYPES'

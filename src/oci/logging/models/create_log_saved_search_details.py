@@ -53,7 +53,6 @@ class CreateLogSavedSearchDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'name': 'name',
@@ -62,7 +61,6 @@ class CreateLogSavedSearchDetails(object):
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags'
         }
-
         self._compartment_id = None
         self._name = None
         self._description = None

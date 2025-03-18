@@ -28,11 +28,9 @@ class EnableExternalContainerDatabaseManagementFeatureDetails(object):
         self.swagger_types = {
             'feature_details': 'ExternalDatabaseFeatureDetails'
         }
-
         self.attribute_map = {
             'feature_details': 'featureDetails'
         }
-
         self._feature_details = None
 
     @property

@@ -28,11 +28,9 @@ class SecurityRuleSummaryCollection(object):
         self.swagger_types = {
             'items': 'list[SecurityRuleSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

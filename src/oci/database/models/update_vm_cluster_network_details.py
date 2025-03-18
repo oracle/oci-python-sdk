@@ -58,7 +58,6 @@ class UpdateVmClusterNetworkDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'scans': 'scans',
             'dns': 'dns',
@@ -68,7 +67,6 @@ class UpdateVmClusterNetworkDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._scans = None
         self._dns = None
         self._ntp = None

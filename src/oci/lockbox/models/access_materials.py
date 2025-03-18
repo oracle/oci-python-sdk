@@ -28,11 +28,9 @@ class AccessMaterials(object):
         self.swagger_types = {
             'details': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'details': 'details'
         }
-
         self._details = None
 
     @property

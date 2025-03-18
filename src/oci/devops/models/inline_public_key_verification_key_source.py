@@ -40,13 +40,11 @@ class InlinePublicKeyVerificationKeySource(VerificationKeySource):
             'current_public_key': 'str',
             'previous_public_key': 'str'
         }
-
         self.attribute_map = {
             'verification_key_source_type': 'verificationKeySourceType',
             'current_public_key': 'currentPublicKey',
             'previous_public_key': 'previousPublicKey'
         }
-
         self._verification_key_source_type = None
         self._current_public_key = None
         self._previous_public_key = None

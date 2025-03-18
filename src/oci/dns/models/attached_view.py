@@ -28,11 +28,9 @@ class AttachedView(object):
         self.swagger_types = {
             'view_id': 'str'
         }
-
         self.attribute_map = {
             'view_id': 'viewId'
         }
-
         self._view_id = None
 
     @property

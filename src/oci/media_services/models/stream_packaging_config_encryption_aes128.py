@@ -35,12 +35,10 @@ class StreamPackagingConfigEncryptionAes128(StreamPackagingConfigEncryption):
             'algorithm': 'str',
             'kms_key_id': 'str'
         }
-
         self.attribute_map = {
             'algorithm': 'algorithm',
             'kms_key_id': 'kmsKeyId'
         }
-
         self._algorithm = None
         self._kms_key_id = None
         self._algorithm = 'AES128'

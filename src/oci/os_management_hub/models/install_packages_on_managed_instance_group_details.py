@@ -38,13 +38,11 @@ class InstallPackagesOnManagedInstanceGroupDetails(object):
             'work_request_details': 'WorkRequestDetails',
             'is_latest': 'bool'
         }
-
         self.attribute_map = {
             'package_names': 'packageNames',
             'work_request_details': 'workRequestDetails',
             'is_latest': 'isLatest'
         }
-
         self._package_names = None
         self._work_request_details = None
         self._is_latest = None

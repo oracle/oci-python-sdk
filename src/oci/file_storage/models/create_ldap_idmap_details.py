@@ -68,7 +68,6 @@ class CreateLdapIdmapDetails(object):
             'outbound_connector1_id': 'str',
             'outbound_connector2_id': 'str'
         }
-
         self.attribute_map = {
             'schema_type': 'schemaType',
             'cache_refresh_interval_seconds': 'cacheRefreshIntervalSeconds',
@@ -79,7 +78,6 @@ class CreateLdapIdmapDetails(object):
             'outbound_connector1_id': 'outboundConnector1Id',
             'outbound_connector2_id': 'outboundConnector2Id'
         }
-
         self._schema_type = None
         self._cache_refresh_interval_seconds = None
         self._cache_lifetime_seconds = None

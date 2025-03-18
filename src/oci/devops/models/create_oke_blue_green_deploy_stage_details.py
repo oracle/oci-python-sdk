@@ -74,7 +74,6 @@ class CreateOkeBlueGreenDeployStageDetails(CreateDeployStageDetails):
             'kubernetes_manifest_deploy_artifact_ids': 'list[str]',
             'blue_green_strategy': 'OkeBlueGreenStrategy'
         }
-
         self.attribute_map = {
             'description': 'description',
             'display_name': 'displayName',
@@ -87,7 +86,6 @@ class CreateOkeBlueGreenDeployStageDetails(CreateDeployStageDetails):
             'kubernetes_manifest_deploy_artifact_ids': 'kubernetesManifestDeployArtifactIds',
             'blue_green_strategy': 'blueGreenStrategy'
         }
-
         self._description = None
         self._display_name = None
         self._deploy_stage_type = None

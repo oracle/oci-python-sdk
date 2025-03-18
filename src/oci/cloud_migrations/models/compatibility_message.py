@@ -94,13 +94,11 @@ class CompatibilityMessage(object):
             'name': 'str',
             'message': 'str'
         }
-
         self.attribute_map = {
             'severity': 'severity',
             'name': 'name',
             'message': 'message'
         }
-
         self._severity = None
         self._name = None
         self._message = None

@@ -85,7 +85,6 @@ class ApplicationUsage(object):
             'time_first_seen': 'datetime',
             'time_last_seen': 'datetime'
         }
-
         self.attribute_map = {
             'application_id': 'applicationId',
             'display_name': 'displayName',
@@ -100,7 +99,6 @@ class ApplicationUsage(object):
             'time_first_seen': 'timeFirstSeen',
             'time_last_seen': 'timeLastSeen'
         }
-
         self._application_id = None
         self._display_name = None
         self._application_type = None

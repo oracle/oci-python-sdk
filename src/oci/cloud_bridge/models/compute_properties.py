@@ -168,7 +168,6 @@ class ComputeProperties(object):
             'scsi_controller': 'ScsiController',
             'hardware_version': 'str'
         }
-
         self.attribute_map = {
             'primary_ip': 'primaryIp',
             'dns_name': 'dnsName',
@@ -200,7 +199,6 @@ class ComputeProperties(object):
             'scsi_controller': 'scsiController',
             'hardware_version': 'hardwareVersion'
         }
-
         self._primary_ip = None
         self._dns_name = None
         self._description = None

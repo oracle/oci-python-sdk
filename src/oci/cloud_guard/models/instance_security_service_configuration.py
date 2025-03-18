@@ -46,12 +46,10 @@ class InstanceSecurityServiceConfiguration(ServiceConfiguration):
             'service_configuration_type': 'str',
             'status': 'str'
         }
-
         self.attribute_map = {
             'service_configuration_type': 'serviceConfigurationType',
             'status': 'status'
         }
-
         self._service_configuration_type = None
         self._status = None
         self._service_configuration_type = 'INSTANCE_SECURITY'

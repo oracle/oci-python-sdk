@@ -44,13 +44,11 @@ class DedicatedShardOrCatalogEncryptionKeyDetails(object):
             'kms_key_id': 'str',
             'kms_key_version_id': 'str'
         }
-
         self.attribute_map = {
             'vault_id': 'vaultId',
             'kms_key_id': 'kmsKeyId',
             'kms_key_version_id': 'kmsKeyVersionId'
         }
-
         self._vault_id = None
         self._kms_key_id = None
         self._kms_key_version_id = None

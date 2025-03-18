@@ -67,13 +67,11 @@ class UpdateAllPackagesOnManagedInstancesInCompartmentDetails(object):
             'update_types': 'list[str]',
             'work_request_details': 'WorkRequestDetails'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'update_types': 'updateTypes',
             'work_request_details': 'workRequestDetails'
         }
-
         self._compartment_id = None
         self._update_types = None
         self._work_request_details = None

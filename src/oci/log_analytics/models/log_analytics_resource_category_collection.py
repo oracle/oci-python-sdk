@@ -33,12 +33,10 @@ class LogAnalyticsResourceCategoryCollection(object):
             'categories': 'list[LogAnalyticsCategory]',
             'items': 'list[LogAnalyticsResourceCategory]'
         }
-
         self.attribute_map = {
             'categories': 'categories',
             'items': 'items'
         }
-
         self._categories = None
         self._items = None
 

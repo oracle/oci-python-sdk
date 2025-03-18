@@ -257,7 +257,6 @@ class AccessRequestSummary(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'id': 'id',
             'request_id': 'requestId',
@@ -280,7 +279,6 @@ class AccessRequestSummary(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._id = None
         self._request_id = None
         self._access_reason_summary = None

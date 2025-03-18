@@ -43,14 +43,12 @@ class StatusDetail(object):
             'status': 'str',
             'time_of_validation': 'datetime'
         }
-
         self.attribute_map = {
             'status_id': 'statusId',
             'command_name': 'commandName',
             'status': 'status',
             'time_of_validation': 'timeOfValidation'
         }
-
         self._status_id = None
         self._command_name = None
         self._status = None

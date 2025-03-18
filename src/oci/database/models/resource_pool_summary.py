@@ -33,12 +33,10 @@ class ResourcePoolSummary(object):
             'pool_size': 'int',
             'is_disabled': 'bool'
         }
-
         self.attribute_map = {
             'pool_size': 'poolSize',
             'is_disabled': 'isDisabled'
         }
-
         self._pool_size = None
         self._is_disabled = None
 

@@ -53,14 +53,12 @@ class FacetedSearchAggregation(object):
             'data_type': 'str',
             'property_type': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'aggregation': 'aggregation',
             'data_type': 'dataType',
             'property_type': 'propertyType'
         }
-
         self._type = None
         self._aggregation = None
         self._data_type = None

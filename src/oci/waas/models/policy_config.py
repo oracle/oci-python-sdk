@@ -139,7 +139,6 @@ class PolicyConfig(object):
             'is_sni_enabled': 'bool',
             'health_checks': 'HealthCheck'
         }
-
         self.attribute_map = {
             'certificate_id': 'certificateId',
             'is_https_enabled': 'isHttpsEnabled',
@@ -156,7 +155,6 @@ class PolicyConfig(object):
             'is_sni_enabled': 'isSniEnabled',
             'health_checks': 'healthChecks'
         }
-
         self._certificate_id = None
         self._is_https_enabled = None
         self._is_https_forced = None

@@ -78,7 +78,6 @@ class AnalyzeDocumentResult(object):
             'errors': 'list[ProcessingError]',
             'searchable_pdf': 'str'
         }
-
         self.attribute_map = {
             'document_metadata': 'documentMetadata',
             'pages': 'pages',
@@ -92,7 +91,6 @@ class AnalyzeDocumentResult(object):
             'errors': 'errors',
             'searchable_pdf': 'searchablePdf'
         }
-
         self._document_metadata = None
         self._pages = None
         self._detected_document_types = None

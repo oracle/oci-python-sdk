@@ -97,7 +97,6 @@ class ExportDetails(object):
             'should_localize': 'bool',
             'should_use_acceleration': 'bool'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'compartment_id_in_subtree': 'compartmentIdInSubtree',
@@ -112,7 +111,6 @@ class ExportDetails(object):
             'should_localize': 'shouldLocalize',
             'should_use_acceleration': 'shouldUseAcceleration'
         }
-
         self._compartment_id = None
         self._compartment_id_in_subtree = None
         self._query_string = None

@@ -53,7 +53,6 @@ class ApproverDetail(object):
             'time_of_authorization': 'datetime',
             'time_approved_for_access': 'datetime'
         }
-
         self.attribute_map = {
             'approver_id': 'approverId',
             'approval_action': 'approvalAction',
@@ -62,7 +61,6 @@ class ApproverDetail(object):
             'time_of_authorization': 'timeOfAuthorization',
             'time_approved_for_access': 'timeApprovedForAccess'
         }
-
         self._approver_id = None
         self._approval_action = None
         self._approval_comment = None

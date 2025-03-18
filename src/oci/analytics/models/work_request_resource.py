@@ -112,7 +112,6 @@ class WorkRequestResource(object):
             'resource_uri': 'str',
             'metadata': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'action_result': 'actionResult',
             'resource_type': 'resourceType',
@@ -120,7 +119,6 @@ class WorkRequestResource(object):
             'resource_uri': 'resourceUri',
             'metadata': 'metadata'
         }
-
         self._action_result = None
         self._resource_type = None
         self._identifier = None

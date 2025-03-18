@@ -33,12 +33,10 @@ class JobCollection(object):
             'count': 'int',
             'items': 'list[JobSummary]'
         }
-
         self.attribute_map = {
             'count': 'count',
             'items': 'items'
         }
-
         self._count = None
         self._items = None
 

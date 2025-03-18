@@ -38,13 +38,11 @@ class PullRequestChangeSummaryMetrics(object):
             'added_lines_count': 'int',
             'deleted_lines_count': 'int'
         }
-
         self.attribute_map = {
             'changed_files_count': 'changedFilesCount',
             'added_lines_count': 'addedLinesCount',
             'deleted_lines_count': 'deletedLinesCount'
         }
-
         self._changed_files_count = None
         self._added_lines_count = None
         self._deleted_lines_count = None

@@ -28,11 +28,9 @@ class RemoveDrgRouteRulesDetails(object):
         self.swagger_types = {
             'route_rule_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'route_rule_ids': 'routeRuleIds'
         }
-
         self._route_rule_ids = None
 
     @property

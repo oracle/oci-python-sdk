@@ -70,7 +70,6 @@ class SummarizeHostInsightNetworkUsageTrendAggregationCollection(object):
             'item_duration_in_ms': 'int',
             'items': 'list[NetworkUsageTrendAggregation]'
         }
-
         self.attribute_map = {
             'time_interval_start': 'timeIntervalStart',
             'time_interval_end': 'timeIntervalEnd',
@@ -78,7 +77,6 @@ class SummarizeHostInsightNetworkUsageTrendAggregationCollection(object):
             'item_duration_in_ms': 'itemDurationInMs',
             'items': 'items'
         }
-
         self._time_interval_start = None
         self._time_interval_end = None
         self._usage_unit = None

@@ -146,7 +146,6 @@ class GenericConnection(Connection):
             'technology_type': 'str',
             'host': 'str'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'id': 'id',
@@ -171,7 +170,6 @@ class GenericConnection(Connection):
             'technology_type': 'technologyType',
             'host': 'host'
         }
-
         self._connection_type = None
         self._id = None
         self._display_name = None

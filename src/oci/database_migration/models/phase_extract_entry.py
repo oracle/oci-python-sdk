@@ -39,12 +39,10 @@ class PhaseExtractEntry(object):
             'type': 'str',
             'message': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'message': 'message'
         }
-
         self._type = None
         self._message = None
 

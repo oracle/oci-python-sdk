@@ -42,11 +42,9 @@ class CreateColumnSourceDetails(object):
         self.swagger_types = {
             'column_source': 'str'
         }
-
         self.attribute_map = {
             'column_source': 'columnSource'
         }
-
         self._column_source = None
 
     @staticmethod

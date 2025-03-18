@@ -48,14 +48,12 @@ class TopologyAssociatedWithEntityRelationship(TopologyEntityRelationship):
             'type': 'str',
             'associated_with_details': 'TopologyAssociatedWithRelationshipDetails'
         }
-
         self.attribute_map = {
             'id1': 'id1',
             'id2': 'id2',
             'type': 'type',
             'associated_with_details': 'associatedWithDetails'
         }
-
         self._id1 = None
         self._id2 = None
         self._type = None

@@ -62,7 +62,6 @@ class UpdateIPSecConnectionDetails(object):
             'cpe_local_identifier_type': 'str',
             'static_routes': 'list[str]'
         }
-
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
@@ -71,7 +70,6 @@ class UpdateIPSecConnectionDetails(object):
             'cpe_local_identifier_type': 'cpeLocalIdentifierType',
             'static_routes': 'staticRoutes'
         }
-
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None

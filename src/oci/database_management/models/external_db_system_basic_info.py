@@ -43,14 +43,12 @@ class ExternalDbSystemBasicInfo(object):
             'compartment_id': 'str',
             'exadata_infra_info': 'ExternalExadataInfraBasicInfo'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
             'compartment_id': 'compartmentId',
             'exadata_infra_info': 'exadataInfraInfo'
         }
-
         self._id = None
         self._display_name = None
         self._compartment_id = None

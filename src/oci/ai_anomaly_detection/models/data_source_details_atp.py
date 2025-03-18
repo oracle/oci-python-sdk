@@ -85,7 +85,6 @@ class DataSourceDetailsATP(DataSourceDetails):
             'database_name': 'str',
             'table_name': 'str'
         }
-
         self.attribute_map = {
             'data_source_type': 'dataSourceType',
             'wallet_password_secret_id': 'walletPasswordSecretId',
@@ -100,7 +99,6 @@ class DataSourceDetailsATP(DataSourceDetails):
             'database_name': 'databaseName',
             'table_name': 'tableName'
         }
-
         self._data_source_type = None
         self._wallet_password_secret_id = None
         self._atp_user_name = None

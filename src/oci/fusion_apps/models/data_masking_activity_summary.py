@@ -43,14 +43,12 @@ class DataMaskingActivitySummary(object):
             'time_masking_start': 'datetime',
             'time_masking_finish': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
             'time_masking_start': 'timeMaskingStart',
             'time_masking_finish': 'timeMaskingFinish'
         }
-
         self._id = None
         self._lifecycle_state = None
         self._time_masking_start = None

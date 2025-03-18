@@ -79,7 +79,6 @@ class SimpleCondition(Condition):
             'value': 'str',
             'value_type': 'str'
         }
-
         self.attribute_map = {
             'kind': 'kind',
             'parameter': 'parameter',
@@ -87,7 +86,6 @@ class SimpleCondition(Condition):
             'value': 'value',
             'value_type': 'valueType'
         }
-
         self._kind = None
         self._parameter = None
         self._operator = None

@@ -28,11 +28,9 @@ class BulkDeleteVirtualCircuitPublicPrefixesDetails(object):
         self.swagger_types = {
             'public_prefixes': 'list[DeleteVirtualCircuitPublicPrefixDetails]'
         }
-
         self.attribute_map = {
             'public_prefixes': 'publicPrefixes'
         }
-
         self._public_prefixes = None
 
     @property

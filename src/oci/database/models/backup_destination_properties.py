@@ -38,13 +38,11 @@ class BackupDestinationProperties(object):
             'space_utilized_in_gbs': 'int',
             'time_at_which_storage_details_are_updated': 'datetime'
         }
-
         self.attribute_map = {
             'backup_destination_attach_history': 'backupDestinationAttachHistory',
             'space_utilized_in_gbs': 'spaceUtilizedInGBs',
             'time_at_which_storage_details_are_updated': 'timeAtWhichStorageDetailsAreUpdated'
         }
-
         self._backup_destination_attach_history = None
         self._space_utilized_in_gbs = None
         self._time_at_which_storage_details_are_updated = None

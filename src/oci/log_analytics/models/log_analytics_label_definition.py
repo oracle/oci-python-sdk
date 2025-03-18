@@ -43,14 +43,12 @@ class LogAnalyticsLabelDefinition(object):
             'source_id': 'int',
             'label_name': 'str'
         }
-
         self.attribute_map = {
             'edit_version': 'editVersion',
             'is_system': 'isSystem',
             'source_id': 'sourceId',
             'label_name': 'labelName'
         }
-
         self._edit_version = None
         self._is_system = None
         self._source_id = None

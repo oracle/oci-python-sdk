@@ -43,14 +43,12 @@ class EntityMetrics(object):
             'precision': 'float',
             'recall': 'float'
         }
-
         self.attribute_map = {
             'label': 'label',
             'f1': 'f1',
             'precision': 'precision',
             'recall': 'recall'
         }
-
         self._label = None
         self._f1 = None
         self._precision = None

@@ -38,13 +38,11 @@ class IngressGatewayHost(object):
             'hostnames': 'list[str]',
             'listeners': 'list[IngressGatewayListener]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'hostnames': 'hostnames',
             'listeners': 'listeners'
         }
-
         self._name = None
         self._hostnames = None
         self._listeners = None

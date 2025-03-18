@@ -125,7 +125,6 @@ class ComputedUsageAggregation(object):
             'cost': 'str',
             'type': 'str'
         }
-
         self.attribute_map = {
             'quantity': 'quantity',
             'product': 'product',
@@ -136,7 +135,6 @@ class ComputedUsageAggregation(object):
             'cost': 'cost',
             'type': 'type'
         }
-
         self._quantity = None
         self._product = None
         self._data_center = None

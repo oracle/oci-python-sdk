@@ -91,7 +91,6 @@ class CreatePipelineDetails(object):
             'source_connection_details': 'SourcePipelineConnectionDetails',
             'target_connection_details': 'TargetPipelineConnectionDetails'
         }
-
         self.attribute_map = {
             'recipe_type': 'recipeType',
             'display_name': 'displayName',
@@ -104,7 +103,6 @@ class CreatePipelineDetails(object):
             'source_connection_details': 'sourceConnectionDetails',
             'target_connection_details': 'targetConnectionDetails'
         }
-
         self._recipe_type = None
         self._display_name = None
         self._description = None

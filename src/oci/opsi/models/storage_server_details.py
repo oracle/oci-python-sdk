@@ -33,12 +33,10 @@ class StorageServerDetails(object):
             'storage_server_name': 'str',
             'storage_server_display_name': 'str'
         }
-
         self.attribute_map = {
             'storage_server_name': 'storageServerName',
             'storage_server_display_name': 'storageServerDisplayName'
         }
-
         self._storage_server_name = None
         self._storage_server_display_name = None
 

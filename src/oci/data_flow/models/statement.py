@@ -89,7 +89,6 @@ class Statement(object):
             'time_created': 'datetime',
             'time_completed': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'code': 'code',
@@ -100,7 +99,6 @@ class Statement(object):
             'time_created': 'timeCreated',
             'time_completed': 'timeCompleted'
         }
-
         self._id = None
         self._code = None
         self._lifecycle_state = None

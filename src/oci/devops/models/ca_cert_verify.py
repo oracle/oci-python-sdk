@@ -35,12 +35,10 @@ class CaCertVerify(TlsVerifyConfig):
             'tls_verify_mode': 'str',
             'ca_certificate_bundle_id': 'str'
         }
-
         self.attribute_map = {
             'tls_verify_mode': 'tlsVerifyMode',
             'ca_certificate_bundle_id': 'caCertificateBundleId'
         }
-
         self._tls_verify_mode = None
         self._ca_certificate_bundle_id = None
         self._tls_verify_mode = 'CA_CERTIFICATE_VERIFY'

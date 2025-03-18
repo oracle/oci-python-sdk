@@ -28,11 +28,9 @@ class DefaultParameterValues(object):
         self.swagger_types = {
             'resource_types_default_parameter_values': 'list[ResourceTypeDefaultParameterValues]'
         }
-
         self.attribute_map = {
             'resource_types_default_parameter_values': 'resourceTypesDefaultParameterValues'
         }
-
         self._resource_types_default_parameter_values = None
 
     @property

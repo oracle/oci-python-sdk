@@ -65,7 +65,6 @@ class DBOSConfigInstance(DatabaseConfigurationMetricGroup):
             'num_cpu_sockets': 'int',
             'physical_memory_bytes': 'float'
         }
-
         self.attribute_map = {
             'metric_name': 'metricName',
             'time_collected': 'timeCollected',
@@ -76,7 +75,6 @@ class DBOSConfigInstance(DatabaseConfigurationMetricGroup):
             'num_cpu_sockets': 'numCPUSockets',
             'physical_memory_bytes': 'physicalMemoryBytes'
         }
-
         self._metric_name = None
         self._time_collected = None
         self._instance_name = None

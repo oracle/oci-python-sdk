@@ -568,7 +568,6 @@ class SubscribedServiceSummary(object):
             'updated_by': 'str',
             'ratecard_type': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'type': 'type',
@@ -680,7 +679,6 @@ class SubscribedServiceSummary(object):
             'updated_by': 'updatedBy',
             'ratecard_type': 'ratecardType'
         }
-
         self._id = None
         self._type = None
         self._serial_number = None

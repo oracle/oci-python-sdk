@@ -48,7 +48,6 @@ class UpdateBackendDetails(object):
             'drain': 'bool',
             'offline': 'bool'
         }
-
         self.attribute_map = {
             'weight': 'weight',
             'max_connections': 'maxConnections',
@@ -56,7 +55,6 @@ class UpdateBackendDetails(object):
             'drain': 'drain',
             'offline': 'offline'
         }
-
         self._weight = None
         self._max_connections = None
         self._backup = None

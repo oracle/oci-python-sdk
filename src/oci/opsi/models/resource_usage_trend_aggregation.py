@@ -43,14 +43,12 @@ class ResourceUsageTrendAggregation(object):
             'capacity': 'float',
             'total_host_capacity': 'float'
         }
-
         self.attribute_map = {
             'end_timestamp': 'endTimestamp',
             'usage': 'usage',
             'capacity': 'capacity',
             'total_host_capacity': 'totalHostCapacity'
         }
-
         self._end_timestamp = None
         self._usage = None
         self._capacity = None

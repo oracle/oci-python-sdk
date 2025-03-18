@@ -98,7 +98,6 @@ class TaskValidationSummary(object):
             'identifier': 'str',
             'metadata': 'ObjectMetadata'
         }
-
         self.attribute_map = {
             'total_message_count': 'totalMessageCount',
             'error_message_count': 'errorMessageCount',
@@ -116,7 +115,6 @@ class TaskValidationSummary(object):
             'identifier': 'identifier',
             'metadata': 'metadata'
         }
-
         self._total_message_count = None
         self._error_message_count = None
         self._warn_message_count = None

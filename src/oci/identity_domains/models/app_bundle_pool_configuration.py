@@ -57,7 +57,6 @@ class AppBundlePoolConfiguration(object):
             'min_evictable_idle_time_millis': 'int',
             'min_idle': 'int'
         }
-
         self.attribute_map = {
             'max_idle': 'maxIdle',
             'max_objects': 'maxObjects',
@@ -65,7 +64,6 @@ class AppBundlePoolConfiguration(object):
             'min_evictable_idle_time_millis': 'minEvictableIdleTimeMillis',
             'min_idle': 'minIdle'
         }
-
         self._max_idle = None
         self._max_objects = None
         self._max_wait = None

@@ -98,13 +98,11 @@ class CertificateServiceInfoSummary(object):
             'service_certificate_status': 'str',
             'host_specific_certificate_details': 'list[HostSpecificCertificateDetails]'
         }
-
         self.attribute_map = {
             'service': 'service',
             'service_certificate_status': 'serviceCertificateStatus',
             'host_specific_certificate_details': 'hostSpecificCertificateDetails'
         }
-
         self._service = None
         self._service_certificate_status = None
         self._host_specific_certificate_details = None

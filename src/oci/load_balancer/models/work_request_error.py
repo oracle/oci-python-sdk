@@ -43,12 +43,10 @@ class WorkRequestError(object):
             'error_code': 'str',
             'message': 'str'
         }
-
         self.attribute_map = {
             'error_code': 'errorCode',
             'message': 'message'
         }
-
         self._error_code = None
         self._message = None
 

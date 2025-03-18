@@ -53,7 +53,6 @@ class CreateDrgRouteTableDetails(object):
             'import_drg_route_distribution_id': 'str',
             'is_ecmp_enabled': 'bool'
         }
-
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
@@ -62,7 +61,6 @@ class CreateDrgRouteTableDetails(object):
             'import_drg_route_distribution_id': 'importDrgRouteDistributionId',
             'is_ecmp_enabled': 'isEcmpEnabled'
         }
-
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None

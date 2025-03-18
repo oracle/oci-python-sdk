@@ -142,7 +142,6 @@ class UpdateSummary(object):
             'time_released': 'datetime',
             'version': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'description': 'description',
@@ -154,7 +153,6 @@ class UpdateSummary(object):
             'time_released': 'timeReleased',
             'version': 'version'
         }
-
         self._id = None
         self._description = None
         self._last_action = None

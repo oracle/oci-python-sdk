@@ -147,7 +147,6 @@ class MyOAuth2ClientCredential(object):
             'scopes': 'list[MyOAuth2ClientCredentialScopes]',
             'user': 'MyOAuth2ClientCredentialUser'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -170,7 +169,6 @@ class MyOAuth2ClientCredential(object):
             'scopes': 'scopes',
             'user': 'user'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

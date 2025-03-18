@@ -35,12 +35,10 @@ class LocalFileTlsCertificate(TlsCertificate):
             'type': 'str',
             'secret_name': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'secret_name': 'secretName'
         }
-
         self._type = None
         self._secret_name = None
         self._type = 'LOCAL_FILE'

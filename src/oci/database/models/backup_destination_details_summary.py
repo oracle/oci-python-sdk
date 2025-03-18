@@ -90,7 +90,6 @@ class BackupDestinationDetailsSummary(object):
             'internet_proxy': 'str',
             'dbrs_policy_id': 'str'
         }
-
         self.attribute_map = {
             'backup_destination_attach_history': 'backupDestinationAttachHistory',
             'space_utilized_in_gbs': 'spaceUtilizedInGBs',
@@ -102,7 +101,6 @@ class BackupDestinationDetailsSummary(object):
             'internet_proxy': 'internetProxy',
             'dbrs_policy_id': 'dbrsPolicyId'
         }
-
         self._backup_destination_attach_history = None
         self._space_utilized_in_gbs = None
         self._time_at_which_storage_details_are_updated = None

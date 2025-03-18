@@ -33,12 +33,10 @@ class UnifiedAgentUrlScrapeTarget(object):
             'name': 'str',
             'url': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'url': 'url'
         }
-
         self._name = None
         self._url = None
 

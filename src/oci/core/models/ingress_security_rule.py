@@ -73,7 +73,6 @@ class IngressSecurityRule(object):
             'udp_options': 'UdpOptions',
             'description': 'str'
         }
-
         self.attribute_map = {
             'icmp_options': 'icmpOptions',
             'is_stateless': 'isStateless',
@@ -84,7 +83,6 @@ class IngressSecurityRule(object):
             'udp_options': 'udpOptions',
             'description': 'description'
         }
-
         self._icmp_options = None
         self._is_stateless = None
         self._protocol = None

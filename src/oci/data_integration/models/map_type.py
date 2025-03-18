@@ -75,7 +75,6 @@ class MapType(BaseType):
             'value_element_type': 'str',
             'contains_null': 'bool'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -88,7 +87,6 @@ class MapType(BaseType):
             'value_element_type': 'valueElementType',
             'contains_null': 'containsNull'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

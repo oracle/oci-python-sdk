@@ -152,7 +152,6 @@ class BackupDestination(object):
             'utilized_storage_size_in_gbs': 'int',
             'time_at_which_storage_details_are_updated': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -174,7 +173,6 @@ class BackupDestination(object):
             'utilized_storage_size_in_gbs': 'utilizedStorageSizeInGBs',
             'time_at_which_storage_details_are_updated': 'timeAtWhichStorageDetailsAreUpdated'
         }
-
         self._id = None
         self._display_name = None
         self._compartment_id = None

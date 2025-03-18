@@ -28,11 +28,9 @@ class AssetAggregationCollection(object):
         self.swagger_types = {
             'items': 'list[AssetAggregation]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

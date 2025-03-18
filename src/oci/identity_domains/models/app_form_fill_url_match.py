@@ -42,12 +42,10 @@ class AppFormFillUrlMatch(object):
             'form_url_match_type': 'str',
             'form_url': 'str'
         }
-
         self.attribute_map = {
             'form_url_match_type': 'formUrlMatchType',
             'form_url': 'formUrl'
         }
-
         self._form_url_match_type = None
         self._form_url = None
 

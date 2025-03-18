@@ -33,12 +33,10 @@ class FailoverDbSystemDetails(object):
             'ad': 'str',
             'db_instance_id': 'str'
         }
-
         self.attribute_map = {
             'ad': 'ad',
             'db_instance_id': 'dbInstanceId'
         }
-
         self._ad = None
         self._db_instance_id = None
 

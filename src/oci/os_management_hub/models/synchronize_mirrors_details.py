@@ -28,11 +28,9 @@ class SynchronizeMirrorsDetails(object):
         self.swagger_types = {
             'software_source_list': 'list[str]'
         }
-
         self.attribute_map = {
             'software_source_list': 'softwareSourceList'
         }
-
         self._software_source_list = None
 
     @property

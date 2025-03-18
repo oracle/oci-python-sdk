@@ -52,13 +52,11 @@ class ApiValidationDetail(object):
             'severity': 'str',
             'src': 'list[list[float]]'
         }
-
         self.attribute_map = {
             'msg': 'msg',
             'severity': 'severity',
             'src': 'src'
         }
-
         self._msg = None
         self._severity = None
         self._src = None

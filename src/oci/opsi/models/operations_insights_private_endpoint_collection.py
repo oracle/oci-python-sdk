@@ -28,11 +28,9 @@ class OperationsInsightsPrivateEndpointCollection(object):
         self.swagger_types = {
             'items': 'list[OperationsInsightsPrivateEndpointSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

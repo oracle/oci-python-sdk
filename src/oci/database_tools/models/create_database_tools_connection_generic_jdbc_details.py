@@ -86,7 +86,6 @@ class CreateDatabaseToolsConnectionGenericJdbcDetails(CreateDatabaseToolsConnect
             'advanced_properties': 'dict(str, str)',
             'key_stores': 'list[DatabaseToolsKeyStoreGenericJdbcDetails]'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'compartment_id': 'compartmentId',
@@ -101,7 +100,6 @@ class CreateDatabaseToolsConnectionGenericJdbcDetails(CreateDatabaseToolsConnect
             'advanced_properties': 'advancedProperties',
             'key_stores': 'keyStores'
         }
-
         self._display_name = None
         self._compartment_id = None
         self._defined_tags = None

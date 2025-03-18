@@ -28,11 +28,9 @@ class RemoveFleetInstallationSitesDetails(object):
         self.swagger_types = {
             'installation_sites': 'list[ExistingInstallationSiteId]'
         }
-
         self.attribute_map = {
             'installation_sites': 'installationSites'
         }
-
         self._installation_sites = None
 
     @property

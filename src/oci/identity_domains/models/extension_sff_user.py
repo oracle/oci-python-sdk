@@ -28,11 +28,9 @@ class ExtensionSffUser(object):
         self.swagger_types = {
             'sff_auth_keys': 'str'
         }
-
         self.attribute_map = {
             'sff_auth_keys': 'sffAuthKeys'
         }
-
         self._sff_auth_keys = None
 
     @property

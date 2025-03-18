@@ -48,7 +48,6 @@ class PropertyMetadataSummary(object):
             'default_value': 'str',
             'levels': 'list[Level]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'display_name': 'displayName',
@@ -56,7 +55,6 @@ class PropertyMetadataSummary(object):
             'default_value': 'defaultValue',
             'levels': 'levels'
         }
-
         self._name = None
         self._display_name = None
         self._description = None

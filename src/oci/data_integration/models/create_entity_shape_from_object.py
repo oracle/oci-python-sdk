@@ -121,7 +121,6 @@ class CreateEntityShapeFromObject(CreateEntityShapeDetails):
             'data_format': 'DataFormat',
             'identifier': 'str'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -139,7 +138,6 @@ class CreateEntityShapeFromObject(CreateEntityShapeDetails):
             'data_format': 'dataFormat',
             'identifier': 'identifier'
         }
-
         self._model_type = None
         self._key = None
         self._parent_ref = None

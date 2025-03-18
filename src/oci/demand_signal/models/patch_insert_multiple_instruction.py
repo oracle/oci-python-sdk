@@ -59,7 +59,6 @@ class PatchInsertMultipleInstruction(PatchInstruction):
             'selected_item': 'str',
             'position': 'str'
         }
-
         self.attribute_map = {
             'operation': 'operation',
             'selection': 'selection',
@@ -67,7 +66,6 @@ class PatchInsertMultipleInstruction(PatchInstruction):
             'selected_item': 'selectedItem',
             'position': 'position'
         }
-
         self._operation = None
         self._selection = None
         self._values = None

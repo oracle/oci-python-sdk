@@ -77,7 +77,6 @@ class BasicConfigurationItemSummary(ConfigurationItemSummary):
             'applicable_contexts': 'list[str]',
             'metadata': 'ConfigurationItemMetadata'
         }
-
         self.attribute_map = {
             'config_item_type': 'configItemType',
             'name': 'name',
@@ -87,7 +86,6 @@ class BasicConfigurationItemSummary(ConfigurationItemSummary):
             'applicable_contexts': 'applicableContexts',
             'metadata': 'metadata'
         }
-
         self._config_item_type = None
         self._name = None
         self._value = None

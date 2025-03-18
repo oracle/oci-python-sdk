@@ -33,12 +33,10 @@ class ApiSpecificationLoggingPolicies(object):
             'access_log': 'AccessLogPolicy',
             'execution_log': 'ExecutionLogPolicy'
         }
-
         self.attribute_map = {
             'access_log': 'accessLog',
             'execution_log': 'executionLog'
         }
-
         self._access_log = None
         self._execution_log = None
 

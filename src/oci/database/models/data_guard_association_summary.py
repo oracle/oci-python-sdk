@@ -201,7 +201,6 @@ class DataGuardAssociationSummary(object):
             'time_created': 'datetime',
             'is_active_data_guard_enabled': 'bool'
         }
-
         self.attribute_map = {
             'id': 'id',
             'database_id': 'databaseId',
@@ -220,7 +219,6 @@ class DataGuardAssociationSummary(object):
             'time_created': 'timeCreated',
             'is_active_data_guard_enabled': 'isActiveDataGuardEnabled'
         }
-
         self._id = None
         self._database_id = None
         self._role = None

@@ -33,12 +33,10 @@ class BulkActivationStatus(object):
             'attribute_statuses': 'list[AttributeResponse]',
             'bulk_activation_metadata': 'BulkActivationMetadata'
         }
-
         self.attribute_map = {
             'attribute_statuses': 'attributeStatuses',
             'bulk_activation_metadata': 'bulkActivationMetadata'
         }
-
         self._attribute_statuses = None
         self._bulk_activation_metadata = None
 

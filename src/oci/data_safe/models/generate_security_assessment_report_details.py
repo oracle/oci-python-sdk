@@ -37,11 +37,9 @@ class GenerateSecurityAssessmentReportDetails(object):
         self.swagger_types = {
             'format': 'str'
         }
-
         self.attribute_map = {
             'format': 'format'
         }
-
         self._format = None
 
     @property

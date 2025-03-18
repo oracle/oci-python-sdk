@@ -55,7 +55,6 @@ class JmxQueryProperties(MetricExtensionQueryProperties):
             'auto_row_prefix': 'str',
             'is_metric_service_enabled': 'bool'
         }
-
         self.attribute_map = {
             'collection_method': 'collectionMethod',
             'managed_bean_query': 'managedBeanQuery',
@@ -64,7 +63,6 @@ class JmxQueryProperties(MetricExtensionQueryProperties):
             'auto_row_prefix': 'autoRowPrefix',
             'is_metric_service_enabled': 'isMetricServiceEnabled'
         }
-
         self._collection_method = None
         self._managed_bean_query = None
         self._jmx_attributes = None

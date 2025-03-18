@@ -38,11 +38,9 @@ class LoggingQueryDetails(object):
         self.swagger_types = {
             'logging_query_type': 'str'
         }
-
         self.attribute_map = {
             'logging_query_type': 'loggingQueryType'
         }
-
         self._logging_query_type = None
 
     @staticmethod

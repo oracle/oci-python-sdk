@@ -52,14 +52,12 @@ class UpdateTransferPackageDetails(object):
             'package_delivery_vendor': 'str',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'original_package_delivery_tracking_number': 'originalPackageDeliveryTrackingNumber',
             'return_package_delivery_tracking_number': 'returnPackageDeliveryTrackingNumber',
             'package_delivery_vendor': 'packageDeliveryVendor',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._original_package_delivery_tracking_number = None
         self._return_package_delivery_tracking_number = None
         self._package_delivery_vendor = None

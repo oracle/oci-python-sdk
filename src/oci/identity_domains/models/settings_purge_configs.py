@@ -33,12 +33,10 @@ class SettingsPurgeConfigs(object):
             'resource_name': 'str',
             'retention_period': 'int'
         }
-
         self.attribute_map = {
             'resource_name': 'resourceName',
             'retention_period': 'retentionPeriod'
         }
-
         self._resource_name = None
         self._retention_period = None
 

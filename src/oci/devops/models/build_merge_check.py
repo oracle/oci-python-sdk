@@ -45,14 +45,12 @@ class BuildMergeCheck(MergeCheck):
             'build_run_id': 'str',
             'build_status': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'pipeline_id': 'pipelineId',
             'build_run_id': 'buildRunId',
             'build_status': 'buildStatus'
         }
-
         self._type = None
         self._pipeline_id = None
         self._build_run_id = None

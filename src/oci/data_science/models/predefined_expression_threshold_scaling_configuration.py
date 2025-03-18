@@ -46,14 +46,12 @@ class PredefinedExpressionThresholdScalingConfiguration(ScalingConfiguration):
             'instance_count_adjustment': 'int',
             'threshold': 'int'
         }
-
         self.attribute_map = {
             'scaling_configuration_type': 'scalingConfigurationType',
             'pending_duration': 'pendingDuration',
             'instance_count_adjustment': 'instanceCountAdjustment',
             'threshold': 'threshold'
         }
-
         self._scaling_configuration_type = None
         self._pending_duration = None
         self._instance_count_adjustment = None

@@ -133,7 +133,6 @@ class SecurityRule(object):
             'time_created': 'datetime',
             'udp_options': 'UdpOptions'
         }
-
         self.attribute_map = {
             'description': 'description',
             'destination': 'destination',
@@ -150,7 +149,6 @@ class SecurityRule(object):
             'time_created': 'timeCreated',
             'udp_options': 'udpOptions'
         }
-
         self._description = None
         self._destination = None
         self._destination_type = None

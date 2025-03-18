@@ -58,7 +58,6 @@ class AlarmDimensionStatesEntry(object):
             'rule_name': 'str',
             'timestamp': 'datetime'
         }
-
         self.attribute_map = {
             'alarm_summary': 'alarmSummary',
             'dimensions': 'dimensions',
@@ -66,7 +65,6 @@ class AlarmDimensionStatesEntry(object):
             'rule_name': 'ruleName',
             'timestamp': 'timestamp'
         }
-
         self._alarm_summary = None
         self._dimensions = None
         self._status = None

@@ -38,13 +38,11 @@ class FieldValue(object):
             'internal_value': 'object',
             'is_deleted': 'bool'
         }
-
         self.attribute_map = {
             'display_value': 'displayValue',
             'internal_value': 'internalValue',
             'is_deleted': 'isDeleted'
         }
-
         self._display_value = None
         self._internal_value = None
         self._is_deleted = None

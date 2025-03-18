@@ -63,7 +63,6 @@ class ColumnSummary(object):
             'table_name': 'str',
             'schema_name': 'str'
         }
-
         self.attribute_map = {
             'column_name': 'columnName',
             'data_type': 'dataType',
@@ -74,7 +73,6 @@ class ColumnSummary(object):
             'table_name': 'tableName',
             'schema_name': 'schemaName'
         }
-
         self._column_name = None
         self._data_type = None
         self._length = None

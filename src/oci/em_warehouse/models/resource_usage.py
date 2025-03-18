@@ -53,7 +53,6 @@ class ResourceUsage(object):
             'em_instances': 'list[EmInstancesDetails]',
             'schema_name': 'str'
         }
-
         self.attribute_map = {
             'operations_insights_warehouse_id': 'operationsInsightsWarehouseId',
             'id': 'id',
@@ -62,7 +61,6 @@ class ResourceUsage(object):
             'em_instances': 'emInstances',
             'schema_name': 'schemaName'
         }
-
         self._operations_insights_warehouse_id = None
         self._id = None
         self._em_instance_count = None

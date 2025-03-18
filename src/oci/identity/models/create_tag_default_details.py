@@ -48,7 +48,6 @@ class CreateTagDefaultDetails(object):
             'is_required': 'bool',
             'locks': 'list[AddLockDetails]'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'tag_definition_id': 'tagDefinitionId',
@@ -56,7 +55,6 @@ class CreateTagDefaultDetails(object):
             'is_required': 'isRequired',
             'locks': 'locks'
         }
-
         self._compartment_id = None
         self._tag_definition_id = None
         self._value = None

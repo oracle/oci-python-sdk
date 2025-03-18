@@ -321,7 +321,6 @@ class OpensearchCluster(object):
             'inbound_cluster_ids': 'list[str]',
             'maintenance_details': 'MaintenanceDetails'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -371,7 +370,6 @@ class OpensearchCluster(object):
             'inbound_cluster_ids': 'inboundClusterIds',
             'maintenance_details': 'maintenanceDetails'
         }
-
         self._id = None
         self._display_name = None
         self._compartment_id = None

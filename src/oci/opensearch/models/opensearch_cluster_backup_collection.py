@@ -28,11 +28,9 @@ class OpensearchClusterBackupCollection(object):
         self.swagger_types = {
             'items': 'list[OpensearchClusterBackupSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

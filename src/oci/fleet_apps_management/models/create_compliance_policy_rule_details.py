@@ -90,7 +90,6 @@ class CreateCompliancePolicyRuleDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'compliance_policy_id': 'compliancePolicyId',
@@ -103,7 +102,6 @@ class CreateCompliancePolicyRuleDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._display_name = None
         self._compliance_policy_id = None
         self._product_version = None

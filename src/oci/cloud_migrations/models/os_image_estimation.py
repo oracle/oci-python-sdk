@@ -33,12 +33,10 @@ class OsImageEstimation(object):
             'total_per_hour': 'float',
             'total_per_hour_by_subscription': 'float'
         }
-
         self.attribute_map = {
             'total_per_hour': 'totalPerHour',
             'total_per_hour_by_subscription': 'totalPerHourBySubscription'
         }
-
         self._total_per_hour = None
         self._total_per_hour_by_subscription = None
 

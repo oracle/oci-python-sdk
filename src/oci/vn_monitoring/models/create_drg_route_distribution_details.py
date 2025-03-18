@@ -53,7 +53,6 @@ class CreateDrgRouteDistributionDetails(object):
             'drg_id': 'str',
             'distribution_type': 'str'
         }
-
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
@@ -61,7 +60,6 @@ class CreateDrgRouteDistributionDetails(object):
             'drg_id': 'drgId',
             'distribution_type': 'distributionType'
         }
-
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None

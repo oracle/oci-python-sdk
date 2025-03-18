@@ -28,11 +28,9 @@ class UpdateApplicationGroupDetails(object):
         self.swagger_types = {
             'apps': 'list[str]'
         }
-
         self.attribute_map = {
             'apps': 'apps'
         }
-
         self._apps = None
 
     @property

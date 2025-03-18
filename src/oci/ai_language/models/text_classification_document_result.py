@@ -38,13 +38,11 @@ class TextClassificationDocumentResult(object):
             'text_classification': 'list[TextClassification]',
             'language_code': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'text_classification': 'textClassification',
             'language_code': 'languageCode'
         }
-
         self._key = None
         self._text_classification = None
         self._language_code = None

@@ -45,14 +45,12 @@ class ImageMetadata(RecordMetadata):
             'width': 'int',
             'depth': 'int'
         }
-
         self.attribute_map = {
             'record_type': 'recordType',
             'height': 'height',
             'width': 'width',
             'depth': 'depth'
         }
-
         self._record_type = None
         self._height = None
         self._width = None

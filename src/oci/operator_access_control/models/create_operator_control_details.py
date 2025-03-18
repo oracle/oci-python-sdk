@@ -113,7 +113,6 @@ class CreateOperatorControlDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'operator_control_name': 'operatorControlName',
             'description': 'description',
@@ -129,7 +128,6 @@ class CreateOperatorControlDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._operator_control_name = None
         self._description = None
         self._approvers_list = None

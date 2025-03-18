@@ -118,7 +118,6 @@ class DatabaseConfigurationSummary(object):
             'freeform_tags': 'dict(str, str)',
             'processor_count': 'int'
         }
-
         self.attribute_map = {
             'database_insight_id': 'databaseInsightId',
             'entity_source': 'entitySource',
@@ -132,7 +131,6 @@ class DatabaseConfigurationSummary(object):
             'freeform_tags': 'freeformTags',
             'processor_count': 'processorCount'
         }
-
         self._database_insight_id = None
         self._entity_source = None
         self._compartment_id = None

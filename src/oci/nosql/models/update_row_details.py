@@ -77,7 +77,6 @@ class UpdateRowDetails(object):
             'identity_cache_size': 'int',
             'is_exact_match': 'bool'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'value': 'value',
@@ -89,7 +88,6 @@ class UpdateRowDetails(object):
             'identity_cache_size': 'identityCacheSize',
             'is_exact_match': 'isExactMatch'
         }
-
         self._compartment_id = None
         self._value = None
         self._option = None

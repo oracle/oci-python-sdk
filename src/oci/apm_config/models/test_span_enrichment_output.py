@@ -40,13 +40,11 @@ class TestSpanEnrichmentOutput(TestOutput):
             'span': 'object',
             'filters': 'list[bool]'
         }
-
         self.attribute_map = {
             'test_type': 'testType',
             'span': 'span',
             'filters': 'filters'
         }
-
         self._test_type = None
         self._span = None
         self._filters = None

@@ -53,7 +53,6 @@ class VerifyOutput(object):
             'columns': 'list[ResultColumn]',
             'results': 'list[dict(str, object)]'
         }
-
         self.attribute_map = {
             'scheduled_task_id': 'scheduledTaskId',
             'response_time_in_ms': 'responseTimeInMs',
@@ -62,7 +61,6 @@ class VerifyOutput(object):
             'columns': 'columns',
             'results': 'results'
         }
-
         self._scheduled_task_id = None
         self._response_time_in_ms = None
         self._total_matched_count = None

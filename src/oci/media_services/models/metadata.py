@@ -28,11 +28,9 @@ class Metadata(object):
         self.swagger_types = {
             'metadata': 'str'
         }
-
         self.attribute_map = {
             'metadata': 'metadata'
         }
-
         self._metadata = None
 
     @property

@@ -38,13 +38,11 @@ class Capacity(object):
             'min': 'int',
             'initial': 'int'
         }
-
         self.attribute_map = {
             'max': 'max',
             'min': 'min',
             'initial': 'initial'
         }
-
         self._max = None
         self._min = None
         self._initial = None

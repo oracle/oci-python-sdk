@@ -140,7 +140,6 @@ class JreUsage(object):
             'time_first_seen': 'datetime',
             'time_last_seen': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'fleet_id': 'fleetId',
@@ -162,7 +161,6 @@ class JreUsage(object):
             'time_first_seen': 'timeFirstSeen',
             'time_last_seen': 'timeLastSeen'
         }
-
         self._id = None
         self._fleet_id = None
         self._managed_instance_id = None

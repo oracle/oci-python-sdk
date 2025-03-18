@@ -59,7 +59,6 @@ class UpdateWaitStageDetails(UpdateBuildPipelineStageDetails):
             'defined_tags': 'dict(str, dict(str, object))',
             'wait_criteria': 'UpdateWaitCriteriaDetails'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
@@ -69,7 +68,6 @@ class UpdateWaitStageDetails(UpdateBuildPipelineStageDetails):
             'defined_tags': 'definedTags',
             'wait_criteria': 'waitCriteria'
         }
-
         self._display_name = None
         self._description = None
         self._build_pipeline_stage_type = None

@@ -65,7 +65,6 @@ class DBParameters(DatabaseConfigurationMetricGroup):
             'is_changed': 'str',
             'is_default': 'str'
         }
-
         self.attribute_map = {
             'metric_name': 'metricName',
             'time_collected': 'timeCollected',
@@ -76,7 +75,6 @@ class DBParameters(DatabaseConfigurationMetricGroup):
             'is_changed': 'isChanged',
             'is_default': 'isDefault'
         }
-
         self._metric_name = None
         self._time_collected = None
         self._instance_number = None

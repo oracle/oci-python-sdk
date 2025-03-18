@@ -51,7 +51,6 @@ class FixedFrequencySchedule(Schedule):
             'recurring_interval': 'str',
             'repeat_count': 'int'
         }
-
         self.attribute_map = {
             'type': 'type',
             'misfire_policy': 'misfirePolicy',
@@ -59,7 +58,6 @@ class FixedFrequencySchedule(Schedule):
             'recurring_interval': 'recurringInterval',
             'repeat_count': 'repeatCount'
         }
-
         self._type = None
         self._misfire_policy = None
         self._time_of_first_execution = None

@@ -142,7 +142,6 @@ class Application(object):
             'time_updated': 'datetime',
             'image_policy_config': 'ImagePolicyConfig'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -160,7 +159,6 @@ class Application(object):
             'time_updated': 'timeUpdated',
             'image_policy_config': 'imagePolicyConfig'
         }
-
         self._id = None
         self._compartment_id = None
         self._display_name = None

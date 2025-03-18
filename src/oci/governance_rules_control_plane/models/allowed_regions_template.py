@@ -45,14 +45,12 @@ class AllowedRegionsTemplate(Template):
             'description': 'str',
             'regions': 'list[str]'
         }
-
         self.attribute_map = {
             'type': 'type',
             'display_name': 'displayName',
             'description': 'description',
             'regions': 'regions'
         }
-
         self._type = None
         self._display_name = None
         self._description = None

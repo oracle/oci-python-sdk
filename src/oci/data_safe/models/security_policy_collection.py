@@ -28,11 +28,9 @@ class SecurityPolicyCollection(object):
         self.swagger_types = {
             'items': 'list[SecurityPolicySummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

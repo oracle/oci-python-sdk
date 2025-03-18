@@ -98,7 +98,6 @@ class BaselineableMetricSummary(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
@@ -114,7 +113,6 @@ class BaselineableMetricSummary(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._id = None
         self._lifecycle_state = None
         self._tenancy_id = None

@@ -38,11 +38,9 @@ class JobRunUseCaseConfigurationDetails(object):
         self.swagger_types = {
             'use_case_type': 'str'
         }
-
         self.attribute_map = {
             'use_case_type': 'useCaseType'
         }
-
         self._use_case_type = None
 
     @staticmethod

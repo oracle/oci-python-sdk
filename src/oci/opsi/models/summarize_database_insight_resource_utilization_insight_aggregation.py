@@ -84,7 +84,6 @@ class SummarizeDatabaseInsightResourceUtilizationInsightAggregation(object):
             'projected_utilization': 'ResourceInsightProjectedUtilization',
             'current_utilization': 'ResourceInsightCurrentUtilization'
         }
-
         self.attribute_map = {
             'time_interval_start': 'timeIntervalStart',
             'time_interval_end': 'timeIntervalEnd',
@@ -94,7 +93,6 @@ class SummarizeDatabaseInsightResourceUtilizationInsightAggregation(object):
             'projected_utilization': 'projectedUtilization',
             'current_utilization': 'currentUtilization'
         }
-
         self._time_interval_start = None
         self._time_interval_end = None
         self._high_utilization_threshold = None

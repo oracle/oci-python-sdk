@@ -28,11 +28,9 @@ class ResponderActivityCollection(object):
         self.swagger_types = {
             'items': 'list[ResponderActivitySummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

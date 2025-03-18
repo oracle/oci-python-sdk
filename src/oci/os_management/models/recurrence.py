@@ -50,12 +50,10 @@ class Recurrence(object):
             'interval_type': 'str',
             'interval_value': 'str'
         }
-
         self.attribute_map = {
             'interval_type': 'intervalType',
             'interval_value': 'intervalValue'
         }
-
         self._interval_type = None
         self._interval_value = None
 

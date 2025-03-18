@@ -80,7 +80,6 @@ class RenameRule(ProjectionRule):
             'from_name': 'str',
             'to_name': 'str'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -94,7 +93,6 @@ class RenameRule(ProjectionRule):
             'from_name': 'fromName',
             'to_name': 'toName'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

@@ -62,13 +62,11 @@ class AgentEventData(object):
             'status': 'str',
             'additional_details': 'WorkRequestEventDataAdditionalDetails'
         }
-
         self.attribute_map = {
             'operation_type': 'operationType',
             'status': 'status',
             'additional_details': 'additionalDetails'
         }
-
         self._operation_type = None
         self._status = None
         self._additional_details = None

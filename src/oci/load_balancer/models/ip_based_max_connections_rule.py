@@ -41,13 +41,11 @@ class IpBasedMaxConnectionsRule(Rule):
             'default_max_connections': 'int',
             'ip_max_connections': 'list[IpMaxConnections]'
         }
-
         self.attribute_map = {
             'action': 'action',
             'default_max_connections': 'defaultMaxConnections',
             'ip_max_connections': 'ipMaxConnections'
         }
-
         self._action = None
         self._default_max_connections = None
         self._ip_max_connections = None

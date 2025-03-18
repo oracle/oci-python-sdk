@@ -33,12 +33,10 @@ class SourceBackupDetails(object):
             'source_region': 'str',
             'source_backup_id': 'str'
         }
-
         self.attribute_map = {
             'source_region': 'sourceRegion',
             'source_backup_id': 'sourceBackupId'
         }
-
         self._source_region = None
         self._source_backup_id = None
 

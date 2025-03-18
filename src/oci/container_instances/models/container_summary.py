@@ -108,7 +108,6 @@ class ContainerSummary(object):
             'is_resource_principal_disabled': 'bool',
             'security_context': 'SecurityContext'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -128,7 +127,6 @@ class ContainerSummary(object):
             'is_resource_principal_disabled': 'isResourcePrincipalDisabled',
             'security_context': 'securityContext'
         }
-
         self._id = None
         self._display_name = None
         self._compartment_id = None

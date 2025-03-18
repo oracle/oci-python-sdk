@@ -159,7 +159,6 @@ class Bastion(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'bastion_type': 'bastionType',
             'id': 'id',
@@ -182,7 +181,6 @@ class Bastion(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._bastion_type = None
         self._id = None
         self._name = None

@@ -33,12 +33,10 @@ class MonitoringSourceSelectedNamespace(object):
             'namespace': 'str',
             'metrics': 'MonitoringSourceMetricDetails'
         }
-
         self.attribute_map = {
             'namespace': 'namespace',
             'metrics': 'metrics'
         }
-
         self._namespace = None
         self._metrics = None
 

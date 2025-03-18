@@ -47,12 +47,10 @@ class JobOutBind(object):
             'position': 'int',
             'data_type': 'str'
         }
-
         self.attribute_map = {
             'position': 'position',
             'data_type': 'dataType'
         }
-
         self._position = None
         self._data_type = None
 

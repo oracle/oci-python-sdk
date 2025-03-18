@@ -89,7 +89,6 @@ class UpdateMySqlDatabaseConnectorDetails(object):
             'network_protocol': 'str',
             'external_database_id': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'macs_agent_id': 'macsAgentId',
@@ -100,7 +99,6 @@ class UpdateMySqlDatabaseConnectorDetails(object):
             'network_protocol': 'networkProtocol',
             'external_database_id': 'externalDatabaseId'
         }
-
         self._display_name = None
         self._macs_agent_id = None
         self._host_name = None

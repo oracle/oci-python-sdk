@@ -152,7 +152,6 @@ class AccessRequestHistorySummary(object):
             'actions_list': 'list[str]',
             'time_of_action': 'datetime'
         }
-
         self.attribute_map = {
             'lifecycle_state': 'lifecycleState',
             'user_id': 'userId',
@@ -162,7 +161,6 @@ class AccessRequestHistorySummary(object):
             'actions_list': 'actionsList',
             'time_of_action': 'timeOfAction'
         }
-
         self._lifecycle_state = None
         self._user_id = None
         self._description = None

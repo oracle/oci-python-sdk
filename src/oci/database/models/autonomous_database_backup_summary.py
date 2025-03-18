@@ -190,7 +190,6 @@ class AutonomousDatabaseBackupSummary(object):
             'size_in_tbs': 'float',
             'backup_destination_details': 'BackupDestinationDetails'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -215,7 +214,6 @@ class AutonomousDatabaseBackupSummary(object):
             'size_in_tbs': 'sizeInTBs',
             'backup_destination_details': 'backupDestinationDetails'
         }
-
         self._id = None
         self._compartment_id = None
         self._autonomous_database_id = None

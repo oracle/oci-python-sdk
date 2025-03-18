@@ -101,7 +101,6 @@ class CreateHdfsConnectionDetails(CreateConnectionDetails):
             'technology_type': 'str',
             'core_site_xml': 'str'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'display_name': 'displayName',
@@ -119,7 +118,6 @@ class CreateHdfsConnectionDetails(CreateConnectionDetails):
             'technology_type': 'technologyType',
             'core_site_xml': 'coreSiteXml'
         }
-
         self._connection_type = None
         self._display_name = None
         self._description = None

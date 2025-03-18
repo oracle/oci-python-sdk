@@ -76,7 +76,6 @@ class JwtAuthenticationPolicy(AuthenticationPolicy):
             'verify_claims': 'list[JsonWebTokenClaim]',
             'public_keys': 'PublicKeySet'
         }
-
         self.attribute_map = {
             'is_anonymous_access_allowed': 'isAnonymousAccessAllowed',
             'type': 'type',
@@ -89,7 +88,6 @@ class JwtAuthenticationPolicy(AuthenticationPolicy):
             'verify_claims': 'verifyClaims',
             'public_keys': 'publicKeys'
         }
-
         self._is_anonymous_access_allowed = None
         self._type = None
         self._token_header = None

@@ -78,7 +78,6 @@ class ComputeBareMetalHostSummary(object):
             'time_created': 'datetime',
             'time_updated': 'datetime'
         }
-
         self.attribute_map = {
             'compute_capacity_topology_id': 'computeCapacityTopologyId',
             'compute_hpc_island_id': 'computeHpcIslandId',
@@ -92,7 +91,6 @@ class ComputeBareMetalHostSummary(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated'
         }
-
         self._compute_capacity_topology_id = None
         self._compute_hpc_island_id = None
         self._compute_local_block_id = None

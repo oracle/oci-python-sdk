@@ -41,13 +41,11 @@ class ForwardedRoutingAction(RoutingAction):
             'action_type': 'str',
             'forwarded_routing_action_details': 'ForwardedRoutingActionDetails'
         }
-
         self.attribute_map = {
             'action': 'action',
             'action_type': 'actionType',
             'forwarded_routing_action_details': 'forwardedRoutingActionDetails'
         }
-
         self._action = None
         self._action_type = None
         self._forwarded_routing_action_details = None

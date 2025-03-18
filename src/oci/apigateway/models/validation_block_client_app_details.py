@@ -30,11 +30,9 @@ class ValidationBlockClientAppDetails(ClientAppDetails):
         self.swagger_types = {
             'type': 'str'
         }
-
         self.attribute_map = {
             'type': 'type'
         }
-
         self._type = None
         self._type = 'VALIDATION_BLOCK'
 

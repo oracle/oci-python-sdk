@@ -28,11 +28,9 @@ class UpdateOnPremConnectorWalletDetails(object):
         self.swagger_types = {
             'is_update': 'bool'
         }
-
         self.attribute_map = {
             'is_update': 'isUpdate'
         }
-
         self._is_update = None
 
     @property

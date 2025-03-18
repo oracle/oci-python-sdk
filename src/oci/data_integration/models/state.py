@@ -38,13 +38,11 @@ class State(object):
             'parameter_value': 'ParameterValue',
             'time_value': 'datetime'
         }
-
         self.attribute_map = {
             'name': 'name',
             'parameter_value': 'parameterValue',
             'time_value': 'timeValue'
         }
-
         self._name = None
         self._parameter_value = None
         self._time_value = None

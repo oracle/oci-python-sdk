@@ -34,12 +34,10 @@ class DestroyJobOperationDetailsSummary(JobOperationDetailsSummary):
             'operation': 'str',
             'execution_plan_strategy': 'str'
         }
-
         self.attribute_map = {
             'operation': 'operation',
             'execution_plan_strategy': 'executionPlanStrategy'
         }
-
         self._operation = None
         self._execution_plan_strategy = None
         self._operation = 'DESTROY'

@@ -116,7 +116,6 @@ class OkeBlueGreenDeployStage(DeployStage):
             'kubernetes_manifest_deploy_artifact_ids': 'list[str]',
             'blue_green_strategy': 'OkeBlueGreenStrategy'
         }
-
         self.attribute_map = {
             'id': 'id',
             'description': 'description',
@@ -137,7 +136,6 @@ class OkeBlueGreenDeployStage(DeployStage):
             'kubernetes_manifest_deploy_artifact_ids': 'kubernetesManifestDeployArtifactIds',
             'blue_green_strategy': 'blueGreenStrategy'
         }
-
         self._id = None
         self._description = None
         self._display_name = None

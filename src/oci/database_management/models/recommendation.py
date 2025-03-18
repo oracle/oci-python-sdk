@@ -38,13 +38,11 @@ class Recommendation(object):
             'example': 'RecommendationExample',
             'rationales': 'list[RecommendationRationale]'
         }
-
         self.attribute_map = {
             'message': 'message',
             'example': 'example',
             'rationales': 'rationales'
         }
-
         self._message = None
         self._example = None
         self._rationales = None

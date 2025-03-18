@@ -33,12 +33,10 @@ class UnifiedAgentKubernetesSource(object):
             'name': 'str',
             'scrape_targets': 'list[UnifiedAgentKubernetesScrapeTarget]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'scrape_targets': 'scrapeTargets'
         }
-
         self._name = None
         self._scrape_targets = None
 

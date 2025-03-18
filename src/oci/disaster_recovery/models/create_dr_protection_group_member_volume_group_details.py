@@ -35,12 +35,10 @@ class CreateDrProtectionGroupMemberVolumeGroupDetails(CreateDrProtectionGroupMem
             'member_id': 'str',
             'member_type': 'str'
         }
-
         self.attribute_map = {
             'member_id': 'memberId',
             'member_type': 'memberType'
         }
-
         self._member_id = None
         self._member_type = None
         self._member_type = 'VOLUME_GROUP'

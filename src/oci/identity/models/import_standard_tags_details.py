@@ -33,12 +33,10 @@ class ImportStandardTagsDetails(object):
             'compartment_id': 'str',
             'standard_tag_namespace_name': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'standard_tag_namespace_name': 'standardTagNamespaceName'
         }
-
         self._compartment_id = None
         self._standard_tag_namespace_name = None
 

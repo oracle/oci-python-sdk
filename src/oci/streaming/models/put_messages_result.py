@@ -34,12 +34,10 @@ class PutMessagesResult(object):
             'failures': 'int',
             'entries': 'list[PutMessagesResultEntry]'
         }
-
         self.attribute_map = {
             'failures': 'failures',
             'entries': 'entries'
         }
-
         self._failures = None
         self._entries = None
 

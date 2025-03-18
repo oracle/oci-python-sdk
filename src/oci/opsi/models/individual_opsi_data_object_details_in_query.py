@@ -40,13 +40,11 @@ class IndividualOpsiDataObjectDetailsInQuery(OpsiDataObjectDetailsInQuery):
             '_query_params': 'list[OpsiDataObjectQueryParam]',
             'data_object_identifier': 'str'
         }
-
         self.attribute_map = {
             'data_object_details_target': 'dataObjectDetailsTarget',
             '_query_params': 'queryParams',
             'data_object_identifier': 'dataObjectIdentifier'
         }
-
         self._data_object_details_target = None
         self.__query_params = None
         self._data_object_identifier = None

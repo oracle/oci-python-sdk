@@ -38,13 +38,11 @@ class MetricsAggregationRangeCollection(object):
             'start_time': 'str',
             'end_time': 'str'
         }
-
         self.attribute_map = {
             'items': 'items',
             'start_time': 'startTime',
             'end_time': 'endTime'
         }
-
         self._items = None
         self._start_time = None
         self._end_time = None

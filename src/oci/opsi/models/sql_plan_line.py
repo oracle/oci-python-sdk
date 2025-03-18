@@ -208,7 +208,6 @@ class SqlPlanLine(object):
             'elapsed_time_in_sec': 'float',
             'other_xml': 'str'
         }
-
         self.attribute_map = {
             'version': 'version',
             'sql_identifier': 'sqlIdentifier',
@@ -248,7 +247,6 @@ class SqlPlanLine(object):
             'elapsed_time_in_sec': 'elapsedTimeInSec',
             'other_xml': 'otherXML'
         }
-
         self._version = None
         self._sql_identifier = None
         self._plan_hash = None

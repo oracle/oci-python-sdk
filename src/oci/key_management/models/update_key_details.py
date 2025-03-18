@@ -48,7 +48,6 @@ class UpdateKeyDetails(object):
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'is_auto_rotation_enabled': 'isAutoRotationEnabled',
             'auto_key_rotation_details': 'autoKeyRotationDetails',
@@ -56,7 +55,6 @@ class UpdateKeyDetails(object):
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags'
         }
-
         self._is_auto_rotation_enabled = None
         self._auto_key_rotation_details = None
         self._defined_tags = None

@@ -33,12 +33,10 @@ class DocumentMetadata(object):
             'page_count': 'int',
             'mime_type': 'str'
         }
-
         self.attribute_map = {
             'page_count': 'pageCount',
             'mime_type': 'mimeType'
         }
-
         self._page_count = None
         self._mime_type = None
 

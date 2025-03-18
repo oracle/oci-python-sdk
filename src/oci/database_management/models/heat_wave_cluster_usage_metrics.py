@@ -82,7 +82,6 @@ class HeatWaveClusterUsageMetrics(object):
             'memory_size': 'int',
             'metrics': 'list[HeatWaveFleetMetricDefinition]'
         }
-
         self.attribute_map = {
             'status': 'status',
             'db_system_id': 'dbSystemId',
@@ -94,7 +93,6 @@ class HeatWaveClusterUsageMetrics(object):
             'memory_size': 'memorySize',
             'metrics': 'metrics'
         }
-
         self._status = None
         self._db_system_id = None
         self._db_system_name = None

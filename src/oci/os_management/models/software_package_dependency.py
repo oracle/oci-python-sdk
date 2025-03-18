@@ -38,13 +38,11 @@ class SoftwarePackageDependency(object):
             'dependency_type': 'str',
             'dependency_modifier': 'str'
         }
-
         self.attribute_map = {
             'dependency': 'dependency',
             'dependency_type': 'dependencyType',
             'dependency_modifier': 'dependencyModifier'
         }
-
         self._dependency = None
         self._dependency_type = None
         self._dependency_modifier = None

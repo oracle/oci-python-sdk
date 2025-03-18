@@ -28,11 +28,9 @@ class AttachChildSoftwareSourceToManagedInstanceDetails(object):
         self.swagger_types = {
             'software_source_id': 'str'
         }
-
         self.attribute_map = {
             'software_source_id': 'softwareSourceId'
         }
-
         self._software_source_id = None
 
     @property

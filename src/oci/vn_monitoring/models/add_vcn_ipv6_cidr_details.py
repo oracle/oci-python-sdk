@@ -38,13 +38,11 @@ class AddVcnIpv6CidrDetails(object):
             'is_oracle_gua_allocation_enabled': 'bool',
             'byoipv6_cidr_detail': 'Byoipv6CidrDetails'
         }
-
         self.attribute_map = {
             'ipv6_private_cidr_block': 'ipv6PrivateCidrBlock',
             'is_oracle_gua_allocation_enabled': 'isOracleGuaAllocationEnabled',
             'byoipv6_cidr_detail': 'byoipv6CidrDetail'
         }
-
         self._ipv6_private_cidr_block = None
         self._is_oracle_gua_allocation_enabled = None
         self._byoipv6_cidr_detail = None

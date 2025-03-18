@@ -38,13 +38,11 @@ class Time(object):
             'minute': 'int',
             'second': 'int'
         }
-
         self.attribute_map = {
             'hour': 'hour',
             'minute': 'minute',
             'second': 'second'
         }
-
         self._hour = None
         self._minute = None
         self._second = None

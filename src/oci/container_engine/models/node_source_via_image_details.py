@@ -40,13 +40,11 @@ class NodeSourceViaImageDetails(NodeSourceDetails):
             'image_id': 'str',
             'boot_volume_size_in_gbs': 'int'
         }
-
         self.attribute_map = {
             'source_type': 'sourceType',
             'image_id': 'imageId',
             'boot_volume_size_in_gbs': 'bootVolumeSizeInGBs'
         }
-
         self._source_type = None
         self._image_id = None
         self._boot_volume_size_in_gbs = None

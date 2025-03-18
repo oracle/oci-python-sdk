@@ -33,12 +33,10 @@ class TableSummary(object):
             'table_name': 'str',
             'schema_name': 'str'
         }
-
         self.attribute_map = {
             'table_name': 'tableName',
             'schema_name': 'schemaName'
         }
-
         self._table_name = None
         self._schema_name = None
 

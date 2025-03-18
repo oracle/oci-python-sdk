@@ -40,13 +40,11 @@ class UpdateIcmp6ApplicationDetails(UpdateApplicationDetails):
             'icmp_type': 'int',
             'icmp_code': 'int'
         }
-
         self.attribute_map = {
             'type': 'type',
             'icmp_type': 'icmpType',
             'icmp_code': 'icmpCode'
         }
-
         self._type = None
         self._icmp_type = None
         self._icmp_code = None

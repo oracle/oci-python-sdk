@@ -28,11 +28,9 @@ class LogAnalyticsAssociationCollection(object):
         self.swagger_types = {
             'items': 'list[LogAnalyticsAssociation]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

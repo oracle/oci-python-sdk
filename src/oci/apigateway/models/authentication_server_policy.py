@@ -33,12 +33,10 @@ class AuthenticationServerPolicy(object):
             'key': 'DynamicSelectionKey',
             'authentication_server_detail': 'AuthenticationPolicy'
         }
-
         self.attribute_map = {
             'key': 'key',
             'authentication_server_detail': 'authenticationServerDetail'
         }
-
         self._key = None
         self._authentication_server_detail = None
 

@@ -33,12 +33,10 @@ class FileLineDetails(object):
             'line_number': 'int',
             'line_content': 'str'
         }
-
         self.attribute_map = {
             'line_number': 'lineNumber',
             'line_content': 'lineContent'
         }
-
         self._line_number = None
         self._line_content = None
 

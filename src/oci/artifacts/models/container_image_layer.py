@@ -38,13 +38,11 @@ class ContainerImageLayer(object):
             'size_in_bytes': 'int',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'digest': 'digest',
             'size_in_bytes': 'sizeInBytes',
             'time_created': 'timeCreated'
         }
-
         self._digest = None
         self._size_in_bytes = None
         self._time_created = None

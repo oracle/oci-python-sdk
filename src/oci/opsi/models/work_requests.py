@@ -28,11 +28,9 @@ class WorkRequests(object):
         self.swagger_types = {
             'work_requests': 'object'
         }
-
         self.attribute_map = {
             'work_requests': 'workRequests'
         }
-
         self._work_requests = None
 
     @property

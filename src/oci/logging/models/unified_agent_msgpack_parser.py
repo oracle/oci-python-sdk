@@ -65,7 +65,6 @@ class UnifiedAgentMsgpackParser(UnifiedAgentParser):
             'is_keep_time_key': 'bool',
             'timeout_in_milliseconds': 'int'
         }
-
         self.attribute_map = {
             'parser_type': 'parserType',
             'field_time_key': 'fieldTimeKey',
@@ -76,7 +75,6 @@ class UnifiedAgentMsgpackParser(UnifiedAgentParser):
             'is_keep_time_key': 'isKeepTimeKey',
             'timeout_in_milliseconds': 'timeoutInMilliseconds'
         }
-
         self._parser_type = None
         self._field_time_key = None
         self._types = None

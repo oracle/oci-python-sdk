@@ -78,7 +78,6 @@ class ComputeCapacityReservationSummary(object):
             'is_default_reservation': 'bool',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -92,7 +91,6 @@ class ComputeCapacityReservationSummary(object):
             'is_default_reservation': 'isDefaultReservation',
             'time_created': 'timeCreated'
         }
-
         self._id = None
         self._compartment_id = None
         self._display_name = None

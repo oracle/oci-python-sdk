@@ -48,7 +48,6 @@ class ComplianceDetailResource(object):
             'compartment': 'str',
             'resource_region': 'str'
         }
-
         self.attribute_map = {
             'resource_id': 'resourceId',
             'resource_name': 'resourceName',
@@ -56,7 +55,6 @@ class ComplianceDetailResource(object):
             'compartment': 'compartment',
             'resource_region': 'resourceRegion'
         }
-
         self._resource_id = None
         self._resource_name = None
         self._compartment_id = None

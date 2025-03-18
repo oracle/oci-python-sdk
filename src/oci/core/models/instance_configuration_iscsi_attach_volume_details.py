@@ -54,7 +54,6 @@ class InstanceConfigurationIscsiAttachVolumeDetails(InstanceConfigurationAttachV
             'type': 'str',
             'use_chap': 'bool'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'is_read_only': 'isReadOnly',
@@ -63,7 +62,6 @@ class InstanceConfigurationIscsiAttachVolumeDetails(InstanceConfigurationAttachV
             'type': 'type',
             'use_chap': 'useChap'
         }
-
         self._display_name = None
         self._is_read_only = None
         self._device = None

@@ -51,7 +51,6 @@ class CronSchedule(Schedule):
             'expression': 'str',
             'time_zone': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'misfire_policy': 'misfirePolicy',
@@ -59,7 +58,6 @@ class CronSchedule(Schedule):
             'expression': 'expression',
             'time_zone': 'timeZone'
         }
-
         self._type = None
         self._misfire_policy = None
         self._time_of_first_execution = None

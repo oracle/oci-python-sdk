@@ -68,7 +68,6 @@ class DatabaseDetails(object):
             'instances': 'list[HostInstanceMap]',
             'cdb_name': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'database_id': 'databaseId',
@@ -80,7 +79,6 @@ class DatabaseDetails(object):
             'instances': 'instances',
             'cdb_name': 'cdbName'
         }
-
         self._id = None
         self._database_id = None
         self._compartment_id = None

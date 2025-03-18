@@ -168,7 +168,6 @@ class PublicIp(object):
             'time_created': 'datetime',
             'public_ip_pool_id': 'str'
         }
-
         self.attribute_map = {
             'assigned_entity_id': 'assignedEntityId',
             'assigned_entity_type': 'assignedEntityType',
@@ -186,7 +185,6 @@ class PublicIp(object):
             'time_created': 'timeCreated',
             'public_ip_pool_id': 'publicIpPoolId'
         }
-
         self._assigned_entity_id = None
         self._assigned_entity_type = None
         self._availability_domain = None

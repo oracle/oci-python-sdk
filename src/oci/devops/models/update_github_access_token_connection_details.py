@@ -55,7 +55,6 @@ class UpdateGithubAccessTokenConnectionDetails(UpdateConnectionDetails):
             'defined_tags': 'dict(str, dict(str, object))',
             'access_token': 'str'
         }
-
         self.attribute_map = {
             'description': 'description',
             'display_name': 'displayName',
@@ -64,7 +63,6 @@ class UpdateGithubAccessTokenConnectionDetails(UpdateConnectionDetails):
             'defined_tags': 'definedTags',
             'access_token': 'accessToken'
         }
-
         self._description = None
         self._display_name = None
         self._connection_type = None

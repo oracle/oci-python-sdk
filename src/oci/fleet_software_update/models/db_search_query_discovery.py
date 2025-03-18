@@ -35,12 +35,10 @@ class DbSearchQueryDiscovery(DbFleetDiscoveryDetails):
             'strategy': 'str',
             'query': 'str'
         }
-
         self.attribute_map = {
             'strategy': 'strategy',
             'query': 'query'
         }
-
         self._strategy = None
         self._query = None
         self._strategy = 'SEARCH_QUERY'

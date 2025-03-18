@@ -62,14 +62,12 @@ class OciConsoleSignOnPolicyConsentConsentSignedBy(object):
             'display_name': 'str',
             'type': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ocid': 'ocid',
             'display_name': 'displayName',
             'type': 'type'
         }
-
         self._value = None
         self._ocid = None
         self._display_name = None

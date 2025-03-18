@@ -102,7 +102,6 @@ class HealthCheckerDetails(object):
             'response_data': 'str',
             'dns': 'DnsHealthCheckerDetails'
         }
-
         self.attribute_map = {
             'protocol': 'protocol',
             'port': 'port',
@@ -116,7 +115,6 @@ class HealthCheckerDetails(object):
             'response_data': 'responseData',
             'dns': 'dns'
         }
-
         self._protocol = None
         self._port = None
         self._retries = None

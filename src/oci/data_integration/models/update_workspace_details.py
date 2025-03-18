@@ -48,7 +48,6 @@ class UpdateWorkspaceDetails(object):
             'display_name': 'str',
             'workspace_properties': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -56,7 +55,6 @@ class UpdateWorkspaceDetails(object):
             'display_name': 'displayName',
             'workspace_properties': 'workspaceProperties'
         }
-
         self._freeform_tags = None
         self._defined_tags = None
         self._description = None

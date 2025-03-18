@@ -55,7 +55,6 @@ class GitHubActionsConfiguration(VerifyConfiguration):
             'workflow_name': 'str',
             'additional_parameters': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'build_service_type': 'buildServiceType',
             'repository_url': 'repositoryUrl',
@@ -64,7 +63,6 @@ class GitHubActionsConfiguration(VerifyConfiguration):
             'workflow_name': 'workflowName',
             'additional_parameters': 'additionalParameters'
         }
-
         self._build_service_type = None
         self._repository_url = None
         self._pat_secret_id = None

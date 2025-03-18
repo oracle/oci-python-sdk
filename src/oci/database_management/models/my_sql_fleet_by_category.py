@@ -38,13 +38,11 @@ class MySqlFleetByCategory(object):
             'mds_deployment_type': 'str',
             'inventory_count': 'int'
         }
-
         self.attribute_map = {
             'database_type': 'databaseType',
             'mds_deployment_type': 'mdsDeploymentType',
             'inventory_count': 'inventoryCount'
         }
-
         self._database_type = None
         self._mds_deployment_type = None
         self._inventory_count = None

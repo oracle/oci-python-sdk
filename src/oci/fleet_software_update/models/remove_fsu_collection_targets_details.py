@@ -37,11 +37,9 @@ class RemoveFsuCollectionTargetsDetails(object):
         self.swagger_types = {
             'removal_strategy': 'str'
         }
-
         self.attribute_map = {
             'removal_strategy': 'removalStrategy'
         }
-
         self._removal_strategy = None
 
     @staticmethod

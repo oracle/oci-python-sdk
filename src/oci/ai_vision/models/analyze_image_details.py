@@ -38,13 +38,11 @@ class AnalyzeImageDetails(object):
             'image': 'ImageDetails',
             'compartment_id': 'str'
         }
-
         self.attribute_map = {
             'features': 'features',
             'image': 'image',
             'compartment_id': 'compartmentId'
         }
-
         self._features = None
         self._image = None
         self._compartment_id = None

@@ -33,12 +33,10 @@ class SocialIdentityProviderRelayIdpParamMappings(object):
             'relay_param_key': 'str',
             'relay_param_value': 'str'
         }
-
         self.attribute_map = {
             'relay_param_key': 'relayParamKey',
             'relay_param_value': 'relayParamValue'
         }
-
         self._relay_param_key = None
         self._relay_param_value = None
 

@@ -43,11 +43,9 @@ class MigrationObjectCollection(object):
         self.swagger_types = {
             'database_combination': 'str'
         }
-
         self.attribute_map = {
             'database_combination': 'databaseCombination'
         }
-
         self._database_combination = None
 
     @staticmethod

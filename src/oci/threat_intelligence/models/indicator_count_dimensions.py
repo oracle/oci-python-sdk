@@ -63,12 +63,10 @@ class IndicatorCountDimensions(object):
             'compartment_id': 'str',
             'type': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'type': 'type'
         }
-
         self._compartment_id = None
         self._type = None
 

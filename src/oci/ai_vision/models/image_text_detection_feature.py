@@ -138,12 +138,10 @@ class ImageTextDetectionFeature(ImageFeature):
             'feature_type': 'str',
             'language': 'str'
         }
-
         self.attribute_map = {
             'feature_type': 'featureType',
             'language': 'language'
         }
-
         self._feature_type = None
         self._language = None
         self._feature_type = 'TEXT_DETECTION'

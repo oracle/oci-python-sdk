@@ -33,12 +33,10 @@ class IdentityStripeDetails(object):
             'service_name': 'str',
             'tenancy': 'str'
         }
-
         self.attribute_map = {
             'service_name': 'serviceName',
             'tenancy': 'tenancy'
         }
-
         self._service_name = None
         self._tenancy = None
 

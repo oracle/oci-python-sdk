@@ -28,11 +28,9 @@ class EnableExternalDatabaseManagementDetails(object):
         self.swagger_types = {
             'connector_id': 'str'
         }
-
         self.attribute_map = {
             'connector_id': 'connectorId'
         }
-
         self._connector_id = None
 
     @property

@@ -33,12 +33,10 @@ class TypeCollection(object):
             'count': 'int',
             'items': 'list[TypeSummary]'
         }
-
         self.attribute_map = {
             'count': 'count',
             'items': 'items'
         }
-
         self._count = None
         self._items = None
 

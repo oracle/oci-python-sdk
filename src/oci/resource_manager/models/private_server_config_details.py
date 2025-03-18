@@ -33,12 +33,10 @@ class PrivateServerConfigDetails(object):
             'private_endpoint_id': 'str',
             'certificate_id': 'str'
         }
-
         self.attribute_map = {
             'private_endpoint_id': 'privateEndpointId',
             'certificate_id': 'certificateId'
         }
-
         self._private_endpoint_id = None
         self._certificate_id = None
 

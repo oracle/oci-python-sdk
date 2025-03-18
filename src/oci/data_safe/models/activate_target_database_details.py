@@ -28,11 +28,9 @@ class ActivateTargetDatabaseDetails(object):
         self.swagger_types = {
             'credentials': 'Credentials'
         }
-
         self.attribute_map = {
             'credentials': 'credentials'
         }
-
         self._credentials = None
 
     @property

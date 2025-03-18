@@ -33,12 +33,10 @@ class MessageMetadata(object):
             'channel_id': 'str',
             'custom_properties': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'channel_id': 'channelId',
             'custom_properties': 'customProperties'
         }
-
         self._channel_id = None
         self._custom_properties = None
 

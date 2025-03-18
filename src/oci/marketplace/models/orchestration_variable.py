@@ -63,7 +63,6 @@ class OrchestrationVariable(object):
             'is_mandatory': 'bool',
             'hint_message': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'default_value': 'defaultValue',
@@ -72,7 +71,6 @@ class OrchestrationVariable(object):
             'is_mandatory': 'isMandatory',
             'hint_message': 'hintMessage'
         }
-
         self._name = None
         self._default_value = None
         self._description = None

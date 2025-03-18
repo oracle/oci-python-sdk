@@ -38,13 +38,11 @@ class EstimateReleaseDataSizeResult(object):
             'time_data_started': 'datetime',
             'size_in_bytes': 'int'
         }
-
         self.attribute_map = {
             'time_data_ended': 'timeDataEnded',
             'time_data_started': 'timeDataStarted',
             'size_in_bytes': 'sizeInBytes'
         }
-
         self._time_data_ended = None
         self._time_data_started = None
         self._size_in_bytes = None

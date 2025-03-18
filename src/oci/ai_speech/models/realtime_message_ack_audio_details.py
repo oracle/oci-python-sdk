@@ -38,13 +38,11 @@ class RealtimeMessageAckAudioDetails(object):
             'offset': 'int',
             'length': 'int'
         }
-
         self.attribute_map = {
             'number': 'number',
             'offset': 'offset',
             'length': 'length'
         }
-
         self._number = None
         self._offset = None
         self._length = None

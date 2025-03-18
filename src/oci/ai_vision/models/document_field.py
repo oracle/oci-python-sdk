@@ -61,14 +61,12 @@ class DocumentField(object):
             'field_name': 'FieldName',
             'field_value': 'FieldValue'
         }
-
         self.attribute_map = {
             'field_type': 'fieldType',
             'field_label': 'fieldLabel',
             'field_name': 'fieldName',
             'field_value': 'fieldValue'
         }
-
         self._field_type = None
         self._field_label = None
         self._field_name = None

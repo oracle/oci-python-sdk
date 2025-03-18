@@ -60,7 +60,6 @@ class MySqlCloneMigrationDetails(CloneMigrationDetails):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'database_combination': 'databaseCombination',
             'display_name': 'displayName',
@@ -70,7 +69,6 @@ class MySqlCloneMigrationDetails(CloneMigrationDetails):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._database_combination = None
         self._display_name = None
         self._compartment_id = None

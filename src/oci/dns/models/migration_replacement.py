@@ -43,14 +43,12 @@ class MigrationReplacement(object):
             'ttl': 'int',
             'rdata': 'str'
         }
-
         self.attribute_map = {
             'rtype': 'rtype',
             'substitute_rtype': 'substituteRtype',
             'ttl': 'ttl',
             'rdata': 'rdata'
         }
-
         self._rtype = None
         self._substitute_rtype = None
         self._ttl = None

@@ -113,7 +113,6 @@ class CreateNodePoolDetails(object):
             'node_eviction_node_pool_settings': 'NodeEvictionNodePoolSettings',
             'node_pool_cycling_details': 'NodePoolCyclingDetails'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'cluster_id': 'clusterId',
@@ -134,7 +133,6 @@ class CreateNodePoolDetails(object):
             'node_eviction_node_pool_settings': 'nodeEvictionNodePoolSettings',
             'node_pool_cycling_details': 'nodePoolCyclingDetails'
         }
-
         self._compartment_id = None
         self._cluster_id = None
         self._name = None

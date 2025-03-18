@@ -169,7 +169,6 @@ class DbServer(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'compute_model': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -194,7 +193,6 @@ class DbServer(object):
             'defined_tags': 'definedTags',
             'compute_model': 'computeModel'
         }
-
         self._id = None
         self._display_name = None
         self._compartment_id = None

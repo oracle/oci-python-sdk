@@ -33,12 +33,10 @@ class DNS(object):
             'domain_lookup_duration': 'float',
             'addresses': 'list[str]'
         }
-
         self.attribute_map = {
             'domain_lookup_duration': 'domainLookupDuration',
             'addresses': 'addresses'
         }
-
         self._domain_lookup_duration = None
         self._addresses = None
 

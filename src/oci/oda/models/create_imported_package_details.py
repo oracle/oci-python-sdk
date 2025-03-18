@@ -43,14 +43,12 @@ class CreateImportedPackageDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'current_package_id': 'currentPackageId',
             'parameter_values': 'parameterValues',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._current_package_id = None
         self._parameter_values = None
         self._freeform_tags = None

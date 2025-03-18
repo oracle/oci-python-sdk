@@ -28,11 +28,9 @@ class RoverBundleStatusDetails(object):
         self.swagger_types = {
             'work_request_id': 'str'
         }
-
         self.attribute_map = {
             'work_request_id': 'workRequestId'
         }
-
         self._work_request_id = None
 
     @property

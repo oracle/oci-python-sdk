@@ -33,12 +33,10 @@ class UsageAggregation(object):
             'group_by': 'list[str]',
             'items': 'list[UsageSummary]'
         }
-
         self.attribute_map = {
             'group_by': 'groupBy',
             'items': 'items'
         }
-
         self._group_by = None
         self._items = None
 

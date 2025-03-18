@@ -33,12 +33,10 @@ class DedicatedVmHostShapeSummary(object):
             'availability_domain': 'str',
             'dedicated_vm_host_shape': 'str'
         }
-
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'dedicated_vm_host_shape': 'dedicatedVmHostShape'
         }
-
         self._availability_domain = None
         self._dedicated_vm_host_shape = None
 

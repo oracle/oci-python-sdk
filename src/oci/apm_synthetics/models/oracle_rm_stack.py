@@ -45,14 +45,12 @@ class OracleRMStack(DvpStackDetails):
             'dvp_stack_id': 'str',
             'dvp_stream_id': 'str'
         }
-
         self.attribute_map = {
             'dvp_stack_type': 'dvpStackType',
             'dvp_version': 'dvpVersion',
             'dvp_stack_id': 'dvpStackId',
             'dvp_stream_id': 'dvpStreamId'
         }
-
         self._dvp_stack_type = None
         self._dvp_version = None
         self._dvp_stack_id = None

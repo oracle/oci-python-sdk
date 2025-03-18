@@ -45,14 +45,12 @@ class UpdateOracleObjectStorageDataTransferMediumDetails(UpdateOracleDataTransfe
             'source': 'HostDumpTransferDetails',
             'target': 'HostDumpTransferDetails'
         }
-
         self.attribute_map = {
             'type': 'type',
             'object_storage_bucket': 'objectStorageBucket',
             'source': 'source',
             'target': 'target'
         }
-
         self._type = None
         self._object_storage_bucket = None
         self._source = None

@@ -107,7 +107,6 @@ class TableColumn(AbstractColumn):
             'result': 'list[dict(str, object)]',
             'are_partial_results': 'bool'
         }
-
         self.attribute_map = {
             'type': 'type',
             'display_name': 'displayName',
@@ -126,7 +125,6 @@ class TableColumn(AbstractColumn):
             'result': 'result',
             'are_partial_results': 'arePartialResults'
         }
-
         self._type = None
         self._display_name = None
         self._sub_system = None

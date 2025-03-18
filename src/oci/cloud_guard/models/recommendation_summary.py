@@ -169,7 +169,6 @@ class RecommendationSummary(object):
             'name': 'str',
             'description': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'type': 'type',
@@ -186,7 +185,6 @@ class RecommendationSummary(object):
             'name': 'name',
             'description': 'description'
         }
-
         self._id = None
         self._type = None
         self._tenant_id = None

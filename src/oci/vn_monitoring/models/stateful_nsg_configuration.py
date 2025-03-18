@@ -40,13 +40,11 @@ class StatefulNsgConfiguration(AllowedSecurityConfiguration):
             'nsg_id': 'str',
             'security_rule': 'SecurityRule'
         }
-
         self.attribute_map = {
             'type': 'type',
             'nsg_id': 'nsgId',
             'security_rule': 'securityRule'
         }
-
         self._type = None
         self._nsg_id = None
         self._security_rule = None

@@ -97,7 +97,6 @@ class GeneralProcessorConfig(ProcessorConfig):
             'is_zip_output_enabled': 'bool',
             'language': 'str'
         }
-
         self.attribute_map = {
             'processor_type': 'processorType',
             'document_type': 'documentType',
@@ -105,7 +104,6 @@ class GeneralProcessorConfig(ProcessorConfig):
             'is_zip_output_enabled': 'isZipOutputEnabled',
             'language': 'language'
         }
-
         self._processor_type = None
         self._document_type = None
         self._features = None

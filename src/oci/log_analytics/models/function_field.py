@@ -93,7 +93,6 @@ class FunctionField(AbstractField):
             'function': 'str',
             'arguments': 'list[Argument]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'display_name': 'displayName',
@@ -109,7 +108,6 @@ class FunctionField(AbstractField):
             'function': 'function',
             'arguments': 'arguments'
         }
-
         self._name = None
         self._display_name = None
         self._is_declared = None

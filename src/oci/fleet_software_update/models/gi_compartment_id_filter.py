@@ -41,13 +41,11 @@ class GiCompartmentIdFilter(GiFleetDiscoveryFilter):
             'mode': 'str',
             'identifiers': 'list[str]'
         }
-
         self.attribute_map = {
             'type': 'type',
             'mode': 'mode',
             'identifiers': 'identifiers'
         }
-
         self._type = None
         self._mode = None
         self._identifiers = None

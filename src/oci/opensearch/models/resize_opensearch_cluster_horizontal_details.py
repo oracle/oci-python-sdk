@@ -50,7 +50,6 @@ class ResizeOpensearchClusterHorizontalDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'master_node_count': 'masterNodeCount',
             'data_node_count': 'dataNodeCount',
@@ -58,7 +57,6 @@ class ResizeOpensearchClusterHorizontalDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._master_node_count = None
         self._data_node_count = None
         self._opendashboard_node_count = None

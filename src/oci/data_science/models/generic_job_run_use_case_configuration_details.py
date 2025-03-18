@@ -35,12 +35,10 @@ class GenericJobRunUseCaseConfigurationDetails(JobRunUseCaseConfigurationDetails
             'use_case_type': 'str',
             'additional_configurations': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'use_case_type': 'useCaseType',
             'additional_configurations': 'additionalConfigurations'
         }
-
         self._use_case_type = None
         self._additional_configurations = None
         self._use_case_type = 'GENERIC'

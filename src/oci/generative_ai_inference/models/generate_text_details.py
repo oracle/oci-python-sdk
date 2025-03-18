@@ -38,13 +38,11 @@ class GenerateTextDetails(object):
             'serving_mode': 'ServingMode',
             'inference_request': 'LlmInferenceRequest'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'serving_mode': 'servingMode',
             'inference_request': 'inferenceRequest'
         }
-
         self._compartment_id = None
         self._serving_mode = None
         self._inference_request = None

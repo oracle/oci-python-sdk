@@ -43,13 +43,11 @@ class AccessPolicyRuleDetails(object):
             'source': 'AccessPolicyTargetDetails',
             'destination': 'AccessPolicyTargetDetails'
         }
-
         self.attribute_map = {
             'action': 'action',
             'source': 'source',
             'destination': 'destination'
         }
-
         self._action = None
         self._source = None
         self._destination = None

@@ -43,14 +43,12 @@ class Citation(object):
             'text': 'str',
             'document_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'start': 'start',
             'end': 'end',
             'text': 'text',
             'document_ids': 'documentIds'
         }
-
         self._start = None
         self._end = None
         self._text = None

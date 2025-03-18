@@ -28,11 +28,9 @@ class AnnotationAnalyticsAggregationCollection(object):
         self.swagger_types = {
             'items': 'list[AnnotationAnalyticsAggregation]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

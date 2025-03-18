@@ -33,12 +33,10 @@ class JobLogCollection(object):
             'count': 'int',
             'items': 'list[JobLogSummary]'
         }
-
         self.attribute_map = {
             'count': 'count',
             'items': 'items'
         }
-
         self._count = None
         self._items = None
 

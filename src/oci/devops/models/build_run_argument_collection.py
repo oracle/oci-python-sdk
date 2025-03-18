@@ -28,11 +28,9 @@ class BuildRunArgumentCollection(object):
         self.swagger_types = {
             'items': 'list[BuildRunArgument]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

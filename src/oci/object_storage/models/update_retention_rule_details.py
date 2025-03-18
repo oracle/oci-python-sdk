@@ -38,13 +38,11 @@ class UpdateRetentionRuleDetails(object):
             'duration': 'Duration',
             'time_rule_locked': 'datetime'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'duration': 'duration',
             'time_rule_locked': 'timeRuleLocked'
         }
-
         self._display_name = None
         self._duration = None
         self._time_rule_locked = None

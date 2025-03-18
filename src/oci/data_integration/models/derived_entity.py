@@ -111,7 +111,6 @@ class DerivedEntity(DataEntity):
             'mode': 'str',
             'derived_properties': 'dict(str, object)'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'metadata': 'metadata',
@@ -129,7 +128,6 @@ class DerivedEntity(DataEntity):
             'mode': 'mode',
             'derived_properties': 'derivedProperties'
         }
-
         self._model_type = None
         self._metadata = None
         self._key = None

@@ -61,14 +61,12 @@ class WorkRequestResource(object):
             'entity_id': 'str',
             'entity_uri': 'str'
         }
-
         self.attribute_map = {
             'entity_type': 'entityType',
             'action_type': 'actionType',
             'entity_id': 'entityId',
             'entity_uri': 'entityUri'
         }
-
         self._entity_type = None
         self._action_type = None
         self._entity_id = None

@@ -38,13 +38,11 @@ class ChangeRetentionDetails(object):
             'offline_months': 'int',
             'is_override_global_retention_setting': 'bool'
         }
-
         self.attribute_map = {
             'online_months': 'onlineMonths',
             'offline_months': 'offlineMonths',
             'is_override_global_retention_setting': 'isOverrideGlobalRetentionSetting'
         }
-
         self._online_months = None
         self._offline_months = None
         self._is_override_global_retention_setting = None

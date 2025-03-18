@@ -34,12 +34,10 @@ class UpdateTemplateZipUploadConfigSourceDetails(UpdateTemplateConfigSourceDetai
             'template_config_source_type': 'str',
             'zip_file_base64_encoded': 'str'
         }
-
         self.attribute_map = {
             'template_config_source_type': 'templateConfigSourceType',
             'zip_file_base64_encoded': 'zipFileBase64Encoded'
         }
-
         self._template_config_source_type = None
         self._zip_file_base64_encoded = None
         self._template_config_source_type = 'ZIP_UPLOAD'

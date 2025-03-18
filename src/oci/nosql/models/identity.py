@@ -38,13 +38,11 @@ class Identity(object):
             'is_always': 'bool',
             'is_null': 'bool'
         }
-
         self.attribute_map = {
             'column_name': 'columnName',
             'is_always': 'isAlways',
             'is_null': 'isNull'
         }
-
         self._column_name = None
         self._is_always = None
         self._is_null = None

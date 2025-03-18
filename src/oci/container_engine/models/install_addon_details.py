@@ -43,14 +43,12 @@ class InstallAddonDetails(object):
             'configurations': 'list[AddonConfiguration]',
             'is_override_existing': 'bool'
         }
-
         self.attribute_map = {
             'addon_name': 'addonName',
             'version': 'version',
             'configurations': 'configurations',
             'is_override_existing': 'isOverrideExisting'
         }
-
         self._addon_name = None
         self._version = None
         self._configurations = None

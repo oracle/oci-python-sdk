@@ -35,12 +35,10 @@ class InlineDocumentContent(InputLocation):
             'source_type': 'str',
             'data': 'str'
         }
-
         self.attribute_map = {
             'source_type': 'sourceType',
             'data': 'data'
         }
-
         self._source_type = None
         self._data = None
         self._source_type = 'INLINE_DOCUMENT_CONTENT'

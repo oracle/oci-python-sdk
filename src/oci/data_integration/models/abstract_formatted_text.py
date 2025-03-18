@@ -28,11 +28,9 @@ class AbstractFormattedText(object):
         self.swagger_types = {
             'config_values': 'ConfigValues'
         }
-
         self.attribute_map = {
             'config_values': 'configValues'
         }
-
         self._config_values = None
 
     @property

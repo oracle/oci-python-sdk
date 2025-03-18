@@ -62,7 +62,6 @@ class CreateVolumeGroupBackupDetails(object):
             'type': 'str',
             'volume_group_id': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
@@ -71,7 +70,6 @@ class CreateVolumeGroupBackupDetails(object):
             'type': 'type',
             'volume_group_id': 'volumeGroupId'
         }
-
         self._compartment_id = None
         self._defined_tags = None
         self._display_name = None

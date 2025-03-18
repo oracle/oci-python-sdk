@@ -107,7 +107,6 @@ class DataAssetTag(object):
             'created_by_id': 'str',
             'uri': 'str'
         }
-
         self.attribute_map = {
             'data_asset_key': 'dataAssetKey',
             'key': 'key',
@@ -120,7 +119,6 @@ class DataAssetTag(object):
             'created_by_id': 'createdById',
             'uri': 'uri'
         }
-
         self._data_asset_key = None
         self._key = None
         self._name = None

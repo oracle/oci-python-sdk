@@ -38,13 +38,11 @@ class ExadataDbSystemMigrationSummary(object):
             'cloud_vm_cluster_id': 'str',
             'cloud_exadata_infrastructure_id': 'str'
         }
-
         self.attribute_map = {
             'db_system_id': 'dbSystemId',
             'cloud_vm_cluster_id': 'cloudVmClusterId',
             'cloud_exadata_infrastructure_id': 'cloudExadataInfrastructureId'
         }
-
         self._db_system_id = None
         self._cloud_vm_cluster_id = None
         self._cloud_exadata_infrastructure_id = None

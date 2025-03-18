@@ -53,7 +53,6 @@ class OpensearchClusterInternalDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'state': 'state',
             'elastic_load_balancer_ips': 'elasticLoadBalancerIps',
@@ -62,7 +61,6 @@ class OpensearchClusterInternalDetails(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._state = None
         self._elastic_load_balancer_ips = None
         self._remote_load_balancer_ips = None

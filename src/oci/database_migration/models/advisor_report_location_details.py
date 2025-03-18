@@ -33,12 +33,10 @@ class AdvisorReportLocationDetails(object):
             'object_storage_details': 'AdvisorReportBucketDetails',
             'location_in_source': 'str'
         }
-
         self.attribute_map = {
             'object_storage_details': 'objectStorageDetails',
             'location_in_source': 'locationInSource'
         }
-
         self._object_storage_details = None
         self._location_in_source = None
 

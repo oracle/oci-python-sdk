@@ -63,7 +63,6 @@ class SysadminEventData(object):
             'resolution_log': 'str',
             'additional_details': 'WorkRequestEventDataAdditionalDetails'
         }
-
         self.attribute_map = {
             'error_cause': 'errorCause',
             'error_log': 'errorLog',
@@ -72,7 +71,6 @@ class SysadminEventData(object):
             'resolution_log': 'resolutionLog',
             'additional_details': 'additionalDetails'
         }
-
         self._error_cause = None
         self._error_log = None
         self._attempted_resolutions = None

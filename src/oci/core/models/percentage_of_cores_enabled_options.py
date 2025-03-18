@@ -38,13 +38,11 @@ class PercentageOfCoresEnabledOptions(object):
             'max': 'int',
             'default_value': 'int'
         }
-
         self.attribute_map = {
             'min': 'min',
             'max': 'max',
             'default_value': 'defaultValue'
         }
-
         self._min = None
         self._max = None
         self._default_value = None

@@ -107,7 +107,6 @@ class AttributeTagSummary(object):
             'glossary_key': 'str',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'attribute_key': 'attributeKey',
             'key': 'key',
@@ -120,7 +119,6 @@ class AttributeTagSummary(object):
             'glossary_key': 'glossaryKey',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._attribute_key = None
         self._key = None
         self._time_created = None

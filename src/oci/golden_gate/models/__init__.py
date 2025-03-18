@@ -17,6 +17,7 @@ from .azure_data_lake_storage_connection import AzureDataLakeStorageConnection
 from .azure_data_lake_storage_connection_summary import AzureDataLakeStorageConnectionSummary
 from .azure_synapse_connection import AzureSynapseConnection
 from .azure_synapse_connection_summary import AzureSynapseConnectionSummary
+from .backup_schedule import BackupSchedule
 from .cancel_deployment_backup_details import CancelDeploymentBackupDetails
 from .cancel_deployment_upgrade_details import CancelDeploymentUpgradeDetails
 from .cancel_snooze_deployment_upgrade_details import CancelSnoozeDeploymentUpgradeDetails
@@ -41,6 +42,7 @@ from .create_amazon_redshift_connection_details import CreateAmazonRedshiftConne
 from .create_amazon_s3_connection_details import CreateAmazonS3ConnectionDetails
 from .create_azure_data_lake_storage_connection_details import CreateAzureDataLakeStorageConnectionDetails
 from .create_azure_synapse_connection_details import CreateAzureSynapseConnectionDetails
+from .create_backup_schedule_details import CreateBackupScheduleDetails
 from .create_certificate_details import CreateCertificateDetails
 from .create_connection_assignment_details import CreateConnectionAssignmentDetails
 from .create_connection_details import CreateConnectionDetails
@@ -217,6 +219,7 @@ from .update_amazon_redshift_connection_details import UpdateAmazonRedshiftConne
 from .update_amazon_s3_connection_details import UpdateAmazonS3ConnectionDetails
 from .update_azure_data_lake_storage_connection_details import UpdateAzureDataLakeStorageConnectionDetails
 from .update_azure_synapse_connection_details import UpdateAzureSynapseConnectionDetails
+from .update_backup_schedule_details import UpdateBackupScheduleDetails
 from .update_connection_details import UpdateConnectionDetails
 from .update_database_registration_details import UpdateDatabaseRegistrationDetails
 from .update_databricks_connection_details import UpdateDatabricksConnectionDetails
@@ -273,6 +276,7 @@ golden_gate_type_mapping = {
     "AzureDataLakeStorageConnectionSummary": AzureDataLakeStorageConnectionSummary,
     "AzureSynapseConnection": AzureSynapseConnection,
     "AzureSynapseConnectionSummary": AzureSynapseConnectionSummary,
+    "BackupSchedule": BackupSchedule,
     "CancelDeploymentBackupDetails": CancelDeploymentBackupDetails,
     "CancelDeploymentUpgradeDetails": CancelDeploymentUpgradeDetails,
     "CancelSnoozeDeploymentUpgradeDetails": CancelSnoozeDeploymentUpgradeDetails,
@@ -297,6 +301,7 @@ golden_gate_type_mapping = {
     "CreateAmazonS3ConnectionDetails": CreateAmazonS3ConnectionDetails,
     "CreateAzureDataLakeStorageConnectionDetails": CreateAzureDataLakeStorageConnectionDetails,
     "CreateAzureSynapseConnectionDetails": CreateAzureSynapseConnectionDetails,
+    "CreateBackupScheduleDetails": CreateBackupScheduleDetails,
     "CreateCertificateDetails": CreateCertificateDetails,
     "CreateConnectionAssignmentDetails": CreateConnectionAssignmentDetails,
     "CreateConnectionDetails": CreateConnectionDetails,
@@ -473,6 +478,7 @@ golden_gate_type_mapping = {
     "UpdateAmazonS3ConnectionDetails": UpdateAmazonS3ConnectionDetails,
     "UpdateAzureDataLakeStorageConnectionDetails": UpdateAzureDataLakeStorageConnectionDetails,
     "UpdateAzureSynapseConnectionDetails": UpdateAzureSynapseConnectionDetails,
+    "UpdateBackupScheduleDetails": UpdateBackupScheduleDetails,
     "UpdateConnectionDetails": UpdateConnectionDetails,
     "UpdateDatabaseRegistrationDetails": UpdateDatabaseRegistrationDetails,
     "UpdateDatabricksConnectionDetails": UpdateDatabricksConnectionDetails,

@@ -48,7 +48,6 @@ class UpdateAutoScalingConfigurationDetails(object):
             'policy': 'AutoScalePolicy',
             'policy_details': 'UpdateAutoScalePolicyDetails'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'is_enabled': 'isEnabled',
@@ -56,7 +55,6 @@ class UpdateAutoScalingConfigurationDetails(object):
             'policy': 'policy',
             'policy_details': 'policyDetails'
         }
-
         self._display_name = None
         self._is_enabled = None
         self._cluster_admin_password = None

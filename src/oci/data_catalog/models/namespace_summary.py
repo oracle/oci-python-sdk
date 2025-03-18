@@ -87,7 +87,6 @@ class NamespaceSummary(object):
             'lifecycle_state': 'str',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'key': 'key',
             'display_name': 'displayName',
@@ -96,7 +95,6 @@ class NamespaceSummary(object):
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated'
         }
-
         self._key = None
         self._display_name = None
         self._description = None

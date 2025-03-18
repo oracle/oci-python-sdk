@@ -38,13 +38,11 @@ class IamWorkRequestErrorSummary(object):
             'message': 'str',
             'timestamp': 'datetime'
         }
-
         self.attribute_map = {
             'code': 'code',
             'message': 'message',
             'timestamp': 'timestamp'
         }
-
         self._code = None
         self._message = None
         self._timestamp = None

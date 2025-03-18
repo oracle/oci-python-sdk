@@ -38,13 +38,11 @@ class IpAddress(object):
             'is_public': 'bool',
             'reserved_ip': 'ReservedIP'
         }
-
         self.attribute_map = {
             'ip_address': 'ipAddress',
             'is_public': 'isPublic',
             'reserved_ip': 'reservedIp'
         }
-
         self._ip_address = None
         self._is_public = None
         self._reserved_ip = None

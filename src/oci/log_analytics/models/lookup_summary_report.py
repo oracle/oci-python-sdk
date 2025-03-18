@@ -38,13 +38,11 @@ class LookupSummaryReport(object):
             'oracle_defined_count': 'int',
             'total_count': 'int'
         }
-
         self.attribute_map = {
             'user_created_count': 'userCreatedCount',
             'oracle_defined_count': 'oracleDefinedCount',
             'total_count': 'totalCount'
         }
-
         self._user_created_count = None
         self._oracle_defined_count = None
         self._total_count = None

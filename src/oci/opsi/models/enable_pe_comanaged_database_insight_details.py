@@ -70,7 +70,6 @@ class EnablePeComanagedDatabaseInsightDetails(EnableDatabaseInsightDetails):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'entity_source': 'entitySource',
             'compartment_id': 'compartmentId',
@@ -82,7 +81,6 @@ class EnablePeComanagedDatabaseInsightDetails(EnableDatabaseInsightDetails):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._entity_source = None
         self._compartment_id = None
         self._opsi_private_endpoint_id = None

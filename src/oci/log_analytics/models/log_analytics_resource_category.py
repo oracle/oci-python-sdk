@@ -43,14 +43,12 @@ class LogAnalyticsResourceCategory(object):
             'category_name': 'str',
             'is_system': 'bool'
         }
-
         self.attribute_map = {
             'resource_id': 'resourceId',
             'resource_type': 'resourceType',
             'category_name': 'categoryName',
             'is_system': 'isSystem'
         }
-
         self._resource_id = None
         self._resource_type = None
         self._category_name = None

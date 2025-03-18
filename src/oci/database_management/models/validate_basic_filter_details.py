@@ -49,7 +49,6 @@ class ValidateBasicFilterDetails(object):
             'name': 'str',
             'basic_filter': 'str'
         }
-
         self.attribute_map = {
             'credential_details': 'credentialDetails',
             'database_credential': 'databaseCredential',
@@ -57,7 +56,6 @@ class ValidateBasicFilterDetails(object):
             'name': 'name',
             'basic_filter': 'basicFilter'
         }
-
         self._credential_details = None
         self._database_credential = None
         self._owner = None

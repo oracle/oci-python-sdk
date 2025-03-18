@@ -39,12 +39,10 @@ class AppExtensionMulticloudServiceAppApp(object):
             'multicloud_service_type': 'str',
             'multicloud_platform_url': 'str'
         }
-
         self.attribute_map = {
             'multicloud_service_type': 'multicloudServiceType',
             'multicloud_platform_url': 'multicloudPlatformUrl'
         }
-
         self._multicloud_service_type = None
         self._multicloud_platform_url = None
 

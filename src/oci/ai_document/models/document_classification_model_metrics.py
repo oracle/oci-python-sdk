@@ -45,14 +45,12 @@ class DocumentClassificationModelMetrics(ModelMetrics):
             'label_metrics_report': 'list[DocumentClassificationLabelMetricsReport]',
             'overall_metrics_report': 'DocumentClassificationOverallMetricsReport'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'dataset_summary': 'datasetSummary',
             'label_metrics_report': 'labelMetricsReport',
             'overall_metrics_report': 'overallMetricsReport'
         }
-
         self._model_type = None
         self._dataset_summary = None
         self._label_metrics_report = None

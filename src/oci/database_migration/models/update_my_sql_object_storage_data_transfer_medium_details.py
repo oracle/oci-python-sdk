@@ -35,12 +35,10 @@ class UpdateMySqlObjectStorageDataTransferMediumDetails(UpdateMySqlDataTransferM
             'type': 'str',
             'object_storage_bucket': 'UpdateObjectStoreBucket'
         }
-
         self.attribute_map = {
             'type': 'type',
             'object_storage_bucket': 'objectStorageBucket'
         }
-
         self._type = None
         self._object_storage_bucket = None
         self._type = 'OBJECT_STORAGE'

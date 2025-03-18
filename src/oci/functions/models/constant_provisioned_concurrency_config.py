@@ -35,12 +35,10 @@ class ConstantProvisionedConcurrencyConfig(FunctionProvisionedConcurrencyConfig)
             'strategy': 'str',
             'count': 'int'
         }
-
         self.attribute_map = {
             'strategy': 'strategy',
             'count': 'count'
         }
-
         self._strategy = None
         self._count = None
         self._strategy = 'CONSTANT'

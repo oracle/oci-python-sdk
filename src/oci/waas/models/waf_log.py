@@ -165,7 +165,6 @@ class WafLog(object):
             'origin_address': 'str',
             'origin_response_time': 'str'
         }
-
         self.attribute_map = {
             'action': 'action',
             'captcha_action': 'captchaAction',
@@ -196,7 +195,6 @@ class WafLog(object):
             'origin_address': 'originAddress',
             'origin_response_time': 'originResponseTime'
         }
-
         self._action = None
         self._captcha_action = None
         self._captcha_expected = None

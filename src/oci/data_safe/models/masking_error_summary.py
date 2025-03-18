@@ -57,14 +57,12 @@ class MaskingErrorSummary(object):
             'failed_statement': 'str',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'step_name': 'stepName',
             'error': 'error',
             'failed_statement': 'failedStatement',
             'time_created': 'timeCreated'
         }
-
         self._step_name = None
         self._error = None
         self._failed_statement = None

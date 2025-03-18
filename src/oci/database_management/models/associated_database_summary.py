@@ -43,14 +43,12 @@ class AssociatedDatabaseSummary(object):
             'compartment_id': 'str',
             'time_registered': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
             'compartment_id': 'compartmentId',
             'time_registered': 'timeRegistered'
         }
-
         self._id = None
         self._name = None
         self._compartment_id = None

@@ -121,7 +121,6 @@ class ConnectionFromHdfsDetails(ConnectionDetails):
             'key_distribution_center': 'str',
             'key_tab_content': 'SensitiveAttribute'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -143,7 +142,6 @@ class ConnectionFromHdfsDetails(ConnectionDetails):
             'key_distribution_center': 'keyDistributionCenter',
             'key_tab_content': 'keyTabContent'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

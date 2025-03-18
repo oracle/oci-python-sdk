@@ -69,7 +69,6 @@ class CreateComputeInstanceGroupCanaryTrafficShiftDeployStageDetails(CreateDeplo
             'compute_instance_group_canary_deploy_stage_id': 'str',
             'rollout_policy': 'LoadBalancerTrafficShiftRolloutPolicy'
         }
-
         self.attribute_map = {
             'description': 'description',
             'display_name': 'displayName',
@@ -81,7 +80,6 @@ class CreateComputeInstanceGroupCanaryTrafficShiftDeployStageDetails(CreateDeplo
             'compute_instance_group_canary_deploy_stage_id': 'computeInstanceGroupCanaryDeployStageId',
             'rollout_policy': 'rolloutPolicy'
         }
-
         self._description = None
         self._display_name = None
         self._deploy_stage_type = None

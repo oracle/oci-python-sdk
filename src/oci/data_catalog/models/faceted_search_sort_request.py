@@ -42,12 +42,10 @@ class FacetedSearchSortRequest(object):
             'sort_by': 'str',
             'sort_order': 'str'
         }
-
         self.attribute_map = {
             'sort_by': 'sortBy',
             'sort_order': 'sortOrder'
         }
-
         self._sort_by = None
         self._sort_order = None
 

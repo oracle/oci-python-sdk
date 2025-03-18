@@ -54,14 +54,12 @@ class DatabaseCredentials(object):
             'secret_id': 'str',
             'role': 'str'
         }
-
         self.attribute_map = {
             'user_name': 'userName',
             'password': 'password',
             'secret_id': 'secretId',
             'role': 'role'
         }
-
         self._user_name = None
         self._password = None
         self._secret_id = None

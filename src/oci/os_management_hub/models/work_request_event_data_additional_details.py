@@ -33,12 +33,10 @@ class WorkRequestEventDataAdditionalDetails(object):
             'initiator_id': 'str',
             'work_request_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'initiator_id': 'initiatorId',
             'work_request_ids': 'workRequestIds'
         }
-
         self._initiator_id = None
         self._work_request_ids = None
 

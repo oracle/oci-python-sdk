@@ -28,11 +28,9 @@ class ExportDataAssetDetails(object):
         self.swagger_types = {
             'export_scope': 'list[DataAssetExportScope]'
         }
-
         self.attribute_map = {
             'export_scope': 'exportScope'
         }
-
         self._export_scope = None
 
     @property

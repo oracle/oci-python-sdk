@@ -53,7 +53,6 @@ class AnnotationAnalyticsAggregation(object):
             'compartment_id': 'str',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'count': 'count',
             'dataset_id': 'datasetId',
@@ -62,7 +61,6 @@ class AnnotationAnalyticsAggregation(object):
             'compartment_id': 'compartmentId',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._count = None
         self._dataset_id = None
         self._dimensions = None

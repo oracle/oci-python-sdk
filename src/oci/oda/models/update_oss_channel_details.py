@@ -105,7 +105,6 @@ class UpdateOSSChannelDetails(UpdateChannelDetails):
             'stream_pool_id': 'str',
             'auth_token': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'description': 'description',
@@ -124,7 +123,6 @@ class UpdateOSSChannelDetails(UpdateChannelDetails):
             'stream_pool_id': 'streamPoolId',
             'auth_token': 'authToken'
         }
-
         self._name = None
         self._description = None
         self._type = None

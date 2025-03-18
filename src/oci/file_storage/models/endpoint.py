@@ -33,12 +33,10 @@ class Endpoint(object):
             'hostname': 'str',
             'port': 'int'
         }
-
         self.attribute_map = {
             'hostname': 'hostname',
             'port': 'port'
         }
-
         self._hostname = None
         self._port = None
 

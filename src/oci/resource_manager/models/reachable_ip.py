@@ -29,11 +29,9 @@ class ReachableIp(object):
         self.swagger_types = {
             'ip_address': 'str'
         }
-
         self.attribute_map = {
             'ip_address': 'ipAddress'
         }
-
         self._ip_address = None
 
     @property

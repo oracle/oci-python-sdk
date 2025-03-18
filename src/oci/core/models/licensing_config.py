@@ -54,13 +54,11 @@ class LicensingConfig(object):
             'license_type': 'str',
             'os_version': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'license_type': 'licenseType',
             'os_version': 'osVersion'
         }
-
         self._type = None
         self._license_type = None
         self._os_version = None

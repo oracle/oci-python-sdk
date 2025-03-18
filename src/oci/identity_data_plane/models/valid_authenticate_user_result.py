@@ -38,13 +38,11 @@ class ValidAuthenticateUserResult(object):
             'user_input': 'str',
             'resolved_principal': 'AuthenticationPrincipal'
         }
-
         self.attribute_map = {
             'tenant_input': 'tenantInput',
             'user_input': 'userInput',
             'resolved_principal': 'resolvedPrincipal'
         }
-
         self._tenant_input = None
         self._user_input = None
         self._resolved_principal = None

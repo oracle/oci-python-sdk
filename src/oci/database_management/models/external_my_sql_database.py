@@ -53,14 +53,12 @@ class ExternalMySqlDatabase(object):
             'db_name': 'str',
             'management_state': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'external_database_id': 'externalDatabaseId',
             'db_name': 'dbName',
             'management_state': 'managementState'
         }
-
         self._compartment_id = None
         self._external_database_id = None
         self._db_name = None

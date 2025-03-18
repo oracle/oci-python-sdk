@@ -53,7 +53,6 @@ class PackageDetail(object):
             'location': 'str',
             'remediation': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'package_type': 'packageType',
@@ -62,7 +61,6 @@ class PackageDetail(object):
             'location': 'location',
             'remediation': 'remediation'
         }
-
         self._name = None
         self._package_type = None
         self._version = None

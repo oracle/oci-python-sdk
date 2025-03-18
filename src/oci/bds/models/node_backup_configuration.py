@@ -104,7 +104,6 @@ class NodeBackupConfiguration(object):
             'number_of_backups_to_retain': 'int',
             'backup_type': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'bds_instance_id': 'bdsInstanceId',
@@ -118,7 +117,6 @@ class NodeBackupConfiguration(object):
             'number_of_backups_to_retain': 'numberOfBackupsToRetain',
             'backup_type': 'backupType'
         }
-
         self._id = None
         self._bds_instance_id = None
         self._display_name = None

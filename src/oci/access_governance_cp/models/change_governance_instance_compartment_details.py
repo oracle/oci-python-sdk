@@ -28,11 +28,9 @@ class ChangeGovernanceInstanceCompartmentDetails(object):
         self.swagger_types = {
             'compartment_id': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId'
         }
-
         self._compartment_id = None
 
     @property

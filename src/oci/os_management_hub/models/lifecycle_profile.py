@@ -135,7 +135,6 @@ class LifecycleProfile(Profile):
             'lifecycle_environment': 'LifecycleEnvironmentDetails',
             'lifecycle_stage': 'LifecycleStageDetails'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -159,7 +158,6 @@ class LifecycleProfile(Profile):
             'lifecycle_environment': 'lifecycleEnvironment',
             'lifecycle_stage': 'lifecycleStage'
         }
-
         self._id = None
         self._compartment_id = None
         self._display_name = None

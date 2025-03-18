@@ -33,12 +33,10 @@ class ParserSummaryReport(object):
             'non_oob_count': 'int',
             'oob_count': 'int'
         }
-
         self.attribute_map = {
             'non_oob_count': 'nonOobCount',
             'oob_count': 'oobCount'
         }
-
         self._non_oob_count = None
         self._oob_count = None
 

@@ -43,12 +43,10 @@ class ValidateConnectionResult(object):
             'message': 'str',
             'status': 'str'
         }
-
         self.attribute_map = {
             'message': 'message',
             'status': 'status'
         }
-
         self._message = None
         self._status = None
 

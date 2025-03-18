@@ -38,13 +38,11 @@ class PreparedStatement(object):
             'query_plan': 'object',
             'usage': 'RequestUsage'
         }
-
         self.attribute_map = {
             'statement': 'statement',
             'query_plan': 'queryPlan',
             'usage': 'usage'
         }
-
         self._statement = None
         self._query_plan = None
         self._usage = None

@@ -44,14 +44,12 @@ class ComputeInstanceDetails(InstanceConfigurationInstanceDetails):
             'launch_details': 'InstanceConfigurationLaunchInstanceDetails',
             'secondary_vnics': 'list[InstanceConfigurationAttachVnicDetails]'
         }
-
         self.attribute_map = {
             'instance_type': 'instanceType',
             'block_volumes': 'blockVolumes',
             'launch_details': 'launchDetails',
             'secondary_vnics': 'secondaryVnics'
         }
-
         self._instance_type = None
         self._block_volumes = None
         self._launch_details = None

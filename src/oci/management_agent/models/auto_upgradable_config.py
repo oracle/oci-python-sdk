@@ -28,11 +28,9 @@ class AutoUpgradableConfig(object):
         self.swagger_types = {
             'is_agent_auto_upgradable': 'bool'
         }
-
         self.attribute_map = {
             'is_agent_auto_upgradable': 'isAgentAutoUpgradable'
         }
-
         self._is_agent_auto_upgradable = None
 
     @property

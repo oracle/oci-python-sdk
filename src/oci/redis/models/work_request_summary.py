@@ -150,7 +150,6 @@ class WorkRequestSummary(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'operation_type': 'operationType',
             'status': 'status',
@@ -164,7 +163,6 @@ class WorkRequestSummary(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._operation_type = None
         self._status = None
         self._id = None

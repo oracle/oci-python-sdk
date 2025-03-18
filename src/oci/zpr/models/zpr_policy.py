@@ -119,7 +119,6 @@ class ZprPolicy(object):
             'lifecycle_details': 'str',
             'time_updated': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -134,7 +133,6 @@ class ZprPolicy(object):
             'lifecycle_details': 'lifecycleDetails',
             'time_updated': 'timeUpdated'
         }
-
         self._id = None
         self._name = None
         self._description = None

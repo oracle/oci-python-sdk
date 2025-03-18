@@ -28,11 +28,9 @@ class AwrHubs(object):
         self.swagger_types = {
             'awr_hubs': 'object'
         }
-
         self.attribute_map = {
             'awr_hubs': 'awrHubs'
         }
-
         self._awr_hubs = None
 
     @property

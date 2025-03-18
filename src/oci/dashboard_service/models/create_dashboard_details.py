@@ -58,7 +58,6 @@ class CreateDashboardDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'dashboard_group_id': 'dashboardGroupId',
             'display_name': 'displayName',
@@ -67,7 +66,6 @@ class CreateDashboardDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._dashboard_group_id = None
         self._display_name = None
         self._description = None

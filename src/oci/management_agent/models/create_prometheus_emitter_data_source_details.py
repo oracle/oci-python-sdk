@@ -90,7 +90,6 @@ class CreatePrometheusEmitterDataSourceDetails(CreateDataSourceDetails):
             'resource_group': 'str',
             'metric_dimensions': 'list[MetricDimension]'
         }
-
         self.attribute_map = {
             'type': 'type',
             'name': 'name',
@@ -106,7 +105,6 @@ class CreatePrometheusEmitterDataSourceDetails(CreateDataSourceDetails):
             'resource_group': 'resourceGroup',
             'metric_dimensions': 'metricDimensions'
         }
-
         self._type = None
         self._name = None
         self._compartment_id = None

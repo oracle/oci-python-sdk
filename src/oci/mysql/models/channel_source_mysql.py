@@ -79,7 +79,6 @@ class ChannelSourceMysql(ChannelSource):
             'ssl_ca_certificate': 'CaCertificate',
             'anonymous_transactions_handling': 'AnonymousTransactionsHandling'
         }
-
         self.attribute_map = {
             'source_type': 'sourceType',
             'hostname': 'hostname',
@@ -89,7 +88,6 @@ class ChannelSourceMysql(ChannelSource):
             'ssl_ca_certificate': 'sslCaCertificate',
             'anonymous_transactions_handling': 'anonymousTransactionsHandling'
         }
-
         self._source_type = None
         self._hostname = None
         self._port = None

@@ -43,14 +43,12 @@ class AffectedResource(object):
             'region': 'str',
             'additional_properties': 'list[ModelProperty]'
         }
-
         self.attribute_map = {
             'resource_id': 'resourceId',
             'resource_name': 'resourceName',
             'region': 'region',
             'additional_properties': 'additionalProperties'
         }
-
         self._resource_id = None
         self._resource_name = None
         self._region = None

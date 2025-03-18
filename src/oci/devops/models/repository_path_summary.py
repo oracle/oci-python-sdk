@@ -68,7 +68,6 @@ class RepositoryPathSummary(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'type': 'type',
             'size_in_bytes': 'sizeInBytes',
@@ -80,7 +79,6 @@ class RepositoryPathSummary(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._type = None
         self._size_in_bytes = None
         self._name = None

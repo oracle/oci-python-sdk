@@ -54,7 +54,6 @@ class UpdateVolumeBackupPolicyDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'destination_region': 'destinationRegion',
@@ -62,7 +61,6 @@ class UpdateVolumeBackupPolicyDetails(object):
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags'
         }
-
         self._display_name = None
         self._destination_region = None
         self._schedules = None

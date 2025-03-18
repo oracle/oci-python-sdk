@@ -78,7 +78,6 @@ class CreateDataFlowDetails(object):
             'object_status': 'int',
             'registry_metadata': 'RegistryMetadata'
         }
-
         self.attribute_map = {
             'key': 'key',
             'model_version': 'modelVersion',
@@ -92,7 +91,6 @@ class CreateDataFlowDetails(object):
             'object_status': 'objectStatus',
             'registry_metadata': 'registryMetadata'
         }
-
         self._key = None
         self._model_version = None
         self._parent_ref = None

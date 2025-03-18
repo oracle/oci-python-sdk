@@ -48,11 +48,9 @@ class DrgRouteDistributionMatchCriteria(object):
         self.swagger_types = {
             'match_type': 'str'
         }
-
         self.attribute_map = {
             'match_type': 'matchType'
         }
-
         self._match_type = None
 
     @staticmethod

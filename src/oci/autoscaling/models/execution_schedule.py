@@ -43,12 +43,10 @@ class ExecutionSchedule(object):
             'type': 'str',
             'timezone': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'timezone': 'timezone'
         }
-
         self._type = None
         self._timezone = None
 

@@ -61,14 +61,12 @@ class ComplianceReport(object):
             'compliance_state': 'str',
             'resources': 'list[ComplianceReportResource]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'fleet_id': 'fleetId',
             'compliance_state': 'complianceState',
             'resources': 'resources'
         }
-
         self._id = None
         self._fleet_id = None
         self._compliance_state = None

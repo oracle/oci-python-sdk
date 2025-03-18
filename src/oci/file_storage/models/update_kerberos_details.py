@@ -48,7 +48,6 @@ class UpdateKerberosDetails(object):
             'backup_key_tab_secret_version': 'int',
             'is_kerberos_enabled': 'bool'
         }
-
         self.attribute_map = {
             'kerberos_realm': 'kerberosRealm',
             'key_tab_secret_id': 'keyTabSecretId',
@@ -56,7 +55,6 @@ class UpdateKerberosDetails(object):
             'backup_key_tab_secret_version': 'backupKeyTabSecretVersion',
             'is_kerberos_enabled': 'isKerberosEnabled'
         }
-
         self._kerberos_realm = None
         self._key_tab_secret_id = None
         self._current_key_tab_secret_version = None

@@ -43,14 +43,12 @@ class UpdateNodeReplaceConfigurationDetails(object):
             'metric_type': 'str',
             'duration_in_minutes': 'int'
         }
-
         self.attribute_map = {
             'level_type_details': 'levelTypeDetails',
             'display_name': 'displayName',
             'metric_type': 'metricType',
             'duration_in_minutes': 'durationInMinutes'
         }
-
         self._level_type_details = None
         self._display_name = None
         self._metric_type = None

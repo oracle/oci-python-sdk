@@ -58,7 +58,6 @@ class IdentityProviderGroupSummary(object):
             'time_created': 'datetime',
             'time_modified': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'identity_provider_id': 'identityProviderId',
@@ -68,7 +67,6 @@ class IdentityProviderGroupSummary(object):
             'time_created': 'timeCreated',
             'time_modified': 'timeModified'
         }
-
         self._id = None
         self._identity_provider_id = None
         self._display_name = None

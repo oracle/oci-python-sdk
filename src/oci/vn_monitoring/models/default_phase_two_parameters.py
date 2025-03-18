@@ -38,13 +38,11 @@ class DefaultPhaseTwoParameters(object):
             'default_authentication_algorithms': 'list[str]',
             'default_pfs_dh_group': 'str'
         }
-
         self.attribute_map = {
             'default_encryption_algorithms': 'defaultEncryptionAlgorithms',
             'default_authentication_algorithms': 'defaultAuthenticationAlgorithms',
             'default_pfs_dh_group': 'defaultPfsDhGroup'
         }
-
         self._default_encryption_algorithms = None
         self._default_authentication_algorithms = None
         self._default_pfs_dh_group = None

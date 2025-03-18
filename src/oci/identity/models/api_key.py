@@ -92,7 +92,6 @@ class ApiKey(object):
             'lifecycle_state': 'str',
             'inactive_status': 'int'
         }
-
         self.attribute_map = {
             'key_id': 'keyId',
             'key_value': 'keyValue',
@@ -102,7 +101,6 @@ class ApiKey(object):
             'lifecycle_state': 'lifecycleState',
             'inactive_status': 'inactiveStatus'
         }
-
         self._key_id = None
         self._key_value = None
         self._fingerprint = None

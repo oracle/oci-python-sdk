@@ -28,11 +28,9 @@ class PatchType(object):
         self.swagger_types = {
             'platform_configuration_id': 'str'
         }
-
         self.attribute_map = {
             'platform_configuration_id': 'platformConfigurationId'
         }
-
         self._platform_configuration_id = None
 
     @property

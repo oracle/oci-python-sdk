@@ -48,7 +48,6 @@ class UpdateVolumeGroupDetails(object):
             'volume_ids': 'list[str]',
             'volume_group_replicas': 'list[VolumeGroupReplicaDetails]'
         }
-
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
@@ -56,7 +55,6 @@ class UpdateVolumeGroupDetails(object):
             'volume_ids': 'volumeIds',
             'volume_group_replicas': 'volumeGroupReplicas'
         }
-
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None

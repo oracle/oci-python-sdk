@@ -53,7 +53,6 @@ class CreateExportDetails(object):
             'locks': 'list[ResourceLock]',
             'is_idmap_groups_for_sys_auth': 'bool'
         }
-
         self.attribute_map = {
             'export_options': 'exportOptions',
             'export_set_id': 'exportSetId',
@@ -62,7 +61,6 @@ class CreateExportDetails(object):
             'locks': 'locks',
             'is_idmap_groups_for_sys_auth': 'isIdmapGroupsForSysAuth'
         }
-
         self._export_options = None
         self._export_set_id = None
         self._file_system_id = None

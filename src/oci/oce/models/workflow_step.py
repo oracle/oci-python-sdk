@@ -33,12 +33,10 @@ class WorkflowStep(object):
             'step_name': 'str',
             'status': 'str'
         }
-
         self.attribute_map = {
             'step_name': 'stepName',
             'status': 'status'
         }
-
         self._step_name = None
         self._status = None
 

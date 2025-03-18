@@ -28,11 +28,9 @@ class PublishListingRevisionAsPrivateDetails(object):
         self.swagger_types = {
             'allowed_tenancies': 'list[str]'
         }
-
         self.attribute_map = {
             'allowed_tenancies': 'allowedTenancies'
         }
-
         self._allowed_tenancies = None
 
     @property

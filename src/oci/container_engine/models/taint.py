@@ -38,13 +38,11 @@ class Taint(object):
             'value': 'str',
             'effect': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'value': 'value',
             'effect': 'effect'
         }
-
         self._key = None
         self._value = None
         self._effect = None

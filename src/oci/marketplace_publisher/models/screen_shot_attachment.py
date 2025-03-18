@@ -96,7 +96,6 @@ class ScreenShotAttachment(ListingRevisionAttachment):
             'content_url': 'str',
             'mime_type': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -113,7 +112,6 @@ class ScreenShotAttachment(ListingRevisionAttachment):
             'content_url': 'contentUrl',
             'mime_type': 'mimeType'
         }
-
         self._id = None
         self._compartment_id = None
         self._listing_revision_id = None

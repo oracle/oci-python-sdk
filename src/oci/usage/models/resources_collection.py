@@ -28,11 +28,9 @@ class ResourcesCollection(object):
         self.swagger_types = {
             'items': 'list[ResourceSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

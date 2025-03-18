@@ -95,7 +95,6 @@ class CreateSteeringPolicyDetails(object):
             'answers': 'list[SteeringPolicyAnswer]',
             'rules': 'list[SteeringPolicyRule]'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
@@ -107,7 +106,6 @@ class CreateSteeringPolicyDetails(object):
             'answers': 'answers',
             'rules': 'rules'
         }
-
         self._compartment_id = None
         self._display_name = None
         self._ttl = None

@@ -33,12 +33,10 @@ class RecommendationStrategySummary(object):
             'name': 'str',
             'strategies': 'list[Strategy]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'strategies': 'strategies'
         }
-
         self._name = None
         self._strategies = None
 

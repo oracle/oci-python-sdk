@@ -48,7 +48,6 @@ class SystemMediaWorkflow(object):
             'tasks': 'list[MediaWorkflowTask]',
             'locks': 'list[ResourceLock]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'description': 'description',
@@ -56,7 +55,6 @@ class SystemMediaWorkflow(object):
             'tasks': 'tasks',
             'locks': 'locks'
         }
-
         self._name = None
         self._description = None
         self._parameters = None

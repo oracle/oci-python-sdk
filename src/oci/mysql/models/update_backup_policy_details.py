@@ -58,7 +58,6 @@ class UpdateBackupPolicyDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'pitr_policy': 'PitrPolicy'
         }
-
         self.attribute_map = {
             'is_enabled': 'isEnabled',
             'copy_policies': 'copyPolicies',
@@ -68,7 +67,6 @@ class UpdateBackupPolicyDetails(object):
             'defined_tags': 'definedTags',
             'pitr_policy': 'pitrPolicy'
         }
-
         self._is_enabled = None
         self._copy_policies = None
         self._window_start_time = None

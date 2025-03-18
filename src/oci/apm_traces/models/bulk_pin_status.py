@@ -33,12 +33,10 @@ class BulkPinStatus(object):
             'attribute_statuses': 'list[AttributePinResponse]',
             'bulk_pin_metadata': 'BulkPinMetadata'
         }
-
         self.attribute_map = {
             'attribute_statuses': 'attributeStatuses',
             'bulk_pin_metadata': 'bulkPinMetadata'
         }
-
         self._attribute_statuses = None
         self._bulk_pin_metadata = None
 

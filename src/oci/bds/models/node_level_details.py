@@ -35,12 +35,10 @@ class NodeLevelDetails(LevelTypeDetails):
             'level_type': 'str',
             'node_host_name': 'str'
         }
-
         self.attribute_map = {
             'level_type': 'levelType',
             'node_host_name': 'nodeHostName'
         }
-
         self._level_type = None
         self._node_host_name = None
         self._level_type = 'NODE_LEVEL'

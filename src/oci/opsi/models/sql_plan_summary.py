@@ -33,12 +33,10 @@ class SqlPlanSummary(object):
             'plan_hash': 'int',
             'plan_content': 'str'
         }
-
         self.attribute_map = {
             'plan_hash': 'planHash',
             'plan_content': 'planContent'
         }
-
         self._plan_hash = None
         self._plan_content = None
 

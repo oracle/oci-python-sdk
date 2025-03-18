@@ -49,14 +49,12 @@ class ImageIdFsuTargetDetails(FsuGoalVersionDetails):
             'new_home_prefix': 'str',
             'software_image_id': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'home_policy': 'homePolicy',
             'new_home_prefix': 'newHomePrefix',
             'software_image_id': 'softwareImageId'
         }
-
         self._type = None
         self._home_policy = None
         self._new_home_prefix = None

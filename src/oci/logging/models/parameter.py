@@ -52,13 +52,11 @@ class Parameter(object):
             'type': 'str',
             'pattern': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'type': 'type',
             'pattern': 'pattern'
         }
-
         self._name = None
         self._type = None
         self._pattern = None

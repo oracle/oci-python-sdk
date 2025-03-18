@@ -96,7 +96,6 @@ class ConnectionSummaryFromLake(ConnectionSummary):
             'metadata': 'ObjectMetadata',
             'key_map': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -113,7 +112,6 @@ class ConnectionSummaryFromLake(ConnectionSummary):
             'metadata': 'metadata',
             'key_map': 'keyMap'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

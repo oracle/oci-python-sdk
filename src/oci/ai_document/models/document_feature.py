@@ -58,11 +58,9 @@ class DocumentFeature(object):
         self.swagger_types = {
             'feature_type': 'str'
         }
-
         self.attribute_map = {
             'feature_type': 'featureType'
         }
-
         self._feature_type = None
 
     @staticmethod

@@ -33,12 +33,10 @@ class MetricPropertySummary(object):
             'metric_name': 'str',
             'dimensions': 'dict(str, DimensionValue)'
         }
-
         self.attribute_map = {
             'metric_name': 'metricName',
             'dimensions': 'dimensions'
         }
-
         self._metric_name = None
         self._dimensions = None
 

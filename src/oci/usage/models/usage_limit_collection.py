@@ -28,11 +28,9 @@ class UsageLimitCollection(object):
         self.swagger_types = {
             'items': 'list[UsageLimitSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

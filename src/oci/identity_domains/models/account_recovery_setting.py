@@ -144,7 +144,6 @@ class AccountRecoverySetting(object):
             'max_incorrect_attempts': 'int',
             'lockout_duration': 'int'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -164,7 +163,6 @@ class AccountRecoverySetting(object):
             'max_incorrect_attempts': 'maxIncorrectAttempts',
             'lockout_duration': 'lockoutDuration'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

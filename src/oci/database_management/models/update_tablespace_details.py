@@ -97,7 +97,6 @@ class UpdateTablespaceDetails(object):
             'is_max_size_unlimited': 'bool',
             'is_default': 'bool'
         }
-
         self.attribute_map = {
             'credential_details': 'credentialDetails',
             'database_credential': 'databaseCredential',
@@ -111,7 +110,6 @@ class UpdateTablespaceDetails(object):
             'is_max_size_unlimited': 'isMaxSizeUnlimited',
             'is_default': 'isDefault'
         }
-
         self._credential_details = None
         self._database_credential = None
         self._name = None

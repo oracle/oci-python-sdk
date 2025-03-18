@@ -43,14 +43,12 @@ class MonitoredResourceDetails(object):
             'type': 'str',
             'number_of_members': 'int'
         }
-
         self.attribute_map = {
             'resource_id': 'resourceId',
             'name': 'name',
             'type': 'type',
             'number_of_members': 'numberOfMembers'
         }
-
         self._resource_id = None
         self._name = None
         self._type = None

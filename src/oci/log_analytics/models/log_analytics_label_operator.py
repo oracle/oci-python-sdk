@@ -33,12 +33,10 @@ class LogAnalyticsLabelOperator(object):
             'display_name': 'str',
             'name': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'name': 'name'
         }
-
         self._display_name = None
         self._name = None
 

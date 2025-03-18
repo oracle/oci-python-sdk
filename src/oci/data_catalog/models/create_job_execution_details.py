@@ -203,7 +203,6 @@ class CreateJobExecutionDetails(object):
             'data_entity_key': 'str',
             'properties': 'dict(str, dict(str, str))'
         }
-
         self.attribute_map = {
             'sub_type': 'subType',
             'job_type': 'jobType',
@@ -220,7 +219,6 @@ class CreateJobExecutionDetails(object):
             'data_entity_key': 'dataEntityKey',
             'properties': 'properties'
         }
-
         self._sub_type = None
         self._job_type = None
         self._parent_key = None

@@ -38,13 +38,11 @@ class VantagePointInfo(object):
             'display_name': 'str',
             'worker_list': 'list[str]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'display_name': 'displayName',
             'worker_list': 'workerList'
         }
-
         self._name = None
         self._display_name = None
         self._worker_list = None

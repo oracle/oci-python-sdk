@@ -152,7 +152,6 @@ class VbInstanceSummary(object):
             'system_tags': 'dict(str, dict(str, object))',
             'network_endpoint_details': 'NetworkEndpointDetails'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -172,7 +171,6 @@ class VbInstanceSummary(object):
             'system_tags': 'systemTags',
             'network_endpoint_details': 'networkEndpointDetails'
         }
-
         self._id = None
         self._display_name = None
         self._compartment_id = None

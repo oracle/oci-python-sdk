@@ -28,11 +28,9 @@ class DetectDominantLanguageResult(object):
         self.swagger_types = {
             'languages': 'list[DetectedLanguage]'
         }
-
         self.attribute_map = {
             'languages': 'languages'
         }
-
         self._languages = None
 
     @property

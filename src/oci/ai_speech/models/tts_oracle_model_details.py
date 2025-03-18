@@ -42,11 +42,9 @@ class TtsOracleModelDetails(object):
         self.swagger_types = {
             'model_name': 'str'
         }
-
         self.attribute_map = {
             'model_name': 'modelName'
         }
-
         self._model_name = None
 
     @staticmethod

@@ -62,7 +62,6 @@ class OutboundClusterSummary(object):
             'seed_cluster_id': 'str',
             'mode': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'ping_schedule': 'pingSchedule',
@@ -70,7 +69,6 @@ class OutboundClusterSummary(object):
             'seed_cluster_id': 'seedClusterId',
             'mode': 'mode'
         }
-
         self._display_name = None
         self._ping_schedule = None
         self._is_skip_unavailable = None

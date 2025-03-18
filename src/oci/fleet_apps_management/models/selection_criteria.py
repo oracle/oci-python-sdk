@@ -44,12 +44,10 @@ class SelectionCriteria(object):
             'match_condition': 'str',
             'rules': 'list[Rule]'
         }
-
         self.attribute_map = {
             'match_condition': 'matchCondition',
             'rules': 'rules'
         }
-
         self._match_condition = None
         self._rules = None
 

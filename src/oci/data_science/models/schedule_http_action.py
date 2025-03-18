@@ -35,12 +35,10 @@ class ScheduleHttpAction(ScheduleAction):
             'action_type': 'str',
             'action_details': 'ScheduleHttpActionDetails'
         }
-
         self.attribute_map = {
             'action_type': 'actionType',
             'action_details': 'actionDetails'
         }
-
         self._action_type = None
         self._action_details = None
         self._action_type = 'HTTP'

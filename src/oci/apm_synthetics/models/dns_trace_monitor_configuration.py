@@ -124,7 +124,6 @@ class DnsTraceMonitorConfiguration(MonitorConfiguration):
             'protocol': 'str',
             'verify_response_content': 'str'
         }
-
         self.attribute_map = {
             'config_type': 'configType',
             'is_failure_retried': 'isFailureRetried',
@@ -133,7 +132,6 @@ class DnsTraceMonitorConfiguration(MonitorConfiguration):
             'protocol': 'protocol',
             'verify_response_content': 'verifyResponseContent'
         }
-
         self._config_type = None
         self._is_failure_retried = None
         self._dns_configuration = None

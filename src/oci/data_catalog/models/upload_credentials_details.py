@@ -33,12 +33,10 @@ class UploadCredentialsDetails(object):
             'connection_detail': 'UpdateConnectionDetails',
             'credential_payload': 'str'
         }
-
         self.attribute_map = {
             'connection_detail': 'connectionDetail',
             'credential_payload': 'credentialPayload'
         }
-
         self._connection_detail = None
         self._credential_payload = None
 

@@ -48,7 +48,6 @@ class DiscoveredTarget(object):
             'resource_id': 'str',
             'version': 'str'
         }
-
         self.attribute_map = {
             'target_id': 'targetId',
             'target_name': 'targetName',
@@ -56,7 +55,6 @@ class DiscoveredTarget(object):
             'resource_id': 'resourceId',
             'version': 'version'
         }
-
         self._target_id = None
         self._target_name = None
         self._product = None

@@ -33,12 +33,10 @@ class TenantNotFoundAuthenticateUserResult(object):
             'tenant_input': 'str',
             'user_input': 'str'
         }
-
         self.attribute_map = {
             'tenant_input': 'tenantInput',
             'user_input': 'userInput'
         }
-
         self._tenant_input = None
         self._user_input = None
 

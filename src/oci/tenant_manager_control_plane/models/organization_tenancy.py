@@ -113,7 +113,6 @@ class OrganizationTenancy(object):
             'is_approved_for_transfer': 'bool',
             'governance_status': 'str'
         }
-
         self.attribute_map = {
             'tenancy_id': 'tenancyId',
             'name': 'name',
@@ -124,7 +123,6 @@ class OrganizationTenancy(object):
             'is_approved_for_transfer': 'isApprovedForTransfer',
             'governance_status': 'governanceStatus'
         }
-
         self._tenancy_id = None
         self._name = None
         self._lifecycle_state = None

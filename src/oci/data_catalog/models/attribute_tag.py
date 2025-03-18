@@ -107,7 +107,6 @@ class AttributeTag(object):
             'created_by_id': 'str',
             'uri': 'str'
         }
-
         self.attribute_map = {
             'attribute_key': 'attributeKey',
             'key': 'key',
@@ -120,7 +119,6 @@ class AttributeTag(object):
             'created_by_id': 'createdById',
             'uri': 'uri'
         }
-
         self._attribute_key = None
         self._key = None
         self._name = None

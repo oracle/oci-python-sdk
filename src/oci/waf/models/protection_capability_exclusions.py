@@ -33,12 +33,10 @@ class ProtectionCapabilityExclusions(object):
             'request_cookies': 'list[str]',
             'args': 'list[str]'
         }
-
         self.attribute_map = {
             'request_cookies': 'requestCookies',
             'args': 'args'
         }
-
         self._request_cookies = None
         self._args = None
 

@@ -90,7 +90,6 @@ class Reviewer(object):
             'principal_state': 'str',
             'status': 'str'
         }
-
         self.attribute_map = {
             'principal_id': 'principalId',
             'principal_name': 'principalName',
@@ -98,7 +97,6 @@ class Reviewer(object):
             'principal_state': 'principalState',
             'status': 'status'
         }
-
         self._principal_id = None
         self._principal_name = None
         self._principal_type = None

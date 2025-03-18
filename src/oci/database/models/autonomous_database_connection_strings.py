@@ -99,7 +99,6 @@ class AutonomousDatabaseConnectionStrings(object):
             'all_connection_strings': 'dict(str, str)',
             'profiles': 'list[DatabaseConnectionStringProfile]'
         }
-
         self.attribute_map = {
             'high': 'high',
             'medium': 'medium',
@@ -108,7 +107,6 @@ class AutonomousDatabaseConnectionStrings(object):
             'all_connection_strings': 'allConnectionStrings',
             'profiles': 'profiles'
         }
-
         self._high = None
         self._medium = None
         self._low = None

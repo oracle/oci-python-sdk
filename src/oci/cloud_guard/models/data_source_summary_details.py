@@ -43,11 +43,9 @@ class DataSourceSummaryDetails(object):
         self.swagger_types = {
             'data_source_feed_provider': 'str'
         }
-
         self.attribute_map = {
             'data_source_feed_provider': 'dataSourceFeedProvider'
         }
-
         self._data_source_feed_provider = None
 
     @staticmethod

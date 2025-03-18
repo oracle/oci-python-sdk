@@ -28,11 +28,9 @@ class UpdateEmailRecipientsGroupDetails(object):
         self.swagger_types = {
             'recipients_list': 'list[EmailRecipient]'
         }
-
         self.attribute_map = {
             'recipients_list': 'recipientsList'
         }
-
         self._recipients_list = None
 
     @property

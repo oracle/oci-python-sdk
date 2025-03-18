@@ -38,13 +38,11 @@ class OcpuUtilizationInfo(object):
             'ocpu_utilization_number': 'float',
             'ocpu_capacity_number': 'float'
         }
-
         self.attribute_map = {
             'host': 'host',
             'ocpu_utilization_number': 'ocpuUtilizationNumber',
             'ocpu_capacity_number': 'ocpuCapacityNumber'
         }
-
         self._host = None
         self._ocpu_utilization_number = None
         self._ocpu_capacity_number = None

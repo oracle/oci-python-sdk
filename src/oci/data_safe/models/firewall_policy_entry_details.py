@@ -40,13 +40,11 @@ class FirewallPolicyEntryDetails(EntryDetails):
             'time_generated': 'datetime',
             'time_status_updated': 'datetime'
         }
-
         self.attribute_map = {
             'entry_type': 'entryType',
             'time_generated': 'timeGenerated',
             'time_status_updated': 'timeStatusUpdated'
         }
-
         self._entry_type = None
         self._time_generated = None
         self._time_status_updated = None

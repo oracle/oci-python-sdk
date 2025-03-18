@@ -102,7 +102,6 @@ class GitlabAccessTokenConnection(Connection):
             'system_tags': 'dict(str, dict(str, object))',
             'access_token': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'description': 'description',
@@ -120,7 +119,6 @@ class GitlabAccessTokenConnection(Connection):
             'system_tags': 'systemTags',
             'access_token': 'accessToken'
         }
-
         self._id = None
         self._description = None
         self._display_name = None

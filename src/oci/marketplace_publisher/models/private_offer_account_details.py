@@ -33,12 +33,10 @@ class PrivateOfferAccountDetails(object):
             'meter': 'str',
             'sku': 'str'
         }
-
         self.attribute_map = {
             'meter': 'meter',
             'sku': 'sku'
         }
-
         self._meter = None
         self._sku = None
 

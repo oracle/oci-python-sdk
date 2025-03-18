@@ -116,7 +116,6 @@ class SecurityAttributeWorkRequestSummary(object):
             'time_finished': 'datetime',
             'percent_complete': 'float'
         }
-
         self.attribute_map = {
             'id': 'id',
             'operation_type': 'operationType',
@@ -128,7 +127,6 @@ class SecurityAttributeWorkRequestSummary(object):
             'time_finished': 'timeFinished',
             'percent_complete': 'percentComplete'
         }
-
         self._id = None
         self._operation_type = None
         self._compartment_id = None

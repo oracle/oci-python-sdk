@@ -28,11 +28,9 @@ class DeliveredArtifactCollection(object):
         self.swagger_types = {
             'items': 'list[DeliveredArtifact]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

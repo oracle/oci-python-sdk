@@ -51,7 +51,6 @@ class UpdateCertificateManagedExternallyIssuedByInternalCaConfigDetails(UpdateCe
             'csr_pem': 'str',
             'validity': 'Validity'
         }
-
         self.attribute_map = {
             'config_type': 'configType',
             'version_name': 'versionName',
@@ -59,7 +58,6 @@ class UpdateCertificateManagedExternallyIssuedByInternalCaConfigDetails(UpdateCe
             'csr_pem': 'csrPem',
             'validity': 'validity'
         }
-
         self._config_type = None
         self._version_name = None
         self._stage = None

@@ -116,7 +116,6 @@ class OkeCanaryDeployStage(DeployStage):
             'kubernetes_manifest_deploy_artifact_ids': 'list[str]',
             'canary_strategy': 'OkeCanaryStrategy'
         }
-
         self.attribute_map = {
             'id': 'id',
             'description': 'description',
@@ -137,7 +136,6 @@ class OkeCanaryDeployStage(DeployStage):
             'kubernetes_manifest_deploy_artifact_ids': 'kubernetesManifestDeployArtifactIds',
             'canary_strategy': 'canaryStrategy'
         }
-
         self._id = None
         self._description = None
         self._display_name = None

@@ -34,12 +34,10 @@ class RenameQueryParameterPolicyItem(object):
             '_from': 'str',
             'to': 'str'
         }
-
         self.attribute_map = {
             '_from': 'from',
             'to': 'to'
         }
-
         self.__from = None
         self._to = None
 

@@ -48,7 +48,6 @@ class ComplianceReportPatchDetail(object):
             'time_released': 'datetime',
             'patch_type': 'str'
         }
-
         self.attribute_map = {
             'patch_name': 'patchName',
             'patch_description': 'patchDescription',
@@ -56,7 +55,6 @@ class ComplianceReportPatchDetail(object):
             'time_released': 'timeReleased',
             'patch_type': 'patchType'
         }
-
         self._patch_name = None
         self._patch_description = None
         self._time_applied = None

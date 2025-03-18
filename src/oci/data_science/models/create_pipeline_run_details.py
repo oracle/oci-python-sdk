@@ -73,7 +73,6 @@ class CreatePipelineRunDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'project_id': 'projectId',
             'compartment_id': 'compartmentId',
@@ -86,7 +85,6 @@ class CreatePipelineRunDetails(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._project_id = None
         self._compartment_id = None
         self._pipeline_id = None

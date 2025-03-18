@@ -38,13 +38,11 @@ class Row(object):
             'time_of_expiration': 'datetime',
             'usage': 'RequestUsage'
         }
-
         self.attribute_map = {
             'value': 'value',
             'time_of_expiration': 'timeOfExpiration',
             'usage': 'usage'
         }
-
         self._value = None
         self._time_of_expiration = None
         self._usage = None

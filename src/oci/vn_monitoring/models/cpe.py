@@ -79,7 +79,6 @@ class Cpe(object):
             'time_created': 'datetime',
             'is_private': 'bool'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
@@ -91,7 +90,6 @@ class Cpe(object):
             'time_created': 'timeCreated',
             'is_private': 'isPrivate'
         }
-
         self._compartment_id = None
         self._defined_tags = None
         self._display_name = None

@@ -48,7 +48,6 @@ class EmbedTextResult(object):
             'model_id': 'str',
             'model_version': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'inputs': 'inputs',
@@ -56,7 +55,6 @@ class EmbedTextResult(object):
             'model_id': 'modelId',
             'model_version': 'modelVersion'
         }
-
         self._id = None
         self._inputs = None
         self._embeddings = None

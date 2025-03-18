@@ -67,7 +67,6 @@ class ModuleStreamOnManagedInstanceSummary(object):
             'software_source_id': 'str',
             'time_modified': 'datetime'
         }
-
         self.attribute_map = {
             'module_name': 'moduleName',
             'stream_name': 'streamName',
@@ -76,7 +75,6 @@ class ModuleStreamOnManagedInstanceSummary(object):
             'software_source_id': 'softwareSourceId',
             'time_modified': 'timeModified'
         }
-
         self._module_name = None
         self._stream_name = None
         self._status = None

@@ -106,7 +106,6 @@ class ExternalExadataInfrastructureDiscoverySummary(EntityDiscovered):
             'entity_type': 'str',
             'rack_size': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'agent_id': 'agentId',
@@ -121,7 +120,6 @@ class ExternalExadataInfrastructureDiscoverySummary(EntityDiscovered):
             'entity_type': 'entityType',
             'rack_size': 'rackSize'
         }
-
         self._id = None
         self._agent_id = None
         self._connector_id = None

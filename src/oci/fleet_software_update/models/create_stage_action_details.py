@@ -60,7 +60,6 @@ class CreateStageActionDetails(CreateFsuActionDetails):
             'fsu_cycle_id': 'str',
             'schedule_details': 'CreateScheduleDetails'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'compartment_id': 'compartmentId',
@@ -70,7 +69,6 @@ class CreateStageActionDetails(CreateFsuActionDetails):
             'fsu_cycle_id': 'fsuCycleId',
             'schedule_details': 'scheduleDetails'
         }
-
         self._display_name = None
         self._compartment_id = None
         self._type = None

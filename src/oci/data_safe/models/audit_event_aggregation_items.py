@@ -53,7 +53,6 @@ class AuditEventAggregationItems(object):
             'count': 'int',
             'dimensions': 'AuditEventAggregationDimensions'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'metric_name': 'metricName',
@@ -62,7 +61,6 @@ class AuditEventAggregationItems(object):
             'count': 'count',
             'dimensions': 'dimensions'
         }
-
         self._display_name = None
         self._metric_name = None
         self._time_started = None

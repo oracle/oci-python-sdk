@@ -58,7 +58,6 @@ class MyRequestApprovalDetails(object):
             'approval_type': 'str',
             'time_updated': 'str'
         }
-
         self.attribute_map = {
             'approver_id': 'approverId',
             'approver_display_name': 'approverDisplayName',
@@ -68,7 +67,6 @@ class MyRequestApprovalDetails(object):
             'approval_type': 'approvalType',
             'time_updated': 'timeUpdated'
         }
-
         self._approver_id = None
         self._approver_display_name = None
         self._justification = None

@@ -35,12 +35,10 @@ class RenameDatasetLabelsDetails(object):
             'source_label_set': 'LabelSet',
             'target_label_set': 'LabelSet'
         }
-
         self.attribute_map = {
             'source_label_set': 'sourceLabelSet',
             'target_label_set': 'targetLabelSet'
         }
-
         self._source_label_set = None
         self._target_label_set = None
 

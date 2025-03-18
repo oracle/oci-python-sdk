@@ -53,13 +53,11 @@ class OpsiDataObjectTypeOpsiDataObjectDetailsInQuery(OpsiDataObjectDetailsInQuer
             '_query_params': 'list[OpsiDataObjectQueryParam]',
             'data_object_type': 'str'
         }
-
         self.attribute_map = {
             'data_object_details_target': 'dataObjectDetailsTarget',
             '_query_params': 'queryParams',
             'data_object_type': 'dataObjectType'
         }
-
         self._data_object_details_target = None
         self.__query_params = None
         self._data_object_type = None

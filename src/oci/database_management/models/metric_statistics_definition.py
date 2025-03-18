@@ -58,7 +58,6 @@ class MetricStatisticsDefinition(object):
             'unit': 'str',
             'dimensions': 'list[MetricDimensionDefinition]'
         }
-
         self.attribute_map = {
             'min': 'min',
             'max': 'max',
@@ -68,7 +67,6 @@ class MetricStatisticsDefinition(object):
             'unit': 'unit',
             'dimensions': 'dimensions'
         }
-
         self._min = None
         self._max = None
         self._median = None

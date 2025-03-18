@@ -157,7 +157,6 @@ class Rule(object):
             '_return': 'list[RuleReturn]',
             'urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy': 'RuleExtensionOciconsolesignonpolicyconsentPolicy'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -184,7 +183,6 @@ class Rule(object):
             '_return': 'return',
             'urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:ociconsolesignonpolicyconsent:Policy'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

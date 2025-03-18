@@ -38,13 +38,11 @@ class RuleFinding(object):
             'details': 'list[FindingSchemaOrOperation]',
             'recommendations': 'list[Recommendation]'
         }
-
         self.attribute_map = {
             'message': 'message',
             'details': 'details',
             'recommendations': 'recommendations'
         }
-
         self._message = None
         self._details = None
         self._recommendations = None

@@ -48,11 +48,9 @@ class LoadBalancingMethod(object):
         self.swagger_types = {
             'method': 'str'
         }
-
         self.attribute_map = {
             'method': 'method'
         }
-
         self._method = None
 
     @staticmethod

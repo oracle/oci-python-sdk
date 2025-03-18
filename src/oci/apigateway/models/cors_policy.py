@@ -53,7 +53,6 @@ class CorsPolicy(object):
             'is_allow_credentials_enabled': 'bool',
             'max_age_in_seconds': 'int'
         }
-
         self.attribute_map = {
             'allowed_origins': 'allowedOrigins',
             'allowed_methods': 'allowedMethods',
@@ -62,7 +61,6 @@ class CorsPolicy(object):
             'is_allow_credentials_enabled': 'isAllowCredentialsEnabled',
             'max_age_in_seconds': 'maxAgeInSeconds'
         }
-
         self._allowed_origins = None
         self._allowed_methods = None
         self._allowed_headers = None

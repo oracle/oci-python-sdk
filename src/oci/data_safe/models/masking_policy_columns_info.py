@@ -49,14 +49,12 @@ class MaskingPolicyColumnsInfo(object):
             'object_name': 'str',
             'referential_column_group': 'list[str]'
         }
-
         self.attribute_map = {
             'schema_name': 'schemaName',
             'object_type': 'objectType',
             'object_name': 'objectName',
             'referential_column_group': 'referentialColumnGroup'
         }
-
         self._schema_name = None
         self._object_type = None
         self._object_name = None

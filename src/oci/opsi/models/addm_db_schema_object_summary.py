@@ -53,7 +53,6 @@ class AddmDbSchemaObjectSummary(object):
             'sub_object_name': 'str',
             'object_type': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'object_identifier': 'objectIdentifier',
@@ -62,7 +61,6 @@ class AddmDbSchemaObjectSummary(object):
             'sub_object_name': 'subObjectName',
             'object_type': 'objectType'
         }
-
         self._id = None
         self._object_identifier = None
         self._owner = None

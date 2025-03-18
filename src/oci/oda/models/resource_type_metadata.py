@@ -33,12 +33,10 @@ class ResourceTypeMetadata(object):
             'resource_type': 'str',
             'properties': 'list[MetadataProperty]'
         }
-
         self.attribute_map = {
             'resource_type': 'resourceType',
             'properties': 'properties'
         }
-
         self._resource_type = None
         self._properties = None
 

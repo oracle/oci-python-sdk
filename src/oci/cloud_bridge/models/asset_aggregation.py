@@ -58,7 +58,6 @@ class AssetAggregation(object):
             'sum': 'float',
             'aggregated_property': 'str'
         }
-
         self.attribute_map = {
             'dimensions': 'dimensions',
             'count': 'count',
@@ -68,7 +67,6 @@ class AssetAggregation(object):
             'sum': 'sum',
             'aggregated_property': 'aggregatedProperty'
         }
-
         self._dimensions = None
         self._count = None
         self._max = None

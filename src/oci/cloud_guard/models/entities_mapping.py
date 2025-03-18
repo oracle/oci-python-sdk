@@ -56,13 +56,11 @@ class EntitiesMapping(object):
             'query_field': 'str',
             'entity_type': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'query_field': 'queryField',
             'entity_type': 'entityType'
         }
-
         self._display_name = None
         self._query_field = None
         self._entity_type = None

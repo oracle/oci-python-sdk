@@ -28,11 +28,9 @@ class ConfirmTargetsDetails(object):
         self.swagger_types = {
             'targets': 'list[DiscoveredTarget]'
         }
-
         self.attribute_map = {
             'targets': 'targets'
         }
-
         self._targets = None
 
     @property

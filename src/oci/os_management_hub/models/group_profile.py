@@ -130,7 +130,6 @@ class GroupProfile(Profile):
             'system_tags': 'dict(str, dict(str, object))',
             'managed_instance_group': 'ManagedInstanceGroupDetails'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -153,7 +152,6 @@ class GroupProfile(Profile):
             'system_tags': 'systemTags',
             'managed_instance_group': 'managedInstanceGroup'
         }
-
         self._id = None
         self._compartment_id = None
         self._display_name = None

@@ -29,11 +29,9 @@ class StreamPackagingConfigCollection(object):
         self.swagger_types = {
             'items': 'list[StreamPackagingConfigSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

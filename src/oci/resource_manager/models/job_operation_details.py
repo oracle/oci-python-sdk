@@ -37,11 +37,9 @@ class JobOperationDetails(object):
         self.swagger_types = {
             'operation': 'str'
         }
-
         self.attribute_map = {
             'operation': 'operation'
         }
-
         self._operation = None
 
     @staticmethod

@@ -68,7 +68,6 @@ class Link(object):
             'max_delay_in_milliseconds': 'float',
             'paths': 'list[str]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'source': 'source',
@@ -80,7 +79,6 @@ class Link(object):
             'max_delay_in_milliseconds': 'maxDelayInMilliseconds',
             'paths': 'paths'
         }
-
         self._id = None
         self._source = None
         self._destination = None

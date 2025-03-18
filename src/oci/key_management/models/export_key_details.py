@@ -57,7 +57,6 @@ class ExportKeyDetails(object):
             'public_key': 'str',
             'logging_context': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'key_id': 'keyId',
             'key_version_id': 'keyVersionId',
@@ -65,7 +64,6 @@ class ExportKeyDetails(object):
             'public_key': 'publicKey',
             'logging_context': 'loggingContext'
         }
-
         self._key_id = None
         self._key_version_id = None
         self._algorithm = None

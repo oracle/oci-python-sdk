@@ -58,7 +58,6 @@ class DetectorConfiguration(object):
             'allowed_values_data_type': 'str',
             'allowed_values': 'list[PropertyTuple]'
         }
-
         self.attribute_map = {
             'config_key': 'configKey',
             'name': 'name',
@@ -68,7 +67,6 @@ class DetectorConfiguration(object):
             'allowed_values_data_type': 'allowedValuesDataType',
             'allowed_values': 'allowedValues'
         }
-
         self._config_key = None
         self._name = None
         self._value = None

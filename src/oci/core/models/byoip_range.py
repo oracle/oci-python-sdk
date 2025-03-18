@@ -166,7 +166,6 @@ class ByoipRange(object):
             'time_withdrawn': 'datetime',
             'validation_token': 'str'
         }
-
         self.attribute_map = {
             'byoip_range_vcn_ipv6_allocations': 'byoipRangeVcnIpv6Allocations',
             'cidr_block': 'cidrBlock',
@@ -185,7 +184,6 @@ class ByoipRange(object):
             'time_withdrawn': 'timeWithdrawn',
             'validation_token': 'validationToken'
         }
-
         self._byoip_range_vcn_ipv6_allocations = None
         self._cidr_block = None
         self._compartment_id = None

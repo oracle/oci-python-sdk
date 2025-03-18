@@ -45,14 +45,12 @@ class ModifyResponseValidationFailurePolicy(ValidationFailurePolicy):
             'response_message': 'str',
             'response_header_transformations': 'HeaderTransformationPolicy'
         }
-
         self.attribute_map = {
             'type': 'type',
             'response_code': 'responseCode',
             'response_message': 'responseMessage',
             'response_header_transformations': 'responseHeaderTransformations'
         }
-
         self._type = None
         self._response_code = None
         self._response_message = None

@@ -43,14 +43,12 @@ class EntityAction(object):
             'natural_language_mapping': 'EntityActionNaturalLanguageMapping',
             'arguments': 'list[EntityActionArgument]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'crud_type': 'crudType',
             'natural_language_mapping': 'naturalLanguageMapping',
             'arguments': 'arguments'
         }
-
         self._name = None
         self._crud_type = None
         self._natural_language_mapping = None

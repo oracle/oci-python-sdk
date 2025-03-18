@@ -33,12 +33,10 @@ class MelConcept(object):
             'ontology_name': 'str',
             'concepts': 'list[MelConceptDetails]'
         }
-
         self.attribute_map = {
             'ontology_name': 'ontologyName',
             'concepts': 'concepts'
         }
-
         self._ontology_name = None
         self._concepts = None
 

@@ -109,7 +109,6 @@ class CreateVolumeDetails(object):
             'autotune_policies': 'list[AutotunePolicy]',
             'xrc_kms_key_id': 'str'
         }
-
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'backup_policy_id': 'backupPolicyId',
@@ -129,7 +128,6 @@ class CreateVolumeDetails(object):
             'autotune_policies': 'autotunePolicies',
             'xrc_kms_key_id': 'xrcKmsKeyId'
         }
-
         self._availability_domain = None
         self._backup_policy_id = None
         self._compartment_id = None

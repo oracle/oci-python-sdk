@@ -28,11 +28,9 @@ class DatabaseFleetHaOverviewMetrics(object):
         self.swagger_types = {
             'ha_metrics': 'list[DatabaseHaMetrics]'
         }
-
         self.attribute_map = {
             'ha_metrics': 'haMetrics'
         }
-
         self._ha_metrics = None
 
     @property

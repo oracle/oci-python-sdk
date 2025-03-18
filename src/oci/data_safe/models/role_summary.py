@@ -58,7 +58,6 @@ class RoleSummary(object):
             'is_inherited': 'bool',
             'is_implicit': 'bool'
         }
-
         self.attribute_map = {
             'role_name': 'roleName',
             'authentication_type': 'authenticationType',
@@ -68,7 +67,6 @@ class RoleSummary(object):
             'is_inherited': 'isInherited',
             'is_implicit': 'isImplicit'
         }
-
         self._role_name = None
         self._authentication_type = None
         self._is_password_required = None

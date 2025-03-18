@@ -131,7 +131,6 @@ class BlockVolumeReplica(object):
             'volume_group_replica_id': 'str',
             'kms_key_id': 'str'
         }
-
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'compartment_id': 'compartmentId',
@@ -148,7 +147,6 @@ class BlockVolumeReplica(object):
             'volume_group_replica_id': 'volumeGroupReplicaId',
             'kms_key_id': 'kmsKeyId'
         }
-
         self._availability_domain = None
         self._compartment_id = None
         self._defined_tags = None

@@ -126,7 +126,6 @@ class InstancePool(object):
             'instance_display_name_formatter': 'str',
             'instance_hostname_formatter': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -142,7 +141,6 @@ class InstancePool(object):
             'instance_display_name_formatter': 'instanceDisplayNameFormatter',
             'instance_hostname_formatter': 'instanceHostnameFormatter'
         }
-
         self._id = None
         self._compartment_id = None
         self._defined_tags = None

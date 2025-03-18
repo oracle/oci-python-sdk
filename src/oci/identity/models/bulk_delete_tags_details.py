@@ -28,11 +28,9 @@ class BulkDeleteTagsDetails(object):
         self.swagger_types = {
             'tag_definition_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'tag_definition_ids': 'tagDefinitionIds'
         }
-
         self._tag_definition_ids = None
 
     @property

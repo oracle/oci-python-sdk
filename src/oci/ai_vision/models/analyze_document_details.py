@@ -195,7 +195,6 @@ class AnalyzeDocumentDetails(object):
             'language': 'str',
             'document_type': 'str'
         }
-
         self.attribute_map = {
             'features': 'features',
             'document': 'document',
@@ -204,7 +203,6 @@ class AnalyzeDocumentDetails(object):
             'language': 'language',
             'document_type': 'documentType'
         }
-
         self._features = None
         self._document = None
         self._compartment_id = None

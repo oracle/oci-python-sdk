@@ -43,14 +43,12 @@ class Choice(object):
             'finish_reason': 'str',
             'logprobs': 'Logprobs'
         }
-
         self.attribute_map = {
             'index': 'index',
             'text': 'text',
             'finish_reason': 'finishReason',
             'logprobs': 'logprobs'
         }
-
         self._index = None
         self._text = None
         self._finish_reason = None

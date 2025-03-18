@@ -65,7 +65,6 @@ class AsmConnectionCredentialsByDetails(AsmConnectionCredentials):
             'password_secret_id': 'str',
             'role': 'str'
         }
-
         self.attribute_map = {
             'credential_type': 'credentialType',
             'credential_name': 'credentialName',
@@ -73,7 +72,6 @@ class AsmConnectionCredentialsByDetails(AsmConnectionCredentials):
             'password_secret_id': 'passwordSecretId',
             'role': 'role'
         }
-
         self._credential_type = None
         self._credential_name = None
         self._user_name = None

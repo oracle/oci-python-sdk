@@ -45,14 +45,12 @@ class AnyOfSelectionKey(DynamicSelectionKey):
             'name': 'str',
             'values': 'list[str]'
         }
-
         self.attribute_map = {
             'type': 'type',
             'is_default': 'isDefault',
             'name': 'name',
             'values': 'values'
         }
-
         self._type = None
         self._is_default = None
         self._name = None

@@ -47,14 +47,12 @@ class TopologyRoutesToEntityRelationship(TopologyEntityRelationship):
             'type': 'str',
             'route_rule_details': 'TopologyRoutesToRelationshipDetails'
         }
-
         self.attribute_map = {
             'id1': 'id1',
             'id2': 'id2',
             'type': 'type',
             'route_rule_details': 'routeRuleDetails'
         }
-
         self._id1 = None
         self._id2 = None
         self._type = None

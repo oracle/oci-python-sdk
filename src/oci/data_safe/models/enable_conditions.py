@@ -81,14 +81,12 @@ class EnableConditions(object):
             'operation_status': 'str',
             'entity_names': 'list[str]'
         }
-
         self.attribute_map = {
             'entity_selection': 'entitySelection',
             'entity_type': 'entityType',
             'operation_status': 'operationStatus',
             'entity_names': 'entityNames'
         }
-
         self._entity_selection = None
         self._entity_type = None
         self._operation_status = None

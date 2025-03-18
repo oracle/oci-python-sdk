@@ -48,12 +48,10 @@ class ModelMetrics(object):
             'model_type': 'str',
             'dataset_summary': 'DatasetSummary'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'dataset_summary': 'datasetSummary'
         }
-
         self._model_type = None
         self._dataset_summary = None
 

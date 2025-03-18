@@ -72,7 +72,6 @@ class UpdateSensitiveTypeDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'entity_type': 'entityType',
             'display_name': 'displayName',
@@ -82,7 +81,6 @@ class UpdateSensitiveTypeDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._entity_type = None
         self._display_name = None
         self._short_name = None

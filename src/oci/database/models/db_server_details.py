@@ -28,11 +28,9 @@ class DbServerDetails(object):
         self.swagger_types = {
             'db_server_id': 'str'
         }
-
         self.attribute_map = {
             'db_server_id': 'dbServerId'
         }
-
         self._db_server_id = None
 
     @property

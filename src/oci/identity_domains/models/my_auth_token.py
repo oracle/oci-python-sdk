@@ -132,7 +132,6 @@ class MyAuthToken(object):
             'expires_on': 'str',
             'user': 'MyAuthTokenUser'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -152,7 +151,6 @@ class MyAuthToken(object):
             'expires_on': 'expiresOn',
             'user': 'user'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

@@ -57,7 +57,6 @@ class UpdateMaskingColumnDetails(object):
             'is_masking_enabled': 'bool',
             'masking_formats': 'list[MaskingFormat]'
         }
-
         self.attribute_map = {
             'object_type': 'objectType',
             'masking_column_group': 'maskingColumnGroup',
@@ -65,7 +64,6 @@ class UpdateMaskingColumnDetails(object):
             'is_masking_enabled': 'isMaskingEnabled',
             'masking_formats': 'maskingFormats'
         }
-
         self._object_type = None
         self._masking_column_group = None
         self._sensitive_type_id = None

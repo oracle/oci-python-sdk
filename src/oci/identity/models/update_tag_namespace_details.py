@@ -43,14 +43,12 @@ class UpdateTagNamespaceDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'description': 'description',
             'is_retired': 'isRetired',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._description = None
         self._is_retired = None
         self._freeform_tags = None

@@ -28,11 +28,9 @@ class DbNodeDetails(object):
         self.swagger_types = {
             'db_node_id': 'str'
         }
-
         self.attribute_map = {
             'db_node_id': 'dbNodeId'
         }
-
         self._db_node_id = None
 
     @property

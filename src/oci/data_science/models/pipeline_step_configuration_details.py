@@ -38,13 +38,11 @@ class PipelineStepConfigurationDetails(object):
             'environment_variables': 'dict(str, str)',
             'command_line_arguments': 'str'
         }
-
         self.attribute_map = {
             'maximum_runtime_in_minutes': 'maximumRuntimeInMinutes',
             'environment_variables': 'environmentVariables',
             'command_line_arguments': 'commandLineArguments'
         }
-
         self._maximum_runtime_in_minutes = None
         self._environment_variables = None
         self._command_line_arguments = None

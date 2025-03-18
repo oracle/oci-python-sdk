@@ -28,11 +28,9 @@ class ServiceProviderInteractionRequestDetails(object):
         self.swagger_types = {
             'more_info_details': 'str'
         }
-
         self.attribute_map = {
             'more_info_details': 'moreInfoDetails'
         }
-
         self._more_info_details = None
 
     @property

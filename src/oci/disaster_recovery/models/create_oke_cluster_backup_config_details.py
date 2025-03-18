@@ -57,7 +57,6 @@ class CreateOkeClusterBackupConfigDetails(object):
             'max_number_of_backups_retained': 'int',
             'image_replication_vault_secret_id': 'str'
         }
-
         self.attribute_map = {
             'namespaces': 'namespaces',
             'backup_schedule': 'backupSchedule',
@@ -65,7 +64,6 @@ class CreateOkeClusterBackupConfigDetails(object):
             'max_number_of_backups_retained': 'maxNumberOfBackupsRetained',
             'image_replication_vault_secret_id': 'imageReplicationVaultSecretId'
         }
-
         self._namespaces = None
         self._backup_schedule = None
         self._replicate_images = None

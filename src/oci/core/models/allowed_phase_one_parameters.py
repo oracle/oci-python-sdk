@@ -38,13 +38,11 @@ class AllowedPhaseOneParameters(object):
             'authentication_algorithms': 'list[str]',
             'dh_groups': 'list[str]'
         }
-
         self.attribute_map = {
             'encryption_algorithms': 'encryptionAlgorithms',
             'authentication_algorithms': 'authenticationAlgorithms',
             'dh_groups': 'dhGroups'
         }
-
         self._encryption_algorithms = None
         self._authentication_algorithms = None
         self._dh_groups = None

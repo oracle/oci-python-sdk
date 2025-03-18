@@ -53,14 +53,12 @@ class TableLimits(object):
             'max_storage_in_g_bs': 'int',
             'capacity_mode': 'str'
         }
-
         self.attribute_map = {
             'max_read_units': 'maxReadUnits',
             'max_write_units': 'maxWriteUnits',
             'max_storage_in_g_bs': 'maxStorageInGBs',
             'capacity_mode': 'capacityMode'
         }
-
         self._max_read_units = None
         self._max_write_units = None
         self._max_storage_in_g_bs = None

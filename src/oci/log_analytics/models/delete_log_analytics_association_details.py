@@ -33,12 +33,10 @@ class DeleteLogAnalyticsAssociationDetails(object):
             'compartment_id': 'str',
             'items': 'list[DeleteLogAnalyticsAssociation]'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'items': 'items'
         }
-
         self._compartment_id = None
         self._items = None
 

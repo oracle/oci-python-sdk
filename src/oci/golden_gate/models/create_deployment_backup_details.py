@@ -73,7 +73,6 @@ class CreateDeploymentBackupDetails(object):
             'is_metadata_only': 'bool',
             'locks': 'list[AddResourceLockDetails]'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'compartment_id': 'compartmentId',
@@ -86,7 +85,6 @@ class CreateDeploymentBackupDetails(object):
             'is_metadata_only': 'isMetadataOnly',
             'locks': 'locks'
         }
-
         self._display_name = None
         self._compartment_id = None
         self._deployment_id = None

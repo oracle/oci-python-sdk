@@ -77,7 +77,6 @@ class ImportKeyDetails(object):
             'wrapped_import_key': 'WrappedImportKey',
             'protection_mode': 'str'
         }
-
         self.attribute_map = {
             'is_auto_rotation_enabled': 'isAutoRotationEnabled',
             'auto_key_rotation_details': 'autoKeyRotationDetails',
@@ -89,7 +88,6 @@ class ImportKeyDetails(object):
             'wrapped_import_key': 'wrappedImportKey',
             'protection_mode': 'protectionMode'
         }
-
         self._is_auto_rotation_enabled = None
         self._auto_key_rotation_details = None
         self._compartment_id = None

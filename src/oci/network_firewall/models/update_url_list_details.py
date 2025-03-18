@@ -28,11 +28,9 @@ class UpdateUrlListDetails(object):
         self.swagger_types = {
             'urls': 'list[UrlPattern]'
         }
-
         self.attribute_map = {
             'urls': 'urls'
         }
-
         self._urls = None
 
     @property

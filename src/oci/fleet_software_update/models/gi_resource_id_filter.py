@@ -89,7 +89,6 @@ class GiResourceIdFilter(GiFleetDiscoveryFilter):
             'identifiers': 'list[str]',
             'operator': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'mode': 'mode',
@@ -97,7 +96,6 @@ class GiResourceIdFilter(GiFleetDiscoveryFilter):
             'identifiers': 'identifiers',
             'operator': 'operator'
         }
-
         self._type = None
         self._mode = None
         self._entity_type = None

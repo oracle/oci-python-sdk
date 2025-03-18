@@ -107,7 +107,6 @@ class CreateWebChannelResult(CreateChannelResult):
             'allowed_domains': 'str',
             'bot_id': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -126,7 +125,6 @@ class CreateWebChannelResult(CreateChannelResult):
             'allowed_domains': 'allowedDomains',
             'bot_id': 'botId'
         }
-
         self._id = None
         self._name = None
         self._description = None

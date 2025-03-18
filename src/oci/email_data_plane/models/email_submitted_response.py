@@ -38,13 +38,11 @@ class EmailSubmittedResponse(object):
             'envelope_id': 'str',
             'suppressed_recipients': 'list[EmailAddress]'
         }
-
         self.attribute_map = {
             'message_id': 'messageId',
             'envelope_id': 'envelopeId',
             'suppressed_recipients': 'suppressedRecipients'
         }
-
         self._message_id = None
         self._envelope_id = None
         self._suppressed_recipients = None

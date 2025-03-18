@@ -50,7 +50,6 @@ class ExportImageViaObjectStorageTupleDetails(ExportImageDetails):
             'namespace_name': 'str',
             'object_name': 'str'
         }
-
         self.attribute_map = {
             'destination_type': 'destinationType',
             'export_format': 'exportFormat',
@@ -58,7 +57,6 @@ class ExportImageViaObjectStorageTupleDetails(ExportImageDetails):
             'namespace_name': 'namespaceName',
             'object_name': 'objectName'
         }
-
         self._destination_type = None
         self._export_format = None
         self._bucket_name = None

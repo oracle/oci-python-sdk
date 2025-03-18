@@ -76,7 +76,6 @@ class ForeignKey(Key):
             'reference_unique_key': 'UniqueKey',
             'object_status': 'int'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -89,7 +88,6 @@ class ForeignKey(Key):
             'reference_unique_key': 'referenceUniqueKey',
             'object_status': 'objectStatus'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

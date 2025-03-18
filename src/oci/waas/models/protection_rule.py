@@ -72,7 +72,6 @@ class ProtectionRule(object):
             'labels': 'list[str]',
             'exclusions': 'list[ProtectionRuleExclusion]'
         }
-
         self.attribute_map = {
             'key': 'key',
             'mod_security_rule_ids': 'modSecurityRuleIds',
@@ -82,7 +81,6 @@ class ProtectionRule(object):
             'labels': 'labels',
             'exclusions': 'exclusions'
         }
-
         self._key = None
         self._mod_security_rule_ids = None
         self._name = None

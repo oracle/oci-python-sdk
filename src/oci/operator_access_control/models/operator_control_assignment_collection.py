@@ -28,11 +28,9 @@ class OperatorControlAssignmentCollection(object):
         self.swagger_types = {
             'items': 'list[OperatorControlAssignmentSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

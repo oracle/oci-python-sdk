@@ -40,13 +40,11 @@ class TestReportOutput(StageOutput):
             'step_name': 'str',
             'id': 'str'
         }
-
         self.attribute_map = {
             'output_type': 'outputType',
             'step_name': 'stepName',
             'id': 'id'
         }
-
         self._output_type = None
         self._step_name = None
         self._id = None

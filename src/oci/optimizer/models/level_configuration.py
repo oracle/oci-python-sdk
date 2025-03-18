@@ -33,12 +33,10 @@ class LevelConfiguration(object):
             'recommendation_id': 'str',
             'level': 'str'
         }
-
         self.attribute_map = {
             'recommendation_id': 'recommendationId',
             'level': 'level'
         }
-
         self._recommendation_id = None
         self._level = None
 

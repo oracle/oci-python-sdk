@@ -55,7 +55,6 @@ class PipelineCustomScriptStepUpdateDetails(PipelineStepUpdateDetails):
             'step_infrastructure_configuration_details': 'PipelineInfrastructureConfigurationDetails',
             'step_storage_mount_configuration_details_list': 'list[StorageMountConfigurationDetails]'
         }
-
         self.attribute_map = {
             'step_type': 'stepType',
             'step_name': 'stepName',
@@ -64,7 +63,6 @@ class PipelineCustomScriptStepUpdateDetails(PipelineStepUpdateDetails):
             'step_infrastructure_configuration_details': 'stepInfrastructureConfigurationDetails',
             'step_storage_mount_configuration_details_list': 'stepStorageMountConfigurationDetailsList'
         }
-
         self._step_type = None
         self._step_name = None
         self._description = None

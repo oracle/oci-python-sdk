@@ -28,11 +28,9 @@ class UnifiedAgentConfigurationCollection(object):
         self.swagger_types = {
             'items': 'list[UnifiedAgentConfigurationSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

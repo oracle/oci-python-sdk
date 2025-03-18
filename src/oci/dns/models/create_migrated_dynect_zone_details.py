@@ -57,7 +57,6 @@ class CreateMigratedDynectZoneDetails(CreateZoneBaseDetails):
             'defined_tags': 'dict(str, dict(str, object))',
             'dynect_migration_details': 'DynectMigrationDetails'
         }
-
         self.attribute_map = {
             'migration_source': 'migrationSource',
             'name': 'name',
@@ -66,7 +65,6 @@ class CreateMigratedDynectZoneDetails(CreateZoneBaseDetails):
             'defined_tags': 'definedTags',
             'dynect_migration_details': 'dynectMigrationDetails'
         }
-
         self._migration_source = None
         self._name = None
         self._compartment_id = None

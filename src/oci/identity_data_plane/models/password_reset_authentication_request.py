@@ -33,12 +33,10 @@ class PasswordResetAuthenticationRequest(object):
             'user_id': 'str',
             'password_reset_token': 'str'
         }
-
         self.attribute_map = {
             'user_id': 'userId',
             'password_reset_token': 'passwordResetToken'
         }
-
         self._user_id = None
         self._password_reset_token = None
 

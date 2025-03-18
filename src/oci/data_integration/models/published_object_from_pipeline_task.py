@@ -100,7 +100,6 @@ class PublishedObjectFromPipelineTask(PublishedObject):
             'config_provider_delegate': 'ConfigProvider',
             'pipeline': 'Pipeline'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -118,7 +117,6 @@ class PublishedObjectFromPipelineTask(PublishedObject):
             'config_provider_delegate': 'configProviderDelegate',
             'pipeline': 'pipeline'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

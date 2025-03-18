@@ -40,13 +40,11 @@ class ShapeOcpuOptions(object):
             'max': 'float',
             'max_per_numa_node': 'float'
         }
-
         self.attribute_map = {
             'min': 'min',
             'max': 'max',
             'max_per_numa_node': 'maxPerNumaNode'
         }
-
         self._min = None
         self._max = None
         self._max_per_numa_node = None

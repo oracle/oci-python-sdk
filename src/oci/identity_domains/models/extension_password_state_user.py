@@ -63,7 +63,6 @@ class ExtensionPasswordStateUser(object):
             'last_failed_validation_date': 'str',
             'applicable_password_policy': 'UserExtApplicablePasswordPolicy'
         }
-
         self.attribute_map = {
             'last_successful_set_date': 'lastSuccessfulSetDate',
             'cant_change': 'cantChange',
@@ -74,7 +73,6 @@ class ExtensionPasswordStateUser(object):
             'last_failed_validation_date': 'lastFailedValidationDate',
             'applicable_password_policy': 'applicablePasswordPolicy'
         }
-
         self._last_successful_set_date = None
         self._cant_change = None
         self._cant_expire = None

@@ -33,12 +33,10 @@ class AdhocQueryDetails(object):
             'query': 'str',
             'adhoc_query_resources': 'list[AdhocQueryResource]'
         }
-
         self.attribute_map = {
             'query': 'query',
             'adhoc_query_resources': 'adhocQueryResources'
         }
-
         self._query = None
         self._adhoc_query_resources = None
 

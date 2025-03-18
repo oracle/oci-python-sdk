@@ -43,14 +43,12 @@ class MonitorResultData(object):
             'string_content': 'str',
             'timestamp': 'datetime'
         }
-
         self.attribute_map = {
             'name': 'name',
             'byte_content': 'byteContent',
             'string_content': 'stringContent',
             'timestamp': 'timestamp'
         }
-
         self._name = None
         self._byte_content = None
         self._string_content = None

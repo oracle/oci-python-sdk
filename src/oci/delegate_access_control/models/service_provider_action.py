@@ -99,7 +99,6 @@ class ServiceProviderAction(object):
             'description': 'str',
             'properties': 'list[ServiceProviderActionProperties]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -111,7 +110,6 @@ class ServiceProviderAction(object):
             'description': 'description',
             'properties': 'properties'
         }
-
         self._id = None
         self._name = None
         self._customer_display_name = None

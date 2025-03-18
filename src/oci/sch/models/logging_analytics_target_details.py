@@ -44,13 +44,11 @@ class LoggingAnalyticsTargetDetails(TargetDetails):
             'log_group_id': 'str',
             'log_source_identifier': 'str'
         }
-
         self.attribute_map = {
             'kind': 'kind',
             'log_group_id': 'logGroupId',
             'log_source_identifier': 'logSourceIdentifier'
         }
-
         self._kind = None
         self._log_group_id = None
         self._log_source_identifier = None

@@ -42,13 +42,11 @@ class RandomListFormatEntry(FormatEntry):
             'description': 'str',
             'random_list': 'list[str]'
         }
-
         self.attribute_map = {
             'type': 'type',
             'description': 'description',
             'random_list': 'randomList'
         }
-
         self._type = None
         self._description = None
         self._random_list = None

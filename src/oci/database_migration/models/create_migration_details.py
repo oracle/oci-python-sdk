@@ -91,7 +91,6 @@ class CreateMigrationDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'description': 'description',
             'compartment_id': 'compartmentId',
@@ -103,7 +102,6 @@ class CreateMigrationDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._description = None
         self._compartment_id = None
         self._database_combination = None

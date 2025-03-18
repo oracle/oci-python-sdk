@@ -68,7 +68,6 @@ class TopProcessesUsage(object):
             'physical_memory_in_mbs': 'float',
             'max_process_count': 'int'
         }
-
         self.attribute_map = {
             'command': 'command',
             'container_id': 'containerId',
@@ -80,7 +79,6 @@ class TopProcessesUsage(object):
             'physical_memory_in_mbs': 'physicalMemoryInMBs',
             'max_process_count': 'maxProcessCount'
         }
-
         self._command = None
         self._container_id = None
         self._process_hash = None

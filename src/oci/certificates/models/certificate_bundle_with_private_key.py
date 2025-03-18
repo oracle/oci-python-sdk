@@ -96,7 +96,6 @@ class CertificateBundleWithPrivateKey(CertificateBundle):
             'private_key_pem': 'str',
             'private_key_pem_passphrase': 'str'
         }
-
         self.attribute_map = {
             'certificate_bundle_type': 'certificateBundleType',
             'certificate_id': 'certificateId',
@@ -113,7 +112,6 @@ class CertificateBundleWithPrivateKey(CertificateBundle):
             'private_key_pem': 'privateKeyPem',
             'private_key_pem_passphrase': 'privateKeyPemPassphrase'
         }
-
         self._certificate_bundle_type = None
         self._certificate_id = None
         self._certificate_name = None

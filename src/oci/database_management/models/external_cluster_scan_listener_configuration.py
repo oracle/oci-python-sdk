@@ -53,14 +53,12 @@ class ExternalClusterScanListenerConfiguration(object):
             'scan_port': 'int',
             'scan_protocol': 'str'
         }
-
         self.attribute_map = {
             'scan_name': 'scanName',
             'network_number': 'networkNumber',
             'scan_port': 'scanPort',
             'scan_protocol': 'scanProtocol'
         }
-
         self._scan_name = None
         self._network_number = None
         self._scan_port = None

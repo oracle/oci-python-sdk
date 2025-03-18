@@ -38,13 +38,11 @@ class RequestRateLimitingConfiguration(object):
             'requests_limit': 'int',
             'action_duration_in_seconds': 'int'
         }
-
         self.attribute_map = {
             'period_in_seconds': 'periodInSeconds',
             'requests_limit': 'requestsLimit',
             'action_duration_in_seconds': 'actionDurationInSeconds'
         }
-
         self._period_in_seconds = None
         self._requests_limit = None
         self._action_duration_in_seconds = None

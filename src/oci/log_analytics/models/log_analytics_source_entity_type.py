@@ -43,14 +43,12 @@ class LogAnalyticsSourceEntityType(object):
             'entity_type_category': 'str',
             'entity_type_display_name': 'str'
         }
-
         self.attribute_map = {
             'source_id': 'sourceId',
             'entity_type': 'entityType',
             'entity_type_category': 'entityTypeCategory',
             'entity_type_display_name': 'entityTypeDisplayName'
         }
-
         self._source_id = None
         self._entity_type = None
         self._entity_type_category = None

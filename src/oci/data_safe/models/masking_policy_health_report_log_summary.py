@@ -129,7 +129,6 @@ class MaskingPolicyHealthReportLogSummary(object):
             'description': 'str',
             'health_check_type': 'str'
         }
-
         self.attribute_map = {
             'message_type': 'messageType',
             'timestamp': 'timestamp',
@@ -138,7 +137,6 @@ class MaskingPolicyHealthReportLogSummary(object):
             'description': 'description',
             'health_check_type': 'healthCheckType'
         }
-
         self._message_type = None
         self._timestamp = None
         self._message = None

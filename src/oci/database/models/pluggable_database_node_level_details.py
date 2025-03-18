@@ -51,12 +51,10 @@ class PluggableDatabaseNodeLevelDetails(object):
             'node_name': 'str',
             'open_mode': 'str'
         }
-
         self.attribute_map = {
             'node_name': 'nodeName',
             'open_mode': 'openMode'
         }
-
         self._node_name = None
         self._open_mode = None
 

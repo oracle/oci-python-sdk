@@ -58,7 +58,6 @@ class LookupField(object):
             'name': 'str',
             'position': 'int'
         }
-
         self.attribute_map = {
             'common_field_name': 'commonFieldName',
             'default_match_value': 'defaultMatchValue',
@@ -68,7 +67,6 @@ class LookupField(object):
             'name': 'name',
             'position': 'position'
         }
-
         self._common_field_name = None
         self._default_match_value = None
         self._display_name = None

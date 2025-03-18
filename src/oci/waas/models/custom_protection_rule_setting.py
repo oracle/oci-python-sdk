@@ -48,13 +48,11 @@ class CustomProtectionRuleSetting(object):
             'action': 'str',
             'exclusions': 'list[ProtectionRuleExclusion]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'action': 'action',
             'exclusions': 'exclusions'
         }
-
         self._id = None
         self._action = None
         self._exclusions = None

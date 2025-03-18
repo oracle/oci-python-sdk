@@ -47,12 +47,10 @@ class RealtimeMessageAuthentication(object):
             'authentication_type': 'str',
             'compartment_id': 'str'
         }
-
         self.attribute_map = {
             'authentication_type': 'authenticationType',
             'compartment_id': 'compartmentId'
         }
-
         self._authentication_type = None
         self._compartment_id = None
 

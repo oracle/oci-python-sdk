@@ -123,7 +123,6 @@ class SqlTuningSetSummary(object):
             'scheduled_job_name': 'str',
             'error_message': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'owner': 'owner',
@@ -136,7 +135,6 @@ class SqlTuningSetSummary(object):
             'scheduled_job_name': 'scheduledJobName',
             'error_message': 'errorMessage'
         }
-
         self._name = None
         self._owner = None
         self._description = None

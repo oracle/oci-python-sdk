@@ -52,7 +52,6 @@ class RenameObjectDetails(object):
             'new_obj_if_match_e_tag': 'str',
             'new_obj_if_none_match_e_tag': 'str'
         }
-
         self.attribute_map = {
             'source_name': 'sourceName',
             'new_name': 'newName',
@@ -60,7 +59,6 @@ class RenameObjectDetails(object):
             'new_obj_if_match_e_tag': 'newObjIfMatchETag',
             'new_obj_if_none_match_e_tag': 'newObjIfNoneMatchETag'
         }
-
         self._source_name = None
         self._new_name = None
         self._src_obj_if_match_e_tag = None

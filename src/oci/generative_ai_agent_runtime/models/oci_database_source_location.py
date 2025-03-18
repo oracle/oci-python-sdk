@@ -45,14 +45,12 @@ class OciDatabaseSourceLocation(SourceLocation):
             'function_name': 'str',
             'url': 'str'
         }
-
         self.attribute_map = {
             'source_location_type': 'sourceLocationType',
             'id': 'id',
             'function_name': 'functionName',
             'url': 'url'
         }
-
         self._source_location_type = None
         self._id = None
         self._function_name = None

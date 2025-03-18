@@ -54,7 +54,6 @@ class TextClassificationModelEvaluationResult(EvaluationResultSummary):
             'true_labels': 'list[str]',
             'predicted_labels': 'list[str]'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'freeform_tags': 'freeformTags',
@@ -63,7 +62,6 @@ class TextClassificationModelEvaluationResult(EvaluationResultSummary):
             'true_labels': 'trueLabels',
             'predicted_labels': 'predictedLabels'
         }
-
         self._model_type = None
         self._freeform_tags = None
         self._defined_tags = None

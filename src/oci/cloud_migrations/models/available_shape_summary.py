@@ -108,7 +108,6 @@ class AvailableShapeSummary(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'pagination_token': 'paginationToken',
@@ -128,7 +127,6 @@ class AvailableShapeSummary(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._availability_domain = None
         self._pagination_token = None
         self._min_total_baseline_ocpus_required = None

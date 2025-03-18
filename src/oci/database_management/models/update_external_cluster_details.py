@@ -38,13 +38,11 @@ class UpdateExternalClusterDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'external_connector_id': 'externalConnectorId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._external_connector_id = None
         self._freeform_tags = None
         self._defined_tags = None

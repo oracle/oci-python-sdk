@@ -136,7 +136,6 @@ class ClassicSubscriptionSummary(SubscriptionSummary):
             'start_date': 'datetime',
             'end_date': 'datetime'
         }
-
         self.attribute_map = {
             'entity_version': 'entityVersion',
             'id': 'id',
@@ -155,7 +154,6 @@ class ClassicSubscriptionSummary(SubscriptionSummary):
             'start_date': 'startDate',
             'end_date': 'endDate'
         }
-
         self._entity_version = None
         self._id = None
         self._compartment_id = None

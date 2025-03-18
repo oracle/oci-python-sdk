@@ -40,13 +40,11 @@ class VnicEndpoint(Endpoint):
             'address': 'str',
             'vnic_id': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'address': 'address',
             'vnic_id': 'vnicId'
         }
-
         self._type = None
         self._address = None
         self._vnic_id = None

@@ -99,7 +99,6 @@ class CreateDetectorRuleDetails(object):
             'data_source_id': 'str',
             'entities_mappings': 'list[EntitiesMapping]'
         }
-
         self.attribute_map = {
             'source_detector_rule_id': 'sourceDetectorRuleId',
             'name': 'name',
@@ -113,7 +112,6 @@ class CreateDetectorRuleDetails(object):
             'data_source_id': 'dataSourceId',
             'entities_mappings': 'entitiesMappings'
         }
-
         self._source_detector_rule_id = None
         self._name = None
         self._description = None

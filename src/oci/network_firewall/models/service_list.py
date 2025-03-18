@@ -43,14 +43,12 @@ class ServiceList(object):
             'total_services': 'int',
             'parent_resource_id': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'services': 'services',
             'total_services': 'totalServices',
             'parent_resource_id': 'parentResourceId'
         }
-
         self._name = None
         self._services = None
         self._total_services = None

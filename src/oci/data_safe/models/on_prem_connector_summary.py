@@ -112,7 +112,6 @@ class OnPremConnectorSummary(object):
             'system_tags': 'dict(str, dict(str, object))',
             'created_version': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -126,7 +125,6 @@ class OnPremConnectorSummary(object):
             'system_tags': 'systemTags',
             'created_version': 'createdVersion'
         }
-
         self._id = None
         self._display_name = None
         self._compartment_id = None

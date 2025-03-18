@@ -33,12 +33,10 @@ class AllowedSecurityActionDetails(object):
             'is_restricted_or_partial': 'bool',
             'allowed_security_configuration': 'AllowedSecurityConfiguration'
         }
-
         self.attribute_map = {
             'is_restricted_or_partial': 'isRestrictedOrPartial',
             'allowed_security_configuration': 'allowedSecurityConfiguration'
         }
-
         self._is_restricted_or_partial = None
         self._allowed_security_configuration = None
 

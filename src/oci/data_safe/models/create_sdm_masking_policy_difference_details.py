@@ -53,7 +53,6 @@ class CreateSdmMaskingPolicyDifferenceDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'difference_type': 'differenceType',
             'masking_policy_id': 'maskingPolicyId',
@@ -62,7 +61,6 @@ class CreateSdmMaskingPolicyDifferenceDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._difference_type = None
         self._masking_policy_id = None
         self._compartment_id = None

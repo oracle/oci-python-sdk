@@ -80,7 +80,6 @@ class StandByDatabaseDataguardMetrics(object):
             'db_role': 'str',
             'metrics': 'list[HaMetricDefinition]'
         }
-
         self.attribute_map = {
             'db_id': 'dbId',
             'compartment_id': 'compartmentId',
@@ -90,7 +89,6 @@ class StandByDatabaseDataguardMetrics(object):
             'db_role': 'dbRole',
             'metrics': 'metrics'
         }
-
         self._db_id = None
         self._compartment_id = None
         self._database_id = None

@@ -53,12 +53,10 @@ class UnifiedAgentLoggingSource(object):
             'name': 'str',
             'source_type': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'source_type': 'sourceType'
         }
-
         self._name = None
         self._source_type = None
 

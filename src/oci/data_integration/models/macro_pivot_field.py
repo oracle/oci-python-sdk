@@ -48,7 +48,6 @@ class MacroPivotField(object):
             'type': 'BaseType',
             'column_name_pattern': 'str'
         }
-
         self.attribute_map = {
             'is_use_source_type': 'isUseSourceType',
             'expr': 'expr',
@@ -56,7 +55,6 @@ class MacroPivotField(object):
             'type': 'type',
             'column_name_pattern': 'columnNamePattern'
         }
-
         self._is_use_source_type = None
         self._expr = None
         self._use_type = None

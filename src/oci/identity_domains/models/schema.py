@@ -73,7 +73,6 @@ class Schema(object):
             'idcs_override_common_attribute': 'bool',
             'attributes': 'list[SchemaAttributes]'
         }
-
         self.attribute_map = {
             'schemas': 'schemas',
             'idcs_maps_to_same_target_attribute_name_as': 'idcsMapsToSameTargetAttributeNameAs',
@@ -86,7 +85,6 @@ class Schema(object):
             'idcs_override_common_attribute': 'idcsOverrideCommonAttribute',
             'attributes': 'attributes'
         }
-
         self._schemas = None
         self._idcs_maps_to_same_target_attribute_name_as = None
         self._external_id = None

@@ -43,14 +43,12 @@ class ApplicationDependency(object):
             'node_id': 'str',
             'application_dependency_node_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'gav': 'gav',
             'purl': 'purl',
             'node_id': 'nodeId',
             'application_dependency_node_ids': 'applicationDependencyNodeIds'
         }
-
         self._gav = None
         self._purl = None
         self._node_id = None

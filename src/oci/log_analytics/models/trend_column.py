@@ -122,7 +122,6 @@ class TrendColumn(AbstractColumn):
             'interval_group_counts': 'list[int]',
             'interval_group_counts_after_filter': 'list[int]'
         }
-
         self.attribute_map = {
             'type': 'type',
             'display_name': 'displayName',
@@ -144,7 +143,6 @@ class TrendColumn(AbstractColumn):
             'interval_group_counts': 'intervalGroupCounts',
             'interval_group_counts_after_filter': 'intervalGroupCountsAfterFilter'
         }
-
         self._type = None
         self._display_name = None
         self._sub_system = None

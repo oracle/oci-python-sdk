@@ -28,11 +28,9 @@ class GenerateWalletDetails(object):
         self.swagger_types = {
             'password': 'str'
         }
-
         self.attribute_map = {
             'password': 'password'
         }
-
         self._password = None
 
     @property

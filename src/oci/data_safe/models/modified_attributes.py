@@ -34,12 +34,10 @@ class ModifiedAttributes(object):
             'app_defined_child_column_keys': 'list[str]',
             'db_defined_child_column_keys': 'list[str]'
         }
-
         self.attribute_map = {
             'app_defined_child_column_keys': 'appDefinedChildColumnKeys',
             'db_defined_child_column_keys': 'dbDefinedChildColumnKeys'
         }
-
         self._app_defined_child_column_keys = None
         self._db_defined_child_column_keys = None
 

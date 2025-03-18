@@ -28,11 +28,9 @@ class ComponentModel(object):
         self.swagger_types = {
             'model_id': 'str'
         }
-
         self.attribute_map = {
             'model_id': 'modelId'
         }
-
         self._model_id = None
 
     @property

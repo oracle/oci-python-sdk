@@ -38,13 +38,11 @@ class Group(object):
             'group_name': 'str',
             'reservations': 'list[PartitionReservation]'
         }
-
         self.attribute_map = {
             'stream_id': 'streamId',
             'group_name': 'groupName',
             'reservations': 'reservations'
         }
-
         self._stream_id = None
         self._group_name = None
         self._reservations = None

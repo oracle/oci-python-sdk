@@ -177,7 +177,6 @@ class Replication(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'availability_domain': 'availabilityDomain',
@@ -199,7 +198,6 @@ class Replication(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._compartment_id = None
         self._availability_domain = None
         self._id = None

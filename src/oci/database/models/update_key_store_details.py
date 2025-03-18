@@ -38,13 +38,11 @@ class UpdateKeyStoreDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'type_details': 'typeDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._type_details = None
         self._freeform_tags = None
         self._defined_tags = None

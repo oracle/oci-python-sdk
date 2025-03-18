@@ -28,11 +28,9 @@ class ApplicationGroupSummaryCollection(object):
         self.swagger_types = {
             'items': 'list[ApplicationGroupSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

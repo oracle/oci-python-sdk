@@ -40,13 +40,11 @@ class DatabaseUpgradeWithDbVersionDetails(DatabaseUpgradeSourceBase):
             'options': 'str',
             'db_version': 'str'
         }
-
         self.attribute_map = {
             'source': 'source',
             'options': 'options',
             'db_version': 'dbVersion'
         }
-
         self._source = None
         self._options = None
         self._db_version = None

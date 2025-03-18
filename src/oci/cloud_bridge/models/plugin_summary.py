@@ -68,7 +68,6 @@ class PluginSummary(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'name': 'name',
             'agent_id': 'agentId',
@@ -80,7 +79,6 @@ class PluginSummary(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._name = None
         self._agent_id = None
         self._plugin_version = None

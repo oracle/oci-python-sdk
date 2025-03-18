@@ -33,12 +33,10 @@ class UpdateResponderRecipeResponderRule(object):
             'responder_rule_id': 'str',
             'details': 'UpdateResponderRuleDetails'
         }
-
         self.attribute_map = {
             'responder_rule_id': 'responderRuleId',
             'details': 'details'
         }
-
         self._responder_rule_id = None
         self._details = None
 

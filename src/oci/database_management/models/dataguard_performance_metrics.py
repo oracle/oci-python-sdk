@@ -28,11 +28,9 @@ class DataguardPerformanceMetrics(object):
         self.swagger_types = {
             'metrics_data': 'list[PerformanceMetricsData]'
         }
-
         self.attribute_map = {
             'metrics_data': 'metricsData'
         }
-
         self._metrics_data = None
 
     @property

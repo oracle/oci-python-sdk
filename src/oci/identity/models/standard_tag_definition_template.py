@@ -77,7 +77,6 @@ class StandardTagDefinitionTemplate(object):
             'is_cost_tracking': 'bool',
             'enum_mutability': 'str'
         }
-
         self.attribute_map = {
             'description': 'description',
             'tag_definition_name': 'tagDefinitionName',
@@ -86,7 +85,6 @@ class StandardTagDefinitionTemplate(object):
             'is_cost_tracking': 'isCostTracking',
             'enum_mutability': 'enumMutability'
         }
-
         self._description = None
         self._tag_definition_name = None
         self._type = None

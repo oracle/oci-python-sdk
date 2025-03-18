@@ -43,14 +43,12 @@ class CreateComputeInstanceMovableFileSystemOperationDetails(object):
             'mount_details': 'CreateFileSystemMountDetails',
             'unmount_details': 'CreateFileSystemUnmountDetails'
         }
-
         self.attribute_map = {
             'export_path': 'exportPath',
             'mount_point': 'mountPoint',
             'mount_details': 'mountDetails',
             'unmount_details': 'unmountDetails'
         }
-
         self._export_path = None
         self._mount_point = None
         self._mount_details = None

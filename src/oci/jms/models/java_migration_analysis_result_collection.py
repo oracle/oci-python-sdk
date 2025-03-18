@@ -28,11 +28,9 @@ class JavaMigrationAnalysisResultCollection(object):
         self.swagger_types = {
             'items': 'list[JavaMigrationAnalysisResultSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

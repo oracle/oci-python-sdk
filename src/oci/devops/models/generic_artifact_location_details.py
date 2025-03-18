@@ -37,11 +37,9 @@ class GenericArtifactLocationDetails(object):
         self.swagger_types = {
             'storage_type': 'str'
         }
-
         self.attribute_map = {
             'storage_type': 'storageType'
         }
-
         self._storage_type = None
 
     @staticmethod

@@ -71,7 +71,6 @@ class ConditionalCompositeFieldMap(FieldMap):
             'object_status': 'int',
             'field_maps': 'list[FieldMap]'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'description': 'description',
@@ -83,7 +82,6 @@ class ConditionalCompositeFieldMap(FieldMap):
             'object_status': 'objectStatus',
             'field_maps': 'fieldMaps'
         }
-
         self._model_type = None
         self._description = None
         self._field_map_scope = None

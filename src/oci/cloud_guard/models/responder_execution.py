@@ -162,7 +162,6 @@ class ResponderExecution(object):
             'responder_rule_execution_details': 'ResponderRuleExecutionDetails',
             'locks': 'list[ResourceLock]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'responder_rule_id': 'responderRuleId',
@@ -182,7 +181,6 @@ class ResponderExecution(object):
             'responder_rule_execution_details': 'responderRuleExecutionDetails',
             'locks': 'locks'
         }
-
         self._id = None
         self._responder_rule_id = None
         self._responder_rule_type = None

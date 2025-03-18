@@ -48,11 +48,9 @@ class CredentialEntitySpecificDetails(object):
         self.swagger_types = {
             'credential_level': 'str'
         }
-
         self.attribute_map = {
             'credential_level': 'credentialLevel'
         }
-
         self._credential_level = None
 
     @staticmethod

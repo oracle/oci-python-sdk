@@ -129,7 +129,6 @@ class LoadBalancerTrafficShiftDeployStageSummary(DeployStageSummary):
             'load_balancer_config': 'LoadBalancerConfig',
             'rollback_policy': 'DeployStageRollbackPolicy'
         }
-
         self.attribute_map = {
             'id': 'id',
             'description': 'description',
@@ -153,7 +152,6 @@ class LoadBalancerTrafficShiftDeployStageSummary(DeployStageSummary):
             'load_balancer_config': 'loadBalancerConfig',
             'rollback_policy': 'rollbackPolicy'
         }
-
         self._id = None
         self._description = None
         self._display_name = None

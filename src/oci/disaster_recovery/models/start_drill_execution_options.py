@@ -40,13 +40,11 @@ class StartDrillExecutionOptions(DrPlanExecutionOptions):
             'are_prechecks_enabled': 'bool',
             'are_warnings_ignored': 'bool'
         }
-
         self.attribute_map = {
             'plan_execution_type': 'planExecutionType',
             'are_prechecks_enabled': 'arePrechecksEnabled',
             'are_warnings_ignored': 'areWarningsIgnored'
         }
-
         self._plan_execution_type = None
         self._are_prechecks_enabled = None
         self._are_warnings_ignored = None

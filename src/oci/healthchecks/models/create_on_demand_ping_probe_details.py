@@ -62,7 +62,6 @@ class CreateOnDemandPingProbeDetails(object):
             'timeout_in_seconds': 'int',
             'protocol': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'targets': 'targets',
@@ -71,7 +70,6 @@ class CreateOnDemandPingProbeDetails(object):
             'timeout_in_seconds': 'timeoutInSeconds',
             'protocol': 'protocol'
         }
-
         self._compartment_id = None
         self._targets = None
         self._vantage_point_names = None

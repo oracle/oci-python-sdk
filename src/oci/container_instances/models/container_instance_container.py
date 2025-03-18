@@ -33,12 +33,10 @@ class ContainerInstanceContainer(object):
             'container_id': 'str',
             'display_name': 'str'
         }
-
         self.attribute_map = {
             'container_id': 'containerId',
             'display_name': 'displayName'
         }
-
         self._container_id = None
         self._display_name = None
 

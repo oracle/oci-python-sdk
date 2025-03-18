@@ -43,14 +43,12 @@ class StorageUsageTrendAggregation(object):
             'file_system_size_in_gbs': 'float',
             'usage_data': 'list[StorageUsageTrend]'
         }
-
         self.attribute_map = {
             'file_system_name': 'fileSystemName',
             'mount_point': 'mountPoint',
             'file_system_size_in_gbs': 'fileSystemSizeInGBs',
             'usage_data': 'usageData'
         }
-
         self._file_system_name = None
         self._mount_point = None
         self._file_system_size_in_gbs = None

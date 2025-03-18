@@ -43,14 +43,12 @@ class LogAnalyticsParserMetaPlugin(object):
             'display_name': 'str',
             'name': 'str'
         }
-
         self.attribute_map = {
             'meta_plugin_parameters': 'metaPluginParameters',
             'description': 'description',
             'display_name': 'displayName',
             'name': 'name'
         }
-
         self._meta_plugin_parameters = None
         self._description = None
         self._display_name = None

@@ -28,11 +28,9 @@ class UpdateDrgRouteDistributionStatementsDetails(object):
         self.swagger_types = {
             'statements': 'list[UpdateDrgRouteDistributionStatementDetails]'
         }
-
         self.attribute_map = {
             'statements': 'statements'
         }
-
         self._statements = None
 
     @property

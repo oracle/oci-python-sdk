@@ -73,7 +73,6 @@ class CreateListingRevisionPackageDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'listing_revision_id': 'listingRevisionId',
             'package_version': 'packageVersion',
@@ -86,7 +85,6 @@ class CreateListingRevisionPackageDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._listing_revision_id = None
         self._package_version = None
         self._display_name = None

@@ -87,7 +87,6 @@ class CreateIPSecConnectionDetails(object):
             'tunnel_configuration': 'list[CreateIPSecConnectionTunnelDetails]',
             'tunnel_count': 'int'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'cpe_id': 'cpeId',
@@ -101,7 +100,6 @@ class CreateIPSecConnectionDetails(object):
             'tunnel_configuration': 'tunnelConfiguration',
             'tunnel_count': 'tunnelCount'
         }
-
         self._compartment_id = None
         self._cpe_id = None
         self._defined_tags = None

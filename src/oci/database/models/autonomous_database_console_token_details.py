@@ -33,12 +33,10 @@ class AutonomousDatabaseConsoleTokenDetails(object):
             'token': 'str',
             'login_url': 'str'
         }
-
         self.attribute_map = {
             'token': 'token',
             'login_url': 'loginUrl'
         }
-
         self._token = None
         self._login_url = None
 

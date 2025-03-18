@@ -50,7 +50,6 @@ class StandaloneJobInfrastructureConfigurationDetails(JobInfrastructureConfigura
             'block_storage_size_in_gbs': 'int',
             'job_shape_config_details': 'JobShapeConfigDetails'
         }
-
         self.attribute_map = {
             'job_infrastructure_type': 'jobInfrastructureType',
             'shape_name': 'shapeName',
@@ -58,7 +57,6 @@ class StandaloneJobInfrastructureConfigurationDetails(JobInfrastructureConfigura
             'block_storage_size_in_gbs': 'blockStorageSizeInGBs',
             'job_shape_config_details': 'jobShapeConfigDetails'
         }
-
         self._job_infrastructure_type = None
         self._shape_name = None
         self._subnet_id = None

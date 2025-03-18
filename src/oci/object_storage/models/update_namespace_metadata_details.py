@@ -34,12 +34,10 @@ class UpdateNamespaceMetadataDetails(object):
             'default_s3_compartment_id': 'str',
             'default_swift_compartment_id': 'str'
         }
-
         self.attribute_map = {
             'default_s3_compartment_id': 'defaultS3CompartmentId',
             'default_swift_compartment_id': 'defaultSwiftCompartmentId'
         }
-
         self._default_s3_compartment_id = None
         self._default_swift_compartment_id = None
 

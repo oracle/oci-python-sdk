@@ -111,7 +111,6 @@ class SummarizeDatabaseInsightResourceUsageAggregation(object):
             'usage_change_percent': 'float',
             'total_host_capacity': 'float'
         }
-
         self.attribute_map = {
             'time_interval_start': 'timeIntervalStart',
             'time_interval_end': 'timeIntervalEnd',
@@ -122,7 +121,6 @@ class SummarizeDatabaseInsightResourceUsageAggregation(object):
             'usage_change_percent': 'usageChangePercent',
             'total_host_capacity': 'totalHostCapacity'
         }
-
         self._time_interval_start = None
         self._time_interval_end = None
         self._resource_metric = None

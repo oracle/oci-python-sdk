@@ -33,12 +33,10 @@ class RoverNodeGenerateCertificateDetails(object):
             'csr': 'str',
             'time_cert_validity_end': 'datetime'
         }
-
         self.attribute_map = {
             'csr': 'csr',
             'time_cert_validity_end': 'timeCertValidityEnd'
         }
-
         self._csr = None
         self._time_cert_validity_end = None
 

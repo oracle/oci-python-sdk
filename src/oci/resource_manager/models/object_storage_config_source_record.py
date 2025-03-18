@@ -45,14 +45,12 @@ class ObjectStorageConfigSourceRecord(ConfigSourceRecord):
             'namespace': 'str',
             'bucket_name': 'str'
         }
-
         self.attribute_map = {
             'config_source_record_type': 'configSourceRecordType',
             'region': 'region',
             'namespace': 'namespace',
             'bucket_name': 'bucketName'
         }
-
         self._config_source_record_type = None
         self._region = None
         self._namespace = None

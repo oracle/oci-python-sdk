@@ -124,7 +124,6 @@ class FunctionDeployStageSummary(DeployStageSummary):
             'max_memory_in_mbs': 'int',
             'function_timeout_in_seconds': 'int'
         }
-
         self.attribute_map = {
             'id': 'id',
             'description': 'description',
@@ -147,7 +146,6 @@ class FunctionDeployStageSummary(DeployStageSummary):
             'max_memory_in_mbs': 'maxMemoryInMBs',
             'function_timeout_in_seconds': 'functionTimeoutInSeconds'
         }
-
         self._id = None
         self._description = None
         self._display_name = None

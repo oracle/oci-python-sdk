@@ -54,7 +54,6 @@ class UpdateNotebookSessionDetails(object):
             'notebook_session_runtime_config_details': 'NotebookSessionRuntimeConfigDetails',
             'notebook_session_storage_mount_configuration_details_list': 'list[StorageMountConfigurationDetails]'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'notebook_session_configuration_details': 'notebookSessionConfigurationDetails',
@@ -63,7 +62,6 @@ class UpdateNotebookSessionDetails(object):
             'notebook_session_runtime_config_details': 'notebookSessionRuntimeConfigDetails',
             'notebook_session_storage_mount_configuration_details_list': 'notebookSessionStorageMountConfigurationDetailsList'
         }
-
         self._display_name = None
         self._notebook_session_configuration_details = None
         self._freeform_tags = None

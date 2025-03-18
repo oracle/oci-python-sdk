@@ -42,12 +42,10 @@ class CreatePrivateApplicationPackage(object):
             'package_type': 'str',
             'version': 'str'
         }
-
         self.attribute_map = {
             'package_type': 'packageType',
             'version': 'version'
         }
-
         self._package_type = None
         self._version = None
 

@@ -118,7 +118,6 @@ class Ticket(object):
             'lifecycle_state': 'str',
             'lifecycle_details': 'str'
         }
-
         self.attribute_map = {
             'ticket_number': 'ticketNumber',
             'severity': 'severity',
@@ -130,7 +129,6 @@ class Ticket(object):
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails'
         }
-
         self._ticket_number = None
         self._severity = None
         self._resource_list = None

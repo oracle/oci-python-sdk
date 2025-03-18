@@ -78,7 +78,6 @@ class LogListEndpoint(object):
             'is_system': 'bool',
             'endpoint_properties': 'list[LogAnalyticsProperty]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'description': 'description',
@@ -92,7 +91,6 @@ class LogListEndpoint(object):
             'is_system': 'isSystem',
             'endpoint_properties': 'endpointProperties'
         }
-
         self._name = None
         self._description = None
         self._model = None

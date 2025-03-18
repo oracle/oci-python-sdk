@@ -28,11 +28,9 @@ class CustomerLoggingDetails(object):
         self.swagger_types = {
             'log_retention_days': 'int'
         }
-
         self.attribute_map = {
             'log_retention_days': 'logRetentionDays'
         }
-
         self._log_retention_days = None
 
     @property

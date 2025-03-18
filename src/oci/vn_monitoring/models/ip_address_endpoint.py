@@ -35,12 +35,10 @@ class IpAddressEndpoint(Endpoint):
             'type': 'str',
             'address': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'address': 'address'
         }
-
         self._type = None
         self._address = None
         self._type = 'IP_ADDRESS'

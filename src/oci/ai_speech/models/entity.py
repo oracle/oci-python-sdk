@@ -38,13 +38,11 @@ class Entity(object):
             'pronunciations': 'list[Pronunciation]',
             'weight': 'float'
         }
-
         self.attribute_map = {
             'entity_value': 'entityValue',
             'pronunciations': 'pronunciations',
             'weight': 'weight'
         }
-
         self._entity_value = None
         self._pronunciations = None
         self._weight = None

@@ -53,7 +53,6 @@ class ParseQueryOutput(object):
             'time_filter': 'TimeRange',
             'commands': 'list[AbstractCommandDescriptor]'
         }
-
         self.attribute_map = {
             'display_query_string': 'displayQueryString',
             'internal_query_string': 'internalQueryString',
@@ -62,7 +61,6 @@ class ParseQueryOutput(object):
             'time_filter': 'timeFilter',
             'commands': 'commands'
         }
-
         self._display_query_string = None
         self._internal_query_string = None
         self._columns = None

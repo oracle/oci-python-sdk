@@ -28,11 +28,9 @@ class TimeAvailableForRefreshCollection(object):
         self.swagger_types = {
             'items': 'list[TimeAvailableForRefreshSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

@@ -33,12 +33,10 @@ class Index(object):
             'name': 'str',
             'schema': 'IndexSchema'
         }
-
         self.attribute_map = {
             'name': 'name',
             'schema': 'schema'
         }
-
         self._name = None
         self._schema = None
 

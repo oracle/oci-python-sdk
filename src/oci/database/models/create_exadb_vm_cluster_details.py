@@ -177,7 +177,6 @@ class CreateExadbVmClusterDetails(object):
             'data_collection_options': 'DataCollectionOptions',
             'subscription_id': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'availability_domain': 'availabilityDomain',
@@ -209,7 +208,6 @@ class CreateExadbVmClusterDetails(object):
             'data_collection_options': 'dataCollectionOptions',
             'subscription_id': 'subscriptionId'
         }
-
         self._compartment_id = None
         self._availability_domain = None
         self._subnet_id = None

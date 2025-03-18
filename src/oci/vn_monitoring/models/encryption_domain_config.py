@@ -33,12 +33,10 @@ class EncryptionDomainConfig(object):
             'oracle_traffic_selector': 'list[str]',
             'cpe_traffic_selector': 'list[str]'
         }
-
         self.attribute_map = {
             'oracle_traffic_selector': 'oracleTrafficSelector',
             'cpe_traffic_selector': 'cpeTrafficSelector'
         }
-
         self._oracle_traffic_selector = None
         self._cpe_traffic_selector = None
 

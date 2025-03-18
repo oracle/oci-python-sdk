@@ -147,7 +147,6 @@ class ScheduledAction(object):
             'time_created': 'datetime',
             'time_updated': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'scheduling_plan_id': 'schedulingPlanId',
@@ -166,7 +165,6 @@ class ScheduledAction(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated'
         }
-
         self._id = None
         self._scheduling_plan_id = None
         self._compartment_id = None

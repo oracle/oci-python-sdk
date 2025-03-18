@@ -46,13 +46,11 @@ class RoutingPolicy(object):
             'condition_language_version': 'str',
             'rules': 'list[RoutingRule]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'condition_language_version': 'conditionLanguageVersion',
             'rules': 'rules'
         }
-
         self._name = None
         self._condition_language_version = None
         self._rules = None

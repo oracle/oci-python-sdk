@@ -35,12 +35,10 @@ class CountBasedApprovalPolicy(ApprovalPolicy):
             'approval_policy_type': 'str',
             'number_of_approvals_required': 'int'
         }
-
         self.attribute_map = {
             'approval_policy_type': 'approvalPolicyType',
             'number_of_approvals_required': 'numberOfApprovalsRequired'
         }
-
         self._approval_policy_type = None
         self._number_of_approvals_required = None
         self._approval_policy_type = 'COUNT_BASED_APPROVAL'

@@ -95,7 +95,6 @@ class ReferentialRelation(object):
             'child': 'ColumnsInfo',
             'is_sensitive': 'bool'
         }
-
         self.attribute_map = {
             'key': 'key',
             'lifecycle_state': 'lifecycleState',
@@ -105,7 +104,6 @@ class ReferentialRelation(object):
             'child': 'child',
             'is_sensitive': 'isSensitive'
         }
-
         self._key = None
         self._lifecycle_state = None
         self._sensitive_data_model_id = None

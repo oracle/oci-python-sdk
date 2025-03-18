@@ -48,7 +48,6 @@ class CreateNodeDetails(object):
             'subnet_id': 'str',
             'shape_config': 'ShapeConfigDetails'
         }
-
         self.attribute_map = {
             'node_type': 'nodeType',
             'shape': 'shape',
@@ -56,7 +55,6 @@ class CreateNodeDetails(object):
             'subnet_id': 'subnetId',
             'shape_config': 'shapeConfig'
         }
-
         self._node_type = None
         self._shape = None
         self._block_volume_size_in_gbs = None

@@ -50,7 +50,6 @@ class CreateAutonomousDatabaseBackupDetails(object):
             'is_long_term_backup': 'bool',
             'backup_destination_details': 'BackupDestinationDetails'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'autonomous_database_id': 'autonomousDatabaseId',
@@ -58,7 +57,6 @@ class CreateAutonomousDatabaseBackupDetails(object):
             'is_long_term_backup': 'isLongTermBackup',
             'backup_destination_details': 'backupDestinationDetails'
         }
-
         self._display_name = None
         self._autonomous_database_id = None
         self._retention_period_in_days = None

@@ -61,7 +61,6 @@ class FaaSAction(Action):
             'description': 'str',
             'function_id': 'str'
         }
-
         self.attribute_map = {
             'action_type': 'actionType',
             'id': 'id',
@@ -71,7 +70,6 @@ class FaaSAction(Action):
             'description': 'description',
             'function_id': 'functionId'
         }
-
         self._action_type = None
         self._id = None
         self._lifecycle_message = None

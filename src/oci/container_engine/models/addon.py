@@ -88,7 +88,6 @@ class Addon(object):
             'configurations': 'list[AddonConfiguration]',
             'addon_error': 'AddonError'
         }
-
         self.attribute_map = {
             'name': 'name',
             'version': 'version',
@@ -98,7 +97,6 @@ class Addon(object):
             'configurations': 'configurations',
             'addon_error': 'addonError'
         }
-
         self._name = None
         self._version = None
         self._current_installed_version = None

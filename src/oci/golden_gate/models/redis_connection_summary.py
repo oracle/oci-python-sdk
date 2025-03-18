@@ -181,7 +181,6 @@ class RedisConnectionSummary(ConnectionSummary):
             'key_store_secret_id': 'str',
             'key_store_password_secret_id': 'str'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'id': 'id',
@@ -215,7 +214,6 @@ class RedisConnectionSummary(ConnectionSummary):
             'key_store_secret_id': 'keyStoreSecretId',
             'key_store_password_secret_id': 'keyStorePasswordSecretId'
         }
-
         self._connection_type = None
         self._id = None
         self._display_name = None

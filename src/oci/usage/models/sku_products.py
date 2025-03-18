@@ -38,13 +38,11 @@ class SkuProducts(object):
             'sku_type': 'str',
             'cloud_credit_type': 'str'
         }
-
         self.attribute_map = {
             'sku_id': 'skuId',
             'sku_type': 'skuType',
             'cloud_credit_type': 'cloudCreditType'
         }
-
         self._sku_id = None
         self._sku_type = None
         self._cloud_credit_type = None

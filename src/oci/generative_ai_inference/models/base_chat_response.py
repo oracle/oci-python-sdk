@@ -43,11 +43,9 @@ class BaseChatResponse(object):
         self.swagger_types = {
             'api_format': 'str'
         }
-
         self.attribute_map = {
             'api_format': 'apiFormat'
         }
-
         self._api_format = None
 
     @staticmethod

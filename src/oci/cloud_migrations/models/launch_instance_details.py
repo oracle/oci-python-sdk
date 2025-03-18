@@ -114,7 +114,6 @@ class LaunchInstanceDetails(object):
             'source_details': 'InstanceSourceDetails',
             'is_pv_encryption_in_transit_enabled': 'bool'
         }
-
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'capacity_reservation_id': 'capacityReservationId',
@@ -135,7 +134,6 @@ class LaunchInstanceDetails(object):
             'source_details': 'sourceDetails',
             'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled'
         }
-
         self._availability_domain = None
         self._capacity_reservation_id = None
         self._compartment_id = None

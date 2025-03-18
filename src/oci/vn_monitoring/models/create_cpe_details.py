@@ -58,7 +58,6 @@ class CreateCpeDetails(object):
             'cpe_device_shape_id': 'str',
             'is_private': 'bool'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
@@ -68,7 +67,6 @@ class CreateCpeDetails(object):
             'cpe_device_shape_id': 'cpeDeviceShapeId',
             'is_private': 'isPrivate'
         }
-
         self._compartment_id = None
         self._defined_tags = None
         self._display_name = None

@@ -54,7 +54,6 @@ class CreateSqlTuningSetDetails(object):
             'description': 'str',
             'show_sql_only': 'int'
         }
-
         self.attribute_map = {
             'credential_details': 'credentialDetails',
             'database_credential': 'databaseCredential',
@@ -63,7 +62,6 @@ class CreateSqlTuningSetDetails(object):
             'description': 'description',
             'show_sql_only': 'showSqlOnly'
         }
-
         self._credential_details = None
         self._database_credential = None
         self._name = None

@@ -48,7 +48,6 @@ class ReplicationEstimate(object):
             'estimated_base_copy_time_in_minutes': 'int',
             'allowed_target_regions': 'list[str]'
         }
-
         self.attribute_map = {
             'change_rate_in_m_bps': 'changeRateInMBps',
             'is_replication_supported': 'isReplicationSupported',
@@ -56,7 +55,6 @@ class ReplicationEstimate(object):
             'estimated_base_copy_time_in_minutes': 'estimatedBaseCopyTimeInMinutes',
             'allowed_target_regions': 'allowedTargetRegions'
         }
-
         self._change_rate_in_m_bps = None
         self._is_replication_supported = None
         self._minimum_supported_interval_in_minutes = None

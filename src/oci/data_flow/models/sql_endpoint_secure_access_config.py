@@ -40,13 +40,11 @@ class SqlEndpointSecureAccessConfig(SqlEndpointNetworkConfiguration):
             'access_control_rules': 'list[SecureAccessControlRule]',
             'public_endpoint_ip': 'str'
         }
-
         self.attribute_map = {
             'network_type': 'networkType',
             'access_control_rules': 'accessControlRules',
             'public_endpoint_ip': 'publicEndpointIp'
         }
-
         self._network_type = None
         self._access_control_rules = None
         self._public_endpoint_ip = None

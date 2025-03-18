@@ -68,14 +68,12 @@ class PaymentDetail(object):
             'payment_method': 'str',
             'amount_paid': 'float'
         }
-
         self.attribute_map = {
             'time_paid_on': 'timePaidOn',
             'paid_by': 'paidBy',
             'payment_method': 'paymentMethod',
             'amount_paid': 'amountPaid'
         }
-
         self._time_paid_on = None
         self._paid_by = None
         self._payment_method = None

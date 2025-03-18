@@ -47,12 +47,10 @@ class IdentitySettingsTokens(object):
             'expires_after': 'int',
             'type': 'str'
         }
-
         self.attribute_map = {
             'expires_after': 'expiresAfter',
             'type': 'type'
         }
-
         self._expires_after = None
         self._type = None
 

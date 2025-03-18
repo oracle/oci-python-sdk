@@ -28,11 +28,9 @@ class DataFlowSummaryCollection(object):
         self.swagger_types = {
             'items': 'list[DataFlowSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

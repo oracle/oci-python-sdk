@@ -78,7 +78,6 @@ class TunnelPhaseOneDetails(object):
             'is_ike_established': 'bool',
             'remaining_lifetime_last_retrieved': 'datetime'
         }
-
         self.attribute_map = {
             'is_custom_phase_one_config': 'isCustomPhaseOneConfig',
             'lifetime': 'lifetime',
@@ -92,7 +91,6 @@ class TunnelPhaseOneDetails(object):
             'is_ike_established': 'isIkeEstablished',
             'remaining_lifetime_last_retrieved': 'remainingLifetimeLastRetrieved'
         }
-
         self._is_custom_phase_one_config = None
         self._lifetime = None
         self._remaining_lifetime = None

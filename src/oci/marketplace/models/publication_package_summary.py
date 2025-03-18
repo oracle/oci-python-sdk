@@ -66,7 +66,6 @@ class PublicationPackageSummary(object):
             'resource_id': 'str',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'listing_id': 'listingId',
             'package_version': 'packageVersion',
@@ -74,7 +73,6 @@ class PublicationPackageSummary(object):
             'resource_id': 'resourceId',
             'time_created': 'timeCreated'
         }
-
         self._listing_id = None
         self._package_version = None
         self._package_type = None

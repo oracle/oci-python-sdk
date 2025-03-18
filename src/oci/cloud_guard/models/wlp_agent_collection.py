@@ -33,12 +33,10 @@ class WlpAgentCollection(object):
             'items': 'list[WlpAgentSummary]',
             'locks': 'list[ResourceLock]'
         }
-
         self.attribute_map = {
             'items': 'items',
             'locks': 'locks'
         }
-
         self._items = None
         self._locks = None
 

@@ -33,12 +33,10 @@ class CaDetails(object):
             'ca_bundle_pem': 'str',
             'certificate_max_validity_duration': 'str'
         }
-
         self.attribute_map = {
             'ca_bundle_pem': 'caBundlePem',
             'certificate_max_validity_duration': 'certificateMaxValidityDuration'
         }
-
         self._ca_bundle_pem = None
         self._certificate_max_validity_duration = None
 

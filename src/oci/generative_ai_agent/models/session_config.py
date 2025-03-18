@@ -28,11 +28,9 @@ class SessionConfig(object):
         self.swagger_types = {
             'idle_timeout_in_seconds': 'int'
         }
-
         self.attribute_map = {
             'idle_timeout_in_seconds': 'idleTimeoutInSeconds'
         }
-
         self._idle_timeout_in_seconds = None
 
     @property

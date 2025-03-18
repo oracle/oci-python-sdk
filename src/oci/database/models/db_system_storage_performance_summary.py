@@ -56,13 +56,11 @@ class DbSystemStoragePerformanceSummary(object):
             'data_storage_performance_list': 'list[StoragePerformanceDetails]',
             'reco_storage_performance_list': 'list[StoragePerformanceDetails]'
         }
-
         self.attribute_map = {
             'shape_type': 'shapeType',
             'data_storage_performance_list': 'dataStoragePerformanceList',
             'reco_storage_performance_list': 'recoStoragePerformanceList'
         }
-
         self._shape_type = None
         self._data_storage_performance_list = None
         self._reco_storage_performance_list = None

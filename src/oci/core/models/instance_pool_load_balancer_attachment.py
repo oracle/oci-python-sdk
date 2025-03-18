@@ -76,7 +76,6 @@ class InstancePoolLoadBalancerAttachment(object):
             'vnic_selection': 'str',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'instance_pool_id': 'instancePoolId',
@@ -86,7 +85,6 @@ class InstancePoolLoadBalancerAttachment(object):
             'vnic_selection': 'vnicSelection',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._id = None
         self._instance_pool_id = None
         self._load_balancer_id = None

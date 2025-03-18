@@ -56,14 +56,12 @@ class ObjectLineageRequestDetails(object):
             'is_intra_lineage': 'bool',
             'intra_lineage_object_key': 'str'
         }
-
         self.attribute_map = {
             'level': 'level',
             'direction': 'direction',
             'is_intra_lineage': 'isIntraLineage',
             'intra_lineage_object_key': 'intraLineageObjectKey'
         }
-
         self._level = None
         self._direction = None
         self._is_intra_lineage = None

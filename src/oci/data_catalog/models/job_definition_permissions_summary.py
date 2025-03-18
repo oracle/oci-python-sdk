@@ -33,12 +33,10 @@ class JobDefinitionPermissionsSummary(object):
             'job_definition_key': 'str',
             'user_permissions': 'list[str]'
         }
-
         self.attribute_map = {
             'job_definition_key': 'jobDefinitionKey',
             'user_permissions': 'userPermissions'
         }
-
         self._job_definition_key = None
         self._user_permissions = None
 

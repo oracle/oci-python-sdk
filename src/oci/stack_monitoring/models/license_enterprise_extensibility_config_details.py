@@ -82,7 +82,6 @@ class LicenseEnterpriseExtensibilityConfigDetails(Config):
             'system_tags': 'dict(str, dict(str, object))',
             'is_enabled': 'bool'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -96,7 +95,6 @@ class LicenseEnterpriseExtensibilityConfigDetails(Config):
             'system_tags': 'systemTags',
             'is_enabled': 'isEnabled'
         }
-
         self._id = None
         self._compartment_id = None
         self._display_name = None

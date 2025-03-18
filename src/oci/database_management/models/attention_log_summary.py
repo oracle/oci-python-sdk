@@ -125,7 +125,6 @@ class AttentionLogSummary(object):
             'supplemental_detail': 'str',
             'file_location': 'str'
         }
-
         self.attribute_map = {
             'message_urgency': 'messageUrgency',
             'message_type': 'messageType',
@@ -138,7 +137,6 @@ class AttentionLogSummary(object):
             'supplemental_detail': 'supplementalDetail',
             'file_location': 'fileLocation'
         }
-
         self._message_urgency = None
         self._message_type = None
         self._message_content = None

@@ -38,13 +38,11 @@ class CustomizationReferencedEntities(object):
             'id': 'str',
             'entity_type': 'str'
         }
-
         self.attribute_map = {
             'alias': 'alias',
             'id': 'id',
             'entity_type': 'entityType'
         }
-
         self._alias = None
         self._id = None
         self._entity_type = None

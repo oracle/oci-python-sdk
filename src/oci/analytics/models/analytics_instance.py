@@ -219,7 +219,6 @@ class AnalyticsInstance(object):
             'feature_bundle': 'str',
             'domain_id': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -244,7 +243,6 @@ class AnalyticsInstance(object):
             'feature_bundle': 'featureBundle',
             'domain_id': 'domainId'
         }
-
         self._id = None
         self._name = None
         self._description = None

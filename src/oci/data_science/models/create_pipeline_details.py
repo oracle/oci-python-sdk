@@ -78,7 +78,6 @@ class CreatePipelineDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'project_id': 'projectId',
             'compartment_id': 'compartmentId',
@@ -92,7 +91,6 @@ class CreatePipelineDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._project_id = None
         self._compartment_id = None
         self._display_name = None

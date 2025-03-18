@@ -38,13 +38,11 @@ class DbIormConfig(object):
             'share': 'int',
             'flash_cache_limit': 'str'
         }
-
         self.attribute_map = {
             'db_name': 'dbName',
             'share': 'share',
             'flash_cache_limit': 'flashCacheLimit'
         }
-
         self._db_name = None
         self._share = None
         self._flash_cache_limit = None

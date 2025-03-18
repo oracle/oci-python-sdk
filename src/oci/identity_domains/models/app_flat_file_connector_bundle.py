@@ -52,14 +52,12 @@ class AppFlatFileConnectorBundle(object):
             'display': 'str',
             'well_known_id': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ref': '$ref',
             'display': 'display',
             'well_known_id': 'wellKnownId'
         }
-
         self._value = None
         self._ref = None
         self._display = None

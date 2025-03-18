@@ -28,11 +28,9 @@ class AttachSoftwareSourcesToProfileDetails(object):
         self.swagger_types = {
             'software_sources': 'list[str]'
         }
-
         self.attribute_map = {
             'software_sources': 'softwareSources'
         }
-
         self._software_sources = None
 
     @property

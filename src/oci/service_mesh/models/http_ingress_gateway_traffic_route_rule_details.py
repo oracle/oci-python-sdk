@@ -75,7 +75,6 @@ class HttpIngressGatewayTrafficRouteRuleDetails(IngressGatewayTrafficRouteRuleDe
             'is_path_rewrite_enabled': 'bool',
             'request_timeout_in_ms': 'int'
         }
-
         self.attribute_map = {
             'type': 'type',
             'ingress_gateway_host': 'ingressGatewayHost',
@@ -87,7 +86,6 @@ class HttpIngressGatewayTrafficRouteRuleDetails(IngressGatewayTrafficRouteRuleDe
             'is_path_rewrite_enabled': 'isPathRewriteEnabled',
             'request_timeout_in_ms': 'requestTimeoutInMs'
         }
-
         self._type = None
         self._ingress_gateway_host = None
         self._destinations = None

@@ -77,14 +77,12 @@ class HealthCheckResult(object):
             'timestamp': 'datetime',
             'health_check_status': 'str'
         }
-
         self.attribute_map = {
             'subnet_id': 'subnetId',
             'source_ip_address': 'sourceIpAddress',
             'timestamp': 'timestamp',
             'health_check_status': 'healthCheckStatus'
         }
-
         self._subnet_id = None
         self._source_ip_address = None
         self._timestamp = None

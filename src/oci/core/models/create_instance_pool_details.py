@@ -73,7 +73,6 @@ class CreateInstancePoolDetails(object):
             'instance_display_name_formatter': 'str',
             'instance_hostname_formatter': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
@@ -86,7 +85,6 @@ class CreateInstancePoolDetails(object):
             'instance_display_name_formatter': 'instanceDisplayNameFormatter',
             'instance_hostname_formatter': 'instanceHostnameFormatter'
         }
-
         self._compartment_id = None
         self._defined_tags = None
         self._display_name = None

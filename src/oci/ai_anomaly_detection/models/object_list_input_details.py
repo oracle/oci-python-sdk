@@ -35,12 +35,10 @@ class ObjectListInputDetails(InputDetails):
             'input_type': 'str',
             'object_locations': 'list[ObjectLocation]'
         }
-
         self.attribute_map = {
             'input_type': 'inputType',
             'object_locations': 'objectLocations'
         }
-
         self._input_type = None
         self._object_locations = None
         self._input_type = 'OBJECT_LIST'

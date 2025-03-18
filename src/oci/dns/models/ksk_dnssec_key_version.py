@@ -100,7 +100,6 @@ class KskDnssecKeyVersion(object):
             'key_tag': 'int',
             'ds_data': 'list[DnssecKeyVersionDsData]'
         }
-
         self.attribute_map = {
             'uuid': 'uuid',
             'algorithm': 'algorithm',
@@ -117,7 +116,6 @@ class KskDnssecKeyVersion(object):
             'key_tag': 'keyTag',
             'ds_data': 'dsData'
         }
-
         self._uuid = None
         self._algorithm = None
         self._length_in_bytes = None

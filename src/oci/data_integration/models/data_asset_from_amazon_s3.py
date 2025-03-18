@@ -105,7 +105,6 @@ class DataAssetFromAmazonS3(DataAsset):
             'region': 'str',
             'default_connection': 'ConnectionSummaryFromAmazonS3'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -124,7 +123,6 @@ class DataAssetFromAmazonS3(DataAsset):
             'region': 'region',
             'default_connection': 'defaultConnection'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

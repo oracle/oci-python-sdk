@@ -64,7 +64,6 @@ class CreateDevopsCodeRepositoryTriggerDetails(CreateTriggerDetails):
             'defined_tags': 'dict(str, dict(str, object))',
             'repository_id': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
@@ -75,7 +74,6 @@ class CreateDevopsCodeRepositoryTriggerDetails(CreateTriggerDetails):
             'defined_tags': 'definedTags',
             'repository_id': 'repositoryId'
         }
-
         self._display_name = None
         self._description = None
         self._project_id = None

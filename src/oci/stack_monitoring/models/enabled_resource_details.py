@@ -28,11 +28,9 @@ class EnabledResourceDetails(object):
         self.swagger_types = {
             'resource_id': 'str'
         }
-
         self.attribute_map = {
             'resource_id': 'resourceId'
         }
-
         self._resource_id = None
 
     @property

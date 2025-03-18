@@ -33,12 +33,10 @@ class DesktopSchedule(object):
             'cron_expression': 'str',
             'timezone': 'str'
         }
-
         self.attribute_map = {
             'cron_expression': 'cronExpression',
             'timezone': 'timezone'
         }
-
         self._cron_expression = None
         self._timezone = None
 

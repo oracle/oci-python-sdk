@@ -76,7 +76,6 @@ class CreateDigitalAssistantVersionDetails(CreateDigitalAssistantDetails):
             'id': 'str',
             'version': 'str'
         }
-
         self.attribute_map = {
             'kind': 'kind',
             'category': 'category',
@@ -89,7 +88,6 @@ class CreateDigitalAssistantVersionDetails(CreateDigitalAssistantDetails):
             'id': 'id',
             'version': 'version'
         }
-
         self._kind = None
         self._category = None
         self._description = None

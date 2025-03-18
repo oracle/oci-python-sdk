@@ -60,7 +60,6 @@ class KeyValueSelectionEntity(Entity):
             'confidence': 'float',
             'page_number': 'float'
         }
-
         self.attribute_map = {
             'entity_type': 'entityType',
             'text': 'text',
@@ -70,7 +69,6 @@ class KeyValueSelectionEntity(Entity):
             'confidence': 'confidence',
             'page_number': 'pageNumber'
         }
-
         self._entity_type = None
         self._text = None
         self._labels = None

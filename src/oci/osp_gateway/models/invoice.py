@@ -200,7 +200,6 @@ class Invoice(object):
             'bill_to_address': 'BillToAddress',
             'subscription_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'invoice_id': 'invoiceId',
             'invoice_number': 'invoiceNumber',
@@ -228,7 +227,6 @@ class Invoice(object):
             'bill_to_address': 'billToAddress',
             'subscription_ids': 'subscriptionIds'
         }
-
         self._invoice_id = None
         self._invoice_number = None
         self._internal_invoice_id = None

@@ -43,14 +43,12 @@ class Line(object):
             'bounding_polygon': 'BoundingPolygon',
             'word_indexes': 'list[int]'
         }
-
         self.attribute_map = {
             'text': 'text',
             'confidence': 'confidence',
             'bounding_polygon': 'boundingPolygon',
             'word_indexes': 'wordIndexes'
         }
-
         self._text = None
         self._confidence = None
         self._bounding_polygon = None

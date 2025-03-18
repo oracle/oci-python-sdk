@@ -67,14 +67,12 @@ class PipelineStepUpdateDetails(object):
             'description': 'str',
             'step_configuration_details': 'PipelineStepConfigurationDetails'
         }
-
         self.attribute_map = {
             'step_type': 'stepType',
             'step_name': 'stepName',
             'description': 'description',
             'step_configuration_details': 'stepConfigurationDetails'
         }
-
         self._step_type = None
         self._step_name = None
         self._description = None

@@ -33,12 +33,10 @@ class ActivateIamUserSyncConfigurationDetails(object):
             'cluster_admin_password': 'str',
             'is_posix_attributes_addition_required': 'bool'
         }
-
         self.attribute_map = {
             'cluster_admin_password': 'clusterAdminPassword',
             'is_posix_attributes_addition_required': 'isPosixAttributesAdditionRequired'
         }
-
         self._cluster_admin_password = None
         self._is_posix_attributes_addition_required = None
 

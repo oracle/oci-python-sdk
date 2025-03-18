@@ -73,7 +73,6 @@ class Publisher(object):
             'logo': 'UploadData',
             'links': 'list[Link]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -86,7 +85,6 @@ class Publisher(object):
             'logo': 'logo',
             'links': 'links'
         }
-
         self._id = None
         self._name = None
         self._description = None

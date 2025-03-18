@@ -132,7 +132,6 @@ class MyRequestableGroup(object):
             'urn_ietf_params_scim_schemas_oracle_idcs_extension_group_group': 'ExtensionGroupGroup',
             'urn_ietf_params_scim_schemas_oracle_idcs_extension_requestable_group': 'ExtensionRequestableGroup'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -154,7 +153,6 @@ class MyRequestableGroup(object):
             'urn_ietf_params_scim_schemas_oracle_idcs_extension_group_group': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:group:Group',
             'urn_ietf_params_scim_schemas_oracle_idcs_extension_requestable_group': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:requestable:Group'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

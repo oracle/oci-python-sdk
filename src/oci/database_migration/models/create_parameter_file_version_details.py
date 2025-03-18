@@ -52,14 +52,12 @@ class CreateParameterFileVersionDetails(object):
             'content': 'str',
             'name': 'str'
         }
-
         self.attribute_map = {
             'description': 'description',
             'kind': 'kind',
             'content': 'content',
             'name': 'name'
         }
-
         self._description = None
         self._kind = None
         self._content = None

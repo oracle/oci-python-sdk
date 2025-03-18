@@ -55,7 +55,6 @@ class HostNetworkActivitySummary(HostPerformanceMetricGroup):
             'all_network_write_in_mbps': 'float',
             'all_network_io_in_mbps': 'float'
         }
-
         self.attribute_map = {
             'metric_name': 'metricName',
             'time_collected': 'timeCollected',
@@ -64,7 +63,6 @@ class HostNetworkActivitySummary(HostPerformanceMetricGroup):
             'all_network_write_in_mbps': 'allNetworkWriteInMbps',
             'all_network_io_in_mbps': 'allNetworkIoInMbps'
         }
-
         self._metric_name = None
         self._time_collected = None
         self._interface_name = None

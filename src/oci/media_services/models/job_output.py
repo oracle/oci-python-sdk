@@ -90,7 +90,6 @@ class JobOutput(object):
             'object_name': 'str',
             'id': 'str'
         }
-
         self.attribute_map = {
             'asset_type': 'assetType',
             'namespace_name': 'namespaceName',
@@ -98,7 +97,6 @@ class JobOutput(object):
             'object_name': 'objectName',
             'id': 'id'
         }
-
         self._asset_type = None
         self._namespace_name = None
         self._bucket_name = None

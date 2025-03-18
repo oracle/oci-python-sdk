@@ -33,12 +33,10 @@ class UpdateExportDetails(object):
             'is_idmap_groups_for_sys_auth': 'bool',
             'export_options': 'list[ClientOptions]'
         }
-
         self.attribute_map = {
             'is_idmap_groups_for_sys_auth': 'isIdmapGroupsForSysAuth',
             'export_options': 'exportOptions'
         }
-
         self._is_idmap_groups_for_sys_auth = None
         self._export_options = None
 

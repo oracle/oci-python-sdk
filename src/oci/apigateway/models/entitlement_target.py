@@ -28,11 +28,9 @@ class EntitlementTarget(object):
         self.swagger_types = {
             'deployment_id': 'str'
         }
-
         self.attribute_map = {
             'deployment_id': 'deploymentId'
         }
-
         self._deployment_id = None
 
     @property

@@ -43,12 +43,10 @@ class SecureConnectionDetails(object):
             'certificate_id': 'str',
             'certificate_generation_type': 'str'
         }
-
         self.attribute_map = {
             'certificate_id': 'certificateId',
             'certificate_generation_type': 'certificateGenerationType'
         }
-
         self._certificate_id = None
         self._certificate_generation_type = None
 

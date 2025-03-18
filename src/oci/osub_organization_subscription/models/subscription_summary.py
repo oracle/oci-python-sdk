@@ -63,7 +63,6 @@ class SubscriptionSummary(object):
             'currency': 'Currency',
             'total_value': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'service_name': 'serviceName',
@@ -74,7 +73,6 @@ class SubscriptionSummary(object):
             'currency': 'currency',
             'total_value': 'totalValue'
         }
-
         self._id = None
         self._service_name = None
         self._type = None

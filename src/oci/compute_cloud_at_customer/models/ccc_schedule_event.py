@@ -49,7 +49,6 @@ class CccScheduleEvent(object):
             'schedule_event_duration': 'str',
             'schedule_event_recurrences': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'description': 'description',
@@ -57,7 +56,6 @@ class CccScheduleEvent(object):
             'schedule_event_duration': 'scheduleEventDuration',
             'schedule_event_recurrences': 'scheduleEventRecurrences'
         }
-
         self._name = None
         self._description = None
         self._time_start = None

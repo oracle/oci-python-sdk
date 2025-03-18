@@ -181,7 +181,6 @@ class ClassicSubscription(Subscription):
             'end_date': 'datetime',
             'region_assignments': 'list[str]'
         }
-
         self.attribute_map = {
             'entity_version': 'entityVersion',
             'id': 'id',
@@ -209,7 +208,6 @@ class ClassicSubscription(Subscription):
             'end_date': 'endDate',
             'region_assignments': 'regionAssignments'
         }
-
         self._entity_version = None
         self._id = None
         self._compartment_id = None

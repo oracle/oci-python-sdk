@@ -137,7 +137,6 @@ class CreateEntityShapeFromSQL(CreateEntityShapeDetails):
             'identifier': 'str',
             'sql_query': 'str'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -159,7 +158,6 @@ class CreateEntityShapeFromSQL(CreateEntityShapeDetails):
             'identifier': 'identifier',
             'sql_query': 'sqlQuery'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

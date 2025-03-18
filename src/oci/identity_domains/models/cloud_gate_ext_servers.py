@@ -48,7 +48,6 @@ class CloudGateExtServers(object):
             'ssl': 'bool',
             'nginx_settings': 'str'
         }
-
         self.attribute_map = {
             'server_id': 'serverId',
             'host_name': 'hostName',
@@ -56,7 +55,6 @@ class CloudGateExtServers(object):
             'ssl': 'ssl',
             'nginx_settings': 'nginxSettings'
         }
-
         self._server_id = None
         self._host_name = None
         self._port = None

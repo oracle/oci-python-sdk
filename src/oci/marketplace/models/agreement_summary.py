@@ -57,14 +57,12 @@ class AgreementSummary(object):
             'author': 'str',
             'prompt': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'content_url': 'contentUrl',
             'author': 'author',
             'prompt': 'prompt'
         }
-
         self._id = None
         self._content_url = None
         self._author = None

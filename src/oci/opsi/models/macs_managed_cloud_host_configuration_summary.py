@@ -141,7 +141,6 @@ class MacsManagedCloudHostConfigurationSummary(HostConfigurationSummary):
             'management_agent_id': 'str',
             'connector_id': 'str'
         }
-
         self.attribute_map = {
             'host_insight_id': 'hostInsightId',
             'entity_source': 'entitySource',
@@ -167,7 +166,6 @@ class MacsManagedCloudHostConfigurationSummary(HostConfigurationSummary):
             'management_agent_id': 'managementAgentId',
             'connector_id': 'connectorId'
         }
-
         self._host_insight_id = None
         self._entity_source = None
         self._compartment_id = None

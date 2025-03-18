@@ -61,7 +61,6 @@ class PipelineMLJobStepRun(PipelineStepRun):
             'lifecycle_details': 'str',
             'job_run_id': 'str'
         }
-
         self.attribute_map = {
             'step_type': 'stepType',
             'time_started': 'timeStarted',
@@ -71,7 +70,6 @@ class PipelineMLJobStepRun(PipelineStepRun):
             'lifecycle_details': 'lifecycleDetails',
             'job_run_id': 'jobRunId'
         }
-
         self._step_type = None
         self._time_started = None
         self._time_finished = None

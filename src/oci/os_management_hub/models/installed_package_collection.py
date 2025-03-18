@@ -28,11 +28,9 @@ class InstalledPackageCollection(object):
         self.swagger_types = {
             'items': 'list[InstalledPackageSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

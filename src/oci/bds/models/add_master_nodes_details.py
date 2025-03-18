@@ -48,7 +48,6 @@ class AddMasterNodesDetails(object):
             'block_volume_size_in_gbs': 'int',
             'shape_config': 'ShapeConfigDetails'
         }
-
         self.attribute_map = {
             'cluster_admin_password': 'clusterAdminPassword',
             'number_of_master_nodes': 'numberOfMasterNodes',
@@ -56,7 +55,6 @@ class AddMasterNodesDetails(object):
             'block_volume_size_in_gbs': 'blockVolumeSizeInGBs',
             'shape_config': 'shapeConfig'
         }
-
         self._cluster_admin_password = None
         self._number_of_master_nodes = None
         self._shape = None

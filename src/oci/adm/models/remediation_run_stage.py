@@ -156,7 +156,6 @@ class RemediationRunStage(object):
             'previous_stage_type': 'str',
             'next_stage_type': 'str'
         }
-
         self.attribute_map = {
             'status': 'status',
             'time_created': 'timeCreated',
@@ -168,7 +167,6 @@ class RemediationRunStage(object):
             'previous_stage_type': 'previousStageType',
             'next_stage_type': 'nextStageType'
         }
-
         self._status = None
         self._time_created = None
         self._time_started = None

@@ -33,12 +33,10 @@ class SdkLanguageOptionalParametersAllowedValue(object):
             'name': 'str',
             'description': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'description': 'description'
         }
-
         self._name = None
         self._description = None
 

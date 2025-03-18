@@ -68,7 +68,6 @@ class LabelSourceSummary(object):
             'label_field_displayname': 'str',
             'label_field_name': 'str'
         }
-
         self.attribute_map = {
             'source_display_name': 'sourceDisplayName',
             'source_name': 'sourceName',
@@ -80,7 +79,6 @@ class LabelSourceSummary(object):
             'label_field_displayname': 'labelFieldDisplayname',
             'label_field_name': 'labelFieldName'
         }
-
         self._source_display_name = None
         self._source_name = None
         self._source_id = None

@@ -43,14 +43,12 @@ class GenerateLoadPipelineScriptDetails(object):
             'target_bucket_region': 'str',
             'interval_minutes': 'int'
         }
-
         self.attribute_map = {
             'target_bucket_name': 'targetBucketName',
             'target_bucket_namespace': 'targetBucketNamespace',
             'target_bucket_region': 'targetBucketRegion',
             'interval_minutes': 'intervalMinutes'
         }
-
         self._target_bucket_name = None
         self._target_bucket_namespace = None
         self._target_bucket_region = None

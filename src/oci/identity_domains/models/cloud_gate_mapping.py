@@ -152,7 +152,6 @@ class CloudGateMapping(object):
             'gateway_app': 'CloudGateMappingGatewayApp',
             'cloud_gate': 'CloudGateMappingCloudGate'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -178,7 +177,6 @@ class CloudGateMapping(object):
             'gateway_app': 'gatewayApp',
             'cloud_gate': 'cloudGate'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

@@ -53,7 +53,6 @@ class QueryResultMetadataSummary(object):
             'query_results_topology_info': 'QueryResultsTopologyInfo',
             'time_series_interval_in_mins': 'int'
         }
-
         self.attribute_map = {
             'query_result_row_type_summaries': 'queryResultRowTypeSummaries',
             'source_name': 'sourceName',
@@ -62,7 +61,6 @@ class QueryResultMetadataSummary(object):
             'query_results_topology_info': 'queryResultsTopologyInfo',
             'time_series_interval_in_mins': 'timeSeriesIntervalInMins'
         }
-
         self._query_result_row_type_summaries = None
         self._source_name = None
         self._query_results_grouped_by = None

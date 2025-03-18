@@ -48,7 +48,6 @@ class AvailableSoftwareSourceSummary(object):
             'parent_id': 'str',
             'parent_name': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -56,7 +55,6 @@ class AvailableSoftwareSourceSummary(object):
             'parent_id': 'parentId',
             'parent_name': 'parentName'
         }
-
         self._id = None
         self._compartment_id = None
         self._display_name = None

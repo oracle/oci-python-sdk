@@ -38,13 +38,11 @@ class PublisherSummary(object):
             'name': 'str',
             'description': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
             'description': 'description'
         }
-
         self._id = None
         self._name = None
         self._description = None

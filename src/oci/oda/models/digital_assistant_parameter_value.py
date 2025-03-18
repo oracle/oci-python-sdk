@@ -59,13 +59,11 @@ class DigitalAssistantParameterValue(object):
             'type': 'str',
             'value': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'type': 'type',
             'value': 'value'
         }
-
         self._name = None
         self._type = None
         self._value = None

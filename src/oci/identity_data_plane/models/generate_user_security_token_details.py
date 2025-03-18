@@ -33,12 +33,10 @@ class GenerateUserSecurityTokenDetails(object):
             'public_key': 'str',
             'session_expiration_in_minutes': 'int'
         }
-
         self.attribute_map = {
             'public_key': 'publicKey',
             'session_expiration_in_minutes': 'sessionExpirationInMinutes'
         }
-
         self._public_key = None
         self._session_expiration_in_minutes = None
 

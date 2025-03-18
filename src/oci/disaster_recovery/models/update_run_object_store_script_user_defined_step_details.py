@@ -40,13 +40,11 @@ class UpdateRunObjectStoreScriptUserDefinedStepDetails(UpdateDrPlanUserDefinedSt
             'run_on_instance_id': 'str',
             'object_storage_script_location': 'UpdateObjectStorageScriptLocationDetails'
         }
-
         self.attribute_map = {
             'step_type': 'stepType',
             'run_on_instance_id': 'runOnInstanceId',
             'object_storage_script_location': 'objectStorageScriptLocation'
         }
-
         self._step_type = None
         self._run_on_instance_id = None
         self._object_storage_script_location = None

@@ -181,7 +181,6 @@ class MicrosoftSqlserverConnectionSummary(ConnectionSummary):
             'private_ip': 'str',
             'password_secret_id': 'str'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'id': 'id',
@@ -215,7 +214,6 @@ class MicrosoftSqlserverConnectionSummary(ConnectionSummary):
             'private_ip': 'privateIp',
             'password_secret_id': 'passwordSecretId'
         }
-
         self._connection_type = None
         self._id = None
         self._display_name = None

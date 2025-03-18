@@ -44,14 +44,12 @@ class EntityList(object):
             'entity_type': 'str',
             'entities': 'list[Entity]'
         }
-
         self.attribute_map = {
             'alias': 'alias',
             'id': 'id',
             'entity_type': 'entityType',
             'entities': 'entities'
         }
-
         self._alias = None
         self._id = None
         self._entity_type = None

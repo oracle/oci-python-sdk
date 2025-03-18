@@ -46,12 +46,10 @@ class AutonomousDatabaseBackupConfig(object):
             'manual_backup_bucket_name': 'str',
             'manual_backup_type': 'str'
         }
-
         self.attribute_map = {
             'manual_backup_bucket_name': 'manualBackupBucketName',
             'manual_backup_type': 'manualBackupType'
         }
-
         self._manual_backup_bucket_name = None
         self._manual_backup_type = None
 

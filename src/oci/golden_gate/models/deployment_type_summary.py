@@ -233,7 +233,6 @@ class DeploymentTypeSummary(object):
             'supported_technologies_url': 'str',
             'default_username': 'str'
         }
-
         self.attribute_map = {
             'category': 'category',
             'display_name': 'displayName',
@@ -245,7 +244,6 @@ class DeploymentTypeSummary(object):
             'supported_technologies_url': 'supportedTechnologiesUrl',
             'default_username': 'defaultUsername'
         }
-
         self._category = None
         self._display_name = None
         self._deployment_type = None

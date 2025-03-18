@@ -33,12 +33,10 @@ class NvdimmController(object):
             'label': 'str',
             'bus_number': 'int'
         }
-
         self.attribute_map = {
             'label': 'label',
             'bus_number': 'busNumber'
         }
-
         self._label = None
         self._bus_number = None
 

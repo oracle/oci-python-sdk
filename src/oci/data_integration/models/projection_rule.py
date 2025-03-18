@@ -98,7 +98,6 @@ class ProjectionRule(object):
             'object_status': 'int',
             'description': 'str'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -109,7 +108,6 @@ class ProjectionRule(object):
             'object_status': 'objectStatus',
             'description': 'description'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

@@ -28,11 +28,9 @@ class ResourceAdditionalDetails(object):
         self.swagger_types = {
             'os_info': 'str'
         }
-
         self.attribute_map = {
             'os_info': 'osInfo'
         }
-
         self._os_info = None
 
     @property

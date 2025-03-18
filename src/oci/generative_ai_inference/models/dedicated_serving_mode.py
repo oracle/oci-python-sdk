@@ -35,12 +35,10 @@ class DedicatedServingMode(ServingMode):
             'serving_type': 'str',
             'endpoint_id': 'str'
         }
-
         self.attribute_map = {
             'serving_type': 'servingType',
             'endpoint_id': 'endpointId'
         }
-
         self._serving_type = None
         self._endpoint_id = None
         self._serving_type = 'DEDICATED'

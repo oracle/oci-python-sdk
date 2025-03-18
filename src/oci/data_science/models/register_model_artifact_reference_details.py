@@ -28,11 +28,9 @@ class RegisterModelArtifactReferenceDetails(object):
         self.swagger_types = {
             'model_artifact_references': 'list[ModelArtifactReferenceDetails]'
         }
-
         self.attribute_map = {
             'model_artifact_references': 'modelArtifactReferences'
         }
-
         self._model_artifact_references = None
 
     @property

@@ -69,7 +69,6 @@ class MyRequestableGroupMembers(object):
             'type': 'str',
             'name': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'date_added': 'dateAdded',
@@ -80,7 +79,6 @@ class MyRequestableGroupMembers(object):
             'type': 'type',
             'name': 'name'
         }
-
         self._value = None
         self._date_added = None
         self._ocid = None

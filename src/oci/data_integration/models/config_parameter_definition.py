@@ -58,7 +58,6 @@ class ConfigParameterDefinition(object):
             'is_static': 'bool',
             'is_class_field_value': 'bool'
         }
-
         self.attribute_map = {
             'parameter_type': 'parameterType',
             'parameter_name': 'parameterName',
@@ -68,7 +67,6 @@ class ConfigParameterDefinition(object):
             'is_static': 'isStatic',
             'is_class_field_value': 'isClassFieldValue'
         }
-
         self._parameter_type = None
         self._parameter_name = None
         self._description = None

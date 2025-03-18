@@ -43,14 +43,12 @@ class ProcessSetSpecificationDetails(object):
             'process_user': 'str',
             'process_line_regex_pattern': 'str'
         }
-
         self.attribute_map = {
             'label': 'label',
             'process_command': 'processCommand',
             'process_user': 'processUser',
             'process_line_regex_pattern': 'processLineRegexPattern'
         }
-
         self._label = None
         self._process_command = None
         self._process_user = None

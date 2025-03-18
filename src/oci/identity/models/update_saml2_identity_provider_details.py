@@ -60,7 +60,6 @@ class UpdateSaml2IdentityProviderDetails(UpdateIdentityProviderDetails):
             'metadata': 'str',
             'freeform_attributes': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'protocol': 'protocol',
             'description': 'description',
@@ -70,7 +69,6 @@ class UpdateSaml2IdentityProviderDetails(UpdateIdentityProviderDetails):
             'metadata': 'metadata',
             'freeform_attributes': 'freeformAttributes'
         }
-
         self._protocol = None
         self._description = None
         self._freeform_tags = None

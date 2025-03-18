@@ -33,12 +33,10 @@ class PrivateSourceDnsZone(object):
             'dns_zone': 'str',
             'description': 'str'
         }
-
         self.attribute_map = {
             'dns_zone': 'dnsZone',
             'description': 'description'
         }
-
         self._dns_zone = None
         self._description = None
 

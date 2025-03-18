@@ -28,11 +28,9 @@ class ApplyDiscoveryJobResultsDetails(object):
         self.swagger_types = {
             'discovery_job_id': 'str'
         }
-
         self.attribute_map = {
             'discovery_job_id': 'discoveryJobId'
         }
-
         self._discovery_job_id = None
 
     @property

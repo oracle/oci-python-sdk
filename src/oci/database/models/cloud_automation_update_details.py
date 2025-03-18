@@ -43,14 +43,12 @@ class CloudAutomationUpdateDetails(object):
             'apply_update_time_preference': 'CloudAutomationApplyUpdateTimePreference',
             'freeze_period': 'CloudAutomationFreezePeriod'
         }
-
         self.attribute_map = {
             'is_early_adoption_enabled': 'isEarlyAdoptionEnabled',
             'is_freeze_period_enabled': 'isFreezePeriodEnabled',
             'apply_update_time_preference': 'applyUpdateTimePreference',
             'freeze_period': 'freezePeriod'
         }
-
         self._is_early_adoption_enabled = None
         self._is_freeze_period_enabled = None
         self._apply_update_time_preference = None

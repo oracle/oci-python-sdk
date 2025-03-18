@@ -85,7 +85,6 @@ class CreateGovernanceInstanceDetails(object):
             'freeform_tags': 'dict(str, str)',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
@@ -97,7 +96,6 @@ class CreateGovernanceInstanceDetails(object):
             'freeform_tags': 'freeformTags',
             'system_tags': 'systemTags'
         }
-
         self._display_name = None
         self._description = None
         self._license_type = None

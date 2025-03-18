@@ -70,7 +70,6 @@ class EnableAutonomousDatabaseInsightDetails(EnableDatabaseInsightDetails):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'entity_source': 'entitySource',
             'database_resource_type': 'databaseResourceType',
@@ -82,7 +81,6 @@ class EnableAutonomousDatabaseInsightDetails(EnableDatabaseInsightDetails):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._entity_source = None
         self._database_resource_type = None
         self._is_advanced_features_enabled = None

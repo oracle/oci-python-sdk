@@ -33,12 +33,10 @@ class MutualTlsDetails(object):
             'is_verified_certificate_required': 'bool',
             'allowed_sans': 'list[str]'
         }
-
         self.attribute_map = {
             'is_verified_certificate_required': 'isVerifiedCertificateRequired',
             'allowed_sans': 'allowedSans'
         }
-
         self._is_verified_certificate_required = None
         self._allowed_sans = None
 

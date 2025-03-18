@@ -43,14 +43,12 @@ class BatchDetectLanguageSentimentsDetails(object):
             'compartment_id': 'str',
             'documents': 'list[TextDocument]'
         }
-
         self.attribute_map = {
             'alias': 'alias',
             'endpoint_id': 'endpointId',
             'compartment_id': 'compartmentId',
             'documents': 'documents'
         }
-
         self._alias = None
         self._endpoint_id = None
         self._compartment_id = None

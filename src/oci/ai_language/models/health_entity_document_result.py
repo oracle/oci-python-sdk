@@ -48,7 +48,6 @@ class HealthEntityDocumentResult(object):
             'resolved_entities': 'dict(str, ResolvedEntities)',
             'language_code': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'entities': 'entities',
@@ -56,7 +55,6 @@ class HealthEntityDocumentResult(object):
             'resolved_entities': 'resolvedEntities',
             'language_code': 'languageCode'
         }
-
         self._key = None
         self._entities = None
         self._relations = None

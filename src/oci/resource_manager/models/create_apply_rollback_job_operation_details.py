@@ -57,7 +57,6 @@ class CreateApplyRollbackJobOperationDetails(CreateJobOperationDetails):
             'execution_plan_rollback_job_id': 'str',
             'target_rollback_job_id': 'str'
         }
-
         self.attribute_map = {
             'operation': 'operation',
             'is_provider_upgrade_required': 'isProviderUpgradeRequired',
@@ -66,7 +65,6 @@ class CreateApplyRollbackJobOperationDetails(CreateJobOperationDetails):
             'execution_plan_rollback_job_id': 'executionPlanRollbackJobId',
             'target_rollback_job_id': 'targetRollbackJobId'
         }
-
         self._operation = None
         self._is_provider_upgrade_required = None
         self._terraform_advanced_options = None

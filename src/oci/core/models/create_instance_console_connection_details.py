@@ -44,14 +44,12 @@ class CreateInstanceConsoleConnectionDetails(object):
             'instance_id': 'str',
             'public_key': 'str'
         }
-
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
             'instance_id': 'instanceId',
             'public_key': 'publicKey'
         }
-
         self._defined_tags = None
         self._freeform_tags = None
         self._instance_id = None

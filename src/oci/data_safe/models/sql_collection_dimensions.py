@@ -71,12 +71,10 @@ class SqlCollectionDimensions(object):
             'target_id': 'str',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'target_id': 'targetId',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._target_id = None
         self._lifecycle_state = None
 

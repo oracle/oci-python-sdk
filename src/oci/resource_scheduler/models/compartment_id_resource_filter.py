@@ -40,13 +40,11 @@ class CompartmentIdResourceFilter(ResourceFilter):
             'value': 'str',
             'should_include_child_compartments': 'bool'
         }
-
         self.attribute_map = {
             'attribute': 'attribute',
             'value': 'value',
             'should_include_child_compartments': 'shouldIncludeChildCompartments'
         }
-
         self._attribute = None
         self._value = None
         self._should_include_child_compartments = None

@@ -38,13 +38,11 @@ class MultipathDevice(object):
             'iqn': 'str',
             'port': 'int'
         }
-
         self.attribute_map = {
             'ipv4': 'ipv4',
             'iqn': 'iqn',
             'port': 'port'
         }
-
         self._ipv4 = None
         self._iqn = None
         self._port = None

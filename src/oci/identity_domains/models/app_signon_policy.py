@@ -43,12 +43,10 @@ class AppSignonPolicy(object):
             'value': 'str',
             'ref': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ref': '$ref'
         }
-
         self._value = None
         self._ref = None
 

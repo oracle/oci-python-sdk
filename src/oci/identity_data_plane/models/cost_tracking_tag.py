@@ -43,14 +43,12 @@ class CostTrackingTag(object):
             'tag_definition_id': 'str',
             'tag_definition_name': 'str'
         }
-
         self.attribute_map = {
             'tag_namespace_id': 'Tag_Namespace_Id',
             'tag_namespace_name': 'Tag_Namespace_Name',
             'tag_definition_id': 'Tag_Definition_Id',
             'tag_definition_name': 'Tag_Definition_Name'
         }
-
         self._tag_namespace_id = None
         self._tag_namespace_name = None
         self._tag_definition_id = None

@@ -48,13 +48,11 @@ class SensitiveObjectSummary(object):
             'object_name': 'str',
             'object_type': 'str'
         }
-
         self.attribute_map = {
             'schema_name': 'schemaName',
             'object_name': 'objectName',
             'object_type': 'objectType'
         }
-
         self._schema_name = None
         self._object_name = None
         self._object_type = None

@@ -33,12 +33,10 @@ class CertificateRevocationListDetails(object):
             'object_storage_config': 'ObjectStorageBucketConfigDetails',
             'custom_formatted_urls': 'list[str]'
         }
-
         self.attribute_map = {
             'object_storage_config': 'objectStorageConfig',
             'custom_formatted_urls': 'customFormattedUrls'
         }
-
         self._object_storage_config = None
         self._custom_formatted_urls = None
 

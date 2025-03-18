@@ -213,7 +213,6 @@ class DetectorRecipeDetectorRuleSummary(object):
             'data_source_id': 'str',
             'entities_mappings': 'list[EntitiesMapping]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -232,7 +231,6 @@ class DetectorRecipeDetectorRuleSummary(object):
             'data_source_id': 'dataSourceId',
             'entities_mappings': 'entitiesMappings'
         }
-
         self._id = None
         self._display_name = None
         self._description = None

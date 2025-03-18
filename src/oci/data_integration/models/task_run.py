@@ -276,7 +276,6 @@ class TaskRun(object):
             'metadata': 'ObjectMetadata',
             'key_map': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'key': 'key',
             'model_type': 'modelType',
@@ -312,7 +311,6 @@ class TaskRun(object):
             'metadata': 'metadata',
             'key_map': 'keyMap'
         }
-
         self._key = None
         self._model_type = None
         self._model_version = None

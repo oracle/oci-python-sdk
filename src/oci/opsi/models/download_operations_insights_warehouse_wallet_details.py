@@ -28,11 +28,9 @@ class DownloadOperationsInsightsWarehouseWalletDetails(object):
         self.swagger_types = {
             'operations_insights_warehouse_wallet_password': 'str'
         }
-
         self.attribute_map = {
             'operations_insights_warehouse_wallet_password': 'operationsInsightsWarehouseWalletPassword'
         }
-
         self._operations_insights_warehouse_wallet_password = None
 
     @property

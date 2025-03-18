@@ -55,7 +55,6 @@ class BitbucketCloudConfigSource(ConfigSource):
             'branch_name': 'str',
             'workspace_id': 'str'
         }
-
         self.attribute_map = {
             'config_source_type': 'configSourceType',
             'working_directory': 'workingDirectory',
@@ -64,7 +63,6 @@ class BitbucketCloudConfigSource(ConfigSource):
             'branch_name': 'branchName',
             'workspace_id': 'workspaceId'
         }
-
         self._config_source_type = None
         self._working_directory = None
         self._configuration_source_provider_id = None

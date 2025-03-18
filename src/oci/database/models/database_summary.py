@@ -237,7 +237,6 @@ class DatabaseSummary(object):
             'data_guard_group': 'DataGuardGroup',
             'encryption_key_location_details': 'EncryptionKeyLocationDetails'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -273,7 +272,6 @@ class DatabaseSummary(object):
             'data_guard_group': 'dataGuardGroup',
             'encryption_key_location_details': 'encryptionKeyLocationDetails'
         }
-
         self._id = None
         self._compartment_id = None
         self._character_set = None

@@ -50,7 +50,6 @@ class PutMessagesResultEntry(object):
             'error': 'str',
             'error_message': 'str'
         }
-
         self.attribute_map = {
             'partition': 'partition',
             'offset': 'offset',
@@ -58,7 +57,6 @@ class PutMessagesResultEntry(object):
             'error': 'error',
             'error_message': 'errorMessage'
         }
-
         self._partition = None
         self._offset = None
         self._timestamp = None

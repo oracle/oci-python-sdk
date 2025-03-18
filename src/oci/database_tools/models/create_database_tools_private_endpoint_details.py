@@ -73,7 +73,6 @@ class CreateDatabaseToolsPrivateEndpointDetails(object):
             'private_endpoint_ip': 'str',
             'nsg_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
@@ -86,7 +85,6 @@ class CreateDatabaseToolsPrivateEndpointDetails(object):
             'private_endpoint_ip': 'privateEndpointIp',
             'nsg_ids': 'nsgIds'
         }
-
         self._compartment_id = None
         self._defined_tags = None
         self._freeform_tags = None

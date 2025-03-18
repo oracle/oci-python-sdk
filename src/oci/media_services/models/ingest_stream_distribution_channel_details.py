@@ -37,11 +37,9 @@ class IngestStreamDistributionChannelDetails(object):
         self.swagger_types = {
             'ingest_payload_type': 'str'
         }
-
         self.attribute_map = {
             'ingest_payload_type': 'ingestPayloadType'
         }
-
         self._ingest_payload_type = None
 
     @staticmethod

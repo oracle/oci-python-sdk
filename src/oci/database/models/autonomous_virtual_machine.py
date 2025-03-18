@@ -123,7 +123,6 @@ class AutonomousVirtualMachine(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'cloud_autonomous_vm_cluster_id': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'vm_name': 'vmName',
@@ -140,7 +139,6 @@ class AutonomousVirtualMachine(object):
             'defined_tags': 'definedTags',
             'cloud_autonomous_vm_cluster_id': 'cloudAutonomousVmClusterId'
         }
-
         self._id = None
         self._vm_name = None
         self._db_server_id = None

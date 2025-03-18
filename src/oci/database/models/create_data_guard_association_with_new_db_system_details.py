@@ -201,7 +201,6 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
             'database_defined_tags': 'dict(str, dict(str, object))',
             'data_collection_options': 'DataCollectionOptions'
         }
-
         self.attribute_map = {
             'database_software_image_id': 'databaseSoftwareImageId',
             'database_admin_password': 'databaseAdminPassword',
@@ -235,7 +234,6 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
             'database_defined_tags': 'databaseDefinedTags',
             'data_collection_options': 'dataCollectionOptions'
         }
-
         self._database_software_image_id = None
         self._database_admin_password = None
         self._source_encryption_key_location_details = None

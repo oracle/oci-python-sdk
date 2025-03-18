@@ -33,12 +33,10 @@ class RequestUsage(object):
             'read_units_consumed': 'int',
             'write_units_consumed': 'int'
         }
-
         self.attribute_map = {
             'read_units_consumed': 'readUnitsConsumed',
             'write_units_consumed': 'writeUnitsConsumed'
         }
-
         self._read_units_consumed = None
         self._write_units_consumed = None
 

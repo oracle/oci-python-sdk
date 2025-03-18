@@ -189,7 +189,6 @@ class ScheduledActivity(object):
             'scheduled_activity_phase': 'str',
             'scheduled_activity_association_id': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -208,7 +207,6 @@ class ScheduledActivity(object):
             'scheduled_activity_phase': 'scheduledActivityPhase',
             'scheduled_activity_association_id': 'scheduledActivityAssociationId'
         }
-
         self._id = None
         self._display_name = None
         self._run_cycle = None

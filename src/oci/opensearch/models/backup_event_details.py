@@ -66,7 +66,6 @@ class BackupEventDetails(object):
             'time_ended': 'datetime',
             'backup_size': 'float'
         }
-
         self.attribute_map = {
             'cluster_id': 'clusterId',
             'backup_state': 'backupState',
@@ -75,7 +74,6 @@ class BackupEventDetails(object):
             'time_ended': 'timeEnded',
             'backup_size': 'backupSize'
         }
-
         self._cluster_id = None
         self._backup_state = None
         self._snapshot_name = None

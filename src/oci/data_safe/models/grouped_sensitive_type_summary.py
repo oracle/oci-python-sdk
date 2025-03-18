@@ -28,11 +28,9 @@ class GroupedSensitiveTypeSummary(object):
         self.swagger_types = {
             'sensitive_type_id': 'str'
         }
-
         self.attribute_map = {
             'sensitive_type_id': 'sensitiveTypeId'
         }
-
         self._sensitive_type_id = None
 
     @property

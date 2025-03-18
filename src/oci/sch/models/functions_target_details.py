@@ -54,7 +54,6 @@ class FunctionsTargetDetails(TargetDetails):
             'batch_size_in_num': 'int',
             'batch_time_in_sec': 'int'
         }
-
         self.attribute_map = {
             'kind': 'kind',
             'function_id': 'functionId',
@@ -62,7 +61,6 @@ class FunctionsTargetDetails(TargetDetails):
             'batch_size_in_num': 'batchSizeInNum',
             'batch_time_in_sec': 'batchTimeInSec'
         }
-
         self._kind = None
         self._function_id = None
         self._batch_size_in_kbs = None

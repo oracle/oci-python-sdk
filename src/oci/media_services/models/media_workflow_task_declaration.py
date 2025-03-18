@@ -48,7 +48,6 @@ class MediaWorkflowTaskDeclaration(object):
             'parameters_schema_allowing_references': 'dict(str, object)',
             'locks': 'list[ResourceLock]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'version': 'version',
@@ -56,7 +55,6 @@ class MediaWorkflowTaskDeclaration(object):
             'parameters_schema_allowing_references': 'parametersSchemaAllowingReferences',
             'locks': 'locks'
         }
-
         self._name = None
         self._version = None
         self._parameters_schema = None

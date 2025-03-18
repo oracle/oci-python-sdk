@@ -28,11 +28,9 @@ class QueryDetails(object):
         self.swagger_types = {
             'query_text': 'str'
         }
-
         self.attribute_map = {
             'query_text': 'queryText'
         }
-
         self._query_text = None
 
     @property

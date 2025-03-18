@@ -33,12 +33,10 @@ class PointInTimeRecoveryDetails(object):
             'time_earliest_recovery_point': 'datetime',
             'time_latest_recovery_point': 'datetime'
         }
-
         self.attribute_map = {
             'time_earliest_recovery_point': 'timeEarliestRecoveryPoint',
             'time_latest_recovery_point': 'timeLatestRecoveryPoint'
         }
-
         self._time_earliest_recovery_point = None
         self._time_latest_recovery_point = None
 

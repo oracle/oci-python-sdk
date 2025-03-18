@@ -35,12 +35,10 @@ class PemCaCertificate(CaCertificate):
             'certificate_type': 'str',
             'contents': 'str'
         }
-
         self.attribute_map = {
             'certificate_type': 'certificateType',
             'contents': 'contents'
         }
-
         self._certificate_type = None
         self._contents = None
         self._certificate_type = 'PEM'

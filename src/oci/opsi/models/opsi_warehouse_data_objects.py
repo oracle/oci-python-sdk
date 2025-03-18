@@ -28,11 +28,9 @@ class OpsiWarehouseDataObjects(object):
         self.swagger_types = {
             'opsi_warehouse_data_objects': 'object'
         }
-
         self.attribute_map = {
             'opsi_warehouse_data_objects': 'opsiWarehouseDataObjects'
         }
-
         self._opsi_warehouse_data_objects = None
 
     @property

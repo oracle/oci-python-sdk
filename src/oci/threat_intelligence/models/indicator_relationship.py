@@ -38,13 +38,11 @@ class IndicatorRelationship(object):
             'related_entity': 'EntityReference',
             'attribution': 'list[DataAttribution]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'related_entity': 'relatedEntity',
             'attribution': 'attribution'
         }
-
         self._name = None
         self._related_entity = None
         self._attribution = None

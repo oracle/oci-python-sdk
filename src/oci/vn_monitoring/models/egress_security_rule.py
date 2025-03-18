@@ -73,7 +73,6 @@ class EgressSecurityRule(object):
             'udp_options': 'UdpOptions',
             'description': 'str'
         }
-
         self.attribute_map = {
             'destination': 'destination',
             'destination_type': 'destinationType',
@@ -84,7 +83,6 @@ class EgressSecurityRule(object):
             'udp_options': 'udpOptions',
             'description': 'description'
         }
-
         self._destination = None
         self._destination_type = None
         self._icmp_options = None

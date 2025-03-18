@@ -50,7 +50,6 @@ class KeyEncryptionCredentialDetails(CredentialDetails):
             'key_version': 'str',
             'vault_id': 'str'
         }
-
         self.attribute_map = {
             'credential_type': 'credentialType',
             'value': 'value',
@@ -58,7 +57,6 @@ class KeyEncryptionCredentialDetails(CredentialDetails):
             'key_version': 'keyVersion',
             'vault_id': 'vaultId'
         }
-
         self._credential_type = None
         self._value = None
         self._key_id = None

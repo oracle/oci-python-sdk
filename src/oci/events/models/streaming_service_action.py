@@ -61,7 +61,6 @@ class StreamingServiceAction(Action):
             'description': 'str',
             'stream_id': 'str'
         }
-
         self.attribute_map = {
             'action_type': 'actionType',
             'id': 'id',
@@ -71,7 +70,6 @@ class StreamingServiceAction(Action):
             'description': 'description',
             'stream_id': 'streamId'
         }
-
         self._action_type = None
         self._id = None
         self._lifecycle_message = None

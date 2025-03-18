@@ -97,7 +97,6 @@ class CopyObjectDetails(object):
             'destination_object_metadata': 'dict(str, str)',
             'destination_object_storage_tier': 'str'
         }
-
         self.attribute_map = {
             'source_object_name': 'sourceObjectName',
             'source_object_if_match_e_tag': 'sourceObjectIfMatchETag',
@@ -111,7 +110,6 @@ class CopyObjectDetails(object):
             'destination_object_metadata': 'destinationObjectMetadata',
             'destination_object_storage_tier': 'destinationObjectStorageTier'
         }
-
         self._source_object_name = None
         self._source_object_if_match_e_tag = None
         self._source_version_id = None

@@ -71,7 +71,6 @@ class AwrDbSqlReport(AwrQueryResult):
             'content': 'str',
             'format': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'version': 'version',
@@ -81,7 +80,6 @@ class AwrDbSqlReport(AwrQueryResult):
             'content': 'content',
             'format': 'format'
         }
-
         self._name = None
         self._version = None
         self._query_key = None

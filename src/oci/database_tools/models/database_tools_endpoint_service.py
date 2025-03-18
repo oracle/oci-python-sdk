@@ -113,7 +113,6 @@ class DatabaseToolsEndpointService(object):
             'lifecycle_details': 'str',
             'description': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -128,7 +127,6 @@ class DatabaseToolsEndpointService(object):
             'lifecycle_details': 'lifecycleDetails',
             'description': 'description'
         }
-
         self._id = None
         self._display_name = None
         self._name = None

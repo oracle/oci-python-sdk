@@ -43,11 +43,9 @@ class ContinuousQueryStartPolicy(object):
         self.swagger_types = {
             'start_policy_type': 'str'
         }
-
         self.attribute_map = {
             'start_policy_type': 'startPolicyType'
         }
-
         self._start_policy_type = None
 
     @staticmethod

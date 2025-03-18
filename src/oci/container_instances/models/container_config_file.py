@@ -38,13 +38,11 @@ class ContainerConfigFile(object):
             'data': 'str',
             'path': 'str'
         }
-
         self.attribute_map = {
             'file_name': 'fileName',
             'data': 'data',
             'path': 'path'
         }
-
         self._file_name = None
         self._data = None
         self._path = None

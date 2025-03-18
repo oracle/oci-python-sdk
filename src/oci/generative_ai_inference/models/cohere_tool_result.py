@@ -33,12 +33,10 @@ class CohereToolResult(object):
             'call': 'CohereToolCall',
             'outputs': 'list[object]'
         }
-
         self.attribute_map = {
             'call': 'call',
             'outputs': 'outputs'
         }
-
         self._call = None
         self._outputs = None
 

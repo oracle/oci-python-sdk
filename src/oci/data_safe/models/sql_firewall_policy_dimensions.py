@@ -101,14 +101,12 @@ class SqlFirewallPolicyDimensions(object):
             'violation_action': 'str',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'security_policy_id': 'securityPolicyId',
             'enforcement_scope': 'enforcementScope',
             'violation_action': 'violationAction',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._security_policy_id = None
         self._enforcement_scope = None
         self._violation_action = None

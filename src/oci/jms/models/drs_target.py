@@ -28,11 +28,9 @@ class DrsTarget(object):
         self.swagger_types = {
             'managed_instance_id': 'str'
         }
-
         self.attribute_map = {
             'managed_instance_id': 'managedInstanceId'
         }
-
         self._managed_instance_id = None
 
     @property

@@ -75,7 +75,6 @@ class UpdateAwsEc2AssetDetails(UpdateAssetDetails):
             'aws_ec2_cost': 'MonthlyCostSummary',
             'attached_ebs_volumes_cost': 'MonthlyCostSummary'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'asset_type': 'assetType',
@@ -88,7 +87,6 @@ class UpdateAwsEc2AssetDetails(UpdateAssetDetails):
             'aws_ec2_cost': 'awsEc2Cost',
             'attached_ebs_volumes_cost': 'attachedEbsVolumesCost'
         }
-
         self._display_name = None
         self._asset_type = None
         self._asset_source_ids = None

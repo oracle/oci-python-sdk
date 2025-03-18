@@ -28,11 +28,9 @@ class FunctionLibrarySummaryCollection(object):
         self.swagger_types = {
             'items': 'list[FunctionLibrarySummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

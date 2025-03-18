@@ -28,11 +28,9 @@ class GetMessages(object):
         self.swagger_types = {
             'messages': 'list[GetMessage]'
         }
-
         self.attribute_map = {
             'messages': 'messages'
         }
-
         self._messages = None
 
     @property

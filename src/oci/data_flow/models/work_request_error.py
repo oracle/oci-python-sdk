@@ -48,7 +48,6 @@ class WorkRequestError(object):
             'timestamp': 'datetime',
             'work_requestid': 'str'
         }
-
         self.attribute_map = {
             'code': 'code',
             'id': 'id',
@@ -56,7 +55,6 @@ class WorkRequestError(object):
             'timestamp': 'timestamp',
             'work_requestid': 'workRequestid'
         }
-
         self._code = None
         self._id = None
         self._message = None

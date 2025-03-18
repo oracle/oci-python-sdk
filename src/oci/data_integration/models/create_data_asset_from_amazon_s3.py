@@ -85,7 +85,6 @@ class CreateDataAssetFromAmazonS3(CreateDataAssetDetails):
             'region': 'str',
             'default_connection': 'CreateConnectionFromAmazonS3'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -100,7 +99,6 @@ class CreateDataAssetFromAmazonS3(CreateDataAssetDetails):
             'region': 'region',
             'default_connection': 'defaultConnection'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

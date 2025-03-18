@@ -33,12 +33,10 @@ class ModuleStreamDetails(object):
             'module_name': 'str',
             'stream_name': 'str'
         }
-
         self.attribute_map = {
             'module_name': 'moduleName',
             'stream_name': 'streamName'
         }
-
         self._module_name = None
         self._stream_name = None
 

@@ -133,7 +133,6 @@ class Type(object):
             'parent_type_key': 'str',
             'parent_type_name': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'name': 'name',
@@ -151,7 +150,6 @@ class Type(object):
             'parent_type_key': 'parentTypeKey',
             'parent_type_name': 'parentTypeName'
         }
-
         self._key = None
         self._name = None
         self._description = None

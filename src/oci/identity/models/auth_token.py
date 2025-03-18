@@ -96,7 +96,6 @@ class AuthToken(object):
             'lifecycle_state': 'str',
             'inactive_status': 'int'
         }
-
         self.attribute_map = {
             'token': 'token',
             'id': 'id',
@@ -107,7 +106,6 @@ class AuthToken(object):
             'lifecycle_state': 'lifecycleState',
             'inactive_status': 'inactiveStatus'
         }
-
         self._token = None
         self._id = None
         self._user_id = None

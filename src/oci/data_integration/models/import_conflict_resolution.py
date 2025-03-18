@@ -52,13 +52,11 @@ class ImportConflictResolution(object):
             'duplicate_suffix': 'str',
             'import_conflict_resolution_type': 'str'
         }
-
         self.attribute_map = {
             'duplicate_prefix': 'duplicatePrefix',
             'duplicate_suffix': 'duplicateSuffix',
             'import_conflict_resolution_type': 'importConflictResolutionType'
         }
-
         self._duplicate_prefix = None
         self._duplicate_suffix = None
         self._import_conflict_resolution_type = None

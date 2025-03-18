@@ -28,11 +28,9 @@ class ImportBotDetails(object):
         self.swagger_types = {
             'source': 'StorageLocation'
         }
-
         self.attribute_map = {
             'source': 'source'
         }
-
         self._source = None
 
     @property

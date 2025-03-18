@@ -53,7 +53,6 @@ class ModuleStreamProfile(object):
             'description': 'str',
             'packages': 'list[str]'
         }
-
         self.attribute_map = {
             'module_name': 'moduleName',
             'stream_name': 'streamName',
@@ -62,7 +61,6 @@ class ModuleStreamProfile(object):
             'description': 'description',
             'packages': 'packages'
         }
-
         self._module_name = None
         self._stream_name = None
         self._profile_name = None

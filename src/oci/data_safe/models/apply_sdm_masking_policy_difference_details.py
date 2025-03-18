@@ -28,11 +28,9 @@ class ApplySdmMaskingPolicyDifferenceDetails(object):
         self.swagger_types = {
             'sdm_masking_policy_difference_id': 'str'
         }
-
         self.attribute_map = {
             'sdm_masking_policy_difference_id': 'sdmMaskingPolicyDifferenceId'
         }
-
         self._sdm_masking_policy_difference_id = None
 
     @property

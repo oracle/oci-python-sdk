@@ -107,7 +107,6 @@ class BitbucketCloudAppPasswordConnection(Connection):
             'username': 'str',
             'app_password': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'description': 'description',
@@ -126,7 +125,6 @@ class BitbucketCloudAppPasswordConnection(Connection):
             'username': 'username',
             'app_password': 'appPassword'
         }
-
         self._id = None
         self._description = None
         self._display_name = None

@@ -48,7 +48,6 @@ class MetaInfo(object):
             'sub_type': 'str',
             'score': 'float'
         }
-
         self.attribute_map = {
             'offset': 'offset',
             'length': 'length',
@@ -56,7 +55,6 @@ class MetaInfo(object):
             'sub_type': 'subType',
             'score': 'score'
         }
-
         self._offset = None
         self._length = None
         self._text = None

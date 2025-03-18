@@ -33,12 +33,10 @@ class FleetAgentOsConfiguration(object):
             'include_paths': 'list[str]',
             'exclude_paths': 'list[str]'
         }
-
         self.attribute_map = {
             'include_paths': 'includePaths',
             'exclude_paths': 'excludePaths'
         }
-
         self._include_paths = None
         self._exclude_paths = None
 

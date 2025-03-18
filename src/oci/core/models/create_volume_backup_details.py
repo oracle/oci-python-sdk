@@ -62,7 +62,6 @@ class CreateVolumeBackupDetails(object):
             'type': 'str',
             'volume_id': 'str'
         }
-
         self.attribute_map = {
             'kms_key_id': 'kmsKeyId',
             'defined_tags': 'definedTags',
@@ -71,7 +70,6 @@ class CreateVolumeBackupDetails(object):
             'type': 'type',
             'volume_id': 'volumeId'
         }
-
         self._kms_key_id = None
         self._defined_tags = None
         self._display_name = None

@@ -71,7 +71,6 @@ class CreateExecutionActionDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'execution_window_id': 'executionWindowId',
@@ -81,7 +80,6 @@ class CreateExecutionActionDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._compartment_id = None
         self._execution_window_id = None
         self._action_type = None

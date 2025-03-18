@@ -101,7 +101,6 @@ class LogAnalyticsEntityTypeSummary(object):
             'time_updated': 'datetime',
             'management_agent_eligibility_status': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'internal_name': 'internalName',
@@ -112,7 +111,6 @@ class LogAnalyticsEntityTypeSummary(object):
             'time_updated': 'timeUpdated',
             'management_agent_eligibility_status': 'managementAgentEligibilityStatus'
         }
-
         self._name = None
         self._internal_name = None
         self._category = None

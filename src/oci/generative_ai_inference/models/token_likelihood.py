@@ -33,12 +33,10 @@ class TokenLikelihood(object):
             'token': 'str',
             'likelihood': 'float'
         }
-
         self.attribute_map = {
             'token': 'token',
             'likelihood': 'likelihood'
         }
-
         self._token = None
         self._likelihood = None
 

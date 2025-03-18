@@ -33,12 +33,10 @@ class SqlPlanBaselineDimensions(object):
             'attribute_name': 'str',
             'attribute_value': 'str'
         }
-
         self.attribute_map = {
             'attribute_name': 'attributeName',
             'attribute_value': 'attributeValue'
         }
-
         self._attribute_name = None
         self._attribute_value = None
 

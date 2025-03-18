@@ -155,7 +155,6 @@ class ExternalExadataInfrastructureDiscovery(EntityDiscovered):
             'storage_grid': 'ExternalStorageGridDiscoverySummary',
             'storage_servers': 'list[ExternalStorageServerDiscoverySummary]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'agent_id': 'agentId',
@@ -177,7 +176,6 @@ class ExternalExadataInfrastructureDiscovery(EntityDiscovered):
             'storage_grid': 'storageGrid',
             'storage_servers': 'storageServers'
         }
-
         self._id = None
         self._agent_id = None
         self._connector_id = None

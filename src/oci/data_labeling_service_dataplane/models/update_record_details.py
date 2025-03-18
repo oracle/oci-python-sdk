@@ -38,13 +38,11 @@ class UpdateRecordDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'record_metadata': 'RecordMetadata'
         }
-
         self.attribute_map = {
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'record_metadata': 'recordMetadata'
         }
-
         self._freeform_tags = None
         self._defined_tags = None
         self._record_metadata = None

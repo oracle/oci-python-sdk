@@ -34,12 +34,10 @@ class EnableSqlPlanBaselinesUsageDetails(object):
             'credentials': 'ManagedDatabaseCredential',
             'database_credential': 'DatabaseCredentialDetails'
         }
-
         self.attribute_map = {
             'credentials': 'credentials',
             'database_credential': 'databaseCredential'
         }
-
         self._credentials = None
         self._database_credential = None
 

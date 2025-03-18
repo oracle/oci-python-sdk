@@ -55,7 +55,6 @@ class CompositeEntity(Entity):
             'actions': 'list[EntityAction]',
             'natural_language_mapping': 'EntityNaturalLanguageMapping'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -64,7 +63,6 @@ class CompositeEntity(Entity):
             'actions': 'actions',
             'natural_language_mapping': 'naturalLanguageMapping'
         }
-
         self._id = None
         self._name = None
         self._type = None

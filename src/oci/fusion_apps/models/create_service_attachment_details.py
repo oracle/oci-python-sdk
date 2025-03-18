@@ -33,12 +33,10 @@ class CreateServiceAttachmentDetails(object):
             'service_instance_type': 'str',
             'service_instance_id': 'str'
         }
-
         self.attribute_map = {
             'service_instance_type': 'serviceInstanceType',
             'service_instance_id': 'serviceInstanceId'
         }
-
         self._service_instance_type = None
         self._service_instance_id = None
 

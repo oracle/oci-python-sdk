@@ -92,7 +92,6 @@ class ExadataInsightResourceForecastTrendSummary(object):
             'historical_data': 'list[HistoricalDataItem]',
             'projected_data': 'list[ProjectedDataItem]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -102,7 +101,6 @@ class ExadataInsightResourceForecastTrendSummary(object):
             'historical_data': 'historicalData',
             'projected_data': 'projectedData'
         }
-
         self._id = None
         self._name = None
         self._days_to_reach_capacity = None

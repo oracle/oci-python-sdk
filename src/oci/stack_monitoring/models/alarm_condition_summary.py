@@ -148,7 +148,6 @@ class AlarmConditionSummary(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'id': 'id',
             'monitoring_template_id': 'monitoringTemplateId',
@@ -166,7 +165,6 @@ class AlarmConditionSummary(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._id = None
         self._monitoring_template_id = None
         self._composite_type = None

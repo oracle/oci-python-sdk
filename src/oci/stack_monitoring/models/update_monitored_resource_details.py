@@ -78,7 +78,6 @@ class UpdateMonitoredResourceDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'host_name': 'hostName',
@@ -92,7 +91,6 @@ class UpdateMonitoredResourceDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._display_name = None
         self._host_name = None
         self._resource_time_zone = None

@@ -55,13 +55,11 @@ class TimeCreatedResourceFilter(ResourceFilter):
             'condition': 'str',
             'value': 'str'
         }
-
         self.attribute_map = {
             'attribute': 'attribute',
             'condition': 'condition',
             'value': 'value'
         }
-
         self._attribute = None
         self._condition = None
         self._value = None

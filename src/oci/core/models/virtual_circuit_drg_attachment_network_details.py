@@ -40,13 +40,11 @@ class VirtualCircuitDrgAttachmentNetworkDetails(DrgAttachmentNetworkDetails):
             'id': 'str',
             'transport_only_mode': 'bool'
         }
-
         self.attribute_map = {
             'type': 'type',
             'id': 'id',
             'transport_only_mode': 'transportOnlyMode'
         }
-
         self._type = None
         self._id = None
         self._transport_only_mode = None

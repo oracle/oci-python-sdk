@@ -73,7 +73,6 @@ class DefaultConfigurationSummary(object):
             'instance_ocpu_count': 'int',
             'instance_memory_size_in_gbs': 'int'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -86,7 +85,6 @@ class DefaultConfigurationSummary(object):
             'instance_ocpu_count': 'instanceOcpuCount',
             'instance_memory_size_in_gbs': 'instanceMemorySizeInGBs'
         }
-
         self._id = None
         self._display_name = None
         self._time_created = None

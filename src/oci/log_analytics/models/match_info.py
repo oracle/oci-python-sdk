@@ -38,13 +38,11 @@ class MatchInfo(object):
             'regex_score': 'int',
             'step_count': 'int'
         }
-
         self.attribute_map = {
             'matching_log_entry_end_index': 'matchingLogEntryEndIndex',
             'regex_score': 'regexScore',
             'step_count': 'stepCount'
         }
-
         self._matching_log_entry_end_index = None
         self._regex_score = None
         self._step_count = None

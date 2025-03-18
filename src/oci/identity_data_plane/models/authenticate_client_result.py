@@ -33,12 +33,10 @@ class AuthenticateClientResult(object):
             'principal': 'Principal',
             'error_message': 'str'
         }
-
         self.attribute_map = {
             'principal': 'principal',
             'error_message': 'errorMessage'
         }
-
         self._principal = None
         self._error_message = None
 

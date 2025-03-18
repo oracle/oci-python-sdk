@@ -35,12 +35,10 @@ class LifecycleStateResourceFilter(ResourceFilter):
             'attribute': 'str',
             'value': 'list[str]'
         }
-
         self.attribute_map = {
             'attribute': 'attribute',
             'value': 'value'
         }
-
         self._attribute = None
         self._value = None
         self._attribute = 'LIFECYCLE_STATE'

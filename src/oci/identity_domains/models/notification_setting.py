@@ -142,7 +142,6 @@ class NotificationSetting(object):
             'from_email_address': 'NotificationSettingsFromEmailAddress',
             'event_settings': 'list[NotificationSettingsEventSettings]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -166,7 +165,6 @@ class NotificationSetting(object):
             'from_email_address': 'fromEmailAddress',
             'event_settings': 'eventSettings'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

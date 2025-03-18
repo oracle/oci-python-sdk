@@ -83,7 +83,6 @@ class CreateVirtualNodePoolDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'virtual_node_tags': 'VirtualNodeTags'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'cluster_id': 'clusterId',
@@ -98,7 +97,6 @@ class CreateVirtualNodePoolDetails(object):
             'defined_tags': 'definedTags',
             'virtual_node_tags': 'virtualNodeTags'
         }
-
         self._compartment_id = None
         self._cluster_id = None
         self._display_name = None

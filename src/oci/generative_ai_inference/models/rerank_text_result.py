@@ -43,14 +43,12 @@ class RerankTextResult(object):
             'model_version': 'str',
             'document_ranks': 'list[DocumentRank]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'model_id': 'modelId',
             'model_version': 'modelVersion',
             'document_ranks': 'documentRanks'
         }
-
         self._id = None
         self._model_id = None
         self._model_version = None

@@ -28,11 +28,9 @@ class AgentInstallerCollection(object):
         self.swagger_types = {
             'items': 'list[AgentInstallerSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

@@ -63,7 +63,6 @@ class SchemaIdcsCsvAttributeNameMappings(object):
             'resolve_value_using_resource_type': 'list[SchemaResolveValueUsingResourceType]',
             'referenced_resource_type_unique_attribute_name_mappings': 'list[SchemaReferencedResourceTypeUniqueAttributeNameMappings]'
         }
-
         self.attribute_map = {
             'column_header_name': 'columnHeaderName',
             'deprecated_column_header_name': 'deprecatedColumnHeaderName',
@@ -74,7 +73,6 @@ class SchemaIdcsCsvAttributeNameMappings(object):
             'resolve_value_using_resource_type': 'resolveValueUsingResourceType',
             'referenced_resource_type_unique_attribute_name_mappings': 'referencedResourceTypeUniqueAttributeNameMappings'
         }
-
         self._column_header_name = None
         self._deprecated_column_header_name = None
         self._maps_to = None

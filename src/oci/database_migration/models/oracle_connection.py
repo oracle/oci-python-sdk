@@ -196,7 +196,6 @@ class OracleConnection(Connection):
             'ssh_user': 'str',
             'ssh_sudo_location': 'str'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'id': 'id',
@@ -229,7 +228,6 @@ class OracleConnection(Connection):
             'ssh_user': 'sshUser',
             'ssh_sudo_location': 'sshSudoLocation'
         }
-
         self._connection_type = None
         self._id = None
         self._display_name = None

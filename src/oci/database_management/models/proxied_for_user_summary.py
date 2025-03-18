@@ -66,13 +66,11 @@ class ProxiedForUserSummary(object):
             'authentication': 'str',
             'flags': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'authentication': 'authentication',
             'flags': 'flags'
         }
-
         self._name = None
         self._authentication = None
         self._flags = None

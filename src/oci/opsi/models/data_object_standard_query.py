@@ -51,7 +51,6 @@ class DataObjectStandardQuery(DataObjectQuery):
             'statement': 'str',
             'time_filters': 'DataObjectQueryTimeFilters'
         }
-
         self.attribute_map = {
             'query_type': 'queryType',
             'bind_params': 'bindParams',
@@ -59,7 +58,6 @@ class DataObjectStandardQuery(DataObjectQuery):
             'statement': 'statement',
             'time_filters': 'timeFilters'
         }
-
         self._query_type = None
         self._bind_params = None
         self._query_execution_timeout_in_seconds = None

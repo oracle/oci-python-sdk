@@ -184,7 +184,6 @@ class AutonomousExadataInfrastructureSummary(object):
             'scan_dns_name': 'str',
             'zone_id': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -207,7 +206,6 @@ class AutonomousExadataInfrastructureSummary(object):
             'scan_dns_name': 'scanDnsName',
             'zone_id': 'zoneId'
         }
-
         self._id = None
         self._compartment_id = None
         self._display_name = None

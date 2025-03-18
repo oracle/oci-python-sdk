@@ -46,14 +46,12 @@ class Base64SecretContentDetails(SecretContentDetails):
             'stage': 'str',
             'content': 'str'
         }
-
         self.attribute_map = {
             'content_type': 'contentType',
             'name': 'name',
             'stage': 'stage',
             'content': 'content'
         }
-
         self._content_type = None
         self._name = None
         self._stage = None

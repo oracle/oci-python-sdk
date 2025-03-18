@@ -104,7 +104,6 @@ class DeployPipelineDeploymentSummary(DeploymentSummary):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'deployment_type': 'deploymentType',
             'id': 'id',
@@ -123,7 +122,6 @@ class DeployPipelineDeploymentSummary(DeploymentSummary):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
-
         self._deployment_type = None
         self._id = None
         self._display_name = None

@@ -38,13 +38,11 @@ class Word(object):
             'confidence': 'float',
             'bounding_polygon': 'BoundingPolygon'
         }
-
         self.attribute_map = {
             'text': 'text',
             'confidence': 'confidence',
             'bounding_polygon': 'boundingPolygon'
         }
-
         self._text = None
         self._confidence = None
         self._bounding_polygon = None

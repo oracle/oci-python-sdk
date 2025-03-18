@@ -28,11 +28,9 @@ class AccessPolicyCollection(object):
         self.swagger_types = {
             'items': 'list[AccessPolicySummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

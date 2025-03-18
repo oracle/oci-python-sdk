@@ -68,13 +68,11 @@ class NetworkBondingModeDetails(object):
             'backup_network_bonding_mode': 'str',
             'dr_network_bonding_mode': 'str'
         }
-
         self.attribute_map = {
             'client_network_bonding_mode': 'clientNetworkBondingMode',
             'backup_network_bonding_mode': 'backupNetworkBondingMode',
             'dr_network_bonding_mode': 'drNetworkBondingMode'
         }
-
         self._client_network_bonding_mode = None
         self._backup_network_bonding_mode = None
         self._dr_network_bonding_mode = None

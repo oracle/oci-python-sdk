@@ -28,11 +28,9 @@ class RecommendationExample(object):
         self.swagger_types = {
             'lines': 'list[RecommendationExampleLine]'
         }
-
         self.attribute_map = {
             'lines': 'lines'
         }
-
         self._lines = None
 
     @property

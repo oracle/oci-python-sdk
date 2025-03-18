@@ -167,7 +167,6 @@ class CloudGate(object):
             'servers': 'list[CloudGateExtServers]',
             'mappings': 'list[CloudGateExtMappings]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -194,7 +193,6 @@ class CloudGate(object):
             'servers': 'servers',
             'mappings': 'mappings'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

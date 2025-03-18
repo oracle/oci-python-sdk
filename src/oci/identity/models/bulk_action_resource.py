@@ -38,13 +38,11 @@ class BulkActionResource(object):
             'entity_type': 'str',
             'metadata': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'identifier': 'identifier',
             'entity_type': 'entityType',
             'metadata': 'metadata'
         }
-
         self._identifier = None
         self._entity_type = None
         self._metadata = None

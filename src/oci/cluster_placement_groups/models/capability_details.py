@@ -33,12 +33,10 @@ class CapabilityDetails(object):
             'service': 'str',
             'name': 'str'
         }
-
         self.attribute_map = {
             'service': 'service',
             'name': 'name'
         }
-
         self._service = None
         self._name = None
 

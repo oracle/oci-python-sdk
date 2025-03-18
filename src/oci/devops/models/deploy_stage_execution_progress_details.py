@@ -43,14 +43,12 @@ class DeployStageExecutionProgressDetails(object):
             'steps': 'list[DeployStageExecutionStep]',
             'rollback_steps': 'list[DeployStageExecutionStep]'
         }
-
         self.attribute_map = {
             'target_id': 'targetId',
             'target_group': 'targetGroup',
             'steps': 'steps',
             'rollback_steps': 'rollbackSteps'
         }
-
         self._target_id = None
         self._target_group = None
         self._steps = None

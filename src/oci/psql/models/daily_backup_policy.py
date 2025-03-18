@@ -45,14 +45,12 @@ class DailyBackupPolicy(BackupPolicy):
             'copy_policy': 'BackupCopyPolicy',
             'backup_start': 'str'
         }
-
         self.attribute_map = {
             'kind': 'kind',
             'retention_days': 'retentionDays',
             'copy_policy': 'copyPolicy',
             'backup_start': 'backupStart'
         }
-
         self._kind = None
         self._retention_days = None
         self._copy_policy = None

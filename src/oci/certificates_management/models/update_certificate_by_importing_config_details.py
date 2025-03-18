@@ -61,7 +61,6 @@ class UpdateCertificateByImportingConfigDetails(UpdateCertificateConfigDetails):
             'certificate_pem': 'str',
             'private_key_pem_passphrase': 'str'
         }
-
         self.attribute_map = {
             'config_type': 'configType',
             'version_name': 'versionName',
@@ -71,7 +70,6 @@ class UpdateCertificateByImportingConfigDetails(UpdateCertificateConfigDetails):
             'certificate_pem': 'certificatePem',
             'private_key_pem_passphrase': 'privateKeyPemPassphrase'
         }
-
         self._config_type = None
         self._version_name = None
         self._stage = None

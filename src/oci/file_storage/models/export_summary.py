@@ -81,7 +81,6 @@ class ExportSummary(object):
             'time_created': 'datetime',
             'locks': 'list[ResourceLock]'
         }
-
         self.attribute_map = {
             'export_set_id': 'exportSetId',
             'file_system_id': 'fileSystemId',
@@ -92,7 +91,6 @@ class ExportSummary(object):
             'time_created': 'timeCreated',
             'locks': 'locks'
         }
-
         self._export_set_id = None
         self._file_system_id = None
         self._id = None

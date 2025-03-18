@@ -47,12 +47,10 @@ class DiagnosticsResult(object):
             'result_type': 'str',
             'error': 'ResultError'
         }
-
         self.attribute_map = {
             'result_type': 'resultType',
             'error': 'error'
         }
-
         self._result_type = None
         self._error = None
 

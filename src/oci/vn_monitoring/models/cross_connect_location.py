@@ -33,12 +33,10 @@ class CrossConnectLocation(object):
             'description': 'str',
             'name': 'str'
         }
-
         self.attribute_map = {
             'description': 'description',
             'name': 'name'
         }
-
         self._description = None
         self._name = None
 

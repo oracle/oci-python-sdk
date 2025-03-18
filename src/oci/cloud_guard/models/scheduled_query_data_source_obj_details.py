@@ -50,7 +50,6 @@ class ScheduledQueryDataSourceObjDetails(DataSourceDetails):
             'interval_in_seconds': 'int',
             'scheduled_query_scope_details': 'list[ScheduledQueryScopeDetail]'
         }
-
         self.attribute_map = {
             'data_source_feed_provider': 'dataSourceFeedProvider',
             'query': 'query',
@@ -58,7 +57,6 @@ class ScheduledQueryDataSourceObjDetails(DataSourceDetails):
             'interval_in_seconds': 'intervalInSeconds',
             'scheduled_query_scope_details': 'scheduledQueryScopeDetails'
         }
-
         self._data_source_feed_provider = None
         self._query = None
         self._description = None

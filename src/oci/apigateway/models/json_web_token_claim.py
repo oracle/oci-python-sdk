@@ -38,13 +38,11 @@ class JsonWebTokenClaim(object):
             'values': 'list[str]',
             'is_required': 'bool'
         }
-
         self.attribute_map = {
             'key': 'key',
             'values': 'values',
             'is_required': 'isRequired'
         }
-
         self._key = None
         self._values = None
         self._is_required = None

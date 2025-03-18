@@ -113,7 +113,6 @@ class ExternalDatabaseSystemDiscoverySummary(EntityDiscovered):
             'license_model': 'str',
             'compartment_id': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'agent_id': 'agentId',
@@ -131,7 +130,6 @@ class ExternalDatabaseSystemDiscoverySummary(EntityDiscovered):
             'license_model': 'licenseModel',
             'compartment_id': 'compartmentId'
         }
-
         self._id = None
         self._agent_id = None
         self._connector_id = None

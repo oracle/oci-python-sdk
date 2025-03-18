@@ -36,12 +36,10 @@ class ListOfTargetsRollbackDetails(RollbackDetails):
             'strategy': 'str',
             'targets': 'list[str]'
         }
-
         self.attribute_map = {
             'strategy': 'strategy',
             'targets': 'targets'
         }
-
         self._strategy = None
         self._targets = None
         self._strategy = 'LIST_OF_TARGETS'

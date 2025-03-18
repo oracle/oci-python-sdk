@@ -70,7 +70,6 @@ class CreatePropertyDetails(object):
             'value_type': 'str',
             'values': 'list[str]'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
@@ -78,7 +77,6 @@ class CreatePropertyDetails(object):
             'value_type': 'valueType',
             'values': 'values'
         }
-
         self._compartment_id = None
         self._display_name = None
         self._selection = None

@@ -100,7 +100,6 @@ class JobMetric(object):
             'created_by_id': 'str',
             'updated_by_id': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'description': 'description',
@@ -118,7 +117,6 @@ class JobMetric(object):
             'created_by_id': 'createdById',
             'updated_by_id': 'updatedById'
         }
-
         self._key = None
         self._description = None
         self._job_execution_key = None

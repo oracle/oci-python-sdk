@@ -33,11 +33,9 @@ class InstanceConfigurationInstanceDetails(object):
         self.swagger_types = {
             'instance_type': 'str'
         }
-
         self.attribute_map = {
             'instance_type': 'instanceType'
         }
-
         self._instance_type = None
 
     @staticmethod

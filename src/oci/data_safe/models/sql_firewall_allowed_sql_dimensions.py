@@ -67,14 +67,12 @@ class SqlFirewallAllowedSqlDimensions(object):
             'db_user_name': 'str',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'sql_firewall_policy_id': 'sqlFirewallPolicyId',
             'sql_level': 'sqlLevel',
             'db_user_name': 'dbUserName',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._sql_firewall_policy_id = None
         self._sql_level = None
         self._db_user_name = None

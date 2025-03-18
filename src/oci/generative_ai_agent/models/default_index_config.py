@@ -35,12 +35,10 @@ class DefaultIndexConfig(IndexConfig):
             'index_config_type': 'str',
             'should_enable_hybrid_search': 'bool'
         }
-
         self.attribute_map = {
             'index_config_type': 'indexConfigType',
             'should_enable_hybrid_search': 'shouldEnableHybridSearch'
         }
-
         self._index_config_type = None
         self._should_enable_hybrid_search = None
         self._index_config_type = 'DEFAULT_INDEX_CONFIG'

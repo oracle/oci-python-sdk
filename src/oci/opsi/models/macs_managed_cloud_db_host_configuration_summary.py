@@ -141,7 +141,6 @@ class MacsManagedCloudDbHostConfigurationSummary(HostConfigurationSummary):
             'parent_id': 'str',
             'exadata_details': 'ExadataDetails'
         }
-
         self.attribute_map = {
             'host_insight_id': 'hostInsightId',
             'entity_source': 'entitySource',
@@ -167,7 +166,6 @@ class MacsManagedCloudDbHostConfigurationSummary(HostConfigurationSummary):
             'parent_id': 'parentId',
             'exadata_details': 'exadataDetails'
         }
-
         self._host_insight_id = None
         self._entity_source = None
         self._compartment_id = None

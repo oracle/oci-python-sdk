@@ -73,7 +73,6 @@ class InstalledPackageSummary(PackageSummary):
             'time_installed': 'datetime',
             'time_issued': 'datetime'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'name': 'name',
@@ -85,7 +84,6 @@ class InstalledPackageSummary(PackageSummary):
             'time_installed': 'timeInstalled',
             'time_issued': 'timeIssued'
         }
-
         self._display_name = None
         self._name = None
         self._type = None

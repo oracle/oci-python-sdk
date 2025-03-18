@@ -227,7 +227,6 @@ class Entity(object):
             'custom_property_members': 'list[CustomPropertyGetUsage]',
             'properties': 'dict(str, dict(str, str))'
         }
-
         self.attribute_map = {
             'key': 'key',
             'display_name': 'displayName',
@@ -260,7 +259,6 @@ class Entity(object):
             'custom_property_members': 'customPropertyMembers',
             'properties': 'properties'
         }
-
         self._key = None
         self._display_name = None
         self._business_name = None

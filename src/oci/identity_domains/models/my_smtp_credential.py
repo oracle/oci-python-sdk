@@ -137,7 +137,6 @@ class MySmtpCredential(object):
             'user_name': 'str',
             'user': 'MySmtpCredentialUser'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -158,7 +157,6 @@ class MySmtpCredential(object):
             'user_name': 'userName',
             'user': 'user'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

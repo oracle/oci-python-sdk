@@ -93,13 +93,11 @@ class MonitorConfiguration(object):
             'is_failure_retried': 'bool',
             'dns_configuration': 'DnsConfiguration'
         }
-
         self.attribute_map = {
             'config_type': 'configType',
             'is_failure_retried': 'isFailureRetried',
             'dns_configuration': 'dnsConfiguration'
         }
-
         self._config_type = None
         self._is_failure_retried = None
         self._dns_configuration = None

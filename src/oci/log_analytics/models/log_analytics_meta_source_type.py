@@ -63,7 +63,6 @@ class LogAnalyticsMetaSourceType(object):
             'maximum_exclude_pattern': 'int',
             'maximum_include_pattern': 'int'
         }
-
         self.attribute_map = {
             'built_in_parser_name': 'builtInParserName',
             'description': 'description',
@@ -74,7 +73,6 @@ class LogAnalyticsMetaSourceType(object):
             'maximum_exclude_pattern': 'maximumExcludePattern',
             'maximum_include_pattern': 'maximumIncludePattern'
         }
-
         self._built_in_parser_name = None
         self._description = None
         self._display_name = None

@@ -112,7 +112,6 @@ class MetastoreSummary(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'locks': 'list[ResourceLock]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -126,7 +125,6 @@ class MetastoreSummary(object):
             'defined_tags': 'definedTags',
             'locks': 'locks'
         }
-
         self._id = None
         self._display_name = None
         self._compartment_id = None

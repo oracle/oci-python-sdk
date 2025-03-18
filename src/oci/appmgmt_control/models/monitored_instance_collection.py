@@ -28,11 +28,9 @@ class MonitoredInstanceCollection(object):
         self.swagger_types = {
             'items': 'list[MonitoredInstanceSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

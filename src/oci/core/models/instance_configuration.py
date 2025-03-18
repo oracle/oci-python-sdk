@@ -67,7 +67,6 @@ class InstanceConfiguration(object):
             'deferred_fields': 'list[str]',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
@@ -78,7 +77,6 @@ class InstanceConfiguration(object):
             'deferred_fields': 'deferredFields',
             'time_created': 'timeCreated'
         }
-
         self._compartment_id = None
         self._defined_tags = None
         self._display_name = None

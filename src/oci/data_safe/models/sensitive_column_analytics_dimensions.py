@@ -53,7 +53,6 @@ class SensitiveColumnAnalyticsDimensions(object):
             'sensitive_type_id': 'str',
             'sensitive_data_model_id': 'str'
         }
-
         self.attribute_map = {
             'target_id': 'targetId',
             'schema_name': 'schemaName',
@@ -62,7 +61,6 @@ class SensitiveColumnAnalyticsDimensions(object):
             'sensitive_type_id': 'sensitiveTypeId',
             'sensitive_data_model_id': 'sensitiveDataModelId'
         }
-
         self._target_id = None
         self._schema_name = None
         self._object_name = None

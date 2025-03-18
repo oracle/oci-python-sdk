@@ -33,12 +33,10 @@ class ExternalKeyReferenceDetails(object):
             'external_key_id': 'str',
             'external_key_version_id': 'str'
         }
-
         self.attribute_map = {
             'external_key_id': 'externalKeyId',
             'external_key_version_id': 'externalKeyVersionId'
         }
-
         self._external_key_id = None
         self._external_key_version_id = None
 

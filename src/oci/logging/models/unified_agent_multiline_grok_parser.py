@@ -85,7 +85,6 @@ class UnifiedAgentMultilineGrokParser(UnifiedAgentParser):
             'multi_line_start_regexp': 'str',
             'patterns': 'list[GrokPattern]'
         }
-
         self.attribute_map = {
             'parser_type': 'parserType',
             'field_time_key': 'fieldTimeKey',
@@ -100,7 +99,6 @@ class UnifiedAgentMultilineGrokParser(UnifiedAgentParser):
             'multi_line_start_regexp': 'multiLineStartRegexp',
             'patterns': 'patterns'
         }
-
         self._parser_type = None
         self._field_time_key = None
         self._types = None

@@ -58,7 +58,6 @@ class CreateComputeImageCapabilitySchemaDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'schema_data': 'dict(str, ImageCapabilitySchemaDescriptor)'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'compute_global_image_capability_schema_version_name': 'computeGlobalImageCapabilitySchemaVersionName',
@@ -68,7 +67,6 @@ class CreateComputeImageCapabilitySchemaDetails(object):
             'defined_tags': 'definedTags',
             'schema_data': 'schemaData'
         }
-
         self._compartment_id = None
         self._compute_global_image_capability_schema_version_name = None
         self._image_id = None

@@ -28,11 +28,9 @@ class UpdatedNetworkSecurityGroupSecurityRules(object):
         self.swagger_types = {
             'security_rules': 'list[SecurityRule]'
         }
-
         self.attribute_map = {
             'security_rules': 'securityRules'
         }
-
         self._security_rules = None
 
     @property

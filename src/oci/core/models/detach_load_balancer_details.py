@@ -33,12 +33,10 @@ class DetachLoadBalancerDetails(object):
             'load_balancer_id': 'str',
             'backend_set_name': 'str'
         }
-
         self.attribute_map = {
             'load_balancer_id': 'loadBalancerId',
             'backend_set_name': 'backendSetName'
         }
-
         self._load_balancer_id = None
         self._backend_set_name = None
 

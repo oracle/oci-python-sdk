@@ -42,13 +42,11 @@ class UpdateAndPropagateTagsDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'association_types': 'list[str]'
         }
-
         self.attribute_map = {
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'association_types': 'associationTypes'
         }
-
         self._freeform_tags = None
         self._defined_tags = None
         self._association_types = None

@@ -232,7 +232,6 @@ class OdaInstance(object):
             'attachment_ids': 'list[str]',
             'restricted_operations': 'list[RestrictedOperation]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -258,7 +257,6 @@ class OdaInstance(object):
             'attachment_ids': 'attachmentIds',
             'restricted_operations': 'restrictedOperations'
         }
-
         self._id = None
         self._display_name = None
         self._description = None

@@ -28,11 +28,9 @@ class CompareSecurityAssessmentDetails(object):
         self.swagger_types = {
             'comparison_security_assessment_id': 'str'
         }
-
         self.attribute_map = {
             'comparison_security_assessment_id': 'comparisonSecurityAssessmentId'
         }
-
         self._comparison_security_assessment_id = None
 
     @property

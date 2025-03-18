@@ -63,7 +63,6 @@ class SqlTuningSetAdminActionStatus(object):
             'show_sql_only': 'int',
             'sql_statement': 'str'
         }
-
         self.attribute_map = {
             'status': 'status',
             'success_message': 'successMessage',
@@ -72,7 +71,6 @@ class SqlTuningSetAdminActionStatus(object):
             'show_sql_only': 'showSqlOnly',
             'sql_statement': 'sqlStatement'
         }
-
         self._status = None
         self._success_message = None
         self._error_code = None

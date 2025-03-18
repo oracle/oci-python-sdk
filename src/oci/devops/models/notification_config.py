@@ -28,11 +28,9 @@ class NotificationConfig(object):
         self.swagger_types = {
             'topic_id': 'str'
         }
-
         self.attribute_map = {
             'topic_id': 'topicId'
         }
-
         self._topic_id = None
 
     @property

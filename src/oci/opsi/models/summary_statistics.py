@@ -53,7 +53,6 @@ class SummaryStatistics(object):
             'lower_quartile': 'float',
             'upper_quartile': 'float'
         }
-
         self.attribute_map = {
             'minimum': 'minimum',
             'maximum': 'maximum',
@@ -62,7 +61,6 @@ class SummaryStatistics(object):
             'lower_quartile': 'lowerQuartile',
             'upper_quartile': 'upperQuartile'
         }
-
         self._minimum = None
         self._maximum = None
         self._average = None

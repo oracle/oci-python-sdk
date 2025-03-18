@@ -68,7 +68,6 @@ class CreateNotebookSessionDetails(object):
             'notebook_session_runtime_config_details': 'NotebookSessionRuntimeConfigDetails',
             'notebook_session_storage_mount_configuration_details_list': 'list[StorageMountConfigurationDetails]'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'project_id': 'projectId',
@@ -80,7 +79,6 @@ class CreateNotebookSessionDetails(object):
             'notebook_session_runtime_config_details': 'notebookSessionRuntimeConfigDetails',
             'notebook_session_storage_mount_configuration_details_list': 'notebookSessionStorageMountConfigurationDetailsList'
         }
-
         self._display_name = None
         self._project_id = None
         self._compartment_id = None

@@ -30,11 +30,9 @@ class RealtimeMessageSendFinalResult(RealtimeMessageOut):
         self.swagger_types = {
             'event': 'str'
         }
-
         self.attribute_map = {
             'event': 'event'
         }
-
         self._event = None
         self._event = 'SEND_FINAL_RESULT'
 

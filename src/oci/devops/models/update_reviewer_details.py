@@ -28,11 +28,9 @@ class UpdateReviewerDetails(object):
         self.swagger_types = {
             'principal_id': 'str'
         }
-
         self.attribute_map = {
             'principal_id': 'principalId'
         }
-
         self._principal_id = None
 
     @property

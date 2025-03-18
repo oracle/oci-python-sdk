@@ -100,7 +100,6 @@ class ConnectionFromJdbc(Connection):
             'key_map': 'dict(str, str)',
             'username': 'str'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -118,7 +117,6 @@ class ConnectionFromJdbc(Connection):
             'key_map': 'keyMap',
             'username': 'username'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

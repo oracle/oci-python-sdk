@@ -81,7 +81,6 @@ class CreateKeyDetails(object):
             'protection_mode': 'str',
             'external_key_reference': 'ExternalKeyReference'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
@@ -93,7 +92,6 @@ class CreateKeyDetails(object):
             'protection_mode': 'protectionMode',
             'external_key_reference': 'externalKeyReference'
         }
-
         self._compartment_id = None
         self._defined_tags = None
         self._display_name = None

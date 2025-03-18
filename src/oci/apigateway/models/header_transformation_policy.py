@@ -38,13 +38,11 @@ class HeaderTransformationPolicy(object):
             'rename_headers': 'RenameHeaderPolicy',
             'filter_headers': 'FilterHeaderPolicy'
         }
-
         self.attribute_map = {
             'set_headers': 'setHeaders',
             'rename_headers': 'renameHeaders',
             'filter_headers': 'filterHeaders'
         }
-
         self._set_headers = None
         self._rename_headers = None
         self._filter_headers = None

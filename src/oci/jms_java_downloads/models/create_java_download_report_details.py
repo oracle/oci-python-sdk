@@ -90,7 +90,6 @@ class CreateJavaDownloadReportDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'time_start': 'timeStart',
@@ -101,7 +100,6 @@ class CreateJavaDownloadReportDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._compartment_id = None
         self._time_start = None
         self._time_end = None

@@ -62,7 +62,6 @@ class SearchSoftwareSourceModulesDetails(object):
             'name_contains': 'str',
             'sort_by': 'str'
         }
-
         self.attribute_map = {
             'software_source_ids': 'softwareSourceIds',
             'sort_order': 'sortOrder',
@@ -70,7 +69,6 @@ class SearchSoftwareSourceModulesDetails(object):
             'name_contains': 'nameContains',
             'sort_by': 'sortBy'
         }
-
         self._software_source_ids = None
         self._sort_order = None
         self._name = None

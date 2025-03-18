@@ -225,7 +225,6 @@ class SqlPlanBaseline(object):
             'action': 'str',
             'execution_plan': 'str'
         }
-
         self.attribute_map = {
             'plan_name': 'planName',
             'sql_handle': 'sqlHandle',
@@ -244,7 +243,6 @@ class SqlPlanBaseline(object):
             'action': 'action',
             'execution_plan': 'executionPlan'
         }
-
         self._plan_name = None
         self._sql_handle = None
         self._sql_text = None

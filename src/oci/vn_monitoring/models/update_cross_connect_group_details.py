@@ -48,7 +48,6 @@ class UpdateCrossConnectGroupDetails(object):
             'freeform_tags': 'dict(str, str)',
             'macsec_properties': 'UpdateMacsecProperties'
         }
-
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
@@ -56,7 +55,6 @@ class UpdateCrossConnectGroupDetails(object):
             'freeform_tags': 'freeformTags',
             'macsec_properties': 'macsecProperties'
         }
-
         self._defined_tags = None
         self._display_name = None
         self._customer_reference_name = None

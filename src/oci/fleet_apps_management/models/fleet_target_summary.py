@@ -101,7 +101,6 @@ class FleetTargetSummary(object):
             'lifecycle_state': 'str',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -116,7 +115,6 @@ class FleetTargetSummary(object):
             'lifecycle_state': 'lifecycleState',
             'system_tags': 'systemTags'
         }
-
         self._id = None
         self._compartment_id = None
         self._display_name = None

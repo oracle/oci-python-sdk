@@ -90,7 +90,6 @@ class UpdateConnectionFromAmazonS3(UpdateConnectionDetails):
             'access_key': 'SensitiveAttribute',
             'secret_key': 'SensitiveAttribute'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -106,7 +105,6 @@ class UpdateConnectionFromAmazonS3(UpdateConnectionDetails):
             'access_key': 'accessKey',
             'secret_key': 'secretKey'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

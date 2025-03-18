@@ -73,7 +73,6 @@ class CreateBackendSetDetails(object):
             'session_persistence_configuration': 'SessionPersistenceConfigurationDetails',
             'lb_cookie_session_persistence_configuration': 'LBCookieSessionPersistenceConfigurationDetails'
         }
-
         self.attribute_map = {
             'name': 'name',
             'policy': 'policy',
@@ -84,7 +83,6 @@ class CreateBackendSetDetails(object):
             'session_persistence_configuration': 'sessionPersistenceConfiguration',
             'lb_cookie_session_persistence_configuration': 'lbCookieSessionPersistenceConfiguration'
         }
-
         self._name = None
         self._policy = None
         self._backends = None

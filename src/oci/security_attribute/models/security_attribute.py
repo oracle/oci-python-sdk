@@ -103,7 +103,6 @@ class SecurityAttribute(object):
             'time_created': 'datetime',
             'validator': 'BaseSecurityAttributeValidator'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'security_attribute_namespace_id': 'securityAttributeNamespaceId',
@@ -117,7 +116,6 @@ class SecurityAttribute(object):
             'time_created': 'timeCreated',
             'validator': 'validator'
         }
-
         self._compartment_id = None
         self._security_attribute_namespace_id = None
         self._security_attribute_namespace_name = None

@@ -119,13 +119,11 @@ class CreateBlocklistDetails(object):
             'operation': 'str',
             'reason': 'str'
         }
-
         self.attribute_map = {
             'target': 'target',
             'operation': 'operation',
             'reason': 'reason'
         }
-
         self._target = None
         self._operation = None
         self._reason = None

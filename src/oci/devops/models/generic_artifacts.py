@@ -45,14 +45,12 @@ class GenericArtifacts(StageOutput):
             'name': 'str',
             'location_details': 'GenericArtifactLocationDetails'
         }
-
         self.attribute_map = {
             'output_type': 'outputType',
             'step_name': 'stepName',
             'name': 'name',
             'location_details': 'locationDetails'
         }
-
         self._output_type = None
         self._step_name = None
         self._name = None

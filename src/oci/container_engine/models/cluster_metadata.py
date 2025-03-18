@@ -73,7 +73,6 @@ class ClusterMetadata(object):
             'updated_by_work_request_id': 'str',
             'time_credential_expiration': 'datetime'
         }
-
         self.attribute_map = {
             'time_created': 'timeCreated',
             'created_by_user_id': 'createdByUserId',
@@ -86,7 +85,6 @@ class ClusterMetadata(object):
             'updated_by_work_request_id': 'updatedByWorkRequestId',
             'time_credential_expiration': 'timeCredentialExpiration'
         }
-
         self._time_created = None
         self._created_by_user_id = None
         self._created_by_work_request_id = None

@@ -53,7 +53,6 @@ class WindowPreferenceDetail(object):
             'duration': 'int',
             'is_enforced_duration': 'bool'
         }
-
         self.attribute_map = {
             'months': 'months',
             'weeks_of_month': 'weeksOfMonth',
@@ -62,7 +61,6 @@ class WindowPreferenceDetail(object):
             'duration': 'duration',
             'is_enforced_duration': 'isEnforcedDuration'
         }
-
         self._months = None
         self._weeks_of_month = None
         self._days_of_week = None

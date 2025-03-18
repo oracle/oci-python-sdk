@@ -38,13 +38,11 @@ class InvoicingCurrency(object):
             'iso_code': 'str',
             'std_precision': 'int'
         }
-
         self.attribute_map = {
             'name': 'name',
             'iso_code': 'isoCode',
             'std_precision': 'stdPrecision'
         }
-
         self._name = None
         self._iso_code = None
         self._std_precision = None

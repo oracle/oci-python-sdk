@@ -63,7 +63,6 @@ class UpdatePrivateEndpointDetails(object):
             'nsg_ids': 'list[str]',
             'scan_details': 'list[Scan]'
         }
-
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'description': 'description',
@@ -74,7 +73,6 @@ class UpdatePrivateEndpointDetails(object):
             'nsg_ids': 'nsgIds',
             'scan_details': 'scanDetails'
         }
-
         self._defined_tags = None
         self._description = None
         self._display_name = None

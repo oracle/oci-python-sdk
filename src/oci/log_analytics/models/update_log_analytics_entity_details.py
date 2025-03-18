@@ -68,7 +68,6 @@ class UpdateLogAnalyticsEntityDetails(object):
             'time_last_discovered': 'datetime',
             'metadata': 'LogAnalyticsMetadataDetails'
         }
-
         self.attribute_map = {
             'name': 'name',
             'management_agent_id': 'managementAgentId',
@@ -80,7 +79,6 @@ class UpdateLogAnalyticsEntityDetails(object):
             'time_last_discovered': 'timeLastDiscovered',
             'metadata': 'metadata'
         }
-
         self._name = None
         self._management_agent_id = None
         self._timezone_region = None

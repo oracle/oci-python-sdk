@@ -60,7 +60,6 @@ class HostCpuStatistics(HostResourceStatistics):
             'cpu_baseline': 'float',
             'load': 'SummaryStatistics'
         }
-
         self.attribute_map = {
             'usage': 'usage',
             'capacity': 'capacity',
@@ -70,7 +69,6 @@ class HostCpuStatistics(HostResourceStatistics):
             'cpu_baseline': 'cpuBaseline',
             'load': 'load'
         }
-
         self._usage = None
         self._capacity = None
         self._utilization_percent = None

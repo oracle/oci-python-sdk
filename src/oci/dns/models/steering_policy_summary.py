@@ -124,7 +124,6 @@ class SteeringPolicySummary(object):
             'time_created': 'datetime',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
@@ -138,7 +137,6 @@ class SteeringPolicySummary(object):
             'time_created': 'timeCreated',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._compartment_id = None
         self._display_name = None
         self._ttl = None

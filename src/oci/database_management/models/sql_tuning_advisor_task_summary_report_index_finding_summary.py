@@ -53,7 +53,6 @@ class SqlTuningAdvisorTaskSummaryReportIndexFindingSummary(object):
             'reference_count': 'int',
             'index_columns': 'list[str]'
         }
-
         self.attribute_map = {
             'index_hash_value': 'indexHashValue',
             'index_name': 'indexName',
@@ -62,7 +61,6 @@ class SqlTuningAdvisorTaskSummaryReportIndexFindingSummary(object):
             'reference_count': 'referenceCount',
             'index_columns': 'indexColumns'
         }
-
         self._index_hash_value = None
         self._index_name = None
         self._table_name = None

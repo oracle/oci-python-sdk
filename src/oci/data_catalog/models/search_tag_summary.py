@@ -33,12 +33,10 @@ class SearchTagSummary(object):
             'key': 'str',
             'display_name': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'display_name': 'displayName'
         }
-
         self._key = None
         self._display_name = None
 

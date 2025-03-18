@@ -94,7 +94,6 @@ class CreateContainerDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'image_url': 'imageUrl',
@@ -110,7 +109,6 @@ class CreateContainerDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._display_name = None
         self._image_url = None
         self._command = None

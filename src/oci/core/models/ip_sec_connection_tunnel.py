@@ -219,7 +219,6 @@ class IPSecConnectionTunnel(object):
             'phase_two_details': 'TunnelPhaseTwoDetails',
             'associated_virtual_circuits': 'list[str]'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'id': 'id',
@@ -242,7 +241,6 @@ class IPSecConnectionTunnel(object):
             'phase_two_details': 'phaseTwoDetails',
             'associated_virtual_circuits': 'associatedVirtualCircuits'
         }
-
         self._compartment_id = None
         self._id = None
         self._vpn_ip = None

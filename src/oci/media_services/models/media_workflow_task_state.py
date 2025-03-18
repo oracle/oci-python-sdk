@@ -38,13 +38,11 @@ class MediaWorkflowTaskState(object):
             'lifecycle_state': 'str',
             'lifecycle_details': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails'
         }
-
         self._key = None
         self._lifecycle_state = None
         self._lifecycle_details = None

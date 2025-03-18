@@ -124,7 +124,6 @@ class Parameter(TypedObject):
             'type_name': 'str',
             'used_for': 'str'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -143,7 +142,6 @@ class Parameter(TypedObject):
             'type_name': 'typeName',
             'used_for': 'usedFor'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

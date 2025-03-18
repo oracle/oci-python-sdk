@@ -105,7 +105,6 @@ class DeploymentVersionSummary(object):
             'is_security_fix': 'bool',
             'time_supported_until': 'datetime'
         }
-
         self.attribute_map = {
             'ogg_version': 'oggVersion',
             'deployment_type': 'deploymentType',
@@ -114,7 +113,6 @@ class DeploymentVersionSummary(object):
             'is_security_fix': 'isSecurityFix',
             'time_supported_until': 'timeSupportedUntil'
         }
-
         self._ogg_version = None
         self._deployment_type = None
         self._time_released = None

@@ -47,13 +47,11 @@ class AddLockDetails(object):
             'related_resource_id': 'str',
             'message': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'related_resource_id': 'relatedResourceId',
             'message': 'message'
         }
-
         self._type = None
         self._related_resource_id = None
         self._message = None

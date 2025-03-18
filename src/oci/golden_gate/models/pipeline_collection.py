@@ -28,11 +28,9 @@ class PipelineCollection(object):
         self.swagger_types = {
             'items': 'list[PipelineSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

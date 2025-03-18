@@ -279,7 +279,6 @@ class AutonomousDatabaseDataguardAssociation(object):
             'time_created': 'datetime',
             'time_last_role_changed': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'autonomous_database_id': 'autonomousDatabaseId',
@@ -298,7 +297,6 @@ class AutonomousDatabaseDataguardAssociation(object):
             'time_created': 'timeCreated',
             'time_last_role_changed': 'timeLastRoleChanged'
         }
-
         self._id = None
         self._autonomous_database_id = None
         self._role = None

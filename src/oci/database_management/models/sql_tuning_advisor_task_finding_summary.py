@@ -109,7 +109,6 @@ class SqlTuningAdvisorTaskFindingSummary(object):
             'is_error_finding_present': 'bool',
             'is_timeout_finding_present': 'bool'
         }
-
         self.attribute_map = {
             'sql_tuning_advisor_task_id': 'sqlTuningAdvisorTaskId',
             'sql_tuning_advisor_task_object_id': 'sqlTuningAdvisorTaskObjectId',
@@ -129,7 +128,6 @@ class SqlTuningAdvisorTaskFindingSummary(object):
             'is_error_finding_present': 'isErrorFindingPresent',
             'is_timeout_finding_present': 'isTimeoutFindingPresent'
         }
-
         self._sql_tuning_advisor_task_id = None
         self._sql_tuning_advisor_task_object_id = None
         self._sql_tuning_advisor_task_object_execution_id = None

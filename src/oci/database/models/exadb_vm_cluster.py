@@ -313,7 +313,6 @@ class ExadbVmCluster(object):
             'cluster_placement_group_id': 'str',
             'subscription_id': 'str'
         }
-
         self.attribute_map = {
             'iorm_config_cache': 'iormConfigCache',
             'id': 'id',
@@ -364,7 +363,6 @@ class ExadbVmCluster(object):
             'cluster_placement_group_id': 'clusterPlacementGroupId',
             'subscription_id': 'subscriptionId'
         }
-
         self._iorm_config_cache = None
         self._id = None
         self._compartment_id = None

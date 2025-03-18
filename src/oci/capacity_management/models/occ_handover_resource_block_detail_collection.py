@@ -28,11 +28,9 @@ class OccHandoverResourceBlockDetailCollection(object):
         self.swagger_types = {
             'items': 'list[OccHandoverResourceBlockDetailSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

@@ -43,12 +43,10 @@ class ResizeVmClusterNetworkDetails(object):
             'action': 'str',
             'vm_networks': 'list[VmNetworkDetails]'
         }
-
         self.attribute_map = {
             'action': 'action',
             'vm_networks': 'vmNetworks'
         }
-
         self._action = None
         self._vm_networks = None
 

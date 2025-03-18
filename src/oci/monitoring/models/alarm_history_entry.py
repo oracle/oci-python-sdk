@@ -44,14 +44,12 @@ class AlarmHistoryEntry(object):
             'timestamp': 'datetime',
             'timestamp_triggered': 'datetime'
         }
-
         self.attribute_map = {
             'alarm_summary': 'alarmSummary',
             'summary': 'summary',
             'timestamp': 'timestamp',
             'timestamp_triggered': 'timestampTriggered'
         }
-
         self._alarm_summary = None
         self._summary = None
         self._timestamp = None

@@ -117,7 +117,6 @@ class OnPremConnector(object):
             'available_version': 'str',
             'created_version': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -132,7 +131,6 @@ class OnPremConnector(object):
             'available_version': 'availableVersion',
             'created_version': 'createdVersion'
         }
-
         self._id = None
         self._display_name = None
         self._compartment_id = None

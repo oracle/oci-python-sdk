@@ -43,14 +43,12 @@ class ManagedInstanceGroupModuleSummary(object):
             'installed_profiles': 'list[str]',
             'software_source_id': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'enabled_stream': 'enabledStream',
             'installed_profiles': 'installedProfiles',
             'software_source_id': 'softwareSourceId'
         }
-
         self._name = None
         self._enabled_stream = None
         self._installed_profiles = None

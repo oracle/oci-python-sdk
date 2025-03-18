@@ -83,7 +83,6 @@ class MaskedColumnSummary(object):
             'masking_format_used': 'str',
             'total_masked_values': 'int'
         }
-
         self.attribute_map = {
             'key': 'key',
             'parent_column_key': 'parentColumnKey',
@@ -96,7 +95,6 @@ class MaskedColumnSummary(object):
             'masking_format_used': 'maskingFormatUsed',
             'total_masked_values': 'totalMaskedValues'
         }
-
         self._key = None
         self._parent_column_key = None
         self._sensitive_type_id = None

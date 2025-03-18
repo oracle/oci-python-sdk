@@ -115,7 +115,6 @@ class SummarizeTextDetails(object):
             'format': 'str',
             'extractiveness': 'str'
         }
-
         self.attribute_map = {
             'input': 'input',
             'serving_mode': 'servingMode',
@@ -127,7 +126,6 @@ class SummarizeTextDetails(object):
             'format': 'format',
             'extractiveness': 'extractiveness'
         }
-
         self._input = None
         self._serving_mode = None
         self._compartment_id = None

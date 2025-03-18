@@ -58,7 +58,6 @@ class SqlInSqlTuningSet(object):
             'module': 'str',
             'metrics': 'list[SqlMetrics]'
         }
-
         self.attribute_map = {
             'sql_id': 'sqlId',
             'sql_text': 'sqlText',
@@ -68,7 +67,6 @@ class SqlInSqlTuningSet(object):
             'module': 'module',
             'metrics': 'metrics'
         }
-
         self._sql_id = None
         self._sql_text = None
         self._container_database_id = None

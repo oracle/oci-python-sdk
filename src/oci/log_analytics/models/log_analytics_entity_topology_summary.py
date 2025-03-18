@@ -33,12 +33,10 @@ class LogAnalyticsEntityTopologySummary(object):
             'nodes': 'LogAnalyticsEntityCollection',
             'links': 'LogAnalyticsEntityTopologyLinkCollection'
         }
-
         self.attribute_map = {
             'nodes': 'nodes',
             'links': 'links'
         }
-
         self._nodes = None
         self._links = None
 

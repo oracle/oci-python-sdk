@@ -48,7 +48,6 @@ class UnprocessedDataBucket(object):
             'time_created': 'datetime',
             'time_updated': 'datetime'
         }
-
         self.attribute_map = {
             'namespace': 'namespace',
             'bucket_name': 'bucketName',
@@ -56,7 +55,6 @@ class UnprocessedDataBucket(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated'
         }
-
         self._namespace = None
         self._bucket_name = None
         self._is_enabled = None

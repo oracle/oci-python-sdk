@@ -48,7 +48,6 @@ class UpdateMirrorConfigurationDetails(object):
             'sslcert': 'str',
             'is_sslverify_enabled': 'bool'
         }
-
         self.attribute_map = {
             'directory': 'directory',
             'port': 'port',
@@ -56,7 +55,6 @@ class UpdateMirrorConfigurationDetails(object):
             'sslcert': 'sslcert',
             'is_sslverify_enabled': 'isSslverifyEnabled'
         }
-
         self._directory = None
         self._port = None
         self._sslport = None

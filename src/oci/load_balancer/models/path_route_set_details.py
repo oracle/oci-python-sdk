@@ -28,11 +28,9 @@ class PathRouteSetDetails(object):
         self.swagger_types = {
             'path_routes': 'list[PathRoute]'
         }
-
         self.attribute_map = {
             'path_routes': 'pathRoutes'
         }
-
         self._path_routes = None
 
     @property

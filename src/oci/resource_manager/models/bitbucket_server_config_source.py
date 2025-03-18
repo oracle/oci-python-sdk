@@ -65,7 +65,6 @@ class BitbucketServerConfigSource(ConfigSource):
             'repository_id': 'str',
             'clone_url': 'str'
         }
-
         self.attribute_map = {
             'config_source_type': 'configSourceType',
             'working_directory': 'workingDirectory',
@@ -76,7 +75,6 @@ class BitbucketServerConfigSource(ConfigSource):
             'repository_id': 'repositoryId',
             'clone_url': 'cloneUrl'
         }
-
         self._config_source_type = None
         self._working_directory = None
         self._configuration_source_provider_id = None

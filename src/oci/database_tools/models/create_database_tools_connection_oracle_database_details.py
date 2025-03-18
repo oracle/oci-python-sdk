@@ -101,7 +101,6 @@ class CreateDatabaseToolsConnectionOracleDatabaseDetails(CreateDatabaseToolsConn
             'private_endpoint_id': 'str',
             'proxy_client': 'DatabaseToolsConnectionOracleDatabaseProxyClientDetails'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'compartment_id': 'compartmentId',
@@ -119,7 +118,6 @@ class CreateDatabaseToolsConnectionOracleDatabaseDetails(CreateDatabaseToolsConn
             'private_endpoint_id': 'privateEndpointId',
             'proxy_client': 'proxyClient'
         }
-
         self._display_name = None
         self._compartment_id = None
         self._defined_tags = None

@@ -68,7 +68,6 @@ class ListenerDetails(object):
             'routing_policy_name': 'str',
             'rule_set_names': 'list[str]'
         }
-
         self.attribute_map = {
             'default_backend_set_name': 'defaultBackendSetName',
             'port': 'port',
@@ -80,7 +79,6 @@ class ListenerDetails(object):
             'routing_policy_name': 'routingPolicyName',
             'rule_set_names': 'ruleSetNames'
         }
-
         self._default_backend_set_name = None
         self._port = None
         self._protocol = None

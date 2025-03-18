@@ -38,13 +38,11 @@ class WorkRequestManagementStationDetails(object):
             'config': 'str',
             'software_source_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'management_station_version': 'managementStationVersion',
             'config': 'config',
             'software_source_ids': 'softwareSourceIds'
         }
-
         self._management_station_version = None
         self._config = None
         self._software_source_ids = None

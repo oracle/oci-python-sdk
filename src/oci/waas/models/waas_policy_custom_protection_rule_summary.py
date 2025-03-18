@@ -58,7 +58,6 @@ class WaasPolicyCustomProtectionRuleSummary(object):
             'mod_security_rule_ids': 'list[str]',
             'exclusions': 'list[ProtectionRuleExclusion]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -66,7 +65,6 @@ class WaasPolicyCustomProtectionRuleSummary(object):
             'mod_security_rule_ids': 'modSecurityRuleIds',
             'exclusions': 'exclusions'
         }
-
         self._id = None
         self._display_name = None
         self._action = None

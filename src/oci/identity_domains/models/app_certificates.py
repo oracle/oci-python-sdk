@@ -48,7 +48,6 @@ class AppCertificates(object):
             'x5t': 'str',
             'x509_base64_certificate': 'object'
         }
-
         self.attribute_map = {
             'cert_alias': 'certAlias',
             'sha1_thumbprint': 'sha1Thumbprint',
@@ -56,7 +55,6 @@ class AppCertificates(object):
             'x5t': 'x5t',
             'x509_base64_certificate': 'x509Base64Certificate'
         }
-
         self._cert_alias = None
         self._sha1_thumbprint = None
         self._kid = None

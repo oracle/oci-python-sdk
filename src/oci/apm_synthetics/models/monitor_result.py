@@ -53,7 +53,6 @@ class MonitorResult(object):
             'vantage_point': 'str',
             'execution_time': 'str'
         }
-
         self.attribute_map = {
             'result_type': 'resultType',
             'result_content_type': 'resultContentType',
@@ -62,7 +61,6 @@ class MonitorResult(object):
             'vantage_point': 'vantagePoint',
             'execution_time': 'executionTime'
         }
-
         self._result_type = None
         self._result_content_type = None
         self._result_data_set = None

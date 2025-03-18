@@ -28,11 +28,9 @@ class ExportBotDetails(object):
         self.swagger_types = {
             'target': 'StorageLocation'
         }
-
         self.attribute_map = {
             'target': 'target'
         }
-
         self._target = None
 
     @property

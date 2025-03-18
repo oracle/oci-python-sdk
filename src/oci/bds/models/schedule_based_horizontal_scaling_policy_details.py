@@ -54,7 +54,6 @@ class ScheduleBasedHorizontalScalingPolicyDetails(AutoScalePolicyDetails):
             'timezone': 'str',
             'schedule_details': 'list[HorizontalScalingScheduleDetails]'
         }
-
         self.attribute_map = {
             'policy_type': 'policyType',
             'trigger_type': 'triggerType',
@@ -62,7 +61,6 @@ class ScheduleBasedHorizontalScalingPolicyDetails(AutoScalePolicyDetails):
             'timezone': 'timezone',
             'schedule_details': 'scheduleDetails'
         }
-
         self._policy_type = None
         self._trigger_type = None
         self._action_type = None

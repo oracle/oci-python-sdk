@@ -137,7 +137,6 @@ class DiscoveredExternalListener(DiscoveredExternalDbSystemComponent):
             'endpoints': 'list[ExternalListenerEndpoint]',
             'connector': 'ExternalDbSystemDiscoveryConnector'
         }
-
         self.attribute_map = {
             'component_id': 'componentId',
             'display_name': 'displayName',
@@ -159,7 +158,6 @@ class DiscoveredExternalListener(DiscoveredExternalDbSystemComponent):
             'endpoints': 'endpoints',
             'connector': 'connector'
         }
-
         self._component_id = None
         self._display_name = None
         self._component_name = None

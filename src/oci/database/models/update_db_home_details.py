@@ -43,14 +43,12 @@ class UpdateDbHomeDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'db_version': 'dbVersion',
             'one_off_patches': 'oneOffPatches',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._db_version = None
         self._one_off_patches = None
         self._freeform_tags = None

@@ -56,7 +56,6 @@ class RemoteClonePluggableDatabaseDetails(object):
             'target_tde_wallet_password': 'str',
             'should_pdb_admin_account_be_locked': 'bool'
         }
-
         self.attribute_map = {
             'target_container_database_id': 'targetContainerDatabaseId',
             'source_container_db_admin_password': 'sourceContainerDbAdminPassword',
@@ -65,7 +64,6 @@ class RemoteClonePluggableDatabaseDetails(object):
             'target_tde_wallet_password': 'targetTdeWalletPassword',
             'should_pdb_admin_account_be_locked': 'shouldPdbAdminAccountBeLocked'
         }
-
         self._target_container_database_id = None
         self._source_container_db_admin_password = None
         self._cloned_pdb_name = None

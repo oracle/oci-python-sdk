@@ -114,7 +114,6 @@ class CreateSensitiveColumnDetails(object):
             'app_defined_child_column_keys': 'list[str]',
             'db_defined_child_column_keys': 'list[str]'
         }
-
         self.attribute_map = {
             'app_name': 'appName',
             'schema_name': 'schemaName',
@@ -129,7 +128,6 @@ class CreateSensitiveColumnDetails(object):
             'app_defined_child_column_keys': 'appDefinedChildColumnKeys',
             'db_defined_child_column_keys': 'dbDefinedChildColumnKeys'
         }
-
         self._app_name = None
         self._schema_name = None
         self._object_name = None

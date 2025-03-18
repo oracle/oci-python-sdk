@@ -28,11 +28,9 @@ class RemoveDrgRouteDistributionStatementsDetails(object):
         self.swagger_types = {
             'statement_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'statement_ids': 'statementIds'
         }
-
         self._statement_ids = None
 
     @property

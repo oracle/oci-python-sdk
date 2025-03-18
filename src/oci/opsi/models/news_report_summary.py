@@ -231,7 +231,6 @@ class NewsReportSummary(object):
             'tag_filters': 'list[str]',
             'match_rule': 'str'
         }
-
         self.attribute_map = {
             'news_frequency': 'newsFrequency',
             'content_types': 'contentTypes',
@@ -254,7 +253,6 @@ class NewsReportSummary(object):
             'tag_filters': 'tagFilters',
             'match_rule': 'matchRule'
         }
-
         self._news_frequency = None
         self._content_types = None
         self._locale = None

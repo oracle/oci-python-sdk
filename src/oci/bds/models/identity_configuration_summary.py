@@ -38,13 +38,11 @@ class IdentityConfigurationSummary(object):
             'display_name': 'str',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._id = None
         self._display_name = None
         self._lifecycle_state = None

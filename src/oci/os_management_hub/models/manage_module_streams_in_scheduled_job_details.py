@@ -43,14 +43,12 @@ class ManageModuleStreamsInScheduledJobDetails(object):
             'install': 'list[ModuleStreamProfileDetails]',
             'remove': 'list[ModuleStreamProfileDetails]'
         }
-
         self.attribute_map = {
             'enable': 'enable',
             'disable': 'disable',
             'install': 'install',
             'remove': 'remove'
         }
-
         self._enable = None
         self._disable = None
         self._install = None

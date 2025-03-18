@@ -38,13 +38,11 @@ class CandidateResponderRule(object):
             'display_name': 'str',
             'is_preferred': 'bool'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
             'is_preferred': 'isPreferred'
         }
-
         self._id = None
         self._display_name = None
         self._is_preferred = None

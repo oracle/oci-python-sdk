@@ -63,7 +63,6 @@ class UpdateInstancePoolDetails(object):
             'instance_display_name_formatter': 'str',
             'instance_hostname_formatter': 'str'
         }
-
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
@@ -74,7 +73,6 @@ class UpdateInstancePoolDetails(object):
             'instance_display_name_formatter': 'instanceDisplayNameFormatter',
             'instance_hostname_formatter': 'instanceHostnameFormatter'
         }
-
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None

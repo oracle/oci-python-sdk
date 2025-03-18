@@ -28,11 +28,9 @@ class ChangeExternalMysqlDatabaseInsightConnectionDetails(object):
         self.swagger_types = {
             'database_connector_id': 'str'
         }
-
         self.attribute_map = {
             'database_connector_id': 'databaseConnectorId'
         }
-
         self._database_connector_id = None
 
     @property

@@ -48,12 +48,10 @@ class DataGuardGroup(object):
             'members': 'list[DataGuardGroupMember]',
             'protection_mode': 'str'
         }
-
         self.attribute_map = {
             'members': 'members',
             'protection_mode': 'protectionMode'
         }
-
         self._members = None
         self._protection_mode = None
 

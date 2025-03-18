@@ -28,11 +28,9 @@ class RecoveryServiceSubnetInput(object):
         self.swagger_types = {
             'recovery_service_subnet_id': 'str'
         }
-
         self.attribute_map = {
             'recovery_service_subnet_id': 'recoveryServiceSubnetId'
         }
-
         self._recovery_service_subnet_id = None
 
     @property

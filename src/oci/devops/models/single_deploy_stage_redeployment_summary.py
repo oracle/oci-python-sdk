@@ -114,7 +114,6 @@ class SingleDeployStageRedeploymentSummary(DeploymentSummary):
             'previous_deployment_id': 'str',
             'deploy_stage_id': 'str'
         }
-
         self.attribute_map = {
             'deployment_type': 'deploymentType',
             'id': 'id',
@@ -135,7 +134,6 @@ class SingleDeployStageRedeploymentSummary(DeploymentSummary):
             'previous_deployment_id': 'previousDeploymentId',
             'deploy_stage_id': 'deployStageId'
         }
-
         self._deployment_type = None
         self._id = None
         self._display_name = None

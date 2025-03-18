@@ -38,13 +38,11 @@ class Principal(object):
             'tenant_id': 'str',
             'claims': 'list[Claim]'
         }
-
         self.attribute_map = {
             'subject_id': 'subjectId',
             'tenant_id': 'tenantId',
             'claims': 'claims'
         }
-
         self._subject_id = None
         self._tenant_id = None
         self._claims = None

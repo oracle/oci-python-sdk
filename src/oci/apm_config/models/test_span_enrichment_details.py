@@ -45,14 +45,12 @@ class TestSpanEnrichmentDetails(TestDetails):
             'filters': 'list[FilterTextOrId]',
             'span': 'object'
         }
-
         self.attribute_map = {
             'test_type': 'testType',
             'options': 'options',
             'filters': 'filters',
             'span': 'span'
         }
-
         self._test_type = None
         self._options = None
         self._filters = None

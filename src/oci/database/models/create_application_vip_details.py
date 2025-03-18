@@ -53,7 +53,6 @@ class CreateApplicationVipDetails(object):
             'ip_address': 'str',
             'ipv6_address': 'str'
         }
-
         self.attribute_map = {
             'hostname_label': 'hostnameLabel',
             'db_node_id': 'dbNodeId',
@@ -62,7 +61,6 @@ class CreateApplicationVipDetails(object):
             'ip_address': 'ipAddress',
             'ipv6_address': 'ipv6Address'
         }
-
         self._hostname_label = None
         self._db_node_id = None
         self._cloud_vm_cluster_id = None

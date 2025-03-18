@@ -33,12 +33,10 @@ class ValidateKeyTabsResponseDetails(object):
             'current_kerberos_keytab_entries': 'list[KerberosKeytabEntry]',
             'backup_kerberos_keytab_entries': 'list[KerberosKeytabEntry]'
         }
-
         self.attribute_map = {
             'current_kerberos_keytab_entries': 'currentKerberosKeytabEntries',
             'backup_kerberos_keytab_entries': 'backupKerberosKeytabEntries'
         }
-
         self._current_kerberos_keytab_entries = None
         self._backup_kerberos_keytab_entries = None
 

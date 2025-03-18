@@ -82,7 +82,6 @@ class BlockChallengeSettings(object):
             'captcha_footer': 'str',
             'captcha_submit_label': 'str'
         }
-
         self.attribute_map = {
             'block_action': 'blockAction',
             'block_response_code': 'blockResponseCode',
@@ -94,7 +93,6 @@ class BlockChallengeSettings(object):
             'captcha_footer': 'captchaFooter',
             'captcha_submit_label': 'captchaSubmitLabel'
         }
-
         self._block_action = None
         self._block_response_code = None
         self._block_error_page_message = None

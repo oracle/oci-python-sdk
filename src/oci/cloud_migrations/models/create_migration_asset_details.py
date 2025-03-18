@@ -63,7 +63,6 @@ class CreateMigrationAssetDetails(object):
             'snap_shot_bucket_name': 'str',
             'depends_on': 'list[str]'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'inventory_asset_id': 'inventoryAssetId',
@@ -74,7 +73,6 @@ class CreateMigrationAssetDetails(object):
             'snap_shot_bucket_name': 'snapShotBucketName',
             'depends_on': 'dependsOn'
         }
-
         self._display_name = None
         self._inventory_asset_id = None
         self._migration_id = None

@@ -50,7 +50,6 @@ class MigrateVaultKeyDetails(object):
             'tde_wallet_password': 'str',
             'admin_password': 'str'
         }
-
         self.attribute_map = {
             'kms_key_id': 'kmsKeyId',
             'kms_key_version_id': 'kmsKeyVersionId',
@@ -58,7 +57,6 @@ class MigrateVaultKeyDetails(object):
             'tde_wallet_password': 'tdeWalletPassword',
             'admin_password': 'adminPassword'
         }
-
         self._kms_key_id = None
         self._kms_key_version_id = None
         self._vault_id = None

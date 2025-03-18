@@ -28,11 +28,9 @@ class UsagePlansPolicy(object):
         self.swagger_types = {
             'token_locations': 'list[str]'
         }
-
         self.attribute_map = {
             'token_locations': 'tokenLocations'
         }
-
         self._token_locations = None
 
     @property

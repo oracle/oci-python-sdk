@@ -95,7 +95,6 @@ class ConsoleConnection(object):
             'lifecycle_details': 'str',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -108,7 +107,6 @@ class ConsoleConnection(object):
             'lifecycle_details': 'lifecycleDetails',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._id = None
         self._compartment_id = None
         self._db_node_id = None

@@ -50,7 +50,6 @@ class CreateManagedSshSessionTargetResourceDetails(CreateSessionTargetResourceDe
             'target_resource_private_ip_address': 'str',
             'target_resource_port': 'int'
         }
-
         self.attribute_map = {
             'session_type': 'sessionType',
             'target_resource_operating_system_user_name': 'targetResourceOperatingSystemUserName',
@@ -58,7 +57,6 @@ class CreateManagedSshSessionTargetResourceDetails(CreateSessionTargetResourceDe
             'target_resource_private_ip_address': 'targetResourcePrivateIpAddress',
             'target_resource_port': 'targetResourcePort'
         }
-
         self._session_type = None
         self._target_resource_operating_system_user_name = None
         self._target_resource_id = None

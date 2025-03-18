@@ -39,13 +39,11 @@ class SupportedVmwareSoftwareVersionSummary(object):
             'description': 'str',
             'esxi_software_versions': 'list[SupportedEsxiSoftwareVersionSummary]'
         }
-
         self.attribute_map = {
             'version': 'version',
             'description': 'description',
             'esxi_software_versions': 'esxiSoftwareVersions'
         }
-
         self._version = None
         self._description = None
         self._esxi_software_versions = None

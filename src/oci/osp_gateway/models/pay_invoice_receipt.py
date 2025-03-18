@@ -38,13 +38,11 @@ class PayInvoiceReceipt(object):
             'header_id': 'str',
             'token': 'str'
         }
-
         self.attribute_map = {
             'url': 'url',
             'header_id': 'headerId',
             'token': 'token'
         }
-
         self._url = None
         self._header_id = None
         self._token = None

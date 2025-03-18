@@ -28,11 +28,9 @@ class AnnouncementCollection(object):
         self.swagger_types = {
             'items': 'list[AnnouncementSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

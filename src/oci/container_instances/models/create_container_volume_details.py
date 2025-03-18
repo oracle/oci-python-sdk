@@ -48,12 +48,10 @@ class CreateContainerVolumeDetails(object):
             'name': 'str',
             'volume_type': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'volume_type': 'volumeType'
         }
-
         self._name = None
         self._volume_type = None
 

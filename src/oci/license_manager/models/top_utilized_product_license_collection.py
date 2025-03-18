@@ -28,11 +28,9 @@ class TopUtilizedProductLicenseCollection(object):
         self.swagger_types = {
             'items': 'list[TopUtilizedProductLicenseSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

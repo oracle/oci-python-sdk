@@ -33,12 +33,10 @@ class MyAuthenticationFactorValidatorSecurityQuestions(object):
             'id': 'str',
             'answer': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'answer': 'answer'
         }
-
         self._id = None
         self._answer = None
 

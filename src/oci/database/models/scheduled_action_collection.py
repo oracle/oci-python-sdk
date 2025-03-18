@@ -28,11 +28,9 @@ class ScheduledActionCollection(object):
         self.swagger_types = {
             'items': 'list[ScheduledActionSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

@@ -58,7 +58,6 @@ class SoftwarePackageSummary(object):
             'checksum': 'str',
             'checksum_type': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'name': 'name',
@@ -68,7 +67,6 @@ class SoftwarePackageSummary(object):
             'checksum': 'checksum',
             'checksum_type': 'checksumType'
         }
-
         self._display_name = None
         self._name = None
         self._type = None

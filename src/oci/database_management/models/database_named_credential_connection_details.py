@@ -35,12 +35,10 @@ class DatabaseNamedCredentialConnectionDetails(DatabaseConnectionCredentials):
             'credential_type': 'str',
             'named_credential_id': 'str'
         }
-
         self.attribute_map = {
             'credential_type': 'credentialType',
             'named_credential_id': 'namedCredentialId'
         }
-
         self._credential_type = None
         self._named_credential_id = None
         self._credential_type = 'NAMED_CREDENTIAL'

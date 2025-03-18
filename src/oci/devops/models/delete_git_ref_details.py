@@ -28,11 +28,9 @@ class DeleteGitRefDetails(object):
         self.swagger_types = {
             'ref_name': 'str'
         }
-
         self.attribute_map = {
             'ref_name': 'refName'
         }
-
         self._ref_name = None
 
     @property

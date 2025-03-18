@@ -66,7 +66,6 @@ class StageSummary(object):
             'type': 'str',
             'summary': 'str'
         }
-
         self.attribute_map = {
             'time_created': 'timeCreated',
             'time_started': 'timeStarted',
@@ -74,7 +73,6 @@ class StageSummary(object):
             'type': 'type',
             'summary': 'summary'
         }
-
         self._time_created = None
         self._time_started = None
         self._time_finished = None

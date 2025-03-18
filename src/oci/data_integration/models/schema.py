@@ -93,7 +93,6 @@ class Schema(object):
             'identifier': 'str',
             'metadata': 'ObjectMetadata'
         }
-
         self.attribute_map = {
             'key': 'key',
             'model_type': 'modelType',
@@ -110,7 +109,6 @@ class Schema(object):
             'identifier': 'identifier',
             'metadata': 'metadata'
         }
-
         self._key = None
         self._model_type = None
         self._model_version = None

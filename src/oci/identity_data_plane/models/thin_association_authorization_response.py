@@ -59,13 +59,11 @@ class ThinAssociationAuthorizationResponse(object):
             'association_result': 'str',
             'decision_cache_duration': 'str'
         }
-
         self.attribute_map = {
             'responses': 'responses',
             'association_result': 'associationResult',
             'decision_cache_duration': 'decisionCacheDuration'
         }
-
         self._responses = None
         self._association_result = None
         self._decision_cache_duration = None

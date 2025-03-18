@@ -60,13 +60,11 @@ class Landmark(object):
             'x': 'float',
             'y': 'float'
         }
-
         self.attribute_map = {
             'type': 'type',
             'x': 'x',
             'y': 'y'
         }
-
         self._type = None
         self._x = None
         self._y = None

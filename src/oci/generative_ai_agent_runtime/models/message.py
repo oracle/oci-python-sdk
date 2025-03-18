@@ -48,13 +48,11 @@ class Message(object):
             'content': 'MessageContent',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'role': 'role',
             'content': 'content',
             'time_created': 'timeCreated'
         }
-
         self._role = None
         self._content = None
         self._time_created = None

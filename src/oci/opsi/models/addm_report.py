@@ -58,7 +58,6 @@ class AddmReport(object):
             'snapshot_interval_end': 'str',
             'addm_report': 'str'
         }
-
         self.attribute_map = {
             'time_interval_start': 'timeIntervalStart',
             'time_interval_end': 'timeIntervalEnd',
@@ -68,7 +67,6 @@ class AddmReport(object):
             'snapshot_interval_end': 'snapshotIntervalEnd',
             'addm_report': 'addmReport'
         }
-
         self._time_interval_start = None
         self._time_interval_end = None
         self._task_identifier = None

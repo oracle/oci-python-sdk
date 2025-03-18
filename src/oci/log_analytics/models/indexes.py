@@ -33,12 +33,10 @@ class Indexes(object):
             'end_index': 'int',
             'start_index': 'int'
         }
-
         self.attribute_map = {
             'end_index': 'endIndex',
             'start_index': 'startIndex'
         }
-
         self._end_index = None
         self._start_index = None
 

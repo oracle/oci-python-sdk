@@ -66,7 +66,6 @@ class CreateManagedInstanceGroupDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'os_family': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
@@ -75,7 +74,6 @@ class CreateManagedInstanceGroupDetails(object):
             'defined_tags': 'definedTags',
             'os_family': 'osFamily'
         }
-
         self._display_name = None
         self._description = None
         self._compartment_id = None

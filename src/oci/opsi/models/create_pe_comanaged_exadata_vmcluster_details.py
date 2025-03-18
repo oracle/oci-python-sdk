@@ -48,7 +48,6 @@ class CreatePeComanagedExadataVmclusterDetails(object):
             'member_database_details': 'list[CreatePeComanagedDatabaseInsightDetails]',
             'compartment_id': 'str'
         }
-
         self.attribute_map = {
             'vmcluster_id': 'vmclusterId',
             'opsi_private_endpoint_id': 'opsiPrivateEndpointId',
@@ -56,7 +55,6 @@ class CreatePeComanagedExadataVmclusterDetails(object):
             'member_database_details': 'memberDatabaseDetails',
             'compartment_id': 'compartmentId'
         }
-
         self._vmcluster_id = None
         self._opsi_private_endpoint_id = None
         self._dbm_private_endpoint_id = None

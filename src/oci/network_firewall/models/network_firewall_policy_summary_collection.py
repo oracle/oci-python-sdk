@@ -28,11 +28,9 @@ class NetworkFirewallPolicySummaryCollection(object):
         self.swagger_types = {
             'items': 'list[NetworkFirewallPolicySummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

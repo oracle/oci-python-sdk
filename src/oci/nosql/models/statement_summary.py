@@ -91,7 +91,6 @@ class StatementSummary(object):
             'is_if_not_exists': 'bool',
             'syntax_error': 'str'
         }
-
         self.attribute_map = {
             'operation': 'operation',
             'table_name': 'tableName',
@@ -100,7 +99,6 @@ class StatementSummary(object):
             'is_if_not_exists': 'isIfNotExists',
             'syntax_error': 'syntaxError'
         }
-
         self._operation = None
         self._table_name = None
         self._index_name = None

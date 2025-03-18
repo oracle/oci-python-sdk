@@ -62,7 +62,6 @@ class ObjectLineage(object):
             'relationships': 'list[LineageRelationship]',
             'annotations': 'dict(str, dict(str, str))'
         }
-
         self.attribute_map = {
             'level': 'level',
             'direction': 'direction',
@@ -70,7 +69,6 @@ class ObjectLineage(object):
             'relationships': 'relationships',
             'annotations': 'annotations'
         }
-
         self._level = None
         self._direction = None
         self._objects = None

@@ -137,7 +137,6 @@ class TermSummary(object):
             'associated_object_count': 'int',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'display_name': 'displayName',
@@ -152,7 +151,6 @@ class TermSummary(object):
             'associated_object_count': 'associatedObjectCount',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._key = None
         self._display_name = None
         self._description = None

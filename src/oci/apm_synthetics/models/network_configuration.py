@@ -68,7 +68,6 @@ class NetworkConfiguration(object):
             'protocol': 'str',
             'probe_mode': 'str'
         }
-
         self.attribute_map = {
             'number_of_hops': 'numberOfHops',
             'probe_per_hop': 'probePerHop',
@@ -76,7 +75,6 @@ class NetworkConfiguration(object):
             'protocol': 'protocol',
             'probe_mode': 'probeMode'
         }
-
         self._number_of_hops = None
         self._probe_per_hop = None
         self._transmission_rate = None

@@ -99,7 +99,6 @@ class DataObjectColumnMetadata(object):
             'group_name': 'str',
             'unit_details': 'DataObjectColumnUnit'
         }
-
         self.attribute_map = {
             'name': 'name',
             'category': 'category',
@@ -110,7 +109,6 @@ class DataObjectColumnMetadata(object):
             'group_name': 'groupName',
             'unit_details': 'unitDetails'
         }
-
         self._name = None
         self._category = None
         self._data_type = None

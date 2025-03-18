@@ -28,11 +28,9 @@ class MetricPropertyCollection(object):
         self.swagger_types = {
             'items': 'list[MetricPropertySummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

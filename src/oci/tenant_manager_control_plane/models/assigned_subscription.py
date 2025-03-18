@@ -78,7 +78,6 @@ class AssignedSubscription(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'entity_version': 'entityVersion',
             'id': 'id',
@@ -89,7 +88,6 @@ class AssignedSubscription(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._entity_version = None
         self._id = None
         self._compartment_id = None

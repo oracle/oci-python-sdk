@@ -40,13 +40,11 @@ class SteeringPolicyHealthRule(SteeringPolicyRule):
             'rule_type': 'str',
             'cases': 'list[SteeringPolicyHealthRuleCase]'
         }
-
         self.attribute_map = {
             'description': 'description',
             'rule_type': 'ruleType',
             'cases': 'cases'
         }
-
         self._description = None
         self._rule_type = None
         self._cases = None

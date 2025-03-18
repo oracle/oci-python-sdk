@@ -103,7 +103,6 @@ class CreateBdsInstanceDetails(object):
             'cluster_profile': 'str',
             'bds_cluster_version_summary': 'BdsClusterVersionSummary'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
@@ -122,7 +121,6 @@ class CreateBdsInstanceDetails(object):
             'cluster_profile': 'clusterProfile',
             'bds_cluster_version_summary': 'bdsClusterVersionSummary'
         }
-
         self._compartment_id = None
         self._display_name = None
         self._cluster_version = None

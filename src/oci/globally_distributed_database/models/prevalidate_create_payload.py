@@ -35,12 +35,10 @@ class PrevalidateCreatePayload(PrevalidatePayload):
             'operation': 'str',
             'prevalidate_payload': 'CreateShardedDatabaseDetails'
         }
-
         self.attribute_map = {
             'operation': 'operation',
             'prevalidate_payload': 'prevalidatePayload'
         }
-
         self._operation = None
         self._prevalidate_payload = None
         self._operation = 'CREATE'

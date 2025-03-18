@@ -33,12 +33,10 @@ class BackupOpensearchClusterDetails(object):
             'compartment_id': 'str',
             'display_name': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'display_name': 'displayName'
         }
-
         self._compartment_id = None
         self._display_name = None
 

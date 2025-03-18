@@ -43,14 +43,12 @@ class CreateReadEndpointDetails(object):
             'read_endpoint_hostname_label': 'str',
             'exclude_ips': 'list[str]'
         }
-
         self.attribute_map = {
             'is_enabled': 'isEnabled',
             'read_endpoint_ip_address': 'readEndpointIpAddress',
             'read_endpoint_hostname_label': 'readEndpointHostnameLabel',
             'exclude_ips': 'excludeIps'
         }
-
         self._is_enabled = None
         self._read_endpoint_ip_address = None
         self._read_endpoint_hostname_label = None

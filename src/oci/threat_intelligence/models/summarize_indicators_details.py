@@ -153,7 +153,6 @@ class SummarizeIndicatorsDetails(object):
             'sort_order': 'str',
             'sort_by': 'str'
         }
-
         self.attribute_map = {
             'indicator_type': 'indicatorType',
             'indicator_value': 'indicatorValue',
@@ -171,7 +170,6 @@ class SummarizeIndicatorsDetails(object):
             'sort_order': 'sortOrder',
             'sort_by': 'sortBy'
         }
-
         self._indicator_type = None
         self._indicator_value = None
         self._threat_types = None

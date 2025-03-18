@@ -34,12 +34,10 @@ class RetrieveDimensionStatesDetails(object):
             'dimension_filters': 'dict(str, str)',
             'status': 'str'
         }
-
         self.attribute_map = {
             'dimension_filters': 'dimensionFilters',
             'status': 'status'
         }
-
         self._dimension_filters = None
         self._status = None
 

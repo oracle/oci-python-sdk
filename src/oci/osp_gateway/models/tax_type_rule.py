@@ -33,12 +33,10 @@ class TaxTypeRule(object):
             'fields': 'list[Field]',
             'value_set': 'list[ValueSetEntity]'
         }
-
         self.attribute_map = {
             'fields': 'fields',
             'value_set': 'valueSet'
         }
-
         self._fields = None
         self._value_set = None
 

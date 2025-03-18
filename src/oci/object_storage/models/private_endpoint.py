@@ -143,7 +143,6 @@ class PrivateEndpoint(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'id': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'namespace': 'namespace',
@@ -164,7 +163,6 @@ class PrivateEndpoint(object):
             'defined_tags': 'definedTags',
             'id': 'id'
         }
-
         self._name = None
         self._namespace = None
         self._compartment_id = None

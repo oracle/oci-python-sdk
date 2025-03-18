@@ -50,7 +50,6 @@ class KeyStoreTypeFromOracleKeyVaultDetails(KeyStoreTypeDetails):
             'vault_id': 'str',
             'secret_id': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'connection_ips': 'connectionIps',
@@ -58,7 +57,6 @@ class KeyStoreTypeFromOracleKeyVaultDetails(KeyStoreTypeDetails):
             'vault_id': 'vaultId',
             'secret_id': 'secretId'
         }
-
         self._type = None
         self._connection_ips = None
         self._admin_username = None

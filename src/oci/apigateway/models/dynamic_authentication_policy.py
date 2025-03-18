@@ -33,12 +33,10 @@ class DynamicAuthenticationPolicy(object):
             'selection_source': 'SelectionSourcePolicy',
             'authentication_servers': 'list[AuthenticationServerPolicy]'
         }
-
         self.attribute_map = {
             'selection_source': 'selectionSource',
             'authentication_servers': 'authenticationServers'
         }
-
         self._selection_source = None
         self._authentication_servers = None
 

@@ -30,11 +30,9 @@ class StreamPackagingConfigEncryptionNone(StreamPackagingConfigEncryption):
         self.swagger_types = {
             'algorithm': 'str'
         }
-
         self.attribute_map = {
             'algorithm': 'algorithm'
         }
-
         self._algorithm = None
         self._algorithm = 'NONE'
 

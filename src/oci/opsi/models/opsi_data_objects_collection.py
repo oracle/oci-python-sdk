@@ -28,11 +28,9 @@ class OpsiDataObjectsCollection(object):
         self.swagger_types = {
             'items': 'list[OpsiDataObjectSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

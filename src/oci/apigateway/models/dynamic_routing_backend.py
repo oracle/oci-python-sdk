@@ -40,13 +40,11 @@ class DynamicRoutingBackend(ApiSpecificationRouteBackend):
             'selection_source': 'SelectionSourcePolicy',
             'routing_backends': 'list[DynamicRoutingTypeRoutingBackend]'
         }
-
         self.attribute_map = {
             'type': 'type',
             'selection_source': 'selectionSource',
             'routing_backends': 'routingBackends'
         }
-
         self._type = None
         self._selection_source = None
         self._routing_backends = None

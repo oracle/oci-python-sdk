@@ -33,12 +33,10 @@ class VirtualServiceMutualTransportLayerSecurityDetails(object):
             'maximum_validity': 'int',
             'mode': 'str'
         }
-
         self.attribute_map = {
             'maximum_validity': 'maximumValidity',
             'mode': 'mode'
         }
-
         self._maximum_validity = None
         self._mode = None
 

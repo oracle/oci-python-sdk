@@ -87,7 +87,6 @@ class ApiSpecificationRoute(object):
             'logging_policies': 'ApiSpecificationLoggingPolicies',
             'backend': 'ApiSpecificationRouteBackend'
         }
-
         self.attribute_map = {
             'path': 'path',
             'methods': 'methods',
@@ -96,7 +95,6 @@ class ApiSpecificationRoute(object):
             'logging_policies': 'loggingPolicies',
             'backend': 'backend'
         }
-
         self._path = None
         self._methods = None
         self._request_policies = None

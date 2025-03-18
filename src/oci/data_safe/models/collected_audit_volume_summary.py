@@ -43,14 +43,12 @@ class CollectedAuditVolumeSummary(object):
             'online_volume': 'int',
             'archived_volume': 'int'
         }
-
         self.attribute_map = {
             'audit_profile_id': 'auditProfileId',
             'month_in_consideration': 'monthInConsideration',
             'online_volume': 'onlineVolume',
             'archived_volume': 'archivedVolume'
         }
-
         self._audit_profile_id = None
         self._month_in_consideration = None
         self._online_volume = None

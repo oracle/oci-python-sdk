@@ -123,7 +123,6 @@ class CreateDisApplicationDetails(object):
             'source_application_info': 'CreateSourceApplicationInfo',
             'registry_metadata': 'RegistryMetadata'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'key': 'key',
@@ -140,7 +139,6 @@ class CreateDisApplicationDetails(object):
             'source_application_info': 'sourceApplicationInfo',
             'registry_metadata': 'registryMetadata'
         }
-
         self._compartment_id = None
         self._key = None
         self._model_version = None

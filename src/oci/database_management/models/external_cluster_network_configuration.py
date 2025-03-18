@@ -56,13 +56,11 @@ class ExternalClusterNetworkConfiguration(object):
             'network_type': 'str',
             'subnet': 'str'
         }
-
         self.attribute_map = {
             'network_number': 'networkNumber',
             'network_type': 'networkType',
             'subnet': 'subnet'
         }
-
         self._network_number = None
         self._network_type = None
         self._subnet = None

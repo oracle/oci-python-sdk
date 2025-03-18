@@ -33,12 +33,10 @@ class ConfigureShardedDatabaseGsmsDetails(object):
             'old_gsm_names': 'list[str]',
             'is_latest_gsm_image': 'bool'
         }
-
         self.attribute_map = {
             'old_gsm_names': 'oldGsmNames',
             'is_latest_gsm_image': 'isLatestGsmImage'
         }
-
         self._old_gsm_names = None
         self._is_latest_gsm_image = None
 

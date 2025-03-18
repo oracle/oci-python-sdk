@@ -62,7 +62,6 @@ class CapacityReportShapeAvailability(object):
             'available_count': 'int',
             'availability_status': 'str'
         }
-
         self.attribute_map = {
             'fault_domain': 'faultDomain',
             'instance_shape': 'instanceShape',
@@ -70,7 +69,6 @@ class CapacityReportShapeAvailability(object):
             'available_count': 'availableCount',
             'availability_status': 'availabilityStatus'
         }
-
         self._fault_domain = None
         self._instance_shape = None
         self._instance_shape_config = None

@@ -39,13 +39,11 @@ class UpdateInstanceSourceViaBootVolumeDetails(UpdateInstanceSourceDetails):
             'is_preserve_boot_volume_enabled': 'bool',
             'boot_volume_id': 'str'
         }
-
         self.attribute_map = {
             'source_type': 'sourceType',
             'is_preserve_boot_volume_enabled': 'isPreserveBootVolumeEnabled',
             'boot_volume_id': 'bootVolumeId'
         }
-
         self._source_type = None
         self._is_preserve_boot_volume_enabled = None
         self._boot_volume_id = None

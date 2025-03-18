@@ -107,7 +107,6 @@ class UserAttributesSetting(object):
             'tenancy_ocid': 'str',
             'attribute_settings': 'list[UserAttributesSettingsAttributeSettings]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -124,7 +123,6 @@ class UserAttributesSetting(object):
             'tenancy_ocid': 'tenancyOcid',
             'attribute_settings': 'attributeSettings'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

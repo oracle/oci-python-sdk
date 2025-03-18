@@ -28,11 +28,9 @@ class DeactivateIamUserSyncConfigurationDetails(object):
         self.swagger_types = {
             'cluster_admin_password': 'str'
         }
-
         self.attribute_map = {
             'cluster_admin_password': 'clusterAdminPassword'
         }
-
         self._cluster_admin_password = None
 
     @property

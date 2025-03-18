@@ -28,11 +28,9 @@ class AddVcnCidrDetails(object):
         self.swagger_types = {
             'cidr_block': 'str'
         }
-
         self.attribute_map = {
             'cidr_block': 'cidrBlock'
         }
-
         self._cidr_block = None
 
     @property

@@ -253,7 +253,6 @@ class JobExecution(object):
             'out_binds': 'JobOutBindsDetails',
             'schedule_details': 'JobScheduleDetails'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -280,7 +279,6 @@ class JobExecution(object):
             'out_binds': 'outBinds',
             'schedule_details': 'scheduleDetails'
         }
-
         self._id = None
         self._name = None
         self._compartment_id = None

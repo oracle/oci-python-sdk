@@ -38,13 +38,11 @@ class RestoreOpensearchClusterDetails(object):
             'compartment_id': 'str',
             'prefix': 'str'
         }
-
         self.attribute_map = {
             'opensearch_cluster_backup_id': 'opensearchClusterBackupId',
             'compartment_id': 'compartmentId',
             'prefix': 'prefix'
         }
-
         self._opensearch_cluster_backup_id = None
         self._compartment_id = None
         self._prefix = None

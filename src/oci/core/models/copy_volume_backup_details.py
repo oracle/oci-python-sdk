@@ -38,13 +38,11 @@ class CopyVolumeBackupDetails(object):
             'display_name': 'str',
             'kms_key_id': 'str'
         }
-
         self.attribute_map = {
             'destination_region': 'destinationRegion',
             'display_name': 'displayName',
             'kms_key_id': 'kmsKeyId'
         }
-
         self._destination_region = None
         self._display_name = None
         self._kms_key_id = None

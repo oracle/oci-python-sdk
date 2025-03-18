@@ -93,7 +93,6 @@ class ObjectMetadata(object):
             'is_favorite': 'bool',
             'count_statistics': 'CountStatistic'
         }
-
         self.attribute_map = {
             'created_by': 'createdBy',
             'created_by_name': 'createdByName',
@@ -110,7 +109,6 @@ class ObjectMetadata(object):
             'is_favorite': 'isFavorite',
             'count_statistics': 'countStatistics'
         }
-
         self._created_by = None
         self._created_by_name = None
         self._updated_by = None

@@ -28,11 +28,9 @@ class DedicatedAiClusterCollection(object):
         self.swagger_types = {
             'items': 'list[DedicatedAiClusterSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

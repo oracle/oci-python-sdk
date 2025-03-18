@@ -34,12 +34,10 @@ class RequestAccessControl(object):
             'default_action_name': 'str',
             'rules': 'list[AccessControlRule]'
         }
-
         self.attribute_map = {
             'default_action_name': 'defaultActionName',
             'rules': 'rules'
         }
-
         self._default_action_name = None
         self._rules = None
 

@@ -28,11 +28,9 @@ class DatabaseFleetBackupMetrics(object):
         self.swagger_types = {
             'backup_metrics': 'list[DatabaseBackupMetrics]'
         }
-
         self.attribute_map = {
             'backup_metrics': 'backupMetrics'
         }
-
         self._backup_metrics = None
 
     @property

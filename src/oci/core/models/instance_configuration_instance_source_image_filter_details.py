@@ -43,14 +43,12 @@ class InstanceConfigurationInstanceSourceImageFilterDetails(object):
             'operating_system': 'str',
             'operating_system_version': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'defined_tags_filter': 'definedTagsFilter',
             'operating_system': 'operatingSystem',
             'operating_system_version': 'operatingSystemVersion'
         }
-
         self._compartment_id = None
         self._defined_tags_filter = None
         self._operating_system = None

@@ -48,13 +48,11 @@ class ReencryptObjectDetails(object):
             'sse_customer_key': 'SSECustomerKeyDetails',
             'source_sse_customer_key': 'SSECustomerKeyDetails'
         }
-
         self.attribute_map = {
             'kms_key_id': 'kmsKeyId',
             'sse_customer_key': 'sseCustomerKey',
             'source_sse_customer_key': 'sourceSseCustomerKey'
         }
-
         self._kms_key_id = None
         self._sse_customer_key = None
         self._source_sse_customer_key = None

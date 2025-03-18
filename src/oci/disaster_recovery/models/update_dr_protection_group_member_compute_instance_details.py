@@ -55,7 +55,6 @@ class UpdateDrProtectionGroupMemberComputeInstanceDetails(UpdateDrProtectionGrou
             'destination_compartment_id': 'str',
             'destination_dedicated_vm_host_id': 'str'
         }
-
         self.attribute_map = {
             'member_id': 'memberId',
             'member_type': 'memberType',
@@ -64,7 +63,6 @@ class UpdateDrProtectionGroupMemberComputeInstanceDetails(UpdateDrProtectionGrou
             'destination_compartment_id': 'destinationCompartmentId',
             'destination_dedicated_vm_host_id': 'destinationDedicatedVmHostId'
         }
-
         self._member_id = None
         self._member_type = None
         self._is_movable = None

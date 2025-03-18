@@ -99,7 +99,6 @@ class Drg(object):
             'default_drg_route_tables': 'DefaultDrgRouteTables',
             'default_export_drg_route_distribution_id': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
@@ -111,7 +110,6 @@ class Drg(object):
             'default_drg_route_tables': 'defaultDrgRouteTables',
             'default_export_drg_route_distribution_id': 'defaultExportDrgRouteDistributionId'
         }
-
         self._compartment_id = None
         self._defined_tags = None
         self._display_name = None

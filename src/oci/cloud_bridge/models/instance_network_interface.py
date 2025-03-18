@@ -98,7 +98,6 @@ class InstanceNetworkInterface(object):
             'status': 'str',
             'subnet_key': 'str'
         }
-
         self.attribute_map = {
             'association': 'association',
             'attachment': 'attachment',
@@ -116,7 +115,6 @@ class InstanceNetworkInterface(object):
             'status': 'status',
             'subnet_key': 'subnetKey'
         }
-
         self._association = None
         self._attachment = None
         self._description = None

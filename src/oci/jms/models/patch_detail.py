@@ -33,12 +33,10 @@ class PatchDetail(object):
             'display_name': 'str',
             'patch_url': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'patch_url': 'patchUrl'
         }
-
         self._display_name = None
         self._patch_url = None
 

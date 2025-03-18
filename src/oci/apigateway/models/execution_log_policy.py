@@ -47,12 +47,10 @@ class ExecutionLogPolicy(object):
             'is_enabled': 'bool',
             'log_level': 'str'
         }
-
         self.attribute_map = {
             'is_enabled': 'isEnabled',
             'log_level': 'logLevel'
         }
-
         self._is_enabled = None
         self._log_level = None
 

@@ -165,7 +165,6 @@ class MicrosoftFabricConnection(Connection):
             'client_secret_secret_id': 'str',
             'endpoint': 'str'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'id': 'id',
@@ -193,7 +192,6 @@ class MicrosoftFabricConnection(Connection):
             'client_secret_secret_id': 'clientSecretSecretId',
             'endpoint': 'endpoint'
         }
-
         self._connection_type = None
         self._id = None
         self._display_name = None

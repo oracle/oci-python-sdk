@@ -57,7 +57,6 @@ class RestCredential(object):
             'ssl_trust_store_location': 'str',
             'ssl_trust_store_password': 'str'
         }
-
         self.attribute_map = {
             'username': 'username',
             'password': 'password',
@@ -65,7 +64,6 @@ class RestCredential(object):
             'ssl_trust_store_location': 'sslTrustStoreLocation',
             'ssl_trust_store_password': 'sslTrustStorePassword'
         }
-
         self._username = None
         self._password = None
         self._ssl_trust_store_type = None

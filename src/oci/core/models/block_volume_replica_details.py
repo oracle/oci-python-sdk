@@ -38,13 +38,11 @@ class BlockVolumeReplicaDetails(object):
             'availability_domain': 'str',
             'xrr_kms_key_id': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'availability_domain': 'availabilityDomain',
             'xrr_kms_key_id': 'xrrKmsKeyId'
         }
-
         self._display_name = None
         self._availability_domain = None
         self._xrr_kms_key_id = None

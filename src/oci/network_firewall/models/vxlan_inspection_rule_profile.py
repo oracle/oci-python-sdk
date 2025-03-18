@@ -28,11 +28,9 @@ class VxlanInspectionRuleProfile(object):
         self.swagger_types = {
             'must_return_traffic_to_source': 'bool'
         }
-
         self.attribute_map = {
             'must_return_traffic_to_source': 'mustReturnTrafficToSource'
         }
-
         self._must_return_traffic_to_source = None
 
     @property

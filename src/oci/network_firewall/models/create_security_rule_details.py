@@ -76,7 +76,6 @@ class CreateSecurityRuleDetails(object):
             'inspection': 'str',
             'position': 'RulePosition'
         }
-
         self.attribute_map = {
             'name': 'name',
             'condition': 'condition',
@@ -84,7 +83,6 @@ class CreateSecurityRuleDetails(object):
             'inspection': 'inspection',
             'position': 'position'
         }
-
         self._name = None
         self._condition = None
         self._action = None

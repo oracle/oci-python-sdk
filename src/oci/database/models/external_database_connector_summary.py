@@ -95,7 +95,6 @@ class ExternalDatabaseConnectorSummary(object):
             'connection_status': 'str',
             'time_connection_status_last_updated': 'datetime'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'freeform_tags': 'freeformTags',
@@ -110,7 +109,6 @@ class ExternalDatabaseConnectorSummary(object):
             'connection_status': 'connectionStatus',
             'time_connection_status_last_updated': 'timeConnectionStatusLastUpdated'
         }
-
         self._compartment_id = None
         self._freeform_tags = None
         self._defined_tags = None

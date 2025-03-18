@@ -48,7 +48,6 @@ class UpdateOdaInstanceAttachmentDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'attachment_metadata': 'attachmentMetadata',
             'restricted_operations': 'restrictedOperations',
@@ -56,7 +55,6 @@ class UpdateOdaInstanceAttachmentDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._attachment_metadata = None
         self._restricted_operations = None
         self._owner = None

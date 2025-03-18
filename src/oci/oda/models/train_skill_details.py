@@ -28,11 +28,9 @@ class TrainSkillDetails(object):
         self.swagger_types = {
             'items': 'list[TrainSkillParameter]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

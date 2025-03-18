@@ -42,11 +42,9 @@ class SelectionDetails(object):
         self.swagger_types = {
             'selection_mode': 'str'
         }
-
         self.attribute_map = {
             'selection_mode': 'selectionMode'
         }
-
         self._selection_mode = None
 
     @staticmethod

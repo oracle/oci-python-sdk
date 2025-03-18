@@ -38,13 +38,11 @@ class ValidateLabelConditionDetails(object):
             'condition_block': 'ConditionBlock',
             'field_values': 'list[LogAnalyticsProperty]'
         }
-
         self.attribute_map = {
             'condition_string': 'conditionString',
             'condition_block': 'conditionBlock',
             'field_values': 'fieldValues'
         }
-
         self._condition_string = None
         self._condition_block = None
         self._field_values = None

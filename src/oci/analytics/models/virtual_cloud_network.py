@@ -33,12 +33,10 @@ class VirtualCloudNetwork(object):
             'id': 'str',
             'whitelisted_ips': 'list[str]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'whitelisted_ips': 'whitelistedIps'
         }
-
         self._id = None
         self._whitelisted_ips = None
 

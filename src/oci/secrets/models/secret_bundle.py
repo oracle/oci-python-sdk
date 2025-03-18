@@ -90,7 +90,6 @@ class SecretBundle(object):
             'stages': 'list[str]',
             'metadata': 'dict(str, object)'
         }
-
         self.attribute_map = {
             'secret_id': 'secretId',
             'time_created': 'timeCreated',
@@ -102,7 +101,6 @@ class SecretBundle(object):
             'stages': 'stages',
             'metadata': 'metadata'
         }
-
         self._secret_id = None
         self._time_created = None
         self._version_number = None

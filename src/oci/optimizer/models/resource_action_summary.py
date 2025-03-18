@@ -169,7 +169,6 @@ class ResourceActionSummary(object):
             'time_created': 'datetime',
             'time_updated': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'category_id': 'categoryId',
@@ -190,7 +189,6 @@ class ResourceActionSummary(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated'
         }
-
         self._id = None
         self._category_id = None
         self._recommendation_id = None

@@ -125,7 +125,6 @@ class ExportSetting(object):
             'time_created': 'datetime',
             'time_last_modified': 'datetime'
         }
-
         self.attribute_map = {
             'export_setting_key': 'exportSettingKey',
             'fleet_id': 'fleetId',
@@ -140,7 +139,6 @@ class ExportSetting(object):
             'time_created': 'timeCreated',
             'time_last_modified': 'timeLastModified'
         }
-
         self._export_setting_key = None
         self._fleet_id = None
         self._export_duration = None

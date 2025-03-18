@@ -28,11 +28,9 @@ class AutonomousSettings(object):
         self.swagger_types = {
             'is_auto_update_enabled': 'bool'
         }
-
         self.attribute_map = {
             'is_auto_update_enabled': 'isAutoUpdateEnabled'
         }
-
         self._is_auto_update_enabled = None
 
     @property

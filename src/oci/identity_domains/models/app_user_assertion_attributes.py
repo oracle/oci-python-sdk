@@ -52,13 +52,11 @@ class AppUserAssertionAttributes(object):
             'user_store_attribute_name': 'str',
             'format': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'user_store_attribute_name': 'userStoreAttributeName',
             'format': 'format'
         }
-
         self._name = None
         self._user_store_attribute_name = None
         self._format = None

@@ -55,7 +55,6 @@ class HostFilesystemUsage(HostPerformanceMetricGroup):
             'file_system_avail_in_percent': 'float',
             'file_system_avail_in_gbs': 'float'
         }
-
         self.attribute_map = {
             'metric_name': 'metricName',
             'time_collected': 'timeCollected',
@@ -64,7 +63,6 @@ class HostFilesystemUsage(HostPerformanceMetricGroup):
             'file_system_avail_in_percent': 'fileSystemAvailInPercent',
             'file_system_avail_in_gbs': 'fileSystemAvailInGBs'
         }
-
         self._metric_name = None
         self._time_collected = None
         self._mount_point = None

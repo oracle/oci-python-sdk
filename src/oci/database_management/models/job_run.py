@@ -87,7 +87,6 @@ class JobRun(object):
             'time_submitted': 'datetime',
             'time_updated': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -100,7 +99,6 @@ class JobRun(object):
             'time_submitted': 'timeSubmitted',
             'time_updated': 'timeUpdated'
         }
-
         self._id = None
         self._name = None
         self._compartment_id = None

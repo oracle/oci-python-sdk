@@ -35,12 +35,10 @@ class DatabaseToolsUserPasswordSecretIdDetails(DatabaseToolsUserPasswordDetails)
             'value_type': 'str',
             'secret_id': 'str'
         }
-
         self.attribute_map = {
             'value_type': 'valueType',
             'secret_id': 'secretId'
         }
-
         self._value_type = None
         self._secret_id = None
         self._value_type = 'SECRETID'

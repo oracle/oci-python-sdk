@@ -33,12 +33,10 @@ class OriginGroupOrigins(object):
             'origin': 'str',
             'weight': 'int'
         }
-
         self.attribute_map = {
             'origin': 'origin',
             'weight': 'weight'
         }
-
         self._origin = None
         self._weight = None
 

@@ -59,7 +59,6 @@ class CreateVolumeBackupPolicyDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
@@ -68,7 +67,6 @@ class CreateVolumeBackupPolicyDetails(object):
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags'
         }
-
         self._compartment_id = None
         self._display_name = None
         self._destination_region = None

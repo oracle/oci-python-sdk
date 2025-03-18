@@ -43,14 +43,12 @@ class ActivityProblemAggregation(object):
             'geographical_location': 'GeographicalLocation',
             'count': 'int'
         }
-
         self.attribute_map = {
             'dimensions_map': 'dimensionsMap',
             'political_location': 'politicalLocation',
             'geographical_location': 'geographicalLocation',
             'count': 'count'
         }
-
         self._dimensions_map = None
         self._political_location = None
         self._geographical_location = None

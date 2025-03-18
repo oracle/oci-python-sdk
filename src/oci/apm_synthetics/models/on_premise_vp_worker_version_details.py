@@ -38,13 +38,11 @@ class OnPremiseVpWorkerVersionDetails(object):
             'min_supported_version': 'str',
             'latest_version': 'str'
         }
-
         self.attribute_map = {
             'version': 'version',
             'min_supported_version': 'minSupportedVersion',
             'latest_version': 'latestVersion'
         }
-
         self._version = None
         self._min_supported_version = None
         self._latest_version = None

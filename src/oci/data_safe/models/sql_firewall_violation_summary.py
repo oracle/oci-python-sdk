@@ -128,7 +128,6 @@ class SqlFirewallViolationSummary(object):
             'violation_cause': 'str',
             'violation_action': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -148,7 +147,6 @@ class SqlFirewallViolationSummary(object):
             'violation_cause': 'violationCause',
             'violation_action': 'violationAction'
         }
-
         self._id = None
         self._compartment_id = None
         self._db_user_name = None

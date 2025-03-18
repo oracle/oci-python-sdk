@@ -28,11 +28,9 @@ class AddPackagesToSoftwareSourceDetails(object):
         self.swagger_types = {
             'package_names': 'list[str]'
         }
-
         self.attribute_map = {
             'package_names': 'packageNames'
         }
-
         self._package_names = None
 
     @property

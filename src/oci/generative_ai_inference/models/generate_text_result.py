@@ -38,13 +38,11 @@ class GenerateTextResult(object):
             'model_version': 'str',
             'inference_response': 'LlmInferenceResponse'
         }
-
         self.attribute_map = {
             'model_id': 'modelId',
             'model_version': 'modelVersion',
             'inference_response': 'inferenceResponse'
         }
-
         self._model_id = None
         self._model_version = None
         self._inference_response = None

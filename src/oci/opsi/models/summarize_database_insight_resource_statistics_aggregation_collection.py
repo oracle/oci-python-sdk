@@ -106,7 +106,6 @@ class SummarizeDatabaseInsightResourceStatisticsAggregationCollection(object):
             'usage_unit': 'str',
             'items': 'list[ResourceStatisticsAggregation]'
         }
-
         self.attribute_map = {
             'time_interval_start': 'timeIntervalStart',
             'time_interval_end': 'timeIntervalEnd',
@@ -116,7 +115,6 @@ class SummarizeDatabaseInsightResourceStatisticsAggregationCollection(object):
             'usage_unit': 'usageUnit',
             'items': 'items'
         }
-
         self._time_interval_start = None
         self._time_interval_end = None
         self._high_utilization_threshold = None

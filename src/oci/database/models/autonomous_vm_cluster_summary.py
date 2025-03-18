@@ -323,7 +323,6 @@ class AutonomousVmClusterSummary(object):
             'cpus_lowest_scaled_value': 'int',
             'max_acds_lowest_scaled_value': 'int'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -376,7 +375,6 @@ class AutonomousVmClusterSummary(object):
             'cpus_lowest_scaled_value': 'cpusLowestScaledValue',
             'max_acds_lowest_scaled_value': 'maxAcdsLowestScaledValue'
         }
-
         self._id = None
         self._compartment_id = None
         self._display_name = None

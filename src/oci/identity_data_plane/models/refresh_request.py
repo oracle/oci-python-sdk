@@ -33,12 +33,10 @@ class RefreshRequest(object):
             'current_token': 'str',
             'new_public_key': 'str'
         }
-
         self.attribute_map = {
             'current_token': 'currentToken',
             'new_public_key': 'newPublicKey'
         }
-
         self._current_token = None
         self._new_public_key = None
 

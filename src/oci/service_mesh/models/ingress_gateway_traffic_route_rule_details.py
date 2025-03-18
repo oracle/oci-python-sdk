@@ -57,13 +57,11 @@ class IngressGatewayTrafficRouteRuleDetails(object):
             'ingress_gateway_host': 'IngressGatewayHostRef',
             'destinations': 'list[VirtualServiceTrafficRuleTargetDetails]'
         }
-
         self.attribute_map = {
             'type': 'type',
             'ingress_gateway_host': 'ingressGatewayHost',
             'destinations': 'destinations'
         }
-
         self._type = None
         self._ingress_gateway_host = None
         self._destinations = None

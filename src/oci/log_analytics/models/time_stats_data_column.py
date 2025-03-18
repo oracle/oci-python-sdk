@@ -120,7 +120,6 @@ class TimeStatsDataColumn(AbstractColumn):
             'total_count': 'int',
             'partial_results': 'bool'
         }
-
         self.attribute_map = {
             'type': 'type',
             'display_name': 'displayName',
@@ -141,7 +140,6 @@ class TimeStatsDataColumn(AbstractColumn):
             'total_count': 'totalCount',
             'partial_results': 'partialResults'
         }
-
         self._type = None
         self._display_name = None
         self._sub_system = None

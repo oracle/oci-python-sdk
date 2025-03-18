@@ -113,7 +113,6 @@ class QueryDetails(object):
             'should_include_fields': 'bool',
             'should_use_acceleration': 'bool'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'compartment_id_in_subtree': 'compartmentIdInSubtree',
@@ -131,7 +130,6 @@ class QueryDetails(object):
             'should_include_fields': 'shouldIncludeFields',
             'should_use_acceleration': 'shouldUseAcceleration'
         }
-
         self._compartment_id = None
         self._compartment_id_in_subtree = None
         self._saved_search_id = None

@@ -28,11 +28,9 @@ class VbsInstanceSummaryCollection(object):
         self.swagger_types = {
             'items': 'list[VbsInstanceSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

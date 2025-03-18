@@ -38,13 +38,11 @@ class ReplicaDetails(object):
             'ca_count': 'int',
             'console_count': 'int'
         }
-
         self.attribute_map = {
             'proxy_count': 'proxyCount',
             'ca_count': 'caCount',
             'console_count': 'consoleCount'
         }
-
         self._proxy_count = None
         self._ca_count = None
         self._console_count = None

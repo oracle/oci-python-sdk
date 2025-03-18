@@ -45,14 +45,12 @@ class UpdateRunLocalScriptUserDefinedStepDetails(UpdateDrPlanUserDefinedStepDeta
             'script_command': 'str',
             'run_as_user': 'str'
         }
-
         self.attribute_map = {
             'step_type': 'stepType',
             'run_on_instance_id': 'runOnInstanceId',
             'script_command': 'scriptCommand',
             'run_as_user': 'runAsUser'
         }
-
         self._step_type = None
         self._run_on_instance_id = None
         self._script_command = None

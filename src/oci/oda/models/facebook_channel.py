@@ -92,7 +92,6 @@ class FacebookChannel(Channel):
             'bot_id': 'str',
             'webhook_url': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -108,7 +107,6 @@ class FacebookChannel(Channel):
             'bot_id': 'botId',
             'webhook_url': 'webhookUrl'
         }
-
         self._id = None
         self._name = None
         self._description = None

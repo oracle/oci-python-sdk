@@ -102,7 +102,6 @@ class UpdateExportSettingDetails(object):
             'export_frequency': 'str',
             'is_enabled': 'bool'
         }
-
         self.attribute_map = {
             'export_duration': 'exportDuration',
             'export_resources': 'exportResources',
@@ -113,7 +112,6 @@ class UpdateExportSettingDetails(object):
             'export_frequency': 'exportFrequency',
             'is_enabled': 'isEnabled'
         }
-
         self._export_duration = None
         self._export_resources = None
         self._is_cross_region_acknowledged = None

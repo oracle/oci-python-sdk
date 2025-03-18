@@ -38,13 +38,11 @@ class ResourcePrincipalSessionTokenRequest(object):
             'service_principal_session_token': 'str',
             'session_public_key': 'str'
         }
-
         self.attribute_map = {
             'resource_principal_token': 'resourcePrincipalToken',
             'service_principal_session_token': 'servicePrincipalSessionToken',
             'session_public_key': 'sessionPublicKey'
         }
-
         self._resource_principal_token = None
         self._service_principal_session_token = None
         self._session_public_key = None

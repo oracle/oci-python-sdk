@@ -53,7 +53,6 @@ class InvoiceLineSummary(object):
             'time_start': 'datetime',
             'time_end': 'datetime'
         }
-
         self.attribute_map = {
             'id': 'id',
             'product': 'product',
@@ -62,7 +61,6 @@ class InvoiceLineSummary(object):
             'time_start': 'timeStart',
             'time_end': 'timeEnd'
         }
-
         self._id = None
         self._product = None
         self._ar_invoice_number = None

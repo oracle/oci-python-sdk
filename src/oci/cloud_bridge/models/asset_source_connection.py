@@ -80,7 +80,6 @@ class AssetSourceConnection(object):
             'lifecycle_state': 'str',
             'lifecycle_details': 'str'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'connector_id': 'connectorId',
@@ -88,7 +87,6 @@ class AssetSourceConnection(object):
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails'
         }
-
         self._connection_type = None
         self._connector_id = None
         self._asset_source_key = None

@@ -59,7 +59,6 @@ class RequestJfrRecordingsDetails(object):
             'recording_size_in_mb': 'int',
             'waiting_period_in_minutes': 'int'
         }
-
         self.attribute_map = {
             'targets': 'targets',
             'jfc_profile_name': 'jfcProfileName',
@@ -69,7 +68,6 @@ class RequestJfrRecordingsDetails(object):
             'recording_size_in_mb': 'recordingSizeInMb',
             'waiting_period_in_minutes': 'waitingPeriodInMinutes'
         }
-
         self._targets = None
         self._jfc_profile_name = None
         self._jfc_v1 = None

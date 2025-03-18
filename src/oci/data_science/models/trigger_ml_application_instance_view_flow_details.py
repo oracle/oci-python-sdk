@@ -33,12 +33,10 @@ class TriggerMlApplicationInstanceViewFlowDetails(object):
             'trigger_name': 'str',
             'parameters': 'list[TriggerParameter]'
         }
-
         self.attribute_map = {
             'trigger_name': 'triggerName',
             'parameters': 'parameters'
         }
-
         self._trigger_name = None
         self._parameters = None
 

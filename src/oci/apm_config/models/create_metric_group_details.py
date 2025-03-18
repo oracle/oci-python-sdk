@@ -66,7 +66,6 @@ class CreateMetricGroupDetails(CreateConfigDetails):
             'dimensions': 'list[Dimension]',
             'metrics': 'list[Metric]'
         }
-
         self.attribute_map = {
             'config_type': 'configType',
             'freeform_tags': 'freeformTags',
@@ -77,7 +76,6 @@ class CreateMetricGroupDetails(CreateConfigDetails):
             'dimensions': 'dimensions',
             'metrics': 'metrics'
         }
-
         self._config_type = None
         self._freeform_tags = None
         self._defined_tags = None

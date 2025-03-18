@@ -38,13 +38,11 @@ class PluggableDatabaseConnectionStrings(object):
             'pdb_ip_default': 'str',
             'all_connection_strings': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'pdb_default': 'pdbDefault',
             'pdb_ip_default': 'pdbIpDefault',
             'all_connection_strings': 'allConnectionStrings'
         }
-
         self._pdb_default = None
         self._pdb_ip_default = None
         self._all_connection_strings = None

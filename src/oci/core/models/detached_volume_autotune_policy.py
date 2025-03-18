@@ -30,11 +30,9 @@ class DetachedVolumeAutotunePolicy(AutotunePolicy):
         self.swagger_types = {
             'autotune_type': 'str'
         }
-
         self.attribute_map = {
             'autotune_type': 'autotuneType'
         }
-
         self._autotune_type = None
         self._autotune_type = 'DETACHED_VOLUME'
 

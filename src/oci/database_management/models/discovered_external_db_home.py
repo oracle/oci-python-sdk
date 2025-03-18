@@ -71,7 +71,6 @@ class DiscoveredExternalDbHome(DiscoveredExternalDbSystemComponent):
             'associated_components': 'list[AssociatedComponent]',
             'home_directory': 'str'
         }
-
         self.attribute_map = {
             'component_id': 'componentId',
             'display_name': 'displayName',
@@ -83,7 +82,6 @@ class DiscoveredExternalDbHome(DiscoveredExternalDbSystemComponent):
             'associated_components': 'associatedComponents',
             'home_directory': 'homeDirectory'
         }
-
         self._component_id = None
         self._display_name = None
         self._component_name = None

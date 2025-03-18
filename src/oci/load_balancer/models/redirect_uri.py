@@ -80,7 +80,6 @@ class RedirectUri(object):
             'path': 'str',
             'query': 'str'
         }
-
         self.attribute_map = {
             'protocol': 'protocol',
             'host': 'host',
@@ -88,7 +87,6 @@ class RedirectUri(object):
             'path': 'path',
             'query': 'query'
         }
-
         self._protocol = None
         self._host = None
         self._port = None

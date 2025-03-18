@@ -95,7 +95,6 @@ class NodeDetails(object):
             'lifecycle_state': 'str',
             'db_server_id': 'str'
         }
-
         self.attribute_map = {
             'hostname': 'hostname',
             'ip': 'ip',
@@ -104,7 +103,6 @@ class NodeDetails(object):
             'lifecycle_state': 'lifecycleState',
             'db_server_id': 'dbServerId'
         }
-
         self._hostname = None
         self._ip = None
         self._vip_hostname = None

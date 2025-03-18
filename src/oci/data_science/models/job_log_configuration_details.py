@@ -43,14 +43,12 @@ class JobLogConfigurationDetails(object):
             'log_group_id': 'str',
             'log_id': 'str'
         }
-
         self.attribute_map = {
             'enable_logging': 'enableLogging',
             'enable_auto_log_creation': 'enableAutoLogCreation',
             'log_group_id': 'logGroupId',
             'log_id': 'logId'
         }
-
         self._enable_logging = None
         self._enable_auto_log_creation = None
         self._log_group_id = None

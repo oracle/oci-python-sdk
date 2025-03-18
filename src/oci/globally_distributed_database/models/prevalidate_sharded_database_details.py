@@ -28,11 +28,9 @@ class PrevalidateShardedDatabaseDetails(object):
         self.swagger_types = {
             'prevalidate_sharded_database_details': 'PrevalidatePayload'
         }
-
         self.attribute_map = {
             'prevalidate_sharded_database_details': 'prevalidateShardedDatabaseDetails'
         }
-
         self._prevalidate_sharded_database_details = None
 
     @property

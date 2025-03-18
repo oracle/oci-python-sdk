@@ -176,7 +176,6 @@ class Db2ConnectionSummary(ConnectionSummary):
             'ssl_client_keystoredb_secret_id': 'str',
             'ssl_client_keystash_secret_id': 'str'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'id': 'id',
@@ -209,7 +208,6 @@ class Db2ConnectionSummary(ConnectionSummary):
             'ssl_client_keystoredb_secret_id': 'sslClientKeystoredbSecretId',
             'ssl_client_keystash_secret_id': 'sslClientKeystashSecretId'
         }
-
         self._connection_type = None
         self._id = None
         self._display_name = None

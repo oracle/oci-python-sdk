@@ -50,7 +50,6 @@ class OciCodeRepositoryConfiguration(ScmConfiguration):
             'is_automerge_enabled': 'bool',
             'oci_code_repository_id': 'str'
         }
-
         self.attribute_map = {
             'scm_type': 'scmType',
             'branch': 'branch',
@@ -58,7 +57,6 @@ class OciCodeRepositoryConfiguration(ScmConfiguration):
             'is_automerge_enabled': 'isAutomergeEnabled',
             'oci_code_repository_id': 'ociCodeRepositoryId'
         }
-
         self._scm_type = None
         self._branch = None
         self._build_file_location = None

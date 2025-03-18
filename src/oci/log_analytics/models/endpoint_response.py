@@ -33,12 +33,10 @@ class EndpointResponse(object):
             'content_type': 'str',
             'example': 'str'
         }
-
         self.attribute_map = {
             'content_type': 'contentType',
             'example': 'example'
         }
-
         self._content_type = None
         self._example = None
 

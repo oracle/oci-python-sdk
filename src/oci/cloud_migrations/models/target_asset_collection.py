@@ -28,11 +28,9 @@ class TargetAssetCollection(object):
         self.swagger_types = {
             'items': 'list[TargetAssetSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

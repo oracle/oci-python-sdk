@@ -28,11 +28,9 @@ class UpdateStorageDetailsParams(object):
         self.swagger_types = {
             'iops': 'int'
         }
-
         self.attribute_map = {
             'iops': 'iops'
         }
-
         self._iops = None
 
     @property

@@ -208,7 +208,6 @@ class VolumeBackupSchedule(object):
             'retention_seconds': 'int',
             'time_zone': 'str'
         }
-
         self.attribute_map = {
             'backup_type': 'backupType',
             'offset_seconds': 'offsetSeconds',
@@ -221,7 +220,6 @@ class VolumeBackupSchedule(object):
             'retention_seconds': 'retentionSeconds',
             'time_zone': 'timeZone'
         }
-
         self._backup_type = None
         self._offset_seconds = None
         self._period = None

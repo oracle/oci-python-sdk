@@ -168,7 +168,6 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
             'access_predicates': 'str',
             'filter_predicates': 'str'
         }
-
         self.attribute_map = {
             'plan_hash_value': 'planHashValue',
             'step_id': 'stepId',
@@ -200,7 +199,6 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
             'access_predicates': 'accessPredicates',
             'filter_predicates': 'filterPredicates'
         }
-
         self._plan_hash_value = None
         self._step_id = None
         self._parent_step_id = None

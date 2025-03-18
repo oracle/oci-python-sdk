@@ -40,13 +40,11 @@ class NodeSourceViaImageOption(NodeSourceOption):
             'source_name': 'str',
             'image_id': 'str'
         }
-
         self.attribute_map = {
             'source_type': 'sourceType',
             'source_name': 'sourceName',
             'image_id': 'imageId'
         }
-
         self._source_type = None
         self._source_name = None
         self._image_id = None

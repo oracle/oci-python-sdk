@@ -52,13 +52,11 @@ class UpgradeStatus(object):
             'status': 'str',
             'upgraded_connections': 'str'
         }
-
         self.attribute_map = {
             'drg_id': 'drgId',
             'status': 'status',
             'upgraded_connections': 'upgradedConnections'
         }
-
         self._drg_id = None
         self._status = None
         self._upgraded_connections = None

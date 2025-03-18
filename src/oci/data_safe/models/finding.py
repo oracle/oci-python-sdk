@@ -156,7 +156,6 @@ class Finding(object):
             'lifecycle_state': 'str',
             'lifecycle_details': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'severity': 'severity',
@@ -176,7 +175,6 @@ class Finding(object):
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails'
         }
-
         self._key = None
         self._severity = None
         self._assessment_id = None

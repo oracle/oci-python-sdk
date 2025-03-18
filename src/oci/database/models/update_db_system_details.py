@@ -104,7 +104,6 @@ class UpdateDbSystemDetails(object):
             'maintenance_window_details': 'MaintenanceWindow',
             'data_collection_options': 'DataCollectionOptions'
         }
-
         self.attribute_map = {
             'cpu_core_count': 'cpuCoreCount',
             'version': 'version',
@@ -121,7 +120,6 @@ class UpdateDbSystemDetails(object):
             'maintenance_window_details': 'maintenanceWindowDetails',
             'data_collection_options': 'dataCollectionOptions'
         }
-
         self._cpu_core_count = None
         self._version = None
         self._ssh_public_keys = None

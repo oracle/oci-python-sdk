@@ -28,11 +28,9 @@ class AwsEbsAssetDetails(object):
         self.swagger_types = {
             'aws_ebs': 'AwsEbsProperties'
         }
-
         self.attribute_map = {
             'aws_ebs': 'awsEbs'
         }
-
         self._aws_ebs = None
 
     @property

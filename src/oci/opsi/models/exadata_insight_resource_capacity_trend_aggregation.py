@@ -38,13 +38,11 @@ class ExadataInsightResourceCapacityTrendAggregation(object):
             'capacity': 'float',
             'total_host_capacity': 'float'
         }
-
         self.attribute_map = {
             'end_timestamp': 'endTimestamp',
             'capacity': 'capacity',
             'total_host_capacity': 'totalHostCapacity'
         }
-
         self._end_timestamp = None
         self._capacity = None
         self._total_host_capacity = None

@@ -60,7 +60,6 @@ class ExadataCellConfig(DatabaseConfigurationMetricGroup):
             'cell_configs': 'str',
             'disk_counts': 'str'
         }
-
         self.attribute_map = {
             'metric_name': 'metricName',
             'time_collected': 'timeCollected',
@@ -70,7 +69,6 @@ class ExadataCellConfig(DatabaseConfigurationMetricGroup):
             'cell_configs': 'cellConfigs',
             'disk_counts': 'diskCounts'
         }
-
         self._metric_name = None
         self._time_collected = None
         self._cell_name = None

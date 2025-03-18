@@ -33,12 +33,10 @@ class CreateOracleAdvisorSettings(object):
             'is_skip_advisor': 'bool',
             'is_ignore_errors': 'bool'
         }
-
         self.attribute_map = {
             'is_skip_advisor': 'isSkipAdvisor',
             'is_ignore_errors': 'isIgnoreErrors'
         }
-
         self._is_skip_advisor = None
         self._is_ignore_errors = None
 

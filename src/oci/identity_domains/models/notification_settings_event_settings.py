@@ -33,12 +33,10 @@ class NotificationSettingsEventSettings(object):
             'event_id': 'str',
             'enabled': 'bool'
         }
-
         self.attribute_map = {
             'event_id': 'eventId',
             'enabled': 'enabled'
         }
-
         self._event_id = None
         self._enabled = None
 

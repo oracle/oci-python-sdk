@@ -118,7 +118,6 @@ class Onboarding(object):
             'lifecycle_state': 'str',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -133,7 +132,6 @@ class Onboarding(object):
             'lifecycle_state': 'lifecycleState',
             'system_tags': 'systemTags'
         }
-
         self._id = None
         self._compartment_id = None
         self._resource_region = None

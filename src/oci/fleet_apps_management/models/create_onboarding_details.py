@@ -38,13 +38,11 @@ class CreateOnboardingDetails(object):
             'is_fams_tag_enabled': 'bool',
             'is_cost_tracking_tag_enabled': 'bool'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'is_fams_tag_enabled': 'isFamsTagEnabled',
             'is_cost_tracking_tag_enabled': 'isCostTrackingTagEnabled'
         }
-
         self._compartment_id = None
         self._is_fams_tag_enabled = None
         self._is_cost_tracking_tag_enabled = None

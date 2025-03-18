@@ -85,7 +85,6 @@ class DrPlanGroup(object):
             'is_pause_enabled': 'bool',
             'steps': 'list[DrPlanStep]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'type': 'type',
@@ -94,7 +93,6 @@ class DrPlanGroup(object):
             'is_pause_enabled': 'isPauseEnabled',
             'steps': 'steps'
         }
-
         self._id = None
         self._type = None
         self._refresh_status = None

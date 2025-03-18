@@ -51,12 +51,10 @@ class BackendHealth(object):
             'status': 'str',
             'health_check_results': 'list[HealthCheckResult]'
         }
-
         self.attribute_map = {
             'status': 'status',
             'health_check_results': 'healthCheckResults'
         }
-
         self._status = None
         self._health_check_results = None
 

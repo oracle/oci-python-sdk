@@ -49,13 +49,11 @@ class CreateDrProtectionGroupMemberAutonomousContainerDatabaseDetails(CreateDrPr
             'member_type': 'str',
             'connection_string_type': 'str'
         }
-
         self.attribute_map = {
             'member_id': 'memberId',
             'member_type': 'memberType',
             'connection_string_type': 'connectionStringType'
         }
-
         self._member_id = None
         self._member_type = None
         self._connection_string_type = None

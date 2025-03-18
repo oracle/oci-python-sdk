@@ -85,7 +85,6 @@ class CreateDbHomeWithDbSystemIdDetails(CreateDbHomeBase):
             'db_version': 'str',
             'database': 'CreateDatabaseDetails'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'kms_key_id': 'kmsKeyId',
@@ -100,7 +99,6 @@ class CreateDbHomeWithDbSystemIdDetails(CreateDbHomeBase):
             'db_version': 'dbVersion',
             'database': 'database'
         }
-
         self._display_name = None
         self._kms_key_id = None
         self._kms_key_version_id = None

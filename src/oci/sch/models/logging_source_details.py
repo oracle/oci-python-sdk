@@ -39,12 +39,10 @@ class LoggingSourceDetails(SourceDetails):
             'kind': 'str',
             'log_sources': 'list[LogSource]'
         }
-
         self.attribute_map = {
             'kind': 'kind',
             'log_sources': 'logSources'
         }
-
         self._kind = None
         self._log_sources = None
         self._kind = 'logging'

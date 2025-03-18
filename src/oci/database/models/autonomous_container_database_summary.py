@@ -462,7 +462,6 @@ class AutonomousContainerDatabaseSummary(object):
             'dataguard': 'AutonomousContainerDatabaseDataguard',
             'dataguard_group_members': 'list[AutonomousContainerDatabaseDataguard]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -522,7 +521,6 @@ class AutonomousContainerDatabaseSummary(object):
             'dataguard': 'dataguard',
             'dataguard_group_members': 'dataguardGroupMembers'
         }
-
         self._id = None
         self._compartment_id = None
         self._display_name = None

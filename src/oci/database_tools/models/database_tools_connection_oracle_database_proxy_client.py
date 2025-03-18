@@ -43,11 +43,9 @@ class DatabaseToolsConnectionOracleDatabaseProxyClient(object):
         self.swagger_types = {
             'proxy_authentication_type': 'str'
         }
-
         self.attribute_map = {
             'proxy_authentication_type': 'proxyAuthenticationType'
         }
-
         self._proxy_authentication_type = None
 
     @staticmethod

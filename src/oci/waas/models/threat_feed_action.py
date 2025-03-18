@@ -46,12 +46,10 @@ class ThreatFeedAction(object):
             'key': 'str',
             'action': 'str'
         }
-
         self.attribute_map = {
             'key': 'key',
             'action': 'action'
         }
-
         self._key = None
         self._action = None
 

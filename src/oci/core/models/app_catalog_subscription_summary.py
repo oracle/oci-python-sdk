@@ -63,7 +63,6 @@ class AppCatalogSubscriptionSummary(object):
             'compartment_id': 'str',
             'time_created': 'datetime'
         }
-
         self.attribute_map = {
             'publisher_name': 'publisherName',
             'listing_id': 'listingId',
@@ -74,7 +73,6 @@ class AppCatalogSubscriptionSummary(object):
             'compartment_id': 'compartmentId',
             'time_created': 'timeCreated'
         }
-
         self._publisher_name = None
         self._listing_id = None
         self._listing_resource_version = None

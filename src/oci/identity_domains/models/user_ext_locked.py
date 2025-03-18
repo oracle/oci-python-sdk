@@ -54,14 +54,12 @@ class UserExtLocked(object):
             'lock_date': 'str',
             'expired': 'bool'
         }
-
         self.attribute_map = {
             'reason': 'reason',
             'on': 'on',
             'lock_date': 'lockDate',
             'expired': 'expired'
         }
-
         self._reason = None
         self._on = None
         self._lock_date = None

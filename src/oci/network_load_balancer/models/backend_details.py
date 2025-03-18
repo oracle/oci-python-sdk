@@ -63,7 +63,6 @@ class BackendDetails(object):
             'is_drain': 'bool',
             'is_offline': 'bool'
         }
-
         self.attribute_map = {
             'name': 'name',
             'ip_address': 'ipAddress',
@@ -74,7 +73,6 @@ class BackendDetails(object):
             'is_drain': 'isDrain',
             'is_offline': 'isOffline'
         }
-
         self._name = None
         self._ip_address = None
         self._target_id = None

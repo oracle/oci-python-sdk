@@ -28,11 +28,9 @@ class RenameHeaderPolicy(object):
         self.swagger_types = {
             'items': 'list[RenameHeaderPolicyItem]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

@@ -57,12 +57,10 @@ class DataVisibility(object):
             'name': 'str',
             'tlp_name': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'tlp_name': 'tlpName'
         }
-
         self._name = None
         self._tlp_name = None
 

@@ -85,7 +85,6 @@ class OperatorAction(object):
             'description': 'str',
             'properties': 'list[OperatorActionProperties]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -95,7 +94,6 @@ class OperatorAction(object):
             'description': 'description',
             'properties': 'properties'
         }
-
         self._id = None
         self._name = None
         self._customer_display_name = None

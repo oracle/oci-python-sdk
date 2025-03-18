@@ -137,7 +137,6 @@ class PingProbeResultSummary(object):
             'latency_in_ms': 'float',
             'icmp_code': 'int'
         }
-
         self.attribute_map = {
             'key': 'key',
             'probe_configuration_id': 'probeConfigurationId',
@@ -156,7 +155,6 @@ class PingProbeResultSummary(object):
             'latency_in_ms': 'latencyInMs',
             'icmp_code': 'icmpCode'
         }
-
         self._key = None
         self._probe_configuration_id = None
         self._start_time = None

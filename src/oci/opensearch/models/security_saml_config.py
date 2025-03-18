@@ -58,7 +58,6 @@ class SecuritySamlConfig(object):
             'subject_key': 'str',
             'roles_key': 'str'
         }
-
         self.attribute_map = {
             'is_enabled': 'isEnabled',
             'idp_metadata_content': 'idpMetadataContent',
@@ -68,7 +67,6 @@ class SecuritySamlConfig(object):
             'subject_key': 'subjectKey',
             'roles_key': 'rolesKey'
         }
-
         self._is_enabled = None
         self._idp_metadata_content = None
         self._idp_entity_id = None

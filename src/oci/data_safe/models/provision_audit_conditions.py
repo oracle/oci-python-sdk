@@ -43,14 +43,12 @@ class ProvisionAuditConditions(object):
             'is_enabled': 'bool',
             'enable_conditions': 'list[EnableConditions]'
         }
-
         self.attribute_map = {
             'audit_policy_name': 'auditPolicyName',
             'is_priv_users_managed_by_data_safe': 'isPrivUsersManagedByDataSafe',
             'is_enabled': 'isEnabled',
             'enable_conditions': 'enableConditions'
         }
-
         self._audit_policy_name = None
         self._is_priv_users_managed_by_data_safe = None
         self._is_enabled = None

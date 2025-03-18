@@ -28,11 +28,9 @@ class KnowledgeBaseStatistics(object):
         self.swagger_types = {
             'size_in_bytes': 'int'
         }
-
         self.attribute_map = {
             'size_in_bytes': 'sizeInBytes'
         }
-
         self._size_in_bytes = None
 
     @property

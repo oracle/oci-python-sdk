@@ -130,7 +130,6 @@ class GroupedNamePatternRule(ProjectionRule):
             'rule_type': 'str',
             'pattern': 'str'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -149,7 +148,6 @@ class GroupedNamePatternRule(ProjectionRule):
             'rule_type': 'ruleType',
             'pattern': 'pattern'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

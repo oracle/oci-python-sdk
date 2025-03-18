@@ -53,7 +53,6 @@ class UpdateReplicaDetails(object):
             'is_delete_protected': 'bool',
             'replica_overrides': 'ReplicaOverrides'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
@@ -62,7 +61,6 @@ class UpdateReplicaDetails(object):
             'is_delete_protected': 'isDeleteProtected',
             'replica_overrides': 'replicaOverrides'
         }
-
         self._display_name = None
         self._description = None
         self._freeform_tags = None

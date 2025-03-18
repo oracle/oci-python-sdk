@@ -33,12 +33,10 @@ class BlockchainPlatformComponentDetails(object):
             'osns': 'list[Osn]',
             'peers': 'list[Peer]'
         }
-
         self.attribute_map = {
             'osns': 'osns',
             'peers': 'peers'
         }
-
         self._osns = None
         self._peers = None
 

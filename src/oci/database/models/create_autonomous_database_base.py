@@ -389,7 +389,6 @@ class CreateAutonomousDatabaseBase(object):
             'secret_id': 'str',
             'secret_version_number': 'int'
         }
-
         self.attribute_map = {
             'subscription_id': 'subscriptionId',
             'compartment_id': 'compartmentId',
@@ -446,7 +445,6 @@ class CreateAutonomousDatabaseBase(object):
             'secret_id': 'secretId',
             'secret_version_number': 'secretVersionNumber'
         }
-
         self._subscription_id = None
         self._compartment_id = None
         self._character_set = None

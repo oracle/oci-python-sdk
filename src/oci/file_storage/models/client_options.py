@@ -109,7 +109,6 @@ class ClientOptions(object):
             'is_anonymous_access_allowed': 'bool',
             'allowed_auth': 'list[str]'
         }
-
         self.attribute_map = {
             'source': 'source',
             'require_privileged_source_port': 'requirePrivilegedSourcePort',
@@ -120,7 +119,6 @@ class ClientOptions(object):
             'is_anonymous_access_allowed': 'isAnonymousAccessAllowed',
             'allowed_auth': 'allowedAuth'
         }
-
         self._source = None
         self._require_privileged_source_port = None
         self._access = None

@@ -43,14 +43,12 @@ class EstimateRecallDataSizeDetails(object):
             'log_sets': 'str',
             'is_recall_new_data_only': 'bool'
         }
-
         self.attribute_map = {
             'time_data_started': 'timeDataStarted',
             'time_data_ended': 'timeDataEnded',
             'log_sets': 'logSets',
             'is_recall_new_data_only': 'isRecallNewDataOnly'
         }
-
         self._time_data_started = None
         self._time_data_ended = None
         self._log_sets = None

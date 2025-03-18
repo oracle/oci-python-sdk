@@ -154,7 +154,6 @@ class ActivityItem(Item):
             'item_status': 'str',
             'attachment_id': 'str'
         }
-
         self.attribute_map = {
             'item_key': 'itemKey',
             'name': 'name',
@@ -171,7 +170,6 @@ class ActivityItem(Item):
             'item_status': 'itemStatus',
             'attachment_id': 'attachmentID'
         }
-
         self._item_key = None
         self._name = None
         self._type = None

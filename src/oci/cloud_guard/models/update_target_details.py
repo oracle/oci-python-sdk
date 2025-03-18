@@ -82,7 +82,6 @@ class UpdateTargetDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'lifecycle_state': 'lifecycleState',
@@ -91,7 +90,6 @@ class UpdateTargetDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._display_name = None
         self._lifecycle_state = None
         self._target_detector_recipes = None

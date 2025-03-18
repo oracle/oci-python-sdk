@@ -73,7 +73,6 @@ class ScheduledFleetSummary(object):
             'application_types': 'list[str]',
             'system_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'id': 'id',
             'tenancy_id': 'tenancyId',
@@ -84,7 +83,6 @@ class ScheduledFleetSummary(object):
             'application_types': 'applicationTypes',
             'system_tags': 'systemTags'
         }
-
         self._id = None
         self._tenancy_id = None
         self._display_name = None

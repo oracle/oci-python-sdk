@@ -28,11 +28,9 @@ class AttachManagedInstancesToLifecycleStageDetails(object):
         self.swagger_types = {
             'managed_instance_details': 'ManagedInstancesDetails'
         }
-
         self.attribute_map = {
             'managed_instance_details': 'managedInstanceDetails'
         }
-
         self._managed_instance_details = None
 
     @property

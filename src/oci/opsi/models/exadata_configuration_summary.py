@@ -145,7 +145,6 @@ class ExadataConfigurationSummary(object):
             'freeform_tags': 'dict(str, str)',
             'vmcluster_details': 'list[VmClusterSummary]'
         }
-
         self.attribute_map = {
             'exadata_insight_id': 'exadataInsightId',
             'entity_source': 'entitySource',
@@ -158,7 +157,6 @@ class ExadataConfigurationSummary(object):
             'freeform_tags': 'freeformTags',
             'vmcluster_details': 'vmclusterDetails'
         }
-
         self._exadata_insight_id = None
         self._entity_source = None
         self._compartment_id = None

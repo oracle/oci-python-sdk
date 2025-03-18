@@ -152,7 +152,6 @@ class CreateStationProfileDetails(CreateProfileDetails):
             'os_family': 'str',
             'arch_type': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'compartment_id': 'compartmentId',
@@ -167,7 +166,6 @@ class CreateStationProfileDetails(CreateProfileDetails):
             'os_family': 'osFamily',
             'arch_type': 'archType'
         }
-
         self._display_name = None
         self._compartment_id = None
         self._description = None

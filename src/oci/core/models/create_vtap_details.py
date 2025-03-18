@@ -165,7 +165,6 @@ class CreateVtapDetails(object):
             'source_private_endpoint_ip': 'str',
             'source_private_endpoint_subnet_id': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'vcn_id': 'vcnId',
@@ -186,7 +185,6 @@ class CreateVtapDetails(object):
             'source_private_endpoint_ip': 'sourcePrivateEndpointIp',
             'source_private_endpoint_subnet_id': 'sourcePrivateEndpointSubnetId'
         }
-
         self._compartment_id = None
         self._vcn_id = None
         self._defined_tags = None

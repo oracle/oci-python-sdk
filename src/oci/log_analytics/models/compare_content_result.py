@@ -28,11 +28,9 @@ class CompareContentResult(object):
         self.swagger_types = {
             'line_comparison_results': 'list[CompareLineResult]'
         }
-
         self.attribute_map = {
             'line_comparison_results': 'lineComparisonResults'
         }
-
         self._line_comparison_results = None
 
     @property

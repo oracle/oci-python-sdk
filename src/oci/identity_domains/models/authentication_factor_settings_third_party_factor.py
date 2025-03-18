@@ -39,11 +39,9 @@ class AuthenticationFactorSettingsThirdPartyFactor(object):
         self.swagger_types = {
             'duo_security': 'bool'
         }
-
         self.attribute_map = {
             'duo_security': 'duoSecurity'
         }
-
         self._duo_security = None
 
     @property

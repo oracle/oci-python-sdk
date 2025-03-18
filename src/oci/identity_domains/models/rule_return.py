@@ -38,13 +38,11 @@ class RuleReturn(object):
             'value': 'str',
             'return_groovy': 'str'
         }
-
         self.attribute_map = {
             'name': 'name',
             'value': 'value',
             'return_groovy': 'returnGroovy'
         }
-
         self._name = None
         self._value = None
         self._return_groovy = None

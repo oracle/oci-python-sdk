@@ -45,14 +45,12 @@ class UpdateClusterNetworkDetails(object):
             'freeform_tags': 'dict(str, str)',
             'instance_pools': 'list[UpdateClusterNetworkInstancePoolDetails]'
         }
-
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
             'instance_pools': 'instancePools'
         }
-
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None

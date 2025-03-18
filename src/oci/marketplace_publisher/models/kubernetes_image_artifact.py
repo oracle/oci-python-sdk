@@ -102,7 +102,6 @@ class KubernetesImageArtifact(Artifact):
             'helm_chart': 'HelmChartImageDetails',
             'container_image_artifact_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
@@ -120,7 +119,6 @@ class KubernetesImageArtifact(Artifact):
             'helm_chart': 'helmChart',
             'container_image_artifact_ids': 'containerImageArtifactIds'
         }
-
         self._id = None
         self._display_name = None
         self._artifact_type = None

@@ -45,14 +45,12 @@ class SteeringPolicyPriorityRule(SteeringPolicyRule):
             'cases': 'list[SteeringPolicyPriorityRuleCase]',
             'default_answer_data': 'list[SteeringPolicyPriorityAnswerData]'
         }
-
         self.attribute_map = {
             'description': 'description',
             'rule_type': 'ruleType',
             'cases': 'cases',
             'default_answer_data': 'defaultAnswerData'
         }
-
         self._description = None
         self._rule_type = None
         self._cases = None

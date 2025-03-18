@@ -107,7 +107,6 @@ class CrossConnectStatus(object):
             'encryption_status': 'str',
             'light_levels_in_d_bm': 'list[float]'
         }
-
         self.attribute_map = {
             'cross_connect_id': 'crossConnectId',
             'interface_state': 'interfaceState',
@@ -116,7 +115,6 @@ class CrossConnectStatus(object):
             'encryption_status': 'encryptionStatus',
             'light_levels_in_d_bm': 'lightLevelsInDBm'
         }
-
         self._cross_connect_id = None
         self._interface_state = None
         self._light_level_ind_bm = None

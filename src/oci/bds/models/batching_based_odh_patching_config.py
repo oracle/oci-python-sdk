@@ -45,14 +45,12 @@ class BatchingBasedOdhPatchingConfig(OdhPatchingConfig):
             'wait_time_between_batch_in_seconds': 'int',
             'tolerance_threshold_per_batch': 'int'
         }
-
         self.attribute_map = {
             'patching_config_strategy': 'patchingConfigStrategy',
             'batch_size': 'batchSize',
             'wait_time_between_batch_in_seconds': 'waitTimeBetweenBatchInSeconds',
             'tolerance_threshold_per_batch': 'toleranceThresholdPerBatch'
         }
-
         self._patching_config_strategy = None
         self._batch_size = None
         self._wait_time_between_batch_in_seconds = None

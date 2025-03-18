@@ -85,7 +85,6 @@ class UpdateAwsAssetSourceDetails(UpdateAssetSourceDetails):
             'are_realtime_metrics_collected': 'bool',
             'is_cost_information_collected': 'bool'
         }
-
         self.attribute_map = {
             'type': 'type',
             'display_name': 'displayName',
@@ -100,7 +99,6 @@ class UpdateAwsAssetSourceDetails(UpdateAssetSourceDetails):
             'are_realtime_metrics_collected': 'areRealtimeMetricsCollected',
             'is_cost_information_collected': 'isCostInformationCollected'
         }
-
         self._type = None
         self._display_name = None
         self._assets_compartment_id = None

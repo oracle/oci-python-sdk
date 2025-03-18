@@ -38,13 +38,11 @@ class DrScanDetails(object):
             'scan_listener_port_tcp': 'int',
             'ips': 'list[str]'
         }
-
         self.attribute_map = {
             'hostname': 'hostname',
             'scan_listener_port_tcp': 'scanListenerPortTcp',
             'ips': 'ips'
         }
-
         self._hostname = None
         self._scan_listener_port_tcp = None
         self._ips = None

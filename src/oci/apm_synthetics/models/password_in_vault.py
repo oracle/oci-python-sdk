@@ -36,12 +36,10 @@ class PasswordInVault(Password):
             'password_type': 'str',
             'vault_secret_id': 'str'
         }
-
         self.attribute_map = {
             'password_type': 'passwordType',
             'vault_secret_id': 'vaultSecretId'
         }
-
         self._password_type = None
         self._vault_secret_id = None
         self._password_type = 'VAULT_SECRET_ID'

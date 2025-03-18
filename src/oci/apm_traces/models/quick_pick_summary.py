@@ -33,12 +33,10 @@ class QuickPickSummary(object):
             'quick_pick_name': 'str',
             'quick_pick_query': 'str'
         }
-
         self.attribute_map = {
             'quick_pick_name': 'quickPickName',
             'quick_pick_query': 'quickPickQuery'
         }
-
         self._quick_pick_name = None
         self._quick_pick_query = None
 

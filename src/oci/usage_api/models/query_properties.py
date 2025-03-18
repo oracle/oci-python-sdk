@@ -87,7 +87,6 @@ class QueryProperties(object):
             'is_aggregate_by_time': 'bool',
             'date_range': 'DateRange'
         }
-
         self.attribute_map = {
             'group_by': 'groupBy',
             'group_by_tag': 'groupByTag',
@@ -98,7 +97,6 @@ class QueryProperties(object):
             'is_aggregate_by_time': 'isAggregateByTime',
             'date_range': 'dateRange'
         }
-
         self._group_by = None
         self._group_by_tag = None
         self._filter = None

@@ -43,14 +43,12 @@ class VolumeCostEstimation(object):
             'total_gb_per_month': 'float',
             'total_gb_per_month_by_subscription': 'float'
         }
-
         self.attribute_map = {
             'capacity_gb': 'capacityGb',
             'description': 'description',
             'total_gb_per_month': 'totalGbPerMonth',
             'total_gb_per_month_by_subscription': 'totalGbPerMonthBySubscription'
         }
-
         self._capacity_gb = None
         self._description = None
         self._total_gb_per_month = None

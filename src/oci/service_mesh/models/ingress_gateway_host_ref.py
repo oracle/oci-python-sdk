@@ -33,12 +33,10 @@ class IngressGatewayHostRef(object):
             'name': 'str',
             'port': 'int'
         }
-
         self.attribute_map = {
             'name': 'name',
             'port': 'port'
         }
-
         self._name = None
         self._port = None
 

@@ -137,7 +137,6 @@ class CreateIPSecConnectionTunnelDetails(object):
             'drg_route_table_id': 'str',
             'encryption_domain_config': 'CreateIPSecTunnelEncryptionDomainDetails'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'routing': 'routing',
@@ -154,7 +153,6 @@ class CreateIPSecConnectionTunnelDetails(object):
             'drg_route_table_id': 'drgRouteTableId',
             'encryption_domain_config': 'encryptionDomainConfig'
         }
-
         self._display_name = None
         self._routing = None
         self._ike_version = None

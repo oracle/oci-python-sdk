@@ -28,11 +28,9 @@ class ExtensionSelfChangeUser(object):
         self.swagger_types = {
             'allow_self_change': 'bool'
         }
-
         self.attribute_map = {
             'allow_self_change': 'allowSelfChange'
         }
-
         self._allow_self_change = None
 
     @property

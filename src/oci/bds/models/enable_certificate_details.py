@@ -48,7 +48,6 @@ class EnableCertificateDetails(object):
             'host_cert_details': 'list[HostCertDetails]',
             'server_key_password': 'str'
         }
-
         self.attribute_map = {
             'cluster_admin_password': 'clusterAdminPassword',
             'services': 'services',
@@ -56,7 +55,6 @@ class EnableCertificateDetails(object):
             'host_cert_details': 'hostCertDetails',
             'server_key_password': 'serverKeyPassword'
         }
-
         self._cluster_admin_password = None
         self._services = None
         self._root_certificate = None

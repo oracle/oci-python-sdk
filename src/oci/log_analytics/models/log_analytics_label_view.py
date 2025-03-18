@@ -116,7 +116,6 @@ class LogAnalyticsLabelView(object):
             'type': 'int',
             'is_user_deleted': 'bool'
         }
-
         self.attribute_map = {
             'aliases': 'aliases',
             'count_usage_in_alert_rule': 'countUsageInAlertRule',
@@ -134,7 +133,6 @@ class LogAnalyticsLabelView(object):
             'type': 'type',
             'is_user_deleted': 'isUserDeleted'
         }
-
         self._aliases = None
         self._count_usage_in_alert_rule = None
         self._count_usage_in_source = None

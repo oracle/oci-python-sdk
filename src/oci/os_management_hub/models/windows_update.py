@@ -96,7 +96,6 @@ class WindowsUpdate(object):
             'is_reboot_required_for_installation': 'bool',
             'kb_article_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'name': 'name',
             'update_id': 'updateId',
@@ -108,7 +107,6 @@ class WindowsUpdate(object):
             'is_reboot_required_for_installation': 'isRebootRequiredForInstallation',
             'kb_article_ids': 'kbArticleIds'
         }
-
         self._name = None
         self._update_id = None
         self._description = None

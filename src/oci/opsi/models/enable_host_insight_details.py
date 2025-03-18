@@ -55,11 +55,9 @@ class EnableHostInsightDetails(object):
         self.swagger_types = {
             'entity_source': 'str'
         }
-
         self.attribute_map = {
             'entity_source': 'entitySource'
         }
-
         self._entity_source = None
 
     @staticmethod

@@ -41,11 +41,9 @@ class DisableExternalNonContainerDatabaseManagementFeatureDetails(object):
         self.swagger_types = {
             'feature': 'str'
         }
-
         self.attribute_map = {
             'feature': 'feature'
         }
-
         self._feature = None
 
     @property

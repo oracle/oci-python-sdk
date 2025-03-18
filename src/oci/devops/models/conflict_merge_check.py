@@ -46,12 +46,10 @@ class ConflictMergeCheck(MergeCheck):
             'type': 'str',
             'status': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'status': 'status'
         }
-
         self._type = None
         self._status = None
         self._type = 'CONFLICT'

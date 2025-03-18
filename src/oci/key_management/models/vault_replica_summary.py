@@ -61,14 +61,12 @@ class VaultReplicaSummary(object):
             'region': 'str',
             'status': 'str'
         }
-
         self.attribute_map = {
             'crypto_endpoint': 'cryptoEndpoint',
             'management_endpoint': 'managementEndpoint',
             'region': 'region',
             'status': 'status'
         }
-
         self._crypto_endpoint = None
         self._management_endpoint = None
         self._region = None

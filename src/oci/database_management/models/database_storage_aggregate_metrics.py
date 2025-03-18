@@ -38,13 +38,11 @@ class DatabaseStorageAggregateMetrics(object):
             'storage_used': 'MetricDataPoint',
             'storage_used_by_table_space': 'list[MetricDataPoint]'
         }
-
         self.attribute_map = {
             'storage_allocated': 'storageAllocated',
             'storage_used': 'storageUsed',
             'storage_used_by_table_space': 'storageUsedByTableSpace'
         }
-
         self._storage_allocated = None
         self._storage_used = None
         self._storage_used_by_table_space = None

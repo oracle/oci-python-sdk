@@ -54,7 +54,6 @@ class InstanceConfigurationParavirtualizedAttachVolumeDetails(InstanceConfigurat
             'type': 'str',
             'is_pv_encryption_in_transit_enabled': 'bool'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'is_read_only': 'isReadOnly',
@@ -63,7 +62,6 @@ class InstanceConfigurationParavirtualizedAttachVolumeDetails(InstanceConfigurat
             'type': 'type',
             'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled'
         }
-
         self._display_name = None
         self._is_read_only = None
         self._device = None

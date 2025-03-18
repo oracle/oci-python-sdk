@@ -171,7 +171,6 @@ class UpdateKafkaConnectionDetails(UpdateConnectionDetails):
             'consumer_properties': 'str',
             'producer_properties': 'str'
         }
-
         self.attribute_map = {
             'connection_type': 'connectionType',
             'display_name': 'displayName',
@@ -203,7 +202,6 @@ class UpdateKafkaConnectionDetails(UpdateConnectionDetails):
             'consumer_properties': 'consumerProperties',
             'producer_properties': 'producerProperties'
         }
-
         self._connection_type = None
         self._display_name = None
         self._description = None

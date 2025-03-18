@@ -32,11 +32,9 @@ class UpdateCapacitySourceDetails(object):
         self.swagger_types = {
             'capacity_type': 'str'
         }
-
         self.attribute_map = {
             'capacity_type': 'capacityType'
         }
-
         self._capacity_type = None
 
     @staticmethod

@@ -48,7 +48,6 @@ class UpdateVbsInstanceDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'is_resource_usage_agreement_granted': 'isResourceUsageAgreementGranted',
@@ -56,7 +55,6 @@ class UpdateVbsInstanceDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._display_name = None
         self._is_resource_usage_agreement_granted = None
         self._resource_compartment_id = None

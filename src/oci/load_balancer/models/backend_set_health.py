@@ -69,7 +69,6 @@ class BackendSetHealth(object):
             'unknown_state_backend_names': 'list[str]',
             'total_backend_count': 'int'
         }
-
         self.attribute_map = {
             'status': 'status',
             'warning_state_backend_names': 'warningStateBackendNames',
@@ -77,7 +76,6 @@ class BackendSetHealth(object):
             'unknown_state_backend_names': 'unknownStateBackendNames',
             'total_backend_count': 'totalBackendCount'
         }
-
         self._status = None
         self._warning_state_backend_names = None
         self._critical_state_backend_names = None

@@ -96,7 +96,6 @@ class ComputeInstanceGroupDeployEnvironment(DeployEnvironment):
             'system_tags': 'dict(str, dict(str, object))',
             'compute_instance_group_selectors': 'ComputeInstanceGroupSelectorCollection'
         }
-
         self.attribute_map = {
             'id': 'id',
             'description': 'description',
@@ -113,7 +112,6 @@ class ComputeInstanceGroupDeployEnvironment(DeployEnvironment):
             'system_tags': 'systemTags',
             'compute_instance_group_selectors': 'computeInstanceGroupSelectors'
         }
-
         self._id = None
         self._description = None
         self._display_name = None

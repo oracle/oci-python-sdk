@@ -46,14 +46,12 @@ class IPSecConnectionDeviceConfig(object):
             'time_created': 'datetime',
             'tunnels': 'list[TunnelConfig]'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'id': 'id',
             'time_created': 'timeCreated',
             'tunnels': 'tunnels'
         }
-
         self._compartment_id = None
         self._id = None
         self._time_created = None

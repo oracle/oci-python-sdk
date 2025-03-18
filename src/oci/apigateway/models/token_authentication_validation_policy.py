@@ -53,12 +53,10 @@ class TokenAuthenticationValidationPolicy(object):
             'type': 'str',
             'additional_validation_policy': 'AdditionalValidationPolicy'
         }
-
         self.attribute_map = {
             'type': 'type',
             'additional_validation_policy': 'additionalValidationPolicy'
         }
-
         self._type = None
         self._additional_validation_policy = None
 

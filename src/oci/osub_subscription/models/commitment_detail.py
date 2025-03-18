@@ -58,7 +58,6 @@ class CommitmentDetail(object):
             'available_amount': 'str',
             'funded_allocation_value': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'time_start': 'timeStart',
@@ -68,7 +67,6 @@ class CommitmentDetail(object):
             'available_amount': 'availableAmount',
             'funded_allocation_value': 'fundedAllocationValue'
         }
-
         self._id = None
         self._time_start = None
         self._time_end = None

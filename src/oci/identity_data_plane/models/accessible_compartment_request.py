@@ -33,12 +33,10 @@ class AccessibleCompartmentRequest(object):
             'authorization_request': 'AuthorizationRequest',
             'compartment_ids': 'list[str]'
         }
-
         self.attribute_map = {
             'authorization_request': 'authorizationRequest',
             'compartment_ids': 'compartmentIds'
         }
-
         self._authorization_request = None
         self._compartment_ids = None
 

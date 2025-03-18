@@ -137,7 +137,6 @@ class ApprovalWorkflowStep(object):
             'approvers_expressions': 'list[str]',
             'approvers': 'list[ApprovalWorkflowStepApprovers]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'ocid': 'ocid',
@@ -158,7 +157,6 @@ class ApprovalWorkflowStep(object):
             'approvers_expressions': 'approversExpressions',
             'approvers': 'approvers'
         }
-
         self._id = None
         self._ocid = None
         self._schemas = None

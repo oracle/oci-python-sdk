@@ -35,12 +35,10 @@ class RemotePeeringConnectionDrgAttachmentNetworkDetails(DrgAttachmentNetworkDet
             'type': 'str',
             'id': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'id': 'id'
         }
-
         self._type = None
         self._id = None
         self._type = 'REMOTE_PEERING_CONNECTION'

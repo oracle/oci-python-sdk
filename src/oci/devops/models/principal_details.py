@@ -75,14 +75,12 @@ class PrincipalDetails(object):
             'principal_type': 'str',
             'principal_state': 'str'
         }
-
         self.attribute_map = {
             'principal_id': 'principalId',
             'principal_name': 'principalName',
             'principal_type': 'principalType',
             'principal_state': 'principalState'
         }
-
         self._principal_id = None
         self._principal_name = None
         self._principal_type = None

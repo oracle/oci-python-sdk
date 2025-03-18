@@ -48,7 +48,6 @@ class ClassMetrics(object):
             'recall': 'float',
             'support': 'float'
         }
-
         self.attribute_map = {
             'label': 'label',
             'f1': 'f1',
@@ -56,7 +55,6 @@ class ClassMetrics(object):
             'recall': 'recall',
             'support': 'support'
         }
-
         self._label = None
         self._f1 = None
         self._precision = None

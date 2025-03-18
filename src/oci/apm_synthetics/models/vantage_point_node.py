@@ -48,7 +48,6 @@ class VantagePointNode(object):
             'geo_info': 'str',
             'outgoing_links': 'list[str]'
         }
-
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
@@ -56,7 +55,6 @@ class VantagePointNode(object):
             'geo_info': 'geoInfo',
             'outgoing_links': 'outgoingLinks'
         }
-
         self._id = None
         self._name = None
         self._display_name = None

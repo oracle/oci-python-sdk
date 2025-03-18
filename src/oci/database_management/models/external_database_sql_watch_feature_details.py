@@ -35,12 +35,10 @@ class ExternalDatabaseSqlWatchFeatureDetails(ExternalDatabaseFeatureDetails):
             'feature': 'str',
             'connector_details': 'ConnectorDetails'
         }
-
         self.attribute_map = {
             'feature': 'feature',
             'connector_details': 'connectorDetails'
         }
-
         self._feature = None
         self._connector_details = None
         self._feature = 'SQLWATCH'

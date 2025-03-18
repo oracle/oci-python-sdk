@@ -38,13 +38,11 @@ class Principal(object):
             'display_name': 'str',
             'email': 'str'
         }
-
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
             'email': 'email'
         }
-
         self._id = None
         self._display_name = None
         self._email = None

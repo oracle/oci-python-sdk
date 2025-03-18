@@ -85,7 +85,6 @@ class OptimizerStatisticsAdvisorExecutionSummary(object):
             'error_message': 'str',
             'findings': 'int'
         }
-
         self.attribute_map = {
             'task_name': 'taskName',
             'execution_name': 'executionName',
@@ -96,7 +95,6 @@ class OptimizerStatisticsAdvisorExecutionSummary(object):
             'error_message': 'errorMessage',
             'findings': 'findings'
         }
-
         self._task_name = None
         self._execution_name = None
         self._time_start = None

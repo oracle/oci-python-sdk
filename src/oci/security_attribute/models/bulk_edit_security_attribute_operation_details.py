@@ -50,12 +50,10 @@ class BulkEditSecurityAttributeOperationDetails(object):
             'operation_type': 'str',
             'security_attributes': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'operation_type': 'operationType',
             'security_attributes': 'securityAttributes'
         }
-
         self._operation_type = None
         self._security_attributes = None
 

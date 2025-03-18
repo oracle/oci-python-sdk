@@ -55,7 +55,6 @@ class SubnetTopology(Topology):
             'time_created': 'datetime',
             'subnet_id': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'entities': 'entities',
@@ -64,7 +63,6 @@ class SubnetTopology(Topology):
             'time_created': 'timeCreated',
             'subnet_id': 'subnetId'
         }
-
         self._type = None
         self._entities = None
         self._relationships = None

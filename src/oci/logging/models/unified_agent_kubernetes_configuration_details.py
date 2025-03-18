@@ -45,14 +45,12 @@ class UnifiedAgentKubernetesConfigurationDetails(UnifiedAgentMonitoringApplicati
             'filter': 'UnifiedAgentKubernetesFilter',
             'destination': 'UnifiedAgentMonitoringDestination'
         }
-
         self.attribute_map = {
             'source_type': 'sourceType',
             'source': 'source',
             'filter': 'filter',
             'destination': 'destination'
         }
-
         self._source_type = None
         self._source = None
         self._filter = None

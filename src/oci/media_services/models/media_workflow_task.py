@@ -59,7 +59,6 @@ class MediaWorkflowTask(object):
             'enable_when_referenced_parameter_equals': 'dict(str, object)',
             'parameters': 'dict(str, object)'
         }
-
         self.attribute_map = {
             'type': 'type',
             'version': 'version',
@@ -69,7 +68,6 @@ class MediaWorkflowTask(object):
             'enable_when_referenced_parameter_equals': 'enableWhenReferencedParameterEquals',
             'parameters': 'parameters'
         }
-
         self._type = None
         self._version = None
         self._key = None

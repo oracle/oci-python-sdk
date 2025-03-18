@@ -88,7 +88,6 @@ class AnalyzeVideoResult(object):
             'face_detection_model_version': 'str',
             'errors': 'list[ProcessingError]'
         }
-
         self.attribute_map = {
             'video_metadata': 'videoMetadata',
             'video_labels': 'videoLabels',
@@ -104,7 +103,6 @@ class AnalyzeVideoResult(object):
             'face_detection_model_version': 'faceDetectionModelVersion',
             'errors': 'errors'
         }
-
         self._video_metadata = None
         self._video_labels = None
         self._video_objects = None

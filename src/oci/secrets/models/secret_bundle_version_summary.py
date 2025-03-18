@@ -80,7 +80,6 @@ class SecretBundleVersionSummary(object):
             'time_of_expiry': 'datetime',
             'stages': 'list[str]'
         }
-
         self.attribute_map = {
             'secret_id': 'secretId',
             'time_created': 'timeCreated',
@@ -90,7 +89,6 @@ class SecretBundleVersionSummary(object):
             'time_of_expiry': 'timeOfExpiry',
             'stages': 'stages'
         }
-
         self._secret_id = None
         self._time_created = None
         self._version_number = None

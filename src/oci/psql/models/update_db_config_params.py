@@ -42,12 +42,10 @@ class UpdateDbConfigParams(object):
             'apply_config': 'str',
             'config_id': 'str'
         }
-
         self.attribute_map = {
             'apply_config': 'applyConfig',
             'config_id': 'configId'
         }
-
         self._apply_config = None
         self._config_id = None
 

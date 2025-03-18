@@ -28,11 +28,9 @@ class UpdateServiceListDetails(object):
         self.swagger_types = {
             'services': 'list[str]'
         }
-
         self.attribute_map = {
             'services': 'services'
         }
-
         self._services = None
 
     @property

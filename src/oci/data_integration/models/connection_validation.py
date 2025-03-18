@@ -78,7 +78,6 @@ class ConnectionValidation(object):
             'identifier': 'str',
             'metadata': 'ObjectMetadata'
         }
-
         self.attribute_map = {
             'validation_message': 'validationMessage',
             'key': 'key',
@@ -92,7 +91,6 @@ class ConnectionValidation(object):
             'identifier': 'identifier',
             'metadata': 'metadata'
         }
-
         self._validation_message = None
         self._key = None
         self._model_type = None

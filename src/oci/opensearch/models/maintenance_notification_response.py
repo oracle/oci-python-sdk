@@ -33,12 +33,10 @@ class MaintenanceNotificationResponse(object):
             'message': 'str',
             'failed_notifications': 'list[MaintenanceNotificationFailure]'
         }
-
         self.attribute_map = {
             'message': 'message',
             'failed_notifications': 'failedNotifications'
         }
-
         self._message = None
         self._failed_notifications = None
 

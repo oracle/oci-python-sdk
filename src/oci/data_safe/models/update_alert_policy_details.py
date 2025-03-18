@@ -69,7 +69,6 @@ class UpdateAlertPolicyDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
@@ -77,7 +76,6 @@ class UpdateAlertPolicyDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
-
         self._display_name = None
         self._description = None
         self._severity = None

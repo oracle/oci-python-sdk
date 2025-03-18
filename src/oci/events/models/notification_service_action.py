@@ -61,7 +61,6 @@ class NotificationServiceAction(Action):
             'description': 'str',
             'topic_id': 'str'
         }
-
         self.attribute_map = {
             'action_type': 'actionType',
             'id': 'id',
@@ -71,7 +70,6 @@ class NotificationServiceAction(Action):
             'description': 'description',
             'topic_id': 'topicId'
         }
-
         self._action_type = None
         self._id = None
         self._lifecycle_message = None

@@ -121,14 +121,12 @@ class FleetStatusByCategory(object):
             'deployment_type': 'str',
             'inventory_count': 'int'
         }
-
         self.attribute_map = {
             'database_type': 'databaseType',
             'database_sub_type': 'databaseSubType',
             'deployment_type': 'deploymentType',
             'inventory_count': 'inventoryCount'
         }
-
         self._database_type = None
         self._database_sub_type = None
         self._deployment_type = None

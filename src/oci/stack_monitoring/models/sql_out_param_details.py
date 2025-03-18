@@ -52,13 +52,11 @@ class SqlOutParamDetails(object):
             'out_param_type': 'str',
             'out_param_name': 'str'
         }
-
         self.attribute_map = {
             'out_param_position': 'outParamPosition',
             'out_param_type': 'outParamType',
             'out_param_name': 'outParamName'
         }
-
         self._out_param_position = None
         self._out_param_type = None
         self._out_param_name = None

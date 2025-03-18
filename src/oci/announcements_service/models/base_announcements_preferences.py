@@ -68,7 +68,6 @@ class BaseAnnouncementsPreferences(object):
             'preference_type': 'str',
             'preferred_time_zone': 'str'
         }
-
         self.attribute_map = {
             'type': 'type',
             'compartment_id': 'compartmentId',
@@ -79,7 +78,6 @@ class BaseAnnouncementsPreferences(object):
             'preference_type': 'preferenceType',
             'preferred_time_zone': 'preferredTimeZone'
         }
-
         self._type = None
         self._compartment_id = None
         self._id = None

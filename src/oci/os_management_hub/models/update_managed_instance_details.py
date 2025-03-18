@@ -48,7 +48,6 @@ class UpdateManagedInstanceDetails(object):
             'notification_topic_id': 'str',
             'autonomous_settings': 'UpdatableAutonomousSettings'
         }
-
         self.attribute_map = {
             'description': 'description',
             'primary_management_station_id': 'primaryManagementStationId',
@@ -56,7 +55,6 @@ class UpdateManagedInstanceDetails(object):
             'notification_topic_id': 'notificationTopicId',
             'autonomous_settings': 'autonomousSettings'
         }
-
         self._description = None
         self._primary_management_station_id = None
         self._secondary_management_station_id = None

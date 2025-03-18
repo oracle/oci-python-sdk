@@ -33,12 +33,10 @@ class TrailSequenceCollection(object):
             'time_last_fetched': 'datetime',
             'items': 'list[TrailSequenceSummary]'
         }
-
         self.attribute_map = {
             'time_last_fetched': 'timeLastFetched',
             'items': 'items'
         }
-
         self._time_last_fetched = None
         self._items = None
 

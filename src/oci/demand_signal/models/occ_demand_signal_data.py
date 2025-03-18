@@ -38,13 +38,11 @@ class OccDemandSignalData(object):
             'units': 'str',
             'values': 'list[OccDemandSignalValue]'
         }
-
         self.attribute_map = {
             'resource_type': 'resourceType',
             'units': 'units',
             'values': 'values'
         }
-
         self._resource_type = None
         self._units = None
         self._values = None

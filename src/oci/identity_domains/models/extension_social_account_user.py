@@ -28,11 +28,9 @@ class ExtensionSocialAccountUser(object):
         self.swagger_types = {
             'social_accounts': 'list[UserExtSocialAccounts]'
         }
-
         self.attribute_map = {
             'social_accounts': 'socialAccounts'
         }
-
         self._social_accounts = None
 
     @property

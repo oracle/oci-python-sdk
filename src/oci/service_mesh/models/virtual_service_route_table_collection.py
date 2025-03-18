@@ -28,11 +28,9 @@ class VirtualServiceRouteTableCollection(object):
         self.swagger_types = {
             'items': 'list[VirtualServiceRouteTableSummary]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

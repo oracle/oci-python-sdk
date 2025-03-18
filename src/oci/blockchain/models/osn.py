@@ -57,14 +57,12 @@ class Osn(object):
             'ocpu_allocation_param': 'OcpuAllocationNumberParam',
             'lifecycle_state': 'str'
         }
-
         self.attribute_map = {
             'osn_key': 'osnKey',
             'ad': 'ad',
             'ocpu_allocation_param': 'ocpuAllocationParam',
             'lifecycle_state': 'lifecycleState'
         }
-
         self._osn_key = None
         self._ad = None
         self._ocpu_allocation_param = None

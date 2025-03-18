@@ -45,13 +45,11 @@ class DestroyJobOperationDetails(JobOperationDetails):
             'terraform_advanced_options': 'TerraformAdvancedOptions',
             'execution_plan_strategy': 'str'
         }
-
         self.attribute_map = {
             'operation': 'operation',
             'terraform_advanced_options': 'terraformAdvancedOptions',
             'execution_plan_strategy': 'executionPlanStrategy'
         }
-
         self._operation = None
         self._terraform_advanced_options = None
         self._execution_plan_strategy = None

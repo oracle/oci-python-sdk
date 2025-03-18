@@ -90,7 +90,6 @@ class LlamaLlmInferenceRequest(LlmInferenceRequest):
             'log_probs': 'int',
             'max_tokens': 'int'
         }
-
         self.attribute_map = {
             'runtime_type': 'runtimeType',
             'prompt': 'prompt',
@@ -106,7 +105,6 @@ class LlamaLlmInferenceRequest(LlmInferenceRequest):
             'log_probs': 'logProbs',
             'max_tokens': 'maxTokens'
         }
-
         self._runtime_type = None
         self._prompt = None
         self._is_stream = None

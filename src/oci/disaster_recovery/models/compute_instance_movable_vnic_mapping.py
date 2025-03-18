@@ -48,7 +48,6 @@ class ComputeInstanceMovableVnicMapping(object):
             'destination_primary_private_ip_hostname_label': 'str',
             'destination_nsg_id_list': 'list[str]'
         }
-
         self.attribute_map = {
             'source_vnic_id': 'sourceVnicId',
             'destination_subnet_id': 'destinationSubnetId',
@@ -56,7 +55,6 @@ class ComputeInstanceMovableVnicMapping(object):
             'destination_primary_private_ip_hostname_label': 'destinationPrimaryPrivateIpHostnameLabel',
             'destination_nsg_id_list': 'destinationNsgIdList'
         }
-
         self._source_vnic_id = None
         self._destination_subnet_id = None
         self._destination_primary_private_ip_address = None

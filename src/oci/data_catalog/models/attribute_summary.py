@@ -216,7 +216,6 @@ class AttributeSummary(object):
             'time_updated': 'datetime',
             'properties': 'dict(str, dict(str, str))'
         }
-
         self.attribute_map = {
             'key': 'key',
             'display_name': 'displayName',
@@ -248,7 +247,6 @@ class AttributeSummary(object):
             'time_updated': 'timeUpdated',
             'properties': 'properties'
         }
-
         self._key = None
         self._display_name = None
         self._business_name = None

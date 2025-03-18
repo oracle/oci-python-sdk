@@ -33,12 +33,10 @@ class UploadFileStatus(object):
             'file_name': 'str',
             'is_valid': 'bool'
         }
-
         self.attribute_map = {
             'file_name': 'fileName',
             'is_valid': 'isValid'
         }
-
         self._file_name = None
         self._is_valid = None
 

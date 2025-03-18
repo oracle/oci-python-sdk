@@ -42,12 +42,10 @@ class OciConsoleSignOnPolicyConsentPolicyResource(object):
             'value': 'str',
             'ocid': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ocid': 'ocid'
         }
-
         self._value = None
         self._ocid = None
 

@@ -48,7 +48,6 @@ class ApprovalWorkflowApprovalWorkflowSteps(object):
             'order': 'int',
             'ref': 'str'
         }
-
         self.attribute_map = {
             'value': 'value',
             'ocid': 'ocid',
@@ -56,7 +55,6 @@ class ApprovalWorkflowApprovalWorkflowSteps(object):
             'order': 'order',
             'ref': '$ref'
         }
-
         self._value = None
         self._ocid = None
         self._type = None

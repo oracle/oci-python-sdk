@@ -53,7 +53,6 @@ class GeoSummary(object):
             'latitude': 'float',
             'longitude': 'float'
         }
-
         self.attribute_map = {
             'admin_div_code': 'adminDivCode',
             'city_name': 'cityName',
@@ -62,7 +61,6 @@ class GeoSummary(object):
             'latitude': 'latitude',
             'longitude': 'longitude'
         }
-
         self._admin_div_code = None
         self._city_name = None
         self._country_code = None

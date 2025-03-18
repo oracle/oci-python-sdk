@@ -46,12 +46,10 @@ class UpdateMappedSecretDetails(object):
             'source': 'str',
             'type': 'str'
         }
-
         self.attribute_map = {
             'source': 'source',
             'type': 'type'
         }
-
         self._source = None
         self._type = None
 

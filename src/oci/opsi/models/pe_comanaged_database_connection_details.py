@@ -48,13 +48,11 @@ class PeComanagedDatabaseConnectionDetails(object):
             'protocol': 'str',
             'service_name': 'str'
         }
-
         self.attribute_map = {
             'hosts': 'hosts',
             'protocol': 'protocol',
             'service_name': 'serviceName'
         }
-
         self._hosts = None
         self._protocol = None
         self._service_name = None

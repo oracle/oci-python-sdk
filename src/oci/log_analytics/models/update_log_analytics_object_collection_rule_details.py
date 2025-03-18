@@ -98,7 +98,6 @@ class UpdateLogAnalyticsObjectCollectionRuleDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)'
         }
-
         self.attribute_map = {
             'description': 'description',
             'log_group_id': 'logGroupId',
@@ -115,7 +114,6 @@ class UpdateLogAnalyticsObjectCollectionRuleDetails(object):
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags'
         }
-
         self._description = None
         self._log_group_id = None
         self._log_source_name = None

@@ -103,7 +103,6 @@ class SqlTuningAdvisorTaskRecommendationSummary(object):
             'implement_action_sql': 'str',
             'is_parallel_execution': 'bool'
         }
-
         self.attribute_map = {
             'sql_tuning_advisor_task_id': 'sqlTuningAdvisorTaskId',
             'sql_tuning_advisor_task_object_id': 'sqlTuningAdvisorTaskObjectId',
@@ -116,7 +115,6 @@ class SqlTuningAdvisorTaskRecommendationSummary(object):
             'implement_action_sql': 'implementActionSql',
             'is_parallel_execution': 'isParallelExecution'
         }
-
         self._sql_tuning_advisor_task_id = None
         self._sql_tuning_advisor_task_object_id = None
         self._recommendation_key = None

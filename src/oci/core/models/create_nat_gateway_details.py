@@ -63,7 +63,6 @@ class CreateNatGatewayDetails(object):
             'public_ip_id': 'str',
             'route_table_id': 'str'
         }
-
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
@@ -74,7 +73,6 @@ class CreateNatGatewayDetails(object):
             'public_ip_id': 'publicIpId',
             'route_table_id': 'routeTableId'
         }
-
         self._compartment_id = None
         self._defined_tags = None
         self._display_name = None

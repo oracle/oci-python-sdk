@@ -37,11 +37,9 @@ class UpdateModelDeploymentConfigurationDetails(object):
         self.swagger_types = {
             'deployment_type': 'str'
         }
-
         self.attribute_map = {
             'deployment_type': 'deploymentType'
         }
-
         self._deployment_type = None
 
     @staticmethod

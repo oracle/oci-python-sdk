@@ -43,14 +43,12 @@ class UpdateApiDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'content': 'str'
         }
-
         self.attribute_map = {
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'content': 'content'
         }
-
         self._display_name = None
         self._freeform_tags = None
         self._defined_tags = None

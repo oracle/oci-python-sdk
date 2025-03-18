@@ -55,7 +55,6 @@ class PipelineMLJobStepDetails(PipelineStepDetails):
             'step_configuration_details': 'PipelineStepConfigurationDetails',
             'job_id': 'str'
         }
-
         self.attribute_map = {
             'step_type': 'stepType',
             'step_name': 'stepName',
@@ -64,7 +63,6 @@ class PipelineMLJobStepDetails(PipelineStepDetails):
             'step_configuration_details': 'stepConfigurationDetails',
             'job_id': 'jobId'
         }
-
         self._step_type = None
         self._step_name = None
         self._description = None

@@ -28,11 +28,9 @@ class SetQueryParameterPolicy(object):
         self.swagger_types = {
             'items': 'list[SetQueryParameterPolicyItem]'
         }
-
         self.attribute_map = {
             'items': 'items'
         }
-
         self._items = None
 
     @property

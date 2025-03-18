@@ -40,13 +40,11 @@ class MonitorScriptParameterInfo(object):
             'is_secret': 'bool',
             'is_overwritten': 'bool'
         }
-
         self.attribute_map = {
             'monitor_script_parameter': 'monitorScriptParameter',
             'is_secret': 'isSecret',
             'is_overwritten': 'isOverwritten'
         }
-
         self._monitor_script_parameter = None
         self._is_secret = None
         self._is_overwritten = None

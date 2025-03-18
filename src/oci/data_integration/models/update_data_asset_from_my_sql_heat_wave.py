@@ -100,7 +100,6 @@ class UpdateDataAssetFromMySqlHeatWave(UpdateDataAssetDetails):
             'service_name': 'str',
             'default_connection': 'UpdateConnectionFromMySqlHeatWave'
         }
-
         self.attribute_map = {
             'model_type': 'modelType',
             'key': 'key',
@@ -118,7 +117,6 @@ class UpdateDataAssetFromMySqlHeatWave(UpdateDataAssetDetails):
             'service_name': 'serviceName',
             'default_connection': 'defaultConnection'
         }
-
         self._model_type = None
         self._key = None
         self._model_version = None

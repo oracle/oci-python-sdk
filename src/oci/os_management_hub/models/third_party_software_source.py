@@ -163,7 +163,6 @@ class ThirdPartySoftwareSource(SoftwareSource):
             'advanced_repo_options': 'str',
             'is_mirror_sync_allowed': 'bool'
         }
-
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
@@ -192,7 +191,6 @@ class ThirdPartySoftwareSource(SoftwareSource):
             'advanced_repo_options': 'advancedRepoOptions',
             'is_mirror_sync_allowed': 'isMirrorSyncAllowed'
         }
-
         self._id = None
         self._compartment_id = None
         self._display_name = None
