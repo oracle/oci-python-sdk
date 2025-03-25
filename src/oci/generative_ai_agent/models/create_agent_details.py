@@ -40,6 +40,10 @@ class CreateAgentDetails(object):
             The value to assign to the welcome_message property of this CreateAgentDetails.
         :type welcome_message: str
 
+        :param llm_config:
+            The value to assign to the llm_config property of this CreateAgentDetails.
+        :type llm_config: oci.generative_ai_agent.models.LlmConfig
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateAgentDetails.
         :type freeform_tags: dict(str, str)
@@ -55,6 +59,7 @@ class CreateAgentDetails(object):
             'compartment_id': 'str',
             'knowledge_base_ids': 'list[str]',
             'welcome_message': 'str',
+            'llm_config': 'LlmConfig',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -64,6 +69,7 @@ class CreateAgentDetails(object):
             'compartment_id': 'compartmentId',
             'knowledge_base_ids': 'knowledgeBaseIds',
             'welcome_message': 'welcomeMessage',
+            'llm_config': 'llmConfig',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -72,6 +78,7 @@ class CreateAgentDetails(object):
         self._compartment_id = None
         self._knowledge_base_ids = None
         self._welcome_message = None
+        self._llm_config = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -155,7 +162,7 @@ class CreateAgentDetails(object):
     def knowledge_base_ids(self):
         """
         Gets the knowledge_base_ids of this CreateAgentDetails.
-        List of `OCID`__ of the knowledgeBases associated with agent.
+        List of `OCID`__ of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -169,7 +176,7 @@ class CreateAgentDetails(object):
     def knowledge_base_ids(self, knowledge_base_ids):
         """
         Sets the knowledge_base_ids of this CreateAgentDetails.
-        List of `OCID`__ of the knowledgeBases associated with agent.
+        List of `OCID`__ of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -202,6 +209,26 @@ class CreateAgentDetails(object):
         :type: str
         """
         self._welcome_message = welcome_message
+
+    @property
+    def llm_config(self):
+        """
+        Gets the llm_config of this CreateAgentDetails.
+
+        :return: The llm_config of this CreateAgentDetails.
+        :rtype: oci.generative_ai_agent.models.LlmConfig
+        """
+        return self._llm_config
+
+    @llm_config.setter
+    def llm_config(self, llm_config):
+        """
+        Sets the llm_config of this CreateAgentDetails.
+
+        :param llm_config: The llm_config of this CreateAgentDetails.
+        :type: oci.generative_ai_agent.models.LlmConfig
+        """
+        self._llm_config = llm_config
 
     @property
     def freeform_tags(self):

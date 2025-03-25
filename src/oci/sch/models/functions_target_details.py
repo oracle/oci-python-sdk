@@ -101,6 +101,7 @@ class FunctionsTargetDetails(TargetDetails):
         """
         Gets the batch_size_in_kbs of this FunctionsTargetDetails.
         The batch rollover size in kilobytes.
+        Only one size option can be specified: `batchSizeInKbs` or `batchSizeInNum`.
 
 
         :return: The batch_size_in_kbs of this FunctionsTargetDetails.
@@ -113,6 +114,7 @@ class FunctionsTargetDetails(TargetDetails):
         """
         Sets the batch_size_in_kbs of this FunctionsTargetDetails.
         The batch rollover size in kilobytes.
+        Only one size option can be specified: `batchSizeInKbs` or `batchSizeInNum`.
 
 
         :param batch_size_in_kbs: The batch_size_in_kbs of this FunctionsTargetDetails.
@@ -125,6 +127,7 @@ class FunctionsTargetDetails(TargetDetails):
         """
         Gets the batch_size_in_num of this FunctionsTargetDetails.
         The batch rollover size in number of messages.
+        Only one size option can be specified: `batchSizeInKbs` or `batchSizeInNum`.
 
 
         :return: The batch_size_in_num of this FunctionsTargetDetails.
@@ -137,6 +140,7 @@ class FunctionsTargetDetails(TargetDetails):
         """
         Sets the batch_size_in_num of this FunctionsTargetDetails.
         The batch rollover size in number of messages.
+        Only one size option can be specified: `batchSizeInKbs` or `batchSizeInNum`.
 
 
         :param batch_size_in_num: The batch_size_in_num of this FunctionsTargetDetails.

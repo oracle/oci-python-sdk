@@ -44,6 +44,10 @@ class AgentSummary(object):
             The value to assign to the welcome_message property of this AgentSummary.
         :type welcome_message: str
 
+        :param llm_config:
+            The value to assign to the llm_config property of this AgentSummary.
+        :type llm_config: oci.generative_ai_agent.models.LlmConfig
+
         :param time_created:
             The value to assign to the time_created property of this AgentSummary.
         :type time_created: datetime
@@ -80,6 +84,7 @@ class AgentSummary(object):
             'compartment_id': 'str',
             'knowledge_base_ids': 'list[str]',
             'welcome_message': 'str',
+            'llm_config': 'LlmConfig',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
@@ -95,6 +100,7 @@ class AgentSummary(object):
             'compartment_id': 'compartmentId',
             'knowledge_base_ids': 'knowledgeBaseIds',
             'welcome_message': 'welcomeMessage',
+            'llm_config': 'llmConfig',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
@@ -109,6 +115,7 @@ class AgentSummary(object):
         self._compartment_id = None
         self._knowledge_base_ids = None
         self._welcome_message = None
+        self._llm_config = None
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
@@ -225,7 +232,7 @@ class AgentSummary(object):
     def knowledge_base_ids(self):
         """
         Gets the knowledge_base_ids of this AgentSummary.
-        List of `OCID`__ of the knowledgeBases associated with agent.
+        List of `OCID`__ of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -239,7 +246,7 @@ class AgentSummary(object):
     def knowledge_base_ids(self, knowledge_base_ids):
         """
         Sets the knowledge_base_ids of this AgentSummary.
-        List of `OCID`__ of the knowledgeBases associated with agent.
+        List of `OCID`__ of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -272,6 +279,26 @@ class AgentSummary(object):
         :type: str
         """
         self._welcome_message = welcome_message
+
+    @property
+    def llm_config(self):
+        """
+        Gets the llm_config of this AgentSummary.
+
+        :return: The llm_config of this AgentSummary.
+        :rtype: oci.generative_ai_agent.models.LlmConfig
+        """
+        return self._llm_config
+
+    @llm_config.setter
+    def llm_config(self, llm_config):
+        """
+        Sets the llm_config of this AgentSummary.
+
+        :param llm_config: The llm_config of this AgentSummary.
+        :type: oci.generative_ai_agent.models.LlmConfig
+        """
+        self._llm_config = llm_config
 
     @property
     def time_created(self):

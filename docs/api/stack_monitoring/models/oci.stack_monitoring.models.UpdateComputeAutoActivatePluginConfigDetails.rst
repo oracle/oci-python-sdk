@@ -1,0 +1,11 @@
+UpdateComputeAutoActivatePluginConfigDetails
+============================================
+
+.. currentmodule:: oci.stack_monitoring.models
+
+.. autoclass:: UpdateComputeAutoActivatePluginConfigDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

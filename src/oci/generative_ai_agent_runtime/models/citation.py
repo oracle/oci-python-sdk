@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Citation(object):
     """
-    The citation displays the location of source text that is the agent uses to create the responses.
+    The source of information for the agent's response.
     """
 
     def __init__(self, **kwargs):
@@ -40,26 +40,33 @@ class Citation(object):
             The value to assign to the page_numbers property of this Citation.
         :type page_numbers: list[int]
 
+        :param metadata:
+            The value to assign to the metadata property of this Citation.
+        :type metadata: dict(str, object)
+
         """
         self.swagger_types = {
             'source_text': 'str',
             'source_location': 'SourceLocation',
             'title': 'str',
             'doc_id': 'str',
-            'page_numbers': 'list[int]'
+            'page_numbers': 'list[int]',
+            'metadata': 'dict(str, object)'
         }
         self.attribute_map = {
             'source_text': 'sourceText',
             'source_location': 'sourceLocation',
             'title': 'title',
             'doc_id': 'docId',
-            'page_numbers': 'pageNumbers'
+            'page_numbers': 'pageNumbers',
+            'metadata': 'metadata'
         }
         self._source_text = None
         self._source_location = None
         self._title = None
         self._doc_id = None
         self._page_numbers = None
+        self._metadata = None
 
     @property
     def source_text(self):
@@ -176,6 +183,30 @@ class Citation(object):
         :type: list[int]
         """
         self._page_numbers = page_numbers
+
+    @property
+    def metadata(self):
+        """
+        Gets the metadata of this Citation.
+        The metadata of the retrieved document, if available.
+
+
+        :return: The metadata of this Citation.
+        :rtype: dict(str, object)
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """
+        Sets the metadata of this Citation.
+        The metadata of the retrieved document, if available.
+
+
+        :param metadata: The metadata of this Citation.
+        :type: dict(str, object)
+        """
+        self._metadata = metadata
 
     def __repr__(self):
         return formatted_flat_dict(self)

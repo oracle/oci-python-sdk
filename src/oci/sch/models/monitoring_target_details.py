@@ -101,7 +101,6 @@ class MonitoringTargetDetails(TargetDetails):
         """
         **[Required]** Gets the metric_namespace of this MonitoringTargetDetails.
         The namespace of the metric.
-
         Example: `oci_computeagent`
 
 
@@ -115,7 +114,6 @@ class MonitoringTargetDetails(TargetDetails):
         """
         Sets the metric_namespace of this MonitoringTargetDetails.
         The namespace of the metric.
-
         Example: `oci_computeagent`
 
 
@@ -129,7 +127,6 @@ class MonitoringTargetDetails(TargetDetails):
         """
         **[Required]** Gets the metric of this MonitoringTargetDetails.
         The name of the metric.
-
         Example: `CpuUtilization`
 
 
@@ -143,7 +140,6 @@ class MonitoringTargetDetails(TargetDetails):
         """
         Sets the metric of this MonitoringTargetDetails.
         The name of the metric.
-
         Example: `CpuUtilization`
 
 

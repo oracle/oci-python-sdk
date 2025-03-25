@@ -72,6 +72,22 @@ class AgentEndpoint(object):
             The value to assign to the content_moderation_config property of this AgentEndpoint.
         :type content_moderation_config: oci.generative_ai_agent.models.ContentModerationConfig
 
+        :param guardrail_config:
+            The value to assign to the guardrail_config property of this AgentEndpoint.
+        :type guardrail_config: oci.generative_ai_agent.models.GuardrailConfig
+
+        :param metadata:
+            The value to assign to the metadata property of this AgentEndpoint.
+        :type metadata: dict(str, str)
+
+        :param human_input_config:
+            The value to assign to the human_input_config property of this AgentEndpoint.
+        :type human_input_config: oci.generative_ai_agent.models.HumanInputConfig
+
+        :param output_config:
+            The value to assign to the output_config property of this AgentEndpoint.
+        :type output_config: oci.generative_ai_agent.models.OutputConfig
+
         :param should_enable_trace:
             The value to assign to the should_enable_trace property of this AgentEndpoint.
         :type should_enable_trace: bool
@@ -83,6 +99,10 @@ class AgentEndpoint(object):
         :param should_enable_session:
             The value to assign to the should_enable_session property of this AgentEndpoint.
         :type should_enable_session: bool
+
+        :param should_enable_multi_language:
+            The value to assign to the should_enable_multi_language property of this AgentEndpoint.
+        :type should_enable_multi_language: bool
 
         :param session_config:
             The value to assign to the session_config property of this AgentEndpoint.
@@ -126,9 +146,14 @@ class AgentEndpoint(object):
             'compartment_id': 'str',
             'agent_id': 'str',
             'content_moderation_config': 'ContentModerationConfig',
+            'guardrail_config': 'GuardrailConfig',
+            'metadata': 'dict(str, str)',
+            'human_input_config': 'HumanInputConfig',
+            'output_config': 'OutputConfig',
             'should_enable_trace': 'bool',
             'should_enable_citation': 'bool',
             'should_enable_session': 'bool',
+            'should_enable_multi_language': 'bool',
             'session_config': 'SessionConfig',
             'time_created': 'datetime',
             'time_updated': 'datetime',
@@ -145,9 +170,14 @@ class AgentEndpoint(object):
             'compartment_id': 'compartmentId',
             'agent_id': 'agentId',
             'content_moderation_config': 'contentModerationConfig',
+            'guardrail_config': 'guardrailConfig',
+            'metadata': 'metadata',
+            'human_input_config': 'humanInputConfig',
+            'output_config': 'outputConfig',
             'should_enable_trace': 'shouldEnableTrace',
             'should_enable_citation': 'shouldEnableCitation',
             'should_enable_session': 'shouldEnableSession',
+            'should_enable_multi_language': 'shouldEnableMultiLanguage',
             'session_config': 'sessionConfig',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
@@ -163,9 +193,14 @@ class AgentEndpoint(object):
         self._compartment_id = None
         self._agent_id = None
         self._content_moderation_config = None
+        self._guardrail_config = None
+        self._metadata = None
+        self._human_input_config = None
+        self._output_config = None
         self._should_enable_trace = None
         self._should_enable_citation = None
         self._should_enable_session = None
+        self._should_enable_multi_language = None
         self._session_config = None
         self._time_created = None
         self._time_updated = None
@@ -324,6 +359,90 @@ class AgentEndpoint(object):
         self._content_moderation_config = content_moderation_config
 
     @property
+    def guardrail_config(self):
+        """
+        Gets the guardrail_config of this AgentEndpoint.
+
+        :return: The guardrail_config of this AgentEndpoint.
+        :rtype: oci.generative_ai_agent.models.GuardrailConfig
+        """
+        return self._guardrail_config
+
+    @guardrail_config.setter
+    def guardrail_config(self, guardrail_config):
+        """
+        Sets the guardrail_config of this AgentEndpoint.
+
+        :param guardrail_config: The guardrail_config of this AgentEndpoint.
+        :type: oci.generative_ai_agent.models.GuardrailConfig
+        """
+        self._guardrail_config = guardrail_config
+
+    @property
+    def metadata(self):
+        """
+        Gets the metadata of this AgentEndpoint.
+        Key-value pairs to allow additional configurations.
+
+
+        :return: The metadata of this AgentEndpoint.
+        :rtype: dict(str, str)
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """
+        Sets the metadata of this AgentEndpoint.
+        Key-value pairs to allow additional configurations.
+
+
+        :param metadata: The metadata of this AgentEndpoint.
+        :type: dict(str, str)
+        """
+        self._metadata = metadata
+
+    @property
+    def human_input_config(self):
+        """
+        Gets the human_input_config of this AgentEndpoint.
+
+        :return: The human_input_config of this AgentEndpoint.
+        :rtype: oci.generative_ai_agent.models.HumanInputConfig
+        """
+        return self._human_input_config
+
+    @human_input_config.setter
+    def human_input_config(self, human_input_config):
+        """
+        Sets the human_input_config of this AgentEndpoint.
+
+        :param human_input_config: The human_input_config of this AgentEndpoint.
+        :type: oci.generative_ai_agent.models.HumanInputConfig
+        """
+        self._human_input_config = human_input_config
+
+    @property
+    def output_config(self):
+        """
+        Gets the output_config of this AgentEndpoint.
+
+        :return: The output_config of this AgentEndpoint.
+        :rtype: oci.generative_ai_agent.models.OutputConfig
+        """
+        return self._output_config
+
+    @output_config.setter
+    def output_config(self, output_config):
+        """
+        Sets the output_config of this AgentEndpoint.
+
+        :param output_config: The output_config of this AgentEndpoint.
+        :type: oci.generative_ai_agent.models.OutputConfig
+        """
+        self._output_config = output_config
+
+    @property
     def should_enable_trace(self):
         """
         Gets the should_enable_trace of this AgentEndpoint.
@@ -394,6 +513,30 @@ class AgentEndpoint(object):
         :type: bool
         """
         self._should_enable_session = should_enable_session
+
+    @property
+    def should_enable_multi_language(self):
+        """
+        Gets the should_enable_multi_language of this AgentEndpoint.
+        Whether to enable multi-language for chat.
+
+
+        :return: The should_enable_multi_language of this AgentEndpoint.
+        :rtype: bool
+        """
+        return self._should_enable_multi_language
+
+    @should_enable_multi_language.setter
+    def should_enable_multi_language(self, should_enable_multi_language):
+        """
+        Sets the should_enable_multi_language of this AgentEndpoint.
+        Whether to enable multi-language for chat.
+
+
+        :param should_enable_multi_language: The should_enable_multi_language of this AgentEndpoint.
+        :type: bool
+        """
+        self._should_enable_multi_language = should_enable_multi_language
 
     @property
     def session_config(self):

@@ -32,6 +32,22 @@ class UpdateAgentEndpointDetails(object):
             The value to assign to the content_moderation_config property of this UpdateAgentEndpointDetails.
         :type content_moderation_config: oci.generative_ai_agent.models.ContentModerationConfig
 
+        :param guardrail_config:
+            The value to assign to the guardrail_config property of this UpdateAgentEndpointDetails.
+        :type guardrail_config: oci.generative_ai_agent.models.GuardrailConfig
+
+        :param metadata:
+            The value to assign to the metadata property of this UpdateAgentEndpointDetails.
+        :type metadata: dict(str, str)
+
+        :param human_input_config:
+            The value to assign to the human_input_config property of this UpdateAgentEndpointDetails.
+        :type human_input_config: oci.generative_ai_agent.models.HumanInputConfig
+
+        :param output_config:
+            The value to assign to the output_config property of this UpdateAgentEndpointDetails.
+        :type output_config: oci.generative_ai_agent.models.OutputConfig
+
         :param should_enable_trace:
             The value to assign to the should_enable_trace property of this UpdateAgentEndpointDetails.
         :type should_enable_trace: bool
@@ -39,6 +55,10 @@ class UpdateAgentEndpointDetails(object):
         :param should_enable_citation:
             The value to assign to the should_enable_citation property of this UpdateAgentEndpointDetails.
         :type should_enable_citation: bool
+
+        :param should_enable_multi_language:
+            The value to assign to the should_enable_multi_language property of this UpdateAgentEndpointDetails.
+        :type should_enable_multi_language: bool
 
         :param session_config:
             The value to assign to the session_config property of this UpdateAgentEndpointDetails.
@@ -57,8 +77,13 @@ class UpdateAgentEndpointDetails(object):
             'display_name': 'str',
             'description': 'str',
             'content_moderation_config': 'ContentModerationConfig',
+            'guardrail_config': 'GuardrailConfig',
+            'metadata': 'dict(str, str)',
+            'human_input_config': 'HumanInputConfig',
+            'output_config': 'OutputConfig',
             'should_enable_trace': 'bool',
             'should_enable_citation': 'bool',
+            'should_enable_multi_language': 'bool',
             'session_config': 'SessionConfig',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -67,8 +92,13 @@ class UpdateAgentEndpointDetails(object):
             'display_name': 'displayName',
             'description': 'description',
             'content_moderation_config': 'contentModerationConfig',
+            'guardrail_config': 'guardrailConfig',
+            'metadata': 'metadata',
+            'human_input_config': 'humanInputConfig',
+            'output_config': 'outputConfig',
             'should_enable_trace': 'shouldEnableTrace',
             'should_enable_citation': 'shouldEnableCitation',
+            'should_enable_multi_language': 'shouldEnableMultiLanguage',
             'session_config': 'sessionConfig',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
@@ -76,8 +106,13 @@ class UpdateAgentEndpointDetails(object):
         self._display_name = None
         self._description = None
         self._content_moderation_config = None
+        self._guardrail_config = None
+        self._metadata = None
+        self._human_input_config = None
+        self._output_config = None
         self._should_enable_trace = None
         self._should_enable_citation = None
+        self._should_enable_multi_language = None
         self._session_config = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -151,6 +186,90 @@ class UpdateAgentEndpointDetails(object):
         self._content_moderation_config = content_moderation_config
 
     @property
+    def guardrail_config(self):
+        """
+        Gets the guardrail_config of this UpdateAgentEndpointDetails.
+
+        :return: The guardrail_config of this UpdateAgentEndpointDetails.
+        :rtype: oci.generative_ai_agent.models.GuardrailConfig
+        """
+        return self._guardrail_config
+
+    @guardrail_config.setter
+    def guardrail_config(self, guardrail_config):
+        """
+        Sets the guardrail_config of this UpdateAgentEndpointDetails.
+
+        :param guardrail_config: The guardrail_config of this UpdateAgentEndpointDetails.
+        :type: oci.generative_ai_agent.models.GuardrailConfig
+        """
+        self._guardrail_config = guardrail_config
+
+    @property
+    def metadata(self):
+        """
+        Gets the metadata of this UpdateAgentEndpointDetails.
+        Key-value pairs to allow additional configurations.
+
+
+        :return: The metadata of this UpdateAgentEndpointDetails.
+        :rtype: dict(str, str)
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """
+        Sets the metadata of this UpdateAgentEndpointDetails.
+        Key-value pairs to allow additional configurations.
+
+
+        :param metadata: The metadata of this UpdateAgentEndpointDetails.
+        :type: dict(str, str)
+        """
+        self._metadata = metadata
+
+    @property
+    def human_input_config(self):
+        """
+        Gets the human_input_config of this UpdateAgentEndpointDetails.
+
+        :return: The human_input_config of this UpdateAgentEndpointDetails.
+        :rtype: oci.generative_ai_agent.models.HumanInputConfig
+        """
+        return self._human_input_config
+
+    @human_input_config.setter
+    def human_input_config(self, human_input_config):
+        """
+        Sets the human_input_config of this UpdateAgentEndpointDetails.
+
+        :param human_input_config: The human_input_config of this UpdateAgentEndpointDetails.
+        :type: oci.generative_ai_agent.models.HumanInputConfig
+        """
+        self._human_input_config = human_input_config
+
+    @property
+    def output_config(self):
+        """
+        Gets the output_config of this UpdateAgentEndpointDetails.
+
+        :return: The output_config of this UpdateAgentEndpointDetails.
+        :rtype: oci.generative_ai_agent.models.OutputConfig
+        """
+        return self._output_config
+
+    @output_config.setter
+    def output_config(self, output_config):
+        """
+        Sets the output_config of this UpdateAgentEndpointDetails.
+
+        :param output_config: The output_config of this UpdateAgentEndpointDetails.
+        :type: oci.generative_ai_agent.models.OutputConfig
+        """
+        self._output_config = output_config
+
+    @property
     def should_enable_trace(self):
         """
         Gets the should_enable_trace of this UpdateAgentEndpointDetails.
@@ -197,6 +316,30 @@ class UpdateAgentEndpointDetails(object):
         :type: bool
         """
         self._should_enable_citation = should_enable_citation
+
+    @property
+    def should_enable_multi_language(self):
+        """
+        Gets the should_enable_multi_language of this UpdateAgentEndpointDetails.
+        Whether to enable multi-language for chat.
+
+
+        :return: The should_enable_multi_language of this UpdateAgentEndpointDetails.
+        :rtype: bool
+        """
+        return self._should_enable_multi_language
+
+    @should_enable_multi_language.setter
+    def should_enable_multi_language(self, should_enable_multi_language):
+        """
+        Sets the should_enable_multi_language of this UpdateAgentEndpointDetails.
+        Whether to enable multi-language for chat.
+
+
+        :param should_enable_multi_language: The should_enable_multi_language of this UpdateAgentEndpointDetails.
+        :type: bool
+        """
+        self._should_enable_multi_language = should_enable_multi_language
 
     @property
     def session_config(self):

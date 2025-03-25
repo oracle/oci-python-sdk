@@ -52,6 +52,10 @@ class SearchMonitoredResourcesDetails(object):
     RESOURCE_CATEGORY_MIDDLEWARE = "MIDDLEWARE"
 
     #: A constant which can be used with the resource_category property of a SearchMonitoredResourcesDetails.
+    #: This constant has a value of "INFRASTRUCTURE"
+    RESOURCE_CATEGORY_INFRASTRUCTURE = "INFRASTRUCTURE"
+
+    #: A constant which can be used with the resource_category property of a SearchMonitoredResourcesDetails.
     #: This constant has a value of "UNKNOWN"
     RESOURCE_CATEGORY_UNKNOWN = "UNKNOWN"
 
@@ -66,6 +70,10 @@ class SearchMonitoredResourcesDetails(object):
     #: A constant which can be used with the lifecycle_state property of a SearchMonitoredResourcesDetails.
     #: This constant has a value of "ACTIVE"
     LIFECYCLE_STATE_ACTIVE = "ACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a SearchMonitoredResourcesDetails.
+    #: This constant has a value of "INACTIVE"
+    LIFECYCLE_STATE_INACTIVE = "INACTIVE"
 
     #: A constant which can be used with the lifecycle_state property of a SearchMonitoredResourcesDetails.
     #: This constant has a value of "DELETING"
@@ -131,7 +139,7 @@ class SearchMonitoredResourcesDetails(object):
 
         :param resource_category:
             The value to assign to the resource_category property of this SearchMonitoredResourcesDetails.
-            Allowed values for this property are: "APPLICATION", "DATABASE", "MIDDLEWARE", "UNKNOWN"
+            Allowed values for this property are: "APPLICATION", "DATABASE", "MIDDLEWARE", "INFRASTRUCTURE", "UNKNOWN"
         :type resource_category: str
 
         :param name:
@@ -164,7 +172,7 @@ class SearchMonitoredResourcesDetails(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this SearchMonitoredResourcesDetails.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
         :type lifecycle_state: str
 
         :param license:
@@ -395,7 +403,7 @@ class SearchMonitoredResourcesDetails(object):
         Gets the resource_category of this SearchMonitoredResourcesDetails.
         Resource category filter.
 
-        Allowed values for this property are: "APPLICATION", "DATABASE", "MIDDLEWARE", "UNKNOWN"
+        Allowed values for this property are: "APPLICATION", "DATABASE", "MIDDLEWARE", "INFRASTRUCTURE", "UNKNOWN"
 
 
         :return: The resource_category of this SearchMonitoredResourcesDetails.
@@ -413,7 +421,7 @@ class SearchMonitoredResourcesDetails(object):
         :param resource_category: The resource_category of this SearchMonitoredResourcesDetails.
         :type: str
         """
-        allowed_values = ["APPLICATION", "DATABASE", "MIDDLEWARE", "UNKNOWN"]
+        allowed_values = ["APPLICATION", "DATABASE", "MIDDLEWARE", "INFRASTRUCTURE", "UNKNOWN"]
         if not value_allowed_none_or_none_sentinel(resource_category, allowed_values):
             raise ValueError(
                 f"Invalid value for `resource_category`, must be None or one of {allowed_values}"
@@ -604,7 +612,7 @@ class SearchMonitoredResourcesDetails(object):
         Gets the lifecycle_state of this SearchMonitoredResourcesDetails.
         A filter to return resources with matching lifecycle state.
 
-        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
+        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
 
 
         :return: The lifecycle_state of this SearchMonitoredResourcesDetails.
@@ -622,7 +630,7 @@ class SearchMonitoredResourcesDetails(object):
         :param lifecycle_state: The lifecycle_state of this SearchMonitoredResourcesDetails.
         :type: str
         """
-        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
+        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             raise ValueError(
                 f"Invalid value for `lifecycle_state`, must be None or one of {allowed_values}"

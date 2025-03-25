@@ -97,6 +97,7 @@ from .change_compute_capacity_topology_compartment_details import ChangeComputeC
 from .change_compute_cluster_compartment_details import ChangeComputeClusterCompartmentDetails
 from .change_compute_gpu_memory_cluster_compartment_details import ChangeComputeGpuMemoryClusterCompartmentDetails
 from .change_compute_gpu_memory_fabric_compartment_details import ChangeComputeGpuMemoryFabricCompartmentDetails
+from .change_compute_host_compartment_details import ChangeComputeHostCompartmentDetails
 from .change_compute_image_capability_schema_compartment_details import ChangeComputeImageCapabilitySchemaCompartmentDetails
 from .change_cpe_compartment_details import ChangeCpeCompartmentDetails
 from .change_cross_connect_compartment_details import ChangeCrossConnectCompartmentDetails
@@ -159,6 +160,9 @@ from .compute_gpu_memory_cluster_summary import ComputeGpuMemoryClusterSummary
 from .compute_gpu_memory_fabric import ComputeGpuMemoryFabric
 from .compute_gpu_memory_fabric_collection import ComputeGpuMemoryFabricCollection
 from .compute_gpu_memory_fabric_summary import ComputeGpuMemoryFabricSummary
+from .compute_host import ComputeHost
+from .compute_host_collection import ComputeHostCollection
+from .compute_host_summary import ComputeHostSummary
 from .compute_hpc_island import ComputeHpcIsland
 from .compute_hpc_island_collection import ComputeHpcIslandCollection
 from .compute_hpc_island_summary import ComputeHpcIslandSummary
@@ -530,6 +534,7 @@ from .update_compute_capacity_topology_details import UpdateComputeCapacityTopol
 from .update_compute_cluster_details import UpdateComputeClusterDetails
 from .update_compute_gpu_memory_cluster_details import UpdateComputeGpuMemoryClusterDetails
 from .update_compute_gpu_memory_fabric_details import UpdateComputeGpuMemoryFabricDetails
+from .update_compute_host_details import UpdateComputeHostDetails
 from .update_compute_image_capability_schema_details import UpdateComputeImageCapabilitySchemaDetails
 from .update_console_history_details import UpdateConsoleHistoryDetails
 from .update_cpe_details import UpdateCpeDetails
@@ -733,6 +738,7 @@ core_type_mapping = {
     "ChangeComputeClusterCompartmentDetails": ChangeComputeClusterCompartmentDetails,
     "ChangeComputeGpuMemoryClusterCompartmentDetails": ChangeComputeGpuMemoryClusterCompartmentDetails,
     "ChangeComputeGpuMemoryFabricCompartmentDetails": ChangeComputeGpuMemoryFabricCompartmentDetails,
+    "ChangeComputeHostCompartmentDetails": ChangeComputeHostCompartmentDetails,
     "ChangeComputeImageCapabilitySchemaCompartmentDetails": ChangeComputeImageCapabilitySchemaCompartmentDetails,
     "ChangeCpeCompartmentDetails": ChangeCpeCompartmentDetails,
     "ChangeCrossConnectCompartmentDetails": ChangeCrossConnectCompartmentDetails,
@@ -795,6 +801,9 @@ core_type_mapping = {
     "ComputeGpuMemoryFabric": ComputeGpuMemoryFabric,
     "ComputeGpuMemoryFabricCollection": ComputeGpuMemoryFabricCollection,
     "ComputeGpuMemoryFabricSummary": ComputeGpuMemoryFabricSummary,
+    "ComputeHost": ComputeHost,
+    "ComputeHostCollection": ComputeHostCollection,
+    "ComputeHostSummary": ComputeHostSummary,
     "ComputeHpcIsland": ComputeHpcIsland,
     "ComputeHpcIslandCollection": ComputeHpcIslandCollection,
     "ComputeHpcIslandSummary": ComputeHpcIslandSummary,
@@ -1166,6 +1175,7 @@ core_type_mapping = {
     "UpdateComputeClusterDetails": UpdateComputeClusterDetails,
     "UpdateComputeGpuMemoryClusterDetails": UpdateComputeGpuMemoryClusterDetails,
     "UpdateComputeGpuMemoryFabricDetails": UpdateComputeGpuMemoryFabricDetails,
+    "UpdateComputeHostDetails": UpdateComputeHostDetails,
     "UpdateComputeImageCapabilitySchemaDetails": UpdateComputeImageCapabilitySchemaDetails,
     "UpdateConsoleHistoryDetails": UpdateConsoleHistoryDetails,
     "UpdateCpeDetails": UpdateCpeDetails,

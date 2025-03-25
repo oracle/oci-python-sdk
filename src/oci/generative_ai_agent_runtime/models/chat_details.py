@@ -32,25 +32,39 @@ class ChatDetails(object):
             The value to assign to the session_id property of this ChatDetails.
         :type session_id: str
 
+        :param tool_parameters:
+            The value to assign to the tool_parameters property of this ChatDetails.
+        :type tool_parameters: dict(str, str)
+
+        :param performed_actions:
+            The value to assign to the performed_actions property of this ChatDetails.
+        :type performed_actions: list[oci.generative_ai_agent_runtime.models.PerformedAction]
+
         """
         self.swagger_types = {
             'user_message': 'str',
             'should_stream': 'bool',
-            'session_id': 'str'
+            'session_id': 'str',
+            'tool_parameters': 'dict(str, str)',
+            'performed_actions': 'list[PerformedAction]'
         }
         self.attribute_map = {
             'user_message': 'userMessage',
             'should_stream': 'shouldStream',
-            'session_id': 'sessionId'
+            'session_id': 'sessionId',
+            'tool_parameters': 'toolParameters',
+            'performed_actions': 'performedActions'
         }
         self._user_message = None
         self._should_stream = None
         self._session_id = None
+        self._tool_parameters = None
+        self._performed_actions = None
 
     @property
     def user_message(self):
         """
-        **[Required]** Gets the user_message of this ChatDetails.
+        Gets the user_message of this ChatDetails.
         The input user message content for the chat.
 
 
@@ -118,6 +132,54 @@ class ChatDetails(object):
         :type: str
         """
         self._session_id = session_id
+
+    @property
+    def tool_parameters(self):
+        """
+        Gets the tool_parameters of this ChatDetails.
+        A map where each key is a toolId and the value contains tool type and additional dynamic parameters.
+
+
+        :return: The tool_parameters of this ChatDetails.
+        :rtype: dict(str, str)
+        """
+        return self._tool_parameters
+
+    @tool_parameters.setter
+    def tool_parameters(self, tool_parameters):
+        """
+        Sets the tool_parameters of this ChatDetails.
+        A map where each key is a toolId and the value contains tool type and additional dynamic parameters.
+
+
+        :param tool_parameters: The tool_parameters of this ChatDetails.
+        :type: dict(str, str)
+        """
+        self._tool_parameters = tool_parameters
+
+    @property
+    def performed_actions(self):
+        """
+        Gets the performed_actions of this ChatDetails.
+        A list of actions that have been performed based on prior required actions.
+
+
+        :return: The performed_actions of this ChatDetails.
+        :rtype: list[oci.generative_ai_agent_runtime.models.PerformedAction]
+        """
+        return self._performed_actions
+
+    @performed_actions.setter
+    def performed_actions(self, performed_actions):
+        """
+        Sets the performed_actions of this ChatDetails.
+        A list of actions that have been performed based on prior required actions.
+
+
+        :param performed_actions: The performed_actions of this ChatDetails.
+        :type: list[oci.generative_ai_agent_runtime.models.PerformedAction]
+        """
+        self._performed_actions = performed_actions
 
     def __repr__(self):
         return formatted_flat_dict(self)

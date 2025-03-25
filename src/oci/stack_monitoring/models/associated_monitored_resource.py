@@ -28,6 +28,10 @@ class AssociatedMonitoredResource(object):
     LIFECYCLE_STATE_ACTIVE = "ACTIVE"
 
     #: A constant which can be used with the lifecycle_state property of a AssociatedMonitoredResource.
+    #: This constant has a value of "INACTIVE"
+    LIFECYCLE_STATE_INACTIVE = "INACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a AssociatedMonitoredResource.
     #: This constant has a value of "DELETING"
     LIFECYCLE_STATE_DELETING = "DELETING"
 
@@ -88,6 +92,10 @@ class AssociatedMonitoredResource(object):
     RESOURCE_CATEGORY_MIDDLEWARE = "MIDDLEWARE"
 
     #: A constant which can be used with the resource_category property of a AssociatedMonitoredResource.
+    #: This constant has a value of "INFRASTRUCTURE"
+    RESOURCE_CATEGORY_INFRASTRUCTURE = "INFRASTRUCTURE"
+
+    #: A constant which can be used with the resource_category property of a AssociatedMonitoredResource.
     #: This constant has a value of "UNKNOWN"
     RESOURCE_CATEGORY_UNKNOWN = "UNKNOWN"
 
@@ -130,7 +138,7 @@ class AssociatedMonitoredResource(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this AssociatedMonitoredResource.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -148,7 +156,7 @@ class AssociatedMonitoredResource(object):
 
         :param resource_category:
             The value to assign to the resource_category property of this AssociatedMonitoredResource.
-            Allowed values for this property are: "APPLICATION", "DATABASE", "MIDDLEWARE", "UNKNOWN", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "APPLICATION", "DATABASE", "MIDDLEWARE", "INFRASTRUCTURE", "UNKNOWN", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type resource_category: str
 
@@ -421,7 +429,7 @@ class AssociatedMonitoredResource(object):
         Gets the lifecycle_state of this AssociatedMonitoredResource.
         The current state of the monitored resource.
 
-        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -440,7 +448,7 @@ class AssociatedMonitoredResource(object):
         :param lifecycle_state: The lifecycle_state of this AssociatedMonitoredResource.
         :type: str
         """
-        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
+        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -511,7 +519,7 @@ class AssociatedMonitoredResource(object):
         Gets the resource_category of this AssociatedMonitoredResource.
         Resource Category to indicate the kind of resource type.
 
-        Allowed values for this property are: "APPLICATION", "DATABASE", "MIDDLEWARE", "UNKNOWN", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "APPLICATION", "DATABASE", "MIDDLEWARE", "INFRASTRUCTURE", "UNKNOWN", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -530,7 +538,7 @@ class AssociatedMonitoredResource(object):
         :param resource_category: The resource_category of this AssociatedMonitoredResource.
         :type: str
         """
-        allowed_values = ["APPLICATION", "DATABASE", "MIDDLEWARE", "UNKNOWN"]
+        allowed_values = ["APPLICATION", "DATABASE", "MIDDLEWARE", "INFRASTRUCTURE", "UNKNOWN"]
         if not value_allowed_none_or_none_sentinel(resource_category, allowed_values):
             resource_category = 'UNKNOWN_ENUM_VALUE'
         self._resource_category = resource_category

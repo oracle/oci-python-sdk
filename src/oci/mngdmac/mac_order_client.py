@@ -171,7 +171,7 @@ class MacOrderClient(object):
         resource_path = "/macOrders/{macOrderId}/actions/cancel"
         method = "POST"
         operation_name = "cancel_mac_order"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mngdmac/20250320/MacOrder/CancelMacOrder"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -286,7 +286,7 @@ class MacOrderClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
         operation_name = "cancel_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mngdmac/20250320/WorkRequest/CancelWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -401,7 +401,7 @@ class MacOrderClient(object):
         resource_path = "/macOrders/{macOrderId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_mac_order_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mngdmac/20250320/MacOrder/ChangeMacOrderCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -511,7 +511,7 @@ class MacOrderClient(object):
         resource_path = "/macOrders"
         method = "POST"
         operation_name = "create_mac_order"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mngdmac/20250320/MacOrder/CreateMacOrder"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -607,7 +607,7 @@ class MacOrderClient(object):
         resource_path = "/macOrders/{macOrderId}"
         method = "GET"
         operation_name = "get_mac_order"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mngdmac/20250320/MacOrder/GetMacOrder"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -710,7 +710,7 @@ class MacOrderClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mngdmac/20250320/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -852,7 +852,7 @@ class MacOrderClient(object):
         resource_path = "/macOrders"
         method = "GET"
         operation_name = "list_mac_orders"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mngdmac/20250320/MacOrderCollection/ListMacOrders"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1010,7 +1010,7 @@ class MacOrderClient(object):
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mngdmac/20250320/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1165,7 +1165,7 @@ class MacOrderClient(object):
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mngdmac/20250320/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1335,7 +1335,7 @@ class MacOrderClient(object):
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mngdmac/20250320/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1478,7 +1478,7 @@ class MacOrderClient(object):
         resource_path = "/macOrders/{macOrderId}"
         method = "PUT"
         operation_name = "update_mac_order"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mngdmac/20250320/MacOrder/UpdateMacOrder"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

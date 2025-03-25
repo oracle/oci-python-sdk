@@ -39,8 +39,8 @@ import threading
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    version = "25.02.10"
-    oci_compatible_version = "2.141.1"
+    version = "25.03.18"
+    oci_compatible_version = "2.148.0"
     thread_lock = threading.Lock()
     collection_ljust = 40
 
@@ -1001,6 +1001,20 @@ class ShowOCIService(object):
             if route:
                 if 'display_name' in route:
                     return route['display_name']
+            return ""
+
+        except Exception as e:
+            self.__print_error(e)
+
+    ##########################################################################
+    # get_network_route_table_name
+    ##########################################################################
+    def get_network_route_table(self, route_table_id):
+        try:
+            route = self.search_unique_item(self.C_NETWORK, self.C_NETWORK_ROUTE, 'id', route_table_id)
+            if route:
+                if 'name' in route:
+                    return route['name']
             return ""
 
         except Exception as e:
@@ -6762,13 +6776,27 @@ class ShowOCIService(object):
                 'subnet_name': subnet['name'] if subnet else "",
                 'nsg_ids': self.get_values(vnic.nsg_ids),
                 'nsg_names': self.__load_core_network_get_nsg_names(vnic.nsg_ids),
-                'ip_addresses': []
+                'ip_addresses': [],
+                # Added 3/17/2025
+                'compartment_id': self.get_value(vnic.compartment_id),
+                'vlan_id': self.get_value(vnic.vlan_id),
+                'route_table_id': self.get_value(vnic.route_table_id),
+                'route_table_name': self.get_network_route_table(vnic.route_table_id) if vnic.route_table_id else "",
+                'lifecycle_state': self.get_value(vnic.lifecycle_state),
+                'ipv6_addresses': vnic.ipv6_addresses if vnic.ipv6_addresses else [],
+                'availability_domain': self.get_value(vnic.availability_domain)
             }
 
             # Align VNIC Name display information - Amended 12/1/2024
             data['name'] += ", " + self.get_value(vnic.public_ip) + " (Pub)" if vnic.public_ip else ""
             data['name'] += ", Skip=Y" if vnic.skip_source_dest_check else ""
             data['name'] += ", Primary " if vnic.is_primary else ""
+
+            # If route table
+            if data["route_table_name"]:
+                data['name'] += ", RT=" + data["route_table_name"]
+            elif data['route_table_id']:
+                data['name'] += ", RT=Dedicated"
 
             # Add for Database use
             data['dbdesc'] = data['name']

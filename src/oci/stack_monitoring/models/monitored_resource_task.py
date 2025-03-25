@@ -60,6 +60,10 @@ class MonitoredResourceTask(object):
             The value to assign to the name property of this MonitoredResourceTask.
         :type name: str
 
+        :param type:
+            The value to assign to the type property of this MonitoredResourceTask.
+        :type type: str
+
         :param compartment_id:
             The value to assign to the compartment_id property of this MonitoredResourceTask.
         :type compartment_id: str
@@ -106,6 +110,7 @@ class MonitoredResourceTask(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'type': 'str',
             'compartment_id': 'str',
             'tenant_id': 'str',
             'task_details': 'MonitoredResourceTaskDetails',
@@ -120,6 +125,7 @@ class MonitoredResourceTask(object):
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'type': 'type',
             'compartment_id': 'compartmentId',
             'tenant_id': 'tenantId',
             'task_details': 'taskDetails',
@@ -133,6 +139,7 @@ class MonitoredResourceTask(object):
         }
         self._id = None
         self._name = None
+        self._type = None
         self._compartment_id = None
         self._tenant_id = None
         self._task_details = None
@@ -195,6 +202,30 @@ class MonitoredResourceTask(object):
         :type: str
         """
         self._name = name
+
+    @property
+    def type(self):
+        """
+        Gets the type of this MonitoredResourceTask.
+        Type of the task.
+
+
+        :return: The type of this MonitoredResourceTask.
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """
+        Sets the type of this MonitoredResourceTask.
+        Type of the task.
+
+
+        :param type: The type of this MonitoredResourceTask.
+        :type: str
+        """
+        self._type = type
 
     @property
     def compartment_id(self):

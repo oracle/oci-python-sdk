@@ -158,7 +158,7 @@ class MacDeviceClient(object):
         resource_path = "/macOrders/{macOrderId}/macDevices/{macDeviceId}"
         method = "GET"
         operation_name = "get_mac_device"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mngdmac/20250320/MacDevice/GetMacDevice"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -304,7 +304,7 @@ class MacDeviceClient(object):
         resource_path = "/macOrders/{macOrderId}/macDevices"
         method = "GET"
         operation_name = "list_mac_devices"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mngdmac/20250320/MacDeviceCollection/ListMacDevices"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -466,7 +466,7 @@ class MacDeviceClient(object):
         resource_path = "/macOrders/{macOrderId}/macDevices/{macDeviceId}/actions/terminate"
         method = "POST"
         operation_name = "terminate_mac_device"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mngdmac/20250320/MacDevice/TerminateMacDevice"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

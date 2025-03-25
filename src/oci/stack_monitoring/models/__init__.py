@@ -6,6 +6,11 @@
 
 from __future__ import absolute_import
 
+from .additional_configuration_details import AdditionalConfigurationDetails
+from .agent_extension_handler_configuration import AgentExtensionHandlerConfiguration
+from .agent_extension_handler_configuration_property import AgentExtensionHandlerConfigurationProperty
+from .agent_extension_handler_metric_mapping_details import AgentExtensionHandlerMetricMappingDetails
+from .agent_receiver_properties import AgentReceiverProperties
 from .alarm_condition import AlarmCondition
 from .alarm_condition_collection import AlarmConditionCollection
 from .alarm_condition_summary import AlarmConditionSummary
@@ -19,6 +24,7 @@ from .association_details import AssociationDetails
 from .association_resource_details import AssociationResourceDetails
 from .auto_promote_config_details import AutoPromoteConfigDetails
 from .auto_promote_config_summary import AutoPromoteConfigSummary
+from .availability_metrics_details import AvailabilityMetricsDetails
 from .baselineable_metric import BaselineableMetric
 from .baselineable_metric_summary import BaselineableMetricSummary
 from .baselineable_metric_summary_collection import BaselineableMetricSummaryCollection
@@ -27,6 +33,9 @@ from .change_metric_extension_compartment_details import ChangeMetricExtensionCo
 from .change_monitored_resource_compartment_details import ChangeMonitoredResourceCompartmentDetails
 from .change_monitored_resource_task_compartment_details import ChangeMonitoredResourceTaskCompartmentDetails
 from .change_process_set_compartment_details import ChangeProcessSetCompartmentDetails
+from .collectd_resource_name_configuration_details import CollectdResourceNameConfigurationDetails
+from .compute_auto_activate_plugin_config_details import ComputeAutoActivatePluginConfigDetails
+from .compute_auto_activate_plugin_config_summary import ComputeAutoActivatePluginConfigSummary
 from .condition import Condition
 from .config import Config
 from .config_collection import ConfigCollection
@@ -35,6 +44,7 @@ from .connection_details import ConnectionDetails
 from .create_alarm_condition_details import CreateAlarmConditionDetails
 from .create_auto_promote_config_details import CreateAutoPromoteConfigDetails
 from .create_baselineable_metric_details import CreateBaselineableMetricDetails
+from .create_compute_auto_activate_plugin_config_details import CreateComputeAutoActivatePluginConfigDetails
 from .create_config_details import CreateConfigDetails
 from .create_discovery_job_details import CreateDiscoveryJobDetails
 from .create_license_auto_assign_config_details import CreateLicenseAutoAssignConfigDetails
@@ -46,6 +56,7 @@ from .create_monitored_resource_details import CreateMonitoredResourceDetails
 from .create_monitored_resource_task_details import CreateMonitoredResourceTaskDetails
 from .create_monitored_resource_type_details import CreateMonitoredResourceTypeDetails
 from .create_monitoring_template_details import CreateMonitoringTemplateDetails
+from .create_onboard_config_details import CreateOnboardConfigDetails
 from .create_process_set_details import CreateProcessSetDetails
 from .credential_collection import CredentialCollection
 from .credential_details import CredentialDetails
@@ -62,11 +73,13 @@ from .discovery_job_collection import DiscoveryJobCollection
 from .discovery_job_log_collection import DiscoveryJobLogCollection
 from .discovery_job_log_summary import DiscoveryJobLogSummary
 from .discovery_job_summary import DiscoveryJobSummary
+from .dynamic_group_details import DynamicGroupDetails
 from .enable_metric_extension_details import EnableMetricExtensionDetails
 from .enabled_resource_details import EnabledResourceDetails
 from .encrypted_credentials import EncryptedCredentials
 from .evaluate_baselineable_metric_details import EvaluateBaselineableMetricDetails
 from .evaluate_baselineable_metric_result import EvaluateBaselineableMetricResult
+from .group_details import GroupDetails
 from .http_query_properties import HttpQueryProperties
 from .http_script_file_details import HttpScriptFileDetails
 from .http_update_query_properties import HttpUpdateQueryProperties
@@ -94,6 +107,7 @@ from .metric_extension_resource_aggregation_collection import MetricExtensionRes
 from .metric_extension_summary import MetricExtensionSummary
 from .metric_extension_update_query_properties import MetricExtensionUpdateQueryProperties
 from .metric_extensions_metric_aggregation import MetricExtensionsMetricAggregation
+from .metric_name_configuration_details import MetricNameConfigurationDetails
 from .monitored_resource import MonitoredResource
 from .monitored_resource_alias_credential import MonitoredResourceAliasCredential
 from .monitored_resource_alias_source_credential import MonitoredResourceAliasSourceCredential
@@ -119,6 +133,8 @@ from .monitored_resources_count_aggregation_collection import MonitoredResources
 from .monitoring_template import MonitoringTemplate
 from .monitoring_template_collection import MonitoringTemplateCollection
 from .monitoring_template_summary import MonitoringTemplateSummary
+from .onboard_config_details import OnboardConfigDetails
+from .onboard_config_summary import OnboardConfigSummary
 from .one_time_maintenance_window_schedule import OneTimeMaintenanceWindowSchedule
 from .os_command_query_properties import OsCommandQueryProperties
 from .os_command_update_query_properties import OsCommandUpdateQueryProperties
@@ -133,6 +149,7 @@ from .property_details import PropertyDetails
 from .recurrent_maintenance_window_schedule import RecurrentMaintenanceWindowSchedule
 from .request_summarized_metric_extensions_metrics_details import RequestSummarizedMetricExtensionsMetricsDetails
 from .request_summarized_metric_extensions_resources_details import RequestSummarizedMetricExtensionsResourcesDetails
+from .resource_type_config_details import ResourceTypeConfigDetails
 from .resource_type_metadata_details import ResourceTypeMetadataDetails
 from .script_file_details import ScriptFileDetails
 from .search_associated_resources_details import SearchAssociatedResourcesDetails
@@ -145,13 +162,16 @@ from .sql_out_param_details import SqlOutParamDetails
 from .sql_query_properties import SqlQueryProperties
 from .sql_update_query_properties import SqlUpdateQueryProperties
 from .system_format_resource_type_metadata_details import SystemFormatResourceTypeMetadataDetails
+from .telegraf_resource_name_configuration_details import TelegrafResourceNameConfigurationDetails
 from .test_metric_extension_data import TestMetricExtensionData
 from .test_metric_extension_details import TestMetricExtensionDetails
 from .unique_property_set import UniquePropertySet
+from .update_agent_receiver_task_details import UpdateAgentReceiverTaskDetails
 from .update_alarm_condition_details import UpdateAlarmConditionDetails
 from .update_and_propagate_tags_details import UpdateAndPropagateTagsDetails
 from .update_auto_promote_config_details import UpdateAutoPromoteConfigDetails
 from .update_baselineable_metric_details import UpdateBaselineableMetricDetails
+from .update_compute_auto_activate_plugin_config_details import UpdateComputeAutoActivatePluginConfigDetails
 from .update_config_details import UpdateConfigDetails
 from .update_http_script_file_details import UpdateHttpScriptFileDetails
 from .update_license_auto_assign_config_details import UpdateLicenseAutoAssignConfigDetails
@@ -162,7 +182,9 @@ from .update_monitored_resource_details import UpdateMonitoredResourceDetails
 from .update_monitored_resource_task_details import UpdateMonitoredResourceTaskDetails
 from .update_monitored_resource_type_details import UpdateMonitoredResourceTypeDetails
 from .update_monitoring_template_details import UpdateMonitoringTemplateDetails
+from .update_onboard_config_details import UpdateOnboardConfigDetails
 from .update_process_set_details import UpdateProcessSetDetails
+from .update_resource_type_config_task_details import UpdateResourceTypeConfigTaskDetails
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
 from .work_request_error_collection import WorkRequestErrorCollection
@@ -174,6 +196,11 @@ from .work_request_summary_collection import WorkRequestSummaryCollection
 
 # Maps type names to classes for stack_monitoring services.
 stack_monitoring_type_mapping = {
+    "AdditionalConfigurationDetails": AdditionalConfigurationDetails,
+    "AgentExtensionHandlerConfiguration": AgentExtensionHandlerConfiguration,
+    "AgentExtensionHandlerConfigurationProperty": AgentExtensionHandlerConfigurationProperty,
+    "AgentExtensionHandlerMetricMappingDetails": AgentExtensionHandlerMetricMappingDetails,
+    "AgentReceiverProperties": AgentReceiverProperties,
     "AlarmCondition": AlarmCondition,
     "AlarmConditionCollection": AlarmConditionCollection,
     "AlarmConditionSummary": AlarmConditionSummary,
@@ -187,6 +214,7 @@ stack_monitoring_type_mapping = {
     "AssociationResourceDetails": AssociationResourceDetails,
     "AutoPromoteConfigDetails": AutoPromoteConfigDetails,
     "AutoPromoteConfigSummary": AutoPromoteConfigSummary,
+    "AvailabilityMetricsDetails": AvailabilityMetricsDetails,
     "BaselineableMetric": BaselineableMetric,
     "BaselineableMetricSummary": BaselineableMetricSummary,
     "BaselineableMetricSummaryCollection": BaselineableMetricSummaryCollection,
@@ -195,6 +223,9 @@ stack_monitoring_type_mapping = {
     "ChangeMonitoredResourceCompartmentDetails": ChangeMonitoredResourceCompartmentDetails,
     "ChangeMonitoredResourceTaskCompartmentDetails": ChangeMonitoredResourceTaskCompartmentDetails,
     "ChangeProcessSetCompartmentDetails": ChangeProcessSetCompartmentDetails,
+    "CollectdResourceNameConfigurationDetails": CollectdResourceNameConfigurationDetails,
+    "ComputeAutoActivatePluginConfigDetails": ComputeAutoActivatePluginConfigDetails,
+    "ComputeAutoActivatePluginConfigSummary": ComputeAutoActivatePluginConfigSummary,
     "Condition": Condition,
     "Config": Config,
     "ConfigCollection": ConfigCollection,
@@ -203,6 +234,7 @@ stack_monitoring_type_mapping = {
     "CreateAlarmConditionDetails": CreateAlarmConditionDetails,
     "CreateAutoPromoteConfigDetails": CreateAutoPromoteConfigDetails,
     "CreateBaselineableMetricDetails": CreateBaselineableMetricDetails,
+    "CreateComputeAutoActivatePluginConfigDetails": CreateComputeAutoActivatePluginConfigDetails,
     "CreateConfigDetails": CreateConfigDetails,
     "CreateDiscoveryJobDetails": CreateDiscoveryJobDetails,
     "CreateLicenseAutoAssignConfigDetails": CreateLicenseAutoAssignConfigDetails,
@@ -214,6 +246,7 @@ stack_monitoring_type_mapping = {
     "CreateMonitoredResourceTaskDetails": CreateMonitoredResourceTaskDetails,
     "CreateMonitoredResourceTypeDetails": CreateMonitoredResourceTypeDetails,
     "CreateMonitoringTemplateDetails": CreateMonitoringTemplateDetails,
+    "CreateOnboardConfigDetails": CreateOnboardConfigDetails,
     "CreateProcessSetDetails": CreateProcessSetDetails,
     "CredentialCollection": CredentialCollection,
     "CredentialDetails": CredentialDetails,
@@ -230,11 +263,13 @@ stack_monitoring_type_mapping = {
     "DiscoveryJobLogCollection": DiscoveryJobLogCollection,
     "DiscoveryJobLogSummary": DiscoveryJobLogSummary,
     "DiscoveryJobSummary": DiscoveryJobSummary,
+    "DynamicGroupDetails": DynamicGroupDetails,
     "EnableMetricExtensionDetails": EnableMetricExtensionDetails,
     "EnabledResourceDetails": EnabledResourceDetails,
     "EncryptedCredentials": EncryptedCredentials,
     "EvaluateBaselineableMetricDetails": EvaluateBaselineableMetricDetails,
     "EvaluateBaselineableMetricResult": EvaluateBaselineableMetricResult,
+    "GroupDetails": GroupDetails,
     "HttpQueryProperties": HttpQueryProperties,
     "HttpScriptFileDetails": HttpScriptFileDetails,
     "HttpUpdateQueryProperties": HttpUpdateQueryProperties,
@@ -262,6 +297,7 @@ stack_monitoring_type_mapping = {
     "MetricExtensionSummary": MetricExtensionSummary,
     "MetricExtensionUpdateQueryProperties": MetricExtensionUpdateQueryProperties,
     "MetricExtensionsMetricAggregation": MetricExtensionsMetricAggregation,
+    "MetricNameConfigurationDetails": MetricNameConfigurationDetails,
     "MonitoredResource": MonitoredResource,
     "MonitoredResourceAliasCredential": MonitoredResourceAliasCredential,
     "MonitoredResourceAliasSourceCredential": MonitoredResourceAliasSourceCredential,
@@ -287,6 +323,8 @@ stack_monitoring_type_mapping = {
     "MonitoringTemplate": MonitoringTemplate,
     "MonitoringTemplateCollection": MonitoringTemplateCollection,
     "MonitoringTemplateSummary": MonitoringTemplateSummary,
+    "OnboardConfigDetails": OnboardConfigDetails,
+    "OnboardConfigSummary": OnboardConfigSummary,
     "OneTimeMaintenanceWindowSchedule": OneTimeMaintenanceWindowSchedule,
     "OsCommandQueryProperties": OsCommandQueryProperties,
     "OsCommandUpdateQueryProperties": OsCommandUpdateQueryProperties,
@@ -301,6 +339,7 @@ stack_monitoring_type_mapping = {
     "RecurrentMaintenanceWindowSchedule": RecurrentMaintenanceWindowSchedule,
     "RequestSummarizedMetricExtensionsMetricsDetails": RequestSummarizedMetricExtensionsMetricsDetails,
     "RequestSummarizedMetricExtensionsResourcesDetails": RequestSummarizedMetricExtensionsResourcesDetails,
+    "ResourceTypeConfigDetails": ResourceTypeConfigDetails,
     "ResourceTypeMetadataDetails": ResourceTypeMetadataDetails,
     "ScriptFileDetails": ScriptFileDetails,
     "SearchAssociatedResourcesDetails": SearchAssociatedResourcesDetails,
@@ -313,13 +352,16 @@ stack_monitoring_type_mapping = {
     "SqlQueryProperties": SqlQueryProperties,
     "SqlUpdateQueryProperties": SqlUpdateQueryProperties,
     "SystemFormatResourceTypeMetadataDetails": SystemFormatResourceTypeMetadataDetails,
+    "TelegrafResourceNameConfigurationDetails": TelegrafResourceNameConfigurationDetails,
     "TestMetricExtensionData": TestMetricExtensionData,
     "TestMetricExtensionDetails": TestMetricExtensionDetails,
     "UniquePropertySet": UniquePropertySet,
+    "UpdateAgentReceiverTaskDetails": UpdateAgentReceiverTaskDetails,
     "UpdateAlarmConditionDetails": UpdateAlarmConditionDetails,
     "UpdateAndPropagateTagsDetails": UpdateAndPropagateTagsDetails,
     "UpdateAutoPromoteConfigDetails": UpdateAutoPromoteConfigDetails,
     "UpdateBaselineableMetricDetails": UpdateBaselineableMetricDetails,
+    "UpdateComputeAutoActivatePluginConfigDetails": UpdateComputeAutoActivatePluginConfigDetails,
     "UpdateConfigDetails": UpdateConfigDetails,
     "UpdateHttpScriptFileDetails": UpdateHttpScriptFileDetails,
     "UpdateLicenseAutoAssignConfigDetails": UpdateLicenseAutoAssignConfigDetails,
@@ -330,7 +372,9 @@ stack_monitoring_type_mapping = {
     "UpdateMonitoredResourceTaskDetails": UpdateMonitoredResourceTaskDetails,
     "UpdateMonitoredResourceTypeDetails": UpdateMonitoredResourceTypeDetails,
     "UpdateMonitoringTemplateDetails": UpdateMonitoringTemplateDetails,
+    "UpdateOnboardConfigDetails": UpdateOnboardConfigDetails,
     "UpdateProcessSetDetails": UpdateProcessSetDetails,
+    "UpdateResourceTypeConfigTaskDetails": UpdateResourceTypeConfigTaskDetails,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,
     "WorkRequestErrorCollection": WorkRequestErrorCollection,

@@ -59,7 +59,7 @@ class PluginSourceDetails(SourceDetails):
         """
         **[Required]** Gets the plugin_name of this PluginSourceDetails.
         The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service.
-        To find names of connector plugins, list the plugin using (ListConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins].
+        To find names of connector plugins, list the plugin using :func:`list_connector_plugins`.
 
 
         :return: The plugin_name of this PluginSourceDetails.
@@ -72,7 +72,7 @@ class PluginSourceDetails(SourceDetails):
         """
         Sets the plugin_name of this PluginSourceDetails.
         The name of the connector plugin. This name indicates the service to be called by the connector plugin. For example, `QueueSource` indicates the Queue service.
-        To find names of connector plugins, list the plugin using (ListConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPluginSummary/ListConnectorPlugins].
+        To find names of connector plugins, list the plugin using :func:`list_connector_plugins`.
 
 
         :param plugin_name: The plugin_name of this PluginSourceDetails.
@@ -86,7 +86,7 @@ class PluginSourceDetails(SourceDetails):
         **[Required]** Gets the config_map of this PluginSourceDetails.
         The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.
         For example, for `QueueSource`, the map lists the OCID of the selected queue.
-        To find the parameters for a connector plugin, get the plugin using (GetConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin] and review its schema value.
+        To find the parameters for a connector plugin, get the plugin using :func:`get_connector_plugin` and review its schema value.
 
 
         :return: The config_map of this PluginSourceDetails.
@@ -100,7 +100,7 @@ class PluginSourceDetails(SourceDetails):
         Sets the config_map of this PluginSourceDetails.
         The configuration map for the connector plugin. This map includes parameters specific to the connector plugin type.
         For example, for `QueueSource`, the map lists the OCID of the selected queue.
-        To find the parameters for a connector plugin, get the plugin using (GetConnectorPlugin)[#/en/serviceconnectors/latest/ConnectorPlugin/GetConnectorPlugin] and review its schema value.
+        To find the parameters for a connector plugin, get the plugin using :func:`get_connector_plugin` and review its schema value.
 
 
         :param config_map: The config_map of this PluginSourceDetails.
