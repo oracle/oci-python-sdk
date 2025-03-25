@@ -21,7 +21,9 @@ class CreateConfigDetails(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.stack_monitoring.models.CreateLicenseAutoAssignConfigDetails`
+        * :class:`~oci.stack_monitoring.models.CreateOnboardConfigDetails`
         * :class:`~oci.stack_monitoring.models.CreateAutoPromoteConfigDetails`
+        * :class:`~oci.stack_monitoring.models.CreateComputeAutoActivatePluginConfigDetails`
         * :class:`~oci.stack_monitoring.models.CreateLicenseEnterpriseExtensibilityConfigDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
@@ -78,8 +80,14 @@ class CreateConfigDetails(object):
         if type == 'LICENSE_AUTO_ASSIGN':
             return 'CreateLicenseAutoAssignConfigDetails'
 
+        if type == 'ONBOARD':
+            return 'CreateOnboardConfigDetails'
+
         if type == 'AUTO_PROMOTE':
             return 'CreateAutoPromoteConfigDetails'
+
+        if type == 'COMPUTE_AUTO_ACTIVATE_PLUGIN':
+            return 'CreateComputeAutoActivatePluginConfigDetails'
 
         if type == 'LICENSE_ENTERPRISE_EXTENSIBILITY':
             return 'CreateLicenseEnterpriseExtensibilityConfigDetails'

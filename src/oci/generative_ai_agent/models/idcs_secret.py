@@ -23,7 +23,8 @@ class IdcsSecret(SecretDetail):
 
         :param type:
             The value to assign to the type property of this IdcsSecret.
-            Allowed values for this property are: "IDCS_SECRET", "BASIC_AUTH_SECRET"
+            Allowed values for this property are: "IDCS_SECRET", "BASIC_AUTH_SECRET", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
         :param idcs_url:

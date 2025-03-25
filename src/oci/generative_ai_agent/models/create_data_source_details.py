@@ -36,6 +36,10 @@ class CreateDataSourceDetails(object):
             The value to assign to the data_source_config property of this CreateDataSourceDetails.
         :type data_source_config: oci.generative_ai_agent.models.DataSourceConfig
 
+        :param metadata:
+            The value to assign to the metadata property of this CreateDataSourceDetails.
+        :type metadata: dict(str, str)
+
         :param compartment_id:
             The value to assign to the compartment_id property of this CreateDataSourceDetails.
         :type compartment_id: str
@@ -54,6 +58,7 @@ class CreateDataSourceDetails(object):
             'description': 'str',
             'knowledge_base_id': 'str',
             'data_source_config': 'DataSourceConfig',
+            'metadata': 'dict(str, str)',
             'compartment_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -63,6 +68,7 @@ class CreateDataSourceDetails(object):
             'description': 'description',
             'knowledge_base_id': 'knowledgeBaseId',
             'data_source_config': 'dataSourceConfig',
+            'metadata': 'metadata',
             'compartment_id': 'compartmentId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
@@ -71,6 +77,7 @@ class CreateDataSourceDetails(object):
         self._description = None
         self._knowledge_base_id = None
         self._data_source_config = None
+        self._metadata = None
         self._compartment_id = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -170,6 +177,30 @@ class CreateDataSourceDetails(object):
         :type: oci.generative_ai_agent.models.DataSourceConfig
         """
         self._data_source_config = data_source_config
+
+    @property
+    def metadata(self):
+        """
+        Gets the metadata of this CreateDataSourceDetails.
+        Key-value pairs to allow additional configurations.
+
+
+        :return: The metadata of this CreateDataSourceDetails.
+        :rtype: dict(str, str)
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """
+        Sets the metadata of this CreateDataSourceDetails.
+        Key-value pairs to allow additional configurations.
+
+
+        :param metadata: The metadata of this CreateDataSourceDetails.
+        :type: dict(str, str)
+        """
+        self._metadata = metadata
 
     @property
     def compartment_id(self):

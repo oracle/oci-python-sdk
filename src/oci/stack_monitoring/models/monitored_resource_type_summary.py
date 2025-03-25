@@ -80,6 +80,10 @@ class MonitoredResourceTypeSummary(object):
     RESOURCE_CATEGORY_MIDDLEWARE = "MIDDLEWARE"
 
     #: A constant which can be used with the resource_category property of a MonitoredResourceTypeSummary.
+    #: This constant has a value of "INFRASTRUCTURE"
+    RESOURCE_CATEGORY_INFRASTRUCTURE = "INFRASTRUCTURE"
+
+    #: A constant which can be used with the resource_category property of a MonitoredResourceTypeSummary.
     #: This constant has a value of "UNKNOWN"
     RESOURCE_CATEGORY_UNKNOWN = "UNKNOWN"
 
@@ -112,6 +116,18 @@ class MonitoredResourceTypeSummary(object):
             The value to assign to the compartment_id property of this MonitoredResourceTypeSummary.
         :type compartment_id: str
 
+        :param availability_metrics_config:
+            The value to assign to the availability_metrics_config property of this MonitoredResourceTypeSummary.
+        :type availability_metrics_config: oci.stack_monitoring.models.AvailabilityMetricsDetails
+
+        :param handler_config:
+            The value to assign to the handler_config property of this MonitoredResourceTypeSummary.
+        :type handler_config: oci.stack_monitoring.models.AgentExtensionHandlerConfiguration
+
+        :param is_system_defined:
+            The value to assign to the is_system_defined property of this MonitoredResourceTypeSummary.
+        :type is_system_defined: bool
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this MonitoredResourceTypeSummary.
             Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
@@ -126,7 +142,7 @@ class MonitoredResourceTypeSummary(object):
 
         :param resource_category:
             The value to assign to the resource_category property of this MonitoredResourceTypeSummary.
-            Allowed values for this property are: "APPLICATION", "DATABASE", "MIDDLEWARE", "UNKNOWN", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "APPLICATION", "DATABASE", "MIDDLEWARE", "INFRASTRUCTURE", "UNKNOWN", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type resource_category: str
 
@@ -166,6 +182,9 @@ class MonitoredResourceTypeSummary(object):
             'description': 'str',
             'metric_namespace': 'str',
             'compartment_id': 'str',
+            'availability_metrics_config': 'AvailabilityMetricsDetails',
+            'handler_config': 'AgentExtensionHandlerConfiguration',
+            'is_system_defined': 'bool',
             'lifecycle_state': 'str',
             'source_type': 'str',
             'resource_category': 'str',
@@ -184,6 +203,9 @@ class MonitoredResourceTypeSummary(object):
             'description': 'description',
             'metric_namespace': 'metricNamespace',
             'compartment_id': 'compartmentId',
+            'availability_metrics_config': 'availabilityMetricsConfig',
+            'handler_config': 'handlerConfig',
+            'is_system_defined': 'isSystemDefined',
             'lifecycle_state': 'lifecycleState',
             'source_type': 'sourceType',
             'resource_category': 'resourceCategory',
@@ -201,6 +223,9 @@ class MonitoredResourceTypeSummary(object):
         self._description = None
         self._metric_namespace = None
         self._compartment_id = None
+        self._availability_metrics_config = None
+        self._handler_config = None
+        self._is_system_defined = None
         self._lifecycle_state = None
         self._source_type = None
         self._resource_category = None
@@ -342,7 +367,7 @@ class MonitoredResourceTypeSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this MonitoredResourceTypeSummary.
-        The `OCID`__ of the tenancy containing the resource type.
+        Compartment Identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -356,7 +381,7 @@ class MonitoredResourceTypeSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this MonitoredResourceTypeSummary.
-        The `OCID`__ of the tenancy containing the resource type.
+        Compartment Identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -365,6 +390,70 @@ class MonitoredResourceTypeSummary(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def availability_metrics_config(self):
+        """
+        Gets the availability_metrics_config of this MonitoredResourceTypeSummary.
+
+        :return: The availability_metrics_config of this MonitoredResourceTypeSummary.
+        :rtype: oci.stack_monitoring.models.AvailabilityMetricsDetails
+        """
+        return self._availability_metrics_config
+
+    @availability_metrics_config.setter
+    def availability_metrics_config(self, availability_metrics_config):
+        """
+        Sets the availability_metrics_config of this MonitoredResourceTypeSummary.
+
+        :param availability_metrics_config: The availability_metrics_config of this MonitoredResourceTypeSummary.
+        :type: oci.stack_monitoring.models.AvailabilityMetricsDetails
+        """
+        self._availability_metrics_config = availability_metrics_config
+
+    @property
+    def handler_config(self):
+        """
+        Gets the handler_config of this MonitoredResourceTypeSummary.
+
+        :return: The handler_config of this MonitoredResourceTypeSummary.
+        :rtype: oci.stack_monitoring.models.AgentExtensionHandlerConfiguration
+        """
+        return self._handler_config
+
+    @handler_config.setter
+    def handler_config(self, handler_config):
+        """
+        Sets the handler_config of this MonitoredResourceTypeSummary.
+
+        :param handler_config: The handler_config of this MonitoredResourceTypeSummary.
+        :type: oci.stack_monitoring.models.AgentExtensionHandlerConfiguration
+        """
+        self._handler_config = handler_config
+
+    @property
+    def is_system_defined(self):
+        """
+        Gets the is_system_defined of this MonitoredResourceTypeSummary.
+        If boolean flag is true, then the resource type cannot be modified or deleted.
+
+
+        :return: The is_system_defined of this MonitoredResourceTypeSummary.
+        :rtype: bool
+        """
+        return self._is_system_defined
+
+    @is_system_defined.setter
+    def is_system_defined(self, is_system_defined):
+        """
+        Sets the is_system_defined of this MonitoredResourceTypeSummary.
+        If boolean flag is true, then the resource type cannot be modified or deleted.
+
+
+        :param is_system_defined: The is_system_defined of this MonitoredResourceTypeSummary.
+        :type: bool
+        """
+        self._is_system_defined = is_system_defined
 
     @property
     def lifecycle_state(self):
@@ -432,7 +521,7 @@ class MonitoredResourceTypeSummary(object):
         Gets the resource_category of this MonitoredResourceTypeSummary.
         Resource Category to indicate the kind of resource type.
 
-        Allowed values for this property are: "APPLICATION", "DATABASE", "MIDDLEWARE", "UNKNOWN", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "APPLICATION", "DATABASE", "MIDDLEWARE", "INFRASTRUCTURE", "UNKNOWN", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -451,7 +540,7 @@ class MonitoredResourceTypeSummary(object):
         :param resource_category: The resource_category of this MonitoredResourceTypeSummary.
         :type: str
         """
-        allowed_values = ["APPLICATION", "DATABASE", "MIDDLEWARE", "UNKNOWN"]
+        allowed_values = ["APPLICATION", "DATABASE", "MIDDLEWARE", "INFRASTRUCTURE", "UNKNOWN"]
         if not value_allowed_none_or_none_sentinel(resource_category, allowed_values):
             resource_category = 'UNKNOWN_ENUM_VALUE'
         self._resource_category = resource_category

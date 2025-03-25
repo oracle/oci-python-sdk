@@ -12,16 +12,21 @@ from .agent_endpoint import AgentEndpoint
 from .agent_endpoint_collection import AgentEndpointCollection
 from .agent_endpoint_summary import AgentEndpointSummary
 from .agent_summary import AgentSummary
+from .api_schema_inline_input_location import ApiSchemaInlineInputLocation
+from .api_schema_input_location import ApiSchemaInputLocation
+from .api_schema_object_storage_input_location import ApiSchemaObjectStorageInputLocation
 from .basic_auth_secret import BasicAuthSecret
 from .change_agent_compartment_details import ChangeAgentCompartmentDetails
 from .change_agent_endpoint_compartment_details import ChangeAgentEndpointCompartmentDetails
 from .change_knowledge_base_compartment_details import ChangeKnowledgeBaseCompartmentDetails
 from .content_moderation_config import ContentModerationConfig
+from .content_moderation_guardrail_config import ContentModerationGuardrailConfig
 from .create_agent_details import CreateAgentDetails
 from .create_agent_endpoint_details import CreateAgentEndpointDetails
 from .create_data_ingestion_job_details import CreateDataIngestionJobDetails
 from .create_data_source_details import CreateDataSourceDetails
 from .create_knowledge_base_details import CreateKnowledgeBaseDetails
+from .create_tool_details import CreateToolDetails
 from .data_ingestion_job import DataIngestionJob
 from .data_ingestion_job_collection import DataIngestionJobCollection
 from .data_ingestion_job_statistics import DataIngestionJobStatistics
@@ -34,24 +39,52 @@ from .database_connection import DatabaseConnection
 from .database_function import DatabaseFunction
 from .database_tool_connection import DatabaseToolConnection
 from .default_index_config import DefaultIndexConfig
+from .function import Function
+from .function_calling_tool_config import FunctionCallingToolConfig
+from .guardrail_config import GuardrailConfig
+from .http_endpoint_auth_config import HttpEndpointAuthConfig
+from .http_endpoint_delegated_bearer_auth_config import HttpEndpointDelegatedBearerAuthConfig
+from .http_endpoint_idcs_auth_config import HttpEndpointIdcsAuthConfig
+from .http_endpoint_no_auth_config import HttpEndpointNoAuthConfig
+from .http_endpoint_oci_resource_principal_auth_config import HttpEndpointOciResourcePrincipalAuthConfig
+from .http_endpoint_tool_config import HttpEndpointToolConfig
+from .human_input_config import HumanInputConfig
 from .idcs_secret import IdcsSecret
 from .index import Index
 from .index_config import IndexConfig
 from .index_schema import IndexSchema
+from .inline_input_location import InlineInputLocation
+from .input_location import InputLocation
 from .knowledge_base import KnowledgeBase
 from .knowledge_base_collection import KnowledgeBaseCollection
+from .knowledge_base_config import KnowledgeBaseConfig
 from .knowledge_base_statistics import KnowledgeBaseStatistics
 from .knowledge_base_summary import KnowledgeBaseSummary
+from .llm_config import LlmConfig
+from .llm_customization import LlmCustomization
+from .object_storage_input_location import ObjectStorageInputLocation
 from .object_storage_prefix import ObjectStoragePrefix
+from .object_storage_prefix_output_location import ObjectStoragePrefixOutputLocation
 from .oci_database_config import OciDatabaseConfig
 from .oci_object_storage_data_source_config import OciObjectStorageDataSourceConfig
 from .oci_open_search_index_config import OciOpenSearchIndexConfig
+from .output_config import OutputConfig
+from .output_location import OutputLocation
+from .personally_identifiable_information_guardrail_config import PersonallyIdentifiableInformationGuardrailConfig
+from .prompt_injection_guardrail_config import PromptInjectionGuardrailConfig
+from .rag_tool_config import RagToolConfig
 from .secret_detail import SecretDetail
 from .session_config import SessionConfig
+from .sql_tool_config import SqlToolConfig
+from .tool import Tool
+from .tool_collection import ToolCollection
+from .tool_config import ToolConfig
+from .tool_summary import ToolSummary
 from .update_agent_details import UpdateAgentDetails
 from .update_agent_endpoint_details import UpdateAgentEndpointDetails
 from .update_data_source_details import UpdateDataSourceDetails
 from .update_knowledge_base_details import UpdateKnowledgeBaseDetails
+from .update_tool_details import UpdateToolDetails
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
 from .work_request_error_collection import WorkRequestErrorCollection
@@ -69,16 +102,21 @@ generative_ai_agent_type_mapping = {
     "AgentEndpointCollection": AgentEndpointCollection,
     "AgentEndpointSummary": AgentEndpointSummary,
     "AgentSummary": AgentSummary,
+    "ApiSchemaInlineInputLocation": ApiSchemaInlineInputLocation,
+    "ApiSchemaInputLocation": ApiSchemaInputLocation,
+    "ApiSchemaObjectStorageInputLocation": ApiSchemaObjectStorageInputLocation,
     "BasicAuthSecret": BasicAuthSecret,
     "ChangeAgentCompartmentDetails": ChangeAgentCompartmentDetails,
     "ChangeAgentEndpointCompartmentDetails": ChangeAgentEndpointCompartmentDetails,
     "ChangeKnowledgeBaseCompartmentDetails": ChangeKnowledgeBaseCompartmentDetails,
     "ContentModerationConfig": ContentModerationConfig,
+    "ContentModerationGuardrailConfig": ContentModerationGuardrailConfig,
     "CreateAgentDetails": CreateAgentDetails,
     "CreateAgentEndpointDetails": CreateAgentEndpointDetails,
     "CreateDataIngestionJobDetails": CreateDataIngestionJobDetails,
     "CreateDataSourceDetails": CreateDataSourceDetails,
     "CreateKnowledgeBaseDetails": CreateKnowledgeBaseDetails,
+    "CreateToolDetails": CreateToolDetails,
     "DataIngestionJob": DataIngestionJob,
     "DataIngestionJobCollection": DataIngestionJobCollection,
     "DataIngestionJobStatistics": DataIngestionJobStatistics,
@@ -91,24 +129,52 @@ generative_ai_agent_type_mapping = {
     "DatabaseFunction": DatabaseFunction,
     "DatabaseToolConnection": DatabaseToolConnection,
     "DefaultIndexConfig": DefaultIndexConfig,
+    "Function": Function,
+    "FunctionCallingToolConfig": FunctionCallingToolConfig,
+    "GuardrailConfig": GuardrailConfig,
+    "HttpEndpointAuthConfig": HttpEndpointAuthConfig,
+    "HttpEndpointDelegatedBearerAuthConfig": HttpEndpointDelegatedBearerAuthConfig,
+    "HttpEndpointIdcsAuthConfig": HttpEndpointIdcsAuthConfig,
+    "HttpEndpointNoAuthConfig": HttpEndpointNoAuthConfig,
+    "HttpEndpointOciResourcePrincipalAuthConfig": HttpEndpointOciResourcePrincipalAuthConfig,
+    "HttpEndpointToolConfig": HttpEndpointToolConfig,
+    "HumanInputConfig": HumanInputConfig,
     "IdcsSecret": IdcsSecret,
     "Index": Index,
     "IndexConfig": IndexConfig,
     "IndexSchema": IndexSchema,
+    "InlineInputLocation": InlineInputLocation,
+    "InputLocation": InputLocation,
     "KnowledgeBase": KnowledgeBase,
     "KnowledgeBaseCollection": KnowledgeBaseCollection,
+    "KnowledgeBaseConfig": KnowledgeBaseConfig,
     "KnowledgeBaseStatistics": KnowledgeBaseStatistics,
     "KnowledgeBaseSummary": KnowledgeBaseSummary,
+    "LlmConfig": LlmConfig,
+    "LlmCustomization": LlmCustomization,
+    "ObjectStorageInputLocation": ObjectStorageInputLocation,
     "ObjectStoragePrefix": ObjectStoragePrefix,
+    "ObjectStoragePrefixOutputLocation": ObjectStoragePrefixOutputLocation,
     "OciDatabaseConfig": OciDatabaseConfig,
     "OciObjectStorageDataSourceConfig": OciObjectStorageDataSourceConfig,
     "OciOpenSearchIndexConfig": OciOpenSearchIndexConfig,
+    "OutputConfig": OutputConfig,
+    "OutputLocation": OutputLocation,
+    "PersonallyIdentifiableInformationGuardrailConfig": PersonallyIdentifiableInformationGuardrailConfig,
+    "PromptInjectionGuardrailConfig": PromptInjectionGuardrailConfig,
+    "RagToolConfig": RagToolConfig,
     "SecretDetail": SecretDetail,
     "SessionConfig": SessionConfig,
+    "SqlToolConfig": SqlToolConfig,
+    "Tool": Tool,
+    "ToolCollection": ToolCollection,
+    "ToolConfig": ToolConfig,
+    "ToolSummary": ToolSummary,
     "UpdateAgentDetails": UpdateAgentDetails,
     "UpdateAgentEndpointDetails": UpdateAgentEndpointDetails,
     "UpdateDataSourceDetails": UpdateDataSourceDetails,
     "UpdateKnowledgeBaseDetails": UpdateKnowledgeBaseDetails,
+    "UpdateToolDetails": UpdateToolDetails,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,
     "WorkRequestErrorCollection": WorkRequestErrorCollection,

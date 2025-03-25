@@ -32,6 +32,10 @@ class UpdateDataSourceDetails(object):
             The value to assign to the data_source_config property of this UpdateDataSourceDetails.
         :type data_source_config: oci.generative_ai_agent.models.DataSourceConfig
 
+        :param metadata:
+            The value to assign to the metadata property of this UpdateDataSourceDetails.
+        :type metadata: dict(str, str)
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateDataSourceDetails.
         :type freeform_tags: dict(str, str)
@@ -45,6 +49,7 @@ class UpdateDataSourceDetails(object):
             'display_name': 'str',
             'description': 'str',
             'data_source_config': 'DataSourceConfig',
+            'metadata': 'dict(str, str)',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -52,12 +57,14 @@ class UpdateDataSourceDetails(object):
             'display_name': 'displayName',
             'description': 'description',
             'data_source_config': 'dataSourceConfig',
+            'metadata': 'metadata',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
         self._display_name = None
         self._description = None
         self._data_source_config = None
+        self._metadata = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -128,6 +135,30 @@ class UpdateDataSourceDetails(object):
         :type: oci.generative_ai_agent.models.DataSourceConfig
         """
         self._data_source_config = data_source_config
+
+    @property
+    def metadata(self):
+        """
+        Gets the metadata of this UpdateDataSourceDetails.
+        Key-value pairs to allow additional configurations.
+
+
+        :return: The metadata of this UpdateDataSourceDetails.
+        :rtype: dict(str, str)
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """
+        Sets the metadata of this UpdateDataSourceDetails.
+        Key-value pairs to allow additional configurations.
+
+
+        :param metadata: The metadata of this UpdateDataSourceDetails.
+        :type: dict(str, str)
+        """
+        self._metadata = metadata
 
     @property
     def freeform_tags(self):

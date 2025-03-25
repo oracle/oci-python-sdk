@@ -82,6 +82,10 @@ class ServiceConnector(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param lifecycle_details:
+            The value to assign to the lifecycle_details property of this ServiceConnector.
+        :type lifecycle_details: str
+
         :param lifecyle_details:
             The value to assign to the lifecyle_details property of this ServiceConnector.
         :type lifecyle_details: str
@@ -119,6 +123,7 @@ class ServiceConnector(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
+            'lifecycle_details': 'str',
             'lifecyle_details': 'str',
             'source': 'SourceDetails',
             'tasks': 'list[TaskDetails]',
@@ -135,6 +140,7 @@ class ServiceConnector(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
+            'lifecycle_details': 'lifecycleDetails',
             'lifecyle_details': 'lifecyleDetails',
             'source': 'source',
             'tasks': 'tasks',
@@ -150,6 +156,7 @@ class ServiceConnector(object):
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
+        self._lifecycle_details = None
         self._lifecyle_details = None
         self._source = None
         self._tasks = None
@@ -359,9 +366,38 @@ class ServiceConnector(object):
         self._lifecycle_state = lifecycle_state
 
     @property
+    def lifecycle_details(self):
+        """
+        Gets the lifecycle_details of this ServiceConnector.
+        A message describing the current state in more detail.
+        For example, the message might provide actionable
+        information for a resource in a `FAILED` state.
+
+
+        :return: The lifecycle_details of this ServiceConnector.
+        :rtype: str
+        """
+        return self._lifecycle_details
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, lifecycle_details):
+        """
+        Sets the lifecycle_details of this ServiceConnector.
+        A message describing the current state in more detail.
+        For example, the message might provide actionable
+        information for a resource in a `FAILED` state.
+
+
+        :param lifecycle_details: The lifecycle_details of this ServiceConnector.
+        :type: str
+        """
+        self._lifecycle_details = lifecycle_details
+
+    @property
     def lifecyle_details(self):
         """
         Gets the lifecyle_details of this ServiceConnector.
+        *Please note this property is deprecated and will be removed on January 27, 2026. Use `lifecycleDetails` instead.*
         A message describing the current state in more detail.
         For example, the message might provide actionable
         information for a resource in a `FAILED` state.
@@ -376,6 +412,7 @@ class ServiceConnector(object):
     def lifecyle_details(self, lifecyle_details):
         """
         Sets the lifecyle_details of this ServiceConnector.
+        *Please note this property is deprecated and will be removed on January 27, 2026. Use `lifecycleDetails` instead.*
         A message describing the current state in more detail.
         For example, the message might provide actionable
         information for a resource in a `FAILED` state.

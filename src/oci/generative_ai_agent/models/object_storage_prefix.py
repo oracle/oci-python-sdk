@@ -99,7 +99,7 @@ class ObjectStoragePrefix(object):
     def prefix(self):
         """
         Gets the prefix of this ObjectStoragePrefix.
-        The name of the object (file) or prefix (folder).
+        The prefix of file object(s) or folder prefix.
 
 
         :return: The prefix of this ObjectStoragePrefix.
@@ -111,7 +111,7 @@ class ObjectStoragePrefix(object):
     def prefix(self, prefix):
         """
         Sets the prefix of this ObjectStoragePrefix.
-        The name of the object (file) or prefix (folder).
+        The prefix of file object(s) or folder prefix.
 
 
         :param prefix: The prefix of this ObjectStoragePrefix.

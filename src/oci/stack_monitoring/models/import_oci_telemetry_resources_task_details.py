@@ -23,6 +23,14 @@ class ImportOciTelemetryResourcesTaskDetails(MonitoredResourceTaskDetails):
     #: This constant has a value of "OCI_TELEMETRY_PROMETHEUS"
     SOURCE_OCI_TELEMETRY_PROMETHEUS = "OCI_TELEMETRY_PROMETHEUS"
 
+    #: A constant which can be used with the source property of a ImportOciTelemetryResourcesTaskDetails.
+    #: This constant has a value of "OCI_TELEMETRY_TELEGRAF"
+    SOURCE_OCI_TELEMETRY_TELEGRAF = "OCI_TELEMETRY_TELEGRAF"
+
+    #: A constant which can be used with the source property of a ImportOciTelemetryResourcesTaskDetails.
+    #: This constant has a value of "OCI_TELEMETRY_COLLECTD"
+    SOURCE_OCI_TELEMETRY_COLLECTD = "OCI_TELEMETRY_COLLECTD"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ImportOciTelemetryResourcesTaskDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.stack_monitoring.models.ImportOciTelemetryResourcesTaskDetails.type` attribute
@@ -31,13 +39,13 @@ class ImportOciTelemetryResourcesTaskDetails(MonitoredResourceTaskDetails):
 
         :param type:
             The value to assign to the type property of this ImportOciTelemetryResourcesTaskDetails.
-            Allowed values for this property are: "IMPORT_OCI_TELEMETRY_RESOURCES", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "IMPORT_OCI_TELEMETRY_RESOURCES", "UPDATE_AGENT_RECEIVER", "UPDATE_RESOURCE_TYPE_CONFIGS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
         :param source:
             The value to assign to the source property of this ImportOciTelemetryResourcesTaskDetails.
-            Allowed values for this property are: "OCI_TELEMETRY_NATIVE", "OCI_TELEMETRY_PROMETHEUS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "OCI_TELEMETRY_NATIVE", "OCI_TELEMETRY_PROMETHEUS", "OCI_TELEMETRY_TELEGRAF", "OCI_TELEMETRY_COLLECTD", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type source: str
 
@@ -153,8 +161,10 @@ class ImportOciTelemetryResourcesTaskDetails(MonitoredResourceTaskDetails):
         Possible values:
           * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from OCI Native Services.
           * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
+          * OCI_TELEMETRY_TELEGRAF    - The metrics are pushed to telemetry from Telegraf receiver.
+          * OCI_TELEMETRY_COLLECTD    - The metrics are pushed to telemetry from CollectD receiver.
 
-        Allowed values for this property are: "OCI_TELEMETRY_NATIVE", "OCI_TELEMETRY_PROMETHEUS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "OCI_TELEMETRY_NATIVE", "OCI_TELEMETRY_PROMETHEUS", "OCI_TELEMETRY_TELEGRAF", "OCI_TELEMETRY_COLLECTD", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -171,12 +181,14 @@ class ImportOciTelemetryResourcesTaskDetails(MonitoredResourceTaskDetails):
         Possible values:
           * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from OCI Native Services.
           * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
+          * OCI_TELEMETRY_TELEGRAF    - The metrics are pushed to telemetry from Telegraf receiver.
+          * OCI_TELEMETRY_COLLECTD    - The metrics are pushed to telemetry from CollectD receiver.
 
 
         :param source: The source of this ImportOciTelemetryResourcesTaskDetails.
         :type: str
         """
-        allowed_values = ["OCI_TELEMETRY_NATIVE", "OCI_TELEMETRY_PROMETHEUS"]
+        allowed_values = ["OCI_TELEMETRY_NATIVE", "OCI_TELEMETRY_PROMETHEUS", "OCI_TELEMETRY_TELEGRAF", "OCI_TELEMETRY_COLLECTD"]
         if not value_allowed_none_or_none_sentinel(source, allowed_values):
             source = 'UNKNOWN_ENUM_VALUE'
         self._source = source
@@ -476,7 +488,7 @@ class ImportOciTelemetryResourcesTaskDetails(MonitoredResourceTaskDetails):
         List of metrics to be used to calculate the availability of the resource.
         Resource is considered to be up if at least one of the specified metrics is available for
         the resource during the specified interval using the property
-        'availabilityProxyMetricCollectionIntervalInSeconds'.
+        'availabilityProxyMetricCollectionInterval'.
         If no metrics are specified, availability will not be calculated for the resource.
 
 
@@ -492,7 +504,7 @@ class ImportOciTelemetryResourcesTaskDetails(MonitoredResourceTaskDetails):
         List of metrics to be used to calculate the availability of the resource.
         Resource is considered to be up if at least one of the specified metrics is available for
         the resource during the specified interval using the property
-        'availabilityProxyMetricCollectionIntervalInSeconds'.
+        'availabilityProxyMetricCollectionInterval'.
         If no metrics are specified, availability will not be calculated for the resource.
 
 

@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.149.1 - 2025-03-25
+====================
+
+Added 
+----- 
+* Support for agent platforms and Retrieval Augmented Generation (RAG) agents in the Generative AI Agent service 
+* Support for knowledge based metadata summaries in the Generative AI Agent service 
+* Support for create and update operations on onboard configurations in the Stack Monitoring service 
+* Support for automatic activation of the management agents on compute instance launch in the Stack Monitoring service 
+* Support for importing collectd resources in the Stack Monitoring service 
+* Support for updating the handler configurations for collected resources in Stack Monitoring service 
+* Support for monitored resource types based on source type and resource category in the Stack Monitoring service 
+* Support for adding tags in maintenance windows in the Stack Monitoring service 
+* Support for host API feature in the Compute service   
+
+====================
 2.149.0 - 2025-03-18
 ====================
 

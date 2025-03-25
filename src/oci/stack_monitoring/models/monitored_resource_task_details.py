@@ -19,18 +19,28 @@ class MonitoredResourceTaskDetails(object):
     #: This constant has a value of "IMPORT_OCI_TELEMETRY_RESOURCES"
     TYPE_IMPORT_OCI_TELEMETRY_RESOURCES = "IMPORT_OCI_TELEMETRY_RESOURCES"
 
+    #: A constant which can be used with the type property of a MonitoredResourceTaskDetails.
+    #: This constant has a value of "UPDATE_AGENT_RECEIVER"
+    TYPE_UPDATE_AGENT_RECEIVER = "UPDATE_AGENT_RECEIVER"
+
+    #: A constant which can be used with the type property of a MonitoredResourceTaskDetails.
+    #: This constant has a value of "UPDATE_RESOURCE_TYPE_CONFIGS"
+    TYPE_UPDATE_RESOURCE_TYPE_CONFIGS = "UPDATE_RESOURCE_TYPE_CONFIGS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new MonitoredResourceTaskDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.stack_monitoring.models.ImportOciTelemetryResourcesTaskDetails`
+        * :class:`~oci.stack_monitoring.models.UpdateAgentReceiverTaskDetails`
+        * :class:`~oci.stack_monitoring.models.UpdateResourceTypeConfigTaskDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param type:
             The value to assign to the type property of this MonitoredResourceTaskDetails.
-            Allowed values for this property are: "IMPORT_OCI_TELEMETRY_RESOURCES", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "IMPORT_OCI_TELEMETRY_RESOURCES", "UPDATE_AGENT_RECEIVER", "UPDATE_RESOURCE_TYPE_CONFIGS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -53,6 +63,12 @@ class MonitoredResourceTaskDetails(object):
 
         if type == 'IMPORT_OCI_TELEMETRY_RESOURCES':
             return 'ImportOciTelemetryResourcesTaskDetails'
+
+        if type == 'UPDATE_AGENT_RECEIVER':
+            return 'UpdateAgentReceiverTaskDetails'
+
+        if type == 'UPDATE_RESOURCE_TYPE_CONFIGS':
+            return 'UpdateResourceTypeConfigTaskDetails'
         else:
             return 'MonitoredResourceTaskDetails'
 
@@ -62,7 +78,7 @@ class MonitoredResourceTaskDetails(object):
         **[Required]** Gets the type of this MonitoredResourceTaskDetails.
         Task type.
 
-        Allowed values for this property are: "IMPORT_OCI_TELEMETRY_RESOURCES", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "IMPORT_OCI_TELEMETRY_RESOURCES", "UPDATE_AGENT_RECEIVER", "UPDATE_RESOURCE_TYPE_CONFIGS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -81,7 +97,7 @@ class MonitoredResourceTaskDetails(object):
         :param type: The type of this MonitoredResourceTaskDetails.
         :type: str
         """
-        allowed_values = ["IMPORT_OCI_TELEMETRY_RESOURCES"]
+        allowed_values = ["IMPORT_OCI_TELEMETRY_RESOURCES", "UPDATE_AGENT_RECEIVER", "UPDATE_RESOURCE_TYPE_CONFIGS"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type

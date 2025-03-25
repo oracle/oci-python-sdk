@@ -22,6 +22,8 @@ class ConfigSummary(object):
 
         * :class:`~oci.stack_monitoring.models.AutoPromoteConfigSummary`
         * :class:`~oci.stack_monitoring.models.LicenseAutoAssignConfigSummary`
+        * :class:`~oci.stack_monitoring.models.ComputeAutoActivatePluginConfigSummary`
+        * :class:`~oci.stack_monitoring.models.OnboardConfigSummary`
         * :class:`~oci.stack_monitoring.models.LicenseEnterpriseExtensibilityConfigSummary`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
@@ -115,6 +117,12 @@ class ConfigSummary(object):
 
         if type == 'LICENSE_AUTO_ASSIGN':
             return 'LicenseAutoAssignConfigSummary'
+
+        if type == 'COMPUTE_AUTO_ACTIVATE_PLUGIN':
+            return 'ComputeAutoActivatePluginConfigSummary'
+
+        if type == 'ONBOARD':
+            return 'OnboardConfigSummary'
 
         if type == 'LICENSE_ENTERPRISE_EXTENSIBILITY':
             return 'LicenseEnterpriseExtensibilityConfigSummary'

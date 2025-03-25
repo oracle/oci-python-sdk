@@ -49,6 +49,10 @@ class Config(object):
     CONFIG_TYPE_AUTO_PROMOTE = "AUTO_PROMOTE"
 
     #: A constant which can be used with the config_type property of a Config.
+    #: This constant has a value of "COMPUTE_AUTO_ACTIVATE_PLUGIN"
+    CONFIG_TYPE_COMPUTE_AUTO_ACTIVATE_PLUGIN = "COMPUTE_AUTO_ACTIVATE_PLUGIN"
+
+    #: A constant which can be used with the config_type property of a Config.
     #: This constant has a value of "LICENSE_AUTO_ASSIGN"
     CONFIG_TYPE_LICENSE_AUTO_ASSIGN = "LICENSE_AUTO_ASSIGN"
 
@@ -56,12 +60,18 @@ class Config(object):
     #: This constant has a value of "LICENSE_ENTERPRISE_EXTENSIBILITY"
     CONFIG_TYPE_LICENSE_ENTERPRISE_EXTENSIBILITY = "LICENSE_ENTERPRISE_EXTENSIBILITY"
 
+    #: A constant which can be used with the config_type property of a Config.
+    #: This constant has a value of "ONBOARD"
+    CONFIG_TYPE_ONBOARD = "ONBOARD"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Config object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.stack_monitoring.models.OnboardConfigDetails`
         * :class:`~oci.stack_monitoring.models.LicenseEnterpriseExtensibilityConfigDetails`
+        * :class:`~oci.stack_monitoring.models.ComputeAutoActivatePluginConfigDetails`
         * :class:`~oci.stack_monitoring.models.LicenseAutoAssignConfigDetails`
         * :class:`~oci.stack_monitoring.models.AutoPromoteConfigDetails`
 
@@ -95,7 +105,7 @@ class Config(object):
 
         :param config_type:
             The value to assign to the config_type property of this Config.
-            Allowed values for this property are: "AUTO_PROMOTE", "LICENSE_AUTO_ASSIGN", "LICENSE_ENTERPRISE_EXTENSIBILITY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "AUTO_PROMOTE", "COMPUTE_AUTO_ACTIVATE_PLUGIN", "LICENSE_AUTO_ASSIGN", "LICENSE_ENTERPRISE_EXTENSIBILITY", "ONBOARD", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type config_type: str
 
@@ -155,8 +165,14 @@ class Config(object):
         """
         type = object_dictionary['configType']
 
+        if type == 'ONBOARD':
+            return 'OnboardConfigDetails'
+
         if type == 'LICENSE_ENTERPRISE_EXTENSIBILITY':
             return 'LicenseEnterpriseExtensibilityConfigDetails'
+
+        if type == 'COMPUTE_AUTO_ACTIVATE_PLUGIN':
+            return 'ComputeAutoActivatePluginConfigDetails'
 
         if type == 'LICENSE_AUTO_ASSIGN':
             return 'LicenseAutoAssignConfigDetails'
@@ -322,7 +338,7 @@ class Config(object):
         **[Required]** Gets the config_type of this Config.
         The type of configuration.
 
-        Allowed values for this property are: "AUTO_PROMOTE", "LICENSE_AUTO_ASSIGN", "LICENSE_ENTERPRISE_EXTENSIBILITY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "AUTO_PROMOTE", "COMPUTE_AUTO_ACTIVATE_PLUGIN", "LICENSE_AUTO_ASSIGN", "LICENSE_ENTERPRISE_EXTENSIBILITY", "ONBOARD", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -341,7 +357,7 @@ class Config(object):
         :param config_type: The config_type of this Config.
         :type: str
         """
-        allowed_values = ["AUTO_PROMOTE", "LICENSE_AUTO_ASSIGN", "LICENSE_ENTERPRISE_EXTENSIBILITY"]
+        allowed_values = ["AUTO_PROMOTE", "COMPUTE_AUTO_ACTIVATE_PLUGIN", "LICENSE_AUTO_ASSIGN", "LICENSE_ENTERPRISE_EXTENSIBILITY", "ONBOARD"]
         if not value_allowed_none_or_none_sentinel(config_type, allowed_values):
             config_type = 'UNKNOWN_ENUM_VALUE'
         self._config_type = config_type

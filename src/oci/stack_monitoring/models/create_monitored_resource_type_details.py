@@ -54,6 +54,10 @@ class CreateMonitoredResourceTypeDetails(object):
     RESOURCE_CATEGORY_MIDDLEWARE = "MIDDLEWARE"
 
     #: A constant which can be used with the resource_category property of a CreateMonitoredResourceTypeDetails.
+    #: This constant has a value of "INFRASTRUCTURE"
+    RESOURCE_CATEGORY_INFRASTRUCTURE = "INFRASTRUCTURE"
+
+    #: A constant which can be used with the resource_category property of a CreateMonitoredResourceTypeDetails.
     #: This constant has a value of "UNKNOWN"
     RESOURCE_CATEGORY_UNKNOWN = "UNKNOWN"
 
@@ -89,7 +93,7 @@ class CreateMonitoredResourceTypeDetails(object):
 
         :param resource_category:
             The value to assign to the resource_category property of this CreateMonitoredResourceTypeDetails.
-            Allowed values for this property are: "APPLICATION", "DATABASE", "MIDDLEWARE", "UNKNOWN"
+            Allowed values for this property are: "APPLICATION", "DATABASE", "MIDDLEWARE", "INFRASTRUCTURE", "UNKNOWN"
         :type resource_category: str
 
         :param metadata:
@@ -218,7 +222,7 @@ class CreateMonitoredResourceTypeDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateMonitoredResourceTypeDetails.
-        The `OCID`__ of the tenancy containing the resource type.
+        Compartment Identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -232,7 +236,7 @@ class CreateMonitoredResourceTypeDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateMonitoredResourceTypeDetails.
-        The `OCID`__ of the tenancy containing the resource type.
+        Compartment Identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -303,7 +307,7 @@ class CreateMonitoredResourceTypeDetails(object):
         Gets the resource_category of this CreateMonitoredResourceTypeDetails.
         Resource Category to indicate the kind of resource type.
 
-        Allowed values for this property are: "APPLICATION", "DATABASE", "MIDDLEWARE", "UNKNOWN"
+        Allowed values for this property are: "APPLICATION", "DATABASE", "MIDDLEWARE", "INFRASTRUCTURE", "UNKNOWN"
 
 
         :return: The resource_category of this CreateMonitoredResourceTypeDetails.
@@ -321,7 +325,7 @@ class CreateMonitoredResourceTypeDetails(object):
         :param resource_category: The resource_category of this CreateMonitoredResourceTypeDetails.
         :type: str
         """
-        allowed_values = ["APPLICATION", "DATABASE", "MIDDLEWARE", "UNKNOWN"]
+        allowed_values = ["APPLICATION", "DATABASE", "MIDDLEWARE", "INFRASTRUCTURE", "UNKNOWN"]
         if not value_allowed_none_or_none_sentinel(resource_category, allowed_values):
             raise ValueError(
                 f"Invalid value for `resource_category`, must be None or one of {allowed_values}"

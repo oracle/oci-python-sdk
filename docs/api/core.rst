@@ -115,6 +115,7 @@ Core Services
     oci.core.models.ChangeComputeClusterCompartmentDetails
     oci.core.models.ChangeComputeGpuMemoryClusterCompartmentDetails
     oci.core.models.ChangeComputeGpuMemoryFabricCompartmentDetails
+    oci.core.models.ChangeComputeHostCompartmentDetails
     oci.core.models.ChangeComputeImageCapabilitySchemaCompartmentDetails
     oci.core.models.ChangeCpeCompartmentDetails
     oci.core.models.ChangeCrossConnectCompartmentDetails
@@ -177,6 +178,9 @@ Core Services
     oci.core.models.ComputeGpuMemoryFabric
     oci.core.models.ComputeGpuMemoryFabricCollection
     oci.core.models.ComputeGpuMemoryFabricSummary
+    oci.core.models.ComputeHost
+    oci.core.models.ComputeHostCollection
+    oci.core.models.ComputeHostSummary
     oci.core.models.ComputeHpcIsland
     oci.core.models.ComputeHpcIslandCollection
     oci.core.models.ComputeHpcIslandSummary
@@ -548,6 +552,7 @@ Core Services
     oci.core.models.UpdateComputeClusterDetails
     oci.core.models.UpdateComputeGpuMemoryClusterDetails
     oci.core.models.UpdateComputeGpuMemoryFabricDetails
+    oci.core.models.UpdateComputeHostDetails
     oci.core.models.UpdateComputeImageCapabilitySchemaDetails
     oci.core.models.UpdateConsoleHistoryDetails
     oci.core.models.UpdateCpeDetails

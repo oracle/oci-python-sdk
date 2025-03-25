@@ -5585,7 +5585,7 @@ class StackMonitoringClient(object):
         :param str type: (optional)
             A filter to return only configuration items for a given config type.
 
-            Allowed values are: "AUTO_PROMOTE", "LICENSE_AUTO_ASSIGN", "LICENSE_ENTERPRISE_EXTENSIBILITY"
+            Allowed values are: "AUTO_PROMOTE", "COMPUTE_AUTO_ACTIVATE_PLUGIN", "LICENSE_AUTO_ASSIGN", "LICENSE_ENTERPRISE_EXTENSIBILITY", "ONBOARD"
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a
@@ -5666,7 +5666,7 @@ class StackMonitoringClient(object):
                 f"list_configs got unknown kwargs: {extra_kwargs!r}")
 
         if 'type' in kwargs:
-            type_allowed_values = ["AUTO_PROMOTE", "LICENSE_AUTO_ASSIGN", "LICENSE_ENTERPRISE_EXTENSIBILITY"]
+            type_allowed_values = ["AUTO_PROMOTE", "COMPUTE_AUTO_ACTIVATE_PLUGIN", "LICENSE_AUTO_ASSIGN", "LICENSE_ENTERPRISE_EXTENSIBILITY", "ONBOARD"]
             if kwargs['type'] not in type_allowed_values:
                 raise ValueError(
                     f"Invalid value for `type`, must be one of { type_allowed_values }"
@@ -6762,6 +6762,16 @@ class StackMonitoringClient(object):
         :param str metric_namespace: (optional)
             A filter to return monitored resource types that has the matching namespace.
 
+        :param str source_type: (optional)
+            A filter to return only resources with matching source type.
+
+            Allowed values are: "SM_MGMT_AGENT_MONITORED", "SM_REPO_ONLY", "OCI_NATIVE", "PROMETHEUS", "TELEGRAF", "COLLECTD"
+
+        :param str resource_category: (optional)
+            A filter to return only resources with matching resource category.
+
+            Allowed values are: "APPLICATION", "DATABASE", "MIDDLEWARE", "INFRASTRUCTURE", "UNKNOWN"
+
         :param str sort_by: (optional)
             The field to sort by. Only one sort order may be provided.
             Default order for 'timeUpdated' is descending. Default order for 'name' is ascending.
@@ -6850,6 +6860,8 @@ class StackMonitoringClient(object):
             "status",
             "is_exclude_system_types",
             "metric_namespace",
+            "source_type",
+            "resource_category",
             "sort_by",
             "sort_order",
             "limit",
@@ -6868,6 +6880,20 @@ class StackMonitoringClient(object):
             if kwargs['status'] not in status_allowed_values:
                 raise ValueError(
                     f"Invalid value for `status`, must be one of { status_allowed_values }"
+                )
+
+        if 'source_type' in kwargs:
+            source_type_allowed_values = ["SM_MGMT_AGENT_MONITORED", "SM_REPO_ONLY", "OCI_NATIVE", "PROMETHEUS", "TELEGRAF", "COLLECTD"]
+            if kwargs['source_type'] not in source_type_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `source_type`, must be one of { source_type_allowed_values }"
+                )
+
+        if 'resource_category' in kwargs:
+            resource_category_allowed_values = ["APPLICATION", "DATABASE", "MIDDLEWARE", "INFRASTRUCTURE", "UNKNOWN"]
+            if kwargs['resource_category'] not in resource_category_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `resource_category`, must be one of { resource_category_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
@@ -6890,6 +6916,8 @@ class StackMonitoringClient(object):
             "status": kwargs.get("status", missing),
             "isExcludeSystemTypes": kwargs.get("is_exclude_system_types", missing),
             "metricNamespace": kwargs.get("metric_namespace", missing),
+            "sourceType": kwargs.get("source_type", missing),
+            "resourceCategory": kwargs.get("resource_category", missing),
             "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "limit": kwargs.get("limit", missing),
@@ -6957,7 +6985,7 @@ class StackMonitoringClient(object):
         :param str status: (optional)
             A filter to return only resources with matching lifecycleState.
 
-            Allowed values are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
+            Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
 
         :param str sort_by: (optional)
             The field to sort by. Only one sort order may be provided.
@@ -7032,7 +7060,7 @@ class StackMonitoringClient(object):
                 f"list_monitored_resources got unknown kwargs: {extra_kwargs!r}")
 
         if 'status' in kwargs:
-            status_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
+            status_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
             if kwargs['status'] not in status_allowed_values:
                 raise ValueError(
                     f"Invalid value for `status`, must be one of { status_allowed_values }"
@@ -8171,7 +8199,7 @@ class StackMonitoringClient(object):
         :param str group_by: (optional)
             The field to group by. Default group by is 'resourceType'.
 
-            Allowed values are: "resourceType", "license", "parentResourceId"
+            Allowed values are: "resourceType", "license", "parentResourceId", "namespace"
 
         :param str license: (optional)
             Filter to return resource counts that match with the given licence edition.
@@ -8253,7 +8281,7 @@ class StackMonitoringClient(object):
                 f"request_monitored_resources_summarized_count got unknown kwargs: {extra_kwargs!r}")
 
         if 'group_by' in kwargs:
-            group_by_allowed_values = ["resourceType", "license", "parentResourceId"]
+            group_by_allowed_values = ["resourceType", "license", "parentResourceId", "namespace"]
             if kwargs['group_by'] not in group_by_allowed_values:
                 raise ValueError(
                     f"Invalid value for `group_by`, must be one of { group_by_allowed_values }"

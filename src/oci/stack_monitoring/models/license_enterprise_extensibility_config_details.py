@@ -49,7 +49,7 @@ class LicenseEnterpriseExtensibilityConfigDetails(Config):
 
         :param config_type:
             The value to assign to the config_type property of this LicenseEnterpriseExtensibilityConfigDetails.
-            Allowed values for this property are: "AUTO_PROMOTE", "LICENSE_AUTO_ASSIGN", "LICENSE_ENTERPRISE_EXTENSIBILITY"
+            Allowed values for this property are: "AUTO_PROMOTE", "COMPUTE_AUTO_ACTIVATE_PLUGIN", "LICENSE_AUTO_ASSIGN", "LICENSE_ENTERPRISE_EXTENSIBILITY", "ONBOARD"
         :type config_type: str
 
         :param freeform_tags:

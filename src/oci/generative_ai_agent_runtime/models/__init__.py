@@ -11,13 +11,25 @@ from .chat_result import ChatResult
 from .citation import Citation
 from .create_session_details import CreateSessionDetails
 from .error_trace import ErrorTrace
+from .function_call import FunctionCall
+from .function_calling_performed_action import FunctionCallingPerformedAction
+from .function_calling_required_action import FunctionCallingRequiredAction
 from .generation_trace import GenerationTrace
+from .human_approval_performed_action import HumanApprovalPerformedAction
+from .knowledge_base_metadata_summary import KnowledgeBaseMetadataSummary
+from .knowledge_base_metadata_value import KnowledgeBaseMetadataValue
 from .message import Message
 from .message_content import MessageContent
+from .metadata_filter import MetadataFilter
 from .oci_database_source_location import OciDatabaseSourceLocation
 from .oci_object_storage_source_location import OciObjectStorageSourceLocation
 from .oci_open_search_source_location import OciOpenSearchSourceLocation
+from .paragraph import Paragraph
+from .paragraph_citation import ParagraphCitation
+from .performed_action import PerformedAction
+from .required_action import RequiredAction
 from .retrieval_trace import RetrievalTrace
+from .retrieve_metadata_details import RetrieveMetadataDetails
 from .session import Session
 from .source_location import SourceLocation
 from .trace import Trace
@@ -30,13 +42,25 @@ generative_ai_agent_runtime_type_mapping = {
     "Citation": Citation,
     "CreateSessionDetails": CreateSessionDetails,
     "ErrorTrace": ErrorTrace,
+    "FunctionCall": FunctionCall,
+    "FunctionCallingPerformedAction": FunctionCallingPerformedAction,
+    "FunctionCallingRequiredAction": FunctionCallingRequiredAction,
     "GenerationTrace": GenerationTrace,
+    "HumanApprovalPerformedAction": HumanApprovalPerformedAction,
+    "KnowledgeBaseMetadataSummary": KnowledgeBaseMetadataSummary,
+    "KnowledgeBaseMetadataValue": KnowledgeBaseMetadataValue,
     "Message": Message,
     "MessageContent": MessageContent,
+    "MetadataFilter": MetadataFilter,
     "OciDatabaseSourceLocation": OciDatabaseSourceLocation,
     "OciObjectStorageSourceLocation": OciObjectStorageSourceLocation,
     "OciOpenSearchSourceLocation": OciOpenSearchSourceLocation,
+    "Paragraph": Paragraph,
+    "ParagraphCitation": ParagraphCitation,
+    "PerformedAction": PerformedAction,
+    "RequiredAction": RequiredAction,
     "RetrievalTrace": RetrievalTrace,
+    "RetrieveMetadataDetails": RetrieveMetadataDetails,
     "Session": Session,
     "SourceLocation": SourceLocation,
     "Trace": Trace,

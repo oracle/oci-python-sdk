@@ -28,17 +28,24 @@ class MessageContent(object):
             The value to assign to the citations property of this MessageContent.
         :type citations: list[oci.generative_ai_agent_runtime.models.Citation]
 
+        :param paragraph_citations:
+            The value to assign to the paragraph_citations property of this MessageContent.
+        :type paragraph_citations: list[oci.generative_ai_agent_runtime.models.ParagraphCitation]
+
         """
         self.swagger_types = {
             'text': 'str',
-            'citations': 'list[Citation]'
+            'citations': 'list[Citation]',
+            'paragraph_citations': 'list[ParagraphCitation]'
         }
         self.attribute_map = {
             'text': 'text',
-            'citations': 'citations'
+            'citations': 'citations',
+            'paragraph_citations': 'paragraphCitations'
         }
         self._text = None
         self._citations = None
+        self._paragraph_citations = None
 
     @property
     def text(self):
@@ -87,6 +94,30 @@ class MessageContent(object):
         :type: list[oci.generative_ai_agent_runtime.models.Citation]
         """
         self._citations = citations
+
+    @property
+    def paragraph_citations(self):
+        """
+        Gets the paragraph_citations of this MessageContent.
+        A list of citations used to generate the paragraphs of the agent message.
+
+
+        :return: The paragraph_citations of this MessageContent.
+        :rtype: list[oci.generative_ai_agent_runtime.models.ParagraphCitation]
+        """
+        return self._paragraph_citations
+
+    @paragraph_citations.setter
+    def paragraph_citations(self, paragraph_citations):
+        """
+        Sets the paragraph_citations of this MessageContent.
+        A list of citations used to generate the paragraphs of the agent message.
+
+
+        :param paragraph_citations: The paragraph_citations of this MessageContent.
+        :type: list[oci.generative_ai_agent_runtime.models.ParagraphCitation]
+        """
+        self._paragraph_citations = paragraph_citations
 
     def __repr__(self):
         return formatted_flat_dict(self)
