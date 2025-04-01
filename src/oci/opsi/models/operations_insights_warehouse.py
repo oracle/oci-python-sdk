@@ -15,6 +15,14 @@ class OperationsInsightsWarehouse(object):
     OPSI warehouse resource.
     """
 
+    #: A constant which can be used with the compute_model property of a OperationsInsightsWarehouse.
+    #: This constant has a value of "OCPU"
+    COMPUTE_MODEL_OCPU = "OCPU"
+
+    #: A constant which can be used with the compute_model property of a OperationsInsightsWarehouse.
+    #: This constant has a value of "ECPU"
+    COMPUTE_MODEL_ECPU = "ECPU"
+
     #: A constant which can be used with the lifecycle_state property of a OperationsInsightsWarehouse.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -59,6 +67,12 @@ class OperationsInsightsWarehouse(object):
         :param cpu_allocated:
             The value to assign to the cpu_allocated property of this OperationsInsightsWarehouse.
         :type cpu_allocated: float
+
+        :param compute_model:
+            The value to assign to the compute_model property of this OperationsInsightsWarehouse.
+            Allowed values for this property are: "OCPU", "ECPU", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type compute_model: str
 
         :param cpu_used:
             The value to assign to the cpu_used property of this OperationsInsightsWarehouse.
@@ -120,6 +134,7 @@ class OperationsInsightsWarehouse(object):
             'compartment_id': 'str',
             'display_name': 'str',
             'cpu_allocated': 'float',
+            'compute_model': 'str',
             'cpu_used': 'float',
             'storage_allocated_in_gbs': 'float',
             'storage_used_in_gbs': 'float',
@@ -139,6 +154,7 @@ class OperationsInsightsWarehouse(object):
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
             'cpu_allocated': 'cpuAllocated',
+            'compute_model': 'computeModel',
             'cpu_used': 'cpuUsed',
             'storage_allocated_in_gbs': 'storageAllocatedInGBs',
             'storage_used_in_gbs': 'storageUsedInGBs',
@@ -157,6 +173,7 @@ class OperationsInsightsWarehouse(object):
         self._compartment_id = None
         self._display_name = None
         self._cpu_allocated = None
+        self._compute_model = None
         self._cpu_used = None
         self._storage_allocated_in_gbs = None
         self._storage_used_in_gbs = None
@@ -251,7 +268,7 @@ class OperationsInsightsWarehouse(object):
     def cpu_allocated(self):
         """
         **[Required]** Gets the cpu_allocated of this OperationsInsightsWarehouse.
-        Number of OCPUs allocated to OPSI Warehouse ADW.
+        Number of CPUs allocated to OPSI Warehouse ADW.
 
 
         :return: The cpu_allocated of this OperationsInsightsWarehouse.
@@ -263,13 +280,43 @@ class OperationsInsightsWarehouse(object):
     def cpu_allocated(self, cpu_allocated):
         """
         Sets the cpu_allocated of this OperationsInsightsWarehouse.
-        Number of OCPUs allocated to OPSI Warehouse ADW.
+        Number of CPUs allocated to OPSI Warehouse ADW.
 
 
         :param cpu_allocated: The cpu_allocated of this OperationsInsightsWarehouse.
         :type: float
         """
         self._cpu_allocated = cpu_allocated
+
+    @property
+    def compute_model(self):
+        """
+        Gets the compute_model of this OperationsInsightsWarehouse.
+        The compute model for the OPSI warehouse ADW (OCPU or ECPU)
+
+        Allowed values for this property are: "OCPU", "ECPU", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The compute_model of this OperationsInsightsWarehouse.
+        :rtype: str
+        """
+        return self._compute_model
+
+    @compute_model.setter
+    def compute_model(self, compute_model):
+        """
+        Sets the compute_model of this OperationsInsightsWarehouse.
+        The compute model for the OPSI warehouse ADW (OCPU or ECPU)
+
+
+        :param compute_model: The compute_model of this OperationsInsightsWarehouse.
+        :type: str
+        """
+        allowed_values = ["OCPU", "ECPU"]
+        if not value_allowed_none_or_none_sentinel(compute_model, allowed_values):
+            compute_model = 'UNKNOWN_ENUM_VALUE'
+        self._compute_model = compute_model
 
     @property
     def cpu_used(self):

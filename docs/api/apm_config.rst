@@ -24,13 +24,24 @@ Apm Config
     oci.apm_config.models.Config
     oci.apm_config.models.ConfigCollection
     oci.apm_config.models.ConfigSummary
+    oci.apm_config.models.CopyConfigurationDetails
     oci.apm_config.models.CreateApdexRulesDetails
     oci.apm_config.models.CreateConfigDetails
     oci.apm_config.models.CreateMetricGroupDetails
     oci.apm_config.models.CreateOptionsDetails
     oci.apm_config.models.CreateSpanFilterDetails
     oci.apm_config.models.Dimension
+    oci.apm_config.models.ExportConfigurationDetails
+    oci.apm_config.models.ExportConfigurationResponseDetails
+    oci.apm_config.models.ExportImportApdexRulesSummary
+    oci.apm_config.models.ExportImportConfigSummary
+    oci.apm_config.models.ExportImportMetricGroupSummary
+    oci.apm_config.models.ExportImportOptionsSummary
+    oci.apm_config.models.ExportImportSpanFilterSummary
     oci.apm_config.models.FilterTextOrId
+    oci.apm_config.models.ImportConfigurationDetails
+    oci.apm_config.models.ImportConfigurationFailedItemSummary
+    oci.apm_config.models.ImportConfigurationFailedItemsCollection
     oci.apm_config.models.Metric
     oci.apm_config.models.MetricGroup
     oci.apm_config.models.MetricGroupSummary

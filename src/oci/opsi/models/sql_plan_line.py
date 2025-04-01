@@ -32,6 +32,14 @@ class SqlPlanLine(object):
             The value to assign to the plan_hash property of this SqlPlanLine.
         :type plan_hash: int
 
+        :param force_matching_signature:
+            The value to assign to the force_matching_signature property of this SqlPlanLine.
+        :type force_matching_signature: str
+
+        :param time_generated:
+            The value to assign to the time_generated property of this SqlPlanLine.
+        :type time_generated: datetime
+
         :param time_collected:
             The value to assign to the time_collected property of this SqlPlanLine.
         :type time_collected: datetime
@@ -173,6 +181,8 @@ class SqlPlanLine(object):
             'version': 'float',
             'sql_identifier': 'str',
             'plan_hash': 'int',
+            'force_matching_signature': 'str',
+            'time_generated': 'datetime',
             'time_collected': 'datetime',
             'operation': 'str',
             'remark': 'str',
@@ -212,6 +222,8 @@ class SqlPlanLine(object):
             'version': 'version',
             'sql_identifier': 'sqlIdentifier',
             'plan_hash': 'planHash',
+            'force_matching_signature': 'forceMatchingSignature',
+            'time_generated': 'timeGenerated',
             'time_collected': 'timeCollected',
             'operation': 'operation',
             'remark': 'remark',
@@ -250,6 +262,8 @@ class SqlPlanLine(object):
         self._version = None
         self._sql_identifier = None
         self._plan_hash = None
+        self._force_matching_signature = None
+        self._time_generated = None
         self._time_collected = None
         self._operation = None
         self._remark = None
@@ -358,6 +372,58 @@ class SqlPlanLine(object):
         :type: int
         """
         self._plan_hash = plan_hash
+
+    @property
+    def force_matching_signature(self):
+        """
+        Gets the force_matching_signature of this SqlPlanLine.
+        Force matching signature
+        Example: `\"18067345456756876713\"`
+
+
+        :return: The force_matching_signature of this SqlPlanLine.
+        :rtype: str
+        """
+        return self._force_matching_signature
+
+    @force_matching_signature.setter
+    def force_matching_signature(self, force_matching_signature):
+        """
+        Sets the force_matching_signature of this SqlPlanLine.
+        Force matching signature
+        Example: `\"18067345456756876713\"`
+
+
+        :param force_matching_signature: The force_matching_signature of this SqlPlanLine.
+        :type: str
+        """
+        self._force_matching_signature = force_matching_signature
+
+    @property
+    def time_generated(self):
+        """
+        Gets the time_generated of this SqlPlanLine.
+        Generation time stamp
+        Example: `\"2020-05-05T02:10:00.000Z\"`
+
+
+        :return: The time_generated of this SqlPlanLine.
+        :rtype: datetime
+        """
+        return self._time_generated
+
+    @time_generated.setter
+    def time_generated(self, time_generated):
+        """
+        Sets the time_generated of this SqlPlanLine.
+        Generation time stamp
+        Example: `\"2020-05-05T02:10:00.000Z\"`
+
+
+        :param time_generated: The time_generated of this SqlPlanLine.
+        :type: datetime
+        """
+        self._time_generated = time_generated
 
     @property
     def time_collected(self):

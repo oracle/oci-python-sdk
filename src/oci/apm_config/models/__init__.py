@@ -12,13 +12,24 @@ from .apdex_rules_summary import ApdexRulesSummary
 from .config import Config
 from .config_collection import ConfigCollection
 from .config_summary import ConfigSummary
+from .copy_configuration_details import CopyConfigurationDetails
 from .create_apdex_rules_details import CreateApdexRulesDetails
 from .create_config_details import CreateConfigDetails
 from .create_metric_group_details import CreateMetricGroupDetails
 from .create_options_details import CreateOptionsDetails
 from .create_span_filter_details import CreateSpanFilterDetails
 from .dimension import Dimension
+from .export_configuration_details import ExportConfigurationDetails
+from .export_configuration_response_details import ExportConfigurationResponseDetails
+from .export_import_apdex_rules_summary import ExportImportApdexRulesSummary
+from .export_import_config_summary import ExportImportConfigSummary
+from .export_import_metric_group_summary import ExportImportMetricGroupSummary
+from .export_import_options_summary import ExportImportOptionsSummary
+from .export_import_span_filter_summary import ExportImportSpanFilterSummary
 from .filter_text_or_id import FilterTextOrId
+from .import_configuration_details import ImportConfigurationDetails
+from .import_configuration_failed_item_summary import ImportConfigurationFailedItemSummary
+from .import_configuration_failed_items_collection import ImportConfigurationFailedItemsCollection
 from .metric import Metric
 from .metric_group import MetricGroup
 from .metric_group_summary import MetricGroupSummary
@@ -51,13 +62,24 @@ apm_config_type_mapping = {
     "Config": Config,
     "ConfigCollection": ConfigCollection,
     "ConfigSummary": ConfigSummary,
+    "CopyConfigurationDetails": CopyConfigurationDetails,
     "CreateApdexRulesDetails": CreateApdexRulesDetails,
     "CreateConfigDetails": CreateConfigDetails,
     "CreateMetricGroupDetails": CreateMetricGroupDetails,
     "CreateOptionsDetails": CreateOptionsDetails,
     "CreateSpanFilterDetails": CreateSpanFilterDetails,
     "Dimension": Dimension,
+    "ExportConfigurationDetails": ExportConfigurationDetails,
+    "ExportConfigurationResponseDetails": ExportConfigurationResponseDetails,
+    "ExportImportApdexRulesSummary": ExportImportApdexRulesSummary,
+    "ExportImportConfigSummary": ExportImportConfigSummary,
+    "ExportImportMetricGroupSummary": ExportImportMetricGroupSummary,
+    "ExportImportOptionsSummary": ExportImportOptionsSummary,
+    "ExportImportSpanFilterSummary": ExportImportSpanFilterSummary,
     "FilterTextOrId": FilterTextOrId,
+    "ImportConfigurationDetails": ImportConfigurationDetails,
+    "ImportConfigurationFailedItemSummary": ImportConfigurationFailedItemSummary,
+    "ImportConfigurationFailedItemsCollection": ImportConfigurationFailedItemsCollection,
     "Metric": Metric,
     "MetricGroup": MetricGroup,
     "MetricGroupSummary": MetricGroupSummary,

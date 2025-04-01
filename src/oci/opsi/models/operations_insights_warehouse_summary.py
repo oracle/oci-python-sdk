@@ -60,6 +60,10 @@ class OperationsInsightsWarehouseSummary(object):
             The value to assign to the cpu_allocated property of this OperationsInsightsWarehouseSummary.
         :type cpu_allocated: float
 
+        :param compute_model:
+            The value to assign to the compute_model property of this OperationsInsightsWarehouseSummary.
+        :type compute_model: str
+
         :param cpu_used:
             The value to assign to the cpu_used property of this OperationsInsightsWarehouseSummary.
         :type cpu_used: float
@@ -120,6 +124,7 @@ class OperationsInsightsWarehouseSummary(object):
             'compartment_id': 'str',
             'display_name': 'str',
             'cpu_allocated': 'float',
+            'compute_model': 'str',
             'cpu_used': 'float',
             'storage_allocated_in_gbs': 'float',
             'storage_used_in_gbs': 'float',
@@ -139,6 +144,7 @@ class OperationsInsightsWarehouseSummary(object):
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
             'cpu_allocated': 'cpuAllocated',
+            'compute_model': 'computeModel',
             'cpu_used': 'cpuUsed',
             'storage_allocated_in_gbs': 'storageAllocatedInGBs',
             'storage_used_in_gbs': 'storageUsedInGBs',
@@ -157,6 +163,7 @@ class OperationsInsightsWarehouseSummary(object):
         self._compartment_id = None
         self._display_name = None
         self._cpu_allocated = None
+        self._compute_model = None
         self._cpu_used = None
         self._storage_allocated_in_gbs = None
         self._storage_used_in_gbs = None
@@ -251,7 +258,7 @@ class OperationsInsightsWarehouseSummary(object):
     def cpu_allocated(self):
         """
         **[Required]** Gets the cpu_allocated of this OperationsInsightsWarehouseSummary.
-        Number of OCPUs allocated to OPSI Warehouse ADW.
+        Number of CPUs allocated to OPSI Warehouse ADW.
 
 
         :return: The cpu_allocated of this OperationsInsightsWarehouseSummary.
@@ -263,13 +270,37 @@ class OperationsInsightsWarehouseSummary(object):
     def cpu_allocated(self, cpu_allocated):
         """
         Sets the cpu_allocated of this OperationsInsightsWarehouseSummary.
-        Number of OCPUs allocated to OPSI Warehouse ADW.
+        Number of CPUs allocated to OPSI Warehouse ADW.
 
 
         :param cpu_allocated: The cpu_allocated of this OperationsInsightsWarehouseSummary.
         :type: float
         """
         self._cpu_allocated = cpu_allocated
+
+    @property
+    def compute_model(self):
+        """
+        Gets the compute_model of this OperationsInsightsWarehouseSummary.
+        The compute model for the OPSI warehouse ADW (OCPU or ECPU)
+
+
+        :return: The compute_model of this OperationsInsightsWarehouseSummary.
+        :rtype: str
+        """
+        return self._compute_model
+
+    @compute_model.setter
+    def compute_model(self, compute_model):
+        """
+        Sets the compute_model of this OperationsInsightsWarehouseSummary.
+        The compute model for the OPSI warehouse ADW (OCPU or ECPU)
+
+
+        :param compute_model: The compute_model of this OperationsInsightsWarehouseSummary.
+        :type: str
+        """
+        self._compute_model = compute_model
 
     @property
     def cpu_used(self):
