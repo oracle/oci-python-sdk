@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.149.2 - 2025-04-01
+====================
+
+Added 
+----- 
+* Support for the Lustre File service 
+* Support for machine learning applications in the Data Science service 
+* Support for action endpoints to export and import configurations in the Application Performance Monitoring service 
+* Support for ECPU (Elastic Compute Unit) compute model based warehouses in the Operations insights service   
+
+====================
 2.149.1 - 2025-03-25
 ====================
 

@@ -136,6 +136,7 @@ API Reference
 * :doc:`Log Search <loggingsearch/client/oci.loggingsearch.LogSearchClient>`
 * :doc:`Logging <loggingingestion/client/oci.loggingingestion.LoggingClient>`
 * :doc:`Logging Management <logging/client/oci.logging.LoggingManagementClient>`
+* :doc:`Lustre File Storage <lustre_file_storage/client/oci.lustre_file_storage.LustreFileStorageClient>`
 * :doc:`Mac Device <mngdmac/client/oci.mngdmac.MacDeviceClient>`
 * :doc:`Mac Order <mngdmac/client/oci.mngdmac.MacOrderClient>`
 * :doc:`Managed Instance <os_management_hub/client/oci.os_management_hub.ManagedInstanceClient>`
@@ -365,6 +366,7 @@ API Reference
     logging
     loggingingestion
     loggingsearch
+    lustre_file_storage
     management_agent
     management_dashboard
     marketplace

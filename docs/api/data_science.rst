@@ -18,10 +18,12 @@ Data Science
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.data_science.models.ApplicationComponent
     oci.data_science.models.ArtifactExportDetails
     oci.data_science.models.ArtifactExportDetailsObjectStorage
     oci.data_science.models.ArtifactImportDetails
     oci.data_science.models.ArtifactImportDetailsObjectStorage
+    oci.data_science.models.AuthConfiguration
     oci.data_science.models.AutoScalingPolicy
     oci.data_science.models.AutoScalingPolicyDetails
     oci.data_science.models.BackupOperationDetails
@@ -30,6 +32,10 @@ Data Science
     oci.data_science.models.ChangeDataSciencePrivateEndpointCompartmentDetails
     oci.data_science.models.ChangeJobCompartmentDetails
     oci.data_science.models.ChangeJobRunCompartmentDetails
+    oci.data_science.models.ChangeMlApplicationCompartmentDetails
+    oci.data_science.models.ChangeMlApplicationImplementationCompartmentDetails
+    oci.data_science.models.ChangeMlApplicationInstanceCompartmentDetails
+    oci.data_science.models.ChangeMlApplicationInstanceViewCompartmentDetails
     oci.data_science.models.ChangeModelCompartmentDetails
     oci.data_science.models.ChangeModelDeploymentCompartmentDetails
     oci.data_science.models.ChangeModelVersionSetCompartmentDetails
@@ -38,11 +44,20 @@ Data Science
     oci.data_science.models.ChangePipelineRunCompartmentDetails
     oci.data_science.models.ChangeProjectCompartmentDetails
     oci.data_science.models.ChangeScheduleCompartmentDetails
+    oci.data_science.models.ConfigurationProperty
+    oci.data_science.models.ConfigurationPropertySchema
     oci.data_science.models.ContainerSummary
+    oci.data_science.models.CreateAuthConfigurationDetails
     oci.data_science.models.CreateDataSciencePrivateEndpointDetails
+    oci.data_science.models.CreateIamAuthConfigurationCreateDetails
+    oci.data_science.models.CreateIdcsAuthConfigurationDetails
+    oci.data_science.models.CreateIdcsCustomServiceAuthConfigurationDetails
     oci.data_science.models.CreateJobDetails
     oci.data_science.models.CreateJobRunDetails
     oci.data_science.models.CreateJobRunScheduleActionDetails
+    oci.data_science.models.CreateMlApplicationDetails
+    oci.data_science.models.CreateMlApplicationImplementationDetails
+    oci.data_science.models.CreateMlApplicationInstanceDetails
     oci.data_science.models.CreateModelDeploymentDetails
     oci.data_science.models.CreateModelDetails
     oci.data_science.models.CreateModelProvenanceDetails
@@ -55,16 +70,32 @@ Data Science
     oci.data_science.models.CreateScheduleDetails
     oci.data_science.models.CustomExpressionQueryScalingConfiguration
     oci.data_science.models.CustomMetricExpressionRule
+    oci.data_science.models.DataFlowApplicationApplicationComponent
+    oci.data_science.models.DataScienceJobApplicationComponent
+    oci.data_science.models.DataScienceModelApplicationComponent
+    oci.data_science.models.DataScienceModelDeploymentInstanceComponent
+    oci.data_science.models.DataSciencePipelineApplicationComponent
     oci.data_science.models.DataSciencePrivateEndpoint
     oci.data_science.models.DataSciencePrivateEndpointSummary
+    oci.data_science.models.DataScienceScheduleInstanceComponent
     oci.data_science.models.DefaultJobConfigurationDetails
     oci.data_science.models.DefaultModelDeploymentEnvironmentConfigurationDetails
+    oci.data_science.models.DisableMlApplicationInstanceViewTriggerDetails
+    oci.data_science.models.EnableMlApplicationInstanceViewTriggerDetails
     oci.data_science.models.ExportModelArtifactDetails
     oci.data_science.models.FastLaunchJobConfigSummary
     oci.data_science.models.FileStorageMountConfigurationDetails
     oci.data_science.models.FixedSizeScalingPolicy
     oci.data_science.models.GenericJobRunUseCaseConfigurationDetails
+    oci.data_science.models.GenericOciResourceApplicationComponent
+    oci.data_science.models.GenericOciResourceInstanceComponent
+    oci.data_science.models.IamAuthConfiguration
+    oci.data_science.models.IdcsAuthConfiguration
+    oci.data_science.models.IdcsCustomServiceAuthConfiguration
+    oci.data_science.models.ImplementationLogDetails
+    oci.data_science.models.ImplementationLogging
     oci.data_science.models.ImportModelArtifactDetails
+    oci.data_science.models.InstanceComponent
     oci.data_science.models.InstanceConfiguration
     oci.data_science.models.InstancePoolModelDeploymentSystemData
     oci.data_science.models.InvokeMlApplicationProviderTriggerScheduleActionDetails
@@ -85,6 +116,24 @@ Data Science
     oci.data_science.models.ManagedEgressStandaloneJobInfrastructureConfigurationDetails
     oci.data_science.models.Metadata
     oci.data_science.models.MetricExpressionRule
+    oci.data_science.models.MlApplication
+    oci.data_science.models.MlApplicationCollection
+    oci.data_science.models.MlApplicationImplementation
+    oci.data_science.models.MlApplicationImplementationCollection
+    oci.data_science.models.MlApplicationImplementationSummary
+    oci.data_science.models.MlApplicationImplementationVersion
+    oci.data_science.models.MlApplicationImplementationVersionCollection
+    oci.data_science.models.MlApplicationImplementationVersionSummary
+    oci.data_science.models.MlApplicationInstance
+    oci.data_science.models.MlApplicationInstanceCollection
+    oci.data_science.models.MlApplicationInstanceInternalTrigger
+    oci.data_science.models.MlApplicationInstanceSummary
+    oci.data_science.models.MlApplicationInstanceView
+    oci.data_science.models.MlApplicationInstanceViewCollection
+    oci.data_science.models.MlApplicationInstanceViewSummary
+    oci.data_science.models.MlApplicationPackageArgumentDetails
+    oci.data_science.models.MlApplicationPackageArguments
+    oci.data_science.models.MlApplicationSummary
     oci.data_science.models.Model
     oci.data_science.models.ModelArtifactReferenceDetails
     oci.data_science.models.ModelConfigurationDetails
@@ -110,7 +159,9 @@ Data Science
     oci.data_science.models.NotebookSessionShapeSummary
     oci.data_science.models.NotebookSessionSummary
     oci.data_science.models.OSSModelArtifactReferenceDetails
+    oci.data_science.models.ObjectStorageBucketInstanceComponent
     oci.data_science.models.ObjectStorageMountConfigurationDetails
+    oci.data_science.models.ObjectStorageObjectInstanceComponent
     oci.data_science.models.OcirContainerJobEnvironmentConfigurationDetails
     oci.data_science.models.OcirModelDeploymentEnvironmentConfigurationDetails
     oci.data_science.models.Pipeline
@@ -145,6 +196,8 @@ Data Science
     oci.data_science.models.PipelineSummary
     oci.data_science.models.PredefinedExpressionThresholdScalingConfiguration
     oci.data_science.models.PredefinedMetricExpressionRule
+    oci.data_science.models.PredictionEndpointDetails
+    oci.data_science.models.PredictionUri
     oci.data_science.models.Project
     oci.data_science.models.ProjectSummary
     oci.data_science.models.RegisterModelArtifactReferenceDetails
@@ -167,6 +220,7 @@ Data Science
     oci.data_science.models.StorageMountConfigurationDetails
     oci.data_science.models.TagConfiguration
     oci.data_science.models.ThresholdBasedAutoScalingPolicyDetails
+    oci.data_science.models.TriggerMlApplicationInstanceFlowDetails
     oci.data_science.models.TriggerMlApplicationInstanceViewFlowDetails
     oci.data_science.models.TriggerParameter
     oci.data_science.models.UpdateCategoryLogDetails
@@ -174,6 +228,11 @@ Data Science
     oci.data_science.models.UpdateDefaultModelDeploymentEnvironmentConfigurationDetails
     oci.data_science.models.UpdateJobDetails
     oci.data_science.models.UpdateJobRunDetails
+    oci.data_science.models.UpdateMlApplicationDetails
+    oci.data_science.models.UpdateMlApplicationImplementationDetails
+    oci.data_science.models.UpdateMlApplicationImplementationVersionDetails
+    oci.data_science.models.UpdateMlApplicationInstanceDetails
+    oci.data_science.models.UpdateMlApplicationInstanceViewDetails
     oci.data_science.models.UpdateModelConfigurationDetails
     oci.data_science.models.UpdateModelDeploymentConfigurationDetails
     oci.data_science.models.UpdateModelDeploymentDetails

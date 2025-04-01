@@ -58,6 +58,10 @@ class OptionsSummary(ConfigSummary):
             The value to assign to the defined_tags property of this OptionsSummary.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this OptionsSummary.
+        :type system_tags: dict(str, dict(str, object))
+
         :param display_name:
             The value to assign to the display_name property of this OptionsSummary.
         :type display_name: str
@@ -85,6 +89,7 @@ class OptionsSummary(ConfigSummary):
             'etag': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'options': 'object',
             'group': 'str',
@@ -100,6 +105,7 @@ class OptionsSummary(ConfigSummary):
             'etag': 'etag',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'system_tags': 'systemTags',
             'display_name': 'displayName',
             'options': 'options',
             'group': 'group',
@@ -114,6 +120,7 @@ class OptionsSummary(ConfigSummary):
         self._etag = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
         self._display_name = None
         self._options = None
         self._group = None

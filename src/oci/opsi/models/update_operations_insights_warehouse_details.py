@@ -28,6 +28,10 @@ class UpdateOperationsInsightsWarehouseDetails(object):
             The value to assign to the cpu_allocated property of this UpdateOperationsInsightsWarehouseDetails.
         :type cpu_allocated: float
 
+        :param compute_model:
+            The value to assign to the compute_model property of this UpdateOperationsInsightsWarehouseDetails.
+        :type compute_model: str
+
         :param storage_allocated_in_gbs:
             The value to assign to the storage_allocated_in_gbs property of this UpdateOperationsInsightsWarehouseDetails.
         :type storage_allocated_in_gbs: float
@@ -44,6 +48,7 @@ class UpdateOperationsInsightsWarehouseDetails(object):
         self.swagger_types = {
             'display_name': 'str',
             'cpu_allocated': 'float',
+            'compute_model': 'str',
             'storage_allocated_in_gbs': 'float',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -51,12 +56,14 @@ class UpdateOperationsInsightsWarehouseDetails(object):
         self.attribute_map = {
             'display_name': 'displayName',
             'cpu_allocated': 'cpuAllocated',
+            'compute_model': 'computeModel',
             'storage_allocated_in_gbs': 'storageAllocatedInGBs',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
         self._display_name = None
         self._cpu_allocated = None
+        self._compute_model = None
         self._storage_allocated_in_gbs = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -89,7 +96,7 @@ class UpdateOperationsInsightsWarehouseDetails(object):
     def cpu_allocated(self):
         """
         Gets the cpu_allocated of this UpdateOperationsInsightsWarehouseDetails.
-        Number of OCPUs allocated to OPSI Warehouse ADW.
+        Number of CPUs allocated to OPSI Warehouse ADW.
 
 
         :return: The cpu_allocated of this UpdateOperationsInsightsWarehouseDetails.
@@ -101,13 +108,37 @@ class UpdateOperationsInsightsWarehouseDetails(object):
     def cpu_allocated(self, cpu_allocated):
         """
         Sets the cpu_allocated of this UpdateOperationsInsightsWarehouseDetails.
-        Number of OCPUs allocated to OPSI Warehouse ADW.
+        Number of CPUs allocated to OPSI Warehouse ADW.
 
 
         :param cpu_allocated: The cpu_allocated of this UpdateOperationsInsightsWarehouseDetails.
         :type: float
         """
         self._cpu_allocated = cpu_allocated
+
+    @property
+    def compute_model(self):
+        """
+        Gets the compute_model of this UpdateOperationsInsightsWarehouseDetails.
+        The compute model for the OPSI warehouse ADW (OCPU or ECPU)
+
+
+        :return: The compute_model of this UpdateOperationsInsightsWarehouseDetails.
+        :rtype: str
+        """
+        return self._compute_model
+
+    @compute_model.setter
+    def compute_model(self, compute_model):
+        """
+        Sets the compute_model of this UpdateOperationsInsightsWarehouseDetails.
+        The compute model for the OPSI warehouse ADW (OCPU or ECPU)
+
+
+        :param compute_model: The compute_model of this UpdateOperationsInsightsWarehouseDetails.
+        :type: str
+        """
+        self._compute_model = compute_model
 
     @property
     def storage_allocated_in_gbs(self):

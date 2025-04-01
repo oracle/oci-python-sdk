@@ -58,6 +58,10 @@ class SpanFilterSummary(ConfigSummary):
             The value to assign to the defined_tags property of this SpanFilterSummary.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this SpanFilterSummary.
+        :type system_tags: dict(str, dict(str, object))
+
         :param display_name:
             The value to assign to the display_name property of this SpanFilterSummary.
         :type display_name: str
@@ -85,6 +89,7 @@ class SpanFilterSummary(ConfigSummary):
             'etag': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'filter_text': 'str',
             'in_use_by': 'list[SpanFilterReference]',
@@ -100,6 +105,7 @@ class SpanFilterSummary(ConfigSummary):
             'etag': 'etag',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'system_tags': 'systemTags',
             'display_name': 'displayName',
             'filter_text': 'filterText',
             'in_use_by': 'inUseBy',
@@ -114,6 +120,7 @@ class SpanFilterSummary(ConfigSummary):
         self._etag = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
         self._display_name = None
         self._filter_text = None
         self._in_use_by = None

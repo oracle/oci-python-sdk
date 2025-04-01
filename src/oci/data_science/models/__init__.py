@@ -6,10 +6,12 @@
 
 from __future__ import absolute_import
 
+from .application_component import ApplicationComponent
 from .artifact_export_details import ArtifactExportDetails
 from .artifact_export_details_object_storage import ArtifactExportDetailsObjectStorage
 from .artifact_import_details import ArtifactImportDetails
 from .artifact_import_details_object_storage import ArtifactImportDetailsObjectStorage
+from .auth_configuration import AuthConfiguration
 from .auto_scaling_policy import AutoScalingPolicy
 from .auto_scaling_policy_details import AutoScalingPolicyDetails
 from .backup_operation_details import BackupOperationDetails
@@ -18,6 +20,10 @@ from .category_log_details import CategoryLogDetails
 from .change_data_science_private_endpoint_compartment_details import ChangeDataSciencePrivateEndpointCompartmentDetails
 from .change_job_compartment_details import ChangeJobCompartmentDetails
 from .change_job_run_compartment_details import ChangeJobRunCompartmentDetails
+from .change_ml_application_compartment_details import ChangeMlApplicationCompartmentDetails
+from .change_ml_application_implementation_compartment_details import ChangeMlApplicationImplementationCompartmentDetails
+from .change_ml_application_instance_compartment_details import ChangeMlApplicationInstanceCompartmentDetails
+from .change_ml_application_instance_view_compartment_details import ChangeMlApplicationInstanceViewCompartmentDetails
 from .change_model_compartment_details import ChangeModelCompartmentDetails
 from .change_model_deployment_compartment_details import ChangeModelDeploymentCompartmentDetails
 from .change_model_version_set_compartment_details import ChangeModelVersionSetCompartmentDetails
@@ -26,11 +32,20 @@ from .change_pipeline_compartment_details import ChangePipelineCompartmentDetail
 from .change_pipeline_run_compartment_details import ChangePipelineRunCompartmentDetails
 from .change_project_compartment_details import ChangeProjectCompartmentDetails
 from .change_schedule_compartment_details import ChangeScheduleCompartmentDetails
+from .configuration_property import ConfigurationProperty
+from .configuration_property_schema import ConfigurationPropertySchema
 from .container_summary import ContainerSummary
+from .create_auth_configuration_details import CreateAuthConfigurationDetails
 from .create_data_science_private_endpoint_details import CreateDataSciencePrivateEndpointDetails
+from .create_iam_auth_configuration_create_details import CreateIamAuthConfigurationCreateDetails
+from .create_idcs_auth_configuration_details import CreateIdcsAuthConfigurationDetails
+from .create_idcs_custom_service_auth_configuration_details import CreateIdcsCustomServiceAuthConfigurationDetails
 from .create_job_details import CreateJobDetails
 from .create_job_run_details import CreateJobRunDetails
 from .create_job_run_schedule_action_details import CreateJobRunScheduleActionDetails
+from .create_ml_application_details import CreateMlApplicationDetails
+from .create_ml_application_implementation_details import CreateMlApplicationImplementationDetails
+from .create_ml_application_instance_details import CreateMlApplicationInstanceDetails
 from .create_model_deployment_details import CreateModelDeploymentDetails
 from .create_model_details import CreateModelDetails
 from .create_model_provenance_details import CreateModelProvenanceDetails
@@ -43,16 +58,32 @@ from .create_project_details import CreateProjectDetails
 from .create_schedule_details import CreateScheduleDetails
 from .custom_expression_query_scaling_configuration import CustomExpressionQueryScalingConfiguration
 from .custom_metric_expression_rule import CustomMetricExpressionRule
+from .data_flow_application_application_component import DataFlowApplicationApplicationComponent
+from .data_science_job_application_component import DataScienceJobApplicationComponent
+from .data_science_model_application_component import DataScienceModelApplicationComponent
+from .data_science_model_deployment_instance_component import DataScienceModelDeploymentInstanceComponent
+from .data_science_pipeline_application_component import DataSciencePipelineApplicationComponent
 from .data_science_private_endpoint import DataSciencePrivateEndpoint
 from .data_science_private_endpoint_summary import DataSciencePrivateEndpointSummary
+from .data_science_schedule_instance_component import DataScienceScheduleInstanceComponent
 from .default_job_configuration_details import DefaultJobConfigurationDetails
 from .default_model_deployment_environment_configuration_details import DefaultModelDeploymentEnvironmentConfigurationDetails
+from .disable_ml_application_instance_view_trigger_details import DisableMlApplicationInstanceViewTriggerDetails
+from .enable_ml_application_instance_view_trigger_details import EnableMlApplicationInstanceViewTriggerDetails
 from .export_model_artifact_details import ExportModelArtifactDetails
 from .fast_launch_job_config_summary import FastLaunchJobConfigSummary
 from .file_storage_mount_configuration_details import FileStorageMountConfigurationDetails
 from .fixed_size_scaling_policy import FixedSizeScalingPolicy
 from .generic_job_run_use_case_configuration_details import GenericJobRunUseCaseConfigurationDetails
+from .generic_oci_resource_application_component import GenericOciResourceApplicationComponent
+from .generic_oci_resource_instance_component import GenericOciResourceInstanceComponent
+from .iam_auth_configuration import IamAuthConfiguration
+from .idcs_auth_configuration import IdcsAuthConfiguration
+from .idcs_custom_service_auth_configuration import IdcsCustomServiceAuthConfiguration
+from .implementation_log_details import ImplementationLogDetails
+from .implementation_logging import ImplementationLogging
 from .import_model_artifact_details import ImportModelArtifactDetails
+from .instance_component import InstanceComponent
 from .instance_configuration import InstanceConfiguration
 from .instance_pool_model_deployment_system_data import InstancePoolModelDeploymentSystemData
 from .invoke_ml_application_provider_trigger_schedule_action_details import InvokeMlApplicationProviderTriggerScheduleActionDetails
@@ -73,6 +104,24 @@ from .log_details import LogDetails
 from .managed_egress_standalone_job_infrastructure_configuration_details import ManagedEgressStandaloneJobInfrastructureConfigurationDetails
 from .metadata import Metadata
 from .metric_expression_rule import MetricExpressionRule
+from .ml_application import MlApplication
+from .ml_application_collection import MlApplicationCollection
+from .ml_application_implementation import MlApplicationImplementation
+from .ml_application_implementation_collection import MlApplicationImplementationCollection
+from .ml_application_implementation_summary import MlApplicationImplementationSummary
+from .ml_application_implementation_version import MlApplicationImplementationVersion
+from .ml_application_implementation_version_collection import MlApplicationImplementationVersionCollection
+from .ml_application_implementation_version_summary import MlApplicationImplementationVersionSummary
+from .ml_application_instance import MlApplicationInstance
+from .ml_application_instance_collection import MlApplicationInstanceCollection
+from .ml_application_instance_internal_trigger import MlApplicationInstanceInternalTrigger
+from .ml_application_instance_summary import MlApplicationInstanceSummary
+from .ml_application_instance_view import MlApplicationInstanceView
+from .ml_application_instance_view_collection import MlApplicationInstanceViewCollection
+from .ml_application_instance_view_summary import MlApplicationInstanceViewSummary
+from .ml_application_package_argument_details import MlApplicationPackageArgumentDetails
+from .ml_application_package_arguments import MlApplicationPackageArguments
+from .ml_application_summary import MlApplicationSummary
 from .model import Model
 from .model_artifact_reference_details import ModelArtifactReferenceDetails
 from .model_configuration_details import ModelConfigurationDetails
@@ -98,7 +147,9 @@ from .notebook_session_shape_config_details import NotebookSessionShapeConfigDet
 from .notebook_session_shape_summary import NotebookSessionShapeSummary
 from .notebook_session_summary import NotebookSessionSummary
 from .oss_model_artifact_reference_details import OSSModelArtifactReferenceDetails
+from .object_storage_bucket_instance_component import ObjectStorageBucketInstanceComponent
 from .object_storage_mount_configuration_details import ObjectStorageMountConfigurationDetails
+from .object_storage_object_instance_component import ObjectStorageObjectInstanceComponent
 from .ocir_container_job_environment_configuration_details import OcirContainerJobEnvironmentConfigurationDetails
 from .ocir_model_deployment_environment_configuration_details import OcirModelDeploymentEnvironmentConfigurationDetails
 from .pipeline import Pipeline
@@ -133,6 +184,8 @@ from .pipeline_step_update_details import PipelineStepUpdateDetails
 from .pipeline_summary import PipelineSummary
 from .predefined_expression_threshold_scaling_configuration import PredefinedExpressionThresholdScalingConfiguration
 from .predefined_metric_expression_rule import PredefinedMetricExpressionRule
+from .prediction_endpoint_details import PredictionEndpointDetails
+from .prediction_uri import PredictionUri
 from .project import Project
 from .project_summary import ProjectSummary
 from .register_model_artifact_reference_details import RegisterModelArtifactReferenceDetails
@@ -155,6 +208,7 @@ from .standalone_job_infrastructure_configuration_details import StandaloneJobIn
 from .storage_mount_configuration_details import StorageMountConfigurationDetails
 from .tag_configuration import TagConfiguration
 from .threshold_based_auto_scaling_policy_details import ThresholdBasedAutoScalingPolicyDetails
+from .trigger_ml_application_instance_flow_details import TriggerMlApplicationInstanceFlowDetails
 from .trigger_ml_application_instance_view_flow_details import TriggerMlApplicationInstanceViewFlowDetails
 from .trigger_parameter import TriggerParameter
 from .update_category_log_details import UpdateCategoryLogDetails
@@ -162,6 +216,11 @@ from .update_data_science_private_endpoint_details import UpdateDataSciencePriva
 from .update_default_model_deployment_environment_configuration_details import UpdateDefaultModelDeploymentEnvironmentConfigurationDetails
 from .update_job_details import UpdateJobDetails
 from .update_job_run_details import UpdateJobRunDetails
+from .update_ml_application_details import UpdateMlApplicationDetails
+from .update_ml_application_implementation_details import UpdateMlApplicationImplementationDetails
+from .update_ml_application_implementation_version_details import UpdateMlApplicationImplementationVersionDetails
+from .update_ml_application_instance_details import UpdateMlApplicationInstanceDetails
+from .update_ml_application_instance_view_details import UpdateMlApplicationInstanceViewDetails
 from .update_model_configuration_details import UpdateModelConfigurationDetails
 from .update_model_deployment_configuration_details import UpdateModelDeploymentConfigurationDetails
 from .update_model_deployment_details import UpdateModelDeploymentDetails
@@ -185,10 +244,12 @@ from .workload_configuration_details import WorkloadConfigurationDetails
 
 # Maps type names to classes for data_science services.
 data_science_type_mapping = {
+    "ApplicationComponent": ApplicationComponent,
     "ArtifactExportDetails": ArtifactExportDetails,
     "ArtifactExportDetailsObjectStorage": ArtifactExportDetailsObjectStorage,
     "ArtifactImportDetails": ArtifactImportDetails,
     "ArtifactImportDetailsObjectStorage": ArtifactImportDetailsObjectStorage,
+    "AuthConfiguration": AuthConfiguration,
     "AutoScalingPolicy": AutoScalingPolicy,
     "AutoScalingPolicyDetails": AutoScalingPolicyDetails,
     "BackupOperationDetails": BackupOperationDetails,
@@ -197,6 +258,10 @@ data_science_type_mapping = {
     "ChangeDataSciencePrivateEndpointCompartmentDetails": ChangeDataSciencePrivateEndpointCompartmentDetails,
     "ChangeJobCompartmentDetails": ChangeJobCompartmentDetails,
     "ChangeJobRunCompartmentDetails": ChangeJobRunCompartmentDetails,
+    "ChangeMlApplicationCompartmentDetails": ChangeMlApplicationCompartmentDetails,
+    "ChangeMlApplicationImplementationCompartmentDetails": ChangeMlApplicationImplementationCompartmentDetails,
+    "ChangeMlApplicationInstanceCompartmentDetails": ChangeMlApplicationInstanceCompartmentDetails,
+    "ChangeMlApplicationInstanceViewCompartmentDetails": ChangeMlApplicationInstanceViewCompartmentDetails,
     "ChangeModelCompartmentDetails": ChangeModelCompartmentDetails,
     "ChangeModelDeploymentCompartmentDetails": ChangeModelDeploymentCompartmentDetails,
     "ChangeModelVersionSetCompartmentDetails": ChangeModelVersionSetCompartmentDetails,
@@ -205,11 +270,20 @@ data_science_type_mapping = {
     "ChangePipelineRunCompartmentDetails": ChangePipelineRunCompartmentDetails,
     "ChangeProjectCompartmentDetails": ChangeProjectCompartmentDetails,
     "ChangeScheduleCompartmentDetails": ChangeScheduleCompartmentDetails,
+    "ConfigurationProperty": ConfigurationProperty,
+    "ConfigurationPropertySchema": ConfigurationPropertySchema,
     "ContainerSummary": ContainerSummary,
+    "CreateAuthConfigurationDetails": CreateAuthConfigurationDetails,
     "CreateDataSciencePrivateEndpointDetails": CreateDataSciencePrivateEndpointDetails,
+    "CreateIamAuthConfigurationCreateDetails": CreateIamAuthConfigurationCreateDetails,
+    "CreateIdcsAuthConfigurationDetails": CreateIdcsAuthConfigurationDetails,
+    "CreateIdcsCustomServiceAuthConfigurationDetails": CreateIdcsCustomServiceAuthConfigurationDetails,
     "CreateJobDetails": CreateJobDetails,
     "CreateJobRunDetails": CreateJobRunDetails,
     "CreateJobRunScheduleActionDetails": CreateJobRunScheduleActionDetails,
+    "CreateMlApplicationDetails": CreateMlApplicationDetails,
+    "CreateMlApplicationImplementationDetails": CreateMlApplicationImplementationDetails,
+    "CreateMlApplicationInstanceDetails": CreateMlApplicationInstanceDetails,
     "CreateModelDeploymentDetails": CreateModelDeploymentDetails,
     "CreateModelDetails": CreateModelDetails,
     "CreateModelProvenanceDetails": CreateModelProvenanceDetails,
@@ -222,16 +296,32 @@ data_science_type_mapping = {
     "CreateScheduleDetails": CreateScheduleDetails,
     "CustomExpressionQueryScalingConfiguration": CustomExpressionQueryScalingConfiguration,
     "CustomMetricExpressionRule": CustomMetricExpressionRule,
+    "DataFlowApplicationApplicationComponent": DataFlowApplicationApplicationComponent,
+    "DataScienceJobApplicationComponent": DataScienceJobApplicationComponent,
+    "DataScienceModelApplicationComponent": DataScienceModelApplicationComponent,
+    "DataScienceModelDeploymentInstanceComponent": DataScienceModelDeploymentInstanceComponent,
+    "DataSciencePipelineApplicationComponent": DataSciencePipelineApplicationComponent,
     "DataSciencePrivateEndpoint": DataSciencePrivateEndpoint,
     "DataSciencePrivateEndpointSummary": DataSciencePrivateEndpointSummary,
+    "DataScienceScheduleInstanceComponent": DataScienceScheduleInstanceComponent,
     "DefaultJobConfigurationDetails": DefaultJobConfigurationDetails,
     "DefaultModelDeploymentEnvironmentConfigurationDetails": DefaultModelDeploymentEnvironmentConfigurationDetails,
+    "DisableMlApplicationInstanceViewTriggerDetails": DisableMlApplicationInstanceViewTriggerDetails,
+    "EnableMlApplicationInstanceViewTriggerDetails": EnableMlApplicationInstanceViewTriggerDetails,
     "ExportModelArtifactDetails": ExportModelArtifactDetails,
     "FastLaunchJobConfigSummary": FastLaunchJobConfigSummary,
     "FileStorageMountConfigurationDetails": FileStorageMountConfigurationDetails,
     "FixedSizeScalingPolicy": FixedSizeScalingPolicy,
     "GenericJobRunUseCaseConfigurationDetails": GenericJobRunUseCaseConfigurationDetails,
+    "GenericOciResourceApplicationComponent": GenericOciResourceApplicationComponent,
+    "GenericOciResourceInstanceComponent": GenericOciResourceInstanceComponent,
+    "IamAuthConfiguration": IamAuthConfiguration,
+    "IdcsAuthConfiguration": IdcsAuthConfiguration,
+    "IdcsCustomServiceAuthConfiguration": IdcsCustomServiceAuthConfiguration,
+    "ImplementationLogDetails": ImplementationLogDetails,
+    "ImplementationLogging": ImplementationLogging,
     "ImportModelArtifactDetails": ImportModelArtifactDetails,
+    "InstanceComponent": InstanceComponent,
     "InstanceConfiguration": InstanceConfiguration,
     "InstancePoolModelDeploymentSystemData": InstancePoolModelDeploymentSystemData,
     "InvokeMlApplicationProviderTriggerScheduleActionDetails": InvokeMlApplicationProviderTriggerScheduleActionDetails,
@@ -252,6 +342,24 @@ data_science_type_mapping = {
     "ManagedEgressStandaloneJobInfrastructureConfigurationDetails": ManagedEgressStandaloneJobInfrastructureConfigurationDetails,
     "Metadata": Metadata,
     "MetricExpressionRule": MetricExpressionRule,
+    "MlApplication": MlApplication,
+    "MlApplicationCollection": MlApplicationCollection,
+    "MlApplicationImplementation": MlApplicationImplementation,
+    "MlApplicationImplementationCollection": MlApplicationImplementationCollection,
+    "MlApplicationImplementationSummary": MlApplicationImplementationSummary,
+    "MlApplicationImplementationVersion": MlApplicationImplementationVersion,
+    "MlApplicationImplementationVersionCollection": MlApplicationImplementationVersionCollection,
+    "MlApplicationImplementationVersionSummary": MlApplicationImplementationVersionSummary,
+    "MlApplicationInstance": MlApplicationInstance,
+    "MlApplicationInstanceCollection": MlApplicationInstanceCollection,
+    "MlApplicationInstanceInternalTrigger": MlApplicationInstanceInternalTrigger,
+    "MlApplicationInstanceSummary": MlApplicationInstanceSummary,
+    "MlApplicationInstanceView": MlApplicationInstanceView,
+    "MlApplicationInstanceViewCollection": MlApplicationInstanceViewCollection,
+    "MlApplicationInstanceViewSummary": MlApplicationInstanceViewSummary,
+    "MlApplicationPackageArgumentDetails": MlApplicationPackageArgumentDetails,
+    "MlApplicationPackageArguments": MlApplicationPackageArguments,
+    "MlApplicationSummary": MlApplicationSummary,
     "Model": Model,
     "ModelArtifactReferenceDetails": ModelArtifactReferenceDetails,
     "ModelConfigurationDetails": ModelConfigurationDetails,
@@ -277,7 +385,9 @@ data_science_type_mapping = {
     "NotebookSessionShapeSummary": NotebookSessionShapeSummary,
     "NotebookSessionSummary": NotebookSessionSummary,
     "OSSModelArtifactReferenceDetails": OSSModelArtifactReferenceDetails,
+    "ObjectStorageBucketInstanceComponent": ObjectStorageBucketInstanceComponent,
     "ObjectStorageMountConfigurationDetails": ObjectStorageMountConfigurationDetails,
+    "ObjectStorageObjectInstanceComponent": ObjectStorageObjectInstanceComponent,
     "OcirContainerJobEnvironmentConfigurationDetails": OcirContainerJobEnvironmentConfigurationDetails,
     "OcirModelDeploymentEnvironmentConfigurationDetails": OcirModelDeploymentEnvironmentConfigurationDetails,
     "Pipeline": Pipeline,
@@ -312,6 +422,8 @@ data_science_type_mapping = {
     "PipelineSummary": PipelineSummary,
     "PredefinedExpressionThresholdScalingConfiguration": PredefinedExpressionThresholdScalingConfiguration,
     "PredefinedMetricExpressionRule": PredefinedMetricExpressionRule,
+    "PredictionEndpointDetails": PredictionEndpointDetails,
+    "PredictionUri": PredictionUri,
     "Project": Project,
     "ProjectSummary": ProjectSummary,
     "RegisterModelArtifactReferenceDetails": RegisterModelArtifactReferenceDetails,
@@ -334,6 +446,7 @@ data_science_type_mapping = {
     "StorageMountConfigurationDetails": StorageMountConfigurationDetails,
     "TagConfiguration": TagConfiguration,
     "ThresholdBasedAutoScalingPolicyDetails": ThresholdBasedAutoScalingPolicyDetails,
+    "TriggerMlApplicationInstanceFlowDetails": TriggerMlApplicationInstanceFlowDetails,
     "TriggerMlApplicationInstanceViewFlowDetails": TriggerMlApplicationInstanceViewFlowDetails,
     "TriggerParameter": TriggerParameter,
     "UpdateCategoryLogDetails": UpdateCategoryLogDetails,
@@ -341,6 +454,11 @@ data_science_type_mapping = {
     "UpdateDefaultModelDeploymentEnvironmentConfigurationDetails": UpdateDefaultModelDeploymentEnvironmentConfigurationDetails,
     "UpdateJobDetails": UpdateJobDetails,
     "UpdateJobRunDetails": UpdateJobRunDetails,
+    "UpdateMlApplicationDetails": UpdateMlApplicationDetails,
+    "UpdateMlApplicationImplementationDetails": UpdateMlApplicationImplementationDetails,
+    "UpdateMlApplicationImplementationVersionDetails": UpdateMlApplicationImplementationVersionDetails,
+    "UpdateMlApplicationInstanceDetails": UpdateMlApplicationInstanceDetails,
+    "UpdateMlApplicationInstanceViewDetails": UpdateMlApplicationInstanceViewDetails,
     "UpdateModelConfigurationDetails": UpdateModelConfigurationDetails,
     "UpdateModelDeploymentConfigurationDetails": UpdateModelDeploymentConfigurationDetails,
     "UpdateModelDeploymentDetails": UpdateModelDeploymentDetails,
