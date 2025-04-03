@@ -598,7 +598,7 @@ Added
 
 Changed
 -------
-* The `INSTANCE_METADATA_URL_CERTIFICATE_RETRIEVER_RETRY_STRATEGY` was changed to retry a max of 3 times for max of 3 minutes and a fixed retry inerval of 30 seconds, and retry on 404, 429 and 5xx errors
+* The `INSTANCE_METADATA_URL_CERTIFICATE_RETRIEVER_RETRY_STRATEGY` was changed to retry a max of 3 times for max of 3 minutes and a fixed retry interval of 30 seconds, and retry on 404, 429 and 5xx errors
 
 ====================
 2.129.3 - 2024-07-16
@@ -1183,7 +1183,7 @@ Breaking
 --------
 * Support for retries by default on operations of the Database Tools service
 * Support for retries by default on operations of the Monitoring service
-* The paremeter `opc_retry_token` was removed from operations `change_database_tools_connection_compartment` and `change_database_tools_private_endpoint_compartment` in the Database Tools service
+* The parameter `opc_retry_token` was removed from operations `change_database_tools_connection_compartment` and `change_database_tools_private_endpoint_compartment` in the Database Tools service
 * Properties `user_password`, `connection_string` and `user_name` were removed from models `CreateDatabaseToolsConnectionOracleDatabaseDetails` and `CreateDatabaseToolsConnectionMySqlDetails` in the Database Tools service
  
 ====================
@@ -2398,11 +2398,11 @@ Breaking
  
 Changed
 -------
-* The vendored dependency `requests` was updgraded from version `2.21.0` to `2.27.1`
-* The vendored dependency `urllib3` was updgraded from version `1.24.1` to `1.26.9`
-* The vendored dependency `chardet` was updgraded from version `3.0.4` to `4.0.0`
-* The vendored dependency `idna` was updgraded from version `2.8` to `2.10`
-* The vendored dependency `six` was updgraded from version `1.12.0` to `1.16.0`
+* The vendored dependency `requests` was upgraded from version `2.21.0` to `2.27.1`
+* The vendored dependency `urllib3` was upgraded from version `1.24.1` to `1.26.9`
+* The vendored dependency `chardet` was upgraded from version `3.0.4` to `4.0.0`
+* The vendored dependency `idna` was upgraded from version `2.8` to `2.10`
+* The vendored dependency `six` was upgraded from version `1.12.0` to `1.16.0`
  
 ====================
 2.68.0 - 2022-05-17
@@ -4005,7 +4005,7 @@ Added
 
 Breaking
 --------
-* Data type for paramater `data_storage_size_in_tbs` changed from int to float in the Database service
+* Data type for parameter `data_storage_size_in_tbs` changed from int to float in the Database service
 * Parameter `lifecycle_state` removed state `OFFLINE` and added `DISCONNECTED` in the Database service
 
 ====================
@@ -4500,7 +4500,7 @@ Added
 Breaking
 --------
 * oci.waas.WafLog.timestamp type changed from str to datetime
-* oci.waas.models.Certificate.issuer_name type changed from oci.waas.models.CertificateSubjectName to oci.waas.models.CerticateIssuerName
+* oci.waas.models.Certificate.issuer_name type changed from oci.waas.models.CertificateSubjectName to oci.waas.models.CertificateIssuerName
 * `"PURGE_WAAS_POLICY"` removed as option for oci.waas.models.WorkRequest.operation_type
 * `"PURGE_WAAS_POLICY"` removed as option for oci.waas.models.WorkRequestSummary.operation_type
 
@@ -4921,7 +4921,7 @@ Added
 
 Fixed
 -----
-* ObjectStorageClient requires int value for content_length keyword agruement to put_object and upload_part, but the SDK was not converting the type for the Requests library.
+* ObjectStorageClient requires int value for content_length keyword argument to put_object and upload_part, but the SDK was not converting the type for the Requests library.
 
 ====================
 2.0.3 - 2018-09-06
@@ -5022,7 +5022,7 @@ Added
 
 Fixed
 -------
-* Add dependency to idna >=2.5,<2.7 since cryptography and requests both have a dependency on the library and pip can install a version that is incompatable with requests.
+* Add dependency to idna >=2.5,<2.7 since cryptography and requests both have a dependency on the library and pip can install a version that is incompatible with requests.
 
 ====================
 1.4.2 - 2018-06-14
@@ -5222,7 +5222,7 @@ Changed
   * Added dependency on pyOpenSSL <= 17.4.0 as the minimum cryptography version for pyOpenSSL 17.5.0 is 2.1.4
 
 * Upgraded six dependency to 1.11.0
-* Ugraded requests dependency to 2.18.4
+* Upgraded requests dependency to 2.18.4
 
 ====================
 1.3.11 - 2017-12-11
