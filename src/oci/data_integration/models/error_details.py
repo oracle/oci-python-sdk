@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ErrorDetails(object):
     """
-    The details of an error that occured.
+    The details of an error that occurred.
     """
 
     def __init__(self, **kwargs):

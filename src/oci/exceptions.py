@@ -145,7 +145,7 @@ class MultipartUploadError(Exception):
     def __init__(self, **kwargs):
         """
         :param queue error_causes_queue:
-            A queue containing errors which occured during the multipart upload
+            A queue containing errors which occurred during the multipart upload
         """
         self.error_causes = []
         if 'error_causes_queue' in kwargs:

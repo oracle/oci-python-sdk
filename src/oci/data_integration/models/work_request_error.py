@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WorkRequestError(object):
     """
-    The error that occured while executing an operation that is tracked by a work request.
+    The error that occurred while executing an operation that is tracked by a work request.
     """
 
     def __init__(self, **kwargs):
@@ -51,7 +51,7 @@ class WorkRequestError(object):
     def code(self):
         """
         **[Required]** Gets the code of this WorkRequestError.
-        A machine-usable code for the error that occured, as listed in `API Errors`__.
+        A machine-usable code for the error that occurred, as listed in `API Errors`__.
 
         __ https://docs.cloud.oracle.com/Content/API/References/apierrors.htm
 
@@ -65,7 +65,7 @@ class WorkRequestError(object):
     def code(self, code):
         """
         Sets the code of this WorkRequestError.
-        A machine-usable code for the error that occured, as listed in `API Errors`__.
+        A machine-usable code for the error that occurred, as listed in `API Errors`__.
 
         __ https://docs.cloud.oracle.com/Content/API/References/apierrors.htm
 
@@ -79,7 +79,7 @@ class WorkRequestError(object):
     def message(self):
         """
         **[Required]** Gets the message of this WorkRequestError.
-        A user friendly description of the error that occured.
+        A user friendly description of the error that occurred.
 
 
         :return: The message of this WorkRequestError.
@@ -91,7 +91,7 @@ class WorkRequestError(object):
     def message(self, message):
         """
         Sets the message of this WorkRequestError.
-        A user friendly description of the error that occured.
+        A user friendly description of the error that occurred.
 
 
         :param message: The message of this WorkRequestError.
@@ -103,7 +103,7 @@ class WorkRequestError(object):
     def timestamp(self):
         """
         **[Required]** Gets the timestamp of this WorkRequestError.
-        The date and time the error occured, in the timestamp format defined by `RFC 3339`__.
+        The date and time the error occurred, in the timestamp format defined by `RFC 3339`__.
 
         __ https://tools.ietf.org/rfc/rfc3339
 
@@ -117,7 +117,7 @@ class WorkRequestError(object):
     def timestamp(self, timestamp):
         """
         Sets the timestamp of this WorkRequestError.
-        The date and time the error occured, in the timestamp format defined by `RFC 3339`__.
+        The date and time the error occurred, in the timestamp format defined by `RFC 3339`__.
 
         __ https://tools.ietf.org/rfc/rfc3339
 
