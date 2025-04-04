@@ -51,7 +51,7 @@ class WorkRequestError(object):
     def code(self):
         """
         **[Required]** Gets the code of this WorkRequestError.
-        A machine-usable code for the error that occured. Error codes are listed at
+        A machine-usable code for the error that occurred. Error codes are listed at
         https://docs.cloud.oracle.com/Content/API/References/apierrors.htm.
 
 
@@ -64,7 +64,7 @@ class WorkRequestError(object):
     def code(self, code):
         """
         Sets the code of this WorkRequestError.
-        A machine-usable code for the error that occured. Error codes are listed at
+        A machine-usable code for the error that occurred. Error codes are listed at
         https://docs.cloud.oracle.com/Content/API/References/apierrors.htm.
 
 
@@ -101,7 +101,7 @@ class WorkRequestError(object):
     def timestamp(self):
         """
         **[Required]** Gets the timestamp of this WorkRequestError.
-        The time the error occured. An RFC3339-formatted date and time string.
+        The time the error occurred. An RFC3339-formatted date and time string.
 
 
         :return: The timestamp of this WorkRequestError.
@@ -113,7 +113,7 @@ class WorkRequestError(object):
     def timestamp(self, timestamp):
         """
         Sets the timestamp of this WorkRequestError.
-        The time the error occured. An RFC3339-formatted date and time string.
+        The time the error occurred. An RFC3339-formatted date and time string.
 
 
         :param timestamp: The timestamp of this WorkRequestError.
