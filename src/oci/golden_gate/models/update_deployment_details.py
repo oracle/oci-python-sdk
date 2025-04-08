@@ -90,6 +90,10 @@ class UpdateDeploymentDetails(object):
             The value to assign to the is_auto_scaling_enabled property of this UpdateDeploymentDetails.
         :type is_auto_scaling_enabled: bool
 
+        :param placements:
+            The value to assign to the placements property of this UpdateDeploymentDetails.
+        :type placements: list[oci.golden_gate.models.DeploymentPlacementDetails]
+
         :param ogg_data:
             The value to assign to the ogg_data property of this UpdateDeploymentDetails.
         :type ogg_data: oci.golden_gate.models.UpdateOggDeploymentDetails
@@ -121,6 +125,7 @@ class UpdateDeploymentDetails(object):
             'fqdn': 'str',
             'cpu_core_count': 'int',
             'is_auto_scaling_enabled': 'bool',
+            'placements': 'list[DeploymentPlacementDetails]',
             'ogg_data': 'UpdateOggDeploymentDetails',
             'maintenance_window': 'UpdateMaintenanceWindowDetails',
             'maintenance_configuration': 'UpdateMaintenanceConfigurationDetails',
@@ -140,6 +145,7 @@ class UpdateDeploymentDetails(object):
             'fqdn': 'fqdn',
             'cpu_core_count': 'cpuCoreCount',
             'is_auto_scaling_enabled': 'isAutoScalingEnabled',
+            'placements': 'placements',
             'ogg_data': 'oggData',
             'maintenance_window': 'maintenanceWindow',
             'maintenance_configuration': 'maintenanceConfiguration',
@@ -158,6 +164,7 @@ class UpdateDeploymentDetails(object):
         self._fqdn = None
         self._cpu_core_count = None
         self._is_auto_scaling_enabled = None
+        self._placements = None
         self._ogg_data = None
         self._maintenance_window = None
         self._maintenance_configuration = None
@@ -514,6 +521,30 @@ class UpdateDeploymentDetails(object):
         :type: bool
         """
         self._is_auto_scaling_enabled = is_auto_scaling_enabled
+
+    @property
+    def placements(self):
+        """
+        Gets the placements of this UpdateDeploymentDetails.
+        An array of local peers of deployment
+
+
+        :return: The placements of this UpdateDeploymentDetails.
+        :rtype: list[oci.golden_gate.models.DeploymentPlacementDetails]
+        """
+        return self._placements
+
+    @placements.setter
+    def placements(self, placements):
+        """
+        Sets the placements of this UpdateDeploymentDetails.
+        An array of local peers of deployment
+
+
+        :param placements: The placements of this UpdateDeploymentDetails.
+        :type: list[oci.golden_gate.models.DeploymentPlacementDetails]
+        """
+        self._placements = placements
 
     @property
     def ogg_data(self):

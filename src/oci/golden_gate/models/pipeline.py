@@ -128,6 +128,10 @@ class Pipeline(object):
             The value to assign to the target_connection_details property of this Pipeline.
         :type target_connection_details: oci.golden_gate.models.TargetPipelineConnectionDetails
 
+        :param pipeline_diagnostic_data:
+            The value to assign to the pipeline_diagnostic_data property of this Pipeline.
+        :type pipeline_diagnostic_data: oci.golden_gate.models.PipelineDiagnosticData
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this Pipeline.
         :type freeform_tags: dict(str, str)
@@ -180,6 +184,7 @@ class Pipeline(object):
             'is_auto_scaling_enabled': 'bool',
             'source_connection_details': 'SourcePipelineConnectionDetails',
             'target_connection_details': 'TargetPipelineConnectionDetails',
+            'pipeline_diagnostic_data': 'PipelineDiagnosticData',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
@@ -201,6 +206,7 @@ class Pipeline(object):
             'is_auto_scaling_enabled': 'isAutoScalingEnabled',
             'source_connection_details': 'sourceConnectionDetails',
             'target_connection_details': 'targetConnectionDetails',
+            'pipeline_diagnostic_data': 'pipelineDiagnosticData',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
@@ -221,6 +227,7 @@ class Pipeline(object):
         self._is_auto_scaling_enabled = None
         self._source_connection_details = None
         self._target_connection_details = None
+        self._pipeline_diagnostic_data = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -495,6 +502,26 @@ class Pipeline(object):
         :type: oci.golden_gate.models.TargetPipelineConnectionDetails
         """
         self._target_connection_details = target_connection_details
+
+    @property
+    def pipeline_diagnostic_data(self):
+        """
+        Gets the pipeline_diagnostic_data of this Pipeline.
+
+        :return: The pipeline_diagnostic_data of this Pipeline.
+        :rtype: oci.golden_gate.models.PipelineDiagnosticData
+        """
+        return self._pipeline_diagnostic_data
+
+    @pipeline_diagnostic_data.setter
+    def pipeline_diagnostic_data(self, pipeline_diagnostic_data):
+        """
+        Sets the pipeline_diagnostic_data of this Pipeline.
+
+        :param pipeline_diagnostic_data: The pipeline_diagnostic_data of this Pipeline.
+        :type: oci.golden_gate.models.PipelineDiagnosticData
+        """
+        self._pipeline_diagnostic_data = pipeline_diagnostic_data
 
     @property
     def freeform_tags(self):

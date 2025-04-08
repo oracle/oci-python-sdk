@@ -56,6 +56,8 @@ from .oauth_metadata_summary import OauthMetadataSummary
 from .port_information import PortInformation
 from .pre_co_user_credentials import PreCoUserCredentials
 from .replica_details import ReplicaDetails
+from .replica_external_vault_metadata import ReplicaExternalVaultMetadata
+from .replica_vault_metadata import ReplicaVaultMetadata
 from .replication_status_details import ReplicationStatusDetails
 from .restore_key_from_object_store_details import RestoreKeyFromObjectStoreDetails
 from .restore_vault_from_object_store_details import RestoreVaultFromObjectStoreDetails
@@ -132,6 +134,8 @@ key_management_type_mapping = {
     "PortInformation": PortInformation,
     "PreCoUserCredentials": PreCoUserCredentials,
     "ReplicaDetails": ReplicaDetails,
+    "ReplicaExternalVaultMetadata": ReplicaExternalVaultMetadata,
+    "ReplicaVaultMetadata": ReplicaVaultMetadata,
     "ReplicationStatusDetails": ReplicationStatusDetails,
     "RestoreKeyFromObjectStoreDetails": RestoreKeyFromObjectStoreDetails,
     "RestoreVaultFromObjectStoreDetails": RestoreVaultFromObjectStoreDetails,

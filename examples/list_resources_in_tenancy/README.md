@@ -4,7 +4,7 @@ Several utilities to help with producing reports from OCI
 
 **DISCLAIMER – This is not an official Oracle application,  It does not supported by Oracle Support, It should NOT be used for utilization calculation purposes
 
-**Developed by Adi Zohar, 2021**
+**Developed by Adi Zohar, 2021-2025**
 
 ## Executing using Cloud Shell:
 ```
@@ -20,6 +20,7 @@ Several utilities to help with producing reports from OCI
        python3 list_bv_backups_in_tenancy.py -dt
        python3 list_limits_per_compartments.py -dt
        python3 list_databases_shapes_in_tenancy.py -dt -csv output.csv
+       python3 list_all_compartments_in_tenancy.py -dt -csv output.csv -json output.json
 
     3. Help with --help
 ```
@@ -195,4 +196,19 @@ optional arguments:
   -cr FILTER_COMPR   filter by compartment Path
   -js                print in JSON format
   -csv CSV           Output to CSV file, Input as file name
+```
+
+## list_all_compartments_in_tenancy.py
+
+usage: list_all_compartments_in_tenancy.py [-h] [-t CONFIG_PROFILE] [-p PROXY] [-ip] [-dt] [-csv CSV_FILE] [-json JSON_FILE]
+
+```
+options:
+  -h, --help         show this help message and exit
+  -t CONFIG_PROFILE  Config file section to use (tenancy profile)
+  -p PROXY           Set Proxy (i.e. www-proxy-server.com:80)
+  -ip                Use Instance Principals for Authentication
+  -dt                Use Delegation Token for Authentication
+  -csv CSV_FILE      Output to CSV file
+  -json JSON_FILE    Output to JSON file
 ```

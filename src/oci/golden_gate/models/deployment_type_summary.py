@@ -174,6 +174,34 @@ class DeploymentTypeSummary(object):
     #: This constant has a value of "MICROSOFT_FABRIC"
     CONNECTION_TYPES_MICROSOFT_FABRIC = "MICROSOFT_FABRIC"
 
+    #: A constant which can be used with the supported_capabilities property of a DeploymentTypeSummary.
+    #: This constant has a value of "PLACEMENT"
+    SUPPORTED_CAPABILITIES_PLACEMENT = "PLACEMENT"
+
+    #: A constant which can be used with the supported_capabilities property of a DeploymentTypeSummary.
+    #: This constant has a value of "DISASTER_RECOVERY"
+    SUPPORTED_CAPABILITIES_DISASTER_RECOVERY = "DISASTER_RECOVERY"
+
+    #: A constant which can be used with the supported_capabilities property of a DeploymentTypeSummary.
+    #: This constant has a value of "GROUP_TO_ROLE"
+    SUPPORTED_CAPABILITIES_GROUP_TO_ROLE = "GROUP_TO_ROLE"
+
+    #: A constant which can be used with the supported_capabilities property of a DeploymentTypeSummary.
+    #: This constant has a value of "BACKUP_RESTORE"
+    SUPPORTED_CAPABILITIES_BACKUP_RESTORE = "BACKUP_RESTORE"
+
+    #: A constant which can be used with the supported_capabilities property of a DeploymentTypeSummary.
+    #: This constant has a value of "COPY_BACKUP"
+    SUPPORTED_CAPABILITIES_COPY_BACKUP = "COPY_BACKUP"
+
+    #: A constant which can be used with the supported_capabilities property of a DeploymentTypeSummary.
+    #: This constant has a value of "MANUAL_BACKUP"
+    SUPPORTED_CAPABILITIES_MANUAL_BACKUP = "MANUAL_BACKUP"
+
+    #: A constant which can be used with the supported_capabilities property of a DeploymentTypeSummary.
+    #: This constant has a value of "SCHEDULE_MANUAL_BACKUP"
+    SUPPORTED_CAPABILITIES_SCHEDULE_MANUAL_BACKUP = "SCHEDULE_MANUAL_BACKUP"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DeploymentTypeSummary object with values from keyword arguments.
@@ -221,6 +249,12 @@ class DeploymentTypeSummary(object):
             The value to assign to the default_username property of this DeploymentTypeSummary.
         :type default_username: str
 
+        :param supported_capabilities:
+            The value to assign to the supported_capabilities property of this DeploymentTypeSummary.
+            Allowed values for items in this list are: "PLACEMENT", "DISASTER_RECOVERY", "GROUP_TO_ROLE", "BACKUP_RESTORE", "COPY_BACKUP", "MANUAL_BACKUP", "SCHEDULE_MANUAL_BACKUP", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type supported_capabilities: list[str]
+
         """
         self.swagger_types = {
             'category': 'str',
@@ -231,7 +265,8 @@ class DeploymentTypeSummary(object):
             'target_technologies': 'list[str]',
             'ogg_version': 'str',
             'supported_technologies_url': 'str',
-            'default_username': 'str'
+            'default_username': 'str',
+            'supported_capabilities': 'list[str]'
         }
         self.attribute_map = {
             'category': 'category',
@@ -242,7 +277,8 @@ class DeploymentTypeSummary(object):
             'target_technologies': 'targetTechnologies',
             'ogg_version': 'oggVersion',
             'supported_technologies_url': 'supportedTechnologiesUrl',
-            'default_username': 'defaultUsername'
+            'default_username': 'defaultUsername',
+            'supported_capabilities': 'supportedCapabilities'
         }
         self._category = None
         self._display_name = None
@@ -253,6 +289,7 @@ class DeploymentTypeSummary(object):
         self._ogg_version = None
         self._supported_technologies_url = None
         self._default_username = None
+        self._supported_capabilities = None
 
     @property
     def category(self):
@@ -501,6 +538,36 @@ class DeploymentTypeSummary(object):
         :type: str
         """
         self._default_username = default_username
+
+    @property
+    def supported_capabilities(self):
+        """
+        Gets the supported_capabilities of this DeploymentTypeSummary.
+        Specifies supported capabilities or features by a deployment type .
+
+        Allowed values for items in this list are: "PLACEMENT", "DISASTER_RECOVERY", "GROUP_TO_ROLE", "BACKUP_RESTORE", "COPY_BACKUP", "MANUAL_BACKUP", "SCHEDULE_MANUAL_BACKUP", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The supported_capabilities of this DeploymentTypeSummary.
+        :rtype: list[str]
+        """
+        return self._supported_capabilities
+
+    @supported_capabilities.setter
+    def supported_capabilities(self, supported_capabilities):
+        """
+        Sets the supported_capabilities of this DeploymentTypeSummary.
+        Specifies supported capabilities or features by a deployment type .
+
+
+        :param supported_capabilities: The supported_capabilities of this DeploymentTypeSummary.
+        :type: list[str]
+        """
+        allowed_values = ["PLACEMENT", "DISASTER_RECOVERY", "GROUP_TO_ROLE", "BACKUP_RESTORE", "COPY_BACKUP", "MANUAL_BACKUP", "SCHEDULE_MANUAL_BACKUP"]
+        if supported_capabilities:
+            supported_capabilities[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in supported_capabilities]
+        self._supported_capabilities = supported_capabilities
 
     def __repr__(self):
         return formatted_flat_dict(self)

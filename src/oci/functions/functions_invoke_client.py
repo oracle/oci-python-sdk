@@ -146,6 +146,9 @@ class FunctionsInvokeClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
+        :param bool is_dry_run: (optional)
+            Indicates that the request is a dry run, if set to \"true\". A dry run request does not execute the function.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -186,7 +189,8 @@ class FunctionsInvokeClient(object):
             "invoke_function_body",
             "fn_intent",
             "fn_invoke_type",
-            "opc_request_id"
+            "opc_request_id",
+            "is_dry_run"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -207,7 +211,8 @@ class FunctionsInvokeClient(object):
             "accept": "*/*",
             "fn-intent": kwargs.get("fn_intent", missing),
             "fn-invoke-type": kwargs.get("fn_invoke_type", missing),
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "is-dry-run": kwargs.get("is_dry_run", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 

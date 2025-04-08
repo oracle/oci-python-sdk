@@ -955,7 +955,7 @@ class ServiceConnectorClient(object):
 
             Example: `ACTIVE`
 
-            Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
+            Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "NEEDS_ATTENTION", "DELETING", "DELETED", "FAILED"
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -1034,7 +1034,7 @@ class ServiceConnectorClient(object):
                 f"list_service_connectors got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
+            lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "NEEDS_ATTENTION", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
                     f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
