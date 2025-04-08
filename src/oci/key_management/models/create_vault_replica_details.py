@@ -24,14 +24,21 @@ class CreateVaultReplicaDetails(object):
             The value to assign to the replica_region property of this CreateVaultReplicaDetails.
         :type replica_region: str
 
+        :param replica_vault_metadata:
+            The value to assign to the replica_vault_metadata property of this CreateVaultReplicaDetails.
+        :type replica_vault_metadata: oci.key_management.models.ReplicaVaultMetadata
+
         """
         self.swagger_types = {
-            'replica_region': 'str'
+            'replica_region': 'str',
+            'replica_vault_metadata': 'ReplicaVaultMetadata'
         }
         self.attribute_map = {
-            'replica_region': 'replicaRegion'
+            'replica_region': 'replicaRegion',
+            'replica_vault_metadata': 'replicaVaultMetadata'
         }
         self._replica_region = None
+        self._replica_vault_metadata = None
 
     @property
     def replica_region(self):
@@ -56,6 +63,26 @@ class CreateVaultReplicaDetails(object):
         :type: str
         """
         self._replica_region = replica_region
+
+    @property
+    def replica_vault_metadata(self):
+        """
+        Gets the replica_vault_metadata of this CreateVaultReplicaDetails.
+
+        :return: The replica_vault_metadata of this CreateVaultReplicaDetails.
+        :rtype: oci.key_management.models.ReplicaVaultMetadata
+        """
+        return self._replica_vault_metadata
+
+    @replica_vault_metadata.setter
+    def replica_vault_metadata(self, replica_vault_metadata):
+        """
+        Sets the replica_vault_metadata of this CreateVaultReplicaDetails.
+
+        :param replica_vault_metadata: The replica_vault_metadata of this CreateVaultReplicaDetails.
+        :type: oci.key_management.models.ReplicaVaultMetadata
+        """
+        self._replica_vault_metadata = replica_vault_metadata
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -63,8 +63,7 @@ class TargetDetails(object):
 
         :param kind:
             The value to assign to the kind property of this TargetDetails.
-            Allowed values for this property are: "functions", "loggingAnalytics", "monitoring", "notifications", "objectStorage", "streaming", 'UNKNOWN_ENUM_VALUE'.
-            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "functions", "loggingAnalytics", "monitoring", "notifications", "objectStorage", "streaming"
         :type kind: str
 
         """
@@ -110,8 +109,7 @@ class TargetDetails(object):
         **[Required]** Gets the kind of this TargetDetails.
         The type discriminator.
 
-        Allowed values for this property are: "functions", "loggingAnalytics", "monitoring", "notifications", "objectStorage", "streaming", 'UNKNOWN_ENUM_VALUE'.
-        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "functions", "loggingAnalytics", "monitoring", "notifications", "objectStorage", "streaming"
 
 
         :return: The kind of this TargetDetails.
@@ -131,7 +129,9 @@ class TargetDetails(object):
         """
         allowed_values = ["functions", "loggingAnalytics", "monitoring", "notifications", "objectStorage", "streaming"]
         if not value_allowed_none_or_none_sentinel(kind, allowed_values):
-            kind = 'UNKNOWN_ENUM_VALUE'
+            raise ValueError(
+                f"Invalid value for `kind`, must be None or one of {allowed_values}"
+            )
         self._kind = kind
 
     def __repr__(self):

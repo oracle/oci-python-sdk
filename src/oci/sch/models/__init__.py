@@ -14,38 +14,54 @@ from .create_service_connector_details import CreateServiceConnectorDetails
 from .dimension_details import DimensionDetails
 from .dimension_value_details import DimensionValueDetails
 from .function_task_details import FunctionTaskDetails
+from .function_task_details_response import FunctionTaskDetailsResponse
 from .functions_target_details import FunctionsTargetDetails
+from .functions_target_details_response import FunctionsTargetDetailsResponse
 from .jmes_path_dimension_value import JmesPathDimensionValue
 from .latest_streaming_cursor import LatestStreamingCursor
 from .log_rule_task_details import LogRuleTaskDetails
+from .log_rule_task_details_response import LogRuleTaskDetailsResponse
 from .log_source import LogSource
 from .logging_analytics_target_details import LoggingAnalyticsTargetDetails
+from .logging_analytics_target_details_response import LoggingAnalyticsTargetDetailsResponse
 from .logging_source_details import LoggingSourceDetails
+from .logging_source_details_response import LoggingSourceDetailsResponse
 from .monitoring_source import MonitoringSource
 from .monitoring_source_all_metrics import MonitoringSourceAllMetrics
 from .monitoring_source_details import MonitoringSourceDetails
+from .monitoring_source_details_response import MonitoringSourceDetailsResponse
 from .monitoring_source_metric_details import MonitoringSourceMetricDetails
 from .monitoring_source_namespace_details import MonitoringSourceNamespaceDetails
 from .monitoring_source_selected_namespace import MonitoringSourceSelectedNamespace
 from .monitoring_source_selected_namespace_details import MonitoringSourceSelectedNamespaceDetails
 from .monitoring_target_details import MonitoringTargetDetails
+from .monitoring_target_details_response import MonitoringTargetDetailsResponse
 from .notifications_target_details import NotificationsTargetDetails
+from .notifications_target_details_response import NotificationsTargetDetailsResponse
 from .object_storage_target_details import ObjectStorageTargetDetails
+from .object_storage_target_details_response import ObjectStorageTargetDetailsResponse
 from .plugin_source_details import PluginSourceDetails
+from .plugin_source_details_response import PluginSourceDetailsResponse
+from .private_endpoint_metadata import PrivateEndpointMetadata
 from .service_connector import ServiceConnector
 from .service_connector_collection import ServiceConnectorCollection
 from .service_connector_summary import ServiceConnectorSummary
 from .source_connector_plugin import SourceConnectorPlugin
 from .source_connector_plugin_summary import SourceConnectorPluginSummary
 from .source_details import SourceDetails
+from .source_details_response import SourceDetailsResponse
 from .static_dimension_value import StaticDimensionValue
 from .streaming_cursor_details import StreamingCursorDetails
 from .streaming_source_details import StreamingSourceDetails
+from .streaming_source_details_response import StreamingSourceDetailsResponse
 from .streaming_target_details import StreamingTargetDetails
+from .streaming_target_details_response import StreamingTargetDetailsResponse
 from .target_connector_plugin import TargetConnectorPlugin
 from .target_connector_plugin_summary import TargetConnectorPluginSummary
 from .target_details import TargetDetails
+from .target_details_response import TargetDetailsResponse
 from .task_details import TaskDetails
+from .task_details_response import TaskDetailsResponse
 from .trim_horizon_streaming_cursor import TrimHorizonStreamingCursor
 from .update_service_connector_details import UpdateServiceConnectorDetails
 from .work_request import WorkRequest
@@ -66,38 +82,54 @@ sch_type_mapping = {
     "DimensionDetails": DimensionDetails,
     "DimensionValueDetails": DimensionValueDetails,
     "FunctionTaskDetails": FunctionTaskDetails,
+    "FunctionTaskDetailsResponse": FunctionTaskDetailsResponse,
     "FunctionsTargetDetails": FunctionsTargetDetails,
+    "FunctionsTargetDetailsResponse": FunctionsTargetDetailsResponse,
     "JmesPathDimensionValue": JmesPathDimensionValue,
     "LatestStreamingCursor": LatestStreamingCursor,
     "LogRuleTaskDetails": LogRuleTaskDetails,
+    "LogRuleTaskDetailsResponse": LogRuleTaskDetailsResponse,
     "LogSource": LogSource,
     "LoggingAnalyticsTargetDetails": LoggingAnalyticsTargetDetails,
+    "LoggingAnalyticsTargetDetailsResponse": LoggingAnalyticsTargetDetailsResponse,
     "LoggingSourceDetails": LoggingSourceDetails,
+    "LoggingSourceDetailsResponse": LoggingSourceDetailsResponse,
     "MonitoringSource": MonitoringSource,
     "MonitoringSourceAllMetrics": MonitoringSourceAllMetrics,
     "MonitoringSourceDetails": MonitoringSourceDetails,
+    "MonitoringSourceDetailsResponse": MonitoringSourceDetailsResponse,
     "MonitoringSourceMetricDetails": MonitoringSourceMetricDetails,
     "MonitoringSourceNamespaceDetails": MonitoringSourceNamespaceDetails,
     "MonitoringSourceSelectedNamespace": MonitoringSourceSelectedNamespace,
     "MonitoringSourceSelectedNamespaceDetails": MonitoringSourceSelectedNamespaceDetails,
     "MonitoringTargetDetails": MonitoringTargetDetails,
+    "MonitoringTargetDetailsResponse": MonitoringTargetDetailsResponse,
     "NotificationsTargetDetails": NotificationsTargetDetails,
+    "NotificationsTargetDetailsResponse": NotificationsTargetDetailsResponse,
     "ObjectStorageTargetDetails": ObjectStorageTargetDetails,
+    "ObjectStorageTargetDetailsResponse": ObjectStorageTargetDetailsResponse,
     "PluginSourceDetails": PluginSourceDetails,
+    "PluginSourceDetailsResponse": PluginSourceDetailsResponse,
+    "PrivateEndpointMetadata": PrivateEndpointMetadata,
     "ServiceConnector": ServiceConnector,
     "ServiceConnectorCollection": ServiceConnectorCollection,
     "ServiceConnectorSummary": ServiceConnectorSummary,
     "SourceConnectorPlugin": SourceConnectorPlugin,
     "SourceConnectorPluginSummary": SourceConnectorPluginSummary,
     "SourceDetails": SourceDetails,
+    "SourceDetailsResponse": SourceDetailsResponse,
     "StaticDimensionValue": StaticDimensionValue,
     "StreamingCursorDetails": StreamingCursorDetails,
     "StreamingSourceDetails": StreamingSourceDetails,
+    "StreamingSourceDetailsResponse": StreamingSourceDetailsResponse,
     "StreamingTargetDetails": StreamingTargetDetails,
+    "StreamingTargetDetailsResponse": StreamingTargetDetailsResponse,
     "TargetConnectorPlugin": TargetConnectorPlugin,
     "TargetConnectorPluginSummary": TargetConnectorPluginSummary,
     "TargetDetails": TargetDetails,
+    "TargetDetailsResponse": TargetDetailsResponse,
     "TaskDetails": TaskDetails,
+    "TaskDetailsResponse": TaskDetailsResponse,
     "TrimHorizonStreamingCursor": TrimHorizonStreamingCursor,
     "UpdateServiceConnectorDetails": UpdateServiceConnectorDetails,
     "WorkRequest": WorkRequest,

@@ -22,7 +22,7 @@ import sys
 
 
 class ShowOCIOutput(object):
-    version = "25.03.18"
+    version = "25.04.08"
 
     ##########################################################################
     # spaces for align
@@ -8496,8 +8496,23 @@ class ShowOCICSV(object):
                         'baseline_ocpu_utilization': instance['shape_baseline_ocpu_utilization'],
                         'gpus': instance['shape_gpus'],
                         'gpu_description': instance['shape_gpu_description'],
+                        'processor_description': instance['shape_processor_description'],
                         'max_vnic_attachments': instance['shape_max_vnic_attachments'],
                         'networking_bandwidth_in_gbps': instance['shape_networking_bandwidth_in_gbps'],
+                        'launch_mode': instance['launch_mode'],
+                        'launch_boot_volume_type': instance['launch_boot_volume_type'],
+                        'launch_firmware': instance['launch_firmware'],
+                        'launch_network_type': instance['launch_network_type'],
+                        'launch_remote_data_volume_type': instance['launch_remote_data_volume_type'],
+                        'launch_is_pv_encryption_in_transit_enabled': instance['launch_is_pv_encryption_in_transit_enabled'],
+                        'launch_is_consistent_volume_naming_enabled': instance['launch_is_consistent_volume_naming_enabled'],
+                        'are_legacy_imds_endpoints_disabled': instance['are_legacy_imds_endpoints_disabled'],
+                        'is_cross_numa_node': instance['is_cross_numa_node'],
+                        'platform_type': instance['platform_type'],
+                        'platform_is_secure_boot_enabled': instance['platform_is_secure_boot_enabled'],
+                        'platform_is_trusted_platform_module_enabled': instance['platform_is_trusted_platform_module_enabled'],
+                        'platform_is_measured_boot_enabled': instance['platform_is_measured_boot_enabled'],
+                        'platform_is_memory_encryption_enabled': instance['platform_is_memory_encryption_enabled'],
                         'local_storage_tb': instance['shape_storage_tb'],
                         'public_ips': str(', '.join(x['details']['public_ip'] for x in instance['vnic'])),
                         'private_ips': str(', '.join(x['details']['private_ip'] for x in instance['vnic'])),
@@ -8522,8 +8537,7 @@ class ShowOCICSV(object):
                         'block_volumes_is_multipath': "",
                         'block_volumes_is_read_only': "",
                         'vnic_ids': "",
-                        'is_cross_numa_node': instance['is_cross_numa_node'],
-                        'launch_mode': instance['launch_mode'],
+                        'time_maintenance_reboot_due': instance['time_maintenance_reboot_due'],
                         'licensing_configs': str(instance['licensing_configs']),
                         'freeform_tags': self.__get_freeform_tags(instance['freeform_tags']),
                         'defined_tags': self.__get_defined_tags(instance['defined_tags']),

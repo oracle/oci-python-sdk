@@ -23,6 +23,14 @@ class ProcessOptions(object):
     #: This constant has a value of "DISABLED"
     SHOULD_RESTART_ON_FAILURE_DISABLED = "DISABLED"
 
+    #: A constant which can be used with the start_using_default_mapping property of a ProcessOptions.
+    #: This constant has a value of "ENABLED"
+    START_USING_DEFAULT_MAPPING_ENABLED = "ENABLED"
+
+    #: A constant which can be used with the start_using_default_mapping property of a ProcessOptions.
+    #: This constant has a value of "DISABLED"
+    START_USING_DEFAULT_MAPPING_DISABLED = "DISABLED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ProcessOptions object with values from keyword arguments.
@@ -42,20 +50,29 @@ class ProcessOptions(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type should_restart_on_failure: str
 
+        :param start_using_default_mapping:
+            The value to assign to the start_using_default_mapping property of this ProcessOptions.
+            Allowed values for this property are: "ENABLED", "DISABLED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type start_using_default_mapping: str
+
         """
         self.swagger_types = {
             'initial_data_load': 'InitialDataLoad',
             'replicate_schema_change': 'ReplicateSchemaChange',
-            'should_restart_on_failure': 'str'
+            'should_restart_on_failure': 'str',
+            'start_using_default_mapping': 'str'
         }
         self.attribute_map = {
             'initial_data_load': 'initialDataLoad',
             'replicate_schema_change': 'replicateSchemaChange',
-            'should_restart_on_failure': 'shouldRestartOnFailure'
+            'should_restart_on_failure': 'shouldRestartOnFailure',
+            'start_using_default_mapping': 'startUsingDefaultMapping'
         }
         self._initial_data_load = None
         self._replicate_schema_change = None
         self._should_restart_on_failure = None
+        self._start_using_default_mapping = None
 
     @property
     def initial_data_load(self):
@@ -126,6 +143,36 @@ class ProcessOptions(object):
         if not value_allowed_none_or_none_sentinel(should_restart_on_failure, allowed_values):
             should_restart_on_failure = 'UNKNOWN_ENUM_VALUE'
         self._should_restart_on_failure = should_restart_on_failure
+
+    @property
+    def start_using_default_mapping(self):
+        """
+        Gets the start_using_default_mapping of this ProcessOptions.
+        If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+
+        Allowed values for this property are: "ENABLED", "DISABLED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The start_using_default_mapping of this ProcessOptions.
+        :rtype: str
+        """
+        return self._start_using_default_mapping
+
+    @start_using_default_mapping.setter
+    def start_using_default_mapping(self, start_using_default_mapping):
+        """
+        Sets the start_using_default_mapping of this ProcessOptions.
+        If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+
+
+        :param start_using_default_mapping: The start_using_default_mapping of this ProcessOptions.
+        :type: str
+        """
+        allowed_values = ["ENABLED", "DISABLED"]
+        if not value_allowed_none_or_none_sentinel(start_using_default_mapping, allowed_values):
+            start_using_default_mapping = 'UNKNOWN_ENUM_VALUE'
+        self._start_using_default_mapping = start_using_default_mapping
 
     def __repr__(self):
         return formatted_flat_dict(self)

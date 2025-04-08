@@ -43,8 +43,7 @@ class TaskDetails(object):
 
         :param kind:
             The value to assign to the kind property of this TaskDetails.
-            Allowed values for this property are: "function", "logRule", 'UNKNOWN_ENUM_VALUE'.
-            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "function", "logRule"
         :type kind: str
 
         """
@@ -78,8 +77,7 @@ class TaskDetails(object):
         **[Required]** Gets the kind of this TaskDetails.
         The type discriminator.
 
-        Allowed values for this property are: "function", "logRule", 'UNKNOWN_ENUM_VALUE'.
-        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "function", "logRule"
 
 
         :return: The kind of this TaskDetails.
@@ -99,7 +97,9 @@ class TaskDetails(object):
         """
         allowed_values = ["function", "logRule"]
         if not value_allowed_none_or_none_sentinel(kind, allowed_values):
-            kind = 'UNKNOWN_ENUM_VALUE'
+            raise ValueError(
+                f"Invalid value for `kind`, must be None or one of {allowed_values}"
+            )
         self._kind = kind
 
     def __repr__(self):

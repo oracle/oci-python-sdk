@@ -18,6 +18,7 @@ Executing using Cloud Shell:
        python3 list_policies_in_tenancy.py -dt
        python3 list_all_capacity_reservations_in_tenancy.py -dt
        python3 list_databases_shapes_in_tenancy.py -dt -csv output.csv
+       python3 list_all_compartments_in_tenancy.py -dt -csv output.csv -json output.json
 
     3. Help with --help
 

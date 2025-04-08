@@ -76,6 +76,8 @@ Key Management
     oci.key_management.models.PortInformation
     oci.key_management.models.PreCoUserCredentials
     oci.key_management.models.ReplicaDetails
+    oci.key_management.models.ReplicaExternalVaultMetadata
+    oci.key_management.models.ReplicaVaultMetadata
     oci.key_management.models.ReplicationStatusDetails
     oci.key_management.models.RestoreKeyFromObjectStoreDetails
     oci.key_management.models.RestoreVaultFromObjectStoreDetails

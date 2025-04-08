@@ -39,7 +39,7 @@ import threading
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    version = "25.03.18"
+    version = "25.04.08"
     oci_compatible_version = "2.148.0"
     thread_lock = threading.Lock()
     collection_ljust = 40

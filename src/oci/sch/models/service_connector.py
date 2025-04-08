@@ -36,6 +36,10 @@ class ServiceConnector(object):
     LIFECYCLE_STATE_INACTIVE = "INACTIVE"
 
     #: A constant which can be used with the lifecycle_state property of a ServiceConnector.
+    #: This constant has a value of "NEEDS_ATTENTION"
+    LIFECYCLE_STATE_NEEDS_ATTENTION = "NEEDS_ATTENTION"
+
+    #: A constant which can be used with the lifecycle_state property of a ServiceConnector.
     #: This constant has a value of "DELETING"
     LIFECYCLE_STATE_DELETING = "DELETING"
 
@@ -78,7 +82,7 @@ class ServiceConnector(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this ServiceConnector.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "NEEDS_ATTENTION", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -92,15 +96,15 @@ class ServiceConnector(object):
 
         :param source:
             The value to assign to the source property of this ServiceConnector.
-        :type source: oci.sch.models.SourceDetails
+        :type source: oci.sch.models.SourceDetailsResponse
 
         :param tasks:
             The value to assign to the tasks property of this ServiceConnector.
-        :type tasks: list[oci.sch.models.TaskDetails]
+        :type tasks: list[oci.sch.models.TaskDetailsResponse]
 
         :param target:
             The value to assign to the target property of this ServiceConnector.
-        :type target: oci.sch.models.TargetDetails
+        :type target: oci.sch.models.TargetDetailsResponse
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ServiceConnector.
@@ -125,9 +129,9 @@ class ServiceConnector(object):
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'lifecyle_details': 'str',
-            'source': 'SourceDetails',
-            'tasks': 'list[TaskDetails]',
-            'target': 'TargetDetails',
+            'source': 'SourceDetailsResponse',
+            'tasks': 'list[TaskDetailsResponse]',
+            'target': 'TargetDetailsResponse',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -341,7 +345,7 @@ class ServiceConnector(object):
         **[Required]** Gets the lifecycle_state of this ServiceConnector.
         The current state of the connector.
 
-        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "NEEDS_ATTENTION", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -360,7 +364,7 @@ class ServiceConnector(object):
         :param lifecycle_state: The lifecycle_state of this ServiceConnector.
         :type: str
         """
-        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
+        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "NEEDS_ATTENTION", "DELETING", "DELETED", "FAILED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -429,7 +433,7 @@ class ServiceConnector(object):
         Gets the source of this ServiceConnector.
 
         :return: The source of this ServiceConnector.
-        :rtype: oci.sch.models.SourceDetails
+        :rtype: oci.sch.models.SourceDetailsResponse
         """
         return self._source
 
@@ -439,7 +443,7 @@ class ServiceConnector(object):
         Sets the source of this ServiceConnector.
 
         :param source: The source of this ServiceConnector.
-        :type: oci.sch.models.SourceDetails
+        :type: oci.sch.models.SourceDetailsResponse
         """
         self._source = source
 
@@ -451,7 +455,7 @@ class ServiceConnector(object):
 
 
         :return: The tasks of this ServiceConnector.
-        :rtype: list[oci.sch.models.TaskDetails]
+        :rtype: list[oci.sch.models.TaskDetailsResponse]
         """
         return self._tasks
 
@@ -463,7 +467,7 @@ class ServiceConnector(object):
 
 
         :param tasks: The tasks of this ServiceConnector.
-        :type: list[oci.sch.models.TaskDetails]
+        :type: list[oci.sch.models.TaskDetailsResponse]
         """
         self._tasks = tasks
 
@@ -473,7 +477,7 @@ class ServiceConnector(object):
         Gets the target of this ServiceConnector.
 
         :return: The target of this ServiceConnector.
-        :rtype: oci.sch.models.TargetDetails
+        :rtype: oci.sch.models.TargetDetailsResponse
         """
         return self._target
 
@@ -483,7 +487,7 @@ class ServiceConnector(object):
         Sets the target of this ServiceConnector.
 
         :param target: The target of this ServiceConnector.
-        :type: oci.sch.models.TargetDetails
+        :type: oci.sch.models.TargetDetailsResponse
         """
         self._target = target
 

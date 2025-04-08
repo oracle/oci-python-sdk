@@ -5,6 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.150.0 - 2025-04-08
+====================
+
+Added 
+----- 
+* Support for connector source and targets with private endpoints in the Resource Scheduler service 
+* Support for Cross Region Replication(XRR) for external key managers in the Key Management service 
+* Support for dry run of function invocation in the Functions service 
+* Support for collecting diagnostics for ZeroETL pipelines in the GoldenGate service 
+* Support for adding, removing and switchover to local peers of deployment in different availability and fault domains within in the same region in the GoldenGate service 
+* Support for creating standby deployments in the GoldenGate service   
+
+Breaking 
+-------- 
+* The property `kind` in the `SourceDetails`, `TaskDetails` and `TargetDetails` models in the Resource Scheduler service was fixed to no longer support `UNKNOWN_ENUM_VALUE`. Instead, a `ValueError` will be raised if this property is assigned a value that it does not support. 
+* The type of property `source` in model `ServiceConnector` changed from `oci.sch.models.SourceDetails` to `oci.sch.models.SourceDetailsResponse` in the Resource Scheduler service 
+* The type of property `tasks` in model `ServiceConnector` changed from `oci.sch.models.TargetDetails` to `oci.sch.models.TaskDetailsResponse` in the Resource Scheduler service 
+* The type of property `target` in model `ServiceConnector` changed from `oci.sch.models.TaskDetails` to `oci.sch.models.TargetDetailsResponse` in the Resource Scheduler service   
+
+====================
 2.149.2 - 2025-04-01
 ====================
 

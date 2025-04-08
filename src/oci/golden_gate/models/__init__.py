@@ -6,6 +6,7 @@
 
 from __future__ import absolute_import
 
+from .add_deployment_local_peer_details import AddDeploymentLocalPeerDetails
 from .add_resource_lock_details import AddResourceLockDetails
 from .amazon_kinesis_connection import AmazonKinesisConnection
 from .amazon_kinesis_connection_summary import AmazonKinesisConnectionSummary
@@ -30,6 +31,7 @@ from .change_deployment_backup_compartment_details import ChangeDeploymentBackup
 from .change_deployment_compartment_details import ChangeDeploymentCompartmentDetails
 from .change_pipeline_compartment_details import ChangePipelineCompartmentDetails
 from .collect_deployment_diagnostic_details import CollectDeploymentDiagnosticDetails
+from .collect_pipeline_diagnostic_details import CollectPipelineDiagnosticDetails
 from .connection import Connection
 from .connection_assignment import ConnectionAssignment
 from .connection_assignment_collection import ConnectionAssignmentCollection
@@ -107,6 +109,10 @@ from .deployment_diagnostic_data import DeploymentDiagnosticData
 from .deployment_environment_collection import DeploymentEnvironmentCollection
 from .deployment_environment_summary import DeploymentEnvironmentSummary
 from .deployment_message_collection import DeploymentMessageCollection
+from .deployment_peer_collection import DeploymentPeerCollection
+from .deployment_peer_summary import DeploymentPeerSummary
+from .deployment_placement_details import DeploymentPlacementDetails
+from .deployment_placement_info import DeploymentPlacementInfo
 from .deployment_summary import DeploymentSummary
 from .deployment_type_collection import DeploymentTypeCollection
 from .deployment_type_summary import DeploymentTypeSummary
@@ -170,6 +176,7 @@ from .oracle_nosql_connection import OracleNosqlConnection
 from .oracle_nosql_connection_summary import OracleNosqlConnectionSummary
 from .pipeline import Pipeline
 from .pipeline_collection import PipelineCollection
+from .pipeline_diagnostic_data import PipelineDiagnosticData
 from .pipeline_initialization_step import PipelineInitializationStep
 from .pipeline_initialization_steps import PipelineInitializationSteps
 from .pipeline_running_process_collection import PipelineRunningProcessCollection
@@ -187,6 +194,7 @@ from .recipe_summary_collection import RecipeSummaryCollection
 from .redis_connection import RedisConnection
 from .redis_connection_summary import RedisConnectionSummary
 from .refresh_connection_details import RefreshConnectionDetails
+from .remove_deployment_local_peer_details import RemoveDeploymentLocalPeerDetails
 from .remove_resource_lock_details import RemoveResourceLockDetails
 from .replicate_schema_change import ReplicateSchemaChange
 from .reschedule_deployment_upgrade_details import RescheduleDeploymentUpgradeDetails
@@ -203,6 +211,7 @@ from .start_pipeline_details import StartPipelineDetails
 from .step_message import StepMessage
 from .stop_deployment_details import StopDeploymentDetails
 from .stop_pipeline_details import StopPipelineDetails
+from .switchover_deployment_peer_details import SwitchoverDeploymentPeerDetails
 from .target_pipeline_connection_details import TargetPipelineConnectionDetails
 from .test_connection_assignment_details import TestConnectionAssignmentDetails
 from .test_connection_assignment_error import TestConnectionAssignmentError
@@ -265,6 +274,7 @@ from .zero_etl_pipeline_summary import ZeroEtlPipelineSummary
 
 # Maps type names to classes for golden_gate services.
 golden_gate_type_mapping = {
+    "AddDeploymentLocalPeerDetails": AddDeploymentLocalPeerDetails,
     "AddResourceLockDetails": AddResourceLockDetails,
     "AmazonKinesisConnection": AmazonKinesisConnection,
     "AmazonKinesisConnectionSummary": AmazonKinesisConnectionSummary,
@@ -289,6 +299,7 @@ golden_gate_type_mapping = {
     "ChangeDeploymentCompartmentDetails": ChangeDeploymentCompartmentDetails,
     "ChangePipelineCompartmentDetails": ChangePipelineCompartmentDetails,
     "CollectDeploymentDiagnosticDetails": CollectDeploymentDiagnosticDetails,
+    "CollectPipelineDiagnosticDetails": CollectPipelineDiagnosticDetails,
     "Connection": Connection,
     "ConnectionAssignment": ConnectionAssignment,
     "ConnectionAssignmentCollection": ConnectionAssignmentCollection,
@@ -366,6 +377,10 @@ golden_gate_type_mapping = {
     "DeploymentEnvironmentCollection": DeploymentEnvironmentCollection,
     "DeploymentEnvironmentSummary": DeploymentEnvironmentSummary,
     "DeploymentMessageCollection": DeploymentMessageCollection,
+    "DeploymentPeerCollection": DeploymentPeerCollection,
+    "DeploymentPeerSummary": DeploymentPeerSummary,
+    "DeploymentPlacementDetails": DeploymentPlacementDetails,
+    "DeploymentPlacementInfo": DeploymentPlacementInfo,
     "DeploymentSummary": DeploymentSummary,
     "DeploymentTypeCollection": DeploymentTypeCollection,
     "DeploymentTypeSummary": DeploymentTypeSummary,
@@ -429,6 +444,7 @@ golden_gate_type_mapping = {
     "OracleNosqlConnectionSummary": OracleNosqlConnectionSummary,
     "Pipeline": Pipeline,
     "PipelineCollection": PipelineCollection,
+    "PipelineDiagnosticData": PipelineDiagnosticData,
     "PipelineInitializationStep": PipelineInitializationStep,
     "PipelineInitializationSteps": PipelineInitializationSteps,
     "PipelineRunningProcessCollection": PipelineRunningProcessCollection,
@@ -446,6 +462,7 @@ golden_gate_type_mapping = {
     "RedisConnection": RedisConnection,
     "RedisConnectionSummary": RedisConnectionSummary,
     "RefreshConnectionDetails": RefreshConnectionDetails,
+    "RemoveDeploymentLocalPeerDetails": RemoveDeploymentLocalPeerDetails,
     "RemoveResourceLockDetails": RemoveResourceLockDetails,
     "ReplicateSchemaChange": ReplicateSchemaChange,
     "RescheduleDeploymentUpgradeDetails": RescheduleDeploymentUpgradeDetails,
@@ -462,6 +479,7 @@ golden_gate_type_mapping = {
     "StepMessage": StepMessage,
     "StopDeploymentDetails": StopDeploymentDetails,
     "StopPipelineDetails": StopPipelineDetails,
+    "SwitchoverDeploymentPeerDetails": SwitchoverDeploymentPeerDetails,
     "TargetPipelineConnectionDetails": TargetPipelineConnectionDetails,
     "TestConnectionAssignmentDetails": TestConnectionAssignmentDetails,
     "TestConnectionAssignmentError": TestConnectionAssignmentError,

@@ -53,8 +53,7 @@ class SourceDetails(object):
 
         :param kind:
             The value to assign to the kind property of this SourceDetails.
-            Allowed values for this property are: "logging", "monitoring", "streaming", "plugin", 'UNKNOWN_ENUM_VALUE'.
-            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "logging", "monitoring", "streaming", "plugin"
         :type kind: str
 
         """
@@ -94,8 +93,7 @@ class SourceDetails(object):
         **[Required]** Gets the kind of this SourceDetails.
         The type discriminator.
 
-        Allowed values for this property are: "logging", "monitoring", "streaming", "plugin", 'UNKNOWN_ENUM_VALUE'.
-        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "logging", "monitoring", "streaming", "plugin"
 
 
         :return: The kind of this SourceDetails.
@@ -115,7 +113,9 @@ class SourceDetails(object):
         """
         allowed_values = ["logging", "monitoring", "streaming", "plugin"]
         if not value_allowed_none_or_none_sentinel(kind, allowed_values):
-            kind = 'UNKNOWN_ENUM_VALUE'
+            raise ValueError(
+                f"Invalid value for `kind`, must be None or one of {allowed_values}"
+            )
         self._kind = kind
 
     def __repr__(self):
