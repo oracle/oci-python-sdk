@@ -715,9 +715,9 @@ class BaseClient(object):
                 new_circuit_breaker_state = CircuitBreakerMonitor.get(self.circuit_breaker_strategy.name).state
                 if initial_circuit_breaker_state != new_circuit_breaker_state:
                     self.logger.warning("Circuit Breaker state changed from {} to {}".format(initial_circuit_breaker_state, new_circuit_breaker_state))
-                self.raise_transient_service_error(request, response, service_code, message, operation_name, api_reference_link, target_service, request_endpoint, client_version, timestamp, deserialized_data)
+                self.raise_transient_service_error(request, response, service_code, message, operation_name, api_reference_link, target_service, request_endpoint, client_version, None, deserialized_data)
             else:
-                self.raise_service_error(request, response, service_code, message, operation_name, api_reference_link, target_service, request_endpoint, client_version, timestamp, deserialized_data)
+                self.raise_service_error(request, response, service_code, message, operation_name, api_reference_link, target_service, request_endpoint, client_version, None, deserialized_data)
 
         if stream:
             if response.headers.get("content-type", "empty").lower() == SSE_RESPONSE_HEADER_VALUE:
