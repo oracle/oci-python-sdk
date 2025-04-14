@@ -51,7 +51,7 @@ class IamWorkRequestErrorSummary(object):
     def code(self):
         """
         **[Required]** Gets the code of this IamWorkRequestErrorSummary.
-        A machine-usable code for the error that occured.
+        A machine-usable code for the error that occurred.
 
 
         :return: The code of this IamWorkRequestErrorSummary.
@@ -63,7 +63,7 @@ class IamWorkRequestErrorSummary(object):
     def code(self, code):
         """
         Sets the code of this IamWorkRequestErrorSummary.
-        A machine-usable code for the error that occured.
+        A machine-usable code for the error that occurred.
 
 
         :param code: The code of this IamWorkRequestErrorSummary.
