@@ -68,6 +68,10 @@ class CreateAutonomousContainerDatabaseDetails(object):
         Initializes a new CreateAutonomousContainerDatabaseDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param customer_contacts:
+            The value to assign to the customer_contacts property of this CreateAutonomousContainerDatabaseDetails.
+        :type customer_contacts: list[oci.database.models.CustomerContact]
+
         :param display_name:
             The value to assign to the display_name property of this CreateAutonomousContainerDatabaseDetails.
         :type display_name: str
@@ -220,6 +224,7 @@ class CreateAutonomousContainerDatabaseDetails(object):
 
         """
         self.swagger_types = {
+            'customer_contacts': 'list[CustomerContact]',
             'display_name': 'str',
             'db_unique_name': 'str',
             'db_name': 'str',
@@ -258,6 +263,7 @@ class CreateAutonomousContainerDatabaseDetails(object):
             'net_services_architecture': 'str'
         }
         self.attribute_map = {
+            'customer_contacts': 'customerContacts',
             'display_name': 'displayName',
             'db_unique_name': 'dbUniqueName',
             'db_name': 'dbName',
@@ -295,6 +301,7 @@ class CreateAutonomousContainerDatabaseDetails(object):
             'distribution_affinity': 'distributionAffinity',
             'net_services_architecture': 'netServicesArchitecture'
         }
+        self._customer_contacts = None
         self._display_name = None
         self._db_unique_name = None
         self._db_name = None
@@ -331,6 +338,30 @@ class CreateAutonomousContainerDatabaseDetails(object):
         self._vm_failover_reservation = None
         self._distribution_affinity = None
         self._net_services_architecture = None
+
+    @property
+    def customer_contacts(self):
+        """
+        Gets the customer_contacts of this CreateAutonomousContainerDatabaseDetails.
+        Customer Contacts. Setting this to an empty list removes all customer contacts.
+
+
+        :return: The customer_contacts of this CreateAutonomousContainerDatabaseDetails.
+        :rtype: list[oci.database.models.CustomerContact]
+        """
+        return self._customer_contacts
+
+    @customer_contacts.setter
+    def customer_contacts(self, customer_contacts):
+        """
+        Sets the customer_contacts of this CreateAutonomousContainerDatabaseDetails.
+        Customer Contacts. Setting this to an empty list removes all customer contacts.
+
+
+        :param customer_contacts: The customer_contacts of this CreateAutonomousContainerDatabaseDetails.
+        :type: list[oci.database.models.CustomerContact]
+        """
+        self._customer_contacts = customer_contacts
 
     @property
     def display_name(self):

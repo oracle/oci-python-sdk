@@ -13,6 +13,9 @@ from oci.decorators import init_model_state_from_kwargs
 class AssistantMessage(Message):
     """
     Represents a single instance of assistant message.
+
+    Note: When responding to a tool call, set `content` to `null` (not `\"\"`).
+    This ensures the model correctly processes tool call messages in multi-step interactions.
     """
 
     def __init__(self, **kwargs):

@@ -6,9 +6,12 @@
 
 from __future__ import absolute_import
 
+from .apply_guardrails_details import ApplyGuardrailsDetails
+from .apply_guardrails_result import ApplyGuardrailsResult
 from .assistant_message import AssistantMessage
 from .base_chat_request import BaseChatRequest
 from .base_chat_response import BaseChatResponse
+from .category_score import CategoryScore
 from .chat_choice import ChatChoice
 from .chat_content import ChatContent
 from .chat_details import ChatDetails
@@ -31,6 +34,8 @@ from .cohere_tool_call import CohereToolCall
 from .cohere_tool_message import CohereToolMessage
 from .cohere_tool_result import CohereToolResult
 from .cohere_user_message import CohereUserMessage
+from .content_moderation_configuration import ContentModerationConfiguration
+from .content_moderation_result import ContentModerationResult
 from .dedicated_serving_mode import DedicatedServingMode
 from .document import Document
 from .document_rank import DocumentRank
@@ -43,6 +48,10 @@ from .generate_text_result import GenerateTextResult
 from .generated_text import GeneratedText
 from .generic_chat_request import GenericChatRequest
 from .generic_chat_response import GenericChatResponse
+from .guardrail_configs import GuardrailConfigs
+from .guardrails_input import GuardrailsInput
+from .guardrails_results import GuardrailsResults
+from .guardrails_text_input import GuardrailsTextInput
 from .image_content import ImageContent
 from .image_url import ImageUrl
 from .llama_llm_inference_request import LlamaLlmInferenceRequest
@@ -52,6 +61,10 @@ from .llm_inference_response import LlmInferenceResponse
 from .logprobs import Logprobs
 from .message import Message
 from .on_demand_serving_mode import OnDemandServingMode
+from .personally_identifiable_information_configuration import PersonallyIdentifiableInformationConfiguration
+from .personally_identifiable_information_result import PersonallyIdentifiableInformationResult
+from .prompt_injection_configuration import PromptInjectionConfiguration
+from .prompt_injection_protection_result import PromptInjectionProtectionResult
 from .rerank_text_details import RerankTextDetails
 from .rerank_text_result import RerankTextResult
 from .search_query import SearchQuery
@@ -73,9 +86,12 @@ from .user_message import UserMessage
 
 # Maps type names to classes for generative_ai_inference services.
 generative_ai_inference_type_mapping = {
+    "ApplyGuardrailsDetails": ApplyGuardrailsDetails,
+    "ApplyGuardrailsResult": ApplyGuardrailsResult,
     "AssistantMessage": AssistantMessage,
     "BaseChatRequest": BaseChatRequest,
     "BaseChatResponse": BaseChatResponse,
+    "CategoryScore": CategoryScore,
     "ChatChoice": ChatChoice,
     "ChatContent": ChatContent,
     "ChatDetails": ChatDetails,
@@ -98,6 +114,8 @@ generative_ai_inference_type_mapping = {
     "CohereToolMessage": CohereToolMessage,
     "CohereToolResult": CohereToolResult,
     "CohereUserMessage": CohereUserMessage,
+    "ContentModerationConfiguration": ContentModerationConfiguration,
+    "ContentModerationResult": ContentModerationResult,
     "DedicatedServingMode": DedicatedServingMode,
     "Document": Document,
     "DocumentRank": DocumentRank,
@@ -110,6 +128,10 @@ generative_ai_inference_type_mapping = {
     "GeneratedText": GeneratedText,
     "GenericChatRequest": GenericChatRequest,
     "GenericChatResponse": GenericChatResponse,
+    "GuardrailConfigs": GuardrailConfigs,
+    "GuardrailsInput": GuardrailsInput,
+    "GuardrailsResults": GuardrailsResults,
+    "GuardrailsTextInput": GuardrailsTextInput,
     "ImageContent": ImageContent,
     "ImageUrl": ImageUrl,
     "LlamaLlmInferenceRequest": LlamaLlmInferenceRequest,
@@ -119,6 +141,10 @@ generative_ai_inference_type_mapping = {
     "Logprobs": Logprobs,
     "Message": Message,
     "OnDemandServingMode": OnDemandServingMode,
+    "PersonallyIdentifiableInformationConfiguration": PersonallyIdentifiableInformationConfiguration,
+    "PersonallyIdentifiableInformationResult": PersonallyIdentifiableInformationResult,
+    "PromptInjectionConfiguration": PromptInjectionConfiguration,
+    "PromptInjectionProtectionResult": PromptInjectionProtectionResult,
     "RerankTextDetails": RerankTextDetails,
     "RerankTextResult": RerankTextResult,
     "SearchQuery": SearchQuery,

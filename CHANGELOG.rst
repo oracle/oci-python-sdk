@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.150.1 - 2025-04-15
+====================
+
+Added
+-----
+* Support for applying guardrails, enabling content moderation and detection of Prompt Injection and Personally Identifiable Information (PII) in the Generative AI Inference service
+* Support for providing customer contacts for operational notifications in the Database service
+
 2.150.0 - 2025-04-08
 ====================
 

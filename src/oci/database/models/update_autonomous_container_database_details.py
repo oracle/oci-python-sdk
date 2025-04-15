@@ -40,6 +40,10 @@ class UpdateAutonomousContainerDatabaseDetails(object):
             The value to assign to the display_name property of this UpdateAutonomousContainerDatabaseDetails.
         :type display_name: str
 
+        :param customer_contacts:
+            The value to assign to the customer_contacts property of this UpdateAutonomousContainerDatabaseDetails.
+        :type customer_contacts: list[oci.database.models.CustomerContact]
+
         :param patch_model:
             The value to assign to the patch_model property of this UpdateAutonomousContainerDatabaseDetails.
             Allowed values for this property are: "RELEASE_UPDATES", "RELEASE_UPDATE_REVISIONS"
@@ -77,6 +81,7 @@ class UpdateAutonomousContainerDatabaseDetails(object):
         """
         self.swagger_types = {
             'display_name': 'str',
+            'customer_contacts': 'list[CustomerContact]',
             'patch_model': 'str',
             'maintenance_window_details': 'MaintenanceWindow',
             'standby_maintenance_buffer_in_days': 'int',
@@ -88,6 +93,7 @@ class UpdateAutonomousContainerDatabaseDetails(object):
         }
         self.attribute_map = {
             'display_name': 'displayName',
+            'customer_contacts': 'customerContacts',
             'patch_model': 'patchModel',
             'maintenance_window_details': 'maintenanceWindowDetails',
             'standby_maintenance_buffer_in_days': 'standbyMaintenanceBufferInDays',
@@ -98,6 +104,7 @@ class UpdateAutonomousContainerDatabaseDetails(object):
             'backup_config': 'backupConfig'
         }
         self._display_name = None
+        self._customer_contacts = None
         self._patch_model = None
         self._maintenance_window_details = None
         self._standby_maintenance_buffer_in_days = None
@@ -130,6 +137,30 @@ class UpdateAutonomousContainerDatabaseDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def customer_contacts(self):
+        """
+        Gets the customer_contacts of this UpdateAutonomousContainerDatabaseDetails.
+        Customer Contacts. Setting this to an empty list removes all customer contacts.
+
+
+        :return: The customer_contacts of this UpdateAutonomousContainerDatabaseDetails.
+        :rtype: list[oci.database.models.CustomerContact]
+        """
+        return self._customer_contacts
+
+    @customer_contacts.setter
+    def customer_contacts(self, customer_contacts):
+        """
+        Sets the customer_contacts of this UpdateAutonomousContainerDatabaseDetails.
+        Customer Contacts. Setting this to an empty list removes all customer contacts.
+
+
+        :param customer_contacts: The customer_contacts of this UpdateAutonomousContainerDatabaseDetails.
+        :type: list[oci.database.models.CustomerContact]
+        """
+        self._customer_contacts = customer_contacts
 
     @property
     def patch_model(self):

@@ -161,7 +161,7 @@ class LustreFileStorageClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
         operation_name = "cancel_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/lustre/20250228/WorkRequest/CancelWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -276,7 +276,7 @@ class LustreFileStorageClient(object):
         resource_path = "/lustreFileSystems/{lustreFileSystemId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_lustre_file_system_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/lustre/20250228/LustreFileSystem/ChangeLustreFileSystemCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -386,7 +386,7 @@ class LustreFileStorageClient(object):
         resource_path = "/lustreFileSystems"
         method = "POST"
         operation_name = "create_lustre_file_system"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/lustre/20250228/LustreFileSystem/CreateLustreFileSystem"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -488,7 +488,7 @@ class LustreFileStorageClient(object):
         resource_path = "/lustreFileSystems/{lustreFileSystemId}"
         method = "DELETE"
         operation_name = "delete_lustre_file_system"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/lustre/20250228/LustreFileSystem/DeleteLustreFileSystem"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -591,7 +591,7 @@ class LustreFileStorageClient(object):
         resource_path = "/lustreFileSystems/{lustreFileSystemId}"
         method = "GET"
         operation_name = "get_lustre_file_system"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/lustre/20250228/LustreFileSystem/GetLustreFileSystem"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -694,7 +694,7 @@ class LustreFileStorageClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/lustre/20250228/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -841,7 +841,7 @@ class LustreFileStorageClient(object):
         resource_path = "/lustreFileSystems"
         method = "GET"
         operation_name = "list_lustre_file_systems"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/lustre/20250228/LustreFileSystemCollection/ListLustreFileSystems"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1001,7 +1001,7 @@ class LustreFileStorageClient(object):
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/lustre/20250228/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1156,7 +1156,7 @@ class LustreFileStorageClient(object):
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/lustre/20250228/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1326,7 +1326,7 @@ class LustreFileStorageClient(object):
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/lustre/20250228/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1469,7 +1469,7 @@ class LustreFileStorageClient(object):
         resource_path = "/lustreFileSystems/{lustreFileSystemId}"
         method = "PUT"
         operation_name = "update_lustre_file_system"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/lustre/20250228/LustreFileSystem/UpdateLustreFileSystem"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

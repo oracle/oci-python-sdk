@@ -18,9 +18,12 @@ Generative Ai Inference
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.generative_ai_inference.models.ApplyGuardrailsDetails
+    oci.generative_ai_inference.models.ApplyGuardrailsResult
     oci.generative_ai_inference.models.AssistantMessage
     oci.generative_ai_inference.models.BaseChatRequest
     oci.generative_ai_inference.models.BaseChatResponse
+    oci.generative_ai_inference.models.CategoryScore
     oci.generative_ai_inference.models.ChatChoice
     oci.generative_ai_inference.models.ChatContent
     oci.generative_ai_inference.models.ChatDetails
@@ -43,6 +46,8 @@ Generative Ai Inference
     oci.generative_ai_inference.models.CohereToolMessage
     oci.generative_ai_inference.models.CohereToolResult
     oci.generative_ai_inference.models.CohereUserMessage
+    oci.generative_ai_inference.models.ContentModerationConfiguration
+    oci.generative_ai_inference.models.ContentModerationResult
     oci.generative_ai_inference.models.DedicatedServingMode
     oci.generative_ai_inference.models.Document
     oci.generative_ai_inference.models.DocumentRank
@@ -55,6 +60,10 @@ Generative Ai Inference
     oci.generative_ai_inference.models.GeneratedText
     oci.generative_ai_inference.models.GenericChatRequest
     oci.generative_ai_inference.models.GenericChatResponse
+    oci.generative_ai_inference.models.GuardrailConfigs
+    oci.generative_ai_inference.models.GuardrailsInput
+    oci.generative_ai_inference.models.GuardrailsResults
+    oci.generative_ai_inference.models.GuardrailsTextInput
     oci.generative_ai_inference.models.ImageContent
     oci.generative_ai_inference.models.ImageUrl
     oci.generative_ai_inference.models.LlamaLlmInferenceRequest
@@ -64,6 +73,10 @@ Generative Ai Inference
     oci.generative_ai_inference.models.Logprobs
     oci.generative_ai_inference.models.Message
     oci.generative_ai_inference.models.OnDemandServingMode
+    oci.generative_ai_inference.models.PersonallyIdentifiableInformationConfiguration
+    oci.generative_ai_inference.models.PersonallyIdentifiableInformationResult
+    oci.generative_ai_inference.models.PromptInjectionConfiguration
+    oci.generative_ai_inference.models.PromptInjectionProtectionResult
     oci.generative_ai_inference.models.RerankTextDetails
     oci.generative_ai_inference.models.RerankTextResult
     oci.generative_ai_inference.models.SearchQuery
