@@ -31,6 +31,18 @@ class CohereChatRequest(BaseChatRequest):
     #: This constant has a value of "FAST"
     CITATION_QUALITY_FAST = "FAST"
 
+    #: A constant which can be used with the safety_mode property of a CohereChatRequest.
+    #: This constant has a value of "CONTEXTUAL"
+    SAFETY_MODE_CONTEXTUAL = "CONTEXTUAL"
+
+    #: A constant which can be used with the safety_mode property of a CohereChatRequest.
+    #: This constant has a value of "STRICT"
+    SAFETY_MODE_STRICT = "STRICT"
+
+    #: A constant which can be used with the safety_mode property of a CohereChatRequest.
+    #: This constant has a value of "OFF"
+    SAFETY_MODE_OFF = "OFF"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CohereChatRequest object with values from keyword arguments. The default value of the :py:attr:`~oci.generative_ai_inference.models.CohereChatRequest.api_format` attribute
@@ -136,6 +148,11 @@ class CohereChatRequest(BaseChatRequest):
             Allowed values for this property are: "ACCURATE", "FAST"
         :type citation_quality: str
 
+        :param safety_mode:
+            The value to assign to the safety_mode property of this CohereChatRequest.
+            Allowed values for this property are: "CONTEXTUAL", "STRICT", "OFF"
+        :type safety_mode: str
+
         """
         self.swagger_types = {
             'api_format': 'str',
@@ -161,7 +178,8 @@ class CohereChatRequest(BaseChatRequest):
             'is_force_single_step': 'bool',
             'stop_sequences': 'list[str]',
             'is_raw_prompting': 'bool',
-            'citation_quality': 'str'
+            'citation_quality': 'str',
+            'safety_mode': 'str'
         }
         self.attribute_map = {
             'api_format': 'apiFormat',
@@ -187,7 +205,8 @@ class CohereChatRequest(BaseChatRequest):
             'is_force_single_step': 'isForceSingleStep',
             'stop_sequences': 'stopSequences',
             'is_raw_prompting': 'isRawPrompting',
-            'citation_quality': 'citationQuality'
+            'citation_quality': 'citationQuality',
+            'safety_mode': 'safetyMode'
         }
         self._api_format = None
         self._message = None
@@ -213,6 +232,7 @@ class CohereChatRequest(BaseChatRequest):
         self._stop_sequences = None
         self._is_raw_prompting = None
         self._citation_quality = None
+        self._safety_mode = None
         self._api_format = 'COHERE'
 
     @property
@@ -808,6 +828,37 @@ class CohereChatRequest(BaseChatRequest):
                 f"Invalid value for `citation_quality`, must be None or one of {allowed_values}"
             )
         self._citation_quality = citation_quality
+
+    @property
+    def safety_mode(self):
+        """
+        Gets the safety_mode of this CohereChatRequest.
+        Used to select the safety instruction inserted into the prompt. When selected CONTEXTUAL mode, It is appropriate for wide-ranging interactions with fewer constraints on output while maintaining core protections by rejecting harmful or illegal suggestions. When selected STRICT mode, it aims to avoid all sensitive topics, such as violent or sexual acts and profanity. When selected OFF, the safety instruction will be omitted. Note: This parameter is only compatible with models Command R 08-2024, Command R+ 08-2024 and newer. Also, command-r7b-12-2024 only supports \"CONTEXTUAL\" and \"STRICT\" modes.
+
+        Allowed values for this property are: "CONTEXTUAL", "STRICT", "OFF"
+
+
+        :return: The safety_mode of this CohereChatRequest.
+        :rtype: str
+        """
+        return self._safety_mode
+
+    @safety_mode.setter
+    def safety_mode(self, safety_mode):
+        """
+        Sets the safety_mode of this CohereChatRequest.
+        Used to select the safety instruction inserted into the prompt. When selected CONTEXTUAL mode, It is appropriate for wide-ranging interactions with fewer constraints on output while maintaining core protections by rejecting harmful or illegal suggestions. When selected STRICT mode, it aims to avoid all sensitive topics, such as violent or sexual acts and profanity. When selected OFF, the safety instruction will be omitted. Note: This parameter is only compatible with models Command R 08-2024, Command R+ 08-2024 and newer. Also, command-r7b-12-2024 only supports \"CONTEXTUAL\" and \"STRICT\" modes.
+
+
+        :param safety_mode: The safety_mode of this CohereChatRequest.
+        :type: str
+        """
+        allowed_values = ["CONTEXTUAL", "STRICT", "OFF"]
+        if not value_allowed_none_or_none_sentinel(safety_mode, allowed_values):
+            raise ValueError(
+                f"Invalid value for `safety_mode`, must be None or one of {allowed_values}"
+            )
+        self._safety_mode = safety_mode
 
     def __repr__(self):
         return formatted_flat_dict(self)

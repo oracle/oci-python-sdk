@@ -168,6 +168,10 @@ class AutonomousContainerDatabase(object):
             The value to assign to the display_name property of this AutonomousContainerDatabase.
         :type display_name: str
 
+        :param customer_contacts:
+            The value to assign to the customer_contacts property of this AutonomousContainerDatabase.
+        :type customer_contacts: list[oci.database.models.CustomerContact]
+
         :param db_unique_name:
             The value to assign to the db_unique_name property of this AutonomousContainerDatabase.
         :type db_unique_name: str
@@ -407,6 +411,7 @@ class AutonomousContainerDatabase(object):
             'id': 'str',
             'compartment_id': 'str',
             'display_name': 'str',
+            'customer_contacts': 'list[CustomerContact]',
             'db_unique_name': 'str',
             'db_name': 'str',
             'service_level_agreement_type': 'str',
@@ -466,6 +471,7 @@ class AutonomousContainerDatabase(object):
             'id': 'id',
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
+            'customer_contacts': 'customerContacts',
             'db_unique_name': 'dbUniqueName',
             'db_name': 'dbName',
             'service_level_agreement_type': 'serviceLevelAgreementType',
@@ -524,6 +530,7 @@ class AutonomousContainerDatabase(object):
         self._id = None
         self._compartment_id = None
         self._display_name = None
+        self._customer_contacts = None
         self._db_unique_name = None
         self._db_name = None
         self._service_level_agreement_type = None
@@ -650,6 +657,30 @@ class AutonomousContainerDatabase(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def customer_contacts(self):
+        """
+        Gets the customer_contacts of this AutonomousContainerDatabase.
+        Customer Contacts. Setting this to an empty list removes all customer contacts.
+
+
+        :return: The customer_contacts of this AutonomousContainerDatabase.
+        :rtype: list[oci.database.models.CustomerContact]
+        """
+        return self._customer_contacts
+
+    @customer_contacts.setter
+    def customer_contacts(self, customer_contacts):
+        """
+        Sets the customer_contacts of this AutonomousContainerDatabase.
+        Customer Contacts. Setting this to an empty list removes all customer contacts.
+
+
+        :param customer_contacts: The customer_contacts of this AutonomousContainerDatabase.
+        :type: list[oci.database.models.CustomerContact]
+        """
+        self._customer_contacts = customer_contacts
 
     @property
     def db_unique_name(self):
