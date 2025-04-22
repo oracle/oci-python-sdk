@@ -34,6 +34,7 @@ Container Engine
     oci.container_engine.models.ClusterMetadata
     oci.container_engine.models.ClusterMigrateToNativeVcnDetails
     oci.container_engine.models.ClusterMigrateToNativeVcnStatus
+    oci.container_engine.models.ClusterNode
     oci.container_engine.models.ClusterOptions
     oci.container_engine.models.ClusterPodNetworkOptionDetails
     oci.container_engine.models.ClusterSummary
@@ -49,6 +50,7 @@ Container Engine
     oci.container_engine.models.CredentialRotationStatus
     oci.container_engine.models.FlannelOverlayClusterPodNetworkOptionDetails
     oci.container_engine.models.FlannelOverlayNodePoolPodNetworkOptionDetails
+    oci.container_engine.models.Image
     oci.container_engine.models.ImagePolicyConfig
     oci.container_engine.models.InitialVirtualNodeLabel
     oci.container_engine.models.InstallAddonDetails
@@ -59,6 +61,7 @@ Container Engine
     oci.container_engine.models.Node
     oci.container_engine.models.NodeError
     oci.container_engine.models.NodeEvictionNodePoolSettings
+    oci.container_engine.models.NodeEvictionSettings
     oci.container_engine.models.NodePool
     oci.container_engine.models.NodePoolCyclingDetails
     oci.container_engine.models.NodePoolNodeConfigDetails
@@ -82,6 +85,8 @@ Container Engine
     oci.container_engine.models.PodShapeSummary
     oci.container_engine.models.PreemptibleNodeConfigDetails
     oci.container_engine.models.PreemptionAction
+    oci.container_engine.models.RebootClusterNodeDetails
+    oci.container_engine.models.ReplaceBootVolumeClusterNodeDetails
     oci.container_engine.models.ServiceLbConfigDetails
     oci.container_engine.models.ShapeMemoryOptions
     oci.container_engine.models.ShapeNetworkBandwidthOptions

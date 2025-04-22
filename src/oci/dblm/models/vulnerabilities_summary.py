@@ -96,7 +96,7 @@ class VulnerabilitiesSummary(object):
     def critical(self):
         """
         **[Required]** Gets the critical of this VulnerabilitiesSummary.
-        Cummulative number of resources that have critical level vulnerabilities.
+        Cumulative number of resources that have critical level vulnerabilities.
 
 
         :return: The critical of this VulnerabilitiesSummary.
@@ -108,7 +108,7 @@ class VulnerabilitiesSummary(object):
     def critical(self, critical):
         """
         Sets the critical of this VulnerabilitiesSummary.
-        Cummulative number of resources that have critical level vulnerabilities.
+        Cumulative number of resources that have critical level vulnerabilities.
 
 
         :param critical: The critical of this VulnerabilitiesSummary.
@@ -120,7 +120,7 @@ class VulnerabilitiesSummary(object):
     def high(self):
         """
         **[Required]** Gets the high of this VulnerabilitiesSummary.
-        Cummulative number of resources that have high level vulnerabilities.
+        Cumulative number of resources that have high level vulnerabilities.
 
 
         :return: The high of this VulnerabilitiesSummary.
@@ -132,7 +132,7 @@ class VulnerabilitiesSummary(object):
     def high(self, high):
         """
         Sets the high of this VulnerabilitiesSummary.
-        Cummulative number of resources that have high level vulnerabilities.
+        Cumulative number of resources that have high level vulnerabilities.
 
 
         :param high: The high of this VulnerabilitiesSummary.
@@ -144,7 +144,7 @@ class VulnerabilitiesSummary(object):
     def medium(self):
         """
         **[Required]** Gets the medium of this VulnerabilitiesSummary.
-        Cummulative number of resources that have medium level vulnerabilities.
+        Cumulative number of resources that have medium level vulnerabilities.
 
 
         :return: The medium of this VulnerabilitiesSummary.
@@ -156,7 +156,7 @@ class VulnerabilitiesSummary(object):
     def medium(self, medium):
         """
         Sets the medium of this VulnerabilitiesSummary.
-        Cummulative number of resources that have medium level vulnerabilities.
+        Cumulative number of resources that have medium level vulnerabilities.
 
 
         :param medium: The medium of this VulnerabilitiesSummary.
@@ -168,7 +168,7 @@ class VulnerabilitiesSummary(object):
     def info(self):
         """
         **[Required]** Gets the info of this VulnerabilitiesSummary.
-        Cummulative number of resources that have info level vulnerabilities.
+        Cumulative number of resources that have info level vulnerabilities.
 
 
         :return: The info of this VulnerabilitiesSummary.
@@ -180,7 +180,7 @@ class VulnerabilitiesSummary(object):
     def info(self, info):
         """
         Sets the info of this VulnerabilitiesSummary.
-        Cummulative number of resources that have info level vulnerabilities.
+        Cumulative number of resources that have info level vulnerabilities.
 
 
         :param info: The info of this VulnerabilitiesSummary.
@@ -192,7 +192,7 @@ class VulnerabilitiesSummary(object):
     def low(self):
         """
         **[Required]** Gets the low of this VulnerabilitiesSummary.
-        Cummulative number of resources that have low level vulnerabilities.
+        Cumulative number of resources that have low level vulnerabilities.
 
 
         :return: The low of this VulnerabilitiesSummary.
@@ -204,7 +204,7 @@ class VulnerabilitiesSummary(object):
     def low(self, low):
         """
         Sets the low of this VulnerabilitiesSummary.
-        Cummulative number of resources that have low level vulnerabilities.
+        Cumulative number of resources that have low level vulnerabilities.
 
 
         :param low: The low of this VulnerabilitiesSummary.

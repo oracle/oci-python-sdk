@@ -17,6 +17,10 @@ class NetworkEndpointDetails(object):
     """
 
     #: A constant which can be used with the network_endpoint_type property of a NetworkEndpointDetails.
+    #: This constant has a value of "PUBLIC"
+    NETWORK_ENDPOINT_TYPE_PUBLIC = "PUBLIC"
+
+    #: A constant which can be used with the network_endpoint_type property of a NetworkEndpointDetails.
     #: This constant has a value of "PRIVATE"
     NETWORK_ENDPOINT_TYPE_PRIVATE = "PRIVATE"
 
@@ -26,12 +30,13 @@ class NetworkEndpointDetails(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.visual_builder.models.PrivateEndpointDetails`
+        * :class:`~oci.visual_builder.models.PublicEndpointDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param network_endpoint_type:
             The value to assign to the network_endpoint_type property of this NetworkEndpointDetails.
-            Allowed values for this property are: "PRIVATE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PUBLIC", "PRIVATE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type network_endpoint_type: str
 
@@ -54,6 +59,9 @@ class NetworkEndpointDetails(object):
 
         if type == 'PRIVATE':
             return 'PrivateEndpointDetails'
+
+        if type == 'PUBLIC':
+            return 'PublicEndpointDetails'
         else:
             return 'NetworkEndpointDetails'
 
@@ -63,7 +71,7 @@ class NetworkEndpointDetails(object):
         **[Required]** Gets the network_endpoint_type of this NetworkEndpointDetails.
         The type of network endpoint.
 
-        Allowed values for this property are: "PRIVATE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PUBLIC", "PRIVATE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -82,7 +90,7 @@ class NetworkEndpointDetails(object):
         :param network_endpoint_type: The network_endpoint_type of this NetworkEndpointDetails.
         :type: str
         """
-        allowed_values = ["PRIVATE"]
+        allowed_values = ["PUBLIC", "PRIVATE"]
         if not value_allowed_none_or_none_sentinel(network_endpoint_type, allowed_values):
             network_endpoint_type = 'UNKNOWN_ENUM_VALUE'
         self._network_endpoint_type = network_endpoint_type

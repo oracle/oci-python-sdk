@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.150.2 - 2025-04-21
+====================
+
+Added 
+----- 
+* Support for patch management in the Database Lifecycle Management service 
+* Support for restricting public network access to service instances in the Visual Builder service 
+* Support for iSCSI-3 persistent reservations on block volume in the Core services (Networking, Compute, Block Volume)   
+
+Fixed 
+----- 
+* Limited the `enable_fips` method in `oci.fips` module to work only on OpenSSL 1.x for compatibility with OpenSSL 3.x   
+
+====================
 2.150.1 - 2025-04-15
 ====================
 

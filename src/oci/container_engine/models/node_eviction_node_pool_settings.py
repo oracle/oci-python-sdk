@@ -28,17 +28,24 @@ class NodeEvictionNodePoolSettings(object):
             The value to assign to the is_force_delete_after_grace_duration property of this NodeEvictionNodePoolSettings.
         :type is_force_delete_after_grace_duration: bool
 
+        :param is_force_action_after_grace_duration:
+            The value to assign to the is_force_action_after_grace_duration property of this NodeEvictionNodePoolSettings.
+        :type is_force_action_after_grace_duration: bool
+
         """
         self.swagger_types = {
             'eviction_grace_duration': 'str',
-            'is_force_delete_after_grace_duration': 'bool'
+            'is_force_delete_after_grace_duration': 'bool',
+            'is_force_action_after_grace_duration': 'bool'
         }
         self.attribute_map = {
             'eviction_grace_duration': 'evictionGraceDuration',
-            'is_force_delete_after_grace_duration': 'isForceDeleteAfterGraceDuration'
+            'is_force_delete_after_grace_duration': 'isForceDeleteAfterGraceDuration',
+            'is_force_action_after_grace_duration': 'isForceActionAfterGraceDuration'
         }
         self._eviction_grace_duration = None
         self._is_force_delete_after_grace_duration = None
+        self._is_force_action_after_grace_duration = None
 
     @property
     def eviction_grace_duration(self):
@@ -89,6 +96,30 @@ class NodeEvictionNodePoolSettings(object):
         :type: bool
         """
         self._is_force_delete_after_grace_duration = is_force_delete_after_grace_duration
+
+    @property
+    def is_force_action_after_grace_duration(self):
+        """
+        Gets the is_force_action_after_grace_duration of this NodeEvictionNodePoolSettings.
+        If the node action should be performed if not all the pods can be evicted in the grace period
+
+
+        :return: The is_force_action_after_grace_duration of this NodeEvictionNodePoolSettings.
+        :rtype: bool
+        """
+        return self._is_force_action_after_grace_duration
+
+    @is_force_action_after_grace_duration.setter
+    def is_force_action_after_grace_duration(self, is_force_action_after_grace_duration):
+        """
+        Sets the is_force_action_after_grace_duration of this NodeEvictionNodePoolSettings.
+        If the node action should be performed if not all the pods can be evicted in the grace period
+
+
+        :param is_force_action_after_grace_duration: The is_force_action_after_grace_duration of this NodeEvictionNodePoolSettings.
+        :type: bool
+        """
+        self._is_force_action_after_grace_duration = is_force_action_after_grace_duration
 
     def __repr__(self):
         return formatted_flat_dict(self)

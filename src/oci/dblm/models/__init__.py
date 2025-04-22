@@ -6,19 +6,30 @@
 
 from __future__ import absolute_import
 
+from .additional_patches import AdditionalPatches
 from .aggregated_vulnerability_collection import AggregatedVulnerabilityCollection
 from .aggregated_vulnerability_summary import AggregatedVulnerabilitySummary
 from .child_pdb import ChildPdb
 from .create_vulnerability_scan_details import CreateVulnerabilityScanDetails
+from .databases_summary import DatabasesSummary
+from .dblm_patch_management import DblmPatchManagement
 from .dblm_vulnerability import DblmVulnerability
+from .fpp_server import FppServer
 from .host_info import HostInfo
+from .image_details import ImageDetails
+from .images_patch_recommendation_summary import ImagesPatchRecommendationSummary
 from .metric_error import MetricError
 from .notification_collection import NotificationCollection
 from .notification_summary import NotificationSummary
+from .patch_activity_details import PatchActivityDetails
+from .patch_compliance_details import PatchComplianceDetails
+from .patch_databases_collection import PatchDatabasesCollection
+from .patch_operations_summary import PatchOperationsSummary
 from .patch_recommendation_summary import PatchRecommendationSummary
 from .patch_recommendations_details_summary import PatchRecommendationsDetailsSummary
 from .resource_info import ResourceInfo
 from .resource_summary import ResourceSummary
+from .resources_patch_compliance_summary import ResourcesPatchComplianceSummary
 from .vulnerabilities_summary import VulnerabilitiesSummary
 from .vulnerability_collection import VulnerabilityCollection
 from .vulnerability_resource_collection import VulnerabilityResourceCollection
@@ -38,19 +49,30 @@ from .work_request_summary_collection import WorkRequestSummaryCollection
 
 # Maps type names to classes for dblm services.
 dblm_type_mapping = {
+    "AdditionalPatches": AdditionalPatches,
     "AggregatedVulnerabilityCollection": AggregatedVulnerabilityCollection,
     "AggregatedVulnerabilitySummary": AggregatedVulnerabilitySummary,
     "ChildPdb": ChildPdb,
     "CreateVulnerabilityScanDetails": CreateVulnerabilityScanDetails,
+    "DatabasesSummary": DatabasesSummary,
+    "DblmPatchManagement": DblmPatchManagement,
     "DblmVulnerability": DblmVulnerability,
+    "FppServer": FppServer,
     "HostInfo": HostInfo,
+    "ImageDetails": ImageDetails,
+    "ImagesPatchRecommendationSummary": ImagesPatchRecommendationSummary,
     "MetricError": MetricError,
     "NotificationCollection": NotificationCollection,
     "NotificationSummary": NotificationSummary,
+    "PatchActivityDetails": PatchActivityDetails,
+    "PatchComplianceDetails": PatchComplianceDetails,
+    "PatchDatabasesCollection": PatchDatabasesCollection,
+    "PatchOperationsSummary": PatchOperationsSummary,
     "PatchRecommendationSummary": PatchRecommendationSummary,
     "PatchRecommendationsDetailsSummary": PatchRecommendationsDetailsSummary,
     "ResourceInfo": ResourceInfo,
     "ResourceSummary": ResourceSummary,
+    "ResourcesPatchComplianceSummary": ResourcesPatchComplianceSummary,
     "VulnerabilitiesSummary": VulnerabilitiesSummary,
     "VulnerabilityCollection": VulnerabilityCollection,
     "VulnerabilityResourceCollection": VulnerabilityResourceCollection,

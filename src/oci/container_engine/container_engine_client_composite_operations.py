@@ -554,6 +554,96 @@ class ContainerEngineClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def reboot_cluster_node_and_wait_for_state(self, cluster_id, node_id, reboot_cluster_node_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.container_engine.ContainerEngineClient.reboot_cluster_node` and waits for the :py:class:`~oci.container_engine.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str cluster_id: (required)
+            The OCID of the cluster.
+
+        :param str node_id: (required)
+            The OCID of the compute instance.
+
+        :param oci.container_engine.models.RebootClusterNodeDetails reboot_cluster_node_details: (required)
+            The fields to reboot a node.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.container_engine.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.container_engine.ContainerEngineClient.reboot_cluster_node`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.reboot_cluster_node(cluster_id, node_id, reboot_cluster_node_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def replace_boot_volume_cluster_node_and_wait_for_state(self, cluster_id, node_id, replace_boot_volume_cluster_node_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.container_engine.ContainerEngineClient.replace_boot_volume_cluster_node` and waits for the :py:class:`~oci.container_engine.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str cluster_id: (required)
+            The OCID of the cluster.
+
+        :param str node_id: (required)
+            The OCID of the compute instance.
+
+        :param oci.container_engine.models.ReplaceBootVolumeClusterNodeDetails replace_boot_volume_cluster_node_details: (required)
+            The fields to replace boot volume of a node.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.container_engine.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.container_engine.ContainerEngineClient.replace_boot_volume_cluster_node`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.replace_boot_volume_cluster_node(cluster_id, node_id, replace_boot_volume_cluster_node_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def start_credential_rotation_and_wait_for_state(self, cluster_id, start_credential_rotation_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.container_engine.ContainerEngineClient.start_credential_rotation` and waits for the :py:class:`~oci.container_engine.models.WorkRequest`

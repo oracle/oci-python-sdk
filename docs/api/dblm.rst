@@ -18,19 +18,30 @@ Dblm
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.dblm.models.AdditionalPatches
     oci.dblm.models.AggregatedVulnerabilityCollection
     oci.dblm.models.AggregatedVulnerabilitySummary
     oci.dblm.models.ChildPdb
     oci.dblm.models.CreateVulnerabilityScanDetails
+    oci.dblm.models.DatabasesSummary
+    oci.dblm.models.DblmPatchManagement
     oci.dblm.models.DblmVulnerability
+    oci.dblm.models.FppServer
     oci.dblm.models.HostInfo
+    oci.dblm.models.ImageDetails
+    oci.dblm.models.ImagesPatchRecommendationSummary
     oci.dblm.models.MetricError
     oci.dblm.models.NotificationCollection
     oci.dblm.models.NotificationSummary
+    oci.dblm.models.PatchActivityDetails
+    oci.dblm.models.PatchComplianceDetails
+    oci.dblm.models.PatchDatabasesCollection
+    oci.dblm.models.PatchOperationsSummary
     oci.dblm.models.PatchRecommendationSummary
     oci.dblm.models.PatchRecommendationsDetailsSummary
     oci.dblm.models.ResourceInfo
     oci.dblm.models.ResourceSummary
+    oci.dblm.models.ResourcesPatchComplianceSummary
     oci.dblm.models.VulnerabilitiesSummary
     oci.dblm.models.VulnerabilityCollection
     oci.dblm.models.VulnerabilityResourceCollection
