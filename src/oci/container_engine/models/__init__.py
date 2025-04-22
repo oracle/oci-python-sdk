@@ -22,6 +22,7 @@ from .cluster_endpoints import ClusterEndpoints
 from .cluster_metadata import ClusterMetadata
 from .cluster_migrate_to_native_vcn_details import ClusterMigrateToNativeVcnDetails
 from .cluster_migrate_to_native_vcn_status import ClusterMigrateToNativeVcnStatus
+from .cluster_node import ClusterNode
 from .cluster_options import ClusterOptions
 from .cluster_pod_network_option_details import ClusterPodNetworkOptionDetails
 from .cluster_summary import ClusterSummary
@@ -37,6 +38,7 @@ from .create_workload_mapping_details import CreateWorkloadMappingDetails
 from .credential_rotation_status import CredentialRotationStatus
 from .flannel_overlay_cluster_pod_network_option_details import FlannelOverlayClusterPodNetworkOptionDetails
 from .flannel_overlay_node_pool_pod_network_option_details import FlannelOverlayNodePoolPodNetworkOptionDetails
+from .image import Image
 from .image_policy_config import ImagePolicyConfig
 from .initial_virtual_node_label import InitialVirtualNodeLabel
 from .install_addon_details import InstallAddonDetails
@@ -47,6 +49,7 @@ from .kubernetes_versions_filters import KubernetesVersionsFilters
 from .node import Node
 from .node_error import NodeError
 from .node_eviction_node_pool_settings import NodeEvictionNodePoolSettings
+from .node_eviction_settings import NodeEvictionSettings
 from .node_pool import NodePool
 from .node_pool_cycling_details import NodePoolCyclingDetails
 from .node_pool_node_config_details import NodePoolNodeConfigDetails
@@ -70,6 +73,8 @@ from .pod_shape import PodShape
 from .pod_shape_summary import PodShapeSummary
 from .preemptible_node_config_details import PreemptibleNodeConfigDetails
 from .preemption_action import PreemptionAction
+from .reboot_cluster_node_details import RebootClusterNodeDetails
+from .replace_boot_volume_cluster_node_details import ReplaceBootVolumeClusterNodeDetails
 from .service_lb_config_details import ServiceLbConfigDetails
 from .shape_memory_options import ShapeMemoryOptions
 from .shape_network_bandwidth_options import ShapeNetworkBandwidthOptions
@@ -118,6 +123,7 @@ container_engine_type_mapping = {
     "ClusterMetadata": ClusterMetadata,
     "ClusterMigrateToNativeVcnDetails": ClusterMigrateToNativeVcnDetails,
     "ClusterMigrateToNativeVcnStatus": ClusterMigrateToNativeVcnStatus,
+    "ClusterNode": ClusterNode,
     "ClusterOptions": ClusterOptions,
     "ClusterPodNetworkOptionDetails": ClusterPodNetworkOptionDetails,
     "ClusterSummary": ClusterSummary,
@@ -133,6 +139,7 @@ container_engine_type_mapping = {
     "CredentialRotationStatus": CredentialRotationStatus,
     "FlannelOverlayClusterPodNetworkOptionDetails": FlannelOverlayClusterPodNetworkOptionDetails,
     "FlannelOverlayNodePoolPodNetworkOptionDetails": FlannelOverlayNodePoolPodNetworkOptionDetails,
+    "Image": Image,
     "ImagePolicyConfig": ImagePolicyConfig,
     "InitialVirtualNodeLabel": InitialVirtualNodeLabel,
     "InstallAddonDetails": InstallAddonDetails,
@@ -143,6 +150,7 @@ container_engine_type_mapping = {
     "Node": Node,
     "NodeError": NodeError,
     "NodeEvictionNodePoolSettings": NodeEvictionNodePoolSettings,
+    "NodeEvictionSettings": NodeEvictionSettings,
     "NodePool": NodePool,
     "NodePoolCyclingDetails": NodePoolCyclingDetails,
     "NodePoolNodeConfigDetails": NodePoolNodeConfigDetails,
@@ -166,6 +174,8 @@ container_engine_type_mapping = {
     "PodShapeSummary": PodShapeSummary,
     "PreemptibleNodeConfigDetails": PreemptibleNodeConfigDetails,
     "PreemptionAction": PreemptionAction,
+    "RebootClusterNodeDetails": RebootClusterNodeDetails,
+    "ReplaceBootVolumeClusterNodeDetails": ReplaceBootVolumeClusterNodeDetails,
     "ServiceLbConfigDetails": ServiceLbConfigDetails,
     "ShapeMemoryOptions": ShapeMemoryOptions,
     "ShapeNetworkBandwidthOptions": ShapeNetworkBandwidthOptions,

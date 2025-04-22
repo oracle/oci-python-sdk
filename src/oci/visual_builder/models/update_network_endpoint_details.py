@@ -17,6 +17,10 @@ class UpdateNetworkEndpointDetails(object):
     """
 
     #: A constant which can be used with the network_endpoint_type property of a UpdateNetworkEndpointDetails.
+    #: This constant has a value of "PUBLIC"
+    NETWORK_ENDPOINT_TYPE_PUBLIC = "PUBLIC"
+
+    #: A constant which can be used with the network_endpoint_type property of a UpdateNetworkEndpointDetails.
     #: This constant has a value of "PRIVATE"
     NETWORK_ENDPOINT_TYPE_PRIVATE = "PRIVATE"
 
@@ -25,13 +29,14 @@ class UpdateNetworkEndpointDetails(object):
         Initializes a new UpdateNetworkEndpointDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.visual_builder.models.UpdatePublicEndpointDetails`
         * :class:`~oci.visual_builder.models.UpdatePrivateEndpointDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param network_endpoint_type:
             The value to assign to the network_endpoint_type property of this UpdateNetworkEndpointDetails.
-            Allowed values for this property are: "PRIVATE"
+            Allowed values for this property are: "PUBLIC", "PRIVATE"
         :type network_endpoint_type: str
 
         """
@@ -51,6 +56,9 @@ class UpdateNetworkEndpointDetails(object):
         """
         type = object_dictionary['networkEndpointType']
 
+        if type == 'PUBLIC':
+            return 'UpdatePublicEndpointDetails'
+
         if type == 'PRIVATE':
             return 'UpdatePrivateEndpointDetails'
         else:
@@ -62,7 +70,7 @@ class UpdateNetworkEndpointDetails(object):
         **[Required]** Gets the network_endpoint_type of this UpdateNetworkEndpointDetails.
         The type of network endpoint.
 
-        Allowed values for this property are: "PRIVATE"
+        Allowed values for this property are: "PUBLIC", "PRIVATE"
 
 
         :return: The network_endpoint_type of this UpdateNetworkEndpointDetails.
@@ -80,7 +88,7 @@ class UpdateNetworkEndpointDetails(object):
         :param network_endpoint_type: The network_endpoint_type of this UpdateNetworkEndpointDetails.
         :type: str
         """
-        allowed_values = ["PRIVATE"]
+        allowed_values = ["PUBLIC", "PRIVATE"]
         if not value_allowed_none_or_none_sentinel(network_endpoint_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `network_endpoint_type`, must be None or one of {allowed_values}"

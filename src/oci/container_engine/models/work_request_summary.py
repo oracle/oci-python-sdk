@@ -87,6 +87,14 @@ class WorkRequestSummary(object):
     #: This constant has a value of "RECONCILE_ADDON"
     OPERATION_TYPE_RECONCILE_ADDON = "RECONCILE_ADDON"
 
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "CLUSTER_NODE_REBOOT"
+    OPERATION_TYPE_CLUSTER_NODE_REBOOT = "CLUSTER_NODE_REBOOT"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "CLUSTER_NODE_REPLACE_BOOT_VOLUME"
+    OPERATION_TYPE_CLUSTER_NODE_REPLACE_BOOT_VOLUME = "CLUSTER_NODE_REPLACE_BOOT_VOLUME"
+
     #: A constant which can be used with the status property of a WorkRequestSummary.
     #: This constant has a value of "ACCEPTED"
     STATUS_ACCEPTED = "ACCEPTED"
@@ -122,7 +130,7 @@ class WorkRequestSummary(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequestSummary.
-            Allowed values for this property are: "CLUSTER_CREATE", "CLUSTER_UPDATE", "CLUSTER_DELETE", "CREATE_NAMESPACE", "NODEPOOL_CREATE", "NODEPOOL_UPDATE", "NODEPOOL_DELETE", "NODEPOOL_RECONCILE", "NODEPOOL_CYCLING", "WORKREQUEST_CANCEL", "VIRTUALNODEPOOL_CREATE", "VIRTUALNODEPOOL_UPDATE", "VIRTUALNODEPOOL_DELETE", "VIRTUALNODE_DELETE", "ENABLE_ADDON", "UPDATE_ADDON", "DISABLE_ADDON", "RECONCILE_ADDON", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CLUSTER_CREATE", "CLUSTER_UPDATE", "CLUSTER_DELETE", "CREATE_NAMESPACE", "NODEPOOL_CREATE", "NODEPOOL_UPDATE", "NODEPOOL_DELETE", "NODEPOOL_RECONCILE", "NODEPOOL_CYCLING", "WORKREQUEST_CANCEL", "VIRTUALNODEPOOL_CREATE", "VIRTUALNODEPOOL_UPDATE", "VIRTUALNODEPOOL_DELETE", "VIRTUALNODE_DELETE", "ENABLE_ADDON", "UPDATE_ADDON", "DISABLE_ADDON", "RECONCILE_ADDON", "CLUSTER_NODE_REBOOT", "CLUSTER_NODE_REPLACE_BOOT_VOLUME", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -212,7 +220,7 @@ class WorkRequestSummary(object):
         Gets the operation_type of this WorkRequestSummary.
         The type of work the work request is doing.
 
-        Allowed values for this property are: "CLUSTER_CREATE", "CLUSTER_UPDATE", "CLUSTER_DELETE", "CREATE_NAMESPACE", "NODEPOOL_CREATE", "NODEPOOL_UPDATE", "NODEPOOL_DELETE", "NODEPOOL_RECONCILE", "NODEPOOL_CYCLING", "WORKREQUEST_CANCEL", "VIRTUALNODEPOOL_CREATE", "VIRTUALNODEPOOL_UPDATE", "VIRTUALNODEPOOL_DELETE", "VIRTUALNODE_DELETE", "ENABLE_ADDON", "UPDATE_ADDON", "DISABLE_ADDON", "RECONCILE_ADDON", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CLUSTER_CREATE", "CLUSTER_UPDATE", "CLUSTER_DELETE", "CREATE_NAMESPACE", "NODEPOOL_CREATE", "NODEPOOL_UPDATE", "NODEPOOL_DELETE", "NODEPOOL_RECONCILE", "NODEPOOL_CYCLING", "WORKREQUEST_CANCEL", "VIRTUALNODEPOOL_CREATE", "VIRTUALNODEPOOL_UPDATE", "VIRTUALNODEPOOL_DELETE", "VIRTUALNODE_DELETE", "ENABLE_ADDON", "UPDATE_ADDON", "DISABLE_ADDON", "RECONCILE_ADDON", "CLUSTER_NODE_REBOOT", "CLUSTER_NODE_REPLACE_BOOT_VOLUME", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -231,7 +239,7 @@ class WorkRequestSummary(object):
         :param operation_type: The operation_type of this WorkRequestSummary.
         :type: str
         """
-        allowed_values = ["CLUSTER_CREATE", "CLUSTER_UPDATE", "CLUSTER_DELETE", "CREATE_NAMESPACE", "NODEPOOL_CREATE", "NODEPOOL_UPDATE", "NODEPOOL_DELETE", "NODEPOOL_RECONCILE", "NODEPOOL_CYCLING", "WORKREQUEST_CANCEL", "VIRTUALNODEPOOL_CREATE", "VIRTUALNODEPOOL_UPDATE", "VIRTUALNODEPOOL_DELETE", "VIRTUALNODE_DELETE", "ENABLE_ADDON", "UPDATE_ADDON", "DISABLE_ADDON", "RECONCILE_ADDON"]
+        allowed_values = ["CLUSTER_CREATE", "CLUSTER_UPDATE", "CLUSTER_DELETE", "CREATE_NAMESPACE", "NODEPOOL_CREATE", "NODEPOOL_UPDATE", "NODEPOOL_DELETE", "NODEPOOL_RECONCILE", "NODEPOOL_CYCLING", "WORKREQUEST_CANCEL", "VIRTUALNODEPOOL_CREATE", "VIRTUALNODEPOOL_UPDATE", "VIRTUALNODEPOOL_DELETE", "VIRTUALNODE_DELETE", "ENABLE_ADDON", "UPDATE_ADDON", "DISABLE_ADDON", "RECONCILE_ADDON", "CLUSTER_NODE_REBOOT", "CLUSTER_NODE_REPLACE_BOOT_VOLUME"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type

@@ -214,6 +214,128 @@ class DbLifeCycleManagementClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def get_patch_management(self, compartment_id, **kwargs):
+        """
+        Overview of Patch Management.
+
+
+        :param str compartment_id: (required)
+            The required ID of the compartment in which to list resources.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str database_release: (optional)
+            A filter to return only database that match the given release version.
+
+        :param str lifecycle_state: (optional)
+            A filter to return only resources their lifecycleState matches the given lifecycleState.
+
+            Allowed values are: "CREATING", "ACTIVE", "FAILED", "NEEDS_ATTENTION", "DELETING", "DELETED"
+
+        :param datetime time_started_greater_than_or_equal_to: (optional)
+            A filter to return only resources whose timeStarted is greater than or equal to the given date-time.
+
+        :param datetime time_started_less_than: (optional)
+            A filter to return only resources whose timeStarted is less than the given date-time.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.dblm.models.DblmPatchManagement`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dblm/get_patch_management.py.html>`__ to see an example of how to use get_patch_management API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
+        resource_path = "/patchManagement"
+        method = "GET"
+        operation_name = "get_patch_management"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "database_release",
+            "lifecycle_state",
+            "time_started_greater_than_or_equal_to",
+            "time_started_less_than"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"get_patch_management got unknown kwargs: {extra_kwargs!r}")
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "FAILED", "NEEDS_ATTENTION", "DELETING", "DELETED"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "databaseRelease": kwargs.get("database_release", missing),
+            "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "timeStartedGreaterThanOrEqualTo": kwargs.get("time_started_greater_than_or_equal_to", missing),
+            "timeStartedLessThan": kwargs.get("time_started_less_than", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="DblmPatchManagement",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="DblmPatchManagement",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def get_vulnerability(self, compartment_id, **kwargs):
         """
         Gets a Vulnerability
@@ -652,6 +774,217 @@ class DbLifeCycleManagementClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="AggregatedVulnerabilityCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def list_databases(self, **kwargs):
+        """
+        Gets the list of databases
+
+
+        :param str compartment_id: (optional)
+            The ID of the compartment in which to list resources.
+
+        :param str lifecycle_state: (optional)
+            A filter to return only resources their lifecycleState matches the given lifecycleState.
+
+            Allowed values are: "CREATING", "ACTIVE", "FAILED", "NEEDS_ATTENTION", "DELETING", "DELETED"
+
+        :param str database_release: (optional)
+            A filter to return only database that match the given release version.
+
+        :param str database_type: (optional)
+            Filter by database type.
+            Possible values Single Instance or RAC.
+
+            Allowed values are: "SI", "RAC"
+
+        :param int limit: (optional)
+            The maximum number of items to return.
+
+        :param str page: (optional)
+            A token representing the position at which to start retrieving results. This must come from the `opc-next-page` header field of a previous response.
+
+        :param str sort_order: (optional)
+            The sort order to use, either 'ASC' or 'DESC'.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by.
+
+            Allowed values are: "timeCreated", "name", "resourceType", "release", "subscribedImage", "patchCompliance"
+
+        :param str image_id: (optional)
+            Subscribed image
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str display_name: (optional)
+            A filter to return only resources that match the entire display name given.
+
+        :param int drifter_patch_id: (optional)
+            A filter to return only database that have given patchId as additional patch (drifter from image version).
+
+        :param str image_compliance: (optional)
+            Filter databases by image compliance status.
+
+            Allowed values are: "NOT_SUBSCRIBED", "NOT_COMPLIANT_WITH_IMAGES", "ALL_DATABASES"
+
+        :param list[str] severity_type: (optional)
+            Filter by one or more severity types.
+            Possible values are critical, high, medium, low, info and none.
+
+            Allowed values are: "CRITICAL", "HIGH", "MEDIUM", "LOW", "INFO", "NONE"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.dblm.models.PatchDatabasesCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dblm/list_databases.py.html>`__ to see an example of how to use list_databases API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/patchManagement/databases"
+        method = "GET"
+        operation_name = "list_databases"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "compartment_id",
+            "lifecycle_state",
+            "database_release",
+            "database_type",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "image_id",
+            "opc_request_id",
+            "display_name",
+            "drifter_patch_id",
+            "image_compliance",
+            "severity_type"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"list_databases got unknown kwargs: {extra_kwargs!r}")
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "FAILED", "NEEDS_ATTENTION", "DELETING", "DELETED"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
+                )
+
+        if 'database_type' in kwargs:
+            database_type_allowed_values = ["SI", "RAC"]
+            if kwargs['database_type'] not in database_type_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `database_type`, must be one of { database_type_allowed_values }"
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeCreated", "name", "resourceType", "release", "subscribedImage", "patchCompliance"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
+                )
+
+        if 'image_compliance' in kwargs:
+            image_compliance_allowed_values = ["NOT_SUBSCRIBED", "NOT_COMPLIANT_WITH_IMAGES", "ALL_DATABASES"]
+            if kwargs['image_compliance'] not in image_compliance_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `image_compliance`, must be one of { image_compliance_allowed_values }"
+                )
+
+        if 'severity_type' in kwargs:
+            severity_type_allowed_values = ["CRITICAL", "HIGH", "MEDIUM", "LOW", "INFO", "NONE"]
+            for severity_type_item in kwargs['severity_type']:
+                if severity_type_item not in severity_type_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `severity_type`, must be one of { severity_type_allowed_values }"
+                    )
+
+        query_params = {
+            "compartmentId": kwargs.get("compartment_id", missing),
+            "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "databaseRelease": kwargs.get("database_release", missing),
+            "databaseType": kwargs.get("database_type", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "imageId": kwargs.get("image_id", missing),
+            "displayName": kwargs.get("display_name", missing),
+            "drifterPatchId": kwargs.get("drifter_patch_id", missing),
+            "imageCompliance": kwargs.get("image_compliance", missing),
+            "severityType": self.base_client.generate_collection_format_param(kwargs.get("severity_type", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="PatchDatabasesCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="PatchDatabasesCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,

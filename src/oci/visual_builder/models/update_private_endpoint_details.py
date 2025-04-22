@@ -23,7 +23,7 @@ class UpdatePrivateEndpointDetails(UpdateNetworkEndpointDetails):
 
         :param network_endpoint_type:
             The value to assign to the network_endpoint_type property of this UpdatePrivateEndpointDetails.
-            Allowed values for this property are: "PRIVATE"
+            Allowed values for this property are: "PUBLIC", "PRIVATE"
         :type network_endpoint_type: str
 
         :param subnet_id:

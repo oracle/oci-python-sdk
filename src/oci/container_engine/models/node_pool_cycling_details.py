@@ -32,20 +32,27 @@ class NodePoolCyclingDetails(object):
             The value to assign to the is_node_cycling_enabled property of this NodePoolCyclingDetails.
         :type is_node_cycling_enabled: bool
 
+        :param cycle_modes:
+            The value to assign to the cycle_modes property of this NodePoolCyclingDetails.
+        :type cycle_modes: list[oci.container_engine.models.CycleMode]
+
         """
         self.swagger_types = {
             'maximum_unavailable': 'str',
             'maximum_surge': 'str',
-            'is_node_cycling_enabled': 'bool'
+            'is_node_cycling_enabled': 'bool',
+            'cycle_modes': 'list[CycleMode]'
         }
         self.attribute_map = {
             'maximum_unavailable': 'maximumUnavailable',
             'maximum_surge': 'maximumSurge',
-            'is_node_cycling_enabled': 'isNodeCyclingEnabled'
+            'is_node_cycling_enabled': 'isNodeCyclingEnabled',
+            'cycle_modes': 'cycleModes'
         }
         self._maximum_unavailable = None
         self._maximum_surge = None
         self._is_node_cycling_enabled = None
+        self._cycle_modes = None
 
     @property
     def maximum_unavailable(self):
@@ -107,7 +114,7 @@ class NodePoolCyclingDetails(object):
     def is_node_cycling_enabled(self):
         """
         Gets the is_node_cycling_enabled of this NodePoolCyclingDetails.
-        If nodes in the nodepool will be cycled to have new changes.
+        If cycling operation should be performed on the nodes in the node pool.
 
 
         :return: The is_node_cycling_enabled of this NodePoolCyclingDetails.
@@ -119,13 +126,37 @@ class NodePoolCyclingDetails(object):
     def is_node_cycling_enabled(self, is_node_cycling_enabled):
         """
         Sets the is_node_cycling_enabled of this NodePoolCyclingDetails.
-        If nodes in the nodepool will be cycled to have new changes.
+        If cycling operation should be performed on the nodes in the node pool.
 
 
         :param is_node_cycling_enabled: The is_node_cycling_enabled of this NodePoolCyclingDetails.
         :type: bool
         """
         self._is_node_cycling_enabled = is_node_cycling_enabled
+
+    @property
+    def cycle_modes(self):
+        """
+        Gets the cycle_modes of this NodePoolCyclingDetails.
+        An ordered list of cycle modes that should be performed on the OKE nodes.
+
+
+        :return: The cycle_modes of this NodePoolCyclingDetails.
+        :rtype: list[oci.container_engine.models.CycleMode]
+        """
+        return self._cycle_modes
+
+    @cycle_modes.setter
+    def cycle_modes(self, cycle_modes):
+        """
+        Sets the cycle_modes of this NodePoolCyclingDetails.
+        An ordered list of cycle modes that should be performed on the OKE nodes.
+
+
+        :param cycle_modes: The cycle_modes of this NodePoolCyclingDetails.
+        :type: list[oci.container_engine.models.CycleMode]
+        """
+        self._cycle_modes = cycle_modes
 
     def __repr__(self):
         return formatted_flat_dict(self)

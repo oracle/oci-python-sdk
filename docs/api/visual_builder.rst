@@ -26,14 +26,17 @@ Visual Builder
     oci.visual_builder.models.CustomEndpointDetails
     oci.visual_builder.models.NetworkEndpointDetails
     oci.visual_builder.models.PrivateEndpointDetails
+    oci.visual_builder.models.PublicEndpointDetails
     oci.visual_builder.models.RequestSummarizedApplicationsDetails
     oci.visual_builder.models.UpdateCustomEndpointDetails
     oci.visual_builder.models.UpdateNetworkEndpointDetails
     oci.visual_builder.models.UpdatePrivateEndpointDetails
+    oci.visual_builder.models.UpdatePublicEndpointDetails
     oci.visual_builder.models.UpdateVbInstanceDetails
     oci.visual_builder.models.VbInstance
     oci.visual_builder.models.VbInstanceSummary
     oci.visual_builder.models.VbInstanceSummaryCollection
+    oci.visual_builder.models.VirtualCloudNetwork
     oci.visual_builder.models.WorkRequest
     oci.visual_builder.models.WorkRequestError
     oci.visual_builder.models.WorkRequestErrorCollection

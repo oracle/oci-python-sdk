@@ -52,6 +52,10 @@ class UpdateVolumeDetails(object):
             The value to assign to the autotune_policies property of this UpdateVolumeDetails.
         :type autotune_policies: list[oci.core.models.AutotunePolicy]
 
+        :param is_reservations_enabled:
+            The value to assign to the is_reservations_enabled property of this UpdateVolumeDetails.
+        :type is_reservations_enabled: bool
+
         """
         self.swagger_types = {
             'defined_tags': 'dict(str, dict(str, object))',
@@ -61,7 +65,8 @@ class UpdateVolumeDetails(object):
             'size_in_gbs': 'int',
             'is_auto_tune_enabled': 'bool',
             'block_volume_replicas': 'list[BlockVolumeReplicaDetails]',
-            'autotune_policies': 'list[AutotunePolicy]'
+            'autotune_policies': 'list[AutotunePolicy]',
+            'is_reservations_enabled': 'bool'
         }
         self.attribute_map = {
             'defined_tags': 'definedTags',
@@ -71,7 +76,8 @@ class UpdateVolumeDetails(object):
             'size_in_gbs': 'sizeInGBs',
             'is_auto_tune_enabled': 'isAutoTuneEnabled',
             'block_volume_replicas': 'blockVolumeReplicas',
-            'autotune_policies': 'autotunePolicies'
+            'autotune_policies': 'autotunePolicies',
+            'is_reservations_enabled': 'isReservationsEnabled'
         }
         self._defined_tags = None
         self._display_name = None
@@ -81,6 +87,7 @@ class UpdateVolumeDetails(object):
         self._is_auto_tune_enabled = None
         self._block_volume_replicas = None
         self._autotune_policies = None
+        self._is_reservations_enabled = None
 
     @property
     def defined_tags(self):
@@ -331,6 +338,30 @@ class UpdateVolumeDetails(object):
         :type: list[oci.core.models.AutotunePolicy]
         """
         self._autotune_policies = autotune_policies
+
+    @property
+    def is_reservations_enabled(self):
+        """
+        Gets the is_reservations_enabled of this UpdateVolumeDetails.
+        Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+
+
+        :return: The is_reservations_enabled of this UpdateVolumeDetails.
+        :rtype: bool
+        """
+        return self._is_reservations_enabled
+
+    @is_reservations_enabled.setter
+    def is_reservations_enabled(self, is_reservations_enabled):
+        """
+        Sets the is_reservations_enabled of this UpdateVolumeDetails.
+        Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+
+
+        :param is_reservations_enabled: The is_reservations_enabled of this UpdateVolumeDetails.
+        :type: bool
+        """
+        self._is_reservations_enabled = is_reservations_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

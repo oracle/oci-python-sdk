@@ -14,14 +14,17 @@ from .create_vb_instance_details import CreateVbInstanceDetails
 from .custom_endpoint_details import CustomEndpointDetails
 from .network_endpoint_details import NetworkEndpointDetails
 from .private_endpoint_details import PrivateEndpointDetails
+from .public_endpoint_details import PublicEndpointDetails
 from .request_summarized_applications_details import RequestSummarizedApplicationsDetails
 from .update_custom_endpoint_details import UpdateCustomEndpointDetails
 from .update_network_endpoint_details import UpdateNetworkEndpointDetails
 from .update_private_endpoint_details import UpdatePrivateEndpointDetails
+from .update_public_endpoint_details import UpdatePublicEndpointDetails
 from .update_vb_instance_details import UpdateVbInstanceDetails
 from .vb_instance import VbInstance
 from .vb_instance_summary import VbInstanceSummary
 from .vb_instance_summary_collection import VbInstanceSummaryCollection
+from .virtual_cloud_network import VirtualCloudNetwork
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
 from .work_request_error_collection import WorkRequestErrorCollection
@@ -41,14 +44,17 @@ visual_builder_type_mapping = {
     "CustomEndpointDetails": CustomEndpointDetails,
     "NetworkEndpointDetails": NetworkEndpointDetails,
     "PrivateEndpointDetails": PrivateEndpointDetails,
+    "PublicEndpointDetails": PublicEndpointDetails,
     "RequestSummarizedApplicationsDetails": RequestSummarizedApplicationsDetails,
     "UpdateCustomEndpointDetails": UpdateCustomEndpointDetails,
     "UpdateNetworkEndpointDetails": UpdateNetworkEndpointDetails,
     "UpdatePrivateEndpointDetails": UpdatePrivateEndpointDetails,
+    "UpdatePublicEndpointDetails": UpdatePublicEndpointDetails,
     "UpdateVbInstanceDetails": UpdateVbInstanceDetails,
     "VbInstance": VbInstance,
     "VbInstanceSummary": VbInstanceSummary,
     "VbInstanceSummaryCollection": VbInstanceSummaryCollection,
+    "VirtualCloudNetwork": VirtualCloudNetwork,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,
     "WorkRequestErrorCollection": WorkRequestErrorCollection,

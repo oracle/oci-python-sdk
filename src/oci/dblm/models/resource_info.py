@@ -64,6 +64,10 @@ class ResourceInfo(object):
             The value to assign to the license_type property of this ResourceInfo.
         :type license_type: str
 
+        :param agent_id:
+            The value to assign to the agent_id property of this ResourceInfo.
+        :type agent_id: str
+
         """
         self.swagger_types = {
             'resource_compartment_id': 'str',
@@ -76,7 +80,8 @@ class ResourceInfo(object):
             'host_info': 'list[HostInfo]',
             'db_version': 'str',
             'db_platform_type': 'str',
-            'license_type': 'str'
+            'license_type': 'str',
+            'agent_id': 'str'
         }
         self.attribute_map = {
             'resource_compartment_id': 'resourceCompartmentId',
@@ -89,7 +94,8 @@ class ResourceInfo(object):
             'host_info': 'hostInfo',
             'db_version': 'dbVersion',
             'db_platform_type': 'dbPlatformType',
-            'license_type': 'licenseType'
+            'license_type': 'licenseType',
+            'agent_id': 'agentId'
         }
         self._resource_compartment_id = None
         self._resource_name = None
@@ -102,6 +108,7 @@ class ResourceInfo(object):
         self._db_version = None
         self._db_platform_type = None
         self._license_type = None
+        self._agent_id = None
 
     @property
     def resource_compartment_id(self):
@@ -366,6 +373,30 @@ class ResourceInfo(object):
         :type: str
         """
         self._license_type = license_type
+
+    @property
+    def agent_id(self):
+        """
+        Gets the agent_id of this ResourceInfo.
+        The agent Id of the agent managing the resource.
+
+
+        :return: The agent_id of this ResourceInfo.
+        :rtype: str
+        """
+        return self._agent_id
+
+    @agent_id.setter
+    def agent_id(self, agent_id):
+        """
+        Sets the agent_id of this ResourceInfo.
+        The agent Id of the agent managing the resource.
+
+
+        :param agent_id: The agent_id of this ResourceInfo.
+        :type: str
+        """
+        self._agent_id = agent_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

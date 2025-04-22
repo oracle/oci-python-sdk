@@ -1,0 +1,11 @@
+DatabasesSummary
+================
+
+.. currentmodule:: oci.dblm.models
+
+.. autoclass:: DatabasesSummary
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:
