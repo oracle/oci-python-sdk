@@ -18,11 +18,17 @@ Resource Scheduler
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.resource_scheduler.models.BodyParameter
+    oci.resource_scheduler.models.ChangeScheduleCompartmentDetails
     oci.resource_scheduler.models.CompartmentIdResourceFilter
     oci.resource_scheduler.models.CreateScheduleDetails
     oci.resource_scheduler.models.DefinedTagFilterValue
     oci.resource_scheduler.models.DefinedTagsResourceFilter
+    oci.resource_scheduler.models.HeaderParameter
     oci.resource_scheduler.models.LifecycleStateResourceFilter
+    oci.resource_scheduler.models.Parameter
+    oci.resource_scheduler.models.PathParameter
+    oci.resource_scheduler.models.QueryParameter
     oci.resource_scheduler.models.Resource
     oci.resource_scheduler.models.ResourceFilter
     oci.resource_scheduler.models.ResourceType

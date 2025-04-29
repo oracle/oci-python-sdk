@@ -28,17 +28,24 @@ class Resource(object):
             The value to assign to the metadata property of this Resource.
         :type metadata: dict(str, str)
 
+        :param parameters:
+            The value to assign to the parameters property of this Resource.
+        :type parameters: list[oci.resource_scheduler.models.Parameter]
+
         """
         self.swagger_types = {
             'id': 'str',
-            'metadata': 'dict(str, str)'
+            'metadata': 'dict(str, str)',
+            'parameters': 'list[Parameter]'
         }
         self.attribute_map = {
             'id': 'id',
-            'metadata': 'metadata'
+            'metadata': 'metadata',
+            'parameters': 'parameters'
         }
         self._id = None
         self._metadata = None
+        self._parameters = None
 
     @property
     def id(self):
@@ -105,6 +112,110 @@ class Resource(object):
         :type: dict(str, str)
         """
         self._metadata = metadata
+
+    @property
+    def parameters(self):
+        """
+        Gets the parameters of this Resource.
+        This is the user input parameters to use when acting on the resource.
+
+        {
+            \"parameters\": [
+                {
+                    \"parameterType\": \"BODY\",
+                    \"value\": {
+                        \"ip\": \"192.168.44.44\",
+                        \"memory\": \"1024\",
+                        \"synced_folders\": [
+                            {
+                                \"host_path\": \"data/\",
+                                \"guest_path\": \"/var/www\",
+                                \"type\": \"default\"
+                            }
+                        ],
+                        \"forwarded_ports\": []
+                    }
+                },
+                {
+                    \"parameterType\": \"PATH\",
+                    \"value\": {
+                        \"compartmentId\": \"ocid1.compartment.oc1..xxxxx\",
+                        \"instanceId\": \"ocid1.vcn.oc1..yyyy\"
+                    }
+                },
+                {
+                    \"parameterType\": \"QUERY\",
+                    \"value\": {
+                        \"limit\": \"10\",
+                        \"tenantId\": \"ocid1.tenant.oc1..zzzz\"
+                    }
+                },
+                {
+                    \"parameterType\": \"HEADER\",
+                    \"value\": {
+                      \"token\": \"xxxx\"
+                    }
+                }
+            ]
+        }
+
+
+        :return: The parameters of this Resource.
+        :rtype: list[oci.resource_scheduler.models.Parameter]
+        """
+        return self._parameters
+
+    @parameters.setter
+    def parameters(self, parameters):
+        """
+        Sets the parameters of this Resource.
+        This is the user input parameters to use when acting on the resource.
+
+        {
+            \"parameters\": [
+                {
+                    \"parameterType\": \"BODY\",
+                    \"value\": {
+                        \"ip\": \"192.168.44.44\",
+                        \"memory\": \"1024\",
+                        \"synced_folders\": [
+                            {
+                                \"host_path\": \"data/\",
+                                \"guest_path\": \"/var/www\",
+                                \"type\": \"default\"
+                            }
+                        ],
+                        \"forwarded_ports\": []
+                    }
+                },
+                {
+                    \"parameterType\": \"PATH\",
+                    \"value\": {
+                        \"compartmentId\": \"ocid1.compartment.oc1..xxxxx\",
+                        \"instanceId\": \"ocid1.vcn.oc1..yyyy\"
+                    }
+                },
+                {
+                    \"parameterType\": \"QUERY\",
+                    \"value\": {
+                        \"limit\": \"10\",
+                        \"tenantId\": \"ocid1.tenant.oc1..zzzz\"
+                    }
+                },
+                {
+                    \"parameterType\": \"HEADER\",
+                    \"value\": {
+                      \"token\": \"xxxx\"
+                    }
+                }
+            ]
+        }
+
+
+        :param parameters: The parameters of this Resource.
+        :type: list[oci.resource_scheduler.models.Parameter]
+        """
+        self._parameters = parameters
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -12,6 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateBlockVolumeMountDetails(object):
     """
+    Deprecated. Use the 'UpdateComputeInstanceNonMovableBlockVolumeMountOperationDetails' definition instead of this.
     The details for updating the file system mount on a block volume.
     """
 

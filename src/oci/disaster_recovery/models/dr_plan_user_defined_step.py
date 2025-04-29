@@ -39,23 +39,38 @@ class DrPlanUserDefinedStep(object):
     #: This constant has a value of "INVOKE_FUNCTION"
     STEP_TYPE_INVOKE_FUNCTION = "INVOKE_FUNCTION"
 
+    #: A constant which can be used with the step_type property of a DrPlanUserDefinedStep.
+    #: This constant has a value of "RUN_OBJECTSTORE_SCRIPT_USER_DEFINED_CUSTOM_PRECHECK"
+    STEP_TYPE_RUN_OBJECTSTORE_SCRIPT_USER_DEFINED_CUSTOM_PRECHECK = "RUN_OBJECTSTORE_SCRIPT_USER_DEFINED_CUSTOM_PRECHECK"
+
+    #: A constant which can be used with the step_type property of a DrPlanUserDefinedStep.
+    #: This constant has a value of "RUN_LOCAL_SCRIPT_USER_DEFINED_CUSTOM_PRECHECK"
+    STEP_TYPE_RUN_LOCAL_SCRIPT_USER_DEFINED_CUSTOM_PRECHECK = "RUN_LOCAL_SCRIPT_USER_DEFINED_CUSTOM_PRECHECK"
+
+    #: A constant which can be used with the step_type property of a DrPlanUserDefinedStep.
+    #: This constant has a value of "INVOKE_FUNCTION_USER_DEFINED_CUSTOM_PRECHECK"
+    STEP_TYPE_INVOKE_FUNCTION_USER_DEFINED_CUSTOM_PRECHECK = "INVOKE_FUNCTION_USER_DEFINED_CUSTOM_PRECHECK"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DrPlanUserDefinedStep object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.disaster_recovery.models.InvokeFunctionUserDefinedCustomPrecheckStep`
         * :class:`~oci.disaster_recovery.models.InvokeFunctionStep`
         * :class:`~oci.disaster_recovery.models.InvokeFunctionPrecheckStep`
+        * :class:`~oci.disaster_recovery.models.RunObjectStoreScriptUserDefinedCustomPrecheckStep`
         * :class:`~oci.disaster_recovery.models.RunLocalScriptUserDefinedStep`
         * :class:`~oci.disaster_recovery.models.LocalScriptPrecheckStep`
         * :class:`~oci.disaster_recovery.models.ObjectStoreScriptPrecheckStep`
+        * :class:`~oci.disaster_recovery.models.RunLocalScriptUserDefinedCustomPrecheckStep`
         * :class:`~oci.disaster_recovery.models.RunObjectStoreScriptUserDefinedStep`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param step_type:
             The value to assign to the step_type property of this DrPlanUserDefinedStep.
-            Allowed values for this property are: "RUN_OBJECTSTORE_SCRIPT_PRECHECK", "RUN_LOCAL_SCRIPT_PRECHECK", "INVOKE_FUNCTION_PRECHECK", "RUN_OBJECTSTORE_SCRIPT", "RUN_LOCAL_SCRIPT", "INVOKE_FUNCTION", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "RUN_OBJECTSTORE_SCRIPT_PRECHECK", "RUN_LOCAL_SCRIPT_PRECHECK", "INVOKE_FUNCTION_PRECHECK", "RUN_OBJECTSTORE_SCRIPT", "RUN_LOCAL_SCRIPT", "INVOKE_FUNCTION", "RUN_OBJECTSTORE_SCRIPT_USER_DEFINED_CUSTOM_PRECHECK", "RUN_LOCAL_SCRIPT_USER_DEFINED_CUSTOM_PRECHECK", "INVOKE_FUNCTION_USER_DEFINED_CUSTOM_PRECHECK", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type step_type: str
 
@@ -76,11 +91,17 @@ class DrPlanUserDefinedStep(object):
         """
         type = object_dictionary['stepType']
 
+        if type == 'INVOKE_FUNCTION_USER_DEFINED_CUSTOM_PRECHECK':
+            return 'InvokeFunctionUserDefinedCustomPrecheckStep'
+
         if type == 'INVOKE_FUNCTION':
             return 'InvokeFunctionStep'
 
         if type == 'INVOKE_FUNCTION_PRECHECK':
             return 'InvokeFunctionPrecheckStep'
+
+        if type == 'RUN_OBJECTSTORE_SCRIPT_USER_DEFINED_CUSTOM_PRECHECK':
+            return 'RunObjectStoreScriptUserDefinedCustomPrecheckStep'
 
         if type == 'RUN_LOCAL_SCRIPT':
             return 'RunLocalScriptUserDefinedStep'
@@ -90,6 +111,9 @@ class DrPlanUserDefinedStep(object):
 
         if type == 'RUN_OBJECTSTORE_SCRIPT_PRECHECK':
             return 'ObjectStoreScriptPrecheckStep'
+
+        if type == 'RUN_LOCAL_SCRIPT_USER_DEFINED_CUSTOM_PRECHECK':
+            return 'RunLocalScriptUserDefinedCustomPrecheckStep'
 
         if type == 'RUN_OBJECTSTORE_SCRIPT':
             return 'RunObjectStoreScriptUserDefinedStep'
@@ -102,13 +126,14 @@ class DrPlanUserDefinedStep(object):
         **[Required]** Gets the step_type of this DrPlanUserDefinedStep.
         The type of the user-defined step.
 
-          **RUN_OBJECTSTORE_SCRIPT_PRECHECK** - A step which performs a precheck on a script stored
-            in OCI object storage.
+          **RUN_OBJECTSTORE_SCRIPT_PRECHECK** - A built-in step which performs a precheck on a script stored
+            in OCI object storage.  This step cannot be added, deleted, or customized by the user.
 
-          **RUN_LOCAL_SCRIPT_PRECHECK** - A step which performs a precheck on a script which resides
-            locally on a compute instance.
+          **RUN_LOCAL_SCRIPT_PRECHECK** - A built-in step which performs a precheck on a script which resides
+            locally on a compute instance.  This step cannot be added, deleted, or customized by the user.
 
-          **INVOKE_FUNCTION_PRECHECK** - A step which performs a precheck on an OCI function.
+          **INVOKE_FUNCTION_PRECHECK** - A built-in step which performs a precheck on an OCI function.  This
+            step cannot be added, deleted, or customized by the user.
             See https://docs.oracle.com/en-us/iaas/Content/Functions/home.htm.
 
           **RUN_OBJECTSTORE_SCRIPT** - A step which runs a script stored in OCI object storage.
@@ -118,7 +143,16 @@ class DrPlanUserDefinedStep(object):
           **INVOKE_FUNCTION** - A step which invokes an OCI function.
             See https://docs.oracle.com/en-us/iaas/Content/Functions/home.htm.
 
-        Allowed values for this property are: "RUN_OBJECTSTORE_SCRIPT_PRECHECK", "RUN_LOCAL_SCRIPT_PRECHECK", "INVOKE_FUNCTION_PRECHECK", "RUN_OBJECTSTORE_SCRIPT", "RUN_LOCAL_SCRIPT", "INVOKE_FUNCTION", 'UNKNOWN_ENUM_VALUE'.
+          **RUN_OBJECTSTORE_SCRIPT_USER_DEFINED_CUSTOM_PRECHECK** - A user-defined step which performs a precheck by executing a user-provided script stored
+            in OCI object storage.
+
+          **RUN_LOCAL_SCRIPT_USER_DEFINED_CUSTOM_PRECHECK** - A user-defined step which performs a precheck by executing a user-provided script which resides
+            locally on a compute instance.
+
+          **INVOKE_FUNCTION_USER_DEFINED_CUSTOM_PRECHECK** - A user-defined step which performs a precheck by executing a user-provided OCI function.
+            See https://docs.oracle.com/en-us/iaas/Content/Functions/home.htm.
+
+        Allowed values for this property are: "RUN_OBJECTSTORE_SCRIPT_PRECHECK", "RUN_LOCAL_SCRIPT_PRECHECK", "INVOKE_FUNCTION_PRECHECK", "RUN_OBJECTSTORE_SCRIPT", "RUN_LOCAL_SCRIPT", "INVOKE_FUNCTION", "RUN_OBJECTSTORE_SCRIPT_USER_DEFINED_CUSTOM_PRECHECK", "RUN_LOCAL_SCRIPT_USER_DEFINED_CUSTOM_PRECHECK", "INVOKE_FUNCTION_USER_DEFINED_CUSTOM_PRECHECK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -133,13 +167,14 @@ class DrPlanUserDefinedStep(object):
         Sets the step_type of this DrPlanUserDefinedStep.
         The type of the user-defined step.
 
-          **RUN_OBJECTSTORE_SCRIPT_PRECHECK** - A step which performs a precheck on a script stored
-            in OCI object storage.
+          **RUN_OBJECTSTORE_SCRIPT_PRECHECK** - A built-in step which performs a precheck on a script stored
+            in OCI object storage.  This step cannot be added, deleted, or customized by the user.
 
-          **RUN_LOCAL_SCRIPT_PRECHECK** - A step which performs a precheck on a script which resides
-            locally on a compute instance.
+          **RUN_LOCAL_SCRIPT_PRECHECK** - A built-in step which performs a precheck on a script which resides
+            locally on a compute instance.  This step cannot be added, deleted, or customized by the user.
 
-          **INVOKE_FUNCTION_PRECHECK** - A step which performs a precheck on an OCI function.
+          **INVOKE_FUNCTION_PRECHECK** - A built-in step which performs a precheck on an OCI function.  This
+            step cannot be added, deleted, or customized by the user.
             See https://docs.oracle.com/en-us/iaas/Content/Functions/home.htm.
 
           **RUN_OBJECTSTORE_SCRIPT** - A step which runs a script stored in OCI object storage.
@@ -149,11 +184,20 @@ class DrPlanUserDefinedStep(object):
           **INVOKE_FUNCTION** - A step which invokes an OCI function.
             See https://docs.oracle.com/en-us/iaas/Content/Functions/home.htm.
 
+          **RUN_OBJECTSTORE_SCRIPT_USER_DEFINED_CUSTOM_PRECHECK** - A user-defined step which performs a precheck by executing a user-provided script stored
+            in OCI object storage.
+
+          **RUN_LOCAL_SCRIPT_USER_DEFINED_CUSTOM_PRECHECK** - A user-defined step which performs a precheck by executing a user-provided script which resides
+            locally on a compute instance.
+
+          **INVOKE_FUNCTION_USER_DEFINED_CUSTOM_PRECHECK** - A user-defined step which performs a precheck by executing a user-provided OCI function.
+            See https://docs.oracle.com/en-us/iaas/Content/Functions/home.htm.
+
 
         :param step_type: The step_type of this DrPlanUserDefinedStep.
         :type: str
         """
-        allowed_values = ["RUN_OBJECTSTORE_SCRIPT_PRECHECK", "RUN_LOCAL_SCRIPT_PRECHECK", "INVOKE_FUNCTION_PRECHECK", "RUN_OBJECTSTORE_SCRIPT", "RUN_LOCAL_SCRIPT", "INVOKE_FUNCTION"]
+        allowed_values = ["RUN_OBJECTSTORE_SCRIPT_PRECHECK", "RUN_LOCAL_SCRIPT_PRECHECK", "INVOKE_FUNCTION_PRECHECK", "RUN_OBJECTSTORE_SCRIPT", "RUN_LOCAL_SCRIPT", "INVOKE_FUNCTION", "RUN_OBJECTSTORE_SCRIPT_USER_DEFINED_CUSTOM_PRECHECK", "RUN_LOCAL_SCRIPT_USER_DEFINED_CUSTOM_PRECHECK", "INVOKE_FUNCTION_USER_DEFINED_CUSTOM_PRECHECK"]
         if not value_allowed_none_or_none_sentinel(step_type, allowed_values):
             step_type = 'UNKNOWN_ENUM_VALUE'
         self._step_type = step_type

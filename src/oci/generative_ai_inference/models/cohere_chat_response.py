@@ -93,6 +93,10 @@ class CohereChatResponse(BaseChatResponse):
             The value to assign to the prompt property of this CohereChatResponse.
         :type prompt: str
 
+        :param usage:
+            The value to assign to the usage property of this CohereChatResponse.
+        :type usage: oci.generative_ai_inference.models.Usage
+
         """
         self.swagger_types = {
             'api_format': 'str',
@@ -105,7 +109,8 @@ class CohereChatResponse(BaseChatResponse):
             'search_queries': 'list[SearchQuery]',
             'documents': 'list[object]',
             'tool_calls': 'list[CohereToolCall]',
-            'prompt': 'str'
+            'prompt': 'str',
+            'usage': 'Usage'
         }
         self.attribute_map = {
             'api_format': 'apiFormat',
@@ -118,7 +123,8 @@ class CohereChatResponse(BaseChatResponse):
             'search_queries': 'searchQueries',
             'documents': 'documents',
             'tool_calls': 'toolCalls',
-            'prompt': 'prompt'
+            'prompt': 'prompt',
+            'usage': 'usage'
         }
         self._api_format = None
         self._text = None
@@ -131,6 +137,7 @@ class CohereChatResponse(BaseChatResponse):
         self._documents = None
         self._tool_calls = None
         self._prompt = None
+        self._usage = None
         self._api_format = 'COHERE'
 
     @property
@@ -406,6 +413,26 @@ class CohereChatResponse(BaseChatResponse):
         :type: str
         """
         self._prompt = prompt
+
+    @property
+    def usage(self):
+        """
+        Gets the usage of this CohereChatResponse.
+
+        :return: The usage of this CohereChatResponse.
+        :rtype: oci.generative_ai_inference.models.Usage
+        """
+        return self._usage
+
+    @usage.setter
+    def usage(self, usage):
+        """
+        Sets the usage of this CohereChatResponse.
+
+        :param usage: The usage of this CohereChatResponse.
+        :type: oci.generative_ai_inference.models.Usage
+        """
+        self._usage = usage
 
     def __repr__(self):
         return formatted_flat_dict(self)

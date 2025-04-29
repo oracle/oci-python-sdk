@@ -12,6 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ComputeInstanceNonMovableBlockVolumeOperation(object):
     """
+    Deprecated. Use the 'ComputeInstanceNonMovableBlockVolumeAttachAndMountOperationsDetails' definition instead of this.
     The details of operations performed on a block volume.
     """
 

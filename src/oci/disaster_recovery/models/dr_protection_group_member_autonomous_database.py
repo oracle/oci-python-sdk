@@ -53,23 +53,30 @@ class DrProtectionGroupMemberAutonomousDatabase(DrProtectionGroupMember):
             The value to assign to the password_vault_secret_id property of this DrProtectionGroupMemberAutonomousDatabase.
         :type password_vault_secret_id: str
 
+        :param destination_encryption_key:
+            The value to assign to the destination_encryption_key property of this DrProtectionGroupMemberAutonomousDatabase.
+        :type destination_encryption_key: oci.disaster_recovery.models.VaultAndEncryptionKey
+
         """
         self.swagger_types = {
             'member_id': 'str',
             'member_type': 'str',
             'autonomous_database_standby_type_for_dr_drills': 'str',
-            'password_vault_secret_id': 'str'
+            'password_vault_secret_id': 'str',
+            'destination_encryption_key': 'VaultAndEncryptionKey'
         }
         self.attribute_map = {
             'member_id': 'memberId',
             'member_type': 'memberType',
             'autonomous_database_standby_type_for_dr_drills': 'autonomousDatabaseStandbyTypeForDrDrills',
-            'password_vault_secret_id': 'passwordVaultSecretId'
+            'password_vault_secret_id': 'passwordVaultSecretId',
+            'destination_encryption_key': 'destinationEncryptionKey'
         }
         self._member_id = None
         self._member_type = None
         self._autonomous_database_standby_type_for_dr_drills = None
         self._password_vault_secret_id = None
+        self._destination_encryption_key = None
         self._member_type = 'AUTONOMOUS_DATABASE'
 
     @property
@@ -135,6 +142,26 @@ class DrProtectionGroupMemberAutonomousDatabase(DrProtectionGroupMember):
         :type: str
         """
         self._password_vault_secret_id = password_vault_secret_id
+
+    @property
+    def destination_encryption_key(self):
+        """
+        Gets the destination_encryption_key of this DrProtectionGroupMemberAutonomousDatabase.
+
+        :return: The destination_encryption_key of this DrProtectionGroupMemberAutonomousDatabase.
+        :rtype: oci.disaster_recovery.models.VaultAndEncryptionKey
+        """
+        return self._destination_encryption_key
+
+    @destination_encryption_key.setter
+    def destination_encryption_key(self, destination_encryption_key):
+        """
+        Sets the destination_encryption_key of this DrProtectionGroupMemberAutonomousDatabase.
+
+        :param destination_encryption_key: The destination_encryption_key of this DrProtectionGroupMemberAutonomousDatabase.
+        :type: oci.disaster_recovery.models.VaultAndEncryptionKey
+        """
+        self._destination_encryption_key = destination_encryption_key
 
     def __repr__(self):
         return formatted_flat_dict(self)

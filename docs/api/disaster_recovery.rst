@@ -26,6 +26,9 @@ Disaster Recovery
     oci.disaster_recovery.models.ComputeInstanceMovableFileSystemOperation
     oci.disaster_recovery.models.ComputeInstanceMovableVnicMapping
     oci.disaster_recovery.models.ComputeInstanceMovableVnicMappingDetails
+    oci.disaster_recovery.models.ComputeInstanceNonMovableBlockVolumeAttachAndMountOperationsDetails
+    oci.disaster_recovery.models.ComputeInstanceNonMovableBlockVolumeAttachOperationDetails
+    oci.disaster_recovery.models.ComputeInstanceNonMovableBlockVolumeMountOperationDetails
     oci.disaster_recovery.models.ComputeInstanceNonMovableBlockVolumeOperation
     oci.disaster_recovery.models.ComputeInstanceNonMovableFileSystemOperation
     oci.disaster_recovery.models.ComputeInstanceVnicMapping
@@ -33,6 +36,9 @@ Disaster Recovery
     oci.disaster_recovery.models.CreateBlockVolumeAttachmentDetails
     oci.disaster_recovery.models.CreateBlockVolumeMountDetails
     oci.disaster_recovery.models.CreateComputeInstanceMovableFileSystemOperationDetails
+    oci.disaster_recovery.models.CreateComputeInstanceNonMovableBlockVolumeAttachAndMountOperationsDetails
+    oci.disaster_recovery.models.CreateComputeInstanceNonMovableBlockVolumeAttachOperationDetails
+    oci.disaster_recovery.models.CreateComputeInstanceNonMovableBlockVolumeMountOperationDetails
     oci.disaster_recovery.models.CreateComputeInstanceNonMovableBlockVolumeOperationDetails
     oci.disaster_recovery.models.CreateComputeInstanceNonMovableFileSystemOperationDetails
     oci.disaster_recovery.models.CreateDrPlanDetails
@@ -61,6 +67,8 @@ Disaster Recovery
     oci.disaster_recovery.models.CreateOkeClusterNetworkLoadBalancerMappingDetails
     oci.disaster_recovery.models.CreateOkeClusterVaultMappingDetails
     oci.disaster_recovery.models.CreateOkeClusterVirtualNodePoolConfigurationDetails
+    oci.disaster_recovery.models.CreateSourceVolumeToDestinationEncryptionKeyMappingDetails
+    oci.disaster_recovery.models.CreateVaultAndEncryptionKeyDetails
     oci.disaster_recovery.models.DisassociateDrProtectionGroupDefaultDetails
     oci.disaster_recovery.models.DisassociateDrProtectionGroupDetails
     oci.disaster_recovery.models.DrPlan
@@ -104,6 +112,7 @@ Disaster Recovery
     oci.disaster_recovery.models.IgnoreDrPlanExecutionDetails
     oci.disaster_recovery.models.InvokeFunctionPrecheckStep
     oci.disaster_recovery.models.InvokeFunctionStep
+    oci.disaster_recovery.models.InvokeFunctionUserDefinedCustomPrecheckStep
     oci.disaster_recovery.models.LoadBalancerBackendSetMapping
     oci.disaster_recovery.models.LoadBalancerBackendSetMappingDetails
     oci.disaster_recovery.models.LocalScriptPrecheckStep
@@ -124,8 +133,11 @@ Disaster Recovery
     oci.disaster_recovery.models.RefreshDrPlanDetails
     oci.disaster_recovery.models.ResumeDrPlanExecutionDetails
     oci.disaster_recovery.models.RetryDrPlanExecutionDetails
+    oci.disaster_recovery.models.RunLocalScriptUserDefinedCustomPrecheckStep
     oci.disaster_recovery.models.RunLocalScriptUserDefinedStep
+    oci.disaster_recovery.models.RunObjectStoreScriptUserDefinedCustomPrecheckStep
     oci.disaster_recovery.models.RunObjectStoreScriptUserDefinedStep
+    oci.disaster_recovery.models.SourceVolumeToDestinationEncryptionKeyMapping
     oci.disaster_recovery.models.StartDrillExecutionOptionDetails
     oci.disaster_recovery.models.StartDrillExecutionOptions
     oci.disaster_recovery.models.StartDrillPrecheckExecutionOptionDetails
@@ -141,6 +153,9 @@ Disaster Recovery
     oci.disaster_recovery.models.UpdateBlockVolumeAttachmentDetails
     oci.disaster_recovery.models.UpdateBlockVolumeMountDetails
     oci.disaster_recovery.models.UpdateComputeInstanceMovableFileSystemOperationDetails
+    oci.disaster_recovery.models.UpdateComputeInstanceNonMovableBlockVolumeAttachAndMountOperationsDetails
+    oci.disaster_recovery.models.UpdateComputeInstanceNonMovableBlockVolumeAttachOperationDetails
+    oci.disaster_recovery.models.UpdateComputeInstanceNonMovableBlockVolumeMountOperationDetails
     oci.disaster_recovery.models.UpdateComputeInstanceNonMovableBlockVolumeOperationDetails
     oci.disaster_recovery.models.UpdateComputeInstanceNonMovableFileSystemOperationDetails
     oci.disaster_recovery.models.UpdateDrPlanDetails
@@ -166,6 +181,7 @@ Disaster Recovery
     oci.disaster_recovery.models.UpdateFileSystemMountDetails
     oci.disaster_recovery.models.UpdateFileSystemUnmountDetails
     oci.disaster_recovery.models.UpdateInvokeFunctionPrecheckStepDetails
+    oci.disaster_recovery.models.UpdateInvokeFunctionUserDefinedCustomPrecheckStepDetails
     oci.disaster_recovery.models.UpdateInvokeFunctionUserDefinedStepDetails
     oci.disaster_recovery.models.UpdateLocalScriptPrecheckStepDetails
     oci.disaster_recovery.models.UpdateObjectStorageLogLocationDetails
@@ -178,8 +194,13 @@ Disaster Recovery
     oci.disaster_recovery.models.UpdateOkeClusterNetworkLoadBalancerMappingDetails
     oci.disaster_recovery.models.UpdateOkeClusterVaultMappingDetails
     oci.disaster_recovery.models.UpdateOkeClusterVirtualNodePoolConfigurationDetails
+    oci.disaster_recovery.models.UpdateRunLocalScriptUserDefinedCustomPrecheckStepDetails
     oci.disaster_recovery.models.UpdateRunLocalScriptUserDefinedStepDetails
+    oci.disaster_recovery.models.UpdateRunObjectStoreScriptUserDefinedCustomPrecheckStepDetails
     oci.disaster_recovery.models.UpdateRunObjectStoreScriptUserDefinedStepDetails
+    oci.disaster_recovery.models.UpdateSourceVolumeToDestinationEncryptionKeyMappingDetails
+    oci.disaster_recovery.models.UpdateVaultAndEncryptionKeyDetails
+    oci.disaster_recovery.models.VaultAndEncryptionKey
     oci.disaster_recovery.models.VerifyDrPlanDefaultDetails
     oci.disaster_recovery.models.VerifyDrPlanDetails
     oci.disaster_recovery.models.WorkRequest

@@ -12,13 +12,31 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ContentModerationConfig(object):
     """
-    The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses. It's recommended to use content moderation.
+    The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses.
     """
+
+    #: A constant which can be used with the mode property of a ContentModerationConfig.
+    #: This constant has a value of "INFORM"
+    MODE_INFORM = "INFORM"
+
+    #: A constant which can be used with the mode property of a ContentModerationConfig.
+    #: This constant has a value of "BLOCK"
+    MODE_BLOCK = "BLOCK"
 
     def __init__(self, **kwargs):
         """
         Initializes a new ContentModerationConfig object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
+
+        :param mode:
+            The value to assign to the mode property of this ContentModerationConfig.
+            Allowed values for this property are: "INFORM", "BLOCK", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type mode: str
+
+        :param model_id:
+            The value to assign to the model_id property of this ContentModerationConfig.
+        :type model_id: str
 
         :param is_enabled:
             The value to assign to the is_enabled property of this ContentModerationConfig.
@@ -26,12 +44,72 @@ class ContentModerationConfig(object):
 
         """
         self.swagger_types = {
+            'mode': 'str',
+            'model_id': 'str',
             'is_enabled': 'bool'
         }
         self.attribute_map = {
+            'mode': 'mode',
+            'model_id': 'modelId',
             'is_enabled': 'isEnabled'
         }
+        self._mode = None
+        self._model_id = None
         self._is_enabled = None
+
+    @property
+    def mode(self):
+        """
+        Gets the mode of this ContentModerationConfig.
+        Enum for the modes of operation for inference protection.
+
+        Allowed values for this property are: "INFORM", "BLOCK", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The mode of this ContentModerationConfig.
+        :rtype: str
+        """
+        return self._mode
+
+    @mode.setter
+    def mode(self, mode):
+        """
+        Sets the mode of this ContentModerationConfig.
+        Enum for the modes of operation for inference protection.
+
+
+        :param mode: The mode of this ContentModerationConfig.
+        :type: str
+        """
+        allowed_values = ["INFORM", "BLOCK"]
+        if not value_allowed_none_or_none_sentinel(mode, allowed_values):
+            mode = 'UNKNOWN_ENUM_VALUE'
+        self._mode = mode
+
+    @property
+    def model_id(self):
+        """
+        Gets the model_id of this ContentModerationConfig.
+        The OCID of the model used for the feature.
+
+
+        :return: The model_id of this ContentModerationConfig.
+        :rtype: str
+        """
+        return self._model_id
+
+    @model_id.setter
+    def model_id(self, model_id):
+        """
+        Sets the model_id of this ContentModerationConfig.
+        The OCID of the model used for the feature.
+
+
+        :param model_id: The model_id of this ContentModerationConfig.
+        :type: str
+        """
+        self._model_id = model_id
 
     @property
     def is_enabled(self):

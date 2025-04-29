@@ -82,6 +82,10 @@ class CohereChatRequest(BaseChatRequest):
             The value to assign to the is_stream property of this CohereChatRequest.
         :type is_stream: bool
 
+        :param stream_options:
+            The value to assign to the stream_options property of this CohereChatRequest.
+        :type stream_options: oci.generative_ai_inference.models.StreamOptions
+
         :param max_tokens:
             The value to assign to the max_tokens property of this CohereChatRequest.
         :type max_tokens: int
@@ -163,6 +167,7 @@ class CohereChatRequest(BaseChatRequest):
             'is_search_queries_only': 'bool',
             'preamble_override': 'str',
             'is_stream': 'bool',
+            'stream_options': 'StreamOptions',
             'max_tokens': 'int',
             'max_input_tokens': 'int',
             'temperature': 'float',
@@ -190,6 +195,7 @@ class CohereChatRequest(BaseChatRequest):
             'is_search_queries_only': 'isSearchQueriesOnly',
             'preamble_override': 'preambleOverride',
             'is_stream': 'isStream',
+            'stream_options': 'streamOptions',
             'max_tokens': 'maxTokens',
             'max_input_tokens': 'maxInputTokens',
             'temperature': 'temperature',
@@ -216,6 +222,7 @@ class CohereChatRequest(BaseChatRequest):
         self._is_search_queries_only = None
         self._preamble_override = None
         self._is_stream = None
+        self._stream_options = None
         self._max_tokens = None
         self._max_input_tokens = None
         self._temperature = None
@@ -416,6 +423,26 @@ class CohereChatRequest(BaseChatRequest):
         :type: bool
         """
         self._is_stream = is_stream
+
+    @property
+    def stream_options(self):
+        """
+        Gets the stream_options of this CohereChatRequest.
+
+        :return: The stream_options of this CohereChatRequest.
+        :rtype: oci.generative_ai_inference.models.StreamOptions
+        """
+        return self._stream_options
+
+    @stream_options.setter
+    def stream_options(self, stream_options):
+        """
+        Sets the stream_options of this CohereChatRequest.
+
+        :param stream_options: The stream_options of this CohereChatRequest.
+        :type: oci.generative_ai_inference.models.StreamOptions
+        """
+        self._stream_options = stream_options
 
     @property
     def max_tokens(self):
@@ -833,7 +860,13 @@ class CohereChatRequest(BaseChatRequest):
     def safety_mode(self):
         """
         Gets the safety_mode of this CohereChatRequest.
-        Used to select the safety instruction inserted into the prompt. When selected CONTEXTUAL mode, It is appropriate for wide-ranging interactions with fewer constraints on output while maintaining core protections by rejecting harmful or illegal suggestions. When selected STRICT mode, it aims to avoid all sensitive topics, such as violent or sexual acts and profanity. When selected OFF, the safety instruction will be omitted. Note: This parameter is only compatible with models Command R 08-2024, Command R+ 08-2024 and newer. Also, command-r7b-12-2024 only supports \"CONTEXTUAL\" and \"STRICT\" modes.
+        Safety mode: Adds a safety instruction for the model to use when generating responses.
+        Contextual: (Default) Puts fewer constraints on the output. It maintains core protections by aiming to reject harmful or illegal suggestions, but it allows profanity and some toxic content, sexually explicit and violent content, and content that contains medical, financial, or legal information. Contextual mode is suited for entertainment, creative, or academic use.
+        Strict: Aims to avoid sensitive topics, such as violent or sexual acts and profanity. This mode aims to provide a safer experience by prohibiting responses or recommendations that it finds inappropriate. Strict mode is suited for corporate use, such as for corporate communications and customer service.
+        Off: No safety mode is applied.
+        Note: This parameter is only compatible with models cohere.command-r-08-2024, cohere.command-r-plus-08-2024 and Cohere models released after these models. See `release dates`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/generative-ai/deprecating.htm
 
         Allowed values for this property are: "CONTEXTUAL", "STRICT", "OFF"
 
@@ -847,7 +880,13 @@ class CohereChatRequest(BaseChatRequest):
     def safety_mode(self, safety_mode):
         """
         Sets the safety_mode of this CohereChatRequest.
-        Used to select the safety instruction inserted into the prompt. When selected CONTEXTUAL mode, It is appropriate for wide-ranging interactions with fewer constraints on output while maintaining core protections by rejecting harmful or illegal suggestions. When selected STRICT mode, it aims to avoid all sensitive topics, such as violent or sexual acts and profanity. When selected OFF, the safety instruction will be omitted. Note: This parameter is only compatible with models Command R 08-2024, Command R+ 08-2024 and newer. Also, command-r7b-12-2024 only supports \"CONTEXTUAL\" and \"STRICT\" modes.
+        Safety mode: Adds a safety instruction for the model to use when generating responses.
+        Contextual: (Default) Puts fewer constraints on the output. It maintains core protections by aiming to reject harmful or illegal suggestions, but it allows profanity and some toxic content, sexually explicit and violent content, and content that contains medical, financial, or legal information. Contextual mode is suited for entertainment, creative, or academic use.
+        Strict: Aims to avoid sensitive topics, such as violent or sexual acts and profanity. This mode aims to provide a safer experience by prohibiting responses or recommendations that it finds inappropriate. Strict mode is suited for corporate use, such as for corporate communications and customer service.
+        Off: No safety mode is applied.
+        Note: This parameter is only compatible with models cohere.command-r-08-2024, cohere.command-r-plus-08-2024 and Cohere models released after these models. See `release dates`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/generative-ai/deprecating.htm
 
 
         :param safety_mode: The safety_mode of this CohereChatRequest.

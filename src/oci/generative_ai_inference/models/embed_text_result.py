@@ -40,26 +40,33 @@ class EmbedTextResult(object):
             The value to assign to the model_version property of this EmbedTextResult.
         :type model_version: str
 
+        :param usage:
+            The value to assign to the usage property of this EmbedTextResult.
+        :type usage: oci.generative_ai_inference.models.Usage
+
         """
         self.swagger_types = {
             'id': 'str',
             'inputs': 'list[str]',
             'embeddings': 'list[list[float]]',
             'model_id': 'str',
-            'model_version': 'str'
+            'model_version': 'str',
+            'usage': 'Usage'
         }
         self.attribute_map = {
             'id': 'id',
             'inputs': 'inputs',
             'embeddings': 'embeddings',
             'model_id': 'modelId',
-            'model_version': 'modelVersion'
+            'model_version': 'modelVersion',
+            'usage': 'usage'
         }
         self._id = None
         self._inputs = None
         self._embeddings = None
         self._model_id = None
         self._model_version = None
+        self._usage = None
 
     @property
     def id(self):
@@ -180,6 +187,26 @@ class EmbedTextResult(object):
         :type: str
         """
         self._model_version = model_version
+
+    @property
+    def usage(self):
+        """
+        Gets the usage of this EmbedTextResult.
+
+        :return: The usage of this EmbedTextResult.
+        :rtype: oci.generative_ai_inference.models.Usage
+        """
+        return self._usage
+
+    @usage.setter
+    def usage(self, usage):
+        """
+        Sets the usage of this EmbedTextResult.
+
+        :param usage: The usage of this EmbedTextResult.
+        :type: oci.generative_ai_inference.models.Usage
+        """
+        self._usage = usage
 
     def __repr__(self):
         return formatted_flat_dict(self)

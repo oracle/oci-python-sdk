@@ -6,11 +6,17 @@
 
 from __future__ import absolute_import
 
+from .body_parameter import BodyParameter
+from .change_schedule_compartment_details import ChangeScheduleCompartmentDetails
 from .compartment_id_resource_filter import CompartmentIdResourceFilter
 from .create_schedule_details import CreateScheduleDetails
 from .defined_tag_filter_value import DefinedTagFilterValue
 from .defined_tags_resource_filter import DefinedTagsResourceFilter
+from .header_parameter import HeaderParameter
 from .lifecycle_state_resource_filter import LifecycleStateResourceFilter
+from .parameter import Parameter
+from .path_parameter import PathParameter
+from .query_parameter import QueryParameter
 from .resource import Resource
 from .resource_filter import ResourceFilter
 from .resource_type import ResourceType
@@ -32,11 +38,17 @@ from .work_request_summary_collection import WorkRequestSummaryCollection
 
 # Maps type names to classes for resource_scheduler services.
 resource_scheduler_type_mapping = {
+    "BodyParameter": BodyParameter,
+    "ChangeScheduleCompartmentDetails": ChangeScheduleCompartmentDetails,
     "CompartmentIdResourceFilter": CompartmentIdResourceFilter,
     "CreateScheduleDetails": CreateScheduleDetails,
     "DefinedTagFilterValue": DefinedTagFilterValue,
     "DefinedTagsResourceFilter": DefinedTagsResourceFilter,
+    "HeaderParameter": HeaderParameter,
     "LifecycleStateResourceFilter": LifecycleStateResourceFilter,
+    "Parameter": Parameter,
+    "PathParameter": PathParameter,
+    "QueryParameter": QueryParameter,
     "Resource": Resource,
     "ResourceFilter": ResourceFilter,
     "ResourceType": ResourceType,

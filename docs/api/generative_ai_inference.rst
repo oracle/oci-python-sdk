@@ -46,6 +46,7 @@ Generative Ai Inference
     oci.generative_ai_inference.models.CohereToolMessage
     oci.generative_ai_inference.models.CohereToolResult
     oci.generative_ai_inference.models.CohereUserMessage
+    oci.generative_ai_inference.models.CompletionTokensDetails
     oci.generative_ai_inference.models.ContentModerationConfiguration
     oci.generative_ai_inference.models.ContentModerationResult
     oci.generative_ai_inference.models.DedicatedServingMode
@@ -77,10 +78,12 @@ Generative Ai Inference
     oci.generative_ai_inference.models.PersonallyIdentifiableInformationResult
     oci.generative_ai_inference.models.PromptInjectionConfiguration
     oci.generative_ai_inference.models.PromptInjectionProtectionResult
+    oci.generative_ai_inference.models.PromptTokensDetails
     oci.generative_ai_inference.models.RerankTextDetails
     oci.generative_ai_inference.models.RerankTextResult
     oci.generative_ai_inference.models.SearchQuery
     oci.generative_ai_inference.models.ServingMode
+    oci.generative_ai_inference.models.StreamOptions
     oci.generative_ai_inference.models.SummarizeTextDetails
     oci.generative_ai_inference.models.SummarizeTextResult
     oci.generative_ai_inference.models.SystemMessage
@@ -94,4 +97,5 @@ Generative Ai Inference
     oci.generative_ai_inference.models.ToolChoiceRequired
     oci.generative_ai_inference.models.ToolDefinition
     oci.generative_ai_inference.models.ToolMessage
+    oci.generative_ai_inference.models.Usage
     oci.generative_ai_inference.models.UserMessage

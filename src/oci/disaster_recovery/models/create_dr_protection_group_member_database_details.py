@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateDrProtectionGroupMemberDatabaseDetails(CreateDrProtectionGroupMemberDetails):
     """
-    Create properties for a Database (DBCS) member.
+    Create properties for a Database member.
     """
 
     def __init__(self, **kwargs):

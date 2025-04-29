@@ -38,23 +38,37 @@ class UpdateDrProtectionGroupMemberFileSystemDetails(UpdateDrProtectionGroupMemb
             The value to assign to the export_mappings property of this UpdateDrProtectionGroupMemberFileSystemDetails.
         :type export_mappings: list[oci.disaster_recovery.models.FileSystemExportMappingDetails]
 
+        :param destination_encryption_key:
+            The value to assign to the destination_encryption_key property of this UpdateDrProtectionGroupMemberFileSystemDetails.
+        :type destination_encryption_key: oci.disaster_recovery.models.UpdateVaultAndEncryptionKeyDetails
+
+        :param destination_snapshot_policy_id:
+            The value to assign to the destination_snapshot_policy_id property of this UpdateDrProtectionGroupMemberFileSystemDetails.
+        :type destination_snapshot_policy_id: str
+
         """
         self.swagger_types = {
             'member_id': 'str',
             'member_type': 'str',
             'destination_availability_domain': 'str',
-            'export_mappings': 'list[FileSystemExportMappingDetails]'
+            'export_mappings': 'list[FileSystemExportMappingDetails]',
+            'destination_encryption_key': 'UpdateVaultAndEncryptionKeyDetails',
+            'destination_snapshot_policy_id': 'str'
         }
         self.attribute_map = {
             'member_id': 'memberId',
             'member_type': 'memberType',
             'destination_availability_domain': 'destinationAvailabilityDomain',
-            'export_mappings': 'exportMappings'
+            'export_mappings': 'exportMappings',
+            'destination_encryption_key': 'destinationEncryptionKey',
+            'destination_snapshot_policy_id': 'destinationSnapshotPolicyId'
         }
         self._member_id = None
         self._member_type = None
         self._destination_availability_domain = None
         self._export_mappings = None
+        self._destination_encryption_key = None
+        self._destination_snapshot_policy_id = None
         self._member_type = 'FILE_SYSTEM'
 
     @property
@@ -108,6 +122,54 @@ class UpdateDrProtectionGroupMemberFileSystemDetails(UpdateDrProtectionGroupMemb
         :type: list[oci.disaster_recovery.models.FileSystemExportMappingDetails]
         """
         self._export_mappings = export_mappings
+
+    @property
+    def destination_encryption_key(self):
+        """
+        Gets the destination_encryption_key of this UpdateDrProtectionGroupMemberFileSystemDetails.
+
+        :return: The destination_encryption_key of this UpdateDrProtectionGroupMemberFileSystemDetails.
+        :rtype: oci.disaster_recovery.models.UpdateVaultAndEncryptionKeyDetails
+        """
+        return self._destination_encryption_key
+
+    @destination_encryption_key.setter
+    def destination_encryption_key(self, destination_encryption_key):
+        """
+        Sets the destination_encryption_key of this UpdateDrProtectionGroupMemberFileSystemDetails.
+
+        :param destination_encryption_key: The destination_encryption_key of this UpdateDrProtectionGroupMemberFileSystemDetails.
+        :type: oci.disaster_recovery.models.UpdateVaultAndEncryptionKeyDetails
+        """
+        self._destination_encryption_key = destination_encryption_key
+
+    @property
+    def destination_snapshot_policy_id(self):
+        """
+        Gets the destination_snapshot_policy_id of this UpdateDrProtectionGroupMemberFileSystemDetails.
+        The OCID of the snapshot policy to use in the destination region. This policy will be attached to the file system after it moves to the destination region.
+
+        Example: `ocid1.filesystemsnapshotpolicy.oc1..uniqueID`
+
+
+        :return: The destination_snapshot_policy_id of this UpdateDrProtectionGroupMemberFileSystemDetails.
+        :rtype: str
+        """
+        return self._destination_snapshot_policy_id
+
+    @destination_snapshot_policy_id.setter
+    def destination_snapshot_policy_id(self, destination_snapshot_policy_id):
+        """
+        Sets the destination_snapshot_policy_id of this UpdateDrProtectionGroupMemberFileSystemDetails.
+        The OCID of the snapshot policy to use in the destination region. This policy will be attached to the file system after it moves to the destination region.
+
+        Example: `ocid1.filesystemsnapshotpolicy.oc1..uniqueID`
+
+
+        :param destination_snapshot_policy_id: The destination_snapshot_policy_id of this UpdateDrProtectionGroupMemberFileSystemDetails.
+        :type: str
+        """
+        self._destination_snapshot_policy_id = destination_snapshot_policy_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

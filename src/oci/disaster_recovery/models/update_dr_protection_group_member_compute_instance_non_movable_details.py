@@ -42,26 +42,33 @@ class UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails(UpdateDrProt
             The value to assign to the block_volume_operations property of this UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails.
         :type block_volume_operations: list[oci.disaster_recovery.models.UpdateComputeInstanceNonMovableBlockVolumeOperationDetails]
 
+        :param block_volume_attach_and_mount_operations:
+            The value to assign to the block_volume_attach_and_mount_operations property of this UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails.
+        :type block_volume_attach_and_mount_operations: oci.disaster_recovery.models.UpdateComputeInstanceNonMovableBlockVolumeAttachAndMountOperationsDetails
+
         """
         self.swagger_types = {
             'member_id': 'str',
             'member_type': 'str',
             'is_start_stop_enabled': 'bool',
             'file_system_operations': 'list[UpdateComputeInstanceNonMovableFileSystemOperationDetails]',
-            'block_volume_operations': 'list[UpdateComputeInstanceNonMovableBlockVolumeOperationDetails]'
+            'block_volume_operations': 'list[UpdateComputeInstanceNonMovableBlockVolumeOperationDetails]',
+            'block_volume_attach_and_mount_operations': 'UpdateComputeInstanceNonMovableBlockVolumeAttachAndMountOperationsDetails'
         }
         self.attribute_map = {
             'member_id': 'memberId',
             'member_type': 'memberType',
             'is_start_stop_enabled': 'isStartStopEnabled',
             'file_system_operations': 'fileSystemOperations',
-            'block_volume_operations': 'blockVolumeOperations'
+            'block_volume_operations': 'blockVolumeOperations',
+            'block_volume_attach_and_mount_operations': 'blockVolumeAttachAndMountOperations'
         }
         self._member_id = None
         self._member_type = None
         self._is_start_stop_enabled = None
         self._file_system_operations = None
         self._block_volume_operations = None
+        self._block_volume_attach_and_mount_operations = None
         self._member_type = 'COMPUTE_INSTANCE_NON_MOVABLE'
 
     @property
@@ -118,6 +125,7 @@ class UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails(UpdateDrProt
     def block_volume_operations(self):
         """
         Gets the block_volume_operations of this UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails.
+        Deprecated. Use the 'blockVolumeAttachAndMountOperations' attribute instead of this.
         A list of operations performed on block volumes used by the compute instance.
 
 
@@ -130,6 +138,7 @@ class UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails(UpdateDrProt
     def block_volume_operations(self, block_volume_operations):
         """
         Sets the block_volume_operations of this UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails.
+        Deprecated. Use the 'blockVolumeAttachAndMountOperations' attribute instead of this.
         A list of operations performed on block volumes used by the compute instance.
 
 
@@ -137,6 +146,26 @@ class UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails(UpdateDrProt
         :type: list[oci.disaster_recovery.models.UpdateComputeInstanceNonMovableBlockVolumeOperationDetails]
         """
         self._block_volume_operations = block_volume_operations
+
+    @property
+    def block_volume_attach_and_mount_operations(self):
+        """
+        Gets the block_volume_attach_and_mount_operations of this UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails.
+
+        :return: The block_volume_attach_and_mount_operations of this UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails.
+        :rtype: oci.disaster_recovery.models.UpdateComputeInstanceNonMovableBlockVolumeAttachAndMountOperationsDetails
+        """
+        return self._block_volume_attach_and_mount_operations
+
+    @block_volume_attach_and_mount_operations.setter
+    def block_volume_attach_and_mount_operations(self, block_volume_attach_and_mount_operations):
+        """
+        Sets the block_volume_attach_and_mount_operations of this UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails.
+
+        :param block_volume_attach_and_mount_operations: The block_volume_attach_and_mount_operations of this UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails.
+        :type: oci.disaster_recovery.models.UpdateComputeInstanceNonMovableBlockVolumeAttachAndMountOperationsDetails
+        """
+        self._block_volume_attach_and_mount_operations = block_volume_attach_and_mount_operations
 
     def __repr__(self):
         return formatted_flat_dict(self)

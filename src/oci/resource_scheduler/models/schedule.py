@@ -38,6 +38,38 @@ class Schedule(object):
     #: This constant has a value of "ICAL"
     RECURRENCE_TYPE_ICAL = "ICAL"
 
+    #: A constant which can be used with the last_run_status property of a Schedule.
+    #: This constant has a value of "ACCEPTED"
+    LAST_RUN_STATUS_ACCEPTED = "ACCEPTED"
+
+    #: A constant which can be used with the last_run_status property of a Schedule.
+    #: This constant has a value of "IN_PROGRESS"
+    LAST_RUN_STATUS_IN_PROGRESS = "IN_PROGRESS"
+
+    #: A constant which can be used with the last_run_status property of a Schedule.
+    #: This constant has a value of "WAITING"
+    LAST_RUN_STATUS_WAITING = "WAITING"
+
+    #: A constant which can be used with the last_run_status property of a Schedule.
+    #: This constant has a value of "NEEDS_ATTENTION"
+    LAST_RUN_STATUS_NEEDS_ATTENTION = "NEEDS_ATTENTION"
+
+    #: A constant which can be used with the last_run_status property of a Schedule.
+    #: This constant has a value of "FAILED"
+    LAST_RUN_STATUS_FAILED = "FAILED"
+
+    #: A constant which can be used with the last_run_status property of a Schedule.
+    #: This constant has a value of "SUCCEEDED"
+    LAST_RUN_STATUS_SUCCEEDED = "SUCCEEDED"
+
+    #: A constant which can be used with the last_run_status property of a Schedule.
+    #: This constant has a value of "CANCELING"
+    LAST_RUN_STATUS_CANCELING = "CANCELING"
+
+    #: A constant which can be used with the last_run_status property of a Schedule.
+    #: This constant has a value of "CANCELED"
+    LAST_RUN_STATUS_CANCELED = "CANCELED"
+
     #: A constant which can be used with the lifecycle_state property of a Schedule.
     #: This constant has a value of "ACTIVE"
     LIFECYCLE_STATE_ACTIVE = "ACTIVE"
@@ -135,6 +167,12 @@ class Schedule(object):
             The value to assign to the time_next_run property of this Schedule.
         :type time_next_run: datetime
 
+        :param last_run_status:
+            The value to assign to the last_run_status property of this Schedule.
+            Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "WAITING", "NEEDS_ATTENTION", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type last_run_status: str
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Schedule.
             Allowed values for this property are: "ACTIVE", "INACTIVE", "CREATING", "UPDATING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
@@ -170,6 +208,7 @@ class Schedule(object):
             'time_updated': 'datetime',
             'time_last_run': 'datetime',
             'time_next_run': 'datetime',
+            'last_run_status': 'str',
             'lifecycle_state': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -191,6 +230,7 @@ class Schedule(object):
             'time_updated': 'timeUpdated',
             'time_last_run': 'timeLastRun',
             'time_next_run': 'timeNextRun',
+            'last_run_status': 'lastRunStatus',
             'lifecycle_state': 'lifecycleState',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -211,6 +251,7 @@ class Schedule(object):
         self._time_updated = None
         self._time_last_run = None
         self._time_next_run = None
+        self._last_run_status = None
         self._lifecycle_state = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -645,6 +686,36 @@ class Schedule(object):
         :type: datetime
         """
         self._time_next_run = time_next_run
+
+    @property
+    def last_run_status(self):
+        """
+        Gets the last_run_status of this Schedule.
+        This is the status of the last work request.
+
+        Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "WAITING", "NEEDS_ATTENTION", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The last_run_status of this Schedule.
+        :rtype: str
+        """
+        return self._last_run_status
+
+    @last_run_status.setter
+    def last_run_status(self, last_run_status):
+        """
+        Sets the last_run_status of this Schedule.
+        This is the status of the last work request.
+
+
+        :param last_run_status: The last_run_status of this Schedule.
+        :type: str
+        """
+        allowed_values = ["ACCEPTED", "IN_PROGRESS", "WAITING", "NEEDS_ATTENTION", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"]
+        if not value_allowed_none_or_none_sentinel(last_run_status, allowed_values):
+            last_run_status = 'UNKNOWN_ENUM_VALUE'
+        self._last_run_status = last_run_status
 
     @property
     def lifecycle_state(self):

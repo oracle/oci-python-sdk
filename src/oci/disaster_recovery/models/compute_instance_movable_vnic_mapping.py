@@ -36,6 +36,10 @@ class ComputeInstanceMovableVnicMapping(object):
             The value to assign to the destination_primary_private_ip_hostname_label property of this ComputeInstanceMovableVnicMapping.
         :type destination_primary_private_ip_hostname_label: str
 
+        :param destination_reserved_public_ip_id:
+            The value to assign to the destination_reserved_public_ip_id property of this ComputeInstanceMovableVnicMapping.
+        :type destination_reserved_public_ip_id: str
+
         :param destination_nsg_id_list:
             The value to assign to the destination_nsg_id_list property of this ComputeInstanceMovableVnicMapping.
         :type destination_nsg_id_list: list[str]
@@ -46,6 +50,7 @@ class ComputeInstanceMovableVnicMapping(object):
             'destination_subnet_id': 'str',
             'destination_primary_private_ip_address': 'str',
             'destination_primary_private_ip_hostname_label': 'str',
+            'destination_reserved_public_ip_id': 'str',
             'destination_nsg_id_list': 'list[str]'
         }
         self.attribute_map = {
@@ -53,12 +58,14 @@ class ComputeInstanceMovableVnicMapping(object):
             'destination_subnet_id': 'destinationSubnetId',
             'destination_primary_private_ip_address': 'destinationPrimaryPrivateIpAddress',
             'destination_primary_private_ip_hostname_label': 'destinationPrimaryPrivateIpHostnameLabel',
+            'destination_reserved_public_ip_id': 'destinationReservedPublicIpId',
             'destination_nsg_id_list': 'destinationNsgIdList'
         }
         self._source_vnic_id = None
         self._destination_subnet_id = None
         self._destination_primary_private_ip_address = None
         self._destination_primary_private_ip_hostname_label = None
+        self._destination_reserved_public_ip_id = None
         self._destination_nsg_id_list = None
 
     @property
@@ -178,6 +185,34 @@ class ComputeInstanceMovableVnicMapping(object):
         :type: str
         """
         self._destination_primary_private_ip_hostname_label = destination_primary_private_ip_hostname_label
+
+    @property
+    def destination_reserved_public_ip_id(self):
+        """
+        Gets the destination_reserved_public_ip_id of this ComputeInstanceMovableVnicMapping.
+        The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.
+
+        Example: `ocid1.publicip.oc1..uniqueID`
+
+
+        :return: The destination_reserved_public_ip_id of this ComputeInstanceMovableVnicMapping.
+        :rtype: str
+        """
+        return self._destination_reserved_public_ip_id
+
+    @destination_reserved_public_ip_id.setter
+    def destination_reserved_public_ip_id(self, destination_reserved_public_ip_id):
+        """
+        Sets the destination_reserved_public_ip_id of this ComputeInstanceMovableVnicMapping.
+        The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.
+
+        Example: `ocid1.publicip.oc1..uniqueID`
+
+
+        :param destination_reserved_public_ip_id: The destination_reserved_public_ip_id of this ComputeInstanceMovableVnicMapping.
+        :type: str
+        """
+        self._destination_reserved_public_ip_id = destination_reserved_public_ip_id
 
     @property
     def destination_nsg_id_list(self):
