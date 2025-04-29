@@ -12,6 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateBlockVolumeMountDetails(object):
     """
+    Deprecated. Use the 'CreateComputeInstanceNonMovableBlockVolumeMountOperationDetails' definition instead of this.
     The details for creating a mount for a file system on a block volume.
     """
 
@@ -37,7 +38,7 @@ class CreateBlockVolumeMountDetails(object):
     def mount_point(self):
         """
         Gets the mount_point of this CreateBlockVolumeMountDetails.
-        The physical mount point used for mounting the file system on the block volume.
+        The physical mount point where the file system is mounted on the block volume.
 
         Example: `/mnt/yourmountpoint`
 
@@ -51,7 +52,7 @@ class CreateBlockVolumeMountDetails(object):
     def mount_point(self, mount_point):
         """
         Sets the mount_point of this CreateBlockVolumeMountDetails.
-        The physical mount point used for mounting the file system on the block volume.
+        The physical mount point where the file system is mounted on the block volume.
 
         Example: `/mnt/yourmountpoint`
 

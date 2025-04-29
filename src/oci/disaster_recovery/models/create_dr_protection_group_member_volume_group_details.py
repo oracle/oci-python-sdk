@@ -30,18 +30,131 @@ class CreateDrProtectionGroupMemberVolumeGroupDetails(CreateDrProtectionGroupMem
             Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OKE_CLUSTER", "OBJECT_STORAGE_BUCKET"
         :type member_type: str
 
+        :param destination_backup_policy_id:
+            The value to assign to the destination_backup_policy_id property of this CreateDrProtectionGroupMemberVolumeGroupDetails.
+        :type destination_backup_policy_id: str
+
+        :param source_volume_to_destination_encryption_key_mappings:
+            The value to assign to the source_volume_to_destination_encryption_key_mappings property of this CreateDrProtectionGroupMemberVolumeGroupDetails.
+        :type source_volume_to_destination_encryption_key_mappings: list[oci.disaster_recovery.models.CreateSourceVolumeToDestinationEncryptionKeyMappingDetails]
+
+        :param common_destination_key:
+            The value to assign to the common_destination_key property of this CreateDrProtectionGroupMemberVolumeGroupDetails.
+        :type common_destination_key: oci.disaster_recovery.models.CreateVaultAndEncryptionKeyDetails
+
         """
         self.swagger_types = {
             'member_id': 'str',
-            'member_type': 'str'
+            'member_type': 'str',
+            'destination_backup_policy_id': 'str',
+            'source_volume_to_destination_encryption_key_mappings': 'list[CreateSourceVolumeToDestinationEncryptionKeyMappingDetails]',
+            'common_destination_key': 'CreateVaultAndEncryptionKeyDetails'
         }
         self.attribute_map = {
             'member_id': 'memberId',
-            'member_type': 'memberType'
+            'member_type': 'memberType',
+            'destination_backup_policy_id': 'destinationBackupPolicyId',
+            'source_volume_to_destination_encryption_key_mappings': 'sourceVolumeToDestinationEncryptionKeyMappings',
+            'common_destination_key': 'commonDestinationKey'
         }
         self._member_id = None
         self._member_type = None
+        self._destination_backup_policy_id = None
+        self._source_volume_to_destination_encryption_key_mappings = None
+        self._common_destination_key = None
         self._member_type = 'VOLUME_GROUP'
+
+    @property
+    def destination_backup_policy_id(self):
+        """
+        Gets the destination_backup_policy_id of this CreateDrProtectionGroupMemberVolumeGroupDetails.
+        The OCID of the backup policy to use in the destination region. This policy will be used to create backups
+        for this volume group after it moves the destination region.
+
+        Example: `ocid1.volumebackuppolicy.oc1..uniqueID`
+
+
+        :return: The destination_backup_policy_id of this CreateDrProtectionGroupMemberVolumeGroupDetails.
+        :rtype: str
+        """
+        return self._destination_backup_policy_id
+
+    @destination_backup_policy_id.setter
+    def destination_backup_policy_id(self, destination_backup_policy_id):
+        """
+        Sets the destination_backup_policy_id of this CreateDrProtectionGroupMemberVolumeGroupDetails.
+        The OCID of the backup policy to use in the destination region. This policy will be used to create backups
+        for this volume group after it moves the destination region.
+
+        Example: `ocid1.volumebackuppolicy.oc1..uniqueID`
+
+
+        :param destination_backup_policy_id: The destination_backup_policy_id of this CreateDrProtectionGroupMemberVolumeGroupDetails.
+        :type: str
+        """
+        self._destination_backup_policy_id = destination_backup_policy_id
+
+    @property
+    def source_volume_to_destination_encryption_key_mappings(self):
+        """
+        Gets the source_volume_to_destination_encryption_key_mappings of this CreateDrProtectionGroupMemberVolumeGroupDetails.
+        A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the
+        destination region which will be used to encrypt the volume after it moves to the destination region.
+
+        If you add the entry for source volumes and its corresponding vault and encryption keys here, you can not use
+        'commonDestinationKey' for encrypting all volumes with common encryption key. Similarly, if you specify common
+        vault and encryption key using 'commonDestinationKey', you cannot specify vaults and encryption keys individually
+        for each volume using 'sourceVolumeToDestinationEncryptionKeyMappings'.
+
+        An entry for each volume in volume group should be added in this list. The encryption key will not be updated
+        for the volumes that are part of volume group but missing in this list.
+
+
+        :return: The source_volume_to_destination_encryption_key_mappings of this CreateDrProtectionGroupMemberVolumeGroupDetails.
+        :rtype: list[oci.disaster_recovery.models.CreateSourceVolumeToDestinationEncryptionKeyMappingDetails]
+        """
+        return self._source_volume_to_destination_encryption_key_mappings
+
+    @source_volume_to_destination_encryption_key_mappings.setter
+    def source_volume_to_destination_encryption_key_mappings(self, source_volume_to_destination_encryption_key_mappings):
+        """
+        Sets the source_volume_to_destination_encryption_key_mappings of this CreateDrProtectionGroupMemberVolumeGroupDetails.
+        A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the
+        destination region which will be used to encrypt the volume after it moves to the destination region.
+
+        If you add the entry for source volumes and its corresponding vault and encryption keys here, you can not use
+        'commonDestinationKey' for encrypting all volumes with common encryption key. Similarly, if you specify common
+        vault and encryption key using 'commonDestinationKey', you cannot specify vaults and encryption keys individually
+        for each volume using 'sourceVolumeToDestinationEncryptionKeyMappings'.
+
+        An entry for each volume in volume group should be added in this list. The encryption key will not be updated
+        for the volumes that are part of volume group but missing in this list.
+
+
+        :param source_volume_to_destination_encryption_key_mappings: The source_volume_to_destination_encryption_key_mappings of this CreateDrProtectionGroupMemberVolumeGroupDetails.
+        :type: list[oci.disaster_recovery.models.CreateSourceVolumeToDestinationEncryptionKeyMappingDetails]
+        """
+        self._source_volume_to_destination_encryption_key_mappings = source_volume_to_destination_encryption_key_mappings
+
+    @property
+    def common_destination_key(self):
+        """
+        Gets the common_destination_key of this CreateDrProtectionGroupMemberVolumeGroupDetails.
+
+        :return: The common_destination_key of this CreateDrProtectionGroupMemberVolumeGroupDetails.
+        :rtype: oci.disaster_recovery.models.CreateVaultAndEncryptionKeyDetails
+        """
+        return self._common_destination_key
+
+    @common_destination_key.setter
+    def common_destination_key(self, common_destination_key):
+        """
+        Sets the common_destination_key of this CreateDrProtectionGroupMemberVolumeGroupDetails.
+
+        :param common_destination_key: The common_destination_key of this CreateDrProtectionGroupMemberVolumeGroupDetails.
+        :type: oci.disaster_recovery.models.CreateVaultAndEncryptionKeyDetails
+        """
+        self._common_destination_key = common_destination_key
 
     def __repr__(self):
         return formatted_flat_dict(self)

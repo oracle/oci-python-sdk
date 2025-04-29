@@ -35,6 +35,10 @@ class ModelSummary(object):
     #: This constant has a value of "CHAT"
     CAPABILITIES_CHAT = "CHAT"
 
+    #: A constant which can be used with the capabilities property of a ModelSummary.
+    #: This constant has a value of "TEXT_RERANK"
+    CAPABILITIES_TEXT_RERANK = "TEXT_RERANK"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ModelSummary object with values from keyword arguments.
@@ -50,7 +54,7 @@ class ModelSummary(object):
 
         :param capabilities:
             The value to assign to the capabilities property of this ModelSummary.
-            Allowed values for items in this list are: "TEXT_GENERATION", "TEXT_SUMMARIZATION", "TEXT_EMBEDDINGS", "FINE_TUNE", "CHAT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for items in this list are: "TEXT_GENERATION", "TEXT_SUMMARIZATION", "TEXT_EMBEDDINGS", "FINE_TUNE", "CHAT", "TEXT_RERANK", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type capabilities: list[str]
 
@@ -102,6 +106,14 @@ class ModelSummary(object):
             The value to assign to the time_deprecated property of this ModelSummary.
         :type time_deprecated: datetime
 
+        :param time_on_demand_retired:
+            The value to assign to the time_on_demand_retired property of this ModelSummary.
+        :type time_on_demand_retired: datetime
+
+        :param time_dedicated_retired:
+            The value to assign to the time_dedicated_retired property of this ModelSummary.
+        :type time_dedicated_retired: datetime
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ModelSummary.
         :type freeform_tags: dict(str, str)
@@ -131,6 +143,8 @@ class ModelSummary(object):
             'model_metrics': 'ModelMetrics',
             'is_long_term_supported': 'bool',
             'time_deprecated': 'datetime',
+            'time_on_demand_retired': 'datetime',
+            'time_dedicated_retired': 'datetime',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -151,6 +165,8 @@ class ModelSummary(object):
             'model_metrics': 'modelMetrics',
             'is_long_term_supported': 'isLongTermSupported',
             'time_deprecated': 'timeDeprecated',
+            'time_on_demand_retired': 'timeOnDemandRetired',
+            'time_dedicated_retired': 'timeDedicatedRetired',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -170,6 +186,8 @@ class ModelSummary(object):
         self._model_metrics = None
         self._is_long_term_supported = None
         self._time_deprecated = None
+        self._time_on_demand_retired = None
+        self._time_dedicated_retired = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -228,7 +246,7 @@ class ModelSummary(object):
         **[Required]** Gets the capabilities of this ModelSummary.
         Describes what this model can be used for.
 
-        Allowed values for items in this list are: "TEXT_GENERATION", "TEXT_SUMMARIZATION", "TEXT_EMBEDDINGS", "FINE_TUNE", "CHAT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for items in this list are: "TEXT_GENERATION", "TEXT_SUMMARIZATION", "TEXT_EMBEDDINGS", "FINE_TUNE", "CHAT", "TEXT_RERANK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -247,7 +265,7 @@ class ModelSummary(object):
         :param capabilities: The capabilities of this ModelSummary.
         :type: list[str]
         """
-        allowed_values = ["TEXT_GENERATION", "TEXT_SUMMARIZATION", "TEXT_EMBEDDINGS", "FINE_TUNE", "CHAT"]
+        allowed_values = ["TEXT_GENERATION", "TEXT_SUMMARIZATION", "TEXT_EMBEDDINGS", "FINE_TUNE", "CHAT", "TEXT_RERANK"]
         if capabilities:
             capabilities[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in capabilities]
         self._capabilities = capabilities
@@ -553,6 +571,54 @@ class ModelSummary(object):
         :type: datetime
         """
         self._time_deprecated = time_deprecated
+
+    @property
+    def time_on_demand_retired(self):
+        """
+        Gets the time_on_demand_retired of this ModelSummary.
+        The timestamp indicating when the base model will no longer be available for on-demand usage.
+
+
+        :return: The time_on_demand_retired of this ModelSummary.
+        :rtype: datetime
+        """
+        return self._time_on_demand_retired
+
+    @time_on_demand_retired.setter
+    def time_on_demand_retired(self, time_on_demand_retired):
+        """
+        Sets the time_on_demand_retired of this ModelSummary.
+        The timestamp indicating when the base model will no longer be available for on-demand usage.
+
+
+        :param time_on_demand_retired: The time_on_demand_retired of this ModelSummary.
+        :type: datetime
+        """
+        self._time_on_demand_retired = time_on_demand_retired
+
+    @property
+    def time_dedicated_retired(self):
+        """
+        Gets the time_dedicated_retired of this ModelSummary.
+        The timestamp indicating when the custom model and its associated foundation model will be fully retired.
+
+
+        :return: The time_dedicated_retired of this ModelSummary.
+        :rtype: datetime
+        """
+        return self._time_dedicated_retired
+
+    @time_dedicated_retired.setter
+    def time_dedicated_retired(self, time_dedicated_retired):
+        """
+        Sets the time_dedicated_retired of this ModelSummary.
+        The timestamp indicating when the custom model and its associated foundation model will be fully retired.
+
+
+        :param time_dedicated_retired: The time_dedicated_retired of this ModelSummary.
+        :type: datetime
+        """
+        self._time_dedicated_retired = time_dedicated_retired
 
     @property
     def freeform_tags(self):

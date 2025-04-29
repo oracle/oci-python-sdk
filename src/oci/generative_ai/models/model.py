@@ -42,6 +42,10 @@ class Model(object):
     #: This constant has a value of "CHAT"
     CAPABILITIES_CHAT = "CHAT"
 
+    #: A constant which can be used with the capabilities property of a Model.
+    #: This constant has a value of "TEXT_RERANK"
+    CAPABILITIES_TEXT_RERANK = "TEXT_RERANK"
+
     #: A constant which can be used with the lifecycle_state property of a Model.
     #: This constant has a value of "ACTIVE"
     LIFECYCLE_STATE_ACTIVE = "ACTIVE"
@@ -89,7 +93,7 @@ class Model(object):
 
         :param capabilities:
             The value to assign to the capabilities property of this Model.
-            Allowed values for items in this list are: "TEXT_GENERATION", "TEXT_SUMMARIZATION", "TEXT_EMBEDDINGS", "FINE_TUNE", "CHAT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for items in this list are: "TEXT_GENERATION", "TEXT_SUMMARIZATION", "TEXT_EMBEDDINGS", "FINE_TUNE", "CHAT", "TEXT_RERANK", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type capabilities: list[str]
 
@@ -149,6 +153,14 @@ class Model(object):
             The value to assign to the time_deprecated property of this Model.
         :type time_deprecated: datetime
 
+        :param time_on_demand_retired:
+            The value to assign to the time_on_demand_retired property of this Model.
+        :type time_on_demand_retired: datetime
+
+        :param time_dedicated_retired:
+            The value to assign to the time_dedicated_retired property of this Model.
+        :type time_dedicated_retired: datetime
+
         :param previous_state:
             The value to assign to the previous_state property of this Model.
         :type previous_state: oci.generative_ai.models.Model
@@ -184,6 +196,8 @@ class Model(object):
             'model_metrics': 'ModelMetrics',
             'is_long_term_supported': 'bool',
             'time_deprecated': 'datetime',
+            'time_on_demand_retired': 'datetime',
+            'time_dedicated_retired': 'datetime',
             'previous_state': 'Model',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -207,6 +221,8 @@ class Model(object):
             'model_metrics': 'modelMetrics',
             'is_long_term_supported': 'isLongTermSupported',
             'time_deprecated': 'timeDeprecated',
+            'time_on_demand_retired': 'timeOnDemandRetired',
+            'time_dedicated_retired': 'timeDedicatedRetired',
             'previous_state': 'previousState',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -229,6 +245,8 @@ class Model(object):
         self._model_metrics = None
         self._is_long_term_supported = None
         self._time_deprecated = None
+        self._time_on_demand_retired = None
+        self._time_dedicated_retired = None
         self._previous_state = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -312,7 +330,7 @@ class Model(object):
         **[Required]** Gets the capabilities of this Model.
         Describes what this model can be used for.
 
-        Allowed values for items in this list are: "TEXT_GENERATION", "TEXT_SUMMARIZATION", "TEXT_EMBEDDINGS", "FINE_TUNE", "CHAT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for items in this list are: "TEXT_GENERATION", "TEXT_SUMMARIZATION", "TEXT_EMBEDDINGS", "FINE_TUNE", "CHAT", "TEXT_RERANK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -331,7 +349,7 @@ class Model(object):
         :param capabilities: The capabilities of this Model.
         :type: list[str]
         """
-        allowed_values = ["TEXT_GENERATION", "TEXT_SUMMARIZATION", "TEXT_EMBEDDINGS", "FINE_TUNE", "CHAT"]
+        allowed_values = ["TEXT_GENERATION", "TEXT_SUMMARIZATION", "TEXT_EMBEDDINGS", "FINE_TUNE", "CHAT", "TEXT_RERANK"]
         if capabilities:
             capabilities[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in capabilities]
         self._capabilities = capabilities
@@ -651,6 +669,54 @@ class Model(object):
         :type: datetime
         """
         self._time_deprecated = time_deprecated
+
+    @property
+    def time_on_demand_retired(self):
+        """
+        Gets the time_on_demand_retired of this Model.
+        The timestamp indicating when the base model will no longer be available for on-demand usage.
+
+
+        :return: The time_on_demand_retired of this Model.
+        :rtype: datetime
+        """
+        return self._time_on_demand_retired
+
+    @time_on_demand_retired.setter
+    def time_on_demand_retired(self, time_on_demand_retired):
+        """
+        Sets the time_on_demand_retired of this Model.
+        The timestamp indicating when the base model will no longer be available for on-demand usage.
+
+
+        :param time_on_demand_retired: The time_on_demand_retired of this Model.
+        :type: datetime
+        """
+        self._time_on_demand_retired = time_on_demand_retired
+
+    @property
+    def time_dedicated_retired(self):
+        """
+        Gets the time_dedicated_retired of this Model.
+        The timestamp indicating when the custom model and its associated foundation model will be fully retired.
+
+
+        :return: The time_dedicated_retired of this Model.
+        :rtype: datetime
+        """
+        return self._time_dedicated_retired
+
+    @time_dedicated_retired.setter
+    def time_dedicated_retired(self, time_dedicated_retired):
+        """
+        Sets the time_dedicated_retired of this Model.
+        The timestamp indicating when the custom model and its associated foundation model will be fully retired.
+
+
+        :param time_dedicated_retired: The time_dedicated_retired of this Model.
+        :type: datetime
+        """
+        self._time_dedicated_retired = time_dedicated_retired
 
     @property
     def previous_state(self):

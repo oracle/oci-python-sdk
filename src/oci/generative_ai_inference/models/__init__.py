@@ -34,6 +34,7 @@ from .cohere_tool_call import CohereToolCall
 from .cohere_tool_message import CohereToolMessage
 from .cohere_tool_result import CohereToolResult
 from .cohere_user_message import CohereUserMessage
+from .completion_tokens_details import CompletionTokensDetails
 from .content_moderation_configuration import ContentModerationConfiguration
 from .content_moderation_result import ContentModerationResult
 from .dedicated_serving_mode import DedicatedServingMode
@@ -65,10 +66,12 @@ from .personally_identifiable_information_configuration import PersonallyIdentif
 from .personally_identifiable_information_result import PersonallyIdentifiableInformationResult
 from .prompt_injection_configuration import PromptInjectionConfiguration
 from .prompt_injection_protection_result import PromptInjectionProtectionResult
+from .prompt_tokens_details import PromptTokensDetails
 from .rerank_text_details import RerankTextDetails
 from .rerank_text_result import RerankTextResult
 from .search_query import SearchQuery
 from .serving_mode import ServingMode
+from .stream_options import StreamOptions
 from .summarize_text_details import SummarizeTextDetails
 from .summarize_text_result import SummarizeTextResult
 from .system_message import SystemMessage
@@ -82,6 +85,7 @@ from .tool_choice_none import ToolChoiceNone
 from .tool_choice_required import ToolChoiceRequired
 from .tool_definition import ToolDefinition
 from .tool_message import ToolMessage
+from .usage import Usage
 from .user_message import UserMessage
 
 # Maps type names to classes for generative_ai_inference services.
@@ -114,6 +118,7 @@ generative_ai_inference_type_mapping = {
     "CohereToolMessage": CohereToolMessage,
     "CohereToolResult": CohereToolResult,
     "CohereUserMessage": CohereUserMessage,
+    "CompletionTokensDetails": CompletionTokensDetails,
     "ContentModerationConfiguration": ContentModerationConfiguration,
     "ContentModerationResult": ContentModerationResult,
     "DedicatedServingMode": DedicatedServingMode,
@@ -145,10 +150,12 @@ generative_ai_inference_type_mapping = {
     "PersonallyIdentifiableInformationResult": PersonallyIdentifiableInformationResult,
     "PromptInjectionConfiguration": PromptInjectionConfiguration,
     "PromptInjectionProtectionResult": PromptInjectionProtectionResult,
+    "PromptTokensDetails": PromptTokensDetails,
     "RerankTextDetails": RerankTextDetails,
     "RerankTextResult": RerankTextResult,
     "SearchQuery": SearchQuery,
     "ServingMode": ServingMode,
+    "StreamOptions": StreamOptions,
     "SummarizeTextDetails": SummarizeTextDetails,
     "SummarizeTextResult": SummarizeTextResult,
     "SystemMessage": SystemMessage,
@@ -162,5 +169,6 @@ generative_ai_inference_type_mapping = {
     "ToolChoiceRequired": ToolChoiceRequired,
     "ToolDefinition": ToolDefinition,
     "ToolMessage": ToolMessage,
+    "Usage": Usage,
     "UserMessage": UserMessage
 }
