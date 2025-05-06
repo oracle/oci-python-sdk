@@ -40,26 +40,33 @@ class Namespace(object):
             The value to assign to the is_data_ever_ingested property of this Namespace.
         :type is_data_ever_ingested: bool
 
+        :param is_archiving_enabled:
+            The value to assign to the is_archiving_enabled property of this Namespace.
+        :type is_archiving_enabled: bool
+
         """
         self.swagger_types = {
             'namespace_name': 'str',
             'compartment_id': 'str',
             'is_onboarded': 'bool',
             'is_log_set_enabled': 'bool',
-            'is_data_ever_ingested': 'bool'
+            'is_data_ever_ingested': 'bool',
+            'is_archiving_enabled': 'bool'
         }
         self.attribute_map = {
             'namespace_name': 'namespaceName',
             'compartment_id': 'compartmentId',
             'is_onboarded': 'isOnboarded',
             'is_log_set_enabled': 'isLogSetEnabled',
-            'is_data_ever_ingested': 'isDataEverIngested'
+            'is_data_ever_ingested': 'isDataEverIngested',
+            'is_archiving_enabled': 'isArchivingEnabled'
         }
         self._namespace_name = None
         self._compartment_id = None
         self._is_onboarded = None
         self._is_log_set_enabled = None
         self._is_data_ever_ingested = None
+        self._is_archiving_enabled = None
 
     @property
     def namespace_name(self):
@@ -180,6 +187,30 @@ class Namespace(object):
         :type: bool
         """
         self._is_data_ever_ingested = is_data_ever_ingested
+
+    @property
+    def is_archiving_enabled(self):
+        """
+        Gets the is_archiving_enabled of this Namespace.
+        This indicates if old data can be archived for a tenancy
+
+
+        :return: The is_archiving_enabled of this Namespace.
+        :rtype: bool
+        """
+        return self._is_archiving_enabled
+
+    @is_archiving_enabled.setter
+    def is_archiving_enabled(self, is_archiving_enabled):
+        """
+        Sets the is_archiving_enabled of this Namespace.
+        This indicates if old data can be archived for a tenancy
+
+
+        :param is_archiving_enabled: The is_archiving_enabled of this Namespace.
+        :type: bool
+        """
+        self._is_archiving_enabled = is_archiving_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

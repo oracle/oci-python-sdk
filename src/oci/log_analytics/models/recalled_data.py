@@ -27,6 +27,10 @@ class RecalledData(object):
     #: This constant has a value of "FAILED"
     STATUS_FAILED = "FAILED"
 
+    #: A constant which can be used with the status property of a RecalledData.
+    #: This constant has a value of "PARTIAL_RECALLED"
+    STATUS_PARTIAL_RECALLED = "PARTIAL_RECALLED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new RecalledData object with values from keyword arguments.
@@ -46,7 +50,7 @@ class RecalledData(object):
 
         :param status:
             The value to assign to the status property of this RecalledData.
-            Allowed values for this property are: "RECALLED", "PENDING", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "RECALLED", "PENDING", "FAILED", "PARTIAL_RECALLED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type status: str
 
@@ -90,6 +94,10 @@ class RecalledData(object):
             The value to assign to the time_recalled_data_ended property of this RecalledData.
         :type time_recalled_data_ended: datetime
 
+        :param percentage_complete:
+            The value to assign to the percentage_complete property of this RecalledData.
+        :type percentage_complete: int
+
         """
         self.swagger_types = {
             'time_data_ended': 'datetime',
@@ -105,7 +113,8 @@ class RecalledData(object):
             'created_by': 'str',
             'collection_id': 'int',
             'time_recalled_data_started': 'datetime',
-            'time_recalled_data_ended': 'datetime'
+            'time_recalled_data_ended': 'datetime',
+            'percentage_complete': 'int'
         }
         self.attribute_map = {
             'time_data_ended': 'timeDataEnded',
@@ -121,7 +130,8 @@ class RecalledData(object):
             'created_by': 'createdBy',
             'collection_id': 'collectionId',
             'time_recalled_data_started': 'timeRecalledDataStarted',
-            'time_recalled_data_ended': 'timeRecalledDataEnded'
+            'time_recalled_data_ended': 'timeRecalledDataEnded',
+            'percentage_complete': 'percentageComplete'
         }
         self._time_data_ended = None
         self._time_data_started = None
@@ -137,6 +147,7 @@ class RecalledData(object):
         self._collection_id = None
         self._time_recalled_data_started = None
         self._time_recalled_data_ended = None
+        self._percentage_complete = None
 
     @property
     def time_data_ended(self):
@@ -216,7 +227,7 @@ class RecalledData(object):
         **[Required]** Gets the status of this RecalledData.
         This is the status of the recall
 
-        Allowed values for this property are: "RECALLED", "PENDING", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "RECALLED", "PENDING", "FAILED", "PARTIAL_RECALLED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -235,7 +246,7 @@ class RecalledData(object):
         :param status: The status of this RecalledData.
         :type: str
         """
-        allowed_values = ["RECALLED", "PENDING", "FAILED"]
+        allowed_values = ["RECALLED", "PENDING", "FAILED", "PARTIAL_RECALLED"]
         if not value_allowed_none_or_none_sentinel(status, allowed_values):
             status = 'UNKNOWN_ENUM_VALUE'
         self._status = status
@@ -481,6 +492,30 @@ class RecalledData(object):
         :type: datetime
         """
         self._time_recalled_data_ended = time_recalled_data_ended
+
+    @property
+    def percentage_complete(self):
+        """
+        Gets the percentage_complete of this RecalledData.
+        This is the current progress percentage for the recalled data
+
+
+        :return: The percentage_complete of this RecalledData.
+        :rtype: int
+        """
+        return self._percentage_complete
+
+    @percentage_complete.setter
+    def percentage_complete(self, percentage_complete):
+        """
+        Sets the percentage_complete of this RecalledData.
+        This is the current progress percentage for the recalled data
+
+
+        :param percentage_complete: The percentage_complete of this RecalledData.
+        :type: int
+        """
+        self._percentage_complete = percentage_complete
 
     def __repr__(self):
         return formatted_flat_dict(self)

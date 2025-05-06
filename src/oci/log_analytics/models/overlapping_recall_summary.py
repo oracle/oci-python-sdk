@@ -27,6 +27,10 @@ class OverlappingRecallSummary(object):
     #: This constant has a value of "FAILED"
     STATUS_FAILED = "FAILED"
 
+    #: A constant which can be used with the status property of a OverlappingRecallSummary.
+    #: This constant has a value of "PARTIAL_RECALLED"
+    STATUS_PARTIAL_RECALLED = "PARTIAL_RECALLED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new OverlappingRecallSummary object with values from keyword arguments.
@@ -46,7 +50,7 @@ class OverlappingRecallSummary(object):
 
         :param status:
             The value to assign to the status property of this OverlappingRecallSummary.
-            Allowed values for this property are: "RECALLED", "PENDING", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "RECALLED", "PENDING", "FAILED", "PARTIAL_RECALLED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type status: str
 
@@ -188,7 +192,7 @@ class OverlappingRecallSummary(object):
         **[Required]** Gets the status of this OverlappingRecallSummary.
         This is the status of the recall
 
-        Allowed values for this property are: "RECALLED", "PENDING", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "RECALLED", "PENDING", "FAILED", "PARTIAL_RECALLED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -207,7 +211,7 @@ class OverlappingRecallSummary(object):
         :param status: The status of this OverlappingRecallSummary.
         :type: str
         """
-        allowed_values = ["RECALLED", "PENDING", "FAILED"]
+        allowed_values = ["RECALLED", "PENDING", "FAILED", "PARTIAL_RECALLED"]
         if not value_allowed_none_or_none_sentinel(status, allowed_values):
             status = 'UNKNOWN_ENUM_VALUE'
         self._status = status

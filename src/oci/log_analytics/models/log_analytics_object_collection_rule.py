@@ -51,6 +51,22 @@ class LogAnalyticsObjectCollectionRule(object):
     #: This constant has a value of "LOG_EVENTS"
     LOG_TYPE_LOG_EVENTS = "LOG_EVENTS"
 
+    #: A constant which can be used with the stream_cursor_type property of a LogAnalyticsObjectCollectionRule.
+    #: This constant has a value of "DEFAULT"
+    STREAM_CURSOR_TYPE_DEFAULT = "DEFAULT"
+
+    #: A constant which can be used with the stream_cursor_type property of a LogAnalyticsObjectCollectionRule.
+    #: This constant has a value of "TRIM_HORIZON"
+    STREAM_CURSOR_TYPE_TRIM_HORIZON = "TRIM_HORIZON"
+
+    #: A constant which can be used with the stream_cursor_type property of a LogAnalyticsObjectCollectionRule.
+    #: This constant has a value of "LATEST"
+    STREAM_CURSOR_TYPE_LATEST = "LATEST"
+
+    #: A constant which can be used with the stream_cursor_type property of a LogAnalyticsObjectCollectionRule.
+    #: This constant has a value of "AT_TIME"
+    STREAM_CURSOR_TYPE_AT_TIME = "AT_TIME"
+
     def __init__(self, **kwargs):
         """
         Initializes a new LogAnalyticsObjectCollectionRule object with values from keyword arguments.
@@ -168,6 +184,24 @@ class LogAnalyticsObjectCollectionRule(object):
             The value to assign to the is_force_historic_collection property of this LogAnalyticsObjectCollectionRule.
         :type is_force_historic_collection: bool
 
+        :param stream_id:
+            The value to assign to the stream_id property of this LogAnalyticsObjectCollectionRule.
+        :type stream_id: str
+
+        :param stream_cursor_type:
+            The value to assign to the stream_cursor_type property of this LogAnalyticsObjectCollectionRule.
+            Allowed values for this property are: "DEFAULT", "TRIM_HORIZON", "LATEST", "AT_TIME", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type stream_cursor_type: str
+
+        :param stream_cursor_time:
+            The value to assign to the stream_cursor_time property of this LogAnalyticsObjectCollectionRule.
+        :type stream_cursor_time: datetime
+
+        :param last_collected_object:
+            The value to assign to the last_collected_object property of this LogAnalyticsObjectCollectionRule.
+        :type last_collected_object: str
+
         :param defined_tags:
             The value to assign to the defined_tags property of this LogAnalyticsObjectCollectionRule.
         :type defined_tags: dict(str, dict(str, object))
@@ -204,6 +238,10 @@ class LogAnalyticsObjectCollectionRule(object):
             'object_name_filters': 'list[str]',
             'log_type': 'str',
             'is_force_historic_collection': 'bool',
+            'stream_id': 'str',
+            'stream_cursor_type': 'str',
+            'stream_cursor_time': 'datetime',
+            'last_collected_object': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)'
         }
@@ -234,6 +272,10 @@ class LogAnalyticsObjectCollectionRule(object):
             'object_name_filters': 'objectNameFilters',
             'log_type': 'logType',
             'is_force_historic_collection': 'isForceHistoricCollection',
+            'stream_id': 'streamId',
+            'stream_cursor_type': 'streamCursorType',
+            'stream_cursor_time': 'streamCursorTime',
+            'last_collected_object': 'lastCollectedObject',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags'
         }
@@ -263,6 +305,10 @@ class LogAnalyticsObjectCollectionRule(object):
         self._object_name_filters = None
         self._log_type = None
         self._is_force_historic_collection = None
+        self._stream_id = None
+        self._stream_cursor_type = None
+        self._stream_cursor_time = None
+        self._last_collected_object = None
         self._defined_tags = None
         self._freeform_tags = None
 
@@ -959,6 +1005,124 @@ class LogAnalyticsObjectCollectionRule(object):
         :type: bool
         """
         self._is_force_historic_collection = is_force_historic_collection
+
+    @property
+    def stream_id(self):
+        """
+        Gets the stream_id of this LogAnalyticsObjectCollectionRule.
+        A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+
+
+        :return: The stream_id of this LogAnalyticsObjectCollectionRule.
+        :rtype: str
+        """
+        return self._stream_id
+
+    @stream_id.setter
+    def stream_id(self, stream_id):
+        """
+        Sets the stream_id of this LogAnalyticsObjectCollectionRule.
+        A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+
+
+        :param stream_id: The stream_id of this LogAnalyticsObjectCollectionRule.
+        :type: str
+        """
+        self._stream_id = stream_id
+
+    @property
+    def stream_cursor_type(self):
+        """
+        Gets the stream_cursor_type of this LogAnalyticsObjectCollectionRule.
+        Cursor type used to fetch messages from stream.
+        When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.
+        Otherwise, the behaviour is to consume from the oldest available message in the stream.
+        When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.
+        When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.
+        When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.
+        For more information on cursor types, see `Stream Consumer Groups`__.
+
+        __ https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm
+
+        Allowed values for this property are: "DEFAULT", "TRIM_HORIZON", "LATEST", "AT_TIME", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The stream_cursor_type of this LogAnalyticsObjectCollectionRule.
+        :rtype: str
+        """
+        return self._stream_cursor_type
+
+    @stream_cursor_type.setter
+    def stream_cursor_type(self, stream_cursor_type):
+        """
+        Sets the stream_cursor_type of this LogAnalyticsObjectCollectionRule.
+        Cursor type used to fetch messages from stream.
+        When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.
+        Otherwise, the behaviour is to consume from the oldest available message in the stream.
+        When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.
+        When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.
+        When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.
+        For more information on cursor types, see `Stream Consumer Groups`__.
+
+        __ https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm
+
+
+        :param stream_cursor_type: The stream_cursor_type of this LogAnalyticsObjectCollectionRule.
+        :type: str
+        """
+        allowed_values = ["DEFAULT", "TRIM_HORIZON", "LATEST", "AT_TIME"]
+        if not value_allowed_none_or_none_sentinel(stream_cursor_type, allowed_values):
+            stream_cursor_type = 'UNKNOWN_ENUM_VALUE'
+        self._stream_cursor_type = stream_cursor_type
+
+    @property
+    def stream_cursor_time(self):
+        """
+        Gets the stream_cursor_time of this LogAnalyticsObjectCollectionRule.
+        The time from which to consume the objects, if streamCursorType is AT_TIME.
+
+
+        :return: The stream_cursor_time of this LogAnalyticsObjectCollectionRule.
+        :rtype: datetime
+        """
+        return self._stream_cursor_time
+
+    @stream_cursor_time.setter
+    def stream_cursor_time(self, stream_cursor_time):
+        """
+        Sets the stream_cursor_time of this LogAnalyticsObjectCollectionRule.
+        The time from which to consume the objects, if streamCursorType is AT_TIME.
+
+
+        :param stream_cursor_time: The stream_cursor_time of this LogAnalyticsObjectCollectionRule.
+        :type: datetime
+        """
+        self._stream_cursor_time = stream_cursor_time
+
+    @property
+    def last_collected_object(self):
+        """
+        Gets the last_collected_object of this LogAnalyticsObjectCollectionRule.
+        Last Collected Object for the rule
+
+
+        :return: The last_collected_object of this LogAnalyticsObjectCollectionRule.
+        :rtype: str
+        """
+        return self._last_collected_object
+
+    @last_collected_object.setter
+    def last_collected_object(self, last_collected_object):
+        """
+        Sets the last_collected_object of this LogAnalyticsObjectCollectionRule.
+        Last Collected Object for the rule
+
+
+        :param last_collected_object: The last_collected_object of this LogAnalyticsObjectCollectionRule.
+        :type: str
+        """
+        self._last_collected_object = last_collected_object
 
     @property
     def defined_tags(self):

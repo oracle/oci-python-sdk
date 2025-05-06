@@ -1,9 +1,9 @@
-Associations
-============
+CatalogSourcePayload
+====================
 
 .. currentmodule:: oci.fleet_apps_management.models
 
-.. autoclass:: Associations
+.. autoclass:: CatalogSourcePayload
     :show-inheritance:
     :special-members: __init__
     :members:

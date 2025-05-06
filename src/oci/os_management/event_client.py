@@ -171,7 +171,7 @@ class EventClient(object):
         resource_path = "/managedInstances/{managedInstanceId}/events/{eventId}/content"
         method = "DELETE"
         operation_name = "delete_event_content"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/EventContent/DeleteEventContent"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -284,7 +284,7 @@ class EventClient(object):
         resource_path = "/managedInstances/{managedInstanceId}/events/{eventId}"
         method = "GET"
         operation_name = "get_event"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/Event/GetEvent"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -509,7 +509,7 @@ class EventClient(object):
         resource_path = "/managedInstances/{managedInstanceId}/events/report"
         method = "GET"
         operation_name = "get_event_report"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/EventReport/GetEventReport"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -651,7 +651,7 @@ class EventClient(object):
         resource_path = "/managedInstances/{managedInstanceId}/events"
         method = "GET"
         operation_name = "list_events"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/EventCollection/ListEvents"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -818,7 +818,7 @@ class EventClient(object):
         resource_path = "/relatedEvents"
         method = "GET"
         operation_name = "list_related_events"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/RelatedEventCollection/ListRelatedEvents"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -952,7 +952,7 @@ class EventClient(object):
         resource_path = "/managedInstances/{managedInstanceId}/events/{eventId}"
         method = "PUT"
         operation_name = "update_event"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/Event/UpdateEvent"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1080,7 +1080,7 @@ class EventClient(object):
         resource_path = "/managedInstances/{managedInstanceId}/events/{eventId}/content/actions/upload"
         method = "POST"
         operation_name = "upload_event_content"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/EventContent/UploadEventContent"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [

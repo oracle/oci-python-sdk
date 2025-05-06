@@ -60,6 +60,10 @@ class LogAnalyticsParserField(object):
             The value to assign to the structured_column_info property of this LogAnalyticsParserField.
         :type structured_column_info: str
 
+        :param actions:
+            The value to assign to the actions property of this LogAnalyticsParserField.
+        :type actions: list[oci.log_analytics.models.ParserAction]
+
         """
         self.swagger_types = {
             'field': 'LogAnalyticsField',
@@ -71,7 +75,8 @@ class LogAnalyticsParserField(object):
             'parser_name': 'str',
             'parser_field_sequence': 'int',
             'parser': 'LogAnalyticsParser',
-            'structured_column_info': 'str'
+            'structured_column_info': 'str',
+            'actions': 'list[ParserAction]'
         }
         self.attribute_map = {
             'field': 'field',
@@ -83,7 +88,8 @@ class LogAnalyticsParserField(object):
             'parser_name': 'parserName',
             'parser_field_sequence': 'parserFieldSequence',
             'parser': 'parser',
-            'structured_column_info': 'structuredColumnInfo'
+            'structured_column_info': 'structuredColumnInfo',
+            'actions': 'actions'
         }
         self._field = None
         self._parser_field_id = None
@@ -95,6 +101,7 @@ class LogAnalyticsParserField(object):
         self._parser_field_sequence = None
         self._parser = None
         self._structured_column_info = None
+        self._actions = None
 
     @property
     def field(self):
@@ -327,6 +334,30 @@ class LogAnalyticsParserField(object):
         :type: str
         """
         self._structured_column_info = structured_column_info
+
+    @property
+    def actions(self):
+        """
+        Gets the actions of this LogAnalyticsParserField.
+        List of actions/operations to be performed while fetching or parsing the logs.
+
+
+        :return: The actions of this LogAnalyticsParserField.
+        :rtype: list[oci.log_analytics.models.ParserAction]
+        """
+        return self._actions
+
+    @actions.setter
+    def actions(self, actions):
+        """
+        Sets the actions of this LogAnalyticsParserField.
+        List of actions/operations to be performed while fetching or parsing the logs.
+
+
+        :param actions: The actions of this LogAnalyticsParserField.
+        :type: list[oci.log_analytics.models.ParserAction]
+        """
+        self._actions = actions
 
     def __repr__(self):
         return formatted_flat_dict(self)

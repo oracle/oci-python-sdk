@@ -27,6 +27,10 @@ class ExportDetails(object):
     #: This constant has a value of "JSON"
     OUTPUT_FORMAT_JSON = "JSON"
 
+    #: A constant which can be used with the output_format property of a ExportDetails.
+    #: This constant has a value of "PARQUET"
+    OUTPUT_FORMAT_PARQUET = "PARQUET"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ExportDetails object with values from keyword arguments.
@@ -71,7 +75,7 @@ class ExportDetails(object):
 
         :param output_format:
             The value to assign to the output_format property of this ExportDetails.
-            Allowed values for this property are: "CSV", "JSON"
+            Allowed values for this property are: "CSV", "JSON", "PARQUET"
         :type output_format: str
 
         :param should_localize:
@@ -367,7 +371,7 @@ class ExportDetails(object):
         Gets the output_format of this ExportDetails.
         Specifies the format for the returned results.
 
-        Allowed values for this property are: "CSV", "JSON"
+        Allowed values for this property are: "CSV", "JSON", "PARQUET"
 
 
         :return: The output_format of this ExportDetails.
@@ -385,7 +389,7 @@ class ExportDetails(object):
         :param output_format: The output_format of this ExportDetails.
         :type: str
         """
-        allowed_values = ["CSV", "JSON"]
+        allowed_values = ["CSV", "JSON", "PARQUET"]
         if not value_allowed_none_or_none_sentinel(output_format, allowed_values):
             raise ValueError(
                 f"Invalid value for `output_format`, must be None or one of {allowed_values}"

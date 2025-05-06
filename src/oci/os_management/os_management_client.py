@@ -154,7 +154,7 @@ class OsManagementClient(object):
         resource_path = "/softwareSources/{softwareSourceId}/actions/addPackages"
         method = "POST"
         operation_name = "add_packages_to_software_source"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/AddPackagesToSoftwareSource"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -262,7 +262,7 @@ class OsManagementClient(object):
         resource_path = "/managedInstances/{managedInstanceId}/actions/attachChildSoftwareSource"
         method = "POST"
         operation_name = "attach_child_software_source_to_managed_instance"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/AttachChildSoftwareSourceToManagedInstance"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -374,7 +374,7 @@ class OsManagementClient(object):
         resource_path = "/managedInstanceGroups/{managedInstanceGroupId}/actions/attachManagedInstance"
         method = "POST"
         operation_name = "attach_managed_instance_to_managed_instance_group"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/AttachManagedInstanceToManagedInstanceGroup"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -491,7 +491,7 @@ class OsManagementClient(object):
         resource_path = "/managedInstances/{managedInstanceId}/actions/attachParentSoftwareSource"
         method = "POST"
         operation_name = "attach_parent_software_source_to_managed_instance"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/AttachParentSoftwareSourceToManagedInstance"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -608,7 +608,7 @@ class OsManagementClient(object):
         resource_path = "/managedInstanceGroups/{managedInstanceGroupId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_managed_instance_group_compartment"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/ChangeManagedInstanceGroupCompartment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -727,7 +727,7 @@ class OsManagementClient(object):
         resource_path = "/scheduledJobs/{scheduledJobId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_scheduled_job_compartment"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/ChangeScheduledJobCompartment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -846,7 +846,7 @@ class OsManagementClient(object):
         resource_path = "/softwareSources/{softwareSourceId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_software_source_compartment"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/ChangeSoftwareSourceCompartment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -956,7 +956,7 @@ class OsManagementClient(object):
         resource_path = "/managedInstanceGroups"
         method = "POST"
         operation_name = "create_managed_instance_group"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/CreateManagedInstanceGroup"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1055,7 +1055,7 @@ class OsManagementClient(object):
         resource_path = "/scheduledJobs"
         method = "POST"
         operation_name = "create_scheduled_job"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/CreateScheduledJob"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1153,7 +1153,7 @@ class OsManagementClient(object):
         resource_path = "/softwareSources"
         method = "POST"
         operation_name = "create_software_source"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/CreateSoftwareSource"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1249,7 +1249,7 @@ class OsManagementClient(object):
         resource_path = "/managedInstanceGroups/{managedInstanceGroupId}"
         method = "DELETE"
         operation_name = "delete_managed_instance_group"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/DeleteManagedInstanceGroup"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1352,7 +1352,7 @@ class OsManagementClient(object):
         resource_path = "/scheduledJobs/{scheduledJobId}"
         method = "DELETE"
         operation_name = "delete_scheduled_job"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/DeleteScheduledJob"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1455,7 +1455,7 @@ class OsManagementClient(object):
         resource_path = "/softwareSources/{softwareSourceId}"
         method = "DELETE"
         operation_name = "delete_software_source"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/DeleteSoftwareSource"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1562,7 +1562,7 @@ class OsManagementClient(object):
         resource_path = "/managedInstances/{managedInstanceId}/actions/detachChildSoftwareSource"
         method = "POST"
         operation_name = "detach_child_software_source_from_managed_instance"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/DetachChildSoftwareSourceFromManagedInstance"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1671,7 +1671,7 @@ class OsManagementClient(object):
         resource_path = "/managedInstanceGroups/{managedInstanceGroupId}/actions/detachManagedInstance"
         method = "POST"
         operation_name = "detach_managed_instance_from_managed_instance_group"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/DetachManagedInstanceFromManagedInstanceGroup"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1786,7 +1786,7 @@ class OsManagementClient(object):
         resource_path = "/managedInstances/{managedInstanceId}/actions/detachParentSoftwareSource"
         method = "POST"
         operation_name = "detach_parent_software_source_from_managed_instance"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/DetachParentSoftwareSourceFromManagedInstance"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1909,7 +1909,7 @@ class OsManagementClient(object):
         resource_path = "/managedInstances/{managedInstanceId}/actions/moduleStreams/disable"
         method = "POST"
         operation_name = "disable_module_stream_on_managed_instance"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamDetails/DisableModuleStreamOnManagedInstance"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2042,7 +2042,7 @@ class OsManagementClient(object):
         resource_path = "/managedInstances/{managedInstanceId}/actions/moduleStreams/enable"
         method = "POST"
         operation_name = "enable_module_stream_on_managed_instance"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamDetails/EnableModuleStreamOnManagedInstance"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2150,7 +2150,7 @@ class OsManagementClient(object):
         resource_path = "/errata/{erratumId}"
         method = "GET"
         operation_name = "get_erratum"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/Erratum/GetErratum"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2246,7 +2246,7 @@ class OsManagementClient(object):
         resource_path = "/managedInstances/{managedInstanceId}"
         method = "GET"
         operation_name = "get_managed_instance"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/GetManagedInstance"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2342,7 +2342,7 @@ class OsManagementClient(object):
         resource_path = "/managedInstanceGroups/{managedInstanceGroupId}"
         method = "GET"
         operation_name = "get_managed_instance_group"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/GetManagedInstanceGroup"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2444,7 +2444,7 @@ class OsManagementClient(object):
         resource_path = "/softwareSources/{softwareSourceId}/modules/{moduleName}/streams/{streamName}"
         method = "GET"
         operation_name = "get_module_stream"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStream/GetModuleStream"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2551,7 +2551,7 @@ class OsManagementClient(object):
         resource_path = "/softwareSources/{softwareSourceId}/modules/{moduleName}/streams/{streamName}/profiles/{profileName}"
         method = "GET"
         operation_name = "get_module_stream_profile"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamProfile/GetModuleStreamProfile"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2650,7 +2650,7 @@ class OsManagementClient(object):
         resource_path = "/scheduledJobs/{scheduledJobId}"
         method = "GET"
         operation_name = "get_scheduled_job"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/GetScheduledJob"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2749,7 +2749,7 @@ class OsManagementClient(object):
         resource_path = "/softwareSources/{softwareSourceId}/softwarePackages/{softwarePackageName}"
         method = "GET"
         operation_name = "get_software_package"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/GetSoftwarePackage"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2846,7 +2846,7 @@ class OsManagementClient(object):
         resource_path = "/softwareSources/{softwareSourceId}"
         method = "GET"
         operation_name = "get_software_source"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/GetSoftwareSource"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2942,7 +2942,7 @@ class OsManagementClient(object):
         resource_path = "/updates/{windowsUpdate}"
         method = "GET"
         operation_name = "get_windows_update"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WindowsUpdate/GetWindowsUpdate"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3038,7 +3038,7 @@ class OsManagementClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WorkRequest/GetWorkRequest"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3146,7 +3146,7 @@ class OsManagementClient(object):
         resource_path = "/managedInstances/{managedInstanceId}/actions/packages/updateAll"
         method = "POST"
         operation_name = "install_all_package_updates_on_managed_instance"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/InstallAllPackageUpdatesOnManagedInstance"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3270,7 +3270,7 @@ class OsManagementClient(object):
         resource_path = "/managedInstanceGroups/{managedInstanceGroupId}/actions/updates/installAll"
         method = "POST"
         operation_name = "install_all_updates_on_managed_instance_group"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/InstallAllUpdatesOnManagedInstanceGroup"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3394,7 +3394,7 @@ class OsManagementClient(object):
         resource_path = "/managedInstances/{managedInstanceId}/actions/updates/installAll"
         method = "POST"
         operation_name = "install_all_windows_updates_on_managed_instance"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/InstallAllWindowsUpdatesOnManagedInstance"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3532,7 +3532,7 @@ class OsManagementClient(object):
         resource_path = "/managedInstances/{managedInstanceId}/actions/streamProfiles/install"
         method = "POST"
         operation_name = "install_module_stream_profile_on_managed_instance"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamProfileDetails/InstallModuleStreamProfileOnManagedInstance"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3652,7 +3652,7 @@ class OsManagementClient(object):
         resource_path = "/managedInstances/{managedInstanceId}/actions/packages/install"
         method = "POST"
         operation_name = "install_package_on_managed_instance"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/InstallPackageOnManagedInstance"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3766,7 +3766,7 @@ class OsManagementClient(object):
         resource_path = "/managedInstances/{managedInstanceId}/actions/packages/update"
         method = "POST"
         operation_name = "install_package_update_on_managed_instance"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/InstallPackageUpdateOnManagedInstance"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3882,7 +3882,7 @@ class OsManagementClient(object):
         resource_path = "/managedInstances/{managedInstanceId}/actions/updates/install"
         method = "POST"
         operation_name = "install_windows_update_on_managed_instance"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/InstallWindowsUpdateOnManagedInstance"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4010,7 +4010,7 @@ class OsManagementClient(object):
         resource_path = "/managedInstances/{managedInstanceId}/packages/available"
         method = "GET"
         operation_name = "list_available_packages_for_managed_instance"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListAvailablePackagesForManagedInstance"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4162,7 +4162,7 @@ class OsManagementClient(object):
         resource_path = "/managedInstances/{managedInstanceId}/availableSoftwareSources"
         method = "GET"
         operation_name = "list_available_software_sources_for_managed_instance"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListAvailableSoftwareSourcesForManagedInstance"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4314,7 +4314,7 @@ class OsManagementClient(object):
         resource_path = "/managedInstances/{managedInstanceId}/packages/updates"
         method = "GET"
         operation_name = "list_available_updates_for_managed_instance"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListAvailableUpdatesForManagedInstance"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4471,7 +4471,7 @@ class OsManagementClient(object):
         resource_path = "/managedInstances/{managedInstanceId}/updates/available"
         method = "GET"
         operation_name = "list_available_windows_updates_for_managed_instance"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListAvailableWindowsUpdatesForManagedInstance"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4642,7 +4642,7 @@ class OsManagementClient(object):
         resource_path = "/errata"
         method = "GET"
         operation_name = "list_errata"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ErratumSummary/ListErrata"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4788,7 +4788,7 @@ class OsManagementClient(object):
         resource_path = "/managedInstances/{managedInstanceId}/errata"
         method = "GET"
         operation_name = "list_managed_instance_errata"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListManagedInstanceErrata"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4947,7 +4947,7 @@ class OsManagementClient(object):
         resource_path = "/managedInstanceGroups"
         method = "GET"
         operation_name = "list_managed_instance_groups"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroupSummary/ListManagedInstanceGroups"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5106,7 +5106,7 @@ class OsManagementClient(object):
         resource_path = "/managedInstances"
         method = "GET"
         operation_name = "list_managed_instances"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceSummary/ListManagedInstances"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5272,7 +5272,7 @@ class OsManagementClient(object):
         resource_path = "/softwareSources/{softwareSourceId}/streamProfiles"
         method = "GET"
         operation_name = "list_module_stream_profiles"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamProfileSummary/ListModuleStreamProfiles"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5468,7 +5468,7 @@ class OsManagementClient(object):
         resource_path = "/managedInstances/{managedInstanceId}/streamProfiles"
         method = "GET"
         operation_name = "list_module_stream_profiles_on_managed_instance"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListModuleStreamProfilesOnManagedInstance"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5652,7 +5652,7 @@ class OsManagementClient(object):
         resource_path = "/softwareSources/{softwareSourceId}/moduleStreams"
         method = "GET"
         operation_name = "list_module_streams"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamSummary/ListModuleStreams"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5847,7 +5847,7 @@ class OsManagementClient(object):
         resource_path = "/managedInstances/{managedInstanceId}/moduleStreams"
         method = "GET"
         operation_name = "list_module_streams_on_managed_instance"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListModuleStreamsOnManagedInstance"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6010,7 +6010,7 @@ class OsManagementClient(object):
         resource_path = "/managedInstances/{managedInstanceId}/packages"
         method = "GET"
         operation_name = "list_packages_installed_on_managed_instance"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListPackagesInstalledOnManagedInstance"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6183,7 +6183,7 @@ class OsManagementClient(object):
         resource_path = "/scheduledJobs"
         method = "GET"
         operation_name = "list_scheduled_jobs"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/ListScheduledJobs"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6355,7 +6355,7 @@ class OsManagementClient(object):
         resource_path = "/softwareSources/{softwareSourceId}/softwarePackages"
         method = "GET"
         operation_name = "list_software_source_packages"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/ListSoftwareSourcePackages"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6509,7 +6509,7 @@ class OsManagementClient(object):
         resource_path = "/softwareSources"
         method = "GET"
         operation_name = "list_software_sources"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSourceSummary/ListSoftwareSources"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6675,7 +6675,7 @@ class OsManagementClient(object):
         resource_path = "/scheduledJobs/upcomingSchedules"
         method = "GET"
         operation_name = "list_upcoming_scheduled_jobs"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/ListUpcomingScheduledJobs"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6834,7 +6834,7 @@ class OsManagementClient(object):
         resource_path = "/updates"
         method = "GET"
         operation_name = "list_windows_updates"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WindowsUpdateSummary/ListWindowsUpdates"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6974,7 +6974,7 @@ class OsManagementClient(object):
         resource_path = "/managedInstances/{managedInstanceId}/updates/installed"
         method = "GET"
         operation_name = "list_windows_updates_installed_on_managed_instance"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListWindowsUpdatesInstalledOnManagedInstance"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7118,7 +7118,7 @@ class OsManagementClient(object):
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WorkRequest/ListWorkRequestErrors"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7258,7 +7258,7 @@ class OsManagementClient(object):
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WorkRequest/ListWorkRequestLogs"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7411,7 +7411,7 @@ class OsManagementClient(object):
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WorkRequestSummary/ListWorkRequests"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7613,7 +7613,7 @@ class OsManagementClient(object):
         resource_path = "/managedInstances/{managedInstanceId}/actions/moduleStreams/manage"
         method = "POST"
         operation_name = "manage_module_streams_on_managed_instance"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ManageModuleStreamsOnManagedInstance"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7740,7 +7740,7 @@ class OsManagementClient(object):
         resource_path = "/managedInstances/{managedInstanceId}/actions/streamProfiles/remove"
         method = "POST"
         operation_name = "remove_module_stream_profile_from_managed_instance"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamProfileDetails/RemoveModuleStreamProfileFromManagedInstance"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7860,7 +7860,7 @@ class OsManagementClient(object):
         resource_path = "/managedInstances/{managedInstanceId}/actions/packages/remove"
         method = "POST"
         operation_name = "remove_package_from_managed_instance"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/RemovePackageFromManagedInstance"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7967,7 +7967,7 @@ class OsManagementClient(object):
         resource_path = "/softwareSources/{softwareSourceId}/actions/removePackages"
         method = "POST"
         operation_name = "remove_packages_from_software_source"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/RemovePackagesFromSoftwareSource"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8078,7 +8078,7 @@ class OsManagementClient(object):
         resource_path = "/scheduledJobs/{scheduledJobId}/actions/runNow"
         method = "POST"
         operation_name = "run_scheduled_job_now"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/RunScheduledJobNow"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8203,7 +8203,7 @@ class OsManagementClient(object):
         resource_path = "/softwareSources/softwarePackages"
         method = "GET"
         operation_name = "search_software_packages"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/SearchSoftwarePackages"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8336,7 +8336,7 @@ class OsManagementClient(object):
         resource_path = "/scheduledJobs/{scheduledJobId}/actions/skipNextExecution"
         method = "POST"
         operation_name = "skip_next_scheduled_job_execution"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/SkipNextScheduledJobExecution"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8459,7 +8459,7 @@ class OsManagementClient(object):
         resource_path = "/managedInstances/{managedInstanceId}/actions/moduleStreams/switch"
         method = "POST"
         operation_name = "switch_module_stream_on_managed_instance"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ModuleStreamDetails/SwitchModuleStreamOnManagedInstance"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8577,7 +8577,7 @@ class OsManagementClient(object):
         resource_path = "/managedInstances/{managedInstanceId}"
         method = "PUT"
         operation_name = "update_managed_instance"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/UpdateManagedInstanceDetails/UpdateManagedInstance"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8687,7 +8687,7 @@ class OsManagementClient(object):
         resource_path = "/managedInstanceGroups/{managedInstanceGroupId}"
         method = "PUT"
         operation_name = "update_managed_instance_group"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/UpdateManagedInstanceGroup"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8797,7 +8797,7 @@ class OsManagementClient(object):
         resource_path = "/scheduledJobs/{scheduledJobId}"
         method = "PUT"
         operation_name = "update_scheduled_job"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/UpdateScheduledJob"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8907,7 +8907,7 @@ class OsManagementClient(object):
         resource_path = "/softwareSources/{softwareSourceId}"
         method = "PUT"
         operation_name = "update_software_source"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/UpdateSoftwareSource"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [

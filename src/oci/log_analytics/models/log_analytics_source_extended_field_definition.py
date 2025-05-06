@@ -84,6 +84,14 @@ class LogAnalyticsSourceExtendedFieldDefinition(object):
             The value to assign to the time_updated property of this LogAnalyticsSourceExtendedFieldDefinition.
         :type time_updated: datetime
 
+        :param condition_string:
+            The value to assign to the condition_string property of this LogAnalyticsSourceExtendedFieldDefinition.
+        :type condition_string: str
+
+        :param condition_block:
+            The value to assign to the condition_block property of this LogAnalyticsSourceExtendedFieldDefinition.
+        :type condition_block: oci.log_analytics.models.GenericConditionBlock
+
         """
         self.swagger_types = {
             'field': 'LogAnalyticsField',
@@ -101,7 +109,9 @@ class LogAnalyticsSourceExtendedFieldDefinition(object):
             'is_system': 'bool',
             'regular_expression': 'str',
             'source_id': 'int',
-            'time_updated': 'datetime'
+            'time_updated': 'datetime',
+            'condition_string': 'str',
+            'condition_block': 'GenericConditionBlock'
         }
         self.attribute_map = {
             'field': 'field',
@@ -119,7 +129,9 @@ class LogAnalyticsSourceExtendedFieldDefinition(object):
             'is_system': 'isSystem',
             'regular_expression': 'regularExpression',
             'source_id': 'sourceId',
-            'time_updated': 'timeUpdated'
+            'time_updated': 'timeUpdated',
+            'condition_string': 'conditionString',
+            'condition_block': 'conditionBlock'
         }
         self._field = None
         self._display_regular_expression = None
@@ -137,6 +149,8 @@ class LogAnalyticsSourceExtendedFieldDefinition(object):
         self._regular_expression = None
         self._source_id = None
         self._time_updated = None
+        self._condition_string = None
+        self._condition_block = None
 
     @property
     def field(self):
@@ -282,7 +296,7 @@ class LogAnalyticsSourceExtendedFieldDefinition(object):
     def condition_field(self):
         """
         Gets the condition_field of this LogAnalyticsSourceExtendedFieldDefinition.
-        The onditional field.
+        The conditional field.
 
 
         :return: The condition_field of this LogAnalyticsSourceExtendedFieldDefinition.
@@ -294,7 +308,7 @@ class LogAnalyticsSourceExtendedFieldDefinition(object):
     def condition_field(self, condition_field):
         """
         Sets the condition_field of this LogAnalyticsSourceExtendedFieldDefinition.
-        The onditional field.
+        The conditional field.
 
 
         :param condition_field: The condition_field of this LogAnalyticsSourceExtendedFieldDefinition.
@@ -519,6 +533,50 @@ class LogAnalyticsSourceExtendedFieldDefinition(object):
         :type: datetime
         """
         self._time_updated = time_updated
+
+    @property
+    def condition_string(self):
+        """
+        Gets the condition_string of this LogAnalyticsSourceExtendedFieldDefinition.
+        String representation of the extended field condition. This supports specifying multiple condition blocks at various nested levels.
+
+
+        :return: The condition_string of this LogAnalyticsSourceExtendedFieldDefinition.
+        :rtype: str
+        """
+        return self._condition_string
+
+    @condition_string.setter
+    def condition_string(self, condition_string):
+        """
+        Sets the condition_string of this LogAnalyticsSourceExtendedFieldDefinition.
+        String representation of the extended field condition. This supports specifying multiple condition blocks at various nested levels.
+
+
+        :param condition_string: The condition_string of this LogAnalyticsSourceExtendedFieldDefinition.
+        :type: str
+        """
+        self._condition_string = condition_string
+
+    @property
+    def condition_block(self):
+        """
+        Gets the condition_block of this LogAnalyticsSourceExtendedFieldDefinition.
+
+        :return: The condition_block of this LogAnalyticsSourceExtendedFieldDefinition.
+        :rtype: oci.log_analytics.models.GenericConditionBlock
+        """
+        return self._condition_block
+
+    @condition_block.setter
+    def condition_block(self, condition_block):
+        """
+        Sets the condition_block of this LogAnalyticsSourceExtendedFieldDefinition.
+
+        :param condition_block: The condition_block of this LogAnalyticsSourceExtendedFieldDefinition.
+        :type: oci.log_analytics.models.GenericConditionBlock
+        """
+        self._condition_block = condition_block
 
     def __repr__(self):
         return formatted_flat_dict(self)

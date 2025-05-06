@@ -39,7 +39,7 @@ import threading
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    version = "25.04.08"
+    version = "25.04.29"
     oci_compatible_version = "2.148.0"
     thread_lock = threading.Lock()
     collection_ljust = 40
@@ -249,6 +249,8 @@ class ShowOCIService(object):
     C_DATA_AI_ODA = "oda"
     C_DATA_AI_BDS = "bds"
     C_DATA_AI_GENAI = "genai"
+    C_DATA_AI_GENAI_AGENT_KB = "genai_agent_kb"
+    C_DATA_AI_GENAI_AGENT = "genai_agent"
 
     # Security and Logging
     C_SECURITY = "security"
@@ -14699,7 +14701,7 @@ class ShowOCIService(object):
 
                     # get actions using the get_rule
                     try:
-                        rule_info = event_client.get_rule(rule.id).data
+                        rule_info = event_client.get_rule(rule.id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
                         if rule_info:
                             if rule_info.actions:
                                 for act in rule_info.actions.actions:
@@ -16029,6 +16031,22 @@ class ShowOCIService(object):
             return data
 
     ##########################################################################
+    # __load_genai_enabled_regions
+    ##########################################################################
+    def __load_genai_enabled_regions(self):
+        region_name = str(self.config['region'])
+        if (
+            region_name == 'sa-saopaulo-1' or
+            region_name == 'eu-frankfurt-1' or
+            region_name == 'ap-osaka-1' or
+            region_name == 'uk-london-1' or
+            region_name == 'us-chicago-1'
+        ):
+            return True
+        else:
+            return False
+
+    ##########################################################################
     # __load_native_data_ai_main
     ##########################################################################
     def __load_section_native_data_ai_main(self):
@@ -16055,7 +16073,13 @@ class ShowOCIService(object):
             oda_client = self.__create_client(oci.oda.OdaClient, key=self.EXCLUDE_ODA)
             bds_client = self.__create_client(oci.bds.BdsClient, key=self.EXCLUDE_BDS)
             di_client = self.__create_client(oci.data_integration.DataIntegrationClient, key=self.EXCLUDE_DI)
-            # genai_client = self.__create_client(oci.generative_ai.GenerativeAiClient, key=self.EXCLUDE_GENAI)
+
+            # GenAi - Check if region enabled
+            genai_client = None
+            genai_agent_client = None
+            if self.__load_genai_enabled_regions():
+                genai_client = self.__create_client(oci.generative_ai.GenerativeAiClient, key=self.EXCLUDE_GENAI)
+                genai_agent_client = self.__create_client(oci.generative_ai_agent.GenerativeAiAgentClient, key=self.EXCLUDE_GENAI)
 
             # reference to compartments
             compartments = self.get_compartments()
@@ -16076,6 +16100,8 @@ class ShowOCIService(object):
             self.__initialize_data_key(self.C_DATA_AI, self.C_DATA_AI_DI)
             self.__initialize_data_key(self.C_DATA_AI, self.C_DATA_AI_BDS)
             self.__initialize_data_key(self.C_DATA_AI, self.C_DATA_AI_GENAI)
+            self.__initialize_data_key(self.C_DATA_AI, self.C_DATA_AI_GENAI_AGENT)
+            self.__initialize_data_key(self.C_DATA_AI, self.C_DATA_AI_GENAI_AGENT_KB)
 
             ##########################
             # if serial execution
@@ -16097,7 +16123,9 @@ class ShowOCIService(object):
                 data_ai[self.C_DATA_AI_ODA] += self.__load_data_ai_oda(oda_client, compartments)
                 data_ai[self.C_DATA_AI_BDS] += self.__load_data_ai_bds(bds_client, compartments)
                 data_ai[self.C_DATA_AI_DI] += self.__load_data_ai_data_integration(di_client, compartments)
-                # data_ai[self.C_DATA_AI_GENAI] += self.__load_data_ai_data_genai(genai_client, compartments)
+                data_ai[self.C_DATA_AI_GENAI] += self.__load_data_ai_data_genai(genai_client, compartments)
+                data_ai[self.C_DATA_AI_GENAI_AGENT_KB] += self.__load_data_ai_data_genai_agent_kb(genai_agent_client, compartments)
+                data_ai[self.C_DATA_AI_GENAI_AGENT] += self.__load_data_ai_data_genai_agent(genai_agent_client, compartments)
 
             ##########################
             # if parallel execution
@@ -16118,7 +16146,9 @@ class ShowOCIService(object):
                     future_DATA_AI_ODA = executor.submit(self.__load_data_ai_oda, oda_client, compartments)
                     future_DATA_AI_BDS = executor.submit(self.__load_data_ai_bds, bds_client, compartments)
                     future_DATA_AI_DI = executor.submit(self.__load_data_ai_data_integration, di_client, compartments)
-                    # future_DATA_AI_GENAI = executor.submit(self.__load_data_ai_data_genai, genai_client, compartments)
+                    future_DATA_AI_GENAI = executor.submit(self.__load_data_ai_data_genai, genai_client, compartments)
+                    future_DATA_AI_GENAI_AGENT = executor.submit(self.__load_data_ai_data_genai_agent, genai_agent_client, compartments)
+                    future_DATA_AI_GENAI_AGENT_KB = executor.submit(self.__load_data_ai_data_genai_agent_kb, genai_agent_client, compartments)
 
                     paas = self.data[self.C_PAAS_NATIVE]
                     paas[self.C_PAAS_NATIVE_OCVS] += next(as_completed([future_PAAS_NATIVE_OCVS])).result()
@@ -16136,7 +16166,9 @@ class ShowOCIService(object):
                     data_ai[self.C_DATA_AI_ODA] += next(as_completed([future_DATA_AI_ODA])).result()
                     data_ai[self.C_DATA_AI_BDS] += next(as_completed([future_DATA_AI_BDS])).result()
                     data_ai[self.C_DATA_AI_DI] += next(as_completed([future_DATA_AI_DI])).result()
-                    # data_ai[self.C_DATA_AI_GENAI] += next(as_completed([future_DATA_AI_GENAI])).result()
+                    data_ai[self.C_DATA_AI_GENAI] += next(as_completed([future_DATA_AI_GENAI])).result()
+                    data_ai[self.C_DATA_AI_GENAI_AGENT] += next(as_completed([future_DATA_AI_GENAI_AGENT])).result()
+                    data_ai[self.C_DATA_AI_GENAI_AGENT_KB] += next(as_completed([future_DATA_AI_GENAI_AGENT_KB])).result()
 
             self.__load_print_section_time(section_start_time)
             print("")
@@ -16930,6 +16962,209 @@ class ShowOCIService(object):
                         'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
                         'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
                         'region_name': str(self.config['region'])}
+
+                    # add the data
+                    cnt += 1
+                    data.append(val)
+
+            self.__load_print_thread_cnt(header, cnt, start_time, errstr)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            else:
+                self.__load_print_error(e)
+                return data
+        except Exception as e:
+            self.__print_error(e)
+            return data
+
+    ##########################################################################
+    # __load_data_ai_data_genai_agent
+    ##########################################################################
+    def __load_data_ai_data_genai_agent(self, ai_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+
+            errstr = ""
+            header = "Generative AI Agents"
+            self.__load_print_status_with_threads(header)
+
+            if not ai_client:
+                self.__load_print_thread_exclude(header)
+                return data
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    continue
+
+                list = []
+                try:
+                    list = oci.pagination.list_call_get_all_results(
+                        ai_client.list_agents,
+                        compartment_id=compartment['id'],
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    # Only implemented in Chicago, to avoid error skip warning
+                    if e.code in ['NotAuthorizedOrNotFound', 'InternalError']:
+                        errstr += "a"
+                        continue
+
+                    if self.__check_service_error(e, compartment):
+                        self.__load_print_auth_warning("a", False, to_print=self.flags.skip_threads)
+                        errstr += "a"
+                        continue
+                    else:
+                        self.__load_print_error(e, compartment, to_print=self.flags.skip_threads)
+                        errstr += "e"
+                        continue
+
+                except oci.exceptions.ConnectTimeout:
+                    self.__load_print_auth_warning("a", False, to_print=self.flags.skip_threads)
+                    errstr += "a"
+                    continue
+                except Exception as e:
+                    self.__load_print_error(e, compartment, to_print=self.flags.skip_threads)
+                    errstr += "e"
+                    continue
+
+                if self.flags.skip_threads:
+                    print(".", end="")
+
+                # arr = oci.generative_ai_agent.models.AgentSummary
+                for arr in list:
+                    if not self.check_lifecycle_state_active(arr.lifecycle_state):
+                        continue
+
+                    val = {
+                        'id': str(arr.id),
+                        'description': self.get_value(arr.description),
+                        'display_name': self.get_value(arr.display_name),
+                        'lifecycle_state': self.get_value(arr.lifecycle_state),
+                        'knowledge_base_ids': arr.knowledge_base_ids,
+                        'welcome_message': self.get_value(arr.welcome_message),
+                        'llm_config': self.get_date(arr.llm_config.routing_llm_customization) if arr.llm_config else "",
+                        'time_created': self.get_date(arr.time_created),
+                        'time_updated': self.get_date(arr.time_updated),
+                        'compartment_name': str(compartment['name']),
+                        'compartment_path': str(compartment['path']),
+                        'compartment_id': str(compartment['id']),
+                        'sum_info': "Generative AI Agent",
+                        'sum_size_gb': 1,
+                        'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
+                        'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
+                        'region_name': str(self.config['region'])
+                    }
+
+                    # add the data
+                    cnt += 1
+                    data.append(val)
+
+            self.__load_print_thread_cnt(header, cnt, start_time, errstr)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            else:
+                self.__load_print_error(e)
+                return data
+        except Exception as e:
+            self.__print_error(e)
+            return data
+
+    ##########################################################################
+    # __load_data_ai_data_genai_agent_kb
+    ##########################################################################
+    def __load_data_ai_data_genai_agent_kb(self, ai_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+
+            errstr = ""
+            header = "Generative AI Agents KBs"
+            self.__load_print_status_with_threads(header)
+
+            if not ai_client:
+                self.__load_print_thread_exclude(header)
+                return data
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    continue
+
+                list = []
+                try:
+                    list = oci.pagination.list_call_get_all_results(
+                        ai_client.list_knowledge_bases,
+                        compartment_id=compartment['id'],
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    # Only implemented in Chicago, to avoid error skip warning
+                    if e.code in ['NotAuthorizedOrNotFound', 'InternalError']:
+                        errstr += "a"
+                        continue
+
+                    if self.__check_service_error(e, compartment):
+                        self.__load_print_auth_warning("a", False, to_print=self.flags.skip_threads)
+                        errstr += "a"
+                        continue
+                    else:
+                        self.__load_print_error(e, compartment, to_print=self.flags.skip_threads)
+                        errstr += "e"
+                        continue
+
+                except oci.exceptions.ConnectTimeout:
+                    self.__load_print_auth_warning("a", False, to_print=self.flags.skip_threads)
+                    errstr += "a"
+                    continue
+                except Exception as e:
+                    self.__load_print_error(e, compartment, to_print=self.flags.skip_threads)
+                    errstr += "e"
+                    continue
+
+                if self.flags.skip_threads:
+                    print(".", end="")
+
+                # arr = oci.generative_ai_agent.models.KnowledgeBaseSummary
+                for arr in list:
+                    if not self.check_lifecycle_state_active(arr.lifecycle_state):
+                        continue
+
+                    val = {
+                        'id': str(arr.id),
+                        'description': self.get_value(arr.description),
+                        'display_name': self.get_value(arr.display_name),
+                        'lifecycle_state': self.get_value(arr.lifecycle_state),
+                        'time_created': self.get_date(arr.time_created),
+                        'time_updated': self.get_date(arr.time_updated),
+                        'compartment_name': str(compartment['name']),
+                        'compartment_path': str(compartment['path']),
+                        'compartment_id': str(compartment['id']),
+                        'sum_info': "Generative AI Agent KB",
+                        'sum_size_gb': 1,
+                        'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
+                        'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
+                        'region_name': str(self.config['region'])
+                    }
 
                     # add the data
                     cnt += 1

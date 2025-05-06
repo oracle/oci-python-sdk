@@ -22,7 +22,7 @@ import sys
 
 
 class ShowOCIOutput(object):
-    version = "25.04.08"
+    version = "25.04.29"
 
     ##########################################################################
     # spaces for align
@@ -2849,10 +2849,30 @@ class ShowOCIOutput(object):
             if 'genai' in data_ai:
                 self.print_header("Generative AI", 2)
                 for val in data_ai['genai']:
-                    description = (" (" + val['description'] + ")") if val['description'] != "None" else ""
+                    description = (" (" + val['description'] + ")") if val['description'] else ""
                     print(self.taba + val['display_name'] + description + ", Created: " + val['time_created'][0:16] + " (" + val['lifecycle_state'] + ")")
                     print(self.tabs + "   Type    : " + val['type'] + ", Unit: " + val['unit_shape'] + ", Count: " + val['unit_count'])
                     print(self.tabs + "   Capacity: " + val['capacity_type'] + ", Total: " + val['capacity_total_endpoint_capacity'] + ", Used: " + val['capacity_used_endpoint_capacity'])
+                print("")
+
+            # GenAI Agents
+            if 'genai_agent' in data_ai:
+                self.print_header("Generative AI Agent", 2)
+                for val in data_ai['genai_agent']:
+                    description = (" (" + val['description'] + ")") if val['description'] else ""
+                    print(self.taba + val['display_name'] + description + ", Created: " + val['time_created'][0:16] + " (" + val['lifecycle_state'] + ")")
+                    if val['llm_config']:
+                        print(self.tabs + "  LLM Cfg : " + val['llm_config'])
+                    if val['welcome_message']:
+                        print(self.tabs + "  Welcome : " + val['welcome_message'])
+                print("")
+
+            # GenAI Agents KB
+            if 'genai_agent_kb' in data_ai:
+                self.print_header("Generative AI Agent KBs", 2)
+                for val in data_ai['genai_agent_kb']:
+                    description = (" (" + val['description'] + ")") if val['description'] else ""
+                    print(self.taba + val['display_name'] + description + ", Created: " + val['time_created'][0:16] + " (" + val['lifecycle_state'] + ")")
                 print("")
 
         except Exception as e:
@@ -3592,11 +3612,17 @@ class ShowOCISummary(object):
                 array = [x for x in data_ai['data_integration'] if x['lifecycle_state'] != 'ACTIVE']
                 self.__summary_core_size(array, add_info="Stopped ")
 
-            if 'gen_ai' in data_ai:
-                array = [x for x in data_ai['gen_ai'] if x['lifecycle_state'] == 'ACTIVE']
+            if 'genai' in data_ai:
+                array = [x for x in data_ai['genai'] if x['lifecycle_state'] == 'ACTIVE']
                 self.__summary_core_size(array)
-                array = [x for x in data_ai['gen_ai'] if x['lifecycle_state'] != 'ACTIVE']
+                array = [x for x in data_ai['genai'] if x['lifecycle_state'] != 'ACTIVE']
                 self.__summary_core_size(array, add_info="Stopped ")
+
+            if 'genai_agent' in data_ai:
+                self.__summary_core_size(data_ai['genai_agent'])
+
+            if 'genai_agent_kb' in data_ai:
+                self.__summary_core_size(data_ai['genai_agent_kb'])
 
         except Exception as e:
             self.__print_error("__summary_data_ai_main", e)
@@ -4496,6 +4522,9 @@ class ShowOCICSV(object):
     csv_data_flow = []
     csv_data_catalog = []
     csv_data_integration = []
+    csv_genai = []
+    csv_genai_agent = []
+    csv_genai_agent_kb = []
     csv_add_date_field = True
     csv_columns = []
     csv_streams_queues = []
@@ -4710,6 +4739,10 @@ class ShowOCICSV(object):
 
             self.__export_to_csv_file("certificates", self.csv_certificates)
             self.__export_to_csv_file("certificates_ca_bundles", self.csv_certificate_ca_bundle)
+
+            self.__export_to_csv_file("genai", self.csv_genai)
+            self.__export_to_csv_file("genai_agent", self.csv_genai_agent)
+            self.__export_to_csv_file("genai_agent_kb", self.csv_genai_agent_kb)
 
             print("")
         except Exception as e:
@@ -10453,6 +10486,15 @@ class ShowOCICSV(object):
             if 'data_integration' in data:
                 self.__csv_data_integration(region_name, data['data_integration'])
 
+            if 'genai' in data:
+                self.__csv_genai(region_name, data['genai'])
+
+            if 'genai_agent' in data:
+                self.__csv_genai_agent(region_name, data['genai_agent'])
+
+            if 'genai_agent_kb' in data:
+                self.__csv_genai_agent_kb(region_name, data['genai_agent_kb'])
+
         except Exception as e:
             self.__print_error("__csv_data_ai_main", e)
 
@@ -10653,6 +10695,108 @@ class ShowOCICSV(object):
 
         except Exception as e:
             self.__print_error("__csv_data_integration", e)
+
+    ##########################################################################
+    # __csv_genai
+    ##########################################################################
+    def __csv_genai(self, region_name, services):
+        try:
+
+            if len(services) == 0:
+                return
+
+            if services:
+                for ar in services:
+
+                    data = {
+                        'region_name': region_name,
+                        'compartment_name': ar['compartment_name'],
+                        'compartment_path': ar['compartment_path'],
+                        'name': ar['display_name'],
+                        'description': ar['description'],
+                        'time_created': ar['time_created'],
+                        'type': ar['type'],
+                        'unit_count': ar['unit_count'],
+                        'unit_shape': ar['unit_shape'],
+                        'capacity_type': ar['capacity_type'],
+                        'capacity_total_endpoint_capacity': ar['capacity_total_endpoint_capacity'],
+                        'capacity_used_endpoint_capacity': ar['capacity_used_endpoint_capacity'],
+                        'lifecycle_state': ar['lifecycle_state'],
+                        'freeform_tags': self.__get_freeform_tags(ar['freeform_tags']),
+                        'defined_tags': self.__get_defined_tags(ar['defined_tags']),
+                        'id': ar['id']
+                    }
+
+                    self.csv_genai.append(data)
+                    self.__csv_add_service(data, "GenAI")
+
+        except Exception as e:
+            self.__print_error("__csv_genai", e)
+
+    ##########################################################################
+    # __csv_genai_agent
+    ##########################################################################
+    def __csv_genai_agent(self, region_name, services):
+        try:
+
+            if len(services) == 0:
+                return
+
+            if services:
+                for ar in services:
+
+                    data = {
+                        'region_name': region_name,
+                        'compartment_name': ar['compartment_name'],
+                        'compartment_path': ar['compartment_path'],
+                        'name': ar['display_name'],
+                        'description': ar['description'],
+                        'welcome_message': ar['welcome_message'],
+                        'llm_config': ar['llm_config'],
+                        'knowledge_base_ids': str(ar['knowledge_base_ids']),
+                        'time_created': ar['time_created'],
+                        'lifecycle_state': ar['lifecycle_state'],
+                        'freeform_tags': self.__get_freeform_tags(ar['freeform_tags']),
+                        'defined_tags': self.__get_defined_tags(ar['defined_tags']),
+                        'id': ar['id']
+                    }
+
+                    self.csv_genai_agent.append(data)
+                    self.__csv_add_service(data, "GenAI Agent")
+
+        except Exception as e:
+            self.__print_error("__csv_genai_agent", e)
+
+    ##########################################################################
+    # __csv_genai_agent_kb
+    ##########################################################################
+    def __csv_genai_agent_kb(self, region_name, services):
+        try:
+
+            if len(services) == 0:
+                return
+
+            if services:
+                for ar in services:
+
+                    data = {
+                        'region_name': region_name,
+                        'compartment_name': ar['compartment_name'],
+                        'compartment_path': ar['compartment_path'],
+                        'name': ar['display_name'],
+                        'description': ar['description'],
+                        'time_created': ar['time_created'],
+                        'lifecycle_state': ar['lifecycle_state'],
+                        'freeform_tags': self.__get_freeform_tags(ar['freeform_tags']),
+                        'defined_tags': self.__get_defined_tags(ar['defined_tags']),
+                        'id': ar['id']
+                    }
+
+                    self.csv_genai_agent_kb.append(data)
+                    self.__csv_add_service(data, "GenAI Agent KB")
+
+        except Exception as e:
+            self.__print_error("__csv_genai_agent_kb", e)
 
     ##########################################################################
     # Data Science

@@ -96,9 +96,12 @@ API Reference
 * :doc:`File Storage <file_storage/client/oci.file_storage.FileStorageClient>`
 * :doc:`Fleet Apps Management <fleet_apps_management/client/oci.fleet_apps_management.FleetAppsManagementClient>`
 * :doc:`Fleet Apps Management Admin <fleet_apps_management/client/oci.fleet_apps_management.FleetAppsManagementAdminClient>`
+* :doc:`Fleet Apps Management Catalog <fleet_apps_management/client/oci.fleet_apps_management.FleetAppsManagementCatalogClient>`
 * :doc:`Fleet Apps Management Maintenance Window <fleet_apps_management/client/oci.fleet_apps_management.FleetAppsManagementMaintenanceWindowClient>`
 * :doc:`Fleet Apps Management Operations <fleet_apps_management/client/oci.fleet_apps_management.FleetAppsManagementOperationsClient>`
+* :doc:`Fleet Apps Management Provision <fleet_apps_management/client/oci.fleet_apps_management.FleetAppsManagementProvisionClient>`
 * :doc:`Fleet Apps Management Runbooks <fleet_apps_management/client/oci.fleet_apps_management.FleetAppsManagementRunbooksClient>`
+* :doc:`Fleet Apps Management Work Request <fleet_apps_management/client/oci.fleet_apps_management.FleetAppsManagementWorkRequestClient>`
 * :doc:`Fleet Software Update <fleet_software_update/client/oci.fleet_software_update.FleetSoftwareUpdateClient>`
 * :doc:`Functions Invoke <functions/client/oci.functions.FunctionsInvokeClient>`
 * :doc:`Functions Management <functions/client/oci.functions.FunctionsManagementClient>`

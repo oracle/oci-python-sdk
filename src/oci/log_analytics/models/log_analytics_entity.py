@@ -122,6 +122,10 @@ class LogAnalyticsEntity(object):
             The value to assign to the defined_tags property of this LogAnalyticsEntity.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param associated_sources_count:
+            The value to assign to the associated_sources_count property of this LogAnalyticsEntity.
+        :type associated_sources_count: int
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -146,7 +150,8 @@ class LogAnalyticsEntity(object):
             'hostname': 'str',
             'source_id': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'associated_sources_count': 'int'
         }
         self.attribute_map = {
             'id': 'id',
@@ -171,7 +176,8 @@ class LogAnalyticsEntity(object):
             'hostname': 'hostname',
             'source_id': 'sourceId',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'associated_sources_count': 'associatedSourcesCount'
         }
         self._id = None
         self._name = None
@@ -196,6 +202,7 @@ class LogAnalyticsEntity(object):
         self._source_id = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._associated_sources_count = None
 
     @property
     def id(self):
@@ -762,6 +769,30 @@ class LogAnalyticsEntity(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def associated_sources_count(self):
+        """
+        Gets the associated_sources_count of this LogAnalyticsEntity.
+        The count of associated log sources for a given log analytics entity.
+
+
+        :return: The associated_sources_count of this LogAnalyticsEntity.
+        :rtype: int
+        """
+        return self._associated_sources_count
+
+    @associated_sources_count.setter
+    def associated_sources_count(self, associated_sources_count):
+        """
+        Sets the associated_sources_count of this LogAnalyticsEntity.
+        The count of associated log sources for a given log analytics entity.
+
+
+        :param associated_sources_count: The associated_sources_count of this LogAnalyticsEntity.
+        :type: int
+        """
+        self._associated_sources_count = associated_sources_count
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+25.04.29 - 25.04.29
+=====================
+* Added GenAI and GenAI Agents for the enabled regions
+
+=====================
 25.04.08 - 25.04.08
 =====================
 * Added compute additional parameters to the csv

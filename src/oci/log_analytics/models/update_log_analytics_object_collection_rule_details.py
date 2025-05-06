@@ -19,6 +19,22 @@ class UpdateLogAnalyticsObjectCollectionRuleDetails(object):
     #: This constant has a value of "OBJECT_PATH"
     LOG_SET_KEY_OBJECT_PATH = "OBJECT_PATH"
 
+    #: A constant which can be used with the stream_cursor_type property of a UpdateLogAnalyticsObjectCollectionRuleDetails.
+    #: This constant has a value of "DEFAULT"
+    STREAM_CURSOR_TYPE_DEFAULT = "DEFAULT"
+
+    #: A constant which can be used with the stream_cursor_type property of a UpdateLogAnalyticsObjectCollectionRuleDetails.
+    #: This constant has a value of "TRIM_HORIZON"
+    STREAM_CURSOR_TYPE_TRIM_HORIZON = "TRIM_HORIZON"
+
+    #: A constant which can be used with the stream_cursor_type property of a UpdateLogAnalyticsObjectCollectionRuleDetails.
+    #: This constant has a value of "LATEST"
+    STREAM_CURSOR_TYPE_LATEST = "LATEST"
+
+    #: A constant which can be used with the stream_cursor_type property of a UpdateLogAnalyticsObjectCollectionRuleDetails.
+    #: This constant has a value of "AT_TIME"
+    STREAM_CURSOR_TYPE_AT_TIME = "AT_TIME"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateLogAnalyticsObjectCollectionRuleDetails object with values from keyword arguments.
@@ -73,6 +89,19 @@ class UpdateLogAnalyticsObjectCollectionRuleDetails(object):
             The value to assign to the object_name_filters property of this UpdateLogAnalyticsObjectCollectionRuleDetails.
         :type object_name_filters: list[str]
 
+        :param stream_id:
+            The value to assign to the stream_id property of this UpdateLogAnalyticsObjectCollectionRuleDetails.
+        :type stream_id: str
+
+        :param stream_cursor_type:
+            The value to assign to the stream_cursor_type property of this UpdateLogAnalyticsObjectCollectionRuleDetails.
+            Allowed values for this property are: "DEFAULT", "TRIM_HORIZON", "LATEST", "AT_TIME"
+        :type stream_cursor_type: str
+
+        :param stream_cursor_time:
+            The value to assign to the stream_cursor_time property of this UpdateLogAnalyticsObjectCollectionRuleDetails.
+        :type stream_cursor_time: datetime
+
         :param defined_tags:
             The value to assign to the defined_tags property of this UpdateLogAnalyticsObjectCollectionRuleDetails.
         :type defined_tags: dict(str, dict(str, object))
@@ -95,6 +124,9 @@ class UpdateLogAnalyticsObjectCollectionRuleDetails(object):
             'log_set_ext_regex': 'str',
             'overrides': 'dict(str, list[PropertyOverride])',
             'object_name_filters': 'list[str]',
+            'stream_id': 'str',
+            'stream_cursor_type': 'str',
+            'stream_cursor_time': 'datetime',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)'
         }
@@ -111,6 +143,9 @@ class UpdateLogAnalyticsObjectCollectionRuleDetails(object):
             'log_set_ext_regex': 'logSetExtRegex',
             'overrides': 'overrides',
             'object_name_filters': 'objectNameFilters',
+            'stream_id': 'streamId',
+            'stream_cursor_type': 'streamCursorType',
+            'stream_cursor_time': 'streamCursorTime',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags'
         }
@@ -126,6 +161,9 @@ class UpdateLogAnalyticsObjectCollectionRuleDetails(object):
         self._log_set_ext_regex = None
         self._overrides = None
         self._object_name_filters = None
+        self._stream_id = None
+        self._stream_cursor_type = None
+        self._stream_cursor_time = None
         self._defined_tags = None
         self._freeform_tags = None
 
@@ -453,6 +491,101 @@ class UpdateLogAnalyticsObjectCollectionRuleDetails(object):
         :type: list[str]
         """
         self._object_name_filters = object_name_filters
+
+    @property
+    def stream_id(self):
+        """
+        Gets the stream_id of this UpdateLogAnalyticsObjectCollectionRuleDetails.
+        A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+
+
+        :return: The stream_id of this UpdateLogAnalyticsObjectCollectionRuleDetails.
+        :rtype: str
+        """
+        return self._stream_id
+
+    @stream_id.setter
+    def stream_id(self, stream_id):
+        """
+        Sets the stream_id of this UpdateLogAnalyticsObjectCollectionRuleDetails.
+        A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+
+
+        :param stream_id: The stream_id of this UpdateLogAnalyticsObjectCollectionRuleDetails.
+        :type: str
+        """
+        self._stream_id = stream_id
+
+    @property
+    def stream_cursor_type(self):
+        """
+        Gets the stream_cursor_type of this UpdateLogAnalyticsObjectCollectionRuleDetails.
+        Cursor type used to fetch messages from stream.
+        When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.
+        Otherwise, the behaviour is to consume from the oldest available message in the stream.
+        When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.
+        When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.
+        When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.
+        For more information on cursor types, see `Stream Consumer Groups`__.
+
+        __ https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm
+
+        Allowed values for this property are: "DEFAULT", "TRIM_HORIZON", "LATEST", "AT_TIME"
+
+
+        :return: The stream_cursor_type of this UpdateLogAnalyticsObjectCollectionRuleDetails.
+        :rtype: str
+        """
+        return self._stream_cursor_type
+
+    @stream_cursor_type.setter
+    def stream_cursor_type(self, stream_cursor_type):
+        """
+        Sets the stream_cursor_type of this UpdateLogAnalyticsObjectCollectionRuleDetails.
+        Cursor type used to fetch messages from stream.
+        When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.
+        Otherwise, the behaviour is to consume from the oldest available message in the stream.
+        When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.
+        When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.
+        When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.
+        For more information on cursor types, see `Stream Consumer Groups`__.
+
+        __ https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm
+
+
+        :param stream_cursor_type: The stream_cursor_type of this UpdateLogAnalyticsObjectCollectionRuleDetails.
+        :type: str
+        """
+        allowed_values = ["DEFAULT", "TRIM_HORIZON", "LATEST", "AT_TIME"]
+        if not value_allowed_none_or_none_sentinel(stream_cursor_type, allowed_values):
+            raise ValueError(
+                f"Invalid value for `stream_cursor_type`, must be None or one of {allowed_values}"
+            )
+        self._stream_cursor_type = stream_cursor_type
+
+    @property
+    def stream_cursor_time(self):
+        """
+        Gets the stream_cursor_time of this UpdateLogAnalyticsObjectCollectionRuleDetails.
+        The time from which to consume the objects, if streamCursorType is AT_TIME.
+
+
+        :return: The stream_cursor_time of this UpdateLogAnalyticsObjectCollectionRuleDetails.
+        :rtype: datetime
+        """
+        return self._stream_cursor_time
+
+    @stream_cursor_time.setter
+    def stream_cursor_time(self, stream_cursor_time):
+        """
+        Sets the stream_cursor_time of this UpdateLogAnalyticsObjectCollectionRuleDetails.
+        The time from which to consume the objects, if streamCursorType is AT_TIME.
+
+
+        :param stream_cursor_time: The stream_cursor_time of this UpdateLogAnalyticsObjectCollectionRuleDetails.
+        :type: datetime
+        """
+        self._stream_cursor_time = stream_cursor_time
 
     @property
     def defined_tags(self):

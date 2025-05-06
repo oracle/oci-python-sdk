@@ -38,6 +38,7 @@ Log Analytics
     oci.log_analytics.models.AutoAssociationCollection
     oci.log_analytics.models.AutoAssociationState
     oci.log_analytics.models.AutoLookups
+    oci.log_analytics.models.AutoSchedule
     oci.log_analytics.models.BottomCommandDescriptor
     oci.log_analytics.models.BucketCommandDescriptor
     oci.log_analytics.models.BucketRange
@@ -46,6 +47,7 @@ Log Analytics
     oci.log_analytics.models.ChangeLogAnalyticsEntityCompartmentDetails
     oci.log_analytics.models.ChangeLogAnalyticsLogGroupCompartmentDetails
     oci.log_analytics.models.ChangeLogAnalyticsObjectCollectionRuleCompartmentDetails
+    oci.log_analytics.models.ChangeLookupCompartmentDetails
     oci.log_analytics.models.ChangeScheduledTaskCompartmentDetails
     oci.log_analytics.models.CharEncodingCollection
     oci.log_analytics.models.ChartColumn
@@ -137,6 +139,7 @@ Log Analytics
     oci.log_analytics.models.FixedFrequencySchedule
     oci.log_analytics.models.FrequentCommandDescriptor
     oci.log_analytics.models.FunctionField
+    oci.log_analytics.models.GenericConditionBlock
     oci.log_analytics.models.GeoStatsCommandDescriptor
     oci.log_analytics.models.HeadCommandDescriptor
     oci.log_analytics.models.HighlightCommandDescriptor
@@ -195,6 +198,7 @@ Log Analytics
     oci.log_analytics.models.LogAnalyticsField
     oci.log_analytics.models.LogAnalyticsFieldCollection
     oci.log_analytics.models.LogAnalyticsFieldSummary
+    oci.log_analytics.models.LogAnalyticsFieldUsages
     oci.log_analytics.models.LogAnalyticsImportCustomChangeList
     oci.log_analytics.models.LogAnalyticsImportCustomContent
     oci.log_analytics.models.LogAnalyticsLabel
@@ -257,6 +261,9 @@ Log Analytics
     oci.log_analytics.models.LogAnalyticsSourcePattern
     oci.log_analytics.models.LogAnalyticsSourcePatternCollection
     oci.log_analytics.models.LogAnalyticsSourceSummary
+    oci.log_analytics.models.LogAnalyticsTemplate
+    oci.log_analytics.models.LogAnalyticsTemplateCollection
+    oci.log_analytics.models.LogAnalyticsTemplateSummary
     oci.log_analytics.models.LogAnalyticsWarning
     oci.log_analytics.models.LogAnalyticsWarningCollection
     oci.log_analytics.models.LogEndpoint
@@ -287,9 +294,13 @@ Log Analytics
     oci.log_analytics.models.ParseQueryOutput
     oci.log_analytics.models.ParsedContent
     oci.log_analytics.models.ParsedField
+    oci.log_analytics.models.ParserAction
+    oci.log_analytics.models.ParserActionSummary
+    oci.log_analytics.models.ParserActionSummaryCollection
     oci.log_analytics.models.ParserSummaryReport
     oci.log_analytics.models.ParserTestResult
     oci.log_analytics.models.PatternOverride
+    oci.log_analytics.models.PropertyDefinition
     oci.log_analytics.models.PropertyMetadataSummary
     oci.log_analytics.models.PropertyMetadataSummaryCollection
     oci.log_analytics.models.PropertyOverride
@@ -303,10 +314,13 @@ Log Analytics
     oci.log_analytics.models.RareCommandDescriptor
     oci.log_analytics.models.RecallArchivedDataDetails
     oci.log_analytics.models.RecallCount
+    oci.log_analytics.models.RecallDefinition
     oci.log_analytics.models.RecalledData
     oci.log_analytics.models.RecalledDataCollection
     oci.log_analytics.models.RecalledDataInfo
     oci.log_analytics.models.RecalledDataSize
+    oci.log_analytics.models.RecalledInfo
+    oci.log_analytics.models.RecalledInfoCollection
     oci.log_analytics.models.RegexCommandDescriptor
     oci.log_analytics.models.RegexMatchResult
     oci.log_analytics.models.ReleaseRecalledDataDetails
@@ -347,6 +361,9 @@ Log Analytics
     oci.log_analytics.models.SuggestOutput
     oci.log_analytics.models.TableColumn
     oci.log_analytics.models.TailCommandDescriptor
+    oci.log_analytics.models.TemplateDetails
+    oci.log_analytics.models.TemplateFacet
+    oci.log_analytics.models.TemplateParams
     oci.log_analytics.models.TestParserPayloadDetails
     oci.log_analytics.models.TimeClusterColumn
     oci.log_analytics.models.TimeClusterCommandDescriptor
@@ -372,6 +389,7 @@ Log Analytics
     oci.log_analytics.models.UpdateScheduledTaskDetails
     oci.log_analytics.models.UpdateStandardTaskDetails
     oci.log_analytics.models.UpdateStorageDetails
+    oci.log_analytics.models.UpdateTableCommandDescriptor
     oci.log_analytics.models.Upload
     oci.log_analytics.models.UploadCollection
     oci.log_analytics.models.UploadFileCollection
@@ -390,6 +408,7 @@ Log Analytics
     oci.log_analytics.models.ValidateEndpointResult
     oci.log_analytics.models.ValidateLabelConditionDetails
     oci.log_analytics.models.ValidateLabelConditionResult
+    oci.log_analytics.models.VariableDefinition
     oci.log_analytics.models.VerifyOutput
     oci.log_analytics.models.Violation
     oci.log_analytics.models.WarningReferenceDetails

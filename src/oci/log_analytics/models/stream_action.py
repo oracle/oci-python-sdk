@@ -30,6 +30,10 @@ class StreamAction(Action):
             The value to assign to the saved_search_id property of this StreamAction.
         :type saved_search_id: str
 
+        :param template_details:
+            The value to assign to the template_details property of this StreamAction.
+        :type template_details: oci.log_analytics.models.TemplateDetails
+
         :param metric_extraction:
             The value to assign to the metric_extraction property of this StreamAction.
         :type metric_extraction: oci.log_analytics.models.MetricExtraction
@@ -42,17 +46,20 @@ class StreamAction(Action):
         self.swagger_types = {
             'type': 'str',
             'saved_search_id': 'str',
+            'template_details': 'TemplateDetails',
             'metric_extraction': 'MetricExtraction',
             'saved_search_duration': 'str'
         }
         self.attribute_map = {
             'type': 'type',
             'saved_search_id': 'savedSearchId',
+            'template_details': 'templateDetails',
             'metric_extraction': 'metricExtraction',
             'saved_search_duration': 'savedSearchDuration'
         }
         self._type = None
         self._saved_search_id = None
+        self._template_details = None
         self._metric_extraction = None
         self._saved_search_duration = None
         self._type = 'STREAM'
@@ -80,6 +87,26 @@ class StreamAction(Action):
         :type: str
         """
         self._saved_search_id = saved_search_id
+
+    @property
+    def template_details(self):
+        """
+        Gets the template_details of this StreamAction.
+
+        :return: The template_details of this StreamAction.
+        :rtype: oci.log_analytics.models.TemplateDetails
+        """
+        return self._template_details
+
+    @template_details.setter
+    def template_details(self, template_details):
+        """
+        Sets the template_details of this StreamAction.
+
+        :param template_details: The template_details of this StreamAction.
+        :type: oci.log_analytics.models.TemplateDetails
+        """
+        self._template_details = template_details
 
     @property
     def metric_extraction(self):

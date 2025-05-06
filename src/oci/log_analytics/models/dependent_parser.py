@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DependentParser(object):
     """
-    A parser used by another parser.
+    A parser that depends on or uses the resource such as a field or another parser.
     """
 
     #: A constant which can be used with the parser_type property of a DependentParser.

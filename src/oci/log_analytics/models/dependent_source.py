@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DependentSource(object):
     """
-    A source that uses the parser, either directly or indirectly.
+    A source that depends on or uses the resource such as a field or a parser
     """
 
     def __init__(self, **kwargs):

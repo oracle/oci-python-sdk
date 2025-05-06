@@ -28,6 +28,18 @@ class QueryAggregation(object):
             The value to assign to the total_matched_count property of this QueryAggregation.
         :type total_matched_count: int
 
+        :param total_group_count:
+            The value to assign to the total_group_count property of this QueryAggregation.
+        :type total_group_count: int
+
+        :param time_filter:
+            The value to assign to the time_filter property of this QueryAggregation.
+        :type time_filter: oci.log_analytics.models.TimeRange
+
+        :param recalls:
+            The value to assign to the recalls property of this QueryAggregation.
+        :type recalls: list[oci.log_analytics.models.RecallDefinition]
+
         :param are_partial_results:
             The value to assign to the are_partial_results property of this QueryAggregation.
         :type are_partial_results: bool
@@ -64,6 +76,9 @@ class QueryAggregation(object):
         self.swagger_types = {
             'total_count': 'int',
             'total_matched_count': 'int',
+            'total_group_count': 'int',
+            'time_filter': 'TimeRange',
+            'recalls': 'list[RecallDefinition]',
             'are_partial_results': 'bool',
             'partial_result_reason': 'str',
             'is_content_hidden': 'bool',
@@ -76,6 +91,9 @@ class QueryAggregation(object):
         self.attribute_map = {
             'total_count': 'totalCount',
             'total_matched_count': 'totalMatchedCount',
+            'total_group_count': 'totalGroupCount',
+            'time_filter': 'timeFilter',
+            'recalls': 'recalls',
             'are_partial_results': 'arePartialResults',
             'partial_result_reason': 'partialResultReason',
             'is_content_hidden': 'isContentHidden',
@@ -87,6 +105,9 @@ class QueryAggregation(object):
         }
         self._total_count = None
         self._total_matched_count = None
+        self._total_group_count = None
+        self._time_filter = None
+        self._recalls = None
         self._are_partial_results = None
         self._partial_result_reason = None
         self._is_content_hidden = None
@@ -143,6 +164,74 @@ class QueryAggregation(object):
         :type: int
         """
         self._total_matched_count = total_matched_count
+
+    @property
+    def total_group_count(self):
+        """
+        Gets the total_group_count of this QueryAggregation.
+        Number of groups created by query.
+
+
+        :return: The total_group_count of this QueryAggregation.
+        :rtype: int
+        """
+        return self._total_group_count
+
+    @total_group_count.setter
+    def total_group_count(self, total_group_count):
+        """
+        Sets the total_group_count of this QueryAggregation.
+        Number of groups created by query.
+
+
+        :param total_group_count: The total_group_count of this QueryAggregation.
+        :type: int
+        """
+        self._total_group_count = total_group_count
+
+    @property
+    def time_filter(self):
+        """
+        Gets the time_filter of this QueryAggregation.
+
+        :return: The time_filter of this QueryAggregation.
+        :rtype: oci.log_analytics.models.TimeRange
+        """
+        return self._time_filter
+
+    @time_filter.setter
+    def time_filter(self, time_filter):
+        """
+        Sets the time_filter of this QueryAggregation.
+
+        :param time_filter: The time_filter of this QueryAggregation.
+        :type: oci.log_analytics.models.TimeRange
+        """
+        self._time_filter = time_filter
+
+    @property
+    def recalls(self):
+        """
+        Gets the recalls of this QueryAggregation.
+        List of recalls in the query.
+
+
+        :return: The recalls of this QueryAggregation.
+        :rtype: list[oci.log_analytics.models.RecallDefinition]
+        """
+        return self._recalls
+
+    @recalls.setter
+    def recalls(self, recalls):
+        """
+        Sets the recalls of this QueryAggregation.
+        List of recalls in the query.
+
+
+        :param recalls: The recalls of this QueryAggregation.
+        :type: list[oci.log_analytics.models.RecallDefinition]
+        """
+        self._recalls = recalls
 
     @property
     def are_partial_results(self):

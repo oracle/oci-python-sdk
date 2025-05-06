@@ -20,7 +20,7 @@ import sys
 
 
 class ShowOCIData(object):
-    version = "25.04.08"
+    version = "25.04.29"
 
     ############################################
     # ShowOCIService - Service object to query
@@ -4703,9 +4703,19 @@ class ShowOCIData(object):
                 data_ai['data_integration'] = di
 
             # Gen AI
-            di = self.service.search_multi_items(self.service.C_DATA_AI, self.service.C_DATA_AI_GENAI, 'region_name', region_name, 'compartment_id', compartment['id'])
-            if di:
-                data_ai['genai'] = di
+            genai = self.service.search_multi_items(self.service.C_DATA_AI, self.service.C_DATA_AI_GENAI, 'region_name', region_name, 'compartment_id', compartment['id'])
+            if genai:
+                data_ai['genai'] = genai
+
+            # Gen AI Agent
+            genai_agent = self.service.search_multi_items(self.service.C_DATA_AI, self.service.C_DATA_AI_GENAI_AGENT, 'region_name', region_name, 'compartment_id', compartment['id'])
+            if genai_agent:
+                data_ai['genai_agent'] = genai_agent
+
+            # Gen AI Agent KB
+            genai_agent_kb = self.service.search_multi_items(self.service.C_DATA_AI, self.service.C_DATA_AI_GENAI_AGENT_KB, 'region_name', region_name, 'compartment_id', compartment['id'])
+            if genai_agent_kb:
+                data_ai['genai_agent_kb'] = genai_agent_kb
 
             return data_ai
 
