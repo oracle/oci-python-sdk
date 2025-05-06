@@ -33,20 +33,34 @@ class Dependency(object):
             The value to assign to the reference_id property of this Dependency.
         :type reference_id: int
 
+        :param reference_name:
+            The value to assign to the reference_name property of this Dependency.
+        :type reference_name: str
+
+        :param reference_display_name:
+            The value to assign to the reference_display_name property of this Dependency.
+        :type reference_display_name: str
+
         """
         self.swagger_types = {
             'type': 'str',
             'reference_type': 'str',
-            'reference_id': 'int'
+            'reference_id': 'int',
+            'reference_name': 'str',
+            'reference_display_name': 'str'
         }
         self.attribute_map = {
             'type': 'type',
             'reference_type': 'referenceType',
-            'reference_id': 'referenceId'
+            'reference_id': 'referenceId',
+            'reference_name': 'referenceName',
+            'reference_display_name': 'referenceDisplayName'
         }
         self._type = None
         self._reference_type = None
         self._reference_id = None
+        self._reference_name = None
+        self._reference_display_name = None
 
     @property
     def type(self):
@@ -119,6 +133,54 @@ class Dependency(object):
         :type: int
         """
         self._reference_id = reference_id
+
+    @property
+    def reference_name(self):
+        """
+        Gets the reference_name of this Dependency.
+        The name of the dependency object
+
+
+        :return: The reference_name of this Dependency.
+        :rtype: str
+        """
+        return self._reference_name
+
+    @reference_name.setter
+    def reference_name(self, reference_name):
+        """
+        Sets the reference_name of this Dependency.
+        The name of the dependency object
+
+
+        :param reference_name: The reference_name of this Dependency.
+        :type: str
+        """
+        self._reference_name = reference_name
+
+    @property
+    def reference_display_name(self):
+        """
+        Gets the reference_display_name of this Dependency.
+        The display name of the dependency object
+
+
+        :return: The reference_display_name of this Dependency.
+        :rtype: str
+        """
+        return self._reference_display_name
+
+    @reference_display_name.setter
+    def reference_display_name(self, reference_display_name):
+        """
+        Sets the reference_display_name of this Dependency.
+        The display name of the dependency object
+
+
+        :param reference_display_name: The reference_display_name of this Dependency.
+        :type: str
+        """
+        self._reference_display_name = reference_display_name
 
     def __repr__(self):
         return formatted_flat_dict(self)

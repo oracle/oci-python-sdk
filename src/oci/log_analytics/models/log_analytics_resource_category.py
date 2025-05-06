@@ -36,23 +36,37 @@ class LogAnalyticsResourceCategory(object):
             The value to assign to the is_system property of this LogAnalyticsResourceCategory.
         :type is_system: bool
 
+        :param resource_display_name:
+            The value to assign to the resource_display_name property of this LogAnalyticsResourceCategory.
+        :type resource_display_name: str
+
+        :param compartment_id:
+            The value to assign to the compartment_id property of this LogAnalyticsResourceCategory.
+        :type compartment_id: str
+
         """
         self.swagger_types = {
             'resource_id': 'str',
             'resource_type': 'str',
             'category_name': 'str',
-            'is_system': 'bool'
+            'is_system': 'bool',
+            'resource_display_name': 'str',
+            'compartment_id': 'str'
         }
         self.attribute_map = {
             'resource_id': 'resourceId',
             'resource_type': 'resourceType',
             'category_name': 'categoryName',
-            'is_system': 'isSystem'
+            'is_system': 'isSystem',
+            'resource_display_name': 'resourceDisplayName',
+            'compartment_id': 'compartmentId'
         }
         self._resource_id = None
         self._resource_type = None
         self._category_name = None
         self._is_system = None
+        self._resource_display_name = None
+        self._compartment_id = None
 
     @property
     def resource_id(self):
@@ -151,6 +165,54 @@ class LogAnalyticsResourceCategory(object):
         :type: bool
         """
         self._is_system = is_system
+
+    @property
+    def resource_display_name(self):
+        """
+        Gets the resource_display_name of this LogAnalyticsResourceCategory.
+        The resource display name.
+
+
+        :return: The resource_display_name of this LogAnalyticsResourceCategory.
+        :rtype: str
+        """
+        return self._resource_display_name
+
+    @resource_display_name.setter
+    def resource_display_name(self, resource_display_name):
+        """
+        Sets the resource_display_name of this LogAnalyticsResourceCategory.
+        The resource display name.
+
+
+        :param resource_display_name: The resource_display_name of this LogAnalyticsResourceCategory.
+        :type: str
+        """
+        self._resource_display_name = resource_display_name
+
+    @property
+    def compartment_id(self):
+        """
+        Gets the compartment_id of this LogAnalyticsResourceCategory.
+        Compartment ID of the resource
+
+
+        :return: The compartment_id of this LogAnalyticsResourceCategory.
+        :rtype: str
+        """
+        return self._compartment_id
+
+    @compartment_id.setter
+    def compartment_id(self, compartment_id):
+        """
+        Sets the compartment_id of this LogAnalyticsResourceCategory.
+        Compartment ID of the resource
+
+
+        :param compartment_id: The compartment_id of this LogAnalyticsResourceCategory.
+        :type: str
+        """
+        self._compartment_id = compartment_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

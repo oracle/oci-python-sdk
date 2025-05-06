@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ParameterFileVersion(object):
     """
-    A parameter file detatails
+    Details of a parameter file
     """
 
     #: A constant which can be used with the kind property of a ParameterFileVersion.

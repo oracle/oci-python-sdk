@@ -435,6 +435,8 @@ Database
     oci.database.models.SwitchOverDataGuardDetails
     oci.database.models.SwitchoverDataGuardAssociationDetails
     oci.database.models.SystemVersionCollection
+    oci.database.models.SystemVersionMinorVersionCollection
+    oci.database.models.SystemVersionMinorVersionSummary
     oci.database.models.SystemVersionSummary
     oci.database.models.UndeleteAutonomousDatabaseDetails
     oci.database.models.Update

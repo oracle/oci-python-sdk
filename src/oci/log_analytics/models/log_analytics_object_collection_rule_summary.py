@@ -114,6 +114,10 @@ class LogAnalyticsObjectCollectionRuleSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type log_type: str
 
+        :param stream_id:
+            The value to assign to the stream_id property of this LogAnalyticsObjectCollectionRuleSummary.
+        :type stream_id: str
+
         :param defined_tags:
             The value to assign to the defined_tags property of this LogAnalyticsObjectCollectionRuleSummary.
         :type defined_tags: dict(str, dict(str, object))
@@ -138,6 +142,7 @@ class LogAnalyticsObjectCollectionRuleSummary(object):
             'is_enabled': 'bool',
             'object_name_filters': 'list[str]',
             'log_type': 'str',
+            'stream_id': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)'
         }
@@ -156,6 +161,7 @@ class LogAnalyticsObjectCollectionRuleSummary(object):
             'is_enabled': 'isEnabled',
             'object_name_filters': 'objectNameFilters',
             'log_type': 'logType',
+            'stream_id': 'streamId',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags'
         }
@@ -173,6 +179,7 @@ class LogAnalyticsObjectCollectionRuleSummary(object):
         self._is_enabled = None
         self._object_name_filters = None
         self._log_type = None
+        self._stream_id = None
         self._defined_tags = None
         self._freeform_tags = None
 
@@ -547,6 +554,30 @@ class LogAnalyticsObjectCollectionRuleSummary(object):
         if not value_allowed_none_or_none_sentinel(log_type, allowed_values):
             log_type = 'UNKNOWN_ENUM_VALUE'
         self._log_type = log_type
+
+    @property
+    def stream_id(self):
+        """
+        Gets the stream_id of this LogAnalyticsObjectCollectionRuleSummary.
+        A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+
+
+        :return: The stream_id of this LogAnalyticsObjectCollectionRuleSummary.
+        :rtype: str
+        """
+        return self._stream_id
+
+    @stream_id.setter
+    def stream_id(self, stream_id):
+        """
+        Sets the stream_id of this LogAnalyticsObjectCollectionRuleSummary.
+        A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Logging Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
+
+
+        :param stream_id: The stream_id of this LogAnalyticsObjectCollectionRuleSummary.
+        :type: str
+        """
+        self._stream_id = stream_id
 
     @property
     def defined_tags(self):

@@ -5,6 +5,64 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.151.0 - 2025-05-06
+====================
+
+Added 
+----- 
+* Support for dry run while creating cloud exadata Infrastructure and VM clusters in the Database service 
+* Support for filters to get latest versions on list system versions API in the Database service 
+* Support for generic fleets without fleet type in the Fleet Application Management service 
+* Support for creating resources and changing compartment in the Fleet Application Management service 
+* Support for infrastructure management via provisioning with terraform based catalog items and deployments in the Fleet Application Management service 
+* Support for platform configuration metadata management in the Fleet Application Management service 
+* Support for managing runbook versions in the Fleet Application Management service 
+* Support for provisioning runbooks in the Fleet Application Management service 
+* Support for resource inventory in the Fleet Application Management service 
+* Support for changing compartment for fleets, platforms configurations, properties, patches, runbooks and task resources in the Fleet Application Management service 
+* Support for new migration phase in the Database migration service   
+
+Breaking 
+-------- 
+* Models `Associations` and `NotificationPreferences` were removed from the Fleet Application Management service 
+* Properties `resource_id` ,`name`, `type`, `application_type`, `runbook_id` are removed from model `ActionGroupDetails` in the Fleet Application Management service 
+* Properties `resource_id`, `type`, `application_type`, `product`, `lifecycle_operation`, `runbook_id`, `target_id`, `subjects` are removed from model `ActionGroup` in the Fleet Application Management service 
+* Property `tenancy_id` is removed from model `AssociatedSchedulerDefinition` in the Fleet Application Management service 
+* Property `patch_type` is removed from models `CompliancePolicyRuleSummary` and `CompliancePolicyRule` in the Fleet Application Management service 
+* Property `condition` is removed from model `ComponentProperties` in the Fleet Application Management service 
+* Properties `patch_type` and `compartment_id` are removed from model `CreateCompliancePolicyRuleDetails` in the Fleet Application Management service 
+* Property `compartment_id` is removed from models `CreateFleetCredentialDetails` `CreateFleetPropertyDetails`, `UpdatePatchDetails` in the Fleet Application Management service 
+* Properties `fleet_type` ,`application_type`, `group_type`, `resource_selection_type`, `rule_selection_criteria` are removed from model `CreateFleetDetails` in the Fleet Application Management service 
+* Properties `maintenance_window_type` and `task_initiation_cutoff` are removed from models `CreateMaintenanceWindowDetails`, `MaintenanceWindowSummary`, `MaintenanceWindow`, `UpdateMaintenanceWindowDetails` in the Fleet Application Management service 
+* Properties `runbook_relevance` and `associations` are removed from models `CreateRunbookDetails` and `Runbook` in the Fleet Application Management service 
+* Property `activity_initiation_cut_off` is removed from model `CreateSchedulerDefinitionDetails` in the Fleet Application Management service 
+* Property `application_type` is removed from models `FleetResource` and `FleetResourceSummary` in the Fleet Application Management service 
+* Property `fleet_type` is removed from model `FleetSummary` in the Fleet Application Management service 
+* Properties `application_type`, `group_type`, `resource_selection_type`, `rule_selection_criteria` are removed from model `Fleet` in the Fleet Application Management service 
+* Property `id` is removed from model `OperationRunbook` in the Fleet Application Management service 
+* Property `on_upcoming_schedule` is removed from model `Preferences` in the Fleet Application Management service 
+* Property `runbook_relevance` is removed from model `RunbookSummary` in the Fleet Application Management service 
+* Properties `maintenance_window_id`, `recurrences`, `duration` are removed from model `Schedule` in the Fleet Application Management service 
+* Properties `tenancy_id`, `action_group_types`, `application_types` are removed from model `ScheduledFleetSummary` in the Fleet Application Management service 
+* Properties `action_group_types`, `application_types` are removed from models `ScheduledFleetSummary`, `SchedulerDefinitionSummary`, `SchedulerDefinition` in the Fleet Application Management service 
+* Properties `action_group_types`, `application_types`, `associated_schedule_definition` are removed from models `SchedulerJob`, `SchedulerJobSummary` in the Fleet Application Management service 
+* Property `value` is removed from model `TaskArgument` in the Fleet Application Management service 
+* Property `association_type` is removed from model `Task` in the Fleet Application Management service 
+* Property `patch_type` is removed from model `UpdateCompliancePolicyRuleDetails` in the Fleet Application Management service 
+* Property `rule_selection_criteria` is removed from model `UpdateFleetDetails` in the Fleet Application Management service 
+* Properties `associations`, `runbook_relevance` are removed from model `UpdateRunbookDetails` in the Fleet Application Management service 
+* Property `activity_initiation_cut_off` is removed from model `UpdateSchedulerDefinitionDetails` in the Fleet Application Management service 
+* Property `display_name` changed from optional to required in models `CreatePlatformConfigurationDetails`, `CreateTaskRecordDetails` and `CreatePropertyDetails` in the Fleet Application Management service 
+* Type of property `content` changed to `PatchFileContentDetails` from `ContentDetails` in models `GenericArtifact` and `PlatformSpecificArtifact` in the Fleet Application Management service 
+* Return type for property `notification_preferences` changed to `list[NotificationPreference]` from `NotificationPreferences` in model `UpdateFleetDetails` in the Fleet Application Management service 
+* Operations `get_work_request` , `list_work_request_errors` , `list_work_requests` , `list_work_request_logs` are removed from `FleetAppsManagementClient` in the Fleet Application Management service 
+* Parameter `compartment_id` is removed from operation `list_fleet_properties` in the `FleetAppsManagementClient` in the Fleet Application Management service 
+* Parameter `tenancy_id` is removed from operation `list_fleet_resources` in the `FleetAppsManagementClient` in the Fleet Application Management service 
+* Parameter `compartment_id` is removed from operation `list_scheduled_fleets` in the `FleetAppsManagementOperationsClient` in the Fleet Application Management service 
+* Parameters `sub_state` and `defintion_id` are removed from operation `list_scheduler_jobs` in the `FleetAppsManagementOperationsClient` in the Fleet Application Management service 
+* Parameter `runbook_relevance` is removed from operation `list_runbooks` in the `FleetAppsManagementRunbooksClient` in the Fleet Application Management service   
+
+====================
 2.150.3 - 2025-04-29
 ====================
 

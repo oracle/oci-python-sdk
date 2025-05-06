@@ -26,6 +26,7 @@ from .association_summary_report import AssociationSummaryReport
 from .auto_association_collection import AutoAssociationCollection
 from .auto_association_state import AutoAssociationState
 from .auto_lookups import AutoLookups
+from .auto_schedule import AutoSchedule
 from .bottom_command_descriptor import BottomCommandDescriptor
 from .bucket_command_descriptor import BucketCommandDescriptor
 from .bucket_range import BucketRange
@@ -34,6 +35,7 @@ from .change_log_analytics_em_bridge_compartment_details import ChangeLogAnalyti
 from .change_log_analytics_entity_compartment_details import ChangeLogAnalyticsEntityCompartmentDetails
 from .change_log_analytics_log_group_compartment_details import ChangeLogAnalyticsLogGroupCompartmentDetails
 from .change_log_analytics_object_collection_rule_compartment_details import ChangeLogAnalyticsObjectCollectionRuleCompartmentDetails
+from .change_lookup_compartment_details import ChangeLookupCompartmentDetails
 from .change_scheduled_task_compartment_details import ChangeScheduledTaskCompartmentDetails
 from .char_encoding_collection import CharEncodingCollection
 from .chart_column import ChartColumn
@@ -125,6 +127,7 @@ from .filter_output import FilterOutput
 from .fixed_frequency_schedule import FixedFrequencySchedule
 from .frequent_command_descriptor import FrequentCommandDescriptor
 from .function_field import FunctionField
+from .generic_condition_block import GenericConditionBlock
 from .geo_stats_command_descriptor import GeoStatsCommandDescriptor
 from .head_command_descriptor import HeadCommandDescriptor
 from .highlight_command_descriptor import HighlightCommandDescriptor
@@ -183,6 +186,7 @@ from .log_analytics_extended_field import LogAnalyticsExtendedField
 from .log_analytics_field import LogAnalyticsField
 from .log_analytics_field_collection import LogAnalyticsFieldCollection
 from .log_analytics_field_summary import LogAnalyticsFieldSummary
+from .log_analytics_field_usages import LogAnalyticsFieldUsages
 from .log_analytics_import_custom_change_list import LogAnalyticsImportCustomChangeList
 from .log_analytics_import_custom_content import LogAnalyticsImportCustomContent
 from .log_analytics_label import LogAnalyticsLabel
@@ -245,6 +249,9 @@ from .log_analytics_source_metric import LogAnalyticsSourceMetric
 from .log_analytics_source_pattern import LogAnalyticsSourcePattern
 from .log_analytics_source_pattern_collection import LogAnalyticsSourcePatternCollection
 from .log_analytics_source_summary import LogAnalyticsSourceSummary
+from .log_analytics_template import LogAnalyticsTemplate
+from .log_analytics_template_collection import LogAnalyticsTemplateCollection
+from .log_analytics_template_summary import LogAnalyticsTemplateSummary
 from .log_analytics_warning import LogAnalyticsWarning
 from .log_analytics_warning_collection import LogAnalyticsWarningCollection
 from .log_endpoint import LogEndpoint
@@ -275,9 +282,13 @@ from .parse_query_details import ParseQueryDetails
 from .parse_query_output import ParseQueryOutput
 from .parsed_content import ParsedContent
 from .parsed_field import ParsedField
+from .parser_action import ParserAction
+from .parser_action_summary import ParserActionSummary
+from .parser_action_summary_collection import ParserActionSummaryCollection
 from .parser_summary_report import ParserSummaryReport
 from .parser_test_result import ParserTestResult
 from .pattern_override import PatternOverride
+from .property_definition import PropertyDefinition
 from .property_metadata_summary import PropertyMetadataSummary
 from .property_metadata_summary_collection import PropertyMetadataSummaryCollection
 from .property_override import PropertyOverride
@@ -291,10 +302,13 @@ from .query_work_request_summary import QueryWorkRequestSummary
 from .rare_command_descriptor import RareCommandDescriptor
 from .recall_archived_data_details import RecallArchivedDataDetails
 from .recall_count import RecallCount
+from .recall_definition import RecallDefinition
 from .recalled_data import RecalledData
 from .recalled_data_collection import RecalledDataCollection
 from .recalled_data_info import RecalledDataInfo
 from .recalled_data_size import RecalledDataSize
+from .recalled_info import RecalledInfo
+from .recalled_info_collection import RecalledInfoCollection
 from .regex_command_descriptor import RegexCommandDescriptor
 from .regex_match_result import RegexMatchResult
 from .release_recalled_data_details import ReleaseRecalledDataDetails
@@ -335,6 +349,9 @@ from .suggest_details import SuggestDetails
 from .suggest_output import SuggestOutput
 from .table_column import TableColumn
 from .tail_command_descriptor import TailCommandDescriptor
+from .template_details import TemplateDetails
+from .template_facet import TemplateFacet
+from .template_params import TemplateParams
 from .test_parser_payload_details import TestParserPayloadDetails
 from .time_cluster_column import TimeClusterColumn
 from .time_cluster_command_descriptor import TimeClusterCommandDescriptor
@@ -360,6 +377,7 @@ from .update_lookup_metadata_details import UpdateLookupMetadataDetails
 from .update_scheduled_task_details import UpdateScheduledTaskDetails
 from .update_standard_task_details import UpdateStandardTaskDetails
 from .update_storage_details import UpdateStorageDetails
+from .update_table_command_descriptor import UpdateTableCommandDescriptor
 from .upload import Upload
 from .upload_collection import UploadCollection
 from .upload_file_collection import UploadFileCollection
@@ -378,6 +396,7 @@ from .usage_status_item import UsageStatusItem
 from .validate_endpoint_result import ValidateEndpointResult
 from .validate_label_condition_details import ValidateLabelConditionDetails
 from .validate_label_condition_result import ValidateLabelConditionResult
+from .variable_definition import VariableDefinition
 from .verify_output import VerifyOutput
 from .violation import Violation
 from .warning_reference_details import WarningReferenceDetails
@@ -414,6 +433,7 @@ log_analytics_type_mapping = {
     "AutoAssociationCollection": AutoAssociationCollection,
     "AutoAssociationState": AutoAssociationState,
     "AutoLookups": AutoLookups,
+    "AutoSchedule": AutoSchedule,
     "BottomCommandDescriptor": BottomCommandDescriptor,
     "BucketCommandDescriptor": BucketCommandDescriptor,
     "BucketRange": BucketRange,
@@ -422,6 +442,7 @@ log_analytics_type_mapping = {
     "ChangeLogAnalyticsEntityCompartmentDetails": ChangeLogAnalyticsEntityCompartmentDetails,
     "ChangeLogAnalyticsLogGroupCompartmentDetails": ChangeLogAnalyticsLogGroupCompartmentDetails,
     "ChangeLogAnalyticsObjectCollectionRuleCompartmentDetails": ChangeLogAnalyticsObjectCollectionRuleCompartmentDetails,
+    "ChangeLookupCompartmentDetails": ChangeLookupCompartmentDetails,
     "ChangeScheduledTaskCompartmentDetails": ChangeScheduledTaskCompartmentDetails,
     "CharEncodingCollection": CharEncodingCollection,
     "ChartColumn": ChartColumn,
@@ -513,6 +534,7 @@ log_analytics_type_mapping = {
     "FixedFrequencySchedule": FixedFrequencySchedule,
     "FrequentCommandDescriptor": FrequentCommandDescriptor,
     "FunctionField": FunctionField,
+    "GenericConditionBlock": GenericConditionBlock,
     "GeoStatsCommandDescriptor": GeoStatsCommandDescriptor,
     "HeadCommandDescriptor": HeadCommandDescriptor,
     "HighlightCommandDescriptor": HighlightCommandDescriptor,
@@ -571,6 +593,7 @@ log_analytics_type_mapping = {
     "LogAnalyticsField": LogAnalyticsField,
     "LogAnalyticsFieldCollection": LogAnalyticsFieldCollection,
     "LogAnalyticsFieldSummary": LogAnalyticsFieldSummary,
+    "LogAnalyticsFieldUsages": LogAnalyticsFieldUsages,
     "LogAnalyticsImportCustomChangeList": LogAnalyticsImportCustomChangeList,
     "LogAnalyticsImportCustomContent": LogAnalyticsImportCustomContent,
     "LogAnalyticsLabel": LogAnalyticsLabel,
@@ -633,6 +656,9 @@ log_analytics_type_mapping = {
     "LogAnalyticsSourcePattern": LogAnalyticsSourcePattern,
     "LogAnalyticsSourcePatternCollection": LogAnalyticsSourcePatternCollection,
     "LogAnalyticsSourceSummary": LogAnalyticsSourceSummary,
+    "LogAnalyticsTemplate": LogAnalyticsTemplate,
+    "LogAnalyticsTemplateCollection": LogAnalyticsTemplateCollection,
+    "LogAnalyticsTemplateSummary": LogAnalyticsTemplateSummary,
     "LogAnalyticsWarning": LogAnalyticsWarning,
     "LogAnalyticsWarningCollection": LogAnalyticsWarningCollection,
     "LogEndpoint": LogEndpoint,
@@ -663,9 +689,13 @@ log_analytics_type_mapping = {
     "ParseQueryOutput": ParseQueryOutput,
     "ParsedContent": ParsedContent,
     "ParsedField": ParsedField,
+    "ParserAction": ParserAction,
+    "ParserActionSummary": ParserActionSummary,
+    "ParserActionSummaryCollection": ParserActionSummaryCollection,
     "ParserSummaryReport": ParserSummaryReport,
     "ParserTestResult": ParserTestResult,
     "PatternOverride": PatternOverride,
+    "PropertyDefinition": PropertyDefinition,
     "PropertyMetadataSummary": PropertyMetadataSummary,
     "PropertyMetadataSummaryCollection": PropertyMetadataSummaryCollection,
     "PropertyOverride": PropertyOverride,
@@ -679,10 +709,13 @@ log_analytics_type_mapping = {
     "RareCommandDescriptor": RareCommandDescriptor,
     "RecallArchivedDataDetails": RecallArchivedDataDetails,
     "RecallCount": RecallCount,
+    "RecallDefinition": RecallDefinition,
     "RecalledData": RecalledData,
     "RecalledDataCollection": RecalledDataCollection,
     "RecalledDataInfo": RecalledDataInfo,
     "RecalledDataSize": RecalledDataSize,
+    "RecalledInfo": RecalledInfo,
+    "RecalledInfoCollection": RecalledInfoCollection,
     "RegexCommandDescriptor": RegexCommandDescriptor,
     "RegexMatchResult": RegexMatchResult,
     "ReleaseRecalledDataDetails": ReleaseRecalledDataDetails,
@@ -723,6 +756,9 @@ log_analytics_type_mapping = {
     "SuggestOutput": SuggestOutput,
     "TableColumn": TableColumn,
     "TailCommandDescriptor": TailCommandDescriptor,
+    "TemplateDetails": TemplateDetails,
+    "TemplateFacet": TemplateFacet,
+    "TemplateParams": TemplateParams,
     "TestParserPayloadDetails": TestParserPayloadDetails,
     "TimeClusterColumn": TimeClusterColumn,
     "TimeClusterCommandDescriptor": TimeClusterCommandDescriptor,
@@ -748,6 +784,7 @@ log_analytics_type_mapping = {
     "UpdateScheduledTaskDetails": UpdateScheduledTaskDetails,
     "UpdateStandardTaskDetails": UpdateStandardTaskDetails,
     "UpdateStorageDetails": UpdateStorageDetails,
+    "UpdateTableCommandDescriptor": UpdateTableCommandDescriptor,
     "Upload": Upload,
     "UploadCollection": UploadCollection,
     "UploadFileCollection": UploadFileCollection,
@@ -766,6 +803,7 @@ log_analytics_type_mapping = {
     "ValidateEndpointResult": ValidateEndpointResult,
     "ValidateLabelConditionDetails": ValidateLabelConditionDetails,
     "ValidateLabelConditionResult": ValidateLabelConditionResult,
+    "VariableDefinition": VariableDefinition,
     "VerifyOutput": VerifyOutput,
     "Violation": Violation,
     "WarningReferenceDetails": WarningReferenceDetails,

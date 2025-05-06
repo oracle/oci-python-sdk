@@ -65,6 +65,10 @@ class RecallArchivedDataDetails(object):
             The value to assign to the is_use_recommended_data_set property of this RecallArchivedDataDetails.
         :type is_use_recommended_data_set: bool
 
+        :param collection_id:
+            The value to assign to the collection_id property of this RecallArchivedDataDetails.
+        :type collection_id: int
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -75,7 +79,8 @@ class RecallArchivedDataDetails(object):
             'query': 'str',
             'purpose': 'str',
             'is_recall_new_data_only': 'bool',
-            'is_use_recommended_data_set': 'bool'
+            'is_use_recommended_data_set': 'bool',
+            'collection_id': 'int'
         }
         self.attribute_map = {
             'compartment_id': 'compartmentId',
@@ -86,7 +91,8 @@ class RecallArchivedDataDetails(object):
             'query': 'query',
             'purpose': 'purpose',
             'is_recall_new_data_only': 'isRecallNewDataOnly',
-            'is_use_recommended_data_set': 'isUseRecommendedDataSet'
+            'is_use_recommended_data_set': 'isUseRecommendedDataSet',
+            'collection_id': 'collectionId'
         }
         self._compartment_id = None
         self._time_data_ended = None
@@ -97,6 +103,7 @@ class RecallArchivedDataDetails(object):
         self._purpose = None
         self._is_recall_new_data_only = None
         self._is_use_recommended_data_set = None
+        self._collection_id = None
 
     @property
     def compartment_id(self):
@@ -320,6 +327,32 @@ class RecallArchivedDataDetails(object):
         :type: bool
         """
         self._is_use_recommended_data_set = is_use_recommended_data_set
+
+    @property
+    def collection_id(self):
+        """
+        Gets the collection_id of this RecallArchivedDataDetails.
+        This is the id for the recalled data collection to be used only for recall new data.
+        If specified, only this collection will be eligible for IsRecallNewDataOnly
+
+
+        :return: The collection_id of this RecallArchivedDataDetails.
+        :rtype: int
+        """
+        return self._collection_id
+
+    @collection_id.setter
+    def collection_id(self, collection_id):
+        """
+        Sets the collection_id of this RecallArchivedDataDetails.
+        This is the id for the recalled data collection to be used only for recall new data.
+        If specified, only this collection will be eligible for IsRecallNewDataOnly
+
+
+        :param collection_id: The collection_id of this RecallArchivedDataDetails.
+        :type: int
+        """
+        self._collection_id = collection_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -134,7 +134,7 @@ class CreateStandardTaskDetails(CreateScheduledTaskDetails):
     @property
     def schedules(self):
         """
-        **[Required]** Gets the schedules of this CreateStandardTaskDetails.
+        Gets the schedules of this CreateStandardTaskDetails.
         Schedules, typically a single schedule.
         Note there may only be a single schedule for SAVED_SEARCH and PURGE scheduled tasks.
 

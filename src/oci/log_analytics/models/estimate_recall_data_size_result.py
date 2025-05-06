@@ -48,6 +48,14 @@ class EstimateRecallDataSizeResult(object):
             The value to assign to the size_limit_in_bytes property of this EstimateRecallDataSizeResult.
         :type size_limit_in_bytes: int
 
+        :param message:
+            The value to assign to the message property of this EstimateRecallDataSizeResult.
+        :type message: str
+
+        :param total_batch_size:
+            The value to assign to the total_batch_size property of this EstimateRecallDataSizeResult.
+        :type total_batch_size: int
+
         """
         self.swagger_types = {
             'time_data_ended': 'datetime',
@@ -56,7 +64,9 @@ class EstimateRecallDataSizeResult(object):
             'is_overlapping_with_existing_recalls': 'bool',
             'core_group_count': 'int',
             'core_group_count_limit': 'int',
-            'size_limit_in_bytes': 'int'
+            'size_limit_in_bytes': 'int',
+            'message': 'str',
+            'total_batch_size': 'int'
         }
         self.attribute_map = {
             'time_data_ended': 'timeDataEnded',
@@ -65,7 +75,9 @@ class EstimateRecallDataSizeResult(object):
             'is_overlapping_with_existing_recalls': 'isOverlappingWithExistingRecalls',
             'core_group_count': 'coreGroupCount',
             'core_group_count_limit': 'coreGroupCountLimit',
-            'size_limit_in_bytes': 'sizeLimitInBytes'
+            'size_limit_in_bytes': 'sizeLimitInBytes',
+            'message': 'message',
+            'total_batch_size': 'totalBatchSize'
         }
         self._time_data_ended = None
         self._time_data_started = None
@@ -74,6 +86,8 @@ class EstimateRecallDataSizeResult(object):
         self._core_group_count = None
         self._core_group_count_limit = None
         self._size_limit_in_bytes = None
+        self._message = None
+        self._total_batch_size = None
 
     @property
     def time_data_ended(self):
@@ -246,6 +260,54 @@ class EstimateRecallDataSizeResult(object):
         :type: int
         """
         self._size_limit_in_bytes = size_limit_in_bytes
+
+    @property
+    def message(self):
+        """
+        Gets the message of this EstimateRecallDataSizeResult.
+        This message shows existing recall overlapping details like collection id, purpose
+
+
+        :return: The message of this EstimateRecallDataSizeResult.
+        :rtype: str
+        """
+        return self._message
+
+    @message.setter
+    def message(self, message):
+        """
+        Sets the message of this EstimateRecallDataSizeResult.
+        This message shows existing recall overlapping details like collection id, purpose
+
+
+        :param message: The message of this EstimateRecallDataSizeResult.
+        :type: str
+        """
+        self._message = message
+
+    @property
+    def total_batch_size(self):
+        """
+        Gets the total_batch_size of this EstimateRecallDataSizeResult.
+        This is the total number of batches data will be recalled in
+
+
+        :return: The total_batch_size of this EstimateRecallDataSizeResult.
+        :rtype: int
+        """
+        return self._total_batch_size
+
+    @total_batch_size.setter
+    def total_batch_size(self, total_batch_size):
+        """
+        Sets the total_batch_size of this EstimateRecallDataSizeResult.
+        This is the total number of batches data will be recalled in
+
+
+        :param total_batch_size: The total_batch_size of this EstimateRecallDataSizeResult.
+        :type: int
+        """
+        self._total_batch_size = total_batch_size
 
     def __repr__(self):
         return formatted_flat_dict(self)

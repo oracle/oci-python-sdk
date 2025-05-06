@@ -23,7 +23,7 @@ class FixedFrequencySchedule(Schedule):
 
         :param type:
             The value to assign to the type property of this FixedFrequencySchedule.
-            Allowed values for this property are: "FIXED_FREQUENCY", "CRON"
+            Allowed values for this property are: "FIXED_FREQUENCY", "CRON", "AUTO"
         :type type: str
 
         :param misfire_policy:
@@ -68,7 +68,7 @@ class FixedFrequencySchedule(Schedule):
     @property
     def recurring_interval(self):
         """
-        **[Required]** Gets the recurring_interval of this FixedFrequencySchedule.
+        Gets the recurring_interval of this FixedFrequencySchedule.
         Recurring interval in ISO 8601 extended format as described in
         https://en.wikipedia.org/wiki/ISO_8601#Durations.
         The largest supported unit is D, e.g. P14D (not P2W).

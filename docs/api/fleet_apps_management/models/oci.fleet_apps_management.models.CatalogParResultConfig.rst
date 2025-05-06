@@ -1,9 +1,9 @@
-NotificationPreferences
-=======================
+CatalogParResultConfig
+======================
 
 .. currentmodule:: oci.fleet_apps_management.models
 
-.. autoclass:: NotificationPreferences
+.. autoclass:: CatalogParResultConfig
     :show-inheritance:
     :special-members: __init__
     :members:

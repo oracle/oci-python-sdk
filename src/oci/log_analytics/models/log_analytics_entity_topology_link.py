@@ -28,17 +28,31 @@ class LogAnalyticsEntityTopologyLink(object):
             The value to assign to the destination_entity_id property of this LogAnalyticsEntityTopologyLink.
         :type destination_entity_id: str
 
+        :param contexts:
+            The value to assign to the contexts property of this LogAnalyticsEntityTopologyLink.
+        :type contexts: list[str]
+
+        :param time_last_discovered:
+            The value to assign to the time_last_discovered property of this LogAnalyticsEntityTopologyLink.
+        :type time_last_discovered: datetime
+
         """
         self.swagger_types = {
             'source_entity_id': 'str',
-            'destination_entity_id': 'str'
+            'destination_entity_id': 'str',
+            'contexts': 'list[str]',
+            'time_last_discovered': 'datetime'
         }
         self.attribute_map = {
             'source_entity_id': 'sourceEntityId',
-            'destination_entity_id': 'destinationEntityId'
+            'destination_entity_id': 'destinationEntityId',
+            'contexts': 'contexts',
+            'time_last_discovered': 'timeLastDiscovered'
         }
         self._source_entity_id = None
         self._destination_entity_id = None
+        self._contexts = None
+        self._time_last_discovered = None
 
     @property
     def source_entity_id(self):
@@ -91,6 +105,54 @@ class LogAnalyticsEntityTopologyLink(object):
         :type: str
         """
         self._destination_entity_id = destination_entity_id
+
+    @property
+    def contexts(self):
+        """
+        Gets the contexts of this LogAnalyticsEntityTopologyLink.
+        Array of log analytics entity relationship context.
+
+
+        :return: The contexts of this LogAnalyticsEntityTopologyLink.
+        :rtype: list[str]
+        """
+        return self._contexts
+
+    @contexts.setter
+    def contexts(self, contexts):
+        """
+        Sets the contexts of this LogAnalyticsEntityTopologyLink.
+        Array of log analytics entity relationship context.
+
+
+        :param contexts: The contexts of this LogAnalyticsEntityTopologyLink.
+        :type: list[str]
+        """
+        self._contexts = contexts
+
+    @property
+    def time_last_discovered(self):
+        """
+        Gets the time_last_discovered of this LogAnalyticsEntityTopologyLink.
+        The date and time the resource was last discovered, in the format defined by RFC3339.
+
+
+        :return: The time_last_discovered of this LogAnalyticsEntityTopologyLink.
+        :rtype: datetime
+        """
+        return self._time_last_discovered
+
+    @time_last_discovered.setter
+    def time_last_discovered(self, time_last_discovered):
+        """
+        Sets the time_last_discovered of this LogAnalyticsEntityTopologyLink.
+        The date and time the resource was last discovered, in the format defined by RFC3339.
+
+
+        :param time_last_discovered: The time_last_discovered of this LogAnalyticsEntityTopologyLink.
+        :type: datetime
+        """
+        self._time_last_discovered = time_last_discovered
 
     def __repr__(self):
         return formatted_flat_dict(self)

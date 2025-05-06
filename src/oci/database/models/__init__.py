@@ -423,6 +423,8 @@ from .storage_performance_details import StoragePerformanceDetails
 from .switch_over_data_guard_details import SwitchOverDataGuardDetails
 from .switchover_data_guard_association_details import SwitchoverDataGuardAssociationDetails
 from .system_version_collection import SystemVersionCollection
+from .system_version_minor_version_collection import SystemVersionMinorVersionCollection
+from .system_version_minor_version_summary import SystemVersionMinorVersionSummary
 from .system_version_summary import SystemVersionSummary
 from .undelete_autonomous_database_details import UndeleteAutonomousDatabaseDetails
 from .update import Update
@@ -907,6 +909,8 @@ database_type_mapping = {
     "SwitchOverDataGuardDetails": SwitchOverDataGuardDetails,
     "SwitchoverDataGuardAssociationDetails": SwitchoverDataGuardAssociationDetails,
     "SystemVersionCollection": SystemVersionCollection,
+    "SystemVersionMinorVersionCollection": SystemVersionMinorVersionCollection,
+    "SystemVersionMinorVersionSummary": SystemVersionMinorVersionSummary,
     "SystemVersionSummary": SystemVersionSummary,
     "UndeleteAutonomousDatabaseDetails": UndeleteAutonomousDatabaseDetails,
     "Update": Update,

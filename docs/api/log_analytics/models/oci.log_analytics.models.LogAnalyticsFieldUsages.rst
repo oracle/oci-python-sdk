@@ -1,0 +1,11 @@
+LogAnalyticsFieldUsages
+=======================
+
+.. currentmodule:: oci.log_analytics.models
+
+.. autoclass:: LogAnalyticsFieldUsages
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

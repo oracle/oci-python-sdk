@@ -204,6 +204,8 @@ def launch_instance(compute, compartment, test_id, availability_domain, subnet, 
     request.shape = 'VM.Standard1.1'
     request.subnet_id = subnet.id
     request.metadata = {'ssh_authorized_keys': public_key}
+    request.instance_options = oci.core.models.InstanceOptions()
+    request.instance_options.are_legacy_imds_endpoints_disabled = True
     response = compute.launch_instance(request)
 
     assert response.status == 200

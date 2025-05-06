@@ -23,7 +23,7 @@ class ModuleCommandDescriptor(AbstractCommandDescriptor):
 
         :param name:
             The value to assign to the name property of this ModuleCommandDescriptor.
-            Allowed values for this property are: "COMMAND", "SEARCH", "STATS", "GEO_STATS", "TIME_STATS", "SORT", "FIELDS", "ADD_FIELDS", "LINK", "LINK_DETAILS", "CLUSTER", "CLUSTER_DETAILS", "CLUSTER_SPLIT", "EVAL", "EXTRACT", "JSON_EXTRACT", "XML_EXTRACT", "EVENT_STATS", "BUCKET", "CLASSIFY", "TOP", "BOTTOM", "HEAD", "TAIL", "FIELD_SUMMARY", "REGEX", "RENAME", "TIME_COMPARE", "WHERE", "CLUSTER_COMPARE", "DELETE", "CREATETABLE", "SEQUENCE", "DELTA", "DISTINCT", "SEARCH_LOOKUP", "LOOKUP", "DEMO_MODE", "MACRO", "MODULE", "MULTI_SEARCH", "HIGHLIGHT", "HIGHLIGHT_ROWS", "HIGHLIGHT_GROUPS", "CREATE_VIEW", "MAP", "NLP", "COMPARE", "ADD_INSIGHTS", "ANOMALY", "DEDUP", "TIME_CLUSTER", "FREQUENT", "RARE", "OUTLIER"
+            Allowed values for this property are: "COMMAND", "SEARCH", "STATS", "GEO_STATS", "TIME_STATS", "SORT", "FIELDS", "ADD_FIELDS", "LINK", "LINK_DETAILS", "CLUSTER", "CLUSTER_DETAILS", "CLUSTER_SPLIT", "EVAL", "EXTRACT", "JSON_EXTRACT", "XML_EXTRACT", "EVENT_STATS", "BUCKET", "CLASSIFY", "TOP", "BOTTOM", "HEAD", "TAIL", "FIELD_SUMMARY", "REGEX", "RENAME", "TIME_COMPARE", "WHERE", "CLUSTER_COMPARE", "DELETE", "CREATETABLE", "SEQUENCE", "UPDATETABLE", "DELTA", "DISTINCT", "SEARCH_LOOKUP", "LOOKUP", "DEMO_MODE", "MACRO", "MODULE", "MULTI_SEARCH", "HIGHLIGHT", "HIGHLIGHT_ROWS", "HIGHLIGHT_GROUPS", "CREATE_VIEW", "MAP", "NLP", "COMPARE", "ADD_INSIGHTS", "ANOMALY", "DEDUP", "TIME_CLUSTER", "FREQUENT", "RARE", "OUTLIER"
         :type name: str
 
         :param display_query_string:
@@ -50,6 +50,22 @@ class ModuleCommandDescriptor(AbstractCommandDescriptor):
             The value to assign to the is_hidden property of this ModuleCommandDescriptor.
         :type is_hidden: bool
 
+        :param description:
+            The value to assign to the description property of this ModuleCommandDescriptor.
+        :type description: str
+
+        :param example:
+            The value to assign to the example property of this ModuleCommandDescriptor.
+        :type example: str
+
+        :param properties:
+            The value to assign to the properties property of this ModuleCommandDescriptor.
+        :type properties: list[oci.log_analytics.models.PropertyDefinition]
+
+        :param arguments:
+            The value to assign to the arguments property of this ModuleCommandDescriptor.
+        :type arguments: list[oci.log_analytics.models.VariableDefinition]
+
         """
         self.swagger_types = {
             'name': 'str',
@@ -58,7 +74,11 @@ class ModuleCommandDescriptor(AbstractCommandDescriptor):
             'category': 'str',
             'referenced_fields': 'list[AbstractField]',
             'declared_fields': 'list[AbstractField]',
-            'is_hidden': 'bool'
+            'is_hidden': 'bool',
+            'description': 'str',
+            'example': 'str',
+            'properties': 'list[PropertyDefinition]',
+            'arguments': 'list[VariableDefinition]'
         }
         self.attribute_map = {
             'name': 'name',
@@ -67,7 +87,11 @@ class ModuleCommandDescriptor(AbstractCommandDescriptor):
             'category': 'category',
             'referenced_fields': 'referencedFields',
             'declared_fields': 'declaredFields',
-            'is_hidden': 'isHidden'
+            'is_hidden': 'isHidden',
+            'description': 'description',
+            'example': 'example',
+            'properties': 'properties',
+            'arguments': 'arguments'
         }
         self._name = None
         self._display_query_string = None
@@ -76,7 +100,107 @@ class ModuleCommandDescriptor(AbstractCommandDescriptor):
         self._referenced_fields = None
         self._declared_fields = None
         self._is_hidden = None
+        self._description = None
+        self._example = None
+        self._properties = None
+        self._arguments = None
         self._name = 'MODULE'
+
+    @property
+    def description(self):
+        """
+        Gets the description of this ModuleCommandDescriptor.
+        Description of the macro.
+
+
+        :return: The description of this ModuleCommandDescriptor.
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """
+        Sets the description of this ModuleCommandDescriptor.
+        Description of the macro.
+
+
+        :param description: The description of this ModuleCommandDescriptor.
+        :type: str
+        """
+        self._description = description
+
+    @property
+    def example(self):
+        """
+        Gets the example of this ModuleCommandDescriptor.
+        Description of the macro.
+
+
+        :return: The example of this ModuleCommandDescriptor.
+        :rtype: str
+        """
+        return self._example
+
+    @example.setter
+    def example(self, example):
+        """
+        Sets the example of this ModuleCommandDescriptor.
+        Description of the macro.
+
+
+        :param example: The example of this ModuleCommandDescriptor.
+        :type: str
+        """
+        self._example = example
+
+    @property
+    def properties(self):
+        """
+        Gets the properties of this ModuleCommandDescriptor.
+        Optional list of properties for the macro.
+
+
+        :return: The properties of this ModuleCommandDescriptor.
+        :rtype: list[oci.log_analytics.models.PropertyDefinition]
+        """
+        return self._properties
+
+    @properties.setter
+    def properties(self, properties):
+        """
+        Sets the properties of this ModuleCommandDescriptor.
+        Optional list of properties for the macro.
+
+
+        :param properties: The properties of this ModuleCommandDescriptor.
+        :type: list[oci.log_analytics.models.PropertyDefinition]
+        """
+        self._properties = properties
+
+    @property
+    def arguments(self):
+        """
+        Gets the arguments of this ModuleCommandDescriptor.
+        Optional list of arguments used in the macro.
+
+
+        :return: The arguments of this ModuleCommandDescriptor.
+        :rtype: list[oci.log_analytics.models.VariableDefinition]
+        """
+        return self._arguments
+
+    @arguments.setter
+    def arguments(self, arguments):
+        """
+        Sets the arguments of this ModuleCommandDescriptor.
+        Optional list of arguments used in the macro.
+
+
+        :param arguments: The arguments of this ModuleCommandDescriptor.
+        :type: list[oci.log_analytics.models.VariableDefinition]
+        """
+        self._arguments = arguments
 
     def __repr__(self):
         return formatted_flat_dict(self)

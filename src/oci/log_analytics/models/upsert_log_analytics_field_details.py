@@ -40,26 +40,33 @@ class UpsertLogAnalyticsFieldDetails(object):
             The value to assign to the name property of this UpsertLogAnalyticsFieldDetails.
         :type name: str
 
+        :param is_keep_duplicates:
+            The value to assign to the is_keep_duplicates property of this UpsertLogAnalyticsFieldDetails.
+        :type is_keep_duplicates: bool
+
         """
         self.swagger_types = {
             'data_type': 'str',
             'is_multi_valued': 'bool',
             'description': 'str',
             'display_name': 'str',
-            'name': 'str'
+            'name': 'str',
+            'is_keep_duplicates': 'bool'
         }
         self.attribute_map = {
             'data_type': 'dataType',
             'is_multi_valued': 'isMultiValued',
             'description': 'description',
             'display_name': 'displayName',
-            'name': 'name'
+            'name': 'name',
+            'is_keep_duplicates': 'isKeepDuplicates'
         }
         self._data_type = None
         self._is_multi_valued = None
         self._description = None
         self._display_name = None
         self._name = None
+        self._is_keep_duplicates = None
 
     @property
     def data_type(self):
@@ -180,6 +187,30 @@ class UpsertLogAnalyticsFieldDetails(object):
         :type: str
         """
         self._name = name
+
+    @property
+    def is_keep_duplicates(self):
+        """
+        Gets the is_keep_duplicates of this UpsertLogAnalyticsFieldDetails.
+        A flag indicating whether duplicates should be retained while processing multi-valued fields.
+
+
+        :return: The is_keep_duplicates of this UpsertLogAnalyticsFieldDetails.
+        :rtype: bool
+        """
+        return self._is_keep_duplicates
+
+    @is_keep_duplicates.setter
+    def is_keep_duplicates(self, is_keep_duplicates):
+        """
+        Sets the is_keep_duplicates of this UpsertLogAnalyticsFieldDetails.
+        A flag indicating whether duplicates should be retained while processing multi-valued fields.
+
+
+        :param is_keep_duplicates: The is_keep_duplicates of this UpsertLogAnalyticsFieldDetails.
+        :type: bool
+        """
+        self._is_keep_duplicates = is_keep_duplicates
 
     def __repr__(self):
         return formatted_flat_dict(self)

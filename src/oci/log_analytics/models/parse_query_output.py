@@ -44,6 +44,14 @@ class ParseQueryOutput(object):
             The value to assign to the commands property of this ParseQueryOutput.
         :type commands: list[oci.log_analytics.models.AbstractCommandDescriptor]
 
+        :param variables:
+            The value to assign to the variables property of this ParseQueryOutput.
+        :type variables: list[oci.log_analytics.models.VariableDefinition]
+
+        :param properties:
+            The value to assign to the properties property of this ParseQueryOutput.
+        :type properties: list[oci.log_analytics.models.PropertyDefinition]
+
         """
         self.swagger_types = {
             'display_query_string': 'str',
@@ -51,7 +59,9 @@ class ParseQueryOutput(object):
             'columns': 'list[AbstractColumn]',
             'response_time_in_ms': 'int',
             'time_filter': 'TimeRange',
-            'commands': 'list[AbstractCommandDescriptor]'
+            'commands': 'list[AbstractCommandDescriptor]',
+            'variables': 'list[VariableDefinition]',
+            'properties': 'list[PropertyDefinition]'
         }
         self.attribute_map = {
             'display_query_string': 'displayQueryString',
@@ -59,7 +69,9 @@ class ParseQueryOutput(object):
             'columns': 'columns',
             'response_time_in_ms': 'responseTimeInMs',
             'time_filter': 'timeFilter',
-            'commands': 'commands'
+            'commands': 'commands',
+            'variables': 'variables',
+            'properties': 'properties'
         }
         self._display_query_string = None
         self._internal_query_string = None
@@ -67,6 +79,8 @@ class ParseQueryOutput(object):
         self._response_time_in_ms = None
         self._time_filter = None
         self._commands = None
+        self._variables = None
+        self._properties = None
 
     @property
     def display_query_string(self):
@@ -207,6 +221,54 @@ class ParseQueryOutput(object):
         :type: list[oci.log_analytics.models.AbstractCommandDescriptor]
         """
         self._commands = commands
+
+    @property
+    def variables(self):
+        """
+        Gets the variables of this ParseQueryOutput.
+        Optional list of variables for the query.
+
+
+        :return: The variables of this ParseQueryOutput.
+        :rtype: list[oci.log_analytics.models.VariableDefinition]
+        """
+        return self._variables
+
+    @variables.setter
+    def variables(self, variables):
+        """
+        Sets the variables of this ParseQueryOutput.
+        Optional list of variables for the query.
+
+
+        :param variables: The variables of this ParseQueryOutput.
+        :type: list[oci.log_analytics.models.VariableDefinition]
+        """
+        self._variables = variables
+
+    @property
+    def properties(self):
+        """
+        Gets the properties of this ParseQueryOutput.
+        Optional list of properties for the query.
+
+
+        :return: The properties of this ParseQueryOutput.
+        :rtype: list[oci.log_analytics.models.PropertyDefinition]
+        """
+        return self._properties
+
+    @properties.setter
+    def properties(self, properties):
+        """
+        Sets the properties of this ParseQueryOutput.
+        Optional list of properties for the query.
+
+
+        :param properties: The properties of this ParseQueryOutput.
+        :type: list[oci.log_analytics.models.PropertyDefinition]
+        """
+        self._properties = properties
 
     def __repr__(self):
         return formatted_flat_dict(self)

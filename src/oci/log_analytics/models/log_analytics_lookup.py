@@ -98,6 +98,22 @@ class LogAnalyticsLookup(object):
             The value to assign to the categories property of this LogAnalyticsLookup.
         :type categories: list[oci.log_analytics.models.LogAnalyticsCategory]
 
+        :param id:
+            The value to assign to the id property of this LogAnalyticsLookup.
+        :type id: str
+
+        :param compartment_id:
+            The value to assign to the compartment_id property of this LogAnalyticsLookup.
+        :type compartment_id: str
+
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this LogAnalyticsLookup.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this LogAnalyticsLookup.
+        :type defined_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'active_edit_version': 'int',
@@ -115,7 +131,11 @@ class LogAnalyticsLookup(object):
             'referring_sources': 'AutoLookups',
             'status_summary': 'StatusSummary',
             'time_updated': 'datetime',
-            'categories': 'list[LogAnalyticsCategory]'
+            'categories': 'list[LogAnalyticsCategory]',
+            'id': 'str',
+            'compartment_id': 'str',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'active_edit_version': 'activeEditVersion',
@@ -133,7 +153,11 @@ class LogAnalyticsLookup(object):
             'referring_sources': 'referringSources',
             'status_summary': 'statusSummary',
             'time_updated': 'timeUpdated',
-            'categories': 'categories'
+            'categories': 'categories',
+            'id': 'id',
+            'compartment_id': 'compartmentId',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags'
         }
         self._active_edit_version = None
         self._canonical_link = None
@@ -151,6 +175,10 @@ class LogAnalyticsLookup(object):
         self._status_summary = None
         self._time_updated = None
         self._categories = None
+        self._id = None
+        self._compartment_id = None
+        self._freeform_tags = None
+        self._defined_tags = None
 
     @property
     def active_edit_version(self):
@@ -539,6 +567,112 @@ class LogAnalyticsLookup(object):
         :type: list[oci.log_analytics.models.LogAnalyticsCategory]
         """
         self._categories = categories
+
+    @property
+    def id(self):
+        """
+        Gets the id of this LogAnalyticsLookup.
+        The log analytics entity OCID. This ID is a reference used by log analytics features and it represents
+        a resource that is provisioned and managed by the customer on their premises or on the cloud.
+
+
+        :return: The id of this LogAnalyticsLookup.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """
+        Sets the id of this LogAnalyticsLookup.
+        The log analytics entity OCID. This ID is a reference used by log analytics features and it represents
+        a resource that is provisioned and managed by the customer on their premises or on the cloud.
+
+
+        :param id: The id of this LogAnalyticsLookup.
+        :type: str
+        """
+        self._id = id
+
+    @property
+    def compartment_id(self):
+        """
+        Gets the compartment_id of this LogAnalyticsLookup.
+        Compartment Identifier `OCID]`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The compartment_id of this LogAnalyticsLookup.
+        :rtype: str
+        """
+        return self._compartment_id
+
+    @compartment_id.setter
+    def compartment_id(self, compartment_id):
+        """
+        Sets the compartment_id of this LogAnalyticsLookup.
+        Compartment Identifier `OCID]`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param compartment_id: The compartment_id of this LogAnalyticsLookup.
+        :type: str
+        """
+        self._compartment_id = compartment_id
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this LogAnalyticsLookup.
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Example: `{\"bar-key\": \"value\"}`
+
+
+        :return: The freeform_tags of this LogAnalyticsLookup.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this LogAnalyticsLookup.
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Example: `{\"bar-key\": \"value\"}`
+
+
+        :param freeform_tags: The freeform_tags of this LogAnalyticsLookup.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this LogAnalyticsLookup.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+
+
+        :return: The defined_tags of this LogAnalyticsLookup.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this LogAnalyticsLookup.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+
+
+        :param defined_tags: The defined_tags of this LogAnalyticsLookup.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

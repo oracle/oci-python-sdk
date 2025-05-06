@@ -263,7 +263,7 @@ class UpdateOracleMigrationDetails(UpdateMigrationDetails):
     def source_container_database_connection_id(self):
         """
         Gets the source_container_database_connection_id of this UpdateOracleMigrationDetails.
-        The OCID of the resource being referenced.
+        The OCID of the resource being updated.
 
 
         :return: The source_container_database_connection_id of this UpdateOracleMigrationDetails.
@@ -275,7 +275,7 @@ class UpdateOracleMigrationDetails(UpdateMigrationDetails):
     def source_container_database_connection_id(self, source_container_database_connection_id):
         """
         Sets the source_container_database_connection_id of this UpdateOracleMigrationDetails.
-        The OCID of the resource being referenced.
+        The OCID of the resource being updated.
 
 
         :param source_container_database_connection_id: The source_container_database_connection_id of this UpdateOracleMigrationDetails.

@@ -104,6 +104,14 @@ class LogAnalyticsFieldSummary(object):
             The value to assign to the unit_type property of this LogAnalyticsFieldSummary.
         :type unit_type: str
 
+        :param time_updated:
+            The value to assign to the time_updated property of this LogAnalyticsFieldSummary.
+        :type time_updated: datetime
+
+        :param is_keep_duplicates:
+            The value to assign to the is_keep_duplicates property of this LogAnalyticsFieldSummary.
+        :type is_keep_duplicates: bool
+
         """
         self.swagger_types = {
             'cee_alias': 'str',
@@ -126,7 +134,9 @@ class LogAnalyticsFieldSummary(object):
             'is_metric_value_eligible': 'bool',
             'range_facet_eligible': 'int',
             'is_table_eligible': 'bool',
-            'unit_type': 'str'
+            'unit_type': 'str',
+            'time_updated': 'datetime',
+            'is_keep_duplicates': 'bool'
         }
         self.attribute_map = {
             'cee_alias': 'ceeAlias',
@@ -149,7 +159,9 @@ class LogAnalyticsFieldSummary(object):
             'is_metric_value_eligible': 'isMetricValueEligible',
             'range_facet_eligible': 'rangeFacetEligible',
             'is_table_eligible': 'isTableEligible',
-            'unit_type': 'unitType'
+            'unit_type': 'unitType',
+            'time_updated': 'timeUpdated',
+            'is_keep_duplicates': 'isKeepDuplicates'
         }
         self._cee_alias = None
         self._data_type = None
@@ -172,6 +184,8 @@ class LogAnalyticsFieldSummary(object):
         self._range_facet_eligible = None
         self._is_table_eligible = None
         self._unit_type = None
+        self._time_updated = None
+        self._is_keep_duplicates = None
 
     @property
     def cee_alias(self):
@@ -680,6 +694,54 @@ class LogAnalyticsFieldSummary(object):
         :type: str
         """
         self._unit_type = unit_type
+
+    @property
+    def time_updated(self):
+        """
+        Gets the time_updated of this LogAnalyticsFieldSummary.
+        The last updated date and time.
+
+
+        :return: The time_updated of this LogAnalyticsFieldSummary.
+        :rtype: datetime
+        """
+        return self._time_updated
+
+    @time_updated.setter
+    def time_updated(self, time_updated):
+        """
+        Sets the time_updated of this LogAnalyticsFieldSummary.
+        The last updated date and time.
+
+
+        :param time_updated: The time_updated of this LogAnalyticsFieldSummary.
+        :type: datetime
+        """
+        self._time_updated = time_updated
+
+    @property
+    def is_keep_duplicates(self):
+        """
+        Gets the is_keep_duplicates of this LogAnalyticsFieldSummary.
+        A flag indicating whether or not duplicates would be retained.
+
+
+        :return: The is_keep_duplicates of this LogAnalyticsFieldSummary.
+        :rtype: bool
+        """
+        return self._is_keep_duplicates
+
+    @is_keep_duplicates.setter
+    def is_keep_duplicates(self, is_keep_duplicates):
+        """
+        Sets the is_keep_duplicates of this LogAnalyticsFieldSummary.
+        A flag indicating whether or not duplicates would be retained.
+
+
+        :param is_keep_duplicates: The is_keep_duplicates of this LogAnalyticsFieldSummary.
+        :type: bool
+        """
+        self._is_keep_duplicates = is_keep_duplicates
 
     def __repr__(self):
         return formatted_flat_dict(self)

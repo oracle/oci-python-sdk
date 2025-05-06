@@ -51,6 +51,14 @@ class ScheduledTaskSummary(object):
     #: This constant has a value of "SUCCEEDED"
     LAST_EXECUTION_STATUS_SUCCEEDED = "SUCCEEDED"
 
+    #: A constant which can be used with the schedule_type property of a ScheduledTaskSummary.
+    #: This constant has a value of "FIXED_FREQUENCY"
+    SCHEDULE_TYPE_FIXED_FREQUENCY = "FIXED_FREQUENCY"
+
+    #: A constant which can be used with the schedule_type property of a ScheduledTaskSummary.
+    #: This constant has a value of "CRON"
+    SCHEDULE_TYPE_CRON = "CRON"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ScheduledTaskSummary object with values from keyword arguments.
@@ -122,6 +130,12 @@ class ScheduledTaskSummary(object):
             The value to assign to the time_last_executed property of this ScheduledTaskSummary.
         :type time_last_executed: datetime
 
+        :param schedule_type:
+            The value to assign to the schedule_type property of this ScheduledTaskSummary.
+            Allowed values for this property are: "FIXED_FREQUENCY", "CRON", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type schedule_type: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -138,7 +152,8 @@ class ScheduledTaskSummary(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'last_execution_status': 'str',
-            'time_last_executed': 'datetime'
+            'time_last_executed': 'datetime',
+            'schedule_type': 'str'
         }
         self.attribute_map = {
             'id': 'id',
@@ -155,7 +170,8 @@ class ScheduledTaskSummary(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'last_execution_status': 'lastExecutionStatus',
-            'time_last_executed': 'timeLastExecuted'
+            'time_last_executed': 'timeLastExecuted',
+            'schedule_type': 'scheduleType'
         }
         self._id = None
         self._task_type = None
@@ -172,6 +188,7 @@ class ScheduledTaskSummary(object):
         self._defined_tags = None
         self._last_execution_status = None
         self._time_last_executed = None
+        self._schedule_type = None
 
     @property
     def id(self):
@@ -572,6 +589,36 @@ class ScheduledTaskSummary(object):
         :type: datetime
         """
         self._time_last_executed = time_last_executed
+
+    @property
+    def schedule_type(self):
+        """
+        Gets the schedule_type of this ScheduledTaskSummary.
+        Type of the task schedule
+
+        Allowed values for this property are: "FIXED_FREQUENCY", "CRON", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The schedule_type of this ScheduledTaskSummary.
+        :rtype: str
+        """
+        return self._schedule_type
+
+    @schedule_type.setter
+    def schedule_type(self, schedule_type):
+        """
+        Sets the schedule_type of this ScheduledTaskSummary.
+        Type of the task schedule
+
+
+        :param schedule_type: The schedule_type of this ScheduledTaskSummary.
+        :type: str
+        """
+        allowed_values = ["FIXED_FREQUENCY", "CRON"]
+        if not value_allowed_none_or_none_sentinel(schedule_type, allowed_values):
+            schedule_type = 'UNKNOWN_ENUM_VALUE'
+        self._schedule_type = schedule_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

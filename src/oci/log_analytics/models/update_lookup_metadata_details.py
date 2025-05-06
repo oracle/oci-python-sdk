@@ -40,26 +40,40 @@ class UpdateLookupMetadataDetails(object):
             The value to assign to the categories property of this UpdateLookupMetadataDetails.
         :type categories: list[oci.log_analytics.models.LogAnalyticsCategory]
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this UpdateLookupMetadataDetails.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this UpdateLookupMetadataDetails.
+        :type defined_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'default_match_value': 'str',
             'description': 'str',
             'fields': 'list[LogAnalyticsLookupFields]',
             'max_matches': 'int',
-            'categories': 'list[LogAnalyticsCategory]'
+            'categories': 'list[LogAnalyticsCategory]',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'default_match_value': 'defaultMatchValue',
             'description': 'description',
             'fields': 'fields',
             'max_matches': 'maxMatches',
-            'categories': 'categories'
+            'categories': 'categories',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags'
         }
         self._default_match_value = None
         self._description = None
         self._fields = None
         self._max_matches = None
         self._categories = None
+        self._freeform_tags = None
+        self._defined_tags = None
 
     @property
     def default_match_value(self):
@@ -182,6 +196,58 @@ class UpdateLookupMetadataDetails(object):
         :type: list[oci.log_analytics.models.LogAnalyticsCategory]
         """
         self._categories = categories
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this UpdateLookupMetadataDetails.
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Example: `{\"bar-key\": \"value\"}`
+
+
+        :return: The freeform_tags of this UpdateLookupMetadataDetails.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this UpdateLookupMetadataDetails.
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Example: `{\"bar-key\": \"value\"}`
+
+
+        :param freeform_tags: The freeform_tags of this UpdateLookupMetadataDetails.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this UpdateLookupMetadataDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+
+
+        :return: The defined_tags of this UpdateLookupMetadataDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this UpdateLookupMetadataDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+
+
+        :param defined_tags: The defined_tags of this UpdateLookupMetadataDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)
