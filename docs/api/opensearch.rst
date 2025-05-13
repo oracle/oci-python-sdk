@@ -64,6 +64,7 @@ Opensearch
     oci.opensearch.models.RestoreOpensearchClusterDetails
     oci.opensearch.models.ReverseConnectionEndpoint
     oci.opensearch.models.SecuritySamlConfig
+    oci.opensearch.models.ShapesDetails
     oci.opensearch.models.UpdateCheckinDetails
     oci.opensearch.models.UpdateClusterHardenedImageDetails
     oci.opensearch.models.UpdateClusterSpecsDetails

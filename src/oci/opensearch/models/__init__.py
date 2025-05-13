@@ -48,6 +48,7 @@ from .restore_opensearch_cluster_backup_details import RestoreOpensearchClusterB
 from .restore_opensearch_cluster_details import RestoreOpensearchClusterDetails
 from .reverse_connection_endpoint import ReverseConnectionEndpoint
 from .security_saml_config import SecuritySamlConfig
+from .shapes_details import ShapesDetails
 from .update_checkin_details import UpdateCheckinDetails
 from .update_cluster_hardened_image_details import UpdateClusterHardenedImageDetails
 from .update_cluster_specs_details import UpdateClusterSpecsDetails
@@ -110,6 +111,7 @@ opensearch_type_mapping = {
     "RestoreOpensearchClusterDetails": RestoreOpensearchClusterDetails,
     "ReverseConnectionEndpoint": ReverseConnectionEndpoint,
     "SecuritySamlConfig": SecuritySamlConfig,
+    "ShapesDetails": ShapesDetails,
     "UpdateCheckinDetails": UpdateCheckinDetails,
     "UpdateClusterHardenedImageDetails": UpdateClusterHardenedImageDetails,
     "UpdateClusterSpecsDetails": UpdateClusterSpecsDetails,

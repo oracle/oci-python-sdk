@@ -153,6 +153,7 @@ API Reference
 * :doc:`Media Services <media_services/client/oci.media_services.MediaServicesClient>`
 * :doc:`Media Stream <media_services/client/oci.media_services.MediaStreamClient>`
 * :doc:`Migration <cloud_migrations/client/oci.cloud_migrations.MigrationClient>`
+* :doc:`Model Deployment <model_deployment/client/oci.model_deployment.ModelDeploymentClient>`
 * :doc:`Monitoring <monitoring/client/oci.monitoring.MonitoringClient>`
 * :doc:`Mysqlaas <mysql/client/oci.mysql.MysqlaasClient>`
 * :doc:`Network Firewall <network_firewall/client/oci.network_firewall.NetworkFirewallClient>`
@@ -377,6 +378,7 @@ API Reference
     marketplace_publisher
     media_services
     mngdmac
+    model_deployment
     monitoring
     mysql
     network_firewall

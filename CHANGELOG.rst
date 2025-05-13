@@ -5,6 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.152.0 - 2025-05-13
+====================
+
+Added 
+----- 
+* Support for the Model Deployment service  
+* Support for enabling and monitoring Pluggable Databases(PDB) in the Database Management service 
+* Support for additional unit shapes in AI clusters in the Generative AI service 
+* Support for node search details and node shape details on create and update cluster operations in the OpenSearch service   
+
+Breaking 
+-------- 
+* Models `DisableExternalMysqlAssociatedServiceDetails` and `EnableExternalMysqlAssociatedServiceDetails` removed from the Database Management service 
+* Property `lifecycle_state` removed from model `ExadataInfrastructureLifecycleStateValues` in the Database Management service 
+* Operations `disable_external_mysql_associated_service` and `enable_external_mysql_associated_service` removed from `ManagedMySqlDatabasesClient` in the Database Management service 
+* Default retries disabled for operations `get_named_credential` and `list_named_credentials` from `DbManagementClient` in the Database Management service 
+* Operation `modify_external_container_database_management_feature` removed from `DbManagementClient` in the Database Management service   
+
+====================
 2.151.0 - 2025-05-06
 ====================
 

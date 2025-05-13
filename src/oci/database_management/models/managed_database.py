@@ -656,8 +656,7 @@ class ManagedDatabase(object):
     def db_system_id(self):
         """
         Gets the db_system_id of this ManagedDatabase.
-        The `OCID`__ of the external
-        DB system that this Managed Database is part of.
+        The `OCID`__ of the DB system that this Managed Database is part of.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -671,8 +670,7 @@ class ManagedDatabase(object):
     def db_system_id(self, db_system_id):
         """
         Sets the db_system_id of this ManagedDatabase.
-        The `OCID`__ of the external
-        DB system that this Managed Database is part of.
+        The `OCID`__ of the DB system that this Managed Database is part of.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

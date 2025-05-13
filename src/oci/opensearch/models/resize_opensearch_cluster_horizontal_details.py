@@ -34,6 +34,10 @@ class ResizeOpensearchClusterHorizontalDetails(object):
             The value to assign to the opendashboard_node_count property of this ResizeOpensearchClusterHorizontalDetails.
         :type opendashboard_node_count: int
 
+        :param search_node_count:
+            The value to assign to the search_node_count property of this ResizeOpensearchClusterHorizontalDetails.
+        :type search_node_count: int
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ResizeOpensearchClusterHorizontalDetails.
         :type freeform_tags: dict(str, str)
@@ -47,6 +51,7 @@ class ResizeOpensearchClusterHorizontalDetails(object):
             'master_node_count': 'int',
             'data_node_count': 'int',
             'opendashboard_node_count': 'int',
+            'search_node_count': 'int',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -54,12 +59,14 @@ class ResizeOpensearchClusterHorizontalDetails(object):
             'master_node_count': 'masterNodeCount',
             'data_node_count': 'dataNodeCount',
             'opendashboard_node_count': 'opendashboardNodeCount',
+            'search_node_count': 'searchNodeCount',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
         self._master_node_count = None
         self._data_node_count = None
         self._opendashboard_node_count = None
+        self._search_node_count = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -134,6 +141,30 @@ class ResizeOpensearchClusterHorizontalDetails(object):
         :type: int
         """
         self._opendashboard_node_count = opendashboard_node_count
+
+    @property
+    def search_node_count(self):
+        """
+        Gets the search_node_count of this ResizeOpensearchClusterHorizontalDetails.
+        The number of search nodes configured for the cluster.
+
+
+        :return: The search_node_count of this ResizeOpensearchClusterHorizontalDetails.
+        :rtype: int
+        """
+        return self._search_node_count
+
+    @search_node_count.setter
+    def search_node_count(self, search_node_count):
+        """
+        Sets the search_node_count of this ResizeOpensearchClusterHorizontalDetails.
+        The number of search nodes configured for the cluster.
+
+
+        :param search_node_count: The search_node_count of this ResizeOpensearchClusterHorizontalDetails.
+        :type: int
+        """
+        self._search_node_count = search_node_count
 
     @property
     def freeform_tags(self):
