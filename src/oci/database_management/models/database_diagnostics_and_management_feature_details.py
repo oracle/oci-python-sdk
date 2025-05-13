@@ -51,26 +51,33 @@ class DatabaseDiagnosticsAndManagementFeatureDetails(DatabaseFeatureDetails):
             The value to assign to the is_auto_enable_pluggable_database property of this DatabaseDiagnosticsAndManagementFeatureDetails.
         :type is_auto_enable_pluggable_database: bool
 
+        :param can_enable_all_current_pdbs:
+            The value to assign to the can_enable_all_current_pdbs property of this DatabaseDiagnosticsAndManagementFeatureDetails.
+        :type can_enable_all_current_pdbs: bool
+
         """
         self.swagger_types = {
             'feature': 'str',
             'database_connection_details': 'DatabaseConnectionDetails',
             'connector_details': 'ConnectorDetails',
             'management_type': 'str',
-            'is_auto_enable_pluggable_database': 'bool'
+            'is_auto_enable_pluggable_database': 'bool',
+            'can_enable_all_current_pdbs': 'bool'
         }
         self.attribute_map = {
             'feature': 'feature',
             'database_connection_details': 'databaseConnectionDetails',
             'connector_details': 'connectorDetails',
             'management_type': 'managementType',
-            'is_auto_enable_pluggable_database': 'isAutoEnablePluggableDatabase'
+            'is_auto_enable_pluggable_database': 'isAutoEnablePluggableDatabase',
+            'can_enable_all_current_pdbs': 'canEnableAllCurrentPdbs'
         }
         self._feature = None
         self._database_connection_details = None
         self._connector_details = None
         self._management_type = None
         self._is_auto_enable_pluggable_database = None
+        self._can_enable_all_current_pdbs = None
         self._feature = 'DIAGNOSTICS_AND_MANAGEMENT'
 
     @property
@@ -108,7 +115,7 @@ class DatabaseDiagnosticsAndManagementFeatureDetails(DatabaseFeatureDetails):
     def is_auto_enable_pluggable_database(self):
         """
         Gets the is_auto_enable_pluggable_database of this DatabaseDiagnosticsAndManagementFeatureDetails.
-        Indicates whether the pluggable database can be enabled automatically.
+        Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
 
 
         :return: The is_auto_enable_pluggable_database of this DatabaseDiagnosticsAndManagementFeatureDetails.
@@ -120,13 +127,37 @@ class DatabaseDiagnosticsAndManagementFeatureDetails(DatabaseFeatureDetails):
     def is_auto_enable_pluggable_database(self, is_auto_enable_pluggable_database):
         """
         Sets the is_auto_enable_pluggable_database of this DatabaseDiagnosticsAndManagementFeatureDetails.
-        Indicates whether the pluggable database can be enabled automatically.
+        Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
 
 
         :param is_auto_enable_pluggable_database: The is_auto_enable_pluggable_database of this DatabaseDiagnosticsAndManagementFeatureDetails.
         :type: bool
         """
         self._is_auto_enable_pluggable_database = is_auto_enable_pluggable_database
+
+    @property
+    def can_enable_all_current_pdbs(self):
+        """
+        Gets the can_enable_all_current_pdbs of this DatabaseDiagnosticsAndManagementFeatureDetails.
+        Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
+
+
+        :return: The can_enable_all_current_pdbs of this DatabaseDiagnosticsAndManagementFeatureDetails.
+        :rtype: bool
+        """
+        return self._can_enable_all_current_pdbs
+
+    @can_enable_all_current_pdbs.setter
+    def can_enable_all_current_pdbs(self, can_enable_all_current_pdbs):
+        """
+        Sets the can_enable_all_current_pdbs of this DatabaseDiagnosticsAndManagementFeatureDetails.
+        Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
+
+
+        :param can_enable_all_current_pdbs: The can_enable_all_current_pdbs of this DatabaseDiagnosticsAndManagementFeatureDetails.
+        :type: bool
+        """
+        self._can_enable_all_current_pdbs = can_enable_all_current_pdbs
 
     def __repr__(self):
         return formatted_flat_dict(self)

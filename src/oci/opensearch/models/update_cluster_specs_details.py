@@ -32,6 +32,10 @@ class UpdateClusterSpecsDetails(object):
             The value to assign to the master_node_host_memory_gb property of this UpdateClusterSpecsDetails.
         :type master_node_host_memory_gb: int
 
+        :param master_node_host_shape:
+            The value to assign to the master_node_host_shape property of this UpdateClusterSpecsDetails.
+        :type master_node_host_shape: str
+
         :param data_node_host_ocpu_count:
             The value to assign to the data_node_host_ocpu_count property of this UpdateClusterSpecsDetails.
         :type data_node_host_ocpu_count: int
@@ -40,6 +44,22 @@ class UpdateClusterSpecsDetails(object):
             The value to assign to the data_node_host_memory_gb property of this UpdateClusterSpecsDetails.
         :type data_node_host_memory_gb: int
 
+        :param data_node_host_shape:
+            The value to assign to the data_node_host_shape property of this UpdateClusterSpecsDetails.
+        :type data_node_host_shape: str
+
+        :param search_node_host_shape:
+            The value to assign to the search_node_host_shape property of this UpdateClusterSpecsDetails.
+        :type search_node_host_shape: str
+
+        :param search_node_host_ocpu_count:
+            The value to assign to the search_node_host_ocpu_count property of this UpdateClusterSpecsDetails.
+        :type search_node_host_ocpu_count: int
+
+        :param search_node_host_memory_gb:
+            The value to assign to the search_node_host_memory_gb property of this UpdateClusterSpecsDetails.
+        :type search_node_host_memory_gb: int
+
         :param software_version:
             The value to assign to the software_version property of this UpdateClusterSpecsDetails.
         :type software_version: str
@@ -47,6 +67,10 @@ class UpdateClusterSpecsDetails(object):
         :param dashboard_software_version:
             The value to assign to the dashboard_software_version property of this UpdateClusterSpecsDetails.
         :type dashboard_software_version: str
+
+        :param opendashboard_node_host_shape:
+            The value to assign to the opendashboard_node_host_shape property of this UpdateClusterSpecsDetails.
+        :type opendashboard_node_host_shape: str
 
         :param cluster_private_endpoint:
             The value to assign to the cluster_private_endpoint property of this UpdateClusterSpecsDetails.
@@ -57,29 +81,47 @@ class UpdateClusterSpecsDetails(object):
             'cluster_id': 'str',
             'master_node_host_ocpu_count': 'int',
             'master_node_host_memory_gb': 'int',
+            'master_node_host_shape': 'str',
             'data_node_host_ocpu_count': 'int',
             'data_node_host_memory_gb': 'int',
+            'data_node_host_shape': 'str',
+            'search_node_host_shape': 'str',
+            'search_node_host_ocpu_count': 'int',
+            'search_node_host_memory_gb': 'int',
             'software_version': 'str',
             'dashboard_software_version': 'str',
+            'opendashboard_node_host_shape': 'str',
             'cluster_private_endpoint': 'str'
         }
         self.attribute_map = {
             'cluster_id': 'clusterId',
             'master_node_host_ocpu_count': 'masterNodeHostOcpuCount',
             'master_node_host_memory_gb': 'masterNodeHostMemoryGB',
+            'master_node_host_shape': 'masterNodeHostShape',
             'data_node_host_ocpu_count': 'dataNodeHostOcpuCount',
             'data_node_host_memory_gb': 'dataNodeHostMemoryGB',
+            'data_node_host_shape': 'dataNodeHostShape',
+            'search_node_host_shape': 'searchNodeHostShape',
+            'search_node_host_ocpu_count': 'searchNodeHostOcpuCount',
+            'search_node_host_memory_gb': 'searchNodeHostMemoryGB',
             'software_version': 'softwareVersion',
             'dashboard_software_version': 'dashboardSoftwareVersion',
+            'opendashboard_node_host_shape': 'opendashboardNodeHostShape',
             'cluster_private_endpoint': 'clusterPrivateEndpoint'
         }
         self._cluster_id = None
         self._master_node_host_ocpu_count = None
         self._master_node_host_memory_gb = None
+        self._master_node_host_shape = None
         self._data_node_host_ocpu_count = None
         self._data_node_host_memory_gb = None
+        self._data_node_host_shape = None
+        self._search_node_host_shape = None
+        self._search_node_host_ocpu_count = None
+        self._search_node_host_memory_gb = None
         self._software_version = None
         self._dashboard_software_version = None
+        self._opendashboard_node_host_shape = None
         self._cluster_private_endpoint = None
 
     @property
@@ -155,6 +197,30 @@ class UpdateClusterSpecsDetails(object):
         self._master_node_host_memory_gb = master_node_host_memory_gb
 
     @property
+    def master_node_host_shape(self):
+        """
+        Gets the master_node_host_shape of this UpdateClusterSpecsDetails.
+        The node shape for the cluster's master nodes.
+
+
+        :return: The master_node_host_shape of this UpdateClusterSpecsDetails.
+        :rtype: str
+        """
+        return self._master_node_host_shape
+
+    @master_node_host_shape.setter
+    def master_node_host_shape(self, master_node_host_shape):
+        """
+        Sets the master_node_host_shape of this UpdateClusterSpecsDetails.
+        The node shape for the cluster's master nodes.
+
+
+        :param master_node_host_shape: The master_node_host_shape of this UpdateClusterSpecsDetails.
+        :type: str
+        """
+        self._master_node_host_shape = master_node_host_shape
+
+    @property
     def data_node_host_ocpu_count(self):
         """
         Gets the data_node_host_ocpu_count of this UpdateClusterSpecsDetails.
@@ -203,6 +269,102 @@ class UpdateClusterSpecsDetails(object):
         self._data_node_host_memory_gb = data_node_host_memory_gb
 
     @property
+    def data_node_host_shape(self):
+        """
+        Gets the data_node_host_shape of this UpdateClusterSpecsDetails.
+        The node shape for the cluster's data nodes.
+
+
+        :return: The data_node_host_shape of this UpdateClusterSpecsDetails.
+        :rtype: str
+        """
+        return self._data_node_host_shape
+
+    @data_node_host_shape.setter
+    def data_node_host_shape(self, data_node_host_shape):
+        """
+        Sets the data_node_host_shape of this UpdateClusterSpecsDetails.
+        The node shape for the cluster's data nodes.
+
+
+        :param data_node_host_shape: The data_node_host_shape of this UpdateClusterSpecsDetails.
+        :type: str
+        """
+        self._data_node_host_shape = data_node_host_shape
+
+    @property
+    def search_node_host_shape(self):
+        """
+        Gets the search_node_host_shape of this UpdateClusterSpecsDetails.
+        The node shape for the cluster's search nodes.
+
+
+        :return: The search_node_host_shape of this UpdateClusterSpecsDetails.
+        :rtype: str
+        """
+        return self._search_node_host_shape
+
+    @search_node_host_shape.setter
+    def search_node_host_shape(self, search_node_host_shape):
+        """
+        Sets the search_node_host_shape of this UpdateClusterSpecsDetails.
+        The node shape for the cluster's search nodes.
+
+
+        :param search_node_host_shape: The search_node_host_shape of this UpdateClusterSpecsDetails.
+        :type: str
+        """
+        self._search_node_host_shape = search_node_host_shape
+
+    @property
+    def search_node_host_ocpu_count(self):
+        """
+        Gets the search_node_host_ocpu_count of this UpdateClusterSpecsDetails.
+        The number of OCPUs configured for the cluster's search nodes.
+
+
+        :return: The search_node_host_ocpu_count of this UpdateClusterSpecsDetails.
+        :rtype: int
+        """
+        return self._search_node_host_ocpu_count
+
+    @search_node_host_ocpu_count.setter
+    def search_node_host_ocpu_count(self, search_node_host_ocpu_count):
+        """
+        Sets the search_node_host_ocpu_count of this UpdateClusterSpecsDetails.
+        The number of OCPUs configured for the cluster's search nodes.
+
+
+        :param search_node_host_ocpu_count: The search_node_host_ocpu_count of this UpdateClusterSpecsDetails.
+        :type: int
+        """
+        self._search_node_host_ocpu_count = search_node_host_ocpu_count
+
+    @property
+    def search_node_host_memory_gb(self):
+        """
+        Gets the search_node_host_memory_gb of this UpdateClusterSpecsDetails.
+        The amount of memory in GB, for the cluster's search nodes.
+
+
+        :return: The search_node_host_memory_gb of this UpdateClusterSpecsDetails.
+        :rtype: int
+        """
+        return self._search_node_host_memory_gb
+
+    @search_node_host_memory_gb.setter
+    def search_node_host_memory_gb(self, search_node_host_memory_gb):
+        """
+        Sets the search_node_host_memory_gb of this UpdateClusterSpecsDetails.
+        The amount of memory in GB, for the cluster's search nodes.
+
+
+        :param search_node_host_memory_gb: The search_node_host_memory_gb of this UpdateClusterSpecsDetails.
+        :type: int
+        """
+        self._search_node_host_memory_gb = search_node_host_memory_gb
+
+    @property
     def software_version(self):
         """
         Gets the software_version of this UpdateClusterSpecsDetails.
@@ -249,6 +411,30 @@ class UpdateClusterSpecsDetails(object):
         :type: str
         """
         self._dashboard_software_version = dashboard_software_version
+
+    @property
+    def opendashboard_node_host_shape(self):
+        """
+        Gets the opendashboard_node_host_shape of this UpdateClusterSpecsDetails.
+        The shape node for the cluster's OpenSearch Dashboard nodes.
+
+
+        :return: The opendashboard_node_host_shape of this UpdateClusterSpecsDetails.
+        :rtype: str
+        """
+        return self._opendashboard_node_host_shape
+
+    @opendashboard_node_host_shape.setter
+    def opendashboard_node_host_shape(self, opendashboard_node_host_shape):
+        """
+        Sets the opendashboard_node_host_shape of this UpdateClusterSpecsDetails.
+        The shape node for the cluster's OpenSearch Dashboard nodes.
+
+
+        :param opendashboard_node_host_shape: The opendashboard_node_host_shape of this UpdateClusterSpecsDetails.
+        :type: str
+        """
+        self._opendashboard_node_host_shape = opendashboard_node_host_shape
 
     @property
     def cluster_private_endpoint(self):

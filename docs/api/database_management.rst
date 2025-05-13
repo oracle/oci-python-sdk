@@ -183,7 +183,6 @@ Database Management
     oci.database_management.models.DisableAutonomousDatabaseManagementFeatureDetails
     oci.database_management.models.DisableDatabaseManagementFeatureDetails
     oci.database_management.models.DisableExternalContainerDatabaseManagementFeatureDetails
-    oci.database_management.models.DisableExternalMysqlAssociatedServiceDetails
     oci.database_management.models.DisableExternalNonContainerDatabaseManagementFeatureDetails
     oci.database_management.models.DisableExternalPluggableDatabaseManagementFeatureDetails
     oci.database_management.models.DisableHighFrequencyAutomaticSpmEvolveAdvisorTaskDetails
@@ -214,7 +213,6 @@ Database Management
     oci.database_management.models.EnableExternalDbSystemDatabaseManagementDetails
     oci.database_management.models.EnableExternalDbSystemStackMonitoringDetails
     oci.database_management.models.EnableExternalExadataInfrastructureManagementDetails
-    oci.database_management.models.EnableExternalMysqlAssociatedServiceDetails
     oci.database_management.models.EnableExternalNonContainerDatabaseManagementFeatureDetails
     oci.database_management.models.EnableExternalPluggableDatabaseManagementFeatureDetails
     oci.database_management.models.EnableHighFrequencyAutomaticSpmEvolveAdvisorTaskDetails

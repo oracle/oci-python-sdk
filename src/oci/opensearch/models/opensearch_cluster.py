@@ -58,6 +58,10 @@ class OpensearchCluster(object):
     #: This constant has a value of "BM"
     DATA_NODE_HOST_TYPE_BM = "BM"
 
+    #: A constant which can be used with the search_node_host_type property of a OpensearchCluster.
+    #: This constant has a value of "FLEX"
+    SEARCH_NODE_HOST_TYPE_FLEX = "FLEX"
+
     #: A constant which can be used with the security_mode property of a OpensearchCluster.
     #: This constant has a value of "DISABLED"
     SECURITY_MODE_DISABLED = "DISABLED"
@@ -159,6 +163,10 @@ class OpensearchCluster(object):
             The value to assign to the master_node_host_bare_metal_shape property of this OpensearchCluster.
         :type master_node_host_bare_metal_shape: str
 
+        :param master_node_host_shape:
+            The value to assign to the master_node_host_shape property of this OpensearchCluster.
+        :type master_node_host_shape: str
+
         :param master_node_host_ocpu_count:
             The value to assign to the master_node_host_ocpu_count property of this OpensearchCluster.
         :type master_node_host_ocpu_count: int
@@ -181,6 +189,10 @@ class OpensearchCluster(object):
             The value to assign to the data_node_host_bare_metal_shape property of this OpensearchCluster.
         :type data_node_host_bare_metal_shape: str
 
+        :param data_node_host_shape:
+            The value to assign to the data_node_host_shape property of this OpensearchCluster.
+        :type data_node_host_shape: str
+
         :param data_node_host_ocpu_count:
             The value to assign to the data_node_host_ocpu_count property of this OpensearchCluster.
         :type data_node_host_ocpu_count: int
@@ -192,6 +204,36 @@ class OpensearchCluster(object):
         :param data_node_storage_gb:
             The value to assign to the data_node_storage_gb property of this OpensearchCluster.
         :type data_node_storage_gb: int
+
+        :param search_node_count:
+            The value to assign to the search_node_count property of this OpensearchCluster.
+        :type search_node_count: int
+
+        :param search_node_host_type:
+            The value to assign to the search_node_host_type property of this OpensearchCluster.
+            Allowed values for this property are: "FLEX", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type search_node_host_type: str
+
+        :param search_node_host_shape:
+            The value to assign to the search_node_host_shape property of this OpensearchCluster.
+        :type search_node_host_shape: str
+
+        :param search_node_host_ocpu_count:
+            The value to assign to the search_node_host_ocpu_count property of this OpensearchCluster.
+        :type search_node_host_ocpu_count: int
+
+        :param search_node_host_memory_gb:
+            The value to assign to the search_node_host_memory_gb property of this OpensearchCluster.
+        :type search_node_host_memory_gb: int
+
+        :param search_node_storage_gb:
+            The value to assign to the search_node_storage_gb property of this OpensearchCluster.
+        :type search_node_storage_gb: int
+
+        :param opendashboard_node_host_shape:
+            The value to assign to the opendashboard_node_host_shape property of this OpensearchCluster.
+        :type opendashboard_node_host_shape: str
 
         :param opendashboard_node_count:
             The value to assign to the opendashboard_node_count property of this OpensearchCluster.
@@ -293,14 +335,23 @@ class OpensearchCluster(object):
             'master_node_count': 'int',
             'master_node_host_type': 'str',
             'master_node_host_bare_metal_shape': 'str',
+            'master_node_host_shape': 'str',
             'master_node_host_ocpu_count': 'int',
             'master_node_host_memory_gb': 'int',
             'data_node_count': 'int',
             'data_node_host_type': 'str',
             'data_node_host_bare_metal_shape': 'str',
+            'data_node_host_shape': 'str',
             'data_node_host_ocpu_count': 'int',
             'data_node_host_memory_gb': 'int',
             'data_node_storage_gb': 'int',
+            'search_node_count': 'int',
+            'search_node_host_type': 'str',
+            'search_node_host_shape': 'str',
+            'search_node_host_ocpu_count': 'int',
+            'search_node_host_memory_gb': 'int',
+            'search_node_storage_gb': 'int',
+            'opendashboard_node_host_shape': 'str',
             'opendashboard_node_count': 'int',
             'opendashboard_node_host_ocpu_count': 'int',
             'opendashboard_node_host_memory_gb': 'int',
@@ -342,14 +393,23 @@ class OpensearchCluster(object):
             'master_node_count': 'masterNodeCount',
             'master_node_host_type': 'masterNodeHostType',
             'master_node_host_bare_metal_shape': 'masterNodeHostBareMetalShape',
+            'master_node_host_shape': 'masterNodeHostShape',
             'master_node_host_ocpu_count': 'masterNodeHostOcpuCount',
             'master_node_host_memory_gb': 'masterNodeHostMemoryGB',
             'data_node_count': 'dataNodeCount',
             'data_node_host_type': 'dataNodeHostType',
             'data_node_host_bare_metal_shape': 'dataNodeHostBareMetalShape',
+            'data_node_host_shape': 'dataNodeHostShape',
             'data_node_host_ocpu_count': 'dataNodeHostOcpuCount',
             'data_node_host_memory_gb': 'dataNodeHostMemoryGB',
             'data_node_storage_gb': 'dataNodeStorageGB',
+            'search_node_count': 'searchNodeCount',
+            'search_node_host_type': 'searchNodeHostType',
+            'search_node_host_shape': 'searchNodeHostShape',
+            'search_node_host_ocpu_count': 'searchNodeHostOcpuCount',
+            'search_node_host_memory_gb': 'searchNodeHostMemoryGB',
+            'search_node_storage_gb': 'searchNodeStorageGB',
+            'opendashboard_node_host_shape': 'opendashboardNodeHostShape',
             'opendashboard_node_count': 'opendashboardNodeCount',
             'opendashboard_node_host_ocpu_count': 'opendashboardNodeHostOcpuCount',
             'opendashboard_node_host_memory_gb': 'opendashboardNodeHostMemoryGB',
@@ -390,14 +450,23 @@ class OpensearchCluster(object):
         self._master_node_count = None
         self._master_node_host_type = None
         self._master_node_host_bare_metal_shape = None
+        self._master_node_host_shape = None
         self._master_node_host_ocpu_count = None
         self._master_node_host_memory_gb = None
         self._data_node_count = None
         self._data_node_host_type = None
         self._data_node_host_bare_metal_shape = None
+        self._data_node_host_shape = None
         self._data_node_host_ocpu_count = None
         self._data_node_host_memory_gb = None
         self._data_node_storage_gb = None
+        self._search_node_count = None
+        self._search_node_host_type = None
+        self._search_node_host_shape = None
+        self._search_node_host_ocpu_count = None
+        self._search_node_host_memory_gb = None
+        self._search_node_storage_gb = None
+        self._opendashboard_node_host_shape = None
         self._opendashboard_node_count = None
         self._opendashboard_node_host_ocpu_count = None
         self._opendashboard_node_host_memory_gb = None
@@ -917,6 +986,30 @@ class OpensearchCluster(object):
         self._master_node_host_bare_metal_shape = master_node_host_bare_metal_shape
 
     @property
+    def master_node_host_shape(self):
+        """
+        Gets the master_node_host_shape of this OpensearchCluster.
+        The node shape for the cluster's master nodes.
+
+
+        :return: The master_node_host_shape of this OpensearchCluster.
+        :rtype: str
+        """
+        return self._master_node_host_shape
+
+    @master_node_host_shape.setter
+    def master_node_host_shape(self, master_node_host_shape):
+        """
+        Sets the master_node_host_shape of this OpensearchCluster.
+        The node shape for the cluster's master nodes.
+
+
+        :param master_node_host_shape: The master_node_host_shape of this OpensearchCluster.
+        :type: str
+        """
+        self._master_node_host_shape = master_node_host_shape
+
+    @property
     def master_node_host_ocpu_count(self):
         """
         **[Required]** Gets the master_node_host_ocpu_count of this OpensearchCluster.
@@ -1043,6 +1136,30 @@ class OpensearchCluster(object):
         self._data_node_host_bare_metal_shape = data_node_host_bare_metal_shape
 
     @property
+    def data_node_host_shape(self):
+        """
+        Gets the data_node_host_shape of this OpensearchCluster.
+        The node shape for the cluster's data nodes.
+
+
+        :return: The data_node_host_shape of this OpensearchCluster.
+        :rtype: str
+        """
+        return self._data_node_host_shape
+
+    @data_node_host_shape.setter
+    def data_node_host_shape(self, data_node_host_shape):
+        """
+        Sets the data_node_host_shape of this OpensearchCluster.
+        The node shape for the cluster's data nodes.
+
+
+        :param data_node_host_shape: The data_node_host_shape of this OpensearchCluster.
+        :type: str
+        """
+        self._data_node_host_shape = data_node_host_shape
+
+    @property
     def data_node_host_ocpu_count(self):
         """
         **[Required]** Gets the data_node_host_ocpu_count of this OpensearchCluster.
@@ -1113,6 +1230,180 @@ class OpensearchCluster(object):
         :type: int
         """
         self._data_node_storage_gb = data_node_storage_gb
+
+    @property
+    def search_node_count(self):
+        """
+        Gets the search_node_count of this OpensearchCluster.
+        The number of search nodes configured for the cluster.
+
+
+        :return: The search_node_count of this OpensearchCluster.
+        :rtype: int
+        """
+        return self._search_node_count
+
+    @search_node_count.setter
+    def search_node_count(self, search_node_count):
+        """
+        Sets the search_node_count of this OpensearchCluster.
+        The number of search nodes configured for the cluster.
+
+
+        :param search_node_count: The search_node_count of this OpensearchCluster.
+        :type: int
+        """
+        self._search_node_count = search_node_count
+
+    @property
+    def search_node_host_type(self):
+        """
+        Gets the search_node_host_type of this OpensearchCluster.
+        The instance type for the cluster's search nodes.
+
+        Allowed values for this property are: "FLEX", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The search_node_host_type of this OpensearchCluster.
+        :rtype: str
+        """
+        return self._search_node_host_type
+
+    @search_node_host_type.setter
+    def search_node_host_type(self, search_node_host_type):
+        """
+        Sets the search_node_host_type of this OpensearchCluster.
+        The instance type for the cluster's search nodes.
+
+
+        :param search_node_host_type: The search_node_host_type of this OpensearchCluster.
+        :type: str
+        """
+        allowed_values = ["FLEX"]
+        if not value_allowed_none_or_none_sentinel(search_node_host_type, allowed_values):
+            search_node_host_type = 'UNKNOWN_ENUM_VALUE'
+        self._search_node_host_type = search_node_host_type
+
+    @property
+    def search_node_host_shape(self):
+        """
+        Gets the search_node_host_shape of this OpensearchCluster.
+        The node shape for the cluster's search nodes.
+
+
+        :return: The search_node_host_shape of this OpensearchCluster.
+        :rtype: str
+        """
+        return self._search_node_host_shape
+
+    @search_node_host_shape.setter
+    def search_node_host_shape(self, search_node_host_shape):
+        """
+        Sets the search_node_host_shape of this OpensearchCluster.
+        The node shape for the cluster's search nodes.
+
+
+        :param search_node_host_shape: The search_node_host_shape of this OpensearchCluster.
+        :type: str
+        """
+        self._search_node_host_shape = search_node_host_shape
+
+    @property
+    def search_node_host_ocpu_count(self):
+        """
+        Gets the search_node_host_ocpu_count of this OpensearchCluster.
+        The number of OCPUs configured for the cluster's search nodes.
+
+
+        :return: The search_node_host_ocpu_count of this OpensearchCluster.
+        :rtype: int
+        """
+        return self._search_node_host_ocpu_count
+
+    @search_node_host_ocpu_count.setter
+    def search_node_host_ocpu_count(self, search_node_host_ocpu_count):
+        """
+        Sets the search_node_host_ocpu_count of this OpensearchCluster.
+        The number of OCPUs configured for the cluster's search nodes.
+
+
+        :param search_node_host_ocpu_count: The search_node_host_ocpu_count of this OpensearchCluster.
+        :type: int
+        """
+        self._search_node_host_ocpu_count = search_node_host_ocpu_count
+
+    @property
+    def search_node_host_memory_gb(self):
+        """
+        Gets the search_node_host_memory_gb of this OpensearchCluster.
+        The amount of memory in GB, for the cluster's search nodes.
+
+
+        :return: The search_node_host_memory_gb of this OpensearchCluster.
+        :rtype: int
+        """
+        return self._search_node_host_memory_gb
+
+    @search_node_host_memory_gb.setter
+    def search_node_host_memory_gb(self, search_node_host_memory_gb):
+        """
+        Sets the search_node_host_memory_gb of this OpensearchCluster.
+        The amount of memory in GB, for the cluster's search nodes.
+
+
+        :param search_node_host_memory_gb: The search_node_host_memory_gb of this OpensearchCluster.
+        :type: int
+        """
+        self._search_node_host_memory_gb = search_node_host_memory_gb
+
+    @property
+    def search_node_storage_gb(self):
+        """
+        Gets the search_node_storage_gb of this OpensearchCluster.
+        The amount of storage in GB, to configure per node for the cluster's search nodes.
+
+
+        :return: The search_node_storage_gb of this OpensearchCluster.
+        :rtype: int
+        """
+        return self._search_node_storage_gb
+
+    @search_node_storage_gb.setter
+    def search_node_storage_gb(self, search_node_storage_gb):
+        """
+        Sets the search_node_storage_gb of this OpensearchCluster.
+        The amount of storage in GB, to configure per node for the cluster's search nodes.
+
+
+        :param search_node_storage_gb: The search_node_storage_gb of this OpensearchCluster.
+        :type: int
+        """
+        self._search_node_storage_gb = search_node_storage_gb
+
+    @property
+    def opendashboard_node_host_shape(self):
+        """
+        Gets the opendashboard_node_host_shape of this OpensearchCluster.
+        The node shape for the cluster's OpenSearch Dashboard nodes.
+
+
+        :return: The opendashboard_node_host_shape of this OpensearchCluster.
+        :rtype: str
+        """
+        return self._opendashboard_node_host_shape
+
+    @opendashboard_node_host_shape.setter
+    def opendashboard_node_host_shape(self, opendashboard_node_host_shape):
+        """
+        Sets the opendashboard_node_host_shape of this OpensearchCluster.
+        The node shape for the cluster's OpenSearch Dashboard nodes.
+
+
+        :param opendashboard_node_host_shape: The opendashboard_node_host_shape of this OpensearchCluster.
+        :type: str
+        """
+        self._opendashboard_node_host_shape = opendashboard_node_host_shape
 
     @property
     def opendashboard_node_count(self):

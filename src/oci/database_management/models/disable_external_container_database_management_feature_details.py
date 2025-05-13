@@ -37,14 +37,21 @@ class DisableExternalContainerDatabaseManagementFeatureDetails(object):
             Allowed values for this property are: "DIAGNOSTICS_AND_MANAGEMENT", "DB_LIFECYCLE_MANAGEMENT", "SQLWATCH"
         :type feature: str
 
+        :param can_disable_all_pdbs:
+            The value to assign to the can_disable_all_pdbs property of this DisableExternalContainerDatabaseManagementFeatureDetails.
+        :type can_disable_all_pdbs: bool
+
         """
         self.swagger_types = {
-            'feature': 'str'
+            'feature': 'str',
+            'can_disable_all_pdbs': 'bool'
         }
         self.attribute_map = {
-            'feature': 'feature'
+            'feature': 'feature',
+            'can_disable_all_pdbs': 'canDisableAllPdbs'
         }
         self._feature = None
+        self._can_disable_all_pdbs = None
 
     @property
     def feature(self):
@@ -76,6 +83,30 @@ class DisableExternalContainerDatabaseManagementFeatureDetails(object):
                 f"Invalid value for `feature`, must be None or one of {allowed_values}"
             )
         self._feature = feature
+
+    @property
+    def can_disable_all_pdbs(self):
+        """
+        Gets the can_disable_all_pdbs of this DisableExternalContainerDatabaseManagementFeatureDetails.
+        Indicates whether Diagnostics & Management should be disabled for the pluggable databases before disabling it for the container database.
+
+
+        :return: The can_disable_all_pdbs of this DisableExternalContainerDatabaseManagementFeatureDetails.
+        :rtype: bool
+        """
+        return self._can_disable_all_pdbs
+
+    @can_disable_all_pdbs.setter
+    def can_disable_all_pdbs(self, can_disable_all_pdbs):
+        """
+        Sets the can_disable_all_pdbs of this DisableExternalContainerDatabaseManagementFeatureDetails.
+        Indicates whether Diagnostics & Management should be disabled for the pluggable databases before disabling it for the container database.
+
+
+        :param can_disable_all_pdbs: The can_disable_all_pdbs of this DisableExternalContainerDatabaseManagementFeatureDetails.
+        :type: bool
+        """
+        self._can_disable_all_pdbs = can_disable_all_pdbs
 
     def __repr__(self):
         return formatted_flat_dict(self)

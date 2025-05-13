@@ -36,6 +36,10 @@ class CreateOpensearchClusterPipelineDetails(object):
             The value to assign to the node_count property of this CreateOpensearchClusterPipelineDetails.
         :type node_count: int
 
+        :param node_shape:
+            The value to assign to the node_shape property of this CreateOpensearchClusterPipelineDetails.
+        :type node_shape: str
+
         :param pipeline_configuration_body:
             The value to assign to the pipeline_configuration_body property of this CreateOpensearchClusterPipelineDetails.
         :type pipeline_configuration_body: str
@@ -86,6 +90,7 @@ class CreateOpensearchClusterPipelineDetails(object):
             'ocpu_count': 'int',
             'memory_gb': 'int',
             'node_count': 'int',
+            'node_shape': 'str',
             'pipeline_configuration_body': 'str',
             'data_prepper_configuration_body': 'str',
             'compartment_id': 'str',
@@ -103,6 +108,7 @@ class CreateOpensearchClusterPipelineDetails(object):
             'ocpu_count': 'ocpuCount',
             'memory_gb': 'memoryGB',
             'node_count': 'nodeCount',
+            'node_shape': 'nodeShape',
             'pipeline_configuration_body': 'pipelineConfigurationBody',
             'data_prepper_configuration_body': 'dataPrepperConfigurationBody',
             'compartment_id': 'compartmentId',
@@ -119,6 +125,7 @@ class CreateOpensearchClusterPipelineDetails(object):
         self._ocpu_count = None
         self._memory_gb = None
         self._node_count = None
+        self._node_shape = None
         self._pipeline_configuration_body = None
         self._data_prepper_configuration_body = None
         self._compartment_id = None
@@ -226,6 +233,30 @@ class CreateOpensearchClusterPipelineDetails(object):
         :type: int
         """
         self._node_count = node_count
+
+    @property
+    def node_shape(self):
+        """
+        Gets the node_shape of this CreateOpensearchClusterPipelineDetails.
+        The pipeline node shape.
+
+
+        :return: The node_shape of this CreateOpensearchClusterPipelineDetails.
+        :rtype: str
+        """
+        return self._node_shape
+
+    @node_shape.setter
+    def node_shape(self, node_shape):
+        """
+        Sets the node_shape of this CreateOpensearchClusterPipelineDetails.
+        The pipeline node shape.
+
+
+        :param node_shape: The node_shape of this CreateOpensearchClusterPipelineDetails.
+        :type: str
+        """
+        self._node_shape = node_shape
 
     @property
     def pipeline_configuration_body(self):

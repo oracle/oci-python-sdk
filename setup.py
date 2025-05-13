@@ -40,6 +40,15 @@ requires = [
     "circuitbreaker>=1.3.1,<3.0.0; python_version >= '3.7'"
 ]
 
+extras_require = {
+    'adk': [
+        "docstring-parser>=0.16; python_version >= '3.10' and python_version < '4'",
+        "pydantic>=2.10.6; python_version >= '3.10' and python_version < '4'",
+        "rich>=13.9.4; python_version >= '3.10' and python_version < '4'",
+        "mcp>=1.6.0; python_version >= '3.10' and python_version < '4'"
+    ]
+}
+
 setup(
     name="oci",
     url="https://docs.oracle.com/en-us/iaas/tools/python/latest/index.html",
@@ -62,5 +71,6 @@ setup(
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
-    ]
+    ],
+    extras_require = extras_require
 )

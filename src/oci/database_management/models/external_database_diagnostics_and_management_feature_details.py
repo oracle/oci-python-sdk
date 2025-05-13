@@ -43,20 +43,34 @@ class ExternalDatabaseDiagnosticsAndManagementFeatureDetails(ExternalDatabaseFea
             Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
         :type license_model: str
 
+        :param can_enable_all_current_pdbs:
+            The value to assign to the can_enable_all_current_pdbs property of this ExternalDatabaseDiagnosticsAndManagementFeatureDetails.
+        :type can_enable_all_current_pdbs: bool
+
+        :param is_auto_enable_pluggable_database:
+            The value to assign to the is_auto_enable_pluggable_database property of this ExternalDatabaseDiagnosticsAndManagementFeatureDetails.
+        :type is_auto_enable_pluggable_database: bool
+
         """
         self.swagger_types = {
             'feature': 'str',
             'connector_details': 'ConnectorDetails',
-            'license_model': 'str'
+            'license_model': 'str',
+            'can_enable_all_current_pdbs': 'bool',
+            'is_auto_enable_pluggable_database': 'bool'
         }
         self.attribute_map = {
             'feature': 'feature',
             'connector_details': 'connectorDetails',
-            'license_model': 'licenseModel'
+            'license_model': 'licenseModel',
+            'can_enable_all_current_pdbs': 'canEnableAllCurrentPdbs',
+            'is_auto_enable_pluggable_database': 'isAutoEnablePluggableDatabase'
         }
         self._feature = None
         self._connector_details = None
         self._license_model = None
+        self._can_enable_all_current_pdbs = None
+        self._is_auto_enable_pluggable_database = None
         self._feature = 'DIAGNOSTICS_AND_MANAGEMENT'
 
     @property
@@ -89,6 +103,54 @@ class ExternalDatabaseDiagnosticsAndManagementFeatureDetails(ExternalDatabaseFea
                 f"Invalid value for `license_model`, must be None or one of {allowed_values}"
             )
         self._license_model = license_model
+
+    @property
+    def can_enable_all_current_pdbs(self):
+        """
+        Gets the can_enable_all_current_pdbs of this ExternalDatabaseDiagnosticsAndManagementFeatureDetails.
+        Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
+
+
+        :return: The can_enable_all_current_pdbs of this ExternalDatabaseDiagnosticsAndManagementFeatureDetails.
+        :rtype: bool
+        """
+        return self._can_enable_all_current_pdbs
+
+    @can_enable_all_current_pdbs.setter
+    def can_enable_all_current_pdbs(self, can_enable_all_current_pdbs):
+        """
+        Sets the can_enable_all_current_pdbs of this ExternalDatabaseDiagnosticsAndManagementFeatureDetails.
+        Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
+
+
+        :param can_enable_all_current_pdbs: The can_enable_all_current_pdbs of this ExternalDatabaseDiagnosticsAndManagementFeatureDetails.
+        :type: bool
+        """
+        self._can_enable_all_current_pdbs = can_enable_all_current_pdbs
+
+    @property
+    def is_auto_enable_pluggable_database(self):
+        """
+        Gets the is_auto_enable_pluggable_database of this ExternalDatabaseDiagnosticsAndManagementFeatureDetails.
+        Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
+
+
+        :return: The is_auto_enable_pluggable_database of this ExternalDatabaseDiagnosticsAndManagementFeatureDetails.
+        :rtype: bool
+        """
+        return self._is_auto_enable_pluggable_database
+
+    @is_auto_enable_pluggable_database.setter
+    def is_auto_enable_pluggable_database(self, is_auto_enable_pluggable_database):
+        """
+        Sets the is_auto_enable_pluggable_database of this ExternalDatabaseDiagnosticsAndManagementFeatureDetails.
+        Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
+
+
+        :param is_auto_enable_pluggable_database: The is_auto_enable_pluggable_database of this ExternalDatabaseDiagnosticsAndManagementFeatureDetails.
+        :type: bool
+        """
+        self._is_auto_enable_pluggable_database = is_auto_enable_pluggable_database
 
     def __repr__(self):
         return formatted_flat_dict(self)

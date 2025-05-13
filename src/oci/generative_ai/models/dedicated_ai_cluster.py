@@ -109,6 +109,14 @@ class DedicatedAiCluster(object):
     #: This constant has a value of "LARGE_GENERIC_V2"
     UNIT_SHAPE_LARGE_GENERIC_V2 = "LARGE_GENERIC_V2"
 
+    #: A constant which can be used with the unit_shape property of a DedicatedAiCluster.
+    #: This constant has a value of "LARGE_COHERE_V3"
+    UNIT_SHAPE_LARGE_COHERE_V3 = "LARGE_COHERE_V3"
+
+    #: A constant which can be used with the unit_shape property of a DedicatedAiCluster.
+    #: This constant has a value of "RERANK_COHERE"
+    UNIT_SHAPE_RERANK_COHERE = "RERANK_COHERE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DedicatedAiCluster object with values from keyword arguments.
@@ -160,7 +168,7 @@ class DedicatedAiCluster(object):
 
         :param unit_shape:
             The value to assign to the unit_shape property of this DedicatedAiCluster.
-            Allowed values for this property are: "LARGE_COHERE", "LARGE_COHERE_V2", "SMALL_COHERE", "SMALL_COHERE_V2", "SMALL_COHERE_4", "EMBED_COHERE", "LLAMA2_70", "LARGE_GENERIC", "LARGE_COHERE_V2_2", "LARGE_GENERIC_4", "SMALL_GENERIC_V2", "LARGE_GENERIC_2", "LARGE_GENERIC_V2", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "LARGE_COHERE", "LARGE_COHERE_V2", "SMALL_COHERE", "SMALL_COHERE_V2", "SMALL_COHERE_4", "EMBED_COHERE", "LLAMA2_70", "LARGE_GENERIC", "LARGE_COHERE_V2_2", "LARGE_GENERIC_4", "SMALL_GENERIC_V2", "LARGE_GENERIC_2", "LARGE_GENERIC_V2", "LARGE_COHERE_V3", "RERANK_COHERE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type unit_shape: str
 
@@ -500,7 +508,7 @@ class DedicatedAiCluster(object):
         **[Required]** Gets the unit_shape of this DedicatedAiCluster.
         The shape of dedicated unit in this AI cluster. The underlying hardware configuration is hidden from customers.
 
-        Allowed values for this property are: "LARGE_COHERE", "LARGE_COHERE_V2", "SMALL_COHERE", "SMALL_COHERE_V2", "SMALL_COHERE_4", "EMBED_COHERE", "LLAMA2_70", "LARGE_GENERIC", "LARGE_COHERE_V2_2", "LARGE_GENERIC_4", "SMALL_GENERIC_V2", "LARGE_GENERIC_2", "LARGE_GENERIC_V2", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "LARGE_COHERE", "LARGE_COHERE_V2", "SMALL_COHERE", "SMALL_COHERE_V2", "SMALL_COHERE_4", "EMBED_COHERE", "LLAMA2_70", "LARGE_GENERIC", "LARGE_COHERE_V2_2", "LARGE_GENERIC_4", "SMALL_GENERIC_V2", "LARGE_GENERIC_2", "LARGE_GENERIC_V2", "LARGE_COHERE_V3", "RERANK_COHERE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -519,7 +527,7 @@ class DedicatedAiCluster(object):
         :param unit_shape: The unit_shape of this DedicatedAiCluster.
         :type: str
         """
-        allowed_values = ["LARGE_COHERE", "LARGE_COHERE_V2", "SMALL_COHERE", "SMALL_COHERE_V2", "SMALL_COHERE_4", "EMBED_COHERE", "LLAMA2_70", "LARGE_GENERIC", "LARGE_COHERE_V2_2", "LARGE_GENERIC_4", "SMALL_GENERIC_V2", "LARGE_GENERIC_2", "LARGE_GENERIC_V2"]
+        allowed_values = ["LARGE_COHERE", "LARGE_COHERE_V2", "SMALL_COHERE", "SMALL_COHERE_V2", "SMALL_COHERE_4", "EMBED_COHERE", "LLAMA2_70", "LARGE_GENERIC", "LARGE_COHERE_V2_2", "LARGE_GENERIC_4", "SMALL_GENERIC_V2", "LARGE_GENERIC_2", "LARGE_GENERIC_V2", "LARGE_COHERE_V3", "RERANK_COHERE"]
         if not value_allowed_none_or_none_sentinel(unit_shape, allowed_values):
             unit_shape = 'UNKNOWN_ENUM_VALUE'
         self._unit_shape = unit_shape

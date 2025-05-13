@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ModifyDatabaseManagementFeatureDetails(object):
     """
-    The details required to modify a Database Management features for an Oracle cloud database.
+    The details required to modify a Database Management feature for an Oracle cloud database.
     """
 
     def __init__(self, **kwargs):

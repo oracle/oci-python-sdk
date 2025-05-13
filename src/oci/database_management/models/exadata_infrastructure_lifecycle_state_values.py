@@ -15,83 +15,87 @@ class ExadataInfrastructureLifecycleStateValues(object):
     the lifecycle state values for the Exadata infrastructure.
     """
 
-    #: A constant which can be used with the lifecycle_state property of a ExadataInfrastructureLifecycleStateValues.
+    #: A constant which can be used with the state property of a ExadataInfrastructureLifecycleStateValues.
     #: This constant has a value of "CREATING"
-    LIFECYCLE_STATE_CREATING = "CREATING"
+    STATE_CREATING = "CREATING"
 
-    #: A constant which can be used with the lifecycle_state property of a ExadataInfrastructureLifecycleStateValues.
+    #: A constant which can be used with the state property of a ExadataInfrastructureLifecycleStateValues.
     #: This constant has a value of "ACTIVE"
-    LIFECYCLE_STATE_ACTIVE = "ACTIVE"
+    STATE_ACTIVE = "ACTIVE"
 
-    #: A constant which can be used with the lifecycle_state property of a ExadataInfrastructureLifecycleStateValues.
+    #: A constant which can be used with the state property of a ExadataInfrastructureLifecycleStateValues.
     #: This constant has a value of "INACTIVE"
-    LIFECYCLE_STATE_INACTIVE = "INACTIVE"
+    STATE_INACTIVE = "INACTIVE"
 
-    #: A constant which can be used with the lifecycle_state property of a ExadataInfrastructureLifecycleStateValues.
+    #: A constant which can be used with the state property of a ExadataInfrastructureLifecycleStateValues.
     #: This constant has a value of "UPDATING"
-    LIFECYCLE_STATE_UPDATING = "UPDATING"
+    STATE_UPDATING = "UPDATING"
 
-    #: A constant which can be used with the lifecycle_state property of a ExadataInfrastructureLifecycleStateValues.
+    #: A constant which can be used with the state property of a ExadataInfrastructureLifecycleStateValues.
     #: This constant has a value of "DELETING"
-    LIFECYCLE_STATE_DELETING = "DELETING"
+    STATE_DELETING = "DELETING"
 
-    #: A constant which can be used with the lifecycle_state property of a ExadataInfrastructureLifecycleStateValues.
+    #: A constant which can be used with the state property of a ExadataInfrastructureLifecycleStateValues.
     #: This constant has a value of "DELETED"
-    LIFECYCLE_STATE_DELETED = "DELETED"
+    STATE_DELETED = "DELETED"
 
-    #: A constant which can be used with the lifecycle_state property of a ExadataInfrastructureLifecycleStateValues.
+    #: A constant which can be used with the state property of a ExadataInfrastructureLifecycleStateValues.
     #: This constant has a value of "FAILED"
-    LIFECYCLE_STATE_FAILED = "FAILED"
+    STATE_FAILED = "FAILED"
+
+    #: A constant which can be used with the state property of a ExadataInfrastructureLifecycleStateValues.
+    #: This constant has a value of "UNKNOWN"
+    STATE_UNKNOWN = "UNKNOWN"
 
     def __init__(self, **kwargs):
         """
         Initializes a new ExadataInfrastructureLifecycleStateValues object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param lifecycle_state:
-            The value to assign to the lifecycle_state property of this ExadataInfrastructureLifecycleStateValues.
-            Allowed values for this property are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED"
-        :type lifecycle_state: str
+        :param state:
+            The value to assign to the state property of this ExadataInfrastructureLifecycleStateValues.
+            Allowed values for this property are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "UNKNOWN"
+        :type state: str
 
         """
         self.swagger_types = {
-            'lifecycle_state': 'str'
+            'state': 'str'
         }
         self.attribute_map = {
-            'lifecycle_state': 'lifecycleState'
+            'state': 'state'
         }
-        self._lifecycle_state = None
+        self._state = None
 
     @property
-    def lifecycle_state(self):
+    def state(self):
         """
-        Gets the lifecycle_state of this ExadataInfrastructureLifecycleStateValues.
-        The current lifecycle state of the database resource.
+        Gets the state of this ExadataInfrastructureLifecycleStateValues.
+        The current lifecycle state of the Exadata infrastructure resource.
 
-        Allowed values for this property are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED"
+        Allowed values for this property are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "UNKNOWN"
 
 
-        :return: The lifecycle_state of this ExadataInfrastructureLifecycleStateValues.
+        :return: The state of this ExadataInfrastructureLifecycleStateValues.
         :rtype: str
         """
-        return self._lifecycle_state
+        return self._state
 
-    @lifecycle_state.setter
-    def lifecycle_state(self, lifecycle_state):
+    @state.setter
+    def state(self, state):
         """
-        Sets the lifecycle_state of this ExadataInfrastructureLifecycleStateValues.
-        The current lifecycle state of the database resource.
+        Sets the state of this ExadataInfrastructureLifecycleStateValues.
+        The current lifecycle state of the Exadata infrastructure resource.
 
 
-        :param lifecycle_state: The lifecycle_state of this ExadataInfrastructureLifecycleStateValues.
+        :param state: The state of this ExadataInfrastructureLifecycleStateValues.
         :type: str
         """
-        allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED"]
-        if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
+        allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "UNKNOWN"]
+        if not value_allowed_none_or_none_sentinel(state, allowed_values):
             raise ValueError(
-                f"Invalid value for `lifecycle_state`, must be None or one of {allowed_values}"
+                f"Invalid value for `state`, must be None or one of {allowed_values}"
             )
-        self._lifecycle_state = lifecycle_state
+        self._state = state
 
     def __repr__(self):
         return formatted_flat_dict(self)
