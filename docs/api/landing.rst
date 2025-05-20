@@ -83,6 +83,10 @@ API Reference
 * :doc:`Diagnosability <database_management/client/oci.database_management.DiagnosabilityClient>`
 * :doc:`Disaster Recovery <disaster_recovery/client/oci.disaster_recovery.DisasterRecoveryClient>`
 * :doc:`Discovery <cloud_bridge/client/oci.cloud_bridge.DiscoveryClient>`
+* :doc:`Distributed Autonomous Db Service <distributed_database/client/oci.distributed_database.DistributedAutonomousDbServiceClient>`
+* :doc:`Distributed Db Private Endpoint Service <distributed_database/client/oci.distributed_database.DistributedDbPrivateEndpointServiceClient>`
+* :doc:`Distributed Db Service <distributed_database/client/oci.distributed_database.DistributedDbServiceClient>`
+* :doc:`Distributed Db Work Request Service <distributed_database/client/oci.distributed_database.DistributedDbWorkRequestServiceClient>`
 * :doc:`Domain <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.DomainClient>`
 * :doc:`Domain Governance <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.DomainGovernanceClient>`
 * :doc:`Ekm <key_management/client/oci.key_management.EkmClient>`
@@ -335,6 +339,7 @@ API Reference
     desktops
     devops
     disaster_recovery
+    distributed_database
     dns
     dts
     em_warehouse

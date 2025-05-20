@@ -36,7 +36,22 @@ def main():
         agent_endpoint_id="ocid1.genaiagentendpoint.oc1.us-chicago-1.amaaaaamnpq",
         name="Support Supervisor",
         instructions="You are a support supervisor. You answer user question using the tools provided.",
-        tools=[product_specialist.as_tool(), billing_specialist.as_tool()]
+        tools=[
+            product_specialist.as_tool(
+                tool_name="invoke_product_specialist_subagent",
+                tool_description="""
+                Use the invoke_product_specialist_subagent when user has product-related inquiries
+                Answer user questions by leveraging available tools and documentation.
+                """,
+            ),
+            billing_specialist.as_tool(
+                tool_name="invoke_billing_specialist_subagent",
+                tool_description="""
+                Use the invoke_billing_specialist_subagent when user has billing-related inquiries.
+                Answer user questions by leveraging available tools and documentation.
+                """,
+            )
+        ]
     )
 
     product_specialist.setup()

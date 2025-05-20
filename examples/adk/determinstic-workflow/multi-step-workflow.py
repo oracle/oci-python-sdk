@@ -14,7 +14,7 @@ This examples shows how you can build "deterministically orchestrated workflows 
 def get_user_preferences():
     # Simulate result you fetched from DB
     return {
-        "email": "j.jing.y.yang@oracle.com",
+        "email": "john.doe@oracle.com",
         "style": ["casual", "humorous"],
         "topics": ["ai"]
     }
@@ -24,7 +24,7 @@ def main():
 
     client = AgentClient(
         auth_type="security_token",
-        profile="BoatOc1",
+        profile="PROFILE_1",
         region="kix"
     )
 

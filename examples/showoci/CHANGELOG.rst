@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+25.05.06 - 25.05.06
+=====================
+* Moved NSG processing dependencies
+* Added Retry to IAM Domain Search
+* Fix small bugs
+* Fixed IAM Domains IDP Jit
+
+=====================
 25.04.29 - 25.04.29
 =====================
 * Added GenAI and GenAI Agents for the enabled regions

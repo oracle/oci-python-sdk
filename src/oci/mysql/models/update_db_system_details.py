@@ -48,6 +48,10 @@ class UpdateDbSystemDetails(object):
             The value to assign to the subnet_id property of this UpdateDbSystemDetails.
         :type subnet_id: str
 
+        :param nsg_ids:
+            The value to assign to the nsg_ids property of this UpdateDbSystemDetails.
+        :type nsg_ids: list[str]
+
         :param database_mode:
             The value to assign to the database_mode property of this UpdateDbSystemDetails.
         :type database_mode: str
@@ -159,6 +163,7 @@ class UpdateDbSystemDetails(object):
             'display_name': 'str',
             'description': 'str',
             'subnet_id': 'str',
+            'nsg_ids': 'list[str]',
             'database_mode': 'str',
             'access_mode': 'str',
             'is_highly_available': 'bool',
@@ -190,6 +195,7 @@ class UpdateDbSystemDetails(object):
             'display_name': 'displayName',
             'description': 'description',
             'subnet_id': 'subnetId',
+            'nsg_ids': 'nsgIds',
             'database_mode': 'databaseMode',
             'access_mode': 'accessMode',
             'is_highly_available': 'isHighlyAvailable',
@@ -220,6 +226,7 @@ class UpdateDbSystemDetails(object):
         self._display_name = None
         self._description = None
         self._subnet_id = None
+        self._nsg_ids = None
         self._database_mode = None
         self._access_mode = None
         self._is_highly_available = None
@@ -318,6 +325,30 @@ class UpdateDbSystemDetails(object):
         :type: str
         """
         self._subnet_id = subnet_id
+
+    @property
+    def nsg_ids(self):
+        """
+        Gets the nsg_ids of this UpdateDbSystemDetails.
+        Network Security Group OCIDs used for the VNIC attachment.
+
+
+        :return: The nsg_ids of this UpdateDbSystemDetails.
+        :rtype: list[str]
+        """
+        return self._nsg_ids
+
+    @nsg_ids.setter
+    def nsg_ids(self, nsg_ids):
+        """
+        Sets the nsg_ids of this UpdateDbSystemDetails.
+        Network Security Group OCIDs used for the VNIC attachment.
+
+
+        :param nsg_ids: The nsg_ids of this UpdateDbSystemDetails.
+        :type: list[str]
+        """
+        self._nsg_ids = nsg_ids
 
     @property
     def database_mode(self):

@@ -39,7 +39,7 @@ import threading
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    version = "25.04.29"
+    version = "25.05.06"
     oci_compatible_version = "2.148.0"
     thread_lock = threading.Lock()
     collection_ljust = 40
@@ -313,6 +313,9 @@ class ShowOCIService(object):
     EXCLUDE_GOLDENGATE = 'GOLDENGATE'
     EXCLUDE_ANNOUNCEMENT = 'ANNOUNCEMENT'
     EXCLUDE_ADVISOR = 'ADVISOR'
+    EXCLUDE_CLOUDGUARD = 'CLOUDGUARD'
+    EXCLUDE_LOGGING = 'LOGGING'
+    EXCLUDE_BASTION = 'BASTION'
 
     ##########################################################################
     # Service not yet available - need to remove on availability
@@ -1270,6 +1273,7 @@ class ShowOCIService(object):
     def __load_print_section_time(self, section_start_time):
         et = time.time() - section_start_time
         print("Section Elapsed Time " + '{:02d}:{:02d}:{:02d}'.format(round(et // 3600), (round(et % 3600 // 60)), round(et % 60)))
+        print("")
 
     ##########################################################################
     # print error
@@ -2821,11 +2825,9 @@ class ShowOCIService(object):
             if self.flags.skip_threads:
                 vcns = self.__load_core_network_vcn(virtual_network, compartments)
                 subnets = self.__load_core_network_subnet(virtual_network, compartments)
-                nsg = self.__load_core_network_nsg(virtual_network, compartments)
 
                 network[self.C_NETWORK_VCN] += vcns
                 network[self.C_NETWORK_SUBNET] += subnets
-                network[self.C_NETWORK_NSG] += nsg
 
                 # merge vcn info to subnets
                 self.__load_core_network_subnet_add_vcn_info()
@@ -2836,6 +2838,7 @@ class ShowOCIService(object):
                 # read network resources only if there are vcns
                 if self.is_vcn_exist_for_region and self.flags.read_network:
 
+                    network[self.C_NETWORK_NSG] += self.__load_core_network_nsg(virtual_network, compartments)
                     network[self.C_NETWORK_SUBNET_PIP] += self.__load_core_network_subnet_private_ip(virtual_network, subnets)
                     network[self.C_NETWORK_VLAN] += self.__load_core_network_vlan(virtual_network, compartments)
                     network[self.C_NETWORK_LPG] += self.__load_core_network_lpg(virtual_network, compartments)
@@ -2871,16 +2874,13 @@ class ShowOCIService(object):
                 with ThreadPoolExecutor(max_workers=self.flags.threads) as executor:
                     future_vcn = executor.submit(self.__load_core_network_vcn, virtual_network, compartments)
                     future_subnet = executor.submit(self.__load_core_network_subnet, virtual_network, compartments)
-                    future_nsg = executor.submit(self.__load_core_network_nsg, virtual_network, compartments)
 
                     # Wait for completion
                     vcns = next(as_completed([future_vcn])).result()
                     subnets = next(as_completed([future_subnet])).result()
-                    nsg = next(as_completed([future_nsg])).result()
 
                     network[self.C_NETWORK_VCN] += vcns
                     network[self.C_NETWORK_SUBNET] += subnets
-                    network[self.C_NETWORK_NSG] += nsg
 
                     # merge vcn info to subnets
                     self.__load_core_network_subnet_add_vcn_info()
@@ -2915,6 +2915,7 @@ class ShowOCIService(object):
                     if self.is_vcn_exist_for_region and self.flags.read_network:
 
                         # Run in parallel
+                        future_nsg = executor.submit(self.__load_core_network_nsg, virtual_network, compartments)
                         future_network_routes = executor.submit(self.__load_core_network_route, virtual_network, compartments)
                         future_network_vir = executor.submit(self.__load_core_network_vc, virtual_network, compartments)
                         future_network_dns = executor.submit(self.__load_core_network_dns_resolvers, dns_client, compartments)
@@ -2971,6 +2972,7 @@ class ShowOCIService(object):
                         network[self.C_NETWORK_FIREWALL_POLICY] += next(as_completed([future_network_fwp])).result()
                         network[self.C_NETWORK_FIREWALL] += next(as_completed([future_network_fw])).result()
                         network[self.C_NETWORK_PRIVATEIP] += next(as_completed([future_network_pip])).result()
+                        network[self.C_NETWORK_NSG] += next(as_completed([future_nsg])).result()
 
                         lb[self.C_LB_BACKEND_SETS] += next(as_completed([future_LB_BACKEND_SETS])).result()
                         lb[self.C_LB_NETWORK_BACKEND_SETS] += next(as_completed([future_LB_NETWORK_BACKEND_SETS])).result()
@@ -3122,7 +3124,7 @@ class ShowOCIService(object):
                         'time_created': self.get_date(vlan.time_created),
                         'lifecycle_state': self.get_value(vlan.lifecycle_state),
                         'nsg_ids': self.get_values(vlan.nsg_ids),
-                        'nsg_names': self.__load_core_network_get_nsg_names(vlan.nsg_ids),
+                        'nsg_names': "",
                         'route_table_id': self.get_value(vlan.route_table_id),
                         'vcn_id': self.get_value(vlan.vcn_id),
                         'compartment_name': str(compartment['name']),
@@ -3829,6 +3831,12 @@ class ShowOCIService(object):
         except Exception as e:
             self.__print_error(e)
             return data
+
+    ##########################################################################
+    # Return NSG names strings from NSG OCIDs
+    ##########################################################################
+    def get_network_nsg_names_from_ids(self, nsg_ids):
+        return self.__load_core_network_get_nsg_names(nsg_ids)
 
     ##########################################################################
     # Return NSG names strings from NSG OCIDs
@@ -5838,12 +5846,19 @@ class ShowOCIService(object):
                         'launch_mode': self.get_value(arr.launch_mode),
                         'is_cross_numa_node': self.get_value(arr.is_cross_numa_node),
                         'extended_metadata': arr.extended_metadata,
-                        'licensing_configs': [{
+                        'licensing_configs': []
+                    }
+
+                    # not all regions has licensing_configs
+                    try:
+                        licensing_array = [{
                             'type': self.get_value(x.type),
                             'license_type': self.get_value(x.license_type),
                             'os_version': self.get_value(x.os_version)
                         } for x in arr.licensing_configs] if arr.licensing_configs else []
-                    }
+                        val['licensing_configs'] = licensing_array
+                    except Exception:
+                        pass
 
                     if arr.launch_options:
                         val['launch_boot_volume_type'] = self.get_value(arr.launch_options.boot_volume_type)
@@ -7631,7 +7646,7 @@ class ShowOCIService(object):
                         'compartment_path': str(compartment['path']),
                         'compartment_id': str(compartment['id']),
                         'nsg_ids': self.get_values(arr.network_security_group_ids),
-                        'nsg_names': self.__load_core_network_get_nsg_names(arr.network_security_group_ids),
+                        'nsg_names': "",
                         'lifecycle_state': self.get_value(arr.lifecycle_state),
                         'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
                         'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
@@ -7817,7 +7832,7 @@ class ShowOCIService(object):
                            'compartment_path': str(compartment['path']),
                            'compartment_id': str(compartment['id']),
                            'nsg_ids': self.get_values(arr.network_security_group_ids),
-                           'nsg_names': self.__load_core_network_get_nsg_names(arr.network_security_group_ids),
+                           'nsg_names': "",
                            'system_tags': [] if arr.system_tags is None else arr.system_tags,
                            'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
                            'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
@@ -11782,27 +11797,28 @@ class ShowOCIService(object):
                     if not self.check_lifecycle_state_active(tab.lifecycle_state):
                         continue
 
-                    value = {'id': str(tab.id),
-                             'name': str(tab.name),
-                             'time_created': str(tab.time_created),
-                             'time_updated': str(tab.time_updated),
-                             'lifecycle_state': str(tab.lifecycle_state),
-                             'lifecycle_details': str(tab.lifecycle_details),
-                             'is_auto_reclaimable': str(tab.is_auto_reclaimable),
-                             'time_of_expiration': str(tab.time_of_expiration),
-                             'sum_info': "NOSQL Database Tables",
-                             'sum_size_gb': str("1"),
-                             'max_read_units': str(tab.table_limits.max_read_units),
-                             'max_write_units': str(tab.table_limits.max_write_units),
-                             'max_storage_in_g_bs': str(tab.table_limits.max_storage_in_g_bs),
-                             'capacity_mode': str(tab.table_limits.capacity_mode),
-                             'compartment_name': str(compartment['name']),
-                             'compartment_path': str(compartment['path']),
-                             'compartment_id': str(compartment['id']),
-                             'defined_tags': [] if tab.defined_tags is None else tab.defined_tags,
-                             'freeform_tags': [] if tab.freeform_tags is None else tab.freeform_tags,
-                             'region_name': str(self.config['region'])
-                             }
+                    value = {
+                        'id': self.get_value(tab.id),
+                        'name': self.get_value(tab.name),
+                        'time_created': self.get_date(tab.time_created),
+                        'time_updated': self.get_date(tab.time_updated),
+                        'lifecycle_state': self.get_value(tab.lifecycle_state),
+                        'lifecycle_details': self.get_value(tab.lifecycle_details),
+                        'is_auto_reclaimable': self.get_value(tab.is_auto_reclaimable),
+                        'time_of_expiration': self.get_value(tab.time_of_expiration),
+                        'sum_info': "NOSQL Database Tables",
+                        'sum_size_gb': str("1"),
+                        'max_read_units': self.get_value(tab.table_limits.max_read_units) if tab.table_limits else "",
+                        'max_write_units': self.get_value(tab.table_limits.max_write_units) if tab.table_limits else "",
+                        'max_storage_in_g_bs': self.get_value(tab.table_limits.max_storage_in_g_bs) if tab.table_limits else "",
+                        'capacity_mode': self.get_value(tab.table_limits.capacity_mode) if tab.table_limits else "",
+                        'compartment_name': str(compartment['name']),
+                        'compartment_path': str(compartment['path']),
+                        'compartment_id': str(compartment['id']),
+                        'defined_tags': [] if tab.defined_tags is None else tab.defined_tags,
+                        'freeform_tags': [] if tab.freeform_tags is None else tab.freeform_tags,
+                        'region_name': str(self.config['region'])
+                    }
 
                     # add the data
                     cnt += 1
@@ -14491,9 +14507,9 @@ class ShowOCIService(object):
             event_client = self.__create_client(oci.events.EventsClient)
             management_agent_client = self.__create_client(oci.management_agent.ManagementAgentClient)
             db_management_client = self.__create_client(oci.database_management.DbManagementClient)
-            bs_client = self.__create_client(oci.bastion.BastionClient)
-            cg_client = self.__create_client(oci.cloud_guard.CloudGuardClient)
-            log_client = self.__create_client(oci.logging.LoggingManagementClient)
+            bs_client = self.__create_client(oci.bastion.BastionClient, key=self.EXCLUDE_BASTION)
+            cg_client = self.__create_client(oci.cloud_guard.CloudGuardClient, key=self.EXCLUDE_CLOUDGUARD)
+            log_client = self.__create_client(oci.logging.LoggingManagementClient, key=self.EXCLUDE_LOGGING)
             kms_client = self.__create_client(oci.key_management.KmsVaultClient, key=self.EXCLUDE_KMS)
             limits_client = self.__create_client(oci.limits.LimitsClient, key=self.EXCLUDE_LIMITS)
             quotas_client = self.__create_client(oci.limits.QuotasClient, key=self.EXCLUDE_QUOTAS)
@@ -18419,6 +18435,10 @@ class ShowOCIService(object):
             header = "Cloud Guard"
             self.__load_print_status_with_threads(header)
 
+            if not cg_client:
+                self.__load_print_thread_exclude(header)
+                return data
+
             # loop on all compartments
             for compartment in compartments:
 
@@ -18586,7 +18606,7 @@ class ShowOCIService(object):
             print("Cloud Guard Scores...")
 
             # clients
-            cg_client = self.__create_client(oci.cloud_guard.CloudGuardClient)
+            cg_client = self.__create_client(oci.cloud_guard.CloudGuardClient, key=self.EXCLUDE_CLOUDGUARD)
 
             # reference to compartments
             root_compartment = self.get_tenancy_id()
@@ -18806,6 +18826,10 @@ class ShowOCIService(object):
             header = "Risk Scores"
             self.__load_print_status_with_threads(header)
 
+            if not cg_client:
+                self.__load_print_thread_exclude(header)
+                return data
+
             array = []
             try:
                 array = cg_client.request_risk_scores(
@@ -18862,6 +18886,10 @@ class ShowOCIService(object):
             errstr = ""
             header = "Security Scores"
             self.__load_print_status_with_threads(header)
+
+            if not cg_client:
+                self.__load_print_thread_exclude(header)
+                return data
 
             array = []
             try:
@@ -20187,7 +20215,10 @@ class ShowOCIDomains(object):
         try:
             if ext_credential is not None:
                 search_request = oci.identity_domains.models.ApiKeySearchRequest(filter='user.ocid eq "' + self.get_value(ocid) + '"', schemas=["urn:ietf:params:scim:api:messages:2.0:SearchRequest"])
-                result = identity_domain_client.search_api_keys(api_key_search_request=search_request)
+                result = identity_domain_client.search_api_keys(
+                    api_key_search_request=search_request,
+                    retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                )
                 for r in result.data.resources:
                     k = {
                         "ocid": r.ocid,
@@ -20208,7 +20239,10 @@ class ShowOCIDomains(object):
         try:
             if ext_credential is not None:
                 search_request = oci.identity_domains.models.AuthTokenSearchRequest(filter='user.ocid eq "' + self.get_value(ocid) + '"', schemas=["urn:ietf:params:scim:api:messages:2.0:SearchRequest"])
-                result = identity_domain_client.search_auth_tokens(auth_token_search_request=search_request)
+                result = identity_domain_client.search_auth_tokens(
+                    auth_token_search_request=search_request,
+                    retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                )
                 for r in result.data.resources:
                     k = {
                         "ocid": r.ocid,
@@ -20230,7 +20264,10 @@ class ShowOCIDomains(object):
         try:
             if ext_credential is not None:
                 search_request = oci.identity_domains.models.CustomerSecretKeySearchRequest(filter='user.ocid eq "' + self.get_value(ocid) + '"', schemas=["urn:ietf:params:scim:api:messages:2.0:SearchRequest"])
-                result = identity_domain_client.search_customer_secret_keys(customer_secret_key_search_request=search_request)
+                result = identity_domain_client.search_customer_secret_keys(
+                    customer_secret_key_search_request=search_request,
+                    retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                )
                 for r in result.data.resources:
                     k = {
                         "ocid": r.ocid,
@@ -20254,7 +20291,10 @@ class ShowOCIDomains(object):
         try:
             if ext_credential is not None:
                 search_request = oci.identity_domains.models.OAuth2ClientCredentialSearchRequest(filter='user.ocid eq "' + self.get_value(ocid) + '"', schemas=["urn:ietf:params:scim:api:messages:2.0:SearchRequest"])
-                result = identity_domain_client.search_o_auth2_client_credentials(o_auth2_client_credential_search_request=search_request)
+                result = identity_domain_client.search_o_auth2_client_credentials(
+                    o_auth2_client_credential_search_request=search_request,
+                    retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                )
                 for r in result.data.resources:
                     k = {
                         "ocid": r.ocid,
@@ -20277,7 +20317,10 @@ class ShowOCIDomains(object):
         try:
             if ext_credential is not None:
                 search_request = oci.identity_domains.models.SmtpCredentialSearchRequest(filter='user.ocid eq "' + self.get_value(ocid) + '"', schemas=["urn:ietf:params:scim:api:messages:2.0:SearchRequest"])
-                result = identity_domain_client.search_smtp_credentials(smtp_credential_search_request=search_request)
+                result = identity_domain_client.search_smtp_credentials(
+                    smtp_credential_search_request=search_request,
+                    retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                )
                 for r in result.data.resources:
                     k = {
                         "ocid": r.ocid,
@@ -20300,7 +20343,10 @@ class ShowOCIDomains(object):
         try:
             if ext_credential is not None:
                 search_request = oci.identity_domains.models.UserDbCredentialsSearchRequest(filter='user.ocid eq "' + self.get_value(ocid) + '"', schemas=["urn:ietf:params:scim:api:messages:2.0:SearchRequest"])
-                result = identity_domain_client.search_user_db_credentials(user_db_credentials_search_request=search_request)
+                result = identity_domain_client.search_user_db_credentials(
+                    user_db_credentials_search_request=search_request,
+                    retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                )
                 for r in result.data.resources:
                     k = {
                         "ocid": r.ocid,
@@ -20583,22 +20629,23 @@ class ShowOCIDomains(object):
     ##################################################################################
     def __load_identity_users_to_group_members(self, domain_users, domain_groups):
         try:
+            if domain_groups and domain_users:
 
-            # loop on all groups:
-            for grp in domain_groups:
-                group_ocid = grp['ocid']
+                # loop on all groups:
+                for grp in domain_groups:
+                    group_ocid = grp['ocid']
 
-                # loop on users to match group by ocid
-                for user in domain_users:
-                    for member_group in user['groups']:
-                        if member_group['ocid'] == group_ocid:
-                            val = {
-                                'date_added': member_group['date_added'],
-                                'ocid': user['ocid'],
-                                'membership_ocid': member_group['membership_ocid'],
-                                'name': user['user_name']
-                            }
-                            grp['members'].append(val)
+                    # loop on users to match group by ocid
+                    for user in domain_users:
+                        for member_group in user['groups']:
+                            if member_group['ocid'] == group_ocid:
+                                val = {
+                                    'date_added': member_group['date_added'],
+                                    'ocid': user['ocid'],
+                                    'membership_ocid': member_group['membership_ocid'],
+                                    'name': user['user_name']
+                                }
+                                grp['members'].append(val)
 
         except Exception as e:
             self.__print_error(e)
@@ -20609,21 +20656,23 @@ class ShowOCIDomains(object):
     def __load_identity_conditions_to_rules(self, domain_rules, domain_conditions):
         try:
 
-            # loop on all groups:
-            for rule in domain_rules:
-                if not rule['condition_group']:
-                    continue
-                rule_cngrp = rule['condition_group']
+            if domain_rules and domain_conditions:
 
-                # loop on conditions to match id
-                for condition in domain_conditions:
-                    if condition['id'] == rule_cngrp['value']:
-                        rule_cngrp['name'] = condition['name']
-                        rule_cngrp['description'] = condition['description']
-                        rule_cngrp['attribute_name'] = condition['attribute_name']
-                        rule_cngrp['operator'] = condition['operator']
-                        rule_cngrp['attribute_value'] = condition['attribute_value']
-                        rule_cngrp['evaluate_condition_if'] = condition['evaluate_condition_if']
+                # loop on all groups:
+                for rule in domain_rules:
+                    if not rule['condition_group']:
+                        continue
+                    rule_cngrp = rule['condition_group']
+
+                    # loop on conditions to match id
+                    for condition in domain_conditions:
+                        if condition['id'] == rule_cngrp['value']:
+                            rule_cngrp['name'] = condition['name']
+                            rule_cngrp['description'] = condition['description']
+                            rule_cngrp['attribute_name'] = condition['attribute_name']
+                            rule_cngrp['operator'] = condition['operator']
+                            rule_cngrp['attribute_value'] = condition['attribute_value']
+                            rule_cngrp['evaluate_condition_if'] = condition['evaluate_condition_if']
 
         except Exception as e:
             self.__print_error(e)
@@ -20634,23 +20683,25 @@ class ShowOCIDomains(object):
     def __load_identity_rules_to_policies(self, domain_rules, domain_policies):
         try:
 
-            # loop on all groups:
-            for policy in domain_policies:
-                for policy_rule in policy['rules']:
-                    policy_rule_id = policy_rule['value']
+            if domain_policies and domain_rules:
 
-                    # loop on rules to match id
-                    for rule in domain_rules:
-                        if rule['id'] == policy_rule_id:
-                            if policy['id'] not in rule['policy_ids']:
-                                rule['policy_ids'].append(policy['id'])
-                            if policy['name'] not in rule['policy_names']:
-                                rule['policy_names'].append(policy['name'])
-                            rule['policy_ids_position'].append(policy['id'] + ":" + policy_rule['position'])
-                            policy_rule['active'] = rule['active']
-                            policy_rule['locked'] = rule['locked']
-                            policy_rule['rule_return'] = rule['rule_return']
-                            policy_rule['condition_group'] = rule['condition_group']
+                # loop on all groups:
+                for policy in domain_policies:
+                    for policy_rule in policy['rules']:
+                        policy_rule_id = policy_rule['value']
+
+                        # loop on rules to match id
+                        for rule in domain_rules:
+                            if rule['id'] == policy_rule_id:
+                                if policy['id'] not in rule['policy_ids']:
+                                    rule['policy_ids'].append(policy['id'])
+                                if policy['name'] not in rule['policy_names']:
+                                    rule['policy_names'].append(policy['name'])
+                                rule['policy_ids_position'].append(policy['id'] + ":" + policy_rule['position'])
+                                policy_rule['active'] = rule['active']
+                                policy_rule['locked'] = rule['locked']
+                                policy_rule['rule_return'] = rule['rule_return']
+                                policy_rule['condition_group'] = rule['condition_group']
 
         except Exception as e:
             self.__print_error(e)
@@ -21369,7 +21420,9 @@ class ShowOCIDomains(object):
                     'schemas': str(','.join(x for x in var.schemas)) if var.schemas else "",
                     'meta': self.__load_identity_meta_info(var.meta),
                     'idcs_created_by': var.idcs_created_by.value if var.idcs_created_by else "",
+                    'idcs_created_by_display': var.idcs_created_by.display if var.idcs_created_by else "",
                     'idcs_last_modified_by': var.idcs_last_modified_by.value if var.idcs_last_modified_by else "",
+                    'idcs_last_modified_by_display': var.idcs_last_modified_by.display if var.idcs_last_modified_by else "",
                     'idcs_prevented_operations': str(','.join(x for x in var.idcs_prevented_operations)) if var.idcs_prevented_operations else "",
                     'tags': [{'key': x.key, 'value': x.value} for x in var.tags] if var.tags else [],
                     'idcs_last_upgraded_in_release': self.get_value(var.idcs_last_upgraded_in_release),
@@ -21419,7 +21472,11 @@ class ShowOCIDomains(object):
                     'requested_authentication_context': var.requested_authentication_context,
                     'jit_user_prov_ignore_error_on_absent_groups': self.get_value(var.jit_user_prov_ignore_error_on_absent_groups),
                     'jit_user_prov_attributes': self.get_value(var.jit_user_prov_attributes.value) if var.jit_user_prov_attributes else "",
-                    'jit_user_prov_assigned_groups': self.get_value(var.jit_user_prov_assigned_groups.value) if var.jit_user_prov_assigned_groups else "",
+                    'jit_user_prov_assigned_groups': [{
+                        'display': self.get_value(x.display),
+                        'ref': self.get_value(x.ref),
+                        'value': self.get_value(x.value)
+                    } for x in var.jit_user_prov_assigned_groups] if var.jit_user_prov_assigned_groups else [],
                     'correlation_policy': self.get_value(var.correlation_policy.value) if var.correlation_policy else "",
                     'ext_social_idp': {
                         'account_linking_enabled': self.get_value(ext_social_idp.account_linking_enabled) if ext_social_idp else "",

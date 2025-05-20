@@ -56,6 +56,10 @@ class DbSystemSnapshot(object):
             The value to assign to the subnet_id property of this DbSystemSnapshot.
         :type subnet_id: str
 
+        :param nsg_ids:
+            The value to assign to the nsg_ids property of this DbSystemSnapshot.
+        :type nsg_ids: list[str]
+
         :param availability_domain:
             The value to assign to the availability_domain property of this DbSystemSnapshot.
         :type availability_domain: str
@@ -163,6 +167,7 @@ class DbSystemSnapshot(object):
             'description': 'str',
             'compartment_id': 'str',
             'subnet_id': 'str',
+            'nsg_ids': 'list[str]',
             'availability_domain': 'str',
             'fault_domain': 'str',
             'shape_name': 'str',
@@ -194,6 +199,7 @@ class DbSystemSnapshot(object):
             'description': 'description',
             'compartment_id': 'compartmentId',
             'subnet_id': 'subnetId',
+            'nsg_ids': 'nsgIds',
             'availability_domain': 'availabilityDomain',
             'fault_domain': 'faultDomain',
             'shape_name': 'shapeName',
@@ -224,6 +230,7 @@ class DbSystemSnapshot(object):
         self._description = None
         self._compartment_id = None
         self._subnet_id = None
+        self._nsg_ids = None
         self._availability_domain = None
         self._fault_domain = None
         self._shape_name = None
@@ -368,6 +375,30 @@ class DbSystemSnapshot(object):
         :type: str
         """
         self._subnet_id = subnet_id
+
+    @property
+    def nsg_ids(self):
+        """
+        Gets the nsg_ids of this DbSystemSnapshot.
+        Network Security Group OCIDs used for the VNIC attachment.
+
+
+        :return: The nsg_ids of this DbSystemSnapshot.
+        :rtype: list[str]
+        """
+        return self._nsg_ids
+
+    @nsg_ids.setter
+    def nsg_ids(self, nsg_ids):
+        """
+        Sets the nsg_ids of this DbSystemSnapshot.
+        Network Security Group OCIDs used for the VNIC attachment.
+
+
+        :param nsg_ids: The nsg_ids of this DbSystemSnapshot.
+        :type: list[str]
+        """
+        self._nsg_ids = nsg_ids
 
     @property
     def availability_domain(self):

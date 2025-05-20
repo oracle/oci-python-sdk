@@ -1161,7 +1161,8 @@ class DbSystemSummary(object):
     def database_edition(self):
         """
         **[Required]** Gets the database_edition of this DbSystemSummary.
-        The Oracle Database edition that applies to all the databases on the DB system.
+        The Oracle Database Edition that applies to all the databases on the DB system.
+        Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
 
         Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -1176,7 +1177,8 @@ class DbSystemSummary(object):
     def database_edition(self, database_edition):
         """
         Sets the database_edition of this DbSystemSummary.
-        The Oracle Database edition that applies to all the databases on the DB system.
+        The Oracle Database Edition that applies to all the databases on the DB system.
+        Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
 
 
         :param database_edition: The database_edition of this DbSystemSummary.

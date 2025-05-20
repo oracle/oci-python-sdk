@@ -100,6 +100,10 @@ class DbSystem(object):
             The value to assign to the subnet_id property of this DbSystem.
         :type subnet_id: str
 
+        :param nsg_ids:
+            The value to assign to the nsg_ids property of this DbSystem.
+        :type nsg_ids: list[str]
+
         :param is_highly_available:
             The value to assign to the is_highly_available property of this DbSystem.
         :type is_highly_available: bool
@@ -261,6 +265,7 @@ class DbSystem(object):
             'description': 'str',
             'compartment_id': 'str',
             'subnet_id': 'str',
+            'nsg_ids': 'list[str]',
             'is_highly_available': 'bool',
             'current_placement': 'DbSystemPlacement',
             'is_heat_wave_cluster_attached': 'bool',
@@ -304,6 +309,7 @@ class DbSystem(object):
             'description': 'description',
             'compartment_id': 'compartmentId',
             'subnet_id': 'subnetId',
+            'nsg_ids': 'nsgIds',
             'is_highly_available': 'isHighlyAvailable',
             'current_placement': 'currentPlacement',
             'is_heat_wave_cluster_attached': 'isHeatWaveClusterAttached',
@@ -346,6 +352,7 @@ class DbSystem(object):
         self._description = None
         self._compartment_id = None
         self._subnet_id = None
+        self._nsg_ids = None
         self._is_highly_available = None
         self._current_placement = None
         self._is_heat_wave_cluster_attached = None
@@ -502,6 +509,30 @@ class DbSystem(object):
         :type: str
         """
         self._subnet_id = subnet_id
+
+    @property
+    def nsg_ids(self):
+        """
+        Gets the nsg_ids of this DbSystem.
+        Network Security Group OCIDs used for the VNIC attachment.
+
+
+        :return: The nsg_ids of this DbSystem.
+        :rtype: list[str]
+        """
+        return self._nsg_ids
+
+    @nsg_ids.setter
+    def nsg_ids(self, nsg_ids):
+        """
+        Sets the nsg_ids of this DbSystem.
+        Network Security Group OCIDs used for the VNIC attachment.
+
+
+        :param nsg_ids: The nsg_ids of this DbSystem.
+        :type: list[str]
+        """
+        self._nsg_ids = nsg_ids
 
     @property
     def is_highly_available(self):

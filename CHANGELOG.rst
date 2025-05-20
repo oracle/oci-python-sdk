@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.152.1 - 2025-05-20
+====================
+
+Added 
+----- 
+* Support for the Globally Distributed Database service 
+* Support for listing the available upgrades (OS & GI) for VirtualMachine DB systems in the Database service 
+* Support for running dry-run operations in the Database service 
+* Support for Network Security Groups in MySQL HeatWave service
+
+====================
 2.152.0 - 2025-05-13
 ====================
 

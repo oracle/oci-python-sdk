@@ -35,20 +35,27 @@ class ReplicaOverrides(object):
             The value to assign to the configuration_id property of this ReplicaOverrides.
         :type configuration_id: str
 
+        :param nsg_ids:
+            The value to assign to the nsg_ids property of this ReplicaOverrides.
+        :type nsg_ids: list[str]
+
         """
         self.swagger_types = {
             'mysql_version': 'str',
             'shape_name': 'str',
-            'configuration_id': 'str'
+            'configuration_id': 'str',
+            'nsg_ids': 'list[str]'
         }
         self.attribute_map = {
             'mysql_version': 'mysqlVersion',
             'shape_name': 'shapeName',
-            'configuration_id': 'configurationId'
+            'configuration_id': 'configurationId',
+            'nsg_ids': 'nsgIds'
         }
         self._mysql_version = None
         self._shape_name = None
         self._configuration_id = None
+        self._nsg_ids = None
 
     @property
     def mysql_version(self):
@@ -125,6 +132,30 @@ class ReplicaOverrides(object):
         :type: str
         """
         self._configuration_id = configuration_id
+
+    @property
+    def nsg_ids(self):
+        """
+        Gets the nsg_ids of this ReplicaOverrides.
+        Network Security Group OCIDs used for the VNIC attachment.
+
+
+        :return: The nsg_ids of this ReplicaOverrides.
+        :rtype: list[str]
+        """
+        return self._nsg_ids
+
+    @nsg_ids.setter
+    def nsg_ids(self, nsg_ids):
+        """
+        Sets the nsg_ids of this ReplicaOverrides.
+        Network Security Group OCIDs used for the VNIC attachment.
+
+
+        :param nsg_ids: The nsg_ids of this ReplicaOverrides.
+        :type: list[str]
+        """
+        self._nsg_ids = nsg_ids
 
     def __repr__(self):
         return formatted_flat_dict(self)

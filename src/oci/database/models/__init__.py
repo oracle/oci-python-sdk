@@ -253,6 +253,7 @@ from .db_system_storage_performance_summary import DbSystemStoragePerformanceSum
 from .db_system_summary import DbSystemSummary
 from .db_system_upgrade_history_entry import DbSystemUpgradeHistoryEntry
 from .db_system_upgrade_history_entry_summary import DbSystemUpgradeHistoryEntrySummary
+from .db_system_upgrade_summary import DbSystemUpgradeSummary
 from .db_version_summary import DbVersionSummary
 from .defined_file_system_configuration import DefinedFileSystemConfiguration
 from .deregister_autonomous_database_data_safe_details import DeregisterAutonomousDatabaseDataSafeDetails
@@ -739,6 +740,7 @@ database_type_mapping = {
     "DbSystemSummary": DbSystemSummary,
     "DbSystemUpgradeHistoryEntry": DbSystemUpgradeHistoryEntry,
     "DbSystemUpgradeHistoryEntrySummary": DbSystemUpgradeHistoryEntrySummary,
+    "DbSystemUpgradeSummary": DbSystemUpgradeSummary,
     "DbVersionSummary": DbVersionSummary,
     "DefinedFileSystemConfiguration": DefinedFileSystemConfiguration,
     "DeregisterAutonomousDatabaseDataSafeDetails": DeregisterAutonomousDatabaseDataSafeDetails,

@@ -14,8 +14,8 @@ def main():
 
     # Use a custom agent client for custom profile and endpoints settings
     client = AgentClient(
-        auth_type="security_token",
-        profile="BoatOc1",
+        auth_type="api_key",
+        profile="PROFILE_1",
         region="kix"
     )
 
@@ -39,7 +39,7 @@ def main():
     agent.setup()
 
     # Run the agent with a user message
-    input = "What is Responses API?"
+    input = "What is OCI Compute?"
     response = agent.run(input)
     response.pretty_print()
 

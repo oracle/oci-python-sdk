@@ -265,6 +265,7 @@ Database
     oci.database.models.DbSystemSummary
     oci.database.models.DbSystemUpgradeHistoryEntry
     oci.database.models.DbSystemUpgradeHistoryEntrySummary
+    oci.database.models.DbSystemUpgradeSummary
     oci.database.models.DbVersionSummary
     oci.database.models.DefinedFileSystemConfiguration
     oci.database.models.DeregisterAutonomousDatabaseDataSafeDetails

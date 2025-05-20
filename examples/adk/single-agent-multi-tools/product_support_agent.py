@@ -20,8 +20,6 @@ def main():
     client = AgentClient(
         auth_type="api_key",
         profile="DEFAULT",
-        runtime_endpoint="https://agent-runtime.generativeai.us-chicago-1.oci.oraclecloud.com",
-        management_endpoint="https://agent.generativeai.us-chicago-1.oci.oraclecloud.com",
     )
 
     instructions = """
