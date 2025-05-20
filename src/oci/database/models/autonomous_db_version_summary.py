@@ -58,6 +58,10 @@ class AutonomousDbVersionSummary(object):
             The value to assign to the is_free_tier_enabled property of this AutonomousDbVersionSummary.
         :type is_free_tier_enabled: bool
 
+        :param is_dev_tier_enabled:
+            The value to assign to the is_dev_tier_enabled property of this AutonomousDbVersionSummary.
+        :type is_dev_tier_enabled: bool
+
         :param is_paid_enabled:
             The value to assign to the is_paid_enabled property of this AutonomousDbVersionSummary.
         :type is_paid_enabled: bool
@@ -77,6 +81,7 @@ class AutonomousDbVersionSummary(object):
             'is_dedicated': 'bool',
             'details': 'str',
             'is_free_tier_enabled': 'bool',
+            'is_dev_tier_enabled': 'bool',
             'is_paid_enabled': 'bool',
             'is_default_for_free': 'bool',
             'is_default_for_paid': 'bool'
@@ -87,6 +92,7 @@ class AutonomousDbVersionSummary(object):
             'is_dedicated': 'isDedicated',
             'details': 'details',
             'is_free_tier_enabled': 'isFreeTierEnabled',
+            'is_dev_tier_enabled': 'isDevTierEnabled',
             'is_paid_enabled': 'isPaidEnabled',
             'is_default_for_free': 'isDefaultForFree',
             'is_default_for_paid': 'isDefaultForPaid'
@@ -96,6 +102,7 @@ class AutonomousDbVersionSummary(object):
         self._is_dedicated = None
         self._details = None
         self._is_free_tier_enabled = None
+        self._is_dev_tier_enabled = None
         self._is_paid_enabled = None
         self._is_default_for_free = None
         self._is_default_for_paid = None
@@ -243,6 +250,30 @@ class AutonomousDbVersionSummary(object):
         :type: bool
         """
         self._is_free_tier_enabled = is_free_tier_enabled
+
+    @property
+    def is_dev_tier_enabled(self):
+        """
+        Gets the is_dev_tier_enabled of this AutonomousDbVersionSummary.
+        True if this Oracle Database software version can be used for Autonomous Databases for Developers.
+
+
+        :return: The is_dev_tier_enabled of this AutonomousDbVersionSummary.
+        :rtype: bool
+        """
+        return self._is_dev_tier_enabled
+
+    @is_dev_tier_enabled.setter
+    def is_dev_tier_enabled(self, is_dev_tier_enabled):
+        """
+        Sets the is_dev_tier_enabled of this AutonomousDbVersionSummary.
+        True if this Oracle Database software version can be used for Autonomous Databases for Developers.
+
+
+        :param is_dev_tier_enabled: The is_dev_tier_enabled of this AutonomousDbVersionSummary.
+        :type: bool
+        """
+        self._is_dev_tier_enabled = is_dev_tier_enabled
 
     @property
     def is_paid_enabled(self):

@@ -16,7 +16,7 @@ https://docs.oracle.com/en-us/iaas/Content/generative-ai-agents/home.htm
 
 ### Installation
 ```bash
-pip install --upgrade "oci[adk]>=2.151.1"
+pip install --upgrade "oci[adk]"
 
 ```
 

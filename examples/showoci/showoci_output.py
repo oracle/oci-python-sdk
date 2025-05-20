@@ -22,7 +22,7 @@ import sys
 
 
 class ShowOCIOutput(object):
-    version = "25.04.29"
+    version = "25.05.06"
 
     ##########################################################################
     # spaces for align
@@ -643,9 +643,7 @@ class ShowOCIOutput(object):
         try:
             for vlan in vlans:
                 print("")
-                print(self.tabs + "VLAN " + vlan['vlan'] + self.__print_core_network_vcn_compartment(vcn_compartment,
-                                                                                                     vlan[
-                                                                                                         'compartment_name']))
+                print(self.tabs + "VLAN " + vlan['vlan'] + self.__print_core_network_vcn_compartment(vcn_compartment, vlan['compartment_name']))
                 print(self.tabs + self.tabs + "Route   : " + vlan['route'])
                 for s in vlan['nsg']:
                     print(self.tabs + self.tabs + "NSG     : " + s)
@@ -5021,10 +5019,10 @@ class ShowOCICSV(object):
                     'external_identifier': user['external_identifier'],
                     'user_time_created': user['time_created'],
                     'groups': user['groups'],
-                    'api_keys': "Not Checked",
-                    'auth_token': "Not Checked",
-                    'secret_key': "Not Checked",
-                    'smtp_cred': "Not Checked",
+                    'api_keys': "",
+                    'auth_token': "",
+                    'secret_key': "",
+                    'smtp_cred': "",
                     'last_successful_login_time': user['last_successful_login_time'],
                     'previous_successful_login_time': user['previous_successful_login_time']
                 }
@@ -5387,7 +5385,9 @@ class ShowOCICSV(object):
                     'meta_version': var['meta']['version'],
                     'idcs_prevented_operations': str(var['idcs_prevented_operations']),
                     'idcs_created_by': str(var['idcs_created_by']),
+                    'idcs_created_by_display': str(var['idcs_created_by_display']),
                     'idcs_last_modified_by': str(var['idcs_last_modified_by']),
+                    'idcs_last_modified_by_display': str(var['idcs_last_modified_by_display']),
                     'idcs_last_upgraded_in_release': str(var['idcs_last_upgraded_in_release']),
                     'tags': str(','.join(x['key'] + "=" + x['value'] for x in var['tags'])),
                     'compartment_ocid': var['compartment_ocid'],
@@ -8890,7 +8890,7 @@ class ShowOCICSV(object):
                     'logs': self.__csv_list_to_str(load_balance_obj['logs'], 'name'),
                     'subnets': self.__csv_list_to_str(lb['subnets']),
                     'nsg_ids': self.__csv_list_to_str(lb['nsg_ids']),
-                    'nsg_names': self.__csv_list_to_str(lb['nsg_names']),
+                    'nsg_names': lb['nsg_names'],
                     'time_created': lb['time_created'],
                     'lb_certificates': lb['certificates'],
                     'ssl_cipher_suites': self.__csv_list_to_str(lb['ssl_cipher_suites']),
@@ -8967,7 +8967,7 @@ class ShowOCICSV(object):
                         'is_symmetric_hash_enabled': lb['is_symmetric_hash_enabled'],
                         'subnets': lb['subnet_name'],
                         'nsg_ids': self.__csv_list_to_str(lb['nsg_ids']),
-                        'nsg_names': self.__csv_list_to_str(lb['nsg_names']),
+                        'nsg_names': lb['nsg_names'],
                         'ip_addresses': self.__csv_list_to_str(lb['ips']),
                         'loadbalancer_id': lb['id'],
                         'listeners': self.__csv_list_to_str(lb['listeners'], 'csvname'),

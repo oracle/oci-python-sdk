@@ -55,8 +55,8 @@ def main():
     try:
         # Initialize the agent client
         client = AgentClient(
-            auth_type="security_token",
-            profile="BoatOc1",
+            auth_type="api_key",
+            profile="PROFILE_1",
             region="AP-OSAKA-1"
         )
 

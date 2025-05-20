@@ -106,6 +106,10 @@ class Replica(object):
             The value to assign to the fault_domain property of this Replica.
         :type fault_domain: str
 
+        :param nsg_ids:
+            The value to assign to the nsg_ids property of this Replica.
+        :type nsg_ids: list[str]
+
         :param ip_address:
             The value to assign to the ip_address property of this Replica.
         :type ip_address: str
@@ -157,6 +161,7 @@ class Replica(object):
             'mysql_version': 'str',
             'availability_domain': 'str',
             'fault_domain': 'str',
+            'nsg_ids': 'list[str]',
             'ip_address': 'str',
             'port': 'int',
             'port_x': 'int',
@@ -181,6 +186,7 @@ class Replica(object):
             'mysql_version': 'mysqlVersion',
             'availability_domain': 'availabilityDomain',
             'fault_domain': 'faultDomain',
+            'nsg_ids': 'nsgIds',
             'ip_address': 'ipAddress',
             'port': 'port',
             'port_x': 'portX',
@@ -204,6 +210,7 @@ class Replica(object):
         self._mysql_version = None
         self._availability_domain = None
         self._fault_domain = None
+        self._nsg_ids = None
         self._ip_address = None
         self._port = None
         self._port_x = None
@@ -535,6 +542,30 @@ class Replica(object):
         :type: str
         """
         self._fault_domain = fault_domain
+
+    @property
+    def nsg_ids(self):
+        """
+        Gets the nsg_ids of this Replica.
+        Network Security Group OCIDs used for the VNIC attachment.
+
+
+        :return: The nsg_ids of this Replica.
+        :rtype: list[str]
+        """
+        return self._nsg_ids
+
+    @nsg_ids.setter
+    def nsg_ids(self, nsg_ids):
+        """
+        Sets the nsg_ids of this Replica.
+        Network Security Group OCIDs used for the VNIC attachment.
+
+
+        :param nsg_ids: The nsg_ids of this Replica.
+        :type: list[str]
+        """
+        self._nsg_ids = nsg_ids
 
     @property
     def ip_address(self):

@@ -76,6 +76,10 @@ class CreateDbSystemDetails(object):
             The value to assign to the subnet_id property of this CreateDbSystemDetails.
         :type subnet_id: str
 
+        :param nsg_ids:
+            The value to assign to the nsg_ids property of this CreateDbSystemDetails.
+        :type nsg_ids: list[str]
+
         :param admin_username:
             The value to assign to the admin_username property of this CreateDbSystemDetails.
         :type admin_username: str
@@ -174,6 +178,7 @@ class CreateDbSystemDetails(object):
             'shape_name': 'str',
             'mysql_version': 'str',
             'subnet_id': 'str',
+            'nsg_ids': 'list[str]',
             'admin_username': 'str',
             'admin_password': 'str',
             'data_storage_size_in_gbs': 'int',
@@ -207,6 +212,7 @@ class CreateDbSystemDetails(object):
             'shape_name': 'shapeName',
             'mysql_version': 'mysqlVersion',
             'subnet_id': 'subnetId',
+            'nsg_ids': 'nsgIds',
             'admin_username': 'adminUsername',
             'admin_password': 'adminPassword',
             'data_storage_size_in_gbs': 'dataStorageSizeInGBs',
@@ -239,6 +245,7 @@ class CreateDbSystemDetails(object):
         self._shape_name = None
         self._mysql_version = None
         self._subnet_id = None
+        self._nsg_ids = None
         self._admin_username = None
         self._admin_password = None
         self._data_storage_size_in_gbs = None
@@ -542,6 +549,30 @@ class CreateDbSystemDetails(object):
         :type: str
         """
         self._subnet_id = subnet_id
+
+    @property
+    def nsg_ids(self):
+        """
+        Gets the nsg_ids of this CreateDbSystemDetails.
+        Network Security Group OCIDs used for the VNIC attachment.
+
+
+        :return: The nsg_ids of this CreateDbSystemDetails.
+        :rtype: list[str]
+        """
+        return self._nsg_ids
+
+    @nsg_ids.setter
+    def nsg_ids(self, nsg_ids):
+        """
+        Sets the nsg_ids of this CreateDbSystemDetails.
+        Network Security Group OCIDs used for the VNIC attachment.
+
+
+        :param nsg_ids: The nsg_ids of this CreateDbSystemDetails.
+        :type: list[str]
+        """
+        self._nsg_ids = nsg_ids
 
     @property
     def admin_username(self):

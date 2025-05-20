@@ -128,7 +128,7 @@ import contextlib
 import os
 import time
 
-version = "25.04.29"
+version = "25.05.06"
 
 ##########################################################################
 # check OCI version
@@ -332,7 +332,7 @@ def return_error_message(service_error, service_warning, data_error, output_erro
 # set parser
 ##########################################################################
 def set_parser_arguments(argsList=[]):
-    parser = argparse.ArgumentParser(formatter_class=lambda prog: argparse.HelpFormatter(prog, max_help_position=80, width=130))
+    parser = argparse.ArgumentParser(formatter_class=lambda prog: argparse.HelpFormatter(prog, max_help_position=80, width=150))
     parser.add_argument('-a', action='store_true', default=False, dest='all', help='Print All Resources.')
     parser.add_argument('-ani', action='store_true', default=False, dest='allnoiam', help='Print All Resources but identity.')
     parser.add_argument('-an', action='store_true', default=False, dest='announcement', help='Print Announcements.')

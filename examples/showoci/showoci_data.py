@@ -20,7 +20,7 @@ import sys
 
 
 class ShowOCIData(object):
-    version = "25.04.29"
+    version = "25.05.06"
 
     ############################################
     # ShowOCIService - Service object to query
@@ -3902,7 +3902,8 @@ class ShowOCIData(object):
                 'ips': lb['ip_addresses'],
                 'path_route': lb['path_route'],
                 'nsg_ids': lb['nsg_ids'],
-                'nsg_names': lb['nsg_names'],
+                # 'nsg_names': lb['nsg_names'],
+                'nsg_names': self.service.get_network_nsg_names_from_ids(lb['nsg_ids']),
                 'hostnames': [x['info'] for x in lb['hostnames']],
                 'rule_sets': lb['rule_sets'],
                 'compartment_name': lb['compartment_name'],
@@ -4027,7 +4028,8 @@ class ShowOCIData(object):
             data['is_private'] = lb['is_private']
             data['ips'] = lb['ip_addresses']
             data['nsg_ids'] = lb['nsg_ids']
-            data['nsg_names'] = lb['nsg_names']
+            # data['nsg_names'] = lb['nsg_names']
+            data['nsg_names'] = self.service.get_network_nsg_names_from_ids(lb['nsg_ids'])
             data['compartment_name'] = lb['compartment_name']
             data['compartment_path'] = lb['compartment_path']
             data['compartment_id'] = lb['compartment_id']
