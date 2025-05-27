@@ -97,7 +97,7 @@ class SavedCustomTable(object):
         """
         Gets the row_group_by of this SavedCustomTable.
         The row groupBy key list.
-        example:
+        For example:
           `[\"tagNamespace\", \"tagKey\", \"tagValue\", \"service\", \"skuName\", \"skuPartNumber\", \"unit\",
             \"compartmentName\", \"compartmentPath\", \"compartmentId\", \"platform\", \"region\", \"logicalAd\",
             \"resourceId\", \"tenantId\", \"tenantName\"]`
@@ -113,7 +113,7 @@ class SavedCustomTable(object):
         """
         Sets the row_group_by of this SavedCustomTable.
         The row groupBy key list.
-        example:
+        For example:
           `[\"tagNamespace\", \"tagKey\", \"tagValue\", \"service\", \"skuName\", \"skuPartNumber\", \"unit\",
             \"compartmentName\", \"compartmentPath\", \"compartmentId\", \"platform\", \"region\", \"logicalAd\",
             \"resourceId\", \"tenantId\", \"tenantName\"]`
@@ -129,7 +129,7 @@ class SavedCustomTable(object):
         """
         Gets the column_group_by of this SavedCustomTable.
         The column groupBy key list.
-        example:
+        For example:
           `[\"tagNamespace\", \"tagKey\", \"tagValue\", \"service\", \"skuName\", \"skuPartNumber\", \"unit\",
             \"compartmentName\", \"compartmentPath\", \"compartmentId\", \"platform\", \"region\", \"logicalAd\",
             \"resourceId\", \"tenantId\", \"tenantName\"]`
@@ -145,7 +145,7 @@ class SavedCustomTable(object):
         """
         Sets the column_group_by of this SavedCustomTable.
         The column groupBy key list.
-        example:
+        For example:
           `[\"tagNamespace\", \"tagKey\", \"tagValue\", \"service\", \"skuName\", \"skuPartNumber\", \"unit\",
             \"compartmentName\", \"compartmentPath\", \"compartmentId\", \"platform\", \"region\", \"logicalAd\",
             \"resourceId\", \"tenantId\", \"tenantName\"]`

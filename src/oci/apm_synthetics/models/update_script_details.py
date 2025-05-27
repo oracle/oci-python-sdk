@@ -13,7 +13,7 @@ from oci.decorators import init_model_state_from_kwargs
 class UpdateScriptDetails(object):
     """
     Details of the request body used to update a script.
-    Only Side or JavaScript content types are supported and content should be in Side or JavaScript formats only.
+    Only Side, JavaScript and Playwright TypeScript content types are supported and content should be in Side, JavaScript and TypeScript formats only.
     """
 
     #: A constant which can be used with the content_type property of a UpdateScriptDetails.
@@ -23,6 +23,10 @@ class UpdateScriptDetails(object):
     #: A constant which can be used with the content_type property of a UpdateScriptDetails.
     #: This constant has a value of "JS"
     CONTENT_TYPE_JS = "JS"
+
+    #: A constant which can be used with the content_type property of a UpdateScriptDetails.
+    #: This constant has a value of "PLAYWRIGHT_TS"
+    CONTENT_TYPE_PLAYWRIGHT_TS = "PLAYWRIGHT_TS"
 
     def __init__(self, **kwargs):
         """
@@ -35,7 +39,7 @@ class UpdateScriptDetails(object):
 
         :param content_type:
             The value to assign to the content_type property of this UpdateScriptDetails.
-            Allowed values for this property are: "SIDE", "JS"
+            Allowed values for this property are: "SIDE", "JS", "PLAYWRIGHT_TS"
         :type content_type: str
 
         :param content:
@@ -115,7 +119,7 @@ class UpdateScriptDetails(object):
         Gets the content_type of this UpdateScriptDetails.
         Content type of script.
 
-        Allowed values for this property are: "SIDE", "JS"
+        Allowed values for this property are: "SIDE", "JS", "PLAYWRIGHT_TS"
 
 
         :return: The content_type of this UpdateScriptDetails.
@@ -133,7 +137,7 @@ class UpdateScriptDetails(object):
         :param content_type: The content_type of this UpdateScriptDetails.
         :type: str
         """
-        allowed_values = ["SIDE", "JS"]
+        allowed_values = ["SIDE", "JS", "PLAYWRIGHT_TS"]
         if not value_allowed_none_or_none_sentinel(content_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `content_type`, must be None or one of {allowed_values}"
@@ -150,7 +154,7 @@ class UpdateScriptDetails(object):
         Examples:
         With mandatory param name : `<ORAP><ON>param name</ON></ORAP>`
         With parameter name and value : `<ORAP><ON>param name</ON><OV>param value</OV></ORAP>`
-        Note that the content is valid if it matches the given content type. For example, if the content type is SIDE, then the content should be in Side script format. If the content type is JS, then the content should be in JavaScript format.
+        Note that the content is valid if it matches the given content type. For example, if the content type is SIDE, then the content should be in Side script format. If the content type is JS, then the content should be in JavaScript format. If the content type is PLAYWRIGHT_TS, then the content should be in TypeScript format.
 
 
         :return: The content of this UpdateScriptDetails.
@@ -168,7 +172,7 @@ class UpdateScriptDetails(object):
         Examples:
         With mandatory param name : `<ORAP><ON>param name</ON></ORAP>`
         With parameter name and value : `<ORAP><ON>param name</ON><OV>param value</OV></ORAP>`
-        Note that the content is valid if it matches the given content type. For example, if the content type is SIDE, then the content should be in Side script format. If the content type is JS, then the content should be in JavaScript format.
+        Note that the content is valid if it matches the given content type. For example, if the content type is SIDE, then the content should be in Side script format. If the content type is JS, then the content should be in JavaScript format. If the content type is PLAYWRIGHT_TS, then the content should be in TypeScript format.
 
 
         :param content: The content of this UpdateScriptDetails.

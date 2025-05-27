@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UsageCarbonEmissionsQuery(object):
     """
-    The usage carbon emissions saved query to filter and aggregate.
+    The carbon emissions usage saved query to filter and aggregate.
     """
 
     def __init__(self, **kwargs):

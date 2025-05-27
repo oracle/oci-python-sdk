@@ -32,11 +32,15 @@ from .batching_based_odh_patching_config import BatchingBasedOdhPatchingConfig
 from .batching_based_patching_configs import BatchingBasedPatchingConfigs
 from .bds_api_key import BdsApiKey
 from .bds_api_key_summary import BdsApiKeySummary
+from .bds_capacity_report import BdsCapacityReport
 from .bds_cluster_version_summary import BdsClusterVersionSummary
 from .bds_instance import BdsInstance
 from .bds_instance_summary import BdsInstanceSummary
 from .bds_metastore_configuration import BdsMetastoreConfiguration
 from .bds_metastore_configuration_summary import BdsMetastoreConfigurationSummary
+from .bds_software_update import BdsSoftwareUpdate
+from .capacity_availability import CapacityAvailability
+from .capacity_report_shape_availability import CapacityReportShapeAvailability
 from .certificate_service_info_details import CertificateServiceInfoDetails
 from .certificate_service_info_summary import CertificateServiceInfoSummary
 from .change_bds_instance_compartment_details import ChangeBdsInstanceCompartmentDetails
@@ -45,8 +49,10 @@ from .change_shape_nodes import ChangeShapeNodes
 from .cloud_sql_details import CloudSqlDetails
 from .cluster_details import ClusterDetails
 from .create_bds_api_key_details import CreateBdsApiKeyDetails
+from .create_bds_capacity_report_details import CreateBdsCapacityReportDetails
 from .create_bds_instance_details import CreateBdsInstanceDetails
 from .create_bds_metastore_configuration_details import CreateBdsMetastoreConfigurationDetails
+from .create_capacity_report_shape_availability_details import CreateCapacityReportShapeAvailabilityDetails
 from .create_identity_configuration_details import CreateIdentityConfigurationDetails
 from .create_node_backup_configuration_details import CreateNodeBackupConfigurationDetails
 from .create_node_details import CreateNodeDetails
@@ -60,6 +66,7 @@ from .default_error import DefaultError
 from .disable_certificate_details import DisableCertificateDetails
 from .domain_based_odh_patching_config import DomainBasedOdhPatchingConfig
 from .domain_based_patching_configs import DomainBasedPatchingConfigs
+from .domain_type_capacity_report import DomainTypeCapacityReport
 from .downtime_based_odh_patching_config import DowntimeBasedOdhPatchingConfig
 from .downtime_based_patching_configs import DowntimeBasedPatchingConfigs
 from .enable_certificate_details import EnableCertificateDetails
@@ -74,6 +81,7 @@ from .identity_configuration import IdentityConfiguration
 from .identity_configuration_summary import IdentityConfigurationSummary
 from .install_os_patch_details import InstallOsPatchDetails
 from .install_patch_details import InstallPatchDetails
+from .install_software_updates_details import InstallSoftwareUpdatesDetails
 from .kerberos_details import KerberosDetails
 from .level_type_details import LevelTypeDetails
 from .metric_based_horizontal_scale_in_config import MetricBasedHorizontalScaleInConfig
@@ -83,6 +91,7 @@ from .metric_based_vertical_scale_down_config import MetricBasedVerticalScaleDow
 from .metric_based_vertical_scale_up_config import MetricBasedVerticalScaleUpConfig
 from .metric_based_vertical_scaling_policy_details import MetricBasedVerticalScalingPolicyDetails
 from .metric_threshold_rule import MetricThresholdRule
+from .multi_ad_capacity_report import MultiAdCapacityReport
 from .network_config import NetworkConfig
 from .node import Node
 from .node_backup import NodeBackup
@@ -117,6 +126,10 @@ from .restart_node_details import RestartNodeDetails
 from .schedule_based_horizontal_scaling_policy_details import ScheduleBasedHorizontalScalingPolicyDetails
 from .schedule_based_vertical_scaling_policy_details import ScheduleBasedVerticalScalingPolicyDetails
 from .shape_config_details import ShapeConfigDetails
+from .single_ad_capacity_report import SingleAdCapacityReport
+from .software_update import SoftwareUpdate
+from .software_update_collection import SoftwareUpdateCollection
+from .software_update_summary import SoftwareUpdateSummary
 from .start_bds_instance_details import StartBdsInstanceDetails
 from .start_cluster_shape_configs import StartClusterShapeConfigs
 from .stop_bds_instance_details import StopBdsInstanceDetails
@@ -173,11 +186,15 @@ bds_type_mapping = {
     "BatchingBasedPatchingConfigs": BatchingBasedPatchingConfigs,
     "BdsApiKey": BdsApiKey,
     "BdsApiKeySummary": BdsApiKeySummary,
+    "BdsCapacityReport": BdsCapacityReport,
     "BdsClusterVersionSummary": BdsClusterVersionSummary,
     "BdsInstance": BdsInstance,
     "BdsInstanceSummary": BdsInstanceSummary,
     "BdsMetastoreConfiguration": BdsMetastoreConfiguration,
     "BdsMetastoreConfigurationSummary": BdsMetastoreConfigurationSummary,
+    "BdsSoftwareUpdate": BdsSoftwareUpdate,
+    "CapacityAvailability": CapacityAvailability,
+    "CapacityReportShapeAvailability": CapacityReportShapeAvailability,
     "CertificateServiceInfoDetails": CertificateServiceInfoDetails,
     "CertificateServiceInfoSummary": CertificateServiceInfoSummary,
     "ChangeBdsInstanceCompartmentDetails": ChangeBdsInstanceCompartmentDetails,
@@ -186,8 +203,10 @@ bds_type_mapping = {
     "CloudSqlDetails": CloudSqlDetails,
     "ClusterDetails": ClusterDetails,
     "CreateBdsApiKeyDetails": CreateBdsApiKeyDetails,
+    "CreateBdsCapacityReportDetails": CreateBdsCapacityReportDetails,
     "CreateBdsInstanceDetails": CreateBdsInstanceDetails,
     "CreateBdsMetastoreConfigurationDetails": CreateBdsMetastoreConfigurationDetails,
+    "CreateCapacityReportShapeAvailabilityDetails": CreateCapacityReportShapeAvailabilityDetails,
     "CreateIdentityConfigurationDetails": CreateIdentityConfigurationDetails,
     "CreateNodeBackupConfigurationDetails": CreateNodeBackupConfigurationDetails,
     "CreateNodeDetails": CreateNodeDetails,
@@ -201,6 +220,7 @@ bds_type_mapping = {
     "DisableCertificateDetails": DisableCertificateDetails,
     "DomainBasedOdhPatchingConfig": DomainBasedOdhPatchingConfig,
     "DomainBasedPatchingConfigs": DomainBasedPatchingConfigs,
+    "DomainTypeCapacityReport": DomainTypeCapacityReport,
     "DowntimeBasedOdhPatchingConfig": DowntimeBasedOdhPatchingConfig,
     "DowntimeBasedPatchingConfigs": DowntimeBasedPatchingConfigs,
     "EnableCertificateDetails": EnableCertificateDetails,
@@ -215,6 +235,7 @@ bds_type_mapping = {
     "IdentityConfigurationSummary": IdentityConfigurationSummary,
     "InstallOsPatchDetails": InstallOsPatchDetails,
     "InstallPatchDetails": InstallPatchDetails,
+    "InstallSoftwareUpdatesDetails": InstallSoftwareUpdatesDetails,
     "KerberosDetails": KerberosDetails,
     "LevelTypeDetails": LevelTypeDetails,
     "MetricBasedHorizontalScaleInConfig": MetricBasedHorizontalScaleInConfig,
@@ -224,6 +245,7 @@ bds_type_mapping = {
     "MetricBasedVerticalScaleUpConfig": MetricBasedVerticalScaleUpConfig,
     "MetricBasedVerticalScalingPolicyDetails": MetricBasedVerticalScalingPolicyDetails,
     "MetricThresholdRule": MetricThresholdRule,
+    "MultiAdCapacityReport": MultiAdCapacityReport,
     "NetworkConfig": NetworkConfig,
     "Node": Node,
     "NodeBackup": NodeBackup,
@@ -258,6 +280,10 @@ bds_type_mapping = {
     "ScheduleBasedHorizontalScalingPolicyDetails": ScheduleBasedHorizontalScalingPolicyDetails,
     "ScheduleBasedVerticalScalingPolicyDetails": ScheduleBasedVerticalScalingPolicyDetails,
     "ShapeConfigDetails": ShapeConfigDetails,
+    "SingleAdCapacityReport": SingleAdCapacityReport,
+    "SoftwareUpdate": SoftwareUpdate,
+    "SoftwareUpdateCollection": SoftwareUpdateCollection,
+    "SoftwareUpdateSummary": SoftwareUpdateSummary,
     "StartBdsInstanceDetails": StartBdsInstanceDetails,
     "StartClusterShapeConfigs": StartClusterShapeConfigs,
     "StopBdsInstanceDetails": StopBdsInstanceDetails,

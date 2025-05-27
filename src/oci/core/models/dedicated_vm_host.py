@@ -73,6 +73,10 @@ class DedicatedVmHost(object):
             The value to assign to the freeform_tags property of this DedicatedVmHost.
         :type freeform_tags: dict(str, str)
 
+        :param placement_constraint_details:
+            The value to assign to the placement_constraint_details property of this DedicatedVmHost.
+        :type placement_constraint_details: oci.core.models.PlacementConstraintDetails
+
         :param id:
             The value to assign to the id property of this DedicatedVmHost.
         :type id: str
@@ -112,6 +116,7 @@ class DedicatedVmHost(object):
             'display_name': 'str',
             'fault_domain': 'str',
             'freeform_tags': 'dict(str, str)',
+            'placement_constraint_details': 'PlacementConstraintDetails',
             'id': 'str',
             'lifecycle_state': 'str',
             'time_created': 'datetime',
@@ -128,6 +133,7 @@ class DedicatedVmHost(object):
             'display_name': 'displayName',
             'fault_domain': 'faultDomain',
             'freeform_tags': 'freeformTags',
+            'placement_constraint_details': 'placementConstraintDetails',
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
@@ -143,6 +149,7 @@ class DedicatedVmHost(object):
         self._display_name = None
         self._fault_domain = None
         self._freeform_tags = None
+        self._placement_constraint_details = None
         self._id = None
         self._lifecycle_state = None
         self._time_created = None
@@ -368,6 +375,26 @@ class DedicatedVmHost(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def placement_constraint_details(self):
+        """
+        Gets the placement_constraint_details of this DedicatedVmHost.
+
+        :return: The placement_constraint_details of this DedicatedVmHost.
+        :rtype: oci.core.models.PlacementConstraintDetails
+        """
+        return self._placement_constraint_details
+
+    @placement_constraint_details.setter
+    def placement_constraint_details(self, placement_constraint_details):
+        """
+        Sets the placement_constraint_details of this DedicatedVmHost.
+
+        :param placement_constraint_details: The placement_constraint_details of this DedicatedVmHost.
+        :type: oci.core.models.PlacementConstraintDetails
+        """
+        self._placement_constraint_details = placement_constraint_details
 
     @property
     def id(self):

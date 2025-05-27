@@ -122,6 +122,10 @@ class Vcn(object):
             The value to assign to the vcn_domain_name property of this Vcn.
         :type vcn_domain_name: str
 
+        :param is_zpr_only:
+            The value to assign to the is_zpr_only property of this Vcn.
+        :type is_zpr_only: bool
+
         """
         self.swagger_types = {
             'byoipv6_cidr_blocks': 'list[str]',
@@ -141,7 +145,8 @@ class Vcn(object):
             'ipv6_cidr_blocks': 'list[str]',
             'lifecycle_state': 'str',
             'time_created': 'datetime',
-            'vcn_domain_name': 'str'
+            'vcn_domain_name': 'str',
+            'is_zpr_only': 'bool'
         }
         self.attribute_map = {
             'byoipv6_cidr_blocks': 'byoipv6CidrBlocks',
@@ -161,7 +166,8 @@ class Vcn(object):
             'ipv6_cidr_blocks': 'ipv6CidrBlocks',
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
-            'vcn_domain_name': 'vcnDomainName'
+            'vcn_domain_name': 'vcnDomainName',
+            'is_zpr_only': 'isZprOnly'
         }
         self._byoipv6_cidr_blocks = None
         self._ipv6_private_cidr_blocks = None
@@ -181,6 +187,7 @@ class Vcn(object):
         self._lifecycle_state = None
         self._time_created = None
         self._vcn_domain_name = None
+        self._is_zpr_only = None
 
     @property
     def byoipv6_cidr_blocks(self):
@@ -733,6 +740,30 @@ class Vcn(object):
         :type: str
         """
         self._vcn_domain_name = vcn_domain_name
+
+    @property
+    def is_zpr_only(self):
+        """
+        Gets the is_zpr_only of this Vcn.
+        Indicates whether Zpr Only Mode is enforced.
+
+
+        :return: The is_zpr_only of this Vcn.
+        :rtype: bool
+        """
+        return self._is_zpr_only
+
+    @is_zpr_only.setter
+    def is_zpr_only(self, is_zpr_only):
+        """
+        Sets the is_zpr_only of this Vcn.
+        Indicates whether Zpr Only Mode is enforced.
+
+
+        :param is_zpr_only: The is_zpr_only of this Vcn.
+        :type: bool
+        """
+        self._is_zpr_only = is_zpr_only
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -39,6 +39,8 @@ Network Firewall
     oci.network_firewall.models.CreateIcmp6ApplicationDetails
     oci.network_firewall.models.CreateIcmpApplicationDetails
     oci.network_firewall.models.CreateMappedSecretDetails
+    oci.network_firewall.models.CreateNatRuleDetails
+    oci.network_firewall.models.CreateNatV4RuleDetails
     oci.network_firewall.models.CreateNetworkFirewallDetails
     oci.network_firewall.models.CreateNetworkFirewallPolicyDetails
     oci.network_firewall.models.CreateSecurityRuleDetails
@@ -66,6 +68,14 @@ Network Firewall
     oci.network_firewall.models.MappedSecret
     oci.network_firewall.models.MappedSecretSummary
     oci.network_firewall.models.MappedSecretSummaryCollection
+    oci.network_firewall.models.NatConfigurationRequest
+    oci.network_firewall.models.NatConfigurationResponse
+    oci.network_firewall.models.NatRule
+    oci.network_firewall.models.NatRuleCollection
+    oci.network_firewall.models.NatRuleMatchCriteria
+    oci.network_firewall.models.NatRuleSummary
+    oci.network_firewall.models.NatV4NatRule
+    oci.network_firewall.models.NatV4NatSummary
     oci.network_firewall.models.NetworkFirewall
     oci.network_firewall.models.NetworkFirewallCollection
     oci.network_firewall.models.NetworkFirewallPolicy
@@ -102,6 +112,8 @@ Network Firewall
     oci.network_firewall.models.UpdateIcmpApplicationDetails
     oci.network_firewall.models.UpdateIpAddressListDetails
     oci.network_firewall.models.UpdateMappedSecretDetails
+    oci.network_firewall.models.UpdateNatRuleDetails
+    oci.network_firewall.models.UpdateNatV4RuleDetails
     oci.network_firewall.models.UpdateNetworkFirewallDetails
     oci.network_firewall.models.UpdateNetworkFirewallPolicyDetails
     oci.network_firewall.models.UpdateSecurityRuleDetails

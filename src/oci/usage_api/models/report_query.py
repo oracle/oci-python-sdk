@@ -306,7 +306,7 @@ class ReportQuery(object):
     def is_aggregate_by_time(self):
         """
         Gets the is_aggregate_by_time of this ReportQuery.
-        Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+        Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
 
 
         :return: The is_aggregate_by_time of this ReportQuery.
@@ -318,7 +318,7 @@ class ReportQuery(object):
     def is_aggregate_by_time(self, is_aggregate_by_time):
         """
         Sets the is_aggregate_by_time of this ReportQuery.
-        Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+        Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
 
 
         :param is_aggregate_by_time: The is_aggregate_by_time of this ReportQuery.
@@ -351,11 +351,11 @@ class ReportQuery(object):
         """
         Gets the query_type of this ReportQuery.
         The query usage type. COST by default if it is missing.
-        Usage - Query the usage data.
-        Cost - Query the cost/billing data.
-        Credit - Query the credit adjustments data.
-        ExpiredCredit - Query the expired credits data
-        AllCredit - Query the credit adjustments and expired credit
+        * Usage: Query the usage data.
+        * Cost: Query the cost/billing data.
+        * Credit: Query the credit adjustments data.
+        * ExpiredCredit: Query the expired credits data.
+        * AllCredit: Query the credit adjustments and expired credit.
 
         Allowed values for this property are: "USAGE", "COST", "CREDIT", "EXPIREDCREDIT", "ALLCREDIT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -371,11 +371,11 @@ class ReportQuery(object):
         """
         Sets the query_type of this ReportQuery.
         The query usage type. COST by default if it is missing.
-        Usage - Query the usage data.
-        Cost - Query the cost/billing data.
-        Credit - Query the credit adjustments data.
-        ExpiredCredit - Query the expired credits data
-        AllCredit - Query the credit adjustments and expired credit
+        * Usage: Query the usage data.
+        * Cost: Query the cost/billing data.
+        * Credit: Query the credit adjustments data.
+        * ExpiredCredit: Query the expired credits data.
+        * AllCredit: Query the credit adjustments and expired credit.
 
 
         :param query_type: The query_type of this ReportQuery.
@@ -390,8 +390,8 @@ class ReportQuery(object):
     def group_by(self):
         """
         Gets the group_by of this ReportQuery.
-        Aggregate the result by.
-        example:
+        Specifies what to aggregate the result by.
+        For example:
           `[\"tagNamespace\", \"tagKey\", \"tagValue\", \"service\", \"skuName\", \"skuPartNumber\", \"unit\",
             \"compartmentName\", \"compartmentPath\", \"compartmentId\", \"platform\", \"region\", \"logicalAd\",
             \"resourceId\", \"tenantId\", \"tenantName\"]`
@@ -406,8 +406,8 @@ class ReportQuery(object):
     def group_by(self, group_by):
         """
         Sets the group_by of this ReportQuery.
-        Aggregate the result by.
-        example:
+        Specifies what to aggregate the result by.
+        For example:
           `[\"tagNamespace\", \"tagKey\", \"tagValue\", \"service\", \"skuName\", \"skuPartNumber\", \"unit\",
             \"compartmentName\", \"compartmentPath\", \"compartmentId\", \"platform\", \"region\", \"logicalAd\",
             \"resourceId\", \"tenantId\", \"tenantName\"]`

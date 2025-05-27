@@ -52,6 +52,10 @@ class CreateNetworkFirewallDetails(object):
             The value to assign to the network_security_group_ids property of this CreateNetworkFirewallDetails.
         :type network_security_group_ids: list[str]
 
+        :param nat_configuration:
+            The value to assign to the nat_configuration property of this CreateNetworkFirewallDetails.
+        :type nat_configuration: oci.network_firewall.models.NatConfigurationRequest
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateNetworkFirewallDetails.
         :type freeform_tags: dict(str, str)
@@ -70,6 +74,7 @@ class CreateNetworkFirewallDetails(object):
             'ipv4_address': 'str',
             'ipv6_address': 'str',
             'network_security_group_ids': 'list[str]',
+            'nat_configuration': 'NatConfigurationRequest',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -82,6 +87,7 @@ class CreateNetworkFirewallDetails(object):
             'ipv4_address': 'ipv4Address',
             'ipv6_address': 'ipv6Address',
             'network_security_group_ids': 'networkSecurityGroupIds',
+            'nat_configuration': 'natConfiguration',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -93,6 +99,7 @@ class CreateNetworkFirewallDetails(object):
         self._ipv4_address = None
         self._ipv6_address = None
         self._network_security_group_ids = None
+        self._nat_configuration = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -307,6 +314,26 @@ class CreateNetworkFirewallDetails(object):
         :type: list[str]
         """
         self._network_security_group_ids = network_security_group_ids
+
+    @property
+    def nat_configuration(self):
+        """
+        Gets the nat_configuration of this CreateNetworkFirewallDetails.
+
+        :return: The nat_configuration of this CreateNetworkFirewallDetails.
+        :rtype: oci.network_firewall.models.NatConfigurationRequest
+        """
+        return self._nat_configuration
+
+    @nat_configuration.setter
+    def nat_configuration(self, nat_configuration):
+        """
+        Sets the nat_configuration of this CreateNetworkFirewallDetails.
+
+        :param nat_configuration: The nat_configuration of this CreateNetworkFirewallDetails.
+        :type: oci.network_firewall.models.NatConfigurationRequest
+        """
+        self._nat_configuration = nat_configuration
 
     @property
     def freeform_tags(self):

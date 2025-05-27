@@ -34,7 +34,7 @@ class UsageapiClientCompositeOperations(object):
             New email recipients group details.
 
         :param str subscription_id: (required)
-            The UsageStatement Subscription unique OCID.
+            The usage statement subscription unique OCID.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.usage_api.models.EmailRecipientsGroup.lifecycle_state`
@@ -180,10 +180,10 @@ class UsageapiClientCompositeOperations(object):
             The information to be updated.
 
         :param str email_recipients_group_id: (required)
-            The email recipient group OCID.
+            The email recipients group OCID.
 
         :param str subscription_id: (required)
-            The UsageStatement Subscription unique OCID.
+            The usage statement subscription unique OCID.
 
         :param str compartment_id: (required)
             The compartment ID in which to list resources.
@@ -228,7 +228,7 @@ class UsageapiClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.usage_api.models.UpdateScheduleDetails update_schedule_details: (required)
-            The information to be updated. Currently supports only tags
+            The information to be updated. Currently supports only tags.
 
         :param str schedule_id: (required)
             The schedule unique OCID.

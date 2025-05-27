@@ -576,7 +576,10 @@ class InstanceConfigurationCreateVolumeDetails(object):
     def is_reservations_enabled(self):
         """
         Gets the is_reservations_enabled of this InstanceConfigurationCreateVolumeDetails.
-        Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+        When set to true, enables SCSI Persistent Reservation (SCSI PR) for the volume. For more information, see
+        `Persistent Reservations`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/persistent-reservations.htm
 
 
         :return: The is_reservations_enabled of this InstanceConfigurationCreateVolumeDetails.
@@ -588,7 +591,10 @@ class InstanceConfigurationCreateVolumeDetails(object):
     def is_reservations_enabled(self, is_reservations_enabled):
         """
         Sets the is_reservations_enabled of this InstanceConfigurationCreateVolumeDetails.
-        Reservations-enabled is a boolean field that allows to enable PR (Persistent Reservation) on a volume.
+        When set to true, enables SCSI Persistent Reservation (SCSI PR) for the volume. For more information, see
+        `Persistent Reservations`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/persistent-reservations.htm
 
 
         :param is_reservations_enabled: The is_reservations_enabled of this InstanceConfigurationCreateVolumeDetails.

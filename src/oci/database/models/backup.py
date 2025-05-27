@@ -79,6 +79,10 @@ class Backup(object):
     #: This constant has a value of "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"
     DATABASE_EDITION_ENTERPRISE_EDITION_EXTREME_PERFORMANCE = "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"
 
+    #: A constant which can be used with the database_edition property of a Backup.
+    #: This constant has a value of "ENTERPRISE_EDITION_DEVELOPER"
+    DATABASE_EDITION_ENTERPRISE_EDITION_DEVELOPER = "ENTERPRISE_EDITION_DEVELOPER"
+
     #: A constant which can be used with the backup_destination_type property of a Backup.
     #: This constant has a value of "OBJECT_STORE"
     BACKUP_DESTINATION_TYPE_OBJECT_STORE = "OBJECT_STORE"
@@ -138,7 +142,7 @@ class Backup(object):
 
         :param database_edition:
             The value to assign to the database_edition property of this Backup.
-            Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE", "ENTERPRISE_EDITION_DEVELOPER", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type database_edition: str
 
@@ -559,7 +563,7 @@ class Backup(object):
         The Oracle Database Edition that applies to all the databases on the DB system.
         Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
 
-        Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE", "ENTERPRISE_EDITION_DEVELOPER", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -579,7 +583,7 @@ class Backup(object):
         :param database_edition: The database_edition of this Backup.
         :type: str
         """
-        allowed_values = ["STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"]
+        allowed_values = ["STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE", "ENTERPRISE_EDITION_DEVELOPER"]
         if not value_allowed_none_or_none_sentinel(database_edition, allowed_values):
             database_edition = 'UNKNOWN_ENUM_VALUE'
         self._database_edition = database_edition

@@ -27,6 +27,8 @@ from .create_decryption_rule_details import CreateDecryptionRuleDetails
 from .create_icmp6_application_details import CreateIcmp6ApplicationDetails
 from .create_icmp_application_details import CreateIcmpApplicationDetails
 from .create_mapped_secret_details import CreateMappedSecretDetails
+from .create_nat_rule_details import CreateNatRuleDetails
+from .create_nat_v4_rule_details import CreateNatV4RuleDetails
 from .create_network_firewall_details import CreateNetworkFirewallDetails
 from .create_network_firewall_policy_details import CreateNetworkFirewallPolicyDetails
 from .create_security_rule_details import CreateSecurityRuleDetails
@@ -54,6 +56,14 @@ from .icmp_application_summary import IcmpApplicationSummary
 from .mapped_secret import MappedSecret
 from .mapped_secret_summary import MappedSecretSummary
 from .mapped_secret_summary_collection import MappedSecretSummaryCollection
+from .nat_configuration_request import NatConfigurationRequest
+from .nat_configuration_response import NatConfigurationResponse
+from .nat_rule import NatRule
+from .nat_rule_collection import NatRuleCollection
+from .nat_rule_match_criteria import NatRuleMatchCriteria
+from .nat_rule_summary import NatRuleSummary
+from .nat_v4_nat_rule import NatV4NatRule
+from .nat_v4_nat_summary import NatV4NatSummary
 from .network_firewall import NetworkFirewall
 from .network_firewall_collection import NetworkFirewallCollection
 from .network_firewall_policy import NetworkFirewallPolicy
@@ -90,6 +100,8 @@ from .update_icmp6_application_details import UpdateIcmp6ApplicationDetails
 from .update_icmp_application_details import UpdateIcmpApplicationDetails
 from .update_ip_address_list_details import UpdateIpAddressListDetails
 from .update_mapped_secret_details import UpdateMappedSecretDetails
+from .update_nat_rule_details import UpdateNatRuleDetails
+from .update_nat_v4_rule_details import UpdateNatV4RuleDetails
 from .update_network_firewall_details import UpdateNetworkFirewallDetails
 from .update_network_firewall_policy_details import UpdateNetworkFirewallPolicyDetails
 from .update_security_rule_details import UpdateSecurityRuleDetails
@@ -144,6 +156,8 @@ network_firewall_type_mapping = {
     "CreateIcmp6ApplicationDetails": CreateIcmp6ApplicationDetails,
     "CreateIcmpApplicationDetails": CreateIcmpApplicationDetails,
     "CreateMappedSecretDetails": CreateMappedSecretDetails,
+    "CreateNatRuleDetails": CreateNatRuleDetails,
+    "CreateNatV4RuleDetails": CreateNatV4RuleDetails,
     "CreateNetworkFirewallDetails": CreateNetworkFirewallDetails,
     "CreateNetworkFirewallPolicyDetails": CreateNetworkFirewallPolicyDetails,
     "CreateSecurityRuleDetails": CreateSecurityRuleDetails,
@@ -171,6 +185,14 @@ network_firewall_type_mapping = {
     "MappedSecret": MappedSecret,
     "MappedSecretSummary": MappedSecretSummary,
     "MappedSecretSummaryCollection": MappedSecretSummaryCollection,
+    "NatConfigurationRequest": NatConfigurationRequest,
+    "NatConfigurationResponse": NatConfigurationResponse,
+    "NatRule": NatRule,
+    "NatRuleCollection": NatRuleCollection,
+    "NatRuleMatchCriteria": NatRuleMatchCriteria,
+    "NatRuleSummary": NatRuleSummary,
+    "NatV4NatRule": NatV4NatRule,
+    "NatV4NatSummary": NatV4NatSummary,
     "NetworkFirewall": NetworkFirewall,
     "NetworkFirewallCollection": NetworkFirewallCollection,
     "NetworkFirewallPolicy": NetworkFirewallPolicy,
@@ -207,6 +229,8 @@ network_firewall_type_mapping = {
     "UpdateIcmpApplicationDetails": UpdateIcmpApplicationDetails,
     "UpdateIpAddressListDetails": UpdateIpAddressListDetails,
     "UpdateMappedSecretDetails": UpdateMappedSecretDetails,
+    "UpdateNatRuleDetails": UpdateNatRuleDetails,
+    "UpdateNatV4RuleDetails": UpdateNatV4RuleDetails,
     "UpdateNetworkFirewallDetails": UpdateNetworkFirewallDetails,
     "UpdateNetworkFirewallPolicyDetails": UpdateNetworkFirewallPolicyDetails,
     "UpdateSecurityRuleDetails": UpdateSecurityRuleDetails,

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AverageCarbonEmission(object):
     """
-    Average carbon emission.
+    Average carbon emissions.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class AverageCarbonEmission(object):
     def sku_part_number(self):
         """
         **[Required]** Gets the sku_part_number of this AverageCarbonEmission.
-        The sku part number.
+        The SKU part number.
 
 
         :return: The sku_part_number of this AverageCarbonEmission.
@@ -56,7 +56,7 @@ class AverageCarbonEmission(object):
     def sku_part_number(self, sku_part_number):
         """
         Sets the sku_part_number of this AverageCarbonEmission.
-        The sku part number.
+        The SKU part number.
 
 
         :param sku_part_number: The sku_part_number of this AverageCarbonEmission.

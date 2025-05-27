@@ -36,23 +36,30 @@ class UpdateVcnDetails(object):
             The value to assign to the security_attributes property of this UpdateVcnDetails.
         :type security_attributes: dict(str, dict(str, object))
 
+        :param is_zpr_only:
+            The value to assign to the is_zpr_only property of this UpdateVcnDetails.
+        :type is_zpr_only: bool
+
         """
         self.swagger_types = {
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
-            'security_attributes': 'dict(str, dict(str, object))'
+            'security_attributes': 'dict(str, dict(str, object))',
+            'is_zpr_only': 'bool'
         }
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
-            'security_attributes': 'securityAttributes'
+            'security_attributes': 'securityAttributes',
+            'is_zpr_only': 'isZprOnly'
         }
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
         self._security_attributes = None
+        self._is_zpr_only = None
 
     @property
     def defined_tags(self):
@@ -185,6 +192,30 @@ class UpdateVcnDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._security_attributes = security_attributes
+
+    @property
+    def is_zpr_only(self):
+        """
+        Gets the is_zpr_only of this UpdateVcnDetails.
+        Indicates whether Zpr Only Mode is enforced.
+
+
+        :return: The is_zpr_only of this UpdateVcnDetails.
+        :rtype: bool
+        """
+        return self._is_zpr_only
+
+    @is_zpr_only.setter
+    def is_zpr_only(self, is_zpr_only):
+        """
+        Sets the is_zpr_only of this UpdateVcnDetails.
+        Indicates whether Zpr Only Mode is enforced.
+
+
+        :param is_zpr_only: The is_zpr_only of this UpdateVcnDetails.
+        :type: bool
+        """
+        self._is_zpr_only = is_zpr_only
 
     def __repr__(self):
         return formatted_flat_dict(self)

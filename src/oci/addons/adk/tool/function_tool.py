@@ -309,7 +309,8 @@ class FunctionTool(BaseModel):
             Dictionary mapping parameter names to their descriptions
         """
         param_descriptions = {}
-        if docstring := getdoc(callable_func):
+        docstring = getdoc(callable_func)
+        if docstring:
             parsed_doc = parse(docstring)
             param_docs = parsed_doc.params
 

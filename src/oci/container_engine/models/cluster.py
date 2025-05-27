@@ -136,6 +136,10 @@ class Cluster(object):
             The value to assign to the open_id_connect_discovery_endpoint property of this Cluster.
         :type open_id_connect_discovery_endpoint: str
 
+        :param open_id_connect_discovery_key:
+            The value to assign to the open_id_connect_discovery_key property of this Cluster.
+        :type open_id_connect_discovery_key: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -157,7 +161,8 @@ class Cluster(object):
             'image_policy_config': 'ImagePolicyConfig',
             'cluster_pod_network_options': 'list[ClusterPodNetworkOptionDetails]',
             'type': 'str',
-            'open_id_connect_discovery_endpoint': 'str'
+            'open_id_connect_discovery_endpoint': 'str',
+            'open_id_connect_discovery_key': 'str'
         }
         self.attribute_map = {
             'id': 'id',
@@ -179,7 +184,8 @@ class Cluster(object):
             'image_policy_config': 'imagePolicyConfig',
             'cluster_pod_network_options': 'clusterPodNetworkOptions',
             'type': 'type',
-            'open_id_connect_discovery_endpoint': 'openIdConnectDiscoveryEndpoint'
+            'open_id_connect_discovery_endpoint': 'openIdConnectDiscoveryEndpoint',
+            'open_id_connect_discovery_key': 'openIdConnectDiscoveryKey'
         }
         self._id = None
         self._name = None
@@ -201,6 +207,7 @@ class Cluster(object):
         self._cluster_pod_network_options = None
         self._type = None
         self._open_id_connect_discovery_endpoint = None
+        self._open_id_connect_discovery_key = None
 
     @property
     def id(self):
@@ -715,6 +722,30 @@ class Cluster(object):
         :type: str
         """
         self._open_id_connect_discovery_endpoint = open_id_connect_discovery_endpoint
+
+    @property
+    def open_id_connect_discovery_key(self):
+        """
+        Gets the open_id_connect_discovery_key of this Cluster.
+        The cluster-specific OpenID Connect Discovery Key to derive the DiscoveryEndpoint
+
+
+        :return: The open_id_connect_discovery_key of this Cluster.
+        :rtype: str
+        """
+        return self._open_id_connect_discovery_key
+
+    @open_id_connect_discovery_key.setter
+    def open_id_connect_discovery_key(self, open_id_connect_discovery_key):
+        """
+        Sets the open_id_connect_discovery_key of this Cluster.
+        The cluster-specific OpenID Connect Discovery Key to derive the DiscoveryEndpoint
+
+
+        :param open_id_connect_discovery_key: The open_id_connect_discovery_key of this Cluster.
+        :type: str
+        """
+        self._open_id_connect_discovery_key = open_id_connect_discovery_key
 
     def __repr__(self):
         return formatted_flat_dict(self)

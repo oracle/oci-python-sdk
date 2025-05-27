@@ -32,6 +32,10 @@ class UpdateNetworkFirewallDetails(object):
             The value to assign to the network_security_group_ids property of this UpdateNetworkFirewallDetails.
         :type network_security_group_ids: list[str]
 
+        :param nat_configuration:
+            The value to assign to the nat_configuration property of this UpdateNetworkFirewallDetails.
+        :type nat_configuration: oci.network_firewall.models.NatConfigurationRequest
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateNetworkFirewallDetails.
         :type freeform_tags: dict(str, str)
@@ -45,6 +49,7 @@ class UpdateNetworkFirewallDetails(object):
             'display_name': 'str',
             'network_firewall_policy_id': 'str',
             'network_security_group_ids': 'list[str]',
+            'nat_configuration': 'NatConfigurationRequest',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -52,12 +57,14 @@ class UpdateNetworkFirewallDetails(object):
             'display_name': 'displayName',
             'network_firewall_policy_id': 'networkFirewallPolicyId',
             'network_security_group_ids': 'networkSecurityGroupIds',
+            'nat_configuration': 'natConfiguration',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
         self._display_name = None
         self._network_firewall_policy_id = None
         self._network_security_group_ids = None
+        self._nat_configuration = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -140,6 +147,26 @@ class UpdateNetworkFirewallDetails(object):
         :type: list[str]
         """
         self._network_security_group_ids = network_security_group_ids
+
+    @property
+    def nat_configuration(self):
+        """
+        Gets the nat_configuration of this UpdateNetworkFirewallDetails.
+
+        :return: The nat_configuration of this UpdateNetworkFirewallDetails.
+        :rtype: oci.network_firewall.models.NatConfigurationRequest
+        """
+        return self._nat_configuration
+
+    @nat_configuration.setter
+    def nat_configuration(self, nat_configuration):
+        """
+        Sets the nat_configuration of this UpdateNetworkFirewallDetails.
+
+        :param nat_configuration: The nat_configuration of this UpdateNetworkFirewallDetails.
+        :type: oci.network_firewall.models.NatConfigurationRequest
+        """
+        self._nat_configuration = nat_configuration
 
     @property
     def freeform_tags(self):

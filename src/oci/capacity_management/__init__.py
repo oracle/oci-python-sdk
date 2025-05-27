@@ -9,6 +9,10 @@ from __future__ import absolute_import
 
 from .capacity_management_client import CapacityManagementClient
 from .capacity_management_client_composite_operations import CapacityManagementClientCompositeOperations
+from .demand_signal_client import DemandSignalClient
+from .demand_signal_client_composite_operations import DemandSignalClientCompositeOperations
+from .internal_demand_signal_client import InternalDemandSignalClient
+from .internal_demand_signal_client_composite_operations import InternalDemandSignalClientCompositeOperations
 from . import models
 
-__all__ = ["CapacityManagementClient", "CapacityManagementClientCompositeOperations", "models"]
+__all__ = ["CapacityManagementClient", "CapacityManagementClientCompositeOperations", "DemandSignalClient", "DemandSignalClientCompositeOperations", "InternalDemandSignalClient", "InternalDemandSignalClientCompositeOperations", "models"]

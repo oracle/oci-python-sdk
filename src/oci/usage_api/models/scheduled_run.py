@@ -82,7 +82,7 @@ class ScheduledRun(object):
     def id(self):
         """
         **[Required]** Gets the id of this ScheduledRun.
-        The ocid representing unique shedule run
+        The OCID representing a unique shedule run.
 
 
         :return: The id of this ScheduledRun.
@@ -94,7 +94,7 @@ class ScheduledRun(object):
     def id(self, id):
         """
         Sets the id of this ScheduledRun.
-        The ocid representing unique shedule run
+        The OCID representing a unique shedule run.
 
 
         :param id: The id of this ScheduledRun.
@@ -106,7 +106,7 @@ class ScheduledRun(object):
     def schedule_id(self):
         """
         **[Required]** Gets the schedule_id of this ScheduledRun.
-        The ocid representing unique shedule
+        The OCID representing a unique shedule.
 
 
         :return: The schedule_id of this ScheduledRun.
@@ -118,7 +118,7 @@ class ScheduledRun(object):
     def schedule_id(self, schedule_id):
         """
         Sets the schedule_id of this ScheduledRun.
-        The ocid representing unique shedule
+        The OCID representing a unique shedule.
 
 
         :param schedule_id: The schedule_id of this ScheduledRun.
@@ -130,7 +130,7 @@ class ScheduledRun(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this ScheduledRun.
-        The time when schedule started executing
+        The time the schedule started executing.
 
 
         :return: The time_created of this ScheduledRun.
@@ -142,7 +142,7 @@ class ScheduledRun(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this ScheduledRun.
-        The time when schedule started executing
+        The time the schedule started executing.
 
 
         :param time_created: The time_created of this ScheduledRun.
@@ -154,7 +154,7 @@ class ScheduledRun(object):
     def time_finished(self):
         """
         **[Required]** Gets the time_finished of this ScheduledRun.
-        The time when schedule finished executing
+        The time the schedule finished executing.
 
 
         :return: The time_finished of this ScheduledRun.
@@ -166,7 +166,7 @@ class ScheduledRun(object):
     def time_finished(self, time_finished):
         """
         Sets the time_finished of this ScheduledRun.
-        The time when schedule finished executing
+        The time the schedule finished executing.
 
 
         :param time_finished: The time_finished of this ScheduledRun.
@@ -178,7 +178,7 @@ class ScheduledRun(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this ScheduledRun.
-        Specifies if the schedule job was run successfully or not.
+        Specifies whether or not the schedule job was successfully run.
 
         Allowed values for this property are: "FAILED", "SUCCEEDED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -193,7 +193,7 @@ class ScheduledRun(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this ScheduledRun.
-        Specifies if the schedule job was run successfully or not.
+        Specifies whether or not the schedule job was successfully run.
 
 
         :param lifecycle_state: The lifecycle_state of this ScheduledRun.
@@ -208,7 +208,7 @@ class ScheduledRun(object):
     def lifecycle_details(self):
         """
         **[Required]** Gets the lifecycle_details of this ScheduledRun.
-        Additional details about scheduled run failure
+        Additional details about the scheduled run.
 
 
         :return: The lifecycle_details of this ScheduledRun.
@@ -220,7 +220,7 @@ class ScheduledRun(object):
     def lifecycle_details(self, lifecycle_details):
         """
         Sets the lifecycle_details of this ScheduledRun.
-        Additional details about scheduled run failure
+        Additional details about the scheduled run.
 
 
         :param lifecycle_details: The lifecycle_details of this ScheduledRun.

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UsageCarbonEmissionSummary(object):
     """
-    The usage carbon emission store result.
+    The carbon emission usage store result.
     """
 
     def __init__(self, **kwargs):
@@ -88,6 +88,10 @@ class UsageCarbonEmissionSummary(object):
             The value to assign to the emission_calculation_method property of this UsageCarbonEmissionSummary.
         :type emission_calculation_method: str
 
+        :param emission_type:
+            The value to assign to the emission_type property of this UsageCarbonEmissionSummary.
+        :type emission_type: str
+
         :param subscription_id:
             The value to assign to the subscription_id property of this UsageCarbonEmissionSummary.
         :type subscription_id: str
@@ -115,6 +119,7 @@ class UsageCarbonEmissionSummary(object):
             'time_usage_ended': 'datetime',
             'computed_carbon_emission': 'float',
             'emission_calculation_method': 'str',
+            'emission_type': 'str',
             'subscription_id': 'str',
             'tags': 'list[Tag]'
         }
@@ -136,6 +141,7 @@ class UsageCarbonEmissionSummary(object):
             'time_usage_ended': 'timeUsageEnded',
             'computed_carbon_emission': 'computedCarbonEmission',
             'emission_calculation_method': 'emissionCalculationMethod',
+            'emission_type': 'emissionType',
             'subscription_id': 'subscriptionId',
             'tags': 'tags'
         }
@@ -156,6 +162,7 @@ class UsageCarbonEmissionSummary(object):
         self._time_usage_ended = None
         self._computed_carbon_emission = None
         self._emission_calculation_method = None
+        self._emission_type = None
         self._subscription_id = None
         self._tags = None
 
@@ -523,7 +530,7 @@ class UsageCarbonEmissionSummary(object):
     def computed_carbon_emission(self):
         """
         **[Required]** Gets the computed_carbon_emission of this UsageCarbonEmissionSummary.
-        The carbon emission in MTCO2 unit.
+        The carbon emission usage in MTCO2 units.
 
 
         :return: The computed_carbon_emission of this UsageCarbonEmissionSummary.
@@ -535,7 +542,7 @@ class UsageCarbonEmissionSummary(object):
     def computed_carbon_emission(self, computed_carbon_emission):
         """
         Sets the computed_carbon_emission of this UsageCarbonEmissionSummary.
-        The carbon emission in MTCO2 unit.
+        The carbon emission usage in MTCO2 units.
 
 
         :param computed_carbon_emission: The computed_carbon_emission of this UsageCarbonEmissionSummary.
@@ -547,7 +554,7 @@ class UsageCarbonEmissionSummary(object):
     def emission_calculation_method(self):
         """
         **[Required]** Gets the emission_calculation_method of this UsageCarbonEmissionSummary.
-        The method used to calculate carbon emission.
+        Specifies the approach for calculating carbon emissions, supports both SPEND_BASED (based on expenditure data) and POWER_BASED (based on power consumption, newly introduced in the metering pipeline)
 
 
         :return: The emission_calculation_method of this UsageCarbonEmissionSummary.
@@ -559,13 +566,37 @@ class UsageCarbonEmissionSummary(object):
     def emission_calculation_method(self, emission_calculation_method):
         """
         Sets the emission_calculation_method of this UsageCarbonEmissionSummary.
-        The method used to calculate carbon emission.
+        Specifies the approach for calculating carbon emissions, supports both SPEND_BASED (based on expenditure data) and POWER_BASED (based on power consumption, newly introduced in the metering pipeline)
 
 
         :param emission_calculation_method: The emission_calculation_method of this UsageCarbonEmissionSummary.
         :type: str
         """
         self._emission_calculation_method = emission_calculation_method
+
+    @property
+    def emission_type(self):
+        """
+        Gets the emission_type of this UsageCarbonEmissionSummary.
+        The emission type, such as MARKET_BASED or LOCATION_BASED.
+
+
+        :return: The emission_type of this UsageCarbonEmissionSummary.
+        :rtype: str
+        """
+        return self._emission_type
+
+    @emission_type.setter
+    def emission_type(self, emission_type):
+        """
+        Sets the emission_type of this UsageCarbonEmissionSummary.
+        The emission type, such as MARKET_BASED or LOCATION_BASED.
+
+
+        :param emission_type: The emission_type of this UsageCarbonEmissionSummary.
+        :type: str
+        """
+        self._emission_type = emission_type
 
     @property
     def subscription_id(self):

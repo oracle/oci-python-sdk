@@ -116,6 +116,10 @@ class Instance(object):
             The value to assign to the compartment_id property of this Instance.
         :type compartment_id: str
 
+        :param placement_constraint_details:
+            The value to assign to the placement_constraint_details property of this Instance.
+        :type placement_constraint_details: oci.core.models.PlacementConstraintDetails
+
         :param cluster_placement_group_id:
             The value to assign to the cluster_placement_group_id property of this Instance.
         :type cluster_placement_group_id: str
@@ -246,11 +250,16 @@ class Instance(object):
             The value to assign to the licensing_configs property of this Instance.
         :type licensing_configs: list[oci.core.models.LicensingConfig]
 
+        :param compute_host_group_id:
+            The value to assign to the compute_host_group_id property of this Instance.
+        :type compute_host_group_id: str
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
             'capacity_reservation_id': 'str',
             'compartment_id': 'str',
+            'placement_constraint_details': 'PlacementConstraintDetails',
             'cluster_placement_group_id': 'str',
             'dedicated_vm_host_id': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -281,12 +290,14 @@ class Instance(object):
             'time_maintenance_reboot_due': 'datetime',
             'platform_config': 'PlatformConfig',
             'instance_configuration_id': 'str',
-            'licensing_configs': 'list[LicensingConfig]'
+            'licensing_configs': 'list[LicensingConfig]',
+            'compute_host_group_id': 'str'
         }
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'capacity_reservation_id': 'capacityReservationId',
             'compartment_id': 'compartmentId',
+            'placement_constraint_details': 'placementConstraintDetails',
             'cluster_placement_group_id': 'clusterPlacementGroupId',
             'dedicated_vm_host_id': 'dedicatedVmHostId',
             'defined_tags': 'definedTags',
@@ -317,11 +328,13 @@ class Instance(object):
             'time_maintenance_reboot_due': 'timeMaintenanceRebootDue',
             'platform_config': 'platformConfig',
             'instance_configuration_id': 'instanceConfigurationId',
-            'licensing_configs': 'licensingConfigs'
+            'licensing_configs': 'licensingConfigs',
+            'compute_host_group_id': 'computeHostGroupId'
         }
         self._availability_domain = None
         self._capacity_reservation_id = None
         self._compartment_id = None
+        self._placement_constraint_details = None
         self._cluster_placement_group_id = None
         self._dedicated_vm_host_id = None
         self._defined_tags = None
@@ -353,6 +366,7 @@ class Instance(object):
         self._platform_config = None
         self._instance_configuration_id = None
         self._licensing_configs = None
+        self._compute_host_group_id = None
 
     @property
     def availability_domain(self):
@@ -437,6 +451,26 @@ class Instance(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def placement_constraint_details(self):
+        """
+        Gets the placement_constraint_details of this Instance.
+
+        :return: The placement_constraint_details of this Instance.
+        :rtype: oci.core.models.PlacementConstraintDetails
+        """
+        return self._placement_constraint_details
+
+    @placement_constraint_details.setter
+    def placement_constraint_details(self, placement_constraint_details):
+        """
+        Sets the placement_constraint_details of this Instance.
+
+        :param placement_constraint_details: The placement_constraint_details of this Instance.
+        :type: oci.core.models.PlacementConstraintDetails
+        """
+        self._placement_constraint_details = placement_constraint_details
 
     @property
     def cluster_placement_group_id(self):
@@ -1331,6 +1365,34 @@ class Instance(object):
         :type: list[oci.core.models.LicensingConfig]
         """
         self._licensing_configs = licensing_configs
+
+    @property
+    def compute_host_group_id(self):
+        """
+        Gets the compute_host_group_id of this Instance.
+        The `OCID`__ for the Customer-unique host group
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The compute_host_group_id of this Instance.
+        :rtype: str
+        """
+        return self._compute_host_group_id
+
+    @compute_host_group_id.setter
+    def compute_host_group_id(self, compute_host_group_id):
+        """
+        Sets the compute_host_group_id of this Instance.
+        The `OCID`__ for the Customer-unique host group
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param compute_host_group_id: The compute_host_group_id of this Instance.
+        :type: str
+        """
+        self._compute_host_group_id = compute_host_group_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

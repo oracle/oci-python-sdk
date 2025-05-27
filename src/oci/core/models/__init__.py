@@ -40,6 +40,7 @@ from .app_catalog_listing_summary import AppCatalogListingSummary
 from .app_catalog_subscription import AppCatalogSubscription
 from .app_catalog_subscription_summary import AppCatalogSubscriptionSummary
 from .attach_boot_volume_details import AttachBootVolumeDetails
+from .attach_compute_host_group_host_details import AttachComputeHostGroupHostDetails
 from .attach_emulated_volume_details import AttachEmulatedVolumeDetails
 from .attach_i_scsi_volume_details import AttachIScsiVolumeDetails
 from .attach_instance_pool_instance_details import AttachInstancePoolInstanceDetails
@@ -98,6 +99,7 @@ from .change_compute_cluster_compartment_details import ChangeComputeClusterComp
 from .change_compute_gpu_memory_cluster_compartment_details import ChangeComputeGpuMemoryClusterCompartmentDetails
 from .change_compute_gpu_memory_fabric_compartment_details import ChangeComputeGpuMemoryFabricCompartmentDetails
 from .change_compute_host_compartment_details import ChangeComputeHostCompartmentDetails
+from .change_compute_host_group_compartment_details import ChangeComputeHostGroupCompartmentDetails
 from .change_compute_image_capability_schema_compartment_details import ChangeComputeImageCapabilitySchemaCompartmentDetails
 from .change_cpe_compartment_details import ChangeCpeCompartmentDetails
 from .change_cross_connect_compartment_details import ChangeCrossConnectCompartmentDetails
@@ -137,6 +139,7 @@ from .cluster_network_summary import ClusterNetworkSummary
 from .compartment_internal import CompartmentInternal
 from .compute_bare_metal_host import ComputeBareMetalHost
 from .compute_bare_metal_host_collection import ComputeBareMetalHostCollection
+from .compute_bare_metal_host_placement_constraint_details import ComputeBareMetalHostPlacementConstraintDetails
 from .compute_bare_metal_host_summary import ComputeBareMetalHostSummary
 from .compute_capacity_report import ComputeCapacityReport
 from .compute_capacity_reservation import ComputeCapacityReservation
@@ -162,6 +165,11 @@ from .compute_gpu_memory_fabric_collection import ComputeGpuMemoryFabricCollecti
 from .compute_gpu_memory_fabric_summary import ComputeGpuMemoryFabricSummary
 from .compute_host import ComputeHost
 from .compute_host_collection import ComputeHostCollection
+from .compute_host_configuration_check_details import ComputeHostConfigurationCheckDetails
+from .compute_host_configuration_data import ComputeHostConfigurationData
+from .compute_host_group import ComputeHostGroup
+from .compute_host_group_collection import ComputeHostGroupCollection
+from .compute_host_group_summary import ComputeHostGroupSummary
 from .compute_host_summary import ComputeHostSummary
 from .compute_hpc_island import ComputeHpcIsland
 from .compute_hpc_island_collection import ComputeHpcIslandCollection
@@ -200,6 +208,7 @@ from .create_compute_capacity_reservation_details import CreateComputeCapacityRe
 from .create_compute_capacity_topology_details import CreateComputeCapacityTopologyDetails
 from .create_compute_cluster_details import CreateComputeClusterDetails
 from .create_compute_gpu_memory_cluster_details import CreateComputeGpuMemoryClusterDetails
+from .create_compute_host_group_details import CreateComputeHostGroupDetails
 from .create_compute_image_capability_schema_details import CreateComputeImageCapabilitySchemaDetails
 from .create_cpe_details import CreateCpeDetails
 from .create_cross_connect_details import CreateCrossConnectDetails
@@ -267,6 +276,7 @@ from .default_drg_route_tables import DefaultDrgRouteTables
 from .default_phase_one_parameters import DefaultPhaseOneParameters
 from .default_phase_two_parameters import DefaultPhaseTwoParameters
 from .delete_virtual_circuit_public_prefix_details import DeleteVirtualCircuitPublicPrefixDetails
+from .detach_compute_host_group_host_details import DetachComputeHostGroupHostDetails
 from .detach_instance_pool_instance_details import DetachInstancePoolInstanceDetails
 from .detach_load_balancer_details import DetachLoadBalancerDetails
 from .detached_volume_autotune_policy import DetachedVolumeAutotunePolicy
@@ -307,6 +317,8 @@ from .generic_bm_platform_config import GenericBmPlatformConfig
 from .get_ip_inventory_vcn_overlap_details import GetIpInventoryVcnOverlapDetails
 from .get_public_ip_by_ip_address_details import GetPublicIpByIpAddressDetails
 from .get_public_ip_by_private_ip_id_details import GetPublicIpByPrivateIpIdDetails
+from .host_group_configuration import HostGroupConfiguration
+from .host_group_placement_constraint_details import HostGroupPlacementConstraintDetails
 from .ip_sec_connection import IPSecConnection
 from .ip_sec_connection_device_config import IPSecConnectionDeviceConfig
 from .ip_sec_connection_device_status import IPSecConnectionDeviceStatus
@@ -455,6 +467,7 @@ from .percentage_of_cores_enabled_options import PercentageOfCoresEnabledOptions
 from .performance_based_autotune_policy import PerformanceBasedAutotunePolicy
 from .phase_one_config_details import PhaseOneConfigDetails
 from .phase_two_config_details import PhaseTwoConfigDetails
+from .placement_constraint_details import PlacementConstraintDetails
 from .platform_config import PlatformConfig
 from .port_range import PortRange
 from .preemptible_instance_config_details import PreemptibleInstanceConfigDetails
@@ -465,6 +478,7 @@ from .public_ip_pool import PublicIpPool
 from .public_ip_pool_collection import PublicIpPoolCollection
 from .public_ip_pool_summary import PublicIpPoolSummary
 from .reboot_migrate_action_details import RebootMigrateActionDetails
+from .recycle_details import RecycleDetails
 from .remote_peering_connection import RemotePeeringConnection
 from .remote_peering_connection_drg_attachment_network_details import RemotePeeringConnectionDrgAttachmentNetworkDetails
 from .remove_drg_route_distribution_statements_details import RemoveDrgRouteDistributionStatementsDetails
@@ -535,6 +549,7 @@ from .update_compute_cluster_details import UpdateComputeClusterDetails
 from .update_compute_gpu_memory_cluster_details import UpdateComputeGpuMemoryClusterDetails
 from .update_compute_gpu_memory_fabric_details import UpdateComputeGpuMemoryFabricDetails
 from .update_compute_host_details import UpdateComputeHostDetails
+from .update_compute_host_group_details import UpdateComputeHostGroupDetails
 from .update_compute_image_capability_schema_details import UpdateComputeImageCapabilitySchemaDetails
 from .update_console_history_details import UpdateConsoleHistoryDetails
 from .update_cpe_details import UpdateCpeDetails
@@ -681,6 +696,7 @@ core_type_mapping = {
     "AppCatalogSubscription": AppCatalogSubscription,
     "AppCatalogSubscriptionSummary": AppCatalogSubscriptionSummary,
     "AttachBootVolumeDetails": AttachBootVolumeDetails,
+    "AttachComputeHostGroupHostDetails": AttachComputeHostGroupHostDetails,
     "AttachEmulatedVolumeDetails": AttachEmulatedVolumeDetails,
     "AttachIScsiVolumeDetails": AttachIScsiVolumeDetails,
     "AttachInstancePoolInstanceDetails": AttachInstancePoolInstanceDetails,
@@ -739,6 +755,7 @@ core_type_mapping = {
     "ChangeComputeGpuMemoryClusterCompartmentDetails": ChangeComputeGpuMemoryClusterCompartmentDetails,
     "ChangeComputeGpuMemoryFabricCompartmentDetails": ChangeComputeGpuMemoryFabricCompartmentDetails,
     "ChangeComputeHostCompartmentDetails": ChangeComputeHostCompartmentDetails,
+    "ChangeComputeHostGroupCompartmentDetails": ChangeComputeHostGroupCompartmentDetails,
     "ChangeComputeImageCapabilitySchemaCompartmentDetails": ChangeComputeImageCapabilitySchemaCompartmentDetails,
     "ChangeCpeCompartmentDetails": ChangeCpeCompartmentDetails,
     "ChangeCrossConnectCompartmentDetails": ChangeCrossConnectCompartmentDetails,
@@ -778,6 +795,7 @@ core_type_mapping = {
     "CompartmentInternal": CompartmentInternal,
     "ComputeBareMetalHost": ComputeBareMetalHost,
     "ComputeBareMetalHostCollection": ComputeBareMetalHostCollection,
+    "ComputeBareMetalHostPlacementConstraintDetails": ComputeBareMetalHostPlacementConstraintDetails,
     "ComputeBareMetalHostSummary": ComputeBareMetalHostSummary,
     "ComputeCapacityReport": ComputeCapacityReport,
     "ComputeCapacityReservation": ComputeCapacityReservation,
@@ -803,6 +821,11 @@ core_type_mapping = {
     "ComputeGpuMemoryFabricSummary": ComputeGpuMemoryFabricSummary,
     "ComputeHost": ComputeHost,
     "ComputeHostCollection": ComputeHostCollection,
+    "ComputeHostConfigurationCheckDetails": ComputeHostConfigurationCheckDetails,
+    "ComputeHostConfigurationData": ComputeHostConfigurationData,
+    "ComputeHostGroup": ComputeHostGroup,
+    "ComputeHostGroupCollection": ComputeHostGroupCollection,
+    "ComputeHostGroupSummary": ComputeHostGroupSummary,
     "ComputeHostSummary": ComputeHostSummary,
     "ComputeHpcIsland": ComputeHpcIsland,
     "ComputeHpcIslandCollection": ComputeHpcIslandCollection,
@@ -841,6 +864,7 @@ core_type_mapping = {
     "CreateComputeCapacityTopologyDetails": CreateComputeCapacityTopologyDetails,
     "CreateComputeClusterDetails": CreateComputeClusterDetails,
     "CreateComputeGpuMemoryClusterDetails": CreateComputeGpuMemoryClusterDetails,
+    "CreateComputeHostGroupDetails": CreateComputeHostGroupDetails,
     "CreateComputeImageCapabilitySchemaDetails": CreateComputeImageCapabilitySchemaDetails,
     "CreateCpeDetails": CreateCpeDetails,
     "CreateCrossConnectDetails": CreateCrossConnectDetails,
@@ -908,6 +932,7 @@ core_type_mapping = {
     "DefaultPhaseOneParameters": DefaultPhaseOneParameters,
     "DefaultPhaseTwoParameters": DefaultPhaseTwoParameters,
     "DeleteVirtualCircuitPublicPrefixDetails": DeleteVirtualCircuitPublicPrefixDetails,
+    "DetachComputeHostGroupHostDetails": DetachComputeHostGroupHostDetails,
     "DetachInstancePoolInstanceDetails": DetachInstancePoolInstanceDetails,
     "DetachLoadBalancerDetails": DetachLoadBalancerDetails,
     "DetachedVolumeAutotunePolicy": DetachedVolumeAutotunePolicy,
@@ -948,6 +973,8 @@ core_type_mapping = {
     "GetIpInventoryVcnOverlapDetails": GetIpInventoryVcnOverlapDetails,
     "GetPublicIpByIpAddressDetails": GetPublicIpByIpAddressDetails,
     "GetPublicIpByPrivateIpIdDetails": GetPublicIpByPrivateIpIdDetails,
+    "HostGroupConfiguration": HostGroupConfiguration,
+    "HostGroupPlacementConstraintDetails": HostGroupPlacementConstraintDetails,
     "IPSecConnection": IPSecConnection,
     "IPSecConnectionDeviceConfig": IPSecConnectionDeviceConfig,
     "IPSecConnectionDeviceStatus": IPSecConnectionDeviceStatus,
@@ -1096,6 +1123,7 @@ core_type_mapping = {
     "PerformanceBasedAutotunePolicy": PerformanceBasedAutotunePolicy,
     "PhaseOneConfigDetails": PhaseOneConfigDetails,
     "PhaseTwoConfigDetails": PhaseTwoConfigDetails,
+    "PlacementConstraintDetails": PlacementConstraintDetails,
     "PlatformConfig": PlatformConfig,
     "PortRange": PortRange,
     "PreemptibleInstanceConfigDetails": PreemptibleInstanceConfigDetails,
@@ -1106,6 +1134,7 @@ core_type_mapping = {
     "PublicIpPoolCollection": PublicIpPoolCollection,
     "PublicIpPoolSummary": PublicIpPoolSummary,
     "RebootMigrateActionDetails": RebootMigrateActionDetails,
+    "RecycleDetails": RecycleDetails,
     "RemotePeeringConnection": RemotePeeringConnection,
     "RemotePeeringConnectionDrgAttachmentNetworkDetails": RemotePeeringConnectionDrgAttachmentNetworkDetails,
     "RemoveDrgRouteDistributionStatementsDetails": RemoveDrgRouteDistributionStatementsDetails,
@@ -1176,6 +1205,7 @@ core_type_mapping = {
     "UpdateComputeGpuMemoryClusterDetails": UpdateComputeGpuMemoryClusterDetails,
     "UpdateComputeGpuMemoryFabricDetails": UpdateComputeGpuMemoryFabricDetails,
     "UpdateComputeHostDetails": UpdateComputeHostDetails,
+    "UpdateComputeHostGroupDetails": UpdateComputeHostGroupDetails,
     "UpdateComputeImageCapabilitySchemaDetails": UpdateComputeImageCapabilitySchemaDetails,
     "UpdateConsoleHistoryDetails": UpdateConsoleHistoryDetails,
     "UpdateCpeDetails": UpdateCpeDetails,

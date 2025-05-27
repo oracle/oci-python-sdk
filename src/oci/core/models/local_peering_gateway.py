@@ -83,6 +83,10 @@ class LocalPeeringGateway(object):
             The value to assign to the freeform_tags property of this LocalPeeringGateway.
         :type freeform_tags: dict(str, str)
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this LocalPeeringGateway.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param id:
             The value to assign to the id property of this LocalPeeringGateway.
         :type id: str
@@ -137,6 +141,7 @@ class LocalPeeringGateway(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
+            'security_attributes': 'dict(str, dict(str, object))',
             'id': 'str',
             'is_cross_tenancy_peering': 'bool',
             'lifecycle_state': 'str',
@@ -154,6 +159,7 @@ class LocalPeeringGateway(object):
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
+            'security_attributes': 'securityAttributes',
             'id': 'id',
             'is_cross_tenancy_peering': 'isCrossTenancyPeering',
             'lifecycle_state': 'lifecycleState',
@@ -170,6 +176,7 @@ class LocalPeeringGateway(object):
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
+        self._security_attributes = None
         self._id = None
         self._is_cross_tenancy_peering = None
         self._lifecycle_state = None
@@ -303,6 +310,44 @@ class LocalPeeringGateway(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this LocalPeeringGateway.
+        `Security attributes`__ are labels
+        for a resource that can be referenced in a `Zero Trust Packet Routing`__
+        (ZPR) policy to control access to ZPR-supported resources.
+
+        Example: `{\"Oracle-DataSecurity-ZPR\": {\"MaxEgressCount\": {\"value\":\"42\",\"mode\":\"audit\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
+        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
+
+
+        :return: The security_attributes of this LocalPeeringGateway.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this LocalPeeringGateway.
+        `Security attributes`__ are labels
+        for a resource that can be referenced in a `Zero Trust Packet Routing`__
+        (ZPR) policy to control access to ZPR-supported resources.
+
+        Example: `{\"Oracle-DataSecurity-ZPR\": {\"MaxEgressCount\": {\"value\":\"42\",\"mode\":\"audit\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
+        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
+
+
+        :param security_attributes: The security_attributes of this LocalPeeringGateway.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     @property
     def id(self):

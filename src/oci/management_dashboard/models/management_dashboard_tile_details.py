@@ -83,6 +83,10 @@ class ManagementDashboardTileDetails(object):
             The value to assign to the parameters_map property of this ManagementDashboardTileDetails.
         :type parameters_map: object
 
+        :param description:
+            The value to assign to the description property of this ManagementDashboardTileDetails.
+        :type description: str
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -96,7 +100,8 @@ class ManagementDashboardTileDetails(object):
             'data_config': 'list[object]',
             'state': 'str',
             'drilldown_config': 'object',
-            'parameters_map': 'object'
+            'parameters_map': 'object',
+            'description': 'str'
         }
         self.attribute_map = {
             'display_name': 'displayName',
@@ -110,7 +115,8 @@ class ManagementDashboardTileDetails(object):
             'data_config': 'dataConfig',
             'state': 'state',
             'drilldown_config': 'drilldownConfig',
-            'parameters_map': 'parametersMap'
+            'parameters_map': 'parametersMap',
+            'description': 'description'
         }
         self._display_name = None
         self._saved_search_id = None
@@ -124,6 +130,7 @@ class ManagementDashboardTileDetails(object):
         self._state = None
         self._drilldown_config = None
         self._parameters_map = None
+        self._description = None
 
     @property
     def display_name(self):
@@ -418,6 +425,30 @@ class ManagementDashboardTileDetails(object):
         :type: object
         """
         self._parameters_map = parameters_map
+
+    @property
+    def description(self):
+        """
+        Gets the description of this ManagementDashboardTileDetails.
+        Description of the tile.
+
+
+        :return: The description of this ManagementDashboardTileDetails.
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """
+        Sets the description of this ManagementDashboardTileDetails.
+        Description of the tile.
+
+
+        :param description: The description of this ManagementDashboardTileDetails.
+        :type: str
+        """
+        self._description = description
 
     def __repr__(self):
         return formatted_flat_dict(self)

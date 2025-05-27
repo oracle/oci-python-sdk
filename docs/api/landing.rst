@@ -77,6 +77,7 @@ API Reference
 * :doc:`Db Management <database_management/client/oci.database_management.DbManagementClient>`
 * :doc:`Db System <mysql/client/oci.mysql.DbSystemClient>`
 * :doc:`Delegate Access Control <delegate_access_control/client/oci.delegate_access_control.DelegateAccessControlClient>`
+* :doc:`Demand Signal <capacity_management/client/oci.capacity_management.DemandSignalClient>`
 * :doc:`Deployment <apigateway/client/oci.apigateway.DeploymentClient>`
 * :doc:`Desktop Service <desktops/client/oci.desktops.DesktopServiceClient>`
 * :doc:`Devops <devops/client/oci.devops.DevopsClient>`
@@ -124,6 +125,7 @@ API Reference
 * :doc:`Identity Domains <identity_domains/client/oci.identity_domains.IdentityDomainsClient>`
 * :doc:`Incident <cims/client/oci.cims.IncidentClient>`
 * :doc:`Integration Instance <integration/client/oci.integration.IntegrationInstanceClient>`
+* :doc:`Internal Demand Signal <capacity_management/client/oci.capacity_management.InternalDemandSignalClient>`
 * :doc:`Inventory <cloud_bridge/client/oci.cloud_bridge.InventoryClient>`
 * :doc:`Invoice Service <osp_gateway/client/oci.osp_gateway.InvoiceServiceClient>`
 * :doc:`Invoice Summary <onesubscription/client/oci.onesubscription.InvoiceSummaryClient>`
