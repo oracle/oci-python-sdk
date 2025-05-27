@@ -45,6 +45,7 @@ from .create_deletion_policy_details import CreateDeletionPolicyDetails
 from .create_maintenance_details import CreateMaintenanceDetails
 from .create_read_endpoint_details import CreateReadEndpointDetails
 from .create_replica_details import CreateReplicaDetails
+from .create_rest_details import CreateRestDetails
 from .customer_contact import CustomerContact
 from .data_storage import DataStorage
 from .data_storage_details import DataStorageDetails
@@ -76,6 +77,7 @@ from .read_endpoint_details import ReadEndpointDetails
 from .replica import Replica
 from .replica_overrides import ReplicaOverrides
 from .replica_summary import ReplicaSummary
+from .rest_details import RestDetails
 from .restart_db_system_details import RestartDbSystemDetails
 from .secure_connection_details import SecureConnectionDetails
 from .shape_summary import ShapeSummary
@@ -94,6 +96,7 @@ from .update_heat_wave_cluster_details import UpdateHeatWaveClusterDetails
 from .update_maintenance_details import UpdateMaintenanceDetails
 from .update_read_endpoint_details import UpdateReadEndpointDetails
 from .update_replica_details import UpdateReplicaDetails
+from .update_rest_details import UpdateRestDetails
 from .version import Version
 from .version_summary import VersionSummary
 from .work_request import WorkRequest
@@ -143,6 +146,7 @@ mysql_type_mapping = {
     "CreateMaintenanceDetails": CreateMaintenanceDetails,
     "CreateReadEndpointDetails": CreateReadEndpointDetails,
     "CreateReplicaDetails": CreateReplicaDetails,
+    "CreateRestDetails": CreateRestDetails,
     "CustomerContact": CustomerContact,
     "DataStorage": DataStorage,
     "DataStorageDetails": DataStorageDetails,
@@ -174,6 +178,7 @@ mysql_type_mapping = {
     "Replica": Replica,
     "ReplicaOverrides": ReplicaOverrides,
     "ReplicaSummary": ReplicaSummary,
+    "RestDetails": RestDetails,
     "RestartDbSystemDetails": RestartDbSystemDetails,
     "SecureConnectionDetails": SecureConnectionDetails,
     "ShapeSummary": ShapeSummary,
@@ -192,6 +197,7 @@ mysql_type_mapping = {
     "UpdateMaintenanceDetails": UpdateMaintenanceDetails,
     "UpdateReadEndpointDetails": UpdateReadEndpointDetails,
     "UpdateReplicaDetails": UpdateReplicaDetails,
+    "UpdateRestDetails": UpdateRestDetails,
     "Version": Version,
     "VersionSummary": VersionSummary,
     "WorkRequest": WorkRequest,

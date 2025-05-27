@@ -256,7 +256,7 @@ class RequestSummarizedUsagesDetails(object):
     def is_aggregate_by_time(self):
         """
         Gets the is_aggregate_by_time of this RequestSummarizedUsagesDetails.
-        Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+        Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
 
 
         :return: The is_aggregate_by_time of this RequestSummarizedUsagesDetails.
@@ -268,7 +268,7 @@ class RequestSummarizedUsagesDetails(object):
     def is_aggregate_by_time(self, is_aggregate_by_time):
         """
         Sets the is_aggregate_by_time of this RequestSummarizedUsagesDetails.
-        Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+        Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
 
 
         :param is_aggregate_by_time: The is_aggregate_by_time of this RequestSummarizedUsagesDetails.
@@ -342,7 +342,7 @@ class RequestSummarizedUsagesDetails(object):
         """
         Gets the group_by of this RequestSummarizedUsagesDetails.
         Aggregate the result by.
-        example:
+        For example:
           `[\"tagNamespace\", \"tagKey\", \"tagValue\", \"service\", \"skuName\", \"skuPartNumber\", \"unit\",
             \"compartmentName\", \"compartmentPath\", \"compartmentId\", \"platform\", \"region\", \"logicalAd\",
             \"resourceId\", \"tenantId\", \"tenantName\"]`
@@ -358,7 +358,7 @@ class RequestSummarizedUsagesDetails(object):
         """
         Sets the group_by of this RequestSummarizedUsagesDetails.
         Aggregate the result by.
-        example:
+        For example:
           `[\"tagNamespace\", \"tagKey\", \"tagValue\", \"service\", \"skuName\", \"skuPartNumber\", \"unit\",
             \"compartmentName\", \"compartmentPath\", \"compartmentId\", \"platform\", \"region\", \"logicalAd\",
             \"resourceId\", \"tenantId\", \"tenantName\"]`

@@ -5,6 +5,32 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.153.0 - 2025-05-27
+====================
+
+Added 
+----- 
+* Support for List and Get APIs for out-of-box management dashboard resources in the Management Dashboard service 
+* Support for REST option in the HeatWave MySQL service 
+* Support for warnings in list-application-dependency-vulnerability response for vulnerability audits in the Adm service 
+* Support for HostGroups in the Compute service 
+* Support for ENTERPRISE_EDITION_DEVELOPER enum in Db System Launch and Create DB external backup commands in the Database service 
+* Support for databaseEditionQueryParam in dbSystemInitialStorageSizes, dbSystemStoragePerformance, quotaDefinitions, and internalQuotaDefinitions in the Database service 
+* Support for EmissionType parameter in UsageCarbonEmissionSummary and EmissionCalculationMethod, EmissionType, Granularity parameters in UsageCarbonEmissionsReportQuery in the Usage Api service 
+* Support for querying capacity report under BDSs tenancy in the Big Data service 
+* Support for installing Dataplane Software and python packages updates in the Big Data service 
+* Support for triggering a dry run with OS patch in the Big Data service 
+* Support for NAT on firewall feature in the Network Firewall service 
+* Support for Predictable OIDC Discovery in the OKE service 
+* Support for SQL and FTP monitoring, creating and updating in the Application Performance Monitoring Synthetic service 
+* Support for Demand signal feature in the Capacity Management service 
+* Support for Targeted Launch in the Launch Instance API service   
+
+Breaking 
+-------- 
+* Constants `LIFECYCLE_STATE_ATTACHING` and `LIFECYCLE_STATE_DETACHING` are removed from models `NetworkFirewallPolicySummary`, `NetworkFirewallPolicy`, `NetworkFirewallSummary` and `NetworkFirewall` in the Network Firewall service   
+
+====================
 2.152.1 - 2025-05-20
 ====================
 

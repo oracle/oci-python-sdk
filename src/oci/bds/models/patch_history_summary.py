@@ -35,6 +35,10 @@ class PatchHistorySummary(object):
     #: This constant has a value of "OS"
     PATCH_TYPE_OS = "OS"
 
+    #: A constant which can be used with the patch_type property of a PatchHistorySummary.
+    #: This constant has a value of "BDS"
+    PATCH_TYPE_BDS = "BDS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new PatchHistorySummary object with values from keyword arguments.
@@ -56,7 +60,7 @@ class PatchHistorySummary(object):
 
         :param patch_type:
             The value to assign to the patch_type property of this PatchHistorySummary.
-            Allowed values for this property are: "ODH", "OS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ODH", "OS", "BDS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type patch_type: str
 
@@ -162,10 +166,11 @@ class PatchHistorySummary(object):
         **[Required]** Gets the patch_type of this PatchHistorySummary.
         The type of current patch history.
         DP - Data Plane patch(This history type is internal available only)
-        ODH - Oracle Distribution of Hadoop patch
-        OS - Operating System patch
+        ODH - Oracle Distribution of Hadoop update
+        OS - Operating System update
+        BDS - Big Data Service update
 
-        Allowed values for this property are: "ODH", "OS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ODH", "OS", "BDS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -180,14 +185,15 @@ class PatchHistorySummary(object):
         Sets the patch_type of this PatchHistorySummary.
         The type of current patch history.
         DP - Data Plane patch(This history type is internal available only)
-        ODH - Oracle Distribution of Hadoop patch
-        OS - Operating System patch
+        ODH - Oracle Distribution of Hadoop update
+        OS - Operating System update
+        BDS - Big Data Service update
 
 
         :param patch_type: The patch_type of this PatchHistorySummary.
         :type: str
         """
-        allowed_values = ["ODH", "OS"]
+        allowed_values = ["ODH", "OS", "BDS"]
         if not value_allowed_none_or_none_sentinel(patch_type, allowed_values):
             patch_type = 'UNKNOWN_ENUM_VALUE'
         self._patch_type = patch_type

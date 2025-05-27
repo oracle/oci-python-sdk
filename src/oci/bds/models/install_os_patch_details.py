@@ -32,20 +32,27 @@ class InstallOsPatchDetails(object):
             The value to assign to the patching_configs property of this InstallOsPatchDetails.
         :type patching_configs: oci.bds.models.PatchingConfigs
 
+        :param is_dry_run:
+            The value to assign to the is_dry_run property of this InstallOsPatchDetails.
+        :type is_dry_run: bool
+
         """
         self.swagger_types = {
             'os_patch_version': 'str',
             'cluster_admin_password': 'str',
-            'patching_configs': 'PatchingConfigs'
+            'patching_configs': 'PatchingConfigs',
+            'is_dry_run': 'bool'
         }
         self.attribute_map = {
             'os_patch_version': 'osPatchVersion',
             'cluster_admin_password': 'clusterAdminPassword',
-            'patching_configs': 'patchingConfigs'
+            'patching_configs': 'patchingConfigs',
+            'is_dry_run': 'isDryRun'
         }
         self._os_patch_version = None
         self._cluster_admin_password = None
         self._patching_configs = None
+        self._is_dry_run = None
 
     @property
     def os_patch_version(self):
@@ -114,6 +121,30 @@ class InstallOsPatchDetails(object):
         :type: oci.bds.models.PatchingConfigs
         """
         self._patching_configs = patching_configs
+
+    @property
+    def is_dry_run(self):
+        """
+        Gets the is_dry_run of this InstallOsPatchDetails.
+        Perform dry run for the patch and stop.
+
+
+        :return: The is_dry_run of this InstallOsPatchDetails.
+        :rtype: bool
+        """
+        return self._is_dry_run
+
+    @is_dry_run.setter
+    def is_dry_run(self, is_dry_run):
+        """
+        Sets the is_dry_run of this InstallOsPatchDetails.
+        Perform dry run for the patch and stop.
+
+
+        :param is_dry_run: The is_dry_run of this InstallOsPatchDetails.
+        :type: bool
+        """
+        self._is_dry_run = is_dry_run
 
     def __repr__(self):
         return formatted_flat_dict(self)

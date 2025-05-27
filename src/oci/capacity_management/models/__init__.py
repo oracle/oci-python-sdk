@@ -8,10 +8,26 @@ from __future__ import absolute_import
 
 from .associated_capacity_request_details import AssociatedCapacityRequestDetails
 from .associated_occ_handover_resource_block import AssociatedOccHandoverResourceBlock
+from .bulk_create_occm_demand_signal_item import BulkCreateOccmDemandSignalItem
+from .bulk_create_occm_demand_signal_item_details import BulkCreateOccmDemandSignalItemDetails
+from .create_internal_occm_demand_signal_delivery_details import CreateInternalOccmDemandSignalDeliveryDetails
 from .create_occ_availability_catalog_details import CreateOccAvailabilityCatalogDetails
 from .create_occ_capacity_request_details import CreateOccCapacityRequestDetails
 from .create_occ_customer_details import CreateOccCustomerDetails
 from .create_occ_customer_group_details import CreateOccCustomerGroupDetails
+from .create_occm_demand_signal_details import CreateOccmDemandSignalDetails
+from .create_occm_demand_signal_item_details import CreateOccmDemandSignalItemDetails
+from .internal_occm_demand_signal import InternalOccmDemandSignal
+from .internal_occm_demand_signal_catalog_resource import InternalOccmDemandSignalCatalogResource
+from .internal_occm_demand_signal_catalog_resource_collection import InternalOccmDemandSignalCatalogResourceCollection
+from .internal_occm_demand_signal_catalog_resource_summary import InternalOccmDemandSignalCatalogResourceSummary
+from .internal_occm_demand_signal_collection import InternalOccmDemandSignalCollection
+from .internal_occm_demand_signal_delivery import InternalOccmDemandSignalDelivery
+from .internal_occm_demand_signal_delivery_collection import InternalOccmDemandSignalDeliveryCollection
+from .internal_occm_demand_signal_delivery_summary import InternalOccmDemandSignalDeliverySummary
+from .internal_occm_demand_signal_item_collection import InternalOccmDemandSignalItemCollection
+from .internal_occm_demand_signal_item_summary import InternalOccmDemandSignalItemSummary
+from .internal_occm_demand_signal_summary import InternalOccmDemandSignalSummary
 from .metadata_details import MetadataDetails
 from .occ_availability_catalog import OccAvailabilityCatalog
 from .occ_availability_catalog_collection import OccAvailabilityCatalogCollection
@@ -32,6 +48,25 @@ from .occ_handover_resource_block_detail_summary import OccHandoverResourceBlock
 from .occ_handover_resource_block_summary import OccHandoverResourceBlockSummary
 from .occ_overview_collection import OccOverviewCollection
 from .occ_overview_summary import OccOverviewSummary
+from .occm_demand_signal import OccmDemandSignal
+from .occm_demand_signal_catalog import OccmDemandSignalCatalog
+from .occm_demand_signal_catalog_collection import OccmDemandSignalCatalogCollection
+from .occm_demand_signal_catalog_resource import OccmDemandSignalCatalogResource
+from .occm_demand_signal_catalog_resource_collection import OccmDemandSignalCatalogResourceCollection
+from .occm_demand_signal_catalog_resource_summary import OccmDemandSignalCatalogResourceSummary
+from .occm_demand_signal_catalog_summary import OccmDemandSignalCatalogSummary
+from .occm_demand_signal_collection import OccmDemandSignalCollection
+from .occm_demand_signal_delivery_collection import OccmDemandSignalDeliveryCollection
+from .occm_demand_signal_delivery_summary import OccmDemandSignalDeliverySummary
+from .occm_demand_signal_item import OccmDemandSignalItem
+from .occm_demand_signal_item_collection import OccmDemandSignalItemCollection
+from .occm_demand_signal_item_summary import OccmDemandSignalItemSummary
+from .occm_demand_signal_resource_properties_collection import OccmDemandSignalResourcePropertiesCollection
+from .occm_demand_signal_resource_properties_summary import OccmDemandSignalResourcePropertiesSummary
+from .occm_demand_signal_resource_property_constraints_collection import OccmDemandSignalResourcePropertyConstraintsCollection
+from .occm_demand_signal_resource_property_constraints_summary import OccmDemandSignalResourcePropertyConstraintsSummary
+from .occm_demand_signal_resource_property_option_summary import OccmDemandSignalResourcePropertyOptionSummary
+from .occm_demand_signal_summary import OccmDemandSignalSummary
 from .patch_insert_instruction import PatchInsertInstruction
 from .patch_insert_multiple_instruction import PatchInsertMultipleInstruction
 from .patch_instruction import PatchInstruction
@@ -44,19 +79,39 @@ from .patch_replace_instruction import PatchReplaceInstruction
 from .patch_require_instruction import PatchRequireInstruction
 from .placement_details import PlacementDetails
 from .update_internal_occ_capacity_request_details import UpdateInternalOccCapacityRequestDetails
+from .update_internal_occm_demand_signal_delivery_details import UpdateInternalOccmDemandSignalDeliveryDetails
+from .update_internal_occm_demand_signal_details import UpdateInternalOccmDemandSignalDetails
 from .update_occ_availability_catalog_details import UpdateOccAvailabilityCatalogDetails
 from .update_occ_capacity_request_details import UpdateOccCapacityRequestDetails
 from .update_occ_customer_details import UpdateOccCustomerDetails
 from .update_occ_customer_group_details import UpdateOccCustomerGroupDetails
+from .update_occm_demand_signal_details import UpdateOccmDemandSignalDetails
+from .update_occm_demand_signal_item_details import UpdateOccmDemandSignalItemDetails
 
 # Maps type names to classes for capacity_management services.
 capacity_management_type_mapping = {
     "AssociatedCapacityRequestDetails": AssociatedCapacityRequestDetails,
     "AssociatedOccHandoverResourceBlock": AssociatedOccHandoverResourceBlock,
+    "BulkCreateOccmDemandSignalItem": BulkCreateOccmDemandSignalItem,
+    "BulkCreateOccmDemandSignalItemDetails": BulkCreateOccmDemandSignalItemDetails,
+    "CreateInternalOccmDemandSignalDeliveryDetails": CreateInternalOccmDemandSignalDeliveryDetails,
     "CreateOccAvailabilityCatalogDetails": CreateOccAvailabilityCatalogDetails,
     "CreateOccCapacityRequestDetails": CreateOccCapacityRequestDetails,
     "CreateOccCustomerDetails": CreateOccCustomerDetails,
     "CreateOccCustomerGroupDetails": CreateOccCustomerGroupDetails,
+    "CreateOccmDemandSignalDetails": CreateOccmDemandSignalDetails,
+    "CreateOccmDemandSignalItemDetails": CreateOccmDemandSignalItemDetails,
+    "InternalOccmDemandSignal": InternalOccmDemandSignal,
+    "InternalOccmDemandSignalCatalogResource": InternalOccmDemandSignalCatalogResource,
+    "InternalOccmDemandSignalCatalogResourceCollection": InternalOccmDemandSignalCatalogResourceCollection,
+    "InternalOccmDemandSignalCatalogResourceSummary": InternalOccmDemandSignalCatalogResourceSummary,
+    "InternalOccmDemandSignalCollection": InternalOccmDemandSignalCollection,
+    "InternalOccmDemandSignalDelivery": InternalOccmDemandSignalDelivery,
+    "InternalOccmDemandSignalDeliveryCollection": InternalOccmDemandSignalDeliveryCollection,
+    "InternalOccmDemandSignalDeliverySummary": InternalOccmDemandSignalDeliverySummary,
+    "InternalOccmDemandSignalItemCollection": InternalOccmDemandSignalItemCollection,
+    "InternalOccmDemandSignalItemSummary": InternalOccmDemandSignalItemSummary,
+    "InternalOccmDemandSignalSummary": InternalOccmDemandSignalSummary,
     "MetadataDetails": MetadataDetails,
     "OccAvailabilityCatalog": OccAvailabilityCatalog,
     "OccAvailabilityCatalogCollection": OccAvailabilityCatalogCollection,
@@ -77,6 +132,25 @@ capacity_management_type_mapping = {
     "OccHandoverResourceBlockSummary": OccHandoverResourceBlockSummary,
     "OccOverviewCollection": OccOverviewCollection,
     "OccOverviewSummary": OccOverviewSummary,
+    "OccmDemandSignal": OccmDemandSignal,
+    "OccmDemandSignalCatalog": OccmDemandSignalCatalog,
+    "OccmDemandSignalCatalogCollection": OccmDemandSignalCatalogCollection,
+    "OccmDemandSignalCatalogResource": OccmDemandSignalCatalogResource,
+    "OccmDemandSignalCatalogResourceCollection": OccmDemandSignalCatalogResourceCollection,
+    "OccmDemandSignalCatalogResourceSummary": OccmDemandSignalCatalogResourceSummary,
+    "OccmDemandSignalCatalogSummary": OccmDemandSignalCatalogSummary,
+    "OccmDemandSignalCollection": OccmDemandSignalCollection,
+    "OccmDemandSignalDeliveryCollection": OccmDemandSignalDeliveryCollection,
+    "OccmDemandSignalDeliverySummary": OccmDemandSignalDeliverySummary,
+    "OccmDemandSignalItem": OccmDemandSignalItem,
+    "OccmDemandSignalItemCollection": OccmDemandSignalItemCollection,
+    "OccmDemandSignalItemSummary": OccmDemandSignalItemSummary,
+    "OccmDemandSignalResourcePropertiesCollection": OccmDemandSignalResourcePropertiesCollection,
+    "OccmDemandSignalResourcePropertiesSummary": OccmDemandSignalResourcePropertiesSummary,
+    "OccmDemandSignalResourcePropertyConstraintsCollection": OccmDemandSignalResourcePropertyConstraintsCollection,
+    "OccmDemandSignalResourcePropertyConstraintsSummary": OccmDemandSignalResourcePropertyConstraintsSummary,
+    "OccmDemandSignalResourcePropertyOptionSummary": OccmDemandSignalResourcePropertyOptionSummary,
+    "OccmDemandSignalSummary": OccmDemandSignalSummary,
     "PatchInsertInstruction": PatchInsertInstruction,
     "PatchInsertMultipleInstruction": PatchInsertMultipleInstruction,
     "PatchInstruction": PatchInstruction,
@@ -89,8 +163,12 @@ capacity_management_type_mapping = {
     "PatchRequireInstruction": PatchRequireInstruction,
     "PlacementDetails": PlacementDetails,
     "UpdateInternalOccCapacityRequestDetails": UpdateInternalOccCapacityRequestDetails,
+    "UpdateInternalOccmDemandSignalDeliveryDetails": UpdateInternalOccmDemandSignalDeliveryDetails,
+    "UpdateInternalOccmDemandSignalDetails": UpdateInternalOccmDemandSignalDetails,
     "UpdateOccAvailabilityCatalogDetails": UpdateOccAvailabilityCatalogDetails,
     "UpdateOccCapacityRequestDetails": UpdateOccCapacityRequestDetails,
     "UpdateOccCustomerDetails": UpdateOccCustomerDetails,
-    "UpdateOccCustomerGroupDetails": UpdateOccCustomerGroupDetails
+    "UpdateOccCustomerGroupDetails": UpdateOccCustomerGroupDetails,
+    "UpdateOccmDemandSignalDetails": UpdateOccmDemandSignalDetails,
+    "UpdateOccmDemandSignalItemDetails": UpdateOccmDemandSignalItemDetails
 }

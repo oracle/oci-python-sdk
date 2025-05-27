@@ -48,6 +48,10 @@ class CreateDedicatedVmHostDetails(object):
             The value to assign to the freeform_tags property of this CreateDedicatedVmHostDetails.
         :type freeform_tags: dict(str, str)
 
+        :param placement_constraint_details:
+            The value to assign to the placement_constraint_details property of this CreateDedicatedVmHostDetails.
+        :type placement_constraint_details: oci.core.models.PlacementConstraintDetails
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -56,7 +60,8 @@ class CreateDedicatedVmHostDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'fault_domain': 'str',
-            'freeform_tags': 'dict(str, str)'
+            'freeform_tags': 'dict(str, str)',
+            'placement_constraint_details': 'PlacementConstraintDetails'
         }
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
@@ -65,7 +70,8 @@ class CreateDedicatedVmHostDetails(object):
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'fault_domain': 'faultDomain',
-            'freeform_tags': 'freeformTags'
+            'freeform_tags': 'freeformTags',
+            'placement_constraint_details': 'placementConstraintDetails'
         }
         self._availability_domain = None
         self._compartment_id = None
@@ -74,6 +80,7 @@ class CreateDedicatedVmHostDetails(object):
         self._display_name = None
         self._fault_domain = None
         self._freeform_tags = None
+        self._placement_constraint_details = None
 
     @property
     def availability_domain(self):
@@ -292,6 +299,26 @@ class CreateDedicatedVmHostDetails(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def placement_constraint_details(self):
+        """
+        Gets the placement_constraint_details of this CreateDedicatedVmHostDetails.
+
+        :return: The placement_constraint_details of this CreateDedicatedVmHostDetails.
+        :rtype: oci.core.models.PlacementConstraintDetails
+        """
+        return self._placement_constraint_details
+
+    @placement_constraint_details.setter
+    def placement_constraint_details(self, placement_constraint_details):
+        """
+        Sets the placement_constraint_details of this CreateDedicatedVmHostDetails.
+
+        :param placement_constraint_details: The placement_constraint_details of this CreateDedicatedVmHostDetails.
+        :type: oci.core.models.PlacementConstraintDetails
+        """
+        self._placement_constraint_details = placement_constraint_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

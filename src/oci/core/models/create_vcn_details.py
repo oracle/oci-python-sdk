@@ -68,6 +68,10 @@ class CreateVcnDetails(object):
             The value to assign to the is_ipv6_enabled property of this CreateVcnDetails.
         :type is_ipv6_enabled: bool
 
+        :param is_zpr_only:
+            The value to assign to the is_zpr_only property of this CreateVcnDetails.
+        :type is_zpr_only: bool
+
         """
         self.swagger_types = {
             'cidr_block': 'str',
@@ -81,7 +85,8 @@ class CreateVcnDetails(object):
             'dns_label': 'str',
             'freeform_tags': 'dict(str, str)',
             'security_attributes': 'dict(str, dict(str, object))',
-            'is_ipv6_enabled': 'bool'
+            'is_ipv6_enabled': 'bool',
+            'is_zpr_only': 'bool'
         }
         self.attribute_map = {
             'cidr_block': 'cidrBlock',
@@ -95,7 +100,8 @@ class CreateVcnDetails(object):
             'dns_label': 'dnsLabel',
             'freeform_tags': 'freeformTags',
             'security_attributes': 'securityAttributes',
-            'is_ipv6_enabled': 'isIpv6Enabled'
+            'is_ipv6_enabled': 'isIpv6Enabled',
+            'is_zpr_only': 'isZprOnly'
         }
         self._cidr_block = None
         self._cidr_blocks = None
@@ -109,6 +115,7 @@ class CreateVcnDetails(object):
         self._freeform_tags = None
         self._security_attributes = None
         self._is_ipv6_enabled = None
+        self._is_zpr_only = None
 
     @property
     def cidr_block(self):
@@ -507,6 +514,30 @@ class CreateVcnDetails(object):
         :type: bool
         """
         self._is_ipv6_enabled = is_ipv6_enabled
+
+    @property
+    def is_zpr_only(self):
+        """
+        Gets the is_zpr_only of this CreateVcnDetails.
+        Indicates whether Zpr Only Mode is enforced.
+
+
+        :return: The is_zpr_only of this CreateVcnDetails.
+        :rtype: bool
+        """
+        return self._is_zpr_only
+
+    @is_zpr_only.setter
+    def is_zpr_only(self, is_zpr_only):
+        """
+        Sets the is_zpr_only of this CreateVcnDetails.
+        Indicates whether Zpr Only Mode is enforced.
+
+
+        :param is_zpr_only: The is_zpr_only of this CreateVcnDetails.
+        :type: bool
+        """
+        self._is_zpr_only = is_zpr_only
 
     def __repr__(self):
         return formatted_flat_dict(self)

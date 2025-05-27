@@ -48,6 +48,10 @@ class CreateDbSystemDetails(object):
             The value to assign to the compartment_id property of this CreateDbSystemDetails.
         :type compartment_id: str
 
+        :param rest:
+            The value to assign to the rest property of this CreateDbSystemDetails.
+        :type rest: oci.mysql.models.CreateRestDetails
+
         :param is_highly_available:
             The value to assign to the is_highly_available property of this CreateDbSystemDetails.
         :type is_highly_available: bool
@@ -171,6 +175,7 @@ class CreateDbSystemDetails(object):
             'display_name': 'str',
             'description': 'str',
             'compartment_id': 'str',
+            'rest': 'CreateRestDetails',
             'is_highly_available': 'bool',
             'availability_domain': 'str',
             'fault_domain': 'str',
@@ -205,6 +210,7 @@ class CreateDbSystemDetails(object):
             'display_name': 'displayName',
             'description': 'description',
             'compartment_id': 'compartmentId',
+            'rest': 'rest',
             'is_highly_available': 'isHighlyAvailable',
             'availability_domain': 'availabilityDomain',
             'fault_domain': 'faultDomain',
@@ -238,6 +244,7 @@ class CreateDbSystemDetails(object):
         self._display_name = None
         self._description = None
         self._compartment_id = None
+        self._rest = None
         self._is_highly_available = None
         self._availability_domain = None
         self._fault_domain = None
@@ -339,6 +346,26 @@ class CreateDbSystemDetails(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def rest(self):
+        """
+        Gets the rest of this CreateDbSystemDetails.
+
+        :return: The rest of this CreateDbSystemDetails.
+        :rtype: oci.mysql.models.CreateRestDetails
+        """
+        return self._rest
+
+    @rest.setter
+    def rest(self, rest):
+        """
+        Sets the rest of this CreateDbSystemDetails.
+
+        :param rest: The rest of this CreateDbSystemDetails.
+        :type: oci.mysql.models.CreateRestDetails
+        """
+        self._rest = rest
 
     @property
     def is_highly_available(self):

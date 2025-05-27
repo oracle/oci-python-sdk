@@ -69,6 +69,10 @@ class LaunchInstanceDetails(object):
             The value to assign to the freeform_tags property of this LaunchInstanceDetails.
         :type freeform_tags: dict(str, str)
 
+        :param compute_host_group_id:
+            The value to assign to the compute_host_group_id property of this LaunchInstanceDetails.
+        :type compute_host_group_id: str
+
         :param compute_cluster_id:
             The value to assign to the compute_cluster_id property of this LaunchInstanceDetails.
         :type compute_cluster_id: str
@@ -137,6 +141,10 @@ class LaunchInstanceDetails(object):
             The value to assign to the platform_config property of this LaunchInstanceDetails.
         :type platform_config: oci.core.models.LaunchInstancePlatformConfig
 
+        :param placement_constraint_details:
+            The value to assign to the placement_constraint_details property of this LaunchInstanceDetails.
+        :type placement_constraint_details: oci.core.models.PlacementConstraintDetails
+
         :param instance_configuration_id:
             The value to assign to the instance_configuration_id property of this LaunchInstanceDetails.
         :type instance_configuration_id: str
@@ -159,6 +167,7 @@ class LaunchInstanceDetails(object):
             'fault_domain': 'str',
             'cluster_placement_group_id': 'str',
             'freeform_tags': 'dict(str, str)',
+            'compute_host_group_id': 'str',
             'compute_cluster_id': 'str',
             'hostname_label': 'str',
             'image_id': 'str',
@@ -176,6 +185,7 @@ class LaunchInstanceDetails(object):
             'launch_volume_attachments': 'list[LaunchAttachVolumeDetails]',
             'is_pv_encryption_in_transit_enabled': 'bool',
             'platform_config': 'LaunchInstancePlatformConfig',
+            'placement_constraint_details': 'PlacementConstraintDetails',
             'instance_configuration_id': 'str',
             'licensing_configs': 'list[LaunchInstanceLicensingConfig]'
         }
@@ -192,6 +202,7 @@ class LaunchInstanceDetails(object):
             'fault_domain': 'faultDomain',
             'cluster_placement_group_id': 'clusterPlacementGroupId',
             'freeform_tags': 'freeformTags',
+            'compute_host_group_id': 'computeHostGroupId',
             'compute_cluster_id': 'computeClusterId',
             'hostname_label': 'hostnameLabel',
             'image_id': 'imageId',
@@ -209,6 +220,7 @@ class LaunchInstanceDetails(object):
             'launch_volume_attachments': 'launchVolumeAttachments',
             'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled',
             'platform_config': 'platformConfig',
+            'placement_constraint_details': 'placementConstraintDetails',
             'instance_configuration_id': 'instanceConfigurationId',
             'licensing_configs': 'licensingConfigs'
         }
@@ -224,6 +236,7 @@ class LaunchInstanceDetails(object):
         self._fault_domain = None
         self._cluster_placement_group_id = None
         self._freeform_tags = None
+        self._compute_host_group_id = None
         self._compute_cluster_id = None
         self._hostname_label = None
         self._image_id = None
@@ -241,6 +254,7 @@ class LaunchInstanceDetails(object):
         self._launch_volume_attachments = None
         self._is_pv_encryption_in_transit_enabled = None
         self._platform_config = None
+        self._placement_constraint_details = None
         self._instance_configuration_id = None
         self._licensing_configs = None
 
@@ -615,6 +629,30 @@ class LaunchInstanceDetails(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def compute_host_group_id(self):
+        """
+        Gets the compute_host_group_id of this LaunchInstanceDetails.
+        The OCID of the compute host group attached to the host where the bare metal instance will be launched.
+
+
+        :return: The compute_host_group_id of this LaunchInstanceDetails.
+        :rtype: str
+        """
+        return self._compute_host_group_id
+
+    @compute_host_group_id.setter
+    def compute_host_group_id(self, compute_host_group_id):
+        """
+        Sets the compute_host_group_id of this LaunchInstanceDetails.
+        The OCID of the compute host group attached to the host where the bare metal instance will be launched.
+
+
+        :param compute_host_group_id: The compute_host_group_id of this LaunchInstanceDetails.
+        :type: str
+        """
+        self._compute_host_group_id = compute_host_group_id
 
     @property
     def compute_cluster_id(self):
@@ -1177,6 +1215,26 @@ class LaunchInstanceDetails(object):
         :type: oci.core.models.LaunchInstancePlatformConfig
         """
         self._platform_config = platform_config
+
+    @property
+    def placement_constraint_details(self):
+        """
+        Gets the placement_constraint_details of this LaunchInstanceDetails.
+
+        :return: The placement_constraint_details of this LaunchInstanceDetails.
+        :rtype: oci.core.models.PlacementConstraintDetails
+        """
+        return self._placement_constraint_details
+
+    @placement_constraint_details.setter
+    def placement_constraint_details(self, placement_constraint_details):
+        """
+        Sets the placement_constraint_details of this LaunchInstanceDetails.
+
+        :param placement_constraint_details: The placement_constraint_details of this LaunchInstanceDetails.
+        :type: oci.core.models.PlacementConstraintDetails
+        """
+        self._placement_constraint_details = placement_constraint_details
 
     @property
     def instance_configuration_id(self):

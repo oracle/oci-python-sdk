@@ -23,6 +23,10 @@ class Script(object):
     #: This constant has a value of "JS"
     CONTENT_TYPE_JS = "JS"
 
+    #: A constant which can be used with the content_type property of a Script.
+    #: This constant has a value of "PLAYWRIGHT_TS"
+    CONTENT_TYPE_PLAYWRIGHT_TS = "PLAYWRIGHT_TS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Script object with values from keyword arguments.
@@ -38,7 +42,7 @@ class Script(object):
 
         :param content_type:
             The value to assign to the content_type property of this Script.
-            Allowed values for this property are: "SIDE", "JS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SIDE", "JS", "PLAYWRIGHT_TS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type content_type: str
 
@@ -187,7 +191,7 @@ class Script(object):
         **[Required]** Gets the content_type of this Script.
         Content type of the script.
 
-        Allowed values for this property are: "SIDE", "JS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "SIDE", "JS", "PLAYWRIGHT_TS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -206,7 +210,7 @@ class Script(object):
         :param content_type: The content_type of this Script.
         :type: str
         """
-        allowed_values = ["SIDE", "JS"]
+        allowed_values = ["SIDE", "JS", "PLAYWRIGHT_TS"]
         if not value_allowed_none_or_none_sentinel(content_type, allowed_values):
             content_type = 'UNKNOWN_ENUM_VALUE'
         self._content_type = content_type
@@ -221,7 +225,7 @@ class Script(object):
         Examples:
         With mandatory param name : `<ORAP><ON>param name</ON></ORAP>`
         With parameter name and value : `<ORAP><ON>param name</ON><OV>param value</OV></ORAP>`
-        Note that the content is valid if it matches the given content type. For example, if the content type is SIDE, then the content should be in Side script format. If the content type is JS, then the content should be in JavaScript format.
+        Note that the content is valid if it matches the given content type. For example, if the content type is SIDE, then the content should be in Side script format. If the content type is JS, then the content should be in JavaScript format. If the content type is PLAYWRIGHT_TS, then the content should be in TypeScript format.
 
 
         :return: The content of this Script.
@@ -239,7 +243,7 @@ class Script(object):
         Examples:
         With mandatory param name : `<ORAP><ON>param name</ON></ORAP>`
         With parameter name and value : `<ORAP><ON>param name</ON><OV>param value</OV></ORAP>`
-        Note that the content is valid if it matches the given content type. For example, if the content type is SIDE, then the content should be in Side script format. If the content type is JS, then the content should be in JavaScript format.
+        Note that the content is valid if it matches the given content type. For example, if the content type is SIDE, then the content should be in Side script format. If the content type is JS, then the content should be in JavaScript format. If the content type is PLAYWRIGHT_TS, then the content should be in TypeScript format.
 
 
         :param content: The content of this Script.

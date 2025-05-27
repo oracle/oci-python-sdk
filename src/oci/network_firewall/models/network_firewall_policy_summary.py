@@ -43,14 +43,6 @@ class NetworkFirewallPolicySummary(object):
     #: This constant has a value of "NEEDS_ATTENTION"
     LIFECYCLE_STATE_NEEDS_ATTENTION = "NEEDS_ATTENTION"
 
-    #: A constant which can be used with the lifecycle_state property of a NetworkFirewallPolicySummary.
-    #: This constant has a value of "ATTACHING"
-    LIFECYCLE_STATE_ATTACHING = "ATTACHING"
-
-    #: A constant which can be used with the lifecycle_state property of a NetworkFirewallPolicySummary.
-    #: This constant has a value of "DETACHING"
-    LIFECYCLE_STATE_DETACHING = "DETACHING"
-
     def __init__(self, **kwargs):
         """
         Initializes a new NetworkFirewallPolicySummary object with values from keyword arguments.
@@ -78,7 +70,7 @@ class NetworkFirewallPolicySummary(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this NetworkFirewallPolicySummary.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "ATTACHING", "DETACHING", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -280,7 +272,7 @@ class NetworkFirewallPolicySummary(object):
         **[Required]** Gets the lifecycle_state of this NetworkFirewallPolicySummary.
         The current lifecycle state of the Network Firewall Policy.
 
-        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "ATTACHING", "DETACHING", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -299,7 +291,7 @@ class NetworkFirewallPolicySummary(object):
         :param lifecycle_state: The lifecycle_state of this NetworkFirewallPolicySummary.
         :type: str
         """
-        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "ATTACHING", "DETACHING"]
+        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

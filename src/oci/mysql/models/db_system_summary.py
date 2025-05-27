@@ -52,6 +52,10 @@ class DbSystemSummary(object):
             The value to assign to the compartment_id property of this DbSystemSummary.
         :type compartment_id: str
 
+        :param rest:
+            The value to assign to the rest property of this DbSystemSummary.
+        :type rest: oci.mysql.models.RestDetails
+
         :param is_highly_available:
             The value to assign to the is_highly_available property of this DbSystemSummary.
         :type is_highly_available: bool
@@ -150,6 +154,7 @@ class DbSystemSummary(object):
             'display_name': 'str',
             'description': 'str',
             'compartment_id': 'str',
+            'rest': 'RestDetails',
             'is_highly_available': 'bool',
             'current_placement': 'DbSystemPlacement',
             'is_heat_wave_cluster_attached': 'bool',
@@ -178,6 +183,7 @@ class DbSystemSummary(object):
             'display_name': 'displayName',
             'description': 'description',
             'compartment_id': 'compartmentId',
+            'rest': 'rest',
             'is_highly_available': 'isHighlyAvailable',
             'current_placement': 'currentPlacement',
             'is_heat_wave_cluster_attached': 'isHeatWaveClusterAttached',
@@ -205,6 +211,7 @@ class DbSystemSummary(object):
         self._display_name = None
         self._description = None
         self._compartment_id = None
+        self._rest = None
         self._is_highly_available = None
         self._current_placement = None
         self._is_heat_wave_cluster_attached = None
@@ -323,6 +330,26 @@ class DbSystemSummary(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def rest(self):
+        """
+        Gets the rest of this DbSystemSummary.
+
+        :return: The rest of this DbSystemSummary.
+        :rtype: oci.mysql.models.RestDetails
+        """
+        return self._rest
+
+    @rest.setter
+    def rest(self, rest):
+        """
+        Sets the rest of this DbSystemSummary.
+
+        :param rest: The rest of this DbSystemSummary.
+        :type: oci.mysql.models.RestDetails
+        """
+        self._rest = rest
 
     @property
     def is_highly_available(self):

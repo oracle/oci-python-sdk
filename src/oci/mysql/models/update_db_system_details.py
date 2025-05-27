@@ -60,6 +60,10 @@ class UpdateDbSystemDetails(object):
             The value to assign to the access_mode property of this UpdateDbSystemDetails.
         :type access_mode: str
 
+        :param rest:
+            The value to assign to the rest property of this UpdateDbSystemDetails.
+        :type rest: oci.mysql.models.UpdateRestDetails
+
         :param is_highly_available:
             The value to assign to the is_highly_available property of this UpdateDbSystemDetails.
         :type is_highly_available: bool
@@ -166,6 +170,7 @@ class UpdateDbSystemDetails(object):
             'nsg_ids': 'list[str]',
             'database_mode': 'str',
             'access_mode': 'str',
+            'rest': 'UpdateRestDetails',
             'is_highly_available': 'bool',
             'availability_domain': 'str',
             'fault_domain': 'str',
@@ -198,6 +203,7 @@ class UpdateDbSystemDetails(object):
             'nsg_ids': 'nsgIds',
             'database_mode': 'databaseMode',
             'access_mode': 'accessMode',
+            'rest': 'rest',
             'is_highly_available': 'isHighlyAvailable',
             'availability_domain': 'availabilityDomain',
             'fault_domain': 'faultDomain',
@@ -229,6 +235,7 @@ class UpdateDbSystemDetails(object):
         self._nsg_ids = None
         self._database_mode = None
         self._access_mode = None
+        self._rest = None
         self._is_highly_available = None
         self._availability_domain = None
         self._fault_domain = None
@@ -417,6 +424,26 @@ class UpdateDbSystemDetails(object):
         :type: str
         """
         self._access_mode = access_mode
+
+    @property
+    def rest(self):
+        """
+        Gets the rest of this UpdateDbSystemDetails.
+
+        :return: The rest of this UpdateDbSystemDetails.
+        :rtype: oci.mysql.models.UpdateRestDetails
+        """
+        return self._rest
+
+    @rest.setter
+    def rest(self, rest):
+        """
+        Sets the rest of this UpdateDbSystemDetails.
+
+        :param rest: The rest of this UpdateDbSystemDetails.
+        :type: oci.mysql.models.UpdateRestDetails
+        """
+        self._rest = rest
 
     @property
     def is_highly_available(self):

@@ -112,6 +112,10 @@ class DbSystemSnapshot(object):
             The value to assign to the port_x property of this DbSystemSnapshot.
         :type port_x: int
 
+        :param rest:
+            The value to assign to the rest property of this DbSystemSnapshot.
+        :type rest: oci.mysql.models.RestDetails
+
         :param is_highly_available:
             The value to assign to the is_highly_available property of this DbSystemSnapshot.
         :type is_highly_available: bool
@@ -181,6 +185,7 @@ class DbSystemSnapshot(object):
             'ip_address': 'str',
             'port': 'int',
             'port_x': 'int',
+            'rest': 'RestDetails',
             'is_highly_available': 'bool',
             'endpoints': 'list[DbSystemEndpoint]',
             'maintenance': 'MaintenanceDetails',
@@ -213,6 +218,7 @@ class DbSystemSnapshot(object):
             'ip_address': 'ipAddress',
             'port': 'port',
             'port_x': 'portX',
+            'rest': 'rest',
             'is_highly_available': 'isHighlyAvailable',
             'endpoints': 'endpoints',
             'maintenance': 'maintenance',
@@ -244,6 +250,7 @@ class DbSystemSnapshot(object):
         self._ip_address = None
         self._port = None
         self._port_x = None
+        self._rest = None
         self._is_highly_available = None
         self._endpoints = None
         self._maintenance = None
@@ -725,6 +732,26 @@ class DbSystemSnapshot(object):
         :type: int
         """
         self._port_x = port_x
+
+    @property
+    def rest(self):
+        """
+        Gets the rest of this DbSystemSnapshot.
+
+        :return: The rest of this DbSystemSnapshot.
+        :rtype: oci.mysql.models.RestDetails
+        """
+        return self._rest
+
+    @rest.setter
+    def rest(self, rest):
+        """
+        Sets the rest of this DbSystemSnapshot.
+
+        :param rest: The rest of this DbSystemSnapshot.
+        :type: oci.mysql.models.RestDetails
+        """
+        self._rest = rest
 
     @property
     def is_highly_available(self):

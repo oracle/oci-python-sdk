@@ -15,6 +15,30 @@ class RequestUsageCarbonEmissionsDetails(object):
     Details for the '/usageCarbonEmissions' query.
     """
 
+    #: A constant which can be used with the emission_calculation_method property of a RequestUsageCarbonEmissionsDetails.
+    #: This constant has a value of "SPEND_BASED"
+    EMISSION_CALCULATION_METHOD_SPEND_BASED = "SPEND_BASED"
+
+    #: A constant which can be used with the emission_calculation_method property of a RequestUsageCarbonEmissionsDetails.
+    #: This constant has a value of "POWER_BASED"
+    EMISSION_CALCULATION_METHOD_POWER_BASED = "POWER_BASED"
+
+    #: A constant which can be used with the emission_type property of a RequestUsageCarbonEmissionsDetails.
+    #: This constant has a value of "MARKET_BASED"
+    EMISSION_TYPE_MARKET_BASED = "MARKET_BASED"
+
+    #: A constant which can be used with the emission_type property of a RequestUsageCarbonEmissionsDetails.
+    #: This constant has a value of "LOCATION_BASED"
+    EMISSION_TYPE_LOCATION_BASED = "LOCATION_BASED"
+
+    #: A constant which can be used with the granularity property of a RequestUsageCarbonEmissionsDetails.
+    #: This constant has a value of "DAILY"
+    GRANULARITY_DAILY = "DAILY"
+
+    #: A constant which can be used with the granularity property of a RequestUsageCarbonEmissionsDetails.
+    #: This constant has a value of "MONTHLY"
+    GRANULARITY_MONTHLY = "MONTHLY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new RequestUsageCarbonEmissionsDetails object with values from keyword arguments.
@@ -31,6 +55,24 @@ class RequestUsageCarbonEmissionsDetails(object):
         :param time_usage_ended:
             The value to assign to the time_usage_ended property of this RequestUsageCarbonEmissionsDetails.
         :type time_usage_ended: datetime
+
+        :param emission_calculation_method:
+            The value to assign to the emission_calculation_method property of this RequestUsageCarbonEmissionsDetails.
+            Allowed values for this property are: "SPEND_BASED", "POWER_BASED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type emission_calculation_method: str
+
+        :param emission_type:
+            The value to assign to the emission_type property of this RequestUsageCarbonEmissionsDetails.
+            Allowed values for this property are: "MARKET_BASED", "LOCATION_BASED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type emission_type: str
+
+        :param granularity:
+            The value to assign to the granularity property of this RequestUsageCarbonEmissionsDetails.
+            Allowed values for this property are: "DAILY", "MONTHLY", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type granularity: str
 
         :param is_aggregate_by_time:
             The value to assign to the is_aggregate_by_time property of this RequestUsageCarbonEmissionsDetails.
@@ -57,6 +99,9 @@ class RequestUsageCarbonEmissionsDetails(object):
             'tenant_id': 'str',
             'time_usage_started': 'datetime',
             'time_usage_ended': 'datetime',
+            'emission_calculation_method': 'str',
+            'emission_type': 'str',
+            'granularity': 'str',
             'is_aggregate_by_time': 'bool',
             'group_by': 'list[str]',
             'group_by_tag': 'list[Tag]',
@@ -67,6 +112,9 @@ class RequestUsageCarbonEmissionsDetails(object):
             'tenant_id': 'tenantId',
             'time_usage_started': 'timeUsageStarted',
             'time_usage_ended': 'timeUsageEnded',
+            'emission_calculation_method': 'emissionCalculationMethod',
+            'emission_type': 'emissionType',
+            'granularity': 'granularity',
             'is_aggregate_by_time': 'isAggregateByTime',
             'group_by': 'groupBy',
             'group_by_tag': 'groupByTag',
@@ -76,6 +124,9 @@ class RequestUsageCarbonEmissionsDetails(object):
         self._tenant_id = None
         self._time_usage_started = None
         self._time_usage_ended = None
+        self._emission_calculation_method = None
+        self._emission_type = None
+        self._granularity = None
         self._is_aggregate_by_time = None
         self._group_by = None
         self._group_by_tag = None
@@ -155,10 +206,100 @@ class RequestUsageCarbonEmissionsDetails(object):
         self._time_usage_ended = time_usage_ended
 
     @property
+    def emission_calculation_method(self):
+        """
+        Gets the emission_calculation_method of this RequestUsageCarbonEmissionsDetails.
+        Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+
+        Allowed values for this property are: "SPEND_BASED", "POWER_BASED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The emission_calculation_method of this RequestUsageCarbonEmissionsDetails.
+        :rtype: str
+        """
+        return self._emission_calculation_method
+
+    @emission_calculation_method.setter
+    def emission_calculation_method(self, emission_calculation_method):
+        """
+        Sets the emission_calculation_method of this RequestUsageCarbonEmissionsDetails.
+        Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
+
+
+        :param emission_calculation_method: The emission_calculation_method of this RequestUsageCarbonEmissionsDetails.
+        :type: str
+        """
+        allowed_values = ["SPEND_BASED", "POWER_BASED"]
+        if not value_allowed_none_or_none_sentinel(emission_calculation_method, allowed_values):
+            emission_calculation_method = 'UNKNOWN_ENUM_VALUE'
+        self._emission_calculation_method = emission_calculation_method
+
+    @property
+    def emission_type(self):
+        """
+        Gets the emission_type of this RequestUsageCarbonEmissionsDetails.
+        Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+
+        Allowed values for this property are: "MARKET_BASED", "LOCATION_BASED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The emission_type of this RequestUsageCarbonEmissionsDetails.
+        :rtype: str
+        """
+        return self._emission_type
+
+    @emission_type.setter
+    def emission_type(self, emission_type):
+        """
+        Sets the emission_type of this RequestUsageCarbonEmissionsDetails.
+        Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
+
+
+        :param emission_type: The emission_type of this RequestUsageCarbonEmissionsDetails.
+        :type: str
+        """
+        allowed_values = ["MARKET_BASED", "LOCATION_BASED"]
+        if not value_allowed_none_or_none_sentinel(emission_type, allowed_values):
+            emission_type = 'UNKNOWN_ENUM_VALUE'
+        self._emission_type = emission_type
+
+    @property
+    def granularity(self):
+        """
+        Gets the granularity of this RequestUsageCarbonEmissionsDetails.
+        The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+
+        Allowed values for this property are: "DAILY", "MONTHLY", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The granularity of this RequestUsageCarbonEmissionsDetails.
+        :rtype: str
+        """
+        return self._granularity
+
+    @granularity.setter
+    def granularity(self, granularity):
+        """
+        Sets the granularity of this RequestUsageCarbonEmissionsDetails.
+        The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
+
+
+        :param granularity: The granularity of this RequestUsageCarbonEmissionsDetails.
+        :type: str
+        """
+        allowed_values = ["DAILY", "MONTHLY"]
+        if not value_allowed_none_or_none_sentinel(granularity, allowed_values):
+            granularity = 'UNKNOWN_ENUM_VALUE'
+        self._granularity = granularity
+
+    @property
     def is_aggregate_by_time(self):
         """
         Gets the is_aggregate_by_time of this RequestUsageCarbonEmissionsDetails.
-        Specifies whether aggregated by time. If isAggregateByTime is true, all usage carbon emissions over the query time period will be added up.
+        Specifies whether aggregated by time. If isAggregateByTime is true, all carbon emissions usage over the query time period are summed.
 
 
         :return: The is_aggregate_by_time of this RequestUsageCarbonEmissionsDetails.
@@ -170,7 +311,7 @@ class RequestUsageCarbonEmissionsDetails(object):
     def is_aggregate_by_time(self, is_aggregate_by_time):
         """
         Sets the is_aggregate_by_time of this RequestUsageCarbonEmissionsDetails.
-        Specifies whether aggregated by time. If isAggregateByTime is true, all usage carbon emissions over the query time period will be added up.
+        Specifies whether aggregated by time. If isAggregateByTime is true, all carbon emissions usage over the query time period are summed.
 
 
         :param is_aggregate_by_time: The is_aggregate_by_time of this RequestUsageCarbonEmissionsDetails.

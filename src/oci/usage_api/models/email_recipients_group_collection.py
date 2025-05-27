@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class EmailRecipientsGroupCollection(object):
     """
-    An email recipients groups collection
+    The email recipients group collection.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class EmailRecipientsGroupCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this EmailRecipientsGroupCollection.
-        An email recipients groups list.
+        The email recipients group list.
 
 
         :return: The items of this EmailRecipientsGroupCollection.
@@ -49,7 +49,7 @@ class EmailRecipientsGroupCollection(object):
     def items(self, items):
         """
         Sets the items of this EmailRecipientsGroupCollection.
-        An email recipients groups list.
+        The email recipients group list.
 
 
         :param items: The items of this EmailRecipientsGroupCollection.

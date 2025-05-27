@@ -233,12 +233,10 @@ class DatabaseClient(object):
 
     def add_standby_autonomous_container_database(self, add_standby_autonomous_container_database_details, autonomous_container_database_id, **kwargs):
         """
-        Create Standby Autonomous Container Database.
-        For more information about changing Autonomous Container Databases Add Standby, see
-        `Create Standby Autonomous Container Database`__ and `Convert Snapshot Standby to Physical Standby`__.
+        Add a standby Autonomous Container Database. For more information about Autonomous Data Guard,see
+        `Protect Critical Databases from Failures and Disasters Using Autonomous Data Guard`__.
 
-        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-D3B503F1-0032-4B0D-9F00-ACAE8151AB80
-        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-E8D7E0EE-8244-467D-B33A-1BC6F969A0A4
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbau/GUID-C57B9A6E-7471-4CDC-8F10-B8386538E31C
 
 
         :param oci.database.models.AddStandbyAutonomousContainerDatabaseDetails add_standby_autonomous_container_database_details: (required)
@@ -1304,7 +1302,7 @@ class DatabaseClient(object):
         For more information about moving Autonomous Container Databases, see
         `Moving Database Resources to a Different Compartment`__.
 
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/raqyy/#articletitle.html
 
 
         :param oci.database.models.ChangeCompartmentDetails change_compartment_details: (required)
@@ -2868,8 +2866,8 @@ class DatabaseClient(object):
 
     def change_dataguard_role(self, change_dataguard_role_details, autonomous_container_database_id, **kwargs):
         """
-        Switch the Autonomous Container Database role between Standby and Snapshot Standby.
-        For more information about changing Autonomous Container Databases Dataguard Role, see
+        **Deprecated.** Use the :func:`convert_standby_autonomous_container_database` operation to switch the Autonomous Container Database (ACD) role between Standby and Snapshot Standby.
+        For more information about changing ACD Role, see
         `Convert Physical Standby to Snapshot Standby`__ and `Convert Snapshot Standby to Physical Standby`__.
 
         __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-D3B503F1-0032-4B0D-9F00-ACAE8151AB80
@@ -5742,9 +5740,8 @@ class DatabaseClient(object):
 
     def convert_standby_autonomous_container_database(self, convert_standby_autonomous_container_database_details, autonomous_container_database_id, **kwargs):
         """
-        Convert between and SnapshotStandby Standby Autonomous Container Database .
-        For more information about changing Autonomous Container Databases Add Standby, see
-        `Convert Standby Autonomous Container Database`__ and `Convert Snapshot Standby to Physical Standby`__.
+        Convert the standby Autonomous Container Database (ACD) between physical standby and snapshot standby ACD. For more information about converting standby ACDs, see
+        `Convert Physical Standby to Snapshot Standby`__ and `Convert Snapshot Standby to Physical Standby`__.
 
         __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-D3B503F1-0032-4B0D-9F00-ACAE8151AB80
         __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-E8D7E0EE-8244-467D-B33A-1BC6F969A0A4
@@ -6409,17 +6406,10 @@ class DatabaseClient(object):
 
     def create_autonomous_container_database_dataguard_association(self, autonomous_container_database_id, create_autonomous_container_database_dataguard_association_details, **kwargs):
         """
-        Create a new Autonomous Data Guard association. An Autonomous Data Guard association represents the replication relationship between the
+        **Deprecated.** Use the :func:`add_standby_autonomous_container_database` operation to create a new Autonomous Data Guard association. An Autonomous Data Guard association represents the replication relationship between the
         specified Autonomous Container database and a peer Autonomous Container database. For more information, see `Using Oracle Data Guard`__.
 
-        All Oracle Cloud Infrastructure resources, including Data Guard associations, get an Oracle-assigned, unique ID
-        called an Oracle Cloud Identifier (OCID). When you create a resource, you can find its OCID in the response.
-        You can also retrieve a resource's OCID by using a List API operation on that resource type, or by viewing the
-        resource in the Console. For more information, see
-        `Resource Identifiers`__.
-
-        __ https://docs.cloud.oracle.com/Content/Database/Tasks/usingdataguard.htm
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbau/#articletitle.html
 
 
         :param str autonomous_container_database_id: (required)
@@ -15501,12 +15491,10 @@ class DatabaseClient(object):
 
     def edit_autonomous_container_database_dataguard(self, edit_autonomous_container_database_dataguard_details, autonomous_container_database_id, **kwargs):
         """
-        Edit Autonomous Container Database Dataguard.
-        For more information about changing Autonomous Container Databases Add Standby, see
-        `Update Autonomous Container Database Dataguard`__ and `Convert Snapshot Standby to Physical Standby`__.
+        Modify Autonomous Container Database Data Guard settings such as protection mode, automatic failover, and fast start failover lag limit. For more information, see
+        `Update Autonomous Container Database Dataguard`__.
 
-        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-D3B503F1-0032-4B0D-9F00-ACAE8151AB80
-        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-E8D7E0EE-8244-467D-B33A-1BC6F969A0A4
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-3A936EC7-7A49-4FD2-9F39-8DB6B22011CE
 
 
         :param oci.database.models.EditAutonomousContainerDatabaseDataguardDetails edit_autonomous_container_database_dataguard_details: (required)
@@ -17163,7 +17151,10 @@ class DatabaseClient(object):
 
     def failover_autonomous_container_database_dataguard(self, autonomous_container_database_id, **kwargs):
         """
-        Failover Autonomous Container Database, identified by the autonomousContainerDatabaseId parameter, to an active standby Autonomous Container Database.
+        Performs failover to a standby Autonomous Container Database (ACD) identified by the autonomousContainerDatabaseId parameter. This standby ACD will become the new primary ACD when the failover completes successfully. For more information, see
+        `Fail Over to the Standby in an Autonomous Data Guard Configuration`__.
+
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-C8FFA343-223C-4F41-9656-AEC356AD90A0
 
 
         :param str autonomous_container_database_id: (required)
@@ -17268,7 +17259,7 @@ class DatabaseClient(object):
 
     def failover_autonomous_container_database_dataguard_association(self, autonomous_container_database_id, autonomous_container_database_dataguard_association_id, **kwargs):
         """
-        Fails over the standby Autonomous Container Database identified by the autonomousContainerDatabaseId parameter to the primary Autonomous Container Database after the existing primary Autonomous Container Database fails or becomes unreachable.
+        **Deprecated.** Use the :func:`failover_autonomous_container_database_dataguard` operation to fail over the standby Autonomous Container Database (ACD) to the primary ACD after the existing primary ACD fails or becomes unreachable.
 
         A failover can result in data loss, depending on the protection mode in effect at the time the primary Autonomous Container Database fails.
 
@@ -18035,7 +18026,7 @@ class DatabaseClient(object):
 
     def get_autonomous_container_database_dataguard_association(self, autonomous_container_database_id, autonomous_container_database_dataguard_association_id, **kwargs):
         """
-        Gets an Autonomous Container Database enabled with Autonomous Data Guard associated with the specified Autonomous Container Database.
+        **Deprecated.** Use the :func:`get_autonomous_container_database` operation to get the details of an Autonomous Container Database (ACD) enabled with Autonomous Data Guard associated with the specified ACD.
 
 
         :param str autonomous_container_database_id: (required)
@@ -18423,7 +18414,7 @@ class DatabaseClient(object):
 
     def get_autonomous_database_dataguard_association(self, autonomous_database_id, autonomous_database_dataguard_association_id, **kwargs):
         """
-        Gets an Autonomous Data Guard-enabled database associated with the specified Autonomous Database.
+        *Deprecated.* Use the :func:`get_autonomous_container_database` operation to gets an Autonomous Data Guard-enabled database associated with the specified Autonomous Database.
 
 
         :param str autonomous_database_id: (required)
@@ -19793,7 +19784,7 @@ class DatabaseClient(object):
         resource_path = "/cloudExadataInfrastructures/{cloudExadataInfrastructureId}/unAllocatedResources"
         method = "GET"
         operation_name = "get_cloud_exadata_infrastructure_unallocated_resources"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructureUnallocatedResources/GetCloudExadataInfrastructureUnallocatedResources"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructure/GetCloudExadataInfrastructureUnallocatedResources"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -25352,7 +25343,7 @@ class DatabaseClient(object):
 
     def list_autonomous_container_database_dataguard_associations(self, autonomous_container_database_id, **kwargs):
         """
-        Gets a list of the Autonomous Container Databases with Autonomous Data Guard-enabled associated with the specified Autonomous Container Database.
+        **Deprecated.** Use the :func:`list_autonomous_container_databases` operation to get a list of the Autonomous Container Databases (ACDs)with Autonomous Data Guard-enabled associated with the specified ACD.
 
 
         :param str autonomous_container_database_id: (required)
@@ -26239,7 +26230,7 @@ class DatabaseClient(object):
 
     def list_autonomous_database_dataguard_associations(self, autonomous_database_id, **kwargs):
         """
-        Gets a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous Database.
+        *Deprecated.* Use the :func:`get_autonomous_container_database` operation to get a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous Database.
 
 
         :param str autonomous_database_id: (required)
@@ -30411,7 +30402,7 @@ class DatabaseClient(object):
 
     def list_db_nodes(self, compartment_id, **kwargs):
         """
-        Lists the database nodes in the specified DB system and compartment. A database node is a server running database software.
+        Lists the database nodes in the specified DB system and compartment. In addition to the other required parameters, either '--db-system-id' or '--vm-cluster-id' also must be provided, depending on the service being accessed.
 
 
         :param str compartment_id: (required)
@@ -31150,6 +31141,11 @@ class DatabaseClient(object):
         :param str shape_type: (optional)
             Optional. Filters the performance results by shape type.
 
+        :param str database_edition: (optional)
+            The database edition of quota (STANDARD_EDITION/ENTERPRISE_EDITION/ENTERPRISE_EDITION_HIGH_PERFORMANCE/ENTERPRISE_EDITION_EXTREME/ENTERPRISE_EDITION_DEVELOPER)
+
+            Allowed values are: "STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", "ENTERPRISE_EDITION_EXTREME", "ENTERPRISE_EDITION_DEVELOPER"
+
         :param str opc_request_id: (optional)
             Unique identifier for the request.
 
@@ -31183,6 +31179,7 @@ class DatabaseClient(object):
             "allow_control_chars",
             "retry_strategy",
             "shape_type",
+            "database_edition",
             "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -31196,9 +31193,17 @@ class DatabaseClient(object):
                 f"Invalid value for `storage_management`, must be one of { storage_management_allowed_values }"
             )
 
+        if 'database_edition' in kwargs:
+            database_edition_allowed_values = ["STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", "ENTERPRISE_EDITION_EXTREME", "ENTERPRISE_EDITION_DEVELOPER"]
+            if kwargs['database_edition'] not in database_edition_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `database_edition`, must be one of { database_edition_allowed_values }"
+                )
+
         query_params = {
             "storageManagement": storage_management,
-            "shapeType": kwargs.get("shape_type", missing)
+            "shapeType": kwargs.get("shape_type", missing),
+            "databaseEdition": kwargs.get("database_edition", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -38098,7 +38103,10 @@ class DatabaseClient(object):
 
     def reinstate_autonomous_container_database_dataguard(self, autonomous_container_database_id, **kwargs):
         """
-        Reinstates a disabled standby Autonomous Container Database, identified by the autonomousContainerDatabaseId parameter, to an active standby Autonomous Container Database.
+        Reinstates a disabled standby Autonomous Container Database (ACD), identified by the autonomousContainerDatabaseId parameter to an active standby ACD. For more information, see
+        `Reinstate the Disabled Standby in an Autonomous Data Guard Configuration`__.
+
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-B5C6A90D-72E3-4F32-988D-8AECC0A2D947
 
 
         :param str autonomous_container_database_id: (required)
@@ -38203,7 +38211,7 @@ class DatabaseClient(object):
 
     def reinstate_autonomous_container_database_dataguard_association(self, autonomous_container_database_id, autonomous_container_database_dataguard_association_id, **kwargs):
         """
-        Reinstates a disabled standby Autonomous Container Database, identified by the autonomousContainerDatabaseId parameter, to an active standby Autonomous Container Database.
+        **Deprecated.** Use the :func:`reinstate_autonomous_container_database_dataguard` operation to reinstate a disabled standby Autonomous Container Database (ACD), identified by the autonomousContainerDatabaseId parameter, to an active standby ACD.
 
 
         :param str autonomous_container_database_id: (required)
@@ -42248,7 +42256,10 @@ class DatabaseClient(object):
 
     def switchover_autonomous_container_database_dataguard(self, autonomous_container_database_id, **kwargs):
         """
-        Switchover Autonomous Container Database, identified by the autonomousContainerDatabaseId parameter, to an active standby Autonomous Container Database.
+        Switchover an Autonomous Container Database (ACD), identified by the autonomousContainerDatabaseId parameter, to an active standby ACD. This standby ACD will become the new primary ACD when the switchover completes successfully. For more information, see
+        `Switch Roles in an Autonomous Data Guard Configuration`__.
+
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-A2AB31F6-D52D-493C-9BA7-D87A0F17078F
 
 
         :param str autonomous_container_database_id: (required)
@@ -42353,7 +42364,7 @@ class DatabaseClient(object):
 
     def switchover_autonomous_container_database_dataguard_association(self, autonomous_container_database_id, autonomous_container_database_dataguard_association_id, **kwargs):
         """
-        Switches over the primary Autonomous Container Database of an Autonomous Data Guard peer association to standby role. The standby Autonomous Container Database associated with autonomousContainerDatabaseDataguardAssociationId assumes the primary Autonomous Container Database role.
+        **Deprecated.** Use the :func:`switchover_autonomous_container_database_dataguard` operation to switches over the primary Autonomous Container Database (ACD) of an Autonomous Data Guard peer association to standby role. The standby ACD associated with autonomousContainerDatabaseDataguardAssociationId assumes the primary ACD role.
 
         A switchover incurs no data loss.
 
@@ -43118,7 +43129,7 @@ class DatabaseClient(object):
 
     def update_autonomous_container_database_dataguard_association(self, autonomous_container_database_id, autonomous_container_database_dataguard_association_id, update_autonomous_container_database_data_guard_association_details, **kwargs):
         """
-        Update Autonomous Data Guard association.
+        **Deprecated.** Use the :func:`edit_autonomous_container_database_dataguard` operation to update an Autonomous Data Guard association.
 
 
         :param str autonomous_container_database_id: (required)

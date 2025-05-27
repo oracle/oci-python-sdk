@@ -23,6 +23,10 @@ class ScriptSummary(object):
     #: This constant has a value of "JS"
     CONTENT_TYPE_JS = "JS"
 
+    #: A constant which can be used with the content_type property of a ScriptSummary.
+    #: This constant has a value of "PLAYWRIGHT_TS"
+    CONTENT_TYPE_PLAYWRIGHT_TS = "PLAYWRIGHT_TS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ScriptSummary object with values from keyword arguments.
@@ -38,7 +42,7 @@ class ScriptSummary(object):
 
         :param content_type:
             The value to assign to the content_type property of this ScriptSummary.
-            Allowed values for this property are: "SIDE", "JS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SIDE", "JS", "PLAYWRIGHT_TS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type content_type: str
 
@@ -152,7 +156,7 @@ class ScriptSummary(object):
         **[Required]** Gets the content_type of this ScriptSummary.
         Content type of the script.
 
-        Allowed values for this property are: "SIDE", "JS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "SIDE", "JS", "PLAYWRIGHT_TS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -171,7 +175,7 @@ class ScriptSummary(object):
         :param content_type: The content_type of this ScriptSummary.
         :type: str
         """
-        allowed_values = ["SIDE", "JS"]
+        allowed_values = ["SIDE", "JS", "PLAYWRIGHT_TS"]
         if not value_allowed_none_or_none_sentinel(content_type, allowed_values):
             content_type = 'UNKNOWN_ENUM_VALUE'
         self._content_type = content_type

@@ -44,11 +44,15 @@ Bds
     oci.bds.models.BatchingBasedPatchingConfigs
     oci.bds.models.BdsApiKey
     oci.bds.models.BdsApiKeySummary
+    oci.bds.models.BdsCapacityReport
     oci.bds.models.BdsClusterVersionSummary
     oci.bds.models.BdsInstance
     oci.bds.models.BdsInstanceSummary
     oci.bds.models.BdsMetastoreConfiguration
     oci.bds.models.BdsMetastoreConfigurationSummary
+    oci.bds.models.BdsSoftwareUpdate
+    oci.bds.models.CapacityAvailability
+    oci.bds.models.CapacityReportShapeAvailability
     oci.bds.models.CertificateServiceInfoDetails
     oci.bds.models.CertificateServiceInfoSummary
     oci.bds.models.ChangeBdsInstanceCompartmentDetails
@@ -57,8 +61,10 @@ Bds
     oci.bds.models.CloudSqlDetails
     oci.bds.models.ClusterDetails
     oci.bds.models.CreateBdsApiKeyDetails
+    oci.bds.models.CreateBdsCapacityReportDetails
     oci.bds.models.CreateBdsInstanceDetails
     oci.bds.models.CreateBdsMetastoreConfigurationDetails
+    oci.bds.models.CreateCapacityReportShapeAvailabilityDetails
     oci.bds.models.CreateIdentityConfigurationDetails
     oci.bds.models.CreateNodeBackupConfigurationDetails
     oci.bds.models.CreateNodeDetails
@@ -72,6 +78,7 @@ Bds
     oci.bds.models.DisableCertificateDetails
     oci.bds.models.DomainBasedOdhPatchingConfig
     oci.bds.models.DomainBasedPatchingConfigs
+    oci.bds.models.DomainTypeCapacityReport
     oci.bds.models.DowntimeBasedOdhPatchingConfig
     oci.bds.models.DowntimeBasedPatchingConfigs
     oci.bds.models.EnableCertificateDetails
@@ -86,6 +93,7 @@ Bds
     oci.bds.models.IdentityConfigurationSummary
     oci.bds.models.InstallOsPatchDetails
     oci.bds.models.InstallPatchDetails
+    oci.bds.models.InstallSoftwareUpdatesDetails
     oci.bds.models.KerberosDetails
     oci.bds.models.LevelTypeDetails
     oci.bds.models.MetricBasedHorizontalScaleInConfig
@@ -95,6 +103,7 @@ Bds
     oci.bds.models.MetricBasedVerticalScaleUpConfig
     oci.bds.models.MetricBasedVerticalScalingPolicyDetails
     oci.bds.models.MetricThresholdRule
+    oci.bds.models.MultiAdCapacityReport
     oci.bds.models.NetworkConfig
     oci.bds.models.Node
     oci.bds.models.NodeBackup
@@ -129,6 +138,10 @@ Bds
     oci.bds.models.ScheduleBasedHorizontalScalingPolicyDetails
     oci.bds.models.ScheduleBasedVerticalScalingPolicyDetails
     oci.bds.models.ShapeConfigDetails
+    oci.bds.models.SingleAdCapacityReport
+    oci.bds.models.SoftwareUpdate
+    oci.bds.models.SoftwareUpdateCollection
+    oci.bds.models.SoftwareUpdateSummary
     oci.bds.models.StartBdsInstanceDetails
     oci.bds.models.StartClusterShapeConfigs
     oci.bds.models.StopBdsInstanceDetails

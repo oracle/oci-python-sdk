@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class EmailRecipientsGroup(object):
     """
-    The recipients group to receive usage statement email.
+    The recipients group to receive usage statement emails.
     """
 
     #: A constant which can be used with the lifecycle_state property of a EmailRecipientsGroup.
@@ -116,7 +116,7 @@ class EmailRecipientsGroup(object):
     def recipients_list(self):
         """
         **[Required]** Gets the recipients_list of this EmailRecipientsGroup.
-        The list of recipient will receive the usage statement email.
+        The list of recipients that will receive usage statement emails.
 
 
         :return: The recipients_list of this EmailRecipientsGroup.
@@ -128,7 +128,7 @@ class EmailRecipientsGroup(object):
     def recipients_list(self, recipients_list):
         """
         Sets the recipients_list of this EmailRecipientsGroup.
-        The list of recipient will receive the usage statement email.
+        The list of recipients that will receive usage statement emails.
 
 
         :param recipients_list: The recipients_list of this EmailRecipientsGroup.
@@ -140,7 +140,7 @@ class EmailRecipientsGroup(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this EmailRecipientsGroup.
-        The email recipient group lifecycle state.
+        The email recipients group lifecycle state.
 
         Allowed values for this property are: "ACTIVE", "INACTIVE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -155,7 +155,7 @@ class EmailRecipientsGroup(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this EmailRecipientsGroup.
-        The email recipient group lifecycle state.
+        The email recipients group lifecycle state.
 
 
         :param lifecycle_state: The lifecycle_state of this EmailRecipientsGroup.

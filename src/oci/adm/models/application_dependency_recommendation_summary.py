@@ -97,7 +97,7 @@ class ApplicationDependencyRecommendationSummary(object):
     def purl(self):
         """
         Gets the purl of this ApplicationDependencyRecommendationSummary.
-        Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+        Package URL identifier, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
 
 
         :return: The purl of this ApplicationDependencyRecommendationSummary.
@@ -109,7 +109,7 @@ class ApplicationDependencyRecommendationSummary(object):
     def purl(self, purl):
         """
         Sets the purl of this ApplicationDependencyRecommendationSummary.
-        Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+        Package URL identifier, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
 
 
         :param purl: The purl of this ApplicationDependencyRecommendationSummary.
@@ -193,7 +193,7 @@ class ApplicationDependencyRecommendationSummary(object):
     def recommended_purl(self):
         """
         Gets the recommended_purl of this ApplicationDependencyRecommendationSummary.
-        Recommended application dependency in PURL format, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.2.0
+        Recommended application dependency in purl format, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.2.0
 
 
         :return: The recommended_purl of this ApplicationDependencyRecommendationSummary.
@@ -205,7 +205,7 @@ class ApplicationDependencyRecommendationSummary(object):
     def recommended_purl(self, recommended_purl):
         """
         Sets the recommended_purl of this ApplicationDependencyRecommendationSummary.
-        Recommended application dependency in PURL format, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.2.0
+        Recommended application dependency in purl format, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.2.0
 
 
         :param recommended_purl: The recommended_purl of this ApplicationDependencyRecommendationSummary.

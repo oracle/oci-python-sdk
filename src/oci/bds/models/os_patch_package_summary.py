@@ -27,6 +27,22 @@ class OsPatchPackageSummary(object):
     #: This constant has a value of "UPDATE"
     UPDATE_TYPE_UPDATE = "UPDATE"
 
+    #: A constant which can be used with the package_type property of a OsPatchPackageSummary.
+    #: This constant has a value of "RPM"
+    PACKAGE_TYPE_RPM = "RPM"
+
+    #: A constant which can be used with the package_type property of a OsPatchPackageSummary.
+    #: This constant has a value of "PIP"
+    PACKAGE_TYPE_PIP = "PIP"
+
+    #: A constant which can be used with the package_type property of a OsPatchPackageSummary.
+    #: This constant has a value of "PIP3"
+    PACKAGE_TYPE_PIP3 = "PIP3"
+
+    #: A constant which can be used with the package_type property of a OsPatchPackageSummary.
+    #: This constant has a value of "PIP3_8"
+    PACKAGE_TYPE_PIP3_8 = "PIP3_8"
+
     def __init__(self, **kwargs):
         """
         Initializes a new OsPatchPackageSummary object with values from keyword arguments.
@@ -50,23 +66,32 @@ class OsPatchPackageSummary(object):
             The value to assign to the related_cv_es property of this OsPatchPackageSummary.
         :type related_cv_es: list[str]
 
+        :param package_type:
+            The value to assign to the package_type property of this OsPatchPackageSummary.
+            Allowed values for this property are: "RPM", "PIP", "PIP3", "PIP3_8", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type package_type: str
+
         """
         self.swagger_types = {
             'package_name': 'str',
             'target_version': 'str',
             'update_type': 'str',
-            'related_cv_es': 'list[str]'
+            'related_cv_es': 'list[str]',
+            'package_type': 'str'
         }
         self.attribute_map = {
             'package_name': 'packageName',
             'target_version': 'targetVersion',
             'update_type': 'updateType',
-            'related_cv_es': 'relatedCVEs'
+            'related_cv_es': 'relatedCVEs',
+            'package_type': 'packageType'
         }
         self._package_name = None
         self._target_version = None
         self._update_type = None
         self._related_cv_es = None
+        self._package_type = None
 
     @property
     def package_name(self):
@@ -169,6 +194,36 @@ class OsPatchPackageSummary(object):
         :type: list[str]
         """
         self._related_cv_es = related_cv_es
+
+    @property
+    def package_type(self):
+        """
+        Gets the package_type of this OsPatchPackageSummary.
+        Package type based on package installation manager.
+
+        Allowed values for this property are: "RPM", "PIP", "PIP3", "PIP3_8", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The package_type of this OsPatchPackageSummary.
+        :rtype: str
+        """
+        return self._package_type
+
+    @package_type.setter
+    def package_type(self, package_type):
+        """
+        Sets the package_type of this OsPatchPackageSummary.
+        Package type based on package installation manager.
+
+
+        :param package_type: The package_type of this OsPatchPackageSummary.
+        :type: str
+        """
+        allowed_values = ["RPM", "PIP", "PIP3", "PIP3_8"]
+        if not value_allowed_none_or_none_sentinel(package_type, allowed_values):
+            package_type = 'UNKNOWN_ENUM_VALUE'
+        self._package_type = package_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

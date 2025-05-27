@@ -12,7 +12,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ApplicationDependency(object):
     """
-    An application dependency resource creates a vulnerability audit.
+    An ApplicationDependency resource is used within the applicationDependencies of a CreateVulnerabilityAuditDetails resource to create a vulnerability audit.
+    Each ApplicationDependency resource must provide either Package URL (purl) identifier or a Group Artifact Version (GAV) to identify the application dependency.
     """
 
     def __init__(self, **kwargs):
@@ -84,7 +85,7 @@ class ApplicationDependency(object):
     def purl(self):
         """
         Gets the purl of this ApplicationDependency.
-        Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+        Package URL identifier, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
 
 
         :return: The purl of this ApplicationDependency.
@@ -96,7 +97,7 @@ class ApplicationDependency(object):
     def purl(self, purl):
         """
         Sets the purl of this ApplicationDependency.
-        Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+        Package URL identifier, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
 
 
         :param purl: The purl of this ApplicationDependency.

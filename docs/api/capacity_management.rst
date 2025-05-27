@@ -7,7 +7,11 @@ Capacity Management
     :template: autosummary/service_client.rst
 
     oci.capacity_management.CapacityManagementClient
+    oci.capacity_management.DemandSignalClient
+    oci.capacity_management.InternalDemandSignalClient
     oci.capacity_management.CapacityManagementClientCompositeOperations
+    oci.capacity_management.DemandSignalClientCompositeOperations
+    oci.capacity_management.InternalDemandSignalClientCompositeOperations
 
 --------
  Models
@@ -20,10 +24,26 @@ Capacity Management
 
     oci.capacity_management.models.AssociatedCapacityRequestDetails
     oci.capacity_management.models.AssociatedOccHandoverResourceBlock
+    oci.capacity_management.models.BulkCreateOccmDemandSignalItem
+    oci.capacity_management.models.BulkCreateOccmDemandSignalItemDetails
+    oci.capacity_management.models.CreateInternalOccmDemandSignalDeliveryDetails
     oci.capacity_management.models.CreateOccAvailabilityCatalogDetails
     oci.capacity_management.models.CreateOccCapacityRequestDetails
     oci.capacity_management.models.CreateOccCustomerDetails
     oci.capacity_management.models.CreateOccCustomerGroupDetails
+    oci.capacity_management.models.CreateOccmDemandSignalDetails
+    oci.capacity_management.models.CreateOccmDemandSignalItemDetails
+    oci.capacity_management.models.InternalOccmDemandSignal
+    oci.capacity_management.models.InternalOccmDemandSignalCatalogResource
+    oci.capacity_management.models.InternalOccmDemandSignalCatalogResourceCollection
+    oci.capacity_management.models.InternalOccmDemandSignalCatalogResourceSummary
+    oci.capacity_management.models.InternalOccmDemandSignalCollection
+    oci.capacity_management.models.InternalOccmDemandSignalDelivery
+    oci.capacity_management.models.InternalOccmDemandSignalDeliveryCollection
+    oci.capacity_management.models.InternalOccmDemandSignalDeliverySummary
+    oci.capacity_management.models.InternalOccmDemandSignalItemCollection
+    oci.capacity_management.models.InternalOccmDemandSignalItemSummary
+    oci.capacity_management.models.InternalOccmDemandSignalSummary
     oci.capacity_management.models.MetadataDetails
     oci.capacity_management.models.OccAvailabilityCatalog
     oci.capacity_management.models.OccAvailabilityCatalogCollection
@@ -44,6 +64,25 @@ Capacity Management
     oci.capacity_management.models.OccHandoverResourceBlockSummary
     oci.capacity_management.models.OccOverviewCollection
     oci.capacity_management.models.OccOverviewSummary
+    oci.capacity_management.models.OccmDemandSignal
+    oci.capacity_management.models.OccmDemandSignalCatalog
+    oci.capacity_management.models.OccmDemandSignalCatalogCollection
+    oci.capacity_management.models.OccmDemandSignalCatalogResource
+    oci.capacity_management.models.OccmDemandSignalCatalogResourceCollection
+    oci.capacity_management.models.OccmDemandSignalCatalogResourceSummary
+    oci.capacity_management.models.OccmDemandSignalCatalogSummary
+    oci.capacity_management.models.OccmDemandSignalCollection
+    oci.capacity_management.models.OccmDemandSignalDeliveryCollection
+    oci.capacity_management.models.OccmDemandSignalDeliverySummary
+    oci.capacity_management.models.OccmDemandSignalItem
+    oci.capacity_management.models.OccmDemandSignalItemCollection
+    oci.capacity_management.models.OccmDemandSignalItemSummary
+    oci.capacity_management.models.OccmDemandSignalResourcePropertiesCollection
+    oci.capacity_management.models.OccmDemandSignalResourcePropertiesSummary
+    oci.capacity_management.models.OccmDemandSignalResourcePropertyConstraintsCollection
+    oci.capacity_management.models.OccmDemandSignalResourcePropertyConstraintsSummary
+    oci.capacity_management.models.OccmDemandSignalResourcePropertyOptionSummary
+    oci.capacity_management.models.OccmDemandSignalSummary
     oci.capacity_management.models.PatchInsertInstruction
     oci.capacity_management.models.PatchInsertMultipleInstruction
     oci.capacity_management.models.PatchInstruction
@@ -56,7 +95,11 @@ Capacity Management
     oci.capacity_management.models.PatchRequireInstruction
     oci.capacity_management.models.PlacementDetails
     oci.capacity_management.models.UpdateInternalOccCapacityRequestDetails
+    oci.capacity_management.models.UpdateInternalOccmDemandSignalDeliveryDetails
+    oci.capacity_management.models.UpdateInternalOccmDemandSignalDetails
     oci.capacity_management.models.UpdateOccAvailabilityCatalogDetails
     oci.capacity_management.models.UpdateOccCapacityRequestDetails
     oci.capacity_management.models.UpdateOccCustomerDetails
     oci.capacity_management.models.UpdateOccCustomerGroupDetails
+    oci.capacity_management.models.UpdateOccmDemandSignalDetails
+    oci.capacity_management.models.UpdateOccmDemandSignalItemDetails

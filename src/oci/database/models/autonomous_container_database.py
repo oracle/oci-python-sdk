@@ -1976,7 +1976,7 @@ class AutonomousContainerDatabase(object):
     def is_multiple_standby(self):
         """
         Gets the is_multiple_standby of this AutonomousContainerDatabase.
-        Whether it is multiple standby Autonomous Dataguard
+        Indicates if it is multiple standby Autonomous Dataguard
 
 
         :return: The is_multiple_standby of this AutonomousContainerDatabase.
@@ -1988,7 +1988,7 @@ class AutonomousContainerDatabase(object):
     def is_multiple_standby(self, is_multiple_standby):
         """
         Sets the is_multiple_standby of this AutonomousContainerDatabase.
-        Whether it is multiple standby Autonomous Dataguard
+        Indicates if it is multiple standby Autonomous Dataguard
 
 
         :param is_multiple_standby: The is_multiple_standby of this AutonomousContainerDatabase.

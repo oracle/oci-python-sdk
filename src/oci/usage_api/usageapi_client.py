@@ -22,7 +22,7 @@ missing = Sentinel("Missing")
 
 class UsageapiClient(object):
     """
-    Use the Usage API to view your Oracle Cloud usage and costs. The API allows you to request data that meets the specified filter criteria, and to group that data by the chosen dimension. The Usage API is used by the Cost Analysis and Carbon Emissions Analysis tools in the Console. See [Cost Analysis Overview](/Content/Billing/Concepts/costanalysisoverview.htm) and [Using the Usage API](/Content/Billing/Concepts/costanalysisoverview.htm#cost_analysis_using_the_api) for more information.
+    Use the Usage API to view your Oracle Cloud usage and costs. The API allows you to request data that meets the specified filter criteria, and to group that data by the chosen dimension. The Usage API is used by [Cost Analysis](/Content/Billing/Concepts/costanalysisoverview.htm), [Scheduled Reports](/Content/Billing/Concepts/scheduledreportoverview.htm), and [Carbon Emissions Analysis](/Content/General/Concepts/emissions-management.htm) in the Console. Also see [Using the Usage API](/Content/Billing/Concepts/costanalysisoverview.htm#cost_analysis_using_the_api) for more information.
     """
 
     def __init__(self, config, **kwargs):
@@ -215,14 +215,14 @@ class UsageapiClient(object):
 
     def create_email_recipients_group(self, create_email_recipients_group_details, subscription_id, **kwargs):
         """
-        Add a list of email recipients that can receive usage statements for the subscription.
+        Creates a list of email recipients that can receive usage statements for the subscription.
 
 
         :param oci.usage_api.models.CreateEmailRecipientsGroupDetails create_email_recipients_group_details: (required)
             New email recipients group details.
 
         :param str subscription_id: (required)
-            The UsageStatement Subscription unique OCID.
+            The usage statement subscription unique OCID.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -521,7 +521,7 @@ class UsageapiClient(object):
 
     def create_usage_carbon_emissions_query(self, create_usage_carbon_emissions_query_details, **kwargs):
         """
-        Returns the created usage carbon emissions query.
+        Returns the created carbon emissions usage query.
 
 
         :param oci.usage_api.models.CreateUsageCarbonEmissionsQueryDetails create_usage_carbon_emissions_query_details: (required)
@@ -722,14 +722,14 @@ class UsageapiClient(object):
 
     def delete_email_recipients_group(self, email_recipients_group_id, subscription_id, compartment_id, **kwargs):
         """
-        Delete the email recipients group for the usage statement subscription.
+        Deletes the email recipients group for the usage statement subscription.
 
 
         :param str email_recipients_group_id: (required)
-            The email recipient group OCID.
+            The email recipients group OCID.
 
         :param str subscription_id: (required)
-            The UsageStatement Subscription unique OCID.
+            The usage statement subscription unique OCID.
 
         :param str compartment_id: (required)
             The compartment ID in which to list resources.
@@ -1048,7 +1048,7 @@ class UsageapiClient(object):
 
     def delete_usage_carbon_emissions_query(self, usage_carbon_emissions_query_id, **kwargs):
         """
-        Delete a usage carbon emissions saved query by the OCID.
+        Delete a carbon emissions usage saved query by the OCID.
 
 
         :param str usage_carbon_emissions_query_id: (required)
@@ -1249,14 +1249,14 @@ class UsageapiClient(object):
 
     def get_email_recipients_group(self, email_recipients_group_id, subscription_id, compartment_id, **kwargs):
         """
-        Return the saved usage statement email recipient group.
+        Returns the saved usage statement email recipients group.
 
 
         :param str email_recipients_group_id: (required)
-            The email recipient group OCID.
+            The email recipients group OCID.
 
         :param str subscription_id: (required)
-            The UsageStatement Subscription unique OCID.
+            The usage statement subscription unique OCID.
 
         :param str compartment_id: (required)
             The compartment ID in which to list resources.
@@ -1558,7 +1558,7 @@ class UsageapiClient(object):
 
 
         :param str scheduled_run_id: (required)
-            The scheduledRun unique OCID
+            The scheduled run unique OCID.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -1651,7 +1651,7 @@ class UsageapiClient(object):
 
     def get_usage_carbon_emissions_query(self, usage_carbon_emissions_query_id, **kwargs):
         """
-        Returns the usage carbon emissions saved query.
+        Returns the carbon emissions usage saved query.
 
 
         :param str usage_carbon_emissions_query_id: (required)
@@ -1762,7 +1762,7 @@ class UsageapiClient(object):
             particular request, please provide the request ID.
 
         :param int limit: (optional)
-            The maximumimum number of items to return.
+            The maximum number of items to return.
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results.
@@ -1883,11 +1883,11 @@ class UsageapiClient(object):
 
     def list_email_recipients_groups(self, subscription_id, compartment_id, **kwargs):
         """
-        Return the saved usage statement email recipient group.
+        Returns the saved usage statement email recipients group.
 
 
         :param str subscription_id: (required)
-            The UsageStatement Subscription unique OCID.
+            The usage statement subscription unique OCID.
 
         :param str compartment_id: (required)
             The compartment ID in which to list resources.
@@ -1897,7 +1897,7 @@ class UsageapiClient(object):
             particular request, please provide the request ID.
 
         :param int limit: (optional)
-            The maximumimum number of items to return.
+            The maximum number of items to return.
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results.
@@ -2050,7 +2050,7 @@ class UsageapiClient(object):
             particular request, please provide the request ID.
 
         :param int limit: (optional)
-            The maximumimum number of items to return.
+            The maximum number of items to return.
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results.
@@ -2170,11 +2170,11 @@ class UsageapiClient(object):
 
     def list_scheduled_runs(self, schedule_id, **kwargs):
         """
-        Returns schedule history list.
+        Returns the schedule history list.
 
 
         :param str schedule_id: (required)
-            The unique ID of a schedule.
+            The schedule unique ID.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -2185,7 +2185,7 @@ class UsageapiClient(object):
             This is usually retrieved from a previous list call.
 
         :param int limit: (optional)
-            The maximumimum number of items to return.
+            The maximum number of items to return.
 
         :param str sort_by: (optional)
             The field to sort by. If not specified, the default is timeCreated.
@@ -2316,7 +2316,7 @@ class UsageapiClient(object):
             This is usually retrieved from a previous list call.
 
         :param int limit: (optional)
-            The maximumimum number of items to return.
+            The maximum number of items to return.
 
         :param str sort_by: (optional)
             The field to sort by. If not specified, the default is timeCreated.
@@ -2329,7 +2329,7 @@ class UsageapiClient(object):
             Allowed values are: "ASC", "DESC"
 
         :param str name: (optional)
-            Query parameter for filtering by name
+            The query parameter for filtering by name.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -2437,7 +2437,7 @@ class UsageapiClient(object):
 
     def list_usage_carbon_emissions_queries(self, compartment_id, **kwargs):
         """
-        Returns the usage carbon emissions saved query list.
+        Returns the carbon emissions usage saved query list.
 
 
         :param str compartment_id: (required)
@@ -2448,7 +2448,7 @@ class UsageapiClient(object):
             particular request, please provide the request ID.
 
         :param int limit: (optional)
-            The maximumimum number of items to return.
+            The maximum number of items to return.
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results.
@@ -2880,7 +2880,7 @@ class UsageapiClient(object):
             This is usually retrieved from a previous list call.
 
         :param int limit: (optional)
-            The maximumimum number of items to return.
+            The maximum number of items to return.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -2969,7 +2969,7 @@ class UsageapiClient(object):
 
     def request_usage_carbon_emission_config(self, tenant_id, **kwargs):
         """
-        Returns the configuration list for the UI drop-down list of carbon emission console.
+        Returns the configuration list for the Console's carbon emission user interface drop-down list.
 
 
         :param str tenant_id: (required)
@@ -3061,7 +3061,7 @@ class UsageapiClient(object):
 
     def request_usage_carbon_emissions(self, request_usage_carbon_emissions_details, **kwargs):
         """
-        Returns usage carbon emission for the given account.
+        Returns carbon emission usage for the given account.
 
 
         :param oci.usage_api.models.RequestUsageCarbonEmissionsDetails request_usage_carbon_emissions_details: (required)
@@ -3076,7 +3076,7 @@ class UsageapiClient(object):
             This is usually retrieved from a previous list call.
 
         :param int limit: (optional)
-            The maximumimum number of items to return.
+            The maximum number of items to return.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -3165,7 +3165,7 @@ class UsageapiClient(object):
 
     def update_custom_table(self, update_custom_table_details, custom_table_id, **kwargs):
         """
-        Update a saved custom table by table id.
+        Update a saved custom table by table ID.
 
 
         :param oci.usage_api.models.UpdateCustomTableDetails update_custom_table_details: (required)
@@ -3276,17 +3276,17 @@ class UsageapiClient(object):
 
     def update_email_recipients_group(self, update_email_recipients_group_details, email_recipients_group_id, subscription_id, compartment_id, **kwargs):
         """
-        Update a saved email recipients group.
+        Updates a saved email recipients group.
 
 
         :param oci.usage_api.models.UpdateEmailRecipientsGroupDetails update_email_recipients_group_details: (required)
             The information to be updated.
 
         :param str email_recipients_group_id: (required)
-            The email recipient group OCID.
+            The email recipients group OCID.
 
         :param str subscription_id: (required)
-            The UsageStatement Subscription unique OCID.
+            The usage statement subscription unique OCID.
 
         :param str compartment_id: (required)
             The compartment ID in which to list resources.
@@ -3512,11 +3512,11 @@ class UsageapiClient(object):
 
     def update_schedule(self, update_schedule_details, schedule_id, **kwargs):
         """
-        Update a saved schedule
+        Update a saved schedule.
 
 
         :param oci.usage_api.models.UpdateScheduleDetails update_schedule_details: (required)
-            The information to be updated. Currently supports only tags
+            The information to be updated. Currently supports only tags.
 
         :param str schedule_id: (required)
             The schedule unique OCID.
@@ -3623,7 +3623,7 @@ class UsageapiClient(object):
 
     def update_usage_carbon_emissions_query(self, update_usage_carbon_emissions_query_details, usage_carbon_emissions_query_id, **kwargs):
         """
-        Update a usage carbon emissions saved query by the OCID.
+        Update a carbon emissions usage saved query by the OCID.
 
 
         :param oci.usage_api.models.UpdateUsageCarbonEmissionsQueryDetails update_usage_carbon_emissions_query_details: (required)

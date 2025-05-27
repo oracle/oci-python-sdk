@@ -45,14 +45,6 @@ class NetworkFirewall(object):
     #: This constant has a value of "NEEDS_ATTENTION"
     LIFECYCLE_STATE_NEEDS_ATTENTION = "NEEDS_ATTENTION"
 
-    #: A constant which can be used with the lifecycle_state property of a NetworkFirewall.
-    #: This constant has a value of "ATTACHING"
-    LIFECYCLE_STATE_ATTACHING = "ATTACHING"
-
-    #: A constant which can be used with the lifecycle_state property of a NetworkFirewall.
-    #: This constant has a value of "DETACHING"
-    LIFECYCLE_STATE_DETACHING = "DETACHING"
-
     def __init__(self, **kwargs):
         """
         Initializes a new NetworkFirewall object with values from keyword arguments.
@@ -90,6 +82,10 @@ class NetworkFirewall(object):
             The value to assign to the availability_domain property of this NetworkFirewall.
         :type availability_domain: str
 
+        :param nat_configuration:
+            The value to assign to the nat_configuration property of this NetworkFirewall.
+        :type nat_configuration: oci.network_firewall.models.NatConfigurationResponse
+
         :param network_security_group_ids:
             The value to assign to the network_security_group_ids property of this NetworkFirewall.
         :type network_security_group_ids: list[str]
@@ -104,7 +100,7 @@ class NetworkFirewall(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this NetworkFirewall.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "ATTACHING", "DETACHING", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -134,6 +130,7 @@ class NetworkFirewall(object):
             'ipv6_address': 'str',
             'network_firewall_policy_id': 'str',
             'availability_domain': 'str',
+            'nat_configuration': 'NatConfigurationResponse',
             'network_security_group_ids': 'list[str]',
             'time_created': 'datetime',
             'time_updated': 'datetime',
@@ -152,6 +149,7 @@ class NetworkFirewall(object):
             'ipv6_address': 'ipv6Address',
             'network_firewall_policy_id': 'networkFirewallPolicyId',
             'availability_domain': 'availabilityDomain',
+            'nat_configuration': 'natConfiguration',
             'network_security_group_ids': 'networkSecurityGroupIds',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
@@ -169,6 +167,7 @@ class NetworkFirewall(object):
         self._ipv6_address = None
         self._network_firewall_policy_id = None
         self._availability_domain = None
+        self._nat_configuration = None
         self._network_security_group_ids = None
         self._time_created = None
         self._time_updated = None
@@ -391,6 +390,26 @@ class NetworkFirewall(object):
         self._availability_domain = availability_domain
 
     @property
+    def nat_configuration(self):
+        """
+        Gets the nat_configuration of this NetworkFirewall.
+
+        :return: The nat_configuration of this NetworkFirewall.
+        :rtype: oci.network_firewall.models.NatConfigurationResponse
+        """
+        return self._nat_configuration
+
+    @nat_configuration.setter
+    def nat_configuration(self, nat_configuration):
+        """
+        Sets the nat_configuration of this NetworkFirewall.
+
+        :param nat_configuration: The nat_configuration of this NetworkFirewall.
+        :type: oci.network_firewall.models.NatConfigurationResponse
+        """
+        self._nat_configuration = nat_configuration
+
+    @property
     def network_security_group_ids(self):
         """
         Gets the network_security_group_ids of this NetworkFirewall.
@@ -484,7 +503,7 @@ class NetworkFirewall(object):
         **[Required]** Gets the lifecycle_state of this NetworkFirewall.
         The current state of the Network Firewall.
 
-        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "ATTACHING", "DETACHING", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -503,7 +522,7 @@ class NetworkFirewall(object):
         :param lifecycle_state: The lifecycle_state of this NetworkFirewall.
         :type: str
         """
-        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "ATTACHING", "DETACHING"]
+        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

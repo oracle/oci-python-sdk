@@ -2485,7 +2485,7 @@ class ApplicationDependencyManagementClient(object):
             A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.
 
         :param str purl: (optional)
-            A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+            A filter to return only resources that match the entire purl given.
 
         :param str sort_by: (optional)
             The field to sort by. Only one sort order may be provided.
@@ -2673,7 +2673,7 @@ class ApplicationDependencyManagementClient(object):
             A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.
 
         :param str purl: (optional)
-            A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+            A filter to return only resources that match the entire purl given.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.

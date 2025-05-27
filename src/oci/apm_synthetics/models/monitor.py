@@ -47,6 +47,18 @@ class Monitor(object):
     #: This constant has a value of "SQL"
     MONITOR_TYPE_SQL = "SQL"
 
+    #: A constant which can be used with the content_type property of a Monitor.
+    #: This constant has a value of "SIDE"
+    CONTENT_TYPE_SIDE = "SIDE"
+
+    #: A constant which can be used with the content_type property of a Monitor.
+    #: This constant has a value of "JS"
+    CONTENT_TYPE_JS = "JS"
+
+    #: A constant which can be used with the content_type property of a Monitor.
+    #: This constant has a value of "PLAYWRIGHT_TS"
+    CONTENT_TYPE_PLAYWRIGHT_TS = "PLAYWRIGHT_TS"
+
     #: A constant which can be used with the status property of a Monitor.
     #: This constant has a value of "ENABLED"
     STATUS_ENABLED = "ENABLED"
@@ -105,6 +117,12 @@ class Monitor(object):
         :param script_name:
             The value to assign to the script_name property of this Monitor.
         :type script_name: str
+
+        :param content_type:
+            The value to assign to the content_type property of this Monitor.
+            Allowed values for this property are: "SIDE", "JS", "PLAYWRIGHT_TS", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type content_type: str
 
         :param status:
             The value to assign to the status property of this Monitor.
@@ -195,6 +213,7 @@ class Monitor(object):
             'vantage_point_count': 'int',
             'script_id': 'str',
             'script_name': 'str',
+            'content_type': 'str',
             'status': 'str',
             'repeat_interval_in_seconds': 'int',
             'is_run_once': 'bool',
@@ -223,6 +242,7 @@ class Monitor(object):
             'vantage_point_count': 'vantagePointCount',
             'script_id': 'scriptId',
             'script_name': 'scriptName',
+            'content_type': 'contentType',
             'status': 'status',
             'repeat_interval_in_seconds': 'repeatIntervalInSeconds',
             'is_run_once': 'isRunOnce',
@@ -250,6 +270,7 @@ class Monitor(object):
         self._vantage_point_count = None
         self._script_id = None
         self._script_name = None
+        self._content_type = None
         self._status = None
         self._repeat_interval_in_seconds = None
         self._is_run_once = None
@@ -453,6 +474,36 @@ class Monitor(object):
         :type: str
         """
         self._script_name = script_name
+
+    @property
+    def content_type(self):
+        """
+        Gets the content_type of this Monitor.
+        Content type of the script.
+
+        Allowed values for this property are: "SIDE", "JS", "PLAYWRIGHT_TS", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The content_type of this Monitor.
+        :rtype: str
+        """
+        return self._content_type
+
+    @content_type.setter
+    def content_type(self, content_type):
+        """
+        Sets the content_type of this Monitor.
+        Content type of the script.
+
+
+        :param content_type: The content_type of this Monitor.
+        :type: str
+        """
+        allowed_values = ["SIDE", "JS", "PLAYWRIGHT_TS"]
+        if not value_allowed_none_or_none_sentinel(content_type, allowed_values):
+            content_type = 'UNKNOWN_ENUM_VALUE'
+        self._content_type = content_type
 
     @property
     def status(self):

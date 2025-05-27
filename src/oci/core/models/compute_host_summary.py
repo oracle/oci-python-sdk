@@ -40,6 +40,14 @@ class ComputeHostSummary(object):
             The value to assign to the hpc_island_id property of this ComputeHostSummary.
         :type hpc_island_id: str
 
+        :param compute_host_group_id:
+            The value to assign to the compute_host_group_id property of this ComputeHostSummary.
+        :type compute_host_group_id: str
+
+        :param recycle_details:
+            The value to assign to the recycle_details property of this ComputeHostSummary.
+        :type recycle_details: oci.core.models.RecycleDetails
+
         :param network_block_id:
             The value to assign to the network_block_id property of this ComputeHostSummary.
         :type network_block_id: str
@@ -103,6 +111,8 @@ class ComputeHostSummary(object):
             'id': 'str',
             'fault_domain': 'str',
             'hpc_island_id': 'str',
+            'compute_host_group_id': 'str',
+            'recycle_details': 'RecycleDetails',
             'network_block_id': 'str',
             'local_block_id': 'str',
             'gpu_memory_fabric_id': 'str',
@@ -124,6 +134,8 @@ class ComputeHostSummary(object):
             'id': 'id',
             'fault_domain': 'faultDomain',
             'hpc_island_id': 'hpcIslandId',
+            'compute_host_group_id': 'computeHostGroupId',
+            'recycle_details': 'recycleDetails',
             'network_block_id': 'networkBlockId',
             'local_block_id': 'localBlockId',
             'gpu_memory_fabric_id': 'gpuMemoryFabricId',
@@ -144,6 +156,8 @@ class ComputeHostSummary(object):
         self._id = None
         self._fault_domain = None
         self._hpc_island_id = None
+        self._compute_host_group_id = None
+        self._recycle_details = None
         self._network_block_id = None
         self._local_block_id = None
         self._gpu_memory_fabric_id = None
@@ -308,6 +322,54 @@ class ComputeHostSummary(object):
         :type: str
         """
         self._hpc_island_id = hpc_island_id
+
+    @property
+    def compute_host_group_id(self):
+        """
+        Gets the compute_host_group_id of this ComputeHostSummary.
+        The `OCID`__ for the Customer-unique host group
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The compute_host_group_id of this ComputeHostSummary.
+        :rtype: str
+        """
+        return self._compute_host_group_id
+
+    @compute_host_group_id.setter
+    def compute_host_group_id(self, compute_host_group_id):
+        """
+        Sets the compute_host_group_id of this ComputeHostSummary.
+        The `OCID`__ for the Customer-unique host group
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param compute_host_group_id: The compute_host_group_id of this ComputeHostSummary.
+        :type: str
+        """
+        self._compute_host_group_id = compute_host_group_id
+
+    @property
+    def recycle_details(self):
+        """
+        Gets the recycle_details of this ComputeHostSummary.
+
+        :return: The recycle_details of this ComputeHostSummary.
+        :rtype: oci.core.models.RecycleDetails
+        """
+        return self._recycle_details
+
+    @recycle_details.setter
+    def recycle_details(self, recycle_details):
+        """
+        Sets the recycle_details of this ComputeHostSummary.
+
+        :param recycle_details: The recycle_details of this ComputeHostSummary.
+        :type: oci.core.models.RecycleDetails
+        """
+        self._recycle_details = recycle_details
 
     @property
     def network_block_id(self):

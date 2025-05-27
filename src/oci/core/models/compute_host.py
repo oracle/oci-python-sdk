@@ -15,6 +15,30 @@ class ComputeHost(object):
     The customer facing object includes host details.
     """
 
+    #: A constant which can be used with the configuration_state property of a ComputeHost.
+    #: This constant has a value of "CONFORMANT"
+    CONFIGURATION_STATE_CONFORMANT = "CONFORMANT"
+
+    #: A constant which can be used with the configuration_state property of a ComputeHost.
+    #: This constant has a value of "NON_CONFORMANT"
+    CONFIGURATION_STATE_NON_CONFORMANT = "NON_CONFORMANT"
+
+    #: A constant which can be used with the configuration_state property of a ComputeHost.
+    #: This constant has a value of "CHECKING"
+    CONFIGURATION_STATE_CHECKING = "CHECKING"
+
+    #: A constant which can be used with the configuration_state property of a ComputeHost.
+    #: This constant has a value of "PRE_APPLYING"
+    CONFIGURATION_STATE_PRE_APPLYING = "PRE_APPLYING"
+
+    #: A constant which can be used with the configuration_state property of a ComputeHost.
+    #: This constant has a value of "APPLYING"
+    CONFIGURATION_STATE_APPLYING = "APPLYING"
+
+    #: A constant which can be used with the configuration_state property of a ComputeHost.
+    #: This constant has a value of "UNKNOWN"
+    CONFIGURATION_STATE_UNKNOWN = "UNKNOWN"
+
     #: A constant which can be used with the health property of a ComputeHost.
     #: This constant has a value of "HEALTHY"
     HEALTH_HEALTHY = "HEALTHY"
@@ -67,6 +91,28 @@ class ComputeHost(object):
         :param hpc_island_id:
             The value to assign to the hpc_island_id property of this ComputeHost.
         :type hpc_island_id: str
+
+        :param compute_host_group_id:
+            The value to assign to the compute_host_group_id property of this ComputeHost.
+        :type compute_host_group_id: str
+
+        :param configuration_state:
+            The value to assign to the configuration_state property of this ComputeHost.
+            Allowed values for this property are: "CONFORMANT", "NON_CONFORMANT", "CHECKING", "PRE_APPLYING", "APPLYING", "UNKNOWN", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type configuration_state: str
+
+        :param time_configuration_check:
+            The value to assign to the time_configuration_check property of this ComputeHost.
+        :type time_configuration_check: datetime
+
+        :param configuration_data:
+            The value to assign to the configuration_data property of this ComputeHost.
+        :type configuration_data: oci.core.models.ComputeHostConfigurationData
+
+        :param recycle_details:
+            The value to assign to the recycle_details property of this ComputeHost.
+        :type recycle_details: oci.core.models.RecycleDetails
 
         :param network_block_id:
             The value to assign to the network_block_id property of this ComputeHost.
@@ -143,6 +189,11 @@ class ComputeHost(object):
             'id': 'str',
             'fault_domain': 'str',
             'hpc_island_id': 'str',
+            'compute_host_group_id': 'str',
+            'configuration_state': 'str',
+            'time_configuration_check': 'datetime',
+            'configuration_data': 'ComputeHostConfigurationData',
+            'recycle_details': 'RecycleDetails',
             'network_block_id': 'str',
             'local_block_id': 'str',
             'gpu_memory_fabric_id': 'str',
@@ -166,6 +217,11 @@ class ComputeHost(object):
             'id': 'id',
             'fault_domain': 'faultDomain',
             'hpc_island_id': 'hpcIslandId',
+            'compute_host_group_id': 'computeHostGroupId',
+            'configuration_state': 'configurationState',
+            'time_configuration_check': 'timeConfigurationCheck',
+            'configuration_data': 'configurationData',
+            'recycle_details': 'recycleDetails',
             'network_block_id': 'networkBlockId',
             'local_block_id': 'localBlockId',
             'gpu_memory_fabric_id': 'gpuMemoryFabricId',
@@ -188,6 +244,11 @@ class ComputeHost(object):
         self._id = None
         self._fault_domain = None
         self._hpc_island_id = None
+        self._compute_host_group_id = None
+        self._configuration_state = None
+        self._time_configuration_check = None
+        self._configuration_data = None
+        self._recycle_details = None
         self._network_block_id = None
         self._local_block_id = None
         self._gpu_memory_fabric_id = None
@@ -354,6 +415,136 @@ class ComputeHost(object):
         :type: str
         """
         self._hpc_island_id = hpc_island_id
+
+    @property
+    def compute_host_group_id(self):
+        """
+        Gets the compute_host_group_id of this ComputeHost.
+        The `OCID`__ for the Customer-unique host group associated with the Compute Bare Metal Host.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The compute_host_group_id of this ComputeHost.
+        :rtype: str
+        """
+        return self._compute_host_group_id
+
+    @compute_host_group_id.setter
+    def compute_host_group_id(self, compute_host_group_id):
+        """
+        Sets the compute_host_group_id of this ComputeHost.
+        The `OCID`__ for the Customer-unique host group associated with the Compute Bare Metal Host.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param compute_host_group_id: The compute_host_group_id of this ComputeHost.
+        :type: str
+        """
+        self._compute_host_group_id = compute_host_group_id
+
+    @property
+    def configuration_state(self):
+        """
+        Gets the configuration_state of this ComputeHost.
+        Configuration state of the Compute Bare Metal Host.
+
+        Allowed values for this property are: "CONFORMANT", "NON_CONFORMANT", "CHECKING", "PRE_APPLYING", "APPLYING", "UNKNOWN", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The configuration_state of this ComputeHost.
+        :rtype: str
+        """
+        return self._configuration_state
+
+    @configuration_state.setter
+    def configuration_state(self, configuration_state):
+        """
+        Sets the configuration_state of this ComputeHost.
+        Configuration state of the Compute Bare Metal Host.
+
+
+        :param configuration_state: The configuration_state of this ComputeHost.
+        :type: str
+        """
+        allowed_values = ["CONFORMANT", "NON_CONFORMANT", "CHECKING", "PRE_APPLYING", "APPLYING", "UNKNOWN"]
+        if not value_allowed_none_or_none_sentinel(configuration_state, allowed_values):
+            configuration_state = 'UNKNOWN_ENUM_VALUE'
+        self._configuration_state = configuration_state
+
+    @property
+    def time_configuration_check(self):
+        """
+        Gets the time_configuration_check of this ComputeHost.
+        The date and time that the compute bare metal host configuration check was updated, in the format defined by `RFC3339`__.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_configuration_check of this ComputeHost.
+        :rtype: datetime
+        """
+        return self._time_configuration_check
+
+    @time_configuration_check.setter
+    def time_configuration_check(self, time_configuration_check):
+        """
+        Sets the time_configuration_check of this ComputeHost.
+        The date and time that the compute bare metal host configuration check was updated, in the format defined by `RFC3339`__.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_configuration_check: The time_configuration_check of this ComputeHost.
+        :type: datetime
+        """
+        self._time_configuration_check = time_configuration_check
+
+    @property
+    def configuration_data(self):
+        """
+        Gets the configuration_data of this ComputeHost.
+
+        :return: The configuration_data of this ComputeHost.
+        :rtype: oci.core.models.ComputeHostConfigurationData
+        """
+        return self._configuration_data
+
+    @configuration_data.setter
+    def configuration_data(self, configuration_data):
+        """
+        Sets the configuration_data of this ComputeHost.
+
+        :param configuration_data: The configuration_data of this ComputeHost.
+        :type: oci.core.models.ComputeHostConfigurationData
+        """
+        self._configuration_data = configuration_data
+
+    @property
+    def recycle_details(self):
+        """
+        Gets the recycle_details of this ComputeHost.
+
+        :return: The recycle_details of this ComputeHost.
+        :rtype: oci.core.models.RecycleDetails
+        """
+        return self._recycle_details
+
+    @recycle_details.setter
+    def recycle_details(self, recycle_details):
+        """
+        Sets the recycle_details of this ComputeHost.
+
+        :param recycle_details: The recycle_details of this ComputeHost.
+        :type: oci.core.models.RecycleDetails
+        """
+        self._recycle_details = recycle_details
 
     @property
     def network_block_id(self):
