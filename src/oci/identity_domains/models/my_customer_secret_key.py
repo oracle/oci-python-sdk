@@ -116,6 +116,10 @@ class MyCustomerSecretKey(object):
             The value to assign to the access_key property of this MyCustomerSecretKey.
         :type access_key: str
 
+        :param secret_key:
+            The value to assign to the secret_key property of this MyCustomerSecretKey.
+        :type secret_key: str
+
         :param user:
             The value to assign to the user property of this MyCustomerSecretKey.
         :type user: oci.identity_domains.models.MyCustomerSecretKeyUser
@@ -140,6 +144,7 @@ class MyCustomerSecretKey(object):
             'status': 'str',
             'expires_on': 'str',
             'access_key': 'str',
+            'secret_key': 'str',
             'user': 'MyCustomerSecretKeyUser'
         }
         self.attribute_map = {
@@ -161,6 +166,7 @@ class MyCustomerSecretKey(object):
             'status': 'status',
             'expires_on': 'expiresOn',
             'access_key': 'accessKey',
+            'secret_key': 'secretKey',
             'user': 'user'
         }
         self._id = None
@@ -181,6 +187,7 @@ class MyCustomerSecretKey(object):
         self._status = None
         self._expires_on = None
         self._access_key = None
+        self._secret_key = None
         self._user = None
 
     @property
@@ -902,6 +909,44 @@ class MyCustomerSecretKey(object):
         :type: str
         """
         self._access_key = access_key
+
+    @property
+    def secret_key(self):
+        """
+        Gets the secret_key of this MyCustomerSecretKey.
+        The secret key.
+
+        **SCIM++ Properties:**
+         - caseExact: true
+         - type: string
+         - mutability: readOnly
+         - required: false
+         - returned: default
+
+
+        :return: The secret_key of this MyCustomerSecretKey.
+        :rtype: str
+        """
+        return self._secret_key
+
+    @secret_key.setter
+    def secret_key(self, secret_key):
+        """
+        Sets the secret_key of this MyCustomerSecretKey.
+        The secret key.
+
+        **SCIM++ Properties:**
+         - caseExact: true
+         - type: string
+         - mutability: readOnly
+         - required: false
+         - returned: default
+
+
+        :param secret_key: The secret_key of this MyCustomerSecretKey.
+        :type: str
+        """
+        self._secret_key = secret_key
 
     @property
     def user(self):
