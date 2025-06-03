@@ -40,6 +40,10 @@ class UpdateDataPumpParameters(object):
     #: This constant has a value of "SKIP"
     TABLE_EXISTS_ACTION_SKIP = "SKIP"
 
+    #: A constant which can be used with the table_exists_action property of a UpdateDataPumpParameters.
+    #: This constant has a value of "UNSPECIFIED"
+    TABLE_EXISTS_ACTION_UNSPECIFIED = "UNSPECIFIED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateDataPumpParameters object with values from keyword arguments.
@@ -56,7 +60,7 @@ class UpdateDataPumpParameters(object):
 
         :param table_exists_action:
             The value to assign to the table_exists_action property of this UpdateDataPumpParameters.
-            Allowed values for this property are: "TRUNCATE", "REPLACE", "APPEND", "SKIP"
+            Allowed values for this property are: "TRUNCATE", "REPLACE", "APPEND", "SKIP", "UNSPECIFIED"
         :type table_exists_action: str
 
         :param exclude_parameters:
@@ -156,7 +160,7 @@ class UpdateDataPumpParameters(object):
         Gets the table_exists_action of this UpdateDataPumpParameters.
         IMPORT: Specifies the action to be performed when data is loaded into a preexisting table.
 
-        Allowed values for this property are: "TRUNCATE", "REPLACE", "APPEND", "SKIP"
+        Allowed values for this property are: "TRUNCATE", "REPLACE", "APPEND", "SKIP", "UNSPECIFIED"
 
 
         :return: The table_exists_action of this UpdateDataPumpParameters.
@@ -174,7 +178,7 @@ class UpdateDataPumpParameters(object):
         :param table_exists_action: The table_exists_action of this UpdateDataPumpParameters.
         :type: str
         """
-        allowed_values = ["TRUNCATE", "REPLACE", "APPEND", "SKIP"]
+        allowed_values = ["TRUNCATE", "REPLACE", "APPEND", "SKIP", "UNSPECIFIED"]
         if not value_allowed_none_or_none_sentinel(table_exists_action, allowed_values):
             raise ValueError(
                 f"Invalid value for `table_exists_action`, must be None or one of {allowed_values}"

@@ -28,6 +28,7 @@ class RequiredAction(object):
         Initializes a new RequiredAction object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.generative_ai_agent_runtime.models.HumanApprovalRequiredAction`
         * :class:`~oci.generative_ai_agent_runtime.models.FunctionCallingRequiredAction`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
@@ -61,6 +62,9 @@ class RequiredAction(object):
         use the info in the hash to return the class of the subtype.
         """
         type = object_dictionary['requiredActionType']
+
+        if type == 'HUMAN_APPROVAL_REQUIRED_ACTION':
+            return 'HumanApprovalRequiredAction'
 
         if type == 'FUNCTION_CALLING_REQUIRED_ACTION':
             return 'FunctionCallingRequiredAction'

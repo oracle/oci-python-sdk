@@ -21,33 +21,75 @@ class GenerationTrace(Trace):
         of this class is ``GENERATION_TRACE`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param key:
+            The value to assign to the key property of this GenerationTrace.
+        :type key: str
+
+        :param parent_key:
+            The value to assign to the parent_key property of this GenerationTrace.
+        :type parent_key: str
+
+        :param source:
+            The value to assign to the source property of this GenerationTrace.
+        :type source: oci.generative_ai_agent_runtime.models.SourceDetails
+
         :param time_created:
             The value to assign to the time_created property of this GenerationTrace.
         :type time_created: datetime
 
+        :param time_finished:
+            The value to assign to the time_finished property of this GenerationTrace.
+        :type time_finished: datetime
+
         :param trace_type:
             The value to assign to the trace_type property of this GenerationTrace.
-            Allowed values for this property are: "ERROR_TRACE", "RETRIEVAL_TRACE", "GENERATION_TRACE"
+            Allowed values for this property are: "ERROR_TRACE", "RETRIEVAL_TRACE", "GENERATION_TRACE", "TOOL_INVOCATION_TRACE", "PLANNING_TRACE", "EXECUTION_TRACE"
         :type trace_type: str
 
         :param generation:
             The value to assign to the generation property of this GenerationTrace.
         :type generation: str
 
+        :param input:
+            The value to assign to the input property of this GenerationTrace.
+        :type input: str
+
+        :param usage:
+            The value to assign to the usage property of this GenerationTrace.
+        :type usage: list[oci.generative_ai_agent_runtime.models.Usage]
+
         """
         self.swagger_types = {
+            'key': 'str',
+            'parent_key': 'str',
+            'source': 'SourceDetails',
             'time_created': 'datetime',
+            'time_finished': 'datetime',
             'trace_type': 'str',
-            'generation': 'str'
+            'generation': 'str',
+            'input': 'str',
+            'usage': 'list[Usage]'
         }
         self.attribute_map = {
+            'key': 'key',
+            'parent_key': 'parentKey',
+            'source': 'source',
             'time_created': 'timeCreated',
+            'time_finished': 'timeFinished',
             'trace_type': 'traceType',
-            'generation': 'generation'
+            'generation': 'generation',
+            'input': 'input',
+            'usage': 'usage'
         }
+        self._key = None
+        self._parent_key = None
+        self._source = None
         self._time_created = None
+        self._time_finished = None
         self._trace_type = None
         self._generation = None
+        self._input = None
+        self._usage = None
         self._trace_type = 'GENERATION_TRACE'
 
     @property
@@ -73,6 +115,54 @@ class GenerationTrace(Trace):
         :type: str
         """
         self._generation = generation
+
+    @property
+    def input(self):
+        """
+        Gets the input of this GenerationTrace.
+        The input to the generation operation.
+
+
+        :return: The input of this GenerationTrace.
+        :rtype: str
+        """
+        return self._input
+
+    @input.setter
+    def input(self, input):
+        """
+        Sets the input of this GenerationTrace.
+        The input to the generation operation.
+
+
+        :param input: The input of this GenerationTrace.
+        :type: str
+        """
+        self._input = input
+
+    @property
+    def usage(self):
+        """
+        Gets the usage of this GenerationTrace.
+        Details of model and its usage.
+
+
+        :return: The usage of this GenerationTrace.
+        :rtype: list[oci.generative_ai_agent_runtime.models.Usage]
+        """
+        return self._usage
+
+    @usage.setter
+    def usage(self, usage):
+        """
+        Sets the usage of this GenerationTrace.
+        Details of model and its usage.
+
+
+        :param usage: The usage of this GenerationTrace.
+        :type: list[oci.generative_ai_agent_runtime.models.Usage]
+        """
+        self._usage = usage
 
     def __repr__(self):
         return formatted_flat_dict(self)

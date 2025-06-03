@@ -5,6 +5,27 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.154.0 - 2025-06-03
+====================
+
+Added 
+----- 
+* Support for creating auto Autonomous Container Database backups in a remote region in the Database service 
+* Support for creating new Autonomous Container Databases from a backup in the remote region in the Database service 
+* Support for input/output token usage information in the Generative AI Agent service 
+* Support for standby connection in the Database Management service 
+* Support for additional metrics, including replication metrics, in the Database Management service 
+* Support for replication dashboard in the Database Management service 
+* Support for soft-deleting backups in the HeatWave service 
+* Support for additional connections types for Oracle Rest Data Services (ORDS), Apache Iceberg, and IBM Db2 for i in the Golden Gate service   
+
+Breaking 
+-------- 
+* Constants `SERVICE_LEVEL_AGREEMENT_TYPE_STANDARD`, `SERVICE_LEVEL_AGREEMENT_TYPE_AUTONOMOUS_DATAGUARD`, `PROTECTION_MODE_MAXIMUM_AVAILABILITY`, `PROTECTION_MODE_MAXIMUM_PERFORMANCE`, `PATCH_MODEL_RELEASE_UPDATES`, `PATCH_MODEL_RELEASE_UPDATE_REVISIONS`, `VERSION_PREFERENCE_NEXT_RELEASE_UPDATE`, `VERSION_PREFERENCE_LATEST_RELEASE_UPDATE`, `DISTRIBUTION_AFFINITY_MINIMUM_DISTRIBUTION`, `DISTRIBUTION_AFFINITY_MAXIMUM_DISTRIBUTION`, `NET_SERVICES_ARCHITECTURE_DEDICATED`, `NET_SERVICES_ARCHITECTURE_SHARED` moved from model `CreateAutonomousContainerDatabaseDetails` to `CreateAutonomousContainerDatabaseBase` in the Database service 
+* Properties `customer_contacts`, `display_name`, `db_unique_name`, `db_name`, `service_level_agreement_type`, `autonomous_exadata_infrastructure_id`, `db_version`, `database_software_image_id`, `peer_autonomous_exadata_infrastructure_id`, `peer_autonomous_container_database_display_name`, `protection_mode`, `fast_start_fail_over_lag_limit_in_seconds`, `is_automatic_failover_enabled`, `peer_cloud_autonomous_vm_cluster_id`, `peer_autonomous_vm_cluster_id`, `peer_autonomous_container_database_compartment_id`, `peer_autonomous_container_database_backup_config`, `peer_db_unique_name`, `autonomous_vm_cluster_id`, `cloud_autonomous_vm_cluster_id`, `compartment_id`, `patch_model`, `maintenance_window_details`, `standby_maintenance_buffer_in_days`, `version_preference`, `is_dst_file_update_enabled`, `freeform_tags`, `defined_tags`, `backup_config`, `kms_key_id`, `kms_key_version_id`, `vault_id`, `key_store_id`, `db_split_threshold`, `vm_failover_reservation`, `distribution_affinity`, `net_services_architecture` moved from model `CreateAutonomousContainerDatabaseDetails` to `CreateAutonomousContainerDatabaseBase` in the Database service 
+* Property `user_id` changed from required to optional for model `OracleNosqlConnectionSummary` in the Golden Gate service   
+
+====================
 2.153.0 - 2025-05-27
 ====================
 

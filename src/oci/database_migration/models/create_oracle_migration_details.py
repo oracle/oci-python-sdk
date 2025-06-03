@@ -87,6 +87,10 @@ class CreateOracleMigrationDetails(CreateMigrationDetails):
             The value to assign to the source_container_database_connection_id property of this CreateOracleMigrationDetails.
         :type source_container_database_connection_id: str
 
+        :param source_standby_database_connection_id:
+            The value to assign to the source_standby_database_connection_id property of this CreateOracleMigrationDetails.
+        :type source_standby_database_connection_id: str
+
         :param exclude_objects:
             The value to assign to the exclude_objects property of this CreateOracleMigrationDetails.
         :type exclude_objects: list[oci.database_migration.models.OracleDatabaseObject]
@@ -117,6 +121,7 @@ class CreateOracleMigrationDetails(CreateMigrationDetails):
             'ggs_details': 'CreateOracleGgsDeploymentDetails',
             'advanced_parameters': 'list[MigrationParameterDetails]',
             'source_container_database_connection_id': 'str',
+            'source_standby_database_connection_id': 'str',
             'exclude_objects': 'list[OracleDatabaseObject]',
             'include_objects': 'list[OracleDatabaseObject]',
             'bulk_include_exclude_data': 'str'
@@ -138,6 +143,7 @@ class CreateOracleMigrationDetails(CreateMigrationDetails):
             'ggs_details': 'ggsDetails',
             'advanced_parameters': 'advancedParameters',
             'source_container_database_connection_id': 'sourceContainerDatabaseConnectionId',
+            'source_standby_database_connection_id': 'sourceStandbyDatabaseConnectionId',
             'exclude_objects': 'excludeObjects',
             'include_objects': 'includeObjects',
             'bulk_include_exclude_data': 'bulkIncludeExcludeData'
@@ -158,6 +164,7 @@ class CreateOracleMigrationDetails(CreateMigrationDetails):
         self._ggs_details = None
         self._advanced_parameters = None
         self._source_container_database_connection_id = None
+        self._source_standby_database_connection_id = None
         self._exclude_objects = None
         self._include_objects = None
         self._bulk_include_exclude_data = None
@@ -310,6 +317,30 @@ class CreateOracleMigrationDetails(CreateMigrationDetails):
         :type: str
         """
         self._source_container_database_connection_id = source_container_database_connection_id
+
+    @property
+    def source_standby_database_connection_id(self):
+        """
+        Gets the source_standby_database_connection_id of this CreateOracleMigrationDetails.
+        The OCID of the resource being referenced.
+
+
+        :return: The source_standby_database_connection_id of this CreateOracleMigrationDetails.
+        :rtype: str
+        """
+        return self._source_standby_database_connection_id
+
+    @source_standby_database_connection_id.setter
+    def source_standby_database_connection_id(self, source_standby_database_connection_id):
+        """
+        Sets the source_standby_database_connection_id of this CreateOracleMigrationDetails.
+        The OCID of the resource being referenced.
+
+
+        :param source_standby_database_connection_id: The source_standby_database_connection_id of this CreateOracleMigrationDetails.
+        :type: str
+        """
+        self._source_standby_database_connection_id = source_standby_database_connection_id
 
     @property
     def exclude_objects(self):

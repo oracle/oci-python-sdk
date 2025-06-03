@@ -24,3 +24,45 @@ class ManagedMySqlDatabasesClientCompositeOperations(object):
             The service client which will be wrapped by this object
         """
         self.client = client
+
+    def change_mysql_database_management_type_and_wait_for_state(self, managed_my_sql_database_id, change_mysql_database_management_type_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database_management.ManagedMySqlDatabasesClient.change_mysql_database_management_type` and waits for the :py:class:`~oci.database_management.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str managed_my_sql_database_id: (required)
+            The OCID of the Managed MySQL Database.
+
+        :param oci.database_management.models.ChangeMysqlDatabaseManagementTypeDetails change_mysql_database_management_type_details: (required)
+            The details required to change the management type of a MySQL managed database.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.database_management.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database_management.ManagedMySqlDatabasesClient.change_mysql_database_management_type`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.change_mysql_database_management_type(managed_my_sql_database_id, change_mysql_database_management_type_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)

@@ -168,7 +168,6 @@ class JsonSchemaGenerator:
             len(type_args) == 2 and
             any(arg is NoneType for arg in type_args)
         )
-
         if is_optional:
             actual_type = next(arg for arg in type_args if arg is not NoneType)
             return True, actual_type
@@ -222,11 +221,7 @@ class JsonSchemaGenerator:
                             arg_json_schema["type"] = [arg_json_schema["type"], "null"]
 
                     # Add description
-                    if (
-                        param_descriptions and
-                        k in param_descriptions and
-                        param_descriptions[k]
-                    ):
+                    if (param_descriptions and k in param_descriptions and param_descriptions[k]):
                         arg_json_schema["description"] = param_descriptions[k]
 
                     json_schema["properties"][k] = arg_json_schema

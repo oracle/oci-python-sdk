@@ -122,6 +122,10 @@ class OracleMigration(Migration):
             The value to assign to the source_container_database_connection_id property of this OracleMigration.
         :type source_container_database_connection_id: str
 
+        :param source_standby_database_connection_id:
+            The value to assign to the source_standby_database_connection_id property of this OracleMigration.
+        :type source_standby_database_connection_id: str
+
         :param advanced_parameters:
             The value to assign to the advanced_parameters property of this OracleMigration.
         :type advanced_parameters: list[oci.database_migration.models.MigrationParameterDetails]
@@ -152,6 +156,7 @@ class OracleMigration(Migration):
             'hub_details': 'GoldenGateHubDetails',
             'ggs_details': 'OracleGgsDeploymentDetails',
             'source_container_database_connection_id': 'str',
+            'source_standby_database_connection_id': 'str',
             'advanced_parameters': 'list[MigrationParameterDetails]'
         }
         self.attribute_map = {
@@ -179,6 +184,7 @@ class OracleMigration(Migration):
             'hub_details': 'hubDetails',
             'ggs_details': 'ggsDetails',
             'source_container_database_connection_id': 'sourceContainerDatabaseConnectionId',
+            'source_standby_database_connection_id': 'sourceStandbyDatabaseConnectionId',
             'advanced_parameters': 'advancedParameters'
         }
         self._id = None
@@ -205,6 +211,7 @@ class OracleMigration(Migration):
         self._hub_details = None
         self._ggs_details = None
         self._source_container_database_connection_id = None
+        self._source_standby_database_connection_id = None
         self._advanced_parameters = None
         self._database_combination = 'ORACLE'
 
@@ -331,6 +338,30 @@ class OracleMigration(Migration):
         :type: str
         """
         self._source_container_database_connection_id = source_container_database_connection_id
+
+    @property
+    def source_standby_database_connection_id(self):
+        """
+        Gets the source_standby_database_connection_id of this OracleMigration.
+        The OCID of the resource being referenced.
+
+
+        :return: The source_standby_database_connection_id of this OracleMigration.
+        :rtype: str
+        """
+        return self._source_standby_database_connection_id
+
+    @source_standby_database_connection_id.setter
+    def source_standby_database_connection_id(self, source_standby_database_connection_id):
+        """
+        Sets the source_standby_database_connection_id of this OracleMigration.
+        The OCID of the resource being referenced.
+
+
+        :param source_standby_database_connection_id: The source_standby_database_connection_id of this OracleMigration.
+        :type: str
+        """
+        self._source_standby_database_connection_id = source_standby_database_connection_id
 
     @property
     def advanced_parameters(self):

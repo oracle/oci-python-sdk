@@ -23,7 +23,7 @@ class UpdateMysqlConnectionDetails(UpdateConnectionDetails):
 
         :param connection_type:
             The value to assign to the connection_type property of this UpdateMysqlConnectionDetails.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG"
         :type connection_type: str
 
         :param display_name:
@@ -435,8 +435,9 @@ class UpdateMysqlConnectionDetails(UpdateConnectionDetails):
     def ssl_ca(self):
         """
         Gets the ssl_ca of this UpdateMysqlConnectionDetails.
-        Database Certificate - The base64 encoded content of a .pem or .crt file.
+        Database Certificate - The base64 encoded content of a .pem or .crt file
         containing the server public key (for 1 and 2-way SSL).
+        It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 
 
         :return: The ssl_ca of this UpdateMysqlConnectionDetails.
@@ -448,8 +449,9 @@ class UpdateMysqlConnectionDetails(UpdateConnectionDetails):
     def ssl_ca(self, ssl_ca):
         """
         Sets the ssl_ca of this UpdateMysqlConnectionDetails.
-        Database Certificate - The base64 encoded content of a .pem or .crt file.
+        Database Certificate - The base64 encoded content of a .pem or .crt file
         containing the server public key (for 1 and 2-way SSL).
+        It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 
 
         :param ssl_ca: The ssl_ca of this UpdateMysqlConnectionDetails.
@@ -463,6 +465,7 @@ class UpdateMysqlConnectionDetails(UpdateConnectionDetails):
         Gets the ssl_crl of this UpdateMysqlConnectionDetails.
         The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA).
         Note: This is an optional property and only applicable if TLS/MTLS option is selected.
+        It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 
 
         :return: The ssl_crl of this UpdateMysqlConnectionDetails.
@@ -476,6 +479,7 @@ class UpdateMysqlConnectionDetails(UpdateConnectionDetails):
         Sets the ssl_crl of this UpdateMysqlConnectionDetails.
         The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA).
         Note: This is an optional property and only applicable if TLS/MTLS option is selected.
+        It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 
 
         :param ssl_crl: The ssl_crl of this UpdateMysqlConnectionDetails.
@@ -487,8 +491,9 @@ class UpdateMysqlConnectionDetails(UpdateConnectionDetails):
     def ssl_cert(self):
         """
         Gets the ssl_cert of this UpdateMysqlConnectionDetails.
-        Client Certificate - The base64 encoded content of a .pem or .crt file.
+        Client Certificate - The base64 encoded content of a .pem or .crt file
         containing the client public key (for 2-way SSL).
+        It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 
 
         :return: The ssl_cert of this UpdateMysqlConnectionDetails.
@@ -500,8 +505,9 @@ class UpdateMysqlConnectionDetails(UpdateConnectionDetails):
     def ssl_cert(self, ssl_cert):
         """
         Sets the ssl_cert of this UpdateMysqlConnectionDetails.
-        Client Certificate - The base64 encoded content of a .pem or .crt file.
+        Client Certificate - The base64 encoded content of a .pem or .crt file
         containing the client public key (for 2-way SSL).
+        It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 
 
         :param ssl_cert: The ssl_cert of this UpdateMysqlConnectionDetails.

@@ -73,6 +73,7 @@ from .change_external_db_system_compartment_details import ChangeExternalDbSyste
 from .change_external_exadata_infrastructure_compartment_details import ChangeExternalExadataInfrastructureCompartmentDetails
 from .change_job_compartment_details import ChangeJobCompartmentDetails
 from .change_managed_database_group_compartment_details import ChangeManagedDatabaseGroupCompartmentDetails
+from .change_mysql_database_management_type_details import ChangeMysqlDatabaseManagementTypeDetails
 from .change_named_credential_compartment_details import ChangeNamedCredentialCompartmentDetails
 from .change_plan_retention_details import ChangePlanRetentionDetails
 from .change_space_budget_details import ChangeSpaceBudgetDetails
@@ -347,7 +348,15 @@ from .managed_database_password_credential import ManagedDatabasePasswordCredent
 from .managed_database_secret_credential import ManagedDatabaseSecretCredential
 from .managed_database_summary import ManagedDatabaseSummary
 from .managed_my_sql_database import ManagedMySqlDatabase
+from .managed_my_sql_database_binary_log_information import ManagedMySqlDatabaseBinaryLogInformation
 from .managed_my_sql_database_collection import ManagedMySqlDatabaseCollection
+from .managed_my_sql_database_general_replication_information import ManagedMySqlDatabaseGeneralReplicationInformation
+from .managed_my_sql_database_high_availability_member_collection import ManagedMySqlDatabaseHighAvailabilityMemberCollection
+from .managed_my_sql_database_high_availability_member_summary import ManagedMySqlDatabaseHighAvailabilityMemberSummary
+from .managed_my_sql_database_inbound_replication_collection import ManagedMySqlDatabaseInboundReplicationCollection
+from .managed_my_sql_database_inbound_replication_summary import ManagedMySqlDatabaseInboundReplicationSummary
+from .managed_my_sql_database_outbound_replication_collection import ManagedMySqlDatabaseOutboundReplicationCollection
+from .managed_my_sql_database_outbound_replication_summary import ManagedMySqlDatabaseOutboundReplicationSummary
 from .managed_my_sql_database_summary import ManagedMySqlDatabaseSummary
 from .memory_aggregate_metrics import MemoryAggregateMetrics
 from .metric_data_point import MetricDataPoint
@@ -359,6 +368,10 @@ from .modify_autonomous_database_management_feature_details import ModifyAutonom
 from .modify_database_management_feature_details import ModifyDatabaseManagementFeatureDetails
 from .modify_pluggable_database_management_feature_details import ModifyPluggableDatabaseManagementFeatureDetails
 from .modify_snapshot_settings_details import ModifySnapshotSettingsDetails
+from .my_sql_apply_error import MySqlApplyError
+from .my_sql_apply_error_worker import MySqlApplyErrorWorker
+from .my_sql_channel_apply_error import MySqlChannelApplyError
+from .my_sql_channel_fetch_error import MySqlChannelFetchError
 from .my_sql_configuration_data_collection import MySqlConfigurationDataCollection
 from .my_sql_configuration_data_summary import MySqlConfigurationDataSummary
 from .my_sql_connector_collection import MySqlConnectorCollection
@@ -366,11 +379,20 @@ from .my_sql_data_collection import MySqlDataCollection
 from .my_sql_data_summary import MySqlDataSummary
 from .my_sql_database_connector_summary import MySqlDatabaseConnectorSummary
 from .my_sql_database_usage_metrics import MySqlDatabaseUsageMetrics
+from .my_sql_digest_error_summary import MySqlDigestErrorSummary
+from .my_sql_digest_errors_collection import MySqlDigestErrorsCollection
+from .my_sql_fetch_error import MySqlFetchError
 from .my_sql_fleet_by_category import MySqlFleetByCategory
 from .my_sql_fleet_metric_definition import MySqlFleetMetricDefinition
 from .my_sql_fleet_metric_summary_definition import MySqlFleetMetricSummaryDefinition
 from .my_sql_fleet_metrics import MySqlFleetMetrics
 from .my_sql_fleet_summary import MySqlFleetSummary
+from .my_sql_high_availability_status_summary import MySqlHighAvailabilityStatusSummary
+from .my_sql_query_details import MySqlQueryDetails
+from .my_sql_query_explain_plan import MySqlQueryExplainPlan
+from .my_sql_query_message import MySqlQueryMessage
+from .my_sql_query_sample_details import MySqlQuerySampleDetails
+from .my_sql_replication_applier_filter import MySqlReplicationApplierFilter
 from .named_credential import NamedCredential
 from .named_credential_collection import NamedCredentialCollection
 from .named_credential_content import NamedCredentialContent
@@ -608,6 +630,7 @@ database_management_type_mapping = {
     "ChangeExternalExadataInfrastructureCompartmentDetails": ChangeExternalExadataInfrastructureCompartmentDetails,
     "ChangeJobCompartmentDetails": ChangeJobCompartmentDetails,
     "ChangeManagedDatabaseGroupCompartmentDetails": ChangeManagedDatabaseGroupCompartmentDetails,
+    "ChangeMysqlDatabaseManagementTypeDetails": ChangeMysqlDatabaseManagementTypeDetails,
     "ChangeNamedCredentialCompartmentDetails": ChangeNamedCredentialCompartmentDetails,
     "ChangePlanRetentionDetails": ChangePlanRetentionDetails,
     "ChangeSpaceBudgetDetails": ChangeSpaceBudgetDetails,
@@ -882,7 +905,15 @@ database_management_type_mapping = {
     "ManagedDatabaseSecretCredential": ManagedDatabaseSecretCredential,
     "ManagedDatabaseSummary": ManagedDatabaseSummary,
     "ManagedMySqlDatabase": ManagedMySqlDatabase,
+    "ManagedMySqlDatabaseBinaryLogInformation": ManagedMySqlDatabaseBinaryLogInformation,
     "ManagedMySqlDatabaseCollection": ManagedMySqlDatabaseCollection,
+    "ManagedMySqlDatabaseGeneralReplicationInformation": ManagedMySqlDatabaseGeneralReplicationInformation,
+    "ManagedMySqlDatabaseHighAvailabilityMemberCollection": ManagedMySqlDatabaseHighAvailabilityMemberCollection,
+    "ManagedMySqlDatabaseHighAvailabilityMemberSummary": ManagedMySqlDatabaseHighAvailabilityMemberSummary,
+    "ManagedMySqlDatabaseInboundReplicationCollection": ManagedMySqlDatabaseInboundReplicationCollection,
+    "ManagedMySqlDatabaseInboundReplicationSummary": ManagedMySqlDatabaseInboundReplicationSummary,
+    "ManagedMySqlDatabaseOutboundReplicationCollection": ManagedMySqlDatabaseOutboundReplicationCollection,
+    "ManagedMySqlDatabaseOutboundReplicationSummary": ManagedMySqlDatabaseOutboundReplicationSummary,
     "ManagedMySqlDatabaseSummary": ManagedMySqlDatabaseSummary,
     "MemoryAggregateMetrics": MemoryAggregateMetrics,
     "MetricDataPoint": MetricDataPoint,
@@ -894,6 +925,10 @@ database_management_type_mapping = {
     "ModifyDatabaseManagementFeatureDetails": ModifyDatabaseManagementFeatureDetails,
     "ModifyPluggableDatabaseManagementFeatureDetails": ModifyPluggableDatabaseManagementFeatureDetails,
     "ModifySnapshotSettingsDetails": ModifySnapshotSettingsDetails,
+    "MySqlApplyError": MySqlApplyError,
+    "MySqlApplyErrorWorker": MySqlApplyErrorWorker,
+    "MySqlChannelApplyError": MySqlChannelApplyError,
+    "MySqlChannelFetchError": MySqlChannelFetchError,
     "MySqlConfigurationDataCollection": MySqlConfigurationDataCollection,
     "MySqlConfigurationDataSummary": MySqlConfigurationDataSummary,
     "MySqlConnectorCollection": MySqlConnectorCollection,
@@ -901,11 +936,20 @@ database_management_type_mapping = {
     "MySqlDataSummary": MySqlDataSummary,
     "MySqlDatabaseConnectorSummary": MySqlDatabaseConnectorSummary,
     "MySqlDatabaseUsageMetrics": MySqlDatabaseUsageMetrics,
+    "MySqlDigestErrorSummary": MySqlDigestErrorSummary,
+    "MySqlDigestErrorsCollection": MySqlDigestErrorsCollection,
+    "MySqlFetchError": MySqlFetchError,
     "MySqlFleetByCategory": MySqlFleetByCategory,
     "MySqlFleetMetricDefinition": MySqlFleetMetricDefinition,
     "MySqlFleetMetricSummaryDefinition": MySqlFleetMetricSummaryDefinition,
     "MySqlFleetMetrics": MySqlFleetMetrics,
     "MySqlFleetSummary": MySqlFleetSummary,
+    "MySqlHighAvailabilityStatusSummary": MySqlHighAvailabilityStatusSummary,
+    "MySqlQueryDetails": MySqlQueryDetails,
+    "MySqlQueryExplainPlan": MySqlQueryExplainPlan,
+    "MySqlQueryMessage": MySqlQueryMessage,
+    "MySqlQuerySampleDetails": MySqlQuerySampleDetails,
+    "MySqlReplicationApplierFilter": MySqlReplicationApplierFilter,
     "NamedCredential": NamedCredential,
     "NamedCredentialCollection": NamedCredentialCollection,
     "NamedCredentialContent": NamedCredentialContent,

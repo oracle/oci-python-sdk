@@ -39,6 +39,10 @@ class DataPumpParameters(object):
     #: This constant has a value of "SKIP"
     TABLE_EXISTS_ACTION_SKIP = "SKIP"
 
+    #: A constant which can be used with the table_exists_action property of a DataPumpParameters.
+    #: This constant has a value of "UNSPECIFIED"
+    TABLE_EXISTS_ACTION_UNSPECIFIED = "UNSPECIFIED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DataPumpParameters object with values from keyword arguments.
@@ -56,7 +60,7 @@ class DataPumpParameters(object):
 
         :param table_exists_action:
             The value to assign to the table_exists_action property of this DataPumpParameters.
-            Allowed values for this property are: "TRUNCATE", "REPLACE", "APPEND", "SKIP", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "TRUNCATE", "REPLACE", "APPEND", "SKIP", "UNSPECIFIED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type table_exists_action: str
 
@@ -156,7 +160,7 @@ class DataPumpParameters(object):
         Gets the table_exists_action of this DataPumpParameters.
         IMPORT: Specifies the action to be performed when data is loaded into a preexisting table.
 
-        Allowed values for this property are: "TRUNCATE", "REPLACE", "APPEND", "SKIP", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "TRUNCATE", "REPLACE", "APPEND", "SKIP", "UNSPECIFIED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -175,7 +179,7 @@ class DataPumpParameters(object):
         :param table_exists_action: The table_exists_action of this DataPumpParameters.
         :type: str
         """
-        allowed_values = ["TRUNCATE", "REPLACE", "APPEND", "SKIP"]
+        allowed_values = ["TRUNCATE", "REPLACE", "APPEND", "SKIP", "UNSPECIFIED"]
         if not value_allowed_none_or_none_sentinel(table_exists_action, allowed_values):
             table_exists_action = 'UNKNOWN_ENUM_VALUE'
         self._table_exists_action = table_exists_action

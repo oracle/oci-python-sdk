@@ -78,6 +78,14 @@ class BackupDestinationDetailsSummary(object):
             The value to assign to the dbrs_policy_id property of this BackupDestinationDetailsSummary.
         :type dbrs_policy_id: str
 
+        :param is_remote:
+            The value to assign to the is_remote property of this BackupDestinationDetailsSummary.
+        :type is_remote: bool
+
+        :param remote_region:
+            The value to assign to the remote_region property of this BackupDestinationDetailsSummary.
+        :type remote_region: str
+
         """
         self.swagger_types = {
             'backup_destination_attach_history': 'list[datetime]',
@@ -88,7 +96,9 @@ class BackupDestinationDetailsSummary(object):
             'vpc_user': 'str',
             'vpc_password': 'str',
             'internet_proxy': 'str',
-            'dbrs_policy_id': 'str'
+            'dbrs_policy_id': 'str',
+            'is_remote': 'bool',
+            'remote_region': 'str'
         }
         self.attribute_map = {
             'backup_destination_attach_history': 'backupDestinationAttachHistory',
@@ -99,7 +109,9 @@ class BackupDestinationDetailsSummary(object):
             'vpc_user': 'vpcUser',
             'vpc_password': 'vpcPassword',
             'internet_proxy': 'internetProxy',
-            'dbrs_policy_id': 'dbrsPolicyId'
+            'dbrs_policy_id': 'dbrsPolicyId',
+            'is_remote': 'isRemote',
+            'remote_region': 'remoteRegion'
         }
         self._backup_destination_attach_history = None
         self._space_utilized_in_gbs = None
@@ -110,6 +122,8 @@ class BackupDestinationDetailsSummary(object):
         self._vpc_password = None
         self._internet_proxy = None
         self._dbrs_policy_id = None
+        self._is_remote = None
+        self._remote_region = None
 
     @property
     def backup_destination_attach_history(self):
@@ -340,6 +354,64 @@ class BackupDestinationDetailsSummary(object):
         :type: str
         """
         self._dbrs_policy_id = dbrs_policy_id
+
+    @property
+    def is_remote(self):
+        """
+        Gets the is_remote of this BackupDestinationDetailsSummary.
+        Indicates whether the backup destination is cross-region or local region.
+
+
+        :return: The is_remote of this BackupDestinationDetailsSummary.
+        :rtype: bool
+        """
+        return self._is_remote
+
+    @is_remote.setter
+    def is_remote(self, is_remote):
+        """
+        Sets the is_remote of this BackupDestinationDetailsSummary.
+        Indicates whether the backup destination is cross-region or local region.
+
+
+        :param is_remote: The is_remote of this BackupDestinationDetailsSummary.
+        :type: bool
+        """
+        self._is_remote = is_remote
+
+    @property
+    def remote_region(self):
+        """
+        Gets the remote_region of this BackupDestinationDetailsSummary.
+        The name of the remote region where the remote automatic incremental backups will be stored.
+
+        For information about valid region names, see
+        `Regions and Availability Domains`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
+
+
+        :return: The remote_region of this BackupDestinationDetailsSummary.
+        :rtype: str
+        """
+        return self._remote_region
+
+    @remote_region.setter
+    def remote_region(self, remote_region):
+        """
+        Sets the remote_region of this BackupDestinationDetailsSummary.
+        The name of the remote region where the remote automatic incremental backups will be stored.
+
+        For information about valid region names, see
+        `Regions and Availability Domains`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
+
+
+        :param remote_region: The remote_region of this BackupDestinationDetailsSummary.
+        :type: str
+        """
+        self._remote_region = remote_region
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -22,6 +22,14 @@ class BackupSummary(object):
     __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
     """
 
+    #: A constant which can be used with the soft_delete property of a BackupSummary.
+    #: This constant has a value of "ENABLED"
+    SOFT_DELETE_ENABLED = "ENABLED"
+
+    #: A constant which can be used with the soft_delete property of a BackupSummary.
+    #: This constant has a value of "DISABLED"
+    SOFT_DELETE_DISABLED = "DISABLED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new BackupSummary object with values from keyword arguments.
@@ -39,6 +47,12 @@ class BackupSummary(object):
             The value to assign to the description property of this BackupSummary.
         :type description: str
 
+        :param soft_delete:
+            The value to assign to the soft_delete property of this BackupSummary.
+            Allowed values for this property are: "ENABLED", "DISABLED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type soft_delete: str
+
         :param time_created:
             The value to assign to the time_created property of this BackupSummary.
         :type time_created: datetime
@@ -46,6 +60,10 @@ class BackupSummary(object):
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this BackupSummary.
         :type lifecycle_state: str
+
+        :param lifecycle_details:
+            The value to assign to the lifecycle_details property of this BackupSummary.
+        :type lifecycle_details: str
 
         :param backup_type:
             The value to assign to the backup_type property of this BackupSummary.
@@ -116,8 +134,10 @@ class BackupSummary(object):
             'id': 'str',
             'display_name': 'str',
             'description': 'str',
+            'soft_delete': 'str',
             'time_created': 'datetime',
             'lifecycle_state': 'str',
+            'lifecycle_details': 'str',
             'backup_type': 'str',
             'creation_type': 'str',
             'db_system_id': 'str',
@@ -139,8 +159,10 @@ class BackupSummary(object):
             'id': 'id',
             'display_name': 'displayName',
             'description': 'description',
+            'soft_delete': 'softDelete',
             'time_created': 'timeCreated',
             'lifecycle_state': 'lifecycleState',
+            'lifecycle_details': 'lifecycleDetails',
             'backup_type': 'backupType',
             'creation_type': 'creationType',
             'db_system_id': 'dbSystemId',
@@ -161,8 +183,10 @@ class BackupSummary(object):
         self._id = None
         self._display_name = None
         self._description = None
+        self._soft_delete = None
         self._time_created = None
         self._lifecycle_state = None
+        self._lifecycle_details = None
         self._backup_type = None
         self._creation_type = None
         self._db_system_id = None
@@ -253,6 +277,38 @@ class BackupSummary(object):
         self._description = description
 
     @property
+    def soft_delete(self):
+        """
+        Gets the soft_delete of this BackupSummary.
+        Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED
+        state for 7 days before permanently deleting it.
+
+        Allowed values for this property are: "ENABLED", "DISABLED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The soft_delete of this BackupSummary.
+        :rtype: str
+        """
+        return self._soft_delete
+
+    @soft_delete.setter
+    def soft_delete(self, soft_delete):
+        """
+        Sets the soft_delete of this BackupSummary.
+        Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED
+        state for 7 days before permanently deleting it.
+
+
+        :param soft_delete: The soft_delete of this BackupSummary.
+        :type: str
+        """
+        allowed_values = ["ENABLED", "DISABLED"]
+        if not value_allowed_none_or_none_sentinel(soft_delete, allowed_values):
+            soft_delete = 'UNKNOWN_ENUM_VALUE'
+        self._soft_delete = soft_delete
+
+    @property
     def time_created(self):
         """
         **[Required]** Gets the time_created of this BackupSummary.
@@ -299,6 +355,30 @@ class BackupSummary(object):
         :type: str
         """
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def lifecycle_details(self):
+        """
+        Gets the lifecycle_details of this BackupSummary.
+        Additional information about the current lifecycleState.
+
+
+        :return: The lifecycle_details of this BackupSummary.
+        :rtype: str
+        """
+        return self._lifecycle_details
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, lifecycle_details):
+        """
+        Sets the lifecycle_details of this BackupSummary.
+        Additional information about the current lifecycleState.
+
+
+        :param lifecycle_details: The lifecycle_details of this BackupSummary.
+        :type: str
+        """
+        self._lifecycle_details = lifecycle_details
 
     @property
     def backup_type(self):

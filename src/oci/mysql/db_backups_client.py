@@ -116,6 +116,124 @@ class DbBackupsClient(object):
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
 
+    def cancel_backup_deletion(self, backup_id, **kwargs):
+        """
+        Cancels the scheduled deletion of a backup and moves it to ACTIVE state.
+
+
+        :param str backup_id: (required)
+            The OCID of the Backup
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a
+            resource, set the `If-Match` header to the value of the etag from a
+            previous GET or POST response for that resource. The resource will be
+            updated or deleted only if the etag you provide matches the resource's
+            current etag value.
+
+        :param str opc_request_id: (optional)
+            Customer-defined unique identifier for the request. If you need to
+            contact Oracle about a specific request, please provide the request
+            ID that you supplied in this header with the request.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case
+            of a timeout or server error without risk of executing that same action
+            again. Retry tokens expire after 24 hours, but can be invalidated before
+            then due to conflicting operations (for example, if a resource has been
+            deleted and purged from the system, then a retry of the original
+            creation request may be rejected).
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/cancel_backup_deletion.py.html>`__ to see an example of how to use cancel_backup_deletion API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['backupId']
+        resource_path = "/backups/{backupId}/actions/cancelDeletion"
+        method = "POST"
+        operation_name = "cancel_backup_deletion"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Backup/CancelBackupDeletion"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"cancel_backup_deletion got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "backupId": backup_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def change_backup_compartment(self, backup_id, change_backup_compartment_details, **kwargs):
         """
         Moves a DB System Backup into a different compartment.
@@ -686,7 +804,7 @@ class DbBackupsClient(object):
         :param str lifecycle_state: (optional)
             Backup Lifecycle State
 
-            Allowed values are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED"
+            Allowed values are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "DELETE_SCHEDULED"
 
         :param str db_system_id: (optional)
             The DB System `OCID`__.
@@ -695,6 +813,11 @@ class DbBackupsClient(object):
 
         :param str display_name: (optional)
             A filter to return only the resource matching the given display name exactly.
+
+        :param str soft_delete: (optional)
+            Backup Soft Delete
+
+            Allowed values are: "ENABLED", "DISABLED"
 
         :param str creation_type: (optional)
             Backup creationType
@@ -758,6 +881,7 @@ class DbBackupsClient(object):
             "lifecycle_state",
             "db_system_id",
             "display_name",
+            "soft_delete",
             "creation_type",
             "sort_by",
             "sort_order",
@@ -770,10 +894,17 @@ class DbBackupsClient(object):
                 f"list_backups got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED"]
+            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "DELETE_SCHEDULED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
                     f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
+                )
+
+        if 'soft_delete' in kwargs:
+            soft_delete_allowed_values = ["ENABLED", "DISABLED"]
+            if kwargs['soft_delete'] not in soft_delete_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `soft_delete`, must be one of { soft_delete_allowed_values }"
                 )
 
         if 'creation_type' in kwargs:
@@ -803,6 +934,7 @@ class DbBackupsClient(object):
             "compartmentId": compartment_id,
             "dbSystemId": kwargs.get("db_system_id", missing),
             "displayName": kwargs.get("display_name", missing),
+            "softDelete": kwargs.get("soft_delete", missing),
             "creationType": kwargs.get("creation_type", missing),
             "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing),

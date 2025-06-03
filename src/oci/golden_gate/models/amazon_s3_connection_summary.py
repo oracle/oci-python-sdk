@@ -23,7 +23,7 @@ class AmazonS3ConnectionSummary(ConnectionSummary):
 
         :param connection_type:
             The value to assign to the connection_type property of this AmazonS3ConnectionSummary.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG"
         :type connection_type: str
 
         :param id:
@@ -115,6 +115,14 @@ class AmazonS3ConnectionSummary(ConnectionSummary):
             The value to assign to the secret_access_key_secret_id property of this AmazonS3ConnectionSummary.
         :type secret_access_key_secret_id: str
 
+        :param endpoint:
+            The value to assign to the endpoint property of this AmazonS3ConnectionSummary.
+        :type endpoint: str
+
+        :param region:
+            The value to assign to the region property of this AmazonS3ConnectionSummary.
+        :type region: str
+
         """
         self.swagger_types = {
             'connection_type': 'str',
@@ -139,7 +147,9 @@ class AmazonS3ConnectionSummary(ConnectionSummary):
             'does_use_secret_ids': 'bool',
             'technology_type': 'str',
             'access_key_id': 'str',
-            'secret_access_key_secret_id': 'str'
+            'secret_access_key_secret_id': 'str',
+            'endpoint': 'str',
+            'region': 'str'
         }
         self.attribute_map = {
             'connection_type': 'connectionType',
@@ -164,7 +174,9 @@ class AmazonS3ConnectionSummary(ConnectionSummary):
             'does_use_secret_ids': 'doesUseSecretIds',
             'technology_type': 'technologyType',
             'access_key_id': 'accessKeyId',
-            'secret_access_key_secret_id': 'secretAccessKeySecretId'
+            'secret_access_key_secret_id': 'secretAccessKeySecretId',
+            'endpoint': 'endpoint',
+            'region': 'region'
         }
         self._connection_type = None
         self._id = None
@@ -189,6 +201,8 @@ class AmazonS3ConnectionSummary(ConnectionSummary):
         self._technology_type = None
         self._access_key_id = None
         self._secret_access_key_secret_id = None
+        self._endpoint = None
+        self._region = None
         self._connection_type = 'AMAZON_S3'
 
     @property
@@ -270,6 +284,56 @@ class AmazonS3ConnectionSummary(ConnectionSummary):
         :type: str
         """
         self._secret_access_key_secret_id = secret_access_key_secret_id
+
+    @property
+    def endpoint(self):
+        """
+        Gets the endpoint of this AmazonS3ConnectionSummary.
+        The Amazon Endpoint for S3.
+        e.g.: 'https://my-bucket.s3.us-east-1.amazonaws.com'
+
+
+        :return: The endpoint of this AmazonS3ConnectionSummary.
+        :rtype: str
+        """
+        return self._endpoint
+
+    @endpoint.setter
+    def endpoint(self, endpoint):
+        """
+        Sets the endpoint of this AmazonS3ConnectionSummary.
+        The Amazon Endpoint for S3.
+        e.g.: 'https://my-bucket.s3.us-east-1.amazonaws.com'
+
+
+        :param endpoint: The endpoint of this AmazonS3ConnectionSummary.
+        :type: str
+        """
+        self._endpoint = endpoint
+
+    @property
+    def region(self):
+        """
+        Gets the region of this AmazonS3ConnectionSummary.
+        The name of the region where the bucket is created.
+
+
+        :return: The region of this AmazonS3ConnectionSummary.
+        :rtype: str
+        """
+        return self._region
+
+    @region.setter
+    def region(self, region):
+        """
+        Sets the region of this AmazonS3ConnectionSummary.
+        The name of the region where the bucket is created.
+
+
+        :param region: The region of this AmazonS3ConnectionSummary.
+        :type: str
+        """
+        self._region = region
 
     def __repr__(self):
         return formatted_flat_dict(self)

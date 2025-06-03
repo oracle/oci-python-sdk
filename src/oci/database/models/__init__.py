@@ -21,7 +21,10 @@ from .application_vip_summary import ApplicationVipSummary
 from .associated_database_details import AssociatedDatabaseDetails
 from .automated_mount_details import AutomatedMountDetails
 from .autonomous_container_database import AutonomousContainerDatabase
+from .autonomous_container_database_backup import AutonomousContainerDatabaseBackup
+from .autonomous_container_database_backup_collection import AutonomousContainerDatabaseBackupCollection
 from .autonomous_container_database_backup_config import AutonomousContainerDatabaseBackupConfig
+from .autonomous_container_database_backup_summary import AutonomousContainerDatabaseBackupSummary
 from .autonomous_container_database_dataguard import AutonomousContainerDatabaseDataguard
 from .autonomous_container_database_dataguard_association import AutonomousContainerDatabaseDataguardAssociation
 from .autonomous_container_database_resource_usage import AutonomousContainerDatabaseResourceUsage
@@ -42,6 +45,7 @@ from .autonomous_database_console_token_details import AutonomousDatabaseConsole
 from .autonomous_database_dataguard_association import AutonomousDatabaseDataguardAssociation
 from .autonomous_database_encryption_key_details import AutonomousDatabaseEncryptionKeyDetails
 from .autonomous_database_encryption_key_history_entry import AutonomousDatabaseEncryptionKeyHistoryEntry
+from .autonomous_database_in_backup import AutonomousDatabaseInBackup
 from .autonomous_database_key_history_entry import AutonomousDatabaseKeyHistoryEntry
 from .autonomous_database_manual_refresh_details import AutonomousDatabaseManualRefreshDetails
 from .autonomous_database_peer_collection import AutonomousDatabasePeerCollection
@@ -131,8 +135,10 @@ from .convert_to_pdb_target_base import ConvertToPdbTargetBase
 from .convert_to_regular_pluggable_database_details import ConvertToRegularPluggableDatabaseDetails
 from .convert_to_standalone_details import ConvertToStandaloneDetails
 from .create_application_vip_details import CreateApplicationVipDetails
+from .create_autonomous_container_database_base import CreateAutonomousContainerDatabaseBase
 from .create_autonomous_container_database_dataguard_association_details import CreateAutonomousContainerDatabaseDataguardAssociationDetails
 from .create_autonomous_container_database_details import CreateAutonomousContainerDatabaseDetails
+from .create_autonomous_container_database_from_backup_details import CreateAutonomousContainerDatabaseFromBackupDetails
 from .create_autonomous_database_backup_details import CreateAutonomousDatabaseBackupDetails
 from .create_autonomous_database_base import CreateAutonomousDatabaseBase
 from .create_autonomous_database_clone_details import CreateAutonomousDatabaseCloneDetails
@@ -508,7 +514,10 @@ database_type_mapping = {
     "AssociatedDatabaseDetails": AssociatedDatabaseDetails,
     "AutomatedMountDetails": AutomatedMountDetails,
     "AutonomousContainerDatabase": AutonomousContainerDatabase,
+    "AutonomousContainerDatabaseBackup": AutonomousContainerDatabaseBackup,
+    "AutonomousContainerDatabaseBackupCollection": AutonomousContainerDatabaseBackupCollection,
     "AutonomousContainerDatabaseBackupConfig": AutonomousContainerDatabaseBackupConfig,
+    "AutonomousContainerDatabaseBackupSummary": AutonomousContainerDatabaseBackupSummary,
     "AutonomousContainerDatabaseDataguard": AutonomousContainerDatabaseDataguard,
     "AutonomousContainerDatabaseDataguardAssociation": AutonomousContainerDatabaseDataguardAssociation,
     "AutonomousContainerDatabaseResourceUsage": AutonomousContainerDatabaseResourceUsage,
@@ -529,6 +538,7 @@ database_type_mapping = {
     "AutonomousDatabaseDataguardAssociation": AutonomousDatabaseDataguardAssociation,
     "AutonomousDatabaseEncryptionKeyDetails": AutonomousDatabaseEncryptionKeyDetails,
     "AutonomousDatabaseEncryptionKeyHistoryEntry": AutonomousDatabaseEncryptionKeyHistoryEntry,
+    "AutonomousDatabaseInBackup": AutonomousDatabaseInBackup,
     "AutonomousDatabaseKeyHistoryEntry": AutonomousDatabaseKeyHistoryEntry,
     "AutonomousDatabaseManualRefreshDetails": AutonomousDatabaseManualRefreshDetails,
     "AutonomousDatabasePeerCollection": AutonomousDatabasePeerCollection,
@@ -618,8 +628,10 @@ database_type_mapping = {
     "ConvertToRegularPluggableDatabaseDetails": ConvertToRegularPluggableDatabaseDetails,
     "ConvertToStandaloneDetails": ConvertToStandaloneDetails,
     "CreateApplicationVipDetails": CreateApplicationVipDetails,
+    "CreateAutonomousContainerDatabaseBase": CreateAutonomousContainerDatabaseBase,
     "CreateAutonomousContainerDatabaseDataguardAssociationDetails": CreateAutonomousContainerDatabaseDataguardAssociationDetails,
     "CreateAutonomousContainerDatabaseDetails": CreateAutonomousContainerDatabaseDetails,
+    "CreateAutonomousContainerDatabaseFromBackupDetails": CreateAutonomousContainerDatabaseFromBackupDetails,
     "CreateAutonomousDatabaseBackupDetails": CreateAutonomousDatabaseBackupDetails,
     "CreateAutonomousDatabaseBase": CreateAutonomousDatabaseBase,
     "CreateAutonomousDatabaseCloneDetails": CreateAutonomousDatabaseCloneDetails,

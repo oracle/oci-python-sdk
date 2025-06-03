@@ -27,6 +27,18 @@ class Trace(object):
     #: This constant has a value of "GENERATION_TRACE"
     TRACE_TYPE_GENERATION_TRACE = "GENERATION_TRACE"
 
+    #: A constant which can be used with the trace_type property of a Trace.
+    #: This constant has a value of "TOOL_INVOCATION_TRACE"
+    TRACE_TYPE_TOOL_INVOCATION_TRACE = "TOOL_INVOCATION_TRACE"
+
+    #: A constant which can be used with the trace_type property of a Trace.
+    #: This constant has a value of "PLANNING_TRACE"
+    TRACE_TYPE_PLANNING_TRACE = "PLANNING_TRACE"
+
+    #: A constant which can be used with the trace_type property of a Trace.
+    #: This constant has a value of "EXECUTION_TRACE"
+    TRACE_TYPE_EXECUTION_TRACE = "EXECUTION_TRACE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Trace object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -34,30 +46,61 @@ class Trace(object):
 
         * :class:`~oci.generative_ai_agent_runtime.models.ErrorTrace`
         * :class:`~oci.generative_ai_agent_runtime.models.RetrievalTrace`
+        * :class:`~oci.generative_ai_agent_runtime.models.ExecutionTrace`
         * :class:`~oci.generative_ai_agent_runtime.models.GenerationTrace`
+        * :class:`~oci.generative_ai_agent_runtime.models.ToolInvocationTrace`
+        * :class:`~oci.generative_ai_agent_runtime.models.PlanningTrace`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
+
+        :param key:
+            The value to assign to the key property of this Trace.
+        :type key: str
+
+        :param parent_key:
+            The value to assign to the parent_key property of this Trace.
+        :type parent_key: str
+
+        :param source:
+            The value to assign to the source property of this Trace.
+        :type source: oci.generative_ai_agent_runtime.models.SourceDetails
 
         :param time_created:
             The value to assign to the time_created property of this Trace.
         :type time_created: datetime
 
+        :param time_finished:
+            The value to assign to the time_finished property of this Trace.
+        :type time_finished: datetime
+
         :param trace_type:
             The value to assign to the trace_type property of this Trace.
-            Allowed values for this property are: "ERROR_TRACE", "RETRIEVAL_TRACE", "GENERATION_TRACE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ERROR_TRACE", "RETRIEVAL_TRACE", "GENERATION_TRACE", "TOOL_INVOCATION_TRACE", "PLANNING_TRACE", "EXECUTION_TRACE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type trace_type: str
 
         """
         self.swagger_types = {
+            'key': 'str',
+            'parent_key': 'str',
+            'source': 'SourceDetails',
             'time_created': 'datetime',
+            'time_finished': 'datetime',
             'trace_type': 'str'
         }
         self.attribute_map = {
+            'key': 'key',
+            'parent_key': 'parentKey',
+            'source': 'source',
             'time_created': 'timeCreated',
+            'time_finished': 'timeFinished',
             'trace_type': 'traceType'
         }
+        self._key = None
+        self._parent_key = None
+        self._source = None
         self._time_created = None
+        self._time_finished = None
         self._trace_type = None
 
     @staticmethod
@@ -74,10 +117,87 @@ class Trace(object):
         if type == 'RETRIEVAL_TRACE':
             return 'RetrievalTrace'
 
+        if type == 'EXECUTION_TRACE':
+            return 'ExecutionTrace'
+
         if type == 'GENERATION_TRACE':
             return 'GenerationTrace'
+
+        if type == 'TOOL_INVOCATION_TRACE':
+            return 'ToolInvocationTrace'
+
+        if type == 'PLANNING_TRACE':
+            return 'PlanningTrace'
         else:
             return 'Trace'
+
+    @property
+    def key(self):
+        """
+        Gets the key of this Trace.
+        Unique identifier for the event (UUID).
+
+
+        :return: The key of this Trace.
+        :rtype: str
+        """
+        return self._key
+
+    @key.setter
+    def key(self, key):
+        """
+        Sets the key of this Trace.
+        Unique identifier for the event (UUID).
+
+
+        :param key: The key of this Trace.
+        :type: str
+        """
+        self._key = key
+
+    @property
+    def parent_key(self):
+        """
+        Gets the parent_key of this Trace.
+        Identifier of the parent event, if applicable (UUID).
+
+
+        :return: The parent_key of this Trace.
+        :rtype: str
+        """
+        return self._parent_key
+
+    @parent_key.setter
+    def parent_key(self, parent_key):
+        """
+        Sets the parent_key of this Trace.
+        Identifier of the parent event, if applicable (UUID).
+
+
+        :param parent_key: The parent_key of this Trace.
+        :type: str
+        """
+        self._parent_key = parent_key
+
+    @property
+    def source(self):
+        """
+        Gets the source of this Trace.
+
+        :return: The source of this Trace.
+        :rtype: oci.generative_ai_agent_runtime.models.SourceDetails
+        """
+        return self._source
+
+    @source.setter
+    def source(self, source):
+        """
+        Sets the source of this Trace.
+
+        :param source: The source of this Trace.
+        :type: oci.generative_ai_agent_runtime.models.SourceDetails
+        """
+        self._source = source
 
     @property
     def time_created(self):
@@ -104,12 +224,36 @@ class Trace(object):
         self._time_created = time_created
 
     @property
+    def time_finished(self):
+        """
+        Gets the time_finished of this Trace.
+        Timestamp for when the event ended (In RFC 3339).
+
+
+        :return: The time_finished of this Trace.
+        :rtype: datetime
+        """
+        return self._time_finished
+
+    @time_finished.setter
+    def time_finished(self, time_finished):
+        """
+        Sets the time_finished of this Trace.
+        Timestamp for when the event ended (In RFC 3339).
+
+
+        :param time_finished: The time_finished of this Trace.
+        :type: datetime
+        """
+        self._time_finished = time_finished
+
+    @property
     def trace_type(self):
         """
         **[Required]** Gets the trace_type of this Trace.
         The type of the trace.
 
-        Allowed values for this property are: "ERROR_TRACE", "RETRIEVAL_TRACE", "GENERATION_TRACE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ERROR_TRACE", "RETRIEVAL_TRACE", "GENERATION_TRACE", "TOOL_INVOCATION_TRACE", "PLANNING_TRACE", "EXECUTION_TRACE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -128,7 +272,7 @@ class Trace(object):
         :param trace_type: The trace_type of this Trace.
         :type: str
         """
-        allowed_values = ["ERROR_TRACE", "RETRIEVAL_TRACE", "GENERATION_TRACE"]
+        allowed_values = ["ERROR_TRACE", "RETRIEVAL_TRACE", "GENERATION_TRACE", "TOOL_INVOCATION_TRACE", "PLANNING_TRACE", "EXECUTION_TRACE"]
         if not value_allowed_none_or_none_sentinel(trace_type, allowed_values):
             trace_type = 'UNKNOWN_ENUM_VALUE'
         self._trace_type = trace_type

@@ -66,6 +66,10 @@ class MySqlDatabaseUsageMetrics(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type database_status: str
 
+        :param heat_wave_management_type:
+            The value to assign to the heat_wave_management_type property of this MySqlDatabaseUsageMetrics.
+        :type heat_wave_management_type: str
+
         :param is_heat_wave_enabled:
             The value to assign to the is_heat_wave_enabled property of this MySqlDatabaseUsageMetrics.
         :type is_heat_wave_enabled: bool
@@ -92,6 +96,7 @@ class MySqlDatabaseUsageMetrics(object):
             'database_version': 'str',
             'db_id': 'str',
             'database_status': 'str',
+            'heat_wave_management_type': 'str',
             'is_heat_wave_enabled': 'bool',
             'heat_wave_cluster_display_name': 'str',
             'heat_wave_node_count': 'int',
@@ -106,6 +111,7 @@ class MySqlDatabaseUsageMetrics(object):
             'database_version': 'databaseVersion',
             'db_id': 'dbId',
             'database_status': 'databaseStatus',
+            'heat_wave_management_type': 'heatWaveManagementType',
             'is_heat_wave_enabled': 'isHeatWaveEnabled',
             'heat_wave_cluster_display_name': 'heatWaveClusterDisplayName',
             'heat_wave_node_count': 'heatWaveNodeCount',
@@ -119,6 +125,7 @@ class MySqlDatabaseUsageMetrics(object):
         self._database_version = None
         self._db_id = None
         self._database_status = None
+        self._heat_wave_management_type = None
         self._is_heat_wave_enabled = None
         self._heat_wave_cluster_display_name = None
         self._heat_wave_node_count = None
@@ -323,6 +330,30 @@ class MySqlDatabaseUsageMetrics(object):
         if not value_allowed_none_or_none_sentinel(database_status, allowed_values):
             database_status = 'UNKNOWN_ENUM_VALUE'
         self._database_status = database_status
+
+    @property
+    def heat_wave_management_type(self):
+        """
+        Gets the heat_wave_management_type of this MySqlDatabaseUsageMetrics.
+        The customer's selected type for HeatWave management.
+
+
+        :return: The heat_wave_management_type of this MySqlDatabaseUsageMetrics.
+        :rtype: str
+        """
+        return self._heat_wave_management_type
+
+    @heat_wave_management_type.setter
+    def heat_wave_management_type(self, heat_wave_management_type):
+        """
+        Sets the heat_wave_management_type of this MySqlDatabaseUsageMetrics.
+        The customer's selected type for HeatWave management.
+
+
+        :param heat_wave_management_type: The heat_wave_management_type of this MySqlDatabaseUsageMetrics.
+        :type: str
+        """
+        self._heat_wave_management_type = heat_wave_management_type
 
     @property
     def is_heat_wave_enabled(self):

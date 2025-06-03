@@ -14,8 +14,12 @@ from .amazon_redshift_connection import AmazonRedshiftConnection
 from .amazon_redshift_connection_summary import AmazonRedshiftConnectionSummary
 from .amazon_s3_connection import AmazonS3Connection
 from .amazon_s3_connection_summary import AmazonS3ConnectionSummary
+from .amazon_s3_iceberg_storage import AmazonS3IcebergStorage
+from .amazon_s3_iceberg_storage_summary import AmazonS3IcebergStorageSummary
 from .azure_data_lake_storage_connection import AzureDataLakeStorageConnection
 from .azure_data_lake_storage_connection_summary import AzureDataLakeStorageConnectionSummary
+from .azure_data_lake_storage_iceberg_storage import AzureDataLakeStorageIcebergStorage
+from .azure_data_lake_storage_iceberg_storage_summary import AzureDataLakeStorageIcebergStorageSummary
 from .azure_synapse_connection import AzureSynapseConnection
 from .azure_synapse_connection_summary import AzureSynapseConnectionSummary
 from .backup_schedule import BackupSchedule
@@ -42,7 +46,9 @@ from .copy_deployment_backup_details import CopyDeploymentBackupDetails
 from .create_amazon_kinesis_connection_details import CreateAmazonKinesisConnectionDetails
 from .create_amazon_redshift_connection_details import CreateAmazonRedshiftConnectionDetails
 from .create_amazon_s3_connection_details import CreateAmazonS3ConnectionDetails
+from .create_amazon_s3_iceberg_storage_details import CreateAmazonS3IcebergStorageDetails
 from .create_azure_data_lake_storage_connection_details import CreateAzureDataLakeStorageConnectionDetails
+from .create_azure_data_lake_storage_iceberg_storage_details import CreateAzureDataLakeStorageIcebergStorageDetails
 from .create_azure_synapse_connection_details import CreateAzureSynapseConnectionDetails
 from .create_backup_schedule_details import CreateBackupScheduleDetails
 from .create_certificate_details import CreateCertificateDetails
@@ -55,11 +61,17 @@ from .create_deployment_backup_details import CreateDeploymentBackupDetails
 from .create_deployment_details import CreateDeploymentDetails
 from .create_elasticsearch_connection_details import CreateElasticsearchConnectionDetails
 from .create_generic_connection_details import CreateGenericConnectionDetails
+from .create_glue_iceberg_catalog_details import CreateGlueIcebergCatalogDetails
 from .create_golden_gate_connection_details import CreateGoldenGateConnectionDetails
 from .create_google_big_query_connection_details import CreateGoogleBigQueryConnectionDetails
 from .create_google_cloud_storage_connection_details import CreateGoogleCloudStorageConnectionDetails
+from .create_google_cloud_storage_iceberg_storage_details import CreateGoogleCloudStorageIcebergStorageDetails
 from .create_google_pub_sub_connection_details import CreateGooglePubSubConnectionDetails
+from .create_hadoop_iceberg_catalog_details import CreateHadoopIcebergCatalogDetails
 from .create_hdfs_connection_details import CreateHdfsConnectionDetails
+from .create_iceberg_catalog_details import CreateIcebergCatalogDetails
+from .create_iceberg_connection_details import CreateIcebergConnectionDetails
+from .create_iceberg_storage_details import CreateIcebergStorageDetails
 from .create_java_message_service_connection_details import CreateJavaMessageServiceConnectionDetails
 from .create_kafka_connection_details import CreateKafkaConnectionDetails
 from .create_kafka_schema_registry_connection_details import CreateKafkaSchemaRegistryConnectionDetails
@@ -69,13 +81,16 @@ from .create_microsoft_fabric_connection_details import CreateMicrosoftFabricCon
 from .create_microsoft_sqlserver_connection_details import CreateMicrosoftSqlserverConnectionDetails
 from .create_mongo_db_connection_details import CreateMongoDbConnectionDetails
 from .create_mysql_connection_details import CreateMysqlConnectionDetails
+from .create_nessie_iceberg_catalog_details import CreateNessieIcebergCatalogDetails
 from .create_oci_object_storage_connection_details import CreateOciObjectStorageConnectionDetails
 from .create_ogg_deployment_details import CreateOggDeploymentDetails
 from .create_oracle_connection_details import CreateOracleConnectionDetails
 from .create_oracle_nosql_connection_details import CreateOracleNosqlConnectionDetails
 from .create_pipeline_details import CreatePipelineDetails
+from .create_polaris_iceberg_catalog_details import CreatePolarisIcebergCatalogDetails
 from .create_postgresql_connection_details import CreatePostgresqlConnectionDetails
 from .create_redis_connection_details import CreateRedisConnectionDetails
+from .create_rest_iceberg_catalog_details import CreateRestIcebergCatalogDetails
 from .create_snowflake_connection_details import CreateSnowflakeConnectionDetails
 from .create_zero_etl_pipeline_details import CreateZeroEtlPipelineDetails
 from .database_registration import DatabaseRegistration
@@ -132,17 +147,29 @@ from .generate_library_url_details import GenerateLibraryUrlDetails
 from .generate_log_reader_component_library_url_details import GenerateLogReaderComponentLibraryUrlDetails
 from .generic_connection import GenericConnection
 from .generic_connection_summary import GenericConnectionSummary
+from .glue_iceberg_catalog import GlueIcebergCatalog
+from .glue_iceberg_catalog_summary import GlueIcebergCatalogSummary
 from .golden_gate_connection import GoldenGateConnection
 from .golden_gate_connection_summary import GoldenGateConnectionSummary
 from .google_big_query_connection import GoogleBigQueryConnection
 from .google_big_query_connection_summary import GoogleBigQueryConnectionSummary
 from .google_cloud_storage_connection import GoogleCloudStorageConnection
 from .google_cloud_storage_connection_summary import GoogleCloudStorageConnectionSummary
+from .google_cloud_storage_iceberg_storage import GoogleCloudStorageIcebergStorage
+from .google_cloud_storage_iceberg_storage_summary import GoogleCloudStorageIcebergStorageSummary
 from .google_pub_sub_connection import GooglePubSubConnection
 from .google_pub_sub_connection_summary import GooglePubSubConnectionSummary
 from .group_to_roles_mapping_details import GroupToRolesMappingDetails
+from .hadoop_iceberg_catalog import HadoopIcebergCatalog
+from .hadoop_iceberg_catalog_summary import HadoopIcebergCatalogSummary
 from .hdfs_connection import HdfsConnection
 from .hdfs_connection_summary import HdfsConnectionSummary
+from .iceberg_catalog import IcebergCatalog
+from .iceberg_catalog_summary import IcebergCatalogSummary
+from .iceberg_connection import IcebergConnection
+from .iceberg_connection_summary import IcebergConnectionSummary
+from .iceberg_storage import IcebergStorage
+from .iceberg_storage_summary import IcebergStorageSummary
 from .import_deployment_wallet_details import ImportDeploymentWalletDetails
 from .ingress_ip_details import IngressIpDetails
 from .initial_data_load import InitialDataLoad
@@ -167,6 +194,8 @@ from .mongo_db_connection_summary import MongoDbConnectionSummary
 from .mysql_connection import MysqlConnection
 from .mysql_connection_summary import MysqlConnectionSummary
 from .name_value_pair import NameValuePair
+from .nessie_iceberg_catalog import NessieIcebergCatalog
+from .nessie_iceberg_catalog_summary import NessieIcebergCatalogSummary
 from .oci_object_storage_connection import OciObjectStorageConnection
 from .oci_object_storage_connection_summary import OciObjectStorageConnectionSummary
 from .ogg_deployment import OggDeployment
@@ -186,6 +215,8 @@ from .pipeline_schema_summary import PipelineSchemaSummary
 from .pipeline_schema_table_collection import PipelineSchemaTableCollection
 from .pipeline_schema_table_summary import PipelineSchemaTableSummary
 from .pipeline_summary import PipelineSummary
+from .polaris_iceberg_catalog import PolarisIcebergCatalog
+from .polaris_iceberg_catalog_summary import PolarisIcebergCatalogSummary
 from .postgresql_connection import PostgresqlConnection
 from .postgresql_connection_summary import PostgresqlConnectionSummary
 from .process_options import ProcessOptions
@@ -200,6 +231,8 @@ from .replicate_schema_change import ReplicateSchemaChange
 from .reschedule_deployment_upgrade_details import RescheduleDeploymentUpgradeDetails
 from .reschedule_deployment_upgrade_to_date_details import RescheduleDeploymentUpgradeToDateDetails
 from .resource_lock import ResourceLock
+from .rest_iceberg_catalog import RestIcebergCatalog
+from .rest_iceberg_catalog_summary import RestIcebergCatalogSummary
 from .restore_deployment_details import RestoreDeploymentDetails
 from .rollback_deployment_upgrade_details import RollbackDeploymentUpgradeDetails
 from .snooze_deployment_upgrade_details import SnoozeDeploymentUpgradeDetails
@@ -226,7 +259,9 @@ from .trail_sequence_summary import TrailSequenceSummary
 from .update_amazon_kinesis_connection_details import UpdateAmazonKinesisConnectionDetails
 from .update_amazon_redshift_connection_details import UpdateAmazonRedshiftConnectionDetails
 from .update_amazon_s3_connection_details import UpdateAmazonS3ConnectionDetails
+from .update_amazon_s3_iceberg_storage_details import UpdateAmazonS3IcebergStorageDetails
 from .update_azure_data_lake_storage_connection_details import UpdateAzureDataLakeStorageConnectionDetails
+from .update_azure_data_lake_storage_iceberg_storage_details import UpdateAzureDataLakeStorageIcebergStorageDetails
 from .update_azure_synapse_connection_details import UpdateAzureSynapseConnectionDetails
 from .update_backup_schedule_details import UpdateBackupScheduleDetails
 from .update_connection_details import UpdateConnectionDetails
@@ -237,12 +272,18 @@ from .update_deployment_backup_details import UpdateDeploymentBackupDetails
 from .update_deployment_details import UpdateDeploymentDetails
 from .update_elasticsearch_connection_details import UpdateElasticsearchConnectionDetails
 from .update_generic_connection_details import UpdateGenericConnectionDetails
+from .update_glue_iceberg_catalog_details import UpdateGlueIcebergCatalogDetails
 from .update_golden_gate_connection_details import UpdateGoldenGateConnectionDetails
 from .update_google_big_query_connection_details import UpdateGoogleBigQueryConnectionDetails
 from .update_google_cloud_storage_connection_details import UpdateGoogleCloudStorageConnectionDetails
+from .update_google_cloud_storage_iceberg_storage_details import UpdateGoogleCloudStorageIcebergStorageDetails
 from .update_google_pub_sub_connection_details import UpdateGooglePubSubConnectionDetails
 from .update_group_to_roles_mapping_details import UpdateGroupToRolesMappingDetails
+from .update_hadoop_iceberg_catalog_details import UpdateHadoopIcebergCatalogDetails
 from .update_hdfs_connection_details import UpdateHdfsConnectionDetails
+from .update_iceberg_catalog_details import UpdateIcebergCatalogDetails
+from .update_iceberg_connection_details import UpdateIcebergConnectionDetails
+from .update_iceberg_storage_details import UpdateIcebergStorageDetails
 from .update_java_message_service_connection_details import UpdateJavaMessageServiceConnectionDetails
 from .update_kafka_connection_details import UpdateKafkaConnectionDetails
 from .update_kafka_schema_registry_connection_details import UpdateKafkaSchemaRegistryConnectionDetails
@@ -252,13 +293,16 @@ from .update_microsoft_fabric_connection_details import UpdateMicrosoftFabricCon
 from .update_microsoft_sqlserver_connection_details import UpdateMicrosoftSqlserverConnectionDetails
 from .update_mongo_db_connection_details import UpdateMongoDbConnectionDetails
 from .update_mysql_connection_details import UpdateMysqlConnectionDetails
+from .update_nessie_iceberg_catalog_details import UpdateNessieIcebergCatalogDetails
 from .update_oci_object_storage_connection_details import UpdateOciObjectStorageConnectionDetails
 from .update_ogg_deployment_details import UpdateOggDeploymentDetails
 from .update_oracle_connection_details import UpdateOracleConnectionDetails
 from .update_oracle_nosql_connection_details import UpdateOracleNosqlConnectionDetails
 from .update_pipeline_details import UpdatePipelineDetails
+from .update_polaris_iceberg_catalog_details import UpdatePolarisIcebergCatalogDetails
 from .update_postgresql_connection_details import UpdatePostgresqlConnectionDetails
 from .update_redis_connection_details import UpdateRedisConnectionDetails
+from .update_rest_iceberg_catalog_details import UpdateRestIcebergCatalogDetails
 from .update_snowflake_connection_details import UpdateSnowflakeConnectionDetails
 from .update_zero_etl_pipeline_details import UpdateZeroEtlPipelineDetails
 from .upgrade_deployment_current_release_details import UpgradeDeploymentCurrentReleaseDetails
@@ -282,8 +326,12 @@ golden_gate_type_mapping = {
     "AmazonRedshiftConnectionSummary": AmazonRedshiftConnectionSummary,
     "AmazonS3Connection": AmazonS3Connection,
     "AmazonS3ConnectionSummary": AmazonS3ConnectionSummary,
+    "AmazonS3IcebergStorage": AmazonS3IcebergStorage,
+    "AmazonS3IcebergStorageSummary": AmazonS3IcebergStorageSummary,
     "AzureDataLakeStorageConnection": AzureDataLakeStorageConnection,
     "AzureDataLakeStorageConnectionSummary": AzureDataLakeStorageConnectionSummary,
+    "AzureDataLakeStorageIcebergStorage": AzureDataLakeStorageIcebergStorage,
+    "AzureDataLakeStorageIcebergStorageSummary": AzureDataLakeStorageIcebergStorageSummary,
     "AzureSynapseConnection": AzureSynapseConnection,
     "AzureSynapseConnectionSummary": AzureSynapseConnectionSummary,
     "BackupSchedule": BackupSchedule,
@@ -310,7 +358,9 @@ golden_gate_type_mapping = {
     "CreateAmazonKinesisConnectionDetails": CreateAmazonKinesisConnectionDetails,
     "CreateAmazonRedshiftConnectionDetails": CreateAmazonRedshiftConnectionDetails,
     "CreateAmazonS3ConnectionDetails": CreateAmazonS3ConnectionDetails,
+    "CreateAmazonS3IcebergStorageDetails": CreateAmazonS3IcebergStorageDetails,
     "CreateAzureDataLakeStorageConnectionDetails": CreateAzureDataLakeStorageConnectionDetails,
+    "CreateAzureDataLakeStorageIcebergStorageDetails": CreateAzureDataLakeStorageIcebergStorageDetails,
     "CreateAzureSynapseConnectionDetails": CreateAzureSynapseConnectionDetails,
     "CreateBackupScheduleDetails": CreateBackupScheduleDetails,
     "CreateCertificateDetails": CreateCertificateDetails,
@@ -323,11 +373,17 @@ golden_gate_type_mapping = {
     "CreateDeploymentDetails": CreateDeploymentDetails,
     "CreateElasticsearchConnectionDetails": CreateElasticsearchConnectionDetails,
     "CreateGenericConnectionDetails": CreateGenericConnectionDetails,
+    "CreateGlueIcebergCatalogDetails": CreateGlueIcebergCatalogDetails,
     "CreateGoldenGateConnectionDetails": CreateGoldenGateConnectionDetails,
     "CreateGoogleBigQueryConnectionDetails": CreateGoogleBigQueryConnectionDetails,
     "CreateGoogleCloudStorageConnectionDetails": CreateGoogleCloudStorageConnectionDetails,
+    "CreateGoogleCloudStorageIcebergStorageDetails": CreateGoogleCloudStorageIcebergStorageDetails,
     "CreateGooglePubSubConnectionDetails": CreateGooglePubSubConnectionDetails,
+    "CreateHadoopIcebergCatalogDetails": CreateHadoopIcebergCatalogDetails,
     "CreateHdfsConnectionDetails": CreateHdfsConnectionDetails,
+    "CreateIcebergCatalogDetails": CreateIcebergCatalogDetails,
+    "CreateIcebergConnectionDetails": CreateIcebergConnectionDetails,
+    "CreateIcebergStorageDetails": CreateIcebergStorageDetails,
     "CreateJavaMessageServiceConnectionDetails": CreateJavaMessageServiceConnectionDetails,
     "CreateKafkaConnectionDetails": CreateKafkaConnectionDetails,
     "CreateKafkaSchemaRegistryConnectionDetails": CreateKafkaSchemaRegistryConnectionDetails,
@@ -337,13 +393,16 @@ golden_gate_type_mapping = {
     "CreateMicrosoftSqlserverConnectionDetails": CreateMicrosoftSqlserverConnectionDetails,
     "CreateMongoDbConnectionDetails": CreateMongoDbConnectionDetails,
     "CreateMysqlConnectionDetails": CreateMysqlConnectionDetails,
+    "CreateNessieIcebergCatalogDetails": CreateNessieIcebergCatalogDetails,
     "CreateOciObjectStorageConnectionDetails": CreateOciObjectStorageConnectionDetails,
     "CreateOggDeploymentDetails": CreateOggDeploymentDetails,
     "CreateOracleConnectionDetails": CreateOracleConnectionDetails,
     "CreateOracleNosqlConnectionDetails": CreateOracleNosqlConnectionDetails,
     "CreatePipelineDetails": CreatePipelineDetails,
+    "CreatePolarisIcebergCatalogDetails": CreatePolarisIcebergCatalogDetails,
     "CreatePostgresqlConnectionDetails": CreatePostgresqlConnectionDetails,
     "CreateRedisConnectionDetails": CreateRedisConnectionDetails,
+    "CreateRestIcebergCatalogDetails": CreateRestIcebergCatalogDetails,
     "CreateSnowflakeConnectionDetails": CreateSnowflakeConnectionDetails,
     "CreateZeroEtlPipelineDetails": CreateZeroEtlPipelineDetails,
     "DatabaseRegistration": DatabaseRegistration,
@@ -400,17 +459,29 @@ golden_gate_type_mapping = {
     "GenerateLogReaderComponentLibraryUrlDetails": GenerateLogReaderComponentLibraryUrlDetails,
     "GenericConnection": GenericConnection,
     "GenericConnectionSummary": GenericConnectionSummary,
+    "GlueIcebergCatalog": GlueIcebergCatalog,
+    "GlueIcebergCatalogSummary": GlueIcebergCatalogSummary,
     "GoldenGateConnection": GoldenGateConnection,
     "GoldenGateConnectionSummary": GoldenGateConnectionSummary,
     "GoogleBigQueryConnection": GoogleBigQueryConnection,
     "GoogleBigQueryConnectionSummary": GoogleBigQueryConnectionSummary,
     "GoogleCloudStorageConnection": GoogleCloudStorageConnection,
     "GoogleCloudStorageConnectionSummary": GoogleCloudStorageConnectionSummary,
+    "GoogleCloudStorageIcebergStorage": GoogleCloudStorageIcebergStorage,
+    "GoogleCloudStorageIcebergStorageSummary": GoogleCloudStorageIcebergStorageSummary,
     "GooglePubSubConnection": GooglePubSubConnection,
     "GooglePubSubConnectionSummary": GooglePubSubConnectionSummary,
     "GroupToRolesMappingDetails": GroupToRolesMappingDetails,
+    "HadoopIcebergCatalog": HadoopIcebergCatalog,
+    "HadoopIcebergCatalogSummary": HadoopIcebergCatalogSummary,
     "HdfsConnection": HdfsConnection,
     "HdfsConnectionSummary": HdfsConnectionSummary,
+    "IcebergCatalog": IcebergCatalog,
+    "IcebergCatalogSummary": IcebergCatalogSummary,
+    "IcebergConnection": IcebergConnection,
+    "IcebergConnectionSummary": IcebergConnectionSummary,
+    "IcebergStorage": IcebergStorage,
+    "IcebergStorageSummary": IcebergStorageSummary,
     "ImportDeploymentWalletDetails": ImportDeploymentWalletDetails,
     "IngressIpDetails": IngressIpDetails,
     "InitialDataLoad": InitialDataLoad,
@@ -435,6 +506,8 @@ golden_gate_type_mapping = {
     "MysqlConnection": MysqlConnection,
     "MysqlConnectionSummary": MysqlConnectionSummary,
     "NameValuePair": NameValuePair,
+    "NessieIcebergCatalog": NessieIcebergCatalog,
+    "NessieIcebergCatalogSummary": NessieIcebergCatalogSummary,
     "OciObjectStorageConnection": OciObjectStorageConnection,
     "OciObjectStorageConnectionSummary": OciObjectStorageConnectionSummary,
     "OggDeployment": OggDeployment,
@@ -454,6 +527,8 @@ golden_gate_type_mapping = {
     "PipelineSchemaTableCollection": PipelineSchemaTableCollection,
     "PipelineSchemaTableSummary": PipelineSchemaTableSummary,
     "PipelineSummary": PipelineSummary,
+    "PolarisIcebergCatalog": PolarisIcebergCatalog,
+    "PolarisIcebergCatalogSummary": PolarisIcebergCatalogSummary,
     "PostgresqlConnection": PostgresqlConnection,
     "PostgresqlConnectionSummary": PostgresqlConnectionSummary,
     "ProcessOptions": ProcessOptions,
@@ -468,6 +543,8 @@ golden_gate_type_mapping = {
     "RescheduleDeploymentUpgradeDetails": RescheduleDeploymentUpgradeDetails,
     "RescheduleDeploymentUpgradeToDateDetails": RescheduleDeploymentUpgradeToDateDetails,
     "ResourceLock": ResourceLock,
+    "RestIcebergCatalog": RestIcebergCatalog,
+    "RestIcebergCatalogSummary": RestIcebergCatalogSummary,
     "RestoreDeploymentDetails": RestoreDeploymentDetails,
     "RollbackDeploymentUpgradeDetails": RollbackDeploymentUpgradeDetails,
     "SnoozeDeploymentUpgradeDetails": SnoozeDeploymentUpgradeDetails,
@@ -494,7 +571,9 @@ golden_gate_type_mapping = {
     "UpdateAmazonKinesisConnectionDetails": UpdateAmazonKinesisConnectionDetails,
     "UpdateAmazonRedshiftConnectionDetails": UpdateAmazonRedshiftConnectionDetails,
     "UpdateAmazonS3ConnectionDetails": UpdateAmazonS3ConnectionDetails,
+    "UpdateAmazonS3IcebergStorageDetails": UpdateAmazonS3IcebergStorageDetails,
     "UpdateAzureDataLakeStorageConnectionDetails": UpdateAzureDataLakeStorageConnectionDetails,
+    "UpdateAzureDataLakeStorageIcebergStorageDetails": UpdateAzureDataLakeStorageIcebergStorageDetails,
     "UpdateAzureSynapseConnectionDetails": UpdateAzureSynapseConnectionDetails,
     "UpdateBackupScheduleDetails": UpdateBackupScheduleDetails,
     "UpdateConnectionDetails": UpdateConnectionDetails,
@@ -505,12 +584,18 @@ golden_gate_type_mapping = {
     "UpdateDeploymentDetails": UpdateDeploymentDetails,
     "UpdateElasticsearchConnectionDetails": UpdateElasticsearchConnectionDetails,
     "UpdateGenericConnectionDetails": UpdateGenericConnectionDetails,
+    "UpdateGlueIcebergCatalogDetails": UpdateGlueIcebergCatalogDetails,
     "UpdateGoldenGateConnectionDetails": UpdateGoldenGateConnectionDetails,
     "UpdateGoogleBigQueryConnectionDetails": UpdateGoogleBigQueryConnectionDetails,
     "UpdateGoogleCloudStorageConnectionDetails": UpdateGoogleCloudStorageConnectionDetails,
+    "UpdateGoogleCloudStorageIcebergStorageDetails": UpdateGoogleCloudStorageIcebergStorageDetails,
     "UpdateGooglePubSubConnectionDetails": UpdateGooglePubSubConnectionDetails,
     "UpdateGroupToRolesMappingDetails": UpdateGroupToRolesMappingDetails,
+    "UpdateHadoopIcebergCatalogDetails": UpdateHadoopIcebergCatalogDetails,
     "UpdateHdfsConnectionDetails": UpdateHdfsConnectionDetails,
+    "UpdateIcebergCatalogDetails": UpdateIcebergCatalogDetails,
+    "UpdateIcebergConnectionDetails": UpdateIcebergConnectionDetails,
+    "UpdateIcebergStorageDetails": UpdateIcebergStorageDetails,
     "UpdateJavaMessageServiceConnectionDetails": UpdateJavaMessageServiceConnectionDetails,
     "UpdateKafkaConnectionDetails": UpdateKafkaConnectionDetails,
     "UpdateKafkaSchemaRegistryConnectionDetails": UpdateKafkaSchemaRegistryConnectionDetails,
@@ -520,13 +605,16 @@ golden_gate_type_mapping = {
     "UpdateMicrosoftSqlserverConnectionDetails": UpdateMicrosoftSqlserverConnectionDetails,
     "UpdateMongoDbConnectionDetails": UpdateMongoDbConnectionDetails,
     "UpdateMysqlConnectionDetails": UpdateMysqlConnectionDetails,
+    "UpdateNessieIcebergCatalogDetails": UpdateNessieIcebergCatalogDetails,
     "UpdateOciObjectStorageConnectionDetails": UpdateOciObjectStorageConnectionDetails,
     "UpdateOggDeploymentDetails": UpdateOggDeploymentDetails,
     "UpdateOracleConnectionDetails": UpdateOracleConnectionDetails,
     "UpdateOracleNosqlConnectionDetails": UpdateOracleNosqlConnectionDetails,
     "UpdatePipelineDetails": UpdatePipelineDetails,
+    "UpdatePolarisIcebergCatalogDetails": UpdatePolarisIcebergCatalogDetails,
     "UpdatePostgresqlConnectionDetails": UpdatePostgresqlConnectionDetails,
     "UpdateRedisConnectionDetails": UpdateRedisConnectionDetails,
+    "UpdateRestIcebergCatalogDetails": UpdateRestIcebergCatalogDetails,
     "UpdateSnowflakeConnectionDetails": UpdateSnowflakeConnectionDetails,
     "UpdateZeroEtlPipelineDetails": UpdateZeroEtlPipelineDetails,
     "UpgradeDeploymentCurrentReleaseDetails": UpgradeDeploymentCurrentReleaseDetails,
