@@ -103,7 +103,7 @@ class MysqlConnection(Connection):
 
         :param connection_type:
             The value to assign to the connection_type property of this MysqlConnection.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type connection_type: str
 
@@ -221,6 +221,18 @@ class MysqlConnection(Connection):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type ssl_mode: str
 
+        :param ssl_ca:
+            The value to assign to the ssl_ca property of this MysqlConnection.
+        :type ssl_ca: str
+
+        :param ssl_crl:
+            The value to assign to the ssl_crl property of this MysqlConnection.
+        :type ssl_crl: str
+
+        :param ssl_cert:
+            The value to assign to the ssl_cert property of this MysqlConnection.
+        :type ssl_cert: str
+
         :param private_ip:
             The value to assign to the private_ip property of this MysqlConnection.
         :type private_ip: str
@@ -270,6 +282,9 @@ class MysqlConnection(Connection):
             'database_name': 'str',
             'security_protocol': 'str',
             'ssl_mode': 'str',
+            'ssl_ca': 'str',
+            'ssl_crl': 'str',
+            'ssl_cert': 'str',
             'private_ip': 'str',
             'additional_attributes': 'list[NameValuePair]',
             'db_system_id': 'str',
@@ -304,6 +319,9 @@ class MysqlConnection(Connection):
             'database_name': 'databaseName',
             'security_protocol': 'securityProtocol',
             'ssl_mode': 'sslMode',
+            'ssl_ca': 'sslCa',
+            'ssl_crl': 'sslCrl',
+            'ssl_cert': 'sslCert',
             'private_ip': 'privateIp',
             'additional_attributes': 'additionalAttributes',
             'db_system_id': 'dbSystemId',
@@ -337,6 +355,9 @@ class MysqlConnection(Connection):
         self._database_name = None
         self._security_protocol = None
         self._ssl_mode = None
+        self._ssl_ca = None
+        self._ssl_crl = None
+        self._ssl_cert = None
         self._private_ip = None
         self._additional_attributes = None
         self._db_system_id = None
@@ -533,6 +554,90 @@ class MysqlConnection(Connection):
         if not value_allowed_none_or_none_sentinel(ssl_mode, allowed_values):
             ssl_mode = 'UNKNOWN_ENUM_VALUE'
         self._ssl_mode = ssl_mode
+
+    @property
+    def ssl_ca(self):
+        """
+        Gets the ssl_ca of this MysqlConnection.
+        Database Certificate - The base64 encoded content of a .pem or .crt file
+        containing the server public key (for 1 and 2-way SSL).
+        It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+
+
+        :return: The ssl_ca of this MysqlConnection.
+        :rtype: str
+        """
+        return self._ssl_ca
+
+    @ssl_ca.setter
+    def ssl_ca(self, ssl_ca):
+        """
+        Sets the ssl_ca of this MysqlConnection.
+        Database Certificate - The base64 encoded content of a .pem or .crt file
+        containing the server public key (for 1 and 2-way SSL).
+        It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+
+
+        :param ssl_ca: The ssl_ca of this MysqlConnection.
+        :type: str
+        """
+        self._ssl_ca = ssl_ca
+
+    @property
+    def ssl_crl(self):
+        """
+        Gets the ssl_crl of this MysqlConnection.
+        The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA).
+        Note: This is an optional property and only applicable if TLS/MTLS option is selected.
+        It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+
+
+        :return: The ssl_crl of this MysqlConnection.
+        :rtype: str
+        """
+        return self._ssl_crl
+
+    @ssl_crl.setter
+    def ssl_crl(self, ssl_crl):
+        """
+        Sets the ssl_crl of this MysqlConnection.
+        The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA).
+        Note: This is an optional property and only applicable if TLS/MTLS option is selected.
+        It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+
+
+        :param ssl_crl: The ssl_crl of this MysqlConnection.
+        :type: str
+        """
+        self._ssl_crl = ssl_crl
+
+    @property
+    def ssl_cert(self):
+        """
+        Gets the ssl_cert of this MysqlConnection.
+        Client Certificate - The base64 encoded content of a .pem or .crt file
+        containing the client public key (for 2-way SSL).
+        It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+
+
+        :return: The ssl_cert of this MysqlConnection.
+        :rtype: str
+        """
+        return self._ssl_cert
+
+    @ssl_cert.setter
+    def ssl_cert(self, ssl_cert):
+        """
+        Sets the ssl_cert of this MysqlConnection.
+        Client Certificate - The base64 encoded content of a .pem or .crt file
+        containing the client public key (for 2-way SSL).
+        It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+
+
+        :param ssl_cert: The ssl_cert of this MysqlConnection.
+        :type: str
+        """
+        self._ssl_cert = ssl_cert
 
     @property
     def private_ip(self):

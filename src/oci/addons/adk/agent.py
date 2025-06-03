@@ -15,7 +15,7 @@ from oci.addons.adk.agent_error import AgentError, UserError
 from oci.addons.adk.constants import MAX_STATUS_CHECK, FREEFORM_TAGS
 from oci.addons.adk.logger import default_logger as logger
 from oci.addons.adk.run.response import RunResponse
-from oci.addons.adk.run.types import FunctionCall, PerformedAction, RequiredAction
+from oci.addons.adk.run.types import FunctionCall, PerformedAction, RequiredAction, RawResponse
 from oci.addons.adk.tool import FunctionTool, Toolkit, tool
 from oci.addons.adk.tool.utils import dedupe_tools_list, diff_local_and_remote_tool
 from oci.addons.adk.tool.prebuilt import AgenticRagTool
@@ -172,6 +172,7 @@ class Agent:
             RunResponse containing the final result
         """
         try:
+            raw_responses: List[RawResponse] = []
             # if session_id is not provided, create a new one
             if session_id is None:
                 session_id = self.client.create_session(
@@ -193,6 +194,7 @@ class Agent:
                 session_id=session_id,
                 on_invoked_remote_service=on_invoked_remote_service,
             )
+            raw_responses.append(RawResponse(raw_data=response))
 
             step_count = 0
             while self._has_required_actions(response) and step_count < max_steps:
@@ -211,15 +213,13 @@ class Agent:
                     performed_actions=performed_actions,
                     on_invoked_remote_service=on_invoked_remote_service,
                 )
-
+                raw_responses.append(RawResponse(raw_data=response))
                 step_count += 1
 
             if step_count >= max_steps:
                 logger.warning(
                     f"Reached maximum number of steps ({max_steps}). Exiting loop."
                 )
-
-            return RunResponse(session_id=session_id, data=response)
 
         except Exception as e:
             logger.error(f"Error during agent execution: {e}", exc_info=True)
@@ -231,6 +231,7 @@ class Agent:
                     agent_endpoint_id=self.agent_endpoint_id,
                     session_id=session_id,
                 )
+        return RunResponse(session_id=session_id, data=response, raw_responses=raw_responses)
 
     def as_tool(
         self,
@@ -270,7 +271,7 @@ class Agent:
 
         # Create a decorated wrapper function using the @tool decorator
         @tool(name=name, description=description)
-        def agent_run_wrapper(input: str, **kwargs) -> Dict[str, Any]:
+        def agent_run_wrapper(input: str, **kwargs) -> Dict[str, Any] | None:
             """Execute this agent with the given user input and additional params."""
             response = self.run(input=input, **kwargs)
             return response.data
@@ -495,10 +496,8 @@ class Agent:
             logger.info(
                 "Agent settings are not synchronized. Updating remote agent settings"
             )
-            logger.debug(
-                f"Local agent settings: {self.name}, {self.description}, {self.instructions}",
-                f"Remote agent settings: {display_name}, {description}, {instruction}",
-            )
+            logger.debug(f"Local agent settings: {self.name}, {self.description}, {self.instructions}")
+            logger.debug(f"Remote agent settings: {display_name}, {description}, {instruction}")
             self.client.update_agent(
                 self.agent_details["agent_id"],
                 name=self.name,
@@ -777,12 +776,16 @@ class Agent:
         """
 
         response_message = json.dumps(response.get("message"), indent=4)
-
+        guardrail_result = None
+        if response is not None and "guardrail_result" in response and response["guardrail_result"] is not None:
+            guardrail_result = json.loads(str(response.get("guardrail_result")))
+            guardrail_result = json.dumps(guardrail_result, indent=4)
         message_text = (
             f"(Local <-- Remote)\n\n"
             f"agent message:\n[bold green]{response_message}[/bold green]\n\n"
             f"required actions for client to take:\n"
-            f"[bold magenta]{json.dumps(response.get('required_actions', []), indent=4)}[/bold magenta]"  # noqa: E501
+            f"[bold magenta]{json.dumps(response.get('required_actions', []), indent=4)}[/bold magenta]\n\n"
+            f"guardrail result:\n[bold green]{guardrail_result}[/bold green]\n\n"  # noqa: E501
         )
         logger.print(
             message_text,

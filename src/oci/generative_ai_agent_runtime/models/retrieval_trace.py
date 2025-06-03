@@ -21,13 +21,29 @@ class RetrievalTrace(Trace):
         of this class is ``RETRIEVAL_TRACE`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param key:
+            The value to assign to the key property of this RetrievalTrace.
+        :type key: str
+
+        :param parent_key:
+            The value to assign to the parent_key property of this RetrievalTrace.
+        :type parent_key: str
+
+        :param source:
+            The value to assign to the source property of this RetrievalTrace.
+        :type source: oci.generative_ai_agent_runtime.models.SourceDetails
+
         :param time_created:
             The value to assign to the time_created property of this RetrievalTrace.
         :type time_created: datetime
 
+        :param time_finished:
+            The value to assign to the time_finished property of this RetrievalTrace.
+        :type time_finished: datetime
+
         :param trace_type:
             The value to assign to the trace_type property of this RetrievalTrace.
-            Allowed values for this property are: "ERROR_TRACE", "RETRIEVAL_TRACE", "GENERATION_TRACE"
+            Allowed values for this property are: "ERROR_TRACE", "RETRIEVAL_TRACE", "GENERATION_TRACE", "TOOL_INVOCATION_TRACE", "PLANNING_TRACE", "EXECUTION_TRACE"
         :type trace_type: str
 
         :param retrieval_input:
@@ -38,23 +54,42 @@ class RetrievalTrace(Trace):
             The value to assign to the citations property of this RetrievalTrace.
         :type citations: list[oci.generative_ai_agent_runtime.models.Citation]
 
+        :param usage:
+            The value to assign to the usage property of this RetrievalTrace.
+        :type usage: list[oci.generative_ai_agent_runtime.models.Usage]
+
         """
         self.swagger_types = {
+            'key': 'str',
+            'parent_key': 'str',
+            'source': 'SourceDetails',
             'time_created': 'datetime',
+            'time_finished': 'datetime',
             'trace_type': 'str',
             'retrieval_input': 'str',
-            'citations': 'list[Citation]'
+            'citations': 'list[Citation]',
+            'usage': 'list[Usage]'
         }
         self.attribute_map = {
+            'key': 'key',
+            'parent_key': 'parentKey',
+            'source': 'source',
             'time_created': 'timeCreated',
+            'time_finished': 'timeFinished',
             'trace_type': 'traceType',
             'retrieval_input': 'retrievalInput',
-            'citations': 'citations'
+            'citations': 'citations',
+            'usage': 'usage'
         }
+        self._key = None
+        self._parent_key = None
+        self._source = None
         self._time_created = None
+        self._time_finished = None
         self._trace_type = None
         self._retrieval_input = None
         self._citations = None
+        self._usage = None
         self._trace_type = 'RETRIEVAL_TRACE'
 
     @property
@@ -104,6 +139,30 @@ class RetrievalTrace(Trace):
         :type: list[oci.generative_ai_agent_runtime.models.Citation]
         """
         self._citations = citations
+
+    @property
+    def usage(self):
+        """
+        Gets the usage of this RetrievalTrace.
+        Details of model and its usage.
+
+
+        :return: The usage of this RetrievalTrace.
+        :rtype: list[oci.generative_ai_agent_runtime.models.Usage]
+        """
+        return self._usage
+
+    @usage.setter
+    def usage(self, usage):
+        """
+        Sets the usage of this RetrievalTrace.
+        Details of model and its usage.
+
+
+        :param usage: The usage of this RetrievalTrace.
+        :type: list[oci.generative_ai_agent_runtime.models.Usage]
+        """
+        self._usage = usage
 
     def __repr__(self):
         return formatted_flat_dict(self)

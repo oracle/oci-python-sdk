@@ -16,6 +16,10 @@ class Db2Connection(Connection):
     """
 
     #: A constant which can be used with the technology_type property of a Db2Connection.
+    #: This constant has a value of "DB2_I"
+    TECHNOLOGY_TYPE_DB2_I = "DB2_I"
+
+    #: A constant which can be used with the technology_type property of a Db2Connection.
     #: This constant has a value of "DB2_ZOS"
     TECHNOLOGY_TYPE_DB2_ZOS = "DB2_ZOS"
 
@@ -35,7 +39,7 @@ class Db2Connection(Connection):
 
         :param connection_type:
             The value to assign to the connection_type property of this Db2Connection.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type connection_type: str
 
@@ -121,7 +125,7 @@ class Db2Connection(Connection):
 
         :param technology_type:
             The value to assign to the technology_type property of this Db2Connection.
-            Allowed values for this property are: "DB2_ZOS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "DB2_I", "DB2_ZOS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type technology_type: str
 
@@ -163,6 +167,10 @@ class Db2Connection(Connection):
             The value to assign to the ssl_client_keystash_secret_id property of this Db2Connection.
         :type ssl_client_keystash_secret_id: str
 
+        :param ssl_server_certificate:
+            The value to assign to the ssl_server_certificate property of this Db2Connection.
+        :type ssl_server_certificate: str
+
         """
         self.swagger_types = {
             'connection_type': 'str',
@@ -194,7 +202,8 @@ class Db2Connection(Connection):
             'security_protocol': 'str',
             'password_secret_id': 'str',
             'ssl_client_keystoredb_secret_id': 'str',
-            'ssl_client_keystash_secret_id': 'str'
+            'ssl_client_keystash_secret_id': 'str',
+            'ssl_server_certificate': 'str'
         }
         self.attribute_map = {
             'connection_type': 'connectionType',
@@ -226,7 +235,8 @@ class Db2Connection(Connection):
             'security_protocol': 'securityProtocol',
             'password_secret_id': 'passwordSecretId',
             'ssl_client_keystoredb_secret_id': 'sslClientKeystoredbSecretId',
-            'ssl_client_keystash_secret_id': 'sslClientKeystashSecretId'
+            'ssl_client_keystash_secret_id': 'sslClientKeystashSecretId',
+            'ssl_server_certificate': 'sslServerCertificate'
         }
         self._connection_type = None
         self._id = None
@@ -258,6 +268,7 @@ class Db2Connection(Connection):
         self._password_secret_id = None
         self._ssl_client_keystoredb_secret_id = None
         self._ssl_client_keystash_secret_id = None
+        self._ssl_server_certificate = None
         self._connection_type = 'DB2'
 
     @property
@@ -266,7 +277,7 @@ class Db2Connection(Connection):
         **[Required]** Gets the technology_type of this Db2Connection.
         The DB2 technology type.
 
-        Allowed values for this property are: "DB2_ZOS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "DB2_I", "DB2_ZOS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -285,7 +296,7 @@ class Db2Connection(Connection):
         :param technology_type: The technology_type of this Db2Connection.
         :type: str
         """
-        allowed_values = ["DB2_ZOS"]
+        allowed_values = ["DB2_I", "DB2_ZOS"]
         if not value_allowed_none_or_none_sentinel(technology_type, allowed_values):
             technology_type = 'UNKNOWN_ENUM_VALUE'
         self._technology_type = technology_type
@@ -539,6 +550,32 @@ class Db2Connection(Connection):
         :type: str
         """
         self._ssl_client_keystash_secret_id = ssl_client_keystash_secret_id
+
+    @property
+    def ssl_server_certificate(self):
+        """
+        Gets the ssl_server_certificate of this Db2Connection.
+        The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+        It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+
+
+        :return: The ssl_server_certificate of this Db2Connection.
+        :rtype: str
+        """
+        return self._ssl_server_certificate
+
+    @ssl_server_certificate.setter
+    def ssl_server_certificate(self, ssl_server_certificate):
+        """
+        Sets the ssl_server_certificate of this Db2Connection.
+        The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+        It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+
+
+        :param ssl_server_certificate: The ssl_server_certificate of this Db2Connection.
+        :type: str
+        """
+        self._ssl_server_certificate = ssl_server_certificate
 
     def __repr__(self):
         return formatted_flat_dict(self)

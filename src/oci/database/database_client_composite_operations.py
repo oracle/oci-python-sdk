@@ -2943,7 +2943,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.create_autonomous_container_database` and waits for the oci.work_requests.models.WorkRequest
         to enter the given state(s).
 
-        :param oci.database.models.CreateAutonomousContainerDatabaseDetails create_autonomous_container_database_details: (required)
+        :param oci.database.models.CreateAutonomousContainerDatabaseBase create_autonomous_container_database_details: (required)
             Request to create an Autonomous Container Database in a specified Autonomous Exadata Infrastructure or in Autonomous VM Cluster.
 
         :param list[str] work_request_states: (optional)
@@ -2979,7 +2979,7 @@ class DatabaseClientCompositeOperations(object):
         Calls :py:func:`~oci.database.DatabaseClient.create_autonomous_container_database` and waits for the :py:class:`~oci.database.models.AutonomousContainerDatabase` acted upon
         to enter the given state(s).
 
-        :param oci.database.models.CreateAutonomousContainerDatabaseDetails create_autonomous_container_database_details: (required)
+        :param oci.database.models.CreateAutonomousContainerDatabaseBase create_autonomous_container_database_details: (required)
             Request to create an Autonomous Container Database in a specified Autonomous Exadata Infrastructure or in Autonomous VM Cluster.
 
         :param list[str] wait_for_states:

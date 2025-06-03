@@ -21,33 +21,68 @@ class ErrorTrace(Trace):
         of this class is ``ERROR_TRACE`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param key:
+            The value to assign to the key property of this ErrorTrace.
+        :type key: str
+
+        :param parent_key:
+            The value to assign to the parent_key property of this ErrorTrace.
+        :type parent_key: str
+
+        :param source:
+            The value to assign to the source property of this ErrorTrace.
+        :type source: oci.generative_ai_agent_runtime.models.SourceDetails
+
         :param time_created:
             The value to assign to the time_created property of this ErrorTrace.
         :type time_created: datetime
 
+        :param time_finished:
+            The value to assign to the time_finished property of this ErrorTrace.
+        :type time_finished: datetime
+
         :param trace_type:
             The value to assign to the trace_type property of this ErrorTrace.
-            Allowed values for this property are: "ERROR_TRACE", "RETRIEVAL_TRACE", "GENERATION_TRACE"
+            Allowed values for this property are: "ERROR_TRACE", "RETRIEVAL_TRACE", "GENERATION_TRACE", "TOOL_INVOCATION_TRACE", "PLANNING_TRACE", "EXECUTION_TRACE"
         :type trace_type: str
 
         :param error_message:
             The value to assign to the error_message property of this ErrorTrace.
         :type error_message: str
 
+        :param code:
+            The value to assign to the code property of this ErrorTrace.
+        :type code: str
+
         """
         self.swagger_types = {
+            'key': 'str',
+            'parent_key': 'str',
+            'source': 'SourceDetails',
             'time_created': 'datetime',
+            'time_finished': 'datetime',
             'trace_type': 'str',
-            'error_message': 'str'
+            'error_message': 'str',
+            'code': 'str'
         }
         self.attribute_map = {
+            'key': 'key',
+            'parent_key': 'parentKey',
+            'source': 'source',
             'time_created': 'timeCreated',
+            'time_finished': 'timeFinished',
             'trace_type': 'traceType',
-            'error_message': 'errorMessage'
+            'error_message': 'errorMessage',
+            'code': 'code'
         }
+        self._key = None
+        self._parent_key = None
+        self._source = None
         self._time_created = None
+        self._time_finished = None
         self._trace_type = None
         self._error_message = None
+        self._code = None
         self._trace_type = 'ERROR_TRACE'
 
     @property
@@ -73,6 +108,30 @@ class ErrorTrace(Trace):
         :type: str
         """
         self._error_message = error_message
+
+    @property
+    def code(self):
+        """
+        Gets the code of this ErrorTrace.
+        Error code.
+
+
+        :return: The code of this ErrorTrace.
+        :rtype: str
+        """
+        return self._code
+
+    @code.setter
+    def code(self, code):
+        """
+        Sets the code of this ErrorTrace.
+        Error code.
+
+
+        :param code: The code of this ErrorTrace.
+        :type: str
+        """
+        self._code = code
 
     def __repr__(self):
         return formatted_flat_dict(self)

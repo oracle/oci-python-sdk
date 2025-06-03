@@ -15,6 +15,14 @@ class CreateBackupDetails(object):
     Complete information for a Backup.
     """
 
+    #: A constant which can be used with the soft_delete property of a CreateBackupDetails.
+    #: This constant has a value of "ENABLED"
+    SOFT_DELETE_ENABLED = "ENABLED"
+
+    #: A constant which can be used with the soft_delete property of a CreateBackupDetails.
+    #: This constant has a value of "DISABLED"
+    SOFT_DELETE_DISABLED = "DISABLED"
+
     #: A constant which can be used with the backup_type property of a CreateBackupDetails.
     #: This constant has a value of "FULL"
     BACKUP_TYPE_FULL = "FULL"
@@ -35,6 +43,11 @@ class CreateBackupDetails(object):
         :param description:
             The value to assign to the description property of this CreateBackupDetails.
         :type description: str
+
+        :param soft_delete:
+            The value to assign to the soft_delete property of this CreateBackupDetails.
+            Allowed values for this property are: "ENABLED", "DISABLED"
+        :type soft_delete: str
 
         :param backup_type:
             The value to assign to the backup_type property of this CreateBackupDetails.
@@ -61,6 +74,7 @@ class CreateBackupDetails(object):
         self.swagger_types = {
             'display_name': 'str',
             'description': 'str',
+            'soft_delete': 'str',
             'backup_type': 'str',
             'db_system_id': 'str',
             'retention_in_days': 'int',
@@ -70,6 +84,7 @@ class CreateBackupDetails(object):
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
+            'soft_delete': 'softDelete',
             'backup_type': 'backupType',
             'db_system_id': 'dbSystemId',
             'retention_in_days': 'retentionInDays',
@@ -78,6 +93,7 @@ class CreateBackupDetails(object):
         }
         self._display_name = None
         self._description = None
+        self._soft_delete = None
         self._backup_type = None
         self._db_system_id = None
         self._retention_in_days = None
@@ -131,6 +147,39 @@ class CreateBackupDetails(object):
         :type: str
         """
         self._description = description
+
+    @property
+    def soft_delete(self):
+        """
+        Gets the soft_delete of this CreateBackupDetails.
+        Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED
+        state for 7 days before permanently deleting it.
+
+        Allowed values for this property are: "ENABLED", "DISABLED"
+
+
+        :return: The soft_delete of this CreateBackupDetails.
+        :rtype: str
+        """
+        return self._soft_delete
+
+    @soft_delete.setter
+    def soft_delete(self, soft_delete):
+        """
+        Sets the soft_delete of this CreateBackupDetails.
+        Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED
+        state for 7 days before permanently deleting it.
+
+
+        :param soft_delete: The soft_delete of this CreateBackupDetails.
+        :type: str
+        """
+        allowed_values = ["ENABLED", "DISABLED"]
+        if not value_allowed_none_or_none_sentinel(soft_delete, allowed_values):
+            raise ValueError(
+                f"Invalid value for `soft_delete`, must be None or one of {allowed_values}"
+            )
+        self._soft_delete = soft_delete
 
     @property
     def backup_type(self):

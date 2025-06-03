@@ -27,7 +27,7 @@ class HdfsConnection(Connection):
 
         :param connection_type:
             The value to assign to the connection_type property of this HdfsConnection.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type connection_type: str
 
@@ -117,6 +117,10 @@ class HdfsConnection(Connection):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type technology_type: str
 
+        :param core_site_xml:
+            The value to assign to the core_site_xml property of this HdfsConnection.
+        :type core_site_xml: str
+
         """
         self.swagger_types = {
             'connection_type': 'str',
@@ -139,7 +143,8 @@ class HdfsConnection(Connection):
             'subnet_id': 'str',
             'routing_method': 'str',
             'does_use_secret_ids': 'bool',
-            'technology_type': 'str'
+            'technology_type': 'str',
+            'core_site_xml': 'str'
         }
         self.attribute_map = {
             'connection_type': 'connectionType',
@@ -162,7 +167,8 @@ class HdfsConnection(Connection):
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
             'does_use_secret_ids': 'doesUseSecretIds',
-            'technology_type': 'technologyType'
+            'technology_type': 'technologyType',
+            'core_site_xml': 'coreSiteXml'
         }
         self._connection_type = None
         self._id = None
@@ -185,6 +191,7 @@ class HdfsConnection(Connection):
         self._routing_method = None
         self._does_use_secret_ids = None
         self._technology_type = None
+        self._core_site_xml = None
         self._connection_type = 'HDFS'
 
     @property
@@ -216,6 +223,32 @@ class HdfsConnection(Connection):
         if not value_allowed_none_or_none_sentinel(technology_type, allowed_values):
             technology_type = 'UNKNOWN_ENUM_VALUE'
         self._technology_type = technology_type
+
+    @property
+    def core_site_xml(self):
+        """
+        Gets the core_site_xml of this HdfsConnection.
+        The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
+        It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+
+
+        :return: The core_site_xml of this HdfsConnection.
+        :rtype: str
+        """
+        return self._core_site_xml
+
+    @core_site_xml.setter
+    def core_site_xml(self, core_site_xml):
+        """
+        Sets the core_site_xml of this HdfsConnection.
+        The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
+        It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+
+
+        :param core_site_xml: The core_site_xml of this HdfsConnection.
+        :type: str
+        """
+        self._core_site_xml = core_site_xml
 
     def __repr__(self):
         return formatted_flat_dict(self)

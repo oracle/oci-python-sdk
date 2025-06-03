@@ -11,29 +11,38 @@ from .chat_result import ChatResult
 from .citation import Citation
 from .create_session_details import CreateSessionDetails
 from .error_trace import ErrorTrace
+from .execution_trace import ExecutionTrace
 from .function_call import FunctionCall
 from .function_calling_performed_action import FunctionCallingPerformedAction
 from .function_calling_required_action import FunctionCallingRequiredAction
 from .generation_trace import GenerationTrace
 from .human_approval_performed_action import HumanApprovalPerformedAction
+from .human_approval_required_action import HumanApprovalRequiredAction
 from .knowledge_base_metadata_summary import KnowledgeBaseMetadataSummary
 from .knowledge_base_metadata_value import KnowledgeBaseMetadataValue
 from .message import Message
 from .message_content import MessageContent
 from .metadata_filter import MetadataFilter
+from .model_details import ModelDetails
+from .model_params import ModelParams
 from .oci_database_source_location import OciDatabaseSourceLocation
 from .oci_object_storage_source_location import OciObjectStorageSourceLocation
 from .oci_open_search_source_location import OciOpenSearchSourceLocation
 from .paragraph import Paragraph
 from .paragraph_citation import ParagraphCitation
 from .performed_action import PerformedAction
+from .planning_trace import PlanningTrace
 from .required_action import RequiredAction
 from .retrieval_trace import RetrievalTrace
 from .retrieve_metadata_details import RetrieveMetadataDetails
 from .session import Session
+from .source_details import SourceDetails
 from .source_location import SourceLocation
+from .tool_invocation_trace import ToolInvocationTrace
 from .trace import Trace
 from .update_session_details import UpdateSessionDetails
+from .usage import Usage
+from .usage_details import UsageDetails
 
 # Maps type names to classes for generative_ai_agent_runtime services.
 generative_ai_agent_runtime_type_mapping = {
@@ -42,27 +51,36 @@ generative_ai_agent_runtime_type_mapping = {
     "Citation": Citation,
     "CreateSessionDetails": CreateSessionDetails,
     "ErrorTrace": ErrorTrace,
+    "ExecutionTrace": ExecutionTrace,
     "FunctionCall": FunctionCall,
     "FunctionCallingPerformedAction": FunctionCallingPerformedAction,
     "FunctionCallingRequiredAction": FunctionCallingRequiredAction,
     "GenerationTrace": GenerationTrace,
     "HumanApprovalPerformedAction": HumanApprovalPerformedAction,
+    "HumanApprovalRequiredAction": HumanApprovalRequiredAction,
     "KnowledgeBaseMetadataSummary": KnowledgeBaseMetadataSummary,
     "KnowledgeBaseMetadataValue": KnowledgeBaseMetadataValue,
     "Message": Message,
     "MessageContent": MessageContent,
     "MetadataFilter": MetadataFilter,
+    "ModelDetails": ModelDetails,
+    "ModelParams": ModelParams,
     "OciDatabaseSourceLocation": OciDatabaseSourceLocation,
     "OciObjectStorageSourceLocation": OciObjectStorageSourceLocation,
     "OciOpenSearchSourceLocation": OciOpenSearchSourceLocation,
     "Paragraph": Paragraph,
     "ParagraphCitation": ParagraphCitation,
     "PerformedAction": PerformedAction,
+    "PlanningTrace": PlanningTrace,
     "RequiredAction": RequiredAction,
     "RetrievalTrace": RetrievalTrace,
     "RetrieveMetadataDetails": RetrieveMetadataDetails,
     "Session": Session,
+    "SourceDetails": SourceDetails,
     "SourceLocation": SourceLocation,
+    "ToolInvocationTrace": ToolInvocationTrace,
     "Trace": Trace,
-    "UpdateSessionDetails": UpdateSessionDetails
+    "UpdateSessionDetails": UpdateSessionDetails,
+    "Usage": Usage,
+    "UsageDetails": UsageDetails
 }

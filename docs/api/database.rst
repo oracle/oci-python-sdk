@@ -33,7 +33,10 @@ Database
     oci.database.models.AssociatedDatabaseDetails
     oci.database.models.AutomatedMountDetails
     oci.database.models.AutonomousContainerDatabase
+    oci.database.models.AutonomousContainerDatabaseBackup
+    oci.database.models.AutonomousContainerDatabaseBackupCollection
     oci.database.models.AutonomousContainerDatabaseBackupConfig
+    oci.database.models.AutonomousContainerDatabaseBackupSummary
     oci.database.models.AutonomousContainerDatabaseDataguard
     oci.database.models.AutonomousContainerDatabaseDataguardAssociation
     oci.database.models.AutonomousContainerDatabaseResourceUsage
@@ -54,6 +57,7 @@ Database
     oci.database.models.AutonomousDatabaseDataguardAssociation
     oci.database.models.AutonomousDatabaseEncryptionKeyDetails
     oci.database.models.AutonomousDatabaseEncryptionKeyHistoryEntry
+    oci.database.models.AutonomousDatabaseInBackup
     oci.database.models.AutonomousDatabaseKeyHistoryEntry
     oci.database.models.AutonomousDatabaseManualRefreshDetails
     oci.database.models.AutonomousDatabasePeerCollection
@@ -143,8 +147,10 @@ Database
     oci.database.models.ConvertToRegularPluggableDatabaseDetails
     oci.database.models.ConvertToStandaloneDetails
     oci.database.models.CreateApplicationVipDetails
+    oci.database.models.CreateAutonomousContainerDatabaseBase
     oci.database.models.CreateAutonomousContainerDatabaseDataguardAssociationDetails
     oci.database.models.CreateAutonomousContainerDatabaseDetails
+    oci.database.models.CreateAutonomousContainerDatabaseFromBackupDetails
     oci.database.models.CreateAutonomousDatabaseBackupDetails
     oci.database.models.CreateAutonomousDatabaseBase
     oci.database.models.CreateAutonomousDatabaseCloneDetails

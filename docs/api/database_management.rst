@@ -93,6 +93,7 @@ Database Management
     oci.database_management.models.ChangeExternalExadataInfrastructureCompartmentDetails
     oci.database_management.models.ChangeJobCompartmentDetails
     oci.database_management.models.ChangeManagedDatabaseGroupCompartmentDetails
+    oci.database_management.models.ChangeMysqlDatabaseManagementTypeDetails
     oci.database_management.models.ChangeNamedCredentialCompartmentDetails
     oci.database_management.models.ChangePlanRetentionDetails
     oci.database_management.models.ChangeSpaceBudgetDetails
@@ -367,7 +368,15 @@ Database Management
     oci.database_management.models.ManagedDatabaseSecretCredential
     oci.database_management.models.ManagedDatabaseSummary
     oci.database_management.models.ManagedMySqlDatabase
+    oci.database_management.models.ManagedMySqlDatabaseBinaryLogInformation
     oci.database_management.models.ManagedMySqlDatabaseCollection
+    oci.database_management.models.ManagedMySqlDatabaseGeneralReplicationInformation
+    oci.database_management.models.ManagedMySqlDatabaseHighAvailabilityMemberCollection
+    oci.database_management.models.ManagedMySqlDatabaseHighAvailabilityMemberSummary
+    oci.database_management.models.ManagedMySqlDatabaseInboundReplicationCollection
+    oci.database_management.models.ManagedMySqlDatabaseInboundReplicationSummary
+    oci.database_management.models.ManagedMySqlDatabaseOutboundReplicationCollection
+    oci.database_management.models.ManagedMySqlDatabaseOutboundReplicationSummary
     oci.database_management.models.ManagedMySqlDatabaseSummary
     oci.database_management.models.MemoryAggregateMetrics
     oci.database_management.models.MetricDataPoint
@@ -379,6 +388,10 @@ Database Management
     oci.database_management.models.ModifyDatabaseManagementFeatureDetails
     oci.database_management.models.ModifyPluggableDatabaseManagementFeatureDetails
     oci.database_management.models.ModifySnapshotSettingsDetails
+    oci.database_management.models.MySqlApplyError
+    oci.database_management.models.MySqlApplyErrorWorker
+    oci.database_management.models.MySqlChannelApplyError
+    oci.database_management.models.MySqlChannelFetchError
     oci.database_management.models.MySqlConfigurationDataCollection
     oci.database_management.models.MySqlConfigurationDataSummary
     oci.database_management.models.MySqlConnectorCollection
@@ -386,11 +399,20 @@ Database Management
     oci.database_management.models.MySqlDataSummary
     oci.database_management.models.MySqlDatabaseConnectorSummary
     oci.database_management.models.MySqlDatabaseUsageMetrics
+    oci.database_management.models.MySqlDigestErrorSummary
+    oci.database_management.models.MySqlDigestErrorsCollection
+    oci.database_management.models.MySqlFetchError
     oci.database_management.models.MySqlFleetByCategory
     oci.database_management.models.MySqlFleetMetricDefinition
     oci.database_management.models.MySqlFleetMetricSummaryDefinition
     oci.database_management.models.MySqlFleetMetrics
     oci.database_management.models.MySqlFleetSummary
+    oci.database_management.models.MySqlHighAvailabilityStatusSummary
+    oci.database_management.models.MySqlQueryDetails
+    oci.database_management.models.MySqlQueryExplainPlan
+    oci.database_management.models.MySqlQueryMessage
+    oci.database_management.models.MySqlQuerySampleDetails
+    oci.database_management.models.MySqlReplicationApplierFilter
     oci.database_management.models.NamedCredential
     oci.database_management.models.NamedCredentialCollection
     oci.database_management.models.NamedCredentialContent

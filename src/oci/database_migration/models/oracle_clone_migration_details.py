@@ -54,6 +54,10 @@ class OracleCloneMigrationDetails(CloneMigrationDetails):
             The value to assign to the source_container_database_connection_id property of this OracleCloneMigrationDetails.
         :type source_container_database_connection_id: str
 
+        :param source_standby_database_connection_id:
+            The value to assign to the source_standby_database_connection_id property of this OracleCloneMigrationDetails.
+        :type source_standby_database_connection_id: str
+
         """
         self.swagger_types = {
             'database_combination': 'str',
@@ -63,7 +67,8 @@ class OracleCloneMigrationDetails(CloneMigrationDetails):
             'target_database_connection_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'source_container_database_connection_id': 'str'
+            'source_container_database_connection_id': 'str',
+            'source_standby_database_connection_id': 'str'
         }
         self.attribute_map = {
             'database_combination': 'databaseCombination',
@@ -73,7 +78,8 @@ class OracleCloneMigrationDetails(CloneMigrationDetails):
             'target_database_connection_id': 'targetDatabaseConnectionId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'source_container_database_connection_id': 'sourceContainerDatabaseConnectionId'
+            'source_container_database_connection_id': 'sourceContainerDatabaseConnectionId',
+            'source_standby_database_connection_id': 'sourceStandbyDatabaseConnectionId'
         }
         self._database_combination = None
         self._display_name = None
@@ -83,6 +89,7 @@ class OracleCloneMigrationDetails(CloneMigrationDetails):
         self._freeform_tags = None
         self._defined_tags = None
         self._source_container_database_connection_id = None
+        self._source_standby_database_connection_id = None
         self._database_combination = 'ORACLE'
 
     @property
@@ -108,6 +115,30 @@ class OracleCloneMigrationDetails(CloneMigrationDetails):
         :type: str
         """
         self._source_container_database_connection_id = source_container_database_connection_id
+
+    @property
+    def source_standby_database_connection_id(self):
+        """
+        Gets the source_standby_database_connection_id of this OracleCloneMigrationDetails.
+        The OCID of the resource being referenced.
+
+
+        :return: The source_standby_database_connection_id of this OracleCloneMigrationDetails.
+        :rtype: str
+        """
+        return self._source_standby_database_connection_id
+
+    @source_standby_database_connection_id.setter
+    def source_standby_database_connection_id(self, source_standby_database_connection_id):
+        """
+        Sets the source_standby_database_connection_id of this OracleCloneMigrationDetails.
+        The OCID of the resource being referenced.
+
+
+        :param source_standby_database_connection_id: The source_standby_database_connection_id of this OracleCloneMigrationDetails.
+        :type: str
+        """
+        self._source_standby_database_connection_id = source_standby_database_connection_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

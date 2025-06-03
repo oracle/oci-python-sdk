@@ -83,7 +83,7 @@ class PostgresqlConnection(Connection):
 
         :param connection_type:
             The value to assign to the connection_type property of this PostgresqlConnection.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type connection_type: str
 
@@ -221,6 +221,18 @@ class PostgresqlConnection(Connection):
             The value to assign to the ssl_key_secret_id property of this PostgresqlConnection.
         :type ssl_key_secret_id: str
 
+        :param ssl_ca:
+            The value to assign to the ssl_ca property of this PostgresqlConnection.
+        :type ssl_ca: str
+
+        :param ssl_crl:
+            The value to assign to the ssl_crl property of this PostgresqlConnection.
+        :type ssl_crl: str
+
+        :param ssl_cert:
+            The value to assign to the ssl_cert property of this PostgresqlConnection.
+        :type ssl_cert: str
+
         """
         self.swagger_types = {
             'connection_type': 'str',
@@ -254,7 +266,10 @@ class PostgresqlConnection(Connection):
             'private_ip': 'str',
             'db_system_id': 'str',
             'password_secret_id': 'str',
-            'ssl_key_secret_id': 'str'
+            'ssl_key_secret_id': 'str',
+            'ssl_ca': 'str',
+            'ssl_crl': 'str',
+            'ssl_cert': 'str'
         }
         self.attribute_map = {
             'connection_type': 'connectionType',
@@ -288,7 +303,10 @@ class PostgresqlConnection(Connection):
             'private_ip': 'privateIp',
             'db_system_id': 'dbSystemId',
             'password_secret_id': 'passwordSecretId',
-            'ssl_key_secret_id': 'sslKeySecretId'
+            'ssl_key_secret_id': 'sslKeySecretId',
+            'ssl_ca': 'sslCa',
+            'ssl_crl': 'sslCrl',
+            'ssl_cert': 'sslCert'
         }
         self._connection_type = None
         self._id = None
@@ -322,6 +340,9 @@ class PostgresqlConnection(Connection):
         self._db_system_id = None
         self._password_secret_id = None
         self._ssl_key_secret_id = None
+        self._ssl_ca = None
+        self._ssl_crl = None
+        self._ssl_cert = None
         self._connection_type = 'POSTGRESQL'
 
     @property
@@ -671,6 +692,86 @@ class PostgresqlConnection(Connection):
         :type: str
         """
         self._ssl_key_secret_id = ssl_key_secret_id
+
+    @property
+    def ssl_ca(self):
+        """
+        Gets the ssl_ca of this PostgresqlConnection.
+        The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.
+        The supported file formats are .pem and .crt.
+        It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+
+
+        :return: The ssl_ca of this PostgresqlConnection.
+        :rtype: str
+        """
+        return self._ssl_ca
+
+    @ssl_ca.setter
+    def ssl_ca(self, ssl_ca):
+        """
+        Sets the ssl_ca of this PostgresqlConnection.
+        The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.
+        The supported file formats are .pem and .crt.
+        It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+
+
+        :param ssl_ca: The ssl_ca of this PostgresqlConnection.
+        :type: str
+        """
+        self._ssl_ca = ssl_ca
+
+    @property
+    def ssl_crl(self):
+        """
+        Gets the ssl_crl of this PostgresqlConnection.
+        The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA).
+        It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+
+
+        :return: The ssl_crl of this PostgresqlConnection.
+        :rtype: str
+        """
+        return self._ssl_crl
+
+    @ssl_crl.setter
+    def ssl_crl(self, ssl_crl):
+        """
+        Sets the ssl_crl of this PostgresqlConnection.
+        The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA).
+        It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+
+
+        :param ssl_crl: The ssl_crl of this PostgresqlConnection.
+        :type: str
+        """
+        self._ssl_crl = ssl_crl
+
+    @property
+    def ssl_cert(self):
+        """
+        Gets the ssl_cert of this PostgresqlConnection.
+        The base64 encoded certificate of the PostgreSQL server. The supported file formats are .pem and .crt.
+        It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+
+
+        :return: The ssl_cert of this PostgresqlConnection.
+        :rtype: str
+        """
+        return self._ssl_cert
+
+    @ssl_cert.setter
+    def ssl_cert(self, ssl_cert):
+        """
+        Sets the ssl_cert of this PostgresqlConnection.
+        The base64 encoded certificate of the PostgreSQL server. The supported file formats are .pem and .crt.
+        It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+
+
+        :param ssl_cert: The ssl_cert of this PostgresqlConnection.
+        :type: str
+        """
+        self._ssl_cert = ssl_cert
 
     def __repr__(self):
         return formatted_flat_dict(self)

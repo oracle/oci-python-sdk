@@ -15,6 +15,14 @@ class BackupPolicy(object):
     The Backup policy for the DB System.
     """
 
+    #: A constant which can be used with the soft_delete property of a BackupPolicy.
+    #: This constant has a value of "ENABLED"
+    SOFT_DELETE_ENABLED = "ENABLED"
+
+    #: A constant which can be used with the soft_delete property of a BackupPolicy.
+    #: This constant has a value of "DISABLED"
+    SOFT_DELETE_DISABLED = "DISABLED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new BackupPolicy object with values from keyword arguments.
@@ -23,6 +31,12 @@ class BackupPolicy(object):
         :param is_enabled:
             The value to assign to the is_enabled property of this BackupPolicy.
         :type is_enabled: bool
+
+        :param soft_delete:
+            The value to assign to the soft_delete property of this BackupPolicy.
+            Allowed values for this property are: "ENABLED", "DISABLED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type soft_delete: str
 
         :param copy_policies:
             The value to assign to the copy_policies property of this BackupPolicy.
@@ -51,6 +65,7 @@ class BackupPolicy(object):
         """
         self.swagger_types = {
             'is_enabled': 'bool',
+            'soft_delete': 'str',
             'copy_policies': 'list[CopyPolicy]',
             'window_start_time': 'str',
             'retention_in_days': 'int',
@@ -60,6 +75,7 @@ class BackupPolicy(object):
         }
         self.attribute_map = {
             'is_enabled': 'isEnabled',
+            'soft_delete': 'softDelete',
             'copy_policies': 'copyPolicies',
             'window_start_time': 'windowStartTime',
             'retention_in_days': 'retentionInDays',
@@ -68,6 +84,7 @@ class BackupPolicy(object):
             'pitr_policy': 'pitrPolicy'
         }
         self._is_enabled = None
+        self._soft_delete = None
         self._copy_policies = None
         self._window_start_time = None
         self._retention_in_days = None
@@ -98,6 +115,38 @@ class BackupPolicy(object):
         :type: bool
         """
         self._is_enabled = is_enabled
+
+    @property
+    def soft_delete(self):
+        """
+        Gets the soft_delete of this BackupPolicy.
+        Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED
+        state for 7 days before permanently deleting it.
+
+        Allowed values for this property are: "ENABLED", "DISABLED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The soft_delete of this BackupPolicy.
+        :rtype: str
+        """
+        return self._soft_delete
+
+    @soft_delete.setter
+    def soft_delete(self, soft_delete):
+        """
+        Sets the soft_delete of this BackupPolicy.
+        Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED
+        state for 7 days before permanently deleting it.
+
+
+        :param soft_delete: The soft_delete of this BackupPolicy.
+        :type: str
+        """
+        allowed_values = ["ENABLED", "DISABLED"]
+        if not value_allowed_none_or_none_sentinel(soft_delete, allowed_values):
+            soft_delete = 'UNKNOWN_ENUM_VALUE'
+        self._soft_delete = soft_delete
 
     @property
     def copy_policies(self):

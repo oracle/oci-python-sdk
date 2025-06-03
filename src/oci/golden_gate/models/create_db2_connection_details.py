@@ -23,7 +23,7 @@ class CreateDb2ConnectionDetails(CreateConnectionDetails):
 
         :param connection_type:
             The value to assign to the connection_type property of this CreateDb2ConnectionDetails.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG"
         :type connection_type: str
 
         :param display_name:
@@ -570,6 +570,7 @@ class CreateDb2ConnectionDetails(CreateConnectionDetails):
         """
         Gets the ssl_server_certificate of this CreateDb2ConnectionDetails.
         The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+        It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 
 
         :return: The ssl_server_certificate of this CreateDb2ConnectionDetails.
@@ -582,6 +583,7 @@ class CreateDb2ConnectionDetails(CreateConnectionDetails):
         """
         Sets the ssl_server_certificate of this CreateDb2ConnectionDetails.
         The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+        It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 
 
         :param ssl_server_certificate: The ssl_server_certificate of this CreateDb2ConnectionDetails.

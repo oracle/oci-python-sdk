@@ -15,6 +15,14 @@ class UpdateBackupDetails(object):
     The Backup metadata which can be updated.
     """
 
+    #: A constant which can be used with the soft_delete property of a UpdateBackupDetails.
+    #: This constant has a value of "ENABLED"
+    SOFT_DELETE_ENABLED = "ENABLED"
+
+    #: A constant which can be used with the soft_delete property of a UpdateBackupDetails.
+    #: This constant has a value of "DISABLED"
+    SOFT_DELETE_DISABLED = "DISABLED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateBackupDetails object with values from keyword arguments.
@@ -27,6 +35,11 @@ class UpdateBackupDetails(object):
         :param description:
             The value to assign to the description property of this UpdateBackupDetails.
         :type description: str
+
+        :param soft_delete:
+            The value to assign to the soft_delete property of this UpdateBackupDetails.
+            Allowed values for this property are: "ENABLED", "DISABLED"
+        :type soft_delete: str
 
         :param retention_in_days:
             The value to assign to the retention_in_days property of this UpdateBackupDetails.
@@ -44,6 +57,7 @@ class UpdateBackupDetails(object):
         self.swagger_types = {
             'display_name': 'str',
             'description': 'str',
+            'soft_delete': 'str',
             'retention_in_days': 'int',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -51,12 +65,14 @@ class UpdateBackupDetails(object):
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
+            'soft_delete': 'softDelete',
             'retention_in_days': 'retentionInDays',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
         self._display_name = None
         self._description = None
+        self._soft_delete = None
         self._retention_in_days = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -108,6 +124,39 @@ class UpdateBackupDetails(object):
         :type: str
         """
         self._description = description
+
+    @property
+    def soft_delete(self):
+        """
+        Gets the soft_delete of this UpdateBackupDetails.
+        Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED
+        state for 7 days before permanently deleting it.
+
+        Allowed values for this property are: "ENABLED", "DISABLED"
+
+
+        :return: The soft_delete of this UpdateBackupDetails.
+        :rtype: str
+        """
+        return self._soft_delete
+
+    @soft_delete.setter
+    def soft_delete(self, soft_delete):
+        """
+        Sets the soft_delete of this UpdateBackupDetails.
+        Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED
+        state for 7 days before permanently deleting it.
+
+
+        :param soft_delete: The soft_delete of this UpdateBackupDetails.
+        :type: str
+        """
+        allowed_values = ["ENABLED", "DISABLED"]
+        if not value_allowed_none_or_none_sentinel(soft_delete, allowed_values):
+            raise ValueError(
+                f"Invalid value for `soft_delete`, must be None or one of {allowed_values}"
+            )
+        self._soft_delete = soft_delete
 
     @property
     def retention_in_days(self):

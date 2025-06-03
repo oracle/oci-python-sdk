@@ -15,6 +15,14 @@ class ManagedMySqlDatabase(object):
     The details of the Managed MySQL Database.
     """
 
+    #: A constant which can be used with the heat_wave_management_type property of a ManagedMySqlDatabase.
+    #: This constant has a value of "BASIC"
+    HEAT_WAVE_MANAGEMENT_TYPE_BASIC = "BASIC"
+
+    #: A constant which can be used with the heat_wave_management_type property of a ManagedMySqlDatabase.
+    #: This constant has a value of "FULL"
+    HEAT_WAVE_MANAGEMENT_TYPE_FULL = "FULL"
+
     #: A constant which can be used with the database_type property of a ManagedMySqlDatabase.
     #: This constant has a value of "EXTERNAL"
     DATABASE_TYPE_EXTERNAL = "EXTERNAL"
@@ -84,6 +92,12 @@ class ManagedMySqlDatabase(object):
             The value to assign to the name property of this ManagedMySqlDatabase.
         :type name: str
 
+        :param heat_wave_management_type:
+            The value to assign to the heat_wave_management_type property of this ManagedMySqlDatabase.
+            Allowed values for this property are: "BASIC", "FULL", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type heat_wave_management_type: str
+
         :param heat_wave_cluster_display_name:
             The value to assign to the heat_wave_cluster_display_name property of this ManagedMySqlDatabase.
         :type heat_wave_cluster_display_name: str
@@ -146,6 +160,7 @@ class ManagedMySqlDatabase(object):
             'db_version': 'str',
             'time_created': 'datetime',
             'name': 'str',
+            'heat_wave_management_type': 'str',
             'heat_wave_cluster_display_name': 'str',
             'is_heat_wave_enabled': 'bool',
             'is_lakehouse_enabled': 'bool',
@@ -166,6 +181,7 @@ class ManagedMySqlDatabase(object):
             'db_version': 'dbVersion',
             'time_created': 'timeCreated',
             'name': 'name',
+            'heat_wave_management_type': 'heatWaveManagementType',
             'heat_wave_cluster_display_name': 'heatWaveClusterDisplayName',
             'is_heat_wave_enabled': 'isHeatWaveEnabled',
             'is_lakehouse_enabled': 'isLakehouseEnabled',
@@ -185,6 +201,7 @@ class ManagedMySqlDatabase(object):
         self._db_version = None
         self._time_created = None
         self._name = None
+        self._heat_wave_management_type = None
         self._heat_wave_cluster_display_name = None
         self._is_heat_wave_enabled = None
         self._is_lakehouse_enabled = None
@@ -341,6 +358,36 @@ class ManagedMySqlDatabase(object):
         :type: str
         """
         self._name = name
+
+    @property
+    def heat_wave_management_type(self):
+        """
+        Gets the heat_wave_management_type of this ManagedMySqlDatabase.
+        The customer's selected type for HeatWave management.
+
+        Allowed values for this property are: "BASIC", "FULL", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The heat_wave_management_type of this ManagedMySqlDatabase.
+        :rtype: str
+        """
+        return self._heat_wave_management_type
+
+    @heat_wave_management_type.setter
+    def heat_wave_management_type(self, heat_wave_management_type):
+        """
+        Sets the heat_wave_management_type of this ManagedMySqlDatabase.
+        The customer's selected type for HeatWave management.
+
+
+        :param heat_wave_management_type: The heat_wave_management_type of this ManagedMySqlDatabase.
+        :type: str
+        """
+        allowed_values = ["BASIC", "FULL"]
+        if not value_allowed_none_or_none_sentinel(heat_wave_management_type, allowed_values):
+            heat_wave_management_type = 'UNKNOWN_ENUM_VALUE'
+        self._heat_wave_management_type = heat_wave_management_type
 
     @property
     def heat_wave_cluster_display_name(self):

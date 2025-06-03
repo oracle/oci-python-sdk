@@ -1,0 +1,11 @@
+MySqlDigestErrorsCollection
+===========================
+
+.. currentmodule:: oci.database_management.models
+
+.. autoclass:: MySqlDigestErrorsCollection
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

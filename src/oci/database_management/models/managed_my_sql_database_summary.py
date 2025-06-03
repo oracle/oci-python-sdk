@@ -102,6 +102,10 @@ class ManagedMySqlDatabaseSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param heat_wave_management_type:
+            The value to assign to the heat_wave_management_type property of this ManagedMySqlDatabaseSummary.
+        :type heat_wave_management_type: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -112,7 +116,8 @@ class ManagedMySqlDatabaseSummary(object):
             'name': 'str',
             'database_type': 'str',
             'management_state': 'str',
-            'lifecycle_state': 'str'
+            'lifecycle_state': 'str',
+            'heat_wave_management_type': 'str'
         }
         self.attribute_map = {
             'id': 'id',
@@ -123,7 +128,8 @@ class ManagedMySqlDatabaseSummary(object):
             'name': 'name',
             'database_type': 'databaseType',
             'management_state': 'managementState',
-            'lifecycle_state': 'lifecycleState'
+            'lifecycle_state': 'lifecycleState',
+            'heat_wave_management_type': 'heatWaveManagementType'
         }
         self._id = None
         self._compartment_id = None
@@ -134,6 +140,7 @@ class ManagedMySqlDatabaseSummary(object):
         self._database_type = None
         self._management_state = None
         self._lifecycle_state = None
+        self._heat_wave_management_type = None
 
     @property
     def id(self):
@@ -370,6 +377,30 @@ class ManagedMySqlDatabaseSummary(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def heat_wave_management_type(self):
+        """
+        Gets the heat_wave_management_type of this ManagedMySqlDatabaseSummary.
+        The customer's selected type for HeatWave management.
+
+
+        :return: The heat_wave_management_type of this ManagedMySqlDatabaseSummary.
+        :rtype: str
+        """
+        return self._heat_wave_management_type
+
+    @heat_wave_management_type.setter
+    def heat_wave_management_type(self, heat_wave_management_type):
+        """
+        Sets the heat_wave_management_type of this ManagedMySqlDatabaseSummary.
+        The customer's selected type for HeatWave management.
+
+
+        :param heat_wave_management_type: The heat_wave_management_type of this ManagedMySqlDatabaseSummary.
+        :type: str
+        """
+        self._heat_wave_management_type = heat_wave_management_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

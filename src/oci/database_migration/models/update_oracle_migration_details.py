@@ -83,6 +83,10 @@ class UpdateOracleMigrationDetails(UpdateMigrationDetails):
             The value to assign to the source_container_database_connection_id property of this UpdateOracleMigrationDetails.
         :type source_container_database_connection_id: str
 
+        :param source_standby_database_connection_id:
+            The value to assign to the source_standby_database_connection_id property of this UpdateOracleMigrationDetails.
+        :type source_standby_database_connection_id: str
+
         """
         self.swagger_types = {
             'description': 'str',
@@ -99,7 +103,8 @@ class UpdateOracleMigrationDetails(UpdateMigrationDetails):
             'hub_details': 'UpdateGoldenGateHubDetails',
             'ggs_details': 'UpdateOracleGgsDeploymentDetails',
             'advanced_parameters': 'list[MigrationParameterDetails]',
-            'source_container_database_connection_id': 'str'
+            'source_container_database_connection_id': 'str',
+            'source_standby_database_connection_id': 'str'
         }
         self.attribute_map = {
             'description': 'description',
@@ -116,7 +121,8 @@ class UpdateOracleMigrationDetails(UpdateMigrationDetails):
             'hub_details': 'hubDetails',
             'ggs_details': 'ggsDetails',
             'advanced_parameters': 'advancedParameters',
-            'source_container_database_connection_id': 'sourceContainerDatabaseConnectionId'
+            'source_container_database_connection_id': 'sourceContainerDatabaseConnectionId',
+            'source_standby_database_connection_id': 'sourceStandbyDatabaseConnectionId'
         }
         self._description = None
         self._database_combination = None
@@ -133,6 +139,7 @@ class UpdateOracleMigrationDetails(UpdateMigrationDetails):
         self._ggs_details = None
         self._advanced_parameters = None
         self._source_container_database_connection_id = None
+        self._source_standby_database_connection_id = None
         self._database_combination = 'ORACLE'
 
     @property
@@ -282,6 +289,30 @@ class UpdateOracleMigrationDetails(UpdateMigrationDetails):
         :type: str
         """
         self._source_container_database_connection_id = source_container_database_connection_id
+
+    @property
+    def source_standby_database_connection_id(self):
+        """
+        Gets the source_standby_database_connection_id of this UpdateOracleMigrationDetails.
+        The OCID of the resource being updated.
+
+
+        :return: The source_standby_database_connection_id of this UpdateOracleMigrationDetails.
+        :rtype: str
+        """
+        return self._source_standby_database_connection_id
+
+    @source_standby_database_connection_id.setter
+    def source_standby_database_connection_id(self, source_standby_database_connection_id):
+        """
+        Sets the source_standby_database_connection_id of this UpdateOracleMigrationDetails.
+        The OCID of the resource being updated.
+
+
+        :param source_standby_database_connection_id: The source_standby_database_connection_id of this UpdateOracleMigrationDetails.
+        :type: str
+        """
+        self._source_standby_database_connection_id = source_standby_database_connection_id
 
     def __repr__(self):
         return formatted_flat_dict(self)
