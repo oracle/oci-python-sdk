@@ -7763,6 +7763,10 @@ class DatabaseClient(object):
         :param str opc_request_id: (optional)
             Unique identifier for the request.
 
+        :param bool opc_dry_run: (optional)
+            Indicates that the request is a dry run, if set to \"true\". A dry run request does not actually
+            creating or updating a resource and is used only to perform validation on the submitted data.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -7793,7 +7797,8 @@ class DatabaseClient(object):
             "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
-            "opc_request_id"
+            "opc_request_id",
+            "opc_dry_run"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -7804,7 +7809,8 @@ class DatabaseClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "opc-retry-token": kwargs.get("opc_retry_token", missing),
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-dry-run": kwargs.get("opc_dry_run", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 

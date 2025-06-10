@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.154.1 - 2025-06-10
+====================
+
+Added 
+----- 
+* Support for performing an explicit Data Guard pre-check by setting new optional dry-run parameter when creating a database in the Database service   
+
+====================
 2.154.0 - 2025-06-03
 ====================
 
