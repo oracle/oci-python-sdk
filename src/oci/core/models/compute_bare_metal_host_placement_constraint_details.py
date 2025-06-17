@@ -12,7 +12,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ComputeBareMetalHostPlacementConstraintDetails(PlacementConstraintDetails):
     """
-    Customer baremetal host id that needs to be launched
+    The details for providing placement constraints using the compute bare metal host OCID.
+    This placement constraint is only applicable during the launch operation.
     """
 
     def __init__(self, **kwargs):
@@ -46,7 +47,7 @@ class ComputeBareMetalHostPlacementConstraintDetails(PlacementConstraintDetails)
     def compute_bare_metal_host_id(self):
         """
         **[Required]** Gets the compute_bare_metal_host_id of this ComputeBareMetalHostPlacementConstraintDetails.
-        The OCID of the compute bare metal host.
+        The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
 
 
         :return: The compute_bare_metal_host_id of this ComputeBareMetalHostPlacementConstraintDetails.
@@ -58,7 +59,7 @@ class ComputeBareMetalHostPlacementConstraintDetails(PlacementConstraintDetails)
     def compute_bare_metal_host_id(self, compute_bare_metal_host_id):
         """
         Sets the compute_bare_metal_host_id of this ComputeBareMetalHostPlacementConstraintDetails.
-        The OCID of the compute bare metal host.
+        The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
 
 
         :param compute_bare_metal_host_id: The compute_bare_metal_host_id of this ComputeBareMetalHostPlacementConstraintDetails.

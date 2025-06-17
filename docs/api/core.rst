@@ -99,6 +99,7 @@ Core Services
     oci.core.models.ByoipRangeSummary
     oci.core.models.ByoipRangeVcnIpv6AllocationSummary
     oci.core.models.Byoipv6CidrDetails
+    oci.core.models.CapacityBin
     oci.core.models.CapacityReportInstanceShapeConfig
     oci.core.models.CapacityReportShapeAvailability
     oci.core.models.CapacityReservationInstanceSummary

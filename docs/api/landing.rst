@@ -18,6 +18,7 @@ API Reference
 * :doc:`Announcements Preferences <announcements_service/client/oci.announcements_service.AnnouncementsPreferencesClient>`
 * :doc:`Anomaly Detection <ai_anomaly_detection/client/oci.ai_anomaly_detection.AnomalyDetectionClient>`
 * :doc:`Api Gateway <apigateway/client/oci.apigateway.ApiGatewayClient>`
+* :doc:`Api Metadata <apiaccesscontrol/client/oci.apiaccesscontrol.ApiMetadataClient>`
 * :doc:`Apm Domain <apm_control_plane/client/oci.apm_control_plane.ApmDomainClient>`
 * :doc:`Apm Synthetic <apm_synthetics/client/oci.apm_synthetics.ApmSyntheticClient>`
 * :doc:`Appliance Export Job <dts/client/oci.dts.ApplianceExportJobClient>`
@@ -172,6 +173,7 @@ API Reference
 * :doc:`Occ Demand Signal <demand_signal/client/oci.demand_signal.OccDemandSignalClient>`
 * :doc:`Occ Metrics <oci_control_center/client/oci.oci_control_center.OccMetricsClient>`
 * :doc:`Oce Instance <oce/client/oci.oce.OceInstanceClient>`
+* :doc:`Oci Cache User <redis/client/oci.redis.OciCacheUserClient>`
 * :doc:`Oda <oda/client/oci.oda.OdaClient>`
 * :doc:`Odapackage <oda/client/oci.oda.OdapackageClient>`
 * :doc:`Offer <marketplace_publisher/client/oci.marketplace_publisher.OfferClient>`
@@ -195,6 +197,9 @@ API Reference
 * :doc:`Plugin <compute_instance_agent/client/oci.compute_instance_agent.PluginClient>`
 * :doc:`Pluginconfig <compute_instance_agent/client/oci.compute_instance_agent.PluginconfigClient>`
 * :doc:`Postgresql <psql/client/oci.psql.PostgresqlClient>`
+* :doc:`Privileged Api Control <apiaccesscontrol/client/oci.apiaccesscontrol.PrivilegedApiControlClient>`
+* :doc:`Privileged Api Requests <apiaccesscontrol/client/oci.apiaccesscontrol.PrivilegedApiRequestsClient>`
+* :doc:`Privileged Api Work Request <apiaccesscontrol/client/oci.apiaccesscontrol.PrivilegedApiWorkRequestClient>`
 * :doc:`Query <apm_traces/client/oci.apm_traces.QueryClient>`
 * :doc:`Queue <queue/client/oci.queue.QueueClient>`
 * :doc:`Queue Admin <queue/client/oci.queue.QueueAdminClient>`
@@ -204,6 +209,7 @@ API Reference
 * :doc:`Recipient Invitation <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.RecipientInvitationClient>`
 * :doc:`Redirect <waas/client/oci.waas.RedirectClient>`
 * :doc:`Redis Cluster <redis/client/oci.redis.RedisClusterClient>`
+* :doc:`Redis Identity <redis/client/oci.redis.RedisIdentityClient>`
 * :doc:`Replicas <mysql/client/oci.mysql.ReplicasClient>`
 * :doc:`Reporting Managed Instance <os_management_hub/client/oci.os_management_hub.ReportingManagedInstanceClient>`
 * :doc:`Resource Manager <resource_manager/client/oci.resource_manager.ResourceManagerClient>`
@@ -258,6 +264,8 @@ API Reference
 * :doc:`Waa <waa/client/oci.waa.WaaClient>`
 * :doc:`Waas <waas/client/oci.waas.WaasClient>`
 * :doc:`Waf <waf/client/oci.waf.WafClient>`
+* :doc:`Weblogic Management Service <wlms/client/oci.wlms.WeblogicManagementServiceClient>`
+* :doc:`Weblogic Management Service Configuration <wlms/client/oci.wlms.WeblogicManagementServiceConfigurationClient>`
 * :doc:`Work Request <work_requests/client/oci.work_requests.WorkRequestClient>`
 * :doc:`Work Request <work_requests/client/oci.work_requests.WorkRequestClient>`
 * :doc:`Work Request <work_requests/client/oci.work_requests.WorkRequestClient>`
@@ -297,6 +305,7 @@ API Reference
     ai_vision
     analytics
     announcements_service
+    apiaccesscontrol
     apigateway
     apm_config
     apm_control_plane
@@ -438,6 +447,7 @@ API Reference
     waa
     waas
     waf
+    wlms
     work_requests
     zpr
     config

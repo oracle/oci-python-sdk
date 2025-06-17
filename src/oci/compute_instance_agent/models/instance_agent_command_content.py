@@ -28,17 +28,24 @@ class InstanceAgentCommandContent(object):
             The value to assign to the output property of this InstanceAgentCommandContent.
         :type output: oci.compute_instance_agent.models.InstanceAgentCommandOutputDetails
 
+        :param command_string:
+            The value to assign to the command_string property of this InstanceAgentCommandContent.
+        :type command_string: str
+
         """
         self.swagger_types = {
             'source': 'InstanceAgentCommandSourceDetails',
-            'output': 'InstanceAgentCommandOutputDetails'
+            'output': 'InstanceAgentCommandOutputDetails',
+            'command_string': 'str'
         }
         self.attribute_map = {
             'source': 'source',
-            'output': 'output'
+            'output': 'output',
+            'command_string': 'commandString'
         }
         self._source = None
         self._output = None
+        self._command_string = None
 
     @property
     def source(self):
@@ -87,6 +94,34 @@ class InstanceAgentCommandContent(object):
         :type: oci.compute_instance_agent.models.InstanceAgentCommandOutputDetails
         """
         self._output = output
+
+    @property
+    def command_string(self):
+        """
+        Gets the command_string of this InstanceAgentCommandContent.
+        Command String is a fully formed command that runcommand executes.
+        Example: main.sh is stored in object storage and user provides the following command with parameters to execute
+        /bin/sh main.sh abc 10 foo.sh
+
+
+        :return: The command_string of this InstanceAgentCommandContent.
+        :rtype: str
+        """
+        return self._command_string
+
+    @command_string.setter
+    def command_string(self, command_string):
+        """
+        Sets the command_string of this InstanceAgentCommandContent.
+        Command String is a fully formed command that runcommand executes.
+        Example: main.sh is stored in object storage and user provides the following command with parameters to execute
+        /bin/sh main.sh abc 10 foo.sh
+
+
+        :param command_string: The command_string of this InstanceAgentCommandContent.
+        :type: str
+        """
+        self._command_string = command_string
 
     def __repr__(self):
         return formatted_flat_dict(self)

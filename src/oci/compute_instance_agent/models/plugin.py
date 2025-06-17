@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Plugin(object):
     """
-    The agent plugin
+    An Oracle Cloud Agent plugin.
     """
 
     def __init__(self, **kwargs):
@@ -65,7 +65,7 @@ class Plugin(object):
     def name(self):
         """
         **[Required]** Gets the name of this Plugin.
-        The plugin name
+        The plugin name.
 
 
         :return: The name of this Plugin.
@@ -77,7 +77,7 @@ class Plugin(object):
     def name(self, name):
         """
         Sets the name of this Plugin.
-        The plugin name
+        The plugin name.
 
 
         :param name: The name of this Plugin.
@@ -89,7 +89,7 @@ class Plugin(object):
     def version(self):
         """
         **[Required]** Gets the version of this Plugin.
-        The plugin version
+        The plugin version.
 
 
         :return: The version of this Plugin.
@@ -101,7 +101,7 @@ class Plugin(object):
     def version(self, version):
         """
         Sets the version of this Plugin.
-        The plugin version
+        The plugin version.
 
 
         :param version: The version of this Plugin.
@@ -113,7 +113,7 @@ class Plugin(object):
     def status(self):
         """
         **[Required]** Gets the status of this Plugin.
-        The plugin status
+        The plugin status.
 
 
         :return: The status of this Plugin.
@@ -125,7 +125,7 @@ class Plugin(object):
     def status(self, status):
         """
         Sets the status of this Plugin.
-        The plugin status
+        The plugin status.
 
 
         :param status: The status of this Plugin.
@@ -137,7 +137,7 @@ class Plugin(object):
     def last_update_time(self):
         """
         Gets the last_update_time of this Plugin.
-        The last update time of the plugin
+        The last updated time of the plugin, in UTC.
 
 
         :return: The last_update_time of this Plugin.
@@ -149,7 +149,7 @@ class Plugin(object):
     def last_update_time(self, last_update_time):
         """
         Sets the last_update_time of this Plugin.
-        The last update time of the plugin
+        The last updated time of the plugin, in UTC.
 
 
         :param last_update_time: The last_update_time of this Plugin.
@@ -161,7 +161,7 @@ class Plugin(object):
     def message(self):
         """
         Gets the message of this Plugin.
-        The optional message from the agent plugin
+        An optional message from the plugin.
 
 
         :return: The message of this Plugin.
@@ -173,7 +173,7 @@ class Plugin(object):
     def message(self, message):
         """
         Sets the message of this Plugin.
-        The optional message from the agent plugin
+        An optional message from the plugin.
 
 
         :param message: The message of this Plugin.

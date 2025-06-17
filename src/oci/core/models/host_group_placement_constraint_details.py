@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class HostGroupPlacementConstraintDetails(PlacementConstraintDetails):
     """
-    Host group id that needs to be launched
+    The details for providing placement constraints using the compute host group OCID.
     """
 
     def __init__(self, **kwargs):
@@ -46,7 +46,7 @@ class HostGroupPlacementConstraintDetails(PlacementConstraintDetails):
     def compute_host_group_id(self):
         """
         **[Required]** Gets the compute_host_group_id of this HostGroupPlacementConstraintDetails.
-        The OCID of the compute host group.
+        The OCID of the compute host group. This is only available for dedicated capacity customers.
 
 
         :return: The compute_host_group_id of this HostGroupPlacementConstraintDetails.
@@ -58,7 +58,7 @@ class HostGroupPlacementConstraintDetails(PlacementConstraintDetails):
     def compute_host_group_id(self, compute_host_group_id):
         """
         Sets the compute_host_group_id of this HostGroupPlacementConstraintDetails.
-        The OCID of the compute host group.
+        The OCID of the compute host group. This is only available for dedicated capacity customers.
 
 
         :param compute_host_group_id: The compute_host_group_id of this HostGroupPlacementConstraintDetails.

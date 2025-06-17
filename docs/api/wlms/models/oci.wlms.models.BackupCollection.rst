@@ -1,0 +1,11 @@
+BackupCollection
+================
+
+.. currentmodule:: oci.wlms.models
+
+.. autoclass:: BackupCollection
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

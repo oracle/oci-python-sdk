@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AvailablePluginSummary(object):
     """
-    Describes where the plugin is supported
+    Information about where a plugin is supported.
     """
 
     def __init__(self, **kwargs):
@@ -58,7 +58,7 @@ class AvailablePluginSummary(object):
     def name(self):
         """
         **[Required]** Gets the name of this AvailablePluginSummary.
-        The plugin name
+        The plugin name.
 
 
         :return: The name of this AvailablePluginSummary.
@@ -70,7 +70,7 @@ class AvailablePluginSummary(object):
     def name(self, name):
         """
         Sets the name of this AvailablePluginSummary.
-        The plugin name
+        The plugin name.
 
 
         :param name: The name of this AvailablePluginSummary.
@@ -82,7 +82,7 @@ class AvailablePluginSummary(object):
     def summary(self):
         """
         Gets the summary of this AvailablePluginSummary.
-        A brief description of the plugin functionality
+        A brief description of the plugin's functionality.
 
 
         :return: The summary of this AvailablePluginSummary.
@@ -94,7 +94,7 @@ class AvailablePluginSummary(object):
     def summary(self, summary):
         """
         Sets the summary of this AvailablePluginSummary.
-        A brief description of the plugin functionality
+        A brief description of the plugin's functionality.
 
 
         :param summary: The summary of this AvailablePluginSummary.
@@ -106,7 +106,7 @@ class AvailablePluginSummary(object):
     def is_supported(self):
         """
         **[Required]** Gets the is_supported of this AvailablePluginSummary.
-        Is the plugin supported or not
+        Whether the plugin is supported.
 
 
         :return: The is_supported of this AvailablePluginSummary.
@@ -118,7 +118,7 @@ class AvailablePluginSummary(object):
     def is_supported(self, is_supported):
         """
         Sets the is_supported of this AvailablePluginSummary.
-        Is the plugin supported or not
+        Whether the plugin is supported.
 
 
         :param is_supported: The is_supported of this AvailablePluginSummary.
@@ -130,7 +130,7 @@ class AvailablePluginSummary(object):
     def is_enabled_by_default(self):
         """
         **[Required]** Gets the is_enabled_by_default of this AvailablePluginSummary.
-        Is the plugin enabled or disabled by default
+        Whether the plugin is enabled or disabled by default.
 
 
         :return: The is_enabled_by_default of this AvailablePluginSummary.
@@ -142,7 +142,7 @@ class AvailablePluginSummary(object):
     def is_enabled_by_default(self, is_enabled_by_default):
         """
         Sets the is_enabled_by_default of this AvailablePluginSummary.
-        Is the plugin enabled or disabled by default
+        Whether the plugin is enabled or disabled by default.
 
 
         :param is_enabled_by_default: The is_enabled_by_default of this AvailablePluginSummary.

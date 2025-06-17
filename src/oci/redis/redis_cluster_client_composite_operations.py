@@ -25,6 +25,50 @@ class RedisClusterClientCompositeOperations(object):
         """
         self.client = client
 
+    def attach_oci_cache_users_and_wait_for_state(self, redis_cluster_id, attach_oci_cache_users_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.redis.RedisClusterClient.attach_oci_cache_users` and waits for the :py:class:`~oci.redis.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str redis_cluster_id: (required)
+            The `OCID`__ of the cluster.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
+
+        :param oci.redis.models.AttachOciCacheUsersDetails attach_oci_cache_users_details: (required)
+            The parameter details to attach the OCI cache users to the redis cluster.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.redis.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.redis.RedisClusterClient.attach_oci_cache_users`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.attach_oci_cache_users(redis_cluster_id, attach_oci_cache_users_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def change_redis_cluster_compartment_and_wait_for_state(self, redis_cluster_id, change_redis_cluster_compartment_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.redis.RedisClusterClient.change_redis_cluster_compartment` and waits for the :py:class:`~oci.redis.models.WorkRequest`
@@ -137,6 +181,50 @@ class RedisClusterClientCompositeOperations(object):
             else:
                 raise e
 
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def detach_oci_cache_users_and_wait_for_state(self, redis_cluster_id, detach_oci_cache_users_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.redis.RedisClusterClient.detach_oci_cache_users` and waits for the :py:class:`~oci.redis.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str redis_cluster_id: (required)
+            The `OCID`__ of the cluster.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
+
+        :param oci.redis.models.DetachOciCacheUsersDetails detach_oci_cache_users_details: (required)
+            The parameter details to detach the OCI cache users to the redis cluster.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.redis.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.redis.RedisClusterClient.detach_oci_cache_users`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.detach_oci_cache_users(redis_cluster_id, detach_oci_cache_users_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
