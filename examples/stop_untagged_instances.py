@@ -33,7 +33,7 @@ def join_lists(instance_list, events_list, filename):
                                 item['instance_shape'], item['time_created'], item['instance_ocid'],
                                 item['compartment_ocid'], item['creator']))
     except Exception as e:
-        print('An unexpected Error Occured writing the file: {0}' .format(e))
+        print('An unexpected Error Occurred writing the file: {0}' .format(e))
 
 
 # This function stops the instance sent in as a parameter

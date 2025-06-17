@@ -51,7 +51,7 @@ class WorkRequestError(object):
     def code(self):
         """
         **[Required]** Gets the code of this WorkRequestError.
-        A machine-usable code for the error that occured. Error codes are listed on
+        A machine-usable code for the error that occurred. Error codes are listed on
         (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm)
 
 
@@ -64,7 +64,7 @@ class WorkRequestError(object):
     def code(self, code):
         """
         Sets the code of this WorkRequestError.
-        A machine-usable code for the error that occured. Error codes are listed on
+        A machine-usable code for the error that occurred. Error codes are listed on
         (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm)
 
 
@@ -101,7 +101,7 @@ class WorkRequestError(object):
     def timestamp(self):
         """
         **[Required]** Gets the timestamp of this WorkRequestError.
-        The time the error occured. An `RFC 3339`__ formatted datetime string.
+        The time the error occurred. An `RFC 3339`__ formatted datetime string.
 
         __ https://tools.ietf.org/rfc/rfc3339
 
@@ -115,7 +115,7 @@ class WorkRequestError(object):
     def timestamp(self, timestamp):
         """
         Sets the timestamp of this WorkRequestError.
-        The time the error occured. An `RFC 3339`__ formatted datetime string.
+        The time the error occurred. An `RFC 3339`__ formatted datetime string.
 
         __ https://tools.ietf.org/rfc/rfc3339
 
