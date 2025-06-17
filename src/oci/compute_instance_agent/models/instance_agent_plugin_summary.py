@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InstanceAgentPluginSummary(object):
     """
-    The agent plugin information
+    An Oracle Cloud Agent plugin.
     """
 
     #: A constant which can be used with the status property of a InstanceAgentPluginSummary.
@@ -69,7 +69,7 @@ class InstanceAgentPluginSummary(object):
     def name(self):
         """
         **[Required]** Gets the name of this InstanceAgentPluginSummary.
-        The plugin name
+        The plugin name.
 
 
         :return: The name of this InstanceAgentPluginSummary.
@@ -81,7 +81,7 @@ class InstanceAgentPluginSummary(object):
     def name(self, name):
         """
         Sets the name of this InstanceAgentPluginSummary.
-        The plugin name
+        The plugin name.
 
 
         :param name: The name of this InstanceAgentPluginSummary.
@@ -93,7 +93,19 @@ class InstanceAgentPluginSummary(object):
     def status(self):
         """
         **[Required]** Gets the status of this InstanceAgentPluginSummary.
-        The plugin status Specified the plugin state on the instance * `RUNNING` - The plugin is in running state * `STOPPED` - The plugin is in stopped state * `NOT_SUPPORTED` - The plugin is not supported on this platform * `INVALID` - The plugin state is not recognizable by the service
+        The plugin status.
+
+        These are the available statuses:
+        * `RUNNING` - The plugin is running.
+        * `STOPPED` - The plugin is stopped.
+        * `NOT_SUPPORTED` - The plugin is not supported on this platform.
+        * `INVALID` - The plugin status is not recognizable by the service.
+
+        To determine whether the plugin is enabled, use the
+        :func:`get_instance` operation in the Core
+        Services API. To enable or disable the plugin, use the
+        :func:`update_instance` operation
+        in the Core Services API.
 
         Allowed values for this property are: "RUNNING", "STOPPED", "NOT_SUPPORTED", "INVALID", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -108,7 +120,19 @@ class InstanceAgentPluginSummary(object):
     def status(self, status):
         """
         Sets the status of this InstanceAgentPluginSummary.
-        The plugin status Specified the plugin state on the instance * `RUNNING` - The plugin is in running state * `STOPPED` - The plugin is in stopped state * `NOT_SUPPORTED` - The plugin is not supported on this platform * `INVALID` - The plugin state is not recognizable by the service
+        The plugin status.
+
+        These are the available statuses:
+        * `RUNNING` - The plugin is running.
+        * `STOPPED` - The plugin is stopped.
+        * `NOT_SUPPORTED` - The plugin is not supported on this platform.
+        * `INVALID` - The plugin status is not recognizable by the service.
+
+        To determine whether the plugin is enabled, use the
+        :func:`get_instance` operation in the Core
+        Services API. To enable or disable the plugin, use the
+        :func:`update_instance` operation
+        in the Core Services API.
 
 
         :param status: The status of this InstanceAgentPluginSummary.
@@ -123,7 +147,7 @@ class InstanceAgentPluginSummary(object):
     def time_last_updated_utc(self):
         """
         **[Required]** Gets the time_last_updated_utc of this InstanceAgentPluginSummary.
-        The last update time of the plugin in UTC
+        The last updated time of the plugin, in UTC.
 
 
         :return: The time_last_updated_utc of this InstanceAgentPluginSummary.
@@ -135,7 +159,7 @@ class InstanceAgentPluginSummary(object):
     def time_last_updated_utc(self, time_last_updated_utc):
         """
         Sets the time_last_updated_utc of this InstanceAgentPluginSummary.
-        The last update time of the plugin in UTC
+        The last updated time of the plugin, in UTC.
 
 
         :param time_last_updated_utc: The time_last_updated_utc of this InstanceAgentPluginSummary.

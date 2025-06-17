@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PlacementConstraintDetails(object):
     """
-    Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
+    The details for providing placement constraints.
     """
 
     def __init__(self, **kwargs):
@@ -58,7 +58,9 @@ class PlacementConstraintDetails(object):
     def type(self):
         """
         **[Required]** Gets the type of this PlacementConstraintDetails.
-        Determines the type of targeted launch.
+        The type for the placement constraints.
+        Use `COMPUTE_BARE_METAL_HOST` when specifying the compute bare metal host OCID.
+        Use `HOST_GROUP` when specifying the compute host group OCID.
 
 
         :return: The type of this PlacementConstraintDetails.
@@ -70,7 +72,9 @@ class PlacementConstraintDetails(object):
     def type(self, type):
         """
         Sets the type of this PlacementConstraintDetails.
-        Determines the type of targeted launch.
+        The type for the placement constraints.
+        Use `COMPUTE_BARE_METAL_HOST` when specifying the compute bare metal host OCID.
+        Use `HOST_GROUP` when specifying the compute host group OCID.
 
 
         :param type: The type of this PlacementConstraintDetails.

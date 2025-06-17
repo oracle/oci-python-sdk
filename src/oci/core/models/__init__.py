@@ -81,6 +81,7 @@ from .byoip_range_origin_asn import ByoipRangeOriginAsn
 from .byoip_range_summary import ByoipRangeSummary
 from .byoip_range_vcn_ipv6_allocation_summary import ByoipRangeVcnIpv6AllocationSummary
 from .byoipv6_cidr_details import Byoipv6CidrDetails
+from .capacity_bin import CapacityBin
 from .capacity_report_instance_shape_config import CapacityReportInstanceShapeConfig
 from .capacity_report_shape_availability import CapacityReportShapeAvailability
 from .capacity_reservation_instance_summary import CapacityReservationInstanceSummary
@@ -737,6 +738,7 @@ core_type_mapping = {
     "ByoipRangeSummary": ByoipRangeSummary,
     "ByoipRangeVcnIpv6AllocationSummary": ByoipRangeVcnIpv6AllocationSummary,
     "Byoipv6CidrDetails": Byoipv6CidrDetails,
+    "CapacityBin": CapacityBin,
     "CapacityReportInstanceShapeConfig": CapacityReportInstanceShapeConfig,
     "CapacityReportShapeAvailability": CapacityReportShapeAvailability,
     "CapacityReservationInstanceSummary": CapacityReservationInstanceSummary,

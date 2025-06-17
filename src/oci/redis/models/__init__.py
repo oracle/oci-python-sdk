@@ -6,15 +6,30 @@
 
 from __future__ import absolute_import
 
+from .attach_oci_cache_users_details import AttachOciCacheUsersDetails
+from .attached_oci_cache_cluster import AttachedOciCacheCluster
+from .attached_oci_cache_user import AttachedOciCacheUser
+from .authentication_mode import AuthenticationMode
+from .change_oci_cache_user_compartment_details import ChangeOciCacheUserCompartmentDetails
 from .change_redis_cluster_compartment_details import ChangeRedisClusterCompartmentDetails
+from .create_identity_token_details import CreateIdentityTokenDetails
+from .create_oci_cache_user_details import CreateOciCacheUserDetails
 from .create_redis_cluster_details import CreateRedisClusterDetails
+from .detach_oci_cache_users_details import DetachOciCacheUsersDetails
+from .iam_authentication_mode import IamAuthenticationMode
+from .identity_token_details_response import IdentityTokenDetailsResponse
 from .node import Node
 from .node_collection import NodeCollection
 from .node_summary import NodeSummary
+from .oci_cache_user import OciCacheUser
+from .oci_cache_user_collection import OciCacheUserCollection
+from .oci_cache_user_summary import OciCacheUserSummary
+from .password_authentication_mode import PasswordAuthenticationMode
 from .redis_cluster import RedisCluster
 from .redis_cluster_collection import RedisClusterCollection
 from .redis_cluster_summary import RedisClusterSummary
 from .redis_node_collection import RedisNodeCollection
+from .update_oci_cache_user_details import UpdateOciCacheUserDetails
 from .update_redis_cluster_details import UpdateRedisClusterDetails
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
@@ -27,15 +42,30 @@ from .work_request_summary_collection import WorkRequestSummaryCollection
 
 # Maps type names to classes for redis services.
 redis_type_mapping = {
+    "AttachOciCacheUsersDetails": AttachOciCacheUsersDetails,
+    "AttachedOciCacheCluster": AttachedOciCacheCluster,
+    "AttachedOciCacheUser": AttachedOciCacheUser,
+    "AuthenticationMode": AuthenticationMode,
+    "ChangeOciCacheUserCompartmentDetails": ChangeOciCacheUserCompartmentDetails,
     "ChangeRedisClusterCompartmentDetails": ChangeRedisClusterCompartmentDetails,
+    "CreateIdentityTokenDetails": CreateIdentityTokenDetails,
+    "CreateOciCacheUserDetails": CreateOciCacheUserDetails,
     "CreateRedisClusterDetails": CreateRedisClusterDetails,
+    "DetachOciCacheUsersDetails": DetachOciCacheUsersDetails,
+    "IamAuthenticationMode": IamAuthenticationMode,
+    "IdentityTokenDetailsResponse": IdentityTokenDetailsResponse,
     "Node": Node,
     "NodeCollection": NodeCollection,
     "NodeSummary": NodeSummary,
+    "OciCacheUser": OciCacheUser,
+    "OciCacheUserCollection": OciCacheUserCollection,
+    "OciCacheUserSummary": OciCacheUserSummary,
+    "PasswordAuthenticationMode": PasswordAuthenticationMode,
     "RedisCluster": RedisCluster,
     "RedisClusterCollection": RedisClusterCollection,
     "RedisClusterSummary": RedisClusterSummary,
     "RedisNodeCollection": RedisNodeCollection,
+    "UpdateOciCacheUserDetails": UpdateOciCacheUserDetails,
     "UpdateRedisClusterDetails": UpdateRedisClusterDetails,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,

@@ -40,6 +40,6 @@ To verify that the SDK is using the libcrypto library that you specified, execut
 
 .. code-block:: python
 
-    oci.fips.is_fips_mode()
+    print(oci.fips.is_fips_mode())
 
 This should return True, indicating that the SDK is using the library specified by the environment variable.
