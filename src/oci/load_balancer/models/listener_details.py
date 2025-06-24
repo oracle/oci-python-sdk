@@ -149,8 +149,9 @@ class ListenerDetails(object):
     def protocol(self):
         """
         **[Required]** Gets the protocol of this ListenerDetails.
-        The protocol on which the listener accepts connection requests. The supported protocols are HTTP, HTTP2, TCP, and GRPC.
-        You can also use the :func:`list_protocols` operation to get a list of valid protocols.
+        The protocol on which the listener accepts connection requests.
+        To get a list of valid protocols, use the :func:`list_protocols`
+        operation.
 
         Example: `HTTP`
 
@@ -164,8 +165,9 @@ class ListenerDetails(object):
     def protocol(self, protocol):
         """
         Sets the protocol of this ListenerDetails.
-        The protocol on which the listener accepts connection requests. The supported protocols are HTTP, HTTP2, TCP, and GRPC.
-        You can also use the :func:`list_protocols` operation to get a list of valid protocols.
+        The protocol on which the listener accepts connection requests.
+        To get a list of valid protocols, use the :func:`list_protocols`
+        operation.
 
         Example: `HTTP`
 

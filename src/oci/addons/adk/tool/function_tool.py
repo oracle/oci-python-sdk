@@ -1,7 +1,7 @@
 # coding: utf-8
 # Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
-
+import asyncio
 from inspect import getdoc, ismethod, signature
 from typing import Any, Callable, Dict, get_type_hints
 
@@ -179,7 +179,7 @@ class FunctionTool(BaseModel):
             ),
         )
 
-    def execute(self, arguments: Dict[str, Any]) -> Any:
+    async def execute(self, arguments: Dict[str, Any]) -> Any:
         """
         Execute the function with the given arguments.
 
@@ -195,8 +195,11 @@ class FunctionTool(BaseModel):
         # Clean and filter arguments
         filtered_args = self._prepare_arguments(arguments)
 
-        # Invoke the callable with the filtered arguments
-        result = self.callable(**filtered_args)
+        if asyncio.iscoroutinefunction(self.callable):
+            result = await self.callable(**filtered_args)
+        else:
+            # Invoke the callable with the filtered arguments
+            result = self.callable(**filtered_args)
 
         return result
 

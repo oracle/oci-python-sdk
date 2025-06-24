@@ -17,6 +17,14 @@ class UpdateLoadBalancerDetails(object):
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
 
+    #: A constant which can be used with the ip_mode property of a UpdateLoadBalancerDetails.
+    #: This constant has a value of "IPV4"
+    IP_MODE_IPV4 = "IPV4"
+
+    #: A constant which can be used with the ip_mode property of a UpdateLoadBalancerDetails.
+    #: This constant has a value of "IPV6"
+    IP_MODE_IPV6 = "IPV6"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateLoadBalancerDetails object with values from keyword arguments.
@@ -25,6 +33,11 @@ class UpdateLoadBalancerDetails(object):
         :param display_name:
             The value to assign to the display_name property of this UpdateLoadBalancerDetails.
         :type display_name: str
+
+        :param ip_mode:
+            The value to assign to the ip_mode property of this UpdateLoadBalancerDetails.
+            Allowed values for this property are: "IPV4", "IPV6"
+        :type ip_mode: str
 
         :param is_delete_protection_enabled:
             The value to assign to the is_delete_protection_enabled property of this UpdateLoadBalancerDetails.
@@ -53,6 +66,7 @@ class UpdateLoadBalancerDetails(object):
         """
         self.swagger_types = {
             'display_name': 'str',
+            'ip_mode': 'str',
             'is_delete_protection_enabled': 'bool',
             'is_request_id_enabled': 'bool',
             'request_id_header': 'str',
@@ -62,6 +76,7 @@ class UpdateLoadBalancerDetails(object):
         }
         self.attribute_map = {
             'display_name': 'displayName',
+            'ip_mode': 'ipMode',
             'is_delete_protection_enabled': 'isDeleteProtectionEnabled',
             'is_request_id_enabled': 'isRequestIdEnabled',
             'request_id_header': 'requestIdHeader',
@@ -70,6 +85,7 @@ class UpdateLoadBalancerDetails(object):
             'security_attributes': 'securityAttributes'
         }
         self._display_name = None
+        self._ip_mode = None
         self._is_delete_protection_enabled = None
         self._is_request_id_enabled = None
         self._request_id_header = None
@@ -106,6 +122,49 @@ class UpdateLoadBalancerDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def ip_mode(self):
+        """
+        Gets the ip_mode of this UpdateLoadBalancerDetails.
+        Whether the load balancer has an IPv4 or IPv6 IP address.
+
+          If \"IPV4\", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
+
+          If \"IPV6\", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
+
+          Example: \"ipMode\":\"IPV6\"
+
+        Allowed values for this property are: "IPV4", "IPV6"
+
+
+        :return: The ip_mode of this UpdateLoadBalancerDetails.
+        :rtype: str
+        """
+        return self._ip_mode
+
+    @ip_mode.setter
+    def ip_mode(self, ip_mode):
+        """
+        Sets the ip_mode of this UpdateLoadBalancerDetails.
+        Whether the load balancer has an IPv4 or IPv6 IP address.
+
+          If \"IPV4\", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
+
+          If \"IPV6\", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
+
+          Example: \"ipMode\":\"IPV6\"
+
+
+        :param ip_mode: The ip_mode of this UpdateLoadBalancerDetails.
+        :type: str
+        """
+        allowed_values = ["IPV4", "IPV6"]
+        if not value_allowed_none_or_none_sentinel(ip_mode, allowed_values):
+            raise ValueError(
+                f"Invalid value for `ip_mode`, must be None or one of {allowed_values}"
+            )
+        self._ip_mode = ip_mode
 
     @property
     def is_delete_protection_enabled(self):

@@ -55,6 +55,7 @@ Fleet Software Update
     oci.fleet_software_update.models.CreateServiceAvailabilityFactorBatchingStrategyDetails
     oci.fleet_software_update.models.CreateStageActionDetails
     oci.fleet_software_update.models.CreateStartTimeScheduleDetails
+    oci.fleet_software_update.models.CreateUpgradeFsuCycle
     oci.fleet_software_update.models.DatabaseTargetSummary
     oci.fleet_software_update.models.DbCollection
     oci.fleet_software_update.models.DbCompartmentIdFilter
@@ -170,6 +171,11 @@ Fleet Software Update
     oci.fleet_software_update.models.UpdateServiceAvailabilityFactorBatchingStrategyDetails
     oci.fleet_software_update.models.UpdateStageActionDetails
     oci.fleet_software_update.models.UpdateStartTimeScheduleDetails
+    oci.fleet_software_update.models.UpdateUpgradeFsuCycle
+    oci.fleet_software_update.models.UpgradeDbCollectionDetails
+    oci.fleet_software_update.models.UpgradeDetails
+    oci.fleet_software_update.models.UpgradeFsuCycle
+    oci.fleet_software_update.models.UpgradeGiCollectionDetails
     oci.fleet_software_update.models.VersionFsuTargetDetails
     oci.fleet_software_update.models.VmClusterTargetSummary
     oci.fleet_software_update.models.WorkRequest

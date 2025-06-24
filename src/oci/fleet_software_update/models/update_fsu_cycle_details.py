@@ -19,12 +19,17 @@ class UpdateFsuCycleDetails(object):
     #: This constant has a value of "PATCH"
     TYPE_PATCH = "PATCH"
 
+    #: A constant which can be used with the type property of a UpdateFsuCycleDetails.
+    #: This constant has a value of "UPGRADE"
+    TYPE_UPGRADE = "UPGRADE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateFsuCycleDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.fleet_software_update.models.UpdatePatchFsuCycle`
+        * :class:`~oci.fleet_software_update.models.UpdateUpgradeFsuCycle`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -34,7 +39,7 @@ class UpdateFsuCycleDetails(object):
 
         :param type:
             The value to assign to the type property of this UpdateFsuCycleDetails.
-            Allowed values for this property are: "PATCH"
+            Allowed values for this property are: "PATCH", "UPGRADE"
         :type type: str
 
         :param goal_version_details:
@@ -94,6 +99,9 @@ class UpdateFsuCycleDetails(object):
 
         if type == 'PATCH':
             return 'UpdatePatchFsuCycle'
+
+        if type == 'UPGRADE':
+            return 'UpdateUpgradeFsuCycle'
         else:
             return 'UpdateFsuCycleDetails'
 
@@ -129,7 +137,7 @@ class UpdateFsuCycleDetails(object):
         This will not change the Maintenance Cycle type, it is to define the set of properties that can be updated depending on the Cycle type.
         Type value should match the Maintenance Cycle type.
 
-        Allowed values for this property are: "PATCH"
+        Allowed values for this property are: "PATCH", "UPGRADE"
 
 
         :return: The type of this UpdateFsuCycleDetails.
@@ -149,7 +157,7 @@ class UpdateFsuCycleDetails(object):
         :param type: The type of this UpdateFsuCycleDetails.
         :type: str
         """
-        allowed_values = ["PATCH"]
+        allowed_values = ["PATCH", "UPGRADE"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             raise ValueError(
                 f"Invalid value for `type`, must be None or one of {allowed_values}"

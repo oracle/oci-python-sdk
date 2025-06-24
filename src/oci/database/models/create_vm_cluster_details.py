@@ -304,7 +304,7 @@ class CreateVmClusterDetails(object):
     def cpu_core_count(self):
         """
         **[Required]** Gets the cpu_core_count of this CreateVmClusterDetails.
-        The number of CPU cores to enable for the VM cluster.
+        The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster.
 
 
         :return: The cpu_core_count of this CreateVmClusterDetails.
@@ -316,7 +316,7 @@ class CreateVmClusterDetails(object):
     def cpu_core_count(self, cpu_core_count):
         """
         Sets the cpu_core_count of this CreateVmClusterDetails.
-        The number of CPU cores to enable for the VM cluster.
+        The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster.
 
 
         :param cpu_core_count: The cpu_core_count of this CreateVmClusterDetails.

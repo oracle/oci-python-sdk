@@ -1,7 +1,7 @@
 # coding: utf-8
 # Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
-
+import inspect
 from functools import wraps
 
 from oci.addons.adk.util import get_callable_description
@@ -19,8 +19,17 @@ def tool(func=None, *, name=None, description=None):
 
     def decorator(func):
         @wraps(func)
-        def wrapper(*args, **kwargs):
+        def sync_wrapper(*args, **kwargs):
             return func(*args, **kwargs)
+
+        @wraps(func)
+        async def async_wrapper(*args, **kwargs):
+            return await func(*args, **kwargs)
+
+        if inspect.iscoroutinefunction(func):
+            wrapper = async_wrapper
+        else:
+            wrapper = sync_wrapper
 
         # wrap the function with tool metadata
         wrapper._is_tool = True

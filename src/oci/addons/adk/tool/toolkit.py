@@ -128,7 +128,16 @@ class Toolkit(BaseModel):
                 self._add_function_tool_from_openai(attr, matching_openai_tool)
             else:
                 # Create FunctionTool from method decoration
-                self._add_function_tool(attr)
+                self._add_function_tool_from_callable(attr)
+
+    def add_function_tool(self, func_tool: FunctionTool) -> None:
+        """Add a function tool to the toolkit."""
+        self.functions[func_tool.name] = func_tool
+
+    def add_function_tools(self, func_tools: list[FunctionTool]) -> None:
+        """Add a list of function tools to the toolkit."""
+        for func_tool in func_tools:
+            self.add_function_tool(func_tool)
 
     def get_registered_tools(self) -> List[FunctionTool]:
         """Return a list of all registered tools in the toolkit."""
@@ -155,7 +164,7 @@ class Toolkit(BaseModel):
             f"Executing mock function implementation with received arguments: {args}"
         )
 
-    def _add_function_tool(self, callable: Callable[..., Any]) -> None:
+    def _add_function_tool_from_callable(self, callable: Callable[..., Any]) -> None:
         """Internal method to add a function as a tool to the toolkit.
 
         Args:

@@ -49,6 +49,14 @@ class LoadBalancer(object):
     #: This constant has a value of "DELETED"
     LIFECYCLE_STATE_DELETED = "DELETED"
 
+    #: A constant which can be used with the ip_mode property of a LoadBalancer.
+    #: This constant has a value of "IPV4"
+    IP_MODE_IPV4 = "IPV4"
+
+    #: A constant which can be used with the ip_mode property of a LoadBalancer.
+    #: This constant has a value of "IPV6"
+    IP_MODE_IPV6 = "IPV6"
+
     def __init__(self, **kwargs):
         """
         Initializes a new LoadBalancer object with values from keyword arguments.
@@ -160,6 +168,12 @@ class LoadBalancer(object):
             The value to assign to the routing_policies property of this LoadBalancer.
         :type routing_policies: dict(str, RoutingPolicy)
 
+        :param ip_mode:
+            The value to assign to the ip_mode property of this LoadBalancer.
+            Allowed values for this property are: "IPV4", "IPV6", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type ip_mode: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -187,7 +201,8 @@ class LoadBalancer(object):
             'security_attributes': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
             'rule_sets': 'dict(str, RuleSet)',
-            'routing_policies': 'dict(str, RoutingPolicy)'
+            'routing_policies': 'dict(str, RoutingPolicy)',
+            'ip_mode': 'str'
         }
         self.attribute_map = {
             'id': 'id',
@@ -215,7 +230,8 @@ class LoadBalancer(object):
             'security_attributes': 'securityAttributes',
             'system_tags': 'systemTags',
             'rule_sets': 'ruleSets',
-            'routing_policies': 'routingPolicies'
+            'routing_policies': 'routingPolicies',
+            'ip_mode': 'ipMode'
         }
         self._id = None
         self._compartment_id = None
@@ -243,6 +259,7 @@ class LoadBalancer(object):
         self._system_tags = None
         self._rule_sets = None
         self._routing_policies = None
+        self._ip_mode = None
 
     @property
     def id(self):
@@ -1007,6 +1024,48 @@ class LoadBalancer(object):
         :type: dict(str, RoutingPolicy)
         """
         self._routing_policies = routing_policies
+
+    @property
+    def ip_mode(self):
+        """
+        Gets the ip_mode of this LoadBalancer.
+        Whether the load balancer has an IPv4 or IPv6 IP address.
+
+          If \"IPV4\", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
+
+          If \"IPV6\", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
+
+          Example: \"ipMode\":\"IPV6\"
+
+        Allowed values for this property are: "IPV4", "IPV6", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The ip_mode of this LoadBalancer.
+        :rtype: str
+        """
+        return self._ip_mode
+
+    @ip_mode.setter
+    def ip_mode(self, ip_mode):
+        """
+        Sets the ip_mode of this LoadBalancer.
+        Whether the load balancer has an IPv4 or IPv6 IP address.
+
+          If \"IPV4\", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
+
+          If \"IPV6\", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
+
+          Example: \"ipMode\":\"IPV6\"
+
+
+        :param ip_mode: The ip_mode of this LoadBalancer.
+        :type: str
+        """
+        allowed_values = ["IPV4", "IPV6"]
+        if not value_allowed_none_or_none_sentinel(ip_mode, allowed_values):
+            ip_mode = 'UNKNOWN_ENUM_VALUE'
+        self._ip_mode = ip_mode
 
     def __repr__(self):
         return formatted_flat_dict(self)

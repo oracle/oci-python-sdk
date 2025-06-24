@@ -8,15 +8,19 @@ from __future__ import absolute_import
 
 from .change_table_compartment_details import ChangeTableCompartmentDetails
 from .column import Column
+from .configuration import Configuration
 from .create_index_details import CreateIndexDetails
 from .create_replica_details import CreateReplicaDetails
 from .create_table_details import CreateTableDetails
 from .delete_row_result import DeleteRowResult
+from .hosted_configuration import HostedConfiguration
 from .identity import Identity
 from .index import Index
 from .index_collection import IndexCollection
 from .index_key import IndexKey
 from .index_summary import IndexSummary
+from .kms_key import KmsKey
+from .multi_tenancy_configuration import MultiTenancyConfiguration
 from .prepared_statement import PreparedStatement
 from .query_details import QueryDetails
 from .query_result_collection import QueryResultCollection
@@ -31,6 +35,9 @@ from .table_limits import TableLimits
 from .table_summary import TableSummary
 from .table_usage_collection import TableUsageCollection
 from .table_usage_summary import TableUsageSummary
+from .update_configuration_details import UpdateConfigurationDetails
+from .update_hosted_configuration_details import UpdateHostedConfigurationDetails
+from .update_multi_tenancy_configuration_details import UpdateMultiTenancyConfigurationDetails
 from .update_row_details import UpdateRowDetails
 from .update_row_result import UpdateRowResult
 from .update_table_details import UpdateTableDetails
@@ -47,15 +54,19 @@ from .work_request_summary import WorkRequestSummary
 nosql_type_mapping = {
     "ChangeTableCompartmentDetails": ChangeTableCompartmentDetails,
     "Column": Column,
+    "Configuration": Configuration,
     "CreateIndexDetails": CreateIndexDetails,
     "CreateReplicaDetails": CreateReplicaDetails,
     "CreateTableDetails": CreateTableDetails,
     "DeleteRowResult": DeleteRowResult,
+    "HostedConfiguration": HostedConfiguration,
     "Identity": Identity,
     "Index": Index,
     "IndexCollection": IndexCollection,
     "IndexKey": IndexKey,
     "IndexSummary": IndexSummary,
+    "KmsKey": KmsKey,
+    "MultiTenancyConfiguration": MultiTenancyConfiguration,
     "PreparedStatement": PreparedStatement,
     "QueryDetails": QueryDetails,
     "QueryResultCollection": QueryResultCollection,
@@ -70,6 +81,9 @@ nosql_type_mapping = {
     "TableSummary": TableSummary,
     "TableUsageCollection": TableUsageCollection,
     "TableUsageSummary": TableUsageSummary,
+    "UpdateConfigurationDetails": UpdateConfigurationDetails,
+    "UpdateHostedConfigurationDetails": UpdateHostedConfigurationDetails,
+    "UpdateMultiTenancyConfigurationDetails": UpdateMultiTenancyConfigurationDetails,
     "UpdateRowDetails": UpdateRowDetails,
     "UpdateRowResult": UpdateRowResult,
     "UpdateTableDetails": UpdateTableDetails,
