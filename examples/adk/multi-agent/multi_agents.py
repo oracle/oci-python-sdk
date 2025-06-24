@@ -26,7 +26,7 @@ def main():
     # A shared client for all agents
     client = AgentClient(
         auth_type="security_token",
-        profile="DEFAULT",
+        profile="BoatOc1",
         region="us-chicago-1"
     )
 

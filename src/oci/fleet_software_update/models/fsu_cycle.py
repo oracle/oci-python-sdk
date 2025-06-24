@@ -19,6 +19,10 @@ class FsuCycle(object):
     #: This constant has a value of "PATCH"
     TYPE_PATCH = "PATCH"
 
+    #: A constant which can be used with the type property of a FsuCycle.
+    #: This constant has a value of "UPGRADE"
+    TYPE_UPGRADE = "UPGRADE"
+
     #: A constant which can be used with the collection_type property of a FsuCycle.
     #: This constant has a value of "DB"
     COLLECTION_TYPE_DB = "DB"
@@ -117,6 +121,7 @@ class FsuCycle(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.fleet_software_update.models.PatchFsuCycle`
+        * :class:`~oci.fleet_software_update.models.UpgradeFsuCycle`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -134,7 +139,7 @@ class FsuCycle(object):
 
         :param type:
             The value to assign to the type property of this FsuCycle.
-            Allowed values for this property are: "PATCH", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PATCH", "UPGRADE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -314,6 +319,9 @@ class FsuCycle(object):
 
         if type == 'PATCH':
             return 'PatchFsuCycle'
+
+        if type == 'UPGRADE':
+            return 'UpgradeFsuCycle'
         else:
             return 'FsuCycle'
 
@@ -395,7 +403,7 @@ class FsuCycle(object):
         **[Required]** Gets the type of this FsuCycle.
         Type of Exadata Fleet Update Cycle.
 
-        Allowed values for this property are: "PATCH", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PATCH", "UPGRADE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -414,7 +422,7 @@ class FsuCycle(object):
         :param type: The type of this FsuCycle.
         :type: str
         """
-        allowed_values = ["PATCH"]
+        allowed_values = ["PATCH", "UPGRADE"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type

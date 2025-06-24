@@ -95,11 +95,15 @@ if __name__ == "__main__":
 
 ## Examples Directory Overview
 
-| Example | Description |
-|---------|-------------|
-| `single-agent-single-tool` | Minimal agent with single function tool |
-| `single-agent-multiple-tools` | Minimal agent with multiple function tools |
-| `multi-turn` | Minimal agent with multiple user turns |
-| `multi-agent` | Collaborative agents with workflow orchestration |
-| `deterministic-workflow` | Predictable execution patterns for business processes |
-| `lifecycle-hook` | Custom handlers for agent state transitions |
+| Example                             | Description                                                                               |
+|-------------------------------------|-------------------------------------------------------------------------------------------|
+| `single-agent-single-tool`          | Minimal agent with single function tool                                                   |
+| `single-agent-multiple-tools`       | Minimal agent with multiple function tools                                                |
+| `mcp-custom-server-stdio`           | Agent configured with a local stdio based mcp server                                      |
+| `mcp-custom-server-streamable-http` | Agent configured with a local streamable http mcp server                                  |
+| `single-agent-mcp-server`           | An agent uses local filesystem & time mcp tools to list how old local files are           |
+| `multi-agent-mcp-server`            | Two agents, one using a mcp fileserver and another a content writer generate blog content |
+| `multi-turn`                        | Minimal agent with multiple user turns                                                    |
+| `multi-agent`                       | Collaborative agents with workflow orchestration                                          |
+| `deterministic-workflow`            | Predictable execution patterns for business processes                                     |
+| `lifecycle-hook`                    | Custom handlers for agent state transitions                                               |

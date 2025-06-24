@@ -59,6 +59,10 @@ class CreateLoadBalancerDetails(object):
             Allowed values for this property are: "IPV4", "IPV6"
         :type ip_mode: str
 
+        :param ipv6_subnet_cidr:
+            The value to assign to the ipv6_subnet_cidr property of this CreateLoadBalancerDetails.
+        :type ipv6_subnet_cidr: str
+
         :param is_request_id_enabled:
             The value to assign to the is_request_id_enabled property of this CreateLoadBalancerDetails.
         :type is_request_id_enabled: bool
@@ -128,6 +132,7 @@ class CreateLoadBalancerDetails(object):
             'is_private': 'bool',
             'is_delete_protection_enabled': 'bool',
             'ip_mode': 'str',
+            'ipv6_subnet_cidr': 'str',
             'is_request_id_enabled': 'bool',
             'request_id_header': 'str',
             'reserved_ips': 'list[ReservedIP]',
@@ -152,6 +157,7 @@ class CreateLoadBalancerDetails(object):
             'is_private': 'isPrivate',
             'is_delete_protection_enabled': 'isDeleteProtectionEnabled',
             'ip_mode': 'ipMode',
+            'ipv6_subnet_cidr': 'ipv6SubnetCidr',
             'is_request_id_enabled': 'isRequestIdEnabled',
             'request_id_header': 'requestIdHeader',
             'reserved_ips': 'reservedIps',
@@ -175,6 +181,7 @@ class CreateLoadBalancerDetails(object):
         self._is_private = None
         self._is_delete_protection_enabled = None
         self._ip_mode = None
+        self._ipv6_subnet_cidr = None
         self._is_request_id_enabled = None
         self._request_id_header = None
         self._reserved_ips = None
@@ -439,6 +446,38 @@ class CreateLoadBalancerDetails(object):
                 f"Invalid value for `ip_mode`, must be None or one of {allowed_values}"
             )
         self._ip_mode = ip_mode
+
+    @property
+    def ipv6_subnet_cidr(self):
+        """
+        Gets the ipv6_subnet_cidr of this CreateLoadBalancerDetails.
+        Applies to IPV6 LB creation only.
+
+        Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
+
+        Example: \"2002::1234:abcd:ffff:c0a8:101/64\"
+
+
+        :return: The ipv6_subnet_cidr of this CreateLoadBalancerDetails.
+        :rtype: str
+        """
+        return self._ipv6_subnet_cidr
+
+    @ipv6_subnet_cidr.setter
+    def ipv6_subnet_cidr(self, ipv6_subnet_cidr):
+        """
+        Sets the ipv6_subnet_cidr of this CreateLoadBalancerDetails.
+        Applies to IPV6 LB creation only.
+
+        Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
+
+        Example: \"2002::1234:abcd:ffff:c0a8:101/64\"
+
+
+        :param ipv6_subnet_cidr: The ipv6_subnet_cidr of this CreateLoadBalancerDetails.
+        :type: str
+        """
+        self._ipv6_subnet_cidr = ipv6_subnet_cidr
 
     @property
     def is_request_id_enabled(self):

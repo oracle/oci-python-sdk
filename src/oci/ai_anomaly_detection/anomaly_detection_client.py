@@ -159,7 +159,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
         operation_name = "cancel_work_request"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/WorkRequest/CancelWorkRequest"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -274,7 +274,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/aiPrivateEndpoints/{aiPrivateEndpointId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_ai_private_endpoint_compartment"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/AiPrivateEndpoint/ChangeAiPrivateEndpointCompartment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -394,7 +394,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/dataAssets/{dataAssetId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_data_asset_compartment"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DataAsset/ChangeDataAssetCompartment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -509,7 +509,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/detectAnomalyJobs/{detectAnomalyJobId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_detect_anomaly_job_compartment"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DetectAnomalyJob/ChangeDetectAnomalyJobCompartment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -626,7 +626,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/models/{modelId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_model_compartment"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Model/ChangeModelCompartment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -746,7 +746,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/projects/{projectId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_project_compartment"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Project/ChangeProjectCompartment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -856,7 +856,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/aiPrivateEndpoints"
         method = "POST"
         operation_name = "create_ai_private_endpoint"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/AiPrivateEndpoint/CreateAiPrivateEndpoint"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -952,7 +952,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/dataAssets"
         method = "POST"
         operation_name = "create_data_asset"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DataAsset/CreateDataAsset"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1058,7 +1058,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/detectAnomalyJobs"
         method = "POST"
         operation_name = "create_detect_anomaly_job"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DetectAnomalyJob/CreateDetectAnomalyJob"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1156,7 +1156,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/models"
         method = "POST"
         operation_name = "create_model"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Model/CreateModel"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1254,7 +1254,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/projects"
         method = "POST"
         operation_name = "create_project"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Project/CreateProject"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1352,7 +1352,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/aiPrivateEndpoints/{aiPrivateEndpointId}"
         method = "DELETE"
         operation_name = "delete_ai_private_endpoint"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/AiPrivateEndpoint/DeleteAiPrivateEndpoint"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1457,7 +1457,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/dataAssets/{dataAssetId}"
         method = "DELETE"
         operation_name = "delete_data_asset"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DataAsset/DeleteDataAsset"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1562,7 +1562,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/detectAnomalyJobs/{detectAnomalyJobId}"
         method = "DELETE"
         operation_name = "delete_detect_anomaly_job"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DetectAnomalyJob/DeleteDetectAnomalyJob"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1667,7 +1667,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/models/{modelId}"
         method = "DELETE"
         operation_name = "delete_model"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Model/DeleteModel"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1772,7 +1772,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/projects/{projectId}"
         method = "DELETE"
         operation_name = "delete_project"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Project/DeleteProject"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1892,7 +1892,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/actions/detectAnomalies"
         method = "POST"
         operation_name = "detect_anomalies"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Model/DetectAnomalies"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1985,7 +1985,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/aiPrivateEndpoints/{aiPrivateEndpointId}"
         method = "GET"
         operation_name = "get_ai_private_endpoint"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/AiPrivateEndpoint/GetAiPrivateEndpoint"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2083,7 +2083,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/dataAssets/{dataAssetId}"
         method = "GET"
         operation_name = "get_data_asset"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DataAsset/GetDataAsset"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2181,7 +2181,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/detectAnomalyJobs/{detectAnomalyJobId}"
         method = "GET"
         operation_name = "get_detect_anomaly_job"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DetectAnomalyJob/GetDetectAnomalyJob"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2279,7 +2279,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/models/{modelId}"
         method = "GET"
         operation_name = "get_model"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Model/GetModel"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2377,7 +2377,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/projects/{projectId}"
         method = "GET"
         operation_name = "get_project"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Project/GetProject"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2475,7 +2475,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/WorkRequest/GetWorkRequest"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2601,7 +2601,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/aiPrivateEndpoints"
         method = "GET"
         operation_name = "list_ai_private_endpoints"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/AiPrivateEndpointCollection/ListAiPrivateEndpoints"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2757,7 +2757,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/dataAssets"
         method = "GET"
         operation_name = "list_data_assets"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DataAssetCollection/ListDataAssets"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2919,7 +2919,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/detectAnomalyJobs"
         method = "GET"
         operation_name = "list_detect_anomaly_jobs"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DetectAnomalyJobCollection/ListDetectAnomalyJobs"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3082,7 +3082,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/models"
         method = "GET"
         operation_name = "list_models"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Model/ListModels"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3238,7 +3238,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/projects"
         method = "GET"
         operation_name = "list_projects"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Project/ListProjects"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3370,7 +3370,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/WorkRequestError/ListWorkRequestErrors"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3484,7 +3484,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/WorkRequestLogEntry/ListWorkRequestLogs"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3601,7 +3601,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/WorkRequest/ListWorkRequests"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3710,7 +3710,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/aiPrivateEndpoints/{aiPrivateEndpointId}"
         method = "PUT"
         operation_name = "update_ai_private_endpoint"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/AiPrivateEndpoint/UpdateAiPrivateEndpoint"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3820,7 +3820,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/dataAssets/{dataAssetId}"
         method = "PUT"
         operation_name = "update_data_asset"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DataAsset/UpdateDataAsset"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3932,7 +3932,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/detectAnomalyJobs/{detectAnomalyJobId}"
         method = "PUT"
         operation_name = "update_detect_anomaly_job"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DetectAnomalyJob/UpdateDetectAnomalyJob"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4044,7 +4044,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/models/{modelId}"
         method = "PUT"
         operation_name = "update_model"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Model/UpdateModel"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4154,7 +4154,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/projects/{projectId}"
         method = "PUT"
         operation_name = "update_project"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Project/UpdateProject"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [

@@ -20,15 +20,19 @@ Nosql
 
     oci.nosql.models.ChangeTableCompartmentDetails
     oci.nosql.models.Column
+    oci.nosql.models.Configuration
     oci.nosql.models.CreateIndexDetails
     oci.nosql.models.CreateReplicaDetails
     oci.nosql.models.CreateTableDetails
     oci.nosql.models.DeleteRowResult
+    oci.nosql.models.HostedConfiguration
     oci.nosql.models.Identity
     oci.nosql.models.Index
     oci.nosql.models.IndexCollection
     oci.nosql.models.IndexKey
     oci.nosql.models.IndexSummary
+    oci.nosql.models.KmsKey
+    oci.nosql.models.MultiTenancyConfiguration
     oci.nosql.models.PreparedStatement
     oci.nosql.models.QueryDetails
     oci.nosql.models.QueryResultCollection
@@ -43,6 +47,9 @@ Nosql
     oci.nosql.models.TableSummary
     oci.nosql.models.TableUsageCollection
     oci.nosql.models.TableUsageSummary
+    oci.nosql.models.UpdateConfigurationDetails
+    oci.nosql.models.UpdateHostedConfigurationDetails
+    oci.nosql.models.UpdateMultiTenancyConfigurationDetails
     oci.nosql.models.UpdateRowDetails
     oci.nosql.models.UpdateRowResult
     oci.nosql.models.UpdateTableDetails

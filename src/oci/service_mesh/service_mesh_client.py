@@ -157,7 +157,7 @@ class ServiceMeshClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
         operation_name = "cancel_work_request"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/WorkRequest/CancelWorkRequest"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -272,7 +272,7 @@ class ServiceMeshClient(object):
         resource_path = "/accessPolicies/{accessPolicyId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_access_policy_compartment"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/AccessPolicy/ChangeAccessPolicyCompartment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -392,7 +392,7 @@ class ServiceMeshClient(object):
         resource_path = "/ingressGateways/{ingressGatewayId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_ingress_gateway_compartment"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/IngressGateway/ChangeIngressGatewayCompartment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -512,7 +512,7 @@ class ServiceMeshClient(object):
         resource_path = "/ingressGatewayRouteTables/{ingressGatewayRouteTableId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_ingress_gateway_route_table_compartment"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/IngressGatewayRouteTable/ChangeIngressGatewayRouteTableCompartment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -632,7 +632,7 @@ class ServiceMeshClient(object):
         resource_path = "/meshes/{meshId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_mesh_compartment"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/Mesh/ChangeMeshCompartment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -752,7 +752,7 @@ class ServiceMeshClient(object):
         resource_path = "/virtualDeployments/{virtualDeploymentId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_virtual_deployment_compartment"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/VirtualDeployment/ChangeVirtualDeploymentCompartment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -872,7 +872,7 @@ class ServiceMeshClient(object):
         resource_path = "/virtualServices/{virtualServiceId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_virtual_service_compartment"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/VirtualService/ChangeVirtualServiceCompartment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -992,7 +992,7 @@ class ServiceMeshClient(object):
         resource_path = "/virtualServiceRouteTables/{virtualServiceRouteTableId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_virtual_service_route_table_compartment"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/VirtualServiceRouteTable/ChangeVirtualServiceRouteTableCompartment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1102,7 +1102,7 @@ class ServiceMeshClient(object):
         resource_path = "/accessPolicies"
         method = "POST"
         operation_name = "create_access_policy"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/AccessPolicy/CreateAccessPolicy"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1200,7 +1200,7 @@ class ServiceMeshClient(object):
         resource_path = "/ingressGateways"
         method = "POST"
         operation_name = "create_ingress_gateway"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/IngressGateway/CreateIngressGateway"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1298,7 +1298,7 @@ class ServiceMeshClient(object):
         resource_path = "/ingressGatewayRouteTables"
         method = "POST"
         operation_name = "create_ingress_gateway_route_table"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/IngressGatewayRouteTable/CreateIngressGatewayRouteTable"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1396,7 +1396,7 @@ class ServiceMeshClient(object):
         resource_path = "/meshes"
         method = "POST"
         operation_name = "create_mesh"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/Mesh/CreateMesh"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1494,7 +1494,7 @@ class ServiceMeshClient(object):
         resource_path = "/virtualDeployments"
         method = "POST"
         operation_name = "create_virtual_deployment"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/VirtualDeployment/CreateVirtualDeployment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1592,7 +1592,7 @@ class ServiceMeshClient(object):
         resource_path = "/virtualServices"
         method = "POST"
         operation_name = "create_virtual_service"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/VirtualService/CreateVirtualService"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1690,7 +1690,7 @@ class ServiceMeshClient(object):
         resource_path = "/virtualServiceRouteTables"
         method = "POST"
         operation_name = "create_virtual_service_route_table"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/VirtualServiceRouteTable/CreateVirtualServiceRouteTable"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1788,7 +1788,7 @@ class ServiceMeshClient(object):
         resource_path = "/accessPolicies/{accessPolicyId}"
         method = "DELETE"
         operation_name = "delete_access_policy"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/AccessPolicy/DeleteAccessPolicy"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1893,7 +1893,7 @@ class ServiceMeshClient(object):
         resource_path = "/ingressGateways/{ingressGatewayId}"
         method = "DELETE"
         operation_name = "delete_ingress_gateway"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/IngressGateway/DeleteIngressGateway"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1998,7 +1998,7 @@ class ServiceMeshClient(object):
         resource_path = "/ingressGatewayRouteTables/{ingressGatewayRouteTableId}"
         method = "DELETE"
         operation_name = "delete_ingress_gateway_route_table"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/IngressGatewayRouteTable/DeleteIngressGatewayRouteTable"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2103,7 +2103,7 @@ class ServiceMeshClient(object):
         resource_path = "/meshes/{meshId}"
         method = "DELETE"
         operation_name = "delete_mesh"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/Mesh/DeleteMesh"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2208,7 +2208,7 @@ class ServiceMeshClient(object):
         resource_path = "/virtualDeployments/{virtualDeploymentId}"
         method = "DELETE"
         operation_name = "delete_virtual_deployment"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/VirtualDeployment/DeleteVirtualDeployment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2313,7 +2313,7 @@ class ServiceMeshClient(object):
         resource_path = "/virtualServices/{virtualServiceId}"
         method = "DELETE"
         operation_name = "delete_virtual_service"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/VirtualService/DeleteVirtualService"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2418,7 +2418,7 @@ class ServiceMeshClient(object):
         resource_path = "/virtualServiceRouteTables/{virtualServiceRouteTableId}"
         method = "DELETE"
         operation_name = "delete_virtual_service_route_table"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/VirtualServiceRouteTable/DeleteVirtualServiceRouteTable"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2516,7 +2516,7 @@ class ServiceMeshClient(object):
         resource_path = "/accessPolicies/{accessPolicyId}"
         method = "GET"
         operation_name = "get_access_policy"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/AccessPolicy/GetAccessPolicy"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2614,7 +2614,7 @@ class ServiceMeshClient(object):
         resource_path = "/ingressGateways/{ingressGatewayId}"
         method = "GET"
         operation_name = "get_ingress_gateway"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/IngressGateway/GetIngressGateway"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2712,7 +2712,7 @@ class ServiceMeshClient(object):
         resource_path = "/ingressGatewayRouteTables/{ingressGatewayRouteTableId}"
         method = "GET"
         operation_name = "get_ingress_gateway_route_table"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/IngressGatewayRouteTable/GetIngressGatewayRouteTable"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2810,7 +2810,7 @@ class ServiceMeshClient(object):
         resource_path = "/meshes/{meshId}"
         method = "GET"
         operation_name = "get_mesh"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/Mesh/GetMesh"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2905,7 +2905,7 @@ class ServiceMeshClient(object):
         resource_path = "/proxyDetails"
         method = "GET"
         operation_name = "get_proxy_details"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/ProxyDetails/GetProxyDetails"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2991,7 +2991,7 @@ class ServiceMeshClient(object):
         resource_path = "/virtualDeployments/{virtualDeploymentId}"
         method = "GET"
         operation_name = "get_virtual_deployment"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/VirtualDeployment/GetVirtualDeployment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3089,7 +3089,7 @@ class ServiceMeshClient(object):
         resource_path = "/virtualServices/{virtualServiceId}"
         method = "GET"
         operation_name = "get_virtual_service"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/VirtualService/GetVirtualService"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3187,7 +3187,7 @@ class ServiceMeshClient(object):
         resource_path = "/virtualServiceRouteTables/{virtualServiceRouteTableId}"
         method = "GET"
         operation_name = "get_virtual_service_route_table"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/VirtualServiceRouteTable/GetVirtualServiceRouteTable"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3285,7 +3285,7 @@ class ServiceMeshClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/WorkRequest/GetWorkRequest"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3413,7 +3413,7 @@ class ServiceMeshClient(object):
         resource_path = "/accessPolicies"
         method = "GET"
         operation_name = "list_access_policies"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/AccessPolicy/ListAccessPolicies"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3573,7 +3573,7 @@ class ServiceMeshClient(object):
         resource_path = "/ingressGatewayRouteTables"
         method = "GET"
         operation_name = "list_ingress_gateway_route_tables"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/IngressGatewayRouteTable/ListIngressGatewayRouteTables"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3733,7 +3733,7 @@ class ServiceMeshClient(object):
         resource_path = "/ingressGateways"
         method = "GET"
         operation_name = "list_ingress_gateways"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/IngressGateway/ListIngressGateways"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3890,7 +3890,7 @@ class ServiceMeshClient(object):
         resource_path = "/meshes"
         method = "GET"
         operation_name = "list_meshes"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/Mesh/ListMeshes"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4048,7 +4048,7 @@ class ServiceMeshClient(object):
         resource_path = "/virtualDeployments"
         method = "GET"
         operation_name = "list_virtual_deployments"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/VirtualDeployment/ListVirtualDeployments"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4208,7 +4208,7 @@ class ServiceMeshClient(object):
         resource_path = "/virtualServiceRouteTables"
         method = "GET"
         operation_name = "list_virtual_service_route_tables"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/VirtualServiceRouteTable/ListVirtualServiceRouteTables"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4368,7 +4368,7 @@ class ServiceMeshClient(object):
         resource_path = "/virtualServices"
         method = "GET"
         operation_name = "list_virtual_services"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/VirtualService/ListVirtualServices"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4514,7 +4514,7 @@ class ServiceMeshClient(object):
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/WorkRequest/ListWorkRequestErrors"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4656,7 +4656,7 @@ class ServiceMeshClient(object):
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/WorkRequest/ListWorkRequestLogs"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4809,7 +4809,7 @@ class ServiceMeshClient(object):
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/WorkRequest/ListWorkRequests"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4954,7 +4954,7 @@ class ServiceMeshClient(object):
         resource_path = "/accessPolicies/{accessPolicyId}"
         method = "PUT"
         operation_name = "update_access_policy"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/AccessPolicy/UpdateAccessPolicy"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5074,7 +5074,7 @@ class ServiceMeshClient(object):
         resource_path = "/ingressGateways/{ingressGatewayId}"
         method = "PUT"
         operation_name = "update_ingress_gateway"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/IngressGateway/UpdateIngressGateway"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5194,7 +5194,7 @@ class ServiceMeshClient(object):
         resource_path = "/ingressGatewayRouteTables/{ingressGatewayRouteTableId}"
         method = "PUT"
         operation_name = "update_ingress_gateway_route_table"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/IngressGatewayRouteTable/UpdateIngressGatewayRouteTable"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5314,7 +5314,7 @@ class ServiceMeshClient(object):
         resource_path = "/meshes/{meshId}"
         method = "PUT"
         operation_name = "update_mesh"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/Mesh/UpdateMesh"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5434,7 +5434,7 @@ class ServiceMeshClient(object):
         resource_path = "/virtualDeployments/{virtualDeploymentId}"
         method = "PUT"
         operation_name = "update_virtual_deployment"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/VirtualDeployment/UpdateVirtualDeployment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5554,7 +5554,7 @@ class ServiceMeshClient(object):
         resource_path = "/virtualServices/{virtualServiceId}"
         method = "PUT"
         operation_name = "update_virtual_service"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/VirtualService/UpdateVirtualService"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5674,7 +5674,7 @@ class ServiceMeshClient(object):
         resource_path = "/virtualServiceRouteTables/{virtualServiceRouteTableId}"
         method = "PUT"
         operation_name = "update_virtual_service_route_table"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20220615/VirtualServiceRouteTable/UpdateVirtualServiceRouteTable"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [

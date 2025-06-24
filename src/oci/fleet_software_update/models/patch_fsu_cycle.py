@@ -35,7 +35,7 @@ class PatchFsuCycle(FsuCycle):
 
         :param type:
             The value to assign to the type property of this PatchFsuCycle.
-            Allowed values for this property are: "PATCH"
+            Allowed values for this property are: "PATCH", "UPGRADE"
         :type type: str
 
         :param fsu_collection_id:

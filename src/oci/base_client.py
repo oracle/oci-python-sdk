@@ -89,9 +89,12 @@ def _sanitize_headers_for_requests(headers):
     # Requests does not accept int or float values headers
     # Convert int, float and bool to string
     # Bools are automatically handled with this as bool is a subclass of int
+    # Convert a list of strings to csv string
     for header_name, header_value in six.iteritems(headers):
         if isinstance(header_value, six.integer_types) or isinstance(header_value, float):
             headers[header_name] = str(header_value)
+        if isinstance(header_value, list) and all(isinstance(item, str) for item in header_value):
+            headers[header_name] = ",".join(header_value)
     return headers
 
 

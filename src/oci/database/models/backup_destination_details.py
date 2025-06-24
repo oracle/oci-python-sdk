@@ -35,6 +35,10 @@ class BackupDestinationDetails(object):
     #: This constant has a value of "DBRS"
     TYPE_DBRS = "DBRS"
 
+    #: A constant which can be used with the type property of a BackupDestinationDetails.
+    #: This constant has a value of "AWS_S3"
+    TYPE_AWS_S3 = "AWS_S3"
+
     def __init__(self, **kwargs):
         """
         Initializes a new BackupDestinationDetails object with values from keyword arguments.
@@ -42,7 +46,7 @@ class BackupDestinationDetails(object):
 
         :param type:
             The value to assign to the type property of this BackupDestinationDetails.
-            Allowed values for this property are: "NFS", "RECOVERY_APPLIANCE", "OBJECT_STORE", "LOCAL", "DBRS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "NFS", "RECOVERY_APPLIANCE", "OBJECT_STORE", "LOCAL", "DBRS", "AWS_S3", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -110,7 +114,7 @@ class BackupDestinationDetails(object):
         **[Required]** Gets the type of this BackupDestinationDetails.
         Type of the database backup destination.
 
-        Allowed values for this property are: "NFS", "RECOVERY_APPLIANCE", "OBJECT_STORE", "LOCAL", "DBRS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "NFS", "RECOVERY_APPLIANCE", "OBJECT_STORE", "LOCAL", "DBRS", "AWS_S3", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -129,7 +133,7 @@ class BackupDestinationDetails(object):
         :param type: The type of this BackupDestinationDetails.
         :type: str
         """
-        allowed_values = ["NFS", "RECOVERY_APPLIANCE", "OBJECT_STORE", "LOCAL", "DBRS"]
+        allowed_values = ["NFS", "RECOVERY_APPLIANCE", "OBJECT_STORE", "LOCAL", "DBRS", "AWS_S3"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type

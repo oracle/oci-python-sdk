@@ -43,6 +43,7 @@ from .create_sequential_batching_strategy_details import CreateSequentialBatchin
 from .create_service_availability_factor_batching_strategy_details import CreateServiceAvailabilityFactorBatchingStrategyDetails
 from .create_stage_action_details import CreateStageActionDetails
 from .create_start_time_schedule_details import CreateStartTimeScheduleDetails
+from .create_upgrade_fsu_cycle import CreateUpgradeFsuCycle
 from .database_target_summary import DatabaseTargetSummary
 from .db_collection import DbCollection
 from .db_compartment_id_filter import DbCompartmentIdFilter
@@ -158,6 +159,11 @@ from .update_sequential_batching_strategy_details import UpdateSequentialBatchin
 from .update_service_availability_factor_batching_strategy_details import UpdateServiceAvailabilityFactorBatchingStrategyDetails
 from .update_stage_action_details import UpdateStageActionDetails
 from .update_start_time_schedule_details import UpdateStartTimeScheduleDetails
+from .update_upgrade_fsu_cycle import UpdateUpgradeFsuCycle
+from .upgrade_db_collection_details import UpgradeDbCollectionDetails
+from .upgrade_details import UpgradeDetails
+from .upgrade_fsu_cycle import UpgradeFsuCycle
+from .upgrade_gi_collection_details import UpgradeGiCollectionDetails
 from .version_fsu_target_details import VersionFsuTargetDetails
 from .vm_cluster_target_summary import VmClusterTargetSummary
 from .work_request import WorkRequest
@@ -208,6 +214,7 @@ fleet_software_update_type_mapping = {
     "CreateServiceAvailabilityFactorBatchingStrategyDetails": CreateServiceAvailabilityFactorBatchingStrategyDetails,
     "CreateStageActionDetails": CreateStageActionDetails,
     "CreateStartTimeScheduleDetails": CreateStartTimeScheduleDetails,
+    "CreateUpgradeFsuCycle": CreateUpgradeFsuCycle,
     "DatabaseTargetSummary": DatabaseTargetSummary,
     "DbCollection": DbCollection,
     "DbCompartmentIdFilter": DbCompartmentIdFilter,
@@ -323,6 +330,11 @@ fleet_software_update_type_mapping = {
     "UpdateServiceAvailabilityFactorBatchingStrategyDetails": UpdateServiceAvailabilityFactorBatchingStrategyDetails,
     "UpdateStageActionDetails": UpdateStageActionDetails,
     "UpdateStartTimeScheduleDetails": UpdateStartTimeScheduleDetails,
+    "UpdateUpgradeFsuCycle": UpdateUpgradeFsuCycle,
+    "UpgradeDbCollectionDetails": UpgradeDbCollectionDetails,
+    "UpgradeDetails": UpgradeDetails,
+    "UpgradeFsuCycle": UpgradeFsuCycle,
+    "UpgradeGiCollectionDetails": UpgradeGiCollectionDetails,
     "VersionFsuTargetDetails": VersionFsuTargetDetails,
     "VmClusterTargetSummary": VmClusterTargetSummary,
     "WorkRequest": WorkRequest,

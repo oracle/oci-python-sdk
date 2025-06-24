@@ -27,7 +27,7 @@ class UpdatePatchFsuCycle(UpdateFsuCycleDetails):
 
         :param type:
             The value to assign to the type property of this UpdatePatchFsuCycle.
-            Allowed values for this property are: "PATCH"
+            Allowed values for this property are: "PATCH", "UPGRADE"
         :type type: str
 
         :param goal_version_details:

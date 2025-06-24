@@ -5,8 +5,9 @@
 """
 ADK Main Agent models
 """
-
+import asyncio
 import json
+
 import time
 from typing import Any, Callable, Dict, List, Optional, Union
 
@@ -171,6 +172,60 @@ class Agent:
         Returns:
             RunResponse containing the final result
         """
+        loop = asyncio.get_event_loop()
+        return loop.run_until_complete(
+            self.run_async(
+                input,
+                session_name,
+                session_description,
+                session_id,
+                delete_session,
+                max_steps,
+                on_fulfilled_required_action,
+                on_invoked_remote_service,
+                **kwargs,
+            ),
+        )
+
+    async def run_async(
+            self,
+            input: str,
+            session_name: Optional[str] = None,
+            session_description: Optional[str] = None,
+            session_id: Optional[str] = None,
+            delete_session: Optional[bool] = False,
+            max_steps: int = 10,
+            on_fulfilled_required_action: Optional[
+                Callable[[RequiredAction, PerformedAction | None], None]
+            ] = None,
+            on_invoked_remote_service: Optional[
+                Callable[[Dict[str, Any], Dict[str, Any]], None]
+            ] = None,
+            **kwargs: Optional[Dict[str, Any]],
+    ) -> RunResponse:
+        """
+        Run the agent's react loop asynchronously to process the user message.
+
+        Args:
+            input: The user input to process
+            session_name: Name for the processing session
+            session_description: Description of the processing session
+            session_id: Optional session ID for the processing session
+                - if session_id is not provided,
+                    the API contract means a new session should be created
+                - otherwise, the API contract means
+                    we should reuse the provided session id
+                    (for same session multi-turn chat)
+            delete_session: Optional flag to delete the session after run
+                (default: False)
+            max_steps: Maximum number of steps before terminating
+            on_fulfilled_required_action: Optional callback function
+                to handle fulfilled required actions
+            on_invoked_remote_service: Optional callback function
+                to handle invoked remote services
+        Returns:
+            RunResponse containing the final result
+        """
         try:
             raw_responses: List[RawResponse] = []
             # if session_id is not provided, create a new one
@@ -198,7 +253,7 @@ class Agent:
 
             step_count = 0
             while self._has_required_actions(response) and step_count < max_steps:
-                performed_actions = self._handle_required_actions(
+                performed_actions = await self._handle_required_actions(
                     response, on_fulfilled_required_action
                 )
                 # put a dummy user message before server bug fix
@@ -224,7 +279,6 @@ class Agent:
         except Exception as e:
             logger.error(f"Error during agent execution: {e}", exc_info=True)
             raise
-
         finally:
             if delete_session and session_id:
                 self.client.delete_session(
@@ -254,30 +308,27 @@ class Agent:
             A FunctionTool representing this agent
         """
         # Use provided tool name or agent name, or fall back to a default
-        name = (
-            tool_name or
-            self.name or
-            self.client.get_agent(self.agent_details["agent_id"]).get("display_name", None) or
-            "run_sub_agent"
-        )
+        name = (tool_name or self.name or
+                self.client.get_agent(self.agent_details["agent_id"]).get("display_name", None) or
+                "run_sub_agent"
+                )
 
         # Use provided description, or fall back to an empty string
         description = (
-            tool_description or
-            self.description or
-            self.client.get_agent(self.agent_details["agent_id"]).get("description", None) or
-            ""
+            tool_description or self.description or
+            self.client.get_agent(self.agent_details["agent_id"])
+            .get("description", None) or ""
         )
 
         # Create a decorated wrapper function using the @tool decorator
         @tool(name=name, description=description)
-        def agent_run_wrapper(input: str, **kwargs) -> Dict[str, Any] | None:
+        async def agent_async_run_wrapper(input: str, **kwargs) -> Dict[str, Any] | None:
             """Execute this agent with the given user input and additional params."""
-            response = self.run(input=input, **kwargs)
+            response = await self.run_async(input=input, **kwargs)
             return response.data
 
         # Create a FunctionTool from the wrapper
-        return FunctionTool.from_callable(agent_run_wrapper)
+        return FunctionTool.from_callable(agent_async_run_wrapper)
 
     def create_session(
         self,
@@ -395,7 +446,7 @@ class Agent:
         count = 0
         while (
             self.client.get_agent(self.agent_details["agent_id"])
-            .get("lifecycle_state") != "ACTIVE"
+                .get("lifecycle_state") != "ACTIVE"
         ):
             time.sleep(5)
             logger.info(f"Waiting for agent {self.agent_details['agent_id']} to be active...")
@@ -520,8 +571,7 @@ class Agent:
         remote_func_tools = [
             tool
             for tool in remote_func_tools
-            if tool.get("lifecycle_state") == "ACTIVE" and
-            tool.get("tool_config", {})
+            if tool.get("lifecycle_state") == "ACTIVE" and tool.get("tool_config", {})
             .get("tool_config_type") == "FUNCTION_CALLING_TOOL_CONFIG"
         ]
         self._log_tool_counts(local_func_tools, remote_func_tools)
@@ -541,8 +591,7 @@ class Agent:
         )
         # Filter for active RAG tools with ADK tags
         remote_rag_tools = [
-            tool
-            for tool in remote_rag_tools
+            tool for tool in remote_rag_tools
             if tool.get("lifecycle_state") == "ACTIVE" and
             set(FREEFORM_TAGS.keys()).issubset(tool.get("freeform_tags", {}).keys()) and
             tool.get("tool_config", {}).get("tool_config_type") == "RAG_TOOL_CONFIG"
@@ -579,8 +628,8 @@ class Agent:
         # Add local tools to remote
         for local_tool in local_tools:
             if all(
-                diff_local_and_remote_tool(local_tool, remote_tool)
-                for remote_tool in remote_tools
+                    diff_local_and_remote_tool(local_tool, remote_tool)
+                    for remote_tool in remote_tools
             ):
                 logger.info(f"Adding local tool {local_tool.name} to remote...")
                 if isinstance(local_tool, FunctionTool):
@@ -645,7 +694,7 @@ class Agent:
         """Check if the response contains required actions."""
         return response.get("required_actions") is not None
 
-    def _handle_required_actions(
+    async def _handle_required_actions(
         self,
         response: Dict[str, Any],
         on_fulfilled_required_action: Optional[
@@ -671,7 +720,7 @@ class Agent:
                 required_action.required_action_type ==
                 "FUNCTION_CALLING_REQUIRED_ACTION"
             ):
-                performed_action = self._execute_function_call(
+                performed_action = await self._execute_function_call(
                     required_action.function_call, required_action.action_id
                 )
                 if performed_action:
@@ -681,7 +730,7 @@ class Agent:
 
         return performed_actions
 
-    def _execute_function_call(
+    async def _execute_function_call(
         self, function_call: FunctionCall, action_id: str
     ) -> Optional[PerformedAction]:
         """
@@ -716,13 +765,13 @@ class Agent:
             self._log_function_execution_start(
                 handler.name, handler.callable.__name__, function_args
             )
-            result = handler.execute(function_args)
+            result = await handler.execute(function_args)
             self._log_function_execution_result(result)
 
             return PerformedAction(
                 action_id=action_id,
                 performed_action_type="FUNCTION_CALLING_PERFORMED_ACTION",
-                function_call_output=json.dumps(result),
+                function_call_output=result if isinstance(result, str) else json.dumps(result, default=str),
             )
 
         except Exception as e:
@@ -749,20 +798,20 @@ class Agent:
         if not performed_actions:
             actions = []
         else:
-            actions = [action.model_dump(by_alias=True) for action in performed_actions]
+            actions = [action.model_dump(mode='json', by_alias=True) for action in performed_actions]
 
         message_text = (
             f"(Local --> Remote)\n\n"
             f"user message:\n"
             f"[bold green]{message}[/bold green]\n\n"
             f"performed actions by client:\n"
-            f"[bold magenta]{json.dumps(actions, indent=4)}[/bold magenta]\n\n"  # noqa: E501
+            f"[bold magenta]{actions}[/bold magenta]\n\n"  # noqa: E501
             f"session id:\n"
             f"[bold cyan]{session_id}[/bold cyan]"
         )
         logger.print(
             message_text,
-            title="Chat request to remote agent",
+            title=f"Chat request to remote agent: {self.name}",
             border_style="blue",
             expand=False,
         )
@@ -845,7 +894,8 @@ class Agent:
             f"Local function tools ({len(local_tools)}):\n"
             f"[bold green]{sorted([tool.name for tool in local_tools])}[/bold green]\n\n"  # noqa: E501
             f"Remote function tools ({len(remote_tools)}):\n"
-            f"[bold cyan]{sorted([tool['tool_config']['function']['name'] for tool in remote_tools])}[/bold cyan]"  # noqa: E501
+            f"[bold cyan]{sorted([tool['tool_config']['function']['name'] for tool in remote_tools])}[/bold cyan]"
+            # noqa: E501
         )
         logger.print(
             message_text,

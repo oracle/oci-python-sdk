@@ -19,12 +19,17 @@ class CreateFsuCycleDetails(object):
     #: This constant has a value of "PATCH"
     TYPE_PATCH = "PATCH"
 
+    #: A constant which can be used with the type property of a CreateFsuCycleDetails.
+    #: This constant has a value of "UPGRADE"
+    TYPE_UPGRADE = "UPGRADE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateFsuCycleDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.fleet_software_update.models.CreatePatchFsuCycle`
+        * :class:`~oci.fleet_software_update.models.CreateUpgradeFsuCycle`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -38,7 +43,7 @@ class CreateFsuCycleDetails(object):
 
         :param type:
             The value to assign to the type property of this CreateFsuCycleDetails.
-            Allowed values for this property are: "PATCH"
+            Allowed values for this property are: "PATCH", "UPGRADE"
         :type type: str
 
         :param fsu_collection_id:
@@ -122,6 +127,9 @@ class CreateFsuCycleDetails(object):
 
         if type == 'PATCH':
             return 'CreatePatchFsuCycle'
+
+        if type == 'UPGRADE':
+            return 'CreateUpgradeFsuCycle'
         else:
             return 'CreateFsuCycleDetails'
 
@@ -179,7 +187,7 @@ class CreateFsuCycleDetails(object):
         **[Required]** Gets the type of this CreateFsuCycleDetails.
         Type of Exadata Fleet Update Cycle.
 
-        Allowed values for this property are: "PATCH"
+        Allowed values for this property are: "PATCH", "UPGRADE"
 
 
         :return: The type of this CreateFsuCycleDetails.
@@ -197,7 +205,7 @@ class CreateFsuCycleDetails(object):
         :param type: The type of this CreateFsuCycleDetails.
         :type: str
         """
-        allowed_values = ["PATCH"]
+        allowed_values = ["PATCH", "UPGRADE"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             raise ValueError(
                 f"Invalid value for `type`, must be None or one of {allowed_values}"

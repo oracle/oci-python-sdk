@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.154.3 - 2025-06-24
+====================
+
+Added 
+----- 
+* Support for database backups to Amazon S3 as default option for all databases running on Exa@AWS in the Database service 
+* Support for customer-managed encryption keys in hosted environments in the NoSQL Database service 
+* Support for upgrading a fleet of Grid Infrastructure and Databases to 23ai for ExaCS and ExaCC in the Exadata Fleet Update service 
+* Support for Bring Your Own IPv6 (BYOIPv6) in the Load Balancer service   
+
+====================
 2.154.2 - 2025-06-17
 ====================
 

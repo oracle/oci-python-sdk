@@ -91,6 +91,10 @@ class Backup(object):
     #: This constant has a value of "DBRS"
     BACKUP_DESTINATION_TYPE_DBRS = "DBRS"
 
+    #: A constant which can be used with the backup_destination_type property of a Backup.
+    #: This constant has a value of "AWS_S3"
+    BACKUP_DESTINATION_TYPE_AWS_S3 = "AWS_S3"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Backup object with values from keyword arguments.
@@ -200,7 +204,7 @@ class Backup(object):
 
         :param backup_destination_type:
             The value to assign to the backup_destination_type property of this Backup.
-            Allowed values for this property are: "OBJECT_STORE", "DBRS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "OBJECT_STORE", "DBRS", "AWS_S3", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type backup_destination_type: str
 
@@ -916,7 +920,7 @@ class Backup(object):
         Gets the backup_destination_type of this Backup.
         Type of the backup destination.
 
-        Allowed values for this property are: "OBJECT_STORE", "DBRS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "OBJECT_STORE", "DBRS", "AWS_S3", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -935,7 +939,7 @@ class Backup(object):
         :param backup_destination_type: The backup_destination_type of this Backup.
         :type: str
         """
-        allowed_values = ["OBJECT_STORE", "DBRS"]
+        allowed_values = ["OBJECT_STORE", "DBRS", "AWS_S3"]
         if not value_allowed_none_or_none_sentinel(backup_destination_type, allowed_values):
             backup_destination_type = 'UNKNOWN_ENUM_VALUE'
         self._backup_destination_type = backup_destination_type
