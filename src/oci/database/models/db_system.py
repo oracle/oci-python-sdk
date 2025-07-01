@@ -310,6 +310,10 @@ class DbSystem(object):
             The value to assign to the defined_tags property of this DbSystem.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this DbSystem.
+        :type system_tags: dict(str, dict(str, object))
+
         :param security_attributes:
             The value to assign to the security_attributes property of this DbSystem.
         :type security_attributes: dict(str, dict(str, object))
@@ -377,6 +381,7 @@ class DbSystem(object):
             'next_maintenance_run_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))',
             'security_attributes': 'dict(str, dict(str, object))',
             'source_db_system_id': 'str',
             'point_in_time_data_disk_clone_timestamp': 'datetime',
@@ -432,6 +437,7 @@ class DbSystem(object):
             'next_maintenance_run_id': 'nextMaintenanceRunId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'system_tags': 'systemTags',
             'security_attributes': 'securityAttributes',
             'source_db_system_id': 'sourceDbSystemId',
             'point_in_time_data_disk_clone_timestamp': 'pointInTimeDataDiskCloneTimestamp',
@@ -486,6 +492,7 @@ class DbSystem(object):
         self._next_maintenance_run_id = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
         self._security_attributes = None
         self._source_db_system_id = None
         self._point_in_time_data_disk_clone_timestamp = None
@@ -1840,6 +1847,36 @@ class DbSystem(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this DbSystem.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The system_tags of this DbSystem.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this DbSystem.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param system_tags: The system_tags of this DbSystem.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     @property
     def security_attributes(self):

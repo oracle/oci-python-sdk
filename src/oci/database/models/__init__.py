@@ -73,6 +73,7 @@ from .autonomous_vm_cluster_summary import AutonomousVmClusterSummary
 from .autonomous_vm_resource_usage import AutonomousVmResourceUsage
 from .avm_acd_resource_stats import AvmAcdResourceStats
 from .aws_key_details import AwsKeyDetails
+from .azure_encryption_key_details import AzureEncryptionKeyDetails
 from .azure_key_details import AzureKeyDetails
 from .backup import Backup
 from .backup_destination import BackupDestination
@@ -87,6 +88,7 @@ from .change_autonomous_database_software_image_compartment_details import Chang
 from .change_autonomous_database_subscription_details import ChangeAutonomousDatabaseSubscriptionDetails
 from .change_autonomous_vm_cluster_compartment_details import ChangeAutonomousVmClusterCompartmentDetails
 from .change_cloud_autonomous_vm_cluster_compartment_details import ChangeCloudAutonomousVmClusterCompartmentDetails
+from .change_cloud_autonomous_vm_cluster_subscription_details import ChangeCloudAutonomousVmClusterSubscriptionDetails
 from .change_cloud_exadata_infrastructure_compartment_details import ChangeCloudExadataInfrastructureCompartmentDetails
 from .change_cloud_exadata_infrastructure_subscription_details import ChangeCloudExadataInfrastructureSubscriptionDetails
 from .change_cloud_vm_cluster_compartment_details import ChangeCloudVmClusterCompartmentDetails
@@ -331,6 +333,7 @@ from .generate_recommended_network_details import GenerateRecommendedNetworkDeta
 from .gi_minor_version_summary import GiMinorVersionSummary
 from .gi_version_summary import GiVersionSummary
 from .granular_maintenance_history_details import GranularMaintenanceHistoryDetails
+from .identity_connector_details import IdentityConnectorDetails
 from .info_for_network_gen_details import InfoForNetworkGenDetails
 from .infrastructure_target_version import InfrastructureTargetVersion
 from .infrastructure_target_version_summary import InfrastructureTargetVersionSummary
@@ -389,6 +392,7 @@ from .recovery_appliance_details import RecoveryApplianceDetails
 from .refreshable_clone_collection import RefreshableCloneCollection
 from .refreshable_clone_summary import RefreshableCloneSummary
 from .register_autonomous_database_data_safe_details import RegisterAutonomousDatabaseDataSafeDetails
+from .register_cloud_vm_cluster_pkcs_details import RegisterCloudVmClusterPkcsDetails
 from .reinstate_data_guard_association_details import ReinstateDataGuardAssociationDetails
 from .reinstate_data_guard_details import ReinstateDataGuardDetails
 from .remote_clone_pluggable_database_details import RemoteClonePluggableDatabaseDetails
@@ -398,6 +402,8 @@ from .remove_virtual_machine_from_vm_cluster_details import RemoveVirtualMachine
 from .reorder_execution_action_details import ReorderExecutionActionDetails
 from .reorder_scheduled_actions_details import ReorderScheduledActionsDetails
 from .resize_vm_cluster_network_details import ResizeVmClusterNetworkDetails
+from .resource_pool_member_collection import ResourcePoolMemberCollection
+from .resource_pool_member_summary import ResourcePoolMemberSummary
 from .resource_pool_shape_collection import ResourcePoolShapeCollection
 from .resource_pool_shape_summary import ResourcePoolShapeSummary
 from .resource_pool_summary import ResourcePoolSummary
@@ -434,6 +440,7 @@ from .system_version_minor_version_collection import SystemVersionMinorVersionCo
 from .system_version_minor_version_summary import SystemVersionMinorVersionSummary
 from .system_version_summary import SystemVersionSummary
 from .undelete_autonomous_database_details import UndeleteAutonomousDatabaseDetails
+from .unregister_cloud_vm_cluster_pkcs_details import UnregisterCloudVmClusterPkcsDetails
 from .update import Update
 from .update_autonomous_container_database_data_guard_association_details import UpdateAutonomousContainerDatabaseDataGuardAssociationDetails
 from .update_autonomous_container_database_details import UpdateAutonomousContainerDatabaseDetails
@@ -566,6 +573,7 @@ database_type_mapping = {
     "AutonomousVmResourceUsage": AutonomousVmResourceUsage,
     "AvmAcdResourceStats": AvmAcdResourceStats,
     "AwsKeyDetails": AwsKeyDetails,
+    "AzureEncryptionKeyDetails": AzureEncryptionKeyDetails,
     "AzureKeyDetails": AzureKeyDetails,
     "Backup": Backup,
     "BackupDestination": BackupDestination,
@@ -580,6 +588,7 @@ database_type_mapping = {
     "ChangeAutonomousDatabaseSubscriptionDetails": ChangeAutonomousDatabaseSubscriptionDetails,
     "ChangeAutonomousVmClusterCompartmentDetails": ChangeAutonomousVmClusterCompartmentDetails,
     "ChangeCloudAutonomousVmClusterCompartmentDetails": ChangeCloudAutonomousVmClusterCompartmentDetails,
+    "ChangeCloudAutonomousVmClusterSubscriptionDetails": ChangeCloudAutonomousVmClusterSubscriptionDetails,
     "ChangeCloudExadataInfrastructureCompartmentDetails": ChangeCloudExadataInfrastructureCompartmentDetails,
     "ChangeCloudExadataInfrastructureSubscriptionDetails": ChangeCloudExadataInfrastructureSubscriptionDetails,
     "ChangeCloudVmClusterCompartmentDetails": ChangeCloudVmClusterCompartmentDetails,
@@ -824,6 +833,7 @@ database_type_mapping = {
     "GiMinorVersionSummary": GiMinorVersionSummary,
     "GiVersionSummary": GiVersionSummary,
     "GranularMaintenanceHistoryDetails": GranularMaintenanceHistoryDetails,
+    "IdentityConnectorDetails": IdentityConnectorDetails,
     "InfoForNetworkGenDetails": InfoForNetworkGenDetails,
     "InfrastructureTargetVersion": InfrastructureTargetVersion,
     "InfrastructureTargetVersionSummary": InfrastructureTargetVersionSummary,
@@ -882,6 +892,7 @@ database_type_mapping = {
     "RefreshableCloneCollection": RefreshableCloneCollection,
     "RefreshableCloneSummary": RefreshableCloneSummary,
     "RegisterAutonomousDatabaseDataSafeDetails": RegisterAutonomousDatabaseDataSafeDetails,
+    "RegisterCloudVmClusterPkcsDetails": RegisterCloudVmClusterPkcsDetails,
     "ReinstateDataGuardAssociationDetails": ReinstateDataGuardAssociationDetails,
     "ReinstateDataGuardDetails": ReinstateDataGuardDetails,
     "RemoteClonePluggableDatabaseDetails": RemoteClonePluggableDatabaseDetails,
@@ -891,6 +902,8 @@ database_type_mapping = {
     "ReorderExecutionActionDetails": ReorderExecutionActionDetails,
     "ReorderScheduledActionsDetails": ReorderScheduledActionsDetails,
     "ResizeVmClusterNetworkDetails": ResizeVmClusterNetworkDetails,
+    "ResourcePoolMemberCollection": ResourcePoolMemberCollection,
+    "ResourcePoolMemberSummary": ResourcePoolMemberSummary,
     "ResourcePoolShapeCollection": ResourcePoolShapeCollection,
     "ResourcePoolShapeSummary": ResourcePoolShapeSummary,
     "ResourcePoolSummary": ResourcePoolSummary,
@@ -927,6 +940,7 @@ database_type_mapping = {
     "SystemVersionMinorVersionSummary": SystemVersionMinorVersionSummary,
     "SystemVersionSummary": SystemVersionSummary,
     "UndeleteAutonomousDatabaseDetails": UndeleteAutonomousDatabaseDetails,
+    "UnregisterCloudVmClusterPkcsDetails": UnregisterCloudVmClusterPkcsDetails,
     "Update": Update,
     "UpdateAutonomousContainerDatabaseDataGuardAssociationDetails": UpdateAutonomousContainerDatabaseDataGuardAssociationDetails,
     "UpdateAutonomousContainerDatabaseDetails": UpdateAutonomousContainerDatabaseDetails,

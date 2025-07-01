@@ -193,6 +193,10 @@ class Backup(object):
             The value to assign to the time_copy_created property of this Backup.
         :type time_copy_created: datetime
 
+        :param encrypt_data:
+            The value to assign to the encrypt_data property of this Backup.
+        :type encrypt_data: oci.mysql.models.EncryptDataDetails
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -218,7 +222,8 @@ class Backup(object):
             'system_tags': 'dict(str, dict(str, object))',
             'immediate_source_backup_id': 'str',
             'original_source_backup_id': 'str',
-            'time_copy_created': 'datetime'
+            'time_copy_created': 'datetime',
+            'encrypt_data': 'EncryptDataDetails'
         }
         self.attribute_map = {
             'id': 'id',
@@ -244,7 +249,8 @@ class Backup(object):
             'system_tags': 'systemTags',
             'immediate_source_backup_id': 'immediateSourceBackupId',
             'original_source_backup_id': 'originalSourceBackupId',
-            'time_copy_created': 'timeCopyCreated'
+            'time_copy_created': 'timeCopyCreated',
+            'encrypt_data': 'encryptData'
         }
         self._id = None
         self._display_name = None
@@ -270,6 +276,7 @@ class Backup(object):
         self._immediate_source_backup_id = None
         self._original_source_backup_id = None
         self._time_copy_created = None
+        self._encrypt_data = None
 
     @property
     def id(self):
@@ -878,6 +885,26 @@ class Backup(object):
         :type: datetime
         """
         self._time_copy_created = time_copy_created
+
+    @property
+    def encrypt_data(self):
+        """
+        Gets the encrypt_data of this Backup.
+
+        :return: The encrypt_data of this Backup.
+        :rtype: oci.mysql.models.EncryptDataDetails
+        """
+        return self._encrypt_data
+
+    @encrypt_data.setter
+    def encrypt_data(self, encrypt_data):
+        """
+        Sets the encrypt_data of this Backup.
+
+        :param encrypt_data: The encrypt_data of this Backup.
+        :type: oci.mysql.models.EncryptDataDetails
+        """
+        self._encrypt_data = encrypt_data
 
     def __repr__(self):
         return formatted_flat_dict(self)

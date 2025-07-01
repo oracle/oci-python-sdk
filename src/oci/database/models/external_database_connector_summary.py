@@ -42,6 +42,10 @@ class ExternalDatabaseConnectorSummary(object):
             The value to assign to the defined_tags property of this ExternalDatabaseConnectorSummary.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this ExternalDatabaseConnectorSummary.
+        :type system_tags: dict(str, dict(str, object))
+
         :param display_name:
             The value to assign to the display_name property of this ExternalDatabaseConnectorSummary.
         :type display_name: str
@@ -85,6 +89,7 @@ class ExternalDatabaseConnectorSummary(object):
             'compartment_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'id': 'str',
             'lifecycle_state': 'str',
@@ -99,6 +104,7 @@ class ExternalDatabaseConnectorSummary(object):
             'compartment_id': 'compartmentId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'system_tags': 'systemTags',
             'display_name': 'displayName',
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
@@ -112,6 +118,7 @@ class ExternalDatabaseConnectorSummary(object):
         self._compartment_id = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
         self._display_name = None
         self._id = None
         self._lifecycle_state = None
@@ -226,6 +233,36 @@ class ExternalDatabaseConnectorSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this ExternalDatabaseConnectorSummary.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The system_tags of this ExternalDatabaseConnectorSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this ExternalDatabaseConnectorSummary.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param system_tags: The system_tags of this ExternalDatabaseConnectorSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     @property
     def display_name(self):

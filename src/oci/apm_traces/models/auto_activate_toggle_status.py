@@ -19,6 +19,14 @@ class AutoActivateToggleStatus(object):
     #: This constant has a value of "SUCCESS"
     STATUS_SUCCESS = "SUCCESS"
 
+    #: A constant which can be used with the state property of a AutoActivateToggleStatus.
+    #: This constant has a value of "ON"
+    STATE_ON = "ON"
+
+    #: A constant which can be used with the state property of a AutoActivateToggleStatus.
+    #: This constant has a value of "OFF"
+    STATE_OFF = "OFF"
+
     #: A constant which can be used with the data_key property of a AutoActivateToggleStatus.
     #: This constant has a value of "PRIVATE_DATA_KEY"
     DATA_KEY_PRIVATE_DATA_KEY = "PRIVATE_DATA_KEY"
@@ -40,6 +48,8 @@ class AutoActivateToggleStatus(object):
 
         :param state:
             The value to assign to the state property of this AutoActivateToggleStatus.
+            Allowed values for this property are: "ON", "OFF", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type state: str
 
         :param data_key:
@@ -99,6 +109,9 @@ class AutoActivateToggleStatus(object):
         **[Required]** Gets the state of this AutoActivateToggleStatus.
         State of autoactivation in this APM Domain.  If \"ON\" auto-activate is set to true, if \"OFF\" auto-activate is set to false.
 
+        Allowed values for this property are: "ON", "OFF", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
 
         :return: The state of this AutoActivateToggleStatus.
         :rtype: str
@@ -115,6 +128,9 @@ class AutoActivateToggleStatus(object):
         :param state: The state of this AutoActivateToggleStatus.
         :type: str
         """
+        allowed_values = ["ON", "OFF"]
+        if not value_allowed_none_or_none_sentinel(state, allowed_values):
+            state = 'UNKNOWN_ENUM_VALUE'
         self._state = state
 
     @property

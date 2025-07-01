@@ -15,6 +15,14 @@ class AutoActivateStatus(object):
     Status of autoactivation for the given data key in the APM Domain.
     """
 
+    #: A constant which can be used with the state property of a AutoActivateStatus.
+    #: This constant has a value of "ON"
+    STATE_ON = "ON"
+
+    #: A constant which can be used with the state property of a AutoActivateStatus.
+    #: This constant has a value of "OFF"
+    STATE_OFF = "OFF"
+
     #: A constant which can be used with the data_key property of a AutoActivateStatus.
     #: This constant has a value of "PRIVATE_DATA_KEY"
     DATA_KEY_PRIVATE_DATA_KEY = "PRIVATE_DATA_KEY"
@@ -30,6 +38,8 @@ class AutoActivateStatus(object):
 
         :param state:
             The value to assign to the state property of this AutoActivateStatus.
+            Allowed values for this property are: "ON", "OFF", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type state: str
 
         :param data_key:
@@ -56,6 +66,9 @@ class AutoActivateStatus(object):
         **[Required]** Gets the state of this AutoActivateStatus.
         State of autoactivation in this APM Domain.  If \"ON\" auto-activate is set to true, if \"OFF\" auto-activate is set to false.
 
+        Allowed values for this property are: "ON", "OFF", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
 
         :return: The state of this AutoActivateStatus.
         :rtype: str
@@ -72,6 +85,9 @@ class AutoActivateStatus(object):
         :param state: The state of this AutoActivateStatus.
         :type: str
         """
+        allowed_values = ["ON", "OFF"]
+        if not value_allowed_none_or_none_sentinel(state, allowed_values):
+            state = 'UNKNOWN_ENUM_VALUE'
         self._state = state
 
     @property

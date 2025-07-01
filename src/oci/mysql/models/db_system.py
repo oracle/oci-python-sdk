@@ -242,6 +242,10 @@ class DbSystem(object):
             The value to assign to the secure_connections property of this DbSystem.
         :type secure_connections: oci.mysql.models.SecureConnectionDetails
 
+        :param encrypt_data:
+            The value to assign to the encrypt_data property of this DbSystem.
+        :type encrypt_data: oci.mysql.models.EncryptDataDetails
+
         :param database_mode:
             The value to assign to the database_mode property of this DbSystem.
             Allowed values for this property are: "READ_WRITE", "READ_ONLY", 'UNKNOWN_ENUM_VALUE'.
@@ -303,6 +307,7 @@ class DbSystem(object):
             'point_in_time_recovery_details': 'PointInTimeRecoveryDetails',
             'database_management': 'str',
             'secure_connections': 'SecureConnectionDetails',
+            'encrypt_data': 'EncryptDataDetails',
             'database_mode': 'str',
             'access_mode': 'str',
             'customer_contacts': 'list[CustomerContact]',
@@ -348,6 +353,7 @@ class DbSystem(object):
             'point_in_time_recovery_details': 'pointInTimeRecoveryDetails',
             'database_management': 'databaseManagement',
             'secure_connections': 'secureConnections',
+            'encrypt_data': 'encryptData',
             'database_mode': 'databaseMode',
             'access_mode': 'accessMode',
             'customer_contacts': 'customerContacts',
@@ -392,6 +398,7 @@ class DbSystem(object):
         self._point_in_time_recovery_details = None
         self._database_management = None
         self._secure_connections = None
+        self._encrypt_data = None
         self._database_mode = None
         self._access_mode = None
         self._customer_contacts = None
@@ -1364,6 +1371,26 @@ class DbSystem(object):
         :type: oci.mysql.models.SecureConnectionDetails
         """
         self._secure_connections = secure_connections
+
+    @property
+    def encrypt_data(self):
+        """
+        Gets the encrypt_data of this DbSystem.
+
+        :return: The encrypt_data of this DbSystem.
+        :rtype: oci.mysql.models.EncryptDataDetails
+        """
+        return self._encrypt_data
+
+    @encrypt_data.setter
+    def encrypt_data(self, encrypt_data):
+        """
+        Sets the encrypt_data of this DbSystem.
+
+        :param encrypt_data: The encrypt_data of this DbSystem.
+        :type: oci.mysql.models.EncryptDataDetails
+        """
+        self._encrypt_data = encrypt_data
 
     @property
     def database_mode(self):

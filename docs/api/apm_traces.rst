@@ -8,9 +8,11 @@ Apm Traces
 
     oci.apm_traces.AttributesClient
     oci.apm_traces.QueryClient
+    oci.apm_traces.ScheduledQueryClient
     oci.apm_traces.TraceClient
     oci.apm_traces.AttributesClientCompositeOperations
     oci.apm_traces.QueryClientCompositeOperations
+    oci.apm_traces.ScheduledQueryClientCompositeOperations
     oci.apm_traces.TraceClientCompositeOperations
 
 --------
@@ -24,6 +26,8 @@ Apm Traces
 
     oci.apm_traces.models.AggregatedSnapshot
     oci.apm_traces.models.AggregatedStackTrace
+    oci.apm_traces.models.Attribute
+    oci.apm_traces.models.AttributeMetadata
     oci.apm_traces.models.AttributePinResponse
     oci.apm_traces.models.AttributeResponse
     oci.apm_traces.models.AttributeUnpinResponse
@@ -55,6 +59,10 @@ Apm Traces
     oci.apm_traces.models.BulkUpdateAttributeStatus
     oci.apm_traces.models.BulkUpdateNotesMetadata
     oci.apm_traces.models.BulkUpdateNotesStatus
+    oci.apm_traces.models.CreateScheduledQueryDetails
+    oci.apm_traces.models.CustomMetric
+    oci.apm_traces.models.Log
+    oci.apm_traces.models.ObjectStorage
     oci.apm_traces.models.QueryDetails
     oci.apm_traces.models.QueryResultMetadataSummary
     oci.apm_traces.models.QueryResultResponse
@@ -66,12 +74,17 @@ Apm Traces
     oci.apm_traces.models.QueryResultsTopologyInfo
     oci.apm_traces.models.QueryResultsTopologyNodeInfo
     oci.apm_traces.models.QuickPickSummary
+    oci.apm_traces.models.ScheduledQuery
+    oci.apm_traces.models.ScheduledQueryCollection
+    oci.apm_traces.models.ScheduledQueryProcessingConfig
+    oci.apm_traces.models.ScheduledQuerySummary
     oci.apm_traces.models.SnapshotDetail
     oci.apm_traces.models.Span
     oci.apm_traces.models.SpanLog
     oci.apm_traces.models.SpanLogCollection
     oci.apm_traces.models.SpanSnapshot
     oci.apm_traces.models.StackTraceElement
+    oci.apm_traces.models.Streaming
     oci.apm_traces.models.Tag
     oci.apm_traces.models.TagMetadata
     oci.apm_traces.models.ThreadSnapshot
@@ -79,3 +92,4 @@ Apm Traces
     oci.apm_traces.models.TraceServiceSummary
     oci.apm_traces.models.TraceSnapshot
     oci.apm_traces.models.TraceSpanSummary
+    oci.apm_traces.models.UpdateScheduledQueryDetails

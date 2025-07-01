@@ -35,6 +35,10 @@ class ExternalMacsConnectorSummary(ExternalDatabaseConnectorSummary):
             The value to assign to the defined_tags property of this ExternalMacsConnectorSummary.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this ExternalMacsConnectorSummary.
+        :type system_tags: dict(str, dict(str, object))
+
         :param display_name:
             The value to assign to the display_name property of this ExternalMacsConnectorSummary.
         :type display_name: str
@@ -89,6 +93,7 @@ class ExternalMacsConnectorSummary(ExternalDatabaseConnectorSummary):
             'compartment_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'id': 'str',
             'lifecycle_state': 'str',
@@ -106,6 +111,7 @@ class ExternalMacsConnectorSummary(ExternalDatabaseConnectorSummary):
             'compartment_id': 'compartmentId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'system_tags': 'systemTags',
             'display_name': 'displayName',
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
@@ -122,6 +128,7 @@ class ExternalMacsConnectorSummary(ExternalDatabaseConnectorSummary):
         self._compartment_id = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
         self._display_name = None
         self._id = None
         self._lifecycle_state = None

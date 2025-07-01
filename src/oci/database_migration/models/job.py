@@ -112,6 +112,10 @@ class Job(object):
             The value to assign to the parameter_file_versions property of this Job.
         :type parameter_file_versions: list[oci.database_migration.models.ParameterFileVersionSummary]
 
+        :param collect_traces_data:
+            The value to assign to the collect_traces_data property of this Job.
+        :type collect_traces_data: oci.database_migration.models.CollectTracesData
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this Job.
         :type freeform_tags: dict(str, str)
@@ -137,6 +141,7 @@ class Job(object):
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'parameter_file_versions': 'list[ParameterFileVersionSummary]',
+            'collect_traces_data': 'CollectTracesData',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -153,6 +158,7 @@ class Job(object):
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'parameter_file_versions': 'parameterFileVersions',
+            'collect_traces_data': 'collectTracesData',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -168,6 +174,7 @@ class Job(object):
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._parameter_file_versions = None
+        self._collect_traces_data = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -445,6 +452,26 @@ class Job(object):
         :type: list[oci.database_migration.models.ParameterFileVersionSummary]
         """
         self._parameter_file_versions = parameter_file_versions
+
+    @property
+    def collect_traces_data(self):
+        """
+        Gets the collect_traces_data of this Job.
+
+        :return: The collect_traces_data of this Job.
+        :rtype: oci.database_migration.models.CollectTracesData
+        """
+        return self._collect_traces_data
+
+    @collect_traces_data.setter
+    def collect_traces_data(self, collect_traces_data):
+        """
+        Sets the collect_traces_data of this Job.
+
+        :param collect_traces_data: The collect_traces_data of this Job.
+        :type: oci.database_migration.models.CollectTracesData
+        """
+        self._collect_traces_data = collect_traces_data
 
     @property
     def freeform_tags(self):

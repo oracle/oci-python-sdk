@@ -118,6 +118,10 @@ class BackupDestination(object):
             The value to assign to the defined_tags property of this BackupDestination.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this BackupDestination.
+        :type system_tags: dict(str, dict(str, object))
+
         :param total_storage_size_in_gbs:
             The value to assign to the total_storage_size_in_gbs property of this BackupDestination.
         :type total_storage_size_in_gbs: int
@@ -148,6 +152,7 @@ class BackupDestination(object):
             'lifecycle_details': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))',
             'total_storage_size_in_gbs': 'int',
             'utilized_storage_size_in_gbs': 'int',
             'time_at_which_storage_details_are_updated': 'datetime'
@@ -169,6 +174,7 @@ class BackupDestination(object):
             'lifecycle_details': 'lifecycleDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'system_tags': 'systemTags',
             'total_storage_size_in_gbs': 'totalStorageSizeInGBs',
             'utilized_storage_size_in_gbs': 'utilizedStorageSizeInGBs',
             'time_at_which_storage_details_are_updated': 'timeAtWhichStorageDetailsAreUpdated'
@@ -189,6 +195,7 @@ class BackupDestination(object):
         self._lifecycle_details = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
         self._total_storage_size_in_gbs = None
         self._utilized_storage_size_in_gbs = None
         self._time_at_which_storage_details_are_updated = None
@@ -620,6 +627,36 @@ class BackupDestination(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this BackupDestination.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The system_tags of this BackupDestination.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this BackupDestination.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param system_tags: The system_tags of this BackupDestination.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     @property
     def total_storage_size_in_gbs(self):

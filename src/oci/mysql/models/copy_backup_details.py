@@ -44,6 +44,10 @@ class CopyBackupDetails(object):
             The value to assign to the source_region property of this CopyBackupDetails.
         :type source_region: str
 
+        :param encrypt_data:
+            The value to assign to the encrypt_data property of this CopyBackupDetails.
+        :type encrypt_data: oci.mysql.models.EncryptDataDetails
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -51,7 +55,8 @@ class CopyBackupDetails(object):
             'display_name': 'str',
             'backup_copy_retention_in_days': 'int',
             'source_backup_id': 'str',
-            'source_region': 'str'
+            'source_region': 'str',
+            'encrypt_data': 'EncryptDataDetails'
         }
         self.attribute_map = {
             'compartment_id': 'compartmentId',
@@ -59,7 +64,8 @@ class CopyBackupDetails(object):
             'display_name': 'displayName',
             'backup_copy_retention_in_days': 'backupCopyRetentionInDays',
             'source_backup_id': 'sourceBackupId',
-            'source_region': 'sourceRegion'
+            'source_region': 'sourceRegion',
+            'encrypt_data': 'encryptData'
         }
         self._compartment_id = None
         self._description = None
@@ -67,6 +73,7 @@ class CopyBackupDetails(object):
         self._backup_copy_retention_in_days = None
         self._source_backup_id = None
         self._source_region = None
+        self._encrypt_data = None
 
     @property
     def compartment_id(self):
@@ -229,6 +236,26 @@ class CopyBackupDetails(object):
         :type: str
         """
         self._source_region = source_region
+
+    @property
+    def encrypt_data(self):
+        """
+        Gets the encrypt_data of this CopyBackupDetails.
+
+        :return: The encrypt_data of this CopyBackupDetails.
+        :rtype: oci.mysql.models.EncryptDataDetails
+        """
+        return self._encrypt_data
+
+    @encrypt_data.setter
+    def encrypt_data(self, encrypt_data):
+        """
+        Sets the encrypt_data of this CopyBackupDetails.
+
+        :param encrypt_data: The encrypt_data of this CopyBackupDetails.
+        :type: oci.mysql.models.EncryptDataDetails
+        """
+        self._encrypt_data = encrypt_data
 
     def __repr__(self):
         return formatted_flat_dict(self)

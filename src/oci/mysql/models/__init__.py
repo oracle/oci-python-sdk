@@ -61,6 +61,7 @@ from .db_system_source_from_pitr import DbSystemSourceFromPitr
 from .db_system_source_import_from_url import DbSystemSourceImportFromUrl
 from .db_system_summary import DbSystemSummary
 from .deletion_policy_details import DeletionPolicyDetails
+from .encrypt_data_details import EncryptDataDetails
 from .error_on_anonymous_handling import ErrorOnAnonymousHandling
 from .heat_wave_cluster import HeatWaveCluster
 from .heat_wave_cluster_memory_estimate import HeatWaveClusterMemoryEstimate
@@ -162,6 +163,7 @@ mysql_type_mapping = {
     "DbSystemSourceImportFromUrl": DbSystemSourceImportFromUrl,
     "DbSystemSummary": DbSystemSummary,
     "DeletionPolicyDetails": DeletionPolicyDetails,
+    "EncryptDataDetails": EncryptDataDetails,
     "ErrorOnAnonymousHandling": ErrorOnAnonymousHandling,
     "HeatWaveCluster": HeatWaveCluster,
     "HeatWaveClusterMemoryEstimate": HeatWaveClusterMemoryEstimate,

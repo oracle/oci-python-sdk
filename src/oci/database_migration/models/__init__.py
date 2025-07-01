@@ -16,6 +16,8 @@ from .advisor_report_location_details import AdvisorReportLocationDetails
 from .change_connection_compartment_details import ChangeConnectionCompartmentDetails
 from .change_migration_compartment_details import ChangeMigrationCompartmentDetails
 from .clone_migration_details import CloneMigrationDetails
+from .collect_traces_data import CollectTracesData
+from .collect_traces_details import CollectTracesDetails
 from .connection import Connection
 from .connection_collection import ConnectionCollection
 from .connection_summary import ConnectionSummary
@@ -191,6 +193,8 @@ database_migration_type_mapping = {
     "ChangeConnectionCompartmentDetails": ChangeConnectionCompartmentDetails,
     "ChangeMigrationCompartmentDetails": ChangeMigrationCompartmentDetails,
     "CloneMigrationDetails": CloneMigrationDetails,
+    "CollectTracesData": CollectTracesData,
+    "CollectTracesDetails": CollectTracesDetails,
     "Connection": Connection,
     "ConnectionCollection": ConnectionCollection,
     "ConnectionSummary": ConnectionSummary,

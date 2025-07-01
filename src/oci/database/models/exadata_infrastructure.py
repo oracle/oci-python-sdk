@@ -310,6 +310,10 @@ class ExadataInfrastructure(object):
             The value to assign to the defined_tags property of this ExadataInfrastructure.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this ExadataInfrastructure.
+        :type system_tags: dict(str, dict(str, object))
+
         :param is_scheduling_policy_associated:
             The value to assign to the is_scheduling_policy_associated property of this ExadataInfrastructure.
         :type is_scheduling_policy_associated: bool
@@ -383,6 +387,7 @@ class ExadataInfrastructure(object):
             'defined_file_system_configurations': 'list[DefinedFileSystemConfiguration]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))',
             'is_scheduling_policy_associated': 'bool',
             'exascale_config': 'ExascaleConfigDetails',
             'database_server_type': 'str',
@@ -439,6 +444,7 @@ class ExadataInfrastructure(object):
             'defined_file_system_configurations': 'definedFileSystemConfigurations',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'system_tags': 'systemTags',
             'is_scheduling_policy_associated': 'isSchedulingPolicyAssociated',
             'exascale_config': 'exascaleConfig',
             'database_server_type': 'databaseServerType',
@@ -494,6 +500,7 @@ class ExadataInfrastructure(object):
         self._defined_file_system_configurations = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
         self._is_scheduling_policy_associated = None
         self._exascale_config = None
         self._database_server_type = None
@@ -1729,6 +1736,36 @@ class ExadataInfrastructure(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this ExadataInfrastructure.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The system_tags of this ExadataInfrastructure.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this ExadataInfrastructure.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param system_tags: The system_tags of this ExadataInfrastructure.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     @property
     def is_scheduling_policy_associated(self):

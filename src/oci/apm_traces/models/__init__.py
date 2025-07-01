@@ -8,6 +8,8 @@ from __future__ import absolute_import
 
 from .aggregated_snapshot import AggregatedSnapshot
 from .aggregated_stack_trace import AggregatedStackTrace
+from .attribute import Attribute
+from .attribute_metadata import AttributeMetadata
 from .attribute_pin_response import AttributePinResponse
 from .attribute_response import AttributeResponse
 from .attribute_unpin_response import AttributeUnpinResponse
@@ -39,6 +41,10 @@ from .bulk_update_attribute_notes_details import BulkUpdateAttributeNotesDetails
 from .bulk_update_attribute_status import BulkUpdateAttributeStatus
 from .bulk_update_notes_metadata import BulkUpdateNotesMetadata
 from .bulk_update_notes_status import BulkUpdateNotesStatus
+from .create_scheduled_query_details import CreateScheduledQueryDetails
+from .custom_metric import CustomMetric
+from .log import Log
+from .object_storage import ObjectStorage
 from .query_details import QueryDetails
 from .query_result_metadata_summary import QueryResultMetadataSummary
 from .query_result_response import QueryResultResponse
@@ -50,12 +56,17 @@ from .query_results_ordered_by_summary import QueryResultsOrderedBySummary
 from .query_results_topology_info import QueryResultsTopologyInfo
 from .query_results_topology_node_info import QueryResultsTopologyNodeInfo
 from .quick_pick_summary import QuickPickSummary
+from .scheduled_query import ScheduledQuery
+from .scheduled_query_collection import ScheduledQueryCollection
+from .scheduled_query_processing_config import ScheduledQueryProcessingConfig
+from .scheduled_query_summary import ScheduledQuerySummary
 from .snapshot_detail import SnapshotDetail
 from .span import Span
 from .span_log import SpanLog
 from .span_log_collection import SpanLogCollection
 from .span_snapshot import SpanSnapshot
 from .stack_trace_element import StackTraceElement
+from .streaming import Streaming
 from .tag import Tag
 from .tag_metadata import TagMetadata
 from .thread_snapshot import ThreadSnapshot
@@ -63,11 +74,14 @@ from .trace import Trace
 from .trace_service_summary import TraceServiceSummary
 from .trace_snapshot import TraceSnapshot
 from .trace_span_summary import TraceSpanSummary
+from .update_scheduled_query_details import UpdateScheduledQueryDetails
 
 # Maps type names to classes for apm_traces services.
 apm_traces_type_mapping = {
     "AggregatedSnapshot": AggregatedSnapshot,
     "AggregatedStackTrace": AggregatedStackTrace,
+    "Attribute": Attribute,
+    "AttributeMetadata": AttributeMetadata,
     "AttributePinResponse": AttributePinResponse,
     "AttributeResponse": AttributeResponse,
     "AttributeUnpinResponse": AttributeUnpinResponse,
@@ -99,6 +113,10 @@ apm_traces_type_mapping = {
     "BulkUpdateAttributeStatus": BulkUpdateAttributeStatus,
     "BulkUpdateNotesMetadata": BulkUpdateNotesMetadata,
     "BulkUpdateNotesStatus": BulkUpdateNotesStatus,
+    "CreateScheduledQueryDetails": CreateScheduledQueryDetails,
+    "CustomMetric": CustomMetric,
+    "Log": Log,
+    "ObjectStorage": ObjectStorage,
     "QueryDetails": QueryDetails,
     "QueryResultMetadataSummary": QueryResultMetadataSummary,
     "QueryResultResponse": QueryResultResponse,
@@ -110,17 +128,23 @@ apm_traces_type_mapping = {
     "QueryResultsTopologyInfo": QueryResultsTopologyInfo,
     "QueryResultsTopologyNodeInfo": QueryResultsTopologyNodeInfo,
     "QuickPickSummary": QuickPickSummary,
+    "ScheduledQuery": ScheduledQuery,
+    "ScheduledQueryCollection": ScheduledQueryCollection,
+    "ScheduledQueryProcessingConfig": ScheduledQueryProcessingConfig,
+    "ScheduledQuerySummary": ScheduledQuerySummary,
     "SnapshotDetail": SnapshotDetail,
     "Span": Span,
     "SpanLog": SpanLog,
     "SpanLogCollection": SpanLogCollection,
     "SpanSnapshot": SpanSnapshot,
     "StackTraceElement": StackTraceElement,
+    "Streaming": Streaming,
     "Tag": Tag,
     "TagMetadata": TagMetadata,
     "ThreadSnapshot": ThreadSnapshot,
     "Trace": Trace,
     "TraceServiceSummary": TraceServiceSummary,
     "TraceSnapshot": TraceSnapshot,
-    "TraceSpanSummary": TraceSpanSummary
+    "TraceSpanSummary": TraceSpanSummary,
+    "UpdateScheduledQueryDetails": UpdateScheduledQueryDetails
 }

@@ -174,7 +174,7 @@ class PrivilegedApiRequestsClient(object):
         resource_path = "/privilegedApiRequests/{privilegedApiRequestId}/actions/approve"
         method = "POST"
         operation_name = "approve_privileged_api_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/oracle-api-access-control/20241130/PrivilegedApiRequest/ApprovePrivilegedApiRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -296,7 +296,7 @@ class PrivilegedApiRequestsClient(object):
         resource_path = "/privilegedApiRequests/{privilegedApiRequestId}/actions/close"
         method = "POST"
         operation_name = "close_privileged_api_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/oracle-api-access-control/20241130/PrivilegedApiRequest/ClosePrivilegedApiRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -409,7 +409,7 @@ class PrivilegedApiRequestsClient(object):
         resource_path = "/privilegedApiRequests"
         method = "POST"
         operation_name = "create_privileged_api_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/oracle-api-access-control/20241130/PrivilegedApiRequest/CreatePrivilegedApiRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -503,7 +503,7 @@ class PrivilegedApiRequestsClient(object):
         resource_path = "/privilegedApiRequests/{privilegedApiRequestId}"
         method = "GET"
         operation_name = "get_privileged_api_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/oracle-api-access-control/20241130/PrivilegedApiRequest/GetPrivilegedApiRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -659,7 +659,7 @@ class PrivilegedApiRequestsClient(object):
         resource_path = "/privilegedApiRequests"
         method = "GET"
         operation_name = "list_privileged_api_requests"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/oracle-api-access-control/20241130/PrivilegedApiRequestCollection/ListPrivilegedApiRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -820,7 +820,7 @@ class PrivilegedApiRequestsClient(object):
         resource_path = "/privilegedApiRequests/{privilegedApiRequestId}/actions/reject"
         method = "POST"
         operation_name = "reject_privileged_api_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/oracle-api-access-control/20241130/PrivilegedApiRequest/RejectPrivilegedApiRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -942,7 +942,7 @@ class PrivilegedApiRequestsClient(object):
         resource_path = "/privilegedApiRequests/{privilegedApiRequestId}/actions/revoke"
         method = "POST"
         operation_name = "revoke_privileged_api_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/oracle-api-access-control/20241130/PrivilegedApiRequest/RevokePrivilegedApiRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
