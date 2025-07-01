@@ -23,6 +23,10 @@ class BulkUnpinAttributeDetail(object):
     #: This constant has a value of "SYNTHETIC"
     ATTRIBUTE_NAME_SPACE_SYNTHETIC = "SYNTHETIC"
 
+    #: A constant which can be used with the attribute_name_space property of a BulkUnpinAttributeDetail.
+    #: This constant has a value of "LOGS"
+    ATTRIBUTE_NAME_SPACE_LOGS = "LOGS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new BulkUnpinAttributeDetail object with values from keyword arguments.
@@ -34,7 +38,7 @@ class BulkUnpinAttributeDetail(object):
 
         :param attribute_name_space:
             The value to assign to the attribute_name_space property of this BulkUnpinAttributeDetail.
-            Allowed values for this property are: "TRACES", "SYNTHETIC"
+            Allowed values for this property are: "TRACES", "SYNTHETIC", "LOGS"
         :type attribute_name_space: str
 
         """
@@ -80,7 +84,7 @@ class BulkUnpinAttributeDetail(object):
         Namespace of the attribute to be unpinned.  The attributeNameSpace will default to TRACES if it is
         not passed in.
 
-        Allowed values for this property are: "TRACES", "SYNTHETIC"
+        Allowed values for this property are: "TRACES", "SYNTHETIC", "LOGS"
 
 
         :return: The attribute_name_space of this BulkUnpinAttributeDetail.
@@ -99,7 +103,7 @@ class BulkUnpinAttributeDetail(object):
         :param attribute_name_space: The attribute_name_space of this BulkUnpinAttributeDetail.
         :type: str
         """
-        allowed_values = ["TRACES", "SYNTHETIC"]
+        allowed_values = ["TRACES", "SYNTHETIC", "LOGS"]
         if not value_allowed_none_or_none_sentinel(attribute_name_space, allowed_values):
             raise ValueError(
                 f"Invalid value for `attribute_name_space`, must be None or one of {allowed_values}"

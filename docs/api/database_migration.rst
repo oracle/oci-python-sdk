@@ -28,6 +28,8 @@ Database Migration
     oci.database_migration.models.ChangeConnectionCompartmentDetails
     oci.database_migration.models.ChangeMigrationCompartmentDetails
     oci.database_migration.models.CloneMigrationDetails
+    oci.database_migration.models.CollectTracesData
+    oci.database_migration.models.CollectTracesDetails
     oci.database_migration.models.Connection
     oci.database_migration.models.ConnectionCollection
     oci.database_migration.models.ConnectionSummary

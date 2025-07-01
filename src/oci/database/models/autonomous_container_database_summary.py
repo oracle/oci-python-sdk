@@ -286,6 +286,10 @@ class AutonomousContainerDatabaseSummary(object):
             The value to assign to the defined_tags property of this AutonomousContainerDatabaseSummary.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this AutonomousContainerDatabaseSummary.
+        :type system_tags: dict(str, dict(str, object))
+
         :param role:
             The value to assign to the role property of this AutonomousContainerDatabaseSummary.
             Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", "BACKUP_COPY", "SNAPSHOT_STANDBY", 'UNKNOWN_ENUM_VALUE'.
@@ -438,6 +442,7 @@ class AutonomousContainerDatabaseSummary(object):
             'dst_file_version': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))',
             'role': 'str',
             'availability_domain': 'str',
             'db_version': 'str',
@@ -498,6 +503,7 @@ class AutonomousContainerDatabaseSummary(object):
             'dst_file_version': 'dstFileVersion',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'system_tags': 'systemTags',
             'role': 'role',
             'availability_domain': 'availabilityDomain',
             'db_version': 'dbVersion',
@@ -557,6 +563,7 @@ class AutonomousContainerDatabaseSummary(object):
         self._dst_file_version = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
         self._role = None
         self._availability_domain = None
         self._db_version = None
@@ -1371,6 +1378,36 @@ class AutonomousContainerDatabaseSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this AutonomousContainerDatabaseSummary.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The system_tags of this AutonomousContainerDatabaseSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this AutonomousContainerDatabaseSummary.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param system_tags: The system_tags of this AutonomousContainerDatabaseSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     @property
     def role(self):

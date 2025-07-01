@@ -11,8 +11,10 @@ from .attributes_client import AttributesClient
 from .attributes_client_composite_operations import AttributesClientCompositeOperations
 from .query_client import QueryClient
 from .query_client_composite_operations import QueryClientCompositeOperations
+from .scheduled_query_client import ScheduledQueryClient
+from .scheduled_query_client_composite_operations import ScheduledQueryClientCompositeOperations
 from .trace_client import TraceClient
 from .trace_client_composite_operations import TraceClientCompositeOperations
 from . import models
 
-__all__ = ["AttributesClient", "AttributesClientCompositeOperations", "QueryClient", "QueryClientCompositeOperations", "TraceClient", "TraceClientCompositeOperations", "models"]
+__all__ = ["AttributesClient", "AttributesClientCompositeOperations", "QueryClient", "QueryClientCompositeOperations", "ScheduledQueryClient", "ScheduledQueryClientCompositeOperations", "TraceClient", "TraceClientCompositeOperations", "models"]

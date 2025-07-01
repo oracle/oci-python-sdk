@@ -154,6 +154,10 @@ class CreateDbSystemDetails(object):
             The value to assign to the secure_connections property of this CreateDbSystemDetails.
         :type secure_connections: oci.mysql.models.SecureConnectionDetails
 
+        :param encrypt_data:
+            The value to assign to the encrypt_data property of this CreateDbSystemDetails.
+        :type encrypt_data: oci.mysql.models.EncryptDataDetails
+
         :param database_mode:
             The value to assign to the database_mode property of this CreateDbSystemDetails.
         :type database_mode: str
@@ -201,6 +205,7 @@ class CreateDbSystemDetails(object):
             'crash_recovery': 'str',
             'database_management': 'str',
             'secure_connections': 'SecureConnectionDetails',
+            'encrypt_data': 'EncryptDataDetails',
             'database_mode': 'str',
             'access_mode': 'str',
             'customer_contacts': 'list[CustomerContact]',
@@ -236,6 +241,7 @@ class CreateDbSystemDetails(object):
             'crash_recovery': 'crashRecovery',
             'database_management': 'databaseManagement',
             'secure_connections': 'secureConnections',
+            'encrypt_data': 'encryptData',
             'database_mode': 'databaseMode',
             'access_mode': 'accessMode',
             'customer_contacts': 'customerContacts',
@@ -270,6 +276,7 @@ class CreateDbSystemDetails(object):
         self._crash_recovery = None
         self._database_management = None
         self._secure_connections = None
+        self._encrypt_data = None
         self._database_mode = None
         self._access_mode = None
         self._customer_contacts = None
@@ -1032,6 +1039,26 @@ class CreateDbSystemDetails(object):
         :type: oci.mysql.models.SecureConnectionDetails
         """
         self._secure_connections = secure_connections
+
+    @property
+    def encrypt_data(self):
+        """
+        Gets the encrypt_data of this CreateDbSystemDetails.
+
+        :return: The encrypt_data of this CreateDbSystemDetails.
+        :rtype: oci.mysql.models.EncryptDataDetails
+        """
+        return self._encrypt_data
+
+    @encrypt_data.setter
+    def encrypt_data(self, encrypt_data):
+        """
+        Sets the encrypt_data of this CreateDbSystemDetails.
+
+        :param encrypt_data: The encrypt_data of this CreateDbSystemDetails.
+        :type: oci.mysql.models.EncryptDataDetails
+        """
+        self._encrypt_data = encrypt_data
 
     @property
     def database_mode(self):

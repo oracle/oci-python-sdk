@@ -284,6 +284,10 @@ class MaintenanceRun(object):
             The value to assign to the estimated_component_patching_start_time property of this MaintenanceRun.
         :type estimated_component_patching_start_time: datetime
 
+        :param system_tags:
+            The value to assign to the system_tags property of this MaintenanceRun.
+        :type system_tags: dict(str, dict(str, object))
+
         :param is_maintenance_run_granular:
             The value to assign to the is_maintenance_run_granular property of this MaintenanceRun.
         :type is_maintenance_run_granular: bool
@@ -328,6 +332,7 @@ class MaintenanceRun(object):
             'estimated_patching_time': 'EstimatedPatchingTime',
             'current_patching_component': 'str',
             'estimated_component_patching_start_time': 'datetime',
+            'system_tags': 'dict(str, dict(str, object))',
             'is_maintenance_run_granular': 'bool',
             'total_time_taken_in_mins': 'int',
             'database_software_image_id': 'str'
@@ -363,6 +368,7 @@ class MaintenanceRun(object):
             'estimated_patching_time': 'estimatedPatchingTime',
             'current_patching_component': 'currentPatchingComponent',
             'estimated_component_patching_start_time': 'estimatedComponentPatchingStartTime',
+            'system_tags': 'systemTags',
             'is_maintenance_run_granular': 'isMaintenanceRunGranular',
             'total_time_taken_in_mins': 'totalTimeTakenInMins',
             'database_software_image_id': 'databaseSoftwareImageId'
@@ -397,6 +403,7 @@ class MaintenanceRun(object):
         self._estimated_patching_time = None
         self._current_patching_component = None
         self._estimated_component_patching_start_time = None
+        self._system_tags = None
         self._is_maintenance_run_granular = None
         self._total_time_taken_in_mins = None
         self._database_software_image_id = None
@@ -1166,6 +1173,36 @@ class MaintenanceRun(object):
         :type: datetime
         """
         self._estimated_component_patching_start_time = estimated_component_patching_start_time
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this MaintenanceRun.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The system_tags of this MaintenanceRun.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this MaintenanceRun.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param system_tags: The system_tags of this MaintenanceRun.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     @property
     def is_maintenance_run_granular(self):

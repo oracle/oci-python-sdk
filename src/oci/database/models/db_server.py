@@ -138,6 +138,10 @@ class DbServer(object):
             The value to assign to the defined_tags property of this DbServer.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this DbServer.
+        :type system_tags: dict(str, dict(str, object))
+
         :param compute_model:
             The value to assign to the compute_model property of this DbServer.
             Allowed values for this property are: "ECPU", "OCPU", 'UNKNOWN_ENUM_VALUE'.
@@ -167,6 +171,7 @@ class DbServer(object):
             'db_server_patching_details': 'DbServerPatchingDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))',
             'compute_model': 'str'
         }
         self.attribute_map = {
@@ -191,6 +196,7 @@ class DbServer(object):
             'db_server_patching_details': 'dbServerPatchingDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'system_tags': 'systemTags',
             'compute_model': 'computeModel'
         }
         self._id = None
@@ -214,6 +220,7 @@ class DbServer(object):
         self._db_server_patching_details = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
         self._compute_model = None
 
     @property
@@ -765,6 +772,36 @@ class DbServer(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this DbServer.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The system_tags of this DbServer.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this DbServer.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param system_tags: The system_tags of this DbServer.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     @property
     def compute_model(self):

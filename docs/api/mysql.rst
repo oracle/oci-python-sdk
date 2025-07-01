@@ -83,6 +83,7 @@ Mysql
     oci.mysql.models.DbSystemSourceImportFromUrl
     oci.mysql.models.DbSystemSummary
     oci.mysql.models.DeletionPolicyDetails
+    oci.mysql.models.EncryptDataDetails
     oci.mysql.models.ErrorOnAnonymousHandling
     oci.mysql.models.HeatWaveCluster
     oci.mysql.models.HeatWaveClusterMemoryEstimate

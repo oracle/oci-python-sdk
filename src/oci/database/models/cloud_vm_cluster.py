@@ -75,6 +75,14 @@ class CloudVmCluster(object):
     #: This constant has a value of "OCPU"
     COMPUTE_MODEL_OCPU = "OCPU"
 
+    #: A constant which can be used with the tde_key_store_type property of a CloudVmCluster.
+    #: This constant has a value of "AZURE"
+    TDE_KEY_STORE_TYPE_AZURE = "AZURE"
+
+    #: A constant which can be used with the tde_key_store_type property of a CloudVmCluster.
+    #: This constant has a value of "OCI"
+    TDE_KEY_STORE_TYPE_OCI = "OCI"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CloudVmCluster object with values from keyword arguments.
@@ -314,6 +322,16 @@ class CloudVmCluster(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type compute_model: str
 
+        :param multi_cloud_identity_connector_configs:
+            The value to assign to the multi_cloud_identity_connector_configs property of this CloudVmCluster.
+        :type multi_cloud_identity_connector_configs: list[oci.database.models.IdentityConnectorDetails]
+
+        :param tde_key_store_type:
+            The value to assign to the tde_key_store_type property of this CloudVmCluster.
+            Allowed values for this property are: "AZURE", "OCI", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type tde_key_store_type: str
+
         """
         self.swagger_types = {
             'iorm_config_cache': 'ExadataIormConfig',
@@ -371,7 +389,9 @@ class CloudVmCluster(object):
             'file_system_configuration_details': 'list[FileSystemConfigurationDetail]',
             'cloud_automation_update_details': 'CloudAutomationUpdateDetails',
             'vm_cluster_type': 'str',
-            'compute_model': 'str'
+            'compute_model': 'str',
+            'multi_cloud_identity_connector_configs': 'list[IdentityConnectorDetails]',
+            'tde_key_store_type': 'str'
         }
         self.attribute_map = {
             'iorm_config_cache': 'iormConfigCache',
@@ -429,7 +449,9 @@ class CloudVmCluster(object):
             'file_system_configuration_details': 'fileSystemConfigurationDetails',
             'cloud_automation_update_details': 'cloudAutomationUpdateDetails',
             'vm_cluster_type': 'vmClusterType',
-            'compute_model': 'computeModel'
+            'compute_model': 'computeModel',
+            'multi_cloud_identity_connector_configs': 'multiCloudIdentityConnectorConfigs',
+            'tde_key_store_type': 'tdeKeyStoreType'
         }
         self._iorm_config_cache = None
         self._id = None
@@ -487,6 +509,8 @@ class CloudVmCluster(object):
         self._cloud_automation_update_details = None
         self._vm_cluster_type = None
         self._compute_model = None
+        self._multi_cloud_identity_connector_configs = None
+        self._tde_key_store_type = None
 
     @property
     def iorm_config_cache(self):
@@ -2011,6 +2035,60 @@ class CloudVmCluster(object):
         if not value_allowed_none_or_none_sentinel(compute_model, allowed_values):
             compute_model = 'UNKNOWN_ENUM_VALUE'
         self._compute_model = compute_model
+
+    @property
+    def multi_cloud_identity_connector_configs(self):
+        """
+        Gets the multi_cloud_identity_connector_configs of this CloudVmCluster.
+        Details of the multi cloud identity connectors of the VM cluster.
+
+
+        :return: The multi_cloud_identity_connector_configs of this CloudVmCluster.
+        :rtype: list[oci.database.models.IdentityConnectorDetails]
+        """
+        return self._multi_cloud_identity_connector_configs
+
+    @multi_cloud_identity_connector_configs.setter
+    def multi_cloud_identity_connector_configs(self, multi_cloud_identity_connector_configs):
+        """
+        Sets the multi_cloud_identity_connector_configs of this CloudVmCluster.
+        Details of the multi cloud identity connectors of the VM cluster.
+
+
+        :param multi_cloud_identity_connector_configs: The multi_cloud_identity_connector_configs of this CloudVmCluster.
+        :type: list[oci.database.models.IdentityConnectorDetails]
+        """
+        self._multi_cloud_identity_connector_configs = multi_cloud_identity_connector_configs
+
+    @property
+    def tde_key_store_type(self):
+        """
+        Gets the tde_key_store_type of this CloudVmCluster.
+        TDE keystore type
+
+        Allowed values for this property are: "AZURE", "OCI", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The tde_key_store_type of this CloudVmCluster.
+        :rtype: str
+        """
+        return self._tde_key_store_type
+
+    @tde_key_store_type.setter
+    def tde_key_store_type(self, tde_key_store_type):
+        """
+        Sets the tde_key_store_type of this CloudVmCluster.
+        TDE keystore type
+
+
+        :param tde_key_store_type: The tde_key_store_type of this CloudVmCluster.
+        :type: str
+        """
+        allowed_values = ["AZURE", "OCI"]
+        if not value_allowed_none_or_none_sentinel(tde_key_store_type, allowed_values):
+            tde_key_store_type = 'UNKNOWN_ENUM_VALUE'
+        self._tde_key_store_type = tde_key_store_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

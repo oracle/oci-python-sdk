@@ -51,6 +51,10 @@ class BulkUpdateAttributeDetail(object):
     #: This constant has a value of "SYNTHETIC"
     ATTRIBUTE_NAME_SPACE_SYNTHETIC = "SYNTHETIC"
 
+    #: A constant which can be used with the attribute_name_space property of a BulkUpdateAttributeDetail.
+    #: This constant has a value of "LOGS"
+    ATTRIBUTE_NAME_SPACE_LOGS = "LOGS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new BulkUpdateAttributeDetail object with values from keyword arguments.
@@ -67,7 +71,7 @@ class BulkUpdateAttributeDetail(object):
 
         :param attribute_name_space:
             The value to assign to the attribute_name_space property of this BulkUpdateAttributeDetail.
-            Allowed values for this property are: "TRACES", "SYNTHETIC"
+            Allowed values for this property are: "TRACES", "SYNTHETIC", "LOGS"
         :type attribute_name_space: str
 
         """
@@ -113,7 +117,7 @@ class BulkUpdateAttributeDetail(object):
     def unit(self):
         """
         Gets the unit of this BulkUpdateAttributeDetail.
-        Unit of the attribute to be updated.
+        Unit of the attribute to be updated.  If unit is not specified, it defaults to NONE.
 
         Allowed values for this property are: "NONE", "EPOCH_TIME_MS", "BYTES", "COUNT", "DURATION_MS", "TRACE_STATUS", "PERCENTAGE"
 
@@ -127,7 +131,7 @@ class BulkUpdateAttributeDetail(object):
     def unit(self, unit):
         """
         Sets the unit of this BulkUpdateAttributeDetail.
-        Unit of the attribute to be updated.
+        Unit of the attribute to be updated.  If unit is not specified, it defaults to NONE.
 
 
         :param unit: The unit of this BulkUpdateAttributeDetail.
@@ -146,7 +150,7 @@ class BulkUpdateAttributeDetail(object):
         Gets the attribute_name_space of this BulkUpdateAttributeDetail.
         Namespace of the attribute for which the properties are to be updated.
 
-        Allowed values for this property are: "TRACES", "SYNTHETIC"
+        Allowed values for this property are: "TRACES", "SYNTHETIC", "LOGS"
 
 
         :return: The attribute_name_space of this BulkUpdateAttributeDetail.
@@ -164,7 +168,7 @@ class BulkUpdateAttributeDetail(object):
         :param attribute_name_space: The attribute_name_space of this BulkUpdateAttributeDetail.
         :type: str
         """
-        allowed_values = ["TRACES", "SYNTHETIC"]
+        allowed_values = ["TRACES", "SYNTHETIC", "LOGS"]
         if not value_allowed_none_or_none_sentinel(attribute_name_space, allowed_values):
             raise ValueError(
                 f"Invalid value for `attribute_name_space`, must be None or one of {allowed_values}"

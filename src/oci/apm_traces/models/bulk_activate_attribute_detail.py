@@ -24,6 +24,10 @@ class BulkActivateAttributeDetail(object):
     #: This constant has a value of "STRING"
     ATTRIBUTE_TYPE_STRING = "STRING"
 
+    #: A constant which can be used with the attribute_type property of a BulkActivateAttributeDetail.
+    #: This constant has a value of "NONE"
+    ATTRIBUTE_TYPE_NONE = "NONE"
+
     #: A constant which can be used with the unit property of a BulkActivateAttributeDetail.
     #: This constant has a value of "NONE"
     UNIT_NONE = "NONE"
@@ -60,6 +64,10 @@ class BulkActivateAttributeDetail(object):
     #: This constant has a value of "SYNTHETIC"
     ATTRIBUTE_NAME_SPACE_SYNTHETIC = "SYNTHETIC"
 
+    #: A constant which can be used with the attribute_name_space property of a BulkActivateAttributeDetail.
+    #: This constant has a value of "LOGS"
+    ATTRIBUTE_NAME_SPACE_LOGS = "LOGS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new BulkActivateAttributeDetail object with values from keyword arguments.
@@ -71,8 +79,12 @@ class BulkActivateAttributeDetail(object):
 
         :param attribute_type:
             The value to assign to the attribute_type property of this BulkActivateAttributeDetail.
-            Allowed values for this property are: "NUMERIC", "STRING"
+            Allowed values for this property are: "NUMERIC", "STRING", "NONE"
         :type attribute_type: str
+
+        :param attribute_expression:
+            The value to assign to the attribute_expression property of this BulkActivateAttributeDetail.
+        :type attribute_expression: str
 
         :param unit:
             The value to assign to the unit property of this BulkActivateAttributeDetail.
@@ -81,24 +93,27 @@ class BulkActivateAttributeDetail(object):
 
         :param attribute_name_space:
             The value to assign to the attribute_name_space property of this BulkActivateAttributeDetail.
-            Allowed values for this property are: "TRACES", "SYNTHETIC"
+            Allowed values for this property are: "TRACES", "SYNTHETIC", "LOGS"
         :type attribute_name_space: str
 
         """
         self.swagger_types = {
             'attribute_name': 'str',
             'attribute_type': 'str',
+            'attribute_expression': 'str',
             'unit': 'str',
             'attribute_name_space': 'str'
         }
         self.attribute_map = {
             'attribute_name': 'attributeName',
             'attribute_type': 'attributeType',
+            'attribute_expression': 'attributeExpression',
             'unit': 'unit',
             'attribute_name_space': 'attributeNameSpace'
         }
         self._attribute_name = None
         self._attribute_type = None
+        self._attribute_expression = None
         self._unit = None
         self._attribute_name_space = None
 
@@ -132,7 +147,7 @@ class BulkActivateAttributeDetail(object):
         **[Required]** Gets the attribute_type of this BulkActivateAttributeDetail.
         Type of the attribute to be activated.
 
-        Allowed values for this property are: "NUMERIC", "STRING"
+        Allowed values for this property are: "NUMERIC", "STRING", "NONE"
 
 
         :return: The attribute_type of this BulkActivateAttributeDetail.
@@ -150,7 +165,7 @@ class BulkActivateAttributeDetail(object):
         :param attribute_type: The attribute_type of this BulkActivateAttributeDetail.
         :type: str
         """
-        allowed_values = ["NUMERIC", "STRING"]
+        allowed_values = ["NUMERIC", "STRING", "NONE"]
         if not value_allowed_none_or_none_sentinel(attribute_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `attribute_type`, must be None or one of {allowed_values}"
@@ -158,10 +173,34 @@ class BulkActivateAttributeDetail(object):
         self._attribute_type = attribute_type
 
     @property
+    def attribute_expression(self):
+        """
+        Gets the attribute_expression of this BulkActivateAttributeDetail.
+        Attribute expression if this attribute is an alias
+
+
+        :return: The attribute_expression of this BulkActivateAttributeDetail.
+        :rtype: str
+        """
+        return self._attribute_expression
+
+    @attribute_expression.setter
+    def attribute_expression(self, attribute_expression):
+        """
+        Sets the attribute_expression of this BulkActivateAttributeDetail.
+        Attribute expression if this attribute is an alias
+
+
+        :param attribute_expression: The attribute_expression of this BulkActivateAttributeDetail.
+        :type: str
+        """
+        self._attribute_expression = attribute_expression
+
+    @property
     def unit(self):
         """
         Gets the unit of this BulkActivateAttributeDetail.
-        Unit of the attribute to be updated.
+        Unit of the attribute to be updated.  If unit is not specified, it defaults to NONE.
 
         Allowed values for this property are: "NONE", "EPOCH_TIME_MS", "BYTES", "COUNT", "DURATION_MS", "TRACE_STATUS", "PERCENTAGE"
 
@@ -175,7 +214,7 @@ class BulkActivateAttributeDetail(object):
     def unit(self, unit):
         """
         Sets the unit of this BulkActivateAttributeDetail.
-        Unit of the attribute to be updated.
+        Unit of the attribute to be updated.  If unit is not specified, it defaults to NONE.
 
 
         :param unit: The unit of this BulkActivateAttributeDetail.
@@ -195,7 +234,7 @@ class BulkActivateAttributeDetail(object):
         Namespace of the attribute to be activated.  The attributeNameSpace will default to TRACES if it is
         not passed in.
 
-        Allowed values for this property are: "TRACES", "SYNTHETIC"
+        Allowed values for this property are: "TRACES", "SYNTHETIC", "LOGS"
 
 
         :return: The attribute_name_space of this BulkActivateAttributeDetail.
@@ -214,7 +253,7 @@ class BulkActivateAttributeDetail(object):
         :param attribute_name_space: The attribute_name_space of this BulkActivateAttributeDetail.
         :type: str
         """
-        allowed_values = ["TRACES", "SYNTHETIC"]
+        allowed_values = ["TRACES", "SYNTHETIC", "LOGS"]
         if not value_allowed_none_or_none_sentinel(attribute_name_space, allowed_values):
             raise ValueError(
                 f"Invalid value for `attribute_name_space`, must be None or one of {allowed_values}"

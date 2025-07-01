@@ -56,6 +56,10 @@ class Replica(object):
             The value to assign to the secure_connections property of this Replica.
         :type secure_connections: oci.mysql.models.SecureConnectionDetails
 
+        :param encrypt_data:
+            The value to assign to the encrypt_data property of this Replica.
+        :type encrypt_data: oci.mysql.models.EncryptDataDetails
+
         :param id:
             The value to assign to the id property of this Replica.
         :type id: str
@@ -149,6 +153,7 @@ class Replica(object):
         """
         self.swagger_types = {
             'secure_connections': 'SecureConnectionDetails',
+            'encrypt_data': 'EncryptDataDetails',
             'id': 'str',
             'db_system_id': 'str',
             'compartment_id': 'str',
@@ -174,6 +179,7 @@ class Replica(object):
         }
         self.attribute_map = {
             'secure_connections': 'secureConnections',
+            'encrypt_data': 'encryptData',
             'id': 'id',
             'db_system_id': 'dbSystemId',
             'compartment_id': 'compartmentId',
@@ -198,6 +204,7 @@ class Replica(object):
             'replica_overrides': 'replicaOverrides'
         }
         self._secure_connections = None
+        self._encrypt_data = None
         self._id = None
         self._db_system_id = None
         self._compartment_id = None
@@ -240,6 +247,26 @@ class Replica(object):
         :type: oci.mysql.models.SecureConnectionDetails
         """
         self._secure_connections = secure_connections
+
+    @property
+    def encrypt_data(self):
+        """
+        Gets the encrypt_data of this Replica.
+
+        :return: The encrypt_data of this Replica.
+        :rtype: oci.mysql.models.EncryptDataDetails
+        """
+        return self._encrypt_data
+
+    @encrypt_data.setter
+    def encrypt_data(self, encrypt_data):
+        """
+        Sets the encrypt_data of this Replica.
+
+        :param encrypt_data: The encrypt_data of this Replica.
+        :type: oci.mysql.models.EncryptDataDetails
+        """
+        self._encrypt_data = encrypt_data
 
     @property
     def id(self):

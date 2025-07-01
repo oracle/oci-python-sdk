@@ -243,6 +243,131 @@ class TraceClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def get_log(self, apm_domain_id, log_key, time_log_started_greater_than_or_equal_to, time_log_ended_less_than, **kwargs):
+        """
+        Retrieve a log in the APM Domain.
+
+
+        :param str apm_domain_id: (required)
+            The APM Domain ID for the intended request.
+
+        :param str log_key: (required)
+            Log key.
+
+        :param datetime time_log_started_greater_than_or_equal_to: (required)
+            Include logs with log time equal to or greater than this value.
+
+        :param datetime time_log_ended_less_than: (required)
+            Include logs with log time less than this value.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.apm_traces.models.Log`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apmtraces/get_log.py.html>`__ to see an example of how to use get_log API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['logKey', 'apmDomainId', 'timeLogStartedGreaterThanOrEqualTo', 'timeLogEndedLessThan']
+        resource_path = "/logs/{logKey}"
+        method = "GET"
+        operation_name = "get_log"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/Log/GetLog"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"get_log got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "logKey": log_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "apmDomainId": apm_domain_id,
+            "timeLogStartedGreaterThanOrEqualTo": time_log_started_greater_than_or_equal_to,
+            "timeLogEndedLessThan": time_log_ended_less_than
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="Log",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="Log",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def get_span(self, apm_domain_id, span_key, trace_key, **kwargs):
         """
         Gets the span details identified by spanId.
@@ -394,10 +519,10 @@ class TraceClient(object):
             particular request, please provide the request ID.
 
         :param datetime time_trace_started_greater_than_or_equal_to: (optional)
-            Include traces that have a `minTraceStartTime` equal to or greater than this value.
+            Include traces that have a minTraceStartTime equal to or greater than this value.
 
         :param datetime time_trace_started_less_than: (optional)
-            Include traces that have a `minTraceStartTime` less than this value.
+            Include traces that have a minTraceStartTime less than this value.
 
         :param str trace_namespace: (optional)
             Name space from which the trace details need to be retrieved.

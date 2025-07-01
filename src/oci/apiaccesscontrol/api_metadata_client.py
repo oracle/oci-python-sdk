@@ -160,7 +160,7 @@ class ApiMetadataClient(object):
         resource_path = "/apiMetadatas/{apiMetadataId}"
         method = "GET"
         operation_name = "get_api_metadata"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/oracle-api-access-control/20241130/ApiMetadata/GetApiMetadata"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -300,7 +300,7 @@ class ApiMetadataClient(object):
         resource_path = "/apiMetadatas"
         method = "GET"
         operation_name = "list_api_metadata"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/oracle-api-access-control/20241130/ApiMetadata/ListApiMetadata"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -471,7 +471,7 @@ class ApiMetadataClient(object):
         resource_path = "/apiMetadatas/byEntityType"
         method = "GET"
         operation_name = "list_api_metadata_by_entity_types"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/oracle-api-access-control/20241130/ApiMetadata/ListApiMetadataByEntityTypes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

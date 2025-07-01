@@ -19,18 +19,23 @@ class EncryptionKeyLocationDetails(object):
     #: This constant has a value of "EXTERNAL"
     PROVIDER_TYPE_EXTERNAL = "EXTERNAL"
 
+    #: A constant which can be used with the provider_type property of a EncryptionKeyLocationDetails.
+    #: This constant has a value of "AZURE"
+    PROVIDER_TYPE_AZURE = "AZURE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new EncryptionKeyLocationDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.database.models.ExternalHsmEncryptionDetails`
+        * :class:`~oci.database.models.AzureEncryptionKeyDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param provider_type:
             The value to assign to the provider_type property of this EncryptionKeyLocationDetails.
-            Allowed values for this property are: "EXTERNAL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "EXTERNAL", "AZURE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type provider_type: str
 
@@ -53,6 +58,9 @@ class EncryptionKeyLocationDetails(object):
 
         if type == 'EXTERNAL':
             return 'ExternalHsmEncryptionDetails'
+
+        if type == 'AZURE':
+            return 'AzureEncryptionKeyDetails'
         else:
             return 'EncryptionKeyLocationDetails'
 
@@ -60,9 +68,10 @@ class EncryptionKeyLocationDetails(object):
     def provider_type(self):
         """
         **[Required]** Gets the provider_type of this EncryptionKeyLocationDetails.
-        Use 'EXTERNAL' for creating a new database or migrate database key with External HSM.
+        Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM.
+        Use 'AZURE' for creating a new database or migrating a database key to Azure.
 
-        Allowed values for this property are: "EXTERNAL", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "EXTERNAL", "AZURE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -75,13 +84,14 @@ class EncryptionKeyLocationDetails(object):
     def provider_type(self, provider_type):
         """
         Sets the provider_type of this EncryptionKeyLocationDetails.
-        Use 'EXTERNAL' for creating a new database or migrate database key with External HSM.
+        Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM.
+        Use 'AZURE' for creating a new database or migrating a database key to Azure.
 
 
         :param provider_type: The provider_type of this EncryptionKeyLocationDetails.
         :type: str
         """
-        allowed_values = ["EXTERNAL"]
+        allowed_values = ["EXTERNAL", "AZURE"]
         if not value_allowed_none_or_none_sentinel(provider_type, allowed_values):
             provider_type = 'UNKNOWN_ENUM_VALUE'
         self._provider_type = provider_type

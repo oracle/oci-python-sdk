@@ -246,7 +246,7 @@ class AttributeResponse(object):
     def unit(self):
         """
         Gets the unit of this AttributeResponse.
-        Unit of the attribute.
+        Unit of the attribute.   If unit is not specified, it defaults to NONE.
 
         Allowed values for this property are: "NONE", "EPOCH_TIME_MS", "BYTES", "COUNT", "DURATION_MS", "TRACE_STATUS", "PERCENTAGE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -261,7 +261,7 @@ class AttributeResponse(object):
     def unit(self, unit):
         """
         Sets the unit of this AttributeResponse.
-        Unit of the attribute.
+        Unit of the attribute.   If unit is not specified, it defaults to NONE.
 
 
         :param unit: The unit of this AttributeResponse.

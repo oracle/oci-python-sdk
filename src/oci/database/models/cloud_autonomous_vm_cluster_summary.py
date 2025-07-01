@@ -302,6 +302,14 @@ class CloudAutonomousVmClusterSummary(object):
             The value to assign to the max_acds_lowest_scaled_value property of this CloudAutonomousVmClusterSummary.
         :type max_acds_lowest_scaled_value: int
 
+        :param system_tags:
+            The value to assign to the system_tags property of this CloudAutonomousVmClusterSummary.
+        :type system_tags: dict(str, dict(str, object))
+
+        :param subscription_id:
+            The value to assign to the subscription_id property of this CloudAutonomousVmClusterSummary.
+        :type subscription_id: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -361,7 +369,9 @@ class CloudAutonomousVmClusterSummary(object):
             'non_provisionable_autonomous_container_databases': 'int',
             'exadata_storage_in_tbs_lowest_scaled_value': 'float',
             'ocpus_lowest_scaled_value': 'int',
-            'max_acds_lowest_scaled_value': 'int'
+            'max_acds_lowest_scaled_value': 'int',
+            'system_tags': 'dict(str, dict(str, object))',
+            'subscription_id': 'str'
         }
         self.attribute_map = {
             'id': 'id',
@@ -421,7 +431,9 @@ class CloudAutonomousVmClusterSummary(object):
             'non_provisionable_autonomous_container_databases': 'nonProvisionableAutonomousContainerDatabases',
             'exadata_storage_in_tbs_lowest_scaled_value': 'exadataStorageInTBsLowestScaledValue',
             'ocpus_lowest_scaled_value': 'ocpusLowestScaledValue',
-            'max_acds_lowest_scaled_value': 'maxAcdsLowestScaledValue'
+            'max_acds_lowest_scaled_value': 'maxAcdsLowestScaledValue',
+            'system_tags': 'systemTags',
+            'subscription_id': 'subscriptionId'
         }
         self._id = None
         self._compartment_id = None
@@ -481,6 +493,8 @@ class CloudAutonomousVmClusterSummary(object):
         self._exadata_storage_in_tbs_lowest_scaled_value = None
         self._ocpus_lowest_scaled_value = None
         self._max_acds_lowest_scaled_value = None
+        self._system_tags = None
+        self._subscription_id = None
 
     @property
     def id(self):
@@ -1987,6 +2001,64 @@ class CloudAutonomousVmClusterSummary(object):
         :type: int
         """
         self._max_acds_lowest_scaled_value = max_acds_lowest_scaled_value
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this CloudAutonomousVmClusterSummary.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The system_tags of this CloudAutonomousVmClusterSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this CloudAutonomousVmClusterSummary.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param system_tags: The system_tags of this CloudAutonomousVmClusterSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
+
+    @property
+    def subscription_id(self):
+        """
+        Gets the subscription_id of this CloudAutonomousVmClusterSummary.
+        The `OCID`__ of the subscription with which resource needs to be associated with.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The subscription_id of this CloudAutonomousVmClusterSummary.
+        :rtype: str
+        """
+        return self._subscription_id
+
+    @subscription_id.setter
+    def subscription_id(self, subscription_id):
+        """
+        Sets the subscription_id of this CloudAutonomousVmClusterSummary.
+        The `OCID`__ of the subscription with which resource needs to be associated with.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param subscription_id: The subscription_id of this CloudAutonomousVmClusterSummary.
+        :type: str
+        """
+        self._subscription_id = subscription_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

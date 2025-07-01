@@ -85,6 +85,7 @@ Database
     oci.database.models.AutonomousVmResourceUsage
     oci.database.models.AvmAcdResourceStats
     oci.database.models.AwsKeyDetails
+    oci.database.models.AzureEncryptionKeyDetails
     oci.database.models.AzureKeyDetails
     oci.database.models.Backup
     oci.database.models.BackupDestination
@@ -99,6 +100,7 @@ Database
     oci.database.models.ChangeAutonomousDatabaseSubscriptionDetails
     oci.database.models.ChangeAutonomousVmClusterCompartmentDetails
     oci.database.models.ChangeCloudAutonomousVmClusterCompartmentDetails
+    oci.database.models.ChangeCloudAutonomousVmClusterSubscriptionDetails
     oci.database.models.ChangeCloudExadataInfrastructureCompartmentDetails
     oci.database.models.ChangeCloudExadataInfrastructureSubscriptionDetails
     oci.database.models.ChangeCloudVmClusterCompartmentDetails
@@ -343,6 +345,7 @@ Database
     oci.database.models.GiMinorVersionSummary
     oci.database.models.GiVersionSummary
     oci.database.models.GranularMaintenanceHistoryDetails
+    oci.database.models.IdentityConnectorDetails
     oci.database.models.InfoForNetworkGenDetails
     oci.database.models.InfrastructureTargetVersion
     oci.database.models.InfrastructureTargetVersionSummary
@@ -401,6 +404,7 @@ Database
     oci.database.models.RefreshableCloneCollection
     oci.database.models.RefreshableCloneSummary
     oci.database.models.RegisterAutonomousDatabaseDataSafeDetails
+    oci.database.models.RegisterCloudVmClusterPkcsDetails
     oci.database.models.ReinstateDataGuardAssociationDetails
     oci.database.models.ReinstateDataGuardDetails
     oci.database.models.RemoteClonePluggableDatabaseDetails
@@ -410,6 +414,8 @@ Database
     oci.database.models.ReorderExecutionActionDetails
     oci.database.models.ReorderScheduledActionsDetails
     oci.database.models.ResizeVmClusterNetworkDetails
+    oci.database.models.ResourcePoolMemberCollection
+    oci.database.models.ResourcePoolMemberSummary
     oci.database.models.ResourcePoolShapeCollection
     oci.database.models.ResourcePoolShapeSummary
     oci.database.models.ResourcePoolSummary
@@ -446,6 +452,7 @@ Database
     oci.database.models.SystemVersionMinorVersionSummary
     oci.database.models.SystemVersionSummary
     oci.database.models.UndeleteAutonomousDatabaseDetails
+    oci.database.models.UnregisterCloudVmClusterPkcsDetails
     oci.database.models.Update
     oci.database.models.UpdateAutonomousContainerDatabaseDataGuardAssociationDetails
     oci.database.models.UpdateAutonomousContainerDatabaseDetails

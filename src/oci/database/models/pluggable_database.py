@@ -145,6 +145,10 @@ class PluggableDatabase(object):
             The value to assign to the defined_tags property of this PluggableDatabase.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this PluggableDatabase.
+        :type system_tags: dict(str, dict(str, object))
+
         :param pluggable_database_management_config:
             The value to assign to the pluggable_database_management_config property of this PluggableDatabase.
         :type pluggable_database_management_config: oci.database.models.PluggableDatabaseManagementConfig
@@ -179,6 +183,7 @@ class PluggableDatabase(object):
             'compartment_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))',
             'pluggable_database_management_config': 'PluggableDatabaseManagementConfig',
             'kms_key_id': 'str',
             'kms_key_version_id': 'str',
@@ -198,6 +203,7 @@ class PluggableDatabase(object):
             'compartment_id': 'compartmentId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'system_tags': 'systemTags',
             'pluggable_database_management_config': 'pluggableDatabaseManagementConfig',
             'kms_key_id': 'kmsKeyId',
             'kms_key_version_id': 'kmsKeyVersionId',
@@ -216,6 +222,7 @@ class PluggableDatabase(object):
         self._compartment_id = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
         self._pluggable_database_management_config = None
         self._kms_key_id = None
         self._kms_key_version_id = None
@@ -549,6 +556,36 @@ class PluggableDatabase(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this PluggableDatabase.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The system_tags of this PluggableDatabase.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this PluggableDatabase.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param system_tags: The system_tags of this PluggableDatabase.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     @property
     def pluggable_database_management_config(self):

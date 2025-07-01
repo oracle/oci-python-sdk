@@ -40,26 +40,33 @@ class MaintenanceRunHistorySummary(object):
             The value to assign to the granular_maintenance_history property of this MaintenanceRunHistorySummary.
         :type granular_maintenance_history: list[oci.database.models.GranularMaintenanceHistoryDetails]
 
+        :param system_tags:
+            The value to assign to the system_tags property of this MaintenanceRunHistorySummary.
+        :type system_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'id': 'str',
             'maintenance_run_details': 'MaintenanceRunSummary',
             'db_servers_history_details': 'list[DbServerHistorySummary]',
             'current_execution_window': 'str',
-            'granular_maintenance_history': 'list[GranularMaintenanceHistoryDetails]'
+            'granular_maintenance_history': 'list[GranularMaintenanceHistoryDetails]',
+            'system_tags': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'id': 'id',
             'maintenance_run_details': 'maintenanceRunDetails',
             'db_servers_history_details': 'dbServersHistoryDetails',
             'current_execution_window': 'currentExecutionWindow',
-            'granular_maintenance_history': 'granularMaintenanceHistory'
+            'granular_maintenance_history': 'granularMaintenanceHistory',
+            'system_tags': 'systemTags'
         }
         self._id = None
         self._maintenance_run_details = None
         self._db_servers_history_details = None
         self._current_execution_window = None
         self._granular_maintenance_history = None
+        self._system_tags = None
 
     @property
     def id(self):
@@ -176,6 +183,36 @@ class MaintenanceRunHistorySummary(object):
         :type: list[oci.database.models.GranularMaintenanceHistoryDetails]
         """
         self._granular_maintenance_history = granular_maintenance_history
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this MaintenanceRunHistorySummary.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The system_tags of this MaintenanceRunHistorySummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this MaintenanceRunHistorySummary.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param system_tags: The system_tags of this MaintenanceRunHistorySummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

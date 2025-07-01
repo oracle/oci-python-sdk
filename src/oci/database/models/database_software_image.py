@@ -130,6 +130,10 @@ class DatabaseSoftwareImage(object):
             The value to assign to the defined_tags property of this DatabaseSoftwareImage.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this DatabaseSoftwareImage.
+        :type system_tags: dict(str, dict(str, object))
+
         :param database_software_image_included_patches:
             The value to assign to the database_software_image_included_patches property of this DatabaseSoftwareImage.
         :type database_software_image_included_patches: list[str]
@@ -164,6 +168,7 @@ class DatabaseSoftwareImage(object):
             'patch_set': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))',
             'database_software_image_included_patches': 'list[str]',
             'included_patches_summary': 'str',
             'database_software_image_one_off_patches': 'list[str]',
@@ -183,6 +188,7 @@ class DatabaseSoftwareImage(object):
             'patch_set': 'patchSet',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'system_tags': 'systemTags',
             'database_software_image_included_patches': 'databaseSoftwareImageIncludedPatches',
             'included_patches_summary': 'includedPatchesSummary',
             'database_software_image_one_off_patches': 'databaseSoftwareImageOneOffPatches',
@@ -201,6 +207,7 @@ class DatabaseSoftwareImage(object):
         self._patch_set = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
         self._database_software_image_included_patches = None
         self._included_patches_summary = None
         self._database_software_image_one_off_patches = None
@@ -536,6 +543,36 @@ class DatabaseSoftwareImage(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this DatabaseSoftwareImage.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The system_tags of this DatabaseSoftwareImage.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this DatabaseSoftwareImage.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param system_tags: The system_tags of this DatabaseSoftwareImage.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     @property
     def database_software_image_included_patches(self):

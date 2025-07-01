@@ -60,6 +60,10 @@ class AutonomousDatabaseSoftwareImageSummary(object):
             The value to assign to the defined_tags property of this AutonomousDatabaseSoftwareImageSummary.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this AutonomousDatabaseSoftwareImageSummary.
+        :type system_tags: dict(str, dict(str, object))
+
         :param autonomous_dsi_one_off_patches:
             The value to assign to the autonomous_dsi_one_off_patches property of this AutonomousDatabaseSoftwareImageSummary.
         :type autonomous_dsi_one_off_patches: list[str]
@@ -84,6 +88,7 @@ class AutonomousDatabaseSoftwareImageSummary(object):
             'release_update': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))',
             'autonomous_dsi_one_off_patches': 'list[str]',
             'image_shape_family': 'str',
             'dst_file_version': 'str'
@@ -99,6 +104,7 @@ class AutonomousDatabaseSoftwareImageSummary(object):
             'release_update': 'releaseUpdate',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'system_tags': 'systemTags',
             'autonomous_dsi_one_off_patches': 'autonomousDsiOneOffPatches',
             'image_shape_family': 'imageShapeFamily',
             'dst_file_version': 'dstFileVersion'
@@ -113,6 +119,7 @@ class AutonomousDatabaseSoftwareImageSummary(object):
         self._release_update = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
         self._autonomous_dsi_one_off_patches = None
         self._image_shape_family = None
         self._dst_file_version = None
@@ -380,6 +387,36 @@ class AutonomousDatabaseSoftwareImageSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this AutonomousDatabaseSoftwareImageSummary.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The system_tags of this AutonomousDatabaseSoftwareImageSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this AutonomousDatabaseSoftwareImageSummary.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param system_tags: The system_tags of this AutonomousDatabaseSoftwareImageSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     @property
     def autonomous_dsi_one_off_patches(self):

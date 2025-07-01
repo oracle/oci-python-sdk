@@ -152,6 +152,10 @@ class DbNode(object):
             The value to assign to the defined_tags property of this DbNode.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this DbNode.
+        :type system_tags: dict(str, dict(str, object))
+
         :param lifecycle_details:
             The value to assign to the lifecycle_details property of this DbNode.
         :type lifecycle_details: str
@@ -199,6 +203,7 @@ class DbNode(object):
             'additional_details': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))',
             'lifecycle_details': 'str',
             'cpu_core_count': 'int',
             'memory_size_in_gbs': 'int',
@@ -228,6 +233,7 @@ class DbNode(object):
             'additional_details': 'additionalDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'system_tags': 'systemTags',
             'lifecycle_details': 'lifecycleDetails',
             'cpu_core_count': 'cpuCoreCount',
             'memory_size_in_gbs': 'memorySizeInGBs',
@@ -256,6 +262,7 @@ class DbNode(object):
         self._additional_details = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
         self._lifecycle_details = None
         self._cpu_core_count = None
         self._memory_size_in_gbs = None
@@ -870,6 +877,36 @@ class DbNode(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this DbNode.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The system_tags of this DbNode.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this DbNode.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param system_tags: The system_tags of this DbNode.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     @property
     def lifecycle_details(self):

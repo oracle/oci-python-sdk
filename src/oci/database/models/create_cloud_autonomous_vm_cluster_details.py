@@ -122,6 +122,10 @@ class CreateCloudAutonomousVmClusterDetails(object):
             The value to assign to the security_attributes property of this CreateCloudAutonomousVmClusterDetails.
         :type security_attributes: dict(str, dict(str, object))
 
+        :param subscription_id:
+            The value to assign to the subscription_id property of this CreateCloudAutonomousVmClusterDetails.
+        :type subscription_id: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -144,7 +148,8 @@ class CreateCloudAutonomousVmClusterDetails(object):
             'nsg_ids': 'list[str]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'security_attributes': 'dict(str, dict(str, object))'
+            'security_attributes': 'dict(str, dict(str, object))',
+            'subscription_id': 'str'
         }
         self.attribute_map = {
             'compartment_id': 'compartmentId',
@@ -167,7 +172,8 @@ class CreateCloudAutonomousVmClusterDetails(object):
             'nsg_ids': 'nsgIds',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'security_attributes': 'securityAttributes'
+            'security_attributes': 'securityAttributes',
+            'subscription_id': 'subscriptionId'
         }
         self._compartment_id = None
         self._description = None
@@ -190,6 +196,7 @@ class CreateCloudAutonomousVmClusterDetails(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._security_attributes = None
+        self._subscription_id = None
 
     @property
     def compartment_id(self):
@@ -770,6 +777,34 @@ class CreateCloudAutonomousVmClusterDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._security_attributes = security_attributes
+
+    @property
+    def subscription_id(self):
+        """
+        Gets the subscription_id of this CreateCloudAutonomousVmClusterDetails.
+        The `OCID`__ of the subscription with which resource needs to be associated with.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The subscription_id of this CreateCloudAutonomousVmClusterDetails.
+        :rtype: str
+        """
+        return self._subscription_id
+
+    @subscription_id.setter
+    def subscription_id(self, subscription_id):
+        """
+        Sets the subscription_id of this CreateCloudAutonomousVmClusterDetails.
+        The `OCID`__ of the subscription with which resource needs to be associated with.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param subscription_id: The subscription_id of this CreateCloudAutonomousVmClusterDetails.
+        :type: str
+        """
+        self._subscription_id = subscription_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

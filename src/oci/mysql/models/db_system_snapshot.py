@@ -156,6 +156,10 @@ class DbSystemSnapshot(object):
             The value to assign to the secure_connections property of this DbSystemSnapshot.
         :type secure_connections: oci.mysql.models.SecureConnectionDetails
 
+        :param encrypt_data:
+            The value to assign to the encrypt_data property of this DbSystemSnapshot.
+        :type encrypt_data: oci.mysql.models.EncryptDataDetails
+
         :param region:
             The value to assign to the region property of this DbSystemSnapshot.
         :type region: str
@@ -195,6 +199,7 @@ class DbSystemSnapshot(object):
             'crash_recovery': 'str',
             'database_management': 'str',
             'secure_connections': 'SecureConnectionDetails',
+            'encrypt_data': 'EncryptDataDetails',
             'region': 'str',
             'read_endpoint': 'ReadEndpointDetails'
         }
@@ -228,6 +233,7 @@ class DbSystemSnapshot(object):
             'crash_recovery': 'crashRecovery',
             'database_management': 'databaseManagement',
             'secure_connections': 'secureConnections',
+            'encrypt_data': 'encryptData',
             'region': 'region',
             'read_endpoint': 'readEndpoint'
         }
@@ -260,6 +266,7 @@ class DbSystemSnapshot(object):
         self._crash_recovery = None
         self._database_management = None
         self._secure_connections = None
+        self._encrypt_data = None
         self._region = None
         self._read_endpoint = None
 
@@ -974,6 +981,26 @@ class DbSystemSnapshot(object):
         :type: oci.mysql.models.SecureConnectionDetails
         """
         self._secure_connections = secure_connections
+
+    @property
+    def encrypt_data(self):
+        """
+        Gets the encrypt_data of this DbSystemSnapshot.
+
+        :return: The encrypt_data of this DbSystemSnapshot.
+        :rtype: oci.mysql.models.EncryptDataDetails
+        """
+        return self._encrypt_data
+
+    @encrypt_data.setter
+    def encrypt_data(self, encrypt_data):
+        """
+        Sets the encrypt_data of this DbSystemSnapshot.
+
+        :param encrypt_data: The encrypt_data of this DbSystemSnapshot.
+        :type: oci.mysql.models.EncryptDataDetails
+        """
+        self._encrypt_data = encrypt_data
 
     @property
     def region(self):

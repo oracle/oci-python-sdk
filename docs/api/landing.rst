@@ -162,6 +162,7 @@ API Reference
 * :doc:`Migration <cloud_migrations/client/oci.cloud_migrations.MigrationClient>`
 * :doc:`Model Deployment <model_deployment/client/oci.model_deployment.ModelDeploymentClient>`
 * :doc:`Monitoring <monitoring/client/oci.monitoring.MonitoringClient>`
+* :doc:`Multi Cloud Resource Discovery <dbmulticloud/client/oci.dbmulticloud.MultiCloudResourceDiscoveryClient>`
 * :doc:`Mysqlaas <mysql/client/oci.mysql.MysqlaasClient>`
 * :doc:`Network Firewall <network_firewall/client/oci.network_firewall.NetworkFirewallClient>`
 * :doc:`Network Load Balancer <network_load_balancer/client/oci.network_load_balancer.NetworkLoadBalancerClient>`
@@ -188,6 +189,12 @@ API Reference
 * :doc:`Operator Control <operator_access_control/client/oci.operator_access_control.OperatorControlClient>`
 * :doc:`Operator Control Assignment <operator_access_control/client/oci.operator_access_control.OperatorControlAssignmentClient>`
 * :doc:`Optimizer <optimizer/client/oci.optimizer.OptimizerClient>`
+* :doc:`Oracle Db Azure Blob Container <dbmulticloud/client/oci.dbmulticloud.OracleDBAzureBlobContainerClient>`
+* :doc:`Oracle Db Azure Blob Mount <dbmulticloud/client/oci.dbmulticloud.OracleDBAzureBlobMountClient>`
+* :doc:`Oracle Db Azure Connector <dbmulticloud/client/oci.dbmulticloud.OracleDBAzureConnectorClient>`
+* :doc:`Oracle Db Azure Key <dbmulticloud/client/oci.dbmulticloud.OracleDbAzureKeyClient>`
+* :doc:`Oracle Db Azure Vault <dbmulticloud/client/oci.dbmulticloud.OracleDbAzureVaultClient>`
+* :doc:`Oracle Db Azure Vault Association <dbmulticloud/client/oci.dbmulticloud.OracleDbAzureVaultAssociationClient>`
 * :doc:`Orders <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.OrdersClient>`
 * :doc:`Organization <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.OrganizationClient>`
 * :doc:`Organization Subscription <osub_organization_subscription/client/oci.osub_organization_subscription.OrganizationSubscriptionClient>`
@@ -222,6 +229,7 @@ API Reference
 * :doc:`Rover Node <rover/client/oci.rover.RoverNodeClient>`
 * :doc:`Schedule <resource_scheduler/client/oci.resource_scheduler.ScheduleClient>`
 * :doc:`Scheduled Job <os_management_hub/client/oci.os_management_hub.ScheduledJobClient>`
+* :doc:`Scheduled Query <apm_traces/client/oci.apm_traces.ScheduledQueryClient>`
 * :doc:`Sddc <ocvp/client/oci.ocvp.SddcClient>`
 * :doc:`Secrets <secrets/client/oci.secrets.SecretsClient>`
 * :doc:`Security Attribute <security_attribute/client/oci.security_attribute.SecurityAttributeClient>`
@@ -266,6 +274,7 @@ API Reference
 * :doc:`Waf <waf/client/oci.waf.WafClient>`
 * :doc:`Weblogic Management Service <wlms/client/oci.wlms.WeblogicManagementServiceClient>`
 * :doc:`Weblogic Management Service Configuration <wlms/client/oci.wlms.WeblogicManagementServiceConfigurationClient>`
+* :doc:`Work Request <work_requests/client/oci.work_requests.WorkRequestClient>`
 * :doc:`Work Request <work_requests/client/oci.work_requests.WorkRequestClient>`
 * :doc:`Work Request <work_requests/client/oci.work_requests.WorkRequestClient>`
 * :doc:`Work Request <work_requests/client/oci.work_requests.WorkRequestClient>`
@@ -345,6 +354,7 @@ API Reference
     database_migration
     database_tools
     dblm
+    dbmulticloud
     delegate_access_control
     demand_signal
     desktops

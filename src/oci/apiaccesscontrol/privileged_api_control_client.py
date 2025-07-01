@@ -179,7 +179,7 @@ class PrivilegedApiControlClient(object):
         resource_path = "/privilegedApiControls/{privilegedApiControlId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_privileged_api_control_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/oracle-api-access-control/20241130/PrivilegedApiControl/ChangePrivilegedApiControlCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -292,7 +292,7 @@ class PrivilegedApiControlClient(object):
         resource_path = "/privilegedApiControls"
         method = "POST"
         operation_name = "create_privileged_api_control"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/oracle-api-access-control/20241130/PrivilegedApiControl/CreatePrivilegedApiControl"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -397,7 +397,7 @@ class PrivilegedApiControlClient(object):
         resource_path = "/privilegedApiControls/{privilegedApiControlId}"
         method = "DELETE"
         operation_name = "delete_privileged_api_control"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/oracle-api-access-control/20241130/PrivilegedApiControl/DeletePrivilegedApiControl"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -508,7 +508,7 @@ class PrivilegedApiControlClient(object):
         resource_path = "/privilegedApiControls/{privilegedApiControlId}"
         method = "GET"
         operation_name = "get_privileged_api_control"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/oracle-api-access-control/20241130/PrivilegedApiControl/GetPrivilegedApiControl"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -653,7 +653,7 @@ class PrivilegedApiControlClient(object):
         resource_path = "/privilegedApiControls"
         method = "GET"
         operation_name = "list_privileged_api_controls"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/oracle-api-access-control/20241130/PrivilegedApiControlCollection/ListPrivilegedApiControls"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -798,7 +798,7 @@ class PrivilegedApiControlClient(object):
         resource_path = "/privilegedApiControls/{privilegedApiControlId}"
         method = "PUT"
         operation_name = "update_privileged_api_control"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/oracle-api-access-control/20241130/PrivilegedApiControl/UpdatePrivilegedApiControl"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
