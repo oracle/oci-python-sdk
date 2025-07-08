@@ -38,23 +38,30 @@ class ObjectStorageDocumentDetails(DocumentDetails):
             The value to assign to the object_name property of this ObjectStorageDocumentDetails.
         :type object_name: str
 
+        :param page_range:
+            The value to assign to the page_range property of this ObjectStorageDocumentDetails.
+        :type page_range: list[str]
+
         """
         self.swagger_types = {
             'source': 'str',
             'namespace_name': 'str',
             'bucket_name': 'str',
-            'object_name': 'str'
+            'object_name': 'str',
+            'page_range': 'list[str]'
         }
         self.attribute_map = {
             'source': 'source',
             'namespace_name': 'namespaceName',
             'bucket_name': 'bucketName',
-            'object_name': 'objectName'
+            'object_name': 'objectName',
+            'page_range': 'pageRange'
         }
         self._source = None
         self._namespace_name = None
         self._bucket_name = None
         self._object_name = None
+        self._page_range = None
         self._source = 'OBJECT_STORAGE'
 
     @property
@@ -128,6 +135,30 @@ class ObjectStorageDocumentDetails(DocumentDetails):
         :type: str
         """
         self._object_name = object_name
+
+    @property
+    def page_range(self):
+        """
+        Gets the page_range of this ObjectStorageDocumentDetails.
+        The page ranges to be analysed.
+
+
+        :return: The page_range of this ObjectStorageDocumentDetails.
+        :rtype: list[str]
+        """
+        return self._page_range
+
+    @page_range.setter
+    def page_range(self, page_range):
+        """
+        Sets the page_range of this ObjectStorageDocumentDetails.
+        The page ranges to be analysed.
+
+
+        :param page_range: The page_range of this ObjectStorageDocumentDetails.
+        :type: list[str]
+        """
+        self._page_range = page_range
 
     def __repr__(self):
         return formatted_flat_dict(self)

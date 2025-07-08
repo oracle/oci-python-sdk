@@ -97,6 +97,7 @@ Opsi
     oci.opsi.models.ChangeExadataInsightCompartmentDetails
     oci.opsi.models.ChangeExternalMysqlDatabaseInsightConnectionDetails
     oci.opsi.models.ChangeHostInsightCompartmentDetails
+    oci.opsi.models.ChangeMacsManagedAutonomousDatabaseInsightConnectionDetails
     oci.opsi.models.ChangeMacsManagedCloudDatabaseInsightConnectionDetails
     oci.opsi.models.ChangeNewsReportCompartmentDetails
     oci.opsi.models.ChangeOperationsInsightsPrivateEndpointCompartmentDetails
@@ -127,6 +128,7 @@ Opsi
     oci.opsi.models.CreateExadataInsightDetails
     oci.opsi.models.CreateExternalMysqlDatabaseInsightDetails
     oci.opsi.models.CreateHostInsightDetails
+    oci.opsi.models.CreateMacsManagedAutonomousDatabaseInsightDetails
     oci.opsi.models.CreateMacsManagedCloudDatabaseInsightDetails
     oci.opsi.models.CreateMacsManagedCloudExadataClusterDetails
     oci.opsi.models.CreateMacsManagedCloudExadataInsightDetails
@@ -144,6 +146,7 @@ Opsi
     oci.opsi.models.CreatePeComanagedExadataInsightDetails
     oci.opsi.models.CreatePeComanagedExadataVmclusterDetails
     oci.opsi.models.CredentialByIam
+    oci.opsi.models.CredentialByNamedCredentials
     oci.opsi.models.CredentialByVault
     oci.opsi.models.CredentialDetails
     oci.opsi.models.CredentialsBySource
@@ -199,6 +202,7 @@ Opsi
     oci.opsi.models.EnableExadataInsightDetails
     oci.opsi.models.EnableExternalMysqlDatabaseInsightDetails
     oci.opsi.models.EnableHostInsightDetails
+    oci.opsi.models.EnableMacsManagedAutonomousDatabaseInsightDetails
     oci.opsi.models.EnableMacsManagedCloudDatabaseInsightDetails
     oci.opsi.models.EnableMacsManagedCloudExadataInsightDetails
     oci.opsi.models.EnableMacsManagedCloudHostInsightDetails
@@ -318,6 +322,9 @@ Opsi
     oci.opsi.models.IoUsageTrend
     oci.opsi.models.IoUsageTrendAggregation
     oci.opsi.models.ListObjects
+    oci.opsi.models.MacsManagedAutonomousDatabaseConfigurationSummary
+    oci.opsi.models.MacsManagedAutonomousDatabaseInsight
+    oci.opsi.models.MacsManagedAutonomousDatabaseInsightSummary
     oci.opsi.models.MacsManagedCloudDatabaseConfigurationSummary
     oci.opsi.models.MacsManagedCloudDatabaseHostInsight
     oci.opsi.models.MacsManagedCloudDatabaseHostInsightSummary
@@ -465,8 +472,10 @@ Opsi
     oci.opsi.models.SummarizeHostInsightsTopProcessesUsageTrendCollection
     oci.opsi.models.SummarizeOperationsInsightsWarehouseResourceUsageAggregation
     oci.opsi.models.SummaryStatistics
+    oci.opsi.models.SynchronizeAutonomousDatabaseToExadataDetails
     oci.opsi.models.TablespaceUsageTrend
     oci.opsi.models.TablespaceUsageTrendAggregation
+    oci.opsi.models.TestMacsManagedAutonomousDatabaseInsightConnectionDetails
     oci.opsi.models.TestMacsManagedCloudDatabaseInsightConnectionDetails
     oci.opsi.models.TopProcessesUsage
     oci.opsi.models.TopProcessesUsageTrend
@@ -484,6 +493,7 @@ Opsi
     oci.opsi.models.UpdateExadataInsightDetails
     oci.opsi.models.UpdateExternalMysqlDatabaseInsightDetails
     oci.opsi.models.UpdateHostInsightDetails
+    oci.opsi.models.UpdateMacsManagedAutonomousDatabaseInsightDetails
     oci.opsi.models.UpdateMacsManagedCloudDatabaseHostInsightDetails
     oci.opsi.models.UpdateMacsManagedCloudDatabaseInsightDetails
     oci.opsi.models.UpdateMacsManagedCloudExadataInsightDetails

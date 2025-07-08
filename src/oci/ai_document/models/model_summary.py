@@ -40,6 +40,10 @@ class ModelSummary(object):
             The value to assign to the model_type property of this ModelSummary.
         :type model_type: str
 
+        :param inference_units:
+            The value to assign to the inference_units property of this ModelSummary.
+        :type inference_units: int
+
         :param model_version:
             The value to assign to the model_version property of this ModelSummary.
         :type model_version: str
@@ -119,6 +123,7 @@ class ModelSummary(object):
             'description': 'str',
             'compartment_id': 'str',
             'model_type': 'str',
+            'inference_units': 'int',
             'model_version': 'str',
             'project_id': 'str',
             'time_created': 'datetime',
@@ -144,6 +149,7 @@ class ModelSummary(object):
             'description': 'description',
             'compartment_id': 'compartmentId',
             'model_type': 'modelType',
+            'inference_units': 'inferenceUnits',
             'model_version': 'modelVersion',
             'project_id': 'projectId',
             'time_created': 'timeCreated',
@@ -168,6 +174,7 @@ class ModelSummary(object):
         self._description = None
         self._compartment_id = None
         self._model_type = None
+        self._inference_units = None
         self._model_version = None
         self._project_id = None
         self._time_created = None
@@ -306,6 +313,30 @@ class ModelSummary(object):
         :type: str
         """
         self._model_type = model_type
+
+    @property
+    def inference_units(self):
+        """
+        Gets the inference_units of this ModelSummary.
+        Number of replicas required for this model.
+
+
+        :return: The inference_units of this ModelSummary.
+        :rtype: int
+        """
+        return self._inference_units
+
+    @inference_units.setter
+    def inference_units(self, inference_units):
+        """
+        Sets the inference_units of this ModelSummary.
+        Number of replicas required for this model.
+
+
+        :param inference_units: The inference_units of this ModelSummary.
+        :type: int
+        """
+        self._inference_units = inference_units
 
     @property
     def model_version(self):

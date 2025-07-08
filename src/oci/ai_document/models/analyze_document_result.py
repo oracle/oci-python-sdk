@@ -56,6 +56,14 @@ class AnalyzeDocumentResult(object):
             The value to assign to the table_extraction_model_version property of this AnalyzeDocumentResult.
         :type table_extraction_model_version: str
 
+        :param signature_extraction_model_version:
+            The value to assign to the signature_extraction_model_version property of this AnalyzeDocumentResult.
+        :type signature_extraction_model_version: str
+
+        :param bar_code_extraction_model_version:
+            The value to assign to the bar_code_extraction_model_version property of this AnalyzeDocumentResult.
+        :type bar_code_extraction_model_version: str
+
         :param errors:
             The value to assign to the errors property of this AnalyzeDocumentResult.
         :type errors: list[oci.ai_document.models.ProcessingError]
@@ -75,6 +83,8 @@ class AnalyzeDocumentResult(object):
             'text_extraction_model_version': 'str',
             'key_value_extraction_model_version': 'str',
             'table_extraction_model_version': 'str',
+            'signature_extraction_model_version': 'str',
+            'bar_code_extraction_model_version': 'str',
             'errors': 'list[ProcessingError]',
             'searchable_pdf': 'str'
         }
@@ -88,6 +98,8 @@ class AnalyzeDocumentResult(object):
             'text_extraction_model_version': 'textExtractionModelVersion',
             'key_value_extraction_model_version': 'keyValueExtractionModelVersion',
             'table_extraction_model_version': 'tableExtractionModelVersion',
+            'signature_extraction_model_version': 'signatureExtractionModelVersion',
+            'bar_code_extraction_model_version': 'barCodeExtractionModelVersion',
             'errors': 'errors',
             'searchable_pdf': 'searchablePdf'
         }
@@ -100,6 +112,8 @@ class AnalyzeDocumentResult(object):
         self._text_extraction_model_version = None
         self._key_value_extraction_model_version = None
         self._table_extraction_model_version = None
+        self._signature_extraction_model_version = None
+        self._bar_code_extraction_model_version = None
         self._errors = None
         self._searchable_pdf = None
 
@@ -314,6 +328,54 @@ class AnalyzeDocumentResult(object):
         :type: str
         """
         self._table_extraction_model_version = table_extraction_model_version
+
+    @property
+    def signature_extraction_model_version(self):
+        """
+        Gets the signature_extraction_model_version of this AnalyzeDocumentResult.
+        The document signature extraction model version.
+
+
+        :return: The signature_extraction_model_version of this AnalyzeDocumentResult.
+        :rtype: str
+        """
+        return self._signature_extraction_model_version
+
+    @signature_extraction_model_version.setter
+    def signature_extraction_model_version(self, signature_extraction_model_version):
+        """
+        Sets the signature_extraction_model_version of this AnalyzeDocumentResult.
+        The document signature extraction model version.
+
+
+        :param signature_extraction_model_version: The signature_extraction_model_version of this AnalyzeDocumentResult.
+        :type: str
+        """
+        self._signature_extraction_model_version = signature_extraction_model_version
+
+    @property
+    def bar_code_extraction_model_version(self):
+        """
+        Gets the bar_code_extraction_model_version of this AnalyzeDocumentResult.
+        The document bar code extraction model version.
+
+
+        :return: The bar_code_extraction_model_version of this AnalyzeDocumentResult.
+        :rtype: str
+        """
+        return self._bar_code_extraction_model_version
+
+    @bar_code_extraction_model_version.setter
+    def bar_code_extraction_model_version(self, bar_code_extraction_model_version):
+        """
+        Sets the bar_code_extraction_model_version of this AnalyzeDocumentResult.
+        The document bar code extraction model version.
+
+
+        :param bar_code_extraction_model_version: The bar_code_extraction_model_version of this AnalyzeDocumentResult.
+        :type: str
+        """
+        self._bar_code_extraction_model_version = bar_code_extraction_model_version
 
     @property
     def errors(self):

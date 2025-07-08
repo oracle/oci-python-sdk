@@ -43,6 +43,10 @@ class DatabaseInsightSummary(object):
     #: This constant has a value of "MACS_MANAGED_CLOUD_DATABASE"
     ENTITY_SOURCE_MACS_MANAGED_CLOUD_DATABASE = "MACS_MANAGED_CLOUD_DATABASE"
 
+    #: A constant which can be used with the entity_source property of a DatabaseInsightSummary.
+    #: This constant has a value of "MACS_MANAGED_AUTONOMOUS_DATABASE"
+    ENTITY_SOURCE_MACS_MANAGED_AUTONOMOUS_DATABASE = "MACS_MANAGED_AUTONOMOUS_DATABASE"
+
     #: A constant which can be used with the status property of a DatabaseInsightSummary.
     #: This constant has a value of "DISABLED"
     STATUS_DISABLED = "DISABLED"
@@ -95,6 +99,7 @@ class DatabaseInsightSummary(object):
         * :class:`~oci.opsi.models.PeComanagedDatabaseInsightSummary`
         * :class:`~oci.opsi.models.EmManagedExternalDatabaseInsightSummary`
         * :class:`~oci.opsi.models.ExternalMysqlDatabaseInsightSummary`
+        * :class:`~oci.opsi.models.MacsManagedAutonomousDatabaseInsightSummary`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -144,7 +149,7 @@ class DatabaseInsightSummary(object):
 
         :param entity_source:
             The value to assign to the entity_source property of this DatabaseInsightSummary.
-            Allowed values for this property are: "AUTONOMOUS_DATABASE", "EM_MANAGED_EXTERNAL_DATABASE", "MACS_MANAGED_EXTERNAL_DATABASE", "PE_COMANAGED_DATABASE", "MDS_MYSQL_DATABASE_SYSTEM", "EXTERNAL_MYSQL_DATABASE_SYSTEM", "MACS_MANAGED_CLOUD_DATABASE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "AUTONOMOUS_DATABASE", "EM_MANAGED_EXTERNAL_DATABASE", "MACS_MANAGED_EXTERNAL_DATABASE", "PE_COMANAGED_DATABASE", "MDS_MYSQL_DATABASE_SYSTEM", "EXTERNAL_MYSQL_DATABASE_SYSTEM", "MACS_MANAGED_CLOUD_DATABASE", "MACS_MANAGED_AUTONOMOUS_DATABASE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type entity_source: str
 
@@ -271,6 +276,9 @@ class DatabaseInsightSummary(object):
 
         if type == 'EXTERNAL_MYSQL_DATABASE_SYSTEM':
             return 'ExternalMysqlDatabaseInsightSummary'
+
+        if type == 'MACS_MANAGED_AUTONOMOUS_DATABASE':
+            return 'MacsManagedAutonomousDatabaseInsightSummary'
         else:
             return 'DatabaseInsightSummary'
 
@@ -562,7 +570,7 @@ class DatabaseInsightSummary(object):
         **[Required]** Gets the entity_source of this DatabaseInsightSummary.
         Source of the database entity.
 
-        Allowed values for this property are: "AUTONOMOUS_DATABASE", "EM_MANAGED_EXTERNAL_DATABASE", "MACS_MANAGED_EXTERNAL_DATABASE", "PE_COMANAGED_DATABASE", "MDS_MYSQL_DATABASE_SYSTEM", "EXTERNAL_MYSQL_DATABASE_SYSTEM", "MACS_MANAGED_CLOUD_DATABASE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "AUTONOMOUS_DATABASE", "EM_MANAGED_EXTERNAL_DATABASE", "MACS_MANAGED_EXTERNAL_DATABASE", "PE_COMANAGED_DATABASE", "MDS_MYSQL_DATABASE_SYSTEM", "EXTERNAL_MYSQL_DATABASE_SYSTEM", "MACS_MANAGED_CLOUD_DATABASE", "MACS_MANAGED_AUTONOMOUS_DATABASE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -581,7 +589,7 @@ class DatabaseInsightSummary(object):
         :param entity_source: The entity_source of this DatabaseInsightSummary.
         :type: str
         """
-        allowed_values = ["AUTONOMOUS_DATABASE", "EM_MANAGED_EXTERNAL_DATABASE", "MACS_MANAGED_EXTERNAL_DATABASE", "PE_COMANAGED_DATABASE", "MDS_MYSQL_DATABASE_SYSTEM", "EXTERNAL_MYSQL_DATABASE_SYSTEM", "MACS_MANAGED_CLOUD_DATABASE"]
+        allowed_values = ["AUTONOMOUS_DATABASE", "EM_MANAGED_EXTERNAL_DATABASE", "MACS_MANAGED_EXTERNAL_DATABASE", "PE_COMANAGED_DATABASE", "MDS_MYSQL_DATABASE_SYSTEM", "EXTERNAL_MYSQL_DATABASE_SYSTEM", "MACS_MANAGED_CLOUD_DATABASE", "MACS_MANAGED_AUTONOMOUS_DATABASE"]
         if not value_allowed_none_or_none_sentinel(entity_source, allowed_values):
             entity_source = 'UNKNOWN_ENUM_VALUE'
         self._entity_source = entity_source

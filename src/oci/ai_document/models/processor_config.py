@@ -19,18 +19,23 @@ class ProcessorConfig(object):
     #: This constant has a value of "GENERAL"
     PROCESSOR_TYPE_GENERAL = "GENERAL"
 
+    #: A constant which can be used with the processor_type property of a ProcessorConfig.
+    #: This constant has a value of "INVOICE"
+    PROCESSOR_TYPE_INVOICE = "INVOICE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ProcessorConfig object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.ai_document.models.InvoiceProcessorConfig`
         * :class:`~oci.ai_document.models.GeneralProcessorConfig`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param processor_type:
             The value to assign to the processor_type property of this ProcessorConfig.
-            Allowed values for this property are: "GENERAL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "GENERAL", "INVOICE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type processor_type: str
 
@@ -51,6 +56,9 @@ class ProcessorConfig(object):
         """
         type = object_dictionary['processorType']
 
+        if type == 'INVOICE':
+            return 'InvoiceProcessorConfig'
+
         if type == 'GENERAL':
             return 'GeneralProcessorConfig'
         else:
@@ -62,7 +70,7 @@ class ProcessorConfig(object):
         **[Required]** Gets the processor_type of this ProcessorConfig.
         The type of the processor.
 
-        Allowed values for this property are: "GENERAL", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "GENERAL", "INVOICE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -81,7 +89,7 @@ class ProcessorConfig(object):
         :param processor_type: The processor_type of this ProcessorConfig.
         :type: str
         """
-        allowed_values = ["GENERAL"]
+        allowed_values = ["GENERAL", "INVOICE"]
         if not value_allowed_none_or_none_sentinel(processor_type, allowed_values):
             processor_type = 'UNKNOWN_ENUM_VALUE'
         self._processor_type = processor_type

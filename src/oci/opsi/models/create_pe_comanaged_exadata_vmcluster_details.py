@@ -15,6 +15,14 @@ class CreatePeComanagedExadataVmclusterDetails(object):
     The information of the VM Cluster which contains databases. Either an opsiPrivateEndpointId or dbmPrivateEndpointId must be specified. If the dbmPrivateEndpointId is specified, a new Operations Insights private endpoint will be created.
     """
 
+    #: A constant which can be used with the vm_cluster_type property of a CreatePeComanagedExadataVmclusterDetails.
+    #: This constant has a value of "vmCluster"
+    VM_CLUSTER_TYPE_VM_CLUSTER = "vmCluster"
+
+    #: A constant which can be used with the vm_cluster_type property of a CreatePeComanagedExadataVmclusterDetails.
+    #: This constant has a value of "autonomousVmCluster"
+    VM_CLUSTER_TYPE_AUTONOMOUS_VM_CLUSTER = "autonomousVmCluster"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreatePeComanagedExadataVmclusterDetails object with values from keyword arguments.
@@ -36,6 +44,15 @@ class CreatePeComanagedExadataVmclusterDetails(object):
             The value to assign to the member_database_details property of this CreatePeComanagedExadataVmclusterDetails.
         :type member_database_details: list[oci.opsi.models.CreatePeComanagedDatabaseInsightDetails]
 
+        :param vm_cluster_type:
+            The value to assign to the vm_cluster_type property of this CreatePeComanagedExadataVmclusterDetails.
+            Allowed values for this property are: "vmCluster", "autonomousVmCluster"
+        :type vm_cluster_type: str
+
+        :param member_autonomous_details:
+            The value to assign to the member_autonomous_details property of this CreatePeComanagedExadataVmclusterDetails.
+        :type member_autonomous_details: list[oci.opsi.models.CreateAutonomousDatabaseInsightDetails]
+
         :param compartment_id:
             The value to assign to the compartment_id property of this CreatePeComanagedExadataVmclusterDetails.
         :type compartment_id: str
@@ -46,6 +63,8 @@ class CreatePeComanagedExadataVmclusterDetails(object):
             'opsi_private_endpoint_id': 'str',
             'dbm_private_endpoint_id': 'str',
             'member_database_details': 'list[CreatePeComanagedDatabaseInsightDetails]',
+            'vm_cluster_type': 'str',
+            'member_autonomous_details': 'list[CreateAutonomousDatabaseInsightDetails]',
             'compartment_id': 'str'
         }
         self.attribute_map = {
@@ -53,12 +72,16 @@ class CreatePeComanagedExadataVmclusterDetails(object):
             'opsi_private_endpoint_id': 'opsiPrivateEndpointId',
             'dbm_private_endpoint_id': 'dbmPrivateEndpointId',
             'member_database_details': 'memberDatabaseDetails',
+            'vm_cluster_type': 'vmClusterType',
+            'member_autonomous_details': 'memberAutonomousDetails',
             'compartment_id': 'compartmentId'
         }
         self._vmcluster_id = None
         self._opsi_private_endpoint_id = None
         self._dbm_private_endpoint_id = None
         self._member_database_details = None
+        self._vm_cluster_type = None
+        self._member_autonomous_details = None
         self._compartment_id = None
 
     @property
@@ -168,6 +191,61 @@ class CreatePeComanagedExadataVmclusterDetails(object):
         :type: list[oci.opsi.models.CreatePeComanagedDatabaseInsightDetails]
         """
         self._member_database_details = member_database_details
+
+    @property
+    def vm_cluster_type(self):
+        """
+        Gets the vm_cluster_type of this CreatePeComanagedExadataVmclusterDetails.
+        Exadata VMCluster type
+
+        Allowed values for this property are: "vmCluster", "autonomousVmCluster"
+
+
+        :return: The vm_cluster_type of this CreatePeComanagedExadataVmclusterDetails.
+        :rtype: str
+        """
+        return self._vm_cluster_type
+
+    @vm_cluster_type.setter
+    def vm_cluster_type(self, vm_cluster_type):
+        """
+        Sets the vm_cluster_type of this CreatePeComanagedExadataVmclusterDetails.
+        Exadata VMCluster type
+
+
+        :param vm_cluster_type: The vm_cluster_type of this CreatePeComanagedExadataVmclusterDetails.
+        :type: str
+        """
+        allowed_values = ["vmCluster", "autonomousVmCluster"]
+        if not value_allowed_none_or_none_sentinel(vm_cluster_type, allowed_values):
+            raise ValueError(
+                f"Invalid value for `vm_cluster_type`, must be None or one of {allowed_values}"
+            )
+        self._vm_cluster_type = vm_cluster_type
+
+    @property
+    def member_autonomous_details(self):
+        """
+        Gets the member_autonomous_details of this CreatePeComanagedExadataVmclusterDetails.
+        The autonomous databases that belong to the Autonomous VM Cluster
+
+
+        :return: The member_autonomous_details of this CreatePeComanagedExadataVmclusterDetails.
+        :rtype: list[oci.opsi.models.CreateAutonomousDatabaseInsightDetails]
+        """
+        return self._member_autonomous_details
+
+    @member_autonomous_details.setter
+    def member_autonomous_details(self, member_autonomous_details):
+        """
+        Sets the member_autonomous_details of this CreatePeComanagedExadataVmclusterDetails.
+        The autonomous databases that belong to the Autonomous VM Cluster
+
+
+        :param member_autonomous_details: The member_autonomous_details of this CreatePeComanagedExadataVmclusterDetails.
+        :type: list[oci.opsi.models.CreateAutonomousDatabaseInsightDetails]
+        """
+        self._member_autonomous_details = member_autonomous_details
 
     @property
     def compartment_id(self):

@@ -36,6 +36,14 @@ class CreateModelDetails(object):
             The value to assign to the model_type property of this CreateModelDetails.
         :type model_type: str
 
+        :param model_sub_type:
+            The value to assign to the model_sub_type property of this CreateModelDetails.
+        :type model_sub_type: oci.ai_document.models.ModelSubType
+
+        :param inference_units:
+            The value to assign to the inference_units property of this CreateModelDetails.
+        :type inference_units: int
+
         :param compartment_id:
             The value to assign to the compartment_id property of this CreateModelDetails.
         :type compartment_id: str
@@ -47,6 +55,10 @@ class CreateModelDetails(object):
         :param max_training_time_in_hours:
             The value to assign to the max_training_time_in_hours property of this CreateModelDetails.
         :type max_training_time_in_hours: float
+
+        :param language:
+            The value to assign to the language property of this CreateModelDetails.
+        :type language: str
 
         :param training_dataset:
             The value to assign to the training_dataset property of this CreateModelDetails.
@@ -86,9 +98,12 @@ class CreateModelDetails(object):
             'description': 'str',
             'model_version': 'str',
             'model_type': 'str',
+            'model_sub_type': 'ModelSubType',
+            'inference_units': 'int',
             'compartment_id': 'str',
             'is_quick_mode': 'bool',
             'max_training_time_in_hours': 'float',
+            'language': 'str',
             'training_dataset': 'Dataset',
             'testing_dataset': 'Dataset',
             'validation_dataset': 'Dataset',
@@ -103,9 +118,12 @@ class CreateModelDetails(object):
             'description': 'description',
             'model_version': 'modelVersion',
             'model_type': 'modelType',
+            'model_sub_type': 'modelSubType',
+            'inference_units': 'inferenceUnits',
             'compartment_id': 'compartmentId',
             'is_quick_mode': 'isQuickMode',
             'max_training_time_in_hours': 'maxTrainingTimeInHours',
+            'language': 'language',
             'training_dataset': 'trainingDataset',
             'testing_dataset': 'testingDataset',
             'validation_dataset': 'validationDataset',
@@ -119,9 +137,12 @@ class CreateModelDetails(object):
         self._description = None
         self._model_version = None
         self._model_type = None
+        self._model_sub_type = None
+        self._inference_units = None
         self._compartment_id = None
         self._is_quick_mode = None
         self._max_training_time_in_hours = None
+        self._language = None
         self._training_dataset = None
         self._testing_dataset = None
         self._validation_dataset = None
@@ -228,6 +249,54 @@ class CreateModelDetails(object):
         self._model_type = model_type
 
     @property
+    def model_sub_type(self):
+        """
+        Gets the model_sub_type of this CreateModelDetails.
+        Applicable to only PRE_TRAINED_KEY_VALUE_EXTRACTION, PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION.
+
+
+        :return: The model_sub_type of this CreateModelDetails.
+        :rtype: oci.ai_document.models.ModelSubType
+        """
+        return self._model_sub_type
+
+    @model_sub_type.setter
+    def model_sub_type(self, model_sub_type):
+        """
+        Sets the model_sub_type of this CreateModelDetails.
+        Applicable to only PRE_TRAINED_KEY_VALUE_EXTRACTION, PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION.
+
+
+        :param model_sub_type: The model_sub_type of this CreateModelDetails.
+        :type: oci.ai_document.models.ModelSubType
+        """
+        self._model_sub_type = model_sub_type
+
+    @property
+    def inference_units(self):
+        """
+        Gets the inference_units of this CreateModelDetails.
+        Number of replicas required for this model.
+
+
+        :return: The inference_units of this CreateModelDetails.
+        :rtype: int
+        """
+        return self._inference_units
+
+    @inference_units.setter
+    def inference_units(self, inference_units):
+        """
+        Sets the inference_units of this CreateModelDetails.
+        Number of replicas required for this model.
+
+
+        :param inference_units: The inference_units of this CreateModelDetails.
+        :type: int
+        """
+        self._inference_units = inference_units
+
+    @property
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateModelDetails.
@@ -298,6 +367,30 @@ class CreateModelDetails(object):
         :type: float
         """
         self._max_training_time_in_hours = max_training_time_in_hours
+
+    @property
+    def language(self):
+        """
+        Gets the language of this CreateModelDetails.
+        The document language for model training, abbreviated according to the BCP 47 syntax.
+
+
+        :return: The language of this CreateModelDetails.
+        :rtype: str
+        """
+        return self._language
+
+    @language.setter
+    def language(self, language):
+        """
+        Sets the language of this CreateModelDetails.
+        The document language for model training, abbreviated according to the BCP 47 syntax.
+
+
+        :param language: The language of this CreateModelDetails.
+        :type: str
+        """
+        self._language = language
 
     @property
     def training_dataset(self):

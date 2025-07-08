@@ -361,6 +361,48 @@ class OperationsInsightsClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def change_macs_managed_autonomous_database_insight_connection_and_wait_for_state(self, database_insight_id, change_macs_managed_autonomous_database_insight_connection_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.opsi.OperationsInsightsClient.change_macs_managed_autonomous_database_insight_connection` and waits for the :py:class:`~oci.opsi.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str database_insight_id: (required)
+            Unique database insight identifier
+
+        :param oci.opsi.models.ChangeMacsManagedAutonomousDatabaseInsightConnectionDetails change_macs_managed_autonomous_database_insight_connection_details: (required)
+            The information to be updated.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.opsi.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.opsi.OperationsInsightsClient.change_macs_managed_autonomous_database_insight_connection`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.change_macs_managed_autonomous_database_insight_connection(database_insight_id, change_macs_managed_autonomous_database_insight_connection_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def change_macs_managed_cloud_database_insight_connection_and_wait_for_state(self, database_insight_id, change_macs_managed_cloud_database_insight_connection_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.opsi.OperationsInsightsClient.change_macs_managed_cloud_database_insight_connection` and waits for the :py:class:`~oci.opsi.models.WorkRequest`
@@ -1988,6 +2030,89 @@ class OperationsInsightsClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         operation_result = self.client.rotate_operations_insights_warehouse_wallet(operations_insights_warehouse_id, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def synchronize_autonomous_database_to_exadata_and_wait_for_state(self, compartment_id, synchronize_autonomous_database_to_exadata_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.opsi.OperationsInsightsClient.synchronize_autonomous_database_to_exadata` and waits for the :py:class:`~oci.opsi.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str compartment_id: (required)
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.opsi.models.SynchronizeAutonomousDatabaseToExadataDetails synchronize_autonomous_database_to_exadata_details: (required)
+            The information to be updated.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.opsi.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.opsi.OperationsInsightsClient.synchronize_autonomous_database_to_exadata`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.synchronize_autonomous_database_to_exadata(compartment_id, synchronize_autonomous_database_to_exadata_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def test_macs_managed_autonomous_database_insight_connection_and_wait_for_state(self, test_macs_managed_autonomous_database_insight_connection_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.opsi.OperationsInsightsClient.test_macs_managed_autonomous_database_insight_connection` and waits for the :py:class:`~oci.opsi.models.WorkRequest`
+        to enter the given state(s).
+
+        :param oci.opsi.models.TestMacsManagedAutonomousDatabaseInsightConnectionDetails test_macs_managed_autonomous_database_insight_connection_details: (required)
+            The database connection information for the MACS-managed autonomous database.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.opsi.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.opsi.OperationsInsightsClient.test_macs_managed_autonomous_database_insight_connection`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.test_macs_managed_autonomous_database_insight_connection(test_macs_managed_autonomous_database_insight_connection_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
         lowered_wait_for_states = [w.lower() for w in wait_for_states]

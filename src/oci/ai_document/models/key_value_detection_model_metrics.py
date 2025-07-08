@@ -23,7 +23,7 @@ class KeyValueDetectionModelMetrics(ModelMetrics):
 
         :param model_type:
             The value to assign to the model_type property of this KeyValueDetectionModelMetrics.
-            Allowed values for this property are: "KEY_VALUE_EXTRACTION", "DOCUMENT_CLASSIFICATION"
+            Allowed values for this property are: "KEY_VALUE_EXTRACTION", "DOCUMENT_CLASSIFICATION", "PRE_TRAINED_TEXT_EXTRACTION", "PRE_TRAINED_TABLE_EXTRACTION", "PRE_TRAINED_KEY_VALUE_EXTRACTION", "PRE_TRAINED_DOCUMENT_CLASSIFICATION", "PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION"
         :type model_type: str
 
         :param dataset_summary:

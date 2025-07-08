@@ -43,6 +43,10 @@ class UpdateDatabaseInsightDetails(object):
     #: This constant has a value of "MACS_MANAGED_CLOUD_DATABASE"
     ENTITY_SOURCE_MACS_MANAGED_CLOUD_DATABASE = "MACS_MANAGED_CLOUD_DATABASE"
 
+    #: A constant which can be used with the entity_source property of a UpdateDatabaseInsightDetails.
+    #: This constant has a value of "MACS_MANAGED_AUTONOMOUS_DATABASE"
+    ENTITY_SOURCE_MACS_MANAGED_AUTONOMOUS_DATABASE = "MACS_MANAGED_AUTONOMOUS_DATABASE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateDatabaseInsightDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -55,12 +59,13 @@ class UpdateDatabaseInsightDetails(object):
         * :class:`~oci.opsi.models.UpdateMdsMySqlDatabaseInsight`
         * :class:`~oci.opsi.models.UpdateMacsManagedCloudDatabaseInsightDetails`
         * :class:`~oci.opsi.models.UpdateExternalMysqlDatabaseInsightDetails`
+        * :class:`~oci.opsi.models.UpdateMacsManagedAutonomousDatabaseInsightDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param entity_source:
             The value to assign to the entity_source property of this UpdateDatabaseInsightDetails.
-            Allowed values for this property are: "AUTONOMOUS_DATABASE", "EM_MANAGED_EXTERNAL_DATABASE", "MACS_MANAGED_EXTERNAL_DATABASE", "PE_COMANAGED_DATABASE", "MDS_MYSQL_DATABASE_SYSTEM", "EXTERNAL_MYSQL_DATABASE_SYSTEM", "MACS_MANAGED_CLOUD_DATABASE"
+            Allowed values for this property are: "AUTONOMOUS_DATABASE", "EM_MANAGED_EXTERNAL_DATABASE", "MACS_MANAGED_EXTERNAL_DATABASE", "PE_COMANAGED_DATABASE", "MDS_MYSQL_DATABASE_SYSTEM", "EXTERNAL_MYSQL_DATABASE_SYSTEM", "MACS_MANAGED_CLOUD_DATABASE", "MACS_MANAGED_AUTONOMOUS_DATABASE"
         :type entity_source: str
 
         :param freeform_tags:
@@ -114,6 +119,9 @@ class UpdateDatabaseInsightDetails(object):
 
         if type == 'EXTERNAL_MYSQL_DATABASE_SYSTEM':
             return 'UpdateExternalMysqlDatabaseInsightDetails'
+
+        if type == 'MACS_MANAGED_AUTONOMOUS_DATABASE':
+            return 'UpdateMacsManagedAutonomousDatabaseInsightDetails'
         else:
             return 'UpdateDatabaseInsightDetails'
 
@@ -123,7 +131,7 @@ class UpdateDatabaseInsightDetails(object):
         **[Required]** Gets the entity_source of this UpdateDatabaseInsightDetails.
         Source of the database entity.
 
-        Allowed values for this property are: "AUTONOMOUS_DATABASE", "EM_MANAGED_EXTERNAL_DATABASE", "MACS_MANAGED_EXTERNAL_DATABASE", "PE_COMANAGED_DATABASE", "MDS_MYSQL_DATABASE_SYSTEM", "EXTERNAL_MYSQL_DATABASE_SYSTEM", "MACS_MANAGED_CLOUD_DATABASE"
+        Allowed values for this property are: "AUTONOMOUS_DATABASE", "EM_MANAGED_EXTERNAL_DATABASE", "MACS_MANAGED_EXTERNAL_DATABASE", "PE_COMANAGED_DATABASE", "MDS_MYSQL_DATABASE_SYSTEM", "EXTERNAL_MYSQL_DATABASE_SYSTEM", "MACS_MANAGED_CLOUD_DATABASE", "MACS_MANAGED_AUTONOMOUS_DATABASE"
 
 
         :return: The entity_source of this UpdateDatabaseInsightDetails.
@@ -141,7 +149,7 @@ class UpdateDatabaseInsightDetails(object):
         :param entity_source: The entity_source of this UpdateDatabaseInsightDetails.
         :type: str
         """
-        allowed_values = ["AUTONOMOUS_DATABASE", "EM_MANAGED_EXTERNAL_DATABASE", "MACS_MANAGED_EXTERNAL_DATABASE", "PE_COMANAGED_DATABASE", "MDS_MYSQL_DATABASE_SYSTEM", "EXTERNAL_MYSQL_DATABASE_SYSTEM", "MACS_MANAGED_CLOUD_DATABASE"]
+        allowed_values = ["AUTONOMOUS_DATABASE", "EM_MANAGED_EXTERNAL_DATABASE", "MACS_MANAGED_EXTERNAL_DATABASE", "PE_COMANAGED_DATABASE", "MDS_MYSQL_DATABASE_SYSTEM", "EXTERNAL_MYSQL_DATABASE_SYSTEM", "MACS_MANAGED_CLOUD_DATABASE", "MACS_MANAGED_AUTONOMOUS_DATABASE"]
         if not value_allowed_none_or_none_sentinel(entity_source, allowed_values):
             raise ValueError(
                 f"Invalid value for `entity_source`, must be None or one of {allowed_values}"

@@ -80,26 +80,40 @@ class FieldValue(object):
             The value to assign to the word_indexes property of this FieldValue.
         :type word_indexes: list[int]
 
+        :param normalized_value:
+            The value to assign to the normalized_value property of this FieldValue.
+        :type normalized_value: str
+
+        :param normalized_confidence:
+            The value to assign to the normalized_confidence property of this FieldValue.
+        :type normalized_confidence: float
+
         """
         self.swagger_types = {
             'value_type': 'str',
             'text': 'str',
             'confidence': 'float',
             'bounding_polygon': 'BoundingPolygon',
-            'word_indexes': 'list[int]'
+            'word_indexes': 'list[int]',
+            'normalized_value': 'str',
+            'normalized_confidence': 'float'
         }
         self.attribute_map = {
             'value_type': 'valueType',
             'text': 'text',
             'confidence': 'confidence',
             'bounding_polygon': 'boundingPolygon',
-            'word_indexes': 'wordIndexes'
+            'word_indexes': 'wordIndexes',
+            'normalized_value': 'normalizedValue',
+            'normalized_confidence': 'normalizedConfidence'
         }
         self._value_type = None
         self._text = None
         self._confidence = None
         self._bounding_polygon = None
         self._word_indexes = None
+        self._normalized_value = None
+        self._normalized_confidence = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -253,6 +267,54 @@ class FieldValue(object):
         :type: list[int]
         """
         self._word_indexes = word_indexes
+
+    @property
+    def normalized_value(self):
+        """
+        Gets the normalized_value of this FieldValue.
+        The normalized value.
+
+
+        :return: The normalized_value of this FieldValue.
+        :rtype: str
+        """
+        return self._normalized_value
+
+    @normalized_value.setter
+    def normalized_value(self, normalized_value):
+        """
+        Sets the normalized_value of this FieldValue.
+        The normalized value.
+
+
+        :param normalized_value: The normalized_value of this FieldValue.
+        :type: str
+        """
+        self._normalized_value = normalized_value
+
+    @property
+    def normalized_confidence(self):
+        """
+        Gets the normalized_confidence of this FieldValue.
+        The normalized value confidence score between 0 and 1.
+
+
+        :return: The normalized_confidence of this FieldValue.
+        :rtype: float
+        """
+        return self._normalized_confidence
+
+    @normalized_confidence.setter
+    def normalized_confidence(self, normalized_confidence):
+        """
+        Sets the normalized_confidence of this FieldValue.
+        The normalized value confidence score between 0 and 1.
+
+
+        :param normalized_confidence: The normalized_confidence of this FieldValue.
+        :type: float
+        """
+        self._normalized_confidence = normalized_confidence
 
     def __repr__(self):
         return formatted_flat_dict(self)
