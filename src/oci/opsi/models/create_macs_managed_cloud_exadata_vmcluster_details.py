@@ -23,7 +23,7 @@ class CreateMacsManagedCloudExadataVmclusterDetails(CreateMacsManagedCloudExadat
 
         :param vm_cluster_type:
             The value to assign to the vm_cluster_type property of this CreateMacsManagedCloudExadataVmclusterDetails.
-            Allowed values for this property are: "vmCluster"
+            Allowed values for this property are: "vmCluster", "autonomousVmCluster"
         :type vm_cluster_type: str
 
         :param vmcluster_id:
@@ -38,23 +38,30 @@ class CreateMacsManagedCloudExadataVmclusterDetails(CreateMacsManagedCloudExadat
             The value to assign to the member_database_details property of this CreateMacsManagedCloudExadataVmclusterDetails.
         :type member_database_details: list[oci.opsi.models.CreateMacsManagedCloudDatabaseInsightDetails]
 
+        :param member_autonomous_details:
+            The value to assign to the member_autonomous_details property of this CreateMacsManagedCloudExadataVmclusterDetails.
+        :type member_autonomous_details: list[oci.opsi.models.CreateMacsManagedAutonomousDatabaseInsightDetails]
+
         """
         self.swagger_types = {
             'vm_cluster_type': 'str',
             'vmcluster_id': 'str',
             'compartment_id': 'str',
-            'member_database_details': 'list[CreateMacsManagedCloudDatabaseInsightDetails]'
+            'member_database_details': 'list[CreateMacsManagedCloudDatabaseInsightDetails]',
+            'member_autonomous_details': 'list[CreateMacsManagedAutonomousDatabaseInsightDetails]'
         }
         self.attribute_map = {
             'vm_cluster_type': 'vmClusterType',
             'vmcluster_id': 'vmclusterId',
             'compartment_id': 'compartmentId',
-            'member_database_details': 'memberDatabaseDetails'
+            'member_database_details': 'memberDatabaseDetails',
+            'member_autonomous_details': 'memberAutonomousDetails'
         }
         self._vm_cluster_type = None
         self._vmcluster_id = None
         self._compartment_id = None
         self._member_database_details = None
+        self._member_autonomous_details = None
         self._vm_cluster_type = 'vmCluster'
 
     @property
@@ -80,6 +87,30 @@ class CreateMacsManagedCloudExadataVmclusterDetails(CreateMacsManagedCloudExadat
         :type: list[oci.opsi.models.CreateMacsManagedCloudDatabaseInsightDetails]
         """
         self._member_database_details = member_database_details
+
+    @property
+    def member_autonomous_details(self):
+        """
+        Gets the member_autonomous_details of this CreateMacsManagedCloudExadataVmclusterDetails.
+        The autonomous databases that belong to the Autonmous VM Cluster
+
+
+        :return: The member_autonomous_details of this CreateMacsManagedCloudExadataVmclusterDetails.
+        :rtype: list[oci.opsi.models.CreateMacsManagedAutonomousDatabaseInsightDetails]
+        """
+        return self._member_autonomous_details
+
+    @member_autonomous_details.setter
+    def member_autonomous_details(self, member_autonomous_details):
+        """
+        Sets the member_autonomous_details of this CreateMacsManagedCloudExadataVmclusterDetails.
+        The autonomous databases that belong to the Autonmous VM Cluster
+
+
+        :param member_autonomous_details: The member_autonomous_details of this CreateMacsManagedCloudExadataVmclusterDetails.
+        :type: list[oci.opsi.models.CreateMacsManagedAutonomousDatabaseInsightDetails]
+        """
+        self._member_autonomous_details = member_autonomous_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

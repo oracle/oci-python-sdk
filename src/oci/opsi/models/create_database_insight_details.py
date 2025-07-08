@@ -35,6 +35,10 @@ class CreateDatabaseInsightDetails(object):
     #: This constant has a value of "MACS_MANAGED_CLOUD_DATABASE"
     ENTITY_SOURCE_MACS_MANAGED_CLOUD_DATABASE = "MACS_MANAGED_CLOUD_DATABASE"
 
+    #: A constant which can be used with the entity_source property of a CreateDatabaseInsightDetails.
+    #: This constant has a value of "MACS_MANAGED_AUTONOMOUS_DATABASE"
+    ENTITY_SOURCE_MACS_MANAGED_AUTONOMOUS_DATABASE = "MACS_MANAGED_AUTONOMOUS_DATABASE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateDatabaseInsightDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -43,6 +47,7 @@ class CreateDatabaseInsightDetails(object):
         * :class:`~oci.opsi.models.CreateMacsManagedCloudDatabaseInsightDetails`
         * :class:`~oci.opsi.models.CreateExternalMysqlDatabaseInsightDetails`
         * :class:`~oci.opsi.models.CreateAutonomousDatabaseInsightDetails`
+        * :class:`~oci.opsi.models.CreateMacsManagedAutonomousDatabaseInsightDetails`
         * :class:`~oci.opsi.models.CreateMdsMySqlDatabaseInsightDetails`
         * :class:`~oci.opsi.models.CreateEmManagedExternalDatabaseInsightDetails`
         * :class:`~oci.opsi.models.CreatePeComanagedDatabaseInsightDetails`
@@ -51,7 +56,7 @@ class CreateDatabaseInsightDetails(object):
 
         :param entity_source:
             The value to assign to the entity_source property of this CreateDatabaseInsightDetails.
-            Allowed values for this property are: "EM_MANAGED_EXTERNAL_DATABASE", "PE_COMANAGED_DATABASE", "MDS_MYSQL_DATABASE_SYSTEM", "EXTERNAL_MYSQL_DATABASE_SYSTEM", "MACS_MANAGED_CLOUD_DATABASE"
+            Allowed values for this property are: "EM_MANAGED_EXTERNAL_DATABASE", "PE_COMANAGED_DATABASE", "MDS_MYSQL_DATABASE_SYSTEM", "EXTERNAL_MYSQL_DATABASE_SYSTEM", "MACS_MANAGED_CLOUD_DATABASE", "MACS_MANAGED_AUTONOMOUS_DATABASE"
         :type entity_source: str
 
         :param compartment_id:
@@ -101,6 +106,9 @@ class CreateDatabaseInsightDetails(object):
         if type == 'AUTONOMOUS_DATABASE':
             return 'CreateAutonomousDatabaseInsightDetails'
 
+        if type == 'MACS_MANAGED_AUTONOMOUS_DATABASE':
+            return 'CreateMacsManagedAutonomousDatabaseInsightDetails'
+
         if type == 'MDS_MYSQL_DATABASE_SYSTEM':
             return 'CreateMdsMySqlDatabaseInsightDetails'
 
@@ -118,7 +126,7 @@ class CreateDatabaseInsightDetails(object):
         **[Required]** Gets the entity_source of this CreateDatabaseInsightDetails.
         Source of the database entity.
 
-        Allowed values for this property are: "EM_MANAGED_EXTERNAL_DATABASE", "PE_COMANAGED_DATABASE", "MDS_MYSQL_DATABASE_SYSTEM", "EXTERNAL_MYSQL_DATABASE_SYSTEM", "MACS_MANAGED_CLOUD_DATABASE"
+        Allowed values for this property are: "EM_MANAGED_EXTERNAL_DATABASE", "PE_COMANAGED_DATABASE", "MDS_MYSQL_DATABASE_SYSTEM", "EXTERNAL_MYSQL_DATABASE_SYSTEM", "MACS_MANAGED_CLOUD_DATABASE", "MACS_MANAGED_AUTONOMOUS_DATABASE"
 
 
         :return: The entity_source of this CreateDatabaseInsightDetails.
@@ -136,7 +144,7 @@ class CreateDatabaseInsightDetails(object):
         :param entity_source: The entity_source of this CreateDatabaseInsightDetails.
         :type: str
         """
-        allowed_values = ["EM_MANAGED_EXTERNAL_DATABASE", "PE_COMANAGED_DATABASE", "MDS_MYSQL_DATABASE_SYSTEM", "EXTERNAL_MYSQL_DATABASE_SYSTEM", "MACS_MANAGED_CLOUD_DATABASE"]
+        allowed_values = ["EM_MANAGED_EXTERNAL_DATABASE", "PE_COMANAGED_DATABASE", "MDS_MYSQL_DATABASE_SYSTEM", "EXTERNAL_MYSQL_DATABASE_SYSTEM", "MACS_MANAGED_CLOUD_DATABASE", "MACS_MANAGED_AUTONOMOUS_DATABASE"]
         if not value_allowed_none_or_none_sentinel(entity_source, allowed_values):
             raise ValueError(
                 f"Invalid value for `entity_source`, must be None or one of {allowed_values}"

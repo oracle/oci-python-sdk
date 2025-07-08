@@ -23,7 +23,7 @@ class DocumentLanguageClassificationFeature(DocumentFeature):
 
         :param feature_type:
             The value to assign to the feature_type property of this DocumentLanguageClassificationFeature.
-            Allowed values for this property are: "LANGUAGE_CLASSIFICATION", "TEXT_EXTRACTION", "TABLE_EXTRACTION", "KEY_VALUE_EXTRACTION", "DOCUMENT_CLASSIFICATION"
+            Allowed values for this property are: "LANGUAGE_CLASSIFICATION", "TEXT_EXTRACTION", "TABLE_EXTRACTION", "KEY_VALUE_EXTRACTION", "DOCUMENT_CLASSIFICATION", "DOCUMENT_ELEMENTS_EXTRACTION"
         :type feature_type: str
 
         :param max_results:

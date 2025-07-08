@@ -36,23 +36,37 @@ class VmClusterSummary(object):
             The value to assign to the db_nodes_count property of this VmClusterSummary.
         :type db_nodes_count: int
 
+        :param storage_allocated_in_gbs:
+            The value to assign to the storage_allocated_in_gbs property of this VmClusterSummary.
+        :type storage_allocated_in_gbs: int
+
+        :param vm_cluster_id:
+            The value to assign to the vm_cluster_id property of this VmClusterSummary.
+        :type vm_cluster_id: str
+
         """
         self.swagger_types = {
             'vmcluster_name': 'str',
             'memory_allocated_in_gbs': 'int',
             'cpu_allocated': 'int',
-            'db_nodes_count': 'int'
+            'db_nodes_count': 'int',
+            'storage_allocated_in_gbs': 'int',
+            'vm_cluster_id': 'str'
         }
         self.attribute_map = {
             'vmcluster_name': 'vmclusterName',
             'memory_allocated_in_gbs': 'memoryAllocatedInGBs',
             'cpu_allocated': 'cpuAllocated',
-            'db_nodes_count': 'dbNodesCount'
+            'db_nodes_count': 'dbNodesCount',
+            'storage_allocated_in_gbs': 'storageAllocatedInGBs',
+            'vm_cluster_id': 'vmClusterId'
         }
         self._vmcluster_name = None
         self._memory_allocated_in_gbs = None
         self._cpu_allocated = None
         self._db_nodes_count = None
+        self._storage_allocated_in_gbs = None
+        self._vm_cluster_id = None
 
     @property
     def vmcluster_name(self):
@@ -149,6 +163,54 @@ class VmClusterSummary(object):
         :type: int
         """
         self._db_nodes_count = db_nodes_count
+
+    @property
+    def storage_allocated_in_gbs(self):
+        """
+        Gets the storage_allocated_in_gbs of this VmClusterSummary.
+        The storage allocated on a VM Cluster.
+
+
+        :return: The storage_allocated_in_gbs of this VmClusterSummary.
+        :rtype: int
+        """
+        return self._storage_allocated_in_gbs
+
+    @storage_allocated_in_gbs.setter
+    def storage_allocated_in_gbs(self, storage_allocated_in_gbs):
+        """
+        Sets the storage_allocated_in_gbs of this VmClusterSummary.
+        The storage allocated on a VM Cluster.
+
+
+        :param storage_allocated_in_gbs: The storage_allocated_in_gbs of this VmClusterSummary.
+        :type: int
+        """
+        self._storage_allocated_in_gbs = storage_allocated_in_gbs
+
+    @property
+    def vm_cluster_id(self):
+        """
+        Gets the vm_cluster_id of this VmClusterSummary.
+        The OCID of the VM Cluster.
+
+
+        :return: The vm_cluster_id of this VmClusterSummary.
+        :rtype: str
+        """
+        return self._vm_cluster_id
+
+    @vm_cluster_id.setter
+    def vm_cluster_id(self, vm_cluster_id):
+        """
+        Sets the vm_cluster_id of this VmClusterSummary.
+        The OCID of the VM Cluster.
+
+
+        :param vm_cluster_id: The vm_cluster_id of this VmClusterSummary.
+        :type: str
+        """
+        self._vm_cluster_id = vm_cluster_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -42,6 +42,14 @@ class ValueTime(FieldValue):
             The value to assign to the word_indexes property of this ValueTime.
         :type word_indexes: list[int]
 
+        :param normalized_value:
+            The value to assign to the normalized_value property of this ValueTime.
+        :type normalized_value: str
+
+        :param normalized_confidence:
+            The value to assign to the normalized_confidence property of this ValueTime.
+        :type normalized_confidence: float
+
         :param value:
             The value to assign to the value property of this ValueTime.
         :type value: datetime
@@ -53,6 +61,8 @@ class ValueTime(FieldValue):
             'confidence': 'float',
             'bounding_polygon': 'BoundingPolygon',
             'word_indexes': 'list[int]',
+            'normalized_value': 'str',
+            'normalized_confidence': 'float',
             'value': 'datetime'
         }
         self.attribute_map = {
@@ -61,6 +71,8 @@ class ValueTime(FieldValue):
             'confidence': 'confidence',
             'bounding_polygon': 'boundingPolygon',
             'word_indexes': 'wordIndexes',
+            'normalized_value': 'normalizedValue',
+            'normalized_confidence': 'normalizedConfidence',
             'value': 'value'
         }
         self._value_type = None
@@ -68,6 +80,8 @@ class ValueTime(FieldValue):
         self._confidence = None
         self._bounding_polygon = None
         self._word_indexes = None
+        self._normalized_value = None
+        self._normalized_confidence = None
         self._value = None
         self._value_type = 'TIME'
 

@@ -35,11 +35,16 @@ class DocumentFeature(object):
     #: This constant has a value of "DOCUMENT_CLASSIFICATION"
     FEATURE_TYPE_DOCUMENT_CLASSIFICATION = "DOCUMENT_CLASSIFICATION"
 
+    #: A constant which can be used with the feature_type property of a DocumentFeature.
+    #: This constant has a value of "DOCUMENT_ELEMENTS_EXTRACTION"
+    FEATURE_TYPE_DOCUMENT_ELEMENTS_EXTRACTION = "DOCUMENT_ELEMENTS_EXTRACTION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DocumentFeature object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.ai_document.models.DocumentElementsExtractionFeature`
         * :class:`~oci.ai_document.models.DocumentClassificationFeature`
         * :class:`~oci.ai_document.models.DocumentKeyValueExtractionFeature`
         * :class:`~oci.ai_document.models.DocumentLanguageClassificationFeature`
@@ -50,7 +55,7 @@ class DocumentFeature(object):
 
         :param feature_type:
             The value to assign to the feature_type property of this DocumentFeature.
-            Allowed values for this property are: "LANGUAGE_CLASSIFICATION", "TEXT_EXTRACTION", "TABLE_EXTRACTION", "KEY_VALUE_EXTRACTION", "DOCUMENT_CLASSIFICATION", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "LANGUAGE_CLASSIFICATION", "TEXT_EXTRACTION", "TABLE_EXTRACTION", "KEY_VALUE_EXTRACTION", "DOCUMENT_CLASSIFICATION", "DOCUMENT_ELEMENTS_EXTRACTION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type feature_type: str
 
@@ -70,6 +75,9 @@ class DocumentFeature(object):
         use the info in the hash to return the class of the subtype.
         """
         type = object_dictionary['featureType']
+
+        if type == 'DOCUMENT_ELEMENTS_EXTRACTION':
+            return 'DocumentElementsExtractionFeature'
 
         if type == 'DOCUMENT_CLASSIFICATION':
             return 'DocumentClassificationFeature'
@@ -99,8 +107,9 @@ class DocumentFeature(object):
         - `TABLE_EXTRACTION`: Detect and extract data in tables.
         - `KEY_VALUE_EXTRACTION`: Extract form fields.
         - `DOCUMENT_CLASSIFICATION`: Identify the type of document.
+        - `DOCUMENT_ELEMENTS_EXTRACTION`: Extract information from bar code
 
-        Allowed values for this property are: "LANGUAGE_CLASSIFICATION", "TEXT_EXTRACTION", "TABLE_EXTRACTION", "KEY_VALUE_EXTRACTION", "DOCUMENT_CLASSIFICATION", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "LANGUAGE_CLASSIFICATION", "TEXT_EXTRACTION", "TABLE_EXTRACTION", "KEY_VALUE_EXTRACTION", "DOCUMENT_CLASSIFICATION", "DOCUMENT_ELEMENTS_EXTRACTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -120,12 +129,13 @@ class DocumentFeature(object):
         - `TABLE_EXTRACTION`: Detect and extract data in tables.
         - `KEY_VALUE_EXTRACTION`: Extract form fields.
         - `DOCUMENT_CLASSIFICATION`: Identify the type of document.
+        - `DOCUMENT_ELEMENTS_EXTRACTION`: Extract information from bar code
 
 
         :param feature_type: The feature_type of this DocumentFeature.
         :type: str
         """
-        allowed_values = ["LANGUAGE_CLASSIFICATION", "TEXT_EXTRACTION", "TABLE_EXTRACTION", "KEY_VALUE_EXTRACTION", "DOCUMENT_CLASSIFICATION"]
+        allowed_values = ["LANGUAGE_CLASSIFICATION", "TEXT_EXTRACTION", "TABLE_EXTRACTION", "KEY_VALUE_EXTRACTION", "DOCUMENT_CLASSIFICATION", "DOCUMENT_ELEMENTS_EXTRACTION"]
         if not value_allowed_none_or_none_sentinel(feature_type, allowed_values):
             feature_type = 'UNKNOWN_ENUM_VALUE'
         self._feature_type = feature_type

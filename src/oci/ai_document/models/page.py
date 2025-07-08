@@ -52,6 +52,18 @@ class Page(object):
             The value to assign to the document_fields property of this Page.
         :type document_fields: list[oci.ai_document.models.DocumentField]
 
+        :param signatures:
+            The value to assign to the signatures property of this Page.
+        :type signatures: list[oci.ai_document.models.Signature]
+
+        :param bar_codes:
+            The value to assign to the bar_codes property of this Page.
+        :type bar_codes: list[oci.ai_document.models.BarCode]
+
+        :param selection_marks:
+            The value to assign to the selection_marks property of this Page.
+        :type selection_marks: list[oci.ai_document.models.SelectionMark]
+
         """
         self.swagger_types = {
             'page_number': 'int',
@@ -61,7 +73,10 @@ class Page(object):
             'words': 'list[Word]',
             'lines': 'list[Line]',
             'tables': 'list[Table]',
-            'document_fields': 'list[DocumentField]'
+            'document_fields': 'list[DocumentField]',
+            'signatures': 'list[Signature]',
+            'bar_codes': 'list[BarCode]',
+            'selection_marks': 'list[SelectionMark]'
         }
         self.attribute_map = {
             'page_number': 'pageNumber',
@@ -71,7 +86,10 @@ class Page(object):
             'words': 'words',
             'lines': 'lines',
             'tables': 'tables',
-            'document_fields': 'documentFields'
+            'document_fields': 'documentFields',
+            'signatures': 'signatures',
+            'bar_codes': 'barCodes',
+            'selection_marks': 'selectionMarks'
         }
         self._page_number = None
         self._dimensions = None
@@ -81,6 +99,9 @@ class Page(object):
         self._lines = None
         self._tables = None
         self._document_fields = None
+        self._signatures = None
+        self._bar_codes = None
+        self._selection_marks = None
 
     @property
     def page_number(self):
@@ -269,6 +290,78 @@ class Page(object):
         :type: list[oci.ai_document.models.DocumentField]
         """
         self._document_fields = document_fields
+
+    @property
+    def signatures(self):
+        """
+        Gets the signatures of this Page.
+        The signatures detected on the page.
+
+
+        :return: The signatures of this Page.
+        :rtype: list[oci.ai_document.models.Signature]
+        """
+        return self._signatures
+
+    @signatures.setter
+    def signatures(self, signatures):
+        """
+        Sets the signatures of this Page.
+        The signatures detected on the page.
+
+
+        :param signatures: The signatures of this Page.
+        :type: list[oci.ai_document.models.Signature]
+        """
+        self._signatures = signatures
+
+    @property
+    def bar_codes(self):
+        """
+        Gets the bar_codes of this Page.
+        The bar codes detected on the page.
+
+
+        :return: The bar_codes of this Page.
+        :rtype: list[oci.ai_document.models.BarCode]
+        """
+        return self._bar_codes
+
+    @bar_codes.setter
+    def bar_codes(self, bar_codes):
+        """
+        Sets the bar_codes of this Page.
+        The bar codes detected on the page.
+
+
+        :param bar_codes: The bar_codes of this Page.
+        :type: list[oci.ai_document.models.BarCode]
+        """
+        self._bar_codes = bar_codes
+
+    @property
+    def selection_marks(self):
+        """
+        Gets the selection_marks of this Page.
+        The checkboxes and selection marks detected on the page.
+
+
+        :return: The selection_marks of this Page.
+        :rtype: list[oci.ai_document.models.SelectionMark]
+        """
+        return self._selection_marks
+
+    @selection_marks.setter
+    def selection_marks(self, selection_marks):
+        """
+        Sets the selection_marks of this Page.
+        The checkboxes and selection marks detected on the page.
+
+
+        :param selection_marks: The selection_marks of this Page.
+        :type: list[oci.ai_document.models.SelectionMark]
+        """
+        self._selection_marks = selection_marks
 
     def __repr__(self):
         return formatted_flat_dict(self)

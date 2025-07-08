@@ -23,18 +23,49 @@ class DocumentTableExtractionFeature(DocumentFeature):
 
         :param feature_type:
             The value to assign to the feature_type property of this DocumentTableExtractionFeature.
-            Allowed values for this property are: "LANGUAGE_CLASSIFICATION", "TEXT_EXTRACTION", "TABLE_EXTRACTION", "KEY_VALUE_EXTRACTION", "DOCUMENT_CLASSIFICATION"
+            Allowed values for this property are: "LANGUAGE_CLASSIFICATION", "TEXT_EXTRACTION", "TABLE_EXTRACTION", "KEY_VALUE_EXTRACTION", "DOCUMENT_CLASSIFICATION", "DOCUMENT_ELEMENTS_EXTRACTION"
         :type feature_type: str
+
+        :param model_id:
+            The value to assign to the model_id property of this DocumentTableExtractionFeature.
+        :type model_id: str
 
         """
         self.swagger_types = {
-            'feature_type': 'str'
+            'feature_type': 'str',
+            'model_id': 'str'
         }
         self.attribute_map = {
-            'feature_type': 'featureType'
+            'feature_type': 'featureType',
+            'model_id': 'modelId'
         }
         self._feature_type = None
+        self._model_id = None
         self._feature_type = 'TABLE_EXTRACTION'
+
+    @property
+    def model_id(self):
+        """
+        Gets the model_id of this DocumentTableExtractionFeature.
+        Unique identifier custom model OCID that should be used for inference.
+
+
+        :return: The model_id of this DocumentTableExtractionFeature.
+        :rtype: str
+        """
+        return self._model_id
+
+    @model_id.setter
+    def model_id(self, model_id):
+        """
+        Sets the model_id of this DocumentTableExtractionFeature.
+        Unique identifier custom model OCID that should be used for inference.
+
+
+        :param model_id: The model_id of this DocumentTableExtractionFeature.
+        :type: str
+        """
+        self._model_id = model_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

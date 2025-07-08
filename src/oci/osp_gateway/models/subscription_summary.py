@@ -47,6 +47,10 @@ class SubscriptionSummary(object):
     #: This constant has a value of "UPGRADE_ERROR"
     UPGRADE_STATE_DETAILS_UPGRADE_ERROR = "UPGRADE_ERROR"
 
+    #: A constant which can be used with the upgrade_state_details property of a SubscriptionSummary.
+    #: This constant has a value of "P2C_ERROR"
+    UPGRADE_STATE_DETAILS_P2_C_ERROR = "P2C_ERROR"
+
     #: A constant which can be used with the account_type property of a SubscriptionSummary.
     #: This constant has a value of "PERSONAL"
     ACCOUNT_TYPE_PERSONAL = "PERSONAL"
@@ -98,6 +102,10 @@ class SubscriptionSummary(object):
             The value to assign to the is_intent_to_pay property of this SubscriptionSummary.
         :type is_intent_to_pay: bool
 
+        :param is_corporate_conversion_allowed:
+            The value to assign to the is_corporate_conversion_allowed property of this SubscriptionSummary.
+        :type is_corporate_conversion_allowed: bool
+
         :param currency_code:
             The value to assign to the currency_code property of this SubscriptionSummary.
         :type currency_code: str
@@ -122,7 +130,7 @@ class SubscriptionSummary(object):
 
         :param upgrade_state_details:
             The value to assign to the upgrade_state_details property of this SubscriptionSummary.
-            Allowed values for this property are: "TAX_ERROR", "UPGRADE_ERROR", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "TAX_ERROR", "UPGRADE_ERROR", "P2C_ERROR", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type upgrade_state_details: str
 
@@ -166,6 +174,7 @@ class SubscriptionSummary(object):
             'ship_to_cust_acct_role_id': 'str',
             'bill_to_cust_account_id': 'str',
             'is_intent_to_pay': 'bool',
+            'is_corporate_conversion_allowed': 'bool',
             'currency_code': 'str',
             'gsi_org_code': 'str',
             'language_code': 'str',
@@ -189,6 +198,7 @@ class SubscriptionSummary(object):
             'ship_to_cust_acct_role_id': 'shipToCustAcctRoleId',
             'bill_to_cust_account_id': 'billToCustAccountId',
             'is_intent_to_pay': 'isIntentToPay',
+            'is_corporate_conversion_allowed': 'isCorporateConversionAllowed',
             'currency_code': 'currencyCode',
             'gsi_org_code': 'gsiOrgCode',
             'language_code': 'languageCode',
@@ -211,6 +221,7 @@ class SubscriptionSummary(object):
         self._ship_to_cust_acct_role_id = None
         self._bill_to_cust_account_id = None
         self._is_intent_to_pay = None
+        self._is_corporate_conversion_allowed = None
         self._currency_code = None
         self._gsi_org_code = None
         self._language_code = None
@@ -424,6 +435,30 @@ class SubscriptionSummary(object):
         self._is_intent_to_pay = is_intent_to_pay
 
     @property
+    def is_corporate_conversion_allowed(self):
+        """
+        Gets the is_corporate_conversion_allowed of this SubscriptionSummary.
+        Corporate conversion allowed status
+
+
+        :return: The is_corporate_conversion_allowed of this SubscriptionSummary.
+        :rtype: bool
+        """
+        return self._is_corporate_conversion_allowed
+
+    @is_corporate_conversion_allowed.setter
+    def is_corporate_conversion_allowed(self, is_corporate_conversion_allowed):
+        """
+        Sets the is_corporate_conversion_allowed of this SubscriptionSummary.
+        Corporate conversion allowed status
+
+
+        :param is_corporate_conversion_allowed: The is_corporate_conversion_allowed of this SubscriptionSummary.
+        :type: bool
+        """
+        self._is_corporate_conversion_allowed = is_corporate_conversion_allowed
+
+    @property
     def currency_code(self):
         """
         Gets the currency_code of this SubscriptionSummary.
@@ -555,7 +590,7 @@ class SubscriptionSummary(object):
         Gets the upgrade_state_details of this SubscriptionSummary.
         This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
 
-        Allowed values for this property are: "TAX_ERROR", "UPGRADE_ERROR", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "TAX_ERROR", "UPGRADE_ERROR", "P2C_ERROR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -574,7 +609,7 @@ class SubscriptionSummary(object):
         :param upgrade_state_details: The upgrade_state_details of this SubscriptionSummary.
         :type: str
         """
-        allowed_values = ["TAX_ERROR", "UPGRADE_ERROR"]
+        allowed_values = ["TAX_ERROR", "UPGRADE_ERROR", "P2C_ERROR"]
         if not value_allowed_none_or_none_sentinel(upgrade_state_details, allowed_values):
             upgrade_state_details = 'UNKNOWN_ENUM_VALUE'
         self._upgrade_state_details = upgrade_state_details

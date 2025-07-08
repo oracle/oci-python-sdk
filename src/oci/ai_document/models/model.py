@@ -23,6 +23,26 @@ class Model(object):
     #: This constant has a value of "DOCUMENT_CLASSIFICATION"
     MODEL_TYPE_DOCUMENT_CLASSIFICATION = "DOCUMENT_CLASSIFICATION"
 
+    #: A constant which can be used with the model_type property of a Model.
+    #: This constant has a value of "PRE_TRAINED_TEXT_EXTRACTION"
+    MODEL_TYPE_PRE_TRAINED_TEXT_EXTRACTION = "PRE_TRAINED_TEXT_EXTRACTION"
+
+    #: A constant which can be used with the model_type property of a Model.
+    #: This constant has a value of "PRE_TRAINED_TABLE_EXTRACTION"
+    MODEL_TYPE_PRE_TRAINED_TABLE_EXTRACTION = "PRE_TRAINED_TABLE_EXTRACTION"
+
+    #: A constant which can be used with the model_type property of a Model.
+    #: This constant has a value of "PRE_TRAINED_KEY_VALUE_EXTRACTION"
+    MODEL_TYPE_PRE_TRAINED_KEY_VALUE_EXTRACTION = "PRE_TRAINED_KEY_VALUE_EXTRACTION"
+
+    #: A constant which can be used with the model_type property of a Model.
+    #: This constant has a value of "PRE_TRAINED_DOCUMENT_CLASSIFICATION"
+    MODEL_TYPE_PRE_TRAINED_DOCUMENT_CLASSIFICATION = "PRE_TRAINED_DOCUMENT_CLASSIFICATION"
+
+    #: A constant which can be used with the model_type property of a Model.
+    #: This constant has a value of "PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION"
+    MODEL_TYPE_PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION = "PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION"
+
     #: A constant which can be used with the lifecycle_state property of a Model.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -70,9 +90,17 @@ class Model(object):
 
         :param model_type:
             The value to assign to the model_type property of this Model.
-            Allowed values for this property are: "KEY_VALUE_EXTRACTION", "DOCUMENT_CLASSIFICATION", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "KEY_VALUE_EXTRACTION", "DOCUMENT_CLASSIFICATION", "PRE_TRAINED_TEXT_EXTRACTION", "PRE_TRAINED_TABLE_EXTRACTION", "PRE_TRAINED_KEY_VALUE_EXTRACTION", "PRE_TRAINED_DOCUMENT_CLASSIFICATION", "PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
+
+        :param model_sub_type:
+            The value to assign to the model_sub_type property of this Model.
+        :type model_sub_type: oci.ai_document.models.ModelSubType
+
+        :param inference_units:
+            The value to assign to the inference_units property of this Model.
+        :type inference_units: int
 
         :param tenancy_id:
             The value to assign to the tenancy_id property of this Model.
@@ -93,6 +121,10 @@ class Model(object):
         :param max_training_time_in_hours:
             The value to assign to the max_training_time_in_hours property of this Model.
         :type max_training_time_in_hours: float
+
+        :param language:
+            The value to assign to the language property of this Model.
+        :type language: str
 
         :param trained_time_in_hours:
             The value to assign to the trained_time_in_hours property of this Model.
@@ -171,11 +203,14 @@ class Model(object):
             'description': 'str',
             'compartment_id': 'str',
             'model_type': 'str',
+            'model_sub_type': 'ModelSubType',
+            'inference_units': 'int',
             'tenancy_id': 'str',
             'alias_name': 'str',
             'labels': 'list[str]',
             'is_quick_mode': 'bool',
             'max_training_time_in_hours': 'float',
+            'language': 'str',
             'trained_time_in_hours': 'float',
             'training_dataset': 'Dataset',
             'testing_dataset': 'Dataset',
@@ -200,11 +235,14 @@ class Model(object):
             'description': 'description',
             'compartment_id': 'compartmentId',
             'model_type': 'modelType',
+            'model_sub_type': 'modelSubType',
+            'inference_units': 'inferenceUnits',
             'tenancy_id': 'tenancyId',
             'alias_name': 'aliasName',
             'labels': 'labels',
             'is_quick_mode': 'isQuickMode',
             'max_training_time_in_hours': 'maxTrainingTimeInHours',
+            'language': 'language',
             'trained_time_in_hours': 'trainedTimeInHours',
             'training_dataset': 'trainingDataset',
             'testing_dataset': 'testingDataset',
@@ -228,11 +266,14 @@ class Model(object):
         self._description = None
         self._compartment_id = None
         self._model_type = None
+        self._model_sub_type = None
+        self._inference_units = None
         self._tenancy_id = None
         self._alias_name = None
         self._labels = None
         self._is_quick_mode = None
         self._max_training_time_in_hours = None
+        self._language = None
         self._trained_time_in_hours = None
         self._training_dataset = None
         self._testing_dataset = None
@@ -353,7 +394,7 @@ class Model(object):
         **[Required]** Gets the model_type of this Model.
         The type of the Document model.
 
-        Allowed values for this property are: "KEY_VALUE_EXTRACTION", "DOCUMENT_CLASSIFICATION", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "KEY_VALUE_EXTRACTION", "DOCUMENT_CLASSIFICATION", "PRE_TRAINED_TEXT_EXTRACTION", "PRE_TRAINED_TABLE_EXTRACTION", "PRE_TRAINED_KEY_VALUE_EXTRACTION", "PRE_TRAINED_DOCUMENT_CLASSIFICATION", "PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -372,10 +413,58 @@ class Model(object):
         :param model_type: The model_type of this Model.
         :type: str
         """
-        allowed_values = ["KEY_VALUE_EXTRACTION", "DOCUMENT_CLASSIFICATION"]
+        allowed_values = ["KEY_VALUE_EXTRACTION", "DOCUMENT_CLASSIFICATION", "PRE_TRAINED_TEXT_EXTRACTION", "PRE_TRAINED_TABLE_EXTRACTION", "PRE_TRAINED_KEY_VALUE_EXTRACTION", "PRE_TRAINED_DOCUMENT_CLASSIFICATION", "PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             model_type = 'UNKNOWN_ENUM_VALUE'
         self._model_type = model_type
+
+    @property
+    def model_sub_type(self):
+        """
+        Gets the model_sub_type of this Model.
+        Applicable to only PRE_TRAINED_KEY_VALUE_EXTRACTION, PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION.
+
+
+        :return: The model_sub_type of this Model.
+        :rtype: oci.ai_document.models.ModelSubType
+        """
+        return self._model_sub_type
+
+    @model_sub_type.setter
+    def model_sub_type(self, model_sub_type):
+        """
+        Sets the model_sub_type of this Model.
+        Applicable to only PRE_TRAINED_KEY_VALUE_EXTRACTION, PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION.
+
+
+        :param model_sub_type: The model_sub_type of this Model.
+        :type: oci.ai_document.models.ModelSubType
+        """
+        self._model_sub_type = model_sub_type
+
+    @property
+    def inference_units(self):
+        """
+        Gets the inference_units of this Model.
+        Number of replicas required for this model.
+
+
+        :return: The inference_units of this Model.
+        :rtype: int
+        """
+        return self._inference_units
+
+    @inference_units.setter
+    def inference_units(self, inference_units):
+        """
+        Sets the inference_units of this Model.
+        Number of replicas required for this model.
+
+
+        :param inference_units: The inference_units of this Model.
+        :type: int
+        """
+        self._inference_units = inference_units
 
     @property
     def tenancy_id(self):
@@ -496,6 +585,30 @@ class Model(object):
         :type: float
         """
         self._max_training_time_in_hours = max_training_time_in_hours
+
+    @property
+    def language(self):
+        """
+        Gets the language of this Model.
+        The document language for model training, abbreviated according to the BCP 47 syntax.
+
+
+        :return: The language of this Model.
+        :rtype: str
+        """
+        return self._language
+
+    @language.setter
+    def language(self, language):
+        """
+        Sets the language of this Model.
+        The document language for model training, abbreviated according to the BCP 47 syntax.
+
+
+        :param language: The language of this Model.
+        :type: str
+        """
+        self._language = language
 
     @property
     def trained_time_in_hours(self):

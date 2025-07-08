@@ -10,7 +10,10 @@ from .add_model_lock_details import AddModelLockDetails
 from .add_project_lock_details import AddProjectLockDetails
 from .analyze_document_details import AnalyzeDocumentDetails
 from .analyze_document_result import AnalyzeDocumentResult
+from .bar_code import BarCode
 from .bounding_polygon import BoundingPolygon
+from .capabilities import Capabilities
+from .capability import Capability
 from .cell import Cell
 from .change_model_compartment_details import ChangeModelCompartmentDetails
 from .change_project_compartment_details import ChangeProjectCompartmentDetails
@@ -30,6 +33,8 @@ from .document_classification_label_metrics_report import DocumentClassification
 from .document_classification_model_metrics import DocumentClassificationModelMetrics
 from .document_classification_overall_metrics_report import DocumentClassificationOverallMetricsReport
 from .document_details import DocumentDetails
+from .document_elements_extraction_feature import DocumentElementsExtractionFeature
+from .document_elements_sub_type import DocumentElementsSubType
 from .document_feature import DocumentFeature
 from .document_field import DocumentField
 from .document_key_value_extraction_feature import DocumentKeyValueExtractionFeature
@@ -37,22 +42,31 @@ from .document_language_classification_feature import DocumentLanguageClassifica
 from .document_metadata import DocumentMetadata
 from .document_table_extraction_feature import DocumentTableExtractionFeature
 from .document_text_extraction_feature import DocumentTextExtractionFeature
+from .driving_license_kv_model_sub_type_details import DrivingLicenseKvModelSubTypeDetails
 from .field_label import FieldLabel
 from .field_name import FieldName
 from .field_value import FieldValue
 from .general_processor_config import GeneralProcessorConfig
+from .health_insurance_kv_model_sub_type_details import HealthInsuranceKvModelSubTypeDetails
 from .inline_document_content import InlineDocumentContent
 from .inline_document_details import InlineDocumentDetails
 from .input_location import InputLocation
+from .invoice_kv_model_sub_type_details import InvoiceKvModelSubTypeDetails
+from .invoice_processor_config import InvoiceProcessorConfig
 from .key_value_detection_confidence_entry import KeyValueDetectionConfidenceEntry
 from .key_value_detection_label_metrics_report import KeyValueDetectionLabelMetricsReport
 from .key_value_detection_model_metrics import KeyValueDetectionModelMetrics
 from .key_value_detection_overall_metrics_report import KeyValueDetectionOverallMetricsReport
+from .kv_model_sub_type import KvModelSubType
 from .line import Line
 from .model import Model
 from .model_collection import ModelCollection
 from .model_metrics import ModelMetrics
+from .model_sub_type import ModelSubType
 from .model_summary import ModelSummary
+from .model_type_info import ModelTypeInfo
+from .normalization_fields import NormalizationFields
+from .normalization_fields_map_value import NormalizationFieldsMapValue
 from .normalized_vertex import NormalizedVertex
 from .object_location import ObjectLocation
 from .object_storage_dataset import ObjectStorageDataset
@@ -60,18 +74,29 @@ from .object_storage_document_details import ObjectStorageDocumentDetails
 from .object_storage_locations import ObjectStorageLocations
 from .output_location import OutputLocation
 from .page import Page
+from .passport_kv_model_sub_type_details import PassportKvModelSubTypeDetails
 from .patch_model_details import PatchModelDetails
 from .patch_model_operation import PatchModelOperation
 from .patch_response_message import PatchResponseMessage
+from .pre_trained_document_elements_extraction_model_details import PreTrainedDocumentElementsExtractionModelDetails
+from .pretrained_document_classification_model_details import PretrainedDocumentClassificationModelDetails
+from .pretrained_key_value_extraction_model_details import PretrainedKeyValueExtractionModelDetails
+from .pretrained_table_extraction_model_details import PretrainedTableExtractionModelDetails
+from .pretrained_text_extraction_model_details import PretrainedTextExtractionModelDetails
 from .processing_error import ProcessingError
 from .processor_config import ProcessorConfig
 from .processor_job import ProcessorJob
 from .project import Project
 from .project_collection import ProjectCollection
 from .project_summary import ProjectSummary
+from .qr_bar_code_sub_type_details import QrBarCodeSubTypeDetails
+from .receipt_kv_model_sub_type_details import ReceiptKvModelSubTypeDetails
 from .remove_model_lock_details import RemoveModelLockDetails
 from .remove_project_lock_details import RemoveProjectLockDetails
 from .resource_lock import ResourceLock
+from .selection_mark import SelectionMark
+from .signature import Signature
+from .signature_sub_type_details import SignatureSubTypeDetails
 from .table import Table
 from .table_row import TableRow
 from .update_model_details import UpdateModelDetails
@@ -99,7 +124,10 @@ ai_document_type_mapping = {
     "AddProjectLockDetails": AddProjectLockDetails,
     "AnalyzeDocumentDetails": AnalyzeDocumentDetails,
     "AnalyzeDocumentResult": AnalyzeDocumentResult,
+    "BarCode": BarCode,
     "BoundingPolygon": BoundingPolygon,
+    "Capabilities": Capabilities,
+    "Capability": Capability,
     "Cell": Cell,
     "ChangeModelCompartmentDetails": ChangeModelCompartmentDetails,
     "ChangeProjectCompartmentDetails": ChangeProjectCompartmentDetails,
@@ -119,6 +147,8 @@ ai_document_type_mapping = {
     "DocumentClassificationModelMetrics": DocumentClassificationModelMetrics,
     "DocumentClassificationOverallMetricsReport": DocumentClassificationOverallMetricsReport,
     "DocumentDetails": DocumentDetails,
+    "DocumentElementsExtractionFeature": DocumentElementsExtractionFeature,
+    "DocumentElementsSubType": DocumentElementsSubType,
     "DocumentFeature": DocumentFeature,
     "DocumentField": DocumentField,
     "DocumentKeyValueExtractionFeature": DocumentKeyValueExtractionFeature,
@@ -126,22 +156,31 @@ ai_document_type_mapping = {
     "DocumentMetadata": DocumentMetadata,
     "DocumentTableExtractionFeature": DocumentTableExtractionFeature,
     "DocumentTextExtractionFeature": DocumentTextExtractionFeature,
+    "DrivingLicenseKvModelSubTypeDetails": DrivingLicenseKvModelSubTypeDetails,
     "FieldLabel": FieldLabel,
     "FieldName": FieldName,
     "FieldValue": FieldValue,
     "GeneralProcessorConfig": GeneralProcessorConfig,
+    "HealthInsuranceKvModelSubTypeDetails": HealthInsuranceKvModelSubTypeDetails,
     "InlineDocumentContent": InlineDocumentContent,
     "InlineDocumentDetails": InlineDocumentDetails,
     "InputLocation": InputLocation,
+    "InvoiceKvModelSubTypeDetails": InvoiceKvModelSubTypeDetails,
+    "InvoiceProcessorConfig": InvoiceProcessorConfig,
     "KeyValueDetectionConfidenceEntry": KeyValueDetectionConfidenceEntry,
     "KeyValueDetectionLabelMetricsReport": KeyValueDetectionLabelMetricsReport,
     "KeyValueDetectionModelMetrics": KeyValueDetectionModelMetrics,
     "KeyValueDetectionOverallMetricsReport": KeyValueDetectionOverallMetricsReport,
+    "KvModelSubType": KvModelSubType,
     "Line": Line,
     "Model": Model,
     "ModelCollection": ModelCollection,
     "ModelMetrics": ModelMetrics,
+    "ModelSubType": ModelSubType,
     "ModelSummary": ModelSummary,
+    "ModelTypeInfo": ModelTypeInfo,
+    "NormalizationFields": NormalizationFields,
+    "NormalizationFieldsMapValue": NormalizationFieldsMapValue,
     "NormalizedVertex": NormalizedVertex,
     "ObjectLocation": ObjectLocation,
     "ObjectStorageDataset": ObjectStorageDataset,
@@ -149,18 +188,29 @@ ai_document_type_mapping = {
     "ObjectStorageLocations": ObjectStorageLocations,
     "OutputLocation": OutputLocation,
     "Page": Page,
+    "PassportKvModelSubTypeDetails": PassportKvModelSubTypeDetails,
     "PatchModelDetails": PatchModelDetails,
     "PatchModelOperation": PatchModelOperation,
     "PatchResponseMessage": PatchResponseMessage,
+    "PreTrainedDocumentElementsExtractionModelDetails": PreTrainedDocumentElementsExtractionModelDetails,
+    "PretrainedDocumentClassificationModelDetails": PretrainedDocumentClassificationModelDetails,
+    "PretrainedKeyValueExtractionModelDetails": PretrainedKeyValueExtractionModelDetails,
+    "PretrainedTableExtractionModelDetails": PretrainedTableExtractionModelDetails,
+    "PretrainedTextExtractionModelDetails": PretrainedTextExtractionModelDetails,
     "ProcessingError": ProcessingError,
     "ProcessorConfig": ProcessorConfig,
     "ProcessorJob": ProcessorJob,
     "Project": Project,
     "ProjectCollection": ProjectCollection,
     "ProjectSummary": ProjectSummary,
+    "QrBarCodeSubTypeDetails": QrBarCodeSubTypeDetails,
+    "ReceiptKvModelSubTypeDetails": ReceiptKvModelSubTypeDetails,
     "RemoveModelLockDetails": RemoveModelLockDetails,
     "RemoveProjectLockDetails": RemoveProjectLockDetails,
     "ResourceLock": ResourceLock,
+    "SelectionMark": SelectionMark,
+    "Signature": Signature,
+    "SignatureSubTypeDetails": SignatureSubTypeDetails,
     "Table": Table,
     "TableRow": TableRow,
     "UpdateModelDetails": UpdateModelDetails,

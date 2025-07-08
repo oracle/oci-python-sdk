@@ -49,7 +49,7 @@ class ExadataDatabaseMachineConfigurationSummary(ExadataConfigurationSummary):
 
         :param exadata_rack_type:
             The value to assign to the exadata_rack_type property of this ExadataDatabaseMachineConfigurationSummary.
-            Allowed values for this property are: "FULL", "HALF", "QUARTER", "EIGHTH", "FLEX", "BASE", "ELASTIC", "ELASTIC_BASE", "ELASTIC_LARGE"
+            Allowed values for this property are: "FULL", "HALF", "QUARTER", "EIGHTH", "FLEX", "BASE", "ELASTIC", "ELASTIC_BASE", "ELASTIC_LARGE", "ELASTIC_EXTRA_LARGE"
         :type exadata_rack_type: str
 
         :param defined_tags:
@@ -88,6 +88,14 @@ class ExadataDatabaseMachineConfigurationSummary(ExadataConfigurationSummary):
             The value to assign to the enterprise_manager_entity_type property of this ExadataDatabaseMachineConfigurationSummary.
         :type enterprise_manager_entity_type: str
 
+        :param parent_id:
+            The value to assign to the parent_id property of this ExadataDatabaseMachineConfigurationSummary.
+        :type parent_id: str
+
+        :param region:
+            The value to assign to the region property of this ExadataDatabaseMachineConfigurationSummary.
+        :type region: str
+
         """
         self.swagger_types = {
             'exadata_insight_id': 'str',
@@ -105,7 +113,9 @@ class ExadataDatabaseMachineConfigurationSummary(ExadataConfigurationSummary):
             'enterprise_manager_entity_identifier': 'str',
             'enterprise_manager_console_url': 'str',
             'enterprise_manager_oms_ver': 'str',
-            'enterprise_manager_entity_type': 'str'
+            'enterprise_manager_entity_type': 'str',
+            'parent_id': 'str',
+            'region': 'str'
         }
         self.attribute_map = {
             'exadata_insight_id': 'exadataInsightId',
@@ -123,7 +133,9 @@ class ExadataDatabaseMachineConfigurationSummary(ExadataConfigurationSummary):
             'enterprise_manager_entity_identifier': 'enterpriseManagerEntityIdentifier',
             'enterprise_manager_console_url': 'enterpriseManagerConsoleUrl',
             'enterprise_manager_oms_ver': 'enterpriseManagerOmsVer',
-            'enterprise_manager_entity_type': 'enterpriseManagerEntityType'
+            'enterprise_manager_entity_type': 'enterpriseManagerEntityType',
+            'parent_id': 'parentId',
+            'region': 'region'
         }
         self._exadata_insight_id = None
         self._entity_source = None
@@ -141,6 +153,8 @@ class ExadataDatabaseMachineConfigurationSummary(ExadataConfigurationSummary):
         self._enterprise_manager_console_url = None
         self._enterprise_manager_oms_ver = None
         self._enterprise_manager_entity_type = None
+        self._parent_id = None
+        self._region = None
         self._entity_source = 'EM_MANAGED_EXTERNAL_EXADATA'
 
     @property
@@ -286,6 +300,58 @@ class ExadataDatabaseMachineConfigurationSummary(ExadataConfigurationSummary):
         :type: str
         """
         self._enterprise_manager_entity_type = enterprise_manager_entity_type
+
+    @property
+    def parent_id(self):
+        """
+        Gets the parent_id of this ExadataDatabaseMachineConfigurationSummary.
+        The `OCID`__ of the database.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The parent_id of this ExadataDatabaseMachineConfigurationSummary.
+        :rtype: str
+        """
+        return self._parent_id
+
+    @parent_id.setter
+    def parent_id(self, parent_id):
+        """
+        Sets the parent_id of this ExadataDatabaseMachineConfigurationSummary.
+        The `OCID`__ of the database.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param parent_id: The parent_id of this ExadataDatabaseMachineConfigurationSummary.
+        :type: str
+        """
+        self._parent_id = parent_id
+
+    @property
+    def region(self):
+        """
+        Gets the region of this ExadataDatabaseMachineConfigurationSummary.
+        The region the resource resides in.
+
+
+        :return: The region of this ExadataDatabaseMachineConfigurationSummary.
+        :rtype: str
+        """
+        return self._region
+
+    @region.setter
+    def region(self, region):
+        """
+        Sets the region of this ExadataDatabaseMachineConfigurationSummary.
+        The region the resource resides in.
+
+
+        :param region: The region of this ExadataDatabaseMachineConfigurationSummary.
+        :type: str
+        """
+        self._region = region
 
     def __repr__(self):
         return formatted_flat_dict(self)

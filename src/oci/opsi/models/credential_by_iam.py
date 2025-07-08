@@ -27,7 +27,7 @@ class CredentialByIam(CredentialDetails):
 
         :param credential_type:
             The value to assign to the credential_type property of this CredentialByIam.
-            Allowed values for this property are: "CREDENTIALS_BY_SOURCE", "CREDENTIALS_BY_VAULT", "CREDENTIALS_BY_IAM"
+            Allowed values for this property are: "CREDENTIALS_BY_SOURCE", "CREDENTIALS_BY_VAULT", "CREDENTIALS_BY_IAM", "CREDENTIALS_BY_NAMED_CREDS"
         :type credential_type: str
 
         """

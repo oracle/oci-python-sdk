@@ -63,6 +63,10 @@ class ExadataMemberCollection(object):
     #: This constant has a value of "ELASTIC_LARGE"
     EXADATA_RACK_TYPE_ELASTIC_LARGE = "ELASTIC_LARGE"
 
+    #: A constant which can be used with the exadata_rack_type property of a ExadataMemberCollection.
+    #: This constant has a value of "ELASTIC_EXTRA_LARGE"
+    EXADATA_RACK_TYPE_ELASTIC_EXTRA_LARGE = "ELASTIC_EXTRA_LARGE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ExadataMemberCollection object with values from keyword arguments.
@@ -88,7 +92,7 @@ class ExadataMemberCollection(object):
 
         :param exadata_rack_type:
             The value to assign to the exadata_rack_type property of this ExadataMemberCollection.
-            Allowed values for this property are: "FULL", "HALF", "QUARTER", "EIGHTH", "FLEX", "BASE", "ELASTIC", "ELASTIC_BASE", "ELASTIC_LARGE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "FULL", "HALF", "QUARTER", "EIGHTH", "FLEX", "BASE", "ELASTIC", "ELASTIC_BASE", "ELASTIC_LARGE", "ELASTIC_EXTRA_LARGE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type exadata_rack_type: str
 
@@ -232,7 +236,7 @@ class ExadataMemberCollection(object):
         **[Required]** Gets the exadata_rack_type of this ExadataMemberCollection.
         Exadata rack type.
 
-        Allowed values for this property are: "FULL", "HALF", "QUARTER", "EIGHTH", "FLEX", "BASE", "ELASTIC", "ELASTIC_BASE", "ELASTIC_LARGE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "FULL", "HALF", "QUARTER", "EIGHTH", "FLEX", "BASE", "ELASTIC", "ELASTIC_BASE", "ELASTIC_LARGE", "ELASTIC_EXTRA_LARGE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -251,7 +255,7 @@ class ExadataMemberCollection(object):
         :param exadata_rack_type: The exadata_rack_type of this ExadataMemberCollection.
         :type: str
         """
-        allowed_values = ["FULL", "HALF", "QUARTER", "EIGHTH", "FLEX", "BASE", "ELASTIC", "ELASTIC_BASE", "ELASTIC_LARGE"]
+        allowed_values = ["FULL", "HALF", "QUARTER", "EIGHTH", "FLEX", "BASE", "ELASTIC", "ELASTIC_BASE", "ELASTIC_LARGE", "ELASTIC_EXTRA_LARGE"]
         if not value_allowed_none_or_none_sentinel(exadata_rack_type, allowed_values):
             exadata_rack_type = 'UNKNOWN_ENUM_VALUE'
         self._exadata_rack_type = exadata_rack_type

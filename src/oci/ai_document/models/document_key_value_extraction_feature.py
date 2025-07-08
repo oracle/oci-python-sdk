@@ -23,31 +23,38 @@ class DocumentKeyValueExtractionFeature(DocumentFeature):
 
         :param feature_type:
             The value to assign to the feature_type property of this DocumentKeyValueExtractionFeature.
-            Allowed values for this property are: "LANGUAGE_CLASSIFICATION", "TEXT_EXTRACTION", "TABLE_EXTRACTION", "KEY_VALUE_EXTRACTION", "DOCUMENT_CLASSIFICATION"
+            Allowed values for this property are: "LANGUAGE_CLASSIFICATION", "TEXT_EXTRACTION", "TABLE_EXTRACTION", "KEY_VALUE_EXTRACTION", "DOCUMENT_CLASSIFICATION", "DOCUMENT_ELEMENTS_EXTRACTION"
         :type feature_type: str
 
         :param model_id:
             The value to assign to the model_id property of this DocumentKeyValueExtractionFeature.
         :type model_id: str
 
+        :param tenancy_id:
+            The value to assign to the tenancy_id property of this DocumentKeyValueExtractionFeature.
+        :type tenancy_id: str
+
         """
         self.swagger_types = {
             'feature_type': 'str',
-            'model_id': 'str'
+            'model_id': 'str',
+            'tenancy_id': 'str'
         }
         self.attribute_map = {
             'feature_type': 'featureType',
-            'model_id': 'modelId'
+            'model_id': 'modelId',
+            'tenancy_id': 'tenancyId'
         }
         self._feature_type = None
         self._model_id = None
+        self._tenancy_id = None
         self._feature_type = 'KEY_VALUE_EXTRACTION'
 
     @property
     def model_id(self):
         """
         Gets the model_id of this DocumentKeyValueExtractionFeature.
-        The custom model ID.
+        Unique identifier custom model OCID that should be used for inference.
 
 
         :return: The model_id of this DocumentKeyValueExtractionFeature.
@@ -59,13 +66,37 @@ class DocumentKeyValueExtractionFeature(DocumentFeature):
     def model_id(self, model_id):
         """
         Sets the model_id of this DocumentKeyValueExtractionFeature.
-        The custom model ID.
+        Unique identifier custom model OCID that should be used for inference.
 
 
         :param model_id: The model_id of this DocumentKeyValueExtractionFeature.
         :type: str
         """
         self._model_id = model_id
+
+    @property
+    def tenancy_id(self):
+        """
+        Gets the tenancy_id of this DocumentKeyValueExtractionFeature.
+        The custom model tenancy ID when modelId represents aliasName.
+
+
+        :return: The tenancy_id of this DocumentKeyValueExtractionFeature.
+        :rtype: str
+        """
+        return self._tenancy_id
+
+    @tenancy_id.setter
+    def tenancy_id(self, tenancy_id):
+        """
+        Sets the tenancy_id of this DocumentKeyValueExtractionFeature.
+        The custom model tenancy ID when modelId represents aliasName.
+
+
+        :param tenancy_id: The tenancy_id of this DocumentKeyValueExtractionFeature.
+        :type: str
+        """
+        self._tenancy_id = tenancy_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

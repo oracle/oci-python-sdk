@@ -49,7 +49,7 @@ class EmManagedExternalExadataInsight(ExadataInsight):
 
         :param exadata_rack_type:
             The value to assign to the exadata_rack_type property of this EmManagedExternalExadataInsight.
-            Allowed values for this property are: "FULL", "HALF", "QUARTER", "EIGHTH", "FLEX", "BASE", "ELASTIC", "ELASTIC_BASE", "ELASTIC_LARGE"
+            Allowed values for this property are: "FULL", "HALF", "QUARTER", "EIGHTH", "FLEX", "BASE", "ELASTIC", "ELASTIC_BASE", "ELASTIC_LARGE", "ELASTIC_EXTRA_LARGE"
         :type exadata_rack_type: str
 
         :param is_virtualized_exadata:

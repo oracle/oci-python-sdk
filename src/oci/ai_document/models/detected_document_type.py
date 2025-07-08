@@ -24,6 +24,10 @@ class DetectedDocumentType(object):
             The value to assign to the document_type property of this DetectedDocumentType.
         :type document_type: str
 
+        :param document_id:
+            The value to assign to the document_id property of this DetectedDocumentType.
+        :type document_id: str
+
         :param confidence:
             The value to assign to the confidence property of this DetectedDocumentType.
         :type confidence: float
@@ -31,13 +35,16 @@ class DetectedDocumentType(object):
         """
         self.swagger_types = {
             'document_type': 'str',
+            'document_id': 'str',
             'confidence': 'float'
         }
         self.attribute_map = {
             'document_type': 'documentType',
+            'document_id': 'documentId',
             'confidence': 'confidence'
         }
         self._document_type = None
+        self._document_id = None
         self._confidence = None
 
     @property
@@ -63,6 +70,34 @@ class DetectedDocumentType(object):
         :type: str
         """
         self._document_type = document_type
+
+    @property
+    def document_id(self):
+        """
+        Gets the document_id of this DetectedDocumentType.
+        The `OCID`__ of the Key-Value Extraction model that was used to extract the key-value pairs.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The document_id of this DetectedDocumentType.
+        :rtype: str
+        """
+        return self._document_id
+
+    @document_id.setter
+    def document_id(self, document_id):
+        """
+        Sets the document_id of this DetectedDocumentType.
+        The `OCID`__ of the Key-Value Extraction model that was used to extract the key-value pairs.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param document_id: The document_id of this DetectedDocumentType.
+        :type: str
+        """
+        self._document_id = document_id
 
     @property
     def confidence(self):

@@ -42,6 +42,14 @@ class ValueArray(FieldValue):
             The value to assign to the word_indexes property of this ValueArray.
         :type word_indexes: list[int]
 
+        :param normalized_value:
+            The value to assign to the normalized_value property of this ValueArray.
+        :type normalized_value: str
+
+        :param normalized_confidence:
+            The value to assign to the normalized_confidence property of this ValueArray.
+        :type normalized_confidence: float
+
         :param items:
             The value to assign to the items property of this ValueArray.
         :type items: list[oci.ai_document.models.DocumentField]
@@ -53,6 +61,8 @@ class ValueArray(FieldValue):
             'confidence': 'float',
             'bounding_polygon': 'BoundingPolygon',
             'word_indexes': 'list[int]',
+            'normalized_value': 'str',
+            'normalized_confidence': 'float',
             'items': 'list[DocumentField]'
         }
         self.attribute_map = {
@@ -61,6 +71,8 @@ class ValueArray(FieldValue):
             'confidence': 'confidence',
             'bounding_polygon': 'boundingPolygon',
             'word_indexes': 'wordIndexes',
+            'normalized_value': 'normalizedValue',
+            'normalized_confidence': 'normalizedConfidence',
             'items': 'items'
         }
         self._value_type = None
@@ -68,6 +80,8 @@ class ValueArray(FieldValue):
         self._confidence = None
         self._bounding_polygon = None
         self._word_indexes = None
+        self._normalized_value = None
+        self._normalized_confidence = None
         self._items = None
         self._value_type = 'ARRAY'
 

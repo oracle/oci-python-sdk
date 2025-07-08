@@ -23,19 +23,44 @@ class ModelMetrics(object):
     #: This constant has a value of "DOCUMENT_CLASSIFICATION"
     MODEL_TYPE_DOCUMENT_CLASSIFICATION = "DOCUMENT_CLASSIFICATION"
 
+    #: A constant which can be used with the model_type property of a ModelMetrics.
+    #: This constant has a value of "PRE_TRAINED_TEXT_EXTRACTION"
+    MODEL_TYPE_PRE_TRAINED_TEXT_EXTRACTION = "PRE_TRAINED_TEXT_EXTRACTION"
+
+    #: A constant which can be used with the model_type property of a ModelMetrics.
+    #: This constant has a value of "PRE_TRAINED_TABLE_EXTRACTION"
+    MODEL_TYPE_PRE_TRAINED_TABLE_EXTRACTION = "PRE_TRAINED_TABLE_EXTRACTION"
+
+    #: A constant which can be used with the model_type property of a ModelMetrics.
+    #: This constant has a value of "PRE_TRAINED_KEY_VALUE_EXTRACTION"
+    MODEL_TYPE_PRE_TRAINED_KEY_VALUE_EXTRACTION = "PRE_TRAINED_KEY_VALUE_EXTRACTION"
+
+    #: A constant which can be used with the model_type property of a ModelMetrics.
+    #: This constant has a value of "PRE_TRAINED_DOCUMENT_CLASSIFICATION"
+    MODEL_TYPE_PRE_TRAINED_DOCUMENT_CLASSIFICATION = "PRE_TRAINED_DOCUMENT_CLASSIFICATION"
+
+    #: A constant which can be used with the model_type property of a ModelMetrics.
+    #: This constant has a value of "PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION"
+    MODEL_TYPE_PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION = "PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ModelMetrics object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.ai_document.models.PreTrainedDocumentElementsExtractionModelDetails`
         * :class:`~oci.ai_document.models.DocumentClassificationModelMetrics`
+        * :class:`~oci.ai_document.models.PretrainedDocumentClassificationModelDetails`
+        * :class:`~oci.ai_document.models.PretrainedTableExtractionModelDetails`
         * :class:`~oci.ai_document.models.KeyValueDetectionModelMetrics`
+        * :class:`~oci.ai_document.models.PretrainedKeyValueExtractionModelDetails`
+        * :class:`~oci.ai_document.models.PretrainedTextExtractionModelDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param model_type:
             The value to assign to the model_type property of this ModelMetrics.
-            Allowed values for this property are: "KEY_VALUE_EXTRACTION", "DOCUMENT_CLASSIFICATION", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "KEY_VALUE_EXTRACTION", "DOCUMENT_CLASSIFICATION", "PRE_TRAINED_TEXT_EXTRACTION", "PRE_TRAINED_TABLE_EXTRACTION", "PRE_TRAINED_KEY_VALUE_EXTRACTION", "PRE_TRAINED_DOCUMENT_CLASSIFICATION", "PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
@@ -63,11 +88,26 @@ class ModelMetrics(object):
         """
         type = object_dictionary['modelType']
 
+        if type == 'PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION':
+            return 'PreTrainedDocumentElementsExtractionModelDetails'
+
         if type == 'DOCUMENT_CLASSIFICATION':
             return 'DocumentClassificationModelMetrics'
 
+        if type == 'PRE_TRAINED_DOCUMENT_CLASSIFICATION':
+            return 'PretrainedDocumentClassificationModelDetails'
+
+        if type == 'PRE_TRAINED_TABLE_EXTRACTION':
+            return 'PretrainedTableExtractionModelDetails'
+
         if type == 'KEY_VALUE_EXTRACTION':
             return 'KeyValueDetectionModelMetrics'
+
+        if type == 'PRE_TRAINED_KEY_VALUE_EXTRACTION':
+            return 'PretrainedKeyValueExtractionModelDetails'
+
+        if type == 'PRE_TRAINED_TEXT_EXTRACTION':
+            return 'PretrainedTextExtractionModelDetails'
         else:
             return 'ModelMetrics'
 
@@ -77,7 +117,7 @@ class ModelMetrics(object):
         **[Required]** Gets the model_type of this ModelMetrics.
         The type of custom model trained.
 
-        Allowed values for this property are: "KEY_VALUE_EXTRACTION", "DOCUMENT_CLASSIFICATION", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "KEY_VALUE_EXTRACTION", "DOCUMENT_CLASSIFICATION", "PRE_TRAINED_TEXT_EXTRACTION", "PRE_TRAINED_TABLE_EXTRACTION", "PRE_TRAINED_KEY_VALUE_EXTRACTION", "PRE_TRAINED_DOCUMENT_CLASSIFICATION", "PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -96,7 +136,7 @@ class ModelMetrics(object):
         :param model_type: The model_type of this ModelMetrics.
         :type: str
         """
-        allowed_values = ["KEY_VALUE_EXTRACTION", "DOCUMENT_CLASSIFICATION"]
+        allowed_values = ["KEY_VALUE_EXTRACTION", "DOCUMENT_CLASSIFICATION", "PRE_TRAINED_TEXT_EXTRACTION", "PRE_TRAINED_TABLE_EXTRACTION", "PRE_TRAINED_KEY_VALUE_EXTRACTION", "PRE_TRAINED_DOCUMENT_CLASSIFICATION", "PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             model_type = 'UNKNOWN_ENUM_VALUE'
         self._model_type = model_type

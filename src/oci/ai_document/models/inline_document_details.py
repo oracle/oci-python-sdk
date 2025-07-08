@@ -30,17 +30,24 @@ class InlineDocumentDetails(DocumentDetails):
             The value to assign to the data property of this InlineDocumentDetails.
         :type data: str
 
+        :param page_range:
+            The value to assign to the page_range property of this InlineDocumentDetails.
+        :type page_range: list[str]
+
         """
         self.swagger_types = {
             'source': 'str',
-            'data': 'str'
+            'data': 'str',
+            'page_range': 'list[str]'
         }
         self.attribute_map = {
             'source': 'source',
-            'data': 'data'
+            'data': 'data',
+            'page_range': 'pageRange'
         }
         self._source = None
         self._data = None
+        self._page_range = None
         self._source = 'INLINE'
 
     @property
@@ -66,6 +73,30 @@ class InlineDocumentDetails(DocumentDetails):
         :type: str
         """
         self._data = data
+
+    @property
+    def page_range(self):
+        """
+        Gets the page_range of this InlineDocumentDetails.
+        The page ranges to be analysed.
+
+
+        :return: The page_range of this InlineDocumentDetails.
+        :rtype: list[str]
+        """
+        return self._page_range
+
+    @page_range.setter
+    def page_range(self, page_range):
+        """
+        Sets the page_range of this InlineDocumentDetails.
+        The page ranges to be analysed.
+
+
+        :param page_range: The page_range of this InlineDocumentDetails.
+        :type: list[str]
+        """
+        self._page_range = page_range
 
     def __repr__(self):
         return formatted_flat_dict(self)

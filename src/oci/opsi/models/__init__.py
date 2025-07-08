@@ -85,6 +85,7 @@ from .change_enterprise_manager_bridge_compartment_details import ChangeEnterpri
 from .change_exadata_insight_compartment_details import ChangeExadataInsightCompartmentDetails
 from .change_external_mysql_database_insight_connection_details import ChangeExternalMysqlDatabaseInsightConnectionDetails
 from .change_host_insight_compartment_details import ChangeHostInsightCompartmentDetails
+from .change_macs_managed_autonomous_database_insight_connection_details import ChangeMacsManagedAutonomousDatabaseInsightConnectionDetails
 from .change_macs_managed_cloud_database_insight_connection_details import ChangeMacsManagedCloudDatabaseInsightConnectionDetails
 from .change_news_report_compartment_details import ChangeNewsReportCompartmentDetails
 from .change_operations_insights_private_endpoint_compartment_details import ChangeOperationsInsightsPrivateEndpointCompartmentDetails
@@ -115,6 +116,7 @@ from .create_enterprise_manager_bridge_details import CreateEnterpriseManagerBri
 from .create_exadata_insight_details import CreateExadataInsightDetails
 from .create_external_mysql_database_insight_details import CreateExternalMysqlDatabaseInsightDetails
 from .create_host_insight_details import CreateHostInsightDetails
+from .create_macs_managed_autonomous_database_insight_details import CreateMacsManagedAutonomousDatabaseInsightDetails
 from .create_macs_managed_cloud_database_insight_details import CreateMacsManagedCloudDatabaseInsightDetails
 from .create_macs_managed_cloud_exadata_cluster_details import CreateMacsManagedCloudExadataClusterDetails
 from .create_macs_managed_cloud_exadata_insight_details import CreateMacsManagedCloudExadataInsightDetails
@@ -132,6 +134,7 @@ from .create_pe_comanaged_database_insight_details import CreatePeComanagedDatab
 from .create_pe_comanaged_exadata_insight_details import CreatePeComanagedExadataInsightDetails
 from .create_pe_comanaged_exadata_vmcluster_details import CreatePeComanagedExadataVmclusterDetails
 from .credential_by_iam import CredentialByIam
+from .credential_by_named_credentials import CredentialByNamedCredentials
 from .credential_by_vault import CredentialByVault
 from .credential_details import CredentialDetails
 from .credentials_by_source import CredentialsBySource
@@ -187,6 +190,7 @@ from .enable_em_managed_external_host_insight_details import EnableEmManagedExte
 from .enable_exadata_insight_details import EnableExadataInsightDetails
 from .enable_external_mysql_database_insight_details import EnableExternalMysqlDatabaseInsightDetails
 from .enable_host_insight_details import EnableHostInsightDetails
+from .enable_macs_managed_autonomous_database_insight_details import EnableMacsManagedAutonomousDatabaseInsightDetails
 from .enable_macs_managed_cloud_database_insight_details import EnableMacsManagedCloudDatabaseInsightDetails
 from .enable_macs_managed_cloud_exadata_insight_details import EnableMacsManagedCloudExadataInsightDetails
 from .enable_macs_managed_cloud_host_insight_details import EnableMacsManagedCloudHostInsightDetails
@@ -306,6 +310,9 @@ from .instance_metrics import InstanceMetrics
 from .io_usage_trend import IoUsageTrend
 from .io_usage_trend_aggregation import IoUsageTrendAggregation
 from .list_objects import ListObjects
+from .macs_managed_autonomous_database_configuration_summary import MacsManagedAutonomousDatabaseConfigurationSummary
+from .macs_managed_autonomous_database_insight import MacsManagedAutonomousDatabaseInsight
+from .macs_managed_autonomous_database_insight_summary import MacsManagedAutonomousDatabaseInsightSummary
 from .macs_managed_cloud_database_configuration_summary import MacsManagedCloudDatabaseConfigurationSummary
 from .macs_managed_cloud_database_host_insight import MacsManagedCloudDatabaseHostInsight
 from .macs_managed_cloud_database_host_insight_summary import MacsManagedCloudDatabaseHostInsightSummary
@@ -453,8 +460,10 @@ from .summarize_host_insights_top_processes_usage_collection import SummarizeHos
 from .summarize_host_insights_top_processes_usage_trend_collection import SummarizeHostInsightsTopProcessesUsageTrendCollection
 from .summarize_operations_insights_warehouse_resource_usage_aggregation import SummarizeOperationsInsightsWarehouseResourceUsageAggregation
 from .summary_statistics import SummaryStatistics
+from .synchronize_autonomous_database_to_exadata_details import SynchronizeAutonomousDatabaseToExadataDetails
 from .tablespace_usage_trend import TablespaceUsageTrend
 from .tablespace_usage_trend_aggregation import TablespaceUsageTrendAggregation
+from .test_macs_managed_autonomous_database_insight_connection_details import TestMacsManagedAutonomousDatabaseInsightConnectionDetails
 from .test_macs_managed_cloud_database_insight_connection_details import TestMacsManagedCloudDatabaseInsightConnectionDetails
 from .top_processes_usage import TopProcessesUsage
 from .top_processes_usage_trend import TopProcessesUsageTrend
@@ -472,6 +481,7 @@ from .update_enterprise_manager_bridge_details import UpdateEnterpriseManagerBri
 from .update_exadata_insight_details import UpdateExadataInsightDetails
 from .update_external_mysql_database_insight_details import UpdateExternalMysqlDatabaseInsightDetails
 from .update_host_insight_details import UpdateHostInsightDetails
+from .update_macs_managed_autonomous_database_insight_details import UpdateMacsManagedAutonomousDatabaseInsightDetails
 from .update_macs_managed_cloud_database_host_insight_details import UpdateMacsManagedCloudDatabaseHostInsightDetails
 from .update_macs_managed_cloud_database_insight_details import UpdateMacsManagedCloudDatabaseInsightDetails
 from .update_macs_managed_cloud_exadata_insight_details import UpdateMacsManagedCloudExadataInsightDetails
@@ -585,6 +595,7 @@ opsi_type_mapping = {
     "ChangeExadataInsightCompartmentDetails": ChangeExadataInsightCompartmentDetails,
     "ChangeExternalMysqlDatabaseInsightConnectionDetails": ChangeExternalMysqlDatabaseInsightConnectionDetails,
     "ChangeHostInsightCompartmentDetails": ChangeHostInsightCompartmentDetails,
+    "ChangeMacsManagedAutonomousDatabaseInsightConnectionDetails": ChangeMacsManagedAutonomousDatabaseInsightConnectionDetails,
     "ChangeMacsManagedCloudDatabaseInsightConnectionDetails": ChangeMacsManagedCloudDatabaseInsightConnectionDetails,
     "ChangeNewsReportCompartmentDetails": ChangeNewsReportCompartmentDetails,
     "ChangeOperationsInsightsPrivateEndpointCompartmentDetails": ChangeOperationsInsightsPrivateEndpointCompartmentDetails,
@@ -615,6 +626,7 @@ opsi_type_mapping = {
     "CreateExadataInsightDetails": CreateExadataInsightDetails,
     "CreateExternalMysqlDatabaseInsightDetails": CreateExternalMysqlDatabaseInsightDetails,
     "CreateHostInsightDetails": CreateHostInsightDetails,
+    "CreateMacsManagedAutonomousDatabaseInsightDetails": CreateMacsManagedAutonomousDatabaseInsightDetails,
     "CreateMacsManagedCloudDatabaseInsightDetails": CreateMacsManagedCloudDatabaseInsightDetails,
     "CreateMacsManagedCloudExadataClusterDetails": CreateMacsManagedCloudExadataClusterDetails,
     "CreateMacsManagedCloudExadataInsightDetails": CreateMacsManagedCloudExadataInsightDetails,
@@ -632,6 +644,7 @@ opsi_type_mapping = {
     "CreatePeComanagedExadataInsightDetails": CreatePeComanagedExadataInsightDetails,
     "CreatePeComanagedExadataVmclusterDetails": CreatePeComanagedExadataVmclusterDetails,
     "CredentialByIam": CredentialByIam,
+    "CredentialByNamedCredentials": CredentialByNamedCredentials,
     "CredentialByVault": CredentialByVault,
     "CredentialDetails": CredentialDetails,
     "CredentialsBySource": CredentialsBySource,
@@ -687,6 +700,7 @@ opsi_type_mapping = {
     "EnableExadataInsightDetails": EnableExadataInsightDetails,
     "EnableExternalMysqlDatabaseInsightDetails": EnableExternalMysqlDatabaseInsightDetails,
     "EnableHostInsightDetails": EnableHostInsightDetails,
+    "EnableMacsManagedAutonomousDatabaseInsightDetails": EnableMacsManagedAutonomousDatabaseInsightDetails,
     "EnableMacsManagedCloudDatabaseInsightDetails": EnableMacsManagedCloudDatabaseInsightDetails,
     "EnableMacsManagedCloudExadataInsightDetails": EnableMacsManagedCloudExadataInsightDetails,
     "EnableMacsManagedCloudHostInsightDetails": EnableMacsManagedCloudHostInsightDetails,
@@ -806,6 +820,9 @@ opsi_type_mapping = {
     "IoUsageTrend": IoUsageTrend,
     "IoUsageTrendAggregation": IoUsageTrendAggregation,
     "ListObjects": ListObjects,
+    "MacsManagedAutonomousDatabaseConfigurationSummary": MacsManagedAutonomousDatabaseConfigurationSummary,
+    "MacsManagedAutonomousDatabaseInsight": MacsManagedAutonomousDatabaseInsight,
+    "MacsManagedAutonomousDatabaseInsightSummary": MacsManagedAutonomousDatabaseInsightSummary,
     "MacsManagedCloudDatabaseConfigurationSummary": MacsManagedCloudDatabaseConfigurationSummary,
     "MacsManagedCloudDatabaseHostInsight": MacsManagedCloudDatabaseHostInsight,
     "MacsManagedCloudDatabaseHostInsightSummary": MacsManagedCloudDatabaseHostInsightSummary,
@@ -953,8 +970,10 @@ opsi_type_mapping = {
     "SummarizeHostInsightsTopProcessesUsageTrendCollection": SummarizeHostInsightsTopProcessesUsageTrendCollection,
     "SummarizeOperationsInsightsWarehouseResourceUsageAggregation": SummarizeOperationsInsightsWarehouseResourceUsageAggregation,
     "SummaryStatistics": SummaryStatistics,
+    "SynchronizeAutonomousDatabaseToExadataDetails": SynchronizeAutonomousDatabaseToExadataDetails,
     "TablespaceUsageTrend": TablespaceUsageTrend,
     "TablespaceUsageTrendAggregation": TablespaceUsageTrendAggregation,
+    "TestMacsManagedAutonomousDatabaseInsightConnectionDetails": TestMacsManagedAutonomousDatabaseInsightConnectionDetails,
     "TestMacsManagedCloudDatabaseInsightConnectionDetails": TestMacsManagedCloudDatabaseInsightConnectionDetails,
     "TopProcessesUsage": TopProcessesUsage,
     "TopProcessesUsageTrend": TopProcessesUsageTrend,
@@ -972,6 +991,7 @@ opsi_type_mapping = {
     "UpdateExadataInsightDetails": UpdateExadataInsightDetails,
     "UpdateExternalMysqlDatabaseInsightDetails": UpdateExternalMysqlDatabaseInsightDetails,
     "UpdateHostInsightDetails": UpdateHostInsightDetails,
+    "UpdateMacsManagedAutonomousDatabaseInsightDetails": UpdateMacsManagedAutonomousDatabaseInsightDetails,
     "UpdateMacsManagedCloudDatabaseHostInsightDetails": UpdateMacsManagedCloudDatabaseHostInsightDetails,
     "UpdateMacsManagedCloudDatabaseInsightDetails": UpdateMacsManagedCloudDatabaseInsightDetails,
     "UpdateMacsManagedCloudExadataInsightDetails": UpdateMacsManagedCloudExadataInsightDetails,

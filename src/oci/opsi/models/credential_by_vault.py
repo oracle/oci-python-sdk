@@ -31,7 +31,7 @@ class CredentialByVault(CredentialDetails):
 
         :param credential_type:
             The value to assign to the credential_type property of this CredentialByVault.
-            Allowed values for this property are: "CREDENTIALS_BY_SOURCE", "CREDENTIALS_BY_VAULT", "CREDENTIALS_BY_IAM", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREDENTIALS_BY_SOURCE", "CREDENTIALS_BY_VAULT", "CREDENTIALS_BY_IAM", "CREDENTIALS_BY_NAMED_CREDS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type credential_type: str
 

@@ -19,6 +19,10 @@ class CreateMacsManagedCloudExadataClusterDetails(object):
     #: This constant has a value of "vmCluster"
     VM_CLUSTER_TYPE_VM_CLUSTER = "vmCluster"
 
+    #: A constant which can be used with the vm_cluster_type property of a CreateMacsManagedCloudExadataClusterDetails.
+    #: This constant has a value of "autonomousVmCluster"
+    VM_CLUSTER_TYPE_AUTONOMOUS_VM_CLUSTER = "autonomousVmCluster"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateMacsManagedCloudExadataClusterDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -30,7 +34,7 @@ class CreateMacsManagedCloudExadataClusterDetails(object):
 
         :param vm_cluster_type:
             The value to assign to the vm_cluster_type property of this CreateMacsManagedCloudExadataClusterDetails.
-            Allowed values for this property are: "vmCluster"
+            Allowed values for this property are: "vmCluster", "autonomousVmCluster"
         :type vm_cluster_type: str
 
         :param vmcluster_id:
@@ -75,7 +79,7 @@ class CreateMacsManagedCloudExadataClusterDetails(object):
         Gets the vm_cluster_type of this CreateMacsManagedCloudExadataClusterDetails.
         Exadata VMCluster type
 
-        Allowed values for this property are: "vmCluster"
+        Allowed values for this property are: "vmCluster", "autonomousVmCluster"
 
 
         :return: The vm_cluster_type of this CreateMacsManagedCloudExadataClusterDetails.
@@ -93,7 +97,7 @@ class CreateMacsManagedCloudExadataClusterDetails(object):
         :param vm_cluster_type: The vm_cluster_type of this CreateMacsManagedCloudExadataClusterDetails.
         :type: str
         """
-        allowed_values = ["vmCluster"]
+        allowed_values = ["vmCluster", "autonomousVmCluster"]
         if not value_allowed_none_or_none_sentinel(vm_cluster_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `vm_cluster_type`, must be None or one of {allowed_values}"

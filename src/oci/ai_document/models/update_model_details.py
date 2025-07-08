@@ -28,6 +28,10 @@ class UpdateModelDetails(object):
             The value to assign to the description property of this UpdateModelDetails.
         :type description: str
 
+        :param inference_units:
+            The value to assign to the inference_units property of this UpdateModelDetails.
+        :type inference_units: int
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateModelDetails.
         :type freeform_tags: dict(str, str)
@@ -40,17 +44,20 @@ class UpdateModelDetails(object):
         self.swagger_types = {
             'display_name': 'str',
             'description': 'str',
+            'inference_units': 'int',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
+            'inference_units': 'inferenceUnits',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
         self._display_name = None
         self._description = None
+        self._inference_units = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -101,6 +108,30 @@ class UpdateModelDetails(object):
         :type: str
         """
         self._description = description
+
+    @property
+    def inference_units(self):
+        """
+        Gets the inference_units of this UpdateModelDetails.
+        Number of replicas required for this model.
+
+
+        :return: The inference_units of this UpdateModelDetails.
+        :rtype: int
+        """
+        return self._inference_units
+
+    @inference_units.setter
+    def inference_units(self, inference_units):
+        """
+        Sets the inference_units of this UpdateModelDetails.
+        Number of replicas required for this model.
+
+
+        :param inference_units: The inference_units of this UpdateModelDetails.
+        :type: int
+        """
+        self._inference_units = inference_units
 
     @property
     def freeform_tags(self):

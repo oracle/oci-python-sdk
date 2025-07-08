@@ -22,7 +22,10 @@ Ai Document
     oci.ai_document.models.AddProjectLockDetails
     oci.ai_document.models.AnalyzeDocumentDetails
     oci.ai_document.models.AnalyzeDocumentResult
+    oci.ai_document.models.BarCode
     oci.ai_document.models.BoundingPolygon
+    oci.ai_document.models.Capabilities
+    oci.ai_document.models.Capability
     oci.ai_document.models.Cell
     oci.ai_document.models.ChangeModelCompartmentDetails
     oci.ai_document.models.ChangeProjectCompartmentDetails
@@ -42,6 +45,8 @@ Ai Document
     oci.ai_document.models.DocumentClassificationModelMetrics
     oci.ai_document.models.DocumentClassificationOverallMetricsReport
     oci.ai_document.models.DocumentDetails
+    oci.ai_document.models.DocumentElementsExtractionFeature
+    oci.ai_document.models.DocumentElementsSubType
     oci.ai_document.models.DocumentFeature
     oci.ai_document.models.DocumentField
     oci.ai_document.models.DocumentKeyValueExtractionFeature
@@ -49,22 +54,31 @@ Ai Document
     oci.ai_document.models.DocumentMetadata
     oci.ai_document.models.DocumentTableExtractionFeature
     oci.ai_document.models.DocumentTextExtractionFeature
+    oci.ai_document.models.DrivingLicenseKvModelSubTypeDetails
     oci.ai_document.models.FieldLabel
     oci.ai_document.models.FieldName
     oci.ai_document.models.FieldValue
     oci.ai_document.models.GeneralProcessorConfig
+    oci.ai_document.models.HealthInsuranceKvModelSubTypeDetails
     oci.ai_document.models.InlineDocumentContent
     oci.ai_document.models.InlineDocumentDetails
     oci.ai_document.models.InputLocation
+    oci.ai_document.models.InvoiceKvModelSubTypeDetails
+    oci.ai_document.models.InvoiceProcessorConfig
     oci.ai_document.models.KeyValueDetectionConfidenceEntry
     oci.ai_document.models.KeyValueDetectionLabelMetricsReport
     oci.ai_document.models.KeyValueDetectionModelMetrics
     oci.ai_document.models.KeyValueDetectionOverallMetricsReport
+    oci.ai_document.models.KvModelSubType
     oci.ai_document.models.Line
     oci.ai_document.models.Model
     oci.ai_document.models.ModelCollection
     oci.ai_document.models.ModelMetrics
+    oci.ai_document.models.ModelSubType
     oci.ai_document.models.ModelSummary
+    oci.ai_document.models.ModelTypeInfo
+    oci.ai_document.models.NormalizationFields
+    oci.ai_document.models.NormalizationFieldsMapValue
     oci.ai_document.models.NormalizedVertex
     oci.ai_document.models.ObjectLocation
     oci.ai_document.models.ObjectStorageDataset
@@ -72,18 +86,29 @@ Ai Document
     oci.ai_document.models.ObjectStorageLocations
     oci.ai_document.models.OutputLocation
     oci.ai_document.models.Page
+    oci.ai_document.models.PassportKvModelSubTypeDetails
     oci.ai_document.models.PatchModelDetails
     oci.ai_document.models.PatchModelOperation
     oci.ai_document.models.PatchResponseMessage
+    oci.ai_document.models.PreTrainedDocumentElementsExtractionModelDetails
+    oci.ai_document.models.PretrainedDocumentClassificationModelDetails
+    oci.ai_document.models.PretrainedKeyValueExtractionModelDetails
+    oci.ai_document.models.PretrainedTableExtractionModelDetails
+    oci.ai_document.models.PretrainedTextExtractionModelDetails
     oci.ai_document.models.ProcessingError
     oci.ai_document.models.ProcessorConfig
     oci.ai_document.models.ProcessorJob
     oci.ai_document.models.Project
     oci.ai_document.models.ProjectCollection
     oci.ai_document.models.ProjectSummary
+    oci.ai_document.models.QrBarCodeSubTypeDetails
+    oci.ai_document.models.ReceiptKvModelSubTypeDetails
     oci.ai_document.models.RemoveModelLockDetails
     oci.ai_document.models.RemoveProjectLockDetails
     oci.ai_document.models.ResourceLock
+    oci.ai_document.models.SelectionMark
+    oci.ai_document.models.Signature
+    oci.ai_document.models.SignatureSubTypeDetails
     oci.ai_document.models.Table
     oci.ai_document.models.TableRow
     oci.ai_document.models.UpdateModelDetails

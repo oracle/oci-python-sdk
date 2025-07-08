@@ -23,24 +23,38 @@ class DocumentTextExtractionFeature(DocumentFeature):
 
         :param feature_type:
             The value to assign to the feature_type property of this DocumentTextExtractionFeature.
-            Allowed values for this property are: "LANGUAGE_CLASSIFICATION", "TEXT_EXTRACTION", "TABLE_EXTRACTION", "KEY_VALUE_EXTRACTION", "DOCUMENT_CLASSIFICATION"
+            Allowed values for this property are: "LANGUAGE_CLASSIFICATION", "TEXT_EXTRACTION", "TABLE_EXTRACTION", "KEY_VALUE_EXTRACTION", "DOCUMENT_CLASSIFICATION", "DOCUMENT_ELEMENTS_EXTRACTION"
         :type feature_type: str
 
         :param generate_searchable_pdf:
             The value to assign to the generate_searchable_pdf property of this DocumentTextExtractionFeature.
         :type generate_searchable_pdf: bool
 
+        :param model_id:
+            The value to assign to the model_id property of this DocumentTextExtractionFeature.
+        :type model_id: str
+
+        :param selection_mark_detection:
+            The value to assign to the selection_mark_detection property of this DocumentTextExtractionFeature.
+        :type selection_mark_detection: bool
+
         """
         self.swagger_types = {
             'feature_type': 'str',
-            'generate_searchable_pdf': 'bool'
+            'generate_searchable_pdf': 'bool',
+            'model_id': 'str',
+            'selection_mark_detection': 'bool'
         }
         self.attribute_map = {
             'feature_type': 'featureType',
-            'generate_searchable_pdf': 'generateSearchablePdf'
+            'generate_searchable_pdf': 'generateSearchablePdf',
+            'model_id': 'modelId',
+            'selection_mark_detection': 'selectionMarkDetection'
         }
         self._feature_type = None
         self._generate_searchable_pdf = None
+        self._model_id = None
+        self._selection_mark_detection = None
         self._feature_type = 'TEXT_EXTRACTION'
 
     @property
@@ -66,6 +80,54 @@ class DocumentTextExtractionFeature(DocumentFeature):
         :type: bool
         """
         self._generate_searchable_pdf = generate_searchable_pdf
+
+    @property
+    def model_id(self):
+        """
+        Gets the model_id of this DocumentTextExtractionFeature.
+        Unique identifier custom model OCID that should be used for inference.
+
+
+        :return: The model_id of this DocumentTextExtractionFeature.
+        :rtype: str
+        """
+        return self._model_id
+
+    @model_id.setter
+    def model_id(self, model_id):
+        """
+        Sets the model_id of this DocumentTextExtractionFeature.
+        Unique identifier custom model OCID that should be used for inference.
+
+
+        :param model_id: The model_id of this DocumentTextExtractionFeature.
+        :type: str
+        """
+        self._model_id = model_id
+
+    @property
+    def selection_mark_detection(self):
+        """
+        Gets the selection_mark_detection of this DocumentTextExtractionFeature.
+        Whether checkbox detection feature is enabled or disabled.
+
+
+        :return: The selection_mark_detection of this DocumentTextExtractionFeature.
+        :rtype: bool
+        """
+        return self._selection_mark_detection
+
+    @selection_mark_detection.setter
+    def selection_mark_detection(self, selection_mark_detection):
+        """
+        Sets the selection_mark_detection of this DocumentTextExtractionFeature.
+        Whether checkbox detection feature is enabled or disabled.
+
+
+        :param selection_mark_detection: The selection_mark_detection of this DocumentTextExtractionFeature.
+        :type: bool
+        """
+        self._selection_mark_detection = selection_mark_detection
 
     def __repr__(self):
         return formatted_flat_dict(self)
