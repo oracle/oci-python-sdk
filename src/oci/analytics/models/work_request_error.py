@@ -99,7 +99,7 @@ class WorkRequestError(object):
     def timestamp(self):
         """
         **[Required]** Gets the timestamp of this WorkRequestError.
-        The date and time the error occured, in the format defined by RFC3339.
+        The date and time the error occurred, in the format defined by RFC3339.
 
         Example: `2016-08-25T21:10:29.600Z`
 
@@ -113,7 +113,7 @@ class WorkRequestError(object):
     def timestamp(self, timestamp):
         """
         Sets the timestamp of this WorkRequestError.
-        The date and time the error occured, in the format defined by RFC3339.
+        The date and time the error occurred, in the format defined by RFC3339.
 
         Example: `2016-08-25T21:10:29.600Z`
 
