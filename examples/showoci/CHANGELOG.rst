@@ -5,12 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+25.07.15 - 25.07.15
+=====================
+* Full Stack DR added
+
+=====================
+25.06.17 - 25.06.17
+=====================
+* Added tags for network-security-groups in the csv
+
+=====================
 25.05.06 - 25.05.06
 =====================
 * Moved NSG processing dependencies
 * Added Retry to IAM Domain Search
 * Fix small bugs
 * Fixed IAM Domains IDP Jit
+* Added exclude for Bastion, CloudGuard and Logging
 
 =====================
 25.04.29 - 25.04.29

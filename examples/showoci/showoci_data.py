@@ -20,7 +20,7 @@ import sys
 
 
 class ShowOCIData(object):
-    version = "25.05.06"
+    version = "25.07.15"
 
     ############################################
     # ShowOCIService - Service object to query
@@ -325,6 +325,14 @@ class ShowOCIData(object):
                     if value:
                         if len(value) > 0:
                             data['resource_management'] = value
+                            has_data = True
+
+                # run on fsdr use the Resource Management flag
+                if self.service.flags.read_resource_management:
+                    value = self.__get_fsdr_main(region_name, compartment)
+                    if value:
+                        if len(value) > 0:
+                            data['fsdr'] = value
                             has_data = True
 
                 # email
@@ -4319,6 +4327,18 @@ class ShowOCIData(object):
 
                     data.append(val)
             return data
+
+        except Exception as e:
+            self.__print_error(e)
+            pass
+
+    ##########################################################################
+    # __get_fsdr_main
+    ##########################################################################
+    def __get_fsdr_main(self, region_name, compartment):
+        try:
+            fsdr = self.service.search_multi_items(self.service.C_FSDR, self.service.C_FSDR_PROTECTION_GROUPS, 'region_name', region_name, 'compartment_id', compartment['id'])
+            return fsdr
 
         except Exception as e:
             self.__print_error(e)

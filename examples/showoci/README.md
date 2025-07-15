@@ -117,6 +117,8 @@ Developed by Adi Zohar, 2018-2025, Contributors: Olaf Heimburger
 - oci.psql.PostgresqlClient
 - oci.certificates_management.CertificatesManagementClient
 - oci.data_safe.DataSafeClient
+- oci.optimizer.OptimizerClient
+- oci.disaster_recovery.DisasterRecoveryClient
 
 ## 2. Executing using Cloud Shell
 
