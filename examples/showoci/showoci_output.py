@@ -22,7 +22,7 @@ import sys
 
 
 class ShowOCIOutput(object):
-    version = "25.05.06"
+    version = "25.07.15"
 
     ##########################################################################
     # spaces for align
@@ -2184,6 +2184,31 @@ class ShowOCIOutput(object):
             self.__print_error("__print_streams_queues_main", e)
 
     ##########################################################################
+    # FSDR
+    ##########################################################################
+    def __print_fsdr(self, drs):
+
+        try:
+            if not drs:
+                return
+
+            self.print_header("Full Stack Disaster Recovery (FSDR)", 2)
+
+            for dr in drs:
+                print(self.taba + dr['display_name'] + " (" + dr['role'] + ":" + dr['lifecycle_state'] + "), Created: " + dr['time_created'])
+                print(self.tabs + "Peer Region  : " + dr['peer_region'])
+                if dr['lifecycle_sub_state']:
+                    print(self.tabs + "Sub State    : " + dr['lifecycle_sub_state'])
+                if dr['log_location']:
+                    print(self.tabs + "Log Location : " + dr['log_location'])
+                for member in dr['members']:
+                    print(self.tabs + "member       : " + member['member_id'] + " - " + member['member_type'])
+                print("")
+
+        except Exception as e:
+            self.__print_error("__print_fsdr", e)
+
+    ##########################################################################
     # Functions
     ##########################################################################
     def __print_functions_main(self, functions):
@@ -3276,6 +3301,8 @@ class ShowOCIOutput(object):
                     self.__print_container_main(cdata['containers'])
                 if 'streams_queues' in cdata:
                     self.__print_streams_queues_main(cdata['streams_queues'])
+                if 'fsdr' in cdata:
+                    self.__print_fsdr(cdata['fsdr'])
                 if 'monitoring' in cdata:
                     self.__print_monitoring_main(cdata['monitoring'])
                 if 'notifications' in cdata:
@@ -4475,6 +4502,7 @@ class ShowOCICSV(object):
     csv_db_mysql = []
     csv_db_mysql_backups = []
     csv_db_postgresql = []
+    csv_fsdr = []
     csv_db_postgresql_backups = []
     csv_network_drg = []
     csv_network_drg_ipsec_tunnels = []
@@ -4699,6 +4727,7 @@ class ShowOCICSV(object):
             self.__export_to_csv_file("load_balancer_listeners", self.csv_load_balancer_listeners)
             self.__export_to_csv_file("load_balancer_backendset", self.csv_load_balancer_bs)
             self.__export_to_csv_file("file_storage", self.csv_file_storage)
+            self.__export_to_csv_file("fsdr", self.csv_fsdr)
             self.__export_to_csv_file("api_gateways", self.csv_apigw)
             self.__export_to_csv_file("limits", self.csv_limits)
             self.__export_to_csv_file("quotas", self.csv_quotas)
@@ -6429,6 +6458,8 @@ class ShowOCICSV(object):
                         'security_alert': "FALSE",
                         'description': '',
                         'time_created': sl['time_created'],
+                        'freeform_tags': '',
+                        'defined_tags': '',
                         'vcn_id': vcn['id'],
                         'sec_id': sl['id'],
                         'id': sl['id'] + ":Empty",
@@ -6471,6 +6502,8 @@ class ShowOCICSV(object):
                             'security_alert': slr['security_alert'],
                             'sec_time_created': slr['time_created'],
                             'time_created': sl['time_created'],
+                            'freeform_tags': self.__get_freeform_tags(sl['freeform_tags']),
+                            'defined_tags': self.__get_defined_tags(sl['defined_tags']),
                             'vcn_id': vcn['id'],
                             'sec_id': sl['id'],
                             'id': sl['id'] + ":" + slr['id'],
@@ -9947,6 +9980,45 @@ class ShowOCICSV(object):
             self.__print_error("__csv_edge_healthcheck", e)
 
     ##########################################################################
+    # FSDR
+    ##########################################################################
+    def __csv_fsdr(self, region_name, fsdrs):
+        try:
+
+            if len(fsdrs) == 0:
+                return
+
+            if fsdrs:
+                for ar in fsdrs:
+
+                    data = {
+                        'region_name': region_name,
+                        'compartment_name': ar['compartment_name'],
+                        'compartment_path': ar['compartment_path'],
+                        'name': ar['display_name'],
+                        'role': ar['role'],
+                        'peer_id': ar['peer_id'],
+                        'peer_region': ar['peer_region'],
+                        'time_created': ar['time_created'][0:16],
+                        'time_updated': ar['time_updated'][0:16],
+                        'lifecycle_state': ar['lifecycle_state'],
+                        'life_cycle_details': ar['life_cycle_details'],
+                        'lifecycle_sub_state': ar['lifecycle_sub_state'],
+                        'log_location': ar['log_location'],
+                        'members': self.__csv_list_to_str(ar['members'], 'member_id'),
+                        'members_raw': self.__csv_list_to_str(ar['members'], 'raw_data'),
+                        'freeform_tags': self.__get_freeform_tags(ar['freeform_tags']),
+                        'defined_tags': self.__get_defined_tags(ar['defined_tags']),
+                        'id': ar['id']
+                    }
+
+                    self.csv_fsdr.append(data)
+                    self.__csv_add_service(data, "FSDR")
+
+        except Exception as e:
+            self.__print_error("__csv_paas_oic", e)
+
+    ##########################################################################
     # Paas OIC
     ##########################################################################
     def __csv_paas_oic(self, region_name, services):
@@ -11168,6 +11240,8 @@ class ShowOCICSV(object):
                     self.__csv_announcements_detailed(region_name, cdata['announcement_detailed'])
                 if 'functions' in cdata:
                     self.__csv_functions(region_name, cdata['functions'])
+                if 'fsdr' in cdata:
+                    self.__csv_fsdr(region_name, cdata['fsdr'])
 
         except Exception as e:
             self.__print_error("__csv_region_data", e)
