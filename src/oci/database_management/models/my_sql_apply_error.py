@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MySqlApplyError(object):
     """
-    Error from apply operation of a MySQL server replication channel.
+    Error from the apply operation of a MySQL server replication channel.
     """
 
     def __init__(self, **kwargs):
@@ -58,7 +58,7 @@ class MySqlApplyError(object):
     def last_error_number(self):
         """
         Gets the last_error_number of this MySqlApplyError.
-        The error number of the most recent error that caused the SQL/coordinator thread to stop.
+        The error number of the most recent error that caused the SQL or coordinator thread to stop.
 
 
         :return: The last_error_number of this MySqlApplyError.
@@ -70,7 +70,7 @@ class MySqlApplyError(object):
     def last_error_number(self, last_error_number):
         """
         Sets the last_error_number of this MySqlApplyError.
-        The error number of the most recent error that caused the SQL/coordinator thread to stop.
+        The error number of the most recent error that caused the SQL or coordinator thread to stop.
 
 
         :param last_error_number: The last_error_number of this MySqlApplyError.
@@ -82,7 +82,7 @@ class MySqlApplyError(object):
     def last_error_message(self):
         """
         Gets the last_error_message of this MySqlApplyError.
-        The error message of the most recent error that caused the SQL/coordinator thread to stop.
+        The error message of the most recent error that caused the SQL or coordinator thread to stop.
 
 
         :return: The last_error_message of this MySqlApplyError.
@@ -94,7 +94,7 @@ class MySqlApplyError(object):
     def last_error_message(self, last_error_message):
         """
         Sets the last_error_message of this MySqlApplyError.
-        The error message of the most recent error that caused the SQL/coordinator thread to stop.
+        The error message of the most recent error that caused the SQL or coordinator thread to stop.
 
 
         :param last_error_message: The last_error_message of this MySqlApplyError.
@@ -106,7 +106,7 @@ class MySqlApplyError(object):
     def time_last_error(self):
         """
         Gets the time_last_error of this MySqlApplyError.
-        The timestamp when the most recent SQL/coordinator error occurred.
+        The timestamp when the most recent SQL or coordinator error occurred.
 
 
         :return: The time_last_error of this MySqlApplyError.
@@ -118,7 +118,7 @@ class MySqlApplyError(object):
     def time_last_error(self, time_last_error):
         """
         Sets the time_last_error of this MySqlApplyError.
-        The timestamp when the most recent SQL/coordinator error occurred.
+        The timestamp when the most recent SQL or coordinator error occurred.
 
 
         :param time_last_error: The time_last_error of this MySqlApplyError.

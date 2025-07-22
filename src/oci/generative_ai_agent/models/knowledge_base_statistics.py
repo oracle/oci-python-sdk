@@ -24,14 +24,21 @@ class KnowledgeBaseStatistics(object):
             The value to assign to the size_in_bytes property of this KnowledgeBaseStatistics.
         :type size_in_bytes: int
 
+        :param total_ingested_files:
+            The value to assign to the total_ingested_files property of this KnowledgeBaseStatistics.
+        :type total_ingested_files: int
+
         """
         self.swagger_types = {
-            'size_in_bytes': 'int'
+            'size_in_bytes': 'int',
+            'total_ingested_files': 'int'
         }
         self.attribute_map = {
-            'size_in_bytes': 'sizeInBytes'
+            'size_in_bytes': 'sizeInBytes',
+            'total_ingested_files': 'totalIngestedFiles'
         }
         self._size_in_bytes = None
+        self._total_ingested_files = None
 
     @property
     def size_in_bytes(self):
@@ -56,6 +63,30 @@ class KnowledgeBaseStatistics(object):
         :type: int
         """
         self._size_in_bytes = size_in_bytes
+
+    @property
+    def total_ingested_files(self):
+        """
+        Gets the total_ingested_files of this KnowledgeBaseStatistics.
+        Total number of ingested files in Knowledge Base.
+
+
+        :return: The total_ingested_files of this KnowledgeBaseStatistics.
+        :rtype: int
+        """
+        return self._total_ingested_files
+
+    @total_ingested_files.setter
+    def total_ingested_files(self, total_ingested_files):
+        """
+        Sets the total_ingested_files of this KnowledgeBaseStatistics.
+        Total number of ingested files in Knowledge Base.
+
+
+        :param total_ingested_files: The total_ingested_files of this KnowledgeBaseStatistics.
+        :type: int
+        """
+        self._total_ingested_files = total_ingested_files
 
     def __repr__(self):
         return formatted_flat_dict(self)

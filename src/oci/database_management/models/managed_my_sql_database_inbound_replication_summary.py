@@ -379,7 +379,7 @@ class ManagedMySqlDatabaseInboundReplicationSummary(object):
     def gtid_assignment(self):
         """
         Gets the gtid_assignment of this ManagedMySqlDatabaseInboundReplicationSummary.
-        Whether the channel assigns global transaction identifiers (GTIDs) to anonymous replicated transactions. OFF means no GTIDs are assigned. LOCAL means a GTID is assigned that includes this replica's own universally unique identifier (UUID). A UUID as value indicates that a GTID is assigned which includes that manually set UUID value.
+        Indicates whether the channel assigns global transaction identifiers (GTIDs) to anonymous replicated transactions. OFF means no GTIDs are assigned. LOCAL means a GTID is assigned that includes this replica's own universally unique identifier (UUID). A UUID as value indicates that a GTID is assigned, which includes that manually set UUID value.
 
 
         :return: The gtid_assignment of this ManagedMySqlDatabaseInboundReplicationSummary.
@@ -391,7 +391,7 @@ class ManagedMySqlDatabaseInboundReplicationSummary(object):
     def gtid_assignment(self, gtid_assignment):
         """
         Sets the gtid_assignment of this ManagedMySqlDatabaseInboundReplicationSummary.
-        Whether the channel assigns global transaction identifiers (GTIDs) to anonymous replicated transactions. OFF means no GTIDs are assigned. LOCAL means a GTID is assigned that includes this replica's own universally unique identifier (UUID). A UUID as value indicates that a GTID is assigned which includes that manually set UUID value.
+        Indicates whether the channel assigns global transaction identifiers (GTIDs) to anonymous replicated transactions. OFF means no GTIDs are assigned. LOCAL means a GTID is assigned that includes this replica's own universally unique identifier (UUID). A UUID as value indicates that a GTID is assigned, which includes that manually set UUID value.
 
 
         :param gtid_assignment: The gtid_assignment of this ManagedMySqlDatabaseInboundReplicationSummary.
@@ -523,7 +523,7 @@ class ManagedMySqlDatabaseInboundReplicationSummary(object):
     def apply_delay(self):
         """
         Gets the apply_delay of this ManagedMySqlDatabaseInboundReplicationSummary.
-        Time in seconds it took for the transaction that is currently being applied between being committed on the source and applied on the replica.
+        The time in seconds that the current transaction took between being committed on the source and being applied on the replica.
 
 
         :return: The apply_delay of this ManagedMySqlDatabaseInboundReplicationSummary.
@@ -535,7 +535,7 @@ class ManagedMySqlDatabaseInboundReplicationSummary(object):
     def apply_delay(self, apply_delay):
         """
         Sets the apply_delay of this ManagedMySqlDatabaseInboundReplicationSummary.
-        Time in seconds it took for the transaction that is currently being applied between being committed on the source and applied on the replica.
+        The time in seconds that the current transaction took between being committed on the source and being applied on the replica.
 
 
         :param apply_delay: The apply_delay of this ManagedMySqlDatabaseInboundReplicationSummary.

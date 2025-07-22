@@ -39,7 +39,7 @@ class SqlToolConfig(ToolConfig):
 
         :param tool_config_type:
             The value to assign to the tool_config_type property of this SqlToolConfig.
-            Allowed values for this property are: "SQL_TOOL_CONFIG", "RAG_TOOL_CONFIG", "FUNCTION_CALLING_TOOL_CONFIG", "HTTP_ENDPOINT_TOOL_CONFIG", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SQL_TOOL_CONFIG", "RAG_TOOL_CONFIG", "FUNCTION_CALLING_TOOL_CONFIG", "HTTP_ENDPOINT_TOOL_CONFIG", "AGENT_TOOL_CONFIG", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type tool_config_type: str
 
@@ -143,7 +143,7 @@ class SqlToolConfig(ToolConfig):
     @property
     def database_schema(self):
         """
-        **[Required]** Gets the database_schema of this SqlToolConfig.
+        Gets the database_schema of this SqlToolConfig.
 
         :return: The database_schema of this SqlToolConfig.
         :rtype: oci.generative_ai_agent.models.InputLocation

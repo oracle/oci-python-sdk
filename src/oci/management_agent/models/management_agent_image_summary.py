@@ -31,6 +31,10 @@ class ManagementAgentImageSummary(object):
     #: This constant has a value of "MACOSX"
     PLATFORM_TYPE_MACOSX = "MACOSX"
 
+    #: A constant which can be used with the platform_type property of a ManagementAgentImageSummary.
+    #: This constant has a value of "AIX"
+    PLATFORM_TYPE_AIX = "AIX"
+
     #: A constant which can be used with the package_type property of a ManagementAgentImageSummary.
     #: This constant has a value of "RPM"
     PACKAGE_TYPE_RPM = "RPM"
@@ -54,6 +58,10 @@ class ManagementAgentImageSummary(object):
     #: A constant which can be used with the package_architecture_type property of a ManagementAgentImageSummary.
     #: This constant has a value of "M1"
     PACKAGE_ARCHITECTURE_TYPE_M1 = "M1"
+
+    #: A constant which can be used with the package_architecture_type property of a ManagementAgentImageSummary.
+    #: This constant has a value of "PPC64"
+    PACKAGE_ARCHITECTURE_TYPE_PPC64 = "PPC64"
 
     #: A constant which can be used with the package_architecture_type property of a ManagementAgentImageSummary.
     #: This constant has a value of "AARCH64"
@@ -102,7 +110,7 @@ class ManagementAgentImageSummary(object):
 
         :param platform_type:
             The value to assign to the platform_type property of this ManagementAgentImageSummary.
-            Allowed values for this property are: "LINUX", "WINDOWS", "SOLARIS", "MACOSX", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "LINUX", "WINDOWS", "SOLARIS", "MACOSX", "AIX", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type platform_type: str
 
@@ -118,7 +126,7 @@ class ManagementAgentImageSummary(object):
 
         :param package_architecture_type:
             The value to assign to the package_architecture_type property of this ManagementAgentImageSummary.
-            Allowed values for this property are: "X86_64", "SPARC", "X86", "M1", "AARCH64", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "X86_64", "SPARC", "X86", "M1", "PPC64", "AARCH64", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type package_architecture_type: str
 
@@ -217,7 +225,7 @@ class ManagementAgentImageSummary(object):
         **[Required]** Gets the platform_type of this ManagementAgentImageSummary.
         Agent image platform type
 
-        Allowed values for this property are: "LINUX", "WINDOWS", "SOLARIS", "MACOSX", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "LINUX", "WINDOWS", "SOLARIS", "MACOSX", "AIX", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -236,7 +244,7 @@ class ManagementAgentImageSummary(object):
         :param platform_type: The platform_type of this ManagementAgentImageSummary.
         :type: str
         """
-        allowed_values = ["LINUX", "WINDOWS", "SOLARIS", "MACOSX"]
+        allowed_values = ["LINUX", "WINDOWS", "SOLARIS", "MACOSX", "AIX"]
         if not value_allowed_none_or_none_sentinel(platform_type, allowed_values):
             platform_type = 'UNKNOWN_ENUM_VALUE'
         self._platform_type = platform_type
@@ -301,7 +309,7 @@ class ManagementAgentImageSummary(object):
         Gets the package_architecture_type of this ManagementAgentImageSummary.
         The installation package target architecture type
 
-        Allowed values for this property are: "X86_64", "SPARC", "X86", "M1", "AARCH64", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "X86_64", "SPARC", "X86", "M1", "PPC64", "AARCH64", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -320,7 +328,7 @@ class ManagementAgentImageSummary(object):
         :param package_architecture_type: The package_architecture_type of this ManagementAgentImageSummary.
         :type: str
         """
-        allowed_values = ["X86_64", "SPARC", "X86", "M1", "AARCH64"]
+        allowed_values = ["X86_64", "SPARC", "X86", "M1", "PPC64", "AARCH64"]
         if not value_allowed_none_or_none_sentinel(package_architecture_type, allowed_values):
             package_architecture_type = 'UNKNOWN_ENUM_VALUE'
         self._package_architecture_type = package_architecture_type

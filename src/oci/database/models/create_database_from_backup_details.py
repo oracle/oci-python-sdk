@@ -52,6 +52,14 @@ class CreateDatabaseFromBackupDetails(object):
             The value to assign to the pluggable_databases property of this CreateDatabaseFromBackupDetails.
         :type pluggable_databases: list[str]
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this CreateDatabaseFromBackupDetails.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this CreateDatabaseFromBackupDetails.
+        :type defined_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'backup_id': 'str',
@@ -61,7 +69,9 @@ class CreateDatabaseFromBackupDetails(object):
             'db_unique_name': 'str',
             'db_name': 'str',
             'sid_prefix': 'str',
-            'pluggable_databases': 'list[str]'
+            'pluggable_databases': 'list[str]',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'backup_id': 'backupId',
@@ -71,7 +81,9 @@ class CreateDatabaseFromBackupDetails(object):
             'db_unique_name': 'dbUniqueName',
             'db_name': 'dbName',
             'sid_prefix': 'sidPrefix',
-            'pluggable_databases': 'pluggableDatabases'
+            'pluggable_databases': 'pluggableDatabases',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags'
         }
         self._backup_id = None
         self._backup_tde_password = None
@@ -81,6 +93,8 @@ class CreateDatabaseFromBackupDetails(object):
         self._db_name = None
         self._sid_prefix = None
         self._pluggable_databases = None
+        self._freeform_tags = None
+        self._defined_tags = None
 
     @property
     def backup_id(self):
@@ -273,6 +287,70 @@ class CreateDatabaseFromBackupDetails(object):
         :type: list[str]
         """
         self._pluggable_databases = pluggable_databases
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this CreateDatabaseFromBackupDetails.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this CreateDatabaseFromBackupDetails.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this CreateDatabaseFromBackupDetails.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this CreateDatabaseFromBackupDetails.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this CreateDatabaseFromBackupDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this CreateDatabaseFromBackupDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this CreateDatabaseFromBackupDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this CreateDatabaseFromBackupDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

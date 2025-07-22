@@ -32,6 +32,10 @@ class ChatResult(object):
             The value to assign to the tool_results property of this ChatResult.
         :type tool_results: dict(str, str)
 
+        :param tool_outputs:
+            The value to assign to the tool_outputs property of this ChatResult.
+        :type tool_outputs: list[oci.generative_ai_agent_runtime.models.ToolOutput]
+
         :param required_actions:
             The value to assign to the required_actions property of this ChatResult.
         :type required_actions: list[oci.generative_ai_agent_runtime.models.RequiredAction]
@@ -45,6 +49,7 @@ class ChatResult(object):
             'message': 'Message',
             'traces': 'list[Trace]',
             'tool_results': 'dict(str, str)',
+            'tool_outputs': 'list[ToolOutput]',
             'required_actions': 'list[RequiredAction]',
             'guardrail_result': 'str'
         }
@@ -52,12 +57,14 @@ class ChatResult(object):
             'message': 'message',
             'traces': 'traces',
             'tool_results': 'toolResults',
+            'tool_outputs': 'toolOutputs',
             'required_actions': 'requiredActions',
             'guardrail_result': 'guardrailResult'
         }
         self._message = None
         self._traces = None
         self._tool_results = None
+        self._tool_outputs = None
         self._required_actions = None
         self._guardrail_result = None
 
@@ -109,7 +116,7 @@ class ChatResult(object):
     def tool_results(self):
         """
         Gets the tool_results of this ChatResult.
-        A map where each key is a toolId and the value contains tool type and additional dynamic results.
+        A map where each key is a toolId and the value contains tool type and additional dynamic results. This field is deprecated and will be removed after July 02 2026.
 
 
         :return: The tool_results of this ChatResult.
@@ -121,13 +128,39 @@ class ChatResult(object):
     def tool_results(self, tool_results):
         """
         Sets the tool_results of this ChatResult.
-        A map where each key is a toolId and the value contains tool type and additional dynamic results.
+        A map where each key is a toolId and the value contains tool type and additional dynamic results. This field is deprecated and will be removed after July 02 2026.
 
 
         :param tool_results: The tool_results of this ChatResult.
         :type: dict(str, str)
         """
         self._tool_results = tool_results
+
+    @property
+    def tool_outputs(self):
+        """
+        Gets the tool_outputs of this ChatResult.
+        Array of tool outputs in execution order. Each item includes the tool OCID, output type,
+        and corresponding content. The result structure is defined by the `toolOutputType` discriminator.
+
+
+        :return: The tool_outputs of this ChatResult.
+        :rtype: list[oci.generative_ai_agent_runtime.models.ToolOutput]
+        """
+        return self._tool_outputs
+
+    @tool_outputs.setter
+    def tool_outputs(self, tool_outputs):
+        """
+        Sets the tool_outputs of this ChatResult.
+        Array of tool outputs in execution order. Each item includes the tool OCID, output type,
+        and corresponding content. The result structure is defined by the `toolOutputType` discriminator.
+
+
+        :param tool_outputs: The tool_outputs of this ChatResult.
+        :type: list[oci.generative_ai_agent_runtime.models.ToolOutput]
+        """
+        self._tool_outputs = tool_outputs
 
     @property
     def required_actions(self):

@@ -12,6 +12,7 @@ from .agent_endpoint import AgentEndpoint
 from .agent_endpoint_collection import AgentEndpointCollection
 from .agent_endpoint_summary import AgentEndpointSummary
 from .agent_summary import AgentSummary
+from .agent_tool_config import AgentToolConfig
 from .api_schema_inline_input_location import ApiSchemaInlineInputLocation
 from .api_schema_input_location import ApiSchemaInputLocation
 from .api_schema_object_storage_input_location import ApiSchemaObjectStorageInputLocation
@@ -31,6 +32,7 @@ from .data_ingestion_job import DataIngestionJob
 from .data_ingestion_job_collection import DataIngestionJobCollection
 from .data_ingestion_job_statistics import DataIngestionJobStatistics
 from .data_ingestion_job_summary import DataIngestionJobSummary
+from .data_ingestion_job_type import DataIngestionJobType
 from .data_source import DataSource
 from .data_source_collection import DataSourceCollection
 from .data_source_config import DataSourceConfig
@@ -42,11 +44,15 @@ from .default_index_config import DefaultIndexConfig
 from .function import Function
 from .function_calling_tool_config import FunctionCallingToolConfig
 from .guardrail_config import GuardrailConfig
+from .http_endpoint_api_key_auth_scope_config import HttpEndpointApiKeyAuthScopeConfig
 from .http_endpoint_auth_config import HttpEndpointAuthConfig
-from .http_endpoint_delegated_bearer_auth_config import HttpEndpointDelegatedBearerAuthConfig
-from .http_endpoint_idcs_auth_config import HttpEndpointIdcsAuthConfig
-from .http_endpoint_no_auth_config import HttpEndpointNoAuthConfig
-from .http_endpoint_oci_resource_principal_auth_config import HttpEndpointOciResourcePrincipalAuthConfig
+from .http_endpoint_auth_scope_config import HttpEndpointAuthScopeConfig
+from .http_endpoint_auth_source import HttpEndpointAuthSource
+from .http_endpoint_basic_auth_scope_config import HttpEndpointBasicAuthScopeConfig
+from .http_endpoint_bearer_auth_scope_config import HttpEndpointBearerAuthScopeConfig
+from .http_endpoint_idcs_auth_scope_config import HttpEndpointIdcsAuthScopeConfig
+from .http_endpoint_no_auth_scope_config import HttpEndpointNoAuthScopeConfig
+from .http_endpoint_oci_auth_scope_config import HttpEndpointOciAuthScopeConfig
 from .http_endpoint_tool_config import HttpEndpointToolConfig
 from .human_input_config import HumanInputConfig
 from .idcs_secret import IdcsSecret
@@ -102,6 +108,7 @@ generative_ai_agent_type_mapping = {
     "AgentEndpointCollection": AgentEndpointCollection,
     "AgentEndpointSummary": AgentEndpointSummary,
     "AgentSummary": AgentSummary,
+    "AgentToolConfig": AgentToolConfig,
     "ApiSchemaInlineInputLocation": ApiSchemaInlineInputLocation,
     "ApiSchemaInputLocation": ApiSchemaInputLocation,
     "ApiSchemaObjectStorageInputLocation": ApiSchemaObjectStorageInputLocation,
@@ -121,6 +128,7 @@ generative_ai_agent_type_mapping = {
     "DataIngestionJobCollection": DataIngestionJobCollection,
     "DataIngestionJobStatistics": DataIngestionJobStatistics,
     "DataIngestionJobSummary": DataIngestionJobSummary,
+    "DataIngestionJobType": DataIngestionJobType,
     "DataSource": DataSource,
     "DataSourceCollection": DataSourceCollection,
     "DataSourceConfig": DataSourceConfig,
@@ -132,11 +140,15 @@ generative_ai_agent_type_mapping = {
     "Function": Function,
     "FunctionCallingToolConfig": FunctionCallingToolConfig,
     "GuardrailConfig": GuardrailConfig,
+    "HttpEndpointApiKeyAuthScopeConfig": HttpEndpointApiKeyAuthScopeConfig,
     "HttpEndpointAuthConfig": HttpEndpointAuthConfig,
-    "HttpEndpointDelegatedBearerAuthConfig": HttpEndpointDelegatedBearerAuthConfig,
-    "HttpEndpointIdcsAuthConfig": HttpEndpointIdcsAuthConfig,
-    "HttpEndpointNoAuthConfig": HttpEndpointNoAuthConfig,
-    "HttpEndpointOciResourcePrincipalAuthConfig": HttpEndpointOciResourcePrincipalAuthConfig,
+    "HttpEndpointAuthScopeConfig": HttpEndpointAuthScopeConfig,
+    "HttpEndpointAuthSource": HttpEndpointAuthSource,
+    "HttpEndpointBasicAuthScopeConfig": HttpEndpointBasicAuthScopeConfig,
+    "HttpEndpointBearerAuthScopeConfig": HttpEndpointBearerAuthScopeConfig,
+    "HttpEndpointIdcsAuthScopeConfig": HttpEndpointIdcsAuthScopeConfig,
+    "HttpEndpointNoAuthScopeConfig": HttpEndpointNoAuthScopeConfig,
+    "HttpEndpointOciAuthScopeConfig": HttpEndpointOciAuthScopeConfig,
     "HttpEndpointToolConfig": HttpEndpointToolConfig,
     "HumanInputConfig": HumanInputConfig,
     "IdcsSecret": IdcsSecret,

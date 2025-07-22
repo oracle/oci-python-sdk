@@ -10,6 +10,7 @@ from .auto_upgradable_config import AutoUpgradableConfig
 from .availability_history_summary import AvailabilityHistorySummary
 from .create_data_source_details import CreateDataSourceDetails
 from .create_management_agent_install_key_details import CreateManagementAgentInstallKeyDetails
+from .create_named_credential_details import CreateNamedCredentialDetails
 from .create_prometheus_emitter_data_source_details import CreatePrometheusEmitterDataSourceDetails
 from .data_source import DataSource
 from .data_source_summary import DataSourceSummary
@@ -32,10 +33,18 @@ from .management_agent_plugin_aggregation import ManagementAgentPluginAggregatio
 from .management_agent_plugin_aggregation_collection import ManagementAgentPluginAggregationCollection
 from .management_agent_plugin_aggregation_dimensions import ManagementAgentPluginAggregationDimensions
 from .management_agent_plugin_details import ManagementAgentPluginDetails
+from .management_agent_plugin_resource import ManagementAgentPluginResource
 from .management_agent_plugin_summary import ManagementAgentPluginSummary
 from .management_agent_property import ManagementAgentProperty
 from .management_agent_summary import ManagementAgentSummary
 from .metric_dimension import MetricDimension
+from .named_credential import NamedCredential
+from .named_credential_collection import NamedCredentialCollection
+from .named_credential_field_definition import NamedCredentialFieldDefinition
+from .named_credential_metadata_definition import NamedCredentialMetadataDefinition
+from .named_credential_property import NamedCredentialProperty
+from .named_credential_summary import NamedCredentialSummary
+from .named_credentials_metadatum import NamedCredentialsMetadatum
 from .object_details import ObjectDetails
 from .prometheus_emitter_data_source import PrometheusEmitterDataSource
 from .prometheus_emitter_data_source_summary import PrometheusEmitterDataSourceSummary
@@ -44,6 +53,7 @@ from .set_auto_upgradable_config_details import SetAutoUpgradableConfigDetails
 from .update_data_source_details import UpdateDataSourceDetails
 from .update_management_agent_details import UpdateManagementAgentDetails
 from .update_management_agent_install_key_details import UpdateManagementAgentInstallKeyDetails
+from .update_named_credential_details import UpdateNamedCredentialDetails
 from .update_prometheus_emitter_data_source_details import UpdatePrometheusEmitterDataSourceDetails
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
@@ -58,6 +68,7 @@ management_agent_type_mapping = {
     "AvailabilityHistorySummary": AvailabilityHistorySummary,
     "CreateDataSourceDetails": CreateDataSourceDetails,
     "CreateManagementAgentInstallKeyDetails": CreateManagementAgentInstallKeyDetails,
+    "CreateNamedCredentialDetails": CreateNamedCredentialDetails,
     "CreatePrometheusEmitterDataSourceDetails": CreatePrometheusEmitterDataSourceDetails,
     "DataSource": DataSource,
     "DataSourceSummary": DataSourceSummary,
@@ -80,10 +91,18 @@ management_agent_type_mapping = {
     "ManagementAgentPluginAggregationCollection": ManagementAgentPluginAggregationCollection,
     "ManagementAgentPluginAggregationDimensions": ManagementAgentPluginAggregationDimensions,
     "ManagementAgentPluginDetails": ManagementAgentPluginDetails,
+    "ManagementAgentPluginResource": ManagementAgentPluginResource,
     "ManagementAgentPluginSummary": ManagementAgentPluginSummary,
     "ManagementAgentProperty": ManagementAgentProperty,
     "ManagementAgentSummary": ManagementAgentSummary,
     "MetricDimension": MetricDimension,
+    "NamedCredential": NamedCredential,
+    "NamedCredentialCollection": NamedCredentialCollection,
+    "NamedCredentialFieldDefinition": NamedCredentialFieldDefinition,
+    "NamedCredentialMetadataDefinition": NamedCredentialMetadataDefinition,
+    "NamedCredentialProperty": NamedCredentialProperty,
+    "NamedCredentialSummary": NamedCredentialSummary,
+    "NamedCredentialsMetadatum": NamedCredentialsMetadatum,
     "ObjectDetails": ObjectDetails,
     "PrometheusEmitterDataSource": PrometheusEmitterDataSource,
     "PrometheusEmitterDataSourceSummary": PrometheusEmitterDataSourceSummary,
@@ -92,6 +111,7 @@ management_agent_type_mapping = {
     "UpdateDataSourceDetails": UpdateDataSourceDetails,
     "UpdateManagementAgentDetails": UpdateManagementAgentDetails,
     "UpdateManagementAgentInstallKeyDetails": UpdateManagementAgentInstallKeyDetails,
+    "UpdateNamedCredentialDetails": UpdateNamedCredentialDetails,
     "UpdatePrometheusEmitterDataSourceDetails": UpdatePrometheusEmitterDataSourceDetails,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,

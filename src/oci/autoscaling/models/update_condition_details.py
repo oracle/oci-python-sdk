@@ -30,13 +30,13 @@ class UpdateConditionDetails(object):
 
         :param metric:
             The value to assign to the metric property of this UpdateConditionDetails.
-        :type metric: oci.autoscaling.models.Metric
+        :type metric: oci.autoscaling.models.MetricBase
 
         """
         self.swagger_types = {
             'action': 'Action',
             'display_name': 'str',
-            'metric': 'Metric'
+            'metric': 'MetricBase'
         }
         self.attribute_map = {
             'action': 'action',
@@ -97,7 +97,7 @@ class UpdateConditionDetails(object):
         **[Required]** Gets the metric of this UpdateConditionDetails.
 
         :return: The metric of this UpdateConditionDetails.
-        :rtype: oci.autoscaling.models.Metric
+        :rtype: oci.autoscaling.models.MetricBase
         """
         return self._metric
 
@@ -107,7 +107,7 @@ class UpdateConditionDetails(object):
         Sets the metric of this UpdateConditionDetails.
 
         :param metric: The metric of this UpdateConditionDetails.
-        :type: oci.autoscaling.models.Metric
+        :type: oci.autoscaling.models.MetricBase
         """
         self._metric = metric
 

@@ -34,21 +34,83 @@ class DatabaseSqlWatchFeatureDetails(DatabaseFeatureDetails):
             The value to assign to the connector_details property of this DatabaseSqlWatchFeatureDetails.
         :type connector_details: oci.database_management.models.ConnectorDetails
 
+        :param can_enable_all_current_pdbs:
+            The value to assign to the can_enable_all_current_pdbs property of this DatabaseSqlWatchFeatureDetails.
+        :type can_enable_all_current_pdbs: bool
+
+        :param is_auto_enable_pluggable_database:
+            The value to assign to the is_auto_enable_pluggable_database property of this DatabaseSqlWatchFeatureDetails.
+        :type is_auto_enable_pluggable_database: bool
+
         """
         self.swagger_types = {
             'feature': 'str',
             'database_connection_details': 'DatabaseConnectionDetails',
-            'connector_details': 'ConnectorDetails'
+            'connector_details': 'ConnectorDetails',
+            'can_enable_all_current_pdbs': 'bool',
+            'is_auto_enable_pluggable_database': 'bool'
         }
         self.attribute_map = {
             'feature': 'feature',
             'database_connection_details': 'databaseConnectionDetails',
-            'connector_details': 'connectorDetails'
+            'connector_details': 'connectorDetails',
+            'can_enable_all_current_pdbs': 'canEnableAllCurrentPdbs',
+            'is_auto_enable_pluggable_database': 'isAutoEnablePluggableDatabase'
         }
         self._feature = None
         self._database_connection_details = None
         self._connector_details = None
+        self._can_enable_all_current_pdbs = None
+        self._is_auto_enable_pluggable_database = None
         self._feature = 'SQLWATCH'
+
+    @property
+    def can_enable_all_current_pdbs(self):
+        """
+        Gets the can_enable_all_current_pdbs of this DatabaseSqlWatchFeatureDetails.
+        Indicates whether SQL Watch should be enabled for all the current pluggable databases in the container database.
+
+
+        :return: The can_enable_all_current_pdbs of this DatabaseSqlWatchFeatureDetails.
+        :rtype: bool
+        """
+        return self._can_enable_all_current_pdbs
+
+    @can_enable_all_current_pdbs.setter
+    def can_enable_all_current_pdbs(self, can_enable_all_current_pdbs):
+        """
+        Sets the can_enable_all_current_pdbs of this DatabaseSqlWatchFeatureDetails.
+        Indicates whether SQL Watch should be enabled for all the current pluggable databases in the container database.
+
+
+        :param can_enable_all_current_pdbs: The can_enable_all_current_pdbs of this DatabaseSqlWatchFeatureDetails.
+        :type: bool
+        """
+        self._can_enable_all_current_pdbs = can_enable_all_current_pdbs
+
+    @property
+    def is_auto_enable_pluggable_database(self):
+        """
+        Gets the is_auto_enable_pluggable_database of this DatabaseSqlWatchFeatureDetails.
+        Indicates whether SQL Watch should be enabled automatically for all the pluggable databases in the container database.
+
+
+        :return: The is_auto_enable_pluggable_database of this DatabaseSqlWatchFeatureDetails.
+        :rtype: bool
+        """
+        return self._is_auto_enable_pluggable_database
+
+    @is_auto_enable_pluggable_database.setter
+    def is_auto_enable_pluggable_database(self, is_auto_enable_pluggable_database):
+        """
+        Sets the is_auto_enable_pluggable_database of this DatabaseSqlWatchFeatureDetails.
+        Indicates whether SQL Watch should be enabled automatically for all the pluggable databases in the container database.
+
+
+        :param is_auto_enable_pluggable_database: The is_auto_enable_pluggable_database of this DatabaseSqlWatchFeatureDetails.
+        :type: bool
+        """
+        self._is_auto_enable_pluggable_database = is_auto_enable_pluggable_database
 
     def __repr__(self):
         return formatted_flat_dict(self)

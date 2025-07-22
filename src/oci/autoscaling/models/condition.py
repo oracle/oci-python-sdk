@@ -34,14 +34,14 @@ class Condition(object):
 
         :param metric:
             The value to assign to the metric property of this Condition.
-        :type metric: oci.autoscaling.models.Metric
+        :type metric: oci.autoscaling.models.MetricBase
 
         """
         self.swagger_types = {
             'action': 'Action',
             'display_name': 'str',
             'id': 'str',
-            'metric': 'Metric'
+            'metric': 'MetricBase'
         }
         self.attribute_map = {
             'action': 'action',
@@ -128,7 +128,7 @@ class Condition(object):
         **[Required]** Gets the metric of this Condition.
 
         :return: The metric of this Condition.
-        :rtype: oci.autoscaling.models.Metric
+        :rtype: oci.autoscaling.models.MetricBase
         """
         return self._metric
 
@@ -138,7 +138,7 @@ class Condition(object):
         Sets the metric of this Condition.
 
         :param metric: The metric of this Condition.
-        :type: oci.autoscaling.models.Metric
+        :type: oci.autoscaling.models.MetricBase
         """
         self._metric = metric
 

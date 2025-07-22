@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MySqlApplyErrorWorker(object):
     """
-    If the replica is multi-threaded, error from worker threads. Otherwise error from the applier thread.
+    If the replica is multi-threaded, error from worker threads. Otherwise, error from the applier thread.
     """
 
     def __init__(self, **kwargs):

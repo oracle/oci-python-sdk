@@ -36,6 +36,14 @@ class DataIngestionJobSummary(object):
             The value to assign to the data_source_id property of this DataIngestionJobSummary.
         :type data_source_id: str
 
+        :param data_ingestion_job_type:
+            The value to assign to the data_ingestion_job_type property of this DataIngestionJobSummary.
+        :type data_ingestion_job_type: oci.generative_ai_agent.models.DataIngestionJobType
+
+        :param data_ingestion_job_statistics:
+            The value to assign to the data_ingestion_job_statistics property of this DataIngestionJobSummary.
+        :type data_ingestion_job_statistics: oci.generative_ai_agent.models.DataIngestionJobStatistics
+
         :param compartment_id:
             The value to assign to the compartment_id property of this DataIngestionJobSummary.
         :type compartment_id: str
@@ -74,6 +82,8 @@ class DataIngestionJobSummary(object):
             'display_name': 'str',
             'description': 'str',
             'data_source_id': 'str',
+            'data_ingestion_job_type': 'DataIngestionJobType',
+            'data_ingestion_job_statistics': 'DataIngestionJobStatistics',
             'compartment_id': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
@@ -88,6 +98,8 @@ class DataIngestionJobSummary(object):
             'display_name': 'displayName',
             'description': 'description',
             'data_source_id': 'dataSourceId',
+            'data_ingestion_job_type': 'dataIngestionJobType',
+            'data_ingestion_job_statistics': 'dataIngestionJobStatistics',
             'compartment_id': 'compartmentId',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
@@ -101,6 +113,8 @@ class DataIngestionJobSummary(object):
         self._display_name = None
         self._description = None
         self._data_source_id = None
+        self._data_ingestion_job_type = None
+        self._data_ingestion_job_statistics = None
         self._compartment_id = None
         self._time_created = None
         self._time_updated = None
@@ -213,6 +227,46 @@ class DataIngestionJobSummary(object):
         :type: str
         """
         self._data_source_id = data_source_id
+
+    @property
+    def data_ingestion_job_type(self):
+        """
+        **[Required]** Gets the data_ingestion_job_type of this DataIngestionJobSummary.
+
+        :return: The data_ingestion_job_type of this DataIngestionJobSummary.
+        :rtype: oci.generative_ai_agent.models.DataIngestionJobType
+        """
+        return self._data_ingestion_job_type
+
+    @data_ingestion_job_type.setter
+    def data_ingestion_job_type(self, data_ingestion_job_type):
+        """
+        Sets the data_ingestion_job_type of this DataIngestionJobSummary.
+
+        :param data_ingestion_job_type: The data_ingestion_job_type of this DataIngestionJobSummary.
+        :type: oci.generative_ai_agent.models.DataIngestionJobType
+        """
+        self._data_ingestion_job_type = data_ingestion_job_type
+
+    @property
+    def data_ingestion_job_statistics(self):
+        """
+        **[Required]** Gets the data_ingestion_job_statistics of this DataIngestionJobSummary.
+
+        :return: The data_ingestion_job_statistics of this DataIngestionJobSummary.
+        :rtype: oci.generative_ai_agent.models.DataIngestionJobStatistics
+        """
+        return self._data_ingestion_job_statistics
+
+    @data_ingestion_job_statistics.setter
+    def data_ingestion_job_statistics(self, data_ingestion_job_statistics):
+        """
+        Sets the data_ingestion_job_statistics of this DataIngestionJobSummary.
+
+        :param data_ingestion_job_statistics: The data_ingestion_job_statistics of this DataIngestionJobSummary.
+        :type: oci.generative_ai_agent.models.DataIngestionJobStatistics
+        """
+        self._data_ingestion_job_statistics = data_ingestion_job_statistics
 
     @property
     def compartment_id(self):

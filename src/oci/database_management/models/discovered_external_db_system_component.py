@@ -87,6 +87,7 @@ class DiscoveredExternalDbSystemComponent(object):
         * :class:`~oci.database_management.models.DiscoveredExternalClusterInstance`
         * :class:`~oci.database_management.models.DiscoveredExternalListener`
         * :class:`~oci.database_management.models.DiscoveredExternalDbNode`
+        * :class:`~oci.database_management.models.DiscoveredExternalDbInstance`
         * :class:`~oci.database_management.models.DiscoveredExternalAsm`
         * :class:`~oci.database_management.models.DiscoveredExternalAsmInstance`
 
@@ -186,6 +187,9 @@ class DiscoveredExternalDbSystemComponent(object):
 
         if type == 'DATABASE_NODE':
             return 'DiscoveredExternalDbNode'
+
+        if type == 'DATABASE_INSTANCE':
+            return 'DiscoveredExternalDbInstance'
 
         if type == 'ASM':
             return 'DiscoveredExternalAsm'

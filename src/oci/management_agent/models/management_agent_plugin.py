@@ -31,6 +31,10 @@ class ManagementAgentPlugin(object):
     #: This constant has a value of "MACOSX"
     SUPPORTED_PLATFORM_TYPES_MACOSX = "MACOSX"
 
+    #: A constant which can be used with the supported_platform_types property of a ManagementAgentPlugin.
+    #: This constant has a value of "AIX"
+    SUPPORTED_PLATFORM_TYPES_AIX = "AIX"
+
     #: A constant which can be used with the lifecycle_state property of a ManagementAgentPlugin.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -82,7 +86,7 @@ class ManagementAgentPlugin(object):
 
         :param supported_platform_types:
             The value to assign to the supported_platform_types property of this ManagementAgentPlugin.
-            Allowed values for items in this list are: "LINUX", "WINDOWS", "SOLARIS", "MACOSX"
+            Allowed values for items in this list are: "LINUX", "WINDOWS", "SOLARIS", "MACOSX", "AIX"
         :type supported_platform_types: list[str]
 
         :param display_name:
@@ -210,7 +214,7 @@ class ManagementAgentPlugin(object):
         Gets the supported_platform_types of this ManagementAgentPlugin.
         Supported Platform Types
 
-        Allowed values for items in this list are: "LINUX", "WINDOWS", "SOLARIS", "MACOSX"
+        Allowed values for items in this list are: "LINUX", "WINDOWS", "SOLARIS", "MACOSX", "AIX"
 
 
         :return: The supported_platform_types of this ManagementAgentPlugin.
@@ -228,7 +232,7 @@ class ManagementAgentPlugin(object):
         :param supported_platform_types: The supported_platform_types of this ManagementAgentPlugin.
         :type: list[str]
         """
-        allowed_values = ["LINUX", "WINDOWS", "SOLARIS", "MACOSX"]
+        allowed_values = ["LINUX", "WINDOWS", "SOLARIS", "MACOSX", "AIX"]
 
         if supported_platform_types and supported_platform_types is not NONE_SENTINEL:
             for value in supported_platform_types:

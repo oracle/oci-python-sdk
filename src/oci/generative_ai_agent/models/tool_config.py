@@ -31,6 +31,10 @@ class ToolConfig(object):
     #: This constant has a value of "HTTP_ENDPOINT_TOOL_CONFIG"
     TOOL_CONFIG_TYPE_HTTP_ENDPOINT_TOOL_CONFIG = "HTTP_ENDPOINT_TOOL_CONFIG"
 
+    #: A constant which can be used with the tool_config_type property of a ToolConfig.
+    #: This constant has a value of "AGENT_TOOL_CONFIG"
+    TOOL_CONFIG_TYPE_AGENT_TOOL_CONFIG = "AGENT_TOOL_CONFIG"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ToolConfig object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -39,13 +43,14 @@ class ToolConfig(object):
         * :class:`~oci.generative_ai_agent.models.SqlToolConfig`
         * :class:`~oci.generative_ai_agent.models.FunctionCallingToolConfig`
         * :class:`~oci.generative_ai_agent.models.HttpEndpointToolConfig`
+        * :class:`~oci.generative_ai_agent.models.AgentToolConfig`
         * :class:`~oci.generative_ai_agent.models.RagToolConfig`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param tool_config_type:
             The value to assign to the tool_config_type property of this ToolConfig.
-            Allowed values for this property are: "SQL_TOOL_CONFIG", "RAG_TOOL_CONFIG", "FUNCTION_CALLING_TOOL_CONFIG", "HTTP_ENDPOINT_TOOL_CONFIG", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SQL_TOOL_CONFIG", "RAG_TOOL_CONFIG", "FUNCTION_CALLING_TOOL_CONFIG", "HTTP_ENDPOINT_TOOL_CONFIG", "AGENT_TOOL_CONFIG", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type tool_config_type: str
 
@@ -75,6 +80,9 @@ class ToolConfig(object):
         if type == 'HTTP_ENDPOINT_TOOL_CONFIG':
             return 'HttpEndpointToolConfig'
 
+        if type == 'AGENT_TOOL_CONFIG':
+            return 'AgentToolConfig'
+
         if type == 'RAG_TOOL_CONFIG':
             return 'RagToolConfig'
         else:
@@ -85,13 +93,8 @@ class ToolConfig(object):
         """
         **[Required]** Gets the tool_config_type of this ToolConfig.
         The type of the Tool config.
-        The allowed values are:
-        - `SQL_TOOL_CONFIG`: The config for sql Tool.
-        - `RAG_TOOL_CONFIG`: The config for rag Tool.
-        - FUNCTION_CALLING_TOOL_CONFIG: The config for Function calling Tool.
-        - HTTP_ENDPOINT_TOOL_CONFIG: The config for HTTP endpoint Tool.
 
-        Allowed values for this property are: "SQL_TOOL_CONFIG", "RAG_TOOL_CONFIG", "FUNCTION_CALLING_TOOL_CONFIG", "HTTP_ENDPOINT_TOOL_CONFIG", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "SQL_TOOL_CONFIG", "RAG_TOOL_CONFIG", "FUNCTION_CALLING_TOOL_CONFIG", "HTTP_ENDPOINT_TOOL_CONFIG", "AGENT_TOOL_CONFIG", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -105,17 +108,12 @@ class ToolConfig(object):
         """
         Sets the tool_config_type of this ToolConfig.
         The type of the Tool config.
-        The allowed values are:
-        - `SQL_TOOL_CONFIG`: The config for sql Tool.
-        - `RAG_TOOL_CONFIG`: The config for rag Tool.
-        - FUNCTION_CALLING_TOOL_CONFIG: The config for Function calling Tool.
-        - HTTP_ENDPOINT_TOOL_CONFIG: The config for HTTP endpoint Tool.
 
 
         :param tool_config_type: The tool_config_type of this ToolConfig.
         :type: str
         """
-        allowed_values = ["SQL_TOOL_CONFIG", "RAG_TOOL_CONFIG", "FUNCTION_CALLING_TOOL_CONFIG", "HTTP_ENDPOINT_TOOL_CONFIG"]
+        allowed_values = ["SQL_TOOL_CONFIG", "RAG_TOOL_CONFIG", "FUNCTION_CALLING_TOOL_CONFIG", "HTTP_ENDPOINT_TOOL_CONFIG", "AGENT_TOOL_CONFIG"]
         if not value_allowed_none_or_none_sentinel(tool_config_type, allowed_values):
             tool_config_type = 'UNKNOWN_ENUM_VALUE'
         self._tool_config_type = tool_config_type

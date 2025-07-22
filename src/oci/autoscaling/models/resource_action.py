@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ResourceAction(object):
     """
-    An action that can be executed against a resource.
+    An action to run on a resource, such as stopping or starting an instance pool.
     """
 
     def __init__(self, **kwargs):
@@ -53,8 +53,8 @@ class ResourceAction(object):
     @property
     def action_type(self):
         """
-        Gets the action_type of this ResourceAction.
-        The type of resource action.
+        **[Required]** Gets the action_type of this ResourceAction.
+        The category of action to run on the resource.
 
 
         :return: The action_type of this ResourceAction.
@@ -66,7 +66,7 @@ class ResourceAction(object):
     def action_type(self, action_type):
         """
         Sets the action_type of this ResourceAction.
-        The type of resource action.
+        The category of action to run on the resource.
 
 
         :param action_type: The action_type of this ResourceAction.

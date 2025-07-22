@@ -25,8 +25,7 @@ API Reference
 * :doc:`Application Dependency Management <adm/client/oci.adm.ApplicationDependencyManagementClient>`
 * :doc:`Appmgmt Control <appmgmt_control/client/oci.appmgmt_control.AppmgmtControlClient>`
 * :doc:`Artifacts <artifacts/client/oci.artifacts.ArtifactsClient>`
-* :doc:`Attachment <marketplace_publisher/client/oci.marketplace_publisher.AttachmentClient>`
-* :doc:`Attachment <marketplace_publisher/client/oci.marketplace_publisher.AttachmentClient>`
+* :doc:`Attachment <marketplace_private_offer/client/oci.marketplace_private_offer.AttachmentClient>`
 * :doc:`Attributes <apm_traces/client/oci.apm_traces.AttributesClient>`
 * :doc:`Audit <audit/client/oci.audit.AuditClient>`
 * :doc:`Auto Scaling <autoscaling/client/oci.autoscaling.AutoScalingClient>`
@@ -177,8 +176,7 @@ API Reference
 * :doc:`Oci Cache User <redis/client/oci.redis.OciCacheUserClient>`
 * :doc:`Oda <oda/client/oci.oda.OdaClient>`
 * :doc:`Odapackage <oda/client/oci.oda.OdapackageClient>`
-* :doc:`Offer <marketplace_publisher/client/oci.marketplace_publisher.OfferClient>`
-* :doc:`Offer <marketplace_publisher/client/oci.marketplace_publisher.OfferClient>`
+* :doc:`Offer <marketplace_private_offer/client/oci.marketplace_private_offer.OfferClient>`
 * :doc:`Onboarding <os_management_hub/client/oci.os_management_hub.OnboardingClient>`
 * :doc:`Opa Instance <opa/client/oci.opa.OpaInstanceClient>`
 * :doc:`Opensearch Cluster <opensearch/client/oci.opensearch.OpensearchClusterClient>`

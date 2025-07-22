@@ -28,6 +28,8 @@ Generative Ai Agent Runtime
     oci.generative_ai_agent_runtime.models.FunctionCallingPerformedAction
     oci.generative_ai_agent_runtime.models.FunctionCallingRequiredAction
     oci.generative_ai_agent_runtime.models.GenerationTrace
+    oci.generative_ai_agent_runtime.models.GenericToolInput
+    oci.generative_ai_agent_runtime.models.GenericToolOutput
     oci.generative_ai_agent_runtime.models.HumanApprovalPerformedAction
     oci.generative_ai_agent_runtime.models.HumanApprovalRequiredAction
     oci.generative_ai_agent_runtime.models.KnowledgeBaseMetadataSummary
@@ -44,13 +46,18 @@ Generative Ai Agent Runtime
     oci.generative_ai_agent_runtime.models.ParagraphCitation
     oci.generative_ai_agent_runtime.models.PerformedAction
     oci.generative_ai_agent_runtime.models.PlanningTrace
+    oci.generative_ai_agent_runtime.models.RagToolOutput
     oci.generative_ai_agent_runtime.models.RequiredAction
     oci.generative_ai_agent_runtime.models.RetrievalTrace
     oci.generative_ai_agent_runtime.models.RetrieveMetadataDetails
     oci.generative_ai_agent_runtime.models.Session
     oci.generative_ai_agent_runtime.models.SourceDetails
     oci.generative_ai_agent_runtime.models.SourceLocation
+    oci.generative_ai_agent_runtime.models.SqlResultFiles
+    oci.generative_ai_agent_runtime.models.SqlToolOutput
+    oci.generative_ai_agent_runtime.models.ToolInput
     oci.generative_ai_agent_runtime.models.ToolInvocationTrace
+    oci.generative_ai_agent_runtime.models.ToolOutput
     oci.generative_ai_agent_runtime.models.Trace
     oci.generative_ai_agent_runtime.models.UpdateSessionDetails
     oci.generative_ai_agent_runtime.models.Usage

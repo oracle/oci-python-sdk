@@ -12,20 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ToolInvocationTrace(Trace):
     """
-    **Pre-General Availability: 2024-01-24**
-    |*Important*|
-    |-
-    |*The following legal notice applies to Oracle pre-GA releases. For copyright and other applicable notices, see  `Oracle Legal Notices`__.*
-
-    |*Pre-General Availability Draft Documentation Notice*|
-    |-
-    |*This documentation is in pre-General Availability status and is intended for demonstration and preliminary use only. It may not be specific to the hardware on which you are using the software. Oracle Corporation and its affiliates are not responsible for and expressly disclaim all warranties of any kind with respect to this documentation and will not be responsible for any loss, costs, or damages incurred due to the use of this documentation. This documentation is not a commitment by Oracle to deliver any material, code, functionality or services. This documentation, and Oracle Pre-GA programs and services are subject to change at any time without notice and, accordingly, should not be relied upon in making purchasing decisions. The development, release, and timing of any features or functionality for Oracle's Pre-GA programs and services remains at the sole discretion of Oracle. All release dates or other predictions of future events are subject to change. The future availability of any future Oracle program or service should not be relied on in entering into any license or service agreement with Oracle.*
-    **GenerationTrace**
-
-
     The trace information about the tool selection from multiple tools.
-
-    __ https://docs.oracle.com/iaas/Content/legalnotices.htm
     """
 
     def __init__(self, **kwargs):

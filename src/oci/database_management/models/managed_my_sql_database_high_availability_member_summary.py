@@ -65,7 +65,7 @@ class ManagedMySqlDatabaseHighAvailabilityMemberSummary(object):
     def member_host(self):
         """
         **[Required]** Gets the member_host of this ManagedMySqlDatabaseHighAvailabilityMemberSummary.
-        The host name of the group member which clients use to connect to it.
+        The host name of the group member that clients use to connect to it.
 
 
         :return: The member_host of this ManagedMySqlDatabaseHighAvailabilityMemberSummary.
@@ -77,7 +77,7 @@ class ManagedMySqlDatabaseHighAvailabilityMemberSummary(object):
     def member_host(self, member_host):
         """
         Sets the member_host of this ManagedMySqlDatabaseHighAvailabilityMemberSummary.
-        The host name of the group member which clients use to connect to it.
+        The host name of the group member that clients use to connect to it.
 
 
         :param member_host: The member_host of this ManagedMySqlDatabaseHighAvailabilityMemberSummary.
@@ -89,7 +89,7 @@ class ManagedMySqlDatabaseHighAvailabilityMemberSummary(object):
     def member_port(self):
         """
         **[Required]** Gets the member_port of this ManagedMySqlDatabaseHighAvailabilityMemberSummary.
-        The port number of the group member which clients to connect to it.
+        The port number of the group member that clients use to connect to it.
 
 
         :return: The member_port of this ManagedMySqlDatabaseHighAvailabilityMemberSummary.
@@ -101,7 +101,7 @@ class ManagedMySqlDatabaseHighAvailabilityMemberSummary(object):
     def member_port(self, member_port):
         """
         Sets the member_port of this ManagedMySqlDatabaseHighAvailabilityMemberSummary.
-        The port number of the group member which clients to connect to it.
+        The port number of the group member that clients use to connect to it.
 
 
         :param member_port: The member_port of this ManagedMySqlDatabaseHighAvailabilityMemberSummary.

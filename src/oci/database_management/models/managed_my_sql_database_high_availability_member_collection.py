@@ -268,7 +268,7 @@ class ManagedMySqlDatabaseHighAvailabilityMemberCollection(object):
     def transactions_in_gtid_executed(self):
         """
         Gets the transactions_in_gtid_executed of this ManagedMySqlDatabaseHighAvailabilityMemberCollection.
-        Number of transactions that were replicated within the cluster.
+        The number of transactions that were replicated within the cluster.
 
 
         :return: The transactions_in_gtid_executed of this ManagedMySqlDatabaseHighAvailabilityMemberCollection.
@@ -280,7 +280,7 @@ class ManagedMySqlDatabaseHighAvailabilityMemberCollection(object):
     def transactions_in_gtid_executed(self, transactions_in_gtid_executed):
         """
         Sets the transactions_in_gtid_executed of this ManagedMySqlDatabaseHighAvailabilityMemberCollection.
-        Number of transactions that were replicated within the cluster.
+        The number of transactions that were replicated within the cluster.
 
 
         :param transactions_in_gtid_executed: The transactions_in_gtid_executed of this ManagedMySqlDatabaseHighAvailabilityMemberCollection.

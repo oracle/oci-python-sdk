@@ -69,9 +69,6 @@ class ApiSchemaInputLocation(object):
         """
         **[Required]** Gets the api_schema_input_location_type of this ApiSchemaInputLocation.
         Type of Api Schema InputLocation.
-        The allowed values are:
-        - `INLINE`: The Api schema input location is inline.
-        - `OBJECT_STORAGE_LOCATION`: The Api schema input location is object storage.
 
         Allowed values for this property are: "INLINE", "OBJECT_STORAGE_LOCATION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -87,9 +84,6 @@ class ApiSchemaInputLocation(object):
         """
         Sets the api_schema_input_location_type of this ApiSchemaInputLocation.
         Type of Api Schema InputLocation.
-        The allowed values are:
-        - `INLINE`: The Api schema input location is inline.
-        - `OBJECT_STORAGE_LOCATION`: The Api schema input location is object storage.
 
 
         :param api_schema_input_location_type: The api_schema_input_location_type of this ApiSchemaInputLocation.

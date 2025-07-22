@@ -173,7 +173,7 @@ class OracleDbAzureVaultAssociationClient(object):
         resource_path = "/oracleDbAzureVaultAssociation/{oracleDbAzureVaultAssociationId}/actions/cascadingDelete"
         method = "POST"
         operation_name = "cascading_delete_oracle_db_azure_vault_association"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureVaultAssociation/CascadingDeleteOracleDbAzureVaultAssociation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -291,7 +291,7 @@ class OracleDbAzureVaultAssociationClient(object):
         resource_path = "/oracleDbAzureVaultAssociation/{oracleDbAzureVaultAssociationId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_oracle_db_azure_vault_association_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureVaultAssociation/ChangeOracleDbAzureVaultAssociationCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -408,7 +408,7 @@ class OracleDbAzureVaultAssociationClient(object):
         resource_path = "/oracleDbAzureVaultAssociation"
         method = "POST"
         operation_name = "create_oracle_db_azure_vault_association"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureVaultAssociation/CreateOracleDbAzureVaultAssociation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -508,7 +508,7 @@ class OracleDbAzureVaultAssociationClient(object):
         resource_path = "/oracleDbAzureVaultAssociation/{oracleDbAzureVaultAssociationId}"
         method = "DELETE"
         operation_name = "delete_oracle_db_azure_vault_association"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureVaultAssociation/DeleteOracleDbAzureVaultAssociation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -617,7 +617,7 @@ class OracleDbAzureVaultAssociationClient(object):
         resource_path = "/oracleDbAzureVaultAssociation/{oracleDbAzureVaultAssociationId}"
         method = "GET"
         operation_name = "get_oracle_db_azure_vault_association"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureVaultAssociation/GetOracleDbAzureVaultAssociation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -770,7 +770,7 @@ class OracleDbAzureVaultAssociationClient(object):
         resource_path = "/oracleDbAzureVaultAssociation"
         method = "GET"
         operation_name = "list_oracle_db_azure_vault_associations"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureVaultAssociation/ListOracleDbAzureVaultAssociations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -912,7 +912,7 @@ class OracleDbAzureVaultAssociationClient(object):
         resource_path = "/oracleDbAzureVaultAssociation/{oracleDbAzureVaultAssociationId}"
         method = "PUT"
         operation_name = "update_oracle_db_azure_vault_association"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureVaultAssociation/UpdateOracleDbAzureVaultAssociation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

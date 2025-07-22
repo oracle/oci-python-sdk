@@ -30,13 +30,13 @@ class CreateConditionDetails(object):
 
         :param metric:
             The value to assign to the metric property of this CreateConditionDetails.
-        :type metric: oci.autoscaling.models.Metric
+        :type metric: oci.autoscaling.models.MetricBase
 
         """
         self.swagger_types = {
             'action': 'Action',
             'display_name': 'str',
-            'metric': 'Metric'
+            'metric': 'MetricBase'
         }
         self.attribute_map = {
             'action': 'action',
@@ -97,7 +97,7 @@ class CreateConditionDetails(object):
         **[Required]** Gets the metric of this CreateConditionDetails.
 
         :return: The metric of this CreateConditionDetails.
-        :rtype: oci.autoscaling.models.Metric
+        :rtype: oci.autoscaling.models.MetricBase
         """
         return self._metric
 
@@ -107,7 +107,7 @@ class CreateConditionDetails(object):
         Sets the metric of this CreateConditionDetails.
 
         :param metric: The metric of this CreateConditionDetails.
-        :type: oci.autoscaling.models.Metric
+        :type: oci.autoscaling.models.MetricBase
         """
         self._metric = metric
 

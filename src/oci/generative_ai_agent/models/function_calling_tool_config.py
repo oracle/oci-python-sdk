@@ -23,7 +23,7 @@ class FunctionCallingToolConfig(ToolConfig):
 
         :param tool_config_type:
             The value to assign to the tool_config_type property of this FunctionCallingToolConfig.
-            Allowed values for this property are: "SQL_TOOL_CONFIG", "RAG_TOOL_CONFIG", "FUNCTION_CALLING_TOOL_CONFIG", "HTTP_ENDPOINT_TOOL_CONFIG"
+            Allowed values for this property are: "SQL_TOOL_CONFIG", "RAG_TOOL_CONFIG", "FUNCTION_CALLING_TOOL_CONFIG", "HTTP_ENDPOINT_TOOL_CONFIG", "AGENT_TOOL_CONFIG"
         :type tool_config_type: str
 
         :param function:

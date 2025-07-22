@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ManagedMySqlDatabaseBinaryLogInformation(object):
     """
-    Information pertaining to binary logs of a MySQL server.
+    Information pertaining to the binary logs of a MySQL server.
     """
 
     def __init__(self, **kwargs):
@@ -72,7 +72,7 @@ class ManagedMySqlDatabaseBinaryLogInformation(object):
     def binary_logging(self):
         """
         **[Required]** Gets the binary_logging of this ManagedMySqlDatabaseBinaryLogInformation.
-        Status of binary logging on this server.
+        The status of binary logging on the MySQL server.
 
 
         :return: The binary_logging of this ManagedMySqlDatabaseBinaryLogInformation.
@@ -84,7 +84,7 @@ class ManagedMySqlDatabaseBinaryLogInformation(object):
     def binary_logging(self, binary_logging):
         """
         Sets the binary_logging of this ManagedMySqlDatabaseBinaryLogInformation.
-        Status of binary logging on this server.
+        The status of binary logging on the MySQL server.
 
 
         :param binary_logging: The binary_logging of this ManagedMySqlDatabaseBinaryLogInformation.
@@ -96,7 +96,7 @@ class ManagedMySqlDatabaseBinaryLogInformation(object):
     def binary_log_format(self):
         """
         Gets the binary_log_format of this ManagedMySqlDatabaseBinaryLogInformation.
-        The binary logging format used by this server.
+        The binary logging format used by the MySQL server.
 
 
         :return: The binary_log_format of this ManagedMySqlDatabaseBinaryLogInformation.
@@ -108,7 +108,7 @@ class ManagedMySqlDatabaseBinaryLogInformation(object):
     def binary_log_format(self, binary_log_format):
         """
         Sets the binary_log_format of this ManagedMySqlDatabaseBinaryLogInformation.
-        The binary logging format used by this server.
+        The binary logging format used by the MySQL server.
 
 
         :param binary_log_format: The binary_log_format of this ManagedMySqlDatabaseBinaryLogInformation.
@@ -120,7 +120,7 @@ class ManagedMySqlDatabaseBinaryLogInformation(object):
     def binary_log_compression(self):
         """
         Gets the binary_log_compression of this ManagedMySqlDatabaseBinaryLogInformation.
-        Indicates whether compression is enabled for transactions written to binary log files on this server.
+        Indicates whether compression is enabled for transactions written to binary log files on the MySQL server.
 
 
         :return: The binary_log_compression of this ManagedMySqlDatabaseBinaryLogInformation.
@@ -132,7 +132,7 @@ class ManagedMySqlDatabaseBinaryLogInformation(object):
     def binary_log_compression(self, binary_log_compression):
         """
         Sets the binary_log_compression of this ManagedMySqlDatabaseBinaryLogInformation.
-        Indicates whether compression is enabled for transactions written to binary log files on this server.
+        Indicates whether compression is enabled for transactions written to binary log files on the MySQL server.
 
 
         :param binary_log_compression: The binary_log_compression of this ManagedMySqlDatabaseBinaryLogInformation.
@@ -144,7 +144,7 @@ class ManagedMySqlDatabaseBinaryLogInformation(object):
     def binary_log_compression_percent(self):
         """
         Gets the binary_log_compression_percent of this ManagedMySqlDatabaseBinaryLogInformation.
-        The compression ratio for binary log expressed as a percentage.
+        The compression ratio for the binary log, expressed as a percentage.
 
 
         :return: The binary_log_compression_percent of this ManagedMySqlDatabaseBinaryLogInformation.
@@ -156,7 +156,7 @@ class ManagedMySqlDatabaseBinaryLogInformation(object):
     def binary_log_compression_percent(self, binary_log_compression_percent):
         """
         Sets the binary_log_compression_percent of this ManagedMySqlDatabaseBinaryLogInformation.
-        The compression ratio for binary log expressed as a percentage.
+        The compression ratio for the binary log, expressed as a percentage.
 
 
         :param binary_log_compression_percent: The binary_log_compression_percent of this ManagedMySqlDatabaseBinaryLogInformation.

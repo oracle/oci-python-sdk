@@ -5,6 +5,35 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.156.0 - 2025-07-22
+====================
+
+Added 
+----- 
+* Support for updating autonomous databases with schedule DB version upgrade in the Database service 
+* Support for new OKV Endpoint group parameter for Autonomous Container Database operations in the Database service 
+* Support for specifying tags in backup databases and standby databases in the Database service 
+* Support for cloud database systems and improved system monitoring in the Database Management service 
+* Support for stack, image, lead generation, and service listing types in the Marketplace service 
+* Support for adding custom metric-based policies in the Autoscaling service 
+* Support for Named Credentials in the Management Agent service 
+* Support for multilingual capability, user configured Agent-As-A-Tool, data ingestion of documents, and sequentially executed steps in the Generative AI Agent service 
+* Support for IAM authentication in the Cache service   
+
+Breaking 
+-------- 
+* The AI Anomaly Detection service has reached End-of-life 
+* Clients `AttachmentClient`, `AttachmentClientCompositeOperations`, `OfferClient`, `OfferClientCompositeOperations` are removed from the Marketplace service 
+* Models `Attachment`, `AttachmentCollection`, `Contact`, `CreateAttachmentDetails`, `CreateOfferDetails`, `CustomField`, `Offer`, `Pricing`, `ResourceBundle`, `SellerInformation`, `UpdateOfferDetails` are removed from the Marketplace service 
+* Properties `version_details`, `system_requirements`, `categories`, `markets`, `pricing_type` are removed from models `CreateListingRevisionDetails` and `UpdateListingRevisionDetails` in the Marketplace service 
+* Properties `version_details`, `system_requirements`, `categories`, `markets`, `pricing_type`, `allowed_tenancies`, `are_internal_tenancy_launch_allowed` are removed from model `ListingRevision` in the Marketplace service 
+* Properties `categories`, `markets`, `pricing_type` are removed from model `ListingRevisionSummary` in the Marketplace service 
+* Parent class for model `Metric` changed from `object` to `MetricBase` in the Autoscaling service 
+* Type of property `metric` changed from `Metric` to `MetricBase` in models `Condition`, `CreateConditionDetails`, `UpdateConditionDetails` in the Autoscaling service 
+* Support for default retries on the operations of the Autoscaling service 
+* Property `http_endpoint_auth_config_type` is removed from model `HttpEndpointAuthConfig` in the Generative AI Agent service   
+
+====================
 2.155.2 - 2025-07-15
 ====================
 

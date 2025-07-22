@@ -31,6 +31,10 @@ class ManagementAgentImage(object):
     #: This constant has a value of "MACOSX"
     PLATFORM_TYPE_MACOSX = "MACOSX"
 
+    #: A constant which can be used with the platform_type property of a ManagementAgentImage.
+    #: This constant has a value of "AIX"
+    PLATFORM_TYPE_AIX = "AIX"
+
     #: A constant which can be used with the package_type property of a ManagementAgentImage.
     #: This constant has a value of "RPM"
     PACKAGE_TYPE_RPM = "RPM"
@@ -54,6 +58,10 @@ class ManagementAgentImage(object):
     #: A constant which can be used with the package_architecture_type property of a ManagementAgentImage.
     #: This constant has a value of "M1"
     PACKAGE_ARCHITECTURE_TYPE_M1 = "M1"
+
+    #: A constant which can be used with the package_architecture_type property of a ManagementAgentImage.
+    #: This constant has a value of "PPC64"
+    PACKAGE_ARCHITECTURE_TYPE_PPC64 = "PPC64"
 
     #: A constant which can be used with the package_architecture_type property of a ManagementAgentImage.
     #: This constant has a value of "AARCH64"
@@ -102,7 +110,7 @@ class ManagementAgentImage(object):
 
         :param platform_type:
             The value to assign to the platform_type property of this ManagementAgentImage.
-            Allowed values for this property are: "LINUX", "WINDOWS", "SOLARIS", "MACOSX"
+            Allowed values for this property are: "LINUX", "WINDOWS", "SOLARIS", "MACOSX", "AIX"
         :type platform_type: str
 
         :param platform_name:
@@ -116,7 +124,7 @@ class ManagementAgentImage(object):
 
         :param package_architecture_type:
             The value to assign to the package_architecture_type property of this ManagementAgentImage.
-            Allowed values for this property are: "X86_64", "SPARC", "X86", "M1", "AARCH64"
+            Allowed values for this property are: "X86_64", "SPARC", "X86", "M1", "PPC64", "AARCH64"
         :type package_architecture_type: str
 
         :param version:
@@ -213,7 +221,7 @@ class ManagementAgentImage(object):
         **[Required]** Gets the platform_type of this ManagementAgentImage.
         Agent image platform type
 
-        Allowed values for this property are: "LINUX", "WINDOWS", "SOLARIS", "MACOSX"
+        Allowed values for this property are: "LINUX", "WINDOWS", "SOLARIS", "MACOSX", "AIX"
 
 
         :return: The platform_type of this ManagementAgentImage.
@@ -231,7 +239,7 @@ class ManagementAgentImage(object):
         :param platform_type: The platform_type of this ManagementAgentImage.
         :type: str
         """
-        allowed_values = ["LINUX", "WINDOWS", "SOLARIS", "MACOSX"]
+        allowed_values = ["LINUX", "WINDOWS", "SOLARIS", "MACOSX", "AIX"]
         if not value_allowed_none_or_none_sentinel(platform_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `platform_type`, must be None or one of {allowed_values}"
@@ -299,7 +307,7 @@ class ManagementAgentImage(object):
         Gets the package_architecture_type of this ManagementAgentImage.
         The installation package target architecture type
 
-        Allowed values for this property are: "X86_64", "SPARC", "X86", "M1", "AARCH64"
+        Allowed values for this property are: "X86_64", "SPARC", "X86", "M1", "PPC64", "AARCH64"
 
 
         :return: The package_architecture_type of this ManagementAgentImage.
@@ -317,7 +325,7 @@ class ManagementAgentImage(object):
         :param package_architecture_type: The package_architecture_type of this ManagementAgentImage.
         :type: str
         """
-        allowed_values = ["X86_64", "SPARC", "X86", "M1", "AARCH64"]
+        allowed_values = ["X86_64", "SPARC", "X86", "M1", "PPC64", "AARCH64"]
         if not value_allowed_none_or_none_sentinel(package_architecture_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `package_architecture_type`, must be None or one of {allowed_values}"

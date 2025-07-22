@@ -61,8 +61,6 @@ class DatabaseConnection(object):
         """
         **[Required]** Gets the connection_type of this DatabaseConnection.
         The type of Database connection.
-        The allowed values are:
-        - `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
 
         Allowed values for this property are: "DATABASE_TOOL_CONNECTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -78,8 +76,6 @@ class DatabaseConnection(object):
         """
         Sets the connection_type of this DatabaseConnection.
         The type of Database connection.
-        The allowed values are:
-        - `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
 
 
         :param connection_type: The connection_type of this DatabaseConnection.

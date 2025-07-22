@@ -176,7 +176,7 @@ class OracleDBAzureBlobContainerClient(object):
         resource_path = "/oracleDbAzureBlobContainer/{oracleDbAzureBlobContainerId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_oracle_db_azure_blob_container_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureBlobContainer/ChangeOracleDbAzureBlobContainerCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -293,7 +293,7 @@ class OracleDBAzureBlobContainerClient(object):
         resource_path = "/oracleDbAzureBlobContainer"
         method = "POST"
         operation_name = "create_oracle_db_azure_blob_container"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureBlobContainer/CreateOracleDbAzureBlobContainer"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -393,7 +393,7 @@ class OracleDBAzureBlobContainerClient(object):
         resource_path = "/oracleDbAzureBlobContainer/{oracleDbAzureBlobContainerId}"
         method = "DELETE"
         operation_name = "delete_oracle_db_azure_blob_container"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureBlobContainer/DeleteOracleDbAzureBlobContainer"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -502,7 +502,7 @@ class OracleDBAzureBlobContainerClient(object):
         resource_path = "/oracleDbAzureBlobContainer/{oracleDbAzureBlobContainerId}"
         method = "GET"
         operation_name = "get_oracle_db_azure_blob_container"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureBlobContainer/GetOracleDbAzureBlobContainer"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -655,7 +655,7 @@ class OracleDBAzureBlobContainerClient(object):
         resource_path = "/oracleDbAzureBlobContainer"
         method = "GET"
         operation_name = "list_oracle_db_azure_blob_containers"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureBlobContainer/ListOracleDbAzureBlobContainers"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -797,7 +797,7 @@ class OracleDBAzureBlobContainerClient(object):
         resource_path = "/oracleDbAzureBlobContainer/{oracleDbAzureBlobContainerId}"
         method = "PUT"
         operation_name = "update_oracle_db_azure_blob_container"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureBlobContainer/UpdateOracleDbAzureBlobContainer"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

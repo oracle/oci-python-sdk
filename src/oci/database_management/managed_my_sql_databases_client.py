@@ -241,7 +241,7 @@ class ManagedMySqlDatabasesClient(object):
 
     def get_binary_log_information(self, managed_my_sql_database_id, **kwargs):
         """
-        Retrieves information pertaining to binary log of a specific MySQL server.
+        Retrieves information pertaining to the binary log of a specific MySQL server.
 
 
         :param str managed_my_sql_database_id: (required)
@@ -339,7 +339,7 @@ class ManagedMySqlDatabasesClient(object):
 
     def get_general_replication_information(self, managed_my_sql_database_id, **kwargs):
         """
-        Retrieves general information regarding replication of a specific MySQL server.
+        Retrieves general information regarding the replication of a specific MySQL server.
 
 
         :param str managed_my_sql_database_id: (required)
@@ -947,7 +947,7 @@ class ManagedMySqlDatabasesClient(object):
 
     def list_high_availability_members(self, managed_my_sql_database_id, **kwargs):
         """
-        Information about high availability members of a specific MySQL server's replication group.
+        Retrieves information about the high availability members of a specific MySQL server's replication group.
 
 
         :param str managed_my_sql_database_id: (required)
@@ -1855,7 +1855,7 @@ class ManagedMySqlDatabasesClient(object):
 
     def list_outbound_replications(self, managed_my_sql_database_id, **kwargs):
         """
-        Retrieves information pertaining to outbound replications of a specific MySQL server.
+        Retrieves information pertaining to the outbound replications of a specific MySQL server.
 
 
         :param str managed_my_sql_database_id: (required)

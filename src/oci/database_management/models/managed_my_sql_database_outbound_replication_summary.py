@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ManagedMySqlDatabaseOutboundReplicationSummary(object):
     """
-    An outbound replication record of a MySQL Server.
+    An outbound replication record of a MySQL server.
     """
 
     def __init__(self, **kwargs):

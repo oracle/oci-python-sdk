@@ -24,6 +24,7 @@ from .asm_connection_string import AsmConnectionString
 from .asm_property import AsmProperty
 from .asm_property_collection import AsmPropertyCollection
 from .asm_property_summary import AsmPropertySummary
+from .associated_cloud_component import AssociatedCloudComponent
 from .associated_component import AssociatedComponent
 from .associated_database_collection import AssociatedDatabaseCollection
 from .associated_database_summary import AssociatedDatabaseSummary
@@ -80,6 +81,70 @@ from .change_space_budget_details import ChangeSpaceBudgetDetails
 from .change_sql_plan_baselines_attributes_details import ChangeSqlPlanBaselinesAttributesDetails
 from .child_database import ChildDatabase
 from .clone_sql_tuning_task_details import CloneSqlTuningTaskDetails
+from .cloud_asm import CloudAsm
+from .cloud_asm_collection import CloudAsmCollection
+from .cloud_asm_configuration import CloudAsmConfiguration
+from .cloud_asm_connection_credentials import CloudAsmConnectionCredentials
+from .cloud_asm_connection_credentials_by_details import CloudAsmConnectionCredentialsByDetails
+from .cloud_asm_connection_credentials_by_name import CloudAsmConnectionCredentialsByName
+from .cloud_asm_connection_info import CloudAsmConnectionInfo
+from .cloud_asm_disk_group_collection import CloudAsmDiskGroupCollection
+from .cloud_asm_disk_group_summary import CloudAsmDiskGroupSummary
+from .cloud_asm_instance import CloudAsmInstance
+from .cloud_asm_instance_collection import CloudAsmInstanceCollection
+from .cloud_asm_instance_parameters import CloudAsmInstanceParameters
+from .cloud_asm_instance_summary import CloudAsmInstanceSummary
+from .cloud_asm_serviced_database import CloudAsmServicedDatabase
+from .cloud_asm_summary import CloudAsmSummary
+from .cloud_asm_user_collection import CloudAsmUserCollection
+from .cloud_asm_user_summary import CloudAsmUserSummary
+from .cloud_cluster import CloudCluster
+from .cloud_cluster_collection import CloudClusterCollection
+from .cloud_cluster_instance import CloudClusterInstance
+from .cloud_cluster_instance_collection import CloudClusterInstanceCollection
+from .cloud_cluster_instance_summary import CloudClusterInstanceSummary
+from .cloud_cluster_network_configuration import CloudClusterNetworkConfiguration
+from .cloud_cluster_scan_listener_configuration import CloudClusterScanListenerConfiguration
+from .cloud_cluster_summary import CloudClusterSummary
+from .cloud_cluster_vip_configuration import CloudClusterVipConfiguration
+from .cloud_database_collection import CloudDatabaseCollection
+from .cloud_database_connection_info import CloudDatabaseConnectionInfo
+from .cloud_database_instance import CloudDatabaseInstance
+from .cloud_database_summary import CloudDatabaseSummary
+from .cloud_db_home import CloudDbHome
+from .cloud_db_home_collection import CloudDbHomeCollection
+from .cloud_db_home_summary import CloudDbHomeSummary
+from .cloud_db_node import CloudDbNode
+from .cloud_db_node_collection import CloudDbNodeCollection
+from .cloud_db_node_summary import CloudDbNodeSummary
+from .cloud_db_system import CloudDbSystem
+from .cloud_db_system_basic_info import CloudDbSystemBasicInfo
+from .cloud_db_system_collection import CloudDbSystemCollection
+from .cloud_db_system_connection_info import CloudDbSystemConnectionInfo
+from .cloud_db_system_connector import CloudDbSystemConnector
+from .cloud_db_system_connector_collection import CloudDbSystemConnectorCollection
+from .cloud_db_system_connector_summary import CloudDbSystemConnectorSummary
+from .cloud_db_system_database_management_config_details import CloudDbSystemDatabaseManagementConfigDetails
+from .cloud_db_system_discovery import CloudDbSystemDiscovery
+from .cloud_db_system_discovery_collection import CloudDbSystemDiscoveryCollection
+from .cloud_db_system_discovery_connector import CloudDbSystemDiscoveryConnector
+from .cloud_db_system_discovery_macs_connector import CloudDbSystemDiscoveryMacsConnector
+from .cloud_db_system_discovery_summary import CloudDbSystemDiscoverySummary
+from .cloud_db_system_macs_connector import CloudDbSystemMacsConnector
+from .cloud_db_system_stack_monitoring_config_details import CloudDbSystemStackMonitoringConfigDetails
+from .cloud_db_system_summary import CloudDbSystemSummary
+from .cloud_listener import CloudListener
+from .cloud_listener_collection import CloudListenerCollection
+from .cloud_listener_endpoint import CloudListenerEndpoint
+from .cloud_listener_ipc_endpoint import CloudListenerIpcEndpoint
+from .cloud_listener_service_collection import CloudListenerServiceCollection
+from .cloud_listener_service_summary import CloudListenerServiceSummary
+from .cloud_listener_serviced_database import CloudListenerServicedDatabase
+from .cloud_listener_summary import CloudListenerSummary
+from .cloud_listener_tcp_endpoint import CloudListenerTcpEndpoint
+from .cloud_listener_tcps_endpoint import CloudListenerTcpsEndpoint
+from .cloud_serviced_asm import CloudServicedAsm
+from .cloud_serviced_database import CloudServicedDatabase
 from .cluster_cache_metric import ClusterCacheMetric
 from .configure_automatic_capture_filters_details import ConfigureAutomaticCaptureFiltersDetails
 from .configure_automatic_spm_evolve_advisor_task_details import ConfigureAutomaticSpmEvolveAdvisorTaskDetails
@@ -87,6 +152,10 @@ from .connector_details import ConnectorDetails
 from .consumer_group_privilege_collection import ConsumerGroupPrivilegeCollection
 from .consumer_group_privilege_summary import ConsumerGroupPrivilegeSummary
 from .cpu_utilization_aggregate_metrics import CpuUtilizationAggregateMetrics
+from .create_cloud_db_system_connector_details import CreateCloudDbSystemConnectorDetails
+from .create_cloud_db_system_details import CreateCloudDbSystemDetails
+from .create_cloud_db_system_discovery_details import CreateCloudDbSystemDiscoveryDetails
+from .create_cloud_db_system_macs_connector_details import CreateCloudDbSystemMacsConnectorDetails
 from .create_db_management_private_endpoint_details import CreateDbManagementPrivateEndpointDetails
 from .create_external_db_system_connector_details import CreateExternalDbSystemConnectorDetails
 from .create_external_db_system_details import CreateExternalDbSystemDetails
@@ -170,12 +239,24 @@ from .disable_high_frequency_automatic_spm_evolve_advisor_task_details import Di
 from .disable_pluggable_database_management_feature_details import DisablePluggableDatabaseManagementFeatureDetails
 from .disable_sql_plan_baselines_usage_details import DisableSqlPlanBaselinesUsageDetails
 from .discover_external_exadata_infrastructure_details import DiscoverExternalExadataInfrastructureDetails
+from .discovered_cloud_asm import DiscoveredCloudAsm
+from .discovered_cloud_asm_instance import DiscoveredCloudAsmInstance
+from .discovered_cloud_cluster import DiscoveredCloudCluster
+from .discovered_cloud_cluster_instance import DiscoveredCloudClusterInstance
+from .discovered_cloud_database import DiscoveredCloudDatabase
+from .discovered_cloud_db_home import DiscoveredCloudDbHome
+from .discovered_cloud_db_instance import DiscoveredCloudDbInstance
+from .discovered_cloud_db_node import DiscoveredCloudDbNode
+from .discovered_cloud_db_system_component import DiscoveredCloudDbSystemComponent
+from .discovered_cloud_listener import DiscoveredCloudListener
+from .discovered_cloud_pluggable_database import DiscoveredCloudPluggableDatabase
 from .discovered_external_asm import DiscoveredExternalAsm
 from .discovered_external_asm_instance import DiscoveredExternalAsmInstance
 from .discovered_external_cluster import DiscoveredExternalCluster
 from .discovered_external_cluster_instance import DiscoveredExternalClusterInstance
 from .discovered_external_database import DiscoveredExternalDatabase
 from .discovered_external_db_home import DiscoveredExternalDbHome
+from .discovered_external_db_instance import DiscoveredExternalDbInstance
 from .discovered_external_db_node import DiscoveredExternalDbNode
 from .discovered_external_db_system_component import DiscoveredExternalDbSystemComponent
 from .discovered_external_listener import DiscoveredExternalListener
@@ -188,6 +269,8 @@ from .drop_tablespace_details import DropTablespaceDetails
 from .enable_automatic_initial_plan_capture_details import EnableAutomaticInitialPlanCaptureDetails
 from .enable_automatic_spm_evolve_advisor_task_details import EnableAutomaticSpmEvolveAdvisorTaskDetails
 from .enable_autonomous_database_management_feature_details import EnableAutonomousDatabaseManagementFeatureDetails
+from .enable_cloud_db_system_database_management_details import EnableCloudDbSystemDatabaseManagementDetails
+from .enable_cloud_db_system_stack_monitoring_details import EnableCloudDbSystemStackMonitoringDetails
 from .enable_database_management_feature_details import EnableDatabaseManagementFeatureDetails
 from .enable_external_container_database_management_feature_details import EnableExternalContainerDatabaseManagementFeatureDetails
 from .enable_external_database_management_details import EnableExternalDatabaseManagementDetails
@@ -417,6 +500,7 @@ from .optimizer_statistics_collection_operation_summary import OptimizerStatisti
 from .optimizer_statistics_collection_operations_collection import OptimizerStatisticsCollectionOperationsCollection
 from .optimizer_statistics_operation_task import OptimizerStatisticsOperationTask
 from .parent_group import ParentGroup
+from .patch_cloud_db_system_discovery_details import PatchCloudDbSystemDiscoveryDetails
 from .patch_external_db_system_discovery_details import PatchExternalDbSystemDiscoveryDetails
 from .patch_instruction import PatchInstruction
 from .patch_merge_instruction import PatchMergeInstruction
@@ -519,6 +603,17 @@ from .time_series_metric_data_point import TimeSeriesMetricDataPoint
 from .time_series_metric_definition import TimeSeriesMetricDefinition
 from .top_sql_cpu_activity import TopSqlCpuActivity
 from .update_basic_preferred_credential_details import UpdateBasicPreferredCredentialDetails
+from .update_cloud_asm_details import UpdateCloudAsmDetails
+from .update_cloud_asm_instance_details import UpdateCloudAsmInstanceDetails
+from .update_cloud_cluster_details import UpdateCloudClusterDetails
+from .update_cloud_cluster_instance_details import UpdateCloudClusterInstanceDetails
+from .update_cloud_db_home_details import UpdateCloudDbHomeDetails
+from .update_cloud_db_node_details import UpdateCloudDbNodeDetails
+from .update_cloud_db_system_connector_details import UpdateCloudDbSystemConnectorDetails
+from .update_cloud_db_system_details import UpdateCloudDbSystemDetails
+from .update_cloud_db_system_discovery_details import UpdateCloudDbSystemDiscoveryDetails
+from .update_cloud_db_system_macs_connector_details import UpdateCloudDbSystemMacsConnectorDetails
+from .update_cloud_listener_details import UpdateCloudListenerDetails
 from .update_database_parameters_result import UpdateDatabaseParametersResult
 from .update_db_management_private_endpoint_details import UpdateDbManagementPrivateEndpointDetails
 from .update_external_asm_details import UpdateExternalAsmDetails
@@ -581,6 +676,7 @@ database_management_type_mapping = {
     "AsmProperty": AsmProperty,
     "AsmPropertyCollection": AsmPropertyCollection,
     "AsmPropertySummary": AsmPropertySummary,
+    "AssociatedCloudComponent": AssociatedCloudComponent,
     "AssociatedComponent": AssociatedComponent,
     "AssociatedDatabaseCollection": AssociatedDatabaseCollection,
     "AssociatedDatabaseSummary": AssociatedDatabaseSummary,
@@ -637,6 +733,70 @@ database_management_type_mapping = {
     "ChangeSqlPlanBaselinesAttributesDetails": ChangeSqlPlanBaselinesAttributesDetails,
     "ChildDatabase": ChildDatabase,
     "CloneSqlTuningTaskDetails": CloneSqlTuningTaskDetails,
+    "CloudAsm": CloudAsm,
+    "CloudAsmCollection": CloudAsmCollection,
+    "CloudAsmConfiguration": CloudAsmConfiguration,
+    "CloudAsmConnectionCredentials": CloudAsmConnectionCredentials,
+    "CloudAsmConnectionCredentialsByDetails": CloudAsmConnectionCredentialsByDetails,
+    "CloudAsmConnectionCredentialsByName": CloudAsmConnectionCredentialsByName,
+    "CloudAsmConnectionInfo": CloudAsmConnectionInfo,
+    "CloudAsmDiskGroupCollection": CloudAsmDiskGroupCollection,
+    "CloudAsmDiskGroupSummary": CloudAsmDiskGroupSummary,
+    "CloudAsmInstance": CloudAsmInstance,
+    "CloudAsmInstanceCollection": CloudAsmInstanceCollection,
+    "CloudAsmInstanceParameters": CloudAsmInstanceParameters,
+    "CloudAsmInstanceSummary": CloudAsmInstanceSummary,
+    "CloudAsmServicedDatabase": CloudAsmServicedDatabase,
+    "CloudAsmSummary": CloudAsmSummary,
+    "CloudAsmUserCollection": CloudAsmUserCollection,
+    "CloudAsmUserSummary": CloudAsmUserSummary,
+    "CloudCluster": CloudCluster,
+    "CloudClusterCollection": CloudClusterCollection,
+    "CloudClusterInstance": CloudClusterInstance,
+    "CloudClusterInstanceCollection": CloudClusterInstanceCollection,
+    "CloudClusterInstanceSummary": CloudClusterInstanceSummary,
+    "CloudClusterNetworkConfiguration": CloudClusterNetworkConfiguration,
+    "CloudClusterScanListenerConfiguration": CloudClusterScanListenerConfiguration,
+    "CloudClusterSummary": CloudClusterSummary,
+    "CloudClusterVipConfiguration": CloudClusterVipConfiguration,
+    "CloudDatabaseCollection": CloudDatabaseCollection,
+    "CloudDatabaseConnectionInfo": CloudDatabaseConnectionInfo,
+    "CloudDatabaseInstance": CloudDatabaseInstance,
+    "CloudDatabaseSummary": CloudDatabaseSummary,
+    "CloudDbHome": CloudDbHome,
+    "CloudDbHomeCollection": CloudDbHomeCollection,
+    "CloudDbHomeSummary": CloudDbHomeSummary,
+    "CloudDbNode": CloudDbNode,
+    "CloudDbNodeCollection": CloudDbNodeCollection,
+    "CloudDbNodeSummary": CloudDbNodeSummary,
+    "CloudDbSystem": CloudDbSystem,
+    "CloudDbSystemBasicInfo": CloudDbSystemBasicInfo,
+    "CloudDbSystemCollection": CloudDbSystemCollection,
+    "CloudDbSystemConnectionInfo": CloudDbSystemConnectionInfo,
+    "CloudDbSystemConnector": CloudDbSystemConnector,
+    "CloudDbSystemConnectorCollection": CloudDbSystemConnectorCollection,
+    "CloudDbSystemConnectorSummary": CloudDbSystemConnectorSummary,
+    "CloudDbSystemDatabaseManagementConfigDetails": CloudDbSystemDatabaseManagementConfigDetails,
+    "CloudDbSystemDiscovery": CloudDbSystemDiscovery,
+    "CloudDbSystemDiscoveryCollection": CloudDbSystemDiscoveryCollection,
+    "CloudDbSystemDiscoveryConnector": CloudDbSystemDiscoveryConnector,
+    "CloudDbSystemDiscoveryMacsConnector": CloudDbSystemDiscoveryMacsConnector,
+    "CloudDbSystemDiscoverySummary": CloudDbSystemDiscoverySummary,
+    "CloudDbSystemMacsConnector": CloudDbSystemMacsConnector,
+    "CloudDbSystemStackMonitoringConfigDetails": CloudDbSystemStackMonitoringConfigDetails,
+    "CloudDbSystemSummary": CloudDbSystemSummary,
+    "CloudListener": CloudListener,
+    "CloudListenerCollection": CloudListenerCollection,
+    "CloudListenerEndpoint": CloudListenerEndpoint,
+    "CloudListenerIpcEndpoint": CloudListenerIpcEndpoint,
+    "CloudListenerServiceCollection": CloudListenerServiceCollection,
+    "CloudListenerServiceSummary": CloudListenerServiceSummary,
+    "CloudListenerServicedDatabase": CloudListenerServicedDatabase,
+    "CloudListenerSummary": CloudListenerSummary,
+    "CloudListenerTcpEndpoint": CloudListenerTcpEndpoint,
+    "CloudListenerTcpsEndpoint": CloudListenerTcpsEndpoint,
+    "CloudServicedAsm": CloudServicedAsm,
+    "CloudServicedDatabase": CloudServicedDatabase,
     "ClusterCacheMetric": ClusterCacheMetric,
     "ConfigureAutomaticCaptureFiltersDetails": ConfigureAutomaticCaptureFiltersDetails,
     "ConfigureAutomaticSpmEvolveAdvisorTaskDetails": ConfigureAutomaticSpmEvolveAdvisorTaskDetails,
@@ -644,6 +804,10 @@ database_management_type_mapping = {
     "ConsumerGroupPrivilegeCollection": ConsumerGroupPrivilegeCollection,
     "ConsumerGroupPrivilegeSummary": ConsumerGroupPrivilegeSummary,
     "CpuUtilizationAggregateMetrics": CpuUtilizationAggregateMetrics,
+    "CreateCloudDbSystemConnectorDetails": CreateCloudDbSystemConnectorDetails,
+    "CreateCloudDbSystemDetails": CreateCloudDbSystemDetails,
+    "CreateCloudDbSystemDiscoveryDetails": CreateCloudDbSystemDiscoveryDetails,
+    "CreateCloudDbSystemMacsConnectorDetails": CreateCloudDbSystemMacsConnectorDetails,
     "CreateDbManagementPrivateEndpointDetails": CreateDbManagementPrivateEndpointDetails,
     "CreateExternalDbSystemConnectorDetails": CreateExternalDbSystemConnectorDetails,
     "CreateExternalDbSystemDetails": CreateExternalDbSystemDetails,
@@ -727,12 +891,24 @@ database_management_type_mapping = {
     "DisablePluggableDatabaseManagementFeatureDetails": DisablePluggableDatabaseManagementFeatureDetails,
     "DisableSqlPlanBaselinesUsageDetails": DisableSqlPlanBaselinesUsageDetails,
     "DiscoverExternalExadataInfrastructureDetails": DiscoverExternalExadataInfrastructureDetails,
+    "DiscoveredCloudAsm": DiscoveredCloudAsm,
+    "DiscoveredCloudAsmInstance": DiscoveredCloudAsmInstance,
+    "DiscoveredCloudCluster": DiscoveredCloudCluster,
+    "DiscoveredCloudClusterInstance": DiscoveredCloudClusterInstance,
+    "DiscoveredCloudDatabase": DiscoveredCloudDatabase,
+    "DiscoveredCloudDbHome": DiscoveredCloudDbHome,
+    "DiscoveredCloudDbInstance": DiscoveredCloudDbInstance,
+    "DiscoveredCloudDbNode": DiscoveredCloudDbNode,
+    "DiscoveredCloudDbSystemComponent": DiscoveredCloudDbSystemComponent,
+    "DiscoveredCloudListener": DiscoveredCloudListener,
+    "DiscoveredCloudPluggableDatabase": DiscoveredCloudPluggableDatabase,
     "DiscoveredExternalAsm": DiscoveredExternalAsm,
     "DiscoveredExternalAsmInstance": DiscoveredExternalAsmInstance,
     "DiscoveredExternalCluster": DiscoveredExternalCluster,
     "DiscoveredExternalClusterInstance": DiscoveredExternalClusterInstance,
     "DiscoveredExternalDatabase": DiscoveredExternalDatabase,
     "DiscoveredExternalDbHome": DiscoveredExternalDbHome,
+    "DiscoveredExternalDbInstance": DiscoveredExternalDbInstance,
     "DiscoveredExternalDbNode": DiscoveredExternalDbNode,
     "DiscoveredExternalDbSystemComponent": DiscoveredExternalDbSystemComponent,
     "DiscoveredExternalListener": DiscoveredExternalListener,
@@ -745,6 +921,8 @@ database_management_type_mapping = {
     "EnableAutomaticInitialPlanCaptureDetails": EnableAutomaticInitialPlanCaptureDetails,
     "EnableAutomaticSpmEvolveAdvisorTaskDetails": EnableAutomaticSpmEvolveAdvisorTaskDetails,
     "EnableAutonomousDatabaseManagementFeatureDetails": EnableAutonomousDatabaseManagementFeatureDetails,
+    "EnableCloudDbSystemDatabaseManagementDetails": EnableCloudDbSystemDatabaseManagementDetails,
+    "EnableCloudDbSystemStackMonitoringDetails": EnableCloudDbSystemStackMonitoringDetails,
     "EnableDatabaseManagementFeatureDetails": EnableDatabaseManagementFeatureDetails,
     "EnableExternalContainerDatabaseManagementFeatureDetails": EnableExternalContainerDatabaseManagementFeatureDetails,
     "EnableExternalDatabaseManagementDetails": EnableExternalDatabaseManagementDetails,
@@ -974,6 +1152,7 @@ database_management_type_mapping = {
     "OptimizerStatisticsCollectionOperationsCollection": OptimizerStatisticsCollectionOperationsCollection,
     "OptimizerStatisticsOperationTask": OptimizerStatisticsOperationTask,
     "ParentGroup": ParentGroup,
+    "PatchCloudDbSystemDiscoveryDetails": PatchCloudDbSystemDiscoveryDetails,
     "PatchExternalDbSystemDiscoveryDetails": PatchExternalDbSystemDiscoveryDetails,
     "PatchInstruction": PatchInstruction,
     "PatchMergeInstruction": PatchMergeInstruction,
@@ -1076,6 +1255,17 @@ database_management_type_mapping = {
     "TimeSeriesMetricDefinition": TimeSeriesMetricDefinition,
     "TopSqlCpuActivity": TopSqlCpuActivity,
     "UpdateBasicPreferredCredentialDetails": UpdateBasicPreferredCredentialDetails,
+    "UpdateCloudAsmDetails": UpdateCloudAsmDetails,
+    "UpdateCloudAsmInstanceDetails": UpdateCloudAsmInstanceDetails,
+    "UpdateCloudClusterDetails": UpdateCloudClusterDetails,
+    "UpdateCloudClusterInstanceDetails": UpdateCloudClusterInstanceDetails,
+    "UpdateCloudDbHomeDetails": UpdateCloudDbHomeDetails,
+    "UpdateCloudDbNodeDetails": UpdateCloudDbNodeDetails,
+    "UpdateCloudDbSystemConnectorDetails": UpdateCloudDbSystemConnectorDetails,
+    "UpdateCloudDbSystemDetails": UpdateCloudDbSystemDetails,
+    "UpdateCloudDbSystemDiscoveryDetails": UpdateCloudDbSystemDiscoveryDetails,
+    "UpdateCloudDbSystemMacsConnectorDetails": UpdateCloudDbSystemMacsConnectorDetails,
+    "UpdateCloudListenerDetails": UpdateCloudListenerDetails,
     "UpdateDatabaseParametersResult": UpdateDatabaseParametersResult,
     "UpdateDbManagementPrivateEndpointDetails": UpdateDbManagementPrivateEndpointDetails,
     "UpdateExternalAsmDetails": UpdateExternalAsmDetails,

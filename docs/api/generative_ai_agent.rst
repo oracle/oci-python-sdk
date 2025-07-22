@@ -24,6 +24,7 @@ Generative Ai Agent
     oci.generative_ai_agent.models.AgentEndpointCollection
     oci.generative_ai_agent.models.AgentEndpointSummary
     oci.generative_ai_agent.models.AgentSummary
+    oci.generative_ai_agent.models.AgentToolConfig
     oci.generative_ai_agent.models.ApiSchemaInlineInputLocation
     oci.generative_ai_agent.models.ApiSchemaInputLocation
     oci.generative_ai_agent.models.ApiSchemaObjectStorageInputLocation
@@ -43,6 +44,7 @@ Generative Ai Agent
     oci.generative_ai_agent.models.DataIngestionJobCollection
     oci.generative_ai_agent.models.DataIngestionJobStatistics
     oci.generative_ai_agent.models.DataIngestionJobSummary
+    oci.generative_ai_agent.models.DataIngestionJobType
     oci.generative_ai_agent.models.DataSource
     oci.generative_ai_agent.models.DataSourceCollection
     oci.generative_ai_agent.models.DataSourceConfig
@@ -54,11 +56,15 @@ Generative Ai Agent
     oci.generative_ai_agent.models.Function
     oci.generative_ai_agent.models.FunctionCallingToolConfig
     oci.generative_ai_agent.models.GuardrailConfig
+    oci.generative_ai_agent.models.HttpEndpointApiKeyAuthScopeConfig
     oci.generative_ai_agent.models.HttpEndpointAuthConfig
-    oci.generative_ai_agent.models.HttpEndpointDelegatedBearerAuthConfig
-    oci.generative_ai_agent.models.HttpEndpointIdcsAuthConfig
-    oci.generative_ai_agent.models.HttpEndpointNoAuthConfig
-    oci.generative_ai_agent.models.HttpEndpointOciResourcePrincipalAuthConfig
+    oci.generative_ai_agent.models.HttpEndpointAuthScopeConfig
+    oci.generative_ai_agent.models.HttpEndpointAuthSource
+    oci.generative_ai_agent.models.HttpEndpointBasicAuthScopeConfig
+    oci.generative_ai_agent.models.HttpEndpointBearerAuthScopeConfig
+    oci.generative_ai_agent.models.HttpEndpointIdcsAuthScopeConfig
+    oci.generative_ai_agent.models.HttpEndpointNoAuthScopeConfig
+    oci.generative_ai_agent.models.HttpEndpointOciAuthScopeConfig
     oci.generative_ai_agent.models.HttpEndpointToolConfig
     oci.generative_ai_agent.models.HumanInputConfig
     oci.generative_ai_agent.models.IdcsSecret

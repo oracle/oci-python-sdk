@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BasicAuthSecret(SecretDetail):
     """
-    The details of Basic authentication configured as in OpenSearch.
+    The details of Basic authentication configured using a secret stored in a vault.
     """
 
     def __init__(self, **kwargs):

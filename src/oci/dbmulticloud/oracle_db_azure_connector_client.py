@@ -176,7 +176,7 @@ class OracleDBAzureConnectorClient(object):
         resource_path = "/oracleDbAzureConnector/{oracleDbAzureConnectorId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_oracle_db_azure_connector_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureConnector/ChangeOracleDbAzureConnectorCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -287,7 +287,7 @@ class OracleDBAzureConnectorClient(object):
         resource_path = "/oracleDbAzureConnector"
         method = "POST"
         operation_name = "create_oracle_db_azure_connector"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureConnector/CreateOracleDbAzureConnector"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -385,7 +385,7 @@ class OracleDBAzureConnectorClient(object):
         resource_path = "/oracleDbAzureConnector/{oracleDbAzureConnectorId}"
         method = "DELETE"
         operation_name = "delete_oracle_db_azure_connector"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureConnector/DeleteOracleDbAzureConnector"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -494,7 +494,7 @@ class OracleDBAzureConnectorClient(object):
         resource_path = "/oracleDbAzureConnector/{oracleDbAzureConnectorId}"
         method = "GET"
         operation_name = "get_oracle_db_azure_connector"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureConnector/GetOracleDbAzureConnector"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -646,7 +646,7 @@ class OracleDBAzureConnectorClient(object):
         resource_path = "/oracleDbAzureConnector"
         method = "GET"
         operation_name = "list_oracle_db_azure_connectors"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureConnector/ListOracleDbAzureConnectors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -786,7 +786,7 @@ class OracleDBAzureConnectorClient(object):
         resource_path = "/oracleDbAzureConnector/{oracleDbAzureConnectorId}"
         method = "PATCH"
         operation_name = "patch_oracle_db_azure_connector"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureConnector/PatchOracleDbAzureConnector"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -896,7 +896,7 @@ class OracleDBAzureConnectorClient(object):
         resource_path = "/oracleDbAzureConnector/{oracleDbAzureConnectorId}"
         method = "PUT"
         operation_name = "update_oracle_db_azure_connector"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureConnector/UpdateOracleDbAzureConnector"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

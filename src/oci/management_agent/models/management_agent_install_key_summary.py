@@ -98,6 +98,18 @@ class ManagementAgentInstallKeySummary(object):
             The value to assign to the is_unlimited property of this ManagementAgentInstallKeySummary.
         :type is_unlimited: bool
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this ManagementAgentInstallKeySummary.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this ManagementAgentInstallKeySummary.
+        :type defined_tags: dict(str, dict(str, object))
+
+        :param system_tags:
+            The value to assign to the system_tags property of this ManagementAgentInstallKeySummary.
+        :type system_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -110,7 +122,10 @@ class ManagementAgentInstallKeySummary(object):
             'time_created': 'datetime',
             'time_expires': 'datetime',
             'compartment_id': 'str',
-            'is_unlimited': 'bool'
+            'is_unlimited': 'bool',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'id': 'id',
@@ -123,7 +138,10 @@ class ManagementAgentInstallKeySummary(object):
             'time_created': 'timeCreated',
             'time_expires': 'timeExpires',
             'compartment_id': 'compartmentId',
-            'is_unlimited': 'isUnlimited'
+            'is_unlimited': 'isUnlimited',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags',
+            'system_tags': 'systemTags'
         }
         self._id = None
         self._display_name = None
@@ -136,6 +154,9 @@ class ManagementAgentInstallKeySummary(object):
         self._time_expires = None
         self._compartment_id = None
         self._is_unlimited = None
+        self._freeform_tags = None
+        self._defined_tags = None
+        self._system_tags = None
 
     @property
     def id(self):
@@ -406,6 +427,84 @@ class ManagementAgentInstallKeySummary(object):
         :type: bool
         """
         self._is_unlimited = is_unlimited
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this ManagementAgentInstallKeySummary.
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Example: `{\"bar-key\": \"value\"}`
+
+
+        :return: The freeform_tags of this ManagementAgentInstallKeySummary.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this ManagementAgentInstallKeySummary.
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Example: `{\"bar-key\": \"value\"}`
+
+
+        :param freeform_tags: The freeform_tags of this ManagementAgentInstallKeySummary.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this ManagementAgentInstallKeySummary.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+
+
+        :return: The defined_tags of this ManagementAgentInstallKeySummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this ManagementAgentInstallKeySummary.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+
+
+        :param defined_tags: The defined_tags of this ManagementAgentInstallKeySummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this ManagementAgentInstallKeySummary.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{ \"orcl-cloud\": { \"free-tier-retained\": \"true\" } }`
+
+
+        :return: The system_tags of this ManagementAgentInstallKeySummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this ManagementAgentInstallKeySummary.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{ \"orcl-cloud\": { \"free-tier-retained\": \"true\" } }`
+
+
+        :param system_tags: The system_tags of this ManagementAgentInstallKeySummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

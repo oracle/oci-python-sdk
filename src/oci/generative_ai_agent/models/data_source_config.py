@@ -92,8 +92,6 @@ class DataSourceConfig(object):
         """
         **[Required]** Gets the data_source_config_type of this DataSourceConfig.
         The type of the tool.
-        The allowed values are:
-        - `OCI_OBJECT_STORAGE`: The data source is OCI Object Storage.
 
         Allowed values for this property are: "OCI_OBJECT_STORAGE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -109,8 +107,6 @@ class DataSourceConfig(object):
         """
         Sets the data_source_config_type of this DataSourceConfig.
         The type of the tool.
-        The allowed values are:
-        - `OCI_OBJECT_STORAGE`: The data source is OCI Object Storage.
 
 
         :param data_source_config_type: The data_source_config_type of this DataSourceConfig.
