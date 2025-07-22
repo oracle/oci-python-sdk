@@ -12,6 +12,8 @@ from pydantic import BaseModel, Field
 from pydantic_core import ValidationError
 
 from oci.addons.adk.agent_error import AgentError
+from oci.addons.adk.run.traces import Trace, TraceType
+from oci.addons.adk.logger import default_logger as logger
 
 
 class FunctionCall(BaseModel):
@@ -77,6 +79,29 @@ class GuardrailResult(BaseModel):
 class RawResponse(BaseModel):
     """Represents an action that is required from the client."""
     raw_data: Dict[str, Any] = Field(..., alias="raw_data")
+
+    def get_traces(self) -> List[Trace]:
+        """Safely extract traces from agent response."""
+        traces: List[Trace] = []
+        if self.raw_data.get("traces") is None or not self.raw_data.get("traces"):
+            return traces
+
+        for trace_data in self.raw_data.get("traces", []):
+            try:
+                trace_type_str = trace_data.get("trace_type")
+                trace_type = TraceType(trace_type_str)
+                trace_cls = trace_type.get_class()
+
+                if not trace_cls:
+                    continue
+
+                trace = trace_cls.model_validate(trace_data)
+                traces.append(trace)
+            except (ValidationError, ValueError) as e:
+                logger.debug(f"Failed to parse trace data with error: {str(e)} | Data: {trace_data}")
+                continue
+
+        return traces
 
     def get_guardrail_result(self) -> GuardrailResult | None:
         """Safely extract guardrail result (a JSON encoded string) from agent response."""

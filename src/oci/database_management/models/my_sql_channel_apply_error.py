@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MySqlChannelApplyError(object):
     """
-    MySQL server replication Channel name and error from its apply operation.
+    MySQL server replication channel name and error from its apply operation.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class MySqlChannelApplyError(object):
     def channel_name(self):
         """
         Gets the channel_name of this MySqlChannelApplyError.
-        The name of the replication channel
+        The name of the replication channel.
 
 
         :return: The channel_name of this MySqlChannelApplyError.
@@ -56,7 +56,7 @@ class MySqlChannelApplyError(object):
     def channel_name(self, channel_name):
         """
         Sets the channel_name of this MySqlChannelApplyError.
-        The name of the replication channel
+        The name of the replication channel.
 
 
         :param channel_name: The channel_name of this MySqlChannelApplyError.

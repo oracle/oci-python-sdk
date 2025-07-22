@@ -176,7 +176,7 @@ class OracleDbAzureVaultClient(object):
         resource_path = "/oracleDbAzureVault/{oracleDbAzureVaultId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_oracle_db_azure_vault_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureVault/ChangeOracleDbAzureVaultCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -293,7 +293,7 @@ class OracleDbAzureVaultClient(object):
         resource_path = "/oracleDbAzureVault"
         method = "POST"
         operation_name = "create_oracle_db_azure_vault"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDBAzureVault/CreateOracleDbAzureVault"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -393,7 +393,7 @@ class OracleDbAzureVaultClient(object):
         resource_path = "/oracleDbAzureVault/{oracleDbAzureVaultId}"
         method = "DELETE"
         operation_name = "delete_oracle_db_azure_vault"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureVault/DeleteOracleDbAzureVault"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -502,7 +502,7 @@ class OracleDbAzureVaultClient(object):
         resource_path = "/oracleDbAzureVault/{oracleDbAzureVaultId}"
         method = "GET"
         operation_name = "get_oracle_db_azure_vault"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureVault/GetOracleDbAzureVault"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -655,7 +655,7 @@ class OracleDbAzureVaultClient(object):
         resource_path = "/oracleDbAzureVault"
         method = "GET"
         operation_name = "list_oracle_db_azure_vaults"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureVault/ListOracleDbAzureVaults"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -801,7 +801,7 @@ class OracleDbAzureVaultClient(object):
         resource_path = "/oracleDbAzureVault/{oracleDbAzureVaultId}/actions/refresh"
         method = "POST"
         operation_name = "refresh_oracle_db_azure_vault"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureVault/RefreshOracleDbAzureVault"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -912,7 +912,7 @@ class OracleDbAzureVaultClient(object):
         resource_path = "/oracleDbAzureVault/{oracleDbAzureVaultId}"
         method = "PUT"
         operation_name = "update_oracle_db_azure_vault"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureVault/UpdateOracleDbAzureVault"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

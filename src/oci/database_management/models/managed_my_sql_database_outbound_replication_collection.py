@@ -44,7 +44,7 @@ class ManagedMySqlDatabaseOutboundReplicationCollection(object):
     def outbound_replications_count(self):
         """
         Gets the outbound_replications_count of this ManagedMySqlDatabaseOutboundReplicationCollection.
-        The number of outbound replications from this server.
+        The number of outbound replications from the MySQL server.
 
 
         :return: The outbound_replications_count of this ManagedMySqlDatabaseOutboundReplicationCollection.
@@ -56,7 +56,7 @@ class ManagedMySqlDatabaseOutboundReplicationCollection(object):
     def outbound_replications_count(self, outbound_replications_count):
         """
         Sets the outbound_replications_count of this ManagedMySqlDatabaseOutboundReplicationCollection.
-        The number of outbound replications from this server.
+        The number of outbound replications from the MySQL server.
 
 
         :param outbound_replications_count: The outbound_replications_count of this ManagedMySqlDatabaseOutboundReplicationCollection.

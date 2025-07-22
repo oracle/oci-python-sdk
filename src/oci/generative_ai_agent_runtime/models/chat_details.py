@@ -36,6 +36,10 @@ class ChatDetails(object):
             The value to assign to the tool_parameters property of this ChatDetails.
         :type tool_parameters: dict(str, str)
 
+        :param tool_inputs:
+            The value to assign to the tool_inputs property of this ChatDetails.
+        :type tool_inputs: list[oci.generative_ai_agent_runtime.models.ToolInput]
+
         :param performed_actions:
             The value to assign to the performed_actions property of this ChatDetails.
         :type performed_actions: list[oci.generative_ai_agent_runtime.models.PerformedAction]
@@ -46,6 +50,7 @@ class ChatDetails(object):
             'should_stream': 'bool',
             'session_id': 'str',
             'tool_parameters': 'dict(str, str)',
+            'tool_inputs': 'list[ToolInput]',
             'performed_actions': 'list[PerformedAction]'
         }
         self.attribute_map = {
@@ -53,12 +58,14 @@ class ChatDetails(object):
             'should_stream': 'shouldStream',
             'session_id': 'sessionId',
             'tool_parameters': 'toolParameters',
+            'tool_inputs': 'toolInputs',
             'performed_actions': 'performedActions'
         }
         self._user_message = None
         self._should_stream = None
         self._session_id = None
         self._tool_parameters = None
+        self._tool_inputs = None
         self._performed_actions = None
 
     @property
@@ -137,7 +144,7 @@ class ChatDetails(object):
     def tool_parameters(self):
         """
         Gets the tool_parameters of this ChatDetails.
-        A map where each key is a toolId and the value contains tool type and additional dynamic parameters.
+        A map where each key is a toolId and the value contains tool type and additional dynamic parameters. This field is deprecated and will be removed after July 02 2026.
 
 
         :return: The tool_parameters of this ChatDetails.
@@ -149,13 +156,37 @@ class ChatDetails(object):
     def tool_parameters(self, tool_parameters):
         """
         Sets the tool_parameters of this ChatDetails.
-        A map where each key is a toolId and the value contains tool type and additional dynamic parameters.
+        A map where each key is a toolId and the value contains tool type and additional dynamic parameters. This field is deprecated and will be removed after July 02 2026.
 
 
         :param tool_parameters: The tool_parameters of this ChatDetails.
         :type: dict(str, str)
         """
         self._tool_parameters = tool_parameters
+
+    @property
+    def tool_inputs(self):
+        """
+        Gets the tool_inputs of this ChatDetails.
+        Array of tool input objects, each specifying a tool's ID, type, and corresponding input parameters required for execution.
+
+
+        :return: The tool_inputs of this ChatDetails.
+        :rtype: list[oci.generative_ai_agent_runtime.models.ToolInput]
+        """
+        return self._tool_inputs
+
+    @tool_inputs.setter
+    def tool_inputs(self, tool_inputs):
+        """
+        Sets the tool_inputs of this ChatDetails.
+        Array of tool input objects, each specifying a tool's ID, type, and corresponding input parameters required for execution.
+
+
+        :param tool_inputs: The tool_inputs of this ChatDetails.
+        :type: list[oci.generative_ai_agent_runtime.models.ToolInput]
+        """
+        self._tool_inputs = tool_inputs
 
     @property
     def performed_actions(self):

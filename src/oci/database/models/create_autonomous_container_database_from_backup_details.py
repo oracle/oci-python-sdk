@@ -25,6 +25,10 @@ class CreateAutonomousContainerDatabaseFromBackupDetails(CreateAutonomousContain
             The value to assign to the customer_contacts property of this CreateAutonomousContainerDatabaseFromBackupDetails.
         :type customer_contacts: list[oci.database.models.CustomerContact]
 
+        :param okv_end_point_group_name:
+            The value to assign to the okv_end_point_group_name property of this CreateAutonomousContainerDatabaseFromBackupDetails.
+        :type okv_end_point_group_name: str
+
         :param source:
             The value to assign to the source property of this CreateAutonomousContainerDatabaseFromBackupDetails.
             Allowed values for this property are: "NONE", "BACKUP_FROM_ID"
@@ -187,6 +191,7 @@ class CreateAutonomousContainerDatabaseFromBackupDetails(CreateAutonomousContain
         """
         self.swagger_types = {
             'customer_contacts': 'list[CustomerContact]',
+            'okv_end_point_group_name': 'str',
             'source': 'str',
             'display_name': 'str',
             'db_unique_name': 'str',
@@ -228,6 +233,7 @@ class CreateAutonomousContainerDatabaseFromBackupDetails(CreateAutonomousContain
         }
         self.attribute_map = {
             'customer_contacts': 'customerContacts',
+            'okv_end_point_group_name': 'okvEndPointGroupName',
             'source': 'source',
             'display_name': 'displayName',
             'db_unique_name': 'dbUniqueName',
@@ -268,6 +274,7 @@ class CreateAutonomousContainerDatabaseFromBackupDetails(CreateAutonomousContain
             'autonomous_container_database_backup_id': 'autonomousContainerDatabaseBackupId'
         }
         self._customer_contacts = None
+        self._okv_end_point_group_name = None
         self._source = None
         self._display_name = None
         self._db_unique_name = None

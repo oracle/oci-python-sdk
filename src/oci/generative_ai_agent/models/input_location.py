@@ -69,9 +69,6 @@ class InputLocation(object):
         """
         **[Required]** Gets the input_location_type of this InputLocation.
         Type of InputLocation.
-        The allowed values are:
-        - `INLINE`: The input location is inline.
-        - `OBJECT_STORAGE_PREFIX`: The input location is object storage.
 
         Allowed values for this property are: "INLINE", "OBJECT_STORAGE_PREFIX", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -87,9 +84,6 @@ class InputLocation(object):
         """
         Sets the input_location_type of this InputLocation.
         Type of InputLocation.
-        The allowed values are:
-        - `INLINE`: The input location is inline.
-        - `OBJECT_STORAGE_PREFIX`: The input location is object storage.
 
 
         :param input_location_type: The input_location_type of this InputLocation.

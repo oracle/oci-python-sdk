@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MySqlReplicationApplierFilter(object):
     """
-    Filter configured for a replication channel
+    Filter configured for a replication channel.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class MySqlReplicationApplierFilter(object):
     def filter_name(self):
         """
         **[Required]** Gets the filter_name of this MySqlReplicationApplierFilter.
-        Type of replication filter that has been configured for the replication channel.
+        The type of replication filter that has been configured for the replication channel.
 
 
         :return: The filter_name of this MySqlReplicationApplierFilter.
@@ -56,7 +56,7 @@ class MySqlReplicationApplierFilter(object):
     def filter_name(self, filter_name):
         """
         Sets the filter_name of this MySqlReplicationApplierFilter.
-        Type of replication filter that has been configured for the replication channel.
+        The type of replication filter that has been configured for the replication channel.
 
 
         :param filter_name: The filter_name of this MySqlReplicationApplierFilter.

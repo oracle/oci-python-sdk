@@ -28,6 +28,10 @@ class DataIngestionJobStatistics(object):
             The value to assign to the number_of_ingested_files property of this DataIngestionJobStatistics.
         :type number_of_ingested_files: int
 
+        :param number_of_ignored_files:
+            The value to assign to the number_of_ignored_files property of this DataIngestionJobStatistics.
+        :type number_of_ignored_files: int
+
         :param duration_in_seconds:
             The value to assign to the duration_in_seconds property of this DataIngestionJobStatistics.
         :type duration_in_seconds: int
@@ -36,15 +40,18 @@ class DataIngestionJobStatistics(object):
         self.swagger_types = {
             'number_of_failed_files': 'int',
             'number_of_ingested_files': 'int',
+            'number_of_ignored_files': 'int',
             'duration_in_seconds': 'int'
         }
         self.attribute_map = {
             'number_of_failed_files': 'numberOfFailedFiles',
             'number_of_ingested_files': 'numberOfIngestedFiles',
+            'number_of_ignored_files': 'numberOfIgnoredFiles',
             'duration_in_seconds': 'durationInSeconds'
         }
         self._number_of_failed_files = None
         self._number_of_ingested_files = None
+        self._number_of_ignored_files = None
         self._duration_in_seconds = None
 
     @property
@@ -94,6 +101,30 @@ class DataIngestionJobStatistics(object):
         :type: int
         """
         self._number_of_ingested_files = number_of_ingested_files
+
+    @property
+    def number_of_ignored_files(self):
+        """
+        Gets the number_of_ignored_files of this DataIngestionJobStatistics.
+        The number of files that have been ignored during the ingestion.
+
+
+        :return: The number_of_ignored_files of this DataIngestionJobStatistics.
+        :rtype: int
+        """
+        return self._number_of_ignored_files
+
+    @number_of_ignored_files.setter
+    def number_of_ignored_files(self, number_of_ignored_files):
+        """
+        Sets the number_of_ignored_files of this DataIngestionJobStatistics.
+        The number of files that have been ignored during the ingestion.
+
+
+        :param number_of_ignored_files: The number_of_ignored_files of this DataIngestionJobStatistics.
+        :type: int
+        """
+        self._number_of_ignored_files = number_of_ignored_files
 
     @property
     def duration_in_seconds(self):

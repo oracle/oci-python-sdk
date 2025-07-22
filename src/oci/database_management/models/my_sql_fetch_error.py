@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MySqlFetchError(object):
     """
-    Error from fetch operation of a MySQL server replication channel.
+    Error from the fetch operation of a MySQL server replication channel.
     """
 
     def __init__(self, **kwargs):

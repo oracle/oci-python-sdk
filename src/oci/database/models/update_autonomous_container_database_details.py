@@ -44,6 +44,10 @@ class UpdateAutonomousContainerDatabaseDetails(object):
             The value to assign to the customer_contacts property of this UpdateAutonomousContainerDatabaseDetails.
         :type customer_contacts: list[oci.database.models.CustomerContact]
 
+        :param okv_end_point_group_name:
+            The value to assign to the okv_end_point_group_name property of this UpdateAutonomousContainerDatabaseDetails.
+        :type okv_end_point_group_name: str
+
         :param patch_model:
             The value to assign to the patch_model property of this UpdateAutonomousContainerDatabaseDetails.
             Allowed values for this property are: "RELEASE_UPDATES", "RELEASE_UPDATE_REVISIONS"
@@ -82,6 +86,7 @@ class UpdateAutonomousContainerDatabaseDetails(object):
         self.swagger_types = {
             'display_name': 'str',
             'customer_contacts': 'list[CustomerContact]',
+            'okv_end_point_group_name': 'str',
             'patch_model': 'str',
             'maintenance_window_details': 'MaintenanceWindow',
             'standby_maintenance_buffer_in_days': 'int',
@@ -94,6 +99,7 @@ class UpdateAutonomousContainerDatabaseDetails(object):
         self.attribute_map = {
             'display_name': 'displayName',
             'customer_contacts': 'customerContacts',
+            'okv_end_point_group_name': 'okvEndPointGroupName',
             'patch_model': 'patchModel',
             'maintenance_window_details': 'maintenanceWindowDetails',
             'standby_maintenance_buffer_in_days': 'standbyMaintenanceBufferInDays',
@@ -105,6 +111,7 @@ class UpdateAutonomousContainerDatabaseDetails(object):
         }
         self._display_name = None
         self._customer_contacts = None
+        self._okv_end_point_group_name = None
         self._patch_model = None
         self._maintenance_window_details = None
         self._standby_maintenance_buffer_in_days = None
@@ -161,6 +168,30 @@ class UpdateAutonomousContainerDatabaseDetails(object):
         :type: list[oci.database.models.CustomerContact]
         """
         self._customer_contacts = customer_contacts
+
+    @property
+    def okv_end_point_group_name(self):
+        """
+        Gets the okv_end_point_group_name of this UpdateAutonomousContainerDatabaseDetails.
+        The OKV End Point Group name for the Autonomous Container Database.
+
+
+        :return: The okv_end_point_group_name of this UpdateAutonomousContainerDatabaseDetails.
+        :rtype: str
+        """
+        return self._okv_end_point_group_name
+
+    @okv_end_point_group_name.setter
+    def okv_end_point_group_name(self, okv_end_point_group_name):
+        """
+        Sets the okv_end_point_group_name of this UpdateAutonomousContainerDatabaseDetails.
+        The OKV End Point Group name for the Autonomous Container Database.
+
+
+        :param okv_end_point_group_name: The okv_end_point_group_name of this UpdateAutonomousContainerDatabaseDetails.
+        :type: str
+        """
+        self._okv_end_point_group_name = okv_end_point_group_name
 
     @property
     def patch_model(self):

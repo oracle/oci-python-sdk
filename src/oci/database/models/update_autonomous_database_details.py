@@ -285,6 +285,18 @@ class UpdateAutonomousDatabaseDetails(object):
             The value to assign to the is_backup_retention_locked property of this UpdateAutonomousDatabaseDetails.
         :type is_backup_retention_locked: bool
 
+        :param time_scheduled_db_version_upgrade:
+            The value to assign to the time_scheduled_db_version_upgrade property of this UpdateAutonomousDatabaseDetails.
+        :type time_scheduled_db_version_upgrade: datetime
+
+        :param is_disable_db_version_upgrade_schedule:
+            The value to assign to the is_disable_db_version_upgrade_schedule property of this UpdateAutonomousDatabaseDetails.
+        :type is_disable_db_version_upgrade_schedule: bool
+
+        :param is_schedule_db_version_upgrade_to_earliest:
+            The value to assign to the is_schedule_db_version_upgrade_to_earliest property of this UpdateAutonomousDatabaseDetails.
+        :type is_schedule_db_version_upgrade_to_earliest: bool
+
         :param scheduled_operations:
             The value to assign to the scheduled_operations property of this UpdateAutonomousDatabaseDetails.
         :type scheduled_operations: list[oci.database.models.ScheduledOperationDetails]
@@ -366,6 +378,9 @@ class UpdateAutonomousDatabaseDetails(object):
             'resource_pool_summary': 'ResourcePoolSummary',
             'autonomous_maintenance_schedule_type': 'str',
             'is_backup_retention_locked': 'bool',
+            'time_scheduled_db_version_upgrade': 'datetime',
+            'is_disable_db_version_upgrade_schedule': 'bool',
+            'is_schedule_db_version_upgrade_to_earliest': 'bool',
             'scheduled_operations': 'list[ScheduledOperationDetails]',
             'is_auto_scaling_for_storage_enabled': 'bool',
             'database_edition': 'str',
@@ -423,6 +438,9 @@ class UpdateAutonomousDatabaseDetails(object):
             'resource_pool_summary': 'resourcePoolSummary',
             'autonomous_maintenance_schedule_type': 'autonomousMaintenanceScheduleType',
             'is_backup_retention_locked': 'isBackupRetentionLocked',
+            'time_scheduled_db_version_upgrade': 'timeScheduledDbVersionUpgrade',
+            'is_disable_db_version_upgrade_schedule': 'isDisableDbVersionUpgradeSchedule',
+            'is_schedule_db_version_upgrade_to_earliest': 'isScheduleDbVersionUpgradeToEarliest',
             'scheduled_operations': 'scheduledOperations',
             'is_auto_scaling_for_storage_enabled': 'isAutoScalingForStorageEnabled',
             'database_edition': 'databaseEdition',
@@ -479,6 +497,9 @@ class UpdateAutonomousDatabaseDetails(object):
         self._resource_pool_summary = None
         self._autonomous_maintenance_schedule_type = None
         self._is_backup_retention_locked = None
+        self._time_scheduled_db_version_upgrade = None
+        self._is_disable_db_version_upgrade_schedule = None
+        self._is_schedule_db_version_upgrade_to_earliest = None
         self._scheduled_operations = None
         self._is_auto_scaling_for_storage_enabled = None
         self._database_edition = None
@@ -1998,6 +2019,78 @@ class UpdateAutonomousDatabaseDetails(object):
         :type: bool
         """
         self._is_backup_retention_locked = is_backup_retention_locked
+
+    @property
+    def time_scheduled_db_version_upgrade(self):
+        """
+        Gets the time_scheduled_db_version_upgrade of this UpdateAutonomousDatabaseDetails.
+        The date and time the Autonomous Database scheduled to upgrade to 23ai.
+
+
+        :return: The time_scheduled_db_version_upgrade of this UpdateAutonomousDatabaseDetails.
+        :rtype: datetime
+        """
+        return self._time_scheduled_db_version_upgrade
+
+    @time_scheduled_db_version_upgrade.setter
+    def time_scheduled_db_version_upgrade(self, time_scheduled_db_version_upgrade):
+        """
+        Sets the time_scheduled_db_version_upgrade of this UpdateAutonomousDatabaseDetails.
+        The date and time the Autonomous Database scheduled to upgrade to 23ai.
+
+
+        :param time_scheduled_db_version_upgrade: The time_scheduled_db_version_upgrade of this UpdateAutonomousDatabaseDetails.
+        :type: datetime
+        """
+        self._time_scheduled_db_version_upgrade = time_scheduled_db_version_upgrade
+
+    @property
+    def is_disable_db_version_upgrade_schedule(self):
+        """
+        Gets the is_disable_db_version_upgrade_schedule of this UpdateAutonomousDatabaseDetails.
+        True if user wants to disable Autonomous Database scheduled upgrade to 23ai.
+
+
+        :return: The is_disable_db_version_upgrade_schedule of this UpdateAutonomousDatabaseDetails.
+        :rtype: bool
+        """
+        return self._is_disable_db_version_upgrade_schedule
+
+    @is_disable_db_version_upgrade_schedule.setter
+    def is_disable_db_version_upgrade_schedule(self, is_disable_db_version_upgrade_schedule):
+        """
+        Sets the is_disable_db_version_upgrade_schedule of this UpdateAutonomousDatabaseDetails.
+        True if user wants to disable Autonomous Database scheduled upgrade to 23ai.
+
+
+        :param is_disable_db_version_upgrade_schedule: The is_disable_db_version_upgrade_schedule of this UpdateAutonomousDatabaseDetails.
+        :type: bool
+        """
+        self._is_disable_db_version_upgrade_schedule = is_disable_db_version_upgrade_schedule
+
+    @property
+    def is_schedule_db_version_upgrade_to_earliest(self):
+        """
+        Gets the is_schedule_db_version_upgrade_to_earliest of this UpdateAutonomousDatabaseDetails.
+        True if user wants to schedule Autonomous Database upgrade to the earliest available time.
+
+
+        :return: The is_schedule_db_version_upgrade_to_earliest of this UpdateAutonomousDatabaseDetails.
+        :rtype: bool
+        """
+        return self._is_schedule_db_version_upgrade_to_earliest
+
+    @is_schedule_db_version_upgrade_to_earliest.setter
+    def is_schedule_db_version_upgrade_to_earliest(self, is_schedule_db_version_upgrade_to_earliest):
+        """
+        Sets the is_schedule_db_version_upgrade_to_earliest of this UpdateAutonomousDatabaseDetails.
+        True if user wants to schedule Autonomous Database upgrade to the earliest available time.
+
+
+        :param is_schedule_db_version_upgrade_to_earliest: The is_schedule_db_version_upgrade_to_earliest of this UpdateAutonomousDatabaseDetails.
+        :type: bool
+        """
+        self._is_schedule_db_version_upgrade_to_earliest = is_schedule_db_version_upgrade_to_earliest
 
     @property
     def scheduled_operations(self):

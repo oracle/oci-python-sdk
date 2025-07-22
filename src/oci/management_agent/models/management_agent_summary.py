@@ -31,6 +31,10 @@ class ManagementAgentSummary(object):
     #: This constant has a value of "MACOSX"
     PLATFORM_TYPE_MACOSX = "MACOSX"
 
+    #: A constant which can be used with the platform_type property of a ManagementAgentSummary.
+    #: This constant has a value of "AIX"
+    PLATFORM_TYPE_AIX = "AIX"
+
     #: A constant which can be used with the availability_status property of a ManagementAgentSummary.
     #: This constant has a value of "ACTIVE"
     AVAILABILITY_STATUS_ACTIVE = "ACTIVE"
@@ -102,7 +106,7 @@ class ManagementAgentSummary(object):
 
         :param platform_type:
             The value to assign to the platform_type property of this ManagementAgentSummary.
-            Allowed values for this property are: "LINUX", "WINDOWS", "SOLARIS", "MACOSX", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "LINUX", "WINDOWS", "SOLARIS", "MACOSX", "AIX", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type platform_type: str
 
@@ -180,6 +184,10 @@ class ManagementAgentSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type install_type: str
 
+        :param latest_supported_version:
+            The value to assign to the latest_supported_version property of this ManagementAgentSummary.
+        :type latest_supported_version: str
+
         :param data_source_summary_list:
             The value to assign to the data_source_summary_list property of this ManagementAgentSummary.
         :type data_source_summary_list: list[oci.management_agent.models.DataSourceSummaryItem]
@@ -191,6 +199,10 @@ class ManagementAgentSummary(object):
         :param defined_tags:
             The value to assign to the defined_tags property of this ManagementAgentSummary.
         :type defined_tags: dict(str, dict(str, object))
+
+        :param system_tags:
+            The value to assign to the system_tags property of this ManagementAgentSummary.
+        :type system_tags: dict(str, dict(str, object))
 
         """
         self.swagger_types = {
@@ -215,9 +227,11 @@ class ManagementAgentSummary(object):
             'lifecycle_details': 'str',
             'is_customer_deployed': 'bool',
             'install_type': 'str',
+            'latest_supported_version': 'str',
             'data_source_summary_list': 'list[DataSourceSummaryItem]',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'id': 'id',
@@ -241,9 +255,11 @@ class ManagementAgentSummary(object):
             'lifecycle_details': 'lifecycleDetails',
             'is_customer_deployed': 'isCustomerDeployed',
             'install_type': 'installType',
+            'latest_supported_version': 'latestSupportedVersion',
             'data_source_summary_list': 'dataSourceSummaryList',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'system_tags': 'systemTags'
         }
         self._id = None
         self._install_key_id = None
@@ -266,9 +282,11 @@ class ManagementAgentSummary(object):
         self._lifecycle_details = None
         self._is_customer_deployed = None
         self._install_type = None
+        self._latest_supported_version = None
         self._data_source_summary_list = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
 
     @property
     def id(self):
@@ -348,7 +366,7 @@ class ManagementAgentSummary(object):
         Gets the platform_type of this ManagementAgentSummary.
         Platform Type
 
-        Allowed values for this property are: "LINUX", "WINDOWS", "SOLARIS", "MACOSX", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "LINUX", "WINDOWS", "SOLARIS", "MACOSX", "AIX", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -367,7 +385,7 @@ class ManagementAgentSummary(object):
         :param platform_type: The platform_type of this ManagementAgentSummary.
         :type: str
         """
-        allowed_values = ["LINUX", "WINDOWS", "SOLARIS", "MACOSX"]
+        allowed_values = ["LINUX", "WINDOWS", "SOLARIS", "MACOSX", "AIX"]
         if not value_allowed_none_or_none_sentinel(platform_type, allowed_values):
             platform_type = 'UNKNOWN_ENUM_VALUE'
         self._platform_type = platform_type
@@ -807,6 +825,30 @@ class ManagementAgentSummary(object):
         self._install_type = install_type
 
     @property
+    def latest_supported_version(self):
+        """
+        Gets the latest_supported_version of this ManagementAgentSummary.
+        The latest supported management agent version
+
+
+        :return: The latest_supported_version of this ManagementAgentSummary.
+        :rtype: str
+        """
+        return self._latest_supported_version
+
+    @latest_supported_version.setter
+    def latest_supported_version(self, latest_supported_version):
+        """
+        Sets the latest_supported_version of this ManagementAgentSummary.
+        The latest supported management agent version
+
+
+        :param latest_supported_version: The latest_supported_version of this ManagementAgentSummary.
+        :type: str
+        """
+        self._latest_supported_version = latest_supported_version
+
+    @property
     def data_source_summary_list(self):
         """
         Gets the data_source_summary_list of this ManagementAgentSummary.
@@ -881,6 +923,32 @@ class ManagementAgentSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this ManagementAgentSummary.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{ \"orcl-cloud\": { \"free-tier-retained\": \"true\" } }`
+
+
+        :return: The system_tags of this ManagementAgentSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this ManagementAgentSummary.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{ \"orcl-cloud\": { \"free-tier-retained\": \"true\" } }`
+
+
+        :param system_tags: The system_tags of this ManagementAgentSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

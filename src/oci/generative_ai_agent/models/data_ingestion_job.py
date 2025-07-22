@@ -76,6 +76,10 @@ class DataIngestionJob(object):
             The value to assign to the knowledge_base_id property of this DataIngestionJob.
         :type knowledge_base_id: str
 
+        :param data_ingestion_job_type:
+            The value to assign to the data_ingestion_job_type property of this DataIngestionJob.
+        :type data_ingestion_job_type: oci.generative_ai_agent.models.DataIngestionJobType
+
         :param data_ingestion_job_statistics:
             The value to assign to the data_ingestion_job_statistics property of this DataIngestionJob.
         :type data_ingestion_job_statistics: oci.generative_ai_agent.models.DataIngestionJobStatistics
@@ -118,6 +122,7 @@ class DataIngestionJob(object):
             'compartment_id': 'str',
             'data_source_id': 'str',
             'knowledge_base_id': 'str',
+            'data_ingestion_job_type': 'DataIngestionJobType',
             'data_ingestion_job_statistics': 'DataIngestionJobStatistics',
             'time_created': 'datetime',
             'time_updated': 'datetime',
@@ -134,6 +139,7 @@ class DataIngestionJob(object):
             'compartment_id': 'compartmentId',
             'data_source_id': 'dataSourceId',
             'knowledge_base_id': 'knowledgeBaseId',
+            'data_ingestion_job_type': 'dataIngestionJobType',
             'data_ingestion_job_statistics': 'dataIngestionJobStatistics',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
@@ -149,6 +155,7 @@ class DataIngestionJob(object):
         self._compartment_id = None
         self._data_source_id = None
         self._knowledge_base_id = None
+        self._data_ingestion_job_type = None
         self._data_ingestion_job_statistics = None
         self._time_created = None
         self._time_updated = None
@@ -317,6 +324,26 @@ class DataIngestionJob(object):
         :type: str
         """
         self._knowledge_base_id = knowledge_base_id
+
+    @property
+    def data_ingestion_job_type(self):
+        """
+        **[Required]** Gets the data_ingestion_job_type of this DataIngestionJob.
+
+        :return: The data_ingestion_job_type of this DataIngestionJob.
+        :rtype: oci.generative_ai_agent.models.DataIngestionJobType
+        """
+        return self._data_ingestion_job_type
+
+    @data_ingestion_job_type.setter
+    def data_ingestion_job_type(self, data_ingestion_job_type):
+        """
+        Sets the data_ingestion_job_type of this DataIngestionJob.
+
+        :param data_ingestion_job_type: The data_ingestion_job_type of this DataIngestionJob.
+        :type: oci.generative_ai_agent.models.DataIngestionJobType
+        """
+        self._data_ingestion_job_type = data_ingestion_job_type
 
     @property
     def data_ingestion_job_statistics(self):

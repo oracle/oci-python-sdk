@@ -10,8 +10,12 @@ import json
 from typing import Any, Dict, List, Optional
 
 from pydantic import BaseModel, Field, computed_field
+from rich.console import Group
+from rich.panel import Panel
+from rich.text import Text
 
 from oci.addons.adk.logger import default_logger as logger
+from oci.addons.adk.run.traces import Trace
 from oci.addons.adk.run.types import RawResponse, RequiredAction, GuardrailResult, GuardrailFinding
 
 
@@ -32,6 +36,17 @@ class RunResponse(BaseModel):
     def output(self) -> str | None:
         """Direct access to the agent message text as output"""
         return self.final_output
+
+    @computed_field  # type: ignore[prop-decorator]
+    @property
+    def traces(self) -> List[Trace]:
+        """Safely extract all traces from response."""
+        return [
+            trace
+            for raw_response in self.raw_responses
+            for trace in raw_response.get_traces()
+            if trace is not None
+        ]
 
     @computed_field
     def last_guardrail_result(self) -> GuardrailResult | None:
@@ -127,4 +142,22 @@ class RunResponse(BaseModel):
             message_text,
             title="Agent run response",
             border_style="blue",
+        )
+
+    def pretty_print_traces(self) -> None:
+        """Pretty print traces of this run response."""
+        traces = self.traces
+        if not traces:
+            logger.warning("NO TRACES AVAILABLE IN RESPONSE")
+            return
+
+        panels = []
+        for trace in traces:
+            trace_json_text = Text(json.dumps(trace.to_dict, indent=2))
+            panels.append(Panel(trace_json_text, title=trace.trace_type.title()))
+
+        logger.print(
+            Group(*panels),
+            title="Agent Run Response Traces",
+            border_style="blue"
         )

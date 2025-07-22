@@ -16,6 +16,8 @@ from .function_call import FunctionCall
 from .function_calling_performed_action import FunctionCallingPerformedAction
 from .function_calling_required_action import FunctionCallingRequiredAction
 from .generation_trace import GenerationTrace
+from .generic_tool_input import GenericToolInput
+from .generic_tool_output import GenericToolOutput
 from .human_approval_performed_action import HumanApprovalPerformedAction
 from .human_approval_required_action import HumanApprovalRequiredAction
 from .knowledge_base_metadata_summary import KnowledgeBaseMetadataSummary
@@ -32,13 +34,18 @@ from .paragraph import Paragraph
 from .paragraph_citation import ParagraphCitation
 from .performed_action import PerformedAction
 from .planning_trace import PlanningTrace
+from .rag_tool_output import RagToolOutput
 from .required_action import RequiredAction
 from .retrieval_trace import RetrievalTrace
 from .retrieve_metadata_details import RetrieveMetadataDetails
 from .session import Session
 from .source_details import SourceDetails
 from .source_location import SourceLocation
+from .sql_result_files import SqlResultFiles
+from .sql_tool_output import SqlToolOutput
+from .tool_input import ToolInput
 from .tool_invocation_trace import ToolInvocationTrace
+from .tool_output import ToolOutput
 from .trace import Trace
 from .update_session_details import UpdateSessionDetails
 from .usage import Usage
@@ -56,6 +63,8 @@ generative_ai_agent_runtime_type_mapping = {
     "FunctionCallingPerformedAction": FunctionCallingPerformedAction,
     "FunctionCallingRequiredAction": FunctionCallingRequiredAction,
     "GenerationTrace": GenerationTrace,
+    "GenericToolInput": GenericToolInput,
+    "GenericToolOutput": GenericToolOutput,
     "HumanApprovalPerformedAction": HumanApprovalPerformedAction,
     "HumanApprovalRequiredAction": HumanApprovalRequiredAction,
     "KnowledgeBaseMetadataSummary": KnowledgeBaseMetadataSummary,
@@ -72,13 +81,18 @@ generative_ai_agent_runtime_type_mapping = {
     "ParagraphCitation": ParagraphCitation,
     "PerformedAction": PerformedAction,
     "PlanningTrace": PlanningTrace,
+    "RagToolOutput": RagToolOutput,
     "RequiredAction": RequiredAction,
     "RetrievalTrace": RetrievalTrace,
     "RetrieveMetadataDetails": RetrieveMetadataDetails,
     "Session": Session,
     "SourceDetails": SourceDetails,
     "SourceLocation": SourceLocation,
+    "SqlResultFiles": SqlResultFiles,
+    "SqlToolOutput": SqlToolOutput,
+    "ToolInput": ToolInput,
     "ToolInvocationTrace": ToolInvocationTrace,
+    "ToolOutput": ToolOutput,
     "Trace": Trace,
     "UpdateSessionDetails": UpdateSessionDetails,
     "Usage": Usage,

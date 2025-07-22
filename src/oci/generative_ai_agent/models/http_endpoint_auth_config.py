@@ -12,117 +12,53 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class HttpEndpointAuthConfig(object):
     """
-    Auth related information to be used when invoking external endpoint
+    Authentication configuration used for HTTP Endpoint tools. Defines the type of authentication
+    and the source of credentials.
     """
-
-    #: A constant which can be used with the http_endpoint_auth_config_type property of a HttpEndpointAuthConfig.
-    #: This constant has a value of "HTTP_ENDPOINT_NO_AUTH_CONFIG"
-    HTTP_ENDPOINT_AUTH_CONFIG_TYPE_HTTP_ENDPOINT_NO_AUTH_CONFIG = "HTTP_ENDPOINT_NO_AUTH_CONFIG"
-
-    #: A constant which can be used with the http_endpoint_auth_config_type property of a HttpEndpointAuthConfig.
-    #: This constant has a value of "HTTP_ENDPOINT_DELEGATED_BEARER_AUTH_CONFIG"
-    HTTP_ENDPOINT_AUTH_CONFIG_TYPE_HTTP_ENDPOINT_DELEGATED_BEARER_AUTH_CONFIG = "HTTP_ENDPOINT_DELEGATED_BEARER_AUTH_CONFIG"
-
-    #: A constant which can be used with the http_endpoint_auth_config_type property of a HttpEndpointAuthConfig.
-    #: This constant has a value of "HTTP_ENDPOINT_OCI_RESOURCE_PRINCIPAL_AUTH_CONFIG"
-    HTTP_ENDPOINT_AUTH_CONFIG_TYPE_HTTP_ENDPOINT_OCI_RESOURCE_PRINCIPAL_AUTH_CONFIG = "HTTP_ENDPOINT_OCI_RESOURCE_PRINCIPAL_AUTH_CONFIG"
-
-    #: A constant which can be used with the http_endpoint_auth_config_type property of a HttpEndpointAuthConfig.
-    #: This constant has a value of "HTTP_ENDPOINT_IDCS_AUTH_CONFIG"
-    HTTP_ENDPOINT_AUTH_CONFIG_TYPE_HTTP_ENDPOINT_IDCS_AUTH_CONFIG = "HTTP_ENDPOINT_IDCS_AUTH_CONFIG"
 
     def __init__(self, **kwargs):
         """
-        Initializes a new HttpEndpointAuthConfig object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
-        to a service operations then you should favor using a subclass over the base class:
-
-        * :class:`~oci.generative_ai_agent.models.HttpEndpointIdcsAuthConfig`
-        * :class:`~oci.generative_ai_agent.models.HttpEndpointDelegatedBearerAuthConfig`
-        * :class:`~oci.generative_ai_agent.models.HttpEndpointNoAuthConfig`
-        * :class:`~oci.generative_ai_agent.models.HttpEndpointOciResourcePrincipalAuthConfig`
-
+        Initializes a new HttpEndpointAuthConfig object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param http_endpoint_auth_config_type:
-            The value to assign to the http_endpoint_auth_config_type property of this HttpEndpointAuthConfig.
-            Allowed values for this property are: "HTTP_ENDPOINT_NO_AUTH_CONFIG", "HTTP_ENDPOINT_DELEGATED_BEARER_AUTH_CONFIG", "HTTP_ENDPOINT_OCI_RESOURCE_PRINCIPAL_AUTH_CONFIG", "HTTP_ENDPOINT_IDCS_AUTH_CONFIG", 'UNKNOWN_ENUM_VALUE'.
-            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
-        :type http_endpoint_auth_config_type: str
+        :param http_endpoint_auth_sources:
+            The value to assign to the http_endpoint_auth_sources property of this HttpEndpointAuthConfig.
+        :type http_endpoint_auth_sources: list[oci.generative_ai_agent.models.HttpEndpointAuthSource]
 
         """
         self.swagger_types = {
-            'http_endpoint_auth_config_type': 'str'
+            'http_endpoint_auth_sources': 'list[HttpEndpointAuthSource]'
         }
         self.attribute_map = {
-            'http_endpoint_auth_config_type': 'httpEndpointAuthConfigType'
+            'http_endpoint_auth_sources': 'httpEndpointAuthSources'
         }
-        self._http_endpoint_auth_config_type = None
-
-    @staticmethod
-    def get_subtype(object_dictionary):
-        """
-        Given the hash representation of a subtype of this class,
-        use the info in the hash to return the class of the subtype.
-        """
-        type = object_dictionary['httpEndpointAuthConfigType']
-
-        if type == 'HTTP_ENDPOINT_IDCS_AUTH_CONFIG':
-            return 'HttpEndpointIdcsAuthConfig'
-
-        if type == 'HTTP_ENDPOINT_DELEGATED_BEARER_AUTH_CONFIG':
-            return 'HttpEndpointDelegatedBearerAuthConfig'
-
-        if type == 'HTTP_ENDPOINT_NO_AUTH_CONFIG':
-            return 'HttpEndpointNoAuthConfig'
-
-        if type == 'HTTP_ENDPOINT_OCI_RESOURCE_PRINCIPAL_AUTH_CONFIG':
-            return 'HttpEndpointOciResourcePrincipalAuthConfig'
-        else:
-            return 'HttpEndpointAuthConfig'
+        self._http_endpoint_auth_sources = None
 
     @property
-    def http_endpoint_auth_config_type(self):
+    def http_endpoint_auth_sources(self):
         """
-        **[Required]** Gets the http_endpoint_auth_config_type of this HttpEndpointAuthConfig.
-        The type of Auth config to be used when invoking an external endpoint.
-        The allowed values are:
-        - `HTTP_ENDPOINT_NO_AUTH_CONFIG`: Indicates that no authentication is required for invoking the endpoint.
-        - `HTTP_ENDPOINT_DELEGATED_BEARER_AUTH_CONFIG`: Specifies Bearer Token Authentication, where the same Bearer token received as part of the Agent Chat
-        API request is used to invoke the external endpoint.
-        - `HTTP_ENDPOINT_OCI_RESOURCE_PRINCIPAL_AUTH_CONFIG`: Specifies authentication using Oracle Cloud Infrastructure (OCI) Resource Principal, leveraging
-        OCI's identity-based authentication mechanism.
-        - `HTTP_ENDPOINT_IDCS_AUTH_CONFIG`: Specifies authentication using Oracle Identity Cloud Service (IDCS), leveraging OAuth 2.0 for token-based authentication.
-
-        Allowed values for this property are: "HTTP_ENDPOINT_NO_AUTH_CONFIG", "HTTP_ENDPOINT_DELEGATED_BEARER_AUTH_CONFIG", "HTTP_ENDPOINT_OCI_RESOURCE_PRINCIPAL_AUTH_CONFIG", "HTTP_ENDPOINT_IDCS_AUTH_CONFIG", 'UNKNOWN_ENUM_VALUE'.
-        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        **[Required]** Gets the http_endpoint_auth_sources of this HttpEndpointAuthConfig.
+        A list of credential sources from which authentication credentials can be resolved.
+        Only AGENT is supported for HTTP Endpoint Tool.
 
 
-        :return: The http_endpoint_auth_config_type of this HttpEndpointAuthConfig.
-        :rtype: str
+        :return: The http_endpoint_auth_sources of this HttpEndpointAuthConfig.
+        :rtype: list[oci.generative_ai_agent.models.HttpEndpointAuthSource]
         """
-        return self._http_endpoint_auth_config_type
+        return self._http_endpoint_auth_sources
 
-    @http_endpoint_auth_config_type.setter
-    def http_endpoint_auth_config_type(self, http_endpoint_auth_config_type):
+    @http_endpoint_auth_sources.setter
+    def http_endpoint_auth_sources(self, http_endpoint_auth_sources):
         """
-        Sets the http_endpoint_auth_config_type of this HttpEndpointAuthConfig.
-        The type of Auth config to be used when invoking an external endpoint.
-        The allowed values are:
-        - `HTTP_ENDPOINT_NO_AUTH_CONFIG`: Indicates that no authentication is required for invoking the endpoint.
-        - `HTTP_ENDPOINT_DELEGATED_BEARER_AUTH_CONFIG`: Specifies Bearer Token Authentication, where the same Bearer token received as part of the Agent Chat
-        API request is used to invoke the external endpoint.
-        - `HTTP_ENDPOINT_OCI_RESOURCE_PRINCIPAL_AUTH_CONFIG`: Specifies authentication using Oracle Cloud Infrastructure (OCI) Resource Principal, leveraging
-        OCI's identity-based authentication mechanism.
-        - `HTTP_ENDPOINT_IDCS_AUTH_CONFIG`: Specifies authentication using Oracle Identity Cloud Service (IDCS), leveraging OAuth 2.0 for token-based authentication.
+        Sets the http_endpoint_auth_sources of this HttpEndpointAuthConfig.
+        A list of credential sources from which authentication credentials can be resolved.
+        Only AGENT is supported for HTTP Endpoint Tool.
 
 
-        :param http_endpoint_auth_config_type: The http_endpoint_auth_config_type of this HttpEndpointAuthConfig.
-        :type: str
+        :param http_endpoint_auth_sources: The http_endpoint_auth_sources of this HttpEndpointAuthConfig.
+        :type: list[oci.generative_ai_agent.models.HttpEndpointAuthSource]
         """
-        allowed_values = ["HTTP_ENDPOINT_NO_AUTH_CONFIG", "HTTP_ENDPOINT_DELEGATED_BEARER_AUTH_CONFIG", "HTTP_ENDPOINT_OCI_RESOURCE_PRINCIPAL_AUTH_CONFIG", "HTTP_ENDPOINT_IDCS_AUTH_CONFIG"]
-        if not value_allowed_none_or_none_sentinel(http_endpoint_auth_config_type, allowed_values):
-            http_endpoint_auth_config_type = 'UNKNOWN_ENUM_VALUE'
-        self._http_endpoint_auth_config_type = http_endpoint_auth_config_type
+        self._http_endpoint_auth_sources = http_endpoint_auth_sources
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -20,9 +20,11 @@ from .create_condition_details import CreateConditionDetails
 from .create_scheduled_policy_details import CreateScheduledPolicyDetails
 from .create_threshold_policy_details import CreateThresholdPolicyDetails
 from .cron_execution_schedule import CronExecutionSchedule
+from .custom_metric import CustomMetric
 from .execution_schedule import ExecutionSchedule
 from .instance_pool_resource import InstancePoolResource
 from .metric import Metric
+from .metric_base import MetricBase
 from .resource import Resource
 from .resource_action import ResourceAction
 from .resource_power_action import ResourcePowerAction
@@ -51,9 +53,11 @@ autoscaling_type_mapping = {
     "CreateScheduledPolicyDetails": CreateScheduledPolicyDetails,
     "CreateThresholdPolicyDetails": CreateThresholdPolicyDetails,
     "CronExecutionSchedule": CronExecutionSchedule,
+    "CustomMetric": CustomMetric,
     "ExecutionSchedule": ExecutionSchedule,
     "InstancePoolResource": InstancePoolResource,
     "Metric": Metric,
+    "MetricBase": MetricBase,
     "Resource": Resource,
     "ResourceAction": ResourceAction,
     "ResourcePowerAction": ResourcePowerAction,

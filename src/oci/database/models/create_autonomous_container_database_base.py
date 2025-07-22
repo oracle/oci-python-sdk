@@ -85,6 +85,10 @@ class CreateAutonomousContainerDatabaseBase(object):
             The value to assign to the customer_contacts property of this CreateAutonomousContainerDatabaseBase.
         :type customer_contacts: list[oci.database.models.CustomerContact]
 
+        :param okv_end_point_group_name:
+            The value to assign to the okv_end_point_group_name property of this CreateAutonomousContainerDatabaseBase.
+        :type okv_end_point_group_name: str
+
         :param source:
             The value to assign to the source property of this CreateAutonomousContainerDatabaseBase.
             Allowed values for this property are: "NONE", "BACKUP_FROM_ID"
@@ -243,6 +247,7 @@ class CreateAutonomousContainerDatabaseBase(object):
         """
         self.swagger_types = {
             'customer_contacts': 'list[CustomerContact]',
+            'okv_end_point_group_name': 'str',
             'source': 'str',
             'display_name': 'str',
             'db_unique_name': 'str',
@@ -283,6 +288,7 @@ class CreateAutonomousContainerDatabaseBase(object):
         }
         self.attribute_map = {
             'customer_contacts': 'customerContacts',
+            'okv_end_point_group_name': 'okvEndPointGroupName',
             'source': 'source',
             'display_name': 'displayName',
             'db_unique_name': 'dbUniqueName',
@@ -322,6 +328,7 @@ class CreateAutonomousContainerDatabaseBase(object):
             'net_services_architecture': 'netServicesArchitecture'
         }
         self._customer_contacts = None
+        self._okv_end_point_group_name = None
         self._source = None
         self._display_name = None
         self._db_unique_name = None
@@ -399,6 +406,30 @@ class CreateAutonomousContainerDatabaseBase(object):
         :type: list[oci.database.models.CustomerContact]
         """
         self._customer_contacts = customer_contacts
+
+    @property
+    def okv_end_point_group_name(self):
+        """
+        Gets the okv_end_point_group_name of this CreateAutonomousContainerDatabaseBase.
+        The OKV End Point Group name for the Autonomous Container Database.
+
+
+        :return: The okv_end_point_group_name of this CreateAutonomousContainerDatabaseBase.
+        :rtype: str
+        """
+        return self._okv_end_point_group_name
+
+    @okv_end_point_group_name.setter
+    def okv_end_point_group_name(self, okv_end_point_group_name):
+        """
+        Sets the okv_end_point_group_name of this CreateAutonomousContainerDatabaseBase.
+        The OKV End Point Group name for the Autonomous Container Database.
+
+
+        :param okv_end_point_group_name: The okv_end_point_group_name of this CreateAutonomousContainerDatabaseBase.
+        :type: str
+        """
+        self._okv_end_point_group_name = okv_end_point_group_name
 
     @property
     def source(self):

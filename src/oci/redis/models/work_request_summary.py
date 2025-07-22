@@ -75,6 +75,30 @@ class WorkRequestSummary(object):
     #: This constant has a value of "UPDATE_OCI_CACHE_USER"
     OPERATION_TYPE_UPDATE_OCI_CACHE_USER = "UPDATE_OCI_CACHE_USER"
 
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "DELETE_OCI_CACHE_USER"
+    OPERATION_TYPE_DELETE_OCI_CACHE_USER = "DELETE_OCI_CACHE_USER"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "CREATE_OCI_CACHE_CONFIG_SET"
+    OPERATION_TYPE_CREATE_OCI_CACHE_CONFIG_SET = "CREATE_OCI_CACHE_CONFIG_SET"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "UPDATE_OCI_CACHE_CONFIG_SET"
+    OPERATION_TYPE_UPDATE_OCI_CACHE_CONFIG_SET = "UPDATE_OCI_CACHE_CONFIG_SET"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "DELETE_OCI_CACHE_CONFIG_SET"
+    OPERATION_TYPE_DELETE_OCI_CACHE_CONFIG_SET = "DELETE_OCI_CACHE_CONFIG_SET"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "CHANGE_OCI_CACHE_CONFIG_SET_COMPARTMENT"
+    OPERATION_TYPE_CHANGE_OCI_CACHE_CONFIG_SET_COMPARTMENT = "CHANGE_OCI_CACHE_CONFIG_SET_COMPARTMENT"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "CHANGE_OCI_CACHE_USER_COMPARTMENT"
+    OPERATION_TYPE_CHANGE_OCI_CACHE_USER_COMPARTMENT = "CHANGE_OCI_CACHE_USER_COMPARTMENT"
+
     #: A constant which can be used with the status property of a WorkRequestSummary.
     #: This constant has a value of "ACCEPTED"
     STATUS_ACCEPTED = "ACCEPTED"
@@ -114,7 +138,7 @@ class WorkRequestSummary(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequestSummary.
-            Allowed values for this property are: "CREATE_REDIS_CLUSTER", "UPDATE_REDIS_CLUSTER", "DELETE_REDIS_CLUSTER", "MOVE_REDIS_CLUSTER", "FAILOVER_REDIS_CLUSTER", "CREATE_REDIS_CONFIG_SET", "UPDATE_REDIS_CONFIG_SET", "DELETE_REDIS_CONFIG_SET", "MOVE_REDIS_CONFIG_SET", "MIGRATE_CLUSTER", "CLUSTER_ROLLBACK", "ATTACH_OCI_CACHE_USERS", "DETACH_OCI_CACHE_USERS", "CREATE_OCI_CACHE_USER", "UPDATE_OCI_CACHE_USER", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_REDIS_CLUSTER", "UPDATE_REDIS_CLUSTER", "DELETE_REDIS_CLUSTER", "MOVE_REDIS_CLUSTER", "FAILOVER_REDIS_CLUSTER", "CREATE_REDIS_CONFIG_SET", "UPDATE_REDIS_CONFIG_SET", "DELETE_REDIS_CONFIG_SET", "MOVE_REDIS_CONFIG_SET", "MIGRATE_CLUSTER", "CLUSTER_ROLLBACK", "ATTACH_OCI_CACHE_USERS", "DETACH_OCI_CACHE_USERS", "CREATE_OCI_CACHE_USER", "UPDATE_OCI_CACHE_USER", "DELETE_OCI_CACHE_USER", "CREATE_OCI_CACHE_CONFIG_SET", "UPDATE_OCI_CACHE_CONFIG_SET", "DELETE_OCI_CACHE_CONFIG_SET", "CHANGE_OCI_CACHE_CONFIG_SET_COMPARTMENT", "CHANGE_OCI_CACHE_USER_COMPARTMENT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -205,7 +229,7 @@ class WorkRequestSummary(object):
         **[Required]** Gets the operation_type of this WorkRequestSummary.
         The type of operation that spawned the work request.
 
-        Allowed values for this property are: "CREATE_REDIS_CLUSTER", "UPDATE_REDIS_CLUSTER", "DELETE_REDIS_CLUSTER", "MOVE_REDIS_CLUSTER", "FAILOVER_REDIS_CLUSTER", "CREATE_REDIS_CONFIG_SET", "UPDATE_REDIS_CONFIG_SET", "DELETE_REDIS_CONFIG_SET", "MOVE_REDIS_CONFIG_SET", "MIGRATE_CLUSTER", "CLUSTER_ROLLBACK", "ATTACH_OCI_CACHE_USERS", "DETACH_OCI_CACHE_USERS", "CREATE_OCI_CACHE_USER", "UPDATE_OCI_CACHE_USER", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_REDIS_CLUSTER", "UPDATE_REDIS_CLUSTER", "DELETE_REDIS_CLUSTER", "MOVE_REDIS_CLUSTER", "FAILOVER_REDIS_CLUSTER", "CREATE_REDIS_CONFIG_SET", "UPDATE_REDIS_CONFIG_SET", "DELETE_REDIS_CONFIG_SET", "MOVE_REDIS_CONFIG_SET", "MIGRATE_CLUSTER", "CLUSTER_ROLLBACK", "ATTACH_OCI_CACHE_USERS", "DETACH_OCI_CACHE_USERS", "CREATE_OCI_CACHE_USER", "UPDATE_OCI_CACHE_USER", "DELETE_OCI_CACHE_USER", "CREATE_OCI_CACHE_CONFIG_SET", "UPDATE_OCI_CACHE_CONFIG_SET", "DELETE_OCI_CACHE_CONFIG_SET", "CHANGE_OCI_CACHE_CONFIG_SET_COMPARTMENT", "CHANGE_OCI_CACHE_USER_COMPARTMENT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -224,7 +248,7 @@ class WorkRequestSummary(object):
         :param operation_type: The operation_type of this WorkRequestSummary.
         :type: str
         """
-        allowed_values = ["CREATE_REDIS_CLUSTER", "UPDATE_REDIS_CLUSTER", "DELETE_REDIS_CLUSTER", "MOVE_REDIS_CLUSTER", "FAILOVER_REDIS_CLUSTER", "CREATE_REDIS_CONFIG_SET", "UPDATE_REDIS_CONFIG_SET", "DELETE_REDIS_CONFIG_SET", "MOVE_REDIS_CONFIG_SET", "MIGRATE_CLUSTER", "CLUSTER_ROLLBACK", "ATTACH_OCI_CACHE_USERS", "DETACH_OCI_CACHE_USERS", "CREATE_OCI_CACHE_USER", "UPDATE_OCI_CACHE_USER"]
+        allowed_values = ["CREATE_REDIS_CLUSTER", "UPDATE_REDIS_CLUSTER", "DELETE_REDIS_CLUSTER", "MOVE_REDIS_CLUSTER", "FAILOVER_REDIS_CLUSTER", "CREATE_REDIS_CONFIG_SET", "UPDATE_REDIS_CONFIG_SET", "DELETE_REDIS_CONFIG_SET", "MOVE_REDIS_CONFIG_SET", "MIGRATE_CLUSTER", "CLUSTER_ROLLBACK", "ATTACH_OCI_CACHE_USERS", "DETACH_OCI_CACHE_USERS", "CREATE_OCI_CACHE_USER", "UPDATE_OCI_CACHE_USER", "DELETE_OCI_CACHE_USER", "CREATE_OCI_CACHE_CONFIG_SET", "UPDATE_OCI_CACHE_CONFIG_SET", "DELETE_OCI_CACHE_CONFIG_SET", "CHANGE_OCI_CACHE_CONFIG_SET_COMPARTMENT", "CHANGE_OCI_CACHE_USER_COMPARTMENT"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type

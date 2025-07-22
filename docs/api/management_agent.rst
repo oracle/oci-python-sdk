@@ -22,6 +22,7 @@ Management Agent
     oci.management_agent.models.AvailabilityHistorySummary
     oci.management_agent.models.CreateDataSourceDetails
     oci.management_agent.models.CreateManagementAgentInstallKeyDetails
+    oci.management_agent.models.CreateNamedCredentialDetails
     oci.management_agent.models.CreatePrometheusEmitterDataSourceDetails
     oci.management_agent.models.DataSource
     oci.management_agent.models.DataSourceSummary
@@ -44,10 +45,18 @@ Management Agent
     oci.management_agent.models.ManagementAgentPluginAggregationCollection
     oci.management_agent.models.ManagementAgentPluginAggregationDimensions
     oci.management_agent.models.ManagementAgentPluginDetails
+    oci.management_agent.models.ManagementAgentPluginResource
     oci.management_agent.models.ManagementAgentPluginSummary
     oci.management_agent.models.ManagementAgentProperty
     oci.management_agent.models.ManagementAgentSummary
     oci.management_agent.models.MetricDimension
+    oci.management_agent.models.NamedCredential
+    oci.management_agent.models.NamedCredentialCollection
+    oci.management_agent.models.NamedCredentialFieldDefinition
+    oci.management_agent.models.NamedCredentialMetadataDefinition
+    oci.management_agent.models.NamedCredentialProperty
+    oci.management_agent.models.NamedCredentialSummary
+    oci.management_agent.models.NamedCredentialsMetadatum
     oci.management_agent.models.ObjectDetails
     oci.management_agent.models.PrometheusEmitterDataSource
     oci.management_agent.models.PrometheusEmitterDataSourceSummary
@@ -56,6 +65,7 @@ Management Agent
     oci.management_agent.models.UpdateDataSourceDetails
     oci.management_agent.models.UpdateManagementAgentDetails
     oci.management_agent.models.UpdateManagementAgentInstallKeyDetails
+    oci.management_agent.models.UpdateNamedCredentialDetails
     oci.management_agent.models.UpdatePrometheusEmitterDataSourceDetails
     oci.management_agent.models.WorkRequest
     oci.management_agent.models.WorkRequestError

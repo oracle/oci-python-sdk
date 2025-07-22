@@ -28,17 +28,24 @@ class KeyStoreAssociatedDatabaseDetails(object):
             The value to assign to the db_name property of this KeyStoreAssociatedDatabaseDetails.
         :type db_name: str
 
+        :param db_unique_name:
+            The value to assign to the db_unique_name property of this KeyStoreAssociatedDatabaseDetails.
+        :type db_unique_name: str
+
         """
         self.swagger_types = {
             'id': 'str',
-            'db_name': 'str'
+            'db_name': 'str',
+            'db_unique_name': 'str'
         }
         self.attribute_map = {
             'id': 'id',
-            'db_name': 'dbName'
+            'db_name': 'dbName',
+            'db_unique_name': 'dbUniqueName'
         }
         self._id = None
         self._db_name = None
+        self._db_unique_name = None
 
     @property
     def id(self):
@@ -91,6 +98,30 @@ class KeyStoreAssociatedDatabaseDetails(object):
         :type: str
         """
         self._db_name = db_name
+
+    @property
+    def db_unique_name(self):
+        """
+        Gets the db_unique_name of this KeyStoreAssociatedDatabaseDetails.
+        The unique name of the database that is associated with the key store.
+
+
+        :return: The db_unique_name of this KeyStoreAssociatedDatabaseDetails.
+        :rtype: str
+        """
+        return self._db_unique_name
+
+    @db_unique_name.setter
+    def db_unique_name(self, db_unique_name):
+        """
+        Sets the db_unique_name of this KeyStoreAssociatedDatabaseDetails.
+        The unique name of the database that is associated with the key store.
+
+
+        :param db_unique_name: The db_unique_name of this KeyStoreAssociatedDatabaseDetails.
+        :type: str
+        """
+        self._db_unique_name = db_unique_name
 
     def __repr__(self):
         return formatted_flat_dict(self)

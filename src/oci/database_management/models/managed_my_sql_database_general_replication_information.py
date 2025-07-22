@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ManagedMySqlDatabaseGeneralReplicationInformation(object):
     """
-    General information about replication of a MySQL server.
+    General information about the replication of a MySQL server.
     """
 
     #: A constant which can be used with the read_only property of a ManagedMySqlDatabaseGeneralReplicationInformation.
@@ -163,7 +163,7 @@ class ManagedMySqlDatabaseGeneralReplicationInformation(object):
     def instance_type(self):
         """
         Gets the instance_type of this ManagedMySqlDatabaseGeneralReplicationInformation.
-        The type of the instance. Source, Replica, Primary Group Member, Secondary Group Member, and so on. If the instance is replicating from one or more sources and has one or more replicas, i.e., it belongs to a replication chain, the instance type can be Replica/Source.
+        The type of the instance for example, Source, Replica, Primary Group Member, and Secondary Group Member. If the instance is replicating from one or more sources and has one or more replicas, which means, it belongs to a replication chain, the instance type can be Replica/Source.
 
 
         :return: The instance_type of this ManagedMySqlDatabaseGeneralReplicationInformation.
@@ -175,7 +175,7 @@ class ManagedMySqlDatabaseGeneralReplicationInformation(object):
     def instance_type(self, instance_type):
         """
         Sets the instance_type of this ManagedMySqlDatabaseGeneralReplicationInformation.
-        The type of the instance. Source, Replica, Primary Group Member, Secondary Group Member, and so on. If the instance is replicating from one or more sources and has one or more replicas, i.e., it belongs to a replication chain, the instance type can be Replica/Source.
+        The type of the instance for example, Source, Replica, Primary Group Member, and Secondary Group Member. If the instance is replicating from one or more sources and has one or more replicas, which means, it belongs to a replication chain, the instance type can be Replica/Source.
 
 
         :param instance_type: The instance_type of this ManagedMySqlDatabaseGeneralReplicationInformation.
@@ -457,7 +457,7 @@ class ManagedMySqlDatabaseGeneralReplicationInformation(object):
     def gtid_mode(self):
         """
         Gets the gtid_mode of this ManagedMySqlDatabaseGeneralReplicationInformation.
-        Global Transaction Identifier (GTID) mode of this server.
+        The Global Transaction Identifier (GTID) mode of this server.
 
 
         :return: The gtid_mode of this ManagedMySqlDatabaseGeneralReplicationInformation.
@@ -469,7 +469,7 @@ class ManagedMySqlDatabaseGeneralReplicationInformation(object):
     def gtid_mode(self, gtid_mode):
         """
         Sets the gtid_mode of this ManagedMySqlDatabaseGeneralReplicationInformation.
-        Global Transaction Identifier (GTID) mode of this server.
+        The Global Transaction Identifier (GTID) mode of this server.
 
 
         :param gtid_mode: The gtid_mode of this ManagedMySqlDatabaseGeneralReplicationInformation.
@@ -505,7 +505,7 @@ class ManagedMySqlDatabaseGeneralReplicationInformation(object):
     def binary_logging(self):
         """
         Gets the binary_logging of this ManagedMySqlDatabaseGeneralReplicationInformation.
-        Status of binary logging on this server.
+        The status of binary logging on this server.
 
 
         :return: The binary_logging of this ManagedMySqlDatabaseGeneralReplicationInformation.
@@ -517,7 +517,7 @@ class ManagedMySqlDatabaseGeneralReplicationInformation(object):
     def binary_logging(self, binary_logging):
         """
         Sets the binary_logging of this ManagedMySqlDatabaseGeneralReplicationInformation.
-        Status of binary logging on this server.
+        The status of binary logging on this server.
 
 
         :param binary_logging: The binary_logging of this ManagedMySqlDatabaseGeneralReplicationInformation.

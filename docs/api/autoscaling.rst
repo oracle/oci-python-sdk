@@ -32,9 +32,11 @@ Autoscaling
     oci.autoscaling.models.CreateScheduledPolicyDetails
     oci.autoscaling.models.CreateThresholdPolicyDetails
     oci.autoscaling.models.CronExecutionSchedule
+    oci.autoscaling.models.CustomMetric
     oci.autoscaling.models.ExecutionSchedule
     oci.autoscaling.models.InstancePoolResource
     oci.autoscaling.models.Metric
+    oci.autoscaling.models.MetricBase
     oci.autoscaling.models.Resource
     oci.autoscaling.models.ResourceAction
     oci.autoscaling.models.ResourcePowerAction

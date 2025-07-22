@@ -39,6 +39,10 @@ class JobExecution(object):
     #: This constant has a value of "DEDICATED"
     DATABASE_TYPE_DEDICATED = "DEDICATED"
 
+    #: A constant which can be used with the database_type property of a JobExecution.
+    #: This constant has a value of "CLOUD_AT_CUSTOMER"
+    DATABASE_TYPE_CLOUD_AT_CUSTOMER = "CLOUD_AT_CUSTOMER"
+
     #: A constant which can be used with the database_sub_type property of a JobExecution.
     #: This constant has a value of "CDB"
     DATABASE_SUB_TYPE_CDB = "CDB"
@@ -146,7 +150,7 @@ class JobExecution(object):
 
         :param database_type:
             The value to assign to the database_type property of this JobExecution.
-            Allowed values for this property are: "EXTERNAL_SIDB", "EXTERNAL_RAC", "CLOUD_SIDB", "CLOUD_RAC", "SHARED", "DEDICATED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "EXTERNAL_SIDB", "EXTERNAL_RAC", "CLOUD_SIDB", "CLOUD_RAC", "SHARED", "DEDICATED", "CLOUD_AT_CUSTOMER", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type database_type: str
 
@@ -466,7 +470,7 @@ class JobExecution(object):
         Gets the database_type of this JobExecution.
         The type of Oracle Database installation.
 
-        Allowed values for this property are: "EXTERNAL_SIDB", "EXTERNAL_RAC", "CLOUD_SIDB", "CLOUD_RAC", "SHARED", "DEDICATED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "EXTERNAL_SIDB", "EXTERNAL_RAC", "CLOUD_SIDB", "CLOUD_RAC", "SHARED", "DEDICATED", "CLOUD_AT_CUSTOMER", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -485,7 +489,7 @@ class JobExecution(object):
         :param database_type: The database_type of this JobExecution.
         :type: str
         """
-        allowed_values = ["EXTERNAL_SIDB", "EXTERNAL_RAC", "CLOUD_SIDB", "CLOUD_RAC", "SHARED", "DEDICATED"]
+        allowed_values = ["EXTERNAL_SIDB", "EXTERNAL_RAC", "CLOUD_SIDB", "CLOUD_RAC", "SHARED", "DEDICATED", "CLOUD_AT_CUSTOMER"]
         if not value_allowed_none_or_none_sentinel(database_type, allowed_values):
             database_type = 'UNKNOWN_ENUM_VALUE'
         self._database_type = database_type

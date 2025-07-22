@@ -84,7 +84,7 @@ class DatabaseDiagnosticsAndManagementFeatureDetails(DatabaseFeatureDetails):
     def management_type(self):
         """
         **[Required]** Gets the management_type of this DatabaseDiagnosticsAndManagementFeatureDetails.
-        The management type for the database.
+        The management type for the database. Use \"BASIC\" for basic management. Use \"ADVANCED\" for full management.
 
         Allowed values for this property are: "BASIC", "ADVANCED"
 
@@ -98,7 +98,7 @@ class DatabaseDiagnosticsAndManagementFeatureDetails(DatabaseFeatureDetails):
     def management_type(self, management_type):
         """
         Sets the management_type of this DatabaseDiagnosticsAndManagementFeatureDetails.
-        The management type for the database.
+        The management type for the database. Use \"BASIC\" for basic management. Use \"ADVANCED\" for full management.
 
 
         :param management_type: The management_type of this DatabaseDiagnosticsAndManagementFeatureDetails.

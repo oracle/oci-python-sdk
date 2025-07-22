@@ -12,8 +12,12 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ResourcePowerAction(ResourceAction):
     """
-    A power action against a resource.
+    An action that starts, stops, or resets a resource.
     """
+
+    #: A constant which can be used with the action property of a ResourcePowerAction.
+    #: This constant has a value of "SOFTSTOP"
+    ACTION_SOFTSTOP = "SOFTSTOP"
 
     #: A constant which can be used with the action property of a ResourcePowerAction.
     #: This constant has a value of "STOP"
@@ -43,7 +47,7 @@ class ResourcePowerAction(ResourceAction):
 
         :param action:
             The value to assign to the action property of this ResourcePowerAction.
-            Allowed values for this property are: "STOP", "START", "SOFTRESET", "RESET", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SOFTSTOP", "STOP", "START", "SOFTRESET", "RESET", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type action: str
 
@@ -64,7 +68,7 @@ class ResourcePowerAction(ResourceAction):
     def action(self):
         """
         **[Required]** Gets the action of this ResourcePowerAction.
-        Allowed values for this property are: "STOP", "START", "SOFTRESET", "RESET", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "SOFTSTOP", "STOP", "START", "SOFTRESET", "RESET", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -81,7 +85,7 @@ class ResourcePowerAction(ResourceAction):
         :param action: The action of this ResourcePowerAction.
         :type: str
         """
-        allowed_values = ["STOP", "START", "SOFTRESET", "RESET"]
+        allowed_values = ["SOFTSTOP", "STOP", "START", "SOFTRESET", "RESET"]
         if not value_allowed_none_or_none_sentinel(action, allowed_values):
             action = 'UNKNOWN_ENUM_VALUE'
         self._action = action

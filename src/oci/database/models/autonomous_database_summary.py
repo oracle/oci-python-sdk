@@ -476,6 +476,18 @@ class AutonomousDatabaseSummary(object):
             The value to assign to the time_undeleted property of this AutonomousDatabaseSummary.
         :type time_undeleted: datetime
 
+        :param time_earliest_available_db_version_upgrade:
+            The value to assign to the time_earliest_available_db_version_upgrade property of this AutonomousDatabaseSummary.
+        :type time_earliest_available_db_version_upgrade: datetime
+
+        :param time_latest_available_db_version_upgrade:
+            The value to assign to the time_latest_available_db_version_upgrade property of this AutonomousDatabaseSummary.
+        :type time_latest_available_db_version_upgrade: datetime
+
+        :param time_scheduled_db_version_upgrade:
+            The value to assign to the time_scheduled_db_version_upgrade property of this AutonomousDatabaseSummary.
+        :type time_scheduled_db_version_upgrade: datetime
+
         :param time_created:
             The value to assign to the time_created property of this AutonomousDatabaseSummary.
         :type time_created: datetime
@@ -889,6 +901,9 @@ class AutonomousDatabaseSummary(object):
             'autonomous_container_database_id': 'str',
             'is_backup_retention_locked': 'bool',
             'time_undeleted': 'datetime',
+            'time_earliest_available_db_version_upgrade': 'datetime',
+            'time_latest_available_db_version_upgrade': 'datetime',
+            'time_scheduled_db_version_upgrade': 'datetime',
             'time_created': 'datetime',
             'display_name': 'str',
             'service_console_url': 'str',
@@ -1017,6 +1032,9 @@ class AutonomousDatabaseSummary(object):
             'autonomous_container_database_id': 'autonomousContainerDatabaseId',
             'is_backup_retention_locked': 'isBackupRetentionLocked',
             'time_undeleted': 'timeUndeleted',
+            'time_earliest_available_db_version_upgrade': 'timeEarliestAvailableDbVersionUpgrade',
+            'time_latest_available_db_version_upgrade': 'timeLatestAvailableDbVersionUpgrade',
+            'time_scheduled_db_version_upgrade': 'timeScheduledDbVersionUpgrade',
             'time_created': 'timeCreated',
             'display_name': 'displayName',
             'service_console_url': 'serviceConsoleUrl',
@@ -1144,6 +1162,9 @@ class AutonomousDatabaseSummary(object):
         self._autonomous_container_database_id = None
         self._is_backup_retention_locked = None
         self._time_undeleted = None
+        self._time_earliest_available_db_version_upgrade = None
+        self._time_latest_available_db_version_upgrade = None
+        self._time_scheduled_db_version_upgrade = None
         self._time_created = None
         self._display_name = None
         self._service_console_url = None
@@ -2305,6 +2326,78 @@ class AutonomousDatabaseSummary(object):
         :type: datetime
         """
         self._time_undeleted = time_undeleted
+
+    @property
+    def time_earliest_available_db_version_upgrade(self):
+        """
+        Gets the time_earliest_available_db_version_upgrade of this AutonomousDatabaseSummary.
+        The earliest(min) date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+
+
+        :return: The time_earliest_available_db_version_upgrade of this AutonomousDatabaseSummary.
+        :rtype: datetime
+        """
+        return self._time_earliest_available_db_version_upgrade
+
+    @time_earliest_available_db_version_upgrade.setter
+    def time_earliest_available_db_version_upgrade(self, time_earliest_available_db_version_upgrade):
+        """
+        Sets the time_earliest_available_db_version_upgrade of this AutonomousDatabaseSummary.
+        The earliest(min) date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+
+
+        :param time_earliest_available_db_version_upgrade: The time_earliest_available_db_version_upgrade of this AutonomousDatabaseSummary.
+        :type: datetime
+        """
+        self._time_earliest_available_db_version_upgrade = time_earliest_available_db_version_upgrade
+
+    @property
+    def time_latest_available_db_version_upgrade(self):
+        """
+        Gets the time_latest_available_db_version_upgrade of this AutonomousDatabaseSummary.
+        The max date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+
+
+        :return: The time_latest_available_db_version_upgrade of this AutonomousDatabaseSummary.
+        :rtype: datetime
+        """
+        return self._time_latest_available_db_version_upgrade
+
+    @time_latest_available_db_version_upgrade.setter
+    def time_latest_available_db_version_upgrade(self, time_latest_available_db_version_upgrade):
+        """
+        Sets the time_latest_available_db_version_upgrade of this AutonomousDatabaseSummary.
+        The max date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+
+
+        :param time_latest_available_db_version_upgrade: The time_latest_available_db_version_upgrade of this AutonomousDatabaseSummary.
+        :type: datetime
+        """
+        self._time_latest_available_db_version_upgrade = time_latest_available_db_version_upgrade
+
+    @property
+    def time_scheduled_db_version_upgrade(self):
+        """
+        Gets the time_scheduled_db_version_upgrade of this AutonomousDatabaseSummary.
+        The date and time the Autonomous Database scheduled to upgrade to 23ai.
+
+
+        :return: The time_scheduled_db_version_upgrade of this AutonomousDatabaseSummary.
+        :rtype: datetime
+        """
+        return self._time_scheduled_db_version_upgrade
+
+    @time_scheduled_db_version_upgrade.setter
+    def time_scheduled_db_version_upgrade(self, time_scheduled_db_version_upgrade):
+        """
+        Sets the time_scheduled_db_version_upgrade of this AutonomousDatabaseSummary.
+        The date and time the Autonomous Database scheduled to upgrade to 23ai.
+
+
+        :param time_scheduled_db_version_upgrade: The time_scheduled_db_version_upgrade of this AutonomousDatabaseSummary.
+        :type: datetime
+        """
+        self._time_scheduled_db_version_upgrade = time_scheduled_db_version_upgrade
 
     @property
     def time_created(self):

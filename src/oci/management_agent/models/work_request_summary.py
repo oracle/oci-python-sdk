@@ -24,6 +24,10 @@ class WorkRequestSummary(object):
     OPERATION_TYPE_UPGRADE_PLUGIN = "UPGRADE_PLUGIN"
 
     #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "CREATE_PLUGIN"
+    OPERATION_TYPE_CREATE_PLUGIN = "CREATE_PLUGIN"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
     #: This constant has a value of "CREATE_UPGRADE_PLUGINS"
     OPERATION_TYPE_CREATE_UPGRADE_PLUGINS = "CREATE_UPGRADE_PLUGINS"
 
@@ -42,6 +46,22 @@ class WorkRequestSummary(object):
     #: A constant which can be used with the operation_type property of a WorkRequestSummary.
     #: This constant has a value of "DELETE_DATA_SOURCE"
     OPERATION_TYPE_DELETE_DATA_SOURCE = "DELETE_DATA_SOURCE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "CREATE_NAMEDCREDENTIALS"
+    OPERATION_TYPE_CREATE_NAMEDCREDENTIALS = "CREATE_NAMEDCREDENTIALS"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "UPDATE_NAMEDCREDENTIALS"
+    OPERATION_TYPE_UPDATE_NAMEDCREDENTIALS = "UPDATE_NAMEDCREDENTIALS"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "DELETE_NAMEDCREDENTIALS"
+    OPERATION_TYPE_DELETE_NAMEDCREDENTIALS = "DELETE_NAMEDCREDENTIALS"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "AGENT_UPGRADE"
+    OPERATION_TYPE_AGENT_UPGRADE = "AGENT_UPGRADE"
 
     #: A constant which can be used with the status property of a WorkRequestSummary.
     #: This constant has a value of "CREATED"
@@ -78,7 +98,7 @@ class WorkRequestSummary(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequestSummary.
-            Allowed values for this property are: "DEPLOY_PLUGIN", "UPGRADE_PLUGIN", "CREATE_UPGRADE_PLUGINS", "AGENTIMAGE_UPGRADE", "CREATE_DATA_SOURCE", "UPDATE_DATA_SOURCE", "DELETE_DATA_SOURCE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "DEPLOY_PLUGIN", "UPGRADE_PLUGIN", "CREATE_PLUGIN", "CREATE_UPGRADE_PLUGINS", "AGENTIMAGE_UPGRADE", "CREATE_DATA_SOURCE", "UPDATE_DATA_SOURCE", "DELETE_DATA_SOURCE", "CREATE_NAMEDCREDENTIALS", "UPDATE_NAMEDCREDENTIALS", "DELETE_NAMEDCREDENTIALS", "AGENT_UPGRADE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -155,7 +175,7 @@ class WorkRequestSummary(object):
         **[Required]** Gets the operation_type of this WorkRequestSummary.
         Type of the work request
 
-        Allowed values for this property are: "DEPLOY_PLUGIN", "UPGRADE_PLUGIN", "CREATE_UPGRADE_PLUGINS", "AGENTIMAGE_UPGRADE", "CREATE_DATA_SOURCE", "UPDATE_DATA_SOURCE", "DELETE_DATA_SOURCE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "DEPLOY_PLUGIN", "UPGRADE_PLUGIN", "CREATE_PLUGIN", "CREATE_UPGRADE_PLUGINS", "AGENTIMAGE_UPGRADE", "CREATE_DATA_SOURCE", "UPDATE_DATA_SOURCE", "DELETE_DATA_SOURCE", "CREATE_NAMEDCREDENTIALS", "UPDATE_NAMEDCREDENTIALS", "DELETE_NAMEDCREDENTIALS", "AGENT_UPGRADE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -174,7 +194,7 @@ class WorkRequestSummary(object):
         :param operation_type: The operation_type of this WorkRequestSummary.
         :type: str
         """
-        allowed_values = ["DEPLOY_PLUGIN", "UPGRADE_PLUGIN", "CREATE_UPGRADE_PLUGINS", "AGENTIMAGE_UPGRADE", "CREATE_DATA_SOURCE", "UPDATE_DATA_SOURCE", "DELETE_DATA_SOURCE"]
+        allowed_values = ["DEPLOY_PLUGIN", "UPGRADE_PLUGIN", "CREATE_PLUGIN", "CREATE_UPGRADE_PLUGINS", "AGENTIMAGE_UPGRADE", "CREATE_DATA_SOURCE", "UPDATE_DATA_SOURCE", "DELETE_DATA_SOURCE", "CREATE_NAMEDCREDENTIALS", "UPDATE_NAMEDCREDENTIALS", "DELETE_NAMEDCREDENTIALS", "AGENT_UPGRADE"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type

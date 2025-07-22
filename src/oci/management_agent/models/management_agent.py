@@ -31,6 +31,10 @@ class ManagementAgent(object):
     #: This constant has a value of "MACOSX"
     PLATFORM_TYPE_MACOSX = "MACOSX"
 
+    #: A constant which can be used with the platform_type property of a ManagementAgent.
+    #: This constant has a value of "AIX"
+    PLATFORM_TYPE_AIX = "AIX"
+
     #: A constant which can be used with the availability_status property of a ManagementAgent.
     #: This constant has a value of "ACTIVE"
     AVAILABILITY_STATUS_ACTIVE = "ACTIVE"
@@ -102,7 +106,7 @@ class ManagementAgent(object):
 
         :param platform_type:
             The value to assign to the platform_type property of this ManagementAgent.
-            Allowed values for this property are: "LINUX", "WINDOWS", "SOLARIS", "MACOSX", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "LINUX", "WINDOWS", "SOLARIS", "MACOSX", "AIX", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type platform_type: str
 
@@ -200,6 +204,10 @@ class ManagementAgent(object):
             The value to assign to the defined_tags property of this ManagementAgent.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this ManagementAgent.
+        :type system_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -227,7 +235,8 @@ class ManagementAgent(object):
             'management_agent_properties': 'list[ManagementAgentProperty]',
             'data_source_list': 'list[DataSource]',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'id': 'id',
@@ -255,7 +264,8 @@ class ManagementAgent(object):
             'management_agent_properties': 'managementAgentProperties',
             'data_source_list': 'dataSourceList',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'system_tags': 'systemTags'
         }
         self._id = None
         self._install_key_id = None
@@ -283,6 +293,7 @@ class ManagementAgent(object):
         self._data_source_list = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
 
     @property
     def id(self):
@@ -362,7 +373,7 @@ class ManagementAgent(object):
         Gets the platform_type of this ManagementAgent.
         Platform Type
 
-        Allowed values for this property are: "LINUX", "WINDOWS", "SOLARIS", "MACOSX", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "LINUX", "WINDOWS", "SOLARIS", "MACOSX", "AIX", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -381,7 +392,7 @@ class ManagementAgent(object):
         :param platform_type: The platform_type of this ManagementAgent.
         :type: str
         """
-        allowed_values = ["LINUX", "WINDOWS", "SOLARIS", "MACOSX"]
+        allowed_values = ["LINUX", "WINDOWS", "SOLARIS", "MACOSX", "AIX"]
         if not value_allowed_none_or_none_sentinel(platform_type, allowed_values):
             platform_type = 'UNKNOWN_ENUM_VALUE'
         self._platform_type = platform_type
@@ -943,6 +954,32 @@ class ManagementAgent(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this ManagementAgent.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{ \"orcl-cloud\": { \"free-tier-retained\": \"true\" } }`
+
+
+        :return: The system_tags of this ManagementAgent.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this ManagementAgent.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{ \"orcl-cloud\": { \"free-tier-retained\": \"true\" } }`
+
+
+        :param system_tags: The system_tags of this ManagementAgent.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)
