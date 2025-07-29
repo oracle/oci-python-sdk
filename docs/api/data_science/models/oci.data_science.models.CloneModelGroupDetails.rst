@@ -1,0 +1,11 @@
+CloneModelGroupDetails
+======================
+
+.. currentmodule:: oci.data_science.models
+
+.. autoclass:: CloneModelGroupDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

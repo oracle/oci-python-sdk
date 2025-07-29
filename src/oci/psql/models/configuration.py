@@ -104,6 +104,14 @@ class Configuration(object):
             The value to assign to the instance_memory_size_in_gbs property of this Configuration.
         :type instance_memory_size_in_gbs: int
 
+        :param compatible_shapes:
+            The value to assign to the compatible_shapes property of this Configuration.
+        :type compatible_shapes: list[str]
+
+        :param default_config_id:
+            The value to assign to the default_config_id property of this Configuration.
+        :type default_config_id: str
+
         :param configuration_details:
             The value to assign to the configuration_details property of this Configuration.
         :type configuration_details: oci.psql.models.ConfigurationDetails
@@ -135,6 +143,8 @@ class Configuration(object):
             'is_flexible': 'bool',
             'instance_ocpu_count': 'int',
             'instance_memory_size_in_gbs': 'int',
+            'compatible_shapes': 'list[str]',
+            'default_config_id': 'str',
             'configuration_details': 'ConfigurationDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -154,6 +164,8 @@ class Configuration(object):
             'is_flexible': 'isFlexible',
             'instance_ocpu_count': 'instanceOcpuCount',
             'instance_memory_size_in_gbs': 'instanceMemorySizeInGBs',
+            'compatible_shapes': 'compatibleShapes',
+            'default_config_id': 'defaultConfigId',
             'configuration_details': 'configurationDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -172,6 +184,8 @@ class Configuration(object):
         self._is_flexible = None
         self._instance_ocpu_count = None
         self._instance_memory_size_in_gbs = None
+        self._compatible_shapes = None
+        self._default_config_id = None
         self._configuration_details = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -424,7 +438,8 @@ class Configuration(object):
         """
         **[Required]** Gets the shape of this Configuration.
         The name of the shape for the configuration.
-        Example: `VM.Standard.E4.Flex`
+
+        For multi-shape enabled configurations, it is set to PostgreSQL. Please use compatibleShapes property to get list of supported shapes for such configurations.
 
 
         :return: The shape of this Configuration.
@@ -437,7 +452,8 @@ class Configuration(object):
         """
         Sets the shape of this Configuration.
         The name of the shape for the configuration.
-        Example: `VM.Standard.E4.Flex`
+
+        For multi-shape enabled configurations, it is set to PostgreSQL. Please use compatibleShapes property to get list of supported shapes for such configurations.
 
 
         :param shape: The shape of this Configuration.
@@ -524,6 +540,54 @@ class Configuration(object):
         :type: int
         """
         self._instance_memory_size_in_gbs = instance_memory_size_in_gbs
+
+    @property
+    def compatible_shapes(self):
+        """
+        **[Required]** Gets the compatible_shapes of this Configuration.
+        Indicates the collection of compatible shapes for this configuration.
+
+
+        :return: The compatible_shapes of this Configuration.
+        :rtype: list[str]
+        """
+        return self._compatible_shapes
+
+    @compatible_shapes.setter
+    def compatible_shapes(self, compatible_shapes):
+        """
+        Sets the compatible_shapes of this Configuration.
+        Indicates the collection of compatible shapes for this configuration.
+
+
+        :param compatible_shapes: The compatible_shapes of this Configuration.
+        :type: list[str]
+        """
+        self._compatible_shapes = compatible_shapes
+
+    @property
+    def default_config_id(self):
+        """
+        **[Required]** Gets the default_config_id of this Configuration.
+        The Default configuration used for this configuration.
+
+
+        :return: The default_config_id of this Configuration.
+        :rtype: str
+        """
+        return self._default_config_id
+
+    @default_config_id.setter
+    def default_config_id(self, default_config_id):
+        """
+        Sets the default_config_id of this Configuration.
+        The Default configuration used for this configuration.
+
+
+        :param default_config_id: The default_config_id of this Configuration.
+        :type: str
+        """
+        self._default_config_id = default_config_id
 
     @property
     def configuration_details(self):

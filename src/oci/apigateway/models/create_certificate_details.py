@@ -48,6 +48,10 @@ class CreateCertificateDetails(object):
             The value to assign to the defined_tags property of this CreateCertificateDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param locks:
+            The value to assign to the locks property of this CreateCertificateDetails.
+        :type locks: list[oci.apigateway.models.AddResourceLockDetails]
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -56,7 +60,8 @@ class CreateCertificateDetails(object):
             'certificate': 'str',
             'intermediate_certificates': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'locks': 'list[AddResourceLockDetails]'
         }
         self.attribute_map = {
             'display_name': 'displayName',
@@ -65,7 +70,8 @@ class CreateCertificateDetails(object):
             'certificate': 'certificate',
             'intermediate_certificates': 'intermediateCertificates',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'locks': 'locks'
         }
         self._display_name = None
         self._compartment_id = None
@@ -74,6 +80,7 @@ class CreateCertificateDetails(object):
         self._intermediate_certificates = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._locks = None
 
     @property
     def display_name(self):
@@ -278,6 +285,30 @@ class CreateCertificateDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this CreateCertificateDetails.
+        Locks associated with this resource.
+
+
+        :return: The locks of this CreateCertificateDetails.
+        :rtype: list[oci.apigateway.models.AddResourceLockDetails]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this CreateCertificateDetails.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this CreateCertificateDetails.
+        :type: list[oci.apigateway.models.AddResourceLockDetails]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

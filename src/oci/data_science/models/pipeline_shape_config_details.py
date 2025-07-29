@@ -15,6 +15,18 @@ class PipelineShapeConfigDetails(object):
     Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
     """
 
+    #: A constant which can be used with the cpu_baseline property of a PipelineShapeConfigDetails.
+    #: This constant has a value of "BASELINE_1_8"
+    CPU_BASELINE_BASELINE_1_8 = "BASELINE_1_8"
+
+    #: A constant which can be used with the cpu_baseline property of a PipelineShapeConfigDetails.
+    #: This constant has a value of "BASELINE_1_2"
+    CPU_BASELINE_BASELINE_1_2 = "BASELINE_1_2"
+
+    #: A constant which can be used with the cpu_baseline property of a PipelineShapeConfigDetails.
+    #: This constant has a value of "BASELINE_1_1"
+    CPU_BASELINE_BASELINE_1_1 = "BASELINE_1_1"
+
     def __init__(self, **kwargs):
         """
         Initializes a new PipelineShapeConfigDetails object with values from keyword arguments.
@@ -28,17 +40,26 @@ class PipelineShapeConfigDetails(object):
             The value to assign to the memory_in_gbs property of this PipelineShapeConfigDetails.
         :type memory_in_gbs: float
 
+        :param cpu_baseline:
+            The value to assign to the cpu_baseline property of this PipelineShapeConfigDetails.
+            Allowed values for this property are: "BASELINE_1_8", "BASELINE_1_2", "BASELINE_1_1", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type cpu_baseline: str
+
         """
         self.swagger_types = {
             'ocpus': 'float',
-            'memory_in_gbs': 'float'
+            'memory_in_gbs': 'float',
+            'cpu_baseline': 'str'
         }
         self.attribute_map = {
             'ocpus': 'ocpus',
-            'memory_in_gbs': 'memoryInGBs'
+            'memory_in_gbs': 'memoryInGBs',
+            'cpu_baseline': 'cpuBaseline'
         }
         self._ocpus = None
         self._memory_in_gbs = None
+        self._cpu_baseline = None
 
     @property
     def ocpus(self):
@@ -87,6 +108,44 @@ class PipelineShapeConfigDetails(object):
         :type: float
         """
         self._memory_in_gbs = memory_in_gbs
+
+    @property
+    def cpu_baseline(self):
+        """
+        Gets the cpu_baseline of this PipelineShapeConfigDetails.
+        The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`.
+        The following values are supported:
+          BASELINE_1_8 - baseline usage is 1/8 of an OCPU.
+          BASELINE_1_2 - baseline usage is 1/2 of an OCPU.
+          BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+
+        Allowed values for this property are: "BASELINE_1_8", "BASELINE_1_2", "BASELINE_1_1", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The cpu_baseline of this PipelineShapeConfigDetails.
+        :rtype: str
+        """
+        return self._cpu_baseline
+
+    @cpu_baseline.setter
+    def cpu_baseline(self, cpu_baseline):
+        """
+        Sets the cpu_baseline of this PipelineShapeConfigDetails.
+        The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`.
+        The following values are supported:
+          BASELINE_1_8 - baseline usage is 1/8 of an OCPU.
+          BASELINE_1_2 - baseline usage is 1/2 of an OCPU.
+          BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+
+
+        :param cpu_baseline: The cpu_baseline of this PipelineShapeConfigDetails.
+        :type: str
+        """
+        allowed_values = ["BASELINE_1_8", "BASELINE_1_2", "BASELINE_1_1"]
+        if not value_allowed_none_or_none_sentinel(cpu_baseline, allowed_values):
+            cpu_baseline = 'UNKNOWN_ENUM_VALUE'
+        self._cpu_baseline = cpu_baseline
 
     def __repr__(self):
         return formatted_flat_dict(self)

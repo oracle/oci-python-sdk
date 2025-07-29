@@ -36,6 +36,10 @@ class CreateApiDetails(object):
             The value to assign to the defined_tags property of this CreateApiDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param locks:
+            The value to assign to the locks property of this CreateApiDetails.
+        :type locks: list[oci.apigateway.models.AddResourceLockDetails]
+
         :param content:
             The value to assign to the content property of this CreateApiDetails.
         :type content: str
@@ -46,6 +50,7 @@ class CreateApiDetails(object):
             'compartment_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'locks': 'list[AddResourceLockDetails]',
             'content': 'str'
         }
         self.attribute_map = {
@@ -53,12 +58,14 @@ class CreateApiDetails(object):
             'compartment_id': 'compartmentId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'locks': 'locks',
             'content': 'content'
         }
         self._display_name = None
         self._compartment_id = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._locks = None
         self._content = None
 
     @property
@@ -192,6 +199,30 @@ class CreateApiDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this CreateApiDetails.
+        Locks associated with this resource.
+
+
+        :return: The locks of this CreateApiDetails.
+        :rtype: list[oci.apigateway.models.AddResourceLockDetails]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this CreateApiDetails.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this CreateApiDetails.
+        :type: list[oci.apigateway.models.AddResourceLockDetails]
+        """
+        self._locks = locks
 
     @property
     def content(self):

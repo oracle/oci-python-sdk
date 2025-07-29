@@ -4,14 +4,15 @@
 
 from typing import Dict, Any, List, TypeVar
 
+from oci.addons.adk.logger import default_logger as logger
 from oci.addons.adk.tool.function_tool import FunctionTool
 from oci.addons.adk.tool.prebuilt.agentic_rag_tool import AgenticRagTool
-from oci.addons.adk.logger import default_logger as logger
+from oci.addons.adk.tool.prebuilt.agentic_sql_tool import AgenticSqlTool
 from oci.addons.adk.util import build_custom_function_params
 
 
 def diff_local_and_remote_tool(
-    local_tool: FunctionTool | AgenticRagTool,
+    local_tool: FunctionTool | AgenticRagTool | AgenticSqlTool,
     remote_tool: Dict[str, Any],
 ) -> bool:
     """
@@ -61,6 +62,29 @@ def diff_local_and_remote_tool(
             )
         }
 
+    elif isinstance(local_tool, AgenticSqlTool):
+        local_tool_json_spec = {
+            "name": local_tool.name,
+            "description": local_tool.description,
+            "database_schema": local_tool.database_schema.to_dict(),
+            "db_tool_connection_id": local_tool.db_tool_connection_id,
+            "dialect": local_tool.dialect.value,
+            "model_size": local_tool.model_size.value,
+            "should_enable_sql_execution": local_tool.enable_sql_execution,
+            "should_enable_self_correction": local_tool.enable_self_correction
+        }
+        remote_tool_config = remote_tool.get("tool_config", {})
+        remote_tool_json_spec = {
+            "name": remote_tool.get("display_name", ""),
+            "description": remote_tool.get("description", ""),
+            "database_schema": remote_tool_config.get("database_schema", {}),
+            "db_tool_connection_id": (remote_tool_config.get("database_connection") or {}).get("connection_id"),
+            "dialect": remote_tool_config.get("dialect", ""),
+            "model_size": remote_tool_config.get("model_size", ""),
+            "should_enable_sql_execution": remote_tool_config.get("should_enable_sql_execution"),
+            "should_enable_self_correction": remote_tool_config.get("should_enable_self_correction")
+        }
+
     logger.debug(f"Local tool JSON spec: {local_tool_json_spec}")
     logger.debug(f"Remote tool JSON spec: {remote_tool_json_spec}")
 
@@ -68,7 +92,7 @@ def diff_local_and_remote_tool(
 
 
 def compare_local_and_remote_tools(
-    local_tools: List[FunctionTool] | List[AgenticRagTool],
+    local_tools: List[FunctionTool] | List[AgenticRagTool] | List[AgenticSqlTool],
     remote_tools: List[Dict[str, Any]],
 ) -> bool:
     """

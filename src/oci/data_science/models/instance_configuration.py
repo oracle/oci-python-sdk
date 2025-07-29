@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InstanceConfiguration(object):
     """
-    The model deployment instance configuration
+    The model deployment instance configuration.
     """
 
     def __init__(self, **kwargs):

@@ -23,7 +23,7 @@ class SingleModelDeploymentConfigurationDetails(ModelDeploymentConfigurationDeta
 
         :param deployment_type:
             The value to assign to the deployment_type property of this SingleModelDeploymentConfigurationDetails.
-            Allowed values for this property are: "SINGLE_MODEL"
+            Allowed values for this property are: "SINGLE_MODEL", "MODEL_GROUP"
         :type deployment_type: str
 
         :param model_configuration_details:

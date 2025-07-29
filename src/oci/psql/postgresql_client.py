@@ -2199,11 +2199,16 @@ class PostgresqlClient(object):
             Version of the PostgreSQL database, such as 14.9.
 
         :param str shape: (optional)
-            The name of the shape for the configuration.
-            Example: `VM.Standard.E4.Flex`
+            The compute name of the shape for the configuration.
 
         :param str configuration_id: (optional)
             A unique identifier for the configuration.
+
+        :param int instance_ocpu_count: (optional)
+            The instance ocpu count for the configuration.
+
+        :param int instance_memory_size_in_gbs: (optional)
+            The instance memory size in GBs for the configuration.
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -2260,6 +2265,8 @@ class PostgresqlClient(object):
             "db_version",
             "shape",
             "configuration_id",
+            "instance_ocpu_count",
+            "instance_memory_size_in_gbs",
             "limit",
             "page",
             "sort_order",
@@ -2307,6 +2314,8 @@ class PostgresqlClient(object):
             "dbVersion": kwargs.get("db_version", missing),
             "shape": kwargs.get("shape", missing),
             "configurationId": kwargs.get("configuration_id", missing),
+            "instanceOcpuCount": kwargs.get("instance_ocpu_count", missing),
+            "instanceMemorySizeInGBs": kwargs.get("instance_memory_size_in_gbs", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
@@ -2528,8 +2537,13 @@ class PostgresqlClient(object):
             Version of the PostgreSQL database, such as 14.9.
 
         :param str shape: (optional)
-            The name of the shape for the configuration.
-            Example: `VM.Standard.E4.Flex`
+            The compute name of the shape for the configuration.
+
+        :param int instance_ocpu_count: (optional)
+            The instance ocpu count for the configuration.
+
+        :param int instance_memory_size_in_gbs: (optional)
+            The instance memory size in GBs for the configuration.
 
         :param str configuration_id: (optional)
             A unique identifier for the configuration.
@@ -2586,6 +2600,8 @@ class PostgresqlClient(object):
             "display_name",
             "db_version",
             "shape",
+            "instance_ocpu_count",
+            "instance_memory_size_in_gbs",
             "configuration_id",
             "limit",
             "page",
@@ -2624,6 +2640,8 @@ class PostgresqlClient(object):
             "displayName": kwargs.get("display_name", missing),
             "dbVersion": kwargs.get("db_version", missing),
             "shape": kwargs.get("shape", missing),
+            "instanceOcpuCount": kwargs.get("instance_ocpu_count", missing),
+            "instanceMemorySizeInGBs": kwargs.get("instance_memory_size_in_gbs", missing),
             "configurationId": kwargs.get("configuration_id", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),

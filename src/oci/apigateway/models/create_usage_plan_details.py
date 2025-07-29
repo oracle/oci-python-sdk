@@ -32,6 +32,10 @@ class CreateUsagePlanDetails(object):
             The value to assign to the compartment_id property of this CreateUsagePlanDetails.
         :type compartment_id: str
 
+        :param locks:
+            The value to assign to the locks property of this CreateUsagePlanDetails.
+        :type locks: list[oci.apigateway.models.AddResourceLockDetails]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateUsagePlanDetails.
         :type freeform_tags: dict(str, str)
@@ -45,6 +49,7 @@ class CreateUsagePlanDetails(object):
             'display_name': 'str',
             'entitlements': 'list[Entitlement]',
             'compartment_id': 'str',
+            'locks': 'list[AddResourceLockDetails]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -52,12 +57,14 @@ class CreateUsagePlanDetails(object):
             'display_name': 'displayName',
             'entitlements': 'entitlements',
             'compartment_id': 'compartmentId',
+            'locks': 'locks',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
         self._display_name = None
         self._entitlements = None
         self._compartment_id = None
+        self._locks = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -144,6 +151,30 @@ class CreateUsagePlanDetails(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this CreateUsagePlanDetails.
+        Locks associated with this resource.
+
+
+        :return: The locks of this CreateUsagePlanDetails.
+        :rtype: list[oci.apigateway.models.AddResourceLockDetails]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this CreateUsagePlanDetails.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this CreateUsagePlanDetails.
+        :type: list[oci.apigateway.models.AddResourceLockDetails]
+        """
+        self._locks = locks
 
     @property
     def freeform_tags(self):

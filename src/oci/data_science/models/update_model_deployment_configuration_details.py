@@ -19,18 +19,23 @@ class UpdateModelDeploymentConfigurationDetails(object):
     #: This constant has a value of "SINGLE_MODEL"
     DEPLOYMENT_TYPE_SINGLE_MODEL = "SINGLE_MODEL"
 
+    #: A constant which can be used with the deployment_type property of a UpdateModelDeploymentConfigurationDetails.
+    #: This constant has a value of "MODEL_GROUP"
+    DEPLOYMENT_TYPE_MODEL_GROUP = "MODEL_GROUP"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateModelDeploymentConfigurationDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.data_science.models.UpdateModelGroupDeploymentConfigurationDetails`
         * :class:`~oci.data_science.models.UpdateSingleModelDeploymentConfigurationDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param deployment_type:
             The value to assign to the deployment_type property of this UpdateModelDeploymentConfigurationDetails.
-            Allowed values for this property are: "SINGLE_MODEL"
+            Allowed values for this property are: "SINGLE_MODEL", "MODEL_GROUP"
         :type deployment_type: str
 
         """
@@ -50,6 +55,9 @@ class UpdateModelDeploymentConfigurationDetails(object):
         """
         type = object_dictionary['deploymentType']
 
+        if type == 'MODEL_GROUP':
+            return 'UpdateModelGroupDeploymentConfigurationDetails'
+
         if type == 'SINGLE_MODEL':
             return 'UpdateSingleModelDeploymentConfigurationDetails'
         else:
@@ -61,7 +69,7 @@ class UpdateModelDeploymentConfigurationDetails(object):
         Gets the deployment_type of this UpdateModelDeploymentConfigurationDetails.
         The type of the model deployment.
 
-        Allowed values for this property are: "SINGLE_MODEL"
+        Allowed values for this property are: "SINGLE_MODEL", "MODEL_GROUP"
 
 
         :return: The deployment_type of this UpdateModelDeploymentConfigurationDetails.
@@ -79,7 +87,7 @@ class UpdateModelDeploymentConfigurationDetails(object):
         :param deployment_type: The deployment_type of this UpdateModelDeploymentConfigurationDetails.
         :type: str
         """
-        allowed_values = ["SINGLE_MODEL"]
+        allowed_values = ["SINGLE_MODEL", "MODEL_GROUP"]
         if not value_allowed_none_or_none_sentinel(deployment_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `deployment_type`, must be None or one of {allowed_values}"

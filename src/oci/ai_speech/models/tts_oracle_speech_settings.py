@@ -95,7 +95,7 @@ class TtsOracleSpeechSettings(object):
         Gets the text_type of this TtsOracleSpeechSettings.
         The format in which the input text has been supplied i.e., Text or SSML. The supported text types are:
         - TEXT
-        - SSML
+        - SSML : This is only supported for en-US language.
 
         Allowed values for this property are: "TEXT", "SSML"
 
@@ -111,7 +111,7 @@ class TtsOracleSpeechSettings(object):
         Sets the text_type of this TtsOracleSpeechSettings.
         The format in which the input text has been supplied i.e., Text or SSML. The supported text types are:
         - TEXT
-        - SSML
+        - SSML : This is only supported for en-US language.
 
 
         :param text_type: The text_type of this TtsOracleSpeechSettings.

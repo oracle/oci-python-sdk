@@ -22,6 +22,8 @@ from oci.generative_ai_agent.models import (
     RagToolConfig,
     UpdateAgentDetails,
     UpdateToolDetails,
+    SqlToolConfig,
+    DatabaseToolConnection,
 )
 from oci.generative_ai_agent_runtime import GenerativeAiAgentRuntimeClient
 from oci.generative_ai_agent_runtime.models import (
@@ -47,7 +49,8 @@ from oci.addons.adk.logger import default_logger as logger
 from oci.addons.adk.run.types import PerformedAction
 from oci.addons.adk.tool import FunctionTool
 from oci.addons.adk.tool.prebuilt import AgenticRagTool
-from oci.addons.adk.util import build_custom_function_params, get_region_endpoint
+from oci.addons.adk.tool.prebuilt.agentic_sql_tool import AgenticSqlTool
+from oci.addons.adk.util import build_custom_function_params, get_region_endpoint, create_input_location
 
 
 class AgentClient:
@@ -444,6 +447,67 @@ class AgentClient:
 
         return to_dict(add_tool_response.data)
 
+    def add_sql_tool(
+        self,
+        sql_tool: AgenticSqlTool,
+        compartment_id: str,
+        agent_id: str,
+    ) -> Dict[str, Any]:
+        """
+        Add an SQL tool to the agent.
+
+        Args:
+            sql_tool: The SQL tool to add
+            compartment_id: The compartment ID
+            agent_id: The agent ID
+
+        Returns:
+            Dict[str, Any]: The added tool as a dict with its attributes
+
+        Raises:
+            AgentError: If adding the tool fails
+        """
+
+        tool_config = SqlToolConfig(
+            database_schema=create_input_location(sql_tool.database_schema.dict()),
+
+            database_connection=DatabaseToolConnection(connection_id=sql_tool.db_tool_connection_id)
+            if sql_tool.db_tool_connection_id else None,
+
+            should_enable_sql_execution=sql_tool.enable_sql_execution,
+            should_enable_self_correction=sql_tool.enable_self_correction,
+            dialect=sql_tool.dialect.value,
+            model_size=sql_tool.model_size.value,
+
+            icl_examples=create_input_location(sql_tool.icl_examples.dict())
+            if sql_tool.icl_examples else None,
+
+            table_and_column_description=create_input_location(sql_tool.table_and_column_description.dict())
+            if sql_tool.table_and_column_description else None,
+
+            generation_llm_customization=LlmCustomization(instruction=sql_tool.custom_instructions)
+            if sql_tool.custom_instructions else None,
+        )
+
+        create_tool_details = CreateToolDetails(
+            compartment_id=compartment_id,
+            agent_id=agent_id,
+            display_name=sql_tool.name,
+            description=sql_tool.description,
+            tool_config=tool_config,
+            freeform_tags=FREEFORM_TAGS,
+        )
+
+        add_tool_response: Response = self._invoke(
+            method=self._mgmt_client.create_tool,
+            success_message="Add sql tool successful",
+            error_message="Failed to add sql tool",
+            debug=self.debug,
+            create_tool_details=create_tool_details,
+        )
+
+        return to_dict(add_tool_response.data)
+
     def update_function_tool(
         self,
         tool_id: str,
@@ -520,6 +584,57 @@ class AgentClient:
             method=self._mgmt_client.update_tool,
             success_message="RAG tool update succeeded",
             error_message="Failed to update RAG tool",
+            debug=self.debug,
+            tool_id=tool_id,
+            update_tool_details=update_tool_details,
+        )
+
+    def update_sql_tool(
+        self,
+        tool_id: str,
+        sql_tool: AgenticSqlTool,
+    ) -> None:
+        """
+        Update a sql tool by ID.
+        Args:
+            tool_id: The ID of the tool to update
+            sql_tool: The sql tool to update
+        Returns:
+            None
+        Raises:
+            AgentError: If updating the tool fails
+        """
+        tool_config = SqlToolConfig(
+            database_schema=create_input_location(sql_tool.database_schema.dict()),
+
+            database_connection=DatabaseToolConnection(connection_id=sql_tool.db_tool_connection_id)
+            if sql_tool.db_tool_connection_id else None,
+
+            should_enable_sql_execution=sql_tool.enable_sql_execution,
+            should_enable_self_correction=sql_tool.enable_self_correction,
+            dialect=sql_tool.dialect.value,
+            model_size=sql_tool.model_size.value,
+
+            icl_examples=create_input_location(sql_tool.icl_examples.dict())
+            if sql_tool.icl_examples else None,
+
+            table_and_column_description=create_input_location(sql_tool.table_and_column_description.dict())
+            if sql_tool.table_and_column_description else None,
+
+            generation_llm_customization=LlmCustomization(instruction=sql_tool.custom_instructions)
+            if sql_tool.custom_instructions else None,
+        )
+
+        update_tool_details = UpdateToolDetails(
+            tool_config=tool_config,
+            display_name=sql_tool.name,
+            description=sql_tool.description,
+            freeform_tags=FREEFORM_TAGS,
+        )
+        self._invoke(
+            method=self._mgmt_client.update_tool,
+            success_message="Update sql tool successful",
+            error_message="Failed to update sql tool",
             debug=self.debug,
             tool_id=tool_id,
             update_tool_details=update_tool_details,

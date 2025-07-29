@@ -58,6 +58,8 @@ class HeaderValidationRequestPolicy(object):
     def headers(self):
         """
         Gets the headers of this HeaderValidationRequestPolicy.
+        The List of Headers
+
 
         :return: The headers of this HeaderValidationRequestPolicy.
         :rtype: list[oci.apigateway.models.HeaderValidationItem]
@@ -68,6 +70,8 @@ class HeaderValidationRequestPolicy(object):
     def headers(self, headers):
         """
         Sets the headers of this HeaderValidationRequestPolicy.
+        The List of Headers
+
 
         :param headers: The headers of this HeaderValidationRequestPolicy.
         :type: list[oci.apigateway.models.HeaderValidationItem]

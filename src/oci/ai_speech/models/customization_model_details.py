@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CustomizationModelDetails(object):
     """
-    Customization details.
+    Details of the base ASR model to train a Customization for.
     """
 
     #: A constant which can be used with the domain property of a CustomizationModelDetails.
@@ -54,7 +54,7 @@ class CustomizationModelDetails(object):
     def domain(self):
         """
         Gets the domain of this CustomizationModelDetails.
-        Customization Domain
+        Domain of the ASR model
 
         Allowed values for this property are: "GENERIC", "MEDICAL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -69,7 +69,7 @@ class CustomizationModelDetails(object):
     def domain(self, domain):
         """
         Sets the domain of this CustomizationModelDetails.
-        Customization Domain
+        Domain of the ASR model
 
 
         :param domain: The domain of this CustomizationModelDetails.

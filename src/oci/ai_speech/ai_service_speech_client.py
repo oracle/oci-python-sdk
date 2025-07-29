@@ -1869,9 +1869,12 @@ class AIServiceSpeechClient(object):
             The ID of the compartment in which to list resources.
 
         :param str model_name: (optional)
-            The model the user wants to run the inference on.
+            The model name to filter voices for given model name.
 
             Allowed values are: "TTS_1_STANDARD", "TTS_2_NATURAL"
+
+        :param str language_code: (optional)
+            The Code or Id of the language to filter voices for given language code.
 
         :param str display_name: (optional)
             The name of the speaker voice in which the user wants tts inference to be.
@@ -1910,6 +1913,7 @@ class AIServiceSpeechClient(object):
             "retry_strategy",
             "compartment_id",
             "model_name",
+            "language_code",
             "display_name",
             "opc_request_id"
         ]
@@ -1928,6 +1932,7 @@ class AIServiceSpeechClient(object):
         query_params = {
             "compartmentId": kwargs.get("compartment_id", missing),
             "modelName": kwargs.get("model_name", missing),
+            "languageCode": kwargs.get("language_code", missing),
             "displayName": kwargs.get("display_name", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}

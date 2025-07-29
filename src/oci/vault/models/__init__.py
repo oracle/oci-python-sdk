@@ -13,6 +13,8 @@ from .change_secret_compartment_details import ChangeSecretCompartmentDetails
 from .create_secret_details import CreateSecretDetails
 from .function_target_system_details import FunctionTargetSystemDetails
 from .passphrase_generation_context import PassphraseGenerationContext
+from .replication_config import ReplicationConfig
+from .replication_target import ReplicationTarget
 from .rotation_config import RotationConfig
 from .schedule_secret_deletion_details import ScheduleSecretDeletionDetails
 from .schedule_secret_version_deletion_details import ScheduleSecretVersionDeletionDetails
@@ -25,6 +27,7 @@ from .secret_rule import SecretRule
 from .secret_summary import SecretSummary
 from .secret_version import SecretVersion
 from .secret_version_summary import SecretVersionSummary
+from .source_region_information import SourceRegionInformation
 from .ssh_key_generation_context import SshKeyGenerationContext
 from .target_system_details import TargetSystemDetails
 from .update_secret_details import UpdateSecretDetails
@@ -38,6 +41,8 @@ vault_type_mapping = {
     "CreateSecretDetails": CreateSecretDetails,
     "FunctionTargetSystemDetails": FunctionTargetSystemDetails,
     "PassphraseGenerationContext": PassphraseGenerationContext,
+    "ReplicationConfig": ReplicationConfig,
+    "ReplicationTarget": ReplicationTarget,
     "RotationConfig": RotationConfig,
     "ScheduleSecretDeletionDetails": ScheduleSecretDeletionDetails,
     "ScheduleSecretVersionDeletionDetails": ScheduleSecretVersionDeletionDetails,
@@ -50,6 +55,7 @@ vault_type_mapping = {
     "SecretSummary": SecretSummary,
     "SecretVersion": SecretVersion,
     "SecretVersionSummary": SecretVersionSummary,
+    "SourceRegionInformation": SourceRegionInformation,
     "SshKeyGenerationContext": SshKeyGenerationContext,
     "TargetSystemDetails": TargetSystemDetails,
     "UpdateSecretDetails": UpdateSecretDetails

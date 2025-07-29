@@ -31,6 +31,14 @@ class ImportConfigurationFailedItemSummary(object):
     #: This constant has a value of "OPTIONS"
     CONFIG_TYPE_OPTIONS = "OPTIONS"
 
+    #: A constant which can be used with the config_type property of a ImportConfigurationFailedItemSummary.
+    #: This constant has a value of "AGENT"
+    CONFIG_TYPE_AGENT = "AGENT"
+
+    #: A constant which can be used with the config_type property of a ImportConfigurationFailedItemSummary.
+    #: This constant has a value of "MACS_APM_EXTENSION"
+    CONFIG_TYPE_MACS_APM_EXTENSION = "MACS_APM_EXTENSION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ImportConfigurationFailedItemSummary object with values from keyword arguments.
@@ -50,7 +58,7 @@ class ImportConfigurationFailedItemSummary(object):
 
         :param config_type:
             The value to assign to the config_type property of this ImportConfigurationFailedItemSummary.
-            Allowed values for this property are: "SPAN_FILTER", "METRIC_GROUP", "APDEX", "OPTIONS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SPAN_FILTER", "METRIC_GROUP", "APDEX", "OPTIONS", "AGENT", "MACS_APM_EXTENSION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type config_type: str
 
@@ -156,7 +164,7 @@ class ImportConfigurationFailedItemSummary(object):
         Gets the config_type of this ImportConfigurationFailedItemSummary.
         The type of configuration item.
 
-        Allowed values for this property are: "SPAN_FILTER", "METRIC_GROUP", "APDEX", "OPTIONS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "SPAN_FILTER", "METRIC_GROUP", "APDEX", "OPTIONS", "AGENT", "MACS_APM_EXTENSION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -175,7 +183,7 @@ class ImportConfigurationFailedItemSummary(object):
         :param config_type: The config_type of this ImportConfigurationFailedItemSummary.
         :type: str
         """
-        allowed_values = ["SPAN_FILTER", "METRIC_GROUP", "APDEX", "OPTIONS"]
+        allowed_values = ["SPAN_FILTER", "METRIC_GROUP", "APDEX", "OPTIONS", "AGENT", "MACS_APM_EXTENSION"]
         if not value_allowed_none_or_none_sentinel(config_type, allowed_values):
             config_type = 'UNKNOWN_ENUM_VALUE'
         self._config_type = config_type

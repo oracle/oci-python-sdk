@@ -27,7 +27,7 @@ class ExportImportApdexRulesSummary(ExportImportConfigSummary):
 
         :param config_type:
             The value to assign to the config_type property of this ExportImportApdexRulesSummary.
-            Allowed values for this property are: "SPAN_FILTER", "METRIC_GROUP", "APDEX", "OPTIONS"
+            Allowed values for this property are: "SPAN_FILTER", "METRIC_GROUP", "APDEX", "OPTIONS", "AGENT", "MACS_APM_EXTENSION"
         :type config_type: str
 
         :param freeform_tags:

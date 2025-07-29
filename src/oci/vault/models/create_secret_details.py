@@ -48,6 +48,10 @@ class CreateSecretDetails(object):
             The value to assign to the secret_content property of this CreateSecretDetails.
         :type secret_content: oci.vault.models.SecretContentDetails
 
+        :param replication_config:
+            The value to assign to the replication_config property of this CreateSecretDetails.
+        :type replication_config: oci.vault.models.ReplicationConfig
+
         :param rotation_config:
             The value to assign to the rotation_config property of this CreateSecretDetails.
         :type rotation_config: oci.vault.models.RotationConfig
@@ -81,6 +85,7 @@ class CreateSecretDetails(object):
             'key_id': 'str',
             'metadata': 'dict(str, object)',
             'secret_content': 'SecretContentDetails',
+            'replication_config': 'ReplicationConfig',
             'rotation_config': 'RotationConfig',
             'secret_name': 'str',
             'secret_rules': 'list[SecretRule]',
@@ -96,6 +101,7 @@ class CreateSecretDetails(object):
             'key_id': 'keyId',
             'metadata': 'metadata',
             'secret_content': 'secretContent',
+            'replication_config': 'replicationConfig',
             'rotation_config': 'rotationConfig',
             'secret_name': 'secretName',
             'secret_rules': 'secretRules',
@@ -110,6 +116,7 @@ class CreateSecretDetails(object):
         self._key_id = None
         self._metadata = None
         self._secret_content = None
+        self._replication_config = None
         self._rotation_config = None
         self._secret_name = None
         self._secret_rules = None
@@ -300,6 +307,26 @@ class CreateSecretDetails(object):
         :type: oci.vault.models.SecretContentDetails
         """
         self._secret_content = secret_content
+
+    @property
+    def replication_config(self):
+        """
+        Gets the replication_config of this CreateSecretDetails.
+
+        :return: The replication_config of this CreateSecretDetails.
+        :rtype: oci.vault.models.ReplicationConfig
+        """
+        return self._replication_config
+
+    @replication_config.setter
+    def replication_config(self, replication_config):
+        """
+        Sets the replication_config of this CreateSecretDetails.
+
+        :param replication_config: The replication_config of this CreateSecretDetails.
+        :type: oci.vault.models.ReplicationConfig
+        """
+        self._replication_config = replication_config
 
     @property
     def rotation_config(self):

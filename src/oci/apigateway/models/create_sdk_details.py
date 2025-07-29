@@ -32,6 +32,10 @@ class CreateSdkDetails(object):
             The value to assign to the api_id property of this CreateSdkDetails.
         :type api_id: str
 
+        :param locks:
+            The value to assign to the locks property of this CreateSdkDetails.
+        :type locks: list[oci.apigateway.models.AddResourceLockDetails]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateSdkDetails.
         :type freeform_tags: dict(str, str)
@@ -49,6 +53,7 @@ class CreateSdkDetails(object):
             'display_name': 'str',
             'target_language': 'str',
             'api_id': 'str',
+            'locks': 'list[AddResourceLockDetails]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'parameters': 'dict(str, str)'
@@ -57,6 +62,7 @@ class CreateSdkDetails(object):
             'display_name': 'displayName',
             'target_language': 'targetLanguage',
             'api_id': 'apiId',
+            'locks': 'locks',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'parameters': 'parameters'
@@ -64,6 +70,7 @@ class CreateSdkDetails(object):
         self._display_name = None
         self._target_language = None
         self._api_id = None
+        self._locks = None
         self._freeform_tags = None
         self._defined_tags = None
         self._parameters = None
@@ -149,6 +156,30 @@ class CreateSdkDetails(object):
         :type: str
         """
         self._api_id = api_id
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this CreateSdkDetails.
+        Locks associated with this resource.
+
+
+        :return: The locks of this CreateSdkDetails.
+        :rtype: list[oci.apigateway.models.AddResourceLockDetails]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this CreateSdkDetails.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this CreateSdkDetails.
+        :type: list[oci.apigateway.models.AddResourceLockDetails]
+        """
+        self._locks = locks
 
     @property
     def freeform_tags(self):

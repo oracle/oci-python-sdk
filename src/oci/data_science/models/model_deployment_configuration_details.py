@@ -19,18 +19,23 @@ class ModelDeploymentConfigurationDetails(object):
     #: This constant has a value of "SINGLE_MODEL"
     DEPLOYMENT_TYPE_SINGLE_MODEL = "SINGLE_MODEL"
 
+    #: A constant which can be used with the deployment_type property of a ModelDeploymentConfigurationDetails.
+    #: This constant has a value of "MODEL_GROUP"
+    DEPLOYMENT_TYPE_MODEL_GROUP = "MODEL_GROUP"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ModelDeploymentConfigurationDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.data_science.models.SingleModelDeploymentConfigurationDetails`
+        * :class:`~oci.data_science.models.ModelGroupDeploymentConfigurationDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param deployment_type:
             The value to assign to the deployment_type property of this ModelDeploymentConfigurationDetails.
-            Allowed values for this property are: "SINGLE_MODEL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SINGLE_MODEL", "MODEL_GROUP", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type deployment_type: str
 
@@ -53,6 +58,9 @@ class ModelDeploymentConfigurationDetails(object):
 
         if type == 'SINGLE_MODEL':
             return 'SingleModelDeploymentConfigurationDetails'
+
+        if type == 'MODEL_GROUP':
+            return 'ModelGroupDeploymentConfigurationDetails'
         else:
             return 'ModelDeploymentConfigurationDetails'
 
@@ -62,7 +70,7 @@ class ModelDeploymentConfigurationDetails(object):
         **[Required]** Gets the deployment_type of this ModelDeploymentConfigurationDetails.
         The type of the model deployment.
 
-        Allowed values for this property are: "SINGLE_MODEL", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "SINGLE_MODEL", "MODEL_GROUP", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -81,7 +89,7 @@ class ModelDeploymentConfigurationDetails(object):
         :param deployment_type: The deployment_type of this ModelDeploymentConfigurationDetails.
         :type: str
         """
-        allowed_values = ["SINGLE_MODEL"]
+        allowed_values = ["SINGLE_MODEL", "MODEL_GROUP"]
         if not value_allowed_none_or_none_sentinel(deployment_type, allowed_values):
             deployment_type = 'UNKNOWN_ENUM_VALUE'
         self._deployment_type = deployment_type

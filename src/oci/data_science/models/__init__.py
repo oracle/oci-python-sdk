@@ -26,16 +26,22 @@ from .change_ml_application_instance_compartment_details import ChangeMlApplicat
 from .change_ml_application_instance_view_compartment_details import ChangeMlApplicationInstanceViewCompartmentDetails
 from .change_model_compartment_details import ChangeModelCompartmentDetails
 from .change_model_deployment_compartment_details import ChangeModelDeploymentCompartmentDetails
+from .change_model_group_compartment_details import ChangeModelGroupCompartmentDetails
+from .change_model_group_version_history_compartment_details import ChangeModelGroupVersionHistoryCompartmentDetails
 from .change_model_version_set_compartment_details import ChangeModelVersionSetCompartmentDetails
 from .change_notebook_session_compartment_details import ChangeNotebookSessionCompartmentDetails
 from .change_pipeline_compartment_details import ChangePipelineCompartmentDetails
 from .change_pipeline_run_compartment_details import ChangePipelineRunCompartmentDetails
 from .change_project_compartment_details import ChangeProjectCompartmentDetails
 from .change_schedule_compartment_details import ChangeScheduleCompartmentDetails
+from .clone_create_from_model_group_details import CloneCreateFromModelGroupDetails
+from .clone_create_from_model_group_version_history_details import CloneCreateFromModelGroupVersionHistoryDetails
+from .clone_model_group_details import CloneModelGroupDetails
 from .configuration_property import ConfigurationProperty
 from .configuration_property_schema import ConfigurationPropertySchema
 from .container_summary import ContainerSummary
 from .create_auth_configuration_details import CreateAuthConfigurationDetails
+from .create_base_model_group_details import CreateBaseModelGroupDetails
 from .create_data_science_private_endpoint_details import CreateDataSciencePrivateEndpointDetails
 from .create_iam_auth_configuration_create_details import CreateIamAuthConfigurationCreateDetails
 from .create_idcs_auth_configuration_details import CreateIdcsAuthConfigurationDetails
@@ -48,6 +54,8 @@ from .create_ml_application_implementation_details import CreateMlApplicationImp
 from .create_ml_application_instance_details import CreateMlApplicationInstanceDetails
 from .create_model_deployment_details import CreateModelDeploymentDetails
 from .create_model_details import CreateModelDetails
+from .create_model_group_details import CreateModelGroupDetails
+from .create_model_group_version_history_details import CreateModelGroupVersionHistoryDetails
 from .create_model_provenance_details import CreateModelProvenanceDetails
 from .create_model_version_set_details import CreateModelVersionSetDetails
 from .create_notebook_session_details import CreateNotebookSessionDetails
@@ -57,6 +65,7 @@ from .create_pipeline_run_schedule_action_details import CreatePipelineRunSchedu
 from .create_project_details import CreateProjectDetails
 from .create_schedule_details import CreateScheduleDetails
 from .custom_expression_query_scaling_configuration import CustomExpressionQueryScalingConfiguration
+from .custom_metadata import CustomMetadata
 from .custom_metric_expression_rule import CustomMetricExpressionRule
 from .data_flow_application_application_component import DataFlowApplicationApplicationComponent
 from .data_science_job_application_component import DataScienceJobApplicationComponent
@@ -77,14 +86,18 @@ from .fixed_size_scaling_policy import FixedSizeScalingPolicy
 from .generic_job_run_use_case_configuration_details import GenericJobRunUseCaseConfigurationDetails
 from .generic_oci_resource_application_component import GenericOciResourceApplicationComponent
 from .generic_oci_resource_instance_component import GenericOciResourceInstanceComponent
+from .heterogeneous_model_group_details import HeterogeneousModelGroupDetails
+from .homogeneous_model_group_details import HomogeneousModelGroupDetails
 from .iam_auth_configuration import IamAuthConfiguration
 from .idcs_auth_configuration import IdcsAuthConfiguration
 from .idcs_custom_service_auth_configuration import IdcsCustomServiceAuthConfiguration
 from .implementation_log_details import ImplementationLogDetails
 from .implementation_logging import ImplementationLogging
 from .import_model_artifact_details import ImportModelArtifactDetails
+from .infrastructure_configuration_details import InfrastructureConfigurationDetails
 from .instance_component import InstanceComponent
 from .instance_configuration import InstanceConfiguration
+from .instance_pool_infrastructure_configuration_details import InstancePoolInfrastructureConfigurationDetails
 from .instance_pool_model_deployment_system_data import InstancePoolModelDeploymentSystemData
 from .invoke_ml_application_provider_trigger_schedule_action_details import InvokeMlApplicationProviderTriggerScheduleActionDetails
 from .job import Job
@@ -102,6 +115,8 @@ from .job_shape_summary import JobShapeSummary
 from .job_summary import JobSummary
 from .log_details import LogDetails
 from .managed_egress_standalone_job_infrastructure_configuration_details import ManagedEgressStandaloneJobInfrastructureConfigurationDetails
+from .member_model_details import MemberModelDetails
+from .member_model_entries import MemberModelEntries
 from .metadata import Metadata
 from .metric_expression_rule import MetricExpressionRule
 from .ml_application import MlApplication
@@ -130,13 +145,24 @@ from .model_deployment import ModelDeployment
 from .model_deployment_configuration_details import ModelDeploymentConfigurationDetails
 from .model_deployment_environment_configuration_details import ModelDeploymentEnvironmentConfigurationDetails
 from .model_deployment_instance_shape_config_details import ModelDeploymentInstanceShapeConfigDetails
+from .model_deployment_model_state_summary import ModelDeploymentModelStateSummary
 from .model_deployment_shape_summary import ModelDeploymentShapeSummary
 from .model_deployment_summary import ModelDeploymentSummary
 from .model_deployment_system_data import ModelDeploymentSystemData
+from .model_group import ModelGroup
+from .model_group_clone_source_details import ModelGroupCloneSourceDetails
+from .model_group_configuration_details import ModelGroupConfigurationDetails
+from .model_group_deployment_configuration_details import ModelGroupDeploymentConfigurationDetails
+from .model_group_details import ModelGroupDetails
+from .model_group_model_summary import ModelGroupModelSummary
+from .model_group_summary import ModelGroupSummary
+from .model_group_version_history import ModelGroupVersionHistory
+from .model_group_version_history_summary import ModelGroupVersionHistorySummary
 from .model_provenance import ModelProvenance
 from .model_summary import ModelSummary
 from .model_version_set import ModelVersionSet
 from .model_version_set_summary import ModelVersionSetSummary
+from .modify_model_group_details import ModifyModelGroupDetails
 from .notebook_session import NotebookSession
 from .notebook_session_config_details import NotebookSessionConfigDetails
 from .notebook_session_configuration_details import NotebookSessionConfigurationDetails
@@ -152,6 +178,10 @@ from .object_storage_mount_configuration_details import ObjectStorageMountConfig
 from .object_storage_object_instance_component import ObjectStorageObjectInstanceComponent
 from .ocir_container_job_environment_configuration_details import OcirContainerJobEnvironmentConfigurationDetails
 from .ocir_model_deployment_environment_configuration_details import OcirModelDeploymentEnvironmentConfigurationDetails
+from .patch_insert_new_member_models import PatchInsertNewMemberModels
+from .patch_instruction import PatchInstruction
+from .patch_model_group_member_model_details import PatchModelGroupMemberModelDetails
+from .patch_remove_member_models import PatchRemoveMemberModels
 from .pipeline import Pipeline
 from .pipeline_configuration_details import PipelineConfigurationDetails
 from .pipeline_container_configuration_details import PipelineContainerConfigurationDetails
@@ -204,6 +234,7 @@ from .schedule_log_details import ScheduleLogDetails
 from .schedule_summary import ScheduleSummary
 from .schedule_trigger import ScheduleTrigger
 from .single_model_deployment_configuration_details import SingleModelDeploymentConfigurationDetails
+from .stacked_model_group_details import StackedModelGroupDetails
 from .standalone_job_infrastructure_configuration_details import StandaloneJobInfrastructureConfigurationDetails
 from .storage_mount_configuration_details import StorageMountConfigurationDetails
 from .tag_configuration import TagConfiguration
@@ -214,6 +245,8 @@ from .trigger_parameter import TriggerParameter
 from .update_category_log_details import UpdateCategoryLogDetails
 from .update_data_science_private_endpoint_details import UpdateDataSciencePrivateEndpointDetails
 from .update_default_model_deployment_environment_configuration_details import UpdateDefaultModelDeploymentEnvironmentConfigurationDetails
+from .update_infrastructure_configuration_details import UpdateInfrastructureConfigurationDetails
+from .update_instance_pool_infrastructure_configuration_details import UpdateInstancePoolInfrastructureConfigurationDetails
 from .update_job_details import UpdateJobDetails
 from .update_job_run_details import UpdateJobRunDetails
 from .update_ml_application_details import UpdateMlApplicationDetails
@@ -226,6 +259,10 @@ from .update_model_deployment_configuration_details import UpdateModelDeployment
 from .update_model_deployment_details import UpdateModelDeploymentDetails
 from .update_model_deployment_environment_configuration_details import UpdateModelDeploymentEnvironmentConfigurationDetails
 from .update_model_details import UpdateModelDetails
+from .update_model_group_configuration_details import UpdateModelGroupConfigurationDetails
+from .update_model_group_deployment_configuration_details import UpdateModelGroupDeploymentConfigurationDetails
+from .update_model_group_details import UpdateModelGroupDetails
+from .update_model_group_version_history_details import UpdateModelGroupVersionHistoryDetails
 from .update_model_provenance_details import UpdateModelProvenanceDetails
 from .update_model_version_set_details import UpdateModelVersionSetDetails
 from .update_notebook_session_details import UpdateNotebookSessionDetails
@@ -264,16 +301,22 @@ data_science_type_mapping = {
     "ChangeMlApplicationInstanceViewCompartmentDetails": ChangeMlApplicationInstanceViewCompartmentDetails,
     "ChangeModelCompartmentDetails": ChangeModelCompartmentDetails,
     "ChangeModelDeploymentCompartmentDetails": ChangeModelDeploymentCompartmentDetails,
+    "ChangeModelGroupCompartmentDetails": ChangeModelGroupCompartmentDetails,
+    "ChangeModelGroupVersionHistoryCompartmentDetails": ChangeModelGroupVersionHistoryCompartmentDetails,
     "ChangeModelVersionSetCompartmentDetails": ChangeModelVersionSetCompartmentDetails,
     "ChangeNotebookSessionCompartmentDetails": ChangeNotebookSessionCompartmentDetails,
     "ChangePipelineCompartmentDetails": ChangePipelineCompartmentDetails,
     "ChangePipelineRunCompartmentDetails": ChangePipelineRunCompartmentDetails,
     "ChangeProjectCompartmentDetails": ChangeProjectCompartmentDetails,
     "ChangeScheduleCompartmentDetails": ChangeScheduleCompartmentDetails,
+    "CloneCreateFromModelGroupDetails": CloneCreateFromModelGroupDetails,
+    "CloneCreateFromModelGroupVersionHistoryDetails": CloneCreateFromModelGroupVersionHistoryDetails,
+    "CloneModelGroupDetails": CloneModelGroupDetails,
     "ConfigurationProperty": ConfigurationProperty,
     "ConfigurationPropertySchema": ConfigurationPropertySchema,
     "ContainerSummary": ContainerSummary,
     "CreateAuthConfigurationDetails": CreateAuthConfigurationDetails,
+    "CreateBaseModelGroupDetails": CreateBaseModelGroupDetails,
     "CreateDataSciencePrivateEndpointDetails": CreateDataSciencePrivateEndpointDetails,
     "CreateIamAuthConfigurationCreateDetails": CreateIamAuthConfigurationCreateDetails,
     "CreateIdcsAuthConfigurationDetails": CreateIdcsAuthConfigurationDetails,
@@ -286,6 +329,8 @@ data_science_type_mapping = {
     "CreateMlApplicationInstanceDetails": CreateMlApplicationInstanceDetails,
     "CreateModelDeploymentDetails": CreateModelDeploymentDetails,
     "CreateModelDetails": CreateModelDetails,
+    "CreateModelGroupDetails": CreateModelGroupDetails,
+    "CreateModelGroupVersionHistoryDetails": CreateModelGroupVersionHistoryDetails,
     "CreateModelProvenanceDetails": CreateModelProvenanceDetails,
     "CreateModelVersionSetDetails": CreateModelVersionSetDetails,
     "CreateNotebookSessionDetails": CreateNotebookSessionDetails,
@@ -295,6 +340,7 @@ data_science_type_mapping = {
     "CreateProjectDetails": CreateProjectDetails,
     "CreateScheduleDetails": CreateScheduleDetails,
     "CustomExpressionQueryScalingConfiguration": CustomExpressionQueryScalingConfiguration,
+    "CustomMetadata": CustomMetadata,
     "CustomMetricExpressionRule": CustomMetricExpressionRule,
     "DataFlowApplicationApplicationComponent": DataFlowApplicationApplicationComponent,
     "DataScienceJobApplicationComponent": DataScienceJobApplicationComponent,
@@ -315,14 +361,18 @@ data_science_type_mapping = {
     "GenericJobRunUseCaseConfigurationDetails": GenericJobRunUseCaseConfigurationDetails,
     "GenericOciResourceApplicationComponent": GenericOciResourceApplicationComponent,
     "GenericOciResourceInstanceComponent": GenericOciResourceInstanceComponent,
+    "HeterogeneousModelGroupDetails": HeterogeneousModelGroupDetails,
+    "HomogeneousModelGroupDetails": HomogeneousModelGroupDetails,
     "IamAuthConfiguration": IamAuthConfiguration,
     "IdcsAuthConfiguration": IdcsAuthConfiguration,
     "IdcsCustomServiceAuthConfiguration": IdcsCustomServiceAuthConfiguration,
     "ImplementationLogDetails": ImplementationLogDetails,
     "ImplementationLogging": ImplementationLogging,
     "ImportModelArtifactDetails": ImportModelArtifactDetails,
+    "InfrastructureConfigurationDetails": InfrastructureConfigurationDetails,
     "InstanceComponent": InstanceComponent,
     "InstanceConfiguration": InstanceConfiguration,
+    "InstancePoolInfrastructureConfigurationDetails": InstancePoolInfrastructureConfigurationDetails,
     "InstancePoolModelDeploymentSystemData": InstancePoolModelDeploymentSystemData,
     "InvokeMlApplicationProviderTriggerScheduleActionDetails": InvokeMlApplicationProviderTriggerScheduleActionDetails,
     "Job": Job,
@@ -340,6 +390,8 @@ data_science_type_mapping = {
     "JobSummary": JobSummary,
     "LogDetails": LogDetails,
     "ManagedEgressStandaloneJobInfrastructureConfigurationDetails": ManagedEgressStandaloneJobInfrastructureConfigurationDetails,
+    "MemberModelDetails": MemberModelDetails,
+    "MemberModelEntries": MemberModelEntries,
     "Metadata": Metadata,
     "MetricExpressionRule": MetricExpressionRule,
     "MlApplication": MlApplication,
@@ -368,13 +420,24 @@ data_science_type_mapping = {
     "ModelDeploymentConfigurationDetails": ModelDeploymentConfigurationDetails,
     "ModelDeploymentEnvironmentConfigurationDetails": ModelDeploymentEnvironmentConfigurationDetails,
     "ModelDeploymentInstanceShapeConfigDetails": ModelDeploymentInstanceShapeConfigDetails,
+    "ModelDeploymentModelStateSummary": ModelDeploymentModelStateSummary,
     "ModelDeploymentShapeSummary": ModelDeploymentShapeSummary,
     "ModelDeploymentSummary": ModelDeploymentSummary,
     "ModelDeploymentSystemData": ModelDeploymentSystemData,
+    "ModelGroup": ModelGroup,
+    "ModelGroupCloneSourceDetails": ModelGroupCloneSourceDetails,
+    "ModelGroupConfigurationDetails": ModelGroupConfigurationDetails,
+    "ModelGroupDeploymentConfigurationDetails": ModelGroupDeploymentConfigurationDetails,
+    "ModelGroupDetails": ModelGroupDetails,
+    "ModelGroupModelSummary": ModelGroupModelSummary,
+    "ModelGroupSummary": ModelGroupSummary,
+    "ModelGroupVersionHistory": ModelGroupVersionHistory,
+    "ModelGroupVersionHistorySummary": ModelGroupVersionHistorySummary,
     "ModelProvenance": ModelProvenance,
     "ModelSummary": ModelSummary,
     "ModelVersionSet": ModelVersionSet,
     "ModelVersionSetSummary": ModelVersionSetSummary,
+    "ModifyModelGroupDetails": ModifyModelGroupDetails,
     "NotebookSession": NotebookSession,
     "NotebookSessionConfigDetails": NotebookSessionConfigDetails,
     "NotebookSessionConfigurationDetails": NotebookSessionConfigurationDetails,
@@ -390,6 +453,10 @@ data_science_type_mapping = {
     "ObjectStorageObjectInstanceComponent": ObjectStorageObjectInstanceComponent,
     "OcirContainerJobEnvironmentConfigurationDetails": OcirContainerJobEnvironmentConfigurationDetails,
     "OcirModelDeploymentEnvironmentConfigurationDetails": OcirModelDeploymentEnvironmentConfigurationDetails,
+    "PatchInsertNewMemberModels": PatchInsertNewMemberModels,
+    "PatchInstruction": PatchInstruction,
+    "PatchModelGroupMemberModelDetails": PatchModelGroupMemberModelDetails,
+    "PatchRemoveMemberModels": PatchRemoveMemberModels,
     "Pipeline": Pipeline,
     "PipelineConfigurationDetails": PipelineConfigurationDetails,
     "PipelineContainerConfigurationDetails": PipelineContainerConfigurationDetails,
@@ -442,6 +509,7 @@ data_science_type_mapping = {
     "ScheduleSummary": ScheduleSummary,
     "ScheduleTrigger": ScheduleTrigger,
     "SingleModelDeploymentConfigurationDetails": SingleModelDeploymentConfigurationDetails,
+    "StackedModelGroupDetails": StackedModelGroupDetails,
     "StandaloneJobInfrastructureConfigurationDetails": StandaloneJobInfrastructureConfigurationDetails,
     "StorageMountConfigurationDetails": StorageMountConfigurationDetails,
     "TagConfiguration": TagConfiguration,
@@ -452,6 +520,8 @@ data_science_type_mapping = {
     "UpdateCategoryLogDetails": UpdateCategoryLogDetails,
     "UpdateDataSciencePrivateEndpointDetails": UpdateDataSciencePrivateEndpointDetails,
     "UpdateDefaultModelDeploymentEnvironmentConfigurationDetails": UpdateDefaultModelDeploymentEnvironmentConfigurationDetails,
+    "UpdateInfrastructureConfigurationDetails": UpdateInfrastructureConfigurationDetails,
+    "UpdateInstancePoolInfrastructureConfigurationDetails": UpdateInstancePoolInfrastructureConfigurationDetails,
     "UpdateJobDetails": UpdateJobDetails,
     "UpdateJobRunDetails": UpdateJobRunDetails,
     "UpdateMlApplicationDetails": UpdateMlApplicationDetails,
@@ -464,6 +534,10 @@ data_science_type_mapping = {
     "UpdateModelDeploymentDetails": UpdateModelDeploymentDetails,
     "UpdateModelDeploymentEnvironmentConfigurationDetails": UpdateModelDeploymentEnvironmentConfigurationDetails,
     "UpdateModelDetails": UpdateModelDetails,
+    "UpdateModelGroupConfigurationDetails": UpdateModelGroupConfigurationDetails,
+    "UpdateModelGroupDeploymentConfigurationDetails": UpdateModelGroupDeploymentConfigurationDetails,
+    "UpdateModelGroupDetails": UpdateModelGroupDetails,
+    "UpdateModelGroupVersionHistoryDetails": UpdateModelGroupVersionHistoryDetails,
     "UpdateModelProvenanceDetails": UpdateModelProvenanceDetails,
     "UpdateModelVersionSetDetails": UpdateModelVersionSetDetails,
     "UpdateNotebookSessionDetails": UpdateNotebookSessionDetails,

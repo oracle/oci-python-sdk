@@ -66,6 +66,10 @@ class Api(object):
             The value to assign to the time_updated property of this Api.
         :type time_updated: datetime
 
+        :param locks:
+            The value to assign to the locks property of this Api.
+        :type locks: list[oci.apigateway.models.ResourceLock]
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Api.
             Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
@@ -92,6 +96,10 @@ class Api(object):
             The value to assign to the defined_tags property of this Api.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this Api.
+        :type system_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -99,12 +107,14 @@ class Api(object):
             'compartment_id': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
+            'locks': 'list[ResourceLock]',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'specification_type': 'str',
             'validation_results': 'list[ApiValidationResult]',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'id': 'id',
@@ -112,24 +122,28 @@ class Api(object):
             'compartment_id': 'compartmentId',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
+            'locks': 'locks',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'specification_type': 'specificationType',
             'validation_results': 'validationResults',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'system_tags': 'systemTags'
         }
         self._id = None
         self._display_name = None
         self._compartment_id = None
         self._time_created = None
         self._time_updated = None
+        self._locks = None
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._specification_type = None
         self._validation_results = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
 
     @property
     def id(self):
@@ -266,6 +280,30 @@ class Api(object):
         :type: datetime
         """
         self._time_updated = time_updated
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this Api.
+        Locks associated with this resource.
+
+
+        :return: The locks of this Api.
+        :rtype: list[oci.apigateway.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this Api.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this Api.
+        :type: list[oci.apigateway.models.ResourceLock]
+        """
+        self._locks = locks
 
     @property
     def lifecycle_state(self):
@@ -460,6 +498,32 @@ class Api(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this Api.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :return: The system_tags of this Api.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this Api.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :param system_tags: The system_tags of this Api.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

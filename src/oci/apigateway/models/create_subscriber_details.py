@@ -36,6 +36,10 @@ class CreateSubscriberDetails(object):
             The value to assign to the usage_plans property of this CreateSubscriberDetails.
         :type usage_plans: list[str]
 
+        :param locks:
+            The value to assign to the locks property of this CreateSubscriberDetails.
+        :type locks: list[oci.apigateway.models.AddResourceLockDetails]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateSubscriberDetails.
         :type freeform_tags: dict(str, str)
@@ -50,6 +54,7 @@ class CreateSubscriberDetails(object):
             'compartment_id': 'str',
             'clients': 'list[Client]',
             'usage_plans': 'list[str]',
+            'locks': 'list[AddResourceLockDetails]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -58,6 +63,7 @@ class CreateSubscriberDetails(object):
             'compartment_id': 'compartmentId',
             'clients': 'clients',
             'usage_plans': 'usagePlans',
+            'locks': 'locks',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -65,6 +71,7 @@ class CreateSubscriberDetails(object):
         self._compartment_id = None
         self._clients = None
         self._usage_plans = None
+        self._locks = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -181,6 +188,30 @@ class CreateSubscriberDetails(object):
         :type: list[str]
         """
         self._usage_plans = usage_plans
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this CreateSubscriberDetails.
+        Locks associated with this resource.
+
+
+        :return: The locks of this CreateSubscriberDetails.
+        :rtype: list[oci.apigateway.models.AddResourceLockDetails]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this CreateSubscriberDetails.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this CreateSubscriberDetails.
+        :type: list[oci.apigateway.models.AddResourceLockDetails]
+        """
+        self._locks = locks
 
     @property
     def freeform_tags(self):
