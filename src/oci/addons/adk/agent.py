@@ -18,6 +18,7 @@ from oci.addons.adk.logger import default_logger as logger
 from oci.addons.adk.run.response import RunResponse
 from oci.addons.adk.run.types import FunctionCall, PerformedAction, RequiredAction, RawResponse
 from oci.addons.adk.tool import FunctionTool, Toolkit, tool
+from oci.addons.adk.tool.prebuilt.agentic_sql_tool import AgenticSqlTool
 from oci.addons.adk.tool.utils import dedupe_tools_list, diff_local_and_remote_tool
 from oci.addons.adk.tool.prebuilt import AgenticRagTool
 
@@ -41,7 +42,7 @@ class Agent:
 
     # List of tools the agent can use
     tools: Optional[
-        List[Union[Callable, FunctionTool, Toolkit, "Agent", AgenticRagTool]]
+        List[Union[Callable, FunctionTool, Toolkit, "Agent", AgenticRagTool, AgenticSqlTool]]
     ] = None
 
     # Optional name for the agent
@@ -56,7 +57,7 @@ class Agent:
         client: Optional[AgentClient] = None,
         instructions: str = "You are a helpful assistant",
         tools: Optional[
-            List[Callable | FunctionTool | Toolkit | "Agent" | AgenticRagTool]
+            List[Callable | FunctionTool | Toolkit | "Agent" | AgenticRagTool | AgenticSqlTool]
         ] = None,
         name: Optional[str] = None,
         description: Optional[str] = None,
@@ -81,13 +82,17 @@ class Agent:
         self.name = name
         self.description = description
 
-        # varibles not set up user
+        # variables not set up user
         self._agent_details: Dict[str, Any] = {}
         self._local_handler_functions: List[FunctionTool] = (
             self._process_function_tools()
         )
         self._local_rag_tools: List[AgenticRagTool] = (
             self._process_agentic_rag_tools()
+        )
+
+        self._local_sql_tools: List[AgenticSqlTool] = (
+            self._process_sql_tools()
         )
 
         # initialization
@@ -127,11 +132,13 @@ class Agent:
         2. synchronizing agent to remote,
         3. synchronizing local and remote function tools.
         4. synchronizing local and remote rag tools.
+        5. synchronizing local and remote sql tools.
         """
         self._check_agent_details_integrity()
         self._sync_agent_to_remote()
         self._sync_function_tools_to_remote()
         self._sync_rag_tools_to_remote()
+        self._sync_sql_tools_to_remote()
 
     def run(
         self,
@@ -599,9 +606,33 @@ class Agent:
         self._sync_local_and_remote_tools(local_rag_tools, remote_rag_tools)
         return
 
+    def _sync_sql_tools_to_remote(self) -> None:
+        """
+         Synchronize local and remote SQL tools.
+        """
+        logger.info("Checking synchronization of local and remote SQL tools...")
+        local_sql_tools = self._local_sql_tools
+        # Get existing remote SQL tools
+        remote_sql_tools = self.client.find_tools(
+            compartment_id=self.agent_details["compartment_id"],
+            agent_id=self.agent_details["agent_id"],
+        )
+        # Filter for active SQL tools with ADK tags
+        remote_sql_tools = [
+            tool
+            for tool in remote_sql_tools
+            if (tool.get("lifecycle_state") == "ACTIVE" and
+                set(FREEFORM_TAGS.keys()).issubset(tool.get("freeform_tags", {}).keys()) and
+                tool.get("tool_config", {}).get("tool_config_type") == "SQL_TOOL_CONFIG"
+                )
+        ]
+        self._log_sql_tool_counts(local_sql_tools, remote_sql_tools)
+        self._sync_local_and_remote_tools(local_sql_tools, remote_sql_tools)
+        return
+
     def _sync_local_and_remote_tools(
         self,
-        local_tools: List[FunctionTool] | List[AgenticRagTool],
+        local_tools: List[FunctionTool] | List[AgenticRagTool] | List[AgenticSqlTool],
         remote_tools: List[Dict[str, Any]]
     ) -> None:
         """
@@ -612,7 +643,7 @@ class Agent:
 
         Args:
             local_tools: The local tools
-                types: List[FunctionTool] | List[AgenticRagTool]
+                types: List[FunctionTool] | List[AgenticRagTool] | List[AgenticSqlTool]
             remote_tools: The remote tools
                 types: List[Dict[str, Any]]
         """
@@ -640,6 +671,12 @@ class Agent:
                     )
                 elif isinstance(local_tool, AgenticRagTool):
                     new_tool = self.client.add_rag_tool(
+                        local_tool,
+                        compartment_id=self.agent_details["compartment_id"],
+                        agent_id=self.agent_details["agent_id"],
+                    )
+                elif isinstance(local_tool, AgenticSqlTool):
+                    new_tool = self.client.add_sql_tool(
                         local_tool,
                         compartment_id=self.agent_details["compartment_id"],
                         agent_id=self.agent_details["agent_id"],
@@ -688,6 +725,23 @@ class Agent:
             )
         # de-duplicate tools
         return dedupe_tools_list(available_agentic_rag_tools)
+
+    def _process_sql_tools(self) -> List[AgenticSqlTool]:
+        """
+        Filter SQL Tools from local tools
+        and de-duplicate tools
+
+        Returns:
+            List of processed AgenticSqlTool objects
+        """
+        available_sql_tools: List[AgenticSqlTool] = []
+
+        if self.tools is not None:
+            for local_tool in self.tools:
+                if isinstance(local_tool, AgenticSqlTool):
+                    available_sql_tools.append(local_tool)
+
+        return dedupe_tools_list(available_sql_tools)
 
     @staticmethod
     def _has_required_actions(response: Dict[str, Any]) -> bool:
@@ -900,6 +954,31 @@ class Agent:
         logger.print(
             message_text,
             title="Local and remote function tools found",
+            border_style="blue",
+            expand=False,
+        )
+
+    def _log_sql_tool_counts(
+        self, local_tools: List[AgenticSqlTool],
+        remote_tools: List[Dict[str, Any]]
+    ) -> None:
+        """
+        Log the number of local and remote sql tools found.
+
+        Args:
+            local_tools: List of local sql tool objects
+            remote_tools: List of remote sql tool dictionaries
+        """
+        message_text = (
+            f"Local SQL tools ({len(local_tools) if local_tools else 0}):\n"
+            f"[bold green]{sorted([tool.name for tool in local_tools])}[/bold green]\n\n"  # noqa: E501
+            f"Remote SQL tools ({len(remote_tools) if remote_tools else 0}):\n"
+            f"[bold cyan]{sorted([tool['display_name'] for tool in remote_tools])}[/bold cyan]"  # noqa: E501
+            # noqa: E501
+        )
+        logger.print(
+            message_text,
+            title="Local and remote SQL tools found",
             border_style="blue",
             expand=False,
         )

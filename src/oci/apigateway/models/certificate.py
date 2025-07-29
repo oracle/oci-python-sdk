@@ -85,6 +85,10 @@ class Certificate(object):
             The value to assign to the time_updated property of this Certificate.
         :type time_updated: datetime
 
+        :param locks:
+            The value to assign to the locks property of this Certificate.
+        :type locks: list[oci.apigateway.models.ResourceLock]
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Certificate.
             Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
@@ -103,6 +107,10 @@ class Certificate(object):
             The value to assign to the defined_tags property of this Certificate.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this Certificate.
+        :type system_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -114,10 +122,12 @@ class Certificate(object):
             'intermediate_certificates': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
+            'locks': 'list[ResourceLock]',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'id': 'id',
@@ -129,10 +139,12 @@ class Certificate(object):
             'intermediate_certificates': 'intermediateCertificates',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
+            'locks': 'locks',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'system_tags': 'systemTags'
         }
         self._id = None
         self._display_name = None
@@ -143,10 +155,12 @@ class Certificate(object):
         self._intermediate_certificates = None
         self._time_created = None
         self._time_updated = None
+        self._locks = None
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
 
     @property
     def id(self):
@@ -381,6 +395,30 @@ class Certificate(object):
         self._time_updated = time_updated
 
     @property
+    def locks(self):
+        """
+        Gets the locks of this Certificate.
+        Locks associated with this resource.
+
+
+        :return: The locks of this Certificate.
+        :rtype: list[oci.apigateway.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this Certificate.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this Certificate.
+        :type: list[oci.apigateway.models.ResourceLock]
+        """
+        self._locks = locks
+
+    @property
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this Certificate.
@@ -509,6 +547,32 @@ class Certificate(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this Certificate.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :return: The system_tags of this Certificate.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this Certificate.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :param system_tags: The system_tags of this Certificate.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

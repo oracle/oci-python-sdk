@@ -31,13 +31,23 @@ class ConfigSummary(object):
     #: This constant has a value of "OPTIONS"
     CONFIG_TYPE_OPTIONS = "OPTIONS"
 
+    #: A constant which can be used with the config_type property of a ConfigSummary.
+    #: This constant has a value of "AGENT"
+    CONFIG_TYPE_AGENT = "AGENT"
+
+    #: A constant which can be used with the config_type property of a ConfigSummary.
+    #: This constant has a value of "MACS_APM_EXTENSION"
+    CONFIG_TYPE_MACS_APM_EXTENSION = "MACS_APM_EXTENSION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ConfigSummary object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.apm_config.models.MacsApmExtensionSummary`
         * :class:`~oci.apm_config.models.MetricGroupSummary`
         * :class:`~oci.apm_config.models.ApdexRulesSummary`
+        * :class:`~oci.apm_config.models.AgentConfigSummary`
         * :class:`~oci.apm_config.models.SpanFilterSummary`
         * :class:`~oci.apm_config.models.OptionsSummary`
 
@@ -49,7 +59,7 @@ class ConfigSummary(object):
 
         :param config_type:
             The value to assign to the config_type property of this ConfigSummary.
-            Allowed values for this property are: "SPAN_FILTER", "METRIC_GROUP", "APDEX", "OPTIONS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SPAN_FILTER", "METRIC_GROUP", "APDEX", "OPTIONS", "AGENT", "MACS_APM_EXTENSION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type config_type: str
 
@@ -129,11 +139,17 @@ class ConfigSummary(object):
         """
         type = object_dictionary['configType']
 
+        if type == 'MACS_APM_EXTENSION':
+            return 'MacsApmExtensionSummary'
+
         if type == 'METRIC_GROUP':
             return 'MetricGroupSummary'
 
         if type == 'APDEX':
             return 'ApdexRulesSummary'
+
+        if type == 'AGENT':
+            return 'AgentConfigSummary'
 
         if type == 'SPAN_FILTER':
             return 'SpanFilterSummary'
@@ -179,7 +195,7 @@ class ConfigSummary(object):
         **[Required]** Gets the config_type of this ConfigSummary.
         The type of configuration item.
 
-        Allowed values for this property are: "SPAN_FILTER", "METRIC_GROUP", "APDEX", "OPTIONS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "SPAN_FILTER", "METRIC_GROUP", "APDEX", "OPTIONS", "AGENT", "MACS_APM_EXTENSION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -198,7 +214,7 @@ class ConfigSummary(object):
         :param config_type: The config_type of this ConfigSummary.
         :type: str
         """
-        allowed_values = ["SPAN_FILTER", "METRIC_GROUP", "APDEX", "OPTIONS"]
+        allowed_values = ["SPAN_FILTER", "METRIC_GROUP", "APDEX", "OPTIONS", "AGENT", "MACS_APM_EXTENSION"]
         if not value_allowed_none_or_none_sentinel(config_type, allowed_values):
             config_type = 'UNKNOWN_ENUM_VALUE'
         self._config_type = config_type

@@ -19,6 +19,7 @@ API Reference
 * :doc:`Anomaly Detection <ai_anomaly_detection/client/oci.ai_anomaly_detection.AnomalyDetectionClient>`
 * :doc:`Api Gateway <apigateway/client/oci.apigateway.ApiGatewayClient>`
 * :doc:`Api Metadata <apiaccesscontrol/client/oci.apiaccesscontrol.ApiMetadataClient>`
+* :doc:`Api Platform <api_platform/client/oci.api_platform.ApiPlatformClient>`
 * :doc:`Apm Domain <apm_control_plane/client/oci.apm_control_plane.ApmDomainClient>`
 * :doc:`Apm Synthetic <apm_synthetics/client/oci.apm_synthetics.ApmSyntheticClient>`
 * :doc:`Appliance Export Job <dts/client/oci.dts.ApplianceExportJobClient>`
@@ -312,6 +313,7 @@ API Reference
     ai_vision
     analytics
     announcements_service
+    api_platform
     apiaccesscontrol
     apigateway
     apm_config

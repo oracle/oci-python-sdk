@@ -780,6 +780,10 @@ class DashxApisClient(object):
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
+        :param str export_tags: (optional)
+            Indicates whether tags must be included when exporting dashboards and saved searches. If this attribute is set to true, then both defined and free-form tags are included in the response. The default is false and tag fields are empty objects in the response.
+            If set to true, NotAuthorizedException is returned if you do not have the permission to access tags, even if you have the permission to access dashboards and saved searches.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -810,7 +814,8 @@ class DashxApisClient(object):
             "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
-            "opc_request_id"
+            "opc_request_id",
+            "export_tags"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -826,6 +831,11 @@ class DashxApisClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "exportTags": kwargs.get("export_tags", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -850,6 +860,7 @@ class DashxApisClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 response_type="ManagementDashboardExportDetails",
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -861,6 +872,7 @@ class DashxApisClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 response_type="ManagementDashboardExportDetails",
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -1082,7 +1094,7 @@ class DashxApisClient(object):
 
     def get_oob_management_dashboard(self, management_dashboard_id, **kwargs):
         """
-        Gets an OOB dashboard and its saved searches by ID.  Deleted or unauthorized saved searches are marked by tile's state property.
+        Gets an out-of-the-box dashboard and its saved searches by ID.  Deleted or unauthorized saved searches are marked by tile's state property.
 
 
         :param str management_dashboard_id: (required)
@@ -1178,7 +1190,7 @@ class DashxApisClient(object):
 
     def get_oob_management_saved_search(self, management_saved_search_id, **kwargs):
         """
-        Gets a saved search by ID.
+        Gets an out-of-the-box saved search by ID.
 
 
         :param str management_saved_search_id: (required)
@@ -1302,6 +1314,16 @@ class DashxApisClient(object):
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
+        :param str override_same_name: (optional)
+            By default, if a resource with the same OCID exists in the target compartment, it is updated during the import process, otherwise, a new resource is created.
+            However, if this attribute is set to true, then during the import process if a resource with the same displayName exists in the compartment, then it is updated even if the OCIDs are different. This is useful when importing the same resource multiple times. If the compartment and displayName remain the same, the resource is only updated and multiple copies of a resource are not created.
+
+        :param str override_dashboard_compartment_ocid: (optional)
+            If this attribute is set, the dashboard resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
+
+        :param str override_saved_search_compartment_ocid: (optional)
+            If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -1333,12 +1355,22 @@ class DashxApisClient(object):
             "retry_strategy",
             "if_match",
             "opc_retry_token",
-            "opc_request_id"
+            "opc_request_id",
+            "override_same_name",
+            "override_dashboard_compartment_ocid",
+            "override_saved_search_compartment_ocid"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"import_dashboard got unknown kwargs: {extra_kwargs!r}")
+
+        query_params = {
+            "overrideSameName": kwargs.get("override_same_name", missing),
+            "overrideDashboardCompartmentOcid": kwargs.get("override_dashboard_compartment_ocid", missing),
+            "overrideSavedSearchCompartmentOcid": kwargs.get("override_saved_search_compartment_ocid", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -1363,6 +1395,7 @@ class DashxApisClient(object):
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
+                query_params=query_params,
                 header_params=header_params,
                 body=management_dashboard_import_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -1373,6 +1406,7 @@ class DashxApisClient(object):
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
+                query_params=query_params,
                 header_params=header_params,
                 body=management_dashboard_import_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -1650,7 +1684,7 @@ class DashxApisClient(object):
 
     def list_oob_management_dashboards(self, compartment_id, **kwargs):
         """
-        Gets the list of OOB dashboards with pagination.  Returned properties are the summary.
+        Gets the list of out-of-the-box dashboards with pagination. Returned properties are the summary.
 
 
         :param str compartment_id: (required)
@@ -1784,7 +1818,7 @@ class DashxApisClient(object):
 
     def list_oob_management_saved_searches(self, compartment_id, **kwargs):
         """
-        Gets the list of out-of-box saved searches in a compartment with pagination.  Returned properties are the summary.
+        Gets the list of out-of-the-box saved searches in a compartment with pagination.  Returned properties are the summary.
 
 
         :param str compartment_id: (required)

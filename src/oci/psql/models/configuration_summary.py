@@ -64,6 +64,14 @@ class ConfigurationSummary(object):
             The value to assign to the instance_memory_size_in_gbs property of this ConfigurationSummary.
         :type instance_memory_size_in_gbs: int
 
+        :param compatible_shapes:
+            The value to assign to the compatible_shapes property of this ConfigurationSummary.
+        :type compatible_shapes: list[str]
+
+        :param default_config_id:
+            The value to assign to the default_config_id property of this ConfigurationSummary.
+        :type default_config_id: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ConfigurationSummary.
         :type freeform_tags: dict(str, str)
@@ -89,6 +97,8 @@ class ConfigurationSummary(object):
             'is_flexible': 'bool',
             'instance_ocpu_count': 'int',
             'instance_memory_size_in_gbs': 'int',
+            'compatible_shapes': 'list[str]',
+            'default_config_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -105,6 +115,8 @@ class ConfigurationSummary(object):
             'is_flexible': 'isFlexible',
             'instance_ocpu_count': 'instanceOcpuCount',
             'instance_memory_size_in_gbs': 'instanceMemorySizeInGBs',
+            'compatible_shapes': 'compatibleShapes',
+            'default_config_id': 'defaultConfigId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -120,6 +132,8 @@ class ConfigurationSummary(object):
         self._is_flexible = None
         self._instance_ocpu_count = None
         self._instance_memory_size_in_gbs = None
+        self._compatible_shapes = None
+        self._default_config_id = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -315,7 +329,8 @@ class ConfigurationSummary(object):
         """
         **[Required]** Gets the shape of this ConfigurationSummary.
         The name of the shape for the configuration.
-        Example: `VM.Standard.E4.Flex`
+
+        For multi-shape enabled configurations, it is set to PostgreSQL. Please use compatibleShapes property to get list of supported shapes for such configurations.
 
 
         :return: The shape of this ConfigurationSummary.
@@ -328,7 +343,8 @@ class ConfigurationSummary(object):
         """
         Sets the shape of this ConfigurationSummary.
         The name of the shape for the configuration.
-        Example: `VM.Standard.E4.Flex`
+
+        For multi-shape enabled configurations, it is set to PostgreSQL. Please use compatibleShapes property to get list of supported shapes for such configurations.
 
 
         :param shape: The shape of this ConfigurationSummary.
@@ -415,6 +431,54 @@ class ConfigurationSummary(object):
         :type: int
         """
         self._instance_memory_size_in_gbs = instance_memory_size_in_gbs
+
+    @property
+    def compatible_shapes(self):
+        """
+        **[Required]** Gets the compatible_shapes of this ConfigurationSummary.
+        Indicates the collection of compatible shapes for this configuration.
+
+
+        :return: The compatible_shapes of this ConfigurationSummary.
+        :rtype: list[str]
+        """
+        return self._compatible_shapes
+
+    @compatible_shapes.setter
+    def compatible_shapes(self, compatible_shapes):
+        """
+        Sets the compatible_shapes of this ConfigurationSummary.
+        Indicates the collection of compatible shapes for this configuration.
+
+
+        :param compatible_shapes: The compatible_shapes of this ConfigurationSummary.
+        :type: list[str]
+        """
+        self._compatible_shapes = compatible_shapes
+
+    @property
+    def default_config_id(self):
+        """
+        **[Required]** Gets the default_config_id of this ConfigurationSummary.
+        The Default configuration used for this configuration.
+
+
+        :return: The default_config_id of this ConfigurationSummary.
+        :rtype: str
+        """
+        return self._default_config_id
+
+    @default_config_id.setter
+    def default_config_id(self, default_config_id):
+        """
+        Sets the default_config_id of this ConfigurationSummary.
+        The Default configuration used for this configuration.
+
+
+        :param default_config_id: The default_config_id of this ConfigurationSummary.
+        :type: str
+        """
+        self._default_config_id = default_config_id
 
     @property
     def freeform_tags(self):

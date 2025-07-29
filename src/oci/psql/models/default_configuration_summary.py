@@ -60,6 +60,10 @@ class DefaultConfigurationSummary(object):
             The value to assign to the instance_memory_size_in_gbs property of this DefaultConfigurationSummary.
         :type instance_memory_size_in_gbs: int
 
+        :param compatible_shapes:
+            The value to assign to the compatible_shapes property of this DefaultConfigurationSummary.
+        :type compatible_shapes: list[str]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -71,7 +75,8 @@ class DefaultConfigurationSummary(object):
             'shape': 'str',
             'is_flexible': 'bool',
             'instance_ocpu_count': 'int',
-            'instance_memory_size_in_gbs': 'int'
+            'instance_memory_size_in_gbs': 'int',
+            'compatible_shapes': 'list[str]'
         }
         self.attribute_map = {
             'id': 'id',
@@ -83,7 +88,8 @@ class DefaultConfigurationSummary(object):
             'shape': 'shape',
             'is_flexible': 'isFlexible',
             'instance_ocpu_count': 'instanceOcpuCount',
-            'instance_memory_size_in_gbs': 'instanceMemorySizeInGBs'
+            'instance_memory_size_in_gbs': 'instanceMemorySizeInGBs',
+            'compatible_shapes': 'compatibleShapes'
         }
         self._id = None
         self._display_name = None
@@ -95,6 +101,7 @@ class DefaultConfigurationSummary(object):
         self._is_flexible = None
         self._instance_ocpu_count = None
         self._instance_memory_size_in_gbs = None
+        self._compatible_shapes = None
 
     @property
     def id(self):
@@ -255,7 +262,8 @@ class DefaultConfigurationSummary(object):
         """
         **[Required]** Gets the shape of this DefaultConfigurationSummary.
         The name of the shape for the configuration.
-        Example: `VM.Standard.E4.Flex`
+
+        For multi-shape enabled configurations, it is set to PostgreSQL. Please use compatibleShapes property to get list of supported shapes for such configurations.
 
 
         :return: The shape of this DefaultConfigurationSummary.
@@ -268,7 +276,8 @@ class DefaultConfigurationSummary(object):
         """
         Sets the shape of this DefaultConfigurationSummary.
         The name of the shape for the configuration.
-        Example: `VM.Standard.E4.Flex`
+
+        For multi-shape enabled configurations, it is set to PostgreSQL. Please use compatibleShapes property to get list of supported shapes for such configurations.
 
 
         :param shape: The shape of this DefaultConfigurationSummary.
@@ -355,6 +364,30 @@ class DefaultConfigurationSummary(object):
         :type: int
         """
         self._instance_memory_size_in_gbs = instance_memory_size_in_gbs
+
+    @property
+    def compatible_shapes(self):
+        """
+        **[Required]** Gets the compatible_shapes of this DefaultConfigurationSummary.
+        Indicates the collection of compatible shapes for this configuration.
+
+
+        :return: The compatible_shapes of this DefaultConfigurationSummary.
+        :rtype: list[str]
+        """
+        return self._compatible_shapes
+
+    @compatible_shapes.setter
+    def compatible_shapes(self, compatible_shapes):
+        """
+        Sets the compatible_shapes of this DefaultConfigurationSummary.
+        Indicates the collection of compatible shapes for this configuration.
+
+
+        :param compatible_shapes: The compatible_shapes of this DefaultConfigurationSummary.
+        :type: list[str]
+        """
+        self._compatible_shapes = compatible_shapes
 
     def __repr__(self):
         return formatted_flat_dict(self)

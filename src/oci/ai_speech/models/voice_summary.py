@@ -23,10 +23,6 @@ class VoiceSummary(object):
     #: This constant has a value of "FEMALE"
     GENDER_FEMALE = "FEMALE"
 
-    #: A constant which can be used with the language_code property of a VoiceSummary.
-    #: This constant has a value of "en-US"
-    LANGUAGE_CODE_EN_US = "en-US"
-
     def __init__(self, **kwargs):
         """
         Initializes a new VoiceSummary object with values from keyword arguments.
@@ -56,8 +52,6 @@ class VoiceSummary(object):
 
         :param language_code:
             The value to assign to the language_code property of this VoiceSummary.
-            Allowed values for this property are: "en-US", 'UNKNOWN_ENUM_VALUE'.
-            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type language_code: str
 
         :param language_description:
@@ -244,9 +238,6 @@ class VoiceSummary(object):
         Gets the language_code of this VoiceSummary.
         An abbreviated notation of region to which the language and accent of the speaker belongs to.
 
-        Allowed values for this property are: "en-US", 'UNKNOWN_ENUM_VALUE'.
-        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
-
 
         :return: The language_code of this VoiceSummary.
         :rtype: str
@@ -263,9 +254,6 @@ class VoiceSummary(object):
         :param language_code: The language_code of this VoiceSummary.
         :type: str
         """
-        allowed_values = ["en-US"]
-        if not value_allowed_none_or_none_sentinel(language_code, allowed_values):
-            language_code = 'UNKNOWN_ENUM_VALUE'
         self._language_code = language_code
 
     @property

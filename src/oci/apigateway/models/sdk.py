@@ -86,6 +86,10 @@ class Sdk(object):
             The value to assign to the lifecycle_details property of this Sdk.
         :type lifecycle_details: str
 
+        :param locks:
+            The value to assign to the locks property of this Sdk.
+        :type locks: list[oci.apigateway.models.ResourceLock]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this Sdk.
         :type freeform_tags: dict(str, str)
@@ -93,6 +97,10 @@ class Sdk(object):
         :param defined_tags:
             The value to assign to the defined_tags property of this Sdk.
         :type defined_tags: dict(str, dict(str, object))
+
+        :param system_tags:
+            The value to assign to the system_tags property of this Sdk.
+        :type system_tags: dict(str, dict(str, object))
 
         :param parameters:
             The value to assign to the parameters property of this Sdk.
@@ -111,8 +119,10 @@ class Sdk(object):
             'time_artifact_url_expires_at': 'datetime',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
+            'locks': 'list[ResourceLock]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))',
             'parameters': 'dict(str, str)'
         }
         self.attribute_map = {
@@ -127,8 +137,10 @@ class Sdk(object):
             'time_artifact_url_expires_at': 'timeArtifactUrlExpiresAt',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
+            'locks': 'locks',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'system_tags': 'systemTags',
             'parameters': 'parameters'
         }
         self._id = None
@@ -142,8 +154,10 @@ class Sdk(object):
         self._time_artifact_url_expires_at = None
         self._lifecycle_state = None
         self._lifecycle_details = None
+        self._locks = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
         self._parameters = None
 
     @property
@@ -451,6 +465,30 @@ class Sdk(object):
         self._lifecycle_details = lifecycle_details
 
     @property
+    def locks(self):
+        """
+        Gets the locks of this Sdk.
+        Locks associated with this resource.
+
+
+        :return: The locks of this Sdk.
+        :rtype: list[oci.apigateway.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this Sdk.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this Sdk.
+        :type: list[oci.apigateway.models.ResourceLock]
+        """
+        self._locks = locks
+
+    @property
     def freeform_tags(self):
         """
         Gets the freeform_tags of this Sdk.
@@ -521,6 +559,32 @@ class Sdk(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this Sdk.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :return: The system_tags of this Sdk.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this Sdk.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :param system_tags: The system_tags of this Sdk.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     @property
     def parameters(self):

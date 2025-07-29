@@ -25,6 +25,8 @@ Vault
     oci.vault.models.CreateSecretDetails
     oci.vault.models.FunctionTargetSystemDetails
     oci.vault.models.PassphraseGenerationContext
+    oci.vault.models.ReplicationConfig
+    oci.vault.models.ReplicationTarget
     oci.vault.models.RotationConfig
     oci.vault.models.ScheduleSecretDeletionDetails
     oci.vault.models.ScheduleSecretVersionDeletionDetails
@@ -37,6 +39,7 @@ Vault
     oci.vault.models.SecretSummary
     oci.vault.models.SecretVersion
     oci.vault.models.SecretVersionSummary
+    oci.vault.models.SourceRegionInformation
     oci.vault.models.SshKeyGenerationContext
     oci.vault.models.TargetSystemDetails
     oci.vault.models.UpdateSecretDetails

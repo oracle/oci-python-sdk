@@ -48,6 +48,10 @@ class CreateGatewayDetails(object):
             The value to assign to the response_cache_details property of this CreateGatewayDetails.
         :type response_cache_details: oci.apigateway.models.ResponseCacheDetails
 
+        :param locks:
+            The value to assign to the locks property of this CreateGatewayDetails.
+        :type locks: list[oci.apigateway.models.AddResourceLockDetails]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateGatewayDetails.
         :type freeform_tags: dict(str, str)
@@ -69,6 +73,7 @@ class CreateGatewayDetails(object):
             'network_security_group_ids': 'list[str]',
             'certificate_id': 'str',
             'response_cache_details': 'ResponseCacheDetails',
+            'locks': 'list[AddResourceLockDetails]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'ca_bundles': 'list[CaBundle]'
@@ -81,6 +86,7 @@ class CreateGatewayDetails(object):
             'network_security_group_ids': 'networkSecurityGroupIds',
             'certificate_id': 'certificateId',
             'response_cache_details': 'responseCacheDetails',
+            'locks': 'locks',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'ca_bundles': 'caBundles'
@@ -92,6 +98,7 @@ class CreateGatewayDetails(object):
         self._network_security_group_ids = None
         self._certificate_id = None
         self._response_cache_details = None
+        self._locks = None
         self._freeform_tags = None
         self._defined_tags = None
         self._ca_bundles = None
@@ -244,7 +251,8 @@ class CreateGatewayDetails(object):
     def certificate_id(self):
         """
         Gets the certificate_id of this CreateGatewayDetails.
-        The `OCID`__ of the resource.
+        The `OCID`__ of the resource which can be
+        empty string.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -258,7 +266,8 @@ class CreateGatewayDetails(object):
     def certificate_id(self, certificate_id):
         """
         Sets the certificate_id of this CreateGatewayDetails.
-        The `OCID`__ of the resource.
+        The `OCID`__ of the resource which can be
+        empty string.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -287,6 +296,30 @@ class CreateGatewayDetails(object):
         :type: oci.apigateway.models.ResponseCacheDetails
         """
         self._response_cache_details = response_cache_details
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this CreateGatewayDetails.
+        Locks associated with this resource.
+
+
+        :return: The locks of this CreateGatewayDetails.
+        :rtype: list[oci.apigateway.models.AddResourceLockDetails]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this CreateGatewayDetails.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this CreateGatewayDetails.
+        :type: list[oci.apigateway.models.AddResourceLockDetails]
+        """
+        self._locks = locks
 
     @property
     def freeform_tags(self):

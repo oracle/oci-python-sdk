@@ -99,6 +99,10 @@ class Gateway(object):
             The value to assign to the lifecycle_details property of this Gateway.
         :type lifecycle_details: str
 
+        :param locks:
+            The value to assign to the locks property of this Gateway.
+        :type locks: list[oci.apigateway.models.ResourceLock]
+
         :param hostname:
             The value to assign to the hostname property of this Gateway.
         :type hostname: str
@@ -123,6 +127,10 @@ class Gateway(object):
             The value to assign to the defined_tags property of this Gateway.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this Gateway.
+        :type system_tags: dict(str, dict(str, object))
+
         :param ca_bundles:
             The value to assign to the ca_bundles property of this Gateway.
         :type ca_bundles: list[oci.apigateway.models.CaBundle]
@@ -139,12 +147,14 @@ class Gateway(object):
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
+            'locks': 'list[ResourceLock]',
             'hostname': 'str',
             'certificate_id': 'str',
             'ip_addresses': 'list[IpAddress]',
             'response_cache_details': 'ResponseCacheDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))',
             'ca_bundles': 'list[CaBundle]'
         }
         self.attribute_map = {
@@ -158,12 +168,14 @@ class Gateway(object):
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
+            'locks': 'locks',
             'hostname': 'hostname',
             'certificate_id': 'certificateId',
             'ip_addresses': 'ipAddresses',
             'response_cache_details': 'responseCacheDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'system_tags': 'systemTags',
             'ca_bundles': 'caBundles'
         }
         self._id = None
@@ -176,12 +188,14 @@ class Gateway(object):
         self._time_updated = None
         self._lifecycle_state = None
         self._lifecycle_details = None
+        self._locks = None
         self._hostname = None
         self._certificate_id = None
         self._ip_addresses = None
         self._response_cache_details = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
         self._ca_bundles = None
 
     @property
@@ -469,6 +483,30 @@ class Gateway(object):
         self._lifecycle_details = lifecycle_details
 
     @property
+    def locks(self):
+        """
+        Gets the locks of this Gateway.
+        Locks associated with this resource.
+
+
+        :return: The locks of this Gateway.
+        :rtype: list[oci.apigateway.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this Gateway.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this Gateway.
+        :type: list[oci.apigateway.models.ResourceLock]
+        """
+        self._locks = locks
+
+    @property
     def hostname(self):
         """
         Gets the hostname of this Gateway.
@@ -635,6 +673,32 @@ class Gateway(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this Gateway.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :return: The system_tags of this Gateway.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this Gateway.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :param system_tags: The system_tags of this Gateway.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     @property
     def ca_bundles(self):

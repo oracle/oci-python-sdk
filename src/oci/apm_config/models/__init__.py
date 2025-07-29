@@ -6,6 +6,12 @@
 
 from __future__ import absolute_import
 
+from .agent_config import AgentConfig
+from .agent_config_file import AgentConfigFile
+from .agent_config_map import AgentConfigMap
+from .agent_config_override import AgentConfigOverride
+from .agent_config_overrides import AgentConfigOverrides
+from .agent_config_summary import AgentConfigSummary
 from .apdex import Apdex
 from .apdex_rules import ApdexRules
 from .apdex_rules_summary import ApdexRulesSummary
@@ -13,8 +19,10 @@ from .config import Config
 from .config_collection import ConfigCollection
 from .config_summary import ConfigSummary
 from .copy_configuration_details import CopyConfigurationDetails
+from .create_agent_config_details import CreateAgentConfigDetails
 from .create_apdex_rules_details import CreateApdexRulesDetails
 from .create_config_details import CreateConfigDetails
+from .create_macs_apm_extension_details import CreateMacsApmExtensionDetails
 from .create_metric_group_details import CreateMetricGroupDetails
 from .create_options_details import CreateOptionsDetails
 from .create_span_filter_details import CreateSpanFilterDetails
@@ -30,6 +38,9 @@ from .filter_text_or_id import FilterTextOrId
 from .import_configuration_details import ImportConfigurationDetails
 from .import_configuration_failed_item_summary import ImportConfigurationFailedItemSummary
 from .import_configuration_failed_items_collection import ImportConfigurationFailedItemsCollection
+from .macs_apm_extension import MacsApmExtension
+from .macs_apm_extension_summary import MacsApmExtensionSummary
+from .match_agents_with_attribute_key import MatchAgentsWithAttributeKey
 from .metric import Metric
 from .metric_group import MetricGroup
 from .metric_group_summary import MetricGroupSummary
@@ -47,8 +58,11 @@ from .test_details import TestDetails
 from .test_output import TestOutput
 from .test_span_enrichment_details import TestSpanEnrichmentDetails
 from .test_span_enrichment_output import TestSpanEnrichmentOutput
+from .update_agent_config_details import UpdateAgentConfigDetails
 from .update_apdex_rules_details import UpdateApdexRulesDetails
 from .update_config_details import UpdateConfigDetails
+from .update_macs_apm_extension_details import UpdateMacsApmExtensionDetails
+from .update_match_agents_with_attribute_key_details import UpdateMatchAgentsWithAttributeKeyDetails
 from .update_metric_group_details import UpdateMetricGroupDetails
 from .update_options_details import UpdateOptionsDetails
 from .update_span_filter_details import UpdateSpanFilterDetails
@@ -56,6 +70,12 @@ from .validate_span_filter_pattern_details import ValidateSpanFilterPatternDetai
 
 # Maps type names to classes for apm_config services.
 apm_config_type_mapping = {
+    "AgentConfig": AgentConfig,
+    "AgentConfigFile": AgentConfigFile,
+    "AgentConfigMap": AgentConfigMap,
+    "AgentConfigOverride": AgentConfigOverride,
+    "AgentConfigOverrides": AgentConfigOverrides,
+    "AgentConfigSummary": AgentConfigSummary,
     "Apdex": Apdex,
     "ApdexRules": ApdexRules,
     "ApdexRulesSummary": ApdexRulesSummary,
@@ -63,8 +83,10 @@ apm_config_type_mapping = {
     "ConfigCollection": ConfigCollection,
     "ConfigSummary": ConfigSummary,
     "CopyConfigurationDetails": CopyConfigurationDetails,
+    "CreateAgentConfigDetails": CreateAgentConfigDetails,
     "CreateApdexRulesDetails": CreateApdexRulesDetails,
     "CreateConfigDetails": CreateConfigDetails,
+    "CreateMacsApmExtensionDetails": CreateMacsApmExtensionDetails,
     "CreateMetricGroupDetails": CreateMetricGroupDetails,
     "CreateOptionsDetails": CreateOptionsDetails,
     "CreateSpanFilterDetails": CreateSpanFilterDetails,
@@ -80,6 +102,9 @@ apm_config_type_mapping = {
     "ImportConfigurationDetails": ImportConfigurationDetails,
     "ImportConfigurationFailedItemSummary": ImportConfigurationFailedItemSummary,
     "ImportConfigurationFailedItemsCollection": ImportConfigurationFailedItemsCollection,
+    "MacsApmExtension": MacsApmExtension,
+    "MacsApmExtensionSummary": MacsApmExtensionSummary,
+    "MatchAgentsWithAttributeKey": MatchAgentsWithAttributeKey,
     "Metric": Metric,
     "MetricGroup": MetricGroup,
     "MetricGroupSummary": MetricGroupSummary,
@@ -97,8 +122,11 @@ apm_config_type_mapping = {
     "TestOutput": TestOutput,
     "TestSpanEnrichmentDetails": TestSpanEnrichmentDetails,
     "TestSpanEnrichmentOutput": TestSpanEnrichmentOutput,
+    "UpdateAgentConfigDetails": UpdateAgentConfigDetails,
     "UpdateApdexRulesDetails": UpdateApdexRulesDetails,
     "UpdateConfigDetails": UpdateConfigDetails,
+    "UpdateMacsApmExtensionDetails": UpdateMacsApmExtensionDetails,
+    "UpdateMatchAgentsWithAttributeKeyDetails": UpdateMatchAgentsWithAttributeKeyDetails,
     "UpdateMetricGroupDetails": UpdateMetricGroupDetails,
     "UpdateOptionsDetails": UpdateOptionsDetails,
     "UpdateSpanFilterDetails": UpdateSpanFilterDetails,

@@ -6,6 +6,7 @@
 ADK Run action models
 """
 import json
+from enum import Enum
 from typing import Any, Dict, List, Optional
 
 from pydantic import BaseModel, Field
@@ -127,3 +128,43 @@ class RawResponse(BaseModel):
             return self.raw_data["message"]["content"]["text"]
         except (KeyError, TypeError, AgentError):
             return None
+
+
+class InputLocationType(str, Enum):
+    """Represents teh type of input location."""
+
+    INLINE = "INLINE"
+    OBJECT_STORAGE_PREFIX = "OBJECT_STORAGE_PREFIX"
+
+    def get_class(self):
+        return {
+            InputLocationType.INLINE: InlineInputLocation,
+            InputLocationType.OBJECT_STORAGE_PREFIX: ObjectStorageInputLocation
+        }.get(self)
+
+
+class InputLocation(BaseModel):
+    """Represents Input Location."""
+
+    input_location_type: InputLocationType
+
+    def to_dict(self):
+        data = self.model_dump()
+        data["input_location_type"] = self.input_location_type.value
+        return data
+
+
+class InlineInputLocation(InputLocation):
+    """Represents an input location where data is provided directly as inline content."""
+
+    input_location_type: InputLocationType = Field(default=InputLocationType.INLINE)
+    content: str
+
+
+class ObjectStorageInputLocation(InputLocation):
+    """Represents an input location where data is stored in an object storage service."""
+
+    input_location_type: InputLocationType = Field(default=InputLocationType.OBJECT_STORAGE_PREFIX)
+    namespace_name: str
+    bucket_name: str
+    prefix: str

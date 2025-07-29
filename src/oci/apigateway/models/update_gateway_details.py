@@ -133,7 +133,8 @@ class UpdateGatewayDetails(object):
     def certificate_id(self):
         """
         Gets the certificate_id of this UpdateGatewayDetails.
-        The `OCID`__ of the resource.
+        The `OCID`__ of the resource which can be
+        empty string.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -147,7 +148,8 @@ class UpdateGatewayDetails(object):
     def certificate_id(self, certificate_id):
         """
         Sets the certificate_id of this UpdateGatewayDetails.
-        The `OCID`__ of the resource.
+        The `OCID`__ of the resource which can be
+        empty string.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

@@ -114,6 +114,18 @@ class Secret(object):
             The value to assign to the metadata property of this Secret.
         :type metadata: dict(str, object)
 
+        :param replication_config:
+            The value to assign to the replication_config property of this Secret.
+        :type replication_config: oci.vault.models.ReplicationConfig
+
+        :param is_replica:
+            The value to assign to the is_replica property of this Secret.
+        :type is_replica: bool
+
+        :param source_region_information:
+            The value to assign to the source_region_information property of this Secret.
+        :type source_region_information: oci.vault.models.SourceRegionInformation
+
         :param rotation_config:
             The value to assign to the rotation_config property of this Secret.
         :type rotation_config: oci.vault.models.RotationConfig
@@ -176,6 +188,9 @@ class Secret(object):
             'lifecycle_details': 'str',
             'lifecycle_state': 'str',
             'metadata': 'dict(str, object)',
+            'replication_config': 'ReplicationConfig',
+            'is_replica': 'bool',
+            'source_region_information': 'SourceRegionInformation',
             'rotation_config': 'RotationConfig',
             'rotation_status': 'str',
             'last_rotation_time': 'datetime',
@@ -200,6 +215,9 @@ class Secret(object):
             'lifecycle_details': 'lifecycleDetails',
             'lifecycle_state': 'lifecycleState',
             'metadata': 'metadata',
+            'replication_config': 'replicationConfig',
+            'is_replica': 'isReplica',
+            'source_region_information': 'sourceRegionInformation',
             'rotation_config': 'rotationConfig',
             'rotation_status': 'rotationStatus',
             'last_rotation_time': 'lastRotationTime',
@@ -223,6 +241,9 @@ class Secret(object):
         self._lifecycle_details = None
         self._lifecycle_state = None
         self._metadata = None
+        self._replication_config = None
+        self._is_replica = None
+        self._source_region_information = None
         self._rotation_config = None
         self._rotation_status = None
         self._last_rotation_time = None
@@ -501,6 +522,70 @@ class Secret(object):
         :type: dict(str, object)
         """
         self._metadata = metadata
+
+    @property
+    def replication_config(self):
+        """
+        Gets the replication_config of this Secret.
+
+        :return: The replication_config of this Secret.
+        :rtype: oci.vault.models.ReplicationConfig
+        """
+        return self._replication_config
+
+    @replication_config.setter
+    def replication_config(self, replication_config):
+        """
+        Sets the replication_config of this Secret.
+
+        :param replication_config: The replication_config of this Secret.
+        :type: oci.vault.models.ReplicationConfig
+        """
+        self._replication_config = replication_config
+
+    @property
+    def is_replica(self):
+        """
+        Gets the is_replica of this Secret.
+        A Boolean value that indicates whether the secret is a source or replica secret.
+
+
+        :return: The is_replica of this Secret.
+        :rtype: bool
+        """
+        return self._is_replica
+
+    @is_replica.setter
+    def is_replica(self, is_replica):
+        """
+        Sets the is_replica of this Secret.
+        A Boolean value that indicates whether the secret is a source or replica secret.
+
+
+        :param is_replica: The is_replica of this Secret.
+        :type: bool
+        """
+        self._is_replica = is_replica
+
+    @property
+    def source_region_information(self):
+        """
+        Gets the source_region_information of this Secret.
+
+        :return: The source_region_information of this Secret.
+        :rtype: oci.vault.models.SourceRegionInformation
+        """
+        return self._source_region_information
+
+    @source_region_information.setter
+    def source_region_information(self, source_region_information):
+        """
+        Sets the source_region_information of this Secret.
+
+        :param source_region_information: The source_region_information of this Secret.
+        :type: oci.vault.models.SourceRegionInformation
+        """
+        self._source_region_information = source_region_information
 
     @property
     def rotation_config(self):

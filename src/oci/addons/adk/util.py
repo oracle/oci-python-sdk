@@ -9,6 +9,9 @@ from typing import Any, Callable, Dict, Optional, Tuple, Union, get_args, get_or
 
 from docstring_parser import parse
 from oci import regions
+from oci.addons.adk.agent_error import AgentError
+from oci.addons.adk.logger import default_logger as logger
+from oci.generative_ai_agent.models import InputLocation, InlineInputLocation, ObjectStorageInputLocation
 
 
 class DocstringParser:
@@ -318,3 +321,22 @@ def get_region_endpoint(
         region=region,
         service_endpoint_template=service_endpoint_template,
     )
+
+
+def create_input_location(data: dict) -> InputLocation:
+    try:
+        input_location_type = data.get('input_location_type')
+        subtype_name = InputLocation.get_subtype({'inputLocationType': input_location_type})
+
+        if subtype_name == "InlineInputLocation":
+            return InlineInputLocation(**data)
+        elif subtype_name == "ObjectStorageInputLocation":
+            return ObjectStorageInputLocation(**data)
+        else:
+            return InputLocation(**data)
+
+    except (KeyError, TypeError, AttributeError) as e:
+        logger.debug(f"Failed to create InputLocation from: {data}, Error: {str(e)}")
+        raise AgentError(
+            message=f"Failed to create InputLocation from: {data}"
+        ) from e

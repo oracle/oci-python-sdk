@@ -36,23 +36,30 @@ class UpdateConfigurationDetails(object):
             The value to assign to the defined_tags property of this UpdateConfigurationDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param compatible_shapes:
+            The value to assign to the compatible_shapes property of this UpdateConfigurationDetails.
+        :type compatible_shapes: list[str]
+
         """
         self.swagger_types = {
             'display_name': 'str',
             'description': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'compatible_shapes': 'list[str]'
         }
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'compatible_shapes': 'compatibleShapes'
         }
         self._display_name = None
         self._description = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._compatible_shapes = None
 
     @property
     def display_name(self):
@@ -153,6 +160,30 @@ class UpdateConfigurationDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def compatible_shapes(self):
+        """
+        Gets the compatible_shapes of this UpdateConfigurationDetails.
+        Indicates the collection of compatible shapes for this configuration.
+
+
+        :return: The compatible_shapes of this UpdateConfigurationDetails.
+        :rtype: list[str]
+        """
+        return self._compatible_shapes
+
+    @compatible_shapes.setter
+    def compatible_shapes(self, compatible_shapes):
+        """
+        Sets the compatible_shapes of this UpdateConfigurationDetails.
+        Indicates the collection of compatible shapes for this configuration.
+
+
+        :param compatible_shapes: The compatible_shapes of this UpdateConfigurationDetails.
+        :type: list[str]
+        """
+        self._compatible_shapes = compatible_shapes
 
     def __repr__(self):
         return formatted_flat_dict(self)

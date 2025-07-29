@@ -29,6 +29,7 @@ Apigateway
     :template: autosummary/model_class.rst
 
     oci.apigateway.models.AccessLogPolicy
+    oci.apigateway.models.AddResourceLockDetails
     oci.apigateway.models.AdditionalValidationPolicy
     oci.apigateway.models.AnonymousRouteAuthorizationPolicy
     oci.apigateway.models.AnyOfRouteAuthorizationPolicy
@@ -123,11 +124,13 @@ Apigateway
     oci.apigateway.models.RateLimit
     oci.apigateway.models.RateLimitingPolicy
     oci.apigateway.models.RemoteJsonWebKeySet
+    oci.apigateway.models.RemoveResourceLockDetails
     oci.apigateway.models.RenameHeaderPolicy
     oci.apigateway.models.RenameHeaderPolicyItem
     oci.apigateway.models.RenameQueryParameterPolicy
     oci.apigateway.models.RenameQueryParameterPolicyItem
     oci.apigateway.models.RequestParameterValidation
+    oci.apigateway.models.ResourceLock
     oci.apigateway.models.ResponseCacheDetails
     oci.apigateway.models.ResponseCacheLookupPolicy
     oci.apigateway.models.ResponseCacheRespServer

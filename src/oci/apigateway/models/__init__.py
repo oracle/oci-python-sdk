@@ -7,6 +7,7 @@
 from __future__ import absolute_import
 
 from .access_log_policy import AccessLogPolicy
+from .add_resource_lock_details import AddResourceLockDetails
 from .additional_validation_policy import AdditionalValidationPolicy
 from .anonymous_route_authorization_policy import AnonymousRouteAuthorizationPolicy
 from .any_of_route_authorization_policy import AnyOfRouteAuthorizationPolicy
@@ -101,11 +102,13 @@ from .quota import Quota
 from .rate_limit import RateLimit
 from .rate_limiting_policy import RateLimitingPolicy
 from .remote_json_web_key_set import RemoteJsonWebKeySet
+from .remove_resource_lock_details import RemoveResourceLockDetails
 from .rename_header_policy import RenameHeaderPolicy
 from .rename_header_policy_item import RenameHeaderPolicyItem
 from .rename_query_parameter_policy import RenameQueryParameterPolicy
 from .rename_query_parameter_policy_item import RenameQueryParameterPolicyItem
 from .request_parameter_validation import RequestParameterValidation
+from .resource_lock import ResourceLock
 from .response_cache_details import ResponseCacheDetails
 from .response_cache_lookup_policy import ResponseCacheLookupPolicy
 from .response_cache_resp_server import ResponseCacheRespServer
@@ -166,6 +169,7 @@ from .work_request_summary import WorkRequestSummary
 # Maps type names to classes for apigateway services.
 apigateway_type_mapping = {
     "AccessLogPolicy": AccessLogPolicy,
+    "AddResourceLockDetails": AddResourceLockDetails,
     "AdditionalValidationPolicy": AdditionalValidationPolicy,
     "AnonymousRouteAuthorizationPolicy": AnonymousRouteAuthorizationPolicy,
     "AnyOfRouteAuthorizationPolicy": AnyOfRouteAuthorizationPolicy,
@@ -260,11 +264,13 @@ apigateway_type_mapping = {
     "RateLimit": RateLimit,
     "RateLimitingPolicy": RateLimitingPolicy,
     "RemoteJsonWebKeySet": RemoteJsonWebKeySet,
+    "RemoveResourceLockDetails": RemoveResourceLockDetails,
     "RenameHeaderPolicy": RenameHeaderPolicy,
     "RenameHeaderPolicyItem": RenameHeaderPolicyItem,
     "RenameQueryParameterPolicy": RenameQueryParameterPolicy,
     "RenameQueryParameterPolicyItem": RenameQueryParameterPolicyItem,
     "RequestParameterValidation": RequestParameterValidation,
+    "ResourceLock": ResourceLock,
     "ResponseCacheDetails": ResponseCacheDetails,
     "ResponseCacheLookupPolicy": ResponseCacheLookupPolicy,
     "ResponseCacheRespServer": ResponseCacheRespServer,

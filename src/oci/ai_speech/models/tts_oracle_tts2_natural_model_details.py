@@ -30,17 +30,24 @@ class TtsOracleTts2NaturalModelDetails(TtsOracleModelDetails):
             The value to assign to the voice_id property of this TtsOracleTts2NaturalModelDetails.
         :type voice_id: str
 
+        :param language_code:
+            The value to assign to the language_code property of this TtsOracleTts2NaturalModelDetails.
+        :type language_code: str
+
         """
         self.swagger_types = {
             'model_name': 'str',
-            'voice_id': 'str'
+            'voice_id': 'str',
+            'language_code': 'str'
         }
         self.attribute_map = {
             'model_name': 'modelName',
-            'voice_id': 'voiceId'
+            'voice_id': 'voiceId',
+            'language_code': 'languageCode'
         }
         self._model_name = None
         self._voice_id = None
+        self._language_code = None
         self._model_name = 'TTS_2_NATURAL'
 
     @property
@@ -68,6 +75,48 @@ class TtsOracleTts2NaturalModelDetails(TtsOracleModelDetails):
         :type: str
         """
         self._voice_id = voice_id
+
+    @property
+    def language_code(self):
+        """
+        Gets the language_code of this TtsOracleTts2NaturalModelDetails.
+        Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646]. Default en-US
+        - en-US: English - United States
+        - en-GB: English - Great Britain
+        - es-ES: Spanish - Spain
+        - pt-BR: Portuguese - Brazil
+        - hi-IN: Hindi - India
+        - fr-FR: French - France
+        - it-IT: Italian - Italy
+        - ja-JP: Japanese - Japan
+        - zh-CN: Mandarin - China
+
+
+        :return: The language_code of this TtsOracleTts2NaturalModelDetails.
+        :rtype: str
+        """
+        return self._language_code
+
+    @language_code.setter
+    def language_code(self, language_code):
+        """
+        Sets the language_code of this TtsOracleTts2NaturalModelDetails.
+        Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646]. Default en-US
+        - en-US: English - United States
+        - en-GB: English - Great Britain
+        - es-ES: Spanish - Spain
+        - pt-BR: Portuguese - Brazil
+        - hi-IN: Hindi - India
+        - fr-FR: French - France
+        - it-IT: Italian - Italy
+        - ja-JP: Japanese - Japan
+        - zh-CN: Mandarin - China
+
+
+        :param language_code: The language_code of this TtsOracleTts2NaturalModelDetails.
+        :type: str
+        """
+        self._language_code = language_code
 
     def __repr__(self):
         return formatted_flat_dict(self)

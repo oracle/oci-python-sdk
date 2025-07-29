@@ -75,6 +75,8 @@ class HTTPBackend(ApiSpecificationRouteBackend):
     def url(self):
         """
         **[Required]** Gets the url of this HTTPBackend.
+        The url of the HTTP Backend
+
 
         :return: The url of this HTTPBackend.
         :rtype: str
@@ -85,6 +87,8 @@ class HTTPBackend(ApiSpecificationRouteBackend):
     def url(self, url):
         """
         Sets the url of this HTTPBackend.
+        The url of the HTTP Backend
+
 
         :param url: The url of this HTTPBackend.
         :type: str

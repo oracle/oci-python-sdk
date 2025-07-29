@@ -58,6 +58,8 @@ class QueryParameterValidationRequestPolicy(object):
     def parameters(self):
         """
         Gets the parameters of this QueryParameterValidationRequestPolicy.
+        The List of Query Parameters
+
 
         :return: The parameters of this QueryParameterValidationRequestPolicy.
         :rtype: list[oci.apigateway.models.QueryParameterValidationItem]
@@ -68,6 +70,8 @@ class QueryParameterValidationRequestPolicy(object):
     def parameters(self, parameters):
         """
         Sets the parameters of this QueryParameterValidationRequestPolicy.
+        The List of Query Parameters
+
 
         :param parameters: The parameters of this QueryParameterValidationRequestPolicy.
         :type: list[oci.apigateway.models.QueryParameterValidationItem]

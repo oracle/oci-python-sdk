@@ -12,8 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BackupSourceDetails(SourceDetails):
     """
-    Restoring to a new database system from the backup.
-    The database system details that are part of the CreateDbSystem request are not required, but if present will override the details from the backup's database system snapshot.
+    Details of the database system backup.
     """
 
     def __init__(self, **kwargs):

@@ -52,6 +52,10 @@ class CreateConfigurationDetails(object):
             The value to assign to the instance_memory_size_in_gbs property of this CreateConfigurationDetails.
         :type instance_memory_size_in_gbs: int
 
+        :param compatible_shapes:
+            The value to assign to the compatible_shapes property of this CreateConfigurationDetails.
+        :type compatible_shapes: list[str]
+
         :param db_configuration_overrides:
             The value to assign to the db_configuration_overrides property of this CreateConfigurationDetails.
         :type db_configuration_overrides: oci.psql.models.DbConfigurationOverrideCollection
@@ -78,6 +82,7 @@ class CreateConfigurationDetails(object):
             'is_flexible': 'bool',
             'instance_ocpu_count': 'int',
             'instance_memory_size_in_gbs': 'int',
+            'compatible_shapes': 'list[str]',
             'db_configuration_overrides': 'DbConfigurationOverrideCollection',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -92,6 +97,7 @@ class CreateConfigurationDetails(object):
             'is_flexible': 'isFlexible',
             'instance_ocpu_count': 'instanceOcpuCount',
             'instance_memory_size_in_gbs': 'instanceMemorySizeInGBs',
+            'compatible_shapes': 'compatibleShapes',
             'db_configuration_overrides': 'dbConfigurationOverrides',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -105,6 +111,7 @@ class CreateConfigurationDetails(object):
         self._is_flexible = None
         self._instance_ocpu_count = None
         self._instance_memory_size_in_gbs = None
+        self._compatible_shapes = None
         self._db_configuration_overrides = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -213,9 +220,10 @@ class CreateConfigurationDetails(object):
     @property
     def shape(self):
         """
-        **[Required]** Gets the shape of this CreateConfigurationDetails.
+        Gets the shape of this CreateConfigurationDetails.
         The name of the shape for the configuration.
-        Example: `VM.Standard.E4.Flex`
+
+        For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
 
 
         :return: The shape of this CreateConfigurationDetails.
@@ -228,7 +236,8 @@ class CreateConfigurationDetails(object):
         """
         Sets the shape of this CreateConfigurationDetails.
         The name of the shape for the configuration.
-        Example: `VM.Standard.E4.Flex`
+
+        For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
 
 
         :param shape: The shape of this CreateConfigurationDetails.
@@ -315,6 +324,30 @@ class CreateConfigurationDetails(object):
         :type: int
         """
         self._instance_memory_size_in_gbs = instance_memory_size_in_gbs
+
+    @property
+    def compatible_shapes(self):
+        """
+        Gets the compatible_shapes of this CreateConfigurationDetails.
+        Indicates the collection of compatible shapes for this configuration.
+
+
+        :return: The compatible_shapes of this CreateConfigurationDetails.
+        :rtype: list[str]
+        """
+        return self._compatible_shapes
+
+    @compatible_shapes.setter
+    def compatible_shapes(self, compatible_shapes):
+        """
+        Sets the compatible_shapes of this CreateConfigurationDetails.
+        Indicates the collection of compatible shapes for this configuration.
+
+
+        :param compatible_shapes: The compatible_shapes of this CreateConfigurationDetails.
+        :type: list[str]
+        """
+        self._compatible_shapes = compatible_shapes
 
     @property
     def db_configuration_overrides(self):
