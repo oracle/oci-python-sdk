@@ -7,6 +7,7 @@
 from __future__ import absolute_import
 
 from .email_address import EmailAddress
+from .email_raw_submitted_response import EmailRawSubmittedResponse
 from .email_submitted_response import EmailSubmittedResponse
 from .recipients import Recipients
 from .sender import Sender
@@ -15,6 +16,7 @@ from .submit_email_details import SubmitEmailDetails
 # Maps type names to classes for email_data_plane services.
 email_data_plane_type_mapping = {
     "EmailAddress": EmailAddress,
+    "EmailRawSubmittedResponse": EmailRawSubmittedResponse,
     "EmailSubmittedResponse": EmailSubmittedResponse,
     "Recipients": Recipients,
     "Sender": Sender,

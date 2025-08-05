@@ -157,7 +157,7 @@ class DbLifeCycleManagementClient(object):
         resource_path = "/vulnerabilityScans"
         method = "POST"
         operation_name = "create_vulnerability_scan"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dbmgmt/20240102/VulnerabilityScan/CreateVulnerabilityScan"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -262,7 +262,7 @@ class DbLifeCycleManagementClient(object):
         resource_path = "/patchManagement"
         method = "GET"
         operation_name = "get_patch_management"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dbmgmt/20240102/DblmPatchManagement/GetPatchManagement"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -378,7 +378,7 @@ class DbLifeCycleManagementClient(object):
         resource_path = "/vulnerability"
         method = "GET"
         operation_name = "get_vulnerability"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dbmgmt/20240102/DblmVulnerability/GetVulnerability"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -484,7 +484,7 @@ class DbLifeCycleManagementClient(object):
         resource_path = "/vulnerabilityScans/{vulnerabilityScanId}"
         method = "GET"
         operation_name = "get_vulnerability_scan"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dbmgmt/20240102/VulnerabilityScan/GetVulnerabilityScan"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -582,7 +582,7 @@ class DbLifeCycleManagementClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dbmgmt/20240102/WorkRequest/GetWorkRequest"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -700,7 +700,7 @@ class DbLifeCycleManagementClient(object):
         resource_path = "/vulnerability/aggregatedVulnerabilityData"
         method = "GET"
         operation_name = "list_aggregated_vulnerability_data"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dbmgmt/20240102/DblmVulnerability/ListAggregatedVulnerabilityData"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -863,7 +863,7 @@ class DbLifeCycleManagementClient(object):
         resource_path = "/patchManagement/databases"
         method = "GET"
         operation_name = "list_databases"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dbmgmt/20240102/PatchDatabasesCollection/ListDatabases"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1027,7 +1027,7 @@ class DbLifeCycleManagementClient(object):
         resource_path = "/vulnerability/notifications"
         method = "GET"
         operation_name = "list_notifications"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dbmgmt/20240102/NotificationCollection/ListNotifications"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1168,7 +1168,7 @@ class DbLifeCycleManagementClient(object):
         resource_path = "/vulnerability/vulnerabilities"
         method = "GET"
         operation_name = "list_vulnerabilities"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dbmgmt/20240102/DblmVulnerability/ListVulnerabilities"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1356,7 +1356,7 @@ class DbLifeCycleManagementClient(object):
         resource_path = "/vulnerability/resources"
         method = "GET"
         operation_name = "list_vulnerability_resources"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dbmgmt/20240102/VulnerabilityResourceCollection/ListVulnerabilityResources"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1545,7 +1545,7 @@ class DbLifeCycleManagementClient(object):
         resource_path = "/vulnerabilityScans"
         method = "GET"
         operation_name = "list_vulnerability_scans"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dbmgmt/20240102/VulnerabilityScanCollection/ListVulnerabilityScans"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1704,7 +1704,7 @@ class DbLifeCycleManagementClient(object):
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dbmgmt/20240102/WorkRequestError/ListWorkRequestErrors"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1846,7 +1846,7 @@ class DbLifeCycleManagementClient(object):
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dbmgmt/20240102/WorkRequestLogEntry/ListWorkRequestLogs"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1999,7 +1999,7 @@ class DbLifeCycleManagementClient(object):
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dbmgmt/20240102/WorkRequest/ListWorkRequests"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [

@@ -60,6 +60,10 @@ class TranscriptionModelDetails(object):
     LANGUAGE_CODE_IT_IT = "it-IT"
 
     #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "auto"
+    LANGUAGE_CODE_AUTO = "auto"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
     #: This constant has a value of "af"
     LANGUAGE_CODE_AF = "af"
 
@@ -304,7 +308,7 @@ class TranscriptionModelDetails(object):
 
         :param language_code:
             The value to assign to the language_code property of this TranscriptionModelDetails.
-            Allowed values for this property are: "en-US", "es-ES", "pt-BR", "en-GB", "en-AU", "en-IN", "hi-IN", "fr-FR", "de-DE", "it-IT", "af", "ar", "az", "be", "bg", "bs", "ca", "cs", "cy", "da", "de", "el", "en", "es", "et", "fa", "fi", "fr", "gl", "he", "hi", "hr", "hu", "hy", "id", "is", "it", "ja", "kk", "kn", "ko", "lt", "lv", "mi", "mk", "mr", "ms", "ne", "nl", "no", "pl", "pt", "ro", "ru", "sk", "sl", "sr", "sv", "sw", "ta", "th", "tl", "tr", "uk", "ur", "vi", "zh", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "en-US", "es-ES", "pt-BR", "en-GB", "en-AU", "en-IN", "hi-IN", "fr-FR", "de-DE", "it-IT", "auto", "af", "ar", "az", "be", "bg", "bs", "ca", "cs", "cy", "da", "de", "el", "en", "es", "et", "fa", "fi", "fr", "gl", "he", "hi", "hr", "hu", "hy", "id", "is", "it", "ja", "kk", "kn", "ko", "lt", "lv", "mi", "mk", "mr", "ms", "ne", "nl", "no", "pl", "pt", "ro", "ru", "sk", "sl", "sr", "sv", "sw", "ta", "th", "tl", "tr", "uk", "ur", "vi", "zh", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type language_code: str
 
@@ -407,6 +411,7 @@ class TranscriptionModelDetails(object):
         - it-IT: Italian - Italy
 
         Whisper supported language codes are (Whisper models are locale agnostic).
+        - auto: Auto-detect language
         - af: Afrikaans
         - ar: Arabic
         - az: Azerbaijani
@@ -465,7 +470,7 @@ class TranscriptionModelDetails(object):
         - vi: Vietnamese
         - zh: Chinese
 
-        Allowed values for this property are: "en-US", "es-ES", "pt-BR", "en-GB", "en-AU", "en-IN", "hi-IN", "fr-FR", "de-DE", "it-IT", "af", "ar", "az", "be", "bg", "bs", "ca", "cs", "cy", "da", "de", "el", "en", "es", "et", "fa", "fi", "fr", "gl", "he", "hi", "hr", "hu", "hy", "id", "is", "it", "ja", "kk", "kn", "ko", "lt", "lv", "mi", "mk", "mr", "ms", "ne", "nl", "no", "pl", "pt", "ro", "ru", "sk", "sl", "sr", "sv", "sw", "ta", "th", "tl", "tr", "uk", "ur", "vi", "zh", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "en-US", "es-ES", "pt-BR", "en-GB", "en-AU", "en-IN", "hi-IN", "fr-FR", "de-DE", "it-IT", "auto", "af", "ar", "az", "be", "bg", "bs", "ca", "cs", "cy", "da", "de", "el", "en", "es", "et", "fa", "fi", "fr", "gl", "he", "hi", "hr", "hu", "hy", "id", "is", "it", "ja", "kk", "kn", "ko", "lt", "lv", "mi", "mk", "mr", "ms", "ne", "nl", "no", "pl", "pt", "ro", "ru", "sk", "sl", "sr", "sv", "sw", "ta", "th", "tl", "tr", "uk", "ur", "vi", "zh", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -491,6 +496,7 @@ class TranscriptionModelDetails(object):
         - it-IT: Italian - Italy
 
         Whisper supported language codes are (Whisper models are locale agnostic).
+        - auto: Auto-detect language
         - af: Afrikaans
         - ar: Arabic
         - az: Azerbaijani
@@ -553,7 +559,7 @@ class TranscriptionModelDetails(object):
         :param language_code: The language_code of this TranscriptionModelDetails.
         :type: str
         """
-        allowed_values = ["en-US", "es-ES", "pt-BR", "en-GB", "en-AU", "en-IN", "hi-IN", "fr-FR", "de-DE", "it-IT", "af", "ar", "az", "be", "bg", "bs", "ca", "cs", "cy", "da", "de", "el", "en", "es", "et", "fa", "fi", "fr", "gl", "he", "hi", "hr", "hu", "hy", "id", "is", "it", "ja", "kk", "kn", "ko", "lt", "lv", "mi", "mk", "mr", "ms", "ne", "nl", "no", "pl", "pt", "ro", "ru", "sk", "sl", "sr", "sv", "sw", "ta", "th", "tl", "tr", "uk", "ur", "vi", "zh"]
+        allowed_values = ["en-US", "es-ES", "pt-BR", "en-GB", "en-AU", "en-IN", "hi-IN", "fr-FR", "de-DE", "it-IT", "auto", "af", "ar", "az", "be", "bg", "bs", "ca", "cs", "cy", "da", "de", "el", "en", "es", "et", "fa", "fi", "fr", "gl", "he", "hi", "hr", "hu", "hy", "id", "is", "it", "ja", "kk", "kn", "ko", "lt", "lv", "mi", "mk", "mr", "ms", "ne", "nl", "no", "pl", "pt", "ro", "ru", "sk", "sl", "sr", "sv", "sw", "ta", "th", "tl", "tr", "uk", "ur", "vi", "zh"]
         if not value_allowed_none_or_none_sentinel(language_code, allowed_values):
             language_code = 'UNKNOWN_ENUM_VALUE'
         self._language_code = language_code

@@ -159,10 +159,12 @@ API Reference
 * :doc:`Marketplace Publisher <marketplace_publisher/client/oci.marketplace_publisher.MarketplacePublisherClient>`
 * :doc:`Media Services <media_services/client/oci.media_services.MediaServicesClient>`
 * :doc:`Media Stream <media_services/client/oci.media_services.MediaStreamClient>`
+* :doc:`Metadata <multicloud/client/oci.multicloud.MetadataClient>`
 * :doc:`Migration <cloud_migrations/client/oci.cloud_migrations.MigrationClient>`
 * :doc:`Model Deployment <model_deployment/client/oci.model_deployment.ModelDeploymentClient>`
 * :doc:`Monitoring <monitoring/client/oci.monitoring.MonitoringClient>`
 * :doc:`Multi Cloud Resource Discovery <dbmulticloud/client/oci.dbmulticloud.MultiCloudResourceDiscoveryClient>`
+* :doc:`Multi Clouds Metadata <multicloud/client/oci.multicloud.MultiCloudsMetadataClient>`
 * :doc:`Mysqlaas <mysql/client/oci.mysql.MysqlaasClient>`
 * :doc:`Network Firewall <network_firewall/client/oci.network_firewall.NetworkFirewallClient>`
 * :doc:`Network Load Balancer <network_load_balancer/client/oci.network_load_balancer.NetworkLoadBalancerClient>`
@@ -178,6 +180,8 @@ API Reference
 * :doc:`Oda <oda/client/oci.oda.OdaClient>`
 * :doc:`Odapackage <oda/client/oci.oda.OdapackageClient>`
 * :doc:`Offer <marketplace_private_offer/client/oci.marketplace_private_offer.OfferClient>`
+* :doc:`Omhub Network Anchor <multicloud/client/oci.multicloud.OmhubNetworkAnchorClient>`
+* :doc:`Omhub Resource Anchor <multicloud/client/oci.multicloud.OmhubResourceAnchorClient>`
 * :doc:`Onboarding <os_management_hub/client/oci.os_management_hub.OnboardingClient>`
 * :doc:`Opa Instance <opa/client/oci.opa.OpaInstanceClient>`
 * :doc:`Opensearch Cluster <opensearch/client/oci.opensearch.OpensearchClusterClient>`
@@ -406,6 +410,7 @@ API Reference
     mngdmac
     model_deployment
     monitoring
+    multicloud
     mysql
     network_firewall
     network_load_balancer

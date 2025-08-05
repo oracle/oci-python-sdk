@@ -24,14 +24,21 @@ class TranscriptionSettings(object):
             The value to assign to the diarization property of this TranscriptionSettings.
         :type diarization: oci.ai_speech.models.Diarization
 
+        :param additional_settings:
+            The value to assign to the additional_settings property of this TranscriptionSettings.
+        :type additional_settings: dict(str, str)
+
         """
         self.swagger_types = {
-            'diarization': 'Diarization'
+            'diarization': 'Diarization',
+            'additional_settings': 'dict(str, str)'
         }
         self.attribute_map = {
-            'diarization': 'diarization'
+            'diarization': 'diarization',
+            'additional_settings': 'additionalSettings'
         }
         self._diarization = None
+        self._additional_settings = None
 
     @property
     def diarization(self):
@@ -52,6 +59,30 @@ class TranscriptionSettings(object):
         :type: oci.ai_speech.models.Diarization
         """
         self._diarization = diarization
+
+    @property
+    def additional_settings(self):
+        """
+        Gets the additional_settings of this TranscriptionSettings.
+        Simple key-value pair for setting model specific properties. For more details, refer the documentation.
+
+
+        :return: The additional_settings of this TranscriptionSettings.
+        :rtype: dict(str, str)
+        """
+        return self._additional_settings
+
+    @additional_settings.setter
+    def additional_settings(self, additional_settings):
+        """
+        Sets the additional_settings of this TranscriptionSettings.
+        Simple key-value pair for setting model specific properties. For more details, refer the documentation.
+
+
+        :param additional_settings: The additional_settings of this TranscriptionSettings.
+        :type: dict(str, str)
+        """
+        self._additional_settings = additional_settings
 
     def __repr__(self):
         return formatted_flat_dict(self)
