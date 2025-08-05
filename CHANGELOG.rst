@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.157.1 - 2025-08-05
+====================
+
+Added 
+----- 
+* Support for the Oracle Multicloud Hub service 
+* Support for Whisper Models Prompt feature via additional settings object for the AI Speech service 
+* Support for Language Auto Detection for the AI Speech Service 
+* Support for SubmitRawEmail API in Email Delivery service 
+
+====================
 2.157.0 - 2025-07-29
 ====================
 

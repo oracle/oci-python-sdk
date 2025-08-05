@@ -14,6 +14,7 @@ from oci.base_client import BaseClient
 from oci.config import get_config_value_or_default, validate_config
 from oci.signer import Signer
 from oci.util import Sentinel, get_signer_from_authentication_type, AUTHENTICATION_TYPE_FIELD_NAME
+from oci.util import back_up_body_calculate_stream_content_length, is_content_length_calculable_by_req_util
 from oci.exceptions import InvalidAlloyConfig
 from oci.alloy import OCI_SDK_ENABLED_SERVICES_SET
 from .models import email_data_plane_type_mapping
@@ -200,6 +201,147 @@ class EmailDPClient(object):
                 header_params=header_params,
                 body=submit_email_details,
                 response_type="EmailSubmittedResponse",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def submit_raw_email(self, content_type, compartment_id, sender, recipients, raw_message, **kwargs):
+        """
+        Submits a raw email.
+
+
+        :param str content_type: (required)
+            The media type of the body.
+
+            Allowed values are: "message/rfc822", "message/global"
+
+        :param str compartment_id: (required)
+            The `OCID`__ of the compartment that contains the approved sender resource.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str sender: (required)
+            The envelope and the header from email address, that is sending the email. Email address must be an approved sender.
+
+        :param oci.email_data_plane.models.list[str] recipients: (required)
+            The destination for the email, all recipients including to, cc and bcc addresses.
+
+        :param stream raw_message: (required)
+            This should be formatted in valid MIME format. Message can include attachments. MIME libraries should be used to convert the content into the appropriate format.
+
+        :param str opc_request_id: (optional)
+            The request ID for tracing from the system
+
+        :param int content_length: (optional)
+            The content length of the body.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+        :param int buffer_limit: (optional)
+            A buffer limit for the stream to be buffered. buffer_limit is used to set the buffer size capacity. Streams will be read until the size of the buffer reaches the buffer_limit.
+            If the stream size is greater than the buffer_limit, a BufferError exception will be thrown.
+
+            The buffer_limit parameter is used when the stream object does not have a `seek`, `tell`, or `fileno` property for the Python Request library to calculate out the content length.
+            If buffer_limit is not passed, then the buffer_limit will be defaulted to 100MB.
+            Large streams can cause the process to freeze, consider passing in content-length for large streams instead.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.email_data_plane.models.EmailRawSubmittedResponse`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/emaildataplane/submit_raw_email.py.html>`__ to see an example of how to use submit_raw_email API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/actions/submitRawEmail"
+        method = "POST"
+        operation_name = "submit_raw_email"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/emaildeliverysubmission/20220926/EmailRawSubmittedResponse/SubmitRawEmail"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "buffer_limit",
+            "opc_request_id",
+            "content_length"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"submit_raw_email got unknown kwargs: {extra_kwargs!r}")
+
+        header_params = {
+            "accept": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "content-length": kwargs.get("content_length", missing),
+            "content-type": content_type,
+            "compartment-id": compartment_id,
+            "sender": sender,
+            "recipients": recipients
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        # If the body parameter is optional we need to assign it to a variable so additional type checking can be performed.
+        try:
+            raw_message
+        except NameError:
+            raw_message = kwargs.get("raw_message", missing)
+
+        if raw_message is not missing and raw_message is not None:
+            if (not isinstance(raw_message, (six.binary_type, six.string_types)) and
+                    not hasattr(raw_message, "read")):
+                raise TypeError('The body must be a string, bytes, or provide a read() method.')
+
+            if hasattr(raw_message, 'fileno') and hasattr(raw_message, 'name') and raw_message.name != '<stdin>':
+                if requests.utils.super_len(raw_message) == 0:
+                    header_params['Content-Length'] = '0'
+
+            # If content length is not given and stream object have no 'fileno' and is not a string or bytes, try to calculate content length
+            elif 'Content-Length' not in header_params and not is_content_length_calculable_by_req_util(raw_message):
+                calculated_obj = back_up_body_calculate_stream_content_length(raw_message, kwargs.get("buffer_limit"))
+                header_params['Content-Length'] = calculated_obj["content_length"]
+                raw_message = calculated_obj["byte_content"]
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=raw_message,
+                response_type="EmailRawSubmittedResponse",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=raw_message,
+                response_type="EmailRawSubmittedResponse",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,

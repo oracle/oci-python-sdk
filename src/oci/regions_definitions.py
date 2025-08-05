@@ -44,7 +44,6 @@ REGIONS_SHORT_NAMES = {
     'xsp': 'ap-singapore-2',
     'ruh': 'me-riyadh-1',
     'onm': 'ap-delhi-1',
-    'fyv': 'ap-kulai-1',
     'hsg': 'ap-batam-1',
     'lfi': 'us-langley-1',
     'luf': 'us-luke-1',
@@ -123,7 +122,6 @@ REGION_REALMS = {
     'ap-singapore-2': 'oc1',
     'me-riyadh-1': 'oc1',
     'ap-delhi-1': 'oc1',
-    'ap-kulai-1': 'oc1',
     'ap-batam-1': 'oc1',
 
     'us-langley-1': 'oc2',
@@ -239,7 +237,6 @@ REGIONS = [
     'ap-singapore-2',
     'me-riyadh-1',
     'ap-delhi-1',
-    'ap-kulai-1',
     'ap-batam-1',
     'us-langley-1',
     'us-luke-1',

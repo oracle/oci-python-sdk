@@ -19,6 +19,7 @@ Email Data Plane
     :template: autosummary/model_class.rst
 
     oci.email_data_plane.models.EmailAddress
+    oci.email_data_plane.models.EmailRawSubmittedResponse
     oci.email_data_plane.models.EmailSubmittedResponse
     oci.email_data_plane.models.Recipients
     oci.email_data_plane.models.Sender
