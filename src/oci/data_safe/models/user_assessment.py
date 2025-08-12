@@ -39,6 +39,14 @@ class UserAssessment(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the target_type property of a UserAssessment.
+    #: This constant has a value of "TARGET_DATABASE"
+    TARGET_TYPE_TARGET_DATABASE = "TARGET_DATABASE"
+
+    #: A constant which can be used with the target_type property of a UserAssessment.
+    #: This constant has a value of "TARGET_DATABASE_GROUP"
+    TARGET_TYPE_TARGET_DATABASE_GROUP = "TARGET_DATABASE_GROUP"
+
     #: A constant which can be used with the triggered_by property of a UserAssessment.
     #: This constant has a value of "USER"
     TRIGGERED_BY_USER = "USER"
@@ -122,6 +130,16 @@ class UserAssessment(object):
             The value to assign to the is_assessment_scheduled property of this UserAssessment.
         :type is_assessment_scheduled: bool
 
+        :param target_database_group_id:
+            The value to assign to the target_database_group_id property of this UserAssessment.
+        :type target_database_group_id: str
+
+        :param target_type:
+            The value to assign to the target_type property of this UserAssessment.
+            Allowed values for this property are: "TARGET_DATABASE", "TARGET_DATABASE_GROUP", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type target_type: str
+
         :param schedule:
             The value to assign to the schedule property of this UserAssessment.
         :type schedule: str
@@ -185,6 +203,8 @@ class UserAssessment(object):
             'lifecycle_details': 'str',
             'schedule_assessment_id': 'str',
             'is_assessment_scheduled': 'bool',
+            'target_database_group_id': 'str',
+            'target_type': 'str',
             'schedule': 'str',
             'statistics': 'dict(str, dict(str, object))',
             'target_ids': 'list[str]',
@@ -211,6 +231,8 @@ class UserAssessment(object):
             'lifecycle_details': 'lifecycleDetails',
             'schedule_assessment_id': 'scheduleAssessmentId',
             'is_assessment_scheduled': 'isAssessmentScheduled',
+            'target_database_group_id': 'targetDatabaseGroupId',
+            'target_type': 'targetType',
             'schedule': 'schedule',
             'statistics': 'statistics',
             'target_ids': 'targetIds',
@@ -236,6 +258,8 @@ class UserAssessment(object):
         self._lifecycle_details = None
         self._schedule_assessment_id = None
         self._is_assessment_scheduled = None
+        self._target_database_group_id = None
+        self._target_type = None
         self._schedule = None
         self._statistics = None
         self._target_ids = None
@@ -569,6 +593,60 @@ class UserAssessment(object):
         :type: bool
         """
         self._is_assessment_scheduled = is_assessment_scheduled
+
+    @property
+    def target_database_group_id(self):
+        """
+        Gets the target_database_group_id of this UserAssessment.
+        The OCID of target database group.
+
+
+        :return: The target_database_group_id of this UserAssessment.
+        :rtype: str
+        """
+        return self._target_database_group_id
+
+    @target_database_group_id.setter
+    def target_database_group_id(self, target_database_group_id):
+        """
+        Sets the target_database_group_id of this UserAssessment.
+        The OCID of target database group.
+
+
+        :param target_database_group_id: The target_database_group_id of this UserAssessment.
+        :type: str
+        """
+        self._target_database_group_id = target_database_group_id
+
+    @property
+    def target_type(self):
+        """
+        Gets the target_type of this UserAssessment.
+        Indicates whether the user assessment is for a target database or a target database group.
+
+        Allowed values for this property are: "TARGET_DATABASE", "TARGET_DATABASE_GROUP", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The target_type of this UserAssessment.
+        :rtype: str
+        """
+        return self._target_type
+
+    @target_type.setter
+    def target_type(self, target_type):
+        """
+        Sets the target_type of this UserAssessment.
+        Indicates whether the user assessment is for a target database or a target database group.
+
+
+        :param target_type: The target_type of this UserAssessment.
+        :type: str
+        """
+        allowed_values = ["TARGET_DATABASE", "TARGET_DATABASE_GROUP"]
+        if not value_allowed_none_or_none_sentinel(target_type, allowed_values):
+            target_type = 'UNKNOWN_ENUM_VALUE'
+        self._target_type = target_type
 
     @property
     def schedule(self):

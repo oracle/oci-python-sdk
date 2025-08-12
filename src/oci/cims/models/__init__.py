@@ -39,11 +39,11 @@ from .status import Status
 from .sub_categories import SubCategories
 from .sub_category import SubCategory
 from .sub_components import SubComponents
-from .subscription_info import SubscriptionInfo
 from .tech_support_item import TechSupportItem
 from .tenancy_information import TenancyInformation
 from .ticket import Ticket
 from .update_activity_item_details import UpdateActivityItemDetails
+from .update_contact_item_details import UpdateContactItemDetails
 from .update_incident import UpdateIncident
 from .update_item_details import UpdateItemDetails
 from .update_resource_details import UpdateResourceDetails
@@ -86,11 +86,11 @@ cims_type_mapping = {
     "SubCategories": SubCategories,
     "SubCategory": SubCategory,
     "SubComponents": SubComponents,
-    "SubscriptionInfo": SubscriptionInfo,
     "TechSupportItem": TechSupportItem,
     "TenancyInformation": TenancyInformation,
     "Ticket": Ticket,
     "UpdateActivityItemDetails": UpdateActivityItemDetails,
+    "UpdateContactItemDetails": UpdateContactItemDetails,
     "UpdateIncident": UpdateIncident,
     "UpdateItemDetails": UpdateItemDetails,
     "UpdateResourceDetails": UpdateResourceDetails,

@@ -51,11 +51,11 @@ Cims
     oci.cims.models.SubCategories
     oci.cims.models.SubCategory
     oci.cims.models.SubComponents
-    oci.cims.models.SubscriptionInfo
     oci.cims.models.TechSupportItem
     oci.cims.models.TenancyInformation
     oci.cims.models.Ticket
     oci.cims.models.UpdateActivityItemDetails
+    oci.cims.models.UpdateContactItemDetails
     oci.cims.models.UpdateIncident
     oci.cims.models.UpdateItemDetails
     oci.cims.models.UpdateResourceDetails

@@ -53,7 +53,7 @@ class CreateOrUpdateProtectedBranchDetails(object):
     def branch_name(self):
         """
         **[Required]** Gets the branch_name of this CreateOrUpdateProtectedBranchDetails.
-        Name of a branch to protect.
+        The branchName can either be exact branch name or branch pattern.
 
 
         :return: The branch_name of this CreateOrUpdateProtectedBranchDetails.
@@ -65,7 +65,7 @@ class CreateOrUpdateProtectedBranchDetails(object):
     def branch_name(self, branch_name):
         """
         Sets the branch_name of this CreateOrUpdateProtectedBranchDetails.
-        Name of a branch to protect.
+        The branchName can either be exact branch name or branch pattern.
 
 
         :param branch_name: The branch_name of this CreateOrUpdateProtectedBranchDetails.

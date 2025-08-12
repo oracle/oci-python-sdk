@@ -23,7 +23,7 @@ class FirewallPolicyEntryDetails(EntryDetails):
 
         :param entry_type:
             The value to assign to the entry_type property of this FirewallPolicyEntryDetails.
-            Allowed values for this property are: "FIREWALL_POLICY"
+            Allowed values for this property are: "FIREWALL_POLICY", "AUDIT_POLICY"
         :type entry_type: str
 
         :param time_generated:

@@ -1,0 +1,11 @@
+UnifiedAuditPolicyDefinition
+============================
+
+.. currentmodule:: oci.data_safe.models
+
+.. autoclass:: UnifiedAuditPolicyDefinition
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

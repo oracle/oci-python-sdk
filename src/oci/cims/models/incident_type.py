@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class IncidentType(object):
     """
-    Details about the incident type associated with the support ticket.
+    Details about the incident type associated with the support request.
     """
 
     def __init__(self, **kwargs):

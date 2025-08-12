@@ -19,18 +19,23 @@ class EntryDetails(object):
     #: This constant has a value of "FIREWALL_POLICY"
     ENTRY_TYPE_FIREWALL_POLICY = "FIREWALL_POLICY"
 
+    #: A constant which can be used with the entry_type property of a EntryDetails.
+    #: This constant has a value of "AUDIT_POLICY"
+    ENTRY_TYPE_AUDIT_POLICY = "AUDIT_POLICY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new EntryDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.data_safe.models.AuditPolicyEntryDetails`
         * :class:`~oci.data_safe.models.FirewallPolicyEntryDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param entry_type:
             The value to assign to the entry_type property of this EntryDetails.
-            Allowed values for this property are: "FIREWALL_POLICY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "FIREWALL_POLICY", "AUDIT_POLICY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type entry_type: str
 
@@ -51,6 +56,9 @@ class EntryDetails(object):
         """
         type = object_dictionary['entryType']
 
+        if type == 'AUDIT_POLICY':
+            return 'AuditPolicyEntryDetails'
+
         if type == 'FIREWALL_POLICY':
             return 'FirewallPolicyEntryDetails'
         else:
@@ -62,8 +70,9 @@ class EntryDetails(object):
         **[Required]** Gets the entry_type of this EntryDetails.
         The security policy entry type. Allowed values:
         - FIREWALL_POLICY - The SQL Firewall policy entry type.
+        - AUDIT_POLICY - The audit policy entry type.
 
-        Allowed values for this property are: "FIREWALL_POLICY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "FIREWALL_POLICY", "AUDIT_POLICY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -78,12 +87,13 @@ class EntryDetails(object):
         Sets the entry_type of this EntryDetails.
         The security policy entry type. Allowed values:
         - FIREWALL_POLICY - The SQL Firewall policy entry type.
+        - AUDIT_POLICY - The audit policy entry type.
 
 
         :param entry_type: The entry_type of this EntryDetails.
         :type: str
         """
-        allowed_values = ["FIREWALL_POLICY"]
+        allowed_values = ["FIREWALL_POLICY", "AUDIT_POLICY"]
         if not value_allowed_none_or_none_sentinel(entry_type, allowed_values):
             entry_type = 'UNKNOWN_ENUM_VALUE'
         self._entry_type = entry_type

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateIncident(object):
     """
-    Details gathered during the creation of the support ticket.
+    Details gathered during the creation of the support request.
     """
 
     #: A constant which can be used with the problem_type property of a CreateIncident.
@@ -144,7 +144,7 @@ class CreateIncident(object):
     def csi(self):
         """
         Gets the csi of this CreateIncident.
-        The Customer Support Identifier (CSI) number associated with the support account.
+        Deprecated. The Customer Support Identifier (CSI) number associated with the support account.
         The CSI is optional for all support request types.
 
 
@@ -157,7 +157,7 @@ class CreateIncident(object):
     def csi(self, csi):
         """
         Sets the csi of this CreateIncident.
-        The Customer Support Identifier (CSI) number associated with the support account.
+        Deprecated. The Customer Support Identifier (CSI) number associated with the support account.
         The CSI is optional for all support request types.
 
 
@@ -170,7 +170,13 @@ class CreateIncident(object):
     def user_group_id(self):
         """
         Gets the user_group_id of this CreateIncident.
-        Technical support type (`TECH`) only: The identifier of the support request's user group in My Oracle Cloud Support portal.
+        Technical support type (`TECH`) only: Identifier of the user group to assign the new support request to.
+        To find identifiers of user groups that you have access to, run the
+        :func:`validate_user` operation.
+        Note: The Customer User Administrator (CUA) can manage user groups by name using
+        `My Oracle Cloud Support portal`__.
+
+        __ https://support.oracle.com
 
 
         :return: The user_group_id of this CreateIncident.
@@ -182,7 +188,13 @@ class CreateIncident(object):
     def user_group_id(self, user_group_id):
         """
         Sets the user_group_id of this CreateIncident.
-        Technical support type (`TECH`) only: The identifier of the support request's user group in My Oracle Cloud Support portal.
+        Technical support type (`TECH`) only: Identifier of the user group to assign the new support request to.
+        To find identifiers of user groups that you have access to, run the
+        :func:`validate_user` operation.
+        Note: The Customer User Administrator (CUA) can manage user groups by name using
+        `My Oracle Cloud Support portal`__.
+
+        __ https://support.oracle.com
 
 
         :param user_group_id: The user_group_id of this CreateIncident.
@@ -194,12 +206,12 @@ class CreateIncident(object):
     def problem_type(self):
         """
         **[Required]** Gets the problem_type of this CreateIncident.
-        The kind of support ticket (type of support request).
-        For information about `ACCOUNT` support tickets, see
+        The kind of support request (type of support request).
+        For information about `ACCOUNT` support requests, see
         `Creating a Billing Support Request`__.
-        For information about `LIMIT` support tickets, see
+        For information about `LIMIT` support requests, see
         `Creating a Service Limit Increase Request`__.
-        For information about `TECH` support tickets, see
+        For information about `TECH` support requests, see
         `Creating a Technical Support Request`__.
 
         __ https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm
@@ -218,12 +230,12 @@ class CreateIncident(object):
     def problem_type(self, problem_type):
         """
         Sets the problem_type of this CreateIncident.
-        The kind of support ticket (type of support request).
-        For information about `ACCOUNT` support tickets, see
+        The kind of support request (type of support request).
+        For information about `ACCOUNT` support requests, see
         `Creating a Billing Support Request`__.
-        For information about `LIMIT` support tickets, see
+        For information about `LIMIT` support requests, see
         `Creating a Service Limit Increase Request`__.
-        For information about `TECH` support tickets, see
+        For information about `TECH` support requests, see
         `Creating a Technical Support Request`__.
 
         __ https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm
@@ -269,7 +281,7 @@ class CreateIncident(object):
     def referrer(self):
         """
         Gets the referrer of this CreateIncident.
-        The incident referrer. This value is often the URL that the customer used when creating the support ticket.
+        The incident referrer. This value is often the URL that the customer used when creating the support request.
 
 
         :return: The referrer of this CreateIncident.
@@ -281,7 +293,7 @@ class CreateIncident(object):
     def referrer(self, referrer):
         """
         Sets the referrer of this CreateIncident.
-        The incident referrer. This value is often the URL that the customer used when creating the support ticket.
+        The incident referrer. This value is often the URL that the customer used when creating the support request.
 
 
         :param referrer: The referrer of this CreateIncident.

@@ -47,6 +47,74 @@ class WorkRequest(object):
     #: This constant has a value of "MOVE_MODEL"
     OPERATION_TYPE_MOVE_MODEL = "MOVE_MODEL"
 
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "ADD_STREAM_SOURCE"
+    OPERATION_TYPE_ADD_STREAM_SOURCE = "ADD_STREAM_SOURCE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "UPDATE_STREAM_SOURCE"
+    OPERATION_TYPE_UPDATE_STREAM_SOURCE = "UPDATE_STREAM_SOURCE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "DELETE_STREAM_SOURCE"
+    OPERATION_TYPE_DELETE_STREAM_SOURCE = "DELETE_STREAM_SOURCE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "MOVE_STREAM_SOURCE"
+    OPERATION_TYPE_MOVE_STREAM_SOURCE = "MOVE_STREAM_SOURCE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "CREATE_STREAM_JOB"
+    OPERATION_TYPE_CREATE_STREAM_JOB = "CREATE_STREAM_JOB"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "DELETE_STREAM_JOB"
+    OPERATION_TYPE_DELETE_STREAM_JOB = "DELETE_STREAM_JOB"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "UPDATE_STREAM_JOB"
+    OPERATION_TYPE_UPDATE_STREAM_JOB = "UPDATE_STREAM_JOB"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "START_STREAM_JOB"
+    OPERATION_TYPE_START_STREAM_JOB = "START_STREAM_JOB"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "STOP_STREAM_JOB"
+    OPERATION_TYPE_STOP_STREAM_JOB = "STOP_STREAM_JOB"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "MOVE_STREAM_JOB"
+    OPERATION_TYPE_MOVE_STREAM_JOB = "MOVE_STREAM_JOB"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "ADD_STREAM_GROUP"
+    OPERATION_TYPE_ADD_STREAM_GROUP = "ADD_STREAM_GROUP"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "UPDATE_STREAM_GROUP"
+    OPERATION_TYPE_UPDATE_STREAM_GROUP = "UPDATE_STREAM_GROUP"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "DELETE_STREAM_GROUP"
+    OPERATION_TYPE_DELETE_STREAM_GROUP = "DELETE_STREAM_GROUP"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "CREATE_VISION_PRIVATE_ENDPOINT"
+    OPERATION_TYPE_CREATE_VISION_PRIVATE_ENDPOINT = "CREATE_VISION_PRIVATE_ENDPOINT"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "UPDATE_VISION_PRIVATE_ENDPOINT"
+    OPERATION_TYPE_UPDATE_VISION_PRIVATE_ENDPOINT = "UPDATE_VISION_PRIVATE_ENDPOINT"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "DELETE_VISION_PRIVATE_ENDPOINT"
+    OPERATION_TYPE_DELETE_VISION_PRIVATE_ENDPOINT = "DELETE_VISION_PRIVATE_ENDPOINT"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "MOVE_VISION_PRIVATE_ENDPOINT"
+    OPERATION_TYPE_MOVE_VISION_PRIVATE_ENDPOINT = "MOVE_VISION_PRIVATE_ENDPOINT"
+
     #: A constant which can be used with the status property of a WorkRequest.
     #: This constant has a value of "ACCEPTED"
     STATUS_ACCEPTED = "ACCEPTED"
@@ -82,7 +150,7 @@ class WorkRequest(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequest.
-            Allowed values for this property are: "CREATE_PROJECT", "UPDATE_PROJECT", "DELETE_PROJECT", "MOVE_PROJECT", "CREATE_MODEL", "UPDATE_MODEL", "DELETE_MODEL", "MOVE_MODEL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_PROJECT", "UPDATE_PROJECT", "DELETE_PROJECT", "MOVE_PROJECT", "CREATE_MODEL", "UPDATE_MODEL", "DELETE_MODEL", "MOVE_MODEL", "ADD_STREAM_SOURCE", "UPDATE_STREAM_SOURCE", "DELETE_STREAM_SOURCE", "MOVE_STREAM_SOURCE", "CREATE_STREAM_JOB", "DELETE_STREAM_JOB", "UPDATE_STREAM_JOB", "START_STREAM_JOB", "STOP_STREAM_JOB", "MOVE_STREAM_JOB", "ADD_STREAM_GROUP", "UPDATE_STREAM_GROUP", "DELETE_STREAM_GROUP", "CREATE_VISION_PRIVATE_ENDPOINT", "UPDATE_VISION_PRIVATE_ENDPOINT", "DELETE_VISION_PRIVATE_ENDPOINT", "MOVE_VISION_PRIVATE_ENDPOINT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -159,7 +227,7 @@ class WorkRequest(object):
         **[Required]** Gets the operation_type of this WorkRequest.
         The type of work request.
 
-        Allowed values for this property are: "CREATE_PROJECT", "UPDATE_PROJECT", "DELETE_PROJECT", "MOVE_PROJECT", "CREATE_MODEL", "UPDATE_MODEL", "DELETE_MODEL", "MOVE_MODEL", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_PROJECT", "UPDATE_PROJECT", "DELETE_PROJECT", "MOVE_PROJECT", "CREATE_MODEL", "UPDATE_MODEL", "DELETE_MODEL", "MOVE_MODEL", "ADD_STREAM_SOURCE", "UPDATE_STREAM_SOURCE", "DELETE_STREAM_SOURCE", "MOVE_STREAM_SOURCE", "CREATE_STREAM_JOB", "DELETE_STREAM_JOB", "UPDATE_STREAM_JOB", "START_STREAM_JOB", "STOP_STREAM_JOB", "MOVE_STREAM_JOB", "ADD_STREAM_GROUP", "UPDATE_STREAM_GROUP", "DELETE_STREAM_GROUP", "CREATE_VISION_PRIVATE_ENDPOINT", "UPDATE_VISION_PRIVATE_ENDPOINT", "DELETE_VISION_PRIVATE_ENDPOINT", "MOVE_VISION_PRIVATE_ENDPOINT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -178,7 +246,7 @@ class WorkRequest(object):
         :param operation_type: The operation_type of this WorkRequest.
         :type: str
         """
-        allowed_values = ["CREATE_PROJECT", "UPDATE_PROJECT", "DELETE_PROJECT", "MOVE_PROJECT", "CREATE_MODEL", "UPDATE_MODEL", "DELETE_MODEL", "MOVE_MODEL"]
+        allowed_values = ["CREATE_PROJECT", "UPDATE_PROJECT", "DELETE_PROJECT", "MOVE_PROJECT", "CREATE_MODEL", "UPDATE_MODEL", "DELETE_MODEL", "MOVE_MODEL", "ADD_STREAM_SOURCE", "UPDATE_STREAM_SOURCE", "DELETE_STREAM_SOURCE", "MOVE_STREAM_SOURCE", "CREATE_STREAM_JOB", "DELETE_STREAM_JOB", "UPDATE_STREAM_JOB", "START_STREAM_JOB", "STOP_STREAM_JOB", "MOVE_STREAM_JOB", "ADD_STREAM_GROUP", "UPDATE_STREAM_GROUP", "DELETE_STREAM_GROUP", "CREATE_VISION_PRIVATE_ENDPOINT", "UPDATE_VISION_PRIVATE_ENDPOINT", "DELETE_VISION_PRIVATE_ENDPOINT", "MOVE_VISION_PRIVATE_ENDPOINT"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type

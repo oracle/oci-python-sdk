@@ -15,6 +15,18 @@ class SecurityPolicyEntryStateSummary(object):
     The resource represents the state of a specific entry type deployment on a target.
     """
 
+    #: A constant which can be used with the entry_type property of a SecurityPolicyEntryStateSummary.
+    #: This constant has a value of "FIREWALL_POLICY"
+    ENTRY_TYPE_FIREWALL_POLICY = "FIREWALL_POLICY"
+
+    #: A constant which can be used with the entry_type property of a SecurityPolicyEntryStateSummary.
+    #: This constant has a value of "AUDIT_POLICY"
+    ENTRY_TYPE_AUDIT_POLICY = "AUDIT_POLICY"
+
+    #: A constant which can be used with the entry_type property of a SecurityPolicyEntryStateSummary.
+    #: This constant has a value of "CONFIG"
+    ENTRY_TYPE_CONFIG = "CONFIG"
+
     #: A constant which can be used with the deployment_status property of a SecurityPolicyEntryStateSummary.
     #: This constant has a value of "CREATED"
     DEPLOYMENT_STATUS_CREATED = "CREATED"
@@ -26,6 +38,18 @@ class SecurityPolicyEntryStateSummary(object):
     #: A constant which can be used with the deployment_status property of a SecurityPolicyEntryStateSummary.
     #: This constant has a value of "CONFLICT"
     DEPLOYMENT_STATUS_CONFLICT = "CONFLICT"
+
+    #: A constant which can be used with the deployment_status property of a SecurityPolicyEntryStateSummary.
+    #: This constant has a value of "CONNECTIVITY_ISSUE"
+    DEPLOYMENT_STATUS_CONNECTIVITY_ISSUE = "CONNECTIVITY_ISSUE"
+
+    #: A constant which can be used with the deployment_status property of a SecurityPolicyEntryStateSummary.
+    #: This constant has a value of "UNSUPPORTED_SYNTAX"
+    DEPLOYMENT_STATUS_UNSUPPORTED_SYNTAX = "UNSUPPORTED_SYNTAX"
+
+    #: A constant which can be used with the deployment_status property of a SecurityPolicyEntryStateSummary.
+    #: This constant has a value of "UNKNOWN_ERROR"
+    DEPLOYMENT_STATUS_UNKNOWN_ERROR = "UNKNOWN_ERROR"
 
     #: A constant which can be used with the deployment_status property of a SecurityPolicyEntryStateSummary.
     #: This constant has a value of "UNAUTHORIZED"
@@ -52,29 +76,52 @@ class SecurityPolicyEntryStateSummary(object):
             The value to assign to the security_policy_deployment_id property of this SecurityPolicyEntryStateSummary.
         :type security_policy_deployment_id: str
 
+        :param target_id:
+            The value to assign to the target_id property of this SecurityPolicyEntryStateSummary.
+        :type target_id: str
+
+        :param entry_type:
+            The value to assign to the entry_type property of this SecurityPolicyEntryStateSummary.
+            Allowed values for this property are: "FIREWALL_POLICY", "AUDIT_POLICY", "CONFIG", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type entry_type: str
+
         :param deployment_status:
             The value to assign to the deployment_status property of this SecurityPolicyEntryStateSummary.
-            Allowed values for this property are: "CREATED", "MODIFIED", "CONFLICT", "UNAUTHORIZED", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATED", "MODIFIED", "CONFLICT", "CONNECTIVITY_ISSUE", "UNSUPPORTED_SYNTAX", "UNKNOWN_ERROR", "UNAUTHORIZED", "DELETED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type deployment_status: str
+
+        :param deployment_status_details:
+            The value to assign to the deployment_status_details property of this SecurityPolicyEntryStateSummary.
+        :type deployment_status_details: str
 
         """
         self.swagger_types = {
             'id': 'str',
             'security_policy_entry_id': 'str',
             'security_policy_deployment_id': 'str',
-            'deployment_status': 'str'
+            'target_id': 'str',
+            'entry_type': 'str',
+            'deployment_status': 'str',
+            'deployment_status_details': 'str'
         }
         self.attribute_map = {
             'id': 'id',
             'security_policy_entry_id': 'securityPolicyEntryId',
             'security_policy_deployment_id': 'securityPolicyDeploymentId',
-            'deployment_status': 'deploymentStatus'
+            'target_id': 'targetId',
+            'entry_type': 'entryType',
+            'deployment_status': 'deploymentStatus',
+            'deployment_status_details': 'deploymentStatusDetails'
         }
         self._id = None
         self._security_policy_entry_id = None
         self._security_policy_deployment_id = None
+        self._target_id = None
+        self._entry_type = None
         self._deployment_status = None
+        self._deployment_status_details = None
 
     @property
     def id(self):
@@ -149,12 +196,72 @@ class SecurityPolicyEntryStateSummary(object):
         self._security_policy_deployment_id = security_policy_deployment_id
 
     @property
+    def target_id(self):
+        """
+        **[Required]** Gets the target_id of this SecurityPolicyEntryStateSummary.
+        The OCID of the target on which the security policy is deployed.
+
+
+        :return: The target_id of this SecurityPolicyEntryStateSummary.
+        :rtype: str
+        """
+        return self._target_id
+
+    @target_id.setter
+    def target_id(self, target_id):
+        """
+        Sets the target_id of this SecurityPolicyEntryStateSummary.
+        The OCID of the target on which the security policy is deployed.
+
+
+        :param target_id: The target_id of this SecurityPolicyEntryStateSummary.
+        :type: str
+        """
+        self._target_id = target_id
+
+    @property
+    def entry_type(self):
+        """
+        **[Required]** Gets the entry_type of this SecurityPolicyEntryStateSummary.
+        The security policy entry type. Allowed values:
+        - FIREWALL_POLICY - The SQL Firewall policy entry type.
+        - AUDIT_POLICY - The audit policy entry type.
+        - CONFIG - Config changes deployment.
+
+        Allowed values for this property are: "FIREWALL_POLICY", "AUDIT_POLICY", "CONFIG", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The entry_type of this SecurityPolicyEntryStateSummary.
+        :rtype: str
+        """
+        return self._entry_type
+
+    @entry_type.setter
+    def entry_type(self, entry_type):
+        """
+        Sets the entry_type of this SecurityPolicyEntryStateSummary.
+        The security policy entry type. Allowed values:
+        - FIREWALL_POLICY - The SQL Firewall policy entry type.
+        - AUDIT_POLICY - The audit policy entry type.
+        - CONFIG - Config changes deployment.
+
+
+        :param entry_type: The entry_type of this SecurityPolicyEntryStateSummary.
+        :type: str
+        """
+        allowed_values = ["FIREWALL_POLICY", "AUDIT_POLICY", "CONFIG"]
+        if not value_allowed_none_or_none_sentinel(entry_type, allowed_values):
+            entry_type = 'UNKNOWN_ENUM_VALUE'
+        self._entry_type = entry_type
+
+    @property
     def deployment_status(self):
         """
         **[Required]** Gets the deployment_status of this SecurityPolicyEntryStateSummary.
         The current deployment status of the security policy deployment and the security policy entry associated.
 
-        Allowed values for this property are: "CREATED", "MODIFIED", "CONFLICT", "UNAUTHORIZED", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATED", "MODIFIED", "CONFLICT", "CONNECTIVITY_ISSUE", "UNSUPPORTED_SYNTAX", "UNKNOWN_ERROR", "UNAUTHORIZED", "DELETED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -173,10 +280,34 @@ class SecurityPolicyEntryStateSummary(object):
         :param deployment_status: The deployment_status of this SecurityPolicyEntryStateSummary.
         :type: str
         """
-        allowed_values = ["CREATED", "MODIFIED", "CONFLICT", "UNAUTHORIZED", "DELETED"]
+        allowed_values = ["CREATED", "MODIFIED", "CONFLICT", "CONNECTIVITY_ISSUE", "UNSUPPORTED_SYNTAX", "UNKNOWN_ERROR", "UNAUTHORIZED", "DELETED"]
         if not value_allowed_none_or_none_sentinel(deployment_status, allowed_values):
             deployment_status = 'UNKNOWN_ENUM_VALUE'
         self._deployment_status = deployment_status
+
+    @property
+    def deployment_status_details(self):
+        """
+        Gets the deployment_status_details of this SecurityPolicyEntryStateSummary.
+        Details about the current deployment status.
+
+
+        :return: The deployment_status_details of this SecurityPolicyEntryStateSummary.
+        :rtype: str
+        """
+        return self._deployment_status_details
+
+    @deployment_status_details.setter
+    def deployment_status_details(self, deployment_status_details):
+        """
+        Sets the deployment_status_details of this SecurityPolicyEntryStateSummary.
+        Details about the current deployment status.
+
+
+        :param deployment_status_details: The deployment_status_details of this SecurityPolicyEntryStateSummary.
+        :type: str
+        """
+        self._deployment_status_details = deployment_status_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

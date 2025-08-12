@@ -68,7 +68,12 @@ class ValidationResponse(object):
     def write_permitted_user_group_infos(self):
         """
         Gets the write_permitted_user_group_infos of this ValidationResponse.
-        Technical support type (`TECH`) only: Identifier and name of the support request's user group (`userGroupId` and `userGroupName`).
+        Array of user groups that the user has access to for creating technical support type (`TECH`) support requests.
+        Each user group is indicated by its identifier and name (`userGroupId` and `userGroupName`).
+        Note: The Customer User Administrator (CUA) can manage user groups by name using
+        `My Oracle Cloud Support portal`__.
+
+        __ https://support.oracle.com
 
 
         :return: The write_permitted_user_group_infos of this ValidationResponse.
@@ -80,7 +85,12 @@ class ValidationResponse(object):
     def write_permitted_user_group_infos(self, write_permitted_user_group_infos):
         """
         Sets the write_permitted_user_group_infos of this ValidationResponse.
-        Technical support type (`TECH`) only: Identifier and name of the support request's user group (`userGroupId` and `userGroupName`).
+        Array of user groups that the user has access to for creating technical support type (`TECH`) support requests.
+        Each user group is indicated by its identifier and name (`userGroupId` and `userGroupName`).
+        Note: The Customer User Administrator (CUA) can manage user groups by name using
+        `My Oracle Cloud Support portal`__.
+
+        __ https://support.oracle.com
 
 
         :param write_permitted_user_group_infos: The write_permitted_user_group_infos of this ValidationResponse.

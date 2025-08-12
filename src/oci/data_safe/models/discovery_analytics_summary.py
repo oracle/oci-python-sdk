@@ -62,20 +62,27 @@ class DiscoveryAnalyticsSummary(object):
             The value to assign to the count property of this DiscoveryAnalyticsSummary.
         :type count: int
 
+        :param time_last_discovered:
+            The value to assign to the time_last_discovered property of this DiscoveryAnalyticsSummary.
+        :type time_last_discovered: datetime
+
         """
         self.swagger_types = {
             'metric_name': 'str',
             'dimensions': 'Dimensions',
-            'count': 'int'
+            'count': 'int',
+            'time_last_discovered': 'datetime'
         }
         self.attribute_map = {
             'metric_name': 'metricName',
             'dimensions': 'dimensions',
-            'count': 'count'
+            'count': 'count',
+            'time_last_discovered': 'timeLastDiscovered'
         }
         self._metric_name = None
         self._dimensions = None
         self._count = None
+        self._time_last_discovered = None
 
     @property
     def metric_name(self):
@@ -150,6 +157,34 @@ class DiscoveryAnalyticsSummary(object):
         :type: int
         """
         self._count = count
+
+    @property
+    def time_last_discovered(self):
+        """
+        Gets the time_last_discovered of this DiscoveryAnalyticsSummary.
+        The date and time when data discovery was last done on the target database, in the format defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_last_discovered of this DiscoveryAnalyticsSummary.
+        :rtype: datetime
+        """
+        return self._time_last_discovered
+
+    @time_last_discovered.setter
+    def time_last_discovered(self, time_last_discovered):
+        """
+        Sets the time_last_discovered of this DiscoveryAnalyticsSummary.
+        The date and time when data discovery was last done on the target database, in the format defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_last_discovered: The time_last_discovered of this DiscoveryAnalyticsSummary.
+        :type: datetime
+        """
+        self._time_last_discovered = time_last_discovered
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -34,6 +34,10 @@ class InventoryResourceSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type resource_type: str
 
+        :param mac_address:
+            The value to assign to the mac_address property of this InventoryResourceSummary.
+        :type mac_address: str
+
         :param ip_address_collection:
             The value to assign to the ip_address_collection property of this InventoryResourceSummary.
         :type ip_address_collection: list[oci.core.models.InventoryIpAddressSummary]
@@ -50,6 +54,7 @@ class InventoryResourceSummary(object):
         self.swagger_types = {
             'resource_name': 'str',
             'resource_type': 'str',
+            'mac_address': 'str',
             'ip_address_collection': 'list[InventoryIpAddressSummary]',
             'region': 'str',
             'compartment_id': 'str'
@@ -57,12 +62,14 @@ class InventoryResourceSummary(object):
         self.attribute_map = {
             'resource_name': 'resourceName',
             'resource_type': 'resourceType',
+            'mac_address': 'macAddress',
             'ip_address_collection': 'ipAddressCollection',
             'region': 'region',
             'compartment_id': 'compartmentId'
         }
         self._resource_name = None
         self._resource_type = None
+        self._mac_address = None
         self._ip_address_collection = None
         self._region = None
         self._compartment_id = None
@@ -120,6 +127,30 @@ class InventoryResourceSummary(object):
         if not value_allowed_none_or_none_sentinel(resource_type, allowed_values):
             resource_type = 'UNKNOWN_ENUM_VALUE'
         self._resource_type = resource_type
+
+    @property
+    def mac_address(self):
+        """
+        Gets the mac_address of this InventoryResourceSummary.
+        Mac Address of IP Resource
+
+
+        :return: The mac_address of this InventoryResourceSummary.
+        :rtype: str
+        """
+        return self._mac_address
+
+    @mac_address.setter
+    def mac_address(self, mac_address):
+        """
+        Sets the mac_address of this InventoryResourceSummary.
+        Mac Address of IP Resource
+
+
+        :param mac_address: The mac_address of this InventoryResourceSummary.
+        :type: str
+        """
+        self._mac_address = mac_address
 
     @property
     def ip_address_collection(self):

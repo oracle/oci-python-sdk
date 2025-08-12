@@ -1,0 +1,11 @@
+TemplateAnalyticsCollection
+===========================
+
+.. currentmodule:: oci.data_safe.models
+
+.. autoclass:: TemplateAnalyticsCollection
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

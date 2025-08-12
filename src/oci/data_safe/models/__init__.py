@@ -20,8 +20,15 @@ from .alert_policy_summary import AlertPolicySummary
 from .alert_summary import AlertSummary
 from .alerts_aggregation_dimension import AlertsAggregationDimension
 from .alerts_update_details import AlertsUpdateDetails
+from .all_user_condition import AllUserCondition
 from .apply_discovery_job_results_details import ApplyDiscoveryJobResultsDetails
 from .apply_sdm_masking_policy_difference_details import ApplySdmMaskingPolicyDifferenceDetails
+from .associated_resource_collection import AssociatedResourceCollection
+from .associated_resource_summary import AssociatedResourceSummary
+from .attribute_set import AttributeSet
+from .attribute_set_collection import AttributeSetCollection
+from .attribute_set_condition import AttributeSetCondition
+from .attribute_set_summary import AttributeSetSummary
 from .audit_archive_retrieval import AuditArchiveRetrieval
 from .audit_archive_retrieval_collection import AuditArchiveRetrievalCollection
 from .audit_archive_retrieval_summary import AuditArchiveRetrievalSummary
@@ -36,6 +43,7 @@ from .audit_policy_aggregation_items import AuditPolicyAggregationItems
 from .audit_policy_analytic_collection import AuditPolicyAnalyticCollection
 from .audit_policy_collection import AuditPolicyCollection
 from .audit_policy_dimensions import AuditPolicyDimensions
+from .audit_policy_entry_details import AuditPolicyEntryDetails
 from .audit_policy_summary import AuditPolicySummary
 from .audit_profile import AuditProfile
 from .audit_profile_aggregation_items import AuditProfileAggregationItems
@@ -54,11 +62,13 @@ from .autonomous_database_details import AutonomousDatabaseDetails
 from .available_audit_volume_collection import AvailableAuditVolumeCollection
 from .available_audit_volume_summary import AvailableAuditVolumeSummary
 from .bulk_create_sql_firewall_allowed_sqls_details import BulkCreateSqlFirewallAllowedSqlsDetails
+from .bulk_create_unified_audit_policy_details import BulkCreateUnifiedAuditPolicyDetails
 from .bulk_delete_sql_firewall_allowed_sqls_details import BulkDeleteSqlFirewallAllowedSqlsDetails
 from .calculate_audit_volume_available_details import CalculateAuditVolumeAvailableDetails
 from .calculate_audit_volume_collected_details import CalculateAuditVolumeCollectedDetails
 from .change_alert_compartment_details import ChangeAlertCompartmentDetails
 from .change_alert_policy_compartment_details import ChangeAlertPolicyCompartmentDetails
+from .change_attribute_set_compartment_details import ChangeAttributeSetCompartmentDetails
 from .change_audit_archive_retrieval_compartment_details import ChangeAuditArchiveRetrievalCompartmentDetails
 from .change_audit_policy_compartment_details import ChangeAuditPolicyCompartmentDetails
 from .change_audit_profile_compartment_details import ChangeAuditProfileCompartmentDetails
@@ -75,6 +85,7 @@ from .change_retention_details import ChangeRetentionDetails
 from .change_sdm_masking_policy_difference_compartment_details import ChangeSdmMaskingPolicyDifferenceCompartmentDetails
 from .change_security_assessment_compartment_details import ChangeSecurityAssessmentCompartmentDetails
 from .change_security_policy_compartment_details import ChangeSecurityPolicyCompartmentDetails
+from .change_security_policy_config_compartment_details import ChangeSecurityPolicyConfigCompartmentDetails
 from .change_security_policy_deployment_compartment_details import ChangeSecurityPolicyDeploymentCompartmentDetails
 from .change_sensitive_data_model_compartment_details import ChangeSensitiveDataModelCompartmentDetails
 from .change_sensitive_type_compartment_details import ChangeSensitiveTypeCompartmentDetails
@@ -84,7 +95,12 @@ from .change_sql_collection_compartment_details import ChangeSqlCollectionCompar
 from .change_sql_firewall_policy_compartment_details import ChangeSqlFirewallPolicyCompartmentDetails
 from .change_target_alert_policy_association_compartment_details import ChangeTargetAlertPolicyAssociationCompartmentDetails
 from .change_target_database_compartment_details import ChangeTargetDatabaseCompartmentDetails
+from .change_target_database_group_compartment_details import ChangeTargetDatabaseGroupCompartmentDetails
+from .change_unified_audit_policy_compartment_details import ChangeUnifiedAuditPolicyCompartmentDetails
+from .change_unified_audit_policy_definition_compartment_details import ChangeUnifiedAuditPolicyDefinitionCompartmentDetails
 from .change_user_assessment_compartment_details import ChangeUserAssessmentCompartmentDetails
+from .check import Check
+from .check_summary import CheckSummary
 from .collected_audit_volume_collection import CollectedAuditVolumeCollection
 from .collected_audit_volume_summary import CollectedAuditVolumeSummary
 from .column import Column
@@ -96,13 +112,17 @@ from .column_source_from_target_details import ColumnSourceFromTargetDetails
 from .column_summary import ColumnSummary
 from .columns_info import ColumnsInfo
 from .compare_security_assessment_details import CompareSecurityAssessmentDetails
+from .compare_to_template_baseline_details import CompareToTemplateBaselineDetails
 from .compare_user_assessment_details import CompareUserAssessmentDetails
+from .compartments import Compartments
 from .compatible_formats_for_data_types import CompatibleFormatsForDataTypes
 from .compatible_formats_for_sensitive_types import CompatibleFormatsForSensitiveTypes
 from .connection_option import ConnectionOption
 from .create_alert_policy_details import CreateAlertPolicyDetails
 from .create_alert_policy_rule_details import CreateAlertPolicyRuleDetails
+from .create_attribute_set_details import CreateAttributeSetDetails
 from .create_audit_archive_retrieval_details import CreateAuditArchiveRetrievalDetails
+from .create_audit_profile_details import CreateAuditProfileDetails
 from .create_column_source_details import CreateColumnSourceDetails
 from .create_column_source_from_sdm_details import CreateColumnSourceFromSdmDetails
 from .create_column_source_from_target_details import CreateColumnSourceFromTargetDetails
@@ -117,6 +137,9 @@ from .create_referential_relation_details import CreateReferentialRelationDetail
 from .create_report_definition_details import CreateReportDefinitionDetails
 from .create_sdm_masking_policy_difference_details import CreateSdmMaskingPolicyDifferenceDetails
 from .create_security_assessment_details import CreateSecurityAssessmentDetails
+from .create_security_policy_config_details import CreateSecurityPolicyConfigDetails
+from .create_security_policy_deployment_details import CreateSecurityPolicyDeploymentDetails
+from .create_security_policy_details import CreateSecurityPolicyDetails
 from .create_sensitive_category_details import CreateSensitiveCategoryDetails
 from .create_sensitive_column_details import CreateSensitiveColumnDetails
 from .create_sensitive_data_model_details import CreateSensitiveDataModelDetails
@@ -127,6 +150,8 @@ from .create_sensitive_types_export_details import CreateSensitiveTypesExportDet
 from .create_sql_collection_details import CreateSqlCollectionDetails
 from .create_target_alert_policy_association_details import CreateTargetAlertPolicyAssociationDetails
 from .create_target_database_details import CreateTargetDatabaseDetails
+from .create_target_database_group_details import CreateTargetDatabaseGroupDetails
+from .create_unified_audit_policy_details import CreateUnifiedAuditPolicyDetails
 from .create_user_assessment_details import CreateUserAssessmentDetails
 from .credentials import Credentials
 from .data_safe_configuration import DataSafeConfiguration
@@ -170,6 +195,7 @@ from .download_user_assessment_report_details import DownloadUserAssessmentRepor
 from .enable_conditions import EnableConditions
 from .enable_data_safe_configuration_details import EnableDataSafeConfigurationDetails
 from .entry_details import EntryDetails
+from .exclude import Exclude
 from .finding import Finding
 from .finding_analytics_collection import FindingAnalyticsCollection
 from .finding_analytics_dimensions import FindingAnalyticsDimensions
@@ -177,6 +203,8 @@ from .finding_analytics_summary import FindingAnalyticsSummary
 from .finding_summary import FindingSummary
 from .findings_change_audit_log_collection import FindingsChangeAuditLogCollection
 from .findings_change_audit_log_summary import FindingsChangeAuditLogSummary
+from .firewall_config import FirewallConfig
+from .firewall_config_details import FirewallConfigDetails
 from .firewall_policy_entry_details import FirewallPolicyEntryDetails
 from .fixed_number_format_entry import FixedNumberFormatEntry
 from .fixed_string_format_entry import FixedStringFormatEntry
@@ -195,8 +223,10 @@ from .generate_sensitive_data_model_for_download_details import GenerateSensitiv
 from .generate_user_assessment_report_details import GenerateUserAssessmentReportDetails
 from .global_settings import GlobalSettings
 from .grant_summary import GrantSummary
+from .group_members_collection import GroupMembersCollection
 from .grouped_sensitive_type_collection import GroupedSensitiveTypeCollection
 from .grouped_sensitive_type_summary import GroupedSensitiveTypeSummary
+from .include import Include
 from .initialization_parameter import InitializationParameter
 from .installed_database_details import InstalledDatabaseDetails
 from .library_masking_format import LibraryMaskingFormat
@@ -234,6 +264,7 @@ from .masking_report_collection import MaskingReportCollection
 from .masking_report_summary import MaskingReportSummary
 from .masking_schema_collection import MaskingSchemaCollection
 from .masking_schema_summary import MaskingSchemaSummary
+from .matching_criteria import MatchingCriteria
 from .modified_attributes import ModifiedAttributes
 from .modify_global_settings_details import ModifyGlobalSettingsDetails
 from .null_value_format_entry import NullValueFormatEntry
@@ -243,7 +274,9 @@ from .on_premise_connector import OnPremiseConnector
 from .ppf_format_entry import PPFFormatEntry
 from .patch_alert_policy_rule_details import PatchAlertPolicyRuleDetails
 from .patch_alerts_details import PatchAlertsDetails
+from .patch_checks_details import PatchChecksDetails
 from .patch_discovery_job_result_details import PatchDiscoveryJobResultDetails
+from .patch_findings_details import PatchFindingsDetails
 from .patch_grouped_sensitive_types_details import PatchGroupedSensitiveTypesDetails
 from .patch_insert_instruction import PatchInsertInstruction
 from .patch_instruction import PatchInstruction
@@ -258,6 +291,7 @@ from .pattern_format_entry import PatternFormatEntry
 from .peer_target_database import PeerTargetDatabase
 from .peer_target_database_collection import PeerTargetDatabaseCollection
 from .peer_target_database_summary import PeerTargetDatabaseSummary
+from .policy_condition import PolicyCondition
 from .preserve_original_data_format_entry import PreserveOriginalDataFormatEntry
 from .private_endpoint import PrivateEndpoint
 from .profile import Profile
@@ -285,6 +319,7 @@ from .report_definition_collection import ReportDefinitionCollection
 from .report_definition_summary import ReportDefinitionSummary
 from .report_details import ReportDetails
 from .report_summary import ReportSummary
+from .role_condition import RoleCondition
 from .role_grant_path_collection import RoleGrantPathCollection
 from .role_grant_path_summary import RoleGrantPathSummary
 from .role_summary import RoleSummary
@@ -306,6 +341,8 @@ from .security_assessment_comparison import SecurityAssessmentComparison
 from .security_assessment_comparison_per_target import SecurityAssessmentComparisonPerTarget
 from .security_assessment_statistics import SecurityAssessmentStatistics
 from .security_assessment_summary import SecurityAssessmentSummary
+from .security_assessment_template_baseline_comparison import SecurityAssessmentTemplateBaselineComparison
+from .security_assessment_template_details import SecurityAssessmentTemplateDetails
 from .security_feature_analytics_collection import SecurityFeatureAnalyticsCollection
 from .security_feature_analytics_dimensions import SecurityFeatureAnalyticsDimensions
 from .security_feature_analytics_summary import SecurityFeatureAnalyticsSummary
@@ -313,6 +350,9 @@ from .security_feature_collection import SecurityFeatureCollection
 from .security_feature_summary import SecurityFeatureSummary
 from .security_policy import SecurityPolicy
 from .security_policy_collection import SecurityPolicyCollection
+from .security_policy_config import SecurityPolicyConfig
+from .security_policy_config_collection import SecurityPolicyConfigCollection
+from .security_policy_config_summary import SecurityPolicyConfigSummary
 from .security_policy_deployment import SecurityPolicyDeployment
 from .security_policy_deployment_collection import SecurityPolicyDeploymentCollection
 from .security_policy_deployment_summary import SecurityPolicyDeploymentSummary
@@ -387,15 +427,37 @@ from .target_alert_policy_association import TargetAlertPolicyAssociation
 from .target_alert_policy_association_collection import TargetAlertPolicyAssociationCollection
 from .target_alert_policy_association_summary import TargetAlertPolicyAssociationSummary
 from .target_database import TargetDatabase
+from .target_database_group import TargetDatabaseGroup
+from .target_database_group_collection import TargetDatabaseGroupCollection
+from .target_database_group_summary import TargetDatabaseGroupSummary
 from .target_database_summary import TargetDatabaseSummary
+from .target_override_collection import TargetOverrideCollection
+from .target_override_summary import TargetOverrideSummary
+from .template_analytics_collection import TemplateAnalyticsCollection
+from .template_analytics_dimensions import TemplateAnalyticsDimensions
+from .template_analytics_summary import TemplateAnalyticsSummary
+from .template_association_analytics_collection import TemplateAssociationAnalyticsCollection
+from .template_association_analytics_dimensions import TemplateAssociationAnalyticsDimensions
+from .template_association_analytics_summary import TemplateAssociationAnalyticsSummary
+from .template_baseline_diffs import TemplateBaselineDiffs
+from .template_baseline_diffs_per_target import TemplateBaselineDiffsPerTarget
 from .tls_config import TlsConfig
 from .truncate_table_format_entry import TruncateTableFormatEntry
 from .udf_format_entry import UDFFormatEntry
+from .unified_audit_policy import UnifiedAuditPolicy
+from .unified_audit_policy_collection import UnifiedAuditPolicyCollection
+from .unified_audit_policy_config import UnifiedAuditPolicyConfig
+from .unified_audit_policy_config_details import UnifiedAuditPolicyConfigDetails
+from .unified_audit_policy_definition import UnifiedAuditPolicyDefinition
+from .unified_audit_policy_definition_collection import UnifiedAuditPolicyDefinitionCollection
+from .unified_audit_policy_definition_summary import UnifiedAuditPolicyDefinitionSummary
+from .unified_audit_policy_summary import UnifiedAuditPolicySummary
 from .unset_security_assessment_baseline_details import UnsetSecurityAssessmentBaselineDetails
 from .unset_user_assessment_baseline_details import UnsetUserAssessmentBaselineDetails
 from .update_alert_details import UpdateAlertDetails
 from .update_alert_policy_details import UpdateAlertPolicyDetails
 from .update_alert_policy_rule_details import UpdateAlertPolicyRuleDetails
+from .update_attribute_set_details import UpdateAttributeSetDetails
 from .update_audit_archive_retrieval_details import UpdateAuditArchiveRetrievalDetails
 from .update_audit_policy_details import UpdateAuditPolicyDetails
 from .update_audit_profile_details import UpdateAuditProfileDetails
@@ -416,6 +478,7 @@ from .update_report_definition_details import UpdateReportDefinitionDetails
 from .update_report_details import UpdateReportDetails
 from .update_sdm_masking_policy_difference_details import UpdateSdmMaskingPolicyDifferenceDetails
 from .update_security_assessment_details import UpdateSecurityAssessmentDetails
+from .update_security_policy_config_details import UpdateSecurityPolicyConfigDetails
 from .update_security_policy_deployment_details import UpdateSecurityPolicyDeploymentDetails
 from .update_security_policy_details import UpdateSecurityPolicyDetails
 from .update_sensitive_category_details import UpdateSensitiveCategoryDetails
@@ -430,6 +493,9 @@ from .update_sql_firewall_config_details import UpdateSqlFirewallConfigDetails
 from .update_sql_firewall_policy_details import UpdateSqlFirewallPolicyDetails
 from .update_target_alert_policy_association_details import UpdateTargetAlertPolicyAssociationDetails
 from .update_target_database_details import UpdateTargetDatabaseDetails
+from .update_target_database_group_details import UpdateTargetDatabaseGroupDetails
+from .update_unified_audit_policy_definition_details import UpdateUnifiedAuditPolicyDefinitionDetails
+from .update_unified_audit_policy_details import UpdateUnifiedAuditPolicyDetails
 from .update_user_assessment_details import UpdateUserAssessmentDetails
 from .user_access_analytics_collection import UserAccessAnalyticsCollection
 from .user_access_analytics_summary import UserAccessAnalyticsSummary
@@ -438,6 +504,7 @@ from .user_assessment import UserAssessment
 from .user_assessment_base_line_details import UserAssessmentBaseLineDetails
 from .user_assessment_comparison import UserAssessmentComparison
 from .user_assessment_summary import UserAssessmentSummary
+from .user_condition import UserCondition
 from .user_details import UserDetails
 from .user_summary import UserSummary
 from .work_request import WorkRequest
@@ -462,8 +529,15 @@ data_safe_type_mapping = {
     "AlertSummary": AlertSummary,
     "AlertsAggregationDimension": AlertsAggregationDimension,
     "AlertsUpdateDetails": AlertsUpdateDetails,
+    "AllUserCondition": AllUserCondition,
     "ApplyDiscoveryJobResultsDetails": ApplyDiscoveryJobResultsDetails,
     "ApplySdmMaskingPolicyDifferenceDetails": ApplySdmMaskingPolicyDifferenceDetails,
+    "AssociatedResourceCollection": AssociatedResourceCollection,
+    "AssociatedResourceSummary": AssociatedResourceSummary,
+    "AttributeSet": AttributeSet,
+    "AttributeSetCollection": AttributeSetCollection,
+    "AttributeSetCondition": AttributeSetCondition,
+    "AttributeSetSummary": AttributeSetSummary,
     "AuditArchiveRetrieval": AuditArchiveRetrieval,
     "AuditArchiveRetrievalCollection": AuditArchiveRetrievalCollection,
     "AuditArchiveRetrievalSummary": AuditArchiveRetrievalSummary,
@@ -478,6 +552,7 @@ data_safe_type_mapping = {
     "AuditPolicyAnalyticCollection": AuditPolicyAnalyticCollection,
     "AuditPolicyCollection": AuditPolicyCollection,
     "AuditPolicyDimensions": AuditPolicyDimensions,
+    "AuditPolicyEntryDetails": AuditPolicyEntryDetails,
     "AuditPolicySummary": AuditPolicySummary,
     "AuditProfile": AuditProfile,
     "AuditProfileAggregationItems": AuditProfileAggregationItems,
@@ -496,11 +571,13 @@ data_safe_type_mapping = {
     "AvailableAuditVolumeCollection": AvailableAuditVolumeCollection,
     "AvailableAuditVolumeSummary": AvailableAuditVolumeSummary,
     "BulkCreateSqlFirewallAllowedSqlsDetails": BulkCreateSqlFirewallAllowedSqlsDetails,
+    "BulkCreateUnifiedAuditPolicyDetails": BulkCreateUnifiedAuditPolicyDetails,
     "BulkDeleteSqlFirewallAllowedSqlsDetails": BulkDeleteSqlFirewallAllowedSqlsDetails,
     "CalculateAuditVolumeAvailableDetails": CalculateAuditVolumeAvailableDetails,
     "CalculateAuditVolumeCollectedDetails": CalculateAuditVolumeCollectedDetails,
     "ChangeAlertCompartmentDetails": ChangeAlertCompartmentDetails,
     "ChangeAlertPolicyCompartmentDetails": ChangeAlertPolicyCompartmentDetails,
+    "ChangeAttributeSetCompartmentDetails": ChangeAttributeSetCompartmentDetails,
     "ChangeAuditArchiveRetrievalCompartmentDetails": ChangeAuditArchiveRetrievalCompartmentDetails,
     "ChangeAuditPolicyCompartmentDetails": ChangeAuditPolicyCompartmentDetails,
     "ChangeAuditProfileCompartmentDetails": ChangeAuditProfileCompartmentDetails,
@@ -517,6 +594,7 @@ data_safe_type_mapping = {
     "ChangeSdmMaskingPolicyDifferenceCompartmentDetails": ChangeSdmMaskingPolicyDifferenceCompartmentDetails,
     "ChangeSecurityAssessmentCompartmentDetails": ChangeSecurityAssessmentCompartmentDetails,
     "ChangeSecurityPolicyCompartmentDetails": ChangeSecurityPolicyCompartmentDetails,
+    "ChangeSecurityPolicyConfigCompartmentDetails": ChangeSecurityPolicyConfigCompartmentDetails,
     "ChangeSecurityPolicyDeploymentCompartmentDetails": ChangeSecurityPolicyDeploymentCompartmentDetails,
     "ChangeSensitiveDataModelCompartmentDetails": ChangeSensitiveDataModelCompartmentDetails,
     "ChangeSensitiveTypeCompartmentDetails": ChangeSensitiveTypeCompartmentDetails,
@@ -526,7 +604,12 @@ data_safe_type_mapping = {
     "ChangeSqlFirewallPolicyCompartmentDetails": ChangeSqlFirewallPolicyCompartmentDetails,
     "ChangeTargetAlertPolicyAssociationCompartmentDetails": ChangeTargetAlertPolicyAssociationCompartmentDetails,
     "ChangeTargetDatabaseCompartmentDetails": ChangeTargetDatabaseCompartmentDetails,
+    "ChangeTargetDatabaseGroupCompartmentDetails": ChangeTargetDatabaseGroupCompartmentDetails,
+    "ChangeUnifiedAuditPolicyCompartmentDetails": ChangeUnifiedAuditPolicyCompartmentDetails,
+    "ChangeUnifiedAuditPolicyDefinitionCompartmentDetails": ChangeUnifiedAuditPolicyDefinitionCompartmentDetails,
     "ChangeUserAssessmentCompartmentDetails": ChangeUserAssessmentCompartmentDetails,
+    "Check": Check,
+    "CheckSummary": CheckSummary,
     "CollectedAuditVolumeCollection": CollectedAuditVolumeCollection,
     "CollectedAuditVolumeSummary": CollectedAuditVolumeSummary,
     "Column": Column,
@@ -538,13 +621,17 @@ data_safe_type_mapping = {
     "ColumnSummary": ColumnSummary,
     "ColumnsInfo": ColumnsInfo,
     "CompareSecurityAssessmentDetails": CompareSecurityAssessmentDetails,
+    "CompareToTemplateBaselineDetails": CompareToTemplateBaselineDetails,
     "CompareUserAssessmentDetails": CompareUserAssessmentDetails,
+    "Compartments": Compartments,
     "CompatibleFormatsForDataTypes": CompatibleFormatsForDataTypes,
     "CompatibleFormatsForSensitiveTypes": CompatibleFormatsForSensitiveTypes,
     "ConnectionOption": ConnectionOption,
     "CreateAlertPolicyDetails": CreateAlertPolicyDetails,
     "CreateAlertPolicyRuleDetails": CreateAlertPolicyRuleDetails,
+    "CreateAttributeSetDetails": CreateAttributeSetDetails,
     "CreateAuditArchiveRetrievalDetails": CreateAuditArchiveRetrievalDetails,
+    "CreateAuditProfileDetails": CreateAuditProfileDetails,
     "CreateColumnSourceDetails": CreateColumnSourceDetails,
     "CreateColumnSourceFromSdmDetails": CreateColumnSourceFromSdmDetails,
     "CreateColumnSourceFromTargetDetails": CreateColumnSourceFromTargetDetails,
@@ -559,6 +646,9 @@ data_safe_type_mapping = {
     "CreateReportDefinitionDetails": CreateReportDefinitionDetails,
     "CreateSdmMaskingPolicyDifferenceDetails": CreateSdmMaskingPolicyDifferenceDetails,
     "CreateSecurityAssessmentDetails": CreateSecurityAssessmentDetails,
+    "CreateSecurityPolicyConfigDetails": CreateSecurityPolicyConfigDetails,
+    "CreateSecurityPolicyDeploymentDetails": CreateSecurityPolicyDeploymentDetails,
+    "CreateSecurityPolicyDetails": CreateSecurityPolicyDetails,
     "CreateSensitiveCategoryDetails": CreateSensitiveCategoryDetails,
     "CreateSensitiveColumnDetails": CreateSensitiveColumnDetails,
     "CreateSensitiveDataModelDetails": CreateSensitiveDataModelDetails,
@@ -569,6 +659,8 @@ data_safe_type_mapping = {
     "CreateSqlCollectionDetails": CreateSqlCollectionDetails,
     "CreateTargetAlertPolicyAssociationDetails": CreateTargetAlertPolicyAssociationDetails,
     "CreateTargetDatabaseDetails": CreateTargetDatabaseDetails,
+    "CreateTargetDatabaseGroupDetails": CreateTargetDatabaseGroupDetails,
+    "CreateUnifiedAuditPolicyDetails": CreateUnifiedAuditPolicyDetails,
     "CreateUserAssessmentDetails": CreateUserAssessmentDetails,
     "Credentials": Credentials,
     "DataSafeConfiguration": DataSafeConfiguration,
@@ -612,6 +704,7 @@ data_safe_type_mapping = {
     "EnableConditions": EnableConditions,
     "EnableDataSafeConfigurationDetails": EnableDataSafeConfigurationDetails,
     "EntryDetails": EntryDetails,
+    "Exclude": Exclude,
     "Finding": Finding,
     "FindingAnalyticsCollection": FindingAnalyticsCollection,
     "FindingAnalyticsDimensions": FindingAnalyticsDimensions,
@@ -619,6 +712,8 @@ data_safe_type_mapping = {
     "FindingSummary": FindingSummary,
     "FindingsChangeAuditLogCollection": FindingsChangeAuditLogCollection,
     "FindingsChangeAuditLogSummary": FindingsChangeAuditLogSummary,
+    "FirewallConfig": FirewallConfig,
+    "FirewallConfigDetails": FirewallConfigDetails,
     "FirewallPolicyEntryDetails": FirewallPolicyEntryDetails,
     "FixedNumberFormatEntry": FixedNumberFormatEntry,
     "FixedStringFormatEntry": FixedStringFormatEntry,
@@ -637,8 +732,10 @@ data_safe_type_mapping = {
     "GenerateUserAssessmentReportDetails": GenerateUserAssessmentReportDetails,
     "GlobalSettings": GlobalSettings,
     "GrantSummary": GrantSummary,
+    "GroupMembersCollection": GroupMembersCollection,
     "GroupedSensitiveTypeCollection": GroupedSensitiveTypeCollection,
     "GroupedSensitiveTypeSummary": GroupedSensitiveTypeSummary,
+    "Include": Include,
     "InitializationParameter": InitializationParameter,
     "InstalledDatabaseDetails": InstalledDatabaseDetails,
     "LibraryMaskingFormat": LibraryMaskingFormat,
@@ -676,6 +773,7 @@ data_safe_type_mapping = {
     "MaskingReportSummary": MaskingReportSummary,
     "MaskingSchemaCollection": MaskingSchemaCollection,
     "MaskingSchemaSummary": MaskingSchemaSummary,
+    "MatchingCriteria": MatchingCriteria,
     "ModifiedAttributes": ModifiedAttributes,
     "ModifyGlobalSettingsDetails": ModifyGlobalSettingsDetails,
     "NullValueFormatEntry": NullValueFormatEntry,
@@ -685,7 +783,9 @@ data_safe_type_mapping = {
     "PPFFormatEntry": PPFFormatEntry,
     "PatchAlertPolicyRuleDetails": PatchAlertPolicyRuleDetails,
     "PatchAlertsDetails": PatchAlertsDetails,
+    "PatchChecksDetails": PatchChecksDetails,
     "PatchDiscoveryJobResultDetails": PatchDiscoveryJobResultDetails,
+    "PatchFindingsDetails": PatchFindingsDetails,
     "PatchGroupedSensitiveTypesDetails": PatchGroupedSensitiveTypesDetails,
     "PatchInsertInstruction": PatchInsertInstruction,
     "PatchInstruction": PatchInstruction,
@@ -700,6 +800,7 @@ data_safe_type_mapping = {
     "PeerTargetDatabase": PeerTargetDatabase,
     "PeerTargetDatabaseCollection": PeerTargetDatabaseCollection,
     "PeerTargetDatabaseSummary": PeerTargetDatabaseSummary,
+    "PolicyCondition": PolicyCondition,
     "PreserveOriginalDataFormatEntry": PreserveOriginalDataFormatEntry,
     "PrivateEndpoint": PrivateEndpoint,
     "Profile": Profile,
@@ -727,6 +828,7 @@ data_safe_type_mapping = {
     "ReportDefinitionSummary": ReportDefinitionSummary,
     "ReportDetails": ReportDetails,
     "ReportSummary": ReportSummary,
+    "RoleCondition": RoleCondition,
     "RoleGrantPathCollection": RoleGrantPathCollection,
     "RoleGrantPathSummary": RoleGrantPathSummary,
     "RoleSummary": RoleSummary,
@@ -748,6 +850,8 @@ data_safe_type_mapping = {
     "SecurityAssessmentComparisonPerTarget": SecurityAssessmentComparisonPerTarget,
     "SecurityAssessmentStatistics": SecurityAssessmentStatistics,
     "SecurityAssessmentSummary": SecurityAssessmentSummary,
+    "SecurityAssessmentTemplateBaselineComparison": SecurityAssessmentTemplateBaselineComparison,
+    "SecurityAssessmentTemplateDetails": SecurityAssessmentTemplateDetails,
     "SecurityFeatureAnalyticsCollection": SecurityFeatureAnalyticsCollection,
     "SecurityFeatureAnalyticsDimensions": SecurityFeatureAnalyticsDimensions,
     "SecurityFeatureAnalyticsSummary": SecurityFeatureAnalyticsSummary,
@@ -755,6 +859,9 @@ data_safe_type_mapping = {
     "SecurityFeatureSummary": SecurityFeatureSummary,
     "SecurityPolicy": SecurityPolicy,
     "SecurityPolicyCollection": SecurityPolicyCollection,
+    "SecurityPolicyConfig": SecurityPolicyConfig,
+    "SecurityPolicyConfigCollection": SecurityPolicyConfigCollection,
+    "SecurityPolicyConfigSummary": SecurityPolicyConfigSummary,
     "SecurityPolicyDeployment": SecurityPolicyDeployment,
     "SecurityPolicyDeploymentCollection": SecurityPolicyDeploymentCollection,
     "SecurityPolicyDeploymentSummary": SecurityPolicyDeploymentSummary,
@@ -829,15 +936,37 @@ data_safe_type_mapping = {
     "TargetAlertPolicyAssociationCollection": TargetAlertPolicyAssociationCollection,
     "TargetAlertPolicyAssociationSummary": TargetAlertPolicyAssociationSummary,
     "TargetDatabase": TargetDatabase,
+    "TargetDatabaseGroup": TargetDatabaseGroup,
+    "TargetDatabaseGroupCollection": TargetDatabaseGroupCollection,
+    "TargetDatabaseGroupSummary": TargetDatabaseGroupSummary,
     "TargetDatabaseSummary": TargetDatabaseSummary,
+    "TargetOverrideCollection": TargetOverrideCollection,
+    "TargetOverrideSummary": TargetOverrideSummary,
+    "TemplateAnalyticsCollection": TemplateAnalyticsCollection,
+    "TemplateAnalyticsDimensions": TemplateAnalyticsDimensions,
+    "TemplateAnalyticsSummary": TemplateAnalyticsSummary,
+    "TemplateAssociationAnalyticsCollection": TemplateAssociationAnalyticsCollection,
+    "TemplateAssociationAnalyticsDimensions": TemplateAssociationAnalyticsDimensions,
+    "TemplateAssociationAnalyticsSummary": TemplateAssociationAnalyticsSummary,
+    "TemplateBaselineDiffs": TemplateBaselineDiffs,
+    "TemplateBaselineDiffsPerTarget": TemplateBaselineDiffsPerTarget,
     "TlsConfig": TlsConfig,
     "TruncateTableFormatEntry": TruncateTableFormatEntry,
     "UDFFormatEntry": UDFFormatEntry,
+    "UnifiedAuditPolicy": UnifiedAuditPolicy,
+    "UnifiedAuditPolicyCollection": UnifiedAuditPolicyCollection,
+    "UnifiedAuditPolicyConfig": UnifiedAuditPolicyConfig,
+    "UnifiedAuditPolicyConfigDetails": UnifiedAuditPolicyConfigDetails,
+    "UnifiedAuditPolicyDefinition": UnifiedAuditPolicyDefinition,
+    "UnifiedAuditPolicyDefinitionCollection": UnifiedAuditPolicyDefinitionCollection,
+    "UnifiedAuditPolicyDefinitionSummary": UnifiedAuditPolicyDefinitionSummary,
+    "UnifiedAuditPolicySummary": UnifiedAuditPolicySummary,
     "UnsetSecurityAssessmentBaselineDetails": UnsetSecurityAssessmentBaselineDetails,
     "UnsetUserAssessmentBaselineDetails": UnsetUserAssessmentBaselineDetails,
     "UpdateAlertDetails": UpdateAlertDetails,
     "UpdateAlertPolicyDetails": UpdateAlertPolicyDetails,
     "UpdateAlertPolicyRuleDetails": UpdateAlertPolicyRuleDetails,
+    "UpdateAttributeSetDetails": UpdateAttributeSetDetails,
     "UpdateAuditArchiveRetrievalDetails": UpdateAuditArchiveRetrievalDetails,
     "UpdateAuditPolicyDetails": UpdateAuditPolicyDetails,
     "UpdateAuditProfileDetails": UpdateAuditProfileDetails,
@@ -858,6 +987,7 @@ data_safe_type_mapping = {
     "UpdateReportDetails": UpdateReportDetails,
     "UpdateSdmMaskingPolicyDifferenceDetails": UpdateSdmMaskingPolicyDifferenceDetails,
     "UpdateSecurityAssessmentDetails": UpdateSecurityAssessmentDetails,
+    "UpdateSecurityPolicyConfigDetails": UpdateSecurityPolicyConfigDetails,
     "UpdateSecurityPolicyDeploymentDetails": UpdateSecurityPolicyDeploymentDetails,
     "UpdateSecurityPolicyDetails": UpdateSecurityPolicyDetails,
     "UpdateSensitiveCategoryDetails": UpdateSensitiveCategoryDetails,
@@ -872,6 +1002,9 @@ data_safe_type_mapping = {
     "UpdateSqlFirewallPolicyDetails": UpdateSqlFirewallPolicyDetails,
     "UpdateTargetAlertPolicyAssociationDetails": UpdateTargetAlertPolicyAssociationDetails,
     "UpdateTargetDatabaseDetails": UpdateTargetDatabaseDetails,
+    "UpdateTargetDatabaseGroupDetails": UpdateTargetDatabaseGroupDetails,
+    "UpdateUnifiedAuditPolicyDefinitionDetails": UpdateUnifiedAuditPolicyDefinitionDetails,
+    "UpdateUnifiedAuditPolicyDetails": UpdateUnifiedAuditPolicyDetails,
     "UpdateUserAssessmentDetails": UpdateUserAssessmentDetails,
     "UserAccessAnalyticsCollection": UserAccessAnalyticsCollection,
     "UserAccessAnalyticsSummary": UserAccessAnalyticsSummary,
@@ -880,6 +1013,7 @@ data_safe_type_mapping = {
     "UserAssessmentBaseLineDetails": UserAssessmentBaseLineDetails,
     "UserAssessmentComparison": UserAssessmentComparison,
     "UserAssessmentSummary": UserAssessmentSummary,
+    "UserCondition": UserCondition,
     "UserDetails": UserDetails,
     "UserSummary": UserSummary,
     "WorkRequest": WorkRequest,

@@ -137,6 +137,10 @@ class OciObjectStorageConnection(Connection):
             The value to assign to the private_key_passphrase_secret_id property of this OciObjectStorageConnection.
         :type private_key_passphrase_secret_id: str
 
+        :param public_key_fingerprint:
+            The value to assign to the public_key_fingerprint property of this OciObjectStorageConnection.
+        :type public_key_fingerprint: str
+
         :param should_use_resource_principal:
             The value to assign to the should_use_resource_principal property of this OciObjectStorageConnection.
         :type should_use_resource_principal: bool
@@ -169,6 +173,7 @@ class OciObjectStorageConnection(Connection):
             'user_id': 'str',
             'private_key_file_secret_id': 'str',
             'private_key_passphrase_secret_id': 'str',
+            'public_key_fingerprint': 'str',
             'should_use_resource_principal': 'bool'
         }
         self.attribute_map = {
@@ -198,6 +203,7 @@ class OciObjectStorageConnection(Connection):
             'user_id': 'userId',
             'private_key_file_secret_id': 'privateKeyFileSecretId',
             'private_key_passphrase_secret_id': 'privateKeyPassphraseSecretId',
+            'public_key_fingerprint': 'publicKeyFingerprint',
             'should_use_resource_principal': 'shouldUseResourcePrincipal'
         }
         self._connection_type = None
@@ -226,6 +232,7 @@ class OciObjectStorageConnection(Connection):
         self._user_id = None
         self._private_key_file_secret_id = None
         self._private_key_passphrase_secret_id = None
+        self._public_key_fingerprint = None
         self._should_use_resource_principal = None
         self._connection_type = 'OCI_OBJECT_STORAGE'
 
@@ -408,10 +415,37 @@ class OciObjectStorageConnection(Connection):
         self._private_key_passphrase_secret_id = private_key_passphrase_secret_id
 
     @property
+    def public_key_fingerprint(self):
+        """
+        Gets the public_key_fingerprint of this OciObjectStorageConnection.
+        The fingerprint of the API Key of the user specified by the userId.
+        See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+
+
+        :return: The public_key_fingerprint of this OciObjectStorageConnection.
+        :rtype: str
+        """
+        return self._public_key_fingerprint
+
+    @public_key_fingerprint.setter
+    def public_key_fingerprint(self, public_key_fingerprint):
+        """
+        Sets the public_key_fingerprint of this OciObjectStorageConnection.
+        The fingerprint of the API Key of the user specified by the userId.
+        See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+
+
+        :param public_key_fingerprint: The public_key_fingerprint of this OciObjectStorageConnection.
+        :type: str
+        """
+        self._public_key_fingerprint = public_key_fingerprint
+
+    @property
     def should_use_resource_principal(self):
         """
         Gets the should_use_resource_principal of this OciObjectStorageConnection.
-        Indicates that the user intents to connect to the instance through resource principal.
+        Specifies that the user intends to authenticate to the instance using a resource principal.
+        Default: false
 
 
         :return: The should_use_resource_principal of this OciObjectStorageConnection.
@@ -423,7 +457,8 @@ class OciObjectStorageConnection(Connection):
     def should_use_resource_principal(self, should_use_resource_principal):
         """
         Sets the should_use_resource_principal of this OciObjectStorageConnection.
-        Indicates that the user intents to connect to the instance through resource principal.
+        Specifies that the user intends to authenticate to the instance using a resource principal.
+        Default: false
 
 
         :param should_use_resource_principal: The should_use_resource_principal of this OciObjectStorageConnection.

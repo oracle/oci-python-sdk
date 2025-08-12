@@ -73,7 +73,7 @@ class MergeSettings(object):
     @property
     def default_merge_strategy(self):
         """
-        **[Required]** Gets the default_merge_strategy of this MergeSettings.
+        Gets the default_merge_strategy of this MergeSettings.
         Default type of merge strategy associated with the a Project or Repository.
 
         Allowed values for this property are: "MERGE_COMMIT", "FAST_FORWARD", "FAST_FORWARD_ONLY", "REBASE_AND_MERGE", "REBASE_AND_FAST_FORWARD", "SQUASH", "SQUASH_FAST_FORWARD_ONLY", 'UNKNOWN_ENUM_VALUE'.
@@ -103,7 +103,7 @@ class MergeSettings(object):
     @property
     def allowed_merge_strategies(self):
         """
-        **[Required]** Gets the allowed_merge_strategies of this MergeSettings.
+        Gets the allowed_merge_strategies of this MergeSettings.
         List of merge strategies which are allowed for a Project or Repository.
 
 

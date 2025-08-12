@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateActivityItemDetails(UpdateItemDetails):
     """
-    Details for updating the support ticket activity.
+    Details for updating the support request activity.
     """
 
     #: A constant which can be used with the activity_type property of a UpdateActivityItemDetails.
@@ -35,6 +35,10 @@ class UpdateActivityItemDetails(UpdateItemDetails):
     #: This constant has a value of "REOPEN"
     ACTIVITY_TYPE_REOPEN = "REOPEN"
 
+    #: A constant which can be used with the activity_type property of a UpdateActivityItemDetails.
+    #: This constant has a value of "ADD_CONTACT"
+    ACTIVITY_TYPE_ADD_CONTACT = "ADD_CONTACT"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateActivityItemDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.cims.models.UpdateActivityItemDetails.type` attribute
@@ -51,7 +55,7 @@ class UpdateActivityItemDetails(UpdateItemDetails):
 
         :param activity_type:
             The value to assign to the activity_type property of this UpdateActivityItemDetails.
-            Allowed values for this property are: "NOTES", "PROBLEM_DESCRIPTION", "UPDATE", "CLOSE", "REOPEN"
+            Allowed values for this property are: "NOTES", "PROBLEM_DESCRIPTION", "UPDATE", "CLOSE", "REOPEN", "ADD_CONTACT"
         :type activity_type: str
 
         """
@@ -99,8 +103,14 @@ class UpdateActivityItemDetails(UpdateItemDetails):
         """
         Gets the activity_type of this UpdateActivityItemDetails.
         The type of activity occurring.
+        `NOTES` is the activity associated to attachments.
+        `PROBLEM_DESCRIPTION` is the activity associated to customer problem description.
+        `UPDATE` is the activity associated to adding comments.
+        `CLOSE` is the activity associated to closing the support request.
+        `REOPEN` is the activity associated to reopening the support request.
+        `ADD_CONTACT` is the activity associated to adding additional contact to the support request.
 
-        Allowed values for this property are: "NOTES", "PROBLEM_DESCRIPTION", "UPDATE", "CLOSE", "REOPEN"
+        Allowed values for this property are: "NOTES", "PROBLEM_DESCRIPTION", "UPDATE", "CLOSE", "REOPEN", "ADD_CONTACT"
 
 
         :return: The activity_type of this UpdateActivityItemDetails.
@@ -113,12 +123,18 @@ class UpdateActivityItemDetails(UpdateItemDetails):
         """
         Sets the activity_type of this UpdateActivityItemDetails.
         The type of activity occurring.
+        `NOTES` is the activity associated to attachments.
+        `PROBLEM_DESCRIPTION` is the activity associated to customer problem description.
+        `UPDATE` is the activity associated to adding comments.
+        `CLOSE` is the activity associated to closing the support request.
+        `REOPEN` is the activity associated to reopening the support request.
+        `ADD_CONTACT` is the activity associated to adding additional contact to the support request.
 
 
         :param activity_type: The activity_type of this UpdateActivityItemDetails.
         :type: str
         """
-        allowed_values = ["NOTES", "PROBLEM_DESCRIPTION", "UPDATE", "CLOSE", "REOPEN"]
+        allowed_values = ["NOTES", "PROBLEM_DESCRIPTION", "UPDATE", "CLOSE", "REOPEN", "ADD_CONTACT"]
         if not value_allowed_none_or_none_sentinel(activity_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `activity_type`, must be None or one of {allowed_values}"

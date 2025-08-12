@@ -78,6 +78,8 @@ from .data_science_schedule_instance_component import DataScienceScheduleInstanc
 from .default_job_configuration_details import DefaultJobConfigurationDetails
 from .default_model_deployment_environment_configuration_details import DefaultModelDeploymentEnvironmentConfigurationDetails
 from .disable_ml_application_instance_view_trigger_details import DisableMlApplicationInstanceViewTriggerDetails
+from .empty_job_configuration_details import EmptyJobConfigurationDetails
+from .empty_job_infrastructure_configuration_details import EmptyJobInfrastructureConfigurationDetails
 from .enable_ml_application_instance_view_trigger_details import EnableMlApplicationInstanceViewTriggerDetails
 from .export_model_artifact_details import ExportModelArtifactDetails
 from .fast_launch_job_config_summary import FastLaunchJobConfigSummary
@@ -102,9 +104,16 @@ from .instance_pool_model_deployment_system_data import InstancePoolModelDeploym
 from .invoke_ml_application_provider_trigger_schedule_action_details import InvokeMlApplicationProviderTriggerScheduleActionDetails
 from .job import Job
 from .job_configuration_details import JobConfigurationDetails
+from .job_custom_network_configuration import JobCustomNetworkConfiguration
+from .job_default_network_configuration import JobDefaultNetworkConfiguration
 from .job_environment_configuration_details import JobEnvironmentConfigurationDetails
+from .job_exec_probe_details import JobExecProbeDetails
 from .job_infrastructure_configuration_details import JobInfrastructureConfigurationDetails
 from .job_log_configuration_details import JobLogConfigurationDetails
+from .job_network_configuration import JobNetworkConfiguration
+from .job_node_configuration_details import JobNodeConfigurationDetails
+from .job_node_group_configuration_details import JobNodeGroupConfigurationDetails
+from .job_probe_details import JobProbeDetails
 from .job_run import JobRun
 from .job_run_log_details import JobRunLogDetails
 from .job_run_summary import JobRunSummary
@@ -163,6 +172,9 @@ from .model_summary import ModelSummary
 from .model_version_set import ModelVersionSet
 from .model_version_set_summary import ModelVersionSetSummary
 from .modify_model_group_details import ModifyModelGroupDetails
+from .multi_node_job_infrastructure_configuration_details import MultiNodeJobInfrastructureConfigurationDetails
+from .multi_node_job_node_configuration_details import MultiNodeJobNodeConfigurationDetails
+from .node_group_details import NodeGroupDetails
 from .notebook_session import NotebookSession
 from .notebook_session_config_details import NotebookSessionConfigDetails
 from .notebook_session_configuration_details import NotebookSessionConfigurationDetails
@@ -353,6 +365,8 @@ data_science_type_mapping = {
     "DefaultJobConfigurationDetails": DefaultJobConfigurationDetails,
     "DefaultModelDeploymentEnvironmentConfigurationDetails": DefaultModelDeploymentEnvironmentConfigurationDetails,
     "DisableMlApplicationInstanceViewTriggerDetails": DisableMlApplicationInstanceViewTriggerDetails,
+    "EmptyJobConfigurationDetails": EmptyJobConfigurationDetails,
+    "EmptyJobInfrastructureConfigurationDetails": EmptyJobInfrastructureConfigurationDetails,
     "EnableMlApplicationInstanceViewTriggerDetails": EnableMlApplicationInstanceViewTriggerDetails,
     "ExportModelArtifactDetails": ExportModelArtifactDetails,
     "FastLaunchJobConfigSummary": FastLaunchJobConfigSummary,
@@ -377,9 +391,16 @@ data_science_type_mapping = {
     "InvokeMlApplicationProviderTriggerScheduleActionDetails": InvokeMlApplicationProviderTriggerScheduleActionDetails,
     "Job": Job,
     "JobConfigurationDetails": JobConfigurationDetails,
+    "JobCustomNetworkConfiguration": JobCustomNetworkConfiguration,
+    "JobDefaultNetworkConfiguration": JobDefaultNetworkConfiguration,
     "JobEnvironmentConfigurationDetails": JobEnvironmentConfigurationDetails,
+    "JobExecProbeDetails": JobExecProbeDetails,
     "JobInfrastructureConfigurationDetails": JobInfrastructureConfigurationDetails,
     "JobLogConfigurationDetails": JobLogConfigurationDetails,
+    "JobNetworkConfiguration": JobNetworkConfiguration,
+    "JobNodeConfigurationDetails": JobNodeConfigurationDetails,
+    "JobNodeGroupConfigurationDetails": JobNodeGroupConfigurationDetails,
+    "JobProbeDetails": JobProbeDetails,
     "JobRun": JobRun,
     "JobRunLogDetails": JobRunLogDetails,
     "JobRunSummary": JobRunSummary,
@@ -438,6 +459,9 @@ data_science_type_mapping = {
     "ModelVersionSet": ModelVersionSet,
     "ModelVersionSetSummary": ModelVersionSetSummary,
     "ModifyModelGroupDetails": ModifyModelGroupDetails,
+    "MultiNodeJobInfrastructureConfigurationDetails": MultiNodeJobInfrastructureConfigurationDetails,
+    "MultiNodeJobNodeConfigurationDetails": MultiNodeJobNodeConfigurationDetails,
+    "NodeGroupDetails": NodeGroupDetails,
     "NotebookSession": NotebookSession,
     "NotebookSessionConfigDetails": NotebookSessionConfigDetails,
     "NotebookSessionConfigurationDetails": NotebookSessionConfigurationDetails,

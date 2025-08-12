@@ -112,6 +112,18 @@ class JobRun(object):
             The value to assign to the log_details property of this JobRun.
         :type log_details: oci.data_science.models.JobRunLogDetails
 
+        :param job_infrastructure_configuration_override_details:
+            The value to assign to the job_infrastructure_configuration_override_details property of this JobRun.
+        :type job_infrastructure_configuration_override_details: oci.data_science.models.JobInfrastructureConfigurationDetails
+
+        :param job_node_configuration_override_details:
+            The value to assign to the job_node_configuration_override_details property of this JobRun.
+        :type job_node_configuration_override_details: oci.data_science.models.JobNodeConfigurationDetails
+
+        :param node_group_details_list:
+            The value to assign to the node_group_details_list property of this JobRun.
+        :type node_group_details_list: list[oci.data_science.models.NodeGroupDetails]
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this JobRun.
             Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", "DELETED", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
@@ -147,6 +159,9 @@ class JobRun(object):
             'job_log_configuration_override_details': 'JobLogConfigurationDetails',
             'job_storage_mount_configuration_details_list': 'list[StorageMountConfigurationDetails]',
             'log_details': 'JobRunLogDetails',
+            'job_infrastructure_configuration_override_details': 'JobInfrastructureConfigurationDetails',
+            'job_node_configuration_override_details': 'JobNodeConfigurationDetails',
+            'node_group_details_list': 'list[NodeGroupDetails]',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -168,6 +183,9 @@ class JobRun(object):
             'job_log_configuration_override_details': 'jobLogConfigurationOverrideDetails',
             'job_storage_mount_configuration_details_list': 'jobStorageMountConfigurationDetailsList',
             'log_details': 'logDetails',
+            'job_infrastructure_configuration_override_details': 'jobInfrastructureConfigurationOverrideDetails',
+            'job_node_configuration_override_details': 'jobNodeConfigurationOverrideDetails',
+            'node_group_details_list': 'nodeGroupDetailsList',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'freeform_tags': 'freeformTags',
@@ -188,6 +206,9 @@ class JobRun(object):
         self._job_log_configuration_override_details = None
         self._job_storage_mount_configuration_details_list = None
         self._log_details = None
+        self._job_infrastructure_configuration_override_details = None
+        self._job_node_configuration_override_details = None
+        self._node_group_details_list = None
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._freeform_tags = None
@@ -564,6 +585,70 @@ class JobRun(object):
         :type: oci.data_science.models.JobRunLogDetails
         """
         self._log_details = log_details
+
+    @property
+    def job_infrastructure_configuration_override_details(self):
+        """
+        Gets the job_infrastructure_configuration_override_details of this JobRun.
+
+        :return: The job_infrastructure_configuration_override_details of this JobRun.
+        :rtype: oci.data_science.models.JobInfrastructureConfigurationDetails
+        """
+        return self._job_infrastructure_configuration_override_details
+
+    @job_infrastructure_configuration_override_details.setter
+    def job_infrastructure_configuration_override_details(self, job_infrastructure_configuration_override_details):
+        """
+        Sets the job_infrastructure_configuration_override_details of this JobRun.
+
+        :param job_infrastructure_configuration_override_details: The job_infrastructure_configuration_override_details of this JobRun.
+        :type: oci.data_science.models.JobInfrastructureConfigurationDetails
+        """
+        self._job_infrastructure_configuration_override_details = job_infrastructure_configuration_override_details
+
+    @property
+    def job_node_configuration_override_details(self):
+        """
+        Gets the job_node_configuration_override_details of this JobRun.
+
+        :return: The job_node_configuration_override_details of this JobRun.
+        :rtype: oci.data_science.models.JobNodeConfigurationDetails
+        """
+        return self._job_node_configuration_override_details
+
+    @job_node_configuration_override_details.setter
+    def job_node_configuration_override_details(self, job_node_configuration_override_details):
+        """
+        Sets the job_node_configuration_override_details of this JobRun.
+
+        :param job_node_configuration_override_details: The job_node_configuration_override_details of this JobRun.
+        :type: oci.data_science.models.JobNodeConfigurationDetails
+        """
+        self._job_node_configuration_override_details = job_node_configuration_override_details
+
+    @property
+    def node_group_details_list(self):
+        """
+        Gets the node_group_details_list of this JobRun.
+        Collection of NodeGroupDetails
+
+
+        :return: The node_group_details_list of this JobRun.
+        :rtype: list[oci.data_science.models.NodeGroupDetails]
+        """
+        return self._node_group_details_list
+
+    @node_group_details_list.setter
+    def node_group_details_list(self, node_group_details_list):
+        """
+        Sets the node_group_details_list of this JobRun.
+        Collection of NodeGroupDetails
+
+
+        :param node_group_details_list: The node_group_details_list of this JobRun.
+        :type: list[oci.data_science.models.NodeGroupDetails]
+        """
+        self._node_group_details_list = node_group_details_list
 
     @property
     def lifecycle_state(self):

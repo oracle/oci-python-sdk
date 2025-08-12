@@ -51,6 +51,30 @@ class UserSummary(object):
     ACCOUNT_STATUS_EXPIRED_AND_LOCKED = "EXPIRED_AND_LOCKED"
 
     #: A constant which can be used with the account_status property of a UserSummary.
+    #: This constant has a value of "OPEN_AND_IN_ROLLOVER"
+    ACCOUNT_STATUS_OPEN_AND_IN_ROLLOVER = "OPEN_AND_IN_ROLLOVER"
+
+    #: A constant which can be used with the account_status property of a UserSummary.
+    #: This constant has a value of "EXPIRED_AND_IN_ROLLOVER"
+    ACCOUNT_STATUS_EXPIRED_AND_IN_ROLLOVER = "EXPIRED_AND_IN_ROLLOVER"
+
+    #: A constant which can be used with the account_status property of a UserSummary.
+    #: This constant has a value of "LOCKED_AND_IN_ROLLOVER"
+    ACCOUNT_STATUS_LOCKED_AND_IN_ROLLOVER = "LOCKED_AND_IN_ROLLOVER"
+
+    #: A constant which can be used with the account_status property of a UserSummary.
+    #: This constant has a value of "EXPIRED_AND_LOCKED_AND_IN_ROLLOVER"
+    ACCOUNT_STATUS_EXPIRED_AND_LOCKED_AND_IN_ROLLOVER = "EXPIRED_AND_LOCKED_AND_IN_ROLLOVER"
+
+    #: A constant which can be used with the account_status property of a UserSummary.
+    #: This constant has a value of "LOCKED_TIMED_AND_IN_ROLLOVER"
+    ACCOUNT_STATUS_LOCKED_TIMED_AND_IN_ROLLOVER = "LOCKED_TIMED_AND_IN_ROLLOVER"
+
+    #: A constant which can be used with the account_status property of a UserSummary.
+    #: This constant has a value of "EXPIRED_AND_LOCKED_TIMED_AND_IN_ROL"
+    ACCOUNT_STATUS_EXPIRED_AND_LOCKED_TIMED_AND_IN_ROL = "EXPIRED_AND_LOCKED_TIMED_AND_IN_ROL"
+
+    #: A constant which can be used with the account_status property of a UserSummary.
     #: This constant has a value of "NONE"
     ACCOUNT_STATUS_NONE = "NONE"
 
@@ -119,7 +143,7 @@ class UserSummary(object):
 
         :param account_status:
             The value to assign to the account_status property of this UserSummary.
-            Allowed values for this property are: "OPEN", "LOCKED", "EXPIRED", "EXPIRED_AND_LOCKED", "NONE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "OPEN", "LOCKED", "EXPIRED", "EXPIRED_AND_LOCKED", "OPEN_AND_IN_ROLLOVER", "EXPIRED_AND_IN_ROLLOVER", "LOCKED_AND_IN_ROLLOVER", "EXPIRED_AND_LOCKED_AND_IN_ROLLOVER", "LOCKED_TIMED_AND_IN_ROLLOVER", "EXPIRED_AND_LOCKED_TIMED_AND_IN_ROL", "NONE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type account_status: str
 
@@ -308,7 +332,7 @@ class UserSummary(object):
         Gets the account_status of this UserSummary.
         The status of the user account.
 
-        Allowed values for this property are: "OPEN", "LOCKED", "EXPIRED", "EXPIRED_AND_LOCKED", "NONE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "OPEN", "LOCKED", "EXPIRED", "EXPIRED_AND_LOCKED", "OPEN_AND_IN_ROLLOVER", "EXPIRED_AND_IN_ROLLOVER", "LOCKED_AND_IN_ROLLOVER", "EXPIRED_AND_LOCKED_AND_IN_ROLLOVER", "LOCKED_TIMED_AND_IN_ROLLOVER", "EXPIRED_AND_LOCKED_TIMED_AND_IN_ROL", "NONE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -327,7 +351,7 @@ class UserSummary(object):
         :param account_status: The account_status of this UserSummary.
         :type: str
         """
-        allowed_values = ["OPEN", "LOCKED", "EXPIRED", "EXPIRED_AND_LOCKED", "NONE"]
+        allowed_values = ["OPEN", "LOCKED", "EXPIRED", "EXPIRED_AND_LOCKED", "OPEN_AND_IN_ROLLOVER", "EXPIRED_AND_IN_ROLLOVER", "LOCKED_AND_IN_ROLLOVER", "EXPIRED_AND_LOCKED_AND_IN_ROLLOVER", "LOCKED_TIMED_AND_IN_ROLLOVER", "EXPIRED_AND_LOCKED_TIMED_AND_IN_ROL", "NONE"]
         if not value_allowed_none_or_none_sentinel(account_status, allowed_values):
             account_status = 'UNKNOWN_ENUM_VALUE'
         self._account_status = account_status

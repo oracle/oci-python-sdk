@@ -51,6 +51,26 @@ class ReportSummary(object):
     #: This constant has a value of "SCHEDULED"
     TYPE_SCHEDULED = "SCHEDULED"
 
+    #: A constant which can be used with the data_source property of a ReportSummary.
+    #: This constant has a value of "EVENTS"
+    DATA_SOURCE_EVENTS = "EVENTS"
+
+    #: A constant which can be used with the data_source property of a ReportSummary.
+    #: This constant has a value of "ALERTS"
+    DATA_SOURCE_ALERTS = "ALERTS"
+
+    #: A constant which can be used with the data_source property of a ReportSummary.
+    #: This constant has a value of "SECURITY_ASSESSMENT"
+    DATA_SOURCE_SECURITY_ASSESSMENT = "SECURITY_ASSESSMENT"
+
+    #: A constant which can be used with the data_source property of a ReportSummary.
+    #: This constant has a value of "VIOLATIONS"
+    DATA_SOURCE_VIOLATIONS = "VIOLATIONS"
+
+    #: A constant which can be used with the data_source property of a ReportSummary.
+    #: This constant has a value of "ALLOWED_SQL"
+    DATA_SOURCE_ALLOWED_SQL = "ALLOWED_SQL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ReportSummary object with values from keyword arguments.
@@ -82,6 +102,14 @@ class ReportSummary(object):
             The value to assign to the time_generated property of this ReportSummary.
         :type time_generated: datetime
 
+        :param time_created:
+            The value to assign to the time_created property of this ReportSummary.
+        :type time_created: datetime
+
+        :param time_updated:
+            The value to assign to the time_updated property of this ReportSummary.
+        :type time_updated: datetime
+
         :param compartment_id:
             The value to assign to the compartment_id property of this ReportSummary.
         :type compartment_id: str
@@ -97,6 +125,12 @@ class ReportSummary(object):
             Allowed values for this property are: "GENERATED", "SCHEDULED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
+
+        :param data_source:
+            The value to assign to the data_source property of this ReportSummary.
+            Allowed values for this property are: "EVENTS", "ALERTS", "SECURITY_ASSESSMENT", "VIOLATIONS", "ALLOWED_SQL", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type data_source: str
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ReportSummary.
@@ -114,9 +148,12 @@ class ReportSummary(object):
             'description': 'str',
             'mime_type': 'str',
             'time_generated': 'datetime',
+            'time_created': 'datetime',
+            'time_updated': 'datetime',
             'compartment_id': 'str',
             'lifecycle_state': 'str',
             'type': 'str',
+            'data_source': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -127,9 +164,12 @@ class ReportSummary(object):
             'description': 'description',
             'mime_type': 'mimeType',
             'time_generated': 'timeGenerated',
+            'time_created': 'timeCreated',
+            'time_updated': 'timeUpdated',
             'compartment_id': 'compartmentId',
             'lifecycle_state': 'lifecycleState',
             'type': 'type',
+            'data_source': 'dataSource',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -139,9 +179,12 @@ class ReportSummary(object):
         self._description = None
         self._mime_type = None
         self._time_generated = None
+        self._time_created = None
+        self._time_updated = None
         self._compartment_id = None
         self._lifecycle_state = None
         self._type = None
+        self._data_source = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -296,6 +339,54 @@ class ReportSummary(object):
         self._time_generated = time_generated
 
     @property
+    def time_created(self):
+        """
+        Gets the time_created of this ReportSummary.
+        Specifies the time at which the report was created.
+
+
+        :return: The time_created of this ReportSummary.
+        :rtype: datetime
+        """
+        return self._time_created
+
+    @time_created.setter
+    def time_created(self, time_created):
+        """
+        Sets the time_created of this ReportSummary.
+        Specifies the time at which the report was created.
+
+
+        :param time_created: The time_created of this ReportSummary.
+        :type: datetime
+        """
+        self._time_created = time_created
+
+    @property
+    def time_updated(self):
+        """
+        Gets the time_updated of this ReportSummary.
+        The date and time of the report update in Data Safe.
+
+
+        :return: The time_updated of this ReportSummary.
+        :rtype: datetime
+        """
+        return self._time_updated
+
+    @time_updated.setter
+    def time_updated(self, time_updated):
+        """
+        Sets the time_updated of this ReportSummary.
+        The date and time of the report update in Data Safe.
+
+
+        :param time_updated: The time_updated of this ReportSummary.
+        :type: datetime
+        """
+        self._time_updated = time_updated
+
+    @property
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ReportSummary.
@@ -378,6 +469,36 @@ class ReportSummary(object):
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type
+
+    @property
+    def data_source(self):
+        """
+        Gets the data_source of this ReportSummary.
+        Specifies the name of a resource that provides data for the report. For example alerts, events.
+
+        Allowed values for this property are: "EVENTS", "ALERTS", "SECURITY_ASSESSMENT", "VIOLATIONS", "ALLOWED_SQL", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The data_source of this ReportSummary.
+        :rtype: str
+        """
+        return self._data_source
+
+    @data_source.setter
+    def data_source(self, data_source):
+        """
+        Sets the data_source of this ReportSummary.
+        Specifies the name of a resource that provides data for the report. For example alerts, events.
+
+
+        :param data_source: The data_source of this ReportSummary.
+        :type: str
+        """
+        allowed_values = ["EVENTS", "ALERTS", "SECURITY_ASSESSMENT", "VIOLATIONS", "ALLOWED_SQL"]
+        if not value_allowed_none_or_none_sentinel(data_source, allowed_values):
+            data_source = 'UNKNOWN_ENUM_VALUE'
+        self._data_source = data_source
 
     @property
     def freeform_tags(self):

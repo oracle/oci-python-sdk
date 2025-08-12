@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Incident(object):
     """
-    Details about the support ticket.
+    Details about the support request.
     """
 
     #: A constant which can be used with the problem_type property of a Incident.
@@ -64,6 +64,10 @@ class Incident(object):
             The value to assign to the incident_type property of this Incident.
         :type incident_type: oci.cims.models.IncidentType
 
+        :param migrated_sr_number:
+            The value to assign to the migrated_sr_number property of this Incident.
+        :type migrated_sr_number: str
+
         :param user_group_id:
             The value to assign to the user_group_id property of this Incident.
         :type user_group_id: str
@@ -106,6 +110,7 @@ class Incident(object):
             'tenancy_information': 'TenancyInformation',
             'ticket': 'Ticket',
             'incident_type': 'IncidentType',
+            'migrated_sr_number': 'str',
             'user_group_id': 'str',
             'user_group_name': 'str',
             'primary_contact_party_id': 'str',
@@ -122,6 +127,7 @@ class Incident(object):
             'tenancy_information': 'tenancyInformation',
             'ticket': 'ticket',
             'incident_type': 'incidentType',
+            'migrated_sr_number': 'migratedSrNumber',
             'user_group_id': 'userGroupId',
             'user_group_name': 'userGroupName',
             'primary_contact_party_id': 'primaryContactPartyId',
@@ -137,6 +143,7 @@ class Incident(object):
         self._tenancy_information = None
         self._ticket = None
         self._incident_type = None
+        self._migrated_sr_number = None
         self._user_group_id = None
         self._user_group_name = None
         self._primary_contact_party_id = None
@@ -150,7 +157,7 @@ class Incident(object):
     def key(self):
         """
         **[Required]** Gets the key of this Incident.
-        Unique identifier for the support ticket.
+        Unique identifier for the support request.
 
 
         :return: The key of this Incident.
@@ -162,7 +169,7 @@ class Incident(object):
     def key(self, key):
         """
         Sets the key of this Incident.
-        Unique identifier for the support ticket.
+        Unique identifier for the support request.
 
 
         :param key: The key of this Incident.
@@ -273,6 +280,30 @@ class Incident(object):
         :type: oci.cims.models.IncidentType
         """
         self._incident_type = incident_type
+
+    @property
+    def migrated_sr_number(self):
+        """
+        Gets the migrated_sr_number of this Incident.
+        Technical support type (`TECH`) only: The pre-migration identifier of the support request in My Oracle Support (MOS).
+
+
+        :return: The migrated_sr_number of this Incident.
+        :rtype: str
+        """
+        return self._migrated_sr_number
+
+    @migrated_sr_number.setter
+    def migrated_sr_number(self, migrated_sr_number):
+        """
+        Sets the migrated_sr_number of this Incident.
+        Technical support type (`TECH`) only: The pre-migration identifier of the support request in My Oracle Support (MOS).
+
+
+        :param migrated_sr_number: The migrated_sr_number of this Incident.
+        :type: str
+        """
+        self._migrated_sr_number = migrated_sr_number
 
     @property
     def user_group_id(self):
@@ -424,12 +455,12 @@ class Incident(object):
     def problem_type(self):
         """
         Gets the problem_type of this Incident.
-        The kind of support ticket (type of support request).
-        For information about `ACCOUNT` support tickets, see
+        The kind of support request (type of support request).
+        For information about `ACCOUNT` support requests, see
         `Creating a Billing Support Request`__.
-        For information about `LIMIT` support tickets, see
+        For information about `LIMIT` support requests, see
         `Creating a Service Limit Increase Request`__.
-        For information about `TECH` support tickets, see
+        For information about `TECH` support requests, see
         `Creating a Technical Support Request`__.
 
         __ https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm
@@ -449,12 +480,12 @@ class Incident(object):
     def problem_type(self, problem_type):
         """
         Sets the problem_type of this Incident.
-        The kind of support ticket (type of support request).
-        For information about `ACCOUNT` support tickets, see
+        The kind of support request (type of support request).
+        For information about `ACCOUNT` support requests, see
         `Creating a Billing Support Request`__.
-        For information about `LIMIT` support tickets, see
+        For information about `LIMIT` support requests, see
         `Creating a Service Limit Increase Request`__.
-        For information about `TECH` support tickets, see
+        For information about `TECH` support requests, see
         `Creating a Technical Support Request`__.
 
         __ https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm
@@ -474,7 +505,7 @@ class Incident(object):
     def referrer(self):
         """
         Gets the referrer of this Incident.
-        The incident referrer. This value is often the URL that the customer used when creating the support ticket.
+        The incident referrer. This value is often the URL that the customer used when creating the support request.
 
 
         :return: The referrer of this Incident.
@@ -486,7 +517,7 @@ class Incident(object):
     def referrer(self, referrer):
         """
         Sets the referrer of this Incident.
-        The incident referrer. This value is often the URL that the customer used when creating the support ticket.
+        The incident referrer. This value is often the URL that the customer used when creating the support request.
 
 
         :param referrer: The referrer of this Incident.

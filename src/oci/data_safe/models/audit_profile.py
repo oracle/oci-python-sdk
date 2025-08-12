@@ -43,6 +43,14 @@ class AuditProfile(object):
     #: This constant has a value of "DELETED"
     LIFECYCLE_STATE_DELETED = "DELETED"
 
+    #: A constant which can be used with the target_type property of a AuditProfile.
+    #: This constant has a value of "TARGET_DATABASE"
+    TARGET_TYPE_TARGET_DATABASE = "TARGET_DATABASE"
+
+    #: A constant which can be used with the target_type property of a AuditProfile.
+    #: This constant has a value of "TARGET_DATABASE_GROUP"
+    TARGET_TYPE_TARGET_DATABASE_GROUP = "TARGET_DATABASE_GROUP"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AuditProfile object with values from keyword arguments.
@@ -110,6 +118,28 @@ class AuditProfile(object):
             The value to assign to the is_override_global_retention_setting property of this AuditProfile.
         :type is_override_global_retention_setting: bool
 
+        :param is_override_global_paid_usage:
+            The value to assign to the is_override_global_paid_usage property of this AuditProfile.
+        :type is_override_global_paid_usage: bool
+
+        :param online_months_source:
+            The value to assign to the online_months_source property of this AuditProfile.
+        :type online_months_source: str
+
+        :param offline_months_source:
+            The value to assign to the offline_months_source property of this AuditProfile.
+        :type offline_months_source: str
+
+        :param paid_usage_source:
+            The value to assign to the paid_usage_source property of this AuditProfile.
+        :type paid_usage_source: str
+
+        :param target_type:
+            The value to assign to the target_type property of this AuditProfile.
+            Allowed values for this property are: "TARGET_DATABASE", "TARGET_DATABASE_GROUP", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type target_type: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this AuditProfile.
         :type freeform_tags: dict(str, str)
@@ -139,6 +169,11 @@ class AuditProfile(object):
             'offline_months': 'int',
             'audit_collected_volume': 'int',
             'is_override_global_retention_setting': 'bool',
+            'is_override_global_paid_usage': 'bool',
+            'online_months_source': 'str',
+            'offline_months_source': 'str',
+            'paid_usage_source': 'str',
+            'target_type': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -159,6 +194,11 @@ class AuditProfile(object):
             'offline_months': 'offlineMonths',
             'audit_collected_volume': 'auditCollectedVolume',
             'is_override_global_retention_setting': 'isOverrideGlobalRetentionSetting',
+            'is_override_global_paid_usage': 'isOverrideGlobalPaidUsage',
+            'online_months_source': 'onlineMonthsSource',
+            'offline_months_source': 'offlineMonthsSource',
+            'paid_usage_source': 'paidUsageSource',
+            'target_type': 'targetType',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -178,6 +218,11 @@ class AuditProfile(object):
         self._offline_months = None
         self._audit_collected_volume = None
         self._is_override_global_retention_setting = None
+        self._is_override_global_paid_usage = None
+        self._online_months_source = None
+        self._offline_months_source = None
+        self._paid_usage_source = None
+        self._target_type = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -210,7 +255,7 @@ class AuditProfile(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this AuditProfile.
-        The OCID of the compartment that contains the audit.
+        The OCID of the compartment that contains the audit profile.
 
 
         :return: The compartment_id of this AuditProfile.
@@ -222,7 +267,7 @@ class AuditProfile(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this AuditProfile.
-        The OCID of the compartment that contains the audit.
+        The OCID of the compartment that contains the audit profile.
 
 
         :param compartment_id: The compartment_id of this AuditProfile.
@@ -360,7 +405,7 @@ class AuditProfile(object):
     def target_id(self):
         """
         **[Required]** Gets the target_id of this AuditProfile.
-        The OCID of the Data Safe target for which the audit profile is created.
+        The OCID of the target database or target database group for which the audit profile is created.
 
 
         :return: The target_id of this AuditProfile.
@@ -372,7 +417,7 @@ class AuditProfile(object):
     def target_id(self, target_id):
         """
         Sets the target_id of this AuditProfile.
-        The OCID of the Data Safe target for which the audit profile is created.
+        The OCID of the target database or target database group for which the audit profile is created.
 
 
         :param target_id: The target_id of this AuditProfile.
@@ -408,7 +453,7 @@ class AuditProfile(object):
     def audit_trails(self):
         """
         Gets the audit_trails of this AuditProfile.
-        Indicates the list of available audit trails on the target.
+        Contains the list of available audit trails on the target database.
 
 
         :return: The audit_trails of this AuditProfile.
@@ -420,7 +465,7 @@ class AuditProfile(object):
     def audit_trails(self, audit_trails):
         """
         Sets the audit_trails of this AuditProfile.
-        Indicates the list of available audit trails on the target.
+        Contains the list of available audit trails on the target database.
 
 
         :param audit_trails: The audit_trails of this AuditProfile.
@@ -460,7 +505,7 @@ class AuditProfile(object):
     def online_months(self):
         """
         **[Required]** Gets the online_months of this AuditProfile.
-        Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.
+        Number of months the audit records will be stored online in the audit repository for immediate reporting and analysis.
         Minimum: 1; Maximum: 12 months
 
 
@@ -473,7 +518,7 @@ class AuditProfile(object):
     def online_months(self, online_months):
         """
         Sets the online_months of this AuditProfile.
-        Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.
+        Number of months the audit records will be stored online in the audit repository for immediate reporting and analysis.
         Minimum: 1; Maximum: 12 months
 
 
@@ -486,9 +531,9 @@ class AuditProfile(object):
     def offline_months(self):
         """
         **[Required]** Gets the offline_months of this AuditProfile.
-        Indicates the number of months the audit records will be stored offline in the Data Safe audit archive.
+        Number of months the audit records will be stored offline in the offline archive.
         Minimum: 0; Maximum: 72 months.
-        If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
+        If you have a requirement to store the audit data even longer in the offline archive, please contact the Oracle Support.
 
 
         :return: The offline_months of this AuditProfile.
@@ -500,9 +545,9 @@ class AuditProfile(object):
     def offline_months(self, offline_months):
         """
         Sets the offline_months of this AuditProfile.
-        Indicates the number of months the audit records will be stored offline in the Data Safe audit archive.
+        Number of months the audit records will be stored offline in the offline archive.
         Minimum: 0; Maximum: 72 months.
-        If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
+        If you have a requirement to store the audit data even longer in the offline archive, please contact the Oracle Support.
 
 
         :param offline_months: The offline_months of this AuditProfile.
@@ -514,7 +559,7 @@ class AuditProfile(object):
     def audit_collected_volume(self):
         """
         Gets the audit_collected_volume of this AuditProfile.
-        Indicates number of audit records collected by Data Safe in the current calendar month.
+        Number of audit records collected in the current calendar month.
         Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
 
 
@@ -527,7 +572,7 @@ class AuditProfile(object):
     def audit_collected_volume(self, audit_collected_volume):
         """
         Sets the audit_collected_volume of this AuditProfile.
-        Indicates number of audit records collected by Data Safe in the current calendar month.
+        Number of audit records collected in the current calendar month.
         Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
 
 
@@ -540,8 +585,8 @@ class AuditProfile(object):
     def is_override_global_retention_setting(self):
         """
         **[Required]** Gets the is_override_global_retention_setting of this AuditProfile.
-        Indicates whether audit retention settings like online and offline months is set at the
-        target level overriding the global audit retention settings.
+        Indicates whether audit retention settings like online and offline months set at the
+        target level override both the global settings and the target group level audit retention settings.
 
 
         :return: The is_override_global_retention_setting of this AuditProfile.
@@ -553,14 +598,148 @@ class AuditProfile(object):
     def is_override_global_retention_setting(self, is_override_global_retention_setting):
         """
         Sets the is_override_global_retention_setting of this AuditProfile.
-        Indicates whether audit retention settings like online and offline months is set at the
-        target level overriding the global audit retention settings.
+        Indicates whether audit retention settings like online and offline months set at the
+        target level override both the global settings and the target group level audit retention settings.
 
 
         :param is_override_global_retention_setting: The is_override_global_retention_setting of this AuditProfile.
         :type: bool
         """
         self._is_override_global_retention_setting = is_override_global_retention_setting
+
+    @property
+    def is_override_global_paid_usage(self):
+        """
+        Gets the is_override_global_paid_usage of this AuditProfile.
+        Indicates whether audit paid usage settings specified at the target database level override both the global settings and the target group level paid usage settings.
+        Enabling paid usage continues the collection of audit records beyond the free limit of one million audit records per month per target database,
+        potentially incurring additional charges. For more information, see `Data Safe Price List`__.
+
+        __ https://www.oracle.com/cloud/price-list/#data-safe
+
+
+        :return: The is_override_global_paid_usage of this AuditProfile.
+        :rtype: bool
+        """
+        return self._is_override_global_paid_usage
+
+    @is_override_global_paid_usage.setter
+    def is_override_global_paid_usage(self, is_override_global_paid_usage):
+        """
+        Sets the is_override_global_paid_usage of this AuditProfile.
+        Indicates whether audit paid usage settings specified at the target database level override both the global settings and the target group level paid usage settings.
+        Enabling paid usage continues the collection of audit records beyond the free limit of one million audit records per month per target database,
+        potentially incurring additional charges. For more information, see `Data Safe Price List`__.
+
+        __ https://www.oracle.com/cloud/price-list/#data-safe
+
+
+        :param is_override_global_paid_usage: The is_override_global_paid_usage of this AuditProfile.
+        :type: bool
+        """
+        self._is_override_global_paid_usage = is_override_global_paid_usage
+
+    @property
+    def online_months_source(self):
+        """
+        Gets the online_months_source of this AuditProfile.
+        The name or the OCID of the resource from which the online month retention setting is sourced. For example, a global setting or a target database group OCID.
+
+
+        :return: The online_months_source of this AuditProfile.
+        :rtype: str
+        """
+        return self._online_months_source
+
+    @online_months_source.setter
+    def online_months_source(self, online_months_source):
+        """
+        Sets the online_months_source of this AuditProfile.
+        The name or the OCID of the resource from which the online month retention setting is sourced. For example, a global setting or a target database group OCID.
+
+
+        :param online_months_source: The online_months_source of this AuditProfile.
+        :type: str
+        """
+        self._online_months_source = online_months_source
+
+    @property
+    def offline_months_source(self):
+        """
+        Gets the offline_months_source of this AuditProfile.
+        The name or the OCID of the resource from which the offline month retention setting is sourced. For example, a global setting or a target database group OCID.
+
+
+        :return: The offline_months_source of this AuditProfile.
+        :rtype: str
+        """
+        return self._offline_months_source
+
+    @offline_months_source.setter
+    def offline_months_source(self, offline_months_source):
+        """
+        Sets the offline_months_source of this AuditProfile.
+        The name or the OCID of the resource from which the offline month retention setting is sourced. For example, a global setting or a target database group OCID.
+
+
+        :param offline_months_source: The offline_months_source of this AuditProfile.
+        :type: str
+        """
+        self._offline_months_source = offline_months_source
+
+    @property
+    def paid_usage_source(self):
+        """
+        Gets the paid_usage_source of this AuditProfile.
+        The name or the OCID of the resource from which the paid usage setting is sourced. For example, a global setting or a target database group OCID.
+
+
+        :return: The paid_usage_source of this AuditProfile.
+        :rtype: str
+        """
+        return self._paid_usage_source
+
+    @paid_usage_source.setter
+    def paid_usage_source(self, paid_usage_source):
+        """
+        Sets the paid_usage_source of this AuditProfile.
+        The name or the OCID of the resource from which the paid usage setting is sourced. For example, a global setting or a target database group OCID.
+
+
+        :param paid_usage_source: The paid_usage_source of this AuditProfile.
+        :type: str
+        """
+        self._paid_usage_source = paid_usage_source
+
+    @property
+    def target_type(self):
+        """
+        Gets the target_type of this AuditProfile.
+        The resource type that is represented by the audit profile.
+
+        Allowed values for this property are: "TARGET_DATABASE", "TARGET_DATABASE_GROUP", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The target_type of this AuditProfile.
+        :rtype: str
+        """
+        return self._target_type
+
+    @target_type.setter
+    def target_type(self, target_type):
+        """
+        Sets the target_type of this AuditProfile.
+        The resource type that is represented by the audit profile.
+
+
+        :param target_type: The target_type of this AuditProfile.
+        :type: str
+        """
+        allowed_values = ["TARGET_DATABASE", "TARGET_DATABASE_GROUP"]
+        if not value_allowed_none_or_none_sentinel(target_type, allowed_values):
+            target_type = 'UNKNOWN_ENUM_VALUE'
+        self._target_type = target_type
 
     @property
     def freeform_tags(self):

@@ -15,6 +15,70 @@ class Column(object):
     The description of the column.
     """
 
+    #: A constant which can be used with the applicable_operators property of a Column.
+    #: This constant has a value of "IN"
+    APPLICABLE_OPERATORS_IN = "IN"
+
+    #: A constant which can be used with the applicable_operators property of a Column.
+    #: This constant has a value of "EQ"
+    APPLICABLE_OPERATORS_EQ = "EQ"
+
+    #: A constant which can be used with the applicable_operators property of a Column.
+    #: This constant has a value of "EQ_CS"
+    APPLICABLE_OPERATORS_EQ_CS = "EQ_CS"
+
+    #: A constant which can be used with the applicable_operators property of a Column.
+    #: This constant has a value of "GT"
+    APPLICABLE_OPERATORS_GT = "GT"
+
+    #: A constant which can be used with the applicable_operators property of a Column.
+    #: This constant has a value of "GE"
+    APPLICABLE_OPERATORS_GE = "GE"
+
+    #: A constant which can be used with the applicable_operators property of a Column.
+    #: This constant has a value of "LT"
+    APPLICABLE_OPERATORS_LT = "LT"
+
+    #: A constant which can be used with the applicable_operators property of a Column.
+    #: This constant has a value of "LE"
+    APPLICABLE_OPERATORS_LE = "LE"
+
+    #: A constant which can be used with the applicable_operators property of a Column.
+    #: This constant has a value of "AND"
+    APPLICABLE_OPERATORS_AND = "AND"
+
+    #: A constant which can be used with the applicable_operators property of a Column.
+    #: This constant has a value of "OR"
+    APPLICABLE_OPERATORS_OR = "OR"
+
+    #: A constant which can be used with the applicable_operators property of a Column.
+    #: This constant has a value of "NE"
+    APPLICABLE_OPERATORS_NE = "NE"
+
+    #: A constant which can be used with the applicable_operators property of a Column.
+    #: This constant has a value of "CO"
+    APPLICABLE_OPERATORS_CO = "CO"
+
+    #: A constant which can be used with the applicable_operators property of a Column.
+    #: This constant has a value of "CO_CS"
+    APPLICABLE_OPERATORS_CO_CS = "CO_CS"
+
+    #: A constant which can be used with the applicable_operators property of a Column.
+    #: This constant has a value of "NOT"
+    APPLICABLE_OPERATORS_NOT = "NOT"
+
+    #: A constant which can be used with the applicable_operators property of a Column.
+    #: This constant has a value of "NOT_IN"
+    APPLICABLE_OPERATORS_NOT_IN = "NOT_IN"
+
+    #: A constant which can be used with the applicable_operators property of a Column.
+    #: This constant has a value of "IN_SET"
+    APPLICABLE_OPERATORS_IN_SET = "IN_SET"
+
+    #: A constant which can be used with the applicable_operators property of a Column.
+    #: This constant has a value of "NOT_IN_SET"
+    APPLICABLE_OPERATORS_NOT_IN_SET = "NOT_IN_SET"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Column object with values from keyword arguments.
@@ -40,26 +104,42 @@ class Column(object):
             The value to assign to the display_order property of this Column.
         :type display_order: int
 
+        :param is_virtual:
+            The value to assign to the is_virtual property of this Column.
+        :type is_virtual: bool
+
+        :param applicable_operators:
+            The value to assign to the applicable_operators property of this Column.
+            Allowed values for items in this list are: "IN", "EQ", "EQ_CS", "GT", "GE", "LT", "LE", "AND", "OR", "NE", "CO", "CO_CS", "NOT", "NOT_IN", "IN_SET", "NOT_IN_SET", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type applicable_operators: list[str]
+
         """
         self.swagger_types = {
             'display_name': 'str',
             'field_name': 'str',
             'data_type': 'str',
             'is_hidden': 'bool',
-            'display_order': 'int'
+            'display_order': 'int',
+            'is_virtual': 'bool',
+            'applicable_operators': 'list[str]'
         }
         self.attribute_map = {
             'display_name': 'displayName',
             'field_name': 'fieldName',
             'data_type': 'dataType',
             'is_hidden': 'isHidden',
-            'display_order': 'displayOrder'
+            'display_order': 'displayOrder',
+            'is_virtual': 'isVirtual',
+            'applicable_operators': 'applicableOperators'
         }
         self._display_name = None
         self._field_name = None
         self._data_type = None
         self._is_hidden = None
         self._display_order = None
+        self._is_virtual = None
+        self._applicable_operators = None
 
     @property
     def display_name(self):
@@ -180,6 +260,60 @@ class Column(object):
         :type: int
         """
         self._display_order = display_order
+
+    @property
+    def is_virtual(self):
+        """
+        Gets the is_virtual of this Column.
+        Specifies if column is virtual and can only be used as column filter.
+
+
+        :return: The is_virtual of this Column.
+        :rtype: bool
+        """
+        return self._is_virtual
+
+    @is_virtual.setter
+    def is_virtual(self, is_virtual):
+        """
+        Sets the is_virtual of this Column.
+        Specifies if column is virtual and can only be used as column filter.
+
+
+        :param is_virtual: The is_virtual of this Column.
+        :type: bool
+        """
+        self._is_virtual = is_virtual
+
+    @property
+    def applicable_operators(self):
+        """
+        Gets the applicable_operators of this Column.
+        An array of operators that can be supported by column fieldName.
+
+        Allowed values for items in this list are: "IN", "EQ", "EQ_CS", "GT", "GE", "LT", "LE", "AND", "OR", "NE", "CO", "CO_CS", "NOT", "NOT_IN", "IN_SET", "NOT_IN_SET", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The applicable_operators of this Column.
+        :rtype: list[str]
+        """
+        return self._applicable_operators
+
+    @applicable_operators.setter
+    def applicable_operators(self, applicable_operators):
+        """
+        Sets the applicable_operators of this Column.
+        An array of operators that can be supported by column fieldName.
+
+
+        :param applicable_operators: The applicable_operators of this Column.
+        :type: list[str]
+        """
+        allowed_values = ["IN", "EQ", "EQ_CS", "GT", "GE", "LT", "LE", "AND", "OR", "NE", "CO", "CO_CS", "NOT", "NOT_IN", "IN_SET", "NOT_IN_SET"]
+        if applicable_operators:
+            applicable_operators[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in applicable_operators]
+        self._applicable_operators = applicable_operators
 
     def __repr__(self):
         return formatted_flat_dict(self)

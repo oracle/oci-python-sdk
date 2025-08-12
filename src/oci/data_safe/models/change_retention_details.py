@@ -51,8 +51,7 @@ class ChangeRetentionDetails(object):
     def online_months(self):
         """
         Gets the online_months of this ChangeRetentionDetails.
-        Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for
-        immediate reporting and analysis. Minimum: 1; Maximum: 12 months
+        Number of months the audit records will be stored online in the audit repository for immediate reporting and analysis. Minimum: 1; Maximum: 12 months
 
 
         :return: The online_months of this ChangeRetentionDetails.
@@ -64,8 +63,7 @@ class ChangeRetentionDetails(object):
     def online_months(self, online_months):
         """
         Sets the online_months of this ChangeRetentionDetails.
-        Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for
-        immediate reporting and analysis. Minimum: 1; Maximum: 12 months
+        Number of months the audit records will be stored online in the audit repository for immediate reporting and analysis. Minimum: 1; Maximum: 12 months
 
 
         :param online_months: The online_months of this ChangeRetentionDetails.
@@ -77,9 +75,9 @@ class ChangeRetentionDetails(object):
     def offline_months(self):
         """
         Gets the offline_months of this ChangeRetentionDetails.
-        Indicates the number of months the audit records will be stored offline in the Data Safe audit archive.
-        Minimum: 0; Maximum: 72 months.
-        If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
+        Number of months the audit records will be stored offline in the offline archive.
+           Minimum: 0; Maximum: 72 months.
+           If you have a requirement to store the audit data even longer in the offline archive, please contact the Oracle Support.
 
 
         :return: The offline_months of this ChangeRetentionDetails.
@@ -91,9 +89,9 @@ class ChangeRetentionDetails(object):
     def offline_months(self, offline_months):
         """
         Sets the offline_months of this ChangeRetentionDetails.
-        Indicates the number of months the audit records will be stored offline in the Data Safe audit archive.
-        Minimum: 0; Maximum: 72 months.
-        If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
+        Number of months the audit records will be stored offline in the offline archive.
+           Minimum: 0; Maximum: 72 months.
+           If you have a requirement to store the audit data even longer in the offline archive, please contact the Oracle Support.
 
 
         :param offline_months: The offline_months of this ChangeRetentionDetails.
@@ -105,8 +103,8 @@ class ChangeRetentionDetails(object):
     def is_override_global_retention_setting(self):
         """
         Gets the is_override_global_retention_setting of this ChangeRetentionDetails.
-        Indicates whether audit retention settings like online and offline months is set at the
-        target level overriding the global audit retention settings.
+        Indicates whether audit retention settings like online and offline months set at the
+        target level override both the global settings and the target group level audit retention settings.
 
 
         :return: The is_override_global_retention_setting of this ChangeRetentionDetails.
@@ -118,8 +116,8 @@ class ChangeRetentionDetails(object):
     def is_override_global_retention_setting(self, is_override_global_retention_setting):
         """
         Sets the is_override_global_retention_setting of this ChangeRetentionDetails.
-        Indicates whether audit retention settings like online and offline months is set at the
-        target level overriding the global audit retention settings.
+        Indicates whether audit retention settings like online and offline months set at the
+        target level override both the global settings and the target group level audit retention settings.
 
 
         :param is_override_global_retention_setting: The is_override_global_retention_setting of this ChangeRetentionDetails.

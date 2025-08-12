@@ -23,7 +23,7 @@ class DefaultJobConfigurationDetails(JobConfigurationDetails):
 
         :param job_type:
             The value to assign to the job_type property of this DefaultJobConfigurationDetails.
-            Allowed values for this property are: "DEFAULT"
+            Allowed values for this property are: "DEFAULT", "EMPTY"
         :type job_type: str
 
         :param environment_variables:
@@ -38,23 +38,30 @@ class DefaultJobConfigurationDetails(JobConfigurationDetails):
             The value to assign to the maximum_runtime_in_minutes property of this DefaultJobConfigurationDetails.
         :type maximum_runtime_in_minutes: int
 
+        :param startup_probe_details:
+            The value to assign to the startup_probe_details property of this DefaultJobConfigurationDetails.
+        :type startup_probe_details: oci.data_science.models.JobProbeDetails
+
         """
         self.swagger_types = {
             'job_type': 'str',
             'environment_variables': 'dict(str, str)',
             'command_line_arguments': 'str',
-            'maximum_runtime_in_minutes': 'int'
+            'maximum_runtime_in_minutes': 'int',
+            'startup_probe_details': 'JobProbeDetails'
         }
         self.attribute_map = {
             'job_type': 'jobType',
             'environment_variables': 'environmentVariables',
             'command_line_arguments': 'commandLineArguments',
-            'maximum_runtime_in_minutes': 'maximumRuntimeInMinutes'
+            'maximum_runtime_in_minutes': 'maximumRuntimeInMinutes',
+            'startup_probe_details': 'startupProbeDetails'
         }
         self._job_type = None
         self._environment_variables = None
         self._command_line_arguments = None
         self._maximum_runtime_in_minutes = None
+        self._startup_probe_details = None
         self._job_type = 'DEFAULT'
 
     @property
@@ -128,6 +135,26 @@ class DefaultJobConfigurationDetails(JobConfigurationDetails):
         :type: int
         """
         self._maximum_runtime_in_minutes = maximum_runtime_in_minutes
+
+    @property
+    def startup_probe_details(self):
+        """
+        Gets the startup_probe_details of this DefaultJobConfigurationDetails.
+
+        :return: The startup_probe_details of this DefaultJobConfigurationDetails.
+        :rtype: oci.data_science.models.JobProbeDetails
+        """
+        return self._startup_probe_details
+
+    @startup_probe_details.setter
+    def startup_probe_details(self, startup_probe_details):
+        """
+        Sets the startup_probe_details of this DefaultJobConfigurationDetails.
+
+        :param startup_probe_details: The startup_probe_details of this DefaultJobConfigurationDetails.
+        :type: oci.data_science.models.JobProbeDetails
+        """
+        self._startup_probe_details = startup_probe_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

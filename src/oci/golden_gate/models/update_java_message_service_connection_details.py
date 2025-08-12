@@ -472,7 +472,7 @@ class UpdateJavaMessageServiceConnectionDetails(UpdateConnectionDetails):
     def connection_url(self):
         """
         Gets the connection_url of this UpdateJavaMessageServiceConnectionDetails.
-        Connectin URL of the Java Message Service, specifying the protocol, host, and port.
+        Connection URL of the Java Message Service, specifying the protocol, host, and port.
         e.g.: 'mq://myjms.host.domain:7676'
 
 
@@ -485,7 +485,7 @@ class UpdateJavaMessageServiceConnectionDetails(UpdateConnectionDetails):
     def connection_url(self, connection_url):
         """
         Sets the connection_url of this UpdateJavaMessageServiceConnectionDetails.
-        Connectin URL of the Java Message Service, specifying the protocol, host, and port.
+        Connection URL of the Java Message Service, specifying the protocol, host, and port.
         e.g.: 'mq://myjms.host.domain:7676'
 
 

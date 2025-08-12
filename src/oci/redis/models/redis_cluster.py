@@ -134,6 +134,10 @@ class RedisCluster(object):
             The value to assign to the node_collection property of this RedisCluster.
         :type node_collection: oci.redis.models.NodeCollection
 
+        :param oci_cache_config_set_id:
+            The value to assign to the oci_cache_config_set_id property of this RedisCluster.
+        :type oci_cache_config_set_id: str
+
         :param cluster_mode:
             The value to assign to the cluster_mode property of this RedisCluster.
             Allowed values for this property are: "SHARDED", "NONSHARDED", 'UNKNOWN_ENUM_VALUE'.
@@ -178,6 +182,7 @@ class RedisCluster(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'node_collection': 'NodeCollection',
+            'oci_cache_config_set_id': 'str',
             'cluster_mode': 'str',
             'shard_count': 'int',
             'nsg_ids': 'list[str]',
@@ -202,6 +207,7 @@ class RedisCluster(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'node_collection': 'nodeCollection',
+            'oci_cache_config_set_id': 'ociCacheConfigSetId',
             'cluster_mode': 'clusterMode',
             'shard_count': 'shardCount',
             'nsg_ids': 'nsgIds',
@@ -225,6 +231,7 @@ class RedisCluster(object):
         self._time_created = None
         self._time_updated = None
         self._node_collection = None
+        self._oci_cache_config_set_id = None
         self._cluster_mode = None
         self._shard_count = None
         self._nsg_ids = None
@@ -643,6 +650,30 @@ class RedisCluster(object):
         :type: oci.redis.models.NodeCollection
         """
         self._node_collection = node_collection
+
+    @property
+    def oci_cache_config_set_id(self):
+        """
+        Gets the oci_cache_config_set_id of this RedisCluster.
+        The ID of the corresponding OCI Cache Config Set for the cluster.
+
+
+        :return: The oci_cache_config_set_id of this RedisCluster.
+        :rtype: str
+        """
+        return self._oci_cache_config_set_id
+
+    @oci_cache_config_set_id.setter
+    def oci_cache_config_set_id(self, oci_cache_config_set_id):
+        """
+        Sets the oci_cache_config_set_id of this RedisCluster.
+        The ID of the corresponding OCI Cache Config Set for the cluster.
+
+
+        :param oci_cache_config_set_id: The oci_cache_config_set_id of this RedisCluster.
+        :type: str
+        """
+        self._oci_cache_config_set_id = oci_cache_config_set_id
 
     @property
     def cluster_mode(self):

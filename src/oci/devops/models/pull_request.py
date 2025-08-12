@@ -124,6 +124,10 @@ class PullRequest(object):
             The value to assign to the reviewers property of this PullRequest.
         :type reviewers: list[oci.devops.models.Reviewer]
 
+        :param merged_commit_id:
+            The value to assign to the merged_commit_id property of this PullRequest.
+        :type merged_commit_id: str
+
         :param merge_checks:
             The value to assign to the merge_checks property of this PullRequest.
         :type merge_checks: oci.devops.models.MergeCheckCollection
@@ -176,6 +180,7 @@ class PullRequest(object):
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'reviewers': 'list[Reviewer]',
+            'merged_commit_id': 'str',
             'merge_checks': 'MergeCheckCollection',
             'created_by': 'PrincipalDetails',
             'merged_by': 'PrincipalDetails',
@@ -201,6 +206,7 @@ class PullRequest(object):
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'reviewers': 'reviewers',
+            'merged_commit_id': 'mergedCommitId',
             'merge_checks': 'mergeChecks',
             'created_by': 'createdBy',
             'merged_by': 'mergedBy',
@@ -225,6 +231,7 @@ class PullRequest(object):
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._reviewers = None
+        self._merged_commit_id = None
         self._merge_checks = None
         self._created_by = None
         self._merged_by = None
@@ -582,6 +589,30 @@ class PullRequest(object):
         :type: list[oci.devops.models.Reviewer]
         """
         self._reviewers = reviewers
+
+    @property
+    def merged_commit_id(self):
+        """
+        Gets the merged_commit_id of this PullRequest.
+        The commit ID when the Pull Request was merged.
+
+
+        :return: The merged_commit_id of this PullRequest.
+        :rtype: str
+        """
+        return self._merged_commit_id
+
+    @merged_commit_id.setter
+    def merged_commit_id(self, merged_commit_id):
+        """
+        Sets the merged_commit_id of this PullRequest.
+        The commit ID when the Pull Request was merged.
+
+
+        :param merged_commit_id: The merged_commit_id of this PullRequest.
+        :type: str
+        """
+        self._merged_commit_id = merged_commit_id
 
     @property
     def merge_checks(self):

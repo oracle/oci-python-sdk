@@ -36,23 +36,30 @@ class Face(object):
             The value to assign to the landmarks property of this Face.
         :type landmarks: list[oci.ai_vision.models.Landmark]
 
+        :param embeddings:
+            The value to assign to the embeddings property of this Face.
+        :type embeddings: list[float]
+
         """
         self.swagger_types = {
             'confidence': 'float',
             'bounding_polygon': 'BoundingPolygon',
             'quality_score': 'float',
-            'landmarks': 'list[Landmark]'
+            'landmarks': 'list[Landmark]',
+            'embeddings': 'list[float]'
         }
         self.attribute_map = {
             'confidence': 'confidence',
             'bounding_polygon': 'boundingPolygon',
             'quality_score': 'qualityScore',
-            'landmarks': 'landmarks'
+            'landmarks': 'landmarks',
+            'embeddings': 'embeddings'
         }
         self._confidence = None
         self._bounding_polygon = None
         self._quality_score = None
         self._landmarks = None
+        self._embeddings = None
 
     @property
     def confidence(self):
@@ -145,6 +152,30 @@ class Face(object):
         :type: list[oci.ai_vision.models.Landmark]
         """
         self._landmarks = landmarks
+
+    @property
+    def embeddings(self):
+        """
+        Gets the embeddings of this Face.
+        The facial feature vectors of detected faces
+
+
+        :return: The embeddings of this Face.
+        :rtype: list[float]
+        """
+        return self._embeddings
+
+    @embeddings.setter
+    def embeddings(self, embeddings):
+        """
+        Sets the embeddings of this Face.
+        The facial feature vectors of detected faces
+
+
+        :param embeddings: The embeddings of this Face.
+        :type: list[float]
+        """
+        self._embeddings = embeddings
 
     def __repr__(self):
         return formatted_flat_dict(self)

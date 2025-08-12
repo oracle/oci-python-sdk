@@ -261,8 +261,6 @@ from .function_deploy_environment_summary import FunctionDeployEnvironmentSummar
 from .function_deploy_stage import FunctionDeployStage
 from .function_deploy_stage_execution_progress import FunctionDeployStageExecutionProgress
 from .function_deploy_stage_summary import FunctionDeployStageSummary
-from .generic_artifact_location_details import GenericArtifactLocationDetails
-from .generic_artifacts import GenericArtifacts
 from .generic_delivered_artifact import GenericDeliveredArtifact
 from .generic_deploy_artifact_source import GenericDeployArtifactSource
 from .github_access_token_connection import GithubAccessTokenConnection
@@ -325,7 +323,6 @@ from .nginx_canary_strategy import NginxCanaryStrategy
 from .no_deploy_stage_rollback_policy import NoDeployStageRollbackPolicy
 from .none_verification_key_source import NoneVerificationKeySource
 from .notification_config import NotificationConfig
-from .object_storage_generic_artifact_location_details import ObjectStorageGenericArtifactLocationDetails
 from .ocir_deploy_artifact_source import OcirDeployArtifactSource
 from .oke_blue_green_deploy_stage import OkeBlueGreenDeployStage
 from .oke_blue_green_deploy_stage_execution_progress import OkeBlueGreenDeployStageExecutionProgress
@@ -432,11 +429,9 @@ from .single_deploy_stage_deployment import SingleDeployStageDeployment
 from .single_deploy_stage_deployment_summary import SingleDeployStageDeploymentSummary
 from .single_deploy_stage_redeployment import SingleDeployStageRedeployment
 from .single_deploy_stage_redeployment_summary import SingleDeployStageRedeploymentSummary
-from .stage_output import StageOutput
 from .summarize_project_repository_analytics_details import SummarizeProjectRepositoryAnalyticsDetails
 from .summarize_repository_analytics_details import SummarizeRepositoryAnalyticsDetails
 from .sync_repository_details import SyncRepositoryDetails
-from .test_report_output import TestReportOutput
 from .tls_verify_config import TlsVerifyConfig
 from .trigger import Trigger
 from .trigger_action import TriggerAction
@@ -805,8 +800,6 @@ devops_type_mapping = {
     "FunctionDeployStage": FunctionDeployStage,
     "FunctionDeployStageExecutionProgress": FunctionDeployStageExecutionProgress,
     "FunctionDeployStageSummary": FunctionDeployStageSummary,
-    "GenericArtifactLocationDetails": GenericArtifactLocationDetails,
-    "GenericArtifacts": GenericArtifacts,
     "GenericDeliveredArtifact": GenericDeliveredArtifact,
     "GenericDeployArtifactSource": GenericDeployArtifactSource,
     "GithubAccessTokenConnection": GithubAccessTokenConnection,
@@ -869,7 +862,6 @@ devops_type_mapping = {
     "NoDeployStageRollbackPolicy": NoDeployStageRollbackPolicy,
     "NoneVerificationKeySource": NoneVerificationKeySource,
     "NotificationConfig": NotificationConfig,
-    "ObjectStorageGenericArtifactLocationDetails": ObjectStorageGenericArtifactLocationDetails,
     "OcirDeployArtifactSource": OcirDeployArtifactSource,
     "OkeBlueGreenDeployStage": OkeBlueGreenDeployStage,
     "OkeBlueGreenDeployStageExecutionProgress": OkeBlueGreenDeployStageExecutionProgress,
@@ -976,11 +968,9 @@ devops_type_mapping = {
     "SingleDeployStageDeploymentSummary": SingleDeployStageDeploymentSummary,
     "SingleDeployStageRedeployment": SingleDeployStageRedeployment,
     "SingleDeployStageRedeploymentSummary": SingleDeployStageRedeploymentSummary,
-    "StageOutput": StageOutput,
     "SummarizeProjectRepositoryAnalyticsDetails": SummarizeProjectRepositoryAnalyticsDetails,
     "SummarizeRepositoryAnalyticsDetails": SummarizeRepositoryAnalyticsDetails,
     "SyncRepositoryDetails": SyncRepositoryDetails,
-    "TestReportOutput": TestReportOutput,
     "TlsVerifyConfig": TlsVerifyConfig,
     "Trigger": Trigger,
     "TriggerAction": TriggerAction,

@@ -10395,7 +10395,7 @@ class ComputeClient(object):
         resource_path = "/computeGpuMemoryClusters"
         method = "GET"
         operation_name = "list_compute_gpu_memory_clusters"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryClusterCollection/ListComputeGpuMemoryClusters"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGpuMemoryCluster/ListComputeGpuMemoryClusters"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13442,6 +13442,13 @@ class ComputeClient(object):
             terminating an instance. When set to `true`, the data volumes are preserved. The
             default value is `true`.
 
+        :param str recycle_level: (optional)
+            This optional parameter overrides recycle level for hosts. The parameter can be used when hosts are associated
+            with a Capacity Reservation.
+            * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
+
+            Allowed values are: "FULL_RECYCLE"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -13473,7 +13480,8 @@ class ComputeClient(object):
             "retry_strategy",
             "if_match",
             "preserve_boot_volume",
-            "preserve_data_volumes_created_at_launch"
+            "preserve_data_volumes_created_at_launch",
+            "recycle_level"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -13490,9 +13498,17 @@ class ComputeClient(object):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
+        if 'recycle_level' in kwargs:
+            recycle_level_allowed_values = ["FULL_RECYCLE"]
+            if kwargs['recycle_level'] not in recycle_level_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `recycle_level`, must be one of { recycle_level_allowed_values }"
+                )
+
         query_params = {
             "preserveBootVolume": kwargs.get("preserve_boot_volume", missing),
-            "preserveDataVolumesCreatedAtLaunch": kwargs.get("preserve_data_volumes_created_at_launch", missing)
+            "preserveDataVolumesCreatedAtLaunch": kwargs.get("preserve_data_volumes_created_at_launch", missing),
+            "recycleLevel": kwargs.get("recycle_level", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

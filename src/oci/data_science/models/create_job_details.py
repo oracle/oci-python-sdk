@@ -56,6 +56,10 @@ class CreateJobDetails(object):
             The value to assign to the job_storage_mount_configuration_details_list property of this CreateJobDetails.
         :type job_storage_mount_configuration_details_list: list[oci.data_science.models.StorageMountConfigurationDetails]
 
+        :param job_node_configuration_details:
+            The value to assign to the job_node_configuration_details property of this CreateJobDetails.
+        :type job_node_configuration_details: oci.data_science.models.JobNodeConfigurationDetails
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateJobDetails.
         :type freeform_tags: dict(str, str)
@@ -75,6 +79,7 @@ class CreateJobDetails(object):
             'job_environment_configuration_details': 'JobEnvironmentConfigurationDetails',
             'job_log_configuration_details': 'JobLogConfigurationDetails',
             'job_storage_mount_configuration_details_list': 'list[StorageMountConfigurationDetails]',
+            'job_node_configuration_details': 'JobNodeConfigurationDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -88,6 +93,7 @@ class CreateJobDetails(object):
             'job_environment_configuration_details': 'jobEnvironmentConfigurationDetails',
             'job_log_configuration_details': 'jobLogConfigurationDetails',
             'job_storage_mount_configuration_details_list': 'jobStorageMountConfigurationDetailsList',
+            'job_node_configuration_details': 'jobNodeConfigurationDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -100,6 +106,7 @@ class CreateJobDetails(object):
         self._job_environment_configuration_details = None
         self._job_log_configuration_details = None
         self._job_storage_mount_configuration_details_list = None
+        self._job_node_configuration_details = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -210,7 +217,7 @@ class CreateJobDetails(object):
     @property
     def job_configuration_details(self):
         """
-        **[Required]** Gets the job_configuration_details of this CreateJobDetails.
+        Gets the job_configuration_details of this CreateJobDetails.
 
         :return: The job_configuration_details of this CreateJobDetails.
         :rtype: oci.data_science.models.JobConfigurationDetails
@@ -230,7 +237,7 @@ class CreateJobDetails(object):
     @property
     def job_infrastructure_configuration_details(self):
         """
-        **[Required]** Gets the job_infrastructure_configuration_details of this CreateJobDetails.
+        Gets the job_infrastructure_configuration_details of this CreateJobDetails.
 
         :return: The job_infrastructure_configuration_details of this CreateJobDetails.
         :rtype: oci.data_science.models.JobInfrastructureConfigurationDetails
@@ -310,6 +317,26 @@ class CreateJobDetails(object):
         :type: list[oci.data_science.models.StorageMountConfigurationDetails]
         """
         self._job_storage_mount_configuration_details_list = job_storage_mount_configuration_details_list
+
+    @property
+    def job_node_configuration_details(self):
+        """
+        Gets the job_node_configuration_details of this CreateJobDetails.
+
+        :return: The job_node_configuration_details of this CreateJobDetails.
+        :rtype: oci.data_science.models.JobNodeConfigurationDetails
+        """
+        return self._job_node_configuration_details
+
+    @job_node_configuration_details.setter
+    def job_node_configuration_details(self, job_node_configuration_details):
+        """
+        Sets the job_node_configuration_details of this CreateJobDetails.
+
+        :param job_node_configuration_details: The job_node_configuration_details of this CreateJobDetails.
+        :type: oci.data_science.models.JobNodeConfigurationDetails
+        """
+        self._job_node_configuration_details = job_node_configuration_details
 
     @property
     def freeform_tags(self):

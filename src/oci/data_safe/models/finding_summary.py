@@ -90,6 +90,10 @@ class FindingSummary(object):
             The value to assign to the title property of this FindingSummary.
         :type title: str
 
+        :param category:
+            The value to assign to the category property of this FindingSummary.
+        :type category: str
+
         :param remarks:
             The value to assign to the remarks property of this FindingSummary.
         :type remarks: str
@@ -105,6 +109,10 @@ class FindingSummary(object):
         :param oneline:
             The value to assign to the oneline property of this FindingSummary.
         :type oneline: str
+
+        :param doclink:
+            The value to assign to the doclink property of this FindingSummary.
+        :type doclink: str
 
         :param references:
             The value to assign to the references property of this FindingSummary.
@@ -152,10 +160,12 @@ class FindingSummary(object):
             'key': 'str',
             'is_top_finding': 'bool',
             'title': 'str',
+            'category': 'str',
             'remarks': 'str',
             'details': 'object',
             'summary': 'str',
             'oneline': 'str',
+            'doclink': 'str',
             'references': 'References',
             'oracle_defined_severity': 'str',
             'is_risk_modified': 'bool',
@@ -173,10 +183,12 @@ class FindingSummary(object):
             'key': 'key',
             'is_top_finding': 'isTopFinding',
             'title': 'title',
+            'category': 'category',
             'remarks': 'remarks',
             'details': 'details',
             'summary': 'summary',
             'oneline': 'oneline',
+            'doclink': 'doclink',
             'references': 'references',
             'oracle_defined_severity': 'oracleDefinedSeverity',
             'is_risk_modified': 'isRiskModified',
@@ -193,10 +205,12 @@ class FindingSummary(object):
         self._key = None
         self._is_top_finding = None
         self._title = None
+        self._category = None
         self._remarks = None
         self._details = None
         self._summary = None
         self._oneline = None
+        self._doclink = None
         self._references = None
         self._oracle_defined_severity = None
         self._is_risk_modified = None
@@ -358,6 +372,30 @@ class FindingSummary(object):
         self._title = title
 
     @property
+    def category(self):
+        """
+        Gets the category of this FindingSummary.
+        The category to which the finding belongs to.
+
+
+        :return: The category of this FindingSummary.
+        :rtype: str
+        """
+        return self._category
+
+    @category.setter
+    def category(self, category):
+        """
+        Sets the category of this FindingSummary.
+        The category to which the finding belongs to.
+
+
+        :param category: The category of this FindingSummary.
+        :type: str
+        """
+        self._category = category
+
+    @property
     def remarks(self):
         """
         Gets the remarks of this FindingSummary.
@@ -452,6 +490,30 @@ class FindingSummary(object):
         :type: str
         """
         self._oneline = oneline
+
+    @property
+    def doclink(self):
+        """
+        Gets the doclink of this FindingSummary.
+        Documentation link provided by Oracle that explains a specific security finding or check.
+
+
+        :return: The doclink of this FindingSummary.
+        :rtype: str
+        """
+        return self._doclink
+
+    @doclink.setter
+    def doclink(self, doclink):
+        """
+        Sets the doclink of this FindingSummary.
+        Documentation link provided by Oracle that explains a specific security finding or check.
+
+
+        :param doclink: The doclink of this FindingSummary.
+        :type: str
+        """
+        self._doclink = doclink
 
     @property
     def references(self):

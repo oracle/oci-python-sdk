@@ -39,6 +39,10 @@ class DatabaseCloudServiceDetails(DatabaseDetails):
             The value to assign to the db_system_id property of this DatabaseCloudServiceDetails.
         :type db_system_id: str
 
+        :param pluggable_database_id:
+            The value to assign to the pluggable_database_id property of this DatabaseCloudServiceDetails.
+        :type pluggable_database_id: str
+
         :param listener_port:
             The value to assign to the listener_port property of this DatabaseCloudServiceDetails.
         :type listener_port: int
@@ -53,6 +57,7 @@ class DatabaseCloudServiceDetails(DatabaseDetails):
             'infrastructure_type': 'str',
             'vm_cluster_id': 'str',
             'db_system_id': 'str',
+            'pluggable_database_id': 'str',
             'listener_port': 'int',
             'service_name': 'str'
         }
@@ -61,6 +66,7 @@ class DatabaseCloudServiceDetails(DatabaseDetails):
             'infrastructure_type': 'infrastructureType',
             'vm_cluster_id': 'vmClusterId',
             'db_system_id': 'dbSystemId',
+            'pluggable_database_id': 'pluggableDatabaseId',
             'listener_port': 'listenerPort',
             'service_name': 'serviceName'
         }
@@ -68,6 +74,7 @@ class DatabaseCloudServiceDetails(DatabaseDetails):
         self._infrastructure_type = None
         self._vm_cluster_id = None
         self._db_system_id = None
+        self._pluggable_database_id = None
         self._listener_port = None
         self._service_name = None
         self._database_type = 'DATABASE_CLOUD_SERVICE'
@@ -121,6 +128,30 @@ class DatabaseCloudServiceDetails(DatabaseDetails):
         self._db_system_id = db_system_id
 
     @property
+    def pluggable_database_id(self):
+        """
+        Gets the pluggable_database_id of this DatabaseCloudServiceDetails.
+        The OCID of the pluggable database registered as a target database in Data Safe.
+
+
+        :return: The pluggable_database_id of this DatabaseCloudServiceDetails.
+        :rtype: str
+        """
+        return self._pluggable_database_id
+
+    @pluggable_database_id.setter
+    def pluggable_database_id(self, pluggable_database_id):
+        """
+        Sets the pluggable_database_id of this DatabaseCloudServiceDetails.
+        The OCID of the pluggable database registered as a target database in Data Safe.
+
+
+        :param pluggable_database_id: The pluggable_database_id of this DatabaseCloudServiceDetails.
+        :type: str
+        """
+        self._pluggable_database_id = pluggable_database_id
+
+    @property
     def listener_port(self):
         """
         Gets the listener_port of this DatabaseCloudServiceDetails.
@@ -147,7 +178,7 @@ class DatabaseCloudServiceDetails(DatabaseDetails):
     @property
     def service_name(self):
         """
-        **[Required]** Gets the service_name of this DatabaseCloudServiceDetails.
+        Gets the service_name of this DatabaseCloudServiceDetails.
         The database service name.
 
 

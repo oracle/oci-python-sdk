@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ServiceCategory(object):
     """
-    Information about the support ticket classifier.
+    Information about the support request classifier.
     """
 
     #: A constant which can be used with the scope property of a ServiceCategory.

@@ -67,6 +67,14 @@ class ActivityItem(Item):
     #: This constant has a value of "FAILED"
     ITEM_STATUS_FAILED = "FAILED"
 
+    #: A constant which can be used with the item_status property of a ActivityItem.
+    #: This constant has a value of "REJECTED"
+    ITEM_STATUS_REJECTED = "REJECTED"
+
+    #: A constant which can be used with the item_status property of a ActivityItem.
+    #: This constant has a value of "RECEIVED"
+    ITEM_STATUS_RECEIVED = "RECEIVED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ActivityItem object with values from keyword arguments. The default value of the :py:attr:`~oci.cims.models.ActivityItem.type` attribute
@@ -96,6 +104,10 @@ class ActivityItem(Item):
         :param issue_type:
             The value to assign to the issue_type property of this ActivityItem.
         :type issue_type: oci.cims.models.IssueType
+
+        :param id:
+            The value to assign to the id property of this ActivityItem.
+        :type id: str
 
         :param comments:
             The value to assign to the comments property of this ActivityItem.
@@ -129,7 +141,7 @@ class ActivityItem(Item):
 
         :param item_status:
             The value to assign to the item_status property of this ActivityItem.
-            Allowed values for this property are: "PROCESSING", "ATTACHED", "REMOVED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PROCESSING", "ATTACHED", "REMOVED", "FAILED", "REJECTED", "RECEIVED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type item_status: str
 
@@ -145,6 +157,7 @@ class ActivityItem(Item):
             'category': 'Category',
             'sub_category': 'SubCategory',
             'issue_type': 'IssueType',
+            'id': 'str',
             'comments': 'str',
             'time_created': 'int',
             'time_updated': 'int',
@@ -161,6 +174,7 @@ class ActivityItem(Item):
             'category': 'category',
             'sub_category': 'subCategory',
             'issue_type': 'issueType',
+            'id': 'id',
             'comments': 'comments',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
@@ -176,6 +190,7 @@ class ActivityItem(Item):
         self._category = None
         self._sub_category = None
         self._issue_type = None
+        self._id = None
         self._comments = None
         self._time_created = None
         self._time_updated = None
@@ -187,10 +202,34 @@ class ActivityItem(Item):
         self._type = 'activity'
 
     @property
+    def id(self):
+        """
+        Gets the id of this ActivityItem.
+        Identifier of the activity on the support request.
+
+
+        :return: The id of this ActivityItem.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """
+        Sets the id of this ActivityItem.
+        Identifier of the activity on the support request.
+
+
+        :param id: The id of this ActivityItem.
+        :type: str
+        """
+        self._id = id
+
+    @property
     def comments(self):
         """
         **[Required]** Gets the comments of this ActivityItem.
-        Comments added with the activity on the support ticket.
+        Comments or file attachments added with the activity on the support request.
 
 
         :return: The comments of this ActivityItem.
@@ -202,7 +241,7 @@ class ActivityItem(Item):
     def comments(self, comments):
         """
         Sets the comments of this ActivityItem.
-        Comments added with the activity on the support ticket.
+        Comments or file attachments added with the activity on the support request.
 
 
         :param comments: The comments of this ActivityItem.
@@ -262,7 +301,7 @@ class ActivityItem(Item):
     def activity_type(self):
         """
         **[Required]** Gets the activity_type of this ActivityItem.
-        The type of activity occuring on the support ticket.
+        The type of activity occuring on the support request.
 
         Allowed values for this property are: "NOTES", "PROBLEM_DESCRIPTION", "UPDATE", "CLOSE", "REOPEN", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -277,7 +316,7 @@ class ActivityItem(Item):
     def activity_type(self, activity_type):
         """
         Sets the activity_type of this ActivityItem.
-        The type of activity occuring on the support ticket.
+        The type of activity occuring on the support request.
 
 
         :param activity_type: The activity_type of this ActivityItem.
@@ -344,9 +383,9 @@ class ActivityItem(Item):
     def item_status(self):
         """
         Gets the item_status of this ActivityItem.
-        Who updates the activity on the support ticket.
+        Who updates the activity on the support request.
 
-        Allowed values for this property are: "PROCESSING", "ATTACHED", "REMOVED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PROCESSING", "ATTACHED", "REMOVED", "FAILED", "REJECTED", "RECEIVED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -359,13 +398,13 @@ class ActivityItem(Item):
     def item_status(self, item_status):
         """
         Sets the item_status of this ActivityItem.
-        Who updates the activity on the support ticket.
+        Who updates the activity on the support request.
 
 
         :param item_status: The item_status of this ActivityItem.
         :type: str
         """
-        allowed_values = ["PROCESSING", "ATTACHED", "REMOVED", "FAILED"]
+        allowed_values = ["PROCESSING", "ATTACHED", "REMOVED", "FAILED", "REJECTED", "RECEIVED"]
         if not value_allowed_none_or_none_sentinel(item_status, allowed_values):
             item_status = 'UNKNOWN_ENUM_VALUE'
         self._item_status = item_status

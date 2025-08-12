@@ -40,6 +40,10 @@ class GenerateReportDetails(object):
             The value to assign to the target_ids property of this GenerateReportDetails.
         :type target_ids: list[str]
 
+        :param target_group_ids:
+            The value to assign to the target_group_ids property of this GenerateReportDetails.
+        :type target_group_ids: list[str]
+
         :param description:
             The value to assign to the description property of this GenerateReportDetails.
         :type description: str
@@ -69,6 +73,7 @@ class GenerateReportDetails(object):
         self.swagger_types = {
             'display_name': 'str',
             'target_ids': 'list[str]',
+            'target_group_ids': 'list[str]',
             'description': 'str',
             'compartment_id': 'str',
             'mime_type': 'str',
@@ -79,6 +84,7 @@ class GenerateReportDetails(object):
         self.attribute_map = {
             'display_name': 'displayName',
             'target_ids': 'targetIds',
+            'target_group_ids': 'targetGroupIds',
             'description': 'description',
             'compartment_id': 'compartmentId',
             'mime_type': 'mimeType',
@@ -88,6 +94,7 @@ class GenerateReportDetails(object):
         }
         self._display_name = None
         self._target_ids = None
+        self._target_group_ids = None
         self._description = None
         self._compartment_id = None
         self._mime_type = None
@@ -142,6 +149,30 @@ class GenerateReportDetails(object):
         :type: list[str]
         """
         self._target_ids = target_ids
+
+    @property
+    def target_group_ids(self):
+        """
+        Gets the target_group_ids of this GenerateReportDetails.
+        Array of target group OCIDs.
+
+
+        :return: The target_group_ids of this GenerateReportDetails.
+        :rtype: list[str]
+        """
+        return self._target_group_ids
+
+    @target_group_ids.setter
+    def target_group_ids(self, target_group_ids):
+        """
+        Sets the target_group_ids of this GenerateReportDetails.
+        Array of target group OCIDs.
+
+
+        :param target_group_ids: The target_group_ids of this GenerateReportDetails.
+        :type: list[str]
+        """
+        self._target_group_ids = target_group_ids
 
     @property
     def description(self):

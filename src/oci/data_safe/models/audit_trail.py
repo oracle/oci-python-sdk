@@ -199,6 +199,10 @@ class AuditTrail(object):
             The value to assign to the purge_job_details property of this AuditTrail.
         :type purge_job_details: str
 
+        :param can_update_last_archive_time_on_target:
+            The value to assign to the can_update_last_archive_time_on_target property of this AuditTrail.
+        :type can_update_last_archive_time_on_target: bool
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this AuditTrail.
         :type freeform_tags: dict(str, str)
@@ -234,6 +238,7 @@ class AuditTrail(object):
             'purge_job_time': 'datetime',
             'purge_job_status': 'str',
             'purge_job_details': 'str',
+            'can_update_last_archive_time_on_target': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -260,6 +265,7 @@ class AuditTrail(object):
             'purge_job_time': 'purgeJobTime',
             'purge_job_status': 'purgeJobStatus',
             'purge_job_details': 'purgeJobDetails',
+            'can_update_last_archive_time_on_target': 'canUpdateLastArchiveTimeOnTarget',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -285,6 +291,7 @@ class AuditTrail(object):
         self._purge_job_time = None
         self._purge_job_status = None
         self._purge_job_details = None
+        self._can_update_last_archive_time_on_target = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -826,6 +833,32 @@ class AuditTrail(object):
         :type: str
         """
         self._purge_job_details = purge_job_details
+
+    @property
+    def can_update_last_archive_time_on_target(self):
+        """
+        Gets the can_update_last_archive_time_on_target of this AuditTrail.
+        Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field
+        is enabled, this field must be true.
+
+
+        :return: The can_update_last_archive_time_on_target of this AuditTrail.
+        :rtype: bool
+        """
+        return self._can_update_last_archive_time_on_target
+
+    @can_update_last_archive_time_on_target.setter
+    def can_update_last_archive_time_on_target(self, can_update_last_archive_time_on_target):
+        """
+        Sets the can_update_last_archive_time_on_target of this AuditTrail.
+        Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field
+        is enabled, this field must be true.
+
+
+        :param can_update_last_archive_time_on_target: The can_update_last_archive_time_on_target of this AuditTrail.
+        :type: bool
+        """
+        self._can_update_last_archive_time_on_target = can_update_last_archive_time_on_target
 
     @property
     def freeform_tags(self):

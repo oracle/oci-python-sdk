@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateAuditProfileDetails(object):
     """
-    The details used to update a audit profile.
+    The details used to update the audit profile.
     """
 
     def __init__(self, **kwargs):
@@ -32,6 +32,10 @@ class UpdateAuditProfileDetails(object):
             The value to assign to the is_paid_usage_enabled property of this UpdateAuditProfileDetails.
         :type is_paid_usage_enabled: bool
 
+        :param is_override_global_paid_usage:
+            The value to assign to the is_override_global_paid_usage property of this UpdateAuditProfileDetails.
+        :type is_override_global_paid_usage: bool
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateAuditProfileDetails.
         :type freeform_tags: dict(str, str)
@@ -45,6 +49,7 @@ class UpdateAuditProfileDetails(object):
             'description': 'str',
             'display_name': 'str',
             'is_paid_usage_enabled': 'bool',
+            'is_override_global_paid_usage': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -52,12 +57,14 @@ class UpdateAuditProfileDetails(object):
             'description': 'description',
             'display_name': 'displayName',
             'is_paid_usage_enabled': 'isPaidUsageEnabled',
+            'is_override_global_paid_usage': 'isOverrideGlobalPaidUsage',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
         self._description = None
         self._display_name = None
         self._is_paid_usage_enabled = None
+        self._is_override_global_paid_usage = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -136,6 +143,38 @@ class UpdateAuditProfileDetails(object):
         :type: bool
         """
         self._is_paid_usage_enabled = is_paid_usage_enabled
+
+    @property
+    def is_override_global_paid_usage(self):
+        """
+        Gets the is_override_global_paid_usage of this UpdateAuditProfileDetails.
+        Indicates whether audit paid usage settings specified at the target database level override both the global settings and the target group level paid usage settings.
+        Enabling paid usage continues the collection of audit records beyond the free limit of one million audit records per month per target database,
+        potentially incurring additional charges. For more information, see `Data Safe Price List`__.
+
+        __ https://www.oracle.com/cloud/price-list/#data-safe
+
+
+        :return: The is_override_global_paid_usage of this UpdateAuditProfileDetails.
+        :rtype: bool
+        """
+        return self._is_override_global_paid_usage
+
+    @is_override_global_paid_usage.setter
+    def is_override_global_paid_usage(self, is_override_global_paid_usage):
+        """
+        Sets the is_override_global_paid_usage of this UpdateAuditProfileDetails.
+        Indicates whether audit paid usage settings specified at the target database level override both the global settings and the target group level paid usage settings.
+        Enabling paid usage continues the collection of audit records beyond the free limit of one million audit records per month per target database,
+        potentially incurring additional charges. For more information, see `Data Safe Price List`__.
+
+        __ https://www.oracle.com/cloud/price-list/#data-safe
+
+
+        :param is_override_global_paid_usage: The is_override_global_paid_usage of this UpdateAuditProfileDetails.
+        :type: bool
+        """
+        self._is_override_global_paid_usage = is_override_global_paid_usage
 
     @property
     def freeform_tags(self):

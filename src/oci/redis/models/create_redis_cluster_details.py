@@ -22,6 +22,10 @@ class CreateRedisClusterDetails(object):
         Initializes a new CreateRedisClusterDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param oci_cache_config_set_id:
+            The value to assign to the oci_cache_config_set_id property of this CreateRedisClusterDetails.
+        :type oci_cache_config_set_id: str
+
         :param cluster_mode:
             The value to assign to the cluster_mode property of this CreateRedisClusterDetails.
         :type cluster_mode: str
@@ -68,6 +72,7 @@ class CreateRedisClusterDetails(object):
 
         """
         self.swagger_types = {
+            'oci_cache_config_set_id': 'str',
             'cluster_mode': 'str',
             'shard_count': 'int',
             'display_name': 'str',
@@ -81,6 +86,7 @@ class CreateRedisClusterDetails(object):
             'defined_tags': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
+            'oci_cache_config_set_id': 'ociCacheConfigSetId',
             'cluster_mode': 'clusterMode',
             'shard_count': 'shardCount',
             'display_name': 'displayName',
@@ -93,6 +99,7 @@ class CreateRedisClusterDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
+        self._oci_cache_config_set_id = None
         self._cluster_mode = None
         self._shard_count = None
         self._display_name = None
@@ -104,6 +111,30 @@ class CreateRedisClusterDetails(object):
         self._nsg_ids = None
         self._freeform_tags = None
         self._defined_tags = None
+
+    @property
+    def oci_cache_config_set_id(self):
+        """
+        Gets the oci_cache_config_set_id of this CreateRedisClusterDetails.
+        The ID of the corresponding OCI Cache Config Set for the cluster.
+
+
+        :return: The oci_cache_config_set_id of this CreateRedisClusterDetails.
+        :rtype: str
+        """
+        return self._oci_cache_config_set_id
+
+    @oci_cache_config_set_id.setter
+    def oci_cache_config_set_id(self, oci_cache_config_set_id):
+        """
+        Sets the oci_cache_config_set_id of this CreateRedisClusterDetails.
+        The ID of the corresponding OCI Cache Config Set for the cluster.
+
+
+        :param oci_cache_config_set_id: The oci_cache_config_set_id of this CreateRedisClusterDetails.
+        :type: str
+        """
+        self._oci_cache_config_set_id = oci_cache_config_set_id
 
     @property
     def cluster_mode(self):

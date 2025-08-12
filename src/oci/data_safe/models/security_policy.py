@@ -15,6 +15,14 @@ class SecurityPolicy(object):
     The resource represents as a container for all the security policies in Data Safe.
     """
 
+    #: A constant which can be used with the security_policy_type property of a SecurityPolicy.
+    #: This constant has a value of "DATASAFE_MANAGED"
+    SECURITY_POLICY_TYPE_DATASAFE_MANAGED = "DATASAFE_MANAGED"
+
+    #: A constant which can be used with the security_policy_type property of a SecurityPolicy.
+    #: This constant has a value of "SEEDED_POLICY"
+    SECURITY_POLICY_TYPE_SEEDED_POLICY = "SEEDED_POLICY"
+
     #: A constant which can be used with the lifecycle_state property of a SecurityPolicy.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -60,6 +68,12 @@ class SecurityPolicy(object):
             The value to assign to the description property of this SecurityPolicy.
         :type description: str
 
+        :param security_policy_type:
+            The value to assign to the security_policy_type property of this SecurityPolicy.
+            Allowed values for this property are: "DATASAFE_MANAGED", "SEEDED_POLICY", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type security_policy_type: str
+
         :param time_created:
             The value to assign to the time_created property of this SecurityPolicy.
         :type time_created: datetime
@@ -96,6 +110,7 @@ class SecurityPolicy(object):
             'compartment_id': 'str',
             'display_name': 'str',
             'description': 'str',
+            'security_policy_type': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
@@ -109,6 +124,7 @@ class SecurityPolicy(object):
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
             'description': 'description',
+            'security_policy_type': 'securityPolicyType',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
@@ -121,6 +137,7 @@ class SecurityPolicy(object):
         self._compartment_id = None
         self._display_name = None
         self._description = None
+        self._security_policy_type = None
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
@@ -224,6 +241,36 @@ class SecurityPolicy(object):
         :type: str
         """
         self._description = description
+
+    @property
+    def security_policy_type(self):
+        """
+        Gets the security_policy_type of this SecurityPolicy.
+        The type of the security policy.
+
+        Allowed values for this property are: "DATASAFE_MANAGED", "SEEDED_POLICY", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The security_policy_type of this SecurityPolicy.
+        :rtype: str
+        """
+        return self._security_policy_type
+
+    @security_policy_type.setter
+    def security_policy_type(self, security_policy_type):
+        """
+        Sets the security_policy_type of this SecurityPolicy.
+        The type of the security policy.
+
+
+        :param security_policy_type: The security_policy_type of this SecurityPolicy.
+        :type: str
+        """
+        allowed_values = ["DATASAFE_MANAGED", "SEEDED_POLICY"]
+        if not value_allowed_none_or_none_sentinel(security_policy_type, allowed_values):
+            security_policy_type = 'UNKNOWN_ENUM_VALUE'
+        self._security_policy_type = security_policy_type
 
     @property
     def time_created(self):

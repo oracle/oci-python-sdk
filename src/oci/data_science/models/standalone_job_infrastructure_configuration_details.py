@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class StandaloneJobInfrastructureConfigurationDetails(JobInfrastructureConfigurationDetails):
     """
-    The standalone job infrastructure configuration.
+    This type should only be used at the top level infrastructure configuration field for configuring single-node jobs.
     """
 
     def __init__(self, **kwargs):
@@ -23,7 +23,7 @@ class StandaloneJobInfrastructureConfigurationDetails(JobInfrastructureConfigura
 
         :param job_infrastructure_type:
             The value to assign to the job_infrastructure_type property of this StandaloneJobInfrastructureConfigurationDetails.
-            Allowed values for this property are: "STANDALONE", "ME_STANDALONE"
+            Allowed values for this property are: "STANDALONE", "ME_STANDALONE", "MULTI_NODE", "EMPTY"
         :type job_infrastructure_type: str
 
         :param shape_name:

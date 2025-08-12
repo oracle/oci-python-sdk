@@ -450,6 +450,8 @@ class Db2ConnectionSummary(ConnectionSummary):
         Gets the ssl_client_keystoredb_secret_id of this Db2ConnectionSummary.
         The `OCID`__ of the Secret where the keystore file stored,
         which created at the client containing the server certificate / CA root certificate.
+        This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+
         Note: When provided, 'sslClientKeystoredb' field must not be provided.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
@@ -466,6 +468,8 @@ class Db2ConnectionSummary(ConnectionSummary):
         Sets the ssl_client_keystoredb_secret_id of this Db2ConnectionSummary.
         The `OCID`__ of the Secret where the keystore file stored,
         which created at the client containing the server certificate / CA root certificate.
+        This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+
         Note: When provided, 'sslClientKeystoredb' field must not be provided.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
@@ -482,6 +486,8 @@ class Db2ConnectionSummary(ConnectionSummary):
         Gets the ssl_client_keystash_secret_id of this Db2ConnectionSummary.
         The `OCID`__ of the Secret where the keystash file is stored,
         which contains the encrypted password to the key database file.
+        This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+
         Note: When provided, 'sslClientKeystash' field must not be provided.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
@@ -498,6 +504,8 @@ class Db2ConnectionSummary(ConnectionSummary):
         Sets the ssl_client_keystash_secret_id of this Db2ConnectionSummary.
         The `OCID`__ of the Secret where the keystash file is stored,
         which contains the encrypted password to the key database file.
+        This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+
         Note: When provided, 'sslClientKeystash' field must not be provided.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm

@@ -28,17 +28,24 @@ class StartAuditTrailDetails(object):
             The value to assign to the is_auto_purge_enabled property of this StartAuditTrailDetails.
         :type is_auto_purge_enabled: bool
 
+        :param can_update_last_archive_time_on_target:
+            The value to assign to the can_update_last_archive_time_on_target property of this StartAuditTrailDetails.
+        :type can_update_last_archive_time_on_target: bool
+
         """
         self.swagger_types = {
             'audit_collection_start_time': 'datetime',
-            'is_auto_purge_enabled': 'bool'
+            'is_auto_purge_enabled': 'bool',
+            'can_update_last_archive_time_on_target': 'bool'
         }
         self.attribute_map = {
             'audit_collection_start_time': 'auditCollectionStartTime',
-            'is_auto_purge_enabled': 'isAutoPurgeEnabled'
+            'is_auto_purge_enabled': 'isAutoPurgeEnabled',
+            'can_update_last_archive_time_on_target': 'canUpdateLastArchiveTimeOnTarget'
         }
         self._audit_collection_start_time = None
         self._is_auto_purge_enabled = None
+        self._can_update_last_archive_time_on_target = None
 
     @property
     def audit_collection_start_time(self):
@@ -89,6 +96,32 @@ class StartAuditTrailDetails(object):
         :type: bool
         """
         self._is_auto_purge_enabled = is_auto_purge_enabled
+
+    @property
+    def can_update_last_archive_time_on_target(self):
+        """
+        Gets the can_update_last_archive_time_on_target of this StartAuditTrailDetails.
+        Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field
+        is enabled, this field must be true.
+
+
+        :return: The can_update_last_archive_time_on_target of this StartAuditTrailDetails.
+        :rtype: bool
+        """
+        return self._can_update_last_archive_time_on_target
+
+    @can_update_last_archive_time_on_target.setter
+    def can_update_last_archive_time_on_target(self, can_update_last_archive_time_on_target):
+        """
+        Sets the can_update_last_archive_time_on_target of this StartAuditTrailDetails.
+        Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field
+        is enabled, this field must be true.
+
+
+        :param can_update_last_archive_time_on_target: The can_update_last_archive_time_on_target of this StartAuditTrailDetails.
+        :type: bool
+        """
+        self._can_update_last_archive_time_on_target = can_update_last_archive_time_on_target
 
     def __repr__(self):
         return formatted_flat_dict(self)

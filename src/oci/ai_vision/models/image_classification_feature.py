@@ -23,7 +23,7 @@ class ImageClassificationFeature(ImageFeature):
 
         :param feature_type:
             The value to assign to the feature_type property of this ImageClassificationFeature.
-            Allowed values for this property are: "IMAGE_CLASSIFICATION", "OBJECT_DETECTION", "TEXT_DETECTION", "FACE_DETECTION"
+            Allowed values for this property are: "IMAGE_CLASSIFICATION", "OBJECT_DETECTION", "TEXT_DETECTION", "FACE_DETECTION", "FACE_EMBEDDING"
         :type feature_type: str
 
         :param max_results:

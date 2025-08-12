@@ -250,10 +250,6 @@ class Instance(object):
             The value to assign to the licensing_configs property of this Instance.
         :type licensing_configs: list[oci.core.models.LicensingConfig]
 
-        :param compute_host_group_id:
-            The value to assign to the compute_host_group_id property of this Instance.
-        :type compute_host_group_id: str
-
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -290,8 +286,7 @@ class Instance(object):
             'time_maintenance_reboot_due': 'datetime',
             'platform_config': 'PlatformConfig',
             'instance_configuration_id': 'str',
-            'licensing_configs': 'list[LicensingConfig]',
-            'compute_host_group_id': 'str'
+            'licensing_configs': 'list[LicensingConfig]'
         }
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
@@ -328,8 +323,7 @@ class Instance(object):
             'time_maintenance_reboot_due': 'timeMaintenanceRebootDue',
             'platform_config': 'platformConfig',
             'instance_configuration_id': 'instanceConfigurationId',
-            'licensing_configs': 'licensingConfigs',
-            'compute_host_group_id': 'computeHostGroupId'
+            'licensing_configs': 'licensingConfigs'
         }
         self._availability_domain = None
         self._capacity_reservation_id = None
@@ -366,7 +360,6 @@ class Instance(object):
         self._platform_config = None
         self._instance_configuration_id = None
         self._licensing_configs = None
-        self._compute_host_group_id = None
 
     @property
     def availability_domain(self):
@@ -1365,34 +1358,6 @@ class Instance(object):
         :type: list[oci.core.models.LicensingConfig]
         """
         self._licensing_configs = licensing_configs
-
-    @property
-    def compute_host_group_id(self):
-        """
-        Gets the compute_host_group_id of this Instance.
-        The `OCID`__ for the Customer-unique host group
-
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-
-
-        :return: The compute_host_group_id of this Instance.
-        :rtype: str
-        """
-        return self._compute_host_group_id
-
-    @compute_host_group_id.setter
-    def compute_host_group_id(self, compute_host_group_id):
-        """
-        Sets the compute_host_group_id of this Instance.
-        The `OCID`__ for the Customer-unique host group
-
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-
-
-        :param compute_host_group_id: The compute_host_group_id of this Instance.
-        :type: str
-        """
-        self._compute_host_group_id = compute_host_group_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

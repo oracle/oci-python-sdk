@@ -5,6 +5,35 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.158.0 - 2025-08-12
+====================
+
+Added 
+----- 
+* Support for calling Oracle Cloud Infrastructure services in the us-newark-1 region 
+* Support for OCI Cache Config Sets in the Redis service 
+* Support for Oracle Linux 8 in Devops Build Stage in the Build service 
+* Support for Distributed Training V2 (DTv2) in the Data Science service 
+* Support for stream video processing in the AI Vision service 
+* Support for specifying compute cluster and placement constraints when launching instances in the Compute service 
+* Support for SCIM query to allow advanced filtering across various columns in the List Finding Analytics operation in the Data Safe service 
+* Support for Target Database Group in the Data Safe service 
+* Support for adding additional contact to CMOS SR in the Cloud Incident Management service 
+* Support for attachment uploads in the Cloud Incident Management service 
+* Support for Amazon Kinesis endpoints in the Golden Gate service 
+* Support for Azure Data Lake Storage azureAuthorityHost in the Golden Gate service   
+
+Breaking 
+-------- 
+* Model `SubscriptionInfo` is removed from the Cloud Incident Management service 
+* Property `compute_host_group_id` is removed from models `LicensingConfig` and `LaunchInstanceDetails` in the Compute service 
+* Property `static_routes` changed from required to optional in model `IPSecConnection` in the Compute service 
+* Parameter `opc_retry_token` is removed from operation `cancel_work_request` in the `DataSafeClient` of the Data Safe service 
+* Parameter `on_prem_connector_lifecycle_state` is removed from operation `list_on_prem_connectors` in the `DataSafeClient` of the Data Safe service 
+* Models `GenericArtifactLocationDetails`, `GenericArtifacts`, `ObjectStorageGenericArtifactLocationDetails`, `StageOutput`, `TestReportOutput` are removed from the Build service 
+* Properties `default_merge_strategy` and `allowed_merge_strategies` changed from required to optional in model `MergeSettings` in the Build service   
+
+====================
 2.157.1 - 2025-08-05
 ====================
 
