@@ -15,6 +15,14 @@ class UserAssessmentSummary(object):
     The summary of the user assessment.
     """
 
+    #: A constant which can be used with the target_type property of a UserAssessmentSummary.
+    #: This constant has a value of "TARGET_DATABASE"
+    TARGET_TYPE_TARGET_DATABASE = "TARGET_DATABASE"
+
+    #: A constant which can be used with the target_type property of a UserAssessmentSummary.
+    #: This constant has a value of "TARGET_DATABASE_GROUP"
+    TARGET_TYPE_TARGET_DATABASE_GROUP = "TARGET_DATABASE_GROUP"
+
     #: A constant which can be used with the lifecycle_state property of a UserAssessmentSummary.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -104,6 +112,16 @@ class UserAssessmentSummary(object):
             The value to assign to the last_compared_baseline_id property of this UserAssessmentSummary.
         :type last_compared_baseline_id: str
 
+        :param target_database_group_id:
+            The value to assign to the target_database_group_id property of this UserAssessmentSummary.
+        :type target_database_group_id: str
+
+        :param target_type:
+            The value to assign to the target_type property of this UserAssessmentSummary.
+            Allowed values for this property are: "TARGET_DATABASE", "TARGET_DATABASE_GROUP", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type target_type: str
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this UserAssessmentSummary.
             Allowed values for this property are: "CREATING", "SUCCEEDED", "UPDATING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
@@ -177,6 +195,8 @@ class UserAssessmentSummary(object):
             'is_baseline': 'bool',
             'is_deviated_from_baseline': 'bool',
             'last_compared_baseline_id': 'str',
+            'target_database_group_id': 'str',
+            'target_type': 'str',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'schedule_assessment_id': 'str',
@@ -202,6 +222,8 @@ class UserAssessmentSummary(object):
             'is_baseline': 'isBaseline',
             'is_deviated_from_baseline': 'isDeviatedFromBaseline',
             'last_compared_baseline_id': 'lastComparedBaselineId',
+            'target_database_group_id': 'targetDatabaseGroupId',
+            'target_type': 'targetType',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'schedule_assessment_id': 'scheduleAssessmentId',
@@ -226,6 +248,8 @@ class UserAssessmentSummary(object):
         self._is_baseline = None
         self._is_deviated_from_baseline = None
         self._last_compared_baseline_id = None
+        self._target_database_group_id = None
+        self._target_type = None
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._schedule_assessment_id = None
@@ -460,6 +484,60 @@ class UserAssessmentSummary(object):
         :type: str
         """
         self._last_compared_baseline_id = last_compared_baseline_id
+
+    @property
+    def target_database_group_id(self):
+        """
+        Gets the target_database_group_id of this UserAssessmentSummary.
+        The OCID of target database group.
+
+
+        :return: The target_database_group_id of this UserAssessmentSummary.
+        :rtype: str
+        """
+        return self._target_database_group_id
+
+    @target_database_group_id.setter
+    def target_database_group_id(self, target_database_group_id):
+        """
+        Sets the target_database_group_id of this UserAssessmentSummary.
+        The OCID of target database group.
+
+
+        :param target_database_group_id: The target_database_group_id of this UserAssessmentSummary.
+        :type: str
+        """
+        self._target_database_group_id = target_database_group_id
+
+    @property
+    def target_type(self):
+        """
+        Gets the target_type of this UserAssessmentSummary.
+        Indicates whether the user assessment is for a target database or a target database group.
+
+        Allowed values for this property are: "TARGET_DATABASE", "TARGET_DATABASE_GROUP", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The target_type of this UserAssessmentSummary.
+        :rtype: str
+        """
+        return self._target_type
+
+    @target_type.setter
+    def target_type(self, target_type):
+        """
+        Sets the target_type of this UserAssessmentSummary.
+        Indicates whether the user assessment is for a target database or a target database group.
+
+
+        :param target_type: The target_type of this UserAssessmentSummary.
+        :type: str
+        """
+        allowed_values = ["TARGET_DATABASE", "TARGET_DATABASE_GROUP"]
+        if not value_allowed_none_or_none_sentinel(target_type, allowed_values):
+            target_type = 'UNKNOWN_ENUM_VALUE'
+        self._target_type = target_type
 
     @property
     def lifecycle_state(self):

@@ -24,14 +24,42 @@ class AuditProfileDimensions(object):
             The value to assign to the is_paid_usage_enabled property of this AuditProfileDimensions.
         :type is_paid_usage_enabled: bool
 
+        :param target_type:
+            The value to assign to the target_type property of this AuditProfileDimensions.
+        :type target_type: str
+
+        :param online_months_source:
+            The value to assign to the online_months_source property of this AuditProfileDimensions.
+        :type online_months_source: str
+
+        :param offline_months_source:
+            The value to assign to the offline_months_source property of this AuditProfileDimensions.
+        :type offline_months_source: str
+
+        :param paid_usage_source:
+            The value to assign to the paid_usage_source property of this AuditProfileDimensions.
+        :type paid_usage_source: str
+
         """
         self.swagger_types = {
-            'is_paid_usage_enabled': 'bool'
+            'is_paid_usage_enabled': 'bool',
+            'target_type': 'str',
+            'online_months_source': 'str',
+            'offline_months_source': 'str',
+            'paid_usage_source': 'str'
         }
         self.attribute_map = {
-            'is_paid_usage_enabled': 'isPaidUsageEnabled'
+            'is_paid_usage_enabled': 'isPaidUsageEnabled',
+            'target_type': 'targetType',
+            'online_months_source': 'onlineMonthsSource',
+            'offline_months_source': 'offlineMonthsSource',
+            'paid_usage_source': 'paidUsageSource'
         }
         self._is_paid_usage_enabled = None
+        self._target_type = None
+        self._online_months_source = None
+        self._offline_months_source = None
+        self._paid_usage_source = None
 
     @property
     def is_paid_usage_enabled(self):
@@ -60,6 +88,102 @@ class AuditProfileDimensions(object):
         :type: bool
         """
         self._is_paid_usage_enabled = is_paid_usage_enabled
+
+    @property
+    def target_type(self):
+        """
+        Gets the target_type of this AuditProfileDimensions.
+        The resource type that is represented by the audit profile.
+
+
+        :return: The target_type of this AuditProfileDimensions.
+        :rtype: str
+        """
+        return self._target_type
+
+    @target_type.setter
+    def target_type(self, target_type):
+        """
+        Sets the target_type of this AuditProfileDimensions.
+        The resource type that is represented by the audit profile.
+
+
+        :param target_type: The target_type of this AuditProfileDimensions.
+        :type: str
+        """
+        self._target_type = target_type
+
+    @property
+    def online_months_source(self):
+        """
+        Gets the online_months_source of this AuditProfileDimensions.
+        The name or the OCID of the resource from which the online month retention setting is sourced. For example a target database group OCID or global.
+
+
+        :return: The online_months_source of this AuditProfileDimensions.
+        :rtype: str
+        """
+        return self._online_months_source
+
+    @online_months_source.setter
+    def online_months_source(self, online_months_source):
+        """
+        Sets the online_months_source of this AuditProfileDimensions.
+        The name or the OCID of the resource from which the online month retention setting is sourced. For example a target database group OCID or global.
+
+
+        :param online_months_source: The online_months_source of this AuditProfileDimensions.
+        :type: str
+        """
+        self._online_months_source = online_months_source
+
+    @property
+    def offline_months_source(self):
+        """
+        Gets the offline_months_source of this AuditProfileDimensions.
+        The name or the OCID of the resource from which the offline month retention setting is sourced. For example a target database group OCID or global.
+
+
+        :return: The offline_months_source of this AuditProfileDimensions.
+        :rtype: str
+        """
+        return self._offline_months_source
+
+    @offline_months_source.setter
+    def offline_months_source(self, offline_months_source):
+        """
+        Sets the offline_months_source of this AuditProfileDimensions.
+        The name or the OCID of the resource from which the offline month retention setting is sourced. For example a target database group OCID or global.
+
+
+        :param offline_months_source: The offline_months_source of this AuditProfileDimensions.
+        :type: str
+        """
+        self._offline_months_source = offline_months_source
+
+    @property
+    def paid_usage_source(self):
+        """
+        Gets the paid_usage_source of this AuditProfileDimensions.
+        The name or the OCID of the resource from which the paid usage setting is sourced. For example a target database group OCID or global.
+
+
+        :return: The paid_usage_source of this AuditProfileDimensions.
+        :rtype: str
+        """
+        return self._paid_usage_source
+
+    @paid_usage_source.setter
+    def paid_usage_source(self, paid_usage_source):
+        """
+        Sets the paid_usage_source of this AuditProfileDimensions.
+        The name or the OCID of the resource from which the paid usage setting is sourced. For example a target database group OCID or global.
+
+
+        :param paid_usage_source: The paid_usage_source of this AuditProfileDimensions.
+        :type: str
+        """
+        self._paid_usage_source = paid_usage_source
 
     def __repr__(self):
         return formatted_flat_dict(self)

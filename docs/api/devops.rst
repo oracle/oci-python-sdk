@@ -273,8 +273,6 @@ Devops
     oci.devops.models.FunctionDeployStage
     oci.devops.models.FunctionDeployStageExecutionProgress
     oci.devops.models.FunctionDeployStageSummary
-    oci.devops.models.GenericArtifactLocationDetails
-    oci.devops.models.GenericArtifacts
     oci.devops.models.GenericDeliveredArtifact
     oci.devops.models.GenericDeployArtifactSource
     oci.devops.models.GithubAccessTokenConnection
@@ -337,7 +335,6 @@ Devops
     oci.devops.models.NoDeployStageRollbackPolicy
     oci.devops.models.NoneVerificationKeySource
     oci.devops.models.NotificationConfig
-    oci.devops.models.ObjectStorageGenericArtifactLocationDetails
     oci.devops.models.OcirDeployArtifactSource
     oci.devops.models.OkeBlueGreenDeployStage
     oci.devops.models.OkeBlueGreenDeployStageExecutionProgress
@@ -444,11 +441,9 @@ Devops
     oci.devops.models.SingleDeployStageDeploymentSummary
     oci.devops.models.SingleDeployStageRedeployment
     oci.devops.models.SingleDeployStageRedeploymentSummary
-    oci.devops.models.StageOutput
     oci.devops.models.SummarizeProjectRepositoryAnalyticsDetails
     oci.devops.models.SummarizeRepositoryAnalyticsDetails
     oci.devops.models.SyncRepositoryDetails
-    oci.devops.models.TestReportOutput
     oci.devops.models.TlsVerifyConfig
     oci.devops.models.Trigger
     oci.devops.models.TriggerAction

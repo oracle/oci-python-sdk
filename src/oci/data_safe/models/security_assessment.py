@@ -51,6 +51,14 @@ class SecurityAssessment(object):
     #: This constant has a value of "SYSTEM"
     TRIGGERED_BY_SYSTEM = "SYSTEM"
 
+    #: A constant which can be used with the target_type property of a SecurityAssessment.
+    #: This constant has a value of "TARGET_DATABASE"
+    TARGET_TYPE_TARGET_DATABASE = "TARGET_DATABASE"
+
+    #: A constant which can be used with the target_type property of a SecurityAssessment.
+    #: This constant has a value of "TARGET_DATABASE_GROUP"
+    TARGET_TYPE_TARGET_DATABASE_GROUP = "TARGET_DATABASE_GROUP"
+
     #: A constant which can be used with the type property of a SecurityAssessment.
     #: This constant has a value of "LATEST"
     TYPE_LATEST = "LATEST"
@@ -66,6 +74,14 @@ class SecurityAssessment(object):
     #: A constant which can be used with the type property of a SecurityAssessment.
     #: This constant has a value of "COMPARTMENT"
     TYPE_COMPARTMENT = "COMPARTMENT"
+
+    #: A constant which can be used with the type property of a SecurityAssessment.
+    #: This constant has a value of "TEMPLATE"
+    TYPE_TEMPLATE = "TEMPLATE"
+
+    #: A constant which can be used with the type property of a SecurityAssessment.
+    #: This constant has a value of "TEMPLATE_BASELINE"
+    TYPE_TEMPLATE_BASELINE = "TEMPLATE_BASELINE"
 
     def __init__(self, **kwargs):
         """
@@ -112,6 +128,14 @@ class SecurityAssessment(object):
             The value to assign to the target_version property of this SecurityAssessment.
         :type target_version: str
 
+        :param template_assessment_id:
+            The value to assign to the template_assessment_id property of this SecurityAssessment.
+        :type template_assessment_id: str
+
+        :param baseline_assessment_id:
+            The value to assign to the baseline_assessment_id property of this SecurityAssessment.
+        :type baseline_assessment_id: str
+
         :param is_baseline:
             The value to assign to the is_baseline property of this SecurityAssessment.
         :type is_baseline: bool
@@ -152,6 +176,20 @@ class SecurityAssessment(object):
             The value to assign to the is_assessment_scheduled property of this SecurityAssessment.
         :type is_assessment_scheduled: bool
 
+        :param target_database_group_id:
+            The value to assign to the target_database_group_id property of this SecurityAssessment.
+        :type target_database_group_id: str
+
+        :param target_type:
+            The value to assign to the target_type property of this SecurityAssessment.
+            Allowed values for this property are: "TARGET_DATABASE", "TARGET_DATABASE_GROUP", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type target_type: str
+
+        :param checks:
+            The value to assign to the checks property of this SecurityAssessment.
+        :type checks: list[oci.data_safe.models.Check]
+
         :param schedule:
             The value to assign to the schedule property of this SecurityAssessment.
         :type schedule: str
@@ -162,7 +200,7 @@ class SecurityAssessment(object):
 
         :param type:
             The value to assign to the type property of this SecurityAssessment.
-            Allowed values for this property are: "LATEST", "SAVED", "SAVE_SCHEDULE", "COMPARTMENT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "LATEST", "SAVED", "SAVE_SCHEDULE", "COMPARTMENT", "TEMPLATE", "TEMPLATE_BASELINE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -194,6 +232,8 @@ class SecurityAssessment(object):
             'ignored_targets': 'list[object]',
             'ignored_assessment_ids': 'list[object]',
             'target_version': 'str',
+            'template_assessment_id': 'str',
+            'baseline_assessment_id': 'str',
             'is_baseline': 'bool',
             'is_deviated_from_baseline': 'bool',
             'last_compared_baseline_id': 'str',
@@ -203,6 +243,9 @@ class SecurityAssessment(object):
             'triggered_by': 'str',
             'description': 'str',
             'is_assessment_scheduled': 'bool',
+            'target_database_group_id': 'str',
+            'target_type': 'str',
+            'checks': 'list[Check]',
             'schedule': 'str',
             'link': 'str',
             'type': 'str',
@@ -222,6 +265,8 @@ class SecurityAssessment(object):
             'ignored_targets': 'ignoredTargets',
             'ignored_assessment_ids': 'ignoredAssessmentIds',
             'target_version': 'targetVersion',
+            'template_assessment_id': 'templateAssessmentId',
+            'baseline_assessment_id': 'baselineAssessmentId',
             'is_baseline': 'isBaseline',
             'is_deviated_from_baseline': 'isDeviatedFromBaseline',
             'last_compared_baseline_id': 'lastComparedBaselineId',
@@ -231,6 +276,9 @@ class SecurityAssessment(object):
             'triggered_by': 'triggeredBy',
             'description': 'description',
             'is_assessment_scheduled': 'isAssessmentScheduled',
+            'target_database_group_id': 'targetDatabaseGroupId',
+            'target_type': 'targetType',
+            'checks': 'checks',
             'schedule': 'schedule',
             'link': 'link',
             'type': 'type',
@@ -249,6 +297,8 @@ class SecurityAssessment(object):
         self._ignored_targets = None
         self._ignored_assessment_ids = None
         self._target_version = None
+        self._template_assessment_id = None
+        self._baseline_assessment_id = None
         self._is_baseline = None
         self._is_deviated_from_baseline = None
         self._last_compared_baseline_id = None
@@ -258,6 +308,9 @@ class SecurityAssessment(object):
         self._triggered_by = None
         self._description = None
         self._is_assessment_scheduled = None
+        self._target_database_group_id = None
+        self._target_type = None
+        self._checks = None
         self._schedule = None
         self._link = None
         self._type = None
@@ -523,6 +576,54 @@ class SecurityAssessment(object):
         self._target_version = target_version
 
     @property
+    def template_assessment_id(self):
+        """
+        Gets the template_assessment_id of this SecurityAssessment.
+        The ocid of a security assessment which is of type TEMPLATE, this will be null or empty when type is TEMPLATE.
+
+
+        :return: The template_assessment_id of this SecurityAssessment.
+        :rtype: str
+        """
+        return self._template_assessment_id
+
+    @template_assessment_id.setter
+    def template_assessment_id(self, template_assessment_id):
+        """
+        Sets the template_assessment_id of this SecurityAssessment.
+        The ocid of a security assessment which is of type TEMPLATE, this will be null or empty when type is TEMPLATE.
+
+
+        :param template_assessment_id: The template_assessment_id of this SecurityAssessment.
+        :type: str
+        """
+        self._template_assessment_id = template_assessment_id
+
+    @property
+    def baseline_assessment_id(self):
+        """
+        Gets the baseline_assessment_id of this SecurityAssessment.
+        The ocid of a security assessment which is of type TEMPLATE_BASELINE, this will be null or empty when type is TEMPLATE_BASELINE.
+
+
+        :return: The baseline_assessment_id of this SecurityAssessment.
+        :rtype: str
+        """
+        return self._baseline_assessment_id
+
+    @baseline_assessment_id.setter
+    def baseline_assessment_id(self, baseline_assessment_id):
+        """
+        Sets the baseline_assessment_id of this SecurityAssessment.
+        The ocid of a security assessment which is of type TEMPLATE_BASELINE, this will be null or empty when type is TEMPLATE_BASELINE.
+
+
+        :param baseline_assessment_id: The baseline_assessment_id of this SecurityAssessment.
+        :type: str
+        """
+        self._baseline_assessment_id = baseline_assessment_id
+
+    @property
     def is_baseline(self):
         """
         Gets the is_baseline of this SecurityAssessment.
@@ -751,6 +852,84 @@ class SecurityAssessment(object):
         self._is_assessment_scheduled = is_assessment_scheduled
 
     @property
+    def target_database_group_id(self):
+        """
+        Gets the target_database_group_id of this SecurityAssessment.
+        The OCID of the target database group that the group assessment is created for.
+
+
+        :return: The target_database_group_id of this SecurityAssessment.
+        :rtype: str
+        """
+        return self._target_database_group_id
+
+    @target_database_group_id.setter
+    def target_database_group_id(self, target_database_group_id):
+        """
+        Sets the target_database_group_id of this SecurityAssessment.
+        The OCID of the target database group that the group assessment is created for.
+
+
+        :param target_database_group_id: The target_database_group_id of this SecurityAssessment.
+        :type: str
+        """
+        self._target_database_group_id = target_database_group_id
+
+    @property
+    def target_type(self):
+        """
+        Gets the target_type of this SecurityAssessment.
+        Indicates whether the security assessment is for a target database or a target database group.
+
+        Allowed values for this property are: "TARGET_DATABASE", "TARGET_DATABASE_GROUP", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The target_type of this SecurityAssessment.
+        :rtype: str
+        """
+        return self._target_type
+
+    @target_type.setter
+    def target_type(self, target_type):
+        """
+        Sets the target_type of this SecurityAssessment.
+        Indicates whether the security assessment is for a target database or a target database group.
+
+
+        :param target_type: The target_type of this SecurityAssessment.
+        :type: str
+        """
+        allowed_values = ["TARGET_DATABASE", "TARGET_DATABASE_GROUP"]
+        if not value_allowed_none_or_none_sentinel(target_type, allowed_values):
+            target_type = 'UNKNOWN_ENUM_VALUE'
+        self._target_type = target_type
+
+    @property
+    def checks(self):
+        """
+        Gets the checks of this SecurityAssessment.
+        The security checks to be evaluated for type template.
+
+
+        :return: The checks of this SecurityAssessment.
+        :rtype: list[oci.data_safe.models.Check]
+        """
+        return self._checks
+
+    @checks.setter
+    def checks(self, checks):
+        """
+        Sets the checks of this SecurityAssessment.
+        The security checks to be evaluated for type template.
+
+
+        :param checks: The checks of this SecurityAssessment.
+        :type: list[oci.data_safe.models.Check]
+        """
+        self._checks = checks
+
+    @property
     def schedule(self):
         """
         Gets the schedule of this SecurityAssessment.
@@ -837,7 +1016,7 @@ class SecurityAssessment(object):
          This type keeps an up-to-date assessment of all database risks in one compartment. It is automatically updated when
          the latest assessment or refresh action is executed. It is also automatically updated when a target is deleted or move to a different compartment.
 
-        Allowed values for this property are: "LATEST", "SAVED", "SAVE_SCHEDULE", "COMPARTMENT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "LATEST", "SAVED", "SAVE_SCHEDULE", "COMPARTMENT", "TEMPLATE", "TEMPLATE_BASELINE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -863,7 +1042,7 @@ class SecurityAssessment(object):
         :param type: The type of this SecurityAssessment.
         :type: str
         """
-        allowed_values = ["LATEST", "SAVED", "SAVE_SCHEDULE", "COMPARTMENT"]
+        allowed_values = ["LATEST", "SAVED", "SAVE_SCHEDULE", "COMPARTMENT", "TEMPLATE", "TEMPLATE_BASELINE"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type

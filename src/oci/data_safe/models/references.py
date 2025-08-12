@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class References(object):
     """
-    References to the sections of STIG, CIS, GDPR and/or OBP relevant to the current finding.
+    References to the sections of STIG, CIS, GDPR and/or ORP relevant to the current finding.
     """
 
     def __init__(self, **kwargs):
@@ -36,23 +36,30 @@ class References(object):
             The value to assign to the obp property of this References.
         :type obp: str
 
+        :param orp:
+            The value to assign to the orp property of this References.
+        :type orp: str
+
         """
         self.swagger_types = {
             'stig': 'str',
             'cis': 'str',
             'gdpr': 'str',
-            'obp': 'str'
+            'obp': 'str',
+            'orp': 'str'
         }
         self.attribute_map = {
             'stig': 'stig',
             'cis': 'cis',
             'gdpr': 'gdpr',
-            'obp': 'obp'
+            'obp': 'obp',
+            'orp': 'orp'
         }
         self._stig = None
         self._cis = None
         self._gdpr = None
         self._obp = None
+        self._orp = None
 
     @property
     def stig(self):
@@ -149,6 +156,30 @@ class References(object):
         :type: str
         """
         self._obp = obp
+
+    @property
+    def orp(self):
+        """
+        Gets the orp of this References.
+        Relevant section from ORP.
+
+
+        :return: The orp of this References.
+        :rtype: str
+        """
+        return self._orp
+
+    @orp.setter
+    def orp(self, orp):
+        """
+        Sets the orp of this References.
+        Relevant section from ORP.
+
+
+        :param orp: The orp of this References.
+        :type: str
+        """
+        self._orp = orp
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -90,6 +90,8 @@ Data Science
     oci.data_science.models.DefaultJobConfigurationDetails
     oci.data_science.models.DefaultModelDeploymentEnvironmentConfigurationDetails
     oci.data_science.models.DisableMlApplicationInstanceViewTriggerDetails
+    oci.data_science.models.EmptyJobConfigurationDetails
+    oci.data_science.models.EmptyJobInfrastructureConfigurationDetails
     oci.data_science.models.EnableMlApplicationInstanceViewTriggerDetails
     oci.data_science.models.ExportModelArtifactDetails
     oci.data_science.models.FastLaunchJobConfigSummary
@@ -114,9 +116,16 @@ Data Science
     oci.data_science.models.InvokeMlApplicationProviderTriggerScheduleActionDetails
     oci.data_science.models.Job
     oci.data_science.models.JobConfigurationDetails
+    oci.data_science.models.JobCustomNetworkConfiguration
+    oci.data_science.models.JobDefaultNetworkConfiguration
     oci.data_science.models.JobEnvironmentConfigurationDetails
+    oci.data_science.models.JobExecProbeDetails
     oci.data_science.models.JobInfrastructureConfigurationDetails
     oci.data_science.models.JobLogConfigurationDetails
+    oci.data_science.models.JobNetworkConfiguration
+    oci.data_science.models.JobNodeConfigurationDetails
+    oci.data_science.models.JobNodeGroupConfigurationDetails
+    oci.data_science.models.JobProbeDetails
     oci.data_science.models.JobRun
     oci.data_science.models.JobRunLogDetails
     oci.data_science.models.JobRunSummary
@@ -175,6 +184,9 @@ Data Science
     oci.data_science.models.ModelVersionSet
     oci.data_science.models.ModelVersionSetSummary
     oci.data_science.models.ModifyModelGroupDetails
+    oci.data_science.models.MultiNodeJobInfrastructureConfigurationDetails
+    oci.data_science.models.MultiNodeJobNodeConfigurationDetails
+    oci.data_science.models.NodeGroupDetails
     oci.data_science.models.NotebookSession
     oci.data_science.models.NotebookSessionConfigDetails
     oci.data_science.models.NotebookSessionConfigurationDetails

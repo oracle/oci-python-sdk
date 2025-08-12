@@ -139,6 +139,10 @@ class AzureDataLakeStorageConnectionSummary(ConnectionSummary):
             The value to assign to the client_secret_secret_id property of this AzureDataLakeStorageConnectionSummary.
         :type client_secret_secret_id: str
 
+        :param azure_authority_host:
+            The value to assign to the azure_authority_host property of this AzureDataLakeStorageConnectionSummary.
+        :type azure_authority_host: str
+
         """
         self.swagger_types = {
             'connection_type': 'str',
@@ -169,7 +173,8 @@ class AzureDataLakeStorageConnectionSummary(ConnectionSummary):
             'endpoint': 'str',
             'account_key_secret_id': 'str',
             'sas_token_secret_id': 'str',
-            'client_secret_secret_id': 'str'
+            'client_secret_secret_id': 'str',
+            'azure_authority_host': 'str'
         }
         self.attribute_map = {
             'connection_type': 'connectionType',
@@ -200,7 +205,8 @@ class AzureDataLakeStorageConnectionSummary(ConnectionSummary):
             'endpoint': 'endpoint',
             'account_key_secret_id': 'accountKeySecretId',
             'sas_token_secret_id': 'sasTokenSecretId',
-            'client_secret_secret_id': 'clientSecretSecretId'
+            'client_secret_secret_id': 'clientSecretSecretId',
+            'azure_authority_host': 'azureAuthorityHost'
         }
         self._connection_type = None
         self._id = None
@@ -231,6 +237,7 @@ class AzureDataLakeStorageConnectionSummary(ConnectionSummary):
         self._account_key_secret_id = None
         self._sas_token_secret_id = None
         self._client_secret_secret_id = None
+        self._azure_authority_host = None
         self._connection_type = 'AZURE_DATA_LAKE_STORAGE'
 
     @property
@@ -472,6 +479,38 @@ class AzureDataLakeStorageConnectionSummary(ConnectionSummary):
         :type: str
         """
         self._client_secret_secret_id = client_secret_secret_id
+
+    @property
+    def azure_authority_host(self):
+        """
+        Gets the azure_authority_host of this AzureDataLakeStorageConnectionSummary.
+        The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active Directory).
+        Default value: https://login.microsoftonline.com
+        When connecting to a non-public Azure Cloud, the endpoint must be provided, eg:
+        * Azure China: https://login.chinacloudapi.cn/
+        * Azure US Government: https://login.microsoftonline.us/
+
+
+        :return: The azure_authority_host of this AzureDataLakeStorageConnectionSummary.
+        :rtype: str
+        """
+        return self._azure_authority_host
+
+    @azure_authority_host.setter
+    def azure_authority_host(self, azure_authority_host):
+        """
+        Sets the azure_authority_host of this AzureDataLakeStorageConnectionSummary.
+        The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active Directory).
+        Default value: https://login.microsoftonline.com
+        When connecting to a non-public Azure Cloud, the endpoint must be provided, eg:
+        * Azure China: https://login.chinacloudapi.cn/
+        * Azure US Government: https://login.microsoftonline.us/
+
+
+        :param azure_authority_host: The azure_authority_host of this AzureDataLakeStorageConnectionSummary.
+        :type: str
+        """
+        self._azure_authority_host = azure_authority_host
 
     def __repr__(self):
         return formatted_flat_dict(self)

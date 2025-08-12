@@ -44,6 +44,10 @@ class RepositoryCommit(object):
             The value to assign to the committer_email property of this RepositoryCommit.
         :type committer_email: str
 
+        :param merged_pull_request_id:
+            The value to assign to the merged_pull_request_id property of this RepositoryCommit.
+        :type merged_pull_request_id: str
+
         :param parent_commit_ids:
             The value to assign to the parent_commit_ids property of this RepositoryCommit.
         :type parent_commit_ids: list[str]
@@ -64,6 +68,7 @@ class RepositoryCommit(object):
             'author_email': 'str',
             'committer_name': 'str',
             'committer_email': 'str',
+            'merged_pull_request_id': 'str',
             'parent_commit_ids': 'list[str]',
             'time_created': 'datetime',
             'tree_id': 'str'
@@ -75,6 +80,7 @@ class RepositoryCommit(object):
             'author_email': 'authorEmail',
             'committer_name': 'committerName',
             'committer_email': 'committerEmail',
+            'merged_pull_request_id': 'mergedPullRequestId',
             'parent_commit_ids': 'parentCommitIds',
             'time_created': 'timeCreated',
             'tree_id': 'treeId'
@@ -85,6 +91,7 @@ class RepositoryCommit(object):
         self._author_email = None
         self._committer_name = None
         self._committer_email = None
+        self._merged_pull_request_id = None
         self._parent_commit_ids = None
         self._time_created = None
         self._tree_id = None
@@ -232,6 +239,30 @@ class RepositoryCommit(object):
         :type: str
         """
         self._committer_email = committer_email
+
+    @property
+    def merged_pull_request_id(self):
+        """
+        Gets the merged_pull_request_id of this RepositoryCommit.
+        Id of the PullRequest that this commit was merged with.
+
+
+        :return: The merged_pull_request_id of this RepositoryCommit.
+        :rtype: str
+        """
+        return self._merged_pull_request_id
+
+    @merged_pull_request_id.setter
+    def merged_pull_request_id(self, merged_pull_request_id):
+        """
+        Sets the merged_pull_request_id of this RepositoryCommit.
+        Id of the PullRequest that this commit was merged with.
+
+
+        :param merged_pull_request_id: The merged_pull_request_id of this RepositoryCommit.
+        :type: str
+        """
+        self._merged_pull_request_id = merged_pull_request_id
 
     @property
     def parent_commit_ids(self):

@@ -104,6 +104,10 @@ class PipelineRun(object):
             The value to assign to the log_configuration_override_details property of this PipelineRun.
         :type log_configuration_override_details: oci.data_science.models.PipelineLogConfigurationDetails
 
+        :param infrastructure_configuration_override_details:
+            The value to assign to the infrastructure_configuration_override_details property of this PipelineRun.
+        :type infrastructure_configuration_override_details: oci.data_science.models.PipelineInfrastructureConfigurationDetails
+
         :param step_override_details:
             The value to assign to the step_override_details property of this PipelineRun.
         :type step_override_details: list[oci.data_science.models.PipelineStepOverrideDetails]
@@ -153,6 +157,7 @@ class PipelineRun(object):
             'configuration_details': 'PipelineConfigurationDetails',
             'configuration_override_details': 'PipelineConfigurationDetails',
             'log_configuration_override_details': 'PipelineLogConfigurationDetails',
+            'infrastructure_configuration_override_details': 'PipelineInfrastructureConfigurationDetails',
             'step_override_details': 'list[PipelineStepOverrideDetails]',
             'log_details': 'PipelineRunLogDetails',
             'step_runs': 'list[PipelineStepRun]',
@@ -176,6 +181,7 @@ class PipelineRun(object):
             'configuration_details': 'configurationDetails',
             'configuration_override_details': 'configurationOverrideDetails',
             'log_configuration_override_details': 'logConfigurationOverrideDetails',
+            'infrastructure_configuration_override_details': 'infrastructureConfigurationOverrideDetails',
             'step_override_details': 'stepOverrideDetails',
             'log_details': 'logDetails',
             'step_runs': 'stepRuns',
@@ -198,6 +204,7 @@ class PipelineRun(object):
         self._configuration_details = None
         self._configuration_override_details = None
         self._log_configuration_override_details = None
+        self._infrastructure_configuration_override_details = None
         self._step_override_details = None
         self._log_details = None
         self._step_runs = None
@@ -542,6 +549,26 @@ class PipelineRun(object):
         :type: oci.data_science.models.PipelineLogConfigurationDetails
         """
         self._log_configuration_override_details = log_configuration_override_details
+
+    @property
+    def infrastructure_configuration_override_details(self):
+        """
+        Gets the infrastructure_configuration_override_details of this PipelineRun.
+
+        :return: The infrastructure_configuration_override_details of this PipelineRun.
+        :rtype: oci.data_science.models.PipelineInfrastructureConfigurationDetails
+        """
+        return self._infrastructure_configuration_override_details
+
+    @infrastructure_configuration_override_details.setter
+    def infrastructure_configuration_override_details(self, infrastructure_configuration_override_details):
+        """
+        Sets the infrastructure_configuration_override_details of this PipelineRun.
+
+        :param infrastructure_configuration_override_details: The infrastructure_configuration_override_details of this PipelineRun.
+        :type: oci.data_science.models.PipelineInfrastructureConfigurationDetails
+        """
+        self._infrastructure_configuration_override_details = infrastructure_configuration_override_details
 
     @property
     def step_override_details(self):

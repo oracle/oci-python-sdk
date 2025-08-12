@@ -148,7 +148,7 @@ class ProcessOptions(object):
     def start_using_default_mapping(self):
         """
         Gets the start_using_default_mapping of this ProcessOptions.
-        If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+        If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option only applies when creating a pipeline and is not applicable while updating a pipeline.
 
         Allowed values for this property are: "ENABLED", "DISABLED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -163,7 +163,7 @@ class ProcessOptions(object):
     def start_using_default_mapping(self, start_using_default_mapping):
         """
         Sets the start_using_default_mapping of this ProcessOptions.
-        If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+        If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option only applies when creating a pipeline and is not applicable while updating a pipeline.
 
 
         :param start_using_default_mapping: The start_using_default_mapping of this ProcessOptions.

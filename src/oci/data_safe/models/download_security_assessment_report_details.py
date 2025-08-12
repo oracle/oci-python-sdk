@@ -23,6 +23,10 @@ class DownloadSecurityAssessmentReportDetails(object):
     #: This constant has a value of "XLS"
     FORMAT_XLS = "XLS"
 
+    #: A constant which can be used with the format property of a DownloadSecurityAssessmentReportDetails.
+    #: This constant has a value of "STIGXLS"
+    FORMAT_STIGXLS = "STIGXLS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DownloadSecurityAssessmentReportDetails object with values from keyword arguments.
@@ -30,7 +34,7 @@ class DownloadSecurityAssessmentReportDetails(object):
 
         :param format:
             The value to assign to the format property of this DownloadSecurityAssessmentReportDetails.
-            Allowed values for this property are: "PDF", "XLS"
+            Allowed values for this property are: "PDF", "XLS", "STIGXLS"
         :type format: str
 
         """
@@ -46,9 +50,9 @@ class DownloadSecurityAssessmentReportDetails(object):
     def format(self):
         """
         **[Required]** Gets the format of this DownloadSecurityAssessmentReportDetails.
-        Format of the report.
+        Format of the Security Assessment report.
 
-        Allowed values for this property are: "PDF", "XLS"
+        Allowed values for this property are: "PDF", "XLS", "STIGXLS"
 
 
         :return: The format of this DownloadSecurityAssessmentReportDetails.
@@ -60,13 +64,13 @@ class DownloadSecurityAssessmentReportDetails(object):
     def format(self, format):
         """
         Sets the format of this DownloadSecurityAssessmentReportDetails.
-        Format of the report.
+        Format of the Security Assessment report.
 
 
         :param format: The format of this DownloadSecurityAssessmentReportDetails.
         :type: str
         """
-        allowed_values = ["PDF", "XLS"]
+        allowed_values = ["PDF", "XLS", "STIGXLS"]
         if not value_allowed_none_or_none_sentinel(format, allowed_values):
             raise ValueError(
                 f"Invalid value for `format`, must be None or one of {allowed_values}"

@@ -15,6 +15,14 @@ class CreateUserAssessmentDetails(object):
     The details required to save a user assessment.
     """
 
+    #: A constant which can be used with the target_type property of a CreateUserAssessmentDetails.
+    #: This constant has a value of "TARGET_DATABASE"
+    TARGET_TYPE_TARGET_DATABASE = "TARGET_DATABASE"
+
+    #: A constant which can be used with the target_type property of a CreateUserAssessmentDetails.
+    #: This constant has a value of "TARGET_DATABASE_GROUP"
+    TARGET_TYPE_TARGET_DATABASE_GROUP = "TARGET_DATABASE_GROUP"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateUserAssessmentDetails object with values from keyword arguments.
@@ -44,6 +52,11 @@ class CreateUserAssessmentDetails(object):
             The value to assign to the target_id property of this CreateUserAssessmentDetails.
         :type target_id: str
 
+        :param target_type:
+            The value to assign to the target_type property of this CreateUserAssessmentDetails.
+            Allowed values for this property are: "TARGET_DATABASE", "TARGET_DATABASE_GROUP"
+        :type target_type: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateUserAssessmentDetails.
         :type freeform_tags: dict(str, str)
@@ -60,6 +73,7 @@ class CreateUserAssessmentDetails(object):
             'is_assessment_scheduled': 'bool',
             'schedule': 'str',
             'target_id': 'str',
+            'target_type': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -70,6 +84,7 @@ class CreateUserAssessmentDetails(object):
             'is_assessment_scheduled': 'isAssessmentScheduled',
             'schedule': 'schedule',
             'target_id': 'targetId',
+            'target_type': 'targetType',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -79,6 +94,7 @@ class CreateUserAssessmentDetails(object):
         self._is_assessment_scheduled = None
         self._schedule = None
         self._target_id = None
+        self._target_type = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -236,7 +252,7 @@ class CreateUserAssessmentDetails(object):
     def target_id(self):
         """
         **[Required]** Gets the target_id of this CreateUserAssessmentDetails.
-        The OCID of the target database on which the user assessment is to be run.
+        The OCID of the target database or target database group on which user assessment is to be run.
 
 
         :return: The target_id of this CreateUserAssessmentDetails.
@@ -248,13 +264,44 @@ class CreateUserAssessmentDetails(object):
     def target_id(self, target_id):
         """
         Sets the target_id of this CreateUserAssessmentDetails.
-        The OCID of the target database on which the user assessment is to be run.
+        The OCID of the target database or target database group on which user assessment is to be run.
 
 
         :param target_id: The target_id of this CreateUserAssessmentDetails.
         :type: str
         """
         self._target_id = target_id
+
+    @property
+    def target_type(self):
+        """
+        Gets the target_type of this CreateUserAssessmentDetails.
+        The type of user assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
+
+        Allowed values for this property are: "TARGET_DATABASE", "TARGET_DATABASE_GROUP"
+
+
+        :return: The target_type of this CreateUserAssessmentDetails.
+        :rtype: str
+        """
+        return self._target_type
+
+    @target_type.setter
+    def target_type(self, target_type):
+        """
+        Sets the target_type of this CreateUserAssessmentDetails.
+        The type of user assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
+
+
+        :param target_type: The target_type of this CreateUserAssessmentDetails.
+        :type: str
+        """
+        allowed_values = ["TARGET_DATABASE", "TARGET_DATABASE_GROUP"]
+        if not value_allowed_none_or_none_sentinel(target_type, allowed_values):
+            raise ValueError(
+                f"Invalid value for `target_type`, must be None or one of {allowed_values}"
+            )
+        self._target_type = target_type
 
     @property
     def freeform_tags(self):

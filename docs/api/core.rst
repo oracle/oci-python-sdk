@@ -314,6 +314,7 @@ Core Services
     oci.core.models.DrgAttachmentNetworkDetails
     oci.core.models.DrgAttachmentNetworkUpdateDetails
     oci.core.models.DrgAttachmentTypeDrgRouteDistributionMatchCriteria
+    oci.core.models.DrgPromotionStatusResponse
     oci.core.models.DrgRedundancyStatus
     oci.core.models.DrgRouteDistribution
     oci.core.models.DrgRouteDistributionMatchCriteria
@@ -377,6 +378,7 @@ Core Services
     oci.core.models.InstanceConfigurationCreateVolumeDetails
     oci.core.models.InstanceConfigurationDetachedVolumeAutotunePolicy
     oci.core.models.InstanceConfigurationGenericBmLaunchInstancePlatformConfig
+    oci.core.models.InstanceConfigurationHostGroupPlacementConstraintDetails
     oci.core.models.InstanceConfigurationInstanceDetails
     oci.core.models.InstanceConfigurationInstanceOptions
     oci.core.models.InstanceConfigurationInstanceSourceDetails
@@ -395,6 +397,7 @@ Core Services
     oci.core.models.InstanceConfigurationLaunchOptions
     oci.core.models.InstanceConfigurationParavirtualizedAttachVolumeDetails
     oci.core.models.InstanceConfigurationPerformanceBasedAutotunePolicy
+    oci.core.models.InstanceConfigurationPlacementConstraintDetails
     oci.core.models.InstanceConfigurationSummary
     oci.core.models.InstanceConfigurationVolumeSourceDetails
     oci.core.models.InstanceConfigurationVolumeSourceFromVolumeBackupDetails

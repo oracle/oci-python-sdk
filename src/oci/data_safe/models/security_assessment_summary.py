@@ -15,6 +15,14 @@ class SecurityAssessmentSummary(object):
     The summary of a security assessment.
     """
 
+    #: A constant which can be used with the target_type property of a SecurityAssessmentSummary.
+    #: This constant has a value of "TARGET_DATABASE"
+    TARGET_TYPE_TARGET_DATABASE = "TARGET_DATABASE"
+
+    #: A constant which can be used with the target_type property of a SecurityAssessmentSummary.
+    #: This constant has a value of "TARGET_DATABASE_GROUP"
+    TARGET_TYPE_TARGET_DATABASE_GROUP = "TARGET_DATABASE_GROUP"
+
     #: A constant which can be used with the lifecycle_state property of a SecurityAssessmentSummary.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -63,6 +71,14 @@ class SecurityAssessmentSummary(object):
     #: This constant has a value of "COMPARTMENT"
     TYPE_COMPARTMENT = "COMPARTMENT"
 
+    #: A constant which can be used with the type property of a SecurityAssessmentSummary.
+    #: This constant has a value of "TEMPLATE"
+    TYPE_TEMPLATE = "TEMPLATE"
+
+    #: A constant which can be used with the type property of a SecurityAssessmentSummary.
+    #: This constant has a value of "TEMPLATE_BASELINE"
+    TYPE_TEMPLATE_BASELINE = "TEMPLATE_BASELINE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new SecurityAssessmentSummary object with values from keyword arguments.
@@ -71,6 +87,16 @@ class SecurityAssessmentSummary(object):
         :param id:
             The value to assign to the id property of this SecurityAssessmentSummary.
         :type id: str
+
+        :param target_database_group_id:
+            The value to assign to the target_database_group_id property of this SecurityAssessmentSummary.
+        :type target_database_group_id: str
+
+        :param target_type:
+            The value to assign to the target_type property of this SecurityAssessmentSummary.
+            Allowed values for this property are: "TARGET_DATABASE", "TARGET_DATABASE_GROUP", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type target_type: str
 
         :param description:
             The value to assign to the description property of this SecurityAssessmentSummary.
@@ -134,6 +160,14 @@ class SecurityAssessmentSummary(object):
             The value to assign to the schedule_security_assessment_id property of this SecurityAssessmentSummary.
         :type schedule_security_assessment_id: str
 
+        :param template_assessment_id:
+            The value to assign to the template_assessment_id property of this SecurityAssessmentSummary.
+        :type template_assessment_id: str
+
+        :param baseline_assessment_id:
+            The value to assign to the baseline_assessment_id property of this SecurityAssessmentSummary.
+        :type baseline_assessment_id: str
+
         :param schedule:
             The value to assign to the schedule property of this SecurityAssessmentSummary.
         :type schedule: str
@@ -150,7 +184,7 @@ class SecurityAssessmentSummary(object):
 
         :param type:
             The value to assign to the type property of this SecurityAssessmentSummary.
-            Allowed values for this property are: "LATEST", "SAVED", "SAVE_SCHEDULE", "COMPARTMENT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "LATEST", "SAVED", "SAVE_SCHEDULE", "COMPARTMENT", "TEMPLATE", "TEMPLATE_BASELINE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -169,6 +203,8 @@ class SecurityAssessmentSummary(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'target_database_group_id': 'str',
+            'target_type': 'str',
             'description': 'str',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
@@ -184,6 +220,8 @@ class SecurityAssessmentSummary(object):
             'is_deviated_from_baseline': 'bool',
             'last_compared_baseline_id': 'str',
             'schedule_security_assessment_id': 'str',
+            'template_assessment_id': 'str',
+            'baseline_assessment_id': 'str',
             'schedule': 'str',
             'triggered_by': 'str',
             'link': 'str',
@@ -194,6 +232,8 @@ class SecurityAssessmentSummary(object):
         }
         self.attribute_map = {
             'id': 'id',
+            'target_database_group_id': 'targetDatabaseGroupId',
+            'target_type': 'targetType',
             'description': 'description',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
@@ -209,6 +249,8 @@ class SecurityAssessmentSummary(object):
             'is_deviated_from_baseline': 'isDeviatedFromBaseline',
             'last_compared_baseline_id': 'lastComparedBaselineId',
             'schedule_security_assessment_id': 'scheduleSecurityAssessmentId',
+            'template_assessment_id': 'templateAssessmentId',
+            'baseline_assessment_id': 'baselineAssessmentId',
             'schedule': 'schedule',
             'triggered_by': 'triggeredBy',
             'link': 'link',
@@ -218,6 +260,8 @@ class SecurityAssessmentSummary(object):
             'defined_tags': 'definedTags'
         }
         self._id = None
+        self._target_database_group_id = None
+        self._target_type = None
         self._description = None
         self._lifecycle_state = None
         self._lifecycle_details = None
@@ -233,6 +277,8 @@ class SecurityAssessmentSummary(object):
         self._is_deviated_from_baseline = None
         self._last_compared_baseline_id = None
         self._schedule_security_assessment_id = None
+        self._template_assessment_id = None
+        self._baseline_assessment_id = None
         self._schedule = None
         self._triggered_by = None
         self._link = None
@@ -264,6 +310,60 @@ class SecurityAssessmentSummary(object):
         :type: str
         """
         self._id = id
+
+    @property
+    def target_database_group_id(self):
+        """
+        Gets the target_database_group_id of this SecurityAssessmentSummary.
+        The OCID of target database group.
+
+
+        :return: The target_database_group_id of this SecurityAssessmentSummary.
+        :rtype: str
+        """
+        return self._target_database_group_id
+
+    @target_database_group_id.setter
+    def target_database_group_id(self, target_database_group_id):
+        """
+        Sets the target_database_group_id of this SecurityAssessmentSummary.
+        The OCID of target database group.
+
+
+        :param target_database_group_id: The target_database_group_id of this SecurityAssessmentSummary.
+        :type: str
+        """
+        self._target_database_group_id = target_database_group_id
+
+    @property
+    def target_type(self):
+        """
+        Gets the target_type of this SecurityAssessmentSummary.
+        Indicates whether the security assessment is for a target database or a target database group.
+
+        Allowed values for this property are: "TARGET_DATABASE", "TARGET_DATABASE_GROUP", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The target_type of this SecurityAssessmentSummary.
+        :rtype: str
+        """
+        return self._target_type
+
+    @target_type.setter
+    def target_type(self, target_type):
+        """
+        Sets the target_type of this SecurityAssessmentSummary.
+        Indicates whether the security assessment is for a target database or a target database group.
+
+
+        :param target_type: The target_type of this SecurityAssessmentSummary.
+        :type: str
+        """
+        allowed_values = ["TARGET_DATABASE", "TARGET_DATABASE_GROUP"]
+        if not value_allowed_none_or_none_sentinel(target_type, allowed_values):
+            target_type = 'UNKNOWN_ENUM_VALUE'
+        self._target_type = target_type
 
     @property
     def description(self):
@@ -648,6 +748,54 @@ class SecurityAssessmentSummary(object):
         self._schedule_security_assessment_id = schedule_security_assessment_id
 
     @property
+    def template_assessment_id(self):
+        """
+        Gets the template_assessment_id of this SecurityAssessmentSummary.
+        The OCID of the security assessment of type TEMPLATE.
+
+
+        :return: The template_assessment_id of this SecurityAssessmentSummary.
+        :rtype: str
+        """
+        return self._template_assessment_id
+
+    @template_assessment_id.setter
+    def template_assessment_id(self, template_assessment_id):
+        """
+        Sets the template_assessment_id of this SecurityAssessmentSummary.
+        The OCID of the security assessment of type TEMPLATE.
+
+
+        :param template_assessment_id: The template_assessment_id of this SecurityAssessmentSummary.
+        :type: str
+        """
+        self._template_assessment_id = template_assessment_id
+
+    @property
+    def baseline_assessment_id(self):
+        """
+        Gets the baseline_assessment_id of this SecurityAssessmentSummary.
+        The OCID of the security assessment of type TEMPLATE_BASELINE.
+
+
+        :return: The baseline_assessment_id of this SecurityAssessmentSummary.
+        :rtype: str
+        """
+        return self._baseline_assessment_id
+
+    @baseline_assessment_id.setter
+    def baseline_assessment_id(self, baseline_assessment_id):
+        """
+        Sets the baseline_assessment_id of this SecurityAssessmentSummary.
+        The OCID of the security assessment of type TEMPLATE_BASELINE.
+
+
+        :param baseline_assessment_id: The baseline_assessment_id of this SecurityAssessmentSummary.
+        :type: str
+        """
+        self._baseline_assessment_id = baseline_assessment_id
+
+    @property
     def schedule(self):
         """
         Gets the schedule of this SecurityAssessmentSummary.
@@ -760,10 +908,12 @@ class SecurityAssessmentSummary(object):
         LATEST: The most up-to-date assessment that is running automatically for a target. It is system generated.
         SAVED: A saved security assessment. LATEST assessments are always saved in order to maintain the history of runs. A SAVED assessment is also generated by a 'refresh' action (triggered by the user).
         SAVE_SCHEDULE: The schedule for periodic saves of LATEST assessments.
+        TEMPLATE: The security assessment contains the checks that the user would like to run. It is user defined.
+        TEMPLATE_BASELINE: The security assessment contains the checks that the user would like to run, together with the max allowed severity. The max allowed severity can be defined by the user.
         COMPARTMENT: An automatically managed assessment type that stores all details of targets in one compartment.
         This type keeps an up-to-date assessment of all database risks in one compartment. It is automatically updated when the latest assessment or refresh action is executed. It is also automatically updated when a target is deleted or move to a different compartment.
 
-        Allowed values for this property are: "LATEST", "SAVED", "SAVE_SCHEDULE", "COMPARTMENT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "LATEST", "SAVED", "SAVE_SCHEDULE", "COMPARTMENT", "TEMPLATE", "TEMPLATE_BASELINE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -781,6 +931,8 @@ class SecurityAssessmentSummary(object):
         LATEST: The most up-to-date assessment that is running automatically for a target. It is system generated.
         SAVED: A saved security assessment. LATEST assessments are always saved in order to maintain the history of runs. A SAVED assessment is also generated by a 'refresh' action (triggered by the user).
         SAVE_SCHEDULE: The schedule for periodic saves of LATEST assessments.
+        TEMPLATE: The security assessment contains the checks that the user would like to run. It is user defined.
+        TEMPLATE_BASELINE: The security assessment contains the checks that the user would like to run, together with the max allowed severity. The max allowed severity can be defined by the user.
         COMPARTMENT: An automatically managed assessment type that stores all details of targets in one compartment.
         This type keeps an up-to-date assessment of all database risks in one compartment. It is automatically updated when the latest assessment or refresh action is executed. It is also automatically updated when a target is deleted or move to a different compartment.
 
@@ -788,7 +940,7 @@ class SecurityAssessmentSummary(object):
         :param type: The type of this SecurityAssessmentSummary.
         :type: str
         """
-        allowed_values = ["LATEST", "SAVED", "SAVE_SCHEDULE", "COMPARTMENT"]
+        allowed_values = ["LATEST", "SAVED", "SAVE_SCHEDULE", "COMPARTMENT", "TEMPLATE", "TEMPLATE_BASELINE"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type

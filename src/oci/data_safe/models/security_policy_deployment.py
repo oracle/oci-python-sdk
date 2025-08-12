@@ -15,6 +15,14 @@ class SecurityPolicyDeployment(object):
     The resource represents the state of the deployment of a security policy on a target.
     """
 
+    #: A constant which can be used with the target_type property of a SecurityPolicyDeployment.
+    #: This constant has a value of "TARGET_DATABASE"
+    TARGET_TYPE_TARGET_DATABASE = "TARGET_DATABASE"
+
+    #: A constant which can be used with the target_type property of a SecurityPolicyDeployment.
+    #: This constant has a value of "TARGET_DATABASE_GROUP"
+    TARGET_TYPE_TARGET_DATABASE_GROUP = "TARGET_DATABASE_GROUP"
+
     #: A constant which can be used with the lifecycle_state property of a SecurityPolicyDeployment.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -26,6 +34,10 @@ class SecurityPolicyDeployment(object):
     #: A constant which can be used with the lifecycle_state property of a SecurityPolicyDeployment.
     #: This constant has a value of "DEPLOYED"
     LIFECYCLE_STATE_DEPLOYED = "DEPLOYED"
+
+    #: A constant which can be used with the lifecycle_state property of a SecurityPolicyDeployment.
+    #: This constant has a value of "PENDING_DEPLOYMENT"
+    LIFECYCLE_STATE_PENDING_DEPLOYMENT = "PENDING_DEPLOYMENT"
 
     #: A constant which can be used with the lifecycle_state property of a SecurityPolicyDeployment.
     #: This constant has a value of "NEEDS_ATTENTION"
@@ -68,6 +80,16 @@ class SecurityPolicyDeployment(object):
             The value to assign to the target_id property of this SecurityPolicyDeployment.
         :type target_id: str
 
+        :param target_type:
+            The value to assign to the target_type property of this SecurityPolicyDeployment.
+            Allowed values for this property are: "TARGET_DATABASE", "TARGET_DATABASE_GROUP", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type target_type: str
+
+        :param time_deployed:
+            The value to assign to the time_deployed property of this SecurityPolicyDeployment.
+        :type time_deployed: datetime
+
         :param security_policy_id:
             The value to assign to the security_policy_id property of this SecurityPolicyDeployment.
         :type security_policy_id: str
@@ -82,7 +104,7 @@ class SecurityPolicyDeployment(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this SecurityPolicyDeployment.
-            Allowed values for this property are: "CREATING", "UPDATING", "DEPLOYED", "NEEDS_ATTENTION", "FAILED", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "UPDATING", "DEPLOYED", "PENDING_DEPLOYMENT", "NEEDS_ATTENTION", "FAILED", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -109,6 +131,8 @@ class SecurityPolicyDeployment(object):
             'display_name': 'str',
             'description': 'str',
             'target_id': 'str',
+            'target_type': 'str',
+            'time_deployed': 'datetime',
             'security_policy_id': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
@@ -124,6 +148,8 @@ class SecurityPolicyDeployment(object):
             'display_name': 'displayName',
             'description': 'description',
             'target_id': 'targetId',
+            'target_type': 'targetType',
+            'time_deployed': 'timeDeployed',
             'security_policy_id': 'securityPolicyId',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
@@ -138,6 +164,8 @@ class SecurityPolicyDeployment(object):
         self._display_name = None
         self._description = None
         self._target_id = None
+        self._target_type = None
+        self._time_deployed = None
         self._security_policy_id = None
         self._time_created = None
         self._time_updated = None
@@ -247,7 +275,7 @@ class SecurityPolicyDeployment(object):
     def target_id(self):
         """
         **[Required]** Gets the target_id of this SecurityPolicyDeployment.
-        The OCID of the target where the security policy is deployed.
+        The OCID of the target/target group where the security policy is deployed.
 
 
         :return: The target_id of this SecurityPolicyDeployment.
@@ -259,13 +287,67 @@ class SecurityPolicyDeployment(object):
     def target_id(self, target_id):
         """
         Sets the target_id of this SecurityPolicyDeployment.
-        The OCID of the target where the security policy is deployed.
+        The OCID of the target/target group where the security policy is deployed.
 
 
         :param target_id: The target_id of this SecurityPolicyDeployment.
         :type: str
         """
         self._target_id = target_id
+
+    @property
+    def target_type(self):
+        """
+        Gets the target_type of this SecurityPolicyDeployment.
+        Indicates whether the security policy deployment is for a target database or a target database group.
+
+        Allowed values for this property are: "TARGET_DATABASE", "TARGET_DATABASE_GROUP", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The target_type of this SecurityPolicyDeployment.
+        :rtype: str
+        """
+        return self._target_type
+
+    @target_type.setter
+    def target_type(self, target_type):
+        """
+        Sets the target_type of this SecurityPolicyDeployment.
+        Indicates whether the security policy deployment is for a target database or a target database group.
+
+
+        :param target_type: The target_type of this SecurityPolicyDeployment.
+        :type: str
+        """
+        allowed_values = ["TARGET_DATABASE", "TARGET_DATABASE_GROUP"]
+        if not value_allowed_none_or_none_sentinel(target_type, allowed_values):
+            target_type = 'UNKNOWN_ENUM_VALUE'
+        self._target_type = target_type
+
+    @property
+    def time_deployed(self):
+        """
+        Gets the time_deployed of this SecurityPolicyDeployment.
+        The last date and time the security policy was deployed, in the format defined by RFC3339.
+
+
+        :return: The time_deployed of this SecurityPolicyDeployment.
+        :rtype: datetime
+        """
+        return self._time_deployed
+
+    @time_deployed.setter
+    def time_deployed(self, time_deployed):
+        """
+        Sets the time_deployed of this SecurityPolicyDeployment.
+        The last date and time the security policy was deployed, in the format defined by RFC3339.
+
+
+        :param time_deployed: The time_deployed of this SecurityPolicyDeployment.
+        :type: datetime
+        """
+        self._time_deployed = time_deployed
 
     @property
     def security_policy_id(self):
@@ -345,7 +427,7 @@ class SecurityPolicyDeployment(object):
         **[Required]** Gets the lifecycle_state of this SecurityPolicyDeployment.
         The current state of the security policy deployment.
 
-        Allowed values for this property are: "CREATING", "UPDATING", "DEPLOYED", "NEEDS_ATTENTION", "FAILED", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "UPDATING", "DEPLOYED", "PENDING_DEPLOYMENT", "NEEDS_ATTENTION", "FAILED", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -364,7 +446,7 @@ class SecurityPolicyDeployment(object):
         :param lifecycle_state: The lifecycle_state of this SecurityPolicyDeployment.
         :type: str
         """
-        allowed_values = ["CREATING", "UPDATING", "DEPLOYED", "NEEDS_ATTENTION", "FAILED", "DELETING", "DELETED"]
+        allowed_values = ["CREATING", "UPDATING", "DEPLOYED", "PENDING_DEPLOYMENT", "NEEDS_ATTENTION", "FAILED", "DELETING", "DELETED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

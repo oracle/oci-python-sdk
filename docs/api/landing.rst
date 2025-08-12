@@ -176,6 +176,8 @@ API Reference
 * :doc:`Occ Demand Signal <demand_signal/client/oci.demand_signal.OccDemandSignalClient>`
 * :doc:`Occ Metrics <oci_control_center/client/oci.oci_control_center.OccMetricsClient>`
 * :doc:`Oce Instance <oce/client/oci.oce.OceInstanceClient>`
+* :doc:`Oci Cache Config Set <redis/client/oci.redis.OciCacheConfigSetClient>`
+* :doc:`Oci Cache Default Config Set <redis/client/oci.redis.OciCacheDefaultConfigSetClient>`
 * :doc:`Oci Cache User <redis/client/oci.redis.OciCacheUserClient>`
 * :doc:`Oda <oda/client/oci.oda.OdaClient>`
 * :doc:`Odapackage <oda/client/oci.oda.OdapackageClient>`

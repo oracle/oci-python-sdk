@@ -1,0 +1,11 @@
+EmptyJobConfigurationDetails
+============================
+
+.. currentmodule:: oci.data_science.models
+
+.. autoclass:: EmptyJobConfigurationDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

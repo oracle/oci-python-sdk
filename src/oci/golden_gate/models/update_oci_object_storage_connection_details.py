@@ -402,7 +402,8 @@ class UpdateOciObjectStorageConnectionDetails(UpdateConnectionDetails):
     def should_use_resource_principal(self):
         """
         Gets the should_use_resource_principal of this UpdateOciObjectStorageConnectionDetails.
-        Indicates that the user intents to connect to the instance through resource principal.
+        Specifies that the user intends to authenticate to the instance using a resource principal.
+        Default: false
 
 
         :return: The should_use_resource_principal of this UpdateOciObjectStorageConnectionDetails.
@@ -414,7 +415,8 @@ class UpdateOciObjectStorageConnectionDetails(UpdateConnectionDetails):
     def should_use_resource_principal(self, should_use_resource_principal):
         """
         Sets the should_use_resource_principal of this UpdateOciObjectStorageConnectionDetails.
-        Indicates that the user intents to connect to the instance through resource principal.
+        Specifies that the user intends to authenticate to the instance using a resource principal.
+        Default: false
 
 
         :param should_use_resource_principal: The should_use_resource_principal of this UpdateOciObjectStorageConnectionDetails.

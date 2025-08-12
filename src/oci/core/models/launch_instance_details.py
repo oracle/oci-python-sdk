@@ -69,10 +69,6 @@ class LaunchInstanceDetails(object):
             The value to assign to the freeform_tags property of this LaunchInstanceDetails.
         :type freeform_tags: dict(str, str)
 
-        :param compute_host_group_id:
-            The value to assign to the compute_host_group_id property of this LaunchInstanceDetails.
-        :type compute_host_group_id: str
-
         :param compute_cluster_id:
             The value to assign to the compute_cluster_id property of this LaunchInstanceDetails.
         :type compute_cluster_id: str
@@ -167,7 +163,6 @@ class LaunchInstanceDetails(object):
             'fault_domain': 'str',
             'cluster_placement_group_id': 'str',
             'freeform_tags': 'dict(str, str)',
-            'compute_host_group_id': 'str',
             'compute_cluster_id': 'str',
             'hostname_label': 'str',
             'image_id': 'str',
@@ -202,7 +197,6 @@ class LaunchInstanceDetails(object):
             'fault_domain': 'faultDomain',
             'cluster_placement_group_id': 'clusterPlacementGroupId',
             'freeform_tags': 'freeformTags',
-            'compute_host_group_id': 'computeHostGroupId',
             'compute_cluster_id': 'computeClusterId',
             'hostname_label': 'hostnameLabel',
             'image_id': 'imageId',
@@ -236,7 +230,6 @@ class LaunchInstanceDetails(object):
         self._fault_domain = None
         self._cluster_placement_group_id = None
         self._freeform_tags = None
-        self._compute_host_group_id = None
         self._compute_cluster_id = None
         self._hostname_label = None
         self._image_id = None
@@ -629,30 +622,6 @@ class LaunchInstanceDetails(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
-
-    @property
-    def compute_host_group_id(self):
-        """
-        Gets the compute_host_group_id of this LaunchInstanceDetails.
-        The OCID of the compute host group attached to the host where the bare metal instance will be launched.
-
-
-        :return: The compute_host_group_id of this LaunchInstanceDetails.
-        :rtype: str
-        """
-        return self._compute_host_group_id
-
-    @compute_host_group_id.setter
-    def compute_host_group_id(self, compute_host_group_id):
-        """
-        Sets the compute_host_group_id of this LaunchInstanceDetails.
-        The OCID of the compute host group attached to the host where the bare metal instance will be launched.
-
-
-        :param compute_host_group_id: The compute_host_group_id of this LaunchInstanceDetails.
-        :type: str
-        """
-        self._compute_host_group_id = compute_host_group_id
 
     @property
     def compute_cluster_id(self):

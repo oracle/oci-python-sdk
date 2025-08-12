@@ -66,20 +66,27 @@ class MaskingAnalyticsSummary(object):
             The value to assign to the count property of this MaskingAnalyticsSummary.
         :type count: int
 
+        :param time_last_masked:
+            The value to assign to the time_last_masked property of this MaskingAnalyticsSummary.
+        :type time_last_masked: datetime
+
         """
         self.swagger_types = {
             'metric_name': 'str',
             'dimensions': 'MaskingAnalyticsDimensions',
-            'count': 'int'
+            'count': 'int',
+            'time_last_masked': 'datetime'
         }
         self.attribute_map = {
             'metric_name': 'metricName',
             'dimensions': 'dimensions',
-            'count': 'count'
+            'count': 'count',
+            'time_last_masked': 'timeLastMasked'
         }
         self._metric_name = None
         self._dimensions = None
         self._count = None
+        self._time_last_masked = None
 
     @property
     def metric_name(self):
@@ -154,6 +161,34 @@ class MaskingAnalyticsSummary(object):
         :type: int
         """
         self._count = count
+
+    @property
+    def time_last_masked(self):
+        """
+        Gets the time_last_masked of this MaskingAnalyticsSummary.
+        The date and time the target database was last masked using a masking policy, in the format defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_last_masked of this MaskingAnalyticsSummary.
+        :rtype: datetime
+        """
+        return self._time_last_masked
+
+    @time_last_masked.setter
+    def time_last_masked(self, time_last_masked):
+        """
+        Sets the time_last_masked of this MaskingAnalyticsSummary.
+        The date and time the target database was last masked using a masking policy, in the format defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_last_masked: The time_last_masked of this MaskingAnalyticsSummary.
+        :type: datetime
+        """
+        self._time_last_masked = time_last_masked
 
     def __repr__(self):
         return formatted_flat_dict(self)

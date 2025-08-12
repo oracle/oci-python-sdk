@@ -19,18 +19,23 @@ class JobConfigurationDetails(object):
     #: This constant has a value of "DEFAULT"
     JOB_TYPE_DEFAULT = "DEFAULT"
 
+    #: A constant which can be used with the job_type property of a JobConfigurationDetails.
+    #: This constant has a value of "EMPTY"
+    JOB_TYPE_EMPTY = "EMPTY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new JobConfigurationDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.data_science.models.EmptyJobConfigurationDetails`
         * :class:`~oci.data_science.models.DefaultJobConfigurationDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param job_type:
             The value to assign to the job_type property of this JobConfigurationDetails.
-            Allowed values for this property are: "DEFAULT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "DEFAULT", "EMPTY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type job_type: str
 
@@ -51,6 +56,9 @@ class JobConfigurationDetails(object):
         """
         type = object_dictionary['jobType']
 
+        if type == 'EMPTY':
+            return 'EmptyJobConfigurationDetails'
+
         if type == 'DEFAULT':
             return 'DefaultJobConfigurationDetails'
         else:
@@ -62,7 +70,7 @@ class JobConfigurationDetails(object):
         **[Required]** Gets the job_type of this JobConfigurationDetails.
         The type of job.
 
-        Allowed values for this property are: "DEFAULT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "DEFAULT", "EMPTY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -81,7 +89,7 @@ class JobConfigurationDetails(object):
         :param job_type: The job_type of this JobConfigurationDetails.
         :type: str
         """
-        allowed_values = ["DEFAULT"]
+        allowed_values = ["DEFAULT", "EMPTY"]
         if not value_allowed_none_or_none_sentinel(job_type, allowed_values):
             job_type = 'UNKNOWN_ENUM_VALUE'
         self._job_type = job_type

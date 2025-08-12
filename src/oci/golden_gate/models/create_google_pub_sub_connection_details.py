@@ -169,7 +169,7 @@ class CreateGooglePubSubConnectionDetails(CreateConnectionDetails):
     @property
     def service_account_key_file(self):
         """
-        **[Required]** Gets the service_account_key_file of this CreateGooglePubSubConnectionDetails.
+        Gets the service_account_key_file of this CreateGooglePubSubConnectionDetails.
         The base64 encoded content of the service account key file containing
         the credentials required to use Google PubSub.
         Deprecated: This field is deprecated and replaced by \"serviceAccountKeyFileSecretId\". This field will be removed after February 15 2026.

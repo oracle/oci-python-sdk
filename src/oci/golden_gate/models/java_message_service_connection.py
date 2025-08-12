@@ -501,7 +501,7 @@ class JavaMessageServiceConnection(Connection):
     def connection_url(self):
         """
         Gets the connection_url of this JavaMessageServiceConnection.
-        Connectin URL of the Java Message Service, specifying the protocol, host, and port.
+        Connection URL of the Java Message Service, specifying the protocol, host, and port.
         e.g.: 'mq://myjms.host.domain:7676'
 
 
@@ -514,7 +514,7 @@ class JavaMessageServiceConnection(Connection):
     def connection_url(self, connection_url):
         """
         Sets the connection_url of this JavaMessageServiceConnection.
-        Connectin URL of the Java Message Service, specifying the protocol, host, and port.
+        Connection URL of the Java Message Service, specifying the protocol, host, and port.
         e.g.: 'mq://myjms.host.domain:7676'
 
 

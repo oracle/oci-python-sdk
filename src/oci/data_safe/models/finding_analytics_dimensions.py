@@ -76,6 +76,10 @@ class FindingAnalyticsDimensions(object):
             The value to assign to the top_finding_category property of this FindingAnalyticsDimensions.
         :type top_finding_category: str
 
+        :param category:
+            The value to assign to the category property of this FindingAnalyticsDimensions.
+        :type category: str
+
         :param title:
             The value to assign to the title property of this FindingAnalyticsDimensions.
         :type title: str
@@ -92,33 +96,50 @@ class FindingAnalyticsDimensions(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type severity: str
 
+        :param remarks:
+            The value to assign to the remarks property of this FindingAnalyticsDimensions.
+        :type remarks: str
+
         :param target_id:
             The value to assign to the target_id property of this FindingAnalyticsDimensions.
         :type target_id: str
+
+        :param references:
+            The value to assign to the references property of this FindingAnalyticsDimensions.
+        :type references: oci.data_safe.models.References
 
         """
         self.swagger_types = {
             'key': 'str',
             'top_finding_category': 'str',
+            'category': 'str',
             'title': 'str',
             'top_finding_status': 'str',
             'severity': 'str',
-            'target_id': 'str'
+            'remarks': 'str',
+            'target_id': 'str',
+            'references': 'References'
         }
         self.attribute_map = {
             'key': 'key',
             'top_finding_category': 'topFindingCategory',
+            'category': 'category',
             'title': 'title',
             'top_finding_status': 'topFindingStatus',
             'severity': 'severity',
-            'target_id': 'targetId'
+            'remarks': 'remarks',
+            'target_id': 'targetId',
+            'references': 'references'
         }
         self._key = None
         self._top_finding_category = None
+        self._category = None
         self._title = None
         self._top_finding_status = None
         self._severity = None
+        self._remarks = None
         self._target_id = None
+        self._references = None
 
     @property
     def key(self):
@@ -169,6 +190,30 @@ class FindingAnalyticsDimensions(object):
         :type: str
         """
         self._top_finding_category = top_finding_category
+
+    @property
+    def category(self):
+        """
+        Gets the category of this FindingAnalyticsDimensions.
+        The category of the top finding.
+
+
+        :return: The category of this FindingAnalyticsDimensions.
+        :rtype: str
+        """
+        return self._category
+
+    @category.setter
+    def category(self, category):
+        """
+        Sets the category of this FindingAnalyticsDimensions.
+        The category of the top finding.
+
+
+        :param category: The category of this FindingAnalyticsDimensions.
+        :type: str
+        """
+        self._category = category
 
     @property
     def title(self):
@@ -261,6 +306,30 @@ class FindingAnalyticsDimensions(object):
         self._severity = severity
 
     @property
+    def remarks(self):
+        """
+        Gets the remarks of this FindingAnalyticsDimensions.
+        The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
+
+
+        :return: The remarks of this FindingAnalyticsDimensions.
+        :rtype: str
+        """
+        return self._remarks
+
+    @remarks.setter
+    def remarks(self, remarks):
+        """
+        Sets the remarks of this FindingAnalyticsDimensions.
+        The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
+
+
+        :param remarks: The remarks of this FindingAnalyticsDimensions.
+        :type: str
+        """
+        self._remarks = remarks
+
+    @property
     def target_id(self):
         """
         Gets the target_id of this FindingAnalyticsDimensions.
@@ -283,6 +352,30 @@ class FindingAnalyticsDimensions(object):
         :type: str
         """
         self._target_id = target_id
+
+    @property
+    def references(self):
+        """
+        Gets the references of this FindingAnalyticsDimensions.
+        Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
+
+
+        :return: The references of this FindingAnalyticsDimensions.
+        :rtype: oci.data_safe.models.References
+        """
+        return self._references
+
+    @references.setter
+    def references(self, references):
+        """
+        Sets the references of this FindingAnalyticsDimensions.
+        Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
+
+
+        :param references: The references of this FindingAnalyticsDimensions.
+        :type: oci.data_safe.models.References
+        """
+        self._references = references
 
     def __repr__(self):
         return formatted_flat_dict(self)

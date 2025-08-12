@@ -60,6 +60,10 @@ class SecurityPolicySummary(object):
             The value to assign to the description property of this SecurityPolicySummary.
         :type description: str
 
+        :param security_policy_type:
+            The value to assign to the security_policy_type property of this SecurityPolicySummary.
+        :type security_policy_type: str
+
         :param time_created:
             The value to assign to the time_created property of this SecurityPolicySummary.
         :type time_created: datetime
@@ -96,6 +100,7 @@ class SecurityPolicySummary(object):
             'compartment_id': 'str',
             'display_name': 'str',
             'description': 'str',
+            'security_policy_type': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
@@ -109,6 +114,7 @@ class SecurityPolicySummary(object):
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
             'description': 'description',
+            'security_policy_type': 'securityPolicyType',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
@@ -121,6 +127,7 @@ class SecurityPolicySummary(object):
         self._compartment_id = None
         self._display_name = None
         self._description = None
+        self._security_policy_type = None
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
@@ -224,6 +231,30 @@ class SecurityPolicySummary(object):
         :type: str
         """
         self._description = description
+
+    @property
+    def security_policy_type(self):
+        """
+        Gets the security_policy_type of this SecurityPolicySummary.
+        The type of the security policy.
+
+
+        :return: The security_policy_type of this SecurityPolicySummary.
+        :rtype: str
+        """
+        return self._security_policy_type
+
+    @security_policy_type.setter
+    def security_policy_type(self, security_policy_type):
+        """
+        Sets the security_policy_type of this SecurityPolicySummary.
+        The type of the security policy.
+
+
+        :param security_policy_type: The security_policy_type of this SecurityPolicySummary.
+        :type: str
+        """
+        self._security_policy_type = security_policy_type
 
     @property
     def time_created(self):

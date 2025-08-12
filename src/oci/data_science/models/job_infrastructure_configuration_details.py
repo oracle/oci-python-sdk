@@ -23,11 +23,21 @@ class JobInfrastructureConfigurationDetails(object):
     #: This constant has a value of "ME_STANDALONE"
     JOB_INFRASTRUCTURE_TYPE_ME_STANDALONE = "ME_STANDALONE"
 
+    #: A constant which can be used with the job_infrastructure_type property of a JobInfrastructureConfigurationDetails.
+    #: This constant has a value of "MULTI_NODE"
+    JOB_INFRASTRUCTURE_TYPE_MULTI_NODE = "MULTI_NODE"
+
+    #: A constant which can be used with the job_infrastructure_type property of a JobInfrastructureConfigurationDetails.
+    #: This constant has a value of "EMPTY"
+    JOB_INFRASTRUCTURE_TYPE_EMPTY = "EMPTY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new JobInfrastructureConfigurationDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.data_science.models.MultiNodeJobInfrastructureConfigurationDetails`
+        * :class:`~oci.data_science.models.EmptyJobInfrastructureConfigurationDetails`
         * :class:`~oci.data_science.models.ManagedEgressStandaloneJobInfrastructureConfigurationDetails`
         * :class:`~oci.data_science.models.StandaloneJobInfrastructureConfigurationDetails`
 
@@ -35,7 +45,7 @@ class JobInfrastructureConfigurationDetails(object):
 
         :param job_infrastructure_type:
             The value to assign to the job_infrastructure_type property of this JobInfrastructureConfigurationDetails.
-            Allowed values for this property are: "STANDALONE", "ME_STANDALONE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "STANDALONE", "ME_STANDALONE", "MULTI_NODE", "EMPTY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type job_infrastructure_type: str
 
@@ -56,6 +66,12 @@ class JobInfrastructureConfigurationDetails(object):
         """
         type = object_dictionary['jobInfrastructureType']
 
+        if type == 'MULTI_NODE':
+            return 'MultiNodeJobInfrastructureConfigurationDetails'
+
+        if type == 'EMPTY':
+            return 'EmptyJobInfrastructureConfigurationDetails'
+
         if type == 'ME_STANDALONE':
             return 'ManagedEgressStandaloneJobInfrastructureConfigurationDetails'
 
@@ -70,7 +86,7 @@ class JobInfrastructureConfigurationDetails(object):
         **[Required]** Gets the job_infrastructure_type of this JobInfrastructureConfigurationDetails.
         The infrastructure type used for job run.
 
-        Allowed values for this property are: "STANDALONE", "ME_STANDALONE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "STANDALONE", "ME_STANDALONE", "MULTI_NODE", "EMPTY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -89,7 +105,7 @@ class JobInfrastructureConfigurationDetails(object):
         :param job_infrastructure_type: The job_infrastructure_type of this JobInfrastructureConfigurationDetails.
         :type: str
         """
-        allowed_values = ["STANDALONE", "ME_STANDALONE"]
+        allowed_values = ["STANDALONE", "ME_STANDALONE", "MULTI_NODE", "EMPTY"]
         if not value_allowed_none_or_none_sentinel(job_infrastructure_type, allowed_values):
             job_infrastructure_type = 'UNKNOWN_ENUM_VALUE'
         self._job_infrastructure_type = job_infrastructure_type

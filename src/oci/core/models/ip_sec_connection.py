@@ -501,7 +501,7 @@ class IPSecConnection(object):
     @property
     def static_routes(self):
         """
-        **[Required]** Gets the static_routes of this IPSecConnection.
+        Gets the static_routes of this IPSecConnection.
         Static routes to the CPE. The CIDR must not be a
         multicast address or class E address.
 

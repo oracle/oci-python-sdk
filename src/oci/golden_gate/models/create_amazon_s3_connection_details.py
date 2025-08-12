@@ -277,6 +277,7 @@ class CreateAmazonS3ConnectionDetails(CreateConnectionDetails):
         Gets the endpoint of this CreateAmazonS3ConnectionDetails.
         The Amazon Endpoint for S3.
         e.g.: 'https://my-bucket.s3.us-east-1.amazonaws.com'
+        If not provided, GoldenGate will default to 'https://s3.<region>.amazonaws.com'.
 
 
         :return: The endpoint of this CreateAmazonS3ConnectionDetails.
@@ -290,6 +291,7 @@ class CreateAmazonS3ConnectionDetails(CreateConnectionDetails):
         Sets the endpoint of this CreateAmazonS3ConnectionDetails.
         The Amazon Endpoint for S3.
         e.g.: 'https://my-bucket.s3.us-east-1.amazonaws.com'
+        If not provided, GoldenGate will default to 'https://s3.<region>.amazonaws.com'.
 
 
         :param endpoint: The endpoint of this CreateAmazonS3ConnectionDetails.
@@ -301,7 +303,9 @@ class CreateAmazonS3ConnectionDetails(CreateConnectionDetails):
     def region(self):
         """
         Gets the region of this CreateAmazonS3ConnectionDetails.
-        The name of the region where the bucket is created.
+        The name of the AWS region where the bucket is created.
+        If not provided, GoldenGate will default to 'us-west-2'.
+        Note: this property will become mandatory after May 20, 2026.
 
 
         :return: The region of this CreateAmazonS3ConnectionDetails.
@@ -313,7 +317,9 @@ class CreateAmazonS3ConnectionDetails(CreateConnectionDetails):
     def region(self, region):
         """
         Sets the region of this CreateAmazonS3ConnectionDetails.
-        The name of the region where the bucket is created.
+        The name of the AWS region where the bucket is created.
+        If not provided, GoldenGate will default to 'us-west-2'.
+        Note: this property will become mandatory after May 20, 2026.
 
 
         :param region: The region of this CreateAmazonS3ConnectionDetails.

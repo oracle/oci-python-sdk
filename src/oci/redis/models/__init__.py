@@ -6,21 +6,35 @@
 
 from __future__ import absolute_import
 
+from .associated_oci_cache_cluster_collection import AssociatedOciCacheClusterCollection
+from .associated_oci_cache_cluster_summary import AssociatedOciCacheClusterSummary
 from .attach_oci_cache_users_details import AttachOciCacheUsersDetails
 from .attached_oci_cache_cluster import AttachedOciCacheCluster
 from .attached_oci_cache_user import AttachedOciCacheUser
 from .authentication_mode import AuthenticationMode
+from .change_oci_cache_config_set_compartment_details import ChangeOciCacheConfigSetCompartmentDetails
 from .change_oci_cache_user_compartment_details import ChangeOciCacheUserCompartmentDetails
 from .change_redis_cluster_compartment_details import ChangeRedisClusterCompartmentDetails
+from .configuration_details import ConfigurationDetails
+from .configuration_info import ConfigurationInfo
 from .create_identity_token_details import CreateIdentityTokenDetails
+from .create_oci_cache_config_set_details import CreateOciCacheConfigSetDetails
 from .create_oci_cache_user_details import CreateOciCacheUserDetails
 from .create_redis_cluster_details import CreateRedisClusterDetails
+from .default_configuration_details import DefaultConfigurationDetails
+from .default_configuration_info import DefaultConfigurationInfo
 from .detach_oci_cache_users_details import DetachOciCacheUsersDetails
 from .iam_authentication_mode import IamAuthenticationMode
 from .identity_token_details_response import IdentityTokenDetailsResponse
 from .node import Node
 from .node_collection import NodeCollection
 from .node_summary import NodeSummary
+from .oci_cache_config_set import OciCacheConfigSet
+from .oci_cache_config_set_collection import OciCacheConfigSetCollection
+from .oci_cache_config_set_summary import OciCacheConfigSetSummary
+from .oci_cache_default_config_set import OciCacheDefaultConfigSet
+from .oci_cache_default_config_set_collection import OciCacheDefaultConfigSetCollection
+from .oci_cache_default_config_set_summary import OciCacheDefaultConfigSetSummary
 from .oci_cache_user import OciCacheUser
 from .oci_cache_user_collection import OciCacheUserCollection
 from .oci_cache_user_summary import OciCacheUserSummary
@@ -29,6 +43,7 @@ from .redis_cluster import RedisCluster
 from .redis_cluster_collection import RedisClusterCollection
 from .redis_cluster_summary import RedisClusterSummary
 from .redis_node_collection import RedisNodeCollection
+from .update_oci_cache_config_set_details import UpdateOciCacheConfigSetDetails
 from .update_oci_cache_user_details import UpdateOciCacheUserDetails
 from .update_redis_cluster_details import UpdateRedisClusterDetails
 from .work_request import WorkRequest
@@ -42,21 +57,35 @@ from .work_request_summary_collection import WorkRequestSummaryCollection
 
 # Maps type names to classes for redis services.
 redis_type_mapping = {
+    "AssociatedOciCacheClusterCollection": AssociatedOciCacheClusterCollection,
+    "AssociatedOciCacheClusterSummary": AssociatedOciCacheClusterSummary,
     "AttachOciCacheUsersDetails": AttachOciCacheUsersDetails,
     "AttachedOciCacheCluster": AttachedOciCacheCluster,
     "AttachedOciCacheUser": AttachedOciCacheUser,
     "AuthenticationMode": AuthenticationMode,
+    "ChangeOciCacheConfigSetCompartmentDetails": ChangeOciCacheConfigSetCompartmentDetails,
     "ChangeOciCacheUserCompartmentDetails": ChangeOciCacheUserCompartmentDetails,
     "ChangeRedisClusterCompartmentDetails": ChangeRedisClusterCompartmentDetails,
+    "ConfigurationDetails": ConfigurationDetails,
+    "ConfigurationInfo": ConfigurationInfo,
     "CreateIdentityTokenDetails": CreateIdentityTokenDetails,
+    "CreateOciCacheConfigSetDetails": CreateOciCacheConfigSetDetails,
     "CreateOciCacheUserDetails": CreateOciCacheUserDetails,
     "CreateRedisClusterDetails": CreateRedisClusterDetails,
+    "DefaultConfigurationDetails": DefaultConfigurationDetails,
+    "DefaultConfigurationInfo": DefaultConfigurationInfo,
     "DetachOciCacheUsersDetails": DetachOciCacheUsersDetails,
     "IamAuthenticationMode": IamAuthenticationMode,
     "IdentityTokenDetailsResponse": IdentityTokenDetailsResponse,
     "Node": Node,
     "NodeCollection": NodeCollection,
     "NodeSummary": NodeSummary,
+    "OciCacheConfigSet": OciCacheConfigSet,
+    "OciCacheConfigSetCollection": OciCacheConfigSetCollection,
+    "OciCacheConfigSetSummary": OciCacheConfigSetSummary,
+    "OciCacheDefaultConfigSet": OciCacheDefaultConfigSet,
+    "OciCacheDefaultConfigSetCollection": OciCacheDefaultConfigSetCollection,
+    "OciCacheDefaultConfigSetSummary": OciCacheDefaultConfigSetSummary,
     "OciCacheUser": OciCacheUser,
     "OciCacheUserCollection": OciCacheUserCollection,
     "OciCacheUserSummary": OciCacheUserSummary,
@@ -65,6 +94,7 @@ redis_type_mapping = {
     "RedisClusterCollection": RedisClusterCollection,
     "RedisClusterSummary": RedisClusterSummary,
     "RedisNodeCollection": RedisNodeCollection,
+    "UpdateOciCacheConfigSetDetails": UpdateOciCacheConfigSetDetails,
     "UpdateOciCacheUserDetails": UpdateOciCacheUserDetails,
     "UpdateRedisClusterDetails": UpdateRedisClusterDetails,
     "WorkRequest": WorkRequest,

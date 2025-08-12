@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class IncidentSummary(object):
     """
-    Details about the support ticket.
+    Details about the support request.
     """
 
     #: A constant which can be used with the problem_type property of a IncidentSummary.
@@ -64,6 +64,10 @@ class IncidentSummary(object):
             The value to assign to the incident_type property of this IncidentSummary.
         :type incident_type: oci.cims.models.IncidentResourceType
 
+        :param migrated_sr_number:
+            The value to assign to the migrated_sr_number property of this IncidentSummary.
+        :type migrated_sr_number: str
+
         :param user_group_id:
             The value to assign to the user_group_id property of this IncidentSummary.
         :type user_group_id: str
@@ -102,6 +106,7 @@ class IncidentSummary(object):
             'tenancy_information': 'TenancyInformation',
             'ticket': 'Ticket',
             'incident_type': 'IncidentResourceType',
+            'migrated_sr_number': 'str',
             'user_group_id': 'str',
             'user_group_name': 'str',
             'primary_contact_party_id': 'str',
@@ -117,6 +122,7 @@ class IncidentSummary(object):
             'tenancy_information': 'tenancyInformation',
             'ticket': 'ticket',
             'incident_type': 'incidentType',
+            'migrated_sr_number': 'migratedSrNumber',
             'user_group_id': 'userGroupId',
             'user_group_name': 'userGroupName',
             'primary_contact_party_id': 'primaryContactPartyId',
@@ -131,6 +137,7 @@ class IncidentSummary(object):
         self._tenancy_information = None
         self._ticket = None
         self._incident_type = None
+        self._migrated_sr_number = None
         self._user_group_id = None
         self._user_group_name = None
         self._primary_contact_party_id = None
@@ -266,6 +273,30 @@ class IncidentSummary(object):
         :type: oci.cims.models.IncidentResourceType
         """
         self._incident_type = incident_type
+
+    @property
+    def migrated_sr_number(self):
+        """
+        Gets the migrated_sr_number of this IncidentSummary.
+        Technical support type (`TECH`) only: The pre-migration identifier of the support request in My Oracle Support (MOS).
+
+
+        :return: The migrated_sr_number of this IncidentSummary.
+        :rtype: str
+        """
+        return self._migrated_sr_number
+
+    @migrated_sr_number.setter
+    def migrated_sr_number(self, migrated_sr_number):
+        """
+        Sets the migrated_sr_number of this IncidentSummary.
+        Technical support type (`TECH`) only: The pre-migration identifier of the support request in My Oracle Support (MOS).
+
+
+        :param migrated_sr_number: The migrated_sr_number of this IncidentSummary.
+        :type: str
+        """
+        self._migrated_sr_number = migrated_sr_number
 
     @property
     def user_group_id(self):
@@ -417,12 +448,12 @@ class IncidentSummary(object):
     def problem_type(self):
         """
         **[Required]** Gets the problem_type of this IncidentSummary.
-        The kind of support ticket (type of support request).
-        For information about `ACCOUNT` support tickets, see
+        The kind of support request (type of support request).
+        For information about `ACCOUNT` support requests, see
         `Creating a Billing Support Request`__.
-        For information about `LIMIT` support tickets, see
+        For information about `LIMIT` support requests, see
         `Creating a Service Limit Increase Request`__.
-        For information about `TECH` support tickets, see
+        For information about `TECH` support requests, see
         `Creating a Technical Support Request`__.
 
         __ https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm
@@ -442,12 +473,12 @@ class IncidentSummary(object):
     def problem_type(self, problem_type):
         """
         Sets the problem_type of this IncidentSummary.
-        The kind of support ticket (type of support request).
-        For information about `ACCOUNT` support tickets, see
+        The kind of support request (type of support request).
+        For information about `ACCOUNT` support requests, see
         `Creating a Billing Support Request`__.
-        For information about `LIMIT` support tickets, see
+        For information about `LIMIT` support requests, see
         `Creating a Service Limit Increase Request`__.
-        For information about `TECH` support tickets, see
+        For information about `TECH` support requests, see
         `Creating a Technical Support Request`__.
 
         __ https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm

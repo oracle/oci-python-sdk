@@ -1,0 +1,11 @@
+AllUserCondition
+================
+
+.. currentmodule:: oci.data_safe.models
+
+.. autoclass:: AllUserCondition
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

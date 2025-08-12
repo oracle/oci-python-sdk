@@ -296,6 +296,7 @@ from .drg_attachment_network_create_details import DrgAttachmentNetworkCreateDet
 from .drg_attachment_network_details import DrgAttachmentNetworkDetails
 from .drg_attachment_network_update_details import DrgAttachmentNetworkUpdateDetails
 from .drg_attachment_type_drg_route_distribution_match_criteria import DrgAttachmentTypeDrgRouteDistributionMatchCriteria
+from .drg_promotion_status_response import DrgPromotionStatusResponse
 from .drg_redundancy_status import DrgRedundancyStatus
 from .drg_route_distribution import DrgRouteDistribution
 from .drg_route_distribution_match_criteria import DrgRouteDistributionMatchCriteria
@@ -359,6 +360,7 @@ from .instance_configuration_create_vnic_details import InstanceConfigurationCre
 from .instance_configuration_create_volume_details import InstanceConfigurationCreateVolumeDetails
 from .instance_configuration_detached_volume_autotune_policy import InstanceConfigurationDetachedVolumeAutotunePolicy
 from .instance_configuration_generic_bm_launch_instance_platform_config import InstanceConfigurationGenericBmLaunchInstancePlatformConfig
+from .instance_configuration_host_group_placement_constraint_details import InstanceConfigurationHostGroupPlacementConstraintDetails
 from .instance_configuration_instance_details import InstanceConfigurationInstanceDetails
 from .instance_configuration_instance_options import InstanceConfigurationInstanceOptions
 from .instance_configuration_instance_source_details import InstanceConfigurationInstanceSourceDetails
@@ -377,6 +379,7 @@ from .instance_configuration_launch_instance_shape_config_details import Instanc
 from .instance_configuration_launch_options import InstanceConfigurationLaunchOptions
 from .instance_configuration_paravirtualized_attach_volume_details import InstanceConfigurationParavirtualizedAttachVolumeDetails
 from .instance_configuration_performance_based_autotune_policy import InstanceConfigurationPerformanceBasedAutotunePolicy
+from .instance_configuration_placement_constraint_details import InstanceConfigurationPlacementConstraintDetails
 from .instance_configuration_summary import InstanceConfigurationSummary
 from .instance_configuration_volume_source_details import InstanceConfigurationVolumeSourceDetails
 from .instance_configuration_volume_source_from_volume_backup_details import InstanceConfigurationVolumeSourceFromVolumeBackupDetails
@@ -953,6 +956,7 @@ core_type_mapping = {
     "DrgAttachmentNetworkDetails": DrgAttachmentNetworkDetails,
     "DrgAttachmentNetworkUpdateDetails": DrgAttachmentNetworkUpdateDetails,
     "DrgAttachmentTypeDrgRouteDistributionMatchCriteria": DrgAttachmentTypeDrgRouteDistributionMatchCriteria,
+    "DrgPromotionStatusResponse": DrgPromotionStatusResponse,
     "DrgRedundancyStatus": DrgRedundancyStatus,
     "DrgRouteDistribution": DrgRouteDistribution,
     "DrgRouteDistributionMatchCriteria": DrgRouteDistributionMatchCriteria,
@@ -1016,6 +1020,7 @@ core_type_mapping = {
     "InstanceConfigurationCreateVolumeDetails": InstanceConfigurationCreateVolumeDetails,
     "InstanceConfigurationDetachedVolumeAutotunePolicy": InstanceConfigurationDetachedVolumeAutotunePolicy,
     "InstanceConfigurationGenericBmLaunchInstancePlatformConfig": InstanceConfigurationGenericBmLaunchInstancePlatformConfig,
+    "InstanceConfigurationHostGroupPlacementConstraintDetails": InstanceConfigurationHostGroupPlacementConstraintDetails,
     "InstanceConfigurationInstanceDetails": InstanceConfigurationInstanceDetails,
     "InstanceConfigurationInstanceOptions": InstanceConfigurationInstanceOptions,
     "InstanceConfigurationInstanceSourceDetails": InstanceConfigurationInstanceSourceDetails,
@@ -1034,6 +1039,7 @@ core_type_mapping = {
     "InstanceConfigurationLaunchOptions": InstanceConfigurationLaunchOptions,
     "InstanceConfigurationParavirtualizedAttachVolumeDetails": InstanceConfigurationParavirtualizedAttachVolumeDetails,
     "InstanceConfigurationPerformanceBasedAutotunePolicy": InstanceConfigurationPerformanceBasedAutotunePolicy,
+    "InstanceConfigurationPlacementConstraintDetails": InstanceConfigurationPlacementConstraintDetails,
     "InstanceConfigurationSummary": InstanceConfigurationSummary,
     "InstanceConfigurationVolumeSourceDetails": InstanceConfigurationVolumeSourceDetails,
     "InstanceConfigurationVolumeSourceFromVolumeBackupDetails": InstanceConfigurationVolumeSourceFromVolumeBackupDetails,

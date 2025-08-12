@@ -51,6 +51,26 @@ class Report(object):
     #: This constant has a value of "SCHEDULED"
     TYPE_SCHEDULED = "SCHEDULED"
 
+    #: A constant which can be used with the data_source property of a Report.
+    #: This constant has a value of "EVENTS"
+    DATA_SOURCE_EVENTS = "EVENTS"
+
+    #: A constant which can be used with the data_source property of a Report.
+    #: This constant has a value of "ALERTS"
+    DATA_SOURCE_ALERTS = "ALERTS"
+
+    #: A constant which can be used with the data_source property of a Report.
+    #: This constant has a value of "SECURITY_ASSESSMENT"
+    DATA_SOURCE_SECURITY_ASSESSMENT = "SECURITY_ASSESSMENT"
+
+    #: A constant which can be used with the data_source property of a Report.
+    #: This constant has a value of "VIOLATIONS"
+    DATA_SOURCE_VIOLATIONS = "VIOLATIONS"
+
+    #: A constant which can be used with the data_source property of a Report.
+    #: This constant has a value of "ALLOWED_SQL"
+    DATA_SOURCE_ALLOWED_SQL = "ALLOWED_SQL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Report object with values from keyword arguments.
@@ -86,6 +106,14 @@ class Report(object):
             The value to assign to the time_generated property of this Report.
         :type time_generated: datetime
 
+        :param time_created:
+            The value to assign to the time_created property of this Report.
+        :type time_created: datetime
+
+        :param time_updated:
+            The value to assign to the time_updated property of this Report.
+        :type time_updated: datetime
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Report.
             Allowed values for this property are: "UPDATING", "ACTIVE", "CREATING", "FAILED", 'UNKNOWN_ENUM_VALUE'.
@@ -97,6 +125,12 @@ class Report(object):
             Allowed values for this property are: "GENERATED", "SCHEDULED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
+
+        :param data_source:
+            The value to assign to the data_source property of this Report.
+            Allowed values for this property are: "EVENTS", "ALERTS", "SECURITY_ASSESSMENT", "VIOLATIONS", "ALLOWED_SQL", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type data_source: str
 
         :param lifecycle_details:
             The value to assign to the lifecycle_details property of this Report.
@@ -123,8 +157,11 @@ class Report(object):
             'compartment_id': 'str',
             'mime_type': 'str',
             'time_generated': 'datetime',
+            'time_created': 'datetime',
+            'time_updated': 'datetime',
             'lifecycle_state': 'str',
             'type': 'str',
+            'data_source': 'str',
             'lifecycle_details': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -138,8 +175,11 @@ class Report(object):
             'compartment_id': 'compartmentId',
             'mime_type': 'mimeType',
             'time_generated': 'timeGenerated',
+            'time_created': 'timeCreated',
+            'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
             'type': 'type',
+            'data_source': 'dataSource',
             'lifecycle_details': 'lifecycleDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -152,8 +192,11 @@ class Report(object):
         self._compartment_id = None
         self._mime_type = None
         self._time_generated = None
+        self._time_created = None
+        self._time_updated = None
         self._lifecycle_state = None
         self._type = None
+        self._data_source = None
         self._lifecycle_details = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -334,6 +377,54 @@ class Report(object):
         self._time_generated = time_generated
 
     @property
+    def time_created(self):
+        """
+        Gets the time_created of this Report.
+        Specifies the time at which the report was created.
+
+
+        :return: The time_created of this Report.
+        :rtype: datetime
+        """
+        return self._time_created
+
+    @time_created.setter
+    def time_created(self, time_created):
+        """
+        Sets the time_created of this Report.
+        Specifies the time at which the report was created.
+
+
+        :param time_created: The time_created of this Report.
+        :type: datetime
+        """
+        self._time_created = time_created
+
+    @property
+    def time_updated(self):
+        """
+        Gets the time_updated of this Report.
+        The date and time of the report update in Data Safe.
+
+
+        :return: The time_updated of this Report.
+        :rtype: datetime
+        """
+        return self._time_updated
+
+    @time_updated.setter
+    def time_updated(self, time_updated):
+        """
+        Sets the time_updated of this Report.
+        The date and time of the report update in Data Safe.
+
+
+        :param time_updated: The time_updated of this Report.
+        :type: datetime
+        """
+        self._time_updated = time_updated
+
+    @property
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this Report.
@@ -392,6 +483,36 @@ class Report(object):
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type
+
+    @property
+    def data_source(self):
+        """
+        Gets the data_source of this Report.
+        Specifies the name of a resource that provides data for the report. For example alerts, events.
+
+        Allowed values for this property are: "EVENTS", "ALERTS", "SECURITY_ASSESSMENT", "VIOLATIONS", "ALLOWED_SQL", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The data_source of this Report.
+        :rtype: str
+        """
+        return self._data_source
+
+    @data_source.setter
+    def data_source(self, data_source):
+        """
+        Sets the data_source of this Report.
+        Specifies the name of a resource that provides data for the report. For example alerts, events.
+
+
+        :param data_source: The data_source of this Report.
+        :type: str
+        """
+        allowed_values = ["EVENTS", "ALERTS", "SECURITY_ASSESSMENT", "VIOLATIONS", "ALLOWED_SQL"]
+        if not value_allowed_none_or_none_sentinel(data_source, allowed_values):
+            data_source = 'UNKNOWN_ENUM_VALUE'
+        self._data_source = data_source
 
     @property
     def lifecycle_details(self):

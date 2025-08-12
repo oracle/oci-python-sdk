@@ -55,6 +55,14 @@ class InstanceConfigurationLaunchInstanceDetails(object):
             The value to assign to the capacity_reservation_id property of this InstanceConfigurationLaunchInstanceDetails.
         :type capacity_reservation_id: str
 
+        :param placement_constraint_details:
+            The value to assign to the placement_constraint_details property of this InstanceConfigurationLaunchInstanceDetails.
+        :type placement_constraint_details: oci.core.models.InstanceConfigurationPlacementConstraintDetails
+
+        :param compute_cluster_id:
+            The value to assign to the compute_cluster_id property of this InstanceConfigurationLaunchInstanceDetails.
+        :type compute_cluster_id: str
+
         :param compartment_id:
             The value to assign to the compartment_id property of this InstanceConfigurationLaunchInstanceDetails.
         :type compartment_id: str
@@ -163,6 +171,8 @@ class InstanceConfigurationLaunchInstanceDetails(object):
         self.swagger_types = {
             'availability_domain': 'str',
             'capacity_reservation_id': 'str',
+            'placement_constraint_details': 'InstanceConfigurationPlacementConstraintDetails',
+            'compute_cluster_id': 'str',
             'compartment_id': 'str',
             'cluster_placement_group_id': 'str',
             'create_vnic_details': 'InstanceConfigurationCreateVnicDetails',
@@ -192,6 +202,8 @@ class InstanceConfigurationLaunchInstanceDetails(object):
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'capacity_reservation_id': 'capacityReservationId',
+            'placement_constraint_details': 'placementConstraintDetails',
+            'compute_cluster_id': 'computeClusterId',
             'compartment_id': 'compartmentId',
             'cluster_placement_group_id': 'clusterPlacementGroupId',
             'create_vnic_details': 'createVnicDetails',
@@ -220,6 +232,8 @@ class InstanceConfigurationLaunchInstanceDetails(object):
         }
         self._availability_domain = None
         self._capacity_reservation_id = None
+        self._placement_constraint_details = None
+        self._compute_cluster_id = None
         self._compartment_id = None
         self._cluster_placement_group_id = None
         self._create_vnic_details = None
@@ -297,6 +311,58 @@ class InstanceConfigurationLaunchInstanceDetails(object):
         :type: str
         """
         self._capacity_reservation_id = capacity_reservation_id
+
+    @property
+    def placement_constraint_details(self):
+        """
+        Gets the placement_constraint_details of this InstanceConfigurationLaunchInstanceDetails.
+
+        :return: The placement_constraint_details of this InstanceConfigurationLaunchInstanceDetails.
+        :rtype: oci.core.models.InstanceConfigurationPlacementConstraintDetails
+        """
+        return self._placement_constraint_details
+
+    @placement_constraint_details.setter
+    def placement_constraint_details(self, placement_constraint_details):
+        """
+        Sets the placement_constraint_details of this InstanceConfigurationLaunchInstanceDetails.
+
+        :param placement_constraint_details: The placement_constraint_details of this InstanceConfigurationLaunchInstanceDetails.
+        :type: oci.core.models.InstanceConfigurationPlacementConstraintDetails
+        """
+        self._placement_constraint_details = placement_constraint_details
+
+    @property
+    def compute_cluster_id(self):
+        """
+        Gets the compute_cluster_id of this InstanceConfigurationLaunchInstanceDetails.
+        The `OCID`__ of the
+        `compute cluster`__ that the instance will be created in.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
+
+
+        :return: The compute_cluster_id of this InstanceConfigurationLaunchInstanceDetails.
+        :rtype: str
+        """
+        return self._compute_cluster_id
+
+    @compute_cluster_id.setter
+    def compute_cluster_id(self, compute_cluster_id):
+        """
+        Sets the compute_cluster_id of this InstanceConfigurationLaunchInstanceDetails.
+        The `OCID`__ of the
+        `compute cluster`__ that the instance will be created in.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
+
+
+        :param compute_cluster_id: The compute_cluster_id of this InstanceConfigurationLaunchInstanceDetails.
+        :type: str
+        """
+        self._compute_cluster_id = compute_cluster_id
 
     @property
     def compartment_id(self):

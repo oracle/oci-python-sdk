@@ -12,8 +12,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateTechSupportItemDetails(CreateItemDetails):
     """
-    Details about the issue that the technical support ticket relates to. Avoid entering confidential information.
-    For information about `TECH` support tickets, see `Creating a Technical Support Request`__.
+    Details about the issue that the technical support request relates to. Avoid entering confidential information.
+    For information about `TECH` support requests, see `Creating a Technical Support Request`__.
 
     __ https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm
     """

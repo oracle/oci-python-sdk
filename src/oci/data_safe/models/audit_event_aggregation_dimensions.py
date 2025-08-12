@@ -104,6 +104,34 @@ class AuditEventAggregationDimensions(object):
             The value to assign to the event_name property of this AuditEventAggregationDimensions.
         :type event_name: list[str]
 
+        :param object_owner:
+            The value to assign to the object_owner property of this AuditEventAggregationDimensions.
+        :type object_owner: list[str]
+
+        :param audit_policies:
+            The value to assign to the audit_policies property of this AuditEventAggregationDimensions.
+        :type audit_policies: list[str]
+
+        :param object_name:
+            The value to assign to the object_name property of this AuditEventAggregationDimensions.
+        :type object_name: list[str]
+
+        :param os_user_name:
+            The value to assign to the os_user_name property of this AuditEventAggregationDimensions.
+        :type os_user_name: list[str]
+
+        :param error_code:
+            The value to assign to the error_code property of this AuditEventAggregationDimensions.
+        :type error_code: list[str]
+
+        :param client_ip:
+            The value to assign to the client_ip property of this AuditEventAggregationDimensions.
+        :type client_ip: list[str]
+
+        :param external_user_id:
+            The value to assign to the external_user_id property of this AuditEventAggregationDimensions.
+        :type external_user_id: list[str]
+
         """
         self.swagger_types = {
             'audit_event_time': 'list[datetime]',
@@ -116,7 +144,14 @@ class AuditEventAggregationDimensions(object):
             'client_program': 'list[str]',
             'client_id': 'list[str]',
             'audit_type': 'list[str]',
-            'event_name': 'list[str]'
+            'event_name': 'list[str]',
+            'object_owner': 'list[str]',
+            'audit_policies': 'list[str]',
+            'object_name': 'list[str]',
+            'os_user_name': 'list[str]',
+            'error_code': 'list[str]',
+            'client_ip': 'list[str]',
+            'external_user_id': 'list[str]'
         }
         self.attribute_map = {
             'audit_event_time': 'auditEventTime',
@@ -129,7 +164,14 @@ class AuditEventAggregationDimensions(object):
             'client_program': 'clientProgram',
             'client_id': 'clientId',
             'audit_type': 'auditType',
-            'event_name': 'eventName'
+            'event_name': 'eventName',
+            'object_owner': 'objectOwner',
+            'audit_policies': 'auditPolicies',
+            'object_name': 'objectName',
+            'os_user_name': 'osUserName',
+            'error_code': 'errorCode',
+            'client_ip': 'clientIp',
+            'external_user_id': 'externalUserId'
         }
         self._audit_event_time = None
         self._db_user_name = None
@@ -142,6 +184,13 @@ class AuditEventAggregationDimensions(object):
         self._client_id = None
         self._audit_type = None
         self._event_name = None
+        self._object_owner = None
+        self._audit_policies = None
+        self._object_name = None
+        self._os_user_name = None
+        self._error_code = None
+        self._client_ip = None
+        self._external_user_id = None
 
     @property
     def audit_event_time(self):
@@ -418,6 +467,174 @@ class AuditEventAggregationDimensions(object):
         :type: list[str]
         """
         self._event_name = event_name
+
+    @property
+    def object_owner(self):
+        """
+        Gets the object_owner of this AuditEventAggregationDimensions.
+        The schema name of the object affected by the action.
+
+
+        :return: The object_owner of this AuditEventAggregationDimensions.
+        :rtype: list[str]
+        """
+        return self._object_owner
+
+    @object_owner.setter
+    def object_owner(self, object_owner):
+        """
+        Sets the object_owner of this AuditEventAggregationDimensions.
+        The schema name of the object affected by the action.
+
+
+        :param object_owner: The object_owner of this AuditEventAggregationDimensions.
+        :type: list[str]
+        """
+        self._object_owner = object_owner
+
+    @property
+    def audit_policies(self):
+        """
+        Gets the audit_policies of this AuditEventAggregationDimensions.
+        Comma-seperated list of audit policies that caused the current audit event.
+
+
+        :return: The audit_policies of this AuditEventAggregationDimensions.
+        :rtype: list[str]
+        """
+        return self._audit_policies
+
+    @audit_policies.setter
+    def audit_policies(self, audit_policies):
+        """
+        Sets the audit_policies of this AuditEventAggregationDimensions.
+        Comma-seperated list of audit policies that caused the current audit event.
+
+
+        :param audit_policies: The audit_policies of this AuditEventAggregationDimensions.
+        :type: list[str]
+        """
+        self._audit_policies = audit_policies
+
+    @property
+    def object_name(self):
+        """
+        Gets the object_name of this AuditEventAggregationDimensions.
+        The name of the object affected by the action.
+
+
+        :return: The object_name of this AuditEventAggregationDimensions.
+        :rtype: list[str]
+        """
+        return self._object_name
+
+    @object_name.setter
+    def object_name(self, object_name):
+        """
+        Sets the object_name of this AuditEventAggregationDimensions.
+        The name of the object affected by the action.
+
+
+        :param object_name: The object_name of this AuditEventAggregationDimensions.
+        :type: list[str]
+        """
+        self._object_name = object_name
+
+    @property
+    def os_user_name(self):
+        """
+        Gets the os_user_name of this AuditEventAggregationDimensions.
+        The name of the operating system user for the database session.
+
+
+        :return: The os_user_name of this AuditEventAggregationDimensions.
+        :rtype: list[str]
+        """
+        return self._os_user_name
+
+    @os_user_name.setter
+    def os_user_name(self, os_user_name):
+        """
+        Sets the os_user_name of this AuditEventAggregationDimensions.
+        The name of the operating system user for the database session.
+
+
+        :param os_user_name: The os_user_name of this AuditEventAggregationDimensions.
+        :type: list[str]
+        """
+        self._os_user_name = os_user_name
+
+    @property
+    def error_code(self):
+        """
+        Gets the error_code of this AuditEventAggregationDimensions.
+        The Oracle error code generated by the action.
+
+
+        :return: The error_code of this AuditEventAggregationDimensions.
+        :rtype: list[str]
+        """
+        return self._error_code
+
+    @error_code.setter
+    def error_code(self, error_code):
+        """
+        Sets the error_code of this AuditEventAggregationDimensions.
+        The Oracle error code generated by the action.
+
+
+        :param error_code: The error_code of this AuditEventAggregationDimensions.
+        :type: list[str]
+        """
+        self._error_code = error_code
+
+    @property
+    def client_ip(self):
+        """
+        Gets the client_ip of this AuditEventAggregationDimensions.
+        The IP address of the host from which the session was spawned.
+
+
+        :return: The client_ip of this AuditEventAggregationDimensions.
+        :rtype: list[str]
+        """
+        return self._client_ip
+
+    @client_ip.setter
+    def client_ip(self, client_ip):
+        """
+        Sets the client_ip of this AuditEventAggregationDimensions.
+        The IP address of the host from which the session was spawned.
+
+
+        :param client_ip: The client_ip of this AuditEventAggregationDimensions.
+        :type: list[str]
+        """
+        self._client_ip = client_ip
+
+    @property
+    def external_user_id(self):
+        """
+        Gets the external_user_id of this AuditEventAggregationDimensions.
+        The user ID of the external user of the audit event.
+
+
+        :return: The external_user_id of this AuditEventAggregationDimensions.
+        :rtype: list[str]
+        """
+        return self._external_user_id
+
+    @external_user_id.setter
+    def external_user_id(self, external_user_id):
+        """
+        Sets the external_user_id of this AuditEventAggregationDimensions.
+        The user ID of the external user of the audit event.
+
+
+        :param external_user_id: The external_user_id of this AuditEventAggregationDimensions.
+        :type: list[str]
+        """
+        self._external_user_id = external_user_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

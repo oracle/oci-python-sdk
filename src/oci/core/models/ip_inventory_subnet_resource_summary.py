@@ -90,6 +90,10 @@ class IpInventorySubnetResourceSummary(object):
             The value to assign to the assigned_resource_name property of this IpInventorySubnetResourceSummary.
         :type assigned_resource_name: str
 
+        :param is_primary:
+            The value to assign to the is_primary property of this IpInventorySubnetResourceSummary.
+        :type is_primary: bool
+
         :param assigned_resource_type:
             The value to assign to the assigned_resource_type property of this IpInventorySubnetResourceSummary.
             Allowed values for this property are: "Resource", 'UNKNOWN_ENUM_VALUE'.
@@ -115,6 +119,7 @@ class IpInventorySubnetResourceSummary(object):
             'associated_public_ip_pool': 'str',
             'dns_host_name': 'str',
             'assigned_resource_name': 'str',
+            'is_primary': 'bool',
             'assigned_resource_type': 'str',
             'address_type': 'str',
             'assigned_time': 'datetime'
@@ -129,6 +134,7 @@ class IpInventorySubnetResourceSummary(object):
             'associated_public_ip_pool': 'associatedPublicIpPool',
             'dns_host_name': 'dnsHostName',
             'assigned_resource_name': 'assignedResourceName',
+            'is_primary': 'isPrimary',
             'assigned_resource_type': 'assignedResourceType',
             'address_type': 'addressType',
             'assigned_time': 'assignedTime'
@@ -142,6 +148,7 @@ class IpInventorySubnetResourceSummary(object):
         self._associated_public_ip_pool = None
         self._dns_host_name = None
         self._assigned_resource_name = None
+        self._is_primary = None
         self._assigned_resource_type = None
         self._address_type = None
         self._assigned_time = None
@@ -383,6 +390,30 @@ class IpInventorySubnetResourceSummary(object):
         :type: str
         """
         self._assigned_resource_name = assigned_resource_name
+
+    @property
+    def is_primary(self):
+        """
+        Gets the is_primary of this IpInventorySubnetResourceSummary.
+        Primary flag for IP Resource
+
+
+        :return: The is_primary of this IpInventorySubnetResourceSummary.
+        :rtype: bool
+        """
+        return self._is_primary
+
+    @is_primary.setter
+    def is_primary(self, is_primary):
+        """
+        Sets the is_primary of this IpInventorySubnetResourceSummary.
+        Primary flag for IP Resource
+
+
+        :param is_primary: The is_primary of this IpInventorySubnetResourceSummary.
+        :type: bool
+        """
+        self._is_primary = is_primary
 
     @property
     def assigned_resource_type(self):

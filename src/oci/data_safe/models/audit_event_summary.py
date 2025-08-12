@@ -226,6 +226,14 @@ class AuditEventSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type audit_type: str
 
+        :param external_user_id:
+            The value to assign to the external_user_id property of this AuditEventSummary.
+        :type external_user_id: str
+
+        :param target_user:
+            The value to assign to the target_user property of this AuditEventSummary.
+        :type target_user: str
+
         :param peer_target_database_key:
             The value to assign to the peer_target_database_key property of this AuditEventSummary.
         :type peer_target_database_key: int
@@ -290,6 +298,8 @@ class AuditEventSummary(object):
             'client_id': 'str',
             'audit_policies': 'str',
             'audit_type': 'str',
+            'external_user_id': 'str',
+            'target_user': 'str',
             'peer_target_database_key': 'int',
             'trail_source': 'str',
             'database_unique_name': 'str',
@@ -331,6 +341,8 @@ class AuditEventSummary(object):
             'client_id': 'clientId',
             'audit_policies': 'auditPolicies',
             'audit_type': 'auditType',
+            'external_user_id': 'externalUserId',
+            'target_user': 'targetUser',
             'peer_target_database_key': 'peerTargetDatabaseKey',
             'trail_source': 'trailSource',
             'database_unique_name': 'databaseUniqueName',
@@ -371,6 +383,8 @@ class AuditEventSummary(object):
         self._client_id = None
         self._audit_policies = None
         self._audit_type = None
+        self._external_user_id = None
+        self._target_user = None
         self._peer_target_database_key = None
         self._trail_source = None
         self._database_unique_name = None
@@ -1182,6 +1196,54 @@ class AuditEventSummary(object):
         if not value_allowed_none_or_none_sentinel(audit_type, allowed_values):
             audit_type = 'UNKNOWN_ENUM_VALUE'
         self._audit_type = audit_type
+
+    @property
+    def external_user_id(self):
+        """
+        Gets the external_user_id of this AuditEventSummary.
+        The user ID of the external user of the audit event.
+
+
+        :return: The external_user_id of this AuditEventSummary.
+        :rtype: str
+        """
+        return self._external_user_id
+
+    @external_user_id.setter
+    def external_user_id(self, external_user_id):
+        """
+        Sets the external_user_id of this AuditEventSummary.
+        The user ID of the external user of the audit event.
+
+
+        :param external_user_id: The external_user_id of this AuditEventSummary.
+        :type: str
+        """
+        self._external_user_id = external_user_id
+
+    @property
+    def target_user(self):
+        """
+        Gets the target_user of this AuditEventSummary.
+        The user on whom the GRANT/REVOKE/AUDIT/NOAUDIT statement was executed.
+
+
+        :return: The target_user of this AuditEventSummary.
+        :rtype: str
+        """
+        return self._target_user
+
+    @target_user.setter
+    def target_user(self, target_user):
+        """
+        Sets the target_user of this AuditEventSummary.
+        The user on whom the GRANT/REVOKE/AUDIT/NOAUDIT statement was executed.
+
+
+        :param target_user: The target_user of this AuditEventSummary.
+        :type: str
+        """
+        self._target_user = target_user
 
     @property
     def peer_target_database_key(self):

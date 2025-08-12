@@ -403,7 +403,7 @@ class VideoJob(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this VideoJob.
-        The current state of the batch document job.
+        The current state of the video job.
 
         Allowed values for this property are: "SUCCEEDED", "FAILED", "ACCEPTED", "CANCELED", "IN_PROGRESS", "CANCELING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -418,7 +418,7 @@ class VideoJob(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this VideoJob.
-        The current state of the batch document job.
+        The current state of the video job.
 
 
         :param lifecycle_state: The lifecycle_state of this VideoJob.

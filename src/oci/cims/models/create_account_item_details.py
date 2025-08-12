@@ -12,8 +12,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateAccountItemDetails(CreateItemDetails):
     """
-    Details about the issue that the account support ticket relates to. Avoid entering confidential information.
-    For information about `ACCOUNT` support tickets, see `Creating a Billing Support Request`__.
+    Details about the issue that the account support request relates to. Avoid entering confidential information.
+    For information about `ACCOUNT` support requests, see `Creating a Billing Support Request`__.
 
     __ https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm
     """

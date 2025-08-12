@@ -291,6 +291,7 @@ class AmazonS3ConnectionSummary(ConnectionSummary):
         Gets the endpoint of this AmazonS3ConnectionSummary.
         The Amazon Endpoint for S3.
         e.g.: 'https://my-bucket.s3.us-east-1.amazonaws.com'
+        If not provided, GoldenGate will default to 'https://s3.<region>.amazonaws.com'.
 
 
         :return: The endpoint of this AmazonS3ConnectionSummary.
@@ -304,6 +305,7 @@ class AmazonS3ConnectionSummary(ConnectionSummary):
         Sets the endpoint of this AmazonS3ConnectionSummary.
         The Amazon Endpoint for S3.
         e.g.: 'https://my-bucket.s3.us-east-1.amazonaws.com'
+        If not provided, GoldenGate will default to 'https://s3.<region>.amazonaws.com'.
 
 
         :param endpoint: The endpoint of this AmazonS3ConnectionSummary.
@@ -315,7 +317,9 @@ class AmazonS3ConnectionSummary(ConnectionSummary):
     def region(self):
         """
         Gets the region of this AmazonS3ConnectionSummary.
-        The name of the region where the bucket is created.
+        The name of the AWS region where the bucket is created.
+        If not provided, GoldenGate will default to 'us-west-2'.
+        Note: this property will become mandatory after May 20, 2026.
 
 
         :return: The region of this AmazonS3ConnectionSummary.
@@ -327,7 +331,9 @@ class AmazonS3ConnectionSummary(ConnectionSummary):
     def region(self, region):
         """
         Sets the region of this AmazonS3ConnectionSummary.
-        The name of the region where the bucket is created.
+        The name of the AWS region where the bucket is created.
+        If not provided, GoldenGate will default to 'us-west-2'.
+        Note: this property will become mandatory after May 20, 2026.
 
 
         :param region: The region of this AmazonS3ConnectionSummary.

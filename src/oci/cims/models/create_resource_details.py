@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateResourceDetails(object):
     """
-    Details about the resource that the support ticket relates to.
+    Details about the resource that the support request relates to.
     """
 
     def __init__(self, **kwargs):

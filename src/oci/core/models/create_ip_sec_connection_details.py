@@ -371,7 +371,7 @@ class CreateIPSecConnectionDetails(object):
     @property
     def static_routes(self):
         """
-        **[Required]** Gets the static_routes of this CreateIPSecConnectionDetails.
+        Gets the static_routes of this CreateIPSecConnectionDetails.
         Static routes to the CPE. A static route's CIDR must not be a
         multicast address or class E address.
 

@@ -23,15 +23,24 @@ Ai Vision
     oci.ai_vision.models.AnalyzeImageDetails
     oci.ai_vision.models.AnalyzeImageResult
     oci.ai_vision.models.AnalyzeVideoResult
+    oci.ai_vision.models.AnalyzeVideoStreamResult
     oci.ai_vision.models.BoundingPolygon
     oci.ai_vision.models.Cell
     oci.ai_vision.models.ChangeModelCompartmentDetails
     oci.ai_vision.models.ChangeProjectCompartmentDetails
+    oci.ai_vision.models.ChangeStreamGroupCompartmentDetails
+    oci.ai_vision.models.ChangeStreamJobCompartmentDetails
+    oci.ai_vision.models.ChangeStreamSourceCompartmentDetails
+    oci.ai_vision.models.ChangeVisionPrivateEndpointCompartmentDetails
     oci.ai_vision.models.CreateDocumentJobDetails
     oci.ai_vision.models.CreateImageJobDetails
     oci.ai_vision.models.CreateModelDetails
     oci.ai_vision.models.CreateProjectDetails
+    oci.ai_vision.models.CreateStreamGroupDetails
+    oci.ai_vision.models.CreateStreamJobDetails
+    oci.ai_vision.models.CreateStreamSourceDetails
     oci.ai_vision.models.CreateVideoJobDetails
+    oci.ai_vision.models.CreateVisionPrivateEndpointDetails
     oci.ai_vision.models.DataScienceLabelingDataset
     oci.ai_vision.models.Dataset
     oci.ai_vision.models.DetectedDocumentType
@@ -49,6 +58,7 @@ Ai Vision
     oci.ai_vision.models.DocumentTextDetectionFeature
     oci.ai_vision.models.Face
     oci.ai_vision.models.FaceDetectionFeature
+    oci.ai_vision.models.FaceEmbeddingFeature
     oci.ai_vision.models.FieldLabel
     oci.ai_vision.models.FieldName
     oci.ai_vision.models.FieldValue
@@ -69,24 +79,47 @@ Ai Vision
     oci.ai_vision.models.Model
     oci.ai_vision.models.ModelCollection
     oci.ai_vision.models.ModelSummary
+    oci.ai_vision.models.ModelVersionDetails
     oci.ai_vision.models.NormalizedVertex
     oci.ai_vision.models.ObjectListInlineInputLocation
     oci.ai_vision.models.ObjectLocation
+    oci.ai_vision.models.ObjectProperties
     oci.ai_vision.models.ObjectProperty
     oci.ai_vision.models.ObjectStorageDataset
     oci.ai_vision.models.ObjectStorageDocumentDetails
     oci.ai_vision.models.ObjectStorageImageDetails
+    oci.ai_vision.models.ObjectStorageOutputLocation
     oci.ai_vision.models.OntologyClass
     oci.ai_vision.models.OutputLocation
     oci.ai_vision.models.Page
+    oci.ai_vision.models.PrivateStreamNetworkAccessDetails
     oci.ai_vision.models.ProcessingError
     oci.ai_vision.models.Project
     oci.ai_vision.models.ProjectCollection
     oci.ai_vision.models.ProjectSummary
+    oci.ai_vision.models.RtspSourceDetails
+    oci.ai_vision.models.StreamGroup
+    oci.ai_vision.models.StreamGroupCollection
+    oci.ai_vision.models.StreamGroupOverlap
+    oci.ai_vision.models.StreamGroupSummary
+    oci.ai_vision.models.StreamJob
+    oci.ai_vision.models.StreamJobCollection
+    oci.ai_vision.models.StreamJobSummary
+    oci.ai_vision.models.StreamNetworkAccessDetails
+    oci.ai_vision.models.StreamOutputLocation
+    oci.ai_vision.models.StreamSource
+    oci.ai_vision.models.StreamSourceCollection
+    oci.ai_vision.models.StreamSourceDetails
+    oci.ai_vision.models.StreamSourceSummary
     oci.ai_vision.models.Table
     oci.ai_vision.models.TableRow
+    oci.ai_vision.models.TrackingType
     oci.ai_vision.models.UpdateModelDetails
     oci.ai_vision.models.UpdateProjectDetails
+    oci.ai_vision.models.UpdateStreamGroupDetails
+    oci.ai_vision.models.UpdateStreamJobDetails
+    oci.ai_vision.models.UpdateStreamSourceDetails
+    oci.ai_vision.models.UpdateVisionPrivateEndpointDetails
     oci.ai_vision.models.ValueArray
     oci.ai_vision.models.ValueDate
     oci.ai_vision.models.ValueInteger
@@ -110,6 +143,12 @@ Ai Vision
     oci.ai_vision.models.VideoObjectSegment
     oci.ai_vision.models.VideoObjectTrackingFeature
     oci.ai_vision.models.VideoSegment
+    oci.ai_vision.models.VideoStreamFaceDetectionFeature
+    oci.ai_vision.models.VideoStreamFeature
+    oci.ai_vision.models.VideoStreamMetadata
+    oci.ai_vision.models.VideoStreamObject
+    oci.ai_vision.models.VideoStreamObjectDetectionFeature
+    oci.ai_vision.models.VideoStreamObjectTrackingFeature
     oci.ai_vision.models.VideoText
     oci.ai_vision.models.VideoTextDetectionFeature
     oci.ai_vision.models.VideoTextFrame
@@ -118,6 +157,9 @@ Ai Vision
     oci.ai_vision.models.VideoTrackedObjectProperties
     oci.ai_vision.models.VideoTrackedObjectSegment
     oci.ai_vision.models.VideoTrackingFrame
+    oci.ai_vision.models.VisionPrivateEndpoint
+    oci.ai_vision.models.VisionPrivateEndpointCollection
+    oci.ai_vision.models.VisionPrivateEndpointSummary
     oci.ai_vision.models.Word
     oci.ai_vision.models.WorkRequest
     oci.ai_vision.models.WorkRequestError

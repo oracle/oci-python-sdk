@@ -13,7 +13,7 @@ from oci.decorators import init_model_state_from_kwargs
 class CreateLimitItemDetails(CreateItemDetails):
     """
     Details about the service limit increase request. Avoid entering confidential information.
-    For information about `LIMIT` support tickets, see `Creating a Service Limit Increase Request`__.
+    For information about `LIMIT` support requests, see `Creating a Service Limit Increase Request`__.
 
     __ https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm
     """

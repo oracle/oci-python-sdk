@@ -19,6 +19,10 @@ class BuildStage(BuildPipelineStage):
     #: This constant has a value of "OL7_X86_64_STANDARD_10"
     IMAGE_OL7_X86_64_STANDARD_10 = "OL7_X86_64_STANDARD_10"
 
+    #: A constant which can be used with the image property of a BuildStage.
+    #: This constant has a value of "OL8_X86_64_STANDARD_10"
+    IMAGE_OL8_X86_64_STANDARD_10 = "OL8_X86_64_STANDARD_10"
+
     def __init__(self, **kwargs):
         """
         Initializes a new BuildStage object with values from keyword arguments. The default value of the :py:attr:`~oci.devops.models.BuildStage.build_pipeline_stage_type` attribute
@@ -91,7 +95,7 @@ class BuildStage(BuildPipelineStage):
 
         :param image:
             The value to assign to the image property of this BuildStage.
-            Allowed values for this property are: "OL7_X86_64_STANDARD_10", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "OL7_X86_64_STANDARD_10", "OL8_X86_64_STANDARD_10", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type image: str
 
@@ -198,7 +202,7 @@ class BuildStage(BuildPipelineStage):
         **[Required]** Gets the image of this BuildStage.
         Image name for the build environment.
 
-        Allowed values for this property are: "OL7_X86_64_STANDARD_10", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "OL7_X86_64_STANDARD_10", "OL8_X86_64_STANDARD_10", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -217,7 +221,7 @@ class BuildStage(BuildPipelineStage):
         :param image: The image of this BuildStage.
         :type: str
         """
-        allowed_values = ["OL7_X86_64_STANDARD_10"]
+        allowed_values = ["OL7_X86_64_STANDARD_10", "OL8_X86_64_STANDARD_10"]
         if not value_allowed_none_or_none_sentinel(image, allowed_values):
             image = 'UNKNOWN_ENUM_VALUE'
         self._image = image

@@ -11,15 +11,24 @@ from .analyze_document_result import AnalyzeDocumentResult
 from .analyze_image_details import AnalyzeImageDetails
 from .analyze_image_result import AnalyzeImageResult
 from .analyze_video_result import AnalyzeVideoResult
+from .analyze_video_stream_result import AnalyzeVideoStreamResult
 from .bounding_polygon import BoundingPolygon
 from .cell import Cell
 from .change_model_compartment_details import ChangeModelCompartmentDetails
 from .change_project_compartment_details import ChangeProjectCompartmentDetails
+from .change_stream_group_compartment_details import ChangeStreamGroupCompartmentDetails
+from .change_stream_job_compartment_details import ChangeStreamJobCompartmentDetails
+from .change_stream_source_compartment_details import ChangeStreamSourceCompartmentDetails
+from .change_vision_private_endpoint_compartment_details import ChangeVisionPrivateEndpointCompartmentDetails
 from .create_document_job_details import CreateDocumentJobDetails
 from .create_image_job_details import CreateImageJobDetails
 from .create_model_details import CreateModelDetails
 from .create_project_details import CreateProjectDetails
+from .create_stream_group_details import CreateStreamGroupDetails
+from .create_stream_job_details import CreateStreamJobDetails
+from .create_stream_source_details import CreateStreamSourceDetails
 from .create_video_job_details import CreateVideoJobDetails
+from .create_vision_private_endpoint_details import CreateVisionPrivateEndpointDetails
 from .data_science_labeling_dataset import DataScienceLabelingDataset
 from .dataset import Dataset
 from .detected_document_type import DetectedDocumentType
@@ -37,6 +46,7 @@ from .document_table_detection_feature import DocumentTableDetectionFeature
 from .document_text_detection_feature import DocumentTextDetectionFeature
 from .face import Face
 from .face_detection_feature import FaceDetectionFeature
+from .face_embedding_feature import FaceEmbeddingFeature
 from .field_label import FieldLabel
 from .field_name import FieldName
 from .field_value import FieldValue
@@ -57,24 +67,47 @@ from .line import Line
 from .model import Model
 from .model_collection import ModelCollection
 from .model_summary import ModelSummary
+from .model_version_details import ModelVersionDetails
 from .normalized_vertex import NormalizedVertex
 from .object_list_inline_input_location import ObjectListInlineInputLocation
 from .object_location import ObjectLocation
+from .object_properties import ObjectProperties
 from .object_property import ObjectProperty
 from .object_storage_dataset import ObjectStorageDataset
 from .object_storage_document_details import ObjectStorageDocumentDetails
 from .object_storage_image_details import ObjectStorageImageDetails
+from .object_storage_output_location import ObjectStorageOutputLocation
 from .ontology_class import OntologyClass
 from .output_location import OutputLocation
 from .page import Page
+from .private_stream_network_access_details import PrivateStreamNetworkAccessDetails
 from .processing_error import ProcessingError
 from .project import Project
 from .project_collection import ProjectCollection
 from .project_summary import ProjectSummary
+from .rtsp_source_details import RtspSourceDetails
+from .stream_group import StreamGroup
+from .stream_group_collection import StreamGroupCollection
+from .stream_group_overlap import StreamGroupOverlap
+from .stream_group_summary import StreamGroupSummary
+from .stream_job import StreamJob
+from .stream_job_collection import StreamJobCollection
+from .stream_job_summary import StreamJobSummary
+from .stream_network_access_details import StreamNetworkAccessDetails
+from .stream_output_location import StreamOutputLocation
+from .stream_source import StreamSource
+from .stream_source_collection import StreamSourceCollection
+from .stream_source_details import StreamSourceDetails
+from .stream_source_summary import StreamSourceSummary
 from .table import Table
 from .table_row import TableRow
+from .tracking_type import TrackingType
 from .update_model_details import UpdateModelDetails
 from .update_project_details import UpdateProjectDetails
+from .update_stream_group_details import UpdateStreamGroupDetails
+from .update_stream_job_details import UpdateStreamJobDetails
+from .update_stream_source_details import UpdateStreamSourceDetails
+from .update_vision_private_endpoint_details import UpdateVisionPrivateEndpointDetails
 from .value_array import ValueArray
 from .value_date import ValueDate
 from .value_integer import ValueInteger
@@ -98,6 +131,12 @@ from .video_object_frame import VideoObjectFrame
 from .video_object_segment import VideoObjectSegment
 from .video_object_tracking_feature import VideoObjectTrackingFeature
 from .video_segment import VideoSegment
+from .video_stream_face_detection_feature import VideoStreamFaceDetectionFeature
+from .video_stream_feature import VideoStreamFeature
+from .video_stream_metadata import VideoStreamMetadata
+from .video_stream_object import VideoStreamObject
+from .video_stream_object_detection_feature import VideoStreamObjectDetectionFeature
+from .video_stream_object_tracking_feature import VideoStreamObjectTrackingFeature
 from .video_text import VideoText
 from .video_text_detection_feature import VideoTextDetectionFeature
 from .video_text_frame import VideoTextFrame
@@ -106,6 +145,9 @@ from .video_tracked_object import VideoTrackedObject
 from .video_tracked_object_properties import VideoTrackedObjectProperties
 from .video_tracked_object_segment import VideoTrackedObjectSegment
 from .video_tracking_frame import VideoTrackingFrame
+from .vision_private_endpoint import VisionPrivateEndpoint
+from .vision_private_endpoint_collection import VisionPrivateEndpointCollection
+from .vision_private_endpoint_summary import VisionPrivateEndpointSummary
 from .word import Word
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
@@ -123,15 +165,24 @@ ai_vision_type_mapping = {
     "AnalyzeImageDetails": AnalyzeImageDetails,
     "AnalyzeImageResult": AnalyzeImageResult,
     "AnalyzeVideoResult": AnalyzeVideoResult,
+    "AnalyzeVideoStreamResult": AnalyzeVideoStreamResult,
     "BoundingPolygon": BoundingPolygon,
     "Cell": Cell,
     "ChangeModelCompartmentDetails": ChangeModelCompartmentDetails,
     "ChangeProjectCompartmentDetails": ChangeProjectCompartmentDetails,
+    "ChangeStreamGroupCompartmentDetails": ChangeStreamGroupCompartmentDetails,
+    "ChangeStreamJobCompartmentDetails": ChangeStreamJobCompartmentDetails,
+    "ChangeStreamSourceCompartmentDetails": ChangeStreamSourceCompartmentDetails,
+    "ChangeVisionPrivateEndpointCompartmentDetails": ChangeVisionPrivateEndpointCompartmentDetails,
     "CreateDocumentJobDetails": CreateDocumentJobDetails,
     "CreateImageJobDetails": CreateImageJobDetails,
     "CreateModelDetails": CreateModelDetails,
     "CreateProjectDetails": CreateProjectDetails,
+    "CreateStreamGroupDetails": CreateStreamGroupDetails,
+    "CreateStreamJobDetails": CreateStreamJobDetails,
+    "CreateStreamSourceDetails": CreateStreamSourceDetails,
     "CreateVideoJobDetails": CreateVideoJobDetails,
+    "CreateVisionPrivateEndpointDetails": CreateVisionPrivateEndpointDetails,
     "DataScienceLabelingDataset": DataScienceLabelingDataset,
     "Dataset": Dataset,
     "DetectedDocumentType": DetectedDocumentType,
@@ -149,6 +200,7 @@ ai_vision_type_mapping = {
     "DocumentTextDetectionFeature": DocumentTextDetectionFeature,
     "Face": Face,
     "FaceDetectionFeature": FaceDetectionFeature,
+    "FaceEmbeddingFeature": FaceEmbeddingFeature,
     "FieldLabel": FieldLabel,
     "FieldName": FieldName,
     "FieldValue": FieldValue,
@@ -169,24 +221,47 @@ ai_vision_type_mapping = {
     "Model": Model,
     "ModelCollection": ModelCollection,
     "ModelSummary": ModelSummary,
+    "ModelVersionDetails": ModelVersionDetails,
     "NormalizedVertex": NormalizedVertex,
     "ObjectListInlineInputLocation": ObjectListInlineInputLocation,
     "ObjectLocation": ObjectLocation,
+    "ObjectProperties": ObjectProperties,
     "ObjectProperty": ObjectProperty,
     "ObjectStorageDataset": ObjectStorageDataset,
     "ObjectStorageDocumentDetails": ObjectStorageDocumentDetails,
     "ObjectStorageImageDetails": ObjectStorageImageDetails,
+    "ObjectStorageOutputLocation": ObjectStorageOutputLocation,
     "OntologyClass": OntologyClass,
     "OutputLocation": OutputLocation,
     "Page": Page,
+    "PrivateStreamNetworkAccessDetails": PrivateStreamNetworkAccessDetails,
     "ProcessingError": ProcessingError,
     "Project": Project,
     "ProjectCollection": ProjectCollection,
     "ProjectSummary": ProjectSummary,
+    "RtspSourceDetails": RtspSourceDetails,
+    "StreamGroup": StreamGroup,
+    "StreamGroupCollection": StreamGroupCollection,
+    "StreamGroupOverlap": StreamGroupOverlap,
+    "StreamGroupSummary": StreamGroupSummary,
+    "StreamJob": StreamJob,
+    "StreamJobCollection": StreamJobCollection,
+    "StreamJobSummary": StreamJobSummary,
+    "StreamNetworkAccessDetails": StreamNetworkAccessDetails,
+    "StreamOutputLocation": StreamOutputLocation,
+    "StreamSource": StreamSource,
+    "StreamSourceCollection": StreamSourceCollection,
+    "StreamSourceDetails": StreamSourceDetails,
+    "StreamSourceSummary": StreamSourceSummary,
     "Table": Table,
     "TableRow": TableRow,
+    "TrackingType": TrackingType,
     "UpdateModelDetails": UpdateModelDetails,
     "UpdateProjectDetails": UpdateProjectDetails,
+    "UpdateStreamGroupDetails": UpdateStreamGroupDetails,
+    "UpdateStreamJobDetails": UpdateStreamJobDetails,
+    "UpdateStreamSourceDetails": UpdateStreamSourceDetails,
+    "UpdateVisionPrivateEndpointDetails": UpdateVisionPrivateEndpointDetails,
     "ValueArray": ValueArray,
     "ValueDate": ValueDate,
     "ValueInteger": ValueInteger,
@@ -210,6 +285,12 @@ ai_vision_type_mapping = {
     "VideoObjectSegment": VideoObjectSegment,
     "VideoObjectTrackingFeature": VideoObjectTrackingFeature,
     "VideoSegment": VideoSegment,
+    "VideoStreamFaceDetectionFeature": VideoStreamFaceDetectionFeature,
+    "VideoStreamFeature": VideoStreamFeature,
+    "VideoStreamMetadata": VideoStreamMetadata,
+    "VideoStreamObject": VideoStreamObject,
+    "VideoStreamObjectDetectionFeature": VideoStreamObjectDetectionFeature,
+    "VideoStreamObjectTrackingFeature": VideoStreamObjectTrackingFeature,
     "VideoText": VideoText,
     "VideoTextDetectionFeature": VideoTextDetectionFeature,
     "VideoTextFrame": VideoTextFrame,
@@ -218,6 +299,9 @@ ai_vision_type_mapping = {
     "VideoTrackedObjectProperties": VideoTrackedObjectProperties,
     "VideoTrackedObjectSegment": VideoTrackedObjectSegment,
     "VideoTrackingFrame": VideoTrackingFrame,
+    "VisionPrivateEndpoint": VisionPrivateEndpoint,
+    "VisionPrivateEndpointCollection": VisionPrivateEndpointCollection,
+    "VisionPrivateEndpointSummary": VisionPrivateEndpointSummary,
     "Word": Word,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,

@@ -28,17 +28,24 @@ class MaskingAnalyticsDimensions(object):
             The value to assign to the policy_id property of this MaskingAnalyticsDimensions.
         :type policy_id: str
 
+        :param sensitive_type_id:
+            The value to assign to the sensitive_type_id property of this MaskingAnalyticsDimensions.
+        :type sensitive_type_id: str
+
         """
         self.swagger_types = {
             'target_id': 'str',
-            'policy_id': 'str'
+            'policy_id': 'str',
+            'sensitive_type_id': 'str'
         }
         self.attribute_map = {
             'target_id': 'targetId',
-            'policy_id': 'policyId'
+            'policy_id': 'policyId',
+            'sensitive_type_id': 'sensitiveTypeId'
         }
         self._target_id = None
         self._policy_id = None
+        self._sensitive_type_id = None
 
     @property
     def target_id(self):
@@ -87,6 +94,30 @@ class MaskingAnalyticsDimensions(object):
         :type: str
         """
         self._policy_id = policy_id
+
+    @property
+    def sensitive_type_id(self):
+        """
+        Gets the sensitive_type_id of this MaskingAnalyticsDimensions.
+        The OCID of the sensitive type masked.
+
+
+        :return: The sensitive_type_id of this MaskingAnalyticsDimensions.
+        :rtype: str
+        """
+        return self._sensitive_type_id
+
+    @sensitive_type_id.setter
+    def sensitive_type_id(self, sensitive_type_id):
+        """
+        Sets the sensitive_type_id of this MaskingAnalyticsDimensions.
+        The OCID of the sensitive type masked.
+
+
+        :param sensitive_type_id: The sensitive_type_id of this MaskingAnalyticsDimensions.
+        :type: str
+        """
+        self._sensitive_type_id = sensitive_type_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

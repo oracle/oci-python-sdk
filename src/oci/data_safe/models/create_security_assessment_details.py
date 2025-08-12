@@ -15,6 +15,38 @@ class CreateSecurityAssessmentDetails(object):
     The details used to save a security assessment.
     """
 
+    #: A constant which can be used with the target_type property of a CreateSecurityAssessmentDetails.
+    #: This constant has a value of "TARGET_DATABASE"
+    TARGET_TYPE_TARGET_DATABASE = "TARGET_DATABASE"
+
+    #: A constant which can be used with the target_type property of a CreateSecurityAssessmentDetails.
+    #: This constant has a value of "TARGET_DATABASE_GROUP"
+    TARGET_TYPE_TARGET_DATABASE_GROUP = "TARGET_DATABASE_GROUP"
+
+    #: A constant which can be used with the type property of a CreateSecurityAssessmentDetails.
+    #: This constant has a value of "LATEST"
+    TYPE_LATEST = "LATEST"
+
+    #: A constant which can be used with the type property of a CreateSecurityAssessmentDetails.
+    #: This constant has a value of "SAVED"
+    TYPE_SAVED = "SAVED"
+
+    #: A constant which can be used with the type property of a CreateSecurityAssessmentDetails.
+    #: This constant has a value of "SAVE_SCHEDULE"
+    TYPE_SAVE_SCHEDULE = "SAVE_SCHEDULE"
+
+    #: A constant which can be used with the type property of a CreateSecurityAssessmentDetails.
+    #: This constant has a value of "COMPARTMENT"
+    TYPE_COMPARTMENT = "COMPARTMENT"
+
+    #: A constant which can be used with the type property of a CreateSecurityAssessmentDetails.
+    #: This constant has a value of "TEMPLATE"
+    TYPE_TEMPLATE = "TEMPLATE"
+
+    #: A constant which can be used with the type property of a CreateSecurityAssessmentDetails.
+    #: This constant has a value of "TEMPLATE_BASELINE"
+    TYPE_TEMPLATE_BASELINE = "TEMPLATE_BASELINE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateSecurityAssessmentDetails object with values from keyword arguments.
@@ -35,6 +67,24 @@ class CreateSecurityAssessmentDetails(object):
         :param target_id:
             The value to assign to the target_id property of this CreateSecurityAssessmentDetails.
         :type target_id: str
+
+        :param target_type:
+            The value to assign to the target_type property of this CreateSecurityAssessmentDetails.
+            Allowed values for this property are: "TARGET_DATABASE", "TARGET_DATABASE_GROUP"
+        :type target_type: str
+
+        :param type:
+            The value to assign to the type property of this CreateSecurityAssessmentDetails.
+            Allowed values for this property are: "LATEST", "SAVED", "SAVE_SCHEDULE", "COMPARTMENT", "TEMPLATE", "TEMPLATE_BASELINE"
+        :type type: str
+
+        :param template_assessment_id:
+            The value to assign to the template_assessment_id property of this CreateSecurityAssessmentDetails.
+        :type template_assessment_id: str
+
+        :param base_security_assessment_id:
+            The value to assign to the base_security_assessment_id property of this CreateSecurityAssessmentDetails.
+        :type base_security_assessment_id: str
 
         :param is_assessment_scheduled:
             The value to assign to the is_assessment_scheduled property of this CreateSecurityAssessmentDetails.
@@ -58,6 +108,10 @@ class CreateSecurityAssessmentDetails(object):
             'display_name': 'str',
             'description': 'str',
             'target_id': 'str',
+            'target_type': 'str',
+            'type': 'str',
+            'template_assessment_id': 'str',
+            'base_security_assessment_id': 'str',
             'is_assessment_scheduled': 'bool',
             'schedule': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -68,6 +122,10 @@ class CreateSecurityAssessmentDetails(object):
             'display_name': 'displayName',
             'description': 'description',
             'target_id': 'targetId',
+            'target_type': 'targetType',
+            'type': 'type',
+            'template_assessment_id': 'templateAssessmentId',
+            'base_security_assessment_id': 'baseSecurityAssessmentId',
             'is_assessment_scheduled': 'isAssessmentScheduled',
             'schedule': 'schedule',
             'freeform_tags': 'freeformTags',
@@ -77,6 +135,10 @@ class CreateSecurityAssessmentDetails(object):
         self._display_name = None
         self._description = None
         self._target_id = None
+        self._target_type = None
+        self._type = None
+        self._template_assessment_id = None
+        self._base_security_assessment_id = None
         self._is_assessment_scheduled = None
         self._schedule = None
         self._freeform_tags = None
@@ -158,7 +220,7 @@ class CreateSecurityAssessmentDetails(object):
     def target_id(self):
         """
         Gets the target_id of this CreateSecurityAssessmentDetails.
-        The OCID of the target database on which security assessment is to be run.
+        The OCID of the target database or target database group on which security assessment is to be run.
 
 
         :return: The target_id of this CreateSecurityAssessmentDetails.
@@ -170,13 +232,125 @@ class CreateSecurityAssessmentDetails(object):
     def target_id(self, target_id):
         """
         Sets the target_id of this CreateSecurityAssessmentDetails.
-        The OCID of the target database on which security assessment is to be run.
+        The OCID of the target database or target database group on which security assessment is to be run.
 
 
         :param target_id: The target_id of this CreateSecurityAssessmentDetails.
         :type: str
         """
         self._target_id = target_id
+
+    @property
+    def target_type(self):
+        """
+        Gets the target_type of this CreateSecurityAssessmentDetails.
+        The type of security assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
+
+        Allowed values for this property are: "TARGET_DATABASE", "TARGET_DATABASE_GROUP"
+
+
+        :return: The target_type of this CreateSecurityAssessmentDetails.
+        :rtype: str
+        """
+        return self._target_type
+
+    @target_type.setter
+    def target_type(self, target_type):
+        """
+        Sets the target_type of this CreateSecurityAssessmentDetails.
+        The type of security assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
+
+
+        :param target_type: The target_type of this CreateSecurityAssessmentDetails.
+        :type: str
+        """
+        allowed_values = ["TARGET_DATABASE", "TARGET_DATABASE_GROUP"]
+        if not value_allowed_none_or_none_sentinel(target_type, allowed_values):
+            raise ValueError(
+                f"Invalid value for `target_type`, must be None or one of {allowed_values}"
+            )
+        self._target_type = target_type
+
+    @property
+    def type(self):
+        """
+        Gets the type of this CreateSecurityAssessmentDetails.
+        The type of the security assessment
+
+        Allowed values for this property are: "LATEST", "SAVED", "SAVE_SCHEDULE", "COMPARTMENT", "TEMPLATE", "TEMPLATE_BASELINE"
+
+
+        :return: The type of this CreateSecurityAssessmentDetails.
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """
+        Sets the type of this CreateSecurityAssessmentDetails.
+        The type of the security assessment
+
+
+        :param type: The type of this CreateSecurityAssessmentDetails.
+        :type: str
+        """
+        allowed_values = ["LATEST", "SAVED", "SAVE_SCHEDULE", "COMPARTMENT", "TEMPLATE", "TEMPLATE_BASELINE"]
+        if not value_allowed_none_or_none_sentinel(type, allowed_values):
+            raise ValueError(
+                f"Invalid value for `type`, must be None or one of {allowed_values}"
+            )
+        self._type = type
+
+    @property
+    def template_assessment_id(self):
+        """
+        Gets the template_assessment_id of this CreateSecurityAssessmentDetails.
+        The OCID of the template assessment. It will be required while creating the template baseline assessment.
+
+
+        :return: The template_assessment_id of this CreateSecurityAssessmentDetails.
+        :rtype: str
+        """
+        return self._template_assessment_id
+
+    @template_assessment_id.setter
+    def template_assessment_id(self, template_assessment_id):
+        """
+        Sets the template_assessment_id of this CreateSecurityAssessmentDetails.
+        The OCID of the template assessment. It will be required while creating the template baseline assessment.
+
+
+        :param template_assessment_id: The template_assessment_id of this CreateSecurityAssessmentDetails.
+        :type: str
+        """
+        self._template_assessment_id = template_assessment_id
+
+    @property
+    def base_security_assessment_id(self):
+        """
+        Gets the base_security_assessment_id of this CreateSecurityAssessmentDetails.
+        The OCID of the security assessment. The assessment should be of type SAVED.
+        It will be required while creating the template baseline assessment for individual targets to fetch the detailed information from an existing security assessment.
+
+
+        :return: The base_security_assessment_id of this CreateSecurityAssessmentDetails.
+        :rtype: str
+        """
+        return self._base_security_assessment_id
+
+    @base_security_assessment_id.setter
+    def base_security_assessment_id(self, base_security_assessment_id):
+        """
+        Sets the base_security_assessment_id of this CreateSecurityAssessmentDetails.
+        The OCID of the security assessment. The assessment should be of type SAVED.
+        It will be required while creating the template baseline assessment for individual targets to fetch the detailed information from an existing security assessment.
+
+
+        :param base_security_assessment_id: The base_security_assessment_id of this CreateSecurityAssessmentDetails.
+        :type: str
+        """
+        self._base_security_assessment_id = base_security_assessment_id
 
     @property
     def is_assessment_scheduled(self):

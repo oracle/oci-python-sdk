@@ -24,14 +24,21 @@ class VideoTrackedObjectProperties(object):
             The value to assign to the axle_count property of this VideoTrackedObjectProperties.
         :type axle_count: int
 
+        :param trailer_ids:
+            The value to assign to the trailer_ids property of this VideoTrackedObjectProperties.
+        :type trailer_ids: list[int]
+
         """
         self.swagger_types = {
-            'axle_count': 'int'
+            'axle_count': 'int',
+            'trailer_ids': 'list[int]'
         }
         self.attribute_map = {
-            'axle_count': 'axleCount'
+            'axle_count': 'axleCount',
+            'trailer_ids': 'trailerIds'
         }
         self._axle_count = None
+        self._trailer_ids = None
 
     @property
     def axle_count(self):
@@ -56,6 +63,30 @@ class VideoTrackedObjectProperties(object):
         :type: int
         """
         self._axle_count = axle_count
+
+    @property
+    def trailer_ids(self):
+        """
+        Gets the trailer_ids of this VideoTrackedObjectProperties.
+        Object IDs of the trailers associated with the tracked vehicle.
+
+
+        :return: The trailer_ids of this VideoTrackedObjectProperties.
+        :rtype: list[int]
+        """
+        return self._trailer_ids
+
+    @trailer_ids.setter
+    def trailer_ids(self, trailer_ids):
+        """
+        Sets the trailer_ids of this VideoTrackedObjectProperties.
+        Object IDs of the trailers associated with the tracked vehicle.
+
+
+        :param trailer_ids: The trailer_ids of this VideoTrackedObjectProperties.
+        :type: list[int]
+        """
+        self._trailer_ids = trailer_ids
 
     def __repr__(self):
         return formatted_flat_dict(self)

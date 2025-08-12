@@ -28,6 +28,10 @@ class SecurityPolicyDeploymentSummary(object):
     LIFECYCLE_STATE_DEPLOYED = "DEPLOYED"
 
     #: A constant which can be used with the lifecycle_state property of a SecurityPolicyDeploymentSummary.
+    #: This constant has a value of "PENDING_DEPLOYMENT"
+    LIFECYCLE_STATE_PENDING_DEPLOYMENT = "PENDING_DEPLOYMENT"
+
+    #: A constant which can be used with the lifecycle_state property of a SecurityPolicyDeploymentSummary.
     #: This constant has a value of "NEEDS_ATTENTION"
     LIFECYCLE_STATE_NEEDS_ATTENTION = "NEEDS_ATTENTION"
 
@@ -68,6 +72,14 @@ class SecurityPolicyDeploymentSummary(object):
             The value to assign to the target_id property of this SecurityPolicyDeploymentSummary.
         :type target_id: str
 
+        :param target_type:
+            The value to assign to the target_type property of this SecurityPolicyDeploymentSummary.
+        :type target_type: str
+
+        :param time_deployed:
+            The value to assign to the time_deployed property of this SecurityPolicyDeploymentSummary.
+        :type time_deployed: datetime
+
         :param security_policy_id:
             The value to assign to the security_policy_id property of this SecurityPolicyDeploymentSummary.
         :type security_policy_id: str
@@ -82,7 +94,7 @@ class SecurityPolicyDeploymentSummary(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this SecurityPolicyDeploymentSummary.
-            Allowed values for this property are: "CREATING", "UPDATING", "DEPLOYED", "NEEDS_ATTENTION", "FAILED", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "UPDATING", "DEPLOYED", "PENDING_DEPLOYMENT", "NEEDS_ATTENTION", "FAILED", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -109,6 +121,8 @@ class SecurityPolicyDeploymentSummary(object):
             'display_name': 'str',
             'description': 'str',
             'target_id': 'str',
+            'target_type': 'str',
+            'time_deployed': 'datetime',
             'security_policy_id': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
@@ -124,6 +138,8 @@ class SecurityPolicyDeploymentSummary(object):
             'display_name': 'displayName',
             'description': 'description',
             'target_id': 'targetId',
+            'target_type': 'targetType',
+            'time_deployed': 'timeDeployed',
             'security_policy_id': 'securityPolicyId',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
@@ -138,6 +154,8 @@ class SecurityPolicyDeploymentSummary(object):
         self._display_name = None
         self._description = None
         self._target_id = None
+        self._target_type = None
+        self._time_deployed = None
         self._security_policy_id = None
         self._time_created = None
         self._time_updated = None
@@ -247,7 +265,7 @@ class SecurityPolicyDeploymentSummary(object):
     def target_id(self):
         """
         **[Required]** Gets the target_id of this SecurityPolicyDeploymentSummary.
-        The OCID of the target where the security policy is deployed.
+        The OCID of the target/target group where the security policy is deployed.
 
 
         :return: The target_id of this SecurityPolicyDeploymentSummary.
@@ -259,13 +277,61 @@ class SecurityPolicyDeploymentSummary(object):
     def target_id(self, target_id):
         """
         Sets the target_id of this SecurityPolicyDeploymentSummary.
-        The OCID of the target where the security policy is deployed.
+        The OCID of the target/target group where the security policy is deployed.
 
 
         :param target_id: The target_id of this SecurityPolicyDeploymentSummary.
         :type: str
         """
         self._target_id = target_id
+
+    @property
+    def target_type(self):
+        """
+        Gets the target_type of this SecurityPolicyDeploymentSummary.
+        Indicates whether the security policy deployment is for a target database or a target database group.
+
+
+        :return: The target_type of this SecurityPolicyDeploymentSummary.
+        :rtype: str
+        """
+        return self._target_type
+
+    @target_type.setter
+    def target_type(self, target_type):
+        """
+        Sets the target_type of this SecurityPolicyDeploymentSummary.
+        Indicates whether the security policy deployment is for a target database or a target database group.
+
+
+        :param target_type: The target_type of this SecurityPolicyDeploymentSummary.
+        :type: str
+        """
+        self._target_type = target_type
+
+    @property
+    def time_deployed(self):
+        """
+        Gets the time_deployed of this SecurityPolicyDeploymentSummary.
+        The last date and time the security policy was deployed, in the format defined by RFC3339.
+
+
+        :return: The time_deployed of this SecurityPolicyDeploymentSummary.
+        :rtype: datetime
+        """
+        return self._time_deployed
+
+    @time_deployed.setter
+    def time_deployed(self, time_deployed):
+        """
+        Sets the time_deployed of this SecurityPolicyDeploymentSummary.
+        The last date and time the security policy was deployed, in the format defined by RFC3339.
+
+
+        :param time_deployed: The time_deployed of this SecurityPolicyDeploymentSummary.
+        :type: datetime
+        """
+        self._time_deployed = time_deployed
 
     @property
     def security_policy_id(self):
@@ -345,7 +411,7 @@ class SecurityPolicyDeploymentSummary(object):
         **[Required]** Gets the lifecycle_state of this SecurityPolicyDeploymentSummary.
         The current state of the security policy deployment.
 
-        Allowed values for this property are: "CREATING", "UPDATING", "DEPLOYED", "NEEDS_ATTENTION", "FAILED", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "UPDATING", "DEPLOYED", "PENDING_DEPLOYMENT", "NEEDS_ATTENTION", "FAILED", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -364,7 +430,7 @@ class SecurityPolicyDeploymentSummary(object):
         :param lifecycle_state: The lifecycle_state of this SecurityPolicyDeploymentSummary.
         :type: str
         """
-        allowed_values = ["CREATING", "UPDATING", "DEPLOYED", "NEEDS_ATTENTION", "FAILED", "DELETING", "DELETED"]
+        allowed_values = ["CREATING", "UPDATING", "DEPLOYED", "PENDING_DEPLOYMENT", "NEEDS_ATTENTION", "FAILED", "DELETING", "DELETED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

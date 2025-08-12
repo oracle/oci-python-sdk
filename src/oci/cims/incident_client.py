@@ -14,6 +14,7 @@ from oci.base_client import BaseClient
 from oci.config import get_config_value_or_default, validate_config
 from oci.signer import Signer
 from oci.util import Sentinel, get_signer_from_authentication_type, AUTHENTICATION_TYPE_FIELD_NAME
+from oci.util import back_up_body_calculate_stream_content_length, is_content_length_calculable_by_req_util
 from oci.exceptions import InvalidAlloyConfig
 from oci.alloy import OCI_SDK_ENABLED_SERVICES_SET
 from .models import cims_type_mapping
@@ -122,7 +123,7 @@ class IncidentClient(object):
 
     def create_incident(self, create_incident_details, **kwargs):
         """
-        Creates a support ticket in the specified tenancy.
+        Creates a support request in the specified tenancy.
         For more information, see `Creating Support Requests`__.
 
         __ https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident.htm
@@ -243,14 +244,14 @@ class IncidentClient(object):
 
     def get_incident(self, incident_key, compartment_id, **kwargs):
         """
-        Gets the specified support ticket.
+        Gets the specified support request.
         For more information, see `Getting Details for a Support Request`__.
 
         __ https://docs.cloud.oracle.com/iaas/Content/GSG/support/get-incident.htm
 
 
         :param str incident_key: (required)
-            Unique identifier for the support ticket.
+            Unique identifier for the support request.
 
         :param str compartment_id: (required)
             The OCID of the tenancy.
@@ -396,7 +397,7 @@ class IncidentClient(object):
     def list_incident_resource_types(self, problem_type, compartment_id, **kwargs):
         """
         Depending on the selected `productType`, either
-        lists available products (service groups, services, service categories, and subcategories) for technical support tickets or
+        lists available products (service groups, services, service categories, and subcategories) for technical support requests or
         lists limits and current usage for limit increase tickets.
         This operation is called during creation of technical support and limit increase tickets.
         For more information about listing products, see
@@ -438,7 +439,7 @@ class IncidentClient(object):
             Allowed values are: "ASC", "DESC"
 
         :param str name: (optional)
-            The user-friendly name of the support ticket type.
+            The user-friendly name of the support request type.
 
         :param str csi: (optional)
             The Customer Support Identifier (CSI) number associated with the support account.
@@ -570,7 +571,7 @@ class IncidentClient(object):
 
     def list_incidents(self, compartment_id, **kwargs):
         """
-        Lists support tickets for the specified tenancy.
+        Lists support requests for the specified tenancy.
         For more information, see `Listing Support Requests`__.
 
         __ https://docs.cloud.oracle.com/iaas/Content/GSG/support/list-incidents.htm
@@ -761,19 +762,215 @@ class IncidentClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def put_attachment(self, put_attachment_details, incident_key, attachment_name, compartment_id, is_restricted_flag, **kwargs):
+        """
+        Uploads the file and attaches it to the support request.
+
+
+        :param stream put_attachment_details: (required)
+            File to be uploaded as attachment to the Service Request.
+
+        :param str incident_key: (required)
+            Unique identifier for the support request.
+
+        :param str attachment_name: (required)
+            The name of the file to attach to the support request. Avoid entering confidential information.
+
+        :param str compartment_id: (required)
+            The OCID of the tenancy.
+
+        :param bool is_restricted_flag: (required)
+            Set to `true` when the attachment contains personal information (PI)
+            or protected health information (PHI).
+
+        :param str csi: (optional)
+            The Customer Support Identifier (CSI) number associated with the support account.
+            The CSI is optional for all support request types.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param str ocid: (optional)
+            User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+            User OCID is mandatory for OCI Users and optional for Multicloud users.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param str homeregion: (optional)
+            The region of the tenancy.
+
+        :param str problemtype: (optional)
+            The kind of support request.
+
+        :param str bearertokentype: (optional)
+            Token type that determine which cloud provider the request come from.
+
+        :param str bearertoken: (optional)
+            Token that provided by multi cloud provider, which help to validate the email.
+
+        :param str idtoken: (optional)
+            IdToken that provided by multi cloud provider, which help to validate the email.
+
+        :param str domainid: (optional)
+            The OCID of identity domain.
+            DomainID is mandatory if the user is part of Non Default Identity domain.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+        :param int buffer_limit: (optional)
+            A buffer limit for the stream to be buffered. buffer_limit is used to set the buffer size capacity. Streams will be read until the size of the buffer reaches the buffer_limit.
+            If the stream size is greater than the buffer_limit, a BufferError exception will be thrown.
+
+            The buffer_limit parameter is used when the stream object does not have a `seek`, `tell`, or `fileno` property for the Python Request library to calculate out the content length.
+            If buffer_limit is not passed, then the buffer_limit will be defaulted to 100MB.
+            Large streams can cause the process to freeze, consider passing in content-length for large streams instead.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.cims.models.Incident`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cims/put_attachment.py.html>`__ to see an example of how to use put_attachment API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['incidentKey', 'attachmentName', 'compartmentId', 'isRestrictedFlag']
+        resource_path = "/v2/incidents/{incidentKey}/attachment"
+        method = "PUT"
+        operation_name = "put_attachment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/Incident/PutAttachment"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "buffer_limit",
+            "csi",
+            "opc_request_id",
+            "ocid",
+            "if_match",
+            "homeregion",
+            "problemtype",
+            "bearertokentype",
+            "bearertoken",
+            "idtoken",
+            "domainid"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"put_attachment got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "incidentKey": incident_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "attachmentName": attachment_name,
+            "compartmentId": compartment_id,
+            "isRestrictedFlag": is_restricted_flag
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "csi": kwargs.get("csi", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "ocid": kwargs.get("ocid", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "homeregion": kwargs.get("homeregion", missing),
+            "problemtype": kwargs.get("problemtype", missing),
+            "bearertokentype": kwargs.get("bearertokentype", missing),
+            "bearertoken": kwargs.get("bearertoken", missing),
+            "idtoken": kwargs.get("idtoken", missing),
+            "domainid": kwargs.get("domainid", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        # If the body parameter is optional we need to assign it to a variable so additional type checking can be performed.
+        try:
+            put_attachment_details
+        except NameError:
+            put_attachment_details = kwargs.get("put_attachment_details", missing)
+
+        if put_attachment_details is not missing and put_attachment_details is not None:
+            if (not isinstance(put_attachment_details, (six.binary_type, six.string_types)) and
+                    not hasattr(put_attachment_details, "read")):
+                raise TypeError('The body must be a string, bytes, or provide a read() method.')
+
+            if hasattr(put_attachment_details, 'fileno') and hasattr(put_attachment_details, 'name') and put_attachment_details.name != '<stdin>':
+                if requests.utils.super_len(put_attachment_details) == 0:
+                    header_params['Content-Length'] = '0'
+
+            # If content length is not given and stream object have no 'fileno' and is not a string or bytes, try to calculate content length
+            elif 'Content-Length' not in header_params and not is_content_length_calculable_by_req_util(put_attachment_details):
+                calculated_obj = back_up_body_calculate_stream_content_length(put_attachment_details, kwargs.get("buffer_limit"))
+                header_params['Content-Length'] = calculated_obj["content_length"]
+                put_attachment_details = calculated_obj["byte_content"]
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=put_attachment_details,
+                response_type="Incident",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=put_attachment_details,
+                response_type="Incident",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def update_incident(self, incident_key, update_incident_details, compartment_id, **kwargs):
         """
-        Updates the specified support ticket.
+        Updates the specified support request.
         For more information, see `Updating Support Requests`__.
 
         __ https://docs.cloud.oracle.com/iaas/Content/GSG/support/update-incident.htm
 
 
         :param str incident_key: (required)
-            Unique identifier for the support ticket.
+            Unique identifier for the support request.
 
         :param oci.cims.models.UpdateIncident update_incident_details: (required)
-            Details about the support ticket being updated.
+            Details about the support request being updated.
 
         :param str compartment_id: (required)
             The OCID of the tenancy.
