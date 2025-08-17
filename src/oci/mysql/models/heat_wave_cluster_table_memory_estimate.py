@@ -203,7 +203,7 @@ class HeatWaveClusterTableMemoryEstimate(object):
     def error_comment(self):
         """
         **[Required]** Gets the error_comment of this HeatWaveClusterTableMemoryEstimate.
-        Error comment (empty string if no errors occured).
+        Error comment (empty string if no errors occurred).
 
 
         :return: The error_comment of this HeatWaveClusterTableMemoryEstimate.
@@ -215,7 +215,7 @@ class HeatWaveClusterTableMemoryEstimate(object):
     def error_comment(self, error_comment):
         """
         Sets the error_comment of this HeatWaveClusterTableMemoryEstimate.
-        Error comment (empty string if no errors occured).
+        Error comment (empty string if no errors occurred).
 
 
         :param error_comment: The error_comment of this HeatWaveClusterTableMemoryEstimate.

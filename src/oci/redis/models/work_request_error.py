@@ -51,7 +51,7 @@ class WorkRequestError(object):
     def code(self):
         """
         **[Required]** Gets the code of this WorkRequestError.
-        A machine-usable code for the error that occured. Error codes are listed at `API Errors`__.
+        A machine-usable code for the error that occurred. Error codes are listed at `API Errors`__.
 
         __ https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm
 
@@ -65,7 +65,7 @@ class WorkRequestError(object):
     def code(self, code):
         """
         Sets the code of this WorkRequestError.
-        A machine-usable code for the error that occured. Error codes are listed at `API Errors`__.
+        A machine-usable code for the error that occurred. Error codes are listed at `API Errors`__.
 
         __ https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm
 
@@ -79,7 +79,7 @@ class WorkRequestError(object):
     def message(self):
         """
         **[Required]** Gets the message of this WorkRequestError.
-        A human-readable error string for the error that occured.
+        A human-readable error string for the error that occurred.
 
 
         :return: The message of this WorkRequestError.
@@ -91,7 +91,7 @@ class WorkRequestError(object):
     def message(self, message):
         """
         Sets the message of this WorkRequestError.
-        A human-readable error string for the error that occured.
+        A human-readable error string for the error that occurred.
 
 
         :param message: The message of this WorkRequestError.
@@ -103,7 +103,7 @@ class WorkRequestError(object):
     def timestamp(self):
         """
         **[Required]** Gets the timestamp of this WorkRequestError.
-        The time and time the error occured.
+        The time and time the error occurred.
 
 
         :return: The timestamp of this WorkRequestError.
@@ -115,7 +115,7 @@ class WorkRequestError(object):
     def timestamp(self, timestamp):
         """
         Sets the timestamp of this WorkRequestError.
-        The time and time the error occured.
+        The time and time the error occurred.
 
 
         :param timestamp: The timestamp of this WorkRequestError.
