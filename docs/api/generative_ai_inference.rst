@@ -50,6 +50,7 @@ Generative Ai Inference
     oci.generative_ai_inference.models.ContentModerationConfiguration
     oci.generative_ai_inference.models.ContentModerationResult
     oci.generative_ai_inference.models.DedicatedServingMode
+    oci.generative_ai_inference.models.DeveloperMessage
     oci.generative_ai_inference.models.Document
     oci.generative_ai_inference.models.DocumentRank
     oci.generative_ai_inference.models.EmbedTextDetails
@@ -67,6 +68,8 @@ Generative Ai Inference
     oci.generative_ai_inference.models.GuardrailsTextInput
     oci.generative_ai_inference.models.ImageContent
     oci.generative_ai_inference.models.ImageUrl
+    oci.generative_ai_inference.models.JsonObjectResponseFormat
+    oci.generative_ai_inference.models.JsonSchemaResponseFormat
     oci.generative_ai_inference.models.LlamaLlmInferenceRequest
     oci.generative_ai_inference.models.LlamaLlmInferenceResponse
     oci.generative_ai_inference.models.LlmInferenceRequest
@@ -76,18 +79,23 @@ Generative Ai Inference
     oci.generative_ai_inference.models.OnDemandServingMode
     oci.generative_ai_inference.models.PersonallyIdentifiableInformationConfiguration
     oci.generative_ai_inference.models.PersonallyIdentifiableInformationResult
+    oci.generative_ai_inference.models.Prediction
     oci.generative_ai_inference.models.PromptInjectionConfiguration
     oci.generative_ai_inference.models.PromptInjectionProtectionResult
     oci.generative_ai_inference.models.PromptTokensDetails
     oci.generative_ai_inference.models.RerankTextDetails
     oci.generative_ai_inference.models.RerankTextResult
+    oci.generative_ai_inference.models.ResponseFormat
+    oci.generative_ai_inference.models.ResponseJsonSchema
     oci.generative_ai_inference.models.SearchQuery
     oci.generative_ai_inference.models.ServingMode
+    oci.generative_ai_inference.models.StaticContent
     oci.generative_ai_inference.models.StreamOptions
     oci.generative_ai_inference.models.SummarizeTextDetails
     oci.generative_ai_inference.models.SummarizeTextResult
     oci.generative_ai_inference.models.SystemMessage
     oci.generative_ai_inference.models.TextContent
+    oci.generative_ai_inference.models.TextResponseFormat
     oci.generative_ai_inference.models.TokenLikelihood
     oci.generative_ai_inference.models.ToolCall
     oci.generative_ai_inference.models.ToolChoice

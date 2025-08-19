@@ -15,6 +15,34 @@ class GenericChatRequest(BaseChatRequest):
     Details for the chat request.
     """
 
+    #: A constant which can be used with the reasoning_effort property of a GenericChatRequest.
+    #: This constant has a value of "MINIMAL"
+    REASONING_EFFORT_MINIMAL = "MINIMAL"
+
+    #: A constant which can be used with the reasoning_effort property of a GenericChatRequest.
+    #: This constant has a value of "LOW"
+    REASONING_EFFORT_LOW = "LOW"
+
+    #: A constant which can be used with the reasoning_effort property of a GenericChatRequest.
+    #: This constant has a value of "MEDIUM"
+    REASONING_EFFORT_MEDIUM = "MEDIUM"
+
+    #: A constant which can be used with the reasoning_effort property of a GenericChatRequest.
+    #: This constant has a value of "HIGH"
+    REASONING_EFFORT_HIGH = "HIGH"
+
+    #: A constant which can be used with the verbosity property of a GenericChatRequest.
+    #: This constant has a value of "LOW"
+    VERBOSITY_LOW = "LOW"
+
+    #: A constant which can be used with the verbosity property of a GenericChatRequest.
+    #: This constant has a value of "MEDIUM"
+    VERBOSITY_MEDIUM = "MEDIUM"
+
+    #: A constant which can be used with the verbosity property of a GenericChatRequest.
+    #: This constant has a value of "HIGH"
+    VERBOSITY_HIGH = "HIGH"
+
     def __init__(self, **kwargs):
         """
         Initializes a new GenericChatRequest object with values from keyword arguments. The default value of the :py:attr:`~oci.generative_ai_inference.models.GenericChatRequest.api_format` attribute
@@ -30,9 +58,27 @@ class GenericChatRequest(BaseChatRequest):
             The value to assign to the messages property of this GenericChatRequest.
         :type messages: list[oci.generative_ai_inference.models.Message]
 
+        :param reasoning_effort:
+            The value to assign to the reasoning_effort property of this GenericChatRequest.
+            Allowed values for this property are: "MINIMAL", "LOW", "MEDIUM", "HIGH"
+        :type reasoning_effort: str
+
+        :param verbosity:
+            The value to assign to the verbosity property of this GenericChatRequest.
+            Allowed values for this property are: "LOW", "MEDIUM", "HIGH"
+        :type verbosity: str
+
+        :param metadata:
+            The value to assign to the metadata property of this GenericChatRequest.
+        :type metadata: object
+
         :param is_stream:
             The value to assign to the is_stream property of this GenericChatRequest.
         :type is_stream: bool
+
+        :param stream_options:
+            The value to assign to the stream_options property of this GenericChatRequest.
+        :type stream_options: oci.generative_ai_inference.models.StreamOptions
 
         :param num_generations:
             The value to assign to the num_generations property of this GenericChatRequest.
@@ -78,13 +124,29 @@ class GenericChatRequest(BaseChatRequest):
             The value to assign to the max_tokens property of this GenericChatRequest.
         :type max_tokens: int
 
+        :param max_completion_tokens:
+            The value to assign to the max_completion_tokens property of this GenericChatRequest.
+        :type max_completion_tokens: int
+
         :param logit_bias:
             The value to assign to the logit_bias property of this GenericChatRequest.
         :type logit_bias: object
 
+        :param prediction:
+            The value to assign to the prediction property of this GenericChatRequest.
+        :type prediction: oci.generative_ai_inference.models.Prediction
+
+        :param response_format:
+            The value to assign to the response_format property of this GenericChatRequest.
+        :type response_format: oci.generative_ai_inference.models.ResponseFormat
+
         :param tool_choice:
             The value to assign to the tool_choice property of this GenericChatRequest.
         :type tool_choice: oci.generative_ai_inference.models.ToolChoice
+
+        :param is_parallel_tool_calls:
+            The value to assign to the is_parallel_tool_calls property of this GenericChatRequest.
+        :type is_parallel_tool_calls: bool
 
         :param tools:
             The value to assign to the tools property of this GenericChatRequest.
@@ -94,7 +156,11 @@ class GenericChatRequest(BaseChatRequest):
         self.swagger_types = {
             'api_format': 'str',
             'messages': 'list[Message]',
+            'reasoning_effort': 'str',
+            'verbosity': 'str',
+            'metadata': 'object',
             'is_stream': 'bool',
+            'stream_options': 'StreamOptions',
             'num_generations': 'int',
             'seed': 'int',
             'is_echo': 'bool',
@@ -106,14 +172,22 @@ class GenericChatRequest(BaseChatRequest):
             'stop': 'list[str]',
             'log_probs': 'int',
             'max_tokens': 'int',
+            'max_completion_tokens': 'int',
             'logit_bias': 'object',
+            'prediction': 'Prediction',
+            'response_format': 'ResponseFormat',
             'tool_choice': 'ToolChoice',
+            'is_parallel_tool_calls': 'bool',
             'tools': 'list[ToolDefinition]'
         }
         self.attribute_map = {
             'api_format': 'apiFormat',
             'messages': 'messages',
+            'reasoning_effort': 'reasoningEffort',
+            'verbosity': 'verbosity',
+            'metadata': 'metadata',
             'is_stream': 'isStream',
+            'stream_options': 'streamOptions',
             'num_generations': 'numGenerations',
             'seed': 'seed',
             'is_echo': 'isEcho',
@@ -125,13 +199,21 @@ class GenericChatRequest(BaseChatRequest):
             'stop': 'stop',
             'log_probs': 'logProbs',
             'max_tokens': 'maxTokens',
+            'max_completion_tokens': 'maxCompletionTokens',
             'logit_bias': 'logitBias',
+            'prediction': 'prediction',
+            'response_format': 'responseFormat',
             'tool_choice': 'toolChoice',
+            'is_parallel_tool_calls': 'isParallelToolCalls',
             'tools': 'tools'
         }
         self._api_format = None
         self._messages = None
+        self._reasoning_effort = None
+        self._verbosity = None
+        self._metadata = None
         self._is_stream = None
+        self._stream_options = None
         self._num_generations = None
         self._seed = None
         self._is_echo = None
@@ -143,8 +225,12 @@ class GenericChatRequest(BaseChatRequest):
         self._stop = None
         self._log_probs = None
         self._max_tokens = None
+        self._max_completion_tokens = None
         self._logit_bias = None
+        self._prediction = None
+        self._response_format = None
         self._tool_choice = None
+        self._is_parallel_tool_calls = None
         self._tools = None
         self._api_format = 'GENERIC'
 
@@ -173,6 +259,96 @@ class GenericChatRequest(BaseChatRequest):
         self._messages = messages
 
     @property
+    def reasoning_effort(self):
+        """
+        Gets the reasoning_effort of this GenericChatRequest.
+        Constrains effort on reasoning for reasoning models. Currently supported values are minimal, low, medium, and high. Reducing reasoning effort can result in faster responses and fewer tokens used on reasoning in a response.
+
+        Allowed values for this property are: "MINIMAL", "LOW", "MEDIUM", "HIGH"
+
+
+        :return: The reasoning_effort of this GenericChatRequest.
+        :rtype: str
+        """
+        return self._reasoning_effort
+
+    @reasoning_effort.setter
+    def reasoning_effort(self, reasoning_effort):
+        """
+        Sets the reasoning_effort of this GenericChatRequest.
+        Constrains effort on reasoning for reasoning models. Currently supported values are minimal, low, medium, and high. Reducing reasoning effort can result in faster responses and fewer tokens used on reasoning in a response.
+
+
+        :param reasoning_effort: The reasoning_effort of this GenericChatRequest.
+        :type: str
+        """
+        allowed_values = ["MINIMAL", "LOW", "MEDIUM", "HIGH"]
+        if not value_allowed_none_or_none_sentinel(reasoning_effort, allowed_values):
+            raise ValueError(
+                f"Invalid value for `reasoning_effort`, must be None or one of {allowed_values}"
+            )
+        self._reasoning_effort = reasoning_effort
+
+    @property
+    def verbosity(self):
+        """
+        Gets the verbosity of this GenericChatRequest.
+        Constrains the verbosity of the model's response. Lower values will result in more concise responses, while higher values will result in more verbose responses.
+
+        Allowed values for this property are: "LOW", "MEDIUM", "HIGH"
+
+
+        :return: The verbosity of this GenericChatRequest.
+        :rtype: str
+        """
+        return self._verbosity
+
+    @verbosity.setter
+    def verbosity(self, verbosity):
+        """
+        Sets the verbosity of this GenericChatRequest.
+        Constrains the verbosity of the model's response. Lower values will result in more concise responses, while higher values will result in more verbose responses.
+
+
+        :param verbosity: The verbosity of this GenericChatRequest.
+        :type: str
+        """
+        allowed_values = ["LOW", "MEDIUM", "HIGH"]
+        if not value_allowed_none_or_none_sentinel(verbosity, allowed_values):
+            raise ValueError(
+                f"Invalid value for `verbosity`, must be None or one of {allowed_values}"
+            )
+        self._verbosity = verbosity
+
+    @property
+    def metadata(self):
+        """
+        Gets the metadata of this GenericChatRequest.
+        Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format, and querying for objects via API or the dashboard.
+
+        Keys are strings with a maximum length of 64 characters. Values are strings with a maximum length of 512 characters.
+
+
+        :return: The metadata of this GenericChatRequest.
+        :rtype: object
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """
+        Sets the metadata of this GenericChatRequest.
+        Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format, and querying for objects via API or the dashboard.
+
+        Keys are strings with a maximum length of 64 characters. Values are strings with a maximum length of 512 characters.
+
+
+        :param metadata: The metadata of this GenericChatRequest.
+        :type: object
+        """
+        self._metadata = metadata
+
+    @property
     def is_stream(self):
         """
         Gets the is_stream of this GenericChatRequest.
@@ -195,6 +371,26 @@ class GenericChatRequest(BaseChatRequest):
         :type: bool
         """
         self._is_stream = is_stream
+
+    @property
+    def stream_options(self):
+        """
+        Gets the stream_options of this GenericChatRequest.
+
+        :return: The stream_options of this GenericChatRequest.
+        :rtype: oci.generative_ai_inference.models.StreamOptions
+        """
+        return self._stream_options
+
+    @stream_options.setter
+    def stream_options(self, stream_options):
+        """
+        Sets the stream_options of this GenericChatRequest.
+
+        :param stream_options: The stream_options of this GenericChatRequest.
+        :type: oci.generative_ai_inference.models.StreamOptions
+        """
+        self._stream_options = stream_options
 
     @property
     def num_generations(self):
@@ -460,8 +656,7 @@ class GenericChatRequest(BaseChatRequest):
     def max_tokens(self):
         """
         Gets the max_tokens of this GenericChatRequest.
-        The maximum number of tokens that can be generated per output sequence. The token count of your prompt plus `maxTokens` must not exceed the model's context length.
-        Not setting a value for maxTokens results in the possible use of model's full context length.
+        The maximum number of tokens that can be generated per output sequence. The token count of your prompt plus maxTokens must not exceed the model's context length. For on-demand inferencing, the response length is capped at 4,000 tokens for each run.
 
 
         :return: The max_tokens of this GenericChatRequest.
@@ -473,14 +668,37 @@ class GenericChatRequest(BaseChatRequest):
     def max_tokens(self, max_tokens):
         """
         Sets the max_tokens of this GenericChatRequest.
-        The maximum number of tokens that can be generated per output sequence. The token count of your prompt plus `maxTokens` must not exceed the model's context length.
-        Not setting a value for maxTokens results in the possible use of model's full context length.
+        The maximum number of tokens that can be generated per output sequence. The token count of your prompt plus maxTokens must not exceed the model's context length. For on-demand inferencing, the response length is capped at 4,000 tokens for each run.
 
 
         :param max_tokens: The max_tokens of this GenericChatRequest.
         :type: int
         """
         self._max_tokens = max_tokens
+
+    @property
+    def max_completion_tokens(self):
+        """
+        Gets the max_completion_tokens of this GenericChatRequest.
+        An upper bound for the number of tokens that can be generated for a completion, including visible output tokens and reasoning tokens.
+
+
+        :return: The max_completion_tokens of this GenericChatRequest.
+        :rtype: int
+        """
+        return self._max_completion_tokens
+
+    @max_completion_tokens.setter
+    def max_completion_tokens(self, max_completion_tokens):
+        """
+        Sets the max_completion_tokens of this GenericChatRequest.
+        An upper bound for the number of tokens that can be generated for a completion, including visible output tokens and reasoning tokens.
+
+
+        :param max_completion_tokens: The max_completion_tokens of this GenericChatRequest.
+        :type: int
+        """
+        self._max_completion_tokens = max_completion_tokens
 
     @property
     def logit_bias(self):
@@ -511,6 +729,46 @@ class GenericChatRequest(BaseChatRequest):
         self._logit_bias = logit_bias
 
     @property
+    def prediction(self):
+        """
+        Gets the prediction of this GenericChatRequest.
+
+        :return: The prediction of this GenericChatRequest.
+        :rtype: oci.generative_ai_inference.models.Prediction
+        """
+        return self._prediction
+
+    @prediction.setter
+    def prediction(self, prediction):
+        """
+        Sets the prediction of this GenericChatRequest.
+
+        :param prediction: The prediction of this GenericChatRequest.
+        :type: oci.generative_ai_inference.models.Prediction
+        """
+        self._prediction = prediction
+
+    @property
+    def response_format(self):
+        """
+        Gets the response_format of this GenericChatRequest.
+
+        :return: The response_format of this GenericChatRequest.
+        :rtype: oci.generative_ai_inference.models.ResponseFormat
+        """
+        return self._response_format
+
+    @response_format.setter
+    def response_format(self, response_format):
+        """
+        Sets the response_format of this GenericChatRequest.
+
+        :param response_format: The response_format of this GenericChatRequest.
+        :type: oci.generative_ai_inference.models.ResponseFormat
+        """
+        self._response_format = response_format
+
+    @property
     def tool_choice(self):
         """
         Gets the tool_choice of this GenericChatRequest.
@@ -529,6 +787,30 @@ class GenericChatRequest(BaseChatRequest):
         :type: oci.generative_ai_inference.models.ToolChoice
         """
         self._tool_choice = tool_choice
+
+    @property
+    def is_parallel_tool_calls(self):
+        """
+        Gets the is_parallel_tool_calls of this GenericChatRequest.
+        Whether to enable parallel function calling during tool use.
+
+
+        :return: The is_parallel_tool_calls of this GenericChatRequest.
+        :rtype: bool
+        """
+        return self._is_parallel_tool_calls
+
+    @is_parallel_tool_calls.setter
+    def is_parallel_tool_calls(self, is_parallel_tool_calls):
+        """
+        Sets the is_parallel_tool_calls of this GenericChatRequest.
+        Whether to enable parallel function calling during tool use.
+
+
+        :param is_parallel_tool_calls: The is_parallel_tool_calls of this GenericChatRequest.
+        :type: bool
+        """
+        self._is_parallel_tool_calls = is_parallel_tool_calls
 
     @property
     def tools(self):

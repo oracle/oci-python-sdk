@@ -160,7 +160,7 @@ class MultiCloudsMetadataClient(object):
         resource_path = "/omHub/multiCloudsMetadata/{subscriptionId}"
         method = "GET"
         operation_name = "get_multi_cloud_metadata"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/multicloud-omhub-cp/20180828/MultiCloudMetadata/GetMultiCloudMetadata"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -295,7 +295,7 @@ class MultiCloudsMetadataClient(object):
         resource_path = "/omHub/multiCloudsMetadata"
         method = "GET"
         operation_name = "list_multi_cloud_metadata"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/multicloud-omhub-cp/20180828/MultiCloudMetadataCollection/ListMultiCloudMetadata"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

@@ -34,20 +34,27 @@ class GenericChatResponse(BaseChatResponse):
             The value to assign to the choices property of this GenericChatResponse.
         :type choices: list[oci.generative_ai_inference.models.ChatChoice]
 
+        :param usage:
+            The value to assign to the usage property of this GenericChatResponse.
+        :type usage: oci.generative_ai_inference.models.Usage
+
         """
         self.swagger_types = {
             'api_format': 'str',
             'time_created': 'datetime',
-            'choices': 'list[ChatChoice]'
+            'choices': 'list[ChatChoice]',
+            'usage': 'Usage'
         }
         self.attribute_map = {
             'api_format': 'apiFormat',
             'time_created': 'timeCreated',
-            'choices': 'choices'
+            'choices': 'choices',
+            'usage': 'usage'
         }
         self._api_format = None
         self._time_created = None
         self._choices = None
+        self._usage = None
         self._api_format = 'GENERIC'
 
     @property
@@ -97,6 +104,26 @@ class GenericChatResponse(BaseChatResponse):
         :type: list[oci.generative_ai_inference.models.ChatChoice]
         """
         self._choices = choices
+
+    @property
+    def usage(self):
+        """
+        Gets the usage of this GenericChatResponse.
+
+        :return: The usage of this GenericChatResponse.
+        :rtype: oci.generative_ai_inference.models.Usage
+        """
+        return self._usage
+
+    @usage.setter
+    def usage(self, usage):
+        """
+        Sets the usage of this GenericChatResponse.
+
+        :param usage: The usage of this GenericChatResponse.
+        :type: oci.generative_ai_inference.models.Usage
+        """
+        self._usage = usage
 
     def __repr__(self):
         return formatted_flat_dict(self)

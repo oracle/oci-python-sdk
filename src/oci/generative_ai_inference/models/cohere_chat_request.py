@@ -448,7 +448,7 @@ class CohereChatRequest(BaseChatRequest):
     def max_tokens(self):
         """
         Gets the max_tokens of this CohereChatRequest.
-        The maximum number of output tokens that the model will generate for the response.
+        The maximum number of output tokens that the model will generate for the response. The token count of your prompt plus maxTokens must not exceed the model's context length. For on-demand inferencing, the response length is capped at 4,000 tokens for each run.
 
 
         :return: The max_tokens of this CohereChatRequest.
@@ -460,7 +460,7 @@ class CohereChatRequest(BaseChatRequest):
     def max_tokens(self, max_tokens):
         """
         Sets the max_tokens of this CohereChatRequest.
-        The maximum number of output tokens that the model will generate for the response.
+        The maximum number of output tokens that the model will generate for the response. The token count of your prompt plus maxTokens must not exceed the model's context length. For on-demand inferencing, the response length is capped at 4,000 tokens for each run.
 
 
         :param max_tokens: The max_tokens of this CohereChatRequest.
