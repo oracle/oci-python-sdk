@@ -1,0 +1,11 @@
+CreatePluggableDatabaseSnapshotDetails
+======================================
+
+.. currentmodule:: oci.database.models
+
+.. autoclass:: CreatePluggableDatabaseSnapshotDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

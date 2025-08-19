@@ -203,6 +203,7 @@ from .create_pluggable_database_from_local_clone_details import CreatePluggableD
 from .create_pluggable_database_from_relocate_details import CreatePluggableDatabaseFromRelocateDetails
 from .create_pluggable_database_from_remote_clone_details import CreatePluggableDatabaseFromRemoteCloneDetails
 from .create_pluggable_database_refreshable_clone_details import CreatePluggableDatabaseRefreshableCloneDetails
+from .create_pluggable_database_snapshot_details import CreatePluggableDatabaseSnapshotDetails
 from .create_recovery_appliance_backup_destination_details import CreateRecoveryApplianceBackupDestinationDetails
 from .create_refreshable_autonomous_database_clone_details import CreateRefreshableAutonomousDatabaseCloneDetails
 from .create_scheduled_action_details import CreateScheduledActionDetails
@@ -385,6 +386,8 @@ from .pluggable_database_connection_strings import PluggableDatabaseConnectionSt
 from .pluggable_database_management_config import PluggableDatabaseManagementConfig
 from .pluggable_database_node_level_details import PluggableDatabaseNodeLevelDetails
 from .pluggable_database_refreshable_clone_config import PluggableDatabaseRefreshableCloneConfig
+from .pluggable_database_snapshot import PluggableDatabaseSnapshot
+from .pluggable_database_snapshot_summary import PluggableDatabaseSnapshotSummary
 from .pluggable_database_summary import PluggableDatabaseSummary
 from .recommended_scheduled_action_summary import RecommendedScheduledActionSummary
 from .recommended_scheduled_actions_collection import RecommendedScheduledActionsCollection
@@ -703,6 +706,7 @@ database_type_mapping = {
     "CreatePluggableDatabaseFromRelocateDetails": CreatePluggableDatabaseFromRelocateDetails,
     "CreatePluggableDatabaseFromRemoteCloneDetails": CreatePluggableDatabaseFromRemoteCloneDetails,
     "CreatePluggableDatabaseRefreshableCloneDetails": CreatePluggableDatabaseRefreshableCloneDetails,
+    "CreatePluggableDatabaseSnapshotDetails": CreatePluggableDatabaseSnapshotDetails,
     "CreateRecoveryApplianceBackupDestinationDetails": CreateRecoveryApplianceBackupDestinationDetails,
     "CreateRefreshableAutonomousDatabaseCloneDetails": CreateRefreshableAutonomousDatabaseCloneDetails,
     "CreateScheduledActionDetails": CreateScheduledActionDetails,
@@ -885,6 +889,8 @@ database_type_mapping = {
     "PluggableDatabaseManagementConfig": PluggableDatabaseManagementConfig,
     "PluggableDatabaseNodeLevelDetails": PluggableDatabaseNodeLevelDetails,
     "PluggableDatabaseRefreshableCloneConfig": PluggableDatabaseRefreshableCloneConfig,
+    "PluggableDatabaseSnapshot": PluggableDatabaseSnapshot,
+    "PluggableDatabaseSnapshotSummary": PluggableDatabaseSnapshotSummary,
     "PluggableDatabaseSummary": PluggableDatabaseSummary,
     "RecommendedScheduledActionSummary": RecommendedScheduledActionSummary,
     "RecommendedScheduledActionsCollection": RecommendedScheduledActionsCollection,

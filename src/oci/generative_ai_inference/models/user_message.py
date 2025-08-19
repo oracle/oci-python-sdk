@@ -23,7 +23,7 @@ class UserMessage(Message):
 
         :param role:
             The value to assign to the role property of this UserMessage.
-            Allowed values for this property are: "SYSTEM", "USER", "ASSISTANT", "TOOL"
+            Allowed values for this property are: "SYSTEM", "ASSISTANT", "USER", "TOOL", "DEVELOPER"
         :type role: str
 
         :param content:

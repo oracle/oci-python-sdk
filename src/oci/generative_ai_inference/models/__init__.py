@@ -38,6 +38,7 @@ from .completion_tokens_details import CompletionTokensDetails
 from .content_moderation_configuration import ContentModerationConfiguration
 from .content_moderation_result import ContentModerationResult
 from .dedicated_serving_mode import DedicatedServingMode
+from .developer_message import DeveloperMessage
 from .document import Document
 from .document_rank import DocumentRank
 from .embed_text_details import EmbedTextDetails
@@ -55,6 +56,8 @@ from .guardrails_results import GuardrailsResults
 from .guardrails_text_input import GuardrailsTextInput
 from .image_content import ImageContent
 from .image_url import ImageUrl
+from .json_object_response_format import JsonObjectResponseFormat
+from .json_schema_response_format import JsonSchemaResponseFormat
 from .llama_llm_inference_request import LlamaLlmInferenceRequest
 from .llama_llm_inference_response import LlamaLlmInferenceResponse
 from .llm_inference_request import LlmInferenceRequest
@@ -64,18 +67,23 @@ from .message import Message
 from .on_demand_serving_mode import OnDemandServingMode
 from .personally_identifiable_information_configuration import PersonallyIdentifiableInformationConfiguration
 from .personally_identifiable_information_result import PersonallyIdentifiableInformationResult
+from .prediction import Prediction
 from .prompt_injection_configuration import PromptInjectionConfiguration
 from .prompt_injection_protection_result import PromptInjectionProtectionResult
 from .prompt_tokens_details import PromptTokensDetails
 from .rerank_text_details import RerankTextDetails
 from .rerank_text_result import RerankTextResult
+from .response_format import ResponseFormat
+from .response_json_schema import ResponseJsonSchema
 from .search_query import SearchQuery
 from .serving_mode import ServingMode
+from .static_content import StaticContent
 from .stream_options import StreamOptions
 from .summarize_text_details import SummarizeTextDetails
 from .summarize_text_result import SummarizeTextResult
 from .system_message import SystemMessage
 from .text_content import TextContent
+from .text_response_format import TextResponseFormat
 from .token_likelihood import TokenLikelihood
 from .tool_call import ToolCall
 from .tool_choice import ToolChoice
@@ -122,6 +130,7 @@ generative_ai_inference_type_mapping = {
     "ContentModerationConfiguration": ContentModerationConfiguration,
     "ContentModerationResult": ContentModerationResult,
     "DedicatedServingMode": DedicatedServingMode,
+    "DeveloperMessage": DeveloperMessage,
     "Document": Document,
     "DocumentRank": DocumentRank,
     "EmbedTextDetails": EmbedTextDetails,
@@ -139,6 +148,8 @@ generative_ai_inference_type_mapping = {
     "GuardrailsTextInput": GuardrailsTextInput,
     "ImageContent": ImageContent,
     "ImageUrl": ImageUrl,
+    "JsonObjectResponseFormat": JsonObjectResponseFormat,
+    "JsonSchemaResponseFormat": JsonSchemaResponseFormat,
     "LlamaLlmInferenceRequest": LlamaLlmInferenceRequest,
     "LlamaLlmInferenceResponse": LlamaLlmInferenceResponse,
     "LlmInferenceRequest": LlmInferenceRequest,
@@ -148,18 +159,23 @@ generative_ai_inference_type_mapping = {
     "OnDemandServingMode": OnDemandServingMode,
     "PersonallyIdentifiableInformationConfiguration": PersonallyIdentifiableInformationConfiguration,
     "PersonallyIdentifiableInformationResult": PersonallyIdentifiableInformationResult,
+    "Prediction": Prediction,
     "PromptInjectionConfiguration": PromptInjectionConfiguration,
     "PromptInjectionProtectionResult": PromptInjectionProtectionResult,
     "PromptTokensDetails": PromptTokensDetails,
     "RerankTextDetails": RerankTextDetails,
     "RerankTextResult": RerankTextResult,
+    "ResponseFormat": ResponseFormat,
+    "ResponseJsonSchema": ResponseJsonSchema,
     "SearchQuery": SearchQuery,
     "ServingMode": ServingMode,
+    "StaticContent": StaticContent,
     "StreamOptions": StreamOptions,
     "SummarizeTextDetails": SummarizeTextDetails,
     "SummarizeTextResult": SummarizeTextResult,
     "SystemMessage": SystemMessage,
     "TextContent": TextContent,
+    "TextResponseFormat": TextResponseFormat,
     "TokenLikelihood": TokenLikelihood,
     "ToolCall": ToolCall,
     "ToolChoice": ToolChoice,

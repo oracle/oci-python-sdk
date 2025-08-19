@@ -306,7 +306,7 @@ class MetadataClient(object):
         resource_path = "/externalLocationsMetadata"
         method = "GET"
         operation_name = "list_external_location_details_metadata"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/multicloud-omhub-cp/20180828/ExternalLocationsMetadatumCollection/ListExternalLocationDetailsMetadata"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -528,7 +528,7 @@ class MetadataClient(object):
         resource_path = "/externalLocationMappingMetadata"
         method = "GET"
         operation_name = "list_external_location_mapping_metadata"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/multicloud-omhub-cp/20180828/ExternalLocationMappingMetadatumSummaryCollection/ListExternalLocationMappingMetadata"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -720,7 +720,7 @@ class MetadataClient(object):
         resource_path = "/externalLocationSummariesMetadata"
         method = "GET"
         operation_name = "list_external_location_summaries_metadata"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/multicloud-omhub-cp/20180828/ExternalLocationSummariesMetadatumSummaryCollection/ListExternalLocationSummariesMetadata"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

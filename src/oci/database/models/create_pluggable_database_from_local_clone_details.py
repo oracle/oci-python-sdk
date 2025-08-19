@@ -34,20 +34,27 @@ class CreatePluggableDatabaseFromLocalCloneDetails(CreatePluggableDatabaseCreati
             The value to assign to the is_thin_clone property of this CreatePluggableDatabaseFromLocalCloneDetails.
         :type is_thin_clone: bool
 
+        :param source_pluggable_database_snapshot_id:
+            The value to assign to the source_pluggable_database_snapshot_id property of this CreatePluggableDatabaseFromLocalCloneDetails.
+        :type source_pluggable_database_snapshot_id: str
+
         """
         self.swagger_types = {
             'creation_type': 'str',
             'source_pluggable_database_id': 'str',
-            'is_thin_clone': 'bool'
+            'is_thin_clone': 'bool',
+            'source_pluggable_database_snapshot_id': 'str'
         }
         self.attribute_map = {
             'creation_type': 'creationType',
             'source_pluggable_database_id': 'sourcePluggableDatabaseId',
-            'is_thin_clone': 'isThinClone'
+            'is_thin_clone': 'isThinClone',
+            'source_pluggable_database_snapshot_id': 'sourcePluggableDatabaseSnapshotId'
         }
         self._creation_type = None
         self._source_pluggable_database_id = None
         self._is_thin_clone = None
+        self._source_pluggable_database_snapshot_id = None
         self._creation_type = 'LOCAL_CLONE_PDB'
 
     @property
@@ -97,6 +104,30 @@ class CreatePluggableDatabaseFromLocalCloneDetails(CreatePluggableDatabaseCreati
         :type: bool
         """
         self._is_thin_clone = is_thin_clone
+
+    @property
+    def source_pluggable_database_snapshot_id(self):
+        """
+        Gets the source_pluggable_database_snapshot_id of this CreatePluggableDatabaseFromLocalCloneDetails.
+        The OCID of the Source Pluggable Database Snapshot id.
+
+
+        :return: The source_pluggable_database_snapshot_id of this CreatePluggableDatabaseFromLocalCloneDetails.
+        :rtype: str
+        """
+        return self._source_pluggable_database_snapshot_id
+
+    @source_pluggable_database_snapshot_id.setter
+    def source_pluggable_database_snapshot_id(self, source_pluggable_database_snapshot_id):
+        """
+        Sets the source_pluggable_database_snapshot_id of this CreatePluggableDatabaseFromLocalCloneDetails.
+        The OCID of the Source Pluggable Database Snapshot id.
+
+
+        :param source_pluggable_database_snapshot_id: The source_pluggable_database_snapshot_id of this CreatePluggableDatabaseFromLocalCloneDetails.
+        :type: str
+        """
+        self._source_pluggable_database_snapshot_id = source_pluggable_database_snapshot_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

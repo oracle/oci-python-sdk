@@ -36,23 +36,30 @@ class ChatChoice(object):
             The value to assign to the logprobs property of this ChatChoice.
         :type logprobs: oci.generative_ai_inference.models.Logprobs
 
+        :param usage:
+            The value to assign to the usage property of this ChatChoice.
+        :type usage: oci.generative_ai_inference.models.Usage
+
         """
         self.swagger_types = {
             'index': 'int',
             'message': 'Message',
             'finish_reason': 'str',
-            'logprobs': 'Logprobs'
+            'logprobs': 'Logprobs',
+            'usage': 'Usage'
         }
         self.attribute_map = {
             'index': 'index',
             'message': 'message',
             'finish_reason': 'finishReason',
-            'logprobs': 'logprobs'
+            'logprobs': 'logprobs',
+            'usage': 'usage'
         }
         self._index = None
         self._message = None
         self._finish_reason = None
         self._logprobs = None
+        self._usage = None
 
     @property
     def index(self):
@@ -145,6 +152,26 @@ class ChatChoice(object):
         :type: oci.generative_ai_inference.models.Logprobs
         """
         self._logprobs = logprobs
+
+    @property
+    def usage(self):
+        """
+        Gets the usage of this ChatChoice.
+
+        :return: The usage of this ChatChoice.
+        :rtype: oci.generative_ai_inference.models.Usage
+        """
+        return self._usage
+
+    @usage.setter
+    def usage(self, usage):
+        """
+        Sets the usage of this ChatChoice.
+
+        :param usage: The usage of this ChatChoice.
+        :type: oci.generative_ai_inference.models.Usage
+        """
+        self._usage = usage
 
     def __repr__(self):
         return formatted_flat_dict(self)

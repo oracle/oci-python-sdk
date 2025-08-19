@@ -215,6 +215,7 @@ Database
     oci.database.models.CreatePluggableDatabaseFromRelocateDetails
     oci.database.models.CreatePluggableDatabaseFromRemoteCloneDetails
     oci.database.models.CreatePluggableDatabaseRefreshableCloneDetails
+    oci.database.models.CreatePluggableDatabaseSnapshotDetails
     oci.database.models.CreateRecoveryApplianceBackupDestinationDetails
     oci.database.models.CreateRefreshableAutonomousDatabaseCloneDetails
     oci.database.models.CreateScheduledActionDetails
@@ -397,6 +398,8 @@ Database
     oci.database.models.PluggableDatabaseManagementConfig
     oci.database.models.PluggableDatabaseNodeLevelDetails
     oci.database.models.PluggableDatabaseRefreshableCloneConfig
+    oci.database.models.PluggableDatabaseSnapshot
+    oci.database.models.PluggableDatabaseSnapshotSummary
     oci.database.models.PluggableDatabaseSummary
     oci.database.models.RecommendedScheduledActionSummary
     oci.database.models.RecommendedScheduledActionsCollection

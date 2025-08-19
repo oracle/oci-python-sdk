@@ -168,7 +168,7 @@ class OmhubNetworkAnchorClient(object):
         resource_path = "/networkAnchors/{networkAnchorId}"
         method = "GET"
         operation_name = "get_network_anchor"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/multicloud-omhub-cp/20180828/NetworkAnchor/GetNetworkAnchor"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -345,7 +345,7 @@ class OmhubNetworkAnchorClient(object):
         resource_path = "/networkAnchors"
         method = "GET"
         operation_name = "list_network_anchors"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/multicloud-omhub-cp/20180828/NetworkAnchorCollection/ListNetworkAnchors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

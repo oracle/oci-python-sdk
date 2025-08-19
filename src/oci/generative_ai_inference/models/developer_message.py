@@ -10,28 +10,28 @@ from oci.decorators import init_model_state_from_kwargs
 
 
 @init_model_state_from_kwargs
-class SystemMessage(Message):
+class DeveloperMessage(Message):
     """
-    Represents a single instance of system message.
+    Developer-provided instructions that the model should follow, regardless of messages sent by the user. With o1 models and newer, developer messages replace the previous system messages.
     """
 
     def __init__(self, **kwargs):
         """
-        Initializes a new SystemMessage object with values from keyword arguments. The default value of the :py:attr:`~oci.generative_ai_inference.models.SystemMessage.role` attribute
-        of this class is ``SYSTEM`` and it should not be changed.
+        Initializes a new DeveloperMessage object with values from keyword arguments. The default value of the :py:attr:`~oci.generative_ai_inference.models.DeveloperMessage.role` attribute
+        of this class is ``DEVELOPER`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param role:
-            The value to assign to the role property of this SystemMessage.
+            The value to assign to the role property of this DeveloperMessage.
             Allowed values for this property are: "SYSTEM", "ASSISTANT", "USER", "TOOL", "DEVELOPER"
         :type role: str
 
         :param content:
-            The value to assign to the content property of this SystemMessage.
+            The value to assign to the content property of this DeveloperMessage.
         :type content: list[oci.generative_ai_inference.models.ChatContent]
 
         :param name:
-            The value to assign to the name property of this SystemMessage.
+            The value to assign to the name property of this DeveloperMessage.
         :type name: str
 
         """
@@ -48,16 +48,16 @@ class SystemMessage(Message):
         self._role = None
         self._content = None
         self._name = None
-        self._role = 'SYSTEM'
+        self._role = 'DEVELOPER'
 
     @property
     def name(self):
         """
-        Gets the name of this SystemMessage.
+        Gets the name of this DeveloperMessage.
         An optional name for the participant. Provides the model information to differentiate between participants of the same role.
 
 
-        :return: The name of this SystemMessage.
+        :return: The name of this DeveloperMessage.
         :rtype: str
         """
         return self._name
@@ -65,11 +65,11 @@ class SystemMessage(Message):
     @name.setter
     def name(self, name):
         """
-        Sets the name of this SystemMessage.
+        Sets the name of this DeveloperMessage.
         An optional name for the participant. Provides the model information to differentiate between participants of the same role.
 
 
-        :param name: The name of this SystemMessage.
+        :param name: The name of this DeveloperMessage.
         :type: str
         """
         self._name = name

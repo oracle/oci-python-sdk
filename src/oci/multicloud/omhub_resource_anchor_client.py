@@ -165,7 +165,7 @@ class OmhubResourceAnchorClient(object):
         resource_path = "/resourceAnchors/{resourceAnchorId}"
         method = "GET"
         operation_name = "get_resource_anchor"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/multicloud-omhub-cp/20180828/ResourceAnchor/GetResourceAnchor"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -339,7 +339,7 @@ class OmhubResourceAnchorClient(object):
         resource_path = "/resourceAnchors"
         method = "GET"
         operation_name = "list_resource_anchors"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/multicloud-omhub-cp/20180828/ResourceAnchorCollection/ListResourceAnchors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
