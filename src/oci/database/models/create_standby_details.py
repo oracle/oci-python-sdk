@@ -82,6 +82,10 @@ class CreateStandbyDetails(object):
             Allowed values for this property are: "SYNC", "ASYNC", "FASTSYNC"
         :type transport_type: str
 
+        :param storage_size_details:
+            The value to assign to the storage_size_details property of this CreateStandbyDetails.
+        :type storage_size_details: oci.database.models.DatabaseStorageSizeDetails
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateStandbyDetails.
         :type freeform_tags: dict(str, str)
@@ -101,6 +105,7 @@ class CreateStandbyDetails(object):
             'sid_prefix': 'str',
             'protection_mode': 'str',
             'transport_type': 'str',
+            'storage_size_details': 'DatabaseStorageSizeDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -114,6 +119,7 @@ class CreateStandbyDetails(object):
             'sid_prefix': 'sidPrefix',
             'protection_mode': 'protectionMode',
             'transport_type': 'transportType',
+            'storage_size_details': 'storageSizeDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -126,6 +132,7 @@ class CreateStandbyDetails(object):
         self._sid_prefix = None
         self._protection_mode = None
         self._transport_type = None
+        self._storage_size_details = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -394,6 +401,26 @@ class CreateStandbyDetails(object):
                 f"Invalid value for `transport_type`, must be None or one of {allowed_values}"
             )
         self._transport_type = transport_type
+
+    @property
+    def storage_size_details(self):
+        """
+        Gets the storage_size_details of this CreateStandbyDetails.
+
+        :return: The storage_size_details of this CreateStandbyDetails.
+        :rtype: oci.database.models.DatabaseStorageSizeDetails
+        """
+        return self._storage_size_details
+
+    @storage_size_details.setter
+    def storage_size_details(self, storage_size_details):
+        """
+        Sets the storage_size_details of this CreateStandbyDetails.
+
+        :param storage_size_details: The storage_size_details of this CreateStandbyDetails.
+        :type: oci.database.models.DatabaseStorageSizeDetails
+        """
+        self._storage_size_details = storage_size_details
 
     @property
     def freeform_tags(self):

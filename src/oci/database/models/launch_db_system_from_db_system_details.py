@@ -151,6 +151,15 @@ class LaunchDbSystemFromDbSystemDetails(LaunchDbSystemBase):
             The value to assign to the data_collection_options property of this LaunchDbSystemFromDbSystemDetails.
         :type data_collection_options: oci.database.models.DataCollectionOptions
 
+        :param compute_model:
+            The value to assign to the compute_model property of this LaunchDbSystemFromDbSystemDetails.
+            Allowed values for this property are: "ECPU", "OCPU"
+        :type compute_model: str
+
+        :param compute_count:
+            The value to assign to the compute_count property of this LaunchDbSystemFromDbSystemDetails.
+        :type compute_count: int
+
         :param source_db_system_id:
             The value to assign to the source_db_system_id property of this LaunchDbSystemFromDbSystemDetails.
         :type source_db_system_id: str
@@ -196,6 +205,8 @@ class LaunchDbSystemFromDbSystemDetails(LaunchDbSystemBase):
             'private_ip': 'str',
             'private_ip_v6': 'str',
             'data_collection_options': 'DataCollectionOptions',
+            'compute_model': 'str',
+            'compute_count': 'int',
             'source_db_system_id': 'str',
             'db_home': 'CreateDbHomeFromDbSystemDetails',
             'license_model': 'str'
@@ -231,6 +242,8 @@ class LaunchDbSystemFromDbSystemDetails(LaunchDbSystemBase):
             'private_ip': 'privateIp',
             'private_ip_v6': 'privateIpV6',
             'data_collection_options': 'dataCollectionOptions',
+            'compute_model': 'computeModel',
+            'compute_count': 'computeCount',
             'source_db_system_id': 'sourceDbSystemId',
             'db_home': 'dbHome',
             'license_model': 'licenseModel'
@@ -265,6 +278,8 @@ class LaunchDbSystemFromDbSystemDetails(LaunchDbSystemBase):
         self._private_ip = None
         self._private_ip_v6 = None
         self._data_collection_options = None
+        self._compute_model = None
+        self._compute_count = None
         self._source_db_system_id = None
         self._db_home = None
         self._license_model = None

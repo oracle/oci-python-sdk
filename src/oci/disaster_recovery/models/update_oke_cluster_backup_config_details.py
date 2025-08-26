@@ -32,6 +32,10 @@ class UpdateOkeClusterBackupConfigDetails(object):
             The value to assign to the namespaces property of this UpdateOkeClusterBackupConfigDetails.
         :type namespaces: list[str]
 
+        :param exclude_namespaces:
+            The value to assign to the exclude_namespaces property of this UpdateOkeClusterBackupConfigDetails.
+        :type exclude_namespaces: list[str]
+
         :param backup_schedule:
             The value to assign to the backup_schedule property of this UpdateOkeClusterBackupConfigDetails.
         :type backup_schedule: str
@@ -52,6 +56,7 @@ class UpdateOkeClusterBackupConfigDetails(object):
         """
         self.swagger_types = {
             'namespaces': 'list[str]',
+            'exclude_namespaces': 'list[str]',
             'backup_schedule': 'str',
             'replicate_images': 'str',
             'max_number_of_backups_retained': 'int',
@@ -59,12 +64,14 @@ class UpdateOkeClusterBackupConfigDetails(object):
         }
         self.attribute_map = {
             'namespaces': 'namespaces',
+            'exclude_namespaces': 'excludeNamespaces',
             'backup_schedule': 'backupSchedule',
             'replicate_images': 'replicateImages',
             'max_number_of_backups_retained': 'maxNumberOfBackupsRetained',
             'image_replication_vault_secret_id': 'imageReplicationVaultSecretId'
         }
         self._namespaces = None
+        self._exclude_namespaces = None
         self._backup_schedule = None
         self._replicate_images = None
         self._max_number_of_backups_retained = None
@@ -74,8 +81,9 @@ class UpdateOkeClusterBackupConfigDetails(object):
     def namespaces(self):
         """
         Gets the namespaces of this UpdateOkeClusterBackupConfigDetails.
-        A list of namespaces that need to be backed up.
-        The default value is null. If a list of namespaces is not provided, all namespaces will be backed up.
+        A list of namespaces to be included in the backup.
+        The default value is null. If a list of namespaces to include is not provided, all namespaces will be backed up.
+        Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both.
         This property applies to the OKE cluster member in primary region.
 
         Example: [\"default\", \"pv-nginx\"]
@@ -90,8 +98,9 @@ class UpdateOkeClusterBackupConfigDetails(object):
     def namespaces(self, namespaces):
         """
         Sets the namespaces of this UpdateOkeClusterBackupConfigDetails.
-        A list of namespaces that need to be backed up.
-        The default value is null. If a list of namespaces is not provided, all namespaces will be backed up.
+        A list of namespaces to be included in the backup.
+        The default value is null. If a list of namespaces to include is not provided, all namespaces will be backed up.
+        Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both.
         This property applies to the OKE cluster member in primary region.
 
         Example: [\"default\", \"pv-nginx\"]
@@ -103,11 +112,45 @@ class UpdateOkeClusterBackupConfigDetails(object):
         self._namespaces = namespaces
 
     @property
+    def exclude_namespaces(self):
+        """
+        Gets the exclude_namespaces of this UpdateOkeClusterBackupConfigDetails.
+        A list of namespaces to be excluded from the backup.
+        The default value is null. If a list of namespaces to exclude is not provided, all namespaces will be backed up.
+        Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both.
+        This property applies to OKE cluster members in the primary region.
+
+        Example: [\"namespace_string_3\", \"namespace_string_4\"]
+
+
+        :return: The exclude_namespaces of this UpdateOkeClusterBackupConfigDetails.
+        :rtype: list[str]
+        """
+        return self._exclude_namespaces
+
+    @exclude_namespaces.setter
+    def exclude_namespaces(self, exclude_namespaces):
+        """
+        Sets the exclude_namespaces of this UpdateOkeClusterBackupConfigDetails.
+        A list of namespaces to be excluded from the backup.
+        The default value is null. If a list of namespaces to exclude is not provided, all namespaces will be backed up.
+        Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both.
+        This property applies to OKE cluster members in the primary region.
+
+        Example: [\"namespace_string_3\", \"namespace_string_4\"]
+
+
+        :param exclude_namespaces: The exclude_namespaces of this UpdateOkeClusterBackupConfigDetails.
+        :type: list[str]
+        """
+        self._exclude_namespaces = exclude_namespaces
+
+    @property
     def backup_schedule(self):
         """
         Gets the backup_schedule of this UpdateOkeClusterBackupConfigDetails.
-        The schedule for backing up namespaces to the destination region. If a backup schedule is not specified, only a single backup will be created.
-        This format of the string specifying the backup schedule must conform with RFC-5545.
+        The schedule for backing up namespaces to the destination region. If a`backupSchedule` is not specified, only a single backup will be created.
+        This format of the string specifying the `backupSchedule` must conform with RFC-5545.
         This schedule will use the UTC timezone.
         This property applies to the OKE cluster member in primary region.
 
@@ -123,8 +166,8 @@ class UpdateOkeClusterBackupConfigDetails(object):
     def backup_schedule(self, backup_schedule):
         """
         Sets the backup_schedule of this UpdateOkeClusterBackupConfigDetails.
-        The schedule for backing up namespaces to the destination region. If a backup schedule is not specified, only a single backup will be created.
-        This format of the string specifying the backup schedule must conform with RFC-5545.
+        The schedule for backing up namespaces to the destination region. If a`backupSchedule` is not specified, only a single backup will be created.
+        This format of the string specifying the `backupSchedule` must conform with RFC-5545.
         This schedule will use the UTC timezone.
         This property applies to the OKE cluster member in primary region.
 

@@ -128,6 +128,14 @@ class DbSystemSummary(object):
     #: This constant has a value of "BRING_YOUR_OWN_LICENSE"
     LICENSE_MODEL_BRING_YOUR_OWN_LICENSE = "BRING_YOUR_OWN_LICENSE"
 
+    #: A constant which can be used with the compute_model property of a DbSystemSummary.
+    #: This constant has a value of "ECPU"
+    COMPUTE_MODEL_ECPU = "ECPU"
+
+    #: A constant which can be used with the compute_model property of a DbSystemSummary.
+    #: This constant has a value of "OCPU"
+    COMPUTE_MODEL_OCPU = "OCPU"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DbSystemSummary object with values from keyword arguments.
@@ -355,6 +363,16 @@ class DbSystemSummary(object):
             The value to assign to the data_collection_options property of this DbSystemSummary.
         :type data_collection_options: oci.database.models.DataCollectionOptions
 
+        :param compute_model:
+            The value to assign to the compute_model property of this DbSystemSummary.
+            Allowed values for this property are: "ECPU", "OCPU", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type compute_model: str
+
+        :param compute_count:
+            The value to assign to the compute_count property of this DbSystemSummary.
+        :type compute_count: int
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -409,7 +427,9 @@ class DbSystemSummary(object):
             'security_attributes': 'dict(str, dict(str, object))',
             'source_db_system_id': 'str',
             'point_in_time_data_disk_clone_timestamp': 'datetime',
-            'data_collection_options': 'DataCollectionOptions'
+            'data_collection_options': 'DataCollectionOptions',
+            'compute_model': 'str',
+            'compute_count': 'int'
         }
         self.attribute_map = {
             'id': 'id',
@@ -464,7 +484,9 @@ class DbSystemSummary(object):
             'security_attributes': 'securityAttributes',
             'source_db_system_id': 'sourceDbSystemId',
             'point_in_time_data_disk_clone_timestamp': 'pointInTimeDataDiskCloneTimestamp',
-            'data_collection_options': 'dataCollectionOptions'
+            'data_collection_options': 'dataCollectionOptions',
+            'compute_model': 'computeModel',
+            'compute_count': 'computeCount'
         }
         self._id = None
         self._compartment_id = None
@@ -519,6 +541,8 @@ class DbSystemSummary(object):
         self._source_db_system_id = None
         self._point_in_time_data_disk_clone_timestamp = None
         self._data_collection_options = None
+        self._compute_model = None
+        self._compute_count = None
 
     @property
     def id(self):
@@ -1097,7 +1121,7 @@ class DbSystemSummary(object):
     @property
     def cpu_core_count(self):
         """
-        **[Required]** Gets the cpu_core_count of this DbSystemSummary.
+        Gets the cpu_core_count of this DbSystemSummary.
         The number of CPU cores enabled on the DB system.
 
 
@@ -1987,6 +2011,60 @@ class DbSystemSummary(object):
         :type: oci.database.models.DataCollectionOptions
         """
         self._data_collection_options = data_collection_options
+
+    @property
+    def compute_model(self):
+        """
+        Gets the compute_model of this DbSystemSummary.
+        The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+
+        Allowed values for this property are: "ECPU", "OCPU", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The compute_model of this DbSystemSummary.
+        :rtype: str
+        """
+        return self._compute_model
+
+    @compute_model.setter
+    def compute_model(self, compute_model):
+        """
+        Sets the compute_model of this DbSystemSummary.
+        The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+
+
+        :param compute_model: The compute_model of this DbSystemSummary.
+        :type: str
+        """
+        allowed_values = ["ECPU", "OCPU"]
+        if not value_allowed_none_or_none_sentinel(compute_model, allowed_values):
+            compute_model = 'UNKNOWN_ENUM_VALUE'
+        self._compute_model = compute_model
+
+    @property
+    def compute_count(self):
+        """
+        Gets the compute_count of this DbSystemSummary.
+        The number of compute servers for the DB system.
+
+
+        :return: The compute_count of this DbSystemSummary.
+        :rtype: int
+        """
+        return self._compute_count
+
+    @compute_count.setter
+    def compute_count(self, compute_count):
+        """
+        Sets the compute_count of this DbSystemSummary.
+        The number of compute servers for the DB system.
+
+
+        :param compute_count: The compute_count of this DbSystemSummary.
+        :type: int
+        """
+        self._compute_count = compute_count
 
     def __repr__(self):
         return formatted_flat_dict(self)

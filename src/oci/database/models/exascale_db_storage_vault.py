@@ -39,6 +39,14 @@ class ExascaleDbStorageVault(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the attached_shape_attributes property of a ExascaleDbStorageVault.
+    #: This constant has a value of "SMART_STORAGE"
+    ATTACHED_SHAPE_ATTRIBUTES_SMART_STORAGE = "SMART_STORAGE"
+
+    #: A constant which can be used with the attached_shape_attributes property of a ExascaleDbStorageVault.
+    #: This constant has a value of "BLOCK_STORAGE"
+    ATTACHED_SHAPE_ATTRIBUTES_BLOCK_STORAGE = "BLOCK_STORAGE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ExascaleDbStorageVault object with values from keyword arguments.
@@ -122,6 +130,12 @@ class ExascaleDbStorageVault(object):
             The value to assign to the subscription_id property of this ExascaleDbStorageVault.
         :type subscription_id: str
 
+        :param attached_shape_attributes:
+            The value to assign to the attached_shape_attributes property of this ExascaleDbStorageVault.
+            Allowed values for items in this list are: "SMART_STORAGE", "BLOCK_STORAGE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type attached_shape_attributes: list[str]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -142,7 +156,8 @@ class ExascaleDbStorageVault(object):
             'high_capacity_database_storage': 'ExascaleDbStorageDetails',
             'additional_flash_cache_in_percent': 'int',
             'cluster_placement_group_id': 'str',
-            'subscription_id': 'str'
+            'subscription_id': 'str',
+            'attached_shape_attributes': 'list[str]'
         }
         self.attribute_map = {
             'id': 'id',
@@ -163,7 +178,8 @@ class ExascaleDbStorageVault(object):
             'high_capacity_database_storage': 'highCapacityDatabaseStorage',
             'additional_flash_cache_in_percent': 'additionalFlashCacheInPercent',
             'cluster_placement_group_id': 'clusterPlacementGroupId',
-            'subscription_id': 'subscriptionId'
+            'subscription_id': 'subscriptionId',
+            'attached_shape_attributes': 'attachedShapeAttributes'
         }
         self._id = None
         self._compartment_id = None
@@ -184,6 +200,7 @@ class ExascaleDbStorageVault(object):
         self._additional_flash_cache_in_percent = None
         self._cluster_placement_group_id = None
         self._subscription_id = None
+        self._attached_shape_attributes = None
 
     @property
     def id(self):
@@ -694,6 +711,36 @@ class ExascaleDbStorageVault(object):
         :type: str
         """
         self._subscription_id = subscription_id
+
+    @property
+    def attached_shape_attributes(self):
+        """
+        Gets the attached_shape_attributes of this ExascaleDbStorageVault.
+        The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database Storage Vault.
+
+        Allowed values for items in this list are: "SMART_STORAGE", "BLOCK_STORAGE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The attached_shape_attributes of this ExascaleDbStorageVault.
+        :rtype: list[str]
+        """
+        return self._attached_shape_attributes
+
+    @attached_shape_attributes.setter
+    def attached_shape_attributes(self, attached_shape_attributes):
+        """
+        Sets the attached_shape_attributes of this ExascaleDbStorageVault.
+        The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database Storage Vault.
+
+
+        :param attached_shape_attributes: The attached_shape_attributes of this ExascaleDbStorageVault.
+        :type: list[str]
+        """
+        allowed_values = ["SMART_STORAGE", "BLOCK_STORAGE"]
+        if attached_shape_attributes:
+            attached_shape_attributes[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in attached_shape_attributes]
+        self._attached_shape_attributes = attached_shape_attributes
 
     def __repr__(self):
         return formatted_flat_dict(self)

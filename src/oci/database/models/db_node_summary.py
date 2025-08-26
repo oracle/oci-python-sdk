@@ -65,6 +65,14 @@ class DbNodeSummary(object):
     #: This constant has a value of "EXADBXS_REBOOT_MIGRATION"
     MAINTENANCE_TYPE_EXADBXS_REBOOT_MIGRATION = "EXADBXS_REBOOT_MIGRATION"
 
+    #: A constant which can be used with the compute_model property of a DbNodeSummary.
+    #: This constant has a value of "ECPU"
+    COMPUTE_MODEL_ECPU = "ECPU"
+
+    #: A constant which can be used with the compute_model property of a DbNodeSummary.
+    #: This constant has a value of "OCPU"
+    COMPUTE_MODEL_OCPU = "OCPU"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DbNodeSummary object with values from keyword arguments.
@@ -186,6 +194,16 @@ class DbNodeSummary(object):
             The value to assign to the db_server_id property of this DbNodeSummary.
         :type db_server_id: str
 
+        :param compute_model:
+            The value to assign to the compute_model property of this DbNodeSummary.
+            Allowed values for this property are: "ECPU", "OCPU", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type compute_model: str
+
+        :param compute_count:
+            The value to assign to the compute_count property of this DbNodeSummary.
+        :type compute_count: int
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -215,7 +233,9 @@ class DbNodeSummary(object):
             'memory_size_in_gbs': 'int',
             'db_node_storage_size_in_gbs': 'int',
             'total_cpu_core_count': 'int',
-            'db_server_id': 'str'
+            'db_server_id': 'str',
+            'compute_model': 'str',
+            'compute_count': 'int'
         }
         self.attribute_map = {
             'id': 'id',
@@ -245,7 +265,9 @@ class DbNodeSummary(object):
             'memory_size_in_gbs': 'memorySizeInGBs',
             'db_node_storage_size_in_gbs': 'dbNodeStorageSizeInGBs',
             'total_cpu_core_count': 'totalCpuCoreCount',
-            'db_server_id': 'dbServerId'
+            'db_server_id': 'dbServerId',
+            'compute_model': 'computeModel',
+            'compute_count': 'computeCount'
         }
         self._id = None
         self._db_system_id = None
@@ -275,6 +297,8 @@ class DbNodeSummary(object):
         self._db_node_storage_size_in_gbs = None
         self._total_cpu_core_count = None
         self._db_server_id = None
+        self._compute_model = None
+        self._compute_count = None
 
     @property
     def id(self):
@@ -1061,6 +1085,60 @@ class DbNodeSummary(object):
         :type: str
         """
         self._db_server_id = db_server_id
+
+    @property
+    def compute_model(self):
+        """
+        Gets the compute_model of this DbNodeSummary.
+        The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+
+        Allowed values for this property are: "ECPU", "OCPU", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The compute_model of this DbNodeSummary.
+        :rtype: str
+        """
+        return self._compute_model
+
+    @compute_model.setter
+    def compute_model(self, compute_model):
+        """
+        Sets the compute_model of this DbNodeSummary.
+        The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+
+
+        :param compute_model: The compute_model of this DbNodeSummary.
+        :type: str
+        """
+        allowed_values = ["ECPU", "OCPU"]
+        if not value_allowed_none_or_none_sentinel(compute_model, allowed_values):
+            compute_model = 'UNKNOWN_ENUM_VALUE'
+        self._compute_model = compute_model
+
+    @property
+    def compute_count(self):
+        """
+        Gets the compute_count of this DbNodeSummary.
+        The number of compute servers for the DB system.
+
+
+        :return: The compute_count of this DbNodeSummary.
+        :rtype: int
+        """
+        return self._compute_count
+
+    @compute_count.setter
+    def compute_count(self, compute_count):
+        """
+        Sets the compute_count of this DbNodeSummary.
+        The number of compute servers for the DB system.
+
+
+        :param compute_count: The compute_count of this DbNodeSummary.
+        :type: int
+        """
+        self._compute_count = compute_count
 
     def __repr__(self):
         return formatted_flat_dict(self)

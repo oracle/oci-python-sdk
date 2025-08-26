@@ -52,6 +52,14 @@ class ComputeGpuMemoryFabricSummary(object):
             The value to assign to the total_host_count property of this ComputeGpuMemoryFabricSummary.
         :type total_host_count: int
 
+        :param available_host_count:
+            The value to assign to the available_host_count property of this ComputeGpuMemoryFabricSummary.
+        :type available_host_count: int
+
+        :param healthy_host_count:
+            The value to assign to the healthy_host_count property of this ComputeGpuMemoryFabricSummary.
+        :type healthy_host_count: int
+
         :param time_created:
             The value to assign to the time_created property of this ComputeGpuMemoryFabricSummary.
         :type time_created: datetime
@@ -82,6 +90,8 @@ class ComputeGpuMemoryFabricSummary(object):
             'lifecycle_state': 'str',
             'fabric_health': 'str',
             'total_host_count': 'int',
+            'available_host_count': 'int',
+            'healthy_host_count': 'int',
             'time_created': 'datetime',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
@@ -97,6 +107,8 @@ class ComputeGpuMemoryFabricSummary(object):
             'lifecycle_state': 'lifecycleState',
             'fabric_health': 'fabricHealth',
             'total_host_count': 'totalHostCount',
+            'available_host_count': 'availableHostCount',
+            'healthy_host_count': 'healthyHostCount',
             'time_created': 'timeCreated',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
@@ -111,6 +123,8 @@ class ComputeGpuMemoryFabricSummary(object):
         self._lifecycle_state = None
         self._fabric_health = None
         self._total_host_count = None
+        self._available_host_count = None
+        self._healthy_host_count = None
         self._time_created = None
         self._defined_tags = None
         self._freeform_tags = None
@@ -330,6 +344,54 @@ class ComputeGpuMemoryFabricSummary(object):
         :type: int
         """
         self._total_host_count = total_host_count
+
+    @property
+    def available_host_count(self):
+        """
+        Gets the available_host_count of this ComputeGpuMemoryFabricSummary.
+        The total number of available bare metal hosts located in this compute GPU memory fabric.
+
+
+        :return: The available_host_count of this ComputeGpuMemoryFabricSummary.
+        :rtype: int
+        """
+        return self._available_host_count
+
+    @available_host_count.setter
+    def available_host_count(self, available_host_count):
+        """
+        Sets the available_host_count of this ComputeGpuMemoryFabricSummary.
+        The total number of available bare metal hosts located in this compute GPU memory fabric.
+
+
+        :param available_host_count: The available_host_count of this ComputeGpuMemoryFabricSummary.
+        :type: int
+        """
+        self._available_host_count = available_host_count
+
+    @property
+    def healthy_host_count(self):
+        """
+        Gets the healthy_host_count of this ComputeGpuMemoryFabricSummary.
+        The total number of healthy bare metal hosts located in this compute GPU memory fabric.
+
+
+        :return: The healthy_host_count of this ComputeGpuMemoryFabricSummary.
+        :rtype: int
+        """
+        return self._healthy_host_count
+
+    @healthy_host_count.setter
+    def healthy_host_count(self, healthy_host_count):
+        """
+        Sets the healthy_host_count of this ComputeGpuMemoryFabricSummary.
+        The total number of healthy bare metal hosts located in this compute GPU memory fabric.
+
+
+        :param healthy_host_count: The healthy_host_count of this ComputeGpuMemoryFabricSummary.
+        :type: int
+        """
+        self._healthy_host_count = healthy_host_count
 
     @property
     def time_created(self):

@@ -25,6 +25,14 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
     #: This constant has a value of "HIGH_PERFORMANCE"
     STORAGE_VOLUME_PERFORMANCE_MODE_HIGH_PERFORMANCE = "HIGH_PERFORMANCE"
 
+    #: A constant which can be used with the compute_model property of a CreateDataGuardAssociationWithNewDbSystemDetails.
+    #: This constant has a value of "ECPU"
+    COMPUTE_MODEL_ECPU = "ECPU"
+
+    #: A constant which can be used with the compute_model property of a CreateDataGuardAssociationWithNewDbSystemDetails.
+    #: This constant has a value of "OCPU"
+    COMPUTE_MODEL_OCPU = "OCPU"
+
     #: A constant which can be used with the license_model property of a CreateDataGuardAssociationWithNewDbSystemDetails.
     #: This constant has a value of "LICENSE_INCLUDED"
     LICENSE_MODEL_LICENSE_INCLUDED = "LICENSE_INCLUDED"
@@ -97,6 +105,15 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
             The value to assign to the storage_volume_performance_mode property of this CreateDataGuardAssociationWithNewDbSystemDetails.
             Allowed values for this property are: "BALANCED", "HIGH_PERFORMANCE"
         :type storage_volume_performance_mode: str
+
+        :param compute_model:
+            The value to assign to the compute_model property of this CreateDataGuardAssociationWithNewDbSystemDetails.
+            Allowed values for this property are: "ECPU", "OCPU"
+        :type compute_model: str
+
+        :param compute_count:
+            The value to assign to the compute_count property of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        :type compute_count: int
 
         :param node_count:
             The value to assign to the node_count property of this CreateDataGuardAssociationWithNewDbSystemDetails.
@@ -183,6 +200,8 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
             'shape': 'str',
             'cpu_core_count': 'int',
             'storage_volume_performance_mode': 'str',
+            'compute_model': 'str',
+            'compute_count': 'int',
             'node_count': 'int',
             'subnet_id': 'str',
             'nsg_ids': 'list[str]',
@@ -216,6 +235,8 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
             'shape': 'shape',
             'cpu_core_count': 'cpuCoreCount',
             'storage_volume_performance_mode': 'storageVolumePerformanceMode',
+            'compute_model': 'computeModel',
+            'compute_count': 'computeCount',
             'node_count': 'nodeCount',
             'subnet_id': 'subnetId',
             'nsg_ids': 'nsgIds',
@@ -248,6 +269,8 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
         self._shape = None
         self._cpu_core_count = None
         self._storage_volume_performance_mode = None
+        self._compute_model = None
+        self._compute_count = None
         self._node_count = None
         self._subnet_id = None
         self._nsg_ids = None
@@ -403,6 +426,61 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
                 f"Invalid value for `storage_volume_performance_mode`, must be None or one of {allowed_values}"
             )
         self._storage_volume_performance_mode = storage_volume_performance_mode
+
+    @property
+    def compute_model(self):
+        """
+        Gets the compute_model of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+
+        Allowed values for this property are: "ECPU", "OCPU"
+
+
+        :return: The compute_model of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        :rtype: str
+        """
+        return self._compute_model
+
+    @compute_model.setter
+    def compute_model(self, compute_model):
+        """
+        Sets the compute_model of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+
+
+        :param compute_model: The compute_model of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        :type: str
+        """
+        allowed_values = ["ECPU", "OCPU"]
+        if not value_allowed_none_or_none_sentinel(compute_model, allowed_values):
+            raise ValueError(
+                f"Invalid value for `compute_model`, must be None or one of {allowed_values}"
+            )
+        self._compute_model = compute_model
+
+    @property
+    def compute_count(self):
+        """
+        Gets the compute_count of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        The number of compute servers for the DB system.
+
+
+        :return: The compute_count of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        :rtype: int
+        """
+        return self._compute_count
+
+    @compute_count.setter
+    def compute_count(self, compute_count):
+        """
+        Sets the compute_count of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        The number of compute servers for the DB system.
+
+
+        :param compute_count: The compute_count of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        :type: int
+        """
+        self._compute_count = compute_count
 
     @property
     def node_count(self):

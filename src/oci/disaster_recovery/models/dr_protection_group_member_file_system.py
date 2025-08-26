@@ -27,7 +27,7 @@ class DrProtectionGroupMemberFileSystem(DrProtectionGroupMember):
 
         :param member_type:
             The value to assign to the member_type property of this DrProtectionGroupMemberFileSystem.
-            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OKE_CLUSTER", "OBJECT_STORAGE_BUCKET"
+            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OKE_CLUSTER", "OBJECT_STORAGE_BUCKET", "MYSQL_DB_SYSTEM"
         :type member_type: str
 
         :param destination_availability_domain:
@@ -46,6 +46,10 @@ class DrProtectionGroupMemberFileSystem(DrProtectionGroupMember):
             The value to assign to the destination_snapshot_policy_id property of this DrProtectionGroupMemberFileSystem.
         :type destination_snapshot_policy_id: str
 
+        :param destination_compartment_id:
+            The value to assign to the destination_compartment_id property of this DrProtectionGroupMemberFileSystem.
+        :type destination_compartment_id: str
+
         """
         self.swagger_types = {
             'member_id': 'str',
@@ -53,7 +57,8 @@ class DrProtectionGroupMemberFileSystem(DrProtectionGroupMember):
             'destination_availability_domain': 'str',
             'export_mappings': 'list[FileSystemExportMapping]',
             'destination_encryption_key': 'VaultAndEncryptionKey',
-            'destination_snapshot_policy_id': 'str'
+            'destination_snapshot_policy_id': 'str',
+            'destination_compartment_id': 'str'
         }
         self.attribute_map = {
             'member_id': 'memberId',
@@ -61,7 +66,8 @@ class DrProtectionGroupMemberFileSystem(DrProtectionGroupMember):
             'destination_availability_domain': 'destinationAvailabilityDomain',
             'export_mappings': 'exportMappings',
             'destination_encryption_key': 'destinationEncryptionKey',
-            'destination_snapshot_policy_id': 'destinationSnapshotPolicyId'
+            'destination_snapshot_policy_id': 'destinationSnapshotPolicyId',
+            'destination_compartment_id': 'destinationCompartmentId'
         }
         self._member_id = None
         self._member_type = None
@@ -69,6 +75,7 @@ class DrProtectionGroupMemberFileSystem(DrProtectionGroupMember):
         self._export_mappings = None
         self._destination_encryption_key = None
         self._destination_snapshot_policy_id = None
+        self._destination_compartment_id = None
         self._member_type = 'FILE_SYSTEM'
 
     @property
@@ -170,6 +177,34 @@ class DrProtectionGroupMemberFileSystem(DrProtectionGroupMember):
         :type: str
         """
         self._destination_snapshot_policy_id = destination_snapshot_policy_id
+
+    @property
+    def destination_compartment_id(self):
+        """
+        Gets the destination_compartment_id of this DrProtectionGroupMemberFileSystem.
+        The OCID of a compartment in the destination region in which the file system should be launched.
+
+        Example: `ocid1.compartment.oc1..uniqueID`
+
+
+        :return: The destination_compartment_id of this DrProtectionGroupMemberFileSystem.
+        :rtype: str
+        """
+        return self._destination_compartment_id
+
+    @destination_compartment_id.setter
+    def destination_compartment_id(self, destination_compartment_id):
+        """
+        Sets the destination_compartment_id of this DrProtectionGroupMemberFileSystem.
+        The OCID of a compartment in the destination region in which the file system should be launched.
+
+        Example: `ocid1.compartment.oc1..uniqueID`
+
+
+        :param destination_compartment_id: The destination_compartment_id of this DrProtectionGroupMemberFileSystem.
+        :type: str
+        """
+        self._destination_compartment_id = destination_compartment_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

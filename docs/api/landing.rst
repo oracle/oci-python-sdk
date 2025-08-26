@@ -16,13 +16,11 @@ API Reference
 * :doc:`Announcement <announcements_service/client/oci.announcements_service.AnnouncementClient>`
 * :doc:`Announcement Subscription <announcements_service/client/oci.announcements_service.AnnouncementSubscriptionClient>`
 * :doc:`Announcements Preferences <announcements_service/client/oci.announcements_service.AnnouncementsPreferencesClient>`
-* :doc:`Anomaly Detection <ai_anomaly_detection/client/oci.ai_anomaly_detection.AnomalyDetectionClient>`
 * :doc:`Api Gateway <apigateway/client/oci.apigateway.ApiGatewayClient>`
 * :doc:`Api Metadata <apiaccesscontrol/client/oci.apiaccesscontrol.ApiMetadataClient>`
 * :doc:`Api Platform <api_platform/client/oci.api_platform.ApiPlatformClient>`
 * :doc:`Apm Domain <apm_control_plane/client/oci.apm_control_plane.ApmDomainClient>`
 * :doc:`Apm Synthetic <apm_synthetics/client/oci.apm_synthetics.ApmSyntheticClient>`
-* :doc:`Appliance Export Job <dts/client/oci.dts.ApplianceExportJobClient>`
 * :doc:`Application Dependency Management <adm/client/oci.adm.ApplicationDependencyManagementClient>`
 * :doc:`Appmgmt Control <appmgmt_control/client/oci.appmgmt_control.AppmgmtControlClient>`
 * :doc:`Artifacts <artifacts/client/oci.artifacts.ArtifactsClient>`
@@ -132,6 +130,7 @@ API Reference
 * :doc:`Invoice Summary <onesubscription/client/oci.onesubscription.InvoiceSummaryClient>`
 * :doc:`Java Download <jms_java_downloads/client/oci.jms_java_downloads.JavaDownloadClient>`
 * :doc:`Java Management Service <jms/client/oci.jms.JavaManagementServiceClient>`
+* :doc:`Kafka Cluster <managed_kafka/client/oci.managed_kafka.KafkaClusterClient>`
 * :doc:`Kms Crypto <key_management/client/oci.key_management.KmsCryptoClient>`
 * :doc:`Kms Hsm Cluster <key_management/client/oci.key_management.KmsHsmClusterClient>`
 * :doc:`Kms Management <key_management/client/oci.key_management.KmsManagementClient>`
@@ -204,7 +203,6 @@ API Reference
 * :doc:`Organization <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.OrganizationClient>`
 * :doc:`Organization Subscription <osub_organization_subscription/client/oci.osub_organization_subscription.OrganizationSubscriptionClient>`
 * :doc:`Organization Subscription <osub_organization_subscription/client/oci.osub_organization_subscription.OrganizationSubscriptionClient>`
-* :doc:`Os Management <os_management/client/oci.os_management.OsManagementClient>`
 * :doc:`Perfhub <database_management/client/oci.database_management.PerfhubClient>`
 * :doc:`Plugin <compute_instance_agent/client/oci.compute_instance_agent.PluginClient>`
 * :doc:`Pluginconfig <compute_instance_agent/client/oci.compute_instance_agent.PluginconfigClient>`
@@ -243,10 +241,8 @@ API Reference
 * :doc:`Service Catalog <service_catalog/client/oci.service_catalog.ServiceCatalogClient>`
 * :doc:`Service Connector <sch/client/oci.sch.ServiceConnectorClient>`
 * :doc:`Service Manager Proxy <service_manager_proxy/client/oci.service_manager_proxy.ServiceManagerProxyClient>`
-* :doc:`Service Mesh <service_mesh/client/oci.service_mesh.ServiceMeshClient>`
 * :doc:`Shape <rover/client/oci.rover.ShapeClient>`
 * :doc:`Sharded Database Service <globally_distributed_database/client/oci.globally_distributed_database.ShardedDatabaseServiceClient>`
-* :doc:`Shipping Vendors <dts/client/oci.dts.ShippingVendorsClient>`
 * :doc:`Software Source <os_management_hub/client/oci.os_management_hub.SoftwareSourceClient>`
 * :doc:`Sql Tuning <database_management/client/oci.database_management.SqlTuningClient>`
 * :doc:`Stack Monitoring <stack_monitoring/client/oci.stack_monitoring.StackMonitoringClient>`
@@ -260,11 +256,6 @@ API Reference
 * :doc:`Subscription Service <osp_gateway/client/oci.osp_gateway.SubscriptionServiceClient>`
 * :doc:`Threatintel <threat_intelligence/client/oci.threat_intelligence.ThreatintelClient>`
 * :doc:`Trace <apm_traces/client/oci.apm_traces.TraceClient>`
-* :doc:`Transfer Appliance <dts/client/oci.dts.TransferApplianceClient>`
-* :doc:`Transfer Appliance Entitlement <dts/client/oci.dts.TransferApplianceEntitlementClient>`
-* :doc:`Transfer Device <dts/client/oci.dts.TransferDeviceClient>`
-* :doc:`Transfer Job <dts/client/oci.dts.TransferJobClient>`
-* :doc:`Transfer Package <dts/client/oci.dts.TransferPackageClient>`
 * :doc:`Usage Plans <apigateway/client/oci.apigateway.UsagePlansClient>`
 * :doc:`Usageapi <usage_api/client/oci.usage_api.UsageapiClient>`
 * :doc:`Usagelimits <usage/client/oci.usage.UsagelimitsClient>`
@@ -312,7 +303,6 @@ API Reference
 
     access_governance_cp
     adm
-    ai_anomaly_detection
     ai_document
     ai_language
     ai_speech
@@ -368,7 +358,6 @@ API Reference
     disaster_recovery
     distributed_database
     dns
-    dts
     em_warehouse
     email
     email_data_plane
@@ -403,6 +392,7 @@ API Reference
     loggingingestion
     loggingsearch
     lustre_file_storage
+    managed_kafka
     management_agent
     management_dashboard
     marketplace
@@ -429,7 +419,6 @@ API Reference
     operator_access_control
     opsi
     optimizer
-    os_management
     os_management_hub
     osp_gateway
     osub_billing_schedule
@@ -449,7 +438,6 @@ API Reference
     security_attribute
     service_catalog
     service_manager_proxy
-    service_mesh
     stack_monitoring
     streaming
     tenant_manager_control_plane

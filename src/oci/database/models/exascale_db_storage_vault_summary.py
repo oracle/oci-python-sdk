@@ -15,6 +15,14 @@ class ExascaleDbStorageVaultSummary(object):
     Details of the Exadata Database Storage Vault.
     """
 
+    #: A constant which can be used with the attached_shape_attributes property of a ExascaleDbStorageVaultSummary.
+    #: This constant has a value of "SMART_STORAGE"
+    ATTACHED_SHAPE_ATTRIBUTES_SMART_STORAGE = "SMART_STORAGE"
+
+    #: A constant which can be used with the attached_shape_attributes property of a ExascaleDbStorageVaultSummary.
+    #: This constant has a value of "BLOCK_STORAGE"
+    ATTACHED_SHAPE_ATTRIBUTES_BLOCK_STORAGE = "BLOCK_STORAGE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ExascaleDbStorageVaultSummary object with values from keyword arguments.
@@ -92,6 +100,12 @@ class ExascaleDbStorageVaultSummary(object):
             The value to assign to the subscription_id property of this ExascaleDbStorageVaultSummary.
         :type subscription_id: str
 
+        :param attached_shape_attributes:
+            The value to assign to the attached_shape_attributes property of this ExascaleDbStorageVaultSummary.
+            Allowed values for items in this list are: "SMART_STORAGE", "BLOCK_STORAGE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type attached_shape_attributes: list[str]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -111,7 +125,8 @@ class ExascaleDbStorageVaultSummary(object):
             'vm_cluster_count': 'int',
             'exadata_infrastructure_id': 'str',
             'cluster_placement_group_id': 'str',
-            'subscription_id': 'str'
+            'subscription_id': 'str',
+            'attached_shape_attributes': 'list[str]'
         }
         self.attribute_map = {
             'id': 'id',
@@ -131,7 +146,8 @@ class ExascaleDbStorageVaultSummary(object):
             'vm_cluster_count': 'vmClusterCount',
             'exadata_infrastructure_id': 'exadataInfrastructureId',
             'cluster_placement_group_id': 'clusterPlacementGroupId',
-            'subscription_id': 'subscriptionId'
+            'subscription_id': 'subscriptionId',
+            'attached_shape_attributes': 'attachedShapeAttributes'
         }
         self._id = None
         self._compartment_id = None
@@ -151,6 +167,7 @@ class ExascaleDbStorageVaultSummary(object):
         self._exadata_infrastructure_id = None
         self._cluster_placement_group_id = None
         self._subscription_id = None
+        self._attached_shape_attributes = None
 
     @property
     def id(self):
@@ -625,6 +642,36 @@ class ExascaleDbStorageVaultSummary(object):
         :type: str
         """
         self._subscription_id = subscription_id
+
+    @property
+    def attached_shape_attributes(self):
+        """
+        Gets the attached_shape_attributes of this ExascaleDbStorageVaultSummary.
+        The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database Storage Vault.
+
+        Allowed values for items in this list are: "SMART_STORAGE", "BLOCK_STORAGE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The attached_shape_attributes of this ExascaleDbStorageVaultSummary.
+        :rtype: list[str]
+        """
+        return self._attached_shape_attributes
+
+    @attached_shape_attributes.setter
+    def attached_shape_attributes(self, attached_shape_attributes):
+        """
+        Sets the attached_shape_attributes of this ExascaleDbStorageVaultSummary.
+        The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database Storage Vault.
+
+
+        :param attached_shape_attributes: The attached_shape_attributes of this ExascaleDbStorageVaultSummary.
+        :type: list[str]
+        """
+        allowed_values = ["SMART_STORAGE", "BLOCK_STORAGE"]
+        if attached_shape_attributes:
+            attached_shape_attributes[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in attached_shape_attributes]
+        self._attached_shape_attributes = attached_shape_attributes
 
     def __repr__(self):
         return formatted_flat_dict(self)

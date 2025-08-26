@@ -435,7 +435,7 @@ class CreateAutonomousContainerDatabaseBase(object):
     def source(self):
         """
         Gets the source of this CreateAutonomousContainerDatabaseBase.
-        The source of the database: Use `NONE` for creating a new Autonomous Container Database. Use `BACKUP_FROM_ID` for creating a new Autonomous Container Database from a specified backup.
+        The source of the database. Use `NONE` to create a new Autonomous Container Database (ACD). Use `BACKUP_FROM_ID` to create a new ACD from a specified backup.
 
         Allowed values for this property are: "NONE", "BACKUP_FROM_ID"
 
@@ -449,7 +449,7 @@ class CreateAutonomousContainerDatabaseBase(object):
     def source(self, source):
         """
         Sets the source of this CreateAutonomousContainerDatabaseBase.
-        The source of the database: Use `NONE` for creating a new Autonomous Container Database. Use `BACKUP_FROM_ID` for creating a new Autonomous Container Database from a specified backup.
+        The source of the database. Use `NONE` to create a new Autonomous Container Database (ACD). Use `BACKUP_FROM_ID` to create a new ACD from a specified backup.
 
 
         :param source: The source of this CreateAutonomousContainerDatabaseBase.

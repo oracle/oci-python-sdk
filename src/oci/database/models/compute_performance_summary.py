@@ -15,6 +15,14 @@ class ComputePerformanceSummary(object):
     Parameters detailing the compute performance for a specified DB system shape.
     """
 
+    #: A constant which can be used with the compute_model property of a ComputePerformanceSummary.
+    #: This constant has a value of "ECPU"
+    COMPUTE_MODEL_ECPU = "ECPU"
+
+    #: A constant which can be used with the compute_model property of a ComputePerformanceSummary.
+    #: This constant has a value of "OCPU"
+    COMPUTE_MODEL_OCPU = "OCPU"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ComputePerformanceSummary object with values from keyword arguments.
@@ -40,31 +48,47 @@ class ComputePerformanceSummary(object):
             The value to assign to the network_throughput_in_mbps property of this ComputePerformanceSummary.
         :type network_throughput_in_mbps: float
 
+        :param compute_model:
+            The value to assign to the compute_model property of this ComputePerformanceSummary.
+            Allowed values for this property are: "ECPU", "OCPU", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type compute_model: str
+
+        :param compute_count:
+            The value to assign to the compute_count property of this ComputePerformanceSummary.
+        :type compute_count: int
+
         """
         self.swagger_types = {
             'cpu_core_count': 'int',
             'memory_in_gbs': 'float',
             'network_bandwidth_in_gbps': 'float',
             'network_iops': 'float',
-            'network_throughput_in_mbps': 'float'
+            'network_throughput_in_mbps': 'float',
+            'compute_model': 'str',
+            'compute_count': 'int'
         }
         self.attribute_map = {
             'cpu_core_count': 'cpuCoreCount',
             'memory_in_gbs': 'memoryInGBs',
             'network_bandwidth_in_gbps': 'networkBandwidthInGbps',
             'network_iops': 'networkIops',
-            'network_throughput_in_mbps': 'networkThroughputInMbps'
+            'network_throughput_in_mbps': 'networkThroughputInMbps',
+            'compute_model': 'computeModel',
+            'compute_count': 'computeCount'
         }
         self._cpu_core_count = None
         self._memory_in_gbs = None
         self._network_bandwidth_in_gbps = None
         self._network_iops = None
         self._network_throughput_in_mbps = None
+        self._compute_model = None
+        self._compute_count = None
 
     @property
     def cpu_core_count(self):
         """
-        **[Required]** Gets the cpu_core_count of this ComputePerformanceSummary.
+        Gets the cpu_core_count of this ComputePerformanceSummary.
         The number of CPU cores available.
 
 
@@ -112,7 +136,7 @@ class ComputePerformanceSummary(object):
     @property
     def network_bandwidth_in_gbps(self):
         """
-        **[Required]** Gets the network_bandwidth_in_gbps of this ComputePerformanceSummary.
+        Gets the network_bandwidth_in_gbps of this ComputePerformanceSummary.
         The network bandwidth of the VMDB system in gbps.
 
 
@@ -136,7 +160,7 @@ class ComputePerformanceSummary(object):
     @property
     def network_iops(self):
         """
-        **[Required]** Gets the network_iops of this ComputePerformanceSummary.
+        Gets the network_iops of this ComputePerformanceSummary.
         IOPS for the VMDB System.
 
 
@@ -160,7 +184,7 @@ class ComputePerformanceSummary(object):
     @property
     def network_throughput_in_mbps(self):
         """
-        **[Required]** Gets the network_throughput_in_mbps of this ComputePerformanceSummary.
+        Gets the network_throughput_in_mbps of this ComputePerformanceSummary.
         Network throughput for the VMDB System.
 
 
@@ -180,6 +204,60 @@ class ComputePerformanceSummary(object):
         :type: float
         """
         self._network_throughput_in_mbps = network_throughput_in_mbps
+
+    @property
+    def compute_model(self):
+        """
+        Gets the compute_model of this ComputePerformanceSummary.
+        The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+
+        Allowed values for this property are: "ECPU", "OCPU", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The compute_model of this ComputePerformanceSummary.
+        :rtype: str
+        """
+        return self._compute_model
+
+    @compute_model.setter
+    def compute_model(self, compute_model):
+        """
+        Sets the compute_model of this ComputePerformanceSummary.
+        The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+
+
+        :param compute_model: The compute_model of this ComputePerformanceSummary.
+        :type: str
+        """
+        allowed_values = ["ECPU", "OCPU"]
+        if not value_allowed_none_or_none_sentinel(compute_model, allowed_values):
+            compute_model = 'UNKNOWN_ENUM_VALUE'
+        self._compute_model = compute_model
+
+    @property
+    def compute_count(self):
+        """
+        Gets the compute_count of this ComputePerformanceSummary.
+        The number of compute servers for the DB system.
+
+
+        :return: The compute_count of this ComputePerformanceSummary.
+        :rtype: int
+        """
+        return self._compute_count
+
+    @compute_count.setter
+    def compute_count(self, compute_count):
+        """
+        Sets the compute_count of this ComputePerformanceSummary.
+        The number of compute servers for the DB system.
+
+
+        :param compute_count: The compute_count of this ComputePerformanceSummary.
+        :type: int
+        """
+        self._compute_count = compute_count
 
     def __repr__(self):
         return formatted_flat_dict(self)

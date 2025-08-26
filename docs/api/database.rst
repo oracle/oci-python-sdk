@@ -243,6 +243,8 @@ Database
     oci.database.models.DatabaseSoftwareImage
     oci.database.models.DatabaseSoftwareImageSummary
     oci.database.models.DatabaseSslConnectionCredentials
+    oci.database.models.DatabaseStorageSizeDetails
+    oci.database.models.DatabaseStorageSizeResponseDetails
     oci.database.models.DatabaseSummary
     oci.database.models.DatabaseTool
     oci.database.models.DatabaseUpgradeHistoryEntry

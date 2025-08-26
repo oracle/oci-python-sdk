@@ -179,6 +179,15 @@ class LaunchDbSystemFromDatabaseDetails(LaunchDbSystemBase):
             The value to assign to the data_collection_options property of this LaunchDbSystemFromDatabaseDetails.
         :type data_collection_options: oci.database.models.DataCollectionOptions
 
+        :param compute_model:
+            The value to assign to the compute_model property of this LaunchDbSystemFromDatabaseDetails.
+            Allowed values for this property are: "ECPU", "OCPU"
+        :type compute_model: str
+
+        :param compute_count:
+            The value to assign to the compute_count property of this LaunchDbSystemFromDatabaseDetails.
+        :type compute_count: int
+
         :param db_home:
             The value to assign to the db_home property of this LaunchDbSystemFromDatabaseDetails.
         :type db_home: oci.database.models.CreateDbHomeFromDatabaseDetails
@@ -230,6 +239,8 @@ class LaunchDbSystemFromDatabaseDetails(LaunchDbSystemBase):
             'private_ip': 'str',
             'private_ip_v6': 'str',
             'data_collection_options': 'DataCollectionOptions',
+            'compute_model': 'str',
+            'compute_count': 'int',
             'db_home': 'CreateDbHomeFromDatabaseDetails',
             'database_edition': 'str',
             'disk_redundancy': 'str',
@@ -266,6 +277,8 @@ class LaunchDbSystemFromDatabaseDetails(LaunchDbSystemBase):
             'private_ip': 'privateIp',
             'private_ip_v6': 'privateIpV6',
             'data_collection_options': 'dataCollectionOptions',
+            'compute_model': 'computeModel',
+            'compute_count': 'computeCount',
             'db_home': 'dbHome',
             'database_edition': 'databaseEdition',
             'disk_redundancy': 'diskRedundancy',
@@ -301,6 +314,8 @@ class LaunchDbSystemFromDatabaseDetails(LaunchDbSystemBase):
         self._private_ip = None
         self._private_ip_v6 = None
         self._data_collection_options = None
+        self._compute_model = None
+        self._compute_count = None
         self._db_home = None
         self._database_edition = None
         self._disk_redundancy = None

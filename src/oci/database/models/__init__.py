@@ -231,6 +231,8 @@ from .database_management_config import DatabaseManagementConfig
 from .database_software_image import DatabaseSoftwareImage
 from .database_software_image_summary import DatabaseSoftwareImageSummary
 from .database_ssl_connection_credentials import DatabaseSslConnectionCredentials
+from .database_storage_size_details import DatabaseStorageSizeDetails
+from .database_storage_size_response_details import DatabaseStorageSizeResponseDetails
 from .database_summary import DatabaseSummary
 from .database_tool import DatabaseTool
 from .database_upgrade_history_entry import DatabaseUpgradeHistoryEntry
@@ -734,6 +736,8 @@ database_type_mapping = {
     "DatabaseSoftwareImage": DatabaseSoftwareImage,
     "DatabaseSoftwareImageSummary": DatabaseSoftwareImageSummary,
     "DatabaseSslConnectionCredentials": DatabaseSslConnectionCredentials,
+    "DatabaseStorageSizeDetails": DatabaseStorageSizeDetails,
+    "DatabaseStorageSizeResponseDetails": DatabaseStorageSizeResponseDetails,
     "DatabaseSummary": DatabaseSummary,
     "DatabaseTool": DatabaseTool,
     "DatabaseUpgradeHistoryEntry": DatabaseUpgradeHistoryEntry,

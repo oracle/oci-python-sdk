@@ -5,6 +5,27 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.159.0 - 2025-08-27
+====================
+
+Added 
+-----  
+* Support for Oracle 19C Database  for Oracle Exadata Database Service  
+* Support for VM.Standard.x86 shape in BaseDB Database Service  
+* Support DR for MySQL DB Systems in Disaster Recovery Service  
+* Support newly added for Managed Kafka Service  
+* Support for Additional Languages using Whisper Model in Realtime Speech in the Speech Service  
+* Support for GMF APIs by Core Service  
+* Support for creating/updating deployment with new parameters for Golden Gate Service   
+
+Breaking 
+-------- 
+* Removed deprecated service Anomaly Detection 
+* Removed deprecated service Data Transfer Service 
+* Removed deprecated service OS Management Service 
+* Removed deprecated service Service Mesh   
+
+====================
 2.158.2 - 2025-08-19
 ====================
 

@@ -2103,7 +2103,7 @@ class AutonomousDwDatabase(object):
     def memory_per_oracle_compute_unit_in_gbs(self):
         """
         Gets the memory_per_oracle_compute_unit_in_gbs of this AutonomousDwDatabase.
-        The amount of memory (in GBs) enabled per ECPU or OCPU.
+        The amount of memory (in GBs) to be enabled per OCPU or ECPU.
 
 
         :return: The memory_per_oracle_compute_unit_in_gbs of this AutonomousDwDatabase.
@@ -2115,7 +2115,7 @@ class AutonomousDwDatabase(object):
     def memory_per_oracle_compute_unit_in_gbs(self, memory_per_oracle_compute_unit_in_gbs):
         """
         Sets the memory_per_oracle_compute_unit_in_gbs of this AutonomousDwDatabase.
-        The amount of memory (in GBs) enabled per ECPU or OCPU.
+        The amount of memory (in GBs) to be enabled per OCPU or ECPU.
 
 
         :param memory_per_oracle_compute_unit_in_gbs: The memory_per_oracle_compute_unit_in_gbs of this AutonomousDwDatabase.

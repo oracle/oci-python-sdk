@@ -77,6 +77,10 @@ class RealtimeParameters(object):
             Allowed values for this property are: "NONE", "LOW", "MEDIUM", "HIGH"
         :type stabilize_partial_results: str
 
+        :param model_type:
+            The value to assign to the model_type property of this RealtimeParameters.
+        :type model_type: str
+
         :param model_domain:
             The value to assign to the model_domain property of this RealtimeParameters.
             Allowed values for this property are: "GENERIC", "MEDICAL"
@@ -106,6 +110,7 @@ class RealtimeParameters(object):
             'partial_silence_threshold_in_ms': 'int',
             'final_silence_threshold_in_ms': 'int',
             'stabilize_partial_results': 'str',
+            'model_type': 'str',
             'model_domain': 'str',
             'language_code': 'str',
             'should_ignore_invalid_customizations': 'bool',
@@ -118,6 +123,7 @@ class RealtimeParameters(object):
             'partial_silence_threshold_in_ms': 'partialSilenceThresholdInMs',
             'final_silence_threshold_in_ms': 'finalSilenceThresholdInMs',
             'stabilize_partial_results': 'stabilizePartialResults',
+            'model_type': 'modelType',
             'model_domain': 'modelDomain',
             'language_code': 'languageCode',
             'should_ignore_invalid_customizations': 'shouldIgnoreInvalidCustomizations',
@@ -129,6 +135,7 @@ class RealtimeParameters(object):
         self._partial_silence_threshold_in_ms = None
         self._final_silence_threshold_in_ms = None
         self._stabilize_partial_results = None
+        self._model_type = None
         self._model_domain = None
         self._language_code = None
         self._should_ignore_invalid_customizations = None
@@ -196,6 +203,7 @@ class RealtimeParameters(object):
         """
         Gets the partial_silence_threshold_in_ms of this RealtimeParameters.
         Silence threshold for Realtime Speech partial results in milliseconds.
+        Currently supported only for Oracle model.
 
 
         :return: The partial_silence_threshold_in_ms of this RealtimeParameters.
@@ -208,6 +216,7 @@ class RealtimeParameters(object):
         """
         Sets the partial_silence_threshold_in_ms of this RealtimeParameters.
         Silence threshold for Realtime Speech partial results in milliseconds.
+        Currently supported only for Oracle model.
 
 
         :param partial_silence_threshold_in_ms: The partial_silence_threshold_in_ms of this RealtimeParameters.
@@ -220,6 +229,7 @@ class RealtimeParameters(object):
         """
         Gets the final_silence_threshold_in_ms of this RealtimeParameters.
         Silence threshold for Realtime Speech final results in milliseconds.
+        Currently supported only for Oracle model.
 
 
         :return: The final_silence_threshold_in_ms of this RealtimeParameters.
@@ -232,6 +242,7 @@ class RealtimeParameters(object):
         """
         Sets the final_silence_threshold_in_ms of this RealtimeParameters.
         Silence threshold for Realtime Speech final results in milliseconds.
+        Currently supported only for Oracle model.
 
 
         :param final_silence_threshold_in_ms: The final_silence_threshold_in_ms of this RealtimeParameters.
@@ -244,6 +255,7 @@ class RealtimeParameters(object):
         """
         Gets the stabilize_partial_results of this RealtimeParameters.
         When enabled sets the amount of confidence required for latest tokens before returning them as part of a new partial result
+        Currently supported only for Oracle model.
 
         Allowed values for this property are: "NONE", "LOW", "MEDIUM", "HIGH"
 
@@ -258,6 +270,7 @@ class RealtimeParameters(object):
         """
         Sets the stabilize_partial_results of this RealtimeParameters.
         When enabled sets the amount of confidence required for latest tokens before returning them as part of a new partial result
+        Currently supported only for Oracle model.
 
 
         :param stabilize_partial_results: The stabilize_partial_results of this RealtimeParameters.
@@ -269,6 +282,34 @@ class RealtimeParameters(object):
                 f"Invalid value for `stabilize_partial_results`, must be None or one of {allowed_values}"
             )
         self._stabilize_partial_results = stabilize_partial_results
+
+    @property
+    def model_type(self):
+        """
+        Gets the model_type of this RealtimeParameters.
+        Select a model to use for generating transcriptions. Currently supported models are:
+        - ORACLE
+        - WHISPER
+
+
+        :return: The model_type of this RealtimeParameters.
+        :rtype: str
+        """
+        return self._model_type
+
+    @model_type.setter
+    def model_type(self, model_type):
+        """
+        Sets the model_type of this RealtimeParameters.
+        Select a model to use for generating transcriptions. Currently supported models are:
+        - ORACLE
+        - WHISPER
+
+
+        :param model_type: The model_type of this RealtimeParameters.
+        :type: str
+        """
+        self._model_type = model_type
 
     @property
     def model_domain(self):
@@ -305,8 +346,9 @@ class RealtimeParameters(object):
     def language_code(self):
         """
         Gets the language_code of this RealtimeParameters.
-        Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646].
-        - en-US: English - United States
+        Oracle model supported language codes are locale specific.
+        Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646]
+        - en-US: English - United States (default)
         - es-ES: Spanish - Spain
         - pt-BR: Portuguese - Brazil
         - en-GB: English - Great Britain
@@ -316,6 +358,107 @@ class RealtimeParameters(object):
         - fr-FR: French - France
         - de-DE: German - Germany
         - it-IT: Italian - Italy
+        Whisper model supported language codes are locale agnostic
+        - auto: Auto-detect language
+        - af: Afrikaans
+        - am: Amharic
+        - ar: Arabic
+        - as: Assamese
+        - az: Azerbaijani
+        - ba: Bashkir
+        - be: Belarusian
+        - bg: Bulgarian
+        - bn: Bengali
+        - bo: Tibetan
+        - br: Breton
+        - bs: Bosnian
+        - ca: Catalan
+        - cs: Czech
+        - cy: Welsh
+        - da: Danish
+        - de: German
+        - el: Greek
+        - en: English (default)
+        - es: Spanish
+        - et: Estonian
+        - eu: Basque
+        - fa: Persian
+        - fi: Finnish
+        - fo: Faroese
+        - fr: French
+        - gl: Galician
+        - gu: Gujarati
+        - ha: Hausa
+        - haw: Hawaiian
+        - he: Hebrew
+        - hi: Hindi
+        - hr: Croatian
+        - ht: Haitian Creole
+        - hu: Hungarian
+        - hy: Armenian
+        - id: Indonesian
+        - is: Icelandic
+        - it: Italian
+        - ja: Japanese
+        - jv: Javanese
+        - ka: Georgian
+        - kk: Kazakh
+        - km: Khmer
+        - kn: Kannada
+        - ko: Korean
+        - la: Latin
+        - lb: Luxembourgish
+        - ln: Lingala
+        - lo: Lao
+        - lt: Lithuanian
+        - lv: Latvian
+        - mg: Malagasy
+        - mi: Maori
+        - mk: Macedonian
+        - ml: Malayalam
+        - mn: Mongolian
+        - mr: Marathi
+        - ms: Malay
+        - mt: Maltese
+        - my: Burmese
+        - ne: Nepali
+        - nl: Dutch
+        - nn: Norwegian Nynorsk
+        - no: Norwegian
+        - oc: Occitan
+        - pa: Punjabi
+        - pl: Polish
+        - ps: Pashto
+        - pt: Portuguese
+        - ro: Romanian
+        - ru: Russian
+        - sa: Sanskrit
+        - sd: Sindhi
+        - si: Sinhala
+        - sk: Slovak
+        - sl: Slovenian
+        - sn: Shona
+        - so: Somali
+        - sq: Albanian
+        - sr: Serbian
+        - su: Sundanese
+        - sv: Swedish
+        - sw: Swahili
+        - ta: Tamil
+        - te: Telugu
+        - tg: Tajik
+        - th: Thai
+        - tk: Turkmen
+        - tl: Tagalog
+        - tr: Turkish
+        - tt: Tatar
+        - uk: Ukrainian
+        - ur: Urdu
+        - uz: Uzbek
+        - vi: Vietnamese
+        - yi: Yiddish
+        - yo: Yoruba
+        - zh: Chinese
 
 
         :return: The language_code of this RealtimeParameters.
@@ -327,8 +470,9 @@ class RealtimeParameters(object):
     def language_code(self, language_code):
         """
         Sets the language_code of this RealtimeParameters.
-        Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646].
-        - en-US: English - United States
+        Oracle model supported language codes are locale specific.
+        Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646]
+        - en-US: English - United States (default)
         - es-ES: Spanish - Spain
         - pt-BR: Portuguese - Brazil
         - en-GB: English - Great Britain
@@ -338,6 +482,107 @@ class RealtimeParameters(object):
         - fr-FR: French - France
         - de-DE: German - Germany
         - it-IT: Italian - Italy
+        Whisper model supported language codes are locale agnostic
+        - auto: Auto-detect language
+        - af: Afrikaans
+        - am: Amharic
+        - ar: Arabic
+        - as: Assamese
+        - az: Azerbaijani
+        - ba: Bashkir
+        - be: Belarusian
+        - bg: Bulgarian
+        - bn: Bengali
+        - bo: Tibetan
+        - br: Breton
+        - bs: Bosnian
+        - ca: Catalan
+        - cs: Czech
+        - cy: Welsh
+        - da: Danish
+        - de: German
+        - el: Greek
+        - en: English (default)
+        - es: Spanish
+        - et: Estonian
+        - eu: Basque
+        - fa: Persian
+        - fi: Finnish
+        - fo: Faroese
+        - fr: French
+        - gl: Galician
+        - gu: Gujarati
+        - ha: Hausa
+        - haw: Hawaiian
+        - he: Hebrew
+        - hi: Hindi
+        - hr: Croatian
+        - ht: Haitian Creole
+        - hu: Hungarian
+        - hy: Armenian
+        - id: Indonesian
+        - is: Icelandic
+        - it: Italian
+        - ja: Japanese
+        - jv: Javanese
+        - ka: Georgian
+        - kk: Kazakh
+        - km: Khmer
+        - kn: Kannada
+        - ko: Korean
+        - la: Latin
+        - lb: Luxembourgish
+        - ln: Lingala
+        - lo: Lao
+        - lt: Lithuanian
+        - lv: Latvian
+        - mg: Malagasy
+        - mi: Maori
+        - mk: Macedonian
+        - ml: Malayalam
+        - mn: Mongolian
+        - mr: Marathi
+        - ms: Malay
+        - mt: Maltese
+        - my: Burmese
+        - ne: Nepali
+        - nl: Dutch
+        - nn: Norwegian Nynorsk
+        - no: Norwegian
+        - oc: Occitan
+        - pa: Punjabi
+        - pl: Polish
+        - ps: Pashto
+        - pt: Portuguese
+        - ro: Romanian
+        - ru: Russian
+        - sa: Sanskrit
+        - sd: Sindhi
+        - si: Sinhala
+        - sk: Slovak
+        - sl: Slovenian
+        - sn: Shona
+        - so: Somali
+        - sq: Albanian
+        - sr: Serbian
+        - su: Sundanese
+        - sv: Swedish
+        - sw: Swahili
+        - ta: Tamil
+        - te: Telugu
+        - tg: Tajik
+        - th: Thai
+        - tk: Turkmen
+        - tl: Tagalog
+        - tr: Turkish
+        - tt: Tatar
+        - uk: Ukrainian
+        - ur: Urdu
+        - uz: Uzbek
+        - vi: Vietnamese
+        - yi: Yiddish
+        - yo: Yoruba
+        - zh: Chinese
 
 
         :param language_code: The language_code of this RealtimeParameters.
@@ -351,6 +596,7 @@ class RealtimeParameters(object):
         Gets the should_ignore_invalid_customizations of this RealtimeParameters.
         If set to true, the service will not fail connection attempt if it encounters any issues that prevent the loading of all specified user customizations. Any invalid customizations will simply be ignored and connection will continue being established with the default base model and any remaining valid customizations.
         If set to false, if the service is unable to load any of the specified customizations, an error detailing why will be returned and the session will end.
+        Currently supported only for Oracle model.
 
 
         :return: The should_ignore_invalid_customizations of this RealtimeParameters.
@@ -364,6 +610,7 @@ class RealtimeParameters(object):
         Sets the should_ignore_invalid_customizations of this RealtimeParameters.
         If set to true, the service will not fail connection attempt if it encounters any issues that prevent the loading of all specified user customizations. Any invalid customizations will simply be ignored and connection will continue being established with the default base model and any remaining valid customizations.
         If set to false, if the service is unable to load any of the specified customizations, an error detailing why will be returned and the session will end.
+        Currently supported only for Oracle model.
 
 
         :param should_ignore_invalid_customizations: The should_ignore_invalid_customizations of this RealtimeParameters.
@@ -376,6 +623,7 @@ class RealtimeParameters(object):
         """
         Gets the customizations of this RealtimeParameters.
         Array of customization objects.
+        Currently supported only for Oracle model.
 
 
         :return: The customizations of this RealtimeParameters.
@@ -388,6 +636,7 @@ class RealtimeParameters(object):
         """
         Sets the customizations of this RealtimeParameters.
         Array of customization objects.
+        Currently supported only for Oracle model.
 
 
         :param customizations: The customizations of this RealtimeParameters.
@@ -403,6 +652,7 @@ class RealtimeParameters(object):
         - NONE: No punctuation in the transcription response
         - SPOKEN: Punctuations in response only when verbally spoken
         - AUTO: Automatic punctuation in the response, spoken punctuations are disabled
+        Spoken punctuation is currently supported only for the Oracle model in the Medical domain.
 
         Allowed values for this property are: "NONE", "SPOKEN", "AUTO"
 
@@ -420,6 +670,7 @@ class RealtimeParameters(object):
         - NONE: No punctuation in the transcription response
         - SPOKEN: Punctuations in response only when verbally spoken
         - AUTO: Automatic punctuation in the response, spoken punctuations are disabled
+        Spoken punctuation is currently supported only for the Oracle model in the Medical domain.
 
 
         :param punctuation: The punctuation of this RealtimeParameters.
