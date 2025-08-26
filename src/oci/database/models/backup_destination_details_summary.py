@@ -363,7 +363,7 @@ class BackupDestinationDetailsSummary(object):
     def is_remote(self):
         """
         Gets the is_remote of this BackupDestinationDetailsSummary.
-        Indicates whether the backup destination is cross-region or local region.
+        Indicates whether the backup destination is cross-region or local.
 
 
         :return: The is_remote of this BackupDestinationDetailsSummary.
@@ -375,7 +375,7 @@ class BackupDestinationDetailsSummary(object):
     def is_remote(self, is_remote):
         """
         Sets the is_remote of this BackupDestinationDetailsSummary.
-        Indicates whether the backup destination is cross-region or local region.
+        Indicates whether the backup destination is cross-region or local.
 
 
         :param is_remote: The is_remote of this BackupDestinationDetailsSummary.
@@ -388,7 +388,6 @@ class BackupDestinationDetailsSummary(object):
         """
         Gets the remote_region of this BackupDestinationDetailsSummary.
         The name of the remote region where the remote automatic incremental backups will be stored.
-
         For information about valid region names, see
         `Regions and Availability Domains`__.
 
@@ -405,7 +404,6 @@ class BackupDestinationDetailsSummary(object):
         """
         Sets the remote_region of this BackupDestinationDetailsSummary.
         The name of the remote region where the remote automatic incremental backups will be stored.
-
         For information about valid region names, see
         `Regions and Availability Domains`__.
 

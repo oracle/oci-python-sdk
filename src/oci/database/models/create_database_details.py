@@ -103,6 +103,10 @@ class CreateDatabaseDetails(object):
             The value to assign to the encryption_key_location_details property of this CreateDatabaseDetails.
         :type encryption_key_location_details: oci.database.models.EncryptionKeyLocationDetails
 
+        :param storage_size_details:
+            The value to assign to the storage_size_details property of this CreateDatabaseDetails.
+        :type storage_size_details: oci.database.models.DatabaseStorageSizeDetails
+
         """
         self.swagger_types = {
             'db_name': 'str',
@@ -122,7 +126,8 @@ class CreateDatabaseDetails(object):
             'vault_id': 'str',
             'sid_prefix': 'str',
             'key_store_id': 'str',
-            'encryption_key_location_details': 'EncryptionKeyLocationDetails'
+            'encryption_key_location_details': 'EncryptionKeyLocationDetails',
+            'storage_size_details': 'DatabaseStorageSizeDetails'
         }
         self.attribute_map = {
             'db_name': 'dbName',
@@ -142,7 +147,8 @@ class CreateDatabaseDetails(object):
             'vault_id': 'vaultId',
             'sid_prefix': 'sidPrefix',
             'key_store_id': 'keyStoreId',
-            'encryption_key_location_details': 'encryptionKeyLocationDetails'
+            'encryption_key_location_details': 'encryptionKeyLocationDetails',
+            'storage_size_details': 'storageSizeDetails'
         }
         self._db_name = None
         self._db_unique_name = None
@@ -162,6 +168,7 @@ class CreateDatabaseDetails(object):
         self._sid_prefix = None
         self._key_store_id = None
         self._encryption_key_location_details = None
+        self._storage_size_details = None
 
     @property
     def db_name(self):
@@ -635,6 +642,26 @@ class CreateDatabaseDetails(object):
         :type: oci.database.models.EncryptionKeyLocationDetails
         """
         self._encryption_key_location_details = encryption_key_location_details
+
+    @property
+    def storage_size_details(self):
+        """
+        Gets the storage_size_details of this CreateDatabaseDetails.
+
+        :return: The storage_size_details of this CreateDatabaseDetails.
+        :rtype: oci.database.models.DatabaseStorageSizeDetails
+        """
+        return self._storage_size_details
+
+    @storage_size_details.setter
+    def storage_size_details(self, storage_size_details):
+        """
+        Sets the storage_size_details of this CreateDatabaseDetails.
+
+        :param storage_size_details: The storage_size_details of this CreateDatabaseDetails.
+        :type: oci.database.models.DatabaseStorageSizeDetails
+        """
+        self._storage_size_details = storage_size_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

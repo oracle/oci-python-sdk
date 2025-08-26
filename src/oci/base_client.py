@@ -268,11 +268,11 @@ class BaseClient(object):
     }
 
     ALLOW_CONTROL_CHARACTERS = False
+    ENABLE_STRICT_URL_ENCODING = False
 
     def __init__(self, service, config, signer, type_mapping, **kwargs):
         validate_config(config, signer=signer)
         self.signer = signer
-
         self.config = config
         # Default to true (is a regional client) if there is nothing explicitly set. Regional
         # clients allow us to call set_region and that'll also set the endpoint. For non-regional
@@ -287,6 +287,8 @@ class BaseClient(object):
 
         # By default self._allow_control_chars will be None. The user would need to explicitly set it to True or False
         self._allow_control_chars = kwargs.get('allow_control_chars')
+        # By default self._enable_strict_url_encoding will be None. The user would need to explicitly set it to True or False
+        self._enable_strict_url_encoding = kwargs.get('enable_strict_url_encoding')
 
         self._client_level_realm_specific_endpoint_template_enabled = kwargs.get('client_level_realm_specific_endpoint_template_enabled')  # default this to None as it should be an opt-in feature
 
@@ -399,6 +401,14 @@ class BaseClient(object):
         self._allow_control_chars = bool
 
     @property
+    def enable_strict_url_encoding(self):
+        return self._enable_strict_url_encoding
+
+    @enable_strict_url_encoding.setter
+    def enable_strict_url_encoding(self, bool_value):
+        self._enable_strict_url_encoding = bool_value
+
+    @property
     def client_level_realm_specific_endpoint_template_enabled(self):
         return self._client_level_realm_specific_endpoint_template_enabled
 
@@ -441,6 +451,7 @@ class BaseClient(object):
                  response_type=None,
                  enforce_content_headers=True,
                  allow_control_chars=None,
+                 enable_strict_url_encoding=None,
                  operation_name=None,
                  api_reference_link=None,
                  required_arguments=[]):
@@ -457,6 +468,7 @@ class BaseClient(object):
         :param enforce_content_headers: (optional) Whether content headers should be added for
             PUT and POST requests when not present.  Defaults to True.
         :param allow_control_chars: (optional) Boolean that allows whether or not the response object can contain control chars
+        :param enable_strict_url_encoding: (optional) Boolean that allows whether extra url encoding should be enabled or not
         :param operation_name: (optional) String that represents the operational name of the API call.
         :param api_reference_link: (optional) String that represents the link to the API reference page for this operation.
         :return: A Response object, or throw in the case of an error.
@@ -488,10 +500,14 @@ class BaseClient(object):
         if opc_host_serial:
             header_params['opc-host-serial'] = opc_host_serial
 
+        should_enable_strict_url_encoding = self.should_enable_strict_url_encoding(enable_strict_url_encoding)
         if path_params:
             path_params = self.sanitize_for_serialization(path_params)
             for k, v in path_params.items():
-                replacement = six.moves.urllib.parse.quote(str(self.to_path_value(v)))
+                if should_enable_strict_url_encoding:
+                    replacement = six.moves.urllib.parse.quote(str(self.to_path_value(v)), safe='')
+                else:
+                    replacement = six.moves.urllib.parse.quote(str(self.to_path_value(v)))
                 resource_path = resource_path.\
                     replace('{' + k + '}', replacement)
 
@@ -1126,6 +1142,21 @@ class BaseClient(object):
         if global_configuration is True:
             return True
 
+        return False
+
+    def should_enable_strict_url_encoding(self, enable_strict_url_encoding):
+        request_configuration = enable_strict_url_encoding
+        client_configuration = self._enable_strict_url_encoding
+        global_configuration = BaseClient.ENABLE_STRICT_URL_ENCODING
+        # Check at the request level
+        if request_configuration is not None:
+            return request_configuration
+        # Check at the client level
+        if client_configuration is not None:
+            return client_configuration
+        # Check at the global level
+        if global_configuration is True:
+            return True
         return False
 
     def should_allow_template_per_realm(self):

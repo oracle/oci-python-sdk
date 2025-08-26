@@ -88,6 +88,10 @@ class ComputeGpuMemoryFabric(object):
             The value to assign to the healthy_host_count property of this ComputeGpuMemoryFabric.
         :type healthy_host_count: int
 
+        :param available_host_count:
+            The value to assign to the available_host_count property of this ComputeGpuMemoryFabric.
+        :type available_host_count: int
+
         :param total_host_count:
             The value to assign to the total_host_count property of this ComputeGpuMemoryFabric.
         :type total_host_count: int
@@ -123,6 +127,7 @@ class ComputeGpuMemoryFabric(object):
             'fabric_health': 'str',
             'additional_data': 'dict(str, object)',
             'healthy_host_count': 'int',
+            'available_host_count': 'int',
             'total_host_count': 'int',
             'time_created': 'datetime',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -140,6 +145,7 @@ class ComputeGpuMemoryFabric(object):
             'fabric_health': 'fabricHealth',
             'additional_data': 'additionalData',
             'healthy_host_count': 'healthyHostCount',
+            'available_host_count': 'availableHostCount',
             'total_host_count': 'totalHostCount',
             'time_created': 'timeCreated',
             'defined_tags': 'definedTags',
@@ -156,6 +162,7 @@ class ComputeGpuMemoryFabric(object):
         self._fabric_health = None
         self._additional_data = None
         self._healthy_host_count = None
+        self._available_host_count = None
         self._total_host_count = None
         self._time_created = None
         self._defined_tags = None
@@ -412,6 +419,30 @@ class ComputeGpuMemoryFabric(object):
         :type: int
         """
         self._healthy_host_count = healthy_host_count
+
+    @property
+    def available_host_count(self):
+        """
+        Gets the available_host_count of this ComputeGpuMemoryFabric.
+        The total number of available bare metal hosts located in this compute GPU memory fabric.
+
+
+        :return: The available_host_count of this ComputeGpuMemoryFabric.
+        :rtype: int
+        """
+        return self._available_host_count
+
+    @available_host_count.setter
+    def available_host_count(self, available_host_count):
+        """
+        Sets the available_host_count of this ComputeGpuMemoryFabric.
+        The total number of available bare metal hosts located in this compute GPU memory fabric.
+
+
+        :param available_host_count: The available_host_count of this ComputeGpuMemoryFabric.
+        :type: int
+        """
+        self._available_host_count = available_host_count
 
     @property
     def total_host_count(self):

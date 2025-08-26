@@ -27,7 +27,7 @@ class CreateDrProtectionGroupMemberVolumeGroupDetails(CreateDrProtectionGroupMem
 
         :param member_type:
             The value to assign to the member_type property of this CreateDrProtectionGroupMemberVolumeGroupDetails.
-            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OKE_CLUSTER", "OBJECT_STORAGE_BUCKET"
+            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OKE_CLUSTER", "OBJECT_STORAGE_BUCKET", "MYSQL_DB_SYSTEM"
         :type member_type: str
 
         :param destination_backup_policy_id:
@@ -42,26 +42,33 @@ class CreateDrProtectionGroupMemberVolumeGroupDetails(CreateDrProtectionGroupMem
             The value to assign to the common_destination_key property of this CreateDrProtectionGroupMemberVolumeGroupDetails.
         :type common_destination_key: oci.disaster_recovery.models.CreateVaultAndEncryptionKeyDetails
 
+        :param destination_compartment_id:
+            The value to assign to the destination_compartment_id property of this CreateDrProtectionGroupMemberVolumeGroupDetails.
+        :type destination_compartment_id: str
+
         """
         self.swagger_types = {
             'member_id': 'str',
             'member_type': 'str',
             'destination_backup_policy_id': 'str',
             'source_volume_to_destination_encryption_key_mappings': 'list[CreateSourceVolumeToDestinationEncryptionKeyMappingDetails]',
-            'common_destination_key': 'CreateVaultAndEncryptionKeyDetails'
+            'common_destination_key': 'CreateVaultAndEncryptionKeyDetails',
+            'destination_compartment_id': 'str'
         }
         self.attribute_map = {
             'member_id': 'memberId',
             'member_type': 'memberType',
             'destination_backup_policy_id': 'destinationBackupPolicyId',
             'source_volume_to_destination_encryption_key_mappings': 'sourceVolumeToDestinationEncryptionKeyMappings',
-            'common_destination_key': 'commonDestinationKey'
+            'common_destination_key': 'commonDestinationKey',
+            'destination_compartment_id': 'destinationCompartmentId'
         }
         self._member_id = None
         self._member_type = None
         self._destination_backup_policy_id = None
         self._source_volume_to_destination_encryption_key_mappings = None
         self._common_destination_key = None
+        self._destination_compartment_id = None
         self._member_type = 'VOLUME_GROUP'
 
     @property
@@ -155,6 +162,34 @@ class CreateDrProtectionGroupMemberVolumeGroupDetails(CreateDrProtectionGroupMem
         :type: oci.disaster_recovery.models.CreateVaultAndEncryptionKeyDetails
         """
         self._common_destination_key = common_destination_key
+
+    @property
+    def destination_compartment_id(self):
+        """
+        Gets the destination_compartment_id of this CreateDrProtectionGroupMemberVolumeGroupDetails.
+        The OCID of a compartment in the destination region in which the volume group should be launched.
+
+        Example: `ocid1.compartment.oc1..uniqueID`
+
+
+        :return: The destination_compartment_id of this CreateDrProtectionGroupMemberVolumeGroupDetails.
+        :rtype: str
+        """
+        return self._destination_compartment_id
+
+    @destination_compartment_id.setter
+    def destination_compartment_id(self, destination_compartment_id):
+        """
+        Sets the destination_compartment_id of this CreateDrProtectionGroupMemberVolumeGroupDetails.
+        The OCID of a compartment in the destination region in which the volume group should be launched.
+
+        Example: `ocid1.compartment.oc1..uniqueID`
+
+
+        :param destination_compartment_id: The destination_compartment_id of this CreateDrProtectionGroupMemberVolumeGroupDetails.
+        :type: str
+        """
+        self._destination_compartment_id = destination_compartment_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

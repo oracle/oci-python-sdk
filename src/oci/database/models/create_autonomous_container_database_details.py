@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateAutonomousContainerDatabaseDetails(CreateAutonomousContainerDatabaseBase):
     """
-    Details to create an Oracle Autonomous Container Database.
+    Details to create an Autonomous Container Database (ACD).
     """
 
     def __init__(self, **kwargs):

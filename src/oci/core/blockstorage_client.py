@@ -81,6 +81,10 @@ class BlockstorageClient(object):
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
+
+        :param enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this client should enable strict url encoding in path params of a request.
+            By default, the client will not enable strict url encoding
         """
         if not OCI_SDK_ENABLED_SERVICES_SET.is_service_enabled("core"):
             raise InvalidAlloyConfig("The Alloy configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local alloy-config file configured the service you're targeting or contact the cloud provider on the availability of this service")
@@ -118,6 +122,8 @@ class BlockstorageClient(object):
             base_client_init_kwargs['circuit_breaker_strategy'] = circuit_breaker.DEFAULT_CIRCUIT_BREAKER_STRATEGY
         if 'allow_control_chars' in kwargs:
             base_client_init_kwargs['allow_control_chars'] = kwargs.get('allow_control_chars')
+        if 'enable_strict_url_encoding' in kwargs:
+            base_client_init_kwargs['enable_strict_url_encoding'] = kwargs.get('enable_strict_url_encoding')
         self.base_client = BaseClient("blockstorage", config, signer, core_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
@@ -155,6 +161,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -171,6 +181,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -213,6 +224,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 body=change_boot_volume_backup_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -224,6 +236,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 body=change_boot_volume_backup_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -259,6 +272,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -275,6 +292,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -317,6 +335,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 body=change_boot_volume_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -328,6 +347,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 body=change_boot_volume_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -363,6 +383,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -379,6 +403,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -421,6 +446,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 body=change_volume_backup_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -432,6 +458,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 body=change_volume_backup_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -467,6 +494,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -483,6 +514,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -525,6 +557,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 body=change_volume_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -536,6 +569,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 body=change_volume_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -571,6 +605,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -587,6 +625,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -629,6 +668,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 body=change_volume_group_backup_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -640,6 +680,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 body=change_volume_group_backup_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -675,6 +716,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -691,6 +736,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -733,6 +779,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 body=change_volume_group_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -744,6 +791,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 body=change_volume_group_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -785,6 +833,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.BootVolumeBackup`
         :rtype: :class:`~oci.response.Response`
 
@@ -801,6 +853,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -847,6 +900,7 @@ class BlockstorageClient(object):
                 body=copy_boot_volume_backup_details,
                 response_type="BootVolumeBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -859,6 +913,7 @@ class BlockstorageClient(object):
                 body=copy_boot_volume_backup_details,
                 response_type="BootVolumeBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -900,6 +955,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.VolumeBackup`
         :rtype: :class:`~oci.response.Response`
 
@@ -916,6 +975,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -962,6 +1022,7 @@ class BlockstorageClient(object):
                 body=copy_volume_backup_details,
                 response_type="VolumeBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -974,6 +1035,7 @@ class BlockstorageClient(object):
                 body=copy_volume_backup_details,
                 response_type="VolumeBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1015,6 +1077,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.VolumeGroupBackup`
         :rtype: :class:`~oci.response.Response`
 
@@ -1031,6 +1097,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -1077,6 +1144,7 @@ class BlockstorageClient(object):
                 body=copy_volume_group_backup_details,
                 response_type="VolumeGroupBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1089,6 +1157,7 @@ class BlockstorageClient(object):
                 body=copy_volume_group_backup_details,
                 response_type="VolumeGroupBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1125,6 +1194,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.BootVolume`
         :rtype: :class:`~oci.response.Response`
 
@@ -1141,6 +1214,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_retry_token"
         ]
@@ -1174,6 +1248,7 @@ class BlockstorageClient(object):
                 body=create_boot_volume_details,
                 response_type="BootVolume",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1185,6 +1260,7 @@ class BlockstorageClient(object):
                 body=create_boot_volume_details,
                 response_type="BootVolume",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1223,6 +1299,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.BootVolumeBackup`
         :rtype: :class:`~oci.response.Response`
 
@@ -1239,6 +1319,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_retry_token"
         ]
@@ -1272,6 +1353,7 @@ class BlockstorageClient(object):
                 body=create_boot_volume_backup_details,
                 response_type="BootVolumeBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1283,6 +1365,7 @@ class BlockstorageClient(object):
                 body=create_boot_volume_backup_details,
                 response_type="BootVolumeBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1331,6 +1414,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.Volume`
         :rtype: :class:`~oci.response.Response`
 
@@ -1347,6 +1434,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_retry_token"
         ]
@@ -1380,6 +1468,7 @@ class BlockstorageClient(object):
                 body=create_volume_details,
                 response_type="Volume",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1391,6 +1480,7 @@ class BlockstorageClient(object):
                 body=create_volume_details,
                 response_type="Volume",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1429,6 +1519,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.VolumeBackup`
         :rtype: :class:`~oci.response.Response`
 
@@ -1445,6 +1539,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_retry_token"
         ]
@@ -1478,6 +1573,7 @@ class BlockstorageClient(object):
                 body=create_volume_backup_details,
                 response_type="VolumeBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1489,6 +1585,7 @@ class BlockstorageClient(object):
                 body=create_volume_backup_details,
                 response_type="VolumeBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1529,6 +1626,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.VolumeBackupPolicy`
         :rtype: :class:`~oci.response.Response`
 
@@ -1545,6 +1646,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -1580,6 +1682,7 @@ class BlockstorageClient(object):
                 body=create_volume_backup_policy_details,
                 response_type="VolumeBackupPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1591,6 +1694,7 @@ class BlockstorageClient(object):
                 body=create_volume_backup_policy_details,
                 response_type="VolumeBackupPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1616,6 +1720,10 @@ class BlockstorageClient(object):
         :param bool allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.VolumeBackupPolicyAssignment`
         :rtype: :class:`~oci.response.Response`
@@ -1658,6 +1766,7 @@ class BlockstorageClient(object):
                 body=create_volume_backup_policy_assignment_details,
                 response_type="VolumeBackupPolicyAssignment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1669,6 +1778,7 @@ class BlockstorageClient(object):
                 body=create_volume_backup_policy_assignment_details,
                 response_type="VolumeBackupPolicyAssignment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1708,6 +1818,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.VolumeGroup`
         :rtype: :class:`~oci.response.Response`
 
@@ -1724,6 +1838,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_retry_token"
         ]
@@ -1757,6 +1872,7 @@ class BlockstorageClient(object):
                 body=create_volume_group_details,
                 response_type="VolumeGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1768,6 +1884,7 @@ class BlockstorageClient(object):
                 body=create_volume_group_details,
                 response_type="VolumeGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1802,6 +1919,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.VolumeGroupBackup`
         :rtype: :class:`~oci.response.Response`
 
@@ -1818,6 +1939,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_retry_token"
         ]
@@ -1851,6 +1973,7 @@ class BlockstorageClient(object):
                 body=create_volume_group_backup_details,
                 response_type="VolumeGroupBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1862,6 +1985,7 @@ class BlockstorageClient(object):
                 body=create_volume_group_backup_details,
                 response_type="VolumeGroupBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1896,6 +2020,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -1912,6 +2040,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match"
         ]
@@ -1953,6 +2082,7 @@ class BlockstorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1963,6 +2093,7 @@ class BlockstorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1992,6 +2123,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -2008,6 +2143,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match"
         ]
@@ -2049,6 +2185,7 @@ class BlockstorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2059,6 +2196,7 @@ class BlockstorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2088,6 +2226,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -2104,6 +2246,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match"
         ]
@@ -2145,6 +2288,7 @@ class BlockstorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2155,6 +2299,7 @@ class BlockstorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2189,6 +2334,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -2205,6 +2354,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match"
         ]
@@ -2246,6 +2396,7 @@ class BlockstorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2256,6 +2407,7 @@ class BlockstorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2285,6 +2437,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -2301,6 +2457,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match"
         ]
@@ -2342,6 +2499,7 @@ class BlockstorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2352,6 +2510,7 @@ class BlockstorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2391,6 +2550,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -2407,6 +2570,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -2450,6 +2614,7 @@ class BlockstorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2460,6 +2625,7 @@ class BlockstorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2489,6 +2655,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -2505,6 +2675,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match"
         ]
@@ -2546,6 +2717,7 @@ class BlockstorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2556,6 +2728,7 @@ class BlockstorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2588,6 +2761,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -2604,6 +2781,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match"
         ]
@@ -2645,6 +2823,7 @@ class BlockstorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2655,6 +2834,7 @@ class BlockstorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2687,6 +2867,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -2703,6 +2887,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match"
         ]
@@ -2744,6 +2929,7 @@ class BlockstorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2754,6 +2940,7 @@ class BlockstorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2783,6 +2970,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -2799,6 +2990,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match"
         ]
@@ -2840,6 +3032,7 @@ class BlockstorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2850,6 +3043,7 @@ class BlockstorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2873,6 +3067,10 @@ class BlockstorageClient(object):
         :param bool allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.BlockVolumeReplica`
         :rtype: :class:`~oci.response.Response`
@@ -2925,6 +3123,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="BlockVolumeReplica",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2936,6 +3135,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="BlockVolumeReplica",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2959,6 +3159,10 @@ class BlockstorageClient(object):
         :param bool allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.BootVolume`
         :rtype: :class:`~oci.response.Response`
@@ -3011,6 +3215,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="BootVolume",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3022,6 +3227,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="BootVolume",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3045,6 +3251,10 @@ class BlockstorageClient(object):
         :param bool allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.BootVolumeBackup`
         :rtype: :class:`~oci.response.Response`
@@ -3097,6 +3307,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="BootVolumeBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3108,6 +3319,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="BootVolumeBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3137,6 +3349,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.BootVolumeKmsKey`
         :rtype: :class:`~oci.response.Response`
 
@@ -3153,6 +3369,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match"
         ]
@@ -3195,6 +3412,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="BootVolumeKmsKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3206,6 +3424,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="BootVolumeKmsKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3229,6 +3448,10 @@ class BlockstorageClient(object):
         :param bool allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.BootVolumeReplica`
         :rtype: :class:`~oci.response.Response`
@@ -3281,6 +3504,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="BootVolumeReplica",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3292,6 +3516,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="BootVolumeReplica",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3315,6 +3540,10 @@ class BlockstorageClient(object):
         :param bool allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.Volume`
         :rtype: :class:`~oci.response.Response`
@@ -3367,6 +3596,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="Volume",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3378,6 +3608,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="Volume",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3401,6 +3632,10 @@ class BlockstorageClient(object):
         :param bool allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.VolumeBackup`
         :rtype: :class:`~oci.response.Response`
@@ -3453,6 +3688,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="VolumeBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3464,6 +3700,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="VolumeBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3487,6 +3724,10 @@ class BlockstorageClient(object):
         :param bool allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.VolumeBackupPolicy`
         :rtype: :class:`~oci.response.Response`
@@ -3539,6 +3780,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="VolumeBackupPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3550,6 +3792,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="VolumeBackupPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3592,6 +3835,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.VolumeBackupPolicyAssignment`
         :rtype: :class:`~oci.response.Response`
 
@@ -3608,6 +3855,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "limit",
             "page"
@@ -3646,6 +3894,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="list[VolumeBackupPolicyAssignment]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3657,6 +3906,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="list[VolumeBackupPolicyAssignment]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3680,6 +3930,10 @@ class BlockstorageClient(object):
         :param bool allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.VolumeBackupPolicyAssignment`
         :rtype: :class:`~oci.response.Response`
@@ -3732,6 +3986,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="VolumeBackupPolicyAssignment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3743,6 +3998,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="VolumeBackupPolicyAssignment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3768,6 +4024,10 @@ class BlockstorageClient(object):
         :param bool allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.VolumeGroup`
         :rtype: :class:`~oci.response.Response`
@@ -3820,6 +4080,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="VolumeGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3831,6 +4092,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="VolumeGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3856,6 +4118,10 @@ class BlockstorageClient(object):
         :param bool allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.VolumeGroupBackup`
         :rtype: :class:`~oci.response.Response`
@@ -3908,6 +4174,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="VolumeGroupBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3919,6 +4186,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="VolumeGroupBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3942,6 +4210,10 @@ class BlockstorageClient(object):
         :param bool allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.VolumeGroupReplica`
         :rtype: :class:`~oci.response.Response`
@@ -3994,6 +4266,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="VolumeGroupReplica",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4005,6 +4278,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="VolumeGroupReplica",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4034,6 +4308,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.VolumeKmsKey`
         :rtype: :class:`~oci.response.Response`
 
@@ -4050,6 +4328,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match"
         ]
@@ -4092,6 +4371,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="VolumeKmsKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4103,6 +4383,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="VolumeKmsKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4179,6 +4460,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.BlockVolumeReplica`
         :rtype: :class:`~oci.response.Response`
 
@@ -4195,6 +4480,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "availability_domain",
             "compartment_id",
@@ -4267,6 +4553,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="list[BlockVolumeReplica]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4278,6 +4565,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="list[BlockVolumeReplica]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4353,6 +4641,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.BootVolumeBackup`
         :rtype: :class:`~oci.response.Response`
 
@@ -4369,6 +4661,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "boot_volume_id",
             "limit",
@@ -4440,6 +4733,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="list[BootVolumeBackup]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4451,6 +4745,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="list[BootVolumeBackup]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4527,6 +4822,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.BootVolumeReplica`
         :rtype: :class:`~oci.response.Response`
 
@@ -4543,6 +4842,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "availability_domain",
             "compartment_id",
@@ -4615,6 +4915,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="list[BootVolumeReplica]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4626,6 +4927,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="list[BootVolumeReplica]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4676,6 +4978,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.BootVolume`
         :rtype: :class:`~oci.response.Response`
 
@@ -4692,6 +4998,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "availability_domain",
             "compartment_id",
@@ -4735,6 +5042,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="list[BootVolume]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4746,6 +5054,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="list[BootVolume]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4792,6 +5101,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.VolumeBackupPolicy`
         :rtype: :class:`~oci.response.Response`
 
@@ -4808,6 +5121,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "limit",
             "page",
@@ -4847,6 +5161,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="list[VolumeBackupPolicy]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4858,6 +5173,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="list[VolumeBackupPolicy]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4933,6 +5249,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.VolumeBackup`
         :rtype: :class:`~oci.response.Response`
 
@@ -4949,6 +5269,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "volume_id",
             "limit",
@@ -5020,6 +5341,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="list[VolumeBackup]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5031,6 +5353,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="list[VolumeBackup]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5100,6 +5423,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.VolumeGroupBackup`
         :rtype: :class:`~oci.response.Response`
 
@@ -5116,6 +5443,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "volume_group_id",
             "limit",
@@ -5176,6 +5504,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="list[VolumeGroupBackup]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5187,6 +5516,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="list[VolumeGroupBackup]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5263,6 +5593,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.VolumeGroupReplica`
         :rtype: :class:`~oci.response.Response`
 
@@ -5279,6 +5613,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "limit",
             "page",
@@ -5347,6 +5682,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="list[VolumeGroupReplica]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5358,6 +5694,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="list[VolumeGroupReplica]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5435,6 +5772,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.VolumeGroup`
         :rtype: :class:`~oci.response.Response`
 
@@ -5451,6 +5792,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "availability_domain",
             "limit",
@@ -5520,6 +5862,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="list[VolumeGroup]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5531,6 +5874,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="list[VolumeGroup]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5611,6 +5955,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.Volume`
         :rtype: :class:`~oci.response.Response`
 
@@ -5627,6 +5975,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "availability_domain",
             "compartment_id",
@@ -5701,6 +6050,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="list[Volume]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5712,6 +6062,7 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 response_type="list[Volume]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5744,6 +6095,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.BootVolume`
         :rtype: :class:`~oci.response.Response`
 
@@ -5760,6 +6115,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match"
         ]
@@ -5803,6 +6159,7 @@ class BlockstorageClient(object):
                 body=update_boot_volume_details,
                 response_type="BootVolume",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5815,6 +6172,7 @@ class BlockstorageClient(object):
                 body=update_boot_volume_details,
                 response_type="BootVolume",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5848,6 +6206,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.BootVolumeBackup`
         :rtype: :class:`~oci.response.Response`
 
@@ -5864,6 +6226,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match"
         ]
@@ -5907,6 +6270,7 @@ class BlockstorageClient(object):
                 body=update_boot_volume_backup_details,
                 response_type="BootVolumeBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5919,6 +6283,7 @@ class BlockstorageClient(object):
                 body=update_boot_volume_backup_details,
                 response_type="BootVolumeBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5951,6 +6316,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.BootVolumeKmsKey`
         :rtype: :class:`~oci.response.Response`
 
@@ -5967,6 +6336,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match"
         ]
@@ -6010,6 +6380,7 @@ class BlockstorageClient(object):
                 body=update_boot_volume_kms_key_details,
                 response_type="BootVolumeKmsKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6022,6 +6393,7 @@ class BlockstorageClient(object):
                 body=update_boot_volume_kms_key_details,
                 response_type="BootVolumeKmsKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6055,6 +6427,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.Volume`
         :rtype: :class:`~oci.response.Response`
 
@@ -6071,6 +6447,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match"
         ]
@@ -6114,6 +6491,7 @@ class BlockstorageClient(object):
                 body=update_volume_details,
                 response_type="Volume",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6126,6 +6504,7 @@ class BlockstorageClient(object):
                 body=update_volume_details,
                 response_type="Volume",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6159,6 +6538,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.VolumeBackup`
         :rtype: :class:`~oci.response.Response`
 
@@ -6175,6 +6558,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match"
         ]
@@ -6218,6 +6602,7 @@ class BlockstorageClient(object):
                 body=update_volume_backup_details,
                 response_type="VolumeBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6230,6 +6615,7 @@ class BlockstorageClient(object):
                 body=update_volume_backup_details,
                 response_type="VolumeBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6279,6 +6665,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.VolumeBackupPolicy`
         :rtype: :class:`~oci.response.Response`
 
@@ -6295,6 +6685,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id",
@@ -6343,6 +6734,7 @@ class BlockstorageClient(object):
                 body=update_volume_backup_policy_details,
                 response_type="VolumeBackupPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6355,6 +6747,7 @@ class BlockstorageClient(object):
                 body=update_volume_backup_policy_details,
                 response_type="VolumeBackupPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6399,6 +6792,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.VolumeGroup`
         :rtype: :class:`~oci.response.Response`
 
@@ -6415,6 +6812,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "preserve_volume_replica"
@@ -6465,6 +6863,7 @@ class BlockstorageClient(object):
                 body=update_volume_group_details,
                 response_type="VolumeGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6478,6 +6877,7 @@ class BlockstorageClient(object):
                 body=update_volume_group_details,
                 response_type="VolumeGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6512,6 +6912,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.VolumeGroupBackup`
         :rtype: :class:`~oci.response.Response`
 
@@ -6528,6 +6932,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match"
         ]
@@ -6571,6 +6976,7 @@ class BlockstorageClient(object):
                 body=update_volume_group_backup_details,
                 response_type="VolumeGroupBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6583,6 +6989,7 @@ class BlockstorageClient(object):
                 body=update_volume_group_backup_details,
                 response_type="VolumeGroupBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6615,6 +7022,10 @@ class BlockstorageClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.VolumeKmsKey`
         :rtype: :class:`~oci.response.Response`
 
@@ -6631,6 +7042,7 @@ class BlockstorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match"
         ]
@@ -6674,6 +7086,7 @@ class BlockstorageClient(object):
                 body=update_volume_kms_key_details,
                 response_type="VolumeKmsKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6686,6 +7099,7 @@ class BlockstorageClient(object):
                 body=update_volume_kms_key_details,
                 response_type="VolumeKmsKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)

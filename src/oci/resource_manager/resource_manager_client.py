@@ -78,6 +78,10 @@ class ResourceManagerClient(object):
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
+
+        :param enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this client should enable strict url encoding in path params of a request.
+            By default, the client will not enable strict url encoding
         """
         if not OCI_SDK_ENABLED_SERVICES_SET.is_service_enabled("resource_manager"):
             raise InvalidAlloyConfig("The Alloy configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local alloy-config file configured the service you're targeting or contact the cloud provider on the availability of this service")
@@ -115,6 +119,8 @@ class ResourceManagerClient(object):
             base_client_init_kwargs['circuit_breaker_strategy'] = circuit_breaker.DEFAULT_CIRCUIT_BREAKER_STRATEGY
         if 'allow_control_chars' in kwargs:
             base_client_init_kwargs['allow_control_chars'] = kwargs.get('allow_control_chars')
+        if 'enable_strict_url_encoding' in kwargs:
+            base_client_init_kwargs['enable_strict_url_encoding'] = kwargs.get('enable_strict_url_encoding')
         self.base_client = BaseClient("resource_manager", config, signer, resource_manager_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
@@ -160,6 +166,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -176,6 +186,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "if_match",
@@ -228,6 +239,7 @@ class ResourceManagerClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -239,6 +251,7 @@ class ResourceManagerClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -288,6 +301,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -304,6 +321,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id",
@@ -353,6 +371,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 body=change_configuration_source_provider_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -364,6 +383,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 body=change_configuration_source_provider_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -413,6 +433,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -429,6 +453,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id",
@@ -478,6 +503,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 body=change_private_endpoint_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -489,6 +515,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 body=change_private_endpoint_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -538,6 +565,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -554,6 +585,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id",
@@ -603,6 +635,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 body=change_stack_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -614,6 +647,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 body=change_stack_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -663,6 +697,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -679,6 +717,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id",
@@ -728,6 +767,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 body=change_template_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -739,6 +779,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 body=change_template_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -778,6 +819,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.resource_manager.models.ConfigurationSourceProvider`
         :rtype: :class:`~oci.response.Response`
 
@@ -794,6 +839,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -831,6 +877,7 @@ class ResourceManagerClient(object):
                 body=create_configuration_source_provider_details,
                 response_type="ConfigurationSourceProvider",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -842,6 +889,7 @@ class ResourceManagerClient(object):
                 body=create_configuration_source_provider_details,
                 response_type="ConfigurationSourceProvider",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -877,6 +925,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.resource_manager.models.Job`
         :rtype: :class:`~oci.response.Response`
 
@@ -893,6 +945,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -930,6 +983,7 @@ class ResourceManagerClient(object):
                 body=create_job_details,
                 response_type="Job",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -941,6 +995,7 @@ class ResourceManagerClient(object):
                 body=create_job_details,
                 response_type="Job",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -976,6 +1031,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.resource_manager.models.PrivateEndpoint`
         :rtype: :class:`~oci.response.Response`
 
@@ -992,6 +1051,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -1029,6 +1089,7 @@ class ResourceManagerClient(object):
                 body=create_private_endpoint_details,
                 response_type="PrivateEndpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1040,6 +1101,7 @@ class ResourceManagerClient(object):
                 body=create_private_endpoint_details,
                 response_type="PrivateEndpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1083,6 +1145,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.resource_manager.models.Stack`
         :rtype: :class:`~oci.response.Response`
 
@@ -1099,6 +1165,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -1136,6 +1203,7 @@ class ResourceManagerClient(object):
                 body=create_stack_details,
                 response_type="Stack",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1147,6 +1215,7 @@ class ResourceManagerClient(object):
                 body=create_stack_details,
                 response_type="Stack",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1182,6 +1251,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.resource_manager.models.Template`
         :rtype: :class:`~oci.response.Response`
 
@@ -1198,6 +1271,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -1235,6 +1309,7 @@ class ResourceManagerClient(object):
                 body=create_template_details,
                 response_type="Template",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1246,6 +1321,7 @@ class ResourceManagerClient(object):
                 body=create_template_details,
                 response_type="Template",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1281,6 +1357,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -1297,6 +1377,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -1342,6 +1423,7 @@ class ResourceManagerClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1352,6 +1434,7 @@ class ResourceManagerClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1387,6 +1470,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -1403,6 +1490,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -1448,6 +1536,7 @@ class ResourceManagerClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1458,6 +1547,7 @@ class ResourceManagerClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1493,6 +1583,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -1509,6 +1603,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -1554,6 +1649,7 @@ class ResourceManagerClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1564,6 +1660,7 @@ class ResourceManagerClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1599,6 +1696,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -1615,6 +1716,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -1660,6 +1762,7 @@ class ResourceManagerClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1670,6 +1773,7 @@ class ResourceManagerClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1715,6 +1819,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -1731,6 +1839,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id",
@@ -1781,6 +1890,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 body=kwargs.get('detect_stack_drift_details'),
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1792,6 +1902,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 body=kwargs.get('detect_stack_drift_details'),
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1822,6 +1933,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.resource_manager.models.ConfigurationSourceProvider`
         :rtype: :class:`~oci.response.Response`
 
@@ -1838,6 +1953,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -1882,6 +1998,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="ConfigurationSourceProvider",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1893,6 +2010,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="ConfigurationSourceProvider",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1923,6 +2041,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.resource_manager.models.Job`
         :rtype: :class:`~oci.response.Response`
 
@@ -1939,6 +2061,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -1983,6 +2106,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="Job",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1994,6 +2118,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="Job",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2026,6 +2151,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type str
         :rtype: :class:`~oci.response.Response`
 
@@ -2042,6 +2171,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -2086,6 +2216,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="str",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2097,6 +2228,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="str",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2162,6 +2294,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.resource_manager.models.LogEntry`
         :rtype: :class:`~oci.response.Response`
 
@@ -2178,6 +2314,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "type",
@@ -2255,6 +2392,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="list[LogEntry]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2267,6 +2405,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="list[LogEntry]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2298,6 +2437,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type str
         :rtype: :class:`~oci.response.Response`
 
@@ -2314,6 +2457,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -2358,6 +2502,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="str",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2369,6 +2514,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="str",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2400,6 +2546,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type stream
         :rtype: :class:`~oci.response.Response`
 
@@ -2416,6 +2566,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -2460,6 +2611,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2471,6 +2623,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2510,6 +2663,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type stream
         :rtype: :class:`~oci.response.Response`
 
@@ -2526,6 +2683,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "tf_plan_format"
@@ -2584,6 +2742,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2596,6 +2755,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2626,6 +2786,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type stream
         :rtype: :class:`~oci.response.Response`
 
@@ -2642,6 +2806,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -2686,6 +2851,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2697,6 +2863,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2727,6 +2894,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.resource_manager.models.PrivateEndpoint`
         :rtype: :class:`~oci.response.Response`
 
@@ -2743,6 +2914,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -2787,6 +2959,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="PrivateEndpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2798,6 +2971,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="PrivateEndpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2839,6 +3013,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.resource_manager.models.ReachableIp`
         :rtype: :class:`~oci.response.Response`
 
@@ -2855,6 +3033,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -2908,6 +3087,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="ReachableIp",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2920,6 +3100,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="ReachableIp",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2950,6 +3131,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.resource_manager.models.Stack`
         :rtype: :class:`~oci.response.Response`
 
@@ -2966,6 +3151,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -3010,6 +3196,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="Stack",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3021,6 +3208,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="Stack",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3052,6 +3240,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type stream
         :rtype: :class:`~oci.response.Response`
 
@@ -3068,6 +3260,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -3112,6 +3305,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3123,6 +3317,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3153,6 +3348,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type stream
         :rtype: :class:`~oci.response.Response`
 
@@ -3169,6 +3368,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -3213,6 +3413,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3224,6 +3425,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3254,6 +3456,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.resource_manager.models.Template`
         :rtype: :class:`~oci.response.Response`
 
@@ -3270,6 +3476,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -3314,6 +3521,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="Template",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3325,6 +3533,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="Template",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3356,6 +3565,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type stream
         :rtype: :class:`~oci.response.Response`
 
@@ -3372,6 +3585,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -3416,6 +3630,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3427,6 +3642,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3458,6 +3674,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type stream
         :rtype: :class:`~oci.response.Response`
 
@@ -3474,6 +3694,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -3518,6 +3739,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3529,6 +3751,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3559,6 +3782,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.resource_manager.models.WorkRequest`
         :rtype: :class:`~oci.response.Response`
 
@@ -3575,6 +3802,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -3619,6 +3847,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3630,6 +3859,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3700,6 +3930,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.resource_manager.models.ConfigurationSourceProviderCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -3716,6 +3950,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "compartment_id",
@@ -3784,6 +4019,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="ConfigurationSourceProviderCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3795,6 +4031,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="ConfigurationSourceProviderCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3848,6 +4085,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.resource_manager.models.AssociatedResourcesCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -3864,6 +4105,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "compartment_id",
@@ -3921,6 +4163,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="AssociatedResourcesCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3933,6 +4176,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="AssociatedResourcesCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3980,6 +4224,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.resource_manager.models.JobOutputsCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -3996,6 +4244,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "compartment_id",
@@ -4051,6 +4300,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="JobOutputsCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4063,6 +4313,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="JobOutputsCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4155,6 +4406,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.resource_manager.models.JobSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -4171,6 +4426,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "compartment_id",
@@ -4248,6 +4504,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="list[JobSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4259,6 +4516,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="list[JobSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4331,6 +4589,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.resource_manager.models.PrivateEndpointCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -4347,6 +4609,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "compartment_id",
@@ -4415,6 +4678,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="PrivateEndpointCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4426,6 +4690,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="PrivateEndpointCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4460,6 +4725,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.resource_manager.models.ResourceDiscoveryServiceCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -4476,6 +4745,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "compartment_id"
@@ -4516,6 +4786,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="ResourceDiscoveryServiceCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4527,6 +4798,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="ResourceDiscoveryServiceCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4580,6 +4852,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.resource_manager.models.AssociatedResourcesCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -4596,6 +4872,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "terraform_resource_type",
@@ -4653,6 +4930,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="AssociatedResourcesCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4665,6 +4943,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="AssociatedResourcesCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4724,6 +5003,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.resource_manager.models.StackResourceDriftCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -4740,6 +5023,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "work_request_id",
@@ -4797,6 +5081,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="StackResourceDriftCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4809,6 +5094,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="StackResourceDriftCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4893,6 +5179,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.resource_manager.models.StackSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -4909,6 +5199,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "compartment_id",
@@ -4984,6 +5275,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="list[StackSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4995,6 +5287,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="list[StackSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5020,6 +5313,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.resource_manager.models.TemplateCategorySummaryCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -5036,6 +5333,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -5069,6 +5367,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="TemplateCategorySummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5079,6 +5378,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="TemplateCategorySummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5152,6 +5452,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.resource_manager.models.TemplateSummaryCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -5168,6 +5472,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "compartment_id",
@@ -5236,6 +5541,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="TemplateSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5247,6 +5553,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="TemplateSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5277,6 +5584,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.resource_manager.models.TerraformVersionCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -5293,6 +5604,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "compartment_id"
@@ -5333,6 +5645,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="TerraformVersionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5344,6 +5657,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="TerraformVersionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5396,6 +5710,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.resource_manager.models.WorkRequestError`
         :rtype: :class:`~oci.response.Response`
 
@@ -5412,6 +5730,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "compartment_id",
             "limit",
@@ -5476,6 +5795,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="list[WorkRequestError]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5488,6 +5808,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="list[WorkRequestError]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5540,6 +5861,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.resource_manager.models.WorkRequestLogEntry`
         :rtype: :class:`~oci.response.Response`
 
@@ -5556,6 +5881,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "compartment_id",
             "limit",
@@ -5620,6 +5946,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="list[WorkRequestLogEntry]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5632,6 +5959,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="list[WorkRequestLogEntry]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5679,6 +6007,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.resource_manager.models.WorkRequestSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -5695,6 +6027,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "resource_id",
             "limit",
@@ -5740,6 +6073,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="list[WorkRequestSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5751,6 +6085,7 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="list[WorkRequestSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5793,6 +6128,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.resource_manager.models.ConfigurationSourceProvider`
         :rtype: :class:`~oci.response.Response`
 
@@ -5809,6 +6148,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -5856,6 +6196,7 @@ class ResourceManagerClient(object):
                 body=update_configuration_source_provider_details,
                 response_type="ConfigurationSourceProvider",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5868,6 +6209,7 @@ class ResourceManagerClient(object):
                 body=update_configuration_source_provider_details,
                 response_type="ConfigurationSourceProvider",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5906,6 +6248,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.resource_manager.models.Job`
         :rtype: :class:`~oci.response.Response`
 
@@ -5922,6 +6268,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -5969,6 +6316,7 @@ class ResourceManagerClient(object):
                 body=update_job_details,
                 response_type="Job",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5981,6 +6329,7 @@ class ResourceManagerClient(object):
                 body=update_job_details,
                 response_type="Job",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6019,6 +6368,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.resource_manager.models.PrivateEndpoint`
         :rtype: :class:`~oci.response.Response`
 
@@ -6035,6 +6388,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -6082,6 +6436,7 @@ class ResourceManagerClient(object):
                 body=update_private_endpoint_details,
                 response_type="PrivateEndpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6094,6 +6449,7 @@ class ResourceManagerClient(object):
                 body=update_private_endpoint_details,
                 response_type="PrivateEndpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6138,6 +6494,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.resource_manager.models.Stack`
         :rtype: :class:`~oci.response.Response`
 
@@ -6154,6 +6514,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -6201,6 +6562,7 @@ class ResourceManagerClient(object):
                 body=update_stack_details,
                 response_type="Stack",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6213,6 +6575,7 @@ class ResourceManagerClient(object):
                 body=update_stack_details,
                 response_type="Stack",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6251,6 +6614,10 @@ class ResourceManagerClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.resource_manager.models.Template`
         :rtype: :class:`~oci.response.Response`
 
@@ -6267,6 +6634,7 @@ class ResourceManagerClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -6314,6 +6682,7 @@ class ResourceManagerClient(object):
                 body=update_template_details,
                 response_type="Template",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6326,6 +6695,7 @@ class ResourceManagerClient(object):
                 body=update_template_details,
                 response_type="Template",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)

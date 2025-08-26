@@ -25,6 +25,14 @@ class UpdateDbSystemDetails(object):
     #: This constant has a value of "BRING_YOUR_OWN_LICENSE"
     LICENSE_MODEL_BRING_YOUR_OWN_LICENSE = "BRING_YOUR_OWN_LICENSE"
 
+    #: A constant which can be used with the compute_model property of a UpdateDbSystemDetails.
+    #: This constant has a value of "ECPU"
+    COMPUTE_MODEL_ECPU = "ECPU"
+
+    #: A constant which can be used with the compute_model property of a UpdateDbSystemDetails.
+    #: This constant has a value of "OCPU"
+    COMPUTE_MODEL_OCPU = "OCPU"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateDbSystemDetails object with values from keyword arguments.
@@ -87,6 +95,15 @@ class UpdateDbSystemDetails(object):
             The value to assign to the data_collection_options property of this UpdateDbSystemDetails.
         :type data_collection_options: oci.database.models.DataCollectionOptions
 
+        :param compute_model:
+            The value to assign to the compute_model property of this UpdateDbSystemDetails.
+            Allowed values for this property are: "ECPU", "OCPU"
+        :type compute_model: str
+
+        :param compute_count:
+            The value to assign to the compute_count property of this UpdateDbSystemDetails.
+        :type compute_count: int
+
         """
         self.swagger_types = {
             'cpu_core_count': 'int',
@@ -102,7 +119,9 @@ class UpdateDbSystemDetails(object):
             'backup_network_nsg_ids': 'list[str]',
             'license_model': 'str',
             'maintenance_window_details': 'MaintenanceWindow',
-            'data_collection_options': 'DataCollectionOptions'
+            'data_collection_options': 'DataCollectionOptions',
+            'compute_model': 'str',
+            'compute_count': 'int'
         }
         self.attribute_map = {
             'cpu_core_count': 'cpuCoreCount',
@@ -118,7 +137,9 @@ class UpdateDbSystemDetails(object):
             'backup_network_nsg_ids': 'backupNetworkNsgIds',
             'license_model': 'licenseModel',
             'maintenance_window_details': 'maintenanceWindowDetails',
-            'data_collection_options': 'dataCollectionOptions'
+            'data_collection_options': 'dataCollectionOptions',
+            'compute_model': 'computeModel',
+            'compute_count': 'computeCount'
         }
         self._cpu_core_count = None
         self._version = None
@@ -134,6 +155,8 @@ class UpdateDbSystemDetails(object):
         self._license_model = None
         self._maintenance_window_details = None
         self._data_collection_options = None
+        self._compute_model = None
+        self._compute_count = None
 
     @property
     def cpu_core_count(self):
@@ -511,6 +534,61 @@ class UpdateDbSystemDetails(object):
         :type: oci.database.models.DataCollectionOptions
         """
         self._data_collection_options = data_collection_options
+
+    @property
+    def compute_model(self):
+        """
+        Gets the compute_model of this UpdateDbSystemDetails.
+        The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+
+        Allowed values for this property are: "ECPU", "OCPU"
+
+
+        :return: The compute_model of this UpdateDbSystemDetails.
+        :rtype: str
+        """
+        return self._compute_model
+
+    @compute_model.setter
+    def compute_model(self, compute_model):
+        """
+        Sets the compute_model of this UpdateDbSystemDetails.
+        The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+
+
+        :param compute_model: The compute_model of this UpdateDbSystemDetails.
+        :type: str
+        """
+        allowed_values = ["ECPU", "OCPU"]
+        if not value_allowed_none_or_none_sentinel(compute_model, allowed_values):
+            raise ValueError(
+                f"Invalid value for `compute_model`, must be None or one of {allowed_values}"
+            )
+        self._compute_model = compute_model
+
+    @property
+    def compute_count(self):
+        """
+        Gets the compute_count of this UpdateDbSystemDetails.
+        The number of compute servers for the DB system.
+
+
+        :return: The compute_count of this UpdateDbSystemDetails.
+        :rtype: int
+        """
+        return self._compute_count
+
+    @compute_count.setter
+    def compute_count(self, compute_count):
+        """
+        Sets the compute_count of this UpdateDbSystemDetails.
+        The number of compute servers for the DB system.
+
+
+        :param compute_count: The compute_count of this UpdateDbSystemDetails.
+        :type: int
+        """
+        self._compute_count = compute_count
 
     def __repr__(self):
         return formatted_flat_dict(self)

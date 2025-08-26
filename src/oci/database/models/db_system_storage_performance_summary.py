@@ -31,14 +31,22 @@ class DbSystemStoragePerformanceSummary(object):
     #: This constant has a value of "AMPERE_FLEX_A1"
     SHAPE_TYPE_AMPERE_FLEX_A1 = "AMPERE_FLEX_A1"
 
+    #: A constant which can be used with the shape_type property of a DbSystemStoragePerformanceSummary.
+    #: This constant has a value of "STANDARD_X86"
+    SHAPE_TYPE_STANDARD_X86 = "STANDARD_X86"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DbSystemStoragePerformanceSummary object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param compartment_id:
+            The value to assign to the compartment_id property of this DbSystemStoragePerformanceSummary.
+        :type compartment_id: str
+
         :param shape_type:
             The value to assign to the shape_type property of this DbSystemStoragePerformanceSummary.
-            Allowed values for this property are: "AMD", "INTEL", "INTEL_FLEX_X9", "AMPERE_FLEX_A1", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "AMD", "INTEL", "INTEL_FLEX_X9", "AMPERE_FLEX_A1", "STANDARD_X86", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type shape_type: str
 
@@ -52,18 +60,49 @@ class DbSystemStoragePerformanceSummary(object):
 
         """
         self.swagger_types = {
+            'compartment_id': 'str',
             'shape_type': 'str',
             'data_storage_performance_list': 'list[StoragePerformanceDetails]',
             'reco_storage_performance_list': 'list[StoragePerformanceDetails]'
         }
         self.attribute_map = {
+            'compartment_id': 'compartmentId',
             'shape_type': 'shapeType',
             'data_storage_performance_list': 'dataStoragePerformanceList',
             'reco_storage_performance_list': 'recoStoragePerformanceList'
         }
+        self._compartment_id = None
         self._shape_type = None
         self._data_storage_performance_list = None
         self._reco_storage_performance_list = None
+
+    @property
+    def compartment_id(self):
+        """
+        Gets the compartment_id of this DbSystemStoragePerformanceSummary.
+        The `OCID`__ of the compartment.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The compartment_id of this DbSystemStoragePerformanceSummary.
+        :rtype: str
+        """
+        return self._compartment_id
+
+    @compartment_id.setter
+    def compartment_id(self, compartment_id):
+        """
+        Sets the compartment_id of this DbSystemStoragePerformanceSummary.
+        The `OCID`__ of the compartment.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param compartment_id: The compartment_id of this DbSystemStoragePerformanceSummary.
+        :type: str
+        """
+        self._compartment_id = compartment_id
 
     @property
     def shape_type(self):
@@ -71,7 +110,7 @@ class DbSystemStoragePerformanceSummary(object):
         **[Required]** Gets the shape_type of this DbSystemStoragePerformanceSummary.
         ShapeType of the DbSystems INTEL , AMD, INTEL_FLEX_X9 or AMPERE_FLEX_A1
 
-        Allowed values for this property are: "AMD", "INTEL", "INTEL_FLEX_X9", "AMPERE_FLEX_A1", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "AMD", "INTEL", "INTEL_FLEX_X9", "AMPERE_FLEX_A1", "STANDARD_X86", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -90,7 +129,7 @@ class DbSystemStoragePerformanceSummary(object):
         :param shape_type: The shape_type of this DbSystemStoragePerformanceSummary.
         :type: str
         """
-        allowed_values = ["AMD", "INTEL", "INTEL_FLEX_X9", "AMPERE_FLEX_A1"]
+        allowed_values = ["AMD", "INTEL", "INTEL_FLEX_X9", "AMPERE_FLEX_A1", "STANDARD_X86"]
         if not value_allowed_none_or_none_sentinel(shape_type, allowed_values):
             shape_type = 'UNKNOWN_ENUM_VALUE'
         self._shape_type = shape_type

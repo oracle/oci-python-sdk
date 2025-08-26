@@ -23,6 +23,14 @@ class CreateExadbVmClusterDetails(object):
     #: This constant has a value of "BRING_YOUR_OWN_LICENSE"
     LICENSE_MODEL_BRING_YOUR_OWN_LICENSE = "BRING_YOUR_OWN_LICENSE"
 
+    #: A constant which can be used with the shape_attribute property of a CreateExadbVmClusterDetails.
+    #: This constant has a value of "SMART_STORAGE"
+    SHAPE_ATTRIBUTE_SMART_STORAGE = "SMART_STORAGE"
+
+    #: A constant which can be used with the shape_attribute property of a CreateExadbVmClusterDetails.
+    #: This constant has a value of "BLOCK_STORAGE"
+    SHAPE_ATTRIBUTE_BLOCK_STORAGE = "BLOCK_STORAGE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateExadbVmClusterDetails object with values from keyword arguments.
@@ -145,6 +153,11 @@ class CreateExadbVmClusterDetails(object):
             The value to assign to the subscription_id property of this CreateExadbVmClusterDetails.
         :type subscription_id: str
 
+        :param shape_attribute:
+            The value to assign to the shape_attribute property of this CreateExadbVmClusterDetails.
+            Allowed values for this property are: "SMART_STORAGE", "BLOCK_STORAGE"
+        :type shape_attribute: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -175,7 +188,8 @@ class CreateExadbVmClusterDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'security_attributes': 'dict(str, dict(str, object))',
             'data_collection_options': 'DataCollectionOptions',
-            'subscription_id': 'str'
+            'subscription_id': 'str',
+            'shape_attribute': 'str'
         }
         self.attribute_map = {
             'compartment_id': 'compartmentId',
@@ -206,7 +220,8 @@ class CreateExadbVmClusterDetails(object):
             'defined_tags': 'definedTags',
             'security_attributes': 'securityAttributes',
             'data_collection_options': 'dataCollectionOptions',
-            'subscription_id': 'subscriptionId'
+            'subscription_id': 'subscriptionId',
+            'shape_attribute': 'shapeAttribute'
         }
         self._compartment_id = None
         self._availability_domain = None
@@ -237,6 +252,7 @@ class CreateExadbVmClusterDetails(object):
         self._security_attributes = None
         self._data_collection_options = None
         self._subscription_id = None
+        self._shape_attribute = None
 
     @property
     def compartment_id(self):
@@ -1020,6 +1036,37 @@ class CreateExadbVmClusterDetails(object):
         :type: str
         """
         self._subscription_id = subscription_id
+
+    @property
+    def shape_attribute(self):
+        """
+        Gets the shape_attribute of this CreateExadbVmClusterDetails.
+        The type of Exascale storage used for Exadata VM cluster. The default is SMART_STORAGE which supports Oracle Database 23ai and later
+
+        Allowed values for this property are: "SMART_STORAGE", "BLOCK_STORAGE"
+
+
+        :return: The shape_attribute of this CreateExadbVmClusterDetails.
+        :rtype: str
+        """
+        return self._shape_attribute
+
+    @shape_attribute.setter
+    def shape_attribute(self, shape_attribute):
+        """
+        Sets the shape_attribute of this CreateExadbVmClusterDetails.
+        The type of Exascale storage used for Exadata VM cluster. The default is SMART_STORAGE which supports Oracle Database 23ai and later
+
+
+        :param shape_attribute: The shape_attribute of this CreateExadbVmClusterDetails.
+        :type: str
+        """
+        allowed_values = ["SMART_STORAGE", "BLOCK_STORAGE"]
+        if not value_allowed_none_or_none_sentinel(shape_attribute, allowed_values):
+            raise ValueError(
+                f"Invalid value for `shape_attribute`, must be None or one of {allowed_values}"
+            )
+        self._shape_attribute = shape_attribute
 
     def __repr__(self):
         return formatted_flat_dict(self)

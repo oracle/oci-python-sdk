@@ -87,7 +87,6 @@
 # - datasciencenotebooksession
 #
 # Modules Not Yet Covered:
-# - oci.ai_anomaly_detection.AnomalyDetectionClient
 # - oci.ai_document.AIServiceDocumentClient
 # - oci.ai_language.AIServiceLanguageClient
 # - oci.ai_speech.AIServiceSpeechClient
@@ -112,7 +111,6 @@
 # - oci.opsi.OperationsInsightsClient
 # - oci.recovery.DatabaseRecoveryClient
 # - oci.redis.RedisClusterClient
-# - oci.service_mesh.ServiceMeshClient
 # - oci.threat_intelligence.ThreatintelClient
 ##########################################################################
 from __future__ import print_function

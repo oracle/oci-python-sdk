@@ -292,6 +292,14 @@ class Deployment(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type license_model: str
 
+        :param is_byol_cpu_core_count_limit_enabled:
+            The value to assign to the is_byol_cpu_core_count_limit_enabled property of this Deployment.
+        :type is_byol_cpu_core_count_limit_enabled: bool
+
+        :param byol_cpu_core_count_limit:
+            The value to assign to the byol_cpu_core_count_limit property of this Deployment.
+        :type byol_cpu_core_count_limit: int
+
         :param environment_type:
             The value to assign to the environment_type property of this Deployment.
             Allowed values for this property are: "PRODUCTION", "DEVELOPMENT_OR_TESTING", 'UNKNOWN_ENUM_VALUE'.
@@ -435,6 +443,8 @@ class Deployment(object):
             'load_balancer_id': 'str',
             'fqdn': 'str',
             'license_model': 'str',
+            'is_byol_cpu_core_count_limit_enabled': 'bool',
+            'byol_cpu_core_count_limit': 'int',
             'environment_type': 'str',
             'category': 'str',
             'cpu_core_count': 'int',
@@ -489,6 +499,8 @@ class Deployment(object):
             'load_balancer_id': 'loadBalancerId',
             'fqdn': 'fqdn',
             'license_model': 'licenseModel',
+            'is_byol_cpu_core_count_limit_enabled': 'isByolCpuCoreCountLimitEnabled',
+            'byol_cpu_core_count_limit': 'byolCpuCoreCountLimit',
             'environment_type': 'environmentType',
             'category': 'category',
             'cpu_core_count': 'cpuCoreCount',
@@ -542,6 +554,8 @@ class Deployment(object):
         self._load_balancer_id = None
         self._fqdn = None
         self._license_model = None
+        self._is_byol_cpu_core_count_limit_enabled = None
+        self._byol_cpu_core_count_limit = None
         self._environment_type = None
         self._category = None
         self._cpu_core_count = None
@@ -1261,6 +1275,58 @@ class Deployment(object):
         if not value_allowed_none_or_none_sentinel(license_model, allowed_values):
             license_model = 'UNKNOWN_ENUM_VALUE'
         self._license_model = license_model
+
+    @property
+    def is_byol_cpu_core_count_limit_enabled(self):
+        """
+        Gets the is_byol_cpu_core_count_limit_enabled of this Deployment.
+        Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit.
+        If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+
+
+        :return: The is_byol_cpu_core_count_limit_enabled of this Deployment.
+        :rtype: bool
+        """
+        return self._is_byol_cpu_core_count_limit_enabled
+
+    @is_byol_cpu_core_count_limit_enabled.setter
+    def is_byol_cpu_core_count_limit_enabled(self, is_byol_cpu_core_count_limit_enabled):
+        """
+        Sets the is_byol_cpu_core_count_limit_enabled of this Deployment.
+        Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit.
+        If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+
+
+        :param is_byol_cpu_core_count_limit_enabled: The is_byol_cpu_core_count_limit_enabled of this Deployment.
+        :type: bool
+        """
+        self._is_byol_cpu_core_count_limit_enabled = is_byol_cpu_core_count_limit_enabled
+
+    @property
+    def byol_cpu_core_count_limit(self):
+        """
+        Gets the byol_cpu_core_count_limit of this Deployment.
+        The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type.
+        Any CPU usage above this limit is considered as License Included and billed.
+
+
+        :return: The byol_cpu_core_count_limit of this Deployment.
+        :rtype: int
+        """
+        return self._byol_cpu_core_count_limit
+
+    @byol_cpu_core_count_limit.setter
+    def byol_cpu_core_count_limit(self, byol_cpu_core_count_limit):
+        """
+        Sets the byol_cpu_core_count_limit of this Deployment.
+        The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type.
+        Any CPU usage above this limit is considered as License Included and billed.
+
+
+        :param byol_cpu_core_count_limit: The byol_cpu_core_count_limit of this Deployment.
+        :type: int
+        """
+        self._byol_cpu_core_count_limit = byol_cpu_core_count_limit
 
     @property
     def environment_type(self):

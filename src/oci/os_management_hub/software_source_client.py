@@ -77,6 +77,10 @@ class SoftwareSourceClient(object):
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
+
+        :param enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this client should enable strict url encoding in path params of a request.
+            By default, the client will not enable strict url encoding
         """
         if not OCI_SDK_ENABLED_SERVICES_SET.is_service_enabled("os_management_hub"):
             raise InvalidAlloyConfig("The Alloy configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local alloy-config file configured the service you're targeting or contact the cloud provider on the availability of this service")
@@ -114,6 +118,8 @@ class SoftwareSourceClient(object):
             base_client_init_kwargs['circuit_breaker_strategy'] = circuit_breaker.DEFAULT_CIRCUIT_BREAKER_STRATEGY
         if 'allow_control_chars' in kwargs:
             base_client_init_kwargs['allow_control_chars'] = kwargs.get('allow_control_chars')
+        if 'enable_strict_url_encoding' in kwargs:
+            base_client_init_kwargs['enable_strict_url_encoding'] = kwargs.get('enable_strict_url_encoding')
         self.base_client = BaseClient("software_source", config, signer, os_management_hub_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
@@ -165,6 +171,10 @@ class SoftwareSourceClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -181,6 +191,7 @@ class SoftwareSourceClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "if_match",
@@ -230,6 +241,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 body=add_packages_to_software_source_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -241,6 +253,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 body=add_packages_to_software_source_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -275,6 +288,10 @@ class SoftwareSourceClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -291,6 +308,7 @@ class SoftwareSourceClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -327,6 +345,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 body=change_availability_of_software_sources_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -337,6 +356,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 body=change_availability_of_software_sources_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -388,6 +408,10 @@ class SoftwareSourceClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -404,6 +428,7 @@ class SoftwareSourceClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "if_match",
@@ -453,6 +478,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 body=change_software_source_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -464,6 +490,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 body=change_software_source_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -498,6 +525,10 @@ class SoftwareSourceClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -514,6 +545,7 @@ class SoftwareSourceClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -550,6 +582,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 body=create_entitlement_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -560,6 +593,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 body=create_entitlement_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -594,6 +628,10 @@ class SoftwareSourceClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management_hub.models.SoftwareSource`
         :rtype: :class:`~oci.response.Response`
 
@@ -610,6 +648,7 @@ class SoftwareSourceClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -647,6 +686,7 @@ class SoftwareSourceClient(object):
                 body=create_software_source_details,
                 response_type="SoftwareSource",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -658,6 +698,7 @@ class SoftwareSourceClient(object):
                 body=create_software_source_details,
                 response_type="SoftwareSource",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -694,6 +735,10 @@ class SoftwareSourceClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -710,6 +755,7 @@ class SoftwareSourceClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -755,6 +801,7 @@ class SoftwareSourceClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -765,6 +812,7 @@ class SoftwareSourceClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -797,6 +845,10 @@ class SoftwareSourceClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management_hub.models.Erratum`
         :rtype: :class:`~oci.response.Response`
 
@@ -813,6 +865,7 @@ class SoftwareSourceClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -863,6 +916,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 response_type="Erratum",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -875,6 +929,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 response_type="Erratum",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -910,6 +965,10 @@ class SoftwareSourceClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management_hub.models.ModuleStream`
         :rtype: :class:`~oci.response.Response`
 
@@ -926,6 +985,7 @@ class SoftwareSourceClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -977,6 +1037,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 response_type="ModuleStream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -989,6 +1050,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 response_type="ModuleStream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1027,6 +1089,10 @@ class SoftwareSourceClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management_hub.models.ModuleStreamProfile`
         :rtype: :class:`~oci.response.Response`
 
@@ -1043,6 +1109,7 @@ class SoftwareSourceClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -1095,6 +1162,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 response_type="ModuleStreamProfile",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1107,6 +1175,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 response_type="ModuleStreamProfile",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1139,6 +1208,10 @@ class SoftwareSourceClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management_hub.models.PackageGroup`
         :rtype: :class:`~oci.response.Response`
 
@@ -1155,6 +1228,7 @@ class SoftwareSourceClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -1200,6 +1274,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 response_type="PackageGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1211,6 +1286,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 response_type="PackageGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1243,6 +1319,10 @@ class SoftwareSourceClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management_hub.models.SoftwarePackage`
         :rtype: :class:`~oci.response.Response`
 
@@ -1259,6 +1339,7 @@ class SoftwareSourceClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -1304,6 +1385,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 response_type="SoftwarePackage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1315,6 +1397,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 response_type="SoftwarePackage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1342,6 +1425,10 @@ class SoftwareSourceClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management_hub.models.SoftwarePackage`
         :rtype: :class:`~oci.response.Response`
 
@@ -1358,6 +1445,7 @@ class SoftwareSourceClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -1402,6 +1490,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 response_type="SoftwarePackage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1413,6 +1502,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 response_type="SoftwarePackage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1442,6 +1532,10 @@ class SoftwareSourceClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management_hub.models.SoftwareSource`
         :rtype: :class:`~oci.response.Response`
 
@@ -1458,6 +1552,7 @@ class SoftwareSourceClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -1502,6 +1597,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 response_type="SoftwareSource",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1513,6 +1609,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 response_type="SoftwareSource",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1542,6 +1639,10 @@ class SoftwareSourceClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type stream
         :rtype: :class:`~oci.response.Response`
 
@@ -1558,6 +1659,7 @@ class SoftwareSourceClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -1602,6 +1704,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1613,6 +1716,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1686,6 +1790,10 @@ class SoftwareSourceClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management_hub.models.SoftwarePackageCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -1702,6 +1810,7 @@ class SoftwareSourceClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "display_name",
             "display_name_contains",
@@ -1788,6 +1897,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 response_type="SoftwarePackageCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1799,6 +1909,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 response_type="SoftwarePackageCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1864,6 +1975,10 @@ class SoftwareSourceClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management_hub.models.SoftwarePackageCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -1880,6 +1995,7 @@ class SoftwareSourceClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "display_name",
             "display_name_contains",
@@ -1957,6 +2073,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 response_type="SoftwarePackageCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1969,6 +2086,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 response_type="SoftwarePackageCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2035,6 +2153,10 @@ class SoftwareSourceClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management_hub.models.EntitlementCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -2051,6 +2173,7 @@ class SoftwareSourceClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "csi",
             "vendor_name",
@@ -2123,6 +2246,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 response_type="EntitlementCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2134,6 +2258,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 response_type="EntitlementCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2228,6 +2353,10 @@ class SoftwareSourceClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management_hub.models.ErratumCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -2244,6 +2373,7 @@ class SoftwareSourceClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "name",
             "name_contains",
@@ -2352,6 +2482,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 response_type="ErratumCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2363,6 +2494,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 response_type="ErratumCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2431,6 +2563,10 @@ class SoftwareSourceClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management_hub.models.ModuleStreamProfileCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -2447,6 +2583,7 @@ class SoftwareSourceClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "module_name",
             "stream_name",
@@ -2524,6 +2661,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 response_type="ModuleStreamProfileCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2536,6 +2674,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 response_type="ModuleStreamProfileCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2607,6 +2746,10 @@ class SoftwareSourceClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management_hub.models.ModuleStreamCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -2623,6 +2766,7 @@ class SoftwareSourceClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "module_name",
             "name",
@@ -2702,6 +2846,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 response_type="ModuleStreamCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2714,6 +2859,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 response_type="ModuleStreamCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2784,6 +2930,10 @@ class SoftwareSourceClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management_hub.models.PackageGroupCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -2800,6 +2950,7 @@ class SoftwareSourceClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "compartment_id",
             "name",
@@ -2879,6 +3030,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 response_type="PackageGroupCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2891,6 +3043,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 response_type="PackageGroupCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2989,6 +3142,10 @@ class SoftwareSourceClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management_hub.models.SoftwareSourceCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -3005,6 +3162,7 @@ class SoftwareSourceClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "software_source_type",
             "os_family",
@@ -3143,6 +3301,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 response_type="SoftwareSourceCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3155,6 +3314,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 response_type="SoftwareSourceCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3220,6 +3380,10 @@ class SoftwareSourceClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management_hub.models.SoftwarePackageCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -3236,6 +3400,7 @@ class SoftwareSourceClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "display_name",
             "display_name_contains",
@@ -3313,6 +3478,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 response_type="SoftwarePackageCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3325,6 +3491,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 response_type="SoftwarePackageCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3368,6 +3535,10 @@ class SoftwareSourceClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management_hub.models.SoftwareSourceVendorCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -3384,6 +3555,7 @@ class SoftwareSourceClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "sort_order",
@@ -3443,6 +3615,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 response_type="SoftwareSourceVendorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3454,6 +3627,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 response_type="SoftwareSourceVendorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3568,6 +3742,10 @@ class SoftwareSourceClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management_hub.models.SoftwareSourceCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -3584,6 +3762,7 @@ class SoftwareSourceClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "compartment_id",
             "software_source_id",
@@ -3729,6 +3908,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 response_type="SoftwareSourceCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3740,6 +3920,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 response_type="SoftwareSourceCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3790,6 +3971,10 @@ class SoftwareSourceClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -3806,6 +3991,7 @@ class SoftwareSourceClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "if_match",
@@ -3855,6 +4041,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 body=remove_packages_from_software_source_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3866,6 +4053,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 body=remove_packages_from_software_source_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3916,6 +4104,10 @@ class SoftwareSourceClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -3932,6 +4124,7 @@ class SoftwareSourceClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "if_match",
@@ -3981,6 +4174,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 body=replace_packages_in_software_source_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3992,6 +4186,7 @@ class SoftwareSourceClient(object):
                 header_params=header_params,
                 body=replace_packages_in_software_source_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4036,6 +4231,10 @@ class SoftwareSourceClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management_hub.models.ModuleStreamCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -4052,6 +4251,7 @@ class SoftwareSourceClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "limit",
@@ -4095,6 +4295,7 @@ class SoftwareSourceClient(object):
                 body=search_software_source_module_streams_details,
                 response_type="ModuleStreamCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4107,6 +4308,7 @@ class SoftwareSourceClient(object):
                 body=search_software_source_module_streams_details,
                 response_type="ModuleStreamCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4151,6 +4353,10 @@ class SoftwareSourceClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management_hub.models.ModuleCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -4167,6 +4373,7 @@ class SoftwareSourceClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "limit",
@@ -4210,6 +4417,7 @@ class SoftwareSourceClient(object):
                 body=search_software_source_modules_details,
                 response_type="ModuleCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4222,6 +4430,7 @@ class SoftwareSourceClient(object):
                 body=search_software_source_modules_details,
                 response_type="ModuleCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4266,6 +4475,10 @@ class SoftwareSourceClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management_hub.models.PackageGroupCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -4282,6 +4495,7 @@ class SoftwareSourceClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "limit",
@@ -4325,6 +4539,7 @@ class SoftwareSourceClient(object):
                 body=search_software_source_package_groups_details,
                 response_type="PackageGroupCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4337,6 +4552,7 @@ class SoftwareSourceClient(object):
                 body=search_software_source_package_groups_details,
                 response_type="PackageGroupCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4380,6 +4596,10 @@ class SoftwareSourceClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -4396,6 +4616,7 @@ class SoftwareSourceClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "if_match",
@@ -4444,6 +4665,7 @@ class SoftwareSourceClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4454,6 +4676,7 @@ class SoftwareSourceClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4493,6 +4716,10 @@ class SoftwareSourceClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management_hub.models.SoftwareSource`
         :rtype: :class:`~oci.response.Response`
 
@@ -4509,6 +4736,7 @@ class SoftwareSourceClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -4556,6 +4784,7 @@ class SoftwareSourceClient(object):
                 body=update_software_source_details,
                 response_type="SoftwareSource",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4568,6 +4797,7 @@ class SoftwareSourceClient(object):
                 body=update_software_source_details,
                 response_type="SoftwareSource",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4613,6 +4843,11 @@ class SoftwareSourceClient(object):
         :param bool allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :param int buffer_limit: (optional)
             A buffer limit for the stream to be buffered. buffer_limit is used to set the buffer size capacity. Streams will be read until the size of the buffer reaches the buffer_limit.
             If the stream size is greater than the buffer_limit, a BufferError exception will be thrown.
@@ -4637,6 +4872,7 @@ class SoftwareSourceClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "buffer_limit",
             "opc_request_id",
@@ -4708,6 +4944,7 @@ class SoftwareSourceClient(object):
                 body=update_software_source_manifest_details,
                 response_type="SoftwareSource",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4720,6 +4957,7 @@ class SoftwareSourceClient(object):
                 body=update_software_source_manifest_details,
                 response_type="SoftwareSource",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)

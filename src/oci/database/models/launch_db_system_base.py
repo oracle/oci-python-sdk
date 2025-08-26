@@ -41,6 +41,14 @@ class LaunchDbSystemBase(object):
     #: This constant has a value of "DB_SYSTEM"
     SOURCE_DB_SYSTEM = "DB_SYSTEM"
 
+    #: A constant which can be used with the compute_model property of a LaunchDbSystemBase.
+    #: This constant has a value of "ECPU"
+    COMPUTE_MODEL_ECPU = "ECPU"
+
+    #: A constant which can be used with the compute_model property of a LaunchDbSystemBase.
+    #: This constant has a value of "OCPU"
+    COMPUTE_MODEL_OCPU = "OCPU"
+
     def __init__(self, **kwargs):
         """
         Initializes a new LaunchDbSystemBase object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -175,6 +183,15 @@ class LaunchDbSystemBase(object):
             The value to assign to the data_collection_options property of this LaunchDbSystemBase.
         :type data_collection_options: oci.database.models.DataCollectionOptions
 
+        :param compute_model:
+            The value to assign to the compute_model property of this LaunchDbSystemBase.
+            Allowed values for this property are: "ECPU", "OCPU"
+        :type compute_model: str
+
+        :param compute_count:
+            The value to assign to the compute_count property of this LaunchDbSystemBase.
+        :type compute_count: int
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -206,7 +223,9 @@ class LaunchDbSystemBase(object):
             'source': 'str',
             'private_ip': 'str',
             'private_ip_v6': 'str',
-            'data_collection_options': 'DataCollectionOptions'
+            'data_collection_options': 'DataCollectionOptions',
+            'compute_model': 'str',
+            'compute_count': 'int'
         }
         self.attribute_map = {
             'compartment_id': 'compartmentId',
@@ -238,7 +257,9 @@ class LaunchDbSystemBase(object):
             'source': 'source',
             'private_ip': 'privateIp',
             'private_ip_v6': 'privateIpV6',
-            'data_collection_options': 'dataCollectionOptions'
+            'data_collection_options': 'dataCollectionOptions',
+            'compute_model': 'computeModel',
+            'compute_count': 'computeCount'
         }
         self._compartment_id = None
         self._fault_domains = None
@@ -270,6 +291,8 @@ class LaunchDbSystemBase(object):
         self._private_ip = None
         self._private_ip_v6 = None
         self._data_collection_options = None
+        self._compute_model = None
+        self._compute_count = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -795,7 +818,7 @@ class LaunchDbSystemBase(object):
     @property
     def cpu_core_count(self):
         """
-        **[Required]** Gets the cpu_core_count of this LaunchDbSystemBase.
+        Gets the cpu_core_count of this LaunchDbSystemBase.
         The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
 
         - BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
@@ -904,7 +927,7 @@ class LaunchDbSystemBase(object):
     def initial_data_storage_size_in_gb(self):
         """
         Gets the initial_data_storage_size_in_gb of this LaunchDbSystemBase.
-        Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume.
+        Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. By default this will be set to 256.
 
 
         :return: The initial_data_storage_size_in_gb of this LaunchDbSystemBase.
@@ -916,7 +939,7 @@ class LaunchDbSystemBase(object):
     def initial_data_storage_size_in_gb(self, initial_data_storage_size_in_gb):
         """
         Sets the initial_data_storage_size_in_gb of this LaunchDbSystemBase.
-        Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume.
+        Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. By default this will be set to 256.
 
 
         :param initial_data_storage_size_in_gb: The initial_data_storage_size_in_gb of this LaunchDbSystemBase.
@@ -976,7 +999,7 @@ class LaunchDbSystemBase(object):
     def node_count(self):
         """
         Gets the node_count of this LaunchDbSystemBase.
-        The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or 2.
+        The number of nodes to launch for a virtual machine DB system. Specify either 1 or 2. By default this will be set to 1.
 
 
         :return: The node_count of this LaunchDbSystemBase.
@@ -988,7 +1011,7 @@ class LaunchDbSystemBase(object):
     def node_count(self, node_count):
         """
         Sets the node_count of this LaunchDbSystemBase.
-        The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or 2.
+        The number of nodes to launch for a virtual machine DB system. Specify either 1 or 2. By default this will be set to 1.
 
 
         :param node_count: The node_count of this LaunchDbSystemBase.
@@ -1198,6 +1221,61 @@ class LaunchDbSystemBase(object):
         :type: oci.database.models.DataCollectionOptions
         """
         self._data_collection_options = data_collection_options
+
+    @property
+    def compute_model(self):
+        """
+        Gets the compute_model of this LaunchDbSystemBase.
+        The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+
+        Allowed values for this property are: "ECPU", "OCPU"
+
+
+        :return: The compute_model of this LaunchDbSystemBase.
+        :rtype: str
+        """
+        return self._compute_model
+
+    @compute_model.setter
+    def compute_model(self, compute_model):
+        """
+        Sets the compute_model of this LaunchDbSystemBase.
+        The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+
+
+        :param compute_model: The compute_model of this LaunchDbSystemBase.
+        :type: str
+        """
+        allowed_values = ["ECPU", "OCPU"]
+        if not value_allowed_none_or_none_sentinel(compute_model, allowed_values):
+            raise ValueError(
+                f"Invalid value for `compute_model`, must be None or one of {allowed_values}"
+            )
+        self._compute_model = compute_model
+
+    @property
+    def compute_count(self):
+        """
+        Gets the compute_count of this LaunchDbSystemBase.
+        The number of compute servers for the DB system.
+
+
+        :return: The compute_count of this LaunchDbSystemBase.
+        :rtype: int
+        """
+        return self._compute_count
+
+    @compute_count.setter
+    def compute_count(self, compute_count):
+        """
+        Sets the compute_count of this LaunchDbSystemBase.
+        The number of compute servers for the DB system.
+
+
+        :param compute_count: The compute_count of this LaunchDbSystemBase.
+        :type: int
+        """
+        self._compute_count = compute_count
 
     def __repr__(self):
         return formatted_flat_dict(self)

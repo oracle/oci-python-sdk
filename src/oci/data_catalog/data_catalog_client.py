@@ -76,6 +76,10 @@ class DataCatalogClient(object):
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
+
+        :param enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this client should enable strict url encoding in path params of a request.
+            By default, the client will not enable strict url encoding
         """
         if not OCI_SDK_ENABLED_SERVICES_SET.is_service_enabled("data_catalog"):
             raise InvalidAlloyConfig("The Alloy configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local alloy-config file configured the service you're targeting or contact the cloud provider on the availability of this service")
@@ -113,6 +117,8 @@ class DataCatalogClient(object):
             base_client_init_kwargs['circuit_breaker_strategy'] = circuit_breaker.DEFAULT_CIRCUIT_BREAKER_STRATEGY
         if 'allow_control_chars' in kwargs:
             base_client_init_kwargs['allow_control_chars'] = kwargs.get('allow_control_chars')
+        if 'enable_strict_url_encoding' in kwargs:
+            base_client_init_kwargs['enable_strict_url_encoding'] = kwargs.get('enable_strict_url_encoding')
         self.base_client = BaseClient("data_catalog", config, signer, data_catalog_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
@@ -149,6 +155,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Catalog`
         :rtype: :class:`~oci.response.Response`
 
@@ -165,6 +175,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -210,6 +221,7 @@ class DataCatalogClient(object):
                 body=add_resource_lock_details,
                 response_type="Catalog",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -222,6 +234,7 @@ class DataCatalogClient(object):
                 body=add_resource_lock_details,
                 response_type="Catalog",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -258,6 +271,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.CatalogPrivateEndpoint`
         :rtype: :class:`~oci.response.Response`
 
@@ -274,6 +291,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -319,6 +337,7 @@ class DataCatalogClient(object):
                 body=add_resource_lock_details,
                 response_type="CatalogPrivateEndpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -331,6 +350,7 @@ class DataCatalogClient(object):
                 body=add_resource_lock_details,
                 response_type="CatalogPrivateEndpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -378,6 +398,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.DataAsset`
         :rtype: :class:`~oci.response.Response`
 
@@ -394,6 +418,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "if_match",
@@ -443,6 +468,7 @@ class DataCatalogClient(object):
                 body=data_selector_pattern_details,
                 response_type="DataAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -455,6 +481,7 @@ class DataCatalogClient(object):
                 body=data_selector_pattern_details,
                 response_type="DataAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -491,6 +518,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Metastore`
         :rtype: :class:`~oci.response.Response`
 
@@ -507,6 +538,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -552,6 +584,7 @@ class DataCatalogClient(object):
                 body=add_resource_lock_details,
                 response_type="Metastore",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -564,6 +597,7 @@ class DataCatalogClient(object):
                 body=add_resource_lock_details,
                 response_type="Metastore",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -611,6 +645,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Type`
         :rtype: :class:`~oci.response.Response`
 
@@ -627,6 +665,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "if_match",
@@ -676,6 +715,7 @@ class DataCatalogClient(object):
                 body=associate_custom_property_details,
                 response_type="Type",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -688,6 +728,7 @@ class DataCatalogClient(object):
                 body=associate_custom_property_details,
                 response_type="Type",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -733,6 +774,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.AsynchronousExportDataAssetResult`
         :rtype: :class:`~oci.response.Response`
 
@@ -749,6 +794,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -809,6 +855,7 @@ class DataCatalogClient(object):
                 body=asynchronous_export_data_asset_details,
                 response_type="AsynchronousExportDataAssetResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -822,6 +869,7 @@ class DataCatalogClient(object):
                 body=asynchronous_export_data_asset_details,
                 response_type="AsynchronousExportDataAssetResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -862,6 +910,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.AsynchronousExportGlossaryResult`
         :rtype: :class:`~oci.response.Response`
 
@@ -878,6 +930,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -925,6 +978,7 @@ class DataCatalogClient(object):
                 body=asynchronous_export_glossary_details,
                 response_type="AsynchronousExportGlossaryResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -937,6 +991,7 @@ class DataCatalogClient(object):
                 body=asynchronous_export_glossary_details,
                 response_type="AsynchronousExportGlossaryResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -984,6 +1039,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -1000,6 +1059,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id",
@@ -1054,6 +1114,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 body=attach_catalog_private_endpoint_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1066,6 +1127,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 body=attach_catalog_private_endpoint_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1106,6 +1168,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -1122,6 +1188,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id",
@@ -1173,6 +1240,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 body=change_catalog_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1185,6 +1253,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 body=change_catalog_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1225,6 +1294,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -1241,6 +1314,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id",
@@ -1292,6 +1366,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 body=change_catalog_private_endpoint_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1304,6 +1379,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 body=change_catalog_private_endpoint_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1344,6 +1420,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -1360,6 +1440,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id",
@@ -1411,6 +1492,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 body=change_metastore_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1423,6 +1505,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 body=change_metastore_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1466,6 +1549,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Attribute`
         :rtype: :class:`~oci.response.Response`
 
@@ -1482,6 +1569,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -1530,6 +1618,7 @@ class DataCatalogClient(object):
                 body=create_attribute_details,
                 response_type="Attribute",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1542,6 +1631,7 @@ class DataCatalogClient(object):
                 body=create_attribute_details,
                 response_type="Attribute",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1588,6 +1678,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.AttributeTag`
         :rtype: :class:`~oci.response.Response`
 
@@ -1604,6 +1698,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -1653,6 +1748,7 @@ class DataCatalogClient(object):
                 body=create_attribute_tag_details,
                 response_type="AttributeTag",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1665,6 +1761,7 @@ class DataCatalogClient(object):
                 body=create_attribute_tag_details,
                 response_type="AttributeTag",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1700,6 +1797,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -1716,6 +1817,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -1750,6 +1852,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 body=create_catalog_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1760,6 +1863,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 body=create_catalog_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1794,6 +1898,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -1810,6 +1918,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -1844,6 +1953,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 body=create_catalog_private_endpoint_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1854,6 +1964,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 body=create_catalog_private_endpoint_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1894,6 +2005,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Connection`
         :rtype: :class:`~oci.response.Response`
 
@@ -1910,6 +2025,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -1957,6 +2073,7 @@ class DataCatalogClient(object):
                 body=create_connection_details,
                 response_type="Connection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1969,6 +2086,7 @@ class DataCatalogClient(object):
                 body=create_connection_details,
                 response_type="Connection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2009,6 +2127,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.CustomProperty`
         :rtype: :class:`~oci.response.Response`
 
@@ -2025,6 +2147,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -2072,6 +2195,7 @@ class DataCatalogClient(object):
                 body=create_custom_property_details,
                 response_type="CustomProperty",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2084,6 +2208,7 @@ class DataCatalogClient(object):
                 body=create_custom_property_details,
                 response_type="CustomProperty",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2121,6 +2246,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.DataAsset`
         :rtype: :class:`~oci.response.Response`
 
@@ -2137,6 +2266,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -2183,6 +2313,7 @@ class DataCatalogClient(object):
                 body=create_data_asset_details,
                 response_type="DataAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2195,6 +2326,7 @@ class DataCatalogClient(object):
                 body=create_data_asset_details,
                 response_type="DataAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2235,6 +2367,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.DataAssetTag`
         :rtype: :class:`~oci.response.Response`
 
@@ -2251,6 +2387,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -2298,6 +2435,7 @@ class DataCatalogClient(object):
                 body=create_data_asset_tag_details,
                 response_type="DataAssetTag",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2310,6 +2448,7 @@ class DataCatalogClient(object):
                 body=create_data_asset_tag_details,
                 response_type="DataAssetTag",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2350,6 +2489,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Entity`
         :rtype: :class:`~oci.response.Response`
 
@@ -2366,6 +2509,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -2413,6 +2557,7 @@ class DataCatalogClient(object):
                 body=create_entity_details,
                 response_type="Entity",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2425,6 +2570,7 @@ class DataCatalogClient(object):
                 body=create_entity_details,
                 response_type="Entity",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2468,6 +2614,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.EntityTag`
         :rtype: :class:`~oci.response.Response`
 
@@ -2484,6 +2634,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -2532,6 +2683,7 @@ class DataCatalogClient(object):
                 body=create_entity_tag_details,
                 response_type="EntityTag",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2544,6 +2696,7 @@ class DataCatalogClient(object):
                 body=create_entity_tag_details,
                 response_type="EntityTag",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2584,6 +2737,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Folder`
         :rtype: :class:`~oci.response.Response`
 
@@ -2600,6 +2757,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -2647,6 +2805,7 @@ class DataCatalogClient(object):
                 body=create_folder_details,
                 response_type="Folder",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2659,6 +2818,7 @@ class DataCatalogClient(object):
                 body=create_folder_details,
                 response_type="Folder",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2702,6 +2862,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.FolderTag`
         :rtype: :class:`~oci.response.Response`
 
@@ -2718,6 +2882,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -2766,6 +2931,7 @@ class DataCatalogClient(object):
                 body=create_folder_tag_details,
                 response_type="FolderTag",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2778,6 +2944,7 @@ class DataCatalogClient(object):
                 body=create_folder_tag_details,
                 response_type="FolderTag",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2815,6 +2982,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Glossary`
         :rtype: :class:`~oci.response.Response`
 
@@ -2831,6 +3002,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -2877,6 +3049,7 @@ class DataCatalogClient(object):
                 body=create_glossary_details,
                 response_type="Glossary",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2889,6 +3062,7 @@ class DataCatalogClient(object):
                 body=create_glossary_details,
                 response_type="Glossary",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2926,6 +3100,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Job`
         :rtype: :class:`~oci.response.Response`
 
@@ -2942,6 +3120,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -2988,6 +3167,7 @@ class DataCatalogClient(object):
                 body=create_job_details,
                 response_type="Job",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3000,6 +3180,7 @@ class DataCatalogClient(object):
                 body=create_job_details,
                 response_type="Job",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3037,6 +3218,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.JobDefinition`
         :rtype: :class:`~oci.response.Response`
 
@@ -3053,6 +3238,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -3099,6 +3285,7 @@ class DataCatalogClient(object):
                 body=create_job_definition_details,
                 response_type="JobDefinition",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3111,6 +3298,7 @@ class DataCatalogClient(object):
                 body=create_job_definition_details,
                 response_type="JobDefinition",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3151,6 +3339,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.JobExecution`
         :rtype: :class:`~oci.response.Response`
 
@@ -3167,6 +3359,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -3214,6 +3407,7 @@ class DataCatalogClient(object):
                 body=create_job_execution_details,
                 response_type="JobExecution",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3226,6 +3420,7 @@ class DataCatalogClient(object):
                 body=create_job_execution_details,
                 response_type="JobExecution",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3260,6 +3455,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -3276,6 +3475,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -3310,6 +3510,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 body=create_metastore_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3320,6 +3521,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 body=create_metastore_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3357,6 +3559,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Namespace`
         :rtype: :class:`~oci.response.Response`
 
@@ -3373,6 +3579,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -3419,6 +3626,7 @@ class DataCatalogClient(object):
                 body=create_namespace_details,
                 response_type="Namespace",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3431,6 +3639,7 @@ class DataCatalogClient(object):
                 body=create_namespace_details,
                 response_type="Namespace",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3468,6 +3677,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Pattern`
         :rtype: :class:`~oci.response.Response`
 
@@ -3484,6 +3697,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -3530,6 +3744,7 @@ class DataCatalogClient(object):
                 body=create_pattern_details,
                 response_type="Pattern",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3542,6 +3757,7 @@ class DataCatalogClient(object):
                 body=create_pattern_details,
                 response_type="Pattern",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3582,6 +3798,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Term`
         :rtype: :class:`~oci.response.Response`
 
@@ -3598,6 +3818,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -3645,6 +3866,7 @@ class DataCatalogClient(object):
                 body=create_term_details,
                 response_type="Term",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3657,6 +3879,7 @@ class DataCatalogClient(object):
                 body=create_term_details,
                 response_type="Term",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3700,6 +3923,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.TermRelationship`
         :rtype: :class:`~oci.response.Response`
 
@@ -3716,6 +3943,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -3764,6 +3992,7 @@ class DataCatalogClient(object):
                 body=create_term_relationship_details,
                 response_type="TermRelationship",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3776,6 +4005,7 @@ class DataCatalogClient(object):
                 body=create_term_relationship_details,
                 response_type="TermRelationship",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3819,6 +4049,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -3835,6 +4069,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -3881,6 +4116,7 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3891,6 +4127,7 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3937,6 +4174,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -3953,6 +4194,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -4000,6 +4242,7 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4010,6 +4253,7 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4047,6 +4291,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -4063,6 +4311,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id",
@@ -4113,6 +4362,7 @@ class DataCatalogClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4124,6 +4374,7 @@ class DataCatalogClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4161,6 +4412,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -4177,6 +4432,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id",
@@ -4227,6 +4483,7 @@ class DataCatalogClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4238,6 +4495,7 @@ class DataCatalogClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4278,6 +4536,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -4294,6 +4556,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -4339,6 +4602,7 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4349,6 +4613,7 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4389,6 +4654,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -4405,6 +4674,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -4450,6 +4720,7 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4460,6 +4731,7 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4497,6 +4769,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -4513,6 +4789,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -4557,6 +4834,7 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4567,6 +4845,7 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4607,6 +4886,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -4623,6 +4906,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -4668,6 +4952,7 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4678,6 +4963,7 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4718,6 +5004,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -4734,6 +5024,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -4779,6 +5070,7 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4789,6 +5081,7 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4832,6 +5125,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -4848,6 +5145,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -4894,6 +5192,7 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4904,6 +5203,7 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -4944,6 +5244,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -4960,6 +5264,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -5005,6 +5310,7 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5015,6 +5321,7 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5058,6 +5365,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -5074,6 +5385,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -5120,6 +5432,7 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5130,6 +5443,7 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5167,6 +5481,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -5183,6 +5501,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -5227,6 +5546,7 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5237,6 +5557,7 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5274,6 +5595,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -5290,6 +5615,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -5334,6 +5660,7 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5344,6 +5671,7 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5381,6 +5709,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -5397,6 +5729,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -5441,6 +5774,7 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5451,6 +5785,7 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5488,6 +5823,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -5504,6 +5843,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id",
@@ -5554,6 +5894,7 @@ class DataCatalogClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5565,6 +5906,7 @@ class DataCatalogClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5602,6 +5944,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -5618,6 +5964,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -5662,6 +6009,7 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5672,6 +6020,7 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5709,6 +6058,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -5725,6 +6078,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -5769,6 +6123,7 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5779,6 +6134,7 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5819,6 +6175,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -5835,6 +6195,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -5880,6 +6241,7 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5890,6 +6252,7 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -5933,6 +6296,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -5949,6 +6316,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -5995,6 +6363,7 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6005,6 +6374,7 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6045,6 +6415,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -6061,6 +6435,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id",
@@ -6112,6 +6487,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 body=detach_catalog_private_endpoint_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6124,6 +6500,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 body=detach_catalog_private_endpoint_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6171,6 +6548,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Type`
         :rtype: :class:`~oci.response.Response`
 
@@ -6187,6 +6568,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "if_match",
@@ -6236,6 +6618,7 @@ class DataCatalogClient(object):
                 body=disassociate_custom_property_details,
                 response_type="Type",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6248,6 +6631,7 @@ class DataCatalogClient(object):
                 body=disassociate_custom_property_details,
                 response_type="Type",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6285,6 +6669,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.data_catalog.models.GlossaryTreeElement`
         :rtype: :class:`~oci.response.Response`
 
@@ -6301,6 +6689,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -6349,6 +6738,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="list[GlossaryTreeElement]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6360,6 +6750,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="list[GlossaryTreeElement]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6400,6 +6791,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type str
         :rtype: :class:`~oci.response.Response`
 
@@ -6416,6 +6811,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "is_relationship_exported",
             "opc_request_id",
@@ -6469,6 +6865,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="str",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6481,6 +6878,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="str",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6530,6 +6928,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.EntityLineage`
         :rtype: :class:`~oci.response.Response`
 
@@ -6546,6 +6948,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "limit",
             "page",
@@ -6604,6 +7007,7 @@ class DataCatalogClient(object):
                 body=fetch_entity_lineage_details,
                 response_type="EntityLineage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6617,6 +7021,7 @@ class DataCatalogClient(object):
                 body=fetch_entity_lineage_details,
                 response_type="EntityLineage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6661,6 +7066,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Attribute`
         :rtype: :class:`~oci.response.Response`
 
@@ -6677,6 +7086,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "is_include_object_relationships",
             "fields",
@@ -6741,6 +7151,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="Attribute",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6753,6 +7164,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="Attribute",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6797,6 +7209,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.AttributeTag`
         :rtype: :class:`~oci.response.Response`
 
@@ -6813,6 +7229,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "fields",
             "opc_request_id"
@@ -6876,6 +7293,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="AttributeTag",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6888,6 +7306,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="AttributeTag",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6915,6 +7334,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Catalog`
         :rtype: :class:`~oci.response.Response`
 
@@ -6931,6 +7354,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -6975,6 +7399,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="Catalog",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -6986,6 +7411,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="Catalog",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -7013,6 +7439,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.CatalogPrivateEndpoint`
         :rtype: :class:`~oci.response.Response`
 
@@ -7029,6 +7459,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -7073,6 +7504,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="CatalogPrivateEndpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -7084,6 +7516,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="CatalogPrivateEndpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -7122,6 +7555,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Connection`
         :rtype: :class:`~oci.response.Response`
 
@@ -7138,6 +7575,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "fields",
             "opc_request_id"
@@ -7199,6 +7637,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="Connection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -7211,6 +7650,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="Connection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -7249,6 +7689,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.CustomProperty`
         :rtype: :class:`~oci.response.Response`
 
@@ -7265,6 +7709,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "fields",
             "opc_request_id"
@@ -7326,6 +7771,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="CustomProperty",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -7338,6 +7784,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="CustomProperty",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -7373,6 +7820,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.DataAsset`
         :rtype: :class:`~oci.response.Response`
 
@@ -7389,6 +7840,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "fields",
             "opc_request_id"
@@ -7449,6 +7901,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="DataAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -7461,6 +7914,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="DataAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -7499,6 +7953,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.DataAssetTag`
         :rtype: :class:`~oci.response.Response`
 
@@ -7515,6 +7973,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "fields",
             "opc_request_id"
@@ -7576,6 +8035,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="DataAssetTag",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -7588,6 +8048,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="DataAssetTag",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -7629,6 +8090,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Entity`
         :rtype: :class:`~oci.response.Response`
 
@@ -7645,6 +8110,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "is_include_object_relationships",
             "fields",
@@ -7708,6 +8174,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="Entity",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -7720,6 +8187,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="Entity",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -7761,6 +8229,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.EntityTag`
         :rtype: :class:`~oci.response.Response`
 
@@ -7777,6 +8249,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "fields",
             "opc_request_id"
@@ -7839,6 +8312,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="EntityTag",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -7851,6 +8325,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="EntityTag",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -7892,6 +8367,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Folder`
         :rtype: :class:`~oci.response.Response`
 
@@ -7908,6 +8387,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "is_include_object_relationships",
             "fields",
@@ -7971,6 +8451,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="Folder",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -7983,6 +8464,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="Folder",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -8024,6 +8506,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.FolderTag`
         :rtype: :class:`~oci.response.Response`
 
@@ -8040,6 +8526,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "fields",
             "opc_request_id"
@@ -8102,6 +8589,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="FolderTag",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -8114,6 +8602,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="FolderTag",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -8149,6 +8638,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Glossary`
         :rtype: :class:`~oci.response.Response`
 
@@ -8165,6 +8658,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "fields",
             "opc_request_id"
@@ -8225,6 +8719,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="Glossary",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -8237,6 +8732,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="Glossary",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -8272,6 +8768,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Job`
         :rtype: :class:`~oci.response.Response`
 
@@ -8288,6 +8788,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "fields",
             "opc_request_id"
@@ -8348,6 +8849,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="Job",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -8360,6 +8862,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="Job",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -8395,6 +8898,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.JobDefinition`
         :rtype: :class:`~oci.response.Response`
 
@@ -8411,6 +8918,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "fields",
             "opc_request_id"
@@ -8471,6 +8979,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="JobDefinition",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -8483,6 +8992,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="JobDefinition",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -8521,6 +9031,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.JobExecution`
         :rtype: :class:`~oci.response.Response`
 
@@ -8537,6 +9051,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "fields",
             "opc_request_id"
@@ -8598,6 +9113,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="JobExecution",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -8610,6 +9126,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="JobExecution",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -8651,6 +9168,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.JobLog`
         :rtype: :class:`~oci.response.Response`
 
@@ -8667,6 +9188,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "fields",
             "opc_request_id"
@@ -8729,6 +9251,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="JobLog",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -8741,6 +9264,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="JobLog",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -8782,6 +9306,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.JobMetric`
         :rtype: :class:`~oci.response.Response`
 
@@ -8798,6 +9326,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "fields",
             "opc_request_id"
@@ -8860,6 +9389,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="JobMetric",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -8872,6 +9402,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="JobMetric",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -8899,6 +9430,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Metastore`
         :rtype: :class:`~oci.response.Response`
 
@@ -8915,6 +9450,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -8959,6 +9495,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="Metastore",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -8970,6 +9507,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="Metastore",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -9005,6 +9543,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Namespace`
         :rtype: :class:`~oci.response.Response`
 
@@ -9021,6 +9563,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "fields",
             "opc_request_id"
@@ -9081,6 +9624,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="Namespace",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -9093,6 +9637,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="Namespace",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -9128,6 +9673,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Pattern`
         :rtype: :class:`~oci.response.Response`
 
@@ -9144,6 +9693,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "fields",
             "opc_request_id"
@@ -9204,6 +9754,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="Pattern",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -9216,6 +9767,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="Pattern",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -9254,6 +9806,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Term`
         :rtype: :class:`~oci.response.Response`
 
@@ -9270,6 +9826,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "fields",
             "opc_request_id"
@@ -9331,6 +9888,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="Term",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -9343,6 +9901,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="Term",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -9384,6 +9943,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.TermRelationship`
         :rtype: :class:`~oci.response.Response`
 
@@ -9400,6 +9963,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "fields",
             "opc_request_id"
@@ -9462,6 +10026,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="TermRelationship",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -9474,6 +10039,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="TermRelationship",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -9509,6 +10075,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Type`
         :rtype: :class:`~oci.response.Response`
 
@@ -9525,6 +10095,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "fields",
             "opc_request_id"
@@ -9585,6 +10156,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="Type",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -9597,6 +10169,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="Type",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -9624,6 +10197,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.WorkRequest`
         :rtype: :class:`~oci.response.Response`
 
@@ -9640,6 +10217,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -9684,6 +10262,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -9695,6 +10274,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -9742,6 +10322,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Connection`
         :rtype: :class:`~oci.response.Response`
 
@@ -9758,6 +10342,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "if_match",
@@ -9807,6 +10392,7 @@ class DataCatalogClient(object):
                 body=import_connection_details,
                 response_type="Connection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -9819,6 +10405,7 @@ class DataCatalogClient(object):
                 body=import_connection_details,
                 response_type="Connection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -9867,6 +10454,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.ImportDataAssetJobResult`
         :rtype: :class:`~oci.response.Response`
 
@@ -9883,6 +10474,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "is_missing_value_ignored",
             "opc_request_id",
@@ -9945,6 +10537,7 @@ class DataCatalogClient(object):
                 body=import_data_asset_details,
                 response_type="ImportDataAssetJobResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -9958,6 +10551,7 @@ class DataCatalogClient(object):
                 body=import_data_asset_details,
                 response_type="ImportDataAssetJobResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -10001,6 +10595,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -10017,6 +10615,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "is_relationship_imported",
             "opc_request_id",
@@ -10070,6 +10669,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 body=import_glossary_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -10082,6 +10682,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 body=import_glossary_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -10122,6 +10723,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.ImportLineageJobResult`
         :rtype: :class:`~oci.response.Response`
 
@@ -10138,6 +10743,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -10187,6 +10793,7 @@ class DataCatalogClient(object):
                 body=import_lineage_details,
                 response_type="ImportLineageJobResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -10199,6 +10806,7 @@ class DataCatalogClient(object):
                 body=import_lineage_details,
                 response_type="ImportLineageJobResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -10261,6 +10869,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.EntityCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -10277,6 +10889,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "fields",
             "display_name_contains",
@@ -10364,6 +10977,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="EntityCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -10376,6 +10990,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="EntityCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -10455,6 +11070,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.AttributeTagCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -10471,6 +11090,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "name",
             "lifecycle_state",
@@ -10574,6 +11194,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="AttributeTagCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -10586,6 +11207,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="AttributeTagCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -10705,6 +11327,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.AttributeCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -10721,6 +11347,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "display_name",
             "business_name",
@@ -10847,6 +11474,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="AttributeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -10859,6 +11487,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="AttributeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -10910,6 +11539,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.data_catalog.models.CatalogPrivateEndpointSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -10926,6 +11559,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "display_name",
             "limit",
@@ -10998,6 +11632,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="list[CatalogPrivateEndpointSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -11009,6 +11644,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="list[CatalogPrivateEndpointSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -11060,6 +11696,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.data_catalog.models.CatalogSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -11076,6 +11716,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "display_name",
             "limit",
@@ -11148,6 +11789,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="list[CatalogSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -11159,6 +11801,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="list[CatalogSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -11250,6 +11893,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.ConnectionCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -11266,6 +11913,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "display_name",
             "display_name_contains",
@@ -11375,6 +12023,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="ConnectionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -11387,6 +12036,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="ConnectionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -11477,6 +12127,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.CustomPropertyCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -11493,6 +12147,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "display_name",
             "display_name_contains",
@@ -11616,6 +12271,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="CustomPropertyCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -11628,6 +12284,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="CustomPropertyCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -11701,6 +12358,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.DataAssetTagCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -11717,6 +12378,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "name",
             "lifecycle_state",
@@ -11818,6 +12480,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="DataAssetTagCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -11830,6 +12493,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="DataAssetTagCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -11913,6 +12577,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.DataAssetCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -11929,6 +12597,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "display_name",
             "display_name_contains",
@@ -12035,6 +12704,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="DataAssetCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -12047,6 +12717,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="DataAssetCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -12112,6 +12783,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.EntityCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -12128,6 +12803,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "display_name_contains",
             "sort_by",
@@ -12207,6 +12883,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="EntityCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -12219,6 +12896,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="EntityCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -12348,6 +13026,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.EntityCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -12364,6 +13046,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "display_name",
             "business_name",
@@ -12502,6 +13185,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="EntityCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -12514,6 +13198,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="EntityCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -12590,6 +13275,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.EntityTagCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -12606,6 +13295,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "name",
             "lifecycle_state",
@@ -12708,6 +13398,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="EntityTagCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -12720,6 +13411,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="EntityTagCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -12796,6 +13488,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.FolderTagCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -12812,6 +13508,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "name",
             "lifecycle_state",
@@ -12914,6 +13611,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="FolderTagCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -12926,6 +13624,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="FolderTagCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -13035,6 +13734,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.FolderCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -13051,6 +13754,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "display_name",
             "business_name",
@@ -13177,6 +13881,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="FolderCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -13189,6 +13894,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="FolderCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -13266,6 +13972,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.GlossaryCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -13282,6 +13992,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "display_name",
             "display_name_contains",
@@ -13384,6 +14095,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="GlossaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -13396,6 +14108,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="GlossaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -13498,6 +14211,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.JobDefinitionCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -13514,6 +14231,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "display_name",
             "display_name_contains",
@@ -13644,6 +14362,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="JobDefinitionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -13656,6 +14375,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="JobDefinitionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -13769,6 +14489,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.JobExecutionCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -13785,6 +14509,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "lifecycle_state",
             "time_created",
@@ -13913,6 +14638,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="JobExecutionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -13925,6 +14651,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="JobExecutionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -14003,6 +14730,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.JobLogCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -14019,6 +14750,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "lifecycle_state",
             "severity",
@@ -14121,6 +14853,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="JobLogCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -14133,6 +14866,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="JobLogCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -14232,6 +14966,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.JobMetricCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -14248,6 +14986,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "display_name",
             "display_name_contains",
@@ -14355,6 +15094,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="JobMetricCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -14367,6 +15107,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="JobMetricCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -14490,6 +15231,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.JobCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -14506,6 +15251,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "display_name",
             "display_name_contains",
@@ -14644,6 +15390,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="JobCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -14656,6 +15403,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="JobCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -14707,6 +15455,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.data_catalog.models.MetastoreSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -14723,6 +15475,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "display_name",
             "limit",
@@ -14795,6 +15548,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="list[MetastoreSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -14806,6 +15560,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="list[MetastoreSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -14883,6 +15638,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.NamespaceCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -14899,6 +15658,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "display_name",
             "display_name_contains",
@@ -15001,6 +15761,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="NamespaceCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -15013,6 +15774,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="NamespaceCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -15090,6 +15852,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.PatternCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -15106,6 +15872,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "display_name",
             "display_name_contains",
@@ -15208,6 +15975,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="PatternCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -15220,6 +15988,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="PatternCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -15316,6 +16085,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.RuleCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -15332,6 +16105,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "display_name",
             "display_name_contains",
@@ -15456,6 +16230,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="RuleCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -15468,6 +16243,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="RuleCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -15529,6 +16305,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.TermCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -15545,6 +16325,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "display_name",
             "display_name_contains",
@@ -15639,6 +16420,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="TermCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -15651,6 +16433,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="TermCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -15718,6 +16501,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.TermRelationshipCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -15734,6 +16521,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "display_name",
             "display_name_contains",
@@ -15830,6 +16618,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="TermRelationshipCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -15842,6 +16631,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="TermRelationshipCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -15920,6 +16710,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.TermCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -15936,6 +16730,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "display_name",
             "display_name_contains",
@@ -16046,6 +16841,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="TermCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -16058,6 +16854,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="TermCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -16129,6 +16926,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.TypeCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -16145,6 +16946,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "name",
             "lifecycle_state",
@@ -16247,6 +17049,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="TypeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -16259,6 +17062,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="TypeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -16302,6 +17106,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.data_catalog.models.WorkRequestError`
         :rtype: :class:`~oci.response.Response`
 
@@ -16318,6 +17126,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "page",
@@ -16389,6 +17198,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="list[WorkRequestError]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -16401,6 +17211,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="list[WorkRequestError]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -16444,6 +17255,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.data_catalog.models.WorkRequestLog`
         :rtype: :class:`~oci.response.Response`
 
@@ -16460,6 +17275,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "page",
@@ -16531,6 +17347,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="list[WorkRequestLog]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -16543,6 +17360,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="list[WorkRequestLog]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -16576,6 +17394,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.data_catalog.models.WorkRequest`
         :rtype: :class:`~oci.response.Response`
 
@@ -16592,6 +17414,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "page",
@@ -16635,6 +17458,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="list[WorkRequest]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -16646,6 +17470,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="list[WorkRequest]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -16689,6 +17514,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type str
         :rtype: :class:`~oci.response.Response`
 
@@ -16705,6 +17534,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "sort_by",
             "sort_order",
@@ -16776,6 +17606,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="str",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -16788,6 +17619,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="str",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -16831,6 +17663,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.data_catalog.models.ConnectionAliasSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -16847,6 +17683,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "connection_key",
             "opc_request_id",
@@ -16901,6 +17738,7 @@ class DataCatalogClient(object):
                 body=parse_connection_details,
                 response_type="list[ConnectionAliasSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -16914,6 +17752,7 @@ class DataCatalogClient(object):
                 body=parse_connection_details,
                 response_type="list[ConnectionAliasSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -16952,6 +17791,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.ProcessRecommendationDetails`
         :rtype: :class:`~oci.response.Response`
 
@@ -16968,6 +17811,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -17013,6 +17857,7 @@ class DataCatalogClient(object):
                 body=process_recommendation_details,
                 response_type="ProcessRecommendationDetails",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -17025,6 +17870,7 @@ class DataCatalogClient(object):
                 body=process_recommendation_details,
                 response_type="ProcessRecommendationDetails",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -17072,6 +17918,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.RecommendationCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -17088,6 +17938,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "recommendation_status",
             "opc_request_id"
@@ -17160,6 +18011,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="RecommendationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -17172,6 +18024,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="RecommendationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -17208,6 +18061,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Catalog`
         :rtype: :class:`~oci.response.Response`
 
@@ -17224,6 +18081,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -17269,6 +18127,7 @@ class DataCatalogClient(object):
                 body=remove_resource_lock_details,
                 response_type="Catalog",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -17281,6 +18140,7 @@ class DataCatalogClient(object):
                 body=remove_resource_lock_details,
                 response_type="Catalog",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -17317,6 +18177,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.CatalogPrivateEndpoint`
         :rtype: :class:`~oci.response.Response`
 
@@ -17333,6 +18197,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -17378,6 +18243,7 @@ class DataCatalogClient(object):
                 body=remove_resource_lock_details,
                 response_type="CatalogPrivateEndpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -17390,6 +18256,7 @@ class DataCatalogClient(object):
                 body=remove_resource_lock_details,
                 response_type="CatalogPrivateEndpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -17437,6 +18304,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.DataAsset`
         :rtype: :class:`~oci.response.Response`
 
@@ -17453,6 +18324,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "if_match",
@@ -17502,6 +18374,7 @@ class DataCatalogClient(object):
                 body=data_selector_pattern_details,
                 response_type="DataAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -17514,6 +18387,7 @@ class DataCatalogClient(object):
                 body=data_selector_pattern_details,
                 response_type="DataAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -17550,6 +18424,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Metastore`
         :rtype: :class:`~oci.response.Response`
 
@@ -17566,6 +18444,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -17611,6 +18490,7 @@ class DataCatalogClient(object):
                 body=remove_resource_lock_details,
                 response_type="Metastore",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -17623,6 +18503,7 @@ class DataCatalogClient(object):
                 body=remove_resource_lock_details,
                 response_type="Metastore",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -17685,6 +18566,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.SearchResultCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -17701,6 +18586,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "search_criteria_details",
             "display_name",
@@ -17789,6 +18675,7 @@ class DataCatalogClient(object):
                 body=kwargs.get('search_criteria_details'),
                 response_type="SearchResultCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -17802,6 +18689,7 @@ class DataCatalogClient(object):
                 body=kwargs.get('search_criteria_details'),
                 response_type="SearchResultCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -17840,6 +18728,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.SuggestResults`
         :rtype: :class:`~oci.response.Response`
 
@@ -17856,6 +18748,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "timeout",
             "limit",
@@ -17910,6 +18803,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="SuggestResults",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -17922,6 +18816,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="SuggestResults",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -17967,6 +18862,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type stream
         :rtype: :class:`~oci.response.Response`
 
@@ -17983,6 +18882,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -18043,6 +18943,7 @@ class DataCatalogClient(object):
                 body=synchronous_export_data_asset_details,
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -18056,6 +18957,7 @@ class DataCatalogClient(object):
                 body=synchronous_export_data_asset_details,
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -18096,6 +18998,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.ValidateConnectionResult`
         :rtype: :class:`~oci.response.Response`
 
@@ -18112,6 +19018,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -18161,6 +19068,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="ValidateConnectionResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -18172,6 +19080,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="ValidateConnectionResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -18218,6 +19127,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Attribute`
         :rtype: :class:`~oci.response.Response`
 
@@ -18234,6 +19147,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -18282,6 +19196,7 @@ class DataCatalogClient(object):
                 body=update_attribute_details,
                 response_type="Attribute",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -18294,6 +19209,7 @@ class DataCatalogClient(object):
                 body=update_attribute_details,
                 response_type="Attribute",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -18334,6 +19250,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Catalog`
         :rtype: :class:`~oci.response.Response`
 
@@ -18350,6 +19270,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id",
@@ -18402,6 +19323,7 @@ class DataCatalogClient(object):
                 body=update_catalog_details,
                 response_type="Catalog",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -18415,6 +19337,7 @@ class DataCatalogClient(object):
                 body=update_catalog_details,
                 response_type="Catalog",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -18455,6 +19378,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -18471,6 +19398,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id",
@@ -18522,6 +19450,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 body=update_catalog_private_endpoint_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -18534,6 +19463,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 body=update_catalog_private_endpoint_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -18577,6 +19507,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Connection`
         :rtype: :class:`~oci.response.Response`
 
@@ -18593,6 +19527,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -18640,6 +19575,7 @@ class DataCatalogClient(object):
                 body=update_connection_details,
                 response_type="Connection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -18652,6 +19588,7 @@ class DataCatalogClient(object):
                 body=update_connection_details,
                 response_type="Connection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -18695,6 +19632,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.CustomProperty`
         :rtype: :class:`~oci.response.Response`
 
@@ -18711,6 +19652,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -18758,6 +19700,7 @@ class DataCatalogClient(object):
                 body=update_custom_property_details,
                 response_type="CustomProperty",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -18770,6 +19713,7 @@ class DataCatalogClient(object):
                 body=update_custom_property_details,
                 response_type="CustomProperty",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -18810,6 +19754,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.DataAsset`
         :rtype: :class:`~oci.response.Response`
 
@@ -18826,6 +19774,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -18872,6 +19821,7 @@ class DataCatalogClient(object):
                 body=update_data_asset_details,
                 response_type="DataAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -18884,6 +19834,7 @@ class DataCatalogClient(object):
                 body=update_data_asset_details,
                 response_type="DataAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -18927,6 +19878,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Entity`
         :rtype: :class:`~oci.response.Response`
 
@@ -18943,6 +19898,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -18990,6 +19946,7 @@ class DataCatalogClient(object):
                 body=update_entity_details,
                 response_type="Entity",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -19002,6 +19959,7 @@ class DataCatalogClient(object):
                 body=update_entity_details,
                 response_type="Entity",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -19045,6 +20003,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Folder`
         :rtype: :class:`~oci.response.Response`
 
@@ -19061,6 +20023,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -19108,6 +20071,7 @@ class DataCatalogClient(object):
                 body=update_folder_details,
                 response_type="Folder",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -19120,6 +20084,7 @@ class DataCatalogClient(object):
                 body=update_folder_details,
                 response_type="Folder",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -19160,6 +20125,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Glossary`
         :rtype: :class:`~oci.response.Response`
 
@@ -19176,6 +20145,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -19222,6 +20192,7 @@ class DataCatalogClient(object):
                 body=update_glossary_details,
                 response_type="Glossary",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -19234,6 +20205,7 @@ class DataCatalogClient(object):
                 body=update_glossary_details,
                 response_type="Glossary",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -19274,6 +20246,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Job`
         :rtype: :class:`~oci.response.Response`
 
@@ -19290,6 +20266,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -19336,6 +20313,7 @@ class DataCatalogClient(object):
                 body=update_job_details,
                 response_type="Job",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -19348,6 +20326,7 @@ class DataCatalogClient(object):
                 body=update_job_details,
                 response_type="Job",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -19388,6 +20367,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.JobDefinition`
         :rtype: :class:`~oci.response.Response`
 
@@ -19404,6 +20387,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -19450,6 +20434,7 @@ class DataCatalogClient(object):
                 body=update_job_definition_details,
                 response_type="JobDefinition",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -19462,6 +20447,7 @@ class DataCatalogClient(object):
                 body=update_job_definition_details,
                 response_type="JobDefinition",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -19502,6 +20488,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Metastore`
         :rtype: :class:`~oci.response.Response`
 
@@ -19518,6 +20508,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id",
@@ -19570,6 +20561,7 @@ class DataCatalogClient(object):
                 body=update_metastore_details,
                 response_type="Metastore",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -19583,6 +20575,7 @@ class DataCatalogClient(object):
                 body=update_metastore_details,
                 response_type="Metastore",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -19623,6 +20616,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Namespace`
         :rtype: :class:`~oci.response.Response`
 
@@ -19639,6 +20636,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -19685,6 +20683,7 @@ class DataCatalogClient(object):
                 body=update_namespace_details,
                 response_type="Namespace",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -19697,6 +20696,7 @@ class DataCatalogClient(object):
                 body=update_namespace_details,
                 response_type="Namespace",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -19737,6 +20737,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Pattern`
         :rtype: :class:`~oci.response.Response`
 
@@ -19753,6 +20757,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -19799,6 +20804,7 @@ class DataCatalogClient(object):
                 body=update_pattern_details,
                 response_type="Pattern",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -19811,6 +20817,7 @@ class DataCatalogClient(object):
                 body=update_pattern_details,
                 response_type="Pattern",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -19854,6 +20861,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Term`
         :rtype: :class:`~oci.response.Response`
 
@@ -19870,6 +20881,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -19917,6 +20929,7 @@ class DataCatalogClient(object):
                 body=update_term_details,
                 response_type="Term",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -19929,6 +20942,7 @@ class DataCatalogClient(object):
                 body=update_term_details,
                 response_type="Term",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -19975,6 +20989,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.TermRelationship`
         :rtype: :class:`~oci.response.Response`
 
@@ -19991,6 +21009,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -20039,6 +21058,7 @@ class DataCatalogClient(object):
                 body=update_term_relationship_details,
                 response_type="TermRelationship",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -20051,6 +21071,7 @@ class DataCatalogClient(object):
                 body=update_term_relationship_details,
                 response_type="TermRelationship",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -20101,6 +21122,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Connection`
         :rtype: :class:`~oci.response.Response`
 
@@ -20117,6 +21142,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "if_match",
@@ -20167,6 +21193,7 @@ class DataCatalogClient(object):
                 body=upload_credentials_details,
                 response_type="Connection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -20179,6 +21206,7 @@ class DataCatalogClient(object):
                 body=upload_credentials_details,
                 response_type="Connection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -20222,6 +21250,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type str
         :rtype: :class:`~oci.response.Response`
 
@@ -20238,6 +21270,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "sort_by",
             "sort_order",
@@ -20309,6 +21342,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="str",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -20321,6 +21355,7 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="str",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -20361,6 +21396,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.ValidateConnectionResult`
         :rtype: :class:`~oci.response.Response`
 
@@ -20377,6 +21416,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -20426,6 +21466,7 @@ class DataCatalogClient(object):
                 body=validate_connection_details,
                 response_type="ValidateConnectionResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -20438,6 +21479,7 @@ class DataCatalogClient(object):
                 body=validate_connection_details,
                 response_type="ValidateConnectionResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -20478,6 +21520,10 @@ class DataCatalogClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.ValidatePatternResult`
         :rtype: :class:`~oci.response.Response`
 
@@ -20494,6 +21540,7 @@ class DataCatalogClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -20543,6 +21590,7 @@ class DataCatalogClient(object):
                 body=validate_pattern_details,
                 response_type="ValidatePatternResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -20555,6 +21603,7 @@ class DataCatalogClient(object):
                 body=validate_pattern_details,
                 response_type="ValidatePatternResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)

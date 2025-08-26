@@ -37,6 +37,10 @@ class DbSystemShapeSummary(object):
     #: This constant has a value of "AMPERE_FLEX_A1"
     SHAPE_TYPE_AMPERE_FLEX_A1 = "AMPERE_FLEX_A1"
 
+    #: A constant which can be used with the shape_type property of a DbSystemShapeSummary.
+    #: This constant has a value of "STANDARD_X86"
+    SHAPE_TYPE_STANDARD_X86 = "STANDARD_X86"
+
     #: A constant which can be used with the compute_model property of a DbSystemShapeSummary.
     #: This constant has a value of "ECPU"
     COMPUTE_MODEL_ECPU = "ECPU"
@@ -60,7 +64,7 @@ class DbSystemShapeSummary(object):
 
         :param shape_type:
             The value to assign to the shape_type property of this DbSystemShapeSummary.
-            Allowed values for this property are: "AMD", "INTEL", "INTEL_FLEX_X9", "AMPERE_FLEX_A1", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "AMD", "INTEL", "INTEL_FLEX_X9", "AMPERE_FLEX_A1", "STANDARD_X86", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type shape_type: str
 
@@ -154,6 +158,10 @@ class DbSystemShapeSummary(object):
             The value to assign to the available_core_count_per_node property of this DbSystemShapeSummary.
         :type available_core_count_per_node: int
 
+        :param shape_attributes:
+            The value to assign to the shape_attributes property of this DbSystemShapeSummary.
+        :type shape_attributes: list[str]
+
         """
         self.swagger_types = {
             'name': 'str',
@@ -180,7 +188,8 @@ class DbSystemShapeSummary(object):
             'are_server_types_supported': 'bool',
             'minimum_node_count': 'int',
             'maximum_node_count': 'int',
-            'available_core_count_per_node': 'int'
+            'available_core_count_per_node': 'int',
+            'shape_attributes': 'list[str]'
         }
         self.attribute_map = {
             'name': 'name',
@@ -207,7 +216,8 @@ class DbSystemShapeSummary(object):
             'are_server_types_supported': 'areServerTypesSupported',
             'minimum_node_count': 'minimumNodeCount',
             'maximum_node_count': 'maximumNodeCount',
-            'available_core_count_per_node': 'availableCoreCountPerNode'
+            'available_core_count_per_node': 'availableCoreCountPerNode',
+            'shape_attributes': 'shapeAttributes'
         }
         self._name = None
         self._shape_family = None
@@ -234,6 +244,7 @@ class DbSystemShapeSummary(object):
         self._minimum_node_count = None
         self._maximum_node_count = None
         self._available_core_count_per_node = None
+        self._shape_attributes = None
 
     @property
     def name(self):
@@ -289,7 +300,7 @@ class DbSystemShapeSummary(object):
         Gets the shape_type of this DbSystemShapeSummary.
         The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are `AMD` , `INTEL`, `INTEL_FLEX_X9` or `AMPERE_FLEX_A1`.
 
-        Allowed values for this property are: "AMD", "INTEL", "INTEL_FLEX_X9", "AMPERE_FLEX_A1", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "AMD", "INTEL", "INTEL_FLEX_X9", "AMPERE_FLEX_A1", "STANDARD_X86", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -308,7 +319,7 @@ class DbSystemShapeSummary(object):
         :param shape_type: The shape_type of this DbSystemShapeSummary.
         :type: str
         """
-        allowed_values = ["AMD", "INTEL", "INTEL_FLEX_X9", "AMPERE_FLEX_A1"]
+        allowed_values = ["AMD", "INTEL", "INTEL_FLEX_X9", "AMPERE_FLEX_A1", "STANDARD_X86"]
         if not value_allowed_none_or_none_sentinel(shape_type, allowed_values):
             shape_type = 'UNKNOWN_ENUM_VALUE'
         self._shape_type = shape_type
@@ -846,6 +857,30 @@ class DbSystemShapeSummary(object):
         :type: int
         """
         self._available_core_count_per_node = available_core_count_per_node
+
+    @property
+    def shape_attributes(self):
+        """
+        Gets the shape_attributes of this DbSystemShapeSummary.
+        The shapeAttributes of the DB system shape.
+
+
+        :return: The shape_attributes of this DbSystemShapeSummary.
+        :rtype: list[str]
+        """
+        return self._shape_attributes
+
+    @shape_attributes.setter
+    def shape_attributes(self, shape_attributes):
+        """
+        Sets the shape_attributes of this DbSystemShapeSummary.
+        The shapeAttributes of the DB system shape.
+
+
+        :param shape_attributes: The shape_attributes of this DbSystemShapeSummary.
+        :type: list[str]
+        """
+        self._shape_attributes = shape_attributes
 
     def __repr__(self):
         return formatted_flat_dict(self)

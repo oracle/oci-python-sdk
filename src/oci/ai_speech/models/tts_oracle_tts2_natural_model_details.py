@@ -89,7 +89,7 @@ class TtsOracleTts2NaturalModelDetails(TtsOracleModelDetails):
         - fr-FR: French - France
         - it-IT: Italian - Italy
         - ja-JP: Japanese - Japan
-        - zh-CN: Mandarin - China
+        - cmn-CN: Mandarin - China
 
 
         :return: The language_code of this TtsOracleTts2NaturalModelDetails.
@@ -110,7 +110,7 @@ class TtsOracleTts2NaturalModelDetails(TtsOracleModelDetails):
         - fr-FR: French - France
         - it-IT: Italian - Italy
         - ja-JP: Japanese - Japan
-        - zh-CN: Mandarin - China
+        - cmn-CN: Mandarin - China
 
 
         :param language_code: The language_code of this TtsOracleTts2NaturalModelDetails.

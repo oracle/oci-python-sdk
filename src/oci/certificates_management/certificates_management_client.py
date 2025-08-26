@@ -75,6 +75,10 @@ class CertificatesManagementClient(object):
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
+
+        :param enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this client should enable strict url encoding in path params of a request.
+            By default, the client will not enable strict url encoding
         """
         if not OCI_SDK_ENABLED_SERVICES_SET.is_service_enabled("certificates_management"):
             raise InvalidAlloyConfig("The Alloy configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local alloy-config file configured the service you're targeting or contact the cloud provider on the availability of this service")
@@ -112,6 +116,8 @@ class CertificatesManagementClient(object):
             base_client_init_kwargs['circuit_breaker_strategy'] = circuit_breaker.DEFAULT_CIRCUIT_BREAKER_STRATEGY
         if 'allow_control_chars' in kwargs:
             base_client_init_kwargs['allow_control_chars'] = kwargs.get('allow_control_chars')
+        if 'enable_strict_url_encoding' in kwargs:
+            base_client_init_kwargs['enable_strict_url_encoding'] = kwargs.get('enable_strict_url_encoding')
         self.base_client = BaseClient("certificates_management", config, signer, certificates_management_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
@@ -148,6 +154,10 @@ class CertificatesManagementClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -164,6 +174,7 @@ class CertificatesManagementClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -207,6 +218,7 @@ class CertificatesManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -217,6 +229,7 @@ class CertificatesManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -258,6 +271,10 @@ class CertificatesManagementClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -274,6 +291,7 @@ class CertificatesManagementClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -318,6 +336,7 @@ class CertificatesManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -328,6 +347,7 @@ class CertificatesManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -366,6 +386,10 @@ class CertificatesManagementClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -382,6 +406,7 @@ class CertificatesManagementClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -425,6 +450,7 @@ class CertificatesManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -435,6 +461,7 @@ class CertificatesManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -474,6 +501,10 @@ class CertificatesManagementClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -490,6 +521,7 @@ class CertificatesManagementClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -534,6 +566,7 @@ class CertificatesManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -544,6 +577,7 @@ class CertificatesManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -596,6 +630,10 @@ class CertificatesManagementClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -612,6 +650,7 @@ class CertificatesManagementClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id",
@@ -659,6 +698,7 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 body=change_ca_bundle_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -670,6 +710,7 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 body=change_ca_bundle_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -722,6 +763,10 @@ class CertificatesManagementClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -738,6 +783,7 @@ class CertificatesManagementClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id",
@@ -785,6 +831,7 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 body=change_certificate_authority_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -796,6 +843,7 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 body=change_certificate_authority_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -848,6 +896,10 @@ class CertificatesManagementClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -864,6 +916,7 @@ class CertificatesManagementClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id",
@@ -911,6 +964,7 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 body=change_certificate_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -922,6 +976,7 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 body=change_certificate_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -959,6 +1014,10 @@ class CertificatesManagementClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.certificates_management.models.CaBundle`
         :rtype: :class:`~oci.response.Response`
 
@@ -975,6 +1034,7 @@ class CertificatesManagementClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -1010,6 +1070,7 @@ class CertificatesManagementClient(object):
                 body=create_ca_bundle_details,
                 response_type="CaBundle",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1021,6 +1082,7 @@ class CertificatesManagementClient(object):
                 body=create_ca_bundle_details,
                 response_type="CaBundle",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1058,6 +1120,10 @@ class CertificatesManagementClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.certificates_management.models.Certificate`
         :rtype: :class:`~oci.response.Response`
 
@@ -1074,6 +1140,7 @@ class CertificatesManagementClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -1109,6 +1176,7 @@ class CertificatesManagementClient(object):
                 body=create_certificate_details,
                 response_type="Certificate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1120,6 +1188,7 @@ class CertificatesManagementClient(object):
                 body=create_certificate_details,
                 response_type="Certificate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1157,6 +1226,10 @@ class CertificatesManagementClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.certificates_management.models.CertificateAuthority`
         :rtype: :class:`~oci.response.Response`
 
@@ -1173,6 +1246,7 @@ class CertificatesManagementClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -1208,6 +1282,7 @@ class CertificatesManagementClient(object):
                 body=create_certificate_authority_details,
                 response_type="CertificateAuthority",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1219,6 +1294,7 @@ class CertificatesManagementClient(object):
                 body=create_certificate_authority_details,
                 response_type="CertificateAuthority",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1255,6 +1331,10 @@ class CertificatesManagementClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -1271,6 +1351,7 @@ class CertificatesManagementClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -1314,6 +1395,7 @@ class CertificatesManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1324,6 +1406,7 @@ class CertificatesManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1353,6 +1436,10 @@ class CertificatesManagementClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.certificates_management.models.Association`
         :rtype: :class:`~oci.response.Response`
 
@@ -1369,6 +1456,7 @@ class CertificatesManagementClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -1411,6 +1499,7 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 response_type="Association",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1422,6 +1511,7 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 response_type="Association",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1451,6 +1541,10 @@ class CertificatesManagementClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.certificates_management.models.CaBundle`
         :rtype: :class:`~oci.response.Response`
 
@@ -1467,6 +1561,7 @@ class CertificatesManagementClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -1509,6 +1604,7 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 response_type="CaBundle",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1520,6 +1616,7 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 response_type="CaBundle",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1549,6 +1646,10 @@ class CertificatesManagementClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.certificates_management.models.Certificate`
         :rtype: :class:`~oci.response.Response`
 
@@ -1565,6 +1666,7 @@ class CertificatesManagementClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -1607,6 +1709,7 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 response_type="Certificate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1618,6 +1721,7 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 response_type="Certificate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1647,6 +1751,10 @@ class CertificatesManagementClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.certificates_management.models.CertificateAuthority`
         :rtype: :class:`~oci.response.Response`
 
@@ -1663,6 +1771,7 @@ class CertificatesManagementClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -1705,6 +1814,7 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 response_type="CertificateAuthority",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1716,6 +1826,7 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 response_type="CertificateAuthority",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1748,6 +1859,10 @@ class CertificatesManagementClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.certificates_management.models.CertificateAuthorityVersion`
         :rtype: :class:`~oci.response.Response`
 
@@ -1764,6 +1879,7 @@ class CertificatesManagementClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -1807,6 +1923,7 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 response_type="CertificateAuthorityVersion",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1818,6 +1935,7 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 response_type="CertificateAuthorityVersion",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1850,6 +1968,10 @@ class CertificatesManagementClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.certificates_management.models.CertificateVersion`
         :rtype: :class:`~oci.response.Response`
 
@@ -1866,6 +1988,7 @@ class CertificatesManagementClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -1909,6 +2032,7 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 response_type="CertificateVersion",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1920,6 +2044,7 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 response_type="CertificateVersion",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1985,6 +2110,10 @@ class CertificatesManagementClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.certificates_management.models.AssociationCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -2001,6 +2130,7 @@ class CertificatesManagementClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "compartment_id",
@@ -2078,6 +2208,7 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 response_type="AssociationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2089,6 +2220,7 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 response_type="AssociationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2148,6 +2280,10 @@ class CertificatesManagementClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.certificates_management.models.CaBundleCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -2164,6 +2300,7 @@ class CertificatesManagementClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "compartment_id",
@@ -2237,6 +2374,7 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 response_type="CaBundleCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2248,6 +2386,7 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 response_type="CaBundleCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2311,6 +2450,10 @@ class CertificatesManagementClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.certificates_management.models.CertificateAuthorityCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -2327,6 +2470,7 @@ class CertificatesManagementClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "compartment_id",
@@ -2402,6 +2546,7 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 response_type="CertificateAuthorityCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2413,6 +2558,7 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 response_type="CertificateAuthorityCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2463,6 +2609,10 @@ class CertificatesManagementClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.certificates_management.models.CertificateAuthorityVersionCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -2479,6 +2629,7 @@ class CertificatesManagementClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "version_number",
@@ -2550,6 +2701,7 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 response_type="CertificateAuthorityVersionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2562,6 +2714,7 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 response_type="CertificateAuthorityVersionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2612,6 +2765,10 @@ class CertificatesManagementClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.certificates_management.models.CertificateVersionCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -2628,6 +2785,7 @@ class CertificatesManagementClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "version_number",
@@ -2699,6 +2857,7 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 response_type="CertificateVersionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2711,6 +2870,7 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 response_type="CertificateVersionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2774,6 +2934,10 @@ class CertificatesManagementClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.certificates_management.models.CertificateCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -2790,6 +2954,7 @@ class CertificatesManagementClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "compartment_id",
@@ -2865,6 +3030,7 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 response_type="CertificateCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2876,6 +3042,7 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 response_type="CertificateCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -2926,6 +3093,10 @@ class CertificatesManagementClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -2942,6 +3113,7 @@ class CertificatesManagementClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token",
@@ -2990,6 +3162,7 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 body=revoke_certificate_authority_version_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3001,6 +3174,7 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 body=revoke_certificate_authority_version_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3051,6 +3225,10 @@ class CertificatesManagementClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -3067,6 +3245,7 @@ class CertificatesManagementClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token",
@@ -3115,6 +3294,7 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 body=revoke_certificate_version_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3126,6 +3306,7 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 body=revoke_certificate_version_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3165,6 +3346,10 @@ class CertificatesManagementClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -3181,6 +3366,7 @@ class CertificatesManagementClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -3225,6 +3411,7 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 body=schedule_certificate_authority_deletion_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3236,6 +3423,7 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 body=schedule_certificate_authority_deletion_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3280,6 +3468,10 @@ class CertificatesManagementClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -3296,6 +3488,7 @@ class CertificatesManagementClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -3341,6 +3534,7 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 body=schedule_certificate_authority_version_deletion_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3352,6 +3546,7 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 body=schedule_certificate_authority_version_deletion_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3396,6 +3591,10 @@ class CertificatesManagementClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -3412,6 +3611,7 @@ class CertificatesManagementClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -3456,6 +3656,7 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 body=schedule_certificate_deletion_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3467,6 +3668,7 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 body=schedule_certificate_deletion_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3512,6 +3714,10 @@ class CertificatesManagementClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -3528,6 +3734,7 @@ class CertificatesManagementClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -3573,6 +3780,7 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 body=schedule_certificate_version_deletion_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3584,6 +3792,7 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 body=schedule_certificate_version_deletion_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3623,6 +3832,10 @@ class CertificatesManagementClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.certificates_management.models.CaBundle`
         :rtype: :class:`~oci.response.Response`
 
@@ -3639,6 +3852,7 @@ class CertificatesManagementClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -3684,6 +3898,7 @@ class CertificatesManagementClient(object):
                 body=update_ca_bundle_details,
                 response_type="CaBundle",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3696,6 +3911,7 @@ class CertificatesManagementClient(object):
                 body=update_ca_bundle_details,
                 response_type="CaBundle",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3735,6 +3951,10 @@ class CertificatesManagementClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.certificates_management.models.Certificate`
         :rtype: :class:`~oci.response.Response`
 
@@ -3751,6 +3971,7 @@ class CertificatesManagementClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -3796,6 +4017,7 @@ class CertificatesManagementClient(object):
                 body=update_certificate_details,
                 response_type="Certificate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3808,6 +4030,7 @@ class CertificatesManagementClient(object):
                 body=update_certificate_details,
                 response_type="Certificate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3847,6 +4070,10 @@ class CertificatesManagementClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.certificates_management.models.CertificateAuthority`
         :rtype: :class:`~oci.response.Response`
 
@@ -3863,6 +4090,7 @@ class CertificatesManagementClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
+            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -3908,6 +4136,7 @@ class CertificatesManagementClient(object):
                 body=update_certificate_authority_details,
                 response_type="CertificateAuthority",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -3920,6 +4149,7 @@ class CertificatesManagementClient(object):
                 body=update_certificate_authority_details,
                 response_type="CertificateAuthority",
                 allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)

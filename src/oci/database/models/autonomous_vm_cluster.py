@@ -833,7 +833,7 @@ class AutonomousVmCluster(object):
     def memory_per_oracle_compute_unit_in_gbs(self):
         """
         Gets the memory_per_oracle_compute_unit_in_gbs of this AutonomousVmCluster.
-        The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        The amount of memory (in GBs) to be enabled per each CPU core.
 
 
         :return: The memory_per_oracle_compute_unit_in_gbs of this AutonomousVmCluster.
@@ -845,7 +845,7 @@ class AutonomousVmCluster(object):
     def memory_per_oracle_compute_unit_in_gbs(self, memory_per_oracle_compute_unit_in_gbs):
         """
         Sets the memory_per_oracle_compute_unit_in_gbs of this AutonomousVmCluster.
-        The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        The amount of memory (in GBs) to be enabled per each CPU core.
 
 
         :param memory_per_oracle_compute_unit_in_gbs: The memory_per_oracle_compute_unit_in_gbs of this AutonomousVmCluster.

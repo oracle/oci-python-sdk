@@ -59,6 +59,14 @@ class ExadbVmCluster(object):
     #: This constant has a value of "BRING_YOUR_OWN_LICENSE"
     LICENSE_MODEL_BRING_YOUR_OWN_LICENSE = "BRING_YOUR_OWN_LICENSE"
 
+    #: A constant which can be used with the shape_attribute property of a ExadbVmCluster.
+    #: This constant has a value of "SMART_STORAGE"
+    SHAPE_ATTRIBUTE_SMART_STORAGE = "SMART_STORAGE"
+
+    #: A constant which can be used with the shape_attribute property of a ExadbVmCluster.
+    #: This constant has a value of "BLOCK_STORAGE"
+    SHAPE_ATTRIBUTE_BLOCK_STORAGE = "BLOCK_STORAGE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ExadbVmCluster object with values from keyword arguments.
@@ -262,6 +270,12 @@ class ExadbVmCluster(object):
             The value to assign to the subscription_id property of this ExadbVmCluster.
         :type subscription_id: str
 
+        :param shape_attribute:
+            The value to assign to the shape_attribute property of this ExadbVmCluster.
+            Allowed values for this property are: "SMART_STORAGE", "BLOCK_STORAGE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type shape_attribute: str
+
         """
         self.swagger_types = {
             'iorm_config_cache': 'ExadataIormConfig',
@@ -311,7 +325,8 @@ class ExadbVmCluster(object):
             'exascale_db_storage_vault_id': 'str',
             'memory_size_in_gbs': 'int',
             'cluster_placement_group_id': 'str',
-            'subscription_id': 'str'
+            'subscription_id': 'str',
+            'shape_attribute': 'str'
         }
         self.attribute_map = {
             'iorm_config_cache': 'iormConfigCache',
@@ -361,7 +376,8 @@ class ExadbVmCluster(object):
             'exascale_db_storage_vault_id': 'exascaleDbStorageVaultId',
             'memory_size_in_gbs': 'memorySizeInGBs',
             'cluster_placement_group_id': 'clusterPlacementGroupId',
-            'subscription_id': 'subscriptionId'
+            'subscription_id': 'subscriptionId',
+            'shape_attribute': 'shapeAttribute'
         }
         self._iorm_config_cache = None
         self._id = None
@@ -411,6 +427,7 @@ class ExadbVmCluster(object):
         self._memory_size_in_gbs = None
         self._cluster_placement_group_id = None
         self._subscription_id = None
+        self._shape_attribute = None
 
     @property
     def iorm_config_cache(self):
@@ -1691,6 +1708,36 @@ class ExadbVmCluster(object):
         :type: str
         """
         self._subscription_id = subscription_id
+
+    @property
+    def shape_attribute(self):
+        """
+        Gets the shape_attribute of this ExadbVmCluster.
+        The type of Exascale storage used for Exadata VM cluster. The default is SMART_STORAGE which supports Oracle Database 23ai and later
+
+        Allowed values for this property are: "SMART_STORAGE", "BLOCK_STORAGE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The shape_attribute of this ExadbVmCluster.
+        :rtype: str
+        """
+        return self._shape_attribute
+
+    @shape_attribute.setter
+    def shape_attribute(self, shape_attribute):
+        """
+        Sets the shape_attribute of this ExadbVmCluster.
+        The type of Exascale storage used for Exadata VM cluster. The default is SMART_STORAGE which supports Oracle Database 23ai and later
+
+
+        :param shape_attribute: The shape_attribute of this ExadbVmCluster.
+        :type: str
+        """
+        allowed_values = ["SMART_STORAGE", "BLOCK_STORAGE"]
+        if not value_allowed_none_or_none_sentinel(shape_attribute, allowed_values):
+            shape_attribute = 'UNKNOWN_ENUM_VALUE'
+        self._shape_attribute = shape_attribute
 
     def __repr__(self):
         return formatted_flat_dict(self)

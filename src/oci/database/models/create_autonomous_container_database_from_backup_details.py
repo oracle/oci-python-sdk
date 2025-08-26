@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateAutonomousContainerDatabaseFromBackupDetails(CreateAutonomousContainerDatabaseBase):
     """
-    Details to create an Oracle Autonomous Container Database by cloning from a backup of an existing Autonomous Container Database.
+    Details to create an Autonomous Container Database (ACD) by cloning a backup of an existing ACD.
     """
 
     def __init__(self, **kwargs):
@@ -319,7 +319,7 @@ class CreateAutonomousContainerDatabaseFromBackupDetails(CreateAutonomousContain
     def autonomous_container_database_backup_id(self):
         """
         **[Required]** Gets the autonomous_container_database_backup_id of this CreateAutonomousContainerDatabaseFromBackupDetails.
-        The `OCID`__ of the source Autonomous Container Database Backup that you will clone to create a new Autonomous Container Database.
+        The `OCID`__ of the source ACD backup that you will clone to create a new ACD.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -333,7 +333,7 @@ class CreateAutonomousContainerDatabaseFromBackupDetails(CreateAutonomousContain
     def autonomous_container_database_backup_id(self, autonomous_container_database_backup_id):
         """
         Sets the autonomous_container_database_backup_id of this CreateAutonomousContainerDatabaseFromBackupDetails.
-        The `OCID`__ of the source Autonomous Container Database Backup that you will clone to create a new Autonomous Container Database.
+        The `OCID`__ of the source ACD backup that you will clone to create a new ACD.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

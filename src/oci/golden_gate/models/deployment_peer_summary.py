@@ -100,6 +100,10 @@ class DeploymentPeerSummary(object):
             The value to assign to the time_role_changed property of this DeploymentPeerSummary.
         :type time_role_changed: datetime
 
+        :param time_last_synced:
+            The value to assign to the time_last_synced property of this DeploymentPeerSummary.
+        :type time_last_synced: datetime
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this DeploymentPeerSummary.
             Allowed values for this property are: "CREATING", "ACTIVE", "FAILED", "UPDATING", "DELETING", 'UNKNOWN_ENUM_VALUE'.
@@ -118,6 +122,7 @@ class DeploymentPeerSummary(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'time_role_changed': 'datetime',
+            'time_last_synced': 'datetime',
             'lifecycle_state': 'str'
         }
         self.attribute_map = {
@@ -131,6 +136,7 @@ class DeploymentPeerSummary(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'time_role_changed': 'timeRoleChanged',
+            'time_last_synced': 'timeLastSynced',
             'lifecycle_state': 'lifecycleState'
         }
         self._deployment_id = None
@@ -143,6 +149,7 @@ class DeploymentPeerSummary(object):
         self._time_created = None
         self._time_updated = None
         self._time_role_changed = None
+        self._time_last_synced = None
         self._lifecycle_state = None
 
     @property
@@ -420,6 +427,36 @@ class DeploymentPeerSummary(object):
         :type: datetime
         """
         self._time_role_changed = time_role_changed
+
+    @property
+    def time_last_synced(self):
+        """
+        Gets the time_last_synced of this DeploymentPeerSummary.
+        The time of the last data synchronization from the primary to the standby peer.
+        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_last_synced of this DeploymentPeerSummary.
+        :rtype: datetime
+        """
+        return self._time_last_synced
+
+    @time_last_synced.setter
+    def time_last_synced(self, time_last_synced):
+        """
+        Sets the time_last_synced of this DeploymentPeerSummary.
+        The time of the last data synchronization from the primary to the standby peer.
+        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_last_synced: The time_last_synced of this DeploymentPeerSummary.
+        :type: datetime
+        """
+        self._time_last_synced = time_last_synced
 
     @property
     def lifecycle_state(self):

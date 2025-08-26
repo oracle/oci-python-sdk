@@ -63,23 +63,28 @@ class UpdateDrProtectionGroupMemberDetails(object):
     #: This constant has a value of "OBJECT_STORAGE_BUCKET"
     MEMBER_TYPE_OBJECT_STORAGE_BUCKET = "OBJECT_STORAGE_BUCKET"
 
+    #: A constant which can be used with the member_type property of a UpdateDrProtectionGroupMemberDetails.
+    #: This constant has a value of "MYSQL_DB_SYSTEM"
+    MEMBER_TYPE_MYSQL_DB_SYSTEM = "MYSQL_DB_SYSTEM"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateDrProtectionGroupMemberDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberComputeInstanceDetails`
+        * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberMySqlDbSystemDetails`
         * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberNetworkLoadBalancerDetails`
-        * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberOkeClusterDetails`
         * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberAutonomousDatabaseDetails`
         * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberFileSystemDetails`
         * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberVolumeGroupDetails`
+        * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberLoadBalancerDetails`
+        * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberDatabaseDetails`
+        * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberOkeClusterDetails`
         * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails`
         * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberAutonomousContainerDatabaseDetails`
-        * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberLoadBalancerDetails`
         * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberObjectStorageBucketDetails`
         * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberComputeInstanceMovableDetails`
-        * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberDatabaseDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -89,7 +94,7 @@ class UpdateDrProtectionGroupMemberDetails(object):
 
         :param member_type:
             The value to assign to the member_type property of this UpdateDrProtectionGroupMemberDetails.
-            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OKE_CLUSTER", "OBJECT_STORAGE_BUCKET"
+            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OKE_CLUSTER", "OBJECT_STORAGE_BUCKET", "MYSQL_DB_SYSTEM"
         :type member_type: str
 
         """
@@ -115,11 +120,11 @@ class UpdateDrProtectionGroupMemberDetails(object):
         if type == 'COMPUTE_INSTANCE':
             return 'UpdateDrProtectionGroupMemberComputeInstanceDetails'
 
+        if type == 'MYSQL_DB_SYSTEM':
+            return 'UpdateDrProtectionGroupMemberMySqlDbSystemDetails'
+
         if type == 'NETWORK_LOAD_BALANCER':
             return 'UpdateDrProtectionGroupMemberNetworkLoadBalancerDetails'
-
-        if type == 'OKE_CLUSTER':
-            return 'UpdateDrProtectionGroupMemberOkeClusterDetails'
 
         if type == 'AUTONOMOUS_DATABASE':
             return 'UpdateDrProtectionGroupMemberAutonomousDatabaseDetails'
@@ -130,23 +135,26 @@ class UpdateDrProtectionGroupMemberDetails(object):
         if type == 'VOLUME_GROUP':
             return 'UpdateDrProtectionGroupMemberVolumeGroupDetails'
 
+        if type == 'LOAD_BALANCER':
+            return 'UpdateDrProtectionGroupMemberLoadBalancerDetails'
+
+        if type == 'DATABASE':
+            return 'UpdateDrProtectionGroupMemberDatabaseDetails'
+
+        if type == 'OKE_CLUSTER':
+            return 'UpdateDrProtectionGroupMemberOkeClusterDetails'
+
         if type == 'COMPUTE_INSTANCE_NON_MOVABLE':
             return 'UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails'
 
         if type == 'AUTONOMOUS_CONTAINER_DATABASE':
             return 'UpdateDrProtectionGroupMemberAutonomousContainerDatabaseDetails'
 
-        if type == 'LOAD_BALANCER':
-            return 'UpdateDrProtectionGroupMemberLoadBalancerDetails'
-
         if type == 'OBJECT_STORAGE_BUCKET':
             return 'UpdateDrProtectionGroupMemberObjectStorageBucketDetails'
 
         if type == 'COMPUTE_INSTANCE_MOVABLE':
             return 'UpdateDrProtectionGroupMemberComputeInstanceMovableDetails'
-
-        if type == 'DATABASE':
-            return 'UpdateDrProtectionGroupMemberDatabaseDetails'
         else:
             return 'UpdateDrProtectionGroupMemberDetails'
 
@@ -184,7 +192,7 @@ class UpdateDrProtectionGroupMemberDetails(object):
         **[Required]** Gets the member_type of this UpdateDrProtectionGroupMemberDetails.
         The type of the member.
 
-        Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OKE_CLUSTER", "OBJECT_STORAGE_BUCKET"
+        Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OKE_CLUSTER", "OBJECT_STORAGE_BUCKET", "MYSQL_DB_SYSTEM"
 
 
         :return: The member_type of this UpdateDrProtectionGroupMemberDetails.
@@ -202,7 +210,7 @@ class UpdateDrProtectionGroupMemberDetails(object):
         :param member_type: The member_type of this UpdateDrProtectionGroupMemberDetails.
         :type: str
         """
-        allowed_values = ["COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OKE_CLUSTER", "OBJECT_STORAGE_BUCKET"]
+        allowed_values = ["COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OKE_CLUSTER", "OBJECT_STORAGE_BUCKET", "MYSQL_DB_SYSTEM"]
         if not value_allowed_none_or_none_sentinel(member_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `member_type`, must be None or one of {allowed_values}"

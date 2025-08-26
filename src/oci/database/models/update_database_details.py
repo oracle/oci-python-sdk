@@ -42,6 +42,10 @@ class UpdateDatabaseDetails(object):
             The value to assign to the new_tde_wallet_password property of this UpdateDatabaseDetails.
         :type new_tde_wallet_password: str
 
+        :param storage_size_details:
+            The value to assign to the storage_size_details property of this UpdateDatabaseDetails.
+        :type storage_size_details: oci.database.models.DatabaseStorageSizeDetails
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateDatabaseDetails.
         :type freeform_tags: dict(str, str)
@@ -57,6 +61,7 @@ class UpdateDatabaseDetails(object):
             'new_admin_password': 'str',
             'old_tde_wallet_password': 'str',
             'new_tde_wallet_password': 'str',
+            'storage_size_details': 'DatabaseStorageSizeDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -66,6 +71,7 @@ class UpdateDatabaseDetails(object):
             'new_admin_password': 'newAdminPassword',
             'old_tde_wallet_password': 'oldTdeWalletPassword',
             'new_tde_wallet_password': 'newTdeWalletPassword',
+            'storage_size_details': 'storageSizeDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -74,6 +80,7 @@ class UpdateDatabaseDetails(object):
         self._new_admin_password = None
         self._old_tde_wallet_password = None
         self._new_tde_wallet_password = None
+        self._storage_size_details = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -196,6 +203,26 @@ class UpdateDatabaseDetails(object):
         :type: str
         """
         self._new_tde_wallet_password = new_tde_wallet_password
+
+    @property
+    def storage_size_details(self):
+        """
+        Gets the storage_size_details of this UpdateDatabaseDetails.
+
+        :return: The storage_size_details of this UpdateDatabaseDetails.
+        :rtype: oci.database.models.DatabaseStorageSizeDetails
+        """
+        return self._storage_size_details
+
+    @storage_size_details.setter
+    def storage_size_details(self, storage_size_details):
+        """
+        Sets the storage_size_details of this UpdateDatabaseDetails.
+
+        :param storage_size_details: The storage_size_details of this UpdateDatabaseDetails.
+        :type: oci.database.models.DatabaseStorageSizeDetails
+        """
+        self._storage_size_details = storage_size_details
 
     @property
     def freeform_tags(self):
