@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class OracleDbAzureConnector(object):
     """
-    Oracle DB Azure Connector Details, this resource is for to create Azure Identity on Database Resource.
+    Oracle DB Azure Connector resource.
     """
 
     #: A constant which can be used with the azure_identity_mechanism property of a OracleDbAzureConnector.
@@ -46,6 +46,22 @@ class OracleDbAzureConnector(object):
     #: A constant which can be used with the lifecycle_state property of a OracleDbAzureConnector.
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
+
+    #: A constant which can be used with the azure_identity_connectivity_status property of a OracleDbAzureConnector.
+    #: This constant has a value of "CONNECTED"
+    AZURE_IDENTITY_CONNECTIVITY_STATUS_CONNECTED = "CONNECTED"
+
+    #: A constant which can be used with the azure_identity_connectivity_status property of a OracleDbAzureConnector.
+    #: This constant has a value of "DISCONNECTED"
+    AZURE_IDENTITY_CONNECTIVITY_STATUS_DISCONNECTED = "DISCONNECTED"
+
+    #: A constant which can be used with the azure_identity_connectivity_status property of a OracleDbAzureConnector.
+    #: This constant has a value of "PARTIALLY_CONNECTED"
+    AZURE_IDENTITY_CONNECTIVITY_STATUS_PARTIALLY_CONNECTED = "PARTIALLY_CONNECTED"
+
+    #: A constant which can be used with the azure_identity_connectivity_status property of a OracleDbAzureConnector.
+    #: This constant has a value of "UNKNOWN"
+    AZURE_IDENTITY_CONNECTIVITY_STATUS_UNKNOWN = "UNKNOWN"
 
     def __init__(self, **kwargs):
         """
@@ -112,6 +128,12 @@ class OracleDbAzureConnector(object):
             The value to assign to the lifecycle_state_details property of this OracleDbAzureConnector.
         :type lifecycle_state_details: str
 
+        :param azure_identity_connectivity_status:
+            The value to assign to the azure_identity_connectivity_status property of this OracleDbAzureConnector.
+            Allowed values for this property are: "CONNECTED", "DISCONNECTED", "PARTIALLY_CONNECTED", "UNKNOWN", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type azure_identity_connectivity_status: str
+
         :param time_created:
             The value to assign to the time_created property of this OracleDbAzureConnector.
         :type time_created: datetime
@@ -152,6 +174,7 @@ class OracleDbAzureConnector(object):
             'azure_identity_mechanism': 'str',
             'lifecycle_state': 'str',
             'lifecycle_state_details': 'str',
+            'azure_identity_connectivity_status': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'last_modification': 'str',
@@ -174,6 +197,7 @@ class OracleDbAzureConnector(object):
             'azure_identity_mechanism': 'azureIdentityMechanism',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_state_details': 'lifecycleStateDetails',
+            'azure_identity_connectivity_status': 'azureIdentityConnectivityStatus',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'last_modification': 'lastModification',
@@ -195,6 +219,7 @@ class OracleDbAzureConnector(object):
         self._azure_identity_mechanism = None
         self._lifecycle_state = None
         self._lifecycle_state_details = None
+        self._azure_identity_connectivity_status = None
         self._time_created = None
         self._time_updated = None
         self._last_modification = None
@@ -206,7 +231,9 @@ class OracleDbAzureConnector(object):
     def id(self):
         """
         **[Required]** Gets the id of this OracleDbAzureConnector.
-        The ID of the Oracle DB Azure Connector resource.
+        The `OCID`__ of the Oracle DB Azure Connector resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this OracleDbAzureConnector.
@@ -218,7 +245,9 @@ class OracleDbAzureConnector(object):
     def id(self, id):
         """
         Sets the id of this OracleDbAzureConnector.
-        The ID of the Oracle DB Azure Connector resource.
+        The `OCID`__ of the Oracle DB Azure Connector resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this OracleDbAzureConnector.
@@ -254,7 +283,9 @@ class OracleDbAzureConnector(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this OracleDbAzureConnector.
-        The ID of the compartment that contains Oracle DB Azure Connector resource.
+        The `OCID`__ of the compartment that contains Oracle DB Azure Connector resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this OracleDbAzureConnector.
@@ -266,7 +297,9 @@ class OracleDbAzureConnector(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this OracleDbAzureConnector.
-        The ID of the compartment that contains Oracle DB Azure Connector resource.
+        The `OCID`__ of the compartment that contains Oracle DB Azure Connector resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this OracleDbAzureConnector.
@@ -278,7 +311,7 @@ class OracleDbAzureConnector(object):
     def arc_agent_nodes(self):
         """
         Gets the arc_agent_nodes of this OracleDbAzureConnector.
-        List of All VMs where Arc Agent is Install under VMCluster.
+        List of all VMs where Arc Agent is installed under Cloud VM Cluster.
 
 
         :return: The arc_agent_nodes of this OracleDbAzureConnector.
@@ -290,7 +323,7 @@ class OracleDbAzureConnector(object):
     def arc_agent_nodes(self, arc_agent_nodes):
         """
         Sets the arc_agent_nodes of this OracleDbAzureConnector.
-        List of All VMs where Arc Agent is Install under VMCluster.
+        List of all VMs where Arc Agent is installed under Cloud VM Cluster.
 
 
         :param arc_agent_nodes: The arc_agent_nodes of this OracleDbAzureConnector.
@@ -302,7 +335,9 @@ class OracleDbAzureConnector(object):
     def db_cluster_resource_id(self):
         """
         **[Required]** Gets the db_cluster_resource_id of this OracleDbAzureConnector.
-        The ID of the DB Cluster Resource where this Azure Arc Agent identity to configure.
+        The `OCID`__ of the Oracle DB Cloud VM Cluster resource where this Azure Arc Agent identity to configure.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The db_cluster_resource_id of this OracleDbAzureConnector.
@@ -314,7 +349,9 @@ class OracleDbAzureConnector(object):
     def db_cluster_resource_id(self, db_cluster_resource_id):
         """
         Sets the db_cluster_resource_id of this OracleDbAzureConnector.
-        The ID of the DB Cluster Resource where this Azure Arc Agent identity to configure.
+        The `OCID`__ of the Oracle DB Cloud VM Cluster resource where this Azure Arc Agent identity to configure.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param db_cluster_resource_id: The db_cluster_resource_id of this OracleDbAzureConnector.
@@ -374,7 +411,7 @@ class OracleDbAzureConnector(object):
     def azure_resource_group(self):
         """
         **[Required]** Gets the azure_resource_group of this OracleDbAzureConnector.
-        Azure Resource Group Name.
+        Azure Resource group name.
 
 
         :return: The azure_resource_group of this OracleDbAzureConnector.
@@ -386,7 +423,7 @@ class OracleDbAzureConnector(object):
     def azure_resource_group(self, azure_resource_group):
         """
         Sets the azure_resource_group of this OracleDbAzureConnector.
-        Azure Resource Group Name.
+        Azure Resource group name.
 
 
         :param azure_resource_group: The azure_resource_group of this OracleDbAzureConnector.
@@ -398,7 +435,7 @@ class OracleDbAzureConnector(object):
     def access_token(self):
         """
         Gets the access_token of this OracleDbAzureConnector.
-        Azure bearer access token. If bearer access token is provided then Service Principal detail is not required.
+        Azure bearer access token.
 
 
         :return: The access_token of this OracleDbAzureConnector.
@@ -410,7 +447,7 @@ class OracleDbAzureConnector(object):
     def access_token(self, access_token):
         """
         Sets the access_token of this OracleDbAzureConnector.
-        Azure bearer access token. If bearer access token is provided then Service Principal detail is not required.
+        Azure bearer access token.
 
 
         :param access_token: The access_token of this OracleDbAzureConnector.
@@ -446,7 +483,7 @@ class OracleDbAzureConnector(object):
     def private_endpoint_dns_alias(self):
         """
         Gets the private_endpoint_dns_alias of this OracleDbAzureConnector.
-        Private endpoint DNS Alias.
+        Private endpoint's DNS alias.
 
 
         :return: The private_endpoint_dns_alias of this OracleDbAzureConnector.
@@ -458,7 +495,7 @@ class OracleDbAzureConnector(object):
     def private_endpoint_dns_alias(self, private_endpoint_dns_alias):
         """
         Sets the private_endpoint_dns_alias of this OracleDbAzureConnector.
-        Private endpoint DNS Alias.
+        Private endpoint's DNS alias.
 
 
         :param private_endpoint_dns_alias: The private_endpoint_dns_alias of this OracleDbAzureConnector.
@@ -470,7 +507,7 @@ class OracleDbAzureConnector(object):
     def azure_identity_mechanism(self):
         """
         Gets the azure_identity_mechanism of this OracleDbAzureConnector.
-        Azure Identity Mechanism.
+        Azure Identity mechanism.
 
         Allowed values for this property are: "ARC_AGENT", "SERVICE_PRINCIPAL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -485,7 +522,7 @@ class OracleDbAzureConnector(object):
     def azure_identity_mechanism(self, azure_identity_mechanism):
         """
         Sets the azure_identity_mechanism of this OracleDbAzureConnector.
-        Azure Identity Mechanism.
+        Azure Identity mechanism.
 
 
         :param azure_identity_mechanism: The azure_identity_mechanism of this OracleDbAzureConnector.
@@ -500,7 +537,7 @@ class OracleDbAzureConnector(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this OracleDbAzureConnector.
-        The current lifecycle state of the Azure Arc Agent Resource.
+        The current lifecycle state of the Azure Arc Agent resource.
 
         Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -515,7 +552,7 @@ class OracleDbAzureConnector(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this OracleDbAzureConnector.
-        The current lifecycle state of the Azure Arc Agent Resource.
+        The current lifecycle state of the Azure Arc Agent resource.
 
 
         :param lifecycle_state: The lifecycle_state of this OracleDbAzureConnector.
@@ -551,10 +588,40 @@ class OracleDbAzureConnector(object):
         self._lifecycle_state_details = lifecycle_state_details
 
     @property
+    def azure_identity_connectivity_status(self):
+        """
+        Gets the azure_identity_connectivity_status of this OracleDbAzureConnector.
+        The current Connectivity status of Azure Identity Connector resource.
+
+        Allowed values for this property are: "CONNECTED", "DISCONNECTED", "PARTIALLY_CONNECTED", "UNKNOWN", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The azure_identity_connectivity_status of this OracleDbAzureConnector.
+        :rtype: str
+        """
+        return self._azure_identity_connectivity_status
+
+    @azure_identity_connectivity_status.setter
+    def azure_identity_connectivity_status(self, azure_identity_connectivity_status):
+        """
+        Sets the azure_identity_connectivity_status of this OracleDbAzureConnector.
+        The current Connectivity status of Azure Identity Connector resource.
+
+
+        :param azure_identity_connectivity_status: The azure_identity_connectivity_status of this OracleDbAzureConnector.
+        :type: str
+        """
+        allowed_values = ["CONNECTED", "DISCONNECTED", "PARTIALLY_CONNECTED", "UNKNOWN"]
+        if not value_allowed_none_or_none_sentinel(azure_identity_connectivity_status, allowed_values):
+            azure_identity_connectivity_status = 'UNKNOWN_ENUM_VALUE'
+        self._azure_identity_connectivity_status = azure_identity_connectivity_status
+
+    @property
     def time_created(self):
         """
         Gets the time_created of this OracleDbAzureConnector.
-        Time when the Oracle DB Azure Connector Resource was created expressed in `RFC 3339`__ timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Oracle DB Azure Connector resource was created expressed in `RFC 3339`__ timestamp format, e.g. '2020-05-22T21:10:29.600Z'
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -568,7 +635,7 @@ class OracleDbAzureConnector(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this OracleDbAzureConnector.
-        Time when the Oracle DB Azure Connector Resource was created expressed in `RFC 3339`__ timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Oracle DB Azure Connector resource was created expressed in `RFC 3339`__ timestamp format, e.g. '2020-05-22T21:10:29.600Z'
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -582,7 +649,7 @@ class OracleDbAzureConnector(object):
     def time_updated(self):
         """
         Gets the time_updated of this OracleDbAzureConnector.
-        Time when the Oracle DB Azure Connector Resource was last modified expressed in `RFC 3339`__ timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Oracle DB Azure Connector resource was last modified expressed in `RFC 3339`__ timestamp format, e.g. '2020-05-22T21:10:29.600Z'
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -596,7 +663,7 @@ class OracleDbAzureConnector(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this OracleDbAzureConnector.
-        Time when the Oracle DB Azure Connector Resource was last modified expressed in `RFC 3339`__ timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Oracle DB Azure Connector resource was last modified expressed in `RFC 3339`__ timestamp format, e.g. '2020-05-22T21:10:29.600Z'
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -610,7 +677,7 @@ class OracleDbAzureConnector(object):
     def last_modification(self):
         """
         Gets the last_modification of this OracleDbAzureConnector.
-        Description of the latest modification of the Oracle DB Azure Connector Resource.
+        Description of the latest modification of the Oracle DB Azure Connector resource.
 
 
         :return: The last_modification of this OracleDbAzureConnector.
@@ -622,7 +689,7 @@ class OracleDbAzureConnector(object):
     def last_modification(self, last_modification):
         """
         Sets the last_modification of this OracleDbAzureConnector.
-        Description of the latest modification of the Oracle DB Azure Connector Resource.
+        Description of the latest modification of the Oracle DB Azure Connector resource.
 
 
         :param last_modification: The last_modification of this OracleDbAzureConnector.

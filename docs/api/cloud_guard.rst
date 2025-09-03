@@ -22,6 +22,7 @@ Cloud Guard
     oci.cloud_guard.models.ActivityProblemAggregation
     oci.cloud_guard.models.ActivityProblemAggregationCollection
     oci.cloud_guard.models.AddCompartmentDetails
+    oci.cloud_guard.models.AdditionalConfigPropertyDefinition
     oci.cloud_guard.models.AdhocQuery
     oci.cloud_guard.models.AdhocQueryCollection
     oci.cloud_guard.models.AdhocQueryDetails
@@ -183,6 +184,7 @@ Cloud Guard
     oci.cloud_guard.models.RiskScoreAggregation
     oci.cloud_guard.models.RiskScoreAggregationCollection
     oci.cloud_guard.models.RuleSummary
+    oci.cloud_guard.models.RuleType
     oci.cloud_guard.models.SavedQuery
     oci.cloud_guard.models.SavedQueryCollection
     oci.cloud_guard.models.SavedQuerySummary

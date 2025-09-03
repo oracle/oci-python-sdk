@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateOracleDbAzureConnectorDetails(object):
     """
-    This object is about to provide input params to update Oracle DB Azure Connector Resource.
+    Update Oracle DB Azure Connector resource object.
     """
 
     def __init__(self, **kwargs):
@@ -114,7 +114,9 @@ class UpdateOracleDbAzureConnectorDetails(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this UpdateOracleDbAzureConnectorDetails.
-        The ID of the compartment that contains Oracle DB Azure Connector Resource.
+        The `OCID`__ of the compartment that contains Oracle DB Azure Connector resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this UpdateOracleDbAzureConnectorDetails.
@@ -126,7 +128,9 @@ class UpdateOracleDbAzureConnectorDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this UpdateOracleDbAzureConnectorDetails.
-        The ID of the compartment that contains Oracle DB Azure Connector Resource.
+        The `OCID`__ of the compartment that contains Oracle DB Azure Connector resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this UpdateOracleDbAzureConnectorDetails.
@@ -138,7 +142,7 @@ class UpdateOracleDbAzureConnectorDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateOracleDbAzureConnectorDetails.
-        Oracle DB Azure Connector Resource name.
+        Oracle DB Azure Connector resource name.
 
 
         :return: The display_name of this UpdateOracleDbAzureConnectorDetails.
@@ -150,7 +154,7 @@ class UpdateOracleDbAzureConnectorDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateOracleDbAzureConnectorDetails.
-        Oracle DB Azure Connector Resource name.
+        Oracle DB Azure Connector resource name.
 
 
         :param display_name: The display_name of this UpdateOracleDbAzureConnectorDetails.
@@ -162,7 +166,9 @@ class UpdateOracleDbAzureConnectorDetails(object):
     def db_cluster_resource_id(self):
         """
         Gets the db_cluster_resource_id of this UpdateOracleDbAzureConnectorDetails.
-        The ID of the Oracle DB Cluster Resource where this Azure Arc Agent Identity to configure.
+        The `OCID`__ of the Oracle DB Cloud VM Cluster resource where this Azure Arc Agent Identity to configure.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The db_cluster_resource_id of this UpdateOracleDbAzureConnectorDetails.
@@ -174,7 +180,9 @@ class UpdateOracleDbAzureConnectorDetails(object):
     def db_cluster_resource_id(self, db_cluster_resource_id):
         """
         Sets the db_cluster_resource_id of this UpdateOracleDbAzureConnectorDetails.
-        The ID of the Oracle DB Cluster Resource where this Azure Arc Agent Identity to configure.
+        The `OCID`__ of the Oracle DB Cloud VM Cluster resource where this Azure Arc Agent Identity to configure.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param db_cluster_resource_id: The db_cluster_resource_id of this UpdateOracleDbAzureConnectorDetails.
@@ -186,7 +194,7 @@ class UpdateOracleDbAzureConnectorDetails(object):
     def azure_identity_mechanism(self):
         """
         Gets the azure_identity_mechanism of this UpdateOracleDbAzureConnectorDetails.
-        Azure Identity Mechanism.
+        Azure Identity mechanism.
 
 
         :return: The azure_identity_mechanism of this UpdateOracleDbAzureConnectorDetails.
@@ -198,7 +206,7 @@ class UpdateOracleDbAzureConnectorDetails(object):
     def azure_identity_mechanism(self, azure_identity_mechanism):
         """
         Sets the azure_identity_mechanism of this UpdateOracleDbAzureConnectorDetails.
-        Azure Identity Mechanism.
+        Azure Identity mechanism.
 
 
         :param azure_identity_mechanism: The azure_identity_mechanism of this UpdateOracleDbAzureConnectorDetails.
@@ -258,7 +266,7 @@ class UpdateOracleDbAzureConnectorDetails(object):
     def azure_resource_group(self):
         """
         Gets the azure_resource_group of this UpdateOracleDbAzureConnectorDetails.
-        Azure Resource Group Name.
+        Azure Resource group name.
 
 
         :return: The azure_resource_group of this UpdateOracleDbAzureConnectorDetails.
@@ -270,7 +278,7 @@ class UpdateOracleDbAzureConnectorDetails(object):
     def azure_resource_group(self, azure_resource_group):
         """
         Sets the azure_resource_group of this UpdateOracleDbAzureConnectorDetails.
-        Azure Resource Group Name.
+        Azure Resource group name.
 
 
         :param azure_resource_group: The azure_resource_group of this UpdateOracleDbAzureConnectorDetails.
@@ -282,7 +290,7 @@ class UpdateOracleDbAzureConnectorDetails(object):
     def access_token(self):
         """
         Gets the access_token of this UpdateOracleDbAzureConnectorDetails.
-        Azure bearer access token. If bearer access token is provided then Service Principal detail is not required.
+        Azure bearer access token.
 
 
         :return: The access_token of this UpdateOracleDbAzureConnectorDetails.
@@ -294,7 +302,7 @@ class UpdateOracleDbAzureConnectorDetails(object):
     def access_token(self, access_token):
         """
         Sets the access_token of this UpdateOracleDbAzureConnectorDetails.
-        Azure bearer access token. If bearer access token is provided then Service Principal detail is not required.
+        Azure bearer access token.
 
 
         :param access_token: The access_token of this UpdateOracleDbAzureConnectorDetails.
@@ -330,7 +338,7 @@ class UpdateOracleDbAzureConnectorDetails(object):
     def private_endpoint_dns_alias(self):
         """
         Gets the private_endpoint_dns_alias of this UpdateOracleDbAzureConnectorDetails.
-        Private endpoint DNS Alias.
+        Private endpoint's DNS alias.
 
 
         :return: The private_endpoint_dns_alias of this UpdateOracleDbAzureConnectorDetails.
@@ -342,7 +350,7 @@ class UpdateOracleDbAzureConnectorDetails(object):
     def private_endpoint_dns_alias(self, private_endpoint_dns_alias):
         """
         Sets the private_endpoint_dns_alias of this UpdateOracleDbAzureConnectorDetails.
-        Private endpoint DNS Alias.
+        Private endpoint's DNS alias.
 
 
         :param private_endpoint_dns_alias: The private_endpoint_dns_alias of this UpdateOracleDbAzureConnectorDetails.

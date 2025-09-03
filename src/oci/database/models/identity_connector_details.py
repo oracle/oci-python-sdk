@@ -19,6 +19,10 @@ class IdentityConnectorDetails(object):
     #: This constant has a value of "AZURE"
     CLOUD_PROVIDER_AZURE = "AZURE"
 
+    #: A constant which can be used with the cloud_provider property of a IdentityConnectorDetails.
+    #: This constant has a value of "GCP"
+    CLOUD_PROVIDER_GCP = "GCP"
+
     def __init__(self, **kwargs):
         """
         Initializes a new IdentityConnectorDetails object with values from keyword arguments.
@@ -30,7 +34,7 @@ class IdentityConnectorDetails(object):
 
         :param cloud_provider:
             The value to assign to the cloud_provider property of this IdentityConnectorDetails.
-            Allowed values for this property are: "AZURE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "AZURE", "GCP", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type cloud_provider: str
 
@@ -76,7 +80,7 @@ class IdentityConnectorDetails(object):
         Gets the cloud_provider of this IdentityConnectorDetails.
         Cloud provider
 
-        Allowed values for this property are: "AZURE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "AZURE", "GCP", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -95,7 +99,7 @@ class IdentityConnectorDetails(object):
         :param cloud_provider: The cloud_provider of this IdentityConnectorDetails.
         :type: str
         """
-        allowed_values = ["AZURE"]
+        allowed_values = ["AZURE", "GCP"]
         if not value_allowed_none_or_none_sentinel(cloud_provider, allowed_values):
             cloud_provider = 'UNKNOWN_ENUM_VALUE'
         self._cloud_provider = cloud_provider

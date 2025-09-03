@@ -23,6 +23,10 @@ class RegisterCloudVmClusterPkcsDetails(object):
     #: This constant has a value of "OCI"
     TDE_KEY_STORE_TYPE_OCI = "OCI"
 
+    #: A constant which can be used with the tde_key_store_type property of a RegisterCloudVmClusterPkcsDetails.
+    #: This constant has a value of "GCP"
+    TDE_KEY_STORE_TYPE_GCP = "GCP"
+
     def __init__(self, **kwargs):
         """
         Initializes a new RegisterCloudVmClusterPkcsDetails object with values from keyword arguments.
@@ -30,7 +34,7 @@ class RegisterCloudVmClusterPkcsDetails(object):
 
         :param tde_key_store_type:
             The value to assign to the tde_key_store_type property of this RegisterCloudVmClusterPkcsDetails.
-            Allowed values for this property are: "AZURE", "OCI"
+            Allowed values for this property are: "AZURE", "OCI", "GCP"
         :type tde_key_store_type: str
 
         """
@@ -48,7 +52,7 @@ class RegisterCloudVmClusterPkcsDetails(object):
         **[Required]** Gets the tde_key_store_type of this RegisterCloudVmClusterPkcsDetails.
         TDE keystore type
 
-        Allowed values for this property are: "AZURE", "OCI"
+        Allowed values for this property are: "AZURE", "OCI", "GCP"
 
 
         :return: The tde_key_store_type of this RegisterCloudVmClusterPkcsDetails.
@@ -66,7 +70,7 @@ class RegisterCloudVmClusterPkcsDetails(object):
         :param tde_key_store_type: The tde_key_store_type of this RegisterCloudVmClusterPkcsDetails.
         :type: str
         """
-        allowed_values = ["AZURE", "OCI"]
+        allowed_values = ["AZURE", "OCI", "GCP"]
         if not value_allowed_none_or_none_sentinel(tde_key_store_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `tde_key_store_type`, must be None or one of {allowed_values}"

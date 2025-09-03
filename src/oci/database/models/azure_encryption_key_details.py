@@ -23,7 +23,7 @@ class AzureEncryptionKeyDetails(EncryptionKeyLocationDetails):
 
         :param provider_type:
             The value to assign to the provider_type property of this AzureEncryptionKeyDetails.
-            Allowed values for this property are: "EXTERNAL", "AZURE"
+            Allowed values for this property are: "EXTERNAL", "AZURE", "GCP"
         :type provider_type: str
 
         :param azure_encryption_key_id:

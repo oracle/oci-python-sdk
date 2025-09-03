@@ -31,7 +31,9 @@ class OracleDbAzureVaultClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str oracle_db_azure_vault_id: (required)
-            The ID of the Oracle DB Azure Vault Resource.
+            The `OCID`__ of the Oracle DB Azure Vault resource.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.ChangeOracleDbAzureVaultCompartmentDetails change_oracle_db_azure_vault_compartment_details: (required)
             Moves the DB Azure Vault resource into a different compartment.
@@ -73,7 +75,7 @@ class OracleDbAzureVaultClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.dbmulticloud.models.CreateOracleDbAzureVaultDetails create_oracle_db_azure_vault_details: (required)
-            Details for to Create DB Azure Vault Details.
+            Details for to Create Oracle DB Azure Vault details.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.dbmulticloud.models.WorkRequest.status`
@@ -112,7 +114,9 @@ class OracleDbAzureVaultClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str oracle_db_azure_vault_id: (required)
-            The ID of the Oracle DB Azure Vault Resource.
+            The `OCID`__ of the Oracle DB Azure Vault resource.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.dbmulticloud.models.WorkRequest.status`
@@ -159,7 +163,9 @@ class OracleDbAzureVaultClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str oracle_db_azure_vault_id: (required)
-            The ID of the Oracle DB Azure Vault Resource.
+            The `OCID`__ of the Oracle DB Azure Vault resource.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.dbmulticloud.models.WorkRequest.status`
@@ -198,7 +204,9 @@ class OracleDbAzureVaultClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str oracle_db_azure_vault_id: (required)
-            The ID of the Oracle DB Azure Vault Resource.
+            The `OCID`__ of the Oracle DB Azure Vault resource.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.UpdateOracleDbAzureVaultDetails update_oracle_db_azure_vault_details: (required)
             Details for to update OracleDbAzureVault.

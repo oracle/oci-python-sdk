@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PatchOracleDbAzureConnectorDetails(object):
     """
-    Details for to patch Oracle DB Azure Connector Resource.
+    Details for to patch Oracle DB Azure Connector resource.
     """
 
     def __init__(self, **kwargs):

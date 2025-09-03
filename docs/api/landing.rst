@@ -74,6 +74,7 @@ API Reference
 * :doc:`Db Backups <mysql/client/oci.mysql.DbBackupsClient>`
 * :doc:`Db Life Cycle Management <dblm/client/oci.dblm.DbLifeCycleManagementClient>`
 * :doc:`Db Management <database_management/client/oci.database_management.DbManagementClient>`
+* :doc:`Db Multicloud Gcp Provider <dbmulticloud/client/oci.dbmulticloud.DbMulticloudGCPProviderClient>`
 * :doc:`Db System <mysql/client/oci.mysql.DbSystemClient>`
 * :doc:`Delegate Access Control <delegate_access_control/client/oci.delegate_access_control.DelegateAccessControlClient>`
 * :doc:`Demand Signal <capacity_management/client/oci.capacity_management.DemandSignalClient>`
@@ -94,7 +95,6 @@ API Reference
 * :doc:`Email <email/client/oci.email.EmailClient>`
 * :doc:`Email Dp <email_data_plane/client/oci.email_data_plane.EmailDPClient>`
 * :doc:`Esxi Host <ocvp/client/oci.ocvp.EsxiHostClient>`
-* :doc:`Event <os_management_hub/client/oci.os_management_hub.EventClient>`
 * :doc:`Event <os_management_hub/client/oci.os_management_hub.EventClient>`
 * :doc:`Events <events/client/oci.events.EventsClient>`
 * :doc:`File Storage <file_storage/client/oci.file_storage.FileStorageClient>`

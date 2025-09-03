@@ -53,6 +53,14 @@ class BackupSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type soft_delete: str
 
+        :param backup_preparation_status:
+            The value to assign to the backup_preparation_status property of this BackupSummary.
+        :type backup_preparation_status: str
+
+        :param validation_status:
+            The value to assign to the validation_status property of this BackupSummary.
+        :type validation_status: str
+
         :param time_created:
             The value to assign to the time_created property of this BackupSummary.
         :type time_created: datetime
@@ -139,6 +147,8 @@ class BackupSummary(object):
             'display_name': 'str',
             'description': 'str',
             'soft_delete': 'str',
+            'backup_preparation_status': 'str',
+            'validation_status': 'str',
             'time_created': 'datetime',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
@@ -165,6 +175,8 @@ class BackupSummary(object):
             'display_name': 'displayName',
             'description': 'description',
             'soft_delete': 'softDelete',
+            'backup_preparation_status': 'backupPreparationStatus',
+            'validation_status': 'validationStatus',
             'time_created': 'timeCreated',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
@@ -190,6 +202,8 @@ class BackupSummary(object):
         self._display_name = None
         self._description = None
         self._soft_delete = None
+        self._backup_preparation_status = None
+        self._validation_status = None
         self._time_created = None
         self._lifecycle_state = None
         self._lifecycle_details = None
@@ -314,6 +328,54 @@ class BackupSummary(object):
         if not value_allowed_none_or_none_sentinel(soft_delete, allowed_values):
             soft_delete = 'UNKNOWN_ENUM_VALUE'
         self._soft_delete = soft_delete
+
+    @property
+    def backup_preparation_status(self):
+        """
+        Gets the backup_preparation_status of this BackupSummary.
+        Indicates whether the backup has been prepared successfully.
+
+
+        :return: The backup_preparation_status of this BackupSummary.
+        :rtype: str
+        """
+        return self._backup_preparation_status
+
+    @backup_preparation_status.setter
+    def backup_preparation_status(self, backup_preparation_status):
+        """
+        Sets the backup_preparation_status of this BackupSummary.
+        Indicates whether the backup has been prepared successfully.
+
+
+        :param backup_preparation_status: The backup_preparation_status of this BackupSummary.
+        :type: str
+        """
+        self._backup_preparation_status = backup_preparation_status
+
+    @property
+    def validation_status(self):
+        """
+        Gets the validation_status of this BackupSummary.
+        Status of the backup validation.
+
+
+        :return: The validation_status of this BackupSummary.
+        :rtype: str
+        """
+        return self._validation_status
+
+    @validation_status.setter
+    def validation_status(self, validation_status):
+        """
+        Sets the validation_status of this BackupSummary.
+        Status of the backup validation.
+
+
+        :param validation_status: The validation_status of this BackupSummary.
+        :type: str
+        """
+        self._validation_status = validation_status
 
     @property
     def time_created(self):

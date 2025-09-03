@@ -13,6 +13,7 @@ from .assign_target_uuid_handling import AssignTargetUuidHandling
 from .backup import Backup
 from .backup_policy import BackupPolicy
 from .backup_summary import BackupSummary
+from .backup_validation_details import BackupValidationDetails
 from .ca_certificate import CaCertificate
 from .change_backup_compartment_details import ChangeBackupCompartmentDetails
 from .channel import Channel
@@ -74,6 +75,7 @@ from .maintenance_details import MaintenanceDetails
 from .pem_ca_certificate import PemCaCertificate
 from .pitr_policy import PitrPolicy
 from .point_in_time_recovery_details import PointInTimeRecoveryDetails
+from .prepared_backup_details import PreparedBackupDetails
 from .read_endpoint_details import ReadEndpointDetails
 from .replica import Replica
 from .replica_overrides import ReplicaOverrides
@@ -98,6 +100,7 @@ from .update_maintenance_details import UpdateMaintenanceDetails
 from .update_read_endpoint_details import UpdateReadEndpointDetails
 from .update_replica_details import UpdateReplicaDetails
 from .update_rest_details import UpdateRestDetails
+from .validate_backup_details import ValidateBackupDetails
 from .version import Version
 from .version_summary import VersionSummary
 from .work_request import WorkRequest
@@ -115,6 +118,7 @@ mysql_type_mapping = {
     "Backup": Backup,
     "BackupPolicy": BackupPolicy,
     "BackupSummary": BackupSummary,
+    "BackupValidationDetails": BackupValidationDetails,
     "CaCertificate": CaCertificate,
     "ChangeBackupCompartmentDetails": ChangeBackupCompartmentDetails,
     "Channel": Channel,
@@ -176,6 +180,7 @@ mysql_type_mapping = {
     "PemCaCertificate": PemCaCertificate,
     "PitrPolicy": PitrPolicy,
     "PointInTimeRecoveryDetails": PointInTimeRecoveryDetails,
+    "PreparedBackupDetails": PreparedBackupDetails,
     "ReadEndpointDetails": ReadEndpointDetails,
     "Replica": Replica,
     "ReplicaOverrides": ReplicaOverrides,
@@ -200,6 +205,7 @@ mysql_type_mapping = {
     "UpdateReadEndpointDetails": UpdateReadEndpointDetails,
     "UpdateReplicaDetails": UpdateReplicaDetails,
     "UpdateRestDetails": UpdateRestDetails,
+    "ValidateBackupDetails": ValidateBackupDetails,
     "Version": Version,
     "VersionSummary": VersionSummary,
     "WorkRequest": WorkRequest,

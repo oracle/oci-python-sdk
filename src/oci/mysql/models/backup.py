@@ -107,6 +107,10 @@ class Backup(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type soft_delete: str
 
+        :param backup_validation_details:
+            The value to assign to the backup_validation_details property of this Backup.
+        :type backup_validation_details: oci.mysql.models.BackupValidationDetails
+
         :param compartment_id:
             The value to assign to the compartment_id property of this Backup.
         :type compartment_id: str
@@ -203,6 +207,7 @@ class Backup(object):
             'display_name': 'str',
             'description': 'str',
             'soft_delete': 'str',
+            'backup_validation_details': 'BackupValidationDetails',
             'compartment_id': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
@@ -230,6 +235,7 @@ class Backup(object):
             'display_name': 'displayName',
             'description': 'description',
             'soft_delete': 'softDelete',
+            'backup_validation_details': 'backupValidationDetails',
             'compartment_id': 'compartmentId',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
@@ -256,6 +262,7 @@ class Backup(object):
         self._display_name = None
         self._description = None
         self._soft_delete = None
+        self._backup_validation_details = None
         self._compartment_id = None
         self._time_created = None
         self._time_updated = None
@@ -381,6 +388,26 @@ class Backup(object):
         if not value_allowed_none_or_none_sentinel(soft_delete, allowed_values):
             soft_delete = 'UNKNOWN_ENUM_VALUE'
         self._soft_delete = soft_delete
+
+    @property
+    def backup_validation_details(self):
+        """
+        Gets the backup_validation_details of this Backup.
+
+        :return: The backup_validation_details of this Backup.
+        :rtype: oci.mysql.models.BackupValidationDetails
+        """
+        return self._backup_validation_details
+
+    @backup_validation_details.setter
+    def backup_validation_details(self, backup_validation_details):
+        """
+        Sets the backup_validation_details of this Backup.
+
+        :param backup_validation_details: The backup_validation_details of this Backup.
+        :type: oci.mysql.models.BackupValidationDetails
+        """
+        self._backup_validation_details = backup_validation_details
 
     @property
     def compartment_id(self):

@@ -44,6 +44,14 @@ class UpdateExascaleDbStorageVaultDetails(object):
             The value to assign to the defined_tags property of this UpdateExascaleDbStorageVaultDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param is_autoscale_enabled:
+            The value to assign to the is_autoscale_enabled property of this UpdateExascaleDbStorageVaultDetails.
+        :type is_autoscale_enabled: bool
+
+        :param autoscale_limit_in_gbs:
+            The value to assign to the autoscale_limit_in_gbs property of this UpdateExascaleDbStorageVaultDetails.
+        :type autoscale_limit_in_gbs: int
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -51,7 +59,9 @@ class UpdateExascaleDbStorageVaultDetails(object):
             'high_capacity_database_storage': 'ExascaleDbStorageInputDetails',
             'additional_flash_cache_in_percent': 'int',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'is_autoscale_enabled': 'bool',
+            'autoscale_limit_in_gbs': 'int'
         }
         self.attribute_map = {
             'display_name': 'displayName',
@@ -59,7 +69,9 @@ class UpdateExascaleDbStorageVaultDetails(object):
             'high_capacity_database_storage': 'highCapacityDatabaseStorage',
             'additional_flash_cache_in_percent': 'additionalFlashCacheInPercent',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'is_autoscale_enabled': 'isAutoscaleEnabled',
+            'autoscale_limit_in_gbs': 'autoscaleLimitInGBs'
         }
         self._display_name = None
         self._description = None
@@ -67,6 +79,8 @@ class UpdateExascaleDbStorageVaultDetails(object):
         self._additional_flash_cache_in_percent = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._is_autoscale_enabled = None
+        self._autoscale_limit_in_gbs = None
 
     @property
     def display_name(self):
@@ -223,6 +237,54 @@ class UpdateExascaleDbStorageVaultDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def is_autoscale_enabled(self):
+        """
+        Gets the is_autoscale_enabled of this UpdateExascaleDbStorageVaultDetails.
+        Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+
+
+        :return: The is_autoscale_enabled of this UpdateExascaleDbStorageVaultDetails.
+        :rtype: bool
+        """
+        return self._is_autoscale_enabled
+
+    @is_autoscale_enabled.setter
+    def is_autoscale_enabled(self, is_autoscale_enabled):
+        """
+        Sets the is_autoscale_enabled of this UpdateExascaleDbStorageVaultDetails.
+        Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+
+
+        :param is_autoscale_enabled: The is_autoscale_enabled of this UpdateExascaleDbStorageVaultDetails.
+        :type: bool
+        """
+        self._is_autoscale_enabled = is_autoscale_enabled
+
+    @property
+    def autoscale_limit_in_gbs(self):
+        """
+        Gets the autoscale_limit_in_gbs of this UpdateExascaleDbStorageVaultDetails.
+        Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+
+
+        :return: The autoscale_limit_in_gbs of this UpdateExascaleDbStorageVaultDetails.
+        :rtype: int
+        """
+        return self._autoscale_limit_in_gbs
+
+    @autoscale_limit_in_gbs.setter
+    def autoscale_limit_in_gbs(self, autoscale_limit_in_gbs):
+        """
+        Sets the autoscale_limit_in_gbs of this UpdateExascaleDbStorageVaultDetails.
+        Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+
+
+        :param autoscale_limit_in_gbs: The autoscale_limit_in_gbs of this UpdateExascaleDbStorageVaultDetails.
+        :type: int
+        """
+        self._autoscale_limit_in_gbs = autoscale_limit_in_gbs
 
     def __repr__(self):
         return formatted_flat_dict(self)

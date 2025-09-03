@@ -37,7 +37,7 @@ class OracleDbAzureConnectorSummaryCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this OracleDbAzureConnectorSummaryCollection.
-        contains OracleDbAzureConnectorSummary
+        OracleDbAzureConnectorSummary object.
 
 
         :return: The items of this OracleDbAzureConnectorSummaryCollection.
@@ -49,7 +49,7 @@ class OracleDbAzureConnectorSummaryCollection(object):
     def items(self, items):
         """
         Sets the items of this OracleDbAzureConnectorSummaryCollection.
-        contains OracleDbAzureConnectorSummary
+        OracleDbAzureConnectorSummary object.
 
 
         :param items: The items of this OracleDbAzureConnectorSummaryCollection.

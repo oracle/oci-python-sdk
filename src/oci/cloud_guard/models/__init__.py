@@ -10,6 +10,7 @@ from .absolute_time_start_policy import AbsoluteTimeStartPolicy
 from .activity_problem_aggregation import ActivityProblemAggregation
 from .activity_problem_aggregation_collection import ActivityProblemAggregationCollection
 from .add_compartment_details import AddCompartmentDetails
+from .additional_config_property_definition import AdditionalConfigPropertyDefinition
 from .adhoc_query import AdhocQuery
 from .adhoc_query_collection import AdhocQueryCollection
 from .adhoc_query_details import AdhocQueryDetails
@@ -171,6 +172,7 @@ from .responder_rule_summary import ResponderRuleSummary
 from .risk_score_aggregation import RiskScoreAggregation
 from .risk_score_aggregation_collection import RiskScoreAggregationCollection
 from .rule_summary import RuleSummary
+from .rule_type import RuleType
 from .saved_query import SavedQuery
 from .saved_query_collection import SavedQueryCollection
 from .saved_query_summary import SavedQuerySummary
@@ -276,6 +278,7 @@ cloud_guard_type_mapping = {
     "ActivityProblemAggregation": ActivityProblemAggregation,
     "ActivityProblemAggregationCollection": ActivityProblemAggregationCollection,
     "AddCompartmentDetails": AddCompartmentDetails,
+    "AdditionalConfigPropertyDefinition": AdditionalConfigPropertyDefinition,
     "AdhocQuery": AdhocQuery,
     "AdhocQueryCollection": AdhocQueryCollection,
     "AdhocQueryDetails": AdhocQueryDetails,
@@ -437,6 +440,7 @@ cloud_guard_type_mapping = {
     "RiskScoreAggregation": RiskScoreAggregation,
     "RiskScoreAggregationCollection": RiskScoreAggregationCollection,
     "RuleSummary": RuleSummary,
+    "RuleType": RuleType,
     "SavedQuery": SavedQuery,
     "SavedQueryCollection": SavedQueryCollection,
     "SavedQuerySummary": SavedQuerySummary,

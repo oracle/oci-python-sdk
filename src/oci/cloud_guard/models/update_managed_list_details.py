@@ -32,6 +32,10 @@ class UpdateManagedListDetails(object):
             The value to assign to the list_items property of this UpdateManagedListDetails.
         :type list_items: list[str]
 
+        :param group:
+            The value to assign to the group property of this UpdateManagedListDetails.
+        :type group: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateManagedListDetails.
         :type freeform_tags: dict(str, str)
@@ -45,6 +49,7 @@ class UpdateManagedListDetails(object):
             'display_name': 'str',
             'description': 'str',
             'list_items': 'list[str]',
+            'group': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -52,12 +57,14 @@ class UpdateManagedListDetails(object):
             'display_name': 'displayName',
             'description': 'description',
             'list_items': 'listItems',
+            'group': 'group',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
         self._display_name = None
         self._description = None
         self._list_items = None
+        self._group = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -138,6 +145,30 @@ class UpdateManagedListDetails(object):
         :type: list[str]
         """
         self._list_items = list_items
+
+    @property
+    def group(self):
+        """
+        Gets the group of this UpdateManagedListDetails.
+        Managed list type group
+
+
+        :return: The group of this UpdateManagedListDetails.
+        :rtype: str
+        """
+        return self._group
+
+    @group.setter
+    def group(self, group):
+        """
+        Sets the group of this UpdateManagedListDetails.
+        Managed list type group
+
+
+        :param group: The group of this UpdateManagedListDetails.
+        :type: str
+        """
+        self._group = group
 
     @property
     def freeform_tags(self):

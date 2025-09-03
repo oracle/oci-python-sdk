@@ -72,9 +72,7 @@ class Resources(object):
     def id(self):
         """
         Gets the id of this Resources.
-        The `OCID`__ of the Discovered Resource.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        The ID of the Discovered Resource.
 
 
         :return: The id of this Resources.
@@ -86,9 +84,7 @@ class Resources(object):
     def id(self, id):
         """
         Sets the id of this Resources.
-        The `OCID`__ of the Discovered Resource.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        The ID of the Discovered Resource.
 
 
         :param id: The id of this Resources.

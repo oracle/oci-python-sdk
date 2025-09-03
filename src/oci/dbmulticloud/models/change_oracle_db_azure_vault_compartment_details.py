@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeOracleDbAzureVaultCompartmentDetails(object):
     """
-    Details of the new compartment to contain the DB Azure Vault Resource.
+    Details of the new compartment to contain the Oracle DB Azure Vault resource.
     """
 
     def __init__(self, **kwargs):
@@ -58,7 +58,7 @@ class ChangeOracleDbAzureVaultCompartmentDetails(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this ChangeOracleDbAzureVaultCompartmentDetails.
-        The `OCID`__ of the new compartment to contain the  DB Azure Vault Resource.
+        The `OCID`__ of the new compartment to contain the Oracle DB Azure Vault resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -72,7 +72,7 @@ class ChangeOracleDbAzureVaultCompartmentDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ChangeOracleDbAzureVaultCompartmentDetails.
-        The `OCID`__ of the new compartment to contain the  DB Azure Vault Resource.
+        The `OCID`__ of the new compartment to contain the Oracle DB Azure Vault resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

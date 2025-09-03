@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateOracleDbAzureVaultDetails(object):
     """
-    This object is about to provide input params to update Oracle DB Azure Vault Resource.
+    This object is about to provide input params to update Oracle DB Azure Vault resource.
     """
 
     def __init__(self, **kwargs):
@@ -100,7 +100,7 @@ class UpdateOracleDbAzureVaultDetails(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this UpdateOracleDbAzureVaultDetails.
-        The compartment `OCID`__ that contains DB Azure Vault Resource.
+        The `OCID`__ of the compartment that contains this Oracle DB Azure Vault resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -114,7 +114,7 @@ class UpdateOracleDbAzureVaultDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this UpdateOracleDbAzureVaultDetails.
-        The compartment `OCID`__ that contains DB Azure Vault Resource.
+        The `OCID`__ of the compartment that contains this Oracle DB Azure Vault resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -128,7 +128,7 @@ class UpdateOracleDbAzureVaultDetails(object):
     def oracle_db_connector_id(self):
         """
         Gets the oracle_db_connector_id of this UpdateOracleDbAzureVaultDetails.
-        The `OCID`__ of the DB Connector Resource.
+        The `OCID`__ of the Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -142,7 +142,7 @@ class UpdateOracleDbAzureVaultDetails(object):
     def oracle_db_connector_id(self, oracle_db_connector_id):
         """
         Sets the oracle_db_connector_id of this UpdateOracleDbAzureVaultDetails.
-        The `OCID`__ of the DB Connector Resource.
+        The `OCID`__ of the Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -156,7 +156,7 @@ class UpdateOracleDbAzureVaultDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateOracleDbAzureVaultDetails.
-        Display name of DB Azure Vault.
+        Oracle DB Azure Vault resource name.
 
 
         :return: The display_name of this UpdateOracleDbAzureVaultDetails.
@@ -168,7 +168,7 @@ class UpdateOracleDbAzureVaultDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateOracleDbAzureVaultDetails.
-        Display name of DB Azure Vault.
+        Oracle DB Azure Vault resource name.
 
 
         :param display_name: The display_name of this UpdateOracleDbAzureVaultDetails.
@@ -180,7 +180,7 @@ class UpdateOracleDbAzureVaultDetails(object):
     def oracle_db_azure_resource_group(self):
         """
         Gets the oracle_db_azure_resource_group of this UpdateOracleDbAzureVaultDetails.
-        Display name of Azure Resource Group.
+        Oracle DB Azure resource group name.
 
 
         :return: The oracle_db_azure_resource_group of this UpdateOracleDbAzureVaultDetails.
@@ -192,7 +192,7 @@ class UpdateOracleDbAzureVaultDetails(object):
     def oracle_db_azure_resource_group(self, oracle_db_azure_resource_group):
         """
         Sets the oracle_db_azure_resource_group of this UpdateOracleDbAzureVaultDetails.
-        Display name of Azure Resource Group.
+        Oracle DB Azure resource group name.
 
 
         :param oracle_db_azure_resource_group: The oracle_db_azure_resource_group of this UpdateOracleDbAzureVaultDetails.
@@ -204,7 +204,7 @@ class UpdateOracleDbAzureVaultDetails(object):
     def azure_vault_id(self):
         """
         Gets the azure_vault_id of this UpdateOracleDbAzureVaultDetails.
-        Azure Vault Id.
+        Azure Vault ID.
 
 
         :return: The azure_vault_id of this UpdateOracleDbAzureVaultDetails.
@@ -216,7 +216,7 @@ class UpdateOracleDbAzureVaultDetails(object):
     def azure_vault_id(self, azure_vault_id):
         """
         Sets the azure_vault_id of this UpdateOracleDbAzureVaultDetails.
-        Azure Vault Id.
+        Azure Vault ID.
 
 
         :param azure_vault_id: The azure_vault_id of this UpdateOracleDbAzureVaultDetails.
@@ -228,7 +228,7 @@ class UpdateOracleDbAzureVaultDetails(object):
     def type(self):
         """
         Gets the type of this UpdateOracleDbAzureVaultDetails.
-        Vault Resource Type.
+        Oracle DB Azure Vault resource type.
 
 
         :return: The type of this UpdateOracleDbAzureVaultDetails.
@@ -240,7 +240,7 @@ class UpdateOracleDbAzureVaultDetails(object):
     def type(self, type):
         """
         Sets the type of this UpdateOracleDbAzureVaultDetails.
-        Vault Resource Type.
+        Oracle DB Azure Vault resource type.
 
 
         :param type: The type of this UpdateOracleDbAzureVaultDetails.
@@ -252,7 +252,7 @@ class UpdateOracleDbAzureVaultDetails(object):
     def location(self):
         """
         Gets the location of this UpdateOracleDbAzureVaultDetails.
-        Vault Resource Location.
+        Oracle DB Azure Vault resource location.
 
 
         :return: The location of this UpdateOracleDbAzureVaultDetails.
@@ -264,7 +264,7 @@ class UpdateOracleDbAzureVaultDetails(object):
     def location(self, location):
         """
         Sets the location of this UpdateOracleDbAzureVaultDetails.
-        Vault Resource Location.
+        Oracle DB Azure Vault resource location.
 
 
         :param location: The location of this UpdateOracleDbAzureVaultDetails.
@@ -276,7 +276,7 @@ class UpdateOracleDbAzureVaultDetails(object):
     def properties(self):
         """
         Gets the properties of this UpdateOracleDbAzureVaultDetails.
-        Resource's properties.
+        Oracle DB Azure Vault resource's properties.
 
 
         :return: The properties of this UpdateOracleDbAzureVaultDetails.
@@ -288,7 +288,7 @@ class UpdateOracleDbAzureVaultDetails(object):
     def properties(self, properties):
         """
         Sets the properties of this UpdateOracleDbAzureVaultDetails.
-        Resource's properties.
+        Oracle DB Azure Vault resource's properties.
 
 
         :param properties: The properties of this UpdateOracleDbAzureVaultDetails.

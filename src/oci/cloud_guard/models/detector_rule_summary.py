@@ -35,6 +35,10 @@ class DetectorRuleSummary(object):
     #: This constant has a value of "IAAS_INSTANCE_SECURITY_DETECTOR"
     DETECTOR_IAAS_INSTANCE_SECURITY_DETECTOR = "IAAS_INSTANCE_SECURITY_DETECTOR"
 
+    #: A constant which can be used with the detector property of a DetectorRuleSummary.
+    #: This constant has a value of "IAAS_CONTAINER_SECURITY_DETECTOR"
+    DETECTOR_IAAS_CONTAINER_SECURITY_DETECTOR = "IAAS_CONTAINER_SECURITY_DETECTOR"
+
     #: A constant which can be used with the managed_list_types property of a DetectorRuleSummary.
     #: This constant has a value of "CIDR_BLOCK"
     MANAGED_LIST_TYPES_CIDR_BLOCK = "CIDR_BLOCK"
@@ -91,6 +95,14 @@ class DetectorRuleSummary(object):
     #: This constant has a value of "FUSION_APPS_PERMISSION"
     MANAGED_LIST_TYPES_FUSION_APPS_PERMISSION = "FUSION_APPS_PERMISSION"
 
+    #: A constant which can be used with the managed_list_types property of a DetectorRuleSummary.
+    #: This constant has a value of "NAMESPACE_SELECTOR"
+    MANAGED_LIST_TYPES_NAMESPACE_SELECTOR = "NAMESPACE_SELECTOR"
+
+    #: A constant which can be used with the managed_list_types property of a DetectorRuleSummary.
+    #: This constant has a value of "POD_RESOURCE_SELECTOR"
+    MANAGED_LIST_TYPES_POD_RESOURCE_SELECTOR = "POD_RESOURCE_SELECTOR"
+
     #: A constant which can be used with the lifecycle_state property of a DetectorRuleSummary.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -142,7 +154,7 @@ class DetectorRuleSummary(object):
 
         :param detector:
             The value to assign to the detector property of this DetectorRuleSummary.
-            Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR", "IAAS_CONTAINER_SECURITY_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type detector: str
 
@@ -154,9 +166,17 @@ class DetectorRuleSummary(object):
             The value to assign to the resource_type property of this DetectorRuleSummary.
         :type resource_type: str
 
+        :param rule_type:
+            The value to assign to the rule_type property of this DetectorRuleSummary.
+        :type rule_type: list[oci.cloud_guard.models.RuleType]
+
+        :param is_cloneable:
+            The value to assign to the is_cloneable property of this DetectorRuleSummary.
+        :type is_cloneable: bool
+
         :param managed_list_types:
             The value to assign to the managed_list_types property of this DetectorRuleSummary.
-            Allowed values for items in this list are: "CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC", "FUSION_APPS_ROLE", "FUSION_APPS_PERMISSION", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for items in this list are: "CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC", "FUSION_APPS_ROLE", "FUSION_APPS_PERMISSION", "NAMESPACE_SELECTOR", "POD_RESOURCE_SELECTOR", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type managed_list_types: list[str]
 
@@ -195,6 +215,8 @@ class DetectorRuleSummary(object):
             'detector': 'str',
             'service_type': 'str',
             'resource_type': 'str',
+            'rule_type': 'list[RuleType]',
+            'is_cloneable': 'bool',
             'managed_list_types': 'list[str]',
             'candidate_responder_rules': 'list[CandidateResponderRule]',
             'detector_details': 'DetectorDetails',
@@ -211,6 +233,8 @@ class DetectorRuleSummary(object):
             'detector': 'detector',
             'service_type': 'serviceType',
             'resource_type': 'resourceType',
+            'rule_type': 'ruleType',
+            'is_cloneable': 'isCloneable',
             'managed_list_types': 'managedListTypes',
             'candidate_responder_rules': 'candidateResponderRules',
             'detector_details': 'detectorDetails',
@@ -226,6 +250,8 @@ class DetectorRuleSummary(object):
         self._detector = None
         self._service_type = None
         self._resource_type = None
+        self._rule_type = None
+        self._is_cloneable = None
         self._managed_list_types = None
         self._candidate_responder_rules = None
         self._detector_details = None
@@ -336,7 +362,7 @@ class DetectorRuleSummary(object):
         **[Required]** Gets the detector of this DetectorRuleSummary.
         Possible types of detectors
 
-        Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR", "IAAS_CONTAINER_SECURITY_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -355,7 +381,7 @@ class DetectorRuleSummary(object):
         :param detector: The detector of this DetectorRuleSummary.
         :type: str
         """
-        allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR"]
+        allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR", "IAAS_CONTAINER_SECURITY_DETECTOR"]
         if not value_allowed_none_or_none_sentinel(detector, allowed_values):
             detector = 'UNKNOWN_ENUM_VALUE'
         self._detector = detector
@@ -409,12 +435,60 @@ class DetectorRuleSummary(object):
         self._resource_type = resource_type
 
     @property
+    def rule_type(self):
+        """
+        Gets the rule_type of this DetectorRuleSummary.
+        Detector rule type
+
+
+        :return: The rule_type of this DetectorRuleSummary.
+        :rtype: list[oci.cloud_guard.models.RuleType]
+        """
+        return self._rule_type
+
+    @rule_type.setter
+    def rule_type(self, rule_type):
+        """
+        Sets the rule_type of this DetectorRuleSummary.
+        Detector rule type
+
+
+        :param rule_type: The rule_type of this DetectorRuleSummary.
+        :type: list[oci.cloud_guard.models.RuleType]
+        """
+        self._rule_type = rule_type
+
+    @property
+    def is_cloneable(self):
+        """
+        Gets the is_cloneable of this DetectorRuleSummary.
+        Is the rule cloneable?
+
+
+        :return: The is_cloneable of this DetectorRuleSummary.
+        :rtype: bool
+        """
+        return self._is_cloneable
+
+    @is_cloneable.setter
+    def is_cloneable(self, is_cloneable):
+        """
+        Sets the is_cloneable of this DetectorRuleSummary.
+        Is the rule cloneable?
+
+
+        :param is_cloneable: The is_cloneable of this DetectorRuleSummary.
+        :type: bool
+        """
+        self._is_cloneable = is_cloneable
+
+    @property
     def managed_list_types(self):
         """
         Gets the managed_list_types of this DetectorRuleSummary.
         List of managed list types related to this rule
 
-        Allowed values for items in this list are: "CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC", "FUSION_APPS_ROLE", "FUSION_APPS_PERMISSION", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for items in this list are: "CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC", "FUSION_APPS_ROLE", "FUSION_APPS_PERMISSION", "NAMESPACE_SELECTOR", "POD_RESOURCE_SELECTOR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -433,7 +507,7 @@ class DetectorRuleSummary(object):
         :param managed_list_types: The managed_list_types of this DetectorRuleSummary.
         :type: list[str]
         """
-        allowed_values = ["CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC", "FUSION_APPS_ROLE", "FUSION_APPS_PERMISSION"]
+        allowed_values = ["CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC", "FUSION_APPS_ROLE", "FUSION_APPS_PERMISSION", "NAMESPACE_SELECTOR", "POD_RESOURCE_SELECTOR"]
         if managed_list_types:
             managed_list_types[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in managed_list_types]
         self._managed_list_types = managed_list_types

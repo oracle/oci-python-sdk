@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeOracleDbAzureConnectorCompartmentDetails(object):
     """
-    Details of the new compartment to contain the Oracle DB Azure Connector Resource.
+    Details of the new compartment to contain the Oracle DB Azure Connector resource.
     """
 
     def __init__(self, **kwargs):
@@ -58,7 +58,9 @@ class ChangeOracleDbAzureConnectorCompartmentDetails(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this ChangeOracleDbAzureConnectorCompartmentDetails.
-        The ID of the new compartment to contain the Oracle DB Azure Connector Resource.
+        The `OCID`__ of the new compartment to contain the Oracle DB Azure Connector resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ChangeOracleDbAzureConnectorCompartmentDetails.
@@ -70,7 +72,9 @@ class ChangeOracleDbAzureConnectorCompartmentDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ChangeOracleDbAzureConnectorCompartmentDetails.
-        The ID of the new compartment to contain the Oracle DB Azure Connector Resource.
+        The `OCID`__ of the new compartment to contain the Oracle DB Azure Connector resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ChangeOracleDbAzureConnectorCompartmentDetails.

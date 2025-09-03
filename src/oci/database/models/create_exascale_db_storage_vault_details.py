@@ -68,6 +68,14 @@ class CreateExascaleDbStorageVaultDetails(object):
             The value to assign to the subscription_id property of this CreateExascaleDbStorageVaultDetails.
         :type subscription_id: str
 
+        :param is_autoscale_enabled:
+            The value to assign to the is_autoscale_enabled property of this CreateExascaleDbStorageVaultDetails.
+        :type is_autoscale_enabled: bool
+
+        :param autoscale_limit_in_gbs:
+            The value to assign to the autoscale_limit_in_gbs property of this CreateExascaleDbStorageVaultDetails.
+        :type autoscale_limit_in_gbs: int
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -81,7 +89,9 @@ class CreateExascaleDbStorageVaultDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'exadata_infrastructure_id': 'str',
             'cluster_placement_group_id': 'str',
-            'subscription_id': 'str'
+            'subscription_id': 'str',
+            'is_autoscale_enabled': 'bool',
+            'autoscale_limit_in_gbs': 'int'
         }
         self.attribute_map = {
             'compartment_id': 'compartmentId',
@@ -95,7 +105,9 @@ class CreateExascaleDbStorageVaultDetails(object):
             'defined_tags': 'definedTags',
             'exadata_infrastructure_id': 'exadataInfrastructureId',
             'cluster_placement_group_id': 'clusterPlacementGroupId',
-            'subscription_id': 'subscriptionId'
+            'subscription_id': 'subscriptionId',
+            'is_autoscale_enabled': 'isAutoscaleEnabled',
+            'autoscale_limit_in_gbs': 'autoscaleLimitInGBs'
         }
         self._compartment_id = None
         self._display_name = None
@@ -109,6 +121,8 @@ class CreateExascaleDbStorageVaultDetails(object):
         self._exadata_infrastructure_id = None
         self._cluster_placement_group_id = None
         self._subscription_id = None
+        self._is_autoscale_enabled = None
+        self._autoscale_limit_in_gbs = None
 
     @property
     def compartment_id(self):
@@ -429,6 +443,54 @@ class CreateExascaleDbStorageVaultDetails(object):
         :type: str
         """
         self._subscription_id = subscription_id
+
+    @property
+    def is_autoscale_enabled(self):
+        """
+        Gets the is_autoscale_enabled of this CreateExascaleDbStorageVaultDetails.
+        Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+
+
+        :return: The is_autoscale_enabled of this CreateExascaleDbStorageVaultDetails.
+        :rtype: bool
+        """
+        return self._is_autoscale_enabled
+
+    @is_autoscale_enabled.setter
+    def is_autoscale_enabled(self, is_autoscale_enabled):
+        """
+        Sets the is_autoscale_enabled of this CreateExascaleDbStorageVaultDetails.
+        Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+
+
+        :param is_autoscale_enabled: The is_autoscale_enabled of this CreateExascaleDbStorageVaultDetails.
+        :type: bool
+        """
+        self._is_autoscale_enabled = is_autoscale_enabled
+
+    @property
+    def autoscale_limit_in_gbs(self):
+        """
+        Gets the autoscale_limit_in_gbs of this CreateExascaleDbStorageVaultDetails.
+        Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+
+
+        :return: The autoscale_limit_in_gbs of this CreateExascaleDbStorageVaultDetails.
+        :rtype: int
+        """
+        return self._autoscale_limit_in_gbs
+
+    @autoscale_limit_in_gbs.setter
+    def autoscale_limit_in_gbs(self, autoscale_limit_in_gbs):
+        """
+        Sets the autoscale_limit_in_gbs of this CreateExascaleDbStorageVaultDetails.
+        Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+
+
+        :param autoscale_limit_in_gbs: The autoscale_limit_in_gbs of this CreateExascaleDbStorageVaultDetails.
+        :type: int
+        """
+        self._autoscale_limit_in_gbs = autoscale_limit_in_gbs
 
     def __repr__(self):
         return formatted_flat_dict(self)

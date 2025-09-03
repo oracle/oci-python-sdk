@@ -18,8 +18,10 @@ Generative Ai Inference
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.generative_ai_inference.models.Annotation
     oci.generative_ai_inference.models.ApplyGuardrailsDetails
     oci.generative_ai_inference.models.ApplyGuardrailsResult
+    oci.generative_ai_inference.models.ApproximateLocation
     oci.generative_ai_inference.models.AssistantMessage
     oci.generative_ai_inference.models.BaseChatRequest
     oci.generative_ai_inference.models.BaseChatResponse
@@ -105,5 +107,7 @@ Generative Ai Inference
     oci.generative_ai_inference.models.ToolChoiceRequired
     oci.generative_ai_inference.models.ToolDefinition
     oci.generative_ai_inference.models.ToolMessage
+    oci.generative_ai_inference.models.UrlCitation
     oci.generative_ai_inference.models.Usage
     oci.generative_ai_inference.models.UserMessage
+    oci.generative_ai_inference.models.WebSearchOptions

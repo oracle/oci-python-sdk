@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateOracleDbAzureBlobMountDetails(object):
     """
-    This object is about to provide input params to mount Azure Container in OCI Database Resource.
+    This object is about to provide input params to mount Azure Container in OCI Database resource.
     """
 
     def __init__(self, **kwargs):
@@ -72,7 +72,9 @@ class UpdateOracleDbAzureBlobMountDetails(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this UpdateOracleDbAzureBlobMountDetails.
-        The OCID of the compartment that contains where to create Oracle DB Azure Blob Mount resource.
+        The `OCID`__ of the compartment that contains Oracle DB Azure Blob Mount resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this UpdateOracleDbAzureBlobMountDetails.
@@ -84,7 +86,9 @@ class UpdateOracleDbAzureBlobMountDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this UpdateOracleDbAzureBlobMountDetails.
-        The OCID of the compartment that contains where to create Oracle DB Azure Blob Mount resource.
+        The `OCID`__ of the compartment that contains Oracle DB Azure Blob Mount resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this UpdateOracleDbAzureBlobMountDetails.
@@ -120,7 +124,9 @@ class UpdateOracleDbAzureBlobMountDetails(object):
     def oracle_db_azure_connector_id(self):
         """
         Gets the oracle_db_azure_connector_id of this UpdateOracleDbAzureBlobMountDetails.
-        The OCID of the Oracle DB Azure Connector Resource.
+        The `OCID`__ of the Oracle DB Azure Connector resource that contains Oracle DB Azure Blob Mount resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The oracle_db_azure_connector_id of this UpdateOracleDbAzureBlobMountDetails.
@@ -132,7 +138,9 @@ class UpdateOracleDbAzureBlobMountDetails(object):
     def oracle_db_azure_connector_id(self, oracle_db_azure_connector_id):
         """
         Sets the oracle_db_azure_connector_id of this UpdateOracleDbAzureBlobMountDetails.
-        The OCID of the Oracle DB Azure Connector Resource.
+        The `OCID`__ of the Oracle DB Azure Connector resource that contains Oracle DB Azure Blob Mount resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param oracle_db_azure_connector_id: The oracle_db_azure_connector_id of this UpdateOracleDbAzureBlobMountDetails.
@@ -144,7 +152,9 @@ class UpdateOracleDbAzureBlobMountDetails(object):
     def oracle_db_azure_blob_container_id(self):
         """
         Gets the oracle_db_azure_blob_container_id of this UpdateOracleDbAzureBlobMountDetails.
-        The OCID of the Oracle DB Azure Blob Container Resource.
+        The `OCID`__ of the Oracle DB Azure Blob Container resource that contains Oracle DB Azure Blob Mount resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The oracle_db_azure_blob_container_id of this UpdateOracleDbAzureBlobMountDetails.
@@ -156,7 +166,9 @@ class UpdateOracleDbAzureBlobMountDetails(object):
     def oracle_db_azure_blob_container_id(self, oracle_db_azure_blob_container_id):
         """
         Sets the oracle_db_azure_blob_container_id of this UpdateOracleDbAzureBlobMountDetails.
-        The OCID of the Oracle DB Azure Blob Container Resource.
+        The `OCID`__ of the Oracle DB Azure Blob Container resource that contains Oracle DB Azure Blob Mount resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param oracle_db_azure_blob_container_id: The oracle_db_azure_blob_container_id of this UpdateOracleDbAzureBlobMountDetails.

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeMultiCloudResourceDiscoveryCompartmentDetails(object):
     """
-    Details of the new compartment to contain the Multi Cloud Resource Discovery.
+    Details of the new compartment to contain the Multicloud Resource Discovery.
     """
 
     def __init__(self, **kwargs):
@@ -58,7 +58,7 @@ class ChangeMultiCloudResourceDiscoveryCompartmentDetails(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this ChangeMultiCloudResourceDiscoveryCompartmentDetails.
-        The `OCID`__ of the new compartment to contain the Multi Cloud Resource Discovery.
+        The `OCID`__ of the new compartment that contains Multicloud Resource Discovery resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -72,7 +72,7 @@ class ChangeMultiCloudResourceDiscoveryCompartmentDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ChangeMultiCloudResourceDiscoveryCompartmentDetails.
-        The `OCID`__ of the new compartment to contain the Multi Cloud Resource Discovery.
+        The `OCID`__ of the new compartment that contains Multicloud Resource Discovery resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

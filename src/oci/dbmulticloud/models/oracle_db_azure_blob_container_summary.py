@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class OracleDbAzureBlobContainerSummary(object):
     """
-    Oracle DB Azure Blob Container Resource Summary.
+    Oracle DB Azure Blob Container resource's summary object.
     """
 
     def __init__(self, **kwargs):
@@ -135,7 +135,9 @@ class OracleDbAzureBlobContainerSummary(object):
     def id(self):
         """
         Gets the id of this OracleDbAzureBlobContainerSummary.
-        The ID for the new mount resource.
+        The `OCID`__ of the DB Azure Blob Container resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this OracleDbAzureBlobContainerSummary.
@@ -147,7 +149,9 @@ class OracleDbAzureBlobContainerSummary(object):
     def id(self, id):
         """
         Sets the id of this OracleDbAzureBlobContainerSummary.
-        The ID for the new mount resource.
+        The `OCID`__ of the DB Azure Blob Container resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this OracleDbAzureBlobContainerSummary.
@@ -183,7 +187,9 @@ class OracleDbAzureBlobContainerSummary(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this OracleDbAzureBlobContainerSummary.
-        The ID of the compartment contains Oracle DB Azure Blob Container Resource.
+        The `OCID`__ of the compartment contains Oracle DB Azure Blob Container resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this OracleDbAzureBlobContainerSummary.
@@ -195,7 +201,9 @@ class OracleDbAzureBlobContainerSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this OracleDbAzureBlobContainerSummary.
-        The ID of the compartment contains Oracle DB Azure Blob Container Resource.
+        The `OCID`__ of the compartment contains Oracle DB Azure Blob Container resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this OracleDbAzureBlobContainerSummary.
@@ -231,7 +239,7 @@ class OracleDbAzureBlobContainerSummary(object):
     def private_endpoint_dns_alias(self):
         """
         Gets the private_endpoint_dns_alias of this OracleDbAzureBlobContainerSummary.
-        Private Endpoint DNS Alias.
+        Private Endpoint's DNS alias.
 
 
         :return: The private_endpoint_dns_alias of this OracleDbAzureBlobContainerSummary.
@@ -243,7 +251,7 @@ class OracleDbAzureBlobContainerSummary(object):
     def private_endpoint_dns_alias(self, private_endpoint_dns_alias):
         """
         Sets the private_endpoint_dns_alias of this OracleDbAzureBlobContainerSummary.
-        Private Endpoint DNS Alias.
+        Private Endpoint's DNS alias.
 
 
         :param private_endpoint_dns_alias: The private_endpoint_dns_alias of this OracleDbAzureBlobContainerSummary.
@@ -255,7 +263,7 @@ class OracleDbAzureBlobContainerSummary(object):
     def azure_storage_account_name(self):
         """
         Gets the azure_storage_account_name of this OracleDbAzureBlobContainerSummary.
-        Azure Storage Account Name.
+        Azure Storage account name.
 
 
         :return: The azure_storage_account_name of this OracleDbAzureBlobContainerSummary.
@@ -267,7 +275,7 @@ class OracleDbAzureBlobContainerSummary(object):
     def azure_storage_account_name(self, azure_storage_account_name):
         """
         Sets the azure_storage_account_name of this OracleDbAzureBlobContainerSummary.
-        Azure Storage Account Name.
+        Azure Storage account name.
 
 
         :param azure_storage_account_name: The azure_storage_account_name of this OracleDbAzureBlobContainerSummary.
@@ -279,7 +287,7 @@ class OracleDbAzureBlobContainerSummary(object):
     def azure_storage_container_name(self):
         """
         Gets the azure_storage_container_name of this OracleDbAzureBlobContainerSummary.
-        Azure Storage Container Name.
+        Azure Storage container name.
 
 
         :return: The azure_storage_container_name of this OracleDbAzureBlobContainerSummary.
@@ -291,7 +299,7 @@ class OracleDbAzureBlobContainerSummary(object):
     def azure_storage_container_name(self, azure_storage_container_name):
         """
         Sets the azure_storage_container_name of this OracleDbAzureBlobContainerSummary.
-        Azure Storage Container Name.
+        Azure Storage container name.
 
 
         :param azure_storage_container_name: The azure_storage_container_name of this OracleDbAzureBlobContainerSummary.
@@ -303,7 +311,7 @@ class OracleDbAzureBlobContainerSummary(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this OracleDbAzureBlobContainerSummary.
-        The current lifecycle state of the Azure Arc Agent Resource.
+        The current lifecycle state of the DB Azure Blob Container resource.
 
 
         :return: The lifecycle_state of this OracleDbAzureBlobContainerSummary.
@@ -315,7 +323,7 @@ class OracleDbAzureBlobContainerSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this OracleDbAzureBlobContainerSummary.
-        The current lifecycle state of the Azure Arc Agent Resource.
+        The current lifecycle state of the DB Azure Blob Container resource.
 
 
         :param lifecycle_state: The lifecycle_state of this OracleDbAzureBlobContainerSummary.
@@ -407,7 +415,7 @@ class OracleDbAzureBlobContainerSummary(object):
     def last_modification(self):
         """
         Gets the last_modification of this OracleDbAzureBlobContainerSummary.
-        Description of the latest modification of the Oracle DB Azure Blob Container Resource.
+        Description of the latest modification of the Oracle DB Azure Blob Container resource.
 
 
         :return: The last_modification of this OracleDbAzureBlobContainerSummary.
@@ -419,7 +427,7 @@ class OracleDbAzureBlobContainerSummary(object):
     def last_modification(self, last_modification):
         """
         Sets the last_modification of this OracleDbAzureBlobContainerSummary.
-        Description of the latest modification of the Oracle DB Azure Blob Container Resource.
+        Description of the latest modification of the Oracle DB Azure Blob Container resource.
 
 
         :param last_modification: The last_modification of this OracleDbAzureBlobContainerSummary.

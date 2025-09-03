@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateOracleDbAzureVaultDetails(object):
     """
-    This object is about to provide input params to create DB Azure Vault.
+    Create Oracle DB Azure Vault obejct.
     """
 
     def __init__(self, **kwargs):
@@ -100,7 +100,7 @@ class CreateOracleDbAzureVaultDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateOracleDbAzureVaultDetails.
-        The `OCID`__ of the compartment that contains DB Azure Vault Resource.
+        The `OCID`__ of the compartment that contains DB Azure Vault resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -114,7 +114,7 @@ class CreateOracleDbAzureVaultDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateOracleDbAzureVaultDetails.
-        The `OCID`__ of the compartment that contains DB Azure Vault Resource.
+        The `OCID`__ of the compartment that contains DB Azure Vault resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -128,7 +128,7 @@ class CreateOracleDbAzureVaultDetails(object):
     def oracle_db_connector_id(self):
         """
         **[Required]** Gets the oracle_db_connector_id of this CreateOracleDbAzureVaultDetails.
-        The `OCID`__ of the DB Connector Resource.
+        The `OCID`__ of the Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -142,7 +142,7 @@ class CreateOracleDbAzureVaultDetails(object):
     def oracle_db_connector_id(self, oracle_db_connector_id):
         """
         Sets the oracle_db_connector_id of this CreateOracleDbAzureVaultDetails.
-        The `OCID`__ of the DB Connector Resource.
+        The `OCID`__ of the Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -156,7 +156,7 @@ class CreateOracleDbAzureVaultDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this CreateOracleDbAzureVaultDetails.
-        Display name of DB Azure Vault.
+        Oracle DB Azure Vault resource name.
 
 
         :return: The display_name of this CreateOracleDbAzureVaultDetails.
@@ -168,7 +168,7 @@ class CreateOracleDbAzureVaultDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateOracleDbAzureVaultDetails.
-        Display name of DB Azure Vault.
+        Oracle DB Azure Vault resource name.
 
 
         :param display_name: The display_name of this CreateOracleDbAzureVaultDetails.
@@ -180,7 +180,7 @@ class CreateOracleDbAzureVaultDetails(object):
     def oracle_db_azure_resource_group(self):
         """
         Gets the oracle_db_azure_resource_group of this CreateOracleDbAzureVaultDetails.
-        Display name of Azure Resource Group.
+        Oracle DB Azure resource group name.
 
 
         :return: The oracle_db_azure_resource_group of this CreateOracleDbAzureVaultDetails.
@@ -192,7 +192,7 @@ class CreateOracleDbAzureVaultDetails(object):
     def oracle_db_azure_resource_group(self, oracle_db_azure_resource_group):
         """
         Sets the oracle_db_azure_resource_group of this CreateOracleDbAzureVaultDetails.
-        Display name of Azure Resource Group.
+        Oracle DB Azure resource group name.
 
 
         :param oracle_db_azure_resource_group: The oracle_db_azure_resource_group of this CreateOracleDbAzureVaultDetails.
@@ -204,7 +204,7 @@ class CreateOracleDbAzureVaultDetails(object):
     def azure_vault_id(self):
         """
         Gets the azure_vault_id of this CreateOracleDbAzureVaultDetails.
-        Azure Vault Id.
+        Azure Vault ID.
 
 
         :return: The azure_vault_id of this CreateOracleDbAzureVaultDetails.
@@ -216,7 +216,7 @@ class CreateOracleDbAzureVaultDetails(object):
     def azure_vault_id(self, azure_vault_id):
         """
         Sets the azure_vault_id of this CreateOracleDbAzureVaultDetails.
-        Azure Vault Id.
+        Azure Vault ID.
 
 
         :param azure_vault_id: The azure_vault_id of this CreateOracleDbAzureVaultDetails.
@@ -228,7 +228,7 @@ class CreateOracleDbAzureVaultDetails(object):
     def type(self):
         """
         Gets the type of this CreateOracleDbAzureVaultDetails.
-        Vault Resource Type.
+        Oracle DB Azure Vault resource type.
 
 
         :return: The type of this CreateOracleDbAzureVaultDetails.
@@ -240,7 +240,7 @@ class CreateOracleDbAzureVaultDetails(object):
     def type(self, type):
         """
         Sets the type of this CreateOracleDbAzureVaultDetails.
-        Vault Resource Type.
+        Oracle DB Azure Vault resource type.
 
 
         :param type: The type of this CreateOracleDbAzureVaultDetails.
@@ -252,7 +252,7 @@ class CreateOracleDbAzureVaultDetails(object):
     def location(self):
         """
         Gets the location of this CreateOracleDbAzureVaultDetails.
-        Vault Resource Location.
+        Oracle DB Azure Vault resource location.
 
 
         :return: The location of this CreateOracleDbAzureVaultDetails.
@@ -264,7 +264,7 @@ class CreateOracleDbAzureVaultDetails(object):
     def location(self, location):
         """
         Sets the location of this CreateOracleDbAzureVaultDetails.
-        Vault Resource Location.
+        Oracle DB Azure Vault resource location.
 
 
         :param location: The location of this CreateOracleDbAzureVaultDetails.
@@ -276,7 +276,7 @@ class CreateOracleDbAzureVaultDetails(object):
     def properties(self):
         """
         Gets the properties of this CreateOracleDbAzureVaultDetails.
-        Resource's properties.
+        resource's properties.
 
 
         :return: The properties of this CreateOracleDbAzureVaultDetails.
@@ -288,7 +288,7 @@ class CreateOracleDbAzureVaultDetails(object):
     def properties(self, properties):
         """
         Sets the properties of this CreateOracleDbAzureVaultDetails.
-        Resource's properties.
+        resource's properties.
 
 
         :param properties: The properties of this CreateOracleDbAzureVaultDetails.

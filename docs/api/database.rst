@@ -347,6 +347,7 @@ Database
     oci.database.models.GenerateRecommendedNetworkDetails
     oci.database.models.GiMinorVersionSummary
     oci.database.models.GiVersionSummary
+    oci.database.models.GoogleCloudProviderEncryptionKeyDetails
     oci.database.models.GranularMaintenanceHistoryDetails
     oci.database.models.IdentityConnectorDetails
     oci.database.models.InfoForNetworkGenDetails

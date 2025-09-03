@@ -56,6 +56,10 @@ class ManagedListTypeSummary(object):
             The value to assign to the description property of this ManagedListTypeSummary.
         :type description: str
 
+        :param group:
+            The value to assign to the group property of this ManagedListTypeSummary.
+        :type group: str
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this ManagedListTypeSummary.
             Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
@@ -70,17 +74,20 @@ class ManagedListTypeSummary(object):
         self.swagger_types = {
             'id': 'str',
             'description': 'str',
+            'group': 'str',
             'lifecycle_state': 'str',
             'locks': 'list[ResourceLock]'
         }
         self.attribute_map = {
             'id': 'id',
             'description': 'description',
+            'group': 'group',
             'lifecycle_state': 'lifecycleState',
             'locks': 'locks'
         }
         self._id = None
         self._description = None
+        self._group = None
         self._lifecycle_state = None
         self._locks = None
 
@@ -131,6 +138,30 @@ class ManagedListTypeSummary(object):
         :type: str
         """
         self._description = description
+
+    @property
+    def group(self):
+        """
+        Gets the group of this ManagedListTypeSummary.
+        Managed list type group
+
+
+        :return: The group of this ManagedListTypeSummary.
+        :rtype: str
+        """
+        return self._group
+
+    @group.setter
+    def group(self, group):
+        """
+        Sets the group of this ManagedListTypeSummary.
+        Managed list type group
+
+
+        :param group: The group of this ManagedListTypeSummary.
+        :type: str
+        """
+        self._group = group
 
     @property
     def lifecycle_state(self):

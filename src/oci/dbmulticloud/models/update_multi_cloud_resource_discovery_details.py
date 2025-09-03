@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateMultiCloudResourceDiscoveryDetails(object):
     """
-    This object is about to provide input params to update Multi Cloud Resource Discovery.
+    This object is about to provide input params to update Multicloud Resource Discovery.
     """
 
     def __init__(self, **kwargs):
@@ -72,7 +72,7 @@ class UpdateMultiCloudResourceDiscoveryDetails(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this UpdateMultiCloudResourceDiscoveryDetails.
-        The `OCID`__ of the compartment that contains Multi Cloud Resource Discovery.
+        The `OCID`__ of the compartment that contains Multicloud Resource Discovery resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -86,7 +86,7 @@ class UpdateMultiCloudResourceDiscoveryDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this UpdateMultiCloudResourceDiscoveryDetails.
-        The `OCID`__ of the compartment that contains Multi Cloud Resource Discovery.
+        The `OCID`__ of the compartment that contains Multicloud Resource Discovery resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -100,7 +100,7 @@ class UpdateMultiCloudResourceDiscoveryDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateMultiCloudResourceDiscoveryDetails.
-        Display name of Oracle Multi Cloud Resource Discovery.
+        Display name of the Multicloud Resource Discovery resource.
 
 
         :return: The display_name of this UpdateMultiCloudResourceDiscoveryDetails.
@@ -112,7 +112,7 @@ class UpdateMultiCloudResourceDiscoveryDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateMultiCloudResourceDiscoveryDetails.
-        Display name of Oracle Multi Cloud Resource Discovery.
+        Display name of the Multicloud Resource Discovery resource.
 
 
         :param display_name: The display_name of this UpdateMultiCloudResourceDiscoveryDetails.
@@ -124,7 +124,7 @@ class UpdateMultiCloudResourceDiscoveryDetails(object):
     def oracle_db_connector_id(self):
         """
         Gets the oracle_db_connector_id of this UpdateMultiCloudResourceDiscoveryDetails.
-        The `OCID`__ of the Oracle DB Connector.
+        The `OCID`__ of the Oracle DB Connector resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -138,7 +138,7 @@ class UpdateMultiCloudResourceDiscoveryDetails(object):
     def oracle_db_connector_id(self, oracle_db_connector_id):
         """
         Sets the oracle_db_connector_id of this UpdateMultiCloudResourceDiscoveryDetails.
-        The `OCID`__ of the Oracle DB Connector.
+        The `OCID`__ of the Oracle DB Connector resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

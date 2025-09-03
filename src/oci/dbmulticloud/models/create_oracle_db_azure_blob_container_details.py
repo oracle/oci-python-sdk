@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateOracleDbAzureBlobContainerDetails(object):
     """
-    This object is about to provide input params to create Oracle DB Azure Blob Container.
+    Create Oracle DB Azure Blob Container object.
     """
 
     def __init__(self, **kwargs):
@@ -86,7 +86,9 @@ class CreateOracleDbAzureBlobContainerDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateOracleDbAzureBlobContainerDetails.
-        The OCID of the compartment that contains Oracle DB Azure Blob Container Resource.
+        The `OCID`__ of Oracle DB Azure Blob Container resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateOracleDbAzureBlobContainerDetails.
@@ -98,7 +100,9 @@ class CreateOracleDbAzureBlobContainerDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateOracleDbAzureBlobContainerDetails.
-        The OCID of the compartment that contains Oracle DB Azure Blob Container Resource.
+        The `OCID`__ of Oracle DB Azure Blob Container resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateOracleDbAzureBlobContainerDetails.
@@ -110,7 +114,7 @@ class CreateOracleDbAzureBlobContainerDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this CreateOracleDbAzureBlobContainerDetails.
-        Display name of Oracle DB Azure Blob Container.
+        Oracle DB Azure Blob Container resource name.
 
 
         :return: The display_name of this CreateOracleDbAzureBlobContainerDetails.
@@ -122,7 +126,7 @@ class CreateOracleDbAzureBlobContainerDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateOracleDbAzureBlobContainerDetails.
-        Display name of Oracle DB Azure Blob Container.
+        Oracle DB Azure Blob Container resource name.
 
 
         :param display_name: The display_name of this CreateOracleDbAzureBlobContainerDetails.
@@ -158,7 +162,7 @@ class CreateOracleDbAzureBlobContainerDetails(object):
     def private_endpoint_dns_alias(self):
         """
         Gets the private_endpoint_dns_alias of this CreateOracleDbAzureBlobContainerDetails.
-        Private endpoint DNS Alias.
+        Private endpoint's DNS alias.
 
 
         :return: The private_endpoint_dns_alias of this CreateOracleDbAzureBlobContainerDetails.
@@ -170,7 +174,7 @@ class CreateOracleDbAzureBlobContainerDetails(object):
     def private_endpoint_dns_alias(self, private_endpoint_dns_alias):
         """
         Sets the private_endpoint_dns_alias of this CreateOracleDbAzureBlobContainerDetails.
-        Private endpoint DNS Alias.
+        Private endpoint's DNS alias.
 
 
         :param private_endpoint_dns_alias: The private_endpoint_dns_alias of this CreateOracleDbAzureBlobContainerDetails.
@@ -182,7 +186,7 @@ class CreateOracleDbAzureBlobContainerDetails(object):
     def azure_storage_account_name(self):
         """
         **[Required]** Gets the azure_storage_account_name of this CreateOracleDbAzureBlobContainerDetails.
-        Azure Storage Account Name.
+        Azure Storage account name.
 
 
         :return: The azure_storage_account_name of this CreateOracleDbAzureBlobContainerDetails.
@@ -194,7 +198,7 @@ class CreateOracleDbAzureBlobContainerDetails(object):
     def azure_storage_account_name(self, azure_storage_account_name):
         """
         Sets the azure_storage_account_name of this CreateOracleDbAzureBlobContainerDetails.
-        Azure Storage Account Name.
+        Azure Storage account name.
 
 
         :param azure_storage_account_name: The azure_storage_account_name of this CreateOracleDbAzureBlobContainerDetails.
@@ -206,7 +210,7 @@ class CreateOracleDbAzureBlobContainerDetails(object):
     def azure_storage_container_name(self):
         """
         **[Required]** Gets the azure_storage_container_name of this CreateOracleDbAzureBlobContainerDetails.
-        Azure Storage Container Name.
+        Azure Storage container name.
 
 
         :return: The azure_storage_container_name of this CreateOracleDbAzureBlobContainerDetails.
@@ -218,7 +222,7 @@ class CreateOracleDbAzureBlobContainerDetails(object):
     def azure_storage_container_name(self, azure_storage_container_name):
         """
         Sets the azure_storage_container_name of this CreateOracleDbAzureBlobContainerDetails.
-        Azure Storage Container Name.
+        Azure Storage container name.
 
 
         :param azure_storage_container_name: The azure_storage_container_name of this CreateOracleDbAzureBlobContainerDetails.
