@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateOracleDbAzureBlobMountDetails(object):
     """
-    This object is about to provide input params to mount Azure Container in OCI Database Resource.
+    This object is about to provide input params to mount Azure Container in OCI Database resource.
     """
 
     def __init__(self, **kwargs):
@@ -72,7 +72,9 @@ class CreateOracleDbAzureBlobMountDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateOracleDbAzureBlobMountDetails.
-        The OCID of the compartment that contains VMs where to mount Azure Container.
+        TThe `OCID`__ of the compartment that contains Oracle DB Azure Blob Mount resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateOracleDbAzureBlobMountDetails.
@@ -84,7 +86,9 @@ class CreateOracleDbAzureBlobMountDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateOracleDbAzureBlobMountDetails.
-        The OCID of the compartment that contains VMs where to mount Azure Container.
+        TThe `OCID`__ of the compartment that contains Oracle DB Azure Blob Mount resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateOracleDbAzureBlobMountDetails.
@@ -96,7 +100,7 @@ class CreateOracleDbAzureBlobMountDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this CreateOracleDbAzureBlobMountDetails.
-        Oracle DB Azure Blob Mount Resource name.
+        Oracle DB Azure Blob Mount resource name.
 
 
         :return: The display_name of this CreateOracleDbAzureBlobMountDetails.
@@ -108,7 +112,7 @@ class CreateOracleDbAzureBlobMountDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateOracleDbAzureBlobMountDetails.
-        Oracle DB Azure Blob Mount Resource name.
+        Oracle DB Azure Blob Mount resource name.
 
 
         :param display_name: The display_name of this CreateOracleDbAzureBlobMountDetails.
@@ -120,7 +124,9 @@ class CreateOracleDbAzureBlobMountDetails(object):
     def oracle_db_azure_connector_id(self):
         """
         **[Required]** Gets the oracle_db_azure_connector_id of this CreateOracleDbAzureBlobMountDetails.
-        The OCID of the Oracle DB Azure Connector Resource.
+        The `OCID`__ of the Oracle DB Azure Connector resource that contains Oracle DB Azure Blob Mount resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The oracle_db_azure_connector_id of this CreateOracleDbAzureBlobMountDetails.
@@ -132,7 +138,9 @@ class CreateOracleDbAzureBlobMountDetails(object):
     def oracle_db_azure_connector_id(self, oracle_db_azure_connector_id):
         """
         Sets the oracle_db_azure_connector_id of this CreateOracleDbAzureBlobMountDetails.
-        The OCID of the Oracle DB Azure Connector Resource.
+        The `OCID`__ of the Oracle DB Azure Connector resource that contains Oracle DB Azure Blob Mount resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param oracle_db_azure_connector_id: The oracle_db_azure_connector_id of this CreateOracleDbAzureBlobMountDetails.
@@ -144,7 +152,9 @@ class CreateOracleDbAzureBlobMountDetails(object):
     def oracle_db_azure_blob_container_id(self):
         """
         **[Required]** Gets the oracle_db_azure_blob_container_id of this CreateOracleDbAzureBlobMountDetails.
-        The OCID of the Oracle DB Azure Blob Container Resource.
+        The `OCID`__ of the Oracle DB Azure Blob Container resource that contains Oracle DB Azure Blob Mount resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The oracle_db_azure_blob_container_id of this CreateOracleDbAzureBlobMountDetails.
@@ -156,7 +166,9 @@ class CreateOracleDbAzureBlobMountDetails(object):
     def oracle_db_azure_blob_container_id(self, oracle_db_azure_blob_container_id):
         """
         Sets the oracle_db_azure_blob_container_id of this CreateOracleDbAzureBlobMountDetails.
-        The OCID of the Oracle DB Azure Blob Container Resource.
+        The `OCID`__ of the Oracle DB Azure Blob Container resource that contains Oracle DB Azure Blob Mount resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param oracle_db_azure_blob_container_id: The oracle_db_azure_blob_container_id of this CreateOracleDbAzureBlobMountDetails.

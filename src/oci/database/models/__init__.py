@@ -335,6 +335,7 @@ from .generate_autonomous_database_wallet_details import GenerateAutonomousDatab
 from .generate_recommended_network_details import GenerateRecommendedNetworkDetails
 from .gi_minor_version_summary import GiMinorVersionSummary
 from .gi_version_summary import GiVersionSummary
+from .google_cloud_provider_encryption_key_details import GoogleCloudProviderEncryptionKeyDetails
 from .granular_maintenance_history_details import GranularMaintenanceHistoryDetails
 from .identity_connector_details import IdentityConnectorDetails
 from .info_for_network_gen_details import InfoForNetworkGenDetails
@@ -840,6 +841,7 @@ database_type_mapping = {
     "GenerateRecommendedNetworkDetails": GenerateRecommendedNetworkDetails,
     "GiMinorVersionSummary": GiMinorVersionSummary,
     "GiVersionSummary": GiVersionSummary,
+    "GoogleCloudProviderEncryptionKeyDetails": GoogleCloudProviderEncryptionKeyDetails,
     "GranularMaintenanceHistoryDetails": GranularMaintenanceHistoryDetails,
     "IdentityConnectorDetails": IdentityConnectorDetails,
     "InfoForNetworkGenDetails": InfoForNetworkGenDetails,

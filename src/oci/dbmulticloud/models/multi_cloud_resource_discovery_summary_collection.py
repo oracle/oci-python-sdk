@@ -37,7 +37,7 @@ class MultiCloudResourceDiscoverySummaryCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this MultiCloudResourceDiscoverySummaryCollection.
-        This list contains the summary of Multi Cloud Resource Discovery.
+        This list contains the summary of Multicloud Resource Discovery.
 
 
         :return: The items of this MultiCloudResourceDiscoverySummaryCollection.
@@ -49,7 +49,7 @@ class MultiCloudResourceDiscoverySummaryCollection(object):
     def items(self, items):
         """
         Sets the items of this MultiCloudResourceDiscoverySummaryCollection.
-        This list contains the summary of Multi Cloud Resource Discovery.
+        This list contains the summary of Multicloud Resource Discovery.
 
 
         :param items: The items of this MultiCloudResourceDiscoverySummaryCollection.

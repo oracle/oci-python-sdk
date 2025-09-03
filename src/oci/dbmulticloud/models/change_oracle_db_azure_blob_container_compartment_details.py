@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeOracleDbAzureBlobContainerCompartmentDetails(object):
     """
-    Details of the new compartment to contain the Oracle DB Azure Blob Container Resource.
+    Details of the new compartment to contain the Oracle DB Azure Blob Container resource.
     """
 
     def __init__(self, **kwargs):
@@ -58,7 +58,9 @@ class ChangeOracleDbAzureBlobContainerCompartmentDetails(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this ChangeOracleDbAzureBlobContainerCompartmentDetails.
-        The ID of the new compartment to contain the Oracle DB Azure Blob Container Resource.
+        he `OCID`__ of the compartment that contains the Oracle DB Azure Blob Container resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ChangeOracleDbAzureBlobContainerCompartmentDetails.
@@ -70,7 +72,9 @@ class ChangeOracleDbAzureBlobContainerCompartmentDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ChangeOracleDbAzureBlobContainerCompartmentDetails.
-        The ID of the new compartment to contain the Oracle DB Azure Blob Container Resource.
+        he `OCID`__ of the compartment that contains the Oracle DB Azure Blob Container resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ChangeOracleDbAzureBlobContainerCompartmentDetails.

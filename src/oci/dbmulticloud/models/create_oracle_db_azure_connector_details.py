@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateOracleDbAzureConnectorDetails(object):
     """
-    This object is about to provide input params to create Oracle DB Azure Connector Resource.
+    Create Oracle DB Azure Connector resource object.
     """
 
     def __init__(self, **kwargs):
@@ -114,7 +114,9 @@ class CreateOracleDbAzureConnectorDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateOracleDbAzureConnectorDetails.
-        The ID of the compartment that contains Oracle DB Azure Connector Resource.
+        The `OCID`__ of the compartment that contains Oracle DB Azure Connector resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateOracleDbAzureConnectorDetails.
@@ -126,7 +128,9 @@ class CreateOracleDbAzureConnectorDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateOracleDbAzureConnectorDetails.
-        The ID of the compartment that contains Oracle DB Azure Connector Resource.
+        The `OCID`__ of the compartment that contains Oracle DB Azure Connector resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateOracleDbAzureConnectorDetails.
@@ -138,7 +142,7 @@ class CreateOracleDbAzureConnectorDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this CreateOracleDbAzureConnectorDetails.
-        Oracle DB Azure Connector Resource name.
+        Oracle DB Azure Connector resource name.
 
 
         :return: The display_name of this CreateOracleDbAzureConnectorDetails.
@@ -150,7 +154,7 @@ class CreateOracleDbAzureConnectorDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateOracleDbAzureConnectorDetails.
-        Oracle DB Azure Connector Resource name.
+        Oracle DB Azure Connector resource name.
 
 
         :param display_name: The display_name of this CreateOracleDbAzureConnectorDetails.
@@ -162,7 +166,9 @@ class CreateOracleDbAzureConnectorDetails(object):
     def db_cluster_resource_id(self):
         """
         **[Required]** Gets the db_cluster_resource_id of this CreateOracleDbAzureConnectorDetails.
-        The ID of the DB Cluster Resource where this Azure Arc Agent Identity to configure.
+        The `OCID`__ of the Oracle DB Cloud VM Cluster resource where this Azure Arc Agent Identity to configure.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The db_cluster_resource_id of this CreateOracleDbAzureConnectorDetails.
@@ -174,7 +180,9 @@ class CreateOracleDbAzureConnectorDetails(object):
     def db_cluster_resource_id(self, db_cluster_resource_id):
         """
         Sets the db_cluster_resource_id of this CreateOracleDbAzureConnectorDetails.
-        The ID of the DB Cluster Resource where this Azure Arc Agent Identity to configure.
+        The `OCID`__ of the Oracle DB Cloud VM Cluster resource where this Azure Arc Agent Identity to configure.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param db_cluster_resource_id: The db_cluster_resource_id of this CreateOracleDbAzureConnectorDetails.
@@ -186,7 +194,7 @@ class CreateOracleDbAzureConnectorDetails(object):
     def azure_identity_mechanism(self):
         """
         **[Required]** Gets the azure_identity_mechanism of this CreateOracleDbAzureConnectorDetails.
-        Azure Identity Mechanism.
+        Azure Identity mechanism.
 
 
         :return: The azure_identity_mechanism of this CreateOracleDbAzureConnectorDetails.
@@ -198,7 +206,7 @@ class CreateOracleDbAzureConnectorDetails(object):
     def azure_identity_mechanism(self, azure_identity_mechanism):
         """
         Sets the azure_identity_mechanism of this CreateOracleDbAzureConnectorDetails.
-        Azure Identity Mechanism.
+        Azure Identity mechanism.
 
 
         :param azure_identity_mechanism: The azure_identity_mechanism of this CreateOracleDbAzureConnectorDetails.
@@ -258,7 +266,7 @@ class CreateOracleDbAzureConnectorDetails(object):
     def azure_resource_group(self):
         """
         **[Required]** Gets the azure_resource_group of this CreateOracleDbAzureConnectorDetails.
-        Azure Resource Group Name.
+        Azure Resource group name.
 
 
         :return: The azure_resource_group of this CreateOracleDbAzureConnectorDetails.
@@ -270,7 +278,7 @@ class CreateOracleDbAzureConnectorDetails(object):
     def azure_resource_group(self, azure_resource_group):
         """
         Sets the azure_resource_group of this CreateOracleDbAzureConnectorDetails.
-        Azure Resource Group Name.
+        Azure Resource group name.
 
 
         :param azure_resource_group: The azure_resource_group of this CreateOracleDbAzureConnectorDetails.
@@ -282,7 +290,7 @@ class CreateOracleDbAzureConnectorDetails(object):
     def access_token(self):
         """
         Gets the access_token of this CreateOracleDbAzureConnectorDetails.
-        Azure bearer access token. If bearer access token is provided then Service Principal details are not requires.
+        Azure bearer access token.
 
 
         :return: The access_token of this CreateOracleDbAzureConnectorDetails.
@@ -294,7 +302,7 @@ class CreateOracleDbAzureConnectorDetails(object):
     def access_token(self, access_token):
         """
         Sets the access_token of this CreateOracleDbAzureConnectorDetails.
-        Azure bearer access token. If bearer access token is provided then Service Principal details are not requires.
+        Azure bearer access token.
 
 
         :param access_token: The access_token of this CreateOracleDbAzureConnectorDetails.
@@ -330,7 +338,7 @@ class CreateOracleDbAzureConnectorDetails(object):
     def private_endpoint_dns_alias(self):
         """
         Gets the private_endpoint_dns_alias of this CreateOracleDbAzureConnectorDetails.
-        Private endpoint DNS Alias.
+        Private endpoint's DNS alias.
 
 
         :return: The private_endpoint_dns_alias of this CreateOracleDbAzureConnectorDetails.
@@ -342,7 +350,7 @@ class CreateOracleDbAzureConnectorDetails(object):
     def private_endpoint_dns_alias(self, private_endpoint_dns_alias):
         """
         Sets the private_endpoint_dns_alias of this CreateOracleDbAzureConnectorDetails.
-        Private endpoint DNS Alias.
+        Private endpoint's DNS alias.
 
 
         :param private_endpoint_dns_alias: The private_endpoint_dns_alias of this CreateOracleDbAzureConnectorDetails.

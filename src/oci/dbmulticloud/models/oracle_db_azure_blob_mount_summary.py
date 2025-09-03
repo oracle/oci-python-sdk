@@ -128,7 +128,9 @@ class OracleDbAzureBlobMountSummary(object):
     def id(self):
         """
         Gets the id of this OracleDbAzureBlobMountSummary.
-        The ID for the new Oracle DB Azure Blob Mount resource.
+        TThe The `OCID`__ of the Oracle DB Azure Blob Mount resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this OracleDbAzureBlobMountSummary.
@@ -140,7 +142,9 @@ class OracleDbAzureBlobMountSummary(object):
     def id(self, id):
         """
         Sets the id of this OracleDbAzureBlobMountSummary.
-        The ID for the new Oracle DB Azure Blob Mount resource.
+        TThe The `OCID`__ of the Oracle DB Azure Blob Mount resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this OracleDbAzureBlobMountSummary.
@@ -176,7 +180,9 @@ class OracleDbAzureBlobMountSummary(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this OracleDbAzureBlobMountSummary.
-        The ID of the compartment that contains VM where to install Azure Arc Agent.
+        The `OCID`__ of the compartment that contains Oracle DB Azure Blob Mount resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this OracleDbAzureBlobMountSummary.
@@ -188,7 +194,9 @@ class OracleDbAzureBlobMountSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this OracleDbAzureBlobMountSummary.
-        The ID of the compartment that contains VM where to install Azure Arc Agent.
+        The `OCID`__ of the compartment that contains Oracle DB Azure Blob Mount resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this OracleDbAzureBlobMountSummary.
@@ -200,7 +208,9 @@ class OracleDbAzureBlobMountSummary(object):
     def oracle_db_azure_connector_id(self):
         """
         Gets the oracle_db_azure_connector_id of this OracleDbAzureBlobMountSummary.
-        The ID of the Oracle DB Azure Connector Resource.
+        The `OCID`__ of the Oracle DB Azure Connector resource that contains Oracle DB Azure Blob Mount resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The oracle_db_azure_connector_id of this OracleDbAzureBlobMountSummary.
@@ -212,7 +222,9 @@ class OracleDbAzureBlobMountSummary(object):
     def oracle_db_azure_connector_id(self, oracle_db_azure_connector_id):
         """
         Sets the oracle_db_azure_connector_id of this OracleDbAzureBlobMountSummary.
-        The ID of the Oracle DB Azure Connector Resource.
+        The `OCID`__ of the Oracle DB Azure Connector resource that contains Oracle DB Azure Blob Mount resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param oracle_db_azure_connector_id: The oracle_db_azure_connector_id of this OracleDbAzureBlobMountSummary.
@@ -224,7 +236,9 @@ class OracleDbAzureBlobMountSummary(object):
     def oracle_db_azure_blob_container_id(self):
         """
         Gets the oracle_db_azure_blob_container_id of this OracleDbAzureBlobMountSummary.
-        The ID of the Oracle DB Azure Blob Container Resource.
+        The `OCID`__ of the Oracle DB Azure Blob Container resource that contains Oracle DB Azure Blob Mount resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The oracle_db_azure_blob_container_id of this OracleDbAzureBlobMountSummary.
@@ -236,7 +250,9 @@ class OracleDbAzureBlobMountSummary(object):
     def oracle_db_azure_blob_container_id(self, oracle_db_azure_blob_container_id):
         """
         Sets the oracle_db_azure_blob_container_id of this OracleDbAzureBlobMountSummary.
-        The ID of the Oracle DB Azure Blob Container Resource.
+        The `OCID`__ of the Oracle DB Azure Blob Container resource that contains Oracle DB Azure Blob Mount resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param oracle_db_azure_blob_container_id: The oracle_db_azure_blob_container_id of this OracleDbAzureBlobMountSummary.
@@ -272,7 +288,7 @@ class OracleDbAzureBlobMountSummary(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this OracleDbAzureBlobMountSummary.
-        The current lifecycle state of the Oracle DB Azure Blob Mount Resource.
+        The current lifecycle state of the Oracle DB Azure Blob Mount resource.
 
 
         :return: The lifecycle_state of this OracleDbAzureBlobMountSummary.
@@ -284,7 +300,7 @@ class OracleDbAzureBlobMountSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this OracleDbAzureBlobMountSummary.
-        The current lifecycle state of the Oracle DB Azure Blob Mount Resource.
+        The current lifecycle state of the Oracle DB Azure Blob Mount resource.
 
 
         :param lifecycle_state: The lifecycle_state of this OracleDbAzureBlobMountSummary.
@@ -376,7 +392,7 @@ class OracleDbAzureBlobMountSummary(object):
     def last_modification(self):
         """
         Gets the last_modification of this OracleDbAzureBlobMountSummary.
-        Description of the latest modification of the Oracle DB Azure Blob Mount Resource.
+        Description of the latest modification of the Oracle DB Azure Blob Mount resource.
 
 
         :return: The last_modification of this OracleDbAzureBlobMountSummary.
@@ -388,7 +404,7 @@ class OracleDbAzureBlobMountSummary(object):
     def last_modification(self, last_modification):
         """
         Sets the last_modification of this OracleDbAzureBlobMountSummary.
-        Description of the latest modification of the Oracle DB Azure Blob Mount Resource.
+        Description of the latest modification of the Oracle DB Azure Blob Mount resource.
 
 
         :param last_modification: The last_modification of this OracleDbAzureBlobMountSummary.

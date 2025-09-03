@@ -35,6 +35,10 @@ class CreateDetectorRecipeDetails(object):
     #: This constant has a value of "IAAS_INSTANCE_SECURITY_DETECTOR"
     DETECTOR_IAAS_INSTANCE_SECURITY_DETECTOR = "IAAS_INSTANCE_SECURITY_DETECTOR"
 
+    #: A constant which can be used with the detector property of a CreateDetectorRecipeDetails.
+    #: This constant has a value of "IAAS_CONTAINER_SECURITY_DETECTOR"
+    DETECTOR_IAAS_CONTAINER_SECURITY_DETECTOR = "IAAS_CONTAINER_SECURITY_DETECTOR"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateDetectorRecipeDetails object with values from keyword arguments.
@@ -50,7 +54,7 @@ class CreateDetectorRecipeDetails(object):
 
         :param detector:
             The value to assign to the detector property of this CreateDetectorRecipeDetails.
-            Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR"
+            Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR", "IAAS_CONTAINER_SECURITY_DETECTOR"
         :type detector: str
 
         :param source_detector_recipe_id:
@@ -165,7 +169,7 @@ class CreateDetectorRecipeDetails(object):
         Gets the detector of this CreateDetectorRecipeDetails.
         Detector for the rule
 
-        Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR"
+        Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR", "IAAS_CONTAINER_SECURITY_DETECTOR"
 
 
         :return: The detector of this CreateDetectorRecipeDetails.
@@ -183,7 +187,7 @@ class CreateDetectorRecipeDetails(object):
         :param detector: The detector of this CreateDetectorRecipeDetails.
         :type: str
         """
-        allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR"]
+        allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR", "IAAS_CONTAINER_SECURITY_DETECTOR"]
         if not value_allowed_none_or_none_sentinel(detector, allowed_values):
             raise ValueError(
                 f"Invalid value for `detector`, must be None or one of {allowed_values}"

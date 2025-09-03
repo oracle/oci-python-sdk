@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class OracleDbAzureConnectorSummary(object):
     """
-    Details of Oracle DB Azure Connector Resource.
+    Details of Oracle DB Azure Connector resource.
     """
 
     def __init__(self, **kwargs):
@@ -72,6 +72,10 @@ class OracleDbAzureConnectorSummary(object):
             The value to assign to the azure_identity_mechanism property of this OracleDbAzureConnectorSummary.
         :type azure_identity_mechanism: str
 
+        :param azure_identity_connectivity_status:
+            The value to assign to the azure_identity_connectivity_status property of this OracleDbAzureConnectorSummary.
+        :type azure_identity_connectivity_status: str
+
         :param time_created:
             The value to assign to the time_created property of this OracleDbAzureConnectorSummary.
         :type time_created: datetime
@@ -111,6 +115,7 @@ class OracleDbAzureConnectorSummary(object):
             'lifecycle_state': 'str',
             'lifecycle_state_details': 'str',
             'azure_identity_mechanism': 'str',
+            'azure_identity_connectivity_status': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'last_modification': 'str',
@@ -132,6 +137,7 @@ class OracleDbAzureConnectorSummary(object):
             'lifecycle_state': 'lifecycleState',
             'lifecycle_state_details': 'lifecycleStateDetails',
             'azure_identity_mechanism': 'azureIdentityMechanism',
+            'azure_identity_connectivity_status': 'azureIdentityConnectivityStatus',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'last_modification': 'lastModification',
@@ -152,6 +158,7 @@ class OracleDbAzureConnectorSummary(object):
         self._lifecycle_state = None
         self._lifecycle_state_details = None
         self._azure_identity_mechanism = None
+        self._azure_identity_connectivity_status = None
         self._time_created = None
         self._time_updated = None
         self._last_modification = None
@@ -163,7 +170,9 @@ class OracleDbAzureConnectorSummary(object):
     def id(self):
         """
         Gets the id of this OracleDbAzureConnectorSummary.
-        Oracle DB Azure Connector Resource ID.
+        The `OCID`__ of the Oracle DB Azure Connector resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this OracleDbAzureConnectorSummary.
@@ -175,7 +184,9 @@ class OracleDbAzureConnectorSummary(object):
     def id(self, id):
         """
         Sets the id of this OracleDbAzureConnectorSummary.
-        Oracle DB Azure Connector Resource ID.
+        The `OCID`__ of the Oracle DB Azure Connector resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this OracleDbAzureConnectorSummary.
@@ -187,7 +198,9 @@ class OracleDbAzureConnectorSummary(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this OracleDbAzureConnectorSummary.
-        The ID of the compartment that contains Oracle DB Azure Connector Resource.
+        The `OCID`__ of the compartment that contains Oracle DB Azure Connector resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this OracleDbAzureConnectorSummary.
@@ -199,7 +212,9 @@ class OracleDbAzureConnectorSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this OracleDbAzureConnectorSummary.
-        The ID of the compartment that contains Oracle DB Azure Connector Resource.
+        The `OCID`__ of the compartment that contains Oracle DB Azure Connector resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this OracleDbAzureConnectorSummary.
@@ -211,7 +226,9 @@ class OracleDbAzureConnectorSummary(object):
     def db_cluster_resource_id(self):
         """
         Gets the db_cluster_resource_id of this OracleDbAzureConnectorSummary.
-        The ID of the DB Cluster Resource where this Azure Arc Agent Identity to configure.
+        The `OCID`__ of the Oracle DB Cloud VM Cluster resource where this Azure Arc Agent Identity to configure.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The db_cluster_resource_id of this OracleDbAzureConnectorSummary.
@@ -223,7 +240,9 @@ class OracleDbAzureConnectorSummary(object):
     def db_cluster_resource_id(self, db_cluster_resource_id):
         """
         Sets the db_cluster_resource_id of this OracleDbAzureConnectorSummary.
-        The ID of the DB Cluster Resource where this Azure Arc Agent Identity to configure.
+        The `OCID`__ of the Oracle DB Cloud VM Cluster resource where this Azure Arc Agent Identity to configure.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param db_cluster_resource_id: The db_cluster_resource_id of this OracleDbAzureConnectorSummary.
@@ -235,7 +254,7 @@ class OracleDbAzureConnectorSummary(object):
     def display_name(self):
         """
         Gets the display_name of this OracleDbAzureConnectorSummary.
-        Oracle DB Azure Connector Resource Name.
+        Oracle DB Azure Connector resource name.
 
 
         :return: The display_name of this OracleDbAzureConnectorSummary.
@@ -247,7 +266,7 @@ class OracleDbAzureConnectorSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this OracleDbAzureConnectorSummary.
-        Oracle DB Azure Connector Resource Name.
+        Oracle DB Azure Connector resource name.
 
 
         :param display_name: The display_name of this OracleDbAzureConnectorSummary.
@@ -259,7 +278,7 @@ class OracleDbAzureConnectorSummary(object):
     def arc_agent_nodes(self):
         """
         Gets the arc_agent_nodes of this OracleDbAzureConnectorSummary.
-        List of All VMs where Arc Agent Identity is configure under VMCluster.
+        List of all VMs where Arc Agent Identity is configure under Oracle Cloud VM Cluster.
 
 
         :return: The arc_agent_nodes of this OracleDbAzureConnectorSummary.
@@ -271,7 +290,7 @@ class OracleDbAzureConnectorSummary(object):
     def arc_agent_nodes(self, arc_agent_nodes):
         """
         Sets the arc_agent_nodes of this OracleDbAzureConnectorSummary.
-        List of All VMs where Arc Agent Identity is configure under VMCluster.
+        List of all VMs where Arc Agent Identity is configure under Oracle Cloud VM Cluster.
 
 
         :param arc_agent_nodes: The arc_agent_nodes of this OracleDbAzureConnectorSummary.
@@ -331,7 +350,7 @@ class OracleDbAzureConnectorSummary(object):
     def azure_resource_group(self):
         """
         Gets the azure_resource_group of this OracleDbAzureConnectorSummary.
-        Azure Resource Group Name.
+        Azure Resource group name.
 
 
         :return: The azure_resource_group of this OracleDbAzureConnectorSummary.
@@ -343,7 +362,7 @@ class OracleDbAzureConnectorSummary(object):
     def azure_resource_group(self, azure_resource_group):
         """
         Sets the azure_resource_group of this OracleDbAzureConnectorSummary.
-        Azure Resource Group Name.
+        Azure Resource group name.
 
 
         :param azure_resource_group: The azure_resource_group of this OracleDbAzureConnectorSummary.
@@ -379,7 +398,7 @@ class OracleDbAzureConnectorSummary(object):
     def private_endpoint_dns_alias(self):
         """
         Gets the private_endpoint_dns_alias of this OracleDbAzureConnectorSummary.
-        Private endpoint DNS Alias.
+        Private endpoint's DNS alias.
 
 
         :return: The private_endpoint_dns_alias of this OracleDbAzureConnectorSummary.
@@ -391,7 +410,7 @@ class OracleDbAzureConnectorSummary(object):
     def private_endpoint_dns_alias(self, private_endpoint_dns_alias):
         """
         Sets the private_endpoint_dns_alias of this OracleDbAzureConnectorSummary.
-        Private endpoint DNS Alias.
+        Private endpoint's DNS alias.
 
 
         :param private_endpoint_dns_alias: The private_endpoint_dns_alias of this OracleDbAzureConnectorSummary.
@@ -403,7 +422,7 @@ class OracleDbAzureConnectorSummary(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this OracleDbAzureConnectorSummary.
-        The current lifecycle state of the Oracle DB Azure Connector Resource.
+        The current lifecycle state of the Oracle DB Azure Connector resource.
 
 
         :return: The lifecycle_state of this OracleDbAzureConnectorSummary.
@@ -415,7 +434,7 @@ class OracleDbAzureConnectorSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this OracleDbAzureConnectorSummary.
-        The current lifecycle state of the Oracle DB Azure Connector Resource.
+        The current lifecycle state of the Oracle DB Azure Connector resource.
 
 
         :param lifecycle_state: The lifecycle_state of this OracleDbAzureConnectorSummary.
@@ -451,7 +470,7 @@ class OracleDbAzureConnectorSummary(object):
     def azure_identity_mechanism(self):
         """
         Gets the azure_identity_mechanism of this OracleDbAzureConnectorSummary.
-        Azure Identity Mechanism.
+        Azure Identity mechanism.
 
 
         :return: The azure_identity_mechanism of this OracleDbAzureConnectorSummary.
@@ -463,7 +482,7 @@ class OracleDbAzureConnectorSummary(object):
     def azure_identity_mechanism(self, azure_identity_mechanism):
         """
         Sets the azure_identity_mechanism of this OracleDbAzureConnectorSummary.
-        Azure Identity Mechanism.
+        Azure Identity mechanism.
 
 
         :param azure_identity_mechanism: The azure_identity_mechanism of this OracleDbAzureConnectorSummary.
@@ -472,10 +491,34 @@ class OracleDbAzureConnectorSummary(object):
         self._azure_identity_mechanism = azure_identity_mechanism
 
     @property
+    def azure_identity_connectivity_status(self):
+        """
+        Gets the azure_identity_connectivity_status of this OracleDbAzureConnectorSummary.
+        The current lifecycle state of the Oracle DB Azure Identity Connector resource.
+
+
+        :return: The azure_identity_connectivity_status of this OracleDbAzureConnectorSummary.
+        :rtype: str
+        """
+        return self._azure_identity_connectivity_status
+
+    @azure_identity_connectivity_status.setter
+    def azure_identity_connectivity_status(self, azure_identity_connectivity_status):
+        """
+        Sets the azure_identity_connectivity_status of this OracleDbAzureConnectorSummary.
+        The current lifecycle state of the Oracle DB Azure Identity Connector resource.
+
+
+        :param azure_identity_connectivity_status: The azure_identity_connectivity_status of this OracleDbAzureConnectorSummary.
+        :type: str
+        """
+        self._azure_identity_connectivity_status = azure_identity_connectivity_status
+
+    @property
     def time_created(self):
         """
         Gets the time_created of this OracleDbAzureConnectorSummary.
-        Time when the Oracle DB Azure Connector Resource was created expressed in `RFC 3339`__ timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Oracle DB Azure Connector resource was created expressed in `RFC 3339`__ timestamp format, e.g. '2020-05-22T21:10:29.600Z'
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -489,7 +532,7 @@ class OracleDbAzureConnectorSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this OracleDbAzureConnectorSummary.
-        Time when the Oracle DB Azure Connector Resource was created expressed in `RFC 3339`__ timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Oracle DB Azure Connector resource was created expressed in `RFC 3339`__ timestamp format, e.g. '2020-05-22T21:10:29.600Z'
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -503,7 +546,7 @@ class OracleDbAzureConnectorSummary(object):
     def time_updated(self):
         """
         Gets the time_updated of this OracleDbAzureConnectorSummary.
-        Time when the Oracle DB Azure Connector Resource was last modified expressed in `RFC 3339`__ timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Oracle DB Azure Connector resource was last modified expressed in `RFC 3339`__ timestamp format, e.g. '2020-05-22T21:10:29.600Z'
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -517,7 +560,7 @@ class OracleDbAzureConnectorSummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this OracleDbAzureConnectorSummary.
-        Time when the Oracle DB Azure Connector Resource was last modified expressed in `RFC 3339`__ timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Oracle DB Azure Connector resource was last modified expressed in `RFC 3339`__ timestamp format, e.g. '2020-05-22T21:10:29.600Z'
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -531,7 +574,7 @@ class OracleDbAzureConnectorSummary(object):
     def last_modification(self):
         """
         Gets the last_modification of this OracleDbAzureConnectorSummary.
-        Description of the latest modification of the Oracle DB Azure Connector Resource.
+        Description of the latest modification of the Oracle DB Azure Connector resource.
 
 
         :return: The last_modification of this OracleDbAzureConnectorSummary.
@@ -543,7 +586,7 @@ class OracleDbAzureConnectorSummary(object):
     def last_modification(self, last_modification):
         """
         Sets the last_modification of this OracleDbAzureConnectorSummary.
-        Description of the latest modification of the Oracle DB Azure Connector Resource.
+        Description of the latest modification of the Oracle DB Azure Connector resource.
 
 
         :param last_modification: The last_modification of this OracleDbAzureConnectorSummary.

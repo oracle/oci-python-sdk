@@ -36,6 +36,10 @@ class CreateMultiCloudResourceDiscoveryDetails(object):
             The value to assign to the resource_type property of this CreateMultiCloudResourceDiscoveryDetails.
         :type resource_type: str
 
+        :param resources_filter:
+            The value to assign to the resources_filter property of this CreateMultiCloudResourceDiscoveryDetails.
+        :type resources_filter: dict(str, str)
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateMultiCloudResourceDiscoveryDetails.
         :type freeform_tags: dict(str, str)
@@ -50,6 +54,7 @@ class CreateMultiCloudResourceDiscoveryDetails(object):
             'display_name': 'str',
             'oracle_db_connector_id': 'str',
             'resource_type': 'str',
+            'resources_filter': 'dict(str, str)',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -58,6 +63,7 @@ class CreateMultiCloudResourceDiscoveryDetails(object):
             'display_name': 'displayName',
             'oracle_db_connector_id': 'oracleDbConnectorId',
             'resource_type': 'resourceType',
+            'resources_filter': 'resourcesFilter',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -65,6 +71,7 @@ class CreateMultiCloudResourceDiscoveryDetails(object):
         self._display_name = None
         self._oracle_db_connector_id = None
         self._resource_type = None
+        self._resources_filter = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -72,7 +79,7 @@ class CreateMultiCloudResourceDiscoveryDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateMultiCloudResourceDiscoveryDetails.
-        The `OCID`__ of the compartment that contains Discovered Resource.
+        The `OCID`__ of the compartment that contains Multicloud Resource Discovery resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -86,7 +93,7 @@ class CreateMultiCloudResourceDiscoveryDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateMultiCloudResourceDiscoveryDetails.
-        The `OCID`__ of the compartment that contains Discovered Resource.
+        The `OCID`__ of the compartment that contains Multicloud Resource Discovery resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -100,7 +107,7 @@ class CreateMultiCloudResourceDiscoveryDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this CreateMultiCloudResourceDiscoveryDetails.
-        Display name of Discovered Resource.
+        Display name of the Multicloud Resource Discovery resource.
 
 
         :return: The display_name of this CreateMultiCloudResourceDiscoveryDetails.
@@ -112,7 +119,7 @@ class CreateMultiCloudResourceDiscoveryDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateMultiCloudResourceDiscoveryDetails.
-        Display name of Discovered Resource.
+        Display name of the Multicloud Resource Discovery resource.
 
 
         :param display_name: The display_name of this CreateMultiCloudResourceDiscoveryDetails.
@@ -124,7 +131,7 @@ class CreateMultiCloudResourceDiscoveryDetails(object):
     def oracle_db_connector_id(self):
         """
         **[Required]** Gets the oracle_db_connector_id of this CreateMultiCloudResourceDiscoveryDetails.
-        The `OCID`__ of Oracle DB Connector.
+        The `OCID`__ of the Oracle DB Connector resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -138,7 +145,7 @@ class CreateMultiCloudResourceDiscoveryDetails(object):
     def oracle_db_connector_id(self, oracle_db_connector_id):
         """
         Sets the oracle_db_connector_id of this CreateMultiCloudResourceDiscoveryDetails.
-        The `OCID`__ of Oracle DB Connector.
+        The `OCID`__ of the Oracle DB Connector resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -171,6 +178,46 @@ class CreateMultiCloudResourceDiscoveryDetails(object):
         :type: str
         """
         self._resource_type = resource_type
+
+    @property
+    def resources_filter(self):
+        """
+        Gets the resources_filter of this CreateMultiCloudResourceDiscoveryDetails.
+        Discover resource using attributes as key-value pair.
+        For GCP supported attributes (keyRing)
+        For Azure supported attributes (keyVault)
+        GCP Example
+        `{\"keyRing\": \"projects/db-mc-dataplane/locations/global/keyRings/dbmci-keyring\"}` or
+        `{\"keyRing\": \"dbmci-keyring\"}`
+        Azure Example
+        `{\"keyVault\": \"/subscriptions/fd42b73d-5f28-4a23-ae7c-ca08c625fe07/resourceGroups/yumfei0808Test/providers/Microsoft.KeyVault/managedHSMs/orp7HSM001\"}` or
+        `{\"keyVault\": \"orp7HSM001\"}`
+
+
+        :return: The resources_filter of this CreateMultiCloudResourceDiscoveryDetails.
+        :rtype: dict(str, str)
+        """
+        return self._resources_filter
+
+    @resources_filter.setter
+    def resources_filter(self, resources_filter):
+        """
+        Sets the resources_filter of this CreateMultiCloudResourceDiscoveryDetails.
+        Discover resource using attributes as key-value pair.
+        For GCP supported attributes (keyRing)
+        For Azure supported attributes (keyVault)
+        GCP Example
+        `{\"keyRing\": \"projects/db-mc-dataplane/locations/global/keyRings/dbmci-keyring\"}` or
+        `{\"keyRing\": \"dbmci-keyring\"}`
+        Azure Example
+        `{\"keyVault\": \"/subscriptions/fd42b73d-5f28-4a23-ae7c-ca08c625fe07/resourceGroups/yumfei0808Test/providers/Microsoft.KeyVault/managedHSMs/orp7HSM001\"}` or
+        `{\"keyVault\": \"orp7HSM001\"}`
+
+
+        :param resources_filter: The resources_filter of this CreateMultiCloudResourceDiscoveryDetails.
+        :type: dict(str, str)
+        """
+        self._resources_filter = resources_filter
 
     @property
     def freeform_tags(self):

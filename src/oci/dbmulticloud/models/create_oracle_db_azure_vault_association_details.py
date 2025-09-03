@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateOracleDbAzureVaultAssociationDetails(object):
     """
-    This object is about to provide input params to create Oracle DB Azure Vault Association.
+    Create Oracle DB Azure Vault Association object.
     """
 
     def __init__(self, **kwargs):
@@ -72,7 +72,7 @@ class CreateOracleDbAzureVaultAssociationDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateOracleDbAzureVaultAssociationDetails.
-        The `OCID`__ of the compartment that contains Oracle DB Azure Vault Association Resource.
+        The `OCID`__ of the compartment that contains Oracle DB Azure Vault Association resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -86,7 +86,7 @@ class CreateOracleDbAzureVaultAssociationDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateOracleDbAzureVaultAssociationDetails.
-        The `OCID`__ of the compartment that contains Oracle DB Azure Vault Association Resource.
+        The `OCID`__ of the compartment that contains Oracle DB Azure Vault Association resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -100,7 +100,7 @@ class CreateOracleDbAzureVaultAssociationDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this CreateOracleDbAzureVaultAssociationDetails.
-        Display name of Oracle DB Azure Vault Association.
+        Oracle DB Azure Vault Association resource name.
 
 
         :return: The display_name of this CreateOracleDbAzureVaultAssociationDetails.
@@ -112,7 +112,7 @@ class CreateOracleDbAzureVaultAssociationDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateOracleDbAzureVaultAssociationDetails.
-        Display name of Oracle DB Azure Vault Association.
+        Oracle DB Azure Vault Association resource name.
 
 
         :param display_name: The display_name of this CreateOracleDbAzureVaultAssociationDetails.
@@ -124,7 +124,7 @@ class CreateOracleDbAzureVaultAssociationDetails(object):
     def oracle_db_azure_vault_id(self):
         """
         **[Required]** Gets the oracle_db_azure_vault_id of this CreateOracleDbAzureVaultAssociationDetails.
-        The `OCID`__ of the Oracle DB Azure Vault.
+        The `OCID`__ of the Oracle DB Azure Vault that contains Oracle DB Azure Vault Association resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -138,7 +138,7 @@ class CreateOracleDbAzureVaultAssociationDetails(object):
     def oracle_db_azure_vault_id(self, oracle_db_azure_vault_id):
         """
         Sets the oracle_db_azure_vault_id of this CreateOracleDbAzureVaultAssociationDetails.
-        The `OCID`__ of the Oracle DB Azure Vault.
+        The `OCID`__ of the Oracle DB Azure Vault that contains Oracle DB Azure Vault Association resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -152,7 +152,7 @@ class CreateOracleDbAzureVaultAssociationDetails(object):
     def oracle_db_azure_connector_id(self):
         """
         **[Required]** Gets the oracle_db_azure_connector_id of this CreateOracleDbAzureVaultAssociationDetails.
-        The `OCID`__ of the Oracle DB Azure Connector.
+        The `OCID`__ of the Oracle DB Azure Connector that contains Oracle DB Azure Vault Association resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -166,7 +166,7 @@ class CreateOracleDbAzureVaultAssociationDetails(object):
     def oracle_db_azure_connector_id(self, oracle_db_azure_connector_id):
         """
         Sets the oracle_db_azure_connector_id of this CreateOracleDbAzureVaultAssociationDetails.
-        The `OCID`__ of the Oracle DB Azure Connector.
+        The `OCID`__ of the Oracle DB Azure Connector that contains Oracle DB Azure Vault Association resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

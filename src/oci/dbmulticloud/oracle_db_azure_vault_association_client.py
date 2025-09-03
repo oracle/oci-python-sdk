@@ -22,16 +22,35 @@ missing = Sentinel("Missing")
 
 class OracleDbAzureVaultAssociationClient(object):
     """
-    1. Oracle Azure Connector Resource: This is for installing Azure Arc Server in ExaCS VM Cluster.
-      There are two way to install Azure Arc Server (Azure Identity) in ExaCS VMCluster.
-        a. Using Bearer Access Token or
-        b. By providing Authentication token
+    <b>Microsoft Azure:</b> <br>
+    <b>Oracle Azure Connector Resource:</b>:&nbsp;&nbsp;The Oracle Azure Connector Resource is used to install the Azure Arc Server on an Exadata VM cluster in Oracle Exadata Database Service on Dedicated Infrastructure (ExaDB-D).
+     The supported method to install the Azure Arc Server (Azure Identity) on the Exadata VM cluster:
+    <ul>
+     <li>Using a Bearer Access Token</li>
+    </ul>
 
-    2. Oracle Azure Blob Container Resource: This is for to capture Azure Container details
-       and same will be used in multiple ExaCS VMCluster to mount the Azure Container.
+    <b>Oracle Azure Blob Container Resource:</b>&nbsp;&nbsp;The Oracle Azure Blob Container Resource is used to capture the details of an Azure Blob Container.
+    This resource can then be reused across multiple Exadata VM clusters in Oracle Exadata Database Service on Dedicated Infrastructure (ExaDB-D) to mount the Azure container.
 
-    3. Oracle Azure Blob Mount Resource: This is for to mount Azure Container in ExaCS VMCluster
-       using Oracle Azure Connector and Oracle Azure Blob Container Resource.
+    <b>Oracle Azure Blob Mount Resource:</b>&nbsp;&nbsp;The Oracle Azure Blob Mount Resource is used to mount an Azure Blob Container on an Exadata VM cluster in Oracle Exadata Database Service on Dedicated Infrastructure (ExaDB-D).
+    It relies on both the Oracle Azure Connector and the Oracle Azure Blob Container Resource to perform the mount operation.
+
+    <b>Discover Azure Vaults and Keys Resource:</b>&nbsp;&nbsp;The Discover Oracle Azure Vaults and Azure Keys Resource is used to discover Azure Vaults and the associated encryption keys available in your Azure project.
+
+    <b>Oracle Azure Vault:</b>&nbsp;&nbsp;The Oracle Azure Vault Resource is used to manage Azure Vaults within Oracle Cloud Infrastructure (OCI) for use with services such as Oracle Exadata Database Service on Dedicated Infrastructure.
+
+    <b>Oracle Azure Key:</b>&nbsp;&nbsp;Oracle Azure Key Resource is used to register and manage a Oracle Azure Key Key within Oracle Cloud Infrastructure (OCI) under an associated Azure Vault.
+
+    <br>
+
+    <b>Google Cloud:</b><br>
+    <b>Oracle Google Cloud Connector Resource:</b>&nbsp;&nbsp;The Oracle Google Cloud Connector Resource is used to install the Google Cloud Identity Connector on an Exadata VM cluster in Oracle Exadata Database Service on Dedicated Infrastructure (ExaDB-D).
+
+    <b>Discover Google Key Rings and Keys Resource:</b>&nbsp;&nbsp;The Discover Google Key Rings and Keys Resource is used to discover Google Cloud Key Rings and the associated encryption keys available in your Google Cloud project.
+
+    <b>Google Key Rings Resource:</b>&nbsp;&nbsp;The Google Key Rings Resource is used to register and manage Google Cloud Key Rings within Oracle Cloud Infrastructure (OCI) for use with services such as Oracle Exadata Database Service on Dedicated Infrastructure.
+
+    <b>Google Key Resource:</b>&nbsp;&nbsp;The Google Key Resource is used to register and manage a Google Cloud Key within Oracle Cloud Infrastructure (OCI) under an associated Google Key Ring.
     """
 
     def __init__(self, config, **kwargs):
@@ -84,10 +103,6 @@ class OracleDbAzureVaultAssociationClient(object):
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
-
-        :param enable_strict_url_encoding: (optional)
-            enable_strict_url_encoding is a boolean to indicate whether or not this client should enable strict url encoding in path params of a request.
-            By default, the client will not enable strict url encoding
         """
         if not OCI_SDK_ENABLED_SERVICES_SET.is_service_enabled("dbmulticloud"):
             raise InvalidAlloyConfig("The Alloy configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local alloy-config file configured the service you're targeting or contact the cloud provider on the availability of this service")
@@ -125,26 +140,26 @@ class OracleDbAzureVaultAssociationClient(object):
             base_client_init_kwargs['circuit_breaker_strategy'] = circuit_breaker.DEFAULT_CIRCUIT_BREAKER_STRATEGY
         if 'allow_control_chars' in kwargs:
             base_client_init_kwargs['allow_control_chars'] = kwargs.get('allow_control_chars')
-        if 'enable_strict_url_encoding' in kwargs:
-            base_client_init_kwargs['enable_strict_url_encoding'] = kwargs.get('enable_strict_url_encoding')
         self.base_client = BaseClient("oracle_db_azure_vault_association", config, signer, dbmulticloud_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
 
     def cascading_delete_oracle_db_azure_vault_association(self, oracle_db_azure_vault_association_id, **kwargs):
         """
-        Delete Oracle DB Azure Vault Association details.
+        Deletes the Oracle DB Azure Vault Association resource.
 
 
         :param str oracle_db_azure_vault_association_id: (required)
-            The ID of the Oracle DB Azure Vault Association Resource.
+            The `OCID`__ of the Oracle DB Azure Vault Association resource.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
-            A token that uniquely identifies a request so it can be retried in case of a timeout or
-            server error without risk of executing that same action again. Retry tokens expire after 24
-            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-            has been deleted and purged from the system, then a retry of the original creation request
-            might be rejected.
+            A token that uniquely identifies a request, allowing it to be safely retried in the event of a timeout or server error without the risk of the action being executed more than once.
+
+            Retry tokens expire after 24 hours but can be invalidated sooner if conflicting operations occur.
+
+            For example, if a resource has been deleted and permanently purged from the system, a retry of the original creation request may be rejected.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -168,10 +183,6 @@ class OracleDbAzureVaultAssociationClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
-        :param bool enable_strict_url_encoding: (optional)
-            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
-            By default, strict url encoding for path params is disabled
-
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -183,12 +194,11 @@ class OracleDbAzureVaultAssociationClient(object):
         resource_path = "/oracleDbAzureVaultAssociation/{oracleDbAzureVaultAssociationId}/actions/cascadingDelete"
         method = "POST"
         operation_name = "cascading_delete_oracle_db_azure_vault_association"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureVaultAssociation/CascadingDeleteOracleDbAzureVaultAssociation"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
-            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_retry_token",
             "if_match",
@@ -237,7 +247,6 @@ class OracleDbAzureVaultAssociationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
-                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -248,7 +257,6 @@ class OracleDbAzureVaultAssociationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
-                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -259,17 +267,19 @@ class OracleDbAzureVaultAssociationClient(object):
 
 
         :param str oracle_db_azure_vault_association_id: (required)
-            The ID of the Oracle DB Azure Vault Association Resource.
+            The `OCID`__ of the Oracle DB Azure Vault Association resource.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.ChangeOracleDbAzureVaultAssociationCompartmentDetails change_oracle_db_azure_vault_association_compartment_details: (required)
             Moves the Oracle DB Azure Vault Association resource into a different compartment.
 
         :param str opc_retry_token: (optional)
-            A token that uniquely identifies a request so it can be retried in case of a timeout or
-            server error without risk of executing that same action again. Retry tokens expire after 24
-            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-            has been deleted and purged from the system, then a retry of the original creation request
-            might be rejected.
+            A token that uniquely identifies a request, allowing it to be safely retried in the event of a timeout or server error without the risk of the action being executed more than once.
+
+            Retry tokens expire after 24 hours but can be invalidated sooner if conflicting operations occur.
+
+            For example, if a resource has been deleted and permanently purged from the system, a retry of the original creation request may be rejected.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -293,10 +303,6 @@ class OracleDbAzureVaultAssociationClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
-        :param bool enable_strict_url_encoding: (optional)
-            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
-            By default, strict url encoding for path params is disabled
-
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -308,12 +314,11 @@ class OracleDbAzureVaultAssociationClient(object):
         resource_path = "/oracleDbAzureVaultAssociation/{oracleDbAzureVaultAssociationId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_oracle_db_azure_vault_association_compartment"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureVaultAssociation/ChangeOracleDbAzureVaultAssociationCompartment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
-            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_retry_token",
             "if_match",
@@ -363,7 +368,6 @@ class OracleDbAzureVaultAssociationClient(object):
                 header_params=header_params,
                 body=change_oracle_db_azure_vault_association_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
-                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -375,25 +379,24 @@ class OracleDbAzureVaultAssociationClient(object):
                 header_params=header_params,
                 body=change_oracle_db_azure_vault_association_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
-                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
     def create_oracle_db_azure_vault_association(self, create_oracle_db_azure_vault_association_details, **kwargs):
         """
-        Create Oracle DB Azure Vault Association based on the provided information.
+        Creates Oracle DB Azure Vault Association resource.
 
 
         :param oci.dbmulticloud.models.CreateOracleDbAzureVaultAssociationDetails create_oracle_db_azure_vault_association_details: (required)
-            Details for to Create Oracle DB Azure Vault Association Details.
+            Details for to Create Oracle DB Azure Vault Association details.
 
         :param str opc_retry_token: (optional)
-            A token that uniquely identifies a request so it can be retried in case of a timeout or
-            server error without risk of executing that same action again. Retry tokens expire after 24
-            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-            has been deleted and purged from the system, then a retry of the original creation request
-            might be rejected.
+            A token that uniquely identifies a request, allowing it to be safely retried in the event of a timeout or server error without the risk of the action being executed more than once.
+
+            Retry tokens expire after 24 hours but can be invalidated sooner if conflicting operations occur.
+
+            For example, if a resource has been deleted and permanently purged from the system, a retry of the original creation request may be rejected.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -417,10 +420,6 @@ class OracleDbAzureVaultAssociationClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
-        :param bool enable_strict_url_encoding: (optional)
-            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
-            By default, strict url encoding for path params is disabled
-
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.dbmulticloud.models.OracleDbAzureVaultAssociation`
         :rtype: :class:`~oci.response.Response`
 
@@ -432,12 +431,11 @@ class OracleDbAzureVaultAssociationClient(object):
         resource_path = "/oracleDbAzureVaultAssociation"
         method = "POST"
         operation_name = "create_oracle_db_azure_vault_association"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureVaultAssociation/CreateOracleDbAzureVaultAssociation"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
-            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_retry_token",
             "if_match",
@@ -477,7 +475,6 @@ class OracleDbAzureVaultAssociationClient(object):
                 body=create_oracle_db_azure_vault_association_details,
                 response_type="OracleDbAzureVaultAssociation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
-                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -489,18 +486,19 @@ class OracleDbAzureVaultAssociationClient(object):
                 body=create_oracle_db_azure_vault_association_details,
                 response_type="OracleDbAzureVaultAssociation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
-                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
     def delete_oracle_db_azure_vault_association(self, oracle_db_azure_vault_association_id, **kwargs):
         """
-        Delete Oracle DB Azure Vault Association details.
+        Deletes the Oracle DB Azure Vault Association resource.
 
 
         :param str oracle_db_azure_vault_association_id: (required)
-            The ID of the Oracle DB Azure Vault Association Resource.
+            The `OCID`__ of the Oracle DB Azure Vault Association resource.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -524,10 +522,6 @@ class OracleDbAzureVaultAssociationClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
-        :param bool enable_strict_url_encoding: (optional)
-            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
-            By default, strict url encoding for path params is disabled
-
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -539,12 +533,11 @@ class OracleDbAzureVaultAssociationClient(object):
         resource_path = "/oracleDbAzureVaultAssociation/{oracleDbAzureVaultAssociationId}"
         method = "DELETE"
         operation_name = "delete_oracle_db_azure_vault_association"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureVaultAssociation/DeleteOracleDbAzureVaultAssociation"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
-            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -590,7 +583,6 @@ class OracleDbAzureVaultAssociationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
-                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -601,18 +593,21 @@ class OracleDbAzureVaultAssociationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
-                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
     def get_oracle_db_azure_vault_association(self, oracle_db_azure_vault_association_id, **kwargs):
         """
-        Get Oracle DB Azure Vault Details Association form a particular Container Resource ID.
+        Retrieves the details of an Oracle DB Azure Vault Association using the specified association resource `OCID`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param str oracle_db_azure_vault_association_id: (required)
-            The ID of the Oracle DB Azure Vault Association Resource.
+            The `OCID`__ of the Oracle DB Azure Vault Association resource.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -640,10 +635,6 @@ class OracleDbAzureVaultAssociationClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
-        :param bool enable_strict_url_encoding: (optional)
-            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
-            By default, strict url encoding for path params is disabled
-
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.dbmulticloud.models.OracleDbAzureVaultAssociation`
         :rtype: :class:`~oci.response.Response`
 
@@ -655,12 +646,11 @@ class OracleDbAzureVaultAssociationClient(object):
         resource_path = "/oracleDbAzureVaultAssociation/{oracleDbAzureVaultAssociationId}"
         method = "GET"
         operation_name = "get_oracle_db_azure_vault_association"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureVaultAssociation/GetOracleDbAzureVaultAssociation"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
-            "enable_strict_url_encoding",
             "retry_strategy",
             "limit",
             "page",
@@ -723,7 +713,6 @@ class OracleDbAzureVaultAssociationClient(object):
                 header_params=header_params,
                 response_type="OracleDbAzureVaultAssociation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
-                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -736,14 +725,13 @@ class OracleDbAzureVaultAssociationClient(object):
                 header_params=header_params,
                 response_type="OracleDbAzureVaultAssociation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
-                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
     def list_oracle_db_azure_vault_associations(self, compartment_id, **kwargs):
         """
-        Lists the all Oracle DB Azure Associations based on filters.
+        Lists all Oracle DB Azure Associations based on the specified filters.
 
 
         :param str compartment_id: (required)
@@ -752,22 +740,23 @@ class OracleDbAzureVaultAssociationClient(object):
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str oracle_db_azure_vault_id: (optional)
-            A filter to return Oracle DB Azure Vault Resources.
+            A filter to return Oracle DB Azure Vault resources that match the specified `OCID`__ of the Oracle DB Azure Vault resource.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
-            A filter to return Azure Vault Association.
+            A filter to return Oracle DB Azure Vault Association resources that match the specified display name.
 
         :param str oracle_db_azure_vault_association_id: (optional)
-            A filter to return Oracle DB Azure Vault Association Resources.
+            A filter to return Oracle DB Azure Vault resources that match the specified OCID](/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Association resource.
 
         :param str lifecycle_state: (optional)
-            A filter to return only resources that match the given lifecycle state. The
-            state value is case-insensitive.
+            A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
 
             Allowed values are: "CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED"
 
         :param str oracle_db_azure_connector_id: (optional)
-            A filter to return Oracle DB Azure Blob Mount Resources.
+            A filter to return Oracle DB Azure Azure Identity Connector resources.
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -800,10 +789,6 @@ class OracleDbAzureVaultAssociationClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
-        :param bool enable_strict_url_encoding: (optional)
-            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
-            By default, strict url encoding for path params is disabled
-
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.dbmulticloud.models.OracleDbAzureVaultAssociationSummaryCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -815,12 +800,11 @@ class OracleDbAzureVaultAssociationClient(object):
         resource_path = "/oracleDbAzureVaultAssociation"
         method = "GET"
         operation_name = "list_oracle_db_azure_vault_associations"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureVaultAssociation/ListOracleDbAzureVaultAssociations"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
-            "enable_strict_url_encoding",
             "retry_strategy",
             "oracle_db_azure_vault_id",
             "display_name",
@@ -899,7 +883,6 @@ class OracleDbAzureVaultAssociationClient(object):
                 header_params=header_params,
                 response_type="OracleDbAzureVaultAssociationSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
-                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -911,18 +894,21 @@ class OracleDbAzureVaultAssociationClient(object):
                 header_params=header_params,
                 response_type="OracleDbAzureVaultAssociationSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
-                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
     def update_oracle_db_azure_vault_association(self, oracle_db_azure_vault_association_id, update_oracle_db_azure_vault_association_details, **kwargs):
         """
-        Modifies the existing Oracle DB Azure Vault Association Details for a given ID.
+        Modifies the properties of an Oracle DB Azure Vault Association resource identified by the specified resource `OCID`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param str oracle_db_azure_vault_association_id: (required)
-            The ID of the Oracle DB Azure Vault Association Resource.
+            The `OCID`__ of the Oracle DB Azure Vault Association resource.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.UpdateOracleDbAzureVaultAssociationDetails update_oracle_db_azure_vault_association_details: (required)
             Details for to update OracleDbAzureVaultAssociation.
@@ -949,10 +935,6 @@ class OracleDbAzureVaultAssociationClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
-        :param bool enable_strict_url_encoding: (optional)
-            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
-            By default, strict url encoding for path params is disabled
-
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -964,12 +946,11 @@ class OracleDbAzureVaultAssociationClient(object):
         resource_path = "/oracleDbAzureVaultAssociation/{oracleDbAzureVaultAssociationId}"
         method = "PUT"
         operation_name = "update_oracle_db_azure_vault_association"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureVaultAssociation/UpdateOracleDbAzureVaultAssociation"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
-            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -1016,7 +997,6 @@ class OracleDbAzureVaultAssociationClient(object):
                 header_params=header_params,
                 body=update_oracle_db_azure_vault_association_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
-                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1028,7 +1008,6 @@ class OracleDbAzureVaultAssociationClient(object):
                 header_params=header_params,
                 body=update_oracle_db_azure_vault_association_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
-                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)

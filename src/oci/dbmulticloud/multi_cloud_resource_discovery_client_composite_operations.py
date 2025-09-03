@@ -31,7 +31,7 @@ class MultiCloudResourceDiscoveryClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str multi_cloud_resource_discovery_id: (required)
-            The `OCID`__ of the Multi Cloud Discovery Resource.
+            The `OCID`__ of the Multicloud Discovery Resource.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -75,7 +75,7 @@ class MultiCloudResourceDiscoveryClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.dbmulticloud.models.CreateMultiCloudResourceDiscoveryDetails create_multi_cloud_resource_discovery_details: (required)
-            Details for to Discover Azure Vaults and Keys.
+            Details for to Discover Multicloud Resource and their associated resources.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.dbmulticloud.models.WorkRequest.status`
@@ -114,7 +114,7 @@ class MultiCloudResourceDiscoveryClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str multi_cloud_resource_discovery_id: (required)
-            The `OCID`__ of the Multi Cloud Discovery Resource.
+            The `OCID`__ of the Multicloud Discovery Resource.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -163,7 +163,7 @@ class MultiCloudResourceDiscoveryClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str multi_cloud_resource_discovery_id: (required)
-            The `OCID`__ of the Multi Cloud Discovery Resource.
+            The `OCID`__ of the Multicloud Discovery Resource.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

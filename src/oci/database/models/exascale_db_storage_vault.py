@@ -130,6 +130,14 @@ class ExascaleDbStorageVault(object):
             The value to assign to the subscription_id property of this ExascaleDbStorageVault.
         :type subscription_id: str
 
+        :param is_autoscale_enabled:
+            The value to assign to the is_autoscale_enabled property of this ExascaleDbStorageVault.
+        :type is_autoscale_enabled: bool
+
+        :param autoscale_limit_in_gbs:
+            The value to assign to the autoscale_limit_in_gbs property of this ExascaleDbStorageVault.
+        :type autoscale_limit_in_gbs: int
+
         :param attached_shape_attributes:
             The value to assign to the attached_shape_attributes property of this ExascaleDbStorageVault.
             Allowed values for items in this list are: "SMART_STORAGE", "BLOCK_STORAGE", 'UNKNOWN_ENUM_VALUE'.
@@ -157,6 +165,8 @@ class ExascaleDbStorageVault(object):
             'additional_flash_cache_in_percent': 'int',
             'cluster_placement_group_id': 'str',
             'subscription_id': 'str',
+            'is_autoscale_enabled': 'bool',
+            'autoscale_limit_in_gbs': 'int',
             'attached_shape_attributes': 'list[str]'
         }
         self.attribute_map = {
@@ -179,6 +189,8 @@ class ExascaleDbStorageVault(object):
             'additional_flash_cache_in_percent': 'additionalFlashCacheInPercent',
             'cluster_placement_group_id': 'clusterPlacementGroupId',
             'subscription_id': 'subscriptionId',
+            'is_autoscale_enabled': 'isAutoscaleEnabled',
+            'autoscale_limit_in_gbs': 'autoscaleLimitInGBs',
             'attached_shape_attributes': 'attachedShapeAttributes'
         }
         self._id = None
@@ -200,6 +212,8 @@ class ExascaleDbStorageVault(object):
         self._additional_flash_cache_in_percent = None
         self._cluster_placement_group_id = None
         self._subscription_id = None
+        self._is_autoscale_enabled = None
+        self._autoscale_limit_in_gbs = None
         self._attached_shape_attributes = None
 
     @property
@@ -711,6 +725,54 @@ class ExascaleDbStorageVault(object):
         :type: str
         """
         self._subscription_id = subscription_id
+
+    @property
+    def is_autoscale_enabled(self):
+        """
+        Gets the is_autoscale_enabled of this ExascaleDbStorageVault.
+        Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+
+
+        :return: The is_autoscale_enabled of this ExascaleDbStorageVault.
+        :rtype: bool
+        """
+        return self._is_autoscale_enabled
+
+    @is_autoscale_enabled.setter
+    def is_autoscale_enabled(self, is_autoscale_enabled):
+        """
+        Sets the is_autoscale_enabled of this ExascaleDbStorageVault.
+        Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+
+
+        :param is_autoscale_enabled: The is_autoscale_enabled of this ExascaleDbStorageVault.
+        :type: bool
+        """
+        self._is_autoscale_enabled = is_autoscale_enabled
+
+    @property
+    def autoscale_limit_in_gbs(self):
+        """
+        Gets the autoscale_limit_in_gbs of this ExascaleDbStorageVault.
+        Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+
+
+        :return: The autoscale_limit_in_gbs of this ExascaleDbStorageVault.
+        :rtype: int
+        """
+        return self._autoscale_limit_in_gbs
+
+    @autoscale_limit_in_gbs.setter
+    def autoscale_limit_in_gbs(self, autoscale_limit_in_gbs):
+        """
+        Sets the autoscale_limit_in_gbs of this ExascaleDbStorageVault.
+        Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+
+
+        :param autoscale_limit_in_gbs: The autoscale_limit_in_gbs of this ExascaleDbStorageVault.
+        :type: int
+        """
+        self._autoscale_limit_in_gbs = autoscale_limit_in_gbs
 
     @property
     def attached_shape_attributes(self):

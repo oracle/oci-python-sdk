@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class OracleDbAzureVaultSummary(object):
     """
-    Oracle DB Azure Vault Resource Summary.
+    Oracle DB Azure Vault resource summary.
     """
 
     def __init__(self, **kwargs):
@@ -149,7 +149,7 @@ class OracleDbAzureVaultSummary(object):
     def id(self):
         """
         Gets the id of this OracleDbAzureVaultSummary.
-        The `OCID`__ for the new mount resource.
+        The `OCID`__ of the oracle DB Azure Vault resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -163,7 +163,7 @@ class OracleDbAzureVaultSummary(object):
     def id(self, id):
         """
         Sets the id of this OracleDbAzureVaultSummary.
-        The `OCID`__ for the new mount resource.
+        The `OCID`__ of the oracle DB Azure Vault resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -201,7 +201,7 @@ class OracleDbAzureVaultSummary(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this OracleDbAzureVaultSummary.
-        The `OCID`__ of the compartment contains DB Azure Vault Resource.
+        The `OCID`__ of the compartment contains DB Azure Vault resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -215,7 +215,7 @@ class OracleDbAzureVaultSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this OracleDbAzureVaultSummary.
-        The `OCID`__ of the compartment contains DB Azure Vault Resource.
+        The `OCID`__ of the compartment contains DB Azure Vault resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -229,7 +229,7 @@ class OracleDbAzureVaultSummary(object):
     def oracle_db_connector_id(self):
         """
         Gets the oracle_db_connector_id of this OracleDbAzureVaultSummary.
-        The `OCID`__ of the Oracle DB Connector Resource.
+        The `OCID`__ of the Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -243,7 +243,7 @@ class OracleDbAzureVaultSummary(object):
     def oracle_db_connector_id(self, oracle_db_connector_id):
         """
         Sets the oracle_db_connector_id of this OracleDbAzureVaultSummary.
-        The `OCID`__ of the Oracle DB Connector Resource.
+        The `OCID`__ of the Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -257,7 +257,7 @@ class OracleDbAzureVaultSummary(object):
     def azure_vault_id(self):
         """
         Gets the azure_vault_id of this OracleDbAzureVaultSummary.
-        Azure Vault Id.
+        Azure Vault ID.
 
 
         :return: The azure_vault_id of this OracleDbAzureVaultSummary.
@@ -269,7 +269,7 @@ class OracleDbAzureVaultSummary(object):
     def azure_vault_id(self, azure_vault_id):
         """
         Sets the azure_vault_id of this OracleDbAzureVaultSummary.
-        Azure Vault Id.
+        Azure Vault ID.
 
 
         :param azure_vault_id: The azure_vault_id of this OracleDbAzureVaultSummary.
@@ -281,7 +281,7 @@ class OracleDbAzureVaultSummary(object):
     def oracle_db_azure_resource_group(self):
         """
         Gets the oracle_db_azure_resource_group of this OracleDbAzureVaultSummary.
-        Azure Resource Group Name.
+        Oracle DB Azure resource group name.
 
 
         :return: The oracle_db_azure_resource_group of this OracleDbAzureVaultSummary.
@@ -293,7 +293,7 @@ class OracleDbAzureVaultSummary(object):
     def oracle_db_azure_resource_group(self, oracle_db_azure_resource_group):
         """
         Sets the oracle_db_azure_resource_group of this OracleDbAzureVaultSummary.
-        Azure Resource Group Name.
+        Oracle DB Azure resource group name.
 
 
         :param oracle_db_azure_resource_group: The oracle_db_azure_resource_group of this OracleDbAzureVaultSummary.
@@ -305,7 +305,7 @@ class OracleDbAzureVaultSummary(object):
     def type(self):
         """
         Gets the type of this OracleDbAzureVaultSummary.
-        Vault Resource Type.
+        Oracle DB Azure Vault resource type.
 
 
         :return: The type of this OracleDbAzureVaultSummary.
@@ -317,7 +317,7 @@ class OracleDbAzureVaultSummary(object):
     def type(self, type):
         """
         Sets the type of this OracleDbAzureVaultSummary.
-        Vault Resource Type.
+        Oracle DB Azure Vault resource type.
 
 
         :param type: The type of this OracleDbAzureVaultSummary.
@@ -329,7 +329,7 @@ class OracleDbAzureVaultSummary(object):
     def location(self):
         """
         Gets the location of this OracleDbAzureVaultSummary.
-        Vault Resource Location.
+        Oracle DB Azure Vault resource location.
 
 
         :return: The location of this OracleDbAzureVaultSummary.
@@ -341,7 +341,7 @@ class OracleDbAzureVaultSummary(object):
     def location(self, location):
         """
         Sets the location of this OracleDbAzureVaultSummary.
-        Vault Resource Location.
+        Oracle DB Azure Vault resource location.
 
 
         :param location: The location of this OracleDbAzureVaultSummary.
@@ -353,7 +353,7 @@ class OracleDbAzureVaultSummary(object):
     def properties(self):
         """
         Gets the properties of this OracleDbAzureVaultSummary.
-        Resource's properties.
+        Oracle DB Azure Vault resource's properties.
 
 
         :return: The properties of this OracleDbAzureVaultSummary.
@@ -365,7 +365,7 @@ class OracleDbAzureVaultSummary(object):
     def properties(self, properties):
         """
         Sets the properties of this OracleDbAzureVaultSummary.
-        Resource's properties.
+        Oracle DB Azure Vault resource's properties.
 
 
         :param properties: The properties of this OracleDbAzureVaultSummary.
@@ -377,7 +377,7 @@ class OracleDbAzureVaultSummary(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this OracleDbAzureVaultSummary.
-        The current lifecycle state of the Azure Arc Agent Resource.
+        The current lifecycle state of the Azure Arc Agent resource.
 
 
         :return: The lifecycle_state of this OracleDbAzureVaultSummary.
@@ -389,7 +389,7 @@ class OracleDbAzureVaultSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this OracleDbAzureVaultSummary.
-        The current lifecycle state of the Azure Arc Agent Resource.
+        The current lifecycle state of the Azure Arc Agent resource.
 
 
         :param lifecycle_state: The lifecycle_state of this OracleDbAzureVaultSummary.
@@ -425,7 +425,7 @@ class OracleDbAzureVaultSummary(object):
     def time_created(self):
         """
         Gets the time_created of this OracleDbAzureVaultSummary.
-        Time when the Oracle DB Azure Vault was created in `RFC 3339`__ timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+        Time when the Oracle DB Azure Vault resource was created in `RFC 3339`__ timestamp format, e.g. '2020-05-23T21:10:29.600Z'
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -439,7 +439,7 @@ class OracleDbAzureVaultSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this OracleDbAzureVaultSummary.
-        Time when the Oracle DB Azure Vault was created in `RFC 3339`__ timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+        Time when the Oracle DB Azure Vault resource was created in `RFC 3339`__ timestamp format, e.g. '2020-05-23T21:10:29.600Z'
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -453,7 +453,7 @@ class OracleDbAzureVaultSummary(object):
     def time_updated(self):
         """
         Gets the time_updated of this OracleDbAzureVaultSummary.
-        Time when the Oracle DB Azure Vault was last modified, expressed in `RFC 3339`__ timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+        Time when the Oracle DB Azure Vault resource was last modified, expressed in `RFC 3339`__ timestamp format, e.g. '2020-05-23T21:10:29.600Z'
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -467,7 +467,7 @@ class OracleDbAzureVaultSummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this OracleDbAzureVaultSummary.
-        Time when the Oracle DB Azure Vault was last modified, expressed in `RFC 3339`__ timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+        Time when the Oracle DB Azure Vault resource was last modified, expressed in `RFC 3339`__ timestamp format, e.g. '2020-05-23T21:10:29.600Z'
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -481,7 +481,7 @@ class OracleDbAzureVaultSummary(object):
     def last_modification(self):
         """
         Gets the last_modification of this OracleDbAzureVaultSummary.
-        Description of the latest modification of the DB Azure Vault Resource.
+        Description of the latest modification of the DB Azure Vault resource.
 
 
         :return: The last_modification of this OracleDbAzureVaultSummary.
@@ -493,7 +493,7 @@ class OracleDbAzureVaultSummary(object):
     def last_modification(self, last_modification):
         """
         Sets the last_modification of this OracleDbAzureVaultSummary.
-        Description of the latest modification of the DB Azure Vault Resource.
+        Description of the latest modification of the DB Azure Vault resource.
 
 
         :param last_modification: The last_modification of this OracleDbAzureVaultSummary.

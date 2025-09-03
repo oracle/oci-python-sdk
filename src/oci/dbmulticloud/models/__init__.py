@@ -13,12 +13,17 @@ from .change_oracle_db_azure_blob_mount_compartment_details import ChangeOracleD
 from .change_oracle_db_azure_connector_compartment_details import ChangeOracleDbAzureConnectorCompartmentDetails
 from .change_oracle_db_azure_vault_association_compartment_details import ChangeOracleDbAzureVaultAssociationCompartmentDetails
 from .change_oracle_db_azure_vault_compartment_details import ChangeOracleDbAzureVaultCompartmentDetails
+from .change_oracle_db_gcp_identity_connector_compartment_details import ChangeOracleDbGcpIdentityConnectorCompartmentDetails
+from .change_oracle_db_gcp_key_ring_compartment_details import ChangeOracleDbGcpKeyRingCompartmentDetails
 from .create_multi_cloud_resource_discovery_details import CreateMultiCloudResourceDiscoveryDetails
 from .create_oracle_db_azure_blob_container_details import CreateOracleDbAzureBlobContainerDetails
 from .create_oracle_db_azure_blob_mount_details import CreateOracleDbAzureBlobMountDetails
 from .create_oracle_db_azure_connector_details import CreateOracleDbAzureConnectorDetails
 from .create_oracle_db_azure_vault_association_details import CreateOracleDbAzureVaultAssociationDetails
 from .create_oracle_db_azure_vault_details import CreateOracleDbAzureVaultDetails
+from .create_oracle_db_gcp_identity_connector_details import CreateOracleDbGcpIdentityConnectorDetails
+from .create_oracle_db_gcp_key_ring_details import CreateOracleDbGcpKeyRingDetails
+from .gcp_nodes import GcpNodes
 from .multi_cloud_resource_discovery import MultiCloudResourceDiscovery
 from .multi_cloud_resource_discovery_summary import MultiCloudResourceDiscoverySummary
 from .multi_cloud_resource_discovery_summary_collection import MultiCloudResourceDiscoverySummaryCollection
@@ -40,7 +45,18 @@ from .oracle_db_azure_vault_association_summary import OracleDbAzureVaultAssocia
 from .oracle_db_azure_vault_association_summary_collection import OracleDbAzureVaultAssociationSummaryCollection
 from .oracle_db_azure_vault_summary import OracleDbAzureVaultSummary
 from .oracle_db_azure_vault_summary_collection import OracleDbAzureVaultSummaryCollection
+from .oracle_db_gcp_identity_connector import OracleDbGcpIdentityConnector
+from .oracle_db_gcp_identity_connector_summary import OracleDbGcpIdentityConnectorSummary
+from .oracle_db_gcp_identity_connector_summary_collection import OracleDbGcpIdentityConnectorSummaryCollection
+from .oracle_db_gcp_key import OracleDbGcpKey
+from .oracle_db_gcp_key_ring import OracleDbGcpKeyRing
+from .oracle_db_gcp_key_ring_summary import OracleDbGcpKeyRingSummary
+from .oracle_db_gcp_key_ring_summary_collection import OracleDbGcpKeyRingSummaryCollection
+from .oracle_db_gcp_key_summary import OracleDbGcpKeySummary
+from .oracle_db_gcp_key_summary_collection import OracleDbGcpKeySummaryCollection
 from .patch_oracle_db_azure_connector_details import PatchOracleDbAzureConnectorDetails
+from .refresh_oracle_db_azure_vault_details import RefreshOracleDbAzureVaultDetails
+from .refresh_oracle_db_gcp_key_ring_details import RefreshOracleDbGcpKeyRingDetails
 from .resources import Resources
 from .update_multi_cloud_resource_discovery_details import UpdateMultiCloudResourceDiscoveryDetails
 from .update_oracle_db_azure_blob_container_details import UpdateOracleDbAzureBlobContainerDetails
@@ -48,6 +64,8 @@ from .update_oracle_db_azure_blob_mount_details import UpdateOracleDbAzureBlobMo
 from .update_oracle_db_azure_connector_details import UpdateOracleDbAzureConnectorDetails
 from .update_oracle_db_azure_vault_association_details import UpdateOracleDbAzureVaultAssociationDetails
 from .update_oracle_db_azure_vault_details import UpdateOracleDbAzureVaultDetails
+from .update_oracle_db_gcp_identity_connector_details import UpdateOracleDbGcpIdentityConnectorDetails
+from .update_oracle_db_gcp_key_ring_details import UpdateOracleDbGcpKeyRingDetails
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
 from .work_request_error_collection import WorkRequestErrorCollection
@@ -66,12 +84,17 @@ dbmulticloud_type_mapping = {
     "ChangeOracleDbAzureConnectorCompartmentDetails": ChangeOracleDbAzureConnectorCompartmentDetails,
     "ChangeOracleDbAzureVaultAssociationCompartmentDetails": ChangeOracleDbAzureVaultAssociationCompartmentDetails,
     "ChangeOracleDbAzureVaultCompartmentDetails": ChangeOracleDbAzureVaultCompartmentDetails,
+    "ChangeOracleDbGcpIdentityConnectorCompartmentDetails": ChangeOracleDbGcpIdentityConnectorCompartmentDetails,
+    "ChangeOracleDbGcpKeyRingCompartmentDetails": ChangeOracleDbGcpKeyRingCompartmentDetails,
     "CreateMultiCloudResourceDiscoveryDetails": CreateMultiCloudResourceDiscoveryDetails,
     "CreateOracleDbAzureBlobContainerDetails": CreateOracleDbAzureBlobContainerDetails,
     "CreateOracleDbAzureBlobMountDetails": CreateOracleDbAzureBlobMountDetails,
     "CreateOracleDbAzureConnectorDetails": CreateOracleDbAzureConnectorDetails,
     "CreateOracleDbAzureVaultAssociationDetails": CreateOracleDbAzureVaultAssociationDetails,
     "CreateOracleDbAzureVaultDetails": CreateOracleDbAzureVaultDetails,
+    "CreateOracleDbGcpIdentityConnectorDetails": CreateOracleDbGcpIdentityConnectorDetails,
+    "CreateOracleDbGcpKeyRingDetails": CreateOracleDbGcpKeyRingDetails,
+    "GcpNodes": GcpNodes,
     "MultiCloudResourceDiscovery": MultiCloudResourceDiscovery,
     "MultiCloudResourceDiscoverySummary": MultiCloudResourceDiscoverySummary,
     "MultiCloudResourceDiscoverySummaryCollection": MultiCloudResourceDiscoverySummaryCollection,
@@ -93,7 +116,18 @@ dbmulticloud_type_mapping = {
     "OracleDbAzureVaultAssociationSummaryCollection": OracleDbAzureVaultAssociationSummaryCollection,
     "OracleDbAzureVaultSummary": OracleDbAzureVaultSummary,
     "OracleDbAzureVaultSummaryCollection": OracleDbAzureVaultSummaryCollection,
+    "OracleDbGcpIdentityConnector": OracleDbGcpIdentityConnector,
+    "OracleDbGcpIdentityConnectorSummary": OracleDbGcpIdentityConnectorSummary,
+    "OracleDbGcpIdentityConnectorSummaryCollection": OracleDbGcpIdentityConnectorSummaryCollection,
+    "OracleDbGcpKey": OracleDbGcpKey,
+    "OracleDbGcpKeyRing": OracleDbGcpKeyRing,
+    "OracleDbGcpKeyRingSummary": OracleDbGcpKeyRingSummary,
+    "OracleDbGcpKeyRingSummaryCollection": OracleDbGcpKeyRingSummaryCollection,
+    "OracleDbGcpKeySummary": OracleDbGcpKeySummary,
+    "OracleDbGcpKeySummaryCollection": OracleDbGcpKeySummaryCollection,
     "PatchOracleDbAzureConnectorDetails": PatchOracleDbAzureConnectorDetails,
+    "RefreshOracleDbAzureVaultDetails": RefreshOracleDbAzureVaultDetails,
+    "RefreshOracleDbGcpKeyRingDetails": RefreshOracleDbGcpKeyRingDetails,
     "Resources": Resources,
     "UpdateMultiCloudResourceDiscoveryDetails": UpdateMultiCloudResourceDiscoveryDetails,
     "UpdateOracleDbAzureBlobContainerDetails": UpdateOracleDbAzureBlobContainerDetails,
@@ -101,6 +135,8 @@ dbmulticloud_type_mapping = {
     "UpdateOracleDbAzureConnectorDetails": UpdateOracleDbAzureConnectorDetails,
     "UpdateOracleDbAzureVaultAssociationDetails": UpdateOracleDbAzureVaultAssociationDetails,
     "UpdateOracleDbAzureVaultDetails": UpdateOracleDbAzureVaultDetails,
+    "UpdateOracleDbGcpIdentityConnectorDetails": UpdateOracleDbGcpIdentityConnectorDetails,
+    "UpdateOracleDbGcpKeyRingDetails": UpdateOracleDbGcpKeyRingDetails,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,
     "WorkRequestErrorCollection": WorkRequestErrorCollection,

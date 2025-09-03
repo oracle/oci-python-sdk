@@ -231,6 +231,9 @@ class CreateDedicatedAiClusterDetails(object):
         - LARGE_GENERIC_2
         - LARGE_COHERE_V3
         - RERANK_COHERE
+        - SMALL_GENERIC_V1
+        - MEDIUM_GENERIC_V1
+        - LARGE_GENERIC_V1
 
 
         :return: The unit_shape of this CreateDedicatedAiClusterDetails.
@@ -259,6 +262,9 @@ class CreateDedicatedAiClusterDetails(object):
         - LARGE_GENERIC_2
         - LARGE_COHERE_V3
         - RERANK_COHERE
+        - SMALL_GENERIC_V1
+        - MEDIUM_GENERIC_V1
+        - LARGE_GENERIC_V1
 
 
         :param unit_shape: The unit_shape of this CreateDedicatedAiClusterDetails.

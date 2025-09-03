@@ -22,16 +22,35 @@ missing = Sentinel("Missing")
 
 class OracleDBAzureConnectorClient(object):
     """
-    1. Oracle Azure Connector Resource: This is for installing Azure Arc Server in ExaCS VM Cluster.
-      There are two way to install Azure Arc Server (Azure Identity) in ExaCS VMCluster.
-        a. Using Bearer Access Token or
-        b. By providing Authentication token
+    <b>Microsoft Azure:</b> <br>
+    <b>Oracle Azure Connector Resource:</b>:&nbsp;&nbsp;The Oracle Azure Connector Resource is used to install the Azure Arc Server on an Exadata VM cluster in Oracle Exadata Database Service on Dedicated Infrastructure (ExaDB-D).
+     The supported method to install the Azure Arc Server (Azure Identity) on the Exadata VM cluster:
+    <ul>
+     <li>Using a Bearer Access Token</li>
+    </ul>
 
-    2. Oracle Azure Blob Container Resource: This is for to capture Azure Container details
-       and same will be used in multiple ExaCS VMCluster to mount the Azure Container.
+    <b>Oracle Azure Blob Container Resource:</b>&nbsp;&nbsp;The Oracle Azure Blob Container Resource is used to capture the details of an Azure Blob Container.
+    This resource can then be reused across multiple Exadata VM clusters in Oracle Exadata Database Service on Dedicated Infrastructure (ExaDB-D) to mount the Azure container.
 
-    3. Oracle Azure Blob Mount Resource: This is for to mount Azure Container in ExaCS VMCluster
-       using Oracle Azure Connector and Oracle Azure Blob Container Resource.
+    <b>Oracle Azure Blob Mount Resource:</b>&nbsp;&nbsp;The Oracle Azure Blob Mount Resource is used to mount an Azure Blob Container on an Exadata VM cluster in Oracle Exadata Database Service on Dedicated Infrastructure (ExaDB-D).
+    It relies on both the Oracle Azure Connector and the Oracle Azure Blob Container Resource to perform the mount operation.
+
+    <b>Discover Azure Vaults and Keys Resource:</b>&nbsp;&nbsp;The Discover Oracle Azure Vaults and Azure Keys Resource is used to discover Azure Vaults and the associated encryption keys available in your Azure project.
+
+    <b>Oracle Azure Vault:</b>&nbsp;&nbsp;The Oracle Azure Vault Resource is used to manage Azure Vaults within Oracle Cloud Infrastructure (OCI) for use with services such as Oracle Exadata Database Service on Dedicated Infrastructure.
+
+    <b>Oracle Azure Key:</b>&nbsp;&nbsp;Oracle Azure Key Resource is used to register and manage a Oracle Azure Key Key within Oracle Cloud Infrastructure (OCI) under an associated Azure Vault.
+
+    <br>
+
+    <b>Google Cloud:</b><br>
+    <b>Oracle Google Cloud Connector Resource:</b>&nbsp;&nbsp;The Oracle Google Cloud Connector Resource is used to install the Google Cloud Identity Connector on an Exadata VM cluster in Oracle Exadata Database Service on Dedicated Infrastructure (ExaDB-D).
+
+    <b>Discover Google Key Rings and Keys Resource:</b>&nbsp;&nbsp;The Discover Google Key Rings and Keys Resource is used to discover Google Cloud Key Rings and the associated encryption keys available in your Google Cloud project.
+
+    <b>Google Key Rings Resource:</b>&nbsp;&nbsp;The Google Key Rings Resource is used to register and manage Google Cloud Key Rings within Oracle Cloud Infrastructure (OCI) for use with services such as Oracle Exadata Database Service on Dedicated Infrastructure.
+
+    <b>Google Key Resource:</b>&nbsp;&nbsp;The Google Key Resource is used to register and manage a Google Cloud Key within Oracle Cloud Infrastructure (OCI) under an associated Google Key Ring.
     """
 
     def __init__(self, config, **kwargs):
@@ -84,10 +103,6 @@ class OracleDBAzureConnectorClient(object):
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
-
-        :param enable_strict_url_encoding: (optional)
-            enable_strict_url_encoding is a boolean to indicate whether or not this client should enable strict url encoding in path params of a request.
-            By default, the client will not enable strict url encoding
         """
         if not OCI_SDK_ENABLED_SERVICES_SET.is_service_enabled("dbmulticloud"):
             raise InvalidAlloyConfig("The Alloy configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local alloy-config file configured the service you're targeting or contact the cloud provider on the availability of this service")
@@ -125,29 +140,29 @@ class OracleDBAzureConnectorClient(object):
             base_client_init_kwargs['circuit_breaker_strategy'] = circuit_breaker.DEFAULT_CIRCUIT_BREAKER_STRATEGY
         if 'allow_control_chars' in kwargs:
             base_client_init_kwargs['allow_control_chars'] = kwargs.get('allow_control_chars')
-        if 'enable_strict_url_encoding' in kwargs:
-            base_client_init_kwargs['enable_strict_url_encoding'] = kwargs.get('enable_strict_url_encoding')
         self.base_client = BaseClient("oracle_db_azure_connector", config, signer, dbmulticloud_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
 
     def change_oracle_db_azure_connector_compartment(self, oracle_db_azure_connector_id, change_oracle_db_azure_connector_compartment_details, **kwargs):
         """
-        Moves the Oracle DB Azure Connector Resource into a different compartment. When provided, 'If-Match' is checked against 'ETag' values of the resource.
+        Moves the Oracle DB Azure Connector resource into a different compartment. When provided, 'If-Match' is checked against 'ETag' values of the resource.
 
 
         :param str oracle_db_azure_connector_id: (required)
-            The ID of the Oracle DB Azure Connector Resource.
+            The `OCID`__ of the Oracle DB Azure Connector resource.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.ChangeOracleDbAzureConnectorCompartmentDetails change_oracle_db_azure_connector_compartment_details: (required)
-            Moves the Oracle DB Azure Connector Resource into a different compartment.
+            Moves the Oracle DB Azure Connector resource into a different compartment.
 
         :param str opc_retry_token: (optional)
-            A token that uniquely identifies a request so it can be retried in case of a timeout or
-            server error without risk of executing that same action again. Retry tokens expire after 24
-            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-            has been deleted and purged from the system, then a retry of the original creation request
-            might be rejected.
+            A token that uniquely identifies a request, allowing it to be safely retried in the event of a timeout or server error without the risk of the action being executed more than once.
+
+            Retry tokens expire after 24 hours but can be invalidated sooner if conflicting operations occur.
+
+            For example, if a resource has been deleted and permanently purged from the system, a retry of the original creation request may be rejected.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -171,10 +186,6 @@ class OracleDBAzureConnectorClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
-        :param bool enable_strict_url_encoding: (optional)
-            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
-            By default, strict url encoding for path params is disabled
-
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -186,12 +197,11 @@ class OracleDBAzureConnectorClient(object):
         resource_path = "/oracleDbAzureConnector/{oracleDbAzureConnectorId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_oracle_db_azure_connector_compartment"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureConnector/ChangeOracleDbAzureConnectorCompartment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
-            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_retry_token",
             "if_match",
@@ -241,7 +251,6 @@ class OracleDBAzureConnectorClient(object):
                 header_params=header_params,
                 body=change_oracle_db_azure_connector_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
-                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -253,26 +262,25 @@ class OracleDBAzureConnectorClient(object):
                 header_params=header_params,
                 body=change_oracle_db_azure_connector_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
-                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
     def create_oracle_db_azure_connector(self, create_oracle_db_azure_connector_details, **kwargs):
         """
-        Creates Oracle DB Azure Connector Resource and configured Azure Identity in OCI Database Resource.
+        Creates Oracle DB Azure Connector resource and configured Azure Identity in Oracle Database resource.
 
 
         :param oci.dbmulticloud.models.CreateOracleDbAzureConnectorDetails create_oracle_db_azure_connector_details: (required)
-            Details for to Create Oracle DB Azure Connector Resource
-            and configured Azure Identity in OCI Database Resource.
+            Details for to Create Oracle DB Azure Connector resource
+            and configured Azure Identity in Oracle Database resource.
 
         :param str opc_retry_token: (optional)
-            A token that uniquely identifies a request so it can be retried in case of a timeout or
-            server error without risk of executing that same action again. Retry tokens expire after 24
-            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-            has been deleted and purged from the system, then a retry of the original creation request
-            might be rejected.
+            A token that uniquely identifies a request, allowing it to be safely retried in the event of a timeout or server error without the risk of the action being executed more than once.
+
+            Retry tokens expire after 24 hours but can be invalidated sooner if conflicting operations occur.
+
+            For example, if a resource has been deleted and permanently purged from the system, a retry of the original creation request may be rejected.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -289,10 +297,6 @@ class OracleDBAzureConnectorClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
-        :param bool enable_strict_url_encoding: (optional)
-            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
-            By default, strict url encoding for path params is disabled
-
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.dbmulticloud.models.OracleDbAzureConnector`
         :rtype: :class:`~oci.response.Response`
 
@@ -304,12 +308,11 @@ class OracleDBAzureConnectorClient(object):
         resource_path = "/oracleDbAzureConnector"
         method = "POST"
         operation_name = "create_oracle_db_azure_connector"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureConnector/CreateOracleDbAzureConnector"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
-            "enable_strict_url_encoding",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -347,7 +350,6 @@ class OracleDBAzureConnectorClient(object):
                 body=create_oracle_db_azure_connector_details,
                 response_type="OracleDbAzureConnector",
                 allow_control_chars=kwargs.get('allow_control_chars'),
-                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -359,18 +361,19 @@ class OracleDBAzureConnectorClient(object):
                 body=create_oracle_db_azure_connector_details,
                 response_type="OracleDbAzureConnector",
                 allow_control_chars=kwargs.get('allow_control_chars'),
-                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
     def delete_oracle_db_azure_connector(self, oracle_db_azure_connector_id, **kwargs):
         """
-        Delete Oracle DB Azure Connector Resource and delete Azure Arc Identity too from Database Resource.
+        Deletes the Oracle DB Azure Identity Connector resource.
 
 
         :param str oracle_db_azure_connector_id: (required)
-            The ID of the Oracle DB Azure Connector Resource.
+            The `OCID`__ of the Oracle DB Azure Connector resource.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -394,10 +397,6 @@ class OracleDBAzureConnectorClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
-        :param bool enable_strict_url_encoding: (optional)
-            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
-            By default, strict url encoding for path params is disabled
-
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -409,12 +408,11 @@ class OracleDBAzureConnectorClient(object):
         resource_path = "/oracleDbAzureConnector/{oracleDbAzureConnectorId}"
         method = "DELETE"
         operation_name = "delete_oracle_db_azure_connector"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureConnector/DeleteOracleDbAzureConnector"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
-            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -460,7 +458,6 @@ class OracleDBAzureConnectorClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
-                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -471,18 +468,21 @@ class OracleDBAzureConnectorClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
-                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
     def get_oracle_db_azure_connector(self, oracle_db_azure_connector_id, **kwargs):
         """
-        Get Oracle DB Azure Connector Resource form a particular Resource ID.
+        Retrieves the Oracle DB Azure Identity Connector for a specified resource `OCID`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str oracle_db_azure_connector_id: (required)
-            The ID of the Oracle DB Azure Connector Resource.
+            The `OCID`__ of the Oracle DB Azure Connector resource.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -510,10 +510,6 @@ class OracleDBAzureConnectorClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
-        :param bool enable_strict_url_encoding: (optional)
-            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
-            By default, strict url encoding for path params is disabled
-
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.dbmulticloud.models.OracleDbAzureConnector`
         :rtype: :class:`~oci.response.Response`
 
@@ -525,12 +521,11 @@ class OracleDBAzureConnectorClient(object):
         resource_path = "/oracleDbAzureConnector/{oracleDbAzureConnectorId}"
         method = "GET"
         operation_name = "get_oracle_db_azure_connector"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureConnector/GetOracleDbAzureConnector"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
-            "enable_strict_url_encoding",
             "retry_strategy",
             "limit",
             "page",
@@ -593,7 +588,6 @@ class OracleDBAzureConnectorClient(object):
                 header_params=header_params,
                 response_type="OracleDbAzureConnector",
                 allow_control_chars=kwargs.get('allow_control_chars'),
-                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -606,14 +600,13 @@ class OracleDBAzureConnectorClient(object):
                 header_params=header_params,
                 response_type="OracleDbAzureConnector",
                 allow_control_chars=kwargs.get('allow_control_chars'),
-                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
     def list_oracle_db_azure_connectors(self, compartment_id, **kwargs):
         """
-        Lists the all Oracle DB Azure Connector Resource based on filters.
+        Lists all Oracle DB Azure Connector resources based on the specified filters.
 
 
         :param str compartment_id: (required)
@@ -622,19 +615,18 @@ class OracleDBAzureConnectorClient(object):
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
-            A filter to return Oracle DB Azure Connector Resource that match the given display name.
+            A filter to return Oracle DB Azure Connector resources that match the specified display name.
 
         :param str oracle_db_azure_connector_id: (optional)
-            A filter to return Oracle DB Azure Blob Mount Resources.
+            A filter to return Oracle DB Azure Azure Identity Connector resources.
 
         :param str lifecycle_state: (optional)
-            A filter to return only resources that match the given lifecycle state. The
-            state value is case-insensitive.
+            A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
 
             Allowed values are: "CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED"
 
         :param str db_cluster_resource_id: (optional)
-            The `ID`__ of the Database Resource.
+            The `ID`__ of the Database resource.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -669,10 +661,6 @@ class OracleDBAzureConnectorClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
-        :param bool enable_strict_url_encoding: (optional)
-            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
-            By default, strict url encoding for path params is disabled
-
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.dbmulticloud.models.OracleDbAzureConnectorSummaryCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -684,12 +672,11 @@ class OracleDBAzureConnectorClient(object):
         resource_path = "/oracleDbAzureConnector"
         method = "GET"
         operation_name = "list_oracle_db_azure_connectors"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureConnector/ListOracleDbAzureConnectors"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
-            "enable_strict_url_encoding",
             "retry_strategy",
             "display_name",
             "oracle_db_azure_connector_id",
@@ -766,7 +753,6 @@ class OracleDBAzureConnectorClient(object):
                 header_params=header_params,
                 response_type="OracleDbAzureConnectorSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
-                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -778,21 +764,22 @@ class OracleDBAzureConnectorClient(object):
                 header_params=header_params,
                 response_type="OracleDbAzureConnectorSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
-                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
     def patch_oracle_db_azure_connector(self, oracle_db_azure_connector_id, patch_oracle_db_azure_connector_details, **kwargs):
         """
-        Patch Azure Arc Agent on VM Cluster with new version.
+        Patch Azure Arc Agent on Oracle Cloud VM Cluster with new version.
 
 
         :param str oracle_db_azure_connector_id: (required)
-            The ID of the Oracle DB Azure Connector Resource.
+            The `OCID`__ of the Oracle DB Azure Connector resource.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.PatchOracleDbAzureConnectorDetails patch_oracle_db_azure_connector_details: (required)
-            Patch Azure Arc Agent on VM Cluster with new version.
+            Patch Azure Arc Agent on Oracle Cloud VM Cluster with new version.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -816,10 +803,6 @@ class OracleDBAzureConnectorClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
-        :param bool enable_strict_url_encoding: (optional)
-            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
-            By default, strict url encoding for path params is disabled
-
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -831,12 +814,11 @@ class OracleDBAzureConnectorClient(object):
         resource_path = "/oracleDbAzureConnector/{oracleDbAzureConnectorId}"
         method = "PATCH"
         operation_name = "patch_oracle_db_azure_connector"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureConnector/PatchOracleDbAzureConnector"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
-            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -883,7 +865,6 @@ class OracleDBAzureConnectorClient(object):
                 header_params=header_params,
                 body=patch_oracle_db_azure_connector_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
-                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -895,21 +876,26 @@ class OracleDBAzureConnectorClient(object):
                 header_params=header_params,
                 body=patch_oracle_db_azure_connector_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
-                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
-    def update_oracle_db_azure_connector(self, oracle_db_azure_connector_id, update_oracle_db_azure_connector_details, **kwargs):
+    def refresh_oracle_db_azure_connector(self, oracle_db_azure_connector_id, **kwargs):
         """
-        Modifies the existing Oracle DB Azure Connector Resource for a given ID.
+        Refreshes the Oracle DB Azure Connector resource.
 
 
         :param str oracle_db_azure_connector_id: (required)
-            The ID of the Oracle DB Azure Connector Resource.
+            The `OCID`__ of the Oracle DB Azure Connector resource.
 
-        :param oci.dbmulticloud.models.UpdateOracleDbAzureConnectorDetails update_oracle_db_azure_connector_details: (required)
-            Details for to update Oracle DB Azure Connector Resource.
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request, allowing it to be safely retried in the event of a timeout or server error without the risk of the action being executed more than once.
+
+            Retry tokens expire after 24 hours but can be invalidated sooner if conflicting operations occur.
+
+            For example, if a resource has been deleted and permanently purged from the system, a retry of the original creation request may be rejected.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -933,9 +919,120 @@ class OracleDBAzureConnectorClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
-        :param bool enable_strict_url_encoding: (optional)
-            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
-            By default, strict url encoding for path params is disabled
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dbmulticloud/refresh_oracle_db_azure_connector.py.html>`__ to see an example of how to use refresh_oracle_db_azure_connector API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['oracleDbAzureConnectorId']
+        resource_path = "/oracleDbAzureConnector/{oracleDbAzureConnectorId}/actions/refresh"
+        method = "POST"
+        operation_name = "refresh_oracle_db_azure_connector"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_retry_token",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"refresh_oracle_db_azure_connector got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "oracleDbAzureConnectorId": oracle_db_azure_connector_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def update_oracle_db_azure_connector(self, oracle_db_azure_connector_id, update_oracle_db_azure_connector_details, **kwargs):
+        """
+        Modifies the existing Oracle DB Azure Connector resource for a given `OCID`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param str oracle_db_azure_connector_id: (required)
+            The `OCID`__ of the Oracle DB Azure Connector resource.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.dbmulticloud.models.UpdateOracleDbAzureConnectorDetails update_oracle_db_azure_connector_details: (required)
+            Details for to update Oracle DB Azure Connector resource.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
@@ -948,12 +1045,11 @@ class OracleDBAzureConnectorClient(object):
         resource_path = "/oracleDbAzureConnector/{oracleDbAzureConnectorId}"
         method = "PUT"
         operation_name = "update_oracle_db_azure_connector"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureConnector/UpdateOracleDbAzureConnector"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
-            "enable_strict_url_encoding",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -1000,7 +1096,6 @@ class OracleDBAzureConnectorClient(object):
                 header_params=header_params,
                 body=update_oracle_db_azure_connector_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
-                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
@@ -1012,7 +1107,6 @@ class OracleDBAzureConnectorClient(object):
                 header_params=header_params,
                 body=update_oracle_db_azure_connector_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
-                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)

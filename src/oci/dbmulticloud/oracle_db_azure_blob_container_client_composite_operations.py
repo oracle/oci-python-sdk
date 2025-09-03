@@ -31,7 +31,9 @@ class OracleDBAzureBlobContainerClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str oracle_db_azure_blob_container_id: (required)
-            The ID of the Oracle DB Azure Blob Container Resource.
+            The `OCID`__ of the Oracle DB Azure Blob Container resource.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.ChangeOracleDbAzureBlobContainerCompartmentDetails change_oracle_db_azure_blob_container_compartment_details: (required)
             Moves the DB Azure Blob Container resource into a different compartment.
@@ -73,7 +75,7 @@ class OracleDBAzureBlobContainerClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.dbmulticloud.models.CreateOracleDbAzureBlobContainerDetails create_oracle_db_azure_blob_container_details: (required)
-            Details for to mount Azure Container in OCI Database Resource.
+            Details for to mount Azure Container in OCI Database resource.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.dbmulticloud.models.WorkRequest.status`
@@ -112,7 +114,9 @@ class OracleDBAzureBlobContainerClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str oracle_db_azure_blob_container_id: (required)
-            The ID of the Oracle DB Azure Blob Container Resource.
+            The `OCID`__ of the Oracle DB Azure Blob Container resource.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.dbmulticloud.models.WorkRequest.status`
@@ -159,7 +163,9 @@ class OracleDBAzureBlobContainerClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str oracle_db_azure_blob_container_id: (required)
-            The ID of the Oracle DB Azure Blob Container Resource.
+            The `OCID`__ of the Oracle DB Azure Blob Container resource.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.UpdateOracleDbAzureBlobContainerDetails update_oracle_db_azure_blob_container_details: (required)
             Details for to update OracleDbAzureBlobContainer.

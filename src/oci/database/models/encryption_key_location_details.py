@@ -23,19 +23,24 @@ class EncryptionKeyLocationDetails(object):
     #: This constant has a value of "AZURE"
     PROVIDER_TYPE_AZURE = "AZURE"
 
+    #: A constant which can be used with the provider_type property of a EncryptionKeyLocationDetails.
+    #: This constant has a value of "GCP"
+    PROVIDER_TYPE_GCP = "GCP"
+
     def __init__(self, **kwargs):
         """
         Initializes a new EncryptionKeyLocationDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.database.models.ExternalHsmEncryptionDetails`
+        * :class:`~oci.database.models.GoogleCloudProviderEncryptionKeyDetails`
         * :class:`~oci.database.models.AzureEncryptionKeyDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param provider_type:
             The value to assign to the provider_type property of this EncryptionKeyLocationDetails.
-            Allowed values for this property are: "EXTERNAL", "AZURE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "EXTERNAL", "AZURE", "GCP", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type provider_type: str
 
@@ -59,6 +64,9 @@ class EncryptionKeyLocationDetails(object):
         if type == 'EXTERNAL':
             return 'ExternalHsmEncryptionDetails'
 
+        if type == 'GCP':
+            return 'GoogleCloudProviderEncryptionKeyDetails'
+
         if type == 'AZURE':
             return 'AzureEncryptionKeyDetails'
         else:
@@ -70,8 +78,9 @@ class EncryptionKeyLocationDetails(object):
         **[Required]** Gets the provider_type of this EncryptionKeyLocationDetails.
         Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM.
         Use 'AZURE' for creating a new database or migrating a database key to Azure.
+        Use 'GCP' for creating a new database or migrating a database key to Google Cloud Provider.
 
-        Allowed values for this property are: "EXTERNAL", "AZURE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "EXTERNAL", "AZURE", "GCP", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -86,12 +95,13 @@ class EncryptionKeyLocationDetails(object):
         Sets the provider_type of this EncryptionKeyLocationDetails.
         Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM.
         Use 'AZURE' for creating a new database or migrating a database key to Azure.
+        Use 'GCP' for creating a new database or migrating a database key to Google Cloud Provider.
 
 
         :param provider_type: The provider_type of this EncryptionKeyLocationDetails.
         :type: str
         """
-        allowed_values = ["EXTERNAL", "AZURE"]
+        allowed_values = ["EXTERNAL", "AZURE", "GCP"]
         if not value_allowed_none_or_none_sentinel(provider_type, allowed_values):
             provider_type = 'UNKNOWN_ENUM_VALUE'
         self._provider_type = provider_type

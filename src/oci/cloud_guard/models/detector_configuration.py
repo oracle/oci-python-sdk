@@ -48,6 +48,10 @@ class DetectorConfiguration(object):
             The value to assign to the allowed_values property of this DetectorConfiguration.
         :type allowed_values: list[oci.cloud_guard.models.PropertyTuple]
 
+        :param additional_properties:
+            The value to assign to the additional_properties property of this DetectorConfiguration.
+        :type additional_properties: list[oci.cloud_guard.models.AdditionalConfigPropertyDefinition]
+
         """
         self.swagger_types = {
             'config_key': 'str',
@@ -56,7 +60,8 @@ class DetectorConfiguration(object):
             'data_type': 'str',
             'values': 'list[ConfigValue]',
             'allowed_values_data_type': 'str',
-            'allowed_values': 'list[PropertyTuple]'
+            'allowed_values': 'list[PropertyTuple]',
+            'additional_properties': 'list[AdditionalConfigPropertyDefinition]'
         }
         self.attribute_map = {
             'config_key': 'configKey',
@@ -65,7 +70,8 @@ class DetectorConfiguration(object):
             'data_type': 'dataType',
             'values': 'values',
             'allowed_values_data_type': 'allowedValuesDataType',
-            'allowed_values': 'allowedValues'
+            'allowed_values': 'allowedValues',
+            'additional_properties': 'additionalProperties'
         }
         self._config_key = None
         self._name = None
@@ -74,6 +80,7 @@ class DetectorConfiguration(object):
         self._values = None
         self._allowed_values_data_type = None
         self._allowed_values = None
+        self._additional_properties = None
 
     @property
     def config_key(self):
@@ -242,6 +249,30 @@ class DetectorConfiguration(object):
         :type: list[oci.cloud_guard.models.PropertyTuple]
         """
         self._allowed_values = allowed_values
+
+    @property
+    def additional_properties(self):
+        """
+        Gets the additional_properties of this DetectorConfiguration.
+        Map of additional property values for configuration
+
+
+        :return: The additional_properties of this DetectorConfiguration.
+        :rtype: list[oci.cloud_guard.models.AdditionalConfigPropertyDefinition]
+        """
+        return self._additional_properties
+
+    @additional_properties.setter
+    def additional_properties(self, additional_properties):
+        """
+        Sets the additional_properties of this DetectorConfiguration.
+        Map of additional property values for configuration
+
+
+        :param additional_properties: The additional_properties of this DetectorConfiguration.
+        :type: list[oci.cloud_guard.models.AdditionalConfigPropertyDefinition]
+        """
+        self._additional_properties = additional_properties
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -71,6 +71,14 @@ class CreateManagedListDetails(object):
     #: This constant has a value of "FUSION_APPS_PERMISSION"
     LIST_TYPE_FUSION_APPS_PERMISSION = "FUSION_APPS_PERMISSION"
 
+    #: A constant which can be used with the list_type property of a CreateManagedListDetails.
+    #: This constant has a value of "NAMESPACE_SELECTOR"
+    LIST_TYPE_NAMESPACE_SELECTOR = "NAMESPACE_SELECTOR"
+
+    #: A constant which can be used with the list_type property of a CreateManagedListDetails.
+    #: This constant has a value of "POD_RESOURCE_SELECTOR"
+    LIST_TYPE_POD_RESOURCE_SELECTOR = "POD_RESOURCE_SELECTOR"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateManagedListDetails object with values from keyword arguments.
@@ -94,12 +102,16 @@ class CreateManagedListDetails(object):
 
         :param list_type:
             The value to assign to the list_type property of this CreateManagedListDetails.
-            Allowed values for this property are: "CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC", "FUSION_APPS_ROLE", "FUSION_APPS_PERMISSION"
+            Allowed values for this property are: "CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC", "FUSION_APPS_ROLE", "FUSION_APPS_PERMISSION", "NAMESPACE_SELECTOR", "POD_RESOURCE_SELECTOR"
         :type list_type: str
 
         :param list_items:
             The value to assign to the list_items property of this CreateManagedListDetails.
         :type list_items: list[str]
+
+        :param group:
+            The value to assign to the group property of this CreateManagedListDetails.
+        :type group: str
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateManagedListDetails.
@@ -117,6 +129,7 @@ class CreateManagedListDetails(object):
             'description': 'str',
             'list_type': 'str',
             'list_items': 'list[str]',
+            'group': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -127,6 +140,7 @@ class CreateManagedListDetails(object):
             'description': 'description',
             'list_type': 'listType',
             'list_items': 'listItems',
+            'group': 'group',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -136,6 +150,7 @@ class CreateManagedListDetails(object):
         self._description = None
         self._list_type = None
         self._list_items = None
+        self._group = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -249,7 +264,7 @@ class CreateManagedListDetails(object):
         Gets the list_type of this CreateManagedListDetails.
         Type of information stored in the list
 
-        Allowed values for this property are: "CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC", "FUSION_APPS_ROLE", "FUSION_APPS_PERMISSION"
+        Allowed values for this property are: "CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC", "FUSION_APPS_ROLE", "FUSION_APPS_PERMISSION", "NAMESPACE_SELECTOR", "POD_RESOURCE_SELECTOR"
 
 
         :return: The list_type of this CreateManagedListDetails.
@@ -267,7 +282,7 @@ class CreateManagedListDetails(object):
         :param list_type: The list_type of this CreateManagedListDetails.
         :type: str
         """
-        allowed_values = ["CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC", "FUSION_APPS_ROLE", "FUSION_APPS_PERMISSION"]
+        allowed_values = ["CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC", "FUSION_APPS_ROLE", "FUSION_APPS_PERMISSION", "NAMESPACE_SELECTOR", "POD_RESOURCE_SELECTOR"]
         if not value_allowed_none_or_none_sentinel(list_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `list_type`, must be None or one of {allowed_values}"
@@ -297,6 +312,30 @@ class CreateManagedListDetails(object):
         :type: list[str]
         """
         self._list_items = list_items
+
+    @property
+    def group(self):
+        """
+        Gets the group of this CreateManagedListDetails.
+        Managed list type group
+
+
+        :return: The group of this CreateManagedListDetails.
+        :rtype: str
+        """
+        return self._group
+
+    @group.setter
+    def group(self, group):
+        """
+        Sets the group of this CreateManagedListDetails.
+        Managed list type group
+
+
+        :param group: The group of this CreateManagedListDetails.
+        :type: str
+        """
+        self._group = group
 
     @property
     def freeform_tags(self):

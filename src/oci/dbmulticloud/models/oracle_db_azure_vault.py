@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class OracleDbAzureVault(object):
     """
-    Oracle DB Azure Vault Resource Object.
+    Oracle DB Azure Vault resource object.
     """
 
     #: A constant which can be used with the lifecycle_state property of a OracleDbAzureVault.
@@ -175,7 +175,7 @@ class OracleDbAzureVault(object):
     def id(self):
         """
         **[Required]** Gets the id of this OracleDbAzureVault.
-        The `OCID`__ of the DB Azure Vault Resource.
+        The `OCID`__ of the oracle DB Azure Vault resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -189,7 +189,7 @@ class OracleDbAzureVault(object):
     def id(self, id):
         """
         Sets the id of this OracleDbAzureVault.
-        The `OCID`__ of the DB Azure Vault Resource.
+        The `OCID`__ of the oracle DB Azure Vault resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -203,7 +203,7 @@ class OracleDbAzureVault(object):
     def oracle_db_connector_id(self):
         """
         Gets the oracle_db_connector_id of this OracleDbAzureVault.
-        The `OCID`__ of the DB Connector Resource.
+        The `OCID`__ of the Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -217,7 +217,7 @@ class OracleDbAzureVault(object):
     def oracle_db_connector_id(self, oracle_db_connector_id):
         """
         Sets the oracle_db_connector_id of this OracleDbAzureVault.
-        The `OCID`__ of the DB Connector Resource.
+        The `OCID`__ of the Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -231,7 +231,7 @@ class OracleDbAzureVault(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this OracleDbAzureVault.
-        Display name of DB Azure Vault.
+        Oracle DB Azure Vault resource name.
 
 
         :return: The display_name of this OracleDbAzureVault.
@@ -243,7 +243,7 @@ class OracleDbAzureVault(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this OracleDbAzureVault.
-        Display name of DB Azure Vault.
+        Oracle DB Azure Vault resource name.
 
 
         :param display_name: The display_name of this OracleDbAzureVault.
@@ -255,7 +255,7 @@ class OracleDbAzureVault(object):
     def oracle_db_azure_resource_group(self):
         """
         **[Required]** Gets the oracle_db_azure_resource_group of this OracleDbAzureVault.
-        Display name of Azure Resource Group.
+        Oracle DB Azure resource group name.
 
 
         :return: The oracle_db_azure_resource_group of this OracleDbAzureVault.
@@ -267,7 +267,7 @@ class OracleDbAzureVault(object):
     def oracle_db_azure_resource_group(self, oracle_db_azure_resource_group):
         """
         Sets the oracle_db_azure_resource_group of this OracleDbAzureVault.
-        Display name of Azure Resource Group.
+        Oracle DB Azure resource group name.
 
 
         :param oracle_db_azure_resource_group: The oracle_db_azure_resource_group of this OracleDbAzureVault.
@@ -279,7 +279,7 @@ class OracleDbAzureVault(object):
     def azure_vault_id(self):
         """
         Gets the azure_vault_id of this OracleDbAzureVault.
-        Azure Vault Id.
+        Azure Vault ID.
 
 
         :return: The azure_vault_id of this OracleDbAzureVault.
@@ -291,7 +291,7 @@ class OracleDbAzureVault(object):
     def azure_vault_id(self, azure_vault_id):
         """
         Sets the azure_vault_id of this OracleDbAzureVault.
-        Azure Vault Id.
+        Azure Vault ID.
 
 
         :param azure_vault_id: The azure_vault_id of this OracleDbAzureVault.
@@ -303,7 +303,7 @@ class OracleDbAzureVault(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this OracleDbAzureVault.
-        The Compartment `OCID`__ that has this DB Azure Vault Resource.
+        The `OCID`__ of the compartment that contains this Oracle DB Azure Vault resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -317,7 +317,7 @@ class OracleDbAzureVault(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this OracleDbAzureVault.
-        The Compartment `OCID`__ that has this DB Azure Vault Resource.
+        The `OCID`__ of the compartment that contains this Oracle DB Azure Vault resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -331,7 +331,7 @@ class OracleDbAzureVault(object):
     def type(self):
         """
         Gets the type of this OracleDbAzureVault.
-        Vault Resource Type.
+        Oracle DB Azure Vault resource type.
 
 
         :return: The type of this OracleDbAzureVault.
@@ -343,7 +343,7 @@ class OracleDbAzureVault(object):
     def type(self, type):
         """
         Sets the type of this OracleDbAzureVault.
-        Vault Resource Type.
+        Oracle DB Azure Vault resource type.
 
 
         :param type: The type of this OracleDbAzureVault.
@@ -355,7 +355,7 @@ class OracleDbAzureVault(object):
     def location(self):
         """
         Gets the location of this OracleDbAzureVault.
-        Vault Resource Location.
+        Oracle DB Azure Vault resource location.
 
 
         :return: The location of this OracleDbAzureVault.
@@ -367,7 +367,7 @@ class OracleDbAzureVault(object):
     def location(self, location):
         """
         Sets the location of this OracleDbAzureVault.
-        Vault Resource Location.
+        Oracle DB Azure Vault resource location.
 
 
         :param location: The location of this OracleDbAzureVault.
@@ -379,7 +379,7 @@ class OracleDbAzureVault(object):
     def properties(self):
         """
         Gets the properties of this OracleDbAzureVault.
-        Resource's properties.
+        Oracle DB Azure Vault resource's properties.
 
 
         :return: The properties of this OracleDbAzureVault.
@@ -391,7 +391,7 @@ class OracleDbAzureVault(object):
     def properties(self, properties):
         """
         Sets the properties of this OracleDbAzureVault.
-        Resource's properties.
+        Oracle DB Azure Vault resource's properties.
 
 
         :param properties: The properties of this OracleDbAzureVault.
@@ -403,7 +403,7 @@ class OracleDbAzureVault(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this OracleDbAzureVault.
-        The lifecycle state of the DB Azure Vault Resource.
+        The lifecycle state of the Oracle DB Azure Vault resource.
 
         Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -418,7 +418,7 @@ class OracleDbAzureVault(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this OracleDbAzureVault.
-        The lifecycle state of the DB Azure Vault Resource.
+        The lifecycle state of the Oracle DB Azure Vault resource.
 
 
         :param lifecycle_state: The lifecycle_state of this OracleDbAzureVault.
@@ -457,7 +457,7 @@ class OracleDbAzureVault(object):
     def time_created(self):
         """
         Gets the time_created of this OracleDbAzureVault.
-        Time when the DB Azure Vault was created in `RFC 3339`__ timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+        Time when the DB Azure Vault resource was created in `RFC 3339`__ timestamp format, e.g. '2020-05-23T21:10:29.600Z'
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -471,7 +471,7 @@ class OracleDbAzureVault(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this OracleDbAzureVault.
-        Time when the DB Azure Vault was created in `RFC 3339`__ timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+        Time when the DB Azure Vault resource was created in `RFC 3339`__ timestamp format, e.g. '2020-05-23T21:10:29.600Z'
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -485,7 +485,7 @@ class OracleDbAzureVault(object):
     def time_updated(self):
         """
         Gets the time_updated of this OracleDbAzureVault.
-        Time when the DB Azure Vault was last modified, expressed in `RFC 3339`__ timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+        Time when the DB Azure Vault resource was last modified, expressed in `RFC 3339`__ timestamp format, e.g. '2020-05-23T21:10:29.600Z'
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -499,7 +499,7 @@ class OracleDbAzureVault(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this OracleDbAzureVault.
-        Time when the DB Azure Vault was last modified, expressed in `RFC 3339`__ timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+        Time when the DB Azure Vault resource was last modified, expressed in `RFC 3339`__ timestamp format, e.g. '2020-05-23T21:10:29.600Z'
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -513,7 +513,7 @@ class OracleDbAzureVault(object):
     def last_modification(self):
         """
         Gets the last_modification of this OracleDbAzureVault.
-        Description of the latest modification of the DB Azure Vault Resource.
+        Description of the latest modification of the Oracle DB Azure Vault resource.
 
 
         :return: The last_modification of this OracleDbAzureVault.
@@ -525,7 +525,7 @@ class OracleDbAzureVault(object):
     def last_modification(self, last_modification):
         """
         Sets the last_modification of this OracleDbAzureVault.
-        Description of the latest modification of the DB Azure Vault Resource.
+        Description of the latest modification of the Oracle DB Azure Vault resource.
 
 
         :param last_modification: The last_modification of this OracleDbAzureVault.

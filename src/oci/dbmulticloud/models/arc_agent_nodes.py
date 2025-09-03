@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ArcAgentNodes(object):
     """
-    Azure Arc Agent Node Details.
+    Azure Arc Agent node details.
     """
 
     #: A constant which can be used with the status property of a ArcAgentNodes.
@@ -79,7 +79,7 @@ class ArcAgentNodes(object):
     def host_name(self):
         """
         Gets the host_name of this ArcAgentNodes.
-        Host Name or Azure Arc Agent Name.
+        Host name or Azure Arc Agent name.
 
 
         :return: The host_name of this ArcAgentNodes.
@@ -91,7 +91,7 @@ class ArcAgentNodes(object):
     def host_name(self, host_name):
         """
         Sets the host_name of this ArcAgentNodes.
-        Host Name or Azure Arc Agent Name.
+        Host name or Azure Arc Agent name.
 
 
         :param host_name: The host_name of this ArcAgentNodes.
@@ -127,7 +127,7 @@ class ArcAgentNodes(object):
     def current_arc_agent_version(self):
         """
         Gets the current_arc_agent_version of this ArcAgentNodes.
-        Current Arc Agent Version installed on this node of VM Cluster.
+        Current Arc Agent Version installed on this node of Oracle Cloud VM Cluster.
 
 
         :return: The current_arc_agent_version of this ArcAgentNodes.
@@ -139,7 +139,7 @@ class ArcAgentNodes(object):
     def current_arc_agent_version(self, current_arc_agent_version):
         """
         Sets the current_arc_agent_version of this ArcAgentNodes.
-        Current Arc Agent Version installed on this node of VM Cluster.
+        Current Arc Agent Version installed on this node of Oracle Cloud VM Cluster.
 
 
         :param current_arc_agent_version: The current_arc_agent_version of this ArcAgentNodes.
@@ -151,7 +151,7 @@ class ArcAgentNodes(object):
     def status(self):
         """
         Gets the status of this ArcAgentNodes.
-        The current status of the Azure Arc Agent Resource.
+        The current status of the Azure Arc Agent resource.
 
         Allowed values for this property are: "CONNECTED", "DISCONNECTED", "UNKNOWN", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -166,7 +166,7 @@ class ArcAgentNodes(object):
     def status(self, status):
         """
         Sets the status of this ArcAgentNodes.
-        The current status of the Azure Arc Agent Resource.
+        The current status of the Azure Arc Agent resource.
 
 
         :param status: The status of this ArcAgentNodes.
@@ -181,7 +181,7 @@ class ArcAgentNodes(object):
     def time_last_checked(self):
         """
         Gets the time_last_checked of this ArcAgentNodes.
-        time when the Azure Arc Agent's status was checked `RFC 3339`__ timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Azure Arc Agent's status was checked `RFC 3339`__ timestamp format, e.g. '2020-05-22T21:10:29.600Z'
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -195,7 +195,7 @@ class ArcAgentNodes(object):
     def time_last_checked(self, time_last_checked):
         """
         Sets the time_last_checked of this ArcAgentNodes.
-        time when the Azure Arc Agent's status was checked `RFC 3339`__ timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Azure Arc Agent's status was checked `RFC 3339`__ timestamp format, e.g. '2020-05-22T21:10:29.600Z'
 
         __ https://tools.ietf.org/html/rfc3339
 

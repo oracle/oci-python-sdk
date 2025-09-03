@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class OracleDbAzureKeySummary(object):
     """
-    Oracle DB Azure Key Resource Summary.
+    Oracle DB Azure Key resource summary.
     """
 
     def __init__(self, **kwargs):
@@ -48,6 +48,14 @@ class OracleDbAzureKeySummary(object):
             The value to assign to the lifecycle_state_details property of this OracleDbAzureKeySummary.
         :type lifecycle_state_details: str
 
+        :param resource_type:
+            The value to assign to the resource_type property of this OracleDbAzureKeySummary.
+        :type resource_type: str
+
+        :param key_properties:
+            The value to assign to the key_properties property of this OracleDbAzureKeySummary.
+        :type key_properties: object
+
         :param time_created:
             The value to assign to the time_created property of this OracleDbAzureKeySummary.
         :type time_created: datetime
@@ -81,6 +89,8 @@ class OracleDbAzureKeySummary(object):
             'oracle_db_azure_vault_id': 'str',
             'lifecycle_state': 'str',
             'lifecycle_state_details': 'str',
+            'resource_type': 'str',
+            'key_properties': 'object',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'last_modification': 'str',
@@ -96,6 +106,8 @@ class OracleDbAzureKeySummary(object):
             'oracle_db_azure_vault_id': 'oracleDbAzureVaultId',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_state_details': 'lifecycleStateDetails',
+            'resource_type': 'resourceType',
+            'key_properties': 'keyProperties',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'last_modification': 'lastModification',
@@ -110,6 +122,8 @@ class OracleDbAzureKeySummary(object):
         self._oracle_db_azure_vault_id = None
         self._lifecycle_state = None
         self._lifecycle_state_details = None
+        self._resource_type = None
+        self._key_properties = None
         self._time_created = None
         self._time_updated = None
         self._last_modification = None
@@ -121,7 +135,7 @@ class OracleDbAzureKeySummary(object):
     def id(self):
         """
         Gets the id of this OracleDbAzureKeySummary.
-        The `OCID`__ for the Oracle DB Azure Vault Key.
+        The `OCID`__ for the Oracle DB Azure Vault Key resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -135,7 +149,7 @@ class OracleDbAzureKeySummary(object):
     def id(self, id):
         """
         Sets the id of this OracleDbAzureKeySummary.
-        The `OCID`__ for the Oracle DB Azure Vault Key.
+        The `OCID`__ for the Oracle DB Azure Vault Key resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -173,7 +187,7 @@ class OracleDbAzureKeySummary(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this OracleDbAzureKeySummary.
-        The `OCID`__ of the compartment contains Oracle DB Azure Vault Key Resource.
+        The `OCID`__ of the compartment contains Oracle DB Azure Vault Key resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -187,7 +201,7 @@ class OracleDbAzureKeySummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this OracleDbAzureKeySummary.
-        The `OCID`__ of the compartment contains Oracle DB Azure Vault Key Resource.
+        The `OCID`__ of the compartment contains Oracle DB Azure Vault Key resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -201,7 +215,7 @@ class OracleDbAzureKeySummary(object):
     def azure_key_id(self):
         """
         Gets the azure_key_id of this OracleDbAzureKeySummary.
-        The Azure ID of the Azure Key, Azure Key URL.
+        The ID of Azure Key resource.
 
 
         :return: The azure_key_id of this OracleDbAzureKeySummary.
@@ -213,7 +227,7 @@ class OracleDbAzureKeySummary(object):
     def azure_key_id(self, azure_key_id):
         """
         Sets the azure_key_id of this OracleDbAzureKeySummary.
-        The Azure ID of the Azure Key, Azure Key URL.
+        The ID of Azure Key resource.
 
 
         :param azure_key_id: The azure_key_id of this OracleDbAzureKeySummary.
@@ -225,7 +239,7 @@ class OracleDbAzureKeySummary(object):
     def oracle_db_azure_vault_id(self):
         """
         Gets the oracle_db_azure_vault_id of this OracleDbAzureKeySummary.
-        The `OCID`__ of the Oracle DB Azure Vault Resource.
+        The `OCID`__ of the Oracle DB Azure Vault resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -239,7 +253,7 @@ class OracleDbAzureKeySummary(object):
     def oracle_db_azure_vault_id(self, oracle_db_azure_vault_id):
         """
         Sets the oracle_db_azure_vault_id of this OracleDbAzureKeySummary.
-        The `OCID`__ of the Oracle DB Azure Vault Resource.
+        The `OCID`__ of the Oracle DB Azure Vault resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -253,7 +267,7 @@ class OracleDbAzureKeySummary(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this OracleDbAzureKeySummary.
-        The current lifecycle state of the Oracle DB Azure Vault Key Resource.
+        The current lifecycle state of the Oracle DB Azure Vault Key resource.
 
 
         :return: The lifecycle_state of this OracleDbAzureKeySummary.
@@ -265,7 +279,7 @@ class OracleDbAzureKeySummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this OracleDbAzureKeySummary.
-        The current lifecycle state of the Oracle DB Azure Vault Key Resource.
+        The current lifecycle state of the Oracle DB Azure Vault Key resource.
 
 
         :param lifecycle_state: The lifecycle_state of this OracleDbAzureKeySummary.
@@ -298,10 +312,58 @@ class OracleDbAzureKeySummary(object):
         self._lifecycle_state_details = lifecycle_state_details
 
     @property
+    def resource_type(self):
+        """
+        Gets the resource_type of this OracleDbAzureKeySummary.
+        Key Resource type.
+
+
+        :return: The resource_type of this OracleDbAzureKeySummary.
+        :rtype: str
+        """
+        return self._resource_type
+
+    @resource_type.setter
+    def resource_type(self, resource_type):
+        """
+        Sets the resource_type of this OracleDbAzureKeySummary.
+        Key Resource type.
+
+
+        :param resource_type: The resource_type of this OracleDbAzureKeySummary.
+        :type: str
+        """
+        self._resource_type = resource_type
+
+    @property
+    def key_properties(self):
+        """
+        Gets the key_properties of this OracleDbAzureKeySummary.
+        Key properties
+
+
+        :return: The key_properties of this OracleDbAzureKeySummary.
+        :rtype: object
+        """
+        return self._key_properties
+
+    @key_properties.setter
+    def key_properties(self, key_properties):
+        """
+        Sets the key_properties of this OracleDbAzureKeySummary.
+        Key properties
+
+
+        :param key_properties: The key_properties of this OracleDbAzureKeySummary.
+        :type: object
+        """
+        self._key_properties = key_properties
+
+    @property
     def time_created(self):
         """
         Gets the time_created of this OracleDbAzureKeySummary.
-        Time when the Oracle DB Azure Vault Key was created in `RFC 3339`__ timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Oracle DB Azure Vault Key resource was created in `RFC 3339`__ timestamp format, e.g. '2020-05-22T21:10:29.600Z'
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -315,7 +377,7 @@ class OracleDbAzureKeySummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this OracleDbAzureKeySummary.
-        Time when the Oracle DB Azure Vault Key was created in `RFC 3339`__ timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Oracle DB Azure Vault Key resource was created in `RFC 3339`__ timestamp format, e.g. '2020-05-22T21:10:29.600Z'
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -329,7 +391,7 @@ class OracleDbAzureKeySummary(object):
     def time_updated(self):
         """
         Gets the time_updated of this OracleDbAzureKeySummary.
-        Time when the Oracle DB Azure Vault Key was last modified, expressed in `RFC 3339`__ timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Oracle DB Azure Vault Key resource was last modified, expressed in `RFC 3339`__ timestamp format, e.g. '2020-05-22T21:10:29.600Z'
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -343,7 +405,7 @@ class OracleDbAzureKeySummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this OracleDbAzureKeySummary.
-        Time when the Oracle DB Azure Vault Key was last modified, expressed in `RFC 3339`__ timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Oracle DB Azure Vault Key resource was last modified, expressed in `RFC 3339`__ timestamp format, e.g. '2020-05-22T21:10:29.600Z'
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -357,7 +419,7 @@ class OracleDbAzureKeySummary(object):
     def last_modification(self):
         """
         Gets the last_modification of this OracleDbAzureKeySummary.
-        Description of the latest modification of the Oracle DB Azure Vault Resource.
+        Description of the latest modification of the Oracle DB Azure Vault resource.
 
 
         :return: The last_modification of this OracleDbAzureKeySummary.
@@ -369,7 +431,7 @@ class OracleDbAzureKeySummary(object):
     def last_modification(self, last_modification):
         """
         Sets the last_modification of this OracleDbAzureKeySummary.
-        Description of the latest modification of the Oracle DB Azure Vault Resource.
+        Description of the latest modification of the Oracle DB Azure Vault resource.
 
 
         :param last_modification: The last_modification of this OracleDbAzureKeySummary.

@@ -152,6 +152,10 @@ class GenericChatRequest(BaseChatRequest):
             The value to assign to the tools property of this GenericChatRequest.
         :type tools: list[oci.generative_ai_inference.models.ToolDefinition]
 
+        :param web_search_options:
+            The value to assign to the web_search_options property of this GenericChatRequest.
+        :type web_search_options: oci.generative_ai_inference.models.WebSearchOptions
+
         """
         self.swagger_types = {
             'api_format': 'str',
@@ -178,7 +182,8 @@ class GenericChatRequest(BaseChatRequest):
             'response_format': 'ResponseFormat',
             'tool_choice': 'ToolChoice',
             'is_parallel_tool_calls': 'bool',
-            'tools': 'list[ToolDefinition]'
+            'tools': 'list[ToolDefinition]',
+            'web_search_options': 'WebSearchOptions'
         }
         self.attribute_map = {
             'api_format': 'apiFormat',
@@ -205,7 +210,8 @@ class GenericChatRequest(BaseChatRequest):
             'response_format': 'responseFormat',
             'tool_choice': 'toolChoice',
             'is_parallel_tool_calls': 'isParallelToolCalls',
-            'tools': 'tools'
+            'tools': 'tools',
+            'web_search_options': 'webSearchOptions'
         }
         self._api_format = None
         self._messages = None
@@ -232,6 +238,7 @@ class GenericChatRequest(BaseChatRequest):
         self._tool_choice = None
         self._is_parallel_tool_calls = None
         self._tools = None
+        self._web_search_options = None
         self._api_format = 'GENERIC'
 
     @property
@@ -835,6 +842,26 @@ class GenericChatRequest(BaseChatRequest):
         :type: list[oci.generative_ai_inference.models.ToolDefinition]
         """
         self._tools = tools
+
+    @property
+    def web_search_options(self):
+        """
+        Gets the web_search_options of this GenericChatRequest.
+
+        :return: The web_search_options of this GenericChatRequest.
+        :rtype: oci.generative_ai_inference.models.WebSearchOptions
+        """
+        return self._web_search_options
+
+    @web_search_options.setter
+    def web_search_options(self, web_search_options):
+        """
+        Sets the web_search_options of this GenericChatRequest.
+
+        :param web_search_options: The web_search_options of this GenericChatRequest.
+        :type: oci.generative_ai_inference.models.WebSearchOptions
+        """
+        self._web_search_options = web_search_options
 
     def __repr__(self):
         return formatted_flat_dict(self)

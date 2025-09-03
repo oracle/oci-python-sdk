@@ -83,6 +83,10 @@ class CloudVmCluster(object):
     #: This constant has a value of "OCI"
     TDE_KEY_STORE_TYPE_OCI = "OCI"
 
+    #: A constant which can be used with the tde_key_store_type property of a CloudVmCluster.
+    #: This constant has a value of "GCP"
+    TDE_KEY_STORE_TYPE_GCP = "GCP"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CloudVmCluster object with values from keyword arguments.
@@ -328,7 +332,7 @@ class CloudVmCluster(object):
 
         :param tde_key_store_type:
             The value to assign to the tde_key_store_type property of this CloudVmCluster.
-            Allowed values for this property are: "AZURE", "OCI", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "AZURE", "OCI", "GCP", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type tde_key_store_type: str
 
@@ -2066,7 +2070,7 @@ class CloudVmCluster(object):
         Gets the tde_key_store_type of this CloudVmCluster.
         TDE keystore type
 
-        Allowed values for this property are: "AZURE", "OCI", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "AZURE", "OCI", "GCP", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -2085,7 +2089,7 @@ class CloudVmCluster(object):
         :param tde_key_store_type: The tde_key_store_type of this CloudVmCluster.
         :type: str
         """
-        allowed_values = ["AZURE", "OCI"]
+        allowed_values = ["AZURE", "OCI", "GCP"]
         if not value_allowed_none_or_none_sentinel(tde_key_store_type, allowed_values):
             tde_key_store_type = 'UNKNOWN_ENUM_VALUE'
         self._tde_key_store_type = tde_key_store_type

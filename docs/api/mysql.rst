@@ -35,6 +35,7 @@ Mysql
     oci.mysql.models.Backup
     oci.mysql.models.BackupPolicy
     oci.mysql.models.BackupSummary
+    oci.mysql.models.BackupValidationDetails
     oci.mysql.models.CaCertificate
     oci.mysql.models.ChangeBackupCompartmentDetails
     oci.mysql.models.Channel
@@ -96,6 +97,7 @@ Mysql
     oci.mysql.models.PemCaCertificate
     oci.mysql.models.PitrPolicy
     oci.mysql.models.PointInTimeRecoveryDetails
+    oci.mysql.models.PreparedBackupDetails
     oci.mysql.models.ReadEndpointDetails
     oci.mysql.models.Replica
     oci.mysql.models.ReplicaOverrides
@@ -120,6 +122,7 @@ Mysql
     oci.mysql.models.UpdateReadEndpointDetails
     oci.mysql.models.UpdateReplicaDetails
     oci.mysql.models.UpdateRestDetails
+    oci.mysql.models.ValidateBackupDetails
     oci.mysql.models.Version
     oci.mysql.models.VersionSummary
     oci.mysql.models.WorkRequest

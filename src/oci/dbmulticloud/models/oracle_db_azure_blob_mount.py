@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class OracleDbAzureBlobMount(object):
     """
-    Oracle DB Azure Blob Mount resource details.
+    Oracle DB Azure Blob Mount resource object.
     """
 
     #: A constant which can be used with the lifecycle_state property of a OracleDbAzureBlobMount.
@@ -154,7 +154,9 @@ class OracleDbAzureBlobMount(object):
     def id(self):
         """
         **[Required]** Gets the id of this OracleDbAzureBlobMount.
-        The OCID for the new Oracle DB Azure Blob Mount resource.
+        The The `OCID`__ of the Oracle DB Azure Blob Mount resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this OracleDbAzureBlobMount.
@@ -166,7 +168,9 @@ class OracleDbAzureBlobMount(object):
     def id(self, id):
         """
         Sets the id of this OracleDbAzureBlobMount.
-        The OCID for the new Oracle DB Azure Blob Mount resource.
+        The The `OCID`__ of the Oracle DB Azure Blob Mount resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this OracleDbAzureBlobMount.
@@ -178,7 +182,7 @@ class OracleDbAzureBlobMount(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this OracleDbAzureBlobMount.
-        Oracle DB Azure Blob Mount name.
+        Oracle DB Azure Blob Mount resource name.
 
 
         :return: The display_name of this OracleDbAzureBlobMount.
@@ -190,7 +194,7 @@ class OracleDbAzureBlobMount(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this OracleDbAzureBlobMount.
-        Oracle DB Azure Blob Mount name.
+        Oracle DB Azure Blob Mount resource name.
 
 
         :param display_name: The display_name of this OracleDbAzureBlobMount.
@@ -202,7 +206,9 @@ class OracleDbAzureBlobMount(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this OracleDbAzureBlobMount.
-        The OCID of the compartment that contains Oracle DB Azure Blob Mount resource.
+        The `OCID`__ of the compartment that contains Oracle DB Azure Blob Mount resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this OracleDbAzureBlobMount.
@@ -214,7 +220,9 @@ class OracleDbAzureBlobMount(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this OracleDbAzureBlobMount.
-        The OCID of the compartment that contains Oracle DB Azure Blob Mount resource.
+        The `OCID`__ of the compartment that contains Oracle DB Azure Blob Mount resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this OracleDbAzureBlobMount.
@@ -226,7 +234,9 @@ class OracleDbAzureBlobMount(object):
     def oracle_db_azure_connector_id(self):
         """
         **[Required]** Gets the oracle_db_azure_connector_id of this OracleDbAzureBlobMount.
-        The OCID of the Oracle DB Azure Connector Resource.
+        The `OCID`__ of the Oracle DB Azure Connector resource that contains Oracle DB Azure Blob Mount resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The oracle_db_azure_connector_id of this OracleDbAzureBlobMount.
@@ -238,7 +248,9 @@ class OracleDbAzureBlobMount(object):
     def oracle_db_azure_connector_id(self, oracle_db_azure_connector_id):
         """
         Sets the oracle_db_azure_connector_id of this OracleDbAzureBlobMount.
-        The OCID of the Oracle DB Azure Connector Resource.
+        The `OCID`__ of the Oracle DB Azure Connector resource that contains Oracle DB Azure Blob Mount resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param oracle_db_azure_connector_id: The oracle_db_azure_connector_id of this OracleDbAzureBlobMount.
@@ -250,7 +262,9 @@ class OracleDbAzureBlobMount(object):
     def oracle_db_azure_blob_container_id(self):
         """
         **[Required]** Gets the oracle_db_azure_blob_container_id of this OracleDbAzureBlobMount.
-        The OCID of the Oracle DB Azure Blob Container Resource.
+        The `OCID`__ of the Oracle DB Azure Blob Container resource that contains Oracle DB Azure Blob Mount resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The oracle_db_azure_blob_container_id of this OracleDbAzureBlobMount.
@@ -262,7 +276,9 @@ class OracleDbAzureBlobMount(object):
     def oracle_db_azure_blob_container_id(self, oracle_db_azure_blob_container_id):
         """
         Sets the oracle_db_azure_blob_container_id of this OracleDbAzureBlobMount.
-        The OCID of the Oracle DB Azure Blob Container Resource.
+        The `OCID`__ of the Oracle DB Azure Blob Container resource that contains Oracle DB Azure Blob Mount resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param oracle_db_azure_blob_container_id: The oracle_db_azure_blob_container_id of this OracleDbAzureBlobMount.
@@ -274,7 +290,7 @@ class OracleDbAzureBlobMount(object):
     def mount_path(self):
         """
         Gets the mount_path of this OracleDbAzureBlobMount.
-        Azure Container mount path.
+        Oracle DB Azure Blob Mount path.
 
 
         :return: The mount_path of this OracleDbAzureBlobMount.
@@ -286,7 +302,7 @@ class OracleDbAzureBlobMount(object):
     def mount_path(self, mount_path):
         """
         Sets the mount_path of this OracleDbAzureBlobMount.
-        Azure Container mount path.
+        Oracle DB Azure Blob Mount path.
 
 
         :param mount_path: The mount_path of this OracleDbAzureBlobMount.
@@ -298,7 +314,7 @@ class OracleDbAzureBlobMount(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this OracleDbAzureBlobMount.
-        The current lifecycle state of the Azure Arc Agent Resource.
+        The current lifecycle state of the Oracle DB Azure Blob Mount resource.
 
         Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -313,7 +329,7 @@ class OracleDbAzureBlobMount(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this OracleDbAzureBlobMount.
-        The current lifecycle state of the Azure Arc Agent Resource.
+        The current lifecycle state of the Oracle DB Azure Blob Mount resource.
 
 
         :param lifecycle_state: The lifecycle_state of this OracleDbAzureBlobMount.
@@ -408,7 +424,7 @@ class OracleDbAzureBlobMount(object):
     def last_modification(self):
         """
         Gets the last_modification of this OracleDbAzureBlobMount.
-        Description of the latest modification of the Oracle DB Azure Blob Mount Resource.
+        Description of the latest modification of the Oracle DB Azure Blob Mount resource.
 
 
         :return: The last_modification of this OracleDbAzureBlobMount.
@@ -420,7 +436,7 @@ class OracleDbAzureBlobMount(object):
     def last_modification(self, last_modification):
         """
         Sets the last_modification of this OracleDbAzureBlobMount.
-        Description of the latest modification of the Oracle DB Azure Blob Mount Resource.
+        Description of the latest modification of the Oracle DB Azure Blob Mount resource.
 
 
         :param last_modification: The last_modification of this OracleDbAzureBlobMount.

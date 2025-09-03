@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class OracleDbAzureBlobContainer(object):
     """
-    Oracle DB Azure Blob Container Resource Object.
+    Oracle DB Azure Blob Container resource object.
     """
 
     #: A constant which can be used with the lifecycle_state property of a OracleDbAzureBlobContainer.
@@ -161,7 +161,9 @@ class OracleDbAzureBlobContainer(object):
     def id(self):
         """
         **[Required]** Gets the id of this OracleDbAzureBlobContainer.
-        The ID of the compartment that contains Oracle DB Azure Blob Container Resource.
+        The `OCID`__ of Oracle DB Azure Blob Container resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this OracleDbAzureBlobContainer.
@@ -173,7 +175,9 @@ class OracleDbAzureBlobContainer(object):
     def id(self, id):
         """
         Sets the id of this OracleDbAzureBlobContainer.
-        The ID of the compartment that contains Oracle DB Azure Blob Container Resource.
+        The `OCID`__ of Oracle DB Azure Blob Container resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this OracleDbAzureBlobContainer.
@@ -185,7 +189,9 @@ class OracleDbAzureBlobContainer(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this OracleDbAzureBlobContainer.
-        The ID of the compartment that contains Oracle DB Azure Blob Container Resource.
+        The `OCID`__ of of the compartment that contains Oracle DB Azure Blob Container resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this OracleDbAzureBlobContainer.
@@ -197,7 +203,9 @@ class OracleDbAzureBlobContainer(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this OracleDbAzureBlobContainer.
-        The ID of the compartment that contains Oracle DB Azure Blob Container Resource.
+        The `OCID`__ of of the compartment that contains Oracle DB Azure Blob Container resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this OracleDbAzureBlobContainer.
@@ -209,7 +217,7 @@ class OracleDbAzureBlobContainer(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this OracleDbAzureBlobContainer.
-        Display name of Oracle DB Azure Blob Container.
+        Oracle DB Azure Blob Container resource name.
 
 
         :return: The display_name of this OracleDbAzureBlobContainer.
@@ -221,7 +229,7 @@ class OracleDbAzureBlobContainer(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this OracleDbAzureBlobContainer.
-        Display name of Oracle DB Azure Blob Container.
+        Oracle DB Azure Blob Container resource name.
 
 
         :param display_name: The display_name of this OracleDbAzureBlobContainer.
@@ -257,7 +265,7 @@ class OracleDbAzureBlobContainer(object):
     def private_endpoint_dns_alias(self):
         """
         Gets the private_endpoint_dns_alias of this OracleDbAzureBlobContainer.
-        Private endpoint DNS Alias.
+        Private endpoint's DNS Alias.
 
 
         :return: The private_endpoint_dns_alias of this OracleDbAzureBlobContainer.
@@ -269,7 +277,7 @@ class OracleDbAzureBlobContainer(object):
     def private_endpoint_dns_alias(self, private_endpoint_dns_alias):
         """
         Sets the private_endpoint_dns_alias of this OracleDbAzureBlobContainer.
-        Private endpoint DNS Alias.
+        Private endpoint's DNS Alias.
 
 
         :param private_endpoint_dns_alias: The private_endpoint_dns_alias of this OracleDbAzureBlobContainer.
@@ -281,7 +289,7 @@ class OracleDbAzureBlobContainer(object):
     def azure_storage_account_name(self):
         """
         **[Required]** Gets the azure_storage_account_name of this OracleDbAzureBlobContainer.
-        Azure Storage Account Name.
+        Azure Storage account name.
 
 
         :return: The azure_storage_account_name of this OracleDbAzureBlobContainer.
@@ -293,7 +301,7 @@ class OracleDbAzureBlobContainer(object):
     def azure_storage_account_name(self, azure_storage_account_name):
         """
         Sets the azure_storage_account_name of this OracleDbAzureBlobContainer.
-        Azure Storage Account Name.
+        Azure Storage account name.
 
 
         :param azure_storage_account_name: The azure_storage_account_name of this OracleDbAzureBlobContainer.
@@ -305,7 +313,7 @@ class OracleDbAzureBlobContainer(object):
     def azure_storage_container_name(self):
         """
         **[Required]** Gets the azure_storage_container_name of this OracleDbAzureBlobContainer.
-        Azure Storage Container Name.
+        Azure Storage container name.
 
 
         :return: The azure_storage_container_name of this OracleDbAzureBlobContainer.
@@ -317,7 +325,7 @@ class OracleDbAzureBlobContainer(object):
     def azure_storage_container_name(self, azure_storage_container_name):
         """
         Sets the azure_storage_container_name of this OracleDbAzureBlobContainer.
-        Azure Storage Container Name.
+        Azure Storage container name.
 
 
         :param azure_storage_container_name: The azure_storage_container_name of this OracleDbAzureBlobContainer.
@@ -329,7 +337,7 @@ class OracleDbAzureBlobContainer(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this OracleDbAzureBlobContainer.
-        The current lifecycle state of the Oracle DB Azure Blob Container Resource.
+        The current lifecycle state of the Oracle DB Azure Blob Container resource.
 
         Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -344,7 +352,7 @@ class OracleDbAzureBlobContainer(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this OracleDbAzureBlobContainer.
-        The current lifecycle state of the Oracle DB Azure Blob Container Resource.
+        The current lifecycle state of the Oracle DB Azure Blob Container resource.
 
 
         :param lifecycle_state: The lifecycle_state of this OracleDbAzureBlobContainer.
@@ -439,7 +447,7 @@ class OracleDbAzureBlobContainer(object):
     def last_modification(self):
         """
         Gets the last_modification of this OracleDbAzureBlobContainer.
-        Description of the latest modification of the Oracle DB Azure Blob Container Resource.
+        Description of the latest modification of the Oracle DB Azure Blob Container resource.
 
 
         :return: The last_modification of this OracleDbAzureBlobContainer.
@@ -451,7 +459,7 @@ class OracleDbAzureBlobContainer(object):
     def last_modification(self, last_modification):
         """
         Sets the last_modification of this OracleDbAzureBlobContainer.
-        Description of the latest modification of the Oracle DB Azure Blob Container Resource.
+        Description of the latest modification of the Oracle DB Azure Blob Container resource.
 
 
         :param last_modification: The last_modification of this OracleDbAzureBlobContainer.

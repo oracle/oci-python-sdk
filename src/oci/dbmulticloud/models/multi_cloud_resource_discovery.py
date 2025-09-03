@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MultiCloudResourceDiscovery(object):
     """
-    Multi Cloud Resource Discovery Object.
+    Multicloud Resource Discovery resource object
     """
 
     #: A constant which can be used with the resource_type property of a MultiCloudResourceDiscovery.
@@ -22,6 +22,10 @@ class MultiCloudResourceDiscovery(object):
     #: A constant which can be used with the resource_type property of a MultiCloudResourceDiscovery.
     #: This constant has a value of "STORAGE"
     RESOURCE_TYPE_STORAGE = "STORAGE"
+
+    #: A constant which can be used with the resource_type property of a MultiCloudResourceDiscovery.
+    #: This constant has a value of "GCP_KEY_RINGS"
+    RESOURCE_TYPE_GCP_KEY_RINGS = "GCP_KEY_RINGS"
 
     #: A constant which can be used with the lifecycle_state property of a MultiCloudResourceDiscovery.
     #: This constant has a value of "ACCEPTED"
@@ -80,13 +84,17 @@ class MultiCloudResourceDiscovery(object):
             The value to assign to the oracle_db_connector_id property of this MultiCloudResourceDiscovery.
         :type oracle_db_connector_id: str
 
+        :param resources_filter:
+            The value to assign to the resources_filter property of this MultiCloudResourceDiscovery.
+        :type resources_filter: dict(str, str)
+
         :param resources:
             The value to assign to the resources property of this MultiCloudResourceDiscovery.
         :type resources: list[oci.dbmulticloud.models.Resources]
 
         :param resource_type:
             The value to assign to the resource_type property of this MultiCloudResourceDiscovery.
-            Allowed values for this property are: "VAULTS", "STORAGE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "VAULTS", "STORAGE", "GCP_KEY_RINGS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type resource_type: str
 
@@ -130,6 +138,7 @@ class MultiCloudResourceDiscovery(object):
             'compartment_id': 'str',
             'display_name': 'str',
             'oracle_db_connector_id': 'str',
+            'resources_filter': 'dict(str, str)',
             'resources': 'list[Resources]',
             'resource_type': 'str',
             'lifecycle_state': 'str',
@@ -146,6 +155,7 @@ class MultiCloudResourceDiscovery(object):
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
             'oracle_db_connector_id': 'oracleDbConnectorId',
+            'resources_filter': 'resourcesFilter',
             'resources': 'resources',
             'resource_type': 'resourceType',
             'lifecycle_state': 'lifecycleState',
@@ -161,6 +171,7 @@ class MultiCloudResourceDiscovery(object):
         self._compartment_id = None
         self._display_name = None
         self._oracle_db_connector_id = None
+        self._resources_filter = None
         self._resources = None
         self._resource_type = None
         self._lifecycle_state = None
@@ -176,7 +187,7 @@ class MultiCloudResourceDiscovery(object):
     def id(self):
         """
         **[Required]** Gets the id of this MultiCloudResourceDiscovery.
-        The `OCID`__ of the Multi Cloud Discovery Resource.
+        The `OCID`__ of the Multicloud Resource Discovery resource
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -190,7 +201,7 @@ class MultiCloudResourceDiscovery(object):
     def id(self, id):
         """
         Sets the id of this MultiCloudResourceDiscovery.
-        The `OCID`__ of the Multi Cloud Discovery Resource.
+        The `OCID`__ of the Multicloud Resource Discovery resource
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -204,7 +215,7 @@ class MultiCloudResourceDiscovery(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this MultiCloudResourceDiscovery.
-        The `OCID`__ of the compartment that contains Multi Cloud Discovery Resource.
+        The `OCID`__ of the compartment that contains Multicloud Resource Discovery resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -218,7 +229,7 @@ class MultiCloudResourceDiscovery(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this MultiCloudResourceDiscovery.
-        The `OCID`__ of the compartment that contains Multi Cloud Discovery Resource.
+        The `OCID`__ of the compartment that contains Multicloud Resource Discovery resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -232,7 +243,7 @@ class MultiCloudResourceDiscovery(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this MultiCloudResourceDiscovery.
-        Display name of Multi Cloud Discovery Resource.
+        Display name of the Multicloud Resource Discovery resource.
 
 
         :return: The display_name of this MultiCloudResourceDiscovery.
@@ -244,7 +255,7 @@ class MultiCloudResourceDiscovery(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this MultiCloudResourceDiscovery.
-        Display name of Multi Cloud Discovery Resource.
+        Display name of the Multicloud Resource Discovery resource.
 
 
         :param display_name: The display_name of this MultiCloudResourceDiscovery.
@@ -256,7 +267,7 @@ class MultiCloudResourceDiscovery(object):
     def oracle_db_connector_id(self):
         """
         **[Required]** Gets the oracle_db_connector_id of this MultiCloudResourceDiscovery.
-        The `OCID`__ of the Oracle DB Connector Resource.
+        The `OCID`__ of the Oracle DB Connector resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -270,7 +281,7 @@ class MultiCloudResourceDiscovery(object):
     def oracle_db_connector_id(self, oracle_db_connector_id):
         """
         Sets the oracle_db_connector_id of this MultiCloudResourceDiscovery.
-        The `OCID`__ of the Oracle DB Connector Resource.
+        The `OCID`__ of the Oracle DB Connector resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -279,6 +290,46 @@ class MultiCloudResourceDiscovery(object):
         :type: str
         """
         self._oracle_db_connector_id = oracle_db_connector_id
+
+    @property
+    def resources_filter(self):
+        """
+        Gets the resources_filter of this MultiCloudResourceDiscovery.
+        Discover resource using attributes as key-value pair.
+        For GCP supported attributes (keyRing)
+        For Azure supported attributes (keyVault)
+        GCP Example
+        `{\"keyRing\": \"projects/db-mc-dataplane/locations/global/keyRings/dbmci-keyring\"}` or
+        `{\"keyRing\": \"dbmci-keyring\"}`
+        Azure Example
+        `{\"keyVault\": \"/subscriptions/fd42b73d-5f28-4a23-ae7c-ca08c625fe07/resourceGroups/yumfei0808Test/providers/Microsoft.KeyVault/managedHSMs/orp7HSM001\"}` or
+        `{\"keyVault\": \"orp7HSM001\"}`
+
+
+        :return: The resources_filter of this MultiCloudResourceDiscovery.
+        :rtype: dict(str, str)
+        """
+        return self._resources_filter
+
+    @resources_filter.setter
+    def resources_filter(self, resources_filter):
+        """
+        Sets the resources_filter of this MultiCloudResourceDiscovery.
+        Discover resource using attributes as key-value pair.
+        For GCP supported attributes (keyRing)
+        For Azure supported attributes (keyVault)
+        GCP Example
+        `{\"keyRing\": \"projects/db-mc-dataplane/locations/global/keyRings/dbmci-keyring\"}` or
+        `{\"keyRing\": \"dbmci-keyring\"}`
+        Azure Example
+        `{\"keyVault\": \"/subscriptions/fd42b73d-5f28-4a23-ae7c-ca08c625fe07/resourceGroups/yumfei0808Test/providers/Microsoft.KeyVault/managedHSMs/orp7HSM001\"}` or
+        `{\"keyVault\": \"orp7HSM001\"}`
+
+
+        :param resources_filter: The resources_filter of this MultiCloudResourceDiscovery.
+        :type: dict(str, str)
+        """
+        self._resources_filter = resources_filter
 
     @property
     def resources(self):
@@ -310,7 +361,7 @@ class MultiCloudResourceDiscovery(object):
         **[Required]** Gets the resource_type of this MultiCloudResourceDiscovery.
         Resource Type to discover.
 
-        Allowed values for this property are: "VAULTS", "STORAGE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "VAULTS", "STORAGE", "GCP_KEY_RINGS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -329,7 +380,7 @@ class MultiCloudResourceDiscovery(object):
         :param resource_type: The resource_type of this MultiCloudResourceDiscovery.
         :type: str
         """
-        allowed_values = ["VAULTS", "STORAGE"]
+        allowed_values = ["VAULTS", "STORAGE", "GCP_KEY_RINGS"]
         if not value_allowed_none_or_none_sentinel(resource_type, allowed_values):
             resource_type = 'UNKNOWN_ENUM_VALUE'
         self._resource_type = resource_type
@@ -392,7 +443,7 @@ class MultiCloudResourceDiscovery(object):
     def time_created(self):
         """
         Gets the time_created of this MultiCloudResourceDiscovery.
-        Time when the Multi Cloud Discovery Resource was created in `RFC 3339`__ timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Multicloud Discovery Resource was created in `RFC 3339`__ timestamp format, e.g. '2020-05-22T21:10:29.600Z'
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -406,7 +457,7 @@ class MultiCloudResourceDiscovery(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this MultiCloudResourceDiscovery.
-        Time when the Multi Cloud Discovery Resource was created in `RFC 3339`__ timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Multicloud Discovery Resource was created in `RFC 3339`__ timestamp format, e.g. '2020-05-22T21:10:29.600Z'
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -420,7 +471,7 @@ class MultiCloudResourceDiscovery(object):
     def time_updated(self):
         """
         Gets the time_updated of this MultiCloudResourceDiscovery.
-        Time when the Multi Cloud Discovery Resource was last modified, expressed in `RFC 3339`__ timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Multicloud Discovery Resource was last modified, expressed in `RFC 3339`__ timestamp format, e.g. '2020-05-22T21:10:29.600Z'
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -434,7 +485,7 @@ class MultiCloudResourceDiscovery(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this MultiCloudResourceDiscovery.
-        Time when the Multi Cloud Discovery Resource was last modified, expressed in `RFC 3339`__ timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Multicloud Discovery Resource was last modified, expressed in `RFC 3339`__ timestamp format, e.g. '2020-05-22T21:10:29.600Z'
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -448,7 +499,7 @@ class MultiCloudResourceDiscovery(object):
     def last_modification(self):
         """
         Gets the last_modification of this MultiCloudResourceDiscovery.
-        Description of the latest modification of the Multi Cloud Discovery Resource.
+        Description of the latest modification of the Multicloud Resource Discovery resource.
 
 
         :return: The last_modification of this MultiCloudResourceDiscovery.
@@ -460,7 +511,7 @@ class MultiCloudResourceDiscovery(object):
     def last_modification(self, last_modification):
         """
         Sets the last_modification of this MultiCloudResourceDiscovery.
-        Description of the latest modification of the Multi Cloud Discovery Resource.
+        Description of the latest modification of the Multicloud Resource Discovery resource.
 
 
         :param last_modification: The last_modification of this MultiCloudResourceDiscovery.

@@ -71,6 +71,14 @@ class ManagedListSummary(object):
     #: This constant has a value of "FUSION_APPS_PERMISSION"
     LIST_TYPE_FUSION_APPS_PERMISSION = "FUSION_APPS_PERMISSION"
 
+    #: A constant which can be used with the list_type property of a ManagedListSummary.
+    #: This constant has a value of "NAMESPACE_SELECTOR"
+    LIST_TYPE_NAMESPACE_SELECTOR = "NAMESPACE_SELECTOR"
+
+    #: A constant which can be used with the list_type property of a ManagedListSummary.
+    #: This constant has a value of "POD_RESOURCE_SELECTOR"
+    LIST_TYPE_POD_RESOURCE_SELECTOR = "POD_RESOURCE_SELECTOR"
+
     #: A constant which can be used with the feed_provider property of a ManagedListSummary.
     #: This constant has a value of "CUSTOMER"
     FEED_PROVIDER_CUSTOMER = "CUSTOMER"
@@ -134,9 +142,13 @@ class ManagedListSummary(object):
 
         :param list_type:
             The value to assign to the list_type property of this ManagedListSummary.
-            Allowed values for this property are: "CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC", "FUSION_APPS_ROLE", "FUSION_APPS_PERMISSION", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC", "FUSION_APPS_ROLE", "FUSION_APPS_PERMISSION", "NAMESPACE_SELECTOR", "POD_RESOURCE_SELECTOR", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type list_type: str
+
+        :param group:
+            The value to assign to the group property of this ManagedListSummary.
+        :type group: str
 
         :param feed_provider:
             The value to assign to the feed_provider property of this ManagedListSummary.
@@ -190,6 +202,7 @@ class ManagedListSummary(object):
             'compartment_id': 'str',
             'source_managed_list_id': 'str',
             'list_type': 'str',
+            'group': 'str',
             'feed_provider': 'str',
             'is_editable': 'bool',
             'list_items': 'list[str]',
@@ -208,6 +221,7 @@ class ManagedListSummary(object):
             'compartment_id': 'compartmentId',
             'source_managed_list_id': 'sourceManagedListId',
             'list_type': 'listType',
+            'group': 'group',
             'feed_provider': 'feedProvider',
             'is_editable': 'isEditable',
             'list_items': 'listItems',
@@ -225,6 +239,7 @@ class ManagedListSummary(object):
         self._compartment_id = None
         self._source_managed_list_id = None
         self._list_type = None
+        self._group = None
         self._feed_provider = None
         self._is_editable = None
         self._list_items = None
@@ -362,7 +377,7 @@ class ManagedListSummary(object):
         **[Required]** Gets the list_type of this ManagedListSummary.
         Type of information stored in the managed list
 
-        Allowed values for this property are: "CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC", "FUSION_APPS_ROLE", "FUSION_APPS_PERMISSION", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC", "FUSION_APPS_ROLE", "FUSION_APPS_PERMISSION", "NAMESPACE_SELECTOR", "POD_RESOURCE_SELECTOR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -381,10 +396,34 @@ class ManagedListSummary(object):
         :param list_type: The list_type of this ManagedListSummary.
         :type: str
         """
-        allowed_values = ["CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC", "FUSION_APPS_ROLE", "FUSION_APPS_PERMISSION"]
+        allowed_values = ["CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC", "FUSION_APPS_ROLE", "FUSION_APPS_PERMISSION", "NAMESPACE_SELECTOR", "POD_RESOURCE_SELECTOR"]
         if not value_allowed_none_or_none_sentinel(list_type, allowed_values):
             list_type = 'UNKNOWN_ENUM_VALUE'
         self._list_type = list_type
+
+    @property
+    def group(self):
+        """
+        Gets the group of this ManagedListSummary.
+        Managed list type group
+
+
+        :return: The group of this ManagedListSummary.
+        :rtype: str
+        """
+        return self._group
+
+    @group.setter
+    def group(self, group):
+        """
+        Sets the group of this ManagedListSummary.
+        Managed list type group
+
+
+        :param group: The group of this ManagedListSummary.
+        :type: str
+        """
+        self._group = group
 
     @property
     def feed_provider(self):

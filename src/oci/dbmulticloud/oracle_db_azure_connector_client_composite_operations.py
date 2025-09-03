@@ -31,10 +31,12 @@ class OracleDBAzureConnectorClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str oracle_db_azure_connector_id: (required)
-            The ID of the Oracle DB Azure Connector Resource.
+            The `OCID`__ of the Oracle DB Azure Connector resource.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.ChangeOracleDbAzureConnectorCompartmentDetails change_oracle_db_azure_connector_compartment_details: (required)
-            Moves the Oracle DB Azure Connector Resource into a different compartment.
+            Moves the Oracle DB Azure Connector resource into a different compartment.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.dbmulticloud.models.WorkRequest.status`
@@ -73,8 +75,8 @@ class OracleDBAzureConnectorClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.dbmulticloud.models.CreateOracleDbAzureConnectorDetails create_oracle_db_azure_connector_details: (required)
-            Details for to Create Oracle DB Azure Connector Resource
-            and configured Azure Identity in OCI Database Resource.
+            Details for to Create Oracle DB Azure Connector resource
+            and configured Azure Identity in Oracle Database resource.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.dbmulticloud.models.WorkRequest.status`
@@ -113,7 +115,9 @@ class OracleDBAzureConnectorClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str oracle_db_azure_connector_id: (required)
-            The ID of the Oracle DB Azure Connector Resource.
+            The `OCID`__ of the Oracle DB Azure Connector resource.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.dbmulticloud.models.WorkRequest.status`
@@ -160,10 +164,12 @@ class OracleDBAzureConnectorClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str oracle_db_azure_connector_id: (required)
-            The ID of the Oracle DB Azure Connector Resource.
+            The `OCID`__ of the Oracle DB Azure Connector resource.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.PatchOracleDbAzureConnectorDetails patch_oracle_db_azure_connector_details: (required)
-            Patch Azure Arc Agent on VM Cluster with new version.
+            Patch Azure Arc Agent on Oracle Cloud VM Cluster with new version.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.dbmulticloud.models.WorkRequest.status`
@@ -196,16 +202,59 @@ class OracleDBAzureConnectorClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def refresh_oracle_db_azure_connector_and_wait_for_state(self, oracle_db_azure_connector_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.dbmulticloud.OracleDBAzureConnectorClient.refresh_oracle_db_azure_connector` and waits for the :py:class:`~oci.dbmulticloud.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str oracle_db_azure_connector_id: (required)
+            The `OCID`__ of the Oracle DB Azure Connector resource.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.dbmulticloud.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.dbmulticloud.OracleDBAzureConnectorClient.refresh_oracle_db_azure_connector`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.refresh_oracle_db_azure_connector(oracle_db_azure_connector_id, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def update_oracle_db_azure_connector_and_wait_for_state(self, oracle_db_azure_connector_id, update_oracle_db_azure_connector_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.dbmulticloud.OracleDBAzureConnectorClient.update_oracle_db_azure_connector` and waits for the :py:class:`~oci.dbmulticloud.models.WorkRequest`
         to enter the given state(s).
 
         :param str oracle_db_azure_connector_id: (required)
-            The ID of the Oracle DB Azure Connector Resource.
+            The `OCID`__ of the Oracle DB Azure Connector resource.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.dbmulticloud.models.UpdateOracleDbAzureConnectorDetails update_oracle_db_azure_connector_details: (required)
-            Details for to update Oracle DB Azure Connector Resource.
+            Details for to update Oracle DB Azure Connector resource.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.dbmulticloud.models.WorkRequest.status`

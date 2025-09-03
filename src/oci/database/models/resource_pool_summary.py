@@ -24,6 +24,14 @@ class ResourcePoolSummary(object):
             The value to assign to the pool_size property of this ResourcePoolSummary.
         :type pool_size: int
 
+        :param total_compute_capacity:
+            The value to assign to the total_compute_capacity property of this ResourcePoolSummary.
+        :type total_compute_capacity: int
+
+        :param available_compute_capacity:
+            The value to assign to the available_compute_capacity property of this ResourcePoolSummary.
+        :type available_compute_capacity: int
+
         :param is_disabled:
             The value to assign to the is_disabled property of this ResourcePoolSummary.
         :type is_disabled: bool
@@ -31,13 +39,19 @@ class ResourcePoolSummary(object):
         """
         self.swagger_types = {
             'pool_size': 'int',
+            'total_compute_capacity': 'int',
+            'available_compute_capacity': 'int',
             'is_disabled': 'bool'
         }
         self.attribute_map = {
             'pool_size': 'poolSize',
+            'total_compute_capacity': 'totalComputeCapacity',
+            'available_compute_capacity': 'availableComputeCapacity',
             'is_disabled': 'isDisabled'
         }
         self._pool_size = None
+        self._total_compute_capacity = None
+        self._available_compute_capacity = None
         self._is_disabled = None
 
     @property
@@ -63,6 +77,54 @@ class ResourcePoolSummary(object):
         :type: int
         """
         self._pool_size = pool_size
+
+    @property
+    def total_compute_capacity(self):
+        """
+        Gets the total_compute_capacity of this ResourcePoolSummary.
+        Resource Pool total capacity, it's currently 4x of pool size
+
+
+        :return: The total_compute_capacity of this ResourcePoolSummary.
+        :rtype: int
+        """
+        return self._total_compute_capacity
+
+    @total_compute_capacity.setter
+    def total_compute_capacity(self, total_compute_capacity):
+        """
+        Sets the total_compute_capacity of this ResourcePoolSummary.
+        Resource Pool total capacity, it's currently 4x of pool size
+
+
+        :param total_compute_capacity: The total_compute_capacity of this ResourcePoolSummary.
+        :type: int
+        """
+        self._total_compute_capacity = total_compute_capacity
+
+    @property
+    def available_compute_capacity(self):
+        """
+        Gets the available_compute_capacity of this ResourcePoolSummary.
+        Available capacity left for new elastic pool members provision
+
+
+        :return: The available_compute_capacity of this ResourcePoolSummary.
+        :rtype: int
+        """
+        return self._available_compute_capacity
+
+    @available_compute_capacity.setter
+    def available_compute_capacity(self, available_compute_capacity):
+        """
+        Sets the available_compute_capacity of this ResourcePoolSummary.
+        Available capacity left for new elastic pool members provision
+
+
+        :param available_compute_capacity: The available_compute_capacity of this ResourcePoolSummary.
+        :type: int
+        """
+        self._available_compute_capacity = available_compute_capacity
 
     @property
     def is_disabled(self):

@@ -6,8 +6,10 @@
 
 from __future__ import absolute_import
 
+from .annotation import Annotation
 from .apply_guardrails_details import ApplyGuardrailsDetails
 from .apply_guardrails_result import ApplyGuardrailsResult
+from .approximate_location import ApproximateLocation
 from .assistant_message import AssistantMessage
 from .base_chat_request import BaseChatRequest
 from .base_chat_response import BaseChatResponse
@@ -93,13 +95,17 @@ from .tool_choice_none import ToolChoiceNone
 from .tool_choice_required import ToolChoiceRequired
 from .tool_definition import ToolDefinition
 from .tool_message import ToolMessage
+from .url_citation import UrlCitation
 from .usage import Usage
 from .user_message import UserMessage
+from .web_search_options import WebSearchOptions
 
 # Maps type names to classes for generative_ai_inference services.
 generative_ai_inference_type_mapping = {
+    "Annotation": Annotation,
     "ApplyGuardrailsDetails": ApplyGuardrailsDetails,
     "ApplyGuardrailsResult": ApplyGuardrailsResult,
+    "ApproximateLocation": ApproximateLocation,
     "AssistantMessage": AssistantMessage,
     "BaseChatRequest": BaseChatRequest,
     "BaseChatResponse": BaseChatResponse,
@@ -185,6 +191,8 @@ generative_ai_inference_type_mapping = {
     "ToolChoiceRequired": ToolChoiceRequired,
     "ToolDefinition": ToolDefinition,
     "ToolMessage": ToolMessage,
+    "UrlCitation": UrlCitation,
     "Usage": Usage,
-    "UserMessage": UserMessage
+    "UserMessage": UserMessage,
+    "WebSearchOptions": WebSearchOptions
 }

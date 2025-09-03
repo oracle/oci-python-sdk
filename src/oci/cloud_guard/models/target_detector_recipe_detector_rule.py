@@ -50,6 +50,10 @@ class TargetDetectorRecipeDetectorRule(object):
     #: This constant has a value of "IAAS_INSTANCE_SECURITY_DETECTOR"
     DETECTOR_IAAS_INSTANCE_SECURITY_DETECTOR = "IAAS_INSTANCE_SECURITY_DETECTOR"
 
+    #: A constant which can be used with the detector property of a TargetDetectorRecipeDetectorRule.
+    #: This constant has a value of "IAAS_CONTAINER_SECURITY_DETECTOR"
+    DETECTOR_IAAS_CONTAINER_SECURITY_DETECTOR = "IAAS_CONTAINER_SECURITY_DETECTOR"
+
     #: A constant which can be used with the managed_list_types property of a TargetDetectorRecipeDetectorRule.
     #: This constant has a value of "CIDR_BLOCK"
     MANAGED_LIST_TYPES_CIDR_BLOCK = "CIDR_BLOCK"
@@ -106,6 +110,14 @@ class TargetDetectorRecipeDetectorRule(object):
     #: This constant has a value of "FUSION_APPS_PERMISSION"
     MANAGED_LIST_TYPES_FUSION_APPS_PERMISSION = "FUSION_APPS_PERMISSION"
 
+    #: A constant which can be used with the managed_list_types property of a TargetDetectorRecipeDetectorRule.
+    #: This constant has a value of "NAMESPACE_SELECTOR"
+    MANAGED_LIST_TYPES_NAMESPACE_SELECTOR = "NAMESPACE_SELECTOR"
+
+    #: A constant which can be used with the managed_list_types property of a TargetDetectorRecipeDetectorRule.
+    #: This constant has a value of "POD_RESOURCE_SELECTOR"
+    MANAGED_LIST_TYPES_POD_RESOURCE_SELECTOR = "POD_RESOURCE_SELECTOR"
+
     #: A constant which can be used with the lifecycle_state property of a TargetDetectorRecipeDetectorRule.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -157,7 +169,7 @@ class TargetDetectorRecipeDetectorRule(object):
 
         :param detector:
             The value to assign to the detector property of this TargetDetectorRecipeDetectorRule.
-            Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR", "IAAS_CONTAINER_SECURITY_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type detector: str
 
@@ -169,13 +181,21 @@ class TargetDetectorRecipeDetectorRule(object):
             The value to assign to the resource_type property of this TargetDetectorRecipeDetectorRule.
         :type resource_type: str
 
+        :param rule_type:
+            The value to assign to the rule_type property of this TargetDetectorRecipeDetectorRule.
+        :type rule_type: list[oci.cloud_guard.models.RuleType]
+
+        :param is_cloneable:
+            The value to assign to the is_cloneable property of this TargetDetectorRecipeDetectorRule.
+        :type is_cloneable: bool
+
         :param details:
             The value to assign to the details property of this TargetDetectorRecipeDetectorRule.
         :type details: oci.cloud_guard.models.TargetDetectorDetails
 
         :param managed_list_types:
             The value to assign to the managed_list_types property of this TargetDetectorRecipeDetectorRule.
-            Allowed values for items in this list are: "CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC", "FUSION_APPS_ROLE", "FUSION_APPS_PERMISSION", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for items in this list are: "CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC", "FUSION_APPS_ROLE", "FUSION_APPS_PERMISSION", "NAMESPACE_SELECTOR", "POD_RESOURCE_SELECTOR", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type managed_list_types: list[str]
 
@@ -218,6 +238,8 @@ class TargetDetectorRecipeDetectorRule(object):
             'detector': 'str',
             'service_type': 'str',
             'resource_type': 'str',
+            'rule_type': 'list[RuleType]',
+            'is_cloneable': 'bool',
             'details': 'TargetDetectorDetails',
             'managed_list_types': 'list[str]',
             'time_created': 'datetime',
@@ -236,6 +258,8 @@ class TargetDetectorRecipeDetectorRule(object):
             'detector': 'detector',
             'service_type': 'serviceType',
             'resource_type': 'resourceType',
+            'rule_type': 'ruleType',
+            'is_cloneable': 'isCloneable',
             'details': 'details',
             'managed_list_types': 'managedListTypes',
             'time_created': 'timeCreated',
@@ -253,6 +277,8 @@ class TargetDetectorRecipeDetectorRule(object):
         self._detector = None
         self._service_type = None
         self._resource_type = None
+        self._rule_type = None
+        self._is_cloneable = None
         self._details = None
         self._managed_list_types = None
         self._time_created = None
@@ -365,7 +391,7 @@ class TargetDetectorRecipeDetectorRule(object):
         **[Required]** Gets the detector of this TargetDetectorRecipeDetectorRule.
         Detector type for the rule
 
-        Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR", "IAAS_CONTAINER_SECURITY_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -384,7 +410,7 @@ class TargetDetectorRecipeDetectorRule(object):
         :param detector: The detector of this TargetDetectorRecipeDetectorRule.
         :type: str
         """
-        allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR"]
+        allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR", "IAAS_CONTAINER_SECURITY_DETECTOR"]
         if not value_allowed_none_or_none_sentinel(detector, allowed_values):
             detector = 'UNKNOWN_ENUM_VALUE'
         self._detector = detector
@@ -450,6 +476,54 @@ class TargetDetectorRecipeDetectorRule(object):
         self._resource_type = resource_type
 
     @property
+    def rule_type(self):
+        """
+        Gets the rule_type of this TargetDetectorRecipeDetectorRule.
+        Rule category type
+
+
+        :return: The rule_type of this TargetDetectorRecipeDetectorRule.
+        :rtype: list[oci.cloud_guard.models.RuleType]
+        """
+        return self._rule_type
+
+    @rule_type.setter
+    def rule_type(self, rule_type):
+        """
+        Sets the rule_type of this TargetDetectorRecipeDetectorRule.
+        Rule category type
+
+
+        :param rule_type: The rule_type of this TargetDetectorRecipeDetectorRule.
+        :type: list[oci.cloud_guard.models.RuleType]
+        """
+        self._rule_type = rule_type
+
+    @property
+    def is_cloneable(self):
+        """
+        Gets the is_cloneable of this TargetDetectorRecipeDetectorRule.
+        Is the rule cloneable?
+
+
+        :return: The is_cloneable of this TargetDetectorRecipeDetectorRule.
+        :rtype: bool
+        """
+        return self._is_cloneable
+
+    @is_cloneable.setter
+    def is_cloneable(self, is_cloneable):
+        """
+        Sets the is_cloneable of this TargetDetectorRecipeDetectorRule.
+        Is the rule cloneable?
+
+
+        :param is_cloneable: The is_cloneable of this TargetDetectorRecipeDetectorRule.
+        :type: bool
+        """
+        self._is_cloneable = is_cloneable
+
+    @property
     def details(self):
         """
         Gets the details of this TargetDetectorRecipeDetectorRule.
@@ -475,7 +549,7 @@ class TargetDetectorRecipeDetectorRule(object):
         Gets the managed_list_types of this TargetDetectorRecipeDetectorRule.
         List of managed list types related to this rule
 
-        Allowed values for items in this list are: "CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC", "FUSION_APPS_ROLE", "FUSION_APPS_PERMISSION", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for items in this list are: "CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC", "FUSION_APPS_ROLE", "FUSION_APPS_PERMISSION", "NAMESPACE_SELECTOR", "POD_RESOURCE_SELECTOR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -494,7 +568,7 @@ class TargetDetectorRecipeDetectorRule(object):
         :param managed_list_types: The managed_list_types of this TargetDetectorRecipeDetectorRule.
         :type: list[str]
         """
-        allowed_values = ["CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC", "FUSION_APPS_ROLE", "FUSION_APPS_PERMISSION"]
+        allowed_values = ["CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC", "FUSION_APPS_ROLE", "FUSION_APPS_PERMISSION", "NAMESPACE_SELECTOR", "POD_RESOURCE_SELECTOR"]
         if managed_list_types:
             managed_list_types[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in managed_list_types]
         self._managed_list_types = managed_list_types

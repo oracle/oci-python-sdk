@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class OracleDbAzureVaultAssociation(object):
     """
-    Oracle DB Azure Vault Association Resource Object.
+    Oracle DB Azure Vault Association resource object.
     """
 
     #: A constant which can be used with the lifecycle_state property of a OracleDbAzureVaultAssociation.
@@ -154,7 +154,7 @@ class OracleDbAzureVaultAssociation(object):
     def id(self):
         """
         **[Required]** Gets the id of this OracleDbAzureVaultAssociation.
-        The `OCID`__ of the Oracle DB Azure Vault Association Resource.
+        The `OCID`__ of the Oracle DB Azure Vault Association resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -168,7 +168,7 @@ class OracleDbAzureVaultAssociation(object):
     def id(self, id):
         """
         Sets the id of this OracleDbAzureVaultAssociation.
-        The `OCID`__ of the Oracle DB Azure Vault Association Resource.
+        The `OCID`__ of the Oracle DB Azure Vault Association resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -182,7 +182,7 @@ class OracleDbAzureVaultAssociation(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this OracleDbAzureVaultAssociation.
-        The `OCID`__ of the compartment that contains Oracle DB Azure Vault Association Resource.
+        The `OCID`__ of the compartment that contains Oracle DB Azure Vault Association resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -196,7 +196,7 @@ class OracleDbAzureVaultAssociation(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this OracleDbAzureVaultAssociation.
-        The `OCID`__ of the compartment that contains Oracle DB Azure Vault Association Resource.
+        The `OCID`__ of the compartment that contains Oracle DB Azure Vault Association resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -210,7 +210,7 @@ class OracleDbAzureVaultAssociation(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this OracleDbAzureVaultAssociation.
-        Display name of Oracle DB Azure Vault Association.
+        Oracle DB Azure Vault Association resource name.
 
 
         :return: The display_name of this OracleDbAzureVaultAssociation.
@@ -222,7 +222,7 @@ class OracleDbAzureVaultAssociation(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this OracleDbAzureVaultAssociation.
-        Display name of Oracle DB Azure Vault Association.
+        Oracle DB Azure Vault Association resource name.
 
 
         :param display_name: The display_name of this OracleDbAzureVaultAssociation.
@@ -234,7 +234,7 @@ class OracleDbAzureVaultAssociation(object):
     def oracle_db_azure_connector_id(self):
         """
         **[Required]** Gets the oracle_db_azure_connector_id of this OracleDbAzureVaultAssociation.
-        The `OCID`__ of the Oracle DB Azure Connector.
+        The `OCID`__ of the Oracle DB Azure Connector that contains Oracle DB Azure Vault Association resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -248,7 +248,7 @@ class OracleDbAzureVaultAssociation(object):
     def oracle_db_azure_connector_id(self, oracle_db_azure_connector_id):
         """
         Sets the oracle_db_azure_connector_id of this OracleDbAzureVaultAssociation.
-        The `OCID`__ of the Oracle DB Azure Connector.
+        The `OCID`__ of the Oracle DB Azure Connector that contains Oracle DB Azure Vault Association resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -262,7 +262,7 @@ class OracleDbAzureVaultAssociation(object):
     def oracle_db_azure_vault_id(self):
         """
         **[Required]** Gets the oracle_db_azure_vault_id of this OracleDbAzureVaultAssociation.
-        The `OCID`__ of the Oracle DB Azure Vault.
+        The `OCID`__ of the Oracle DB Azure Vault that contains Oracle DB Azure Vault Association resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -276,7 +276,7 @@ class OracleDbAzureVaultAssociation(object):
     def oracle_db_azure_vault_id(self, oracle_db_azure_vault_id):
         """
         Sets the oracle_db_azure_vault_id of this OracleDbAzureVaultAssociation.
-        The `OCID`__ of the Oracle DB Azure Vault.
+        The `OCID`__ of the Oracle DB Azure Vault that contains Oracle DB Azure Vault Association resource.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -290,7 +290,7 @@ class OracleDbAzureVaultAssociation(object):
     def is_resource_accessible(self):
         """
         Gets the is_resource_accessible of this OracleDbAzureVaultAssociation.
-        The Associated Resources are accessible or not.
+        The Associated resource is accessible or not.
 
 
         :return: The is_resource_accessible of this OracleDbAzureVaultAssociation.
@@ -302,7 +302,7 @@ class OracleDbAzureVaultAssociation(object):
     def is_resource_accessible(self, is_resource_accessible):
         """
         Sets the is_resource_accessible of this OracleDbAzureVaultAssociation.
-        The Associated Resources are accessible or not.
+        The Associated resource is accessible or not.
 
 
         :param is_resource_accessible: The is_resource_accessible of this OracleDbAzureVaultAssociation.
@@ -314,7 +314,7 @@ class OracleDbAzureVaultAssociation(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this OracleDbAzureVaultAssociation.
-        The current lifecycle state of the Oracle DB Azure Vault Association Resource.
+        The current lifecycle state of the Oracle DB Azure Vault Association resource.
 
         Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -329,7 +329,7 @@ class OracleDbAzureVaultAssociation(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this OracleDbAzureVaultAssociation.
-        The current lifecycle state of the Oracle DB Azure Vault Association Resource.
+        The current lifecycle state of the Oracle DB Azure Vault Association resource.
 
 
         :param lifecycle_state: The lifecycle_state of this OracleDbAzureVaultAssociation.
@@ -368,7 +368,7 @@ class OracleDbAzureVaultAssociation(object):
     def time_created(self):
         """
         Gets the time_created of this OracleDbAzureVaultAssociation.
-        Time when the Oracle DB Azure Vault Association was created in `RFC 3339`__ timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Oracle DB Azure Vault Association resource was created in `RFC 3339`__ timestamp format, e.g. '2020-05-22T21:10:29.600Z'
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -382,7 +382,7 @@ class OracleDbAzureVaultAssociation(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this OracleDbAzureVaultAssociation.
-        Time when the Oracle DB Azure Vault Association was created in `RFC 3339`__ timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Oracle DB Azure Vault Association resource was created in `RFC 3339`__ timestamp format, e.g. '2020-05-22T21:10:29.600Z'
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -396,7 +396,7 @@ class OracleDbAzureVaultAssociation(object):
     def time_updated(self):
         """
         Gets the time_updated of this OracleDbAzureVaultAssociation.
-        Time when the Oracle DB Azure Vault Association was last modified, expressed in `RFC 3339`__ timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Oracle DB Azure Vault Association resource was last modified, expressed in `RFC 3339`__ timestamp format, e.g. '2020-05-22T21:10:29.600Z'
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -410,7 +410,7 @@ class OracleDbAzureVaultAssociation(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this OracleDbAzureVaultAssociation.
-        Time when the Oracle DB Azure Vault Association was last modified, expressed in `RFC 3339`__ timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Oracle DB Azure Vault Association resource was last modified, expressed in `RFC 3339`__ timestamp format, e.g. '2020-05-22T21:10:29.600Z'
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -424,7 +424,7 @@ class OracleDbAzureVaultAssociation(object):
     def last_modification(self):
         """
         Gets the last_modification of this OracleDbAzureVaultAssociation.
-        Description of the latest modification of the Oracle DB Azure Vault Association Resource.
+        Description of the latest modification of the Oracle DB Azure Vault Association resource.
 
 
         :return: The last_modification of this OracleDbAzureVaultAssociation.
@@ -436,7 +436,7 @@ class OracleDbAzureVaultAssociation(object):
     def last_modification(self, last_modification):
         """
         Sets the last_modification of this OracleDbAzureVaultAssociation.
-        Description of the latest modification of the Oracle DB Azure Vault Association Resource.
+        Description of the latest modification of the Oracle DB Azure Vault Association resource.
 
 
         :param last_modification: The last_modification of this OracleDbAzureVaultAssociation.
