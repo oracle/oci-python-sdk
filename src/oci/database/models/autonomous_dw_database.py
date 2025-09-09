@@ -442,6 +442,10 @@ class AutonomousDwDatabase(object):
             The value to assign to the memory_per_oracle_compute_unit_in_gbs property of this AutonomousDwDatabase.
         :type memory_per_oracle_compute_unit_in_gbs: int
 
+        :param memory_per_compute_unit_in_gbs:
+            The value to assign to the memory_per_compute_unit_in_gbs property of this AutonomousDwDatabase.
+        :type memory_per_compute_unit_in_gbs: float
+
         :param data_storage_size_in_gbs:
             The value to assign to the data_storage_size_in_gbs property of this AutonomousDwDatabase.
         :type data_storage_size_in_gbs: int
@@ -874,6 +878,7 @@ class AutonomousDwDatabase(object):
             'provisionable_cpus': 'list[float]',
             'data_storage_size_in_tbs': 'int',
             'memory_per_oracle_compute_unit_in_gbs': 'int',
+            'memory_per_compute_unit_in_gbs': 'float',
             'data_storage_size_in_gbs': 'int',
             'used_data_storage_size_in_gbs': 'int',
             'infrastructure_type': 'str',
@@ -1005,6 +1010,7 @@ class AutonomousDwDatabase(object):
             'provisionable_cpus': 'provisionableCpus',
             'data_storage_size_in_tbs': 'dataStorageSizeInTBs',
             'memory_per_oracle_compute_unit_in_gbs': 'memoryPerOracleComputeUnitInGBs',
+            'memory_per_compute_unit_in_gbs': 'memoryPerComputeUnitInGBs',
             'data_storage_size_in_gbs': 'dataStorageSizeInGBs',
             'used_data_storage_size_in_gbs': 'usedDataStorageSizeInGBs',
             'infrastructure_type': 'infrastructureType',
@@ -1135,6 +1141,7 @@ class AutonomousDwDatabase(object):
         self._provisionable_cpus = None
         self._data_storage_size_in_tbs = None
         self._memory_per_oracle_compute_unit_in_gbs = None
+        self._memory_per_compute_unit_in_gbs = None
         self._data_storage_size_in_gbs = None
         self._used_data_storage_size_in_gbs = None
         self._infrastructure_type = None
@@ -2103,7 +2110,7 @@ class AutonomousDwDatabase(object):
     def memory_per_oracle_compute_unit_in_gbs(self):
         """
         Gets the memory_per_oracle_compute_unit_in_gbs of this AutonomousDwDatabase.
-        The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        The amount of memory (in GBs rounded off to nearest integer value) enabled per ECPU or OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
 
 
         :return: The memory_per_oracle_compute_unit_in_gbs of this AutonomousDwDatabase.
@@ -2115,13 +2122,37 @@ class AutonomousDwDatabase(object):
     def memory_per_oracle_compute_unit_in_gbs(self, memory_per_oracle_compute_unit_in_gbs):
         """
         Sets the memory_per_oracle_compute_unit_in_gbs of this AutonomousDwDatabase.
-        The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        The amount of memory (in GBs rounded off to nearest integer value) enabled per ECPU or OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
 
 
         :param memory_per_oracle_compute_unit_in_gbs: The memory_per_oracle_compute_unit_in_gbs of this AutonomousDwDatabase.
         :type: int
         """
         self._memory_per_oracle_compute_unit_in_gbs = memory_per_oracle_compute_unit_in_gbs
+
+    @property
+    def memory_per_compute_unit_in_gbs(self):
+        """
+        Gets the memory_per_compute_unit_in_gbs of this AutonomousDwDatabase.
+        The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+
+
+        :return: The memory_per_compute_unit_in_gbs of this AutonomousDwDatabase.
+        :rtype: float
+        """
+        return self._memory_per_compute_unit_in_gbs
+
+    @memory_per_compute_unit_in_gbs.setter
+    def memory_per_compute_unit_in_gbs(self, memory_per_compute_unit_in_gbs):
+        """
+        Sets the memory_per_compute_unit_in_gbs of this AutonomousDwDatabase.
+        The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+
+
+        :param memory_per_compute_unit_in_gbs: The memory_per_compute_unit_in_gbs of this AutonomousDwDatabase.
+        :type: float
+        """
+        self._memory_per_compute_unit_in_gbs = memory_per_compute_unit_in_gbs
 
     @property
     def data_storage_size_in_gbs(self):

@@ -6,6 +6,7 @@
 
 from __future__ import absolute_import
 
+from .add_lock_details import AddLockDetails
 from .change_email_domain_compartment_details import ChangeEmailDomainCompartmentDetails
 from .change_sender_compartment_details import ChangeSenderCompartmentDetails
 from .configuration import Configuration
@@ -23,6 +24,8 @@ from .email_domain_summary import EmailDomainSummary
 from .email_return_path import EmailReturnPath
 from .email_return_path_collection import EmailReturnPathCollection
 from .email_return_path_summary import EmailReturnPathSummary
+from .remove_lock_details import RemoveLockDetails
+from .resource_lock import ResourceLock
 from .sender import Sender
 from .sender_summary import SenderSummary
 from .suppression import Suppression
@@ -42,6 +45,7 @@ from .work_request_summary_collection import WorkRequestSummaryCollection
 
 # Maps type names to classes for email services.
 email_type_mapping = {
+    "AddLockDetails": AddLockDetails,
     "ChangeEmailDomainCompartmentDetails": ChangeEmailDomainCompartmentDetails,
     "ChangeSenderCompartmentDetails": ChangeSenderCompartmentDetails,
     "Configuration": Configuration,
@@ -59,6 +63,8 @@ email_type_mapping = {
     "EmailReturnPath": EmailReturnPath,
     "EmailReturnPathCollection": EmailReturnPathCollection,
     "EmailReturnPathSummary": EmailReturnPathSummary,
+    "RemoveLockDetails": RemoveLockDetails,
+    "ResourceLock": ResourceLock,
     "Sender": Sender,
     "SenderSummary": SenderSummary,
     "Suppression": Suppression,

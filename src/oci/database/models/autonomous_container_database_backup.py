@@ -23,6 +23,10 @@ class AutonomousContainerDatabaseBackup(object):
     #: This constant has a value of "FULL"
     TYPE_FULL = "FULL"
 
+    #: A constant which can be used with the type property of a AutonomousContainerDatabaseBackup.
+    #: This constant has a value of "VIRTUAL_FULL"
+    TYPE_VIRTUAL_FULL = "VIRTUAL_FULL"
+
     #: A constant which can be used with the lifecycle_state property of a AutonomousContainerDatabaseBackup.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -78,7 +82,7 @@ class AutonomousContainerDatabaseBackup(object):
 
         :param type:
             The value to assign to the type property of this AutonomousContainerDatabaseBackup.
-            Allowed values for this property are: "INCREMENTAL", "FULL"
+            Allowed values for this property are: "INCREMENTAL", "FULL", "VIRTUAL_FULL"
         :type type: str
 
         :param is_automatic:
@@ -329,7 +333,7 @@ class AutonomousContainerDatabaseBackup(object):
         **[Required]** Gets the type of this AutonomousContainerDatabaseBackup.
         The type of backup.
 
-        Allowed values for this property are: "INCREMENTAL", "FULL"
+        Allowed values for this property are: "INCREMENTAL", "FULL", "VIRTUAL_FULL"
 
 
         :return: The type of this AutonomousContainerDatabaseBackup.
@@ -347,7 +351,7 @@ class AutonomousContainerDatabaseBackup(object):
         :param type: The type of this AutonomousContainerDatabaseBackup.
         :type: str
         """
-        allowed_values = ["INCREMENTAL", "FULL"]
+        allowed_values = ["INCREMENTAL", "FULL", "VIRTUAL_FULL"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             raise ValueError(
                 f"Invalid value for `type`, must be None or one of {allowed_values}"

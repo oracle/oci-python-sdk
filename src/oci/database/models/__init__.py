@@ -19,6 +19,7 @@ from .app_version_summary import AppVersionSummary
 from .application_vip import ApplicationVip
 from .application_vip_summary import ApplicationVipSummary
 from .associated_database_details import AssociatedDatabaseDetails
+from .associated_long_term_backup import AssociatedLongTermBackup
 from .automated_mount_details import AutomatedMountDetails
 from .autonomous_container_database import AutonomousContainerDatabase
 from .autonomous_container_database_backup import AutonomousContainerDatabaseBackup
@@ -437,6 +438,7 @@ from .scheduling_window import SchedulingWindow
 from .scheduling_window_summary import SchedulingWindowSummary
 from .self_mount_details import SelfMountDetails
 from .set_key_version_details import SetKeyVersionDetails
+from .source_database_details import SourceDatabaseDetails
 from .stack_monitoring_config import StackMonitoringConfig
 from .storage_performance_details import StoragePerformanceDetails
 from .switch_over_data_guard_details import SwitchOverDataGuardDetails
@@ -525,6 +527,7 @@ database_type_mapping = {
     "ApplicationVip": ApplicationVip,
     "ApplicationVipSummary": ApplicationVipSummary,
     "AssociatedDatabaseDetails": AssociatedDatabaseDetails,
+    "AssociatedLongTermBackup": AssociatedLongTermBackup,
     "AutomatedMountDetails": AutomatedMountDetails,
     "AutonomousContainerDatabase": AutonomousContainerDatabase,
     "AutonomousContainerDatabaseBackup": AutonomousContainerDatabaseBackup,
@@ -943,6 +946,7 @@ database_type_mapping = {
     "SchedulingWindowSummary": SchedulingWindowSummary,
     "SelfMountDetails": SelfMountDetails,
     "SetKeyVersionDetails": SetKeyVersionDetails,
+    "SourceDatabaseDetails": SourceDatabaseDetails,
     "StackMonitoringConfig": StackMonitoringConfig,
     "StoragePerformanceDetails": StoragePerformanceDetails,
     "SwitchOverDataGuardDetails": SwitchOverDataGuardDetails,

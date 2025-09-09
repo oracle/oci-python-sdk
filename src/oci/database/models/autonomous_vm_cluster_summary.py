@@ -132,6 +132,10 @@ class AutonomousVmClusterSummary(object):
             The value to assign to the memory_per_oracle_compute_unit_in_gbs property of this AutonomousVmClusterSummary.
         :type memory_per_oracle_compute_unit_in_gbs: int
 
+        :param memory_per_compute_unit_in_gbs:
+            The value to assign to the memory_per_compute_unit_in_gbs property of this AutonomousVmClusterSummary.
+        :type memory_per_compute_unit_in_gbs: float
+
         :param cpu_core_count_per_node:
             The value to assign to the cpu_core_count_per_node property of this AutonomousVmClusterSummary.
         :type cpu_core_count_per_node: int
@@ -292,6 +296,7 @@ class AutonomousVmClusterSummary(object):
             'available_cpus': 'int',
             'total_container_databases': 'int',
             'memory_per_oracle_compute_unit_in_gbs': 'int',
+            'memory_per_compute_unit_in_gbs': 'float',
             'cpu_core_count_per_node': 'int',
             'autonomous_data_storage_size_in_tbs': 'float',
             'maintenance_window': 'MaintenanceWindow',
@@ -345,6 +350,7 @@ class AutonomousVmClusterSummary(object):
             'available_cpus': 'availableCpus',
             'total_container_databases': 'totalContainerDatabases',
             'memory_per_oracle_compute_unit_in_gbs': 'memoryPerOracleComputeUnitInGBs',
+            'memory_per_compute_unit_in_gbs': 'memoryPerComputeUnitInGBs',
             'cpu_core_count_per_node': 'cpuCoreCountPerNode',
             'autonomous_data_storage_size_in_tbs': 'autonomousDataStorageSizeInTBs',
             'maintenance_window': 'maintenanceWindow',
@@ -397,6 +403,7 @@ class AutonomousVmClusterSummary(object):
         self._available_cpus = None
         self._total_container_databases = None
         self._memory_per_oracle_compute_unit_in_gbs = None
+        self._memory_per_compute_unit_in_gbs = None
         self._cpu_core_count_per_node = None
         self._autonomous_data_storage_size_in_tbs = None
         self._maintenance_window = None
@@ -833,7 +840,7 @@ class AutonomousVmClusterSummary(object):
     def memory_per_oracle_compute_unit_in_gbs(self):
         """
         Gets the memory_per_oracle_compute_unit_in_gbs of this AutonomousVmClusterSummary.
-        The amount of memory (in GBs) to be enabled per each CPU core.
+        The amount of memory (in GBs rounded off to nearest integer value) enabled per ECPU or OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
 
 
         :return: The memory_per_oracle_compute_unit_in_gbs of this AutonomousVmClusterSummary.
@@ -845,13 +852,37 @@ class AutonomousVmClusterSummary(object):
     def memory_per_oracle_compute_unit_in_gbs(self, memory_per_oracle_compute_unit_in_gbs):
         """
         Sets the memory_per_oracle_compute_unit_in_gbs of this AutonomousVmClusterSummary.
-        The amount of memory (in GBs) to be enabled per each CPU core.
+        The amount of memory (in GBs rounded off to nearest integer value) enabled per ECPU or OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
 
 
         :param memory_per_oracle_compute_unit_in_gbs: The memory_per_oracle_compute_unit_in_gbs of this AutonomousVmClusterSummary.
         :type: int
         """
         self._memory_per_oracle_compute_unit_in_gbs = memory_per_oracle_compute_unit_in_gbs
+
+    @property
+    def memory_per_compute_unit_in_gbs(self):
+        """
+        Gets the memory_per_compute_unit_in_gbs of this AutonomousVmClusterSummary.
+        The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+
+
+        :return: The memory_per_compute_unit_in_gbs of this AutonomousVmClusterSummary.
+        :rtype: float
+        """
+        return self._memory_per_compute_unit_in_gbs
+
+    @memory_per_compute_unit_in_gbs.setter
+    def memory_per_compute_unit_in_gbs(self, memory_per_compute_unit_in_gbs):
+        """
+        Sets the memory_per_compute_unit_in_gbs of this AutonomousVmClusterSummary.
+        The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+
+
+        :param memory_per_compute_unit_in_gbs: The memory_per_compute_unit_in_gbs of this AutonomousVmClusterSummary.
+        :type: float
+        """
+        self._memory_per_compute_unit_in_gbs = memory_per_compute_unit_in_gbs
 
     @property
     def cpu_core_count_per_node(self):

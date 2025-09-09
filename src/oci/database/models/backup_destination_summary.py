@@ -70,6 +70,14 @@ class BackupDestinationSummary(object):
             The value to assign to the associated_databases property of this BackupDestinationSummary.
         :type associated_databases: list[oci.database.models.AssociatedDatabaseDetails]
 
+        :param associated_long_term_backups:
+            The value to assign to the associated_long_term_backups property of this BackupDestinationSummary.
+        :type associated_long_term_backups: list[oci.database.models.AssociatedLongTermBackup]
+
+        :param associated_long_term_backup_count:
+            The value to assign to the associated_long_term_backup_count property of this BackupDestinationSummary.
+        :type associated_long_term_backup_count: int
+
         :param connection_string:
             The value to assign to the connection_string property of this BackupDestinationSummary.
         :type connection_string: str
@@ -141,6 +149,8 @@ class BackupDestinationSummary(object):
             'compartment_id': 'str',
             'type': 'str',
             'associated_databases': 'list[AssociatedDatabaseDetails]',
+            'associated_long_term_backups': 'list[AssociatedLongTermBackup]',
+            'associated_long_term_backup_count': 'int',
             'connection_string': 'str',
             'vpc_users': 'list[str]',
             'local_mount_point_path': 'str',
@@ -163,6 +173,8 @@ class BackupDestinationSummary(object):
             'compartment_id': 'compartmentId',
             'type': 'type',
             'associated_databases': 'associatedDatabases',
+            'associated_long_term_backups': 'associatedLongTermBackups',
+            'associated_long_term_backup_count': 'associatedLongTermBackupCount',
             'connection_string': 'connectionString',
             'vpc_users': 'vpcUsers',
             'local_mount_point_path': 'localMountPointPath',
@@ -184,6 +196,8 @@ class BackupDestinationSummary(object):
         self._compartment_id = None
         self._type = None
         self._associated_databases = None
+        self._associated_long_term_backups = None
+        self._associated_long_term_backup_count = None
         self._connection_string = None
         self._vpc_users = None
         self._local_mount_point_path = None
@@ -333,6 +347,54 @@ class BackupDestinationSummary(object):
         :type: list[oci.database.models.AssociatedDatabaseDetails]
         """
         self._associated_databases = associated_databases
+
+    @property
+    def associated_long_term_backups(self):
+        """
+        Gets the associated_long_term_backups of this BackupDestinationSummary.
+        List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+
+
+        :return: The associated_long_term_backups of this BackupDestinationSummary.
+        :rtype: list[oci.database.models.AssociatedLongTermBackup]
+        """
+        return self._associated_long_term_backups
+
+    @associated_long_term_backups.setter
+    def associated_long_term_backups(self, associated_long_term_backups):
+        """
+        Sets the associated_long_term_backups of this BackupDestinationSummary.
+        List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+
+
+        :param associated_long_term_backups: The associated_long_term_backups of this BackupDestinationSummary.
+        :type: list[oci.database.models.AssociatedLongTermBackup]
+        """
+        self._associated_long_term_backups = associated_long_term_backups
+
+    @property
+    def associated_long_term_backup_count(self):
+        """
+        Gets the associated_long_term_backup_count of this BackupDestinationSummary.
+        Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+
+
+        :return: The associated_long_term_backup_count of this BackupDestinationSummary.
+        :rtype: int
+        """
+        return self._associated_long_term_backup_count
+
+    @associated_long_term_backup_count.setter
+    def associated_long_term_backup_count(self, associated_long_term_backup_count):
+        """
+        Sets the associated_long_term_backup_count of this BackupDestinationSummary.
+        Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+
+
+        :param associated_long_term_backup_count: The associated_long_term_backup_count of this BackupDestinationSummary.
+        :type: int
+        """
+        self._associated_long_term_backup_count = associated_long_term_backup_count
 
     @property
     def connection_string(self):

@@ -10468,6 +10468,9 @@ class DatabaseClient(object):
         :param str opc_request_id: (optional)
             Unique identifier for the request.
 
+        :param bool must_delete_associated_long_term_backups: (optional)
+            If set to true, terminating the Autonomous Database also deletes its associated long-term backups if the retention lock is not enabled.
+
         :param bool opc_dry_run: (optional)
             Indicates that the request is a dry run, if set to \"true\". A dry run request does not actually
             creating or updating a resource and is used only to perform validation on the submitted data.
@@ -10503,6 +10506,7 @@ class DatabaseClient(object):
             "retry_strategy",
             "if_match",
             "opc_request_id",
+            "must_delete_associated_long_term_backups",
             "opc_dry_run"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -10519,6 +10523,11 @@ class DatabaseClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "mustDeleteAssociatedLongTermBackups": kwargs.get("must_delete_associated_long_term_backups", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -10543,6 +10552,7 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
@@ -10553,6 +10563,7 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
@@ -26419,6 +26430,17 @@ class DatabaseClient(object):
         :param str type: (optional)
             A filter to return only backups that matches with the given type of Backup.
 
+        :param str backup_destination_id: (optional)
+            A filter to return only resources that have the given backup destination id.
+
+        :param str key_store_id: (optional)
+            A filter to return only resources that have the given key store id.
+
+        :param str infrastructure_type: (optional)
+            A filter to return only resources that match the given Infrastructure Type.
+
+            Allowed values are: "CLOUD", "CLOUD_AT_CUSTOMER"
+
         :param str opc_request_id: (optional)
             Unique identifier for the request.
 
@@ -26460,6 +26482,9 @@ class DatabaseClient(object):
             "lifecycle_state",
             "display_name",
             "type",
+            "backup_destination_id",
+            "key_store_id",
+            "infrastructure_type",
             "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -26488,6 +26513,13 @@ class DatabaseClient(object):
                     f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
+        if 'infrastructure_type' in kwargs:
+            infrastructure_type_allowed_values = ["CLOUD", "CLOUD_AT_CUSTOMER"]
+            if kwargs['infrastructure_type'] not in infrastructure_type_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `infrastructure_type`, must be one of { infrastructure_type_allowed_values }"
+                )
+
         query_params = {
             "autonomousDatabaseId": kwargs.get("autonomous_database_id", missing),
             "compartmentId": kwargs.get("compartment_id", missing),
@@ -26497,7 +26529,10 @@ class DatabaseClient(object):
             "sortOrder": kwargs.get("sort_order", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "displayName": kwargs.get("display_name", missing),
-            "type": kwargs.get("type", missing)
+            "type": kwargs.get("type", missing),
+            "backupDestinationId": kwargs.get("backup_destination_id", missing),
+            "keyStoreId": kwargs.get("key_store_id", missing),
+            "infrastructureType": kwargs.get("infrastructure_type", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -31753,9 +31788,9 @@ class DatabaseClient(object):
             Optional. Filters the performance results by shape type.
 
         :param str database_edition: (optional)
-            The database edition of quota (STANDARD_EDITION/ENTERPRISE_EDITION/ENTERPRISE_EDITION_HIGH_PERFORMANCE/ENTERPRISE_EDITION_EXTREME/ENTERPRISE_EDITION_DEVELOPER)
+            The database edition of quota (STANDARD_EDITION/ENTERPRISE_EDITION/ENTERPRISE_EDITION_HIGH_PERFORMANCE/ENTERPRISE_EDITION_EXTREME_PERFORMANCE/ENTERPRISE_EDITION_DEVELOPER)
 
-            Allowed values are: "STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", "ENTERPRISE_EDITION_EXTREME", "ENTERPRISE_EDITION_DEVELOPER"
+            Allowed values are: "STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE", "ENTERPRISE_EDITION_DEVELOPER"
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -31811,7 +31846,7 @@ class DatabaseClient(object):
             )
 
         if 'database_edition' in kwargs:
-            database_edition_allowed_values = ["STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", "ENTERPRISE_EDITION_EXTREME", "ENTERPRISE_EDITION_DEVELOPER"]
+            database_edition_allowed_values = ["STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE", "ENTERPRISE_EDITION_DEVELOPER"]
             if kwargs['database_edition'] not in database_edition_allowed_values:
                 raise ValueError(
                     f"Invalid value for `database_edition`, must be one of { database_edition_allowed_values }"

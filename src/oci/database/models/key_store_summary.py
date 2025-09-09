@@ -66,6 +66,14 @@ class KeyStoreSummary(object):
             The value to assign to the associated_databases property of this KeyStoreSummary.
         :type associated_databases: list[oci.database.models.KeyStoreAssociatedDatabaseDetails]
 
+        :param associated_long_term_backups:
+            The value to assign to the associated_long_term_backups property of this KeyStoreSummary.
+        :type associated_long_term_backups: list[oci.database.models.AssociatedLongTermBackup]
+
+        :param associated_long_term_backup_count:
+            The value to assign to the associated_long_term_backup_count property of this KeyStoreSummary.
+        :type associated_long_term_backup_count: int
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this KeyStoreSummary.
         :type freeform_tags: dict(str, str)
@@ -88,6 +96,8 @@ class KeyStoreSummary(object):
             'lifecycle_details': 'str',
             'type_details': 'KeyStoreTypeDetails',
             'associated_databases': 'list[KeyStoreAssociatedDatabaseDetails]',
+            'associated_long_term_backups': 'list[AssociatedLongTermBackup]',
+            'associated_long_term_backup_count': 'int',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -101,6 +111,8 @@ class KeyStoreSummary(object):
             'lifecycle_details': 'lifecycleDetails',
             'type_details': 'typeDetails',
             'associated_databases': 'associatedDatabases',
+            'associated_long_term_backups': 'associatedLongTermBackups',
+            'associated_long_term_backup_count': 'associatedLongTermBackupCount',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -113,6 +125,8 @@ class KeyStoreSummary(object):
         self._lifecycle_details = None
         self._type_details = None
         self._associated_databases = None
+        self._associated_long_term_backups = None
+        self._associated_long_term_backup_count = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -318,6 +332,54 @@ class KeyStoreSummary(object):
         :type: list[oci.database.models.KeyStoreAssociatedDatabaseDetails]
         """
         self._associated_databases = associated_databases
+
+    @property
+    def associated_long_term_backups(self):
+        """
+        Gets the associated_long_term_backups of this KeyStoreSummary.
+        List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+
+
+        :return: The associated_long_term_backups of this KeyStoreSummary.
+        :rtype: list[oci.database.models.AssociatedLongTermBackup]
+        """
+        return self._associated_long_term_backups
+
+    @associated_long_term_backups.setter
+    def associated_long_term_backups(self, associated_long_term_backups):
+        """
+        Sets the associated_long_term_backups of this KeyStoreSummary.
+        List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+
+
+        :param associated_long_term_backups: The associated_long_term_backups of this KeyStoreSummary.
+        :type: list[oci.database.models.AssociatedLongTermBackup]
+        """
+        self._associated_long_term_backups = associated_long_term_backups
+
+    @property
+    def associated_long_term_backup_count(self):
+        """
+        Gets the associated_long_term_backup_count of this KeyStoreSummary.
+        Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+
+
+        :return: The associated_long_term_backup_count of this KeyStoreSummary.
+        :rtype: int
+        """
+        return self._associated_long_term_backup_count
+
+    @associated_long_term_backup_count.setter
+    def associated_long_term_backup_count(self, associated_long_term_backup_count):
+        """
+        Sets the associated_long_term_backup_count of this KeyStoreSummary.
+        Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+
+
+        :param associated_long_term_backup_count: The associated_long_term_backup_count of this KeyStoreSummary.
+        :type: int
+        """
+        self._associated_long_term_backup_count = associated_long_term_backup_count
 
     @property
     def freeform_tags(self):

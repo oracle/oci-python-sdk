@@ -64,6 +64,10 @@ class AutonomousVmClusterResourceUsage(object):
             The value to assign to the memory_per_oracle_compute_unit_in_gbs property of this AutonomousVmClusterResourceUsage.
         :type memory_per_oracle_compute_unit_in_gbs: int
 
+        :param memory_per_compute_unit_in_gbs:
+            The value to assign to the memory_per_compute_unit_in_gbs property of this AutonomousVmClusterResourceUsage.
+        :type memory_per_compute_unit_in_gbs: float
+
         :param total_cpus:
             The value to assign to the total_cpus property of this AutonomousVmClusterResourceUsage.
         :type total_cpus: float
@@ -117,6 +121,7 @@ class AutonomousVmClusterResourceUsage(object):
             'is_local_backup_enabled': 'bool',
             'exadata_storage_in_tbs': 'float',
             'memory_per_oracle_compute_unit_in_gbs': 'int',
+            'memory_per_compute_unit_in_gbs': 'float',
             'total_cpus': 'float',
             'used_cpus': 'float',
             'available_cpus': 'float',
@@ -140,6 +145,7 @@ class AutonomousVmClusterResourceUsage(object):
             'is_local_backup_enabled': 'isLocalBackupEnabled',
             'exadata_storage_in_tbs': 'exadataStorageInTBs',
             'memory_per_oracle_compute_unit_in_gbs': 'memoryPerOracleComputeUnitInGBs',
+            'memory_per_compute_unit_in_gbs': 'memoryPerComputeUnitInGBs',
             'total_cpus': 'totalCpus',
             'used_cpus': 'usedCpus',
             'available_cpus': 'availableCpus',
@@ -162,6 +168,7 @@ class AutonomousVmClusterResourceUsage(object):
         self._is_local_backup_enabled = None
         self._exadata_storage_in_tbs = None
         self._memory_per_oracle_compute_unit_in_gbs = None
+        self._memory_per_compute_unit_in_gbs = None
         self._total_cpus = None
         self._used_cpus = None
         self._available_cpus = None
@@ -421,7 +428,7 @@ class AutonomousVmClusterResourceUsage(object):
     def memory_per_oracle_compute_unit_in_gbs(self):
         """
         Gets the memory_per_oracle_compute_unit_in_gbs of this AutonomousVmClusterResourceUsage.
-        The amount of memory (in GBs) to be enabled per each CPU core.
+        The amount of memory (in GBs rounded off to nearest integer value) enabled per ECPU or OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
 
 
         :return: The memory_per_oracle_compute_unit_in_gbs of this AutonomousVmClusterResourceUsage.
@@ -433,13 +440,37 @@ class AutonomousVmClusterResourceUsage(object):
     def memory_per_oracle_compute_unit_in_gbs(self, memory_per_oracle_compute_unit_in_gbs):
         """
         Sets the memory_per_oracle_compute_unit_in_gbs of this AutonomousVmClusterResourceUsage.
-        The amount of memory (in GBs) to be enabled per each CPU core.
+        The amount of memory (in GBs rounded off to nearest integer value) enabled per ECPU or OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
 
 
         :param memory_per_oracle_compute_unit_in_gbs: The memory_per_oracle_compute_unit_in_gbs of this AutonomousVmClusterResourceUsage.
         :type: int
         """
         self._memory_per_oracle_compute_unit_in_gbs = memory_per_oracle_compute_unit_in_gbs
+
+    @property
+    def memory_per_compute_unit_in_gbs(self):
+        """
+        Gets the memory_per_compute_unit_in_gbs of this AutonomousVmClusterResourceUsage.
+        The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+
+
+        :return: The memory_per_compute_unit_in_gbs of this AutonomousVmClusterResourceUsage.
+        :rtype: float
+        """
+        return self._memory_per_compute_unit_in_gbs
+
+    @memory_per_compute_unit_in_gbs.setter
+    def memory_per_compute_unit_in_gbs(self, memory_per_compute_unit_in_gbs):
+        """
+        Sets the memory_per_compute_unit_in_gbs of this AutonomousVmClusterResourceUsage.
+        The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+
+
+        :param memory_per_compute_unit_in_gbs: The memory_per_compute_unit_in_gbs of this AutonomousVmClusterResourceUsage.
+        :type: float
+        """
+        self._memory_per_compute_unit_in_gbs = memory_per_compute_unit_in_gbs
 
     @property
     def total_cpus(self):

@@ -126,7 +126,7 @@ import contextlib
 import os
 import time
 
-version = "25.07.15"
+version = "25.08.26"
 
 ##########################################################################
 # check OCI version

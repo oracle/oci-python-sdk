@@ -222,12 +222,23 @@ class CreateMountTargetDetails(object):
         with `RFC 952`__
         and `RFC 1123`__.
 
-        Note: This attribute value is stored in the `PrivateIp`__ resource,
+        Note:
+
+        If the IP address is IPv4, this attribute value is stored in the
+        `PrivateIp`__ resource,
         not in the `mountTarget` resource.
         To update the `hostnameLabel`, use `GetMountTarget` to obtain the
         `OCIDs`__ of the mount target's
         private IPs (`privateIpIds`). Then, you can use
         `UpdatePrivateIp`__
+        to update the `hostnameLabel` value.
+
+        If the IP address is IPv6, it is stored in the
+        `Ipv6]`__ resource
+        To update the `hostnameLabel`, use `GetMountTarget` to obtain the
+        `OCIDs`__ of the mount target's
+        IPv6 address (`mountTargetIpv6Ids`). Then, you can use
+        `UpdateIpv6`__
         to update the `hostnameLabel` value.
 
         For more information, see
@@ -240,6 +251,9 @@ class CreateMountTargetDetails(object):
         __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Ipv6
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Ipv6/UpdateIpv6
         __ https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm
 
 
@@ -260,12 +274,23 @@ class CreateMountTargetDetails(object):
         with `RFC 952`__
         and `RFC 1123`__.
 
-        Note: This attribute value is stored in the `PrivateIp`__ resource,
+        Note:
+
+        If the IP address is IPv4, this attribute value is stored in the
+        `PrivateIp`__ resource,
         not in the `mountTarget` resource.
         To update the `hostnameLabel`, use `GetMountTarget` to obtain the
         `OCIDs`__ of the mount target's
         private IPs (`privateIpIds`). Then, you can use
         `UpdatePrivateIp`__
+        to update the `hostnameLabel` value.
+
+        If the IP address is IPv6, it is stored in the
+        `Ipv6]`__ resource
+        To update the `hostnameLabel`, use `GetMountTarget` to obtain the
+        `OCIDs`__ of the mount target's
+        IPv6 address (`mountTargetIpv6Ids`). Then, you can use
+        `UpdateIpv6`__
         to update the `hostnameLabel` value.
 
         For more information, see
@@ -278,6 +303,9 @@ class CreateMountTargetDetails(object):
         __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Ipv6
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Ipv6/UpdateIpv6
         __ https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm
 
 

@@ -31,6 +31,7 @@ Database
     oci.database.models.ApplicationVip
     oci.database.models.ApplicationVipSummary
     oci.database.models.AssociatedDatabaseDetails
+    oci.database.models.AssociatedLongTermBackup
     oci.database.models.AutomatedMountDetails
     oci.database.models.AutonomousContainerDatabase
     oci.database.models.AutonomousContainerDatabaseBackup
@@ -449,6 +450,7 @@ Database
     oci.database.models.SchedulingWindowSummary
     oci.database.models.SelfMountDetails
     oci.database.models.SetKeyVersionDetails
+    oci.database.models.SourceDatabaseDetails
     oci.database.models.StackMonitoringConfig
     oci.database.models.StoragePerformanceDetails
     oci.database.models.SwitchOverDataGuardDetails

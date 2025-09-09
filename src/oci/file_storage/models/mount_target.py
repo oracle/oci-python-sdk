@@ -88,6 +88,10 @@ class MountTarget(object):
             The value to assign to the private_ip_ids property of this MountTarget.
         :type private_ip_ids: list[str]
 
+        :param mount_target_ipv6_ids:
+            The value to assign to the mount_target_ipv6_ids property of this MountTarget.
+        :type mount_target_ipv6_ids: list[str]
+
         :param subnet_id:
             The value to assign to the subnet_id property of this MountTarget.
         :type subnet_id: str
@@ -156,6 +160,7 @@ class MountTarget(object):
             'lifecycle_details': 'str',
             'lifecycle_state': 'str',
             'private_ip_ids': 'list[str]',
+            'mount_target_ipv6_ids': 'list[str]',
             'subnet_id': 'str',
             'idmap_type': 'str',
             'ldap_idmap': 'LdapIdmap',
@@ -180,6 +185,7 @@ class MountTarget(object):
             'lifecycle_details': 'lifecycleDetails',
             'lifecycle_state': 'lifecycleState',
             'private_ip_ids': 'privateIpIds',
+            'mount_target_ipv6_ids': 'mountTargetIpv6Ids',
             'subnet_id': 'subnetId',
             'idmap_type': 'idmapType',
             'ldap_idmap': 'ldapIdmap',
@@ -203,6 +209,7 @@ class MountTarget(object):
         self._lifecycle_details = None
         self._lifecycle_state = None
         self._private_ip_ids = None
+        self._mount_target_ipv6_ids = None
         self._subnet_id = None
         self._idmap_type = None
         self._ldap_idmap = None
@@ -443,6 +450,30 @@ class MountTarget(object):
         :type: list[str]
         """
         self._private_ip_ids = private_ip_ids
+
+    @property
+    def mount_target_ipv6_ids(self):
+        """
+        Gets the mount_target_ipv6_ids of this MountTarget.
+        The OCIDs of the IPv6 addresses associated with this mount target.
+
+
+        :return: The mount_target_ipv6_ids of this MountTarget.
+        :rtype: list[str]
+        """
+        return self._mount_target_ipv6_ids
+
+    @mount_target_ipv6_ids.setter
+    def mount_target_ipv6_ids(self, mount_target_ipv6_ids):
+        """
+        Sets the mount_target_ipv6_ids of this MountTarget.
+        The OCIDs of the IPv6 addresses associated with this mount target.
+
+
+        :param mount_target_ipv6_ids: The mount_target_ipv6_ids of this MountTarget.
+        :type: list[str]
+        """
+        self._mount_target_ipv6_ids = mount_target_ipv6_ids
 
     @property
     def subnet_id(self):

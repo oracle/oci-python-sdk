@@ -39,7 +39,7 @@ import threading
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    version = "25.07.15"
+    version = "25.08.26"
     oci_compatible_version = "2.148.0"
     thread_lock = threading.Lock()
     collection_ljust = 40
@@ -1994,6 +1994,7 @@ class ShowOCIService(object):
         cnt = 0
 
         errstr = ""
+        errloc = ""
         header = "Groups"
         self.__load_print_status_with_threads(header)
         start_time = time.time()
@@ -2003,10 +2004,23 @@ class ShowOCIService(object):
             groups = []
 
             try:
-                users = oci.pagination.list_call_get_all_results(identity.list_users, tenancy_id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
-                groups = oci.pagination.list_call_get_all_results(identity.list_groups, tenancy_id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
+                errloc = "identity.list_users"
+                users = oci.pagination.list_call_get_all_results(
+                    identity.list_users,
+                    tenancy_id,
+                    retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                ).data
+
+                errloc = "identity.list_groups"
+                groups = oci.pagination.list_call_get_all_results(
+                    identity.list_groups,
+                    tenancy_id,
+                    retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                ).data
+
             except oci.exceptions.ServiceError as item:
-                if 'auth' in item.code.lower() or item.code == 'Forbidden':
+                # if 'auth' in item.code.lower() or item.code == 'Forbidden':
+                if self.__check_service_error(item, info=errloc):
                     self.__load_print_auth_warning(to_print=self.flags.skip_threads)
                     errstr += "a"
                 else:
@@ -2025,8 +2039,13 @@ class ShowOCIService(object):
                 cnt += 1
 
                 try:
+                    errloc = "identity.list_user_group_memberships"
                     user_group_memberships = oci.pagination.list_call_get_all_results(
-                        identity.list_user_group_memberships, tenancy_id, group_id=group.id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
+                        identity.list_user_group_memberships,
+                        tenancy_id,
+                        group_id=group.id,
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
 
                     group_users = []
                     for ugm in user_group_memberships:
@@ -2037,7 +2056,8 @@ class ShowOCIService(object):
                     datagroup.append({'id': group.id, 'name': group.name, 'users': ', '.join(x for x in group_users)})
 
                 except oci.exceptions.ServiceError as error:
-                    if 'auth' in error.code.lower() or error.code == 'Forbidden':
+                    # if 'auth' in error.code.lower() or error.code == 'Forbidden':
+                    if self.__check_service_error(error, info=errloc):
                         self.__load_print_auth_warning(to_print=self.flags.skip_threads)
                         errstr += "a"
                         continue
@@ -5902,7 +5922,12 @@ class ShowOCIService(object):
                     plugins = []
                     try:
                         # plugins = oci.compute_instance_agent.models.InstanceAgentPluginSummary
-                        plugins = plugin_client.list_instance_agent_plugins(compartment_id=arr.compartment_id, instanceagent_id=arr.id).data
+                        plugins = plugin_client.list_instance_agent_plugins(
+                            compartment_id=arr.compartment_id,
+                            instanceagent_id=arr.id,
+                            retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                        ).data
+
                         for plugin in plugins:
                             val['agent_plugin_status'].append({'name': plugin.name, 'status': plugin.status, 'time_last_updated_utc': str(plugin.time_last_updated_utc)})
 
@@ -5961,7 +5986,7 @@ class ShowOCIService(object):
                     # get image info
                     try:
                         # image = oci.core.models.Image
-                        image = compute.get_image(arr.image_id).data
+                        image = compute.get_image(arr.image_id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
                         if image:
                             val['image'] = self.get_value(image.display_name)
                             val['image_os'] = self.get_value(image.operating_system)
@@ -17406,33 +17431,87 @@ class ShowOCIService(object):
                         continue
 
                     val = {
-                        'id': str(oic.id),
-                        'display_name': str(oic.display_name),
-                        'integration_instance_type': str(oic.integration_instance_type),
-                        'time_created': str(oic.time_created),
-                        'time_updated': str(oic.time_updated),
-                        'lifecycle_state': str(oic.lifecycle_state),
-                        'state_message': str(oic.state_message),
-                        'instance_url': str(oic.instance_url),
-                        'message_packs': str(oic.message_packs),
+                        'id': self.get_value(oic.id),
+                        'display_name': self.get_value(oic.display_name),
+                        'integration_instance_type': self.get_value(oic.integration_instance_type),
+                        'time_created': self.get_date(oic.time_created),
+                        'time_updated': self.get_date(oic.time_updated),
+                        'lifecycle_state': self.get_value(oic.lifecycle_state),
+                        'state_message': self.get_value(oic.state_message),
+                        'instance_url': self.get_value(oic.instance_url),
+                        'message_packs': self.get_value(oic.message_packs),
                         'is_byol': oic.is_byol,
                         'sum_info': "PaaS OIC Native " + ("BYOL" if oic.is_byol else "INCL") + " - Msg Pack",
-                        'sum_size_gb': str(oic.message_packs),
-                        'is_file_server_enabled': str(oic.is_file_server_enabled),
-                        'is_visual_builder_enabled': str(oic.is_visual_builder_enabled),
-                        'shape': str(oic.shape),
-                        'network_endpoint_type': "",
-                        'consumption_model': str(oic.consumption_model),
+                        'sum_size_gb': self.get_value(oic.message_packs),
+                        'is_file_server_enabled': self.get_value(oic.is_file_server_enabled),
+                        'is_visual_builder_enabled': self.get_value(oic.is_visual_builder_enabled),
+                        'shape': self.get_value(oic.shape),
+                        'consumption_model': self.get_value(oic.consumption_model),
+                        'network_endpoint_type': self.get_value(oic.network_endpoint_details.network_endpoint_type) if oic.network_endpoint_details else "",
+                        'network_endpoint_allowlisted_http_ips': oic.network_endpoint_details.allowlisted_http_ips if oic.network_endpoint_details and oic.network_endpoint_details.network_endpoint_type == "PUBLIC" else "",
+                        'network_endpoint_allowlisted_http_vcns': self.get_value(oic.network_endpoint_details.allowlisted_http_vcns) if oic.network_endpoint_details and oic.network_endpoint_details.network_endpoint_type == "PUBLIC" else "",
+                        'network_endpoint_is_integration_vcn_allowlisted': self.get_value(oic.network_endpoint_details.is_integration_vcn_allowlisted) if oic.network_endpoint_details and oic.network_endpoint_details.network_endpoint_type == "PUBLIC" else "",
+                        'custom_endpoint_hostname': self.get_value(oic.custom_endpoint.hostname) if oic.custom_endpoint else "",
+                        'custom_endpoint_managed_type': self.get_value(oic.custom_endpoint.managed_type) if oic.custom_endpoint else "",
+                        'custom_endpoint_dns_zone_name': self.get_value(oic.custom_endpoint.dns_zone_name) if oic.custom_endpoint else "",
+                        'custom_endpoint_dns_type': self.get_value(oic.custom_endpoint.dns_type) if oic.custom_endpoint else "",
+                        'custom_endpoint_certificate_secret_id': self.get_value(oic.custom_endpoint.certificate_secret_id) if oic.custom_endpoint else "",
+                        'custom_endpoint_certificate_secret_version': self.get_value(oic.custom_endpoint.certificate_secret_version) if oic.custom_endpoint else "",
+                        'custom_endpoint_alias': self.get_value(oic.custom_endpoint.alias) if oic.custom_endpoint else "",
+                        'private_endpoint_outbound_connection_type': self.get_value(oic.private_endpoint_outbound_connection.outbound_connection_type) if oic.private_endpoint_outbound_connection else "",
+                        'private_endpoint_outbound_connection_subnet_id': self.get_value(oic.private_endpoint_outbound_connection.subnet_id) if oic.private_endpoint_outbound_connection and oic.private_endpoint_outbound_connection.outbound_connection_type == "PRIVATE_ENDPOINT" else "",
+                        'private_endpoint_outbound_connection_subnet_name': self.get_network_subnet(oic.private_endpoint_outbound_connection.subnet_id, True) if oic.private_endpoint_outbound_connection and oic.private_endpoint_outbound_connection.outbound_connection_type == "PRIVATE_ENDPOINT" else "",
+                        'private_endpoint_outbound_connection_nsg_ids': oic.private_endpoint_outbound_connection.nsg_ids if oic.private_endpoint_outbound_connection and oic.private_endpoint_outbound_connection.outbound_connection_type == "PRIVATE_ENDPOINT" and oic.private_endpoint_outbound_connection.nsg_ids else "",
+                        'is_disaster_recovery_enabled': self.get_value(oic.is_disaster_recovery_enabled),
+                        'data_retention_period': self.get_value(oic.data_retention_period),
+                        # Additional info from oic_client.get_integration_instance
+                        'instance_design_time_url': '',
+                        'idcs_info_app_location_url': '',
+                        'idcs_info_app_display_name': '',
+                        'idcs_info_app_id': '',
+                        'idcs_info_app_name': '',
+                        'idcs_info_instance_primary_audience_url': '',
+                        'attachments': [],
+                        'disaster_recovery_role': '',
+                        'disaster_recovery_regional_instance_url': '',
+                        'disaster_recovery_peer_role': '',
+                        'disaster_recovery_peer_id': '',
+                        'disaster_recovery_peer_time_role_changed': '',
+                        # end get more info
                         'defined_tags': [] if oic.defined_tags is None else oic.defined_tags,
                         'freeform_tags': [] if oic.freeform_tags is None else oic.freeform_tags,
                         'compartment_name': str(compartment['name']),
                         'compartment_path': str(compartment['path']),
                         'compartment_id': str(compartment['id']),
-                        'region_name': str(self.config['region'])}
+                        'region_name': str(self.config['region'])
+                    }
 
-                    # end point
-                    if oic.network_endpoint_details:
-                        val['network_endpoint_type'] = str(oic.network_endpoint_details.network_endpoint_type)
+                    # get the oic instance for more info (required read privs)
+                    try:
+                        oico = oic_client.get_integration_instance(
+                            oic.id,
+                            retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                        ).data
+                        val['instance_design_time_url'] = self.get_value(oico.instance_design_time_url)
+                        val['idcs_info_app_location_url'] = self.get_value(oico.idcs_info.idcs_app_location_url) if oico.idcs_info else ""
+                        val['idcs_info_app_display_name'] = self.get_value(oico.idcs_info.idcs_app_display_name) if oico.idcs_info else ""
+                        val['idcs_info_app_id'] = self.get_value(oico.idcs_info.idcs_app_id) if oico.idcs_info else ""
+                        val['idcs_info_app_name'] = self.get_value(oico.idcs_info.idcs_app_name) if oico.idcs_info else ""
+                        val['idcs_info_instance_primary_audience_url'] = self.get_value(oico.idcs_info.instance_primary_audience_url) if oico.idcs_info else ""
+                        val['attachments'] = [{
+                            'target_role': self.get_value(x.target_role),
+                            'is_implicit': self.get_value(x.is_implicit),
+                            'target_id': self.get_value(x.target_id),
+                            'target_instance_url': self.get_value(x.target_instance_url),
+                            'target_service_type': self.get_value(x.target_service_type)
+                        } for x in oico.attachments] if oico.attachments else []
+                        val['disaster_recovery_role'] = self.get_value(oico.disaster_recovery_details.role) if oico.disaster_recovery_details else ""
+                        val['disaster_recovery_regional_instance_url'] = self.get_value(oico.disaster_recovery_details.regional_instance_url) if oico.disaster_recovery_details else ""
+                        val['disaster_recovery_peer_role'] = self.get_value(oico.disaster_recovery_details.cross_region_integration_instance_details.role) if oico.cross_region_integration_instance_details and oico.disaster_recovery_details.cross_region_integration_instance_details else ""
+                        val['disaster_recovery_peer_id'] = self.get_value(oico.disaster_recovery_details.cross_region_integration_instance_details.id) if oico.cross_region_integration_instance_details and oico.disaster_recovery_details.cross_region_integration_instance_details else ""
+                        val['disaster_recovery_peer_time_role_changed'] = self.get_date(oico.disaster_recovery_details.cross_region_integration_instance_details.time_role_changed) if oico.cross_region_integration_instance_details and oico.disaster_recovery_details.cross_region_integration_instance_details else ""
+                    except Exception:
+                        pass
 
                     # add the data
                     cnt += 1
@@ -18045,19 +18124,19 @@ class ShowOCIService(object):
                 for vb in vbs:
                     if self.check_lifecycle_state_active(vb.lifecycle_state):
                         val = {'id': str(vb.id),
-                               'display_name': str(vb.display_name),
-                               'time_created': str(vb.time_created),
-                               'time_updated': str(vb.time_updated),
-                               'lifecycle_state': str(vb.lifecycle_state),
-                               'state_message': str(vb.state_message),
-                               'instance_url': str(vb.instance_url),
-                               'node_count': str(vb.node_count),
-                               'is_visual_builder_enabled': str(vb.is_visual_builder_enabled),
-                               'custom_endpoint': str(vb.custom_endpoint.hostname) if vb.custom_endpoint else "",
-                               'alternate_custom_endpoints': str(vb.alternate_custom_endpoints.hostname) if vb.alternate_custom_endpoints else "",
-                               'consumption_model': str(vb.consumption_model),
+                               'display_name': self.get_value(vb.display_name),
+                               'time_created': self.get_date(vb.time_created),
+                               'time_updated': self.get_date(vb.time_updated),
+                               'lifecycle_state': self.get_value(vb.lifecycle_state),
+                               'state_message': self.get_value(vb.state_message),
+                               'instance_url': self.get_value(vb.instance_url),
+                               'node_count': self.get_value(vb.node_count),
+                               'is_visual_builder_enabled': self.get_value(vb.is_visual_builder_enabled),
+                               'custom_endpoint': self.get_value(vb.custom_endpoint.hostname) if vb.custom_endpoint else "",
+                               'alternate_custom_endpoints': self.get_value(vb.alternate_custom_endpoints.hostname) if vb.alternate_custom_endpoints else "",
+                               'consumption_model': self.get_value(vb.consumption_model),
                                'sum_info': "PaaS Visual Builder",
-                               'sum_size_gb': str(vb.node_count),
+                               'sum_size_gb': self.get_value(vb.node_count),
                                'compartment_name': str(compartment['name']),
                                'compartment_path': str(compartment['path']),
                                'compartment_id': str(compartment['id']),

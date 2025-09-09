@@ -22,7 +22,7 @@ import sys
 
 
 class ShowOCIOutput(object):
-    version = "25.07.15"
+    version = "25.08.26"
 
     ##########################################################################
     # spaces for align
@@ -2583,8 +2583,14 @@ class ShowOCIOutput(object):
                 self.print_header("OIC Native", 2)
                 for val in paas_services['oic']:
                     print(self.taba + val['display_name'] + ", (" + val['integration_instance_type'] + "), Created: " + val['time_created'][0:16] + " (" + val['lifecycle_state'] + ")")
-                    print(self.tabs + "Pack : " + val['message_packs'] + ", " + ("BYOL License" if val['is_byol'] else "License Included"))
-                    print(self.tabs + "URL  : " + val['instance_url'])
+                    print(self.tabs + "Pack     : " + val['message_packs'] + ", " + ("BYOL License" if val['is_byol'] else "License Included"))
+                    print(self.tabs + "URL      : " + val['instance_url'])
+                    if val['disaster_recovery_role']:
+                        print(self.tabs + "DR Role  : " + val['disaster_recovery_role'])
+                    if val['private_endpoint_outbound_connection_type']:
+                        print(self.tabs + "PE Type  : " + val['private_endpoint_outbound_connection_type'])
+                    if val['private_endpoint_outbound_connection_subnet_name']:
+                        print(self.tabs + "PE Subnet: " + val['private_endpoint_outbound_connection_subnet_name'])
                     print("")
 
             # OAC
@@ -8583,6 +8589,7 @@ class ShowOCICSV(object):
                         'public_ips': str(', '.join(x['details']['public_ip'] for x in instance['vnic'])),
                         'private_ips': str(', '.join(x['details']['private_ip'] for x in instance['vnic'])),
                         'security_groups': str(', '.join(x['details']['nsg_names'] for x in instance['vnic'])),
+                        'security_groups_ids': str(','.join(self.__csv_list_to_str(x['details']['nsg_ids']) for x in instance['vnic'])),
                         'internal_fqdn': str(', '.join(x['details']['internal_fqdn'] for x in instance['vnic'])),
                         'plugin_status': str(', '.join(x['name'] + ":" + x['status'] for x in instance['agent_plugin_status'])),
                         'time_created': instance['time_created'][0:16],
@@ -10045,6 +10052,37 @@ class ShowOCICSV(object):
                         'network_endpoint_type': ar['network_endpoint_type'],
                         'shape': ar['shape'],
                         'consumption_model': ar['consumption_model'],
+                        # Added 8/25/2025
+                        'integration_instance_type': ar['integration_instance_type'],
+                        'network_endpoint_allowlisted_http_ips': ar['network_endpoint_allowlisted_http_ips'],
+                        'network_endpoint_allowlisted_http_vcns': ar['network_endpoint_allowlisted_http_vcns'],
+                        'network_endpoint_is_integration_vcn_allowlisted': ar['network_endpoint_is_integration_vcn_allowlisted'],
+                        'custom_endpoint_hostname': ar['custom_endpoint_hostname'],
+                        'custom_endpoint_managed_type': ar['custom_endpoint_managed_type'],
+                        'custom_endpoint_dns_zone_name': ar['custom_endpoint_dns_zone_name'],
+                        'custom_endpoint_dns_type': ar['custom_endpoint_dns_type'],
+                        'custom_endpoint_certificate_secret_id': ar['custom_endpoint_certificate_secret_id'],
+                        'custom_endpoint_certificate_secret_version': ar['custom_endpoint_certificate_secret_version'],
+                        'custom_endpoint_alias': ar['custom_endpoint_alias'],
+                        'private_endpoint_outbound_connection_type': ar['private_endpoint_outbound_connection_type'],
+                        'private_endpoint_outbound_connection_subnet_id': ar['private_endpoint_outbound_connection_subnet_id'],
+                        'private_endpoint_outbound_connection_subnet_name': ar['private_endpoint_outbound_connection_subnet_name'],
+                        'private_endpoint_outbound_connection_nsg_ids': ar['private_endpoint_outbound_connection_nsg_ids'],
+                        'is_disaster_recovery_enabled': ar['is_disaster_recovery_enabled'],
+                        'data_retention_period': ar['data_retention_period'],
+                        'instance_design_time_url': ar['instance_design_time_url'],
+                        'idcs_info_app_location_url': ar['idcs_info_app_location_url'],
+                        'idcs_info_app_display_name': ar['idcs_info_app_display_name'],
+                        'idcs_info_app_id': ar['idcs_info_app_id'],
+                        'idcs_info_app_name': ar['idcs_info_app_name'],
+                        'idcs_info_instance_primary_audience_url': ar['idcs_info_instance_primary_audience_url'],
+                        'attachments': str(ar['attachments']),
+                        'disaster_recovery_role': ar['disaster_recovery_role'],
+                        'disaster_recovery_regional_instance_url': ar['disaster_recovery_regional_instance_url'],
+                        'disaster_recovery_peer_role': ar['disaster_recovery_peer_role'],
+                        'disaster_recovery_peer_id': ar['disaster_recovery_peer_id'],
+                        'disaster_recovery_peer_time_role_changed': ar['disaster_recovery_peer_time_role_changed'],
+                        # End Added
                         'freeform_tags': self.__get_freeform_tags(ar['freeform_tags']),
                         'defined_tags': self.__get_defined_tags(ar['defined_tags']),
                         'info': "msgpack:" + str(ar['message_packs']),
