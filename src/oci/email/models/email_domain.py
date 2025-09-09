@@ -113,6 +113,10 @@ class EmailDomain(object):
             The value to assign to the system_tags property of this EmailDomain.
         :type system_tags: dict(str, dict(str, object))
 
+        :param locks:
+            The value to assign to the locks property of this EmailDomain.
+        :type locks: list[oci.email.models.ResourceLock]
+
         """
         self.swagger_types = {
             'name': 'str',
@@ -127,7 +131,8 @@ class EmailDomain(object):
             'time_created': 'datetime',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'system_tags': 'dict(str, dict(str, object))'
+            'system_tags': 'dict(str, dict(str, object))',
+            'locks': 'list[ResourceLock]'
         }
         self.attribute_map = {
             'name': 'name',
@@ -142,7 +147,8 @@ class EmailDomain(object):
             'time_created': 'timeCreated',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'system_tags': 'systemTags'
+            'system_tags': 'systemTags',
+            'locks': 'locks'
         }
         self._name = None
         self._id = None
@@ -157,6 +163,7 @@ class EmailDomain(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._locks = None
 
     @property
     def name(self):
@@ -537,6 +544,30 @@ class EmailDomain(object):
         :type: dict(str, dict(str, object))
         """
         self._system_tags = system_tags
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this EmailDomain.
+        Locks associated with this resource.
+
+
+        :return: The locks of this EmailDomain.
+        :rtype: list[oci.email.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this EmailDomain.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this EmailDomain.
+        :type: list[oci.email.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

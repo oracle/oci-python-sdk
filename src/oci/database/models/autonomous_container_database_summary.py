@@ -336,6 +336,10 @@ class AutonomousContainerDatabaseSummary(object):
             The value to assign to the memory_per_oracle_compute_unit_in_gbs property of this AutonomousContainerDatabaseSummary.
         :type memory_per_oracle_compute_unit_in_gbs: int
 
+        :param memory_per_compute_unit_in_gbs:
+            The value to assign to the memory_per_compute_unit_in_gbs property of this AutonomousContainerDatabaseSummary.
+        :type memory_per_compute_unit_in_gbs: float
+
         :param available_cpus:
             The value to assign to the available_cpus property of this AutonomousContainerDatabaseSummary.
         :type available_cpus: float
@@ -458,6 +462,7 @@ class AutonomousContainerDatabaseSummary(object):
             'key_store_id': 'str',
             'key_store_wallet_name': 'str',
             'memory_per_oracle_compute_unit_in_gbs': 'int',
+            'memory_per_compute_unit_in_gbs': 'float',
             'available_cpus': 'float',
             'total_cpus': 'int',
             'reclaimable_cpus': 'float',
@@ -520,6 +525,7 @@ class AutonomousContainerDatabaseSummary(object):
             'key_store_id': 'keyStoreId',
             'key_store_wallet_name': 'keyStoreWalletName',
             'memory_per_oracle_compute_unit_in_gbs': 'memoryPerOracleComputeUnitInGBs',
+            'memory_per_compute_unit_in_gbs': 'memoryPerComputeUnitInGBs',
             'available_cpus': 'availableCpus',
             'total_cpus': 'totalCpus',
             'reclaimable_cpus': 'reclaimableCpus',
@@ -581,6 +587,7 @@ class AutonomousContainerDatabaseSummary(object):
         self._key_store_id = None
         self._key_store_wallet_name = None
         self._memory_per_oracle_compute_unit_in_gbs = None
+        self._memory_per_compute_unit_in_gbs = None
         self._available_cpus = None
         self._total_cpus = None
         self._reclaimable_cpus = None
@@ -1662,7 +1669,7 @@ class AutonomousContainerDatabaseSummary(object):
     def memory_per_oracle_compute_unit_in_gbs(self):
         """
         Gets the memory_per_oracle_compute_unit_in_gbs of this AutonomousContainerDatabaseSummary.
-        The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
+        The amount of memory (in GBs rounded off to nearest integer value) enabled per ECPU or OCPU in the Autonomous VM Cluster. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
 
 
         :return: The memory_per_oracle_compute_unit_in_gbs of this AutonomousContainerDatabaseSummary.
@@ -1674,13 +1681,37 @@ class AutonomousContainerDatabaseSummary(object):
     def memory_per_oracle_compute_unit_in_gbs(self, memory_per_oracle_compute_unit_in_gbs):
         """
         Sets the memory_per_oracle_compute_unit_in_gbs of this AutonomousContainerDatabaseSummary.
-        The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
+        The amount of memory (in GBs rounded off to nearest integer value) enabled per ECPU or OCPU in the Autonomous VM Cluster. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
 
 
         :param memory_per_oracle_compute_unit_in_gbs: The memory_per_oracle_compute_unit_in_gbs of this AutonomousContainerDatabaseSummary.
         :type: int
         """
         self._memory_per_oracle_compute_unit_in_gbs = memory_per_oracle_compute_unit_in_gbs
+
+    @property
+    def memory_per_compute_unit_in_gbs(self):
+        """
+        Gets the memory_per_compute_unit_in_gbs of this AutonomousContainerDatabaseSummary.
+        The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+
+
+        :return: The memory_per_compute_unit_in_gbs of this AutonomousContainerDatabaseSummary.
+        :rtype: float
+        """
+        return self._memory_per_compute_unit_in_gbs
+
+    @memory_per_compute_unit_in_gbs.setter
+    def memory_per_compute_unit_in_gbs(self, memory_per_compute_unit_in_gbs):
+        """
+        Sets the memory_per_compute_unit_in_gbs of this AutonomousContainerDatabaseSummary.
+        The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+
+
+        :param memory_per_compute_unit_in_gbs: The memory_per_compute_unit_in_gbs of this AutonomousContainerDatabaseSummary.
+        :type: float
+        """
+        self._memory_per_compute_unit_in_gbs = memory_per_compute_unit_in_gbs
 
     @property
     def available_cpus(self):

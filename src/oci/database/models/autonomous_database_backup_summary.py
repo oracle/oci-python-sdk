@@ -68,6 +68,14 @@ class AutonomousDatabaseBackupSummary(object):
     #: This constant has a value of "UPDATING"
     LIFECYCLE_STATE_UPDATING = "UPDATING"
 
+    #: A constant which can be used with the infrastructure_type property of a AutonomousDatabaseBackupSummary.
+    #: This constant has a value of "CLOUD"
+    INFRASTRUCTURE_TYPE_CLOUD = "CLOUD"
+
+    #: A constant which can be used with the infrastructure_type property of a AutonomousDatabaseBackupSummary.
+    #: This constant has a value of "CLOUD_AT_CUSTOMER"
+    INFRASTRUCTURE_TYPE_CLOUD_AT_CUSTOMER = "CLOUD_AT_CUSTOMER"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AutonomousDatabaseBackupSummary object with values from keyword arguments.
@@ -165,6 +173,20 @@ class AutonomousDatabaseBackupSummary(object):
             The value to assign to the backup_destination_details property of this AutonomousDatabaseBackupSummary.
         :type backup_destination_details: oci.database.models.BackupDestinationDetails
 
+        :param infrastructure_type:
+            The value to assign to the infrastructure_type property of this AutonomousDatabaseBackupSummary.
+            Allowed values for this property are: "CLOUD", "CLOUD_AT_CUSTOMER", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type infrastructure_type: str
+
+        :param region:
+            The value to assign to the region property of this AutonomousDatabaseBackupSummary.
+        :type region: str
+
+        :param source_database_details:
+            The value to assign to the source_database_details property of this AutonomousDatabaseBackupSummary.
+        :type source_database_details: oci.database.models.SourceDatabaseDetails
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -188,7 +210,10 @@ class AutonomousDatabaseBackupSummary(object):
             'time_available_till': 'datetime',
             'db_version': 'str',
             'size_in_tbs': 'float',
-            'backup_destination_details': 'BackupDestinationDetails'
+            'backup_destination_details': 'BackupDestinationDetails',
+            'infrastructure_type': 'str',
+            'region': 'str',
+            'source_database_details': 'SourceDatabaseDetails'
         }
         self.attribute_map = {
             'id': 'id',
@@ -212,7 +237,10 @@ class AutonomousDatabaseBackupSummary(object):
             'time_available_till': 'timeAvailableTill',
             'db_version': 'dbVersion',
             'size_in_tbs': 'sizeInTBs',
-            'backup_destination_details': 'backupDestinationDetails'
+            'backup_destination_details': 'backupDestinationDetails',
+            'infrastructure_type': 'infrastructureType',
+            'region': 'region',
+            'source_database_details': 'sourceDatabaseDetails'
         }
         self._id = None
         self._compartment_id = None
@@ -236,6 +264,9 @@ class AutonomousDatabaseBackupSummary(object):
         self._db_version = None
         self._size_in_tbs = None
         self._backup_destination_details = None
+        self._infrastructure_type = None
+        self._region = None
+        self._source_database_details = None
 
     @property
     def id(self):
@@ -794,6 +825,80 @@ class AutonomousDatabaseBackupSummary(object):
         :type: oci.database.models.BackupDestinationDetails
         """
         self._backup_destination_details = backup_destination_details
+
+    @property
+    def infrastructure_type(self):
+        """
+        Gets the infrastructure_type of this AutonomousDatabaseBackupSummary.
+        The infrastructure type this resource belongs to.
+
+        Allowed values for this property are: "CLOUD", "CLOUD_AT_CUSTOMER", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The infrastructure_type of this AutonomousDatabaseBackupSummary.
+        :rtype: str
+        """
+        return self._infrastructure_type
+
+    @infrastructure_type.setter
+    def infrastructure_type(self, infrastructure_type):
+        """
+        Sets the infrastructure_type of this AutonomousDatabaseBackupSummary.
+        The infrastructure type this resource belongs to.
+
+
+        :param infrastructure_type: The infrastructure_type of this AutonomousDatabaseBackupSummary.
+        :type: str
+        """
+        allowed_values = ["CLOUD", "CLOUD_AT_CUSTOMER"]
+        if not value_allowed_none_or_none_sentinel(infrastructure_type, allowed_values):
+            infrastructure_type = 'UNKNOWN_ENUM_VALUE'
+        self._infrastructure_type = infrastructure_type
+
+    @property
+    def region(self):
+        """
+        Gets the region of this AutonomousDatabaseBackupSummary.
+        Name of the region in which backup is taken in.
+
+
+        :return: The region of this AutonomousDatabaseBackupSummary.
+        :rtype: str
+        """
+        return self._region
+
+    @region.setter
+    def region(self, region):
+        """
+        Sets the region of this AutonomousDatabaseBackupSummary.
+        Name of the region in which backup is taken in.
+
+
+        :param region: The region of this AutonomousDatabaseBackupSummary.
+        :type: str
+        """
+        self._region = region
+
+    @property
+    def source_database_details(self):
+        """
+        Gets the source_database_details of this AutonomousDatabaseBackupSummary.
+
+        :return: The source_database_details of this AutonomousDatabaseBackupSummary.
+        :rtype: oci.database.models.SourceDatabaseDetails
+        """
+        return self._source_database_details
+
+    @source_database_details.setter
+    def source_database_details(self, source_database_details):
+        """
+        Sets the source_database_details of this AutonomousDatabaseBackupSummary.
+
+        :param source_database_details: The source_database_details of this AutonomousDatabaseBackupSummary.
+        :type: oci.database.models.SourceDatabaseDetails
+        """
+        self._source_database_details = source_database_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

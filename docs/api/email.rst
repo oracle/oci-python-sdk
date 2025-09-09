@@ -18,6 +18,7 @@ Email
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.email.models.AddLockDetails
     oci.email.models.ChangeEmailDomainCompartmentDetails
     oci.email.models.ChangeSenderCompartmentDetails
     oci.email.models.Configuration
@@ -35,6 +36,8 @@ Email
     oci.email.models.EmailReturnPath
     oci.email.models.EmailReturnPathCollection
     oci.email.models.EmailReturnPathSummary
+    oci.email.models.RemoveLockDetails
+    oci.email.models.ResourceLock
     oci.email.models.Sender
     oci.email.models.SenderSummary
     oci.email.models.Suppression

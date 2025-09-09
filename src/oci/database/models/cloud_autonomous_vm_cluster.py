@@ -250,6 +250,10 @@ class CloudAutonomousVmCluster(object):
             The value to assign to the memory_per_oracle_compute_unit_in_gbs property of this CloudAutonomousVmCluster.
         :type memory_per_oracle_compute_unit_in_gbs: int
 
+        :param memory_per_compute_unit_in_gbs:
+            The value to assign to the memory_per_compute_unit_in_gbs property of this CloudAutonomousVmCluster.
+        :type memory_per_compute_unit_in_gbs: float
+
         :param db_servers:
             The value to assign to the db_servers property of this CloudAutonomousVmCluster.
         :type db_servers: list[str]
@@ -357,6 +361,7 @@ class CloudAutonomousVmCluster(object):
             'autonomous_data_storage_size_in_tbs': 'float',
             'db_node_storage_size_in_gbs': 'int',
             'memory_per_oracle_compute_unit_in_gbs': 'int',
+            'memory_per_compute_unit_in_gbs': 'float',
             'db_servers': 'list[str]',
             'cpu_percentage': 'float',
             'autonomous_data_storage_percentage': 'float',
@@ -419,6 +424,7 @@ class CloudAutonomousVmCluster(object):
             'autonomous_data_storage_size_in_tbs': 'autonomousDataStorageSizeInTBs',
             'db_node_storage_size_in_gbs': 'dbNodeStorageSizeInGBs',
             'memory_per_oracle_compute_unit_in_gbs': 'memoryPerOracleComputeUnitInGBs',
+            'memory_per_compute_unit_in_gbs': 'memoryPerComputeUnitInGBs',
             'db_servers': 'dbServers',
             'cpu_percentage': 'cpuPercentage',
             'autonomous_data_storage_percentage': 'autonomousDataStoragePercentage',
@@ -480,6 +486,7 @@ class CloudAutonomousVmCluster(object):
         self._autonomous_data_storage_size_in_tbs = None
         self._db_node_storage_size_in_gbs = None
         self._memory_per_oracle_compute_unit_in_gbs = None
+        self._memory_per_compute_unit_in_gbs = None
         self._db_servers = None
         self._cpu_percentage = None
         self._autonomous_data_storage_percentage = None
@@ -1666,7 +1673,7 @@ class CloudAutonomousVmCluster(object):
     def memory_per_oracle_compute_unit_in_gbs(self):
         """
         Gets the memory_per_oracle_compute_unit_in_gbs of this CloudAutonomousVmCluster.
-        The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        The amount of memory (in GBs rounded off to nearest integer value) enabled per ECPU or OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
 
 
         :return: The memory_per_oracle_compute_unit_in_gbs of this CloudAutonomousVmCluster.
@@ -1678,13 +1685,37 @@ class CloudAutonomousVmCluster(object):
     def memory_per_oracle_compute_unit_in_gbs(self, memory_per_oracle_compute_unit_in_gbs):
         """
         Sets the memory_per_oracle_compute_unit_in_gbs of this CloudAutonomousVmCluster.
-        The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        The amount of memory (in GBs rounded off to nearest integer value) enabled per ECPU or OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
 
 
         :param memory_per_oracle_compute_unit_in_gbs: The memory_per_oracle_compute_unit_in_gbs of this CloudAutonomousVmCluster.
         :type: int
         """
         self._memory_per_oracle_compute_unit_in_gbs = memory_per_oracle_compute_unit_in_gbs
+
+    @property
+    def memory_per_compute_unit_in_gbs(self):
+        """
+        Gets the memory_per_compute_unit_in_gbs of this CloudAutonomousVmCluster.
+        The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+
+
+        :return: The memory_per_compute_unit_in_gbs of this CloudAutonomousVmCluster.
+        :rtype: float
+        """
+        return self._memory_per_compute_unit_in_gbs
+
+    @memory_per_compute_unit_in_gbs.setter
+    def memory_per_compute_unit_in_gbs(self, memory_per_compute_unit_in_gbs):
+        """
+        Sets the memory_per_compute_unit_in_gbs of this CloudAutonomousVmCluster.
+        The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+
+
+        :param memory_per_compute_unit_in_gbs: The memory_per_compute_unit_in_gbs of this CloudAutonomousVmCluster.
+        :type: float
+        """
+        self._memory_per_compute_unit_in_gbs = memory_per_compute_unit_in_gbs
 
     @property
     def db_servers(self):

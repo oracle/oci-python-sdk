@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+25.08.26 - 25.08.26
+=====================
+* Added security_groups_ids to compute csv
+* Added additional parameters for OIC
+
 25.07.15 - 25.07.15
 =====================
 * Full Stack DR added

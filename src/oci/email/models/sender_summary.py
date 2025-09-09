@@ -52,6 +52,10 @@ class SenderSummary(object):
             The value to assign to the system_tags property of this SenderSummary.
         :type system_tags: dict(str, dict(str, object))
 
+        :param locks:
+            The value to assign to the locks property of this SenderSummary.
+        :type locks: list[oci.email.models.ResourceLock]
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -61,7 +65,8 @@ class SenderSummary(object):
             'time_created': 'datetime',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'system_tags': 'dict(str, dict(str, object))'
+            'system_tags': 'dict(str, dict(str, object))',
+            'locks': 'list[ResourceLock]'
         }
         self.attribute_map = {
             'compartment_id': 'compartmentId',
@@ -71,7 +76,8 @@ class SenderSummary(object):
             'time_created': 'timeCreated',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'system_tags': 'systemTags'
+            'system_tags': 'systemTags',
+            'locks': 'locks'
         }
         self._compartment_id = None
         self._email_address = None
@@ -81,6 +87,7 @@ class SenderSummary(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._locks = None
 
     @property
     def compartment_id(self):
@@ -301,6 +308,30 @@ class SenderSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._system_tags = system_tags
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this SenderSummary.
+        Locks associated with this resource.
+
+
+        :return: The locks of this SenderSummary.
+        :rtype: list[oci.email.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this SenderSummary.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this SenderSummary.
+        :type: list[oci.email.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

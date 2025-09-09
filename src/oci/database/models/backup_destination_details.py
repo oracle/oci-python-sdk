@@ -39,6 +39,14 @@ class BackupDestinationDetails(object):
     #: This constant has a value of "AWS_S3"
     TYPE_AWS_S3 = "AWS_S3"
 
+    #: A constant which can be used with the backup_retention_policy_on_terminate property of a BackupDestinationDetails.
+    #: This constant has a value of "RETAIN_PER_RETENTION_WINDOW"
+    BACKUP_RETENTION_POLICY_ON_TERMINATE_RETAIN_PER_RETENTION_WINDOW = "RETAIN_PER_RETENTION_WINDOW"
+
+    #: A constant which can be used with the backup_retention_policy_on_terminate property of a BackupDestinationDetails.
+    #: This constant has a value of "RETAIN_FOR_72_HOURS"
+    BACKUP_RETENTION_POLICY_ON_TERMINATE_RETAIN_FOR_72_HOURS = "RETAIN_FOR_72_HOURS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new BackupDestinationDetails object with values from keyword arguments.
@@ -70,6 +78,16 @@ class BackupDestinationDetails(object):
             The value to assign to the dbrs_policy_id property of this BackupDestinationDetails.
         :type dbrs_policy_id: str
 
+        :param is_retention_lock_enabled:
+            The value to assign to the is_retention_lock_enabled property of this BackupDestinationDetails.
+        :type is_retention_lock_enabled: bool
+
+        :param backup_retention_policy_on_terminate:
+            The value to assign to the backup_retention_policy_on_terminate property of this BackupDestinationDetails.
+            Allowed values for this property are: "RETAIN_PER_RETENTION_WINDOW", "RETAIN_FOR_72_HOURS", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type backup_retention_policy_on_terminate: str
+
         :param is_remote:
             The value to assign to the is_remote property of this BackupDestinationDetails.
         :type is_remote: bool
@@ -86,6 +104,8 @@ class BackupDestinationDetails(object):
             'vpc_password': 'str',
             'internet_proxy': 'str',
             'dbrs_policy_id': 'str',
+            'is_retention_lock_enabled': 'bool',
+            'backup_retention_policy_on_terminate': 'str',
             'is_remote': 'bool',
             'remote_region': 'str'
         }
@@ -96,6 +116,8 @@ class BackupDestinationDetails(object):
             'vpc_password': 'vpcPassword',
             'internet_proxy': 'internetProxy',
             'dbrs_policy_id': 'dbrsPolicyId',
+            'is_retention_lock_enabled': 'isRetentionLockEnabled',
+            'backup_retention_policy_on_terminate': 'backupRetentionPolicyOnTerminate',
             'is_remote': 'isRemote',
             'remote_region': 'remoteRegion'
         }
@@ -105,6 +127,8 @@ class BackupDestinationDetails(object):
         self._vpc_password = None
         self._internet_proxy = None
         self._dbrs_policy_id = None
+        self._is_retention_lock_enabled = None
+        self._backup_retention_policy_on_terminate = None
         self._is_remote = None
         self._remote_region = None
 
@@ -265,6 +289,70 @@ class BackupDestinationDetails(object):
         :type: str
         """
         self._dbrs_policy_id = dbrs_policy_id
+
+    @property
+    def is_retention_lock_enabled(self):
+        """
+        Gets the is_retention_lock_enabled of this BackupDestinationDetails.
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled.
+        Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period.
+        If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire.
+        The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+
+
+        :return: The is_retention_lock_enabled of this BackupDestinationDetails.
+        :rtype: bool
+        """
+        return self._is_retention_lock_enabled
+
+    @is_retention_lock_enabled.setter
+    def is_retention_lock_enabled(self, is_retention_lock_enabled):
+        """
+        Sets the is_retention_lock_enabled of this BackupDestinationDetails.
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled.
+        Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period.
+        If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire.
+        The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+
+
+        :param is_retention_lock_enabled: The is_retention_lock_enabled of this BackupDestinationDetails.
+        :type: bool
+        """
+        self._is_retention_lock_enabled = is_retention_lock_enabled
+
+    @property
+    def backup_retention_policy_on_terminate(self):
+        """
+        Gets the backup_retention_policy_on_terminate of this BackupDestinationDetails.
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.
+        The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+
+        Allowed values for this property are: "RETAIN_PER_RETENTION_WINDOW", "RETAIN_FOR_72_HOURS", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The backup_retention_policy_on_terminate of this BackupDestinationDetails.
+        :rtype: str
+        """
+        return self._backup_retention_policy_on_terminate
+
+    @backup_retention_policy_on_terminate.setter
+    def backup_retention_policy_on_terminate(self, backup_retention_policy_on_terminate):
+        """
+        Sets the backup_retention_policy_on_terminate of this BackupDestinationDetails.
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.
+        The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+
+
+        :param backup_retention_policy_on_terminate: The backup_retention_policy_on_terminate of this BackupDestinationDetails.
+        :type: str
+        """
+        allowed_values = ["RETAIN_PER_RETENTION_WINDOW", "RETAIN_FOR_72_HOURS"]
+        if not value_allowed_none_or_none_sentinel(backup_retention_policy_on_terminate, allowed_values):
+            backup_retention_policy_on_terminate = 'UNKNOWN_ENUM_VALUE'
+        self._backup_retention_policy_on_terminate = backup_retention_policy_on_terminate
 
     @property
     def is_remote(self):
