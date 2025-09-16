@@ -161,7 +161,7 @@ class KafkaClusterClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
         operation_name = "cancel_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/WorkRequest/CancelWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -276,7 +276,7 @@ class KafkaClusterClient(object):
         resource_path = "/kafkaClusters/{kafkaClusterId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_kafka_cluster_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/KafkaCluster/ChangeKafkaClusterCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -393,7 +393,7 @@ class KafkaClusterClient(object):
         resource_path = "/kafkaClusterConfigs/{kafkaClusterConfigId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_kafka_cluster_config_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/KafkaClusterConfig/ChangeKafkaClusterConfigCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -503,7 +503,7 @@ class KafkaClusterClient(object):
         resource_path = "/kafkaClusters"
         method = "POST"
         operation_name = "create_kafka_cluster"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/KafkaCluster/CreateKafkaCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -604,7 +604,7 @@ class KafkaClusterClient(object):
         resource_path = "/kafkaClusterConfigs"
         method = "POST"
         operation_name = "create_kafka_cluster_config"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/KafkaClusterConfig/CreateKafkaClusterConfig"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -706,7 +706,7 @@ class KafkaClusterClient(object):
         resource_path = "/kafkaClusters/{kafkaClusterId}"
         method = "DELETE"
         operation_name = "delete_kafka_cluster"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/KafkaCluster/DeleteKafkaCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -815,7 +815,7 @@ class KafkaClusterClient(object):
         resource_path = "/kafkaClusterConfigs/{kafkaClusterConfigId}"
         method = "DELETE"
         operation_name = "delete_kafka_cluster_config"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/KafkaClusterConfig/DeleteKafkaClusterConfig"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -927,7 +927,7 @@ class KafkaClusterClient(object):
         resource_path = "/kafkaClusterConfigs/{kafkaClusterConfigId}/versions/{versionNumber}"
         method = "DELETE"
         operation_name = "delete_kafka_cluster_config_version"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/KafkaClusterConfigVersion/DeleteKafkaClusterConfigVersion"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1044,7 +1044,7 @@ class KafkaClusterClient(object):
         resource_path = "/kafkaClusters/{kafkaClusterId}/actions/disableSuperuser"
         method = "POST"
         operation_name = "disable_superuser"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/KafkaCluster/DisableSuperuser"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1166,7 +1166,7 @@ class KafkaClusterClient(object):
         resource_path = "/kafkaClusters/{kafkaClusterId}/actions/enableSuperuser"
         method = "POST"
         operation_name = "enable_superuser"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/KafkaCluster/EnableSuperuser"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1274,7 +1274,7 @@ class KafkaClusterClient(object):
         resource_path = "/kafkaClusters/{kafkaClusterId}"
         method = "GET"
         operation_name = "get_kafka_cluster"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/KafkaCluster/GetKafkaCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1377,7 +1377,7 @@ class KafkaClusterClient(object):
         resource_path = "/kafkaClusterConfigs/{kafkaClusterConfigId}"
         method = "GET"
         operation_name = "get_kafka_cluster_config"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/KafkaClusterConfig/GetKafkaClusterConfig"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1483,7 +1483,7 @@ class KafkaClusterClient(object):
         resource_path = "/kafkaClusterConfigs/{kafkaClusterConfigId}/versions/{versionNumber}"
         method = "GET"
         operation_name = "get_kafka_cluster_config_version"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/KafkaClusterConfigVersion/GetKafkaClusterConfigVersion"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1587,7 +1587,7 @@ class KafkaClusterClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1715,7 +1715,7 @@ class KafkaClusterClient(object):
         resource_path = "/kafkaClusterConfigs/{kafkaClusterConfigId}/versions"
         method = "GET"
         operation_name = "list_kafka_cluster_config_versions"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/KafkaClusterConfigVersionCollection/ListKafkaClusterConfigVersions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1885,7 +1885,7 @@ class KafkaClusterClient(object):
         resource_path = "/kafkaClusterConfigs"
         method = "GET"
         operation_name = "list_kafka_cluster_configs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/KafkaClusterConfig/ListKafkaClusterConfigs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2058,7 +2058,7 @@ class KafkaClusterClient(object):
         resource_path = "/kafkaClusters"
         method = "GET"
         operation_name = "list_kafka_clusters"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/KafkaCluster/ListKafkaClusters"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2216,7 +2216,7 @@ class KafkaClusterClient(object):
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2371,7 +2371,7 @@ class KafkaClusterClient(object):
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2541,7 +2541,7 @@ class KafkaClusterClient(object):
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2684,7 +2684,7 @@ class KafkaClusterClient(object):
         resource_path = "/kafkaClusters/{kafkaClusterId}"
         method = "PUT"
         operation_name = "update_kafka_cluster"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/KafkaCluster/UpdateKafkaCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2800,7 +2800,7 @@ class KafkaClusterClient(object):
         resource_path = "/kafkaClusterConfigs/{kafkaClusterConfigId}"
         method = "PUT"
         operation_name = "update_kafka_cluster_config"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/kafka/20240901/KafkaClusterConfig/UpdateKafkaClusterConfig"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

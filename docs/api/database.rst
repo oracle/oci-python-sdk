@@ -102,6 +102,7 @@ Database
     oci.database.models.ChangeAutonomousVmClusterCompartmentDetails
     oci.database.models.ChangeCloudAutonomousVmClusterCompartmentDetails
     oci.database.models.ChangeCloudAutonomousVmClusterSubscriptionDetails
+    oci.database.models.ChangeCloudDbSystemSubscriptionDetails
     oci.database.models.ChangeCloudExadataInfrastructureCompartmentDetails
     oci.database.models.ChangeCloudExadataInfrastructureSubscriptionDetails
     oci.database.models.ChangeCloudVmClusterCompartmentDetails

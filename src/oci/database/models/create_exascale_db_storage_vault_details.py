@@ -392,7 +392,7 @@ class CreateExascaleDbStorageVaultDetails(object):
     def cluster_placement_group_id(self):
         """
         Gets the cluster_placement_group_id of this CreateExascaleDbStorageVaultDetails.
-        The `OCID`__ of the cluster placement group of the Exadata Infrastructure.
+        The `OCID`__ of the cluster placement group of the Exadata Infrastructure or Db System.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -406,7 +406,7 @@ class CreateExascaleDbStorageVaultDetails(object):
     def cluster_placement_group_id(self, cluster_placement_group_id):
         """
         Sets the cluster_placement_group_id of this CreateExascaleDbStorageVaultDetails.
-        The `OCID`__ of the cluster placement group of the Exadata Infrastructure.
+        The `OCID`__ of the cluster placement group of the Exadata Infrastructure or Db System.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

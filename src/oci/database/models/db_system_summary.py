@@ -149,6 +149,14 @@ class DbSystemSummary(object):
             The value to assign to the compartment_id property of this DbSystemSummary.
         :type compartment_id: str
 
+        :param subscription_id:
+            The value to assign to the subscription_id property of this DbSystemSummary.
+        :type subscription_id: str
+
+        :param cluster_placement_group_id:
+            The value to assign to the cluster_placement_group_id property of this DbSystemSummary.
+        :type cluster_placement_group_id: str
+
         :param display_name:
             The value to assign to the display_name property of this DbSystemSummary.
         :type display_name: str
@@ -377,6 +385,8 @@ class DbSystemSummary(object):
         self.swagger_types = {
             'id': 'str',
             'compartment_id': 'str',
+            'subscription_id': 'str',
+            'cluster_placement_group_id': 'str',
             'display_name': 'str',
             'availability_domain': 'str',
             'fault_domains': 'list[str]',
@@ -434,6 +444,8 @@ class DbSystemSummary(object):
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
+            'subscription_id': 'subscriptionId',
+            'cluster_placement_group_id': 'clusterPlacementGroupId',
             'display_name': 'displayName',
             'availability_domain': 'availabilityDomain',
             'fault_domains': 'faultDomains',
@@ -490,6 +502,8 @@ class DbSystemSummary(object):
         }
         self._id = None
         self._compartment_id = None
+        self._subscription_id = None
+        self._cluster_placement_group_id = None
         self._display_name = None
         self._availability_domain = None
         self._fault_domains = None
@@ -599,6 +613,62 @@ class DbSystemSummary(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def subscription_id(self):
+        """
+        Gets the subscription_id of this DbSystemSummary.
+        The `OCID`__ of the subscription with which resource needs to be associated with.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The subscription_id of this DbSystemSummary.
+        :rtype: str
+        """
+        return self._subscription_id
+
+    @subscription_id.setter
+    def subscription_id(self, subscription_id):
+        """
+        Sets the subscription_id of this DbSystemSummary.
+        The `OCID`__ of the subscription with which resource needs to be associated with.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param subscription_id: The subscription_id of this DbSystemSummary.
+        :type: str
+        """
+        self._subscription_id = subscription_id
+
+    @property
+    def cluster_placement_group_id(self):
+        """
+        Gets the cluster_placement_group_id of this DbSystemSummary.
+        The `OCID`__ of the cluster placement group of the Exadata Infrastructure or Db System.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The cluster_placement_group_id of this DbSystemSummary.
+        :rtype: str
+        """
+        return self._cluster_placement_group_id
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, cluster_placement_group_id):
+        """
+        Sets the cluster_placement_group_id of this DbSystemSummary.
+        The `OCID`__ of the cluster placement group of the Exadata Infrastructure or Db System.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param cluster_placement_group_id: The cluster_placement_group_id of this DbSystemSummary.
+        :type: str
+        """
+        self._cluster_placement_group_id = cluster_placement_group_id
 
     @property
     def display_name(self):

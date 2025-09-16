@@ -179,6 +179,14 @@ class LaunchDbSystemBase(object):
             The value to assign to the private_ip_v6 property of this LaunchDbSystemBase.
         :type private_ip_v6: str
 
+        :param cluster_placement_group_id:
+            The value to assign to the cluster_placement_group_id property of this LaunchDbSystemBase.
+        :type cluster_placement_group_id: str
+
+        :param subscription_id:
+            The value to assign to the subscription_id property of this LaunchDbSystemBase.
+        :type subscription_id: str
+
         :param data_collection_options:
             The value to assign to the data_collection_options property of this LaunchDbSystemBase.
         :type data_collection_options: oci.database.models.DataCollectionOptions
@@ -223,6 +231,8 @@ class LaunchDbSystemBase(object):
             'source': 'str',
             'private_ip': 'str',
             'private_ip_v6': 'str',
+            'cluster_placement_group_id': 'str',
+            'subscription_id': 'str',
             'data_collection_options': 'DataCollectionOptions',
             'compute_model': 'str',
             'compute_count': 'int'
@@ -257,6 +267,8 @@ class LaunchDbSystemBase(object):
             'source': 'source',
             'private_ip': 'privateIp',
             'private_ip_v6': 'privateIpV6',
+            'cluster_placement_group_id': 'clusterPlacementGroupId',
+            'subscription_id': 'subscriptionId',
             'data_collection_options': 'dataCollectionOptions',
             'compute_model': 'computeModel',
             'compute_count': 'computeCount'
@@ -290,6 +302,8 @@ class LaunchDbSystemBase(object):
         self._source = None
         self._private_ip = None
         self._private_ip_v6 = None
+        self._cluster_placement_group_id = None
+        self._subscription_id = None
         self._data_collection_options = None
         self._compute_model = None
         self._compute_count = None
@@ -1201,6 +1215,62 @@ class LaunchDbSystemBase(object):
         :type: str
         """
         self._private_ip_v6 = private_ip_v6
+
+    @property
+    def cluster_placement_group_id(self):
+        """
+        Gets the cluster_placement_group_id of this LaunchDbSystemBase.
+        The `OCID`__ of the cluster placement group of the Exadata Infrastructure or Db System.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The cluster_placement_group_id of this LaunchDbSystemBase.
+        :rtype: str
+        """
+        return self._cluster_placement_group_id
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, cluster_placement_group_id):
+        """
+        Sets the cluster_placement_group_id of this LaunchDbSystemBase.
+        The `OCID`__ of the cluster placement group of the Exadata Infrastructure or Db System.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param cluster_placement_group_id: The cluster_placement_group_id of this LaunchDbSystemBase.
+        :type: str
+        """
+        self._cluster_placement_group_id = cluster_placement_group_id
+
+    @property
+    def subscription_id(self):
+        """
+        Gets the subscription_id of this LaunchDbSystemBase.
+        The `OCID`__ of the subscription with which resource needs to be associated with.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The subscription_id of this LaunchDbSystemBase.
+        :rtype: str
+        """
+        return self._subscription_id
+
+    @subscription_id.setter
+    def subscription_id(self, subscription_id):
+        """
+        Sets the subscription_id of this LaunchDbSystemBase.
+        The `OCID`__ of the subscription with which resource needs to be associated with.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param subscription_id: The subscription_id of this LaunchDbSystemBase.
+        :type: str
+        """
+        self._subscription_id = subscription_id
 
     @property
     def data_collection_options(self):

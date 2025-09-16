@@ -197,7 +197,7 @@ class OracleDBAzureBlobMountClient(object):
         resource_path = "/oracleDbAzureBlobMount/{oracleDbAzureBlobMountId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_oracle_db_azure_blob_mount_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureBlobMount/ChangeOracleDbAzureBlobMountCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -314,7 +314,7 @@ class OracleDBAzureBlobMountClient(object):
         resource_path = "/oracleDbAzureBlobMount"
         method = "POST"
         operation_name = "create_oracle_db_azure_blob_mount"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureBlobMount/CreateOracleDbAzureBlobMount"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -416,7 +416,7 @@ class OracleDBAzureBlobMountClient(object):
         resource_path = "/oracleDbAzureBlobMount/{oracleDbAzureBlobMountId}"
         method = "DELETE"
         operation_name = "delete_oracle_db_azure_blob_mount"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureBlobMount/DeleteOracleDbAzureBlobMount"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -529,7 +529,7 @@ class OracleDBAzureBlobMountClient(object):
         resource_path = "/oracleDbAzureBlobMount/{oracleDbAzureBlobMountId}"
         method = "GET"
         operation_name = "get_oracle_db_azure_blob_mount"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureBlobMount/GetOracleDbAzureBlobMount"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -683,7 +683,7 @@ class OracleDBAzureBlobMountClient(object):
         resource_path = "/oracleDbAzureBlobMount"
         method = "GET"
         operation_name = "list_oracle_db_azure_blob_mounts"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureBlobMount/ListOracleDbAzureBlobMounts"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -829,7 +829,7 @@ class OracleDBAzureBlobMountClient(object):
         resource_path = "/oracleDbAzureBlobMount/{oracleDbAzureBlobMountId}"
         method = "PUT"
         operation_name = "update_oracle_db_azure_blob_mount"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureBlobMount/UpdateOracleDbAzureBlobMount"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

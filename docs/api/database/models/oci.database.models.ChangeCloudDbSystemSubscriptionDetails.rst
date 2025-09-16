@@ -1,0 +1,11 @@
+ChangeCloudDbSystemSubscriptionDetails
+======================================
+
+.. currentmodule:: oci.database.models
+
+.. autoclass:: ChangeCloudDbSystemSubscriptionDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

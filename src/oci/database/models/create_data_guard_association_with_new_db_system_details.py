@@ -184,6 +184,14 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
             The value to assign to the data_collection_options property of this CreateDataGuardAssociationWithNewDbSystemDetails.
         :type data_collection_options: oci.database.models.DataCollectionOptions
 
+        :param cluster_placement_group_id:
+            The value to assign to the cluster_placement_group_id property of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        :type cluster_placement_group_id: str
+
+        :param subscription_id:
+            The value to assign to the subscription_id property of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        :type subscription_id: str
+
         """
         self.swagger_types = {
             'database_software_image_id': 'str',
@@ -218,7 +226,9 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
             'db_system_security_attributes': 'dict(str, dict(str, object))',
             'database_freeform_tags': 'dict(str, str)',
             'database_defined_tags': 'dict(str, dict(str, object))',
-            'data_collection_options': 'DataCollectionOptions'
+            'data_collection_options': 'DataCollectionOptions',
+            'cluster_placement_group_id': 'str',
+            'subscription_id': 'str'
         }
         self.attribute_map = {
             'database_software_image_id': 'databaseSoftwareImageId',
@@ -253,7 +263,9 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
             'db_system_security_attributes': 'dbSystemSecurityAttributes',
             'database_freeform_tags': 'databaseFreeformTags',
             'database_defined_tags': 'databaseDefinedTags',
-            'data_collection_options': 'dataCollectionOptions'
+            'data_collection_options': 'dataCollectionOptions',
+            'cluster_placement_group_id': 'clusterPlacementGroupId',
+            'subscription_id': 'subscriptionId'
         }
         self._database_software_image_id = None
         self._database_admin_password = None
@@ -288,6 +300,8 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
         self._database_freeform_tags = None
         self._database_defined_tags = None
         self._data_collection_options = None
+        self._cluster_placement_group_id = None
+        self._subscription_id = None
         self._creation_type = 'NewDbSystem'
 
     @property
@@ -1004,6 +1018,62 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
         :type: oci.database.models.DataCollectionOptions
         """
         self._data_collection_options = data_collection_options
+
+    @property
+    def cluster_placement_group_id(self):
+        """
+        Gets the cluster_placement_group_id of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        The `OCID`__ of the cluster placement group of the Exadata Infrastructure or Db System.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The cluster_placement_group_id of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        :rtype: str
+        """
+        return self._cluster_placement_group_id
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, cluster_placement_group_id):
+        """
+        Sets the cluster_placement_group_id of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        The `OCID`__ of the cluster placement group of the Exadata Infrastructure or Db System.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param cluster_placement_group_id: The cluster_placement_group_id of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        :type: str
+        """
+        self._cluster_placement_group_id = cluster_placement_group_id
+
+    @property
+    def subscription_id(self):
+        """
+        Gets the subscription_id of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        The `OCID`__ of the subscription with which resource needs to be associated with.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The subscription_id of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        :rtype: str
+        """
+        return self._subscription_id
+
+    @subscription_id.setter
+    def subscription_id(self, subscription_id):
+        """
+        Sets the subscription_id of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        The `OCID`__ of the subscription with which resource needs to be associated with.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param subscription_id: The subscription_id of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        :type: str
+        """
+        self._subscription_id = subscription_id
 
     def __repr__(self):
         return formatted_flat_dict(self)
