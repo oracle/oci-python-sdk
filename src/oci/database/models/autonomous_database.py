@@ -299,6 +299,18 @@ class AutonomousDatabase(object):
     #: This constant has a value of "SHARED"
     NET_SERVICES_ARCHITECTURE_SHARED = "SHARED"
 
+    #: A constant which can be used with the clone_type property of a AutonomousDatabase.
+    #: This constant has a value of "FULL"
+    CLONE_TYPE_FULL = "FULL"
+
+    #: A constant which can be used with the clone_type property of a AutonomousDatabase.
+    #: This constant has a value of "METADATA"
+    CLONE_TYPE_METADATA = "METADATA"
+
+    #: A constant which can be used with the clone_type property of a AutonomousDatabase.
+    #: This constant has a value of "PARTIAL"
+    CLONE_TYPE_PARTIAL = "PARTIAL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AutonomousDatabase object with values from keyword arguments.
@@ -860,6 +872,12 @@ class AutonomousDatabase(object):
             The value to assign to the clone_table_space_list property of this AutonomousDatabase.
         :type clone_table_space_list: list[int]
 
+        :param clone_type:
+            The value to assign to the clone_type property of this AutonomousDatabase.
+            Allowed values for this property are: "FULL", "METADATA", "PARTIAL", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type clone_type: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -991,7 +1009,8 @@ class AutonomousDatabase(object):
             'net_services_architecture': 'str',
             'availability_domain': 'str',
             'cluster_placement_group_id': 'str',
-            'clone_table_space_list': 'list[int]'
+            'clone_table_space_list': 'list[int]',
+            'clone_type': 'str'
         }
         self.attribute_map = {
             'id': 'id',
@@ -1123,7 +1142,8 @@ class AutonomousDatabase(object):
             'net_services_architecture': 'netServicesArchitecture',
             'availability_domain': 'availabilityDomain',
             'cluster_placement_group_id': 'clusterPlacementGroupId',
-            'clone_table_space_list': 'cloneTableSpaceList'
+            'clone_table_space_list': 'cloneTableSpaceList',
+            'clone_type': 'cloneType'
         }
         self._id = None
         self._compartment_id = None
@@ -1255,6 +1275,7 @@ class AutonomousDatabase(object):
         self._availability_domain = None
         self._cluster_placement_group_id = None
         self._clone_table_space_list = None
+        self._clone_type = None
 
     @property
     def id(self):
@@ -4779,6 +4800,36 @@ class AutonomousDatabase(object):
         :type: list[int]
         """
         self._clone_table_space_list = clone_table_space_list
+
+    @property
+    def clone_type(self):
+        """
+        Gets the clone_type of this AutonomousDatabase.
+        The Autonomous Database clone type.
+
+        Allowed values for this property are: "FULL", "METADATA", "PARTIAL", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The clone_type of this AutonomousDatabase.
+        :rtype: str
+        """
+        return self._clone_type
+
+    @clone_type.setter
+    def clone_type(self, clone_type):
+        """
+        Sets the clone_type of this AutonomousDatabase.
+        The Autonomous Database clone type.
+
+
+        :param clone_type: The clone_type of this AutonomousDatabase.
+        :type: str
+        """
+        allowed_values = ["FULL", "METADATA", "PARTIAL"]
+        if not value_allowed_none_or_none_sentinel(clone_type, allowed_values):
+            clone_type = 'UNKNOWN_ENUM_VALUE'
+        self._clone_type = clone_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

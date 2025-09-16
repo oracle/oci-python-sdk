@@ -175,6 +175,14 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
             The value to assign to the private_ip_v6 property of this LaunchDbSystemDetails.
         :type private_ip_v6: str
 
+        :param cluster_placement_group_id:
+            The value to assign to the cluster_placement_group_id property of this LaunchDbSystemDetails.
+        :type cluster_placement_group_id: str
+
+        :param subscription_id:
+            The value to assign to the subscription_id property of this LaunchDbSystemDetails.
+        :type subscription_id: str
+
         :param data_collection_options:
             The value to assign to the data_collection_options property of this LaunchDbSystemDetails.
         :type data_collection_options: oci.database.models.DataCollectionOptions
@@ -242,6 +250,8 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
             'source': 'str',
             'private_ip': 'str',
             'private_ip_v6': 'str',
+            'cluster_placement_group_id': 'str',
+            'subscription_id': 'str',
             'data_collection_options': 'DataCollectionOptions',
             'compute_model': 'str',
             'compute_count': 'int',
@@ -281,6 +291,8 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
             'source': 'source',
             'private_ip': 'privateIp',
             'private_ip_v6': 'privateIpV6',
+            'cluster_placement_group_id': 'clusterPlacementGroupId',
+            'subscription_id': 'subscriptionId',
             'data_collection_options': 'dataCollectionOptions',
             'compute_model': 'computeModel',
             'compute_count': 'computeCount',
@@ -319,6 +331,8 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
         self._source = None
         self._private_ip = None
         self._private_ip_v6 = None
+        self._cluster_placement_group_id = None
+        self._subscription_id = None
         self._data_collection_options = None
         self._compute_model = None
         self._compute_count = None

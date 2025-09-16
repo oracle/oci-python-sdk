@@ -31,6 +31,18 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
     #: This constant has a value of "READ_WRITE"
     OPEN_MODE_READ_WRITE = "READ_WRITE"
 
+    #: A constant which can be used with the clone_type property of a CreateRefreshableAutonomousDatabaseCloneDetails.
+    #: This constant has a value of "FULL"
+    CLONE_TYPE_FULL = "FULL"
+
+    #: A constant which can be used with the clone_type property of a CreateRefreshableAutonomousDatabaseCloneDetails.
+    #: This constant has a value of "METADATA"
+    CLONE_TYPE_METADATA = "METADATA"
+
+    #: A constant which can be used with the clone_type property of a CreateRefreshableAutonomousDatabaseCloneDetails.
+    #: This constant has a value of "PARTIAL"
+    CLONE_TYPE_PARTIAL = "PARTIAL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateRefreshableAutonomousDatabaseCloneDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.database.models.CreateRefreshableAutonomousDatabaseCloneDetails.source` attribute
@@ -284,6 +296,11 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
             Allowed values for this property are: "READ_ONLY", "READ_WRITE"
         :type open_mode: str
 
+        :param clone_type:
+            The value to assign to the clone_type property of this CreateRefreshableAutonomousDatabaseCloneDetails.
+            Allowed values for this property are: "FULL", "METADATA", "PARTIAL"
+        :type clone_type: str
+
         """
         self.swagger_types = {
             'subscription_id': 'str',
@@ -345,7 +362,8 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
             'auto_refresh_frequency_in_seconds': 'int',
             'auto_refresh_point_lag_in_seconds': 'int',
             'time_of_auto_refresh_start': 'datetime',
-            'open_mode': 'str'
+            'open_mode': 'str',
+            'clone_type': 'str'
         }
         self.attribute_map = {
             'subscription_id': 'subscriptionId',
@@ -407,7 +425,8 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
             'auto_refresh_frequency_in_seconds': 'autoRefreshFrequencyInSeconds',
             'auto_refresh_point_lag_in_seconds': 'autoRefreshPointLagInSeconds',
             'time_of_auto_refresh_start': 'timeOfAutoRefreshStart',
-            'open_mode': 'openMode'
+            'open_mode': 'openMode',
+            'clone_type': 'cloneType'
         }
         self._subscription_id = None
         self._compartment_id = None
@@ -469,6 +488,7 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
         self._auto_refresh_point_lag_in_seconds = None
         self._time_of_auto_refresh_start = None
         self._open_mode = None
+        self._clone_type = None
         self._source = 'CLONE_TO_REFRESHABLE'
 
     @property
@@ -636,6 +656,37 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
                 f"Invalid value for `open_mode`, must be None or one of {allowed_values}"
             )
         self._open_mode = open_mode
+
+    @property
+    def clone_type(self):
+        """
+        Gets the clone_type of this CreateRefreshableAutonomousDatabaseCloneDetails.
+        The Autonomous Database clone type.
+
+        Allowed values for this property are: "FULL", "METADATA", "PARTIAL"
+
+
+        :return: The clone_type of this CreateRefreshableAutonomousDatabaseCloneDetails.
+        :rtype: str
+        """
+        return self._clone_type
+
+    @clone_type.setter
+    def clone_type(self, clone_type):
+        """
+        Sets the clone_type of this CreateRefreshableAutonomousDatabaseCloneDetails.
+        The Autonomous Database clone type.
+
+
+        :param clone_type: The clone_type of this CreateRefreshableAutonomousDatabaseCloneDetails.
+        :type: str
+        """
+        allowed_values = ["FULL", "METADATA", "PARTIAL"]
+        if not value_allowed_none_or_none_sentinel(clone_type, allowed_values):
+            raise ValueError(
+                f"Invalid value for `clone_type`, must be None or one of {allowed_values}"
+            )
+        self._clone_type = clone_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

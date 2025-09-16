@@ -8,6 +8,7 @@ API Reference
 * :doc:`Account <marketplace/client/oci.marketplace.AccountClient>`
 * :doc:`Address Rule Service <osp_gateway/client/oci.osp_gateway.AddressRuleServiceClient>`
 * :doc:`Address Service <osp_gateway/client/oci.osp_gateway.AddressServiceClient>`
+* :doc:`Ai Data Platform <ai_data_platform/client/oci.ai_data_platform.AiDataPlatformClient>`
 * :doc:`Ai Service Document <ai_document/client/oci.ai_document.AIServiceDocumentClient>`
 * :doc:`Ai Service Language <ai_language/client/oci.ai_language.AIServiceLanguageClient>`
 * :doc:`Ai Service Speech <ai_speech/client/oci.ai_speech.AIServiceSpeechClient>`
@@ -303,6 +304,7 @@ API Reference
 
     access_governance_cp
     adm
+    ai_data_platform
     ai_document
     ai_language
     ai_speech

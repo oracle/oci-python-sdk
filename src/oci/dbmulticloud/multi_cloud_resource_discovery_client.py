@@ -197,7 +197,7 @@ class MultiCloudResourceDiscoveryClient(object):
         resource_path = "/multiCloudResourceDiscovery/{multiCloudResourceDiscoveryId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_multi_cloud_resource_discovery_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/MultiCloudResourceDiscovery/ChangeMultiCloudResourceDiscoveryCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -314,7 +314,7 @@ class MultiCloudResourceDiscoveryClient(object):
         resource_path = "/multiCloudResourceDiscovery"
         method = "POST"
         operation_name = "create_multi_cloud_resource_discovery"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/MultiCloudResourceDiscovery/CreateMultiCloudResourceDiscovery"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -416,7 +416,7 @@ class MultiCloudResourceDiscoveryClient(object):
         resource_path = "/multiCloudResourceDiscovery/{multiCloudResourceDiscoveryId}"
         method = "DELETE"
         operation_name = "delete_multi_cloud_resource_discovery"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/MultiCloudResourceDiscovery/DeleteMultiCloudResourceDiscovery"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -529,7 +529,7 @@ class MultiCloudResourceDiscoveryClient(object):
         resource_path = "/multiCloudResourceDiscovery/{multiCloudResourceDiscoveryId}"
         method = "GET"
         operation_name = "get_multi_cloud_resource_discovery"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/MultiCloudResourceDiscovery/GetMultiCloudResourceDiscovery"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -688,7 +688,7 @@ class MultiCloudResourceDiscoveryClient(object):
         resource_path = "/multiCloudResourceDiscovery"
         method = "GET"
         operation_name = "list_multi_cloud_resource_discoveries"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/MultiCloudResourceDiscovery/ListMultiCloudResourceDiscoveries"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -843,7 +843,7 @@ class MultiCloudResourceDiscoveryClient(object):
         resource_path = "/multiCloudResourceDiscovery/{multiCloudResourceDiscoveryId}"
         method = "PUT"
         operation_name = "update_multi_cloud_resource_discovery"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/MultiCloudResourceDiscovery/UpdateMultiCloudResourceDiscovery"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

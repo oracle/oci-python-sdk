@@ -197,7 +197,7 @@ class DbMulticloudGCPProviderClient(object):
         resource_path = "/oracleDbGcpIdentityConnector/{oracleDbGcpIdentityConnectorId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_oracle_db_gcp_identity_connector_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbGcpIdentityConnector/ChangeOracleDbGcpIdentityConnectorCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -319,7 +319,7 @@ class DbMulticloudGCPProviderClient(object):
         resource_path = "/oracleDbGcpKeyRing/{oracleDbGcpKeyRingId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_oracle_db_gcp_key_ring_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbGcpKeyRing/ChangeOracleDbGcpKeyRingCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -429,7 +429,7 @@ class DbMulticloudGCPProviderClient(object):
         resource_path = "/oracleDbGcpIdentityConnector"
         method = "POST"
         operation_name = "create_oracle_db_gcp_identity_connector"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbGcpIdentityConnector/CreateOracleDbGcpIdentityConnector"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -534,7 +534,7 @@ class DbMulticloudGCPProviderClient(object):
         resource_path = "/oracleDbGcpKeyRing"
         method = "POST"
         operation_name = "create_oracle_db_gcp_key_ring"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbGcpKeyRing/CreateOracleDbGcpKeyRing"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -636,7 +636,7 @@ class DbMulticloudGCPProviderClient(object):
         resource_path = "/oracleDbGcpIdentityConnector/{oracleDbGcpIdentityConnectorId}"
         method = "DELETE"
         operation_name = "delete_oracle_db_gcp_identity_connector"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbGcpIdentityConnector/DeleteOracleDbGcpIdentityConnector"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -743,7 +743,7 @@ class DbMulticloudGCPProviderClient(object):
         resource_path = "/oracleDbGcpKeyRing/{oracleDbGcpKeyRingId}"
         method = "DELETE"
         operation_name = "delete_oracle_db_gcp_key_ring"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbGcpKeyRing/DeleteOracleDbGcpKeyRing"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -845,7 +845,7 @@ class DbMulticloudGCPProviderClient(object):
         resource_path = "/oracleDbGcpIdentityConnector/{oracleDbGcpIdentityConnectorId}"
         method = "GET"
         operation_name = "get_oracle_db_gcp_identity_connector"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbGcpIdentityConnector/GetOracleDbGcpIdentityConnector"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -947,7 +947,7 @@ class DbMulticloudGCPProviderClient(object):
         resource_path = "/oracleDbGcpKey/{oracleDbGcpKeyId}"
         method = "GET"
         operation_name = "get_oracle_db_gcp_key"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbGcpKey/GetOracleDbGcpKey"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1060,7 +1060,7 @@ class DbMulticloudGCPProviderClient(object):
         resource_path = "/oracleDbGcpKeyRing/{oracleDbGcpKeyRingId}"
         method = "GET"
         operation_name = "get_oracle_db_gcp_key_ring"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbGcpKeyRing/GetOracleDbGcpKeyRing"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1208,7 +1208,7 @@ class DbMulticloudGCPProviderClient(object):
         resource_path = "/oracleDbGcpIdentityConnector"
         method = "GET"
         operation_name = "list_oracle_db_gcp_identity_connectors"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbGcpIdentityConnector/ListOracleDbGcpIdentityConnectors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1371,7 +1371,7 @@ class DbMulticloudGCPProviderClient(object):
         resource_path = "/oracleDbGcpKeyRing"
         method = "GET"
         operation_name = "list_oracle_db_gcp_key_rings"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbGcpKeyRing/ListOracleDbGcpKeyRings"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1533,7 +1533,7 @@ class DbMulticloudGCPProviderClient(object):
         resource_path = "/oracleDbGcpKey"
         method = "GET"
         operation_name = "list_oracle_db_gcp_keys"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbGcpKey/ListOracleDbGcpKeys"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1679,7 +1679,7 @@ class DbMulticloudGCPProviderClient(object):
         resource_path = "/oracleDbGcpIdentityConnector/{oracleDbGcpIdentityConnectorId}/actions/refresh"
         method = "POST"
         operation_name = "refresh_oracle_db_gcp_identity_connector"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbGcpIdentityConnector/RefreshOracleDbGcpIdentityConnector"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1799,7 +1799,7 @@ class DbMulticloudGCPProviderClient(object):
         resource_path = "/oracleDbGcpKeyRing/{oracleDbGcpKeyRingId}/actions/refresh"
         method = "POST"
         operation_name = "refresh_oracle_db_gcp_key_ring"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbGcpKeyRing/RefreshOracleDbGcpKeyRing"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1916,7 +1916,7 @@ class DbMulticloudGCPProviderClient(object):
         resource_path = "/oracleDbGcpIdentityConnector/{oracleDbGcpIdentityConnectorId}"
         method = "PUT"
         operation_name = "update_oracle_db_gcp_identity_connector"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbGcpIdentityConnector/UpdateOracleDbGcpIdentityConnector"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2030,7 +2030,7 @@ class DbMulticloudGCPProviderClient(object):
         resource_path = "/oracleDbGcpKeyRing/{oracleDbGcpKeyRingId}"
         method = "PUT"
         operation_name = "update_oracle_db_gcp_key_ring"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbGcpKeyRing/UpdateOracleDbGcpKeyRing"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.160.1 - 2025-09-16
+====================
+
+Added 
+----- 
+* Support for AI Data Platform service 
+* Support for creating refreshable metadata clones of autonomous databases in the Database service 
+* Support for Oracle Base Database for multicloud partners in the Database service   
+
+====================
 2.160.0 - 2025-09-09
 ====================
 

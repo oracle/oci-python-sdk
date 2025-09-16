@@ -193,7 +193,7 @@ class OracleDbAzureKeyClient(object):
         resource_path = "/oracleDbAzureKey/{oracleDbAzureKeyId}"
         method = "GET"
         operation_name = "get_oracle_db_azure_key"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureKey/GetOracleDbAzureKey"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -346,7 +346,7 @@ class OracleDbAzureKeyClient(object):
         resource_path = "/oracleDbAzureKey"
         method = "GET"
         operation_name = "list_oracle_db_azure_keys"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/20240501/OracleDbAzureKey/ListOracleDbAzureKeys"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
