@@ -68,6 +68,10 @@ class WorkItemDetails(object):
     WORK_ITEM_TYPE_ADV_USAGE_JAVA_LIBRARIES = "ADV_USAGE_JAVA_LIBRARIES"
 
     #: A constant which can be used with the work_item_type property of a WorkItemDetails.
+    #: This constant has a value of "ADV_USAGE_JAVA_LIBRARIES_DYNAMIC"
+    WORK_ITEM_TYPE_ADV_USAGE_JAVA_LIBRARIES_DYNAMIC = "ADV_USAGE_JAVA_LIBRARIES_DYNAMIC"
+
+    #: A constant which can be used with the work_item_type property of a WorkItemDetails.
     #: This constant has a value of "PERFORMANCE_TUNING"
     WORK_ITEM_TYPE_PERFORMANCE_TUNING = "PERFORMANCE_TUNING"
 
@@ -88,10 +92,12 @@ class WorkItemDetails(object):
         Initializes a new WorkItemDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.jms.models.JavaMigrationDeployedApplicationWorkItemDetails`
         * :class:`~oci.jms.models.DeployedApplicationWorkItemDetails`
         * :class:`~oci.jms.models.LcmWorkItemDetails`
         * :class:`~oci.jms.models.BasicWorkItemDetails`
         * :class:`~oci.jms.models.ApplicationWorkItemDetails`
+        * :class:`~oci.jms.models.JavaMigrationApplicationWorkItemDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -103,7 +109,7 @@ class WorkItemDetails(object):
 
         :param work_item_type:
             The value to assign to the work_item_type property of this WorkItemDetails.
-            Allowed values for this property are: "LCM", "JFR_CAPTURE", "JFR_UPLOAD", "CRYPTO_ANALYSIS", "CRYPTO_ANALYSIS_MERGE", "ADVANCED_USAGE_TRACKING", "ADV_USAGE_SERVER_METADATA", "ADV_USAGE_SERVER_LIBRARIES", "ADV_USAGE_JAVA_LIBRARIES", "PERFORMANCE_TUNING", "JMIGRATE_ANALYSIS", "JMIGRATE_CREATE_REPORT", "DRS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "LCM", "JFR_CAPTURE", "JFR_UPLOAD", "CRYPTO_ANALYSIS", "CRYPTO_ANALYSIS_MERGE", "ADVANCED_USAGE_TRACKING", "ADV_USAGE_SERVER_METADATA", "ADV_USAGE_SERVER_LIBRARIES", "ADV_USAGE_JAVA_LIBRARIES", "ADV_USAGE_JAVA_LIBRARIES_DYNAMIC", "PERFORMANCE_TUNING", "JMIGRATE_ANALYSIS", "JMIGRATE_CREATE_REPORT", "DRS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type work_item_type: str
 
@@ -127,6 +133,9 @@ class WorkItemDetails(object):
         """
         type = object_dictionary['kind']
 
+        if type == 'JAVA_MIGRATION_DEPLOYED_APPLICATION':
+            return 'JavaMigrationDeployedApplicationWorkItemDetails'
+
         if type == 'DEPLOYED_APPLICATION':
             return 'DeployedApplicationWorkItemDetails'
 
@@ -138,6 +147,9 @@ class WorkItemDetails(object):
 
         if type == 'APPLICATION':
             return 'ApplicationWorkItemDetails'
+
+        if type == 'JAVA_MIGRATION_APPLICATION':
+            return 'JavaMigrationApplicationWorkItemDetails'
         else:
             return 'WorkItemDetails'
 
@@ -177,7 +189,7 @@ class WorkItemDetails(object):
         Gets the work_item_type of this WorkItemDetails.
         The work item type.
 
-        Allowed values for this property are: "LCM", "JFR_CAPTURE", "JFR_UPLOAD", "CRYPTO_ANALYSIS", "CRYPTO_ANALYSIS_MERGE", "ADVANCED_USAGE_TRACKING", "ADV_USAGE_SERVER_METADATA", "ADV_USAGE_SERVER_LIBRARIES", "ADV_USAGE_JAVA_LIBRARIES", "PERFORMANCE_TUNING", "JMIGRATE_ANALYSIS", "JMIGRATE_CREATE_REPORT", "DRS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "LCM", "JFR_CAPTURE", "JFR_UPLOAD", "CRYPTO_ANALYSIS", "CRYPTO_ANALYSIS_MERGE", "ADVANCED_USAGE_TRACKING", "ADV_USAGE_SERVER_METADATA", "ADV_USAGE_SERVER_LIBRARIES", "ADV_USAGE_JAVA_LIBRARIES", "ADV_USAGE_JAVA_LIBRARIES_DYNAMIC", "PERFORMANCE_TUNING", "JMIGRATE_ANALYSIS", "JMIGRATE_CREATE_REPORT", "DRS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -196,7 +208,7 @@ class WorkItemDetails(object):
         :param work_item_type: The work_item_type of this WorkItemDetails.
         :type: str
         """
-        allowed_values = ["LCM", "JFR_CAPTURE", "JFR_UPLOAD", "CRYPTO_ANALYSIS", "CRYPTO_ANALYSIS_MERGE", "ADVANCED_USAGE_TRACKING", "ADV_USAGE_SERVER_METADATA", "ADV_USAGE_SERVER_LIBRARIES", "ADV_USAGE_JAVA_LIBRARIES", "PERFORMANCE_TUNING", "JMIGRATE_ANALYSIS", "JMIGRATE_CREATE_REPORT", "DRS"]
+        allowed_values = ["LCM", "JFR_CAPTURE", "JFR_UPLOAD", "CRYPTO_ANALYSIS", "CRYPTO_ANALYSIS_MERGE", "ADVANCED_USAGE_TRACKING", "ADV_USAGE_SERVER_METADATA", "ADV_USAGE_SERVER_LIBRARIES", "ADV_USAGE_JAVA_LIBRARIES", "ADV_USAGE_JAVA_LIBRARIES_DYNAMIC", "PERFORMANCE_TUNING", "JMIGRATE_ANALYSIS", "JMIGRATE_CREATE_REPORT", "DRS"]
         if not value_allowed_none_or_none_sentinel(work_item_type, allowed_values):
             work_item_type = 'UNKNOWN_ENUM_VALUE'
         self._work_item_type = work_item_type

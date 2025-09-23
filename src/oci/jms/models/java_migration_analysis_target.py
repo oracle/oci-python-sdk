@@ -13,7 +13,7 @@ from oci.decorators import init_model_state_from_kwargs
 class JavaMigrationAnalysisTarget(object):
     """
     The target describes the input data for Java migration analysis.
-    A target contains a managed instance, application Installation Key, sourceJdkVersion, targetJdkVersion and optional excludePackagePrefixes.
+    A target contains a managed instance, application Installation Key, sourceJdkVersion, targetJdkVersion, optional excludePackagePrefixes and optional includePackagePrefixes.
     """
 
     def __init__(self, **kwargs):
@@ -41,26 +41,33 @@ class JavaMigrationAnalysisTarget(object):
             The value to assign to the exclude_package_prefixes property of this JavaMigrationAnalysisTarget.
         :type exclude_package_prefixes: list[str]
 
+        :param include_package_prefixes:
+            The value to assign to the include_package_prefixes property of this JavaMigrationAnalysisTarget.
+        :type include_package_prefixes: list[str]
+
         """
         self.swagger_types = {
             'managed_instance_id': 'str',
             'application_installation_key': 'str',
             'source_jdk_version': 'str',
             'target_jdk_version': 'str',
-            'exclude_package_prefixes': 'list[str]'
+            'exclude_package_prefixes': 'list[str]',
+            'include_package_prefixes': 'list[str]'
         }
         self.attribute_map = {
             'managed_instance_id': 'managedInstanceId',
             'application_installation_key': 'applicationInstallationKey',
             'source_jdk_version': 'sourceJdkVersion',
             'target_jdk_version': 'targetJdkVersion',
-            'exclude_package_prefixes': 'excludePackagePrefixes'
+            'exclude_package_prefixes': 'excludePackagePrefixes',
+            'include_package_prefixes': 'includePackagePrefixes'
         }
         self._managed_instance_id = None
         self._application_installation_key = None
         self._source_jdk_version = None
         self._target_jdk_version = None
         self._exclude_package_prefixes = None
+        self._include_package_prefixes = None
 
     @property
     def managed_instance_id(self):
@@ -162,7 +169,7 @@ class JavaMigrationAnalysisTarget(object):
     def exclude_package_prefixes(self):
         """
         Gets the exclude_package_prefixes of this JavaMigrationAnalysisTarget.
-        Excludes the packages that starts with the prefix from the migration analysis result.
+        Excludes the packages that starts with the prefix from the migration analysis result. Either this or includePackagePrefixes can be specified.
 
 
         :return: The exclude_package_prefixes of this JavaMigrationAnalysisTarget.
@@ -174,13 +181,37 @@ class JavaMigrationAnalysisTarget(object):
     def exclude_package_prefixes(self, exclude_package_prefixes):
         """
         Sets the exclude_package_prefixes of this JavaMigrationAnalysisTarget.
-        Excludes the packages that starts with the prefix from the migration analysis result.
+        Excludes the packages that starts with the prefix from the migration analysis result. Either this or includePackagePrefixes can be specified.
 
 
         :param exclude_package_prefixes: The exclude_package_prefixes of this JavaMigrationAnalysisTarget.
         :type: list[str]
         """
         self._exclude_package_prefixes = exclude_package_prefixes
+
+    @property
+    def include_package_prefixes(self):
+        """
+        Gets the include_package_prefixes of this JavaMigrationAnalysisTarget.
+        includes the packages that starts with the prefix from the migration analysis result. Either this or excludePackagePrefixes can be specified.
+
+
+        :return: The include_package_prefixes of this JavaMigrationAnalysisTarget.
+        :rtype: list[str]
+        """
+        return self._include_package_prefixes
+
+    @include_package_prefixes.setter
+    def include_package_prefixes(self, include_package_prefixes):
+        """
+        Sets the include_package_prefixes of this JavaMigrationAnalysisTarget.
+        includes the packages that starts with the prefix from the migration analysis result. Either this or excludePackagePrefixes can be specified.
+
+
+        :param include_package_prefixes: The include_package_prefixes of this JavaMigrationAnalysisTarget.
+        :type: list[str]
+        """
+        self._include_package_prefixes = include_package_prefixes
 
     def __repr__(self):
         return formatted_flat_dict(self)

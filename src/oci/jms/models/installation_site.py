@@ -52,6 +52,10 @@ class InstallationSite(object):
     #: This constant has a value of "ORACLE_CLOUD_AGENT"
     MANAGED_INSTANCE_TYPE_ORACLE_CLOUD_AGENT = "ORACLE_CLOUD_AGENT"
 
+    #: A constant which can be used with the managed_instance_type property of a InstallationSite.
+    #: This constant has a value of "ORACLE_CONTAINER_MANAGEMENT_AGENT"
+    MANAGED_INSTANCE_TYPE_ORACLE_CONTAINER_MANAGEMENT_AGENT = "ORACLE_CONTAINER_MANAGEMENT_AGENT"
+
     def __init__(self, **kwargs):
         """
         Initializes a new InstallationSite object with values from keyword arguments.
@@ -97,7 +101,7 @@ class InstallationSite(object):
 
         :param managed_instance_type:
             The value to assign to the managed_instance_type property of this InstallationSite.
-            Allowed values for this property are: "ORACLE_MANAGEMENT_AGENT", "ORACLE_CLOUD_AGENT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ORACLE_MANAGEMENT_AGENT", "ORACLE_CLOUD_AGENT", "ORACLE_CONTAINER_MANAGEMENT_AGENT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type managed_instance_type: str
 
@@ -374,7 +378,7 @@ class InstallationSite(object):
         Gets the managed_instance_type of this InstallationSite.
         The type of the source of events.
 
-        Allowed values for this property are: "ORACLE_MANAGEMENT_AGENT", "ORACLE_CLOUD_AGENT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ORACLE_MANAGEMENT_AGENT", "ORACLE_CLOUD_AGENT", "ORACLE_CONTAINER_MANAGEMENT_AGENT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -393,7 +397,7 @@ class InstallationSite(object):
         :param managed_instance_type: The managed_instance_type of this InstallationSite.
         :type: str
         """
-        allowed_values = ["ORACLE_MANAGEMENT_AGENT", "ORACLE_CLOUD_AGENT"]
+        allowed_values = ["ORACLE_MANAGEMENT_AGENT", "ORACLE_CLOUD_AGENT", "ORACLE_CONTAINER_MANAGEMENT_AGENT"]
         if not value_allowed_none_or_none_sentinel(managed_instance_type, allowed_values):
             managed_instance_type = 'UNKNOWN_ENUM_VALUE'
         self._managed_instance_type = managed_instance_type

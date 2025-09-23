@@ -62,6 +62,10 @@ class OperatingSystem(object):
             The value to assign to the managed_instance_count property of this OperatingSystem.
         :type managed_instance_count: int
 
+        :param container_count:
+            The value to assign to the container_count property of this OperatingSystem.
+        :type container_count: int
+
         """
         self.swagger_types = {
             'family': 'str',
@@ -69,7 +73,8 @@ class OperatingSystem(object):
             'distribution': 'str',
             'version': 'str',
             'architecture': 'str',
-            'managed_instance_count': 'int'
+            'managed_instance_count': 'int',
+            'container_count': 'int'
         }
         self.attribute_map = {
             'family': 'family',
@@ -77,7 +82,8 @@ class OperatingSystem(object):
             'distribution': 'distribution',
             'version': 'version',
             'architecture': 'architecture',
-            'managed_instance_count': 'managedInstanceCount'
+            'managed_instance_count': 'managedInstanceCount',
+            'container_count': 'containerCount'
         }
         self._family = None
         self._name = None
@@ -85,6 +91,7 @@ class OperatingSystem(object):
         self._version = None
         self._architecture = None
         self._managed_instance_count = None
+        self._container_count = None
 
     @property
     def family(self):
@@ -235,6 +242,30 @@ class OperatingSystem(object):
         :type: int
         """
         self._managed_instance_count = managed_instance_count
+
+    @property
+    def container_count(self):
+        """
+        Gets the container_count of this OperatingSystem.
+        Number of containers running the operating system.
+
+
+        :return: The container_count of this OperatingSystem.
+        :rtype: int
+        """
+        return self._container_count
+
+    @container_count.setter
+    def container_count(self, container_count):
+        """
+        Sets the container_count of this OperatingSystem.
+        Number of containers running the operating system.
+
+
+        :param container_count: The container_count of this OperatingSystem.
+        :type: int
+        """
+        self._container_count = container_count
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -110,6 +110,10 @@ class NetworkAnchor(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type setup_mode: str
 
+        :param cluster_placement_group_id:
+            The value to assign to the cluster_placement_group_id property of this NetworkAnchor.
+        :type cluster_placement_group_id: str
+
         :param oci_metadata_item:
             The value to assign to the oci_metadata_item property of this NetworkAnchor.
         :type oci_metadata_item: oci.multicloud.models.OciNetworkMetadata
@@ -132,6 +136,7 @@ class NetworkAnchor(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
             'setup_mode': 'str',
+            'cluster_placement_group_id': 'str',
             'oci_metadata_item': 'OciNetworkMetadata',
             'cloud_service_provider_metadata_item': 'CloudServiceProviderNetworkMetadataItem'
         }
@@ -148,6 +153,7 @@ class NetworkAnchor(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
             'setup_mode': 'setupMode',
+            'cluster_placement_group_id': 'clusterPlacementGroupId',
             'oci_metadata_item': 'ociMetadataItem',
             'cloud_service_provider_metadata_item': 'cloudServiceProviderMetadataItem'
         }
@@ -163,6 +169,7 @@ class NetworkAnchor(object):
         self._defined_tags = None
         self._system_tags = None
         self._setup_mode = None
+        self._cluster_placement_group_id = None
         self._oci_metadata_item = None
         self._cloud_service_provider_metadata_item = None
 
@@ -519,6 +526,30 @@ class NetworkAnchor(object):
         if not value_allowed_none_or_none_sentinel(setup_mode, allowed_values):
             setup_mode = 'UNKNOWN_ENUM_VALUE'
         self._setup_mode = setup_mode
+
+    @property
+    def cluster_placement_group_id(self):
+        """
+        Gets the cluster_placement_group_id of this NetworkAnchor.
+        The CPG ID in which Network Anchor will be created.
+
+
+        :return: The cluster_placement_group_id of this NetworkAnchor.
+        :rtype: str
+        """
+        return self._cluster_placement_group_id
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, cluster_placement_group_id):
+        """
+        Sets the cluster_placement_group_id of this NetworkAnchor.
+        The CPG ID in which Network Anchor will be created.
+
+
+        :param cluster_placement_group_id: The cluster_placement_group_id of this NetworkAnchor.
+        :type: str
+        """
+        self._cluster_placement_group_id = cluster_placement_group_id
 
     @property
     def oci_metadata_item(self):

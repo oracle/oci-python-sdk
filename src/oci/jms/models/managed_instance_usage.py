@@ -26,6 +26,10 @@ class ManagedInstanceUsage(object):
     #: This constant has a value of "ORACLE_CLOUD_AGENT"
     MANAGED_INSTANCE_TYPE_ORACLE_CLOUD_AGENT = "ORACLE_CLOUD_AGENT"
 
+    #: A constant which can be used with the managed_instance_type property of a ManagedInstanceUsage.
+    #: This constant has a value of "ORACLE_CONTAINER_MANAGEMENT_AGENT"
+    MANAGED_INSTANCE_TYPE_ORACLE_CONTAINER_MANAGEMENT_AGENT = "ORACLE_CONTAINER_MANAGEMENT_AGENT"
+
     #: A constant which can be used with the drs_file_status property of a ManagedInstanceUsage.
     #: This constant has a value of "PRESENT"
     DRS_FILE_STATUS_PRESENT = "PRESENT"
@@ -53,7 +57,7 @@ class ManagedInstanceUsage(object):
 
         :param managed_instance_type:
             The value to assign to the managed_instance_type property of this ManagedInstanceUsage.
-            Allowed values for this property are: "ORACLE_MANAGEMENT_AGENT", "ORACLE_CLOUD_AGENT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ORACLE_MANAGEMENT_AGENT", "ORACLE_CLOUD_AGENT", "ORACLE_CONTAINER_MANAGEMENT_AGENT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type managed_instance_type: str
 
@@ -65,6 +69,18 @@ class ManagedInstanceUsage(object):
             The value to assign to the host_id property of this ManagedInstanceUsage.
         :type host_id: str
 
+        :param ip_addresses:
+            The value to assign to the ip_addresses property of this ManagedInstanceUsage.
+        :type ip_addresses: list[str]
+
+        :param hostnames:
+            The value to assign to the hostnames property of this ManagedInstanceUsage.
+        :type hostnames: list[str]
+
+        :param fqdns:
+            The value to assign to the fqdns property of this ManagedInstanceUsage.
+        :type fqdns: list[str]
+
         :param operating_system:
             The value to assign to the operating_system property of this ManagedInstanceUsage.
         :type operating_system: oci.jms.models.OperatingSystem
@@ -72,6 +88,10 @@ class ManagedInstanceUsage(object):
         :param agent:
             The value to assign to the agent property of this ManagedInstanceUsage.
         :type agent: oci.jms.models.Agent
+
+        :param cluster_details:
+            The value to assign to the cluster_details property of this ManagedInstanceUsage.
+        :type cluster_details: oci.jms.models.ClusterDetails
 
         :param approximate_application_count:
             The value to assign to the approximate_application_count property of this ManagedInstanceUsage.
@@ -117,8 +137,12 @@ class ManagedInstanceUsage(object):
             'managed_instance_type': 'str',
             'hostname': 'str',
             'host_id': 'str',
+            'ip_addresses': 'list[str]',
+            'hostnames': 'list[str]',
+            'fqdns': 'list[str]',
             'operating_system': 'OperatingSystem',
             'agent': 'Agent',
+            'cluster_details': 'ClusterDetails',
             'approximate_application_count': 'int',
             'approximate_installation_count': 'int',
             'approximate_jre_count': 'int',
@@ -134,8 +158,12 @@ class ManagedInstanceUsage(object):
             'managed_instance_type': 'managedInstanceType',
             'hostname': 'hostname',
             'host_id': 'hostId',
+            'ip_addresses': 'ipAddresses',
+            'hostnames': 'hostnames',
+            'fqdns': 'fqdns',
             'operating_system': 'operatingSystem',
             'agent': 'agent',
+            'cluster_details': 'clusterDetails',
             'approximate_application_count': 'approximateApplicationCount',
             'approximate_installation_count': 'approximateInstallationCount',
             'approximate_jre_count': 'approximateJreCount',
@@ -150,8 +178,12 @@ class ManagedInstanceUsage(object):
         self._managed_instance_type = None
         self._hostname = None
         self._host_id = None
+        self._ip_addresses = None
+        self._hostnames = None
+        self._fqdns = None
         self._operating_system = None
         self._agent = None
+        self._cluster_details = None
         self._approximate_application_count = None
         self._approximate_installation_count = None
         self._approximate_jre_count = None
@@ -196,7 +228,7 @@ class ManagedInstanceUsage(object):
         **[Required]** Gets the managed_instance_type of this ManagedInstanceUsage.
         The type of the source of events.
 
-        Allowed values for this property are: "ORACLE_MANAGEMENT_AGENT", "ORACLE_CLOUD_AGENT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ORACLE_MANAGEMENT_AGENT", "ORACLE_CLOUD_AGENT", "ORACLE_CONTAINER_MANAGEMENT_AGENT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -215,7 +247,7 @@ class ManagedInstanceUsage(object):
         :param managed_instance_type: The managed_instance_type of this ManagedInstanceUsage.
         :type: str
         """
-        allowed_values = ["ORACLE_MANAGEMENT_AGENT", "ORACLE_CLOUD_AGENT"]
+        allowed_values = ["ORACLE_MANAGEMENT_AGENT", "ORACLE_CLOUD_AGENT", "ORACLE_CONTAINER_MANAGEMENT_AGENT"]
         if not value_allowed_none_or_none_sentinel(managed_instance_type, allowed_values):
             managed_instance_type = 'UNKNOWN_ENUM_VALUE'
         self._managed_instance_type = managed_instance_type
@@ -273,6 +305,78 @@ class ManagedInstanceUsage(object):
         self._host_id = host_id
 
     @property
+    def ip_addresses(self):
+        """
+        Gets the ip_addresses of this ManagedInstanceUsage.
+        Captured IP addresses of the managed instance.
+
+
+        :return: The ip_addresses of this ManagedInstanceUsage.
+        :rtype: list[str]
+        """
+        return self._ip_addresses
+
+    @ip_addresses.setter
+    def ip_addresses(self, ip_addresses):
+        """
+        Sets the ip_addresses of this ManagedInstanceUsage.
+        Captured IP addresses of the managed instance.
+
+
+        :param ip_addresses: The ip_addresses of this ManagedInstanceUsage.
+        :type: list[str]
+        """
+        self._ip_addresses = ip_addresses
+
+    @property
+    def hostnames(self):
+        """
+        Gets the hostnames of this ManagedInstanceUsage.
+        Captured hostnames of the managed instance.
+
+
+        :return: The hostnames of this ManagedInstanceUsage.
+        :rtype: list[str]
+        """
+        return self._hostnames
+
+    @hostnames.setter
+    def hostnames(self, hostnames):
+        """
+        Sets the hostnames of this ManagedInstanceUsage.
+        Captured hostnames of the managed instance.
+
+
+        :param hostnames: The hostnames of this ManagedInstanceUsage.
+        :type: list[str]
+        """
+        self._hostnames = hostnames
+
+    @property
+    def fqdns(self):
+        """
+        Gets the fqdns of this ManagedInstanceUsage.
+        Captured fully qualify domain names of the managed instance.
+
+
+        :return: The fqdns of this ManagedInstanceUsage.
+        :rtype: list[str]
+        """
+        return self._fqdns
+
+    @fqdns.setter
+    def fqdns(self, fqdns):
+        """
+        Sets the fqdns of this ManagedInstanceUsage.
+        Captured fully qualify domain names of the managed instance.
+
+
+        :param fqdns: The fqdns of this ManagedInstanceUsage.
+        :type: list[str]
+        """
+        self._fqdns = fqdns
+
+    @property
     def operating_system(self):
         """
         Gets the operating_system of this ManagedInstanceUsage.
@@ -311,6 +415,26 @@ class ManagedInstanceUsage(object):
         :type: oci.jms.models.Agent
         """
         self._agent = agent
+
+    @property
+    def cluster_details(self):
+        """
+        Gets the cluster_details of this ManagedInstanceUsage.
+
+        :return: The cluster_details of this ManagedInstanceUsage.
+        :rtype: oci.jms.models.ClusterDetails
+        """
+        return self._cluster_details
+
+    @cluster_details.setter
+    def cluster_details(self, cluster_details):
+        """
+        Sets the cluster_details of this ManagedInstanceUsage.
+
+        :param cluster_details: The cluster_details of this ManagedInstanceUsage.
+        :type: oci.jms.models.ClusterDetails
+        """
+        self._cluster_details = cluster_details
 
     @property
     def approximate_application_count(self):

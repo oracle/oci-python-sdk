@@ -57,6 +57,10 @@ class MaskDataDetails(object):
             The value to assign to the seed property of this MaskDataDetails.
         :type seed: str
 
+        :param user_defined_function_seed:
+            The value to assign to the user_defined_function_seed property of this MaskDataDetails.
+        :type user_defined_function_seed: str
+
         :param is_move_interim_tables_enabled:
             The value to assign to the is_move_interim_tables_enabled property of this MaskDataDetails.
         :type is_move_interim_tables_enabled: bool
@@ -94,6 +98,7 @@ class MaskDataDetails(object):
             'tablespace': 'str',
             'is_ignore_errors_enabled': 'bool',
             'seed': 'str',
+            'user_defined_function_seed': 'str',
             'is_move_interim_tables_enabled': 'bool',
             'is_execute_saved_script_enabled': 'bool',
             'is_drop_temp_tables_enabled': 'bool',
@@ -110,6 +115,7 @@ class MaskDataDetails(object):
             'tablespace': 'tablespace',
             'is_ignore_errors_enabled': 'isIgnoreErrorsEnabled',
             'seed': 'seed',
+            'user_defined_function_seed': 'userDefinedFunctionSeed',
             'is_move_interim_tables_enabled': 'isMoveInterimTablesEnabled',
             'is_execute_saved_script_enabled': 'isExecuteSavedScriptEnabled',
             'is_drop_temp_tables_enabled': 'isDropTempTablesEnabled',
@@ -125,6 +131,7 @@ class MaskDataDetails(object):
         self._tablespace = None
         self._is_ignore_errors_enabled = None
         self._seed = None
+        self._user_defined_function_seed = None
         self._is_move_interim_tables_enabled = None
         self._is_execute_saved_script_enabled = None
         self._is_drop_temp_tables_enabled = None
@@ -333,6 +340,30 @@ class MaskDataDetails(object):
         :type: str
         """
         self._seed = seed
+
+    @property
+    def user_defined_function_seed(self):
+        """
+        Gets the user_defined_function_seed of this MaskDataDetails.
+        The seed value to be used in case of User Defined Function masking format. This is an optional parameter and needs to be passed only if any User Defined Function uses seed.
+
+
+        :return: The user_defined_function_seed of this MaskDataDetails.
+        :rtype: str
+        """
+        return self._user_defined_function_seed
+
+    @user_defined_function_seed.setter
+    def user_defined_function_seed(self, user_defined_function_seed):
+        """
+        Sets the user_defined_function_seed of this MaskDataDetails.
+        The seed value to be used in case of User Defined Function masking format. This is an optional parameter and needs to be passed only if any User Defined Function uses seed.
+
+
+        :param user_defined_function_seed: The user_defined_function_seed of this MaskDataDetails.
+        :type: str
+        """
+        self._user_defined_function_seed = user_defined_function_seed
 
     @property
     def is_move_interim_tables_enabled(self):

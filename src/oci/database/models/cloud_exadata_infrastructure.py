@@ -206,6 +206,10 @@ class CloudExadataInfrastructure(object):
             The value to assign to the is_scheduling_policy_associated property of this CloudExadataInfrastructure.
         :type is_scheduling_policy_associated: bool
 
+        :param exascale_config:
+            The value to assign to the exascale_config property of this CloudExadataInfrastructure.
+        :type exascale_config: oci.database.models.ExascaleConfigDetails
+
         :param database_server_type:
             The value to assign to the database_server_type property of this CloudExadataInfrastructure.
         :type database_server_type: str
@@ -259,6 +263,7 @@ class CloudExadataInfrastructure(object):
             'monthly_db_server_version': 'str',
             'defined_file_system_configurations': 'list[DefinedFileSystemConfiguration]',
             'is_scheduling_policy_associated': 'bool',
+            'exascale_config': 'ExascaleConfigDetails',
             'database_server_type': 'str',
             'storage_server_type': 'str',
             'compute_model': 'str'
@@ -301,6 +306,7 @@ class CloudExadataInfrastructure(object):
             'monthly_db_server_version': 'monthlyDbServerVersion',
             'defined_file_system_configurations': 'definedFileSystemConfigurations',
             'is_scheduling_policy_associated': 'isSchedulingPolicyAssociated',
+            'exascale_config': 'exascaleConfig',
             'database_server_type': 'databaseServerType',
             'storage_server_type': 'storageServerType',
             'compute_model': 'computeModel'
@@ -342,6 +348,7 @@ class CloudExadataInfrastructure(object):
         self._monthly_db_server_version = None
         self._defined_file_system_configurations = None
         self._is_scheduling_policy_associated = None
+        self._exascale_config = None
         self._database_server_type = None
         self._storage_server_type = None
         self._compute_model = None
@@ -1293,6 +1300,26 @@ class CloudExadataInfrastructure(object):
         :type: bool
         """
         self._is_scheduling_policy_associated = is_scheduling_policy_associated
+
+    @property
+    def exascale_config(self):
+        """
+        Gets the exascale_config of this CloudExadataInfrastructure.
+
+        :return: The exascale_config of this CloudExadataInfrastructure.
+        :rtype: oci.database.models.ExascaleConfigDetails
+        """
+        return self._exascale_config
+
+    @exascale_config.setter
+    def exascale_config(self, exascale_config):
+        """
+        Sets the exascale_config of this CloudExadataInfrastructure.
+
+        :param exascale_config: The exascale_config of this CloudExadataInfrastructure.
+        :type: oci.database.models.ExascaleConfigDetails
+        """
+        self._exascale_config = exascale_config
 
     @property
     def database_server_type(self):

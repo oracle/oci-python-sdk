@@ -15,6 +15,18 @@ class GenerateAgentInstallerConfigurationDetails(object):
     Attributes to generate agent installer parameters for a fleet.
     """
 
+    #: A constant which can be used with the agent_type property of a GenerateAgentInstallerConfigurationDetails.
+    #: This constant has a value of "OMA"
+    AGENT_TYPE_OMA = "OMA"
+
+    #: A constant which can be used with the agent_type property of a GenerateAgentInstallerConfigurationDetails.
+    #: This constant has a value of "OCA"
+    AGENT_TYPE_OCA = "OCA"
+
+    #: A constant which can be used with the agent_type property of a GenerateAgentInstallerConfigurationDetails.
+    #: This constant has a value of "OCMA"
+    AGENT_TYPE_OCMA = "OCMA"
+
     def __init__(self, **kwargs):
         """
         Initializes a new GenerateAgentInstallerConfigurationDetails object with values from keyword arguments.
@@ -28,17 +40,25 @@ class GenerateAgentInstallerConfigurationDetails(object):
             The value to assign to the fleet_id property of this GenerateAgentInstallerConfigurationDetails.
         :type fleet_id: str
 
+        :param agent_type:
+            The value to assign to the agent_type property of this GenerateAgentInstallerConfigurationDetails.
+            Allowed values for this property are: "OMA", "OCA", "OCMA"
+        :type agent_type: str
+
         """
         self.swagger_types = {
             'install_key_id': 'str',
-            'fleet_id': 'str'
+            'fleet_id': 'str',
+            'agent_type': 'str'
         }
         self.attribute_map = {
             'install_key_id': 'installKeyId',
-            'fleet_id': 'fleetId'
+            'fleet_id': 'fleetId',
+            'agent_type': 'agentType'
         }
         self._install_key_id = None
         self._fleet_id = None
+        self._agent_type = None
 
     @property
     def install_key_id(self):
@@ -95,6 +115,37 @@ class GenerateAgentInstallerConfigurationDetails(object):
         :type: str
         """
         self._fleet_id = fleet_id
+
+    @property
+    def agent_type(self):
+        """
+        Gets the agent_type of this GenerateAgentInstallerConfigurationDetails.
+        The JMS plugin type.
+
+        Allowed values for this property are: "OMA", "OCA", "OCMA"
+
+
+        :return: The agent_type of this GenerateAgentInstallerConfigurationDetails.
+        :rtype: str
+        """
+        return self._agent_type
+
+    @agent_type.setter
+    def agent_type(self, agent_type):
+        """
+        Sets the agent_type of this GenerateAgentInstallerConfigurationDetails.
+        The JMS plugin type.
+
+
+        :param agent_type: The agent_type of this GenerateAgentInstallerConfigurationDetails.
+        :type: str
+        """
+        allowed_values = ["OMA", "OCA", "OCMA"]
+        if not value_allowed_none_or_none_sentinel(agent_type, allowed_values):
+            raise ValueError(
+                f"Invalid value for `agent_type`, must be None or one of {allowed_values}"
+            )
+        self._agent_type = agent_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

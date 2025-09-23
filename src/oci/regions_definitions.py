@@ -55,6 +55,7 @@ REGIONS_SHORT_NAMES = {
     'nja': 'ap-chiyoda-1',
     'ukb': 'ap-ibaraki-1',
     'mct': 'me-dcc-muscat-1',
+    'ibr': 'me-ibri-1',
     'wga': 'ap-dcc-canberra-1',
     'bgy': 'eu-dcc-milan-1',
     'mxp': 'eu-dcc-milan-2',
@@ -140,6 +141,7 @@ REGION_REALMS = {
     'ap-ibaraki-1': 'oc8',
 
     'me-dcc-muscat-1': 'oc9',
+    'me-ibri-1': 'oc9',
 
     'ap-dcc-canberra-1': 'oc10',
 
@@ -254,6 +256,7 @@ REGIONS = [
     'ap-chiyoda-1',
     'ap-ibaraki-1',
     'me-dcc-muscat-1',
+    'me-ibri-1',
     'ap-dcc-canberra-1',
     'eu-dcc-milan-1',
     'eu-dcc-milan-2',

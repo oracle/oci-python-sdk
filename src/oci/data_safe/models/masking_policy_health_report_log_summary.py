@@ -91,6 +91,10 @@ class MaskingPolicyHealthReportLogSummary(object):
     #: This constant has a value of "TIME_TRAVEL_CHECK"
     HEALTH_CHECK_TYPE_TIME_TRAVEL_CHECK = "TIME_TRAVEL_CHECK"
 
+    #: A constant which can be used with the health_check_type property of a MaskingPolicyHealthReportLogSummary.
+    #: This constant has a value of "INVALID_PACKAGE_CHECK"
+    HEALTH_CHECK_TYPE_INVALID_PACKAGE_CHECK = "INVALID_PACKAGE_CHECK"
+
     def __init__(self, **kwargs):
         """
         Initializes a new MaskingPolicyHealthReportLogSummary object with values from keyword arguments.
@@ -120,7 +124,7 @@ class MaskingPolicyHealthReportLogSummary(object):
 
         :param health_check_type:
             The value to assign to the health_check_type property of this MaskingPolicyHealthReportLogSummary.
-            Allowed values for this property are: "INVALID_OBJECT_CHECK", "PRIVILEGE_CHECK", "TABLESPACE_CHECK", "DATABASE_OR_SYSTEM_TRIGGERS_CHECK", "UNDO_TABLESPACE_CHECK", "STATE_STATS_CHECK", "OLS_POLICY_CHECK", "VPD_POLICY_CHECK", "DV_ENABLE_CHECK", "DE_COL_SIZE_CHECK", "REDACTION_POLICY_CHECK", "ACTIVE_MASK_JOB_CHECK", "TARGET_VALIDATION_CHECK", "DETERMINISTIC_ENCRYPTION_FORMAT_CHECK", "COLUMN_EXIST_CHECK", "TIME_TRAVEL_CHECK", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "INVALID_OBJECT_CHECK", "PRIVILEGE_CHECK", "TABLESPACE_CHECK", "DATABASE_OR_SYSTEM_TRIGGERS_CHECK", "UNDO_TABLESPACE_CHECK", "STATE_STATS_CHECK", "OLS_POLICY_CHECK", "VPD_POLICY_CHECK", "DV_ENABLE_CHECK", "DE_COL_SIZE_CHECK", "REDACTION_POLICY_CHECK", "ACTIVE_MASK_JOB_CHECK", "TARGET_VALIDATION_CHECK", "DETERMINISTIC_ENCRYPTION_FORMAT_CHECK", "COLUMN_EXIST_CHECK", "TIME_TRAVEL_CHECK", "INVALID_PACKAGE_CHECK", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type health_check_type: str
 
@@ -285,9 +289,10 @@ class MaskingPolicyHealthReportLogSummary(object):
         An enum type entry for each health check in the masking policy. Each enum describes a type of health check.
         INVALID_OBJECT_CHECK checks if there exist any invalid objects in the masking tables.
         PRIVILEGE_CHECK checks if the masking user has sufficient privilege to run masking.
-        TABLESPACE_CHECK checks if the user has sufficient default and TEMP tablespace.
+        TABLESPACE_CHECK checks if the user has sufficient default and TEMP tablespace. Also verifies that the specified tablespace by the user is valid, if user has provided one
         DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system triggers available.
-        UNDO_TABLESPACE_CHECK checks if the AUTOEXTEND feature is enabled for the undo tablespace. If it's not enabled, it further checks if the undo tablespace has any space remaining
+        UNDO_TABLESPACE_CHECK checks if for all the instances of undo tablespace the AUTOEXTEND feature is enabled.
+        If it's not enabled, it further checks if the undo tablespace has any space remaining.
         STATE_STATS_CHECK checks if all the statistics of the masking table is upto date or not.
         OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK checks if the masking tables has Oracle Label Security (OLS) or Virtual Private Database (VPD) or Redaction policies enabled.
         DV_ENABLE_CHECK checks if database has Database Vault(DV) enabled
@@ -296,8 +301,9 @@ class MaskingPolicyHealthReportLogSummary(object):
         DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has deterministic encryption masking format.
         COLUMN_EXIST_CHECK checks if the masking columns are available in the target database.
         TIME_TRAVEL_CHECK checks if the masking tables have Time Travel enabled.
+        INVALID_PACKAGE_CHECK checks if any of the required packages are in invalid state.
 
-        Allowed values for this property are: "INVALID_OBJECT_CHECK", "PRIVILEGE_CHECK", "TABLESPACE_CHECK", "DATABASE_OR_SYSTEM_TRIGGERS_CHECK", "UNDO_TABLESPACE_CHECK", "STATE_STATS_CHECK", "OLS_POLICY_CHECK", "VPD_POLICY_CHECK", "DV_ENABLE_CHECK", "DE_COL_SIZE_CHECK", "REDACTION_POLICY_CHECK", "ACTIVE_MASK_JOB_CHECK", "TARGET_VALIDATION_CHECK", "DETERMINISTIC_ENCRYPTION_FORMAT_CHECK", "COLUMN_EXIST_CHECK", "TIME_TRAVEL_CHECK", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "INVALID_OBJECT_CHECK", "PRIVILEGE_CHECK", "TABLESPACE_CHECK", "DATABASE_OR_SYSTEM_TRIGGERS_CHECK", "UNDO_TABLESPACE_CHECK", "STATE_STATS_CHECK", "OLS_POLICY_CHECK", "VPD_POLICY_CHECK", "DV_ENABLE_CHECK", "DE_COL_SIZE_CHECK", "REDACTION_POLICY_CHECK", "ACTIVE_MASK_JOB_CHECK", "TARGET_VALIDATION_CHECK", "DETERMINISTIC_ENCRYPTION_FORMAT_CHECK", "COLUMN_EXIST_CHECK", "TIME_TRAVEL_CHECK", "INVALID_PACKAGE_CHECK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -313,9 +319,10 @@ class MaskingPolicyHealthReportLogSummary(object):
         An enum type entry for each health check in the masking policy. Each enum describes a type of health check.
         INVALID_OBJECT_CHECK checks if there exist any invalid objects in the masking tables.
         PRIVILEGE_CHECK checks if the masking user has sufficient privilege to run masking.
-        TABLESPACE_CHECK checks if the user has sufficient default and TEMP tablespace.
+        TABLESPACE_CHECK checks if the user has sufficient default and TEMP tablespace. Also verifies that the specified tablespace by the user is valid, if user has provided one
         DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system triggers available.
-        UNDO_TABLESPACE_CHECK checks if the AUTOEXTEND feature is enabled for the undo tablespace. If it's not enabled, it further checks if the undo tablespace has any space remaining
+        UNDO_TABLESPACE_CHECK checks if for all the instances of undo tablespace the AUTOEXTEND feature is enabled.
+        If it's not enabled, it further checks if the undo tablespace has any space remaining.
         STATE_STATS_CHECK checks if all the statistics of the masking table is upto date or not.
         OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK checks if the masking tables has Oracle Label Security (OLS) or Virtual Private Database (VPD) or Redaction policies enabled.
         DV_ENABLE_CHECK checks if database has Database Vault(DV) enabled
@@ -324,12 +331,13 @@ class MaskingPolicyHealthReportLogSummary(object):
         DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has deterministic encryption masking format.
         COLUMN_EXIST_CHECK checks if the masking columns are available in the target database.
         TIME_TRAVEL_CHECK checks if the masking tables have Time Travel enabled.
+        INVALID_PACKAGE_CHECK checks if any of the required packages are in invalid state.
 
 
         :param health_check_type: The health_check_type of this MaskingPolicyHealthReportLogSummary.
         :type: str
         """
-        allowed_values = ["INVALID_OBJECT_CHECK", "PRIVILEGE_CHECK", "TABLESPACE_CHECK", "DATABASE_OR_SYSTEM_TRIGGERS_CHECK", "UNDO_TABLESPACE_CHECK", "STATE_STATS_CHECK", "OLS_POLICY_CHECK", "VPD_POLICY_CHECK", "DV_ENABLE_CHECK", "DE_COL_SIZE_CHECK", "REDACTION_POLICY_CHECK", "ACTIVE_MASK_JOB_CHECK", "TARGET_VALIDATION_CHECK", "DETERMINISTIC_ENCRYPTION_FORMAT_CHECK", "COLUMN_EXIST_CHECK", "TIME_TRAVEL_CHECK"]
+        allowed_values = ["INVALID_OBJECT_CHECK", "PRIVILEGE_CHECK", "TABLESPACE_CHECK", "DATABASE_OR_SYSTEM_TRIGGERS_CHECK", "UNDO_TABLESPACE_CHECK", "STATE_STATS_CHECK", "OLS_POLICY_CHECK", "VPD_POLICY_CHECK", "DV_ENABLE_CHECK", "DE_COL_SIZE_CHECK", "REDACTION_POLICY_CHECK", "ACTIVE_MASK_JOB_CHECK", "TARGET_VALIDATION_CHECK", "DETERMINISTIC_ENCRYPTION_FORMAT_CHECK", "COLUMN_EXIST_CHECK", "TIME_TRAVEL_CHECK", "INVALID_PACKAGE_CHECK"]
         if not value_allowed_none_or_none_sentinel(health_check_type, allowed_values):
             health_check_type = 'UNKNOWN_ENUM_VALUE'
         self._health_check_type = health_check_type

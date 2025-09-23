@@ -16,6 +16,26 @@ class InstallationUsage(object):
     An installation is a collection of deployed instances of a specific Java Runtime that share the same install path.
     """
 
+    #: A constant which can be used with the security_status property of a InstallationUsage.
+    #: This constant has a value of "EARLY_ACCESS"
+    SECURITY_STATUS_EARLY_ACCESS = "EARLY_ACCESS"
+
+    #: A constant which can be used with the security_status property of a InstallationUsage.
+    #: This constant has a value of "UNKNOWN"
+    SECURITY_STATUS_UNKNOWN = "UNKNOWN"
+
+    #: A constant which can be used with the security_status property of a InstallationUsage.
+    #: This constant has a value of "UP_TO_DATE"
+    SECURITY_STATUS_UP_TO_DATE = "UP_TO_DATE"
+
+    #: A constant which can be used with the security_status property of a InstallationUsage.
+    #: This constant has a value of "UPDATE_REQUIRED"
+    SECURITY_STATUS_UPDATE_REQUIRED = "UPDATE_REQUIRED"
+
+    #: A constant which can be used with the security_status property of a InstallationUsage.
+    #: This constant has a value of "UPGRADE_REQUIRED"
+    SECURITY_STATUS_UPGRADE_REQUIRED = "UPGRADE_REQUIRED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new InstallationUsage object with values from keyword arguments.
@@ -36,6 +56,12 @@ class InstallationUsage(object):
         :param jre_version:
             The value to assign to the jre_version property of this InstallationUsage.
         :type jre_version: str
+
+        :param security_status:
+            The value to assign to the security_status property of this InstallationUsage.
+            Allowed values for this property are: "EARLY_ACCESS", "UNKNOWN", "UP_TO_DATE", "UPDATE_REQUIRED", "UPGRADE_REQUIRED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type security_status: str
 
         :param path:
             The value to assign to the path property of this InstallationUsage.
@@ -83,6 +109,7 @@ class InstallationUsage(object):
             'jre_vendor': 'str',
             'jre_distribution': 'str',
             'jre_version': 'str',
+            'security_status': 'str',
             'path': 'str',
             'os': 'str',
             'architecture': 'str',
@@ -99,6 +126,7 @@ class InstallationUsage(object):
             'jre_vendor': 'jreVendor',
             'jre_distribution': 'jreDistribution',
             'jre_version': 'jreVersion',
+            'security_status': 'securityStatus',
             'path': 'path',
             'os': 'os',
             'architecture': 'architecture',
@@ -114,6 +142,7 @@ class InstallationUsage(object):
         self._jre_vendor = None
         self._jre_distribution = None
         self._jre_version = None
+        self._security_status = None
         self._path = None
         self._os = None
         self._architecture = None
@@ -220,6 +249,36 @@ class InstallationUsage(object):
         :type: str
         """
         self._jre_version = jre_version
+
+    @property
+    def security_status(self):
+        """
+        Gets the security_status of this InstallationUsage.
+        The security status of the Java Runtime.
+
+        Allowed values for this property are: "EARLY_ACCESS", "UNKNOWN", "UP_TO_DATE", "UPDATE_REQUIRED", "UPGRADE_REQUIRED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The security_status of this InstallationUsage.
+        :rtype: str
+        """
+        return self._security_status
+
+    @security_status.setter
+    def security_status(self, security_status):
+        """
+        Sets the security_status of this InstallationUsage.
+        The security status of the Java Runtime.
+
+
+        :param security_status: The security_status of this InstallationUsage.
+        :type: str
+        """
+        allowed_values = ["EARLY_ACCESS", "UNKNOWN", "UP_TO_DATE", "UPDATE_REQUIRED", "UPGRADE_REQUIRED"]
+        if not value_allowed_none_or_none_sentinel(security_status, allowed_values):
+            security_status = 'UNKNOWN_ENUM_VALUE'
+        self._security_status = security_status
 
     @property
     def path(self):

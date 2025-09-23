@@ -66,6 +66,22 @@ class DiscoveryJobResult(object):
     #: This constant has a value of "REJECT"
     PLANNED_ACTION_REJECT = "REJECT"
 
+    #: A constant which can be used with the confidence_level property of a DiscoveryJobResult.
+    #: This constant has a value of "NONE"
+    CONFIDENCE_LEVEL_NONE = "NONE"
+
+    #: A constant which can be used with the confidence_level property of a DiscoveryJobResult.
+    #: This constant has a value of "HIGH"
+    CONFIDENCE_LEVEL_HIGH = "HIGH"
+
+    #: A constant which can be used with the confidence_level property of a DiscoveryJobResult.
+    #: This constant has a value of "MEDIUM"
+    CONFIDENCE_LEVEL_MEDIUM = "MEDIUM"
+
+    #: A constant which can be used with the confidence_level property of a DiscoveryJobResult.
+    #: This constant has a value of "LOW"
+    CONFIDENCE_LEVEL_LOW = "LOW"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DiscoveryJobResult object with values from keyword arguments.
@@ -159,6 +175,16 @@ class DiscoveryJobResult(object):
             The value to assign to the modified_attributes property of this DiscoveryJobResult.
         :type modified_attributes: oci.data_safe.models.ModifiedAttributes
 
+        :param confidence_level:
+            The value to assign to the confidence_level property of this DiscoveryJobResult.
+            Allowed values for this property are: "NONE", "HIGH", "MEDIUM", "LOW", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type confidence_level: str
+
+        :param confidence_level_details:
+            The value to assign to the confidence_level_details property of this DiscoveryJobResult.
+        :type confidence_level_details: list[object]
+
         """
         self.swagger_types = {
             'key': 'str',
@@ -180,7 +206,9 @@ class DiscoveryJobResult(object):
             'planned_action': 'str',
             'is_result_applied': 'bool',
             'discovery_job_id': 'str',
-            'modified_attributes': 'ModifiedAttributes'
+            'modified_attributes': 'ModifiedAttributes',
+            'confidence_level': 'str',
+            'confidence_level_details': 'list[object]'
         }
         self.attribute_map = {
             'key': 'key',
@@ -202,7 +230,9 @@ class DiscoveryJobResult(object):
             'planned_action': 'plannedAction',
             'is_result_applied': 'isResultApplied',
             'discovery_job_id': 'discoveryJobId',
-            'modified_attributes': 'modifiedAttributes'
+            'modified_attributes': 'modifiedAttributes',
+            'confidence_level': 'confidenceLevel',
+            'confidence_level_details': 'confidenceLevelDetails'
         }
         self._key = None
         self._discovery_type = None
@@ -224,6 +254,8 @@ class DiscoveryJobResult(object):
         self._is_result_applied = None
         self._discovery_job_id = None
         self._modified_attributes = None
+        self._confidence_level = None
+        self._confidence_level_details = None
 
     @property
     def key(self):
@@ -750,6 +782,64 @@ class DiscoveryJobResult(object):
         :type: oci.data_safe.models.ModifiedAttributes
         """
         self._modified_attributes = modified_attributes
+
+    @property
+    def confidence_level(self):
+        """
+        Gets the confidence_level of this DiscoveryJobResult.
+        The confidence level of the discovery job result associated with the sensitive type.
+        The confidence level for discovery job results can be either HIGH, MEDIUM or LOW.
+
+        Allowed values for this property are: "NONE", "HIGH", "MEDIUM", "LOW", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The confidence_level of this DiscoveryJobResult.
+        :rtype: str
+        """
+        return self._confidence_level
+
+    @confidence_level.setter
+    def confidence_level(self, confidence_level):
+        """
+        Sets the confidence_level of this DiscoveryJobResult.
+        The confidence level of the discovery job result associated with the sensitive type.
+        The confidence level for discovery job results can be either HIGH, MEDIUM or LOW.
+
+
+        :param confidence_level: The confidence_level of this DiscoveryJobResult.
+        :type: str
+        """
+        allowed_values = ["NONE", "HIGH", "MEDIUM", "LOW"]
+        if not value_allowed_none_or_none_sentinel(confidence_level, allowed_values):
+            confidence_level = 'UNKNOWN_ENUM_VALUE'
+        self._confidence_level = confidence_level
+
+    @property
+    def confidence_level_details(self):
+        """
+        Gets the confidence_level_details of this DiscoveryJobResult.
+        List containing maps as values.
+        Example: `{\"Operations\": [ {\"CostCenter\": \"42\"} ] }`
+
+
+        :return: The confidence_level_details of this DiscoveryJobResult.
+        :rtype: list[object]
+        """
+        return self._confidence_level_details
+
+    @confidence_level_details.setter
+    def confidence_level_details(self, confidence_level_details):
+        """
+        Sets the confidence_level_details of this DiscoveryJobResult.
+        List containing maps as values.
+        Example: `{\"Operations\": [ {\"CostCenter\": \"42\"} ] }`
+
+
+        :param confidence_level_details: The confidence_level_details of this DiscoveryJobResult.
+        :type: list[object]
+        """
+        self._confidence_level_details = confidence_level_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

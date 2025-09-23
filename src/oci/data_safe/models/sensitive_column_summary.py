@@ -71,6 +71,22 @@ class SensitiveColumnSummary(object):
     #: This constant has a value of "DB_DEFINED"
     RELATION_TYPE_DB_DEFINED = "DB_DEFINED"
 
+    #: A constant which can be used with the confidence_level property of a SensitiveColumnSummary.
+    #: This constant has a value of "NONE"
+    CONFIDENCE_LEVEL_NONE = "NONE"
+
+    #: A constant which can be used with the confidence_level property of a SensitiveColumnSummary.
+    #: This constant has a value of "HIGH"
+    CONFIDENCE_LEVEL_HIGH = "HIGH"
+
+    #: A constant which can be used with the confidence_level property of a SensitiveColumnSummary.
+    #: This constant has a value of "MEDIUM"
+    CONFIDENCE_LEVEL_MEDIUM = "MEDIUM"
+
+    #: A constant which can be used with the confidence_level property of a SensitiveColumnSummary.
+    #: This constant has a value of "LOW"
+    CONFIDENCE_LEVEL_LOW = "LOW"
+
     def __init__(self, **kwargs):
         """
         Initializes a new SensitiveColumnSummary object with values from keyword arguments.
@@ -158,6 +174,12 @@ class SensitiveColumnSummary(object):
             The value to assign to the estimated_data_value_count property of this SensitiveColumnSummary.
         :type estimated_data_value_count: int
 
+        :param confidence_level:
+            The value to assign to the confidence_level property of this SensitiveColumnSummary.
+            Allowed values for this property are: "NONE", "HIGH", "MEDIUM", "LOW", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type confidence_level: str
+
         :param sample_data_values:
             The value to assign to the sample_data_values property of this SensitiveColumnSummary.
         :type sample_data_values: list[str]
@@ -182,6 +204,7 @@ class SensitiveColumnSummary(object):
             'parent_column_keys': 'list[str]',
             'relation_type': 'str',
             'estimated_data_value_count': 'int',
+            'confidence_level': 'str',
             'sample_data_values': 'list[str]'
         }
         self.attribute_map = {
@@ -203,6 +226,7 @@ class SensitiveColumnSummary(object):
             'parent_column_keys': 'parentColumnKeys',
             'relation_type': 'relationType',
             'estimated_data_value_count': 'estimatedDataValueCount',
+            'confidence_level': 'confidenceLevel',
             'sample_data_values': 'sampleDataValues'
         }
         self._key = None
@@ -223,6 +247,7 @@ class SensitiveColumnSummary(object):
         self._parent_column_keys = None
         self._relation_type = None
         self._estimated_data_value_count = None
+        self._confidence_level = None
         self._sample_data_values = None
 
     @property
@@ -710,6 +735,40 @@ class SensitiveColumnSummary(object):
         :type: int
         """
         self._estimated_data_value_count = estimated_data_value_count
+
+    @property
+    def confidence_level(self):
+        """
+        Gets the confidence_level of this SensitiveColumnSummary.
+        The confidence level of the sensitive column associated with the sensitive type.
+        The confidence level of the discovered sensitive columns can be either HIGH, MEDIUM or LOW.
+        The confidence level will be NONE for manually added sensitive columns.
+
+        Allowed values for this property are: "NONE", "HIGH", "MEDIUM", "LOW", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The confidence_level of this SensitiveColumnSummary.
+        :rtype: str
+        """
+        return self._confidence_level
+
+    @confidence_level.setter
+    def confidence_level(self, confidence_level):
+        """
+        Sets the confidence_level of this SensitiveColumnSummary.
+        The confidence level of the sensitive column associated with the sensitive type.
+        The confidence level of the discovered sensitive columns can be either HIGH, MEDIUM or LOW.
+        The confidence level will be NONE for manually added sensitive columns.
+
+
+        :param confidence_level: The confidence_level of this SensitiveColumnSummary.
+        :type: str
+        """
+        allowed_values = ["NONE", "HIGH", "MEDIUM", "LOW"]
+        if not value_allowed_none_or_none_sentinel(confidence_level, allowed_values):
+            confidence_level = 'UNKNOWN_ENUM_VALUE'
+        self._confidence_level = confidence_level
 
     @property
     def sample_data_values(self):

@@ -42,7 +42,8 @@ class NewInstallationSite(object):
 
         :param artifact_content_type:
             The value to assign to the artifact_content_type property of this NewInstallationSite.
-            Allowed values for this property are: "JDK", "JRE", "SERVER_JRE"
+            Allowed values for this property are: "JDK", "JRE", "SERVER_JRE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type artifact_content_type: str
 
         :param installation_path:
@@ -139,7 +140,8 @@ class NewInstallationSite(object):
         Gets the artifact_content_type of this NewInstallationSite.
         Artifact content type for the Java version.
 
-        Allowed values for this property are: "JDK", "JRE", "SERVER_JRE"
+        Allowed values for this property are: "JDK", "JRE", "SERVER_JRE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The artifact_content_type of this NewInstallationSite.
@@ -159,9 +161,7 @@ class NewInstallationSite(object):
         """
         allowed_values = ["JDK", "JRE", "SERVER_JRE"]
         if not value_allowed_none_or_none_sentinel(artifact_content_type, allowed_values):
-            raise ValueError(
-                f"Invalid value for `artifact_content_type`, must be None or one of {allowed_values}"
-            )
+            artifact_content_type = 'UNKNOWN_ENUM_VALUE'
         self._artifact_content_type = artifact_content_type
 
     @property

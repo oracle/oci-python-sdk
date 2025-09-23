@@ -131,6 +131,7 @@ API Reference
 * :doc:`Invoice Summary <onesubscription/client/oci.onesubscription.InvoiceSummaryClient>`
 * :doc:`Java Download <jms_java_downloads/client/oci.jms_java_downloads.JavaDownloadClient>`
 * :doc:`Java Management Service <jms/client/oci.jms.JavaManagementServiceClient>`
+* :doc:`Jms Utils <jms_utils/client/oci.jms_utils.JmsUtilsClient>`
 * :doc:`Kafka Cluster <managed_kafka/client/oci.managed_kafka.KafkaClusterClient>`
 * :doc:`Kms Crypto <key_management/client/oci.key_management.KmsCryptoClient>`
 * :doc:`Kms Hsm Cluster <key_management/client/oci.key_management.KmsHsmClusterClient>`
@@ -162,6 +163,7 @@ API Reference
 * :doc:`Metadata <multicloud/client/oci.multicloud.MetadataClient>`
 * :doc:`Migration <cloud_migrations/client/oci.cloud_migrations.MigrationClient>`
 * :doc:`Model Deployment <model_deployment/client/oci.model_deployment.ModelDeploymentClient>`
+* :doc:`Monitored Region <resource_analytics/client/oci.resource_analytics.MonitoredRegionClient>`
 * :doc:`Monitoring <monitoring/client/oci.monitoring.MonitoringClient>`
 * :doc:`Multi Cloud Resource Discovery <dbmulticloud/client/oci.dbmulticloud.MultiCloudResourceDiscoveryClient>`
 * :doc:`Multi Clouds Metadata <multicloud/client/oci.multicloud.MultiCloudsMetadataClient>`
@@ -223,6 +225,7 @@ API Reference
 * :doc:`Redis Identity <redis/client/oci.redis.RedisIdentityClient>`
 * :doc:`Replicas <mysql/client/oci.mysql.ReplicasClient>`
 * :doc:`Reporting Managed Instance <os_management_hub/client/oci.os_management_hub.ReportingManagedInstanceClient>`
+* :doc:`Resource Analytics Instance <resource_analytics/client/oci.resource_analytics.ResourceAnalyticsInstanceClient>`
 * :doc:`Resource Manager <resource_manager/client/oci.resource_manager.ResourceManagerClient>`
 * :doc:`Resource Search <resource_search/client/oci.resource_search.ResourceSearchClient>`
 * :doc:`Resources <usage/client/oci.usage.ResourcesClient>`
@@ -255,6 +258,7 @@ API Reference
 * :doc:`Subscription <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.SubscriptionClient>`
 * :doc:`Subscription <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.SubscriptionClient>`
 * :doc:`Subscription Service <osp_gateway/client/oci.osp_gateway.SubscriptionServiceClient>`
+* :doc:`Tenancy Attachment <resource_analytics/client/oci.resource_analytics.TenancyAttachmentClient>`
 * :doc:`Threatintel <threat_intelligence/client/oci.threat_intelligence.ThreatintelClient>`
 * :doc:`Trace <apm_traces/client/oci.apm_traces.TraceClient>`
 * :doc:`Usage Plans <apigateway/client/oci.apigateway.UsagePlansClient>`
@@ -384,6 +388,7 @@ API Reference
     integration
     jms
     jms_java_downloads
+    jms_utils
     key_management
     license_manager
     limits
@@ -431,6 +436,7 @@ API Reference
     queue
     recovery
     redis
+    resource_analytics
     resource_manager
     resource_scheduler
     resource_search

@@ -110,6 +110,10 @@ class ExportSetting(object):
             The value to assign to the time_last_modified property of this ExportSetting.
         :type time_last_modified: datetime
 
+        :param export_data_filters:
+            The value to assign to the export_data_filters property of this ExportSetting.
+        :type export_data_filters: oci.jms.models.ExportDataFilters
+
         """
         self.swagger_types = {
             'export_setting_key': 'str',
@@ -123,7 +127,8 @@ class ExportSetting(object):
             'export_frequency': 'str',
             'is_enabled': 'bool',
             'time_created': 'datetime',
-            'time_last_modified': 'datetime'
+            'time_last_modified': 'datetime',
+            'export_data_filters': 'ExportDataFilters'
         }
         self.attribute_map = {
             'export_setting_key': 'exportSettingKey',
@@ -137,7 +142,8 @@ class ExportSetting(object):
             'export_frequency': 'exportFrequency',
             'is_enabled': 'isEnabled',
             'time_created': 'timeCreated',
-            'time_last_modified': 'timeLastModified'
+            'time_last_modified': 'timeLastModified',
+            'export_data_filters': 'exportDataFilters'
         }
         self._export_setting_key = None
         self._fleet_id = None
@@ -151,6 +157,7 @@ class ExportSetting(object):
         self._is_enabled = None
         self._time_created = None
         self._time_last_modified = None
+        self._export_data_filters = None
 
     @property
     def export_setting_key(self):
@@ -469,6 +476,26 @@ class ExportSetting(object):
         :type: datetime
         """
         self._time_last_modified = time_last_modified
+
+    @property
+    def export_data_filters(self):
+        """
+        Gets the export_data_filters of this ExportSetting.
+
+        :return: The export_data_filters of this ExportSetting.
+        :rtype: oci.jms.models.ExportDataFilters
+        """
+        return self._export_data_filters
+
+    @export_data_filters.setter
+    def export_data_filters(self, export_data_filters):
+        """
+        Sets the export_data_filters of this ExportSetting.
+
+        :param export_data_filters: The export_data_filters of this ExportSetting.
+        :type: oci.jms.models.ExportDataFilters
+        """
+        self._export_data_filters = export_data_filters
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -28,7 +28,7 @@ class ApplicationWorkItemDetails(WorkItemDetails):
 
         :param work_item_type:
             The value to assign to the work_item_type property of this ApplicationWorkItemDetails.
-            Allowed values for this property are: "LCM", "JFR_CAPTURE", "JFR_UPLOAD", "CRYPTO_ANALYSIS", "CRYPTO_ANALYSIS_MERGE", "ADVANCED_USAGE_TRACKING", "ADV_USAGE_SERVER_METADATA", "ADV_USAGE_SERVER_LIBRARIES", "ADV_USAGE_JAVA_LIBRARIES", "PERFORMANCE_TUNING", "JMIGRATE_ANALYSIS", "JMIGRATE_CREATE_REPORT", "DRS"
+            Allowed values for this property are: "LCM", "JFR_CAPTURE", "JFR_UPLOAD", "CRYPTO_ANALYSIS", "CRYPTO_ANALYSIS_MERGE", "ADVANCED_USAGE_TRACKING", "ADV_USAGE_SERVER_METADATA", "ADV_USAGE_SERVER_LIBRARIES", "ADV_USAGE_JAVA_LIBRARIES", "ADV_USAGE_JAVA_LIBRARIES_DYNAMIC", "PERFORMANCE_TUNING", "JMIGRATE_ANALYSIS", "JMIGRATE_CREATE_REPORT", "DRS"
         :type work_item_type: str
 
         :param application_key:
@@ -47,6 +47,22 @@ class ApplicationWorkItemDetails(WorkItemDetails):
             The value to assign to the application_installation_path property of this ApplicationWorkItemDetails.
         :type application_installation_path: str
 
+        :param namespace:
+            The value to assign to the namespace property of this ApplicationWorkItemDetails.
+        :type namespace: str
+
+        :param bucket_name:
+            The value to assign to the bucket_name property of this ApplicationWorkItemDetails.
+        :type bucket_name: str
+
+        :param object_name:
+            The value to assign to the object_name property of this ApplicationWorkItemDetails.
+        :type object_name: str
+
+        :param container_info:
+            The value to assign to the container_info property of this ApplicationWorkItemDetails.
+        :type container_info: oci.jms.models.ContainerSummary
+
         """
         self.swagger_types = {
             'kind': 'str',
@@ -54,7 +70,11 @@ class ApplicationWorkItemDetails(WorkItemDetails):
             'application_key': 'str',
             'application_installation_key': 'str',
             'application_name': 'str',
-            'application_installation_path': 'str'
+            'application_installation_path': 'str',
+            'namespace': 'str',
+            'bucket_name': 'str',
+            'object_name': 'str',
+            'container_info': 'ContainerSummary'
         }
         self.attribute_map = {
             'kind': 'kind',
@@ -62,7 +82,11 @@ class ApplicationWorkItemDetails(WorkItemDetails):
             'application_key': 'applicationKey',
             'application_installation_key': 'applicationInstallationKey',
             'application_name': 'applicationName',
-            'application_installation_path': 'applicationInstallationPath'
+            'application_installation_path': 'applicationInstallationPath',
+            'namespace': 'namespace',
+            'bucket_name': 'bucketName',
+            'object_name': 'objectName',
+            'container_info': 'containerInfo'
         }
         self._kind = None
         self._work_item_type = None
@@ -70,6 +94,10 @@ class ApplicationWorkItemDetails(WorkItemDetails):
         self._application_installation_key = None
         self._application_name = None
         self._application_installation_path = None
+        self._namespace = None
+        self._bucket_name = None
+        self._object_name = None
+        self._container_info = None
         self._kind = 'APPLICATION'
 
     @property
@@ -167,6 +195,98 @@ class ApplicationWorkItemDetails(WorkItemDetails):
         :type: str
         """
         self._application_installation_path = application_installation_path
+
+    @property
+    def namespace(self):
+        """
+        Gets the namespace of this ApplicationWorkItemDetails.
+        The Object Storage namespace of the JFR upload result.
+
+
+        :return: The namespace of this ApplicationWorkItemDetails.
+        :rtype: str
+        """
+        return self._namespace
+
+    @namespace.setter
+    def namespace(self, namespace):
+        """
+        Sets the namespace of this ApplicationWorkItemDetails.
+        The Object Storage namespace of the JFR upload result.
+
+
+        :param namespace: The namespace of this ApplicationWorkItemDetails.
+        :type: str
+        """
+        self._namespace = namespace
+
+    @property
+    def bucket_name(self):
+        """
+        Gets the bucket_name of this ApplicationWorkItemDetails.
+        The Object Storage bucket name of the JFR upload result.
+
+
+        :return: The bucket_name of this ApplicationWorkItemDetails.
+        :rtype: str
+        """
+        return self._bucket_name
+
+    @bucket_name.setter
+    def bucket_name(self, bucket_name):
+        """
+        Sets the bucket_name of this ApplicationWorkItemDetails.
+        The Object Storage bucket name of the JFR upload result.
+
+
+        :param bucket_name: The bucket_name of this ApplicationWorkItemDetails.
+        :type: str
+        """
+        self._bucket_name = bucket_name
+
+    @property
+    def object_name(self):
+        """
+        Gets the object_name of this ApplicationWorkItemDetails.
+        The Object Storage object name of the JFR upload result.
+
+
+        :return: The object_name of this ApplicationWorkItemDetails.
+        :rtype: str
+        """
+        return self._object_name
+
+    @object_name.setter
+    def object_name(self, object_name):
+        """
+        Sets the object_name of this ApplicationWorkItemDetails.
+        The Object Storage object name of the JFR upload result.
+
+
+        :param object_name: The object_name of this ApplicationWorkItemDetails.
+        :type: str
+        """
+        self._object_name = object_name
+
+    @property
+    def container_info(self):
+        """
+        Gets the container_info of this ApplicationWorkItemDetails.
+
+        :return: The container_info of this ApplicationWorkItemDetails.
+        :rtype: oci.jms.models.ContainerSummary
+        """
+        return self._container_info
+
+    @container_info.setter
+    def container_info(self, container_info):
+        """
+        Sets the container_info of this ApplicationWorkItemDetails.
+
+        :param container_info: The container_info of this ApplicationWorkItemDetails.
+        :type: oci.jms.models.ContainerSummary
+        """
+        self._container_info = container_info
 
     def __repr__(self):
         return formatted_flat_dict(self)

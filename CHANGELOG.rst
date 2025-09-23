@@ -5,6 +5,33 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.160.2 - 2025-09-23
+====================
+
+Added 
+----- 
+* Support for calling Oracle Cloud Infrastructure services in the me-ibri-1 region 
+* Support for Resource Analytics service 
+* Support for Oracle MultiCloud service 
+* Support for standalone Java Development Kit (JDK) scanning and usage tracking using shared external volumes in the Java Management service 
+* Support for enhanced Java library detection and Software Bill of Materials (SBOM) generation in the Java Management Service 
+* Support for dynamic Java library scanning in the Java Management service 
+* Support for vulnerability scanning using Application Dependency Management (ADM) and confidence level scoring in the Java Management service 
+* Support for Java runtime discovery and tracking in Kubernetes environments in the Java Management service 
+* Support for detecting, installing, and reporting Oracle Enterprise Performance Pack releases in the Java Management service 
+* Support for task scheduling for scans and lifecycle operations in the Java Management service 
+* Support for capturing and displaying managed instance IP addresses and hostnames in the Java Management service 
+* Support for selecting multiple applications and target Java Development Kits (JDKs) during Java migration analysis       in the Java Management service 
+* Support for subscription acknowledgment in the Java Management service 
+* Support for analyzing application artifacts in the Java Management service 
+* Support for querying work requests independently from fleets in applications in the Java Management service 
+* Support for custom report generation with advanced filters in the Java Management service 
+* Support for configuring exascale storage on dedicated infrastructure (Exacs) in the Database service 
+* Support for listing marketplace metadata public keys in the Marketplace service 
+* Support for external attested metadata creation in the Marketplace service 
+* Support for discovery endpoint for shared clusters in the OCI Cache service    
+
+====================
 2.160.1 - 2025-09-16
 ====================
 

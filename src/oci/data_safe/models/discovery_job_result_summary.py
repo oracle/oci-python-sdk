@@ -35,6 +35,22 @@ class DiscoveryJobResultSummary(object):
     #: This constant has a value of "DB_DEFINED"
     RELATION_TYPE_DB_DEFINED = "DB_DEFINED"
 
+    #: A constant which can be used with the confidence_level property of a DiscoveryJobResultSummary.
+    #: This constant has a value of "NONE"
+    CONFIDENCE_LEVEL_NONE = "NONE"
+
+    #: A constant which can be used with the confidence_level property of a DiscoveryJobResultSummary.
+    #: This constant has a value of "HIGH"
+    CONFIDENCE_LEVEL_HIGH = "HIGH"
+
+    #: A constant which can be used with the confidence_level property of a DiscoveryJobResultSummary.
+    #: This constant has a value of "MEDIUM"
+    CONFIDENCE_LEVEL_MEDIUM = "MEDIUM"
+
+    #: A constant which can be used with the confidence_level property of a DiscoveryJobResultSummary.
+    #: This constant has a value of "LOW"
+    CONFIDENCE_LEVEL_LOW = "LOW"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DiscoveryJobResultSummary object with values from keyword arguments.
@@ -108,6 +124,12 @@ class DiscoveryJobResultSummary(object):
             The value to assign to the discovery_job_id property of this DiscoveryJobResultSummary.
         :type discovery_job_id: str
 
+        :param confidence_level:
+            The value to assign to the confidence_level property of this DiscoveryJobResultSummary.
+            Allowed values for this property are: "NONE", "HIGH", "MEDIUM", "LOW", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type confidence_level: str
+
         """
         self.swagger_types = {
             'key': 'str',
@@ -125,7 +147,8 @@ class DiscoveryJobResultSummary(object):
             'sample_data_values': 'list[str]',
             'planned_action': 'str',
             'is_result_applied': 'bool',
-            'discovery_job_id': 'str'
+            'discovery_job_id': 'str',
+            'confidence_level': 'str'
         }
         self.attribute_map = {
             'key': 'key',
@@ -143,7 +166,8 @@ class DiscoveryJobResultSummary(object):
             'sample_data_values': 'sampleDataValues',
             'planned_action': 'plannedAction',
             'is_result_applied': 'isResultApplied',
-            'discovery_job_id': 'discoveryJobId'
+            'discovery_job_id': 'discoveryJobId',
+            'confidence_level': 'confidenceLevel'
         }
         self._key = None
         self._discovery_type = None
@@ -161,6 +185,7 @@ class DiscoveryJobResultSummary(object):
         self._planned_action = None
         self._is_result_applied = None
         self._discovery_job_id = None
+        self._confidence_level = None
 
     @property
     def key(self):
@@ -583,6 +608,38 @@ class DiscoveryJobResultSummary(object):
         :type: str
         """
         self._discovery_job_id = discovery_job_id
+
+    @property
+    def confidence_level(self):
+        """
+        Gets the confidence_level of this DiscoveryJobResultSummary.
+        The confidence level of the discovery job result associated with the sensitive type.
+        The confidence level for discovery job results can be either HIGH, MEDIUM or LOW.
+
+        Allowed values for this property are: "NONE", "HIGH", "MEDIUM", "LOW", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The confidence_level of this DiscoveryJobResultSummary.
+        :rtype: str
+        """
+        return self._confidence_level
+
+    @confidence_level.setter
+    def confidence_level(self, confidence_level):
+        """
+        Sets the confidence_level of this DiscoveryJobResultSummary.
+        The confidence level of the discovery job result associated with the sensitive type.
+        The confidence level for discovery job results can be either HIGH, MEDIUM or LOW.
+
+
+        :param confidence_level: The confidence_level of this DiscoveryJobResultSummary.
+        :type: str
+        """
+        allowed_values = ["NONE", "HIGH", "MEDIUM", "LOW"]
+        if not value_allowed_none_or_none_sentinel(confidence_level, allowed_values):
+            confidence_level = 'UNKNOWN_ENUM_VALUE'
+        self._confidence_level = confidence_level
 
     def __repr__(self):
         return formatted_flat_dict(self)

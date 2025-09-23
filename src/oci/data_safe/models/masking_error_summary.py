@@ -16,6 +16,14 @@ class MaskingErrorSummary(object):
     """
 
     #: A constant which can be used with the step_name property of a MaskingErrorSummary.
+    #: This constant has a value of "VALIDATE"
+    STEP_NAME_VALIDATE = "VALIDATE"
+
+    #: A constant which can be used with the step_name property of a MaskingErrorSummary.
+    #: This constant has a value of "GENERATE_SCRIPT"
+    STEP_NAME_GENERATE_SCRIPT = "GENERATE_SCRIPT"
+
+    #: A constant which can be used with the step_name property of a MaskingErrorSummary.
     #: This constant has a value of "EXECUTE_MASKING"
     STEP_NAME_EXECUTE_MASKING = "EXECUTE_MASKING"
 
@@ -34,7 +42,7 @@ class MaskingErrorSummary(object):
 
         :param step_name:
             The value to assign to the step_name property of this MaskingErrorSummary.
-            Allowed values for this property are: "EXECUTE_MASKING", "PRE_MASKING", "POST_MASKING", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "VALIDATE", "GENERATE_SCRIPT", "EXECUTE_MASKING", "PRE_MASKING", "POST_MASKING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type step_name: str
 
@@ -74,7 +82,7 @@ class MaskingErrorSummary(object):
         **[Required]** Gets the step_name of this MaskingErrorSummary.
         The stepName of the masking error.
 
-        Allowed values for this property are: "EXECUTE_MASKING", "PRE_MASKING", "POST_MASKING", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "VALIDATE", "GENERATE_SCRIPT", "EXECUTE_MASKING", "PRE_MASKING", "POST_MASKING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -93,7 +101,7 @@ class MaskingErrorSummary(object):
         :param step_name: The step_name of this MaskingErrorSummary.
         :type: str
         """
-        allowed_values = ["EXECUTE_MASKING", "PRE_MASKING", "POST_MASKING"]
+        allowed_values = ["VALIDATE", "GENERATE_SCRIPT", "EXECUTE_MASKING", "PRE_MASKING", "POST_MASKING"]
         if not value_allowed_none_or_none_sentinel(step_name, allowed_values):
             step_name = 'UNKNOWN_ENUM_VALUE'
         self._step_name = step_name

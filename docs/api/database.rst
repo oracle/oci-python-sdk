@@ -138,6 +138,7 @@ Database
     oci.database.models.CompleteExternalBackupJobDetails
     oci.database.models.ComputePerformanceSummary
     oci.database.models.ConfigureAutonomousDatabaseVaultKeyDetails
+    oci.database.models.ConfigureExascaleCloudExadataInfrastructureDetails
     oci.database.models.ConfigureExascaleExadataInfrastructureDetails
     oci.database.models.ConfigureSaasAdminUserDetails
     oci.database.models.ConsoleConnection
