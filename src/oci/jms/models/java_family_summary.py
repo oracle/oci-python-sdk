@@ -63,6 +63,10 @@ class JavaFamilySummary(object):
             The value to assign to the release_date property of this JavaFamilySummary.
         :type release_date: datetime
 
+        :param license_types:
+            The value to assign to the license_types property of this JavaFamilySummary.
+        :type license_types: list[oci.jms.models.LicenseType]
+
         """
         self.swagger_types = {
             'family_version': 'str',
@@ -72,7 +76,8 @@ class JavaFamilySummary(object):
             'doc_url': 'str',
             'latest_release_version': 'str',
             'is_supported_version': 'bool',
-            'release_date': 'datetime'
+            'release_date': 'datetime',
+            'license_types': 'list[LicenseType]'
         }
         self.attribute_map = {
             'family_version': 'familyVersion',
@@ -82,7 +87,8 @@ class JavaFamilySummary(object):
             'doc_url': 'docUrl',
             'latest_release_version': 'latestReleaseVersion',
             'is_supported_version': 'isSupportedVersion',
-            'release_date': 'releaseDate'
+            'release_date': 'releaseDate',
+            'license_types': 'licenseTypes'
         }
         self._family_version = None
         self._display_name = None
@@ -92,6 +98,7 @@ class JavaFamilySummary(object):
         self._latest_release_version = None
         self._is_supported_version = None
         self._release_date = None
+        self._license_types = None
 
     @property
     def family_version(self):
@@ -304,6 +311,30 @@ class JavaFamilySummary(object):
         :type: datetime
         """
         self._release_date = release_date
+
+    @property
+    def license_types(self):
+        """
+        Gets the license_types of this JavaFamilySummary.
+        The license type(s) associated with the Java family.
+
+
+        :return: The license_types of this JavaFamilySummary.
+        :rtype: list[oci.jms.models.LicenseType]
+        """
+        return self._license_types
+
+    @license_types.setter
+    def license_types(self, license_types):
+        """
+        Sets the license_types of this JavaFamilySummary.
+        The license type(s) associated with the Java family.
+
+
+        :param license_types: The license_types of this JavaFamilySummary.
+        :type: list[oci.jms.models.LicenseType]
+        """
+        self._license_types = license_types
 
     def __repr__(self):
         return formatted_flat_dict(self)

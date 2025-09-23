@@ -19,6 +19,7 @@ Jms
     :template: autosummary/model_class.rst
 
     oci.jms.models.AddFleetInstallationSitesDetails
+    oci.jms.models.AddInstallationSiteTaskDetails
     oci.jms.models.AdvancedUsageTracking
     oci.jms.models.Agent
     oci.jms.models.AgentInstallerCollection
@@ -36,18 +37,24 @@ Jms
     oci.jms.models.BlocklistEntry
     oci.jms.models.BlocklistTarget
     oci.jms.models.ChangeFleetCompartmentDetails
+    oci.jms.models.ClusterDetails
+    oci.jms.models.ContainerCollection
+    oci.jms.models.ContainerSummary
     oci.jms.models.CreateBlocklistDetails
     oci.jms.models.CreateDrsFileDetails
     oci.jms.models.CreateFleetDetails
     oci.jms.models.CreateJmsPluginDetails
+    oci.jms.models.CreateTaskScheduleDetails
     oci.jms.models.CryptoAnalysisResult
     oci.jms.models.CryptoAnalysisResultCollection
     oci.jms.models.CryptoAnalysisResultSummary
     oci.jms.models.CryptoEventAnalysis
+    oci.jms.models.CryptoTaskDetails
     oci.jms.models.CustomLog
     oci.jms.models.DeployedApplicationInstallationUsageSummary
     oci.jms.models.DeployedApplicationInstallationUsageSummaryCollection
     oci.jms.models.DeployedApplicationMigrationAnalysesTarget
+    oci.jms.models.DeployedApplicationMigrationTaskDetails
     oci.jms.models.DeployedApplicationUsage
     oci.jms.models.DeployedApplicationUsageCollection
     oci.jms.models.DeployedApplicationWorkItemDetails
@@ -58,6 +65,7 @@ Jms
     oci.jms.models.DrsTarget
     oci.jms.models.EnableDrsDetails
     oci.jms.models.ExistingInstallationSiteId
+    oci.jms.models.ExportDataFilters
     oci.jms.models.ExportSetting
     oci.jms.models.ExportStatus
     oci.jms.models.Fleet
@@ -92,6 +100,9 @@ Jms
     oci.jms.models.JavaMigrationAnalysisResultCollection
     oci.jms.models.JavaMigrationAnalysisResultSummary
     oci.jms.models.JavaMigrationAnalysisTarget
+    oci.jms.models.JavaMigrationApplicationWorkItemDetails
+    oci.jms.models.JavaMigrationDeployedApplicationWorkItemDetails
+    oci.jms.models.JavaMigrationTaskDetails
     oci.jms.models.JavaRelease
     oci.jms.models.JavaReleaseCollection
     oci.jms.models.JavaReleaseSummary
@@ -102,6 +113,7 @@ Jms
     oci.jms.models.JavaServerUsageCollection
     oci.jms.models.JfrAttachmentTarget
     oci.jms.models.JfrRecording
+    oci.jms.models.JfrTaskDetails
     oci.jms.models.JmsPlugin
     oci.jms.models.JmsPluginCollection
     oci.jms.models.JmsPluginSummary
@@ -110,8 +122,14 @@ Jms
     oci.jms.models.KeySizeAlgorithm
     oci.jms.models.Lcm
     oci.jms.models.LcmWorkItemDetails
+    oci.jms.models.LibraryApplicationUsageCollection
+    oci.jms.models.LibraryApplicationUsageSummary
+    oci.jms.models.LibraryInventory
+    oci.jms.models.LibraryManagedInstanceUsageCollection
+    oci.jms.models.LibraryManagedInstanceUsageSummary
     oci.jms.models.LibraryUsage
     oci.jms.models.LibraryUsageCollection
+    oci.jms.models.LibraryVulnerability
     oci.jms.models.ManageDrsDetails
     oci.jms.models.ManagedInstanceUsage
     oci.jms.models.ManagedInstanceUsageCollection
@@ -123,6 +141,7 @@ Jms
     oci.jms.models.PerformanceTuningAnalysisResult
     oci.jms.models.PerformanceTuningAnalysisResultCollection
     oci.jms.models.PerformanceTuningAnalysisResultSummary
+    oci.jms.models.PerformanceTuningTaskDetails
     oci.jms.models.Plugin
     oci.jms.models.PluginErrorAggregation
     oci.jms.models.PluginErrorAggregationCollection
@@ -134,21 +153,35 @@ Jms
     oci.jms.models.Principal
     oci.jms.models.Proxies
     oci.jms.models.RemoveFleetInstallationSitesDetails
+    oci.jms.models.RemoveInstallationSiteTaskDetails
     oci.jms.models.RequestCryptoAnalysesDetails
     oci.jms.models.RequestDeployedApplicationMigrationAnalysesDetails
     oci.jms.models.RequestJavaMigrationAnalysesDetails
     oci.jms.models.RequestJfrRecordingsDetails
     oci.jms.models.RequestPerformanceTuningAnalysesDetails
     oci.jms.models.ResourceInventory
+    oci.jms.models.ScanJavaServerTaskDetails
     oci.jms.models.ScanJavaServerUsageDetails
+    oci.jms.models.ScanLibraryTaskDetails
     oci.jms.models.ScanLibraryUsageDetails
     oci.jms.models.SummarizedEventsLog
+    oci.jms.models.TaskDetails
+    oci.jms.models.TaskSchedule
+    oci.jms.models.TaskScheduleCollection
+    oci.jms.models.TaskScheduleSummary
+    oci.jms.models.UncorrelatedPackageApplicationUsageCollection
+    oci.jms.models.UncorrelatedPackageApplicationUsageSummary
+    oci.jms.models.UncorrelatedPackageManagedInstanceUsageCollection
+    oci.jms.models.UncorrelatedPackageManagedInstanceUsageSummary
+    oci.jms.models.UncorrelatedPackageUsageCollection
+    oci.jms.models.UncorrelatedPackageUsageSummary
     oci.jms.models.UpdateDrsFileDetails
     oci.jms.models.UpdateExportSettingDetails
     oci.jms.models.UpdateFleetAdvancedFeatureConfigurationDetails
     oci.jms.models.UpdateFleetAgentConfigurationDetails
     oci.jms.models.UpdateFleetDetails
     oci.jms.models.UpdateJmsPluginDetails
+    oci.jms.models.UpdateTaskScheduleDetails
     oci.jms.models.WorkItemCollection
     oci.jms.models.WorkItemDetails
     oci.jms.models.WorkItemSummary

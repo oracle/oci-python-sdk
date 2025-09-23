@@ -23,6 +23,10 @@ class PluginErrorSummary(object):
     #: This constant has a value of "OCA"
     AGENT_TYPE_OCA = "OCA"
 
+    #: A constant which can be used with the agent_type property of a PluginErrorSummary.
+    #: This constant has a value of "OCMA"
+    AGENT_TYPE_OCMA = "OCMA"
+
     def __init__(self, **kwargs):
         """
         Initializes a new PluginErrorSummary object with values from keyword arguments.
@@ -34,7 +38,7 @@ class PluginErrorSummary(object):
 
         :param agent_type:
             The value to assign to the agent_type property of this PluginErrorSummary.
-            Allowed values for this property are: "OMA", "OCA", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "OMA", "OCA", "OCMA", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type agent_type: str
 
@@ -119,7 +123,7 @@ class PluginErrorSummary(object):
         Gets the agent_type of this PluginErrorSummary.
         The agent type.
 
-        Allowed values for this property are: "OMA", "OCA", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "OMA", "OCA", "OCMA", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -138,7 +142,7 @@ class PluginErrorSummary(object):
         :param agent_type: The agent_type of this PluginErrorSummary.
         :type: str
         """
-        allowed_values = ["OMA", "OCA"]
+        allowed_values = ["OMA", "OCA", "OCMA"]
         if not value_allowed_none_or_none_sentinel(agent_type, allowed_values):
             agent_type = 'UNKNOWN_ENUM_VALUE'
         self._agent_type = agent_type

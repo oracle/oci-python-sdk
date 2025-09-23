@@ -66,6 +66,14 @@ class RedisClusterSummary(object):
             The value to assign to the replicas_endpoint_ip_address property of this RedisClusterSummary.
         :type replicas_endpoint_ip_address: str
 
+        :param discovery_fqdn:
+            The value to assign to the discovery_fqdn property of this RedisClusterSummary.
+        :type discovery_fqdn: str
+
+        :param discovery_endpoint_ip_address:
+            The value to assign to the discovery_endpoint_ip_address property of this RedisClusterSummary.
+        :type discovery_endpoint_ip_address: str
+
         :param software_version:
             The value to assign to the software_version property of this RedisClusterSummary.
         :type software_version: str
@@ -123,6 +131,8 @@ class RedisClusterSummary(object):
             'primary_endpoint_ip_address': 'str',
             'replicas_fqdn': 'str',
             'replicas_endpoint_ip_address': 'str',
+            'discovery_fqdn': 'str',
+            'discovery_endpoint_ip_address': 'str',
             'software_version': 'str',
             'subnet_id': 'str',
             'time_created': 'datetime',
@@ -147,6 +157,8 @@ class RedisClusterSummary(object):
             'primary_endpoint_ip_address': 'primaryEndpointIpAddress',
             'replicas_fqdn': 'replicasFqdn',
             'replicas_endpoint_ip_address': 'replicasEndpointIpAddress',
+            'discovery_fqdn': 'discoveryFqdn',
+            'discovery_endpoint_ip_address': 'discoveryEndpointIpAddress',
             'software_version': 'softwareVersion',
             'subnet_id': 'subnetId',
             'time_created': 'timeCreated',
@@ -170,6 +182,8 @@ class RedisClusterSummary(object):
         self._primary_endpoint_ip_address = None
         self._replicas_fqdn = None
         self._replicas_endpoint_ip_address = None
+        self._discovery_fqdn = None
+        self._discovery_endpoint_ip_address = None
         self._software_version = None
         self._subnet_id = None
         self._time_created = None
@@ -453,6 +467,54 @@ class RedisClusterSummary(object):
         :type: str
         """
         self._replicas_endpoint_ip_address = replicas_endpoint_ip_address
+
+    @property
+    def discovery_fqdn(self):
+        """
+        Gets the discovery_fqdn of this RedisClusterSummary.
+        The fully qualified domain name (FQDN) of the API endpoint for sharded cluster discovery.
+
+
+        :return: The discovery_fqdn of this RedisClusterSummary.
+        :rtype: str
+        """
+        return self._discovery_fqdn
+
+    @discovery_fqdn.setter
+    def discovery_fqdn(self, discovery_fqdn):
+        """
+        Sets the discovery_fqdn of this RedisClusterSummary.
+        The fully qualified domain name (FQDN) of the API endpoint for sharded cluster discovery.
+
+
+        :param discovery_fqdn: The discovery_fqdn of this RedisClusterSummary.
+        :type: str
+        """
+        self._discovery_fqdn = discovery_fqdn
+
+    @property
+    def discovery_endpoint_ip_address(self):
+        """
+        Gets the discovery_endpoint_ip_address of this RedisClusterSummary.
+        The private IP address of the API endpoint for shareded cluster discovery.
+
+
+        :return: The discovery_endpoint_ip_address of this RedisClusterSummary.
+        :rtype: str
+        """
+        return self._discovery_endpoint_ip_address
+
+    @discovery_endpoint_ip_address.setter
+    def discovery_endpoint_ip_address(self, discovery_endpoint_ip_address):
+        """
+        Sets the discovery_endpoint_ip_address of this RedisClusterSummary.
+        The private IP address of the API endpoint for shareded cluster discovery.
+
+
+        :param discovery_endpoint_ip_address: The discovery_endpoint_ip_address of this RedisClusterSummary.
+        :type: str
+        """
+        self._discovery_endpoint_ip_address = discovery_endpoint_ip_address
 
     @property
     def software_version(self):

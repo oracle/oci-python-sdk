@@ -91,6 +91,10 @@ class UpdateExportSettingDetails(object):
             The value to assign to the is_enabled property of this UpdateExportSettingDetails.
         :type is_enabled: bool
 
+        :param export_data_filters:
+            The value to assign to the export_data_filters property of this UpdateExportSettingDetails.
+        :type export_data_filters: oci.jms.models.ExportDataFilters
+
         """
         self.swagger_types = {
             'export_duration': 'str',
@@ -100,7 +104,8 @@ class UpdateExportSettingDetails(object):
             'target_bucket_namespace': 'str',
             'target_bucket_region': 'str',
             'export_frequency': 'str',
-            'is_enabled': 'bool'
+            'is_enabled': 'bool',
+            'export_data_filters': 'ExportDataFilters'
         }
         self.attribute_map = {
             'export_duration': 'exportDuration',
@@ -110,7 +115,8 @@ class UpdateExportSettingDetails(object):
             'target_bucket_namespace': 'targetBucketNamespace',
             'target_bucket_region': 'targetBucketRegion',
             'export_frequency': 'exportFrequency',
-            'is_enabled': 'isEnabled'
+            'is_enabled': 'isEnabled',
+            'export_data_filters': 'exportDataFilters'
         }
         self._export_duration = None
         self._export_resources = None
@@ -120,6 +126,7 @@ class UpdateExportSettingDetails(object):
         self._target_bucket_region = None
         self._export_frequency = None
         self._is_enabled = None
+        self._export_data_filters = None
 
     @property
     def export_duration(self):
@@ -333,6 +340,26 @@ class UpdateExportSettingDetails(object):
         :type: bool
         """
         self._is_enabled = is_enabled
+
+    @property
+    def export_data_filters(self):
+        """
+        Gets the export_data_filters of this UpdateExportSettingDetails.
+
+        :return: The export_data_filters of this UpdateExportSettingDetails.
+        :rtype: oci.jms.models.ExportDataFilters
+        """
+        return self._export_data_filters
+
+    @export_data_filters.setter
+    def export_data_filters(self, export_data_filters):
+        """
+        Sets the export_data_filters of this UpdateExportSettingDetails.
+
+        :param export_data_filters: The export_data_filters of this UpdateExportSettingDetails.
+        :type: oci.jms.models.ExportDataFilters
+        """
+        self._export_data_filters = export_data_filters
 
     def __repr__(self):
         return formatted_flat_dict(self)

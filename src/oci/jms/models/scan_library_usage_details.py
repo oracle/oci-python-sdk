@@ -24,14 +24,28 @@ class ScanLibraryUsageDetails(object):
             The value to assign to the managed_instance_ids property of this ScanLibraryUsageDetails.
         :type managed_instance_ids: list[str]
 
+        :param is_dynamic_scan:
+            The value to assign to the is_dynamic_scan property of this ScanLibraryUsageDetails.
+        :type is_dynamic_scan: bool
+
+        :param dynamic_scan_duration_in_minutes:
+            The value to assign to the dynamic_scan_duration_in_minutes property of this ScanLibraryUsageDetails.
+        :type dynamic_scan_duration_in_minutes: int
+
         """
         self.swagger_types = {
-            'managed_instance_ids': 'list[str]'
+            'managed_instance_ids': 'list[str]',
+            'is_dynamic_scan': 'bool',
+            'dynamic_scan_duration_in_minutes': 'int'
         }
         self.attribute_map = {
-            'managed_instance_ids': 'managedInstanceIds'
+            'managed_instance_ids': 'managedInstanceIds',
+            'is_dynamic_scan': 'isDynamicScan',
+            'dynamic_scan_duration_in_minutes': 'dynamicScanDurationInMinutes'
         }
         self._managed_instance_ids = None
+        self._is_dynamic_scan = None
+        self._dynamic_scan_duration_in_minutes = None
 
     @property
     def managed_instance_ids(self):
@@ -60,6 +74,54 @@ class ScanLibraryUsageDetails(object):
         :type: list[str]
         """
         self._managed_instance_ids = managed_instance_ids
+
+    @property
+    def is_dynamic_scan(self):
+        """
+        Gets the is_dynamic_scan of this ScanLibraryUsageDetails.
+        Indicates whether the scan is dynamic or static.
+
+
+        :return: The is_dynamic_scan of this ScanLibraryUsageDetails.
+        :rtype: bool
+        """
+        return self._is_dynamic_scan
+
+    @is_dynamic_scan.setter
+    def is_dynamic_scan(self, is_dynamic_scan):
+        """
+        Sets the is_dynamic_scan of this ScanLibraryUsageDetails.
+        Indicates whether the scan is dynamic or static.
+
+
+        :param is_dynamic_scan: The is_dynamic_scan of this ScanLibraryUsageDetails.
+        :type: bool
+        """
+        self._is_dynamic_scan = is_dynamic_scan
+
+    @property
+    def dynamic_scan_duration_in_minutes(self):
+        """
+        Gets the dynamic_scan_duration_in_minutes of this ScanLibraryUsageDetails.
+        The duration of the dynamic scan in minutes.
+
+
+        :return: The dynamic_scan_duration_in_minutes of this ScanLibraryUsageDetails.
+        :rtype: int
+        """
+        return self._dynamic_scan_duration_in_minutes
+
+    @dynamic_scan_duration_in_minutes.setter
+    def dynamic_scan_duration_in_minutes(self, dynamic_scan_duration_in_minutes):
+        """
+        Sets the dynamic_scan_duration_in_minutes of this ScanLibraryUsageDetails.
+        The duration of the dynamic scan in minutes.
+
+
+        :param dynamic_scan_duration_in_minutes: The dynamic_scan_duration_in_minutes of this ScanLibraryUsageDetails.
+        :type: int
+        """
+        self._dynamic_scan_duration_in_minutes = dynamic_scan_duration_in_minutes
 
     def __repr__(self):
         return formatted_flat_dict(self)

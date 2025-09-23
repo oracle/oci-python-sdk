@@ -40,6 +40,10 @@ class NetworkAnchorSummary(object):
             The value to assign to the vcn_id property of this NetworkAnchorSummary.
         :type vcn_id: str
 
+        :param cluster_placement_group_id:
+            The value to assign to the cluster_placement_group_id property of this NetworkAnchorSummary.
+        :type cluster_placement_group_id: str
+
         :param time_created:
             The value to assign to the time_created property of this NetworkAnchorSummary.
         :type time_created: datetime
@@ -75,6 +79,7 @@ class NetworkAnchorSummary(object):
             'compartment_id': 'str',
             'resource_anchor_id': 'str',
             'vcn_id': 'str',
+            'cluster_placement_group_id': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
@@ -89,6 +94,7 @@ class NetworkAnchorSummary(object):
             'compartment_id': 'compartmentId',
             'resource_anchor_id': 'resourceAnchorId',
             'vcn_id': 'vcnId',
+            'cluster_placement_group_id': 'clusterPlacementGroupId',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
@@ -102,6 +108,7 @@ class NetworkAnchorSummary(object):
         self._compartment_id = None
         self._resource_anchor_id = None
         self._vcn_id = None
+        self._cluster_placement_group_id = None
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
@@ -237,6 +244,30 @@ class NetworkAnchorSummary(object):
         :type: str
         """
         self._vcn_id = vcn_id
+
+    @property
+    def cluster_placement_group_id(self):
+        """
+        Gets the cluster_placement_group_id of this NetworkAnchorSummary.
+        The CPG ID in which Network Anchor will be created.
+
+
+        :return: The cluster_placement_group_id of this NetworkAnchorSummary.
+        :rtype: str
+        """
+        return self._cluster_placement_group_id
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, cluster_placement_group_id):
+        """
+        Sets the cluster_placement_group_id of this NetworkAnchorSummary.
+        The CPG ID in which Network Anchor will be created.
+
+
+        :param cluster_placement_group_id: The cluster_placement_group_id of this NetworkAnchorSummary.
+        :type: str
+        """
+        self._cluster_placement_group_id = cluster_placement_group_id
 
     @property
     def time_created(self):

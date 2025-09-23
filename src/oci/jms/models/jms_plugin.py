@@ -23,6 +23,10 @@ class JmsPlugin(object):
     #: This constant has a value of "OCA"
     AGENT_TYPE_OCA = "OCA"
 
+    #: A constant which can be used with the agent_type property of a JmsPlugin.
+    #: This constant has a value of "OCMA"
+    AGENT_TYPE_OCMA = "OCMA"
+
     #: A constant which can be used with the lifecycle_state property of a JmsPlugin.
     #: This constant has a value of "ACTIVE"
     LIFECYCLE_STATE_ACTIVE = "ACTIVE"
@@ -82,7 +86,7 @@ class JmsPlugin(object):
 
         :param agent_type:
             The value to assign to the agent_type property of this JmsPlugin.
-            Allowed values for this property are: "OMA", "OCA", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "OMA", "OCA", "OCMA", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type agent_type: str
 
@@ -237,7 +241,8 @@ class JmsPlugin(object):
     def agent_id(self):
         """
         **[Required]** Gets the agent_id of this JmsPlugin.
-        The `OCID`__ of the Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is deployed.
+        The `OCID`__ of the Management Agent (OMA), the Oracle Cloud Agent (OCA), or the Oracle Container Management Agent (OCMA)
+        instance where the JMS plugin is deployed.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -251,7 +256,8 @@ class JmsPlugin(object):
     def agent_id(self, agent_id):
         """
         Sets the agent_id of this JmsPlugin.
-        The `OCID`__ of the Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is deployed.
+        The `OCID`__ of the Management Agent (OMA), the Oracle Cloud Agent (OCA), or the Oracle Container Management Agent (OCMA)
+        instance where the JMS plugin is deployed.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -267,7 +273,7 @@ class JmsPlugin(object):
         **[Required]** Gets the agent_type of this JmsPlugin.
         The agent type.
 
-        Allowed values for this property are: "OMA", "OCA", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "OMA", "OCA", "OCMA", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -286,7 +292,7 @@ class JmsPlugin(object):
         :param agent_type: The agent_type of this JmsPlugin.
         :type: str
         """
-        allowed_values = ["OMA", "OCA"]
+        allowed_values = ["OMA", "OCA", "OCMA"]
         if not value_allowed_none_or_none_sentinel(agent_type, allowed_values):
             agent_type = 'UNKNOWN_ENUM_VALUE'
         self._agent_type = agent_type
@@ -383,7 +389,7 @@ class JmsPlugin(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this JmsPlugin.
-        The OMA/OCA agent's compartment `OCID`__.
+        The OMA/OCA/OCMA agent's compartment `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -397,7 +403,7 @@ class JmsPlugin(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this JmsPlugin.
-        The OMA/OCA agent's compartment `OCID`__.
+        The OMA/OCA/OCMA agent's compartment `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

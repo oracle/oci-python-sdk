@@ -24,6 +24,10 @@ class CreateJavaLicenseAcceptanceRecordDetails(object):
     LICENSE_TYPE_NFTC = "NFTC"
 
     #: A constant which can be used with the license_type property of a CreateJavaLicenseAcceptanceRecordDetails.
+    #: This constant has a value of "BCL"
+    LICENSE_TYPE_BCL = "BCL"
+
+    #: A constant which can be used with the license_type property of a CreateJavaLicenseAcceptanceRecordDetails.
     #: This constant has a value of "RESTRICTED"
     LICENSE_TYPE_RESTRICTED = "RESTRICTED"
 
@@ -46,7 +50,7 @@ class CreateJavaLicenseAcceptanceRecordDetails(object):
 
         :param license_type:
             The value to assign to the license_type property of this CreateJavaLicenseAcceptanceRecordDetails.
-            Allowed values for this property are: "OTN", "NFTC", "RESTRICTED"
+            Allowed values for this property are: "OTN", "NFTC", "BCL", "RESTRICTED"
         :type license_type: str
 
         :param license_acceptance_status:
@@ -117,7 +121,7 @@ class CreateJavaLicenseAcceptanceRecordDetails(object):
         **[Required]** Gets the license_type of this CreateJavaLicenseAcceptanceRecordDetails.
         License type for the Java version.
 
-        Allowed values for this property are: "OTN", "NFTC", "RESTRICTED"
+        Allowed values for this property are: "OTN", "NFTC", "BCL", "RESTRICTED"
 
 
         :return: The license_type of this CreateJavaLicenseAcceptanceRecordDetails.
@@ -135,7 +139,7 @@ class CreateJavaLicenseAcceptanceRecordDetails(object):
         :param license_type: The license_type of this CreateJavaLicenseAcceptanceRecordDetails.
         :type: str
         """
-        allowed_values = ["OTN", "NFTC", "RESTRICTED"]
+        allowed_values = ["OTN", "NFTC", "BCL", "RESTRICTED"]
         if not value_allowed_none_or_none_sentinel(license_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `license_type`, must be None or one of {allowed_values}"

@@ -16444,7 +16444,7 @@ class DataSafeClient(object):
 
 
         :param str compartment_id: (optional)
-            A filter to return only resources that match the specified compartment OCID.
+            A filter to return the Data Safe configuration for the specified tenancy OCID.
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -26031,11 +26031,18 @@ class DataSafeClient(object):
 
             Allowed values are: "ASC", "DESC"
 
+        :param list[str] confidence_level: (optional)
+            A filter to return the discovery job results with the specified confidence level.
+            Confidence level of discovery job result associated with a seeded sensitive type can either be HIGH or LOW.
+            While the confidence level of discovery job result associated with a user defined sensitive will be NONE.
+
+            Allowed values are: "NONE", "HIGH", "MEDIUM", "LOW"
+
         :param str sort_by: (optional)
             The field to sort by. You can specify only one sorting parameter (sortOrder). The default order for timeFinished is descending.
             The default order for discoveryType, schemaName, objectName, columnName and plannedAction is ascending.
 
-            Allowed values are: "discoveryType", "timeFinished", "schemaName", "objectName", "columnName", "plannedAction"
+            Allowed values are: "discoveryType", "timeFinished", "schemaName", "objectName", "columnName", "plannedAction", "confidenceLevel"
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -26086,6 +26093,7 @@ class DataSafeClient(object):
             "object_name",
             "column_name",
             "sort_order",
+            "confidence_level",
             "sort_by",
             "opc_request_id",
             "limit",
@@ -26127,8 +26135,16 @@ class DataSafeClient(object):
                     f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
+        if 'confidence_level' in kwargs:
+            confidence_level_allowed_values = ["NONE", "HIGH", "MEDIUM", "LOW"]
+            for confidence_level_item in kwargs['confidence_level']:
+                if confidence_level_item not in confidence_level_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `confidence_level`, must be one of { confidence_level_allowed_values }"
+                    )
+
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["discoveryType", "timeFinished", "schemaName", "objectName", "columnName", "plannedAction"]
+            sort_by_allowed_values = ["discoveryType", "timeFinished", "schemaName", "objectName", "columnName", "plannedAction", "confidenceLevel"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
@@ -26142,6 +26158,7 @@ class DataSafeClient(object):
             "objectName": self.base_client.generate_collection_format_param(kwargs.get("object_name", missing), 'multi'),
             "columnName": self.base_client.generate_collection_format_param(kwargs.get("column_name", missing), 'multi'),
             "sortOrder": kwargs.get("sort_order", missing),
+            "confidenceLevel": self.base_client.generate_collection_format_param(kwargs.get("confidence_level", missing), 'multi'),
             "sortBy": kwargs.get("sort_by", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing)
@@ -26693,6 +26710,9 @@ class DataSafeClient(object):
 
             __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
+        :param str compartment_id: (optional)
+            A filter to return only resources that match the specified compartment OCID.
+
         :param bool compartment_id_in_subtree: (optional)
             Default is false.
             When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
@@ -26796,6 +26816,7 @@ class DataSafeClient(object):
             "contains_references",
             "limit",
             "page",
+            "compartment_id",
             "compartment_id_in_subtree",
             "access_level",
             "target_id",
@@ -26897,6 +26918,7 @@ class DataSafeClient(object):
             "containsReferences": self.base_client.generate_collection_format_param(kwargs.get("contains_references", missing), 'multi'),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
+            "compartmentId": kwargs.get("compartment_id", missing),
             "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
             "accessLevel": kwargs.get("access_level", missing),
             "targetId": kwargs.get("target_id", missing),
@@ -28346,7 +28368,7 @@ class DataSafeClient(object):
         :param str step_name: (optional)
             A filter to return only masking errors that match the specified step name.
 
-            Allowed values are: "EXECUTE_MASKING", "PRE_MASKING", "POST_MASKING"
+            Allowed values are: "VALIDATE", "GENERATE_SCRIPT", "EXECUTE_MASKING", "PRE_MASKING", "POST_MASKING"
 
         :param str sort_by: (optional)
             The field to sort by. The default order will be ascending.
@@ -28423,7 +28445,7 @@ class DataSafeClient(object):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'step_name' in kwargs:
-            step_name_allowed_values = ["EXECUTE_MASKING", "PRE_MASKING", "POST_MASKING"]
+            step_name_allowed_values = ["VALIDATE", "GENERATE_SCRIPT", "EXECUTE_MASKING", "PRE_MASKING", "POST_MASKING"]
             if kwargs['step_name'] not in step_name_allowed_values:
                 raise ValueError(
                     f"Invalid value for `step_name`, must be one of { step_name_allowed_values }"
@@ -29437,6 +29459,9 @@ class DataSafeClient(object):
         :param str target_id: (optional)
             A filter to return only items related to a specific target OCID.
 
+        :param str target_database_group_id: (optional)
+            A filter to return the target database group that matches the specified OCID.
+
         :param str sort_order: (optional)
             The sort order to use, either ascending (ASC) or descending (DESC).
 
@@ -29495,6 +29520,7 @@ class DataSafeClient(object):
             "page",
             "masking_policy_id",
             "target_id",
+            "target_database_group_id",
             "sort_order",
             "sort_by",
             "opc_request_id",
@@ -29532,6 +29558,7 @@ class DataSafeClient(object):
             "page": kwargs.get("page", missing),
             "maskingPolicyId": kwargs.get("masking_policy_id", missing),
             "targetId": kwargs.get("target_id", missing),
+            "targetDatabaseGroupId": kwargs.get("target_database_group_id", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "sortBy": kwargs.get("sort_by", missing),
             "compartmentId": compartment_id,
@@ -33919,6 +33946,19 @@ class DataSafeClient(object):
 
             Allowed values are: "CREATING", "ACTIVE", "UPDATING", "DELETING", "FAILED"
 
+        :param str column_data_count_filter: (optional)
+            Filters the sensitive columns with respect to the estimated row count.
+
+            Allowed values are: "SHOW_ALL_COLUMNS", "SHOW_COLUMNS_WITH_DATA", "SHOW_COLUMNS_WITHOUT_DATA"
+
+        :param list[str] confidence_level: (optional)
+            A filter to return the sensitive columns with the specified confidence level.
+            Confidence level of sensitive column associated with a seeded sensitive type can either be HIGH or LOW.
+            While the confidence level of sensitive column associated with a user defined sensitive will be NONE.
+            For sensitive columns added manually the confidence level will also be NONE.
+
+            Allowed values are: "NONE", "HIGH", "MEDIUM", "LOW"
+
         :param list[str] schema_name: (optional)
             A filter to return only items related to specific schema name.
 
@@ -33978,7 +34018,7 @@ class DataSafeClient(object):
             The field to sort by. You can specify only one sorting parameter (sortOrder). The default order for timeCreated is descending.
             The default order for schemaName, objectName, and columnName is ascending.
 
-            Allowed values are: "timeCreated", "schemaName", "objectName", "columnName", "dataType"
+            Allowed values are: "timeCreated", "schemaName", "objectName", "columnName", "dataType", "confidenceLevel"
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -34021,6 +34061,8 @@ class DataSafeClient(object):
             "time_updated_greater_than_or_equal_to",
             "time_updated_less_than",
             "sensitive_column_lifecycle_state",
+            "column_data_count_filter",
+            "confidence_level",
             "schema_name",
             "object_name",
             "column_name",
@@ -34060,6 +34102,21 @@ class DataSafeClient(object):
                     f"Invalid value for `sensitive_column_lifecycle_state`, must be one of { sensitive_column_lifecycle_state_allowed_values }"
                 )
 
+        if 'column_data_count_filter' in kwargs:
+            column_data_count_filter_allowed_values = ["SHOW_ALL_COLUMNS", "SHOW_COLUMNS_WITH_DATA", "SHOW_COLUMNS_WITHOUT_DATA"]
+            if kwargs['column_data_count_filter'] not in column_data_count_filter_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `column_data_count_filter`, must be one of { column_data_count_filter_allowed_values }"
+                )
+
+        if 'confidence_level' in kwargs:
+            confidence_level_allowed_values = ["NONE", "HIGH", "MEDIUM", "LOW"]
+            for confidence_level_item in kwargs['confidence_level']:
+                if confidence_level_item not in confidence_level_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `confidence_level`, must be one of { confidence_level_allowed_values }"
+                    )
+
         if 'object_type' in kwargs:
             object_type_allowed_values = ["ALL", "TABLE", "EDITIONING_VIEW"]
             for object_type_item in kwargs['object_type']:
@@ -34092,7 +34149,7 @@ class DataSafeClient(object):
                 )
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["timeCreated", "schemaName", "objectName", "columnName", "dataType"]
+            sort_by_allowed_values = ["timeCreated", "schemaName", "objectName", "columnName", "dataType", "confidenceLevel"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
@@ -34104,6 +34161,8 @@ class DataSafeClient(object):
             "timeUpdatedGreaterThanOrEqualTo": kwargs.get("time_updated_greater_than_or_equal_to", missing),
             "timeUpdatedLessThan": kwargs.get("time_updated_less_than", missing),
             "sensitiveColumnLifecycleState": kwargs.get("sensitive_column_lifecycle_state", missing),
+            "columnDataCountFilter": kwargs.get("column_data_count_filter", missing),
+            "confidenceLevel": self.base_client.generate_collection_format_param(kwargs.get("confidence_level", missing), 'multi'),
             "schemaName": self.base_client.generate_collection_format_param(kwargs.get("schema_name", missing), 'multi'),
             "objectName": self.base_client.generate_collection_format_param(kwargs.get("object_name", missing), 'multi'),
             "columnName": self.base_client.generate_collection_format_param(kwargs.get("column_name", missing), 'multi'),

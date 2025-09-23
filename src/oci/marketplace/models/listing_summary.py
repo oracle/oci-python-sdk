@@ -31,18 +31,6 @@ class ListingSummary(object):
     #: This constant has a value of "KUBERNETES"
     PACKAGE_TYPE_KUBERNETES = "KUBERNETES"
 
-    #: A constant which can be used with the pricing_types property of a ListingSummary.
-    #: This constant has a value of "FREE"
-    PRICING_TYPES_FREE = "FREE"
-
-    #: A constant which can be used with the pricing_types property of a ListingSummary.
-    #: This constant has a value of "BYOL"
-    PRICING_TYPES_BYOL = "BYOL"
-
-    #: A constant which can be used with the pricing_types property of a ListingSummary.
-    #: This constant has a value of "PAYGO"
-    PRICING_TYPES_PAYGO = "PAYGO"
-
     #: A constant which can be used with the compatible_architectures property of a ListingSummary.
     #: This constant has a value of "X86"
     COMPATIBLE_ARCHITECTURES_X86 = "X86"
@@ -100,9 +88,7 @@ class ListingSummary(object):
 
         :param pricing_types:
             The value to assign to the pricing_types property of this ListingSummary.
-            Allowed values for items in this list are: "FREE", "BYOL", "PAYGO", 'UNKNOWN_ENUM_VALUE'.
-            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
-        :type pricing_types: list[str]
+        :type pricing_types: list[oci.marketplace.models.PricingTypeEnum]
 
         :param compatible_architectures:
             The value to assign to the compatible_architectures property of this ListingSummary.
@@ -145,7 +131,7 @@ class ListingSummary(object):
             'tagline': 'str',
             'icon': 'UploadData',
             'package_type': 'str',
-            'pricing_types': 'list[str]',
+            'pricing_types': 'list[PricingTypeEnum]',
             'compatible_architectures': 'list[str]',
             'regions': 'list[Region]',
             'is_featured': 'bool',
@@ -363,12 +349,9 @@ class ListingSummary(object):
         Gets the pricing_types of this ListingSummary.
         Summary of the pricing types available across all packages in the listing.
 
-        Allowed values for items in this list are: "FREE", "BYOL", "PAYGO", 'UNKNOWN_ENUM_VALUE'.
-        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
-
 
         :return: The pricing_types of this ListingSummary.
-        :rtype: list[str]
+        :rtype: list[oci.marketplace.models.PricingTypeEnum]
         """
         return self._pricing_types
 
@@ -380,11 +363,8 @@ class ListingSummary(object):
 
 
         :param pricing_types: The pricing_types of this ListingSummary.
-        :type: list[str]
+        :type: list[oci.marketplace.models.PricingTypeEnum]
         """
-        allowed_values = ["FREE", "BYOL", "PAYGO"]
-        if pricing_types:
-            pricing_types[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in pricing_types]
         self._pricing_types = pricing_types
 
     @property

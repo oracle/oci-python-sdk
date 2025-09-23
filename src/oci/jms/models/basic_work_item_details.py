@@ -28,7 +28,7 @@ class BasicWorkItemDetails(WorkItemDetails):
 
         :param work_item_type:
             The value to assign to the work_item_type property of this BasicWorkItemDetails.
-            Allowed values for this property are: "LCM", "JFR_CAPTURE", "JFR_UPLOAD", "CRYPTO_ANALYSIS", "CRYPTO_ANALYSIS_MERGE", "ADVANCED_USAGE_TRACKING", "ADV_USAGE_SERVER_METADATA", "ADV_USAGE_SERVER_LIBRARIES", "ADV_USAGE_JAVA_LIBRARIES", "PERFORMANCE_TUNING", "JMIGRATE_ANALYSIS", "JMIGRATE_CREATE_REPORT", "DRS"
+            Allowed values for this property are: "LCM", "JFR_CAPTURE", "JFR_UPLOAD", "CRYPTO_ANALYSIS", "CRYPTO_ANALYSIS_MERGE", "ADVANCED_USAGE_TRACKING", "ADV_USAGE_SERVER_METADATA", "ADV_USAGE_SERVER_LIBRARIES", "ADV_USAGE_JAVA_LIBRARIES", "ADV_USAGE_JAVA_LIBRARIES_DYNAMIC", "PERFORMANCE_TUNING", "JMIGRATE_ANALYSIS", "JMIGRATE_CREATE_REPORT", "DRS"
         :type work_item_type: str
 
         """

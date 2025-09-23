@@ -23,6 +23,10 @@ class Agent(object):
     #: This constant has a value of "OCA"
     TYPE_OCA = "OCA"
 
+    #: A constant which can be used with the type property of a Agent.
+    #: This constant has a value of "OCMA"
+    TYPE_OCMA = "OCMA"
+
     #: A constant which can be used with the java_security_status property of a Agent.
     #: This constant has a value of "EARLY_ACCESS"
     JAVA_SECURITY_STATUS_EARLY_ACCESS = "EARLY_ACCESS"
@@ -54,7 +58,7 @@ class Agent(object):
 
         :param type:
             The value to assign to the type property of this Agent.
-            Allowed values for this property are: "OMA", "OCA", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "OMA", "OCA", "OCMA", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -123,7 +127,7 @@ class Agent(object):
         **[Required]** Gets the type of this Agent.
         The agent type.
 
-        Allowed values for this property are: "OMA", "OCA", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "OMA", "OCA", "OCMA", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -142,7 +146,7 @@ class Agent(object):
         :param type: The type of this Agent.
         :type: str
         """
-        allowed_values = ["OMA", "OCA"]
+        allowed_values = ["OMA", "OCA", "OCMA"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type

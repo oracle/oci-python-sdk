@@ -7,6 +7,7 @@
 from __future__ import absolute_import
 
 from .add_fleet_installation_sites_details import AddFleetInstallationSitesDetails
+from .add_installation_site_task_details import AddInstallationSiteTaskDetails
 from .advanced_usage_tracking import AdvancedUsageTracking
 from .agent import Agent
 from .agent_installer_collection import AgentInstallerCollection
@@ -24,18 +25,24 @@ from .blocklist_collection import BlocklistCollection
 from .blocklist_entry import BlocklistEntry
 from .blocklist_target import BlocklistTarget
 from .change_fleet_compartment_details import ChangeFleetCompartmentDetails
+from .cluster_details import ClusterDetails
+from .container_collection import ContainerCollection
+from .container_summary import ContainerSummary
 from .create_blocklist_details import CreateBlocklistDetails
 from .create_drs_file_details import CreateDrsFileDetails
 from .create_fleet_details import CreateFleetDetails
 from .create_jms_plugin_details import CreateJmsPluginDetails
+from .create_task_schedule_details import CreateTaskScheduleDetails
 from .crypto_analysis_result import CryptoAnalysisResult
 from .crypto_analysis_result_collection import CryptoAnalysisResultCollection
 from .crypto_analysis_result_summary import CryptoAnalysisResultSummary
 from .crypto_event_analysis import CryptoEventAnalysis
+from .crypto_task_details import CryptoTaskDetails
 from .custom_log import CustomLog
 from .deployed_application_installation_usage_summary import DeployedApplicationInstallationUsageSummary
 from .deployed_application_installation_usage_summary_collection import DeployedApplicationInstallationUsageSummaryCollection
 from .deployed_application_migration_analyses_target import DeployedApplicationMigrationAnalysesTarget
+from .deployed_application_migration_task_details import DeployedApplicationMigrationTaskDetails
 from .deployed_application_usage import DeployedApplicationUsage
 from .deployed_application_usage_collection import DeployedApplicationUsageCollection
 from .deployed_application_work_item_details import DeployedApplicationWorkItemDetails
@@ -46,6 +53,7 @@ from .drs_file_summary import DrsFileSummary
 from .drs_target import DrsTarget
 from .enable_drs_details import EnableDrsDetails
 from .existing_installation_site_id import ExistingInstallationSiteId
+from .export_data_filters import ExportDataFilters
 from .export_setting import ExportSetting
 from .export_status import ExportStatus
 from .fleet import Fleet
@@ -80,6 +88,9 @@ from .java_migration_analysis_result import JavaMigrationAnalysisResult
 from .java_migration_analysis_result_collection import JavaMigrationAnalysisResultCollection
 from .java_migration_analysis_result_summary import JavaMigrationAnalysisResultSummary
 from .java_migration_analysis_target import JavaMigrationAnalysisTarget
+from .java_migration_application_work_item_details import JavaMigrationApplicationWorkItemDetails
+from .java_migration_deployed_application_work_item_details import JavaMigrationDeployedApplicationWorkItemDetails
+from .java_migration_task_details import JavaMigrationTaskDetails
 from .java_release import JavaRelease
 from .java_release_collection import JavaReleaseCollection
 from .java_release_summary import JavaReleaseSummary
@@ -90,6 +101,7 @@ from .java_server_usage import JavaServerUsage
 from .java_server_usage_collection import JavaServerUsageCollection
 from .jfr_attachment_target import JfrAttachmentTarget
 from .jfr_recording import JfrRecording
+from .jfr_task_details import JfrTaskDetails
 from .jms_plugin import JmsPlugin
 from .jms_plugin_collection import JmsPluginCollection
 from .jms_plugin_summary import JmsPluginSummary
@@ -98,8 +110,14 @@ from .jre_usage_collection import JreUsageCollection
 from .key_size_algorithm import KeySizeAlgorithm
 from .lcm import Lcm
 from .lcm_work_item_details import LcmWorkItemDetails
+from .library_application_usage_collection import LibraryApplicationUsageCollection
+from .library_application_usage_summary import LibraryApplicationUsageSummary
+from .library_inventory import LibraryInventory
+from .library_managed_instance_usage_collection import LibraryManagedInstanceUsageCollection
+from .library_managed_instance_usage_summary import LibraryManagedInstanceUsageSummary
 from .library_usage import LibraryUsage
 from .library_usage_collection import LibraryUsageCollection
+from .library_vulnerability import LibraryVulnerability
 from .manage_drs_details import ManageDrsDetails
 from .managed_instance_usage import ManagedInstanceUsage
 from .managed_instance_usage_collection import ManagedInstanceUsageCollection
@@ -111,6 +129,7 @@ from .performance_tuning_analysis import PerformanceTuningAnalysis
 from .performance_tuning_analysis_result import PerformanceTuningAnalysisResult
 from .performance_tuning_analysis_result_collection import PerformanceTuningAnalysisResultCollection
 from .performance_tuning_analysis_result_summary import PerformanceTuningAnalysisResultSummary
+from .performance_tuning_task_details import PerformanceTuningTaskDetails
 from .plugin import Plugin
 from .plugin_error_aggregation import PluginErrorAggregation
 from .plugin_error_aggregation_collection import PluginErrorAggregationCollection
@@ -122,21 +141,35 @@ from .post_installation_action_settings import PostInstallationActionSettings
 from .principal import Principal
 from .proxies import Proxies
 from .remove_fleet_installation_sites_details import RemoveFleetInstallationSitesDetails
+from .remove_installation_site_task_details import RemoveInstallationSiteTaskDetails
 from .request_crypto_analyses_details import RequestCryptoAnalysesDetails
 from .request_deployed_application_migration_analyses_details import RequestDeployedApplicationMigrationAnalysesDetails
 from .request_java_migration_analyses_details import RequestJavaMigrationAnalysesDetails
 from .request_jfr_recordings_details import RequestJfrRecordingsDetails
 from .request_performance_tuning_analyses_details import RequestPerformanceTuningAnalysesDetails
 from .resource_inventory import ResourceInventory
+from .scan_java_server_task_details import ScanJavaServerTaskDetails
 from .scan_java_server_usage_details import ScanJavaServerUsageDetails
+from .scan_library_task_details import ScanLibraryTaskDetails
 from .scan_library_usage_details import ScanLibraryUsageDetails
 from .summarized_events_log import SummarizedEventsLog
+from .task_details import TaskDetails
+from .task_schedule import TaskSchedule
+from .task_schedule_collection import TaskScheduleCollection
+from .task_schedule_summary import TaskScheduleSummary
+from .uncorrelated_package_application_usage_collection import UncorrelatedPackageApplicationUsageCollection
+from .uncorrelated_package_application_usage_summary import UncorrelatedPackageApplicationUsageSummary
+from .uncorrelated_package_managed_instance_usage_collection import UncorrelatedPackageManagedInstanceUsageCollection
+from .uncorrelated_package_managed_instance_usage_summary import UncorrelatedPackageManagedInstanceUsageSummary
+from .uncorrelated_package_usage_collection import UncorrelatedPackageUsageCollection
+from .uncorrelated_package_usage_summary import UncorrelatedPackageUsageSummary
 from .update_drs_file_details import UpdateDrsFileDetails
 from .update_export_setting_details import UpdateExportSettingDetails
 from .update_fleet_advanced_feature_configuration_details import UpdateFleetAdvancedFeatureConfigurationDetails
 from .update_fleet_agent_configuration_details import UpdateFleetAgentConfigurationDetails
 from .update_fleet_details import UpdateFleetDetails
 from .update_jms_plugin_details import UpdateJmsPluginDetails
+from .update_task_schedule_details import UpdateTaskScheduleDetails
 from .work_item_collection import WorkItemCollection
 from .work_item_details import WorkItemDetails
 from .work_item_summary import WorkItemSummary
@@ -151,6 +184,7 @@ from .work_request_resource import WorkRequestResource
 # Maps type names to classes for jms services.
 jms_type_mapping = {
     "AddFleetInstallationSitesDetails": AddFleetInstallationSitesDetails,
+    "AddInstallationSiteTaskDetails": AddInstallationSiteTaskDetails,
     "AdvancedUsageTracking": AdvancedUsageTracking,
     "Agent": Agent,
     "AgentInstallerCollection": AgentInstallerCollection,
@@ -168,18 +202,24 @@ jms_type_mapping = {
     "BlocklistEntry": BlocklistEntry,
     "BlocklistTarget": BlocklistTarget,
     "ChangeFleetCompartmentDetails": ChangeFleetCompartmentDetails,
+    "ClusterDetails": ClusterDetails,
+    "ContainerCollection": ContainerCollection,
+    "ContainerSummary": ContainerSummary,
     "CreateBlocklistDetails": CreateBlocklistDetails,
     "CreateDrsFileDetails": CreateDrsFileDetails,
     "CreateFleetDetails": CreateFleetDetails,
     "CreateJmsPluginDetails": CreateJmsPluginDetails,
+    "CreateTaskScheduleDetails": CreateTaskScheduleDetails,
     "CryptoAnalysisResult": CryptoAnalysisResult,
     "CryptoAnalysisResultCollection": CryptoAnalysisResultCollection,
     "CryptoAnalysisResultSummary": CryptoAnalysisResultSummary,
     "CryptoEventAnalysis": CryptoEventAnalysis,
+    "CryptoTaskDetails": CryptoTaskDetails,
     "CustomLog": CustomLog,
     "DeployedApplicationInstallationUsageSummary": DeployedApplicationInstallationUsageSummary,
     "DeployedApplicationInstallationUsageSummaryCollection": DeployedApplicationInstallationUsageSummaryCollection,
     "DeployedApplicationMigrationAnalysesTarget": DeployedApplicationMigrationAnalysesTarget,
+    "DeployedApplicationMigrationTaskDetails": DeployedApplicationMigrationTaskDetails,
     "DeployedApplicationUsage": DeployedApplicationUsage,
     "DeployedApplicationUsageCollection": DeployedApplicationUsageCollection,
     "DeployedApplicationWorkItemDetails": DeployedApplicationWorkItemDetails,
@@ -190,6 +230,7 @@ jms_type_mapping = {
     "DrsTarget": DrsTarget,
     "EnableDrsDetails": EnableDrsDetails,
     "ExistingInstallationSiteId": ExistingInstallationSiteId,
+    "ExportDataFilters": ExportDataFilters,
     "ExportSetting": ExportSetting,
     "ExportStatus": ExportStatus,
     "Fleet": Fleet,
@@ -224,6 +265,9 @@ jms_type_mapping = {
     "JavaMigrationAnalysisResultCollection": JavaMigrationAnalysisResultCollection,
     "JavaMigrationAnalysisResultSummary": JavaMigrationAnalysisResultSummary,
     "JavaMigrationAnalysisTarget": JavaMigrationAnalysisTarget,
+    "JavaMigrationApplicationWorkItemDetails": JavaMigrationApplicationWorkItemDetails,
+    "JavaMigrationDeployedApplicationWorkItemDetails": JavaMigrationDeployedApplicationWorkItemDetails,
+    "JavaMigrationTaskDetails": JavaMigrationTaskDetails,
     "JavaRelease": JavaRelease,
     "JavaReleaseCollection": JavaReleaseCollection,
     "JavaReleaseSummary": JavaReleaseSummary,
@@ -234,6 +278,7 @@ jms_type_mapping = {
     "JavaServerUsageCollection": JavaServerUsageCollection,
     "JfrAttachmentTarget": JfrAttachmentTarget,
     "JfrRecording": JfrRecording,
+    "JfrTaskDetails": JfrTaskDetails,
     "JmsPlugin": JmsPlugin,
     "JmsPluginCollection": JmsPluginCollection,
     "JmsPluginSummary": JmsPluginSummary,
@@ -242,8 +287,14 @@ jms_type_mapping = {
     "KeySizeAlgorithm": KeySizeAlgorithm,
     "Lcm": Lcm,
     "LcmWorkItemDetails": LcmWorkItemDetails,
+    "LibraryApplicationUsageCollection": LibraryApplicationUsageCollection,
+    "LibraryApplicationUsageSummary": LibraryApplicationUsageSummary,
+    "LibraryInventory": LibraryInventory,
+    "LibraryManagedInstanceUsageCollection": LibraryManagedInstanceUsageCollection,
+    "LibraryManagedInstanceUsageSummary": LibraryManagedInstanceUsageSummary,
     "LibraryUsage": LibraryUsage,
     "LibraryUsageCollection": LibraryUsageCollection,
+    "LibraryVulnerability": LibraryVulnerability,
     "ManageDrsDetails": ManageDrsDetails,
     "ManagedInstanceUsage": ManagedInstanceUsage,
     "ManagedInstanceUsageCollection": ManagedInstanceUsageCollection,
@@ -255,6 +306,7 @@ jms_type_mapping = {
     "PerformanceTuningAnalysisResult": PerformanceTuningAnalysisResult,
     "PerformanceTuningAnalysisResultCollection": PerformanceTuningAnalysisResultCollection,
     "PerformanceTuningAnalysisResultSummary": PerformanceTuningAnalysisResultSummary,
+    "PerformanceTuningTaskDetails": PerformanceTuningTaskDetails,
     "Plugin": Plugin,
     "PluginErrorAggregation": PluginErrorAggregation,
     "PluginErrorAggregationCollection": PluginErrorAggregationCollection,
@@ -266,21 +318,35 @@ jms_type_mapping = {
     "Principal": Principal,
     "Proxies": Proxies,
     "RemoveFleetInstallationSitesDetails": RemoveFleetInstallationSitesDetails,
+    "RemoveInstallationSiteTaskDetails": RemoveInstallationSiteTaskDetails,
     "RequestCryptoAnalysesDetails": RequestCryptoAnalysesDetails,
     "RequestDeployedApplicationMigrationAnalysesDetails": RequestDeployedApplicationMigrationAnalysesDetails,
     "RequestJavaMigrationAnalysesDetails": RequestJavaMigrationAnalysesDetails,
     "RequestJfrRecordingsDetails": RequestJfrRecordingsDetails,
     "RequestPerformanceTuningAnalysesDetails": RequestPerformanceTuningAnalysesDetails,
     "ResourceInventory": ResourceInventory,
+    "ScanJavaServerTaskDetails": ScanJavaServerTaskDetails,
     "ScanJavaServerUsageDetails": ScanJavaServerUsageDetails,
+    "ScanLibraryTaskDetails": ScanLibraryTaskDetails,
     "ScanLibraryUsageDetails": ScanLibraryUsageDetails,
     "SummarizedEventsLog": SummarizedEventsLog,
+    "TaskDetails": TaskDetails,
+    "TaskSchedule": TaskSchedule,
+    "TaskScheduleCollection": TaskScheduleCollection,
+    "TaskScheduleSummary": TaskScheduleSummary,
+    "UncorrelatedPackageApplicationUsageCollection": UncorrelatedPackageApplicationUsageCollection,
+    "UncorrelatedPackageApplicationUsageSummary": UncorrelatedPackageApplicationUsageSummary,
+    "UncorrelatedPackageManagedInstanceUsageCollection": UncorrelatedPackageManagedInstanceUsageCollection,
+    "UncorrelatedPackageManagedInstanceUsageSummary": UncorrelatedPackageManagedInstanceUsageSummary,
+    "UncorrelatedPackageUsageCollection": UncorrelatedPackageUsageCollection,
+    "UncorrelatedPackageUsageSummary": UncorrelatedPackageUsageSummary,
     "UpdateDrsFileDetails": UpdateDrsFileDetails,
     "UpdateExportSettingDetails": UpdateExportSettingDetails,
     "UpdateFleetAdvancedFeatureConfigurationDetails": UpdateFleetAdvancedFeatureConfigurationDetails,
     "UpdateFleetAgentConfigurationDetails": UpdateFleetAgentConfigurationDetails,
     "UpdateFleetDetails": UpdateFleetDetails,
     "UpdateJmsPluginDetails": UpdateJmsPluginDetails,
+    "UpdateTaskScheduleDetails": UpdateTaskScheduleDetails,
     "WorkItemCollection": WorkItemCollection,
     "WorkItemDetails": WorkItemDetails,
     "WorkItemSummary": WorkItemSummary,

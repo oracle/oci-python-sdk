@@ -126,6 +126,7 @@ from .cloud_vm_cluster_summary import CloudVmClusterSummary
 from .complete_external_backup_job_details import CompleteExternalBackupJobDetails
 from .compute_performance_summary import ComputePerformanceSummary
 from .configure_autonomous_database_vault_key_details import ConfigureAutonomousDatabaseVaultKeyDetails
+from .configure_exascale_cloud_exadata_infrastructure_details import ConfigureExascaleCloudExadataInfrastructureDetails
 from .configure_exascale_exadata_infrastructure_details import ConfigureExascaleExadataInfrastructureDetails
 from .configure_saas_admin_user_details import ConfigureSaasAdminUserDetails
 from .console_connection import ConsoleConnection
@@ -635,6 +636,7 @@ database_type_mapping = {
     "CompleteExternalBackupJobDetails": CompleteExternalBackupJobDetails,
     "ComputePerformanceSummary": ComputePerformanceSummary,
     "ConfigureAutonomousDatabaseVaultKeyDetails": ConfigureAutonomousDatabaseVaultKeyDetails,
+    "ConfigureExascaleCloudExadataInfrastructureDetails": ConfigureExascaleCloudExadataInfrastructureDetails,
     "ConfigureExascaleExadataInfrastructureDetails": ConfigureExascaleExadataInfrastructureDetails,
     "ConfigureSaasAdminUserDetails": ConfigureSaasAdminUserDetails,
     "ConsoleConnection": ConsoleConnection,

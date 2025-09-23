@@ -84,6 +84,14 @@ class Fleet(object):
             The value to assign to the approximate_java_server_count property of this Fleet.
         :type approximate_java_server_count: int
 
+        :param approximate_library_count:
+            The value to assign to the approximate_library_count property of this Fleet.
+        :type approximate_library_count: int
+
+        :param approximate_library_vulnerability_count:
+            The value to assign to the approximate_library_vulnerability_count property of this Fleet.
+        :type approximate_library_vulnerability_count: int
+
         :param inventory_log:
             The value to assign to the inventory_log property of this Fleet.
         :type inventory_log: oci.jms.models.CustomLog
@@ -133,6 +141,8 @@ class Fleet(object):
             'approximate_application_count': 'int',
             'approximate_managed_instance_count': 'int',
             'approximate_java_server_count': 'int',
+            'approximate_library_count': 'int',
+            'approximate_library_vulnerability_count': 'int',
             'inventory_log': 'CustomLog',
             'operation_log': 'CustomLog',
             'is_advanced_features_enabled': 'bool',
@@ -153,6 +163,8 @@ class Fleet(object):
             'approximate_application_count': 'approximateApplicationCount',
             'approximate_managed_instance_count': 'approximateManagedInstanceCount',
             'approximate_java_server_count': 'approximateJavaServerCount',
+            'approximate_library_count': 'approximateLibraryCount',
+            'approximate_library_vulnerability_count': 'approximateLibraryVulnerabilityCount',
             'inventory_log': 'inventoryLog',
             'operation_log': 'operationLog',
             'is_advanced_features_enabled': 'isAdvancedFeaturesEnabled',
@@ -172,6 +184,8 @@ class Fleet(object):
         self._approximate_application_count = None
         self._approximate_managed_instance_count = None
         self._approximate_java_server_count = None
+        self._approximate_library_count = None
+        self._approximate_library_vulnerability_count = None
         self._inventory_log = None
         self._operation_log = None
         self._is_advanced_features_enabled = None
@@ -415,6 +429,58 @@ class Fleet(object):
         :type: int
         """
         self._approximate_java_server_count = approximate_java_server_count
+
+    @property
+    def approximate_library_count(self):
+        """
+        **[Required]** Gets the approximate_library_count of this Fleet.
+        The approximate count of all unique libraries in the Fleet in the past seven days.
+        This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+
+
+        :return: The approximate_library_count of this Fleet.
+        :rtype: int
+        """
+        return self._approximate_library_count
+
+    @approximate_library_count.setter
+    def approximate_library_count(self, approximate_library_count):
+        """
+        Sets the approximate_library_count of this Fleet.
+        The approximate count of all unique libraries in the Fleet in the past seven days.
+        This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+
+
+        :param approximate_library_count: The approximate_library_count of this Fleet.
+        :type: int
+        """
+        self._approximate_library_count = approximate_library_count
+
+    @property
+    def approximate_library_vulnerability_count(self):
+        """
+        **[Required]** Gets the approximate_library_vulnerability_count of this Fleet.
+        The approximate count of all unique library vulnerabilities in the Fleet in the past seven days.
+        This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+
+
+        :return: The approximate_library_vulnerability_count of this Fleet.
+        :rtype: int
+        """
+        return self._approximate_library_vulnerability_count
+
+    @approximate_library_vulnerability_count.setter
+    def approximate_library_vulnerability_count(self, approximate_library_vulnerability_count):
+        """
+        Sets the approximate_library_vulnerability_count of this Fleet.
+        The approximate count of all unique library vulnerabilities in the Fleet in the past seven days.
+        This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+
+
+        :param approximate_library_vulnerability_count: The approximate_library_vulnerability_count of this Fleet.
+        :type: int
+        """
+        self._approximate_library_vulnerability_count = approximate_library_vulnerability_count
 
     @property
     def inventory_log(self):

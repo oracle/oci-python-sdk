@@ -13,7 +13,8 @@ from oci.decorators import init_model_state_from_kwargs
 class DeployedApplicationMigrationAnalysesTarget(object):
     """
     The target describes the input data for deployed Java migration analyses.
-    A target contains a managed instance, deployed application installation Key, sourceJdkVersion, targetJdkVersion and optional excludePackagePrefixes.
+    A target contains a managed instance, deployed application installation Key, sourceJdkVersion, targetJdkVersion, optional excludePackagePrefixes
+    and optional includePackagePrefixes.
     """
 
     def __init__(self, **kwargs):
@@ -41,26 +42,33 @@ class DeployedApplicationMigrationAnalysesTarget(object):
             The value to assign to the exclude_package_prefixes property of this DeployedApplicationMigrationAnalysesTarget.
         :type exclude_package_prefixes: list[str]
 
+        :param include_package_prefixes:
+            The value to assign to the include_package_prefixes property of this DeployedApplicationMigrationAnalysesTarget.
+        :type include_package_prefixes: list[str]
+
         """
         self.swagger_types = {
             'managed_instance_id': 'str',
             'deployed_application_installation_key': 'str',
             'source_jdk_version': 'str',
             'target_jdk_version': 'str',
-            'exclude_package_prefixes': 'list[str]'
+            'exclude_package_prefixes': 'list[str]',
+            'include_package_prefixes': 'list[str]'
         }
         self.attribute_map = {
             'managed_instance_id': 'managedInstanceId',
             'deployed_application_installation_key': 'deployedApplicationInstallationKey',
             'source_jdk_version': 'sourceJdkVersion',
             'target_jdk_version': 'targetJdkVersion',
-            'exclude_package_prefixes': 'excludePackagePrefixes'
+            'exclude_package_prefixes': 'excludePackagePrefixes',
+            'include_package_prefixes': 'includePackagePrefixes'
         }
         self._managed_instance_id = None
         self._deployed_application_installation_key = None
         self._source_jdk_version = None
         self._target_jdk_version = None
         self._exclude_package_prefixes = None
+        self._include_package_prefixes = None
 
     @property
     def managed_instance_id(self):
@@ -162,7 +170,7 @@ class DeployedApplicationMigrationAnalysesTarget(object):
     def exclude_package_prefixes(self):
         """
         Gets the exclude_package_prefixes of this DeployedApplicationMigrationAnalysesTarget.
-        Excludes the packages that starts with the prefix from the migration analyses result.
+        Excludes the packages that starts with the prefix from the migration analyses result. Either this or includePackagePrefixes can be specified.
 
 
         :return: The exclude_package_prefixes of this DeployedApplicationMigrationAnalysesTarget.
@@ -174,13 +182,37 @@ class DeployedApplicationMigrationAnalysesTarget(object):
     def exclude_package_prefixes(self, exclude_package_prefixes):
         """
         Sets the exclude_package_prefixes of this DeployedApplicationMigrationAnalysesTarget.
-        Excludes the packages that starts with the prefix from the migration analyses result.
+        Excludes the packages that starts with the prefix from the migration analyses result. Either this or includePackagePrefixes can be specified.
 
 
         :param exclude_package_prefixes: The exclude_package_prefixes of this DeployedApplicationMigrationAnalysesTarget.
         :type: list[str]
         """
         self._exclude_package_prefixes = exclude_package_prefixes
+
+    @property
+    def include_package_prefixes(self):
+        """
+        Gets the include_package_prefixes of this DeployedApplicationMigrationAnalysesTarget.
+        Includes the packages that starts with the prefix from the migration analyses result. Either this or excludePackagePrefixes can be specified.
+
+
+        :return: The include_package_prefixes of this DeployedApplicationMigrationAnalysesTarget.
+        :rtype: list[str]
+        """
+        return self._include_package_prefixes
+
+    @include_package_prefixes.setter
+    def include_package_prefixes(self, include_package_prefixes):
+        """
+        Sets the include_package_prefixes of this DeployedApplicationMigrationAnalysesTarget.
+        Includes the packages that starts with the prefix from the migration analyses result. Either this or excludePackagePrefixes can be specified.
+
+
+        :param include_package_prefixes: The include_package_prefixes of this DeployedApplicationMigrationAnalysesTarget.
+        :type: list[str]
+        """
+        self._include_package_prefixes = include_package_prefixes
 
     def __repr__(self):
         return formatted_flat_dict(self)

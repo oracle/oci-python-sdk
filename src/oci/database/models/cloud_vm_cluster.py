@@ -59,6 +59,14 @@ class CloudVmCluster(object):
     #: This constant has a value of "NORMAL"
     DISK_REDUNDANCY_NORMAL = "NORMAL"
 
+    #: A constant which can be used with the storage_management_type property of a CloudVmCluster.
+    #: This constant has a value of "ASM"
+    STORAGE_MANAGEMENT_TYPE_ASM = "ASM"
+
+    #: A constant which can be used with the storage_management_type property of a CloudVmCluster.
+    #: This constant has a value of "EXASCALE"
+    STORAGE_MANAGEMENT_TYPE_EXASCALE = "EXASCALE"
+
     #: A constant which can be used with the vm_cluster_type property of a CloudVmCluster.
     #: This constant has a value of "REGULAR"
     VM_CLUSTER_TYPE_REGULAR = "REGULAR"
@@ -314,6 +322,16 @@ class CloudVmCluster(object):
             The value to assign to the cloud_automation_update_details property of this CloudVmCluster.
         :type cloud_automation_update_details: oci.database.models.CloudAutomationUpdateDetails
 
+        :param exascale_db_storage_vault_id:
+            The value to assign to the exascale_db_storage_vault_id property of this CloudVmCluster.
+        :type exascale_db_storage_vault_id: str
+
+        :param storage_management_type:
+            The value to assign to the storage_management_type property of this CloudVmCluster.
+            Allowed values for this property are: "ASM", "EXASCALE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type storage_management_type: str
+
         :param vm_cluster_type:
             The value to assign to the vm_cluster_type property of this CloudVmCluster.
             Allowed values for this property are: "REGULAR", "DEVELOPER", 'UNKNOWN_ENUM_VALUE'.
@@ -392,6 +410,8 @@ class CloudVmCluster(object):
             'gi_software_image_id': 'str',
             'file_system_configuration_details': 'list[FileSystemConfigurationDetail]',
             'cloud_automation_update_details': 'CloudAutomationUpdateDetails',
+            'exascale_db_storage_vault_id': 'str',
+            'storage_management_type': 'str',
             'vm_cluster_type': 'str',
             'compute_model': 'str',
             'multi_cloud_identity_connector_configs': 'list[IdentityConnectorDetails]',
@@ -452,6 +472,8 @@ class CloudVmCluster(object):
             'gi_software_image_id': 'giSoftwareImageId',
             'file_system_configuration_details': 'fileSystemConfigurationDetails',
             'cloud_automation_update_details': 'cloudAutomationUpdateDetails',
+            'exascale_db_storage_vault_id': 'exascaleDbStorageVaultId',
+            'storage_management_type': 'storageManagementType',
             'vm_cluster_type': 'vmClusterType',
             'compute_model': 'computeModel',
             'multi_cloud_identity_connector_configs': 'multiCloudIdentityConnectorConfigs',
@@ -511,6 +533,8 @@ class CloudVmCluster(object):
         self._gi_software_image_id = None
         self._file_system_configuration_details = None
         self._cloud_automation_update_details = None
+        self._exascale_db_storage_vault_id = None
+        self._storage_management_type = None
         self._vm_cluster_type = None
         self._compute_model = None
         self._multi_cloud_identity_connector_configs = None
@@ -1979,6 +2003,64 @@ class CloudVmCluster(object):
         :type: oci.database.models.CloudAutomationUpdateDetails
         """
         self._cloud_automation_update_details = cloud_automation_update_details
+
+    @property
+    def exascale_db_storage_vault_id(self):
+        """
+        Gets the exascale_db_storage_vault_id of this CloudVmCluster.
+        The `OCID`__ of the Exadata Database Storage Vault.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The exascale_db_storage_vault_id of this CloudVmCluster.
+        :rtype: str
+        """
+        return self._exascale_db_storage_vault_id
+
+    @exascale_db_storage_vault_id.setter
+    def exascale_db_storage_vault_id(self, exascale_db_storage_vault_id):
+        """
+        Sets the exascale_db_storage_vault_id of this CloudVmCluster.
+        The `OCID`__ of the Exadata Database Storage Vault.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param exascale_db_storage_vault_id: The exascale_db_storage_vault_id of this CloudVmCluster.
+        :type: str
+        """
+        self._exascale_db_storage_vault_id = exascale_db_storage_vault_id
+
+    @property
+    def storage_management_type(self):
+        """
+        Gets the storage_management_type of this CloudVmCluster.
+        Specifies the type of storage management for the Cloud VM Cluster if its ASM or Exascale.
+
+        Allowed values for this property are: "ASM", "EXASCALE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The storage_management_type of this CloudVmCluster.
+        :rtype: str
+        """
+        return self._storage_management_type
+
+    @storage_management_type.setter
+    def storage_management_type(self, storage_management_type):
+        """
+        Sets the storage_management_type of this CloudVmCluster.
+        Specifies the type of storage management for the Cloud VM Cluster if its ASM or Exascale.
+
+
+        :param storage_management_type: The storage_management_type of this CloudVmCluster.
+        :type: str
+        """
+        allowed_values = ["ASM", "EXASCALE"]
+        if not value_allowed_none_or_none_sentinel(storage_management_type, allowed_values):
+            storage_management_type = 'UNKNOWN_ENUM_VALUE'
+        self._storage_management_type = storage_management_type
 
     @property
     def vm_cluster_type(self):

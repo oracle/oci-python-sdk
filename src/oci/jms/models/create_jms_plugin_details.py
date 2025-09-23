@@ -15,6 +15,18 @@ class CreateJmsPluginDetails(object):
     The details for creating a JmsPlugin.
     """
 
+    #: A constant which can be used with the agent_type property of a CreateJmsPluginDetails.
+    #: This constant has a value of "OMA"
+    AGENT_TYPE_OMA = "OMA"
+
+    #: A constant which can be used with the agent_type property of a CreateJmsPluginDetails.
+    #: This constant has a value of "OCA"
+    AGENT_TYPE_OCA = "OCA"
+
+    #: A constant which can be used with the agent_type property of a CreateJmsPluginDetails.
+    #: This constant has a value of "OCMA"
+    AGENT_TYPE_OCMA = "OCMA"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateJmsPluginDetails object with values from keyword arguments.
@@ -27,6 +39,11 @@ class CreateJmsPluginDetails(object):
         :param compartment_id:
             The value to assign to the compartment_id property of this CreateJmsPluginDetails.
         :type compartment_id: str
+
+        :param agent_type:
+            The value to assign to the agent_type property of this CreateJmsPluginDetails.
+            Allowed values for this property are: "OMA", "OCA", "OCMA"
+        :type agent_type: str
 
         :param fleet_id:
             The value to assign to the fleet_id property of this CreateJmsPluginDetails.
@@ -44,6 +61,7 @@ class CreateJmsPluginDetails(object):
         self.swagger_types = {
             'agent_id': 'str',
             'compartment_id': 'str',
+            'agent_type': 'str',
             'fleet_id': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)'
@@ -51,12 +69,14 @@ class CreateJmsPluginDetails(object):
         self.attribute_map = {
             'agent_id': 'agentId',
             'compartment_id': 'compartmentId',
+            'agent_type': 'agentType',
             'fleet_id': 'fleetId',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags'
         }
         self._agent_id = None
         self._compartment_id = None
+        self._agent_type = None
         self._fleet_id = None
         self._defined_tags = None
         self._freeform_tags = None
@@ -65,7 +85,8 @@ class CreateJmsPluginDetails(object):
     def agent_id(self):
         """
         **[Required]** Gets the agent_id of this CreateJmsPluginDetails.
-        The `OCID`__ of the Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is deployed.
+        The `OCID`__ of the Management Agent (OMA), the Oracle Cloud Agent (OCA),
+        or the Oracle Container Management Agent (OCMA) instance where the JMS plugin is deployed.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -79,7 +100,8 @@ class CreateJmsPluginDetails(object):
     def agent_id(self, agent_id):
         """
         Sets the agent_id of this CreateJmsPluginDetails.
-        The `OCID`__ of the Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is deployed.
+        The `OCID`__ of the Management Agent (OMA), the Oracle Cloud Agent (OCA),
+        or the Oracle Container Management Agent (OCMA) instance where the JMS plugin is deployed.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -93,7 +115,7 @@ class CreateJmsPluginDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateJmsPluginDetails.
-        The OMA/OCA agent's compartment `OCID`__.
+        The OMA/OCA/OCMA agent's compartment `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -107,7 +129,7 @@ class CreateJmsPluginDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateJmsPluginDetails.
-        The OMA/OCA agent's compartment `OCID`__.
+        The OMA/OCA/OCMA agent's compartment `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -116,6 +138,37 @@ class CreateJmsPluginDetails(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def agent_type(self):
+        """
+        Gets the agent_type of this CreateJmsPluginDetails.
+        The agent type.
+
+        Allowed values for this property are: "OMA", "OCA", "OCMA"
+
+
+        :return: The agent_type of this CreateJmsPluginDetails.
+        :rtype: str
+        """
+        return self._agent_type
+
+    @agent_type.setter
+    def agent_type(self, agent_type):
+        """
+        Sets the agent_type of this CreateJmsPluginDetails.
+        The agent type.
+
+
+        :param agent_type: The agent_type of this CreateJmsPluginDetails.
+        :type: str
+        """
+        allowed_values = ["OMA", "OCA", "OCMA"]
+        if not value_allowed_none_or_none_sentinel(agent_type, allowed_values):
+            raise ValueError(
+                f"Invalid value for `agent_type`, must be None or one of {allowed_values}"
+            )
+        self._agent_type = agent_type
 
     @property
     def fleet_id(self):

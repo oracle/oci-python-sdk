@@ -29,6 +29,7 @@ Marketplace
     oci.marketplace.models.ContainerListingPackage
     oci.marketplace.models.CreateAcceptedAgreementDetails
     oci.marketplace.models.CreateImagePublicationPackage
+    oci.marketplace.models.CreateMarketplaceExternalAttestedMetadataDetails
     oci.marketplace.models.CreatePublicationDetails
     oci.marketplace.models.CreatePublicationPackage
     oci.marketplace.models.DocumentationLink
@@ -47,6 +48,8 @@ Marketplace
     oci.marketplace.models.ListingPackage
     oci.marketplace.models.ListingPackageSummary
     oci.marketplace.models.ListingSummary
+    oci.marketplace.models.MarketplaceExternalAttestedMetadata
+    oci.marketplace.models.MarketplaceMetadataPublicKeySummary
     oci.marketplace.models.NamedLink
     oci.marketplace.models.OperatingSystem
     oci.marketplace.models.OrchestrationListingPackage

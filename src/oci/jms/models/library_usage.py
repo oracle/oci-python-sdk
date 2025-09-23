@@ -15,6 +15,18 @@ class LibraryUsage(object):
     Library usage during a specified time period.
     """
 
+    #: A constant which can be used with the confidence_level property of a LibraryUsage.
+    #: This constant has a value of "HIGH"
+    CONFIDENCE_LEVEL_HIGH = "HIGH"
+
+    #: A constant which can be used with the confidence_level property of a LibraryUsage.
+    #: This constant has a value of "MEDIUM"
+    CONFIDENCE_LEVEL_MEDIUM = "MEDIUM"
+
+    #: A constant which can be used with the confidence_level property of a LibraryUsage.
+    #: This constant has a value of "LOW"
+    CONFIDENCE_LEVEL_LOW = "LOW"
+
     def __init__(self, **kwargs):
         """
         Initializes a new LibraryUsage object with values from keyword arguments.
@@ -43,6 +55,24 @@ class LibraryUsage(object):
         :param cvss_score:
             The value to assign to the cvss_score property of this LibraryUsage.
         :type cvss_score: float
+
+        :param is_dynamically_detected:
+            The value to assign to the is_dynamically_detected property of this LibraryUsage.
+        :type is_dynamically_detected: bool
+
+        :param highest_vulnerability_score:
+            The value to assign to the highest_vulnerability_score property of this LibraryUsage.
+        :type highest_vulnerability_score: float
+
+        :param vulnerabilities:
+            The value to assign to the vulnerabilities property of this LibraryUsage.
+        :type vulnerabilities: list[oci.jms.models.LibraryVulnerability]
+
+        :param confidence_level:
+            The value to assign to the confidence_level property of this LibraryUsage.
+            Allowed values for this property are: "HIGH", "MEDIUM", "LOW", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type confidence_level: str
 
         :param approximate_application_count:
             The value to assign to the approximate_application_count property of this LibraryUsage.
@@ -88,6 +118,10 @@ class LibraryUsage(object):
             'library_version': 'str',
             'cve_id': 'str',
             'cvss_score': 'float',
+            'is_dynamically_detected': 'bool',
+            'highest_vulnerability_score': 'float',
+            'vulnerabilities': 'list[LibraryVulnerability]',
+            'confidence_level': 'str',
             'approximate_application_count': 'int',
             'approximate_java_server_instance_count': 'int',
             'approximate_deployed_application_count': 'int',
@@ -105,6 +139,10 @@ class LibraryUsage(object):
             'library_version': 'libraryVersion',
             'cve_id': 'cveId',
             'cvss_score': 'cvssScore',
+            'is_dynamically_detected': 'isDynamicallyDetected',
+            'highest_vulnerability_score': 'highestVulnerabilityScore',
+            'vulnerabilities': 'vulnerabilities',
+            'confidence_level': 'confidenceLevel',
             'approximate_application_count': 'approximateApplicationCount',
             'approximate_java_server_instance_count': 'approximateJavaServerInstanceCount',
             'approximate_deployed_application_count': 'approximateDeployedApplicationCount',
@@ -121,6 +159,10 @@ class LibraryUsage(object):
         self._library_version = None
         self._cve_id = None
         self._cvss_score = None
+        self._is_dynamically_detected = None
+        self._highest_vulnerability_score = None
+        self._vulnerabilities = None
+        self._confidence_level = None
         self._approximate_application_count = None
         self._approximate_java_server_instance_count = None
         self._approximate_deployed_application_count = None
@@ -235,6 +277,7 @@ class LibraryUsage(object):
     def cve_id(self):
         """
         Gets the cve_id of this LibraryUsage.
+        Deprecated, use `vulnerabilities` instead.
         The Common Vulnerabilities and Exposures (CVE) ID.
 
 
@@ -247,6 +290,7 @@ class LibraryUsage(object):
     def cve_id(self, cve_id):
         """
         Sets the cve_id of this LibraryUsage.
+        Deprecated, use `vulnerabilities` instead.
         The Common Vulnerabilities and Exposures (CVE) ID.
 
 
@@ -259,7 +303,8 @@ class LibraryUsage(object):
     def cvss_score(self):
         """
         Gets the cvss_score of this LibraryUsage.
-        The Common Vulnerability Scoring System (CVSS) score.
+        Deprecated, use `highestVulnerabilityScore` instead.
+        The Common Vulnerability Scoring System (CVSS) score. If `cvssScore` is not available, it will be set to -1.0. It is set to 0.0 when `cveId` is null.
 
 
         :return: The cvss_score of this LibraryUsage.
@@ -271,13 +316,116 @@ class LibraryUsage(object):
     def cvss_score(self, cvss_score):
         """
         Sets the cvss_score of this LibraryUsage.
-        The Common Vulnerability Scoring System (CVSS) score.
+        Deprecated, use `highestVulnerabilityScore` instead.
+        The Common Vulnerability Scoring System (CVSS) score. If `cvssScore` is not available, it will be set to -1.0. It is set to 0.0 when `cveId` is null.
 
 
         :param cvss_score: The cvss_score of this LibraryUsage.
         :type: float
         """
         self._cvss_score = cvss_score
+
+    @property
+    def is_dynamically_detected(self):
+        """
+        **[Required]** Gets the is_dynamically_detected of this LibraryUsage.
+        Indicates whether the library was dynamically detected.
+
+
+        :return: The is_dynamically_detected of this LibraryUsage.
+        :rtype: bool
+        """
+        return self._is_dynamically_detected
+
+    @is_dynamically_detected.setter
+    def is_dynamically_detected(self, is_dynamically_detected):
+        """
+        Sets the is_dynamically_detected of this LibraryUsage.
+        Indicates whether the library was dynamically detected.
+
+
+        :param is_dynamically_detected: The is_dynamically_detected of this LibraryUsage.
+        :type: bool
+        """
+        self._is_dynamically_detected = is_dynamically_detected
+
+    @property
+    def highest_vulnerability_score(self):
+        """
+        Gets the highest_vulnerability_score of this LibraryUsage.
+        Highest CVSS score among the all vulnerabilities. If highest CVSS score is not available, it will be set to -1.0. It is set to 0.0 when there is no associated vulnerabilities.
+
+
+        :return: The highest_vulnerability_score of this LibraryUsage.
+        :rtype: float
+        """
+        return self._highest_vulnerability_score
+
+    @highest_vulnerability_score.setter
+    def highest_vulnerability_score(self, highest_vulnerability_score):
+        """
+        Sets the highest_vulnerability_score of this LibraryUsage.
+        Highest CVSS score among the all vulnerabilities. If highest CVSS score is not available, it will be set to -1.0. It is set to 0.0 when there is no associated vulnerabilities.
+
+
+        :param highest_vulnerability_score: The highest_vulnerability_score of this LibraryUsage.
+        :type: float
+        """
+        self._highest_vulnerability_score = highest_vulnerability_score
+
+    @property
+    def vulnerabilities(self):
+        """
+        Gets the vulnerabilities of this LibraryUsage.
+        The list of library vulnerabilities.
+
+
+        :return: The vulnerabilities of this LibraryUsage.
+        :rtype: list[oci.jms.models.LibraryVulnerability]
+        """
+        return self._vulnerabilities
+
+    @vulnerabilities.setter
+    def vulnerabilities(self, vulnerabilities):
+        """
+        Sets the vulnerabilities of this LibraryUsage.
+        The list of library vulnerabilities.
+
+
+        :param vulnerabilities: The vulnerabilities of this LibraryUsage.
+        :type: list[oci.jms.models.LibraryVulnerability]
+        """
+        self._vulnerabilities = vulnerabilities
+
+    @property
+    def confidence_level(self):
+        """
+        Gets the confidence_level of this LibraryUsage.
+        Confidence level of the assessed library's vulnerabilities.
+
+        Allowed values for this property are: "HIGH", "MEDIUM", "LOW", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The confidence_level of this LibraryUsage.
+        :rtype: str
+        """
+        return self._confidence_level
+
+    @confidence_level.setter
+    def confidence_level(self, confidence_level):
+        """
+        Sets the confidence_level of this LibraryUsage.
+        Confidence level of the assessed library's vulnerabilities.
+
+
+        :param confidence_level: The confidence_level of this LibraryUsage.
+        :type: str
+        """
+        allowed_values = ["HIGH", "MEDIUM", "LOW"]
+        if not value_allowed_none_or_none_sentinel(confidence_level, allowed_values):
+            confidence_level = 'UNKNOWN_ENUM_VALUE'
+        self._confidence_level = confidence_level
 
     @property
     def approximate_application_count(self):
@@ -487,6 +635,7 @@ class LibraryUsage(object):
     def time_last_cve_refreshed(self):
         """
         Gets the time_last_cve_refreshed of this LibraryUsage.
+        Deprecated.
         The date and time of the last CVEs refresh was completed.
 
 
@@ -499,6 +648,7 @@ class LibraryUsage(object):
     def time_last_cve_refreshed(self, time_last_cve_refreshed):
         """
         Sets the time_last_cve_refreshed of this LibraryUsage.
+        Deprecated.
         The date and time of the last CVEs refresh was completed.
 
 

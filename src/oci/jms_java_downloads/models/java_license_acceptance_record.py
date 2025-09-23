@@ -32,6 +32,10 @@ class JavaLicenseAcceptanceRecord(object):
     LICENSE_TYPE_NFTC = "NFTC"
 
     #: A constant which can be used with the license_type property of a JavaLicenseAcceptanceRecord.
+    #: This constant has a value of "BCL"
+    LICENSE_TYPE_BCL = "BCL"
+
+    #: A constant which can be used with the license_type property of a JavaLicenseAcceptanceRecord.
     #: This constant has a value of "RESTRICTED"
     LICENSE_TYPE_RESTRICTED = "RESTRICTED"
 
@@ -84,7 +88,7 @@ class JavaLicenseAcceptanceRecord(object):
 
         :param license_type:
             The value to assign to the license_type property of this JavaLicenseAcceptanceRecord.
-            Allowed values for this property are: "OTN", "NFTC", "RESTRICTED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "OTN", "NFTC", "BCL", "RESTRICTED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type license_type: str
 
@@ -252,7 +256,7 @@ class JavaLicenseAcceptanceRecord(object):
         **[Required]** Gets the license_type of this JavaLicenseAcceptanceRecord.
         License type associated with the acceptance.
 
-        Allowed values for this property are: "OTN", "NFTC", "RESTRICTED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "OTN", "NFTC", "BCL", "RESTRICTED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -271,7 +275,7 @@ class JavaLicenseAcceptanceRecord(object):
         :param license_type: The license_type of this JavaLicenseAcceptanceRecord.
         :type: str
         """
-        allowed_values = ["OTN", "NFTC", "RESTRICTED"]
+        allowed_values = ["OTN", "NFTC", "BCL", "RESTRICTED"]
         if not value_allowed_none_or_none_sentinel(license_type, allowed_values):
             license_type = 'UNKNOWN_ENUM_VALUE'
         self._license_type = license_type

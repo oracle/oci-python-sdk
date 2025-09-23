@@ -12,10 +12,11 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class JfrAttachmentTarget(object):
     """
-    The target to collect JFR data. A target is a managed instance, with options to further limit to specific application and/or Java Runtime.
+    The target to collect JFR data. A target is a managed instance, with options to further limit to specific container and/or application and/or Java Runtime.
     When the applicationKey isn't specified, then all applications are selected.
     When the jreKey isn't specified, then all supported Java Runtime versions are selected.
     When the applicationInstallationKey isn't specified, then all application installations are selected.
+    When the containerKey isn't specified, then all containers are selected.
     Keys applicationKey and applicationInstallationKey are mutually exclusive.
     """
 
@@ -40,23 +41,30 @@ class JfrAttachmentTarget(object):
             The value to assign to the jre_key property of this JfrAttachmentTarget.
         :type jre_key: str
 
+        :param container_key:
+            The value to assign to the container_key property of this JfrAttachmentTarget.
+        :type container_key: str
+
         """
         self.swagger_types = {
             'managed_instance_id': 'str',
             'application_key': 'str',
             'application_installation_key': 'str',
-            'jre_key': 'str'
+            'jre_key': 'str',
+            'container_key': 'str'
         }
         self.attribute_map = {
             'managed_instance_id': 'managedInstanceId',
             'application_key': 'applicationKey',
             'application_installation_key': 'applicationInstallationKey',
-            'jre_key': 'jreKey'
+            'jre_key': 'jreKey',
+            'container_key': 'containerKey'
         }
         self._managed_instance_id = None
         self._application_key = None
         self._application_installation_key = None
         self._jre_key = None
+        self._container_key = None
 
     @property
     def managed_instance_id(self):
@@ -153,6 +161,30 @@ class JfrAttachmentTarget(object):
         :type: str
         """
         self._jre_key = jre_key
+
+    @property
+    def container_key(self):
+        """
+        Gets the container_key of this JfrAttachmentTarget.
+        Unique key that identifies the container for JFR data collection.
+
+
+        :return: The container_key of this JfrAttachmentTarget.
+        :rtype: str
+        """
+        return self._container_key
+
+    @container_key.setter
+    def container_key(self, container_key):
+        """
+        Sets the container_key of this JfrAttachmentTarget.
+        Unique key that identifies the container for JFR data collection.
+
+
+        :param container_key: The container_key of this JfrAttachmentTarget.
+        :type: str
+        """
+        self._container_key = container_key
 
     def __repr__(self):
         return formatted_flat_dict(self)

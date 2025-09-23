@@ -44,6 +44,14 @@ class UpdateFleetAgentConfigurationDetails(object):
             The value to assign to the is_collecting_usernames_enabled property of this UpdateFleetAgentConfigurationDetails.
         :type is_collecting_usernames_enabled: bool
 
+        :param is_capturing_ip_address_and_fqdn_enabled:
+            The value to assign to the is_capturing_ip_address_and_fqdn_enabled property of this UpdateFleetAgentConfigurationDetails.
+        :type is_capturing_ip_address_and_fqdn_enabled: bool
+
+        :param is_libraries_scan_enabled:
+            The value to assign to the is_libraries_scan_enabled property of this UpdateFleetAgentConfigurationDetails.
+        :type is_libraries_scan_enabled: bool
+
         :param linux_configuration:
             The value to assign to the linux_configuration property of this UpdateFleetAgentConfigurationDetails.
         :type linux_configuration: oci.jms.models.FleetAgentOsConfiguration
@@ -64,6 +72,8 @@ class UpdateFleetAgentConfigurationDetails(object):
             'agent_polling_interval_in_minutes': 'int',
             'is_collecting_managed_instance_metrics_enabled': 'bool',
             'is_collecting_usernames_enabled': 'bool',
+            'is_capturing_ip_address_and_fqdn_enabled': 'bool',
+            'is_libraries_scan_enabled': 'bool',
             'linux_configuration': 'FleetAgentOsConfiguration',
             'windows_configuration': 'FleetAgentOsConfiguration',
             'mac_os_configuration': 'FleetAgentOsConfiguration'
@@ -75,6 +85,8 @@ class UpdateFleetAgentConfigurationDetails(object):
             'agent_polling_interval_in_minutes': 'agentPollingIntervalInMinutes',
             'is_collecting_managed_instance_metrics_enabled': 'isCollectingManagedInstanceMetricsEnabled',
             'is_collecting_usernames_enabled': 'isCollectingUsernamesEnabled',
+            'is_capturing_ip_address_and_fqdn_enabled': 'isCapturingIpAddressAndFqdnEnabled',
+            'is_libraries_scan_enabled': 'isLibrariesScanEnabled',
             'linux_configuration': 'linuxConfiguration',
             'windows_configuration': 'windowsConfiguration',
             'mac_os_configuration': 'macOsConfiguration'
@@ -85,6 +97,8 @@ class UpdateFleetAgentConfigurationDetails(object):
         self._agent_polling_interval_in_minutes = None
         self._is_collecting_managed_instance_metrics_enabled = None
         self._is_collecting_usernames_enabled = None
+        self._is_capturing_ip_address_and_fqdn_enabled = None
+        self._is_libraries_scan_enabled = None
         self._linux_configuration = None
         self._windows_configuration = None
         self._mac_os_configuration = None
@@ -232,6 +246,54 @@ class UpdateFleetAgentConfigurationDetails(object):
         :type: bool
         """
         self._is_collecting_usernames_enabled = is_collecting_usernames_enabled
+
+    @property
+    def is_capturing_ip_address_and_fqdn_enabled(self):
+        """
+        Gets the is_capturing_ip_address_and_fqdn_enabled of this UpdateFleetAgentConfigurationDetails.
+        Collect network addresses of managed instances in the fleet.
+
+
+        :return: The is_capturing_ip_address_and_fqdn_enabled of this UpdateFleetAgentConfigurationDetails.
+        :rtype: bool
+        """
+        return self._is_capturing_ip_address_and_fqdn_enabled
+
+    @is_capturing_ip_address_and_fqdn_enabled.setter
+    def is_capturing_ip_address_and_fqdn_enabled(self, is_capturing_ip_address_and_fqdn_enabled):
+        """
+        Sets the is_capturing_ip_address_and_fqdn_enabled of this UpdateFleetAgentConfigurationDetails.
+        Collect network addresses of managed instances in the fleet.
+
+
+        :param is_capturing_ip_address_and_fqdn_enabled: The is_capturing_ip_address_and_fqdn_enabled of this UpdateFleetAgentConfigurationDetails.
+        :type: bool
+        """
+        self._is_capturing_ip_address_and_fqdn_enabled = is_capturing_ip_address_and_fqdn_enabled
+
+    @property
+    def is_libraries_scan_enabled(self):
+        """
+        Gets the is_libraries_scan_enabled of this UpdateFleetAgentConfigurationDetails.
+        Enable libraries scan on all managed instances in the fleet.
+
+
+        :return: The is_libraries_scan_enabled of this UpdateFleetAgentConfigurationDetails.
+        :rtype: bool
+        """
+        return self._is_libraries_scan_enabled
+
+    @is_libraries_scan_enabled.setter
+    def is_libraries_scan_enabled(self, is_libraries_scan_enabled):
+        """
+        Sets the is_libraries_scan_enabled of this UpdateFleetAgentConfigurationDetails.
+        Enable libraries scan on all managed instances in the fleet.
+
+
+        :param is_libraries_scan_enabled: The is_libraries_scan_enabled of this UpdateFleetAgentConfigurationDetails.
+        :type: bool
+        """
+        self._is_libraries_scan_enabled = is_libraries_scan_enabled
 
     @property
     def linux_configuration(self):

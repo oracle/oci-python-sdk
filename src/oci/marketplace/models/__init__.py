@@ -15,6 +15,7 @@ from .change_publication_compartment_details import ChangePublicationCompartment
 from .container_listing_package import ContainerListingPackage
 from .create_accepted_agreement_details import CreateAcceptedAgreementDetails
 from .create_image_publication_package import CreateImagePublicationPackage
+from .create_marketplace_external_attested_metadata_details import CreateMarketplaceExternalAttestedMetadataDetails
 from .create_publication_details import CreatePublicationDetails
 from .create_publication_package import CreatePublicationPackage
 from .documentation_link import DocumentationLink
@@ -33,6 +34,8 @@ from .listing import Listing
 from .listing_package import ListingPackage
 from .listing_package_summary import ListingPackageSummary
 from .listing_summary import ListingSummary
+from .marketplace_external_attested_metadata import MarketplaceExternalAttestedMetadata
+from .marketplace_metadata_public_key_summary import MarketplaceMetadataPublicKeySummary
 from .named_link import NamedLink
 from .operating_system import OperatingSystem
 from .orchestration_listing_package import OrchestrationListingPackage
@@ -80,6 +83,7 @@ marketplace_type_mapping = {
     "ContainerListingPackage": ContainerListingPackage,
     "CreateAcceptedAgreementDetails": CreateAcceptedAgreementDetails,
     "CreateImagePublicationPackage": CreateImagePublicationPackage,
+    "CreateMarketplaceExternalAttestedMetadataDetails": CreateMarketplaceExternalAttestedMetadataDetails,
     "CreatePublicationDetails": CreatePublicationDetails,
     "CreatePublicationPackage": CreatePublicationPackage,
     "DocumentationLink": DocumentationLink,
@@ -98,6 +102,8 @@ marketplace_type_mapping = {
     "ListingPackage": ListingPackage,
     "ListingPackageSummary": ListingPackageSummary,
     "ListingSummary": ListingSummary,
+    "MarketplaceExternalAttestedMetadata": MarketplaceExternalAttestedMetadata,
+    "MarketplaceMetadataPublicKeySummary": MarketplaceMetadataPublicKeySummary,
     "NamedLink": NamedLink,
     "OperatingSystem": OperatingSystem,
     "OrchestrationListingPackage": OrchestrationListingPackage,
