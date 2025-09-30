@@ -23,6 +23,14 @@ class DiscoveryDetails(object):
     #: This constant has a value of "GI"
     TYPE_GI = "GI"
 
+    #: A constant which can be used with the type property of a DiscoveryDetails.
+    #: This constant has a value of "GUEST_OS"
+    TYPE_GUEST_OS = "GUEST_OS"
+
+    #: A constant which can be used with the type property of a DiscoveryDetails.
+    #: This constant has a value of "EXADB_STACK"
+    TYPE_EXADB_STACK = "EXADB_STACK"
+
     #: A constant which can be used with the service_type property of a DiscoveryDetails.
     #: This constant has a value of "EXACS"
     SERVICE_TYPE_EXACS = "EXACS"
@@ -38,12 +46,14 @@ class DiscoveryDetails(object):
 
         * :class:`~oci.fleet_software_update.models.GiDiscoveryDetails`
         * :class:`~oci.fleet_software_update.models.DbDiscoveryDetails`
+        * :class:`~oci.fleet_software_update.models.ExadbStackDiscoveryDetails`
+        * :class:`~oci.fleet_software_update.models.GuestOsDiscoveryDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param type:
             The value to assign to the type property of this DiscoveryDetails.
-            Allowed values for this property are: "DB", "GI", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "DB", "GI", "GUEST_OS", "EXADB_STACK", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -78,6 +88,12 @@ class DiscoveryDetails(object):
 
         if type == 'DB':
             return 'DbDiscoveryDetails'
+
+        if type == 'EXADB_STACK':
+            return 'ExadbStackDiscoveryDetails'
+
+        if type == 'GUEST_OS':
+            return 'GuestOsDiscoveryDetails'
         else:
             return 'DiscoveryDetails'
 
@@ -87,7 +103,7 @@ class DiscoveryDetails(object):
         **[Required]** Gets the type of this DiscoveryDetails.
         Exadata Fleet Update Discovery type.
 
-        Allowed values for this property are: "DB", "GI", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "DB", "GI", "GUEST_OS", "EXADB_STACK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -106,7 +122,7 @@ class DiscoveryDetails(object):
         :param type: The type of this DiscoveryDetails.
         :type: str
         """
-        allowed_values = ["DB", "GI"]
+        allowed_values = ["DB", "GI", "GUEST_OS", "EXADB_STACK"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type

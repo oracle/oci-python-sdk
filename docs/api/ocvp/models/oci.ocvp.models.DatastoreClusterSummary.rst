@@ -1,0 +1,11 @@
+DatastoreClusterSummary
+=======================
+
+.. currentmodule:: oci.ocvp.models
+
+.. autoclass:: DatastoreClusterSummary
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

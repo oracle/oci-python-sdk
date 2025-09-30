@@ -161,7 +161,7 @@ class ResourceAnalyticsInstanceClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
         operation_name = "cancel_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resource-analytics/20241031/WorkRequest/CancelWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -276,7 +276,7 @@ class ResourceAnalyticsInstanceClient(object):
         resource_path = "/resourceAnalyticsInstances/{resourceAnalyticsInstanceId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_resource_analytics_instance_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resource-analytics/20241031/ResourceAnalyticsInstance/ChangeResourceAnalyticsInstanceCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -386,7 +386,7 @@ class ResourceAnalyticsInstanceClient(object):
         resource_path = "/resourceAnalyticsInstances"
         method = "POST"
         operation_name = "create_resource_analytics_instance"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resource-analytics/20241031/ResourceAnalyticsInstance/CreateResourceAnalyticsInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -488,7 +488,7 @@ class ResourceAnalyticsInstanceClient(object):
         resource_path = "/resourceAnalyticsInstances/{resourceAnalyticsInstanceId}"
         method = "DELETE"
         operation_name = "delete_resource_analytics_instance"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resource-analytics/20241031/ResourceAnalyticsInstance/DeleteResourceAnalyticsInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -591,7 +591,7 @@ class ResourceAnalyticsInstanceClient(object):
         resource_path = "/resourceAnalyticsInstances/{resourceAnalyticsInstanceId}"
         method = "GET"
         operation_name = "get_resource_analytics_instance"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resource-analytics/20241031/ResourceAnalyticsInstance/GetResourceAnalyticsInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -694,7 +694,7 @@ class ResourceAnalyticsInstanceClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resource-analytics/20241031/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -836,7 +836,7 @@ class ResourceAnalyticsInstanceClient(object):
         resource_path = "/resourceAnalyticsInstances"
         method = "GET"
         operation_name = "list_resource_analytics_instances"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resource-analytics/20241031/ResourceAnalyticsInstanceCollection/ListResourceAnalyticsInstances"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -994,7 +994,7 @@ class ResourceAnalyticsInstanceClient(object):
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resource-analytics/20241031/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1149,7 +1149,7 @@ class ResourceAnalyticsInstanceClient(object):
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resource-analytics/20241031/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1319,7 +1319,7 @@ class ResourceAnalyticsInstanceClient(object):
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resource-analytics/20241031/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1459,7 +1459,7 @@ class ResourceAnalyticsInstanceClient(object):
         resource_path = "/resourceAnalyticsInstances/{resourceAnalyticsInstanceId}/actions/disableOac"
         method = "POST"
         operation_name = "resource_analytics_instance_disable_oac"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resource-analytics/20241031/ResourceAnalyticsInstance/ResourceAnalyticsInstanceDisableOac"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1569,7 +1569,7 @@ class ResourceAnalyticsInstanceClient(object):
         resource_path = "/resourceAnalyticsInstances/{resourceAnalyticsInstanceId}/actions/enableOac"
         method = "POST"
         operation_name = "resource_analytics_instance_enable_oac"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resource-analytics/20241031/ResourceAnalyticsInstance/ResourceAnalyticsInstanceEnableOac"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1681,7 +1681,7 @@ class ResourceAnalyticsInstanceClient(object):
         resource_path = "/resourceAnalyticsInstances/{resourceAnalyticsInstanceId}"
         method = "PUT"
         operation_name = "update_resource_analytics_instance"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resource-analytics/20241031/ResourceAnalyticsInstance/UpdateResourceAnalyticsInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

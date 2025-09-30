@@ -28,6 +28,7 @@ Functions
     oci.functions.models.ConstantProvisionedConcurrencyConfig
     oci.functions.models.CreateApplicationDetails
     oci.functions.models.CreateFunctionDetails
+    oci.functions.models.FailureDestinationDetails
     oci.functions.models.Function
     oci.functions.models.FunctionProvisionedConcurrencyConfig
     oci.functions.models.FunctionSourceDetails
@@ -35,7 +36,11 @@ Functions
     oci.functions.models.FunctionTraceConfig
     oci.functions.models.ImagePolicyConfig
     oci.functions.models.KeyDetails
+    oci.functions.models.NoneFailureDestinationDetails
     oci.functions.models.NoneProvisionedConcurrencyConfig
+    oci.functions.models.NoneSuccessDestinationDetails
+    oci.functions.models.NotificationFailureDestinationDetails
+    oci.functions.models.NotificationSuccessDestinationDetails
     oci.functions.models.PbfListing
     oci.functions.models.PbfListingSummary
     oci.functions.models.PbfListingVersion
@@ -45,7 +50,12 @@ Functions
     oci.functions.models.PolicyDetails
     oci.functions.models.PreBuiltFunctionSourceDetails
     oci.functions.models.PublisherDetails
+    oci.functions.models.QueueFailureDestinationDetails
+    oci.functions.models.QueueSuccessDestinationDetails
     oci.functions.models.RequirementDetails
+    oci.functions.models.StreamFailureDestinationDetails
+    oci.functions.models.StreamSuccessDestinationDetails
+    oci.functions.models.SuccessDestinationDetails
     oci.functions.models.Trigger
     oci.functions.models.TriggerSummary
     oci.functions.models.TriggersCollection

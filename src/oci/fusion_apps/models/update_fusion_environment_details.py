@@ -36,6 +36,10 @@ class UpdateFusionEnvironmentDetails(object):
             The value to assign to the additional_language_packs property of this UpdateFusionEnvironmentDetails.
         :type additional_language_packs: list[str]
 
+        :param is_i_pv6_dual_stack_enabled:
+            The value to assign to the is_i_pv6_dual_stack_enabled property of this UpdateFusionEnvironmentDetails.
+        :type is_i_pv6_dual_stack_enabled: bool
+
         :param rules:
             The value to assign to the rules property of this UpdateFusionEnvironmentDetails.
         :type rules: list[oci.fusion_apps.models.Rule]
@@ -54,6 +58,7 @@ class UpdateFusionEnvironmentDetails(object):
             'kms_key_id': 'str',
             'maintenance_policy': 'MaintenancePolicy',
             'additional_language_packs': 'list[str]',
+            'is_i_pv6_dual_stack_enabled': 'bool',
             'rules': 'list[Rule]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -63,6 +68,7 @@ class UpdateFusionEnvironmentDetails(object):
             'kms_key_id': 'kmsKeyId',
             'maintenance_policy': 'maintenancePolicy',
             'additional_language_packs': 'additionalLanguagePacks',
+            'is_i_pv6_dual_stack_enabled': 'isIPv6DualStackEnabled',
             'rules': 'rules',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
@@ -71,6 +77,7 @@ class UpdateFusionEnvironmentDetails(object):
         self._kms_key_id = None
         self._maintenance_policy = None
         self._additional_language_packs = None
+        self._is_i_pv6_dual_stack_enabled = None
         self._rules = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -166,6 +173,30 @@ class UpdateFusionEnvironmentDetails(object):
         :type: list[str]
         """
         self._additional_language_packs = additional_language_packs
+
+    @property
+    def is_i_pv6_dual_stack_enabled(self):
+        """
+        Gets the is_i_pv6_dual_stack_enabled of this UpdateFusionEnvironmentDetails.
+        Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+
+
+        :return: The is_i_pv6_dual_stack_enabled of this UpdateFusionEnvironmentDetails.
+        :rtype: bool
+        """
+        return self._is_i_pv6_dual_stack_enabled
+
+    @is_i_pv6_dual_stack_enabled.setter
+    def is_i_pv6_dual_stack_enabled(self, is_i_pv6_dual_stack_enabled):
+        """
+        Sets the is_i_pv6_dual_stack_enabled of this UpdateFusionEnvironmentDetails.
+        Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+
+
+        :param is_i_pv6_dual_stack_enabled: The is_i_pv6_dual_stack_enabled of this UpdateFusionEnvironmentDetails.
+        :type: bool
+        """
+        self._is_i_pv6_dual_stack_enabled = is_i_pv6_dual_stack_enabled
 
     @property
     def rules(self):

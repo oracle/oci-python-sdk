@@ -23,6 +23,8 @@ Generative Ai Inference
     oci.generative_ai_inference.models.ApplyGuardrailsResult
     oci.generative_ai_inference.models.ApproximateLocation
     oci.generative_ai_inference.models.AssistantMessage
+    oci.generative_ai_inference.models.AudioContent
+    oci.generative_ai_inference.models.AudioUrl
     oci.generative_ai_inference.models.BaseChatRequest
     oci.generative_ai_inference.models.BaseChatResponse
     oci.generative_ai_inference.models.CategoryScore
@@ -64,6 +66,11 @@ Generative Ai Inference
     oci.generative_ai_inference.models.GeneratedText
     oci.generative_ai_inference.models.GenericChatRequest
     oci.generative_ai_inference.models.GenericChatResponse
+    oci.generative_ai_inference.models.GroundingChunk
+    oci.generative_ai_inference.models.GroundingMetadata
+    oci.generative_ai_inference.models.GroundingSupport
+    oci.generative_ai_inference.models.GroundingSupportSegment
+    oci.generative_ai_inference.models.GroundingWebChunk
     oci.generative_ai_inference.models.GuardrailConfigs
     oci.generative_ai_inference.models.GuardrailsInput
     oci.generative_ai_inference.models.GuardrailsResults
@@ -89,6 +96,7 @@ Generative Ai Inference
     oci.generative_ai_inference.models.RerankTextResult
     oci.generative_ai_inference.models.ResponseFormat
     oci.generative_ai_inference.models.ResponseJsonSchema
+    oci.generative_ai_inference.models.SearchEntryPoint
     oci.generative_ai_inference.models.SearchQuery
     oci.generative_ai_inference.models.ServingMode
     oci.generative_ai_inference.models.StaticContent
@@ -110,4 +118,6 @@ Generative Ai Inference
     oci.generative_ai_inference.models.UrlCitation
     oci.generative_ai_inference.models.Usage
     oci.generative_ai_inference.models.UserMessage
+    oci.generative_ai_inference.models.VideoContent
+    oci.generative_ai_inference.models.VideoUrl
     oci.generative_ai_inference.models.WebSearchOptions

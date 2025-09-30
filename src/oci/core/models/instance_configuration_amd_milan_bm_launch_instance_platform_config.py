@@ -32,6 +32,10 @@ class InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig(InstanceConfig
     #: This constant has a value of "NPS4"
     NUMA_NODES_PER_SOCKET_NPS4 = "NPS4"
 
+    #: A constant which can be used with the numa_nodes_per_socket property of a InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig.
+    #: This constant has a value of "NPS6"
+    NUMA_NODES_PER_SOCKET_NPS6 = "NPS6"
+
     def __init__(self, **kwargs):
         """
         Initializes a new InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig object with values from keyword arguments. The default value of the :py:attr:`~oci.core.models.InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig.type` attribute
@@ -62,7 +66,7 @@ class InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig(InstanceConfig
 
         :param numa_nodes_per_socket:
             The value to assign to the numa_nodes_per_socket property of this InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig.
-            Allowed values for this property are: "NPS0", "NPS1", "NPS2", "NPS4", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "NPS0", "NPS1", "NPS2", "NPS4", "NPS6", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type numa_nodes_per_socket: str
 
@@ -139,7 +143,7 @@ class InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig(InstanceConfig
         Gets the numa_nodes_per_socket of this InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig.
         The number of NUMA nodes per socket (NPS).
 
-        Allowed values for this property are: "NPS0", "NPS1", "NPS2", "NPS4", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "NPS0", "NPS1", "NPS2", "NPS4", "NPS6", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -158,7 +162,7 @@ class InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig(InstanceConfig
         :param numa_nodes_per_socket: The numa_nodes_per_socket of this InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig.
         :type: str
         """
-        allowed_values = ["NPS0", "NPS1", "NPS2", "NPS4"]
+        allowed_values = ["NPS0", "NPS1", "NPS2", "NPS4", "NPS6"]
         if not value_allowed_none_or_none_sentinel(numa_nodes_per_socket, allowed_values):
             numa_nodes_per_socket = 'UNKNOWN_ENUM_VALUE'
         self._numa_nodes_per_socket = numa_nodes_per_socket

@@ -40,26 +40,33 @@ class ChatChoice(object):
             The value to assign to the usage property of this ChatChoice.
         :type usage: oci.generative_ai_inference.models.Usage
 
+        :param grounding_metadata:
+            The value to assign to the grounding_metadata property of this ChatChoice.
+        :type grounding_metadata: oci.generative_ai_inference.models.GroundingMetadata
+
         """
         self.swagger_types = {
             'index': 'int',
             'message': 'Message',
             'finish_reason': 'str',
             'logprobs': 'Logprobs',
-            'usage': 'Usage'
+            'usage': 'Usage',
+            'grounding_metadata': 'GroundingMetadata'
         }
         self.attribute_map = {
             'index': 'index',
             'message': 'message',
             'finish_reason': 'finishReason',
             'logprobs': 'logprobs',
-            'usage': 'usage'
+            'usage': 'usage',
+            'grounding_metadata': 'groundingMetadata'
         }
         self._index = None
         self._message = None
         self._finish_reason = None
         self._logprobs = None
         self._usage = None
+        self._grounding_metadata = None
 
     @property
     def index(self):
@@ -172,6 +179,26 @@ class ChatChoice(object):
         :type: oci.generative_ai_inference.models.Usage
         """
         self._usage = usage
+
+    @property
+    def grounding_metadata(self):
+        """
+        Gets the grounding_metadata of this ChatChoice.
+
+        :return: The grounding_metadata of this ChatChoice.
+        :rtype: oci.generative_ai_inference.models.GroundingMetadata
+        """
+        return self._grounding_metadata
+
+    @grounding_metadata.setter
+    def grounding_metadata(self, grounding_metadata):
+        """
+        Sets the grounding_metadata of this ChatChoice.
+
+        :param grounding_metadata: The grounding_metadata of this ChatChoice.
+        :type: oci.generative_ai_inference.models.GroundingMetadata
+        """
+        self._grounding_metadata = grounding_metadata
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -61,6 +61,22 @@ class WorkRequest(object):
     #: This constant has a value of "MOVE_ENDPOINT"
     OPERATION_TYPE_MOVE_ENDPOINT = "MOVE_ENDPOINT"
 
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "CREATE_PRIVATE_ENDPOINT"
+    OPERATION_TYPE_CREATE_PRIVATE_ENDPOINT = "CREATE_PRIVATE_ENDPOINT"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "DELETE_PRIVATE_ENDPOINT"
+    OPERATION_TYPE_DELETE_PRIVATE_ENDPOINT = "DELETE_PRIVATE_ENDPOINT"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "UPDATE_PRIVATE_ENDPOINT"
+    OPERATION_TYPE_UPDATE_PRIVATE_ENDPOINT = "UPDATE_PRIVATE_ENDPOINT"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "MOVE_PRIVATE_ENDPOINT"
+    OPERATION_TYPE_MOVE_PRIVATE_ENDPOINT = "MOVE_PRIVATE_ENDPOINT"
+
     #: A constant which can be used with the status property of a WorkRequest.
     #: This constant has a value of "ACCEPTED"
     STATUS_ACCEPTED = "ACCEPTED"
@@ -96,7 +112,7 @@ class WorkRequest(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequest.
-            Allowed values for this property are: "CREATE_MODEL", "DELETE_MODEL", "MOVE_MODEL", "CREATE_DEDICATED_AI_CLUSTER", "DELETE_DEDICATED_AI_CLUSTER", "UPDATE_DEDICATED_AI_CLUSTER", "MOVE_DEDICATED_AI_CLUSTER", "CREATE_ENDPOINT", "DELETE_ENDPOINT", "UPDATE_ENDPOINT", "MOVE_ENDPOINT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_MODEL", "DELETE_MODEL", "MOVE_MODEL", "CREATE_DEDICATED_AI_CLUSTER", "DELETE_DEDICATED_AI_CLUSTER", "UPDATE_DEDICATED_AI_CLUSTER", "MOVE_DEDICATED_AI_CLUSTER", "CREATE_ENDPOINT", "DELETE_ENDPOINT", "UPDATE_ENDPOINT", "MOVE_ENDPOINT", "CREATE_PRIVATE_ENDPOINT", "DELETE_PRIVATE_ENDPOINT", "UPDATE_PRIVATE_ENDPOINT", "MOVE_PRIVATE_ENDPOINT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -173,7 +189,7 @@ class WorkRequest(object):
         **[Required]** Gets the operation_type of this WorkRequest.
         The asynchronous operation tracked by this work request.
 
-        Allowed values for this property are: "CREATE_MODEL", "DELETE_MODEL", "MOVE_MODEL", "CREATE_DEDICATED_AI_CLUSTER", "DELETE_DEDICATED_AI_CLUSTER", "UPDATE_DEDICATED_AI_CLUSTER", "MOVE_DEDICATED_AI_CLUSTER", "CREATE_ENDPOINT", "DELETE_ENDPOINT", "UPDATE_ENDPOINT", "MOVE_ENDPOINT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_MODEL", "DELETE_MODEL", "MOVE_MODEL", "CREATE_DEDICATED_AI_CLUSTER", "DELETE_DEDICATED_AI_CLUSTER", "UPDATE_DEDICATED_AI_CLUSTER", "MOVE_DEDICATED_AI_CLUSTER", "CREATE_ENDPOINT", "DELETE_ENDPOINT", "UPDATE_ENDPOINT", "MOVE_ENDPOINT", "CREATE_PRIVATE_ENDPOINT", "DELETE_PRIVATE_ENDPOINT", "UPDATE_PRIVATE_ENDPOINT", "MOVE_PRIVATE_ENDPOINT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -192,7 +208,7 @@ class WorkRequest(object):
         :param operation_type: The operation_type of this WorkRequest.
         :type: str
         """
-        allowed_values = ["CREATE_MODEL", "DELETE_MODEL", "MOVE_MODEL", "CREATE_DEDICATED_AI_CLUSTER", "DELETE_DEDICATED_AI_CLUSTER", "UPDATE_DEDICATED_AI_CLUSTER", "MOVE_DEDICATED_AI_CLUSTER", "CREATE_ENDPOINT", "DELETE_ENDPOINT", "UPDATE_ENDPOINT", "MOVE_ENDPOINT"]
+        allowed_values = ["CREATE_MODEL", "DELETE_MODEL", "MOVE_MODEL", "CREATE_DEDICATED_AI_CLUSTER", "DELETE_DEDICATED_AI_CLUSTER", "UPDATE_DEDICATED_AI_CLUSTER", "MOVE_DEDICATED_AI_CLUSTER", "CREATE_ENDPOINT", "DELETE_ENDPOINT", "UPDATE_ENDPOINT", "MOVE_ENDPOINT", "CREATE_PRIVATE_ENDPOINT", "DELETE_PRIVATE_ENDPOINT", "UPDATE_PRIVATE_ENDPOINT", "MOVE_PRIVATE_ENDPOINT"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type

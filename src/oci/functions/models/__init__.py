@@ -14,6 +14,7 @@ from .config_details import ConfigDetails
 from .constant_provisioned_concurrency_config import ConstantProvisionedConcurrencyConfig
 from .create_application_details import CreateApplicationDetails
 from .create_function_details import CreateFunctionDetails
+from .failure_destination_details import FailureDestinationDetails
 from .function import Function
 from .function_provisioned_concurrency_config import FunctionProvisionedConcurrencyConfig
 from .function_source_details import FunctionSourceDetails
@@ -21,7 +22,11 @@ from .function_summary import FunctionSummary
 from .function_trace_config import FunctionTraceConfig
 from .image_policy_config import ImagePolicyConfig
 from .key_details import KeyDetails
+from .none_failure_destination_details import NoneFailureDestinationDetails
 from .none_provisioned_concurrency_config import NoneProvisionedConcurrencyConfig
+from .none_success_destination_details import NoneSuccessDestinationDetails
+from .notification_failure_destination_details import NotificationFailureDestinationDetails
+from .notification_success_destination_details import NotificationSuccessDestinationDetails
 from .pbf_listing import PbfListing
 from .pbf_listing_summary import PbfListingSummary
 from .pbf_listing_version import PbfListingVersion
@@ -31,7 +36,12 @@ from .pbf_listings_collection import PbfListingsCollection
 from .policy_details import PolicyDetails
 from .pre_built_function_source_details import PreBuiltFunctionSourceDetails
 from .publisher_details import PublisherDetails
+from .queue_failure_destination_details import QueueFailureDestinationDetails
+from .queue_success_destination_details import QueueSuccessDestinationDetails
 from .requirement_details import RequirementDetails
+from .stream_failure_destination_details import StreamFailureDestinationDetails
+from .stream_success_destination_details import StreamSuccessDestinationDetails
+from .success_destination_details import SuccessDestinationDetails
 from .trigger import Trigger
 from .trigger_summary import TriggerSummary
 from .triggers_collection import TriggersCollection
@@ -48,6 +58,7 @@ functions_type_mapping = {
     "ConstantProvisionedConcurrencyConfig": ConstantProvisionedConcurrencyConfig,
     "CreateApplicationDetails": CreateApplicationDetails,
     "CreateFunctionDetails": CreateFunctionDetails,
+    "FailureDestinationDetails": FailureDestinationDetails,
     "Function": Function,
     "FunctionProvisionedConcurrencyConfig": FunctionProvisionedConcurrencyConfig,
     "FunctionSourceDetails": FunctionSourceDetails,
@@ -55,7 +66,11 @@ functions_type_mapping = {
     "FunctionTraceConfig": FunctionTraceConfig,
     "ImagePolicyConfig": ImagePolicyConfig,
     "KeyDetails": KeyDetails,
+    "NoneFailureDestinationDetails": NoneFailureDestinationDetails,
     "NoneProvisionedConcurrencyConfig": NoneProvisionedConcurrencyConfig,
+    "NoneSuccessDestinationDetails": NoneSuccessDestinationDetails,
+    "NotificationFailureDestinationDetails": NotificationFailureDestinationDetails,
+    "NotificationSuccessDestinationDetails": NotificationSuccessDestinationDetails,
     "PbfListing": PbfListing,
     "PbfListingSummary": PbfListingSummary,
     "PbfListingVersion": PbfListingVersion,
@@ -65,7 +80,12 @@ functions_type_mapping = {
     "PolicyDetails": PolicyDetails,
     "PreBuiltFunctionSourceDetails": PreBuiltFunctionSourceDetails,
     "PublisherDetails": PublisherDetails,
+    "QueueFailureDestinationDetails": QueueFailureDestinationDetails,
+    "QueueSuccessDestinationDetails": QueueSuccessDestinationDetails,
     "RequirementDetails": RequirementDetails,
+    "StreamFailureDestinationDetails": StreamFailureDestinationDetails,
+    "StreamSuccessDestinationDetails": StreamSuccessDestinationDetails,
+    "SuccessDestinationDetails": SuccessDestinationDetails,
     "Trigger": Trigger,
     "TriggerSummary": TriggerSummary,
     "TriggersCollection": TriggersCollection,

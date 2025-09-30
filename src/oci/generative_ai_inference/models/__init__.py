@@ -11,6 +11,8 @@ from .apply_guardrails_details import ApplyGuardrailsDetails
 from .apply_guardrails_result import ApplyGuardrailsResult
 from .approximate_location import ApproximateLocation
 from .assistant_message import AssistantMessage
+from .audio_content import AudioContent
+from .audio_url import AudioUrl
 from .base_chat_request import BaseChatRequest
 from .base_chat_response import BaseChatResponse
 from .category_score import CategoryScore
@@ -52,6 +54,11 @@ from .generate_text_result import GenerateTextResult
 from .generated_text import GeneratedText
 from .generic_chat_request import GenericChatRequest
 from .generic_chat_response import GenericChatResponse
+from .grounding_chunk import GroundingChunk
+from .grounding_metadata import GroundingMetadata
+from .grounding_support import GroundingSupport
+from .grounding_support_segment import GroundingSupportSegment
+from .grounding_web_chunk import GroundingWebChunk
 from .guardrail_configs import GuardrailConfigs
 from .guardrails_input import GuardrailsInput
 from .guardrails_results import GuardrailsResults
@@ -77,6 +84,7 @@ from .rerank_text_details import RerankTextDetails
 from .rerank_text_result import RerankTextResult
 from .response_format import ResponseFormat
 from .response_json_schema import ResponseJsonSchema
+from .search_entry_point import SearchEntryPoint
 from .search_query import SearchQuery
 from .serving_mode import ServingMode
 from .static_content import StaticContent
@@ -98,6 +106,8 @@ from .tool_message import ToolMessage
 from .url_citation import UrlCitation
 from .usage import Usage
 from .user_message import UserMessage
+from .video_content import VideoContent
+from .video_url import VideoUrl
 from .web_search_options import WebSearchOptions
 
 # Maps type names to classes for generative_ai_inference services.
@@ -107,6 +117,8 @@ generative_ai_inference_type_mapping = {
     "ApplyGuardrailsResult": ApplyGuardrailsResult,
     "ApproximateLocation": ApproximateLocation,
     "AssistantMessage": AssistantMessage,
+    "AudioContent": AudioContent,
+    "AudioUrl": AudioUrl,
     "BaseChatRequest": BaseChatRequest,
     "BaseChatResponse": BaseChatResponse,
     "CategoryScore": CategoryScore,
@@ -148,6 +160,11 @@ generative_ai_inference_type_mapping = {
     "GeneratedText": GeneratedText,
     "GenericChatRequest": GenericChatRequest,
     "GenericChatResponse": GenericChatResponse,
+    "GroundingChunk": GroundingChunk,
+    "GroundingMetadata": GroundingMetadata,
+    "GroundingSupport": GroundingSupport,
+    "GroundingSupportSegment": GroundingSupportSegment,
+    "GroundingWebChunk": GroundingWebChunk,
     "GuardrailConfigs": GuardrailConfigs,
     "GuardrailsInput": GuardrailsInput,
     "GuardrailsResults": GuardrailsResults,
@@ -173,6 +190,7 @@ generative_ai_inference_type_mapping = {
     "RerankTextResult": RerankTextResult,
     "ResponseFormat": ResponseFormat,
     "ResponseJsonSchema": ResponseJsonSchema,
+    "SearchEntryPoint": SearchEntryPoint,
     "SearchQuery": SearchQuery,
     "ServingMode": ServingMode,
     "StaticContent": StaticContent,
@@ -194,5 +212,7 @@ generative_ai_inference_type_mapping = {
     "UrlCitation": UrlCitation,
     "Usage": Usage,
     "UserMessage": UserMessage,
+    "VideoContent": VideoContent,
+    "VideoUrl": VideoUrl,
     "WebSearchOptions": WebSearchOptions
 }

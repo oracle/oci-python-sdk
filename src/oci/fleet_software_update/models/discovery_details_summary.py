@@ -23,6 +23,14 @@ class DiscoveryDetailsSummary(object):
     #: This constant has a value of "GI"
     TYPE_GI = "GI"
 
+    #: A constant which can be used with the type property of a DiscoveryDetailsSummary.
+    #: This constant has a value of "GUEST_OS"
+    TYPE_GUEST_OS = "GUEST_OS"
+
+    #: A constant which can be used with the type property of a DiscoveryDetailsSummary.
+    #: This constant has a value of "EXADB_STACK"
+    TYPE_EXADB_STACK = "EXADB_STACK"
+
     #: A constant which can be used with the service_type property of a DiscoveryDetailsSummary.
     #: This constant has a value of "EXACS"
     SERVICE_TYPE_EXACS = "EXACS"
@@ -46,7 +54,7 @@ class DiscoveryDetailsSummary(object):
 
         :param type:
             The value to assign to the type property of this DiscoveryDetailsSummary.
-            Allowed values for this property are: "DB", "GI", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "DB", "GI", "GUEST_OS", "EXADB_STACK", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -83,7 +91,7 @@ class DiscoveryDetailsSummary(object):
         **[Required]** Gets the type of this DiscoveryDetailsSummary.
         Exadata Fleet Update Discovery type.
 
-        Allowed values for this property are: "DB", "GI", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "DB", "GI", "GUEST_OS", "EXADB_STACK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -102,7 +110,7 @@ class DiscoveryDetailsSummary(object):
         :param type: The type of this DiscoveryDetailsSummary.
         :type: str
         """
-        allowed_values = ["DB", "GI"]
+        allowed_values = ["DB", "GI", "GUEST_OS", "EXADB_STACK"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type

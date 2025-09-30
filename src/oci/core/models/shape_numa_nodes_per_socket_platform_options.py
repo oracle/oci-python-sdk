@@ -31,6 +31,10 @@ class ShapeNumaNodesPerSocketPlatformOptions(object):
     #: This constant has a value of "NPS4"
     SERVICE_ALLOWED_VALUES_NPS4 = "NPS4"
 
+    #: A constant which can be used with the service_allowed_values property of a ShapeNumaNodesPerSocketPlatformOptions.
+    #: This constant has a value of "NPS6"
+    SERVICE_ALLOWED_VALUES_NPS6 = "NPS6"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ShapeNumaNodesPerSocketPlatformOptions object with values from keyword arguments.
@@ -38,7 +42,7 @@ class ShapeNumaNodesPerSocketPlatformOptions(object):
 
         :param service_allowed_values:
             The value to assign to the service_allowed_values property of this ShapeNumaNodesPerSocketPlatformOptions.
-            Allowed values for items in this list are: "NPS0", "NPS1", "NPS2", "NPS4", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for items in this list are: "NPS0", "NPS1", "NPS2", "NPS4", "NPS6", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type service_allowed_values: list[str]
 
@@ -64,7 +68,7 @@ class ShapeNumaNodesPerSocketPlatformOptions(object):
         Gets the service_allowed_values of this ShapeNumaNodesPerSocketPlatformOptions.
         The supported values for this platform configuration property.
 
-        Allowed values for items in this list are: "NPS0", "NPS1", "NPS2", "NPS4", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for items in this list are: "NPS0", "NPS1", "NPS2", "NPS4", "NPS6", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -83,7 +87,7 @@ class ShapeNumaNodesPerSocketPlatformOptions(object):
         :param service_allowed_values: The service_allowed_values of this ShapeNumaNodesPerSocketPlatformOptions.
         :type: list[str]
         """
-        allowed_values = ["NPS0", "NPS1", "NPS2", "NPS4"]
+        allowed_values = ["NPS0", "NPS1", "NPS2", "NPS4", "NPS6"]
         if service_allowed_values:
             service_allowed_values[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in service_allowed_values]
         self._service_allowed_values = service_allowed_values

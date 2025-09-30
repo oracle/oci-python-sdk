@@ -23,7 +23,7 @@ class UpgradeDbCollectionDetails(UpgradeDetails):
 
         :param collection_type:
             The value to assign to the collection_type property of this UpgradeDbCollectionDetails.
-            Allowed values for this property are: "DB", "GI"
+            Allowed values for this property are: "DB", "GI", "GUEST_OS", "EXADB_STACK"
         :type collection_type: str
 
         :param is_time_zone_upgrade:

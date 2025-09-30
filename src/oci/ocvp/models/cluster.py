@@ -170,6 +170,10 @@ class Cluster(object):
             The value to assign to the datastores property of this Cluster.
         :type datastores: list[oci.ocvp.models.DatastoreDetails]
 
+        :param datastore_cluster_ids:
+            The value to assign to the datastore_cluster_ids property of this Cluster.
+        :type datastore_cluster_ids: list[str]
+
         :param vsphere_type:
             The value to assign to the vsphere_type property of this Cluster.
             Allowed values for this property are: "MANAGEMENT", "WORKLOAD", 'UNKNOWN_ENUM_VALUE'.
@@ -212,6 +216,7 @@ class Cluster(object):
             'is_shielded_instance_enabled': 'bool',
             'capacity_reservation_id': 'str',
             'datastores': 'list[DatastoreDetails]',
+            'datastore_cluster_ids': 'list[str]',
             'vsphere_type': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -240,6 +245,7 @@ class Cluster(object):
             'is_shielded_instance_enabled': 'isShieldedInstanceEnabled',
             'capacity_reservation_id': 'capacityReservationId',
             'datastores': 'datastores',
+            'datastore_cluster_ids': 'datastoreClusterIds',
             'vsphere_type': 'vsphereType',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -267,6 +273,7 @@ class Cluster(object):
         self._is_shielded_instance_enabled = None
         self._capacity_reservation_id = None
         self._datastores = None
+        self._datastore_cluster_ids = None
         self._vsphere_type = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -919,6 +926,30 @@ class Cluster(object):
         :type: list[oci.ocvp.models.DatastoreDetails]
         """
         self._datastores = datastores
+
+    @property
+    def datastore_cluster_ids(self):
+        """
+        Gets the datastore_cluster_ids of this Cluster.
+        A list of datastore clusters.
+
+
+        :return: The datastore_cluster_ids of this Cluster.
+        :rtype: list[str]
+        """
+        return self._datastore_cluster_ids
+
+    @datastore_cluster_ids.setter
+    def datastore_cluster_ids(self, datastore_cluster_ids):
+        """
+        Sets the datastore_cluster_ids of this Cluster.
+        A list of datastore clusters.
+
+
+        :param datastore_cluster_ids: The datastore_cluster_ids of this Cluster.
+        :type: list[str]
+        """
+        self._datastore_cluster_ids = datastore_cluster_ids
 
     @property
     def vsphere_type(self):

@@ -44,7 +44,7 @@ class UpgradeFsuCycle(FsuCycle):
 
         :param collection_type:
             The value to assign to the collection_type property of this UpgradeFsuCycle.
-            Allowed values for this property are: "DB", "GI"
+            Allowed values for this property are: "DB", "GI", "GUEST_OS", "EXADB_STACK"
         :type collection_type: str
 
         :param executing_fsu_action_id:

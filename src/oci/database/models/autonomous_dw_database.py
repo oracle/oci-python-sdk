@@ -859,6 +859,10 @@ class AutonomousDwDatabase(object):
             Allowed values for this property are: "FULL", "METADATA", "PARTIAL"
         :type clone_type: str
 
+        :param additional_attributes:
+            The value to assign to the additional_attributes property of this AutonomousDwDatabase.
+        :type additional_attributes: dict(str, str)
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -991,7 +995,8 @@ class AutonomousDwDatabase(object):
             'availability_domain': 'str',
             'cluster_placement_group_id': 'str',
             'clone_table_space_list': 'list[int]',
-            'clone_type': 'str'
+            'clone_type': 'str',
+            'additional_attributes': 'dict(str, str)'
         }
         self.attribute_map = {
             'id': 'id',
@@ -1124,7 +1129,8 @@ class AutonomousDwDatabase(object):
             'availability_domain': 'availabilityDomain',
             'cluster_placement_group_id': 'clusterPlacementGroupId',
             'clone_table_space_list': 'cloneTableSpaceList',
-            'clone_type': 'cloneType'
+            'clone_type': 'cloneType',
+            'additional_attributes': 'additionalAttributes'
         }
         self._id = None
         self._compartment_id = None
@@ -1257,6 +1263,7 @@ class AutonomousDwDatabase(object):
         self._cluster_placement_group_id = None
         self._clone_table_space_list = None
         self._clone_type = None
+        self._additional_attributes = None
 
     @property
     def id(self):
@@ -4830,6 +4837,32 @@ class AutonomousDwDatabase(object):
                 f"Invalid value for `clone_type`, must be None or one of {allowed_values}"
             )
         self._clone_type = clone_type
+
+    @property
+    def additional_attributes(self):
+        """
+        Gets the additional_attributes of this AutonomousDwDatabase.
+        Additional attributes for this resource. Each attribute is a simple key-value pair with no predefined name, type, or namespace.
+        Example: `{ \"gcpAccountName\": \"gcpName\" }`
+
+
+        :return: The additional_attributes of this AutonomousDwDatabase.
+        :rtype: dict(str, str)
+        """
+        return self._additional_attributes
+
+    @additional_attributes.setter
+    def additional_attributes(self, additional_attributes):
+        """
+        Sets the additional_attributes of this AutonomousDwDatabase.
+        Additional attributes for this resource. Each attribute is a simple key-value pair with no predefined name, type, or namespace.
+        Example: `{ \"gcpAccountName\": \"gcpName\" }`
+
+
+        :param additional_attributes: The additional_attributes of this AutonomousDwDatabase.
+        :type: dict(str, str)
+        """
+        self._additional_attributes = additional_attributes
 
     def __repr__(self):
         return formatted_flat_dict(self)

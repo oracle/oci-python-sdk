@@ -47,7 +47,7 @@ class DbDiscoveryDetails(DiscoveryDetails):
 
         :param type:
             The value to assign to the type property of this DbDiscoveryDetails.
-            Allowed values for this property are: "DB", "GI", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "DB", "GI", "GUEST_OS", "EXADB_STACK", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 

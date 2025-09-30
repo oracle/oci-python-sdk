@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TargetProgressSummary(object):
     """
-    Progress details of the executing job for a Database target.
+    Progress details of the executing job for a target.
     """
 
     #: A constant which can be used with the operation_type property of a TargetProgressSummary.

@@ -8,11 +8,13 @@ from __future__ import absolute_import
 
 from .change_dedicated_ai_cluster_compartment_details import ChangeDedicatedAiClusterCompartmentDetails
 from .change_endpoint_compartment_details import ChangeEndpointCompartmentDetails
+from .change_generative_ai_private_endpoint_compartment_details import ChangeGenerativeAiPrivateEndpointCompartmentDetails
 from .change_model_compartment_details import ChangeModelCompartmentDetails
 from .chat_model_metrics import ChatModelMetrics
 from .content_moderation_config import ContentModerationConfig
 from .create_dedicated_ai_cluster_details import CreateDedicatedAiClusterDetails
 from .create_endpoint_details import CreateEndpointDetails
+from .create_generative_ai_private_endpoint_details import CreateGenerativeAiPrivateEndpointDetails
 from .create_model_details import CreateModelDetails
 from .dataset import Dataset
 from .dedicated_ai_cluster import DedicatedAiCluster
@@ -24,6 +26,9 @@ from .endpoint import Endpoint
 from .endpoint_collection import EndpointCollection
 from .endpoint_summary import EndpointSummary
 from .fine_tune_details import FineTuneDetails
+from .generative_ai_private_endpoint import GenerativeAiPrivateEndpoint
+from .generative_ai_private_endpoint_collection import GenerativeAiPrivateEndpointCollection
+from .generative_ai_private_endpoint_summary import GenerativeAiPrivateEndpointSummary
 from .lora_training_config import LoraTrainingConfig
 from .model import Model
 from .model_collection import ModelCollection
@@ -35,6 +40,7 @@ from .text_generation_model_metrics import TextGenerationModelMetrics
 from .training_config import TrainingConfig
 from .update_dedicated_ai_cluster_details import UpdateDedicatedAiClusterDetails
 from .update_endpoint_details import UpdateEndpointDetails
+from .update_generative_ai_private_endpoint_details import UpdateGenerativeAiPrivateEndpointDetails
 from .update_model_details import UpdateModelDetails
 from .vanilla_training_config import VanillaTrainingConfig
 from .work_request import WorkRequest
@@ -50,11 +56,13 @@ from .work_request_summary_collection import WorkRequestSummaryCollection
 generative_ai_type_mapping = {
     "ChangeDedicatedAiClusterCompartmentDetails": ChangeDedicatedAiClusterCompartmentDetails,
     "ChangeEndpointCompartmentDetails": ChangeEndpointCompartmentDetails,
+    "ChangeGenerativeAiPrivateEndpointCompartmentDetails": ChangeGenerativeAiPrivateEndpointCompartmentDetails,
     "ChangeModelCompartmentDetails": ChangeModelCompartmentDetails,
     "ChatModelMetrics": ChatModelMetrics,
     "ContentModerationConfig": ContentModerationConfig,
     "CreateDedicatedAiClusterDetails": CreateDedicatedAiClusterDetails,
     "CreateEndpointDetails": CreateEndpointDetails,
+    "CreateGenerativeAiPrivateEndpointDetails": CreateGenerativeAiPrivateEndpointDetails,
     "CreateModelDetails": CreateModelDetails,
     "Dataset": Dataset,
     "DedicatedAiCluster": DedicatedAiCluster,
@@ -66,6 +74,9 @@ generative_ai_type_mapping = {
     "EndpointCollection": EndpointCollection,
     "EndpointSummary": EndpointSummary,
     "FineTuneDetails": FineTuneDetails,
+    "GenerativeAiPrivateEndpoint": GenerativeAiPrivateEndpoint,
+    "GenerativeAiPrivateEndpointCollection": GenerativeAiPrivateEndpointCollection,
+    "GenerativeAiPrivateEndpointSummary": GenerativeAiPrivateEndpointSummary,
     "LoraTrainingConfig": LoraTrainingConfig,
     "Model": Model,
     "ModelCollection": ModelCollection,
@@ -77,6 +88,7 @@ generative_ai_type_mapping = {
     "TrainingConfig": TrainingConfig,
     "UpdateDedicatedAiClusterDetails": UpdateDedicatedAiClusterDetails,
     "UpdateEndpointDetails": UpdateEndpointDetails,
+    "UpdateGenerativeAiPrivateEndpointDetails": UpdateGenerativeAiPrivateEndpointDetails,
     "UpdateModelDetails": UpdateModelDetails,
     "VanillaTrainingConfig": VanillaTrainingConfig,
     "WorkRequest": WorkRequest,

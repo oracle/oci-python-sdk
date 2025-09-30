@@ -23,6 +23,14 @@ class FsuCollection(object):
     #: This constant has a value of "GI"
     TYPE_GI = "GI"
 
+    #: A constant which can be used with the type property of a FsuCollection.
+    #: This constant has a value of "GUEST_OS"
+    TYPE_GUEST_OS = "GUEST_OS"
+
+    #: A constant which can be used with the type property of a FsuCollection.
+    #: This constant has a value of "EXADB_STACK"
+    TYPE_EXADB_STACK = "EXADB_STACK"
+
     #: A constant which can be used with the service_type property of a FsuCollection.
     #: This constant has a value of "EXACS"
     SERVICE_TYPE_EXACS = "EXACS"
@@ -64,6 +72,8 @@ class FsuCollection(object):
         Initializes a new FsuCollection object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.fleet_software_update.models.GuestOsCollection`
+        * :class:`~oci.fleet_software_update.models.ExadbStackCollection`
         * :class:`~oci.fleet_software_update.models.GiCollection`
         * :class:`~oci.fleet_software_update.models.DbCollection`
 
@@ -79,7 +89,7 @@ class FsuCollection(object):
 
         :param type:
             The value to assign to the type property of this FsuCollection.
-            Allowed values for this property are: "DB", "GI", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "DB", "GI", "GUEST_OS", "EXADB_STACK", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -194,6 +204,12 @@ class FsuCollection(object):
         """
         type = object_dictionary['type']
 
+        if type == 'GUEST_OS':
+            return 'GuestOsCollection'
+
+        if type == 'EXADB_STACK':
+            return 'ExadbStackCollection'
+
         if type == 'GI':
             return 'GiCollection'
 
@@ -206,7 +222,9 @@ class FsuCollection(object):
     def id(self):
         """
         **[Required]** Gets the id of this FsuCollection.
-        OCID identifier for the Exadata Fleet Update Collection.
+        The `OCID`__ of the Exadata Fleet Update Collection.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this FsuCollection.
@@ -218,7 +236,9 @@ class FsuCollection(object):
     def id(self, id):
         """
         Sets the id of this FsuCollection.
-        OCID identifier for the Exadata Fleet Update Collection.
+        The `OCID`__ of the Exadata Fleet Update Collection.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this FsuCollection.
@@ -230,7 +250,7 @@ class FsuCollection(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this FsuCollection.
-        Exadata Fleet Update Collection resource display name.
+        The user-friendly name for the Exadata Fleet Update Collection.
 
 
         :return: The display_name of this FsuCollection.
@@ -242,7 +262,7 @@ class FsuCollection(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this FsuCollection.
-        Exadata Fleet Update Collection resource display name.
+        The user-friendly name for the Exadata Fleet Update Collection.
 
 
         :param display_name: The display_name of this FsuCollection.
@@ -256,7 +276,7 @@ class FsuCollection(object):
         **[Required]** Gets the type of this FsuCollection.
         Exadata Fleet Update Collection type.
 
-        Allowed values for this property are: "DB", "GI", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "DB", "GI", "GUEST_OS", "EXADB_STACK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -275,7 +295,7 @@ class FsuCollection(object):
         :param type: The type of this FsuCollection.
         :type: str
         """
-        allowed_values = ["DB", "GI"]
+        allowed_values = ["DB", "GI", "GUEST_OS", "EXADB_STACK"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type
@@ -314,7 +334,9 @@ class FsuCollection(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this FsuCollection.
-        Compartment Identifier
+        The `OCID`__ of the Compartment.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this FsuCollection.
@@ -326,7 +348,9 @@ class FsuCollection(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this FsuCollection.
-        Compartment Identifier
+        The `OCID`__ of the Compartment.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this FsuCollection.

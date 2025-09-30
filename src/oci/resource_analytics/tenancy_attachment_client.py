@@ -160,7 +160,7 @@ class TenancyAttachmentClient(object):
         resource_path = "/tenancyAttachments"
         method = "POST"
         operation_name = "create_tenancy_attachment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resource-analytics/20241031/TenancyAttachment/CreateTenancyAttachment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -262,7 +262,7 @@ class TenancyAttachmentClient(object):
         resource_path = "/tenancyAttachments/{tenancyAttachmentId}"
         method = "DELETE"
         operation_name = "delete_tenancy_attachment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resource-analytics/20241031/TenancyAttachment/DeleteTenancyAttachment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -365,7 +365,7 @@ class TenancyAttachmentClient(object):
         resource_path = "/tenancyAttachments/{tenancyAttachmentId}"
         method = "GET"
         operation_name = "get_tenancy_attachment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resource-analytics/20241031/TenancyAttachment/GetTenancyAttachment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -504,7 +504,7 @@ class TenancyAttachmentClient(object):
         resource_path = "/tenancyAttachments"
         method = "GET"
         operation_name = "list_tenancy_attachments"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resource-analytics/20241031/TenancyAttachmentCollection/ListTenancyAttachments"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -645,7 +645,7 @@ class TenancyAttachmentClient(object):
         resource_path = "/tenancyAttachments/{tenancyAttachmentId}"
         method = "PUT"
         operation_name = "update_tenancy_attachment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resource-analytics/20241031/TenancyAttachment/UpdateTenancyAttachment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

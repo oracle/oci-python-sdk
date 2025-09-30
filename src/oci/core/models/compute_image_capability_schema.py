@@ -16,6 +16,18 @@ class ComputeImageCapabilitySchema(object):
     version for an image.
     """
 
+    #: A constant which can be used with the lifecycle_state property of a ComputeImageCapabilitySchema.
+    #: This constant has a value of "CREATING"
+    LIFECYCLE_STATE_CREATING = "CREATING"
+
+    #: A constant which can be used with the lifecycle_state property of a ComputeImageCapabilitySchema.
+    #: This constant has a value of "ACTIVE"
+    LIFECYCLE_STATE_ACTIVE = "ACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a ComputeImageCapabilitySchema.
+    #: This constant has a value of "DELETED"
+    LIFECYCLE_STATE_DELETED = "DELETED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ComputeImageCapabilitySchema object with values from keyword arguments.
@@ -40,6 +52,12 @@ class ComputeImageCapabilitySchema(object):
         :param image_id:
             The value to assign to the image_id property of this ComputeImageCapabilitySchema.
         :type image_id: str
+
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this ComputeImageCapabilitySchema.
+            Allowed values for this property are: "CREATING", "ACTIVE", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_state: str
 
         :param defined_tags:
             The value to assign to the defined_tags property of this ComputeImageCapabilitySchema.
@@ -68,6 +86,7 @@ class ComputeImageCapabilitySchema(object):
             'compute_global_image_capability_schema_id': 'str',
             'compute_global_image_capability_schema_version_name': 'str',
             'image_id': 'str',
+            'lifecycle_state': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -80,6 +99,7 @@ class ComputeImageCapabilitySchema(object):
             'compute_global_image_capability_schema_id': 'computeGlobalImageCapabilitySchemaId',
             'compute_global_image_capability_schema_version_name': 'computeGlobalImageCapabilitySchemaVersionName',
             'image_id': 'imageId',
+            'lifecycle_state': 'lifecycleState',
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
@@ -91,6 +111,7 @@ class ComputeImageCapabilitySchema(object):
         self._compute_global_image_capability_schema_id = None
         self._compute_global_image_capability_schema_version_name = None
         self._image_id = None
+        self._lifecycle_state = None
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
@@ -216,6 +237,36 @@ class ComputeImageCapabilitySchema(object):
         :type: str
         """
         self._image_id = image_id
+
+    @property
+    def lifecycle_state(self):
+        """
+        Gets the lifecycle_state of this ComputeImageCapabilitySchema.
+        The ComputeImageCapabilitySchema current lifecycle state.
+
+        Allowed values for this property are: "CREATING", "ACTIVE", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The lifecycle_state of this ComputeImageCapabilitySchema.
+        :rtype: str
+        """
+        return self._lifecycle_state
+
+    @lifecycle_state.setter
+    def lifecycle_state(self, lifecycle_state):
+        """
+        Sets the lifecycle_state of this ComputeImageCapabilitySchema.
+        The ComputeImageCapabilitySchema current lifecycle state.
+
+
+        :param lifecycle_state: The lifecycle_state of this ComputeImageCapabilitySchema.
+        :type: str
+        """
+        allowed_values = ["CREATING", "ACTIVE", "DELETED"]
+        if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
+            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
+        self._lifecycle_state = lifecycle_state
 
     @property
     def defined_tags(self):

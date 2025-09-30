@@ -31,6 +31,14 @@ class FsuCycleSummary(object):
     #: This constant has a value of "GI"
     COLLECTION_TYPE_GI = "GI"
 
+    #: A constant which can be used with the collection_type property of a FsuCycleSummary.
+    #: This constant has a value of "GUEST_OS"
+    COLLECTION_TYPE_GUEST_OS = "GUEST_OS"
+
+    #: A constant which can be used with the collection_type property of a FsuCycleSummary.
+    #: This constant has a value of "EXADB_STACK"
+    COLLECTION_TYPE_EXADB_STACK = "EXADB_STACK"
+
     #: A constant which can be used with the rollback_cycle_state property of a FsuCycleSummary.
     #: This constant has a value of "ABLE_TO_EXECUTE"
     ROLLBACK_CYCLE_STATE_ABLE_TO_EXECUTE = "ABLE_TO_EXECUTE"
@@ -144,7 +152,7 @@ class FsuCycleSummary(object):
 
         :param collection_type:
             The value to assign to the collection_type property of this FsuCycleSummary.
-            Allowed values for this property are: "DB", "GI", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "DB", "GI", "GUEST_OS", "EXADB_STACK", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type collection_type: str
 
@@ -287,7 +295,9 @@ class FsuCycleSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this FsuCycleSummary.
-        OCID identifier for the Exadata Fleet Update Cycle.
+        The `OCID`__ of the Exadata Fleet Update Cycle.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this FsuCycleSummary.
@@ -299,7 +309,9 @@ class FsuCycleSummary(object):
     def id(self, id):
         """
         Sets the id of this FsuCycleSummary.
-        OCID identifier for the Exadata Fleet Update Cycle.
+        The `OCID`__ of the Exadata Fleet Update Cycle.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this FsuCycleSummary.
@@ -311,7 +323,7 @@ class FsuCycleSummary(object):
     def display_name(self):
         """
         Gets the display_name of this FsuCycleSummary.
-        Exadata Fleet Update Cycle display name.
+        The user-friendly name for the Exadata Fleet Update Cycle.
 
 
         :return: The display_name of this FsuCycleSummary.
@@ -323,7 +335,7 @@ class FsuCycleSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this FsuCycleSummary.
-        Exadata Fleet Update Cycle display name.
+        The user-friendly name for the Exadata Fleet Update Cycle.
 
 
         :param display_name: The display_name of this FsuCycleSummary.
@@ -335,7 +347,9 @@ class FsuCycleSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this FsuCycleSummary.
-        Compartment Identifier.
+        The `OCID`__ of the Compartment.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this FsuCycleSummary.
@@ -347,7 +361,9 @@ class FsuCycleSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this FsuCycleSummary.
-        Compartment Identifier.
+        The `OCID`__ of the Compartment.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this FsuCycleSummary.
@@ -389,7 +405,9 @@ class FsuCycleSummary(object):
     def fsu_collection_id(self):
         """
         **[Required]** Gets the fsu_collection_id of this FsuCycleSummary.
-        OCID identifier for the Collection ID the Exadata Fleet Update Cycle is assigned to.
+        The `OCID`__ of the Exadata Fleet Update Collection being updated by this Exadata Fleet Update Cycle.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The fsu_collection_id of this FsuCycleSummary.
@@ -401,7 +419,9 @@ class FsuCycleSummary(object):
     def fsu_collection_id(self, fsu_collection_id):
         """
         Sets the fsu_collection_id of this FsuCycleSummary.
-        OCID identifier for the Collection ID the Exadata Fleet Update Cycle is assigned to.
+        The `OCID`__ of the Exadata Fleet Update Collection being updated by this Exadata Fleet Update Cycle.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param fsu_collection_id: The fsu_collection_id of this FsuCycleSummary.
@@ -413,9 +433,9 @@ class FsuCycleSummary(object):
     def collection_type(self):
         """
         **[Required]** Gets the collection_type of this FsuCycleSummary.
-        Type of Collection this Exadata Fleet Update Cycle belongs to.
+        Type of Exadata Fleet Update Collection being updated by this Exadata Fleet Update Cycle.
 
-        Allowed values for this property are: "DB", "GI", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "DB", "GI", "GUEST_OS", "EXADB_STACK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -428,13 +448,13 @@ class FsuCycleSummary(object):
     def collection_type(self, collection_type):
         """
         Sets the collection_type of this FsuCycleSummary.
-        Type of Collection this Exadata Fleet Update Cycle belongs to.
+        Type of Exadata Fleet Update Collection being updated by this Exadata Fleet Update Cycle.
 
 
         :param collection_type: The collection_type of this FsuCycleSummary.
         :type: str
         """
-        allowed_values = ["DB", "GI"]
+        allowed_values = ["DB", "GI", "GUEST_OS", "EXADB_STACK"]
         if not value_allowed_none_or_none_sentinel(collection_type, allowed_values):
             collection_type = 'UNKNOWN_ENUM_VALUE'
         self._collection_type = collection_type
@@ -443,7 +463,9 @@ class FsuCycleSummary(object):
     def executing_fsu_action_id(self):
         """
         Gets the executing_fsu_action_id of this FsuCycleSummary.
-        OCID identifier for the Action that is currently in execution, if applicable.
+        The `OCID`__ of the Exadata Fleet Update Action that is currently in progress, if applicable.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The executing_fsu_action_id of this FsuCycleSummary.
@@ -455,7 +477,9 @@ class FsuCycleSummary(object):
     def executing_fsu_action_id(self, executing_fsu_action_id):
         """
         Sets the executing_fsu_action_id of this FsuCycleSummary.
-        OCID identifier for the Action that is currently in execution, if applicable.
+        The `OCID`__ of the Exadata Fleet Update Action that is currently in progress, if applicable.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param executing_fsu_action_id: The executing_fsu_action_id of this FsuCycleSummary.

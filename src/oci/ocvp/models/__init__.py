@@ -6,15 +6,33 @@
 
 from __future__ import absolute_import
 
+from .add_block_volume_to_datastore_details import AddBlockVolumeToDatastoreDetails
+from .add_datastore_to_datastore_cluster_details import AddDatastoreToDatastoreClusterDetails
+from .attach_datastore_cluster_to_cluster_details import AttachDatastoreClusterToClusterDetails
+from .attach_datastore_cluster_to_esxi_host_details import AttachDatastoreClusterToEsxiHostDetails
+from .block_volume_attachment import BlockVolumeAttachment
+from .block_volume_details import BlockVolumeDetails
+from .change_datastore_cluster_compartment_details import ChangeDatastoreClusterCompartmentDetails
+from .change_datastore_compartment_details import ChangeDatastoreCompartmentDetails
 from .change_sddc_compartment_details import ChangeSddcCompartmentDetails
 from .cluster import Cluster
 from .cluster_collection import ClusterCollection
 from .cluster_summary import ClusterSummary
 from .create_cluster_details import CreateClusterDetails
+from .create_datastore_cluster_details import CreateDatastoreClusterDetails
+from .create_datastore_details import CreateDatastoreDetails
 from .create_esxi_host_details import CreateEsxiHostDetails
 from .create_sddc_details import CreateSddcDetails
+from .datastore import Datastore
+from .datastore_attachment import DatastoreAttachment
+from .datastore_cluster import DatastoreCluster
+from .datastore_cluster_collection import DatastoreClusterCollection
+from .datastore_cluster_summary import DatastoreClusterSummary
+from .datastore_collection import DatastoreCollection
 from .datastore_details import DatastoreDetails
 from .datastore_info import DatastoreInfo
+from .datastore_summary import DatastoreSummary
+from .detach_datastore_cluster_from_esxi_host_details import DetachDatastoreClusterFromEsxiHostDetails
 from .downgrade_hcx_details import DowngradeHcxDetails
 from .esxi_host import EsxiHost
 from .esxi_host_collection import EsxiHostCollection
@@ -23,6 +41,7 @@ from .hcx_license_summary import HcxLicenseSummary
 from .initial_cluster_configuration import InitialClusterConfiguration
 from .initial_configuration import InitialConfiguration
 from .network_configuration import NetworkConfiguration
+from .remove_datastore_from_datastore_cluster_details import RemoveDatastoreFromDatastoreClusterDetails
 from .replace_host_details import ReplaceHostDetails
 from .sddc import Sddc
 from .sddc_collection import SddcCollection
@@ -36,6 +55,8 @@ from .supported_host_shape_summary import SupportedHostShapeSummary
 from .supported_vmware_software_version_collection import SupportedVmwareSoftwareVersionCollection
 from .supported_vmware_software_version_summary import SupportedVmwareSoftwareVersionSummary
 from .update_cluster_details import UpdateClusterDetails
+from .update_datastore_cluster_details import UpdateDatastoreClusterDetails
+from .update_datastore_details import UpdateDatastoreDetails
 from .update_esxi_host_details import UpdateEsxiHostDetails
 from .update_sddc_details import UpdateSddcDetails
 from .vsphere_license import VsphereLicense
@@ -50,15 +71,33 @@ from .work_request_resource import WorkRequestResource
 
 # Maps type names to classes for ocvp services.
 ocvp_type_mapping = {
+    "AddBlockVolumeToDatastoreDetails": AddBlockVolumeToDatastoreDetails,
+    "AddDatastoreToDatastoreClusterDetails": AddDatastoreToDatastoreClusterDetails,
+    "AttachDatastoreClusterToClusterDetails": AttachDatastoreClusterToClusterDetails,
+    "AttachDatastoreClusterToEsxiHostDetails": AttachDatastoreClusterToEsxiHostDetails,
+    "BlockVolumeAttachment": BlockVolumeAttachment,
+    "BlockVolumeDetails": BlockVolumeDetails,
+    "ChangeDatastoreClusterCompartmentDetails": ChangeDatastoreClusterCompartmentDetails,
+    "ChangeDatastoreCompartmentDetails": ChangeDatastoreCompartmentDetails,
     "ChangeSddcCompartmentDetails": ChangeSddcCompartmentDetails,
     "Cluster": Cluster,
     "ClusterCollection": ClusterCollection,
     "ClusterSummary": ClusterSummary,
     "CreateClusterDetails": CreateClusterDetails,
+    "CreateDatastoreClusterDetails": CreateDatastoreClusterDetails,
+    "CreateDatastoreDetails": CreateDatastoreDetails,
     "CreateEsxiHostDetails": CreateEsxiHostDetails,
     "CreateSddcDetails": CreateSddcDetails,
+    "Datastore": Datastore,
+    "DatastoreAttachment": DatastoreAttachment,
+    "DatastoreCluster": DatastoreCluster,
+    "DatastoreClusterCollection": DatastoreClusterCollection,
+    "DatastoreClusterSummary": DatastoreClusterSummary,
+    "DatastoreCollection": DatastoreCollection,
     "DatastoreDetails": DatastoreDetails,
     "DatastoreInfo": DatastoreInfo,
+    "DatastoreSummary": DatastoreSummary,
+    "DetachDatastoreClusterFromEsxiHostDetails": DetachDatastoreClusterFromEsxiHostDetails,
     "DowngradeHcxDetails": DowngradeHcxDetails,
     "EsxiHost": EsxiHost,
     "EsxiHostCollection": EsxiHostCollection,
@@ -67,6 +106,7 @@ ocvp_type_mapping = {
     "InitialClusterConfiguration": InitialClusterConfiguration,
     "InitialConfiguration": InitialConfiguration,
     "NetworkConfiguration": NetworkConfiguration,
+    "RemoveDatastoreFromDatastoreClusterDetails": RemoveDatastoreFromDatastoreClusterDetails,
     "ReplaceHostDetails": ReplaceHostDetails,
     "Sddc": Sddc,
     "SddcCollection": SddcCollection,
@@ -80,6 +120,8 @@ ocvp_type_mapping = {
     "SupportedVmwareSoftwareVersionCollection": SupportedVmwareSoftwareVersionCollection,
     "SupportedVmwareSoftwareVersionSummary": SupportedVmwareSoftwareVersionSummary,
     "UpdateClusterDetails": UpdateClusterDetails,
+    "UpdateDatastoreClusterDetails": UpdateDatastoreClusterDetails,
+    "UpdateDatastoreDetails": UpdateDatastoreDetails,
     "UpdateEsxiHostDetails": UpdateEsxiHostDetails,
     "UpdateSddcDetails": UpdateSddcDetails,
     "VsphereLicense": VsphereLicense,

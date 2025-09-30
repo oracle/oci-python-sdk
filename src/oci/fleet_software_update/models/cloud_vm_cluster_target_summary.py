@@ -44,26 +44,33 @@ class CloudVmClusterTargetSummary(TargetDetails):
             The value to assign to the software_image_id property of this CloudVmClusterTargetSummary.
         :type software_image_id: str
 
+        :param system_version:
+            The value to assign to the system_version property of this CloudVmClusterTargetSummary.
+        :type system_version: str
+
         """
         self.swagger_types = {
             'entity_type': 'str',
             'id': 'str',
             'compartment_id': 'str',
             'infrastructure_id': 'str',
-            'software_image_id': 'str'
+            'software_image_id': 'str',
+            'system_version': 'str'
         }
         self.attribute_map = {
             'entity_type': 'entityType',
             'id': 'id',
             'compartment_id': 'compartmentId',
             'infrastructure_id': 'infrastructureId',
-            'software_image_id': 'softwareImageId'
+            'software_image_id': 'softwareImageId',
+            'system_version': 'systemVersion'
         }
         self._entity_type = None
         self._id = None
         self._compartment_id = None
         self._infrastructure_id = None
         self._software_image_id = None
+        self._system_version = None
         self._entity_type = 'CLOUDVMCLUSTER'
 
     @property
@@ -113,6 +120,30 @@ class CloudVmClusterTargetSummary(TargetDetails):
         :type: str
         """
         self._software_image_id = software_image_id
+
+    @property
+    def system_version(self):
+        """
+        Gets the system_version of this CloudVmClusterTargetSummary.
+        Exadata Image (Guest OS) version.
+
+
+        :return: The system_version of this CloudVmClusterTargetSummary.
+        :rtype: str
+        """
+        return self._system_version
+
+    @system_version.setter
+    def system_version(self, system_version):
+        """
+        Sets the system_version of this CloudVmClusterTargetSummary.
+        Exadata Image (Guest OS) version.
+
+
+        :param system_version: The system_version of this CloudVmClusterTargetSummary.
+        :type: str
+        """
+        self._system_version = system_version
 
     def __repr__(self):
         return formatted_flat_dict(self)

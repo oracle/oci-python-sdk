@@ -120,6 +120,10 @@ class Instance(object):
             The value to assign to the placement_constraint_details property of this Instance.
         :type placement_constraint_details: oci.core.models.PlacementConstraintDetails
 
+        :param is_ai_enterprise_enabled:
+            The value to assign to the is_ai_enterprise_enabled property of this Instance.
+        :type is_ai_enterprise_enabled: bool
+
         :param cluster_placement_group_id:
             The value to assign to the cluster_placement_group_id property of this Instance.
         :type cluster_placement_group_id: str
@@ -256,6 +260,7 @@ class Instance(object):
             'capacity_reservation_id': 'str',
             'compartment_id': 'str',
             'placement_constraint_details': 'PlacementConstraintDetails',
+            'is_ai_enterprise_enabled': 'bool',
             'cluster_placement_group_id': 'str',
             'dedicated_vm_host_id': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -293,6 +298,7 @@ class Instance(object):
             'capacity_reservation_id': 'capacityReservationId',
             'compartment_id': 'compartmentId',
             'placement_constraint_details': 'placementConstraintDetails',
+            'is_ai_enterprise_enabled': 'isAIEnterpriseEnabled',
             'cluster_placement_group_id': 'clusterPlacementGroupId',
             'dedicated_vm_host_id': 'dedicatedVmHostId',
             'defined_tags': 'definedTags',
@@ -329,6 +335,7 @@ class Instance(object):
         self._capacity_reservation_id = None
         self._compartment_id = None
         self._placement_constraint_details = None
+        self._is_ai_enterprise_enabled = None
         self._cluster_placement_group_id = None
         self._dedicated_vm_host_id = None
         self._defined_tags = None
@@ -464,6 +471,30 @@ class Instance(object):
         :type: oci.core.models.PlacementConstraintDetails
         """
         self._placement_constraint_details = placement_constraint_details
+
+    @property
+    def is_ai_enterprise_enabled(self):
+        """
+        Gets the is_ai_enterprise_enabled of this Instance.
+        Whether AI enterprise is enabled on the instance.
+
+
+        :return: The is_ai_enterprise_enabled of this Instance.
+        :rtype: bool
+        """
+        return self._is_ai_enterprise_enabled
+
+    @is_ai_enterprise_enabled.setter
+    def is_ai_enterprise_enabled(self, is_ai_enterprise_enabled):
+        """
+        Sets the is_ai_enterprise_enabled of this Instance.
+        Whether AI enterprise is enabled on the instance.
+
+
+        :param is_ai_enterprise_enabled: The is_ai_enterprise_enabled of this Instance.
+        :type: bool
+        """
+        self._is_ai_enterprise_enabled = is_ai_enterprise_enabled
 
     @property
     def cluster_placement_group_id(self):

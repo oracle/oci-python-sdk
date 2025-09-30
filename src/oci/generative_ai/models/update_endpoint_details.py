@@ -28,6 +28,10 @@ class UpdateEndpointDetails(object):
             The value to assign to the description property of this UpdateEndpointDetails.
         :type description: str
 
+        :param generative_ai_private_endpoint_id:
+            The value to assign to the generative_ai_private_endpoint_id property of this UpdateEndpointDetails.
+        :type generative_ai_private_endpoint_id: str
+
         :param content_moderation_config:
             The value to assign to the content_moderation_config property of this UpdateEndpointDetails.
         :type content_moderation_config: oci.generative_ai.models.ContentModerationConfig
@@ -44,6 +48,7 @@ class UpdateEndpointDetails(object):
         self.swagger_types = {
             'display_name': 'str',
             'description': 'str',
+            'generative_ai_private_endpoint_id': 'str',
             'content_moderation_config': 'ContentModerationConfig',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -51,12 +56,14 @@ class UpdateEndpointDetails(object):
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
+            'generative_ai_private_endpoint_id': 'generativeAiPrivateEndpointId',
             'content_moderation_config': 'contentModerationConfig',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
         self._display_name = None
         self._description = None
+        self._generative_ai_private_endpoint_id = None
         self._content_moderation_config = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -108,6 +115,30 @@ class UpdateEndpointDetails(object):
         :type: str
         """
         self._description = description
+
+    @property
+    def generative_ai_private_endpoint_id(self):
+        """
+        Gets the generative_ai_private_endpoint_id of this UpdateEndpointDetails.
+        The OCID of the Generative AI private endpoint to which this endpoint will be attached.
+
+
+        :return: The generative_ai_private_endpoint_id of this UpdateEndpointDetails.
+        :rtype: str
+        """
+        return self._generative_ai_private_endpoint_id
+
+    @generative_ai_private_endpoint_id.setter
+    def generative_ai_private_endpoint_id(self, generative_ai_private_endpoint_id):
+        """
+        Sets the generative_ai_private_endpoint_id of this UpdateEndpointDetails.
+        The OCID of the Generative AI private endpoint to which this endpoint will be attached.
+
+
+        :param generative_ai_private_endpoint_id: The generative_ai_private_endpoint_id of this UpdateEndpointDetails.
+        :type: str
+        """
+        self._generative_ai_private_endpoint_id = generative_ai_private_endpoint_id
 
     @property
     def content_moderation_config(self):

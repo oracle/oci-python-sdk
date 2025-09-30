@@ -109,7 +109,7 @@ class PatchAction(Action):
     def mode(self):
         """
         Gets the mode of this PatchAction.
-        A string that describeds whether the change is applied hot or cold
+        A string that describes whether the change is applied hot or cold
 
         Allowed values for this property are: "HOT", "COLD", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -124,7 +124,7 @@ class PatchAction(Action):
     def mode(self, mode):
         """
         Sets the mode of this PatchAction.
-        A string that describeds whether the change is applied hot or cold
+        A string that describes whether the change is applied hot or cold
 
 
         :param mode: The mode of this PatchAction.

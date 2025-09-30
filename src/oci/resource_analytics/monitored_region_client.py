@@ -160,7 +160,7 @@ class MonitoredRegionClient(object):
         resource_path = "/monitoredRegions"
         method = "POST"
         operation_name = "create_monitored_region"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resource-analytics/20241031/MonitoredRegion/CreateMonitoredRegion"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -262,7 +262,7 @@ class MonitoredRegionClient(object):
         resource_path = "/monitoredRegions/{monitoredRegionId}"
         method = "DELETE"
         operation_name = "delete_monitored_region"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resource-analytics/20241031/MonitoredRegion/DeleteMonitoredRegion"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -365,7 +365,7 @@ class MonitoredRegionClient(object):
         resource_path = "/monitoredRegions/{monitoredRegionId}"
         method = "GET"
         operation_name = "get_monitored_region"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resource-analytics/20241031/MonitoredRegion/GetMonitoredRegion"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -504,7 +504,7 @@ class MonitoredRegionClient(object):
         resource_path = "/monitoredRegions"
         method = "GET"
         operation_name = "list_monitored_regions"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resource-analytics/20241031/MonitoredRegionCollection/ListMonitoredRegions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

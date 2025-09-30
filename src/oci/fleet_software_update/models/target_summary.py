@@ -58,6 +58,10 @@ class TargetSummary(object):
             The value to assign to the progress property of this TargetSummary.
         :type progress: oci.fleet_software_update.models.TargetProgressSummary
 
+        :param memberships:
+            The value to assign to the memberships property of this TargetSummary.
+        :type memberships: list[oci.fleet_software_update.models.MembershipSummary]
+
         """
         self.swagger_types = {
             'target': 'TargetDetails',
@@ -65,7 +69,8 @@ class TargetSummary(object):
             'status': 'str',
             'executing_fsu_job_id': 'str',
             'active_fsu_cycle_id': 'str',
-            'progress': 'TargetProgressSummary'
+            'progress': 'TargetProgressSummary',
+            'memberships': 'list[MembershipSummary]'
         }
         self.attribute_map = {
             'target': 'target',
@@ -73,7 +78,8 @@ class TargetSummary(object):
             'status': 'status',
             'executing_fsu_job_id': 'executingFsuJobId',
             'active_fsu_cycle_id': 'activeFsuCycleId',
-            'progress': 'progress'
+            'progress': 'progress',
+            'memberships': 'memberships'
         }
         self._target = None
         self._current_version = None
@@ -81,6 +87,7 @@ class TargetSummary(object):
         self._executing_fsu_job_id = None
         self._active_fsu_cycle_id = None
         self._progress = None
+        self._memberships = None
 
     @property
     def target(self):
@@ -223,6 +230,30 @@ class TargetSummary(object):
         :type: oci.fleet_software_update.models.TargetProgressSummary
         """
         self._progress = progress
+
+    @property
+    def memberships(self):
+        """
+        Gets the memberships of this TargetSummary.
+        List of Exadata Fleet Update Collections containing this target.
+
+
+        :return: The memberships of this TargetSummary.
+        :rtype: list[oci.fleet_software_update.models.MembershipSummary]
+        """
+        return self._memberships
+
+    @memberships.setter
+    def memberships(self, memberships):
+        """
+        Sets the memberships of this TargetSummary.
+        List of Exadata Fleet Update Collections containing this target.
+
+
+        :param memberships: The memberships of this TargetSummary.
+        :type: list[oci.fleet_software_update.models.MembershipSummary]
+        """
+        self._memberships = memberships
 
     def __repr__(self):
         return formatted_flat_dict(self)

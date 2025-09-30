@@ -9,6 +9,10 @@ from __future__ import absolute_import
 
 from .cluster_client import ClusterClient
 from .cluster_client_composite_operations import ClusterClientCompositeOperations
+from .datastore_client import DatastoreClient
+from .datastore_client_composite_operations import DatastoreClientCompositeOperations
+from .datastore_cluster_client import DatastoreClusterClient
+from .datastore_cluster_client_composite_operations import DatastoreClusterClientCompositeOperations
 from .esxi_host_client import EsxiHostClient
 from .esxi_host_client_composite_operations import EsxiHostClientCompositeOperations
 from .sddc_client import SddcClient
@@ -17,4 +21,4 @@ from .work_request_client import WorkRequestClient
 from .work_request_client_composite_operations import WorkRequestClientCompositeOperations
 from . import models
 
-__all__ = ["ClusterClient", "ClusterClientCompositeOperations", "EsxiHostClient", "EsxiHostClientCompositeOperations", "SddcClient", "SddcClientCompositeOperations", "WorkRequestClient", "WorkRequestClientCompositeOperations", "models"]
+__all__ = ["ClusterClient", "ClusterClientCompositeOperations", "DatastoreClient", "DatastoreClientCompositeOperations", "DatastoreClusterClient", "DatastoreClusterClientCompositeOperations", "EsxiHostClient", "EsxiHostClientCompositeOperations", "SddcClient", "SddcClientCompositeOperations", "WorkRequestClient", "WorkRequestClientCompositeOperations", "models"]

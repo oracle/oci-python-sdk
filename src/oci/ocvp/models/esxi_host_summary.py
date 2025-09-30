@@ -182,6 +182,10 @@ class EsxiHostSummary(object):
             The value to assign to the is_billing_swapping_in_progress property of this EsxiHostSummary.
         :type is_billing_swapping_in_progress: bool
 
+        :param datastore_cluster_ids:
+            The value to assign to the datastore_cluster_ids property of this EsxiHostSummary.
+        :type datastore_cluster_ids: list[str]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this EsxiHostSummary.
         :type freeform_tags: dict(str, str)
@@ -221,6 +225,7 @@ class EsxiHostSummary(object):
             'swap_billing_host_id': 'str',
             'is_billing_continuation_in_progress': 'bool',
             'is_billing_swapping_in_progress': 'bool',
+            'datastore_cluster_ids': 'list[str]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -251,6 +256,7 @@ class EsxiHostSummary(object):
             'swap_billing_host_id': 'swapBillingHostId',
             'is_billing_continuation_in_progress': 'isBillingContinuationInProgress',
             'is_billing_swapping_in_progress': 'isBillingSwappingInProgress',
+            'datastore_cluster_ids': 'datastoreClusterIds',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -280,6 +286,7 @@ class EsxiHostSummary(object):
         self._swap_billing_host_id = None
         self._is_billing_continuation_in_progress = None
         self._is_billing_swapping_in_progress = None
+        self._datastore_cluster_ids = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -999,6 +1006,30 @@ class EsxiHostSummary(object):
         :type: bool
         """
         self._is_billing_swapping_in_progress = is_billing_swapping_in_progress
+
+    @property
+    def datastore_cluster_ids(self):
+        """
+        Gets the datastore_cluster_ids of this EsxiHostSummary.
+        A list of datastore clusters.
+
+
+        :return: The datastore_cluster_ids of this EsxiHostSummary.
+        :rtype: list[str]
+        """
+        return self._datastore_cluster_ids
+
+    @datastore_cluster_ids.setter
+    def datastore_cluster_ids(self, datastore_cluster_ids):
+        """
+        Sets the datastore_cluster_ids of this EsxiHostSummary.
+        A list of datastore clusters.
+
+
+        :param datastore_cluster_ids: The datastore_cluster_ids of this EsxiHostSummary.
+        :type: list[str]
+        """
+        self._datastore_cluster_ids = datastore_cluster_ids
 
     @property
     def freeform_tags(self):

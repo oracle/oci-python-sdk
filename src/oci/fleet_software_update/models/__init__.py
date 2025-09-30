@@ -27,12 +27,16 @@ from .create_apply_action_details import CreateApplyActionDetails
 from .create_batching_strategy_details import CreateBatchingStrategyDetails
 from .create_cleanup_action_details import CreateCleanupActionDetails
 from .create_db_fsu_collection_details import CreateDbFsuCollectionDetails
+from .create_exadb_stack_fsu_collection_details import CreateExadbStackFsuCollectionDetails
 from .create_fifty_fifty_batching_strategy_details import CreateFiftyFiftyBatchingStrategyDetails
 from .create_fsu_action_details import CreateFsuActionDetails
 from .create_fsu_collection_details import CreateFsuCollectionDetails
 from .create_fsu_cycle_details import CreateFsuCycleDetails
 from .create_fsu_discovery_details import CreateFsuDiscoveryDetails
 from .create_gi_fsu_collection_details import CreateGiFsuCollectionDetails
+from .create_gi_software_component_details import CreateGiSoftwareComponentDetails
+from .create_guest_os_fsu_collection_details import CreateGuestOsFsuCollectionDetails
+from .create_guest_os_software_component_details import CreateGuestOsSoftwareComponentDetails
 from .create_non_rolling_batching_strategy_details import CreateNonRollingBatchingStrategyDetails
 from .create_patch_fsu_cycle import CreatePatchFsuCycle
 from .create_precheck_action_details import CreatePrecheckActionDetails
@@ -41,9 +45,11 @@ from .create_rollback_cycle_apply_action_details import CreateRollbackCycleApply
 from .create_schedule_details import CreateScheduleDetails
 from .create_sequential_batching_strategy_details import CreateSequentialBatchingStrategyDetails
 from .create_service_availability_factor_batching_strategy_details import CreateServiceAvailabilityFactorBatchingStrategyDetails
+from .create_software_component_details import CreateSoftwareComponentDetails
 from .create_stage_action_details import CreateStageActionDetails
 from .create_start_time_schedule_details import CreateStartTimeScheduleDetails
 from .create_upgrade_fsu_cycle import CreateUpgradeFsuCycle
+from .custom_gi_goal_version_details import CustomGiGoalVersionDetails
 from .database_target_summary import DatabaseTargetSummary
 from .db_collection import DbCollection
 from .db_compartment_id_filter import DbCompartmentIdFilter
@@ -66,6 +72,10 @@ from .defined_tag_filter_entry import DefinedTagFilterEntry
 from .diagnostics_collection_details import DiagnosticsCollectionDetails
 from .discovery_details import DiscoveryDetails
 from .discovery_details_summary import DiscoveryDetailsSummary
+from .exadb_stack_collection import ExadbStackCollection
+from .exadb_stack_discovery_details import ExadbStackDiscoveryDetails
+from .exadb_stack_fsu_collection_summary import ExadbStackFsuCollectionSummary
+from .exadb_stack_fsu_goal_version_details import ExadbStackFsuGoalVersionDetails
 from .failed_jobs_rollback_details import FailedJobsRollbackDetails
 from .fifty_fifty_batching_strategy_details import FiftyFiftyBatchingStrategyDetails
 from .freeform_tag_filter_entry import FreeformTagFilterEntry
@@ -99,18 +109,47 @@ from .gi_fleet_discovery_details import GiFleetDiscoveryDetails
 from .gi_fleet_discovery_filter import GiFleetDiscoveryFilter
 from .gi_freeform_tags_filter import GiFreeformTagsFilter
 from .gi_fsu_collection_summary import GiFsuCollectionSummary
+from .gi_goal_software_component_details import GiGoalSoftwareComponentDetails
+from .gi_goal_version_details import GiGoalVersionDetails
 from .gi_resource_id_filter import GiResourceIdFilter
 from .gi_search_query_discovery import GiSearchQueryDiscovery
+from .gi_software_component_details import GiSoftwareComponentDetails
+from .gi_software_component_discovery_details import GiSoftwareComponentDiscoveryDetails
+from .gi_software_component_summary import GiSoftwareComponentSummary
 from .gi_target_list_discovery import GiTargetListDiscovery
 from .gi_version_filter import GiVersionFilter
+from .goal_software_component_details import GoalSoftwareComponentDetails
+from .guest_os_collection import GuestOsCollection
+from .guest_os_compartment_id_filter import GuestOsCompartmentIdFilter
+from .guest_os_defined_tags_filter import GuestOsDefinedTagsFilter
+from .guest_os_discovery_details import GuestOsDiscoveryDetails
+from .guest_os_discovery_results import GuestOsDiscoveryResults
+from .guest_os_exadata_release_version_filter import GuestOsExadataReleaseVersionFilter
+from .guest_os_filters_discovery import GuestOsFiltersDiscovery
+from .guest_os_fleet_discovery_details import GuestOsFleetDiscoveryDetails
+from .guest_os_fleet_discovery_filter import GuestOsFleetDiscoveryFilter
+from .guest_os_freeform_tags_filter import GuestOsFreeformTagsFilter
+from .guest_os_fsu_collection_summary import GuestOsFsuCollectionSummary
+from .guest_os_goal_software_component_details import GuestOsGoalSoftwareComponentDetails
+from .guest_os_goal_version_details import GuestOsGoalVersionDetails
+from .guest_os_resource_id_filter import GuestOsResourceIdFilter
+from .guest_os_search_query_discovery import GuestOsSearchQueryDiscovery
+from .guest_os_software_component_details import GuestOsSoftwareComponentDetails
+from .guest_os_software_component_discovery_details import GuestOsSoftwareComponentDiscoveryDetails
+from .guest_os_software_component_summary import GuestOsSoftwareComponentSummary
+from .guest_os_target_list_discovery import GuestOsTargetListDiscovery
+from .guest_os_version_filter import GuestOsVersionFilter
 from .image_id_fsu_target_details import ImageIdFsuTargetDetails
 from .job_progress import JobProgress
 from .job_progress_details import JobProgressDetails
 from .list_of_targets_rollback_details import ListOfTargetsRollbackDetails
+from .membership_summary import MembershipSummary
 from .next_action_to_execute_details import NextActionToExecuteDetails
 from .non_rolling_batching_strategy_details import NonRollingBatchingStrategyDetails
 from .none_batching_strategy_details import NoneBatchingStrategyDetails
 from .none_schedule_details import NoneScheduleDetails
+from .oracle_gi_goal_version_details import OracleGiGoalVersionDetails
+from .oracle_guest_os_goal_version_details import OracleGuestOsGoalVersionDetails
 from .patch_fsu_cycle import PatchFsuCycle
 from .precheck_action import PrecheckAction
 from .precheck_action_summary import PrecheckActionSummary
@@ -129,6 +168,9 @@ from .rollback_fsu_job_summary import RollbackFsuJobSummary
 from .schedule_details import ScheduleDetails
 from .sequential_batching_strategy_details import SequentialBatchingStrategyDetails
 from .service_availability_factor_batching_strategy_details import ServiceAvailabilityFactorBatchingStrategyDetails
+from .software_component_details import SoftwareComponentDetails
+from .software_component_discovery_details import SoftwareComponentDiscoveryDetails
+from .software_component_summary import SoftwareComponentSummary
 from .stage_action import StageAction
 from .stage_action_summary import StageActionSummary
 from .stage_fsu_job import StageFsuJob
@@ -198,12 +240,16 @@ fleet_software_update_type_mapping = {
     "CreateBatchingStrategyDetails": CreateBatchingStrategyDetails,
     "CreateCleanupActionDetails": CreateCleanupActionDetails,
     "CreateDbFsuCollectionDetails": CreateDbFsuCollectionDetails,
+    "CreateExadbStackFsuCollectionDetails": CreateExadbStackFsuCollectionDetails,
     "CreateFiftyFiftyBatchingStrategyDetails": CreateFiftyFiftyBatchingStrategyDetails,
     "CreateFsuActionDetails": CreateFsuActionDetails,
     "CreateFsuCollectionDetails": CreateFsuCollectionDetails,
     "CreateFsuCycleDetails": CreateFsuCycleDetails,
     "CreateFsuDiscoveryDetails": CreateFsuDiscoveryDetails,
     "CreateGiFsuCollectionDetails": CreateGiFsuCollectionDetails,
+    "CreateGiSoftwareComponentDetails": CreateGiSoftwareComponentDetails,
+    "CreateGuestOsFsuCollectionDetails": CreateGuestOsFsuCollectionDetails,
+    "CreateGuestOsSoftwareComponentDetails": CreateGuestOsSoftwareComponentDetails,
     "CreateNonRollingBatchingStrategyDetails": CreateNonRollingBatchingStrategyDetails,
     "CreatePatchFsuCycle": CreatePatchFsuCycle,
     "CreatePrecheckActionDetails": CreatePrecheckActionDetails,
@@ -212,9 +258,11 @@ fleet_software_update_type_mapping = {
     "CreateScheduleDetails": CreateScheduleDetails,
     "CreateSequentialBatchingStrategyDetails": CreateSequentialBatchingStrategyDetails,
     "CreateServiceAvailabilityFactorBatchingStrategyDetails": CreateServiceAvailabilityFactorBatchingStrategyDetails,
+    "CreateSoftwareComponentDetails": CreateSoftwareComponentDetails,
     "CreateStageActionDetails": CreateStageActionDetails,
     "CreateStartTimeScheduleDetails": CreateStartTimeScheduleDetails,
     "CreateUpgradeFsuCycle": CreateUpgradeFsuCycle,
+    "CustomGiGoalVersionDetails": CustomGiGoalVersionDetails,
     "DatabaseTargetSummary": DatabaseTargetSummary,
     "DbCollection": DbCollection,
     "DbCompartmentIdFilter": DbCompartmentIdFilter,
@@ -237,6 +285,10 @@ fleet_software_update_type_mapping = {
     "DiagnosticsCollectionDetails": DiagnosticsCollectionDetails,
     "DiscoveryDetails": DiscoveryDetails,
     "DiscoveryDetailsSummary": DiscoveryDetailsSummary,
+    "ExadbStackCollection": ExadbStackCollection,
+    "ExadbStackDiscoveryDetails": ExadbStackDiscoveryDetails,
+    "ExadbStackFsuCollectionSummary": ExadbStackFsuCollectionSummary,
+    "ExadbStackFsuGoalVersionDetails": ExadbStackFsuGoalVersionDetails,
     "FailedJobsRollbackDetails": FailedJobsRollbackDetails,
     "FiftyFiftyBatchingStrategyDetails": FiftyFiftyBatchingStrategyDetails,
     "FreeformTagFilterEntry": FreeformTagFilterEntry,
@@ -270,18 +322,47 @@ fleet_software_update_type_mapping = {
     "GiFleetDiscoveryFilter": GiFleetDiscoveryFilter,
     "GiFreeformTagsFilter": GiFreeformTagsFilter,
     "GiFsuCollectionSummary": GiFsuCollectionSummary,
+    "GiGoalSoftwareComponentDetails": GiGoalSoftwareComponentDetails,
+    "GiGoalVersionDetails": GiGoalVersionDetails,
     "GiResourceIdFilter": GiResourceIdFilter,
     "GiSearchQueryDiscovery": GiSearchQueryDiscovery,
+    "GiSoftwareComponentDetails": GiSoftwareComponentDetails,
+    "GiSoftwareComponentDiscoveryDetails": GiSoftwareComponentDiscoveryDetails,
+    "GiSoftwareComponentSummary": GiSoftwareComponentSummary,
     "GiTargetListDiscovery": GiTargetListDiscovery,
     "GiVersionFilter": GiVersionFilter,
+    "GoalSoftwareComponentDetails": GoalSoftwareComponentDetails,
+    "GuestOsCollection": GuestOsCollection,
+    "GuestOsCompartmentIdFilter": GuestOsCompartmentIdFilter,
+    "GuestOsDefinedTagsFilter": GuestOsDefinedTagsFilter,
+    "GuestOsDiscoveryDetails": GuestOsDiscoveryDetails,
+    "GuestOsDiscoveryResults": GuestOsDiscoveryResults,
+    "GuestOsExadataReleaseVersionFilter": GuestOsExadataReleaseVersionFilter,
+    "GuestOsFiltersDiscovery": GuestOsFiltersDiscovery,
+    "GuestOsFleetDiscoveryDetails": GuestOsFleetDiscoveryDetails,
+    "GuestOsFleetDiscoveryFilter": GuestOsFleetDiscoveryFilter,
+    "GuestOsFreeformTagsFilter": GuestOsFreeformTagsFilter,
+    "GuestOsFsuCollectionSummary": GuestOsFsuCollectionSummary,
+    "GuestOsGoalSoftwareComponentDetails": GuestOsGoalSoftwareComponentDetails,
+    "GuestOsGoalVersionDetails": GuestOsGoalVersionDetails,
+    "GuestOsResourceIdFilter": GuestOsResourceIdFilter,
+    "GuestOsSearchQueryDiscovery": GuestOsSearchQueryDiscovery,
+    "GuestOsSoftwareComponentDetails": GuestOsSoftwareComponentDetails,
+    "GuestOsSoftwareComponentDiscoveryDetails": GuestOsSoftwareComponentDiscoveryDetails,
+    "GuestOsSoftwareComponentSummary": GuestOsSoftwareComponentSummary,
+    "GuestOsTargetListDiscovery": GuestOsTargetListDiscovery,
+    "GuestOsVersionFilter": GuestOsVersionFilter,
     "ImageIdFsuTargetDetails": ImageIdFsuTargetDetails,
     "JobProgress": JobProgress,
     "JobProgressDetails": JobProgressDetails,
     "ListOfTargetsRollbackDetails": ListOfTargetsRollbackDetails,
+    "MembershipSummary": MembershipSummary,
     "NextActionToExecuteDetails": NextActionToExecuteDetails,
     "NonRollingBatchingStrategyDetails": NonRollingBatchingStrategyDetails,
     "NoneBatchingStrategyDetails": NoneBatchingStrategyDetails,
     "NoneScheduleDetails": NoneScheduleDetails,
+    "OracleGiGoalVersionDetails": OracleGiGoalVersionDetails,
+    "OracleGuestOsGoalVersionDetails": OracleGuestOsGoalVersionDetails,
     "PatchFsuCycle": PatchFsuCycle,
     "PrecheckAction": PrecheckAction,
     "PrecheckActionSummary": PrecheckActionSummary,
@@ -300,6 +381,9 @@ fleet_software_update_type_mapping = {
     "ScheduleDetails": ScheduleDetails,
     "SequentialBatchingStrategyDetails": SequentialBatchingStrategyDetails,
     "ServiceAvailabilityFactorBatchingStrategyDetails": ServiceAvailabilityFactorBatchingStrategyDetails,
+    "SoftwareComponentDetails": SoftwareComponentDetails,
+    "SoftwareComponentDiscoveryDetails": SoftwareComponentDiscoveryDetails,
+    "SoftwareComponentSummary": SoftwareComponentSummary,
     "StageAction": StageAction,
     "StageActionSummary": StageActionSummary,
     "StageFsuJob": StageFsuJob,

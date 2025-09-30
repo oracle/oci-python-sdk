@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ImageUrl(object):
     """
-    Provide a base64 encoded image.
+    Provide a base64 encoded image or an image uri if it's supported.
     """
 
     #: A constant which can be used with the detail property of a ImageUrl.
@@ -58,13 +58,21 @@ class ImageUrl(object):
     def url(self):
         """
         **[Required]** Gets the url of this ImageUrl.
-        The base64 encoded image data.
+        The base64 encoded image data or an image uri if it's supported.
 
         Example for a png image:
           `{
             \"type\": \"IMAGE\",
             \"imageUrl\": {
               \"url\": \"data:image/png;base64,<base64 encoded image content>\"
+            }
+          }`
+
+        Example with an image uri:
+          `{
+            \"type\": \"IMAGE\",
+            \"imageUrl\": {
+              \"url\": \"data:image/png;uri,<image uri>\"
             }
           }`
 
@@ -78,13 +86,21 @@ class ImageUrl(object):
     def url(self, url):
         """
         Sets the url of this ImageUrl.
-        The base64 encoded image data.
+        The base64 encoded image data or an image uri if it's supported.
 
         Example for a png image:
           `{
             \"type\": \"IMAGE\",
             \"imageUrl\": {
               \"url\": \"data:image/png;base64,<base64 encoded image content>\"
+            }
+          }`
+
+        Example with an image uri:
+          `{
+            \"type\": \"IMAGE\",
+            \"imageUrl\": {
+              \"url\": \"data:image/png;uri,<image uri>\"
             }
           }`
 

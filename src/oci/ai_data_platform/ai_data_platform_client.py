@@ -161,7 +161,7 @@ class AiDataPlatformClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
         operation_name = "cancel_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ai-data-platform/20240831/WorkRequest/CancelWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -276,7 +276,7 @@ class AiDataPlatformClient(object):
         resource_path = "/aiDataPlatforms/{aiDataPlatformId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_ai_data_platform_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ai-data-platform/20240831/AiDataPlatform/ChangeAiDataPlatformCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -386,7 +386,7 @@ class AiDataPlatformClient(object):
         resource_path = "/aiDataPlatforms"
         method = "POST"
         operation_name = "create_ai_data_platform"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ai-data-platform/20240831/AiDataPlatform/CreateAiDataPlatform"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -491,7 +491,7 @@ class AiDataPlatformClient(object):
         resource_path = "/aiDataPlatforms/{aiDataPlatformId}"
         method = "DELETE"
         operation_name = "delete_ai_data_platform"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ai-data-platform/20240831/AiDataPlatform/DeleteAiDataPlatform"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -602,7 +602,7 @@ class AiDataPlatformClient(object):
         resource_path = "/aiDataPlatforms/{aiDataPlatformId}"
         method = "GET"
         operation_name = "get_ai_data_platform"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ai-data-platform/20240831/AiDataPlatform/GetAiDataPlatform"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -705,7 +705,7 @@ class AiDataPlatformClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ai-data-platform/20240831/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -856,7 +856,7 @@ class AiDataPlatformClient(object):
         resource_path = "/aiDataPlatforms"
         method = "GET"
         operation_name = "list_ai_data_platforms"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ai-data-platform/20240831/AiDataPlatformCollection/ListAiDataPlatforms"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1025,7 +1025,7 @@ class AiDataPlatformClient(object):
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ai-data-platform/20240831/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1180,7 +1180,7 @@ class AiDataPlatformClient(object):
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ai-data-platform/20240831/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1350,7 +1350,7 @@ class AiDataPlatformClient(object):
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ai-data-platform/20240831/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1493,7 +1493,7 @@ class AiDataPlatformClient(object):
         resource_path = "/aiDataPlatforms/{aiDataPlatformId}"
         method = "PUT"
         operation_name = "update_ai_data_platform"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ai-data-platform/20240831/AiDataPlatform/UpdateAiDataPlatform"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

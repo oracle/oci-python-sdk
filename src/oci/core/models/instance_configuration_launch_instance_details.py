@@ -51,6 +51,10 @@ class InstanceConfigurationLaunchInstanceDetails(object):
             The value to assign to the availability_domain property of this InstanceConfigurationLaunchInstanceDetails.
         :type availability_domain: str
 
+        :param is_ai_enterprise_enabled:
+            The value to assign to the is_ai_enterprise_enabled property of this InstanceConfigurationLaunchInstanceDetails.
+        :type is_ai_enterprise_enabled: bool
+
         :param capacity_reservation_id:
             The value to assign to the capacity_reservation_id property of this InstanceConfigurationLaunchInstanceDetails.
         :type capacity_reservation_id: str
@@ -170,6 +174,7 @@ class InstanceConfigurationLaunchInstanceDetails(object):
         """
         self.swagger_types = {
             'availability_domain': 'str',
+            'is_ai_enterprise_enabled': 'bool',
             'capacity_reservation_id': 'str',
             'placement_constraint_details': 'InstanceConfigurationPlacementConstraintDetails',
             'compute_cluster_id': 'str',
@@ -201,6 +206,7 @@ class InstanceConfigurationLaunchInstanceDetails(object):
         }
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
+            'is_ai_enterprise_enabled': 'isAIEnterpriseEnabled',
             'capacity_reservation_id': 'capacityReservationId',
             'placement_constraint_details': 'placementConstraintDetails',
             'compute_cluster_id': 'computeClusterId',
@@ -231,6 +237,7 @@ class InstanceConfigurationLaunchInstanceDetails(object):
             'licensing_configs': 'licensingConfigs'
         }
         self._availability_domain = None
+        self._is_ai_enterprise_enabled = None
         self._capacity_reservation_id = None
         self._placement_constraint_details = None
         self._compute_cluster_id = None
@@ -287,6 +294,30 @@ class InstanceConfigurationLaunchInstanceDetails(object):
         :type: str
         """
         self._availability_domain = availability_domain
+
+    @property
+    def is_ai_enterprise_enabled(self):
+        """
+        Gets the is_ai_enterprise_enabled of this InstanceConfigurationLaunchInstanceDetails.
+        Whether to enable AI enterprise on the instance.
+
+
+        :return: The is_ai_enterprise_enabled of this InstanceConfigurationLaunchInstanceDetails.
+        :rtype: bool
+        """
+        return self._is_ai_enterprise_enabled
+
+    @is_ai_enterprise_enabled.setter
+    def is_ai_enterprise_enabled(self, is_ai_enterprise_enabled):
+        """
+        Sets the is_ai_enterprise_enabled of this InstanceConfigurationLaunchInstanceDetails.
+        Whether to enable AI enterprise on the instance.
+
+
+        :param is_ai_enterprise_enabled: The is_ai_enterprise_enabled of this InstanceConfigurationLaunchInstanceDetails.
+        :type: bool
+        """
+        self._is_ai_enterprise_enabled = is_ai_enterprise_enabled
 
     @property
     def capacity_reservation_id(self):

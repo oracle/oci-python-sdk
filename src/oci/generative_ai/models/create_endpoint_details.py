@@ -40,6 +40,10 @@ class CreateEndpointDetails(object):
             The value to assign to the dedicated_ai_cluster_id property of this CreateEndpointDetails.
         :type dedicated_ai_cluster_id: str
 
+        :param generative_ai_private_endpoint_id:
+            The value to assign to the generative_ai_private_endpoint_id property of this CreateEndpointDetails.
+        :type generative_ai_private_endpoint_id: str
+
         :param content_moderation_config:
             The value to assign to the content_moderation_config property of this CreateEndpointDetails.
         :type content_moderation_config: oci.generative_ai.models.ContentModerationConfig
@@ -59,6 +63,7 @@ class CreateEndpointDetails(object):
             'compartment_id': 'str',
             'model_id': 'str',
             'dedicated_ai_cluster_id': 'str',
+            'generative_ai_private_endpoint_id': 'str',
             'content_moderation_config': 'ContentModerationConfig',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -69,6 +74,7 @@ class CreateEndpointDetails(object):
             'compartment_id': 'compartmentId',
             'model_id': 'modelId',
             'dedicated_ai_cluster_id': 'dedicatedAiClusterId',
+            'generative_ai_private_endpoint_id': 'generativeAiPrivateEndpointId',
             'content_moderation_config': 'contentModerationConfig',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
@@ -78,6 +84,7 @@ class CreateEndpointDetails(object):
         self._compartment_id = None
         self._model_id = None
         self._dedicated_ai_cluster_id = None
+        self._generative_ai_private_endpoint_id = None
         self._content_moderation_config = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -201,6 +208,30 @@ class CreateEndpointDetails(object):
         :type: str
         """
         self._dedicated_ai_cluster_id = dedicated_ai_cluster_id
+
+    @property
+    def generative_ai_private_endpoint_id(self):
+        """
+        Gets the generative_ai_private_endpoint_id of this CreateEndpointDetails.
+        The OCID of the Generative AI private endpoint to which this endpoint is attached to.
+
+
+        :return: The generative_ai_private_endpoint_id of this CreateEndpointDetails.
+        :rtype: str
+        """
+        return self._generative_ai_private_endpoint_id
+
+    @generative_ai_private_endpoint_id.setter
+    def generative_ai_private_endpoint_id(self, generative_ai_private_endpoint_id):
+        """
+        Sets the generative_ai_private_endpoint_id of this CreateEndpointDetails.
+        The OCID of the Generative AI private endpoint to which this endpoint is attached to.
+
+
+        :param generative_ai_private_endpoint_id: The generative_ai_private_endpoint_id of this CreateEndpointDetails.
+        :type: str
+        """
+        self._generative_ai_private_endpoint_id = generative_ai_private_endpoint_id
 
     @property
     def content_moderation_config(self):
