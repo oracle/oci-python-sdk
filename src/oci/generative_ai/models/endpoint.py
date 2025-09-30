@@ -74,6 +74,10 @@ class Endpoint(object):
             The value to assign to the dedicated_ai_cluster_id property of this Endpoint.
         :type dedicated_ai_cluster_id: str
 
+        :param generative_ai_private_endpoint_id:
+            The value to assign to the generative_ai_private_endpoint_id property of this Endpoint.
+        :type generative_ai_private_endpoint_id: str
+
         :param time_created:
             The value to assign to the time_created property of this Endpoint.
         :type time_created: datetime
@@ -120,6 +124,7 @@ class Endpoint(object):
             'model_id': 'str',
             'compartment_id': 'str',
             'dedicated_ai_cluster_id': 'str',
+            'generative_ai_private_endpoint_id': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
@@ -137,6 +142,7 @@ class Endpoint(object):
             'model_id': 'modelId',
             'compartment_id': 'compartmentId',
             'dedicated_ai_cluster_id': 'dedicatedAiClusterId',
+            'generative_ai_private_endpoint_id': 'generativeAiPrivateEndpointId',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
@@ -153,6 +159,7 @@ class Endpoint(object):
         self._model_id = None
         self._compartment_id = None
         self._dedicated_ai_cluster_id = None
+        self._generative_ai_private_endpoint_id = None
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
@@ -306,6 +313,30 @@ class Endpoint(object):
         :type: str
         """
         self._dedicated_ai_cluster_id = dedicated_ai_cluster_id
+
+    @property
+    def generative_ai_private_endpoint_id(self):
+        """
+        Gets the generative_ai_private_endpoint_id of this Endpoint.
+        The OCID of the Generative AI private endpoint to which this endpoint is attached to.
+
+
+        :return: The generative_ai_private_endpoint_id of this Endpoint.
+        :rtype: str
+        """
+        return self._generative_ai_private_endpoint_id
+
+    @generative_ai_private_endpoint_id.setter
+    def generative_ai_private_endpoint_id(self, generative_ai_private_endpoint_id):
+        """
+        Sets the generative_ai_private_endpoint_id of this Endpoint.
+        The OCID of the Generative AI private endpoint to which this endpoint is attached to.
+
+
+        :param generative_ai_private_endpoint_id: The generative_ai_private_endpoint_id of this Endpoint.
+        :type: str
+        """
+        self._generative_ai_private_endpoint_id = generative_ai_private_endpoint_id
 
     @property
     def time_created(self):

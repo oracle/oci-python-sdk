@@ -44,6 +44,7 @@ class AutonomousDatabaseEncryptionKeyDetails(object):
         * :class:`~oci.database.models.AzureKeyDetails`
         * :class:`~oci.database.models.AwsKeyDetails`
         * :class:`~oci.database.models.OciKeyDetails`
+        * :class:`~oci.database.models.GcpKeyDetails`
         * :class:`~oci.database.models.OracleManagedKeyDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
@@ -82,6 +83,9 @@ class AutonomousDatabaseEncryptionKeyDetails(object):
 
         if type == 'OCI':
             return 'OciKeyDetails'
+
+        if type == 'GCP':
+            return 'GcpKeyDetails'
 
         if type == 'ORACLE_MANAGED':
             return 'OracleManagedKeyDetails'

@@ -83,7 +83,7 @@ class UpdateEsxiHostDetails(object):
         """
         Gets the display_name of this UpdateEsxiHostDetails.
         A descriptive name for the ESXi host. It's changeable.
-        Esxi Host name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
+        Esxi Host name requirements are 1-25 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
 
         Avoid entering confidential information.
 
@@ -98,7 +98,7 @@ class UpdateEsxiHostDetails(object):
         """
         Sets the display_name of this UpdateEsxiHostDetails.
         A descriptive name for the ESXi host. It's changeable.
-        Esxi Host name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
+        Esxi Host name requirements are 1-25 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
 
         Avoid entering confidential information.
 
@@ -147,7 +147,10 @@ class UpdateEsxiHostDetails(object):
     def billing_donor_host_id(self):
         """
         Gets the billing_donor_host_id of this UpdateEsxiHostDetails.
-        The `OCID`__ of the deleted ESXi Host with LeftOver billing cycle.
+        The `OCID`__ of the deleted ESXi Host with leftover billing cycle.
+
+        **Note:** This option also requires the `nextCommitment` parameter to be populated with a value other than `HOUR`. Otherwise,
+        any update request fails with the error \u201CNext SKU can\u2019t be NULL or Hourly.\u201D
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -161,7 +164,10 @@ class UpdateEsxiHostDetails(object):
     def billing_donor_host_id(self, billing_donor_host_id):
         """
         Sets the billing_donor_host_id of this UpdateEsxiHostDetails.
-        The `OCID`__ of the deleted ESXi Host with LeftOver billing cycle.
+        The `OCID`__ of the deleted ESXi Host with leftover billing cycle.
+
+        **Note:** This option also requires the `nextCommitment` parameter to be populated with a value other than `HOUR`. Otherwise,
+        any update request fails with the error \u201CNext SKU can\u2019t be NULL or Hourly.\u201D
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

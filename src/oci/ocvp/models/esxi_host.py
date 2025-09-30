@@ -209,6 +209,14 @@ class EsxiHost(object):
             The value to assign to the system_tags property of this EsxiHost.
         :type system_tags: dict(str, dict(str, object))
 
+        :param datastore_cluster_ids:
+            The value to assign to the datastore_cluster_ids property of this EsxiHost.
+        :type datastore_cluster_ids: list[str]
+
+        :param datastore_attachments:
+            The value to assign to the datastore_attachments property of this EsxiHost.
+        :type datastore_attachments: list[oci.ocvp.models.DatastoreAttachment]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -240,7 +248,9 @@ class EsxiHost(object):
             'capacity_reservation_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'system_tags': 'dict(str, dict(str, object))'
+            'system_tags': 'dict(str, dict(str, object))',
+            'datastore_cluster_ids': 'list[str]',
+            'datastore_attachments': 'list[DatastoreAttachment]'
         }
         self.attribute_map = {
             'id': 'id',
@@ -272,7 +282,9 @@ class EsxiHost(object):
             'capacity_reservation_id': 'capacityReservationId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'system_tags': 'systemTags'
+            'system_tags': 'systemTags',
+            'datastore_cluster_ids': 'datastoreClusterIds',
+            'datastore_attachments': 'datastoreAttachments'
         }
         self._id = None
         self._display_name = None
@@ -304,6 +316,8 @@ class EsxiHost(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._datastore_cluster_ids = None
+        self._datastore_attachments = None
 
     @property
     def id(self):
@@ -1166,6 +1180,54 @@ class EsxiHost(object):
         :type: dict(str, dict(str, object))
         """
         self._system_tags = system_tags
+
+    @property
+    def datastore_cluster_ids(self):
+        """
+        Gets the datastore_cluster_ids of this EsxiHost.
+        A list of datastore clusters.
+
+
+        :return: The datastore_cluster_ids of this EsxiHost.
+        :rtype: list[str]
+        """
+        return self._datastore_cluster_ids
+
+    @datastore_cluster_ids.setter
+    def datastore_cluster_ids(self, datastore_cluster_ids):
+        """
+        Sets the datastore_cluster_ids of this EsxiHost.
+        A list of datastore clusters.
+
+
+        :param datastore_cluster_ids: The datastore_cluster_ids of this EsxiHost.
+        :type: list[str]
+        """
+        self._datastore_cluster_ids = datastore_cluster_ids
+
+    @property
+    def datastore_attachments(self):
+        """
+        Gets the datastore_attachments of this EsxiHost.
+        List of DatastoreAttachment objects containing information about attachment details
+
+
+        :return: The datastore_attachments of this EsxiHost.
+        :rtype: list[oci.ocvp.models.DatastoreAttachment]
+        """
+        return self._datastore_attachments
+
+    @datastore_attachments.setter
+    def datastore_attachments(self, datastore_attachments):
+        """
+        Sets the datastore_attachments of this EsxiHost.
+        List of DatastoreAttachment objects containing information about attachment details
+
+
+        :param datastore_attachments: The datastore_attachments of this EsxiHost.
+        :type: list[oci.ocvp.models.DatastoreAttachment]
+        """
+        self._datastore_attachments = datastore_attachments
 
     def __repr__(self):
         return formatted_flat_dict(self)

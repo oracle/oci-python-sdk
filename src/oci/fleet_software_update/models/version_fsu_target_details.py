@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class VersionFsuTargetDetails(FsuGoalVersionDetails):
     """
-    Exadata Fleet Update Cycle Target version string details.
+    Exadata Fleet Update Cycle goal version string details.
     """
 
     def __init__(self, **kwargs):
@@ -23,7 +23,7 @@ class VersionFsuTargetDetails(FsuGoalVersionDetails):
 
         :param type:
             The value to assign to the type property of this VersionFsuTargetDetails.
-            Allowed values for this property are: "VERSION", "IMAGE_ID"
+            Allowed values for this property are: "VERSION", "IMAGE_ID", "EXADB_STACK"
         :type type: str
 
         :param home_policy:
@@ -62,7 +62,8 @@ class VersionFsuTargetDetails(FsuGoalVersionDetails):
     def version(self):
         """
         **[Required]** Gets the version of this VersionFsuTargetDetails.
-        Target DB or GI version string for the Exadata Fleet Update Cycle.
+        Goal version string for the Exadata Fleet Update Cycle.
+        Applicable to Database, Grid Infrastructure, or Exadata Image software updates.
 
 
         :return: The version of this VersionFsuTargetDetails.
@@ -74,7 +75,8 @@ class VersionFsuTargetDetails(FsuGoalVersionDetails):
     def version(self, version):
         """
         Sets the version of this VersionFsuTargetDetails.
-        Target DB or GI version string for the Exadata Fleet Update Cycle.
+        Goal version string for the Exadata Fleet Update Cycle.
+        Applicable to Database, Grid Infrastructure, or Exadata Image software updates.
 
 
         :param version: The version of this VersionFsuTargetDetails.

@@ -161,7 +161,7 @@ class JmsUtilsClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
         operation_name = "cancel_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/WorkRequest/CancelWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -270,7 +270,7 @@ class JmsUtilsClient(object):
         resource_path = "/javaMigrationAnalysis/{javaMigrationAnalysisId}"
         method = "DELETE"
         operation_name = "delete_java_migration_analysis"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/JavaMigrationAnalysis/DeleteJavaMigrationAnalysis"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -379,7 +379,7 @@ class JmsUtilsClient(object):
         resource_path = "/performanceTuningAnalysis/{performanceTuningAnalysisId}"
         method = "DELETE"
         operation_name = "delete_performance_tuning_analysis"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/PerformanceTuningAnalysis/DeletePerformanceTuningAnalysis"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -482,7 +482,7 @@ class JmsUtilsClient(object):
         resource_path = "/analyzeApplicationsConfiguration"
         method = "GET"
         operation_name = "get_analyze_applications_configuration"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/AnalyzeApplicationsConfiguration/GetAnalyzeApplicationsConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -581,7 +581,7 @@ class JmsUtilsClient(object):
         resource_path = "/javaMigrationAnalysis/{javaMigrationAnalysisId}"
         method = "GET"
         operation_name = "get_java_migration_analysis"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/JavaMigrationAnalysis/GetJavaMigrationAnalysis"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -684,7 +684,7 @@ class JmsUtilsClient(object):
         resource_path = "/performanceTuningAnalysis/{performanceTuningAnalysisId}"
         method = "GET"
         operation_name = "get_performance_tuning_analysis"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/PerformanceTuningAnalysis/GetPerformanceTuningAnalysis"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -787,7 +787,7 @@ class JmsUtilsClient(object):
         resource_path = "/subscriptionAcknowledgmentConfiguration"
         method = "GET"
         operation_name = "get_subscription_acknowledgment_configuration"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/SubscriptionAcknowledgmentConfiguration/GetSubscriptionAcknowledgmentConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -886,7 +886,7 @@ class JmsUtilsClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1013,7 +1013,7 @@ class JmsUtilsClient(object):
         resource_path = "/javaMigrationAnalysis"
         method = "GET"
         operation_name = "list_java_migration_analysis"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/JavaMigrationAnalysis/ListJavaMigrationAnalysis"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1167,7 +1167,7 @@ class JmsUtilsClient(object):
         resource_path = "/performanceTuningAnalysis"
         method = "GET"
         operation_name = "list_performance_tuning_analysis"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/PerformanceTuningAnalysis/ListPerformanceTuningAnalysis"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1307,7 +1307,7 @@ class JmsUtilsClient(object):
         resource_path = "/workRequests/{workRequestId}/workItems"
         method = "GET"
         operation_name = "list_work_items"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/WorkItemSummary/ListWorkItems"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1436,7 +1436,7 @@ class JmsUtilsClient(object):
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1583,7 +1583,7 @@ class JmsUtilsClient(object):
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1745,7 +1745,7 @@ class JmsUtilsClient(object):
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1884,7 +1884,7 @@ class JmsUtilsClient(object):
         resource_path = "/javaMigrationAnalysis/actions/requestJavaMigrationAnalysis"
         method = "POST"
         operation_name = "request_java_migration_analysis"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/JavaMigrationAnalysis/RequestJavaMigrationAnalysis"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1983,7 +1983,7 @@ class JmsUtilsClient(object):
         resource_path = "/performanceTuningAnalysis/actions/requestPerformanceTuningAnalysis"
         method = "POST"
         operation_name = "request_performance_tuning_analysis"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/PerformanceTuningAnalysis/RequestPerformanceTuningAnalysis"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2086,7 +2086,7 @@ class JmsUtilsClient(object):
         resource_path = "/analyzeApplicationsConfiguration"
         method = "PUT"
         operation_name = "update_analyze_applications_configuration"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/AnalyzeApplicationsConfiguration/UpdateAnalyzeApplicationsConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2198,7 +2198,7 @@ class JmsUtilsClient(object):
         resource_path = "/subscriptionAcknowledgmentConfiguration"
         method = "PUT"
         operation_name = "update_subscription_acknowledgment_configuration"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms-utils/20250521/SubscriptionAcknowledgmentConfiguration/UpdateSubscriptionAcknowledgmentConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

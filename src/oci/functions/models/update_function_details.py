@@ -44,6 +44,18 @@ class UpdateFunctionDetails(object):
             The value to assign to the provisioned_concurrency_config property of this UpdateFunctionDetails.
         :type provisioned_concurrency_config: oci.functions.models.FunctionProvisionedConcurrencyConfig
 
+        :param detached_mode_timeout_in_seconds:
+            The value to assign to the detached_mode_timeout_in_seconds property of this UpdateFunctionDetails.
+        :type detached_mode_timeout_in_seconds: int
+
+        :param failure_destination:
+            The value to assign to the failure_destination property of this UpdateFunctionDetails.
+        :type failure_destination: oci.functions.models.FailureDestinationDetails
+
+        :param success_destination:
+            The value to assign to the success_destination property of this UpdateFunctionDetails.
+        :type success_destination: oci.functions.models.SuccessDestinationDetails
+
         :param trace_config:
             The value to assign to the trace_config property of this UpdateFunctionDetails.
         :type trace_config: oci.functions.models.FunctionTraceConfig
@@ -64,6 +76,9 @@ class UpdateFunctionDetails(object):
             'config': 'dict(str, str)',
             'timeout_in_seconds': 'int',
             'provisioned_concurrency_config': 'FunctionProvisionedConcurrencyConfig',
+            'detached_mode_timeout_in_seconds': 'int',
+            'failure_destination': 'FailureDestinationDetails',
+            'success_destination': 'SuccessDestinationDetails',
             'trace_config': 'FunctionTraceConfig',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -75,6 +90,9 @@ class UpdateFunctionDetails(object):
             'config': 'config',
             'timeout_in_seconds': 'timeoutInSeconds',
             'provisioned_concurrency_config': 'provisionedConcurrencyConfig',
+            'detached_mode_timeout_in_seconds': 'detachedModeTimeoutInSeconds',
+            'failure_destination': 'failureDestination',
+            'success_destination': 'successDestination',
             'trace_config': 'traceConfig',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
@@ -85,6 +103,9 @@ class UpdateFunctionDetails(object):
         self._config = None
         self._timeout_in_seconds = None
         self._provisioned_concurrency_config = None
+        self._detached_mode_timeout_in_seconds = None
+        self._failure_destination = None
+        self._success_destination = None
         self._trace_config = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -246,6 +267,70 @@ class UpdateFunctionDetails(object):
         :type: oci.functions.models.FunctionProvisionedConcurrencyConfig
         """
         self._provisioned_concurrency_config = provisioned_concurrency_config
+
+    @property
+    def detached_mode_timeout_in_seconds(self):
+        """
+        Gets the detached_mode_timeout_in_seconds of this UpdateFunctionDetails.
+        Timeout for detached function invocations. Value in seconds.
+
+
+        :return: The detached_mode_timeout_in_seconds of this UpdateFunctionDetails.
+        :rtype: int
+        """
+        return self._detached_mode_timeout_in_seconds
+
+    @detached_mode_timeout_in_seconds.setter
+    def detached_mode_timeout_in_seconds(self, detached_mode_timeout_in_seconds):
+        """
+        Sets the detached_mode_timeout_in_seconds of this UpdateFunctionDetails.
+        Timeout for detached function invocations. Value in seconds.
+
+
+        :param detached_mode_timeout_in_seconds: The detached_mode_timeout_in_seconds of this UpdateFunctionDetails.
+        :type: int
+        """
+        self._detached_mode_timeout_in_seconds = detached_mode_timeout_in_seconds
+
+    @property
+    def failure_destination(self):
+        """
+        Gets the failure_destination of this UpdateFunctionDetails.
+
+        :return: The failure_destination of this UpdateFunctionDetails.
+        :rtype: oci.functions.models.FailureDestinationDetails
+        """
+        return self._failure_destination
+
+    @failure_destination.setter
+    def failure_destination(self, failure_destination):
+        """
+        Sets the failure_destination of this UpdateFunctionDetails.
+
+        :param failure_destination: The failure_destination of this UpdateFunctionDetails.
+        :type: oci.functions.models.FailureDestinationDetails
+        """
+        self._failure_destination = failure_destination
+
+    @property
+    def success_destination(self):
+        """
+        Gets the success_destination of this UpdateFunctionDetails.
+
+        :return: The success_destination of this UpdateFunctionDetails.
+        :rtype: oci.functions.models.SuccessDestinationDetails
+        """
+        return self._success_destination
+
+    @success_destination.setter
+    def success_destination(self, success_destination):
+        """
+        Sets the success_destination of this UpdateFunctionDetails.
+
+        :param success_destination: The success_destination of this UpdateFunctionDetails.
+        :type: oci.functions.models.SuccessDestinationDetails
+        """
+        self._success_destination = success_destination
 
     @property
     def trace_config(self):

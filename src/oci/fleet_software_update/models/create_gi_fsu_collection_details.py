@@ -13,6 +13,7 @@ from oci.decorators import init_model_state_from_kwargs
 class CreateGiFsuCollectionDetails(CreateFsuCollectionDetails):
     """
     Details to create a 'GI' type Exadata Fleet Update Collection.
+    Targets belonging to another 'GI' type Exadata Fleet Update Collection will be rejected.
     """
 
     #: A constant which can be used with the source_major_version property of a CreateGiFsuCollectionDetails.
@@ -39,7 +40,7 @@ class CreateGiFsuCollectionDetails(CreateFsuCollectionDetails):
 
         :param type:
             The value to assign to the type property of this CreateGiFsuCollectionDetails.
-            Allowed values for this property are: "DB", "GI"
+            Allowed values for this property are: "DB", "GI", "GUEST_OS", "EXADB_STACK"
         :type type: str
 
         :param service_type:

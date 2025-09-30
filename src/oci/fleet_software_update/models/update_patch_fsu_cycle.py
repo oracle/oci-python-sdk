@@ -13,6 +13,7 @@ from oci.decorators import init_model_state_from_kwargs
 class UpdatePatchFsuCycle(UpdateFsuCycleDetails):
     """
     Update Patch Exadata Fleet Update Cycle resource details.
+    If automated maintenance is enabled for the associated Exadata Fleet Update Collection, updating Exadata Fleet Update Cycle will not affect the Exadata Fleet Update Collection.
     """
 
     def __init__(self, **kwargs):
@@ -110,7 +111,8 @@ class UpdatePatchFsuCycle(UpdateFsuCycleDetails):
     def is_ignore_patches(self):
         """
         Gets the is_ignore_patches of this UpdatePatchFsuCycle.
-        Ignore all patches between the source and target homes during patching.
+        Ignore patch conflicts or missing patches between the source and goal homes.
+        This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
 
 
         :return: The is_ignore_patches of this UpdatePatchFsuCycle.
@@ -122,7 +124,8 @@ class UpdatePatchFsuCycle(UpdateFsuCycleDetails):
     def is_ignore_patches(self, is_ignore_patches):
         """
         Sets the is_ignore_patches of this UpdatePatchFsuCycle.
-        Ignore all patches between the source and target homes during patching.
+        Ignore patch conflicts or missing patches between the source and goal homes.
+        This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
 
 
         :param is_ignore_patches: The is_ignore_patches of this UpdatePatchFsuCycle.
@@ -134,8 +137,9 @@ class UpdatePatchFsuCycle(UpdateFsuCycleDetails):
     def is_ignore_missing_patches(self):
         """
         Gets the is_ignore_missing_patches of this UpdatePatchFsuCycle.
-        List of patch IDs to ignore.
-        An empty array removes the previously stored patch IDs in the Maintenance Cycle properties.
+        List of identifiers of patches to ignore.
+        Specify an empty array to unset the field.
+        This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
 
 
         :return: The is_ignore_missing_patches of this UpdatePatchFsuCycle.
@@ -147,8 +151,9 @@ class UpdatePatchFsuCycle(UpdateFsuCycleDetails):
     def is_ignore_missing_patches(self, is_ignore_missing_patches):
         """
         Sets the is_ignore_missing_patches of this UpdatePatchFsuCycle.
-        List of patch IDs to ignore.
-        An empty array removes the previously stored patch IDs in the Maintenance Cycle properties.
+        List of identifiers of patches to ignore.
+        Specify an empty array to unset the field.
+        This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
 
 
         :param is_ignore_missing_patches: The is_ignore_missing_patches of this UpdatePatchFsuCycle.
@@ -160,7 +165,7 @@ class UpdatePatchFsuCycle(UpdateFsuCycleDetails):
     def max_drain_timeout_in_seconds(self):
         """
         Gets the max_drain_timeout_in_seconds of this UpdatePatchFsuCycle.
-        Service drain timeout specified in seconds.
+        Timeout for session draining for database services specified in seconds.
 
 
         :return: The max_drain_timeout_in_seconds of this UpdatePatchFsuCycle.
@@ -172,7 +177,7 @@ class UpdatePatchFsuCycle(UpdateFsuCycleDetails):
     def max_drain_timeout_in_seconds(self, max_drain_timeout_in_seconds):
         """
         Sets the max_drain_timeout_in_seconds of this UpdatePatchFsuCycle.
-        Service drain timeout specified in seconds.
+        Timeout for session draining for database services specified in seconds.
 
 
         :param max_drain_timeout_in_seconds: The max_drain_timeout_in_seconds of this UpdatePatchFsuCycle.
@@ -184,8 +189,7 @@ class UpdatePatchFsuCycle(UpdateFsuCycleDetails):
     def is_keep_placement(self):
         """
         Gets the is_keep_placement of this UpdatePatchFsuCycle.
-        Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same
-        instances before and after the move operation.
+        Ensure that database services are online on the same VMs before and after the maintenance update.
 
 
         :return: The is_keep_placement of this UpdatePatchFsuCycle.
@@ -197,8 +201,7 @@ class UpdatePatchFsuCycle(UpdateFsuCycleDetails):
     def is_keep_placement(self, is_keep_placement):
         """
         Sets the is_keep_placement of this UpdatePatchFsuCycle.
-        Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same
-        instances before and after the move operation.
+        Ensure that database services are online on the same VMs before and after the maintenance update.
 
 
         :param is_keep_placement: The is_keep_placement of this UpdatePatchFsuCycle.

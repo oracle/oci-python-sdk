@@ -346,6 +346,7 @@ Database
     oci.database.models.FileSystemConfigurationDetail
     oci.database.models.FlexComponentCollection
     oci.database.models.FlexComponentSummary
+    oci.database.models.GcpKeyDetails
     oci.database.models.GenerateAutonomousDatabaseWalletDetails
     oci.database.models.GenerateRecommendedNetworkDetails
     oci.database.models.GiMinorVersionSummary

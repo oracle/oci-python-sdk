@@ -44,7 +44,7 @@ class PatchFsuCycle(FsuCycle):
 
         :param collection_type:
             The value to assign to the collection_type property of this PatchFsuCycle.
-            Allowed values for this property are: "DB", "GI"
+            Allowed values for this property are: "DB", "GI", "GUEST_OS", "EXADB_STACK"
         :type collection_type: str
 
         :param executing_fsu_action_id:
@@ -233,7 +233,8 @@ class PatchFsuCycle(FsuCycle):
     def is_ignore_patches(self):
         """
         Gets the is_ignore_patches of this PatchFsuCycle.
-        Ignore all patches between the source and target homes during patching.
+        Ignore patch conflicts or missing patches between the source and goal homes.
+        This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
 
 
         :return: The is_ignore_patches of this PatchFsuCycle.
@@ -245,7 +246,8 @@ class PatchFsuCycle(FsuCycle):
     def is_ignore_patches(self, is_ignore_patches):
         """
         Sets the is_ignore_patches of this PatchFsuCycle.
-        Ignore all patches between the source and target homes during patching.
+        Ignore patch conflicts or missing patches between the source and goal homes.
+        This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
 
 
         :param is_ignore_patches: The is_ignore_patches of this PatchFsuCycle.
@@ -257,7 +259,8 @@ class PatchFsuCycle(FsuCycle):
     def is_ignore_missing_patches(self):
         """
         Gets the is_ignore_missing_patches of this PatchFsuCycle.
-        List of bug numbers to ignore.
+        List of identifiers of patches to ignore.
+        This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
 
 
         :return: The is_ignore_missing_patches of this PatchFsuCycle.
@@ -269,7 +272,8 @@ class PatchFsuCycle(FsuCycle):
     def is_ignore_missing_patches(self, is_ignore_missing_patches):
         """
         Sets the is_ignore_missing_patches of this PatchFsuCycle.
-        List of bug numbers to ignore.
+        List of identifiers of patches to ignore.
+        This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
 
 
         :param is_ignore_missing_patches: The is_ignore_missing_patches of this PatchFsuCycle.
@@ -281,7 +285,7 @@ class PatchFsuCycle(FsuCycle):
     def max_drain_timeout_in_seconds(self):
         """
         Gets the max_drain_timeout_in_seconds of this PatchFsuCycle.
-        Service drain timeout specified in seconds.
+        Timeout for session draining for database services specified in seconds.
 
 
         :return: The max_drain_timeout_in_seconds of this PatchFsuCycle.
@@ -293,7 +297,7 @@ class PatchFsuCycle(FsuCycle):
     def max_drain_timeout_in_seconds(self, max_drain_timeout_in_seconds):
         """
         Sets the max_drain_timeout_in_seconds of this PatchFsuCycle.
-        Service drain timeout specified in seconds.
+        Timeout for session draining for database services specified in seconds.
 
 
         :param max_drain_timeout_in_seconds: The max_drain_timeout_in_seconds of this PatchFsuCycle.
@@ -305,8 +309,7 @@ class PatchFsuCycle(FsuCycle):
     def is_keep_placement(self):
         """
         Gets the is_keep_placement of this PatchFsuCycle.
-        Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same
-        instances before and after the move operation.
+        Ensure that database services are online on the same VMs before and after the maintenance update.
 
 
         :return: The is_keep_placement of this PatchFsuCycle.
@@ -318,8 +321,7 @@ class PatchFsuCycle(FsuCycle):
     def is_keep_placement(self, is_keep_placement):
         """
         Sets the is_keep_placement of this PatchFsuCycle.
-        Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same
-        instances before and after the move operation.
+        Ensure that database services are online on the same VMs before and after the maintenance update.
 
 
         :param is_keep_placement: The is_keep_placement of this PatchFsuCycle.

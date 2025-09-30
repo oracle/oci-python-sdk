@@ -412,15 +412,26 @@ class CreateCloudVmClusterDetails(object):
     def cpu_core_count(self):
         """
         **[Required]** Gets the cpu_core_count of this CreateCloudVmClusterDetails.
-        The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster.
+        For fixed shapes, this is the total number of OCPUs to enable across the VM cluster.
 
          - Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
-         - Exadata.Quarter1.84 - Specify a multiple of 2, from 22 to 84.
-         - Exadata.Half1.168 - Specify a multiple of 4, from 44 to 168.
-         - Exadata.Full1.336 - Specify a multiple of 8, from 88 to 336.
-         - Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.
-         - Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
-         - Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
+         - Exadata.Quarter3.100 - Specify a multiple of 2, from 0 to 100.
+         - Exadata.Half3.200 - Specify a multiple of 4, from 0 to 200.
+         - Exadata.Full3.400 - Specify a multiple of 8, from 0 to 400.
+
+        The API specification for fixed shape values is https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/DbSystemShapeSummary
+
+
+        For flexible shapes X8M and X9M, this is the total number of OCPUs to enable across the VM cluster. The number available for the VM cluster will be based on the number of database servers selected for provisioning the VM cluster on the Exadata Infrastructure.
+
+         - Exadata.X8M - Specify a multiple of 2, from 2 to 50 per X8M database server.
+         - Exadata.X9M - Specify a multiple of 2, from 2 to 126 per X9M database server.
+
+        For flexible shapes X11M and higher, this is the total number of ECPUs to enable across the VM cluster. The number available for the VM cluster will be based on the number of database servers selected for provisioning the VM cluster on the Exadata Infrastructure.
+
+         - Exadata.X11M - Specify a multiple of 8, from 8 to 760 per X11M database server.
+
+        The API specification for flexible shape values is https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/datatypes/FlexComponentSummary
 
 
         :return: The cpu_core_count of this CreateCloudVmClusterDetails.
@@ -432,15 +443,26 @@ class CreateCloudVmClusterDetails(object):
     def cpu_core_count(self, cpu_core_count):
         """
         Sets the cpu_core_count of this CreateCloudVmClusterDetails.
-        The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster.
+        For fixed shapes, this is the total number of OCPUs to enable across the VM cluster.
 
          - Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
-         - Exadata.Quarter1.84 - Specify a multiple of 2, from 22 to 84.
-         - Exadata.Half1.168 - Specify a multiple of 4, from 44 to 168.
-         - Exadata.Full1.336 - Specify a multiple of 8, from 88 to 336.
-         - Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.
-         - Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
-         - Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
+         - Exadata.Quarter3.100 - Specify a multiple of 2, from 0 to 100.
+         - Exadata.Half3.200 - Specify a multiple of 4, from 0 to 200.
+         - Exadata.Full3.400 - Specify a multiple of 8, from 0 to 400.
+
+        The API specification for fixed shape values is https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/DbSystemShapeSummary
+
+
+        For flexible shapes X8M and X9M, this is the total number of OCPUs to enable across the VM cluster. The number available for the VM cluster will be based on the number of database servers selected for provisioning the VM cluster on the Exadata Infrastructure.
+
+         - Exadata.X8M - Specify a multiple of 2, from 2 to 50 per X8M database server.
+         - Exadata.X9M - Specify a multiple of 2, from 2 to 126 per X9M database server.
+
+        For flexible shapes X11M and higher, this is the total number of ECPUs to enable across the VM cluster. The number available for the VM cluster will be based on the number of database servers selected for provisioning the VM cluster on the Exadata Infrastructure.
+
+         - Exadata.X11M - Specify a multiple of 8, from 8 to 760 per X11M database server.
+
+        The API specification for flexible shape values is https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/datatypes/FlexComponentSummary
 
 
         :param cpu_core_count: The cpu_core_count of this CreateCloudVmClusterDetails.

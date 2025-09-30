@@ -1,0 +1,11 @@
+AddBlockVolumeToDatastoreDetails
+================================
+
+.. currentmodule:: oci.ocvp.models
+
+.. autoclass:: AddBlockVolumeToDatastoreDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

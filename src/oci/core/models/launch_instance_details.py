@@ -141,6 +141,10 @@ class LaunchInstanceDetails(object):
             The value to assign to the placement_constraint_details property of this LaunchInstanceDetails.
         :type placement_constraint_details: oci.core.models.PlacementConstraintDetails
 
+        :param is_ai_enterprise_enabled:
+            The value to assign to the is_ai_enterprise_enabled property of this LaunchInstanceDetails.
+        :type is_ai_enterprise_enabled: bool
+
         :param instance_configuration_id:
             The value to assign to the instance_configuration_id property of this LaunchInstanceDetails.
         :type instance_configuration_id: str
@@ -181,6 +185,7 @@ class LaunchInstanceDetails(object):
             'is_pv_encryption_in_transit_enabled': 'bool',
             'platform_config': 'LaunchInstancePlatformConfig',
             'placement_constraint_details': 'PlacementConstraintDetails',
+            'is_ai_enterprise_enabled': 'bool',
             'instance_configuration_id': 'str',
             'licensing_configs': 'list[LaunchInstanceLicensingConfig]'
         }
@@ -215,6 +220,7 @@ class LaunchInstanceDetails(object):
             'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled',
             'platform_config': 'platformConfig',
             'placement_constraint_details': 'placementConstraintDetails',
+            'is_ai_enterprise_enabled': 'isAIEnterpriseEnabled',
             'instance_configuration_id': 'instanceConfigurationId',
             'licensing_configs': 'licensingConfigs'
         }
@@ -248,6 +254,7 @@ class LaunchInstanceDetails(object):
         self._is_pv_encryption_in_transit_enabled = None
         self._platform_config = None
         self._placement_constraint_details = None
+        self._is_ai_enterprise_enabled = None
         self._instance_configuration_id = None
         self._licensing_configs = None
 
@@ -1204,6 +1211,30 @@ class LaunchInstanceDetails(object):
         :type: oci.core.models.PlacementConstraintDetails
         """
         self._placement_constraint_details = placement_constraint_details
+
+    @property
+    def is_ai_enterprise_enabled(self):
+        """
+        Gets the is_ai_enterprise_enabled of this LaunchInstanceDetails.
+        Whether to enable AI enterprise on the instance.
+
+
+        :return: The is_ai_enterprise_enabled of this LaunchInstanceDetails.
+        :rtype: bool
+        """
+        return self._is_ai_enterprise_enabled
+
+    @is_ai_enterprise_enabled.setter
+    def is_ai_enterprise_enabled(self, is_ai_enterprise_enabled):
+        """
+        Sets the is_ai_enterprise_enabled of this LaunchInstanceDetails.
+        Whether to enable AI enterprise on the instance.
+
+
+        :param is_ai_enterprise_enabled: The is_ai_enterprise_enabled of this LaunchInstanceDetails.
+        :type: bool
+        """
+        self._is_ai_enterprise_enabled = is_ai_enterprise_enabled
 
     @property
     def instance_configuration_id(self):

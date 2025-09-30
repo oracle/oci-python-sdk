@@ -72,6 +72,8 @@ API Reference
 * :doc:`Database Recovery <recovery/client/oci.recovery.DatabaseRecoveryClient>`
 * :doc:`Database Tools <database_tools/client/oci.database_tools.DatabaseToolsClient>`
 * :doc:`Dataplane <identity_data_plane/client/oci.identity_data_plane.DataplaneClient>`
+* :doc:`Datastore <ocvp/client/oci.ocvp.DatastoreClient>`
+* :doc:`Datastore Cluster <ocvp/client/oci.ocvp.DatastoreClusterClient>`
 * :doc:`Db Backups <mysql/client/oci.mysql.DbBackupsClient>`
 * :doc:`Db Life Cycle Management <dblm/client/oci.dblm.DbLifeCycleManagementClient>`
 * :doc:`Db Management <database_management/client/oci.database_management.DbManagementClient>`

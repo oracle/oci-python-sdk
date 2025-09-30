@@ -79,7 +79,7 @@ class UpdateClusterDetails(object):
         """
         Gets the display_name of this UpdateClusterDetails.
         The `OCID`__ of the Cluster.
-        Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region.
+        Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -94,7 +94,7 @@ class UpdateClusterDetails(object):
         """
         Sets the display_name of this UpdateClusterDetails.
         The `OCID`__ of the Cluster.
-        Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region.
+        Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

@@ -12,7 +12,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateFsuCollectionDetails(object):
     """
-    The information about new Exadata Fleet Update Collection.
+    Details to create a new Exadata Fleet Update Collection.
+    Targets belonging to another Exadata Fleet Update Collection of the same type will be rejected.
     """
 
     #: A constant which can be used with the type property of a CreateFsuCollectionDetails.
@@ -22,6 +23,14 @@ class CreateFsuCollectionDetails(object):
     #: A constant which can be used with the type property of a CreateFsuCollectionDetails.
     #: This constant has a value of "GI"
     TYPE_GI = "GI"
+
+    #: A constant which can be used with the type property of a CreateFsuCollectionDetails.
+    #: This constant has a value of "GUEST_OS"
+    TYPE_GUEST_OS = "GUEST_OS"
+
+    #: A constant which can be used with the type property of a CreateFsuCollectionDetails.
+    #: This constant has a value of "EXADB_STACK"
+    TYPE_EXADB_STACK = "EXADB_STACK"
 
     #: A constant which can be used with the service_type property of a CreateFsuCollectionDetails.
     #: This constant has a value of "EXACS"
@@ -38,6 +47,8 @@ class CreateFsuCollectionDetails(object):
 
         * :class:`~oci.fleet_software_update.models.CreateDbFsuCollectionDetails`
         * :class:`~oci.fleet_software_update.models.CreateGiFsuCollectionDetails`
+        * :class:`~oci.fleet_software_update.models.CreateGuestOsFsuCollectionDetails`
+        * :class:`~oci.fleet_software_update.models.CreateExadbStackFsuCollectionDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -47,7 +58,7 @@ class CreateFsuCollectionDetails(object):
 
         :param type:
             The value to assign to the type property of this CreateFsuCollectionDetails.
-            Allowed values for this property are: "DB", "GI"
+            Allowed values for this property are: "DB", "GI", "GUEST_OS", "EXADB_STACK"
         :type type: str
 
         :param service_type:
@@ -104,6 +115,12 @@ class CreateFsuCollectionDetails(object):
 
         if type == 'GI':
             return 'CreateGiFsuCollectionDetails'
+
+        if type == 'GUEST_OS':
+            return 'CreateGuestOsFsuCollectionDetails'
+
+        if type == 'EXADB_STACK':
+            return 'CreateExadbStackFsuCollectionDetails'
         else:
             return 'CreateFsuCollectionDetails'
 
@@ -111,7 +128,7 @@ class CreateFsuCollectionDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreateFsuCollectionDetails.
-        Exadata Fleet Update Collection Identifier.
+        The user-friendly name for the Exadata Fleet Update Collection.
 
 
         :return: The display_name of this CreateFsuCollectionDetails.
@@ -123,7 +140,7 @@ class CreateFsuCollectionDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateFsuCollectionDetails.
-        Exadata Fleet Update Collection Identifier.
+        The user-friendly name for the Exadata Fleet Update Collection.
 
 
         :param display_name: The display_name of this CreateFsuCollectionDetails.
@@ -138,8 +155,10 @@ class CreateFsuCollectionDetails(object):
         Collection type.
         DB: Only Database entity type resources allowed.
         GI: CloudVMCluster and VMCluster entity type resources allowed.
+        GUEST_OS: CloudVmCluster and VmCluster entity type resources are allowed.
+        EXADB_STACK: CloudVmCluster and VmCluster entity type resources are allowed.
 
-        Allowed values for this property are: "DB", "GI"
+        Allowed values for this property are: "DB", "GI", "GUEST_OS", "EXADB_STACK"
 
 
         :return: The type of this CreateFsuCollectionDetails.
@@ -154,12 +173,14 @@ class CreateFsuCollectionDetails(object):
         Collection type.
         DB: Only Database entity type resources allowed.
         GI: CloudVMCluster and VMCluster entity type resources allowed.
+        GUEST_OS: CloudVmCluster and VmCluster entity type resources are allowed.
+        EXADB_STACK: CloudVmCluster and VmCluster entity type resources are allowed.
 
 
         :param type: The type of this CreateFsuCollectionDetails.
         :type: str
         """
-        allowed_values = ["DB", "GI"]
+        allowed_values = ["DB", "GI", "GUEST_OS", "EXADB_STACK"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             raise ValueError(
                 f"Invalid value for `type`, must be None or one of {allowed_values}"
@@ -201,7 +222,9 @@ class CreateFsuCollectionDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateFsuCollectionDetails.
-        Compartment Identifier
+        The `OCID`__ of the Compartment.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateFsuCollectionDetails.
@@ -213,7 +236,9 @@ class CreateFsuCollectionDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateFsuCollectionDetails.
-        Compartment Identifier
+        The `OCID`__ of the Compartment.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateFsuCollectionDetails.

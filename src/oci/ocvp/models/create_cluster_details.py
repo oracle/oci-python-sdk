@@ -89,6 +89,10 @@ class CreateClusterDetails(object):
             The value to assign to the datastores property of this CreateClusterDetails.
         :type datastores: list[oci.ocvp.models.DatastoreInfo]
 
+        :param datastore_cluster_ids:
+            The value to assign to the datastore_cluster_ids property of this CreateClusterDetails.
+        :type datastore_cluster_ids: list[str]
+
         :param vmware_software_version:
             The value to assign to the vmware_software_version property of this CreateClusterDetails.
         :type vmware_software_version: str
@@ -120,6 +124,7 @@ class CreateClusterDetails(object):
             'is_shielded_instance_enabled': 'bool',
             'capacity_reservation_id': 'str',
             'datastores': 'list[DatastoreInfo]',
+            'datastore_cluster_ids': 'list[str]',
             'vmware_software_version': 'str',
             'esxi_software_version': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -139,6 +144,7 @@ class CreateClusterDetails(object):
             'is_shielded_instance_enabled': 'isShieldedInstanceEnabled',
             'capacity_reservation_id': 'capacityReservationId',
             'datastores': 'datastores',
+            'datastore_cluster_ids': 'datastoreClusterIds',
             'vmware_software_version': 'vmwareSoftwareVersion',
             'esxi_software_version': 'esxiSoftwareVersion',
             'freeform_tags': 'freeformTags',
@@ -157,6 +163,7 @@ class CreateClusterDetails(object):
         self._is_shielded_instance_enabled = None
         self._capacity_reservation_id = None
         self._datastores = None
+        self._datastore_cluster_ids = None
         self._vmware_software_version = None
         self._esxi_software_version = None
         self._freeform_tags = None
@@ -221,7 +228,7 @@ class CreateClusterDetails(object):
         """
         Gets the display_name of this CreateClusterDetails.
         A descriptive name for the Cluster.
-        Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region.
+        Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region.
         Avoid entering confidential information.
 
 
@@ -235,7 +242,7 @@ class CreateClusterDetails(object):
         """
         Sets the display_name of this CreateClusterDetails.
         A descriptive name for the Cluster.
-        Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region.
+        Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region.
         Avoid entering confidential information.
 
 
@@ -518,6 +525,30 @@ class CreateClusterDetails(object):
         :type: list[oci.ocvp.models.DatastoreInfo]
         """
         self._datastores = datastores
+
+    @property
+    def datastore_cluster_ids(self):
+        """
+        Gets the datastore_cluster_ids of this CreateClusterDetails.
+        A list of datastore clusters.
+
+
+        :return: The datastore_cluster_ids of this CreateClusterDetails.
+        :rtype: list[str]
+        """
+        return self._datastore_cluster_ids
+
+    @datastore_cluster_ids.setter
+    def datastore_cluster_ids(self, datastore_cluster_ids):
+        """
+        Sets the datastore_cluster_ids of this CreateClusterDetails.
+        A list of datastore clusters.
+
+
+        :param datastore_cluster_ids: The datastore_cluster_ids of this CreateClusterDetails.
+        :type: list[str]
+        """
+        self._datastore_cluster_ids = datastore_cluster_ids
 
     @property
     def vmware_software_version(self):

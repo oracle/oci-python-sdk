@@ -28,6 +28,10 @@ class UpdateInstanceDetails(object):
         Initializes a new UpdateInstanceDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param is_ai_enterprise_enabled:
+            The value to assign to the is_ai_enterprise_enabled property of this UpdateInstanceDetails.
+        :type is_ai_enterprise_enabled: bool
+
         :param capacity_reservation_id:
             The value to assign to the capacity_reservation_id property of this UpdateInstanceDetails.
         :type capacity_reservation_id: str
@@ -111,6 +115,7 @@ class UpdateInstanceDetails(object):
 
         """
         self.swagger_types = {
+            'is_ai_enterprise_enabled': 'bool',
             'capacity_reservation_id': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'security_attributes': 'dict(str, dict(str, object))',
@@ -133,6 +138,7 @@ class UpdateInstanceDetails(object):
             'licensing_configs': 'list[UpdateInstanceLicensingConfig]'
         }
         self.attribute_map = {
+            'is_ai_enterprise_enabled': 'isAIEnterpriseEnabled',
             'capacity_reservation_id': 'capacityReservationId',
             'defined_tags': 'definedTags',
             'security_attributes': 'securityAttributes',
@@ -154,6 +160,7 @@ class UpdateInstanceDetails(object):
             'platform_config': 'platformConfig',
             'licensing_configs': 'licensingConfigs'
         }
+        self._is_ai_enterprise_enabled = None
         self._capacity_reservation_id = None
         self._defined_tags = None
         self._security_attributes = None
@@ -174,6 +181,30 @@ class UpdateInstanceDetails(object):
         self._dedicated_vm_host_id = None
         self._platform_config = None
         self._licensing_configs = None
+
+    @property
+    def is_ai_enterprise_enabled(self):
+        """
+        Gets the is_ai_enterprise_enabled of this UpdateInstanceDetails.
+        Whether to enable AI enterprise on the instance.
+
+
+        :return: The is_ai_enterprise_enabled of this UpdateInstanceDetails.
+        :rtype: bool
+        """
+        return self._is_ai_enterprise_enabled
+
+    @is_ai_enterprise_enabled.setter
+    def is_ai_enterprise_enabled(self, is_ai_enterprise_enabled):
+        """
+        Sets the is_ai_enterprise_enabled of this UpdateInstanceDetails.
+        Whether to enable AI enterprise on the instance.
+
+
+        :param is_ai_enterprise_enabled: The is_ai_enterprise_enabled of this UpdateInstanceDetails.
+        :type: bool
+        """
+        self._is_ai_enterprise_enabled = is_ai_enterprise_enabled
 
     @property
     def capacity_reservation_id(self):

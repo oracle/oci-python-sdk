@@ -23,6 +23,10 @@ class FsuGoalVersionDetails(object):
     #: This constant has a value of "IMAGE_ID"
     TYPE_IMAGE_ID = "IMAGE_ID"
 
+    #: A constant which can be used with the type property of a FsuGoalVersionDetails.
+    #: This constant has a value of "EXADB_STACK"
+    TYPE_EXADB_STACK = "EXADB_STACK"
+
     #: A constant which can be used with the home_policy property of a FsuGoalVersionDetails.
     #: This constant has a value of "CREATE_NEW"
     HOME_POLICY_CREATE_NEW = "CREATE_NEW"
@@ -36,6 +40,7 @@ class FsuGoalVersionDetails(object):
         Initializes a new FsuGoalVersionDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.fleet_software_update.models.ExadbStackFsuGoalVersionDetails`
         * :class:`~oci.fleet_software_update.models.VersionFsuTargetDetails`
         * :class:`~oci.fleet_software_update.models.ImageIdFsuTargetDetails`
 
@@ -43,7 +48,7 @@ class FsuGoalVersionDetails(object):
 
         :param type:
             The value to assign to the type property of this FsuGoalVersionDetails.
-            Allowed values for this property are: "VERSION", "IMAGE_ID", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "VERSION", "IMAGE_ID", "EXADB_STACK", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -80,6 +85,9 @@ class FsuGoalVersionDetails(object):
         """
         type = object_dictionary['type']
 
+        if type == 'EXADB_STACK':
+            return 'ExadbStackFsuGoalVersionDetails'
+
         if type == 'VERSION':
             return 'VersionFsuTargetDetails'
 
@@ -92,9 +100,9 @@ class FsuGoalVersionDetails(object):
     def type(self):
         """
         **[Required]** Gets the type of this FsuGoalVersionDetails.
-        Type of goal target version specified
+        Type of goal version specified
 
-        Allowed values for this property are: "VERSION", "IMAGE_ID", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "VERSION", "IMAGE_ID", "EXADB_STACK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -107,13 +115,13 @@ class FsuGoalVersionDetails(object):
     def type(self, type):
         """
         Sets the type of this FsuGoalVersionDetails.
-        Type of goal target version specified
+        Type of goal version specified
 
 
         :param type: The type of this FsuGoalVersionDetails.
         :type: str
         """
-        allowed_values = ["VERSION", "IMAGE_ID"]
+        allowed_values = ["VERSION", "IMAGE_ID", "EXADB_STACK"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type

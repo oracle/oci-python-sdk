@@ -72,6 +72,10 @@ class FusionEnvironmentSummary(object):
             The value to assign to the additional_language_packs property of this FusionEnvironmentSummary.
         :type additional_language_packs: list[str]
 
+        :param is_i_pv6_dual_stack_enabled:
+            The value to assign to the is_i_pv6_dual_stack_enabled property of this FusionEnvironmentSummary.
+        :type is_i_pv6_dual_stack_enabled: bool
+
         :param lockbox_id:
             The value to assign to the lockbox_id property of this FusionEnvironmentSummary.
         :type lockbox_id: str
@@ -119,6 +123,7 @@ class FusionEnvironmentSummary(object):
             'public_url': 'str',
             'dns_prefix': 'str',
             'additional_language_packs': 'list[str]',
+            'is_i_pv6_dual_stack_enabled': 'bool',
             'lockbox_id': 'str',
             'is_break_glass_enabled': 'bool',
             'time_created': 'datetime',
@@ -142,6 +147,7 @@ class FusionEnvironmentSummary(object):
             'public_url': 'publicUrl',
             'dns_prefix': 'dnsPrefix',
             'additional_language_packs': 'additionalLanguagePacks',
+            'is_i_pv6_dual_stack_enabled': 'isIPv6DualStackEnabled',
             'lockbox_id': 'lockboxId',
             'is_break_glass_enabled': 'isBreakGlassEnabled',
             'time_created': 'timeCreated',
@@ -164,6 +170,7 @@ class FusionEnvironmentSummary(object):
         self._public_url = None
         self._dns_prefix = None
         self._additional_language_packs = None
+        self._is_i_pv6_dual_stack_enabled = None
         self._lockbox_id = None
         self._is_break_glass_enabled = None
         self._time_created = None
@@ -480,6 +487,30 @@ class FusionEnvironmentSummary(object):
         :type: list[str]
         """
         self._additional_language_packs = additional_language_packs
+
+    @property
+    def is_i_pv6_dual_stack_enabled(self):
+        """
+        Gets the is_i_pv6_dual_stack_enabled of this FusionEnvironmentSummary.
+        Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+
+
+        :return: The is_i_pv6_dual_stack_enabled of this FusionEnvironmentSummary.
+        :rtype: bool
+        """
+        return self._is_i_pv6_dual_stack_enabled
+
+    @is_i_pv6_dual_stack_enabled.setter
+    def is_i_pv6_dual_stack_enabled(self, is_i_pv6_dual_stack_enabled):
+        """
+        Sets the is_i_pv6_dual_stack_enabled of this FusionEnvironmentSummary.
+        Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+
+
+        :param is_i_pv6_dual_stack_enabled: The is_i_pv6_dual_stack_enabled of this FusionEnvironmentSummary.
+        :type: bool
+        """
+        self._is_i_pv6_dual_stack_enabled = is_i_pv6_dual_stack_enabled
 
     @property
     def lockbox_id(self):

@@ -12,7 +12,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateFsuCollectionDetails(object):
     """
-    The information to Update Exadata Fleet Update Collection.
+    Updates specified fields for the specified Exadata Fleet Update Collection.
+    Fields that are not specified in the request will not be updated.
     """
 
     def __init__(self, **kwargs):
@@ -51,7 +52,7 @@ class UpdateFsuCollectionDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateFsuCollectionDetails.
-        Exadata Fleet Update Collection display name.
+        The user-friendly name for the Exadata Fleet Update Collection.
 
 
         :return: The display_name of this UpdateFsuCollectionDetails.
@@ -63,7 +64,7 @@ class UpdateFsuCollectionDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateFsuCollectionDetails.
-        Exadata Fleet Update Collection display name.
+        The user-friendly name for the Exadata Fleet Update Collection.
 
 
         :param display_name: The display_name of this UpdateFsuCollectionDetails.

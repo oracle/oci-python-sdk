@@ -13,6 +13,7 @@ from oci.decorators import init_model_state_from_kwargs
 class UpdateFsuCycleDetails(object):
     """
     Update Exadata Fleet Update Cycle resource details.
+    If automated maintenance is enabled for the associated Exadata Fleet Update Collection, updating Exadata Fleet Update Cycle will not affect the Exadata Fleet Update Collection.
     """
 
     #: A constant which can be used with the type property of a UpdateFsuCycleDetails.

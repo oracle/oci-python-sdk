@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.160.3 - 2025-09-30
+====================
+
+Added 
+----- 
+* Support for private endpoints for dedicated AI clusters in the Generative AI service 
+* Support for Customer Managed Encryption Keys for Google Cloud Platform (CMEK for GCP) for autonomous databases in the Database service 
+* Support for datastore management for standard shapes in the Oracle Cloud VMware Provisioning service 
+* Support for audio and video inputs for Gemini models in the Generative AI Inference service 
+* Support for applying exadata VM OS updates and exadata stack updates to collections of ExaDB-Dedicated and ExaDB-C@C VM clusters in the Fleet Update service 
+* Support for enabling IPv6 dual stack endpoints in the application environments in the Fusion Applications service 
+* Support for long-running functions (up to 60 minutes) in detached mode in the Functions service 
+* Support for response destinations (Streaming, Queueing, and Notifications service) on functions create and update operations in the Functions service  
+* Support for enabling AI enterprise on the instance when creating and updating instances in the Compute service  
+
+====================
 2.160.2 - 2025-09-23
 ====================
 

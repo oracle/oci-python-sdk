@@ -28,7 +28,9 @@ class ChatContent(object):
         Initializes a new ChatContent object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.generative_ai_inference.models.VideoContent`
         * :class:`~oci.generative_ai_inference.models.ImageContent`
+        * :class:`~oci.generative_ai_inference.models.AudioContent`
         * :class:`~oci.generative_ai_inference.models.TextContent`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
@@ -56,8 +58,14 @@ class ChatContent(object):
         """
         type = object_dictionary['type']
 
+        if type == 'VIDEO':
+            return 'VideoContent'
+
         if type == 'IMAGE':
             return 'ImageContent'
+
+        if type == 'AUDIO':
+            return 'AudioContent'
 
         if type == 'TEXT':
             return 'TextContent'

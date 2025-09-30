@@ -79,7 +79,7 @@ class CloneFsuCycleDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CloneFsuCycleDetails.
-        Exadata Fleet Update Cycle display name.
+        The user-friendly name for the Exadata Fleet Update Cycle.
 
 
         :return: The display_name of this CloneFsuCycleDetails.
@@ -91,7 +91,7 @@ class CloneFsuCycleDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CloneFsuCycleDetails.
-        Exadata Fleet Update Cycle display name.
+        The user-friendly name for the Exadata Fleet Update Cycle.
 
 
         :param display_name: The display_name of this CloneFsuCycleDetails.
@@ -103,7 +103,9 @@ class CloneFsuCycleDetails(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this CloneFsuCycleDetails.
-        Compartment Identifier.
+        The `OCID`__ of the Compartment.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CloneFsuCycleDetails.
@@ -115,7 +117,9 @@ class CloneFsuCycleDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CloneFsuCycleDetails.
-        Compartment Identifier.
+        The `OCID`__ of the Compartment.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CloneFsuCycleDetails.
@@ -127,8 +131,10 @@ class CloneFsuCycleDetails(object):
     def fsu_collection_id(self):
         """
         Gets the fsu_collection_id of this CloneFsuCycleDetails.
-        OCID identifier for the Collection ID the Exadata Fleet Update Cycle will be assigned to.
-        If not specified, it will be assigned to the same Collection as the source Exadata Fleet Update Cycle.
+        The `OCID`__ of the Exadata Fleet Update Collection which will be updated by the Exadata Fleet Update Cycle being created.
+        If not specified, the cloned Exadata Fleet Update Cycle will be assigned to the same Exadata Fleet Update Collection as the source Exadata Fleet Update Cycle.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The fsu_collection_id of this CloneFsuCycleDetails.
@@ -140,8 +146,10 @@ class CloneFsuCycleDetails(object):
     def fsu_collection_id(self, fsu_collection_id):
         """
         Sets the fsu_collection_id of this CloneFsuCycleDetails.
-        OCID identifier for the Collection ID the Exadata Fleet Update Cycle will be assigned to.
-        If not specified, it will be assigned to the same Collection as the source Exadata Fleet Update Cycle.
+        The `OCID`__ of the Exadata Fleet Update Collection which will be updated by the Exadata Fleet Update Cycle being created.
+        If not specified, the cloned Exadata Fleet Update Cycle will be assigned to the same Exadata Fleet Update Collection as the source Exadata Fleet Update Cycle.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param fsu_collection_id: The fsu_collection_id of this CloneFsuCycleDetails.

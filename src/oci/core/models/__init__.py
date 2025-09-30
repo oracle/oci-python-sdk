@@ -296,6 +296,8 @@ from .drg_attachment_network_create_details import DrgAttachmentNetworkCreateDet
 from .drg_attachment_network_details import DrgAttachmentNetworkDetails
 from .drg_attachment_network_update_details import DrgAttachmentNetworkUpdateDetails
 from .drg_attachment_type_drg_route_distribution_match_criteria import DrgAttachmentTypeDrgRouteDistributionMatchCriteria
+from .drg_customer import DrgCustomer
+from .drg_customer_resource import DrgCustomerResource
 from .drg_promotion_status_response import DrgPromotionStatusResponse
 from .drg_redundancy_status import DrgRedundancyStatus
 from .drg_route_distribution import DrgRouteDistribution
@@ -956,6 +958,8 @@ core_type_mapping = {
     "DrgAttachmentNetworkDetails": DrgAttachmentNetworkDetails,
     "DrgAttachmentNetworkUpdateDetails": DrgAttachmentNetworkUpdateDetails,
     "DrgAttachmentTypeDrgRouteDistributionMatchCriteria": DrgAttachmentTypeDrgRouteDistributionMatchCriteria,
+    "DrgCustomer": DrgCustomer,
+    "DrgCustomerResource": DrgCustomerResource,
     "DrgPromotionStatusResponse": DrgPromotionStatusResponse,
     "DrgRedundancyStatus": DrgRedundancyStatus,
     "DrgRouteDistribution": DrgRouteDistribution,

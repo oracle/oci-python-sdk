@@ -314,6 +314,8 @@ Core Services
     oci.core.models.DrgAttachmentNetworkDetails
     oci.core.models.DrgAttachmentNetworkUpdateDetails
     oci.core.models.DrgAttachmentTypeDrgRouteDistributionMatchCriteria
+    oci.core.models.DrgCustomer
+    oci.core.models.DrgCustomerResource
     oci.core.models.DrgPromotionStatusResponse
     oci.core.models.DrgRedundancyStatus
     oci.core.models.DrgRouteDistribution

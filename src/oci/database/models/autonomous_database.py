@@ -878,6 +878,10 @@ class AutonomousDatabase(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type clone_type: str
 
+        :param additional_attributes:
+            The value to assign to the additional_attributes property of this AutonomousDatabase.
+        :type additional_attributes: dict(str, str)
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -1010,7 +1014,8 @@ class AutonomousDatabase(object):
             'availability_domain': 'str',
             'cluster_placement_group_id': 'str',
             'clone_table_space_list': 'list[int]',
-            'clone_type': 'str'
+            'clone_type': 'str',
+            'additional_attributes': 'dict(str, str)'
         }
         self.attribute_map = {
             'id': 'id',
@@ -1143,7 +1148,8 @@ class AutonomousDatabase(object):
             'availability_domain': 'availabilityDomain',
             'cluster_placement_group_id': 'clusterPlacementGroupId',
             'clone_table_space_list': 'cloneTableSpaceList',
-            'clone_type': 'cloneType'
+            'clone_type': 'cloneType',
+            'additional_attributes': 'additionalAttributes'
         }
         self._id = None
         self._compartment_id = None
@@ -1276,6 +1282,7 @@ class AutonomousDatabase(object):
         self._cluster_placement_group_id = None
         self._clone_table_space_list = None
         self._clone_type = None
+        self._additional_attributes = None
 
     @property
     def id(self):
@@ -4830,6 +4837,32 @@ class AutonomousDatabase(object):
         if not value_allowed_none_or_none_sentinel(clone_type, allowed_values):
             clone_type = 'UNKNOWN_ENUM_VALUE'
         self._clone_type = clone_type
+
+    @property
+    def additional_attributes(self):
+        """
+        Gets the additional_attributes of this AutonomousDatabase.
+        Additional attributes for this resource. Each attribute is a simple key-value pair with no predefined name, type, or namespace.
+        Example: `{ \"gcpAccountName\": \"gcpName\" }`
+
+
+        :return: The additional_attributes of this AutonomousDatabase.
+        :rtype: dict(str, str)
+        """
+        return self._additional_attributes
+
+    @additional_attributes.setter
+    def additional_attributes(self, additional_attributes):
+        """
+        Sets the additional_attributes of this AutonomousDatabase.
+        Additional attributes for this resource. Each attribute is a simple key-value pair with no predefined name, type, or namespace.
+        Example: `{ \"gcpAccountName\": \"gcpName\" }`
+
+
+        :param additional_attributes: The additional_attributes of this AutonomousDatabase.
+        :type: dict(str, str)
+        """
+        self._additional_attributes = additional_attributes
 
     def __repr__(self):
         return formatted_flat_dict(self)

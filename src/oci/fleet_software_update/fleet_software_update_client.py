@@ -3339,7 +3339,7 @@ class FleetSoftwareUpdateClient(object):
         :param str type: (optional)
             A filter to return only resources whose type matches the given type.
 
-            Allowed values are: "DB", "GI"
+            Allowed values are: "DB", "GI", "GUEST_OS", "EXADB_STACK"
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -3412,7 +3412,7 @@ class FleetSoftwareUpdateClient(object):
                 )
 
         if 'type' in kwargs:
-            type_allowed_values = ["DB", "GI"]
+            type_allowed_values = ["DB", "GI", "GUEST_OS", "EXADB_STACK"]
             if kwargs['type'] not in type_allowed_values:
                 raise ValueError(
                     f"Invalid value for `type`, must be one of { type_allowed_values }"
@@ -3504,7 +3504,7 @@ class FleetSoftwareUpdateClient(object):
         :param str collection_type: (optional)
             A filter to return only resources whose Collection type matches the given type.
 
-            Allowed values are: "DB", "GI"
+            Allowed values are: "DB", "GI", "GUEST_OS", "EXADB_STACK"
 
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given.
@@ -3585,7 +3585,7 @@ class FleetSoftwareUpdateClient(object):
                 )
 
         if 'collection_type' in kwargs:
-            collection_type_allowed_values = ["DB", "GI"]
+            collection_type_allowed_values = ["DB", "GI", "GUEST_OS", "EXADB_STACK"]
             if kwargs['collection_type'] not in collection_type_allowed_values:
                 raise ValueError(
                     f"Invalid value for `collection_type`, must be one of { collection_type_allowed_values }"

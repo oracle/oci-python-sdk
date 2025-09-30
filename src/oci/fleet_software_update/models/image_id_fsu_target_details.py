@@ -26,7 +26,7 @@ class ImageIdFsuTargetDetails(FsuGoalVersionDetails):
 
         :param type:
             The value to assign to the type property of this ImageIdFsuTargetDetails.
-            Allowed values for this property are: "VERSION", "IMAGE_ID"
+            Allowed values for this property are: "VERSION", "IMAGE_ID", "EXADB_STACK"
         :type type: str
 
         :param home_policy:
@@ -65,7 +65,9 @@ class ImageIdFsuTargetDetails(FsuGoalVersionDetails):
     def software_image_id(self):
         """
         **[Required]** Gets the software_image_id of this ImageIdFsuTargetDetails.
-        Target database software image OCID.
+        The `OCID`__ of the goal database software image.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The software_image_id of this ImageIdFsuTargetDetails.
@@ -77,7 +79,9 @@ class ImageIdFsuTargetDetails(FsuGoalVersionDetails):
     def software_image_id(self, software_image_id):
         """
         Sets the software_image_id of this ImageIdFsuTargetDetails.
-        Target database software image OCID.
+        The `OCID`__ of the goal database software image.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param software_image_id: The software_image_id of this ImageIdFsuTargetDetails.

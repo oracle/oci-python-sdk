@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TargetEntry(object):
     """
-    Details to specify a target to add or remove from a Exadata Fleet Update Collection.
+    Details to specify a target to add or remove from an Exadata Fleet Update Collection.
     """
 
     #: A constant which can be used with the entity_type property of a TargetEntry.

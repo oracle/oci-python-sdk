@@ -334,6 +334,7 @@ from .failover_data_guard_details import FailoverDataGuardDetails
 from .file_system_configuration_detail import FileSystemConfigurationDetail
 from .flex_component_collection import FlexComponentCollection
 from .flex_component_summary import FlexComponentSummary
+from .gcp_key_details import GcpKeyDetails
 from .generate_autonomous_database_wallet_details import GenerateAutonomousDatabaseWalletDetails
 from .generate_recommended_network_details import GenerateRecommendedNetworkDetails
 from .gi_minor_version_summary import GiMinorVersionSummary
@@ -844,6 +845,7 @@ database_type_mapping = {
     "FileSystemConfigurationDetail": FileSystemConfigurationDetail,
     "FlexComponentCollection": FlexComponentCollection,
     "FlexComponentSummary": FlexComponentSummary,
+    "GcpKeyDetails": GcpKeyDetails,
     "GenerateAutonomousDatabaseWalletDetails": GenerateAutonomousDatabaseWalletDetails,
     "GenerateRecommendedNetworkDetails": GenerateRecommendedNetworkDetails,
     "GiMinorVersionSummary": GiMinorVersionSummary,

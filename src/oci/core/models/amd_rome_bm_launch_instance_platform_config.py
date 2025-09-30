@@ -32,6 +32,10 @@ class AmdRomeBmLaunchInstancePlatformConfig(LaunchInstancePlatformConfig):
     #: This constant has a value of "NPS4"
     NUMA_NODES_PER_SOCKET_NPS4 = "NPS4"
 
+    #: A constant which can be used with the numa_nodes_per_socket property of a AmdRomeBmLaunchInstancePlatformConfig.
+    #: This constant has a value of "NPS6"
+    NUMA_NODES_PER_SOCKET_NPS6 = "NPS6"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AmdRomeBmLaunchInstancePlatformConfig object with values from keyword arguments. The default value of the :py:attr:`~oci.core.models.AmdRomeBmLaunchInstancePlatformConfig.type` attribute
@@ -61,7 +65,7 @@ class AmdRomeBmLaunchInstancePlatformConfig(LaunchInstancePlatformConfig):
 
         :param numa_nodes_per_socket:
             The value to assign to the numa_nodes_per_socket property of this AmdRomeBmLaunchInstancePlatformConfig.
-            Allowed values for this property are: "NPS0", "NPS1", "NPS2", "NPS4"
+            Allowed values for this property are: "NPS0", "NPS1", "NPS2", "NPS4", "NPS6"
         :type numa_nodes_per_socket: str
 
         :param is_symmetric_multi_threading_enabled:
@@ -137,7 +141,7 @@ class AmdRomeBmLaunchInstancePlatformConfig(LaunchInstancePlatformConfig):
         Gets the numa_nodes_per_socket of this AmdRomeBmLaunchInstancePlatformConfig.
         The number of NUMA nodes per socket (NPS).
 
-        Allowed values for this property are: "NPS0", "NPS1", "NPS2", "NPS4"
+        Allowed values for this property are: "NPS0", "NPS1", "NPS2", "NPS4", "NPS6"
 
 
         :return: The numa_nodes_per_socket of this AmdRomeBmLaunchInstancePlatformConfig.
@@ -155,7 +159,7 @@ class AmdRomeBmLaunchInstancePlatformConfig(LaunchInstancePlatformConfig):
         :param numa_nodes_per_socket: The numa_nodes_per_socket of this AmdRomeBmLaunchInstancePlatformConfig.
         :type: str
         """
-        allowed_values = ["NPS0", "NPS1", "NPS2", "NPS4"]
+        allowed_values = ["NPS0", "NPS1", "NPS2", "NPS4", "NPS6"]
         if not value_allowed_none_or_none_sentinel(numa_nodes_per_socket, allowed_values):
             raise ValueError(
                 f"Invalid value for `numa_nodes_per_socket`, must be None or one of {allowed_values}"

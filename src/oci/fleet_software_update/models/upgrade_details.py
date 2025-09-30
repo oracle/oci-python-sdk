@@ -23,6 +23,14 @@ class UpgradeDetails(object):
     #: This constant has a value of "GI"
     COLLECTION_TYPE_GI = "GI"
 
+    #: A constant which can be used with the collection_type property of a UpgradeDetails.
+    #: This constant has a value of "GUEST_OS"
+    COLLECTION_TYPE_GUEST_OS = "GUEST_OS"
+
+    #: A constant which can be used with the collection_type property of a UpgradeDetails.
+    #: This constant has a value of "EXADB_STACK"
+    COLLECTION_TYPE_EXADB_STACK = "EXADB_STACK"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpgradeDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -35,7 +43,7 @@ class UpgradeDetails(object):
 
         :param collection_type:
             The value to assign to the collection_type property of this UpgradeDetails.
-            Allowed values for this property are: "DB", "GI", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "DB", "GI", "GUEST_OS", "EXADB_STACK", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type collection_type: str
 
@@ -70,7 +78,7 @@ class UpgradeDetails(object):
         **[Required]** Gets the collection_type of this UpgradeDetails.
         Type of Exadata Fleet Update collection being upgraded.
 
-        Allowed values for this property are: "DB", "GI", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "DB", "GI", "GUEST_OS", "EXADB_STACK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -89,7 +97,7 @@ class UpgradeDetails(object):
         :param collection_type: The collection_type of this UpgradeDetails.
         :type: str
         """
-        allowed_values = ["DB", "GI"]
+        allowed_values = ["DB", "GI", "GUEST_OS", "EXADB_STACK"]
         if not value_allowed_none_or_none_sentinel(collection_type, allowed_values):
             collection_type = 'UNKNOWN_ENUM_VALUE'
         self._collection_type = collection_type

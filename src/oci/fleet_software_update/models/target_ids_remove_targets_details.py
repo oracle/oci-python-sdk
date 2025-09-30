@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TargetIdsRemoveTargetsDetails(RemoveFsuCollectionTargetsDetails):
     """
-    Remove a list of targets from a Exadata Fleet Update Collection.
+    Remove a list of targets from an Exadata Fleet Update Collection.
     """
 
     def __init__(self, **kwargs):

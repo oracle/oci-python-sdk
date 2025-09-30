@@ -100,6 +100,10 @@ class InitialClusterConfiguration(object):
             The value to assign to the datastores property of this InitialClusterConfiguration.
         :type datastores: list[oci.ocvp.models.DatastoreInfo]
 
+        :param datastore_cluster_ids:
+            The value to assign to the datastore_cluster_ids property of this InitialClusterConfiguration.
+        :type datastore_cluster_ids: list[str]
+
         """
         self.swagger_types = {
             'vsphere_type': 'str',
@@ -114,7 +118,8 @@ class InitialClusterConfiguration(object):
             'initial_host_ocpu_count': 'float',
             'is_shielded_instance_enabled': 'bool',
             'capacity_reservation_id': 'str',
-            'datastores': 'list[DatastoreInfo]'
+            'datastores': 'list[DatastoreInfo]',
+            'datastore_cluster_ids': 'list[str]'
         }
         self.attribute_map = {
             'vsphere_type': 'vsphereType',
@@ -129,7 +134,8 @@ class InitialClusterConfiguration(object):
             'initial_host_ocpu_count': 'initialHostOcpuCount',
             'is_shielded_instance_enabled': 'isShieldedInstanceEnabled',
             'capacity_reservation_id': 'capacityReservationId',
-            'datastores': 'datastores'
+            'datastores': 'datastores',
+            'datastore_cluster_ids': 'datastoreClusterIds'
         }
         self._vsphere_type = None
         self._compute_availability_domain = None
@@ -144,6 +150,7 @@ class InitialClusterConfiguration(object):
         self._is_shielded_instance_enabled = None
         self._capacity_reservation_id = None
         self._datastores = None
+        self._datastore_cluster_ids = None
 
     @property
     def vsphere_type(self):
@@ -204,7 +211,7 @@ class InitialClusterConfiguration(object):
         """
         Gets the display_name of this InitialClusterConfiguration.
         A descriptive name for the Cluster.
-        Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region.
+        Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region.
         Avoid entering confidential information.
 
 
@@ -218,7 +225,7 @@ class InitialClusterConfiguration(object):
         """
         Sets the display_name of this InitialClusterConfiguration.
         A descriptive name for the Cluster.
-        Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region.
+        Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region.
         Avoid entering confidential information.
 
 
@@ -502,6 +509,30 @@ class InitialClusterConfiguration(object):
         :type: list[oci.ocvp.models.DatastoreInfo]
         """
         self._datastores = datastores
+
+    @property
+    def datastore_cluster_ids(self):
+        """
+        Gets the datastore_cluster_ids of this InitialClusterConfiguration.
+        A list of datastore clusters.
+
+
+        :return: The datastore_cluster_ids of this InitialClusterConfiguration.
+        :rtype: list[str]
+        """
+        return self._datastore_cluster_ids
+
+    @datastore_cluster_ids.setter
+    def datastore_cluster_ids(self, datastore_cluster_ids):
+        """
+        Sets the datastore_cluster_ids of this InitialClusterConfiguration.
+        A list of datastore clusters.
+
+
+        :param datastore_cluster_ids: The datastore_cluster_ids of this InitialClusterConfiguration.
+        :type: list[str]
+        """
+        self._datastore_cluster_ids = datastore_cluster_ids
 
     def __repr__(self):
         return formatted_flat_dict(self)
