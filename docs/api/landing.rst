@@ -131,6 +131,7 @@ API Reference
 * :doc:`Inventory <cloud_bridge/client/oci.cloud_bridge.InventoryClient>`
 * :doc:`Invoice Service <osp_gateway/client/oci.osp_gateway.InvoiceServiceClient>`
 * :doc:`Invoice Summary <onesubscription/client/oci.onesubscription.InvoiceSummaryClient>`
+* :doc:`Iot <iot/client/oci.iot.IotClient>`
 * :doc:`Java Download <jms_java_downloads/client/oci.jms_java_downloads.JavaDownloadClient>`
 * :doc:`Java Management Service <jms/client/oci.jms.JavaManagementServiceClient>`
 * :doc:`Jms Utils <jms_utils/client/oci.jms_utils.JmsUtilsClient>`
@@ -388,6 +389,7 @@ API Reference
     identity_data_plane
     identity_domains
     integration
+    iot
     jms
     jms_java_downloads
     jms_utils

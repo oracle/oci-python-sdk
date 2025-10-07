@@ -39,6 +39,10 @@ class DataGuardAssociationSummary(object):
     #: This constant has a value of "DISABLED_STANDBY"
     ROLE_DISABLED_STANDBY = "DISABLED_STANDBY"
 
+    #: A constant which can be used with the role property of a DataGuardAssociationSummary.
+    #: This constant has a value of "SNAPSHOT_STANDBY"
+    ROLE_SNAPSHOT_STANDBY = "SNAPSHOT_STANDBY"
+
     #: A constant which can be used with the lifecycle_state property of a DataGuardAssociationSummary.
     #: This constant has a value of "PROVISIONING"
     LIFECYCLE_STATE_PROVISIONING = "PROVISIONING"
@@ -79,6 +83,10 @@ class DataGuardAssociationSummary(object):
     #: This constant has a value of "DISABLED_STANDBY"
     PEER_ROLE_DISABLED_STANDBY = "DISABLED_STANDBY"
 
+    #: A constant which can be used with the peer_role property of a DataGuardAssociationSummary.
+    #: This constant has a value of "SNAPSHOT_STANDBY"
+    PEER_ROLE_SNAPSHOT_STANDBY = "SNAPSHOT_STANDBY"
+
     #: A constant which can be used with the protection_mode property of a DataGuardAssociationSummary.
     #: This constant has a value of "MAXIMUM_AVAILABILITY"
     PROTECTION_MODE_MAXIMUM_AVAILABILITY = "MAXIMUM_AVAILABILITY"
@@ -118,7 +126,7 @@ class DataGuardAssociationSummary(object):
 
         :param role:
             The value to assign to the role property of this DataGuardAssociationSummary.
-            Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", "SNAPSHOT_STANDBY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type role: str
 
@@ -150,7 +158,7 @@ class DataGuardAssociationSummary(object):
 
         :param peer_role:
             The value to assign to the peer_role property of this DataGuardAssociationSummary.
-            Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", "SNAPSHOT_STANDBY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type peer_role: str
 
@@ -298,7 +306,7 @@ class DataGuardAssociationSummary(object):
         **[Required]** Gets the role of this DataGuardAssociationSummary.
         The role of the reporting database in this Data Guard association.
 
-        Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", "SNAPSHOT_STANDBY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -317,7 +325,7 @@ class DataGuardAssociationSummary(object):
         :param role: The role of this DataGuardAssociationSummary.
         :type: str
         """
-        allowed_values = ["PRIMARY", "STANDBY", "DISABLED_STANDBY"]
+        allowed_values = ["PRIMARY", "STANDBY", "DISABLED_STANDBY", "SNAPSHOT_STANDBY"]
         if not value_allowed_none_or_none_sentinel(role, allowed_values):
             role = 'UNKNOWN_ENUM_VALUE'
         self._role = role
@@ -496,7 +504,7 @@ class DataGuardAssociationSummary(object):
         **[Required]** Gets the peer_role of this DataGuardAssociationSummary.
         The role of the peer database in this Data Guard association.
 
-        Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", "SNAPSHOT_STANDBY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -515,7 +523,7 @@ class DataGuardAssociationSummary(object):
         :param peer_role: The peer_role of this DataGuardAssociationSummary.
         :type: str
         """
-        allowed_values = ["PRIMARY", "STANDBY", "DISABLED_STANDBY"]
+        allowed_values = ["PRIMARY", "STANDBY", "DISABLED_STANDBY", "SNAPSHOT_STANDBY"]
         if not value_allowed_none_or_none_sentinel(peer_role, allowed_values):
             peer_role = 'UNKNOWN_ENUM_VALUE'
         self._peer_role = peer_role

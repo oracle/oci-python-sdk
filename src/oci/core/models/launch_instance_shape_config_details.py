@@ -34,6 +34,14 @@ class LaunchInstanceShapeConfigDetails(object):
     #: This constant has a value of "BASELINE_1_1"
     BASELINE_OCPU_UTILIZATION_BASELINE_1_1 = "BASELINE_1_1"
 
+    #: A constant which can be used with the resource_management property of a LaunchInstanceShapeConfigDetails.
+    #: This constant has a value of "DYNAMIC"
+    RESOURCE_MANAGEMENT_DYNAMIC = "DYNAMIC"
+
+    #: A constant which can be used with the resource_management property of a LaunchInstanceShapeConfigDetails.
+    #: This constant has a value of "STATIC"
+    RESOURCE_MANAGEMENT_STATIC = "STATIC"
+
     def __init__(self, **kwargs):
         """
         Initializes a new LaunchInstanceShapeConfigDetails object with values from keyword arguments.
@@ -60,26 +68,34 @@ class LaunchInstanceShapeConfigDetails(object):
             The value to assign to the nvmes property of this LaunchInstanceShapeConfigDetails.
         :type nvmes: int
 
+        :param resource_management:
+            The value to assign to the resource_management property of this LaunchInstanceShapeConfigDetails.
+            Allowed values for this property are: "DYNAMIC", "STATIC"
+        :type resource_management: str
+
         """
         self.swagger_types = {
             'ocpus': 'float',
             'vcpus': 'int',
             'memory_in_gbs': 'float',
             'baseline_ocpu_utilization': 'str',
-            'nvmes': 'int'
+            'nvmes': 'int',
+            'resource_management': 'str'
         }
         self.attribute_map = {
             'ocpus': 'ocpus',
             'vcpus': 'vcpus',
             'memory_in_gbs': 'memoryInGBs',
             'baseline_ocpu_utilization': 'baselineOcpuUtilization',
-            'nvmes': 'nvmes'
+            'nvmes': 'nvmes',
+            'resource_management': 'resourceManagement'
         }
         self._ocpus = None
         self._vcpus = None
         self._memory_in_gbs = None
         self._baseline_ocpu_utilization = None
         self._nvmes = None
+        self._resource_management = None
 
     @property
     def ocpus(self):
@@ -223,6 +239,37 @@ class LaunchInstanceShapeConfigDetails(object):
         :type: int
         """
         self._nvmes = nvmes
+
+    @property
+    def resource_management(self):
+        """
+        Gets the resource_management of this LaunchInstanceShapeConfigDetails.
+        This field is reserved for internal use.
+
+        Allowed values for this property are: "DYNAMIC", "STATIC"
+
+
+        :return: The resource_management of this LaunchInstanceShapeConfigDetails.
+        :rtype: str
+        """
+        return self._resource_management
+
+    @resource_management.setter
+    def resource_management(self, resource_management):
+        """
+        Sets the resource_management of this LaunchInstanceShapeConfigDetails.
+        This field is reserved for internal use.
+
+
+        :param resource_management: The resource_management of this LaunchInstanceShapeConfigDetails.
+        :type: str
+        """
+        allowed_values = ["DYNAMIC", "STATIC"]
+        if not value_allowed_none_or_none_sentinel(resource_management, allowed_values):
+            raise ValueError(
+                f"Invalid value for `resource_management`, must be None or one of {allowed_values}"
+            )
+        self._resource_management = resource_management
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -130,7 +130,7 @@ class DatabaseToolsClientCompositeOperations(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_tools.models.ChangeDatabaseToolsConnectionCompartmentDetails change_database_tools_connection_compartment_details: (required)
-            Request to change the compartment of the DatabaseToolsConnection.
+            Request to change the compartment of the Database Tools connection.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_tools.models.WorkRequest.status`
@@ -174,7 +174,7 @@ class DatabaseToolsClientCompositeOperations(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_tools.models.ChangeDatabaseToolsPrivateEndpointCompartmentDetails change_database_tools_private_endpoint_compartment_details: (required)
-            Request to change the compartment of the DatabaseToolsPrivateEndpoint.
+            Request to change the compartment of the Database Tools private endpoint.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_tools.models.WorkRequest.status`
@@ -213,7 +213,7 @@ class DatabaseToolsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.database_tools.models.CreateDatabaseToolsConnectionDetails create_database_tools_connection_details: (required)
-            Details for the new `DatabaseToolsConnection`.
+            Details for the new Database Tools connection.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_tools.models.WorkRequest.status`
@@ -252,7 +252,7 @@ class DatabaseToolsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.database_tools.models.CreateDatabaseToolsPrivateEndpointDetails create_database_tools_private_endpoint_details: (required)
-            Details for the new DatabaseToolsPrivateEndpoint.
+            Details for the new Database Tools private endpoint.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_tools.models.WorkRequest.status`

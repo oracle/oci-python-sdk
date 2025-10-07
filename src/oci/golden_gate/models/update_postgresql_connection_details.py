@@ -23,7 +23,7 @@ class UpdatePostgresqlConnectionDetails(UpdateConnectionDetails):
 
         :param connection_type:
             The value to assign to the connection_type property of this UpdatePostgresqlConnectionDetails.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG"
         :type connection_type: str
 
         :param display_name:
@@ -66,6 +66,10 @@ class UpdatePostgresqlConnectionDetails(UpdateConnectionDetails):
         :param does_use_secret_ids:
             The value to assign to the does_use_secret_ids property of this UpdatePostgresqlConnectionDetails.
         :type does_use_secret_ids: bool
+
+        :param security_attributes:
+            The value to assign to the security_attributes property of this UpdatePostgresqlConnectionDetails.
+        :type security_attributes: dict(str, dict(str, object))
 
         :param database_name:
             The value to assign to the database_name property of this UpdatePostgresqlConnectionDetails.
@@ -144,6 +148,7 @@ class UpdatePostgresqlConnectionDetails(UpdateConnectionDetails):
             'subnet_id': 'str',
             'routing_method': 'str',
             'does_use_secret_ids': 'bool',
+            'security_attributes': 'dict(str, dict(str, object))',
             'database_name': 'str',
             'host': 'str',
             'port': 'int',
@@ -173,6 +178,7 @@ class UpdatePostgresqlConnectionDetails(UpdateConnectionDetails):
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
             'does_use_secret_ids': 'doesUseSecretIds',
+            'security_attributes': 'securityAttributes',
             'database_name': 'databaseName',
             'host': 'host',
             'port': 'port',
@@ -201,6 +207,7 @@ class UpdatePostgresqlConnectionDetails(UpdateConnectionDetails):
         self._subnet_id = None
         self._routing_method = None
         self._does_use_secret_ids = None
+        self._security_attributes = None
         self._database_name = None
         self._host = None
         self._port = None

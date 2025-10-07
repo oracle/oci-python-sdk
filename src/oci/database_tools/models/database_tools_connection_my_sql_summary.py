@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DatabaseToolsConnectionMySqlSummary(DatabaseToolsConnectionSummary):
     """
-    DatabaseToolsConnectionSummary of a MySQL Server.
+    Database Tools connection summary of a MySQL Server.
     """
 
     def __init__(self, **kwargs):
@@ -219,7 +219,7 @@ class DatabaseToolsConnectionMySqlSummary(DatabaseToolsConnectionSummary):
     def user_name(self):
         """
         Gets the user_name of this DatabaseToolsConnectionMySqlSummary.
-        The user name.
+        The database user name.
 
 
         :return: The user_name of this DatabaseToolsConnectionMySqlSummary.
@@ -231,7 +231,7 @@ class DatabaseToolsConnectionMySqlSummary(DatabaseToolsConnectionSummary):
     def user_name(self, user_name):
         """
         Sets the user_name of this DatabaseToolsConnectionMySqlSummary.
-        The user name.
+        The database user name.
 
 
         :param user_name: The user_name of this DatabaseToolsConnectionMySqlSummary.
@@ -313,7 +313,7 @@ class DatabaseToolsConnectionMySqlSummary(DatabaseToolsConnectionSummary):
     def private_endpoint_id(self):
         """
         Gets the private_endpoint_id of this DatabaseToolsConnectionMySqlSummary.
-        The `OCID`__ of the `DatabaseToolsPrivateEndpoint` used to access the database in the customer VCN.
+        The `OCID`__ of the Database Tools private endpoint used to access the database in the customer VCN.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -327,7 +327,7 @@ class DatabaseToolsConnectionMySqlSummary(DatabaseToolsConnectionSummary):
     def private_endpoint_id(self, private_endpoint_id):
         """
         Sets the private_endpoint_id of this DatabaseToolsConnectionMySqlSummary.
-        The `OCID`__ of the `DatabaseToolsPrivateEndpoint` used to access the database in the customer VCN.
+        The `OCID`__ of the Database Tools private endpoint used to access the database in the customer VCN.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

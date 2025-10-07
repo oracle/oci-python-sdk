@@ -32,6 +32,10 @@ class CreateDatabaseToolsPrivateEndpointDetails(object):
             The value to assign to the freeform_tags property of this CreateDatabaseToolsPrivateEndpointDetails.
         :type freeform_tags: dict(str, str)
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this CreateDatabaseToolsPrivateEndpointDetails.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param locks:
             The value to assign to the locks property of this CreateDatabaseToolsPrivateEndpointDetails.
         :type locks: list[oci.database_tools.models.ResourceLock]
@@ -65,6 +69,7 @@ class CreateDatabaseToolsPrivateEndpointDetails(object):
             'compartment_id': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
+            'security_attributes': 'dict(str, dict(str, object))',
             'locks': 'list[ResourceLock]',
             'display_name': 'str',
             'description': 'str',
@@ -77,6 +82,7 @@ class CreateDatabaseToolsPrivateEndpointDetails(object):
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
+            'security_attributes': 'securityAttributes',
             'locks': 'locks',
             'display_name': 'displayName',
             'description': 'description',
@@ -88,6 +94,7 @@ class CreateDatabaseToolsPrivateEndpointDetails(object):
         self._compartment_id = None
         self._defined_tags = None
         self._freeform_tags = None
+        self._security_attributes = None
         self._locks = None
         self._display_name = None
         self._description = None
@@ -175,6 +182,38 @@ class CreateDatabaseToolsPrivateEndpointDetails(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this CreateDatabaseToolsPrivateEndpointDetails.
+        Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `ZPR Artifacts`__.
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm
+
+
+        :return: The security_attributes of this CreateDatabaseToolsPrivateEndpointDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this CreateDatabaseToolsPrivateEndpointDetails.
+        Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `ZPR Artifacts`__.
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm
+
+
+        :param security_attributes: The security_attributes of this CreateDatabaseToolsPrivateEndpointDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     @property
     def locks(self):

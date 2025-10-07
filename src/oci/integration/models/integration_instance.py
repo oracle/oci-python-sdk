@@ -152,6 +152,10 @@ class IntegrationInstance(object):
             The value to assign to the system_tags property of this IntegrationInstance.
         :type system_tags: dict(str, dict(str, object))
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this IntegrationInstance.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param is_byol:
             The value to assign to the is_byol property of this IntegrationInstance.
         :type is_byol: bool
@@ -240,6 +244,7 @@ class IntegrationInstance(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
+            'security_attributes': 'dict(str, dict(str, object))',
             'is_byol': 'bool',
             'instance_url': 'str',
             'instance_design_time_url': 'str',
@@ -271,6 +276,7 @@ class IntegrationInstance(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
+            'security_attributes': 'securityAttributes',
             'is_byol': 'isByol',
             'instance_url': 'instanceUrl',
             'instance_design_time_url': 'instanceDesignTimeUrl',
@@ -301,6 +307,7 @@ class IntegrationInstance(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._security_attributes = None
         self._is_byol = None
         self._instance_url = None
         self._instance_design_time_url = None
@@ -397,7 +404,7 @@ class IntegrationInstance(object):
         **[Required]** Gets the integration_instance_type of this IntegrationInstance.
         Standard or Enterprise type,
         Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,
-        Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+        Oracle Integration 3 uses ENTERPRISEX, STANDARDX and HEALTHCARE
 
         Allowed values for this property are: "STANDARD", "ENTERPRISE", "STANDARDX", "ENTERPRISEX", "HEALTHCARE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -414,7 +421,7 @@ class IntegrationInstance(object):
         Sets the integration_instance_type of this IntegrationInstance.
         Standard or Enterprise type,
         Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,
-        Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+        Oracle Integration 3 uses ENTERPRISEX, STANDARDX and HEALTHCARE
 
 
         :param integration_instance_type: The integration_instance_type of this IntegrationInstance.
@@ -632,6 +639,40 @@ class IntegrationInstance(object):
         :type: dict(str, dict(str, object))
         """
         self._system_tags = system_tags
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this IntegrationInstance.
+        Security attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The security_attributes of this IntegrationInstance.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this IntegrationInstance.
+        Security attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param security_attributes: The security_attributes of this IntegrationInstance.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     @property
     def is_byol(self):

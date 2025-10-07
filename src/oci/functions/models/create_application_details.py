@@ -77,6 +77,10 @@ class CreateApplicationDetails(object):
             The value to assign to the image_policy_config property of this CreateApplicationDetails.
         :type image_policy_config: oci.functions.models.ImagePolicyConfig
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this CreateApplicationDetails.
+        :type security_attributes: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -89,7 +93,8 @@ class CreateApplicationDetails(object):
             'trace_config': 'ApplicationTraceConfig',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'image_policy_config': 'ImagePolicyConfig'
+            'image_policy_config': 'ImagePolicyConfig',
+            'security_attributes': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'compartment_id': 'compartmentId',
@@ -102,7 +107,8 @@ class CreateApplicationDetails(object):
             'trace_config': 'traceConfig',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'image_policy_config': 'imagePolicyConfig'
+            'image_policy_config': 'imagePolicyConfig',
+            'security_attributes': 'securityAttributes'
         }
         self._compartment_id = None
         self._display_name = None
@@ -115,6 +121,7 @@ class CreateApplicationDetails(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._image_policy_config = None
+        self._security_attributes = None
 
     @property
     def compartment_id(self):
@@ -430,6 +437,40 @@ class CreateApplicationDetails(object):
         :type: oci.functions.models.ImagePolicyConfig
         """
         self._image_policy_config = image_policy_config
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this CreateApplicationDetails.
+        Security attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The security_attributes of this CreateApplicationDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this CreateApplicationDetails.
+        Security attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param security_attributes: The security_attributes of this CreateApplicationDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     def __repr__(self):
         return formatted_flat_dict(self)

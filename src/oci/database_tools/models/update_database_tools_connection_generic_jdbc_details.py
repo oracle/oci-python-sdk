@@ -120,7 +120,7 @@ class UpdateDatabaseToolsConnectionGenericJdbcDetails(UpdateDatabaseToolsConnect
     def user_name(self):
         """
         Gets the user_name of this UpdateDatabaseToolsConnectionGenericJdbcDetails.
-        The user name.
+        The database user name.
 
 
         :return: The user_name of this UpdateDatabaseToolsConnectionGenericJdbcDetails.
@@ -132,7 +132,7 @@ class UpdateDatabaseToolsConnectionGenericJdbcDetails(UpdateDatabaseToolsConnect
     def user_name(self, user_name):
         """
         Sets the user_name of this UpdateDatabaseToolsConnectionGenericJdbcDetails.
-        The user name.
+        The database user name.
 
 
         :param user_name: The user_name of this UpdateDatabaseToolsConnectionGenericJdbcDetails.

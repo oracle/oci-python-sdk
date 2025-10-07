@@ -72,6 +72,10 @@ class CreateConnectionDetails(object):
     CONNECTION_TYPE_HDFS = "HDFS"
 
     #: A constant which can be used with the connection_type property of a CreateConnectionDetails.
+    #: This constant has a value of "ORACLE_AI_DATA_PLATFORM"
+    CONNECTION_TYPE_ORACLE_AI_DATA_PLATFORM = "ORACLE_AI_DATA_PLATFORM"
+
+    #: A constant which can be used with the connection_type property of a CreateConnectionDetails.
     #: This constant has a value of "ORACLE_NOSQL"
     CONNECTION_TYPE_ORACLE_NOSQL = "ORACLE_NOSQL"
 
@@ -161,6 +165,7 @@ class CreateConnectionDetails(object):
         * :class:`~oci.golden_gate.models.CreateGoogleBigQueryConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateSnowflakeConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateMongoDbConnectionDetails`
+        * :class:`~oci.golden_gate.models.CreateOracleAiDataPlatformConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateAmazonS3ConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateDatabricksConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateDb2ConnectionDetails`
@@ -177,7 +182,7 @@ class CreateConnectionDetails(object):
 
         :param connection_type:
             The value to assign to the connection_type property of this CreateConnectionDetails.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG"
         :type connection_type: str
 
         :param display_name:
@@ -229,6 +234,18 @@ class CreateConnectionDetails(object):
             The value to assign to the does_use_secret_ids property of this CreateConnectionDetails.
         :type does_use_secret_ids: bool
 
+        :param subscription_id:
+            The value to assign to the subscription_id property of this CreateConnectionDetails.
+        :type subscription_id: str
+
+        :param cluster_placement_group_id:
+            The value to assign to the cluster_placement_group_id property of this CreateConnectionDetails.
+        :type cluster_placement_group_id: str
+
+        :param security_attributes:
+            The value to assign to the security_attributes property of this CreateConnectionDetails.
+        :type security_attributes: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'connection_type': 'str',
@@ -243,7 +260,10 @@ class CreateConnectionDetails(object):
             'nsg_ids': 'list[str]',
             'subnet_id': 'str',
             'routing_method': 'str',
-            'does_use_secret_ids': 'bool'
+            'does_use_secret_ids': 'bool',
+            'subscription_id': 'str',
+            'cluster_placement_group_id': 'str',
+            'security_attributes': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'connection_type': 'connectionType',
@@ -258,7 +278,10 @@ class CreateConnectionDetails(object):
             'nsg_ids': 'nsgIds',
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
-            'does_use_secret_ids': 'doesUseSecretIds'
+            'does_use_secret_ids': 'doesUseSecretIds',
+            'subscription_id': 'subscriptionId',
+            'cluster_placement_group_id': 'clusterPlacementGroupId',
+            'security_attributes': 'securityAttributes'
         }
         self._connection_type = None
         self._display_name = None
@@ -273,6 +296,9 @@ class CreateConnectionDetails(object):
         self._subnet_id = None
         self._routing_method = None
         self._does_use_secret_ids = None
+        self._subscription_id = None
+        self._cluster_placement_group_id = None
+        self._security_attributes = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -333,6 +359,9 @@ class CreateConnectionDetails(object):
         if type == 'MONGODB':
             return 'CreateMongoDbConnectionDetails'
 
+        if type == 'ORACLE_AI_DATA_PLATFORM':
+            return 'CreateOracleAiDataPlatformConnectionDetails'
+
         if type == 'AMAZON_S3':
             return 'CreateAmazonS3ConnectionDetails'
 
@@ -374,7 +403,7 @@ class CreateConnectionDetails(object):
         **[Required]** Gets the connection_type of this CreateConnectionDetails.
         The connection type.
 
-        Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG"
+        Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG"
 
 
         :return: The connection_type of this CreateConnectionDetails.
@@ -392,7 +421,7 @@ class CreateConnectionDetails(object):
         :param connection_type: The connection_type of this CreateConnectionDetails.
         :type: str
         """
-        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG"]
+        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG"]
         if not value_allowed_none_or_none_sentinel(connection_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `connection_type`, must be None or one of {allowed_values}"
@@ -723,6 +752,96 @@ class CreateConnectionDetails(object):
         :type: bool
         """
         self._does_use_secret_ids = does_use_secret_ids
+
+    @property
+    def subscription_id(self):
+        """
+        Gets the subscription_id of this CreateConnectionDetails.
+        The `OCID`__ of the subscription with which resource needs to be associated with.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The subscription_id of this CreateConnectionDetails.
+        :rtype: str
+        """
+        return self._subscription_id
+
+    @subscription_id.setter
+    def subscription_id(self, subscription_id):
+        """
+        Sets the subscription_id of this CreateConnectionDetails.
+        The `OCID`__ of the subscription with which resource needs to be associated with.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param subscription_id: The subscription_id of this CreateConnectionDetails.
+        :type: str
+        """
+        self._subscription_id = subscription_id
+
+    @property
+    def cluster_placement_group_id(self):
+        """
+        Gets the cluster_placement_group_id of this CreateConnectionDetails.
+        The OCID(/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource.
+        Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud
+        subscription id is provided. Otherwise the cluster placement group must not be provided.
+
+
+        :return: The cluster_placement_group_id of this CreateConnectionDetails.
+        :rtype: str
+        """
+        return self._cluster_placement_group_id
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, cluster_placement_group_id):
+        """
+        Sets the cluster_placement_group_id of this CreateConnectionDetails.
+        The OCID(/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource.
+        Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud
+        subscription id is provided. Otherwise the cluster placement group must not be provided.
+
+
+        :param cluster_placement_group_id: The cluster_placement_group_id of this CreateConnectionDetails.
+        :type: str
+        """
+        self._cluster_placement_group_id = cluster_placement_group_id
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this CreateConnectionDetails.
+        Security attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The security_attributes of this CreateConnectionDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this CreateConnectionDetails.
+        Security attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param security_attributes: The security_attributes of this CreateConnectionDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     def __repr__(self):
         return formatted_flat_dict(self)

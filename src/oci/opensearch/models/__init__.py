@@ -10,6 +10,7 @@ from .backup_event_details import BackupEventDetails
 from .backup_opensearch_cluster_details import BackupOpensearchClusterDetails
 from .backup_policy import BackupPolicy
 from .benchmark_details import BenchmarkDetails
+from .certificate_config import CertificateConfig
 from .change_opensearch_cluster_backup_compartment_details import ChangeOpensearchClusterBackupCompartmentDetails
 from .change_opensearch_cluster_compartment_details import ChangeOpensearchClusterCompartmentDetails
 from .configure_outbound_cluster_details import ConfigureOutboundClusterDetails
@@ -73,6 +74,7 @@ opensearch_type_mapping = {
     "BackupOpensearchClusterDetails": BackupOpensearchClusterDetails,
     "BackupPolicy": BackupPolicy,
     "BenchmarkDetails": BenchmarkDetails,
+    "CertificateConfig": CertificateConfig,
     "ChangeOpensearchClusterBackupCompartmentDetails": ChangeOpensearchClusterBackupCompartmentDetails,
     "ChangeOpensearchClusterCompartmentDetails": ChangeOpensearchClusterCompartmentDetails,
     "ConfigureOutboundClusterDetails": ConfigureOutboundClusterDetails,

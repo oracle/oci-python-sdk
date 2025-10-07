@@ -125,6 +125,10 @@ class OpensearchCluster(object):
             The value to assign to the system_tags property of this OpensearchCluster.
         :type system_tags: dict(str, dict(str, object))
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this OpensearchCluster.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param software_version:
             The value to assign to the software_version property of this OpensearchCluster.
         :type software_version: str
@@ -293,6 +297,10 @@ class OpensearchCluster(object):
             The value to assign to the backup_policy property of this OpensearchCluster.
         :type backup_policy: oci.opensearch.models.BackupPolicy
 
+        :param nsg_id:
+            The value to assign to the nsg_id property of this OpensearchCluster.
+        :type nsg_id: str
+
         :param reverse_connection_endpoint_customer_ips:
             The value to assign to the reverse_connection_endpoint_customer_ips property of this OpensearchCluster.
         :type reverse_connection_endpoint_customer_ips: list[str]
@@ -313,6 +321,10 @@ class OpensearchCluster(object):
             The value to assign to the maintenance_details property of this OpensearchCluster.
         :type maintenance_details: oci.opensearch.models.MaintenanceDetails
 
+        :param certificate_config:
+            The value to assign to the certificate_config property of this OpensearchCluster.
+        :type certificate_config: oci.opensearch.models.CertificateConfig
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -326,6 +338,7 @@ class OpensearchCluster(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
+            'security_attributes': 'dict(str, dict(str, object))',
             'software_version': 'str',
             'total_storage_gb': 'int',
             'opensearch_fqdn': 'str',
@@ -366,11 +379,13 @@ class OpensearchCluster(object):
             'security_master_user_password_hash': 'str',
             'security_saml_config': 'SecuritySamlConfig',
             'backup_policy': 'BackupPolicy',
+            'nsg_id': 'str',
             'reverse_connection_endpoint_customer_ips': 'list[str]',
             'reverse_connection_endpoints': 'list[ReverseConnectionEndpoint]',
             'outbound_cluster_config': 'OutboundClusterConfig',
             'inbound_cluster_ids': 'list[str]',
-            'maintenance_details': 'MaintenanceDetails'
+            'maintenance_details': 'MaintenanceDetails',
+            'certificate_config': 'CertificateConfig'
         }
         self.attribute_map = {
             'id': 'id',
@@ -384,6 +399,7 @@ class OpensearchCluster(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
+            'security_attributes': 'securityAttributes',
             'software_version': 'softwareVersion',
             'total_storage_gb': 'totalStorageGB',
             'opensearch_fqdn': 'opensearchFqdn',
@@ -424,11 +440,13 @@ class OpensearchCluster(object):
             'security_master_user_password_hash': 'securityMasterUserPasswordHash',
             'security_saml_config': 'securitySamlConfig',
             'backup_policy': 'backupPolicy',
+            'nsg_id': 'nsgId',
             'reverse_connection_endpoint_customer_ips': 'reverseConnectionEndpointCustomerIps',
             'reverse_connection_endpoints': 'reverseConnectionEndpoints',
             'outbound_cluster_config': 'outboundClusterConfig',
             'inbound_cluster_ids': 'inboundClusterIds',
-            'maintenance_details': 'maintenanceDetails'
+            'maintenance_details': 'maintenanceDetails',
+            'certificate_config': 'certificateConfig'
         }
         self._id = None
         self._display_name = None
@@ -441,6 +459,7 @@ class OpensearchCluster(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._security_attributes = None
         self._software_version = None
         self._total_storage_gb = None
         self._opensearch_fqdn = None
@@ -481,11 +500,13 @@ class OpensearchCluster(object):
         self._security_master_user_password_hash = None
         self._security_saml_config = None
         self._backup_policy = None
+        self._nsg_id = None
         self._reverse_connection_endpoint_customer_ips = None
         self._reverse_connection_endpoints = None
         self._outbound_cluster_config = None
         self._inbound_cluster_ids = None
         self._maintenance_details = None
+        self._certificate_config = None
 
     @property
     def id(self):
@@ -762,6 +783,40 @@ class OpensearchCluster(object):
         :type: dict(str, dict(str, object))
         """
         self._system_tags = system_tags
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this OpensearchCluster.
+        Security attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The security_attributes of this OpensearchCluster.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this OpensearchCluster.
+        Security attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param security_attributes: The security_attributes of this OpensearchCluster.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     @property
     def software_version(self):
@@ -1740,6 +1795,30 @@ class OpensearchCluster(object):
         self._backup_policy = backup_policy
 
     @property
+    def nsg_id(self):
+        """
+        Gets the nsg_id of this OpensearchCluster.
+        The OCID of the NSG where the private endpoint vnic will be attached.
+
+
+        :return: The nsg_id of this OpensearchCluster.
+        :rtype: str
+        """
+        return self._nsg_id
+
+    @nsg_id.setter
+    def nsg_id(self, nsg_id):
+        """
+        Sets the nsg_id of this OpensearchCluster.
+        The OCID of the NSG where the private endpoint vnic will be attached.
+
+
+        :param nsg_id: The nsg_id of this OpensearchCluster.
+        :type: str
+        """
+        self._nsg_id = nsg_id
+
+    @property
     def reverse_connection_endpoint_customer_ips(self):
         """
         Gets the reverse_connection_endpoint_customer_ips of this OpensearchCluster.
@@ -1850,6 +1929,26 @@ class OpensearchCluster(object):
         :type: oci.opensearch.models.MaintenanceDetails
         """
         self._maintenance_details = maintenance_details
+
+    @property
+    def certificate_config(self):
+        """
+        Gets the certificate_config of this OpensearchCluster.
+
+        :return: The certificate_config of this OpensearchCluster.
+        :rtype: oci.opensearch.models.CertificateConfig
+        """
+        return self._certificate_config
+
+    @certificate_config.setter
+    def certificate_config(self, certificate_config):
+        """
+        Sets the certificate_config of this OpensearchCluster.
+
+        :param certificate_config: The certificate_config of this OpensearchCluster.
+        :type: oci.opensearch.models.CertificateConfig
+        """
+        self._certificate_config = certificate_config
 
     def __repr__(self):
         return formatted_flat_dict(self)

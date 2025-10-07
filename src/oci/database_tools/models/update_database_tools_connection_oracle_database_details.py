@@ -255,7 +255,7 @@ class UpdateDatabaseToolsConnectionOracleDatabaseDetails(UpdateDatabaseToolsConn
     def private_endpoint_id(self):
         """
         Gets the private_endpoint_id of this UpdateDatabaseToolsConnectionOracleDatabaseDetails.
-        The `OCID`__ of the DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+        The `OCID`__ of the Database Tools private endpoint used to access the database in the Customer VCN.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -269,7 +269,7 @@ class UpdateDatabaseToolsConnectionOracleDatabaseDetails(UpdateDatabaseToolsConn
     def private_endpoint_id(self, private_endpoint_id):
         """
         Sets the private_endpoint_id of this UpdateDatabaseToolsConnectionOracleDatabaseDetails.
-        The `OCID`__ of the DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+        The `OCID`__ of the Database Tools private endpoint used to access the database in the Customer VCN.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

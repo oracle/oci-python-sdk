@@ -23,7 +23,7 @@ class KafkaConnectionSummary(ConnectionSummary):
 
         :param connection_type:
             The value to assign to the connection_type property of this KafkaConnectionSummary.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG"
         :type connection_type: str
 
         :param id:
@@ -103,6 +103,18 @@ class KafkaConnectionSummary(ConnectionSummary):
             The value to assign to the does_use_secret_ids property of this KafkaConnectionSummary.
         :type does_use_secret_ids: bool
 
+        :param subscription_id:
+            The value to assign to the subscription_id property of this KafkaConnectionSummary.
+        :type subscription_id: str
+
+        :param cluster_placement_group_id:
+            The value to assign to the cluster_placement_group_id property of this KafkaConnectionSummary.
+        :type cluster_placement_group_id: str
+
+        :param security_attributes:
+            The value to assign to the security_attributes property of this KafkaConnectionSummary.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param technology_type:
             The value to assign to the technology_type property of this KafkaConnectionSummary.
         :type technology_type: str
@@ -110,6 +122,10 @@ class KafkaConnectionSummary(ConnectionSummary):
         :param stream_pool_id:
             The value to assign to the stream_pool_id property of this KafkaConnectionSummary.
         :type stream_pool_id: str
+
+        :param cluster_id:
+            The value to assign to the cluster_id property of this KafkaConnectionSummary.
+        :type cluster_id: str
 
         :param bootstrap_servers:
             The value to assign to the bootstrap_servers property of this KafkaConnectionSummary.
@@ -147,6 +163,10 @@ class KafkaConnectionSummary(ConnectionSummary):
             The value to assign to the ssl_key_password_secret_id property of this KafkaConnectionSummary.
         :type ssl_key_password_secret_id: str
 
+        :param should_use_resource_principal:
+            The value to assign to the should_use_resource_principal property of this KafkaConnectionSummary.
+        :type should_use_resource_principal: bool
+
         """
         self.swagger_types = {
             'connection_type': 'str',
@@ -169,8 +189,12 @@ class KafkaConnectionSummary(ConnectionSummary):
             'routing_method': 'str',
             'locks': 'list[ResourceLock]',
             'does_use_secret_ids': 'bool',
+            'subscription_id': 'str',
+            'cluster_placement_group_id': 'str',
+            'security_attributes': 'dict(str, dict(str, object))',
             'technology_type': 'str',
             'stream_pool_id': 'str',
+            'cluster_id': 'str',
             'bootstrap_servers': 'list[KafkaBootstrapServer]',
             'security_protocol': 'str',
             'username': 'str',
@@ -179,7 +203,8 @@ class KafkaConnectionSummary(ConnectionSummary):
             'trust_store_password_secret_id': 'str',
             'key_store_secret_id': 'str',
             'key_store_password_secret_id': 'str',
-            'ssl_key_password_secret_id': 'str'
+            'ssl_key_password_secret_id': 'str',
+            'should_use_resource_principal': 'bool'
         }
         self.attribute_map = {
             'connection_type': 'connectionType',
@@ -202,8 +227,12 @@ class KafkaConnectionSummary(ConnectionSummary):
             'routing_method': 'routingMethod',
             'locks': 'locks',
             'does_use_secret_ids': 'doesUseSecretIds',
+            'subscription_id': 'subscriptionId',
+            'cluster_placement_group_id': 'clusterPlacementGroupId',
+            'security_attributes': 'securityAttributes',
             'technology_type': 'technologyType',
             'stream_pool_id': 'streamPoolId',
+            'cluster_id': 'clusterId',
             'bootstrap_servers': 'bootstrapServers',
             'security_protocol': 'securityProtocol',
             'username': 'username',
@@ -212,7 +241,8 @@ class KafkaConnectionSummary(ConnectionSummary):
             'trust_store_password_secret_id': 'trustStorePasswordSecretId',
             'key_store_secret_id': 'keyStoreSecretId',
             'key_store_password_secret_id': 'keyStorePasswordSecretId',
-            'ssl_key_password_secret_id': 'sslKeyPasswordSecretId'
+            'ssl_key_password_secret_id': 'sslKeyPasswordSecretId',
+            'should_use_resource_principal': 'shouldUseResourcePrincipal'
         }
         self._connection_type = None
         self._id = None
@@ -234,8 +264,12 @@ class KafkaConnectionSummary(ConnectionSummary):
         self._routing_method = None
         self._locks = None
         self._does_use_secret_ids = None
+        self._subscription_id = None
+        self._cluster_placement_group_id = None
+        self._security_attributes = None
         self._technology_type = None
         self._stream_pool_id = None
+        self._cluster_id = None
         self._bootstrap_servers = None
         self._security_protocol = None
         self._username = None
@@ -245,6 +279,7 @@ class KafkaConnectionSummary(ConnectionSummary):
         self._key_store_secret_id = None
         self._key_store_password_secret_id = None
         self._ssl_key_password_secret_id = None
+        self._should_use_resource_principal = None
         self._connection_type = 'KAFKA'
 
     @property
@@ -298,6 +333,36 @@ class KafkaConnectionSummary(ConnectionSummary):
         :type: str
         """
         self._stream_pool_id = stream_pool_id
+
+    @property
+    def cluster_id(self):
+        """
+        Gets the cluster_id of this KafkaConnectionSummary.
+        The `OCID`__ of the Kafka cluster
+        being referenced from OCI Streaming with Apache Kafka.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The cluster_id of this KafkaConnectionSummary.
+        :rtype: str
+        """
+        return self._cluster_id
+
+    @cluster_id.setter
+    def cluster_id(self, cluster_id):
+        """
+        Sets the cluster_id of this KafkaConnectionSummary.
+        The `OCID`__ of the Kafka cluster
+        being referenced from OCI Streaming with Apache Kafka.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param cluster_id: The cluster_id of this KafkaConnectionSummary.
+        :type: str
+        """
+        self._cluster_id = cluster_id
 
     @property
     def bootstrap_servers(self):
@@ -566,6 +631,38 @@ class KafkaConnectionSummary(ConnectionSummary):
         :type: str
         """
         self._ssl_key_password_secret_id = ssl_key_password_secret_id
+
+    @property
+    def should_use_resource_principal(self):
+        """
+        Gets the should_use_resource_principal of this KafkaConnectionSummary.
+        Specifies that the user intends to authenticate to the instance using a resource principal.
+        Applicable only for OCI Streaming connections.
+        Only available from 23.9.0.0.0 GoldenGate versions.
+        Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided.
+        Default: false
+
+
+        :return: The should_use_resource_principal of this KafkaConnectionSummary.
+        :rtype: bool
+        """
+        return self._should_use_resource_principal
+
+    @should_use_resource_principal.setter
+    def should_use_resource_principal(self, should_use_resource_principal):
+        """
+        Sets the should_use_resource_principal of this KafkaConnectionSummary.
+        Specifies that the user intends to authenticate to the instance using a resource principal.
+        Applicable only for OCI Streaming connections.
+        Only available from 23.9.0.0.0 GoldenGate versions.
+        Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided.
+        Default: false
+
+
+        :param should_use_resource_principal: The should_use_resource_principal of this KafkaConnectionSummary.
+        :type: bool
+        """
+        self._should_use_resource_principal = should_use_resource_principal
 
     def __repr__(self):
         return formatted_flat_dict(self)

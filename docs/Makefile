@@ -55,6 +55,12 @@ html:
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
+.PHONY: dexreq-html
+dexreq-html:
+	@EXCLUDES_PATTERNS=$$(../buildServiceScripts/get_sphinx_excludes.sh) && \
+	echo "Excluding patterns: $$EXCLUDES_PATTERNS" && \
+	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) -D exclude_patterns="$$EXCLUDES_PATTERNS" $(BUILDDIR)/html
+
 .PHONY: dirhtml
 dirhtml:
 	$(SPHINXBUILD) -b dirhtml $(ALLSPHINXOPTS) $(BUILDDIR)/dirhtml

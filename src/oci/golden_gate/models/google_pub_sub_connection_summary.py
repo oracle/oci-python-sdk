@@ -23,7 +23,7 @@ class GooglePubSubConnectionSummary(ConnectionSummary):
 
         :param connection_type:
             The value to assign to the connection_type property of this GooglePubSubConnectionSummary.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG"
         :type connection_type: str
 
         :param id:
@@ -103,6 +103,18 @@ class GooglePubSubConnectionSummary(ConnectionSummary):
             The value to assign to the does_use_secret_ids property of this GooglePubSubConnectionSummary.
         :type does_use_secret_ids: bool
 
+        :param subscription_id:
+            The value to assign to the subscription_id property of this GooglePubSubConnectionSummary.
+        :type subscription_id: str
+
+        :param cluster_placement_group_id:
+            The value to assign to the cluster_placement_group_id property of this GooglePubSubConnectionSummary.
+        :type cluster_placement_group_id: str
+
+        :param security_attributes:
+            The value to assign to the security_attributes property of this GooglePubSubConnectionSummary.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param technology_type:
             The value to assign to the technology_type property of this GooglePubSubConnectionSummary.
         :type technology_type: str
@@ -133,6 +145,9 @@ class GooglePubSubConnectionSummary(ConnectionSummary):
             'routing_method': 'str',
             'locks': 'list[ResourceLock]',
             'does_use_secret_ids': 'bool',
+            'subscription_id': 'str',
+            'cluster_placement_group_id': 'str',
+            'security_attributes': 'dict(str, dict(str, object))',
             'technology_type': 'str',
             'service_account_key_file_secret_id': 'str'
         }
@@ -157,6 +172,9 @@ class GooglePubSubConnectionSummary(ConnectionSummary):
             'routing_method': 'routingMethod',
             'locks': 'locks',
             'does_use_secret_ids': 'doesUseSecretIds',
+            'subscription_id': 'subscriptionId',
+            'cluster_placement_group_id': 'clusterPlacementGroupId',
+            'security_attributes': 'securityAttributes',
             'technology_type': 'technologyType',
             'service_account_key_file_secret_id': 'serviceAccountKeyFileSecretId'
         }
@@ -180,6 +198,9 @@ class GooglePubSubConnectionSummary(ConnectionSummary):
         self._routing_method = None
         self._locks = None
         self._does_use_secret_ids = None
+        self._subscription_id = None
+        self._cluster_placement_group_id = None
+        self._security_attributes = None
         self._technology_type = None
         self._service_account_key_file_secret_id = None
         self._connection_type = 'GOOGLE_PUBSUB'

@@ -44,7 +44,7 @@ class TerraformVersionSummary(object):
     def name(self):
         """
         Gets the name of this TerraformVersionSummary.
-        A supported Terraform version. Example: `0.12.x`
+        A supported Terraform version. Example: `1.5.x`
 
 
         :return: The name of this TerraformVersionSummary.
@@ -56,7 +56,7 @@ class TerraformVersionSummary(object):
     def name(self, name):
         """
         Sets the name of this TerraformVersionSummary.
-        A supported Terraform version. Example: `0.12.x`
+        A supported Terraform version. Example: `1.5.x`
 
 
         :param name: The name of this TerraformVersionSummary.

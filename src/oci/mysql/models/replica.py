@@ -114,6 +114,10 @@ class Replica(object):
             The value to assign to the nsg_ids property of this Replica.
         :type nsg_ids: list[str]
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this Replica.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param ip_address:
             The value to assign to the ip_address property of this Replica.
         :type ip_address: str
@@ -167,6 +171,7 @@ class Replica(object):
             'availability_domain': 'str',
             'fault_domain': 'str',
             'nsg_ids': 'list[str]',
+            'security_attributes': 'dict(str, dict(str, object))',
             'ip_address': 'str',
             'port': 'int',
             'port_x': 'int',
@@ -193,6 +198,7 @@ class Replica(object):
             'availability_domain': 'availabilityDomain',
             'fault_domain': 'faultDomain',
             'nsg_ids': 'nsgIds',
+            'security_attributes': 'securityAttributes',
             'ip_address': 'ipAddress',
             'port': 'port',
             'port_x': 'portX',
@@ -218,6 +224,7 @@ class Replica(object):
         self._availability_domain = None
         self._fault_domain = None
         self._nsg_ids = None
+        self._security_attributes = None
         self._ip_address = None
         self._port = None
         self._port_x = None
@@ -593,6 +600,38 @@ class Replica(object):
         :type: list[str]
         """
         self._nsg_ids = nsg_ids
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this Replica.
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `ZPR Artifacts`__.
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm
+
+
+        :return: The security_attributes of this Replica.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this Replica.
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `ZPR Artifacts`__.
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm
+
+
+        :param security_attributes: The security_attributes of this Replica.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     @property
     def ip_address(self):

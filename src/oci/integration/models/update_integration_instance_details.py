@@ -63,6 +63,10 @@ class UpdateIntegrationInstanceDetails(object):
             The value to assign to the defined_tags property of this UpdateIntegrationInstanceDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this UpdateIntegrationInstanceDetails.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param is_byol:
             The value to assign to the is_byol property of this UpdateIntegrationInstanceDetails.
         :type is_byol: bool
@@ -93,6 +97,7 @@ class UpdateIntegrationInstanceDetails(object):
             'integration_instance_type': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'security_attributes': 'dict(str, dict(str, object))',
             'is_byol': 'bool',
             'message_packs': 'int',
             'is_file_server_enabled': 'bool',
@@ -105,6 +110,7 @@ class UpdateIntegrationInstanceDetails(object):
             'integration_instance_type': 'integrationInstanceType',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'security_attributes': 'securityAttributes',
             'is_byol': 'isByol',
             'message_packs': 'messagePacks',
             'is_file_server_enabled': 'isFileServerEnabled',
@@ -116,6 +122,7 @@ class UpdateIntegrationInstanceDetails(object):
         self._integration_instance_type = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._security_attributes = None
         self._is_byol = None
         self._message_packs = None
         self._is_file_server_enabled = None
@@ -237,6 +244,40 @@ class UpdateIntegrationInstanceDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this UpdateIntegrationInstanceDetails.
+        Security attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The security_attributes of this UpdateIntegrationInstanceDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this UpdateIntegrationInstanceDetails.
+        Security attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param security_attributes: The security_attributes of this UpdateIntegrationInstanceDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     @property
     def is_byol(self):

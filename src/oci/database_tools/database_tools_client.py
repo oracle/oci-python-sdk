@@ -353,7 +353,7 @@ class DatabaseToolsClient(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_tools.models.ChangeDatabaseToolsConnectionCompartmentDetails change_database_tools_connection_compartment_details: (required)
-            Request to change the compartment of the DatabaseToolsConnection.
+            Request to change the compartment of the Database Tools connection.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -478,7 +478,7 @@ class DatabaseToolsClient(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_tools.models.ChangeDatabaseToolsPrivateEndpointCompartmentDetails change_database_tools_private_endpoint_compartment_details: (required)
-            Request to change the compartment of the DatabaseToolsPrivateEndpoint.
+            Request to change the compartment of the Database Tools private endpoint.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -594,7 +594,7 @@ class DatabaseToolsClient(object):
 
 
         :param oci.database_tools.models.CreateDatabaseToolsConnectionDetails create_database_tools_connection_details: (required)
-            Details for the new `DatabaseToolsConnection`.
+            Details for the new Database Tools connection.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -694,7 +694,7 @@ class DatabaseToolsClient(object):
 
 
         :param oci.database_tools.models.CreateDatabaseToolsPrivateEndpointDetails create_database_tools_private_endpoint_details: (required)
-            Details for the new DatabaseToolsPrivateEndpoint.
+            Details for the new Database Tools private endpoint.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -1326,7 +1326,9 @@ class DatabaseToolsClient(object):
 
 
         :param str work_request_id: (required)
-            The ID of the asynchronous request.
+            The `OCID`__ of the asynchronous request.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1424,7 +1426,9 @@ class DatabaseToolsClient(object):
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The `OCID`__ of the compartment in which to list resources.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_state: (optional)
             A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
@@ -1440,12 +1444,14 @@ class DatabaseToolsClient(object):
             Allowed values are: "ORACLE_DATABASE", "MYSQL", "POSTGRESQL", "GENERIC_JDBC"
 
         :param list[str] runtime_support: (optional)
-            A filter to return only resources with one of the specified runtimeSupport values.
+            A filter to return only resources with one of the specified type values.
 
             Allowed values are: "SUPPORTED", "UNSUPPORTED"
 
         :param str related_resource_identifier: (optional)
-            A filter to return only resources associated to the related resource identifier OCID passed in the query string.
+            The `OCID`__ of the related resource.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -1609,7 +1615,9 @@ class DatabaseToolsClient(object):
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The `OCID`__ of the compartment in which to list resources.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -1764,7 +1772,9 @@ class DatabaseToolsClient(object):
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The `OCID`__ of the compartment in which to list resources.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str subnet_id: (optional)
             A filter to return only resources their `subnetId` matches the specified `subnetId`.
@@ -1924,7 +1934,9 @@ class DatabaseToolsClient(object):
 
 
         :param str work_request_id: (required)
-            The ID of the asynchronous request.
+            The `OCID`__ of the asynchronous request.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -2066,7 +2078,9 @@ class DatabaseToolsClient(object):
 
 
         :param str work_request_id: (required)
-            The ID of the asynchronous request.
+            The `OCID`__ of the asynchronous request.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -2208,7 +2222,9 @@ class DatabaseToolsClient(object):
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The `OCID`__ of the compartment in which to list resources.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str resource_identifier: (optional)
             The `OCID`__ of the resource.
@@ -2226,7 +2242,7 @@ class DatabaseToolsClient(object):
         :param str sort_by: (optional)
             The field to sort by. Only one sort order may be provided. Default order for timeAccepted is descending. If no value is specified timeAccepted is default.
 
-            Allowed values are: "timeAccepted"
+            Allowed values are: "timeAccepted", "timeUpdated"
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
@@ -2283,7 +2299,7 @@ class DatabaseToolsClient(object):
                 )
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["timeAccepted"]
+            sort_by_allowed_values = ["timeAccepted", "timeUpdated"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
@@ -2815,7 +2831,7 @@ class DatabaseToolsClient(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_tools.models.ValidateDatabaseToolsConnectionDetails validate_database_tools_connection_details: (required)
-            Request to validate a DatabaseToolsConnection.
+            Request to validate a Database Tools connection.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call

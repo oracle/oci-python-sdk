@@ -360,7 +360,7 @@ class VirtualNodePool(object):
     @property
     def size(self):
         """
-        Gets the size of this VirtualNodePool.
+        **[Required]** Gets the size of this VirtualNodePool.
         The number of Virtual Nodes that should be in the Virtual Node Pool. The placement configurations determine where these virtual nodes are placed.
 
 

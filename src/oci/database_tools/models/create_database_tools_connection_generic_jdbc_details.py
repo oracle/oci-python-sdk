@@ -142,7 +142,7 @@ class CreateDatabaseToolsConnectionGenericJdbcDetails(CreateDatabaseToolsConnect
     def user_name(self):
         """
         **[Required]** Gets the user_name of this CreateDatabaseToolsConnectionGenericJdbcDetails.
-        The user name.
+        The database user name.
 
 
         :return: The user_name of this CreateDatabaseToolsConnectionGenericJdbcDetails.
@@ -154,7 +154,7 @@ class CreateDatabaseToolsConnectionGenericJdbcDetails(CreateDatabaseToolsConnect
     def user_name(self, user_name):
         """
         Sets the user_name of this CreateDatabaseToolsConnectionGenericJdbcDetails.
-        The user name.
+        The database user name.
 
 
         :param user_name: The user_name of this CreateDatabaseToolsConnectionGenericJdbcDetails.

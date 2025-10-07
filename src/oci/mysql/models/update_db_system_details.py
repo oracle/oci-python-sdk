@@ -52,6 +52,10 @@ class UpdateDbSystemDetails(object):
             The value to assign to the nsg_ids property of this UpdateDbSystemDetails.
         :type nsg_ids: list[str]
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this UpdateDbSystemDetails.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param database_mode:
             The value to assign to the database_mode property of this UpdateDbSystemDetails.
         :type database_mode: str
@@ -172,6 +176,7 @@ class UpdateDbSystemDetails(object):
             'description': 'str',
             'subnet_id': 'str',
             'nsg_ids': 'list[str]',
+            'security_attributes': 'dict(str, dict(str, object))',
             'database_mode': 'str',
             'access_mode': 'str',
             'rest': 'UpdateRestDetails',
@@ -206,6 +211,7 @@ class UpdateDbSystemDetails(object):
             'description': 'description',
             'subnet_id': 'subnetId',
             'nsg_ids': 'nsgIds',
+            'security_attributes': 'securityAttributes',
             'database_mode': 'databaseMode',
             'access_mode': 'accessMode',
             'rest': 'rest',
@@ -239,6 +245,7 @@ class UpdateDbSystemDetails(object):
         self._description = None
         self._subnet_id = None
         self._nsg_ids = None
+        self._security_attributes = None
         self._database_mode = None
         self._access_mode = None
         self._rest = None
@@ -363,6 +370,38 @@ class UpdateDbSystemDetails(object):
         :type: list[str]
         """
         self._nsg_ids = nsg_ids
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this UpdateDbSystemDetails.
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `ZPR Artifacts`__.
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm
+
+
+        :return: The security_attributes of this UpdateDbSystemDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this UpdateDbSystemDetails.
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `ZPR Artifacts`__.
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm
+
+
+        :param security_attributes: The security_attributes of this UpdateDbSystemDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     @property
     def database_mode(self):

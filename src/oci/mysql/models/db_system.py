@@ -104,6 +104,10 @@ class DbSystem(object):
             The value to assign to the nsg_ids property of this DbSystem.
         :type nsg_ids: list[str]
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this DbSystem.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param rest:
             The value to assign to the rest property of this DbSystem.
         :type rest: oci.mysql.models.RestDetails
@@ -274,6 +278,7 @@ class DbSystem(object):
             'compartment_id': 'str',
             'subnet_id': 'str',
             'nsg_ids': 'list[str]',
+            'security_attributes': 'dict(str, dict(str, object))',
             'rest': 'RestDetails',
             'is_highly_available': 'bool',
             'current_placement': 'DbSystemPlacement',
@@ -320,6 +325,7 @@ class DbSystem(object):
             'compartment_id': 'compartmentId',
             'subnet_id': 'subnetId',
             'nsg_ids': 'nsgIds',
+            'security_attributes': 'securityAttributes',
             'rest': 'rest',
             'is_highly_available': 'isHighlyAvailable',
             'current_placement': 'currentPlacement',
@@ -365,6 +371,7 @@ class DbSystem(object):
         self._compartment_id = None
         self._subnet_id = None
         self._nsg_ids = None
+        self._security_attributes = None
         self._rest = None
         self._is_highly_available = None
         self._current_placement = None
@@ -547,6 +554,38 @@ class DbSystem(object):
         :type: list[str]
         """
         self._nsg_ids = nsg_ids
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this DbSystem.
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `ZPR Artifacts`__.
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm
+
+
+        :return: The security_attributes of this DbSystem.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this DbSystem.
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `ZPR Artifacts`__.
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm
+
+
+        :param security_attributes: The security_attributes of this DbSystem.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     @property
     def rest(self):

@@ -23,7 +23,7 @@ class UpdateHdfsConnectionDetails(UpdateConnectionDetails):
 
         :param connection_type:
             The value to assign to the connection_type property of this UpdateHdfsConnectionDetails.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG"
         :type connection_type: str
 
         :param display_name:
@@ -67,6 +67,10 @@ class UpdateHdfsConnectionDetails(UpdateConnectionDetails):
             The value to assign to the does_use_secret_ids property of this UpdateHdfsConnectionDetails.
         :type does_use_secret_ids: bool
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this UpdateHdfsConnectionDetails.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param core_site_xml:
             The value to assign to the core_site_xml property of this UpdateHdfsConnectionDetails.
         :type core_site_xml: str
@@ -84,6 +88,7 @@ class UpdateHdfsConnectionDetails(UpdateConnectionDetails):
             'subnet_id': 'str',
             'routing_method': 'str',
             'does_use_secret_ids': 'bool',
+            'security_attributes': 'dict(str, dict(str, object))',
             'core_site_xml': 'str'
         }
         self.attribute_map = {
@@ -98,6 +103,7 @@ class UpdateHdfsConnectionDetails(UpdateConnectionDetails):
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
             'does_use_secret_ids': 'doesUseSecretIds',
+            'security_attributes': 'securityAttributes',
             'core_site_xml': 'coreSiteXml'
         }
         self._connection_type = None
@@ -111,6 +117,7 @@ class UpdateHdfsConnectionDetails(UpdateConnectionDetails):
         self._subnet_id = None
         self._routing_method = None
         self._does_use_secret_ids = None
+        self._security_attributes = None
         self._core_site_xml = None
         self._connection_type = 'HDFS'
 

@@ -31,6 +31,10 @@ class KafkaConnection(Connection):
     #: This constant has a value of "OCI_STREAMING"
     TECHNOLOGY_TYPE_OCI_STREAMING = "OCI_STREAMING"
 
+    #: A constant which can be used with the technology_type property of a KafkaConnection.
+    #: This constant has a value of "OCI_STREAMING_WITH_APACHE_KAFKA"
+    TECHNOLOGY_TYPE_OCI_STREAMING_WITH_APACHE_KAFKA = "OCI_STREAMING_WITH_APACHE_KAFKA"
+
     #: A constant which can be used with the security_protocol property of a KafkaConnection.
     #: This constant has a value of "SSL"
     SECURITY_PROTOCOL_SSL = "SSL"
@@ -55,7 +59,7 @@ class KafkaConnection(Connection):
 
         :param connection_type:
             The value to assign to the connection_type property of this KafkaConnection.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type connection_type: str
 
@@ -139,15 +143,31 @@ class KafkaConnection(Connection):
             The value to assign to the does_use_secret_ids property of this KafkaConnection.
         :type does_use_secret_ids: bool
 
+        :param subscription_id:
+            The value to assign to the subscription_id property of this KafkaConnection.
+        :type subscription_id: str
+
+        :param cluster_placement_group_id:
+            The value to assign to the cluster_placement_group_id property of this KafkaConnection.
+        :type cluster_placement_group_id: str
+
+        :param security_attributes:
+            The value to assign to the security_attributes property of this KafkaConnection.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param technology_type:
             The value to assign to the technology_type property of this KafkaConnection.
-            Allowed values for this property are: "APACHE_KAFKA", "AZURE_EVENT_HUBS", "CONFLUENT_KAFKA", "OCI_STREAMING", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "APACHE_KAFKA", "AZURE_EVENT_HUBS", "CONFLUENT_KAFKA", "OCI_STREAMING", "OCI_STREAMING_WITH_APACHE_KAFKA", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type technology_type: str
 
         :param stream_pool_id:
             The value to assign to the stream_pool_id property of this KafkaConnection.
         :type stream_pool_id: str
+
+        :param cluster_id:
+            The value to assign to the cluster_id property of this KafkaConnection.
+        :type cluster_id: str
 
         :param bootstrap_servers:
             The value to assign to the bootstrap_servers property of this KafkaConnection.
@@ -195,6 +215,10 @@ class KafkaConnection(Connection):
             The value to assign to the producer_properties property of this KafkaConnection.
         :type producer_properties: str
 
+        :param should_use_resource_principal:
+            The value to assign to the should_use_resource_principal property of this KafkaConnection.
+        :type should_use_resource_principal: bool
+
         """
         self.swagger_types = {
             'connection_type': 'str',
@@ -217,8 +241,12 @@ class KafkaConnection(Connection):
             'subnet_id': 'str',
             'routing_method': 'str',
             'does_use_secret_ids': 'bool',
+            'subscription_id': 'str',
+            'cluster_placement_group_id': 'str',
+            'security_attributes': 'dict(str, dict(str, object))',
             'technology_type': 'str',
             'stream_pool_id': 'str',
+            'cluster_id': 'str',
             'bootstrap_servers': 'list[KafkaBootstrapServer]',
             'security_protocol': 'str',
             'username': 'str',
@@ -229,7 +257,8 @@ class KafkaConnection(Connection):
             'key_store_password_secret_id': 'str',
             'ssl_key_password_secret_id': 'str',
             'consumer_properties': 'str',
-            'producer_properties': 'str'
+            'producer_properties': 'str',
+            'should_use_resource_principal': 'bool'
         }
         self.attribute_map = {
             'connection_type': 'connectionType',
@@ -252,8 +281,12 @@ class KafkaConnection(Connection):
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
             'does_use_secret_ids': 'doesUseSecretIds',
+            'subscription_id': 'subscriptionId',
+            'cluster_placement_group_id': 'clusterPlacementGroupId',
+            'security_attributes': 'securityAttributes',
             'technology_type': 'technologyType',
             'stream_pool_id': 'streamPoolId',
+            'cluster_id': 'clusterId',
             'bootstrap_servers': 'bootstrapServers',
             'security_protocol': 'securityProtocol',
             'username': 'username',
@@ -264,7 +297,8 @@ class KafkaConnection(Connection):
             'key_store_password_secret_id': 'keyStorePasswordSecretId',
             'ssl_key_password_secret_id': 'sslKeyPasswordSecretId',
             'consumer_properties': 'consumerProperties',
-            'producer_properties': 'producerProperties'
+            'producer_properties': 'producerProperties',
+            'should_use_resource_principal': 'shouldUseResourcePrincipal'
         }
         self._connection_type = None
         self._id = None
@@ -286,8 +320,12 @@ class KafkaConnection(Connection):
         self._subnet_id = None
         self._routing_method = None
         self._does_use_secret_ids = None
+        self._subscription_id = None
+        self._cluster_placement_group_id = None
+        self._security_attributes = None
         self._technology_type = None
         self._stream_pool_id = None
+        self._cluster_id = None
         self._bootstrap_servers = None
         self._security_protocol = None
         self._username = None
@@ -299,6 +337,7 @@ class KafkaConnection(Connection):
         self._ssl_key_password_secret_id = None
         self._consumer_properties = None
         self._producer_properties = None
+        self._should_use_resource_principal = None
         self._connection_type = 'KAFKA'
 
     @property
@@ -307,7 +346,7 @@ class KafkaConnection(Connection):
         **[Required]** Gets the technology_type of this KafkaConnection.
         The Kafka technology type.
 
-        Allowed values for this property are: "APACHE_KAFKA", "AZURE_EVENT_HUBS", "CONFLUENT_KAFKA", "OCI_STREAMING", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "APACHE_KAFKA", "AZURE_EVENT_HUBS", "CONFLUENT_KAFKA", "OCI_STREAMING", "OCI_STREAMING_WITH_APACHE_KAFKA", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -326,7 +365,7 @@ class KafkaConnection(Connection):
         :param technology_type: The technology_type of this KafkaConnection.
         :type: str
         """
-        allowed_values = ["APACHE_KAFKA", "AZURE_EVENT_HUBS", "CONFLUENT_KAFKA", "OCI_STREAMING"]
+        allowed_values = ["APACHE_KAFKA", "AZURE_EVENT_HUBS", "CONFLUENT_KAFKA", "OCI_STREAMING", "OCI_STREAMING_WITH_APACHE_KAFKA"]
         if not value_allowed_none_or_none_sentinel(technology_type, allowed_values):
             technology_type = 'UNKNOWN_ENUM_VALUE'
         self._technology_type = technology_type
@@ -358,6 +397,36 @@ class KafkaConnection(Connection):
         :type: str
         """
         self._stream_pool_id = stream_pool_id
+
+    @property
+    def cluster_id(self):
+        """
+        Gets the cluster_id of this KafkaConnection.
+        The `OCID`__ of the Kafka cluster
+        being referenced from OCI Streaming with Apache Kafka.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The cluster_id of this KafkaConnection.
+        :rtype: str
+        """
+        return self._cluster_id
+
+    @cluster_id.setter
+    def cluster_id(self, cluster_id):
+        """
+        Sets the cluster_id of this KafkaConnection.
+        The `OCID`__ of the Kafka cluster
+        being referenced from OCI Streaming with Apache Kafka.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param cluster_id: The cluster_id of this KafkaConnection.
+        :type: str
+        """
+        self._cluster_id = cluster_id
 
     @property
     def bootstrap_servers(self):
@@ -680,6 +749,38 @@ class KafkaConnection(Connection):
         :type: str
         """
         self._producer_properties = producer_properties
+
+    @property
+    def should_use_resource_principal(self):
+        """
+        Gets the should_use_resource_principal of this KafkaConnection.
+        Specifies that the user intends to authenticate to the instance using a resource principal.
+        Applicable only for OCI Streaming connections.
+        Only available from 23.9.0.0.0 GoldenGate versions.
+        Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided.
+        Default: false
+
+
+        :return: The should_use_resource_principal of this KafkaConnection.
+        :rtype: bool
+        """
+        return self._should_use_resource_principal
+
+    @should_use_resource_principal.setter
+    def should_use_resource_principal(self, should_use_resource_principal):
+        """
+        Sets the should_use_resource_principal of this KafkaConnection.
+        Specifies that the user intends to authenticate to the instance using a resource principal.
+        Applicable only for OCI Streaming connections.
+        Only available from 23.9.0.0.0 GoldenGate versions.
+        Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided.
+        Default: false
+
+
+        :param should_use_resource_principal: The should_use_resource_principal of this KafkaConnection.
+        :type: bool
+        """
+        self._should_use_resource_principal = should_use_resource_principal
 
     def __repr__(self):
         return formatted_flat_dict(self)

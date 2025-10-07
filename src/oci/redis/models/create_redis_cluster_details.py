@@ -62,6 +62,10 @@ class CreateRedisClusterDetails(object):
             The value to assign to the nsg_ids property of this CreateRedisClusterDetails.
         :type nsg_ids: list[str]
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this CreateRedisClusterDetails.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateRedisClusterDetails.
         :type freeform_tags: dict(str, str)
@@ -82,6 +86,7 @@ class CreateRedisClusterDetails(object):
             'node_memory_in_gbs': 'float',
             'subnet_id': 'str',
             'nsg_ids': 'list[str]',
+            'security_attributes': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -96,6 +101,7 @@ class CreateRedisClusterDetails(object):
             'node_memory_in_gbs': 'nodeMemoryInGBs',
             'subnet_id': 'subnetId',
             'nsg_ids': 'nsgIds',
+            'security_attributes': 'securityAttributes',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -109,6 +115,7 @@ class CreateRedisClusterDetails(object):
         self._node_memory_in_gbs = None
         self._subnet_id = None
         self._nsg_ids = None
+        self._security_attributes = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -369,6 +376,40 @@ class CreateRedisClusterDetails(object):
         :type: list[str]
         """
         self._nsg_ids = nsg_ids
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this CreateRedisClusterDetails.
+        Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The security_attributes of this CreateRedisClusterDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this CreateRedisClusterDetails.
+        Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param security_attributes: The security_attributes of this CreateRedisClusterDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     @property
     def freeform_tags(self):

@@ -1,0 +1,11 @@
+UpdateDigitalTwinAdapterDetails
+===============================
+
+.. currentmodule:: oci.iot.models
+
+.. autoclass:: UpdateDigitalTwinAdapterDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

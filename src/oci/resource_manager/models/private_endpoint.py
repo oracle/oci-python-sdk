@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PrivateEndpoint(object):
     """
-    A private endpoint allowing Resource Manager to access nonpublic cloud resources. For more information about private endpoints, see `Private Endpoint Management`__.
+    A private endpoint allowing Resource Manager to access nonpublic cloud resources. For more information about private endpoints, see `Managing Private Endpoints`__.
 
     __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/private-endpoints.htm
     """
@@ -100,6 +100,14 @@ class PrivateEndpoint(object):
             The value to assign to the defined_tags property of this PrivateEndpoint.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this PrivateEndpoint.
+        :type system_tags: dict(str, dict(str, object))
+
+        :param security_attributes:
+            The value to assign to the security_attributes property of this PrivateEndpoint.
+        :type security_attributes: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -115,7 +123,9 @@ class PrivateEndpoint(object):
             'time_created': 'datetime',
             'lifecycle_state': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))',
+            'security_attributes': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'id': 'id',
@@ -131,7 +141,9 @@ class PrivateEndpoint(object):
             'time_created': 'timeCreated',
             'lifecycle_state': 'lifecycleState',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'system_tags': 'systemTags',
+            'security_attributes': 'securityAttributes'
         }
         self._id = None
         self._compartment_id = None
@@ -147,6 +159,8 @@ class PrivateEndpoint(object):
         self._lifecycle_state = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
+        self._security_attributes = None
 
     @property
     def id(self):
@@ -551,6 +565,72 @@ class PrivateEndpoint(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this PrivateEndpoint.
+        The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces.
+        For more information, see `Resource Tags`__.
+        Example: `{orcl-cloud: {free-tier-retain: true}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The system_tags of this PrivateEndpoint.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this PrivateEndpoint.
+        The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces.
+        For more information, see `Resource Tags`__.
+        Example: `{orcl-cloud: {free-tier-retain: true}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param system_tags: The system_tags of this PrivateEndpoint.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this PrivateEndpoint.
+        `Security attributes`__ are labels for a resource that can be referenced in a `Zero Trust Packet Routing`__ (ZPR) policy to control access to ZPR-supported resources.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
+
+
+        :return: The security_attributes of this PrivateEndpoint.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this PrivateEndpoint.
+        `Security attributes`__ are labels for a resource that can be referenced in a `Zero Trust Packet Routing`__ (ZPR) policy to control access to ZPR-supported resources.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
+
+
+        :param security_attributes: The security_attributes of this PrivateEndpoint.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     def __repr__(self):
         return formatted_flat_dict(self)

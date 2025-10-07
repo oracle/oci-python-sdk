@@ -72,6 +72,10 @@ class UpdateConnectionDetails(object):
     CONNECTION_TYPE_HDFS = "HDFS"
 
     #: A constant which can be used with the connection_type property of a UpdateConnectionDetails.
+    #: This constant has a value of "ORACLE_AI_DATA_PLATFORM"
+    CONNECTION_TYPE_ORACLE_AI_DATA_PLATFORM = "ORACLE_AI_DATA_PLATFORM"
+
+    #: A constant which can be used with the connection_type property of a UpdateConnectionDetails.
     #: This constant has a value of "ORACLE_NOSQL"
     CONNECTION_TYPE_ORACLE_NOSQL = "ORACLE_NOSQL"
 
@@ -152,6 +156,7 @@ class UpdateConnectionDetails(object):
         * :class:`~oci.golden_gate.models.UpdateRedisConnectionDetails`
         * :class:`~oci.golden_gate.models.UpdateMongoDbConnectionDetails`
         * :class:`~oci.golden_gate.models.UpdateGoogleCloudStorageConnectionDetails`
+        * :class:`~oci.golden_gate.models.UpdateOracleAiDataPlatformConnectionDetails`
         * :class:`~oci.golden_gate.models.UpdateMicrosoftFabricConnectionDetails`
         * :class:`~oci.golden_gate.models.UpdatePostgresqlConnectionDetails`
         * :class:`~oci.golden_gate.models.UpdateMicrosoftSqlserverConnectionDetails`
@@ -177,7 +182,7 @@ class UpdateConnectionDetails(object):
 
         :param connection_type:
             The value to assign to the connection_type property of this UpdateConnectionDetails.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG"
         :type connection_type: str
 
         :param display_name:
@@ -221,6 +226,10 @@ class UpdateConnectionDetails(object):
             The value to assign to the does_use_secret_ids property of this UpdateConnectionDetails.
         :type does_use_secret_ids: bool
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this UpdateConnectionDetails.
+        :type security_attributes: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'connection_type': 'str',
@@ -233,7 +242,8 @@ class UpdateConnectionDetails(object):
             'nsg_ids': 'list[str]',
             'subnet_id': 'str',
             'routing_method': 'str',
-            'does_use_secret_ids': 'bool'
+            'does_use_secret_ids': 'bool',
+            'security_attributes': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'connection_type': 'connectionType',
@@ -246,7 +256,8 @@ class UpdateConnectionDetails(object):
             'nsg_ids': 'nsgIds',
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
-            'does_use_secret_ids': 'doesUseSecretIds'
+            'does_use_secret_ids': 'doesUseSecretIds',
+            'security_attributes': 'securityAttributes'
         }
         self._connection_type = None
         self._display_name = None
@@ -259,6 +270,7 @@ class UpdateConnectionDetails(object):
         self._subnet_id = None
         self._routing_method = None
         self._does_use_secret_ids = None
+        self._security_attributes = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -291,6 +303,9 @@ class UpdateConnectionDetails(object):
 
         if type == 'GOOGLE_CLOUD_STORAGE':
             return 'UpdateGoogleCloudStorageConnectionDetails'
+
+        if type == 'ORACLE_AI_DATA_PLATFORM':
+            return 'UpdateOracleAiDataPlatformConnectionDetails'
 
         if type == 'MICROSOFT_FABRIC':
             return 'UpdateMicrosoftFabricConnectionDetails'
@@ -360,7 +375,7 @@ class UpdateConnectionDetails(object):
         Gets the connection_type of this UpdateConnectionDetails.
         The connection type.
 
-        Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG"
+        Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG"
 
 
         :return: The connection_type of this UpdateConnectionDetails.
@@ -378,7 +393,7 @@ class UpdateConnectionDetails(object):
         :param connection_type: The connection_type of this UpdateConnectionDetails.
         :type: str
         """
-        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG"]
+        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG"]
         if not value_allowed_none_or_none_sentinel(connection_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `connection_type`, must be None or one of {allowed_values}"
@@ -657,6 +672,40 @@ class UpdateConnectionDetails(object):
         :type: bool
         """
         self._does_use_secret_ids = does_use_secret_ids
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this UpdateConnectionDetails.
+        Security attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The security_attributes of this UpdateConnectionDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this UpdateConnectionDetails.
+        Security attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param security_attributes: The security_attributes of this UpdateConnectionDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     def __repr__(self):
         return formatted_flat_dict(self)

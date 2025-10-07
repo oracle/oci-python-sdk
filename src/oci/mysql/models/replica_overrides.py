@@ -39,23 +39,30 @@ class ReplicaOverrides(object):
             The value to assign to the nsg_ids property of this ReplicaOverrides.
         :type nsg_ids: list[str]
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this ReplicaOverrides.
+        :type security_attributes: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'mysql_version': 'str',
             'shape_name': 'str',
             'configuration_id': 'str',
-            'nsg_ids': 'list[str]'
+            'nsg_ids': 'list[str]',
+            'security_attributes': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'mysql_version': 'mysqlVersion',
             'shape_name': 'shapeName',
             'configuration_id': 'configurationId',
-            'nsg_ids': 'nsgIds'
+            'nsg_ids': 'nsgIds',
+            'security_attributes': 'securityAttributes'
         }
         self._mysql_version = None
         self._shape_name = None
         self._configuration_id = None
         self._nsg_ids = None
+        self._security_attributes = None
 
     @property
     def mysql_version(self):
@@ -156,6 +163,38 @@ class ReplicaOverrides(object):
         :type: list[str]
         """
         self._nsg_ids = nsg_ids
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this ReplicaOverrides.
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `ZPR Artifacts`__.
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm
+
+
+        :return: The security_attributes of this ReplicaOverrides.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this ReplicaOverrides.
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `ZPR Artifacts`__.
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm
+
+
+        :param security_attributes: The security_attributes of this ReplicaOverrides.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     def __repr__(self):
         return formatted_flat_dict(self)

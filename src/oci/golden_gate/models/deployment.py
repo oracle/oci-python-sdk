@@ -416,6 +416,18 @@ class Deployment(object):
             The value to assign to the ingress_ips property of this Deployment.
         :type ingress_ips: list[oci.golden_gate.models.IngressIpDetails]
 
+        :param subscription_id:
+            The value to assign to the subscription_id property of this Deployment.
+        :type subscription_id: str
+
+        :param cluster_placement_group_id:
+            The value to assign to the cluster_placement_group_id property of this Deployment.
+        :type cluster_placement_group_id: str
+
+        :param security_attributes:
+            The value to assign to the security_attributes property of this Deployment.
+        :type security_attributes: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -471,7 +483,10 @@ class Deployment(object):
             'backup_schedule': 'BackupSchedule',
             'time_last_backup_scheduled': 'datetime',
             'time_next_backup_scheduled': 'datetime',
-            'ingress_ips': 'list[IngressIpDetails]'
+            'ingress_ips': 'list[IngressIpDetails]',
+            'subscription_id': 'str',
+            'cluster_placement_group_id': 'str',
+            'security_attributes': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'id': 'id',
@@ -527,7 +542,10 @@ class Deployment(object):
             'backup_schedule': 'backupSchedule',
             'time_last_backup_scheduled': 'timeLastBackupScheduled',
             'time_next_backup_scheduled': 'timeNextBackupScheduled',
-            'ingress_ips': 'ingressIps'
+            'ingress_ips': 'ingressIps',
+            'subscription_id': 'subscriptionId',
+            'cluster_placement_group_id': 'clusterPlacementGroupId',
+            'security_attributes': 'securityAttributes'
         }
         self._id = None
         self._display_name = None
@@ -583,6 +601,9 @@ class Deployment(object):
         self._time_last_backup_scheduled = None
         self._time_next_backup_scheduled = None
         self._ingress_ips = None
+        self._subscription_id = None
+        self._cluster_placement_group_id = None
+        self._security_attributes = None
 
     @property
     def id(self):
@@ -2043,6 +2064,96 @@ class Deployment(object):
         :type: list[oci.golden_gate.models.IngressIpDetails]
         """
         self._ingress_ips = ingress_ips
+
+    @property
+    def subscription_id(self):
+        """
+        Gets the subscription_id of this Deployment.
+        The `OCID`__ of the subscription with which resource needs to be associated with.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The subscription_id of this Deployment.
+        :rtype: str
+        """
+        return self._subscription_id
+
+    @subscription_id.setter
+    def subscription_id(self, subscription_id):
+        """
+        Sets the subscription_id of this Deployment.
+        The `OCID`__ of the subscription with which resource needs to be associated with.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param subscription_id: The subscription_id of this Deployment.
+        :type: str
+        """
+        self._subscription_id = subscription_id
+
+    @property
+    def cluster_placement_group_id(self):
+        """
+        Gets the cluster_placement_group_id of this Deployment.
+        The OCID(/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource.
+        Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud
+        subscription id is provided. Otherwise the cluster placement group must not be provided.
+
+
+        :return: The cluster_placement_group_id of this Deployment.
+        :rtype: str
+        """
+        return self._cluster_placement_group_id
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, cluster_placement_group_id):
+        """
+        Sets the cluster_placement_group_id of this Deployment.
+        The OCID(/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource.
+        Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud
+        subscription id is provided. Otherwise the cluster placement group must not be provided.
+
+
+        :param cluster_placement_group_id: The cluster_placement_group_id of this Deployment.
+        :type: str
+        """
+        self._cluster_placement_group_id = cluster_placement_group_id
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this Deployment.
+        Security attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The security_attributes of this Deployment.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this Deployment.
+        Security attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param security_attributes: The security_attributes of this Deployment.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DatabaseToolsConnectionCollection(object):
     """
-    List of `DatabaseToolsConnectionSummary` items.
+    List of Database Tools connection summary items.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class DatabaseToolsConnectionCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this DatabaseToolsConnectionCollection.
-        Array of `DatabaseToolsConnectionSummary` items.
+        Array of Database Tools connection summary items.
 
 
         :return: The items of this DatabaseToolsConnectionCollection.
@@ -49,7 +49,7 @@ class DatabaseToolsConnectionCollection(object):
     def items(self, items):
         """
         Sets the items of this DatabaseToolsConnectionCollection.
-        Array of `DatabaseToolsConnectionSummary` items.
+        Array of Database Tools connection summary items.
 
 
         :param items: The items of this DatabaseToolsConnectionCollection.

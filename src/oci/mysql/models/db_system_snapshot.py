@@ -60,6 +60,10 @@ class DbSystemSnapshot(object):
             The value to assign to the nsg_ids property of this DbSystemSnapshot.
         :type nsg_ids: list[str]
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this DbSystemSnapshot.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param availability_domain:
             The value to assign to the availability_domain property of this DbSystemSnapshot.
         :type availability_domain: str
@@ -176,6 +180,7 @@ class DbSystemSnapshot(object):
             'compartment_id': 'str',
             'subnet_id': 'str',
             'nsg_ids': 'list[str]',
+            'security_attributes': 'dict(str, dict(str, object))',
             'availability_domain': 'str',
             'fault_domain': 'str',
             'shape_name': 'str',
@@ -210,6 +215,7 @@ class DbSystemSnapshot(object):
             'compartment_id': 'compartmentId',
             'subnet_id': 'subnetId',
             'nsg_ids': 'nsgIds',
+            'security_attributes': 'securityAttributes',
             'availability_domain': 'availabilityDomain',
             'fault_domain': 'faultDomain',
             'shape_name': 'shapeName',
@@ -243,6 +249,7 @@ class DbSystemSnapshot(object):
         self._compartment_id = None
         self._subnet_id = None
         self._nsg_ids = None
+        self._security_attributes = None
         self._availability_domain = None
         self._fault_domain = None
         self._shape_name = None
@@ -413,6 +420,38 @@ class DbSystemSnapshot(object):
         :type: list[str]
         """
         self._nsg_ids = nsg_ids
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this DbSystemSnapshot.
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `ZPR Artifacts`__.
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm
+
+
+        :return: The security_attributes of this DbSystemSnapshot.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this DbSystemSnapshot.
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `ZPR Artifacts`__.
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm
+
+
+        :param security_attributes: The security_attributes of this DbSystemSnapshot.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     @property
     def availability_domain(self):

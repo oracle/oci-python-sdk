@@ -72,6 +72,10 @@ class BitbucketServerAccessTokenConfigurationSourceProvider(ConfigurationSourceP
             The value to assign to the defined_tags property of this BitbucketServerAccessTokenConfigurationSourceProvider.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this BitbucketServerAccessTokenConfigurationSourceProvider.
+        :type system_tags: dict(str, dict(str, object))
+
         :param api_endpoint:
             The value to assign to the api_endpoint property of this BitbucketServerAccessTokenConfigurationSourceProvider.
         :type api_endpoint: str
@@ -90,6 +94,7 @@ class BitbucketServerAccessTokenConfigurationSourceProvider(ConfigurationSourceP
             'secret_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))',
             'api_endpoint': 'str'
         }
         self.attribute_map = {
@@ -105,6 +110,7 @@ class BitbucketServerAccessTokenConfigurationSourceProvider(ConfigurationSourceP
             'secret_id': 'secretId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'system_tags': 'systemTags',
             'api_endpoint': 'apiEndpoint'
         }
         self._id = None
@@ -119,6 +125,7 @@ class BitbucketServerAccessTokenConfigurationSourceProvider(ConfigurationSourceP
         self._secret_id = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
         self._api_endpoint = None
         self._config_source_provider_type = 'BITBUCKET_SERVER_ACCESS_TOKEN'
 

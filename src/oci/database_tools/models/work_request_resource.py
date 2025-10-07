@@ -140,7 +140,9 @@ class WorkRequestResource(object):
     def identifier(self):
         """
         **[Required]** Gets the identifier of this WorkRequestResource.
-        The identifier of the resource the work request affects.
+        The `OCID`__ of the resource the work request affects.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The identifier of this WorkRequestResource.
@@ -152,7 +154,9 @@ class WorkRequestResource(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this WorkRequestResource.
-        The identifier of the resource the work request affects.
+        The `OCID`__ of the resource the work request affects.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param identifier: The identifier of this WorkRequestResource.
