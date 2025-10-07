@@ -312,6 +312,18 @@ class DeploymentSummary(object):
             The value to assign to the is_storage_utilization_limit_exceeded property of this DeploymentSummary.
         :type is_storage_utilization_limit_exceeded: bool
 
+        :param subscription_id:
+            The value to assign to the subscription_id property of this DeploymentSummary.
+        :type subscription_id: str
+
+        :param cluster_placement_group_id:
+            The value to assign to the cluster_placement_group_id property of this DeploymentSummary.
+        :type cluster_placement_group_id: str
+
+        :param security_attributes:
+            The value to assign to the security_attributes property of this DeploymentSummary.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param locks:
             The value to assign to the locks property of this DeploymentSummary.
         :type locks: list[oci.golden_gate.models.ResourceLock]
@@ -350,6 +362,9 @@ class DeploymentSummary(object):
             'deployment_type': 'str',
             'storage_utilization_in_bytes': 'int',
             'is_storage_utilization_limit_exceeded': 'bool',
+            'subscription_id': 'str',
+            'cluster_placement_group_id': 'str',
+            'security_attributes': 'dict(str, dict(str, object))',
             'locks': 'list[ResourceLock]'
         }
         self.attribute_map = {
@@ -385,6 +400,9 @@ class DeploymentSummary(object):
             'deployment_type': 'deploymentType',
             'storage_utilization_in_bytes': 'storageUtilizationInBytes',
             'is_storage_utilization_limit_exceeded': 'isStorageUtilizationLimitExceeded',
+            'subscription_id': 'subscriptionId',
+            'cluster_placement_group_id': 'clusterPlacementGroupId',
+            'security_attributes': 'securityAttributes',
             'locks': 'locks'
         }
         self._id = None
@@ -419,6 +437,9 @@ class DeploymentSummary(object):
         self._deployment_type = None
         self._storage_utilization_in_bytes = None
         self._is_storage_utilization_limit_exceeded = None
+        self._subscription_id = None
+        self._cluster_placement_group_id = None
+        self._security_attributes = None
         self._locks = None
 
     @property
@@ -1320,6 +1341,96 @@ class DeploymentSummary(object):
         :type: bool
         """
         self._is_storage_utilization_limit_exceeded = is_storage_utilization_limit_exceeded
+
+    @property
+    def subscription_id(self):
+        """
+        Gets the subscription_id of this DeploymentSummary.
+        The `OCID`__ of the subscription with which resource needs to be associated with.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The subscription_id of this DeploymentSummary.
+        :rtype: str
+        """
+        return self._subscription_id
+
+    @subscription_id.setter
+    def subscription_id(self, subscription_id):
+        """
+        Sets the subscription_id of this DeploymentSummary.
+        The `OCID`__ of the subscription with which resource needs to be associated with.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param subscription_id: The subscription_id of this DeploymentSummary.
+        :type: str
+        """
+        self._subscription_id = subscription_id
+
+    @property
+    def cluster_placement_group_id(self):
+        """
+        Gets the cluster_placement_group_id of this DeploymentSummary.
+        The OCID(/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource.
+        Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud
+        subscription id is provided. Otherwise the cluster placement group must not be provided.
+
+
+        :return: The cluster_placement_group_id of this DeploymentSummary.
+        :rtype: str
+        """
+        return self._cluster_placement_group_id
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, cluster_placement_group_id):
+        """
+        Sets the cluster_placement_group_id of this DeploymentSummary.
+        The OCID(/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource.
+        Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud
+        subscription id is provided. Otherwise the cluster placement group must not be provided.
+
+
+        :param cluster_placement_group_id: The cluster_placement_group_id of this DeploymentSummary.
+        :type: str
+        """
+        self._cluster_placement_group_id = cluster_placement_group_id
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this DeploymentSummary.
+        Security attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The security_attributes of this DeploymentSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this DeploymentSummary.
+        Security attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param security_attributes: The security_attributes of this DeploymentSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     @property
     def locks(self):

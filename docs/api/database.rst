@@ -147,6 +147,7 @@ Database
     oci.database.models.ConsoleHistoryCollection
     oci.database.models.ConsoleHistorySummary
     oci.database.models.ConvertStandbyAutonomousContainerDatabaseDetails
+    oci.database.models.ConvertStandbyDatabaseTypeDetails
     oci.database.models.ConvertToPdbDetails
     oci.database.models.ConvertToPdbTargetBase
     oci.database.models.ConvertToRegularPluggableDatabaseDetails

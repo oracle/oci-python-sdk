@@ -74,6 +74,10 @@ class UpdateOpensearchClusterDetails(object):
             The value to assign to the maintenance_details property of this UpdateOpensearchClusterDetails.
         :type maintenance_details: oci.opensearch.models.UpdateMaintenanceDetails
 
+        :param certificate_config:
+            The value to assign to the certificate_config property of this UpdateOpensearchClusterDetails.
+        :type certificate_config: oci.opensearch.models.CertificateConfig
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateOpensearchClusterDetails.
         :type freeform_tags: dict(str, str)
@@ -81,6 +85,10 @@ class UpdateOpensearchClusterDetails(object):
         :param defined_tags:
             The value to assign to the defined_tags property of this UpdateOpensearchClusterDetails.
         :type defined_tags: dict(str, dict(str, object))
+
+        :param security_attributes:
+            The value to assign to the security_attributes property of this UpdateOpensearchClusterDetails.
+        :type security_attributes: dict(str, dict(str, object))
 
         """
         self.swagger_types = {
@@ -94,8 +102,10 @@ class UpdateOpensearchClusterDetails(object):
             'reverse_connection_endpoint_customer_ips': 'list[str]',
             'outbound_cluster_config': 'OutboundClusterConfig',
             'maintenance_details': 'UpdateMaintenanceDetails',
+            'certificate_config': 'CertificateConfig',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'security_attributes': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'display_name': 'displayName',
@@ -108,8 +118,10 @@ class UpdateOpensearchClusterDetails(object):
             'reverse_connection_endpoint_customer_ips': 'reverseConnectionEndpointCustomerIps',
             'outbound_cluster_config': 'outboundClusterConfig',
             'maintenance_details': 'maintenanceDetails',
+            'certificate_config': 'certificateConfig',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'security_attributes': 'securityAttributes'
         }
         self._display_name = None
         self._software_version = None
@@ -121,8 +133,10 @@ class UpdateOpensearchClusterDetails(object):
         self._reverse_connection_endpoint_customer_ips = None
         self._outbound_cluster_config = None
         self._maintenance_details = None
+        self._certificate_config = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._security_attributes = None
 
     @property
     def display_name(self):
@@ -352,6 +366,26 @@ class UpdateOpensearchClusterDetails(object):
         self._maintenance_details = maintenance_details
 
     @property
+    def certificate_config(self):
+        """
+        Gets the certificate_config of this UpdateOpensearchClusterDetails.
+
+        :return: The certificate_config of this UpdateOpensearchClusterDetails.
+        :rtype: oci.opensearch.models.CertificateConfig
+        """
+        return self._certificate_config
+
+    @certificate_config.setter
+    def certificate_config(self, certificate_config):
+        """
+        Sets the certificate_config of this UpdateOpensearchClusterDetails.
+
+        :param certificate_config: The certificate_config of this UpdateOpensearchClusterDetails.
+        :type: oci.opensearch.models.CertificateConfig
+        """
+        self._certificate_config = certificate_config
+
+    @property
     def freeform_tags(self):
         """
         Gets the freeform_tags of this UpdateOpensearchClusterDetails.
@@ -402,6 +436,40 @@ class UpdateOpensearchClusterDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this UpdateOpensearchClusterDetails.
+        Security attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The security_attributes of this UpdateOpensearchClusterDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this UpdateOpensearchClusterDetails.
+        Security attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param security_attributes: The security_attributes of this UpdateOpensearchClusterDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     def __repr__(self):
         return formatted_flat_dict(self)

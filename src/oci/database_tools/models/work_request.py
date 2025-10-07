@@ -79,6 +79,10 @@ class WorkRequest(object):
     #: This constant has a value of "WAITING"
     STATUS_WAITING = "WAITING"
 
+    #: A constant which can be used with the status property of a WorkRequest.
+    #: This constant has a value of "NEEDS_ATTENTION"
+    STATUS_NEEDS_ATTENTION = "NEEDS_ATTENTION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new WorkRequest object with values from keyword arguments.
@@ -92,7 +96,7 @@ class WorkRequest(object):
 
         :param status:
             The value to assign to the status property of this WorkRequest.
-            Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", "WAITING", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", "WAITING", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type status: str
 
@@ -124,6 +128,10 @@ class WorkRequest(object):
             The value to assign to the time_finished property of this WorkRequest.
         :type time_finished: datetime
 
+        :param time_updated:
+            The value to assign to the time_updated property of this WorkRequest.
+        :type time_updated: datetime
+
         """
         self.swagger_types = {
             'operation_type': 'str',
@@ -134,7 +142,8 @@ class WorkRequest(object):
             'percent_complete': 'float',
             'time_accepted': 'datetime',
             'time_started': 'datetime',
-            'time_finished': 'datetime'
+            'time_finished': 'datetime',
+            'time_updated': 'datetime'
         }
         self.attribute_map = {
             'operation_type': 'operationType',
@@ -145,7 +154,8 @@ class WorkRequest(object):
             'percent_complete': 'percentComplete',
             'time_accepted': 'timeAccepted',
             'time_started': 'timeStarted',
-            'time_finished': 'timeFinished'
+            'time_finished': 'timeFinished',
+            'time_updated': 'timeUpdated'
         }
         self._operation_type = None
         self._status = None
@@ -156,6 +166,7 @@ class WorkRequest(object):
         self._time_accepted = None
         self._time_started = None
         self._time_finished = None
+        self._time_updated = None
 
     @property
     def operation_type(self):
@@ -193,7 +204,7 @@ class WorkRequest(object):
         **[Required]** Gets the status of this WorkRequest.
         The status of the work request.
 
-        Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", "WAITING", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", "WAITING", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -212,7 +223,7 @@ class WorkRequest(object):
         :param status: The status of this WorkRequest.
         :type: str
         """
-        allowed_values = ["ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", "WAITING"]
+        allowed_values = ["ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", "WAITING", "NEEDS_ATTENTION"]
         if not value_allowed_none_or_none_sentinel(status, allowed_values):
             status = 'UNKNOWN_ENUM_VALUE'
         self._status = status
@@ -396,6 +407,32 @@ class WorkRequest(object):
         :type: datetime
         """
         self._time_finished = time_finished
+
+    @property
+    def time_updated(self):
+        """
+        Gets the time_updated of this WorkRequest.
+        The date and time the work request was last updated,
+        in the format defined by RFC3339.
+
+
+        :return: The time_updated of this WorkRequest.
+        :rtype: datetime
+        """
+        return self._time_updated
+
+    @time_updated.setter
+    def time_updated(self, time_updated):
+        """
+        Sets the time_updated of this WorkRequest.
+        The date and time the work request was last updated,
+        in the format defined by RFC3339.
+
+
+        :param time_updated: The time_updated of this WorkRequest.
+        :type: datetime
+        """
+        self._time_updated = time_updated
 
     def __repr__(self):
         return formatted_flat_dict(self)

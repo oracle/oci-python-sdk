@@ -30,10 +30,13 @@ from .certificate import Certificate
 from .certificate_collection import CertificateCollection
 from .certificate_summary import CertificateSummary
 from .change_connection_compartment_details import ChangeConnectionCompartmentDetails
+from .change_connection_subscription_details import ChangeConnectionSubscriptionDetails
 from .change_database_registration_compartment_details import ChangeDatabaseRegistrationCompartmentDetails
 from .change_deployment_backup_compartment_details import ChangeDeploymentBackupCompartmentDetails
 from .change_deployment_compartment_details import ChangeDeploymentCompartmentDetails
+from .change_deployment_subscription_details import ChangeDeploymentSubscriptionDetails
 from .change_pipeline_compartment_details import ChangePipelineCompartmentDetails
+from .change_subscription_details import ChangeSubscriptionDetails
 from .collect_deployment_diagnostic_details import CollectDeploymentDiagnosticDetails
 from .collect_pipeline_diagnostic_details import CollectPipelineDiagnosticDetails
 from .connection import Connection
@@ -84,6 +87,7 @@ from .create_mysql_connection_details import CreateMysqlConnectionDetails
 from .create_nessie_iceberg_catalog_details import CreateNessieIcebergCatalogDetails
 from .create_oci_object_storage_connection_details import CreateOciObjectStorageConnectionDetails
 from .create_ogg_deployment_details import CreateOggDeploymentDetails
+from .create_oracle_ai_data_platform_connection_details import CreateOracleAiDataPlatformConnectionDetails
 from .create_oracle_connection_details import CreateOracleConnectionDetails
 from .create_oracle_nosql_connection_details import CreateOracleNosqlConnectionDetails
 from .create_pipeline_details import CreatePipelineDetails
@@ -199,6 +203,8 @@ from .nessie_iceberg_catalog_summary import NessieIcebergCatalogSummary
 from .oci_object_storage_connection import OciObjectStorageConnection
 from .oci_object_storage_connection_summary import OciObjectStorageConnectionSummary
 from .ogg_deployment import OggDeployment
+from .oracle_ai_data_platform_connection import OracleAiDataPlatformConnection
+from .oracle_ai_data_platform_connection_summary import OracleAiDataPlatformConnectionSummary
 from .oracle_connection import OracleConnection
 from .oracle_connection_summary import OracleConnectionSummary
 from .oracle_nosql_connection import OracleNosqlConnection
@@ -296,6 +302,7 @@ from .update_mysql_connection_details import UpdateMysqlConnectionDetails
 from .update_nessie_iceberg_catalog_details import UpdateNessieIcebergCatalogDetails
 from .update_oci_object_storage_connection_details import UpdateOciObjectStorageConnectionDetails
 from .update_ogg_deployment_details import UpdateOggDeploymentDetails
+from .update_oracle_ai_data_platform_connection_details import UpdateOracleAiDataPlatformConnectionDetails
 from .update_oracle_connection_details import UpdateOracleConnectionDetails
 from .update_oracle_nosql_connection_details import UpdateOracleNosqlConnectionDetails
 from .update_pipeline_details import UpdatePipelineDetails
@@ -342,10 +349,13 @@ golden_gate_type_mapping = {
     "CertificateCollection": CertificateCollection,
     "CertificateSummary": CertificateSummary,
     "ChangeConnectionCompartmentDetails": ChangeConnectionCompartmentDetails,
+    "ChangeConnectionSubscriptionDetails": ChangeConnectionSubscriptionDetails,
     "ChangeDatabaseRegistrationCompartmentDetails": ChangeDatabaseRegistrationCompartmentDetails,
     "ChangeDeploymentBackupCompartmentDetails": ChangeDeploymentBackupCompartmentDetails,
     "ChangeDeploymentCompartmentDetails": ChangeDeploymentCompartmentDetails,
+    "ChangeDeploymentSubscriptionDetails": ChangeDeploymentSubscriptionDetails,
     "ChangePipelineCompartmentDetails": ChangePipelineCompartmentDetails,
+    "ChangeSubscriptionDetails": ChangeSubscriptionDetails,
     "CollectDeploymentDiagnosticDetails": CollectDeploymentDiagnosticDetails,
     "CollectPipelineDiagnosticDetails": CollectPipelineDiagnosticDetails,
     "Connection": Connection,
@@ -396,6 +406,7 @@ golden_gate_type_mapping = {
     "CreateNessieIcebergCatalogDetails": CreateNessieIcebergCatalogDetails,
     "CreateOciObjectStorageConnectionDetails": CreateOciObjectStorageConnectionDetails,
     "CreateOggDeploymentDetails": CreateOggDeploymentDetails,
+    "CreateOracleAiDataPlatformConnectionDetails": CreateOracleAiDataPlatformConnectionDetails,
     "CreateOracleConnectionDetails": CreateOracleConnectionDetails,
     "CreateOracleNosqlConnectionDetails": CreateOracleNosqlConnectionDetails,
     "CreatePipelineDetails": CreatePipelineDetails,
@@ -511,6 +522,8 @@ golden_gate_type_mapping = {
     "OciObjectStorageConnection": OciObjectStorageConnection,
     "OciObjectStorageConnectionSummary": OciObjectStorageConnectionSummary,
     "OggDeployment": OggDeployment,
+    "OracleAiDataPlatformConnection": OracleAiDataPlatformConnection,
+    "OracleAiDataPlatformConnectionSummary": OracleAiDataPlatformConnectionSummary,
     "OracleConnection": OracleConnection,
     "OracleConnectionSummary": OracleConnectionSummary,
     "OracleNosqlConnection": OracleNosqlConnection,
@@ -608,6 +621,7 @@ golden_gate_type_mapping = {
     "UpdateNessieIcebergCatalogDetails": UpdateNessieIcebergCatalogDetails,
     "UpdateOciObjectStorageConnectionDetails": UpdateOciObjectStorageConnectionDetails,
     "UpdateOggDeploymentDetails": UpdateOggDeploymentDetails,
+    "UpdateOracleAiDataPlatformConnectionDetails": UpdateOracleAiDataPlatformConnectionDetails,
     "UpdateOracleConnectionDetails": UpdateOracleConnectionDetails,
     "UpdateOracleNosqlConnectionDetails": UpdateOracleNosqlConnectionDetails,
     "UpdatePipelineDetails": UpdatePipelineDetails,

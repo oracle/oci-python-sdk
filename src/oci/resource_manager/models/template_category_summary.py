@@ -76,7 +76,7 @@ class TemplateCategorySummary(object):
     def display_name(self):
         """
         Gets the display_name of this TemplateCategorySummary.
-        The name of the template category.
+        The name of the template category. Not changeable.
 
 
         :return: The display_name of this TemplateCategorySummary.
@@ -88,7 +88,7 @@ class TemplateCategorySummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this TemplateCategorySummary.
-        The name of the template category.
+        The name of the template category. Not changeable.
 
 
         :param display_name: The display_name of this TemplateCategorySummary.

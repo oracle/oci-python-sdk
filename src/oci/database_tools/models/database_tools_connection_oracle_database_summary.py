@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DatabaseToolsConnectionOracleDatabaseSummary(DatabaseToolsConnectionSummary):
     """
-    DatabaseToolsConnectionSummary of an Oracle Database.
+    Database Tools connection summary of an Oracle Database.
     """
 
     def __init__(self, **kwargs):
@@ -320,7 +320,7 @@ class DatabaseToolsConnectionOracleDatabaseSummary(DatabaseToolsConnectionSummar
     def private_endpoint_id(self):
         """
         Gets the private_endpoint_id of this DatabaseToolsConnectionOracleDatabaseSummary.
-        The `OCID`__ of the `DatabaseToolsPrivateEndpoint` used to access the database in the customer VCN.
+        The `OCID`__ of the Database Tools private endpoint used to access the database in the customer VCN.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -334,7 +334,7 @@ class DatabaseToolsConnectionOracleDatabaseSummary(DatabaseToolsConnectionSummar
     def private_endpoint_id(self, private_endpoint_id):
         """
         Sets the private_endpoint_id of this DatabaseToolsConnectionOracleDatabaseSummary.
-        The `OCID`__ of the `DatabaseToolsPrivateEndpoint` used to access the database in the customer VCN.
+        The `OCID`__ of the Database Tools private endpoint used to access the database in the customer VCN.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

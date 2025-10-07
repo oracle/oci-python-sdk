@@ -26,6 +26,7 @@ Opensearch
     oci.opensearch.models.BackupOpensearchClusterDetails
     oci.opensearch.models.BackupPolicy
     oci.opensearch.models.BenchmarkDetails
+    oci.opensearch.models.CertificateConfig
     oci.opensearch.models.ChangeOpensearchClusterBackupCompartmentDetails
     oci.opensearch.models.ChangeOpensearchClusterCompartmentDetails
     oci.opensearch.models.ConfigureOutboundClusterDetails

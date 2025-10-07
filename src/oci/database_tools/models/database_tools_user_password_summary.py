@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DatabaseToolsUserPasswordSummary(object):
     """
-    The user password.
+    The database user password.
     """
 
     #: A constant which can be used with the value_type property of a DatabaseToolsUserPasswordSummary.

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DatabaseToolsConnection(object):
     """
-    Description of the Database Tools connection.
+    Provides connectivity details required to establish a connection to a database.
     """
 
     #: A constant which can be used with the lifecycle_state property of a DatabaseToolsConnection.
@@ -366,7 +366,7 @@ class DatabaseToolsConnection(object):
     def time_updated(self):
         """
         **[Required]** Gets the time_updated of this DatabaseToolsConnection.
-        The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
+        The time the Database Tools connection was updated. An RFC3339 formatted datetime string.
 
 
         :return: The time_updated of this DatabaseToolsConnection.
@@ -378,7 +378,7 @@ class DatabaseToolsConnection(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this DatabaseToolsConnection.
-        The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
+        The time the Database Tools connection was updated. An RFC3339 formatted datetime string.
 
 
         :param time_updated: The time_updated of this DatabaseToolsConnection.

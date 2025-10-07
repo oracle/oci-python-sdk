@@ -56,6 +56,10 @@ class StackSummary(object):
             The value to assign to the defined_tags property of this StackSummary.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this StackSummary.
+        :type system_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -66,7 +70,8 @@ class StackSummary(object):
             'lifecycle_state': 'str',
             'terraform_version': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'id': 'id',
@@ -77,7 +82,8 @@ class StackSummary(object):
             'lifecycle_state': 'lifecycleState',
             'terraform_version': 'terraformVersion',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'system_tags': 'systemTags'
         }
         self._id = None
         self._compartment_id = None
@@ -88,6 +94,7 @@ class StackSummary(object):
         self._terraform_version = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
 
     @property
     def id(self):
@@ -141,7 +148,7 @@ class StackSummary(object):
     def display_name(self):
         """
         Gets the display_name of this StackSummary.
-        Human-readable display name for the stack.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 
 
         :return: The display_name of this StackSummary.
@@ -153,7 +160,7 @@ class StackSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this StackSummary.
-        Human-readable display name for the stack.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this StackSummary.
@@ -221,13 +228,6 @@ class StackSummary(object):
         For more information about stack lifecycle states in Resource Manager, see
         `Key Concepts`__.
 
-        Allowable values:
-        - CREATING
-        - ACTIVE
-        - DELETING
-        - DELETED
-        - FAILED
-
         __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates
 
 
@@ -244,13 +244,6 @@ class StackSummary(object):
         For more information about stack lifecycle states in Resource Manager, see
         `Key Concepts`__.
 
-        Allowable values:
-        - CREATING
-        - ACTIVE
-        - DELETING
-        - DELETED
-        - FAILED
-
         __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates
 
 
@@ -263,7 +256,7 @@ class StackSummary(object):
     def terraform_version(self):
         """
         Gets the terraform_version of this StackSummary.
-        The version of Terraform specified for the stack. Example: `0.12.x`
+        The version of Terraform specified for the stack. Example: `1.5.x`
 
 
         :return: The terraform_version of this StackSummary.
@@ -275,7 +268,7 @@ class StackSummary(object):
     def terraform_version(self, terraform_version):
         """
         Sets the terraform_version of this StackSummary.
-        The version of Terraform specified for the stack. Example: `0.12.x`
+        The version of Terraform specified for the stack. Example: `1.5.x`
 
 
         :param terraform_version: The terraform_version of this StackSummary.
@@ -287,7 +280,7 @@ class StackSummary(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this StackSummary.
-        Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace.
+        Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace.
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
@@ -303,7 +296,7 @@ class StackSummary(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this StackSummary.
-        Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace.
+        Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace.
         For more information, see `Resource Tags`__.
         Example: `{\"Department\": \"Finance\"}`
 
@@ -346,6 +339,38 @@ class StackSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this StackSummary.
+        The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces.
+        For more information, see `Resource Tags`__.
+        Example: `{orcl-cloud: {free-tier-retain: true}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The system_tags of this StackSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this StackSummary.
+        The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces.
+        For more information, see `Resource Tags`__.
+        Example: `{orcl-cloud: {free-tier-retain: true}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param system_tags: The system_tags of this StackSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

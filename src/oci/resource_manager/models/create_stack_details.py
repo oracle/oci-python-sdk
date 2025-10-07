@@ -121,7 +121,7 @@ class CreateStackDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreateStackDetails.
-        The stack's display name.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 
 
         :return: The display_name of this CreateStackDetails.
@@ -133,7 +133,7 @@ class CreateStackDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateStackDetails.
-        The stack's display name.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this CreateStackDetails.
@@ -239,7 +239,7 @@ class CreateStackDetails(object):
     def terraform_version(self):
         """
         Gets the terraform_version of this CreateStackDetails.
-        The version of Terraform to use with the stack. Example: `0.12.x`
+        The version of Terraform to use with the stack. Example: `1.5.x`
 
 
         :return: The terraform_version of this CreateStackDetails.
@@ -251,7 +251,7 @@ class CreateStackDetails(object):
     def terraform_version(self, terraform_version):
         """
         Sets the terraform_version of this CreateStackDetails.
-        The version of Terraform to use with the stack. Example: `0.12.x`
+        The version of Terraform to use with the stack. Example: `1.5.x`
 
 
         :param terraform_version: The terraform_version of this CreateStackDetails.

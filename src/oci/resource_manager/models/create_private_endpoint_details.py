@@ -60,6 +60,10 @@ class CreatePrivateEndpointDetails(object):
             The value to assign to the defined_tags property of this CreatePrivateEndpointDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this CreatePrivateEndpointDetails.
+        :type security_attributes: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -71,7 +75,8 @@ class CreatePrivateEndpointDetails(object):
             'nsg_id_list': 'list[str]',
             'is_used_with_configuration_source_provider': 'bool',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'security_attributes': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'compartment_id': 'compartmentId',
@@ -83,7 +88,8 @@ class CreatePrivateEndpointDetails(object):
             'nsg_id_list': 'nsgIdList',
             'is_used_with_configuration_source_provider': 'isUsedWithConfigurationSourceProvider',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'security_attributes': 'securityAttributes'
         }
         self._compartment_id = None
         self._display_name = None
@@ -95,6 +101,7 @@ class CreatePrivateEndpointDetails(object):
         self._is_used_with_configuration_source_provider = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._security_attributes = None
 
     @property
     def compartment_id(self):
@@ -128,7 +135,7 @@ class CreatePrivateEndpointDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this CreatePrivateEndpointDetails.
-        The private endpoint display name. Avoid entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 
 
         :return: The display_name of this CreatePrivateEndpointDetails.
@@ -140,7 +147,7 @@ class CreatePrivateEndpointDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreatePrivateEndpointDetails.
-        The private endpoint display name. Avoid entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this CreatePrivateEndpointDetails.
@@ -375,6 +382,40 @@ class CreatePrivateEndpointDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this CreatePrivateEndpointDetails.
+        `Security attributes`__ are labels for a resource that can be referenced in a `Zero Trust Packet Routing`__ (ZPR) policy to control access to ZPR-supported resources.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
+
+
+        :return: The security_attributes of this CreatePrivateEndpointDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this CreatePrivateEndpointDetails.
+        `Security attributes`__ are labels for a resource that can be referenced in a `Zero Trust Packet Routing`__ (ZPR) policy to control access to ZPR-supported resources.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
+
+
+        :param security_attributes: The security_attributes of this CreatePrivateEndpointDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     def __repr__(self):
         return formatted_flat_dict(self)

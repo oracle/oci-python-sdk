@@ -39,7 +39,7 @@ class KafkaSchemaRegistryConnection(Connection):
 
         :param connection_type:
             The value to assign to the connection_type property of this KafkaSchemaRegistryConnection.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type connection_type: str
 
@@ -123,6 +123,18 @@ class KafkaSchemaRegistryConnection(Connection):
             The value to assign to the does_use_secret_ids property of this KafkaSchemaRegistryConnection.
         :type does_use_secret_ids: bool
 
+        :param subscription_id:
+            The value to assign to the subscription_id property of this KafkaSchemaRegistryConnection.
+        :type subscription_id: str
+
+        :param cluster_placement_group_id:
+            The value to assign to the cluster_placement_group_id property of this KafkaSchemaRegistryConnection.
+        :type cluster_placement_group_id: str
+
+        :param security_attributes:
+            The value to assign to the security_attributes property of this KafkaSchemaRegistryConnection.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param technology_type:
             The value to assign to the technology_type property of this KafkaSchemaRegistryConnection.
             Allowed values for this property are: "CONFLUENT_SCHEMA_REGISTRY", 'UNKNOWN_ENUM_VALUE'.
@@ -193,6 +205,9 @@ class KafkaSchemaRegistryConnection(Connection):
             'subnet_id': 'str',
             'routing_method': 'str',
             'does_use_secret_ids': 'bool',
+            'subscription_id': 'str',
+            'cluster_placement_group_id': 'str',
+            'security_attributes': 'dict(str, dict(str, object))',
             'technology_type': 'str',
             'url': 'str',
             'authentication_type': 'str',
@@ -226,6 +241,9 @@ class KafkaSchemaRegistryConnection(Connection):
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
             'does_use_secret_ids': 'doesUseSecretIds',
+            'subscription_id': 'subscriptionId',
+            'cluster_placement_group_id': 'clusterPlacementGroupId',
+            'security_attributes': 'securityAttributes',
             'technology_type': 'technologyType',
             'url': 'url',
             'authentication_type': 'authenticationType',
@@ -258,6 +276,9 @@ class KafkaSchemaRegistryConnection(Connection):
         self._subnet_id = None
         self._routing_method = None
         self._does_use_secret_ids = None
+        self._subscription_id = None
+        self._cluster_placement_group_id = None
+        self._security_attributes = None
         self._technology_type = None
         self._url = None
         self._authentication_type = None

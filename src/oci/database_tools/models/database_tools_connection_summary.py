@@ -208,7 +208,7 @@ class DatabaseToolsConnectionSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this DatabaseToolsConnectionSummary.
-        The `OCID`__ of the `DatabaseToolsConnection`.
+        The `OCID`__ of the Database Tools connection.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -222,7 +222,7 @@ class DatabaseToolsConnectionSummary(object):
     def id(self, id):
         """
         Sets the id of this DatabaseToolsConnectionSummary.
-        The `OCID`__ of the `DatabaseToolsConnection`.
+        The `OCID`__ of the Database Tools connection.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

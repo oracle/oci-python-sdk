@@ -741,10 +741,13 @@ class OpensearchClusterClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
-    def list_opensearch_cluster_shapes(self, **kwargs):
+    def list_opensearch_cluster_shapes(self, compartment_id, **kwargs):
         """
         Retrieves available OpenSearch Cluster node shapes.
 
+
+        :param str compartment_id: (required)
+            The ID of the compartment in which to list resources.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -765,7 +768,7 @@ class OpensearchClusterClient(object):
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opensearch/list_opensearch_cluster_shapes.py.html>`__ to see an example of how to use list_opensearch_cluster_shapes API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
-        required_arguments = []
+        required_arguments = ['compartmentId']
         resource_path = "/shapes"
         method = "GET"
         operation_name = "list_opensearch_cluster_shapes"
@@ -776,6 +779,11 @@ class OpensearchClusterClient(object):
         if extra_kwargs:
             raise ValueError(
                 f"list_opensearch_cluster_shapes got unknown kwargs: {extra_kwargs!r}")
+
+        query_params = {
+            "compartmentId": compartment_id
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -795,6 +803,7 @@ class OpensearchClusterClient(object):
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
+                query_params=query_params,
                 header_params=header_params,
                 response_type="ShapesDetails",
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -805,6 +814,7 @@ class OpensearchClusterClient(object):
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
+                query_params=query_params,
                 header_params=header_params,
                 response_type="ShapesDetails",
                 allow_control_chars=kwargs.get('allow_control_chars'),

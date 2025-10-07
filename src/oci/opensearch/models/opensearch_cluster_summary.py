@@ -68,6 +68,10 @@ class OpensearchClusterSummary(object):
             The value to assign to the system_tags property of this OpensearchClusterSummary.
         :type system_tags: dict(str, dict(str, object))
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this OpensearchClusterSummary.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param software_version:
             The value to assign to the software_version property of this OpensearchClusterSummary.
         :type software_version: str
@@ -109,6 +113,7 @@ class OpensearchClusterSummary(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
+            'security_attributes': 'dict(str, dict(str, object))',
             'software_version': 'str',
             'total_storage_gb': 'int',
             'lifecycle_state': 'str',
@@ -127,6 +132,7 @@ class OpensearchClusterSummary(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
+            'security_attributes': 'securityAttributes',
             'software_version': 'softwareVersion',
             'total_storage_gb': 'totalStorageGB',
             'lifecycle_state': 'lifecycleState',
@@ -144,6 +150,7 @@ class OpensearchClusterSummary(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._security_attributes = None
         self._software_version = None
         self._total_storage_gb = None
         self._lifecycle_state = None
@@ -385,6 +392,40 @@ class OpensearchClusterSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._system_tags = system_tags
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this OpensearchClusterSummary.
+        Security attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The security_attributes of this OpensearchClusterSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this OpensearchClusterSummary.
+        Security attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param security_attributes: The security_attributes of this OpensearchClusterSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     @property
     def software_version(self):

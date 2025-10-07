@@ -5,6 +5,40 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.161.0 - 2025-10-07
+====================
+
+Added 
+----- 
+* Support for OCI Internet of Things (OCI IoT) service  
+* Support for Zero Trust Packet Routing (ZPR) security attributes in the Resource Manager service 
+* Support for Zero Trust Packet Routing (ZPR) security attributes in the Streaming service 
+* Support for Zero Trust Packet Routing (ZPR) security attributes in the MySQL HeatWave service 
+* Support for Zero Trust Packet Routing (ZPR) security attributes in the GoldenGate service 
+* Support for Zero Trust Packet Routing (ZPR) security attributes in the OCI Cache service 
+* Support for Zero Trust Packet Routing (ZPR) security attributes in the Database Tools service 
+* Support for Zero Trust Packet Routing (ZPR) security attributes in the OpenSearch service 
+* Support for Zero Trust Packet Routing (ZPR) security attributes in the Functions service 
+* Support for Zero Trust Packet Routing (ZPR) security attributes in the Integration Cloud service 
+* Support for data guards to convert standby database types in the Database service  
+* Support for Network 
+
+Security Groups (NSGs) when creating clusters in the OpenSearch service 
+* Support for specifying compartment id when listing cluster shapes in the OpenSearch service 
+* Support for additional parameters when listing add-on options in the Kubernetes Engine service  
+* Support for dynamic resource VMs in the Compute service 
+* Support for adding and removing subscriptions for resources in the GoldenGate service 
+* Support for additional parameters when creating and updating deployments in the GoldenGate service 
+* Support for additional parameters when creating and updating connections in the GoldenGate service 
+* Support for new connection type for database resources in the AI Data Platform service 
+* Support for resource principal authentication for OCI streaming connections in the GoldenGate service 
+* Support for new technology type for Kafka connections in the GoldenGate service  
+
+Breaking 
+-------- 
+* The field `Size` was made mandatory in the model `CreateVirtualNodePoolDetails`,`VirtualNodePoolSummary`,`VirtualNodePool` in the Kubernetes Engine service  
+
+====================
 2.160.3 - 2025-09-30
 ====================
 

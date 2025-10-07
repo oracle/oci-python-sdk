@@ -171,6 +171,18 @@ class CreateDeploymentDetails(object):
             Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "DATABASE_DB2I", "GGSA", "DATA_TRANSFORMS"
         :type deployment_type: str
 
+        :param subscription_id:
+            The value to assign to the subscription_id property of this CreateDeploymentDetails.
+        :type subscription_id: str
+
+        :param cluster_placement_group_id:
+            The value to assign to the cluster_placement_group_id property of this CreateDeploymentDetails.
+        :type cluster_placement_group_id: str
+
+        :param security_attributes:
+            The value to assign to the security_attributes property of this CreateDeploymentDetails.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param ogg_data:
             The value to assign to the ogg_data property of this CreateDeploymentDetails.
         :type ogg_data: oci.golden_gate.models.CreateOggDeploymentDetails
@@ -212,6 +224,9 @@ class CreateDeploymentDetails(object):
             'cpu_core_count': 'int',
             'is_auto_scaling_enabled': 'bool',
             'deployment_type': 'str',
+            'subscription_id': 'str',
+            'cluster_placement_group_id': 'str',
+            'security_attributes': 'dict(str, dict(str, object))',
             'ogg_data': 'CreateOggDeploymentDetails',
             'maintenance_window': 'CreateMaintenanceWindowDetails',
             'maintenance_configuration': 'CreateMaintenanceConfigurationDetails',
@@ -241,6 +256,9 @@ class CreateDeploymentDetails(object):
             'cpu_core_count': 'cpuCoreCount',
             'is_auto_scaling_enabled': 'isAutoScalingEnabled',
             'deployment_type': 'deploymentType',
+            'subscription_id': 'subscriptionId',
+            'cluster_placement_group_id': 'clusterPlacementGroupId',
+            'security_attributes': 'securityAttributes',
             'ogg_data': 'oggData',
             'maintenance_window': 'maintenanceWindow',
             'maintenance_configuration': 'maintenanceConfiguration',
@@ -269,6 +287,9 @@ class CreateDeploymentDetails(object):
         self._cpu_core_count = None
         self._is_auto_scaling_enabled = None
         self._deployment_type = None
+        self._subscription_id = None
+        self._cluster_placement_group_id = None
+        self._security_attributes = None
         self._ogg_data = None
         self._maintenance_window = None
         self._maintenance_configuration = None
@@ -892,6 +913,96 @@ class CreateDeploymentDetails(object):
                 f"Invalid value for `deployment_type`, must be None or one of {allowed_values}"
             )
         self._deployment_type = deployment_type
+
+    @property
+    def subscription_id(self):
+        """
+        Gets the subscription_id of this CreateDeploymentDetails.
+        The `OCID`__ of the subscription with which resource needs to be associated with.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The subscription_id of this CreateDeploymentDetails.
+        :rtype: str
+        """
+        return self._subscription_id
+
+    @subscription_id.setter
+    def subscription_id(self, subscription_id):
+        """
+        Sets the subscription_id of this CreateDeploymentDetails.
+        The `OCID`__ of the subscription with which resource needs to be associated with.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param subscription_id: The subscription_id of this CreateDeploymentDetails.
+        :type: str
+        """
+        self._subscription_id = subscription_id
+
+    @property
+    def cluster_placement_group_id(self):
+        """
+        Gets the cluster_placement_group_id of this CreateDeploymentDetails.
+        The OCID(/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource.
+        Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud
+        subscription id is provided. Otherwise the cluster placement group must not be provided.
+
+
+        :return: The cluster_placement_group_id of this CreateDeploymentDetails.
+        :rtype: str
+        """
+        return self._cluster_placement_group_id
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, cluster_placement_group_id):
+        """
+        Sets the cluster_placement_group_id of this CreateDeploymentDetails.
+        The OCID(/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource.
+        Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud
+        subscription id is provided. Otherwise the cluster placement group must not be provided.
+
+
+        :param cluster_placement_group_id: The cluster_placement_group_id of this CreateDeploymentDetails.
+        :type: str
+        """
+        self._cluster_placement_group_id = cluster_placement_group_id
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this CreateDeploymentDetails.
+        Security attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The security_attributes of this CreateDeploymentDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this CreateDeploymentDetails.
+        Security attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param security_attributes: The security_attributes of this CreateDeploymentDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     @property
     def ogg_data(self):

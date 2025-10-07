@@ -23,7 +23,7 @@ class UpdateDatabricksConnectionDetails(UpdateConnectionDetails):
 
         :param connection_type:
             The value to assign to the connection_type property of this UpdateDatabricksConnectionDetails.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG"
         :type connection_type: str
 
         :param display_name:
@@ -66,6 +66,10 @@ class UpdateDatabricksConnectionDetails(UpdateConnectionDetails):
         :param does_use_secret_ids:
             The value to assign to the does_use_secret_ids property of this UpdateDatabricksConnectionDetails.
         :type does_use_secret_ids: bool
+
+        :param security_attributes:
+            The value to assign to the security_attributes property of this UpdateDatabricksConnectionDetails.
+        :type security_attributes: dict(str, dict(str, object))
 
         :param authentication_type:
             The value to assign to the authentication_type property of this UpdateDatabricksConnectionDetails.
@@ -112,6 +116,7 @@ class UpdateDatabricksConnectionDetails(UpdateConnectionDetails):
             'subnet_id': 'str',
             'routing_method': 'str',
             'does_use_secret_ids': 'bool',
+            'security_attributes': 'dict(str, dict(str, object))',
             'authentication_type': 'str',
             'connection_url': 'str',
             'password': 'str',
@@ -133,6 +138,7 @@ class UpdateDatabricksConnectionDetails(UpdateConnectionDetails):
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
             'does_use_secret_ids': 'doesUseSecretIds',
+            'security_attributes': 'securityAttributes',
             'authentication_type': 'authenticationType',
             'connection_url': 'connectionUrl',
             'password': 'password',
@@ -153,6 +159,7 @@ class UpdateDatabricksConnectionDetails(UpdateConnectionDetails):
         self._subnet_id = None
         self._routing_method = None
         self._does_use_secret_ids = None
+        self._security_attributes = None
         self._authentication_type = None
         self._connection_url = None
         self._password = None

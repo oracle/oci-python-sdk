@@ -135,6 +135,7 @@ from .console_history import ConsoleHistory
 from .console_history_collection import ConsoleHistoryCollection
 from .console_history_summary import ConsoleHistorySummary
 from .convert_standby_autonomous_container_database_details import ConvertStandbyAutonomousContainerDatabaseDetails
+from .convert_standby_database_type_details import ConvertStandbyDatabaseTypeDetails
 from .convert_to_pdb_details import ConvertToPdbDetails
 from .convert_to_pdb_target_base import ConvertToPdbTargetBase
 from .convert_to_regular_pluggable_database_details import ConvertToRegularPluggableDatabaseDetails
@@ -646,6 +647,7 @@ database_type_mapping = {
     "ConsoleHistoryCollection": ConsoleHistoryCollection,
     "ConsoleHistorySummary": ConsoleHistorySummary,
     "ConvertStandbyAutonomousContainerDatabaseDetails": ConvertStandbyAutonomousContainerDatabaseDetails,
+    "ConvertStandbyDatabaseTypeDetails": ConvertStandbyDatabaseTypeDetails,
     "ConvertToPdbDetails": ConvertToPdbDetails,
     "ConvertToPdbTargetBase": ConvertToPdbTargetBase,
     "ConvertToRegularPluggableDatabaseDetails": ConvertToRegularPluggableDatabaseDetails,

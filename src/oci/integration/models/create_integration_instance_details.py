@@ -86,6 +86,10 @@ class CreateIntegrationInstanceDetails(object):
             The value to assign to the defined_tags property of this CreateIntegrationInstanceDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this CreateIntegrationInstanceDetails.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param is_byol:
             The value to assign to the is_byol property of this CreateIntegrationInstanceDetails.
         :type is_byol: bool
@@ -143,6 +147,7 @@ class CreateIntegrationInstanceDetails(object):
             'integration_instance_type': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'security_attributes': 'dict(str, dict(str, object))',
             'is_byol': 'bool',
             'idcs_at': 'str',
             'message_packs': 'int',
@@ -162,6 +167,7 @@ class CreateIntegrationInstanceDetails(object):
             'integration_instance_type': 'integrationInstanceType',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'security_attributes': 'securityAttributes',
             'is_byol': 'isByol',
             'idcs_at': 'idcsAt',
             'message_packs': 'messagePacks',
@@ -180,6 +186,7 @@ class CreateIntegrationInstanceDetails(object):
         self._integration_instance_type = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._security_attributes = None
         self._is_byol = None
         self._idcs_at = None
         self._message_packs = None
@@ -331,6 +338,40 @@ class CreateIntegrationInstanceDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this CreateIntegrationInstanceDetails.
+        Security attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The security_attributes of this CreateIntegrationInstanceDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this CreateIntegrationInstanceDetails.
+        Security attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param security_attributes: The security_attributes of this CreateIntegrationInstanceDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     @property
     def is_byol(self):

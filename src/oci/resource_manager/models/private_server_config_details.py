@@ -71,7 +71,7 @@ class PrivateServerConfigDetails(object):
     @property
     def certificate_id(self):
         """
-        **[Required]** Gets the certificate_id of this PrivateServerConfigDetails.
+        Gets the certificate_id of this PrivateServerConfigDetails.
         The `OCID`__ of a certificate associated with the configuration source provider.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm

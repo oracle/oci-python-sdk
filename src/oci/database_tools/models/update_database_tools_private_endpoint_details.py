@@ -28,6 +28,10 @@ class UpdateDatabaseToolsPrivateEndpointDetails(object):
             The value to assign to the freeform_tags property of this UpdateDatabaseToolsPrivateEndpointDetails.
         :type freeform_tags: dict(str, str)
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this UpdateDatabaseToolsPrivateEndpointDetails.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param display_name:
             The value to assign to the display_name property of this UpdateDatabaseToolsPrivateEndpointDetails.
         :type display_name: str
@@ -44,6 +48,7 @@ class UpdateDatabaseToolsPrivateEndpointDetails(object):
         self.swagger_types = {
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
+            'security_attributes': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'description': 'str',
             'nsg_ids': 'list[str]'
@@ -51,12 +56,14 @@ class UpdateDatabaseToolsPrivateEndpointDetails(object):
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
+            'security_attributes': 'securityAttributes',
             'display_name': 'displayName',
             'description': 'description',
             'nsg_ids': 'nsgIds'
         }
         self._defined_tags = None
         self._freeform_tags = None
+        self._security_attributes = None
         self._display_name = None
         self._description = None
         self._nsg_ids = None
@@ -112,6 +119,38 @@ class UpdateDatabaseToolsPrivateEndpointDetails(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this UpdateDatabaseToolsPrivateEndpointDetails.
+        Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `ZPR Artifacts`__.
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm
+
+
+        :return: The security_attributes of this UpdateDatabaseToolsPrivateEndpointDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this UpdateDatabaseToolsPrivateEndpointDetails.
+        Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `ZPR Artifacts`__.
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm
+
+
+        :param security_attributes: The security_attributes of this UpdateDatabaseToolsPrivateEndpointDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     @property
     def display_name(self):

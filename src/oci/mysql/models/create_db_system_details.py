@@ -84,6 +84,10 @@ class CreateDbSystemDetails(object):
             The value to assign to the nsg_ids property of this CreateDbSystemDetails.
         :type nsg_ids: list[str]
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this CreateDbSystemDetails.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param admin_username:
             The value to assign to the admin_username property of this CreateDbSystemDetails.
         :type admin_username: str
@@ -188,6 +192,7 @@ class CreateDbSystemDetails(object):
             'mysql_version': 'str',
             'subnet_id': 'str',
             'nsg_ids': 'list[str]',
+            'security_attributes': 'dict(str, dict(str, object))',
             'admin_username': 'str',
             'admin_password': 'str',
             'data_storage_size_in_gbs': 'int',
@@ -224,6 +229,7 @@ class CreateDbSystemDetails(object):
             'mysql_version': 'mysqlVersion',
             'subnet_id': 'subnetId',
             'nsg_ids': 'nsgIds',
+            'security_attributes': 'securityAttributes',
             'admin_username': 'adminUsername',
             'admin_password': 'adminPassword',
             'data_storage_size_in_gbs': 'dataStorageSizeInGBs',
@@ -259,6 +265,7 @@ class CreateDbSystemDetails(object):
         self._mysql_version = None
         self._subnet_id = None
         self._nsg_ids = None
+        self._security_attributes = None
         self._admin_username = None
         self._admin_password = None
         self._data_storage_size_in_gbs = None
@@ -607,6 +614,38 @@ class CreateDbSystemDetails(object):
         :type: list[str]
         """
         self._nsg_ids = nsg_ids
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this CreateDbSystemDetails.
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `ZPR Artifacts`__.
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm
+
+
+        :return: The security_attributes of this CreateDbSystemDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this CreateDbSystemDetails.
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `ZPR Artifacts`__.
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm
+
+
+        :param security_attributes: The security_attributes of this CreateDbSystemDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     @property
     def admin_username(self):

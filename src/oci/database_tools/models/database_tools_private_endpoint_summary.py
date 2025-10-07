@@ -64,6 +64,10 @@ class DatabaseToolsPrivateEndpointSummary(object):
             The value to assign to the system_tags property of this DatabaseToolsPrivateEndpointSummary.
         :type system_tags: dict(str, dict(str, object))
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this DatabaseToolsPrivateEndpointSummary.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param locks:
             The value to assign to the locks property of this DatabaseToolsPrivateEndpointSummary.
         :type locks: list[oci.database_tools.models.ResourceLock]
@@ -140,6 +144,7 @@ class DatabaseToolsPrivateEndpointSummary(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
             'system_tags': 'dict(str, dict(str, object))',
+            'security_attributes': 'dict(str, dict(str, object))',
             'locks': 'list[ResourceLock]',
             'display_name': 'str',
             'description': 'str',
@@ -163,6 +168,7 @@ class DatabaseToolsPrivateEndpointSummary(object):
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
             'system_tags': 'systemTags',
+            'security_attributes': 'securityAttributes',
             'locks': 'locks',
             'display_name': 'displayName',
             'description': 'description',
@@ -185,6 +191,7 @@ class DatabaseToolsPrivateEndpointSummary(object):
         self._defined_tags = None
         self._freeform_tags = None
         self._system_tags = None
+        self._security_attributes = None
         self._locks = None
         self._display_name = None
         self._description = None
@@ -308,6 +315,38 @@ class DatabaseToolsPrivateEndpointSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._system_tags = system_tags
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this DatabaseToolsPrivateEndpointSummary.
+        Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `ZPR Artifacts`__.
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm
+
+
+        :return: The security_attributes of this DatabaseToolsPrivateEndpointSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this DatabaseToolsPrivateEndpointSummary.
+        Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `ZPR Artifacts`__.
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm
+
+
+        :param security_attributes: The security_attributes of this DatabaseToolsPrivateEndpointSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     @property
     def locks(self):

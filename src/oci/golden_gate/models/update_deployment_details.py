@@ -102,6 +102,10 @@ class UpdateDeploymentDetails(object):
             The value to assign to the placements property of this UpdateDeploymentDetails.
         :type placements: list[oci.golden_gate.models.DeploymentPlacementDetails]
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this UpdateDeploymentDetails.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param ogg_data:
             The value to assign to the ogg_data property of this UpdateDeploymentDetails.
         :type ogg_data: oci.golden_gate.models.UpdateOggDeploymentDetails
@@ -136,6 +140,7 @@ class UpdateDeploymentDetails(object):
             'cpu_core_count': 'int',
             'is_auto_scaling_enabled': 'bool',
             'placements': 'list[DeploymentPlacementDetails]',
+            'security_attributes': 'dict(str, dict(str, object))',
             'ogg_data': 'UpdateOggDeploymentDetails',
             'maintenance_window': 'UpdateMaintenanceWindowDetails',
             'maintenance_configuration': 'UpdateMaintenanceConfigurationDetails',
@@ -158,6 +163,7 @@ class UpdateDeploymentDetails(object):
             'cpu_core_count': 'cpuCoreCount',
             'is_auto_scaling_enabled': 'isAutoScalingEnabled',
             'placements': 'placements',
+            'security_attributes': 'securityAttributes',
             'ogg_data': 'oggData',
             'maintenance_window': 'maintenanceWindow',
             'maintenance_configuration': 'maintenanceConfiguration',
@@ -179,6 +185,7 @@ class UpdateDeploymentDetails(object):
         self._cpu_core_count = None
         self._is_auto_scaling_enabled = None
         self._placements = None
+        self._security_attributes = None
         self._ogg_data = None
         self._maintenance_window = None
         self._maintenance_configuration = None
@@ -611,6 +618,40 @@ class UpdateDeploymentDetails(object):
         :type: list[oci.golden_gate.models.DeploymentPlacementDetails]
         """
         self._placements = placements
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this UpdateDeploymentDetails.
+        Security attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The security_attributes of this UpdateDeploymentDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this UpdateDeploymentDetails.
+        Security attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param security_attributes: The security_attributes of this UpdateDeploymentDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     @property
     def ogg_data(self):

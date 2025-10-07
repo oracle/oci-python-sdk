@@ -2930,6 +2930,9 @@ class ContainerEngineClient(object):
 
             Allowed values are: "NAME", "TIME_CREATED"
 
+        :param bool should_show_all_versions: (optional)
+            Whether to show all add-on versions
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -2964,7 +2967,8 @@ class ContainerEngineClient(object):
             "limit",
             "page",
             "sort_order",
-            "sort_by"
+            "sort_by",
+            "should_show_all_versions"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -2991,7 +2995,8 @@ class ContainerEngineClient(object):
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
-            "sortBy": kwargs.get("sort_by", missing)
+            "sortBy": kwargs.get("sort_by", missing),
+            "shouldShowAllVersions": kwargs.get("should_show_all_versions", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

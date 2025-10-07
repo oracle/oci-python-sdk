@@ -262,7 +262,7 @@ class CreateDatabaseToolsConnectionDetails(object):
     def type(self):
         """
         **[Required]** Gets the type of this CreateDatabaseToolsConnectionDetails.
-        The DatabaseToolsConnection type.
+        The Database Tools connection type.
 
         Allowed values for this property are: "ORACLE_DATABASE", "MYSQL", "POSTGRESQL", "GENERIC_JDBC"
 
@@ -276,7 +276,7 @@ class CreateDatabaseToolsConnectionDetails(object):
     def type(self, type):
         """
         Sets the type of this CreateDatabaseToolsConnectionDetails.
-        The DatabaseToolsConnection type.
+        The Database Tools connection type.
 
 
         :param type: The type of this CreateDatabaseToolsConnectionDetails.

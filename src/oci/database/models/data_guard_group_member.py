@@ -27,6 +27,10 @@ class DataGuardGroupMember(object):
     #: This constant has a value of "DISABLED_STANDBY"
     ROLE_DISABLED_STANDBY = "DISABLED_STANDBY"
 
+    #: A constant which can be used with the role property of a DataGuardGroupMember.
+    #: This constant has a value of "SNAPSHOT_STANDBY"
+    ROLE_SNAPSHOT_STANDBY = "SNAPSHOT_STANDBY"
+
     #: A constant which can be used with the transport_type property of a DataGuardGroupMember.
     #: This constant has a value of "SYNC"
     TRANSPORT_TYPE_SYNC = "SYNC"
@@ -54,7 +58,7 @@ class DataGuardGroupMember(object):
 
         :param role:
             The value to assign to the role property of this DataGuardGroupMember.
-            Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", "SNAPSHOT_STANDBY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type role: str
 
@@ -179,7 +183,7 @@ class DataGuardGroupMember(object):
         **[Required]** Gets the role of this DataGuardGroupMember.
         The role of the reporting database in this Data Guard association.
 
-        Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", "SNAPSHOT_STANDBY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -198,7 +202,7 @@ class DataGuardGroupMember(object):
         :param role: The role of this DataGuardGroupMember.
         :type: str
         """
-        allowed_values = ["PRIMARY", "STANDBY", "DISABLED_STANDBY"]
+        allowed_values = ["PRIMARY", "STANDBY", "DISABLED_STANDBY", "SNAPSHOT_STANDBY"]
         if not value_allowed_none_or_none_sentinel(role, allowed_values):
             role = 'UNKNOWN_ENUM_VALUE'
         self._role = role

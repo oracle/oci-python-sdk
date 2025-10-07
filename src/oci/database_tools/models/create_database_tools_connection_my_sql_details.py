@@ -176,7 +176,7 @@ class CreateDatabaseToolsConnectionMySqlDetails(CreateDatabaseToolsConnectionDet
     def user_name(self):
         """
         **[Required]** Gets the user_name of this CreateDatabaseToolsConnectionMySqlDetails.
-        The user name.
+        The database user name.
 
 
         :return: The user_name of this CreateDatabaseToolsConnectionMySqlDetails.
@@ -188,7 +188,7 @@ class CreateDatabaseToolsConnectionMySqlDetails(CreateDatabaseToolsConnectionDet
     def user_name(self, user_name):
         """
         Sets the user_name of this CreateDatabaseToolsConnectionMySqlDetails.
-        The user name.
+        The database user name.
 
 
         :param user_name: The user_name of this CreateDatabaseToolsConnectionMySqlDetails.

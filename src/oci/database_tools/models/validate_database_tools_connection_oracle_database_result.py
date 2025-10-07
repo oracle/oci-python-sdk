@@ -15,6 +15,14 @@ class ValidateDatabaseToolsConnectionOracleDatabaseResult(ValidateDatabaseToolsC
     Connection validaton result for the Oracle Database.
     """
 
+    #: A constant which can be used with the dbms_cloud_status property of a ValidateDatabaseToolsConnectionOracleDatabaseResult.
+    #: This constant has a value of "AVAILABLE"
+    DBMS_CLOUD_STATUS_AVAILABLE = "AVAILABLE"
+
+    #: A constant which can be used with the dbms_cloud_status property of a ValidateDatabaseToolsConnectionOracleDatabaseResult.
+    #: This constant has a value of "UNAVAILABLE"
+    DBMS_CLOUD_STATUS_UNAVAILABLE = "UNAVAILABLE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ValidateDatabaseToolsConnectionOracleDatabaseResult object with values from keyword arguments. The default value of the :py:attr:`~oci.database_tools.models.ValidateDatabaseToolsConnectionOracleDatabaseResult.type` attribute
@@ -23,7 +31,8 @@ class ValidateDatabaseToolsConnectionOracleDatabaseResult(ValidateDatabaseToolsC
 
         :param type:
             The value to assign to the type property of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
-            Allowed values for this property are: "ORACLE_DATABASE", "MYSQL", "POSTGRESQL", "GENERIC_JDBC"
+            Allowed values for this property are: "ORACLE_DATABASE", "MYSQL", "POSTGRESQL", "GENERIC_JDBC", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
         :param code:
@@ -50,6 +59,12 @@ class ValidateDatabaseToolsConnectionOracleDatabaseResult(ValidateDatabaseToolsC
             The value to assign to the database_version property of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
         :type database_version: str
 
+        :param dbms_cloud_status:
+            The value to assign to the dbms_cloud_status property of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+            Allowed values for this property are: "AVAILABLE", "UNAVAILABLE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type dbms_cloud_status: str
+
         """
         self.swagger_types = {
             'type': 'str',
@@ -58,7 +73,8 @@ class ValidateDatabaseToolsConnectionOracleDatabaseResult(ValidateDatabaseToolsC
             'cause': 'str',
             'action': 'str',
             'database_name': 'str',
-            'database_version': 'str'
+            'database_version': 'str',
+            'dbms_cloud_status': 'str'
         }
         self.attribute_map = {
             'type': 'type',
@@ -67,7 +83,8 @@ class ValidateDatabaseToolsConnectionOracleDatabaseResult(ValidateDatabaseToolsC
             'cause': 'cause',
             'action': 'action',
             'database_name': 'databaseName',
-            'database_version': 'databaseVersion'
+            'database_version': 'databaseVersion',
+            'dbms_cloud_status': 'dbmsCloudStatus'
         }
         self._type = None
         self._code = None
@@ -76,6 +93,7 @@ class ValidateDatabaseToolsConnectionOracleDatabaseResult(ValidateDatabaseToolsC
         self._action = None
         self._database_name = None
         self._database_version = None
+        self._dbms_cloud_status = None
         self._type = 'ORACLE_DATABASE'
 
     @property
@@ -125,6 +143,36 @@ class ValidateDatabaseToolsConnectionOracleDatabaseResult(ValidateDatabaseToolsC
         :type: str
         """
         self._database_version = database_version
+
+    @property
+    def dbms_cloud_status(self):
+        """
+        **[Required]** Gets the dbms_cloud_status of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        The DBMS_CLOUD package installation status.
+
+        Allowed values for this property are: "AVAILABLE", "UNAVAILABLE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The dbms_cloud_status of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        :rtype: str
+        """
+        return self._dbms_cloud_status
+
+    @dbms_cloud_status.setter
+    def dbms_cloud_status(self, dbms_cloud_status):
+        """
+        Sets the dbms_cloud_status of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        The DBMS_CLOUD package installation status.
+
+
+        :param dbms_cloud_status: The dbms_cloud_status of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        :type: str
+        """
+        allowed_values = ["AVAILABLE", "UNAVAILABLE"]
+        if not value_allowed_none_or_none_sentinel(dbms_cloud_status, allowed_values):
+            dbms_cloud_status = 'UNKNOWN_ENUM_VALUE'
+        self._dbms_cloud_status = dbms_cloud_status
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -13,12 +13,12 @@ from oci.decorators import init_model_state_from_kwargs
 class CustomTerraformProvider(object):
     """
     Location information about custom Terraform providers for a stack.
-    For more information, see `Custom Providers`__.
+    For more information, see `Using Custom Providers with a Stack`__.
     Note: Older stacks must be explicitly updated to use Terraform Registry (`isThirdPartyProviderExperienceEnabled=true`).
     See :func:`update_stack`. For more information, see
-    `Using Terraform Registry with Older Stacks`__.
+    `Using Terraform Registry with an Older Stack`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#features__custom-providers
+    __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/update-stack-custom-providers.htm
     __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/update-stack-tf-reg.htm
     """
 

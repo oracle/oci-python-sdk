@@ -154,7 +154,7 @@ class UpdateDatabaseToolsConnectionMySqlDetails(UpdateDatabaseToolsConnectionDet
     def user_name(self):
         """
         Gets the user_name of this UpdateDatabaseToolsConnectionMySqlDetails.
-        The user name.
+        The database user name.
 
 
         :return: The user_name of this UpdateDatabaseToolsConnectionMySqlDetails.
@@ -166,7 +166,7 @@ class UpdateDatabaseToolsConnectionMySqlDetails(UpdateDatabaseToolsConnectionDet
     def user_name(self, user_name):
         """
         Sets the user_name of this UpdateDatabaseToolsConnectionMySqlDetails.
-        The user name.
+        The database user name.
 
 
         :param user_name: The user_name of this UpdateDatabaseToolsConnectionMySqlDetails.
@@ -248,7 +248,7 @@ class UpdateDatabaseToolsConnectionMySqlDetails(UpdateDatabaseToolsConnectionDet
     def private_endpoint_id(self):
         """
         Gets the private_endpoint_id of this UpdateDatabaseToolsConnectionMySqlDetails.
-        The `OCID`__ of the DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+        The `OCID`__ of the Database Tools private endpoint used to access the database in the Customer VCN.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -262,7 +262,7 @@ class UpdateDatabaseToolsConnectionMySqlDetails(UpdateDatabaseToolsConnectionDet
     def private_endpoint_id(self, private_endpoint_id):
         """
         Sets the private_endpoint_id of this UpdateDatabaseToolsConnectionMySqlDetails.
-        The `OCID`__ of the DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+        The `OCID`__ of the Database Tools private endpoint used to access the database in the Customer VCN.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

@@ -104,6 +104,14 @@ class DeploymentPeerSummary(object):
             The value to assign to the time_last_synced property of this DeploymentPeerSummary.
         :type time_last_synced: datetime
 
+        :param subscription_id:
+            The value to assign to the subscription_id property of this DeploymentPeerSummary.
+        :type subscription_id: str
+
+        :param cluster_placement_group_id:
+            The value to assign to the cluster_placement_group_id property of this DeploymentPeerSummary.
+        :type cluster_placement_group_id: str
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this DeploymentPeerSummary.
             Allowed values for this property are: "CREATING", "ACTIVE", "FAILED", "UPDATING", "DELETING", 'UNKNOWN_ENUM_VALUE'.
@@ -123,6 +131,8 @@ class DeploymentPeerSummary(object):
             'time_updated': 'datetime',
             'time_role_changed': 'datetime',
             'time_last_synced': 'datetime',
+            'subscription_id': 'str',
+            'cluster_placement_group_id': 'str',
             'lifecycle_state': 'str'
         }
         self.attribute_map = {
@@ -137,6 +147,8 @@ class DeploymentPeerSummary(object):
             'time_updated': 'timeUpdated',
             'time_role_changed': 'timeRoleChanged',
             'time_last_synced': 'timeLastSynced',
+            'subscription_id': 'subscriptionId',
+            'cluster_placement_group_id': 'clusterPlacementGroupId',
             'lifecycle_state': 'lifecycleState'
         }
         self._deployment_id = None
@@ -150,6 +162,8 @@ class DeploymentPeerSummary(object):
         self._time_updated = None
         self._time_role_changed = None
         self._time_last_synced = None
+        self._subscription_id = None
+        self._cluster_placement_group_id = None
         self._lifecycle_state = None
 
     @property
@@ -457,6 +471,62 @@ class DeploymentPeerSummary(object):
         :type: datetime
         """
         self._time_last_synced = time_last_synced
+
+    @property
+    def subscription_id(self):
+        """
+        Gets the subscription_id of this DeploymentPeerSummary.
+        The `OCID`__ of the subscription with which resource needs to be associated with.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The subscription_id of this DeploymentPeerSummary.
+        :rtype: str
+        """
+        return self._subscription_id
+
+    @subscription_id.setter
+    def subscription_id(self, subscription_id):
+        """
+        Sets the subscription_id of this DeploymentPeerSummary.
+        The `OCID`__ of the subscription with which resource needs to be associated with.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param subscription_id: The subscription_id of this DeploymentPeerSummary.
+        :type: str
+        """
+        self._subscription_id = subscription_id
+
+    @property
+    def cluster_placement_group_id(self):
+        """
+        Gets the cluster_placement_group_id of this DeploymentPeerSummary.
+        The OCID(/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource.
+        Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud
+        subscription id is provided. Otherwise the cluster placement group must not be provided.
+
+
+        :return: The cluster_placement_group_id of this DeploymentPeerSummary.
+        :rtype: str
+        """
+        return self._cluster_placement_group_id
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, cluster_placement_group_id):
+        """
+        Sets the cluster_placement_group_id of this DeploymentPeerSummary.
+        The OCID(/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource.
+        Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud
+        subscription id is provided. Otherwise the cluster placement group must not be provided.
+
+
+        :param cluster_placement_group_id: The cluster_placement_group_id of this DeploymentPeerSummary.
+        :type: str
+        """
+        self._cluster_placement_group_id = cluster_placement_group_id
 
     @property
     def lifecycle_state(self):

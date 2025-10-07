@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DatabaseToolsConnectionGenericJdbcSummary(DatabaseToolsConnectionSummary):
     """
-    DatabaseToolsConnectionSummary of a Generic JDBC database system.
+    Database Tools connection summary of a Generic JDBC database system.
     """
 
     def __init__(self, **kwargs):
@@ -185,7 +185,7 @@ class DatabaseToolsConnectionGenericJdbcSummary(DatabaseToolsConnectionSummary):
     def user_name(self):
         """
         Gets the user_name of this DatabaseToolsConnectionGenericJdbcSummary.
-        The user name.
+        The database user name.
 
 
         :return: The user_name of this DatabaseToolsConnectionGenericJdbcSummary.
@@ -197,7 +197,7 @@ class DatabaseToolsConnectionGenericJdbcSummary(DatabaseToolsConnectionSummary):
     def user_name(self, user_name):
         """
         Sets the user_name of this DatabaseToolsConnectionGenericJdbcSummary.
-        The user name.
+        The database user name.
 
 
         :param user_name: The user_name of this DatabaseToolsConnectionGenericJdbcSummary.
