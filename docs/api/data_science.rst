@@ -220,7 +220,9 @@ Data Science
     oci.data_science.models.PipelineDataflowStepRun
     oci.data_science.models.PipelineDataflowStepUpdateDetails
     oci.data_science.models.PipelineDefaultConfigurationDetails
+    oci.data_science.models.PipelineDefaultStepParameterDetails
     oci.data_science.models.PipelineInfrastructureConfigurationDetails
+    oci.data_science.models.PipelineJsonStepOutputParameterDetails
     oci.data_science.models.PipelineLogConfigurationDetails
     oci.data_science.models.PipelineMLJobStepDetails
     oci.data_science.models.PipelineMLJobStepRun
@@ -232,7 +234,9 @@ Data Science
     oci.data_science.models.PipelineShapeConfigDetails
     oci.data_science.models.PipelineStepConfigurationDetails
     oci.data_science.models.PipelineStepDetails
+    oci.data_science.models.PipelineStepOutputParameterDetails
     oci.data_science.models.PipelineStepOverrideDetails
+    oci.data_science.models.PipelineStepParameterDetails
     oci.data_science.models.PipelineStepRun
     oci.data_science.models.PipelineStepUpdateDetails
     oci.data_science.models.PipelineSummary

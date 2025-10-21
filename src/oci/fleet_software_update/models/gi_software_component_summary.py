@@ -27,6 +27,10 @@ class GiSoftwareComponentSummary(SoftwareComponentSummary):
     #: This constant has a value of "GI_23"
     SOURCE_MAJOR_VERSION_GI_23 = "GI_23"
 
+    #: A constant which can be used with the source_major_version property of a GiSoftwareComponentSummary.
+    #: This constant has a value of "GI_26"
+    SOURCE_MAJOR_VERSION_GI_26 = "GI_26"
+
     def __init__(self, **kwargs):
         """
         Initializes a new GiSoftwareComponentSummary object with values from keyword arguments. The default value of the :py:attr:`~oci.fleet_software_update.models.GiSoftwareComponentSummary.component_type` attribute
@@ -40,7 +44,7 @@ class GiSoftwareComponentSummary(SoftwareComponentSummary):
 
         :param source_major_version:
             The value to assign to the source_major_version property of this GiSoftwareComponentSummary.
-            Allowed values for this property are: "GI_18", "GI_19", "GI_23"
+            Allowed values for this property are: "GI_18", "GI_19", "GI_23", "GI_26"
         :type source_major_version: str
 
         """
@@ -63,7 +67,7 @@ class GiSoftwareComponentSummary(SoftwareComponentSummary):
         Grid Infrastructure Major Version of targets to be included in the Exadata Fleet Update Collection.
         Only GI targets that match the version specified in this value would be added to the Exadata Fleet Update Collection.
 
-        Allowed values for this property are: "GI_18", "GI_19", "GI_23"
+        Allowed values for this property are: "GI_18", "GI_19", "GI_23", "GI_26"
 
 
         :return: The source_major_version of this GiSoftwareComponentSummary.
@@ -82,7 +86,7 @@ class GiSoftwareComponentSummary(SoftwareComponentSummary):
         :param source_major_version: The source_major_version of this GiSoftwareComponentSummary.
         :type: str
         """
-        allowed_values = ["GI_18", "GI_19", "GI_23"]
+        allowed_values = ["GI_18", "GI_19", "GI_23", "GI_26"]
         if not value_allowed_none_or_none_sentinel(source_major_version, allowed_values):
             raise ValueError(
                 f"Invalid value for `source_major_version`, must be None or one of {allowed_values}"

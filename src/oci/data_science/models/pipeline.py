@@ -88,6 +88,10 @@ class Pipeline(object):
             The value to assign to the storage_mount_configuration_details_list property of this Pipeline.
         :type storage_mount_configuration_details_list: list[oci.data_science.models.StorageMountConfigurationDetails]
 
+        :param parameters:
+            The value to assign to the parameters property of this Pipeline.
+        :type parameters: dict(str, str)
+
         :param step_details:
             The value to assign to the step_details property of this Pipeline.
         :type step_details: list[oci.data_science.models.PipelineStepDetails]
@@ -128,6 +132,7 @@ class Pipeline(object):
             'log_configuration_details': 'PipelineLogConfigurationDetails',
             'infrastructure_configuration_details': 'PipelineInfrastructureConfigurationDetails',
             'storage_mount_configuration_details_list': 'list[StorageMountConfigurationDetails]',
+            'parameters': 'dict(str, str)',
             'step_details': 'list[PipelineStepDetails]',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
@@ -148,6 +153,7 @@ class Pipeline(object):
             'log_configuration_details': 'logConfigurationDetails',
             'infrastructure_configuration_details': 'infrastructureConfigurationDetails',
             'storage_mount_configuration_details_list': 'storageMountConfigurationDetailsList',
+            'parameters': 'parameters',
             'step_details': 'stepDetails',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
@@ -167,6 +173,7 @@ class Pipeline(object):
         self._log_configuration_details = None
         self._infrastructure_configuration_details = None
         self._storage_mount_configuration_details_list = None
+        self._parameters = None
         self._step_details = None
         self._lifecycle_state = None
         self._lifecycle_details = None
@@ -477,6 +484,30 @@ class Pipeline(object):
         :type: list[oci.data_science.models.StorageMountConfigurationDetails]
         """
         self._storage_mount_configuration_details_list = storage_mount_configuration_details_list
+
+    @property
+    def parameters(self):
+        """
+        Gets the parameters of this Pipeline.
+        Parameters used in the pipeline.
+
+
+        :return: The parameters of this Pipeline.
+        :rtype: dict(str, str)
+        """
+        return self._parameters
+
+    @parameters.setter
+    def parameters(self, parameters):
+        """
+        Sets the parameters of this Pipeline.
+        Parameters used in the pipeline.
+
+
+        :param parameters: The parameters of this Pipeline.
+        :type: dict(str, str)
+        """
+        self._parameters = parameters
 
     @property
     def step_details(self):

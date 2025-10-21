@@ -40,26 +40,33 @@ class PipelineStepOverrideDetails(object):
             The value to assign to the step_infrastructure_configuration_details property of this PipelineStepOverrideDetails.
         :type step_infrastructure_configuration_details: oci.data_science.models.PipelineInfrastructureConfigurationDetails
 
+        :param step_storage_mount_configuration_details_list:
+            The value to assign to the step_storage_mount_configuration_details_list property of this PipelineStepOverrideDetails.
+        :type step_storage_mount_configuration_details_list: list[oci.data_science.models.StorageMountConfigurationDetails]
+
         """
         self.swagger_types = {
             'step_name': 'str',
             'step_configuration_details': 'PipelineStepConfigurationDetails',
             'step_container_configuration_details': 'PipelineContainerConfigurationDetails',
             'step_dataflow_configuration_details': 'PipelineDataflowConfigurationDetails',
-            'step_infrastructure_configuration_details': 'PipelineInfrastructureConfigurationDetails'
+            'step_infrastructure_configuration_details': 'PipelineInfrastructureConfigurationDetails',
+            'step_storage_mount_configuration_details_list': 'list[StorageMountConfigurationDetails]'
         }
         self.attribute_map = {
             'step_name': 'stepName',
             'step_configuration_details': 'stepConfigurationDetails',
             'step_container_configuration_details': 'stepContainerConfigurationDetails',
             'step_dataflow_configuration_details': 'stepDataflowConfigurationDetails',
-            'step_infrastructure_configuration_details': 'stepInfrastructureConfigurationDetails'
+            'step_infrastructure_configuration_details': 'stepInfrastructureConfigurationDetails',
+            'step_storage_mount_configuration_details_list': 'stepStorageMountConfigurationDetailsList'
         }
         self._step_name = None
         self._step_configuration_details = None
         self._step_container_configuration_details = None
         self._step_dataflow_configuration_details = None
         self._step_infrastructure_configuration_details = None
+        self._step_storage_mount_configuration_details_list = None
 
     @property
     def step_name(self):
@@ -164,6 +171,30 @@ class PipelineStepOverrideDetails(object):
         :type: oci.data_science.models.PipelineInfrastructureConfigurationDetails
         """
         self._step_infrastructure_configuration_details = step_infrastructure_configuration_details
+
+    @property
+    def step_storage_mount_configuration_details_list(self):
+        """
+        Gets the step_storage_mount_configuration_details_list of this PipelineStepOverrideDetails.
+        The storage mount details to mount to the instance running the pipeline step.
+
+
+        :return: The step_storage_mount_configuration_details_list of this PipelineStepOverrideDetails.
+        :rtype: list[oci.data_science.models.StorageMountConfigurationDetails]
+        """
+        return self._step_storage_mount_configuration_details_list
+
+    @step_storage_mount_configuration_details_list.setter
+    def step_storage_mount_configuration_details_list(self, step_storage_mount_configuration_details_list):
+        """
+        Sets the step_storage_mount_configuration_details_list of this PipelineStepOverrideDetails.
+        The storage mount details to mount to the instance running the pipeline step.
+
+
+        :param step_storage_mount_configuration_details_list: The step_storage_mount_configuration_details_list of this PipelineStepOverrideDetails.
+        :type: list[oci.data_science.models.StorageMountConfigurationDetails]
+        """
+        self._step_storage_mount_configuration_details_list = step_storage_mount_configuration_details_list
 
     def __repr__(self):
         return formatted_flat_dict(self)

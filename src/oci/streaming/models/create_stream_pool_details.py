@@ -44,6 +44,10 @@ class CreateStreamPoolDetails(object):
             The value to assign to the freeform_tags property of this CreateStreamPoolDetails.
         :type freeform_tags: dict(str, str)
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this CreateStreamPoolDetails.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param defined_tags:
             The value to assign to the defined_tags property of this CreateStreamPoolDetails.
         :type defined_tags: dict(str, dict(str, object))
@@ -56,6 +60,7 @@ class CreateStreamPoolDetails(object):
             'custom_encryption_key_details': 'CustomEncryptionKeyDetails',
             'private_endpoint_details': 'PrivateEndpointDetails',
             'freeform_tags': 'dict(str, str)',
+            'security_attributes': 'dict(str, dict(str, object))',
             'defined_tags': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
@@ -65,6 +70,7 @@ class CreateStreamPoolDetails(object):
             'custom_encryption_key_details': 'customEncryptionKeyDetails',
             'private_endpoint_details': 'privateEndpointDetails',
             'freeform_tags': 'freeformTags',
+            'security_attributes': 'securityAttributes',
             'defined_tags': 'definedTags'
         }
         self._compartment_id = None
@@ -73,6 +79,7 @@ class CreateStreamPoolDetails(object):
         self._custom_encryption_key_details = None
         self._private_endpoint_details = None
         self._freeform_tags = None
+        self._security_attributes = None
         self._defined_tags = None
 
     @property
@@ -220,6 +227,40 @@ class CreateStreamPoolDetails(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this CreateStreamPoolDetails.
+        Security attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The security_attributes of this CreateStreamPoolDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this CreateStreamPoolDetails.
+        Security attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param security_attributes: The security_attributes of this CreateStreamPoolDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     @property
     def defined_tags(self):

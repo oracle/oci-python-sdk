@@ -208,7 +208,9 @@ from .pipeline_dataflow_step_details import PipelineDataflowStepDetails
 from .pipeline_dataflow_step_run import PipelineDataflowStepRun
 from .pipeline_dataflow_step_update_details import PipelineDataflowStepUpdateDetails
 from .pipeline_default_configuration_details import PipelineDefaultConfigurationDetails
+from .pipeline_default_step_parameter_details import PipelineDefaultStepParameterDetails
 from .pipeline_infrastructure_configuration_details import PipelineInfrastructureConfigurationDetails
+from .pipeline_json_step_output_parameter_details import PipelineJsonStepOutputParameterDetails
 from .pipeline_log_configuration_details import PipelineLogConfigurationDetails
 from .pipeline_ml_job_step_details import PipelineMLJobStepDetails
 from .pipeline_ml_job_step_run import PipelineMLJobStepRun
@@ -220,7 +222,9 @@ from .pipeline_run_summary import PipelineRunSummary
 from .pipeline_shape_config_details import PipelineShapeConfigDetails
 from .pipeline_step_configuration_details import PipelineStepConfigurationDetails
 from .pipeline_step_details import PipelineStepDetails
+from .pipeline_step_output_parameter_details import PipelineStepOutputParameterDetails
 from .pipeline_step_override_details import PipelineStepOverrideDetails
+from .pipeline_step_parameter_details import PipelineStepParameterDetails
 from .pipeline_step_run import PipelineStepRun
 from .pipeline_step_update_details import PipelineStepUpdateDetails
 from .pipeline_summary import PipelineSummary
@@ -495,7 +499,9 @@ data_science_type_mapping = {
     "PipelineDataflowStepRun": PipelineDataflowStepRun,
     "PipelineDataflowStepUpdateDetails": PipelineDataflowStepUpdateDetails,
     "PipelineDefaultConfigurationDetails": PipelineDefaultConfigurationDetails,
+    "PipelineDefaultStepParameterDetails": PipelineDefaultStepParameterDetails,
     "PipelineInfrastructureConfigurationDetails": PipelineInfrastructureConfigurationDetails,
+    "PipelineJsonStepOutputParameterDetails": PipelineJsonStepOutputParameterDetails,
     "PipelineLogConfigurationDetails": PipelineLogConfigurationDetails,
     "PipelineMLJobStepDetails": PipelineMLJobStepDetails,
     "PipelineMLJobStepRun": PipelineMLJobStepRun,
@@ -507,7 +513,9 @@ data_science_type_mapping = {
     "PipelineShapeConfigDetails": PipelineShapeConfigDetails,
     "PipelineStepConfigurationDetails": PipelineStepConfigurationDetails,
     "PipelineStepDetails": PipelineStepDetails,
+    "PipelineStepOutputParameterDetails": PipelineStepOutputParameterDetails,
     "PipelineStepOverrideDetails": PipelineStepOverrideDetails,
+    "PipelineStepParameterDetails": PipelineStepParameterDetails,
     "PipelineStepRun": PipelineStepRun,
     "PipelineStepUpdateDetails": PipelineStepUpdateDetails,
     "PipelineSummary": PipelineSummary,

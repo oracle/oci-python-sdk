@@ -108,6 +108,10 @@ class JobRun(object):
             The value to assign to the job_storage_mount_configuration_details_list property of this JobRun.
         :type job_storage_mount_configuration_details_list: list[oci.data_science.models.StorageMountConfigurationDetails]
 
+        :param job_storage_mount_configuration_override_details_list:
+            The value to assign to the job_storage_mount_configuration_override_details_list property of this JobRun.
+        :type job_storage_mount_configuration_override_details_list: list[oci.data_science.models.StorageMountConfigurationDetails]
+
         :param log_details:
             The value to assign to the log_details property of this JobRun.
         :type log_details: oci.data_science.models.JobRunLogDetails
@@ -158,6 +162,7 @@ class JobRun(object):
             'job_environment_configuration_override_details': 'JobEnvironmentConfigurationDetails',
             'job_log_configuration_override_details': 'JobLogConfigurationDetails',
             'job_storage_mount_configuration_details_list': 'list[StorageMountConfigurationDetails]',
+            'job_storage_mount_configuration_override_details_list': 'list[StorageMountConfigurationDetails]',
             'log_details': 'JobRunLogDetails',
             'job_infrastructure_configuration_override_details': 'JobInfrastructureConfigurationDetails',
             'job_node_configuration_override_details': 'JobNodeConfigurationDetails',
@@ -182,6 +187,7 @@ class JobRun(object):
             'job_environment_configuration_override_details': 'jobEnvironmentConfigurationOverrideDetails',
             'job_log_configuration_override_details': 'jobLogConfigurationOverrideDetails',
             'job_storage_mount_configuration_details_list': 'jobStorageMountConfigurationDetailsList',
+            'job_storage_mount_configuration_override_details_list': 'jobStorageMountConfigurationOverrideDetailsList',
             'log_details': 'logDetails',
             'job_infrastructure_configuration_override_details': 'jobInfrastructureConfigurationOverrideDetails',
             'job_node_configuration_override_details': 'jobNodeConfigurationOverrideDetails',
@@ -205,6 +211,7 @@ class JobRun(object):
         self._job_environment_configuration_override_details = None
         self._job_log_configuration_override_details = None
         self._job_storage_mount_configuration_details_list = None
+        self._job_storage_mount_configuration_override_details_list = None
         self._log_details = None
         self._job_infrastructure_configuration_override_details = None
         self._job_node_configuration_override_details = None
@@ -565,6 +572,30 @@ class JobRun(object):
         :type: list[oci.data_science.models.StorageMountConfigurationDetails]
         """
         self._job_storage_mount_configuration_details_list = job_storage_mount_configuration_details_list
+
+    @property
+    def job_storage_mount_configuration_override_details_list(self):
+        """
+        Gets the job_storage_mount_configuration_override_details_list of this JobRun.
+        Collection of JobStorageMountConfigurationDetails.
+
+
+        :return: The job_storage_mount_configuration_override_details_list of this JobRun.
+        :rtype: list[oci.data_science.models.StorageMountConfigurationDetails]
+        """
+        return self._job_storage_mount_configuration_override_details_list
+
+    @job_storage_mount_configuration_override_details_list.setter
+    def job_storage_mount_configuration_override_details_list(self, job_storage_mount_configuration_override_details_list):
+        """
+        Sets the job_storage_mount_configuration_override_details_list of this JobRun.
+        Collection of JobStorageMountConfigurationDetails.
+
+
+        :param job_storage_mount_configuration_override_details_list: The job_storage_mount_configuration_override_details_list of this JobRun.
+        :type: list[oci.data_science.models.StorageMountConfigurationDetails]
+        """
+        self._job_storage_mount_configuration_override_details_list = job_storage_mount_configuration_override_details_list
 
     @property
     def log_details(self):

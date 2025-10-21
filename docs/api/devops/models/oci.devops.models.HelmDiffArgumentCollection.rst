@@ -1,0 +1,11 @@
+HelmDiffArgumentCollection
+==========================
+
+.. currentmodule:: oci.devops.models
+
+.. autoclass:: HelmDiffArgumentCollection
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

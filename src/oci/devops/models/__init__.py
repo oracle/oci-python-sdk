@@ -294,9 +294,12 @@ from .gitlab_trigger import GitlabTrigger
 from .gitlab_trigger_create_result import GitlabTriggerCreateResult
 from .gitlab_trigger_summary import GitlabTriggerSummary
 from .helm_command_spec_artifact_source import HelmCommandSpecArtifactSource
+from .helm_diff_argument import HelmDiffArgument
+from .helm_diff_argument_collection import HelmDiffArgumentCollection
 from .helm_repository_deploy_artifact_source import HelmRepositoryDeployArtifactSource
 from .helm_set_value import HelmSetValue
 from .helm_set_value_collection import HelmSetValueCollection
+from .helm_stage_content import HelmStageContent
 from .inline_deploy_artifact_source import InlineDeployArtifactSource
 from .inline_public_key_verification_key_source import InlinePublicKeyVerificationKeySource
 from .invoke_function_deploy_stage import InvokeFunctionDeployStage
@@ -438,9 +441,11 @@ from .trigger_action import TriggerAction
 from .trigger_build_pipeline_action import TriggerBuildPipelineAction
 from .trigger_collection import TriggerCollection
 from .trigger_create_result import TriggerCreateResult
+from .trigger_deployment_dry_run_details import TriggerDeploymentDryRunDetails
 from .trigger_deployment_pipeline_stage_run_progress import TriggerDeploymentPipelineStageRunProgress
 from .trigger_deployment_stage import TriggerDeploymentStage
 from .trigger_deployment_stage_summary import TriggerDeploymentStageSummary
+from .trigger_dry_run_result import TriggerDryRunResult
 from .trigger_info import TriggerInfo
 from .trigger_schedule import TriggerSchedule
 from .trigger_summary import TriggerSummary
@@ -512,6 +517,8 @@ from .update_wait_criteria_details import UpdateWaitCriteriaDetails
 from .update_wait_deploy_stage_details import UpdateWaitDeployStageDetails
 from .update_wait_stage_details import UpdateWaitStageDetails
 from .validate_merge_pull_request_details import ValidateMergePullRequestDetails
+from .value_artifact_content import ValueArtifactContent
+from .value_artifact_content_collection import ValueArtifactContentCollection
 from .vault_secret_verification_key_source import VaultSecretVerificationKeySource
 from .vbs_access_token_connection import VbsAccessTokenConnection
 from .vbs_access_token_connection_summary import VbsAccessTokenConnectionSummary
@@ -833,9 +840,12 @@ devops_type_mapping = {
     "GitlabTriggerCreateResult": GitlabTriggerCreateResult,
     "GitlabTriggerSummary": GitlabTriggerSummary,
     "HelmCommandSpecArtifactSource": HelmCommandSpecArtifactSource,
+    "HelmDiffArgument": HelmDiffArgument,
+    "HelmDiffArgumentCollection": HelmDiffArgumentCollection,
     "HelmRepositoryDeployArtifactSource": HelmRepositoryDeployArtifactSource,
     "HelmSetValue": HelmSetValue,
     "HelmSetValueCollection": HelmSetValueCollection,
+    "HelmStageContent": HelmStageContent,
     "InlineDeployArtifactSource": InlineDeployArtifactSource,
     "InlinePublicKeyVerificationKeySource": InlinePublicKeyVerificationKeySource,
     "InvokeFunctionDeployStage": InvokeFunctionDeployStage,
@@ -977,9 +987,11 @@ devops_type_mapping = {
     "TriggerBuildPipelineAction": TriggerBuildPipelineAction,
     "TriggerCollection": TriggerCollection,
     "TriggerCreateResult": TriggerCreateResult,
+    "TriggerDeploymentDryRunDetails": TriggerDeploymentDryRunDetails,
     "TriggerDeploymentPipelineStageRunProgress": TriggerDeploymentPipelineStageRunProgress,
     "TriggerDeploymentStage": TriggerDeploymentStage,
     "TriggerDeploymentStageSummary": TriggerDeploymentStageSummary,
+    "TriggerDryRunResult": TriggerDryRunResult,
     "TriggerInfo": TriggerInfo,
     "TriggerSchedule": TriggerSchedule,
     "TriggerSummary": TriggerSummary,
@@ -1051,6 +1063,8 @@ devops_type_mapping = {
     "UpdateWaitDeployStageDetails": UpdateWaitDeployStageDetails,
     "UpdateWaitStageDetails": UpdateWaitStageDetails,
     "ValidateMergePullRequestDetails": ValidateMergePullRequestDetails,
+    "ValueArtifactContent": ValueArtifactContent,
+    "ValueArtifactContentCollection": ValueArtifactContentCollection,
     "VaultSecretVerificationKeySource": VaultSecretVerificationKeySource,
     "VbsAccessTokenConnection": VbsAccessTokenConnection,
     "VbsAccessTokenConnectionSummary": VbsAccessTokenConnectionSummary,
