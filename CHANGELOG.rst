@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.161.1 - 2025-10-21
+====================
+
+Added 
+----- 
+* Support for LDAP schema version RFC2307bis when creating and updating mount targets in the File Storage service 
+* Support for Helm Critical Resource Protection (HCRP) in the DevOps Deploy service 
+* Support for parameterized pipelines in the Data Science service 
+* Support for Zero Trust Packet Routing (ZPR) security attributes in the Streaming service 
+* Support for configurable version upgrade policies in the MySQL HeatWave service 
+* Support for 26ai version in the Exadata Fleet Update service  
+
+====================
 2.161.0 - 2025-10-07
 ====================
 
@@ -21,9 +34,7 @@ Added
 * Support for Zero Trust Packet Routing (ZPR) security attributes in the Functions service 
 * Support for Zero Trust Packet Routing (ZPR) security attributes in the Integration Cloud service 
 * Support for data guards to convert standby database types in the Database service  
-* Support for Network 
-
-Security Groups (NSGs) when creating clusters in the OpenSearch service 
+* Support for Network Security Groups (NSGs) when creating clusters in the OpenSearch service 
 * Support for specifying compartment id when listing cluster shapes in the OpenSearch service 
 * Support for additional parameters when listing add-on options in the Kubernetes Engine service  
 * Support for dynamic resource VMs in the Compute service 

@@ -19,6 +19,10 @@ class LdapIdmap(object):
     #: This constant has a value of "RFC2307"
     SCHEMA_TYPE_RFC2307 = "RFC2307"
 
+    #: A constant which can be used with the schema_type property of a LdapIdmap.
+    #: This constant has a value of "RFC2307BIS"
+    SCHEMA_TYPE_RFC2307_BIS = "RFC2307BIS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new LdapIdmap object with values from keyword arguments.
@@ -26,7 +30,7 @@ class LdapIdmap(object):
 
         :param schema_type:
             The value to assign to the schema_type property of this LdapIdmap.
-            Allowed values for this property are: "RFC2307", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "RFC2307", "RFC2307BIS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type schema_type: str
 
@@ -94,7 +98,7 @@ class LdapIdmap(object):
         Gets the schema_type of this LdapIdmap.
         Schema type of the LDAP account.
 
-        Allowed values for this property are: "RFC2307", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "RFC2307", "RFC2307BIS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -113,7 +117,7 @@ class LdapIdmap(object):
         :param schema_type: The schema_type of this LdapIdmap.
         :type: str
         """
-        allowed_values = ["RFC2307"]
+        allowed_values = ["RFC2307", "RFC2307BIS"]
         if not value_allowed_none_or_none_sentinel(schema_type, allowed_values):
             schema_type = 'UNKNOWN_ENUM_VALUE'
         self._schema_type = schema_type

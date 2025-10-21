@@ -28,6 +28,10 @@ class CreateGiFsuCollectionDetails(CreateFsuCollectionDetails):
     #: This constant has a value of "GI_23"
     SOURCE_MAJOR_VERSION_GI_23 = "GI_23"
 
+    #: A constant which can be used with the source_major_version property of a CreateGiFsuCollectionDetails.
+    #: This constant has a value of "GI_26"
+    SOURCE_MAJOR_VERSION_GI_26 = "GI_26"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateGiFsuCollectionDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.fleet_software_update.models.CreateGiFsuCollectionDetails.type` attribute
@@ -62,7 +66,7 @@ class CreateGiFsuCollectionDetails(CreateFsuCollectionDetails):
 
         :param source_major_version:
             The value to assign to the source_major_version property of this CreateGiFsuCollectionDetails.
-            Allowed values for this property are: "GI_18", "GI_19", "GI_23"
+            Allowed values for this property are: "GI_18", "GI_19", "GI_23", "GI_26"
         :type source_major_version: str
 
         :param fleet_discovery:
@@ -107,7 +111,7 @@ class CreateGiFsuCollectionDetails(CreateFsuCollectionDetails):
         Grid Infrastructure Major Version of targets to be included in the Exadata Fleet Update Collection.
         Only GI targets that match the version specified in this value would be added to the Exadata Fleet Update Collection.
 
-        Allowed values for this property are: "GI_18", "GI_19", "GI_23"
+        Allowed values for this property are: "GI_18", "GI_19", "GI_23", "GI_26"
 
 
         :return: The source_major_version of this CreateGiFsuCollectionDetails.
@@ -126,7 +130,7 @@ class CreateGiFsuCollectionDetails(CreateFsuCollectionDetails):
         :param source_major_version: The source_major_version of this CreateGiFsuCollectionDetails.
         :type: str
         """
-        allowed_values = ["GI_18", "GI_19", "GI_23"]
+        allowed_values = ["GI_18", "GI_19", "GI_23", "GI_26"]
         if not value_allowed_none_or_none_sentinel(source_major_version, allowed_values):
             raise ValueError(
                 f"Invalid value for `source_major_version`, must be None or one of {allowed_values}"

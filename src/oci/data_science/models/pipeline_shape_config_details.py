@@ -46,26 +46,40 @@ class PipelineShapeConfigDetails(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type cpu_baseline: str
 
+        :param ocpus_parameterized:
+            The value to assign to the ocpus_parameterized property of this PipelineShapeConfigDetails.
+        :type ocpus_parameterized: str
+
+        :param memory_in_gbs_parameterized:
+            The value to assign to the memory_in_gbs_parameterized property of this PipelineShapeConfigDetails.
+        :type memory_in_gbs_parameterized: str
+
         """
         self.swagger_types = {
             'ocpus': 'float',
             'memory_in_gbs': 'float',
-            'cpu_baseline': 'str'
+            'cpu_baseline': 'str',
+            'ocpus_parameterized': 'str',
+            'memory_in_gbs_parameterized': 'str'
         }
         self.attribute_map = {
             'ocpus': 'ocpus',
             'memory_in_gbs': 'memoryInGBs',
-            'cpu_baseline': 'cpuBaseline'
+            'cpu_baseline': 'cpuBaseline',
+            'ocpus_parameterized': 'ocpusParameterized',
+            'memory_in_gbs_parameterized': 'memoryInGBsParameterized'
         }
         self._ocpus = None
         self._memory_in_gbs = None
         self._cpu_baseline = None
+        self._ocpus_parameterized = None
+        self._memory_in_gbs_parameterized = None
 
     @property
     def ocpus(self):
         """
         Gets the ocpus of this PipelineShapeConfigDetails.
-        A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        The total number of OCPUs available to the pipeline step run instance.
 
 
         :return: The ocpus of this PipelineShapeConfigDetails.
@@ -77,7 +91,7 @@ class PipelineShapeConfigDetails(object):
     def ocpus(self, ocpus):
         """
         Sets the ocpus of this PipelineShapeConfigDetails.
-        A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        The total number of OCPUs available to the pipeline step run instance.
 
 
         :param ocpus: The ocpus of this PipelineShapeConfigDetails.
@@ -89,7 +103,7 @@ class PipelineShapeConfigDetails(object):
     def memory_in_gbs(self):
         """
         Gets the memory_in_gbs of this PipelineShapeConfigDetails.
-        A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        The total amount of memory available to the pipeline step run instance GBs.
 
 
         :return: The memory_in_gbs of this PipelineShapeConfigDetails.
@@ -101,7 +115,7 @@ class PipelineShapeConfigDetails(object):
     def memory_in_gbs(self, memory_in_gbs):
         """
         Sets the memory_in_gbs of this PipelineShapeConfigDetails.
-        A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        The total amount of memory available to the pipeline step run instance GBs.
 
 
         :param memory_in_gbs: The memory_in_gbs of this PipelineShapeConfigDetails.
@@ -146,6 +160,58 @@ class PipelineShapeConfigDetails(object):
         if not value_allowed_none_or_none_sentinel(cpu_baseline, allowed_values):
             cpu_baseline = 'UNKNOWN_ENUM_VALUE'
         self._cpu_baseline = cpu_baseline
+
+    @property
+    def ocpus_parameterized(self):
+        """
+        Gets the ocpus_parameterized of this PipelineShapeConfigDetails.
+        The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value.
+        The request will fail if the parameters used are null or invalid.
+
+
+        :return: The ocpus_parameterized of this PipelineShapeConfigDetails.
+        :rtype: str
+        """
+        return self._ocpus_parameterized
+
+    @ocpus_parameterized.setter
+    def ocpus_parameterized(self, ocpus_parameterized):
+        """
+        Sets the ocpus_parameterized of this PipelineShapeConfigDetails.
+        The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value.
+        The request will fail if the parameters used are null or invalid.
+
+
+        :param ocpus_parameterized: The ocpus_parameterized of this PipelineShapeConfigDetails.
+        :type: str
+        """
+        self._ocpus_parameterized = ocpus_parameterized
+
+    @property
+    def memory_in_gbs_parameterized(self):
+        """
+        Gets the memory_in_gbs_parameterized of this PipelineShapeConfigDetails.
+        The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value.
+        The request will fail if the parameters used are null or invalid.
+
+
+        :return: The memory_in_gbs_parameterized of this PipelineShapeConfigDetails.
+        :rtype: str
+        """
+        return self._memory_in_gbs_parameterized
+
+    @memory_in_gbs_parameterized.setter
+    def memory_in_gbs_parameterized(self, memory_in_gbs_parameterized):
+        """
+        Sets the memory_in_gbs_parameterized of this PipelineShapeConfigDetails.
+        The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value.
+        The request will fail if the parameters used are null or invalid.
+
+
+        :param memory_in_gbs_parameterized: The memory_in_gbs_parameterized of this PipelineShapeConfigDetails.
+        :type: str
+        """
+        self._memory_in_gbs_parameterized = memory_in_gbs_parameterized
 
     def __repr__(self):
         return formatted_flat_dict(self)

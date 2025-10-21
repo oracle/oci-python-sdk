@@ -36,23 +36,30 @@ class PipelineInfrastructureConfigurationDetails(object):
             The value to assign to the shape_config_details property of this PipelineInfrastructureConfigurationDetails.
         :type shape_config_details: oci.data_science.models.PipelineShapeConfigDetails
 
+        :param block_storage_size_in_gbs_parameterized:
+            The value to assign to the block_storage_size_in_gbs_parameterized property of this PipelineInfrastructureConfigurationDetails.
+        :type block_storage_size_in_gbs_parameterized: str
+
         """
         self.swagger_types = {
             'shape_name': 'str',
             'block_storage_size_in_gbs': 'int',
             'subnet_id': 'str',
-            'shape_config_details': 'PipelineShapeConfigDetails'
+            'shape_config_details': 'PipelineShapeConfigDetails',
+            'block_storage_size_in_gbs_parameterized': 'str'
         }
         self.attribute_map = {
             'shape_name': 'shapeName',
             'block_storage_size_in_gbs': 'blockStorageSizeInGBs',
             'subnet_id': 'subnetId',
-            'shape_config_details': 'shapeConfigDetails'
+            'shape_config_details': 'shapeConfigDetails',
+            'block_storage_size_in_gbs_parameterized': 'blockStorageSizeInGBsParameterized'
         }
         self._shape_name = None
         self._block_storage_size_in_gbs = None
         self._subnet_id = None
         self._shape_config_details = None
+        self._block_storage_size_in_gbs_parameterized = None
 
     @property
     def shape_name(self):
@@ -145,6 +152,32 @@ class PipelineInfrastructureConfigurationDetails(object):
         :type: oci.data_science.models.PipelineShapeConfigDetails
         """
         self._shape_config_details = shape_config_details
+
+    @property
+    def block_storage_size_in_gbs_parameterized(self):
+        """
+        Gets the block_storage_size_in_gbs_parameterized of this PipelineInfrastructureConfigurationDetails.
+        The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value.
+        The request will fail if the parameters used are null or invalid.
+
+
+        :return: The block_storage_size_in_gbs_parameterized of this PipelineInfrastructureConfigurationDetails.
+        :rtype: str
+        """
+        return self._block_storage_size_in_gbs_parameterized
+
+    @block_storage_size_in_gbs_parameterized.setter
+    def block_storage_size_in_gbs_parameterized(self, block_storage_size_in_gbs_parameterized):
+        """
+        Sets the block_storage_size_in_gbs_parameterized of this PipelineInfrastructureConfigurationDetails.
+        The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value.
+        The request will fail if the parameters used are null or invalid.
+
+
+        :param block_storage_size_in_gbs_parameterized: The block_storage_size_in_gbs_parameterized of this PipelineInfrastructureConfigurationDetails.
+        :type: str
+        """
+        self._block_storage_size_in_gbs_parameterized = block_storage_size_in_gbs_parameterized
 
     def __repr__(self):
         return formatted_flat_dict(self)

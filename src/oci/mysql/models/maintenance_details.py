@@ -15,6 +15,38 @@ class MaintenanceDetails(object):
     The Maintenance Policy for the DB System or Read Replica that this model is included in.
     """
 
+    #: A constant which can be used with the version_preference property of a MaintenanceDetails.
+    #: This constant has a value of "OLDEST"
+    VERSION_PREFERENCE_OLDEST = "OLDEST"
+
+    #: A constant which can be used with the version_preference property of a MaintenanceDetails.
+    #: This constant has a value of "SECOND_NEWEST"
+    VERSION_PREFERENCE_SECOND_NEWEST = "SECOND_NEWEST"
+
+    #: A constant which can be used with the version_preference property of a MaintenanceDetails.
+    #: This constant has a value of "NEWEST"
+    VERSION_PREFERENCE_NEWEST = "NEWEST"
+
+    #: A constant which can be used with the version_track_preference property of a MaintenanceDetails.
+    #: This constant has a value of "LONG_TERM_SUPPORT"
+    VERSION_TRACK_PREFERENCE_LONG_TERM_SUPPORT = "LONG_TERM_SUPPORT"
+
+    #: A constant which can be used with the version_track_preference property of a MaintenanceDetails.
+    #: This constant has a value of "INNOVATION"
+    VERSION_TRACK_PREFERENCE_INNOVATION = "INNOVATION"
+
+    #: A constant which can be used with the version_track_preference property of a MaintenanceDetails.
+    #: This constant has a value of "FOLLOW"
+    VERSION_TRACK_PREFERENCE_FOLLOW = "FOLLOW"
+
+    #: A constant which can be used with the maintenance_schedule_type property of a MaintenanceDetails.
+    #: This constant has a value of "EARLY"
+    MAINTENANCE_SCHEDULE_TYPE_EARLY = "EARLY"
+
+    #: A constant which can be used with the maintenance_schedule_type property of a MaintenanceDetails.
+    #: This constant has a value of "REGULAR"
+    MAINTENANCE_SCHEDULE_TYPE_REGULAR = "REGULAR"
+
     def __init__(self, **kwargs):
         """
         Initializes a new MaintenanceDetails object with values from keyword arguments.
@@ -24,14 +56,55 @@ class MaintenanceDetails(object):
             The value to assign to the window_start_time property of this MaintenanceDetails.
         :type window_start_time: str
 
+        :param version_preference:
+            The value to assign to the version_preference property of this MaintenanceDetails.
+            Allowed values for this property are: "OLDEST", "SECOND_NEWEST", "NEWEST", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type version_preference: str
+
+        :param version_track_preference:
+            The value to assign to the version_track_preference property of this MaintenanceDetails.
+            Allowed values for this property are: "LONG_TERM_SUPPORT", "INNOVATION", "FOLLOW", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type version_track_preference: str
+
+        :param maintenance_schedule_type:
+            The value to assign to the maintenance_schedule_type property of this MaintenanceDetails.
+            Allowed values for this property are: "EARLY", "REGULAR", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type maintenance_schedule_type: str
+
+        :param time_scheduled:
+            The value to assign to the time_scheduled property of this MaintenanceDetails.
+        :type time_scheduled: datetime
+
+        :param target_version:
+            The value to assign to the target_version property of this MaintenanceDetails.
+        :type target_version: str
+
         """
         self.swagger_types = {
-            'window_start_time': 'str'
+            'window_start_time': 'str',
+            'version_preference': 'str',
+            'version_track_preference': 'str',
+            'maintenance_schedule_type': 'str',
+            'time_scheduled': 'datetime',
+            'target_version': 'str'
         }
         self.attribute_map = {
-            'window_start_time': 'windowStartTime'
+            'window_start_time': 'windowStartTime',
+            'version_preference': 'versionPreference',
+            'version_track_preference': 'versionTrackPreference',
+            'maintenance_schedule_type': 'maintenanceScheduleType',
+            'time_scheduled': 'timeScheduled',
+            'target_version': 'targetVersion'
         }
         self._window_start_time = None
+        self._version_preference = None
+        self._version_track_preference = None
+        self._maintenance_schedule_type = None
+        self._time_scheduled = None
+        self._target_version = None
 
     @property
     def window_start_time(self):
@@ -72,6 +145,168 @@ class MaintenanceDetails(object):
         :type: str
         """
         self._window_start_time = window_start_time
+
+    @property
+    def version_preference(self):
+        """
+        Gets the version_preference of this MaintenanceDetails.
+        The preferred version to target when performing an automatic MySQL upgrade.
+
+        OLDEST: Choose the oldest available MySQL version based on the current version of the DB System.
+        SECOND_NEWEST: Choose the MySQL version before the newest for auto-upgrade.
+        NEWEST: Choose the latest and greatest MySQL version available for auto-upgrade.
+
+        Allowed values for this property are: "OLDEST", "SECOND_NEWEST", "NEWEST", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The version_preference of this MaintenanceDetails.
+        :rtype: str
+        """
+        return self._version_preference
+
+    @version_preference.setter
+    def version_preference(self, version_preference):
+        """
+        Sets the version_preference of this MaintenanceDetails.
+        The preferred version to target when performing an automatic MySQL upgrade.
+
+        OLDEST: Choose the oldest available MySQL version based on the current version of the DB System.
+        SECOND_NEWEST: Choose the MySQL version before the newest for auto-upgrade.
+        NEWEST: Choose the latest and greatest MySQL version available for auto-upgrade.
+
+
+        :param version_preference: The version_preference of this MaintenanceDetails.
+        :type: str
+        """
+        allowed_values = ["OLDEST", "SECOND_NEWEST", "NEWEST"]
+        if not value_allowed_none_or_none_sentinel(version_preference, allowed_values):
+            version_preference = 'UNKNOWN_ENUM_VALUE'
+        self._version_preference = version_preference
+
+    @property
+    def version_track_preference(self):
+        """
+        Gets the version_track_preference of this MaintenanceDetails.
+        The preferred version track to target when performing an automatic MySQL upgrade.
+        LONG_TERM_SUPPORT: No MySQL database behavior changes.
+        INNOVATION:        Provides access to the latest features and all bug fixes.
+        FOLLOW:            Follows the track of the current MySQL version.
+
+        Allowed values for this property are: "LONG_TERM_SUPPORT", "INNOVATION", "FOLLOW", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The version_track_preference of this MaintenanceDetails.
+        :rtype: str
+        """
+        return self._version_track_preference
+
+    @version_track_preference.setter
+    def version_track_preference(self, version_track_preference):
+        """
+        Sets the version_track_preference of this MaintenanceDetails.
+        The preferred version track to target when performing an automatic MySQL upgrade.
+        LONG_TERM_SUPPORT: No MySQL database behavior changes.
+        INNOVATION:        Provides access to the latest features and all bug fixes.
+        FOLLOW:            Follows the track of the current MySQL version.
+
+
+        :param version_track_preference: The version_track_preference of this MaintenanceDetails.
+        :type: str
+        """
+        allowed_values = ["LONG_TERM_SUPPORT", "INNOVATION", "FOLLOW"]
+        if not value_allowed_none_or_none_sentinel(version_track_preference, allowed_values):
+            version_track_preference = 'UNKNOWN_ENUM_VALUE'
+        self._version_track_preference = version_track_preference
+
+    @property
+    def maintenance_schedule_type(self):
+        """
+        Gets the maintenance_schedule_type of this MaintenanceDetails.
+        The maintenance schedule type of the DB system.
+        EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated.
+        REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
+
+        Allowed values for this property are: "EARLY", "REGULAR", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The maintenance_schedule_type of this MaintenanceDetails.
+        :rtype: str
+        """
+        return self._maintenance_schedule_type
+
+    @maintenance_schedule_type.setter
+    def maintenance_schedule_type(self, maintenance_schedule_type):
+        """
+        Sets the maintenance_schedule_type of this MaintenanceDetails.
+        The maintenance schedule type of the DB system.
+        EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated.
+        REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
+
+
+        :param maintenance_schedule_type: The maintenance_schedule_type of this MaintenanceDetails.
+        :type: str
+        """
+        allowed_values = ["EARLY", "REGULAR"]
+        if not value_allowed_none_or_none_sentinel(maintenance_schedule_type, allowed_values):
+            maintenance_schedule_type = 'UNKNOWN_ENUM_VALUE'
+        self._maintenance_schedule_type = maintenance_schedule_type
+
+    @property
+    def time_scheduled(self):
+        """
+        Gets the time_scheduled of this MaintenanceDetails.
+        The time the scheduled maintenance is expected to start,
+        as described by `RFC 3339`__.
+
+        __ https://tools.ietf.org/rfc/rfc3339
+
+
+        :return: The time_scheduled of this MaintenanceDetails.
+        :rtype: datetime
+        """
+        return self._time_scheduled
+
+    @time_scheduled.setter
+    def time_scheduled(self, time_scheduled):
+        """
+        Sets the time_scheduled of this MaintenanceDetails.
+        The time the scheduled maintenance is expected to start,
+        as described by `RFC 3339`__.
+
+        __ https://tools.ietf.org/rfc/rfc3339
+
+
+        :param time_scheduled: The time_scheduled of this MaintenanceDetails.
+        :type: datetime
+        """
+        self._time_scheduled = time_scheduled
+
+    @property
+    def target_version(self):
+        """
+        Gets the target_version of this MaintenanceDetails.
+        The version that is expected to be targeted during the next scheduled maintenance run.
+
+
+        :return: The target_version of this MaintenanceDetails.
+        :rtype: str
+        """
+        return self._target_version
+
+    @target_version.setter
+    def target_version(self, target_version):
+        """
+        Sets the target_version of this MaintenanceDetails.
+        The version that is expected to be targeted during the next scheduled maintenance run.
+
+
+        :param target_version: The target_version of this MaintenanceDetails.
+        :type: str
+        """
+        self._target_version = target_version
 
     def __repr__(self):
         return formatted_flat_dict(self)

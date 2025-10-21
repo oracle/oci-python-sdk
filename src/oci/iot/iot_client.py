@@ -174,7 +174,7 @@ class IotClient(object):
         resource_path = "/iotDomains/{iotDomainId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_iot_domain_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotDomain/ChangeIotDomainCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -297,7 +297,7 @@ class IotClient(object):
         resource_path = "/iotDomains/{iotDomainId}/actions/changeDataRetentionPeriod"
         method = "POST"
         operation_name = "change_iot_domain_data_retention_period"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotDomain/ChangeIotDomainDataRetentionPeriod"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -423,7 +423,7 @@ class IotClient(object):
         resource_path = "/iotDomainGroups/{iotDomainGroupId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_iot_domain_group_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotDomainGroup/ChangeIotDomainGroupCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -546,7 +546,7 @@ class IotClient(object):
         resource_path = "/iotDomains/{iotDomainId}/actions/configureDataAccess"
         method = "POST"
         operation_name = "configure_iot_domain_data_access"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotDomain/ConfigureIotDomainDataAccess"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -669,7 +669,7 @@ class IotClient(object):
         resource_path = "/iotDomainGroups/{iotDomainGroupId}/actions/configureDataAccess"
         method = "POST"
         operation_name = "configure_iot_domain_group_data_access"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotDomainGroup/ConfigureIotDomainGroupDataAccess"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -780,7 +780,7 @@ class IotClient(object):
         resource_path = "/digitalTwinAdapters"
         method = "POST"
         operation_name = "create_digital_twin_adapter"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iot/20250531/DigitalTwinAdapter/CreateDigitalTwinAdapter"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -879,7 +879,7 @@ class IotClient(object):
         resource_path = "/digitalTwinInstances"
         method = "POST"
         operation_name = "create_digital_twin_instance"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iot/20250531/DigitalTwinInstance/CreateDigitalTwinInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -978,7 +978,7 @@ class IotClient(object):
         resource_path = "/digitalTwinModels"
         method = "POST"
         operation_name = "create_digital_twin_model"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iot/20250531/DigitalTwinModel/CreateDigitalTwinModel"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1077,7 +1077,7 @@ class IotClient(object):
         resource_path = "/digitalTwinRelationships"
         method = "POST"
         operation_name = "create_digital_twin_relationship"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iot/20250531/DigitalTwinRelationship/CreateDigitalTwinRelationship"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1176,7 +1176,7 @@ class IotClient(object):
         resource_path = "/iotDomains"
         method = "POST"
         operation_name = "create_iot_domain"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotDomain/CreateIotDomain"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1275,7 +1275,7 @@ class IotClient(object):
         resource_path = "/iotDomainGroups"
         method = "POST"
         operation_name = "create_iot_domain_group"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotDomainGroup/CreateIotDomainGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1376,7 +1376,7 @@ class IotClient(object):
         resource_path = "/digitalTwinAdapters/{digitalTwinAdapterId}"
         method = "DELETE"
         operation_name = "delete_digital_twin_adapter"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iot/20250531/DigitalTwinAdapter/DeleteDigitalTwinAdapter"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1484,7 +1484,7 @@ class IotClient(object):
         resource_path = "/digitalTwinInstances/{digitalTwinInstanceId}"
         method = "DELETE"
         operation_name = "delete_digital_twin_instance"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iot/20250531/DigitalTwinInstance/DeleteDigitalTwinInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1592,7 +1592,7 @@ class IotClient(object):
         resource_path = "/digitalTwinModels/{digitalTwinModelId}"
         method = "DELETE"
         operation_name = "delete_digital_twin_model"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iot/20250531/DigitalTwinModel/DeleteDigitalTwinModel"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1700,7 +1700,7 @@ class IotClient(object):
         resource_path = "/digitalTwinRelationships/{digitalTwinRelationshipId}"
         method = "DELETE"
         operation_name = "delete_digital_twin_relationship"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iot/20250531/DigitalTwinRelationship/DeleteDigitalTwinRelationship"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1808,7 +1808,7 @@ class IotClient(object):
         resource_path = "/iotDomains/{iotDomainId}"
         method = "DELETE"
         operation_name = "delete_iot_domain"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotDomain/DeleteIotDomain"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1916,7 +1916,7 @@ class IotClient(object):
         resource_path = "/iotDomainGroups/{iotDomainGroupId}"
         method = "DELETE"
         operation_name = "delete_iot_domain_group"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotDomainGroup/DeleteIotDomainGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2017,7 +2017,7 @@ class IotClient(object):
         resource_path = "/digitalTwinAdapters/{digitalTwinAdapterId}"
         method = "GET"
         operation_name = "get_digital_twin_adapter"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iot/20250531/DigitalTwinAdapter/GetDigitalTwinAdapter"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2118,7 +2118,7 @@ class IotClient(object):
         resource_path = "/digitalTwinInstances/{digitalTwinInstanceId}"
         method = "GET"
         operation_name = "get_digital_twin_instance"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iot/20250531/DigitalTwinInstance/GetDigitalTwinInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2222,7 +2222,7 @@ class IotClient(object):
         resource_path = "/digitalTwinInstances/{digitalTwinInstanceId}/content"
         method = "GET"
         operation_name = "get_digital_twin_instance_content"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iot/20250531/DigitalTwinInstance/GetDigitalTwinInstanceContent"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2331,7 +2331,7 @@ class IotClient(object):
         resource_path = "/digitalTwinModels/{digitalTwinModelId}"
         method = "GET"
         operation_name = "get_digital_twin_model"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iot/20250531/DigitalTwinModel/GetDigitalTwinModel"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2432,7 +2432,7 @@ class IotClient(object):
         resource_path = "/digitalTwinModels/{digitalTwinModelId}/spec"
         method = "GET"
         operation_name = "get_digital_twin_model_spec"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iot/20250531/DigitalTwinModel/GetDigitalTwinModelSpec"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2533,7 +2533,7 @@ class IotClient(object):
         resource_path = "/digitalTwinRelationships/{digitalTwinRelationshipId}"
         method = "GET"
         operation_name = "get_digital_twin_relationship"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iot/20250531/DigitalTwinRelationship/GetDigitalTwinRelationship"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2634,7 +2634,7 @@ class IotClient(object):
         resource_path = "/iotDomains/{iotDomainId}"
         method = "GET"
         operation_name = "get_iot_domain"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotDomain/GetIotDomain"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2735,7 +2735,7 @@ class IotClient(object):
         resource_path = "/iotDomainGroups/{iotDomainGroupId}"
         method = "GET"
         operation_name = "get_iot_domain_group"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotDomainGroup/GetIotDomainGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2836,7 +2836,7 @@ class IotClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iot/20250531/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2947,7 +2947,7 @@ class IotClient(object):
         resource_path = "/digitalTwinInstances/{digitalTwinInstanceId}/actions/invokeRawCommand"
         method = "POST"
         operation_name = "invoke_raw_command"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iot/20250531/DigitalTwinInstance/InvokeRawCommand"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3093,7 +3093,7 @@ class IotClient(object):
         resource_path = "/digitalTwinAdapters"
         method = "GET"
         operation_name = "list_digital_twin_adapters"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iot/20250531/DigitalTwinAdapter/ListDigitalTwinAdapters"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3270,7 +3270,7 @@ class IotClient(object):
         resource_path = "/digitalTwinInstances"
         method = "GET"
         operation_name = "list_digital_twin_instances"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iot/20250531/DigitalTwinInstance/ListDigitalTwinInstances"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3442,7 +3442,7 @@ class IotClient(object):
         resource_path = "/digitalTwinModels"
         method = "GET"
         operation_name = "list_digital_twin_models"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iot/20250531/DigitalTwinModel/ListDigitalTwinModels"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3622,7 +3622,7 @@ class IotClient(object):
         resource_path = "/digitalTwinRelationships"
         method = "GET"
         operation_name = "list_digital_twin_relationships"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iot/20250531/DigitalTwinRelationship/ListDigitalTwinRelationships"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3797,7 +3797,7 @@ class IotClient(object):
         resource_path = "/iotDomainGroups"
         method = "GET"
         operation_name = "list_iot_domain_groups"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotDomainGroup/ListIotDomainGroups"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3971,7 +3971,7 @@ class IotClient(object):
         resource_path = "/iotDomains"
         method = "GET"
         operation_name = "list_iot_domains"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotDomain/ListIotDomains"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4128,7 +4128,7 @@ class IotClient(object):
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iot/20250531/WorkRequest/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4281,7 +4281,7 @@ class IotClient(object):
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iot/20250531/WorkRequest/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4449,7 +4449,7 @@ class IotClient(object):
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iot/20250531/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4590,7 +4590,7 @@ class IotClient(object):
         resource_path = "/digitalTwinAdapters/{digitalTwinAdapterId}"
         method = "PUT"
         operation_name = "update_digital_twin_adapter"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iot/20250531/DigitalTwinAdapter/UpdateDigitalTwinAdapter"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4705,7 +4705,7 @@ class IotClient(object):
         resource_path = "/digitalTwinInstances/{digitalTwinInstanceId}"
         method = "PUT"
         operation_name = "update_digital_twin_instance"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iot/20250531/DigitalTwinInstance/UpdateDigitalTwinInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4820,7 +4820,7 @@ class IotClient(object):
         resource_path = "/digitalTwinModels/{digitalTwinModelId}"
         method = "PUT"
         operation_name = "update_digital_twin_model"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iot/20250531/DigitalTwinModel/UpdateDigitalTwinModel"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4935,7 +4935,7 @@ class IotClient(object):
         resource_path = "/digitalTwinRelationships/{digitalTwinRelationshipId}"
         method = "PUT"
         operation_name = "update_digital_twin_relationship"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iot/20250531/DigitalTwinRelationship/UpdateDigitalTwinRelationship"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5050,7 +5050,7 @@ class IotClient(object):
         resource_path = "/iotDomains/{iotDomainId}"
         method = "PUT"
         operation_name = "update_iot_domain"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotDomain/UpdateIotDomain"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5163,7 +5163,7 @@ class IotClient(object):
         resource_path = "/iotDomainGroups/{iotDomainGroupId}"
         method = "PUT"
         operation_name = "update_iot_domain_group"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iot/20250531/IotDomainGroup/UpdateIotDomainGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

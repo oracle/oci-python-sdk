@@ -306,9 +306,12 @@ Devops
     oci.devops.models.GitlabTriggerCreateResult
     oci.devops.models.GitlabTriggerSummary
     oci.devops.models.HelmCommandSpecArtifactSource
+    oci.devops.models.HelmDiffArgument
+    oci.devops.models.HelmDiffArgumentCollection
     oci.devops.models.HelmRepositoryDeployArtifactSource
     oci.devops.models.HelmSetValue
     oci.devops.models.HelmSetValueCollection
+    oci.devops.models.HelmStageContent
     oci.devops.models.InlineDeployArtifactSource
     oci.devops.models.InlinePublicKeyVerificationKeySource
     oci.devops.models.InvokeFunctionDeployStage
@@ -450,9 +453,11 @@ Devops
     oci.devops.models.TriggerBuildPipelineAction
     oci.devops.models.TriggerCollection
     oci.devops.models.TriggerCreateResult
+    oci.devops.models.TriggerDeploymentDryRunDetails
     oci.devops.models.TriggerDeploymentPipelineStageRunProgress
     oci.devops.models.TriggerDeploymentStage
     oci.devops.models.TriggerDeploymentStageSummary
+    oci.devops.models.TriggerDryRunResult
     oci.devops.models.TriggerInfo
     oci.devops.models.TriggerSchedule
     oci.devops.models.TriggerSummary
@@ -524,6 +529,8 @@ Devops
     oci.devops.models.UpdateWaitDeployStageDetails
     oci.devops.models.UpdateWaitStageDetails
     oci.devops.models.ValidateMergePullRequestDetails
+    oci.devops.models.ValueArtifactContent
+    oci.devops.models.ValueArtifactContentCollection
     oci.devops.models.VaultSecretVerificationKeySource
     oci.devops.models.VbsAccessTokenConnection
     oci.devops.models.VbsAccessTokenConnectionSummary

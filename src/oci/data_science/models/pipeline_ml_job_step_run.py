@@ -51,6 +51,10 @@ class PipelineMLJobStepRun(PipelineStepRun):
             The value to assign to the job_run_id property of this PipelineMLJobStepRun.
         :type job_run_id: str
 
+        :param step_run_name:
+            The value to assign to the step_run_name property of this PipelineMLJobStepRun.
+        :type step_run_name: str
+
         """
         self.swagger_types = {
             'step_type': 'str',
@@ -59,7 +63,8 @@ class PipelineMLJobStepRun(PipelineStepRun):
             'step_name': 'str',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
-            'job_run_id': 'str'
+            'job_run_id': 'str',
+            'step_run_name': 'str'
         }
         self.attribute_map = {
             'step_type': 'stepType',
@@ -68,7 +73,8 @@ class PipelineMLJobStepRun(PipelineStepRun):
             'step_name': 'stepName',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
-            'job_run_id': 'jobRunId'
+            'job_run_id': 'jobRunId',
+            'step_run_name': 'stepRunName'
         }
         self._step_type = None
         self._time_started = None
@@ -77,6 +83,7 @@ class PipelineMLJobStepRun(PipelineStepRun):
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._job_run_id = None
+        self._step_run_name = None
         self._step_type = 'ML_JOB'
 
     @property
@@ -106,6 +113,30 @@ class PipelineMLJobStepRun(PipelineStepRun):
         :type: str
         """
         self._job_run_id = job_run_id
+
+    @property
+    def step_run_name(self):
+        """
+        Gets the step_run_name of this PipelineMLJobStepRun.
+        Name used when creating the steprun.
+
+
+        :return: The step_run_name of this PipelineMLJobStepRun.
+        :rtype: str
+        """
+        return self._step_run_name
+
+    @step_run_name.setter
+    def step_run_name(self, step_run_name):
+        """
+        Sets the step_run_name of this PipelineMLJobStepRun.
+        Name used when creating the steprun.
+
+
+        :param step_run_name: The step_run_name of this PipelineMLJobStepRun.
+        :type: str
+        """
+        self._step_run_name = step_run_name
 
     def __repr__(self):
         return formatted_flat_dict(self)

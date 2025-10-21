@@ -56,6 +56,10 @@ class CreateJobRunDetails(object):
             The value to assign to the job_node_configuration_override_details property of this CreateJobRunDetails.
         :type job_node_configuration_override_details: oci.data_science.models.JobNodeConfigurationDetails
 
+        :param job_storage_mount_configuration_override_details_list:
+            The value to assign to the job_storage_mount_configuration_override_details_list property of this CreateJobRunDetails.
+        :type job_storage_mount_configuration_override_details_list: list[oci.data_science.models.StorageMountConfigurationDetails]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateJobRunDetails.
         :type freeform_tags: dict(str, str)
@@ -75,6 +79,7 @@ class CreateJobRunDetails(object):
             'job_environment_configuration_override_details': 'JobEnvironmentConfigurationDetails',
             'job_infrastructure_configuration_override_details': 'JobInfrastructureConfigurationDetails',
             'job_node_configuration_override_details': 'JobNodeConfigurationDetails',
+            'job_storage_mount_configuration_override_details_list': 'list[StorageMountConfigurationDetails]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -88,6 +93,7 @@ class CreateJobRunDetails(object):
             'job_environment_configuration_override_details': 'jobEnvironmentConfigurationOverrideDetails',
             'job_infrastructure_configuration_override_details': 'jobInfrastructureConfigurationOverrideDetails',
             'job_node_configuration_override_details': 'jobNodeConfigurationOverrideDetails',
+            'job_storage_mount_configuration_override_details_list': 'jobStorageMountConfigurationOverrideDetailsList',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -100,6 +106,7 @@ class CreateJobRunDetails(object):
         self._job_environment_configuration_override_details = None
         self._job_infrastructure_configuration_override_details = None
         self._job_node_configuration_override_details = None
+        self._job_storage_mount_configuration_override_details_list = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -310,6 +317,30 @@ class CreateJobRunDetails(object):
         :type: oci.data_science.models.JobNodeConfigurationDetails
         """
         self._job_node_configuration_override_details = job_node_configuration_override_details
+
+    @property
+    def job_storage_mount_configuration_override_details_list(self):
+        """
+        Gets the job_storage_mount_configuration_override_details_list of this CreateJobRunDetails.
+        Collection of JobStorageMountConfigurationDetails.
+
+
+        :return: The job_storage_mount_configuration_override_details_list of this CreateJobRunDetails.
+        :rtype: list[oci.data_science.models.StorageMountConfigurationDetails]
+        """
+        return self._job_storage_mount_configuration_override_details_list
+
+    @job_storage_mount_configuration_override_details_list.setter
+    def job_storage_mount_configuration_override_details_list(self, job_storage_mount_configuration_override_details_list):
+        """
+        Sets the job_storage_mount_configuration_override_details_list of this CreateJobRunDetails.
+        Collection of JobStorageMountConfigurationDetails.
+
+
+        :param job_storage_mount_configuration_override_details_list: The job_storage_mount_configuration_override_details_list of this CreateJobRunDetails.
+        :type: list[oci.data_science.models.StorageMountConfigurationDetails]
+        """
+        self._job_storage_mount_configuration_override_details_list = job_storage_mount_configuration_override_details_list
 
     @property
     def freeform_tags(self):

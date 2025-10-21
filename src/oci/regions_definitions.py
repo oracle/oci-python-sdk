@@ -45,6 +45,7 @@ REGIONS_SHORT_NAMES = {
     'ruh': 'me-riyadh-1',
     'onm': 'ap-delhi-1',
     'hsg': 'ap-batam-1',
+    'orf': 'eu-madrid-3',
     'lfi': 'us-langley-1',
     'luf': 'us-luke-1',
     'ric': 'us-gov-ashburn-1',
@@ -126,6 +127,7 @@ REGION_REALMS = {
     'me-riyadh-1': 'oc1',
     'ap-delhi-1': 'oc1',
     'ap-batam-1': 'oc1',
+    'eu-madrid-3': 'oc1',
 
     'us-langley-1': 'oc2',
     'us-luke-1': 'oc2',
@@ -246,6 +248,7 @@ REGIONS = [
     'me-riyadh-1',
     'ap-delhi-1',
     'ap-batam-1',
+    'eu-madrid-3',
     'us-langley-1',
     'us-luke-1',
     'us-gov-ashburn-1',

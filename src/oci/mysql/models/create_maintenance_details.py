@@ -15,6 +15,38 @@ class CreateMaintenanceDetails(object):
     The Maintenance Policy for the DB System or Read Replica that this model is included in.
     """
 
+    #: A constant which can be used with the version_preference property of a CreateMaintenanceDetails.
+    #: This constant has a value of "OLDEST"
+    VERSION_PREFERENCE_OLDEST = "OLDEST"
+
+    #: A constant which can be used with the version_preference property of a CreateMaintenanceDetails.
+    #: This constant has a value of "SECOND_NEWEST"
+    VERSION_PREFERENCE_SECOND_NEWEST = "SECOND_NEWEST"
+
+    #: A constant which can be used with the version_preference property of a CreateMaintenanceDetails.
+    #: This constant has a value of "NEWEST"
+    VERSION_PREFERENCE_NEWEST = "NEWEST"
+
+    #: A constant which can be used with the version_track_preference property of a CreateMaintenanceDetails.
+    #: This constant has a value of "LONG_TERM_SUPPORT"
+    VERSION_TRACK_PREFERENCE_LONG_TERM_SUPPORT = "LONG_TERM_SUPPORT"
+
+    #: A constant which can be used with the version_track_preference property of a CreateMaintenanceDetails.
+    #: This constant has a value of "INNOVATION"
+    VERSION_TRACK_PREFERENCE_INNOVATION = "INNOVATION"
+
+    #: A constant which can be used with the version_track_preference property of a CreateMaintenanceDetails.
+    #: This constant has a value of "FOLLOW"
+    VERSION_TRACK_PREFERENCE_FOLLOW = "FOLLOW"
+
+    #: A constant which can be used with the maintenance_schedule_type property of a CreateMaintenanceDetails.
+    #: This constant has a value of "EARLY"
+    MAINTENANCE_SCHEDULE_TYPE_EARLY = "EARLY"
+
+    #: A constant which can be used with the maintenance_schedule_type property of a CreateMaintenanceDetails.
+    #: This constant has a value of "REGULAR"
+    MAINTENANCE_SCHEDULE_TYPE_REGULAR = "REGULAR"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateMaintenanceDetails object with values from keyword arguments.
@@ -24,14 +56,38 @@ class CreateMaintenanceDetails(object):
             The value to assign to the window_start_time property of this CreateMaintenanceDetails.
         :type window_start_time: str
 
+        :param version_preference:
+            The value to assign to the version_preference property of this CreateMaintenanceDetails.
+            Allowed values for this property are: "OLDEST", "SECOND_NEWEST", "NEWEST"
+        :type version_preference: str
+
+        :param version_track_preference:
+            The value to assign to the version_track_preference property of this CreateMaintenanceDetails.
+            Allowed values for this property are: "LONG_TERM_SUPPORT", "INNOVATION", "FOLLOW"
+        :type version_track_preference: str
+
+        :param maintenance_schedule_type:
+            The value to assign to the maintenance_schedule_type property of this CreateMaintenanceDetails.
+            Allowed values for this property are: "EARLY", "REGULAR"
+        :type maintenance_schedule_type: str
+
         """
         self.swagger_types = {
-            'window_start_time': 'str'
+            'window_start_time': 'str',
+            'version_preference': 'str',
+            'version_track_preference': 'str',
+            'maintenance_schedule_type': 'str'
         }
         self.attribute_map = {
-            'window_start_time': 'windowStartTime'
+            'window_start_time': 'windowStartTime',
+            'version_preference': 'versionPreference',
+            'version_track_preference': 'versionTrackPreference',
+            'maintenance_schedule_type': 'maintenanceScheduleType'
         }
         self._window_start_time = None
+        self._version_preference = None
+        self._version_track_preference = None
+        self._maintenance_schedule_type = None
 
     @property
     def window_start_time(self):
@@ -72,6 +128,117 @@ class CreateMaintenanceDetails(object):
         :type: str
         """
         self._window_start_time = window_start_time
+
+    @property
+    def version_preference(self):
+        """
+        Gets the version_preference of this CreateMaintenanceDetails.
+        The preferred version to target when performing an automatic MySQL upgrade. Defaults to OLDEST.
+
+        OLDEST: Choose the oldest available MySQL version based on the current version of the DB System.
+        SECOND_NEWEST: Choose the MySQL version before the newest for auto-upgrade.
+        NEWEST: Choose the latest and greatest MySQL version available for auto-upgrade.
+
+        Allowed values for this property are: "OLDEST", "SECOND_NEWEST", "NEWEST"
+
+
+        :return: The version_preference of this CreateMaintenanceDetails.
+        :rtype: str
+        """
+        return self._version_preference
+
+    @version_preference.setter
+    def version_preference(self, version_preference):
+        """
+        Sets the version_preference of this CreateMaintenanceDetails.
+        The preferred version to target when performing an automatic MySQL upgrade. Defaults to OLDEST.
+
+        OLDEST: Choose the oldest available MySQL version based on the current version of the DB System.
+        SECOND_NEWEST: Choose the MySQL version before the newest for auto-upgrade.
+        NEWEST: Choose the latest and greatest MySQL version available for auto-upgrade.
+
+
+        :param version_preference: The version_preference of this CreateMaintenanceDetails.
+        :type: str
+        """
+        allowed_values = ["OLDEST", "SECOND_NEWEST", "NEWEST"]
+        if not value_allowed_none_or_none_sentinel(version_preference, allowed_values):
+            raise ValueError(
+                f"Invalid value for `version_preference`, must be None or one of {allowed_values}"
+            )
+        self._version_preference = version_preference
+
+    @property
+    def version_track_preference(self):
+        """
+        Gets the version_track_preference of this CreateMaintenanceDetails.
+        The preferred version track to target when performing an automatic MySQL upgrade. Defaults to FOLLOW.
+        LONG_TERM_SUPPORT: No MySQL database behavior changes.
+        INNOVATION:        Provides access to the latest features and all bug fixes.
+        FOLLOW:            Follows the track of the current MySQL version.
+
+        Allowed values for this property are: "LONG_TERM_SUPPORT", "INNOVATION", "FOLLOW"
+
+
+        :return: The version_track_preference of this CreateMaintenanceDetails.
+        :rtype: str
+        """
+        return self._version_track_preference
+
+    @version_track_preference.setter
+    def version_track_preference(self, version_track_preference):
+        """
+        Sets the version_track_preference of this CreateMaintenanceDetails.
+        The preferred version track to target when performing an automatic MySQL upgrade. Defaults to FOLLOW.
+        LONG_TERM_SUPPORT: No MySQL database behavior changes.
+        INNOVATION:        Provides access to the latest features and all bug fixes.
+        FOLLOW:            Follows the track of the current MySQL version.
+
+
+        :param version_track_preference: The version_track_preference of this CreateMaintenanceDetails.
+        :type: str
+        """
+        allowed_values = ["LONG_TERM_SUPPORT", "INNOVATION", "FOLLOW"]
+        if not value_allowed_none_or_none_sentinel(version_track_preference, allowed_values):
+            raise ValueError(
+                f"Invalid value for `version_track_preference`, must be None or one of {allowed_values}"
+            )
+        self._version_track_preference = version_track_preference
+
+    @property
+    def maintenance_schedule_type(self):
+        """
+        Gets the maintenance_schedule_type of this CreateMaintenanceDetails.
+        The maintenance schedule type of the DB system. Defaults to REGULAR.
+        EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated.
+        REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
+
+        Allowed values for this property are: "EARLY", "REGULAR"
+
+
+        :return: The maintenance_schedule_type of this CreateMaintenanceDetails.
+        :rtype: str
+        """
+        return self._maintenance_schedule_type
+
+    @maintenance_schedule_type.setter
+    def maintenance_schedule_type(self, maintenance_schedule_type):
+        """
+        Sets the maintenance_schedule_type of this CreateMaintenanceDetails.
+        The maintenance schedule type of the DB system. Defaults to REGULAR.
+        EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated.
+        REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
+
+
+        :param maintenance_schedule_type: The maintenance_schedule_type of this CreateMaintenanceDetails.
+        :type: str
+        """
+        allowed_values = ["EARLY", "REGULAR"]
+        if not value_allowed_none_or_none_sentinel(maintenance_schedule_type, allowed_values):
+            raise ValueError(
+                f"Invalid value for `maintenance_schedule_type`, must be None or one of {allowed_values}"
+            )
+        self._maintenance_schedule_type = maintenance_schedule_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

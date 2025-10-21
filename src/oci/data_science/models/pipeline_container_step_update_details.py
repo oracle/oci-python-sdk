@@ -46,6 +46,10 @@ class PipelineContainerStepUpdateDetails(PipelineStepUpdateDetails):
             The value to assign to the step_storage_mount_configuration_details_list property of this PipelineContainerStepUpdateDetails.
         :type step_storage_mount_configuration_details_list: list[oci.data_science.models.StorageMountConfigurationDetails]
 
+        :param step_parameters:
+            The value to assign to the step_parameters property of this PipelineContainerStepUpdateDetails.
+        :type step_parameters: oci.data_science.models.PipelineStepParameterDetails
+
         """
         self.swagger_types = {
             'step_type': 'str',
@@ -53,7 +57,8 @@ class PipelineContainerStepUpdateDetails(PipelineStepUpdateDetails):
             'description': 'str',
             'step_configuration_details': 'PipelineStepConfigurationDetails',
             'step_infrastructure_configuration_details': 'PipelineInfrastructureConfigurationDetails',
-            'step_storage_mount_configuration_details_list': 'list[StorageMountConfigurationDetails]'
+            'step_storage_mount_configuration_details_list': 'list[StorageMountConfigurationDetails]',
+            'step_parameters': 'PipelineStepParameterDetails'
         }
         self.attribute_map = {
             'step_type': 'stepType',
@@ -61,7 +66,8 @@ class PipelineContainerStepUpdateDetails(PipelineStepUpdateDetails):
             'description': 'description',
             'step_configuration_details': 'stepConfigurationDetails',
             'step_infrastructure_configuration_details': 'stepInfrastructureConfigurationDetails',
-            'step_storage_mount_configuration_details_list': 'stepStorageMountConfigurationDetailsList'
+            'step_storage_mount_configuration_details_list': 'stepStorageMountConfigurationDetailsList',
+            'step_parameters': 'stepParameters'
         }
         self._step_type = None
         self._step_name = None
@@ -69,6 +75,7 @@ class PipelineContainerStepUpdateDetails(PipelineStepUpdateDetails):
         self._step_configuration_details = None
         self._step_infrastructure_configuration_details = None
         self._step_storage_mount_configuration_details_list = None
+        self._step_parameters = None
         self._step_type = 'CONTAINER'
 
     @property
@@ -114,6 +121,26 @@ class PipelineContainerStepUpdateDetails(PipelineStepUpdateDetails):
         :type: list[oci.data_science.models.StorageMountConfigurationDetails]
         """
         self._step_storage_mount_configuration_details_list = step_storage_mount_configuration_details_list
+
+    @property
+    def step_parameters(self):
+        """
+        Gets the step_parameters of this PipelineContainerStepUpdateDetails.
+
+        :return: The step_parameters of this PipelineContainerStepUpdateDetails.
+        :rtype: oci.data_science.models.PipelineStepParameterDetails
+        """
+        return self._step_parameters
+
+    @step_parameters.setter
+    def step_parameters(self, step_parameters):
+        """
+        Sets the step_parameters of this PipelineContainerStepUpdateDetails.
+
+        :param step_parameters: The step_parameters of this PipelineContainerStepUpdateDetails.
+        :type: oci.data_science.models.PipelineStepParameterDetails
+        """
+        self._step_parameters = step_parameters
 
     def __repr__(self):
         return formatted_flat_dict(self)

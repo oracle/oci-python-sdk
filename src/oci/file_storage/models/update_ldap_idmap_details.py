@@ -19,6 +19,10 @@ class UpdateLdapIdmapDetails(object):
     #: This constant has a value of "RFC2307"
     SCHEMA_TYPE_RFC2307 = "RFC2307"
 
+    #: A constant which can be used with the schema_type property of a UpdateLdapIdmapDetails.
+    #: This constant has a value of "RFC2307BIS"
+    SCHEMA_TYPE_RFC2307_BIS = "RFC2307BIS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateLdapIdmapDetails object with values from keyword arguments.
@@ -26,7 +30,7 @@ class UpdateLdapIdmapDetails(object):
 
         :param schema_type:
             The value to assign to the schema_type property of this UpdateLdapIdmapDetails.
-            Allowed values for this property are: "RFC2307"
+            Allowed values for this property are: "RFC2307", "RFC2307BIS"
         :type schema_type: str
 
         :param cache_refresh_interval_seconds:
@@ -93,7 +97,7 @@ class UpdateLdapIdmapDetails(object):
         Gets the schema_type of this UpdateLdapIdmapDetails.
         Schema type of the LDAP account.
 
-        Allowed values for this property are: "RFC2307"
+        Allowed values for this property are: "RFC2307", "RFC2307BIS"
 
 
         :return: The schema_type of this UpdateLdapIdmapDetails.
@@ -111,7 +115,7 @@ class UpdateLdapIdmapDetails(object):
         :param schema_type: The schema_type of this UpdateLdapIdmapDetails.
         :type: str
         """
-        allowed_values = ["RFC2307"]
+        allowed_values = ["RFC2307", "RFC2307BIS"]
         if not value_allowed_none_or_none_sentinel(schema_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `schema_type`, must be None or one of {allowed_values}"

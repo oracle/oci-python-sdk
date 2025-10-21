@@ -38,24 +38,82 @@ class PipelineMLJobStepUpdateDetails(PipelineStepUpdateDetails):
             The value to assign to the step_configuration_details property of this PipelineMLJobStepUpdateDetails.
         :type step_configuration_details: oci.data_science.models.PipelineStepConfigurationDetails
 
+        :param step_run_name:
+            The value to assign to the step_run_name property of this PipelineMLJobStepUpdateDetails.
+        :type step_run_name: str
+
+        :param step_parameters:
+            The value to assign to the step_parameters property of this PipelineMLJobStepUpdateDetails.
+        :type step_parameters: oci.data_science.models.PipelineStepParameterDetails
+
         """
         self.swagger_types = {
             'step_type': 'str',
             'step_name': 'str',
             'description': 'str',
-            'step_configuration_details': 'PipelineStepConfigurationDetails'
+            'step_configuration_details': 'PipelineStepConfigurationDetails',
+            'step_run_name': 'str',
+            'step_parameters': 'PipelineStepParameterDetails'
         }
         self.attribute_map = {
             'step_type': 'stepType',
             'step_name': 'stepName',
             'description': 'description',
-            'step_configuration_details': 'stepConfigurationDetails'
+            'step_configuration_details': 'stepConfigurationDetails',
+            'step_run_name': 'stepRunName',
+            'step_parameters': 'stepParameters'
         }
         self._step_type = None
         self._step_name = None
         self._description = None
         self._step_configuration_details = None
+        self._step_run_name = None
+        self._step_parameters = None
         self._step_type = 'ML_JOB'
+
+    @property
+    def step_run_name(self):
+        """
+        Gets the step_run_name of this PipelineMLJobStepUpdateDetails.
+        Name used when creating the steprun.
+
+
+        :return: The step_run_name of this PipelineMLJobStepUpdateDetails.
+        :rtype: str
+        """
+        return self._step_run_name
+
+    @step_run_name.setter
+    def step_run_name(self, step_run_name):
+        """
+        Sets the step_run_name of this PipelineMLJobStepUpdateDetails.
+        Name used when creating the steprun.
+
+
+        :param step_run_name: The step_run_name of this PipelineMLJobStepUpdateDetails.
+        :type: str
+        """
+        self._step_run_name = step_run_name
+
+    @property
+    def step_parameters(self):
+        """
+        Gets the step_parameters of this PipelineMLJobStepUpdateDetails.
+
+        :return: The step_parameters of this PipelineMLJobStepUpdateDetails.
+        :rtype: oci.data_science.models.PipelineStepParameterDetails
+        """
+        return self._step_parameters
+
+    @step_parameters.setter
+    def step_parameters(self, step_parameters):
+        """
+        Sets the step_parameters of this PipelineMLJobStepUpdateDetails.
+
+        :param step_parameters: The step_parameters of this PipelineMLJobStepUpdateDetails.
+        :type: oci.data_science.models.PipelineStepParameterDetails
+        """
+        self._step_parameters = step_parameters
 
     def __repr__(self):
         return formatted_flat_dict(self)
