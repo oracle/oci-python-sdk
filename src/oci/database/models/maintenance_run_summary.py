@@ -508,7 +508,7 @@ class MaintenanceRunSummary(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this MaintenanceRunSummary.
-        The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+        The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
 
         Allowed values for this property are: "SCHEDULED", "IN_PROGRESS", "SUCCEEDED", "SKIPPED", "FAILED", "UPDATING", "DELETING", "DELETED", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -523,7 +523,7 @@ class MaintenanceRunSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this MaintenanceRunSummary.
-        The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+        The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
 
 
         :param lifecycle_state: The lifecycle_state of this MaintenanceRunSummary.
@@ -718,7 +718,7 @@ class MaintenanceRunSummary(object):
     def patch_id(self):
         """
         Gets the patch_id of this MaintenanceRunSummary.
-        The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+        The unique identifier of the patch. The identifier string includes the patch type, the Oracle AI Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle AI Database 19.9.0.0 that was released October 30, 2020.
 
 
         :return: The patch_id of this MaintenanceRunSummary.
@@ -730,7 +730,7 @@ class MaintenanceRunSummary(object):
     def patch_id(self, patch_id):
         """
         Sets the patch_id of this MaintenanceRunSummary.
-        The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+        The unique identifier of the patch. The identifier string includes the patch type, the Oracle AI Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle AI Database 19.9.0.0 that was released October 30, 2020.
 
 
         :param patch_id: The patch_id of this MaintenanceRunSummary.
@@ -1256,7 +1256,7 @@ class MaintenanceRunSummary(object):
     def database_software_image_id(self):
         """
         Gets the database_software_image_id of this MaintenanceRunSummary.
-        The Autonomous Database Software Image `OCID`__
+        The Autonomous AI Database Software Image `OCID`__
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -1270,7 +1270,7 @@ class MaintenanceRunSummary(object):
     def database_software_image_id(self, database_software_image_id):
         """
         Sets the database_software_image_id of this MaintenanceRunSummary.
-        The Autonomous Database Software Image `OCID`__
+        The Autonomous AI Database Software Image `OCID`__
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

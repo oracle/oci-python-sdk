@@ -12,8 +12,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AutonomousDatabaseDataguardAssociation(object):
     """
-    The properties that define dataguard association between two different Autonomous Databases.
-    Note that Autonomous Databases inherit DataGuard association from parent Autonomous Container Database.
+    The properties that define dataguard association between two different Autonomous AI Databases.
+    Note that Autonomous AI Databases inherit DataGuard association from parent Autonomous Container Database.
     No actions can be taken on AutonomousDatabaseDataguardAssociation, usage is strictly informational.
     """
 
@@ -318,7 +318,7 @@ class AutonomousDatabaseDataguardAssociation(object):
     def id(self):
         """
         **[Required]** Gets the id of this AutonomousDatabaseDataguardAssociation.
-        The OCID of the Autonomous Dataguard created for Autonomous Container Database where given Autonomous Database resides in.
+        The OCID of the Autonomous Dataguard created for Autonomous Container Database where given Autonomous AI Database resides in.
 
 
         :return: The id of this AutonomousDatabaseDataguardAssociation.
@@ -330,7 +330,7 @@ class AutonomousDatabaseDataguardAssociation(object):
     def id(self, id):
         """
         Sets the id of this AutonomousDatabaseDataguardAssociation.
-        The OCID of the Autonomous Dataguard created for Autonomous Container Database where given Autonomous Database resides in.
+        The OCID of the Autonomous Dataguard created for Autonomous Container Database where given Autonomous AI Database resides in.
 
 
         :param id: The id of this AutonomousDatabaseDataguardAssociation.
@@ -342,7 +342,7 @@ class AutonomousDatabaseDataguardAssociation(object):
     def autonomous_database_id(self):
         """
         **[Required]** Gets the autonomous_database_id of this AutonomousDatabaseDataguardAssociation.
-        The `OCID`__ of the Autonomous Database that has a relationship with the peer Autonomous Database.
+        The `OCID`__ of the Autonomous AI Database that has a relationship with the peer Autonomous AI Database.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -356,7 +356,7 @@ class AutonomousDatabaseDataguardAssociation(object):
     def autonomous_database_id(self, autonomous_database_id):
         """
         Sets the autonomous_database_id of this AutonomousDatabaseDataguardAssociation.
-        The `OCID`__ of the Autonomous Database that has a relationship with the peer Autonomous Database.
+        The `OCID`__ of the Autonomous AI Database that has a relationship with the peer Autonomous AI Database.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -370,7 +370,7 @@ class AutonomousDatabaseDataguardAssociation(object):
     def role(self):
         """
         **[Required]** Gets the role of this AutonomousDatabaseDataguardAssociation.
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
 
         Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", "BACKUP_COPY", "SNAPSHOT_STANDBY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -385,7 +385,7 @@ class AutonomousDatabaseDataguardAssociation(object):
     def role(self, role):
         """
         Sets the role of this AutonomousDatabaseDataguardAssociation.
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
 
 
         :param role: The role of this AutonomousDatabaseDataguardAssociation.
@@ -454,7 +454,7 @@ class AutonomousDatabaseDataguardAssociation(object):
     def peer_role(self):
         """
         **[Required]** Gets the peer_role of this AutonomousDatabaseDataguardAssociation.
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
 
         Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", "BACKUP_COPY", "SNAPSHOT_STANDBY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -469,7 +469,7 @@ class AutonomousDatabaseDataguardAssociation(object):
     def peer_role(self, peer_role):
         """
         Sets the peer_role of this AutonomousDatabaseDataguardAssociation.
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
 
 
         :param peer_role: The peer_role of this AutonomousDatabaseDataguardAssociation.
@@ -484,7 +484,7 @@ class AutonomousDatabaseDataguardAssociation(object):
     def peer_autonomous_database_id(self):
         """
         Gets the peer_autonomous_database_id of this AutonomousDatabaseDataguardAssociation.
-        The `OCID`__ of the peer Autonomous Database.
+        The `OCID`__ of the peer Autonomous AI Database.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -498,7 +498,7 @@ class AutonomousDatabaseDataguardAssociation(object):
     def peer_autonomous_database_id(self, peer_autonomous_database_id):
         """
         Sets the peer_autonomous_database_id of this AutonomousDatabaseDataguardAssociation.
-        The `OCID`__ of the peer Autonomous Database.
+        The `OCID`__ of the peer Autonomous AI Database.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -512,7 +512,7 @@ class AutonomousDatabaseDataguardAssociation(object):
     def peer_autonomous_database_life_cycle_state(self):
         """
         Gets the peer_autonomous_database_life_cycle_state of this AutonomousDatabaseDataguardAssociation.
-        The current state of the Autonomous Database.
+        The current state of the Autonomous AI Database.
 
         Allowed values for this property are: "PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING", "MAINTENANCE_IN_PROGRESS", "RESTARTING", "RECREATING", "ROLE_CHANGE_IN_PROGRESS", "UPGRADING", "INACCESSIBLE", "STANDBY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -527,7 +527,7 @@ class AutonomousDatabaseDataguardAssociation(object):
     def peer_autonomous_database_life_cycle_state(self, peer_autonomous_database_life_cycle_state):
         """
         Sets the peer_autonomous_database_life_cycle_state of this AutonomousDatabaseDataguardAssociation.
-        The current state of the Autonomous Database.
+        The current state of the Autonomous AI Database.
 
 
         :param peer_autonomous_database_life_cycle_state: The peer_autonomous_database_life_cycle_state of this AutonomousDatabaseDataguardAssociation.

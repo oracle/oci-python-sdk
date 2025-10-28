@@ -44,7 +44,7 @@ class WorkloadType(object):
     def atp(self):
         """
         Gets the atp of this WorkloadType.
-        The total number of OCPU cores in use for Autonomous Transaction Processing databases in the infrastructure instance.
+        The total number of OCPU cores in use for Autonomous AI Transaction Processing databases in the infrastructure instance.
 
 
         :return: The atp of this WorkloadType.
@@ -56,7 +56,7 @@ class WorkloadType(object):
     def atp(self, atp):
         """
         Sets the atp of this WorkloadType.
-        The total number of OCPU cores in use for Autonomous Transaction Processing databases in the infrastructure instance.
+        The total number of OCPU cores in use for Autonomous AI Transaction Processing databases in the infrastructure instance.
 
 
         :param atp: The atp of this WorkloadType.
@@ -68,7 +68,7 @@ class WorkloadType(object):
     def adw(self):
         """
         Gets the adw of this WorkloadType.
-        The total number of OCPU cores in use for Autonomous Data Warehouse databases in the infrastructure instance.
+        The total number of OCPU cores in use for Autonomous AI Lakehouse databases in the infrastructure instance.
 
 
         :return: The adw of this WorkloadType.
@@ -80,7 +80,7 @@ class WorkloadType(object):
     def adw(self, adw):
         """
         Sets the adw of this WorkloadType.
-        The total number of OCPU cores in use for Autonomous Data Warehouse databases in the infrastructure instance.
+        The total number of OCPU cores in use for Autonomous AI Lakehouse databases in the infrastructure instance.
 
 
         :param adw: The adw of this WorkloadType.

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateAutonomousDatabaseWalletDetails(object):
     """
-    Details to update an Autonomous Database wallet.
+    Details to update an Autonomous AI Database wallet.
     """
 
     def __init__(self, **kwargs):

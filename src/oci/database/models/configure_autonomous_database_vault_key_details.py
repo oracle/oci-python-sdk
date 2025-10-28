@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ConfigureAutonomousDatabaseVaultKeyDetails(object):
     """
-    Configuration details for the Autonomous Database `vault`__ key.
+    Configuration details for the Autonomous AI Database `vault`__ key.
 
     __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
     """

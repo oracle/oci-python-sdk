@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RefreshableCloneCollection(object):
     """
-    A list of Autonomous Database RefreshableClone containing RefreshableCloneSummary items.
+    A list of Autonomous AI Database RefreshableClone containing RefreshableCloneSummary items.
     """
 
     def __init__(self, **kwargs):

@@ -12,12 +12,12 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateCrossRegionAutonomousDatabaseDataGuardDetails(CreateAutonomousDatabaseBase):
     """
-    Details to create an Autonomous Data Guard association for an existing Autonomous Database where the standby is in a different (remote) region from the source primary database.
+    Details to create an Autonomous Data Guard association for an existing Autonomous AI Database where the standby is in a different (remote) region from the source primary database.
     *IMPORTANT*
     Note the following for creating standby databases in cross-region Autonomous Data Guard associations:
     - To create your standby database in a region different from the region of the primary, use the API endpoint of the region in which the standby will be located. For example, if the primary database is in the IAD region, and you want to create the standby in the PHX region, make the API call using the PHX endpoint (https://database.us-phoenix-1.oraclecloud.com). See `API Endpoints`__ for the list of Database Service API endpoints.
     - In the request to create the standby database, the `sourceId` value should be the OCID of the primary database.
-    The following parameters are optional for the cross-region standby database. If included in the request, these parameters contain the same values as the source Autonomous Database:
+    The following parameters are optional for the cross-region standby database. If included in the request, these parameters contain the same values as the source Autonomous AI Database:
     - customerContacts
     - scheduledOperations
     - isAutoScalingForStorageEnabled
@@ -84,7 +84,7 @@ class CreateCrossRegionAutonomousDatabaseDataGuardDetails(CreateAutonomousDataba
 
         :param db_workload:
             The value to assign to the db_workload property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
-            Allowed values for this property are: "OLTP", "DW", "AJD", "APEX"
+            Allowed values for this property are: "OLTP", "DW", "AJD", "APEX", "LH"
         :type db_workload: str
 
         :param data_storage_size_in_tbs:
@@ -442,7 +442,7 @@ class CreateCrossRegionAutonomousDatabaseDataGuardDetails(CreateAutonomousDataba
     def source_id(self):
         """
         **[Required]** Gets the source_id of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
-        The `OCID`__ of the source Autonomous Database that will be used to create a new peer database for the Data Guard association.
+        The `OCID`__ of the source Autonomous AI Database that will be used to create a new peer database for the Data Guard association.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -456,7 +456,7 @@ class CreateCrossRegionAutonomousDatabaseDataGuardDetails(CreateAutonomousDataba
     def source_id(self, source_id):
         """
         Sets the source_id of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
-        The `OCID`__ of the source Autonomous Database that will be used to create a new peer database for the Data Guard association.
+        The `OCID`__ of the source Autonomous AI Database that will be used to create a new peer database for the Data Guard association.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

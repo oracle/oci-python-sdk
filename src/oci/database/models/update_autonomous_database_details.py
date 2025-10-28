@@ -12,10 +12,10 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateAutonomousDatabaseDetails(object):
     """
-    Details to update an Oracle Autonomous Database.
+    Details to update an Oracle Autonomous AI Database.
 
     **Notes**
-    - To specify OCPU core count, you must use either `ocpuCount` or `cpuCoreCount`. You cannot use both parameters at the same time. For Autonomous Database Serverless instances, `ocpuCount` is not used.
+    - To specify OCPU core count, you must use either `ocpuCount` or `cpuCoreCount`. You cannot use both parameters at the same time. For Autonomous AI Database Serverless instances, `ocpuCount` is not used.
     - To specify a storage allocation, you must use  either `dataStorageSizeInGBs` or `dataStorageSizeInTBs`.
     - See the individual parameter discriptions for more information on the OCPU and storage value parameters.
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
@@ -44,6 +44,10 @@ class UpdateAutonomousDatabaseDetails(object):
     #: A constant which can be used with the db_workload property of a UpdateAutonomousDatabaseDetails.
     #: This constant has a value of "APEX"
     DB_WORKLOAD_APEX = "APEX"
+
+    #: A constant which can be used with the db_workload property of a UpdateAutonomousDatabaseDetails.
+    #: This constant has a value of "LH"
+    DB_WORKLOAD_LH = "LH"
 
     #: A constant which can be used with the license_model property of a UpdateAutonomousDatabaseDetails.
     #: This constant has a value of "LICENSE_INCLUDED"
@@ -165,7 +169,7 @@ class UpdateAutonomousDatabaseDetails(object):
 
         :param db_workload:
             The value to assign to the db_workload property of this UpdateAutonomousDatabaseDetails.
-            Allowed values for this property are: "OLTP", "DW", "AJD", "APEX"
+            Allowed values for this property are: "OLTP", "DW", "AJD", "APEX", "LH"
         :type db_workload: str
 
         :param license_model:
@@ -313,6 +317,10 @@ class UpdateAutonomousDatabaseDetails(object):
             The value to assign to the db_tools_details property of this UpdateAutonomousDatabaseDetails.
         :type db_tools_details: list[oci.database.models.DatabaseTool]
 
+        :param vanity_url_details:
+            The value to assign to the vanity_url_details property of this UpdateAutonomousDatabaseDetails.
+        :type vanity_url_details: oci.database.models.VanityUrlDetails
+
         :param secret_id:
             The value to assign to the secret_id property of this UpdateAutonomousDatabaseDetails.
         :type secret_id: str
@@ -385,6 +393,7 @@ class UpdateAutonomousDatabaseDetails(object):
             'is_auto_scaling_for_storage_enabled': 'bool',
             'database_edition': 'str',
             'db_tools_details': 'list[DatabaseTool]',
+            'vanity_url_details': 'VanityUrlDetails',
             'secret_id': 'str',
             'secret_version_number': 'int',
             'encryption_key': 'AutonomousDatabaseEncryptionKeyDetails',
@@ -445,6 +454,7 @@ class UpdateAutonomousDatabaseDetails(object):
             'is_auto_scaling_for_storage_enabled': 'isAutoScalingForStorageEnabled',
             'database_edition': 'databaseEdition',
             'db_tools_details': 'dbToolsDetails',
+            'vanity_url_details': 'vanityUrlDetails',
             'secret_id': 'secretId',
             'secret_version_number': 'secretVersionNumber',
             'encryption_key': 'encryptionKey',
@@ -504,6 +514,7 @@ class UpdateAutonomousDatabaseDetails(object):
         self._is_auto_scaling_for_storage_enabled = None
         self._database_edition = None
         self._db_tools_details = None
+        self._vanity_url_details = None
         self._secret_id = None
         self._secret_version_number = None
         self._encryption_key = None
@@ -537,7 +548,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def compute_model(self):
         """
         Gets the compute_model of this UpdateAutonomousDatabaseDetails.
-        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+        The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
 
         Allowed values for this property are: "ECPU", "OCPU"
 
@@ -551,7 +562,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def compute_model(self, compute_model):
         """
         Sets the compute_model of this UpdateAutonomousDatabaseDetails.
-        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+        The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
 
 
         :param compute_model: The compute_model of this UpdateAutonomousDatabaseDetails.
@@ -568,7 +579,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def in_memory_percentage(self):
         """
         Gets the in_memory_percentage of this UpdateAutonomousDatabaseDetails.
-        The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database. This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
+        The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous AI Database. This property is applicable only to Autonomous AI Databases on the Exadata Cloud@Customer platform.
 
 
         :return: The in_memory_percentage of this UpdateAutonomousDatabaseDetails.
@@ -580,7 +591,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def in_memory_percentage(self, in_memory_percentage):
         """
         Sets the in_memory_percentage of this UpdateAutonomousDatabaseDetails.
-        The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database. This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
+        The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous AI Database. This property is applicable only to Autonomous AI Databases on the Exadata Cloud@Customer platform.
 
 
         :param in_memory_percentage: The in_memory_percentage of this UpdateAutonomousDatabaseDetails.
@@ -616,8 +627,8 @@ class UpdateAutonomousDatabaseDetails(object):
     def cpu_core_count(self):
         """
         Gets the cpu_core_count of this UpdateAutonomousDatabaseDetails.
-        The number of CPUs to be made available to the Autonomous Database.<br>
-        For Autonomous Databases on Dedicated Exadata Infrastructure:
+        The number of CPUs to be made available to the Autonomous AI Database.<br>
+        For Autonomous AI Databases on Dedicated Exadata Infrastructure:
         - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         - It is suggested to use 'computeCount' parameter if you want to use fractional value to provision less than 1 core.
 
@@ -635,8 +646,8 @@ class UpdateAutonomousDatabaseDetails(object):
     def cpu_core_count(self, cpu_core_count):
         """
         Sets the cpu_core_count of this UpdateAutonomousDatabaseDetails.
-        The number of CPUs to be made available to the Autonomous Database.<br>
-        For Autonomous Databases on Dedicated Exadata Infrastructure:
+        The number of CPUs to be made available to the Autonomous AI Database.<br>
+        For Autonomous AI Databases on Dedicated Exadata Infrastructure:
         - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         - It is suggested to use 'computeCount' parameter if you want to use fractional value to provision less than 1 core.
 
@@ -674,7 +685,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def is_dev_tier(self):
         """
         Gets the is_dev_tier of this UpdateAutonomousDatabaseDetails.
-        Autonomous Database for Developers are fixed-shape Autonomous Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud@Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
+        Autonomous AI Database for Developers are fixed-shape Autonomous AI Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud@Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
 
 
         :return: The is_dev_tier of this UpdateAutonomousDatabaseDetails.
@@ -686,7 +697,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def is_dev_tier(self, is_dev_tier):
         """
         Sets the is_dev_tier of this UpdateAutonomousDatabaseDetails.
-        Autonomous Database for Developers are fixed-shape Autonomous Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud@Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
+        Autonomous AI Database for Developers are fixed-shape Autonomous AI Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud@Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
 
 
         :param is_dev_tier: The is_dev_tier of this UpdateAutonomousDatabaseDetails.
@@ -698,7 +709,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def compute_count(self):
         """
         Gets the compute_count of this UpdateAutonomousDatabaseDetails.
-        The compute amount (CPUs) available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure.
+        The compute amount (CPUs) available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous AI Database Serverless instance or an Autonomous AI Database on Dedicated Exadata Infrastructure.
         The 'ECPU' compute model requires a minimum value of one, for databases in the elastic resource pool and minimum value of two, otherwise. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value. Providing `computeModel` and `computeCount` is the preferred method for both OCPU and ECPU.
 
         This cannot be updated in parallel with any of the following: licenseModel, databaseEdition, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
@@ -713,7 +724,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def compute_count(self, compute_count):
         """
         Sets the compute_count of this UpdateAutonomousDatabaseDetails.
-        The compute amount (CPUs) available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure.
+        The compute amount (CPUs) available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous AI Database Serverless instance or an Autonomous AI Database on Dedicated Exadata Infrastructure.
         The 'ECPU' compute model requires a minimum value of one, for databases in the elastic resource pool and minimum value of two, otherwise. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value. Providing `computeModel` and `computeCount` is the preferred method for both OCPU and ECPU.
 
         This cannot be updated in parallel with any of the following: licenseModel, databaseEdition, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
@@ -728,10 +739,10 @@ class UpdateAutonomousDatabaseDetails(object):
     def ocpu_count(self):
         """
         Gets the ocpu_count of this UpdateAutonomousDatabaseDetails.
-        The number of OCPU cores to be made available to the Autonomous Database.
+        The number of OCPU cores to be made available to the Autonomous AI Database.
 
-        For Autonomous Databases on Dedicated Exadata Infrastructure, you can specify a fractional value for this parameter. Fractional values are not supported for Autonomous Database Serverless instances.
-        For Autonomous Database Serverless instances, this parameter is not used.
+        For Autonomous AI Databases on Dedicated Exadata Infrastructure, you can specify a fractional value for this parameter. Fractional values are not supported for Autonomous AI Database Serverless instances.
+        For Autonomous AI Database Serverless instances, this parameter is not used.
 
         To provision less than 1 core, enter a fractional value in an increment of 0.1. To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available to the infrastructure shape. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. Likewise, you can provision 2 cores or 3 cores, but not 2.5 cores. The maximum number of cores is determined by the infrastructure shape. See `Characteristics of Infrastructure Shapes`__ for shape details.
 
@@ -749,10 +760,10 @@ class UpdateAutonomousDatabaseDetails(object):
     def ocpu_count(self, ocpu_count):
         """
         Sets the ocpu_count of this UpdateAutonomousDatabaseDetails.
-        The number of OCPU cores to be made available to the Autonomous Database.
+        The number of OCPU cores to be made available to the Autonomous AI Database.
 
-        For Autonomous Databases on Dedicated Exadata Infrastructure, you can specify a fractional value for this parameter. Fractional values are not supported for Autonomous Database Serverless instances.
-        For Autonomous Database Serverless instances, this parameter is not used.
+        For Autonomous AI Databases on Dedicated Exadata Infrastructure, you can specify a fractional value for this parameter. Fractional values are not supported for Autonomous AI Database Serverless instances.
+        For Autonomous AI Database Serverless instances, this parameter is not used.
 
         To provision less than 1 core, enter a fractional value in an increment of 0.1. To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available to the infrastructure shape. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. Likewise, you can provision 2 cores or 3 cores, but not 2.5 cores. The maximum number of cores is determined by the infrastructure shape. See `Characteristics of Infrastructure Shapes`__ for shape details.
 
@@ -770,14 +781,14 @@ class UpdateAutonomousDatabaseDetails(object):
     def data_storage_size_in_tbs(self):
         """
         Gets the data_storage_size_in_tbs of this UpdateAutonomousDatabaseDetails.
-        The size, in terabytes, of the data volume that will be created and attached to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum storage value is determined by the infrastructure shape. See `Characteristics of Infrastructure Shapes`__ for shape details.
-        A full Exadata service is allocated when the Autonomous Database size is set to the upper limit (384 TB).
+        The size, in terabytes, of the data volume that will be created and attached to the database. For Autonomous AI Databases on dedicated Exadata infrastructure, the maximum storage value is determined by the infrastructure shape. See `Characteristics of Infrastructure Shapes`__ for shape details.
+        A full Exadata service is allocated when the Autonomous AI Database size is set to the upper limit (384 TB).
 
         **Note:** This parameter cannot be used with the `dataStorageSizeInGBs` parameter.
 
         This cannot be updated in parallel with any of the following: licenseModel, databaseEdition, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
-        __ https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbde/
 
 
         :return: The data_storage_size_in_tbs of this UpdateAutonomousDatabaseDetails.
@@ -789,14 +800,14 @@ class UpdateAutonomousDatabaseDetails(object):
     def data_storage_size_in_tbs(self, data_storage_size_in_tbs):
         """
         Sets the data_storage_size_in_tbs of this UpdateAutonomousDatabaseDetails.
-        The size, in terabytes, of the data volume that will be created and attached to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum storage value is determined by the infrastructure shape. See `Characteristics of Infrastructure Shapes`__ for shape details.
-        A full Exadata service is allocated when the Autonomous Database size is set to the upper limit (384 TB).
+        The size, in terabytes, of the data volume that will be created and attached to the database. For Autonomous AI Databases on dedicated Exadata infrastructure, the maximum storage value is determined by the infrastructure shape. See `Characteristics of Infrastructure Shapes`__ for shape details.
+        A full Exadata service is allocated when the Autonomous AI Database size is set to the upper limit (384 TB).
 
         **Note:** This parameter cannot be used with the `dataStorageSizeInGBs` parameter.
 
         This cannot be updated in parallel with any of the following: licenseModel, databaseEdition, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
-        __ https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbde/
 
 
         :param data_storage_size_in_tbs: The data_storage_size_in_tbs of this UpdateAutonomousDatabaseDetails.
@@ -814,7 +825,7 @@ class UpdateAutonomousDatabaseDetails(object):
 
         **Note:** This parameter cannot be used with the `dataStorageSizeInTBs` parameter.
 
-        __ https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbde/
 
 
         :return: The data_storage_size_in_gbs of this UpdateAutonomousDatabaseDetails.
@@ -832,7 +843,7 @@ class UpdateAutonomousDatabaseDetails(object):
 
         **Note:** This parameter cannot be used with the `dataStorageSizeInTBs` parameter.
 
-        __ https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbde/
 
 
         :param data_storage_size_in_gbs: The data_storage_size_in_gbs of this UpdateAutonomousDatabaseDetails.
@@ -844,7 +855,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateAutonomousDatabaseDetails.
-        The user-friendly name for the Autonomous Database. The name does not have to be unique. The display name can only be updated for Autonomous Databases using dedicated Exadata Infrastructure. This parameter may not be updated in parallel with dbVersion.
+        The user-friendly name for the Autonomous AI Database. The name does not have to be unique. The display name can only be updated for Autonomous AI Databases using dedicated Exadata Infrastructure. This parameter may not be updated in parallel with dbVersion.
 
 
         :return: The display_name of this UpdateAutonomousDatabaseDetails.
@@ -856,7 +867,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateAutonomousDatabaseDetails.
-        The user-friendly name for the Autonomous Database. The name does not have to be unique. The display name can only be updated for Autonomous Databases using dedicated Exadata Infrastructure. This parameter may not be updated in parallel with dbVersion.
+        The user-friendly name for the Autonomous AI Database. The name does not have to be unique. The display name can only be updated for Autonomous AI Databases using dedicated Exadata Infrastructure. This parameter may not be updated in parallel with dbVersion.
 
 
         :param display_name: The display_name of this UpdateAutonomousDatabaseDetails.
@@ -868,7 +879,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def is_free_tier(self):
         """
         Gets the is_free_tier of this UpdateAutonomousDatabaseDetails.
-        Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
+        Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous AI Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
 
         This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isLocalDataGuardEnabled
 
@@ -882,7 +893,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def is_free_tier(self, is_free_tier):
         """
         Sets the is_free_tier of this UpdateAutonomousDatabaseDetails.
-        Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
+        Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous AI Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
 
         This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isLocalDataGuardEnabled
 
@@ -928,9 +939,9 @@ class UpdateAutonomousDatabaseDetails(object):
     def db_name(self):
         """
         Gets the db_name of this UpdateAutonomousDatabaseDetails.
-        New name for this Autonomous Database.
-        For Autonomous Databases on Dedicated Exadata Infrastructure, the name must begin with an alphabetic character, and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
-        For Autonomous Database Serverless instances, the name must begin with an alphabetic character, and can contain a maximum of 30 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
+        New name for this Autonomous AI Database.
+        For Autonomous AI Databases on Dedicated Exadata Infrastructure, the name must begin with an alphabetic character, and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+        For Autonomous AI Database Serverless instances, the name must begin with an alphabetic character, and can contain a maximum of 30 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
 
         This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails.
 
@@ -944,9 +955,9 @@ class UpdateAutonomousDatabaseDetails(object):
     def db_name(self, db_name):
         """
         Sets the db_name of this UpdateAutonomousDatabaseDetails.
-        New name for this Autonomous Database.
-        For Autonomous Databases on Dedicated Exadata Infrastructure, the name must begin with an alphabetic character, and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
-        For Autonomous Database Serverless instances, the name must begin with an alphabetic character, and can contain a maximum of 30 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
+        New name for this Autonomous AI Database.
+        For Autonomous AI Databases on Dedicated Exadata Infrastructure, the name must begin with an alphabetic character, and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+        For Autonomous AI Database Serverless instances, the name must begin with an alphabetic character, and can contain a maximum of 30 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
 
         This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails.
 
@@ -1056,16 +1067,17 @@ class UpdateAutonomousDatabaseDetails(object):
     def db_workload(self):
         """
         Gets the db_workload of this UpdateAutonomousDatabaseDetails.
-        The Autonomous Database workload type. The following values are valid:
+        The Autonomous AI Database workload type. The following values are valid:
+        - OLTP - indicates an Autonomous AI Transaction Processing database
+        - DW - indicates an Autonomous AI Lakehouse database
+        - AJD - indicates an Autonomous AI JSON Database
+        - APEX - indicates an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
+        - LH - indicates an Oracle Autonomous AI Lakehouse database
 
-        - OLTP - indicates an Autonomous Transaction Processing database
-        - DW - indicates an Autonomous Data Warehouse database
-        - AJD - indicates an Autonomous JSON Database
-        - APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
 
         This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 
-        Allowed values for this property are: "OLTP", "DW", "AJD", "APEX"
+        Allowed values for this property are: "OLTP", "DW", "AJD", "APEX", "LH"
 
 
         :return: The db_workload of this UpdateAutonomousDatabaseDetails.
@@ -1077,12 +1089,13 @@ class UpdateAutonomousDatabaseDetails(object):
     def db_workload(self, db_workload):
         """
         Sets the db_workload of this UpdateAutonomousDatabaseDetails.
-        The Autonomous Database workload type. The following values are valid:
+        The Autonomous AI Database workload type. The following values are valid:
+        - OLTP - indicates an Autonomous AI Transaction Processing database
+        - DW - indicates an Autonomous AI Lakehouse database
+        - AJD - indicates an Autonomous AI JSON Database
+        - APEX - indicates an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
+        - LH - indicates an Oracle Autonomous AI Lakehouse database
 
-        - OLTP - indicates an Autonomous Transaction Processing database
-        - DW - indicates an Autonomous Data Warehouse database
-        - AJD - indicates an Autonomous JSON Database
-        - APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
 
         This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 
@@ -1090,7 +1103,7 @@ class UpdateAutonomousDatabaseDetails(object):
         :param db_workload: The db_workload of this UpdateAutonomousDatabaseDetails.
         :type: str
         """
-        allowed_values = ["OLTP", "DW", "AJD", "APEX"]
+        allowed_values = ["OLTP", "DW", "AJD", "APEX", "LH"]
         if not value_allowed_none_or_none_sentinel(db_workload, allowed_values):
             raise ValueError(
                 f"Invalid value for `db_workload`, must be None or one of {allowed_values}"
@@ -1101,10 +1114,10 @@ class UpdateAutonomousDatabaseDetails(object):
     def license_model(self):
         """
         Gets the license_model of this UpdateAutonomousDatabaseDetails.
-        The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud.
-        License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service.
-        Note that when provisioning an `Autonomous Database on dedicated Exadata infrastructure`__, this attribute must be null. It is already set at the
-        Autonomous Exadata Infrastructure level. When provisioning an `Autonomous Database Serverless]`__ database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
+        The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud.
+        License Included allows you to subscribe to new Oracle AI Database software licenses and the Oracle AI Database service.
+        Note that when provisioning an `Autonomous AI Database on dedicated Exadata infrastructure`__, this attribute must be null. It is already set at the
+        Autonomous Exadata Infrastructure level. When provisioning an `Autonomous AI Database Serverless]`__ database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
 
         This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
@@ -1123,10 +1136,10 @@ class UpdateAutonomousDatabaseDetails(object):
     def license_model(self, license_model):
         """
         Sets the license_model of this UpdateAutonomousDatabaseDetails.
-        The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud.
-        License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service.
-        Note that when provisioning an `Autonomous Database on dedicated Exadata infrastructure`__, this attribute must be null. It is already set at the
-        Autonomous Exadata Infrastructure level. When provisioning an `Autonomous Database Serverless]`__ database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
+        The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud.
+        License Included allows you to subscribe to new Oracle AI Database software licenses and the Oracle AI Database service.
+        Note that when provisioning an `Autonomous AI Database on dedicated Exadata infrastructure`__, this attribute must be null. It is already set at the
+        Autonomous Exadata Infrastructure level. When provisioning an `Autonomous AI Database Serverless]`__ database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
 
         This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
@@ -1178,7 +1191,7 @@ class UpdateAutonomousDatabaseDetails(object):
          if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console.
         When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
 
-        This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform. For Autonomous Database Serverless instances, `whitelistedIps` is used.
+        This property is applicable only to Autonomous AI Databases on the Exadata Cloud@Customer platform. For Autonomous AI Database Serverless instances, `whitelistedIps` is used.
 
 
         :return: The is_access_control_enabled of this UpdateAutonomousDatabaseDetails.
@@ -1196,7 +1209,7 @@ class UpdateAutonomousDatabaseDetails(object):
          if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console.
         When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
 
-        This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform. For Autonomous Database Serverless instances, `whitelistedIps` is used.
+        This property is applicable only to Autonomous AI Databases on the Exadata Cloud@Customer platform. For Autonomous AI Database Serverless instances, `whitelistedIps` is used.
 
 
         :param is_access_control_enabled: The is_access_control_enabled of this UpdateAutonomousDatabaseDetails.
@@ -1208,11 +1221,11 @@ class UpdateAutonomousDatabaseDetails(object):
     def whitelisted_ips(self):
         """
         Gets the whitelisted_ips of this UpdateAutonomousDatabaseDetails.
-        The client IP access control list (ACL). This feature is available for `Autonomous Database Serverless]`__ and on Exadata Cloud@Customer.
-        Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
-        If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
+        The client IP access control list (ACL). This feature is available for `Autonomous AI Database Serverless]`__ and on Exadata Cloud@Customer.
+        Only clients connecting from an IP address included in the ACL may access the Autonomous AI Database instance.
+        If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous AI Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
 
-        For Autonomous Database Serverless, this is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID).
+        For Autonomous AI Database Serverless, this is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID).
         Multiple IPs and VCN OCIDs should be separate strings separated by commas, but if it\u2019s other configurations that need multiple pieces of information then its each piece is connected with semicolon (;) as a delimiter.
         Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"ocid1.vcn.oc1.sea.<unique_id>\",\"ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1\",\"ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16\"]`
         For Exadata Cloud@Customer, this is an array of IP addresses or CIDR notations.
@@ -1234,11 +1247,11 @@ class UpdateAutonomousDatabaseDetails(object):
     def whitelisted_ips(self, whitelisted_ips):
         """
         Sets the whitelisted_ips of this UpdateAutonomousDatabaseDetails.
-        The client IP access control list (ACL). This feature is available for `Autonomous Database Serverless]`__ and on Exadata Cloud@Customer.
-        Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
-        If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
+        The client IP access control list (ACL). This feature is available for `Autonomous AI Database Serverless]`__ and on Exadata Cloud@Customer.
+        Only clients connecting from an IP address included in the ACL may access the Autonomous AI Database instance.
+        If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous AI Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
 
-        For Autonomous Database Serverless, this is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID).
+        For Autonomous AI Database Serverless, this is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID).
         Multiple IPs and VCN OCIDs should be separate strings separated by commas, but if it\u2019s other configurations that need multiple pieces of information then its each piece is connected with semicolon (;) as a delimiter.
         Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"ocid1.vcn.oc1.sea.<unique_id>\",\"ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1\",\"ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16\"]`
         For Exadata Cloud@Customer, this is an array of IP addresses or CIDR notations.
@@ -1260,9 +1273,9 @@ class UpdateAutonomousDatabaseDetails(object):
     def are_primary_whitelisted_ips_used(self):
         """
         Gets the are_primary_whitelisted_ips_used of this UpdateAutonomousDatabaseDetails.
-        This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled.
-        `TRUE` if the Autonomous Database has Data Guard and Access Control enabled, and the Autonomous Database uses the primary's IP access control list (ACL) for standby.
-        `FALSE` if the Autonomous Database has Data Guard and Access Control enabled, and the Autonomous Database uses a different IP access control list (ACL) for standby compared to primary.
+        This field will be null if the Autonomous AI Database is not Data Guard enabled or Access Control is disabled.
+        `TRUE` if the Autonomous AI Database has Data Guard and Access Control enabled, and the Autonomous AI Database uses the primary's IP access control list (ACL) for standby.
+        `FALSE` if the Autonomous AI Database has Data Guard and Access Control enabled, and the Autonomous AI Database uses a different IP access control list (ACL) for standby compared to primary.
 
 
         :return: The are_primary_whitelisted_ips_used of this UpdateAutonomousDatabaseDetails.
@@ -1274,9 +1287,9 @@ class UpdateAutonomousDatabaseDetails(object):
     def are_primary_whitelisted_ips_used(self, are_primary_whitelisted_ips_used):
         """
         Sets the are_primary_whitelisted_ips_used of this UpdateAutonomousDatabaseDetails.
-        This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled.
-        `TRUE` if the Autonomous Database has Data Guard and Access Control enabled, and the Autonomous Database uses the primary's IP access control list (ACL) for standby.
-        `FALSE` if the Autonomous Database has Data Guard and Access Control enabled, and the Autonomous Database uses a different IP access control list (ACL) for standby compared to primary.
+        This field will be null if the Autonomous AI Database is not Data Guard enabled or Access Control is disabled.
+        `TRUE` if the Autonomous AI Database has Data Guard and Access Control enabled, and the Autonomous AI Database uses the primary's IP access control list (ACL) for standby.
+        `FALSE` if the Autonomous AI Database has Data Guard and Access Control enabled, and the Autonomous AI Database uses a different IP access control list (ACL) for standby compared to primary.
 
 
         :param are_primary_whitelisted_ips_used: The are_primary_whitelisted_ips_used of this UpdateAutonomousDatabaseDetails.
@@ -1288,11 +1301,11 @@ class UpdateAutonomousDatabaseDetails(object):
     def standby_whitelisted_ips(self):
         """
         Gets the standby_whitelisted_ips of this UpdateAutonomousDatabaseDetails.
-        The client IP access control list (ACL). This feature is available for `Autonomous Database Serverless]`__ and on Exadata Cloud@Customer.
-        Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
-        If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
+        The client IP access control list (ACL). This feature is available for `Autonomous AI Database Serverless]`__ and on Exadata Cloud@Customer.
+        Only clients connecting from an IP address included in the ACL may access the Autonomous AI Database instance.
+        If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous AI Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
 
-        For Autonomous Database Serverless, this is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID).
+        For Autonomous AI Database Serverless, this is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID).
         Multiple IPs and VCN OCIDs should be separate strings separated by commas, but if it\u2019s other configurations that need multiple pieces of information then its each piece is connected with semicolon (;) as a delimiter.
         Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"ocid1.vcn.oc1.sea.<unique_id>\",\"ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1\",\"ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16\"]`
         For Exadata Cloud@Customer, this is an array of IP addresses or CIDR notations.
@@ -1314,11 +1327,11 @@ class UpdateAutonomousDatabaseDetails(object):
     def standby_whitelisted_ips(self, standby_whitelisted_ips):
         """
         Sets the standby_whitelisted_ips of this UpdateAutonomousDatabaseDetails.
-        The client IP access control list (ACL). This feature is available for `Autonomous Database Serverless]`__ and on Exadata Cloud@Customer.
-        Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
-        If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
+        The client IP access control list (ACL). This feature is available for `Autonomous AI Database Serverless]`__ and on Exadata Cloud@Customer.
+        Only clients connecting from an IP address included in the ACL may access the Autonomous AI Database instance.
+        If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous AI Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
 
-        For Autonomous Database Serverless, this is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID).
+        For Autonomous AI Database Serverless, this is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID).
         Multiple IPs and VCN OCIDs should be separate strings separated by commas, but if it\u2019s other configurations that need multiple pieces of information then its each piece is connected with semicolon (;) as a delimiter.
         Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"ocid1.vcn.oc1.sea.<unique_id>\",\"ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1\",\"ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16\"]`
         For Exadata Cloud@Customer, this is an array of IP addresses or CIDR notations.
@@ -1340,7 +1353,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def is_auto_scaling_enabled(self):
         """
         Gets the is_auto_scaling_enabled of this UpdateAutonomousDatabaseDetails.
-        Indicates whether auto scaling is enabled for the Autonomous Database CPU core count. Setting to `TRUE` enables auto scaling. Setting to `FALSE` disables auto scaling. The default value is `TRUE`. Auto scaling is only available for `Autonomous Database Serverless instances`__.
+        Indicates whether auto scaling is enabled for the Autonomous AI Database CPU core count. Setting to `TRUE` enables auto scaling. Setting to `FALSE` disables auto scaling. The default value is `TRUE`. Auto scaling is only available for `Autonomous AI Database Serverless instances`__.
 
         __ https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/
 
@@ -1354,7 +1367,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def is_auto_scaling_enabled(self, is_auto_scaling_enabled):
         """
         Sets the is_auto_scaling_enabled of this UpdateAutonomousDatabaseDetails.
-        Indicates whether auto scaling is enabled for the Autonomous Database CPU core count. Setting to `TRUE` enables auto scaling. Setting to `FALSE` disables auto scaling. The default value is `TRUE`. Auto scaling is only available for `Autonomous Database Serverless instances`__.
+        Indicates whether auto scaling is enabled for the Autonomous AI Database CPU core count. Setting to `TRUE` enables auto scaling. Setting to `FALSE` disables auto scaling. The default value is `TRUE`. Auto scaling is only available for `Autonomous AI Database Serverless instances`__.
 
         __ https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/
 
@@ -1368,7 +1381,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def is_refreshable_clone(self):
         """
         Gets the is_refreshable_clone of this UpdateAutonomousDatabaseDetails.
-        Indicates if the Autonomous Database is a refreshable clone.
+        Indicates if the Autonomous AI Database is a refreshable clone.
 
         This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 
@@ -1382,7 +1395,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def is_refreshable_clone(self, is_refreshable_clone):
         """
         Sets the is_refreshable_clone of this UpdateAutonomousDatabaseDetails.
-        Indicates if the Autonomous Database is a refreshable clone.
+        Indicates if the Autonomous AI Database is a refreshable clone.
 
         This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 
@@ -1396,7 +1409,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def refreshable_mode(self):
         """
         Gets the refreshable_mode of this UpdateAutonomousDatabaseDetails.
-        The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
+        The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous AI Database.
 
         Allowed values for this property are: "AUTOMATIC", "MANUAL"
 
@@ -1410,7 +1423,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def refreshable_mode(self, refreshable_mode):
         """
         Sets the refreshable_mode of this UpdateAutonomousDatabaseDetails.
-        The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
+        The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous AI Database.
 
 
         :param refreshable_mode: The refreshable_mode of this UpdateAutonomousDatabaseDetails.
@@ -1427,12 +1440,12 @@ class UpdateAutonomousDatabaseDetails(object):
     def is_local_data_guard_enabled(self):
         """
         Gets the is_local_data_guard_enabled of this UpdateAutonomousDatabaseDetails.
-        Indicates whether the Autonomous Database has a local (in-region) standby database. Not applicable when creating a cross-region Autonomous Data Guard associations, or to
-        Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        Indicates whether the Autonomous AI Database has a local (in-region) standby database. Not applicable when creating a cross-region Autonomous Data Guard associations, or to
+        Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 
-        To create a local standby, set to `TRUE`. To delete a local standby, set to `FALSE`. For more information on using Autonomous Data Guard on an Autonomous Database Serverless instance (local and cross-region) , see `About Standby Databases`__
+        To create a local standby, set to `TRUE`. To delete a local standby, set to `FALSE`. For more information on using Autonomous Data Guard on an Autonomous AI Database Serverless instance (local and cross-region) , see `About Standby Databases`__
 
-        To enable cross-region Autonomous Data Guard on an Autonomous Database Serverless instance, see `Enable Autonomous Data Guard`__.
+        To enable cross-region Autonomous Data Guard on an Autonomous AI Database Serverless instance, see `Enable Autonomous Data Guard`__.
 
         This cannot be updated in parallel with any of the following: isMTLSRequired, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
@@ -1449,12 +1462,12 @@ class UpdateAutonomousDatabaseDetails(object):
     def is_local_data_guard_enabled(self, is_local_data_guard_enabled):
         """
         Sets the is_local_data_guard_enabled of this UpdateAutonomousDatabaseDetails.
-        Indicates whether the Autonomous Database has a local (in-region) standby database. Not applicable when creating a cross-region Autonomous Data Guard associations, or to
-        Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        Indicates whether the Autonomous AI Database has a local (in-region) standby database. Not applicable when creating a cross-region Autonomous Data Guard associations, or to
+        Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 
-        To create a local standby, set to `TRUE`. To delete a local standby, set to `FALSE`. For more information on using Autonomous Data Guard on an Autonomous Database Serverless instance (local and cross-region) , see `About Standby Databases`__
+        To create a local standby, set to `TRUE`. To delete a local standby, set to `FALSE`. For more information on using Autonomous Data Guard on an Autonomous AI Database Serverless instance (local and cross-region) , see `About Standby Databases`__
 
-        To enable cross-region Autonomous Data Guard on an Autonomous Database Serverless instance, see `Enable Autonomous Data Guard`__.
+        To enable cross-region Autonomous Data Guard on an Autonomous AI Database Serverless instance, see `Enable Autonomous Data Guard`__.
 
         This cannot be updated in parallel with any of the following: isMTLSRequired, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
@@ -1471,12 +1484,12 @@ class UpdateAutonomousDatabaseDetails(object):
     def is_data_guard_enabled(self):
         """
         Gets the is_data_guard_enabled of this UpdateAutonomousDatabaseDetails.
-        ** Deprecated. ** Indicates whether the Autonomous Database has a local (in-region) standby database. Not applicable when creating a cross-region Autonomous Data Guard associations, or to
-        Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        ** Deprecated. ** Indicates whether the Autonomous AI Database has a local (in-region) standby database. Not applicable when creating a cross-region Autonomous Data Guard associations, or to
+        Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 
-        To create a local standby, set to `TRUE`. To delete a local standby, set to `FALSE`. For more information on using Autonomous Data Guard on an Autonomous Database Serverless instance (local and cross-region) , see `About Standby Databases`__
+        To create a local standby, set to `TRUE`. To delete a local standby, set to `FALSE`. For more information on using Autonomous Data Guard on an Autonomous AI Database Serverless instance (local and cross-region) , see `About Standby Databases`__
 
-        To enable cross-region Autonomous Data Guard on an Autonomous Database Serverless instance, see `Enable Autonomous Data Guard`__.
+        To enable cross-region Autonomous Data Guard on an Autonomous AI Database Serverless instance, see `Enable Autonomous Data Guard`__.
 
         To delete a cross-region standby database, provide the `peerDbId` for the standby database in a remote region, and set `isDataGuardEnabled` to `FALSE`.
 
@@ -1493,12 +1506,12 @@ class UpdateAutonomousDatabaseDetails(object):
     def is_data_guard_enabled(self, is_data_guard_enabled):
         """
         Sets the is_data_guard_enabled of this UpdateAutonomousDatabaseDetails.
-        ** Deprecated. ** Indicates whether the Autonomous Database has a local (in-region) standby database. Not applicable when creating a cross-region Autonomous Data Guard associations, or to
-        Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        ** Deprecated. ** Indicates whether the Autonomous AI Database has a local (in-region) standby database. Not applicable when creating a cross-region Autonomous Data Guard associations, or to
+        Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 
-        To create a local standby, set to `TRUE`. To delete a local standby, set to `FALSE`. For more information on using Autonomous Data Guard on an Autonomous Database Serverless instance (local and cross-region) , see `About Standby Databases`__
+        To create a local standby, set to `TRUE`. To delete a local standby, set to `FALSE`. For more information on using Autonomous Data Guard on an Autonomous AI Database Serverless instance (local and cross-region) , see `About Standby Databases`__
 
-        To enable cross-region Autonomous Data Guard on an Autonomous Database Serverless instance, see `Enable Autonomous Data Guard`__.
+        To enable cross-region Autonomous Data Guard on an Autonomous AI Database Serverless instance, see `Enable Autonomous Data Guard`__.
 
         To delete a cross-region standby database, provide the `peerDbId` for the standby database in a remote region, and set `isDataGuardEnabled` to `FALSE`.
 
@@ -1543,7 +1556,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def db_version(self):
         """
         Gets the db_version of this UpdateAutonomousDatabaseDetails.
-        A valid Oracle Database version for Autonomous Database.
+        A valid Oracle AI Database version for Autonomous AI Database.
 
 
         :return: The db_version of this UpdateAutonomousDatabaseDetails.
@@ -1555,7 +1568,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def db_version(self, db_version):
         """
         Sets the db_version of this UpdateAutonomousDatabaseDetails.
-        A valid Oracle Database version for Autonomous Database.
+        A valid Oracle AI Database version for Autonomous AI Database.
 
 
         :param db_version: The db_version of this UpdateAutonomousDatabaseDetails.
@@ -1567,7 +1580,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def open_mode(self):
         """
         Gets the open_mode of this UpdateAutonomousDatabaseDetails.
-        Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
+        Indicates the Autonomous AI Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
 
         This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
@@ -1583,7 +1596,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def open_mode(self, open_mode):
         """
         Sets the open_mode of this UpdateAutonomousDatabaseDetails.
-        Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
+        Indicates the Autonomous AI Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
 
         This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
@@ -1602,7 +1615,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def permission_level(self):
         """
         Gets the permission_level of this UpdateAutonomousDatabaseDetails.
-        The Autonomous Database permission level. Restricted mode allows access only by admin users.
+        The Autonomous AI Database permission level. Restricted mode allows access only by admin users.
 
         This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
@@ -1618,7 +1631,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def permission_level(self, permission_level):
         """
         Sets the permission_level of this UpdateAutonomousDatabaseDetails.
-        The Autonomous Database permission level. Restricted mode allows access only by admin users.
+        The Autonomous AI Database permission level. Restricted mode allows access only by admin users.
 
         This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
@@ -1642,7 +1655,7 @@ class UpdateAutonomousDatabaseDetails(object):
         **Subnet Restrictions:**
         - For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
         - For Exadata and virtual machine 2-node RAC systems, do not use a subnet that overlaps with 192.168.128.0/20.
-        - For Autonomous Database, setting this will disable public secure access to the database.
+        - For Autonomous AI Database, setting this will disable public secure access to the database.
 
         These subnets are used by the Oracle Clusterware private interconnect on the database instance.
         Specifying an overlapping subnet will cause the private interconnect to malfunction.
@@ -1665,7 +1678,7 @@ class UpdateAutonomousDatabaseDetails(object):
         **Subnet Restrictions:**
         - For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
         - For Exadata and virtual machine 2-node RAC systems, do not use a subnet that overlaps with 192.168.128.0/20.
-        - For Autonomous Database, setting this will disable public secure access to the database.
+        - For Autonomous AI Database, setting this will disable public secure access to the database.
 
         These subnets are used by the Oracle Clusterware private interconnect on the database instance.
         Specifying an overlapping subnet will cause the private interconnect to malfunction.
@@ -1743,7 +1756,7 @@ class UpdateAutonomousDatabaseDetails(object):
         Gets the nsg_ids of this UpdateAutonomousDatabaseDetails.
         The list of `OCIDs`__ for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see `Security Rules`__.
         **NsgIds restrictions:**
-        - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+        - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
@@ -1760,7 +1773,7 @@ class UpdateAutonomousDatabaseDetails(object):
         Sets the nsg_ids of this UpdateAutonomousDatabaseDetails.
         The list of `OCIDs`__ for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see `Security Rules`__.
         **NsgIds restrictions:**
-        - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+        - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
@@ -1823,7 +1836,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def time_of_auto_refresh_start(self):
         """
         Gets the time_of_auto_refresh_start of this UpdateAutonomousDatabaseDetails.
-        The the date and time that auto-refreshing will begin for an Autonomous Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
+        The the date and time that auto-refreshing will begin for an Autonomous AI Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
 
 
         :return: The time_of_auto_refresh_start of this UpdateAutonomousDatabaseDetails.
@@ -1835,7 +1848,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def time_of_auto_refresh_start(self, time_of_auto_refresh_start):
         """
         Sets the time_of_auto_refresh_start of this UpdateAutonomousDatabaseDetails.
-        The the date and time that auto-refreshing will begin for an Autonomous Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
+        The the date and time that auto-refreshing will begin for an Autonomous AI Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
 
 
         :param time_of_auto_refresh_start: The time_of_auto_refresh_start of this UpdateAutonomousDatabaseDetails.
@@ -1875,7 +1888,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def is_mtls_connection_required(self):
         """
         Gets the is_mtls_connection_required of this UpdateAutonomousDatabaseDetails.
-        Specifies if the Autonomous Database requires mTLS connections.
+        Specifies if the Autonomous AI Database requires mTLS connections.
 
         This may not be updated in parallel with any of the following: licenseModel, databaseEdition, cpuCoreCount, computeCount, dataStorageSizeInTBs, whitelistedIps, openMode, permissionLevel, db-workload, privateEndpointLabel, nsgIds, customerContacts, dbVersion, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 
@@ -1883,7 +1896,7 @@ class UpdateAutonomousDatabaseDetails(object):
         - CreateAutonomousDatabase
         - GetAutonomousDatabase
         - UpdateAutonomousDatabase
-        Details: Prior to the July 1, 2023 change, the isMTLSConnectionRequired attribute default value was true. This applies to Autonomous Database Serverless.
+        Details: Prior to the July 1, 2023 change, the isMTLSConnectionRequired attribute default value was true. This applies to Autonomous AI Database Serverless.
         Does this impact me? If you use or maintain custom scripts or Terraform scripts referencing the CreateAutonomousDatabase, GetAutonomousDatabase, or UpdateAutonomousDatabase APIs, you want to check, and possibly modify, the scripts for the changed default value of the attribute. Should you choose not to leave your scripts unchanged, the API calls containing this attribute will continue to work, but the default value will switch from true to false.
         How do I make this change? Using either OCI SDKs or command line tools, update your custom scripts to explicitly set the isMTLSConnectionRequired attribute to true.
 
@@ -1897,7 +1910,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def is_mtls_connection_required(self, is_mtls_connection_required):
         """
         Sets the is_mtls_connection_required of this UpdateAutonomousDatabaseDetails.
-        Specifies if the Autonomous Database requires mTLS connections.
+        Specifies if the Autonomous AI Database requires mTLS connections.
 
         This may not be updated in parallel with any of the following: licenseModel, databaseEdition, cpuCoreCount, computeCount, dataStorageSizeInTBs, whitelistedIps, openMode, permissionLevel, db-workload, privateEndpointLabel, nsgIds, customerContacts, dbVersion, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 
@@ -1905,7 +1918,7 @@ class UpdateAutonomousDatabaseDetails(object):
         - CreateAutonomousDatabase
         - GetAutonomousDatabase
         - UpdateAutonomousDatabase
-        Details: Prior to the July 1, 2023 change, the isMTLSConnectionRequired attribute default value was true. This applies to Autonomous Database Serverless.
+        Details: Prior to the July 1, 2023 change, the isMTLSConnectionRequired attribute default value was true. This applies to Autonomous AI Database Serverless.
         Does this impact me? If you use or maintain custom scripts or Terraform scripts referencing the CreateAutonomousDatabase, GetAutonomousDatabase, or UpdateAutonomousDatabase APIs, you want to check, and possibly modify, the scripts for the changed default value of the attribute. Should you choose not to leave your scripts unchanged, the API calls containing this attribute will continue to work, but the default value will switch from true to false.
         How do I make this change? Using either OCI SDKs or command line tools, update your custom scripts to explicitly set the isMTLSConnectionRequired attribute to true.
 
@@ -1919,7 +1932,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def resource_pool_leader_id(self):
         """
         Gets the resource_pool_leader_id of this UpdateAutonomousDatabaseDetails.
-        The unique identifier for leader autonomous database OCID `OCID`__.
+        The unique identifier for leader Autonomous AI Database OCID `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -1933,7 +1946,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def resource_pool_leader_id(self, resource_pool_leader_id):
         """
         Sets the resource_pool_leader_id of this UpdateAutonomousDatabaseDetails.
-        The unique identifier for leader autonomous database OCID `OCID`__.
+        The unique identifier for leader Autonomous AI Database OCID `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -1967,7 +1980,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def autonomous_maintenance_schedule_type(self):
         """
         Gets the autonomous_maintenance_schedule_type of this UpdateAutonomousDatabaseDetails.
-        The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule
+        The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule
         follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
 
         Allowed values for this property are: "EARLY", "REGULAR"
@@ -1982,7 +1995,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def autonomous_maintenance_schedule_type(self, autonomous_maintenance_schedule_type):
         """
         Sets the autonomous_maintenance_schedule_type of this UpdateAutonomousDatabaseDetails.
-        The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule
+        The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule
         follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
 
 
@@ -2000,7 +2013,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def is_backup_retention_locked(self):
         """
         Gets the is_backup_retention_locked of this UpdateAutonomousDatabaseDetails.
-        True if the Autonomous Database is backup retention locked.
+        True if the Autonomous AI Database is backup retention locked.
 
 
         :return: The is_backup_retention_locked of this UpdateAutonomousDatabaseDetails.
@@ -2012,7 +2025,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def is_backup_retention_locked(self, is_backup_retention_locked):
         """
         Sets the is_backup_retention_locked of this UpdateAutonomousDatabaseDetails.
-        True if the Autonomous Database is backup retention locked.
+        True if the Autonomous AI Database is backup retention locked.
 
 
         :param is_backup_retention_locked: The is_backup_retention_locked of this UpdateAutonomousDatabaseDetails.
@@ -2024,7 +2037,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def time_scheduled_db_version_upgrade(self):
         """
         Gets the time_scheduled_db_version_upgrade of this UpdateAutonomousDatabaseDetails.
-        The date and time the Autonomous Database scheduled to upgrade to 23ai.
+        The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
 
 
         :return: The time_scheduled_db_version_upgrade of this UpdateAutonomousDatabaseDetails.
@@ -2036,7 +2049,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def time_scheduled_db_version_upgrade(self, time_scheduled_db_version_upgrade):
         """
         Sets the time_scheduled_db_version_upgrade of this UpdateAutonomousDatabaseDetails.
-        The date and time the Autonomous Database scheduled to upgrade to 23ai.
+        The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
 
 
         :param time_scheduled_db_version_upgrade: The time_scheduled_db_version_upgrade of this UpdateAutonomousDatabaseDetails.
@@ -2048,7 +2061,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def is_disable_db_version_upgrade_schedule(self):
         """
         Gets the is_disable_db_version_upgrade_schedule of this UpdateAutonomousDatabaseDetails.
-        True if user wants to disable Autonomous Database scheduled upgrade to 23ai.
+        True if user wants to disable Autonomous AI Database scheduled upgrade to 26ai.
 
 
         :return: The is_disable_db_version_upgrade_schedule of this UpdateAutonomousDatabaseDetails.
@@ -2060,7 +2073,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def is_disable_db_version_upgrade_schedule(self, is_disable_db_version_upgrade_schedule):
         """
         Sets the is_disable_db_version_upgrade_schedule of this UpdateAutonomousDatabaseDetails.
-        True if user wants to disable Autonomous Database scheduled upgrade to 23ai.
+        True if user wants to disable Autonomous AI Database scheduled upgrade to 26ai.
 
 
         :param is_disable_db_version_upgrade_schedule: The is_disable_db_version_upgrade_schedule of this UpdateAutonomousDatabaseDetails.
@@ -2072,7 +2085,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def is_schedule_db_version_upgrade_to_earliest(self):
         """
         Gets the is_schedule_db_version_upgrade_to_earliest of this UpdateAutonomousDatabaseDetails.
-        True if user wants to schedule Autonomous Database upgrade to the earliest available time.
+        True if user wants to schedule Autonomous AI Database upgrade to the earliest available time.
 
 
         :return: The is_schedule_db_version_upgrade_to_earliest of this UpdateAutonomousDatabaseDetails.
@@ -2084,7 +2097,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def is_schedule_db_version_upgrade_to_earliest(self, is_schedule_db_version_upgrade_to_earliest):
         """
         Sets the is_schedule_db_version_upgrade_to_earliest of this UpdateAutonomousDatabaseDetails.
-        True if user wants to schedule Autonomous Database upgrade to the earliest available time.
+        True if user wants to schedule Autonomous AI Database upgrade to the earliest available time.
 
 
         :param is_schedule_db_version_upgrade_to_earliest: The is_schedule_db_version_upgrade_to_earliest of this UpdateAutonomousDatabaseDetails.
@@ -2124,7 +2137,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def is_auto_scaling_for_storage_enabled(self):
         """
         Gets the is_auto_scaling_for_storage_enabled of this UpdateAutonomousDatabaseDetails.
-        Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
+        Indicates if auto scaling is enabled for the Autonomous AI Database storage. The default value is `FALSE`.
 
 
         :return: The is_auto_scaling_for_storage_enabled of this UpdateAutonomousDatabaseDetails.
@@ -2136,7 +2149,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def is_auto_scaling_for_storage_enabled(self, is_auto_scaling_for_storage_enabled):
         """
         Sets the is_auto_scaling_for_storage_enabled of this UpdateAutonomousDatabaseDetails.
-        Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
+        Indicates if auto scaling is enabled for the Autonomous AI Database storage. The default value is `FALSE`.
 
 
         :param is_auto_scaling_for_storage_enabled: The is_auto_scaling_for_storage_enabled of this UpdateAutonomousDatabaseDetails.
@@ -2148,7 +2161,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def database_edition(self):
         """
         Gets the database_edition of this UpdateAutonomousDatabaseDetails.
-        The Oracle Database Edition that applies to the Autonomous databases. This parameter accepts options `STANDARD_EDITION` and `ENTERPRISE_EDITION`.
+        The Oracle AI Database Edition that applies to the Autonomous AI Databases. This parameter accepts options `STANDARD_EDITION` and `ENTERPRISE_EDITION`.
 
         This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
@@ -2162,7 +2175,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def database_edition(self, database_edition):
         """
         Sets the database_edition of this UpdateAutonomousDatabaseDetails.
-        The Oracle Database Edition that applies to the Autonomous databases. This parameter accepts options `STANDARD_EDITION` and `ENTERPRISE_EDITION`.
+        The Oracle AI Database Edition that applies to the Autonomous AI Databases. This parameter accepts options `STANDARD_EDITION` and `ENTERPRISE_EDITION`.
 
         This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
@@ -2199,6 +2212,26 @@ class UpdateAutonomousDatabaseDetails(object):
         :type: list[oci.database.models.DatabaseTool]
         """
         self._db_tools_details = db_tools_details
+
+    @property
+    def vanity_url_details(self):
+        """
+        Gets the vanity_url_details of this UpdateAutonomousDatabaseDetails.
+
+        :return: The vanity_url_details of this UpdateAutonomousDatabaseDetails.
+        :rtype: oci.database.models.VanityUrlDetails
+        """
+        return self._vanity_url_details
+
+    @vanity_url_details.setter
+    def vanity_url_details(self, vanity_url_details):
+        """
+        Sets the vanity_url_details of this UpdateAutonomousDatabaseDetails.
+
+        :param vanity_url_details: The vanity_url_details of this UpdateAutonomousDatabaseDetails.
+        :type: oci.database.models.VanityUrlDetails
+        """
+        self._vanity_url_details = vanity_url_details
 
     @property
     def secret_id(self):
@@ -2272,7 +2305,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def is_disconnect_peer(self):
         """
         Gets the is_disconnect_peer of this UpdateAutonomousDatabaseDetails.
-        If true, this will disconnect the Autonomous Database from its peer and the Autonomous Database can work permanently as a standalone database.
+        If true, this will disconnect the Autonomous AI Database from its peer and the Autonomous AI Database can work permanently as a standalone database.
 
         To disconnect a cross region standby, please also provide the OCID of the standby database in the `peerDbId` parameter.
 
@@ -2286,7 +2319,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def is_disconnect_peer(self, is_disconnect_peer):
         """
         Sets the is_disconnect_peer of this UpdateAutonomousDatabaseDetails.
-        If true, this will disconnect the Autonomous Database from its peer and the Autonomous Database can work permanently as a standalone database.
+        If true, this will disconnect the Autonomous AI Database from its peer and the Autonomous AI Database can work permanently as a standalone database.
 
         To disconnect a cross region standby, please also provide the OCID of the standby database in the `peerDbId` parameter.
 

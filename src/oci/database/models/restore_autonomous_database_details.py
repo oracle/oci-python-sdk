@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RestoreAutonomousDatabaseDetails(object):
     """
-    Details to restore an Oracle Autonomous Database.
+    Details to restore an Oracle Autonomous AI Database.
     """
 
     def __init__(self, **kwargs):

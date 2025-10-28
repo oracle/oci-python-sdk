@@ -194,7 +194,7 @@ class ConfigureSaasAdminUserDetails(object):
     def is_enabled(self):
         """
         Gets the is_enabled of this ConfigureSaasAdminUserDetails.
-        Indicates if the SaaS administrative user is enabled for the Autonomous Database.
+        Indicates if the SaaS administrative user is enabled for the Autonomous AI Database.
 
 
         :return: The is_enabled of this ConfigureSaasAdminUserDetails.
@@ -206,7 +206,7 @@ class ConfigureSaasAdminUserDetails(object):
     def is_enabled(self, is_enabled):
         """
         Sets the is_enabled of this ConfigureSaasAdminUserDetails.
-        Indicates if the SaaS administrative user is enabled for the Autonomous Database.
+        Indicates if the SaaS administrative user is enabled for the Autonomous AI Database.
 
 
         :param is_enabled: The is_enabled of this ConfigureSaasAdminUserDetails.
@@ -249,7 +249,7 @@ class ConfigureSaasAdminUserDetails(object):
     def time_saas_admin_user_enabled(self):
         """
         Gets the time_saas_admin_user_enabled of this ConfigureSaasAdminUserDetails.
-        The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
+        The date and time the SaaS administrative user was enabled at, for the Autonomous AI Database.
 
 
         :return: The time_saas_admin_user_enabled of this ConfigureSaasAdminUserDetails.
@@ -261,7 +261,7 @@ class ConfigureSaasAdminUserDetails(object):
     def time_saas_admin_user_enabled(self, time_saas_admin_user_enabled):
         """
         Sets the time_saas_admin_user_enabled of this ConfigureSaasAdminUserDetails.
-        The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
+        The date and time the SaaS administrative user was enabled at, for the Autonomous AI Database.
 
 
         :param time_saas_admin_user_enabled: The time_saas_admin_user_enabled of this ConfigureSaasAdminUserDetails.

@@ -229,7 +229,7 @@ class CloudAutonomousVmClusterResourceUsage(object):
     def autonomous_data_storage_size_in_tbs(self):
         """
         Gets the autonomous_data_storage_size_in_tbs of this CloudAutonomousVmClusterResourceUsage.
-        The data disk group size allocated for Autonomous Databases, in TBs.
+        The data disk group size allocated for Autonomous AI Databases, in TBs.
 
 
         :return: The autonomous_data_storage_size_in_tbs of this CloudAutonomousVmClusterResourceUsage.
@@ -241,7 +241,7 @@ class CloudAutonomousVmClusterResourceUsage(object):
     def autonomous_data_storage_size_in_tbs(self, autonomous_data_storage_size_in_tbs):
         """
         Sets the autonomous_data_storage_size_in_tbs of this CloudAutonomousVmClusterResourceUsage.
-        The data disk group size allocated for Autonomous Databases, in TBs.
+        The data disk group size allocated for Autonomous AI Databases, in TBs.
 
 
         :param autonomous_data_storage_size_in_tbs: The autonomous_data_storage_size_in_tbs of this CloudAutonomousVmClusterResourceUsage.
@@ -325,7 +325,7 @@ class CloudAutonomousVmClusterResourceUsage(object):
     def available_autonomous_data_storage_size_in_tbs(self):
         """
         Gets the available_autonomous_data_storage_size_in_tbs of this CloudAutonomousVmClusterResourceUsage.
-        The data disk group size available for Autonomous Databases, in TBs.
+        The data disk group size available for Autonomous AI Databases, in TBs.
 
 
         :return: The available_autonomous_data_storage_size_in_tbs of this CloudAutonomousVmClusterResourceUsage.
@@ -337,7 +337,7 @@ class CloudAutonomousVmClusterResourceUsage(object):
     def available_autonomous_data_storage_size_in_tbs(self, available_autonomous_data_storage_size_in_tbs):
         """
         Sets the available_autonomous_data_storage_size_in_tbs of this CloudAutonomousVmClusterResourceUsage.
-        The data disk group size available for Autonomous Databases, in TBs.
+        The data disk group size available for Autonomous AI Databases, in TBs.
 
 
         :param available_autonomous_data_storage_size_in_tbs: The available_autonomous_data_storage_size_in_tbs of this CloudAutonomousVmClusterResourceUsage.
@@ -349,7 +349,7 @@ class CloudAutonomousVmClusterResourceUsage(object):
     def used_autonomous_data_storage_size_in_tbs(self):
         """
         Gets the used_autonomous_data_storage_size_in_tbs of this CloudAutonomousVmClusterResourceUsage.
-        The data disk group size used for Autonomous Databases, in TBs.
+        The data disk group size used for Autonomous AI Databases, in TBs.
 
 
         :return: The used_autonomous_data_storage_size_in_tbs of this CloudAutonomousVmClusterResourceUsage.
@@ -361,7 +361,7 @@ class CloudAutonomousVmClusterResourceUsage(object):
     def used_autonomous_data_storage_size_in_tbs(self, used_autonomous_data_storage_size_in_tbs):
         """
         Sets the used_autonomous_data_storage_size_in_tbs of this CloudAutonomousVmClusterResourceUsage.
-        The data disk group size used for Autonomous Databases, in TBs.
+        The data disk group size used for Autonomous AI Databases, in TBs.
 
 
         :param used_autonomous_data_storage_size_in_tbs: The used_autonomous_data_storage_size_in_tbs of this CloudAutonomousVmClusterResourceUsage.
@@ -520,7 +520,7 @@ class CloudAutonomousVmClusterResourceUsage(object):
         """
         Gets the reclaimable_cpus of this CloudAutonomousVmClusterResourceUsage.
         CPU cores that continue to be included in the count of OCPUs available
-        to the Autonomous Container Database even after one of its Autonomous Database is
+        to the Autonomous Container Database even after one of its Autonomous AI Database is
         terminated or scaled down. You can release them to the available OCPUs at its parent
         AVMC level by restarting the Autonomous Container Database.
 
@@ -535,7 +535,7 @@ class CloudAutonomousVmClusterResourceUsage(object):
         """
         Sets the reclaimable_cpus of this CloudAutonomousVmClusterResourceUsage.
         CPU cores that continue to be included in the count of OCPUs available
-        to the Autonomous Container Database even after one of its Autonomous Database is
+        to the Autonomous Container Database even after one of its Autonomous AI Database is
         terminated or scaled down. You can release them to the available OCPUs at its parent
         AVMC level by restarting the Autonomous Container Database.
 

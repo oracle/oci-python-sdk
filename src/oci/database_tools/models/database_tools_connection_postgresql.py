@@ -76,6 +76,15 @@ class DatabaseToolsConnectionPostgresql(DatabaseToolsConnection):
             Allowed values for this property are: "SUPPORTED", "UNSUPPORTED"
         :type runtime_support: str
 
+        :param runtime_endpoint:
+            The value to assign to the runtime_endpoint property of this DatabaseToolsConnectionPostgresql.
+        :type runtime_endpoint: str
+
+        :param runtime_identity:
+            The value to assign to the runtime_identity property of this DatabaseToolsConnectionPostgresql.
+            Allowed values for this property are: "AUTHENTICATED_PRINCIPAL", "RESOURCE_PRINCIPAL"
+        :type runtime_identity: str
+
         :param related_resource:
             The value to assign to the related_resource property of this DatabaseToolsConnectionPostgresql.
         :type related_resource: oci.database_tools.models.DatabaseToolsRelatedResourcePostgresql
@@ -119,6 +128,8 @@ class DatabaseToolsConnectionPostgresql(DatabaseToolsConnection):
             'locks': 'list[ResourceLock]',
             'type': 'str',
             'runtime_support': 'str',
+            'runtime_endpoint': 'str',
+            'runtime_identity': 'str',
             'related_resource': 'DatabaseToolsRelatedResourcePostgresql',
             'connection_string': 'str',
             'user_name': 'str',
@@ -141,6 +152,8 @@ class DatabaseToolsConnectionPostgresql(DatabaseToolsConnection):
             'locks': 'locks',
             'type': 'type',
             'runtime_support': 'runtimeSupport',
+            'runtime_endpoint': 'runtimeEndpoint',
+            'runtime_identity': 'runtimeIdentity',
             'related_resource': 'relatedResource',
             'connection_string': 'connectionString',
             'user_name': 'userName',
@@ -162,6 +175,8 @@ class DatabaseToolsConnectionPostgresql(DatabaseToolsConnection):
         self._locks = None
         self._type = None
         self._runtime_support = None
+        self._runtime_endpoint = None
+        self._runtime_identity = None
         self._related_resource = None
         self._connection_string = None
         self._user_name = None

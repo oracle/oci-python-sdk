@@ -162,7 +162,7 @@ class AutonomousDatabaseConnectionUrls(object):
     def graph_studio_url(self):
         """
         Gets the graph_studio_url of this AutonomousDatabaseConnectionUrls.
-        The URL of the Graph Studio for the Autonomous Database.
+        The URL of the Graph Studio for the Autonomous AI Database.
 
 
         :return: The graph_studio_url of this AutonomousDatabaseConnectionUrls.
@@ -174,7 +174,7 @@ class AutonomousDatabaseConnectionUrls(object):
     def graph_studio_url(self, graph_studio_url):
         """
         Sets the graph_studio_url of this AutonomousDatabaseConnectionUrls.
-        The URL of the Graph Studio for the Autonomous Database.
+        The URL of the Graph Studio for the Autonomous AI Database.
 
 
         :param graph_studio_url: The graph_studio_url of this AutonomousDatabaseConnectionUrls.
@@ -186,7 +186,7 @@ class AutonomousDatabaseConnectionUrls(object):
     def mongo_db_url(self):
         """
         Gets the mongo_db_url of this AutonomousDatabaseConnectionUrls.
-        The URL of the MongoDB API for the Autonomous Database.
+        The URL of the MongoDB API for the Autonomous AI Database.
 
 
         :return: The mongo_db_url of this AutonomousDatabaseConnectionUrls.
@@ -198,7 +198,7 @@ class AutonomousDatabaseConnectionUrls(object):
     def mongo_db_url(self, mongo_db_url):
         """
         Sets the mongo_db_url of this AutonomousDatabaseConnectionUrls.
-        The URL of the MongoDB API for the Autonomous Database.
+        The URL of the MongoDB API for the Autonomous AI Database.
 
 
         :param mongo_db_url: The mongo_db_url of this AutonomousDatabaseConnectionUrls.
@@ -210,7 +210,7 @@ class AutonomousDatabaseConnectionUrls(object):
     def machine_learning_notebook_url(self):
         """
         Gets the machine_learning_notebook_url of this AutonomousDatabaseConnectionUrls.
-        The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
+        The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous AI Database.
 
 
         :return: The machine_learning_notebook_url of this AutonomousDatabaseConnectionUrls.
@@ -222,7 +222,7 @@ class AutonomousDatabaseConnectionUrls(object):
     def machine_learning_notebook_url(self, machine_learning_notebook_url):
         """
         Sets the machine_learning_notebook_url of this AutonomousDatabaseConnectionUrls.
-        The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
+        The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous AI Database.
 
 
         :param machine_learning_notebook_url: The machine_learning_notebook_url of this AutonomousDatabaseConnectionUrls.
@@ -234,7 +234,7 @@ class AutonomousDatabaseConnectionUrls(object):
     def ords_url(self):
         """
         Gets the ords_url of this AutonomousDatabaseConnectionUrls.
-        The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+        The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous AI Database.
 
 
         :return: The ords_url of this AutonomousDatabaseConnectionUrls.
@@ -246,7 +246,7 @@ class AutonomousDatabaseConnectionUrls(object):
     def ords_url(self, ords_url):
         """
         Sets the ords_url of this AutonomousDatabaseConnectionUrls.
-        The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+        The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous AI Database.
 
 
         :param ords_url: The ords_url of this AutonomousDatabaseConnectionUrls.
@@ -258,7 +258,7 @@ class AutonomousDatabaseConnectionUrls(object):
     def database_transforms_url(self):
         """
         Gets the database_transforms_url of this AutonomousDatabaseConnectionUrls.
-        The URL of the Database Transforms for the Autonomous Database.
+        The URL of the Database Transforms for the Autonomous AI Database.
 
 
         :return: The database_transforms_url of this AutonomousDatabaseConnectionUrls.
@@ -270,7 +270,7 @@ class AutonomousDatabaseConnectionUrls(object):
     def database_transforms_url(self, database_transforms_url):
         """
         Sets the database_transforms_url of this AutonomousDatabaseConnectionUrls.
-        The URL of the Database Transforms for the Autonomous Database.
+        The URL of the Database Transforms for the Autonomous AI Database.
 
 
         :param database_transforms_url: The database_transforms_url of this AutonomousDatabaseConnectionUrls.

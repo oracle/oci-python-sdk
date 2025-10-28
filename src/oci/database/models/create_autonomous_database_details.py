@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
     """
-    Details to create an Oracle Autonomous Database.
+    Details to create an Oracle Autonomous AI Database.
     """
 
     def __init__(self, **kwargs):
@@ -64,7 +64,7 @@ class CreateAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
 
         :param db_workload:
             The value to assign to the db_workload property of this CreateAutonomousDatabaseDetails.
-            Allowed values for this property are: "OLTP", "DW", "AJD", "APEX"
+            Allowed values for this property are: "OLTP", "DW", "AJD", "APEX", "LH"
         :type db_workload: str
 
         :param data_storage_size_in_tbs:

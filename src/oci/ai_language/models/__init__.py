@@ -101,6 +101,7 @@ from .pii_entity import PiiEntity
 from .pii_entity_document_result import PiiEntityDocumentResult
 from .pii_entity_mask import PiiEntityMask
 from .pii_entity_masking import PiiEntityMasking
+from .pii_entity_relexify import PiiEntityRelexify
 from .pii_entity_remove import PiiEntityRemove
 from .pii_entity_replace import PiiEntityReplace
 from .pii_model_details import PiiModelDetails
@@ -245,6 +246,7 @@ ai_language_type_mapping = {
     "PiiEntityDocumentResult": PiiEntityDocumentResult,
     "PiiEntityMask": PiiEntityMask,
     "PiiEntityMasking": PiiEntityMasking,
+    "PiiEntityRelexify": PiiEntityRelexify,
     "PiiEntityRemove": PiiEntityRemove,
     "PiiEntityReplace": PiiEntityReplace,
     "PiiModelDetails": PiiModelDetails,

@@ -102,9 +102,11 @@ class IdentityDomainsClient(object):
             'base_path': '',
             'service_endpoint_template': 'https://idcs-guid.identity.oraclecloud.com',
             'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
+            'service_uses_dualstack_endpoints_by_default': False,
             'skip_deserialization': kwargs.get('skip_deserialization', False),
             'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
-            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled'),
+            'client_level_dualstack_endpoints_enabled': kwargs.get('client_level_dualstack_endpoints_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -25748,7 +25750,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/SocialIdentityProviders"
         method = "GET"
         operation_name = "list_social_identity_providers"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SocialIdentityProviders/ListSocialIdentityProviders"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SocialIdentityProvider/ListSocialIdentityProviders"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -41705,7 +41707,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/SocialIdentityProviders/.search"
         method = "POST"
         operation_name = "search_social_identity_providers"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SocialIdentityProviders/SearchSocialIdentityProviders"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SocialIdentityProvider/SearchSocialIdentityProviders"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

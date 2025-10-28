@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateAutonomousDatabaseBackupDetails(object):
     """
-    Details to create an Oracle Autonomous Database backup.
+    Details to create an Oracle Autonomous AI Database backup.
 
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
@@ -91,7 +91,7 @@ class CreateAutonomousDatabaseBackupDetails(object):
     def autonomous_database_id(self):
         """
         **[Required]** Gets the autonomous_database_id of this CreateAutonomousDatabaseBackupDetails.
-        The `OCID`__ of the Autonomous Database backup.
+        The `OCID`__ of the Autonomous AI Database backup.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -105,7 +105,7 @@ class CreateAutonomousDatabaseBackupDetails(object):
     def autonomous_database_id(self, autonomous_database_id):
         """
         Sets the autonomous_database_id of this CreateAutonomousDatabaseBackupDetails.
-        The `OCID`__ of the Autonomous Database backup.
+        The `OCID`__ of the Autonomous AI Database backup.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AutonomousDbPreviewVersionSummary(object):
     """
-    The Autonomous Database preview version. Note that preview version software is only available for `Autonomous Database Serverless instances`__.
+    The Autonomous AI Database preview version. Note that preview version software is only available for `Autonomous AI Database Serverless instances`__.
 
     __ https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/
     """
@@ -33,6 +33,10 @@ class AutonomousDbPreviewVersionSummary(object):
     #: This constant has a value of "APEX"
     DB_WORKLOAD_APEX = "APEX"
 
+    #: A constant which can be used with the db_workload property of a AutonomousDbPreviewVersionSummary.
+    #: This constant has a value of "LH"
+    DB_WORKLOAD_LH = "LH"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AutonomousDbPreviewVersionSummary object with values from keyword arguments.
@@ -52,7 +56,7 @@ class AutonomousDbPreviewVersionSummary(object):
 
         :param db_workload:
             The value to assign to the db_workload property of this AutonomousDbPreviewVersionSummary.
-            Allowed values for this property are: "OLTP", "DW", "AJD", "APEX", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "OLTP", "DW", "AJD", "APEX", "LH", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type db_workload: str
 
@@ -85,7 +89,7 @@ class AutonomousDbPreviewVersionSummary(object):
     def version(self):
         """
         **[Required]** Gets the version of this AutonomousDbPreviewVersionSummary.
-        A valid Autonomous Database preview version.
+        A valid Autonomous AI Database preview version.
 
 
         :return: The version of this AutonomousDbPreviewVersionSummary.
@@ -97,7 +101,7 @@ class AutonomousDbPreviewVersionSummary(object):
     def version(self, version):
         """
         Sets the version of this AutonomousDbPreviewVersionSummary.
-        A valid Autonomous Database preview version.
+        A valid Autonomous AI Database preview version.
 
 
         :param version: The version of this AutonomousDbPreviewVersionSummary.
@@ -157,16 +161,17 @@ class AutonomousDbPreviewVersionSummary(object):
     def db_workload(self):
         """
         Gets the db_workload of this AutonomousDbPreviewVersionSummary.
-        The Autonomous Database workload type. The following values are valid:
+        The Autonomous AI Database workload type. The following values are valid:
+        - OLTP - indicates an Autonomous AI Transaction Processing database
+        - DW - indicates an Autonomous AI Lakehouse database
+        - AJD - indicates an Autonomous AI JSON Database
+        - APEX - indicates an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
+        - LH - indicates an Oracle Autonomous AI Lakehouse database
 
-        - OLTP - indicates an Autonomous Transaction Processing database
-        - DW - indicates an Autonomous Data Warehouse database
-        - AJD - indicates an Autonomous JSON Database
-        - APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
 
         This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 
-        Allowed values for this property are: "OLTP", "DW", "AJD", "APEX", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "OLTP", "DW", "AJD", "APEX", "LH", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -179,12 +184,13 @@ class AutonomousDbPreviewVersionSummary(object):
     def db_workload(self, db_workload):
         """
         Sets the db_workload of this AutonomousDbPreviewVersionSummary.
-        The Autonomous Database workload type. The following values are valid:
+        The Autonomous AI Database workload type. The following values are valid:
+        - OLTP - indicates an Autonomous AI Transaction Processing database
+        - DW - indicates an Autonomous AI Lakehouse database
+        - AJD - indicates an Autonomous AI JSON Database
+        - APEX - indicates an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
+        - LH - indicates an Oracle Autonomous AI Lakehouse database
 
-        - OLTP - indicates an Autonomous Transaction Processing database
-        - DW - indicates an Autonomous Data Warehouse database
-        - AJD - indicates an Autonomous JSON Database
-        - APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
 
         This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 
@@ -192,7 +198,7 @@ class AutonomousDbPreviewVersionSummary(object):
         :param db_workload: The db_workload of this AutonomousDbPreviewVersionSummary.
         :type: str
         """
-        allowed_values = ["OLTP", "DW", "AJD", "APEX"]
+        allowed_values = ["OLTP", "DW", "AJD", "APEX", "LH"]
         if not value_allowed_none_or_none_sentinel(db_workload, allowed_values):
             db_workload = 'UNKNOWN_ENUM_VALUE'
         self._db_workload = db_workload

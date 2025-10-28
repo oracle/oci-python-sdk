@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AutonomousDatabaseManualRefreshDetails(object):
     """
-    Details of manual refresh for an Autonomous Database refreshable clone.
+    Details of manual refresh for an Autonomous AI Database refreshable clone.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class AutonomousDatabaseManualRefreshDetails(object):
     def time_refresh_cutoff(self):
         """
         Gets the time_refresh_cutoff of this AutonomousDatabaseManualRefreshDetails.
-        The timestamp to which the Autonomous Database refreshable clone will be refreshed. Changes made in the primary database after this timestamp are not part of the data refresh.
+        The timestamp to which the Autonomous AI Database refreshable clone will be refreshed. Changes made in the primary database after this timestamp are not part of the data refresh.
 
 
         :return: The time_refresh_cutoff of this AutonomousDatabaseManualRefreshDetails.
@@ -49,7 +49,7 @@ class AutonomousDatabaseManualRefreshDetails(object):
     def time_refresh_cutoff(self, time_refresh_cutoff):
         """
         Sets the time_refresh_cutoff of this AutonomousDatabaseManualRefreshDetails.
-        The timestamp to which the Autonomous Database refreshable clone will be refreshed. Changes made in the primary database after this timestamp are not part of the data refresh.
+        The timestamp to which the Autonomous AI Database refreshable clone will be refreshed. Changes made in the primary database after this timestamp are not part of the data refresh.
 
 
         :param time_refresh_cutoff: The time_refresh_cutoff of this AutonomousDatabaseManualRefreshDetails.

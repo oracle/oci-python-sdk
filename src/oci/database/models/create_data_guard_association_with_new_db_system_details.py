@@ -562,7 +562,7 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
         Gets the nsg_ids of this CreateDataGuardAssociationWithNewDbSystemDetails.
         The list of `OCIDs`__ for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see `Security Rules`__.
         **NsgIds restrictions:**
-        - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+        - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
@@ -579,7 +579,7 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
         Sets the nsg_ids of this CreateDataGuardAssociationWithNewDbSystemDetails.
         The list of `OCIDs`__ for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see `Security Rules`__.
         **NsgIds restrictions:**
-        - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+        - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
@@ -812,7 +812,7 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
     def license_model(self):
         """
         Gets the license_model of this CreateDataGuardAssociationWithNewDbSystemDetails.
-        The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
+        The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous AI Database Serverless.
 
         Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
 
@@ -826,7 +826,7 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
     def license_model(self, license_model):
         """
         Sets the license_model of this CreateDataGuardAssociationWithNewDbSystemDetails.
-        The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
+        The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous AI Database Serverless.
 
 
         :param license_model: The license_model of this CreateDataGuardAssociationWithNewDbSystemDetails.

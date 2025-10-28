@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AutonomousDbVersionSummary(object):
     """
-    The supported Autonomous Database version.
+    The supported Autonomous AI Database version.
     """
 
     #: A constant which can be used with the db_workload property of a AutonomousDbVersionSummary.
@@ -31,6 +31,10 @@ class AutonomousDbVersionSummary(object):
     #: This constant has a value of "APEX"
     DB_WORKLOAD_APEX = "APEX"
 
+    #: A constant which can be used with the db_workload property of a AutonomousDbVersionSummary.
+    #: This constant has a value of "LH"
+    DB_WORKLOAD_LH = "LH"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AutonomousDbVersionSummary object with values from keyword arguments.
@@ -42,7 +46,7 @@ class AutonomousDbVersionSummary(object):
 
         :param db_workload:
             The value to assign to the db_workload property of this AutonomousDbVersionSummary.
-            Allowed values for this property are: "OLTP", "DW", "AJD", "APEX", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "OLTP", "DW", "AJD", "APEX", "LH", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type db_workload: str
 
@@ -111,7 +115,7 @@ class AutonomousDbVersionSummary(object):
     def version(self):
         """
         **[Required]** Gets the version of this AutonomousDbVersionSummary.
-        A valid Oracle Database version for Autonomous Database.
+        A valid Oracle AI Database version for Autonomous AI Database.
 
 
         :return: The version of this AutonomousDbVersionSummary.
@@ -123,7 +127,7 @@ class AutonomousDbVersionSummary(object):
     def version(self, version):
         """
         Sets the version of this AutonomousDbVersionSummary.
-        A valid Oracle Database version for Autonomous Database.
+        A valid Oracle AI Database version for Autonomous AI Database.
 
 
         :param version: The version of this AutonomousDbVersionSummary.
@@ -135,16 +139,17 @@ class AutonomousDbVersionSummary(object):
     def db_workload(self):
         """
         Gets the db_workload of this AutonomousDbVersionSummary.
-        The Autonomous Database workload type. The following values are valid:
+        The Autonomous AI Database workload type. The following values are valid:
+        - OLTP - indicates an Autonomous AI Transaction Processing database
+        - DW - indicates an Autonomous AI Lakehouse database
+        - AJD - indicates an Autonomous AI JSON Database
+        - APEX - indicates an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
+        - LH - indicates an Oracle Autonomous AI Lakehouse database
 
-        - OLTP - indicates an Autonomous Transaction Processing database
-        - DW - indicates an Autonomous Data Warehouse database
-        - AJD - indicates an Autonomous JSON Database
-        - APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
 
         This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 
-        Allowed values for this property are: "OLTP", "DW", "AJD", "APEX", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "OLTP", "DW", "AJD", "APEX", "LH", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -157,12 +162,13 @@ class AutonomousDbVersionSummary(object):
     def db_workload(self, db_workload):
         """
         Sets the db_workload of this AutonomousDbVersionSummary.
-        The Autonomous Database workload type. The following values are valid:
+        The Autonomous AI Database workload type. The following values are valid:
+        - OLTP - indicates an Autonomous AI Transaction Processing database
+        - DW - indicates an Autonomous AI Lakehouse database
+        - AJD - indicates an Autonomous AI JSON Database
+        - APEX - indicates an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
+        - LH - indicates an Oracle Autonomous AI Lakehouse database
 
-        - OLTP - indicates an Autonomous Transaction Processing database
-        - DW - indicates an Autonomous Data Warehouse database
-        - AJD - indicates an Autonomous JSON Database
-        - APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
 
         This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 
@@ -170,7 +176,7 @@ class AutonomousDbVersionSummary(object):
         :param db_workload: The db_workload of this AutonomousDbVersionSummary.
         :type: str
         """
-        allowed_values = ["OLTP", "DW", "AJD", "APEX"]
+        allowed_values = ["OLTP", "DW", "AJD", "APEX", "LH"]
         if not value_allowed_none_or_none_sentinel(db_workload, allowed_values):
             db_workload = 'UNKNOWN_ENUM_VALUE'
         self._db_workload = db_workload
@@ -207,7 +213,7 @@ class AutonomousDbVersionSummary(object):
     def details(self):
         """
         Gets the details of this AutonomousDbVersionSummary.
-        A URL that points to a detailed description of the Autonomous Database version.
+        A URL that points to a detailed description of the Autonomous AI Database version.
 
 
         :return: The details of this AutonomousDbVersionSummary.
@@ -219,7 +225,7 @@ class AutonomousDbVersionSummary(object):
     def details(self, details):
         """
         Sets the details of this AutonomousDbVersionSummary.
-        A URL that points to a detailed description of the Autonomous Database version.
+        A URL that points to a detailed description of the Autonomous AI Database version.
 
 
         :param details: The details of this AutonomousDbVersionSummary.
@@ -231,7 +237,7 @@ class AutonomousDbVersionSummary(object):
     def is_free_tier_enabled(self):
         """
         Gets the is_free_tier_enabled of this AutonomousDbVersionSummary.
-        True if this version of the Oracle Database software can be used for Always-Free Autonomous Databases.
+        True if this version of the Oracle AI Database software can be used for Always-Free Autonomous AI Databases.
 
 
         :return: The is_free_tier_enabled of this AutonomousDbVersionSummary.
@@ -243,7 +249,7 @@ class AutonomousDbVersionSummary(object):
     def is_free_tier_enabled(self, is_free_tier_enabled):
         """
         Sets the is_free_tier_enabled of this AutonomousDbVersionSummary.
-        True if this version of the Oracle Database software can be used for Always-Free Autonomous Databases.
+        True if this version of the Oracle AI Database software can be used for Always-Free Autonomous AI Databases.
 
 
         :param is_free_tier_enabled: The is_free_tier_enabled of this AutonomousDbVersionSummary.
@@ -255,7 +261,7 @@ class AutonomousDbVersionSummary(object):
     def is_dev_tier_enabled(self):
         """
         Gets the is_dev_tier_enabled of this AutonomousDbVersionSummary.
-        True if this Oracle Database software version can be used for Autonomous Databases for Developers.
+        True if this Oracle AI Database software version can be used for Autonomous AI Databases for Developers.
 
 
         :return: The is_dev_tier_enabled of this AutonomousDbVersionSummary.
@@ -267,7 +273,7 @@ class AutonomousDbVersionSummary(object):
     def is_dev_tier_enabled(self, is_dev_tier_enabled):
         """
         Sets the is_dev_tier_enabled of this AutonomousDbVersionSummary.
-        True if this Oracle Database software version can be used for Autonomous Databases for Developers.
+        True if this Oracle AI Database software version can be used for Autonomous AI Databases for Developers.
 
 
         :param is_dev_tier_enabled: The is_dev_tier_enabled of this AutonomousDbVersionSummary.
@@ -279,7 +285,7 @@ class AutonomousDbVersionSummary(object):
     def is_paid_enabled(self):
         """
         Gets the is_paid_enabled of this AutonomousDbVersionSummary.
-        True if this version of the Oracle Database software has payments enabled.
+        True if this version of the Oracle AI Database software has payments enabled.
 
 
         :return: The is_paid_enabled of this AutonomousDbVersionSummary.
@@ -291,7 +297,7 @@ class AutonomousDbVersionSummary(object):
     def is_paid_enabled(self, is_paid_enabled):
         """
         Sets the is_paid_enabled of this AutonomousDbVersionSummary.
-        True if this version of the Oracle Database software has payments enabled.
+        True if this version of the Oracle AI Database software has payments enabled.
 
 
         :param is_paid_enabled: The is_paid_enabled of this AutonomousDbVersionSummary.
@@ -303,7 +309,7 @@ class AutonomousDbVersionSummary(object):
     def is_default_for_free(self):
         """
         Gets the is_default_for_free of this AutonomousDbVersionSummary.
-        True if this version of the Oracle Database software's default is free.
+        True if this version of the Oracle AI Database software's default is free.
 
 
         :return: The is_default_for_free of this AutonomousDbVersionSummary.
@@ -315,7 +321,7 @@ class AutonomousDbVersionSummary(object):
     def is_default_for_free(self, is_default_for_free):
         """
         Sets the is_default_for_free of this AutonomousDbVersionSummary.
-        True if this version of the Oracle Database software's default is free.
+        True if this version of the Oracle AI Database software's default is free.
 
 
         :param is_default_for_free: The is_default_for_free of this AutonomousDbVersionSummary.
@@ -327,7 +333,7 @@ class AutonomousDbVersionSummary(object):
     def is_default_for_paid(self):
         """
         Gets the is_default_for_paid of this AutonomousDbVersionSummary.
-        True if this version of the Oracle Database software's default is paid.
+        True if this version of the Oracle AI Database software's default is paid.
 
 
         :return: The is_default_for_paid of this AutonomousDbVersionSummary.
@@ -339,7 +345,7 @@ class AutonomousDbVersionSummary(object):
     def is_default_for_paid(self, is_default_for_paid):
         """
         Sets the is_default_for_paid of this AutonomousDbVersionSummary.
-        True if this version of the Oracle Database software's default is paid.
+        True if this version of the Oracle AI Database software's default is paid.
 
 
         :param is_default_for_paid: The is_default_for_paid of this AutonomousDbVersionSummary.

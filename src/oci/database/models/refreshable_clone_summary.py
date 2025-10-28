@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RefreshableCloneSummary(object):
     """
-    An Autonomous Database refreshable clone
+    An Autonomous AI Database refreshable clone
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class RefreshableCloneSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this RefreshableCloneSummary.
-        The `OCID`__ of the Autonomous Database.
+        The `OCID`__ of the Autonomous AI Database.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -58,7 +58,7 @@ class RefreshableCloneSummary(object):
     def id(self, id):
         """
         Sets the id of this RefreshableCloneSummary.
-        The `OCID`__ of the Autonomous Database.
+        The `OCID`__ of the Autonomous AI Database.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

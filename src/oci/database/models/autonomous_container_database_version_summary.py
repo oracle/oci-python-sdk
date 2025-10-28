@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AutonomousContainerDatabaseVersionSummary(object):
     """
-    The supported Autonomous Database version.
+    The supported Autonomous AI Database version.
     """
 
     def __init__(self, **kwargs):
@@ -51,7 +51,7 @@ class AutonomousContainerDatabaseVersionSummary(object):
     def version(self):
         """
         **[Required]** Gets the version of this AutonomousContainerDatabaseVersionSummary.
-        A valid Oracle Database version for provisioning an Autonomous Container Database.
+        A valid Oracle AI Database version for provisioning an Autonomous Container Database.
 
 
         :return: The version of this AutonomousContainerDatabaseVersionSummary.
@@ -63,7 +63,7 @@ class AutonomousContainerDatabaseVersionSummary(object):
     def version(self, version):
         """
         Sets the version of this AutonomousContainerDatabaseVersionSummary.
-        A valid Oracle Database version for provisioning an Autonomous Container Database.
+        A valid Oracle AI Database version for provisioning an Autonomous Container Database.
 
 
         :param version: The version of this AutonomousContainerDatabaseVersionSummary.

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabaseBase):
     """
-    Details to create a point-in-time clone of an Oracle Autonomous Database by specifying a timestamp. Point-in-time clones use backups as the source of the data for the clone.
+    Details to create a point-in-time clone of an Oracle Autonomous AI Database by specifying a timestamp. Point-in-time clones use backups as the source of the data for the clone.
     """
 
     #: A constant which can be used with the clone_type property of a CreateAutonomousDatabaseFromBackupTimestampDetails.
@@ -76,7 +76,7 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
 
         :param db_workload:
             The value to assign to the db_workload property of this CreateAutonomousDatabaseFromBackupTimestampDetails.
-            Allowed values for this property are: "OLTP", "DW", "AJD", "APEX"
+            Allowed values for this property are: "OLTP", "DW", "AJD", "APEX", "LH"
         :type db_workload: str
 
         :param data_storage_size_in_tbs:
@@ -463,7 +463,7 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
     def autonomous_database_id(self):
         """
         **[Required]** Gets the autonomous_database_id of this CreateAutonomousDatabaseFromBackupTimestampDetails.
-        The `OCID`__ of the source Autonomous Database that you will clone to create a new Autonomous Database.
+        The `OCID`__ of the source Autonomous AI Database that you will clone to create a new Autonomous AI Database.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -477,7 +477,7 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
     def autonomous_database_id(self, autonomous_database_id):
         """
         Sets the autonomous_database_id of this CreateAutonomousDatabaseFromBackupTimestampDetails.
-        The `OCID`__ of the source Autonomous Database that you will clone to create a new Autonomous Database.
+        The `OCID`__ of the source Autonomous AI Database that you will clone to create a new Autonomous AI Database.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -491,7 +491,7 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
     def timestamp(self):
         """
         Gets the timestamp of this CreateAutonomousDatabaseFromBackupTimestampDetails.
-        The timestamp specified for the point-in-time clone of the source Autonomous Database. The timestamp must be in the past.
+        The timestamp specified for the point-in-time clone of the source Autonomous AI Database. The timestamp must be in the past.
 
 
         :return: The timestamp of this CreateAutonomousDatabaseFromBackupTimestampDetails.
@@ -503,7 +503,7 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
     def timestamp(self, timestamp):
         """
         Sets the timestamp of this CreateAutonomousDatabaseFromBackupTimestampDetails.
-        The timestamp specified for the point-in-time clone of the source Autonomous Database. The timestamp must be in the past.
+        The timestamp specified for the point-in-time clone of the source Autonomous AI Database. The timestamp must be in the past.
 
 
         :param timestamp: The timestamp of this CreateAutonomousDatabaseFromBackupTimestampDetails.
@@ -515,7 +515,7 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
     def clone_type(self):
         """
         **[Required]** Gets the clone_type of this CreateAutonomousDatabaseFromBackupTimestampDetails.
-        The Autonomous Database clone type.
+        The Autonomous AI Database clone type.
 
         Allowed values for this property are: "FULL", "METADATA", "PARTIAL"
 
@@ -529,7 +529,7 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
     def clone_type(self, clone_type):
         """
         Sets the clone_type of this CreateAutonomousDatabaseFromBackupTimestampDetails.
-        The Autonomous Database clone type.
+        The Autonomous AI Database clone type.
 
 
         :param clone_type: The clone_type of this CreateAutonomousDatabaseFromBackupTimestampDetails.
@@ -570,7 +570,7 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
     def clone_table_space_list(self):
         """
         Gets the clone_table_space_list of this CreateAutonomousDatabaseFromBackupTimestampDetails.
-        A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
+        A list of the source Autonomous AI Database's table space number(s) used to create this partial clone from the backup.
 
 
         :return: The clone_table_space_list of this CreateAutonomousDatabaseFromBackupTimestampDetails.
@@ -582,7 +582,7 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
     def clone_table_space_list(self, clone_table_space_list):
         """
         Sets the clone_table_space_list of this CreateAutonomousDatabaseFromBackupTimestampDetails.
-        A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
+        A list of the source Autonomous AI Database's table space number(s) used to create this partial clone from the backup.
 
 
         :param clone_table_space_list: The clone_table_space_list of this CreateAutonomousDatabaseFromBackupTimestampDetails.

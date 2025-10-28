@@ -146,6 +146,10 @@ class MountTarget(object):
             The value to assign to the system_tags property of this MountTarget.
         :type system_tags: dict(str, dict(str, object))
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this MountTarget.
+        :type security_attributes: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -169,7 +173,8 @@ class MountTarget(object):
             'locks': 'list[ResourceLock]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'system_tags': 'dict(str, dict(str, object))'
+            'system_tags': 'dict(str, dict(str, object))',
+            'security_attributes': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
@@ -193,7 +198,8 @@ class MountTarget(object):
             'locks': 'locks',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'system_tags': 'systemTags'
+            'system_tags': 'systemTags',
+            'security_attributes': 'securityAttributes'
         }
         self._availability_domain = None
         self._compartment_id = None
@@ -217,6 +223,7 @@ class MountTarget(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._security_attributes = None
 
     @property
     def availability_domain(self):
@@ -845,6 +852,44 @@ class MountTarget(object):
         :type: dict(str, dict(str, object))
         """
         self._system_tags = system_tags
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this MountTarget.
+        `Security attributes`__ are labels
+        for a resource that can be referenced in a `Zero Trust Packet Routing`__
+        (ZPR) policy to control access to ZPR-supported resources.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
+        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
+
+
+        :return: The security_attributes of this MountTarget.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this MountTarget.
+        `Security attributes`__ are labels
+        for a resource that can be referenced in a `Zero Trust Packet Routing`__
+        (ZPR) policy to control access to ZPR-supported resources.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
+        __ https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
+
+
+        :param security_attributes: The security_attributes of this MountTarget.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     def __repr__(self):
         return formatted_flat_dict(self)

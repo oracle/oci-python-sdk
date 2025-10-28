@@ -130,7 +130,7 @@ class ResourcePoolSummary(object):
     def is_disabled(self):
         """
         Gets the is_disabled of this ResourcePoolSummary.
-        Indicates if the resource pool should be deleted for the Autonomous Database.
+        Indicates if the resource pool should be deleted for the Autonomous AI Database.
 
 
         :return: The is_disabled of this ResourcePoolSummary.
@@ -142,7 +142,7 @@ class ResourcePoolSummary(object):
     def is_disabled(self, is_disabled):
         """
         Sets the is_disabled of this ResourcePoolSummary.
-        Indicates if the resource pool should be deleted for the Autonomous Database.
+        Indicates if the resource pool should be deleted for the Autonomous AI Database.
 
 
         :param is_disabled: The is_disabled of this ResourcePoolSummary.

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateAutonomousDatabaseSoftwareImageDetails(object):
     """
-    Parameters for creating a Autonomous Database Software Image
+    Parameters for creating a Autonomous AI Database Software Image
     """
 
     #: A constant which can be used with the image_shape_family property of a CreateAutonomousDatabaseSoftwareImageDetails.
@@ -109,7 +109,7 @@ class CreateAutonomousDatabaseSoftwareImageDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this CreateAutonomousDatabaseSoftwareImageDetails.
-        The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
+        The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
 
 
         :return: The display_name of this CreateAutonomousDatabaseSoftwareImageDetails.
@@ -121,7 +121,7 @@ class CreateAutonomousDatabaseSoftwareImageDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateAutonomousDatabaseSoftwareImageDetails.
-        The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
+        The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
 
 
         :param display_name: The display_name of this CreateAutonomousDatabaseSoftwareImageDetails.
@@ -133,7 +133,7 @@ class CreateAutonomousDatabaseSoftwareImageDetails(object):
     def source_cdb_id(self):
         """
         **[Required]** Gets the source_cdb_id of this CreateAutonomousDatabaseSoftwareImageDetails.
-        The source Autonomous Container Database `OCID`__ from which to create Autonomous Database Software Image.
+        The source Autonomous Container Database `OCID`__ from which to create Autonomous AI Database Software Image.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -147,7 +147,7 @@ class CreateAutonomousDatabaseSoftwareImageDetails(object):
     def source_cdb_id(self, source_cdb_id):
         """
         Sets the source_cdb_id of this CreateAutonomousDatabaseSoftwareImageDetails.
-        The source Autonomous Container Database `OCID`__ from which to create Autonomous Database Software Image.
+        The source Autonomous Container Database `OCID`__ from which to create Autonomous AI Database Software Image.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AutonomousDatabaseBackupSummary(object):
     """
-    An Autonomous Database backup.
+    An Autonomous AI Database backup.
     To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see `Getting Started with Policies`__.
 
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
@@ -272,7 +272,7 @@ class AutonomousDatabaseBackupSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this AutonomousDatabaseBackupSummary.
-        The `OCID`__ of the Autonomous Database backup.
+        The `OCID`__ of the Autonomous AI Database backup.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -286,7 +286,7 @@ class AutonomousDatabaseBackupSummary(object):
     def id(self, id):
         """
         Sets the id of this AutonomousDatabaseBackupSummary.
-        The `OCID`__ of the Autonomous Database backup.
+        The `OCID`__ of the Autonomous AI Database backup.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -328,7 +328,7 @@ class AutonomousDatabaseBackupSummary(object):
     def autonomous_database_id(self):
         """
         **[Required]** Gets the autonomous_database_id of this AutonomousDatabaseBackupSummary.
-        The `OCID`__ of the Autonomous Database.
+        The `OCID`__ of the Autonomous AI Database.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -342,7 +342,7 @@ class AutonomousDatabaseBackupSummary(object):
     def autonomous_database_id(self, autonomous_database_id):
         """
         Sets the autonomous_database_id of this AutonomousDatabaseBackupSummary.
-        The `OCID`__ of the Autonomous Database.
+        The `OCID`__ of the Autonomous AI Database.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -560,7 +560,7 @@ class AutonomousDatabaseBackupSummary(object):
     def is_restorable(self):
         """
         Gets the is_restorable of this AutonomousDatabaseBackupSummary.
-        Indicates whether the backup can be used to restore the associated Autonomous Database.
+        Indicates whether the backup can be used to restore the associated Autonomous AI Database.
 
 
         :return: The is_restorable of this AutonomousDatabaseBackupSummary.
@@ -572,7 +572,7 @@ class AutonomousDatabaseBackupSummary(object):
     def is_restorable(self, is_restorable):
         """
         Sets the is_restorable of this AutonomousDatabaseBackupSummary.
-        Indicates whether the backup can be used to restore the associated Autonomous Database.
+        Indicates whether the backup can be used to restore the associated Autonomous AI Database.
 
 
         :param is_restorable: The is_restorable of this AutonomousDatabaseBackupSummary.
@@ -690,7 +690,7 @@ class AutonomousDatabaseBackupSummary(object):
     def kms_key_version_id(self):
         """
         Gets the kms_key_version_id of this AutonomousDatabaseBackupSummary.
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 
 
         :return: The kms_key_version_id of this AutonomousDatabaseBackupSummary.
@@ -702,7 +702,7 @@ class AutonomousDatabaseBackupSummary(object):
     def kms_key_version_id(self, kms_key_version_id):
         """
         Sets the kms_key_version_id of this AutonomousDatabaseBackupSummary.
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 
 
         :param kms_key_version_id: The kms_key_version_id of this AutonomousDatabaseBackupSummary.
@@ -762,7 +762,7 @@ class AutonomousDatabaseBackupSummary(object):
     def db_version(self):
         """
         Gets the db_version of this AutonomousDatabaseBackupSummary.
-        A valid Oracle Database version for Autonomous Database.
+        A valid Oracle AI Database version for Autonomous AI Database.
 
 
         :return: The db_version of this AutonomousDatabaseBackupSummary.
@@ -774,7 +774,7 @@ class AutonomousDatabaseBackupSummary(object):
     def db_version(self, db_version):
         """
         Sets the db_version of this AutonomousDatabaseBackupSummary.
-        A valid Oracle Database version for Autonomous Database.
+        A valid Oracle AI Database version for Autonomous AI Database.
 
 
         :param db_version: The db_version of this AutonomousDatabaseBackupSummary.

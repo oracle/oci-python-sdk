@@ -113,6 +113,7 @@ Ai Language
     oci.ai_language.models.PiiEntityDocumentResult
     oci.ai_language.models.PiiEntityMask
     oci.ai_language.models.PiiEntityMasking
+    oci.ai_language.models.PiiEntityRelexify
     oci.ai_language.models.PiiEntityRemove
     oci.ai_language.models.PiiEntityReplace
     oci.ai_language.models.PiiModelDetails

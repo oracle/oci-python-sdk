@@ -27,11 +27,16 @@ class PiiEntityMasking(object):
     #: This constant has a value of "REMOVE"
     MODE_REMOVE = "REMOVE"
 
+    #: A constant which can be used with the mode property of a PiiEntityMasking.
+    #: This constant has a value of "RELEXIFY"
+    MODE_RELEXIFY = "RELEXIFY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new PiiEntityMasking object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.ai_language.models.PiiEntityRelexify`
         * :class:`~oci.ai_language.models.PiiEntityReplace`
         * :class:`~oci.ai_language.models.PiiEntityRemove`
         * :class:`~oci.ai_language.models.PiiEntityMask`
@@ -40,7 +45,7 @@ class PiiEntityMasking(object):
 
         :param mode:
             The value to assign to the mode property of this PiiEntityMasking.
-            Allowed values for this property are: "REPLACE", "MASK", "REMOVE"
+            Allowed values for this property are: "REPLACE", "MASK", "REMOVE", "RELEXIFY"
         :type mode: str
 
         :param exclude:
@@ -74,6 +79,9 @@ class PiiEntityMasking(object):
         """
         type = object_dictionary['mode']
 
+        if type == 'RELEXIFY':
+            return 'PiiEntityRelexify'
+
         if type == 'REPLACE':
             return 'PiiEntityReplace'
 
@@ -91,7 +99,7 @@ class PiiEntityMasking(object):
         **[Required]** Gets the mode of this PiiEntityMasking.
         The type of masking mode.
 
-        Allowed values for this property are: "REPLACE", "MASK", "REMOVE"
+        Allowed values for this property are: "REPLACE", "MASK", "REMOVE", "RELEXIFY"
 
 
         :return: The mode of this PiiEntityMasking.
@@ -109,7 +117,7 @@ class PiiEntityMasking(object):
         :param mode: The mode of this PiiEntityMasking.
         :type: str
         """
-        allowed_values = ["REPLACE", "MASK", "REMOVE"]
+        allowed_values = ["REPLACE", "MASK", "REMOVE", "RELEXIFY"]
         if not value_allowed_none_or_none_sentinel(mode, allowed_values):
             raise ValueError(
                 f"Invalid value for `mode`, must be None or one of {allowed_values}"

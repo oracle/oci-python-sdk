@@ -104,6 +104,10 @@ class PrivateIp(object):
             The value to assign to the ip_address property of this PrivateIp.
         :type ip_address: str
 
+        :param cidr_prefix_length:
+            The value to assign to the cidr_prefix_length property of this PrivateIp.
+        :type cidr_prefix_length: int
+
         :param is_primary:
             The value to assign to the is_primary property of this PrivateIp.
         :type is_primary: bool
@@ -140,6 +144,10 @@ class PrivateIp(object):
             The value to assign to the route_table_id property of this PrivateIp.
         :type route_table_id: str
 
+        :param ipv4_subnet_cidr_at_creation:
+            The value to assign to the ipv4_subnet_cidr_at_creation property of this PrivateIp.
+        :type ipv4_subnet_cidr_at_creation: str
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -150,6 +158,7 @@ class PrivateIp(object):
             'hostname_label': 'str',
             'id': 'str',
             'ip_address': 'str',
+            'cidr_prefix_length': 'int',
             'is_primary': 'bool',
             'vlan_id': 'str',
             'subnet_id': 'str',
@@ -157,7 +166,8 @@ class PrivateIp(object):
             'vnic_id': 'str',
             'ip_state': 'str',
             'lifetime': 'str',
-            'route_table_id': 'str'
+            'route_table_id': 'str',
+            'ipv4_subnet_cidr_at_creation': 'str'
         }
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
@@ -168,6 +178,7 @@ class PrivateIp(object):
             'hostname_label': 'hostnameLabel',
             'id': 'id',
             'ip_address': 'ipAddress',
+            'cidr_prefix_length': 'cidrPrefixLength',
             'is_primary': 'isPrimary',
             'vlan_id': 'vlanId',
             'subnet_id': 'subnetId',
@@ -175,7 +186,8 @@ class PrivateIp(object):
             'vnic_id': 'vnicId',
             'ip_state': 'ipState',
             'lifetime': 'lifetime',
-            'route_table_id': 'routeTableId'
+            'route_table_id': 'routeTableId',
+            'ipv4_subnet_cidr_at_creation': 'ipv4SubnetCidrAtCreation'
         }
         self._availability_domain = None
         self._compartment_id = None
@@ -185,6 +197,7 @@ class PrivateIp(object):
         self._hostname_label = None
         self._id = None
         self._ip_address = None
+        self._cidr_prefix_length = None
         self._is_primary = None
         self._vlan_id = None
         self._subnet_id = None
@@ -193,6 +206,7 @@ class PrivateIp(object):
         self._ip_state = None
         self._lifetime = None
         self._route_table_id = None
+        self._ipv4_subnet_cidr_at_creation = None
 
     @property
     def availability_domain(self):
@@ -465,6 +479,30 @@ class PrivateIp(object):
         self._ip_address = ip_address
 
     @property
+    def cidr_prefix_length(self):
+        """
+        Gets the cidr_prefix_length of this PrivateIp.
+        The secondary IPv4 CIDR prefix length.
+
+
+        :return: The cidr_prefix_length of this PrivateIp.
+        :rtype: int
+        """
+        return self._cidr_prefix_length
+
+    @cidr_prefix_length.setter
+    def cidr_prefix_length(self, cidr_prefix_length):
+        """
+        Sets the cidr_prefix_length of this PrivateIp.
+        The secondary IPv4 CIDR prefix length.
+
+
+        :param cidr_prefix_length: The cidr_prefix_length of this PrivateIp.
+        :type: int
+        """
+        self._cidr_prefix_length = cidr_prefix_length
+
+    @property
     def is_primary(self):
         """
         Gets the is_primary of this PrivateIp.
@@ -723,6 +761,30 @@ class PrivateIp(object):
         :type: str
         """
         self._route_table_id = route_table_id
+
+    @property
+    def ipv4_subnet_cidr_at_creation(self):
+        """
+        Gets the ipv4_subnet_cidr_at_creation of this PrivateIp.
+        Ipv4 Subnet CIDR specified whn creating the PrivateIP.
+
+
+        :return: The ipv4_subnet_cidr_at_creation of this PrivateIp.
+        :rtype: str
+        """
+        return self._ipv4_subnet_cidr_at_creation
+
+    @ipv4_subnet_cidr_at_creation.setter
+    def ipv4_subnet_cidr_at_creation(self, ipv4_subnet_cidr_at_creation):
+        """
+        Sets the ipv4_subnet_cidr_at_creation of this PrivateIp.
+        Ipv4 Subnet CIDR specified whn creating the PrivateIP.
+
+
+        :param ipv4_subnet_cidr_at_creation: The ipv4_subnet_cidr_at_creation of this PrivateIp.
+        :type: str
+        """
+        self._ipv4_subnet_cidr_at_creation = ipv4_subnet_cidr_at_creation
 
     def __repr__(self):
         return formatted_flat_dict(self)

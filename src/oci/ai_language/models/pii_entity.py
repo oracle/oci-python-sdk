@@ -36,6 +36,10 @@ class PiiEntity(object):
             The value to assign to the text property of this PiiEntity.
         :type text: str
 
+        :param relexify_text:
+            The value to assign to the relexify_text property of this PiiEntity.
+        :type relexify_text: str
+
         :param type:
             The value to assign to the type property of this PiiEntity.
         :type type: str
@@ -50,6 +54,7 @@ class PiiEntity(object):
             'offset': 'int',
             'length': 'int',
             'text': 'str',
+            'relexify_text': 'str',
             'type': 'str',
             'score': 'float'
         }
@@ -58,6 +63,7 @@ class PiiEntity(object):
             'offset': 'offset',
             'length': 'length',
             'text': 'text',
+            'relexify_text': 'relexifyText',
             'type': 'type',
             'score': 'score'
         }
@@ -65,6 +71,7 @@ class PiiEntity(object):
         self._offset = None
         self._length = None
         self._text = None
+        self._relexify_text = None
         self._type = None
         self._score = None
 
@@ -163,6 +170,30 @@ class PiiEntity(object):
         :type: str
         """
         self._text = text
+
+    @property
+    def relexify_text(self):
+        """
+        Gets the relexify_text of this PiiEntity.
+        Redacted entity text
+
+
+        :return: The relexify_text of this PiiEntity.
+        :rtype: str
+        """
+        return self._relexify_text
+
+    @relexify_text.setter
+    def relexify_text(self, relexify_text):
+        """
+        Sets the relexify_text of this PiiEntity.
+        Redacted entity text
+
+
+        :param relexify_text: The relexify_text of this PiiEntity.
+        :type: str
+        """
+        self._relexify_text = relexify_text
 
     @property
     def type(self):

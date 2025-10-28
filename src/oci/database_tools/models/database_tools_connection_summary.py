@@ -67,6 +67,14 @@ class DatabaseToolsConnectionSummary(object):
     #: This constant has a value of "UNSUPPORTED"
     RUNTIME_SUPPORT_UNSUPPORTED = "UNSUPPORTED"
 
+    #: A constant which can be used with the runtime_identity property of a DatabaseToolsConnectionSummary.
+    #: This constant has a value of "AUTHENTICATED_PRINCIPAL"
+    RUNTIME_IDENTITY_AUTHENTICATED_PRINCIPAL = "AUTHENTICATED_PRINCIPAL"
+
+    #: A constant which can be used with the runtime_identity property of a DatabaseToolsConnectionSummary.
+    #: This constant has a value of "RESOURCE_PRINCIPAL"
+    RUNTIME_IDENTITY_RESOURCE_PRINCIPAL = "RESOURCE_PRINCIPAL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DatabaseToolsConnectionSummary object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -137,6 +145,16 @@ class DatabaseToolsConnectionSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type runtime_support: str
 
+        :param runtime_endpoint:
+            The value to assign to the runtime_endpoint property of this DatabaseToolsConnectionSummary.
+        :type runtime_endpoint: str
+
+        :param runtime_identity:
+            The value to assign to the runtime_identity property of this DatabaseToolsConnectionSummary.
+            Allowed values for this property are: "AUTHENTICATED_PRINCIPAL", "RESOURCE_PRINCIPAL", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type runtime_identity: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -151,7 +169,9 @@ class DatabaseToolsConnectionSummary(object):
             'system_tags': 'dict(str, dict(str, object))',
             'locks': 'list[ResourceLock]',
             'type': 'str',
-            'runtime_support': 'str'
+            'runtime_support': 'str',
+            'runtime_endpoint': 'str',
+            'runtime_identity': 'str'
         }
         self.attribute_map = {
             'id': 'id',
@@ -166,7 +186,9 @@ class DatabaseToolsConnectionSummary(object):
             'system_tags': 'systemTags',
             'locks': 'locks',
             'type': 'type',
-            'runtime_support': 'runtimeSupport'
+            'runtime_support': 'runtimeSupport',
+            'runtime_endpoint': 'runtimeEndpoint',
+            'runtime_identity': 'runtimeIdentity'
         }
         self._id = None
         self._display_name = None
@@ -181,6 +203,8 @@ class DatabaseToolsConnectionSummary(object):
         self._locks = None
         self._type = None
         self._runtime_support = None
+        self._runtime_endpoint = None
+        self._runtime_identity = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -547,6 +571,60 @@ class DatabaseToolsConnectionSummary(object):
         if not value_allowed_none_or_none_sentinel(runtime_support, allowed_values):
             runtime_support = 'UNKNOWN_ENUM_VALUE'
         self._runtime_support = runtime_support
+
+    @property
+    def runtime_endpoint(self):
+        """
+        **[Required]** Gets the runtime_endpoint of this DatabaseToolsConnectionSummary.
+        Specifies the Database Tools Runtime endpoint.
+
+
+        :return: The runtime_endpoint of this DatabaseToolsConnectionSummary.
+        :rtype: str
+        """
+        return self._runtime_endpoint
+
+    @runtime_endpoint.setter
+    def runtime_endpoint(self, runtime_endpoint):
+        """
+        Sets the runtime_endpoint of this DatabaseToolsConnectionSummary.
+        Specifies the Database Tools Runtime endpoint.
+
+
+        :param runtime_endpoint: The runtime_endpoint of this DatabaseToolsConnectionSummary.
+        :type: str
+        """
+        self._runtime_endpoint = runtime_endpoint
+
+    @property
+    def runtime_identity(self):
+        """
+        **[Required]** Gets the runtime_identity of this DatabaseToolsConnectionSummary.
+        Specifies the identity used by the Database Tools service to issue requests to other OCI services (e.g., Secrets in Vault).
+
+        Allowed values for this property are: "AUTHENTICATED_PRINCIPAL", "RESOURCE_PRINCIPAL", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The runtime_identity of this DatabaseToolsConnectionSummary.
+        :rtype: str
+        """
+        return self._runtime_identity
+
+    @runtime_identity.setter
+    def runtime_identity(self, runtime_identity):
+        """
+        Sets the runtime_identity of this DatabaseToolsConnectionSummary.
+        Specifies the identity used by the Database Tools service to issue requests to other OCI services (e.g., Secrets in Vault).
+
+
+        :param runtime_identity: The runtime_identity of this DatabaseToolsConnectionSummary.
+        :type: str
+        """
+        allowed_values = ["AUTHENTICATED_PRINCIPAL", "RESOURCE_PRINCIPAL"]
+        if not value_allowed_none_or_none_sentinel(runtime_identity, allowed_values):
+            runtime_identity = 'UNKNOWN_ENUM_VALUE'
+        self._runtime_identity = runtime_identity
 
     def __repr__(self):
         return formatted_flat_dict(self)

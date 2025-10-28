@@ -24,6 +24,10 @@ class DatabaseToolsKeyStoreSummary(object):
     KEY_STORE_TYPE_JAVA_TRUST_STORE = "JAVA_TRUST_STORE"
 
     #: A constant which can be used with the key_store_type property of a DatabaseToolsKeyStoreSummary.
+    #: This constant has a value of "PEM"
+    KEY_STORE_TYPE_PEM = "PEM"
+
+    #: A constant which can be used with the key_store_type property of a DatabaseToolsKeyStoreSummary.
     #: This constant has a value of "PKCS12"
     KEY_STORE_TYPE_PKCS12 = "PKCS12"
 
@@ -38,7 +42,7 @@ class DatabaseToolsKeyStoreSummary(object):
 
         :param key_store_type:
             The value to assign to the key_store_type property of this DatabaseToolsKeyStoreSummary.
-            Allowed values for this property are: "JAVA_KEY_STORE", "JAVA_TRUST_STORE", "PKCS12", "SSO", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "JAVA_KEY_STORE", "JAVA_TRUST_STORE", "PEM", "PKCS12", "SSO", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type key_store_type: str
 
@@ -71,7 +75,7 @@ class DatabaseToolsKeyStoreSummary(object):
         Gets the key_store_type of this DatabaseToolsKeyStoreSummary.
         The key store type.
 
-        Allowed values for this property are: "JAVA_KEY_STORE", "JAVA_TRUST_STORE", "PKCS12", "SSO", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "JAVA_KEY_STORE", "JAVA_TRUST_STORE", "PEM", "PKCS12", "SSO", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -90,7 +94,7 @@ class DatabaseToolsKeyStoreSummary(object):
         :param key_store_type: The key_store_type of this DatabaseToolsKeyStoreSummary.
         :type: str
         """
-        allowed_values = ["JAVA_KEY_STORE", "JAVA_TRUST_STORE", "PKCS12", "SSO"]
+        allowed_values = ["JAVA_KEY_STORE", "JAVA_TRUST_STORE", "PEM", "PKCS12", "SSO"]
         if not value_allowed_none_or_none_sentinel(key_store_type, allowed_values):
             key_store_type = 'UNKNOWN_ENUM_VALUE'
         self._key_store_type = key_store_type

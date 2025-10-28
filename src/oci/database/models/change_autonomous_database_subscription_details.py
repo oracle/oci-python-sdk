@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeAutonomousDatabaseSubscriptionDetails(object):
     """
-    The configuration details for associating the Autonomous Database with a different subscription.
+    The configuration details for associating the Autonomous AI Database with a different subscription.
     """
 
     def __init__(self, **kwargs):

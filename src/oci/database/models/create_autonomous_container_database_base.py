@@ -569,7 +569,7 @@ class CreateAutonomousContainerDatabaseBase(object):
     def autonomous_exadata_infrastructure_id(self):
         """
         Gets the autonomous_exadata_infrastructure_id of this CreateAutonomousContainerDatabaseBase.
-        **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
+        **No longer used.** This parameter is no longer used for Autonomous AI Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
 
 
         :return: The autonomous_exadata_infrastructure_id of this CreateAutonomousContainerDatabaseBase.
@@ -581,7 +581,7 @@ class CreateAutonomousContainerDatabaseBase(object):
     def autonomous_exadata_infrastructure_id(self, autonomous_exadata_infrastructure_id):
         """
         Sets the autonomous_exadata_infrastructure_id of this CreateAutonomousContainerDatabaseBase.
-        **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
+        **No longer used.** This parameter is no longer used for Autonomous AI Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
 
 
         :param autonomous_exadata_infrastructure_id: The autonomous_exadata_infrastructure_id of this CreateAutonomousContainerDatabaseBase.
@@ -617,7 +617,7 @@ class CreateAutonomousContainerDatabaseBase(object):
     def database_software_image_id(self):
         """
         Gets the database_software_image_id of this CreateAutonomousContainerDatabaseBase.
-        The Autonomous Database Software Image `OCID`__.
+        The Autonomous AI Database Software Image `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -631,7 +631,7 @@ class CreateAutonomousContainerDatabaseBase(object):
     def database_software_image_id(self, database_software_image_id):
         """
         Sets the database_software_image_id of this CreateAutonomousContainerDatabaseBase.
-        The Autonomous Database Software Image `OCID`__.
+        The Autonomous AI Database Software Image `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -645,7 +645,7 @@ class CreateAutonomousContainerDatabaseBase(object):
     def peer_autonomous_exadata_infrastructure_id(self):
         """
         Gets the peer_autonomous_exadata_infrastructure_id of this CreateAutonomousContainerDatabaseBase.
-        *No longer used.* This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
+        *No longer used.* This parameter is no longer used for Autonomous AI Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
 
 
         :return: The peer_autonomous_exadata_infrastructure_id of this CreateAutonomousContainerDatabaseBase.
@@ -657,7 +657,7 @@ class CreateAutonomousContainerDatabaseBase(object):
     def peer_autonomous_exadata_infrastructure_id(self, peer_autonomous_exadata_infrastructure_id):
         """
         Sets the peer_autonomous_exadata_infrastructure_id of this CreateAutonomousContainerDatabaseBase.
-        *No longer used.* This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
+        *No longer used.* This parameter is no longer used for Autonomous AI Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
 
 
         :param peer_autonomous_exadata_infrastructure_id: The peer_autonomous_exadata_infrastructure_id of this CreateAutonomousContainerDatabaseBase.
@@ -1230,7 +1230,7 @@ class CreateAutonomousContainerDatabaseBase(object):
     def kms_key_version_id(self):
         """
         Gets the kms_key_version_id of this CreateAutonomousContainerDatabaseBase.
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 
 
         :return: The kms_key_version_id of this CreateAutonomousContainerDatabaseBase.
@@ -1242,7 +1242,7 @@ class CreateAutonomousContainerDatabaseBase(object):
     def kms_key_version_id(self, kms_key_version_id):
         """
         Sets the kms_key_version_id of this CreateAutonomousContainerDatabaseBase.
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 
 
         :param kms_key_version_id: The kms_key_version_id of this CreateAutonomousContainerDatabaseBase.
@@ -1312,7 +1312,7 @@ class CreateAutonomousContainerDatabaseBase(object):
     def db_split_threshold(self):
         """
         Gets the db_split_threshold of this CreateAutonomousContainerDatabaseBase.
-        The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+        The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
 
 
         :return: The db_split_threshold of this CreateAutonomousContainerDatabaseBase.
@@ -1324,7 +1324,7 @@ class CreateAutonomousContainerDatabaseBase(object):
     def db_split_threshold(self, db_split_threshold):
         """
         Sets the db_split_threshold of this CreateAutonomousContainerDatabaseBase.
-        The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+        The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
 
 
         :param db_split_threshold: The db_split_threshold of this CreateAutonomousContainerDatabaseBase.
@@ -1360,7 +1360,7 @@ class CreateAutonomousContainerDatabaseBase(object):
     def distribution_affinity(self):
         """
         Gets the distribution_affinity of this CreateAutonomousContainerDatabaseBase.
-        Determines whether an Autonomous Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
+        Determines whether an Autonomous AI Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
 
         Allowed values for this property are: "MINIMUM_DISTRIBUTION", "MAXIMUM_DISTRIBUTION"
 
@@ -1374,7 +1374,7 @@ class CreateAutonomousContainerDatabaseBase(object):
     def distribution_affinity(self, distribution_affinity):
         """
         Sets the distribution_affinity of this CreateAutonomousContainerDatabaseBase.
-        Determines whether an Autonomous Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
+        Determines whether an Autonomous AI Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
 
 
         :param distribution_affinity: The distribution_affinity of this CreateAutonomousContainerDatabaseBase.

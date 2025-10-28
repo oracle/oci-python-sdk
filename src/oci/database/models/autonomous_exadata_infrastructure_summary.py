@@ -12,11 +12,11 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AutonomousExadataInfrastructureSummary(object):
     """
-    **Deprecated** These APIs are deprecated with the introduction of the Autonomous Exadata VM Cluster resource and a shift to a common Exadata Infrastructure resource for all Exadata Cloud-based services, including Autonomous Database on dedicated Exadata infrastructure. For more details, see `Latest Resource Model`__.
+    **Deprecated** These APIs are deprecated with the introduction of the Autonomous Exadata VM Cluster resource and a shift to a common Exadata Infrastructure resource for all Exadata Cloud-based services, including Autonomous AI Database on dedicated Exadata infrastructure. For more details, see `Latest Resource Model`__.
 
-    Infrastructure that enables the running of multiple Autonomous Databases within a dedicated DB system.
+    Infrastructure that enables the running of multiple Autonomous AI Databases within a dedicated DB system.
     For more information about Autonomous Exadata Infrastructure, see
-    `Oracle Autonomous Database`__.
+    `Oracle Autonomous AI Database`__.
 
     To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see `Getting Started with Policies`__.
 
@@ -330,7 +330,7 @@ class AutonomousExadataInfrastructureSummary(object):
         The OCID of the subnet the Autonomous Exadata Infrastructure is associated with.
 
         **Subnet Restrictions:**
-        - For Autonomous Databases with Autonomous Exadata Infrastructure, do not use a subnet that overlaps with 192.168.128.0/20
+        - For Autonomous AI Databases with Autonomous Exadata Infrastructure, do not use a subnet that overlaps with 192.168.128.0/20
 
         These subnets are used by the Oracle Clusterware private interconnect on the database instance.
         Specifying an overlapping subnet will cause the private interconnect to malfunction.
@@ -349,7 +349,7 @@ class AutonomousExadataInfrastructureSummary(object):
         The OCID of the subnet the Autonomous Exadata Infrastructure is associated with.
 
         **Subnet Restrictions:**
-        - For Autonomous Databases with Autonomous Exadata Infrastructure, do not use a subnet that overlaps with 192.168.128.0/20
+        - For Autonomous AI Databases with Autonomous Exadata Infrastructure, do not use a subnet that overlaps with 192.168.128.0/20
 
         These subnets are used by the Oracle Clusterware private interconnect on the database instance.
         Specifying an overlapping subnet will cause the private interconnect to malfunction.
@@ -367,7 +367,7 @@ class AutonomousExadataInfrastructureSummary(object):
         Gets the nsg_ids of this AutonomousExadataInfrastructureSummary.
         The list of `OCIDs`__ for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see `Security Rules`__.
         **NsgIds restrictions:**
-        - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+        - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
@@ -384,7 +384,7 @@ class AutonomousExadataInfrastructureSummary(object):
         Sets the nsg_ids of this AutonomousExadataInfrastructureSummary.
         The list of `OCIDs`__ for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see `Security Rules`__.
         **NsgIds restrictions:**
-        - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+        - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm

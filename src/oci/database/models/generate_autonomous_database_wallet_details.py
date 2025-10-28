@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class GenerateAutonomousDatabaseWalletDetails(object):
     """
-    Details to create and download an Oracle Autonomous Database wallet.
+    Details to create and download an Oracle Autonomous AI Database wallet.
     """
 
     #: A constant which can be used with the generate_type property of a GenerateAutonomousDatabaseWalletDetails.

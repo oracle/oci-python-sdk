@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ResourcePoolShapeCollection(object):
     """
-    Results of an Autonomous Database resouce pool shape collection that contains ResourcePoolShapeSummary items.
+    Results of an Autonomous AI Database resouce pool shape collection that contains ResourcePoolShapeSummary items.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class ResourcePoolShapeCollection(object):
     def items(self):
         """
         Gets the items of this ResourcePoolShapeCollection.
-        List of Autonomous Database resource pools Shapes.
+        List of Autonomous AI Database resource pools Shapes.
 
 
         :return: The items of this ResourcePoolShapeCollection.
@@ -49,7 +49,7 @@ class ResourcePoolShapeCollection(object):
     def items(self, items):
         """
         Sets the items of this ResourcePoolShapeCollection.
-        List of Autonomous Database resource pools Shapes.
+        List of Autonomous AI Database resource pools Shapes.
 
 
         :param items: The items of this ResourcePoolShapeCollection.

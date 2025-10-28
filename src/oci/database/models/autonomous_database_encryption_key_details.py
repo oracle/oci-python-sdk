@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AutonomousDatabaseEncryptionKeyDetails(object):
     """
-    Details of the Autonomous Database encryption key.
+    Details of the Autonomous AI Database encryption key.
     """
 
     #: A constant which can be used with the provider property of a AutonomousDatabaseEncryptionKeyDetails.
@@ -96,7 +96,7 @@ class AutonomousDatabaseEncryptionKeyDetails(object):
     def provider(self):
         """
         Gets the provider of this AutonomousDatabaseEncryptionKeyDetails.
-        The provider for the Autonomous Database encryption key.
+        The provider for the Autonomous AI Database encryption key.
 
         Allowed values for this property are: "AWS", "AZURE", "OCI", "ORACLE_MANAGED", "OKV", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -111,7 +111,7 @@ class AutonomousDatabaseEncryptionKeyDetails(object):
     def provider(self, provider):
         """
         Sets the provider of this AutonomousDatabaseEncryptionKeyDetails.
-        The provider for the Autonomous Database encryption key.
+        The provider for the Autonomous AI Database encryption key.
 
 
         :param provider: The provider of this AutonomousDatabaseEncryptionKeyDetails.

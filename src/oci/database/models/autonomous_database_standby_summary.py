@@ -203,7 +203,7 @@ class AutonomousDatabaseStandbySummary(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this AutonomousDatabaseStandbySummary.
-        The current state of the Autonomous Database.
+        The current state of the Autonomous AI Database.
 
         Allowed values for this property are: "PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING", "MAINTENANCE_IN_PROGRESS", "RESTARTING", "RECREATING", "ROLE_CHANGE_IN_PROGRESS", "UPGRADING", "INACCESSIBLE", "STANDBY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -218,7 +218,7 @@ class AutonomousDatabaseStandbySummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this AutonomousDatabaseStandbySummary.
-        The current state of the Autonomous Database.
+        The current state of the Autonomous AI Database.
 
 
         :param lifecycle_state: The lifecycle_state of this AutonomousDatabaseStandbySummary.
@@ -257,7 +257,7 @@ class AutonomousDatabaseStandbySummary(object):
     def time_data_guard_role_changed(self):
         """
         Gets the time_data_guard_role_changed of this AutonomousDatabaseStandbySummary.
-        The date and time the Autonomous Data Guard role was switched for the standby Autonomous Database.
+        The date and time the Autonomous Data Guard role was switched for the standby Autonomous AI Database.
 
 
         :return: The time_data_guard_role_changed of this AutonomousDatabaseStandbySummary.
@@ -269,7 +269,7 @@ class AutonomousDatabaseStandbySummary(object):
     def time_data_guard_role_changed(self, time_data_guard_role_changed):
         """
         Sets the time_data_guard_role_changed of this AutonomousDatabaseStandbySummary.
-        The date and time the Autonomous Data Guard role was switched for the standby Autonomous Database.
+        The date and time the Autonomous Data Guard role was switched for the standby Autonomous AI Database.
 
 
         :param time_data_guard_role_changed: The time_data_guard_role_changed of this AutonomousDatabaseStandbySummary.
@@ -281,7 +281,7 @@ class AutonomousDatabaseStandbySummary(object):
     def time_disaster_recovery_role_changed(self):
         """
         Gets the time_disaster_recovery_role_changed of this AutonomousDatabaseStandbySummary.
-        The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
 
 
         :return: The time_disaster_recovery_role_changed of this AutonomousDatabaseStandbySummary.
@@ -293,7 +293,7 @@ class AutonomousDatabaseStandbySummary(object):
     def time_disaster_recovery_role_changed(self, time_disaster_recovery_role_changed):
         """
         Sets the time_disaster_recovery_role_changed of this AutonomousDatabaseStandbySummary.
-        The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
 
 
         :param time_disaster_recovery_role_changed: The time_disaster_recovery_role_changed of this AutonomousDatabaseStandbySummary.
@@ -377,7 +377,7 @@ class AutonomousDatabaseStandbySummary(object):
     def availability_domain(self):
         """
         Gets the availability_domain of this AutonomousDatabaseStandbySummary.
-        The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+        The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
 
 
         :return: The availability_domain of this AutonomousDatabaseStandbySummary.
@@ -389,7 +389,7 @@ class AutonomousDatabaseStandbySummary(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this AutonomousDatabaseStandbySummary.
-        The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+        The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
 
 
         :param availability_domain: The availability_domain of this AutonomousDatabaseStandbySummary.

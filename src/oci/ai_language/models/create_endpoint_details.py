@@ -15,14 +15,6 @@ class CreateEndpointDetails(object):
     The information needed to create a new endpoint and expose to end users.
     """
 
-    #: A constant which can be used with the compute_type property of a CreateEndpointDetails.
-    #: This constant has a value of "CPU"
-    COMPUTE_TYPE_CPU = "CPU"
-
-    #: A constant which can be used with the compute_type property of a CreateEndpointDetails.
-    #: This constant has a value of "GPU"
-    COMPUTE_TYPE_GPU = "GPU"
-
     def __init__(self, **kwargs):
         """
         Initializes a new CreateEndpointDetails object with values from keyword arguments.
@@ -31,11 +23,6 @@ class CreateEndpointDetails(object):
         :param display_name:
             The value to assign to the display_name property of this CreateEndpointDetails.
         :type display_name: str
-
-        :param compute_type:
-            The value to assign to the compute_type property of this CreateEndpointDetails.
-            Allowed values for this property are: "CPU", "GPU"
-        :type compute_type: str
 
         :param alias:
             The value to assign to the alias property of this CreateEndpointDetails.
@@ -68,7 +55,6 @@ class CreateEndpointDetails(object):
         """
         self.swagger_types = {
             'display_name': 'str',
-            'compute_type': 'str',
             'alias': 'str',
             'description': 'str',
             'compartment_id': 'str',
@@ -79,7 +65,6 @@ class CreateEndpointDetails(object):
         }
         self.attribute_map = {
             'display_name': 'displayName',
-            'compute_type': 'computeType',
             'alias': 'alias',
             'description': 'description',
             'compartment_id': 'compartmentId',
@@ -89,7 +74,6 @@ class CreateEndpointDetails(object):
             'defined_tags': 'definedTags'
         }
         self._display_name = None
-        self._compute_type = None
         self._alias = None
         self._description = None
         self._compartment_id = None
@@ -121,37 +105,6 @@ class CreateEndpointDetails(object):
         :type: str
         """
         self._display_name = display_name
-
-    @property
-    def compute_type(self):
-        """
-        Gets the compute_type of this CreateEndpointDetails.
-        Compute infra type for endpoint.
-
-        Allowed values for this property are: "CPU", "GPU"
-
-
-        :return: The compute_type of this CreateEndpointDetails.
-        :rtype: str
-        """
-        return self._compute_type
-
-    @compute_type.setter
-    def compute_type(self, compute_type):
-        """
-        Sets the compute_type of this CreateEndpointDetails.
-        Compute infra type for endpoint.
-
-
-        :param compute_type: The compute_type of this CreateEndpointDetails.
-        :type: str
-        """
-        allowed_values = ["CPU", "GPU"]
-        if not value_allowed_none_or_none_sentinel(compute_type, allowed_values):
-            raise ValueError(
-                f"Invalid value for `compute_type`, must be None or one of {allowed_values}"
-            )
-        self._compute_type = compute_type
 
     @property
     def alias(self):

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SourceDatabaseDetails(object):
     """
-    Source Autonomous Database details.
+    Source Autonomous AI Database details.
     """
 
     #: A constant which can be used with the db_workload property of a SourceDatabaseDetails.
@@ -30,6 +30,10 @@ class SourceDatabaseDetails(object):
     #: A constant which can be used with the db_workload property of a SourceDatabaseDetails.
     #: This constant has a value of "APEX"
     DB_WORKLOAD_APEX = "APEX"
+
+    #: A constant which can be used with the db_workload property of a SourceDatabaseDetails.
+    #: This constant has a value of "LH"
+    DB_WORKLOAD_LH = "LH"
 
     def __init__(self, **kwargs):
         """
@@ -66,7 +70,7 @@ class SourceDatabaseDetails(object):
 
         :param db_workload:
             The value to assign to the db_workload property of this SourceDatabaseDetails.
-            Allowed values for this property are: "OLTP", "DW", "AJD", "APEX", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "OLTP", "DW", "AJD", "APEX", "LH", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type db_workload: str
 
@@ -224,7 +228,7 @@ class SourceDatabaseDetails(object):
     def autonomous_database_name(self):
         """
         Gets the autonomous_database_name of this SourceDatabaseDetails.
-        Autonomous Database's name.
+        Autonomous AI Database's name.
 
 
         :return: The autonomous_database_name of this SourceDatabaseDetails.
@@ -236,7 +240,7 @@ class SourceDatabaseDetails(object):
     def autonomous_database_name(self, autonomous_database_name):
         """
         Sets the autonomous_database_name of this SourceDatabaseDetails.
-        Autonomous Database's name.
+        Autonomous AI Database's name.
 
 
         :param autonomous_database_name: The autonomous_database_name of this SourceDatabaseDetails.
@@ -248,7 +252,7 @@ class SourceDatabaseDetails(object):
     def autonomous_database_customer_contacts(self):
         """
         Gets the autonomous_database_customer_contacts of this SourceDatabaseDetails.
-        Customer Contacts for the Autonomous database.
+        Customer Contacts for the Autonomous AI Database.
 
 
         :return: The autonomous_database_customer_contacts of this SourceDatabaseDetails.
@@ -260,7 +264,7 @@ class SourceDatabaseDetails(object):
     def autonomous_database_customer_contacts(self, autonomous_database_customer_contacts):
         """
         Sets the autonomous_database_customer_contacts of this SourceDatabaseDetails.
-        Customer Contacts for the Autonomous database.
+        Customer Contacts for the Autonomous AI Database.
 
 
         :param autonomous_database_customer_contacts: The autonomous_database_customer_contacts of this SourceDatabaseDetails.
@@ -272,16 +276,17 @@ class SourceDatabaseDetails(object):
     def db_workload(self):
         """
         Gets the db_workload of this SourceDatabaseDetails.
-        The Autonomous Database workload type. The following values are valid:
+        The Autonomous AI Database workload type. The following values are valid:
+        - OLTP - indicates an Autonomous AI Transaction Processing database
+        - DW - indicates an Autonomous AI Lakehouse database
+        - AJD - indicates an Autonomous AI JSON Database
+        - APEX - indicates an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
+        - LH - indicates an Oracle Autonomous AI Lakehouse database
 
-        - OLTP - indicates an Autonomous Transaction Processing database
-        - DW - indicates an Autonomous Data Warehouse database
-        - AJD - indicates an Autonomous JSON Database
-        - APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
 
         This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 
-        Allowed values for this property are: "OLTP", "DW", "AJD", "APEX", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "OLTP", "DW", "AJD", "APEX", "LH", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -294,12 +299,13 @@ class SourceDatabaseDetails(object):
     def db_workload(self, db_workload):
         """
         Sets the db_workload of this SourceDatabaseDetails.
-        The Autonomous Database workload type. The following values are valid:
+        The Autonomous AI Database workload type. The following values are valid:
+        - OLTP - indicates an Autonomous AI Transaction Processing database
+        - DW - indicates an Autonomous AI Lakehouse database
+        - AJD - indicates an Autonomous AI JSON Database
+        - APEX - indicates an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
+        - LH - indicates an Oracle Autonomous AI Lakehouse database
 
-        - OLTP - indicates an Autonomous Transaction Processing database
-        - DW - indicates an Autonomous Data Warehouse database
-        - AJD - indicates an Autonomous JSON Database
-        - APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
 
         This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 
@@ -307,7 +313,7 @@ class SourceDatabaseDetails(object):
         :param db_workload: The db_workload of this SourceDatabaseDetails.
         :type: str
         """
-        allowed_values = ["OLTP", "DW", "AJD", "APEX"]
+        allowed_values = ["OLTP", "DW", "AJD", "APEX", "LH"]
         if not value_allowed_none_or_none_sentinel(db_workload, allowed_values):
             db_workload = 'UNKNOWN_ENUM_VALUE'
         self._db_workload = db_workload

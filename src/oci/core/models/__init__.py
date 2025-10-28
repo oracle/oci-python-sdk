@@ -11,6 +11,7 @@ from .add_drg_route_distribution_statements_details import AddDrgRouteDistributi
 from .add_drg_route_rule_details import AddDrgRouteRuleDetails
 from .add_drg_route_rules_details import AddDrgRouteRulesDetails
 from .add_image_shape_compatibility_entry_details import AddImageShapeCompatibilityEntryDetails
+from .add_ipv4_subnet_cidr_details import AddIpv4SubnetCidrDetails
 from .add_network_security_group_security_rules_details import AddNetworkSecurityGroupSecurityRulesDetails
 from .add_public_ip_pool_capacity_details import AddPublicIpPoolCapacityDetails
 from .add_security_rule_details import AddSecurityRuleDetails
@@ -461,6 +462,7 @@ from .measured_boot_entry import MeasuredBootEntry
 from .measured_boot_report import MeasuredBootReport
 from .measured_boot_report_measurements import MeasuredBootReportMeasurements
 from .member_replica import MemberReplica
+from .modify_ipv4_subnet_cidr_details import ModifyIpv4SubnetCidrDetails
 from .modify_vcn_cidr_details import ModifyVcnCidrDetails
 from .multipath_device import MultipathDevice
 from .nat_gateway import NatGateway
@@ -489,6 +491,7 @@ from .remote_peering_connection import RemotePeeringConnection
 from .remote_peering_connection_drg_attachment_network_details import RemotePeeringConnectionDrgAttachmentNetworkDetails
 from .remove_drg_route_distribution_statements_details import RemoveDrgRouteDistributionStatementsDetails
 from .remove_drg_route_rules_details import RemoveDrgRouteRulesDetails
+from .remove_ipv4_subnet_cidr_details import RemoveIpv4SubnetCidrDetails
 from .remove_network_security_group_security_rules_details import RemoveNetworkSecurityGroupSecurityRulesDetails
 from .remove_public_ip_pool_capacity_details import RemovePublicIpPoolCapacityDetails
 from .remove_subnet_ipv6_cidr_details import RemoveSubnetIpv6CidrDetails
@@ -673,6 +676,7 @@ core_type_mapping = {
     "AddDrgRouteRuleDetails": AddDrgRouteRuleDetails,
     "AddDrgRouteRulesDetails": AddDrgRouteRulesDetails,
     "AddImageShapeCompatibilityEntryDetails": AddImageShapeCompatibilityEntryDetails,
+    "AddIpv4SubnetCidrDetails": AddIpv4SubnetCidrDetails,
     "AddNetworkSecurityGroupSecurityRulesDetails": AddNetworkSecurityGroupSecurityRulesDetails,
     "AddPublicIpPoolCapacityDetails": AddPublicIpPoolCapacityDetails,
     "AddSecurityRuleDetails": AddSecurityRuleDetails,
@@ -1123,6 +1127,7 @@ core_type_mapping = {
     "MeasuredBootReport": MeasuredBootReport,
     "MeasuredBootReportMeasurements": MeasuredBootReportMeasurements,
     "MemberReplica": MemberReplica,
+    "ModifyIpv4SubnetCidrDetails": ModifyIpv4SubnetCidrDetails,
     "ModifyVcnCidrDetails": ModifyVcnCidrDetails,
     "MultipathDevice": MultipathDevice,
     "NatGateway": NatGateway,
@@ -1151,6 +1156,7 @@ core_type_mapping = {
     "RemotePeeringConnectionDrgAttachmentNetworkDetails": RemotePeeringConnectionDrgAttachmentNetworkDetails,
     "RemoveDrgRouteDistributionStatementsDetails": RemoveDrgRouteDistributionStatementsDetails,
     "RemoveDrgRouteRulesDetails": RemoveDrgRouteRulesDetails,
+    "RemoveIpv4SubnetCidrDetails": RemoveIpv4SubnetCidrDetails,
     "RemoveNetworkSecurityGroupSecurityRulesDetails": RemoveNetworkSecurityGroupSecurityRulesDetails,
     "RemovePublicIpPoolCapacityDetails": RemovePublicIpPoolCapacityDetails,
     "RemoveSubnetIpv6CidrDetails": RemoveSubnetIpv6CidrDetails,

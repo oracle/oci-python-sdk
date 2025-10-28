@@ -190,7 +190,7 @@ class AutonomousContainerDatabaseResourceUsage(object):
     def available_cpus(self):
         """
         Gets the available_cpus of this AutonomousContainerDatabaseResourceUsage.
-        CPUs available for provisioning or scaling an Autonomous Database in the Autonomous Container Database.
+        CPUs available for provisioning or scaling an Autonomous AI Database in the Autonomous Container Database.
 
 
         :return: The available_cpus of this AutonomousContainerDatabaseResourceUsage.
@@ -202,7 +202,7 @@ class AutonomousContainerDatabaseResourceUsage(object):
     def available_cpus(self, available_cpus):
         """
         Sets the available_cpus of this AutonomousContainerDatabaseResourceUsage.
-        CPUs available for provisioning or scaling an Autonomous Database in the Autonomous Container Database.
+        CPUs available for provisioning or scaling an Autonomous AI Database in the Autonomous Container Database.
 
 
         :param available_cpus: The available_cpus of this AutonomousContainerDatabaseResourceUsage.
@@ -314,7 +314,7 @@ class AutonomousContainerDatabaseResourceUsage(object):
     def provisionable_cpus(self):
         """
         Gets the provisionable_cpus of this AutonomousContainerDatabaseResourceUsage.
-        Valid list of provisionable CPUs for Autonomous Database.
+        Valid list of provisionable CPUs for Autonomous AI Database.
 
 
         :return: The provisionable_cpus of this AutonomousContainerDatabaseResourceUsage.
@@ -326,7 +326,7 @@ class AutonomousContainerDatabaseResourceUsage(object):
     def provisionable_cpus(self, provisionable_cpus):
         """
         Sets the provisionable_cpus of this AutonomousContainerDatabaseResourceUsage.
-        Valid list of provisionable CPUs for Autonomous Database.
+        Valid list of provisionable CPUs for Autonomous AI Database.
 
 
         :param provisionable_cpus: The provisionable_cpus of this AutonomousContainerDatabaseResourceUsage.

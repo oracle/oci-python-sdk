@@ -65,6 +65,14 @@ class ValidateDatabaseToolsConnectionOracleDatabaseResult(ValidateDatabaseToolsC
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type dbms_cloud_status: str
 
+        :param cloud_service:
+            The value to assign to the cloud_service property of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        :type cloud_service: str
+
+        :param database_tools_identity_statuses:
+            The value to assign to the database_tools_identity_statuses property of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        :type database_tools_identity_statuses: list[oci.database_tools.models.ValidationIdentityStatus]
+
         """
         self.swagger_types = {
             'type': 'str',
@@ -74,7 +82,9 @@ class ValidateDatabaseToolsConnectionOracleDatabaseResult(ValidateDatabaseToolsC
             'action': 'str',
             'database_name': 'str',
             'database_version': 'str',
-            'dbms_cloud_status': 'str'
+            'dbms_cloud_status': 'str',
+            'cloud_service': 'str',
+            'database_tools_identity_statuses': 'list[ValidationIdentityStatus]'
         }
         self.attribute_map = {
             'type': 'type',
@@ -84,7 +94,9 @@ class ValidateDatabaseToolsConnectionOracleDatabaseResult(ValidateDatabaseToolsC
             'action': 'action',
             'database_name': 'databaseName',
             'database_version': 'databaseVersion',
-            'dbms_cloud_status': 'dbmsCloudStatus'
+            'dbms_cloud_status': 'dbmsCloudStatus',
+            'cloud_service': 'cloudService',
+            'database_tools_identity_statuses': 'databaseToolsIdentityStatuses'
         }
         self._type = None
         self._code = None
@@ -94,6 +106,8 @@ class ValidateDatabaseToolsConnectionOracleDatabaseResult(ValidateDatabaseToolsC
         self._database_name = None
         self._database_version = None
         self._dbms_cloud_status = None
+        self._cloud_service = None
+        self._database_tools_identity_statuses = None
         self._type = 'ORACLE_DATABASE'
 
     @property
@@ -173,6 +187,54 @@ class ValidateDatabaseToolsConnectionOracleDatabaseResult(ValidateDatabaseToolsC
         if not value_allowed_none_or_none_sentinel(dbms_cloud_status, allowed_values):
             dbms_cloud_status = 'UNKNOWN_ENUM_VALUE'
         self._dbms_cloud_status = dbms_cloud_status
+
+    @property
+    def cloud_service(self):
+        """
+        Gets the cloud_service of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        Displays the CLOUD_SERVICE value within the USERENV context
+
+
+        :return: The cloud_service of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        :rtype: str
+        """
+        return self._cloud_service
+
+    @cloud_service.setter
+    def cloud_service(self, cloud_service):
+        """
+        Sets the cloud_service of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        Displays the CLOUD_SERVICE value within the USERENV context
+
+
+        :param cloud_service: The cloud_service of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        :type: str
+        """
+        self._cloud_service = cloud_service
+
+    @property
+    def database_tools_identity_statuses(self):
+        """
+        Gets the database_tools_identity_statuses of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        Status on whether a Database Tools identity type can be used with this connection or not.
+
+
+        :return: The database_tools_identity_statuses of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        :rtype: list[oci.database_tools.models.ValidationIdentityStatus]
+        """
+        return self._database_tools_identity_statuses
+
+    @database_tools_identity_statuses.setter
+    def database_tools_identity_statuses(self, database_tools_identity_statuses):
+        """
+        Sets the database_tools_identity_statuses of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        Status on whether a Database Tools identity type can be used with this connection or not.
+
+
+        :param database_tools_identity_statuses: The database_tools_identity_statuses of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        :type: list[oci.database_tools.models.ValidationIdentityStatus]
+        """
+        self._database_tools_identity_statuses = database_tools_identity_statuses
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -256,10 +256,10 @@ class UpdateCloudAutonomousVmClusterDetails(object):
     def license_model(self):
         """
         Gets the license_model of this UpdateCloudAutonomousVmClusterDetails.
-        The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud.
-        License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service.
-        Note that when provisioning an `Autonomous Database on dedicated Exadata infrastructure`__, this attribute must be null. It is already set at the
-        Autonomous Exadata Infrastructure level. When provisioning an `Autonomous Database Serverless]`__ database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
+        The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud.
+        License Included allows you to subscribe to new Oracle AI Database software licenses and the Oracle AI Database service.
+        Note that when provisioning an `Autonomous AI Database on dedicated Exadata infrastructure`__, this attribute must be null. It is already set at the
+        Autonomous Exadata Infrastructure level. When provisioning an `Autonomous AI Database Serverless]`__ database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
 
         This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
@@ -278,10 +278,10 @@ class UpdateCloudAutonomousVmClusterDetails(object):
     def license_model(self, license_model):
         """
         Sets the license_model of this UpdateCloudAutonomousVmClusterDetails.
-        The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud.
-        License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service.
-        Note that when provisioning an `Autonomous Database on dedicated Exadata infrastructure`__, this attribute must be null. It is already set at the
-        Autonomous Exadata Infrastructure level. When provisioning an `Autonomous Database Serverless]`__ database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
+        The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud.
+        License Included allows you to subscribe to new Oracle AI Database software licenses and the Oracle AI Database service.
+        Note that when provisioning an `Autonomous AI Database on dedicated Exadata infrastructure`__, this attribute must be null. It is already set at the
+        Autonomous Exadata Infrastructure level. When provisioning an `Autonomous AI Database Serverless]`__ database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
 
         This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
@@ -305,7 +305,7 @@ class UpdateCloudAutonomousVmClusterDetails(object):
         Gets the nsg_ids of this UpdateCloudAutonomousVmClusterDetails.
         The list of `OCIDs`__ for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see `Security Rules`__.
         **NsgIds restrictions:**
-        - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+        - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
@@ -322,7 +322,7 @@ class UpdateCloudAutonomousVmClusterDetails(object):
         Sets the nsg_ids of this UpdateCloudAutonomousVmClusterDetails.
         The list of `OCIDs`__ for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see `Security Rules`__.
         **NsgIds restrictions:**
-        - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+        - A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm

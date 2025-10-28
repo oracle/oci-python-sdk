@@ -352,7 +352,7 @@ class BackupDestinationSummary(object):
     def associated_long_term_backups(self):
         """
         Gets the associated_long_term_backups of this BackupDestinationSummary.
-        List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+        List of long term backups of Autonomous AI Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
 
 
         :return: The associated_long_term_backups of this BackupDestinationSummary.
@@ -364,7 +364,7 @@ class BackupDestinationSummary(object):
     def associated_long_term_backups(self, associated_long_term_backups):
         """
         Sets the associated_long_term_backups of this BackupDestinationSummary.
-        List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+        List of long term backups of Autonomous AI Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
 
 
         :param associated_long_term_backups: The associated_long_term_backups of this BackupDestinationSummary.
@@ -376,7 +376,7 @@ class BackupDestinationSummary(object):
     def associated_long_term_backup_count(self):
         """
         Gets the associated_long_term_backup_count of this BackupDestinationSummary.
-        Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+        Indicates the number of long term backups of Autonomous AI Databases associated with this backup destination.
 
 
         :return: The associated_long_term_backup_count of this BackupDestinationSummary.
@@ -388,7 +388,7 @@ class BackupDestinationSummary(object):
     def associated_long_term_backup_count(self, associated_long_term_backup_count):
         """
         Sets the associated_long_term_backup_count of this BackupDestinationSummary.
-        Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+        Indicates the number of long term backups of Autonomous AI Databases associated with this backup destination.
 
 
         :param associated_long_term_backup_count: The associated_long_term_backup_count of this BackupDestinationSummary.

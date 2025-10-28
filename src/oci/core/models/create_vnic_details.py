@@ -61,6 +61,10 @@ class CreateVnicDetails(object):
             The value to assign to the ipv6_address_ipv6_subnet_cidr_pair_details property of this CreateVnicDetails.
         :type ipv6_address_ipv6_subnet_cidr_pair_details: list[oci.core.models.Ipv6AddressIpv6SubnetCidrPairDetails]
 
+        :param subnet_cidr:
+            The value to assign to the subnet_cidr property of this CreateVnicDetails.
+        :type subnet_cidr: str
+
         :param nsg_ids:
             The value to assign to the nsg_ids property of this CreateVnicDetails.
         :type nsg_ids: list[str]
@@ -92,6 +96,7 @@ class CreateVnicDetails(object):
             'security_attributes': 'dict(str, dict(str, object))',
             'hostname_label': 'str',
             'ipv6_address_ipv6_subnet_cidr_pair_details': 'list[Ipv6AddressIpv6SubnetCidrPairDetails]',
+            'subnet_cidr': 'str',
             'nsg_ids': 'list[str]',
             'private_ip': 'str',
             'skip_source_dest_check': 'bool',
@@ -108,6 +113,7 @@ class CreateVnicDetails(object):
             'security_attributes': 'securityAttributes',
             'hostname_label': 'hostnameLabel',
             'ipv6_address_ipv6_subnet_cidr_pair_details': 'ipv6AddressIpv6SubnetCidrPairDetails',
+            'subnet_cidr': 'subnetCidr',
             'nsg_ids': 'nsgIds',
             'private_ip': 'privateIp',
             'skip_source_dest_check': 'skipSourceDestCheck',
@@ -123,6 +129,7 @@ class CreateVnicDetails(object):
         self._security_attributes = None
         self._hostname_label = None
         self._ipv6_address_ipv6_subnet_cidr_pair_details = None
+        self._subnet_cidr = None
         self._nsg_ids = None
         self._private_ip = None
         self._skip_source_dest_check = None
@@ -504,6 +511,40 @@ class CreateVnicDetails(object):
         :type: list[oci.core.models.Ipv6AddressIpv6SubnetCidrPairDetails]
         """
         self._ipv6_address_ipv6_subnet_cidr_pair_details = ipv6_address_ipv6_subnet_cidr_pair_details
+
+    @property
+    def subnet_cidr(self):
+        """
+        Gets the subnet_cidr of this CreateVnicDetails.
+        One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range
+        from which the VNIC's private IP address will be assigned if `privateIp` or
+        `privateIpId` is not specified.
+        Either this field or the `privateIp` (or `privateIpId`, if applicable) field
+        must be provided, but not both simultaneously.
+        Example: `192.168.1.0/28`
+
+
+        :return: The subnet_cidr of this CreateVnicDetails.
+        :rtype: str
+        """
+        return self._subnet_cidr
+
+    @subnet_cidr.setter
+    def subnet_cidr(self, subnet_cidr):
+        """
+        Sets the subnet_cidr of this CreateVnicDetails.
+        One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range
+        from which the VNIC's private IP address will be assigned if `privateIp` or
+        `privateIpId` is not specified.
+        Either this field or the `privateIp` (or `privateIpId`, if applicable) field
+        must be provided, but not both simultaneously.
+        Example: `192.168.1.0/28`
+
+
+        :param subnet_cidr: The subnet_cidr of this CreateVnicDetails.
+        :type: str
+        """
+        self._subnet_cidr = subnet_cidr
 
     @property
     def nsg_ids(self):

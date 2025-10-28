@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AutonomousDataWarehouseConnectionStrings(object):
     """
-    **Deprecated.** For information about connection strings to connect to an Oracle Autonomous Data Warehouse, see :func:`autonomous_database_connection_strings`.
+    **Deprecated.** For information about connection strings to connect to an Oracle Autonomous AI Lakehouse, see :func:`autonomous_database_connection_strings`.
     """
 
     def __init__(self, **kwargs):
@@ -130,8 +130,8 @@ class AutonomousDataWarehouseConnectionStrings(object):
     def all_connection_strings(self):
         """
         Gets the all_connection_strings of this AutonomousDataWarehouseConnectionStrings.
-        Returns all connection strings that can be used to connect to the Autonomous Data Warehouse.
-        For more information, please see `Predefined Database Service Names for Autonomous Transaction Processing`__
+        Returns all connection strings that can be used to connect to the Autonomous AI Lakehouse.
+        For more information, please see `Predefined Database Service Names for Autonomous AI Transaction Processing`__
 
         __ https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE
 
@@ -145,8 +145,8 @@ class AutonomousDataWarehouseConnectionStrings(object):
     def all_connection_strings(self, all_connection_strings):
         """
         Sets the all_connection_strings of this AutonomousDataWarehouseConnectionStrings.
-        Returns all connection strings that can be used to connect to the Autonomous Data Warehouse.
-        For more information, please see `Predefined Database Service Names for Autonomous Transaction Processing`__
+        Returns all connection strings that can be used to connect to the Autonomous AI Lakehouse.
+        For more information, please see `Predefined Database Service Names for Autonomous AI Transaction Processing`__
 
         __ https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE
 

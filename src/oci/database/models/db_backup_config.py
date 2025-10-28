@@ -427,7 +427,7 @@ class DbBackupConfig(object):
     def backup_deletion_policy(self):
         """
         Gets the backup_deletion_policy of this DbBackupConfig.
-        This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
 
         Allowed values for this property are: "DELETE_IMMEDIATELY", "DELETE_AFTER_RETENTION_PERIOD", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -442,7 +442,7 @@ class DbBackupConfig(object):
     def backup_deletion_policy(self, backup_deletion_policy):
         """
         Sets the backup_deletion_policy of this DbBackupConfig.
-        This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
 
 
         :param backup_deletion_policy: The backup_deletion_policy of this DbBackupConfig.

@@ -271,7 +271,7 @@ class CreateMaintenanceRunDetails(object):
     def database_software_image_id(self):
         """
         Gets the database_software_image_id of this CreateMaintenanceRunDetails.
-        The Autonomous Database Software Image `OCID`__
+        The Autonomous AI Database Software Image `OCID`__
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -285,7 +285,7 @@ class CreateMaintenanceRunDetails(object):
     def database_software_image_id(self, database_software_image_id):
         """
         Sets the database_software_image_id of this CreateMaintenanceRunDetails.
-        The Autonomous Database Software Image `OCID`__
+        The Autonomous AI Database Software Image `OCID`__
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

@@ -44,6 +44,9 @@ USER_INFO = "Oracle-PythonSDK/{}".format(__version__)
 DICT_VALUE_TYPE_REGEX = re.compile(r'dict\(str, (.+?)\)$')  # noqa: W605
 LIST_ITEM_TYPE_REGEX = re.compile(r'list\[(.+?)\]$')  # noqa: W605
 TROUBLESHOOT_URL = 'https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_troubleshooting.htm'
+OCI_DUAL_STACK_ENDPOINT_ENABLED_ENV_VAR = "OCI_DUAL_STACK_ENDPOINT_ENABLED"
+PATTERN_FOR_ENDPOINT_TEMPLATE_OPTIONS = re.compile(r"\{\w*\?(\w*.|\s*)\:(\w*.|\s*)\}*")
+DUAL_STACK_OPTION = "{dualStack"
 
 # Expect header is enabled by default
 enable_expect_header = True
@@ -283,6 +286,8 @@ class BaseClient(object):
         self._base_path = kwargs.get('base_path')
         self.service_endpoint_template = kwargs.get('service_endpoint_template')
         self.service_endpoint_template_per_realm = kwargs.get('service_endpoint_template_per_realm')
+        self.client_level_dualstack_endpoints_enabled = kwargs.get('client_level_dualstack_endpoints_enabled')
+        self.service_uses_dualstack_endpoints_by_default = kwargs.get("service_uses_dualstack_endpoints_by_default", False)
         self.endpoint_service_name = kwargs.get('endpoint_service_name')
 
         # By default self._allow_control_chars will be None. The user would need to explicitly set it to True or False
@@ -292,6 +297,7 @@ class BaseClient(object):
 
         self._client_level_realm_specific_endpoint_template_enabled = kwargs.get('client_level_realm_specific_endpoint_template_enabled')  # default this to None as it should be an opt-in feature
 
+        self.service = service
         if self.regional_client:
             if kwargs.get('service_endpoint'):
                 self.endpoint = kwargs.get('service_endpoint')
@@ -315,7 +321,6 @@ class BaseClient(object):
                 raise exceptions.MissingEndpointForNonRegionalServiceClientError('An endpoint must be provided for a non-regional service client')
             self.endpoint = kwargs.get('service_endpoint')
 
-        self.service = service
         self.complex_type_mappings = type_mapping
         self.type_mappings = merge_type_mappings(self.primitive_type_map, type_mapping)
         self.session = requests.Session()
@@ -365,6 +370,42 @@ class BaseClient(object):
                     return service_endpoint_template_per_realm[realm]
 
         return service_endpoint_template
+
+    def is_dual_stack_enabled(self):
+        """
+        Returns a boolean for whether dual stack endpoints are enabled or not
+        The hierarchy is:
+        1. Client level setting
+        2. Environment level setting
+        3. Service level setting
+        """
+        if self.client_level_dualstack_endpoints_enabled is not None:
+            return self.client_level_dualstack_endpoints_enabled
+        dual_stack_endpoints_enabled_from_env_var = os.environ.get(OCI_DUAL_STACK_ENDPOINT_ENABLED_ENV_VAR)
+        if dual_stack_endpoints_enabled_from_env_var is not None:
+            return dual_stack_endpoints_enabled_from_env_var.lower() == 'true'
+        return self.service_uses_dualstack_endpoints_by_default
+
+    def update_endpoint_template_for_options(self):
+        pattern = PATTERN_FOR_ENDPOINT_TEMPLATE_OPTIONS
+        endpoint = self.endpoint
+        matchers = re.finditer(pattern, endpoint)
+
+        for matcher in matchers:
+            option = matcher.group()
+            option_enabled_param = option[option.index('?') + 1:option.index(':')]
+            option_disabled_param = option[option.index(':') + 1:-1]
+            # Dual stack option
+            if DUAL_STACK_OPTION in option:
+                if self.is_dual_stack_enabled():
+                    # TODO replacing endpoint options should be factored out in the outer loop when dealing with multiple options
+                    endpoint = endpoint.replace(option, option_enabled_param)
+                else:
+                    endpoint = endpoint.replace(option, option_disabled_param)
+            else:
+                endpoint = endpoint.replace(option, '')
+
+        return endpoint
 
     @property
     def endpoint(self):
@@ -577,7 +618,7 @@ class BaseClient(object):
         return service_params_map
 
     def handle_service_params_in_endpoint(self, path_params, query_params, required_arguments):
-        endpoint = self.endpoint
+        endpoint = self.update_endpoint_template_for_options()
         start_idx = len("https://")
         if endpoint[start_idx] == "{":  # If the character after https:// is a "{", we have service params
             end_idx = endpoint.rfind("}")

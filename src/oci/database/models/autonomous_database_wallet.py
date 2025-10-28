@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AutonomousDatabaseWallet(object):
     """
-    The Autonomous Database wallet details.
+    The Autonomous AI Database wallet details.
     """
 
     #: A constant which can be used with the lifecycle_state property of a AutonomousDatabaseWallet.
@@ -54,7 +54,7 @@ class AutonomousDatabaseWallet(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this AutonomousDatabaseWallet.
-        The current lifecycle state of the Autonomous Database wallet.
+        The current lifecycle state of the Autonomous AI Database wallet.
 
         Allowed values for this property are: "ACTIVE", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -69,7 +69,7 @@ class AutonomousDatabaseWallet(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this AutonomousDatabaseWallet.
-        The current lifecycle state of the Autonomous Database wallet.
+        The current lifecycle state of the Autonomous AI Database wallet.
 
 
         :param lifecycle_state: The lifecycle_state of this AutonomousDatabaseWallet.

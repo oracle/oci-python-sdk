@@ -19,6 +19,14 @@ Disaster Recovery
     :template: autosummary/model_class.rst
 
     oci.disaster_recovery.models.AssociateDrProtectionGroupDetails
+    oci.disaster_recovery.models.AutomaticDrConfiguration
+    oci.disaster_recovery.models.AutomaticDrConfigurationCollection
+    oci.disaster_recovery.models.AutomaticDrConfigurationMember
+    oci.disaster_recovery.models.AutomaticDrConfigurationMemberAutonomousContainerDatabase
+    oci.disaster_recovery.models.AutomaticDrConfigurationMemberAutonomousDatabase
+    oci.disaster_recovery.models.AutomaticDrConfigurationMemberDatabase
+    oci.disaster_recovery.models.AutomaticDrConfigurationSummary
+    oci.disaster_recovery.models.AutomaticExecutionDetails
     oci.disaster_recovery.models.BlockVolumeAttachmentDetails
     oci.disaster_recovery.models.BlockVolumeMountDetails
     oci.disaster_recovery.models.CancelDrPlanExecutionDetails
@@ -33,6 +41,11 @@ Disaster Recovery
     oci.disaster_recovery.models.ComputeInstanceNonMovableFileSystemOperation
     oci.disaster_recovery.models.ComputeInstanceVnicMapping
     oci.disaster_recovery.models.ComputeInstanceVnicMappingDetails
+    oci.disaster_recovery.models.CreateAutomaticDrConfigurationDetails
+    oci.disaster_recovery.models.CreateAutomaticDrConfigurationMemberAutonomousContainerDatabaseDetails
+    oci.disaster_recovery.models.CreateAutomaticDrConfigurationMemberAutonomousDatabaseDetails
+    oci.disaster_recovery.models.CreateAutomaticDrConfigurationMemberDatabaseDetails
+    oci.disaster_recovery.models.CreateAutomaticDrConfigurationMemberDetails
     oci.disaster_recovery.models.CreateBlockVolumeAttachmentDetails
     oci.disaster_recovery.models.CreateBlockVolumeMountDetails
     oci.disaster_recovery.models.CreateComputeInstanceMovableFileSystemOperationDetails
@@ -156,6 +169,11 @@ Disaster Recovery
     oci.disaster_recovery.models.SwitchoverExecutionOptions
     oci.disaster_recovery.models.SwitchoverPrecheckExecutionOptionDetails
     oci.disaster_recovery.models.SwitchoverPrecheckExecutionOptions
+    oci.disaster_recovery.models.UpdateAutomaticDrConfigurationDetails
+    oci.disaster_recovery.models.UpdateAutomaticDrConfigurationMemberAutonomousContainerDatabaseDetails
+    oci.disaster_recovery.models.UpdateAutomaticDrConfigurationMemberAutonomousDatabaseDetails
+    oci.disaster_recovery.models.UpdateAutomaticDrConfigurationMemberDatabaseDetails
+    oci.disaster_recovery.models.UpdateAutomaticDrConfigurationMemberDetails
     oci.disaster_recovery.models.UpdateBlockVolumeAttachmentDetails
     oci.disaster_recovery.models.UpdateBlockVolumeMountDetails
     oci.disaster_recovery.models.UpdateComputeInstanceMovableFileSystemOperationDetails

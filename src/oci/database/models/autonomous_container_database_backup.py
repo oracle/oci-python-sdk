@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AutonomousContainerDatabaseBackup(object):
     """
-    An Autonomous Database backup.
+    An Autonomous AI Database backup.
     """
 
     #: A constant which can be used with the type property of a AutonomousContainerDatabaseBackup.
@@ -199,7 +199,7 @@ class AutonomousContainerDatabaseBackup(object):
     def id(self):
         """
         **[Required]** Gets the id of this AutonomousContainerDatabaseBackup.
-        The `OCID`__ of the Autonomous Database backup.
+        The `OCID`__ of the Autonomous AI Database backup.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -213,7 +213,7 @@ class AutonomousContainerDatabaseBackup(object):
     def id(self, id):
         """
         Sets the id of this AutonomousContainerDatabaseBackup.
-        The `OCID`__ of the Autonomous Database backup.
+        The `OCID`__ of the Autonomous AI Database backup.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -662,7 +662,7 @@ class AutonomousContainerDatabaseBackup(object):
     def autonomous_databases(self):
         """
         Gets the autonomous_databases of this AutonomousContainerDatabaseBackup.
-        List of Autonomous Databases that is part of this Autonomous Container Database Backup
+        List of Autonomous AI Databases that is part of this Autonomous Container Database Backup
 
 
         :return: The autonomous_databases of this AutonomousContainerDatabaseBackup.
@@ -674,7 +674,7 @@ class AutonomousContainerDatabaseBackup(object):
     def autonomous_databases(self, autonomous_databases):
         """
         Sets the autonomous_databases of this AutonomousContainerDatabaseBackup.
-        List of Autonomous Databases that is part of this Autonomous Container Database Backup
+        List of Autonomous AI Databases that is part of this Autonomous Container Database Backup
 
 
         :param autonomous_databases: The autonomous_databases of this AutonomousContainerDatabaseBackup.
